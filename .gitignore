@@ -17,6 +17,7 @@ build.tooldata
 build.qtc
 build-*
 build
+ninja_build/
 win32build
 win32install
 win64build

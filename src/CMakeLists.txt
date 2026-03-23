@@ -34,6 +34,8 @@ if (MUE_BUILD_CONVERTER_MODULE)
     add_subdirectory(converter)
 endif()
 
+add_subdirectory(composing)
+
 add_subdirectory(engraving)
 
 add_subdirectory(importexport)

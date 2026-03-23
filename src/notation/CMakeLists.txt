@@ -131,6 +131,7 @@ endif()
 target_link_libraries(notation PRIVATE
     muse::draw
     engraving
+    composing_analysis
 )
 
 if(MUE_BUILD_NOTATION_TESTS)

@@ -18,19 +18,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-set(MODULE_TEST composing_tests)
+muse_create_module(composing_analysis NO_QT)
 
-set(MODULE_TEST_SRC
-    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
+target_sources(composing_analysis PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/analysisutils.h
+    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.h
 )
-
-set(MODULE_TEST_LINK
-    composing_analysis
-    engraving
-)
-
-set(MODULE_TEST_DATA_ROOT ${CMAKE_CURRENT_LIST_DIR})
-
-include(SetupGTest)
