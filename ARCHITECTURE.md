@@ -1895,3 +1895,9 @@ segment->next1(SegmentType::ChordRest)
 *Document version: 1.2 — Added: §5.8 analyzer limitations (quartal, add2/add9, rootless, polychordal), §8.2 voicing type taxonomy, §12.1a status bar display preference*
 *Last updated: March 2026*
 *Maintainer: Update this document whenever architectural decisions change*
+
+---
+
+## Platform Support Requirement
+
+All code and features developed for the MuseScore Arranger module must be able to run on all platforms officially supported by MuseScore Studio: Windows, macOS, and Linux. Platform-specific code is only permitted when absolutely necessary and must be clearly documented and abstracted to allow for cross-platform compatibility. All build scripts, dependencies, and runtime logic must be tested on all supported platforms before merging.

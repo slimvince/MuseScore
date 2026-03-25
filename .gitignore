@@ -18,6 +18,7 @@ build.qtc
 build-*
 build
 ninja_build/
+Testing/Temporary/
 win32build
 win32install
 win64build

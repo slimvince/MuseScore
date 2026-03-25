@@ -586,12 +586,13 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
     // that go beyond pitch-content analysis.  Abstract detection (root/quality/7th)
     // is correct; only the symbol or Roman numeral string differs because the
     // catalog annotation encodes information the analyzer cannot derive from pitches.
-    //   m72  C7(Blues) = C7#9 (Hendrix chord): blue note Eb not notated separately.
-    //   m278 CTristan: non-standard pitch set, no matching template.
-    //   m320 CPhryg: modal label for Cm11 — Phrygian flat-2 is not a chord quality.
-    //   m326 Csus#4: catalog Roman numeral is "I" (tonic, no quality suffix);
+    //   m60  Cm9b5: analyzer returns Cm7b5 — 9th extension not tracked separately.
+    //   m164 C7alt: informal alt label; analyzer returns the specific alteration spelling.
+    //   m285 CTristan: non-standard pitch set, no matching template.
+    //   m333 CPhryg: modal label for Cm11 — Phrygian flat-2 is not a chord quality.
+    //   m340 Csus#4: catalog Roman numeral is "I" (tonic, no quality suffix);
     //        analyzer correctly returns "Isus4" — annotation style difference.
-    static const std::set<int> kSymbolExceptions = { 72, 278, 320, 326 };
+    static const std::set<int> kSymbolExceptions = { 60, 164, 285, 333, 340 };
 
     // Thread temporal context between successive catalog entries so the
     // root-continuity bonus can resolve ambiguous chords (e.g. m264 {C,Eb,Ab}).

@@ -20,7 +20,7 @@
 
 muse_create_qml_module(preferences_qml FOR preferences)
 
-target_link_libraries(preferences_qml PRIVATE Qt::Core5Compat)
+target_link_libraries(preferences_qml PRIVATE Qt::Core5Compat composing)
 
 qt_add_qml_module(preferences_qml
     URI MuseScore.Preferences
@@ -36,6 +36,8 @@ qt_add_qml_module(preferences_qml
         braillepreferencesmodel.h
         canvaspreferencesmodel.cpp
         canvaspreferencesmodel.h
+        composingpreferencesmodel.cpp
+        composingpreferencesmodel.h
         commonaudioapiconfigurationmodel.cpp
         commonaudioapiconfigurationmodel.h
         folderspreferencesmodel.cpp
@@ -65,6 +67,7 @@ qt_add_qml_module(preferences_qml
         AudioMidiPreferencesPage.qml
         BraillePreferencesPage.qml
         CanvasPreferencesPage.qml
+        ComposingPreferencesPage.qml
         FoldersPreferencesPage.qml
         GeneralPreferencesPage.qml
         ImportPreferencesPage.qml
@@ -91,6 +94,8 @@ qt_add_qml_module(preferences_qml
         internal/CharsetsSection.qml
         internal/ColorAndWallpaperSection.qml
         internal/ComboBoxWithTitle.qml
+        internal/ComposingAnalysisSection.qml
+        internal/ComposingStatusBarSection.qml
         internal/CommonAudioApiConfiguration.qml
         internal/DefaultStyleSection.qml
         internal/FoldersSection.qml

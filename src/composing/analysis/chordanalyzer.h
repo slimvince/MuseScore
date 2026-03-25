@@ -26,6 +26,10 @@
 #include <string>
 #include <vector>
 
+namespace mu::engraving {
+class Note;
+}
+
 namespace mu::composing::analysis {
 
 enum class ChordQuality {
@@ -202,6 +206,14 @@ std::string formatSymbol(const ChordAnalysisResult& result, int keySignatureFift
 std::string formatRomanNumeral(const ChordAnalysisResult& result, bool keyIsMajor);
 
 } // namespace ChordSymbolFormatter
+
+// Returns analysis results for the harmonic context of `note`.
+// Also outputs keyFifths and isMajor (needed by the formatter).
+// Returns empty vector if analysis is not possible.
+std::vector<ChordAnalysisResult>
+analyzeNoteHarmonicContext(const mu::engraving::Note* note,
+                           int& outKeyFifths,
+                           bool& outIsMajor);
 
 } // namespace mu::composing::analysis
 

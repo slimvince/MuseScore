@@ -30,7 +30,7 @@ Row {
 
     property alias title: titleLabel.text
 
-    property real columnWidth: 208
+    property real columnWidth: 100
 
     property int currentIndex: -1
     property var currentValue: null

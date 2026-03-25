@@ -65,6 +65,7 @@
 #include "engraving/dom/guitarbend.h"
 #include "engraving/dom/hammeronpulloff.h"
 #include "engraving/dom/image.h"
+#include "engraving/dom/harmony.h"
 #include "engraving/dom/instrchange.h"
 #include "engraving/dom/keysig.h"
 #include "engraving/dom/lasso.h"
@@ -8187,6 +8188,47 @@ void NotationInteraction::addFretboardDiagram()
     if (lastAddedDiagram) {
         select({ lastAddedDiagram });
     }
+}
+
+void NotationInteraction::addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type)
+{
+    EngravingItem* item = contextItem();
+    if (!item || !item->isNote()) {
+        return;
+    }
+    Note* note = toNote(item);
+    ChordRest* cr = note->chord();
+    if (!cr) {
+        return;
+    }
+    Segment* segment = cr->segment();
+    if (!segment) {
+        return;
+    }
+
+    startEdit(type == mu::engraving::HarmonyType::ROMAN
+              ? TranslatableString("undoableAction", "Add Roman numeral")
+              : TranslatableString("undoableAction", "Add chord symbol"));
+
+    // Remove any existing harmony of the same type on this segment
+    for (EngravingItem* ann : segment->annotations()) {
+        if (ann->isHarmony() && toHarmony(ann)->harmonyType() == type) {
+            score()->undoRemoveElement(ann);
+        }
+    }
+
+    // Create and add the new harmony
+    mu::engraving::Harmony* harmony = mu::engraving::Factory::createHarmony(segment);
+    harmony->setTrack(cr->track());
+    harmony->setParent(segment);
+    harmony->setHarmonyType(type);
+    harmony->setHarmony(muse::String::fromQString(text));
+    harmony->setPlainText(harmony->harmonyName());
+
+    score()->undoAddElement(harmony);
+    apply();
+    showItem(harmony);
+    notifyAboutTextEditingEnded(harmony);
 }
 
 Harmony* NotationInteraction::editedHarmony() const

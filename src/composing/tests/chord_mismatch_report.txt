@@ -1,14 +1,16 @@
 === Abstract chord mismatch summary: total=0 ===
 Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
 
-=== Symbol/Roman mismatch summary: total=4 ===
+=== Symbol/Roman mismatch summary: total=5 ===
 Per-measure symbol mismatches (abstract correct; inspect pitches to determine
   whether this is a formatter bug or a catalog annotation inconsistency):
-measure 72 [symbol]  xml='C7(Blues)'  analyzer='C7'
-  key=0maj  pitches=[60,64,67,70]  pcs=[0,4,7,10]  tpcs=[15,19,16,13]
-measure 278 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'
+measure 60 [symbol]  xml='Cm9b5'  analyzer='Cm7b5'
+  key=0maj  pitches=[60,63,66,70,74]  pcs=[0,3,6,10,2]  tpcs=[15,12,9,13,17]
+measure 164 [symbol]  xml='C7alt'  analyzer='C7b9b5'
+  key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
+measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,70,74]  pcs=[0,6,10,2]  tpcs=[15,21,25,17]
-measure 320 [symbol]  xml='CPhryg'  analyzer='Cm11'
+measure 333 [symbol]  xml='CPhryg'  analyzer='Cm11'
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
-measure 326 [roman]  roman xml='I'  analyzer='Isus4'
+measure 340 [roman]  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,67]  pcs=[0,6,7]  tpcs=[15,21,16]

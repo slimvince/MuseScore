@@ -315,6 +315,7 @@ target_include_directories(notationscene_qml PRIVATE
 
 target_link_libraries(notationscene_qml PRIVATE
     muse::uicomponents_qml
+    composing_analysis
 )
 
 if(MUE_BUILD_NOTATIONSCENE_TESTS)

@@ -219,6 +219,8 @@
 #include "stubs/musesounds/musesoundsstubmodule.h"
 #endif
 
+#include "composing/composingmodule.h"
+
 #ifdef MUE_BUILD_NOTATION_MODULE
 #include "notation/notationmodule.h"
 #else
@@ -392,6 +394,7 @@ std::shared_ptr<muse::IApplication> AppFactory::newGuiApp(const CmdOptions& opti
     app->addModule(new muse::learn::LearnModule());
     app->addModule(new muse::mi::MultiWindowsModule());
     app->addModule(new mu::musesounds::MuseSoundsModule());
+    app->addModule(new mu::composing::ComposingModule());
     app->addModule(new mu::notation::NotationModule());
     app->addModule(new mu::notation::NotationSceneModule());
     app->addModule(new mu::palette::PaletteModule());
@@ -505,6 +508,7 @@ static void addConsoleModules(std::shared_ptr<ConsoleApp> app)
 #endif
 
     app->addModule(new muse::mi::MultiWindowsModule());
+    app->addModule(new mu::composing::ComposingModule());
     app->addModule(new mu::notation::NotationModule());
     app->addModule(new mu::playback::PlaybackModule());
     app->addModule(new mu::project::ProjectModule());

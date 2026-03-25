@@ -33,6 +33,10 @@
 class QKeyEvent;
 class QInputMethodEvent;
 
+namespace mu::engraving {
+enum class HarmonyType : unsigned char;
+}
+
 namespace mu::notation {
 class INotationInteraction
 {
@@ -249,6 +253,8 @@ public:
 
     virtual void addFiguredBass() = 0;
     virtual void addFretboardDiagram() = 0;
+
+    virtual void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) = 0;
 
     virtual void addStretch(qreal value) = 0;
 

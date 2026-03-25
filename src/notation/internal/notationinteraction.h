@@ -262,6 +262,8 @@ public:
 
     void addFiguredBass() override;
 
+    void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) override;
+
     void addStretch(qreal value) override;
 
     Measure* selectedMeasure() const override;

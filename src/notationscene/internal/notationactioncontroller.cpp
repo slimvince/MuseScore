@@ -23,6 +23,7 @@
 
 #include "io/file.h"
 
+#include "engraving/dom/harmony.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/text.h"
@@ -359,6 +360,16 @@ void NotationActionController::init()
     registerAction("sticking-text", [this]() { addText(TextStyleType::STICKING); });
     registerAction("chord-text", [this]() { addText(TextStyleType::HARMONY_A); });
     registerAction("roman-numeral-text", [this]() { addText(TextStyleType::HARMONY_ROMAN); });
+    registerAction("add-chord-symbol-from-analysis", [this](const ActionData& args) {
+        IF_ASSERT_FAILED(args.count() > 0) { return; }
+        const QString text = args.arg<QString>(0);
+        currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::STANDARD);
+    });
+    registerAction("add-roman-numeral-from-analysis", [this](const ActionData& args) {
+        IF_ASSERT_FAILED(args.count() > 0) { return; }
+        const QString text = args.arg<QString>(0);
+        currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::ROMAN);
+    });
     registerAction("nashville-number-text", [this]() { addText(TextStyleType::HARMONY_NASHVILLE); });
     registerAction("lyrics", [this]() { addText(TextStyleType::LYRICS_ODD); });
     registerAction("tempo", [this]() { addText(TextStyleType::TEMPO); });

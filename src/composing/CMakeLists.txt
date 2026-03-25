@@ -20,6 +20,27 @@
 
 add_subdirectory(analysis)
 
+# Add intonation module
+
+# Add intonation module
+add_subdirectory(intonation)
+
+muse_create_module(composing)
+
+target_sources(composing PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/composingmodule.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/composingmodule.h
+    ${CMAKE_CURRENT_LIST_DIR}/composingconfiguration.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/composingconfiguration.h
+    ${CMAKE_CURRENT_LIST_DIR}/icomposingconfiguration.h
+)
+
+target_link_libraries(composing PRIVATE
+    composing_analysis
+    muse_global
+    intonation
+)
+
 if (MUE_BUILD_COMPOSING_TESTS)
     add_subdirectory(tests)
 endif()

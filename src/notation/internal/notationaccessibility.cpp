@@ -38,6 +38,8 @@
 
 #include "composing/analysis/chordanalyzer.h"
 #include "composing/analysis/keymodeanalyzer.h"
+#include "composing/icomposingconfiguration.h"
+#include "modularity/ioc.h"
 
 #include <set>
 
@@ -63,19 +65,142 @@ const char* keyName(int fifths, bool isMajor)
 // note is selected.  Returns "[Key] Sym [Roman] (score) | ..." or "" if no
 // analysis is possible.  Separated from singleElementAccessibilityInfo() to
 // keep that function's control flow readable.
+
 std::string harmonicAnnotation(const Note* note)
 {
-    const Score*    sc   = note->score();
-    const Fraction  tick = note->tick();
+    static muse::GlobalInject<mu::composing::IComposingConfiguration> config;
+    const auto* prefs = config.get().get();
+    if (!prefs) {
+        return "";
+    }
+
+
+    int keyFifths = 0;
+    bool isMajor = true;
+    const auto chordResults = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, isMajor);
+
+    // Key/mode string (optional)
+    std::string keyStr;
+    if (prefs->showKeyModeInStatusBar()) {
+        keyStr = std::string(keyName(keyFifths, isMajor)) + (isMajor ? " major" : " minor");
+    }
+
+    // If both analyzers are off, but key/mode display is on, show only key/mode
+    if (!prefs->analyzeForChordSymbols() && !prefs->analyzeForRomanNumerals()) {
+        if (!keyStr.empty()) {
+            return "[" + keyStr + "]";
+        } else {
+            return "";
+        }
+    }
+
+    if (chordResults.empty()) {
+        // If no analysis results, but key/mode display is on, show only key/mode
+        if (!keyStr.empty()) {
+            return "[" + keyStr + "]";
+        } else {
+            return "";
+        }
+    }
+
+    // Prepare candidates, respecting limits for chord symbols and Roman numerals
+    int maxChordSyms = prefs->statusBarChordSymbolCount();
+    int maxRomans   = prefs->statusBarRomanNumeralCount();
+    int chordCount = 0, romanCount = 0;
+    std::string candidates;
+    std::set<std::string> seenSyms, seenRomans;
+    for (const auto& result : chordResults) {
+        // Chord symbol
+        std::string sym;
+        if (prefs->analyzeForChordSymbols()) {
+            sym = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(result, keyFifths);
+        }
+        // Roman numeral
+        std::string roman;
+        if (prefs->analyzeForRomanNumerals()) {
+            roman = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(result, isMajor);
+        }
+
+        // Skip if both are empty or already shown
+        if ((sym.empty() || !seenSyms.insert(sym).second) && (roman.empty() || !seenRomans.insert(roman).second)) {
+            continue;
+        }
+
+        // Respect per-type limits
+        bool showSym = prefs->analyzeForChordSymbols() && !sym.empty() && chordCount < maxChordSyms;
+        bool showRoman = prefs->analyzeForRomanNumerals() && !roman.empty() && romanCount < maxRomans;
+        if (!showSym && !showRoman) {
+            continue;
+        }
+
+        if (!candidates.empty()) {
+            candidates += " | ";
+        }
+        char buf[32];
+        std::snprintf(buf, sizeof(buf), " (%.2f)", result.score);
+
+        if (showSym && showRoman) {
+            candidates += sym + " [" + roman + "]" + buf;
+            ++chordCount;
+            ++romanCount;
+        } else if (showSym) {
+            candidates += sym + buf;
+            ++chordCount;
+        } else if (showRoman) {
+            candidates += "[" + roman + "]" + buf;
+            ++romanCount;
+        }
+    }
+
+    if (candidates.empty()) {
+        if (!keyStr.empty()) {
+            return "[" + keyStr + "]";
+        } else {
+            return "";
+        }
+    }
+
+    if (!keyStr.empty()) {
+        return "[" + keyStr + "] " + candidates;
+    } else {
+        return candidates;
+    }
+}
+
+} // namespace
+
+// ── analyzeNoteHarmonicContext ────────────────────────────────────────────────
+// Implements the free function declared in composing/analysis/chordanalyzer.h.
+//
+// The implementation lives in the notation module rather than in composing/ because
+// extracting pitch context from a selected note requires engraving types (Note,
+// Chord, Segment, Staff, KeySig, …) that the composing module intentionally does
+// not depend on.  This file acts as the bridge: notation knows how to walk the
+// engraving model, composing knows how to analyse pitches.  The two concerns are
+// kept separate — this function is the only place they meet.
+namespace mu::composing::analysis {
+
+std::vector<ChordAnalysisResult>
+analyzeNoteHarmonicContext(const mu::engraving::Note* note,
+                           int& outKeyFifths,
+                           bool& outIsMajor)
+{
+    using namespace mu::engraving;
+
+    if (!note) {
+        return {};
+    }
+
+    const Score*   sc   = note->score();
+    const Fraction tick = note->tick();
 
     const Segment* seg = sc->tick2segment(tick, true, SegmentType::ChordRest);
     if (!seg) {
-        return "";
+        return {};
     }
 
     struct SoundingNote { int ppitch; int tpc; };
 
-    // Staff eligibility: visible and pitched (not a drumset instrument).
     auto staffIsEligible = [&](size_t si) -> bool {
         const Staff* st = sc->staff(si);
         if (!st->show()) {
@@ -87,9 +212,6 @@ std::string harmonicAnnotation(const Note* note)
         return true;
     };
 
-    // Collect all notes sounding at anchorSeg->tick().
-    // "Sounding": attacked at anchorSeg, or started earlier and still sustained.
-    // Excludes grace notes, drum staves, hidden staves, silenced notes.
     auto collectSoundingAt = [&](const Segment* anchorSeg,
                                  std::vector<SoundingNote>& out) {
         const Fraction anchorTick = anchorSeg->tick();
@@ -137,7 +259,6 @@ std::string harmonicAnnotation(const Note* note)
         }
     };
 
-    // Build a ChordAnalysisTone vector from a sounding-note list.
     auto buildTones = [](const std::vector<SoundingNote>& sounding) {
         int lowestPpitch = std::numeric_limits<int>::max();
         for (const SoundingNote& sn : sounding) {
@@ -145,10 +266,10 @@ std::string harmonicAnnotation(const Note* note)
                 lowestPpitch = sn.ppitch;
             }
         }
-        std::vector<composing::analysis::ChordAnalysisTone> tones;
+        std::vector<ChordAnalysisTone> tones;
         tones.reserve(sounding.size());
         for (const SoundingNote& sn : sounding) {
-            composing::analysis::ChordAnalysisTone t;
+            ChordAnalysisTone t;
             t.pitch  = sn.ppitch;
             t.tpc    = sn.tpc;
             t.isBass = (sn.ppitch == lowestPpitch);
@@ -157,27 +278,24 @@ std::string harmonicAnnotation(const Note* note)
         return tones;
     };
 
-    // Collect notes sounding at the selected tick.
     std::vector<SoundingNote> sounding;
     collectSoundingAt(seg, sounding);
     if (sounding.empty()) {
-        return "";
+        return {};
     }
 
-    // Key signature at this tick from the selected note's staff.
     const KeySigEvent keySig = sc->staff(note->staffIdx())->keySigEvent(tick);
     const int keyFifths = static_cast<int>(keySig.concertKey());
+    outKeyFifths = keyFifths;
 
-    // Determine major/minor. If UNKNOWN, run KeyModeAnalyzer on a
-    // look-back window covering the current and previous measure.
     bool isMajor = true;
-    const KeyMode mode = keySig.mode();
-    if (mode == KeyMode::MAJOR || mode == KeyMode::IONIAN) {
+    const mu::engraving::KeyMode mode = keySig.mode();
+    if (mode == mu::engraving::KeyMode::MAJOR || mode == mu::engraving::KeyMode::IONIAN) {
         isMajor = true;
-    } else if (mode == KeyMode::MINOR || mode == KeyMode::AEOLIAN) {
+    } else if (mode == mu::engraving::KeyMode::MINOR || mode == mu::engraving::KeyMode::AEOLIAN) {
         isMajor = false;
     } else {
-        std::vector<composing::analysis::KeyModeAnalyzer::PitchContext> ctx;
+        std::vector<KeyModeAnalyzer::PitchContext> ctx;
         const Measure* currentMeasure = sc->tick2measure(tick);
         const Measure* startMeasure   = currentMeasure
                                         ? currentMeasure->prevMeasure()
@@ -200,7 +318,7 @@ std::string harmonicAnnotation(const Note* note)
                             continue;
                         }
                         for (const Note* n : toChord(cr)->notes()) {
-                            composing::analysis::KeyModeAnalyzer::PitchContext p;
+                            KeyModeAnalyzer::PitchContext p;
                             p.pitch = n->ppitch();
                             ctx.push_back(p);
                         }
@@ -210,17 +328,14 @@ std::string harmonicAnnotation(const Note* note)
         }
 
         const auto modeResults =
-            composing::analysis::KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths);
+            KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths);
         if (!modeResults.empty()) {
-            isMajor = (modeResults.front().mode
-                       == composing::analysis::KeyMode::Ionian);
+            isMajor = (modeResults.front().mode == mu::composing::analysis::KeyMode::Ionian);
         }
     }
+    outIsMajor = isMajor;
 
-    // Look back to populate temporal context (root-continuity scoring).
-    // Walk backward from seg; find the first segment with freshly attacked
-    // notes; cold-analyze it; store the result as the previous chord.
-    composing::analysis::ChordTemporalContext temporalCtx;
+    ChordTemporalContext temporalCtx;
     for (const Segment* s = seg->prev1(SegmentType::ChordRest);
          s != nullptr;
          s = s->prev1(SegmentType::ChordRest)) {
@@ -246,8 +361,7 @@ std::string harmonicAnnotation(const Note* note)
         if (!prevSounding.empty()) {
             const auto prevTones = buildTones(prevSounding);
             const auto prevResults =
-                composing::analysis::ChordAnalyzer::analyzeChord(
-                    prevTones, keyFifths, isMajor);
+                ChordAnalyzer::analyzeChord(prevTones, keyFifths, isMajor);
             if (!prevResults.empty()) {
                 temporalCtx.previousRootPc  = prevResults.front().rootPc;
                 temporalCtx.previousQuality = prevResults.front().quality;
@@ -256,49 +370,12 @@ std::string harmonicAnnotation(const Note* note)
         break;
     }
 
-    const std::string keyStr = std::string(keyName(keyFifths, isMajor))
-                               + (isMajor ? " major" : " minor");
-
     const auto analysisTones = buildTones(sounding);
-    const auto chordResults =
-        composing::analysis::ChordAnalyzer::analyzeChord(
-            analysisTones, keyFifths, isMajor, &temporalCtx);
-
-    if (chordResults.empty()) {
-        return "";
-    }
-
-    std::string candidates;
-    std::set<std::string> seen;
-    for (const auto& result : chordResults) {
-        const std::string sym =
-            composing::analysis::ChordSymbolFormatter::formatSymbol(
-                result, keyFifths);
-        if (sym.empty() || !seen.insert(sym).second) {
-            continue;
-        }
-        if (!candidates.empty()) {
-            candidates += " | ";
-        }
-        char buf[32];
-        std::snprintf(buf, sizeof(buf), " (%.2f)", result.score);
-        const std::string roman =
-            composing::analysis::ChordSymbolFormatter::formatRomanNumeral(result, isMajor);
-        if (!roman.empty()) {
-            candidates += sym + " [" + roman + "]" + buf;
-        } else {
-            candidates += sym + buf;
-        }
-    }
-
-    if (candidates.empty()) {
-        return "";
-    }
-
-    return "[" + keyStr + "] " + candidates;
+    return ChordAnalyzer::analyzeChord(analysisTones, keyFifths, isMajor, &temporalCtx);
 }
 
-} // namespace
+} // namespace mu::composing::analysis
+
 using namespace muse::async;
 using namespace mu::engraving;
 using namespace muse::accessibility;

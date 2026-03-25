@@ -62,8 +62,9 @@ private:
     muse::uicomponents::MenuItemList makeHairpinItems();
     muse::uicomponents::MenuItemList makeGradualTempoChangeItems();
     muse::uicomponents::MenuItemList makeTextItems();
+    muse::uicomponents::MenuItemList makeNoteItems();
 
-    muse::uicomponents::MenuItem* makeEditStyle(const EngravingItem* element);
+    muse::uicomponents::MenuItem* makeEditStyle(const mu::engraving::EngravingItem* element);
 
     bool isSingleSelection() const;
     bool canSelectSimilarInRange() const;
