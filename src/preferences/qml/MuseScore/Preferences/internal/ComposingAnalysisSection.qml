@@ -33,11 +33,13 @@ BaseSection {
     property bool analyzeForRomanNumerals
     property bool inferKeyMode
     property int  analysisAlternatives
+    property string tuningSystemKey
 
     signal analyzeForChordSymbolsChangeRequested(bool value)
     signal analyzeForRomanNumeralsChangeRequested(bool value)
     signal inferKeyModeChangeRequested(bool value)
     signal analysisAlternativesChangeRequested(int count)
+    signal tuningSystemKeyChangeRequested(string key)
 
     Column {
         spacing: root.rowSpacing
@@ -120,6 +122,43 @@ BaseSection {
                 enabled: root.analyzeForChordSymbols || root.analyzeForRomanNumerals
                 onValueEdited: function(newIndex, newValue) {
                     root.analysisAlternativesChangeRequested(newValue)
+                }
+            }
+        }
+
+        Row {
+            spacing: 12
+            StyledTextLabel {
+                width: root.columnWidth
+                anchors.verticalCenter: parent.verticalCenter
+                text: qsTrc("preferences", "Tuning system")
+                horizontalAlignment: Text.AlignLeft
+                enabled: root.analyzeForRomanNumerals
+            }
+
+            property var tuningSystemModel: [
+                { text: qsTrc("preferences", "Equal Temperament"),      value: "equal" },
+                { text: qsTrc("preferences", "Just Intonation"),        value: "just" },
+                { text: qsTrc("preferences", "Pythagorean"),            value: "pythagorean" },
+                { text: qsTrc("preferences", "Quarter-Comma Meantone"), value: "quarter_comma_meantone" }
+            ]
+
+            ComboBoxWithTitle {
+                title: ""
+                model: parent.tuningSystemModel
+                currentIndex: {
+                    var key = root.tuningSystemKey
+                    for (var i = 0; i < parent.tuningSystemModel.length; i++) {
+                        if (parent.tuningSystemModel[i].value === key) { return i }
+                    }
+                    return 0
+                }
+                controlWidth: 200
+                navigationName: "TuningSystemComboBox"
+                navigationPanel: root.navigation
+                enabled: root.analyzeForRomanNumerals
+                onValueEdited: function(newIndex, newValue) {
+                    root.tuningSystemKeyChangeRequested(newValue)
                 }
             }
         }

@@ -21,6 +21,7 @@
  */
 #pragma once
 
+#include <string>
 #include "modularity/imoduleinterface.h"
 #include "async/notification.h"
 
@@ -55,6 +56,13 @@ public:
     virtual int analysisAlternatives() const = 0;
     virtual void setAnalysisAlternatives(int count) = 0;
     virtual muse::async::Notification analysisAlternativesChanged() const = 0;
+
+    /// Tuning system used for "tune as" in the note context menu.
+    /// Stored as a TuningKey string (e.g. "equal", "just").
+    /// Enabled in the UI only when Roman-numeral analysis is active.
+    virtual std::string tuningSystemKey() const = 0;
+    virtual void setTuningSystemKey(const std::string& key) = 0;
+    virtual muse::async::Notification tuningSystemKeyChanged() const = 0;
 
     // ── Status-bar display ───────────────────────────────────────────────────
 

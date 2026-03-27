@@ -40,6 +40,7 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(bool analyzeForRomanNumerals  READ analyzeForRomanNumerals  WRITE setAnalyzeForRomanNumerals  NOTIFY analyzeForRomanNumeralsChanged)
     Q_PROPERTY(bool inferKeyMode             READ inferKeyMode             WRITE setInferKeyMode             NOTIFY inferKeyModeChanged)
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
+    Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
 
     // Status-bar display
     Q_PROPERTY(bool showKeyModeInStatusBar      READ showKeyModeInStatusBar      WRITE setShowKeyModeInStatusBar      NOTIFY showKeyModeInStatusBarChanged)
@@ -57,6 +58,7 @@ public:
     bool analyzeForRomanNumerals() const;
     bool inferKeyMode() const;
     int  analysisAlternatives() const;
+    QString tuningSystemKey() const;
 
     bool showKeyModeInStatusBar() const;
     int  statusBarChordSymbolCount() const;
@@ -67,6 +69,7 @@ public slots:
     void setAnalyzeForRomanNumerals(bool value);
     void setInferKeyMode(bool value);
     void setAnalysisAlternatives(int count);
+    void setTuningSystemKey(const QString& key);
 
     void setShowKeyModeInStatusBar(bool value);
     void setStatusBarChordSymbolCount(int count);
@@ -77,6 +80,7 @@ signals:
     void analyzeForRomanNumeralsChanged();
     void inferKeyModeChanged();
     void analysisAlternativesChanged();
+    void tuningSystemKeyChanged();
 
     void showKeyModeInStatusBarChanged();
     void statusBarChordSymbolCountChanged();

@@ -49,6 +49,9 @@ void ComposingPreferencesModel::setupConnections()
     composingConfiguration()->analysisAlternativesChanged().onNotify(this, [this]() {
         emit analysisAlternativesChanged();
     });
+    composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
+        emit tuningSystemKeyChanged();
+    });
     composingConfiguration()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
         emit showKeyModeInStatusBarChanged();
     });
@@ -85,6 +88,11 @@ bool ComposingPreferencesModel::inferKeyMode() const
 int ComposingPreferencesModel::analysisAlternatives() const
 {
     return composingConfiguration()->analysisAlternatives();
+}
+
+QString ComposingPreferencesModel::tuningSystemKey() const
+{
+    return QString::fromStdString(composingConfiguration()->tuningSystemKey());
 }
 
 bool ComposingPreferencesModel::showKeyModeInStatusBar() const
@@ -143,6 +151,15 @@ void ComposingPreferencesModel::setAnalysisAlternatives(int count)
     }
     composingConfiguration()->setAnalysisAlternatives(count);
     emit analysisAlternativesChanged();
+}
+
+void ComposingPreferencesModel::setTuningSystemKey(const QString& key)
+{
+    if (tuningSystemKey() == key) {
+        return;
+    }
+    composingConfiguration()->setTuningSystemKey(key.toStdString());
+    emit tuningSystemKeyChanged();
 }
 
 void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)

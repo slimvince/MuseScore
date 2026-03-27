@@ -24,6 +24,7 @@
 
 #include "modularity/ioc.h"
 #include "context/iglobalcontext.h"
+#include "composing/icomposingconfiguration.h"
 
 #include "uicomponents/qml/Muse/UiComponents/abstractmenumodel.h"
 #include "notation/notationtypes.h"
@@ -35,6 +36,7 @@ class NotationContextMenuModel : public muse::uicomponents::AbstractMenuModel
     QML_ELEMENT;
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
+    muse::GlobalInject<mu::composing::IComposingConfiguration> m_composingConfig;
 
 public:
     Q_INVOKABLE void loadItems(int elementType);

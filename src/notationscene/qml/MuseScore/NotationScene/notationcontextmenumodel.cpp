@@ -26,7 +26,6 @@
 // an additional interface layer, because the analysis result is consumed and
 // discarded here — there is no shared state to mock or inject.
 
-#include "preferences/qml/MuseScore/Preferences/composingpreferencesmodel.h" // for composingConfiguration
 #include "notationcontextmenumodel.h"
 #include "types/translatablestring.h"
 #include "ui/view/iconcodes.h"
@@ -36,10 +35,8 @@
 #include "engraving/dom/note.h"
 
 #include "composing/analysis/chordanalyzer.h"
-#include "composing/icomposingconfiguration.h"
 
 #include <set>
-#include <cstdio>
 
 using namespace mu::notation;
 using namespace muse;
@@ -57,35 +54,24 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
 {
     MenuItemList items = makeElementItems();
 
-    static muse::GlobalInject<mu::composing::IComposingConfiguration> config;
-    const auto* prefs = config.get().get();
-    if (!prefs) {
-        std::printf("makeNoteItems: prefs is null\n");
+    if (!m_composingConfig()->analyzeForChordSymbols() && !m_composingConfig()->analyzeForRomanNumerals()) {
         return items;
     }
 
-    bool wantChordSymbols = prefs->analyzeForChordSymbols();
-    bool wantRomanNumerals = prefs->analyzeForRomanNumerals();
-    std::printf("makeNoteItems: wantChordSymbols=%d, wantRomanNumerals=%d\n", wantChordSymbols, wantRomanNumerals);
-    if (!wantChordSymbols && !wantRomanNumerals) {
-        std::printf("makeNoteItems: both analyzers off\n");
-        return items;
-    }
+    bool wantChordSymbols = m_composingConfig()->analyzeForChordSymbols();
+    bool wantRomanNumerals = m_composingConfig()->analyzeForRomanNumerals();
 
     const EngravingItem* element = currentElement();
     const mu::engraving::Note* note = engraving::toNote(element);
     if (!note) {
-        std::printf("makeNoteItems: not a note\n");
         return items;
     }
 
     int keyFifths = 0;
     bool isMajor = false;
     auto analysisResults = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, isMajor);
-    std::printf("makeNoteItems: analysisResults.size()=%zu\n", analysisResults.size());
 
-    int maxAlternatives = prefs->analysisAlternatives();
-    std::printf("makeNoteItems: maxAlternatives=%d\n", maxAlternatives);
+    int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
     MenuItemList chordMenuItems, romanMenuItems;
     int chordCount = 0, romanCount = 0;
@@ -98,29 +84,45 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
 
         if (wantChordSymbols && chordCount < maxAlternatives && !symbol.empty()) {
             std::string label = symbol + buf;
-            MenuItem* item = new MenuItem();
-            item->setTitle(TranslatableString("notation", label.c_str()));
-            item->setState(muse::ui::UiActionState::make_enabled());
+            MenuItem* item = new MenuItem(this);
+            item->setId(QString("compose:add-chord-symbol:%1").arg(chordCount));
+            ui::UiAction action;
+            action.title = TranslatableString::untranslatable(QString::fromStdString(label));
+            action.code = "add-chord-symbol-from-analysis";
+            item->setAction(action);
+            ui::UiActionState state;
+            state.enabled = true;
+            item->setState(state);
+            item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(symbol)));
             chordMenuItems << item;
             ++chordCount;
         }
         if (wantRomanNumerals && romanCount < maxAlternatives && !numeral.empty()) {
             std::string label = numeral + buf;
-            MenuItem* item = new MenuItem();
-            item->setTitle(TranslatableString("notation", label.c_str()));
-            item->setState(muse::ui::UiActionState::make_enabled());
+            MenuItem* item = new MenuItem(this);
+            item->setId(QString("compose:add-roman-numeral:%1").arg(romanCount));
+            ui::UiAction action;
+            action.title = TranslatableString::untranslatable(QString::fromStdString(label));
+            action.code = "add-roman-numeral-from-analysis";
+            item->setAction(action);
+            ui::UiActionState state;
+            state.enabled = true;
+            item->setState(state);
+            item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(numeral)));
             romanMenuItems << item;
             ++romanCount;
         }
     }
-    std::printf("makeNoteItems: chordMenuItems=%d, romanMenuItems=%d\n", chordCount, romanCount);
 
-    if (!chordMenuItems.isEmpty() || !romanMenuItems.isEmpty())
-    items << makeSeparator();
-    if (!chordMenuItems.isEmpty())
+    if (!chordMenuItems.isEmpty() || !romanMenuItems.isEmpty()) {
+        items << makeSeparator();
+    }
+    if (!chordMenuItems.isEmpty()) {
         items << makeMenu(TranslatableString("notation", "Add Chord symbol"), chordMenuItems);
-    if (!romanMenuItems.isEmpty())
+    }
+    if (!romanMenuItems.isEmpty()) {
         items << makeMenu(TranslatableString("notation", "Add Roman numeral"), romanMenuItems);
+    }
 
     return items;
 }

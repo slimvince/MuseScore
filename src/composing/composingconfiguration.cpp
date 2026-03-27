@@ -32,6 +32,7 @@ static const Settings::Key ANALYZE_FOR_CHORD_SYMBOLS(module_name,  "composing/an
 static const Settings::Key ANALYZE_FOR_ROMAN_NUMERALS(module_name, "composing/analyzeForRomanNumerals");
 static const Settings::Key INFER_KEY_MODE(module_name,             "composing/inferKeyMode");
 static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,      "composing/analysisAlternatives");
+static const Settings::Key TUNING_SYSTEM_KEY(module_name,          "composing/tuningSystemKey");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,    "composing/showKeyModeInStatusBar");
 static const Settings::Key STATUS_BAR_CHORD_SYMBOL_COUNT(module_name,  "composing/statusBarChordSymbolCount");
 static const Settings::Key STATUS_BAR_ROMAN_NUMERAL_COUNT(module_name, "composing/statusBarRomanNumeralCount");
@@ -56,6 +57,11 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(ANALYSIS_ALTERNATIVES, Val(3));
     settings()->valueChanged(ANALYSIS_ALTERNATIVES).onReceive(nullptr, [this](const Val&) {
         m_analysisAlternativesChanged.notify();
+    });
+
+    settings()->setDefaultValue(TUNING_SYSTEM_KEY, Val(std::string("equal")));
+    settings()->valueChanged(TUNING_SYSTEM_KEY).onReceive(nullptr, [this](const Val&) {
+        m_tuningSystemKeyChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -140,6 +146,23 @@ void ComposingConfiguration::setAnalysisAlternatives(int count)
 muse::async::Notification ComposingConfiguration::analysisAlternativesChanged() const
 {
     return m_analysisAlternativesChanged;
+}
+
+// ── tuningSystemKey ──────────────────────────────────────────────────────────
+
+std::string ComposingConfiguration::tuningSystemKey() const
+{
+    return settings()->value(TUNING_SYSTEM_KEY).toString();
+}
+
+void ComposingConfiguration::setTuningSystemKey(const std::string& key)
+{
+    settings()->setSharedValue(TUNING_SYSTEM_KEY, Val(key));
+}
+
+muse::async::Notification ComposingConfiguration::tuningSystemKeyChanged() const
+{
+    return m_tuningSystemKeyChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

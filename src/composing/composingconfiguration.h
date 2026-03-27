@@ -46,6 +46,10 @@ public:
     void setAnalysisAlternatives(int count) override;
     muse::async::Notification analysisAlternativesChanged() const override;
 
+    std::string tuningSystemKey() const override;
+    void setTuningSystemKey(const std::string& key) override;
+    muse::async::Notification tuningSystemKeyChanged() const override;
+
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
     muse::async::Notification showKeyModeInStatusBarChanged() const override;
@@ -63,6 +67,7 @@ private:
     muse::async::Notification m_analyzeForRomanNumeralsChanged;
     muse::async::Notification m_inferKeyModeChanged;
     muse::async::Notification m_analysisAlternativesChanged;
+    muse::async::Notification m_tuningSystemKeyChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_statusBarChordSymbolCountChanged;
     muse::async::Notification m_statusBarRomanNumeralCountChanged;

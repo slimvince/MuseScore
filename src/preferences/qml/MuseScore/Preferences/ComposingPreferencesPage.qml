@@ -48,6 +48,7 @@ PreferencesPage {
             analyzeForRomanNumerals: preferencesModel.analyzeForRomanNumerals
             inferKeyMode:            preferencesModel.inferKeyMode
             analysisAlternatives:    preferencesModel.analysisAlternatives
+            tuningSystemKey:         preferencesModel.tuningSystemKey
 
             navigation.section: root.navigationSection
             navigation.order: root.navigationOrderStart + 1
@@ -56,6 +57,7 @@ PreferencesPage {
             onAnalyzeForRomanNumeralsChangeRequested: function(value) { preferencesModel.analyzeForRomanNumerals = value }
             onInferKeyModeChangeRequested:            function(value) { preferencesModel.inferKeyMode            = value }
             onAnalysisAlternativesChangeRequested:    function(count) { preferencesModel.analysisAlternatives    = count }
+            onTuningSystemKeyChangeRequested:         function(key)   { preferencesModel.tuningSystemKey         = key   }
         }
 
         SeparatorLine { }
