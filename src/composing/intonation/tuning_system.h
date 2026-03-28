@@ -1,5 +1,24 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// MuseScore Studio — Intonation infrastructure
+/*
+ * SPDX-License-Identifier: GPL-3.0-only
+ * MuseScore-Studio-CLA-applies
+ *
+ * MuseScore Studio
+ * Music Composition & Notation
+ *
+ * Copyright (C) 2026 MuseScore Limited
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 #pragma once
 
 #include <vector>
@@ -8,6 +27,10 @@
 #include "tuning_keys.h"
 #include "../analysis/keymodeanalyzer.h" // for KeyModeAnalysisResult
 #include "../analysis/chordanalyzer.h"   // for ChordQuality
+
+namespace mu::engraving {
+class Note;
+}
 
 namespace mu::composing::intonation {
 
@@ -96,5 +119,21 @@ public:
     /// Returns all display names (for UI).
     static std::vector<std::string> allDisplayNames();
 };
+
+/// Bridge function: applies a tuning system to all notes sounding at the
+/// selected note's tick, splitting sustained notes as needed to create a
+/// clean onset boundary for tuning.
+///
+/// Declared here in the composing module; **defined in
+/// src/notation/internal/notationaccessibility.cpp** — the only file where
+/// both the engraving model and the composing intonation API are available.
+/// All future notation–composing tuning bridge code follows this pattern.
+///
+/// Returns true if tuning was applied.
+/// Returns false (no-op) when:
+///   - selectedNote is null or is itself an invisible tuning artifact, or
+///   - fewer than 3 distinct pitch classes are sounding (insufficient chord data).
+bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
+                       const TuningSystem& system);
 
 } // namespace mu::composing::intonation

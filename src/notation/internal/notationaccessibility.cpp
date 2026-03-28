@@ -38,9 +38,11 @@
 
 #include "composing/analysis/chordanalyzer.h"
 #include "composing/analysis/keymodeanalyzer.h"
+#include "composing/intonation/tuning_utils.h"
 #include "composing/icomposingconfiguration.h"
 #include "modularity/ioc.h"
 
+#include <cmath>
 #include <set>
 
 using namespace mu::notation;
@@ -136,18 +138,16 @@ std::string harmonicAnnotation(const Note* note)
         if (!candidates.empty()) {
             candidates += " | ";
         }
-        char buf[32];
-        std::snprintf(buf, sizeof(buf), " (%.2f)", result.score);
 
         if (showSym && showRoman) {
-            candidates += sym + " [" + roman + "]" + buf;
+            candidates += sym + " [" + roman + "]";
             ++chordCount;
             ++romanCount;
         } else if (showSym) {
-            candidates += sym + buf;
+            candidates += sym;
             ++chordCount;
         } else if (showRoman) {
-            candidates += "[" + roman + "]" + buf;
+            candidates += "[" + roman + "]";
             ++romanCount;
         }
     }
@@ -227,8 +227,8 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
                 }
             }
             for (const Note* n : toChord(cr)->notes()) {
-                if (!n->play()) {
-                    continue;
+                if (!n->play() || !n->visible()) {
+                    continue;  // skip silent notes and invisible tuning artifacts
                 }
                 out.push_back({ n->ppitch(), n->tpc() });
             }
@@ -375,6 +375,84 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
 }
 
 } // namespace mu::composing::analysis
+
+// ── applyTuningAtNote ─────────────────────────────────────────────────────────
+// Implements the free function declared in composing/intonation/tuning_system.h.
+//
+// Phase 2: applies tuning to notes that attack at the selected note's tick.
+// Sustained notes that started earlier are left for Phase 3 (split-and-tie).
+namespace mu::composing::intonation {
+
+bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
+                       const TuningSystem& system)
+{
+    using namespace mu::engraving;
+
+    // Invisible notes are tuning artifacts created by this system — ignore them.
+    if (!selectedNote || !selectedNote->visible()) {
+        return false;
+    }
+
+    // Chord identification reuses analyzeNoteHarmonicContext, which already
+    // filters invisible notes from the collection (Phase 1 filter).
+    int keyFifths = 0;
+    bool isMajor  = true;
+    const auto results = mu::composing::analysis::analyzeNoteHarmonicContext(
+        selectedNote, keyFifths, isMajor);
+
+    if (results.empty()) {
+        return false;   // < 3 pitch classes — insufficient data
+    }
+
+    const auto& chord = results.front();
+
+    // KeyModeAnalysisResult is required by the TuningSystem interface but
+    // unused by all current implementations.  Pass a default-constructed value.
+    mu::composing::analysis::KeyModeAnalysisResult keyMode;
+
+    static constexpr double kEpsilonCents = 0.5;
+
+    Score*         sc   = selectedNote->score();
+    const Fraction tick = selectedNote->tick();
+    Segment*       seg  = sc->tick2segment(tick, true, SegmentType::ChordRest);
+    if (!seg) {
+        return false;
+    }
+
+    bool anyApplied = false;
+
+    // Phase 2: only notes that attack at the anchor tick.
+    // Sustained notes (started before tick) are handled in Phase 3.
+    for (size_t si = 0; si < sc->nstaves(); ++si) {
+        const Staff* st = sc->staff(si);
+        if (!st->show() || st->part()->instrument(tick)->useDrumset()) {
+            continue;
+        }
+        for (int v = 0; v < VOICES; ++v) {
+            ChordRest* cr = seg->cr(static_cast<track_idx_t>(si) * VOICES + v);
+            if (!cr || !cr->isChord() || cr->isGrace()) {
+                continue;
+            }
+            for (Note* n : toChord(cr)->notes()) {
+                if (!n->play() || !n->visible()) {
+                    continue;
+                }
+                const int    semitones = semitoneFromPitches(n->ppitch() % 12, chord.rootPc);
+                const double desired   = system.tuningOffset(keyMode, chord.quality,
+                                                             chord.rootPc, semitones);
+                if (std::abs(n->tuning() - desired) < kEpsilonCents) {
+                    continue;   // already in tune
+                }
+                n->setTuning(desired);
+                anyApplied = true;
+            }
+        }
+    }
+
+    return anyApplied;
+}
+
+} // namespace mu::composing::intonation
 
 using namespace muse::async;
 using namespace mu::engraving;

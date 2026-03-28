@@ -1,5 +1,24 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// MuseScore Studio — Tuning system registry implementation
+/*
+ * SPDX-License-Identifier: GPL-3.0-only
+ * MuseScore-Studio-CLA-applies
+ *
+ * MuseScore Studio
+ * Music Composition & Notation
+ *
+ * Copyright (C) 2026 MuseScore Limited
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 #include "tuning_system.h"
 #include "just_intonation.h"
@@ -14,17 +33,16 @@ namespace mu::composing::intonation {
 
 static std::vector<std::unique_ptr<TuningSystem>>& registry()
 {
-    static std::vector<std::unique_ptr<TuningSystem>> systems;
-    static bool initialized = false;
-    if (!initialized) {
-        systems.emplace_back(std::make_unique<EqualTemperament>());
-        systems.emplace_back(std::make_unique<JustIntonation>());
-        systems.emplace_back(std::make_unique<PythagoreanTuning>());
-        systems.emplace_back(std::make_unique<QuarterCommaMeantone>());
-        systems.emplace_back(std::make_unique<WerckmeisterTemperament>());
-        systems.emplace_back(std::make_unique<KirnbergerTemperament>());
-        initialized = true;
-    }
+    static std::vector<std::unique_ptr<TuningSystem>> systems = []() {
+        std::vector<std::unique_ptr<TuningSystem>> s;
+        s.emplace_back(std::make_unique<EqualTemperament>());
+        s.emplace_back(std::make_unique<JustIntonation>());
+        s.emplace_back(std::make_unique<PythagoreanTuning>());
+        s.emplace_back(std::make_unique<QuarterCommaMeantone>());
+        s.emplace_back(std::make_unique<WerckmeisterTemperament>());
+        s.emplace_back(std::make_unique<KirnbergerTemperament>());
+        return s;
+    }();
     return systems;
 }
 

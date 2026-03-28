@@ -1434,6 +1434,77 @@ The drift manager:
 When a fixed-pitch instrument is present, it serves as an automatic drift correction
 anchor — the choir tunes to it at every piano chord, resetting drift.
 
+### 11.4 Score Mutation for Tuning Application
+
+Applying a non-equal temperament writes cent deviations to individual notes via
+`Note::setTuning()`.  For notes that attack exactly at the target tick this is a
+direct call.  Sustained notes — notes that started before the target tick but are
+still sounding — require score mutation because `setTuning()` is a single value per
+note and the note's harmonic role may differ from when it first attacked.
+
+#### Split-and-tie approach
+
+A sustained note that needs a different tuning at the target tick is split there into
+two tied notes.  The first half keeps tuning = 0 (equal temperament; a later region
+pass will back-fill it).  The second half receives the offset for its role in the
+current chord.
+
+To keep the visual score clean the split uses a **silent-original / invisible-playback**
+strategy:
+
+- The original note remains structurally intact, **visible but silent** (`play = false`).
+  The composer sees one unbroken note.
+- Two new invisible tied notes (`visible = false`, `play = true`) are inserted in a
+  spare voice on the same staff:
+  - **note_A** — original onset → target tick, tuning = 0
+  - **note_B** — target tick → original end, tuning = computed offset
+
+Reversion is self-describing: visible+silent notes with invisible tied successors in
+a secondary voice were placed there by the tuning system.  To undo: delete the
+invisible pair, restore `play = true` on the original.
+
+#### Two note-collection modes
+
+The chord analysis and the tuning application share the same collection machinery
+but apply different filters:
+
+| Mode | Filter | Purpose |
+|------|--------|---------|
+| Chord analysis | `visible = true` | Exclude invisible tuning artifacts (avoids double-counting pitch classes) |
+| Tuning collection | `play = true` | Include invisible note_B from prior splits so re-runs update rather than layer |
+
+#### Voice allocation and fallback
+
+The invisible pair must occupy a different voice from the original note (each voice
+slot holds one ChordRest; the pair has its own duration grid).  The bridge scans the
+staff's four voices for a free slot at both sub-durations.
+
+If no voice is free, the operation falls back to a **visible split**: the original
+note is replaced in-place by a visible tied pair, both halves playing, with the tuning
+offset on the second half.  This modifies the visual score but is fully undoable.
+
+#### Idempotency
+
+Re-running after a previous split creates no new splits.  note_A ends exactly at
+the target tick (`noteEnd == anchorTick`), which is excluded by the existing
+`noteEnd <= anchorTick` guard in the collection logic.  Re-running with a different
+temperament simply updates `setTuning()` on the existing note_B.
+
+#### Bridge function
+
+Follows the same declaration-in-composing / definition-in-notation pattern as
+`analyzeNoteHarmonicContext`:
+
+```cpp
+// composing/intonation/tuning_system.h
+bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
+                       const TuningSystem& system);
+// defined in src/notation/internal/notationaccessibility.cpp
+```
+
+Returns `false` when the selected note is an invisible tuning artifact (no-op) or
+when fewer than 3 distinct pitch classes are sounding (insufficient data).
+
 ---
 
 ## 12. User Interface
@@ -1587,10 +1658,9 @@ struct ArrangerInteraction {
 - Roman numeral display: implemented in formatter, not yet invoked in calling code
 
 **Immediate next steps in this increment (in priority order):**
-1. **Complete accuracy work** — continue mismatch reduction in the regression test
-   catalog until the abstract mismatch count is satisfactory. Better base accuracy
-   must come before weight population, because duration/beat weights amplify whatever
-   the base scoring does. (Current: 17 abstract mismatches, down from 44 baseline.)
+1. **Abstract accuracy work complete** — 0 abstract (root/quality) mismatches in
+   the regression catalog, down from 44 baseline. 5 symbol-only mismatches remain
+   (formatter or catalog annotation issues, not core analyzer bugs).
 2. **Populate `ChordAnalysisTone::weight`** from duration and beat position in
    `notationaccessibility.cpp` — no analyzer changes required
 3. **Invoke `formatRomanNumeral()`** in `notationaccessibility.cpp` — display both

@@ -1,9 +1,3 @@
-
-namespace mu::composing::analysis {
-// Returns the tonic pitch class (0 = C, 1 = C#, ..., 11 = B) for a given tonic pitch class and mode index.
-// Used for mapping key signature and mode to tonic for key-dependent intonation systems.
-int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
-}
 /*
  * SPDX-License-Identifier: GPL-3.0-only
  * MuseScore-Studio-CLA-applies
@@ -25,9 +19,7 @@ int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
-#ifndef MU_COMPOSING_ANALYSIS_KEYMODEANALYZER_H
-#define MU_COMPOSING_ANALYSIS_KEYMODEANALYZER_H
+#pragma once
 
 #include <vector>
 
@@ -164,6 +156,10 @@ public:
         const KeyModeAnalyzerPreferences& prefs = kDefaultKeyModeAnalyzerPreferences);
 };
 
-} // namespace mu::composing::analysis
+/// Maps a modal tonic pitch class to the equivalent Ionian tonic that shares
+/// the same key signature.  Defined in keymodeanalyzer.cpp; exposed here so the
+/// intonation module can convert a KeyModeAnalysisResult back to an Ionian tonic
+/// without depending on the full analyzeKeyMode implementation.
+int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
 
-#endif // MU_COMPOSING_ANALYSIS_KEYMODEANALYZER_H
+} // namespace mu::composing::analysis

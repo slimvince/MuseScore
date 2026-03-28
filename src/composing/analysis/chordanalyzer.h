@@ -20,8 +20,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MU_COMPOSING_ANALYSIS_CHORDANALYZER_H
-#define MU_COMPOSING_ANALYSIS_CHORDANALYZER_H
+#pragma once
 
 #include <string>
 #include <vector>
@@ -207,14 +206,18 @@ std::string formatRomanNumeral(const ChordAnalysisResult& result, bool keyIsMajo
 
 } // namespace ChordSymbolFormatter
 
-// Returns analysis results for the harmonic context of `note`.
-// Also outputs keyFifths and isMajor (needed by the formatter).
-// Returns empty vector if analysis is not possible.
+/// Bridge function: extracts pitch context from a selected note and runs the chord
+/// and key/mode analyzers.  Declared here in the composing module, but **defined in
+/// src/notation/internal/notationaccessibility.cpp** — that file is the only place
+/// where both the engraving model (Note, Chord, Segment, …) and the composing
+/// analysis API are available together.  All future notation–composing bridge code
+/// should follow this pattern: declare in composing/, define in notation/.
+///
+/// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).
+/// Also populates outKeyFifths and outIsMajor so callers can pass them to the formatter.
 std::vector<ChordAnalysisResult>
 analyzeNoteHarmonicContext(const mu::engraving::Note* note,
                            int& outKeyFifths,
                            bool& outIsMajor);
 
 } // namespace mu::composing::analysis
-
-#endif // MU_COMPOSING_ANALYSIS_CHORDANALYZER_H
