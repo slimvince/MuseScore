@@ -6,6 +6,8 @@
 #include "pythagorean.h"
 #include "equal_temperament.h"
 #include "quarter_comma_meantone.h"
+#include "werckmeister.h"
+#include "kirnberger.h"
 #include <algorithm>
 
 namespace mu::composing::intonation {
@@ -19,6 +21,8 @@ static std::vector<std::unique_ptr<TuningSystem>>& registry()
         systems.emplace_back(std::make_unique<JustIntonation>());
         systems.emplace_back(std::make_unique<PythagoreanTuning>());
         systems.emplace_back(std::make_unique<QuarterCommaMeantone>());
+        systems.emplace_back(std::make_unique<WerckmeisterTemperament>());
+        systems.emplace_back(std::make_unique<KirnbergerTemperament>());
         initialized = true;
     }
     return systems;

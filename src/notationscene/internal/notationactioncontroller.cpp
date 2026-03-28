@@ -370,6 +370,13 @@ void NotationActionController::init()
         const QString text = args.arg<QString>(0);
         currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::ROMAN);
     });
+    registerAction("compose-tune-as", [this](const ActionData& args) {
+        IF_ASSERT_FAILED(args.count() >= 3) { return; }
+        const int rootPc  = args.arg<int>(0);
+        const int quality = args.arg<int>(1);
+        const QString key = args.arg<QString>(2);
+        currentNotationInteraction()->addAnalyzedTuning(rootPc, quality, key);
+    });
     registerAction("nashville-number-text", [this]() { addText(TextStyleType::HARMONY_NASHVILLE); });
     registerAction("lyrics", [this]() { addText(TextStyleType::LYRICS_ODD); });
     registerAction("tempo", [this]() { addText(TextStyleType::TEMPO); });

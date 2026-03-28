@@ -35,6 +35,7 @@
 #include "engraving/dom/note.h"
 
 #include "composing/analysis/chordanalyzer.h"
+#include "composing/intonation/tuning_system.h"
 
 #include <set>
 
@@ -73,8 +74,17 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
+    struct TuneAsEntry {
+        std::string label;
+        int rootPc;
+        int quality;
+    };
+
     MenuItemList chordMenuItems, romanMenuItems;
+    std::vector<TuneAsEntry> tuneAsEntries;
+    std::set<std::string> seenChordSymbols, seenNumerals;
     int chordCount = 0, romanCount = 0;
+
     for (const auto& res : analysisResults) {
         std::string symbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
         std::string numeral = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res, isMajor);
@@ -82,7 +92,8 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
         char buf[32];
         std::snprintf(buf, sizeof(buf), " (%.2f)", res.score);
 
-        if (wantChordSymbols && chordCount < maxAlternatives && !symbol.empty()) {
+        if (wantChordSymbols && chordCount < maxAlternatives && !symbol.empty()
+            && seenChordSymbols.insert(symbol).second) {
             std::string label = symbol + buf;
             MenuItem* item = new MenuItem(this);
             item->setId(QString("compose:add-chord-symbol:%1").arg(chordCount));
@@ -97,7 +108,9 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
             chordMenuItems << item;
             ++chordCount;
         }
-        if (wantRomanNumerals && romanCount < maxAlternatives && !numeral.empty()) {
+
+        if (wantRomanNumerals && romanCount < maxAlternatives && !numeral.empty()
+            && seenNumerals.insert(numeral).second) {
             std::string label = numeral + buf;
             MenuItem* item = new MenuItem(this);
             item->setId(QString("compose:add-roman-numeral:%1").arg(romanCount));
@@ -110,6 +123,7 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
             item->setState(state);
             item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(numeral)));
             romanMenuItems << item;
+            tuneAsEntries.push_back({ label, res.rootPc, static_cast<int>(res.quality) });
             ++romanCount;
         }
     }
@@ -122,6 +136,35 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
     }
     if (!romanMenuItems.isEmpty()) {
         items << makeMenu(TranslatableString("notation", "Add Roman numeral"), romanMenuItems);
+    }
+
+    // "Tune as [system name]" nested submenu — one leaf per unique Roman numeral result.
+    if (wantRomanNumerals && !tuneAsEntries.empty()) {
+        const std::string tuningKey = m_composingConfig()->tuningSystemKey();
+        const composing::intonation::TuningSystem* sys
+            = composing::intonation::TuningRegistry::byKey(tuningKey);
+        const std::string displayName = sys ? sys->displayName() : tuningKey;
+
+        const QString submenuTitle = QString("Tune as %1").arg(QString::fromStdString(displayName));
+        MenuItemList tuneAsItems;
+        int tuneIdx = 0;
+        for (const TuneAsEntry& entry : tuneAsEntries) {
+            MenuItem* item = new MenuItem(this);
+            item->setId(QString("compose:tune-as:%1").arg(tuneIdx++));
+            ui::UiAction action;
+            action.title = TranslatableString::untranslatable(QString::fromStdString(entry.label));
+            action.code = "compose-tune-as";
+            item->setAction(action);
+            ui::UiActionState state;
+            state.enabled = true;
+            item->setState(state);
+            item->setArgs(ActionData::make_arg3<int, int, QString>(
+                              entry.rootPc,
+                              entry.quality,
+                              QString::fromStdString(tuningKey)));
+            tuneAsItems << item;
+        }
+        items << makeMenu(TranslatableString::untranslatable(submenuTitle), tuneAsItems);
     }
 
     return items;

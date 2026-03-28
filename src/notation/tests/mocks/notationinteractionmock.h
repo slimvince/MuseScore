@@ -257,6 +257,7 @@ public:
     MOCK_METHOD(void, navigateToHarmonyInNearMeasure, (MoveDirection), (override));
     MOCK_METHOD(void, navigateToHarmony, (const Fraction&), (override));
     MOCK_METHOD(void, addAnalyzedHarmony, (const QString&, mu::engraving::HarmonyType), (override));
+    MOCK_METHOD(void, addAnalyzedTuning, (int, int, const QString&), (override));
 
     MOCK_METHOD(void, navigateToNearFiguredBass, (MoveDirection), (override));
     MOCK_METHOD(void, navigateToFiguredBassInNearMeasure, (MoveDirection), (override));

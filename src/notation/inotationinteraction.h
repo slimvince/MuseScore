@@ -255,6 +255,7 @@ public:
     virtual void addFretboardDiagram() = 0;
 
     virtual void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) = 0;
+    virtual void addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey) = 0;
 
     virtual void addStretch(qreal value) = 0;
 

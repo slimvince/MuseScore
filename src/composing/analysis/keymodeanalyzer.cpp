@@ -58,6 +58,8 @@ constexpr size_t AEOLIAN_INDEX = 5;
 /// evaluations table is sized dynamically to avoid the hardcoded-[12][2] fragility.
 constexpr std::array<size_t, 2> ACTIVE_MODE_INDICES = { IONIAN_INDEX, AEOLIAN_INDEX };
 
+} // anonymous namespace
+
 // ── Key-signature helpers ────────────────────────────────────────────────────
 
 /// Maps a modal tonic pitch class to the equivalent Ionian tonic that shares
@@ -69,6 +71,8 @@ int ionianTonicPcForMode(int tonicPc, size_t modeIndex)
     const int pc = tonicPc + IONIAN_OFFSETS[modeIndex];
     return (pc % 12 + 12) % 12;
 }
+
+namespace {
 
 /// Returns the one or two possible key-signature fifths values for an Ionian tonic
 /// pitch class.  Enharmonic equivalents (e.g. C#/Db) have two entries; unambiguous

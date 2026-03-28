@@ -99,6 +99,9 @@
 #include "engraving/rw/rwregister.h"
 #include "engraving/rw/xmlreader.h"
 
+#include "composing/intonation/tuning_system.h"
+#include "composing/intonation/tuning_utils.h"
+
 #include "notationerrors.h"
 #include "notation.h"
 #include "notationnoteinput.h"
@@ -8229,6 +8232,40 @@ void NotationInteraction::addAnalyzedHarmony(const QString& text, mu::engraving:
     apply();
     showItem(harmony);
     notifyAboutTextEditingEnded(harmony);
+}
+
+void NotationInteraction::addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey)
+{
+    using namespace mu::composing::intonation;
+    using namespace mu::composing::analysis;
+
+    const TuningSystem* sys = TuningRegistry::byKey(tuningKey.toStdString());
+    if (!sys) {
+        return;
+    }
+
+    EngravingItem* item = contextItem();
+    if (!item || !item->isNote()) {
+        return;
+    }
+    Chord* chord = toNote(item)->chord();
+    if (!chord) {
+        return;
+    }
+
+    auto chordQuality = static_cast<ChordQuality>(quality);
+    KeyModeAnalysisResult keyMode;   // unused by current implementations
+
+    startEdit(TranslatableString("undoableAction", "Tune as"));
+
+    for (Note* note : chord->notes()) {
+        const int notePc = (note->pitch() % 12 + 12) % 12;
+        const int semitones = semitoneFromPitches(notePc, rootPc);
+        const double deviation = sys->tuningOffset(keyMode, chordQuality, rootPc, semitones);
+        note->undoChangeProperty(Pid::TUNING, deviation);
+    }
+
+    apply();
 }
 
 Harmony* NotationInteraction::editedHarmony() const

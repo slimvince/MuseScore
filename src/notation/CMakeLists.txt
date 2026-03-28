@@ -132,6 +132,7 @@ target_link_libraries(notation PRIVATE
     muse::draw
     engraving
     composing_analysis
+    intonation
 )
 
 if(MUE_BUILD_NOTATION_TESTS)

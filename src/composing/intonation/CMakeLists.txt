@@ -10,6 +10,10 @@ target_sources(intonation PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/equal_temperament.h
     ${CMAKE_CURRENT_LIST_DIR}/pythagorean.h
     ${CMAKE_CURRENT_LIST_DIR}/quarter_comma_meantone.h
+    ${CMAKE_CURRENT_LIST_DIR}/werckmeister.h
+    ${CMAKE_CURRENT_LIST_DIR}/kirnberger.h
     ${CMAKE_CURRENT_LIST_DIR}/tuning_registry.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_utils.h
 )
+
+target_link_libraries(intonation PRIVATE composing_analysis)

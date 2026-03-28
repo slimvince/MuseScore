@@ -1,3 +1,9 @@
+
+namespace mu::composing::analysis {
+// Returns the tonic pitch class (0 = C, 1 = C#, ..., 11 = B) for a given tonic pitch class and mode index.
+// Used for mapping key signature and mode to tonic for key-dependent intonation systems.
+int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
+}
 /*
  * SPDX-License-Identifier: GPL-3.0-only
  * MuseScore-Studio-CLA-applies

@@ -16,6 +16,8 @@ enum class TuningSystemId {
     Just,
     Pythagorean,
     QuarterCommaMeantone,
+    Werckmeister,
+    Kirnberger,
 };
 
 /**
@@ -30,6 +32,8 @@ namespace TuningKey {
     constexpr const char* Just                 = "just";
     constexpr const char* Pythagorean          = "pythagorean";
     constexpr const char* QuarterCommaMeantone = "quarter_comma_meantone";
+    constexpr const char* Werckmeister         = "werckmeister";
+    constexpr const char* Kirnberger           = "kirnberger";
 }
 
 } // namespace mu::composing::intonation
