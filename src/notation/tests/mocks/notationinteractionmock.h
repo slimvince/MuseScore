@@ -216,6 +216,8 @@ public:
 
     MOCK_METHOD(void, explodeSelectedStaff, (), (override));
     MOCK_METHOD(void, implodeSelectedStaff, (), (override));
+    MOCK_METHOD(void, implodeToChordTrack, (engraving::staff_idx_t, bool), (override));
+    MOCK_METHOD(void, tuneSelection, (), (override));
 
     MOCK_METHOD(void, realizeSelectedChordSymbols, (bool, Voicing, HarmonyDurationType), (override));
     MOCK_METHOD(void, extendToNextNote, (), (override));

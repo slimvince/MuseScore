@@ -9019,7 +9019,7 @@ void ExportMusicXml::harmony(Harmony const* const h, FretDiagram const* const fd
                         int tagDegree = tag.mid(3).toInt();
                         String kindTextExtension;
                         for (size_t i = 0; i < kindText.size() && kindText.at(i).isDigit(); ++i) {
-                            kindTextExtension[i] = kindText[i];
+                            kindTextExtension += kindText.at(i);
                         }
                         int kindExtension = kindTextExtension.toInt();
                         if (tagDegree <= kindExtension && (tagDegree & 1) && (kindExtension & 1)) {
@@ -9029,10 +9029,10 @@ void ExportMusicXml::harmony(Harmony const* const h, FretDiagram const* const fd
                     m_xml.startElement("degree");
                     alter = 0;
                     int idx = 3;
-                    if (tag[idx] == '#') {
+                    if (idx < static_cast<int>(tag.size()) && tag[idx] == '#') {
                         alter = 1;
                         ++idx;
-                    } else if (tag[idx] == 'b') {
+                    } else if (idx < static_cast<int>(tag.size()) && tag[idx] == 'b') {
                         alter = -1;
                         ++idx;
                     }

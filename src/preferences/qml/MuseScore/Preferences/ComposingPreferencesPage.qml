@@ -49,6 +49,10 @@ PreferencesPage {
             inferKeyMode:            preferencesModel.inferKeyMode
             analysisAlternatives:    preferencesModel.analysisAlternatives
             tuningSystemKey:         preferencesModel.tuningSystemKey
+            modeTierWeight1:         preferencesModel.modeTierWeight1
+            modeTierWeight2:         preferencesModel.modeTierWeight2
+            modeTierWeight3:         preferencesModel.modeTierWeight3
+            modeTierWeight4:         preferencesModel.modeTierWeight4
 
             navigation.section: root.navigationSection
             navigation.order: root.navigationOrderStart + 1
@@ -58,6 +62,10 @@ PreferencesPage {
             onInferKeyModeChangeRequested:            function(value) { preferencesModel.inferKeyMode            = value }
             onAnalysisAlternativesChangeRequested:    function(count) { preferencesModel.analysisAlternatives    = count }
             onTuningSystemKeyChangeRequested:         function(key)   { preferencesModel.tuningSystemKey         = key   }
+            onModeTierWeight1ChangeRequested:         function(value) { preferencesModel.modeTierWeight1         = value }
+            onModeTierWeight2ChangeRequested:         function(value) { preferencesModel.modeTierWeight2         = value }
+            onModeTierWeight3ChangeRequested:         function(value) { preferencesModel.modeTierWeight3         = value }
+            onModeTierWeight4ChangeRequested:         function(value) { preferencesModel.modeTierWeight4         = value }
         }
 
         SeparatorLine { }

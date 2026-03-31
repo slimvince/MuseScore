@@ -52,7 +52,7 @@ public:
     virtual void setInferKeyMode(bool value) = 0;
     virtual muse::async::Notification inferKeyModeChanged() const = 0;
 
-    /// Number of alternative chord interpretations offered in the context menu (1–5).
+    /// Number of alternative chord interpretations offered in the context menu (1–3).
     virtual int analysisAlternatives() const = 0;
     virtual void setAnalysisAlternatives(int count) = 0;
     virtual muse::async::Notification analysisAlternativesChanged() const = 0;
@@ -80,6 +80,32 @@ public:
     virtual int statusBarRomanNumeralCount() const = 0;
     virtual void setStatusBarRomanNumeralCount(int count) = 0;
     virtual muse::async::Notification statusBarRomanNumeralCountChanged() const = 0;
+
+    // ── Mode tier weights ───────────────────────────────────────────────────
+    //
+    // Additive scoring bias for four tiers of diatonic modes, controlling how
+    // strongly the key/mode analyzer favors common modes over rare ones.
+    // Range: -5.0 (effectively blocked) to +3.0 (strongly favored).
+
+    /// Tier 1: Major / Minor (Ionian, Aeolian).  Default: +1.0.
+    virtual double modeTierWeight1() const = 0;
+    virtual void setModeTierWeight1(double value) = 0;
+    virtual muse::async::Notification modeTierWeight1Changed() const = 0;
+
+    /// Tier 2: Dorian / Mixolydian.  Default: -0.5.
+    virtual double modeTierWeight2() const = 0;
+    virtual void setModeTierWeight2(double value) = 0;
+    virtual muse::async::Notification modeTierWeight2Changed() const = 0;
+
+    /// Tier 3: Lydian / Phrygian.  Default: -1.5.
+    virtual double modeTierWeight3() const = 0;
+    virtual void setModeTierWeight3(double value) = 0;
+    virtual muse::async::Notification modeTierWeight3Changed() const = 0;
+
+    /// Tier 4: Locrian.  Default: -3.0.
+    virtual double modeTierWeight4() const = 0;
+    virtual void setModeTierWeight4(double value) = 0;
+    virtual muse::async::Notification modeTierWeight4Changed() const = 0;
 };
 
 } // namespace mu::composing

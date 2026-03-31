@@ -69,8 +69,8 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
     }
 
     int keyFifths = 0;
-    bool isMajor = false;
-    auto analysisResults = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, isMajor);
+    mu::composing::analysis::KeyMode keyMode = mu::composing::analysis::KeyMode::Ionian;
+    auto analysisResults = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
@@ -87,7 +87,7 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
 
     for (const auto& res : analysisResults) {
         std::string symbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
-        std::string numeral = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res, isMajor);
+        std::string numeral = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
 
         char buf[32];
         std::snprintf(buf, sizeof(buf), " (%.2f)", res.score);

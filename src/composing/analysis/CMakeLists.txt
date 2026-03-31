@@ -24,6 +24,7 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/analysisutils.h
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/harmonicrhythm.h
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.h
 )

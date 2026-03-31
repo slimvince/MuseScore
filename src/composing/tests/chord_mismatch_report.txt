@@ -1,16 +1,276 @@
 === Abstract chord mismatch summary: total=0 ===
 Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
 
-=== Symbol/Roman mismatch summary: total=5 ===
+=== Symbol/Roman mismatch summary: total=135 ===
 Per-measure symbol mismatches (abstract correct; inspect pitches to determine
   whether this is a formatter bug or a catalog annotation inconsistency):
-measure 60 [symbol]  xml='Cm9b5'  analyzer='Cm7b5'
+measure 12 [roman]  roman xml='IM7'  analyzer='IM9'
+  key=0maj  pitches=[60,64,67,71,74]  pcs=[0,4,7,11,2]  tpcs=[15,19,16,20,17]
+measure 14 [roman]  roman xml='IM7'  analyzer='IM9#11'
+  key=0maj  pitches=[60,64,67,71,74,78]  pcs=[0,4,7,11,2,6]  tpcs=[15,19,16,20,17,21]
+measure 16 [roman]  roman xml='IM7'  analyzer='IM13#11'
+  key=0maj  pitches=[60,64,67,71,74,78,81]  pcs=[0,4,7,11,2,6,9]  tpcs=[15,19,16,20,17,21,18]
+measure 18 [roman]  roman xml='IM7'  analyzer='IM13'
+  key=0maj  pitches=[60,64,67,71,74,77,81]  pcs=[0,4,7,11,2,5,9]  tpcs=[15,19,16,20,17,14,18]
+measure 20 [roman]  roman xml='IM7'  analyzer='IM9'
+  key=0maj  pitches=[60,67,71,74]  pcs=[0,7,11,2]  tpcs=[15,16,20,17]
+measure 26 [roman]  roman xml='I'  analyzer='I(add9)'
+  key=0maj  pitches=[60,62,64,67]  pcs=[0,2,4,7]  tpcs=[15,17,19,16]
+measure 36 [roman]  roman xml='i7'  analyzer='i9'
+  key=0maj  pitches=[60,63,67,70,74]  pcs=[0,3,7,10,2]  tpcs=[15,12,16,13,17]
+measure 38 [roman]  roman xml='i7'  analyzer='i11'
+  key=0maj  pitches=[60,63,67,70,74,77]  pcs=[0,3,7,10,2,5]  tpcs=[15,12,16,13,17,14]
+measure 40 [roman]  roman xml='i7'  analyzer='i13'
+  key=0maj  pitches=[60,63,67,70,74,77,81]  pcs=[0,3,7,10,2,5,9]  tpcs=[15,12,16,13,17,14,18]
+measure 46 [roman]  roman xml='i7'  analyzer='i7#5'
+  key=0maj  pitches=[60,63,68,70]  pcs=[0,3,8,10]  tpcs=[15,12,23,13]
+measure 54 [roman]  roman xml='IM7'  analyzer='IM7b5'
+  key=0maj  pitches=[60,64,66,71]  pcs=[0,4,6,11]  tpcs=[15,19,9,20]
+measure 56 [roman]  roman xml='iø7'  analyzer='iø7#11'
+  key=0maj  pitches=[60,63,66,70]  pcs=[0,3,6,10]  tpcs=[15,12,9,13]
+measure 60 [symbol+roman]  xml='Cm9b5'  analyzer='Cm7b5'  roman xml='iø7'  analyzer='iø9#11'
   key=0maj  pitches=[60,63,66,70,74]  pcs=[0,3,6,10,2]  tpcs=[15,12,9,13,17]
-measure 164 [symbol]  xml='C7alt'  analyzer='C7b9b5'
+measure 61 [roman]  roman xml='iø7'  analyzer='iø9#11'
+  key=0maj  pitches=[60,63,66,70,74]  pcs=[0,3,6,10,2]  tpcs=[15,12,9,13,17]
+measure 67 [symbol+roman]  xml='C9+'  analyzer='C9#5'  roman xml='I+7'  analyzer='I+9'
+  key=0maj  pitches=[60,64,68,70,74]  pcs=[0,4,8,10,2]  tpcs=[15,19,11,13,17]
+measure 69 [symbol+roman]  xml='C13+'  analyzer='C13#5'  roman xml='I+7'  analyzer='I+13'
+  key=0maj  pitches=[60,64,68,70,74,81]  pcs=[0,4,8,10,2,9]  tpcs=[15,19,23,13,17,18]
+measure 74 [roman]  roman xml='I7'  analyzer='I13'
+  key=0maj  pitches=[60,64,67,70,74,77,81]  pcs=[0,4,7,10,2,5,9]  tpcs=[15,19,16,13,17,14,18]
+measure 76 [roman]  roman xml='I7'  analyzer='I7b13'
+  key=0maj  pitches=[60,64,67,68,70]  pcs=[0,4,7,8,10]  tpcs=[15,19,16,11,13]
+measure 78 [roman]  roman xml='I7'  analyzer='I7#11'
+  key=0maj  pitches=[60,64,66,67,70]  pcs=[0,4,6,7,10]  tpcs=[15,19,21,16,13]
+measure 80 [roman]  roman xml='I7'  analyzer='I13#11'
+  key=0maj  pitches=[60,64,66,67,70,74,77,81]  pcs=[0,4,6,7,10,2,5,9]  tpcs=[15,19,21,16,13,17,14,18]
+measure 82 [roman]  roman xml='I7'  analyzer='I7#11b13'
+  key=0maj  pitches=[60,64,67,70,78,80]  pcs=[0,4,7,10,6,8]  tpcs=[15,19,16,13,21,11]
+measure 84 [roman]  roman xml='I7'  analyzer='I9'
+  key=0maj  pitches=[60,64,67,70,74]  pcs=[0,4,7,10,2]  tpcs=[15,19,16,13,17]
+measure 86 [roman]  roman xml='I7'  analyzer='I9b13'
+  key=0maj  pitches=[60,64,67,70,74,80]  pcs=[0,4,7,10,2,8]  tpcs=[15,19,16,13,17,11]
+measure 88 [roman]  roman xml='I7'  analyzer='I9#11'
+  key=0maj  pitches=[60,64,67,70,74,78]  pcs=[0,4,7,10,2,6]  tpcs=[15,19,16,13,17,21]
+measure 90 [roman]  roman xml='I7'  analyzer='I9#11b13'
+  key=0maj  pitches=[60,64,67,70,74,78,80]  pcs=[0,4,7,10,2,6,8]  tpcs=[15,19,16,13,17,21,11]
+measure 92 [roman]  roman xml='I7'  analyzer='I7b9'
+  key=0maj  pitches=[60,64,67,70,73]  pcs=[0,4,7,10,1]  tpcs=[15,19,16,13,10]
+measure 94 [roman]  roman xml='I7'  analyzer='I13b9'
+  key=0maj  pitches=[60,64,67,70,73,77,81]  pcs=[0,4,7,10,1,5,9]  tpcs=[15,19,16,13,10,14,18]
+measure 96 [roman]  roman xml='I7'  analyzer='I7b9b13'
+  key=0maj  pitches=[60,64,67,70,73,80]  pcs=[0,4,7,10,1,8]  tpcs=[15,19,16,13,10,11]
+measure 98 [roman]  roman xml='I7'  analyzer='I7b9#11'
+  key=0maj  pitches=[60,64,67,70,73,78]  pcs=[0,4,7,10,1,6]  tpcs=[15,19,16,13,10,21]
+measure 100 [symbol+roman]  xml='C13b9#11'  analyzer='C13#11b9'  roman xml='I7'  analyzer='I13b9#11'
+  key=0maj  pitches=[60,64,67,70,73,78,81]  pcs=[0,4,7,10,1,6,9]  tpcs=[15,19,16,13,10,21,18]
+measure 102 [roman]  roman xml='I7'  analyzer='I7b9#11b13'
+  key=0maj  pitches=[60,64,67,70,73,78,80]  pcs=[0,4,7,10,1,6,8]  tpcs=[15,19,16,13,10,21,11]
+measure 104 [roman]  roman xml='I7'  analyzer='I7#9'
+  key=0maj  pitches=[60,64,67,70,75]  pcs=[0,4,7,10,3]  tpcs=[15,19,16,13,12]
+measure 106 [roman]  roman xml='I7'  analyzer='I13#9'
+  key=0maj  pitches=[60,64,67,70,75,77,81]  pcs=[0,4,7,10,3,5,9]  tpcs=[15,19,16,13,24,14,18]
+measure 108 [roman]  roman xml='I7'  analyzer='I7#9b13'
+  key=0maj  pitches=[60,64,67,70,75,80]  pcs=[0,4,7,10,3,8]  tpcs=[15,19,16,13,24,11]
+measure 110 [symbol+roman]  xml='C13#9#11'  analyzer='C13#11#9'  roman xml='I7'  analyzer='I13#9#11'
+  key=0maj  pitches=[60,64,67,70,75,78,81]  pcs=[0,4,7,10,3,6,9]  tpcs=[15,19,16,13,24,21,18]
+measure 112 [roman]  roman xml='I7'  analyzer='I7#9#11b13'
+  key=0maj  pitches=[60,64,67,70,75,78,80]  pcs=[0,4,7,10,3,6,8]  tpcs=[15,19,16,13,24,21,11]
+measure 114 [roman]  roman xml='I7'  analyzer='I7b5'
+  key=0maj  pitches=[60,64,66,70]  pcs=[0,4,6,10]  tpcs=[15,19,9,13]
+measure 116 [roman]  roman xml='I7'  analyzer='I13b5'
+  key=0maj  pitches=[60,64,66,70,74,77,81]  pcs=[0,4,6,10,2,5,9]  tpcs=[15,19,9,13,17,14,18]
+measure 119 [roman]  roman xml='I7'  analyzer='I13b5'
+  key=0maj  pitches=[60,64,66,70,81]  pcs=[0,4,6,10,9]  tpcs=[15,19,9,13,18]
+measure 121 [roman]  roman xml='I7'  analyzer='I9b5'
+  key=0maj  pitches=[60,64,66,70,74]  pcs=[0,4,6,10,2]  tpcs=[15,19,9,13,17]
+measure 123 [symbol+roman]  xml='C9b5b13'  analyzer='C9b13b5'  roman xml='I7'  analyzer='I9b5b13'
+  key=0maj  pitches=[60,64,66,70,74,80]  pcs=[0,4,6,10,2,8]  tpcs=[15,19,9,13,17,11]
+measure 125 [symbol+roman]  xml='C7b5b9'  analyzer='C7b9b5'  roman xml='I7'  analyzer='I7b5b9'
   key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
+measure 127 [symbol+roman]  xml='C13b5b9'  analyzer='C13b9b5'  roman xml='I7'  analyzer='I13b5b9'
+  key=0maj  pitches=[60,64,66,70,73,77,81]  pcs=[0,4,6,10,1,5,9]  tpcs=[15,19,9,13,10,14,18]
+measure 129 [symbol+roman]  xml='C7b5b9b13'  analyzer='C7b9b13b5'  roman xml='I7'  analyzer='I7b5b9b13'
+  key=0maj  pitches=[60,64,66,70,73,80]  pcs=[0,4,6,10,1,8]  tpcs=[15,19,9,13,10,11]
+measure 131 [symbol+roman]  xml='C7b5#9'  analyzer='C7#9b5'  roman xml='I7'  analyzer='I7b5#9'
+  key=0maj  pitches=[60,64,66,70,75]  pcs=[0,4,6,10,3]  tpcs=[15,19,9,13,24]
+measure 133 [symbol+roman]  xml='C13b5#9'  analyzer='C13#9b5'  roman xml='I7'  analyzer='I13b5#9'
+  key=0maj  pitches=[60,64,66,70,75,77,81]  pcs=[0,4,6,10,3,5,9]  tpcs=[15,19,9,13,24,14,18]
+measure 135 [symbol+roman]  xml='C7b5#9b13'  analyzer='C7#9b13b5'  roman xml='I7'  analyzer='I7b5#9b13'
+  key=0maj  pitches=[60,64,66,70,75,80]  pcs=[0,4,6,10,3,8]  tpcs=[15,19,9,13,24,11]
+measure 139 [roman]  roman xml='I+7'  analyzer='I+13'
+  key=0maj  pitches=[60,64,68,70,74,77,81]  pcs=[0,4,8,10,2,5,9]  tpcs=[15,19,23,13,17,14,18]
+measure 142 [roman]  roman xml='I+7'  analyzer='I+7#9'
+  key=0maj  pitches=[60,64,68,70,75]  pcs=[0,4,8,10,3]  tpcs=[15,19,23,13,24]
+measure 144 [roman]  roman xml='I+7'  analyzer='I+13#11'
+  key=0maj  pitches=[60,64,68,70,74,78,81]  pcs=[0,4,8,10,2,6,9]  tpcs=[15,19,23,13,17,21,18]
+measure 146 [roman]  roman xml='I+7'  analyzer='I+9'
+  key=0maj  pitches=[60,64,68,70,74]  pcs=[0,4,8,10,2]  tpcs=[15,19,23,13,17]
+measure 148 [roman]  roman xml='I+7'  analyzer='I+9#11'
+  key=0maj  pitches=[60,64,68,70,74,78]  pcs=[0,4,8,10,2,6]  tpcs=[15,19,23,13,17,21]
+measure 150 [roman]  roman xml='I+7'  analyzer='I+7b9'
+  key=0maj  pitches=[60,64,68,70,73]  pcs=[0,4,8,10,1]  tpcs=[15,19,23,13,10]
+measure 152 [roman]  roman xml='I+7'  analyzer='I+13b9'
+  key=0maj  pitches=[60,64,68,70,73,77,81]  pcs=[0,4,8,10,1,5,9]  tpcs=[15,19,23,13,10,14,18]
+measure 154 [roman]  roman xml='I+7'  analyzer='I+7b9#11'
+  key=0maj  pitches=[60,64,68,70,73,78]  pcs=[0,4,8,10,1,6]  tpcs=[15,19,23,13,10,21]
+measure 156 [roman]  roman xml='I+7'  analyzer='I+13b9#11'
+  key=0maj  pitches=[60,64,68,70,73,78,81]  pcs=[0,4,8,10,1,6,9]  tpcs=[15,19,23,13,10,21,18]
+measure 158 [roman]  roman xml='I+7'  analyzer='I+7#9'
+  key=0maj  pitches=[60,64,68,70,75]  pcs=[0,4,8,10,3]  tpcs=[15,19,23,13,24]
+measure 160 [roman]  roman xml='I+7'  analyzer='I+13#9#11'
+  key=0maj  pitches=[60,64,68,70,75,78,81]  pcs=[0,4,8,10,3,6,9]  tpcs=[15,19,23,13,24,21,18]
+measure 162 [roman]  roman xml='I+7'  analyzer='I+7#9#11'
+  key=0maj  pitches=[60,64,68,70,75,78]  pcs=[0,4,8,10,3,6]  tpcs=[15,19,23,13,24,21]
+measure 164 [symbol+roman]  xml='C7alt'  analyzer='C7b9b5'  roman xml='I7'  analyzer='I7b5b9'
+  key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
+measure 165 [roman]  roman xml='I+7'  analyzer='I+7#9#11'
+  key=0maj  pitches=[60,64,68,70,75,78]  pcs=[0,4,8,10,3,6]  tpcs=[15,19,23,13,24,21]
+measure 167 [roman]  roman xml='Isus4'  analyzer='I11sus4'
+  key=0maj  pitches=[60,65,67,70]  pcs=[0,5,7,10]  tpcs=[15,14,16,13]
+measure 169 [roman]  roman xml='Isus4'  analyzer='I13sus4'
+  key=0maj  pitches=[60,65,67,70,74,81]  pcs=[0,5,7,10,2,9]  tpcs=[15,14,16,13,17,18]
+measure 171 [roman]  roman xml='Isus4'  analyzer='I11b13sus4'
+  key=0maj  pitches=[60,65,67,70,80]  pcs=[0,5,7,10,8]  tpcs=[15,14,16,13,11]
+measure 173 [roman]  roman xml='Isus4'  analyzer='I11#11sus4'
+  key=0maj  pitches=[60,65,67,70,78]  pcs=[0,5,7,10,6]  tpcs=[15,14,16,13,21]
+measure 175 [roman]  roman xml='Isus4'  analyzer='I13#11sus4'
+  key=0maj  pitches=[60,65,67,70,74,78,81]  pcs=[0,5,7,10,2,6,9]  tpcs=[15,14,16,13,17,21,18]
+measure 177 [roman]  roman xml='Isus4'  analyzer='I11#11b13sus4'
+  key=0maj  pitches=[60,65,67,70,78,80]  pcs=[0,5,7,10,6,8]  tpcs=[15,14,16,13,21,11]
+measure 179 [roman]  roman xml='Isus4'  analyzer='I11sus4'
+  key=0maj  pitches=[60,65,67,70,74]  pcs=[0,5,7,10,2]  tpcs=[15,14,16,13,17]
+measure 181 [roman]  roman xml='Isus4'  analyzer='I11b13sus4'
+  key=0maj  pitches=[60,65,67,70,74,80]  pcs=[0,5,7,10,2,8]  tpcs=[15,14,16,13,17,11]
+measure 183 [roman]  roman xml='Isus4'  analyzer='I11#11sus4'
+  key=0maj  pitches=[60,65,67,70,74,78]  pcs=[0,5,7,10,2,6]  tpcs=[15,14,16,13,17,21]
+measure 185 [roman]  roman xml='Isus4'  analyzer='I11#11b13sus4'
+  key=0maj  pitches=[60,65,67,70,74,78,80]  pcs=[0,5,7,10,2,6,8]  tpcs=[15,14,16,13,17,21,11]
+measure 187 [roman]  roman xml='Isus4'  analyzer='I11b9sus4'
+  key=0maj  pitches=[60,65,67,70,73]  pcs=[0,5,7,10,1]  tpcs=[15,14,16,13,10]
+measure 189 [roman]  roman xml='Isus4'  analyzer='I13b9sus4'
+  key=0maj  pitches=[60,65,67,70,73,77,81]  pcs=[0,5,7,10,1,5,9]  tpcs=[15,14,16,13,10,14,18]
+measure 191 [roman]  roman xml='Isus4'  analyzer='I11b9b13sus4'
+  key=0maj  pitches=[60,65,67,70,73,80]  pcs=[0,5,7,10,1,8]  tpcs=[15,14,16,13,10,11]
+measure 193 [roman]  roman xml='Isus4'  analyzer='I11b9#11sus4'
+  key=0maj  pitches=[60,65,67,70,73,78]  pcs=[0,5,7,10,1,6]  tpcs=[15,14,16,13,10,21]
+measure 195 [roman]  roman xml='Isus4'  analyzer='I13b9#11sus4'
+  key=0maj  pitches=[60,65,67,70,73,78,81]  pcs=[0,5,7,10,1,6,9]  tpcs=[15,14,16,13,10,21,18]
+measure 197 [roman]  roman xml='Isus4'  analyzer='I11b9#11b13sus4'
+  key=0maj  pitches=[60,65,67,70,73,78,80]  pcs=[0,5,7,10,1,6,8]  tpcs=[15,14,16,13,10,21,11]
+measure 199 [roman]  roman xml='Isus4'  analyzer='I11#9sus4'
+  key=0maj  pitches=[60,65,67,70,75]  pcs=[0,5,7,10,3]  tpcs=[15,14,16,13,24]
+measure 201 [roman]  roman xml='Isus4'  analyzer='I13#9sus4'
+  key=0maj  pitches=[60,65,67,70,75,81]  pcs=[0,5,7,10,3,9]  tpcs=[15,14,16,13,24,18]
+measure 203 [roman]  roman xml='Isus4'  analyzer='I11#9b13sus4'
+  key=0maj  pitches=[60,65,67,70,75,80]  pcs=[0,5,7,10,3,8]  tpcs=[15,14,16,13,24,11]
+measure 205 [roman]  roman xml='Isus4'  analyzer='I13#9#11sus4'
+  key=0maj  pitches=[60,65,67,70,75,78,81]  pcs=[0,5,7,10,3,6,9]  tpcs=[15,14,16,13,24,21,18]
+measure 207 [roman]  roman xml='Isus4'  analyzer='I11#9#11b13sus4'
+  key=0maj  pitches=[60,65,67,70,75,78,80]  pcs=[0,5,7,10,3,6,8]  tpcs=[15,14,16,13,24,21,11]
+measure 209 [roman]  roman xml='Isus4'  analyzer='I11b5sus4'
+  key=0maj  pitches=[60,65,66,70]  pcs=[0,5,6,10]  tpcs=[15,14,9,13]
+measure 211 [roman]  roman xml='Isus4'  analyzer='I13b5sus4'
+  key=0maj  pitches=[60,65,66,70,74,81]  pcs=[0,5,6,10,2,9]  tpcs=[15,14,9,13,17,18]
+measure 213 [roman]  roman xml='Isus4'  analyzer='I11b5b13sus4'
+  key=0maj  pitches=[60,65,66,70,80]  pcs=[0,5,6,10,8]  tpcs=[15,14,9,13,11]
+measure 215 [roman]  roman xml='Isus4'  analyzer='I11b5sus4'
+  key=0maj  pitches=[60,65,66,70,74]  pcs=[0,5,6,10,2]  tpcs=[15,14,9,13,17]
+measure 217 [roman]  roman xml='Isus4'  analyzer='I11b5b13sus4'
+  key=0maj  pitches=[60,65,66,70,74,80]  pcs=[0,5,6,10,2,8]  tpcs=[15,14,9,13,17,11]
+measure 219 [roman]  roman xml='Isus4'  analyzer='I11b5b9sus4'
+  key=0maj  pitches=[60,65,66,70,73]  pcs=[0,5,6,10,1]  tpcs=[15,14,9,13,10]
+measure 222 [roman]  roman xml='Isus4'  analyzer='I13b5sus4'
+  key=0maj  pitches=[60,65,66,70,74,81]  pcs=[0,5,6,10,2,9]  tpcs=[15,14,9,13,17,18]
+measure 224 [roman]  roman xml='Isus4'  analyzer='I11b5b9b13sus4'
+  key=0maj  pitches=[60,65,66,70,73,80]  pcs=[0,5,6,10,1,8]  tpcs=[15,14,9,13,10,11]
+measure 226 [roman]  roman xml='Isus4'  analyzer='I11b5#9sus4'
+  key=0maj  pitches=[60,65,66,70,75]  pcs=[0,5,6,10,3]  tpcs=[15,14,9,13,12]
+measure 228 [roman]  roman xml='Isus4'  analyzer='I13b5#9sus4'
+  key=0maj  pitches=[60,65,66,70,75,81]  pcs=[0,5,6,10,3,9]  tpcs=[15,14,9,13,24,18]
+measure 230 [roman]  roman xml='Isus4'  analyzer='I11b5#9b13sus4'
+  key=0maj  pitches=[60,65,66,70,75,80]  pcs=[0,5,6,10,3,8]  tpcs=[15,14,9,13,12,11]
+measure 232 [roman]  roman xml='Isus4'  analyzer='I11#5sus4'
+  key=0maj  pitches=[60,65,68,70]  pcs=[0,5,8,10]  tpcs=[15,14,11,13]
+measure 234 [roman]  roman xml='Isus4'  analyzer='I13#5sus4'
+  key=0maj  pitches=[60,65,68,70,74,81]  pcs=[0,5,8,10,2,9]  tpcs=[15,14,23,13,17,18]
+measure 237 [roman]  roman xml='Isus4'  analyzer='I11#5sus4'
+  key=0maj  pitches=[60,65,68,70]  pcs=[0,5,8,10]  tpcs=[15,14,11,13]
+measure 239 [roman]  roman xml='Isus4'  analyzer='I13#5#11sus4'
+  key=0maj  pitches=[60,65,68,70,74,78,81]  pcs=[0,5,8,10,2,6,9]  tpcs=[15,14,23,13,17,21,18]
+measure 241 [roman]  roman xml='Isus4'  analyzer='I11#5sus4'
+  key=0maj  pitches=[60,65,68,70,74]  pcs=[0,5,8,10,2]  tpcs=[15,14,23,13,17]
+measure 243 [roman]  roman xml='Isus4'  analyzer='I11#5#11sus4'
+  key=0maj  pitches=[60,65,68,70,74,78]  pcs=[0,5,8,10,2,6]  tpcs=[15,14,23,13,17,21]
+measure 245 [roman]  roman xml='Isus4'  analyzer='I11#5b9sus4'
+  key=0maj  pitches=[60,65,68,70,73]  pcs=[0,5,8,10,1]  tpcs=[15,14,11,13,10]
+measure 247 [roman]  roman xml='Isus4'  analyzer='I13#5b9sus4'
+  key=0maj  pitches=[60,65,68,70,73,81]  pcs=[0,5,8,10,1,9]  tpcs=[15,14,23,13,10,18]
+measure 250 [roman]  roman xml='Isus4'  analyzer='I11b5b9b13sus4'
+  key=0maj  pitches=[60,65,68,70,73,78]  pcs=[0,5,8,10,1,6]  tpcs=[15,14,11,13,10,9]
+measure 252 [roman]  roman xml='Isus4'  analyzer='I13#5b9#11sus4'
+  key=0maj  pitches=[60,65,68,70,73,78,81]  pcs=[0,5,8,10,1,6,9]  tpcs=[15,14,23,13,10,21,18]
+measure 254 [roman]  roman xml='Isus4'  analyzer='I11#5#9sus4'
+  key=0maj  pitches=[60,65,68,70,75]  pcs=[0,5,8,10,3]  tpcs=[15,14,11,13,12]
+measure 256 [roman]  roman xml='Isus4'  analyzer='I13#5#9#11sus4'
+  key=0maj  pitches=[60,65,68,70,75,78,81]  pcs=[0,5,8,10,3,6,9]  tpcs=[15,14,23,13,24,21,18]
+measure 259 [roman]  roman xml='Isus4'  analyzer='I11b5#9b13sus4'
+  key=0maj  pitches=[60,65,68,70,75,78]  pcs=[0,5,8,10,3,6]  tpcs=[15,14,11,13,12,9]
+measure 261 [roman]  roman xml='I'  analyzer='I(add11)'
+  key=0maj  pitches=[60,64,65,67]  pcs=[0,4,5,7]  tpcs=[15,19,14,16]
+measure 273 [roman]  roman xml='I'  analyzer='I(add#11)'
+  key=0maj  pitches=[60,64,67,78,82]  pcs=[0,4,7,6,10]  tpcs=[15,19,16,21,25]
+measure 281 [roman]  roman xml='I7'  analyzer='I11'
+  key=0maj  pitches=[60,64,67,70,74,77]  pcs=[0,4,7,10,2,5]  tpcs=[15,19,16,13,17,14]
+measure 283 [roman]  roman xml='IM7'  analyzer='IM11'
+  key=0maj  pitches=[60,64,67,71,74,77]  pcs=[0,4,7,11,2,5]  tpcs=[15,19,16,20,17,14]
 measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,70,74]  pcs=[0,6,10,2]  tpcs=[15,21,25,17]
-measure 333 [symbol]  xml='CPhryg'  analyzer='Cm11'
+measure 287 [roman]  roman xml='i7'  analyzer='i11'
+  key=0maj  pitches=[60,63,65,67,70]  pcs=[0,3,5,7,10]  tpcs=[15,12,14,16,13]
+measure 289 [roman]  roman xml='IM7'  analyzer='IM13'
+  key=0maj  pitches=[60,64,67,69,71]  pcs=[0,4,7,9,11]  tpcs=[15,19,16,18,20]
+measure 291 [roman]  roman xml='i'  analyzer='i(add9)'
+  key=0maj  pitches=[60,62,63,67]  pcs=[0,2,3,7]  tpcs=[15,17,12,16]
+measure 294 [roman]  roman xml='iM7'  analyzer='iM9'
+  key=0maj  pitches=[60,63,67,71,74]  pcs=[0,3,7,11,2]  tpcs=[15,12,16,20,17]
+measure 296 [roman]  roman xml='Isus4'  analyzer='I11b5#9sus4'
+  key=0maj  pitches=[60,63,66,70,74,77]  pcs=[0,3,6,10,2,5]  tpcs=[15,12,9,13,17,14]
+measure 302 [roman]  roman xml='I+7'  analyzer='I+9'
+  key=0maj  pitches=[60,64,68,70,74]  pcs=[0,4,8,10,2]  tpcs=[15,19,23,13,17]
+measure 309 [roman]  roman xml='I+7'  analyzer='I+13'
+  key=0maj  pitches=[60,64,68,70,74,81]  pcs=[0,4,8,10,2,9]  tpcs=[15,19,23,13,17,18]
+measure 312 [roman]  roman xml='IM7'  analyzer='IM7#11'
+  key=0maj  pitches=[60,64,67,71,78]  pcs=[0,4,7,11,6]  tpcs=[15,19,16,20,21]
+measure 314 [roman]  roman xml='I+M7'  analyzer='I+M9'
+  key=0maj  pitches=[60,64,68,71,74]  pcs=[0,4,8,11,2]  tpcs=[15,19,23,20,17]
+measure 316 [roman]  roman xml='IM7'  analyzer='IM7#9'
+  key=0maj  pitches=[60,64,67,71,75]  pcs=[0,4,7,11,3]  tpcs=[15,19,16,20,24]
+measure 319 [roman]  roman xml='I'  analyzer='I(add9)'
+  key=0maj  pitches=[60,62,64,67]  pcs=[0,2,4,7]  tpcs=[15,17,19,16]
+measure 321 [roman]  roman xml='I'  analyzer='I(add9)'
+  key=0maj  pitches=[60,62,64,67]  pcs=[0,2,4,7]  tpcs=[15,17,19,16]
+measure 325 [roman]  roman xml='IM7'  analyzer='IM11'
+  key=0maj  pitches=[60,65,67,71]  pcs=[0,5,7,11]  tpcs=[15,14,16,20]
+measure 327 [roman]  roman xml='IM7'  analyzer='IM11'
+  key=0maj  pitches=[60,65,67,71,74]  pcs=[0,5,7,11,2]  tpcs=[15,14,16,20,17]
+measure 329 [roman]  roman xml='i7'  analyzer='i7b9'
+  key=0maj  pitches=[60,63,67,70,73]  pcs=[0,3,7,10,1]  tpcs=[15,12,16,13,10]
+measure 331 [roman]  roman xml='i7'  analyzer='i7b13'
+  key=0maj  pitches=[60,63,67,70,80]  pcs=[0,3,7,10,8]  tpcs=[15,12,16,13,11]
+measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm11'  roman xml='i7'  analyzer='i11b9'
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
+measure 336 [roman]  roman xml='i'  analyzer='i(add9)'
+  key=0maj  pitches=[60,62,63,67]  pcs=[0,2,3,7]  tpcs=[15,17,12,16]
+measure 338 [roman]  roman xml='I7'  analyzer='I7b9#9'
+  key=0maj  pitches=[60,64,67,70,73,75]  pcs=[0,4,7,10,1,3]  tpcs=[15,19,16,13,10,24]
 measure 340 [roman]  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,67]  pcs=[0,6,7]  tpcs=[15,21,16]
+measure 342 [roman]  roman xml='IM7'  analyzer='IM7b13'
+  key=0maj  pitches=[60,64,67,71,80]  pcs=[0,4,7,11,8]  tpcs=[15,19,16,20,11]
+measure 364 [roman]  roman xml='viiø65'  analyzer='viiø7#1165'
+  key=0maj  pitches=[62,65,69,71]  pcs=[2,5,9,11]  tpcs=[17,14,18,20]
+measure 366 [roman]  roman xml='viiø43'  analyzer='viiø7#1143'
+  key=0maj  pitches=[65,69,71,74]  pcs=[5,9,11,2]  tpcs=[14,18,20,17]
+measure 368 [roman]  roman xml='viiø42'  analyzer='viiø7#1142'
+  key=0maj  pitches=[57,59,62,65]  pcs=[9,11,2,5]  tpcs=[18,20,17,14]

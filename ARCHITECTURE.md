@@ -12,7 +12,7 @@
 1. [Project Overview](#1-project-overview)
 2. [Architectural Principles](#2-architectural-principles)
 3. [Directory Structure](#3-directory-structure)
-4. [Existing Components — The Analysis Foundation](#4-existing-components--the-analysis-foundation)
+4. [Existing Components — The Analysis Foundation](#4-existing-components--the-analysis-foundation) (incl. §4.6 User Preferences)
 5. [Planned Analysis Extensions](#5-planned-analysis-extensions)
 6. [The Style System](#6-the-style-system)
 7. [The Knowledge Base](#7-the-knowledge-base)
@@ -71,15 +71,26 @@ The following components exist and are working:
 
 - **ChordAnalyzer** — identifies chord quality, extensions, inversions, and diatonic
   degree from a set of simultaneously sounding notes
-- **KeyModeAnalyzer** — infers the most likely key and mode from a temporal window
-  of pitch contexts
+- **KeyModeAnalyzer** — infers the most likely key and mode (all 7 diatonic modes)
+  from a temporal window of pitch contexts with duration, beat, and bass weighting
 - **ChordSymbolFormatter** — formats analysis results as chord symbols and Roman numerals
-- **Status bar integration** — displays chord and key information when a note is selected
-- **Regression tests** — cover the chord and key/mode analyzers
+- **HarmonicRhythm** — detects harmonic boundaries across a score range, drives chord
+  staff population
+- **Chord staff** — a grand-staff part added by the user that is populated on demand
+  with a harmonic reduction: chord symbols, Roman numerals, canonical or collected
+  voicings, key/mode annotations, borrowed chord labels, pivot detection, and cadence
+  markers
+- **Status bar integration** — displays chord, key/mode, and Roman numeral information
+  when a note is selected
+- **User preferences** — `IComposingConfiguration` / `ComposingConfiguration` expose
+  analysis settings including mode tier weights (4 tier sliders + preset), max suggested
+  chords, tuning system, and status bar display options
+- **Regression tests** — 189 tests covering chord analyzer, key/mode analyzer, and
+  MusicXML integration
 
-The system is currently integrated via `NotationAccessibility::singleElementAccessibilityInfo()`
-which appends chord and key information to the accessibility string displayed in the
-status bar when a single note is selected.
+The primary integration point is `NotationComposingBridge` in
+`src/notation/internal/notationcomposingbridge.cpp`, which handles both the real-time
+status bar path and the chord staff population path.
 
 ---
 
@@ -175,6 +186,23 @@ Before implementing anything that touches MuseScore's existing infrastructure �
 UI panels, score traversal, playback, settings, localization — read how MuseScore
 already does it and follow the same pattern. Do not invent parallel infrastructure.
 
+### 2.9 Analyze and Suggest — Never Modify Without Explicit User Action
+
+The system presents analytical findings and suggestions. It never modifies the main score
+automatically. All score modifications require explicit user action. The chord track, status
+bar display, and visualization panels are informational — they show what the system has
+inferred without changing anything. When the user wants to act on a suggestion — inserting a
+key signature, adding a chord symbol, applying tuning — they do so explicitly through
+standard MuseScore editing.
+
+### 2.10 Cross-Platform by Default
+
+All code must run on every platform officially supported by MuseScore Studio: Windows,
+macOS, and Linux. Platform-specific code is permitted only when absolutely necessary,
+must be clearly documented, and must be abstracted so that the rest of the module
+remains platform-agnostic. All build scripts, dependencies, and runtime logic must
+be verified on all supported platforms before merging.
+
 ---
 
 ## 3. Directory Structure
@@ -192,6 +220,7 @@ src/
     analysis/                    — analytical components (existing + planned)
       chordanalyzer.h            — existing
       chordanalyzer.cpp          — existing
+      harmonicrhythm.h           — existing — region analysis and chord track population
       keymodeanalyzer.h          — existing
       keymodeanalyzer.cpp        — existing
       analysisutils.h            — existing shared utilities
@@ -396,14 +425,21 @@ modification.
 contexts. Uses duration weight, metric weight, and bass status to give more
 influence to harmonically significant notes. Returns up to three ranked candidates.
 
-**Algorithm:** Scores all 12 possible tonics against currently active modes (Ionian
-and Aeolian) using four orthogonal helper functions:
+**Algorithm:** Scores all 12 possible tonics against all 7 diatonic modes (84
+candidates) using six orthogonal helper functions:
 - `scoreScaleMembership` — how well the pitch classes fit the candidate scale,
   cross-referenced against the notated key-signature scale
 - `scoreTriadEvidence` — how strongly the tonic triad is present (tonic 1.6×,
   third 0.7×, fifth 0.5×, leading tone 0.4×; complete triad bonus 2.5)
+- `scoreCharacteristicPitch` — boost/penalty for the one pitch that most distinguishes
+  each mode from its closest neighbor (e.g. Dorian's raised 6th vs Aeolian)
+- `scoreTrueLeadingTone` — bonus when the semitone below the tonic is present,
+  regardless of diatonicism (chromatic leading tones still signal the tonic strongly)
 - `scoreKeySignatureProximity` — preference for keys close to the notated key
   signature (−0.6 per fifth of distance)
+- `scoreModePrior` — additive frequency bias per mode, user-configurable via
+  `IComposingConfiguration::modeTierWeight[1-4]`; defaults to Standard preset
+  (Ionian/Aeolian >> Dorian/Mixolydian > Lydian/Phrygian > Locrian)
 - `applyRelativePairDisambiguation` — post-hoc score mutations for the relative
   major/minor pair sharing a key signature (four documented cases; see implementation)
 
@@ -424,63 +460,56 @@ struct PitchContext {
 };
 ```
 
-**Important:** In the current calling code, only `pitch` is populated. `durationWeight`,
-`beatWeight`, and `isBass` default to 1.0, 1.0, and false. Populating these from
-the score will significantly improve key/mode inference quality (see Section 5.1).
+**Important:** In the current calling code, `durationWeight`, `beatWeight`, and
+`isBass` are populated from the score. The bridge collects a 16-beat lookback +
+8-beat lookahead window with exponential time decay (0.7× per measure) and
+beat-type weights from MuseScore's `BeatType` enum.
 
 #### Output — `KeyModeAnalysisResult`
 
 ```cpp
 enum class KeyMode {
-    Ionian,   // Major / Ionian
-    Aeolian,  // Natural minor / Aeolian
-    // Future: Dorian, Phrygian, Lydian, Mixolydian, Locrian
+    Ionian,       // Major
+    Dorian,
+    Phrygian,
+    Lydian,
+    Mixolydian,
+    Aeolian,      // Natural minor
+    Locrian,
 };
 
 struct KeyModeAnalysisResult {
-    int keySignatureFifths = 0;     // Inferred key as circle-of-fifths position (-7 to +7)
-    KeyMode mode = KeyMode::Ionian; // Detected mode
-    double score = 0.0;             // Raw confidence score — not normalized
+    int keySignatureFifths = 0;          // Resolved key signature (-7..+7, Ionian convention)
+    KeyMode mode = KeyMode::Ionian;      // Detected mode
+    int tonicPc = 0;                     // Pitch class of the mode's tonic (0=C, 2=D, etc.)
+    double score = 0.0;                  // Raw confidence score; higher is better
+    double normalizedConfidence = 0.0;   // 0.0–1.0 via sigmoid on score gap to runner-up
 };
 ```
 
-`KeyMode` is an enum rather than a `bool isMajor` so that future modal extensions
-(Dorian, Phrygian, etc.) are non-breaking at the call site — adding a new enum
-variant is backward-compatible; changing a bool to an enum is not.
+All 7 modes are active. `normalizedConfidence` is computed via sigmoid on the score
+gap between rank-1 and rank-2 candidates (midpoint 2.0, steepness 1.5). The chord
+staff uses this to annotate uncertain detections with "?" or "(?)".
 
 #### Tunable Parameters — `KeyModeAnalyzerPreferences`
 
-All scoring weights and thresholds are collected in `KeyModeAnalyzerPreferences`
-(parallel to `ChordAnalyzerPreferences`). See `keymodeanalyzer.h` for the full
-struct with documentation. Key groups:
+All scoring weights and thresholds are collected in `KeyModeAnalyzerPreferences`.
+See `keymodeanalyzer.h` for the full struct with documentation. Key groups:
 
 - **Note weight caps** — `noteWeightCap`, `bassMultiplier`
 - **Scale membership** — four case weights (`scaleScoreInBoth`, etc.)
 - **Tonal centre** — per-tone weights and bonus/penalty for complete triad
+- **Characteristic pitch** — `characteristicPitchBoost`, `characteristicPitchPenalty`
+- **True leading tone** — `trueLeadingToneBoost`
+- **Mode priors** — `modePriorIonian` through `modePriorLocrian`; populated from
+  user preferences via `IComposingConfiguration::modeTierWeight[1-4]` in the bridge
 - **Tonal-centre comparison** — independent weights for the relative-pair
   final decision (`tonalCenter*`)
 - **Key-signature proximity** — `keySignatureDistancePenalty`
 - **Disambiguation** — `disambiguationTriadBonus`, `disambiguationTriadCost`,
   `disambiguationTonicBonus`
-
-#### Modal Infrastructure
-
-The full mode table is already defined in the implementation:
-
-```cpp
-constexpr std::array<ModeDef, 7> MODES = {{ ... }};  // all 7 modes
-
-// Currently only Ionian and Aeolian are evaluated:
-constexpr std::array<size_t, 2> ACTIVE_MODE_INDICES = { IONIAN_INDEX, AEOLIAN_INDEX };
-```
-
-Enabling additional modes requires only:
-1. Extending `ACTIVE_MODE_INDICES`
-2. Adding the new `KeyMode` enum variants
-3. Calibrating the new mode's characteristic weights in `KeyModeAnalyzerPreferences`
-
-The evaluations table is a flat `std::vector` sized by `ACTIVE_MODE_INDICES.size()`,
-so no structural changes are required.
+- **Confidence sigmoid** — `confidenceSigmoidMidpoint`, `confidenceSigmoidSteepness`
+- **Beat-type weights** — `beatWeightDownbeat` through `beatWeightSubbeat`
 
 #### Public Interface
 
@@ -518,7 +547,7 @@ namespace ChordSymbolFormatter {
                              const Options& opts = kDefaultOptions);
 
     // "IM7", "ii7", "V7/3", "viiø7" etc. Returns "" for non-diatonic chords.
-    std::string formatRomanNumeral(const ChordAnalysisResult& result, bool keyIsMajor);
+    std::string formatRomanNumeral(const ChordAnalysisResult& result);
 }
 ```
 
@@ -552,6 +581,90 @@ ChordAnalysisResult  →  formatted string
 
 When `IChordSymbolFormatter` is introduced, `ChordSymbolFormatter::Options` becomes
 its configuration struct — the migration path is already established.
+
+### 4.3a Voicing Helpers
+
+**File:** `src/composing/analysis/chordanalyzer.h` (declared) and `chordanalyzer.cpp`
+(defined)
+
+Two helpers support chord track population (§11.5):
+
+```cpp
+struct ClosePositionVoicing {
+    int bassPitch = -1;              // Root MIDI pitch in C2–C3 range (-1 = empty)
+    std::vector<int> treblePitches;  // Upper chord tones in C4–C5 close position
+};
+
+ClosePositionVoicing closePositionVoicing(const ChordAnalysisResult& result);
+std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result);
+```
+
+`closePositionVoicing()` produces a keyboard-reduction voicing: root in bass
+register (C2–C3), remaining chord tones stacked ascending above C4 within one
+octave.  Returns empty voicing for `ChordQuality::Unknown`.
+
+`chordTonePitchClasses()` derives the canonical pitch-class set from an analysis
+result — root first, then remaining tones ascending.  Reflects the idealized chord
+(quality + extensions), not a transcription of what was sounding.  Used when the
+chord track is set to show canonical tones rather than collected sounding tones.
+
+### 4.3b HarmonicRhythm
+
+**File:** `src/composing/analysis/harmonicrhythm.h`
+
+Declares types and entry points for region analysis:
+
+```cpp
+struct HarmonicRegion {
+    int startTick = 0;                    // Raw tick integer (first tick of region)
+    int endTick = 0;                      // First tick of next region (exclusive)
+    ChordAnalysisResult chordResult;      // Root, quality, extensions, degree
+    KeyModeAnalysisResult keyModeResult;  // Key and mode context
+    std::vector<ChordAnalysisTone> tones; // Sounding tones that produced the analysis
+};
+
+std::vector<HarmonicRegion> analyzeHarmonicRhythm(
+    const Score* score,
+    const Fraction& startTick,
+    const Fraction& endTick,
+    const std::set<size_t>& excludeStaves = {});
+
+bool populateChordTrack(
+    Score* score,
+    const Fraction& startTick,
+    const Fraction& endTick,
+    staff_idx_t trebleStaffIdx,
+    bool useCollectedTones = false);
+```
+
+`analyzeHarmonicRhythm()` scans all eligible staves, detects harmonic boundaries
+(ticks where the sounding pitch-class set changes), runs chord analysis at each
+boundary, and collapses consecutive same-chord regions.  Declared in
+`composing/analysis/`; defined in `notationaccessibility.cpp` (bridge pattern).
+
+`populateChordTrack()` clears the target grand-staff region and writes a harmonic
+reduction with the following layout:
+
+| Position | Content |
+|----------|---------|
+| Above first stave | Key/mode label (e.g. "C maj", "D Dor?"); confidence marker "?" or "(?)" when below 0.8 |
+| Below first stave | Key relationship annotation (e.g. "(→ relative min)", "(→ dominant key)") when a modulation occurs |
+| Above second stave | Borrowed chord star ★ + source key (e.g. "Bb min") when a non-diatonic chord has an identifiable diatonic source; pivot label (e.g. "pivot: IV → I in G maj") at modulation boundaries; cadence marker (PAC, HC, DC, PC) |
+| Below second stave | Roman numeral (e.g. "IM7", "V7") |
+| Treble stave notes | Upper chord tones (canonical or collected) |
+| Bass stave notes | Root |
+| Above treble stave | Chord symbol (e.g. "Cmaj7", "F#m7/A") |
+
+**Borrowed chord rule:** The star ★ and source key are written only when a source
+key is found (chord tones all diatonic to some other key within ±7 fifths). Purely
+chromatic chords that fit no diatonic scale receive no marker.
+
+The `useCollectedTones` flag controls whether the treble staff uses the original
+sounding tones (preserving voicing color) or canonical chord tones.
+
+Tick values in `HarmonicRegion` are raw integers rather than `Fraction` objects,
+keeping the header free of the engraving module's `Fraction` include and
+preserving `composing_analysis`'s module independence.
 
 ### 4.4 AnalysisUtils
 
@@ -625,83 +738,137 @@ temporal context improvements (Section 5.3).
 #### Current Status Bar Output Format
 
 ```
-[Note name]; [bar and beat]; Staff N (Part name); [G major] Cmaj7
+[Note name]; [bar and beat]; Staff N (Part name); [C maj] Cmaj7 (IM7)
 ```
 
-The chord symbol and key are appended at the end. Roman numeral display is
-implemented in `ChordSymbolFormatter::formatRomanNumeral()` but not yet
-invoked in the calling code — this is a planned near-term increment (see Section 15).
+Chord symbol, key/mode, and Roman numeral are all appended.
 
-#### Current Gaps in the Calling Code
+#### Remaining Gap in the Calling Code
 
-Two specific gaps that are the highest-priority near-term improvements:
+**Gap — KeyModeAnalyzer not always connected to ChordAnalyzer:**
+In the status bar path, the key/mode inferrer runs for every note selection and its
+result parameterizes the chord analyzer. However, when the key signature explicitly
+specifies major or minor, the hardcoded signature value is used as the fallback rather
+than the inferred result. Planned: always prefer the inferred result; use the key
+signature only when pitch context is insufficient.
 
-**Gap 1 — ChordAnalysisTone weight not populated:**
-```cpp
-// Current — all notes weighted equally
-tone.weight = 1.0;  // default
+### 4.6 User Preferences — `IComposingConfiguration`
 
-// Planned — weight by duration and metric position
-tone.weight = durationInQuarterNotes * beatWeight;
-```
+**Files:** `src/composing/icomposingconfiguration.h`,
+`src/composing/composingconfiguration.h/.cpp`,
+`src/preferences/qml/MuseScore/Preferences/ComposingPreferencesPage.qml`
 
-**Gap 2 — PitchContext fields not populated:**
-```cpp
-// Current — only pitch set
-p.pitch = n->ppitch();
-// p.durationWeight, p.beatWeight, p.isBass — all defaults
+All user-configurable analysis settings are exposed through `IComposingConfiguration`,
+injected via `muse::GlobalInject` in the bridge. The UI is a dedicated preferences
+page under Edit → Preferences → Composing.
 
-// Planned — populate all fields
-p.pitch = n->ppitch();
-p.durationWeight = durationInQuarterNotes;
-p.beatWeight = computeBeatWeight(s->tick(), measure);
-p.isBass = (n->ppitch() == lowestPpitch);
-```
+**Analysis section:**
+- `analyzeForChordSymbols` (bool, default true)
+- `analyzeForRomanNumerals` (bool, default false)
+- `inferKeyMode` (bool, forced on when either analysis is active)
+- `analysisAlternatives` (int 1–3, default 3) — max chord suggestions in context menu
+- `tuningSystemKey` (string, default "equal") — tuning system for "tune as" action
 
-**Gap 3 — KeyModeAnalyzer not connected to ChordAnalyzer:**
-The key/mode inferrer result is used only when `KeyMode` is `UNKNOWN`. When the
-key signature explicitly says major or minor, that value is used without running
-the inferrer. Planned: always run the inferrer on the temporal context window and
-use its result to parameterize the chord analyzer, even when the key signature is
-explicit. This handles passages that have departed from the notated key.
+**Mode detection weights** (4 tier sliders, range −5.0 to +5.0, step 0.5):
+- `modeTierWeight1` (default +1.0) — Tier 1: Ionian/Aeolian
+- `modeTierWeight2` (default −0.5) — Tier 2: Dorian/Mixolydian
+- `modeTierWeight3` (default −1.5) — Tier 3: Lydian/Phrygian
+- `modeTierWeight4` (default −3.0) — Tier 4: Locrian
+
+Four named presets populate all sliders: Standard (default), Jazz, Modal, Equal.
+
+The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences`
+before calling `analyzeKeyMode()`. Ionian gets an additional +0.2 internal offset
+relative to Aeolian within Tier 1, reflecting its slightly greater prevalence.
+
+**Status bar section:**
+- `showKeyModeInStatusBar` (bool, default true)
+- `statusBarChordSymbolCount` (int 0–3, default 1)
+- `statusBarRomanNumeralCount` (int 0–3, default 0)
 
 ---
 
 ## 5. Planned Analysis Extensions
 
-### 5.1 Weight Population — Duration and Beat
+### 5.1 Weight Population — Implemented for KeyModeAnalyzer, Pending for ChordAnalyzer
 
-The most impactful near-term improvement requiring only changes to the calling
-code in `notationaccessibility.cpp`, not to the analyzers themselves.
+**KeyModeAnalyzer calling code** (in `NotationComposingBridge`) fully populates all
+`PitchContext` fields: duration in quarter notes, beat-type weight from MuseScore's
+`BeatType` enum, bass identification via two-pass per-segment scan, and exponential
+time decay (0.7× per measure).
 
-**Duration weight:** Use `cr->ticks().toDuration().toDouble()` or equivalent
-to get the duration in quarter notes. Longer notes provide stronger harmonic evidence.
+**ChordAnalyzer calling code** — `ChordAnalysisTone.weight` is still not populated
+from duration or metric position. Populating it is a planned improvement that requires
+no analyzer changes — only calling code changes.
 
-**Beat weight:** Compute from the note's position within the measure. Downbeats
-(beat 1) get weight 1.0, strong beats get ~0.7, weak beats ~0.4, off-beats ~0.2.
-The exact scale should be consistent with how the key/mode analyzer uses these weights.
+### 5.2 Key/Mode Inference — Revised Priority and Expanded Temporal Window
 
-**Bass identification:** The lowest sounding `ppitch()` across all staves and voices
-at the tick. Already correctly computed for `ChordAnalysisTone.isBass` — apply the
-same logic to `PitchContext.isBass`.
+**Notes Always Win**
 
-### 5.2 Connecting KeyModeAnalyzer to ChordAnalyzer
+The current implementation runs the key/mode inferrer only when `KeyMode` is `UNKNOWN` in
+the key signature. When the key signature explicitly specifies `MAJOR` or `MINOR`, the
+inferrer is bypassed entirely.
 
-Currently the chord analyzer receives key information from the notated key signature.
-Planned: always run the key/mode inferrer first and use its top result to parameterize
-the chord analyzer.
+This is incorrect prioritization. The notated key signature is weak evidence about local
+harmony — a piece in C major can spend many bars in E minor or A Mixolydian without the
+composer changing the key signature. The actual sounding notes are always stronger evidence
+than the notated key.
+
+**Revised priority of evidence:**
+
+| Priority | Source | Description |
+|---|---|---|
+| Strongest | Actual sounding notes | what is literally happening now |
+| Strong | Temporal context | surrounding measures |
+| Weak | Notated key signature | `keySignatureFifths` (circle of fifths position) |
+| Weakest | `KeyMode` enum | explicit major/minor tag (rare, only when user sets it) |
+
+**The revised logic:**
+
+Always run the key/mode inferrer. The key signature's `keySignatureFifths` value remains
+valuable as a scoring prior inside the inferrer — the existing `keySignatureScore` component
+already handles this correctly by biasing toward nearby keys without overriding note
+evidence. What changes is removing the hard bypass that skips the inferrer entirely.
+
+Fall back to the key signature only when pitch context is genuinely insufficient:
 
 ```cpp
-// Planned connection
-const auto keyModeResults = KeyModeAnalyzer::analyzeKeyMode(contextPitches, keyFifths);
-const bool inferredIsMajor = keyModeResults.empty()
-    ? isMajor
-    : (keyModeResults.front().mode == KeyMode::Ionian);
-const auto chordResults = ChordAnalyzer::analyzeChord(tones, keyFifths, inferredIsMajor);
+// Always run the inferrer
+auto results = KeyModeAnalyzer::analyzeKeyMode(contextPitches, keyFifths);
+
+// Fall back to key signature only if insufficient pitch data
+if (results.empty() || distinctPitchClasses(contextPitches) < 3) {
+    // Use KeyMode enum if explicitly set, otherwise guess major
+    return inferFromKeySignature(keySig);
+}
+
+// Notes win — use inferred result
+return results.front();
 ```
 
-This single change improves chord identification in passages that have modulated
-away from the notated key signature.
+The `KeyMode` enum (`MAJOR`, `MINOR`, `IONIAN`, `AEOLIAN` etc.) is used only in this
+fallback path — when there are genuinely too few notes to infer anything. This is primarily
+relevant at the very start of a piece before sufficient context has accumulated.
+
+**Expanded Temporal Window — Implemented**
+
+The bridge uses a 16-beat lookback + 8-beat lookahead window:
+
+```cpp
+const int LOOKBACK_BEATS  = 16;  // ~4 measures in 4/4
+const int LOOKAHEAD_BEATS =  8;  // ~2 measures ahead
+```
+
+Notes are weighted by `durationWeight × beatWeight × timeDecay`, where time decay
+applies an exponential factor of 0.7× per measure of distance from the analysis tick.
+Beat-type weights are mapped from MuseScore's `BeatType` enum (downbeat 1.0,
+stressed 0.7, unstressed 0.4, subbeat 0.2).
+
+**Normalized Confidence — Implemented**
+
+`KeyModeAnalysisResult::normalizedConfidence` is 0.0–1.0 via sigmoid on the score
+gap between rank-1 and rank-2 candidates. The chord staff uses this to add "?" or
+"(?)" to key/mode labels when confidence is below 0.8 or 0.5 respectively.
 
 ### 5.3 TemporalContext — Full Specification
 
@@ -752,28 +919,17 @@ struct TemporalContext {
 4. Add duration sensitivity for short events
 5. Add pattern recognition — most complex, built on 1-4 being stable
 
-### 5.4 Modal Extension — Beyond Ionian and Aeolian
+### 5.4 Modal Extension — Implemented
 
-**To enable additional modes:**
+All 7 diatonic modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian,
+Locrian) are now evaluated. Each mode has a characteristic pitch boost/penalty and
+a frequency prior configurable via user preferences (mode tier weights).
 
-1. Change `ACTIVE_MODE_INDICES` in `keymodeanalyzer.cpp` to include desired modes
-2. Calibrate scoring for each mode's characteristic features:
-   - Dorian: raised sixth is the defining characteristic — add specific weight
-   - Mixolydian: flat seventh defines it — conflicts with Ionian + dom7 chord
-   - Lydian: raised fourth — relatively rare, careful calibration needed
-   - Phrygian: flat second — very characteristic, should be detectable
-   - Locrian: diminished fifth on tonic — rarely used as primary mode
-3. Fix the leading tone assumption — currently hardcoded as `(tonicPc + 11) % 12`
-   for all modes. Must become mode-dependent.
-4. Extend `KeyModeAnalysisResult` with `tonicPc`, `modeIndex`, `modeName` fields
-5. Update downstream consumers of `KeyModeAnalysisResult` — particularly the
-   `isMajor` boolean passed to `ChordAnalyzer`
-6. Update `ChordAnalyzer` to accept mode information beyond the binary `keyIsMajor`
+Mode suffixes are abbreviated: "maj", "min", "Dor", "Phryg", "Lyd", "Mixolyd", "Loc".
 
-**Melodic minor modes** — important for jazz:
+**Melodic minor modes** — still planned for jazz style support:
 - Lydian Dominant (mode 4 of melodic minor) — #11 and b7 together
 - Altered/Superlocrian (mode 7 of melodic minor) — maximum tension
-These should be added to the mode table when jazz style support is implemented.
 
 ### 5.5 Monophonic and Arpeggiated Input
 
@@ -811,26 +967,39 @@ public:
 };
 ```
 
-### 5.6 Secondary Dominants and Non-Diatonic Chords
+### 5.6 Extended Harmonic Functions — Planned
 
-When `degree == -1` (root not in scale), `formatRomanNumeral()` currently returns
-an empty string. Planned extensions:
+Currently, non-diatonic chords show a borrowed source key label (e.g. "Bb min") when
+an identifiable source is found. Explicit labeling of harmonic functions is backlogged:
 
-- Secondary dominants: "V7/V", "V7/ii", "V7/IV"
-- Borrowed chords: "bVII", "bIII", "iv" (in major context)
-- Chromatic mediants: labeled by their relationship to the tonic
-- Neapolitan: "N6" or "bII6"
-- Augmented sixths: "It+6", "Fr+6", "Ger+6"
+**Classical chromatic vocabulary:**
+- Augmented sixth chords (Italian, French, German +6): approach chords to V
+- Neapolitan chord (♭II, N6): flat-supertonic major
+- Common-tone diminished seventh
 
-### 5.7 Normalized Confidence Scores
+**Secondary function:**
+- Secondary dominants / leading-tone chords (V/V, vii°/V, etc.)
+- Tritone substitutions (subV/x): dom7 whose root is a tritone from the expected dominant
+- Backdoor dominant (♭VII7 as V7 substitute) — jazz-specific
 
-Both analyzers return raw scores whose absolute value is meaningless without context.
-Planned: add normalized scores (0.0-1.0) to both result structs, enabling UI decisions
-about display confidence:
+**Structural distinctions:**
+- Tonicization vs. modulation: brief secondary dominant vs. genuine key change
+- Chromatic mediants: major-third key relationships
 
-- Above 0.8 — display confidently
-- 0.5-0.8 — display with qualification ("possibly")
-- Below 0.5 — display tentatively or suppress
+**Implementation prerequisite:** resolution-target tracking (look-ahead to next chord
+region) is required for secondary dominant and tritone sub detection.
+
+### 5.7 Normalized Confidence Scores — Implemented for KeyModeAnalyzer
+
+`KeyModeAnalysisResult::normalizedConfidence` is 0.0–1.0 via sigmoid on the score
+gap (midpoint 2.0, steepness 1.5). Usage thresholds:
+
+- Above 0.8 — display without qualifier
+- 0.5–0.8 — append "?" to key/mode label
+- Below 0.5 — wrap as "(X maj?)"
+
+`ChordAnalysisResult` still returns only raw scores. Normalized confidence for
+chord analysis is a planned extension.
 
 ### 5.8 Known Analyzer Limitations
 
@@ -872,6 +1041,16 @@ Two distinct chords superimposed produce a pitch class set the analyzer interpre
 single complex tertian chord. The two-chord structure is lost. Planned resolution: a
 polychordal detection pass that identifies superimposed triadic structures before tertian
 analysis runs.
+
+### 5.9 Key Signature Injection — Not Planned
+
+An earlier design considered automatically suggesting key signature insertions in the main
+score when the key/mode inferrer detected extended passages in a different key. This was
+superseded by the key/mode annotation feature in the chord track (§11.5). The chord track
+provides the same analytical information — inferred key regions with confidence indicators —
+without modifying the main score. The user reads the chord track annotations and decides
+independently whether to add key signatures to the main score. No automatic key signature
+injection is planned.
 
 ---
 
@@ -1420,6 +1599,61 @@ struct InstrumentIntonationConfig {
 Percussion instruments are excluded from both harmonic analysis and intonation.
 Fixed-pitch instruments (piano) serve as intonation anchors when present.
 
+### 11.2a Tuning System Preference
+
+A single user preference (`composing/tuningSystemKey`) controls which tuning system
+is applied across **all** tuning workflows:
+
+- Per-note tuning from the context menu ("Tune as")
+- Chord track population ("Implode to chord track")
+- Region tuning ("Tune selection")
+
+The preference is set in Preferences → Composing → Analysis ("Tuning system"
+dropdown, enabled only when Roman-numeral analysis is active).  Valid keys:
+`"equal"`, `"just"`, `"pythagorean"`, `"quarter_comma_meantone"`.  Default: `"equal"`.
+
+All tuning code paths read the preference at call time via `preferredTuningSystem()`
+(defined in `notationaccessibility.cpp`), which resolves the key through
+`TuningRegistry::byKey()` with a `JustIntonation` fallback if the key is unset or
+unknown.  No tuning code hardcodes a specific system.
+
+### 11.2b Adaptive Tuning — Future Exploration
+
+The current tuning implementation computes offsets independently per note against
+a fixed interval table.  A more sophisticated approach would solve for optimal
+tuning offsets *simultaneously* across all sounding voices, balancing three
+competing goals: harmonic purity (intervals close to JI), ET anchoring (notes
+not straying too far from equal temperament), and temporal continuity (minimizing
+pitch movement between successive chords).
+
+Several algorithmic methods exist in the literature:
+
+- **Spring model** (deLaubenfels, ~2000–2004) — models each note as a node with
+  interval springs (rest length = JI ratio) and anchor springs (pulling toward
+  ET).  Anchor stiffness per voice controls how much each voice moves.  Solving
+  for equilibrium is a linear system.
+- **Hermode Tuning** (Mohrlok, 1990s–present; shipped in Logic Pro) — hierarchical
+  interval priority (fifths first, then thirds), with a tracked center pitch to
+  prevent drift.  Bass and melody receive less movement by design.
+- **Weighted least-squares optimization** — generalizes the spring model as a
+  cost function with per-voice weights for harmonic purity, ET anchoring, and
+  temporal continuity.  Minimizing the quadratic cost yields a linear system.
+- **Iterative relaxation** — a real-time-friendly variant that starts at ET and
+  iteratively moves notes toward pure intervals scaled by per-voice flexibility,
+  converging in 3–5 iterations.
+
+The key design concept across all methods is **per-voice anchor weight**: outer
+voices (bass, melody) get high anchor stiffness so they stay close to ET, while
+inner voices absorb more of the harmonic adjustment.  Temporal anchoring adds a
+penalty for pitch movement at chord boundaries, referencing the previous chord's
+solved pitches — tying naturally into the harmonic rhythm regions.
+
+This would evolve the `TuningSystem` interface from independent per-note offsets
+to a simultaneous solve across all voices at each harmonic region boundary.  The
+`anchorPitch` flag in `InstrumentIntonationConfig` would become a continuous
+weight rather than a binary.  No implementation is planned yet — this section
+records the design space for future exploration.
+
 ### 11.3 Drift Management
 
 Just intonation creates pitch drift — stacking pure intervals doesn't form a closed
@@ -1434,61 +1668,309 @@ The drift manager:
 When a fixed-pitch instrument is present, it serves as an automatic drift correction
 anchor — the choir tunes to it at every piano chord, resetting drift.
 
+### 11.3a Zero-Sum Centering
+
+The current tuning implementation applies fixed offsets relative to a single reference
+pitch. A more musically effective approach — used by Hermode Tuning — centers the
+deviations so that the sum of all tuning offsets across simultaneously sounding voices
+equals zero.
+
+**Why this matters:** When all voices are offset in the same direction, the entire chord
+drifts away from equal temperament. This creates compatibility problems with fixed-pitch
+instruments and with an audience's sense of absolute pitch. Zero-sum centering ensures the
+chord is tuned purely internally while its average pitch matches equal temperament.
+
+**Example — C major chord in just intonation:**
+
+```
+Raw just offsets:     C=0,   E=-14,  G=+2    sum=-12
+Equal centering:      C=+4,  E=-10,  G=+6    sum=0
+```
+
+The chord is equally pure in both cases — the intervals between notes are identical. But
+the centered version has zero net deviation from equal temperament.
+
+**Implementation:** After computing raw just intonation offsets for all sounding voices,
+compute the mean offset and subtract it from each voice's offset. The result is a set of
+offsets that sum to zero.
+
+Zero-sum centering is planned as an enhancement to the existing tuning offset computation.
+It applies at the harmonic region level — all notes within a region are centered together.
+
+### 11.3b Weighted Centering by Voice Role
+
+Pure zero-sum centering distributes the correction equally across all voices. This is
+musically too democratic — the melody and bass are more perceptually prominent than inner
+voices, and pitch changes in these voices are more audible.
+
+Weighted centering distributes the centering correction inversely proportional to each
+voice's musical importance. More important voices receive less correction — they stay
+closer to their raw just intonation position. Less important voices absorb more correction.
+The zero-sum property is preserved regardless of the weighting.
+
+Voice role weights are defined in the style JSON:
+
+```json
+{
+  "tuning": {
+    "centeringWeights": {
+      "melody": 3.0,
+      "bass": 2.5,
+      "inner": 1.0
+    }
+  }
+}
+```
+
+Higher weight = more important = less correction applied to that voice.
+
+**Bass weight by inversion:** The bass voice weight is further modified by the chord's
+inversion, since the acoustic anchor role of the bass depends on whether it is playing the
+harmonic root:
+
+| Inversion | Bass note | Anchor strength | Weight (example) |
+|---|---|---|---|
+| Root position | root in bass | strong anchor | high (e.g. 2.5) |
+| First inversion | third in bass | moderate anchor | medium (e.g. 1.5) |
+| Second inversion | fifth in bass | weak anchor | low (e.g. 1.0) |
+| Third inversion | seventh in bass | very weak | very low (e.g. 0.8) |
+
+In inverted chords, the acoustic anchor is the harmonic root even if it is not the lowest
+sounding note. The tuning system anchors to the implied root when computing centering, not
+just the bass note.
+
+**Pedal points** — a bass note sustained while harmony changes above it — receive maximum
+anchor weight regardless of inversion, since they are explicitly the fixed reference in the
+musical context.
+
+Automatic melody detection is deferred. For now, voice role is determined by staff position
+or explicit user assignment — not automatic detection. Per-staff override of voice role is
+a future extension.
+
+### 11.3c Note Retuning Susceptibility
+
+Not all notes should be retuned equally freely. The system must respect that notes which
+have been sounding for some time have established a pitch in the listener's ear, and
+retuning them mid-sustain is audible as a wobble or portamento.
+
+Rather than discrete protection classes, the system uses a **maximum adjustment budget** —
+a continuous value in cents — that caps how much any note can be retuned at a harmonic
+boundary. This budget is determined by how long the note has been sounding, modified by
+musical context.
+
+**Duration-based maximum adjustment budget:**
+
+| Duration sounded | Maximum adjustment |
+|---|---|
+| < 30ms | Unlimited — ear has not registered the pitch |
+| 30ms – 200ms | Up to 8–10 cents |
+| 200ms – 500ms | Up to 4–5 cents |
+| 500ms – 1000ms | Up to 2–3 cents |
+| > 1000ms | Up to 1–2 cents |
+
+The 30ms threshold corresponds to the minimum time for the ear to register a pitch. Below
+this threshold, retuning is inaudible and the note can be placed optimally. Above it, the
+budget shrinks as duration increases.
+
+**Harmonic context modifiers** applied to the duration-based budget:
+
+- Note is an **avoid note** in the new harmony → increase budget by 50% (the dissonance
+  justifies more movement)
+- Note is a **leading tone or chordal seventh** in the new harmony → increase budget by
+  30% (tendency tone, movement is musically expected)
+- Note is still a **consonant chord tone** in the new harmony → decrease budget by 50%
+  (no musical reason to move)
+- Note forms a **pure interval with another sustained note** (e.g. a perfect fifth) →
+  decrease budget by 70% (breaking a locked resonance is very audible)
+
+**Special cases:**
+
+**Sustained perfect fifth or octave pairs:** Two notes a perfect fifth or octave apart
+that have been sounding together for more than ~200ms have established a locked acoustic
+resonance — their overtones are interlaced and beats have disappeared. Both notes receive
+near-zero budget and effectively become anchors for the new harmony to tune around. Neither
+note should be split; the new voices tune to them.
+
+**Tied notes:** A note explicitly tied across a harmonic boundary carries a compositional
+instruction of continuity. It must not be split. Its tuning is set at onset and protected
+thereafter — maximum budget of 1–2 cents regardless of duration. The new harmony tunes
+around it.
+
+**Unisons and octaves across voices:** Two or more notes sounding the same pitch class
+simultaneously (in unison or octave relationship) must receive identical tuning offsets.
+They are treated as a linked pair — the offset is computed once for the pair and applied to
+both. Neither can be tuned independently.
+
+**Repeated notes:** A note that was just heard in the previous beat and is now repeated —
+same pitch class, adjacent position — is compared against the listener's memory of the
+previous instance. Even 3–4 cents difference is audible as inconsistency. Repeated notes
+receive a reduced budget until sufficient time has elapsed.
+
+**Register sensitivity:** Notes between approximately 500Hz and 4000Hz are most sensitive
+to retuning — the ear discriminates pitch most precisely in this range. Notes above or
+below this range receive a slightly increased budget. The register modifier is applied as a
+multiplier on the duration-based budget.
+
+**Instrument sensitivity:** MuseScore's instrument ID system (e.g. `wind.flutes.flute`,
+`voice.soprano`, `strings.violin`) is used to look up a per-instrument sensitivity value
+from the knowledge base. This value scales the protection budget — more sensitive
+instruments (flute, soprano) receive smaller budgets, less sensitive instruments (brass
+with vibrato, electric guitar) receive larger budgets. Family-level fallbacks apply when
+specific instrument IDs are not found.
+
+```json
+{
+  "instrumentTuningSensitivity": {
+    "wind.flutes": 0.90,
+    "wind.reeds": 0.80,
+    "voice": 0.85,
+    "strings.bowed": 0.70,
+    "brass": 0.55,
+    "strings.plucked": 0.40
+  },
+  "defaultSensitivity": 0.60
+}
+```
+
+Higher sensitivity = smaller maximum adjustment budget = more protection from retuning.
+
+Fixed-pitch instruments (piano, organ, fretted guitar) are deferred — their handling is not
+yet implemented. When implemented, they will serve as absolute anchors that other
+instruments tune to, and will never receive tuning offsets themselves.
+
+### 11.3d Tuning Session State
+
+The tuning system maintains session-only state that is not persisted to the MSCZ file and
+resets when the score is closed.
+
+**Global session parameters:**
+
+```cpp
+class TuningSessionState {
+public:
+    // Global sensitivity — scales maximum adjustment budget across all voices
+    // 1.0 = default, < 1.0 = more aggressive, > 1.0 = more conservative
+    float globalSensitivity = 1.0f;
+
+    // Global depth — scales tuning offsets between ET and full just intonation
+    // 0.0 = equal temperament, 1.0 = full just intonation offsets
+    // 0.6–0.7 recommended when mixing with fixed-pitch instruments (HMT guideline)
+    float globalDepth = 1.0f;
+};
+```
+
+**Sensitivity** scales the maximum adjustment budget. Higher sensitivity means smaller
+budgets across all protection tiers — more conservative retuning.
+
+**Depth** scales the final tuning offsets linearly between equal temperament (0%) and the
+computed just intonation values (100%). Useful when performing alongside a piano — HMT
+recommends 60–70% depth in mixed ensembles to reduce the mismatch between adapted and
+fixed-pitch instruments.
+
+Both parameters are exposed as sliders in the tuning preferences panel. They are
+session-only — not persisted.
+
+**Future extension:** Per-staff sensitivity and depth overrides, accessible via right-click
+on the staff name. This will also be session-only when implemented. Visual indicator on the
+staff label when an override is active.
+
+### 11.3e The Complete Tuning Algorithm
+
+Putting the above together, the tuning algorithm for a harmonic region boundary proceeds as
+follows:
+
+**Step 1 — Classify all sounding notes by susceptibility**
+For each sounding note, compute its maximum adjustment budget from: duration sounded,
+harmonic context in the new chord, register, instrument sensitivity, and special cases
+(tied, unison pair, sustained fifth/octave pair).
+
+**Step 2 — Identify anchors**
+Notes with near-zero budget — sustained perfect fifth/octave pairs, tied notes, very long
+sustained notes — become anchors. They do not move. The new harmony must tune around them.
+
+**Step 3 — Compute raw just intonation offsets**
+For all non-anchor notes, compute the ideal just intonation offset given the new chord and
+the voice's role within it. Apply the depth scalar.
+
+**Step 4 — Apply weighted zero-sum centering**
+Compute the weighted centering correction for the non-anchor notes. Voice role weights and
+bass inversion weight determine the distribution. Anchors are excluded from the centering
+calculation. Apply the correction so the sum of all non-anchor offsets equals zero.
+
+**Step 5 — Clamp to susceptibility budget**
+Clamp each note's final offset to its maximum adjustment budget. If a note's ideal offset
+exceeds its budget, it moves only as far as its budget allows. The zero-sum property may be
+slightly violated by clamping — this is acceptable; the priority is avoiding audible
+retuning artifacts.
+
+**Step 6 — Apply sensitivity scalar**
+Multiply all offsets by the global sensitivity parameter.
+
+**Step 7 — Determine which notes need splits**
+Notes with offsets exceeding `kEpsilonCents` (0.5 cents) and not tied need splitting. Tied
+notes never split — their tuning is set at onset only. Apply the split-and-slur mechanism
+(§11.4) for all notes requiring splits.
+
+**Step 8 — Apply tuning offsets**
+Write final cent values to all notes via `undoChangeProperty(Pid::TUNING, ...)`.
+
 ### 11.4 Score Mutation for Tuning Application
 
 Applying a non-equal temperament writes cent deviations to individual notes via
-`Note::setTuning()`.  For notes that attack exactly at the target tick this is a
-direct call.  Sustained notes — notes that started before the target tick but are
-still sounding — require score mutation because `setTuning()` is a single value per
-note and the note's harmonic role may differ from when it first attacked.
+`Note::undoChangeProperty(Pid::TUNING, cents)`.  For notes that attack exactly at
+the target tick this is a direct property change.  Sustained notes — notes that
+started before the target tick but are still sounding — require score mutation
+because tuning is a single value per note and the note's harmonic role may differ
+from when it first attacked.
 
-#### Split-and-tie approach
+#### Split-and-slur approach
 
-A sustained note that needs a different tuning at the target tick is split there into
-two tied notes.  The first half keeps tuning = 0 (equal temperament; a later region
-pass will back-fill it).  The second half receives the offset for its role in the
-current chord.
+A sustained note that needs a different tuning at the target tick is split there
+into two notes connected by a slur.  The first half (note_A) keeps its existing
+tuning.  The second half (note_B) receives the offset for its role in the current
+chord.
 
-To keep the visual score clean the split uses a **silent-original / invisible-playback**
-strategy:
+A **slur** (not a tie) connects the two halves.  This is a deliberate choice:
+MuseScore's playback engine treats tied notes as one continuous sound with a single
+tuning value, so a tie would silently discard note_B's tuning.  A slur produces two
+independent playback events with legato articulation, allowing each half to carry
+its own tuning offset.
 
-- The original note remains structurally intact, **visible but silent** (`play = false`).
-  The composer sees one unbroken note.
-- Two new invisible tied notes (`visible = false`, `play = true`) are inserted in a
-  spare voice on the same staff:
-  - **note_A** — original onset → target tick, tuning = 0
-  - **note_B** — target tick → original end, tuning = computed offset
+The split is **visible** — the score shows two shorter notes connected by a slur.
+This is the simplest correct approach and is fully undoable via MuseScore's standard
+undo system.
 
-Reversion is self-describing: visible+silent notes with invisible tied successors in
-a secondary voice were placed there by the tuning system.  To undo: delete the
-invisible pair, restore `play = true` on the original.
+**Backlog:** An alternative invisible-voice strategy (silent original + invisible
+playing pair in a spare voice) was designed and prototyped but deferred.  It requires
+a UI indicator for tuning-applied notes before it is practical.  See
+`backlog_invisible_split.md`.
 
-#### Two note-collection modes
+#### Split threshold
 
-The chord analysis and the tuning application share the same collection machinery
-but apply different filters:
+A split is only performed when the difference between the note's current tuning and
+the desired tuning exceeds `kEpsilonCents` (0.5 cents).  This avoids unnecessary
+score mutations for inaudible differences.
 
-| Mode | Filter | Purpose |
-|------|--------|---------|
-| Chord analysis | `visible = true` | Exclude invisible tuning artifacts (avoids double-counting pitch classes) |
-| Tuning collection | `play = true` | Include invisible note_B from prior splits so re-runs update rather than layer |
+#### Slur chain management
 
-#### Voice allocation and fallback
+When successive splits are applied to the same note (e.g. a whole note in 4/4 with
+quarter-note chord changes), existing forward slurs are transferred from the
+shortened original to the end of the new note_B chain.  This produces a sequential
+slur chain (1→2→3→4) rather than a fan pattern (1→2, 1→3, 1→4).
 
-The invisible pair must occupy a different voice from the original note (each voice
-slot holds one ChordRest; the pair has its own duration grid).  The bridge scans the
-staff's four voices for a free slot at both sub-durations.
+#### Note collection filter
 
-If no voice is free, the operation falls back to a **visible split**: the original
-note is replaced in-place by a visible tied pair, both halves playing, with the tuning
-offset on the second half.  This modifies the visual score but is fully undoable.
+Chord analysis filters notes with `visible = true` and `play = true`, excluding
+both silent notes and any future invisible tuning artifacts from the pitch-class
+collection.
 
 #### Idempotency
 
-Re-running after a previous split creates no new splits.  note_A ends exactly at
-the target tick (`noteEnd == anchorTick`), which is excluded by the existing
-`noteEnd <= anchorTick` guard in the collection logic.  Re-running with a different
-temperament simply updates `setTuning()` on the existing note_B.
+After a split, note_A ends exactly at the target tick (`noteEnd == anchorTick`),
+which is excluded by the `noteEnd <= anchorTick` guard in the lookback loop.
+Re-running the operation on the same target tick does not produce additional splits.
+Phase 2 (attack-note tuning) handles re-tuning of notes at the anchor tick,
+including note_B from a previous split.
 
 #### Bridge function
 
@@ -1502,8 +1984,321 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
 // defined in src/notation/internal/notationaccessibility.cpp
 ```
 
-Returns `false` when the selected note is an invisible tuning artifact (no-op) or
-when fewer than 3 distinct pitch classes are sounding (insufficient data).
+The context menu path passes the tuning system explicitly (resolved from the user
+preference at menu-build time).  Other callers (chord track population, region
+tuning) use `preferredTuningSystem()` to read the preference at call time.
+
+The caller is responsible for undo grouping (`startCmd`/`endCmd` or the
+`NotationInteraction::startEdit`/`apply` pattern).  The function does not manage
+its own undo scope.
+
+Returns `false` when the selected note is invisible (no-op) or when fewer than 3
+distinct pitch classes are sounding (insufficient data for chord identification).
+
+### 11.5 Region Analysis and the Chord Track
+
+**Status: Implemented** — `analyzeHarmonicRhythm()` and `populateChordTrack()` are
+declared in `composing/analysis/harmonicrhythm.h` and defined in
+`notationaccessibility.cpp`.  Exposed as the "Implode to chord track" action in the
+Tools menu (see §12.1b).
+
+Single-note analysis (status bar display, single-chord tuning) is the foundation.
+Region analysis extends this to a time range, producing a complete harmonic analysis
+with chord symbols, roman numerals, and an optional note reduction across an entire
+passage.
+
+#### User interaction — selection-based targeting
+
+There is no dedicated staff type or property for the chord track.  The user's
+**selection determines the target**:
+
+1. **Select a range on any staff** and invoke "Implode to chord track."
+2. The system analyzes all **other** non-hidden tonal staves within that time range.
+3. The selected region is cleared and populated with the harmonic reduction.
+
+The target staff is excluded from the analysis input — it is the output, not a
+source.  This prevents feedback loops when re-running the analysis.
+
+**Any existing content in the selected region is overwritten.**  Re-analysis after
+score edits simply selects the same range and runs again.  If the user wants to
+preserve a previous analysis, they can undo or copy it elsewhere first.
+
+#### On-demand staff creation
+
+If no suitable target staff exists yet, the action offers to **create one**:
+
+1. Opens MuseScore's standard Add Instruments dialog — the user picks whatever
+   instrument they want (piano, organ, a single-line sketch staff, etc.).
+2. The new part is inserted (e.g., at the bottom of the score).
+3. A default name like "Chord Track" is suggested (soft hint for future automation,
+   not enforced).
+4. The selected tick range is applied to the new staff and population proceeds.
+
+The instrument choice is the user's.  The system adapts its output to what the
+staff supports (see below).
+
+#### Adaptive output by staff type
+
+- **Grand staff** (e.g., piano, organ): root on the bass staff, upper-structure
+  chord tones on the treble staff, chord symbols above, roman numerals below.
+  This is the richest output — a full keyboard reduction.
+- **Single staff** (e.g., treble clef sketch): chord symbols and roman numerals
+  only (no note reduction), or a single-staff reduction with root and upper
+  structure combined.  The user's instrument choice drives the output.
+
+#### Harmonic rhythm detection
+
+The region analysis scans **all non-hidden tonal staves** (excluding the target
+staff) within the selected time range, left to right, to identify every tick
+where the sounding pitch-class set changes — i.e. where any instrument starts or
+stops a note.  Each such tick is a potential chord boundary.
+
+Chord analysis runs at each boundary tick.  Consecutive boundaries that produce the
+**same root and quality** are collapsed into a single harmonic region.  This avoids
+unnecessary fragmentation: a string entrance that thickens a C major chord without
+changing the harmony does not create a new region.
+
+The result is a sequence of harmonic regions, each with:
+- Start tick and end tick (duration = harmonic rhythm)
+- Chord analysis result (root, quality, extensions)
+- Key/mode analysis result
+
+#### Chord track population (grand staff)
+
+The selected region is cleared and populated from the region sequence:
+
+**Treble clef (staff 1):** Upper-structure chord tones in close position, placed
+in the C4–C5 range.  Duration matches the harmonic region.  When voicing analysis
+is available (future), the inferred voicing (drop 2, spread, etc.) replaces the
+close-position default.
+
+**Bass clef (staff 2):** Root note only, showing bass motion.  Placed in a
+natural bass register (C2–C3 range).
+
+**Chord symbols** (`HarmonyType::STANDARD`) attached above the treble staff.
+**Roman numerals** (`HarmonyType::ROMAN`) attached below.
+
+The instrument's sound makes the harmonic reduction audible on playback — the
+composer can audition the harmonic progression independent of the orchestration.
+
+#### Close-position reduction algorithm
+
+Given a chord analysis result with root pitch class and chord tones:
+
+1. Sort pitch classes ascending from the root.
+2. Place the root in the bass clef at C2–C3 (nearest octave to middle of range).
+3. Stack remaining pitch classes above C4, each ascending from the previous, within
+   one octave.  This produces close-position voicing.
+4. When voicing inference is implemented (Phase 3), the inferred voicing replaces
+   step 3.  The algorithm becomes: "given these pitch classes and the detected
+   voicing type, produce the appropriate spacing."
+
+This mirrors how arrangers think — the chord track is a **keyboard reduction** of
+the full score, showing harmony and rhythm stripped of orchestration.
+
+#### Relationship to MuseScore's chord symbol realization
+
+MuseScore's existing `Score::cmdRealizeChordSymbols()` converts `Harmony` elements
+into notes on a single track.  It supports voicing types (close, drop 2, 3-note,
+4-note, 6-note) but places all notes including the bass on one staff.
+
+Our approach differs in two ways:
+
+1. **Grand staff separation** — root on the bass staff, upper structure on treble.
+   This matches standard lead-sheet layout and is more readable.
+2. **Analysis-derived** — their flow is symbol → notes (user typed the chord,
+   system voices it).  Ours is notes → symbol → reduction-notes (system infers the
+   chord from sounding notes, then produces the reduction).  The existing
+   `RealizedHarmony` and `Voicing` infrastructure may be useful when building our
+   voicing generator, but the analysis-first workflow is new.
+
+#### Rest analysis
+
+Single-note analysis requires a selected note as the anchor.  Region analysis does
+not — it analyzes at arbitrary ticks based on the harmonic rhythm.  A new entry
+point `analyzeHarmonicContextAtTick(Score*, Fraction tick, ...)` provides analysis
+without requiring a note anchor.  It uses the same collection and analysis logic,
+just without the "selected note" starting point.  This also enables annotation at
+ticks where the target staff has a rest.
+
+#### Relationship to intonation
+
+The chord track and intonation are **independent workflows** that share the chord
+analysis engine but have no other coupling:
+
+| | Chord track ("Implode to chord track") | Intonation |
+|---|---|---|
+| **Purpose** | Composition and analysis tool | Playback quality |
+| **Output** | Visible: notes, chord symbols, roman numerals | Invisible: cent offsets on existing notes |
+| **Target** | Any staff the user selects (or creates on demand) | Any staff the user selects |
+| **Requires** | Range selection on the target staff | Any note or range selection |
+| **Score impact** | Overwrites target region with reduction | Split-and-slur on sustained notes only |
+
+Neither workflow depends on the other.  A user can intonate without a chord track,
+and can populate the chord track without applying tuning.  Both use the same
+`analyzeHarmonicContextAtTick` entry point internally and the same user-preferred
+tuning system (§11.2a).
+
+#### Additional Chord Track Annotations — Planned
+
+The following annotations are planned for the chord track. All derive from data already
+computed or planned in the analysis engine — no new analytical components are required
+beyond what is already described in this document.
+
+**Non-diatonic chord highlighting** (ready to implement)
+
+Chords where `ChordAnalysisResult.diatonicToKey` is `false` receive distinct visual
+treatment — a different color or border on the chord block. Makes borrowed chords,
+secondary dominants, and chromatic passing chords immediately visible without requiring
+the user to read each Roman numeral. No additional analysis required — the flag is already
+computed.
+
+**Relative and parallel key relationships** (ready to implement)
+
+When the inferred key changes, the key label annotation includes the relationship to the
+previous key:
+
+- Same `keySignatureFifths`, different `isMajor` → "→ relative minor" / "→ relative major"
+- Same `tonicPc`, different `isMajor` → "→ parallel minor" / "→ parallel major"
+- `keySignatureFifths` differs by ±1 → "→ dominant key" / "→ subdominant key"
+- Other differences → circle of fifths distance stated: "→ mediant (E major)"
+
+All relationships are pure arithmetic on `keySignatureFifths`, `tonicPc`, and `isMajor` —
+no additional analysis required.
+
+**Key stability indicator** (depends on §5.7 normalized confidence)
+
+The confidence of the key/mode inference is indicated through staff text annotation:
+
+- Confidence above 0.8 — no annotation (confident, label stands alone)
+- Confidence 0.5–0.8 — question mark appended to key label: "D Dorian?"
+- Confidence below 0.5 — label in parentheses with explicit qualifier: "(D Dorian?)"
+
+Requires normalized confidence scores (§5.7) to be implemented first. Until then, raw
+scores from `KeyModeAnalysisResult` can be used with approximate thresholds as a temporary
+measure.
+
+**Key distance / borrowed chord annotation** (ready — basic version)
+
+When a chord is non-diatonic to the current inferred key, a small annotation identifies
+which nearby key it belongs to — making the borrowing relationship explicit.
+Implementation: for each non-diatonic chord, compute which keys contain it as a diatonic
+chord, then select the closest key by circle-of-fifths distance to the current inferred
+key. Requires the chord dictionary and scale/mode dictionary (§7.1, §7.2) to be populated.
+
+**Cadence markers** (basic version ready, improved with phrase analysis)
+
+Detected cadences annotated above the chord track staff at phrase boundaries:
+
+- Authentic (V→I): Roman numeral sequence in the inferred key
+- Half cadence (→V): ending on dominant
+- Deceptive (V→vi): dominant resolving to submediant
+- Plagal (IV→I): subdominant to tonic
+
+Basic detection uses a heuristic: cadential chord pairs followed by a significant harmonic
+change (new key region, long held chord, or rest). Full accuracy requires phrase structure
+analysis (planned but not yet implemented). Basic version is implementable now from the
+harmonic rhythm regions already computed.
+
+**Modulation path annotation** (basic version ready)
+
+At key region boundaries, annotate the pivot chord when one exists:
+
+"pivot: IV in G → ii in D"
+
+Implementation: the last chord before the key boundary that is diatonic to both the old
+and new key is the pivot. `formatRomanNumeral()` is called twice — once with the old key
+context, once with the new — to produce both Roman numerals. When no pivot chord exists
+(direct chromatic modulation), annotate as "direct modulation". Enharmonic reinterpretation
+detection is a future refinement.
+
+#### Future Extensions — Chord Track
+
+The following are possible future extensions. No implementation is planned.
+
+**Tension curve strip** — a small graph below the chord track staff showing harmonic
+tension over time, derived from voice leading complexity and distance from tonic. Connects
+to the tension curve editor (§12.4) when implemented.
+
+**Phrase structure markers** — bracket notation showing detected phrase beginnings and
+endings. Requires phrase structure analysis component.
+
+**Harmonic rhythm emphasis** — visual weight on chord blocks proportional to harmonic
+rhythm density, making acceleration toward cadences immediately visible.
+
+**Actual bass line overlay** — optional display of the original score's bass voice rather
+than just the chord root, revealing bass line character (walking bass, pedal point, chromatic
+descent).
+
+### 11.6 Region Intonation
+
+Intonation over a region extends the single-note tuning workflow (§11.4) to a
+time range.  **Whatever the user selects gets tuned.**  No dedicated staff is
+needed — intonation is a playback-only concern that does not add visible notation
+beyond the split-and-slur artifacts.
+
+#### Selection-based scoping
+
+The selection determines the scope:
+
+- **Single note** — tune that note using the harmonic context at its tick (the
+  existing single-note workflow from §11.4).
+- **Range on one or more staves** — detect harmonic rhythm within the range,
+  compute a tuning plan per region, split and tune all notes accordingly.
+- **Whole staff or Ctrl+A** — same as range, applied to the full extent.
+
+In every case the user selects what they want tuned; the tuning system is read from
+the user preference (§11.2a).  The analysis engine figures out the harmonic context
+at each tick, and the tuning logic handles the rest.
+
+#### Algorithm
+
+1. **Harmonic rhythm detection** — same scan as §11.5: identify every tick in the
+   selected time range where the sounding pitch-class set changes across all
+   non-hidden tonal staves.  Run chord analysis at each boundary.  Collapse
+   consecutive same-chord regions.
+2. **Compute tuning plan** — for each harmonic region and each sounding note in the
+   selected staves, compute the desired tuning offset.  Compare against the note's
+   current tuning.  Record which notes need changes and which sustained notes need
+   splits.
+3. **Execute splits** — because all boundaries are known upfront, the complete
+   split plan is computed before any mutations.  Each sustained note crossing a
+   region boundary is split-and-slurred once (§11.4 mechanics).  No cascading
+   splits.
+4. **Apply tuning** — set cent offsets on all notes (attack and newly-split)
+   via `undoChangeProperty(Pid::TUNING, ...)`.
+
+The entire operation is one undo group.
+
+#### Entry points
+
+```cpp
+// composing/intonation/tuning_system.h
+bool applyRegionTuning(mu::engraving::Score* score,
+                       const mu::engraving::Fraction& startTick,
+                       const mu::engraving::Fraction& endTick);
+// defined in src/notation/internal/notationaccessibility.cpp
+```
+
+Called from `NotationInteraction::tuneSelection()`, which determines the tick range
+from the current selection (range, single note → note span, or full score fallback).
+Exposed as the `"tune-selection"` action in the Tools menu.
+
+#### Shared split helper
+
+The split-and-slur logic used by both single-note tuning (§11.4 Phase 3) and region
+tuning is factored into a template helper:
+
+```cpp
+template<typename TuningFn>
+bool splitAndTuneChord(Score* sc, Chord* chordMut,
+                       const Fraction& splitTick, TuningFn tuningFn);
+```
+
+This shortens the original chord at the split tick, creates a continuation chord
+bridged by a slur, and applies the caller-supplied tuning function to the
+continuation's notes.  Both `applyTuningAtNote` and `applyRegionTuning` use this
+helper, eliminating duplicated mutation logic.
 
 ---
 
@@ -1532,6 +2327,20 @@ not require skipping the analysis.
 The preference follows MuseScore's existing preferences infrastructure. Toggling it
 takes effect immediately on the next selection change without requiring a restart. When
 disabled, the status bar reverts to standard MuseScore accessibility information.
+
+### 12.1b Menu Actions (Implemented)
+
+Two actions are registered in the Tools menu via `notationuiactions.cpp` and wired
+through `notationactioncontroller.cpp` and `appmenumodel.cpp`:
+
+| Action ID | Menu label | Trigger |
+|-----------|-----------|---------|
+| `implode-to-chord-track` | Implode to chord track | Requires a range selection on a grand-staff part; analyzes all other staves and populates the selected part with a harmonic reduction |
+| `tune-selection` | Tune selection | Tunes the selected note or range using the user-preferred tuning system (§11.2a) |
+
+Both actions are gated by `canReceiveAction(actionCode)` in
+`NotationActionController`, which checks that a score is open and the required
+selection exists.
 
 ### 12.2 Harmony Navigator
 
@@ -1674,6 +2483,11 @@ struct ArrangerInteraction {
 - User can insert the inferred chord symbol into the score as a chord symbol element
 - User can insert the inferred Roman numeral as a Roman numeral annotation
 - Both insertions use MuseScore's existing command system for undo/redo compatibility
+- ~~Region analysis: "Implode to chord track" populates any user-selected staff with
+  harmonic rhythm detection, adaptive reduction, chord symbols, and roman numerals
+  (see §11.5)~~ **Done** — "Implode to chord track" in Tools menu (§12.1b)
+- ~~Region intonation tunes whatever the user selects (see §11.6)~~ **Done** —
+  "Tune selection" in Tools menu (§12.1b)
 
 ### Phase 1 — Analysis Foundation Complete
 
@@ -1721,10 +2535,11 @@ struct ArrangerInteraction {
 
 ### Phase 6 — Intonation Module
 
-- `TuningCalculator` — compute just intonation offsets from analysis results
+- ~~`TuningCalculator` — compute just intonation offsets from analysis results~~ **Done** — tuning systems implemented in `composing/intonation/` (JI, Pythagorean, meantone, well temperaments)
 - Per-instrument configuration
 - `DriftManager` — drift prediction and correction
-- Tuning system selector (equal, just, meantone, well temperament, Pythagorean)
+- ~~Tuning system selector (equal, just, meantone, well temperament, Pythagorean)~~ **Done** — user preference in Preferences → Composing, used by all tuning workflows
+- ~~Region tuning~~ **Done** — "Tune selection" in Tools menu, uses harmonic rhythm analysis + split-and-slur
 
 ---
 
@@ -1962,12 +2777,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 1.2 — Added: §5.8 analyzer limitations (quartal, add2/add9, rootless, polychordal), §8.2 voicing type taxonomy, §12.1a status bar display preference*
+*Document version: 2.0 — Added §2.10 (cross-platform principle, moved from orphaned footer section); updated §1.4, §4.2, §4.3, §4.3b, §4.6 (user preferences), §5.1, §5.2, §5.4, §5.6, §5.7 to reflect implemented modal analysis, chord staff layout, normalized confidence, and preference infrastructure; previous: 1.9 — §5.9, §2.9, §11.5*
 *Last updated: March 2026*
 *Maintainer: Update this document whenever architectural decisions change*
-
----
-
-## Platform Support Requirement
-
-All code and features developed for the MuseScore Arranger module must be able to run on all platforms officially supported by MuseScore Studio: Windows, macOS, and Linux. Platform-specific code is only permitted when absolutely necessary and must be clearly documented and abstracted to allow for cross-platform compatibility. All build scripts, dependencies, and runtime logic must be tested on all supported platforms before merging.

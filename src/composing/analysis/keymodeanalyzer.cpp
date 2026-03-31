@@ -51,12 +51,36 @@ constexpr std::array<ModeDef, 7> MODES = {{
 }};
 
 /// Index into MODES for each KeyMode variant.
-constexpr size_t IONIAN_INDEX  = 0;
-constexpr size_t AEOLIAN_INDEX = 5;
+constexpr size_t IONIAN_INDEX     = 0;
+constexpr size_t DORIAN_INDEX     = 1;
+constexpr size_t PHRYGIAN_INDEX   = 2;
+constexpr size_t LYDIAN_INDEX     = 3;
+constexpr size_t MIXOLYDIAN_INDEX = 4;
+constexpr size_t AEOLIAN_INDEX    = 5;
+constexpr size_t LOCRIAN_INDEX    = 6;
 
-/// The modes currently evaluated.  Extend this to enable more modes; the
-/// evaluations table is sized dynamically to avoid the hardcoded-[12][2] fragility.
-constexpr std::array<size_t, 2> ACTIVE_MODE_INDICES = { IONIAN_INDEX, AEOLIAN_INDEX };
+/// All seven diatonic modes are evaluated.
+constexpr std::array<size_t, 7> ACTIVE_MODE_INDICES = {
+    IONIAN_INDEX, DORIAN_INDEX, PHRYGIAN_INDEX, LYDIAN_INDEX,
+    MIXOLYDIAN_INDEX, AEOLIAN_INDEX, LOCRIAN_INDEX
+};
+
+/// Characteristic pitch for each mode — the one scale degree that most
+/// distinguishes it from its closest neighbor.  Index is the mode's position
+/// in ACTIVE_MODE_INDICES (same as MODES index).  Value is the semitone
+/// interval from the tonic.
+///
+/// These are theory-grounded (each mode's signature pitch); the scoring
+/// weight applied to them is empirical.
+constexpr std::array<int, 7> CHARACTERISTIC_INTERVAL = {
+    11,   // Ionian:     major 7th — distinguishes from Mixolydian
+     9,   // Dorian:     major 6th — distinguishes from Aeolian
+     1,   // Phrygian:   minor 2nd — distinguishes from Aeolian
+     6,   // Lydian:     augmented 4th — distinguishes from Ionian
+    10,   // Mixolydian: minor 7th — distinguishes from Ionian
+     8,   // Aeolian:    minor 6th — distinguishes from Dorian
+     6,   // Locrian:    diminished 5th — distinguishes from Phrygian
+};
 
 } // anonymous namespace
 
@@ -180,11 +204,9 @@ double scoreTriadEvidence(int tonicPc, size_t modeIndex,
                           TriadEvidence& evidenceOut)
 {
     const int tonic       = tonicPc;
-    const int third       = (modeIndex == IONIAN_INDEX)
-                            ? (tonicPc + 4) % 12    // major third
-                            : (tonicPc + 3) % 12;   // minor third
-    const int fifth        = (tonicPc + 7) % 12;
-    const int leadingTone  = (tonicPc + 11) % 12;   // used for both modes (harmonic minor convention)
+    const int third       = (tonicPc + MODES[modeIndex].intervals[2]) % 12;  // 3rd degree from mode table
+    const int fifth       = (tonicPc + MODES[modeIndex].intervals[4]) % 12;  // 5th degree from mode table
+    const int leadingTone = (tonicPc + MODES[modeIndex].intervals[6]) % 12;  // 7th degree from mode table
 
     double extraScaleWeight = 0.0;
     std::array<bool, 12> inScale {};
@@ -226,6 +248,69 @@ double scoreTriadEvidence(int tonicPc, size_t modeIndex,
     return score;
 }
 
+/// Characteristic pitch score: boost when the mode's distinguishing pitch is
+/// present, penalty when it is absent.
+double scoreCharacteristicPitch(int tonicPc, size_t modeIndex,
+                                const std::vector<KeyModeAnalyzer::PitchContext>& pitches,
+                                const KeyModeAnalyzerPreferences& prefs)
+{
+    const int charPc = (tonicPc + CHARACTERISTIC_INTERVAL[modeIndex]) % 12;
+    double charWeight = 0.0;
+    for (const KeyModeAnalyzer::PitchContext& p : pitches) {
+        if (normalizePc(p.pitch) == charPc) {
+            charWeight += noteWeight(p, prefs);
+        }
+    }
+    return (charWeight > 0.1) ? prefs.characteristicPitchBoost
+                              : prefs.characteristicPitchPenalty;
+}
+
+/// True leading-tone score: the presence of a note a semitone below the
+/// candidate's tonic is the strongest tonal gravity signal in Western music.
+/// Unlike the mode-specific 7th degree (which is a whole step for Dorian,
+/// Phrygian, Mixolydian, Aeolian), this always checks (tonicPc + 11) % 12.
+/// A chromatic leading tone (e.g. G# in A natural minor) still indicates
+/// that pitch class as tonic — it's the harmonic minor raised 7th.
+double scoreTrueLeadingTone(int tonicPc,
+                            const std::vector<KeyModeAnalyzer::PitchContext>& pitches,
+                            const KeyModeAnalyzerPreferences& prefs)
+{
+    const int ltPc = (tonicPc + 11) % 12;
+    double ltWeight = 0.0;
+    for (const KeyModeAnalyzer::PitchContext& p : pitches) {
+        if (normalizePc(p.pitch) == ltPc) {
+            ltWeight += noteWeight(p, prefs);
+        }
+    }
+    return (ltWeight > 0.1) ? prefs.trueLeadingToneBoost : 0.0;
+}
+
+/// Mode prior: additive bias reflecting real-world mode frequency.
+/// Ionian and Aeolian are overwhelmingly more common than Lydian or Locrian,
+/// so when pitch evidence is ambiguous, the prior tips the balance toward
+/// the more likely mode.
+double scoreModePrior(size_t modeIndex, const KeyModeAnalyzerPreferences& prefs)
+{
+    constexpr size_t IONIAN     = 0;
+    constexpr size_t DORIAN     = 1;
+    constexpr size_t PHRYGIAN   = 2;
+    constexpr size_t LYDIAN     = 3;
+    constexpr size_t MIXOLYDIAN = 4;
+    constexpr size_t AEOLIAN    = 5;
+    constexpr size_t LOCRIAN    = 6;
+
+    switch (modeIndex) {
+    case IONIAN:     return prefs.modePriorIonian;
+    case DORIAN:     return prefs.modePriorDorian;
+    case PHRYGIAN:   return prefs.modePriorPhrygian;
+    case LYDIAN:     return prefs.modePriorLydian;
+    case MIXOLYDIAN: return prefs.modePriorMixolydian;
+    case AEOLIAN:    return prefs.modePriorAeolian;
+    case LOCRIAN:    return prefs.modePriorLocrian;
+    default:         return 0.0;
+    }
+}
+
 /// Key-signature proximity penalty: penalises candidates far from the notated
 /// key signature (in circle-of-fifths distance).
 double scoreKeySignatureProximity(int tonicPc, size_t modeIndex,
@@ -260,60 +345,39 @@ double tonalCenterScore(const CandidateEvaluation& eval,
     return s;
 }
 
-// ── Relative major/minor post-hoc disambiguation ─────────────────────────────
+// ── Pairwise post-hoc disambiguation ─────────────────────────────────────────
 //
-// After the main scoring loop, relative major/minor pairs that share a key
-// signature are explicitly disambiguated using tonic-presence and complete-triad
-// evidence.
+// After the main scoring loop, pairs of modes sharing a key signature are
+// explicitly disambiguated using tonic-presence and complete-triad evidence.
+// This generalizes the former relative-major/minor disambiguation to all 7 modes.
 //
-// Four cases (applied independently for every major/minor pair):
-//
-//   (A) Major has complete triad + tonic, minor has no tonic
-//       → major += disambiguationTriadBonus, minor -= disambiguationTriadCost
-//
-//   (B) Minor has complete triad + tonic, major has no tonic
-//       → minor += disambiguationTriadBonus, major -= disambiguationTriadCost
-//       Note: (B) is structurally unreachable in practice for the natural relative
-//       pair because the minor triad's m3 IS the major tonic.  It is preserved for
-//       correctness if the mode table is extended.
-//
-//   (C) Major has tonic, minor has no tonic (no complete triad involved)
-//       → major += disambiguationTonicBonus
-//
-//   (D) Minor has tonic, major has no tonic
-//       → minor += disambiguationTonicBonus
+// For each ordered pair (A, B) of modes sharing a key signature:
+//   - If A has a complete triad + tonic and B has no tonic:
+//     A gets a boost, B gets a penalty.
+//   - If A has tonic presence and B does not (no complete triad):
+//     A gets a smaller boost.
 
-void applyRelativePairDisambiguation(
-    CandidateEvaluation& majorEval,
-    CandidateEvaluation& minorEval,
+void applyPairwiseDisambiguation(
+    CandidateEvaluation& evalA,
+    CandidateEvaluation& evalB,
     const KeyModeAnalyzerPreferences& prefs)
 {
-    // Case (A): major complete triad confirmed, minor tonic absent.
-    if (majorEval.evidence.hasCompleteTriad
-        && majorEval.evidence.tonicWeight > 0.1
-        && minorEval.evidence.tonicWeight < 0.1)
-    {
-        majorEval.score += prefs.disambiguationTriadBonus;
-        minorEval.score -= prefs.disambiguationTriadCost;
-    }
+    const bool aHasTonic = evalA.evidence.tonicWeight > 0.1;
+    const bool bHasTonic = evalB.evidence.tonicWeight > 0.1;
 
-    // Case (B): minor complete triad confirmed, major tonic absent.
-    if (minorEval.evidence.hasCompleteTriad
-        && minorEval.evidence.tonicWeight > 0.1
-        && majorEval.evidence.tonicWeight < 0.1)
-    {
-        minorEval.score += prefs.disambiguationTriadBonus;
-        majorEval.score -= prefs.disambiguationTriadCost;
+    if (evalA.evidence.hasCompleteTriad && aHasTonic && !bHasTonic) {
+        evalA.score += prefs.disambiguationTriadBonus;
+        evalB.score -= prefs.disambiguationTriadCost;
     }
-
-    // Case (C): major tonic present, minor tonic absent.
-    if (majorEval.evidence.tonicWeight > 0.1 && minorEval.evidence.tonicWeight < 0.1) {
-        majorEval.score += prefs.disambiguationTonicBonus;
+    if (evalB.evidence.hasCompleteTriad && bHasTonic && !aHasTonic) {
+        evalB.score += prefs.disambiguationTriadBonus;
+        evalA.score -= prefs.disambiguationTriadCost;
     }
-
-    // Case (D): minor tonic present, major tonic absent.
-    if (minorEval.evidence.tonicWeight > 0.1 && majorEval.evidence.tonicWeight < 0.1) {
-        minorEval.score += prefs.disambiguationTonicBonus;
+    if (aHasTonic && !bHasTonic) {
+        evalA.score += prefs.disambiguationTonicBonus;
+    }
+    if (bHasTonic && !aHasTonic) {
+        evalB.score += prefs.disambiguationTonicBonus;
     }
 }
 
@@ -348,6 +412,9 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     std::vector<CandidateEvaluation> evaluations(12 * numModeSlots);
 
     for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+        // Tonic-level scores (independent of mode — compute once per tonic).
+        const double ltScore     = scoreTrueLeadingTone(tonicPc, pitches, prefs);
+
         for (size_t modeSlot = 0; modeSlot < numModeSlots; ++modeSlot) {
             const size_t modeIndex = ACTIVE_MODE_INDICES[modeSlot];
             CandidateEvaluation& eval = evaluations[static_cast<size_t>(tonicPc) * numModeSlots + modeSlot];
@@ -360,49 +427,72 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
             eval.keySignatureScore = scoreKeySignatureProximity(tonicPc, modeIndex,
                                                                 keySignatureFifths, prefs);
             eval.extraToneScore  = 0.0;  // folded into triadScore via scoreTriadEvidence
-            eval.score           = eval.scaleScore + eval.triadScore + eval.keySignatureScore;
+            const double charScore  = scoreCharacteristicPitch(tonicPc, modeIndex, pitches, prefs);
+            const double priorScore = scoreModePrior(modeIndex, prefs);
+            eval.score           = eval.scaleScore + eval.triadScore + eval.keySignatureScore
+                                 + charScore + ltScore + priorScore;
         }
     }
 
-    // Apply relative major/minor post-hoc disambiguation for every pair.
-    for (int majorTonicPc = 0; majorTonicPc < 12; ++majorTonicPc) {
-        const int minorTonicPc = (majorTonicPc + 9) % 12;
+    // Apply post-hoc disambiguation to the top-2 scoring modes sharing the
+    // key signature.  Extending disambiguation to all 21 pairs inflates absolute
+    // scores disproportionately (every additional tonic-bearing mode reduces the
+    // winner's accumulated bonus, making scores unstable).  Restricting to the
+    // top-2 keeps the disambiguation focused on the decision boundary that
+    // actually matters.
+    if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+        const int matchingIonianPc = ionianTonicPcFromFifths(keySignatureFifths);
 
-        // modeSlot 0 = Ionian (major), modeSlot 1 = Aeolian (minor).
-        CandidateEvaluation& majorEval = evaluations[static_cast<size_t>(majorTonicPc) * numModeSlots + 0];
-        CandidateEvaluation& minorEval = evaluations[static_cast<size_t>(minorTonicPc) * numModeSlots + 1];
+        // Find top-2 modes by raw score (before disambiguation).
+        struct ModeEntry { int tonicPc; size_t modeSlot; double score; };
+        std::array<ModeEntry, 7> entries;
+        for (size_t slot = 0; slot < numModeSlots; ++slot) {
+            const size_t mIdx = ACTIVE_MODE_INDICES[slot];
+            const int tpc = (matchingIonianPc + keyModeTonicOffset(keyModeFromIndex(mIdx))) % 12;
+            const double s = evaluations[static_cast<size_t>(tpc) * numModeSlots + slot].score;
+            entries[slot] = { tpc, slot, s };
+        }
+        std::sort(entries.begin(), entries.end(),
+                  [](const ModeEntry& a, const ModeEntry& b) { return a.score > b.score; });
 
-        applyRelativePairDisambiguation(majorEval, minorEval, prefs);
+        CandidateEvaluation& evalA = evaluations[
+            static_cast<size_t>(entries[0].tonicPc) * numModeSlots + entries[0].modeSlot];
+        CandidateEvaluation& evalB = evaluations[
+            static_cast<size_t>(entries[1].tonicPc) * numModeSlots + entries[1].modeSlot];
+        applyPairwiseDisambiguation(evalA, evalB, prefs);
     }
 
     // Select the best candidate.
     //
-    // When the key signature is within the valid range [-7, 7], the relative
-    // major/minor pair for that key signature is first compared using the focussed
-    // tonal-centre formula; the global highest-scoring candidate wins only if the
-    // key signature is out of range (defensive path for invalid input).
+    // When the key signature is within the valid range [-7, 7], compare all modes
+    // that share that key signature using the focussed tonal-centre formula, then
+    // pick the one with the best combined score.  Out-of-range key signatures fall
+    // back to the global highest-scoring candidate.
     int bestTonicPc    = 0;
     size_t bestModeSlot = 0;
     double bestScore   = -std::numeric_limits<double>::infinity();
 
     if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
-        const int keySigMajorTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
-        const int keySigMinorTonicPc = (keySigMajorTonicPc + 9) % 12;
+        const int keySigIonianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
 
-        const CandidateEvaluation& majorEval = evaluations[static_cast<size_t>(keySigMajorTonicPc) * numModeSlots + 0];
-        const CandidateEvaluation& minorEval = evaluations[static_cast<size_t>(keySigMinorTonicPc) * numModeSlots + 1];
-
-        const double majorCenter = tonalCenterScore(majorEval, prefs);
-        const double minorCenter = tonalCenterScore(minorEval, prefs);
-        const double delta = majorCenter - minorCenter;
-
-        const bool chooseMajor = (std::abs(delta) > prefs.tonalCenterDeltaThreshold)
-                                 ? (delta > 0.0)
-                                 : (majorEval.score >= minorEval.score);
-
-        bestTonicPc  = chooseMajor ? keySigMajorTonicPc : keySigMinorTonicPc;
-        bestModeSlot = chooseMajor ? 0 : 1;
-        bestScore    = chooseMajor ? majorEval.score : minorEval.score;
+        // Compare all modes sharing this key signature via tonal-centre score.
+        double bestCenterScore = -std::numeric_limits<double>::infinity();
+        for (size_t modeSlot = 0; modeSlot < numModeSlots; ++modeSlot) {
+            const size_t modeIndex = ACTIVE_MODE_INDICES[modeSlot];
+            const int tonicPc = (keySigIonianTonicPc + keyModeTonicOffset(keyModeFromIndex(modeIndex))) % 12;
+            const CandidateEvaluation& eval = evaluations[static_cast<size_t>(tonicPc) * numModeSlots + modeSlot];
+            const double center = tonalCenterScore(eval, prefs);
+            // Use tonal-centre score as primary, raw score as tiebreaker.
+            if (center > bestCenterScore + prefs.tonalCenterDeltaThreshold
+                || (std::abs(center - bestCenterScore) <= prefs.tonalCenterDeltaThreshold
+                    && eval.score > bestScore))
+            {
+                bestCenterScore = center;
+                bestScore    = eval.score;
+                bestTonicPc  = tonicPc;
+                bestModeSlot = modeSlot;
+            }
+        }
     } else {
         // Out-of-range key signature: use the global highest-scoring candidate.
         for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
@@ -442,8 +532,9 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const size_t bestModeIndex = ACTIVE_MODE_INDICES[bestModeSlot];
     KeyModeAnalysisResult best;
     best.keySignatureFifths = resolveToFifths(bestTonicPc, bestModeIndex, keySignatureFifths);
-    best.mode  = (bestModeIndex == IONIAN_INDEX) ? KeyMode::Ionian : KeyMode::Aeolian;
-    best.score = bestScore;
+    best.mode    = keyModeFromIndex(bestModeIndex);
+    best.tonicPc = bestTonicPc;
+    best.score   = bestScore;
     results.push_back(best);
 
     for (const RawCandidate& c : allCandidates) {
@@ -452,18 +543,107 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
         }
         const size_t modeIndex = ACTIVE_MODE_INDICES[c.modeSlot];
         const int fifths = resolveToFifths(c.tonicPc, modeIndex, keySignatureFifths);
-        const KeyMode mode = (modeIndex == IONIAN_INDEX) ? KeyMode::Ionian : KeyMode::Aeolian;
+        const KeyMode mode = keyModeFromIndex(modeIndex);
         if (fifths == best.keySignatureFifths && mode == best.mode) {
             continue;  // already added as the winner
         }
         KeyModeAnalysisResult r;
         r.keySignatureFifths = fifths;
-        r.mode  = mode;
-        r.score = c.score;
+        r.mode    = mode;
+        r.tonicPc = c.tonicPc;
+        r.score   = c.score;
         results.push_back(r);
     }
 
+    // ── Compute normalized confidence ────────────────────────────────────
+    //
+    // Maps the score gap between top-1 and top-2 through a sigmoid to produce
+    // a 0.0–1.0 value.  A large gap means the winner is clearly dominant; a
+    // small gap means the result is ambiguous.  When only one candidate exists,
+    // confidence is based on the winner's score vs. zero.
+    if (!results.empty()) {
+        const double winnerScore = results.front().score;
+        const double runnerUpScore = (results.size() >= 2) ? results[1].score : 0.0;
+        const double gap = winnerScore - runnerUpScore;
+        const double confidence = 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
+                                                          * (gap - prefs.confidenceSigmoidMidpoint)));
+        for (size_t i = 0; i < results.size(); ++i) {
+            // Winner gets the computed confidence; runners-up get proportionally less
+            if (i == 0) {
+                results[i].normalizedConfidence = confidence;
+            } else {
+                const double iGap = results[i].score - ((i + 1 < results.size()) ? results[i + 1].score : 0.0);
+                results[i].normalizedConfidence = 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
+                                                                         * (iGap - prefs.confidenceSigmoidMidpoint)));
+            }
+        }
+    }
+
     return results;
+}
+
+// ── Display helpers ─────────────────────────────────────────────────────────
+
+const char* keyModeTonicName(int fifths, KeyMode mode)
+{
+    // Tonic names indexed by circle-of-fifths position +7, per mode.
+    static constexpr const char* IONIAN_NAMES[15] = {
+        "Cb", "Gb", "Db", "Ab", "Eb", "Bb", "F",
+        "C", "G", "D", "A", "E", "B", "F#", "C#"
+    };
+    static constexpr const char* AEOLIAN_NAMES[15] = {
+        "Ab", "Eb", "Bb", "F", "C", "G", "D",
+        "A", "E", "B", "F#", "C#", "G#", "D#", "A#"
+    };
+    // Dorian tonic = Ionian tonic + 2 fifths on the circle of fifths.
+    static constexpr const char* DORIAN_NAMES[15] = {
+        "Db", "Ab", "Eb", "Bb", "F", "C", "G",
+        "D", "A", "E", "B", "F#", "C#", "G#", "D#"
+    };
+    // Phrygian tonic = Ionian tonic + 4 fifths on the circle of fifths.
+    static constexpr const char* PHRYGIAN_NAMES[15] = {
+        "Eb", "Bb", "F", "C", "G", "D", "A",
+        "E", "B", "F#", "C#", "G#", "D#", "A#", "E#"
+    };
+    static constexpr const char* LYDIAN_NAMES[15] = {
+        "Fb", "Cb", "Gb", "Db", "Ab", "Eb", "Bb",
+        "F", "C", "G", "D", "A", "E", "B", "F#"
+    };
+    static constexpr const char* MIXOLYDIAN_NAMES[15] = {
+        "Gb", "Db", "Ab", "Eb", "Bb", "F", "C",
+        "G", "D", "A", "E", "B", "F#", "C#", "G#"
+    };
+    // Locrian tonic = Ionian tonic + 5 fifths on the circle of fifths.
+    static constexpr const char* LOCRIAN_NAMES[15] = {
+        "Bb", "F", "C", "G", "D", "A", "E",
+        "B", "F#", "C#", "G#", "D#", "A#", "E#", "B#"
+    };
+
+    const int idx = std::clamp(fifths + 7, 0, 14);
+    switch (mode) {
+    case KeyMode::Ionian:     return IONIAN_NAMES[idx];
+    case KeyMode::Dorian:     return DORIAN_NAMES[idx];
+    case KeyMode::Phrygian:   return PHRYGIAN_NAMES[idx];
+    case KeyMode::Lydian:     return LYDIAN_NAMES[idx];
+    case KeyMode::Mixolydian: return MIXOLYDIAN_NAMES[idx];
+    case KeyMode::Aeolian:    return AEOLIAN_NAMES[idx];
+    case KeyMode::Locrian:    return LOCRIAN_NAMES[idx];
+    }
+    return IONIAN_NAMES[idx];
+}
+
+const char* keyModeSuffix(KeyMode mode)
+{
+    switch (mode) {
+    case KeyMode::Ionian:     return "maj";
+    case KeyMode::Dorian:     return "Dor";
+    case KeyMode::Phrygian:   return "Phryg";
+    case KeyMode::Lydian:     return "Lyd";
+    case KeyMode::Mixolydian: return "Mixolyd";
+    case KeyMode::Aeolian:    return "min";
+    case KeyMode::Locrian:    return "Loc";
+    }
+    return "";
 }
 
 } // namespace mu::composing::analysis

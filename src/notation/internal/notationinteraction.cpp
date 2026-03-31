@@ -99,6 +99,8 @@
 #include "engraving/rw/rwregister.h"
 #include "engraving/rw/xmlreader.h"
 
+#include "composing/analysis/harmonicrhythm.h"
+#include "composing/intonation/tuning_system.h"
 #include "composing/intonation/tuning_system.h"
 #include "composing/intonation/tuning_utils.h"
 
@@ -6471,6 +6473,80 @@ void NotationInteraction::implodeSelectedStaff()
     checkAndShowError();
 }
 
+void NotationInteraction::implodeToChordTrack(engraving::staff_idx_t trebleStaffIdx, bool useCollectedTones)
+{
+    const Selection& sel = score()->selection();
+
+    // Determine the time range from the selection.
+    Fraction startTick;
+    Fraction endTick;
+    if (sel.isRange()) {
+        startTick = sel.tickStart();
+        endTick   = sel.tickEnd();
+    } else if (sel.isSingle() && sel.element() && sel.element()->isNote()) {
+        // Single note: use that note's rhythmic span only.
+        const Chord* ch = toNote(sel.element())->chord();
+        if (ch) {
+            startTick = ch->tick();
+            endTick   = ch->tick() + ch->actualTicks();
+        }
+    }
+
+    if (endTick <= startTick) {
+        // No usable selection — analyze the full score.
+        startTick = Fraction(0, 1);
+        endTick   = score()->endTick();
+    }
+
+    startEdit(TranslatableString("undoableAction", "Implode to chord track"));
+
+    const bool ok = mu::composing::analysis::populateChordTrack(
+        score(), startTick, endTick, trebleStaffIdx, useCollectedTones);
+
+    if (ok) {
+        apply();
+    } else {
+        rollback();
+    }
+}
+
+void NotationInteraction::tuneSelection()
+{
+    const Selection& sel = score()->selection();
+
+    Fraction startTick;
+    Fraction endTick;
+    if (sel.isRange()) {
+        startTick = sel.tickStart();
+        endTick   = sel.tickEnd();
+    } else if (sel.isSingle() && sel.element() && sel.element()->isNote()) {
+        const Chord* ch = toNote(sel.element())->chord();
+        if (ch) {
+            const Measure* m = ch->findMeasure();
+            if (m) {
+                startTick = m->tick();
+                endTick   = m->endTick();
+            }
+        }
+    }
+
+    if (endTick <= startTick) {
+        startTick = Fraction(0, 1);
+        endTick   = score()->endTick();
+    }
+
+    startEdit(TranslatableString("undoableAction", "Tune selection"));
+
+    const bool ok = mu::composing::intonation::applyRegionTuning(
+        score(), startTick, endTick);
+
+    if (ok) {
+        apply();
+    } else {
+        rollback();
+    }
+}
+
 void NotationInteraction::realizeSelectedChordSymbols(bool literal, Voicing voicing, HarmonyDurationType durationType)
 {
     if (selection()->isNone()) {
@@ -8236,8 +8312,9 @@ void NotationInteraction::addAnalyzedHarmony(const QString& text, mu::engraving:
 
 void NotationInteraction::addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey)
 {
+    Q_UNUSED(rootPc);
+    Q_UNUSED(quality);
     using namespace mu::composing::intonation;
-    using namespace mu::composing::analysis;
 
     const TuningSystem* sys = TuningRegistry::byKey(tuningKey.toStdString());
     if (!sys) {
@@ -8248,23 +8325,9 @@ void NotationInteraction::addAnalyzedTuning(int rootPc, int quality, const QStri
     if (!item || !item->isNote()) {
         return;
     }
-    Chord* chord = toNote(item)->chord();
-    if (!chord) {
-        return;
-    }
-
-    auto chordQuality = static_cast<ChordQuality>(quality);
-    KeyModeAnalysisResult keyMode;   // unused by current implementations
 
     startEdit(TranslatableString("undoableAction", "Tune as"));
-
-    for (Note* note : chord->notes()) {
-        const int notePc = (note->pitch() % 12 + 12) % 12;
-        const int semitones = semitoneFromPitches(notePc, rootPc);
-        const double deviation = sys->tuningOffset(keyMode, chordQuality, rootPc, semitones);
-        note->undoChangeProperty(Pid::TUNING, deviation);
-    }
-
+    applyTuningAtNote(toNote(item), *sys);
     apply();
 }
 

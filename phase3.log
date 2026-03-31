@@ -1,0 +1,7 @@
+QML debugging is enabled. Only use this in a safe environment.
+Cannot resolve table 'C:/s/MS/tables/unicode.dis'
+1 errors found.
+C:/s/MS/tables/unicode.dis,C:/s/MS/tables/en-us-g2.ctb could not be compiled
+Cannot resolve table 'C:/s/MS/tables/en-ueb-g1.ctb'
+1 errors found.
+C:/s/MS/tables/en-ueb-g1.ctb could not be compiled

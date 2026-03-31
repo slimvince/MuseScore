@@ -403,6 +403,15 @@ void NotationActionController::init()
 
     registerAction("explode", &Interaction::explodeSelectedStaff);
     registerAction("implode", &Interaction::implodeSelectedStaff);
+    registerAction("implode-to-chord-track", [this](const ActionData& args) {
+        IF_ASSERT_FAILED(args.count() > 1) { return; }
+        const auto staffIdx = args.arg<mu::engraving::staff_idx_t>(0);
+        const bool useCollectedTones = args.arg<bool>(1);
+        currentNotationInteraction()->implodeToChordTrack(staffIdx, useCollectedTones);
+    });
+    registerAction("tune-selection", [this](const ActionData&) {
+        currentNotationInteraction()->tuneSelection();
+    });
     registerAction("extend-to-next-note", &Interaction::extendToNextNote);
     registerAction("time-delete", &Interaction::removeSelectedRange);
     registerAction("del-empty-measures", &Interaction::removeEmptyTrailingMeasures);

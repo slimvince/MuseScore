@@ -42,6 +42,12 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
     Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
 
+    // Mode detection weights
+    Q_PROPERTY(double modeTierWeight1  READ modeTierWeight1  WRITE setModeTierWeight1  NOTIFY modeTierWeight1Changed)
+    Q_PROPERTY(double modeTierWeight2  READ modeTierWeight2  WRITE setModeTierWeight2  NOTIFY modeTierWeight2Changed)
+    Q_PROPERTY(double modeTierWeight3  READ modeTierWeight3  WRITE setModeTierWeight3  NOTIFY modeTierWeight3Changed)
+    Q_PROPERTY(double modeTierWeight4  READ modeTierWeight4  WRITE setModeTierWeight4  NOTIFY modeTierWeight4Changed)
+
     // Status-bar display
     Q_PROPERTY(bool showKeyModeInStatusBar      READ showKeyModeInStatusBar      WRITE setShowKeyModeInStatusBar      NOTIFY showKeyModeInStatusBarChanged)
     Q_PROPERTY(int  statusBarChordSymbolCount   READ statusBarChordSymbolCount   WRITE setStatusBarChordSymbolCount   NOTIFY statusBarChordSymbolCountChanged)
@@ -60,6 +66,11 @@ public:
     int  analysisAlternatives() const;
     QString tuningSystemKey() const;
 
+    double modeTierWeight1() const;
+    double modeTierWeight2() const;
+    double modeTierWeight3() const;
+    double modeTierWeight4() const;
+
     bool showKeyModeInStatusBar() const;
     int  statusBarChordSymbolCount() const;
     int  statusBarRomanNumeralCount() const;
@@ -71,6 +82,11 @@ public slots:
     void setAnalysisAlternatives(int count);
     void setTuningSystemKey(const QString& key);
 
+    void setModeTierWeight1(double value);
+    void setModeTierWeight2(double value);
+    void setModeTierWeight3(double value);
+    void setModeTierWeight4(double value);
+
     void setShowKeyModeInStatusBar(bool value);
     void setStatusBarChordSymbolCount(int count);
     void setStatusBarRomanNumeralCount(int count);
@@ -81,6 +97,11 @@ signals:
     void inferKeyModeChanged();
     void analysisAlternativesChanged();
     void tuningSystemKeyChanged();
+
+    void modeTierWeight1Changed();
+    void modeTierWeight2Changed();
+    void modeTierWeight3Changed();
+    void modeTierWeight4Changed();
 
     void showKeyModeInStatusBarChanged();
     void statusBarChordSymbolCountChanged();

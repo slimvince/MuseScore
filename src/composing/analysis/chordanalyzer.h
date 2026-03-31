@@ -25,6 +25,8 @@
 #include <string>
 #include <vector>
 
+#include "keymodeanalyzer.h"
+
 namespace mu::engraving {
 class Note;
 }
@@ -166,7 +168,8 @@ public:
     /// Analyse a vertical sonority from sounding notes under a key context.
     ///
     /// keySignatureFifths: -7..+7, same convention as KeyModeAnalyzer.
-    /// keyIsMajor: true for major/Ionian, false for minor/Aeolian.
+    /// keyMode: detected mode — determines the tonic and diatonic scale used
+    ///          for degree assignment and diatonic scoring.
     /// context: optional temporal context for root-continuity scoring.
     ///
     /// Returns up to 3 candidates sorted by score descending. An empty result
@@ -174,7 +177,7 @@ public:
     static std::vector<ChordAnalysisResult> analyzeChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,
-        bool keyIsMajor,
+        KeyMode keyMode,
         const ChordTemporalContext* context = nullptr,
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences);
 };
@@ -202,22 +205,49 @@ std::string formatSymbol(const ChordAnalysisResult& result, int keySignatureFift
 
 /// Format diatonic degree and quality into roman numeral notation (e.g. "V7", "iiø7").
 /// Returns an empty string when result.degree < 0 (non-diatonic chord).
-std::string formatRomanNumeral(const ChordAnalysisResult& result, bool keyIsMajor);
+std::string formatRomanNumeral(const ChordAnalysisResult& result);
 
 } // namespace ChordSymbolFormatter
 
+/// Voicing output for chord track population.  Bass note is placed separately
+/// from upper-structure tones so the caller can write them to different staves.
+struct ClosePositionVoicing {
+    int bassPitch = -1;                  ///< Root MIDI pitch in C2–C3 range (-1 = empty)
+    std::vector<int> treblePitches;      ///< Upper chord tones in C4–C5 close position
+};
+
+/// Compute a close-position keyboard reduction voicing from an analysis result.
+///
+/// Bass: root placed in C2–C3 (MIDI 36–48), nearest to midpoint (42).
+/// Treble: remaining chord tones stacked ascending above C4 (MIDI 60),
+/// each note ascending from the previous, staying within one octave.
+///
+/// Returns empty voicing (bassPitch == -1) if analysis has Unknown quality.
+ClosePositionVoicing closePositionVoicing(const ChordAnalysisResult& result);
+
+/// Derive the canonical set of pitch classes for a chord from its analysis result.
+///
+/// Returns pitch classes (0–11) ordered: root first, then remaining chord tones
+/// ascending from the root.  The result reflects the chord's quality and all
+/// detected extensions — it is not a transcription of what was sounding, but the
+/// idealized chord content suitable for a keyboard reduction.
+///
+/// If omitsThird is true in the result, the third is excluded.
+/// Altered fifths (b5, #5) replace the natural fifth when flagged.
+std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result);
+
 /// Bridge function: extracts pitch context from a selected note and runs the chord
 /// and key/mode analyzers.  Declared here in the composing module, but **defined in
-/// src/notation/internal/notationaccessibility.cpp** — that file is the only place
+/// src/notation/internal/notationcomposingbridge.cpp** — that file is the only place
 /// where both the engraving model (Note, Chord, Segment, …) and the composing
 /// analysis API are available together.  All future notation–composing bridge code
 /// should follow this pattern: declare in composing/, define in notation/.
 ///
 /// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).
-/// Also populates outKeyFifths and outIsMajor so callers can pass them to the formatter.
+/// Also populates outKeyFifths and outKeyMode so callers can pass them to the formatter.
 std::vector<ChordAnalysisResult>
 analyzeNoteHarmonicContext(const mu::engraving::Note* note,
                            int& outKeyFifths,
-                           bool& outIsMajor);
+                           KeyMode& outKeyMode);
 
 } // namespace mu::composing::analysis

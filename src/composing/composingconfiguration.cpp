@@ -36,6 +36,10 @@ static const Settings::Key TUNING_SYSTEM_KEY(module_name,          "composing/tu
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,    "composing/showKeyModeInStatusBar");
 static const Settings::Key STATUS_BAR_CHORD_SYMBOL_COUNT(module_name,  "composing/statusBarChordSymbolCount");
 static const Settings::Key STATUS_BAR_ROMAN_NUMERAL_COUNT(module_name, "composing/statusBarRomanNumeralCount");
+static const Settings::Key MODE_TIER_WEIGHT_1(module_name, "composing/modeTierWeight1");
+static const Settings::Key MODE_TIER_WEIGHT_2(module_name, "composing/modeTierWeight2");
+static const Settings::Key MODE_TIER_WEIGHT_3(module_name, "composing/modeTierWeight3");
+static const Settings::Key MODE_TIER_WEIGHT_4(module_name, "composing/modeTierWeight4");
 
 void ComposingConfiguration::init()
 {
@@ -77,6 +81,26 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(STATUS_BAR_ROMAN_NUMERAL_COUNT, Val(0));
     settings()->valueChanged(STATUS_BAR_ROMAN_NUMERAL_COUNT).onReceive(nullptr, [this](const Val&) {
         m_statusBarRomanNumeralCountChanged.notify();
+    });
+
+    settings()->setDefaultValue(MODE_TIER_WEIGHT_1, Val(1.0));
+    settings()->valueChanged(MODE_TIER_WEIGHT_1).onReceive(nullptr, [this](const Val&) {
+        m_modeTierWeight1Changed.notify();
+    });
+
+    settings()->setDefaultValue(MODE_TIER_WEIGHT_2, Val(-0.5));
+    settings()->valueChanged(MODE_TIER_WEIGHT_2).onReceive(nullptr, [this](const Val&) {
+        m_modeTierWeight2Changed.notify();
+    });
+
+    settings()->setDefaultValue(MODE_TIER_WEIGHT_3, Val(-1.5));
+    settings()->valueChanged(MODE_TIER_WEIGHT_3).onReceive(nullptr, [this](const Val&) {
+        m_modeTierWeight3Changed.notify();
+    });
+
+    settings()->setDefaultValue(MODE_TIER_WEIGHT_4, Val(-3.0));
+    settings()->valueChanged(MODE_TIER_WEIGHT_4).onReceive(nullptr, [this](const Val&) {
+        m_modeTierWeight4Changed.notify();
     });
 }
 
@@ -214,4 +238,72 @@ void ComposingConfiguration::setStatusBarRomanNumeralCount(int count)
 muse::async::Notification ComposingConfiguration::statusBarRomanNumeralCountChanged() const
 {
     return m_statusBarRomanNumeralCountChanged;
+}
+
+// ── modeTierWeight1 ─────────────────────────────────────────────────────────
+
+double ComposingConfiguration::modeTierWeight1() const
+{
+    return settings()->value(MODE_TIER_WEIGHT_1).toDouble();
+}
+
+void ComposingConfiguration::setModeTierWeight1(double value)
+{
+    settings()->setSharedValue(MODE_TIER_WEIGHT_1, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::modeTierWeight1Changed() const
+{
+    return m_modeTierWeight1Changed;
+}
+
+// ── modeTierWeight2 ─────────────────────────────────────────────────────────
+
+double ComposingConfiguration::modeTierWeight2() const
+{
+    return settings()->value(MODE_TIER_WEIGHT_2).toDouble();
+}
+
+void ComposingConfiguration::setModeTierWeight2(double value)
+{
+    settings()->setSharedValue(MODE_TIER_WEIGHT_2, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::modeTierWeight2Changed() const
+{
+    return m_modeTierWeight2Changed;
+}
+
+// ── modeTierWeight3 ─────────────────────────────────────────────────────────
+
+double ComposingConfiguration::modeTierWeight3() const
+{
+    return settings()->value(MODE_TIER_WEIGHT_3).toDouble();
+}
+
+void ComposingConfiguration::setModeTierWeight3(double value)
+{
+    settings()->setSharedValue(MODE_TIER_WEIGHT_3, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::modeTierWeight3Changed() const
+{
+    return m_modeTierWeight3Changed;
+}
+
+// ── modeTierWeight4 ─────────────────────────────────────────────────────────
+
+double ComposingConfiguration::modeTierWeight4() const
+{
+    return settings()->value(MODE_TIER_WEIGHT_4).toDouble();
+}
+
+void ComposingConfiguration::setModeTierWeight4(double value)
+{
+    settings()->setSharedValue(MODE_TIER_WEIGHT_4, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::modeTierWeight4Changed() const
+{
+    return m_modeTierWeight4Changed;
 }

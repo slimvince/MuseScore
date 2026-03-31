@@ -64,6 +64,8 @@ target_sources(notation PRIVATE
     internal/notation.cpp
     internal/notation.h
     internal/notationaccessibility.cpp
+    internal/notationcomposingbridge.cpp
+    internal/notationcomposingbridge.h
     internal/notationconfiguration.cpp
     internal/notationconfiguration.h
     internal/notationautomation.cpp

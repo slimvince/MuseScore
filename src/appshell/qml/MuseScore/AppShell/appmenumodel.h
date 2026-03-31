@@ -44,6 +44,7 @@
 #include "update/iupdateconfiguration.h"
 #include "workspace/iworkspacemanager.h"
 
+#include "composing/icomposingconfiguration.h"
 #include "iappshellconfiguration.h"
 #include "internal/iappmenumodelhook.h"
 
@@ -68,6 +69,7 @@ public:
     muse::GlobalInject<muse::musesampler::IMuseSamplerInfo> museSamplerInfo;
 #endif
     muse::GlobalInject<muse::extensions::IExtensionsProvider> extensionsProvider;
+    muse::GlobalInject<mu::composing::IComposingConfiguration> composingConfiguration;
     muse::ContextInject<muse::ui::IUiActionsRegister> uiActionsRegister = { this };
     muse::ContextInject<IAppMenuModelHook> appMenuModelHook = { this };
     muse::ContextInject<mu::context::IGlobalContext> globalContext = { this };
@@ -102,6 +104,8 @@ private:
     muse::uicomponents::MenuItem* makeAddMenu();
     muse::uicomponents::MenuItem* makeFormatMenu();
     muse::uicomponents::MenuItem* makeToolsMenu();
+    muse::uicomponents::MenuItemList makeChordTrackTargetItems();
+    muse::uicomponents::MenuItem* makeTuneSelectionItem();
     muse::uicomponents::MenuItem* makePluginsMenu();
     muse::uicomponents::MenuItemList makePluginsMenuSubitems();
     muse::uicomponents::MenuItem* makeHelpMenu(bool addDiagnosticsSubMenu);

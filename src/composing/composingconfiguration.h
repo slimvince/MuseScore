@@ -62,6 +62,22 @@ public:
     void setStatusBarRomanNumeralCount(int count) override;
     muse::async::Notification statusBarRomanNumeralCountChanged() const override;
 
+    double modeTierWeight1() const override;
+    void setModeTierWeight1(double value) override;
+    muse::async::Notification modeTierWeight1Changed() const override;
+
+    double modeTierWeight2() const override;
+    void setModeTierWeight2(double value) override;
+    muse::async::Notification modeTierWeight2Changed() const override;
+
+    double modeTierWeight3() const override;
+    void setModeTierWeight3(double value) override;
+    muse::async::Notification modeTierWeight3Changed() const override;
+
+    double modeTierWeight4() const override;
+    void setModeTierWeight4(double value) override;
+    muse::async::Notification modeTierWeight4Changed() const override;
+
 private:
     muse::async::Notification m_analyzeForChordSymbolsChanged;
     muse::async::Notification m_analyzeForRomanNumeralsChanged;
@@ -71,6 +87,10 @@ private:
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_statusBarChordSymbolCountChanged;
     muse::async::Notification m_statusBarRomanNumeralCountChanged;
+    muse::async::Notification m_modeTierWeight1Changed;
+    muse::async::Notification m_modeTierWeight2Changed;
+    muse::async::Notification m_modeTierWeight3Changed;
+    muse::async::Notification m_modeTierWeight4Changed;
 };
 
 } // namespace mu::composing

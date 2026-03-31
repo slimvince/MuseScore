@@ -21,6 +21,9 @@
  */
 #include "appmenumodel.h"
 
+#include "async/notifylist.h"
+#include "composing/intonation/tuning_system.h"
+#include "engraving/dom/part.h"
 #include "types/translatablestring.h"
 
 #include "muse_framework_config.h"
@@ -142,6 +145,16 @@ void AppMenuModel::setupConnections()
         }
 
         updateUndoRedoItems();
+
+        // Rebuild the chord track target submenu for the new score.
+        MenuItem& chordTrackMenu = findMenu("menu-chord-track");
+        if (chordTrackMenu.isValid()) {
+            MenuItemList targets = makeChordTrackTargetItems();
+            chordTrackMenu.setSubitems(targets);
+            UiActionState state;
+            state.enabled = !targets.isEmpty();
+            chordTrackMenu.setState(state);
+        }
     });
 }
 
@@ -372,6 +385,89 @@ MenuItem* AppMenuModel::makeFormatMenu()
     return makeMenu(TranslatableString("appshell/menu/format", "F&ormat"), formatItems, "menu-format");
 }
 
+MenuItemList AppMenuModel::makeChordTrackTargetItems()
+{
+    MenuItemList items;
+
+    mu::notation::INotationPtr notation = globalContext()->currentNotation();
+    if (!notation) {
+        return items;
+    }
+
+    auto partsPtr = notation->parts();
+    if (!partsPtr) {
+        return items;
+    }
+
+    int idx = 0;
+    for (const mu::engraving::Part* part : partsPtr->partList()) {
+        if (!part || part->nstaves() < 2) {
+            continue;
+        }
+
+        // The treble staff is the first staff of the part.
+        const auto staves = part->staveIdxList();
+        if (staves.empty()) {
+            continue;
+        }
+        const mu::engraving::staff_idx_t trebleIdx = *staves.begin();
+
+        // "As written" — uses collected tones from the score.
+        MenuItem* asWritten = makeMenuItem("implode-to-chord-track");
+        if (!asWritten) {
+            continue;
+        }
+        asWritten->setId(QString("chord-track-%1-written").arg(idx));
+        {
+            UiAction a = asWritten->action();
+            a.title = TranslatableString::untranslatable(part->partName() + u" — As written");
+            asWritten->setAction(a);
+        }
+        asWritten->setArgs(ActionData::make_arg2<mu::engraving::staff_idx_t, bool>(trebleIdx, true));
+        items << asWritten;
+
+        // "Close position" — canonical voicing from analysis.
+        MenuItem* closePos = makeMenuItem("implode-to-chord-track");
+        if (!closePos) {
+            ++idx;
+            continue;
+        }
+        closePos->setId(QString("chord-track-%1-close").arg(idx));
+        {
+            UiAction a = closePos->action();
+            a.title = TranslatableString::untranslatable(part->partName() + u" — Close position");
+            closePos->setAction(a);
+        }
+        closePos->setArgs(ActionData::make_arg2<mu::engraving::staff_idx_t, bool>(trebleIdx, false));
+        items << closePos;
+
+        ++idx;
+    }
+
+    // TODO: "Create new..." item that opens the Add Instruments dialog
+    // and then runs implode-to-chord-track on the newly created staff.
+
+    return items;
+}
+
+MenuItem* AppMenuModel::makeTuneSelectionItem()
+{
+    using namespace mu::composing::intonation;
+
+    const std::string tuningKey = composingConfiguration()->tuningSystemKey();
+    const TuningSystem* sys = TuningRegistry::byKey(tuningKey);
+    const std::string displayName = sys ? sys->displayName() : tuningKey;
+
+    MenuItem* item = makeMenuItem("tune-selection");
+    if (item) {
+        ui::UiAction action = item->action();
+        action.title = TranslatableString::untranslatable(
+            QString("Tune as %1").arg(QString::fromStdString(displayName)));
+        item->setAction(action);
+    }
+    return item;
+}
+
 MenuItem* AppMenuModel::makeToolsMenu()
 {
     MenuItemList voicesItems {
@@ -394,12 +490,17 @@ MenuItem* AppMenuModel::makeToolsMenu()
         makeMenuItem("pitch-spell"),
     };
 
+    MenuItemList chordTrackItems = makeChordTrackTargetItems();
+
     MenuItemList toolsItems {
         makeMenuItem("transpose"),
         makeSeparator(),
         makeMenuItem("explode"),
         makeMenuItem("implode"),
+        makeMenu(TranslatableString("appshell/menu/tools", "Implode to chord &track"),
+                 chordTrackItems, "menu-chord-track", !chordTrackItems.isEmpty()),
         makeMenuItem("realize-chord-symbols"),
+        makeTuneSelectionItem(),
         makeMenu(TranslatableString("appshell/menu/tools", "&Voices"), voicesItems, "menu-voices"),
         makeMenu(TranslatableString("appshell/menu/tools", "&Measures"), measuresItems, "menu-tools-measures"),
         makeMenuItem("time-delete"),

@@ -522,3 +522,207 @@ TEST(Composing_KeyModeAnalyzerTests, HeavyTonicWeightOverridesAmbiguousContext)
     EXPECT_EQ(results.front().keySignatureFifths, -3);
     EXPECT_EQ(results.front().mode, KeyMode::Aeolian);   // C minor
 }
+
+// ── Normalized confidence ───────────────────────────────────────────────────
+
+TEST(Composing_KeyModeAnalyzerTests, ConfidenceIsInZeroOneRange)
+{
+    // Full C major scale — should produce a confident result.
+    const auto pitches = flatPitches({ 60, 62, 64, 65, 67, 69, 71 });
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_GE(results.size(), 2u);
+    EXPECT_GE(results.front().normalizedConfidence, 0.0);
+    EXPECT_LE(results.front().normalizedConfidence, 1.0);
+    EXPECT_GE(results[1].normalizedConfidence, 0.0);
+    EXPECT_LE(results[1].normalizedConfidence, 1.0);
+}
+
+TEST(Composing_KeyModeAnalyzerTests, StrongEvidenceProducesHighConfidence)
+{
+    // Full C major scale with heavy tonic — very clear evidence.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(60, 4.0, 1.0, true),   // C — heavy
+        makePitch(62, 1.0, 0.4, false),  // D
+        makePitch(64, 2.0, 1.0, false),  // E
+        makePitch(65, 1.0, 0.4, false),  // F
+        makePitch(67, 2.0, 0.7, false),  // G
+        makePitch(69, 1.0, 0.4, false),  // A
+        makePitch(71, 1.0, 0.2, false),  // B
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+    ASSERT_FALSE(results.empty());
+    EXPECT_GT(results.front().normalizedConfidence, 0.5);
+}
+
+TEST(Composing_KeyModeAnalyzerTests, AmbiguousInputProducesLowConfidence)
+{
+    // Single pitch — minimal evidence, should produce low confidence.
+    const auto pitches = flatPitches({ 60 });
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    // With mode priors, even a single pitch yields moderate confidence because
+    // the prior strongly favors Tier 1 modes.  The threshold is set above the
+    // strong-evidence test (> 0.5) but allows the prior-boosted gap.
+    EXPECT_LT(results.front().normalizedConfidence, 0.9);
+}
+
+// ── Non-Ionian/Aeolian mode identification ──────────────────────────────────
+//
+// Each of the five remaining diatonic modes is tested with its tonic triad plus
+// the mode's characteristic pitch.  A weighted tonic ensures the mode wins
+// over competing candidates that share the same key signature (all 7 modes
+// share keySig=0 when built from the C major pitch-class set).
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesDDorianFromTonicTriadAndCharacteristic)
+{
+    // D Dorian: D minor triad (D F A) + B (major 6th — characteristic).
+    // keySig=0 (same key sig as C Ionian).  Heavy tonic D.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(62, 3.0, 1.0, true),   // D — heavy tonic (bass)
+        makePitch(65, 1.0, 1.0, false),  // F — minor 3rd
+        makePitch(69, 1.0, 1.0, false),  // A — perfect 5th
+        makePitch(71, 1.0, 1.0, false),  // B — characteristic (major 6th)
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().tonicPc, 2);   // D
+}
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesEPhrygianFromTonicTriadAndCharacteristic)
+{
+    // E Phrygian: E minor triad (E G B) + F (minor 2nd — characteristic).
+    // keySig=0.  Heavy tonic E.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(64, 3.0, 1.0, true),   // E — heavy tonic (bass)
+        makePitch(67, 1.0, 1.0, false),  // G — minor 3rd
+        makePitch(71, 1.0, 1.0, false),  // B — perfect 5th
+        makePitch(65, 1.0, 1.0, false),  // F — characteristic (minor 2nd)
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Phrygian);
+    EXPECT_EQ(results.front().tonicPc, 4);   // E
+}
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesFLydianFromTonicTriadAndCharacteristic)
+{
+    // F Lydian: F major triad (F A C) + B (augmented 4th — characteristic).
+    // keySig=0.  Heavy tonic F.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(65, 3.0, 1.0, true),   // F — heavy tonic (bass)
+        makePitch(69, 1.0, 1.0, false),  // A — major 3rd
+        makePitch(72, 1.0, 1.0, false),  // C — perfect 5th
+        makePitch(71, 1.0, 1.0, false),  // B — characteristic (augmented 4th)
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Lydian);
+    EXPECT_EQ(results.front().tonicPc, 5);   // F
+}
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesGMixolydianFromTonicTriadAndCharacteristic)
+{
+    // G Mixolydian: G major triad (G B D) + F (minor 7th — characteristic).
+    // keySig=0.  Heavy tonic G.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(67, 3.0, 1.0, true),   // G — heavy tonic (bass)
+        makePitch(71, 1.0, 1.0, false),  // B — major 3rd
+        makePitch(74, 1.0, 1.0, false),  // D — perfect 5th
+        makePitch(65, 1.0, 1.0, false),  // F — characteristic (minor 7th)
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Mixolydian);
+    EXPECT_EQ(results.front().tonicPc, 7);   // G
+}
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesBLocrianFromTonicTriadAndCharacteristic)
+{
+    // B Locrian: B diminished triad (B D F), where F is also the characteristic
+    // (diminished 5th).  keySig=0.  Heavy tonic B.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(59, 3.0, 1.0, true),   // B — heavy tonic (bass)
+        makePitch(62, 1.0, 1.0, false),  // D — minor 3rd
+        makePitch(65, 1.0, 1.0, false),  // F — dim 5th + characteristic
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Locrian);
+    EXPECT_EQ(results.front().tonicPc, 11);  // B
+}
+
+// ── Full diatonic scales — non-Ionian/Aeolian modes ─────────────────────────
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesDDorianFromFullScale)
+{
+    // D E F G A B C — all 7 notes of D Dorian, with heavy D tonic.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(62, 3.0, 1.0, true),   // D
+        makePitch(64, 1.0, 0.4, false),  // E
+        makePitch(65, 1.0, 0.4, false),  // F
+        makePitch(67, 1.0, 0.4, false),  // G
+        makePitch(69, 1.5, 0.7, false),  // A — fifth
+        makePitch(71, 1.0, 0.4, false),  // B — characteristic
+        makePitch(72, 1.0, 0.4, false),  // C
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().tonicPc, 2);
+}
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesGMixolydianFromFullScale)
+{
+    // G A B C D E F — all 7 notes of G Mixolydian, with heavy G tonic.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(67, 3.0, 1.0, true),   // G
+        makePitch(69, 1.0, 0.4, false),  // A
+        makePitch(71, 1.5, 0.7, false),  // B — third
+        makePitch(72, 1.0, 0.4, false),  // C
+        makePitch(74, 1.5, 0.7, false),  // D — fifth
+        makePitch(76, 1.0, 0.4, false),  // E
+        makePitch(77, 1.0, 0.4, false),  // F — characteristic
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Mixolydian);
+    EXPECT_EQ(results.front().tonicPc, 7);
+}
+
+// ── Non-zero key signature modes ─────────────────────────────────────────────
+
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesADorianWithKeySig1)
+{
+    // A Dorian = A B C D E F# G — shares keySig=1 (G major).
+    // Tonic triad: A C E (A minor).  Characteristic: F# (major 6th).
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(69, 3.0, 1.0, true),   // A — heavy tonic (bass)
+        makePitch(72, 1.0, 1.0, false),  // C — minor 3rd
+        makePitch(76, 1.0, 1.0, false),  // E — perfect 5th
+        makePitch(78, 1.0, 1.0, false),  // F# — characteristic (major 6th)
+    };
+
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 1);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().tonicPc, 9);   // A
+}

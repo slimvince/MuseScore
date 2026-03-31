@@ -30,6 +30,8 @@
 
 namespace mu::engraving {
 class Note;
+class Score;
+class Fraction;
 }
 
 namespace mu::composing::intonation {
@@ -125,7 +127,7 @@ public:
 /// clean onset boundary for tuning.
 ///
 /// Declared here in the composing module; **defined in
-/// src/notation/internal/notationaccessibility.cpp** — the only file where
+/// src/notation/internal/notationcomposingbridge.cpp** — the only file where
 /// both the engraving model and the composing intonation API are available.
 /// All future notation–composing tuning bridge code follows this pattern.
 ///
@@ -135,5 +137,22 @@ public:
 ///   - fewer than 3 distinct pitch classes are sounding (insufficient chord data).
 bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
                        const TuningSystem& system);
+
+/// Apply tuning to all notes within a time range, using pre-computed harmonic
+/// regions from analyzeHarmonicRhythm().
+///
+/// For each region:
+///   - Notes that attack within the region get a tuning offset (cents only).
+///   - Notes sustained from a previous region are split at the boundary
+///     and the new portion is tuned to the current region's harmony.
+///
+/// Chord track staves (detected by name) are excluded.
+///
+/// Declared here; **defined in src/notation/internal/notationcomposingbridge.cpp**.
+///
+/// @return true if any tuning was applied.
+bool applyRegionTuning(mu::engraving::Score* score,
+                       const mu::engraving::Fraction& startTick,
+                       const mu::engraving::Fraction& endTick);
 
 } // namespace mu::composing::intonation

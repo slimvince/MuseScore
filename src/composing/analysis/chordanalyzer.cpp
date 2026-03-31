@@ -285,77 +285,136 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
     return suffix;
 }
 
-std::string diatonicRoman(int degree, ChordQuality quality, bool keyIsMajor,
-                           bool hasMinorSeventh, bool hasMajorSeventh, bool hasDiminishedSeventh,
-                           bool hasAddedSixth,
-                           bool hasNinth, bool hasEleventh, bool hasThirteenth)
+std::string diatonicRoman(const ChordAnalysisResult& r)
 {
-    if (degree < 0 || degree > 6) {
+    if (r.degree < 0 || r.degree > 6) {
         return "";
     }
 
     static constexpr std::array<const char*, 7> UPPER = { "I", "II", "III", "IV", "V", "VI", "VII" };
     static constexpr std::array<const char*, 7> LOWER = { "i", "ii", "iii", "iv", "v", "vi", "vii" };
 
+    const auto quality = r.quality;
     std::string rn;
+
+    // ── Base numeral (upper = major/aug/power/sus; lower = minor/dim/halfdim) ──
     switch (quality) {
     case ChordQuality::Major:
     case ChordQuality::Augmented:
     case ChordQuality::Power:
-        rn = UPPER[static_cast<size_t>(degree)];
-        break;
     case ChordQuality::Suspended2:
-        rn = UPPER[static_cast<size_t>(degree)];
-        rn += "sus2";
-        return rn;  // Roman numeral extensions beyond 7th not yet supported; catalog covers 7th level only
     case ChordQuality::Suspended4:
-        rn = UPPER[static_cast<size_t>(degree)];
-        rn += "sus4";
-        return rn;  // Roman numeral extensions beyond 7th not yet supported; catalog covers 7th level only
+        rn = UPPER[static_cast<size_t>(r.degree)];
+        break;
     case ChordQuality::Minor:
-        rn = LOWER[static_cast<size_t>(degree)];
-        break;
     case ChordQuality::Diminished:
-        rn = LOWER[static_cast<size_t>(degree)];
-        rn += "o";
-        break;
     case ChordQuality::HalfDiminished:
-        // Standard notation: "iø7" distinguishes half-diminished from fully-diminished "io7".
-        rn = LOWER[static_cast<size_t>(degree)];
-        rn += "\xc3\xb8" "7";  // ø (U+00F8) + "7"
-        return rn;
+        rn = LOWER[static_cast<size_t>(r.degree)];
+        break;
     default:
         return "";
     }
 
-    // Augmented always carries "+" — before any 7th suffix — so triads give "I+",
-    // augmented dominant gives "I+7", and augmented major-7th gives "I+M7".
+    // ── Quality decoration ──
     if (quality == ChordQuality::Augmented) {
         rn += "+";
+    } else if (quality == ChordQuality::Diminished) {
+        rn += "o";
     }
 
-    // Added sixth: emit "(add6)" or "69" to distinguish from I6 (first inversion).
-    // Only Major and Minor carry add6; other qualities either early-return above or
-    // never set hasAddedSixth in detectExtensions.
-    // When both add6 and add9 are present, the chord is a 6/9 chord → "69".
-    if (hasAddedSixth && (quality == ChordQuality::Major || quality == ChordQuality::Minor)) {
-        rn += hasNinth ? "69" : "(add6)";
-        return rn;  // add6/69 chords have no 7th by definition; inversion appended by caller
+    // ── Added-sixth / 6/9 (no 7th by definition) ──
+    if (r.hasAddedSixth && (quality == ChordQuality::Major || quality == ChordQuality::Minor)) {
+        rn += r.hasNinth ? "69" : "(add6)";
+        return rn;
     }
 
-    if (hasMajorSeventh) {
-        rn += "M7";
-    } else if (hasMinorSeventh) {
-        rn += "7";
-    } else if (hasDiminishedSeventh && quality == ChordQuality::Diminished) {
-        // Full diminished seventh: "io7" notation.
+    // ── Determine 7th presence and extension level ──
+    // HalfDiminished structurally includes a minor 7th (suppressed in the flag
+    // by detectExtensions), so treat it as having a 7th for level purposes.
+    const bool hasAnySeventh = r.hasMinorSeventh || r.hasMajorSeventh
+                               || (r.hasDiminishedSeventh && quality == ChordQuality::Diminished)
+                               || quality == ChordQuality::HalfDiminished;
+
+    // Extension level = highest natural extension when a 7th is present.
+    // Natural 9th/11th/13th elevate the level number; altered forms (b9, #11, etc.)
+    // are appended as suffixes without elevating it.
+    int level = 0;
+    if (hasAnySeventh) {
+        if (r.hasThirteenth)        level = 13;
+        else if (r.hasEleventh)     level = 11;
+        else if (r.hasNinthNatural) level = 9;
+        else                        level = 7;
+    }
+
+    // ── Half-diminished: "ø" + level + alterations ──
+    if (quality == ChordQuality::HalfDiminished) {
+        rn += "\xc3\xb8";  // ø (U+00F8)
+        rn += std::to_string(level);
+        if (r.hasNinthFlat)       rn += "b9";
+        if (r.hasNinthSharp)      rn += "#9";
+        if (r.hasEleventhSharp)   rn += "#11";
+        if (r.hasThirteenthFlat)  rn += "b13";
+        return rn;
+    }
+
+    // ── Fully diminished 7th (no higher extensions in standard usage) ──
+    if (quality == ChordQuality::Diminished && r.hasDiminishedSeventh) {
         rn += "7";
         return rn;
     }
 
-    // Roman numeral extensions beyond 7th are not yet supported.
-    // The test catalog covers the 7th level only; if higher extensions are added
-    // to the catalog, this function should be extended to emit "I9", "V11", etc.
+    // ── Suspended chords: level + alterations + susN ──
+    if (quality == ChordQuality::Suspended2 || quality == ChordQuality::Suspended4) {
+        const char* susTag = (quality == ChordQuality::Suspended2) ? "sus2" : "sus4";
+        if (level > 0) {
+            if (r.hasMajorSeventh) rn += "M";
+            rn += std::to_string(level);
+            if (r.hasFlatFifth)       rn += "b5";
+            if (r.hasSharpFifth)      rn += "#5";
+            if (r.hasNinthFlat)       rn += "b9";
+            if (r.hasNinthSharp)      rn += "#9";
+            if (r.hasEleventhSharp)   rn += "#11";
+            if (r.hasThirteenthFlat)  rn += "b13";
+            rn += susTag;
+        } else {
+            rn += susTag;
+        }
+        return rn;
+    }
+
+    // ── Extension level for major/minor/augmented ──
+    if (level > 0) {
+        if (r.hasMajorSeventh) rn += "M";
+        rn += std::to_string(level);
+    }
+
+    // ── Altered extensions as suffixes (only with a 7th present) ──
+    // Suppress structural alterations: b5 is inherent to Diminished, #5 to Augmented.
+    if (hasAnySeventh) {
+        if (r.hasFlatFifth && quality != ChordQuality::Diminished)  rn += "b5";
+        if (r.hasSharpFifth && quality != ChordQuality::Augmented)  rn += "#5";
+        if (r.hasNinthFlat)       rn += "b9";
+        if (r.hasNinthSharp)      rn += "#9";
+        if (r.hasEleventhSharp)   rn += "#11";
+        if (r.hasThirteenthFlat)  rn += "b13";
+    }
+
+    // ── "add" notation for extensions without a 7th ──
+    if (!hasAnySeventh && quality != ChordQuality::Diminished) {
+        if (r.hasThirteenth) {
+            rn += "(add13)";
+        } else if (r.hasEleventhSharp) {
+            rn += "(add#11)";
+        } else if (r.hasEleventh) {
+            rn += "(add11)";
+        } else if (r.hasNinthFlat) {
+            rn += "(addb9)";
+        } else if (r.hasNinthSharp) {
+            rn += "(add#9)";
+        } else if (r.hasNinthNatural) {
+            rn += "(add9)";
+        }
+    }
 
     return rn;
 }
@@ -1064,7 +1123,7 @@ double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
 std::vector<ChordAnalysisResult> ChordAnalyzer::analyzeChord(
     const std::vector<ChordAnalysisTone>& tones,
     int keySignatureFifths,
-    bool keyIsMajor,
+    KeyMode keyMode,
     const ChordTemporalContext* context,
     const ChordAnalyzerPreferences& prefs)
 {
@@ -1157,12 +1216,24 @@ std::vector<ChordAnalysisResult> ChordAnalyzer::analyzeChord(
     }};
 
     // Key context — used for diatonic root bonus and degree assignment.
+    // The tonic and scale are derived from the detected mode.
     const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
-    const int keyTonicPc    = keyIsMajor ? ionianTonicPc : (ionianTonicPc + 9) % 12;
+    const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
 
-    constexpr std::array<int, 7> MAJOR_SCALE = { 0, 2, 4, 5, 7, 9, 11 };
-    constexpr std::array<int, 7> MINOR_SCALE = { 0, 2, 3, 5, 7, 8, 10 };
-    const std::array<int, 7>& scale = keyIsMajor ? MAJOR_SCALE : MINOR_SCALE;
+    // Mode scale intervals — all seven diatonic modes
+    static constexpr std::array<int, 7> IONIAN_SCALE     = { 0, 2, 4, 5, 7, 9, 11 };
+    static constexpr std::array<int, 7> DORIAN_SCALE      = { 0, 2, 3, 5, 7, 9, 10 };
+    static constexpr std::array<int, 7> PHRYGIAN_SCALE    = { 0, 1, 3, 5, 7, 8, 10 };
+    static constexpr std::array<int, 7> LYDIAN_SCALE      = { 0, 2, 4, 6, 7, 9, 11 };
+    static constexpr std::array<int, 7> MIXOLYDIAN_SCALE  = { 0, 2, 4, 5, 7, 9, 10 };
+    static constexpr std::array<int, 7> AEOLIAN_SCALE     = { 0, 2, 3, 5, 7, 8, 10 };
+    static constexpr std::array<int, 7> LOCRIAN_SCALE     = { 0, 1, 3, 5, 6, 8, 10 };
+
+    static constexpr std::array<const std::array<int, 7>*, 7> MODE_SCALES = {
+        &IONIAN_SCALE, &DORIAN_SCALE, &PHRYGIAN_SCALE, &LYDIAN_SCALE,
+        &MIXOLYDIAN_SCALE, &AEOLIAN_SCALE, &LOCRIAN_SCALE
+    };
+    const std::array<int, 7>& scale = *MODE_SCALES[keyModeIndex(keyMode)];
 
     // Score every root × template combination.
     //
@@ -1403,24 +1474,220 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
     return symbol;
 }
 
-std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& result,
-                                                     bool keyIsMajor)
+std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& result)
 {
     if (result.degree < 0) {
         return "";
     }
 
-    std::string romanNumeral = diatonicRoman(result.degree, result.quality, keyIsMajor,
-                                             result.hasMinorSeventh, result.hasMajorSeventh,
-                                             result.hasDiminishedSeventh,
-                                             result.hasAddedSixth,
-                                             result.hasNinth, result.hasEleventh,
-                                             result.hasThirteenth);
+    std::string romanNumeral = diatonicRoman(result);
     romanNumeral = romanWithInversion(romanNumeral, result.quality,
                                       result.rootPc, result.bassPc,
                                       result.hasMinorSeventh, result.hasMajorSeventh,
                                       result.hasDiminishedSeventh);
     return romanNumeral;
+}
+
+// ── chordTonePitchClasses ─────────────────────────────────────────────────────
+
+std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result)
+{
+    const int r = result.rootPc;
+    auto pc = [&](int semitones) { return (r + semitones) % 12; };
+
+    // Start with the triad implied by quality.
+    // Third slot:
+    int thirdInterval = -1;  // -1 = no third
+    switch (result.quality) {
+    case ChordQuality::Major:
+    case ChordQuality::Augmented:
+        thirdInterval = 4;
+        break;
+    case ChordQuality::Minor:
+    case ChordQuality::Diminished:
+    case ChordQuality::HalfDiminished:
+        thirdInterval = 3;
+        break;
+    case ChordQuality::Suspended2:
+        thirdInterval = 2;
+        break;
+    case ChordQuality::Suspended4:
+        thirdInterval = 5;
+        break;
+    case ChordQuality::Power:
+    case ChordQuality::Unknown:
+        thirdInterval = -1;
+        break;
+    }
+
+    // Fifth slot:
+    int fifthInterval = -1;
+    switch (result.quality) {
+    case ChordQuality::Major:
+    case ChordQuality::Minor:
+    case ChordQuality::Suspended2:
+    case ChordQuality::Suspended4:
+    case ChordQuality::Power:
+        fifthInterval = 7;
+        break;
+    case ChordQuality::Diminished:
+    case ChordQuality::HalfDiminished:
+        fifthInterval = 6;
+        break;
+    case ChordQuality::Augmented:
+        fifthInterval = 8;
+        break;
+    case ChordQuality::Unknown:
+        fifthInterval = -1;
+        break;
+    }
+
+    // Apply fifth alterations (override the quality's default).
+    if (result.hasFlatFifth && fifthInterval == 7) {
+        fifthInterval = 6;
+    }
+    if (result.hasSharpFifth && fifthInterval == 7) {
+        fifthInterval = 8;
+    }
+
+    // Collect: root is always first.
+    std::vector<int> pcs;
+    pcs.push_back(r);
+
+    // Third (skip if omitted).
+    if (thirdInterval >= 0 && !result.omitsThird) {
+        pcs.push_back(pc(thirdInterval));
+    }
+
+    // Fifth.
+    if (fifthInterval >= 0) {
+        pcs.push_back(pc(fifthInterval));
+    }
+
+    // Seventh.
+    if (result.hasMajorSeventh) {
+        pcs.push_back(pc(11));
+    } else if (result.hasMinorSeventh) {
+        pcs.push_back(pc(10));
+    } else if (result.hasDiminishedSeventh) {
+        pcs.push_back(pc(9));
+    }
+    // HalfDiminished has a structural minor 7th not flagged as hasMinorSeventh.
+    if (result.quality == ChordQuality::HalfDiminished
+        && !result.hasMinorSeventh && !result.hasMajorSeventh) {
+        pcs.push_back(pc(10));
+    }
+
+    // Added sixth (when no seventh — otherwise it's a 13th).
+    if (result.hasAddedSixth && !result.hasMinorSeventh
+        && !result.hasMajorSeventh && !result.hasDiminishedSeventh) {
+        pcs.push_back(pc(9));
+    }
+
+    // Upper extensions.
+    if (result.hasNinthFlat) {
+        pcs.push_back(pc(1));
+    }
+    if (result.hasNinthNatural) {
+        pcs.push_back(pc(2));
+    }
+    if (result.hasNinthSharp) {
+        pcs.push_back(pc(3));
+    }
+    if (result.hasEleventh) {
+        pcs.push_back(pc(5));
+    }
+    if (result.hasEleventhSharp) {
+        pcs.push_back(pc(6));
+    }
+    if (result.hasThirteenth) {
+        pcs.push_back(pc(9));
+    }
+    if (result.hasThirteenthFlat) {
+        pcs.push_back(pc(8));
+    }
+    if (result.hasThirteenthSharp) {
+        pcs.push_back(pc(10));
+    }
+
+    // Deduplicate (extensions may overlap with triad tones in pitch-class space).
+    std::vector<int> unique;
+    unique.push_back(pcs[0]);  // root always first
+    for (size_t i = 1; i < pcs.size(); ++i) {
+        bool dup = false;
+        for (int u : unique) {
+            if (u == pcs[i]) { dup = true; break; }
+        }
+        if (!dup) {
+            unique.push_back(pcs[i]);
+        }
+    }
+
+    // Sort upper tones (everything after root) ascending from root.
+    if (unique.size() > 1) {
+        std::sort(unique.begin() + 1, unique.end(), [&](int a, int b) {
+            int relA = (a - r + 12) % 12;
+            int relB = (b - r + 12) % 12;
+            return relA < relB;
+        });
+    }
+
+    return unique;
+}
+
+// ── closePositionVoicing ─────────────────────────────────────────────────────
+
+ClosePositionVoicing closePositionVoicing(const ChordAnalysisResult& result)
+{
+    if (result.quality == ChordQuality::Unknown) {
+        return {};
+    }
+
+    const std::vector<int> pcs = chordTonePitchClasses(result);
+    if (pcs.empty()) {
+        return {};
+    }
+
+    ClosePositionVoicing v;
+
+    // Bass: root in C2–C3 (MIDI 36–48), nearest to midpoint 42.
+    const int rootPc = pcs[0];
+    {
+        constexpr int kBassLow = 36;   // C2
+        constexpr int kBassMid = 42;   // F#2
+        // Find the octave placement nearest to midpoint.
+        int best = kBassLow + rootPc;
+        if (best < kBassLow) {
+            best += 12;
+        }
+        // Check one octave up too, pick closer to midpoint.
+        if (best + 12 <= 48 && std::abs(best + 12 - kBassMid) < std::abs(best - kBassMid)) {
+            best += 12;
+        }
+        v.bassPitch = best;
+    }
+
+    // Treble: upper tones in close position above C4 (MIDI 60).
+    // Each successive tone is placed ascending from the previous, within one octave.
+    if (pcs.size() > 1) {
+        constexpr int kTrebleFloor = 60;  // C4
+        int prev = kTrebleFloor;
+
+        for (size_t i = 1; i < pcs.size(); ++i) {
+            // Place this pc at or above prev.
+            int pitch = kTrebleFloor + pcs[i];
+            // Normalize into the correct octave: at or above prev.
+            while (pitch < prev) {
+                pitch += 12;
+            }
+            // If it jumped more than an octave above the floor, bring it down.
+            // (Only possible for the first tone; subsequent tones just stack.)
+            v.treblePitches.push_back(pitch);
+            prev = pitch;
+        }
+    }
+
+    return v;
 }
 
 } // namespace mu::composing::analysis

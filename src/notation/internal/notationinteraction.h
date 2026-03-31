@@ -272,6 +272,8 @@ public:
 
     void explodeSelectedStaff() override;
     void implodeSelectedStaff() override;
+    void implodeToChordTrack(engraving::staff_idx_t trebleStaffIdx, bool useCollectedTones = false) override;
+    void tuneSelection() override;
 
     void realizeSelectedChordSymbols(bool literal, Voicing voicing, HarmonyDurationType durationType) override;
     void extendToNextNote() override;

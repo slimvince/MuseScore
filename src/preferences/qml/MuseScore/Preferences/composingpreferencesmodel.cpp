@@ -61,6 +61,18 @@ void ComposingPreferencesModel::setupConnections()
     composingConfiguration()->statusBarRomanNumeralCountChanged().onNotify(this, [this]() {
         emit statusBarRomanNumeralCountChanged();
     });
+    composingConfiguration()->modeTierWeight1Changed().onNotify(this, [this]() {
+        emit modeTierWeight1Changed();
+    });
+    composingConfiguration()->modeTierWeight2Changed().onNotify(this, [this]() {
+        emit modeTierWeight2Changed();
+    });
+    composingConfiguration()->modeTierWeight3Changed().onNotify(this, [this]() {
+        emit modeTierWeight3Changed();
+    });
+    composingConfiguration()->modeTierWeight4Changed().onNotify(this, [this]() {
+        emit modeTierWeight4Changed();
+    });
 }
 
 // ── Getters ──────────────────────────────────────────────────────────────────
@@ -93,6 +105,26 @@ int ComposingPreferencesModel::analysisAlternatives() const
 QString ComposingPreferencesModel::tuningSystemKey() const
 {
     return QString::fromStdString(composingConfiguration()->tuningSystemKey());
+}
+
+double ComposingPreferencesModel::modeTierWeight1() const
+{
+    return composingConfiguration()->modeTierWeight1();
+}
+
+double ComposingPreferencesModel::modeTierWeight2() const
+{
+    return composingConfiguration()->modeTierWeight2();
+}
+
+double ComposingPreferencesModel::modeTierWeight3() const
+{
+    return composingConfiguration()->modeTierWeight3();
+}
+
+double ComposingPreferencesModel::modeTierWeight4() const
+{
+    return composingConfiguration()->modeTierWeight4();
 }
 
 bool ComposingPreferencesModel::showKeyModeInStatusBar() const
@@ -160,6 +192,42 @@ void ComposingPreferencesModel::setTuningSystemKey(const QString& key)
     }
     composingConfiguration()->setTuningSystemKey(key.toStdString());
     emit tuningSystemKeyChanged();
+}
+
+void ComposingPreferencesModel::setModeTierWeight1(double value)
+{
+    if (qFuzzyCompare(modeTierWeight1(), value)) {
+        return;
+    }
+    composingConfiguration()->setModeTierWeight1(value);
+    emit modeTierWeight1Changed();
+}
+
+void ComposingPreferencesModel::setModeTierWeight2(double value)
+{
+    if (qFuzzyCompare(modeTierWeight2(), value)) {
+        return;
+    }
+    composingConfiguration()->setModeTierWeight2(value);
+    emit modeTierWeight2Changed();
+}
+
+void ComposingPreferencesModel::setModeTierWeight3(double value)
+{
+    if (qFuzzyCompare(modeTierWeight3(), value)) {
+        return;
+    }
+    composingConfiguration()->setModeTierWeight3(value);
+    emit modeTierWeight3Changed();
+}
+
+void ComposingPreferencesModel::setModeTierWeight4(double value)
+{
+    if (qFuzzyCompare(modeTierWeight4(), value)) {
+        return;
+    }
+    composingConfiguration()->setModeTierWeight4(value);
+    emit modeTierWeight4Changed();
 }
 
 void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)

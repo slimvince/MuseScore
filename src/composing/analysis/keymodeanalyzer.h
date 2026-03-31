@@ -25,23 +25,51 @@
 
 namespace mu::composing::analysis {
 
-/// The mode of a key.  Currently only Ionian (major) and Aeolian (natural minor)
-/// are actively evaluated; the full modal table is kept in keymodeanalyzer.cpp for
-/// future re-enablement without interface changes.
+/// The mode of a key.  All seven diatonic modes are evaluated.
 ///
-/// Replacing the old `bool isMajor` with an explicit enum makes future modal
-/// extensions (Dorian, Phrygian, etc.) non-breaking at the call site.
+/// Replacing the old `bool isMajor` with an explicit enum makes modal
+/// extensions non-breaking at the call site.
 enum class KeyMode {
-    Ionian,       ///< Major / Ionian
-    Aeolian,      ///< Natural minor / Aeolian
-    // Future: Dorian, Phrygian, Lydian, Mixolydian, Locrian
+    Ionian,       ///< Major
+    Dorian,
+    Phrygian,
+    Lydian,
+    Mixolydian,
+    Aeolian,      ///< Natural minor
+    Locrian,
 };
+
+/// Number of entries in the KeyMode enum.
+inline constexpr size_t KEY_MODE_COUNT = 7;
+
+/// Index of a KeyMode value in the mode table (same as its enum ordinal).
+inline constexpr size_t keyModeIndex(KeyMode m) { return static_cast<size_t>(m); }
+
+/// Convert a mode table index back to a KeyMode enum value.
+inline constexpr KeyMode keyModeFromIndex(size_t idx) { return static_cast<KeyMode>(idx); }
+
+/// Returns true for modes with a major third (Ionian, Lydian, Mixolydian).
+inline constexpr bool keyModeIsMajor(KeyMode m) {
+    return m == KeyMode::Ionian || m == KeyMode::Lydian || m == KeyMode::Mixolydian;
+}
+
+/// Semitone offset from the Ionian tonic to this mode's tonic within the same
+/// key signature.  E.g. Dorian = 2 (D Dorian shares the key signature of C Ionian).
+inline constexpr int keyModeTonicOffset(KeyMode m) {
+    constexpr int offsets[] = { 0, 2, 4, 5, 7, 9, 11 };
+    return offsets[static_cast<size_t>(m)];
+}
 
 /// Result of a key/mode analysis: the most likely key and mode with a confidence score.
 struct KeyModeAnalysisResult {
     int keySignatureFifths = 0;          ///< Resolved key signature (-7..+7, Ionian convention)
     KeyMode mode = KeyMode::Ionian;      ///< Detected mode
+    int tonicPc = 0;                     ///< Pitch class of the mode's tonic (0=C, 2=D, etc.)
     double score = 0.0;                  ///< Raw confidence score; higher is better
+    double normalizedConfidence = 0.0;   ///< 0.0–1.0 confidence (see §5.7)
+
+    /// Convenience: true when mode has a major third (Ionian, Lydian, Mixolydian).
+    bool isMajor() const { return keyModeIsMajor(mode); }
 };
 
 /// Tunable scoring weights for KeyModeAnalyzer.
@@ -89,6 +117,45 @@ struct KeyModeAnalyzerPreferences {
     double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [empirical]
     double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]
 
+    // ── Characteristic pitch scoring ────────────────────────────────────────
+    //
+    // Each mode has a single pitch that most distinguishes it from its closest
+    // neighbor (e.g. Dorian's raised 6th vs Aeolian).  The presence of this
+    // pitch boosts the candidate; its absence penalizes it.  Both the boost
+    // and penalty values are empirical.
+
+    double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present [empirical]
+    double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is absent [empirical]
+
+    // ── True leading-tone scoring ──────────────────────────────────────────
+    //
+    // The note a semitone below the tonic ((tonicPc + 11) % 12) is the
+    // strongest tonal indicator in Western music.  Its presence boosts the
+    // candidate regardless of whether it is diatonic to the mode (chromatic
+    // leading tones, as in harmonic minor, still indicate the tonic).
+    // This complements the mode-specific 7th-degree evidence in triad scoring.
+
+    double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
+
+    // ── Mode prior (frequency bias) ─────────────────────────────────────────
+    //
+    // In real-world music, Ionian and Aeolian are vastly more common than
+    // the other diatonic modes.  A small additive prior prevents rare modes
+    // (Lydian, Locrian, etc.) from winning when the pitch evidence is
+    // ambiguous.  The ordering is theory-grounded (Ionian/Aeolian >> Dorian/
+    // Mixolydian > Phrygian/Lydian > Locrian); the absolute values are
+    // empirical.
+
+    // Default values match the "Standard" preset (T1=+1.0, T2=-0.5, T3=-1.5, T4=-3.0).
+    // The bridge overrides these from user preferences when available.
+    double modePriorIonian     =  1.20;  ///< Tier 1 (+1.0) + 0.2 internal offset [empirical]
+    double modePriorAeolian    =  1.00;  ///< Tier 1 (+1.0) [empirical]
+    double modePriorDorian     = -0.50;  ///< Tier 2 (-0.5) [empirical]
+    double modePriorMixolydian = -0.50;  ///< Tier 2 (-0.5) [empirical]
+    double modePriorLydian     = -1.50;  ///< Tier 3 (-1.5) [empirical]
+    double modePriorPhrygian   = -1.50;  ///< Tier 3 (-1.5) [empirical]
+    double modePriorLocrian    = -3.00;  ///< Tier 4 (-3.0) [empirical]
+
     // ── Tonal-centre comparison (relative pair disambiguation) ───────────────
     //
     // When the key signature is known, the relative major/minor pair is scored
@@ -128,6 +195,39 @@ struct KeyModeAnalyzerPreferences {
     double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empirical]
     double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
     double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
+
+    // ── Beat-type weights for temporal window collection ─────────────────
+    //
+    // Mapping from MuseScore's BeatType enum to a weight applied during
+    // pitch context collection.  The ordering (downbeat > stressed >
+    // unstressed > subbeat) is theory-grounded; the specific values are
+    // empirical — not derived from any measurement.
+
+    // ── Normalized confidence mapping ──────────────────────────────────────
+    //
+    // The raw score gap between the top-1 and top-2 candidates is mapped to
+    // a 0.0–1.0 confidence value through a sigmoid: 1 / (1 + exp(-k * (gap - midpoint))).
+    // The midpoint is the gap value that maps to 0.5 confidence.
+    // The steepness controls how quickly confidence rises with increasing gap.
+    // Both values are empirical.
+
+    double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
+    double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+
+    // ── Beat-type weights for temporal window collection ─────────────────
+    //
+    // Mapping from MuseScore's BeatType enum to a weight applied during
+    // pitch context collection.  The ordering (downbeat > stressed >
+    // unstressed > subbeat) is theory-grounded; the specific values are
+    // empirical — not derived from any measurement.
+
+    double beatWeightDownbeat            = 1.0;  ///< [empirical]
+    double beatWeightCompoundStressed    = 0.7;  ///< [empirical]
+    double beatWeightSimpleStressed      = 0.7;  ///< [empirical]
+    double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]
+    double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
+    double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
+    double beatWeightSubbeat             = 0.2;  ///< [empirical]
 };
 
 /// Global default preferences.
@@ -161,5 +261,15 @@ public:
 /// intonation module can convert a KeyModeAnalysisResult back to an Ionian tonic
 /// without depending on the full analyzeKeyMode implementation.
 int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
+
+/// Human-readable tonic name for a (key-signature, mode) pair.
+/// E.g. keyModeTonicName(0, KeyMode::Ionian) → "C",
+///      keyModeTonicName(0, KeyMode::Dorian) → "D",
+///      keyModeTonicName(-3, KeyMode::Aeolian) → "C".
+const char* keyModeTonicName(int fifths, KeyMode mode);
+
+/// Human-readable mode suffix for display.
+/// E.g. KeyMode::Ionian → "major", KeyMode::Dorian → "Dorian".
+const char* keyModeSuffix(KeyMode mode);
 
 } // namespace mu::composing::analysis

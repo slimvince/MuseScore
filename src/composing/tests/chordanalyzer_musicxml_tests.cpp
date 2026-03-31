@@ -37,7 +37,7 @@ struct FixtureEvent {
     std::vector<int> pitches;
     std::vector<int> tpcs;   // parallel to pitches; -1 = not available
     int keyFifths = 0;
-    bool keyIsMajor = true;
+    KeyMode keyMode = KeyMode::Ionian;
     ExpectedHarmony expected;
     std::string expectedRoman;
 };
@@ -414,7 +414,7 @@ std::vector<FixtureEvent> loadCatalogFixtureEvents(const QString& filePath)
     std::vector<FixtureEvent> events;
 
     int currentKeyFifths = 0;
-    bool currentKeyIsMajor = true;
+    KeyMode currentKeyMode = KeyMode::Ionian;
 
     bool inMeasure = false;
     int currentMeasureNumber = -1;
@@ -438,7 +438,17 @@ std::vector<FixtureEvent> loadCatalogFixtureEvents(const QString& filePath)
             } else if (xml.name() == "fifths") {
                 currentKeyFifths = xml.readElementText().trimmed().toInt();
             } else if (xml.name() == "mode") {
-                currentKeyIsMajor = (xml.readElementText().trimmed().toLower() != "minor");
+                {
+                    const QString modeStr = xml.readElementText().trimmed().toLower();
+                    if (modeStr == "minor")          currentKeyMode = KeyMode::Aeolian;
+                    else if (modeStr == "dorian")     currentKeyMode = KeyMode::Dorian;
+                    else if (modeStr == "phrygian")   currentKeyMode = KeyMode::Phrygian;
+                    else if (modeStr == "lydian")     currentKeyMode = KeyMode::Lydian;
+                    else if (modeStr == "mixolydian") currentKeyMode = KeyMode::Mixolydian;
+                    else if (modeStr == "aeolian")    currentKeyMode = KeyMode::Aeolian;
+                    else if (modeStr == "locrian")    currentKeyMode = KeyMode::Locrian;
+                    else                              currentKeyMode = KeyMode::Ionian;
+                }
             } else if (xml.name() == "harmony" && inMeasure
                        && xml.attributes().hasAttribute("analysisKind")) {
                 // "other" entries are suffix-coverage annotations only; skip them.
@@ -462,7 +472,7 @@ std::vector<FixtureEvent> loadCatalogFixtureEvents(const QString& filePath)
                 FixtureEvent event;
                 event.measureNumber = currentMeasureNumber;
                 event.keyFifths = currentKeyFifths;
-                event.keyIsMajor = currentKeyIsMajor;
+                event.keyMode = currentKeyMode;
                 event.expected = currentExpected;
                 event.expectedRoman = currentExpectedRoman;
                 event.pitches = currentPitches;
@@ -604,7 +614,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
         const auto results = ChordAnalyzer::analyzeChord(
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
-            event.keyIsMajor,
+            event.keyMode,
             &temporalCtx);
 
         if (event.expected.quality != ChordQuality::Unknown
@@ -643,7 +653,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
         std::string actualRoman;
         if (!event.expectedRoman.empty()
                 && !kSymbolExceptions.count(event.measureNumber)) {
-            actualRoman = ChordSymbolFormatter::formatRomanNumeral(result, event.keyIsMajor);
+            actualRoman = ChordSymbolFormatter::formatRomanNumeral(result);
             EXPECT_EQ(actualRoman, event.expectedRoman);
         }
 
@@ -697,9 +707,9 @@ static void writeMismatchDebugContext(std::ostringstream& oss,
                                       const std::vector<int>& pitches,
                                       const std::vector<int>& tpcs,
                                       int keyFifths,
-                                      bool keyIsMajor)
+                                      KeyMode keyMode)
 {
-    oss << "  key=" << keyFifths << (keyIsMajor ? "maj" : "min");
+    oss << "  key=" << keyFifths << (keyModeIsMajor(keyMode) ? "maj" : "min");
     oss << "  pitches=[";
     for (size_t i = 0; i < pitches.size(); ++i) {
         oss << pitches[i];
@@ -748,7 +758,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         std::vector<int> pitches;
         std::vector<int> tpcs;
         int keyFifths  = 0;
-        bool keyIsMajor = true;
+        KeyMode keyMode = KeyMode::Ionian;
     };
 
     std::vector<MismatchEntry> abstractMismatches;
@@ -765,7 +775,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         const auto results = ChordAnalyzer::analyzeChord(
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
-            event.keyIsMajor,
+            event.keyMode,
             &temporalCtx);
 
         if (results.empty()) {
@@ -814,7 +824,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             mm.pitches         = event.pitches;
             mm.tpcs            = event.tpcs;
             mm.keyFifths       = event.keyFifths;
-            mm.keyIsMajor      = event.keyIsMajor;
+            mm.keyMode      = event.keyMode;
             abstractMismatches.push_back(std::move(mm));
         }
 
@@ -827,7 +837,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             ? ChordSymbolFormatter::formatSymbol(result, event.keyFifths) : "";
         const std::string actualRoman =
             !event.expectedRoman.empty()
-            ? ChordSymbolFormatter::formatRomanNumeral(result, event.keyIsMajor) : "";
+            ? ChordSymbolFormatter::formatRomanNumeral(result) : "";
 
         const bool symbolMismatch = !actualSymbol.empty()
                                     && !equivalentSymbolSpelling(actualSymbol, event.expected.symbolText);
@@ -847,7 +857,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             mm.pitches         = event.pitches;
             mm.tpcs            = event.tpcs;
             mm.keyFifths       = event.keyFifths;
-            mm.keyIsMajor      = event.keyIsMajor;
+            mm.keyMode      = event.keyMode;
             symbolMismatches.push_back(std::move(mm));
         }
     }
@@ -859,7 +869,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
     report << "Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):\n";
     for (const MismatchEntry& mm : abstractMismatches) {
         report << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
-        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyIsMajor);
+        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
     }
 
     report << "\n=== Symbol/Roman mismatch summary: total=" << symbolMismatches.size() << " ===\n";
@@ -877,7 +887,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             report << "  roman xml='" << mm.expectedRoman << "'  analyzer='" << mm.actualRoman << "'";
         }
         report << "\n";
-        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyIsMajor);
+        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
     }
 
     const std::string reportPath = (QString::fromUtf8(composing_tests_DATA_ROOT)
@@ -894,7 +904,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         failMsg << "Per-measure mismatches:\n";
         for (const MismatchEntry& mm : abstractMismatches) {
             failMsg << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
-            writeMismatchDebugContext(failMsg, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyIsMajor);
+            writeMismatchDebugContext(failMsg, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
         }
         FAIL() << failMsg.str();
     }
@@ -952,7 +962,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedHarmonyWithTemporalCon
         const auto results = ChordAnalyzer::analyzeChord(
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
-            event.keyIsMajor,
+            event.keyMode,
             &ctx);
 
         ASSERT_FALSE(results.empty()) << "measure " << event.measureNumber;
@@ -1012,7 +1022,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DumpAllCandidatesForContextFile)
         const auto results = ChordAnalyzer::analyzeChord(
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
-            event.keyIsMajor);
+            event.keyMode);
 
         // Pitch-class set for display
         std::string pcs;
