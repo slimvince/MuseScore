@@ -21,6 +21,7 @@
  */
 #pragma once
 
+#include <optional>
 #include <vector>
 
 namespace mu::composing::analysis {
@@ -196,6 +197,18 @@ struct KeyModeAnalyzerPreferences {
     double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
     double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
 
+    // ── Declared-mode penalty ────────────────────────────────────────────────
+    //
+    // When the caller provides a declared mode (e.g. from the score's key
+    // signature), any candidate mode outside the declared mode class receives
+    // this additive penalty.  The value is chosen to be decisive for common
+    // relative-major/minor ambiguities (larger than disambiguationTriadBonus)
+    // while still theoretically overridable by very strong opposing pitch
+    // evidence.  A higher value reflecting full trust in the composer's
+    // declaration is tracked as a backlog item.
+
+    double declaredModePenalty = 7.0;  ///< Penalty for modes outside the declared class [empirical]
+
     // ── Beat-type weights for temporal window collection ─────────────────
     //
     // Mapping from MuseScore's BeatType enum to a weight applied during
@@ -213,6 +226,29 @@ struct KeyModeAnalyzerPreferences {
 
     double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
     double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+
+    // ── Dynamic lookahead ─────────────────────────────────────────────────
+    //
+    // When confidence after the initial fixed lookahead is below
+    // dynamicLookaheadConfidenceThreshold, the lookahead window is expanded by
+    // dynamicLookaheadStepBeats per iteration up to dynamicLookaheadMaxBeats.
+    // Each expansion re-collects pitch context and re-runs the analyzer.
+    // Lives in the bridge / batch_analyze caller, not in analyzeKeyMode itself.
+    // Theory-grounded ordering (expanding beats); values are empirical.
+
+    double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence ≥ this [empirical]
+    int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [empirical]
+    int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]
+
+    // ── Mode-switching hysteresis ─────────────────────────────────────────
+    //
+    // When the inferred mode differs from the previous inference at a nearby
+    // tick, the challenger must exceed the incumbent's score by this margin to
+    // cause a switch.  Prevents thin transient evidence from triggering
+    // spurious modulations.
+    // Lives in the bridge / batch_analyze caller; not used inside analyzeKeyMode.
+
+    double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes [empirical]
 
     // ── Beat-type weights for temporal window collection ─────────────────
     //
@@ -250,10 +286,15 @@ public:
     ///
     /// Returns up to 3 candidates sorted by score descending.  An empty result means
     /// insufficient pitch data to form a reliable estimate.
+    /// @param declaredMode  If set, modes outside this mode's class receive
+    ///                      a penalty (prefs.declaredModePenalty).  Pass
+    ///                      std::nullopt (the default) to use pure pitch
+    ///                      analysis with no constraint.
     static std::vector<KeyModeAnalysisResult> analyzeKeyMode(
         const std::vector<PitchContext>& pitches,
         int keySignatureFifths,
-        const KeyModeAnalyzerPreferences& prefs = kDefaultKeyModeAnalyzerPreferences);
+        const KeyModeAnalyzerPreferences& prefs = kDefaultKeyModeAnalyzerPreferences,
+        std::optional<KeyMode> declaredMode = std::nullopt);
 };
 
 /// Maps a modal tonic pitch class to the equivalent Ionian tonic that shares

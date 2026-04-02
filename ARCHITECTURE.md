@@ -2489,6 +2489,46 @@ struct ArrangerInteraction {
 - ~~Region intonation tunes whatever the user selects (see §11.6)~~ **Done** —
   "Tune selection" in Tools menu (§12.1b)
 
+### Development Tools
+
+The following tools live in `tools/` and are **not part of the shipping product**.
+They are compiled/run only in development builds (`MUE_BUILD_ENGRAVING_DEVTOOLS=ON`).
+
+**`tools/batch_analyze.cpp`** — headless C++ analysis tool.
+Loads a MusicXML (or MSCZ/MSCX) file, runs our harmonic analysis pipeline
+(boundary detection, ChordAnalyzer, KeyModeAnalyzer) without any UI, outputs JSON.
+Uses the same module-initialization pattern as MuseScore's existing test
+infrastructure (DrawModule + EngravingModule + MusicXmlModule, `MScore::noGui = true`).
+Compiled as a separate executable; linked against `engraving`, `composing_analysis`,
+and `iex_musicxml` — no notation module required.
+
+**`tools/music21_batch.py`** — processes Bach chorales from music21's corpus.
+Exports MusicXML and music21's Roman numeral analysis JSON per chorale.
+Note: music21's `romanNumeralFromChord()` is stateless and local — it does not
+use temporal context.  Key detection uses Krumhansl-Schmuckler (global, stored as
+`detectedKey`) and FloatingKey sliding window (local, stored as `keyLocal` per
+region).  Both are stored for comparison.
+
+**`tools/compare_analyses.py`** — three-level comparison of our analysis against
+music21's.  Levels: chord identity (key-independent), key context, Roman numeral
+string.  Classifies disagreements into `full_agree`, `near_agree`,
+`chord_agree_rn_differs`, `chord_agree_key_differs`, `chord_disagree`, `unaligned`.
+Also checks music21's chord against our top-2 alternatives before declaring
+`chord_disagree`, classifying such cases as `near_agree`.
+
+**`tools/run_validation.py`** — orchestrates the full pipeline across all 371
+chorales.  Produces an HTML validation report.
+
+```bash
+# Full corpus
+python tools/run_validation.py --output tools/
+
+# Single chorale for spot-checking
+python tools/run_validation.py --single bach/bwv66.6
+```
+
+---
+
 ### Phase 1 — Analysis Foundation Complete
 
 - `TemporalContext` struct defined and integrated

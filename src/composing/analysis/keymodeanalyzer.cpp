@@ -27,6 +27,7 @@
 #include <array>
 #include <cmath>
 #include <limits>
+#include <optional>
 
 namespace mu::composing::analysis {
 namespace {
@@ -381,6 +382,31 @@ void applyPairwiseDisambiguation(
     }
 }
 
+/// Returns true if @p candidate is compatible with @p declared.
+///
+/// The engraving KeyMode has two levels of specificity:
+///   - Ionian / Aeolian used as class-level declarations ("major" / "minor"):
+///     any mode in the same class is compatible.
+///   - Any other specific mode: only an exact match is compatible.
+///
+/// Rationale: key signatures in common practice are declared as "major" or
+/// "minor", which constrains the class but leaves the specific mode (Dorian,
+/// Phrygian, Aeolian, …) to pitch analysis.  Explicit modal declarations
+/// (e.g. Dorian) mean exactly that mode.
+bool modeIsCompatibleWithDeclared(KeyMode candidate, KeyMode declared)
+{
+    if (declared == KeyMode::Ionian) {
+        // Class-level "major" declaration: accept any major-class mode
+        return keyModeIsMajor(candidate);
+    }
+    if (declared == KeyMode::Aeolian) {
+        // Class-level "minor" declaration: accept any minor-class mode
+        return !keyModeIsMajor(candidate);
+    }
+    // Specific mode declared: require exact match
+    return candidate == declared;
+}
+
 } // anonymous namespace
 
 // ── Public API ───────────────────────────────────────────────────────────────
@@ -388,7 +414,8 @@ void applyPairwiseDisambiguation(
 std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const std::vector<PitchContext>& pitches,
     int keySignatureFifths,
-    const KeyModeAnalyzerPreferences& prefs)
+    const KeyModeAnalyzerPreferences& prefs,
+    std::optional<KeyMode> declaredMode)
 {
     if (pitches.empty()) {
         return {};
@@ -431,6 +458,14 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
             const double priorScore = scoreModePrior(modeIndex, prefs);
             eval.score           = eval.scaleScore + eval.triadScore + eval.keySignatureScore
                                  + charScore + ltScore + priorScore;
+
+            // Declared-mode penalty: modes outside the declared class are penalised.
+            if (declaredMode.has_value()) {
+                const KeyMode candidate = keyModeFromIndex(modeIndex);
+                if (!modeIsCompatibleWithDeclared(candidate, *declaredMode)) {
+                    eval.score -= prefs.declaredModePenalty;
+                }
+            }
         }
     }
 

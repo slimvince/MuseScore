@@ -21,6 +21,8 @@
  */
 #include "notationcomposingbridge.h"
 
+#include <optional>
+
 #include "engraving/dom/chord.h"
 #include "engraving/dom/key.h"
 #include "engraving/dom/masterscore.h"
@@ -347,18 +349,113 @@ int distinctPitchClasses(const std::vector<mu::composing::analysis::KeyModeAnaly
     return count;
 }
 
+/// Collect pitch context into @p ctx for the window [windowStart, windowEnd].
+/// Appends to whatever is already in @p ctx (so callers can pre-fill lookback
+/// and incrementally extend the lookahead).
+static void collectPitchContext(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& tick,
+                                const mu::engraving::Fraction& windowStart,
+                                const mu::engraving::Fraction& windowEnd,
+                                const std::set<size_t>& excludeStaves,
+                                const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
+                                std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx)
+{
+    using namespace mu::engraving;
+    using namespace mu::composing::analysis;
+
+    static constexpr double LOOKAHEAD_WEIGHT = 0.5;
+
+    const Measure* startMeasure = sc->tick2measure(windowStart);
+    if (!startMeasure) {
+        startMeasure = sc->firstMeasure();
+    }
+    if (!startMeasure) {
+        return;
+    }
+
+    for (const Segment* s = startMeasure->first(SegmentType::ChordRest);
+         s && s->tick() <= windowEnd;
+         s = s->next1(SegmentType::ChordRest)) {
+        const Fraction segTick = s->tick();
+        if (segTick < windowStart) {
+            continue;
+        }
+
+        const Measure* m = s->measure();
+        const TimeSigFrac tsig(m->timesig().numerator(),
+                               m->timesig().denominator());
+        const BeatType bt = tsig.rtick2beatType(s->rtick().ticks());
+        const double bw = beatTypeToWeight(bt, prefs);
+
+        const double beatsFromTick =
+            std::abs((segTick - tick).ticks())
+            / static_cast<double>(Constants::DIVISION);
+        const double decay = timeDecay(beatsFromTick);
+
+        const bool isLookahead = (segTick > tick);
+        const double lookaheadMul = isLookahead ? LOOKAHEAD_WEIGHT : 1.0;
+
+        struct NoteInfo { int ppitch; double durationQn; };
+        std::vector<NoteInfo> segNotes;
+        int lowestPitch = std::numeric_limits<int>::max();
+
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr
+                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                const double durQn = cr->actualTicks().ticks()
+                                     / static_cast<double>(Constants::DIVISION);
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    const int pp = n->ppitch();
+                    segNotes.push_back({ pp, durQn });
+                    if (pp < lowestPitch) {
+                        lowestPitch = pp;
+                    }
+                }
+            }
+        }
+
+        for (const auto& ni : segNotes) {
+            KeyModeAnalyzer::PitchContext p;
+            p.pitch          = ni.ppitch;
+            p.durationWeight = ni.durationQn * decay * lookaheadMul;
+            p.beatWeight     = bw;
+            p.isBass         = (ni.ppitch == lowestPitch);
+            ctx.push_back(p);
+        }
+    }
+}
+
 /// Resolve key signature and mode at a tick.
+///
 /// Always runs the key/mode inferrer — the key signature is used as a scoring
 /// prior inside the analyzer, not as a hard bypass.  Falls back to the notated
 /// key signature only when pitch context is genuinely insufficient (< 3 distinct
 /// pitch classes).
+///
+/// @param prevResult  Previous inference at a nearby earlier tick.  When
+///                    supplied and the new inferred mode differs, the new mode
+///                    must exceed the previous score by prefs.hysteresisMargin
+///                    to cause a switch.  Pass nullptr to disable hysteresis
+///                    (e.g. at the first region of a piece).
 void resolveKeyAndMode(const mu::engraving::Score* sc,
                        const mu::engraving::Fraction& tick,
                        mu::engraving::staff_idx_t staffIdx,
                        const std::set<size_t>& excludeStaves,
                        int& outKeyFifths,
                        mu::composing::analysis::KeyMode& outMode,
-                       double& outConfidence)
+                       double& outConfidence,
+                       const mu::composing::analysis::KeyModeAnalysisResult* prevResult = nullptr,
+                       double* outScore = nullptr)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -367,36 +464,10 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     const int keyFifths = static_cast<int>(keySig.concertKey());
     outKeyFifths = keyFifths;
 
-    // ── Collect pitch context over an expanded temporal window ───────────
-    //
-    // Lookback: 16 beats (typically 4 measures in 4/4)
-    // Lookahead: 8 beats (2 measures ahead), weighted at 0.5×
-    //
-    // A wider window provides more pitch evidence for mode disambiguation,
-    // especially in contrapuntal music where the harmonic rhythm is slow.
-    // The exponential time decay (0.7× per measure) ensures distant notes
-    // contribute mild tonic evidence without dominating.
-    static constexpr int LOOKBACK_BEATS  = 16;
-    static constexpr int LOOKAHEAD_BEATS = 8;
-    static constexpr double LOOKAHEAD_WEIGHT = 0.5;
-
-    const Fraction lookbackDuration  = Fraction(LOOKBACK_BEATS, 4);
-    const Fraction lookaheadDuration = Fraction(LOOKAHEAD_BEATS, 4);
-
-    const Fraction windowStart = (tick > lookbackDuration)
-                                 ? tick - lookbackDuration
-                                 : Fraction(0, 1);
-    const Fraction windowEnd = tick + lookaheadDuration;
-
-    const Measure* startMeasure = sc->tick2measure(windowStart);
-    if (!startMeasure) {
-        startMeasure = sc->firstMeasure();
-    }
-
-    std::vector<KeyModeAnalyzer::PitchContext> ctx;
-
-    // Populate analyzer preferences from user settings (mode tier weights).
-    KeyModeAnalyzerPreferences prefs;  // starts with compile-time defaults
+    // ── Analyzer preferences ──────────────────────────────────────────────
+    // Populate from user settings (mode tier weights); all other fields keep
+    // their compile-time defaults.
+    KeyModeAnalyzerPreferences prefs;
     {
         static muse::GlobalInject<mu::composing::IComposingConfiguration> config;
         const auto* cfg = config.get().get();
@@ -406,91 +477,94 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
             const double t3 = cfg->modeTierWeight3();
             const double t4 = cfg->modeTierWeight4();
 
-            // Tier 1: Ionian gets +0.2 internal offset over Aeolian
             prefs.modePriorIonian     = t1 + 0.2;
             prefs.modePriorAeolian    = t1;
-            // Tier 2
             prefs.modePriorDorian     = t2;
             prefs.modePriorMixolydian = t2;
-            // Tier 3
             prefs.modePriorLydian     = t3;
             prefs.modePriorPhrygian   = t3;
-            // Tier 4
             prefs.modePriorLocrian    = t4;
         }
     }
 
-    if (startMeasure) {
-        for (const Segment* s = startMeasure->first(SegmentType::ChordRest);
-             s && s->tick() <= windowEnd;
-             s = s->next1(SegmentType::ChordRest)) {
-            const Fraction segTick = s->tick();
-
-            // Compute beat weight from time signature
-            const Measure* m = s->measure();
-            const TimeSigFrac tsig(m->timesig().numerator(),
-                                   m->timesig().denominator());
-            const BeatType bt = tsig.rtick2beatType(s->rtick().ticks());
-            const double bw = beatTypeToWeight(bt, prefs);
-
-            // Time decay: distance from analysis tick in quarter notes
-            const double beatsFromTick =
-                std::abs((segTick - tick).ticks())
-                / static_cast<double>(Constants::DIVISION);
-            const double decay = timeDecay(beatsFromTick);
-
-            // Lookahead notes get reduced weight
-            const bool isLookahead = (segTick > tick);
-            const double lookaheadMul = isLookahead ? LOOKAHEAD_WEIGHT : 1.0;
-
-            // Two-pass per segment: first find lowest pitch, then populate
-            struct NoteInfo {
-                int ppitch;
-                double durationQn;
-            };
-            std::vector<NoteInfo> segNotes;
-
-            int lowestPitch = std::numeric_limits<int>::max();
-            for (size_t si = 0; si < sc->nstaves(); ++si) {
-                if (excludeStaves.count(si)
-                    || !staffIsEligible(sc, si, tick)) {
-                    continue;
-                }
-                for (int v = 0; v < VOICES; ++v) {
-                    const ChordRest* cr
-                        = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                    if (!cr || !cr->isChord() || cr->isGrace()) {
-                        continue;
-                    }
-                    const double durQn = cr->actualTicks().ticks()
-                                         / static_cast<double>(Constants::DIVISION);
-                    for (const Note* n : toChord(cr)->notes()) {
-                        if (!n->play() || !n->visible()) {
-                            continue;
-                        }
-                        const int pp = n->ppitch();
-                        segNotes.push_back({ pp, durQn });
-                        if (pp < lowestPitch) {
-                            lowestPitch = pp;
-                        }
-                    }
-                }
-            }
-
-            // Second pass: populate PitchContext with all weights
-            for (const auto& ni : segNotes) {
-                KeyModeAnalyzer::PitchContext p;
-                p.pitch          = ni.ppitch;
-                p.durationWeight = ni.durationQn * decay * lookaheadMul;
-                p.beatWeight     = bw;
-                p.isBass         = (ni.ppitch == lowestPitch);
-                ctx.push_back(p);
-            }
+    // ── Declared mode from key signature ─────────────────────────────────
+    std::optional<mu::composing::analysis::KeyMode> declaredMode;
+    {
+        using EMode = mu::engraving::KeyMode;
+        using AMode = mu::composing::analysis::KeyMode;
+        switch (keySig.mode()) {
+        case EMode::MAJOR:
+        case EMode::IONIAN:      declaredMode = AMode::Ionian;     break;
+        case EMode::MINOR:
+        case EMode::AEOLIAN:     declaredMode = AMode::Aeolian;    break;
+        case EMode::DORIAN:      declaredMode = AMode::Dorian;     break;
+        case EMode::PHRYGIAN:    declaredMode = AMode::Phrygian;   break;
+        case EMode::LYDIAN:      declaredMode = AMode::Lydian;     break;
+        case EMode::MIXOLYDIAN:  declaredMode = AMode::Mixolydian; break;
+        case EMode::LOCRIAN:     declaredMode = AMode::Locrian;    break;
+        default:                 declaredMode = std::nullopt;      break;
         }
     }
 
-    // ── Run the inferrer ────────────────────────────────────────────────
-    const auto modeResults = KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths);
+    // ── Fixed lookback window (never changes across lookahead expansions) ──
+    static constexpr int LOOKBACK_BEATS  = 16;
+    static constexpr int INITIAL_LOOKAHEAD_BEATS = 8;
+
+    const Fraction lookbackDuration = Fraction(LOOKBACK_BEATS, 4);
+    const Fraction windowStart = (tick > lookbackDuration)
+                                 ? tick - lookbackDuration
+                                 : Fraction(0, 1);
+
+    // ── Piece-start shortcut ──────────────────────────────────────────────
+    //
+    // When there is no lookback (the analysis tick is before one full lookback
+    // window from the start) and no previous result has been established yet,
+    // there is insufficient evidence to override the declared key signature.
+    // Return the declared mode directly rather than risking a spurious mode
+    // reading from lookahead-only evidence (which is half-weighted and thin).
+    // The next region will have lookback context and will correct any error.
+    if (prevResult == nullptr && declaredMode.has_value()
+        && windowStart == Fraction(0, 1) && tick < lookbackDuration) {
+        const int ionianTonic = ionianTonicPcFromFifths(keyFifths);
+        const int tonicPc = (ionianTonic + keyModeTonicOffset(*declaredMode)) % 12;
+        outMode       = *declaredMode;
+        outConfidence = 0.5;
+        if (outScore) *outScore = 0.0;
+        // outKeyFifths already set above
+        (void)tonicPc;  // available for future use
+        return;
+    }
+
+    // ── Dynamic lookahead loop ────────────────────────────────────────────
+    //
+    // Start with INITIAL_LOOKAHEAD_BEATS.  If confidence is below the
+    // threshold, extend the lookahead by prefs.dynamicLookaheadStepBeats per
+    // iteration up to prefs.dynamicLookaheadMaxBeats.  This ensures the
+    // opening region (pure lookahead, no lookback) accumulates enough evidence
+    // before committing to a mode.
+    std::vector<KeyModeAnalyzer::PitchContext> ctx;
+    std::vector<KeyModeAnalysisResult> modeResults;
+
+    int lookaheadBeats = INITIAL_LOOKAHEAD_BEATS;
+    while (true) {
+        ctx.clear();
+        const Fraction windowEnd = tick + Fraction(lookaheadBeats, 4);
+        collectPitchContext(sc, tick, windowStart, windowEnd,
+                            excludeStaves, prefs, ctx);
+
+        modeResults = KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths,
+                                                      prefs, declaredMode);
+
+        const bool confident = !modeResults.empty()
+            && modeResults.front().normalizedConfidence
+               >= prefs.dynamicLookaheadConfidenceThreshold;
+        const bool atMax = lookaheadBeats >= prefs.dynamicLookaheadMaxBeats;
+
+        if (confident || atMax) {
+            break;
+        }
+        lookaheadBeats += prefs.dynamicLookaheadStepBeats;
+    }
 
     // Fall back to notated key signature only when pitch data is insufficient
     if (modeResults.empty() || distinctPitchClasses(ctx) < 3) {
@@ -507,15 +581,46 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
         default:                                 outMode = CKeyMode::Ionian;     break;
         }
         outConfidence = 0.0;  // no pitch data — zero confidence
+        if (outScore) *outScore = 0.0;
         return;
+    }
+
+    // ── Hysteresis ───────────────────────────────────────────────────────
+    //
+    // If a previous inference is supplied and the new top mode differs, the
+    // challenger must beat the incumbent by prefs.hysteresisMargin.  This
+    // prevents transient passages (e.g. a single dominant chord) from
+    // triggering a spurious mode switch.
+    const KeyModeAnalysisResult& top = modeResults.front();
+    if (prevResult != nullptr
+        && top.mode != prevResult->mode
+        && top.score < prevResult->score + prefs.hysteresisMargin) {
+        // Find the incumbent in the candidate list (it may have ranked lower).
+        const KeyModeAnalysisResult* incumbent = nullptr;
+        for (const auto& r : modeResults) {
+            if (r.mode == prevResult->mode
+                && r.keySignatureFifths == prevResult->keySignatureFifths) {
+                incumbent = &r;
+                break;
+            }
+        }
+        if (incumbent) {
+            outKeyFifths  = incumbent->keySignatureFifths;
+            outMode       = incumbent->mode;
+            outConfidence = incumbent->normalizedConfidence;
+            if (outScore) *outScore = incumbent->score;
+            return;
+        }
+        // Incumbent not in candidate list — fall through and accept new mode.
     }
 
     // Notes win — use inferred result (key signature in Ionian convention so
     // that downstream degree computation is relative to the modal tonic, not
     // the notated key signature).
-    outKeyFifths  = modeResults.front().keySignatureFifths;
-    outMode       = modeResults.front().mode;
-    outConfidence = modeResults.front().normalizedConfidence;
+    outKeyFifths  = top.keySignatureFifths;
+    outMode       = top.mode;
+    outConfidence = top.normalizedConfidence;
+    if (outScore) *outScore = top.score;
 }
 
 /// Find the previous chord's temporal context by walking backward from seg.
@@ -918,6 +1023,10 @@ std::vector<HarmonicRegion> analyzeHarmonicRhythm(
     ChordTemporalContext temporalCtx
         = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode);
 
+    // Hysteresis: track the previous key/mode result so that a mode switch
+    // requires a score advantage of prefs.hysteresisMargin.
+    std::optional<KeyModeAnalysisResult> prevKeyResult;
+
     for (const Segment* s = seg;
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
@@ -937,11 +1046,15 @@ std::vector<HarmonicRegion> analyzeHarmonicRhythm(
         prevBits = bits;
 
         // Resolve key/mode at this tick (it may change across the range).
+        // Pass the previous result for hysteresis; nullptr on the first boundary.
         int localKeyFifths = keyFifths;
         KeyMode localKeyMode = keyMode;
         double localKeyConfidence = 0.0;
+        double localKeyScore = 0.0;
         resolveKeyAndMode(score, s->tick(), refStaff, excludeStaves,
-                          localKeyFifths, localKeyMode, localKeyConfidence);
+                          localKeyFifths, localKeyMode, localKeyConfidence,
+                          prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
+                          &localKeyScore);
 
         const auto results = ChordAnalyzer::analyzeChord(
             tones, localKeyFifths, localKeyMode, &temporalCtx);
@@ -955,9 +1068,13 @@ std::vector<HarmonicRegion> analyzeHarmonicRhythm(
         temporalCtx.previousQuality = results.front().quality;
 
         KeyModeAnalysisResult kmResult;
-        kmResult.keySignatureFifths = localKeyFifths;
-        kmResult.mode = localKeyMode;
+        kmResult.keySignatureFifths   = localKeyFifths;
+        kmResult.mode                 = localKeyMode;
         kmResult.normalizedConfidence = localKeyConfidence;
+        kmResult.score                = localKeyScore;
+
+        // Update hysteresis state with the committed key result.
+        prevKeyResult = kmResult;
 
         boundaries.push_back({ s->tick(), results.front(), kmResult,
                                std::move(tones) });

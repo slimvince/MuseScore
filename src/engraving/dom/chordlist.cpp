@@ -990,6 +990,7 @@ bool ParsedChord::parse(const String& s, const ChordList* cl, bool syntaxOnly, b
             }
             tok2L = tok1L + tok2L;
             tok1L = u"sus";
+            tok1  = u"sus";
         }
         // standardize spelling
         if (tok1 == "M" || m_major.contains(tok1L)) {

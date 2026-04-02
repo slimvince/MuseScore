@@ -18,6 +18,8 @@ build.qtc
 build-*
 build
 ninja_build/
+ninja_build_rel/
+tools
 Testing/Temporary/
 win32build
 win32install
