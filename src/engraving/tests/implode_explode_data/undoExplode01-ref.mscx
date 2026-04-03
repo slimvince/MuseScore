@@ -29,10 +29,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>B♭ Trumpet</trackName>
       <Instrument id="bb-trumpet">
-        <longName>B♭ Trumpet</longName>
-        <shortName>B♭ Tpt.</shortName>
+        <InstrumentLabel>
+          <longName>B♭ Trumpet</longName>
+          <shortName>B♭ Tpt.</shortName>
+          </InstrumentLabel>
         <trackName>B♭ Trumpet</trackName>
         <minPitchP>52</minPitchP>
         <maxPitchP>85</maxPitchP>
@@ -84,10 +85,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>B♭ Trumpet</trackName>
       <Instrument id="bb-trumpet">
-        <longName>B♭ Trumpet</longName>
-        <shortName>B♭ Tpt.</shortName>
+        <InstrumentLabel>
+          <longName>B♭ Trumpet</longName>
+          <shortName>B♭ Tpt.</shortName>
+          </InstrumentLabel>
         <trackName>B♭ Trumpet</trackName>
         <minPitchP>52</minPitchP>
         <maxPitchP>85</maxPitchP>
@@ -139,10 +141,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>B♭ Trumpet</trackName>
       <Instrument id="bb-trumpet">
-        <longName>B♭ Trumpet</longName>
-        <shortName>B♭ Tpt.</shortName>
+        <InstrumentLabel>
+          <longName>B♭ Trumpet</longName>
+          <shortName>B♭ Tpt.</shortName>
+          </InstrumentLabel>
         <trackName>B♭ Trumpet</trackName>
         <minPitchP>52</minPitchP>
         <maxPitchP>85</maxPitchP>
@@ -194,10 +197,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>B♭ Trumpet</trackName>
       <Instrument id="bb-trumpet">
-        <longName>B♭ Trumpet</longName>
-        <shortName>B♭ Tpt.</shortName>
+        <InstrumentLabel>
+          <longName>B♭ Trumpet</longName>
+          <shortName>B♭ Tpt.</shortName>
+          </InstrumentLabel>
         <trackName>B♭ Trumpet</trackName>
         <minPitchP>52</minPitchP>
         <maxPitchP>85</maxPitchP>
@@ -321,6 +325,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>W_W</eid>
               </HairPin>
             <next>
@@ -538,6 +544,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>4_4</eid>
               </HairPin>
             <next>
@@ -754,6 +762,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>ZB_ZB</eid>
               </HairPin>
             <next>
@@ -970,6 +980,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>6B_6B</eid>
               </HairPin>
             <next>

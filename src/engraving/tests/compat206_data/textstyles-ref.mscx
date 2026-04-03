@@ -187,10 +187,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>Piano</trackName>
       <Instrument id="piano">
-        <longName>Piano</longName>
-        <shortName>Pno.</shortName>
+        <InstrumentLabel>
+          <longName>Piano</longName>
+          <shortName>Pno.</shortName>
+          </InstrumentLabel>
         <trackName>Piano</trackName>
         <minPitchP>21</minPitchP>
         <maxPitchP>108</maxPitchP>
@@ -530,8 +531,10 @@
         <voice>
           <InstrumentChange>
             <Instrument id="piano">
-              <longName>Piano</longName>
-              <shortName>Pno.</shortName>
+              <InstrumentLabel>
+                <longName>Piano</longName>
+                <shortName>Pno.</shortName>
+                </InstrumentLabel>
               <trackName>Piano</trackName>
               <minPitchP>21</minPitchP>
               <maxPitchP>108</maxPitchP>
@@ -578,8 +581,6 @@
           <Spanner type="Pedal">
             <Pedal>
               <endHookType>1</endHookType>
-              <beginHookHeight>-1.2</beginHookHeight>
-              <endHookHeight>-1.2</endHookHeight>
               <eid>AB_AB</eid>
               </Pedal>
             <next>

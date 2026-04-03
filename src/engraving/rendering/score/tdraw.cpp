@@ -2119,7 +2119,7 @@ void TDraw::draw(const Lasso* item, Painter* painter, const PaintOptions&)
     const Lasso::LayoutData* ldata = item->ldata();
     painter->setBrush(Brush(item->configuration()->lassoColor()));
     // always 2 pixel width
-    double w = 2.0 / painter->worldTransform().m11() * item->configuration()->guiScaling();
+    double w = 2.0 / painter->worldTransform().m11() * item->contextConfiguration()->guiScaling();
     painter->setPen(Pen(item->configuration()->selectionColor(), w));
     painter->drawRect(ldata->bbox());
 }
@@ -2421,7 +2421,6 @@ void TDraw::draw(const Parenthesis* item, muse::draw::Painter* painter, const Pa
     Color penColor = item->curColor(opt);
 
     Pen pen(penColor);
-    double mag = item->staff() ? item->staff()->staffMag(item->tick()) : 1.0;
 
     if (item->ldata()->symId != SymId::noSym) {
         painter->setPen(pen);
@@ -2432,7 +2431,7 @@ void TDraw::draw(const Parenthesis* item, muse::draw::Painter* painter, const Pa
     painter->setBrush(Brush(pen.color()));
     pen.setCapStyle(PenCapStyle::RoundCap);
     pen.setJoinStyle(PenJoinStyle::RoundJoin);
-    pen.setWidthF(item->ldata()->endPointThickness * item->spatium() * mag);
+    pen.setWidthF(item->ldata()->endPointThickness * item->spatium() * item->ldata()->intrinsicMag());
 
     painter->setPen(pen);
     painter->drawPath(item->ldata()->path());

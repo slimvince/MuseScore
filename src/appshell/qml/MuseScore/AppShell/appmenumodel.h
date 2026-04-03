@@ -68,8 +68,12 @@ public:
 #ifdef MUSE_MODULE_MUSESAMPLER
     muse::GlobalInject<muse::musesampler::IMuseSamplerInfo> museSamplerInfo;
 #endif
+
     muse::GlobalInject<muse::extensions::IExtensionsProvider> extensionsProvider;
     muse::GlobalInject<mu::composing::IComposingConfiguration> composingConfiguration;
+
+    muse::ContextInject<muse::extensions::IExtensionsProvider> extensionsProvider = { this };
+
     muse::ContextInject<muse::ui::IUiActionsRegister> uiActionsRegister = { this };
     muse::ContextInject<IAppMenuModelHook> appMenuModelHook = { this };
     muse::ContextInject<mu::context::IGlobalContext> globalContext = { this };

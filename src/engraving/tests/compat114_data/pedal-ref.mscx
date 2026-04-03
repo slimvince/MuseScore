@@ -45,10 +45,11 @@
         <StaffType group="pitched">
           </StaffType>
         </Staff>
-      <trackName>Piano</trackName>
       <Instrument id="piano">
-        <longName><font size="12"/>Piano</longName>
-        <shortName><font size="12"/>Pno.</shortName>
+        <InstrumentLabel>
+          <longName><font size="12"/>Piano</longName>
+          <shortName><font size="12"/>Pno.</shortName>
+          </InstrumentLabel>
         <trackName>Piano</trackName>
         <minPitchP>21</minPitchP>
         <maxPitchP>108</maxPitchP>
@@ -100,7 +101,7 @@
           <Spanner type="Pedal">
             <Pedal>
               <continueText>&lt;font size=&quot;11&quot;/&gt;</continueText>
-              <endHookHeight>-1.5</endHookHeight>
+              <endHookHeight>1.5</endHookHeight>
               <eid>I_I</eid>
               </Pedal>
             <next>

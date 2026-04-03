@@ -803,9 +803,9 @@ bool TRead::readProperties(Instrument* item, XmlReader& e, ReadContext& ctx, Par
 
     const AsciiStringView tag(e.name());
     if (tag == "longName") {
-        item->setLongName(read460::TRead::readStaffName(e));
+        item->setLongName(read460::TRead::readLegacyStaffName(e));
     } else if (tag == "shortName") {
-        item->setShortName(read460::TRead::readStaffName(e));
+        item->setShortName(read460::TRead::readLegacyStaffName(e));
     } else if (tag == "trackName") {
         item->setTrackName(e.readText());
     } else if (tag == "minPitch") {      // obsolete
@@ -2654,6 +2654,7 @@ void TRead::read(GradualTempoChange* c, XmlReader& xml, ReadContext& ctx)
             xml.unknown();
         }
     }
+    compat::CompatUtils::resetHookHeightSign(c);
     compat::CompatUtils::setTextLineTextPositionFromAlign(c);
 }
 
@@ -2703,6 +2704,7 @@ void TRead::read(Hairpin* h, XmlReader& e, ReadContext& ctx)
             e.unknown();
         }
     }
+    compat::CompatUtils::resetHookHeightSign(h);
     compat::CompatUtils::setTextLineTextPositionFromAlign(h);
 
     h->styleChanged();
@@ -2872,6 +2874,7 @@ void TRead::read(LetRing* r, XmlReader& e, ReadContext& ctx)
             e.unknown();
         }
     }
+    compat::CompatUtils::resetHookHeightSign(r);
     compat::CompatUtils::setTextLineTextPositionFromAlign(r);
 }
 
@@ -3210,6 +3213,7 @@ void TRead::read(Ottava* o, XmlReader& e, ReadContext& ctx)
     while (e.readNextStartElement()) {
         readProperties(o, e, ctx);
     }
+    compat::CompatUtils::resetHookHeightSign(o);
     compat::CompatUtils::setTextLineTextPositionFromAlign(o);
     if (o->ottavaType() != OttavaType::OTTAVA_8VA || o->numbersOnly() != o->propertyDefault(Pid::NUMBERS_ONLY).toBool()) {
         o->styleChanged();
@@ -3276,6 +3280,7 @@ void TRead::read(PalmMute* p, XmlReader& e, ReadContext& ctx)
             e.unknown();
         }
     }
+    compat::CompatUtils::resetHookHeightSign(p);
     compat::CompatUtils::setTextLineTextPositionFromAlign(p);
 }
 
@@ -3289,10 +3294,6 @@ void TRead::read(Part* p, XmlReader& e, ReadContext& ctx)
         if (!readProperties(p, e, ctx, staffHideModes)) {
             e.unknown();
         }
-    }
-
-    if (p->partName().isEmpty()) {
-        p->setPartName(p->instrument()->trackName());
     }
 
     read(p, staffHideModes, ctx.style().styleB(Sid::hideEmptyStaves));
@@ -3391,8 +3392,6 @@ bool TRead::readProperties(Part* p, XmlReader& e, ReadContext& ctx, StaffHideMod
         p->setColor(e.readInt());
     } else if (tag == "shortName") {
         p->instrument()->setShortName(e.readText());
-    } else if (tag == "trackName") {
-        p->setPartName(e.readText());
     } else if (tag == "show") {
         p->setShow(e.readInt());
     } else if (tag == "soloist") {
@@ -3454,6 +3453,7 @@ void TRead::read(Pedal* p, XmlReader& e, ReadContext& ctx)
         p->setPropertyFlags(Pid::END_TEXT, PropertyFlags::STYLED);
     }
 
+    compat::CompatUtils::resetHookHeightSign(p);
     compat::CompatUtils::setTextLineTextPositionFromAlign(p);
 }
 
@@ -3990,6 +3990,7 @@ void TRead::read(TextLineBase* b, XmlReader& e, ReadContext& ctx)
             e.unknown();
         }
     }
+    compat::CompatUtils::resetHookHeightSign(b);
     compat::CompatUtils::setTextLineTextPositionFromAlign(b);
 }
 
@@ -4345,6 +4346,7 @@ void TRead::read(Volta* v, XmlReader& e, ReadContext& ctx)
         }
     }
 
+    compat::CompatUtils::resetHookHeightSign(v);
     compat::CompatUtils::setTextLineTextPositionFromAlign(v);
 }
 

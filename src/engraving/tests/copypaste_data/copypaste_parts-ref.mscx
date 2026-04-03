@@ -79,10 +79,11 @@
           <name>stdNormal</name>
           </StaffType>
         </Staff>
-      <trackName>Flute</trackName>
       <Instrument id="flute">
-        <longName>Flute</longName>
-        <shortName>Fl.</shortName>
+        <InstrumentLabel>
+          <longName>Flute</longName>
+          <shortName>Fl.</shortName>
+          </InstrumentLabel>
         <trackName>Flute</trackName>
         <minPitchP>59</minPitchP>
         <maxPitchP>98</maxPitchP>
@@ -283,6 +284,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>i_i</eid>
               </HairPin>
             <next>
@@ -642,6 +645,8 @@
           <Spanner type="HairPin">
             <HairPin>
               <subtype>0</subtype>
+              <beginHookHeight>-1.9</beginHookHeight>
+              <endHookHeight>-1.9</endHookHeight>
               <eid>ZB_ZB</eid>
               </HairPin>
             <next>
@@ -873,10 +878,11 @@
             <name>stdNormal</name>
             </StaffType>
           </Staff>
-        <trackName>Flute</trackName>
         <Instrument id="flute">
-          <longName>Flute</longName>
-          <shortName>Fl.</shortName>
+          <InstrumentLabel>
+            <longName>Flute</longName>
+            <shortName>Fl.</shortName>
+            </InstrumentLabel>
           <trackName>Flute</trackName>
           <minPitchP>59</minPitchP>
           <maxPitchP>98</maxPitchP>
@@ -1110,6 +1116,8 @@
             <Spanner type="HairPin">
               <HairPin>
                 <subtype>0</subtype>
+                <beginHookHeight>-1.9</beginHookHeight>
+                <endHookHeight>-1.9</endHookHeight>
                 <eid>bC_bC</eid>
                 <linkedTo>i_i</linkedTo>
                 </HairPin>
@@ -1517,6 +1525,8 @@
             <Spanner type="HairPin">
               <HairPin>
                 <subtype>0</subtype>
+                <beginHookHeight>-1.9</beginHookHeight>
+                <endHookHeight>-1.9</endHookHeight>
                 <eid>SD_SD</eid>
                 <linkedTo>ZB_ZB</linkedTo>
                 </HairPin>

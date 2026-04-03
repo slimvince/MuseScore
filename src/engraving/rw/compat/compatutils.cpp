@@ -967,6 +967,22 @@ Sid CompatUtils::positionStyleFromAlign(Sid align)
     return muse::value(ALIGN_VALS_TO_CONVERT, align, Sid::NOSTYLE);
 }
 
+void CompatUtils::setPositionStylesFromAlign(MStyle* style, std::vector<Sid> ignoreSids)
+{
+    // Make sure new position styles are initially the same as align values
+    for (const StyleDef::StyleValue& st : StyleDef::styleValues) {
+        if (muse::contains(ignoreSids, st.sid)) {
+            continue;
+        }
+        Sid positionSid = compat::CompatUtils::positionStyleFromAlign(st.sid);
+        if (positionSid == Sid::NOSTYLE) {
+            continue;
+        }
+        AlignH val = style->value(st.sid).value<Align>().horizontal;
+        style->set(positionSid, val);
+    }
+}
+
 void CompatUtils::setTextLineTextPositionFromAlign(TextLineBase* tl)
 {
     tl->setBeginTextPosition(tl->beginTextAlign().horizontal);
@@ -980,6 +996,22 @@ void CompatUtils::setTextLineTextPositionFromAlign(TextLineBase* tl)
     tl->setEndTextPosition(tl->endTextAlign().horizontal);
     if (tl->endTextPosition() != tl->propertyDefault(Pid::END_TEXT_POSITION).value<AlignH>()) {
         tl->setPropertyFlags(Pid::END_TEXT_POSITION, PropertyFlags::UNSTYLED);
+    }
+}
+
+void CompatUtils::resetHookHeightSign(TextLineBase* tl)
+{
+    if (!tl->placeBelow()) {
+        return;
+    }
+
+    if (!tl->isStyled(Pid::BEGIN_HOOK_HEIGHT)) {
+        Spatium beginHookHeight = tl->getProperty(Pid::BEGIN_HOOK_HEIGHT).value<Spatium>();
+        tl->setProperty(Pid::BEGIN_HOOK_HEIGHT, -beginHookHeight);
+    }
+    if (!tl->isStyled(Pid::END_HOOK_HEIGHT)) {
+        Spatium endHookHeight = tl->getProperty(Pid::END_HOOK_HEIGHT).value<Spatium>();
+        tl->setProperty(Pid::END_HOOK_HEIGHT, -endHookHeight);
     }
 }
 

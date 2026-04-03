@@ -114,6 +114,7 @@ public:
     STATE_PROPERTY(checked, State::Checked)
 
     AccessibleItem(QObject* parent = nullptr);
+    explicit AccessibleItem(const muse::modularity::ContextPtr& iocCtx, QObject* parent = nullptr);
     ~AccessibleItem();
 
     // IAccessible
@@ -231,7 +232,6 @@ private:
 
     QQuickItem* resolveVisualItem() const;
 
-    bool m_registred = false;
     AccessibleItem* m_accessibleParent = nullptr;
     QList<AccessibleItem*> m_children;
     MUAccessible::Role m_role = MUAccessible::NoRole;

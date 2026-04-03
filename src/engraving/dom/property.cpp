@@ -359,6 +359,12 @@ static constexpr PropertyMetaData propertyList[] = {
     { Pid::BEGIN_FONT_FACE,                     P_TYPE::STRING,                    PropertyGroup::APPEARANCE, false, "beginFontFace",                   QT_TRANSLATE_NOOP("engraving/propertyName", "begin font face") },
     { Pid::BEGIN_FONT_SIZE,                     P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "beginFontSize",                   QT_TRANSLATE_NOOP("engraving/propertyName", "begin font size") },
     { Pid::BEGIN_FONT_STYLE,                    P_TYPE::INT,                       PropertyGroup::APPEARANCE, false, "beginFontStyle",                  QT_TRANSLATE_NOOP("engraving/propertyName", "begin font style") },
+    { Pid::BEGIN_TEXT_MUSICAL_SYMBOLS_SCALE,    P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "beginTextMusicalSymbolsScale",    QT_TRANSLATE_NOOP("engraving/propertyName", "begin text musical symbols scale") },
+    { Pid::CONTINUE_TEXT_MUSICAL_SYMBOLS_SCALE, P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "continueTextMusicalSymbolsScale", QT_TRANSLATE_NOOP("engraving/propertyName", "continue text musical symbols scale") },
+    { Pid::END_TEXT_MUSICAL_SYMBOLS_SCALE,      P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "endTextMusicalSymbolsScale",      QT_TRANSLATE_NOOP("engraving/propertyName", "end text musical symbols scale") },
+    { Pid::BEGIN_TEXT_MUSIC_SYMBOLS_SIZE,       P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "beginTextMusicSymbolsSize",       QT_TRANSLATE_NOOP("engraving/propertyName", "begin text music symbols size") },
+    { Pid::CONTINUE_TEXT_MUSIC_SYMBOLS_SIZE,    P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "continueTextMusicSymbolsSize",    QT_TRANSLATE_NOOP("engraving/propertyName", "continue text music symbols size") },
+    { Pid::END_TEXT_MUSIC_SYMBOLS_SIZE,         P_TYPE::REAL,                      PropertyGroup::APPEARANCE, false, "endTextMusicSymbolsSize",         QT_TRANSLATE_NOOP("engraving/propertyName", "end text music symbols size") },
     { Pid::BEGIN_TEXT_OFFSET,                   P_TYPE::POINT,                     PropertyGroup::POSITION,   false, "beginTextOffset",                 QT_TRANSLATE_NOOP("engraving/propertyName", "begin text offset") },
     { Pid::GAP_BETWEEN_TEXT_AND_LINE,           P_TYPE::SPATIUM,                   PropertyGroup::APPEARANCE, false, "gapBetweenTextAndLine",           QT_TRANSLATE_NOOP("engraving/propertyName", "gap between text and line") },
 
@@ -500,6 +506,11 @@ static constexpr PropertyMetaData propertyList[] = {
     { Pid::PLAY_COUNT_TEXT,                     P_TYPE::STRING,                    PropertyGroup::APPEARANCE, false, "playCountCustomText",             QT_TRANSLATE_NOOP("engraving/propertyName", "play count text") },
 
     { Pid::ALIGN_WITH_OTHER_RESTS,              P_TYPE::BOOL,                      PropertyGroup::POSITION,   false, "alignWithOtherRests",             QT_TRANSLATE_NOOP("engraving/propertyName", "align with other rests in the same voice") },
+
+    { Pid::STAFF_CUTAWAY,                       P_TYPE::BOOL,                      PropertyGroup::APPEARANCE, false, "",                                QT_TRANSLATE_NOOP("engraving/propertyName", "cutaway") },
+    { Pid::STAFF_HIDE_SYSTEM_BARLINE,           P_TYPE::BOOL,                      PropertyGroup::APPEARANCE, false, "",                                QT_TRANSLATE_NOOP("engraving/propertyName", "hide system barline") },
+    { Pid::STAFF_MERGE_MATCHING_RESTS,          P_TYPE::INT,                       PropertyGroup::APPEARANCE, false, "",                                QT_TRANSLATE_NOOP("engraving/propertyName", "merge matching rests") },
+    { Pid::STAFF_REFLECT_TRANSPOSITION,         P_TYPE::BOOL,                      PropertyGroup::APPEARANCE, false, "",                                QT_TRANSLATE_NOOP("engraving/propertyName", "reflect transposition") },
 
     { Pid::END,                                 P_TYPE::INT,                       PropertyGroup::NONE,       false, "++end++",                         nullptr }
 };

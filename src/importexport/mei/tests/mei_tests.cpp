@@ -106,6 +106,10 @@ TEST_F(Mei_Tests, mei_artic_01) {
     meiReadTest("artic-01");
 }
 
+TEST_F(Mei_Tests, mei_artic_02) {
+    meiReadTest("artic-02");
+}
+
 TEST_F(Mei_Tests, mei_beam_01) {
     meiReadTest("beam-01");
 }
@@ -168,6 +172,10 @@ TEST_F(Mei_Tests, mei_fig_bass_01) {
 
 TEST_F(Mei_Tests, mei_fingering_01) {
     meiReadTest("fingering-01");
+}
+
+TEST_F(Mei_Tests, mei_ftrem_01) {
+    meiReadTest("ftrem-01");
 }
 
 TEST_F(Mei_Tests, mei_glisss_01) {

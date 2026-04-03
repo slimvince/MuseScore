@@ -40,6 +40,7 @@
 #include "utils/arrangementutils.h"
 #include "utils/expressionutils.h"
 #include "types/typesconv.h"
+#include "types/constants.h"
 
 using namespace mu::engraving;
 using namespace muse;
@@ -93,12 +94,14 @@ static mu::engraving::DynamicType findNominalEndDynamicType(const Hairpin* hairp
         }
 
         const track_idx_t trackIdx = hairpin->track();
-        const EngravingItem* dynamic = endSegment->findAnnotation(ElementType::DYNAMIC, trackIdx, trackIdx);
-        if (!dynamic || !dynamic->isDynamic()) {
-            return mu::engraving::DynamicType::OTHER;
+        const EngravingItemList dynamics = endSegment->findAnnotations(ElementType::DYNAMIC, trackIdx, trackIdx);
+        for (const EngravingItem* dynamic : dynamics) {
+            if (dynamic && dynamic->isDynamic() && toDynamic(dynamic)->playDynamic()) {
+                return toDynamic(dynamic)->dynamicType();
+            }
         }
 
-        return toDynamic(dynamic)->dynamicType();
+        return mu::engraving::DynamicType::OTHER;
     }
 
     const LineSegment* seg = hairpin->backSegment();
@@ -108,9 +111,9 @@ static mu::engraving::DynamicType findNominalEndDynamicType(const Hairpin* hairp
 
     // Optimization: first check if there is a cached dynamic
     const EngravingItem* snappedItem = seg->ldata()->itemSnappedAfter();
-    if (!snappedItem || !snappedItem->isDynamic()) {
-        snappedItem = toHairpinSegment(seg)->findElementToSnapAfter(false /*ignoreInvisible*/);
-        if (!snappedItem || !snappedItem->isDynamic()) {
+    if (!snappedItem || !snappedItem->isDynamic() || !toDynamic(snappedItem)->playDynamic()) {
+        snappedItem = toHairpinSegment(seg)->findElementToSnapAfter(false /*ignoreInvisible*/, true /* requirePlayable */);
+        if (!snappedItem || !snappedItem->isDynamic() || !toDynamic(snappedItem)->playDynamic()) {
             return mu::engraving::DynamicType::OTHER;
         }
     }
@@ -576,7 +579,7 @@ void PlaybackContext::handleHairpin(const Hairpin* hairpin, const int tickPositi
         const Dynamic* startDynamic = startSegment
                                       ? toDynamic(startSegment->findAnnotation(ElementType::DYNAMIC, trackIdx, trackIdx))
                                       : nullptr;
-        if (startDynamic) {
+        if (startDynamic && startDynamic->playDynamic()) {
             const DynamicType dynamicType = startDynamic->dynamicType();
 
             if (dynamicType != DynamicType::OTHER
@@ -626,8 +629,9 @@ void PlaybackContext::handleHairpin(const Hairpin* hairpin, const int tickPositi
     }
 
     // --- Render
+    const int steps = std::max(spannerDurationTicks / (Constants::DIVISION / 4), 24);
     std::map<int, int> dynamicsCurve = TConv::easingValueCurve(spannerDurationTicks,
-                                                               24 /*stepsCount*/,
+                                                               steps,
                                                                static_cast<int>(levelTo - levelFrom),
                                                                hairpin->veloChangeMethod());
 

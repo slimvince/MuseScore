@@ -244,6 +244,11 @@ void AccessibilityController::unreg(IAccessible* aitem)
     delete item.object;
 }
 
+bool AccessibilityController::isReg(IAccessible* item) const
+{
+    return m_allItems.contains(item);
+}
+
 // Force the screen reader to speak an arbitrary message that isn't covered
 // by standard accessibility events. For example, use this function to report
 // that an action was performed, a different mode was entered, or a change
@@ -412,7 +417,7 @@ void AccessibilityController::propertyChanged(IAccessible* item, IAccessible::Pr
 
 void AccessibilityController::stateChanged(IAccessible* aitem, State state, bool arg)
 {
-    if (!configuration()->enabled()) {
+    if (!configuration()->isAccessibleEnabled()) {
         return;
     }
 
@@ -495,7 +500,7 @@ void AccessibilityController::sendEvent(QAccessibleEvent* ev)
 
 void AccessibilityController::cancelPreviousReading()
 {
-    if (!configuration()->active()) {
+    if (!configuration()->isAccessibleActive()) {
         return;
     }
 
@@ -564,7 +569,7 @@ bool AccessibilityController::needsRevoicing(const QAccessibleInterface& iface, 
 
 void AccessibilityController::triggerRevoicing(const Item& current)
 {
-    if (current.item != m_lastFocused || !configuration()->active()) {
+    if (current.item != m_lastFocused || !configuration()->isAccessibleActive()) {
         return;
     }
 

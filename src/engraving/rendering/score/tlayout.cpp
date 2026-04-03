@@ -1483,11 +1483,18 @@ void TLayout::layoutBreath(const Breath* item, Breath::LayoutData* ldata, const 
 
     const double voiceOffset = item->placeBelow() ? item->staff()->staffHeight(item->tick()) : 0.0;
     if (item->isCaesura()) {
-        ldata->setPosY(item->spatium() + voiceOffset);
+        if (item->symId() == SymId::chantCaesura) {
+            // special handling for chant caesura, which is higher than the normal one
+            ldata->setPosY(1.5 * item->spatium() + voiceOffset);
+        } else {
+            ldata->setPosY(item->symHeight(item->symId()) / 2 + voiceOffset);
+        }
     } else if ((conf.styleSt(Sid::musicalSymbolFont) == "Emmentaler") && (item->symId() == SymId::breathMarkComma)) {
-        ldata->setPosY(0.5 * item->spatium() + voiceOffset);
+        const double shift = item->placeBelow() ? -0.5 * item->spatium() + item->symHeight(item->symId()) : 0.5 * item->spatium();
+        ldata->setPosY(shift + voiceOffset);
     } else {
-        ldata->setPosY(-0.5 * item->spatium() + voiceOffset);
+        const double shift = item->placeBelow() ? 0.5 * item->spatium() + item->symHeight(item->symId()) : -0.5 * item->spatium();
+        ldata->setPosY(shift + voiceOffset);
     }
 
     ldata->setBbox(item->symBbox(item->symId()));
@@ -5800,6 +5807,8 @@ void TLayout::layoutTextLineBaseSegment(TextLineBaseSegment* item, LayoutContext
         item->text()->setXmlText(tl->beginText());
         item->text()->setFamily(tl->beginFontFamily());
         item->text()->setSize(tl->beginFontSize());
+        item->text()->setSymbolScale(tl->beginTextMusicalSymbolsScale());
+        item->text()->setSymbolSize(tl->beginTextMusicSymbolsSize());
         item->text()->setOffset(tl->beginTextOffset() * item->mag());
         item->text()->setAlign(tl->beginTextAlign());
         item->text()->setPosition(tl->beginTextPosition());
@@ -5808,6 +5817,8 @@ void TLayout::layoutTextLineBaseSegment(TextLineBaseSegment* item, LayoutContext
         item->text()->setXmlText(tl->continueText());
         item->text()->setFamily(tl->continueFontFamily());
         item->text()->setSize(tl->continueFontSize());
+        item->text()->setSymbolScale(tl->continueTextMusicalSymbolsScale());
+        item->text()->setSymbolSize(tl->continueTextMusicSymbolsSize());
         item->text()->setOffset(tl->continueTextOffset() * item->mag());
         item->text()->setAlign(tl->continueTextAlign());
         item->text()->setPosition(tl->continueTextPosition());
@@ -5822,6 +5833,8 @@ void TLayout::layoutTextLineBaseSegment(TextLineBaseSegment* item, LayoutContext
         item->endText()->setXmlText(tl->endText());
         item->endText()->setFamily(tl->endFontFamily());
         item->endText()->setSize(tl->endFontSize());
+        item->endText()->setSymbolScale(tl->endTextMusicalSymbolsScale());
+        item->endText()->setSymbolSize(tl->endTextMusicSymbolsSize());
         item->endText()->setOffset(tl->endTextOffset() * item->mag());
         item->endText()->setAlign(tl->endTextAlign());
         item->endText()->setPosition(tl->endTextPosition());

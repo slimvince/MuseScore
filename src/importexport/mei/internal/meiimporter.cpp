@@ -29,6 +29,7 @@
 #include "engraving/dom/bracket.h"
 #include "engraving/dom/breath.h"
 #include "engraving/dom/chord.h"
+#include "engraving/dom/chordline.h"
 #include "engraving/dom/clef.h"
 #include "engraving/dom/dynamic.h"
 #include "engraving/dom/expression.h"
@@ -261,6 +262,11 @@ ChordRest* MeiImporter::addChordRest(pugi::xml_node node, Measure* measure, int 
 
     TDuration duration;
     duration.setType(Convert::durFromMEI(durationLogAtt->GetDur(), warning));
+    if (node.select_node("ancestor::fTrem")) {
+        // fTrem is a tremolo, so we increase the duration type
+        duration.setType(Convert::durFromMEI(static_cast<libmei::data_DURATION>(durationLogAtt->GetDur()
+                                                                                + libmei::DURATION_breve), warning));
+    }
     if (warning) {
         this->addLog("duration", node);
     }
@@ -1653,6 +1659,8 @@ bool MeiImporter::readElements(pugi::xml_node parentNode, Measure* measure, int 
             success = success && this->readChord(xpathNode.node(), measure, track, ticks);
         } else if (elementName == "clef" && !m_readingGraceNotes) {
             success = success && this->readClef(xpathNode.node(), measure, track, ticks);
+        } else if (elementName == "fTrem") {
+            success = success && this->readFTrem(xpathNode.node(), measure, track, ticks);
         } else if (elementName == "graceGrp" && !m_readingGraceNotes) {
             success = success && this->readGraceGrp(xpathNode.node(), measure, track, ticks);
         } else if (elementName == "mRest" && !m_readingGraceNotes) {
@@ -1710,11 +1718,49 @@ bool MeiImporter::readArtic(pugi::xml_node articNode, Chord* chord)
 
     Articulation* articulation = toArticulation(this->addToChordRest(meiArtic, nullptr, chord));
     if (!articulation) {
-        // Warning message given in MeiImporter::addSpanner
+        // Warning message given in MeiImporter::addToChordRest
         return true;
     }
 
     Convert::articFromMEI(articulation, meiArtic, warning);
+
+    if (articulation->symId() == SymId::noSym) {
+        // remove the articulation if it has no symbol
+        chord->remove(articulation);
+        delete articulation;
+    }
+
+    return true;
+}
+
+bool MeiImporter::readArtic(pugi::xml_node articNode, Note* note)
+{
+    IF_ASSERT_FAILED(note) {
+        return false;
+    }
+
+    bool warning = false;
+    libmei::Artic meiArtic;
+    meiArtic.Read(articNode);
+
+    Chord* chord = note->chord();
+    ChordLine* chordLine = nullptr;
+
+    if (meiArtic.HasArtic()
+        && (meiArtic.GetArtic().at(0) >= libmei::ARTICULATION_doit && meiArtic.GetArtic().at(0) < libmei::ARTICULATION_longfall)) {
+        chordLine = Factory::createChordLine(chord);
+    }
+
+    if (!chordLine) {
+        // Warning message given in MeiImporter::addToChordRest
+        return true;
+    }
+
+    this->readXmlId(chordLine, meiArtic.m_xmlId);
+    Convert::articFromMEI(chordLine, meiArtic, warning);
+    chordLine->setTrack(note->track());
+    chord->add(chordLine);
+    chordLine->setNote(note);
 
     return true;
 }
@@ -1793,10 +1839,13 @@ bool MeiImporter::readChord(pugi::xml_node chordNode, Measure* measure, int trac
     this->readArtics(chordNode, chord);
 
     if (!m_tremoloId.empty()) {
-        TremoloType ttype = Convert::stemModFromMEI(meiChord.GetStemMod());
-        if (isTremoloTwoChord(ttype)) {
-            NOT_SUPPORTED;
+        if (isNode(chordNode.parent(), u"fTrem")) {
+            TremoloTwoChord* tremolo = Factory::createTremoloTwoChord(chord);
+            m_uids->reg(tremolo, m_tremoloId);
+            tremolo->setTremoloType(m_tremoloType);
+            chord->add(tremolo);
         } else {
+            TremoloType ttype = Convert::stemModFromMEI(meiChord.GetStemMod());
             TremoloSingleChord* tremolo = Factory::createTremoloSingleChord(chord);
             this->readXmlId(tremolo, m_tremoloId);
             tremolo->setTremoloType(ttype);
@@ -1840,6 +1889,33 @@ bool MeiImporter::readClef(pugi::xml_node clefNode, Measure* measure, int track,
     segment->add(clef);
 
     return true;
+}
+
+/**
+ * Read a fTrem.
+ * Set MuseScore TremoloType.
+ */
+
+bool MeiImporter::readFTrem(pugi::xml_node fTremNode, Measure* measure, int track, Fraction& ticks)
+{
+    IF_ASSERT_FAILED(measure) {
+        return false;
+    }
+
+    bool success = true;
+
+    libmei::FTrem meiFTrem;
+    meiFTrem.Read(fTremNode);
+    m_tremoloId = meiFTrem.m_xmlId;
+
+    bool warning = false;
+    m_tremoloType = Convert::unitdurFromMEI(meiFTrem, warning);
+
+    success = readElements(fTremNode, measure, track, ticks);
+
+    m_tremoloId.clear();
+
+    return success;
 }
 
 /**
@@ -1991,10 +2067,13 @@ bool MeiImporter::readNote(pugi::xml_node noteNode, Measure* measure, int track,
         this->readArtics(noteNode, chord);
         this->readVerses(noteNode, chord);
         if (!m_tremoloId.empty()) {
-            TremoloType ttype = Convert::stemModFromMEI(meiNote.GetStemMod());
-            if (isTremoloTwoChord(ttype)) {
-                NOT_SUPPORTED;
+            if (isNode(noteNode.parent(), u"fTrem")) {
+                TremoloTwoChord* tremolo = Factory::createTremoloTwoChord(chord);
+                m_uids->reg(tremolo, m_tremoloId);
+                tremolo->setTremoloType(m_tremoloType);
+                chord->add(tremolo);
             } else {
+                TremoloType ttype = Convert::stemModFromMEI(meiNote.GetStemMod());
                 TremoloSingleChord* tremolo = Factory::createTremoloSingleChord(chord);
                 this->readXmlId(tremolo, m_tremoloId);
                 tremolo->setTremoloType(ttype);
@@ -2032,6 +2111,12 @@ bool MeiImporter::readNote(pugi::xml_node noteNode, Measure* measure, int track,
 
     note->setTrack(track);
     chord->add(note);
+
+    // read chord lines
+    pugi::xpath_node_set elements = noteNode.select_nodes("./artic");
+    for (pugi::xpath_node xpathNode : elements) {
+        this->readArtic(xpathNode.node(), note);
+    }
 
     return true;
 }

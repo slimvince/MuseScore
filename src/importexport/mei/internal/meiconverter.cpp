@@ -366,17 +366,6 @@ void Convert::articFromMEI(engraving::Articulation* articulation, const libmei::
         case (libmei::ARTICULATION_stroke): symId = engraving::SymId::articStaccatissimoStrokeAbove;
             break;
         default: break;
-
-            // the following cases would be chordLines:
-            // case (libmei::ARTICULATION_doit): break;
-            // case (libmei::ARTICULATION_scoop): break;
-            // case (libmei::ARTICULATION_rip): break;
-            // case (libmei::ARTICULATION_plop): break;
-            // case (libmei::ARTICULATION_fall): break;
-            // case (libmei::ARTICULATION_longfall): break;
-            // case (libmei::ARTICULATION_bend): break;
-            // case (libmei::ARTICULATION_flip): break;
-            // case (libmei::ARTICULATION_smear): break;
         }
     }
     if (meiArtic.HasArtic() && (meiArtic.GetArtic().size() == 2)) {
@@ -414,6 +403,45 @@ void Convert::articFromMEI(engraving::Articulation* articulation, const libmei::
 
     // @color
     Convert::colorFromMEI(articulation, meiArtic);
+}
+
+void Convert::articFromMEI(engraving::ChordLine* chordline, const libmei::Artic& meiArtic, bool& warning)
+{
+    // @artic
+    if (meiArtic.HasArtic() && (meiArtic.GetArtic().size() == 1)) {
+        switch (meiArtic.GetArtic().at(0)) {
+        case (libmei::ARTICULATION_doit): chordline->setChordLineType(engraving::ChordLineType::DOIT);
+            break;
+        case (libmei::ARTICULATION_scoop): chordline->setChordLineType(engraving::ChordLineType::SCOOP);
+            break;
+        case (libmei::ARTICULATION_rip): break;
+        case (libmei::ARTICULATION_plop): chordline->setChordLineType(engraving::ChordLineType::PLOP);
+            break;
+        case (libmei::ARTICULATION_fall): chordline->setChordLineType(engraving::ChordLineType::FALL);
+            break;
+        case (libmei::ARTICULATION_longfall): break;
+        case (libmei::ARTICULATION_bend): break;
+        case (libmei::ARTICULATION_flip): break;
+        case (libmei::ARTICULATION_smear): break;
+        default: break;
+        }
+    }
+
+    // @type
+    if (Convert::hasTypeValue(meiArtic.GetType(), std::string(CHORDLINE_TYPE) + "straight")) {
+        chordline->setStraight(true);
+    } else if (Convert::hasTypeValue(meiArtic.GetType(), std::string(CHORDLINE_TYPE) + "wavy")) {
+        chordline->setWavy(true);
+    }
+
+    // @place
+    if (meiArtic.HasPlace()) {
+        bool placeWarning = true;
+        warning = (warning || placeWarning);
+    }
+
+    // @color
+    Convert::colorFromMEI(chordline, meiArtic);
 }
 
 libmei::Artic Convert::articToMEI(const engraving::Articulation* articulation)
@@ -508,6 +536,37 @@ libmei::Artic Convert::articToMEI(const engraving::Articulation* articulation)
 
     // @color
     Convert::colorToMEI(articulation, meiArtic);
+
+    return meiArtic;
+}
+
+libmei::Artic Convert::articToMEI(const engraving::ChordLine* chordline)
+{
+    libmei::Artic meiArtic;
+
+    // @artic
+    switch (chordline->chordLineType()) {
+    case engraving::ChordLineType::FALL: meiArtic.SetArtic({ libmei::ARTICULATION_fall });
+        break;
+    case engraving::ChordLineType::DOIT: meiArtic.SetArtic({ libmei::ARTICULATION_doit });
+        break;
+    case engraving::ChordLineType::PLOP: meiArtic.SetArtic({ libmei::ARTICULATION_plop });
+        break;
+    case engraving::ChordLineType::SCOOP: meiArtic.SetArtic({ libmei::ARTICULATION_scoop });
+        break;
+    case engraving::ChordLineType::NOTYPE: meiArtic.SetArtic({ libmei::ARTICULATION_NONE });
+        break;
+    }
+
+    // @type
+    if (chordline->isWavy()) {
+        meiArtic.SetType(std::string(CHORDLINE_TYPE) + "wavy");
+    } else if (chordline->isStraight()) {
+        meiArtic.SetType(std::string(CHORDLINE_TYPE) + "straight");
+    }
+
+    // @color
+    Convert::colorToMEI(chordline, meiArtic);
 
     return meiArtic;
 }
@@ -1211,50 +1270,6 @@ libmei::Dir Convert::dirToMEI(const engraving::TextLineBase* textLineBase, Strin
     meiLines = String(textLineBase->beginText()).split(u"\n");
 
     return meiDir;
-}
-
-engraving::DurationType Convert::durFromMEI(const libmei::data_DURATION meiDuration, bool& warning)
-{
-    warning = false;
-    switch (meiDuration) {
-    case (libmei::DURATION_long): return engraving::DurationType::V_LONG;
-    case (libmei::DURATION_breve): return engraving::DurationType::V_BREVE;
-    case (libmei::DURATION_1): return engraving::DurationType::V_WHOLE;
-    case (libmei::DURATION_2): return engraving::DurationType::V_HALF;
-    case (libmei::DURATION_4): return engraving::DurationType::V_QUARTER;
-    case (libmei::DURATION_8): return engraving::DurationType::V_EIGHTH;
-    case (libmei::DURATION_16): return engraving::DurationType::V_16TH;
-    case (libmei::DURATION_32): return engraving::DurationType::V_32ND;
-    case (libmei::DURATION_64): return engraving::DurationType::V_64TH;
-    case (libmei::DURATION_128): return engraving::DurationType::V_128TH;
-    case (libmei::DURATION_256): return engraving::DurationType::V_256TH;
-    case (libmei::DURATION_512): return engraving::DurationType::V_512TH;
-    case (libmei::DURATION_1024): return engraving::DurationType::V_1024TH;
-    default:
-        warning = true;
-        return engraving::DurationType::V_QUARTER;
-    }
-}
-
-libmei::data_DURATION Convert::durToMEI(const engraving::DurationType duration)
-{
-    switch (duration) {
-    case (engraving::DurationType::V_LONG): return libmei::DURATION_long;
-    case (engraving::DurationType::V_BREVE): return libmei::DURATION_breve;
-    case (engraving::DurationType::V_WHOLE): return libmei::DURATION_1;
-    case (engraving::DurationType::V_HALF): return libmei::DURATION_2;
-    case (engraving::DurationType::V_QUARTER): return libmei::DURATION_4;
-    case (engraving::DurationType::V_EIGHTH): return libmei::DURATION_8;
-    case (engraving::DurationType::V_16TH): return libmei::DURATION_16;
-    case (engraving::DurationType::V_32ND): return libmei::DURATION_32;
-    case (engraving::DurationType::V_64TH): return libmei::DURATION_64;
-    case (engraving::DurationType::V_128TH): return libmei::DURATION_128;
-    case (engraving::DurationType::V_256TH): return libmei::DURATION_256;
-    case (engraving::DurationType::V_512TH): return libmei::DURATION_512;
-    case (engraving::DurationType::V_1024TH): return libmei::DURATION_1024;
-    default:
-        return libmei::DURATION_4;
-    }
 }
 
 void Convert::dynamFromMEI(engraving::Dynamic* dynamic, const StringList& meiLines, const libmei::Dynam& meiDynam, bool& warning)
@@ -2898,6 +2913,87 @@ libmei::data_STAFFREL Convert::directionToMEI(engraving::DirectionV direction)
     }
 }
 
+engraving::DurationType Convert::durFromMEI(const libmei::data_DURATION meiDuration, bool& warning)
+{
+    warning = false;
+    switch (meiDuration) {
+    case (libmei::DURATION_long): return engraving::DurationType::V_LONG;
+    case (libmei::DURATION_breve): return engraving::DurationType::V_BREVE;
+    case (libmei::DURATION_1): return engraving::DurationType::V_WHOLE;
+    case (libmei::DURATION_2): return engraving::DurationType::V_HALF;
+    case (libmei::DURATION_4): return engraving::DurationType::V_QUARTER;
+    case (libmei::DURATION_8): return engraving::DurationType::V_EIGHTH;
+    case (libmei::DURATION_16): return engraving::DurationType::V_16TH;
+    case (libmei::DURATION_32): return engraving::DurationType::V_32ND;
+    case (libmei::DURATION_64): return engraving::DurationType::V_64TH;
+    case (libmei::DURATION_128): return engraving::DurationType::V_128TH;
+    case (libmei::DURATION_256): return engraving::DurationType::V_256TH;
+    case (libmei::DURATION_512): return engraving::DurationType::V_512TH;
+    case (libmei::DURATION_1024): return engraving::DurationType::V_1024TH;
+    default:
+        warning = true;
+        return engraving::DurationType::V_QUARTER;
+    }
+}
+
+libmei::data_DURATION Convert::durToMEI(const engraving::DurationType duration)
+{
+    switch (duration) {
+    case (engraving::DurationType::V_LONG): return libmei::DURATION_long;
+    case (engraving::DurationType::V_BREVE): return libmei::DURATION_breve;
+    case (engraving::DurationType::V_WHOLE): return libmei::DURATION_1;
+    case (engraving::DurationType::V_HALF): return libmei::DURATION_2;
+    case (engraving::DurationType::V_QUARTER): return libmei::DURATION_4;
+    case (engraving::DurationType::V_EIGHTH): return libmei::DURATION_8;
+    case (engraving::DurationType::V_16TH): return libmei::DURATION_16;
+    case (engraving::DurationType::V_32ND): return libmei::DURATION_32;
+    case (engraving::DurationType::V_64TH): return libmei::DURATION_64;
+    case (engraving::DurationType::V_128TH): return libmei::DURATION_128;
+    case (engraving::DurationType::V_256TH): return libmei::DURATION_256;
+    case (engraving::DurationType::V_512TH): return libmei::DURATION_512;
+    case (engraving::DurationType::V_1024TH): return libmei::DURATION_1024;
+    default:
+        return libmei::DURATION_4;
+    }
+}
+
+engraving::TremoloType Convert::unitdurFromMEI(const libmei::FTrem& meiFTrem, bool& warning)
+{
+    warning = false;
+    switch (meiFTrem.GetUnitdur()) {
+    case (libmei::DURATION_8): return engraving::TremoloType::C8;
+    case (libmei::DURATION_16): return engraving::TremoloType::C16;
+    case (libmei::DURATION_32): return engraving::TremoloType::C32;
+    case (libmei::DURATION_64): return engraving::TremoloType::C64;
+    default:
+        warning = true;
+        return engraving::TremoloType::INVALID_TREMOLO;
+    }
+}
+
+libmei::data_DURATION Convert::unitdurToMEI(const engraving::TremoloTwoChord* tremolo)
+{
+    const libmei::data_DURATION dur = Convert::durToMEI(tremolo->durationType().type());
+    int unitdur = 0;
+    if (dur > libmei::DURATION_4) {
+        unitdur = dur - libmei::DURATION_4;
+    }
+    switch (tremolo->tremoloType()) {
+    case (engraving::TremoloType::C8):  unitdur += libmei::DURATION_8;
+        break;
+    case (engraving::TremoloType::C16): unitdur += libmei::DURATION_16;
+        break;
+    case (engraving::TremoloType::C32): unitdur += libmei::DURATION_32;
+        break;
+    case (engraving::TremoloType::C64): unitdur += libmei::DURATION_64;
+        break;
+    default:
+        unitdur = libmei::DURATION_NONE;
+    }
+
+    return static_cast<libmei::data_DURATION>(unitdur);
+}
+
 void Convert::slurFromMEI(engraving::SlurTie* slur, const libmei::Slur& meiSlur, bool& warning)
 {
     warning = false;
@@ -3409,7 +3505,7 @@ void Convert::textToMEI(textWithSmufl& textBlocks, const String& text)
         }
         // SMuFL
         else {
-            // Changing to smufl, add the current plain text block if something in in
+            // Changing to smufl, add the current plain text block if something is in it
             if (!isSmufl && textBlock.size() > 0) {
                 textBlocks.push_back(std::make_pair(false, textBlock));
                 textBlock.clear();

@@ -33,7 +33,7 @@
 #include "global/iapplication.h"
 
 #include "modularity/ioc.h"
-#include "../iaccessibilityconfiguration.h"
+#include "../iaccessibilitycontextconfiguration.h"
 #include "../iaccessibilitycontroller.h"
 #include "accessibleobject.h"
 #include "actions/iactionsdispatcher.h"
@@ -53,8 +53,9 @@ class AccessibilityController : public IAccessibilityController, public IAccessi
     public std::enable_shared_from_this<AccessibilityController>
 {
 public:
-    GlobalInject<IAccessibilityConfiguration> configuration;
+
     GlobalInject<IApplication> application;
+    ContextInject<IAccessibilityContextConfiguration> configuration = { this };
     ContextInject<actions::IActionsDispatcher> actionsDispatcher = { this };
     ContextInject<IInteractive> interactive = { this };
     ContextInject<ui::IMainWindow> mainWindow = { this };
@@ -72,6 +73,7 @@ public:
     // IAccessibilityController
     void reg(IAccessible* item) override;
     void unreg(IAccessible* item) override;
+    bool isReg(IAccessible* item) const override;
 
     void announce(const QString& announcement) override;
     QString announcement() const override;
