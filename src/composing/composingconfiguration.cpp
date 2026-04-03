@@ -33,6 +33,9 @@ static const Settings::Key ANALYZE_FOR_ROMAN_NUMERALS(module_name, "composing/an
 static const Settings::Key INFER_KEY_MODE(module_name,             "composing/inferKeyMode");
 static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,      "composing/analysisAlternatives");
 static const Settings::Key TUNING_SYSTEM_KEY(module_name,          "composing/tuningSystemKey");
+static const Settings::Key TONIC_ANCHORED_TUNING(module_name,       "composing/tonicAnchoredTuning");
+static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/minimizeTuningDeviation");
+static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,    "composing/showKeyModeInStatusBar");
 static const Settings::Key STATUS_BAR_CHORD_SYMBOL_COUNT(module_name,  "composing/statusBarChordSymbolCount");
 static const Settings::Key STATUS_BAR_ROMAN_NUMERAL_COUNT(module_name, "composing/statusBarRomanNumeralCount");
@@ -66,6 +69,21 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(TUNING_SYSTEM_KEY, Val(std::string("equal")));
     settings()->valueChanged(TUNING_SYSTEM_KEY).onReceive(nullptr, [this](const Val&) {
         m_tuningSystemKeyChanged.notify();
+    });
+
+    settings()->setDefaultValue(TONIC_ANCHORED_TUNING, Val(true));
+    settings()->valueChanged(TONIC_ANCHORED_TUNING).onReceive(nullptr, [this](const Val&) {
+        m_tonicAnchoredTuningChanged.notify();
+    });
+
+    settings()->setDefaultValue(MINIMIZE_TUNING_DEVIATION, Val(false));
+    settings()->valueChanged(MINIMIZE_TUNING_DEVIATION).onReceive(nullptr, [this](const Val&) {
+        m_minimizeTuningDeviationChanged.notify();
+    });
+
+    settings()->setDefaultValue(ANNOTATE_TUNING_OFFSETS, Val(false));
+    settings()->valueChanged(ANNOTATE_TUNING_OFFSETS).onReceive(nullptr, [this](const Val&) {
+        m_annotateTuningOffsetsChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -187,6 +205,57 @@ void ComposingConfiguration::setTuningSystemKey(const std::string& key)
 muse::async::Notification ComposingConfiguration::tuningSystemKeyChanged() const
 {
     return m_tuningSystemKeyChanged;
+}
+
+// ── tonicAnchoredTuning ──────────────────────────────────────────────────────
+
+bool ComposingConfiguration::tonicAnchoredTuning() const
+{
+    return settings()->value(TONIC_ANCHORED_TUNING).toBool();
+}
+
+void ComposingConfiguration::setTonicAnchoredTuning(bool value)
+{
+    settings()->setSharedValue(TONIC_ANCHORED_TUNING, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::tonicAnchoredTuningChanged() const
+{
+    return m_tonicAnchoredTuningChanged;
+}
+
+// ── minimizeTuningDeviation ──────────────────────────────────────────────────
+
+bool ComposingConfiguration::minimizeTuningDeviation() const
+{
+    return settings()->value(MINIMIZE_TUNING_DEVIATION).toBool();
+}
+
+void ComposingConfiguration::setMinimizeTuningDeviation(bool value)
+{
+    settings()->setSharedValue(MINIMIZE_TUNING_DEVIATION, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::minimizeTuningDeviationChanged() const
+{
+    return m_minimizeTuningDeviationChanged;
+}
+
+// ── annotateTuningOffsets ────────────────────────────────────────────────────
+
+bool ComposingConfiguration::annotateTuningOffsets() const
+{
+    return settings()->value(ANNOTATE_TUNING_OFFSETS).toBool();
+}
+
+void ComposingConfiguration::setAnnotateTuningOffsets(bool value)
+{
+    settings()->setSharedValue(ANNOTATE_TUNING_OFFSETS, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::annotateTuningOffsetsChanged() const
+{
+    return m_annotateTuningOffsetsChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

@@ -146,14 +146,29 @@ void AppMenuModel::setupConnections()
 
         updateUndoRedoItems();
 
-        // Rebuild the chord track target submenu for the new score.
-        MenuItem& chordTrackMenu = findMenu("menu-chord-track");
-        if (chordTrackMenu.isValid()) {
-            MenuItemList targets = makeChordTrackTargetItems();
-            chordTrackMenu.setSubitems(targets);
-            UiActionState state;
-            state.enabled = !targets.isEmpty();
-            chordTrackMenu.setState(state);
+        rebuildChordTrackMenu();
+
+        // Re-subscribe to parts changes for the new notation so the submenu
+        // stays current when chord tracks are added or removed mid-session.
+        auto notation = globalContext()->currentNotation();
+        if (notation && notation->parts()) {
+            notation->parts()->partsChanged().onNotify(this, [this]() {
+                rebuildChordTrackMenu();
+            }, Asyncable::Mode::SetReplace);
+        }
+    });
+
+    composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
+        using namespace mu::composing::intonation;
+        const std::string key = composingConfiguration()->tuningSystemKey();
+        const TuningSystem* sys = TuningRegistry::byKey(key);
+        const std::string displayName = sys ? sys->displayName() : key;
+        MenuItem& item = findItem(ActionCode("tune-selection"));
+        if (item.isValid()) {
+            ui::UiAction action = item.action();
+            action.title = TranslatableString::untranslatable(
+                QString("Tune as %1").arg(QString::fromStdString(displayName)));
+            item.setAction(action);
         }
     });
 }
@@ -383,6 +398,19 @@ MenuItem* AppMenuModel::makeFormatMenu()
     };
 
     return makeMenu(TranslatableString("appshell/menu/format", "F&ormat"), formatItems, "menu-format");
+}
+
+void AppMenuModel::rebuildChordTrackMenu()
+{
+    MenuItem& chordTrackMenu = findMenu("menu-chord-track");
+    if (!chordTrackMenu.isValid()) {
+        return;
+    }
+    MenuItemList targets = makeChordTrackTargetItems();
+    chordTrackMenu.setSubitems(targets);
+    UiActionState state;
+    state.enabled = !targets.isEmpty();
+    chordTrackMenu.setState(state);
 }
 
 MenuItemList AppMenuModel::makeChordTrackTargetItems()

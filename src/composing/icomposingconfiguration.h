@@ -64,6 +64,29 @@ public:
     virtual void setTuningSystemKey(const std::string& key) = 0;
     virtual muse::async::Notification tuningSystemKeyChanged() const = 0;
 
+    /// Whether to anchor chord root tuning to the mode tonic (tonic-anchored JI).
+    /// When enabled, each chord root is placed at its just-intonation scale-degree
+    /// position above the mode tonic rather than always at 0 ¢ from 12-TET.
+    /// Default: true.  Has no effect when the tuning system is equal temperament.
+    virtual bool tonicAnchoredTuning() const = 0;
+    virtual void setTonicAnchoredTuning(bool value) = 0;
+    virtual muse::async::Notification tonicAnchoredTuningChanged() const = 0;
+
+    /// Whether to subtract the mean tuning offset from all notes in each chord,
+    /// minimizing the total deviation from 12-TET while preserving pure intervals
+    /// between notes.  Default: false.
+    virtual bool minimizeTuningDeviation() const = 0;
+    virtual void setMinimizeTuningDeviation(bool value) = 0;
+    virtual muse::async::Notification minimizeTuningDeviationChanged() const = 0;
+
+    /// Whether to add a staff text annotation below each tuned chord showing
+    /// each note's deviation from 12-TET in cents (e.g. "+2 -14 +4").
+    /// Useful for analysis; annotations accumulate on re-application.
+    /// Default: false.
+    virtual bool annotateTuningOffsets() const = 0;
+    virtual void setAnnotateTuningOffsets(bool value) = 0;
+    virtual muse::async::Notification annotateTuningOffsetsChanged() const = 0;
+
     // ── Status-bar display ───────────────────────────────────────────────────
 
     /// Whether to show the inferred key/mode in the status bar.

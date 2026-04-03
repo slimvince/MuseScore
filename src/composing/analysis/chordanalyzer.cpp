@@ -285,6 +285,44 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
     return suffix;
 }
 
+// Returns a chromatic Roman numeral (e.g. "bVII", "bIII") for a chord whose
+// root is not a diatonic scale degree in the current mode.
+// semitone: (rootPc - keyTonicPc + 12) % 12 — interval from tonic to root.
+// modeIdx:  0 = Ionian … 6 = Locrian.
+// isMinorQuality: true → lower-case numeral (bvii, biii); false → upper-case.
+// Returns "" if the root is more than 1 semitone from every scale degree
+// (should not occur in standard 12-tone music).
+static std::string chromaticRoman(int semitone, int modeIdx, bool isMinorQuality)
+{
+    static constexpr std::array<int, 7> SCALES[7] = {
+        { 0, 2, 4, 5, 7, 9, 11 }, // Ionian
+        { 0, 2, 3, 5, 7, 9, 10 }, // Dorian
+        { 0, 1, 3, 5, 7, 8, 10 }, // Phrygian
+        { 0, 2, 4, 6, 7, 9, 11 }, // Lydian
+        { 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian
+        { 0, 2, 3, 5, 7, 8, 10 }, // Aeolian
+        { 0, 1, 3, 5, 6, 8, 10 }, // Locrian
+    };
+    static constexpr const char* UPPER[7] = { "I","II","III","IV","V","VI","VII" };
+    static constexpr const char* LOWER[7] = { "i","ii","iii","iv","v","vi","vii" };
+
+    const std::array<int, 7>& scale = SCALES[modeIdx];
+
+    // Prefer flat notation (one semitone below a scale degree) over sharp.
+    for (int i = 0; i < 7; ++i) {
+        if ((scale[i] - 1 + 12) % 12 == semitone) {
+            return std::string("b") + (isMinorQuality ? LOWER[i] : UPPER[i]);
+        }
+    }
+    // Fall back to sharp (one semitone above a scale degree).
+    for (int i = 0; i < 7; ++i) {
+        if ((scale[i] + 1) % 12 == semitone) {
+            return std::string("#") + (isMinorQuality ? LOWER[i] : UPPER[i]);
+        }
+    }
+    return "";
+}
+
 std::string diatonicRoman(const ChordAnalysisResult& r)
 {
     if (r.degree < 0 || r.degree > 6) {
@@ -1418,6 +1456,8 @@ std::vector<ChordAnalysisResult> ChordAnalyzer::analyzeChord(
         r.omitsThird           = omitsThird;
         r.degree               = degree;
         r.diatonicToKey        = diatonic;
+        r.keyTonicPc           = keyTonicPc;
+        r.keyMode              = keyMode;
 
         results.push_back(r);
     }
@@ -1476,11 +1516,32 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
 
 std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& result)
 {
+    std::string romanNumeral;
+
     if (result.degree < 0) {
-        return "";
+        // Non-diatonic root: generate a chromatic numeral (e.g. bVII, bIII, bVI).
+        using Q = ChordQuality;
+        const bool isMinorQuality = (result.quality == Q::Minor
+                                     || result.quality == Q::Diminished
+                                     || result.quality == Q::HalfDiminished);
+        const int semitone = (result.rootPc - result.keyTonicPc + 12) % 12;
+        const int modeIdx  = static_cast<int>(keyModeIndex(result.keyMode));
+        const std::string chrBase = chromaticRoman(semitone, modeIdx, isMinorQuality);
+        if (chrBase.empty()) {
+            return "";  // Should not occur in standard 12-tone music
+        }
+        // Reuse diatonicRoman with degree = 0 to get the quality/extension suffix
+        // (e.g. "o", "+", "ø7", "M7", "(add6)").  degree = 0 always yields a
+        // single-character base "I"/"i" that we strip, leaving only the suffix.
+        ChordAnalysisResult tmp = result;
+        tmp.degree = 0;
+        const std::string diatonized = diatonicRoman(tmp);
+        const std::string suffix = diatonized.size() > 1 ? diatonized.substr(1) : "";
+        romanNumeral = chrBase + suffix;
+    } else {
+        romanNumeral = diatonicRoman(result);
     }
 
-    std::string romanNumeral = diatonicRoman(result);
     romanNumeral = romanWithInversion(romanNumeral, result.quality,
                                       result.rootPc, result.bassPc,
                                       result.hasMinorSeventh, result.hasMajorSeventh,

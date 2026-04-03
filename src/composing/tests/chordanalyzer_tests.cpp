@@ -49,7 +49,9 @@ std::vector<ChordAnalysisTone> tones(std::initializer_list<int> pitches)
 ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
                                     int rootPc = 0, int bassPc = 0,
                                     bool hasMin7 = false, bool hasMaj7 = false,
-                                    bool hasDim7 = false, bool hasAdd6 = false)
+                                    bool hasDim7 = false, bool hasAdd6 = false,
+                                    int keyTonicPc = 0,
+                                    KeyMode keyMode = KeyMode::Ionian)
 {
     ChordAnalysisResult r;
     r.degree               = degree;
@@ -60,6 +62,8 @@ ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
     r.hasMajorSeventh      = hasMaj7;
     r.hasDiminishedSeventh = hasDim7;
     r.hasAddedSixth        = hasAdd6;
+    r.keyTonicPc           = keyTonicPc;
+    r.keyMode              = keyMode;
     return r;
 }
 
@@ -566,10 +570,45 @@ TEST(Composing_ChordRomanNumeralTests, HalfDim_iv_inMinor)
 
 // ── Non-diatonic guard ────────────────────────────────────────────────────────
 
-TEST(Composing_ChordRomanNumeralTests, NonDiatonic_ReturnsEmpty)
+// Non-diatonic chords now produce chromatic (borrowed) numerals.
+TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVII_CMajor)
 {
+    // Bb major in C major = bVII.  rootPc=10, keyTonicPc=0, Ionian.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Major)), "");
+                  makeRomanResult(-1, ChordQuality::Major, 10, 10, false, false, false, false, 0, KeyMode::Ionian)),
+              "bVII");
+}
+
+TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatIII_CMajor)
+{
+    // Eb major in C major = bIII.  rootPc=3, keyTonicPc=0, Ionian.
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
+                  makeRomanResult(-1, ChordQuality::Major, 3, 3, false, false, false, false, 0, KeyMode::Ionian)),
+              "bIII");
+}
+
+TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVI_CMajor)
+{
+    // Ab major in C major = bVI.  rootPc=8, keyTonicPc=0, Ionian.
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
+                  makeRomanResult(-1, ChordQuality::Major, 8, 8, false, false, false, false, 0, KeyMode::Ionian)),
+              "bVI");
+}
+
+TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVII_Minor_CMajor)
+{
+    // Bb minor in C major = bvii.  rootPc=10, minor quality.
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
+                  makeRomanResult(-1, ChordQuality::Minor, 10, 10, false, false, false, false, 0, KeyMode::Ionian)),
+              "bvii");
+}
+
+TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVIIDom7_CMajor)
+{
+    // Bb7 in C major = bVII7.  rootPc=10, minor seventh.
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
+                  makeRomanResult(-1, ChordQuality::Major, 10, 10, true, false, false, false, 0, KeyMode::Ionian)),
+              "bVII7");
 }
 
 // ── Triad inversions ──────────────────────────────────────────────────────────

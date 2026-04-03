@@ -105,6 +105,7 @@ private:
     muse::uicomponents::MenuItem* makeFormatMenu();
     muse::uicomponents::MenuItem* makeToolsMenu();
     muse::uicomponents::MenuItemList makeChordTrackTargetItems();
+    void rebuildChordTrackMenu();
     muse::uicomponents::MenuItem* makeTuneSelectionItem();
     muse::uicomponents::MenuItem* makePluginsMenu();
     muse::uicomponents::MenuItemList makePluginsMenuSubitems();

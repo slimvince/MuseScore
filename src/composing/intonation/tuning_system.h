@@ -88,6 +88,23 @@ public:
         int rootPc,
         int semitones
     ) const = 0;
+
+    /**
+     * @brief Returns the tuning offset in cents of the chord root relative to
+     *        the mode tonic (tonic-anchored tuning).
+     *
+     * For tonic-anchored tuning the chord root is not assumed to sit at 0 ¢
+     * from 12-TET.  Instead it is placed at its just-intonation scale-degree
+     * position above the mode tonic.  Callers add this to the per-note result
+     * of tuningOffset() to obtain the absolute offset for each note.
+     *
+     * Default implementation returns 0.0 — correct for equal temperament and
+     * any system where absolute pitch class does not affect the per-note offsets.
+     */
+    virtual double rootOffset(
+        const mu::composing::analysis::KeyModeAnalysisResult& /*keyMode*/,
+        int /*rootPc*/
+    ) const { return 0.0; }
 };
 
 /**

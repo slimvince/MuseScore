@@ -69,23 +69,31 @@ pull requests are submitted.
 
 The following components exist and are working:
 
-- **ChordAnalyzer** — identifies chord quality, extensions, inversions, and diatonic
-  degree from a set of simultaneously sounding notes
+- **ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic
+  degree, and chromatic (borrowed) Roman numerals from a set of simultaneously
+  sounding notes
 - **KeyModeAnalyzer** — infers the most likely key and mode (all 7 diatonic modes)
   from a temporal window of pitch contexts with duration, beat, and bass weighting
-- **ChordSymbolFormatter** — formats analysis results as chord symbols and Roman numerals
+- **ChordSymbolFormatter** — formats analysis results as chord symbols and Roman
+  numerals; non-diatonic chords produce chromatic numerals (♭VII, ♭III, ♭VI etc.)
+  rather than returning empty
 - **HarmonicRhythm** — detects harmonic boundaries across a score range, drives chord
   staff population
 - **Chord staff** — a grand-staff part added by the user that is populated on demand
   with a harmonic reduction: chord symbols, Roman numerals, canonical or collected
   voicings, key/mode annotations, borrowed chord labels, pivot detection, and cadence
-  markers
+  markers. Notes on the chord staff have `play = false` (annotation-only; they do not
+  double the source staves in playback)
 - **Status bar integration** — displays chord, key/mode, and Roman numeral information
   when a note is selected
+- **Intonation** — per-note and region tuning via split-and-slur; tonic-anchored JI
+  places each chord root at its scale-degree position above the mode tonic rather than
+  always at 0¢; optional minimize-retune shift and per-note cent annotation in score
 - **User preferences** — `IComposingConfiguration` / `ComposingConfiguration` expose
   analysis settings including mode tier weights (4 tier sliders + preset), max suggested
-  chords, tuning system, and status bar display options
-- **Regression tests** — 189 tests covering chord analyzer, key/mode analyzer, and
+  chords, tuning system, tonic-anchored tuning, minimize-retune, annotate-tuning-offsets,
+  and status bar display options
+- **Regression tests** — 193 tests covering chord analyzer, key/mode analyzer, and
   MusicXML integration
 
 The primary integration point is `NotationComposingBridge` in
@@ -352,6 +360,12 @@ struct ChordAnalysisResult {
 
     int degree = -1;            // Diatonic degree 0-6; -1 if non-diatonic
     bool diatonicToKey = false; // True if all sounding pitches are diatonic
+
+    // Key context stored at analysis time so formatRomanNumeral() can generate
+    // chromatic numerals (♭VII, ♭III, etc.) for non-diatonic roots without
+    // extra parameters.
+    int keyTonicPc = 0;           // Pitch class of mode tonic (0=C)
+    KeyMode keyMode = KeyMode::Ionian;
 };
 ```
 
@@ -406,7 +420,7 @@ public:
     static std::vector<ChordAnalysisResult> analyzeChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,                         // -7 to +7
-        bool keyIsMajor,                                // true = major/Ionian, false = minor/Aeolian
+        KeyMode keyMode,                                // detected mode (all 7 diatonic modes)
         const ChordTemporalContext* context = nullptr,  // optional preceding-chord context
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences
     );
@@ -546,7 +560,11 @@ namespace ChordSymbolFormatter {
     std::string formatSymbol(const ChordAnalysisResult& result, int keySignatureFifths,
                              const Options& opts = kDefaultOptions);
 
-    // "IM7", "ii7", "V7/3", "viiø7" etc. Returns "" for non-diatonic chords.
+    // "IM7", "ii7", "V7/3", "viiø7" etc.
+    // Non-diatonic roots generate chromatic numerals: "♭VII", "♭III7", "♭VIM7" etc.
+    // Returns "" only when the root cannot be mapped at all (should not occur in
+    // standard 12-tone music).  The result stores keyTonicPc and keyMode so no
+    // extra parameters are needed.
     std::string formatRomanNumeral(const ChordAnalysisResult& result);
 }
 ```
@@ -554,10 +572,12 @@ namespace ChordSymbolFormatter {
 Display options (`Options`) live in `ChordSymbolFormatter`, not in
 `ChordAnalyzerPreferences`, enforcing the analysis/display separation (principle 2.3).
 
-**Roman numeral scope:** The formatter currently emits Roman numerals up to the 7th
-level only (e.g. `I7`, `IM7`, `iø7`). Extensions beyond the 7th (9th, 11th, 13th)
-are not yet emitted. The test catalog covers the 7th level only; extending the
-catalog and formatter together is a natural future increment.
+**Roman numeral scope:** The formatter emits Roman numerals up to the 7th level
+(e.g. `I7`, `IM7`, `iø7`). Extensions beyond the 7th (9th, 11th, 13th) are not
+yet emitted. Non-diatonic roots produce chromatic numerals by computing semitone
+distance from the mode tonic and prefixing with ♭ or ♯ as appropriate (preferring
+flat names). The quality/extension suffix is reused from the diatonic path. The
+test catalog covers the 7th level only; extending it is a natural future increment.
 
 #### Planned Trajectory — IChordSymbolFormatter
 
@@ -780,6 +800,14 @@ Four named presets populate all sliders: Standard (default), Jazz, Modal, Equal.
 The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences`
 before calling `analyzeKeyMode()`. Ionian gets an additional +0.2 internal offset
 relative to Aeolian within Tier 1, reflecting its slightly greater prevalence.
+
+**Intonation section:**
+- `tonicAnchoredTuning` (bool, default true) — anchor each chord root to its JI
+  scale-degree position above the mode tonic (§11.2a)
+- `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
+  chord so the chord hovers near 0¢ while preserving internal JI ratios
+- `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
+  offset of each tuned note (e.g. "+15 −2 +3") below the chord in the score
 
 **Status bar section:**
 - `showKeyModeInStatusBar` (bool, default true)
@@ -1617,6 +1645,21 @@ All tuning code paths read the preference at call time via `preferredTuningSyste
 `TuningRegistry::byKey()` with a `JustIntonation` fallback if the key is unset or
 unknown.  No tuning code hardcodes a specific system.
 
+**Tonic-anchored tuning** (`tonicAnchoredTuning`, default on): when enabled, each chord
+root is placed at its pure JI scale-degree position above the mode tonic rather than always
+at 0¢.  This prevents syntonic-comma drift across a piece.  Implemented as a virtual
+`rootOffset(keyMode, rootPc)` method on `TuningSystem` (default: 0.0¢; JI override uses
+the mode-relative dev[] table).  `KeyModeAnalysisResult.tonicPc` and `.mode` are populated
+by the bridge from `keyFifths` + `keyMode` using `keyModeTonicOffset()`.
+
+**Minimize retune** (`minimizeTuningDeviation`, default off): subtracts the mean of all
+attacking-note offsets per chord so the chord hovers near 0¢ while preserving internal
+JI ratios.
+
+**Annotate tuning offsets** (`annotateTuningOffsets`, default off): adds a `StaffText`
+element below the chord in the score (one per chord voice, space-separated rounded cent
+values) for each chord processed in Phase 2 and Phase 3 of the tuning algorithm.
+
 ### 11.2b Adaptive Tuning — Future Exploration
 
 The current tuning implementation computes offsets independently per note against
@@ -2342,6 +2385,15 @@ Both actions are gated by `canReceiveAction(actionCode)` in
 `NotationActionController`, which checks that a score is open and the required
 selection exists.
 
+The **"Implode to chord track"** submenu is rebuilt dynamically whenever:
+- A different score is opened (`currentNotationChanged`)
+- A part is added or removed in the current score (`partsChanged`)
+
+This ensures the submenu is enabled as soon as a valid chord staff is added and
+disabled immediately when one is removed, without requiring the user to reopen the
+menu.  Implemented via `rebuildChordTrackMenu()` called from both notification paths
+in `AppMenuModel::setupConnections()`.
+
 ### 12.2 Harmony Navigator
 
 Primary temporal view — shows the chord progression over time as a sequence of
@@ -2502,12 +2554,22 @@ infrastructure (DrawModule + EngravingModule + MusicXmlModule, `MScore::noGui = 
 Compiled as a separate executable; linked against `engraving`, `composing_analysis`,
 and `iex_musicxml` — no notation module required.
 
-**`tools/music21_batch.py`** — processes Bach chorales from music21's corpus.
-Exports MusicXML and music21's Roman numeral analysis JSON per chorale.
+**`tools/music21_batch.py`** — exports scores from music21's corpus to MusicXML
+and produces a JSON harmonic analysis per score.  Supports any composer via
+`--composer NAME` (default: `bach`).  The canonical source is the music21 corpus
+directory at `C:\Users\vince\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\music21\corpus\`.
+Working copies (XML + JSON) are written to `tools/tools/corpus/` using short names
+(`bwv1.6.xml`, `beethoven_opus132.xml`, `beethoven_opus59no1_movement1.xml`).
 Note: music21's `romanNumeralFromChord()` is stateless and local — it does not
 use temporal context.  Key detection uses Krumhansl-Schmuckler (global, stored as
 `detectedKey`) and FloatingKey sliding window (local, stored as `keyLocal` per
 region).  Both are stored for comparison.
+
+**`tools/inject_m21_rn.py`** — injects music21's Roman numeral labels into an
+exported MusicXML file as `<direction type="words">` elements above the first staff.
+Source XMLs are read from `tools/tools/corpus/`; annotated output is written to
+`tools/tools/corpus_m21_xml/` (default).  Open the result in MuseScore alongside the
+chord staff output to compare music21's analysis with ours visually.
 
 **`tools/compare_analyses.py`** — three-level comparison of our analysis against
 music21's.  Levels: chord identity (key-independent), key context, Roman numeral
@@ -2516,11 +2578,12 @@ string.  Classifies disagreements into `full_agree`, `near_agree`,
 Also checks music21's chord against our top-2 alternatives before declaring
 `chord_disagree`, classifying such cases as `near_agree`.
 
-**`tools/run_validation.py`** — orchestrates the full pipeline across all 371
-chorales.  Produces an HTML validation report.
+**`tools/run_validation.py`** — orchestrates the full pipeline across all chorales.
+Produces an HTML validation report.  Works with any composer supported by
+`music21_batch.py`.
 
 ```bash
-# Full corpus
+# Full Bach corpus
 python tools/run_validation.py --output tools/
 
 # Single chorale for spot-checking

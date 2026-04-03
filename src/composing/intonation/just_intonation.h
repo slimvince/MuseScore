@@ -84,6 +84,34 @@ public:
 
         return dev[semitones < 0 || semitones > 11 ? 0 : semitones];
     }
+
+    double rootOffset(
+        const mu::composing::analysis::KeyModeAnalysisResult& keyMode,
+        int rootPc
+    ) const override
+    {
+        // Same 5-limit JI ratios as tuningOffset(), indexed by the root's
+        // semitone distance from the mode tonic rather than from itself.
+        // Tritone (semitone 6): augmented fourth (45/32 = -9.8 ¢) is used
+        // since a scale degree at a tritone from the tonic is always the #4
+        // in tonal contexts (b5 only appears in Locrian, which is very rare).
+        static constexpr std::array<double, 12> dev = {
+             0.0,   //  0  unison (root = tonic)
+            +11.7,  //  1  minor 2nd    16/15
+             +3.9,  //  2  major 2nd    9/8
+            +15.6,  //  3  minor 3rd    6/5
+            -13.7,  //  4  major 3rd    5/4
+             -2.0,  //  5  perfect 4th  4/3
+             -9.8,  //  6  aug 4th      45/32
+             +2.0,  //  7  perfect 5th  3/2
+            +13.7,  //  8  minor 6th    8/5
+            -15.6,  //  9  major 6th    5/3
+            +17.6,  // 10  minor 7th    9/5
+            -11.7,  // 11  major 7th    15/8
+        };
+        const int semitone = (rootPc - keyMode.tonicPc + 12) % 12;
+        return dev[semitone];
+    }
 };
 
 } // namespace mu::composing::intonation

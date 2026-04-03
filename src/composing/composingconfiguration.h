@@ -50,6 +50,18 @@ public:
     void setTuningSystemKey(const std::string& key) override;
     muse::async::Notification tuningSystemKeyChanged() const override;
 
+    bool tonicAnchoredTuning() const override;
+    void setTonicAnchoredTuning(bool value) override;
+    muse::async::Notification tonicAnchoredTuningChanged() const override;
+
+    bool minimizeTuningDeviation() const override;
+    void setMinimizeTuningDeviation(bool value) override;
+    muse::async::Notification minimizeTuningDeviationChanged() const override;
+
+    bool annotateTuningOffsets() const override;
+    void setAnnotateTuningOffsets(bool value) override;
+    muse::async::Notification annotateTuningOffsetsChanged() const override;
+
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
     muse::async::Notification showKeyModeInStatusBarChanged() const override;
@@ -84,6 +96,9 @@ private:
     muse::async::Notification m_inferKeyModeChanged;
     muse::async::Notification m_analysisAlternativesChanged;
     muse::async::Notification m_tuningSystemKeyChanged;
+    muse::async::Notification m_tonicAnchoredTuningChanged;
+    muse::async::Notification m_minimizeTuningDeviationChanged;
+    muse::async::Notification m_annotateTuningOffsetsChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_statusBarChordSymbolCountChanged;
     muse::async::Notification m_statusBarRomanNumeralCountChanged;

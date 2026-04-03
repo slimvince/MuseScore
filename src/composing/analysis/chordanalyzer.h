@@ -96,6 +96,11 @@ struct ChordAnalysisResult {
 
     int degree = -1;          // 0..6 when diatonic degree is known; -1 otherwise
     bool diatonicToKey = false;
+
+    // Key context stored so formatRomanNumeral() can generate chromatic numerals
+    // (♭VII, ♭III, etc.) even when degree == -1 (non-diatonic root).
+    int keyTonicPc = 0;
+    KeyMode keyMode = KeyMode::Ionian;
 };
 
 /// Tunable parameters for chord analysis.

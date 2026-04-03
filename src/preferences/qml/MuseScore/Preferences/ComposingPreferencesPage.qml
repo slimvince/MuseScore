@@ -49,6 +49,9 @@ PreferencesPage {
             inferKeyMode:            preferencesModel.inferKeyMode
             analysisAlternatives:    preferencesModel.analysisAlternatives
             tuningSystemKey:         preferencesModel.tuningSystemKey
+            tonicAnchoredTuning:     preferencesModel.tonicAnchoredTuning
+            minimizeTuningDeviation: preferencesModel.minimizeTuningDeviation
+            annotateTuningOffsets:   preferencesModel.annotateTuningOffsets
             modeTierWeight1:         preferencesModel.modeTierWeight1
             modeTierWeight2:         preferencesModel.modeTierWeight2
             modeTierWeight3:         preferencesModel.modeTierWeight3
@@ -61,8 +64,11 @@ PreferencesPage {
             onAnalyzeForRomanNumeralsChangeRequested: function(value) { preferencesModel.analyzeForRomanNumerals = value }
             onInferKeyModeChangeRequested:            function(value) { preferencesModel.inferKeyMode            = value }
             onAnalysisAlternativesChangeRequested:    function(count) { preferencesModel.analysisAlternatives    = count }
-            onTuningSystemKeyChangeRequested:         function(key)   { preferencesModel.tuningSystemKey         = key   }
-            onModeTierWeight1ChangeRequested:         function(value) { preferencesModel.modeTierWeight1         = value }
+            onTuningSystemKeyChangeRequested:             function(key)   { preferencesModel.tuningSystemKey         = key   }
+            onTonicAnchoredTuningChangeRequested:         function(value) { preferencesModel.tonicAnchoredTuning     = value }
+            onMinimizeTuningDeviationChangeRequested:     function(value) { preferencesModel.minimizeTuningDeviation = value }
+            onAnnotateTuningOffsetsChangeRequested:       function(value) { preferencesModel.annotateTuningOffsets   = value }
+            onModeTierWeight1ChangeRequested:             function(value) { preferencesModel.modeTierWeight1         = value }
             onModeTierWeight2ChangeRequested:         function(value) { preferencesModel.modeTierWeight2         = value }
             onModeTierWeight3ChangeRequested:         function(value) { preferencesModel.modeTierWeight3         = value }
             onModeTierWeight4ChangeRequested:         function(value) { preferencesModel.modeTierWeight4         = value }

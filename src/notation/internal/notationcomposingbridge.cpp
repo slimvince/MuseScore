@@ -588,30 +588,38 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     // ── Hysteresis ───────────────────────────────────────────────────────
     //
     // If a previous inference is supplied and the new top mode differs, the
-    // challenger must beat the incumbent by prefs.hysteresisMargin.  This
-    // prevents transient passages (e.g. a single dominant chord) from
-    // triggering a spurious mode switch.
+    // challenger must exceed the incumbent's score by a margin before a switch
+    // is accepted.  Two tiers:
+    //   • Same key signature (relative major/minor pair, e.g. D minor ↔ F major):
+    //     use relativeKeyHysteresisMargin.  All diatonic notes are shared, so
+    //     passing chords easily tip the balance — a higher bar is required.
+    //   • Different key signature (genuine modulation):
+    //     use hysteresisMargin.  Accidental evidence is more discriminating, so
+    //     a lower bar is appropriate.
     const KeyModeAnalysisResult& top = modeResults.front();
-    if (prevResult != nullptr
-        && top.mode != prevResult->mode
-        && top.score < prevResult->score + prefs.hysteresisMargin) {
-        // Find the incumbent in the candidate list (it may have ranked lower).
-        const KeyModeAnalysisResult* incumbent = nullptr;
-        for (const auto& r : modeResults) {
-            if (r.mode == prevResult->mode
-                && r.keySignatureFifths == prevResult->keySignatureFifths) {
-                incumbent = &r;
-                break;
+    if (prevResult != nullptr && top.mode != prevResult->mode) {
+        const double hysteresis = (top.keySignatureFifths == prevResult->keySignatureFifths)
+                                  ? prefs.relativeKeyHysteresisMargin
+                                  : prefs.hysteresisMargin;
+        if (top.score < prevResult->score + hysteresis) {
+            // Find the incumbent in the candidate list (it may have ranked lower).
+            const KeyModeAnalysisResult* incumbent = nullptr;
+            for (const auto& r : modeResults) {
+                if (r.mode == prevResult->mode
+                    && r.keySignatureFifths == prevResult->keySignatureFifths) {
+                    incumbent = &r;
+                    break;
+                }
             }
+            if (incumbent) {
+                outKeyFifths  = incumbent->keySignatureFifths;
+                outMode       = incumbent->mode;
+                outConfidence = incumbent->normalizedConfidence;
+                if (outScore) *outScore = incumbent->score;
+                return;
+            }
+            // Incumbent not in candidate list — fall through and accept new mode.
         }
-        if (incumbent) {
-            outKeyFifths  = incumbent->keySignatureFifths;
-            outMode       = incumbent->mode;
-            outConfidence = incumbent->normalizedConfidence;
-            if (outScore) *outScore = incumbent->score;
-            return;
-        }
-        // Incumbent not in candidate list — fall through and accept new mode.
     }
 
     // Notes win — use inferred result (key signature in Ionian convention so
@@ -930,20 +938,39 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
         return {};
     }
 
-    const std::set<size_t> noExclusions;
+    // Exclude chord-track staves so their notes don't pollute the analysis.
+    std::set<size_t> excludeStaves;
+    for (size_t si = 0; si < sc->nstaves(); ++si) {
+        if (isChordTrackStaff(sc, si)) {
+            excludeStaves.insert(si);
+        }
+    }
+
+    // If the selected note is itself on a chord-track staff, fall back to the
+    // first eligible staff for key-signature lookup (same as analyzeHarmonicRhythm).
+    staff_idx_t refStaff = note->staffIdx();
+    if (excludeStaves.count(static_cast<size_t>(refStaff))) {
+        refStaff = 0;
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (!excludeStaves.count(si) && staffIsEligible(sc, si, tick)) {
+                refStaff = static_cast<staff_idx_t>(si);
+                break;
+            }
+        }
+    }
 
     std::vector<SoundingNote> sounding;
-    collectSoundingAt(sc, seg, noExclusions, sounding);
+    collectSoundingAt(sc, seg, excludeStaves, sounding);
     if (sounding.empty()) {
         return {};
     }
 
     double unusedConfidence = 0.0;
-    resolveKeyAndMode(sc, tick, note->staffIdx(), noExclusions,
+    resolveKeyAndMode(sc, tick, refStaff, excludeStaves,
                       outKeyFifths, outKeyMode, unusedConfidence);
 
     ChordTemporalContext temporalCtx
-        = findTemporalContext(sc, seg, noExclusions, outKeyFifths, outKeyMode);
+        = findTemporalContext(sc, seg, excludeStaves, outKeyFifths, outKeyMode);
 
     const auto analysisTones = buildTones(sounding);
     return ChordAnalyzer::analyzeChord(analysisTones, outKeyFifths, outKeyMode,
@@ -1690,6 +1717,22 @@ bool populateChordTrack(
                                      treblePitches, localKeyFifths);
         }
 
+        // Chord-staff notes are annotation-only — silence them so they don't
+        // double the playback of the source staff.
+        for (Segment* ps = score->tick2segment(rStart, true, SegmentType::ChordRest);
+             ps && ps->tick() < rEnd;
+             ps = ps->next1(SegmentType::ChordRest)) {
+            for (track_idx_t tr : { trebleTrack, bassTrack }) {
+                ChordRest* cr = ps->cr(tr);
+                if (!cr || !cr->isChord()) {
+                    continue;
+                }
+                for (Note* n : toChord(cr)->notes()) {
+                    n->undoChangeProperty(Pid::PLAY, false);
+                }
+            }
+        }
+
         // ── Harmony elements ─────────────────────────────────────────────
         Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
         if (!seg) {
@@ -1803,29 +1846,6 @@ bool populateChordTrack(
                 bt->setParent(seg);
                 bt->setPlainText(muse::String::fromStdString(borrowLabel));
                 score->undoAddElement(bt);
-            }
-        }
-
-        // ── Tuning (user-preferred system, no split/tie) ────────────────
-        // Apply cents offset to every note in this region on both staves.
-        const auto& tuningSystem = preferredTuningSystem();
-
-        for (Segment* ts = score->tick2segment(rStart, true, SegmentType::ChordRest);
-             ts && ts->tick() < rEnd;
-             ts = ts->next1(SegmentType::ChordRest)) {
-            for (track_idx_t tr : { trebleTrack, bassTrack }) {
-                ChordRest* cr = ts->cr(tr);
-                if (!cr || !cr->isChord()) {
-                    continue;
-                }
-                for (Note* n : toChord(cr)->notes()) {
-                    const int semitones =
-                        mu::composing::intonation::semitoneFromPitches(
-                            n->ppitch() % 12, chord.rootPc);
-                    mu::composing::intonation::tuneNote(
-                        n, tuningSystem, region.keyModeResult,
-                        chord.quality, chord.rootPc, semitones);
-                }
             }
         }
 
@@ -2152,14 +2172,32 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
     }
 
     const auto& chordResult = results.front();
+
+    // Populate keyModeResult so rootOffset() can locate the mode tonic.
     mu::composing::analysis::KeyModeAnalysisResult keyModeResult;
+    keyModeResult.keySignatureFifths = keyFifths;
+    keyModeResult.mode = keyMode;
+    {
+        using mu::composing::analysis::keyModeTonicOffset;
+        const int ionianPc = ((keyFifths * 7) % 12 + 12) % 12;
+        keyModeResult.tonicPc = (ionianPc + keyModeTonicOffset(keyMode)) % 12;
+    }
+
+    static muse::GlobalInject<mu::composing::IComposingConfiguration> cfg;
+    const bool tonicAnchored  = cfg.get() && cfg.get()->tonicAnchoredTuning();
+    const bool minimizeRetune = cfg.get() && cfg.get()->minimizeTuningDeviation();
+    const bool annotateTuning = cfg.get() && cfg.get()->annotateTuningOffsets();
 
     static constexpr double kEpsilonCents = 0.5;
 
     auto desiredOffset = [&](int ppitch) -> double {
         const int semitones = semitoneFromPitches(ppitch % 12, chordResult.rootPc);
-        return system.tuningOffset(keyModeResult, chordResult.quality,
-                                   chordResult.rootPc, semitones);
+        double offset = system.tuningOffset(keyModeResult, chordResult.quality,
+                                            chordResult.rootPc, semitones);
+        if (tonicAnchored) {
+            offset += system.rootOffset(keyModeResult, chordResult.rootPc);
+        }
+        return offset;
     };
 
     auto staffEligible = [&](size_t si) -> bool {
@@ -2177,6 +2215,35 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
         return false;
     }
 
+    // ── "Minimize retune": subtract mean offset so chord hovers near 0 ¢ ────────
+    double meanShift = 0.0;
+    if (minimizeRetune && seg) {
+        double sum = 0.0;
+        int    cnt = 0;
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (!staffEligible(si)) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr = seg->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    sum += desiredOffset(n->ppitch());
+                    ++cnt;
+                }
+            }
+        }
+        if (cnt > 0) {
+            meanShift = sum / cnt;
+        }
+    }
+    auto finalOffset = [&](int ppitch) { return desiredOffset(ppitch) - meanShift; };
+
     bool anyApplied = false;
 
     // ── Phase 2: notes that attack at the anchor tick ─────────────────────────
@@ -2189,15 +2256,30 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
             if (!cr || !cr->isChord() || cr->isGrace()) {
                 continue;
             }
+            std::string tuningAnnotation;
             for (Note* n : toChord(cr)->notes()) {
                 if (!n->play() || !n->visible()) {
                     continue;
                 }
-                const double desired = desiredOffset(n->ppitch());
+                const double desired = finalOffset(n->ppitch());
+                if (annotateTuning) {
+                    const int cents = static_cast<int>(std::round(desired));
+                    if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                    tuningAnnotation += (cents >= 0 ? "+" : "") + std::to_string(cents);
+                }
                 if (std::abs(n->tuning() - desired) < kEpsilonCents) {
                     continue;
                 }
                 n->undoChangeProperty(Pid::TUNING, desired);
+                anyApplied = true;
+            }
+            if (annotateTuning && !tuningAnnotation.empty()) {
+                StaffText* at = Factory::createStaffText(seg);
+                at->setTrack(static_cast<track_idx_t>(si) * VOICES + v);
+                at->setParent(seg);
+                at->setPlacement(PlacementV::BELOW);
+                at->setPlainText(muse::String::fromStdString(tuningAnnotation));
+                sc->undoAddElement(at);
                 anyApplied = true;
             }
         }
@@ -2232,7 +2314,7 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
                     if (!n->play() || !n->visible()) {
                         continue;
                     }
-                    if (std::abs(n->tuning() - desiredOffset(n->ppitch())) >= kEpsilonCents) {
+                    if (std::abs(n->tuning() - finalOffset(n->ppitch())) >= kEpsilonCents) {
                         anyNeedsTuning = true;
                         break;
                     }
@@ -2250,8 +2332,30 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
                 }
 
                 if (splitAndTuneChord(sc, chordMut, tick,
-                                      [&](Note* n) { n->setTuning(desiredOffset(n->ppitch())); })) {
+                                      [&](Note* n) { n->setTuning(finalOffset(n->ppitch())); })) {
                     anyApplied = true;
+                    if (annotateTuning && seg) {
+                        const ChordRest* splitCr = seg->cr(origTrack);
+                        if (splitCr && splitCr->isChord()) {
+                            std::string tuningAnnotation;
+                            for (const Note* n : toChord(splitCr)->notes()) {
+                                if (!n->play() || !n->visible()) {
+                                    continue;
+                                }
+                                const int cents = static_cast<int>(std::round(finalOffset(n->ppitch())));
+                                if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                                tuningAnnotation += (cents >= 0 ? "+" : "") + std::to_string(cents);
+                            }
+                            if (!tuningAnnotation.empty()) {
+                                StaffText* at = Factory::createStaffText(seg);
+                                at->setTrack(origTrack);
+                                at->setParent(seg);
+                                at->setPlacement(PlacementV::BELOW);
+                                at->setPlainText(muse::String::fromStdString(tuningAnnotation));
+                                sc->undoAddElement(at);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -2289,6 +2393,12 @@ bool applyRegionTuning(mu::engraving::Score* score,
     }
 
     const auto& tuningSystem = preferredTuningSystem();
+
+    static muse::GlobalInject<mu::composing::IComposingConfiguration> cfg;
+    const bool tonicAnchored  = cfg.get() && cfg.get()->tonicAnchoredTuning();
+    const bool minimizeRetune = cfg.get() && cfg.get()->minimizeTuningDeviation();
+    const bool annotateTuning = cfg.get() && cfg.get()->annotateTuningOffsets();
+
     static constexpr double kEpsilonCents = 0.5;
 
     bool anyApplied = false;
@@ -2300,9 +2410,48 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
         auto desiredOffset = [&](int ppitch) -> double {
             const int semitones = semitoneFromPitches(ppitch % 12, chord.rootPc);
-            return tuningSystem.tuningOffset(region.keyModeResult, chord.quality,
-                                             chord.rootPc, semitones);
+            double offset = tuningSystem.tuningOffset(region.keyModeResult, chord.quality,
+                                                      chord.rootPc, semitones);
+            if (tonicAnchored) {
+                offset += tuningSystem.rootOffset(region.keyModeResult, chord.rootPc);
+            }
+            return offset;
         };
+
+        // ── "Minimize retune": subtract mean offset so chord hovers near 0 ¢ ──
+        double meanShift = 0.0;
+        if (minimizeRetune) {
+            double sum = 0.0;
+            int    cnt = 0;
+            for (Segment* mseg = score->tick2segment(rStart, true, SegmentType::ChordRest);
+                 mseg && mseg->tick() < rEnd;
+                 mseg = mseg->next1(SegmentType::ChordRest)) {
+                for (size_t si = 0; si < score->nstaves(); ++si) {
+                    if (excludeStaves.count(si)
+                        || !staffIsEligible(score, si, mseg->tick())) {
+                        continue;
+                    }
+                    for (int v = 0; v < VOICES; ++v) {
+                        const ChordRest* cr = mseg->cr(
+                            static_cast<track_idx_t>(si) * VOICES + v);
+                        if (!cr || !cr->isChord() || cr->isGrace()) {
+                            continue;
+                        }
+                        for (const Note* n : toChord(cr)->notes()) {
+                            if (!n->play() || !n->visible()) {
+                                continue;
+                            }
+                            sum += desiredOffset(n->ppitch());
+                            ++cnt;
+                        }
+                    }
+                }
+            }
+            if (cnt > 0) {
+                meanShift = sum / cnt;
+            }
+        }
+        auto finalOffset = [&](int ppitch) { return desiredOffset(ppitch) - meanShift; };
 
         // ── Phase 2: notes attacking within this region ──────────────────
         for (Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
@@ -2320,15 +2469,30 @@ bool applyRegionTuning(mu::engraving::Score* score,
                     if (!cr || !cr->isChord() || cr->isGrace()) {
                         continue;
                     }
+                    std::string tuningAnnotation;
                     for (Note* n : toChord(cr)->notes()) {
                         if (!n->play() || !n->visible()) {
                             continue;
                         }
-                        const double desired = desiredOffset(n->ppitch());
+                        const double desired = finalOffset(n->ppitch());
+                        if (annotateTuning) {
+                            const int cents = static_cast<int>(std::round(desired));
+                            if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                            tuningAnnotation += (cents >= 0 ? "+" : "") + std::to_string(cents);
+                        }
                         if (std::abs(n->tuning() - desired) < kEpsilonCents) {
                             continue;
                         }
                         n->undoChangeProperty(Pid::TUNING, desired);
+                        anyApplied = true;
+                    }
+                    if (annotateTuning && !tuningAnnotation.empty()) {
+                        StaffText* at = Factory::createStaffText(seg);
+                        at->setTrack(static_cast<track_idx_t>(si) * VOICES + v);
+                        at->setParent(seg);
+                        at->setPlacement(PlacementV::BELOW);
+                        at->setPlainText(muse::String::fromStdString(tuningAnnotation));
+                        score->undoAddElement(at);
                         anyApplied = true;
                     }
                 }
@@ -2373,7 +2537,7 @@ bool applyRegionTuning(mu::engraving::Score* score,
                         if (!n->play() || !n->visible()) {
                             continue;
                         }
-                        if (std::abs(n->tuning() - desiredOffset(n->ppitch()))
+                        if (std::abs(n->tuning() - finalOffset(n->ppitch()))
                             >= kEpsilonCents) {
                             anyNeedsTuning = true;
                             break;
@@ -2394,9 +2558,35 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
                     if (splitAndTuneChord(score, chordMut, rStart,
                             [&](Note* n) {
-                                n->setTuning(desiredOffset(n->ppitch()));
+                                n->setTuning(finalOffset(n->ppitch()));
                             })) {
                         anyApplied = true;
+                        if (annotateTuning) {
+                            Segment* splitSeg = score->tick2segment(
+                                rStart, true, SegmentType::ChordRest);
+                            if (splitSeg) {
+                                const ChordRest* splitCr = splitSeg->cr(origTrack);
+                                if (splitCr && splitCr->isChord()) {
+                                    std::string tuningAnnotation;
+                                    for (const Note* n : toChord(splitCr)->notes()) {
+                                        if (!n->play() || !n->visible()) {
+                                            continue;
+                                        }
+                                        const int cents = static_cast<int>(std::round(finalOffset(n->ppitch())));
+                                        if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                                        tuningAnnotation += (cents >= 0 ? "+" : "") + std::to_string(cents);
+                                    }
+                                    if (!tuningAnnotation.empty()) {
+                                        StaffText* at = Factory::createStaffText(splitSeg);
+                                        at->setTrack(origTrack);
+                                        at->setParent(splitSeg);
+                                        at->setPlacement(PlacementV::BELOW);
+                                        at->setPlainText(muse::String::fromStdString(tuningAnnotation));
+                                        score->undoAddElement(at);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

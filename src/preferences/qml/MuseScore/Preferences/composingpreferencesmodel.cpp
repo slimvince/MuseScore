@@ -52,6 +52,15 @@ void ComposingPreferencesModel::setupConnections()
     composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
         emit tuningSystemKeyChanged();
     });
+    composingConfiguration()->tonicAnchoredTuningChanged().onNotify(this, [this]() {
+        emit tonicAnchoredTuningChanged();
+    });
+    composingConfiguration()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
+        emit minimizeTuningDeviationChanged();
+    });
+    composingConfiguration()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
+        emit annotateTuningOffsetsChanged();
+    });
     composingConfiguration()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
         emit showKeyModeInStatusBarChanged();
     });
@@ -105,6 +114,21 @@ int ComposingPreferencesModel::analysisAlternatives() const
 QString ComposingPreferencesModel::tuningSystemKey() const
 {
     return QString::fromStdString(composingConfiguration()->tuningSystemKey());
+}
+
+bool ComposingPreferencesModel::tonicAnchoredTuning() const
+{
+    return composingConfiguration()->tonicAnchoredTuning();
+}
+
+bool ComposingPreferencesModel::minimizeTuningDeviation() const
+{
+    return composingConfiguration()->minimizeTuningDeviation();
+}
+
+bool ComposingPreferencesModel::annotateTuningOffsets() const
+{
+    return composingConfiguration()->annotateTuningOffsets();
 }
 
 double ComposingPreferencesModel::modeTierWeight1() const
@@ -192,6 +216,33 @@ void ComposingPreferencesModel::setTuningSystemKey(const QString& key)
     }
     composingConfiguration()->setTuningSystemKey(key.toStdString());
     emit tuningSystemKeyChanged();
+}
+
+void ComposingPreferencesModel::setTonicAnchoredTuning(bool value)
+{
+    if (tonicAnchoredTuning() == value) {
+        return;
+    }
+    composingConfiguration()->setTonicAnchoredTuning(value);
+    emit tonicAnchoredTuningChanged();
+}
+
+void ComposingPreferencesModel::setMinimizeTuningDeviation(bool value)
+{
+    if (minimizeTuningDeviation() == value) {
+        return;
+    }
+    composingConfiguration()->setMinimizeTuningDeviation(value);
+    emit minimizeTuningDeviationChanged();
+}
+
+void ComposingPreferencesModel::setAnnotateTuningOffsets(bool value)
+{
+    if (annotateTuningOffsets() == value) {
+        return;
+    }
+    composingConfiguration()->setAnnotateTuningOffsets(value);
+    emit annotateTuningOffsetsChanged();
 }
 
 void ComposingPreferencesModel::setModeTierWeight1(double value)

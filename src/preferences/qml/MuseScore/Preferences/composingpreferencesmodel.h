@@ -41,6 +41,9 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(bool inferKeyMode             READ inferKeyMode             WRITE setInferKeyMode             NOTIFY inferKeyModeChanged)
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
     Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
+    Q_PROPERTY(bool tonicAnchoredTuning     READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
+    Q_PROPERTY(bool minimizeTuningDeviation READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
+    Q_PROPERTY(bool annotateTuningOffsets   READ annotateTuningOffsets    WRITE setAnnotateTuningOffsets    NOTIFY annotateTuningOffsetsChanged)
 
     // Mode detection weights
     Q_PROPERTY(double modeTierWeight1  READ modeTierWeight1  WRITE setModeTierWeight1  NOTIFY modeTierWeight1Changed)
@@ -65,6 +68,9 @@ public:
     bool inferKeyMode() const;
     int  analysisAlternatives() const;
     QString tuningSystemKey() const;
+    bool tonicAnchoredTuning() const;
+    bool minimizeTuningDeviation() const;
+    bool annotateTuningOffsets() const;
 
     double modeTierWeight1() const;
     double modeTierWeight2() const;
@@ -81,6 +87,9 @@ public slots:
     void setInferKeyMode(bool value);
     void setAnalysisAlternatives(int count);
     void setTuningSystemKey(const QString& key);
+    void setTonicAnchoredTuning(bool value);
+    void setMinimizeTuningDeviation(bool value);
+    void setAnnotateTuningOffsets(bool value);
 
     void setModeTierWeight1(double value);
     void setModeTierWeight2(double value);
@@ -97,6 +106,9 @@ signals:
     void inferKeyModeChanged();
     void analysisAlternativesChanged();
     void tuningSystemKeyChanged();
+    void tonicAnchoredTuningChanged();
+    void minimizeTuningDeviationChanged();
+    void annotateTuningOffsetsChanged();
 
     void modeTierWeight1Changed();
     void modeTierWeight2Changed();

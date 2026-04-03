@@ -34,6 +34,9 @@ BaseSection {
     property bool inferKeyMode
     property int  analysisAlternatives
     property string tuningSystemKey
+    property bool tonicAnchoredTuning
+    property bool minimizeTuningDeviation
+    property bool annotateTuningOffsets
     property real modeTierWeight1
     property real modeTierWeight2
     property real modeTierWeight3
@@ -44,6 +47,9 @@ BaseSection {
     signal inferKeyModeChangeRequested(bool value)
     signal analysisAlternativesChangeRequested(int count)
     signal tuningSystemKeyChangeRequested(string key)
+    signal tonicAnchoredTuningChangeRequested(bool value)
+    signal minimizeTuningDeviationChangeRequested(bool value)
+    signal annotateTuningOffsetsChangeRequested(bool value)
     signal modeTierWeight1ChangeRequested(real value)
     signal modeTierWeight2ChangeRequested(real value)
     signal modeTierWeight3ChangeRequested(real value)
@@ -166,6 +172,43 @@ BaseSection {
                 onValueEdited: function(newIndex, newValue) {
                     root.tuningSystemKeyChangeRequested(newValue)
                 }
+            }
+        }
+
+        CheckBox {
+            id: tonicAnchoredCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Anchor tuning to mode tonic")
+            checked: root.tonicAnchoredTuning
+            enabled: root.analyzeForRomanNumerals
+            navigation.name: "TonicAnchoredTuningCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.tonicAnchoredTuningChangeRequested(!checked)
+            }
+        }
+        CheckBox {
+            id: minimizeRetuneCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Minimize average retune amount")
+            checked: root.minimizeTuningDeviation
+            enabled: root.analyzeForRomanNumerals
+            navigation.name: "MinimizeTuningDeviationCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.minimizeTuningDeviationChangeRequested(!checked)
+            }
+        }
+        CheckBox {
+            id: annotateOffsetsCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Annotate tuning offsets in score (¢)")
+            checked: root.annotateTuningOffsets
+            enabled: root.analyzeForRomanNumerals
+            navigation.name: "AnnotateTuningOffsetsCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.annotateTuningOffsetsChangeRequested(!checked)
             }
         }
 

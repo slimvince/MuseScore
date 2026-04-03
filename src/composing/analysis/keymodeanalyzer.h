@@ -248,7 +248,13 @@ struct KeyModeAnalyzerPreferences {
     // spurious modulations.
     // Lives in the bridge / batch_analyze caller; not used inside analyzeKeyMode.
 
-    double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes [empirical]
+    double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sigs differ [empirical]
+
+    /// Higher hysteresis applied when the challenger shares the same key signature
+    /// as the incumbent (relative major/minor pair, e.g. D minor ↔ F major).
+    /// These pairs are structurally ambiguous — all diatonic notes are shared —
+    /// so a larger margin is needed to avoid spurious switches on passing chords.
+    double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]
 
     // ── Beat-type weights for temporal window collection ─────────────────
     //
