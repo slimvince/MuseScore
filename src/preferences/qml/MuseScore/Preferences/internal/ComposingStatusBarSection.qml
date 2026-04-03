@@ -31,83 +31,70 @@ BaseSection {
     title: qsTrc("preferences", "Status bar")
 
     property bool showKeyModeInStatusBar
-    property int  statusBarChordSymbolCount
-    property int  statusBarRomanNumeralCount
+    property bool showChordSymbolsInStatusBar
+    property bool showRomanNumeralsInStatusBar
+    property bool showNashvilleNumbersInStatusBar
     property bool analyzeForChordSymbols
-    property bool analyzeForRomanNumerals
+    property bool analyzeForChordFunction
     property bool inferKeyMode
 
     signal showKeyModeInStatusBarChangeRequested(bool value)
-    signal statusBarChordSymbolCountChangeRequested(int count)
-    signal statusBarRomanNumeralCountChangeRequested(int count)
+    signal showChordSymbolsInStatusBarChangeRequested(bool value)
+    signal showRomanNumeralsInStatusBarChangeRequested(bool value)
+    signal showNashvilleNumbersInStatusBarChangeRequested(bool value)
 
     Column {
         spacing: root.rowSpacing
 
         CheckBox {
+            id: showChordSymbolsCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Chord symbols")
+            checked: root.showChordSymbolsInStatusBar
+            enabled: root.analyzeForChordSymbols
+            navigation.name: "ShowChordSymbolsInStatusBarCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.showChordSymbolsInStatusBarChangeRequested(!checked)
+            }
+        }
+
+        CheckBox {
+            id: showRomanNumeralsCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Roman numerals")
+            checked: root.showRomanNumeralsInStatusBar
+            enabled: root.analyzeForChordFunction
+            navigation.name: "ShowRomanNumeralsInStatusBarCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.showRomanNumeralsInStatusBarChangeRequested(!checked)
+            }
+        }
+
+        CheckBox {
+            id: showNashvilleNumbersCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Nashville numbers")
+            checked: root.showNashvilleNumbersInStatusBar
+            enabled: root.analyzeForChordFunction
+            navigation.name: "ShowNashvilleNumbersInStatusBarCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.showNashvilleNumbersInStatusBarChangeRequested(!checked)
+            }
+        }
+
+        CheckBox {
             id: showKeyModeCheckBox
             width: root.columnWidth
-            text: qsTrc("preferences", "key/mode")
+            text: qsTrc("preferences", "Key/mode")
             checked: root.showKeyModeInStatusBar
             enabled: root.inferKeyMode
             navigation.name: "ShowKeyModeInStatusBarCheckBox"
             navigation.panel: root.navigation
             onClicked: {
                 root.showKeyModeInStatusBarChangeRequested(!checked)
-            }
-        }
-
-        Row {
-            spacing: 12
-            StyledTextLabel {
-                width: root.columnWidth
-                anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Number of suggested chords")
-                horizontalAlignment: Text.AlignLeft
-            }
-            ComboBoxWithTitle {
-                title: ""
-                model: [
-                    { text: "0", value: 0 },
-                    { text: "1", value: 1 },
-                    { text: "2", value: 2 },
-                    { text: "3", value: 3 }
-                ]
-                currentIndex: root.statusBarChordSymbolCount
-                controlWidth: 100
-                navigationName: "StatusBarChordSymbolCountComboBox"
-                navigationPanel: root.navigation
-                enabled: root.analyzeForChordSymbols
-                onValueEdited: function(newIndex, newValue) {
-                    root.statusBarChordSymbolCountChangeRequested(newValue)
-                }
-            }
-        }
-
-        Row {
-            spacing: 12
-            StyledTextLabel {
-                width: root.columnWidth
-                anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Number of suggested Roman numerals")
-                horizontalAlignment: Text.AlignLeft
-            }
-            ComboBoxWithTitle {
-                title: ""
-                model: [
-                    { text: "0", value: 0 },
-                    { text: "1", value: 1 },
-                    { text: "2", value: 2 },
-                    { text: "3", value: 3 }
-                ]
-                currentIndex: root.statusBarRomanNumeralCount
-                controlWidth: 100
-                navigationName: "StatusBarRomanNumeralCountComboBox"
-                navigationPanel: root.navigation
-                enabled: root.analyzeForRomanNumerals
-                onValueEdited: function(newIndex, newValue) {
-                    root.statusBarRomanNumeralCountChangeRequested(newValue)
-                }
             }
         }
     }

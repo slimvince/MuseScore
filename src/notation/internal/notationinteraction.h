@@ -265,6 +265,7 @@ public:
     void addFiguredBass() override;
 
     void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) override;
+    void addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType type) override;
     void addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey) override;
 
     void addStretch(qreal value) override;

@@ -370,6 +370,20 @@ void NotationActionController::init()
         const QString text = args.arg<QString>(0);
         currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::ROMAN);
     });
+    registerAction("add-nashville-number-from-analysis", [this](const ActionData& args) {
+        IF_ASSERT_FAILED(args.count() > 0) { return; }
+        const QString text = args.arg<QString>(0);
+        currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::NASHVILLE);
+    });
+    registerAction("add-chord-symbols-to-selection", [this]() {
+        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::STANDARD);
+    });
+    registerAction("add-roman-numerals-to-selection", [this]() {
+        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::ROMAN);
+    });
+    registerAction("add-nashville-numbers-to-selection", [this]() {
+        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::NASHVILLE);
+    });
     registerAction("compose-tune-as", [this](const ActionData& args) {
         IF_ASSERT_FAILED(args.count() >= 3) { return; }
         const int rootPc  = args.arg<int>(0);

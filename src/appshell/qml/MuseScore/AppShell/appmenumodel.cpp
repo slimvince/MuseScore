@@ -520,6 +520,12 @@ MenuItem* AppMenuModel::makeToolsMenu()
 
     MenuItemList chordTrackItems = makeChordTrackTargetItems();
 
+    MenuItemList annotateSelectionItems {
+        makeMenuItem("add-chord-symbols-to-selection"),
+        makeMenuItem("add-roman-numerals-to-selection"),
+        makeMenuItem("add-nashville-numbers-to-selection"),
+    };
+
     MenuItemList toolsItems {
         makeMenuItem("transpose"),
         makeSeparator(),
@@ -528,6 +534,8 @@ MenuItem* AppMenuModel::makeToolsMenu()
         makeMenu(TranslatableString("appshell/menu/tools", "Implode to chord &track"),
                  chordTrackItems, "menu-chord-track", !chordTrackItems.isEmpty()),
         makeMenuItem("realize-chord-symbols"),
+        makeMenu(TranslatableString("appshell/menu/tools", "&Annotate selection"),
+                 annotateSelectionItems, "menu-annotate-selection"),
         makeTuneSelectionItem(),
         makeMenu(TranslatableString("appshell/menu/tools", "&Voices"), voicesItems, "menu-voices"),
         makeMenu(TranslatableString("appshell/menu/tools", "&Measures"), measuresItems, "menu-tools-measures"),

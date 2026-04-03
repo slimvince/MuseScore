@@ -107,84 +107,86 @@ std::string harmonicAnnotation(const Note* note)
         keyStr = std::string(keyModeTonicName(keyFifths, keyMode)) + " " + keyModeSuffix(keyMode);
     }
 
-    // If both analyzers are off, but key/mode display is on, show only key/mode
-    if (!prefs->analyzeForChordSymbols() && !prefs->analyzeForRomanNumerals()) {
-        if (!keyStr.empty()) {
-            return "[" + keyStr + "]";
-        } else {
-            return "";
-        }
+    // If no chord-level analysis is requested, show only key/mode (no "in" prefix)
+    if (!prefs->analyzeForChordSymbols() && !prefs->analyzeForChordFunction()) {
+        return keyStr.empty() ? "" : "key: " + keyStr;
     }
 
     if (chordResults.empty()) {
-        // If no analysis results, but key/mode display is on, show only key/mode
-        if (!keyStr.empty()) {
-            return "[" + keyStr + "]";
-        } else {
-            return "";
-        }
+        return keyStr.empty() ? "" : "key: " + keyStr;
     }
 
-    // Prepare candidates, respecting limits for chord symbols and Roman numerals
-    int maxChordSyms = prefs->statusBarChordSymbolCount();
-    int maxRomans   = prefs->statusBarRomanNumeralCount();
-    int chordCount = 0, romanCount = 0;
+    // Determine which display formats are active
+    const bool wantSym      = prefs->analyzeForChordSymbols()   && prefs->showChordSymbolsInStatusBar();
+    const bool wantRoman    = prefs->analyzeForChordFunction()  && prefs->showRomanNumeralsInStatusBar();
+    const bool wantNashville = prefs->analyzeForChordFunction() && prefs->showNashvilleNumbersInStatusBar();
+
+    // Build candidate strings: each entry is the parts for one analysis result,
+    // separated by " / " (e.g. "Bmaj / II / 2"). Candidates separated by " | ".
+    int shown = 0;
+    const int maxShown = prefs->analysisAlternatives();
     std::string candidates;
-    std::set<std::string> seenSyms, seenRomans;
+    std::set<std::string> seenKeys;
+
     for (const auto& result : chordResults) {
-        // Chord symbol
-        std::string sym;
-        if (prefs->analyzeForChordSymbols()) {
+        if (shown >= maxShown) {
+            break;
+        }
+
+        std::string sym, roman, nashville;
+        if (wantSym) {
             sym = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(result, keyFifths);
         }
-        // Roman numeral
-        std::string roman;
-        if (prefs->analyzeForRomanNumerals()) {
+        if (wantRoman) {
             roman = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(result);
         }
+        if (wantNashville) {
+            nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(result, keyFifths);
+        }
 
-        // Skip if both are empty or already shown
-        if ((sym.empty() || !seenSyms.insert(sym).second) && (roman.empty() || !seenRomans.insert(roman).second)) {
+        // Skip result if nothing would be shown or if we have already shown this combination
+        if (sym.empty() && roman.empty() && nashville.empty()) {
+            continue;
+        }
+        std::string key = sym + "|" + roman + "|" + nashville;
+        if (!seenKeys.insert(key).second) {
             continue;
         }
 
-        // Respect per-type limits
-        bool showSym = prefs->analyzeForChordSymbols() && !sym.empty() && chordCount < maxChordSyms;
-        bool showRoman = prefs->analyzeForRomanNumerals() && !roman.empty() && romanCount < maxRomans;
-        if (!showSym && !showRoman) {
-            continue;
+        // Assemble the parts for this candidate, then append the score
+        std::string entry;
+        for (const std::string& part : { sym, roman, nashville }) {
+            if (part.empty()) {
+                continue;
+            }
+            if (!entry.empty()) {
+                entry += " / ";
+            }
+            entry += part;
         }
 
-        if (!candidates.empty()) {
-            candidates += " | ";
-        }
+        if (!entry.empty()) {
+            char scoreBuf[16];
+            std::snprintf(scoreBuf, sizeof(scoreBuf), " (%.2f)", result.score);
+            entry += scoreBuf;
 
-        if (showSym && showRoman) {
-            candidates += sym + " [" + roman + "]";
-            ++chordCount;
-            ++romanCount;
-        } else if (showSym) {
-            candidates += sym;
-            ++chordCount;
-        } else if (showRoman) {
-            candidates += "[" + roman + "]";
-            ++romanCount;
+            if (!candidates.empty()) {
+                candidates += " | ";
+            }
+            candidates += entry;
+            ++shown;
         }
     }
 
     if (candidates.empty()) {
-        if (!keyStr.empty()) {
-            return "[" + keyStr + "]";
-        } else {
-            return "";
-        }
+        return keyStr.empty() ? "" : "key: " + keyStr;
     }
 
+    const std::string headed = "Chord: " + candidates;
     if (!keyStr.empty()) {
-        return "[" + keyStr + "] " + candidates;
-    } else {
-        return candidates;
+        return headed + " in key: " + keyStr;
     }
+    return headed;
 }
 
 } // namespace mu::notation
@@ -1179,6 +1181,9 @@ bool populateChordTrack(
         return false;
     }
 
+    static muse::GlobalInject<mu::composing::IComposingConfiguration> composingConfig;
+    const mu::composing::IComposingConfiguration* prefs = composingConfig.get().get();
+
     const staff_idx_t bassStaffIdx = trebleStaffIdx + 1;
     if (bassStaffIdx >= score->nstaves()) {
         return false;
@@ -1461,7 +1466,8 @@ bool populateChordTrack(
         const KeyMode localMode  = region.keyModeResult.mode;
 
         // ── Key signature + mode annotation at key/mode boundaries ───────
-        if (localKeyFifths != prevKeyFifths || localMode != prevMode) {
+        const bool writeKeyAnnotations = !prefs || prefs->chordStaffWriteKeyAnnotations();
+        if (writeKeyAnnotations && (localKeyFifths != prevKeyFifths || localMode != prevMode)) {
             // Insert a key signature only when the inferred key differs from
             // what is already notated on the chord track staves at this tick.
             // This avoids redundant key sigs while still annotating mode changes
@@ -1740,8 +1746,9 @@ bool populateChordTrack(
         }
 
         // Chord symbol above treble.
-        const std::string symText =
-            ChordSymbolFormatter::formatSymbol(chord, localKeyFifths);
+        const bool writeChordSymbols = !prefs || prefs->chordStaffWriteChordSymbols();
+        const std::string symText = writeChordSymbols
+            ? ChordSymbolFormatter::formatSymbol(chord, localKeyFifths) : "";
         if (!symText.empty()) {
             Harmony* h = Factory::createHarmony(seg);
             h->setTrack(trebleTrack);
@@ -1752,23 +1759,29 @@ bool populateChordTrack(
             score->undoAddElement(h);
         }
 
-        // Roman numeral below second stave.
-        const std::string romanText =
-            ChordSymbolFormatter::formatRomanNumeral(chord);
-        if (!romanText.empty()) {
-            Harmony* h = Factory::createHarmony(seg);
-            h->setTrack(bassTrack);
-            h->setParent(seg);
-            h->setHarmonyType(HarmonyType::ROMAN);
-            h->setHarmony(muse::String::fromStdString(romanText));
-            h->setPlainText(h->harmonyName());
-            score->undoAddElement(h);
+        // Chord function notation below second stave (Roman or Nashville, per preference).
+        const std::string fnKey = prefs ? prefs->chordStaffFunctionNotation() : "roman";
+        if (fnKey != "none") {
+            const bool useNashville = (fnKey == "nashville");
+            const std::string fnText = useNashville
+                ? ChordSymbolFormatter::formatNashvilleNumber(chord, localKeyFifths)
+                : ChordSymbolFormatter::formatRomanNumeral(chord);
+            if (!fnText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(bassTrack);
+                h->setParent(seg);
+                h->setHarmonyType(useNashville ? HarmonyType::NASHVILLE : HarmonyType::ROMAN);
+                h->setHarmony(muse::String::fromStdString(fnText));
+                h->setPlainText(h->harmonyName());
+                score->undoAddElement(h);
+            }
         }
 
         // Non-diatonic chord marker (borrowed chord / secondary dominant).
         // Only annotate when we can identify the source key; purely chromatic
         // chords that fit no diatonic scale are left without a marker.
-        if (!chord.diatonicToKey) {
+        const bool highlightNonDiatonic = !prefs || prefs->chordStaffHighlightNonDiatonic();
+        if (highlightNonDiatonic && !chord.diatonicToKey) {
             // Borrowed chord source key: find the nearest key (by circle-of-
             // fifths distance) in which all of this chord's quality tones are
             // diatonic.  Check all 7 modes × 15 keys (84 candidates).
@@ -1852,13 +1865,15 @@ bool populateChordTrack(
         anyWritten = true;
     }
 
-    // ── Cadence markers ──────────────────────────────────────────────────────
+    // ── Cadence markers ─────────────────────────────────────────────────────
     // Detect standard cadence patterns from consecutive region pairs and
     // annotate the resolution chord with a staff text label on the bass staff.
     //   Authentic  (PAC): V → I
     //   Plagal     (PC):  IV → I
     //   Deceptive  (DC):  V → vi
     //   Half       (HC):  → V  (last region, or followed by key change)
+    const bool writeCadenceMarkers = !prefs || prefs->chordStaffWriteCadenceMarkers();
+    if (writeCadenceMarkers)
     for (size_t i = 0; i + 1 < regions.size(); ++i) {
         const auto& a = regions[i].chordResult;
         const auto& b = regions[i + 1].chordResult;
@@ -1904,7 +1919,7 @@ bool populateChordTrack(
     }
 
     // Half cadence: last region is V (dominant arrival at end of range).
-    if (!regions.empty() && regions.back().chordResult.degree == 4) {
+    if (writeCadenceMarkers && !regions.empty() && regions.back().chordResult.degree == 4) {
         const Fraction hStart = Fraction::fromTicks(regions.back().startTick);
         Segment* hSeg = score->tick2segment(hStart, true,
                                              SegmentType::ChordRest);

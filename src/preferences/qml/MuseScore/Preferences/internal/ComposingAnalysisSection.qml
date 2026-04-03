@@ -30,7 +30,7 @@ BaseSection {
     title: qsTrc("preferences", "Analysis")
 
     property bool analyzeForChordSymbols
-    property bool analyzeForRomanNumerals
+    property bool analyzeForChordFunction
     property bool inferKeyMode
     property int  analysisAlternatives
     property string tuningSystemKey
@@ -43,7 +43,7 @@ BaseSection {
     property real modeTierWeight4
 
     signal analyzeForChordSymbolsChangeRequested(bool value)
-    signal analyzeForRomanNumeralsChangeRequested(bool value)
+    signal analyzeForChordFunctionChangeRequested(bool value)
     signal inferKeyModeChangeRequested(bool value)
     signal analysisAlternativesChangeRequested(int count)
     signal tuningSystemKeyChangeRequested(string key)
@@ -62,7 +62,7 @@ BaseSection {
         CheckBox {
             id: chordSymbolsCheckBox
             width: root.columnWidth
-            text: qsTrc("preferences", "Analyse for chord symbols")
+            text: qsTrc("preferences", "Analyse chord symbols")
             checked: root.analyzeForChordSymbols
             navigation.name: "AnalyzeForChordSymbolsCheckBox"
             navigation.panel: root.navigation
@@ -71,14 +71,14 @@ BaseSection {
             }
         }
         CheckBox {
-            id: romanNumeralsCheckBox
+            id: chordFunctionCheckBox
             width: root.columnWidth
-            text: qsTrc("preferences", "Analyse for Roman numerals")
-            checked: root.analyzeForRomanNumerals
-            navigation.name: "AnalyzeForRomanNumeralsCheckBox"
+            text: qsTrc("preferences", "Analyse chord function")
+            checked: root.analyzeForChordFunction
+            navigation.name: "AnalyzeForChordFunctionCheckBox"
             navigation.panel: root.navigation
             onClicked: {
-                root.analyzeForRomanNumeralsChangeRequested(!checked)
+                root.analyzeForChordFunctionChangeRequested(!checked)
             }
         }
         CheckBox {
@@ -86,9 +86,9 @@ BaseSection {
             width: root.columnWidth
             text: qsTrc("preferences", "Analyse for key/mode")
             checked: root.inferKeyMode
-            // Force-on when either analysis is active; user can only disable
-            // when both chord-symbol and Roman-numeral analysis are off.
-            enabled: !root.analyzeForChordSymbols && !root.analyzeForRomanNumerals
+            // Force-on when chord-function analysis is active; user can only
+            // disable it when chord-function analysis is off.
+            enabled: !root.analyzeForChordFunction
             navigation.name: "InferKeyModeCheckBox"
             navigation.panel: root.navigation
             onClicked: {
@@ -99,7 +99,7 @@ BaseSection {
         // --- Section break ---
         SeparatorLine { }
 
-        // --- Context menu section ---
+        // --- Context menu / general ---
         StyledTextLabel {
             text: qsTrc("preferences", "Context menu")
             width: root.columnWidth
@@ -117,7 +117,7 @@ BaseSection {
             StyledTextLabel {
                 width: root.columnWidth
                 anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Number of suggested chords")
+                text: qsTrc("preferences", "Number of alternatives")
                 horizontalAlignment: Text.AlignLeft
             }
             ComboBoxWithTitle {
@@ -131,13 +131,29 @@ BaseSection {
                 controlWidth: 100
                 navigationName: "AnalysisAlternativesComboBox"
                 navigationPanel: root.navigation
-                enabled: root.analyzeForChordSymbols || root.analyzeForRomanNumerals
+                enabled: root.analyzeForChordSymbols || root.analyzeForChordFunction
                 onValueEdited: function(newIndex, newValue) {
                     root.analysisAlternativesChangeRequested(newValue)
                 }
             }
         }
 
+        // --- Section break ---
+        SeparatorLine { }
+
+        // --- Intonation ---
+        StyledTextLabel {
+            text: qsTrc("preferences", "Intonation")
+            width: root.columnWidth
+            font: ui.theme.bodyBoldFont
+            horizontalAlignment: Text.AlignLeft
+            wrapMode: Text.WordWrap
+            padding: 0
+            leftPadding: 0
+            rightPadding: 0
+            topPadding: root.rowSpacing
+            bottomPadding: root.rowSpacing / 2
+        }
         Row {
             spacing: 12
             StyledTextLabel {
@@ -145,7 +161,7 @@ BaseSection {
                 anchors.verticalCenter: parent.verticalCenter
                 text: qsTrc("preferences", "Tuning system")
                 horizontalAlignment: Text.AlignLeft
-                enabled: root.analyzeForRomanNumerals
+                enabled: root.analyzeForChordFunction
             }
 
             property var tuningSystemModel: [
@@ -168,7 +184,7 @@ BaseSection {
                 controlWidth: 200
                 navigationName: "TuningSystemComboBox"
                 navigationPanel: root.navigation
-                enabled: root.analyzeForRomanNumerals
+                enabled: root.analyzeForChordFunction
                 onValueEdited: function(newIndex, newValue) {
                     root.tuningSystemKeyChangeRequested(newValue)
                 }
@@ -180,7 +196,7 @@ BaseSection {
             width: root.columnWidth
             text: qsTrc("preferences", "Anchor tuning to mode tonic")
             checked: root.tonicAnchoredTuning
-            enabled: root.analyzeForRomanNumerals
+            enabled: root.analyzeForChordFunction
             navigation.name: "TonicAnchoredTuningCheckBox"
             navigation.panel: root.navigation
             onClicked: {
@@ -192,7 +208,7 @@ BaseSection {
             width: root.columnWidth
             text: qsTrc("preferences", "Minimize average retune amount")
             checked: root.minimizeTuningDeviation
-            enabled: root.analyzeForRomanNumerals
+            enabled: root.analyzeForChordFunction
             navigation.name: "MinimizeTuningDeviationCheckBox"
             navigation.panel: root.navigation
             onClicked: {
@@ -204,7 +220,7 @@ BaseSection {
             width: root.columnWidth
             text: qsTrc("preferences", "Annotate tuning offsets in score (¢)")
             checked: root.annotateTuningOffsets
-            enabled: root.analyzeForRomanNumerals
+            enabled: root.analyzeForChordFunction
             navigation.name: "AnnotateTuningOffsetsCheckBox"
             navigation.panel: root.navigation
             onClicked: {

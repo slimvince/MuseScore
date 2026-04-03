@@ -212,6 +212,10 @@ std::string formatSymbol(const ChordAnalysisResult& result, int keySignatureFift
 /// Returns an empty string when result.degree < 0 (non-diatonic chord).
 std::string formatRomanNumeral(const ChordAnalysisResult& result);
 
+
+// Nashville Number System formatter and helpers
+std::string formatNashvilleNumber(const ChordAnalysisResult& result, int keySignatureFifths);
+
 } // namespace ChordSymbolFormatter
 
 /// Voicing output for chord track population.  Bass note is placed separately

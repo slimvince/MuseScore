@@ -37,11 +37,10 @@ void ComposingPreferencesModel::setupConnections()
 {
     composingConfiguration()->analyzeForChordSymbolsChanged().onNotify(this, [this]() {
         emit analyzeForChordSymbolsChanged();
-        emit inferKeyModeChanged(); // infer key is also affected
     });
-    composingConfiguration()->analyzeForRomanNumeralsChanged().onNotify(this, [this]() {
-        emit analyzeForRomanNumeralsChanged();
-        emit inferKeyModeChanged();
+    composingConfiguration()->analyzeForChordFunctionChanged().onNotify(this, [this]() {
+        emit analyzeForChordFunctionChanged();
+        emit inferKeyModeChanged(); // chord function forces key/mode on
     });
     composingConfiguration()->inferKeyModeChanged().onNotify(this, [this]() {
         emit inferKeyModeChanged();
@@ -61,14 +60,32 @@ void ComposingPreferencesModel::setupConnections()
     composingConfiguration()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
         emit annotateTuningOffsetsChanged();
     });
+    composingConfiguration()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
+        emit chordStaffWriteChordSymbolsChanged();
+    });
+    composingConfiguration()->chordStaffFunctionNotationChanged().onNotify(this, [this]() {
+        emit chordStaffFunctionNotationChanged();
+    });
+    composingConfiguration()->chordStaffWriteKeyAnnotationsChanged().onNotify(this, [this]() {
+        emit chordStaffWriteKeyAnnotationsChanged();
+    });
+    composingConfiguration()->chordStaffHighlightNonDiatonicChanged().onNotify(this, [this]() {
+        emit chordStaffHighlightNonDiatonicChanged();
+    });
+    composingConfiguration()->chordStaffWriteCadenceMarkersChanged().onNotify(this, [this]() {
+        emit chordStaffWriteCadenceMarkersChanged();
+    });
     composingConfiguration()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
         emit showKeyModeInStatusBarChanged();
     });
-    composingConfiguration()->statusBarChordSymbolCountChanged().onNotify(this, [this]() {
-        emit statusBarChordSymbolCountChanged();
+    composingConfiguration()->showChordSymbolsInStatusBarChanged().onNotify(this, [this]() {
+        emit showChordSymbolsInStatusBarChanged();
     });
-    composingConfiguration()->statusBarRomanNumeralCountChanged().onNotify(this, [this]() {
-        emit statusBarRomanNumeralCountChanged();
+    composingConfiguration()->showRomanNumeralsInStatusBarChanged().onNotify(this, [this]() {
+        emit showRomanNumeralsInStatusBarChanged();
+    });
+    composingConfiguration()->showNashvilleNumbersInStatusBarChanged().onNotify(this, [this]() {
+        emit showNashvilleNumbersInStatusBarChanged();
     });
     composingConfiguration()->modeTierWeight1Changed().onNotify(this, [this]() {
         emit modeTierWeight1Changed();
@@ -91,16 +108,15 @@ bool ComposingPreferencesModel::analyzeForChordSymbols() const
     return composingConfiguration()->analyzeForChordSymbols();
 }
 
-bool ComposingPreferencesModel::analyzeForRomanNumerals() const
+bool ComposingPreferencesModel::analyzeForChordFunction() const
 {
-    return composingConfiguration()->analyzeForRomanNumerals();
+    return composingConfiguration()->analyzeForChordFunction();
 }
 
 bool ComposingPreferencesModel::inferKeyMode() const
 {
-    // inferKeyMode is forced on when either analysis mode is active.
-    if (composingConfiguration()->analyzeForChordSymbols()
-        || composingConfiguration()->analyzeForRomanNumerals()) {
+    // inferKeyMode is forced on when chord-function analysis is active.
+    if (composingConfiguration()->analyzeForChordFunction()) {
         return true;
     }
     return composingConfiguration()->inferKeyMode();
@@ -151,19 +167,49 @@ double ComposingPreferencesModel::modeTierWeight4() const
     return composingConfiguration()->modeTierWeight4();
 }
 
+bool ComposingPreferencesModel::chordStaffWriteChordSymbols() const
+{
+    return composingConfiguration()->chordStaffWriteChordSymbols();
+}
+
+QString ComposingPreferencesModel::chordStaffFunctionNotation() const
+{
+    return QString::fromStdString(composingConfiguration()->chordStaffFunctionNotation());
+}
+
+bool ComposingPreferencesModel::chordStaffWriteKeyAnnotations() const
+{
+    return composingConfiguration()->chordStaffWriteKeyAnnotations();
+}
+
+bool ComposingPreferencesModel::chordStaffHighlightNonDiatonic() const
+{
+    return composingConfiguration()->chordStaffHighlightNonDiatonic();
+}
+
+bool ComposingPreferencesModel::chordStaffWriteCadenceMarkers() const
+{
+    return composingConfiguration()->chordStaffWriteCadenceMarkers();
+}
+
 bool ComposingPreferencesModel::showKeyModeInStatusBar() const
 {
     return composingConfiguration()->showKeyModeInStatusBar();
 }
 
-int ComposingPreferencesModel::statusBarChordSymbolCount() const
+bool ComposingPreferencesModel::showChordSymbolsInStatusBar() const
 {
-    return composingConfiguration()->statusBarChordSymbolCount();
+    return composingConfiguration()->showChordSymbolsInStatusBar();
 }
 
-int ComposingPreferencesModel::statusBarRomanNumeralCount() const
+bool ComposingPreferencesModel::showRomanNumeralsInStatusBar() const
 {
-    return composingConfiguration()->statusBarRomanNumeralCount();
+    return composingConfiguration()->showRomanNumeralsInStatusBar();
+}
+
+bool ComposingPreferencesModel::showNashvilleNumbersInStatusBar() const
+{
+    return composingConfiguration()->showNashvilleNumbersInStatusBar();
 }
 
 // ── Setters ──────────────────────────────────────────────────────────────────
@@ -177,20 +223,19 @@ void ComposingPreferencesModel::setAnalyzeForChordSymbols(bool value)
     emit analyzeForChordSymbolsChanged();
 }
 
-void ComposingPreferencesModel::setAnalyzeForRomanNumerals(bool value)
+void ComposingPreferencesModel::setAnalyzeForChordFunction(bool value)
 {
-    if (analyzeForRomanNumerals() == value) {
+    if (analyzeForChordFunction() == value) {
         return;
     }
-    composingConfiguration()->setAnalyzeForRomanNumerals(value);
-    emit analyzeForRomanNumeralsChanged();
+    composingConfiguration()->setAnalyzeForChordFunction(value);
+    emit analyzeForChordFunctionChanged();
 }
 
 void ComposingPreferencesModel::setInferKeyMode(bool value)
 {
-    // Silently ignore if forced on by active analysis.
-    if (composingConfiguration()->analyzeForChordSymbols()
-        || composingConfiguration()->analyzeForRomanNumerals()) {
+    // Silently ignore if forced on by chord-function analysis.
+    if (composingConfiguration()->analyzeForChordFunction()) {
         return;
     }
     if (composingConfiguration()->inferKeyMode() == value) {
@@ -281,6 +326,41 @@ void ComposingPreferencesModel::setModeTierWeight4(double value)
     emit modeTierWeight4Changed();
 }
 
+void ComposingPreferencesModel::setChordStaffWriteChordSymbols(bool value)
+{
+    if (chordStaffWriteChordSymbols() == value) { return; }
+    composingConfiguration()->setChordStaffWriteChordSymbols(value);
+    emit chordStaffWriteChordSymbolsChanged();
+}
+
+void ComposingPreferencesModel::setChordStaffFunctionNotation(const QString& value)
+{
+    if (chordStaffFunctionNotation() == value) { return; }
+    composingConfiguration()->setChordStaffFunctionNotation(value.toStdString());
+    emit chordStaffFunctionNotationChanged();
+}
+
+void ComposingPreferencesModel::setChordStaffWriteKeyAnnotations(bool value)
+{
+    if (chordStaffWriteKeyAnnotations() == value) { return; }
+    composingConfiguration()->setChordStaffWriteKeyAnnotations(value);
+    emit chordStaffWriteKeyAnnotationsChanged();
+}
+
+void ComposingPreferencesModel::setChordStaffHighlightNonDiatonic(bool value)
+{
+    if (chordStaffHighlightNonDiatonic() == value) { return; }
+    composingConfiguration()->setChordStaffHighlightNonDiatonic(value);
+    emit chordStaffHighlightNonDiatonicChanged();
+}
+
+void ComposingPreferencesModel::setChordStaffWriteCadenceMarkers(bool value)
+{
+    if (chordStaffWriteCadenceMarkers() == value) { return; }
+    composingConfiguration()->setChordStaffWriteCadenceMarkers(value);
+    emit chordStaffWriteCadenceMarkersChanged();
+}
+
 void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)
 {
     if (showKeyModeInStatusBar() == value) {
@@ -290,20 +370,29 @@ void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)
     emit showKeyModeInStatusBarChanged();
 }
 
-void ComposingPreferencesModel::setStatusBarChordSymbolCount(int count)
+void ComposingPreferencesModel::setShowChordSymbolsInStatusBar(bool value)
 {
-    if (statusBarChordSymbolCount() == count) {
+    if (showChordSymbolsInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setStatusBarChordSymbolCount(count);
-    emit statusBarChordSymbolCountChanged();
+    composingConfiguration()->setShowChordSymbolsInStatusBar(value);
+    emit showChordSymbolsInStatusBarChanged();
 }
 
-void ComposingPreferencesModel::setStatusBarRomanNumeralCount(int count)
+void ComposingPreferencesModel::setShowRomanNumeralsInStatusBar(bool value)
 {
-    if (statusBarRomanNumeralCount() == count) {
+    if (showRomanNumeralsInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setStatusBarRomanNumeralCount(count);
-    emit statusBarRomanNumeralCountChanged();
+    composingConfiguration()->setShowRomanNumeralsInStatusBar(value);
+    emit showRomanNumeralsInStatusBarChanged();
+}
+
+void ComposingPreferencesModel::setShowNashvilleNumbersInStatusBar(bool value)
+{
+    if (showNashvilleNumbersInStatusBar() == value) {
+        return;
+    }
+    composingConfiguration()->setShowNashvilleNumbersInStatusBar(value);
+    emit showNashvilleNumbersInStatusBarChanged();
 }

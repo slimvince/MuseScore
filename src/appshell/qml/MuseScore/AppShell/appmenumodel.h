@@ -69,7 +69,6 @@ public:
     muse::GlobalInject<muse::musesampler::IMuseSamplerInfo> museSamplerInfo;
 #endif
 
-    muse::GlobalInject<muse::extensions::IExtensionsProvider> extensionsProvider;
     muse::GlobalInject<mu::composing::IComposingConfiguration> composingConfiguration;
 
     muse::ContextInject<muse::extensions::IExtensionsProvider> extensionsProvider = { this };

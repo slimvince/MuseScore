@@ -593,7 +593,7 @@ ChordAnalysisResult  →  formatted string
 **Planned substitution points for IChordSymbolFormatter:**
 
 - *Notation convention:* lead sheet ("Cmaj7"), Nashville ("1maj7"), Roman numeral
-  ("IM7"), figured bass (for baroque contexts)
+  ("IM7"), figured bass (for baroque contexts — see note below)
 - *Spelling conventions:* American ("maj7", "m7b5"), German/Nordic (H/B naming),
   Berklee/jazz ("Δ7", "ø7"), classical (augmented sixth notation)
 - *Symbol vocabulary:* half-diminished ø vs "m7b5" vs "ø7"; major seventh Δ vs
@@ -601,6 +601,32 @@ ChordAnalysisResult  →  formatted string
 
 When `IChordSymbolFormatter` is introduced, `ChordSymbolFormatter::Options` becomes
 its configuration struct — the migration path is already established.
+
+#### Note on figured bass
+
+Figured bass (basso continuo) is interval notation above a bass note rather than a
+chord name — e.g. "6" = first inversion triad, "6/4" = second inversion, "7" = root
+position seventh.  It is architecturally simpler than chord symbols in one critical
+respect: **it requires no root detection**.  The algorithm is:
+
+1. Identify the bass note (lowest sounding pitch — already `ChordAnalysisTone::isBass`).
+2. Compute each upper tone's interval above the bass, reduced to within one octave.
+3. Convert to diatonic scale degrees using TPC spelling and `keySignatureFifths`.
+4. Apply the standard omission table (root position triad → nothing; first inversion →
+   "6"; second inversion → "6/4"; root position seventh → "7"; etc.).
+5. Prefix accidentals (♭ ♯ ♮) where a tone deviates from the key signature.
+
+This can be derived directly from the raw `ChordAnalysisTone` input — `ChordAnalysisResult`
+is not required.  Importantly, figured bass annotates *all* sounding pitches including
+suspensions and passing tones, which is actually easier than chord symbol analysis (no
+need to distinguish chord tones from non-chord tones).  The only tricky parts are the
+omission convention table and enharmonically-correct accidental spelling, both of which
+are straightforward given TPC data and `keySignatureFifths`.
+
+Figured bass generation is feasible with the current analysis infrastructure and would
+work even for sonorities with fewer than 3 distinct pitch classes (where chord symbol
+analysis returns empty).  It is not currently planned but is noted here because the
+prerequisite data is already present.
 
 ### 4.3a Voicing Helpers
 
@@ -782,12 +808,28 @@ All user-configurable analysis settings are exposed through `IComposingConfigura
 injected via `muse::GlobalInject` in the bridge. The UI is a dedicated preferences
 page under Edit → Preferences → Composing.
 
+The preferences are organised into three sections: Analysis, Status bar, and Chord staff.
+
 **Analysis section:**
-- `analyzeForChordSymbols` (bool, default true)
-- `analyzeForRomanNumerals` (bool, default false)
-- `inferKeyMode` (bool, forced on when either analysis is active)
-- `analysisAlternatives` (int 1–3, default 3) — max chord suggestions in context menu
+- `analyzeForChordSymbols` (bool, default true) — pitch-structure analysis only;
+  does not require key/mode inference
+- `analyzeForChordFunction` (bool, default false) — key/mode-aware degree analysis;
+  single toggle that feeds both Roman-numeral and Nashville-number display.
+  Replaces the former separate `analyzeForRomanNumerals` / `analyzeForNashvilleNumbers`
+  toggles.  Roman numerals and Nashville numbers are **presentation choices**, not
+  separate analyses — they are alternative formatters on the same `ChordAnalysisResult`.
+- `inferKeyMode` (bool, forced on when `analyzeForChordFunction` is active)
+- `analysisAlternatives` (int 1–3, default 3) — single universal count applied to
+  both the status bar and the context menu (replaces former per-type counts)
+
+**Intonation section** (grouped under a labelled heading in the UI):
 - `tuningSystemKey` (string, default "equal") — tuning system for "tune as" action
+- `tonicAnchoredTuning` (bool, default true) — anchor each chord root to its JI
+  scale-degree position above the mode tonic (§11.2a)
+- `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
+  chord so the chord hovers near 0¢ while preserving internal JI ratios
+- `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
+  offset of each tuned note (e.g. "+15 −2 +3") below the chord in the score
 
 **Mode detection weights** (4 tier sliders, range −5.0 to +5.0, step 0.5):
 - `modeTierWeight1` (default +1.0) — Tier 1: Ionian/Aeolian
@@ -801,18 +843,27 @@ The bridge reads these at analysis time and populates `KeyModeAnalyzerPreference
 before calling `analyzeKeyMode()`. Ionian gets an additional +0.2 internal offset
 relative to Aeolian within Tier 1, reflecting its slightly greater prevalence.
 
-**Intonation section:**
-- `tonicAnchoredTuning` (bool, default true) — anchor each chord root to its JI
-  scale-degree position above the mode tonic (§11.2a)
-- `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
-  chord so the chord hovers near 0¢ while preserving internal JI ratios
-- `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
-  offset of each tuned note (e.g. "+15 −2 +3") below the chord in the score
+**Status bar section** (boolean checkboxes; each enabled only when its analysis is on):
+- `showChordSymbolsInStatusBar` (bool, default true) — requires `analyzeForChordSymbols`
+- `showRomanNumeralsInStatusBar` (bool, default false) — requires `analyzeForChordFunction`
+- `showNashvilleNumbersInStatusBar` (bool, default false) — requires `analyzeForChordFunction`
+- `showKeyModeInStatusBar` (bool, default true) — requires `inferKeyMode`
 
-**Status bar section:**
-- `showKeyModeInStatusBar` (bool, default true)
-- `statusBarChordSymbolCount` (int 0–3, default 1)
-- `statusBarRomanNumeralCount` (int 0–3, default 0)
+Status bar format: `Chord: Bmaj / II / 2 (0.65) | Cmin / iv / 4 (0.43) in key: C major`.
+Parts within a candidate joined by ` / ` (only active formats included); candidates
+separated by ` | `; key appended as ` in key: X` when shown.  When no chord results
+are shown but key/mode is on: `key: C major` (no "in" prefix).
+
+**Chord staff section** (controls what "Implode to chord staff" writes — planned):
+- `chordStaffWriteChordSymbols` (bool, default true) — write `HarmonyType::STANDARD`
+  annotations above the treble staff; requires `analyzeForChordSymbols`
+- `chordStaffFunctionNotation` (enum: None / Roman numerals / Nashville numbers,
+  default Roman numerals) — write either `HarmonyType::ROMAN` or
+  `HarmonyType::NASHVILLE` below the treble staff; requires `analyzeForChordFunction`.
+  Roman and Nashville are mutually exclusive here — they encode the same information
+  and displaying both would clutter the staff with redundant text.
+- `chordStaffWriteKeyAnnotations` (bool, default true) — write key/mode staff text at
+  region boundaries; requires `inferKeyMode`
 
 ---
 
@@ -2118,8 +2169,18 @@ close-position default.
 **Bass clef (staff 2):** Root note only, showing bass motion.  Placed in a
 natural bass register (C2–C3 range).
 
-**Chord symbols** (`HarmonyType::STANDARD`) attached above the treble staff.
-**Roman numerals** (`HarmonyType::ROMAN`) attached below.
+**Chord symbols** (`HarmonyType::STANDARD`) attached above the treble staff —
+controlled by the "Write chord symbols to staff" preference.
+
+**Chord function notation** attached below the treble staff — either
+`HarmonyType::ROMAN` (Roman numerals) or `HarmonyType::NASHVILLE` (Nashville
+numbers), selected by the "Chord function notation" preference (None / Roman
+numerals / Nashville numbers).  Roman and Nashville are mutually exclusive on
+the staff because they encode identical information; displaying both would be
+redundant and legibility-destroying.
+
+**Key/mode annotations** written as staff text at key region boundaries —
+controlled by the "Write key/mode annotations" preference.
 
 The instrument's sound makes the harmonic reduction audible on playback — the
 composer can audition the harmonic progression independent of the orchestration.
@@ -2172,7 +2233,7 @@ analysis engine but have no other coupling:
 | | Chord track ("Implode to chord track") | Intonation |
 |---|---|---|
 | **Purpose** | Composition and analysis tool | Playback quality |
-| **Output** | Visible: notes, chord symbols, roman numerals | Invisible: cent offsets on existing notes |
+| **Output** | Visible: notes, chord symbols, chord function notation (Roman or Nashville), key annotations | Invisible: cent offsets on existing notes |
 | **Target** | Any staff the user selects (or creates on demand) | Any staff the user selects |
 | **Requires** | Range selection on the target staff | Any note or range selection |
 | **Score impact** | Overwrites target region with reduction | Split-and-slur on sustained notes only |
@@ -2880,6 +2941,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 2.0 — Added §2.10 (cross-platform principle, moved from orphaned footer section); updated §1.4, §4.2, §4.3, §4.3b, §4.6 (user preferences), §5.1, §5.2, §5.4, §5.6, §5.7 to reflect implemented modal analysis, chord staff layout, normalized confidence, and preference infrastructure; previous: 1.9 — §5.9, §2.9, §11.5*
-*Last updated: March 2026*
+*Document version: 2.1 — §4.3 (figured bass feasibility note), §4.6 (preference restructure: analyzeForChordFunction replaces separate roman/nashville toggles; single analysisAlternatives count; new status bar boolean flags; chord staff section preferences planned), §11.5 (Nashville added to chord staff output; chord function notation preference design); previous: 2.0*
+*Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

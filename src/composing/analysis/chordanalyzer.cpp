@@ -1549,6 +1549,82 @@ std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& 
     return romanNumeral;
 }
 
+// ───────────── Nashville Number Formatter and Helpers ─────────────
+namespace ChordSymbolFormatter {
+
+namespace {
+    std::string nashvilleDegree(int degree) {
+        static const char* numbers[] = { "1", "2", "3", "4", "5", "6", "7" };
+        if (degree >= 0 && degree < 7)
+            return numbers[degree];
+        return "?";
+    }
+
+    std::string nashvilleQualitySuffix(const ChordAnalysisResult& result) {
+        using Q = ChordQuality;
+        switch (result.quality) {
+            case Q::Major:        return "";
+            case Q::Minor:        return "m";
+            case Q::Diminished:   return "°";
+            case Q::Augmented:    return "+";
+            case Q::HalfDiminished: return "ø";
+            case Q::Suspended2:   return "sus2";
+            case Q::Suspended4:   return "sus4";
+            case Q::Power:        return "5";
+            default:              return "";
+        }
+    }
+
+    std::string nashvilleExtensionSuffix(const ChordAnalysisResult& result) {
+        std::string ext;
+        if (result.hasMajorSeventh)      ext += "maj7";
+        else if (result.hasMinorSeventh) ext += "7";
+        else if (result.hasDiminishedSeventh) ext += "°7";
+        if (result.hasAddedSixth)        ext += "6";
+        if (result.hasNinth)             ext += "9";
+        if (result.hasEleventh)          ext += "11";
+        if (result.hasThirteenth)        ext += "13";
+        if (result.hasFlatFifth)         ext += "♭5";
+        if (result.hasSharpFifth)        ext += "♯5";
+        if (result.hasNinthFlat)         ext += "♭9";
+        if (result.hasNinthSharp)        ext += "♯9";
+        if (result.hasEleventhSharp)     ext += "#11";
+        if (result.hasThirteenthFlat)    ext += "♭13";
+        if (result.hasThirteenthSharp)   ext += "♯13";
+        if (result.isSixNine)            ext += "6/9";
+        return ext;
+    }
+
+    std::string nashvilleBassSuffix(const ChordAnalysisResult& result) {
+        if (result.bassPc != result.rootPc) {
+            int bassDegree = (result.bassPc - result.keyTonicPc + 12) % 12;
+            // For now, just show as "/[bassDegree+1]"; refine as needed
+            return "/" + std::to_string((bassDegree % 7) + 1);
+        }
+        return "";
+    }
+}
+
+std::string formatNashvilleNumber(const ChordAnalysisResult& result, int keySignatureFifths) {
+    std::string nashville;
+
+    if (result.degree >= 0 && result.degree < 7) {
+        nashville = nashvilleDegree(result.degree);
+    } else {
+        // Chromatic: add accidental prefix (♭ or ♯) based on semitone offset from diatonic degree
+        // For now, just show as "?"; refine as needed
+        nashville = "?";
+    }
+
+    nashville += nashvilleQualitySuffix(result);
+    nashville += nashvilleExtensionSuffix(result);
+    nashville += nashvilleBassSuffix(result);
+
+    return nashville;
+}
+
+} // namespace ChordSymbolFormatter
+
 // ── chordTonePitchClasses ─────────────────────────────────────────────────────
 
 std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result)

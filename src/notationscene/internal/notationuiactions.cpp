@@ -1411,6 +1411,30 @@ const UiActionList NotationUiActions::s_actions = {
              TranslatableString("action", "Add Roman numeral"),
              TranslatableString("action", "Add analyzed Roman numeral to score")
              ),
+    UiAction("add-nashville-number-from-analysis",
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_NOTATION_OPENED,
+             TranslatableString("action", "Add Nashville number"),
+             TranslatableString("action", "Add analyzed Nashville number to score")
+             ),
+    UiAction("add-chord-symbols-to-selection",
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_NOTATION_OPENED,
+             TranslatableString("action", "Add chord symbols to selection"),
+             TranslatableString("action", "Annotate selected notes with analyzed chord symbols")
+             ),
+    UiAction("add-roman-numerals-to-selection",
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_NOTATION_OPENED,
+             TranslatableString("action", "Add Roman numerals to selection"),
+             TranslatableString("action", "Annotate selected notes with analyzed Roman numerals")
+             ),
+    UiAction("add-nashville-numbers-to-selection",
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_NOTATION_OPENED,
+             TranslatableString("action", "Add Nashville numbers to selection"),
+             TranslatableString("action", "Annotate selected notes with analyzed Nashville numbers")
+             ),
     UiAction("roman-numeral-text",
              mu::context::UiCtxProjectOpened,
              mu::context::CTX_NOTATION_OPENED,

@@ -55,12 +55,13 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
 {
     MenuItemList items = makeElementItems();
 
-    if (!m_composingConfig()->analyzeForChordSymbols() && !m_composingConfig()->analyzeForRomanNumerals()) {
+    if (!m_composingConfig()->analyzeForChordSymbols() && !m_composingConfig()->analyzeForChordFunction()) {
         return items;
     }
 
-    bool wantChordSymbols = m_composingConfig()->analyzeForChordSymbols();
-    bool wantRomanNumerals = m_composingConfig()->analyzeForRomanNumerals();
+    bool wantChordSymbols    = m_composingConfig()->analyzeForChordSymbols();
+    bool wantRomanNumerals   = m_composingConfig()->analyzeForChordFunction();
+    bool wantNashvilleNumbers = m_composingConfig()->analyzeForChordFunction();
 
     const EngravingItem* element = currentElement();
     const mu::engraving::Note* note = engraving::toNote(element);
@@ -80,14 +81,15 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
         int quality;
     };
 
-    MenuItemList chordMenuItems, romanMenuItems;
+    MenuItemList chordMenuItems, romanMenuItems, nashvilleMenuItems;
     std::vector<TuneAsEntry> tuneAsEntries;
-    std::set<std::string> seenChordSymbols, seenNumerals;
-    int chordCount = 0, romanCount = 0;
+    std::set<std::string> seenChordSymbols, seenNumerals, seenNashville;
+    int chordCount = 0, romanCount = 0, nashvilleCount = 0;
 
     for (const auto& res : analysisResults) {
-        std::string symbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
-        std::string numeral = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
+        std::string symbol   = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
+        std::string numeral  = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
+        std::string nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(res, keyFifths);
 
         char buf[32];
         std::snprintf(buf, sizeof(buf), " (%.2f)", res.score);
@@ -126,20 +128,40 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
             tuneAsEntries.push_back({ label, res.rootPc, static_cast<int>(res.quality) });
             ++romanCount;
         }
+
+        if (wantNashvilleNumbers && nashvilleCount < maxAlternatives && !nashville.empty()
+            && seenNashville.insert(nashville).second) {
+            std::string label = nashville + buf;
+            MenuItem* item = new MenuItem(this);
+            item->setId(QString("compose:add-nashville-number:%1").arg(nashvilleCount));
+            ui::UiAction action;
+            action.title = TranslatableString::untranslatable(QString::fromStdString(label));
+            action.code = "add-nashville-number-from-analysis";
+            item->setAction(action);
+            ui::UiActionState state;
+            state.enabled = true;
+            item->setState(state);
+            item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(nashville)));
+            nashvilleMenuItems << item;
+            ++nashvilleCount;
+        }
     }
 
-    if (!chordMenuItems.isEmpty() || !romanMenuItems.isEmpty()) {
+    if (!chordMenuItems.isEmpty() || !romanMenuItems.isEmpty() || !nashvilleMenuItems.isEmpty()) {
         items << makeSeparator();
     }
     if (!chordMenuItems.isEmpty()) {
-        items << makeMenu(TranslatableString("notation", "Add Chord symbol"), chordMenuItems);
+        items << makeMenu(TranslatableString("notation", "Add chord symbol"), chordMenuItems);
     }
     if (!romanMenuItems.isEmpty()) {
         items << makeMenu(TranslatableString("notation", "Add Roman numeral"), romanMenuItems);
     }
+    if (!nashvilleMenuItems.isEmpty()) {
+        items << makeMenu(TranslatableString("notation", "Add Nashville number"), nashvilleMenuItems);
+    }
 
     // "Tune as [system name]" nested submenu — one leaf per unique Roman numeral result.
-    if (wantRomanNumerals && !tuneAsEntries.empty()) {
+    if (wantRomanNumerals && !tuneAsEntries.empty()) { // wantRomanNumerals == analyzeForChordFunction
         const std::string tuningKey = m_composingConfig()->tuningSystemKey();
         const composing::intonation::TuningSystem* sys
             = composing::intonation::TuningRegistry::byKey(tuningKey);

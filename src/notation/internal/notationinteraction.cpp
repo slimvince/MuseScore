@@ -8323,6 +8323,103 @@ void NotationInteraction::addAnalyzedHarmony(const QString& text, mu::engraving:
     notifyAboutTextEditingEnded(harmony);
 }
 
+void NotationInteraction::addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType type)
+{
+    using namespace mu::composing::analysis;
+
+    Score* sc = score();
+    if (!sc) {
+        return;
+    }
+
+    // Collect all notes in the current selection, deduplicated by (staffIndex, tick).
+    // We use the first note found per (staff, tick) pair as the representative for analysis.
+    std::map<std::pair<int, int>, Note*> byStaffTick;
+    for (EngravingItem* el : sc->selection().elements()) {
+        if (!el || !el->isNote()) {
+            continue;
+        }
+        Note* note = toNote(el);
+        ChordRest* cr = note->chord();
+        if (!cr) {
+            continue;
+        }
+        int staffIdx = static_cast<int>(track2staff(cr->track()));
+        int tick     = cr->tick().ticks();
+        auto key = std::make_pair(staffIdx, tick);
+        if (byStaffTick.find(key) == byStaffTick.end()) {
+            byStaffTick[key] = note;
+        }
+    }
+
+    if (byStaffTick.empty()) {
+        return;
+    }
+
+    const TranslatableString undoLabel =
+        type == mu::engraving::HarmonyType::ROMAN
+            ? TranslatableString("undoableAction", "Add Roman numerals to selection")
+            : type == mu::engraving::HarmonyType::NASHVILLE
+            ? TranslatableString("undoableAction", "Add Nashville numbers to selection")
+            : TranslatableString("undoableAction", "Add chord symbols to selection");
+
+    startEdit(undoLabel);
+
+    for (auto& [key, note] : byStaffTick) {
+        int keyFifths = 0;
+        mu::composing::analysis::KeyMode keyMode = mu::composing::analysis::KeyMode::Ionian;
+        const auto results = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
+        if (results.empty()) {
+            continue;
+        }
+
+        const ChordAnalysisResult& top = results[0];
+        std::string text;
+        switch (type) {
+        case mu::engraving::HarmonyType::STANDARD:
+            text = ChordSymbolFormatter::formatSymbol(top, keyFifths);
+            break;
+        case mu::engraving::HarmonyType::ROMAN:
+            text = ChordSymbolFormatter::formatRomanNumeral(top);
+            break;
+        case mu::engraving::HarmonyType::NASHVILLE:
+            text = ChordSymbolFormatter::formatNashvilleNumber(top, keyFifths);
+            break;
+        default:
+            break;
+        }
+
+        if (text.empty()) {
+            continue;
+        }
+
+        ChordRest* cr = note->chord();
+        Segment* segment = cr->segment();
+        if (!segment) {
+            continue;
+        }
+
+        // Remove any existing harmony of the same type at this segment/staff
+        for (EngravingItem* ann : segment->annotations()) {
+            if (ann->isHarmony()
+                && toHarmony(ann)->harmonyType() == type
+                && static_cast<int>(track2staff(ann->track())) == key.first) {
+                sc->undoRemoveElement(ann);
+            }
+        }
+
+        mu::engraving::Harmony* harmony = mu::engraving::Factory::createHarmony(segment);
+        harmony->setTrack(cr->track());
+        harmony->setParent(segment);
+        harmony->setHarmonyType(type);
+        harmony->setHarmony(muse::String::fromStdString(text));
+        harmony->setPlainText(harmony->harmonyName());
+        sc->undoAddElement(harmony);
+    }
+
+    apply();
+}
+
 void NotationInteraction::addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey)
 {
     Q_UNUSED(rootPc);

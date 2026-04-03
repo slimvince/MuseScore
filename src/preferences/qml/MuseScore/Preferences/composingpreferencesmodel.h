@@ -37,13 +37,20 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
 
     // Analysis behaviour
     Q_PROPERTY(bool analyzeForChordSymbols   READ analyzeForChordSymbols   WRITE setAnalyzeForChordSymbols   NOTIFY analyzeForChordSymbolsChanged)
-    Q_PROPERTY(bool analyzeForRomanNumerals  READ analyzeForRomanNumerals  WRITE setAnalyzeForRomanNumerals  NOTIFY analyzeForRomanNumeralsChanged)
+    Q_PROPERTY(bool analyzeForChordFunction  READ analyzeForChordFunction  WRITE setAnalyzeForChordFunction  NOTIFY analyzeForChordFunctionChanged)
     Q_PROPERTY(bool inferKeyMode             READ inferKeyMode             WRITE setInferKeyMode             NOTIFY inferKeyModeChanged)
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
     Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
-    Q_PROPERTY(bool tonicAnchoredTuning     READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
-    Q_PROPERTY(bool minimizeTuningDeviation READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
-    Q_PROPERTY(bool annotateTuningOffsets   READ annotateTuningOffsets    WRITE setAnnotateTuningOffsets    NOTIFY annotateTuningOffsetsChanged)
+    Q_PROPERTY(bool tonicAnchoredTuning      READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
+    Q_PROPERTY(bool minimizeTuningDeviation  READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
+    Q_PROPERTY(bool annotateTuningOffsets    READ annotateTuningOffsets    WRITE setAnnotateTuningOffsets    NOTIFY annotateTuningOffsetsChanged)
+
+    // Chord staff output
+    Q_PROPERTY(bool    chordStaffWriteChordSymbols   READ chordStaffWriteChordSymbols   WRITE setChordStaffWriteChordSymbols   NOTIFY chordStaffWriteChordSymbolsChanged)
+    Q_PROPERTY(QString chordStaffFunctionNotation    READ chordStaffFunctionNotation    WRITE setChordStaffFunctionNotation    NOTIFY chordStaffFunctionNotationChanged)
+    Q_PROPERTY(bool    chordStaffWriteKeyAnnotations READ chordStaffWriteKeyAnnotations WRITE setChordStaffWriteKeyAnnotations NOTIFY chordStaffWriteKeyAnnotationsChanged)
+    Q_PROPERTY(bool    chordStaffHighlightNonDiatonic READ chordStaffHighlightNonDiatonic WRITE setChordStaffHighlightNonDiatonic NOTIFY chordStaffHighlightNonDiatonicChanged)
+    Q_PROPERTY(bool    chordStaffWriteCadenceMarkers READ chordStaffWriteCadenceMarkers WRITE setChordStaffWriteCadenceMarkers NOTIFY chordStaffWriteCadenceMarkersChanged)
 
     // Mode detection weights
     Q_PROPERTY(double modeTierWeight1  READ modeTierWeight1  WRITE setModeTierWeight1  NOTIFY modeTierWeight1Changed)
@@ -52,9 +59,10 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(double modeTierWeight4  READ modeTierWeight4  WRITE setModeTierWeight4  NOTIFY modeTierWeight4Changed)
 
     // Status-bar display
-    Q_PROPERTY(bool showKeyModeInStatusBar      READ showKeyModeInStatusBar      WRITE setShowKeyModeInStatusBar      NOTIFY showKeyModeInStatusBarChanged)
-    Q_PROPERTY(int  statusBarChordSymbolCount   READ statusBarChordSymbolCount   WRITE setStatusBarChordSymbolCount   NOTIFY statusBarChordSymbolCountChanged)
-    Q_PROPERTY(int  statusBarRomanNumeralCount  READ statusBarRomanNumeralCount  WRITE setStatusBarRomanNumeralCount  NOTIFY statusBarRomanNumeralCountChanged)
+    Q_PROPERTY(bool showKeyModeInStatusBar          READ showKeyModeInStatusBar          WRITE setShowKeyModeInStatusBar          NOTIFY showKeyModeInStatusBarChanged)
+    Q_PROPERTY(bool showChordSymbolsInStatusBar     READ showChordSymbolsInStatusBar     WRITE setShowChordSymbolsInStatusBar     NOTIFY showChordSymbolsInStatusBarChanged)
+    Q_PROPERTY(bool showRomanNumeralsInStatusBar    READ showRomanNumeralsInStatusBar    WRITE setShowRomanNumeralsInStatusBar    NOTIFY showRomanNumeralsInStatusBarChanged)
+    Q_PROPERTY(bool showNashvilleNumbersInStatusBar READ showNashvilleNumbersInStatusBar WRITE setShowNashvilleNumbersInStatusBar NOTIFY showNashvilleNumbersInStatusBarChanged)
 
     muse::GlobalInject<composing::IComposingConfiguration> composingConfiguration;
 
@@ -64,7 +72,7 @@ public:
     Q_INVOKABLE void load();
 
     bool analyzeForChordSymbols() const;
-    bool analyzeForRomanNumerals() const;
+    bool analyzeForChordFunction() const;
     bool inferKeyMode() const;
     int  analysisAlternatives() const;
     QString tuningSystemKey() const;
@@ -77,13 +85,20 @@ public:
     double modeTierWeight3() const;
     double modeTierWeight4() const;
 
+    bool    chordStaffWriteChordSymbols() const;
+    QString chordStaffFunctionNotation() const;
+    bool    chordStaffWriteKeyAnnotations() const;
+    bool    chordStaffHighlightNonDiatonic() const;
+    bool    chordStaffWriteCadenceMarkers() const;
+
     bool showKeyModeInStatusBar() const;
-    int  statusBarChordSymbolCount() const;
-    int  statusBarRomanNumeralCount() const;
+    bool showChordSymbolsInStatusBar() const;
+    bool showRomanNumeralsInStatusBar() const;
+    bool showNashvilleNumbersInStatusBar() const;
 
 public slots:
     void setAnalyzeForChordSymbols(bool value);
-    void setAnalyzeForRomanNumerals(bool value);
+    void setAnalyzeForChordFunction(bool value);
     void setInferKeyMode(bool value);
     void setAnalysisAlternatives(int count);
     void setTuningSystemKey(const QString& key);
@@ -96,13 +111,20 @@ public slots:
     void setModeTierWeight3(double value);
     void setModeTierWeight4(double value);
 
+    void setChordStaffWriteChordSymbols(bool value);
+    void setChordStaffFunctionNotation(const QString& value);
+    void setChordStaffWriteKeyAnnotations(bool value);
+    void setChordStaffHighlightNonDiatonic(bool value);
+    void setChordStaffWriteCadenceMarkers(bool value);
+
     void setShowKeyModeInStatusBar(bool value);
-    void setStatusBarChordSymbolCount(int count);
-    void setStatusBarRomanNumeralCount(int count);
+    void setShowChordSymbolsInStatusBar(bool value);
+    void setShowRomanNumeralsInStatusBar(bool value);
+    void setShowNashvilleNumbersInStatusBar(bool value);
 
 signals:
     void analyzeForChordSymbolsChanged();
-    void analyzeForRomanNumeralsChanged();
+    void analyzeForChordFunctionChanged();
     void inferKeyModeChanged();
     void analysisAlternativesChanged();
     void tuningSystemKeyChanged();
@@ -115,9 +137,16 @@ signals:
     void modeTierWeight3Changed();
     void modeTierWeight4Changed();
 
+    void chordStaffWriteChordSymbolsChanged();
+    void chordStaffFunctionNotationChanged();
+    void chordStaffWriteKeyAnnotationsChanged();
+    void chordStaffHighlightNonDiatonicChanged();
+    void chordStaffWriteCadenceMarkersChanged();
+
     void showKeyModeInStatusBarChanged();
-    void statusBarChordSymbolCountChanged();
-    void statusBarRomanNumeralCountChanged();
+    void showChordSymbolsInStatusBarChanged();
+    void showRomanNumeralsInStatusBarChanged();
+    void showNashvilleNumbersInStatusBarChanged();
 
 private:
     void setupConnections();
