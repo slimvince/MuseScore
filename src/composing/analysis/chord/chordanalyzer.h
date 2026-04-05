@@ -163,20 +163,6 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
-    // ── Inversion detection ──────────────────────────────────────────────────
-
-    /// If the best non-bass-root candidate's base score (without the bass bonus)
-    /// exceeds the bass-root candidate's base score by more than this threshold,
-    /// the chord is likely in inversion and the bass bonus is scaled down.
-    /// Empirically ~0.30 triggers on the SATB doubled-bass cases that cause
-    /// bass-as-root errors (gap ≈ 0.25 → fires just above that).
-    double inversionSuspicionThreshold = 0.30;
-
-    /// Scale factor applied to bassNoteRootBonus when inversion is suspected.
-    /// 0.25 preserves a small residual bass-note preference while letting the
-    /// harmonic evidence from the remaining tones dominate.
-    double inversionBonusReduction = 0.25;
-
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -209,13 +195,11 @@ struct ChordAnalyzerPreferences {
     ParameterBoundsMap bounds() const
     {
         return {
-            { "bassNoteRootBonus",           { 0.0, 2.0 } },
-            { "diatonicRootBonus",           { 0.0, 1.0 } },
-            { "tpcConsistencyBonusPerTone",  { 0.0, 1.0 } },
-            { "rootContinuityBonus",         { 0.0, 1.5 } },
-            { "resolutionBonus",             { 0.0, 1.5 } },
-            { "inversionSuspicionThreshold", { 0.0, 2.0 } },
-            { "inversionBonusReduction",     { 0.0, 1.0 } },
+            { "bassNoteRootBonus",        { 0.0, 2.0 } },
+            { "diatonicRootBonus",        { 0.0, 1.0 } },
+            { "tpcConsistencyBonusPerTone",{ 0.0, 1.0 } },
+            { "rootContinuityBonus",      { 0.0, 1.5 } },
+            { "resolutionBonus",          { 0.0, 1.5 } },
         };
     }
 };

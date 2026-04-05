@@ -1099,20 +1099,16 @@ double tpcConsistencyBonus(const TemplateDef& tpl, int rootPc,
 
 /// Score bonuses derived from musical context: bass note, key membership, and temporal
 /// information from the preceding chord.
-/// @param bassBonus  The bass-note-as-root bonus to apply when rootPc==bassPc.
-///                   Pass 0.0 in pass 1 (base-score computation) and the final
-///                   (possibly reduced) value in pass 2.
 double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
                          int keyTonicPc, const std::array<int, 7>& scale,
                          const ChordAnalyzerPreferences& prefs,
-                         const ChordTemporalContext* context,
-                         double bassBonus)
+                         const ChordTemporalContext* context)
 {
     double score = 0.0;
 
     // Bass note as root is a strong harmonic signal.
     if (rootPc == bassPc) {
-        score += bassBonus;
+        score += prefs.bassNoteRootBonus;
     }
 
     // Prefer roots that belong to the current key scale.
@@ -1280,66 +1276,34 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
     // Score every root × template combination.
     //
-    // Two-pass scoring to correct bass-as-root bias in inverted chords.
-    //
-    // Pass 1: compute base scores without the bassNoteRootBonus.  This reveals
-    //   which candidate the harmonic evidence (template match, extensions, TPC,
-    //   context) favours before the bass-note preference is applied.
-    // Pass 2: apply an adjusted bass bonus.  When the best non-bass-root
-    //   candidate's pass-1 score exceeds the bass-root candidate's pass-1 score
-    //   by more than inversionSuspicionThreshold, the chord is likely in
-    //   inversion and the full bassNoteRootBonus is scaled down by
-    //   inversionBonusReduction.  Otherwise the full bonus is applied as before.
-    //
     // Each concern is delegated to a named helper (defined in the anonymous namespace
     // above) so that each rule is independently readable and modifiable.
     struct RawCandidate {
-        double score;      // final (pass-2) score used for ranking
-        double baseScore;  // pass-1 score without the bass bonus
+        double score;
         int rootPc;
         ChordQuality quality;
-        int tiePriority;   // template index in the array above; lower = preferred on equal score
+        int tiePriority;  // template index in the array above; lower = preferred on equal score
     };
 
     std::vector<RawCandidate> rawCandidates;
     rawCandidates.reserve(12 * templates.size());
 
-    // Pass 1: compute base scores (bassBonus = 0.0).
     for (int rootPc = 0; rootPc < 12; ++rootPc) {
         for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
             const TemplateDef& tpl = templates[tplIdx];
-            double s = 0.0;
+            double score = 0.0;
 
-            s += scoreTemplateTones(tpl, rootPc, pcWeight);
-            s += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
-            s += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale);
-            s += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
-            s += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
-            s += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            s += contextualBonuses(rootPc, tpl.quality, bassPc, keyTonicPc, scale,
-                                   prefs, context, /*bassBonus=*/0.0);
+            score += scoreTemplateTones(tpl, rootPc, pcWeight);
+            score += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
+            score += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale);
+            score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
+            score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
+            score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
+            score += contextualBonuses(rootPc, tpl.quality, bassPc, keyTonicPc, scale,
+                                       prefs, context);
 
-            rawCandidates.push_back({ s, s, rootPc, tpl.quality,
+            rawCandidates.push_back({ score, rootPc, tpl.quality,
                                       static_cast<int>(tplIdx) });
-        }
-    }
-
-    // Find the best pass-1 score among candidates whose root is NOT the bass note.
-    double bestNonBassBaseScore = 0.0;
-    for (const RawCandidate& rc : rawCandidates) {
-        if (rc.rootPc != bassPc) {
-            bestNonBassBaseScore = std::max(bestNonBassBaseScore, rc.baseScore);
-        }
-    }
-
-    // Pass 2: apply adjusted bass bonus per candidate.
-    for (RawCandidate& rc : rawCandidates) {
-        if (rc.rootPc == bassPc) {
-            const double gap = bestNonBassBaseScore - rc.baseScore;
-            const double bonus = (gap > prefs.inversionSuspicionThreshold)
-                                 ? prefs.bassNoteRootBonus * prefs.inversionBonusReduction
-                                 : prefs.bassNoteRootBonus;
-            rc.score += bonus;
         }
     }
 
