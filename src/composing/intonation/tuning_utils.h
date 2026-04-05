@@ -22,7 +22,7 @@
 #pragma once
 
 #include "tuning_system.h"
-#include "../analysis/chordanalyzer.h"
+#include "../analysis/chord/chordanalyzer.h"
 #include <engraving/dom/note.h>
 
 namespace mu::composing::intonation {

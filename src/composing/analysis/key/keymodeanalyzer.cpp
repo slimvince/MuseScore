@@ -21,7 +21,7 @@
  */
 
 #include "keymodeanalyzer.h"
-#include "analysisutils.h"
+#include "../chord/analysisutils.h"
 
 #include <algorithm>
 #include <array>
@@ -39,49 +39,81 @@ struct ModeDef {
     std::array<int, 7> intervals;  ///< Semitones from tonic for each scale degree
 };
 
-/// Full modal table.  Only the modes indexed by ACTIVE_MODE_INDICES are evaluated;
-/// the rest are kept here for future re-enablement without interface changes.
-constexpr std::array<ModeDef, 7> MODES = {{
-    { "Ionian",     { 0, 2, 4, 5, 7, 9, 11 } },
-    { "Dorian",     { 0, 2, 3, 5, 7, 9, 10 } },
-    { "Phrygian",   { 0, 1, 3, 5, 7, 8, 10 } },
-    { "Lydian",     { 0, 2, 4, 6, 7, 9, 11 } },
-    { "Mixolydian", { 0, 2, 4, 5, 7, 9, 10 } },
-    { "Aeolian",    { 0, 2, 3, 5, 7, 8, 10 } },
-    { "Locrian",    { 0, 1, 3, 5, 6, 8, 10 } }
+/// Full 21-mode table.  Index must match KeySigMode enum ordinal.
+constexpr std::array<ModeDef, 21> MODES = {{
+    // Diatonic (0–6)
+    { "Ionian",              { 0, 2, 4, 5, 7, 9, 11 } },
+    { "Dorian",              { 0, 2, 3, 5, 7, 9, 10 } },
+    { "Phrygian",            { 0, 1, 3, 5, 7, 8, 10 } },
+    { "Lydian",              { 0, 2, 4, 6, 7, 9, 11 } },
+    { "Mixolydian",          { 0, 2, 4, 5, 7, 9, 10 } },
+    { "Aeolian",             { 0, 2, 3, 5, 7, 8, 10 } },
+    { "Locrian",             { 0, 1, 3, 5, 6, 8, 10 } },
+    // Melodic minor family (7–13)
+    { "Melodic Minor",       { 0, 2, 3, 5, 7, 9, 11 } },
+    { "Dorian b2",           { 0, 1, 3, 5, 7, 9, 10 } },
+    { "Lydian Augmented",    { 0, 2, 4, 6, 8, 9, 11 } },
+    { "Lydian Dominant",     { 0, 2, 4, 6, 7, 9, 10 } },
+    { "Mixolydian b6",       { 0, 2, 4, 5, 7, 8, 10 } },
+    { "Aeolian b5",          { 0, 2, 3, 5, 6, 8, 10 } },
+    { "Altered",             { 0, 1, 3, 4, 6, 8, 10 } },
+    // Harmonic minor family (14–20)
+    { "Harmonic Minor",      { 0, 2, 3, 5, 7, 8, 11 } },
+    { "Locrian #6",          { 0, 1, 3, 5, 6, 9, 10 } },
+    { "Ionian #5",           { 0, 2, 4, 5, 8, 9, 11 } },
+    { "Dorian #4",           { 0, 2, 3, 6, 7, 9, 10 } },
+    { "Phrygian Dominant",   { 0, 1, 4, 5, 7, 8, 10 } },
+    { "Lydian #2",           { 0, 3, 4, 6, 7, 9, 11 } },
+    { "Altered Dom bb7",     { 0, 1, 3, 4, 6, 8,  9 } },
 }};
 
-/// Index into MODES for each KeyMode variant.
-constexpr size_t IONIAN_INDEX     = 0;
-constexpr size_t DORIAN_INDEX     = 1;
-constexpr size_t PHRYGIAN_INDEX   = 2;
-constexpr size_t LYDIAN_INDEX     = 3;
-constexpr size_t MIXOLYDIAN_INDEX = 4;
-constexpr size_t AEOLIAN_INDEX    = 5;
-constexpr size_t LOCRIAN_INDEX    = 6;
-
-/// All seven diatonic modes are evaluated.
-constexpr std::array<size_t, 7> ACTIVE_MODE_INDICES = {
-    IONIAN_INDEX, DORIAN_INDEX, PHRYGIAN_INDEX, LYDIAN_INDEX,
-    MIXOLYDIAN_INDEX, AEOLIAN_INDEX, LOCRIAN_INDEX
+/// All 21 modes are active.
+constexpr std::array<size_t, 21> ACTIVE_MODE_INDICES = {
+    0, 1, 2, 3, 4, 5, 6,      // diatonic
+    7, 8, 9, 10, 11, 12, 13,  // melodic minor
+    14, 15, 16, 17, 18, 19, 20 // harmonic minor
 };
 
-/// Characteristic pitch for each mode — the one scale degree that most
-/// distinguishes it from its closest neighbor.  Index is the mode's position
-/// in ACTIVE_MODE_INDICES (same as MODES index).  Value is the semitone
-/// interval from the tonic.
-///
-/// These are theory-grounded (each mode's signature pitch); the scoring
-/// weight applied to them is empirical.
-constexpr std::array<int, 7> CHARACTERISTIC_INTERVAL = {
-    11,   // Ionian:     major 7th — distinguishes from Mixolydian
-     9,   // Dorian:     major 6th — distinguishes from Aeolian
-     1,   // Phrygian:   minor 2nd — distinguishes from Aeolian
-     6,   // Lydian:     augmented 4th — distinguishes from Ionian
-    10,   // Mixolydian: minor 7th — distinguishes from Ionian
-     8,   // Aeolian:    minor 6th — distinguishes from Dorian
-     6,   // Locrian:    diminished 5th — distinguishes from Phrygian
+// ── Characteristic pitch conditions ─────────────────────────────────────────
+//
+// For each mode, one or two intervals that most distinguish it from similar
+// modes.  When requireBoth is true, BOTH intervals must be present for the
+// characteristic boost; otherwise only the primary (interval1) is checked.
+// interval2 == -1 means single-interval condition.
+
+struct CharacteristicCondition {
+    int interval1;    ///< Primary distinguishing interval from tonic
+    int interval2;    ///< Secondary interval (-1 = single condition)
+    bool requireBoth; ///< When true, both must be present for boost
 };
+
+/// Indexed by mode index (same as KeySigMode enum ordinal).
+constexpr std::array<CharacteristicCondition, 21> CHARACTERISTIC = {{
+    // Diatonic (0–6)
+    { 11, -1, false },  // Ionian:      maj7 — distinguishes from Mixolydian
+    {  9, -1, false },  // Dorian:      maj6 — distinguishes from Aeolian
+    {  1, -1, false },  // Phrygian:    min2 — distinguishes from Aeolian
+    {  6, -1, false },  // Lydian:      aug4 — distinguishes from Ionian
+    { 10, -1, false },  // Mixolydian:  min7 — distinguishes from Ionian
+    {  8, -1, false },  // Aeolian:     min6 — distinguishes from Dorian
+    {  6, -1, false },  // Locrian:     dim5 — distinguishes from Phrygian
+    // Melodic minor family (7–13)
+    { 11,  9, true  },  // MelodicMinor:     maj7 AND maj6 (vs HarmonicMinor which has min6)
+    {  1, -1, false },  // DorianB2:         min2 — distinguishes from Phrygian
+    {  8,  6, true  },  // LydianAugmented:  aug5 AND aug4 (vs IonianSharp5 which has P4)
+    {  6, 10, true  },  // LydianDominant:   aug4 AND min7 — unambiguous combination
+    {  8,  4, true  },  // MixolydianB6:     min6 AND maj3 (distinguishes from Aeolian)
+    {  6,  2, true  },  // AeolianB5:        dim5 AND maj2 (Locrian has min2, not maj2)
+    {  1, 10, true  },  // Altered:          min2 AND min7 (vs AlteredDomBB7 which has dim7=9)
+    // Harmonic minor family (14–20)
+    { 11,  8, true  },  // HarmonicMinor:    maj7 AND min6 — unique combination
+    {  9, -1, false },  // LocrianSharp6:    maj6 alongside Locrian context
+    {  8, -1, false },  // IonianSharp5:     aug5 (Lydian Augmented also has aug5+aug4)
+    {  6,  3, true  },  // DorianSharp4:     aug4 AND min3 (vs LydianDominant which has maj3)
+    {  4,  1, true  },  // PhrygianDominant: maj3 AND min2 — no diatonic mode has both
+    {  3,  6, true  },  // LydianSharp2:     aug2 AND aug4
+    {  1,  9, true  },  // AlteredDomBB7:    min2 AND dim7=9 (vs Altered which has min7=10)
+}};
 
 } // anonymous namespace
 
@@ -92,7 +124,38 @@ constexpr std::array<int, 7> CHARACTERISTIC_INTERVAL = {
 /// tonic of the corresponding parallel key signature.
 int ionianTonicPcForMode(int tonicPc, size_t modeIndex)
 {
-    constexpr std::array<int, 7> IONIAN_OFFSETS = { 0, -2, -4, -5, -7, 3, 1 };
+    // Offset to add to mode's tonic to recover the Ionian tonic of the parent key.
+    // For non-diatonic modes, the parent key is the diatonic key with the same
+    // approximate key signature (e.g. MelodicMinor → same parent as Dorian).
+    constexpr std::array<int, 21> IONIAN_OFFSETS = {
+        // Diatonic (0–6)
+         0,  // Ionian
+        -2,  // Dorian
+        -4,  // Phrygian
+        -5,  // Lydian
+        -7,  // Mixolydian
+         3,  // Aeolian   (+3 = -9 mod 12)
+         1,  // Locrian   (+1 = -11 mod 12)
+        // Melodic minor family (7–13)
+        -2,  // MelodicMinor  ~ Dorian
+        -4,  // DorianB2      ~ Phrygian
+        -5,  // LydianAug     ~ Lydian
+        -7,  // LydianDom     ~ Mixolydian
+         3,  // MixolydianB6  ~ Aeolian
+         1,  // AeolianB5     ~ Locrian
+        -1,  // Altered       (tonic is 1 semitone below parent Ionian)
+        // Harmonic minor family (14–20)
+         3,  // HarmonicMinor  ~ Aeolian
+         1,  // LocrianSharp6  ~ Locrian
+         0,  // IonianSharp5   ~ Ionian
+        -2,  // DorianSharp4   ~ Dorian
+        -4,  // PhrygianDom    ~ Phrygian
+        -5,  // LydianSharp2   ~ Lydian
+        -8,  // AlteredDomBB7  (tonic is 8 semitones below parent Ionian = aug5 above)
+    };
+    if (modeIndex >= IONIAN_OFFSETS.size()) {
+        return tonicPc;
+    }
     const int pc = tonicPc + IONIAN_OFFSETS[modeIndex];
     return (pc % 12 + 12) % 12;
 }
@@ -249,21 +312,46 @@ double scoreTriadEvidence(int tonicPc, size_t modeIndex,
     return score;
 }
 
-/// Characteristic pitch score: boost when the mode's distinguishing pitch is
-/// present, penalty when it is absent.
+/// Characteristic pitch score: boost when the mode's distinguishing pitch(es)
+/// are present, penalty when absent.
+///
+/// For compound conditions (requireBoth == true), BOTH intervals must be
+/// present for the boost; if only the primary is present, a half-boost is
+/// applied (partial evidence); if neither is present, the full penalty applies.
 double scoreCharacteristicPitch(int tonicPc, size_t modeIndex,
                                 const std::vector<KeyModeAnalyzer::PitchContext>& pitches,
                                 const KeyModeAnalyzerPreferences& prefs)
 {
-    const int charPc = (tonicPc + CHARACTERISTIC_INTERVAL[modeIndex]) % 12;
-    double charWeight = 0.0;
+    const CharacteristicCondition& cond = CHARACTERISTIC[modeIndex];
+
+    const int pc1 = (tonicPc + cond.interval1) % 12;
+    const int pc2 = (cond.interval2 >= 0) ? (tonicPc + cond.interval2) % 12 : -1;
+
+    double weight1 = 0.0;
+    double weight2 = 0.0;
     for (const KeyModeAnalyzer::PitchContext& p : pitches) {
-        if (normalizePc(p.pitch) == charPc) {
-            charWeight += noteWeight(p, prefs);
-        }
+        const int pc = normalizePc(p.pitch);
+        const double w = noteWeight(p, prefs);
+        if (pc == pc1) { weight1 += w; }
+        if (pc2 >= 0 && pc == pc2) { weight2 += w; }
     }
-    return (charWeight > 0.1) ? prefs.characteristicPitchBoost
-                              : prefs.characteristicPitchPenalty;
+
+    const bool has1 = weight1 > 0.1;
+    const bool has2 = (pc2 < 0) || (weight2 > 0.1);  // true when no secondary condition
+
+    if (cond.interval2 < 0) {
+        // Single-interval condition: original behaviour.
+        return has1 ? prefs.characteristicPitchBoost : prefs.characteristicPitchPenalty;
+    }
+
+    if (cond.requireBoth) {
+        if (has1 && has2) { return prefs.characteristicPitchBoost; }
+        if (has1)         { return prefs.characteristicPitchBoost * 0.5; }
+        return prefs.characteristicPitchPenalty;
+    }
+
+    // requireBoth == false with a secondary: just check the primary.
+    return has1 ? prefs.characteristicPitchBoost : prefs.characteristicPitchPenalty;
 }
 
 /// True leading-tone score: the presence of a note a semitone below the
@@ -287,28 +375,34 @@ double scoreTrueLeadingTone(int tonicPc,
 }
 
 /// Mode prior: additive bias reflecting real-world mode frequency.
-/// Ionian and Aeolian are overwhelmingly more common than Lydian or Locrian,
-/// so when pitch evidence is ambiguous, the prior tips the balance toward
-/// the more likely mode.
 double scoreModePrior(size_t modeIndex, const KeyModeAnalyzerPreferences& prefs)
 {
-    constexpr size_t IONIAN     = 0;
-    constexpr size_t DORIAN     = 1;
-    constexpr size_t PHRYGIAN   = 2;
-    constexpr size_t LYDIAN     = 3;
-    constexpr size_t MIXOLYDIAN = 4;
-    constexpr size_t AEOLIAN    = 5;
-    constexpr size_t LOCRIAN    = 6;
-
     switch (modeIndex) {
-    case IONIAN:     return prefs.modePriorIonian;
-    case DORIAN:     return prefs.modePriorDorian;
-    case PHRYGIAN:   return prefs.modePriorPhrygian;
-    case LYDIAN:     return prefs.modePriorLydian;
-    case MIXOLYDIAN: return prefs.modePriorMixolydian;
-    case AEOLIAN:    return prefs.modePriorAeolian;
-    case LOCRIAN:    return prefs.modePriorLocrian;
-    default:         return 0.0;
+    // Diatonic
+    case  0: return prefs.modePriorIonian;
+    case  1: return prefs.modePriorDorian;
+    case  2: return prefs.modePriorPhrygian;
+    case  3: return prefs.modePriorLydian;
+    case  4: return prefs.modePriorMixolydian;
+    case  5: return prefs.modePriorAeolian;
+    case  6: return prefs.modePriorLocrian;
+    // Melodic minor family
+    case  7: return prefs.modePriorMelodicMinor;
+    case  8: return prefs.modePriorDorianB2;
+    case  9: return prefs.modePriorLydianAugmented;
+    case 10: return prefs.modePriorLydianDominant;
+    case 11: return prefs.modePriorMixolydianB6;
+    case 12: return prefs.modePriorAeolianB5;
+    case 13: return prefs.modePriorAltered;
+    // Harmonic minor family
+    case 14: return prefs.modePriorHarmonicMinor;
+    case 15: return prefs.modePriorLocrianSharp6;
+    case 16: return prefs.modePriorIonianSharp5;
+    case 17: return prefs.modePriorDorianSharp4;
+    case 18: return prefs.modePriorPhrygianDominant;
+    case 19: return prefs.modePriorLydianSharp2;
+    case 20: return prefs.modePriorAlteredDomBB7;
+    default: return 0.0;
     }
 }
 
@@ -384,7 +478,7 @@ void applyPairwiseDisambiguation(
 
 /// Returns true if @p candidate is compatible with @p declared.
 ///
-/// The engraving KeyMode has two levels of specificity:
+/// The engraving KeySigMode has two levels of specificity:
 ///   - Ionian / Aeolian used as class-level declarations ("major" / "minor"):
 ///     any mode in the same class is compatible.
 ///   - Any other specific mode: only an exact match is compatible.
@@ -393,13 +487,13 @@ void applyPairwiseDisambiguation(
 /// "minor", which constrains the class but leaves the specific mode (Dorian,
 /// Phrygian, Aeolian, …) to pitch analysis.  Explicit modal declarations
 /// (e.g. Dorian) mean exactly that mode.
-bool modeIsCompatibleWithDeclared(KeyMode candidate, KeyMode declared)
+bool modeIsCompatibleWithDeclared(KeySigMode candidate, KeySigMode declared)
 {
-    if (declared == KeyMode::Ionian) {
+    if (declared == KeySigMode::Ionian) {
         // Class-level "major" declaration: accept any major-class mode
         return keyModeIsMajor(candidate);
     }
-    if (declared == KeyMode::Aeolian) {
+    if (declared == KeySigMode::Aeolian) {
         // Class-level "minor" declaration: accept any minor-class mode
         return !keyModeIsMajor(candidate);
     }
@@ -415,7 +509,7 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const std::vector<PitchContext>& pitches,
     int keySignatureFifths,
     const KeyModeAnalyzerPreferences& prefs,
-    std::optional<KeyMode> declaredMode)
+    std::optional<KeySigMode> declaredMode)
 {
     if (pitches.empty()) {
         return {};
@@ -425,7 +519,7 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     std::array<bool, 12> inKeySignatureScale {};
     {
         const int keySigTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
-        for (int interval : MODES[IONIAN_INDEX].intervals) {
+        for (int interval : MODES[static_cast<size_t>(KeySigMode::Ionian)].intervals) {
             inKeySignatureScale[static_cast<size_t>((keySigTonicPc + interval) % 12)] = true;
         }
     }
@@ -461,7 +555,7 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
 
             // Declared-mode penalty: modes outside the declared class are penalised.
             if (declaredMode.has_value()) {
-                const KeyMode candidate = keyModeFromIndex(modeIndex);
+                const KeySigMode candidate = keyModeFromIndex(modeIndex);
                 if (!modeIsCompatibleWithDeclared(candidate, *declaredMode)) {
                     eval.score -= prefs.declaredModePenalty;
                 }
@@ -480,7 +574,7 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
 
         // Find top-2 modes by raw score (before disambiguation).
         struct ModeEntry { int tonicPc; size_t modeSlot; double score; };
-        std::array<ModeEntry, 7> entries;
+        std::array<ModeEntry, 21> entries;
         for (size_t slot = 0; slot < numModeSlots; ++slot) {
             const size_t mIdx = ACTIVE_MODE_INDICES[slot];
             const int tpc = (matchingIonianPc + keyModeTonicOffset(keyModeFromIndex(mIdx))) % 12;
@@ -578,7 +672,7 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
         }
         const size_t modeIndex = ACTIVE_MODE_INDICES[c.modeSlot];
         const int fifths = resolveToFifths(c.tonicPc, modeIndex, keySignatureFifths);
-        const KeyMode mode = keyModeFromIndex(modeIndex);
+        const KeySigMode mode = keyModeFromIndex(modeIndex);
         if (fifths == best.keySignatureFifths && mode == best.mode) {
             continue;  // already added as the winner
         }
@@ -619,9 +713,12 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
 
 // ── Display helpers ─────────────────────────────────────────────────────────
 
-const char* keyModeTonicName(int fifths, KeyMode mode)
+const char* keyModeTonicName(int fifths, KeySigMode mode)
 {
     // Tonic names indexed by circle-of-fifths position +7, per mode.
+    // Non-diatonic modes reuse the name array of their parent diatonic mode
+    // (same key signature), except Altered (offset 1) and AlteredDomBB7 (offset 8)
+    // which have unique arrays.
     static constexpr const char* IONIAN_NAMES[15] = {
         "Cb", "Gb", "Db", "Ab", "Eb", "Bb", "F",
         "C", "G", "D", "A", "E", "B", "F#", "C#"
@@ -630,12 +727,10 @@ const char* keyModeTonicName(int fifths, KeyMode mode)
         "Ab", "Eb", "Bb", "F", "C", "G", "D",
         "A", "E", "B", "F#", "C#", "G#", "D#", "A#"
     };
-    // Dorian tonic = Ionian tonic + 2 fifths on the circle of fifths.
     static constexpr const char* DORIAN_NAMES[15] = {
         "Db", "Ab", "Eb", "Bb", "F", "C", "G",
         "D", "A", "E", "B", "F#", "C#", "G#", "D#"
     };
-    // Phrygian tonic = Ionian tonic + 4 fifths on the circle of fifths.
     static constexpr const char* PHRYGIAN_NAMES[15] = {
         "Eb", "Bb", "F", "C", "G", "D", "A",
         "E", "B", "F#", "C#", "G#", "D#", "A#", "E#"
@@ -648,35 +743,80 @@ const char* keyModeTonicName(int fifths, KeyMode mode)
         "Gb", "Db", "Ab", "Eb", "Bb", "F", "C",
         "G", "D", "A", "E", "B", "F#", "C#", "G#"
     };
-    // Locrian tonic = Ionian tonic + 5 fifths on the circle of fifths.
     static constexpr const char* LOCRIAN_NAMES[15] = {
         "Bb", "F", "C", "G", "D", "A", "E",
         "B", "F#", "C#", "G#", "D#", "A#", "E#", "B#"
     };
+    // Altered: tonic = one semitone above Ionian tonic (offset 1).
+    // E.g. key sig 2 flats (Bb Ionian) → B Altered.
+    static constexpr const char* ALTERED_NAMES[15] = {
+        "C",  "G",  "D",  "A",  "E",  "B",  "F#",
+        "C#", "G#", "D#", "A#", "E#", "B#", "Fx", "Cx"
+    };
+    // AlteredDomBB7: tonic = aug5 above Ionian (offset 8).
+    // E.g. key sig 0 (C Ionian) → G# AlteredDomBB7.
+    static constexpr const char* ALTERED_DOM_BB7_NAMES[15] = {
+        "Ab", "Eb", "Bb", "F", "C", "G",  "D",
+        "G#", "D#", "A#", "E#","B#","Fx", "Cx", "Gx"
+    };
 
     const int idx = std::clamp(fifths + 7, 0, 14);
     switch (mode) {
-    case KeyMode::Ionian:     return IONIAN_NAMES[idx];
-    case KeyMode::Dorian:     return DORIAN_NAMES[idx];
-    case KeyMode::Phrygian:   return PHRYGIAN_NAMES[idx];
-    case KeyMode::Lydian:     return LYDIAN_NAMES[idx];
-    case KeyMode::Mixolydian: return MIXOLYDIAN_NAMES[idx];
-    case KeyMode::Aeolian:    return AEOLIAN_NAMES[idx];
-    case KeyMode::Locrian:    return LOCRIAN_NAMES[idx];
+    // Diatonic
+    case KeySigMode::Ionian:           return IONIAN_NAMES[idx];
+    case KeySigMode::Dorian:           return DORIAN_NAMES[idx];
+    case KeySigMode::Phrygian:         return PHRYGIAN_NAMES[idx];
+    case KeySigMode::Lydian:           return LYDIAN_NAMES[idx];
+    case KeySigMode::Mixolydian:       return MIXOLYDIAN_NAMES[idx];
+    case KeySigMode::Aeolian:          return AEOLIAN_NAMES[idx];
+    case KeySigMode::Locrian:          return LOCRIAN_NAMES[idx];
+    // Melodic minor — share parent diatonic key sig tonic names
+    case KeySigMode::MelodicMinor:     return DORIAN_NAMES[idx];
+    case KeySigMode::DorianB2:         return PHRYGIAN_NAMES[idx];
+    case KeySigMode::LydianAugmented:  return LYDIAN_NAMES[idx];
+    case KeySigMode::LydianDominant:   return MIXOLYDIAN_NAMES[idx];
+    case KeySigMode::MixolydianB6:     return AEOLIAN_NAMES[idx];
+    case KeySigMode::AeolianB5:        return LOCRIAN_NAMES[idx];
+    case KeySigMode::Altered:          return ALTERED_NAMES[idx];
+    // Harmonic minor — share parent diatonic key sig tonic names
+    case KeySigMode::HarmonicMinor:    return AEOLIAN_NAMES[idx];
+    case KeySigMode::LocrianSharp6:    return LOCRIAN_NAMES[idx];
+    case KeySigMode::IonianSharp5:     return IONIAN_NAMES[idx];
+    case KeySigMode::DorianSharp4:     return DORIAN_NAMES[idx];
+    case KeySigMode::PhrygianDominant: return PHRYGIAN_NAMES[idx];
+    case KeySigMode::LydianSharp2:     return LYDIAN_NAMES[idx];
+    case KeySigMode::AlteredDomBB7:    return ALTERED_DOM_BB7_NAMES[idx];
     }
     return IONIAN_NAMES[idx];
 }
 
-const char* keyModeSuffix(KeyMode mode)
+const char* keyModeSuffix(KeySigMode mode)
 {
     switch (mode) {
-    case KeyMode::Ionian:     return "maj";
-    case KeyMode::Dorian:     return "Dor";
-    case KeyMode::Phrygian:   return "Phryg";
-    case KeyMode::Lydian:     return "Lyd";
-    case KeyMode::Mixolydian: return "Mixolyd";
-    case KeyMode::Aeolian:    return "min";
-    case KeyMode::Locrian:    return "Loc";
+    // Diatonic
+    case KeySigMode::Ionian:           return "maj";
+    case KeySigMode::Dorian:           return "Dor";
+    case KeySigMode::Phrygian:         return "Phryg";
+    case KeySigMode::Lydian:           return "Lyd";
+    case KeySigMode::Mixolydian:       return "Mixolyd";
+    case KeySigMode::Aeolian:          return "min";
+    case KeySigMode::Locrian:          return "Loc";
+    // Melodic minor family
+    case KeySigMode::MelodicMinor:     return "mel";
+    case KeySigMode::DorianB2:         return "Dor\u266d2";
+    case KeySigMode::LydianAugmented:  return "Lyd+";
+    case KeySigMode::LydianDominant:   return "Lyd\u266d7";
+    case KeySigMode::MixolydianB6:     return "Mix\u266d6";
+    case KeySigMode::AeolianB5:        return "Loc#2";
+    case KeySigMode::Altered:          return "alt";
+    // Harmonic minor family
+    case KeySigMode::HarmonicMinor:    return "harm";
+    case KeySigMode::LocrianSharp6:    return "Loc#6";
+    case KeySigMode::IonianSharp5:     return "Ion+";
+    case KeySigMode::DorianSharp4:     return "Dor#4";
+    case KeySigMode::PhrygianDominant: return "PhrygDom";
+    case KeySigMode::LydianSharp2:     return "Lyd#2";
+    case KeySigMode::AlteredDomBB7:    return "altDom";
     }
     return "";
 }

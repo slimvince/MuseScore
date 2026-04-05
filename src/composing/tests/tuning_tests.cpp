@@ -28,6 +28,7 @@
 #include "composing/intonation/pythagorean.h"
 #include "composing/intonation/quarter_comma_meantone.h"
 #include "composing/intonation/werckmeister.h"
+#include "composing/intonation/tuning_system.h"
 #include "composing/intonation/tuning_utils.h"
 
 using namespace mu::composing::intonation;
@@ -363,6 +364,66 @@ TEST(Tuning_CrossSystem, WellTemperamentsIgnoreQuality)
     const double mt_maj = mt.tuningOffset(kNoKey, ChordQuality::Major, 0, 6);
     const double mt_dim = mt.tuningOffset(kNoKey, ChordQuality::Diminished, 0, 6);
     EXPECT_NE(mt_maj, mt_dim);          // meantone: different (−20.5 vs +20.5)
+}
+
+// ── Tuning anchor keyword matching ───────────────────────────────────────────
+
+TEST(Tuning_Anchor, ExactMatch)
+{
+    EXPECT_TRUE(isTuningAnchorText("anchor-pitch"));
+}
+
+TEST(Tuning_Anchor, CaseInsensitive_AllCaps)
+{
+    EXPECT_TRUE(isTuningAnchorText("ANCHOR-PITCH"));
+}
+
+TEST(Tuning_Anchor, CaseInsensitive_MixedCase)
+{
+    EXPECT_TRUE(isTuningAnchorText("Anchor-Pitch"));
+}
+
+TEST(Tuning_Anchor, LeadingTrailingWhitespace)
+{
+    EXPECT_TRUE(isTuningAnchorText("  anchor-pitch  "));
+}
+
+TEST(Tuning_Anchor, TabsAndNewlines)
+{
+    EXPECT_TRUE(isTuningAnchorText("\t anchor-pitch\n"));
+}
+
+TEST(Tuning_Anchor, EmptyString_ReturnsFalse)
+{
+    EXPECT_FALSE(isTuningAnchorText(""));
+}
+
+TEST(Tuning_Anchor, WhitespaceOnly_ReturnsFalse)
+{
+    EXPECT_FALSE(isTuningAnchorText("   "));
+}
+
+TEST(Tuning_Anchor, WrongKeyword_ReturnsFalse)
+{
+    EXPECT_FALSE(isTuningAnchorText("anchor"));
+    EXPECT_FALSE(isTuningAnchorText("anchor pitch"));
+    EXPECT_FALSE(isTuningAnchorText("anchor-pitchX"));
+    EXPECT_FALSE(isTuningAnchorText("Xanchor-pitch"));
+}
+
+TEST(Tuning_Anchor, RetuningSusceptibility_AnchorIsAbsolutelyProtected)
+{
+    // Verify the enum value exists and is distinct from Free.
+    EXPECT_NE(RetuningSusceptibility::AbsolutelyProtected,
+              RetuningSusceptibility::Free);
+}
+
+TEST(Tuning_Anchor, RetuningSusceptibility_AdjustableIsDistinct)
+{
+    EXPECT_NE(RetuningSusceptibility::Adjustable,
+              RetuningSusceptibility::Free);
+    EXPECT_NE(RetuningSusceptibility::Adjustable,
+              RetuningSusceptibility::AbsolutelyProtected);
 }
 
 } // namespace

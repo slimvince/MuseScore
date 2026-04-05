@@ -23,9 +23,28 @@
 #ifndef MU_COMPOSING_ANALYSIS_ANALYSISUTILS_H
 #define MU_COMPOSING_ANALYSIS_ANALYSISUTILS_H
 
+#include <map>
 #include <string>
 
 namespace mu::composing::analysis {
+
+/// Describes the valid range for a single numeric scoring parameter.
+///
+/// Used by ChordAnalyzerPreferences::bounds() and KeyModeAnalyzerPreferences::bounds()
+/// to expose all tunable parameters to automated optimizers or UI sliders.
+///
+/// isManual: when true, the parameter should be held fixed during automated
+/// optimization (it is wired to a user-visible preference or has a narrow
+/// hand-tuned sweet-spot).  When false, it is fair game for gradient-based
+/// or grid search optimizers.
+struct ParameterBound {
+    double min;
+    double max;
+    bool   isManual = false;
+};
+
+/// Convenience alias for the map returned by bounds().
+using ParameterBoundsMap = std::map<std::string, ParameterBound>;
 
 /// Returns true when \p value ends with the string literal \p suffix.
 inline bool endsWith(const std::string& value, const char* suffix)

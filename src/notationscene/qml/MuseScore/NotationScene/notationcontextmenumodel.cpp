@@ -20,11 +20,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Intentional unidirectional dependency: notationscene → composing/analysis.
-// The context menu is the primary UI surface for harmonic analysis results;
-// it calls analyzeNoteHarmonicContext() directly rather than routing through
-// an additional interface layer, because the analysis result is consumed and
-// discarded here — there is no shared state to mock or inject.
+// The context menu calls mu::notation::analyzeNoteHarmonicContext() from the
+// notation bridge rather than calling the composing module directly.  This
+// keeps the dependency direction correct: notationscene → notation → composing.
 
 #include "notationcontextmenumodel.h"
 #include "types/translatablestring.h"
@@ -32,10 +30,12 @@
 #include "widgets/editstyleutils.h"
 #include "engraving/dom/gradualtempochange.h"
 #include "engraving/dom/fret.h"
+#include "engraving/dom/chord.h"
 #include "engraving/dom/note.h"
 
-#include "composing/analysis/chordanalyzer.h"
-#include "composing/intonation/tuning_system.h"
+#include "notation/internal/notationcomposingbridge.h"  // analyzeNoteHarmonicContext (mu::notation)
+#include "composing/analysis/chord/chordanalyzer.h"           // ChordSymbolFormatter, ChordAnalysisResult
+#include "composing/intonation/tuning_system.h"         // TuningRegistry, TuningSystem
 
 #include <set>
 
@@ -51,27 +51,23 @@ muse::uicomponents::MenuItem* NotationContextMenuModel::makeEditStyle(const mu::
     return nullptr;
 }
 
-MenuItemList NotationContextMenuModel::makeNoteItems()
+void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, const mu::engraving::Note* note)
 {
-    MenuItemList items = makeElementItems();
-
-    if (!m_composingConfig()->analyzeForChordSymbols() && !m_composingConfig()->analyzeForChordFunction()) {
-        return items;
+    if (!note) {
+        return;
     }
 
-    bool wantChordSymbols    = m_composingConfig()->analyzeForChordSymbols();
-    bool wantRomanNumerals   = m_composingConfig()->analyzeForChordFunction();
+    bool wantChordSymbols     = m_composingConfig()->analyzeForChordSymbols();
+    bool wantRomanNumerals    = m_composingConfig()->analyzeForChordFunction();
     bool wantNashvilleNumbers = m_composingConfig()->analyzeForChordFunction();
 
-    const EngravingItem* element = currentElement();
-    const mu::engraving::Note* note = engraving::toNote(element);
-    if (!note) {
-        return items;
+    if (!wantChordSymbols && !wantRomanNumerals && !wantNashvilleNumbers) {
+        return;
     }
 
     int keyFifths = 0;
-    mu::composing::analysis::KeyMode keyMode = mu::composing::analysis::KeyMode::Ionian;
-    auto analysisResults = mu::composing::analysis::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
+    mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
+    auto analysisResults = mu::notation::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
@@ -87,12 +83,12 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
     int chordCount = 0, romanCount = 0, nashvilleCount = 0;
 
     for (const auto& res : analysisResults) {
-        std::string symbol   = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
-        std::string numeral  = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
+        std::string symbol    = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
+        std::string numeral   = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
         std::string nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(res, keyFifths);
 
         char buf[32];
-        std::snprintf(buf, sizeof(buf), " (%.2f)", res.score);
+        std::snprintf(buf, sizeof(buf), " (%.2f)", res.identity.score);
 
         if (wantChordSymbols && chordCount < maxAlternatives && !symbol.empty()
             && seenChordSymbols.insert(symbol).second) {
@@ -125,7 +121,7 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
             item->setState(state);
             item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(numeral)));
             romanMenuItems << item;
-            tuneAsEntries.push_back({ label, res.rootPc, static_cast<int>(res.quality) });
+            tuneAsEntries.push_back({ label, res.identity.rootPc, static_cast<int>(res.identity.quality) });
             ++romanCount;
         }
 
@@ -161,7 +157,7 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
     }
 
     // "Tune as [system name]" nested submenu — one leaf per unique Roman numeral result.
-    if (wantRomanNumerals && !tuneAsEntries.empty()) { // wantRomanNumerals == analyzeForChordFunction
+    if (wantRomanNumerals && !tuneAsEntries.empty()) {
         const std::string tuningKey = m_composingConfig()->tuningSystemKey();
         const composing::intonation::TuningSystem* sys
             = composing::intonation::TuningRegistry::byKey(tuningKey);
@@ -188,7 +184,29 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
         }
         items << makeMenu(TranslatableString::untranslatable(submenuTitle), tuneAsItems);
     }
+}
 
+MenuItemList NotationContextMenuModel::makeNoteItems()
+{
+    MenuItemList items = makeElementItems();
+
+    if (!m_composingConfig()->analyzeForChordSymbols() && !m_composingConfig()->analyzeForChordFunction()) {
+        return items;
+    }
+
+    const EngravingItem* element = currentElement();
+    const mu::engraving::Note* note = nullptr;
+
+    if (element && element->isNote()) {
+        note = engraving::toNote(element);
+    } else if (element && element->isChord()) {
+        const auto* chord = engraving::toChord(element);
+        if (chord && !chord->notes().empty()) {
+            note = chord->notes().front();
+        }
+    }
+
+    appendNoteAnalysisItems(items, note);
     return items;
 }
 
@@ -232,6 +250,7 @@ MenuItemList NotationContextMenuModel::makeItemsByElementType(ElementType elemen
     case ElementType::TEXT:
         return makeTextItems();
     case ElementType::NOTE:
+    case ElementType::CHORD:
         return makeNoteItems();
     default:
         break;
@@ -288,6 +307,15 @@ MenuItemList NotationContextMenuModel::makeMeasureItems()
     items << makeMenuItem("make-into-system", TranslatableString("notation", "Create system from selection"));
     items << makeSeparator();
     items << makeMenuItem("measure-properties");
+
+    // Append chord analysis items for the first selected note, if any.
+    auto sel = selection();
+    if (sel) {
+        auto selNotes = sel->notes();
+        if (!selNotes.empty()) {
+            appendNoteAnalysisItems(items, selNotes.front());
+        }
+    }
 
     return items;
 }

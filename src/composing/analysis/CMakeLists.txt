@@ -21,10 +21,15 @@
 muse_create_module(composing_analysis NO_QT)
 
 target_sources(composing_analysis PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}/analysisutils.h
-    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer.h
-    ${CMAKE_CURRENT_LIST_DIR}/harmonicrhythm.h
-    ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer.h
+    # chord/ — chord analysis, formatting, voicing
+    ${CMAKE_CURRENT_LIST_DIR}/chord/analysisutils.h
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.h
+
+    # key/ — key and mode analysis
+    ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h
+
+    # region/ — harmonic region types
+    ${CMAKE_CURRENT_LIST_DIR}/region/harmonicrhythm.h
 )

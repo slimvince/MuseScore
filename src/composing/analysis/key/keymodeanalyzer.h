@@ -24,47 +24,107 @@
 #include <optional>
 #include <vector>
 
+#include "../chord/analysisutils.h"
+
 namespace mu::composing::analysis {
 
-/// The mode of a key.  All seven diatonic modes are evaluated.
+/// The mode of a key.  All 21 modes (7 diatonic + 7 melodic minor + 7 harmonic minor)
+/// are evaluated.
 ///
-/// Replacing the old `bool isMajor` with an explicit enum makes modal
-/// extensions non-breaking at the call site.
-enum class KeyMode {
-    Ionian,       ///< Major
-    Dorian,
-    Phrygian,
-    Lydian,
-    Mixolydian,
-    Aeolian,      ///< Natural minor
-    Locrian,
+/// Enum ordinal == index into the MODES interval table in keymodeanalyzer.cpp.
+/// Diatonic modes (0–6) come first so existing code casting to/from size_t is unaffected.
+enum class KeySigMode {
+    // ── Diatonic modes ────────────────────────────────────────────────────
+    Ionian,       ///< Major (0 2 4 5 7 9 11)
+    Dorian,       ///<       (0 2 3 5 7 9 10)
+    Phrygian,     ///<       (0 1 3 5 7 8 10)
+    Lydian,       ///<       (0 2 4 6 7 9 11)
+    Mixolydian,   ///<       (0 2 4 5 7 9 10)
+    Aeolian,      ///< Natural minor (0 2 3 5 7 8 10)
+    Locrian,      ///<       (0 1 3 5 6 8 10)
+
+    // ── Melodic minor family ──────────────────────────────────────────────
+    MelodicMinor,     ///< Ascending melodic minor / jazz minor (0 2 3 5 7 9 11)
+    DorianB2,         ///< Phrygian #6 (0 1 3 5 7 9 10)
+    LydianAugmented,  ///< Lydian #5 (0 2 4 6 8 9 11)
+    LydianDominant,   ///< Lydian b7 (0 2 4 6 7 9 10)
+    MixolydianB6,     ///< Mixolydian b6 (0 2 4 5 7 8 10)
+    AeolianB5,        ///< Locrian #2 (0 2 3 5 6 8 10)
+    Altered,          ///< Altered / Super Locrian (0 1 3 4 6 8 10)
+
+    // ── Harmonic minor family ─────────────────────────────────────────────
+    HarmonicMinor,     ///< Natural minor #7 (0 2 3 5 7 8 11)
+    LocrianSharp6,     ///< Locrian #6 (0 1 3 5 6 9 10)
+    IonianSharp5,      ///< Major #5 (0 2 4 5 8 9 11)
+    DorianSharp4,      ///< Dorian #4 (0 2 3 6 7 9 10)
+    PhrygianDominant,  ///< Phrygian #3 / harmonic dominant (0 1 4 5 7 8 10)
+    LydianSharp2,      ///< Lydian #2 (0 3 4 6 7 9 11)
+    AlteredDomBB7,     ///< Harmonic minor mode 7 (0 1 3 4 6 8 9)
 };
 
-/// Number of entries in the KeyMode enum.
-inline constexpr size_t KEY_MODE_COUNT = 7;
+/// Total number of KeySigMode values.
+inline constexpr size_t KEY_MODE_COUNT = 21;
 
-/// Index of a KeyMode value in the mode table (same as its enum ordinal).
-inline constexpr size_t keyModeIndex(KeyMode m) { return static_cast<size_t>(m); }
+/// Index of a KeySigMode value in the mode table (same as its enum ordinal).
+inline constexpr size_t keyModeIndex(KeySigMode m) { return static_cast<size_t>(m); }
 
-/// Convert a mode table index back to a KeyMode enum value.
-inline constexpr KeyMode keyModeFromIndex(size_t idx) { return static_cast<KeyMode>(idx); }
+/// Convert a mode table index back to a KeySigMode enum value.
+inline constexpr KeySigMode keyModeFromIndex(size_t idx) { return static_cast<KeySigMode>(idx); }
 
-/// Returns true for modes with a major third (Ionian, Lydian, Mixolydian).
-inline constexpr bool keyModeIsMajor(KeyMode m) {
-    return m == KeyMode::Ionian || m == KeyMode::Lydian || m == KeyMode::Mixolydian;
+/// Returns true for modes with a major third (interval 4 from tonic).
+///
+/// Diatonic: Ionian, Lydian, Mixolydian.
+/// Melodic minor: LydianAugmented, LydianDominant, MixolydianB6.
+/// Harmonic minor: IonianSharp5, PhrygianDominant, LydianSharp2.
+inline constexpr bool keyModeIsMajor(KeySigMode m) {
+    switch (m) {
+    case KeySigMode::Ionian:
+    case KeySigMode::Lydian:
+    case KeySigMode::Mixolydian:
+    case KeySigMode::LydianAugmented:
+    case KeySigMode::LydianDominant:
+    case KeySigMode::MixolydianB6:
+    case KeySigMode::IonianSharp5:
+    case KeySigMode::PhrygianDominant:
+    case KeySigMode::LydianSharp2:
+        return true;
+    default:
+        return false;
+    }
 }
 
-/// Semitone offset from the Ionian tonic to this mode's tonic within the same
-/// key signature.  E.g. Dorian = 2 (D Dorian shares the key signature of C Ionian).
-inline constexpr int keyModeTonicOffset(KeyMode m) {
-    constexpr int offsets[] = { 0, 2, 4, 5, 7, 9, 11 };
+/// Semitone offset of this mode's tonic from the Ionian tonic of the associated
+/// key signature.  For diatonic modes: the standard church-mode offsets.
+/// For non-diatonic modes: the offset of the mode's tonic from the Ionian tonic
+/// of the parent key (e.g. MelodicMinor shares Dorian's offset = 2).
+inline constexpr int keyModeTonicOffset(KeySigMode m) {
+    constexpr int offsets[] = {
+        // Diatonic (0–6)
+        0, 2, 4, 5, 7, 9, 11,
+        // Melodic minor family (7–13) — parent key = Bb major for C root
+        2,   ///< MelodicMinor   ~ Dorian
+        4,   ///< DorianB2       ~ Phrygian
+        5,   ///< LydianAugmented ~ Lydian
+        7,   ///< LydianDominant  ~ Mixolydian
+        9,   ///< MixolydianB6   ~ Aeolian
+        11,  ///< AeolianB5      ~ Locrian
+        1,   ///< Altered        ~ mode-7 of melodic minor (1 above Ionian)
+        // Harmonic minor family (14–20) — parent key = C major for A root
+        9,   ///< HarmonicMinor  ~ Aeolian
+        11,  ///< LocrianSharp6  ~ Locrian
+        0,   ///< IonianSharp5   ~ Ionian
+        2,   ///< DorianSharp4   ~ Dorian
+        4,   ///< PhrygianDominant ~ Phrygian
+        5,   ///< LydianSharp2   ~ Lydian
+        8,   ///< AlteredDomBB7  ~ aug5 above Ionian (unique — no diatonic equivalent)
+    };
     return offsets[static_cast<size_t>(m)];
 }
 
 /// Result of a key/mode analysis: the most likely key and mode with a confidence score.
 struct KeyModeAnalysisResult {
     int keySignatureFifths = 0;          ///< Resolved key signature (-7..+7, Ionian convention)
-    KeyMode mode = KeyMode::Ionian;      ///< Detected mode
+    KeySigMode mode = KeySigMode::Ionian;      ///< Detected mode
     int tonicPc = 0;                     ///< Pitch class of the mode's tonic (0=C, 2=D, etc.)
     double score = 0.0;                  ///< Raw confidence score; higher is better
     double normalizedConfidence = 0.0;   ///< 0.0–1.0 confidence (see §5.7)
@@ -138,24 +198,41 @@ struct KeyModeAnalyzerPreferences {
 
     double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
 
-    // ── Mode prior (frequency bias) ─────────────────────────────────────────
+    // ── Mode priors (frequency bias) ────────────────────────────────────────
     //
-    // In real-world music, Ionian and Aeolian are vastly more common than
-    // the other diatonic modes.  A small additive prior prevents rare modes
-    // (Lydian, Locrian, etc.) from winning when the pitch evidence is
-    // ambiguous.  The ordering is theory-grounded (Ionian/Aeolian >> Dorian/
-    // Mixolydian > Phrygian/Lydian > Locrian); the absolute values are
-    // empirical.
+    // One independent prior per mode.  Additive bias applied to every (tonicPc,
+    // modeSlot) candidate.  A small prior prevents rare modes winning when pitch
+    // evidence is ambiguous.  Defaults reflect the "Standard (classical)" preset.
+    // The bridge overrides these from user preferences (21 independent sliders /
+    // named presets) when available.  The former +0.2 Ionian internal offset is
+    // now absorbed into the explicit Ionian prior (1.2) vs Aeolian prior (1.0).
 
-    // Default values match the "Standard" preset (T1=+1.0, T2=-0.5, T3=-1.5, T4=-3.0).
-    // The bridge overrides these from user preferences when available.
-    double modePriorIonian     =  1.20;  ///< Tier 1 (+1.0) + 0.2 internal offset [empirical]
-    double modePriorAeolian    =  1.00;  ///< Tier 1 (+1.0) [empirical]
-    double modePriorDorian     = -0.50;  ///< Tier 2 (-0.5) [empirical]
-    double modePriorMixolydian = -0.50;  ///< Tier 2 (-0.5) [empirical]
-    double modePriorLydian     = -1.50;  ///< Tier 3 (-1.5) [empirical]
-    double modePriorPhrygian   = -1.50;  ///< Tier 3 (-1.5) [empirical]
-    double modePriorLocrian    = -3.00;  ///< Tier 4 (-3.0) [empirical]
+    // Diatonic modes
+    double modePriorIonian          =  1.20;  ///< [empirical — was tier1+0.2]
+    double modePriorDorian          = -0.50;  ///< [empirical]
+    double modePriorPhrygian        = -1.50;  ///< [empirical]
+    double modePriorLydian          = -1.50;  ///< [empirical]
+    double modePriorMixolydian      = -0.50;  ///< [empirical]
+    double modePriorAeolian         =  1.00;  ///< [empirical — was tier1]
+    double modePriorLocrian         = -3.00;  ///< [empirical]
+
+    // Melodic minor family
+    double modePriorMelodicMinor    = -0.50;  ///< [empirical]
+    double modePriorDorianB2        = -1.50;  ///< [empirical]
+    double modePriorLydianAugmented  = -2.00;  ///< [empirical]
+    double modePriorLydianDominant   = -1.00;  ///< [empirical]
+    double modePriorMixolydianB6    = -1.50;  ///< [empirical]
+    double modePriorAeolianB5       = -2.50;  ///< [empirical]
+    double modePriorAltered         = -3.50;  ///< [empirical]
+
+    // Harmonic minor family
+    double modePriorHarmonicMinor   = -0.30;  ///< [empirical]
+    double modePriorLocrianSharp6   = -2.50;  ///< [empirical]
+    double modePriorIonianSharp5    = -2.00;  ///< [empirical]
+    double modePriorDorianSharp4    = -2.00;  ///< [empirical]
+    double modePriorPhrygianDominant = -0.80;  ///< [empirical]
+    double modePriorLydianSharp2    = -2.50;  ///< [empirical]
+    double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]
 
     // ── Tonal-centre comparison (relative pair disambiguation) ───────────────
     //
@@ -270,6 +347,97 @@ struct KeyModeAnalyzerPreferences {
     double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
     double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
     double beatWeightSubbeat             = 0.2;  ///< [empirical]
+
+    /// Returns the valid range for every numeric scoring parameter.
+    ///
+    /// Parameters marked isManual=true are wired to user-visible preferences or
+    /// have narrow hand-tuned sweet-spots; automated optimizers should leave them
+    /// fixed.  Parameters marked isManual=false are safe for gradient-based or
+    /// grid-search tuning.
+    ///
+    /// Integer parameters (dynamicLookaheadStepBeats, dynamicLookaheadMaxBeats)
+    /// are omitted; they require integer-aware optimizers and are unlikely to
+    /// benefit from fine-grained tuning.
+    ParameterBoundsMap bounds() const
+    {
+        return {
+            // Evidence weight caps
+            { "noteWeightCap",                     { 1.0,  6.0 } },
+            { "bassMultiplier",                    { 1.0,  4.0 } },
+            // Scale membership scoring
+            { "scaleScoreInBoth",                  { 0.5,  2.0 } },
+            { "scaleScoreInCandidateOnly",         { 0.0,  1.0 } },
+            { "scaleScoreInKeySigOnly",            {-1.0,  0.0 } },
+            { "scaleScoreInNeither",               {-0.5,  0.0 } },
+            // Tonal centre scoring
+            { "tonicWeight",                       { 0.5,  3.0 } },
+            { "thirdWeight",                       { 0.0,  2.0 } },
+            { "fifthWeight",                       { 0.0,  2.0 } },
+            { "leadingToneWeight",                 { 0.0,  1.5 } },
+            { "completeTriadBonus",                { 0.5,  5.0 } },
+            { "missingTonicPenalty",               {-5.0, -0.5 } },
+            { "extraScaleFactor",                  { 0.0,  0.5 } },
+            { "extraScaleCap",                     { 1.0, 10.0 } },
+            // Characteristic pitch scoring
+            { "characteristicPitchBoost",          { 0.5,  4.0 } },
+            { "characteristicPitchPenalty",        {-2.0,  0.0 } },
+            // Leading tone
+            { "trueLeadingToneBoost",              { 0.0,  3.0 } },
+            // Mode priors — isManual because each slider maps to a user preference
+            { "modePriorIonian",        { -5.0, 5.0, true } },
+            { "modePriorDorian",        { -5.0, 5.0, true } },
+            { "modePriorPhrygian",      { -5.0, 5.0, true } },
+            { "modePriorLydian",        { -5.0, 5.0, true } },
+            { "modePriorMixolydian",    { -5.0, 5.0, true } },
+            { "modePriorAeolian",       { -5.0, 5.0, true } },
+            { "modePriorLocrian",       { -5.0, 5.0, true } },
+            { "modePriorMelodicMinor",  { -5.0, 5.0, true } },
+            { "modePriorDorianB2",      { -5.0, 5.0, true } },
+            { "modePriorLydianAugmented", { -5.0, 5.0, true } },
+            { "modePriorLydianDominant",  { -5.0, 5.0, true } },
+            { "modePriorMixolydianB6",  { -5.0, 5.0, true } },
+            { "modePriorAeolianB5",     { -5.0, 5.0, true } },
+            { "modePriorAltered",       { -5.0, 5.0, true } },
+            { "modePriorHarmonicMinor", { -5.0, 5.0, true } },
+            { "modePriorLocrianSharp6", { -5.0, 5.0, true } },
+            { "modePriorIonianSharp5",  { -5.0, 5.0, true } },
+            { "modePriorDorianSharp4",  { -5.0, 5.0, true } },
+            { "modePriorPhrygianDominant", { -5.0, 5.0, true } },
+            { "modePriorLydianSharp2",  { -5.0, 5.0, true } },
+            { "modePriorAlteredDomBB7", { -5.0, 5.0, true } },
+            // Tonal centre comparison
+            { "tonalCenterTonicWeight",            { 0.5,  4.0 } },
+            { "tonalCenterThirdWeight",            { 0.0,  2.0 } },
+            { "tonalCenterFifthWeight",            { 0.0,  2.0 } },
+            { "tonalCenterLeadingTone",            { 0.0,  1.5 } },
+            { "tonalCenterTriadBonus",             { 0.5,  5.0 } },
+            { "tonalCenterDeltaThreshold",         { 0.0,  1.0 } },
+            // Key-signature proximity
+            { "keySignatureDistancePenalty",       { 0.0,  2.0 } },
+            // Relative pair disambiguation
+            { "disambiguationTriadBonus",          { 1.0,  8.0 } },
+            { "disambiguationTriadCost",           { 0.0,  4.0 } },
+            { "disambiguationTonicBonus",          { 0.0,  3.0 } },
+            // Declared-mode penalty — isManual: user may override
+            { "declaredModePenalty",               { 3.0, 15.0, true } },
+            // Confidence sigmoid
+            { "confidenceSigmoidMidpoint",         { 0.5,  5.0 } },
+            { "confidenceSigmoidSteepness",        { 0.5,  5.0 } },
+            // Dynamic lookahead threshold
+            { "dynamicLookaheadConfidenceThreshold",{ 0.3, 0.9 } },
+            // Hysteresis margins — isManual: tightly coupled to user experience
+            { "hysteresisMargin",                  { 0.5,  5.0, true } },
+            { "relativeKeyHysteresisMargin",       { 0.5,  8.0, true } },
+            // Beat weights
+            { "beatWeightDownbeat",                { 0.5,  2.0 } },
+            { "beatWeightCompoundStressed",        { 0.3,  1.5 } },
+            { "beatWeightSimpleStressed",          { 0.3,  1.5 } },
+            { "beatWeightCompoundUnstressed",      { 0.1,  1.0 } },
+            { "beatWeightSimpleUnstressed",        { 0.1,  1.0 } },
+            { "beatWeightCompoundSubbeat",         { 0.0,  0.5 } },
+            { "beatWeightSubbeat",                 { 0.0,  0.5 } },
+        };
+    }
 };
 
 /// Global default preferences.
@@ -300,7 +468,7 @@ public:
         const std::vector<PitchContext>& pitches,
         int keySignatureFifths,
         const KeyModeAnalyzerPreferences& prefs = kDefaultKeyModeAnalyzerPreferences,
-        std::optional<KeyMode> declaredMode = std::nullopt);
+        std::optional<KeySigMode> declaredMode = std::nullopt);
 };
 
 /// Maps a modal tonic pitch class to the equivalent Ionian tonic that shares
@@ -310,13 +478,13 @@ public:
 int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
 
 /// Human-readable tonic name for a (key-signature, mode) pair.
-/// E.g. keyModeTonicName(0, KeyMode::Ionian) → "C",
-///      keyModeTonicName(0, KeyMode::Dorian) → "D",
-///      keyModeTonicName(-3, KeyMode::Aeolian) → "C".
-const char* keyModeTonicName(int fifths, KeyMode mode);
+/// E.g. keyModeTonicName(0, KeySigMode::Ionian) → "C",
+///      keyModeTonicName(0, KeySigMode::Dorian) → "D",
+///      keyModeTonicName(-3, KeySigMode::Aeolian) → "C".
+const char* keyModeTonicName(int fifths, KeySigMode mode);
 
 /// Human-readable mode suffix for display.
-/// E.g. KeyMode::Ionian → "major", KeyMode::Dorian → "Dorian".
-const char* keyModeSuffix(KeyMode mode);
+/// E.g. KeySigMode::Ionian → "major", KeySigMode::Dorian → "Dorian".
+const char* keyModeSuffix(KeySigMode mode);
 
 } // namespace mu::composing::analysis

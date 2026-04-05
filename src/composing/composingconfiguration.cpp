@@ -21,6 +21,8 @@
  */
 #include "composingconfiguration.h"
 
+#include <cmath>
+
 #include "settings.h"
 
 using namespace mu::composing;
@@ -45,10 +47,31 @@ static const Settings::Key CHORD_STAFF_FUNCTION_NOTATION(module_name,    "compos
 static const Settings::Key CHORD_STAFF_WRITE_KEY_ANNOTATIONS(module_name, "composing/chordStaffWriteKeyAnnotations");
 static const Settings::Key CHORD_STAFF_HIGHLIGHT_NON_DIATONIC(module_name, "composing/chordStaffHighlightNonDiatonic");
 static const Settings::Key CHORD_STAFF_WRITE_CADENCE_MARKERS(module_name,  "composing/chordStaffWriteCadenceMarkers");
-static const Settings::Key MODE_TIER_WEIGHT_1(module_name, "composing/modeTierWeight1");
-static const Settings::Key MODE_TIER_WEIGHT_2(module_name, "composing/modeTierWeight2");
-static const Settings::Key MODE_TIER_WEIGHT_3(module_name, "composing/modeTierWeight3");
-static const Settings::Key MODE_TIER_WEIGHT_4(module_name, "composing/modeTierWeight4");
+// ── Mode prior Settings::Keys ────────────────────────────────────────────────
+// Diatonic
+static const Settings::Key MODE_PRIOR_IONIAN(module_name,     "composing/modePriorIonian");
+static const Settings::Key MODE_PRIOR_DORIAN(module_name,     "composing/modePriorDorian");
+static const Settings::Key MODE_PRIOR_PHRYGIAN(module_name,   "composing/modePriorPhrygian");
+static const Settings::Key MODE_PRIOR_LYDIAN(module_name,     "composing/modePriorLydian");
+static const Settings::Key MODE_PRIOR_MIXOLYDIAN(module_name, "composing/modePriorMixolydian");
+static const Settings::Key MODE_PRIOR_AEOLIAN(module_name,    "composing/modePriorAeolian");
+static const Settings::Key MODE_PRIOR_LOCRIAN(module_name,    "composing/modePriorLocrian");
+// Melodic minor family
+static const Settings::Key MODE_PRIOR_MELODIC_MINOR(module_name,  "composing/modePriorMelodicMinor");
+static const Settings::Key MODE_PRIOR_DORIAN_B2(module_name,      "composing/modePriorDorianB2");
+static const Settings::Key MODE_PRIOR_LYDIAN_AUGMENTED(module_name, "composing/modePriorLydianAugmented");
+static const Settings::Key MODE_PRIOR_LYDIAN_DOMINANT(module_name,  "composing/modePriorLydianDominant");
+static const Settings::Key MODE_PRIOR_MIXOLYDIAN_B6(module_name,  "composing/modePriorMixolydianB6");
+static const Settings::Key MODE_PRIOR_AEOLIAN_B5(module_name,     "composing/modePriorAeolianB5");
+static const Settings::Key MODE_PRIOR_ALTERED(module_name,        "composing/modePriorAltered");
+// Harmonic minor family
+static const Settings::Key MODE_PRIOR_HARMONIC_MINOR(module_name, "composing/modePriorHarmonicMinor");
+static const Settings::Key MODE_PRIOR_LOCRIAN_SHARP6(module_name, "composing/modePriorLocrianSharp6");
+static const Settings::Key MODE_PRIOR_IONIAN_SHARP5(module_name,  "composing/modePriorIonianSharp5");
+static const Settings::Key MODE_PRIOR_DORIAN_SHARP4(module_name,  "composing/modePriorDorianSharp4");
+static const Settings::Key MODE_PRIOR_PHRYGIAN_DOMINANT(module_name, "composing/modePriorPhrygianDominant");
+static const Settings::Key MODE_PRIOR_LYDIAN_SHARP2(module_name,  "composing/modePriorLydianSharp2");
+static const Settings::Key MODE_PRIOR_ALTERED_DOM_BB7(module_name,"composing/modePriorAlteredDomBB7");
 
 void ComposingConfiguration::init()
 {
@@ -137,24 +160,94 @@ void ComposingConfiguration::init()
         m_chordStaffWriteCadenceMarkersChanged.notify();
     });
 
-    settings()->setDefaultValue(MODE_TIER_WEIGHT_1, Val(1.0));
-    settings()->valueChanged(MODE_TIER_WEIGHT_1).onReceive(nullptr, [this](const Val&) {
-        m_modeTierWeight1Changed.notify();
+    // ── Mode priors — diatonic ───────────────────────────────────────────────
+    settings()->setDefaultValue(MODE_PRIOR_IONIAN, Val(1.20));
+    settings()->valueChanged(MODE_PRIOR_IONIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorIonianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN, Val(-0.50));
+    settings()->valueChanged(MODE_PRIOR_DORIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorDorianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN, Val(-1.50));
+    settings()->valueChanged(MODE_PRIOR_PHRYGIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorPhrygianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN, Val(0.00));
+    settings()->valueChanged(MODE_PRIOR_LYDIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLydianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN, Val(-0.20));
+    settings()->valueChanged(MODE_PRIOR_MIXOLYDIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorMixolydianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN, Val(1.00));
+    settings()->valueChanged(MODE_PRIOR_AEOLIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorAeolianChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN, Val(-3.50));
+    settings()->valueChanged(MODE_PRIOR_LOCRIAN).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLocrianChanged.notify();
     });
 
-    settings()->setDefaultValue(MODE_TIER_WEIGHT_2, Val(-0.5));
-    settings()->valueChanged(MODE_TIER_WEIGHT_2).onReceive(nullptr, [this](const Val&) {
-        m_modeTierWeight2Changed.notify();
+    // ── Mode priors — melodic minor family ──────────────────────────────────
+    settings()->setDefaultValue(MODE_PRIOR_MELODIC_MINOR, Val(-0.50));
+    settings()->valueChanged(MODE_PRIOR_MELODIC_MINOR).onReceive(nullptr, [this](const Val&) {
+        m_modePriorMelodicMinorChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN_B2, Val(-1.50));
+    settings()->valueChanged(MODE_PRIOR_DORIAN_B2).onReceive(nullptr, [this](const Val&) {
+        m_modePriorDorianB2Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_AUGMENTED, Val(-1.00));
+    settings()->valueChanged(MODE_PRIOR_LYDIAN_AUGMENTED).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLydianAugmentedChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_DOMINANT, Val(-0.30));
+    settings()->valueChanged(MODE_PRIOR_LYDIAN_DOMINANT).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLydianDominantChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN_B6, Val(-1.00));
+    settings()->valueChanged(MODE_PRIOR_MIXOLYDIAN_B6).onReceive(nullptr, [this](const Val&) {
+        m_modePriorMixolydianB6Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN_B5, Val(-2.00));
+    settings()->valueChanged(MODE_PRIOR_AEOLIAN_B5).onReceive(nullptr, [this](const Val&) {
+        m_modePriorAeolianB5Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_ALTERED, Val(-3.50));
+    settings()->valueChanged(MODE_PRIOR_ALTERED).onReceive(nullptr, [this](const Val&) {
+        m_modePriorAlteredChanged.notify();
     });
 
-    settings()->setDefaultValue(MODE_TIER_WEIGHT_3, Val(-1.5));
-    settings()->valueChanged(MODE_TIER_WEIGHT_3).onReceive(nullptr, [this](const Val&) {
-        m_modeTierWeight3Changed.notify();
+    // ── Mode priors — harmonic minor family ─────────────────────────────────
+    settings()->setDefaultValue(MODE_PRIOR_HARMONIC_MINOR, Val(-0.30));
+    settings()->valueChanged(MODE_PRIOR_HARMONIC_MINOR).onReceive(nullptr, [this](const Val&) {
+        m_modePriorHarmonicMinorChanged.notify();
     });
-
-    settings()->setDefaultValue(MODE_TIER_WEIGHT_4, Val(-3.0));
-    settings()->valueChanged(MODE_TIER_WEIGHT_4).onReceive(nullptr, [this](const Val&) {
-        m_modeTierWeight4Changed.notify();
+    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN_SHARP6, Val(-2.00));
+    settings()->valueChanged(MODE_PRIOR_LOCRIAN_SHARP6).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLocrianSharp6Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_IONIAN_SHARP5, Val(-1.50));
+    settings()->valueChanged(MODE_PRIOR_IONIAN_SHARP5).onReceive(nullptr, [this](const Val&) {
+        m_modePriorIonianSharp5Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN_SHARP4, Val(-1.50));
+    settings()->valueChanged(MODE_PRIOR_DORIAN_SHARP4).onReceive(nullptr, [this](const Val&) {
+        m_modePriorDorianSharp4Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN_DOMINANT, Val(-0.80));
+    settings()->valueChanged(MODE_PRIOR_PHRYGIAN_DOMINANT).onReceive(nullptr, [this](const Val&) {
+        m_modePriorPhrygianDominantChanged.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_SHARP2, Val(-2.00));
+    settings()->valueChanged(MODE_PRIOR_LYDIAN_SHARP2).onReceive(nullptr, [this](const Val&) {
+        m_modePriorLydianSharp2Changed.notify();
+    });
+    settings()->setDefaultValue(MODE_PRIOR_ALTERED_DOM_BB7, Val(-3.50));
+    settings()->valueChanged(MODE_PRIOR_ALTERED_DOM_BB7).onReceive(nullptr, [this](const Val&) {
+        m_modePriorAlteredDomBB7Changed.notify();
     });
 }
 
@@ -447,70 +540,286 @@ muse::async::Notification ComposingConfiguration::chordStaffWriteCadenceMarkersC
     return m_chordStaffWriteCadenceMarkersChanged;
 }
 
-// ── modeTierWeight1 ─────────────────────────────────────────────────────────
+// ── Mode priors — diatonic ───────────────────────────────────────────────────
 
-double ComposingConfiguration::modeTierWeight1() const
+double ComposingConfiguration::modePriorIonian() const { return settings()->value(MODE_PRIOR_IONIAN).toDouble(); }
+void ComposingConfiguration::setModePriorIonian(double v) { settings()->setSharedValue(MODE_PRIOR_IONIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorIonianChanged() const { return m_modePriorIonianChanged; }
+
+double ComposingConfiguration::modePriorDorian() const { return settings()->value(MODE_PRIOR_DORIAN).toDouble(); }
+void ComposingConfiguration::setModePriorDorian(double v) { settings()->setSharedValue(MODE_PRIOR_DORIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorDorianChanged() const { return m_modePriorDorianChanged; }
+
+double ComposingConfiguration::modePriorPhrygian() const { return settings()->value(MODE_PRIOR_PHRYGIAN).toDouble(); }
+void ComposingConfiguration::setModePriorPhrygian(double v) { settings()->setSharedValue(MODE_PRIOR_PHRYGIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorPhrygianChanged() const { return m_modePriorPhrygianChanged; }
+
+double ComposingConfiguration::modePriorLydian() const { return settings()->value(MODE_PRIOR_LYDIAN).toDouble(); }
+void ComposingConfiguration::setModePriorLydian(double v) { settings()->setSharedValue(MODE_PRIOR_LYDIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLydianChanged() const { return m_modePriorLydianChanged; }
+
+double ComposingConfiguration::modePriorMixolydian() const { return settings()->value(MODE_PRIOR_MIXOLYDIAN).toDouble(); }
+void ComposingConfiguration::setModePriorMixolydian(double v) { settings()->setSharedValue(MODE_PRIOR_MIXOLYDIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorMixolydianChanged() const { return m_modePriorMixolydianChanged; }
+
+double ComposingConfiguration::modePriorAeolian() const { return settings()->value(MODE_PRIOR_AEOLIAN).toDouble(); }
+void ComposingConfiguration::setModePriorAeolian(double v) { settings()->setSharedValue(MODE_PRIOR_AEOLIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorAeolianChanged() const { return m_modePriorAeolianChanged; }
+
+double ComposingConfiguration::modePriorLocrian() const { return settings()->value(MODE_PRIOR_LOCRIAN).toDouble(); }
+void ComposingConfiguration::setModePriorLocrian(double v) { settings()->setSharedValue(MODE_PRIOR_LOCRIAN, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLocrianChanged() const { return m_modePriorLocrianChanged; }
+
+// ── Mode priors — melodic minor family ──────────────────────────────────────
+
+double ComposingConfiguration::modePriorMelodicMinor() const { return settings()->value(MODE_PRIOR_MELODIC_MINOR).toDouble(); }
+void ComposingConfiguration::setModePriorMelodicMinor(double v) { settings()->setSharedValue(MODE_PRIOR_MELODIC_MINOR, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorMelodicMinorChanged() const { return m_modePriorMelodicMinorChanged; }
+
+double ComposingConfiguration::modePriorDorianB2() const { return settings()->value(MODE_PRIOR_DORIAN_B2).toDouble(); }
+void ComposingConfiguration::setModePriorDorianB2(double v) { settings()->setSharedValue(MODE_PRIOR_DORIAN_B2, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorDorianB2Changed() const { return m_modePriorDorianB2Changed; }
+
+double ComposingConfiguration::modePriorLydianAugmented() const { return settings()->value(MODE_PRIOR_LYDIAN_AUGMENTED).toDouble(); }
+void ComposingConfiguration::setModePriorLydianAugmented(double v) { settings()->setSharedValue(MODE_PRIOR_LYDIAN_AUGMENTED, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLydianAugmentedChanged() const { return m_modePriorLydianAugmentedChanged; }
+
+double ComposingConfiguration::modePriorLydianDominant() const { return settings()->value(MODE_PRIOR_LYDIAN_DOMINANT).toDouble(); }
+void ComposingConfiguration::setModePriorLydianDominant(double v) { settings()->setSharedValue(MODE_PRIOR_LYDIAN_DOMINANT, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLydianDominantChanged() const { return m_modePriorLydianDominantChanged; }
+
+double ComposingConfiguration::modePriorMixolydianB6() const { return settings()->value(MODE_PRIOR_MIXOLYDIAN_B6).toDouble(); }
+void ComposingConfiguration::setModePriorMixolydianB6(double v) { settings()->setSharedValue(MODE_PRIOR_MIXOLYDIAN_B6, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorMixolydianB6Changed() const { return m_modePriorMixolydianB6Changed; }
+
+double ComposingConfiguration::modePriorAeolianB5() const { return settings()->value(MODE_PRIOR_AEOLIAN_B5).toDouble(); }
+void ComposingConfiguration::setModePriorAeolianB5(double v) { settings()->setSharedValue(MODE_PRIOR_AEOLIAN_B5, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorAeolianB5Changed() const { return m_modePriorAeolianB5Changed; }
+
+double ComposingConfiguration::modePriorAltered() const { return settings()->value(MODE_PRIOR_ALTERED).toDouble(); }
+void ComposingConfiguration::setModePriorAltered(double v) { settings()->setSharedValue(MODE_PRIOR_ALTERED, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorAlteredChanged() const { return m_modePriorAlteredChanged; }
+
+// ── Mode priors — harmonic minor family ─────────────────────────────────────
+
+double ComposingConfiguration::modePriorHarmonicMinor() const { return settings()->value(MODE_PRIOR_HARMONIC_MINOR).toDouble(); }
+void ComposingConfiguration::setModePriorHarmonicMinor(double v) { settings()->setSharedValue(MODE_PRIOR_HARMONIC_MINOR, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorHarmonicMinorChanged() const { return m_modePriorHarmonicMinorChanged; }
+
+double ComposingConfiguration::modePriorLocrianSharp6() const { return settings()->value(MODE_PRIOR_LOCRIAN_SHARP6).toDouble(); }
+void ComposingConfiguration::setModePriorLocrianSharp6(double v) { settings()->setSharedValue(MODE_PRIOR_LOCRIAN_SHARP6, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLocrianSharp6Changed() const { return m_modePriorLocrianSharp6Changed; }
+
+double ComposingConfiguration::modePriorIonianSharp5() const { return settings()->value(MODE_PRIOR_IONIAN_SHARP5).toDouble(); }
+void ComposingConfiguration::setModePriorIonianSharp5(double v) { settings()->setSharedValue(MODE_PRIOR_IONIAN_SHARP5, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorIonianSharp5Changed() const { return m_modePriorIonianSharp5Changed; }
+
+double ComposingConfiguration::modePriorDorianSharp4() const { return settings()->value(MODE_PRIOR_DORIAN_SHARP4).toDouble(); }
+void ComposingConfiguration::setModePriorDorianSharp4(double v) { settings()->setSharedValue(MODE_PRIOR_DORIAN_SHARP4, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorDorianSharp4Changed() const { return m_modePriorDorianSharp4Changed; }
+
+double ComposingConfiguration::modePriorPhrygianDominant() const { return settings()->value(MODE_PRIOR_PHRYGIAN_DOMINANT).toDouble(); }
+void ComposingConfiguration::setModePriorPhrygianDominant(double v) { settings()->setSharedValue(MODE_PRIOR_PHRYGIAN_DOMINANT, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorPhrygianDominantChanged() const { return m_modePriorPhrygianDominantChanged; }
+
+double ComposingConfiguration::modePriorLydianSharp2() const { return settings()->value(MODE_PRIOR_LYDIAN_SHARP2).toDouble(); }
+void ComposingConfiguration::setModePriorLydianSharp2(double v) { settings()->setSharedValue(MODE_PRIOR_LYDIAN_SHARP2, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorLydianSharp2Changed() const { return m_modePriorLydianSharp2Changed; }
+
+double ComposingConfiguration::modePriorAlteredDomBB7() const { return settings()->value(MODE_PRIOR_ALTERED_DOM_BB7).toDouble(); }
+void ComposingConfiguration::setModePriorAlteredDomBB7(double v) { settings()->setSharedValue(MODE_PRIOR_ALTERED_DOM_BB7, Val(v)); }
+muse::async::Notification ComposingConfiguration::modePriorAlteredDomBB7Changed() const { return m_modePriorAlteredDomBB7Changed; }
+
+// ── Named mode prior presets ─────────────────────────────────────────────────
+
+std::vector<ModePriorPreset> mu::composing::modePriorPresets()
 {
-    return settings()->value(MODE_TIER_WEIGHT_1).toDouble();
+    // All values are additive log-odds biases.  Positive = more likely,
+    // negative = less likely.  Defaults reflect empirical tuning on the
+    // 371-chorale validation corpus.
+
+    ModePriorPreset standard;
+    standard.name             = "Standard";
+    standard.ionian           =  1.20;
+    standard.dorian           = -0.50;
+    standard.phrygian         = -1.50;
+    standard.lydian           = -1.50;
+    standard.mixolydian       = -0.50;
+    standard.aeolian          =  1.00;
+    standard.locrian          = -3.00;
+    standard.melodicMinor     = -0.50;
+    standard.dorianB2         = -1.50;
+    standard.lydianAugmented  = -2.00;
+    standard.lydianDominant   = -1.00;
+    standard.mixolydianB6     = -1.50;
+    standard.aeolianB5        = -2.50;
+    standard.altered          = -3.50;
+    standard.harmonicMinor    = -0.30;
+    standard.locrianSharp6    = -2.50;
+    standard.ionianSharp5     = -2.00;
+    standard.dorianSharp4     = -2.00;
+    standard.phrygianDominant = -0.80;
+    standard.lydianSharp2     = -2.50;
+    standard.alteredDomBB7    = -3.50;
+
+    ModePriorPreset jazz;
+    jazz.name             = "Jazz";
+    jazz.ionian           =  0.50;
+    jazz.dorian           =  0.80;
+    jazz.phrygian         = -1.00;
+    jazz.lydian           = -0.50;
+    jazz.mixolydian       =  0.80;
+    jazz.aeolian          =  0.50;
+    jazz.locrian          = -1.50;
+    jazz.melodicMinor     =  0.50;
+    jazz.dorianB2         = -0.50;
+    jazz.lydianAugmented  = -0.50;
+    jazz.lydianDominant   =  0.80;
+    jazz.mixolydianB6     = -0.50;
+    jazz.aeolianB5        = -1.00;
+    jazz.altered          =  0.50;
+    jazz.harmonicMinor    = -0.30;
+    jazz.locrianSharp6    = -1.50;
+    jazz.ionianSharp5     = -1.50;
+    jazz.dorianSharp4     = -0.50;
+    jazz.phrygianDominant =  0.20;
+    jazz.lydianSharp2     = -1.50;
+    jazz.alteredDomBB7    = -1.50;
+
+    ModePriorPreset modal;
+    modal.name             = "Modal";
+    modal.ionian           =  0.50;
+    modal.dorian           =  0.50;
+    modal.phrygian         =  0.50;
+    modal.lydian           =  0.50;
+    modal.mixolydian       =  0.50;
+    modal.aeolian          =  0.50;
+    modal.locrian          = -1.00;
+    modal.melodicMinor     = -1.00;
+    modal.dorianB2         = -1.50;
+    modal.lydianAugmented  = -2.00;
+    modal.lydianDominant   = -1.50;
+    modal.mixolydianB6     = -1.50;
+    modal.aeolianB5        = -2.50;
+    modal.altered          = -3.50;
+    modal.harmonicMinor    = -1.00;
+    modal.locrianSharp6    = -2.50;
+    modal.ionianSharp5     = -2.00;
+    modal.dorianSharp4     = -2.00;
+    modal.phrygianDominant = -1.50;
+    modal.lydianSharp2     = -2.50;
+    modal.alteredDomBB7    = -3.50;
+
+    ModePriorPreset baroque;
+    baroque.name             = "Baroque";
+    baroque.ionian           =  1.20;
+    baroque.dorian           = -0.70;
+    baroque.phrygian         = -1.50;
+    baroque.lydian           = -2.00;
+    baroque.mixolydian       = -0.70;
+    baroque.aeolian          =  1.00;
+    baroque.locrian          = -3.00;
+    baroque.melodicMinor     = -1.50;
+    baroque.dorianB2         = -2.00;
+    baroque.lydianAugmented  = -2.50;
+    baroque.lydianDominant   = -2.00;
+    baroque.mixolydianB6     = -2.00;
+    baroque.aeolianB5        = -3.00;
+    baroque.altered          = -3.50;
+    baroque.harmonicMinor    =  0.50;
+    baroque.locrianSharp6    = -2.00;
+    baroque.ionianSharp5     = -1.50;
+    baroque.dorianSharp4     = -2.50;
+    baroque.phrygianDominant =  0.50;
+    baroque.lydianSharp2     = -2.00;
+    baroque.alteredDomBB7    = -3.50;
+
+    ModePriorPreset contemporary;
+    contemporary.name             = "Contemporary";
+    contemporary.ionian           =  0.80;
+    contemporary.dorian           =  0.20;
+    contemporary.phrygian         = -0.50;
+    contemporary.lydian           = -0.20;
+    contemporary.mixolydian       =  0.20;
+    contemporary.aeolian          =  0.80;
+    contemporary.locrian          = -2.00;
+    contemporary.melodicMinor     =  0.20;
+    contemporary.dorianB2         = -0.80;
+    contemporary.lydianAugmented  = -1.00;
+    contemporary.lydianDominant   =  0.20;
+    contemporary.mixolydianB6     = -0.50;
+    contemporary.aeolianB5        = -1.50;
+    contemporary.altered          = -1.50;
+    contemporary.harmonicMinor    =  0.20;
+    contemporary.locrianSharp6    = -1.50;
+    contemporary.ionianSharp5     = -1.00;
+    contemporary.dorianSharp4     = -1.00;
+    contemporary.phrygianDominant =  0.00;
+    contemporary.lydianSharp2     = -1.50;
+    contemporary.alteredDomBB7    = -2.00;
+
+    return { standard, jazz, modal, baroque, contemporary };
 }
 
-void ComposingConfiguration::setModeTierWeight1(double value)
+void ComposingConfiguration::applyModePriorPreset(const std::string& name)
 {
-    settings()->setSharedValue(MODE_TIER_WEIGHT_1, Val(value));
+    for (const auto& p : modePriorPresets()) {
+        if (p.name != name) continue;
+        setModePriorIonian(p.ionian);
+        setModePriorDorian(p.dorian);
+        setModePriorPhrygian(p.phrygian);
+        setModePriorLydian(p.lydian);
+        setModePriorMixolydian(p.mixolydian);
+        setModePriorAeolian(p.aeolian);
+        setModePriorLocrian(p.locrian);
+        setModePriorMelodicMinor(p.melodicMinor);
+        setModePriorDorianB2(p.dorianB2);
+        setModePriorLydianAugmented(p.lydianAugmented);
+        setModePriorLydianDominant(p.lydianDominant);
+        setModePriorMixolydianB6(p.mixolydianB6);
+        setModePriorAeolianB5(p.aeolianB5);
+        setModePriorAltered(p.altered);
+        setModePriorHarmonicMinor(p.harmonicMinor);
+        setModePriorLocrianSharp6(p.locrianSharp6);
+        setModePriorIonianSharp5(p.ionianSharp5);
+        setModePriorDorianSharp4(p.dorianSharp4);
+        setModePriorPhrygianDominant(p.phrygianDominant);
+        setModePriorLydianSharp2(p.lydianSharp2);
+        setModePriorAlteredDomBB7(p.alteredDomBB7);
+        return;
+    }
 }
 
-muse::async::Notification ComposingConfiguration::modeTierWeight1Changed() const
+std::string ComposingConfiguration::currentModePriorPreset() const
 {
-    return m_modeTierWeight1Changed;
-}
+    constexpr double eps = 1e-6;
+    auto eq = [](double a, double b) { return std::abs(a - b) < 1e-6; };
+    (void)eps;
 
-// ── modeTierWeight2 ─────────────────────────────────────────────────────────
-
-double ComposingConfiguration::modeTierWeight2() const
-{
-    return settings()->value(MODE_TIER_WEIGHT_2).toDouble();
-}
-
-void ComposingConfiguration::setModeTierWeight2(double value)
-{
-    settings()->setSharedValue(MODE_TIER_WEIGHT_2, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::modeTierWeight2Changed() const
-{
-    return m_modeTierWeight2Changed;
-}
-
-// ── modeTierWeight3 ─────────────────────────────────────────────────────────
-
-double ComposingConfiguration::modeTierWeight3() const
-{
-    return settings()->value(MODE_TIER_WEIGHT_3).toDouble();
-}
-
-void ComposingConfiguration::setModeTierWeight3(double value)
-{
-    settings()->setSharedValue(MODE_TIER_WEIGHT_3, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::modeTierWeight3Changed() const
-{
-    return m_modeTierWeight3Changed;
-}
-
-// ── modeTierWeight4 ─────────────────────────────────────────────────────────
-
-double ComposingConfiguration::modeTierWeight4() const
-{
-    return settings()->value(MODE_TIER_WEIGHT_4).toDouble();
-}
-
-void ComposingConfiguration::setModeTierWeight4(double value)
-{
-    settings()->setSharedValue(MODE_TIER_WEIGHT_4, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::modeTierWeight4Changed() const
-{
-    return m_modeTierWeight4Changed;
+    for (const auto& p : modePriorPresets()) {
+        if (eq(modePriorIonian(),          p.ionian)
+         && eq(modePriorDorian(),          p.dorian)
+         && eq(modePriorPhrygian(),        p.phrygian)
+         && eq(modePriorLydian(),          p.lydian)
+         && eq(modePriorMixolydian(),      p.mixolydian)
+         && eq(modePriorAeolian(),         p.aeolian)
+         && eq(modePriorLocrian(),         p.locrian)
+         && eq(modePriorMelodicMinor(),    p.melodicMinor)
+         && eq(modePriorDorianB2(),        p.dorianB2)
+         && eq(modePriorLydianAugmented(), p.lydianAugmented)
+         && eq(modePriorLydianDominant(),  p.lydianDominant)
+         && eq(modePriorMixolydianB6(),    p.mixolydianB6)
+         && eq(modePriorAeolianB5(),       p.aeolianB5)
+         && eq(modePriorAltered(),         p.altered)
+         && eq(modePriorHarmonicMinor(),   p.harmonicMinor)
+         && eq(modePriorLocrianSharp6(),   p.locrianSharp6)
+         && eq(modePriorIonianSharp5(),    p.ionianSharp5)
+         && eq(modePriorDorianSharp4(),    p.dorianSharp4)
+         && eq(modePriorPhrygianDominant(), p.phrygianDominant)
+         && eq(modePriorLydianSharp2(),    p.lydianSharp2)
+         && eq(modePriorAlteredDomBB7(),   p.alteredDomBB7)) {
+            return p.name;
+        }
+    }
+    return {};
 }

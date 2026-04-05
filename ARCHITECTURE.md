@@ -1,9 +1,9 @@
 # MuseScore Arranger — Architecture Document
 
-> **Living document.** Update this file whenever an architectural decision changes.
-> Claude Code should read this document at the start of every development session
-> involving new components or integration work. For focused tasks on well-understood
-> components, reading the relevant section is sufficient.
+> **Living design document.** Read this AND STATUS.md at the start of every development
+> session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
+> implementation status and immediate next steps. Update STATUS.md as your last act when
+> anything changes. Update ARCHITECTURE.md only when architectural decisions change.
 
 ---
 
@@ -12,6 +12,7 @@
 1. [Project Overview](#1-project-overview)
 2. [Architectural Principles](#2-architectural-principles)
 3. [Directory Structure](#3-directory-structure)
+   - §3.3 [Module Boundaries and Bridge Architecture](#33-module-boundaries-and-bridge-architecture) ← **read this if touching any bridge or cross-module code**
 4. [Existing Components — The Analysis Foundation](#4-existing-components--the-analysis-foundation) (incl. §4.6 User Preferences)
 5. [Planned Analysis Extensions](#5-planned-analysis-extensions)
 6. [The Style System](#6-the-style-system)
@@ -65,15 +66,13 @@ license. All external libraries used must be GPL v3 compatible.
 The Contributor License Agreement (CLA) with MuseScore must be signed before any
 pull requests are submitted.
 
-### 1.4 Current Status
-
-The following components exist and are working:
+### 1.4 Implemented Components
 
 - **ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic
   degree, and chromatic (borrowed) Roman numerals from a set of simultaneously
   sounding notes
-- **KeyModeAnalyzer** — infers the most likely key and mode (all 7 diatonic modes)
-  from a temporal window of pitch contexts with duration, beat, and bass weighting
+- **KeyModeAnalyzer** — infers the most likely key and mode from a temporal window
+  of pitch contexts with duration, beat, and bass weighting
 - **ChordSymbolFormatter** — formats analysis results as chord symbols and Roman
   numerals; non-diatonic chords produce chromatic numerals (♭VII, ♭III, ♭VI etc.)
   rather than returning empty
@@ -89,16 +88,18 @@ The following components exist and are working:
 - **Intonation** — per-note and region tuning via split-and-slur; tonic-anchored JI
   places each chord root at its scale-degree position above the mode tonic rather than
   always at 0¢; optional minimize-retune shift and per-note cent annotation in score
-- **User preferences** — `IComposingConfiguration` / `ComposingConfiguration` expose
-  analysis settings including mode tier weights (4 tier sliders + preset), max suggested
-  chords, tuning system, tonic-anchored tuning, minimize-retune, annotate-tuning-offsets,
-  and status bar display options
-- **Regression tests** — 193 tests covering chord analyzer, key/mode analyzer, and
-  MusicXML integration
+- **User preferences** — `IComposingAnalysisConfiguration` and
+  `IComposingChordStaffConfiguration` expose analysis and output settings; preferences
+  page in Edit → Preferences → Composing
 
-The primary integration point is `NotationComposingBridge` in
-`src/notation/internal/notationcomposingbridge.cpp`, which handles both the real-time
-status bar path and the chord staff population path.
+The bridge layer (`src/notation/internal/notation*bridge*.cpp`) connects the
+`composing` module to MuseScore's engraving model. All bridge functions are declared
+in notation-side headers and live in the `mu::notation` namespace. The `composing`
+module itself has **no engraving dependency** — it is pure music theory. See §3.3 for
+the full bridge architecture.
+
+*For current implementation status, test counts, known gaps, and immediate next steps
+see STATUS.md.*
 
 ---
 
@@ -223,70 +224,181 @@ analyzers.
 
 ```
 src/
-  composing/
+  composing/                        ← NEW module — pure music theory, NO engraving dependency
     CMakeLists.txt
-    analysis/                    — analytical components (existing + planned)
-      chordanalyzer.h            — existing
-      chordanalyzer.cpp          — existing
-      harmonicrhythm.h           — existing — region analysis and chord track population
-      keymodeanalyzer.h          — existing
-      keymodeanalyzer.cpp        — existing
-      analysisutils.h            — existing shared utilities
-      temporalcontext.h          — planned
-      monoanalyzer.h             — planned — monophonic/arpeggiated input
-      progressionanalyzer.h      — planned
-    generation/                  — generative components (all planned)
-      iharmonizer.h
-      rulesbasedharmonizer.h
-      voicinggenerator.h
-      voiceleadingoptimizer.h
-      basslinegenerator.h
-      idiomaticgenerator.h
-    knowledge/                   — knowledge base (all planned)
-      chorddictionary.h
-      scaledictionary.h
-      substitutionnetwork.h
-      styleloader.h
-    intonation/                  — intonation module (planned)
-      tuningcalculator.h
-      driftmanager.h
-    visualization/               — harmonic map views (planned)
-      iharmonicmap.h
-      circleoffifthsmap.h
-      tonnetzmap.h
-    ui/                          — new UI panels (planned)
-      harmonynamigator.h
-      voicingalternativespanel.h
-    constraints/                 — constraint system (planned)
-      constraintstore.h
-    tests/                       — all tests
-      chordanalyzer_tests.cpp    — existing
-      keymodeanalyzer_tests.cpp  — existing
+    composingmodule.cpp/.h          ← registers IComposingAnalysisConfiguration +
+    composingconfiguration.cpp/.h      IComposingChordStaffConfiguration in IoC
+    icomposinganalysisconfiguration.h  ← analysis+tuning prefs; IoC-registered
+    icomposingchordstaffconfiguration.h← chord staff prefs; IoC-registered
+    icomposingconfiguration.h          ← composite base (NOT IoC-registered; see §3.3)
+
+    analysis/                    ← existing, fully working
+      chord/
+        ichordanalyzer.h          ← IChordAnalyzer interface
+        chordanalyzerfactory.h/.cpp ← ChordAnalyzerFactory
+        chordanalyzer.h/.cpp      ← RuleBasedChordAnalyzer implementation
+      key/
+        keymodeanalyzer.h/.cpp    ← KeyModeAnalyzer, all 21 modes
+      region/
+        harmonicrhythm.h          ← HarmonicRegion struct (types only)
+      analysisutils.h             ← pitch-class helpers shared across subdirectories
+
+    intonation/                  ← existing, fully working
+      tuning_system.h            ← TuningSystem abstract base, TuningRegistry
+                                    (no bridge decls — those are in notation/)
+      tuning_keys.h
+      tuning_utils.h
+      equal_temperament.h/.cpp
+      just_intonation.h/.cpp
+      pythagorean.h/.cpp
+      quarter_comma_meantone.h/.cpp
+      werckmeister.h/.cpp
+      kirnberger.h/.cpp
+
+    tests/
+      chordanalyzer_tests.cpp
+      chordanalyzer_musicxml_tests.cpp
+      keymodeanalyzer_tests.cpp
+      synthetic_tests.cpp            ← P6 parametrized suite (root coverage, inversions, modes, round-trip)
+      tuning_tests.cpp
+      chord_mismatch_report.txt      ← written by catalog test run
+
+  notation/
+    internal/
+      notationanalysisinternal.h     ← internal helpers shared between bridges:
+                                        isChordTrackStaff(), staffIsEligible()
+      notationcomposingbridge.h/.cpp ← BRIDGE: analyzeNoteHarmonicContext(),
+                                        analyzeHarmonicRhythm(), harmonicAnnotation()
+                                        Declared AND defined in mu::notation namespace.
+      notationimplodebridge.h/.cpp   ← BRIDGE: populateChordTrack()
+      notationtuningbridge.h/.cpp    ← BRIDGE: applyTuningAtNote(), applyRegionTuning()
+      notationinteraction.cpp        ← NotationInteraction methods incl. composing ops
+                                        (implodeToChordTrack, tuneSelection,
+                                         addAnalyzedTuning, addAnalyzedHarmony*)
+      notationaccessibility.cpp      ← status bar; calls harmonicAnnotation()
+
+  notationscene/
+    qml/MuseScore/NotationScene/
+      notationcontextmenumodel.cpp   ← right-click menu; calls mu::notation::
+                                        analyzeNoteHarmonicContext() via bridge header
+
+  appshell/
+    qml/MuseScore/AppShell/
+      appmenumodel.cpp/.h            ← top bar "Tune as" and chord track menus;
+                                        injects IComposingAnalysisConfiguration
+
+  preferences/
+    qml/MuseScore/Preferences/
+      composingpreferencesmodel.cpp/.h ← injects BOTH IComposingAnalysisConfiguration
+                                          AND IComposingChordStaffConfiguration
+
+  composing/
     resources/
-      styles/                    — style JSON files
-        builtin/
-          baroque/
-            bach_chorale.json
-          jazz/
-            jazz_vocal.json
-          blues/
-            blues.json
-          funk/
-            funk.json
-          rock/
-            progressive_rock.json
-        user/                    — user-contributed styles
-      knowledge/                 — knowledge base JSON files
-        chord_dictionary.json
-        scale_mode_dictionary.json
-        substitution_network.json
+      styles/                    — style JSON files (planned)
+      knowledge/                 — knowledge base JSON files (planned)
 ```
+
+**Planned but not yet present:** `generation/`, `knowledge/`, `visualization/`, `ui/`, `constraints/` subdirectories and their contents (see §§6–10).
 
 ### 3.2 Namespace
 
-All code uses the namespace `mu::composing::analysis` for analysis components,
-`mu::composing::generation` for generation components, and so on. This is
-already established by the existing code.
+| Namespace | Where it lives | What goes here |
+|-----------|---------------|----------------|
+| `mu::composing::analysis` | `src/composing/analysis/` | Pure analysis types and algorithms (ChordAnalyzer, KeyModeAnalyzer, ChordSymbolFormatter, HarmonicRegion struct, …) |
+| `mu::composing::intonation` | `src/composing/intonation/` | Tuning systems (TuningSystem, TuningRegistry, concrete systems) |
+| `mu::composing` | `src/composing/` | Configuration interfaces (IComposingAnalysisConfiguration, IComposingChordStaffConfiguration) |
+| `mu::notation` | `src/notation/` | **All bridge functions** — functions that require engraving access but produce composing-domain results live here, not in `mu::composing`. This is the primary rule of the bridge layer. See §3.3. |
+| `mu::notation::internal` | `src/notation/internal/` | Internal notation helpers (isChordTrackStaff, staffIsEligible) |
+
+**Critical rule:** If a free function requires `mu::engraving` types as parameters, it belongs in `mu::notation` regardless of what it returns. The `composing` module must not forward-declare or depend on engraving types.
+
+### 3.3 Module Boundaries and Bridge Architecture
+
+> **Read this section before touching any code that crosses the composing ↔ notation boundary.**
+
+#### The Dependency Rule
+
+```
+engraving     ← knows nothing about composing or notation
+    ↓
+composing     ← pure music theory; NO engraving dependency whatsoever
+    ↓              (no forward declarations, no includes of engraving headers)
+notation      ← bridges both; owns all bridge function declarations and definitions
+    ↓
+notationscene ← calls notation bridge API; does NOT include composing headers directly
+appshell      ← calls notation API; injects composing config interfaces
+preferences   ← injects both composing config interfaces
+```
+
+This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
+
+#### Why This Matters
+
+The `composing` module is a pure C++ music theory library. It can be unit-tested in complete isolation from MuseScore's engraving model — no score, no staves, no UI, just pitch classes and algorithms. This isolation is what makes the test suite (`composing_tests.exe`) fast and reliable.
+
+If `composing` headers imported engraving types, the unit tests would need to link against the full engraving library. More fundamentally, it would mean the music theory library had knowledge of a specific score representation format — a structural coupling that makes the algorithms harder to reuse or replace.
+
+#### The Bridge Pattern
+
+A "bridge function" is a free function that:
+- Takes engraving types as input (Note*, Score*, Fraction, …)
+- Produces composing-domain results (ChordAnalysisResult, HarmonicRegion, …)
+- Lives in `mu::notation` namespace
+- Is declared in a `notation/internal/notation*bridge.h` header
+- Is defined in the corresponding `notation/internal/notation*bridge.cpp`
+
+**Callers** of bridge functions include only the notation-side bridge header, not composing headers, for the function itself. They may still include composing headers for the composing types in the function signature.
+
+#### Bridge File Inventory
+
+| File | Declares/defines | Called by |
+|------|-----------------|-----------|
+| `notationcomposingbridge.h` | Declares `harmonicAnnotation()`, `analyzeNoteHarmonicContext()`, `analyzeHarmonicRhythm()` | `notationaccessibility.cpp`, `notationinteraction.cpp`, `notationcontextmenumodel.cpp`, `notationimplodebridge.cpp`, `notationtuningbridge.cpp` |
+| `notationcomposingbridge.cpp` | `harmonicAnnotation()` — status bar string<br>`analyzeNoteHarmonicContext()` — single-note analysis | (implements declarations above) |
+| `notationharmonicrhythmbridge.cpp` | `analyzeHarmonicRhythm()` — time-range harmonic scanner | (implements declaration above) |
+| `notationcomposingbridgehelpers.h/.cpp` | Shared bridge helpers: `collectSoundingAt()`, `buildTones()`, `collectPitchContext()`, `resolveKeyAndMode()`, `findTemporalContext()`, … | `notationcomposingbridge.cpp`, `notationharmonicrhythmbridge.cpp` |
+| `notationimplodebridge.h/.cpp` | `populateChordTrack()` — write harmonic reduction to chord staff | `notationinteraction.cpp` (via `implodeToChordTrack()`) |
+| `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's chord<br>`applyRegionTuning()` — tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`, `tuneSelection()`) |
+| `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`, `notationtuningbridge.cpp`, `notationimplodebridge.cpp` |
+
+#### The `IComposingConfiguration` Split
+
+Configuration is exposed through **two narrow interfaces**, both IoC-registered:
+
+| Interface | IoC-registered? | Used by |
+|-----------|----------------|---------|
+| `IComposingAnalysisConfiguration` | ✓ | Analysis bridge, tuning bridge, status bar, context menu, app menu, preferences model |
+| `IComposingChordStaffConfiguration` | ✓ | Implode bridge, preferences model |
+| `IComposingConfiguration` | ✗ | Only `ComposingConfiguration` concrete class inherits this (as a plain base, not IoC-registered) |
+
+**Why split?** The implode bridge has no business knowing about status-bar display preferences; the analysis bridge has no business knowing about chord-staff output settings. Narrow interfaces make the dependency of each component explicit and keep the IoC registrations clean.
+
+`IComposingConfiguration` is not registered because it inherits from both sub-interfaces, and the IoC `modularity_interfaceInfo` static member would be ambiguous with two `MODULE_GLOBAL_INTERFACE` bases. Only the two leaf interfaces are registered; `ComposingConfiguration` (the one concrete class) inherits from `IComposingConfiguration` and thereby implements both.
+
+#### `KeySigMode` Disambiguation
+
+`mu::engraving` defines `KeyMode` (key signature mode: MAJOR, MINOR, DORIAN, …).
+`mu::composing::analysis` defines `KeySigMode` (21-mode analysis enum: Ionian, Dorian, …).
+
+The two enums have different names, so no explicit disambiguation is needed. However,
+bridge files that use `using mu::composing::analysis::KeySigMode;` alongside
+`using namespace mu::engraving` should add a comment for clarity:
+
+```cpp
+using mu::composing::analysis::KeySigMode;  // disambiguate from mu::engraving::KeyMode
+```
+
+This pattern appears in `notationcomposingbridgehelpers.cpp`, `notationimplodebridge.cpp`,
+and `notationtuningbridge.cpp`.
+
+#### Adding New Bridge Functions — Checklist
+
+1. Implement the logic in the appropriate `notation*bridge.cpp`
+2. Declare in the corresponding `notation*bridge.h` in `mu::notation` namespace
+3. Do **not** add declarations to any `composing/` header
+4. Do **not** forward-declare engraving types in any `composing/` header
+5. Add the new header to `src/notation/CMakeLists.txt`
+6. Callers include the notation-side header, not the composing header
 
 ---
 
@@ -294,7 +406,7 @@ already established by the existing code.
 
 ### 4.1 ChordAnalyzer
 
-**File:** `src/composing/analysis/chordanalyzer.h` and `chordanalyzer.cpp`
+**File:** `src/composing/analysis/chord/chordanalyzer.h` and `chord/chordanalyzer.cpp`
 
 **Purpose:** Identifies the chord quality, extensions, inversions, and diatonic
 degree from a set of simultaneously sounding notes. Returns up to three ranked
@@ -324,48 +436,54 @@ to the analyzer itself.
 
 #### Output — `ChordAnalysisResult`
 
+`ChordAnalysisResult` is split into two orthogonal sub-structs (P8a):
+
+- **`ChordIdentity`** — pitch-content properties: what notes make up the chord.
+  Stable across different harmonic readings of the same voicing.
+- **`ChordFunction`** — tonal-function properties: how the chord relates to the
+  key. Changes when the key context changes even if the voicing is identical.
+
 ```cpp
-struct ChordAnalysisResult {
-    double score = 0.0;        // Raw confidence. Higher is better. Not normalized.
-    int rootPc = 0;            // Root pitch class (0-11, C=0)
-    int bassPc = 0;            // Bass pitch class (0-11)
+// Extension bitmask (P8b) — replaces 17 individual boolean fields.
+// Use hasExtension() / setExtension() / hasAnyNinth() / hasAnyThirteenth() helpers.
+enum class Extension : uint32_t {
+    MinorSeventh      = 1u << 0,
+    MajorSeventh      = 1u << 1,
+    DiminishedSeventh = 1u << 2,
+    AddedSixth        = 1u << 3,
+    NaturalNinth      = 1u << 4,
+    FlatNinth         = 1u << 5,
+    SharpNinth        = 1u << 6,
+    NaturalEleventh   = 1u << 7,
+    SharpEleventh     = 1u << 8,
+    NaturalThirteenth = 1u << 9,
+    FlatThirteenth    = 1u << 10,
+    SharpThirteenth   = 1u << 11,
+    FlatFifth         = 1u << 12,
+    SharpFifth        = 1u << 13,
+    SixNine           = 1u << 14,
+    OmitsThird        = 1u << 15,
+};
+
+struct ChordIdentity {
+    double score = 0.0;           // Raw confidence. Higher is better. Not normalized.
+    int rootPc = 0;               // Root pitch class (0-11, C=0)
+    int bassPc = 0;               // Bass pitch class (0-11)
+    int bassTpc = -1;             // Bass TPC for enharmonic display (-1 if unknown)
     ChordQuality quality = ChordQuality::Unknown;
+    uint32_t extensions = 0;      // Bitmask of Extension flags
+};
 
-    // Seventh extensions
-    bool hasMinorSeventh = false;
-    bool hasMajorSeventh = false;
-    bool hasDiminishedSeventh = false;
-
-    // Sixth and ninth
-    bool hasAddedSixth = false;
-    bool hasNinth = false;
-    bool hasNinthNatural = false;
-    bool hasNinthFlat = false;
-    bool hasNinthSharp = false;
-
-    // Eleventh and thirteenth
-    bool hasEleventh = false;
-    bool hasEleventhSharp = false;
-    bool hasThirteenth = false;
-    bool hasThirteenthFlat = false;
-    bool hasThirteenthSharp = false;
-
-    // Alterations
-    bool hasFlatFifth = false;
-    bool hasSharpFifth = false;
-
-    // Special cases
-    bool isSixNine = false;
-    bool omitsThird = false;
-
-    int degree = -1;            // Diatonic degree 0-6; -1 if non-diatonic
-    bool diatonicToKey = false; // True if all sounding pitches are diatonic
-
-    // Key context stored at analysis time so formatRomanNumeral() can generate
-    // chromatic numerals (♭VII, ♭III, etc.) for non-diatonic roots without
-    // extra parameters.
+struct ChordFunction {
+    int degree = -1;              // Diatonic degree 0-6; -1 if non-diatonic
+    bool diatonicToKey = false;   // True if all sounding pitches are diatonic
     int keyTonicPc = 0;           // Pitch class of mode tonic (0=C)
-    KeyMode keyMode = KeyMode::Ionian;
+    KeySigMode keyMode = KeySigMode::Ionian;
+};
+
+struct ChordAnalysisResult {
+    ChordIdentity identity;
+    ChordFunction function;
 };
 ```
 
@@ -403,6 +521,9 @@ struct ChordAnalyzerPreferences {
     // Planned style prior — not yet implemented
     // enum class StylePrior { General, Classical, Jazz, Pop, Blues, Folk };
     // StylePrior stylePrior = StylePrior::General;
+
+    // P8c: optimization readiness
+    ParameterBoundsMap bounds() const;   // parameter name → {min, max, isManual}
 };
 
 inline constexpr ChordAnalyzerPreferences kDefaultChordAnalyzerPreferences{};
@@ -415,45 +536,72 @@ is implemented, the active style will populate the analyzer's preferences.
 #### Public Interface
 
 ```cpp
-class ChordAnalyzer {
+class IChordAnalyzer {
 public:
-    static std::vector<ChordAnalysisResult> analyzeChord(
+    virtual ~IChordAnalyzer() = default;
+    virtual std::vector<ChordAnalysisResult> analyzeChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,                         // -7 to +7
-        KeyMode keyMode,                                // detected mode (all 7 diatonic modes)
+        KeySigMode keyMode,                             // detected mode (all 21 modes)
         const ChordTemporalContext* context = nullptr,  // optional preceding-chord context
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences
-    );
+    ) const = 0;
+};
+
+/// Default implementation: template-matching rule-based approach.
+class RuleBasedChordAnalyzer : public IChordAnalyzer {
+public:
+    std::vector<ChordAnalysisResult> analyzeChord(...) const override;
 };
 ```
 
 Minimum 3 distinct pitch classes required. Returns empty vector if insufficient data.
-Both optional parameters default so all existing call sites remain valid without
-modification.
+Callers instantiate `RuleBasedChordAnalyzer{}` or hold an `IChordAnalyzer*` for
+dependency injection (e.g. future ML-based analyzer).
+
+#### Factory — `ChordAnalyzerFactory` (P4b)
+
+```cpp
+enum class ChordAnalyzerType { RuleBased };
+
+class ChordAnalyzerFactory {
+public:
+    static std::unique_ptr<IChordAnalyzer> create(
+        ChordAnalyzerType type = ChordAnalyzerType::RuleBased);
+};
+```
+
+All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, `notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through the factory rather than hard-coded at each call site. Tests that need a direct instance may use `RuleBasedChordAnalyzer{}` on the stack.
+
+#### Temporal context — `ChordTemporalContext` vs future `TemporalContext` (P4b)
+
+`ChordTemporalContext` carries only the **immediately preceding chord's** root and quality — sufficient for root-continuity and resolution-bias scoring. It is **not** a full progression context. A future `TemporalContext` will carry the full recent progression (chord sequence, cadence history, secondary dominants) once secondary dominant analysis (§5.6) is implemented. Keep the names distinct.
 
 ### 4.2 KeyModeAnalyzer
 
-**File:** `src/composing/analysis/keymodeanalyzer.h` and `keymodeanalyzer.cpp`
+**File:** `src/composing/analysis/key/keymodeanalyzer.h` and `key/keymodeanalyzer.cpp`
 
 **Purpose:** Infers the most likely key and mode from a temporal window of pitch
 contexts. Uses duration weight, metric weight, and bass status to give more
 influence to harmonically significant notes. Returns up to three ranked candidates.
 
-**Algorithm:** Scores all 12 possible tonics against all 7 diatonic modes (84
-candidates) using six orthogonal helper functions:
+**Algorithm:** Scores all 12 possible tonics against all **21 modes** (7 diatonic +
+7 melodic minor family + 7 harmonic minor family = 252 candidates) using six orthogonal
+helper functions:
 - `scoreScaleMembership` — how well the pitch classes fit the candidate scale,
   cross-referenced against the notated key-signature scale
 - `scoreTriadEvidence` — how strongly the tonic triad is present (tonic 1.6×,
   third 0.7×, fifth 0.5×, leading tone 0.4×; complete triad bonus 2.5)
-- `scoreCharacteristicPitch` — boost/penalty for the one pitch that most distinguishes
-  each mode from its closest neighbor (e.g. Dorian's raised 6th vs Aeolian)
+- `scoreCharacteristicPitch` — boost/penalty for the characteristic pitch(es) that
+  most distinguish each mode from its closest neighbor (e.g. Dorian's raised 6th vs
+  Aeolian; harmonic minor's raised 7th; multiple compound conditions for non-diatonic modes)
 - `scoreTrueLeadingTone` — bonus when the semitone below the tonic is present,
   regardless of diatonicism (chromatic leading tones still signal the tonic strongly)
 - `scoreKeySignatureProximity` — preference for keys close to the notated key
   signature (−0.6 per fifth of distance)
-- `scoreModePrior` — additive frequency bias per mode, user-configurable via
-  `IComposingConfiguration::modeTierWeight[1-4]`; defaults to Standard preset
-  (Ionian/Aeolian >> Dorian/Mixolydian > Lydian/Phrygian > Locrian)
+- `scoreModePrior` — **21 independent additive priors**, one per mode, user-configurable
+  via `IComposingAnalysisConfiguration::modePrior{ModeName}()`; defaults reflect Western
+  tonal frequency (Ionian=+1.20, Aeolian=+1.00, down to Altered=−3.50)
 - `applyRelativePairDisambiguation` — post-hoc score mutations for the relative
   major/minor pair sharing a key signature (four documented cases; see implementation)
 
@@ -482,26 +630,33 @@ beat-type weights from MuseScore's `BeatType` enum.
 #### Output — `KeyModeAnalysisResult`
 
 ```cpp
-enum class KeyMode {
-    Ionian,       // Major
-    Dorian,
-    Phrygian,
-    Lydian,
-    Mixolydian,
-    Aeolian,      // Natural minor
-    Locrian,
-};
+enum class KeySigMode {
+    // Diatonic family (7)
+    Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian,
+    // Melodic minor family (7)
+    MelodicMinor, DorianB2, LydianAugmented, LydianDominant,
+    MixolydianB6, AeolianB5, Altered,
+    // Harmonic minor family (7)
+    HarmonicMinor, LocrianSharp6, IonianSharp5, DorianSharp4,
+    PhrygianDominant, LydianSharp2, AlteredDomBB7,
+};  // 21 modes total
+
+**Harmonic major modes — deferred:** The harmonic major scale and its 7 modes were
+considered for inclusion in this expansion but deferred. Harmonic major modes are
+significantly rarer as tonal centers than melodic and harmonic minor modes, and the
+validation corpus is unlikely to calibrate them well. They can be added as a future
+extension following the same pattern as the melodic and harmonic minor families.
 
 struct KeyModeAnalysisResult {
-    int keySignatureFifths = 0;          // Resolved key signature (-7..+7, Ionian convention)
-    KeyMode mode = KeyMode::Ionian;      // Detected mode
-    int tonicPc = 0;                     // Pitch class of the mode's tonic (0=C, 2=D, etc.)
-    double score = 0.0;                  // Raw confidence score; higher is better
-    double normalizedConfidence = 0.0;   // 0.0–1.0 via sigmoid on score gap to runner-up
+    int keySignatureFifths = 0;             // Resolved key signature (-7..+7, Ionian convention)
+    KeySigMode mode = KeySigMode::Ionian;   // Detected mode
+    int tonicPc = 0;                        // Pitch class of the mode's tonic (0=C, 2=D, etc.)
+    double score = 0.0;                     // Raw confidence score; higher is better
+    double normalizedConfidence = 0.0;      // 0.0–1.0 via sigmoid on score gap to runner-up
 };
 ```
 
-All 7 modes are active. `normalizedConfidence` is computed via sigmoid on the score
+All 21 modes are active. `normalizedConfidence` is computed via sigmoid on the score
 gap between rank-1 and rank-2 candidates (midpoint 2.0, steepness 1.5). The chord
 staff uses this to annotate uncertain detections with "?" or "(?)".
 
@@ -515,8 +670,9 @@ See `keymodeanalyzer.h` for the full struct with documentation. Key groups:
 - **Tonal centre** — per-tone weights and bonus/penalty for complete triad
 - **Characteristic pitch** — `characteristicPitchBoost`, `characteristicPitchPenalty`
 - **True leading tone** — `trueLeadingToneBoost`
-- **Mode priors** — `modePriorIonian` through `modePriorLocrian`; populated from
-  user preferences via `IComposingConfiguration::modeTierWeight[1-4]` in the bridge
+- **Mode priors** — `modePriorIonian` through `modePriorAlteredDomBB7` (21 independent
+  priors); populated from user preferences via `IComposingAnalysisConfiguration::modePrior*()`
+  in the bridge; replaces former 4-tier grouping
 - **Tonal-centre comparison** — independent weights for the relative-pair
   final decision (`tonalCenter*`)
 - **Key-signature proximity** — `keySignatureDistancePenalty`
@@ -656,11 +812,17 @@ chord track is set to show canonical tones rather than collected sounding tones.
 
 ### 4.3b HarmonicRhythm
 
-**File:** `src/composing/analysis/harmonicrhythm.h`
+**Files:**
+- `src/composing/analysis/region/harmonicrhythm.h` — `HarmonicRegion` struct (pure composing type, no engraving dependency)
+- `src/notation/internal/notationharmonicrhythmbridge.h/.cpp` — `analyzeHarmonicRhythm()` declaration and definition
+- `src/notation/internal/notationcomposingbridgehelpers.h/.cpp` — shared bridge helpers used by both bridges
+- `src/notation/internal/notationimplodebridge.h/.cpp` — `populateChordTrack()` declaration and definition
 
-Declares types and entry points for region analysis:
+The `HarmonicRegion` struct lives in the composing module (no engraving include needed); the functions that consume `Score*` / `Fraction` are bridge functions in `mu::notation`:
 
 ```cpp
+// composing/analysis/harmonicrhythm.h
+namespace mu::composing::analysis {
 struct HarmonicRegion {
     int startTick = 0;                    // Raw tick integer (first tick of region)
     int endTick = 0;                      // First tick of next region (exclusive)
@@ -668,25 +830,32 @@ struct HarmonicRegion {
     KeyModeAnalysisResult keyModeResult;  // Key and mode context
     std::vector<ChordAnalysisTone> tones; // Sounding tones that produced the analysis
 };
+} // namespace mu::composing::analysis
 
-std::vector<HarmonicRegion> analyzeHarmonicRhythm(
-    const Score* score,
-    const Fraction& startTick,
-    const Fraction& endTick,
+// notation/internal/notationcomposingbridge.h
+namespace mu::notation {
+std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
+    const mu::engraving::Score* score,
+    const mu::engraving::Fraction& startTick,
+    const mu::engraving::Fraction& endTick,
     const std::set<size_t>& excludeStaves = {});
+} // namespace mu::notation
 
+// notation/internal/notationimplodebridge.h
+namespace mu::notation {
 bool populateChordTrack(
-    Score* score,
-    const Fraction& startTick,
-    const Fraction& endTick,
-    staff_idx_t trebleStaffIdx,
+    mu::engraving::Score* score,
+    const mu::engraving::Fraction& startTick,
+    const mu::engraving::Fraction& endTick,
+    mu::engraving::staff_idx_t trebleStaffIdx,
     bool useCollectedTones = false);
+} // namespace mu::notation
 ```
 
 `analyzeHarmonicRhythm()` scans all eligible staves, detects harmonic boundaries
 (ticks where the sounding pitch-class set changes), runs chord analysis at each
-boundary, and collapses consecutive same-chord regions.  Declared in
-`composing/analysis/`; defined in `notationaccessibility.cpp` (bridge pattern).
+boundary, and collapses consecutive same-chord regions.  Declared and defined in
+`mu::notation` (bridge pattern — requires engraving types `Score*`, `Fraction`).
 
 `populateChordTrack()` clears the target grand-staff region and writes a harmonic
 reduction with the following layout:
@@ -725,11 +894,14 @@ Shared utilities used by both analyzers and the formatter:
 
 ### 4.5 Current Status Bar Integration
 
-**File:** `src/notation/notationaccessibility.cpp`
+**Files:**
+- `src/notation/internal/notationaccessibility.cpp` — entry point; calls `harmonicAnnotation()`
+- `src/notation/internal/notationcomposingbridge.cpp` — `harmonicAnnotation()` bridge function
 
 The analysis is invoked from `NotationAccessibility::singleElementAccessibilityInfo()`.
-This method triggers on every selection change and appends chord/key information to
-the accessibility string displayed in the status bar.
+This method triggers on every selection change and calls `mu::notation::harmonicAnnotation(note)`
+(defined in `notationcomposingbridge.cpp`), which runs `analyzeNoteHarmonicContext()` and formats
+the result for display in the status bar.
 
 #### Score Traversal Pattern
 
@@ -760,26 +932,18 @@ for (size_t si = 0; si < sc->nstaves(); ++si) {
 
 #### Key Decision Logic
 
-```cpp
-const KeySigEvent keySig = sc->staff(note->staffIdx())->keySigEvent(tick);
-const int keyFifths = static_cast<int>(keySig.concertKey());
-
-// Trust the key signature when it specifies major or minor explicitly
-if (mode == KeyMode::MAJOR || mode == KeyMode::IONIAN) {
-    isMajor = true;
-} else if (mode == KeyMode::MINOR || mode == KeyMode::AEOLIAN) {
-    isMajor = false;
-} else {
-    // KeyMode::UNKNOWN — run the KeyModeAnalyzer on a one-measure lookback window
-    // TODO: This window will expand with temporal context (Section 5.3)
-}
-```
+The key/mode inferrer always runs. The notated key signature provides `keySignatureFifths`
+as a scoring prior — it biases the inferrer toward nearby keys without overriding note
+evidence. The `KeyMode` enum from the key signature is used only as a fallback when pitch
+context is genuinely insufficient (fewer than 3 distinct pitch classes). See §5.2 for the
+full revised priority logic.
 
 #### Temporal Window for Key/Mode Analysis
 
-Currently: one measure lookback from the current tick, using all notes in that
-window with default weights (1.0 for all). This will expand significantly with
-temporal context improvements (Section 5.3).
+16-beat lookback + 8-beat lookahead, with exponential time decay (0.7× per measure).
+Dynamic expansion to 24 beats when confidence is below 0.60. Mode-switching hysteresis
+prevents spurious mode switches on transient evidence. All `PitchContext` fields
+(`durationWeight`, `beatWeight`, `isBass`) are fully populated.
 
 #### Current Status Bar Output Format
 
@@ -789,24 +953,33 @@ temporal context improvements (Section 5.3).
 
 Chord symbol, key/mode, and Roman numeral are all appended.
 
-#### Remaining Gap in the Calling Code
+### 4.6 User Preferences — Configuration Interface Split
 
-**Gap — KeyModeAnalyzer not always connected to ChordAnalyzer:**
-In the status bar path, the key/mode inferrer runs for every note selection and its
-result parameterizes the chord analyzer. However, when the key signature explicitly
-specifies major or minor, the hardcoded signature value is used as the fallback rather
-than the inferred result. Planned: always prefer the inferred result; use the key
-signature only when pitch context is insufficient.
+**Files:**
+- `src/composing/icomposinganalysisconfiguration.h` — IoC-registered interface for analysis settings
+- `src/composing/icomposingchordstaffconfiguration.h` — IoC-registered interface for chord-staff output settings
+- `src/composing/icomposingconfiguration.h` — non-IoC aggregate base (inherits both above; not registered)
+- `src/composing/composingconfiguration.h/.cpp` — concrete implementation (registered under both sub-interfaces)
+- `src/preferences/qml/MuseScore/Preferences/ComposingPreferencesPage.qml` — preferences UI
 
-### 4.6 User Preferences — `IComposingConfiguration`
+The configuration is split into two separately-registered IoC interfaces:
 
-**Files:** `src/composing/icomposingconfiguration.h`,
-`src/composing/composingconfiguration.h/.cpp`,
-`src/preferences/qml/MuseScore/Preferences/ComposingPreferencesPage.qml`
+| Interface | Registered? | Inject when... |
+|-----------|-------------|----------------|
+| `IComposingAnalysisConfiguration` | Yes | Code needs analysis toggles, status-bar flags, mode tier weights |
+| `IComposingChordStaffConfiguration` | Yes | Code needs chord-staff output preferences |
+| `IComposingConfiguration` | **No** | Not used for injection; plain C++ base uniting both |
 
-All user-configurable analysis settings are exposed through `IComposingConfiguration`,
-injected via `muse::GlobalInject` in the bridge. The UI is a dedicated preferences
-page under Edit → Preferences → Composing.
+`IComposingConfiguration` is **not** registered because `MODULE_GLOBAL_INTERFACE` injects a
+`modularity_interfaceInfo` static member, and multiple inheritance would make that member ambiguous.
+`ComposingConfiguration` inherits from both sub-interfaces (and therefore from `IComposingConfiguration`
+transitively) and is registered under each sub-interface separately.
+
+Callers inject the narrowest interface they need.  The bridge functions in
+`notationcomposingbridge.cpp`, `notationtuningbridge.cpp`, and `notationimplodebridge.cpp`
+inject `IComposingAnalysisConfiguration` via `muse::GlobalInject`.
+
+The UI is a dedicated preferences page under Edit → Preferences → Composing.
 
 The preferences are organised into three sections: Analysis, Status bar, and Chord staff.
 
@@ -831,17 +1004,60 @@ The preferences are organised into three sections: Analysis, Status bar, and Cho
 - `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
   offset of each tuned note (e.g. "+15 −2 +3") below the chord in the score
 
-**Mode detection weights** (4 tier sliders, range −5.0 to +5.0, step 0.5):
-- `modeTierWeight1` (default +1.0) — Tier 1: Ionian/Aeolian
-- `modeTierWeight2` (default −0.5) — Tier 2: Dorian/Mixolydian
-- `modeTierWeight3` (default −1.5) — Tier 3: Lydian/Phrygian
-- `modeTierWeight4` (default −3.0) — Tier 4: Locrian
+**Mode detection weights** (21 independent sliders, one per mode, range −5.0 to +5.0, step 0.5):
 
-Four named presets populate all sliders: Standard (default), Jazz, Modal, Equal.
+Diatonic family:
+- `modePriorIonian` (default +1.20)
+- `modePriorDorian` (default −0.50)
+- `modePriorPhrygian` (default −1.50)
+- `modePriorLydian` (default −1.50)
+- `modePriorMixolydian` (default −0.50)
+- `modePriorAeolian` (default +1.00)
+- `modePriorLocrian` (default −3.00)
+
+Melodic minor family:
+- `modePriorMelodicMinor` (default −0.50)
+- `modePriorDorianB2` (default −1.50)
+- `modePriorLydianAugmented` (default −2.00)
+- `modePriorLydianDominant` (default −1.00)
+- `modePriorMixolydianB6` (default −1.50)
+- `modePriorAeolianB5` (default −2.50)
+- `modePriorAltered` (default −3.50)
+
+Harmonic minor family:
+- `modePriorHarmonicMinor` (default −0.30)
+- `modePriorLocrianSharp6` (default −2.50)
+- `modePriorIonianSharp5` (default −2.00)
+- `modePriorDorianSharp4` (default −2.00)
+- `modePriorPhrygianDominant` (default −0.80)
+- `modePriorLydianSharp2` (default −2.50)
+- `modePriorAlteredDomBB7` (default −3.50)
+
+Five named presets populate all 21 sliders:
+
+| Preset | Character |
+|--------|-----------|
+| Standard | Classical/baroque defaults as above |
+| Jazz | LydianDominant=−0.20, Altered=−0.50, MelodicMinor=−0.50, DorianB2=−1.00, PhrygianDominant=−0.80, HarmonicMinor=−0.50; diatonic at standard weights |
+| Modal | All 7 diatonic modes equal at 0.0; melodic and harmonic minor at high penalty |
+| Baroque | HarmonicMinor=−0.20, PhrygianDominant=−0.50; all non-diatonic modes at maximum penalty |
+| Contemporary | All 21 modes at moderate penalty; optimizer determines final weights from corpus |
+
+Presets are represented by `ModePriorPreset` (a plain struct with 21 `double` fields and a
+`std::string name`) declared in `icomposinganalysisconfiguration.h`.  The free function
+`mu::composing::modePriorPresets()` returns `std::vector<ModePriorPreset>` with all five.
+The interface exposes two extra methods:
+- `applyModePriorPreset(const std::string& name)` — writes all 21 priors in one call
+- `currentModePriorPreset() const` — returns the name of the active preset, or `""` when
+  the current values do not match any preset (epsilon = 1e-6)
+
+The QML preferences page exposes these via `ComposingPreferencesPage.qml` →
+`ComposingAnalysisSection.qml` as five `FlatButton` widgets (`accentButton` when active);
+the current preset name is tracked in `currentModePriorPreset` Q_PROPERTY.
 
 The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences`
-before calling `analyzeKeyMode()`. Ionian gets an additional +0.2 internal offset
-relative to Aeolian within Tier 1, reflecting its slightly greater prevalence.
+before calling `analyzeKeyMode()`. The former 4-tier grouping (`modeTierWeight1`–`modeTierWeight4`)
+and the internal +0.2 Ionian offset are replaced by these 21 independent priors.
 
 **Status bar section** (boolean checkboxes; each enabled only when its analysis is on):
 - `showChordSymbolsInStatusBar` (bool, default true) — requires `analyzeForChordSymbols`
@@ -882,18 +1098,22 @@ no analyzer changes — only calling code changes.
 
 ### 5.2 Key/Mode Inference — Revised Priority and Expanded Temporal Window
 
-**Notes Always Win**
+**Notes Always Win — Implemented**
 
-The current implementation runs the key/mode inferrer only when `KeyMode` is `UNKNOWN` in
-the key signature. When the key signature explicitly specifies `MAJOR` or `MINOR`, the
-inferrer is bypassed entirely.
+The key/mode inferrer always runs. The notated key signature's `KeyMode` enum
+(`MAJOR`, `MINOR`, etc.) is no longer a bypass gate — it is passed as a weak hint
+(`declaredMode`) to `analyzeKeyMode()` and influences the scoring prior but does not
+skip the inferrer.
 
-This is incorrect prioritization. The notated key signature is weak evidence about local
-harmony — a piece in C major can spend many bars in E minor or A Mixolydian without the
-composer changing the key signature. The actual sounding notes are always stronger evidence
-than the notated key.
+The only exception is a **piece-start shortcut** in `resolveKeyAndMode()`: when the
+analysis tick is within the first 16 beats, no prior result exists (`prevResult == nullptr`),
+and the key signature carries an explicit mode, the function returns the declared mode
+immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.
+This is a deliberate pragmatic choice for the score opening, not a general bypass.
 
-**Revised priority of evidence:**
+Outside the piece-start shortcut, the priority of evidence is:
+
+**Priority of evidence:**
 
 | Priority | Source | Description |
 |---|---|---|
@@ -902,32 +1122,23 @@ than the notated key.
 | Weak | Notated key signature | `keySignatureFifths` (circle of fifths position) |
 | Weakest | `KeyMode` enum | explicit major/minor tag (rare, only when user sets it) |
 
-**The revised logic:**
+**Implemented logic — `resolveKeyAndMode()` in `notationcomposingbridgehelpers.cpp`:**
 
-Always run the key/mode inferrer. The key signature's `keySignatureFifths` value remains
-valuable as a scoring prior inside the inferrer — the existing `keySignatureScore` component
-already handles this correctly by biasing toward nearby keys without overriding note
-evidence. What changes is removing the hard bypass that skips the inferrer entirely.
+The key signature's `keySignatureFifths` remains a scoring prior inside the inferrer
+(`keySignatureScore` biases toward nearby keys without overriding note evidence).
+The `declaredMode` from the key signature is passed to `analyzeKeyMode()` as an optional
+hint — it shifts the prior weight for that mode but does not prevent other modes from
+winning.
 
-Fall back to the key signature only when pitch context is genuinely insufficient:
+The inferrer output is used for all but two narrow fallback cases:
+- **Piece-start shortcut:** tick < 16 beats, no prior result, explicit key-sig mode →
+  return declared mode at confidence 0.5 (no pitch evidence to analyze yet)
+- **Insufficient data:** `modeResults.empty() || distinctPitchClasses(ctx) < 3` →
+  fall back to key signature enum (Aeolian for MINOR, Ionian for all other explicit or
+  unknown modes)
 
-```cpp
-// Always run the inferrer
-auto results = KeyModeAnalyzer::analyzeKeyMode(contextPitches, keyFifths);
-
-// Fall back to key signature only if insufficient pitch data
-if (results.empty() || distinctPitchClasses(contextPitches) < 3) {
-    // Use KeyMode enum if explicitly set, otherwise guess major
-    return inferFromKeySignature(keySig);
-}
-
-// Notes win — use inferred result
-return results.front();
-```
-
-The `KeyMode` enum (`MAJOR`, `MINOR`, `IONIAN`, `AEOLIAN` etc.) is used only in this
-fallback path — when there are genuinely too few notes to infer anything. This is primarily
-relevant at the very start of a piece before sufficient context has accumulated.
+The `KeyMode` enum (`MAJOR`, `MINOR`, `IONIAN`, `AEOLIAN` etc.) is only a factor in
+these two fallback paths — when pitch data is genuinely insufficient.
 
 **Expanded Temporal Window — Implemented**
 
@@ -1692,7 +1903,7 @@ dropdown, enabled only when Roman-numeral analysis is active).  Valid keys:
 `"equal"`, `"just"`, `"pythagorean"`, `"quarter_comma_meantone"`.  Default: `"equal"`.
 
 All tuning code paths read the preference at call time via `preferredTuningSystem()`
-(defined in `notationaccessibility.cpp`), which resolves the key through
+(defined in `notationtuningbridge.cpp`), which resolves the key through
 `TuningRegistry::byKey()` with a `JustIntonation` fallback if the key is unset or
 unknown.  No tuning code hardcodes a specific system.
 
@@ -1748,6 +1959,25 @@ to a simultaneous solve across all voices at each harmonic region boundary.  The
 weight rather than a binary.  No implementation is planned yet — this section
 records the design space for future exploration.
 
+### 11.2c Scoring Parameter Optimization Readiness (P8c)
+
+Both `ChordAnalyzerPreferences` and `KeyModeAnalyzerPreferences` expose a `bounds()` method that returns a `ParameterBoundsMap` — a `std::map<std::string, ParameterBound>` where each entry describes the valid range for one tunable parameter:
+
+```cpp
+struct ParameterBound {
+    double min;
+    double max;
+    bool   isManual = false;  // true = skip during automated optimization
+};
+using ParameterBoundsMap = std::map<std::string, ParameterBound>;
+```
+
+`isManual = false` parameters are safe for gradient-based, grid-search, or Bayesian optimization. `isManual = true` parameters are either wired to user-visible preferences (mode priors, hysteresis margins, declared-mode penalty) or have narrow hand-tuned sweet-spots.
+
+**Purpose:** makes the parameter space machine-readable. An optimizer can call `bounds()` to discover all tunable parameters, their valid ranges, and which are off-limits for automated tuning. This is sufficient to wire up a simple grid-search or parameter-sweep runner without manually hardcoding parameter names.
+
+**Not yet implemented:** serialization of `ChordAnalyzerPreferences` and `KeyModeAnalyzerPreferences` to/from JSON. When the settings store is wired in, this is the next step: map each struct field to a settings key, use the `bounds()` method to enforce valid ranges.
+
 ### 11.3 Drift Management
 
 Just intonation creates pitch drift — stacking pure intervals doesn't form a closed
@@ -1788,8 +2018,12 @@ the centered version has zero net deviation from equal temperament.
 compute the mean offset and subtract it from each voice's offset. The result is a set of
 offsets that sum to zero.
 
-Zero-sum centering is planned as an enhancement to the existing tuning offset computation.
-It applies at the harmonic region level — all notes within a region are centered together.
+**Status:** Basic (unweighted) zero-sum centering is implemented and ships as the
+`minimizeTuningDeviation` user preference in `applyTuningAtNote()` and `applyRegionTuning()`.
+When enabled, the arithmetic mean of all note offsets in the chord/region is subtracted from
+each note's offset before it is applied. This is the §11.3a definition — "compute the mean
+offset and subtract it from each voice's offset." The voice-role-weighted variant (§11.3b)
+is not yet implemented; the current implementation weights all voices equally.
 
 ### 11.3b Weighted Centering by Voice Role
 
@@ -1932,6 +2166,39 @@ Fixed-pitch instruments (piano, organ, fretted guitar) are deferred — their ha
 yet implemented. When implemented, they will serve as absolute anchors that other
 instruments tune to, and will never receive tuning offsets themselves.
 
+#### User-defined tuning anchors
+
+A user can mark any note as a **tuning anchor** by attaching a MuseScore
+Expression element with the text `anchor-pitch` (placeholder name — final
+user-visible name TBD).
+
+**Rules for anchor notes:**
+- **Zero tuning offset** — the note is left exactly at 12-TET.
+- **Never split** — anchor notes are not divided at harmonic boundaries.
+- **Excluded from zero-sum centering** — other voices in the harmonic region
+  absorb the full centering correction; the anchor contributes zero.
+- Applies to the specific note carrying the Expression only — subsequent notes
+  on the same staff are not automatically anchored.
+
+**Priority:** Highest. Overrides all duration-based and context-based
+susceptibility rules.
+
+**Keyword matching:** Case-insensitive, leading/trailing whitespace trimmed.
+`"ANCHOR-PITCH"`, `"Anchor-Pitch"`, `"  anchor-pitch  "` all match.
+
+**Implementation:**
+- `kTuningAnchorKeyword` constant in `composing/intonation/tuning_system.h`
+- `isTuningAnchorText(std::string_view)` — pure function for testable keyword
+  matching
+- `RetuningSusceptibility` enum in `tuning_system.h` with values
+  `AbsolutelyProtected`, `Adjustable`, `Free`
+- `hasTuningAnchorExpression(const Note*)` — bridge function in
+  `notationtuningbridge.cpp`; scans the note's segment annotations for a
+  matching Expression element on the same track
+- `computeSusceptibility(const Note*)` — returns `AbsolutelyProtected` for
+  anchor notes; `Free` for all others (duration-based classification is a
+  future addition)
+
 ### 11.3d Tuning Session State
 
 The tuning system maintains session-only state that is not persisted to the MSCZ file and
@@ -2068,14 +2335,15 @@ including note_B from a previous split.
 
 #### Bridge function
 
-Follows the same declaration-in-composing / definition-in-notation pattern as
-`analyzeNoteHarmonicContext`:
+Declared and defined in `mu::notation` (not in the composing module — requires `Note*`):
 
 ```cpp
-// composing/intonation/tuning_system.h
+// notation/internal/notationtuningbridge.h
+namespace mu::notation {
 bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
-                       const TuningSystem& system);
-// defined in src/notation/internal/notationaccessibility.cpp
+                       const mu::composing::intonation::TuningSystem& system);
+} // namespace mu::notation
+// defined in src/notation/internal/notationtuningbridge.cpp
 ```
 
 The context menu path passes the tuning system explicitly (resolved from the user
@@ -2091,10 +2359,10 @@ distinct pitch classes are sounding (insufficient data for chord identification)
 
 ### 11.5 Region Analysis and the Chord Track
 
-**Status: Implemented** — `analyzeHarmonicRhythm()` and `populateChordTrack()` are
-declared in `composing/analysis/harmonicrhythm.h` and defined in
-`notationaccessibility.cpp`.  Exposed as the "Implode to chord track" action in the
-Tools menu (see §12.1b).
+**Status: Implemented** — `analyzeHarmonicRhythm()` is declared and defined in
+`notation/internal/notationcomposingbridge.h/.cpp`; `populateChordTrack()` is declared
+and defined in `notation/internal/notationimplodebridge.h/.cpp` (both in `mu::notation`
+namespace).  Exposed as the "Implode to chord track" action in the Tools menu (see §12.1b).
 
 Single-note analysis (status bar display, single-chord tuning) is the foundation.
 Region analysis extends this to a time range, producing a complete harmonic analysis
@@ -2377,11 +2645,13 @@ The entire operation is one undo group.
 #### Entry points
 
 ```cpp
-// composing/intonation/tuning_system.h
+// notation/internal/notationtuningbridge.h
+namespace mu::notation {
 bool applyRegionTuning(mu::engraving::Score* score,
                        const mu::engraving::Fraction& startTick,
                        const mu::engraving::Fraction& endTick);
-// defined in src/notation/internal/notationaccessibility.cpp
+} // namespace mu::notation
+// defined in src/notation/internal/notationtuningbridge.cpp
 ```
 
 Called from `NotationInteraction::tuneSelection()`, which determines the tick range
@@ -2572,35 +2842,7 @@ struct ArrangerInteraction {
 
 ## 15. Development Phases
 
-### Current Increment (In Progress)
-
-**Status bar display — working:**
-- Single note selection triggers analysis
-- Chord symbol displayed: "[G major] Cmaj7"
-- Roman numeral display: implemented in formatter, not yet invoked in calling code
-
-**Immediate next steps in this increment (in priority order):**
-1. **Abstract accuracy work complete** — 0 abstract (root/quality) mismatches in
-   the regression catalog, down from 44 baseline. 5 symbol-only mismatches remain
-   (formatter or catalog annotation issues, not core analyzer bugs).
-2. **Populate `ChordAnalysisTone::weight`** from duration and beat position in
-   `notationaccessibility.cpp` — no analyzer changes required
-3. **Invoke `formatRomanNumeral()`** in `notationaccessibility.cpp` — display both
-   chord symbol and Roman numeral in status bar. One small change that completes
-   the visible increment.
-4. **Populate all `PitchContext` fields** for key/mode analyzer
-5. **Connect key/mode inferrer result to chord analyzer** — always run inferrer,
-   use its result even when key signature is explicit
-
-**Following this increment:**
-- User can insert the inferred chord symbol into the score as a chord symbol element
-- User can insert the inferred Roman numeral as a Roman numeral annotation
-- Both insertions use MuseScore's existing command system for undo/redo compatibility
-- ~~Region analysis: "Implode to chord track" populates any user-selected staff with
-  harmonic rhythm detection, adaptive reduction, chord symbols, and roman numerals
-  (see §11.5)~~ **Done** — "Implode to chord track" in Tools menu (§12.1b)
-- ~~Region intonation tunes whatever the user selects (see §11.6)~~ **Done** —
-  "Tune selection" in Tools menu (§12.1b)
+*Current implementation status, remaining items, and immediate next steps are in STATUS.md.*
 
 ### Development Tools
 
@@ -2617,9 +2859,9 @@ and `iex_musicxml` — no notation module required.
 
 **`tools/music21_batch.py`** — exports scores from music21's corpus to MusicXML
 and produces a JSON harmonic analysis per score.  Supports any composer via
-`--composer NAME` (default: `bach`).  The canonical source is the music21 corpus
-directory at `C:\Users\vince\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\music21\corpus\`.
-Working copies (XML + JSON) are written to `tools/tools/corpus/` using short names
+`--composer NAME` (default: `bach`).  The music21 corpus directory is resolved
+automatically from the installed library — no hardcoded path required.
+Working copies (XML + JSON) are written to `tools/corpus/` using short names
 (`bwv1.6.xml`, `beethoven_opus132.xml`, `beethoven_opus59no1_movement1.xml`).
 Note: music21's `romanNumeralFromChord()` is stateless and local — it does not
 use temporal context.  Key detection uses Krumhansl-Schmuckler (global, stored as
@@ -2628,8 +2870,8 @@ region).  Both are stored for comparison.
 
 **`tools/inject_m21_rn.py`** — injects music21's Roman numeral labels into an
 exported MusicXML file as `<direction type="words">` elements above the first staff.
-Source XMLs are read from `tools/tools/corpus/`; annotated output is written to
-`tools/tools/corpus_m21_xml/` (default).  Open the result in MuseScore alongside the
+Source XMLs are read from `tools/corpus/`; annotated output is written to
+`tools/corpus_m21_xml/` (default).  Open the result in MuseScore alongside the
 chord staff output to compare music21's analysis with ours visually.
 
 **`tools/compare_analyses.py`** — three-level comparison of our analysis against
@@ -2638,6 +2880,11 @@ string.  Classifies disagreements into `full_agree`, `near_agree`,
 `chord_agree_rn_differs`, `chord_agree_key_differs`, `chord_disagree`, `unaligned`.
 Also checks music21's chord against our top-2 alternatives before declaring
 `chord_disagree`, classifying such cases as `near_agree`.
+The script reports all six comparison categories.  Chord identity agreement rate —
+the most diagnostically meaningful figure, counting cases where root pitch class and
+quality match regardless of key context — must currently be computed manually as
+(full_agree + chord_agree_rn_differs + chord_agree_key_differs) / total aligned
+regions.  Adding this as an explicit script output is a planned improvement.
 
 **`tools/run_validation.py`** — orchestrates the full pipeline across all chorales.
 Produces an HTML validation report.  Works with any composer supported by
@@ -2653,16 +2900,16 @@ python tools/run_validation.py --single bach/bwv66.6
 
 ---
 
-### Phase 1 — Analysis Foundation Complete
+### Phase 1 — Analysis Foundation
 
-- `TemporalContext` struct defined and integrated
-- Previous chord continuation scoring
+- `TemporalContext` struct — previous chord continuation scoring
 - Duration sensitivity for passing events
-- Modal extension — Dorian and Mixolydian at minimum
+- Modal extension — melodic minor and harmonic minor families (21 modes total)
 - `KeyModeAnalysisResult` extended with `modeIndex` and `tonicPc`
 - Normalized confidence scores in both result structs
 - Monophonic/arpeggiated chord inference
 - Secondary dominant Roman numeral notation
+- Validation pipeline against Bach chorale corpus; DCML and ABC Beethoven corpora
 
 ### Phase 2 — Knowledge Base and Style System
 
@@ -2699,11 +2946,11 @@ python tools/run_validation.py --single bach/bwv66.6
 
 ### Phase 6 — Intonation Module
 
-- ~~`TuningCalculator` — compute just intonation offsets from analysis results~~ **Done** — tuning systems implemented in `composing/intonation/` (JI, Pythagorean, meantone, well temperaments)
+- `TuningCalculator` — tuning systems in `composing/intonation/` (JI, Pythagorean, meantone, well temperaments)
 - Per-instrument configuration
 - `DriftManager` — drift prediction and correction
-- ~~Tuning system selector (equal, just, meantone, well temperament, Pythagorean)~~ **Done** — user preference in Preferences → Composing, used by all tuning workflows
-- ~~Region tuning~~ **Done** — "Tune selection" in Tools menu, uses harmonic rhythm analysis + split-and-slur
+- Tuning system selector (equal, just, meantone, well temperament, Pythagorean) — user preference in Preferences → Composing
+- Region tuning — "Tune selection" in Tools menu; harmonic rhythm analysis + split-and-slur
 
 ---
 
@@ -2941,6 +3188,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 2.1 — §4.3 (figured bass feasibility note), §4.6 (preference restructure: analyzeForChordFunction replaces separate roman/nashville toggles; single analysisAlternatives count; new status bar boolean flags; chord staff section preferences planned), §11.5 (Nashville added to chord staff output; chord function notation preference design); previous: 2.0*
+*Document version: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

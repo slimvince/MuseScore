@@ -95,6 +95,7 @@ qt_add_qml_module(preferences_qml
         internal/ColorAndWallpaperSection.qml
         internal/ComboBoxWithTitle.qml
         internal/ComposingAnalysisSection.qml
+        internal/ComposingChordStaffSection.qml
         internal/ComposingStatusBarSection.qml
         internal/CommonAudioApiConfiguration.qml
         internal/DefaultStyleSection.qml

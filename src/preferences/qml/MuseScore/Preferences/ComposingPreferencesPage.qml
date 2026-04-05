@@ -52,10 +52,31 @@ PreferencesPage {
             tonicAnchoredTuning:     preferencesModel.tonicAnchoredTuning
             minimizeTuningDeviation: preferencesModel.minimizeTuningDeviation
             annotateTuningOffsets:   preferencesModel.annotateTuningOffsets
-            modeTierWeight1:         preferencesModel.modeTierWeight1
-            modeTierWeight2:         preferencesModel.modeTierWeight2
-            modeTierWeight3:         preferencesModel.modeTierWeight3
-            modeTierWeight4:         preferencesModel.modeTierWeight4
+            // Mode priors — diatonic
+            modePriorIonian:     preferencesModel.modePriorIonian
+            modePriorDorian:     preferencesModel.modePriorDorian
+            modePriorPhrygian:   preferencesModel.modePriorPhrygian
+            modePriorLydian:     preferencesModel.modePriorLydian
+            modePriorMixolydian: preferencesModel.modePriorMixolydian
+            modePriorAeolian:    preferencesModel.modePriorAeolian
+            modePriorLocrian:    preferencesModel.modePriorLocrian
+            // Mode priors — melodic minor family
+            modePriorMelodicMinor:  preferencesModel.modePriorMelodicMinor
+            modePriorDorianB2:      preferencesModel.modePriorDorianB2
+            modePriorLydianAugmented: preferencesModel.modePriorLydianAugmented
+            modePriorLydianDominant:  preferencesModel.modePriorLydianDominant
+            modePriorMixolydianB6:  preferencesModel.modePriorMixolydianB6
+            modePriorAeolianB5:     preferencesModel.modePriorAeolianB5
+            modePriorAltered:       preferencesModel.modePriorAltered
+            // Mode priors — harmonic minor family
+            modePriorHarmonicMinor: preferencesModel.modePriorHarmonicMinor
+            modePriorLocrianSharp6: preferencesModel.modePriorLocrianSharp6
+            modePriorIonianSharp5:  preferencesModel.modePriorIonianSharp5
+            modePriorDorianSharp4:  preferencesModel.modePriorDorianSharp4
+            modePriorPhrygianDominant: preferencesModel.modePriorPhrygianDominant
+            modePriorLydianSharp2:  preferencesModel.modePriorLydianSharp2
+            modePriorAlteredDomBB7: preferencesModel.modePriorAlteredDomBB7
+            currentPreset:          preferencesModel.currentModePriorPreset
 
             navigation.section: root.navigationSection
             navigation.order: root.navigationOrderStart + 1
@@ -68,10 +89,28 @@ PreferencesPage {
             onTonicAnchoredTuningChangeRequested:     function(value) { preferencesModel.tonicAnchoredTuning     = value }
             onMinimizeTuningDeviationChangeRequested: function(value) { preferencesModel.minimizeTuningDeviation = value }
             onAnnotateTuningOffsetsChangeRequested:   function(value) { preferencesModel.annotateTuningOffsets   = value }
-            onModeTierWeight1ChangeRequested:         function(value) { preferencesModel.modeTierWeight1         = value }
-            onModeTierWeight2ChangeRequested:         function(value) { preferencesModel.modeTierWeight2         = value }
-            onModeTierWeight3ChangeRequested:         function(value) { preferencesModel.modeTierWeight3         = value }
-            onModeTierWeight4ChangeRequested:         function(value) { preferencesModel.modeTierWeight4         = value }
+            onModePriorIonianChangeRequested:         function(v) { preferencesModel.modePriorIonian     = v }
+            onModePriorDorianChangeRequested:         function(v) { preferencesModel.modePriorDorian     = v }
+            onModePriorPhrygianChangeRequested:       function(v) { preferencesModel.modePriorPhrygian   = v }
+            onModePriorLydianChangeRequested:         function(v) { preferencesModel.modePriorLydian     = v }
+            onModePriorMixolydianChangeRequested:     function(v) { preferencesModel.modePriorMixolydian = v }
+            onModePriorAeolianChangeRequested:        function(v) { preferencesModel.modePriorAeolian    = v }
+            onModePriorLocrianChangeRequested:        function(v) { preferencesModel.modePriorLocrian    = v }
+            onModePriorMelodicMinorChangeRequested:   function(v) { preferencesModel.modePriorMelodicMinor  = v }
+            onModePriorDorianB2ChangeRequested:       function(v) { preferencesModel.modePriorDorianB2      = v }
+            onModePriorLydianAugmentedChangeRequested: function(v) { preferencesModel.modePriorLydianAugmented = v }
+            onModePriorLydianDominantChangeRequested:  function(v) { preferencesModel.modePriorLydianDominant  = v }
+            onModePriorMixolydianB6ChangeRequested:   function(v) { preferencesModel.modePriorMixolydianB6  = v }
+            onModePriorAeolianB5ChangeRequested:      function(v) { preferencesModel.modePriorAeolianB5     = v }
+            onModePriorAlteredChangeRequested:        function(v) { preferencesModel.modePriorAltered       = v }
+            onModePriorHarmonicMinorChangeRequested:  function(v) { preferencesModel.modePriorHarmonicMinor = v }
+            onModePriorLocrianSharp6ChangeRequested:  function(v) { preferencesModel.modePriorLocrianSharp6 = v }
+            onModePriorIonianSharp5ChangeRequested:   function(v) { preferencesModel.modePriorIonianSharp5  = v }
+            onModePriorDorianSharp4ChangeRequested:   function(v) { preferencesModel.modePriorDorianSharp4  = v }
+            onModePriorPhrygianDominantChangeRequested: function(v) { preferencesModel.modePriorPhrygianDominant = v }
+            onModePriorLydianSharp2ChangeRequested:   function(v) { preferencesModel.modePriorLydianSharp2  = v }
+            onModePriorAlteredDomBB7ChangeRequested:  function(v) { preferencesModel.modePriorAlteredDomBB7 = v }
+            onApplyPresetRequested: function(name) { preferencesModel.applyModePriorPreset(name) }
         }
 
         SeparatorLine { }

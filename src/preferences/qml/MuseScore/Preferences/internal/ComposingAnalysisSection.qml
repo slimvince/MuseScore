@@ -37,10 +37,31 @@ BaseSection {
     property bool tonicAnchoredTuning
     property bool minimizeTuningDeviation
     property bool annotateTuningOffsets
-    property real modeTierWeight1
-    property real modeTierWeight2
-    property real modeTierWeight3
-    property real modeTierWeight4
+    // Mode priors — diatonic
+    property real modePriorIonian
+    property real modePriorDorian
+    property real modePriorPhrygian
+    property real modePriorLydian
+    property real modePriorMixolydian
+    property real modePriorAeolian
+    property real modePriorLocrian
+    // Mode priors — melodic minor family
+    property real modePriorMelodicMinor
+    property real modePriorDorianB2
+    property real modePriorLydianAugmented
+    property real modePriorLydianDominant
+    property real modePriorMixolydianB6
+    property real modePriorAeolianB5
+    property real modePriorAltered
+    // Mode priors — harmonic minor family
+    property real modePriorHarmonicMinor
+    property real modePriorLocrianSharp6
+    property real modePriorIonianSharp5
+    property real modePriorDorianSharp4
+    property real modePriorPhrygianDominant
+    property real modePriorLydianSharp2
+    property real modePriorAlteredDomBB7
+    property string currentPreset     ///< Name of matching preset, or "" for custom
 
     signal analyzeForChordSymbolsChangeRequested(bool value)
     signal analyzeForChordFunctionChangeRequested(bool value)
@@ -50,10 +71,28 @@ BaseSection {
     signal tonicAnchoredTuningChangeRequested(bool value)
     signal minimizeTuningDeviationChangeRequested(bool value)
     signal annotateTuningOffsetsChangeRequested(bool value)
-    signal modeTierWeight1ChangeRequested(real value)
-    signal modeTierWeight2ChangeRequested(real value)
-    signal modeTierWeight3ChangeRequested(real value)
-    signal modeTierWeight4ChangeRequested(real value)
+    signal modePriorIonianChangeRequested(real value)
+    signal modePriorDorianChangeRequested(real value)
+    signal modePriorPhrygianChangeRequested(real value)
+    signal modePriorLydianChangeRequested(real value)
+    signal modePriorMixolydianChangeRequested(real value)
+    signal modePriorAeolianChangeRequested(real value)
+    signal modePriorLocrianChangeRequested(real value)
+    signal modePriorMelodicMinorChangeRequested(real value)
+    signal modePriorDorianB2ChangeRequested(real value)
+    signal modePriorLydianAugmentedChangeRequested(real value)
+    signal modePriorLydianDominantChangeRequested(real value)
+    signal modePriorMixolydianB6ChangeRequested(real value)
+    signal modePriorAeolianB5ChangeRequested(real value)
+    signal modePriorAlteredChangeRequested(real value)
+    signal modePriorHarmonicMinorChangeRequested(real value)
+    signal modePriorLocrianSharp6ChangeRequested(real value)
+    signal modePriorIonianSharp5ChangeRequested(real value)
+    signal modePriorDorianSharp4ChangeRequested(real value)
+    signal modePriorPhrygianDominantChangeRequested(real value)
+    signal modePriorLydianSharp2ChangeRequested(real value)
+    signal modePriorAlteredDomBB7ChangeRequested(real value)
+    signal applyPresetRequested(string name)
 
     Column {
         spacing: root.rowSpacing
@@ -231,9 +270,9 @@ BaseSection {
         // --- Section break ---
         SeparatorLine { }
 
-        // --- Mode weight section ---
+        // --- Mode prior section ---
         StyledTextLabel {
-            text: qsTrc("preferences", "Mode detection weights")
+            text: qsTrc("preferences", "Mode detection priors")
             width: root.columnWidth
             font: ui.theme.bodyBoldFont
             horizontalAlignment: Text.AlignLeft
@@ -245,126 +284,275 @@ BaseSection {
             bottomPadding: root.rowSpacing / 2
         }
 
+        // Preset buttons
         Row {
-            spacing: 12
-            StyledTextLabel {
-                width: root.columnWidth
-                anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Preset")
-                horizontalAlignment: Text.AlignLeft
-            }
+            spacing: 6
+            enabled: root.inferKeyMode
 
-            property var presetModel: [
-                { text: qsTrc("preferences", "Standard"),  value: "standard" },
-                { text: qsTrc("preferences", "Jazz"),      value: "jazz" },
-                { text: qsTrc("preferences", "Modal"),     value: "modal" },
-                { text: qsTrc("preferences", "Equal"),     value: "equal" }
-            ]
+            Repeater {
+                model: ["Standard", "Jazz", "Modal", "Baroque", "Contemporary"]
 
-            property var presetValues: ({
-                "standard": { t1:  1.0, t2: -0.5, t3: -1.5, t4: -3.0 },
-                "jazz":     { t1:  1.0, t2:  0.5, t3: -0.5, t4: -2.0 },
-                "modal":    { t1:  0.5, t2:  0.5, t3:  0.0, t4: -1.5 },
-                "equal":    { t1:  0.0, t2:  0.0, t3:  0.0, t4:  0.0 }
-            })
-
-            function currentPresetIndex() {
-                var m = presetModel
-                var pv = presetValues
-                for (var i = 0; i < m.length; i++) {
-                    var v = pv[m[i].value]
-                    if (Math.abs(root.modeTierWeight1 - v.t1) < 0.01
-                        && Math.abs(root.modeTierWeight2 - v.t2) < 0.01
-                        && Math.abs(root.modeTierWeight3 - v.t3) < 0.01
-                        && Math.abs(root.modeTierWeight4 - v.t4) < 0.01) {
-                        return i
-                    }
-                }
-                return -1  // custom values — no preset matches
-            }
-
-            ComboBoxWithTitle {
-                title: ""
-                model: parent.presetModel
-                currentIndex: parent.currentPresetIndex()
-                controlWidth: 200
-                navigationName: "ModeWeightPresetComboBox"
-                navigationPanel: root.navigation
-                enabled: root.inferKeyMode
-                onValueEdited: function(newIndex, newValue) {
-                    var v = parent.presetValues[newValue]
-                    if (v) {
-                        root.modeTierWeight1ChangeRequested(v.t1)
-                        root.modeTierWeight2ChangeRequested(v.t2)
-                        root.modeTierWeight3ChangeRequested(v.t3)
-                        root.modeTierWeight4ChangeRequested(v.t4)
-                    }
+                FlatButton {
+                    text: modelData
+                    accentButton: root.currentPreset === modelData
+                    onClicked: root.applyPresetRequested(modelData)
                 }
             }
         }
 
+        // Diatonic modes
+        StyledTextLabel {
+            text: qsTrc("preferences", "Diatonic")
+            width: root.columnWidth
+            font: ui.theme.bodyFont
+            horizontalAlignment: Text.AlignLeft
+        }
         IncrementalPropertyControlWithTitle {
-            title: qsTrc("preferences", "Tier 1 — Ionian (major) / Aeolian (minor)")
+            title: qsTrc("preferences", "Ionian (major)")
             columnWidth: root.columnWidth
-            currentValue: root.modeTierWeight1
-            minValue: -5.0
-            maxValue: 5.0
-            control.decimals: 1
-            control.step: 0.5
-            navigation.name: "ModeTierWeight1Control"
+            currentValue: root.modePriorIonian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorIonianControl"
             navigation.panel: root.navigation
             enabled: root.inferKeyMode
-            onValueEdited: function(newValue) {
-                root.modeTierWeight1ChangeRequested(newValue)
-            }
+            onValueEdited: function(v) { root.modePriorIonianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Dorian")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorDorian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorDorianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorDorianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Phrygian")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorPhrygian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorPhrygianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorPhrygianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Lydian")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLydian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLydianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLydianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Mixolydian")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorMixolydian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorMixolydianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorMixolydianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Aeolian (natural minor)")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorAeolian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorAeolianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorAeolianChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Locrian")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLocrian
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLocrianControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLocrianChangeRequested(v) }
         }
 
+        // Melodic minor family
+        StyledTextLabel {
+            text: qsTrc("preferences", "Melodic minor family")
+            width: root.columnWidth
+            font: ui.theme.bodyFont
+            horizontalAlignment: Text.AlignLeft
+        }
         IncrementalPropertyControlWithTitle {
-            title: qsTrc("preferences", "Tier 2 — Dorian / Mixolydian")
+            title: qsTrc("preferences", "Melodic minor")
             columnWidth: root.columnWidth
-            currentValue: root.modeTierWeight2
-            minValue: -5.0
-            maxValue: 5.0
-            control.decimals: 1
-            control.step: 0.5
-            navigation.name: "ModeTierWeight2Control"
+            currentValue: root.modePriorMelodicMinor
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorMelodicMinorControl"
             navigation.panel: root.navigation
             enabled: root.inferKeyMode
-            onValueEdited: function(newValue) {
-                root.modeTierWeight2ChangeRequested(newValue)
-            }
+            onValueEdited: function(v) { root.modePriorMelodicMinorChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Dorian ♭2")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorDorianB2
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorDorianB2Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorDorianB2ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Lydian augmented")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLydianAugmented
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLydianAugmentedControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLydianAugmentedChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Lydian dominant")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLydianDominant
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLydianDominantControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLydianDominantChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Mixolydian ♭6")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorMixolydianB6
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorMixolydianB6Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorMixolydianB6ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Aeolian ♭5 (half-diminished)")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorAeolianB5
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorAeolianB5Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorAeolianB5ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Altered (super-Locrian)")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorAltered
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorAlteredControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorAlteredChangeRequested(v) }
         }
 
-        IncrementalPropertyControlWithTitle {
-            title: qsTrc("preferences", "Tier 3 — Lydian / Phrygian")
-            columnWidth: root.columnWidth
-            currentValue: root.modeTierWeight3
-            minValue: -5.0
-            maxValue: 5.0
-            control.decimals: 1
-            control.step: 0.5
-            navigation.name: "ModeTierWeight3Control"
-            navigation.panel: root.navigation
-            enabled: root.inferKeyMode
-            onValueEdited: function(newValue) {
-                root.modeTierWeight3ChangeRequested(newValue)
-            }
+        // Harmonic minor family
+        StyledTextLabel {
+            text: qsTrc("preferences", "Harmonic minor family")
+            width: root.columnWidth
+            font: ui.theme.bodyFont
+            horizontalAlignment: Text.AlignLeft
         }
-
         IncrementalPropertyControlWithTitle {
-            title: qsTrc("preferences", "Tier 4 — Locrian")
+            title: qsTrc("preferences", "Harmonic minor")
             columnWidth: root.columnWidth
-            currentValue: root.modeTierWeight4
-            minValue: -5.0
-            maxValue: 5.0
-            control.decimals: 1
-            control.step: 0.5
-            navigation.name: "ModeTierWeight4Control"
+            currentValue: root.modePriorHarmonicMinor
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorHarmonicMinorControl"
             navigation.panel: root.navigation
             enabled: root.inferKeyMode
-            onValueEdited: function(newValue) {
-                root.modeTierWeight4ChangeRequested(newValue)
-            }
+            onValueEdited: function(v) { root.modePriorHarmonicMinorChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Locrian ♯6")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLocrianSharp6
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLocrianSharp6Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLocrianSharp6ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Ionian ♯5")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorIonianSharp5
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorIonianSharp5Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorIonianSharp5ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Dorian ♯4")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorDorianSharp4
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorDorianSharp4Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorDorianSharp4ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Phrygian dominant")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorPhrygianDominant
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorPhrygianDominantControl"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorPhrygianDominantChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Lydian ♯2")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorLydianSharp2
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorLydianSharp2Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorLydianSharp2ChangeRequested(v) }
+        }
+        IncrementalPropertyControlWithTitle {
+            title: qsTrc("preferences", "Altered dominant ♭♭7")
+            columnWidth: root.columnWidth
+            currentValue: root.modePriorAlteredDomBB7
+            minValue: -5.0; maxValue: 5.0
+            control.decimals: 2; control.step: 0.1
+            navigation.name: "ModePriorAlteredDomBB7Control"
+            navigation.panel: root.navigation
+            enabled: root.inferKeyMode
+            onValueEdited: function(v) { root.modePriorAlteredDomBB7ChangeRequested(v) }
         }
     }
 }

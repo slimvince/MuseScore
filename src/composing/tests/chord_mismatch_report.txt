@@ -1,9 +1,27 @@
-=== Abstract chord mismatch summary: total=0 ===
+=== Abstract chord mismatch summary: total=8 ===
 Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
+measure 8: root(xml=0,ana=9) quality(xml=Major,ana=Minor) minor7(xml=0,ana=1) 
+  key=0maj  pitches=[60,64,67,69]  pcs=[0,4,7,9]  tpcs=[15,19,16,18]
+measure 24: root(xml=0,ana=9) quality(xml=Major,ana=Minor) minor7(xml=0,ana=1) 
+  key=0maj  pitches=[60,62,64,67,69]  pcs=[0,2,4,7,9]  tpcs=[15,17,19,16,18]
+measure 42: root(xml=0,ana=9) quality(xml=Minor,ana=HalfDiminished) 
+  key=0maj  pitches=[60,63,67,69]  pcs=[0,3,7,9]  tpcs=[15,12,16,18]
+measure 48: root(xml=0,ana=9) quality(xml=Minor,ana=HalfDiminished) 
+  key=0maj  pitches=[60,62,63,67,69]  pcs=[0,2,3,7,9]  tpcs=[15,17,12,16,18]
+measure 139: root(xml=0,ana=5) quality(xml=Augmented,ana=Major) minor7(xml=1,ana=0) major7(xml=0,ana=1) 
+  key=0maj  pitches=[60,64,68,70,74,77,81]  pcs=[0,4,8,10,2,5,9]  tpcs=[15,19,23,13,17,14,18]
+measure 275: root(xml=0,ana=9) quality(xml=Major,ana=Minor) minor7(xml=0,ana=1) 
+  key=0maj  pitches=[60,62,64,67,69]  pcs=[0,2,4,7,9]  tpcs=[15,17,19,16,18]
+measure 277: root(xml=0,ana=9) quality(xml=Major,ana=Minor) minor7(xml=0,ana=1) 
+  key=0maj  pitches=[60,64,67,69,74]  pcs=[0,4,7,9,2]  tpcs=[15,19,16,18,17]
+measure 285: root(xml=0,ana=2) minor7(xml=0,ana=1) 
+  key=0maj  pitches=[60,66,70,74]  pcs=[0,6,10,2]  tpcs=[15,21,25,17]
 
-=== Symbol/Roman mismatch summary: total=135 ===
+=== Symbol/Roman mismatch summary: total=141 ===
 Per-measure symbol mismatches (abstract correct; inspect pitches to determine
   whether this is a formatter bug or a catalog annotation inconsistency):
+measure 8 [symbol+roman]  xml='C6'  analyzer='Am7/C'  roman xml='I(add6)'  analyzer='vi65'
+  key=0maj  pitches=[60,64,67,69]  pcs=[0,4,7,9]  tpcs=[15,19,16,18]
 measure 12 [roman]  roman xml='IM7'  analyzer='IM9'
   key=0maj  pitches=[60,64,67,71,74]  pcs=[0,4,7,11,2]  tpcs=[15,19,16,20,17]
 measure 14 [roman]  roman xml='IM7'  analyzer='IM9#11'
@@ -14,6 +32,8 @@ measure 18 [roman]  roman xml='IM7'  analyzer='IM13'
   key=0maj  pitches=[60,64,67,71,74,77,81]  pcs=[0,4,7,11,2,5,9]  tpcs=[15,19,16,20,17,14,18]
 measure 20 [roman]  roman xml='IM7'  analyzer='IM9'
   key=0maj  pitches=[60,67,71,74]  pcs=[0,7,11,2]  tpcs=[15,16,20,17]
+measure 24 [symbol+roman]  xml='C69'  analyzer='Am7add11/C'  roman xml='I69'  analyzer='vi1165'
+  key=0maj  pitches=[60,62,64,67,69]  pcs=[0,2,4,7,9]  tpcs=[15,17,19,16,18]
 measure 26 [roman]  roman xml='I'  analyzer='I(add9)'
   key=0maj  pitches=[60,62,64,67]  pcs=[0,2,4,7]  tpcs=[15,17,19,16]
 measure 36 [roman]  roman xml='i7'  analyzer='i9'
@@ -22,8 +42,12 @@ measure 38 [roman]  roman xml='i7'  analyzer='i11'
   key=0maj  pitches=[60,63,67,70,74,77]  pcs=[0,3,7,10,2,5]  tpcs=[15,12,16,13,17,14]
 measure 40 [roman]  roman xml='i7'  analyzer='i13'
   key=0maj  pitches=[60,63,67,70,74,77,81]  pcs=[0,3,7,10,2,5,9]  tpcs=[15,12,16,13,17,14,18]
+measure 42 [symbol+roman]  xml='Cm6'  analyzer='Am7b5/C'  roman xml='i(add6)'  analyzer='viø7#1165'
+  key=0maj  pitches=[60,63,67,69]  pcs=[0,3,7,9]  tpcs=[15,12,16,18]
 measure 46 [roman]  roman xml='i7'  analyzer='i7#5'
   key=0maj  pitches=[60,63,68,70]  pcs=[0,3,8,10]  tpcs=[15,12,23,13]
+measure 48 [symbol+roman]  xml='Cm69'  analyzer='Am7b5/C'  roman xml='i69'  analyzer='viø11#1165'
+  key=0maj  pitches=[60,62,63,67,69]  pcs=[0,2,3,7,9]  tpcs=[15,17,12,16,18]
 measure 54 [roman]  roman xml='IM7'  analyzer='IM7b5'
   key=0maj  pitches=[60,64,66,71]  pcs=[0,4,6,11]  tpcs=[15,19,9,20]
 measure 56 [roman]  roman xml='iø7'  analyzer='iø7#11'
@@ -98,7 +122,7 @@ measure 133 [symbol+roman]  xml='C13b5#9'  analyzer='C13#9b5'  roman xml='I7'  a
   key=0maj  pitches=[60,64,66,70,75,77,81]  pcs=[0,4,6,10,3,5,9]  tpcs=[15,19,9,13,24,14,18]
 measure 135 [symbol+roman]  xml='C7b5#9b13'  analyzer='C7#9b13b5'  roman xml='I7'  analyzer='I7b5#9b13'
   key=0maj  pitches=[60,64,66,70,75,80]  pcs=[0,4,6,10,3,8]  tpcs=[15,19,9,13,24,11]
-measure 139 [roman]  roman xml='I+7'  analyzer='I+13'
+measure 139 [symbol+roman]  xml='C13#5'  analyzer='FMaj7add13/C'  roman xml='I+7'  analyzer='IVM13#943'
   key=0maj  pitches=[60,64,68,70,74,77,81]  pcs=[0,4,8,10,2,5,9]  tpcs=[15,19,23,13,17,14,18]
 measure 142 [roman]  roman xml='I+7'  analyzer='I+7#9'
   key=0maj  pitches=[60,64,68,70,75]  pcs=[0,4,8,10,3]  tpcs=[15,19,23,13,24]
@@ -220,11 +244,15 @@ measure 261 [roman]  roman xml='I'  analyzer='I(add11)'
   key=0maj  pitches=[60,64,65,67]  pcs=[0,4,5,7]  tpcs=[15,19,14,16]
 measure 273 [roman]  roman xml='I'  analyzer='I(add#11)'
   key=0maj  pitches=[60,64,67,78,82]  pcs=[0,4,7,6,10]  tpcs=[15,19,16,21,25]
+measure 275 [symbol+roman]  xml='C69'  analyzer='Am7add11/C'  roman xml='I69'  analyzer='vi1165'
+  key=0maj  pitches=[60,62,64,67,69]  pcs=[0,2,4,7,9]  tpcs=[15,17,19,16,18]
+measure 277 [symbol+roman]  xml='C69'  analyzer='Am7add11/C'  roman xml='I69'  analyzer='vi1165'
+  key=0maj  pitches=[60,64,67,69,74]  pcs=[0,4,7,9,2]  tpcs=[15,19,16,18,17]
 measure 281 [roman]  roman xml='I7'  analyzer='I11'
   key=0maj  pitches=[60,64,67,70,74,77]  pcs=[0,4,7,10,2,5]  tpcs=[15,19,16,13,17,14]
 measure 283 [roman]  roman xml='IM7'  analyzer='IM11'
   key=0maj  pitches=[60,64,67,71,74,77]  pcs=[0,4,7,11,2,5]  tpcs=[15,19,16,20,17,14]
-measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'
+measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='II+42'
   key=0maj  pitches=[60,66,70,74]  pcs=[0,6,10,2]  tpcs=[15,21,25,17]
 measure 287 [roman]  roman xml='i7'  analyzer='i11'
   key=0maj  pitches=[60,63,65,67,70]  pcs=[0,3,5,7,10]  tpcs=[15,12,14,16,13]
@@ -244,7 +272,7 @@ measure 312 [roman]  roman xml='IM7'  analyzer='IM7#11'
   key=0maj  pitches=[60,64,67,71,78]  pcs=[0,4,7,11,6]  tpcs=[15,19,16,20,21]
 measure 314 [roman]  roman xml='I+M7'  analyzer='I+M9'
   key=0maj  pitches=[60,64,68,71,74]  pcs=[0,4,8,11,2]  tpcs=[15,19,23,20,17]
-measure 316 [roman]  roman xml='IM7'  analyzer='IM7#9'
+measure 316 [symbol+roman]  xml='CMaj7#9'  analyzer='CMaj7'  roman xml='IM7'  analyzer='IM7#9'
   key=0maj  pitches=[60,64,67,71,75]  pcs=[0,4,7,11,3]  tpcs=[15,19,16,20,24]
 measure 319 [roman]  roman xml='I'  analyzer='I(add9)'
   key=0maj  pitches=[60,62,64,67]  pcs=[0,2,4,7]  tpcs=[15,17,19,16]
@@ -254,11 +282,11 @@ measure 325 [roman]  roman xml='IM7'  analyzer='IM11'
   key=0maj  pitches=[60,65,67,71]  pcs=[0,5,7,11]  tpcs=[15,14,16,20]
 measure 327 [roman]  roman xml='IM7'  analyzer='IM11'
   key=0maj  pitches=[60,65,67,71,74]  pcs=[0,5,7,11,2]  tpcs=[15,14,16,20,17]
-measure 329 [roman]  roman xml='i7'  analyzer='i7b9'
+measure 329 [symbol+roman]  xml='Cm7b9'  analyzer='Cm7'  roman xml='i7'  analyzer='i7b9'
   key=0maj  pitches=[60,63,67,70,73]  pcs=[0,3,7,10,1]  tpcs=[15,12,16,13,10]
 measure 331 [roman]  roman xml='i7'  analyzer='i7b13'
   key=0maj  pitches=[60,63,67,70,80]  pcs=[0,3,7,10,8]  tpcs=[15,12,16,13,11]
-measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm11'  roman xml='i7'  analyzer='i11b9'
+measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm7add11'  roman xml='i7'  analyzer='i11b9'
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
 measure 336 [roman]  roman xml='i'  analyzer='i(add9)'
   key=0maj  pitches=[60,62,63,67]  pcs=[0,2,3,7]  tpcs=[15,17,12,16]

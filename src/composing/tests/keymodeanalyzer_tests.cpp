@@ -22,7 +22,7 @@
 
 #include <gtest/gtest.h>
 
-#include "composing/analysis/keymodeanalyzer.h"
+#include "composing/analysis/key/keymodeanalyzer.h"
 
 using namespace mu::composing::analysis;
 
@@ -110,7 +110,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersCMajorForCMajorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersAMinorForAMinorPitchSet)
@@ -122,7 +122,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersAMinorForAMinorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersGMajorForGMajorPitchSet)
@@ -134,7 +134,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersGMajorForGMajorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 1);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersEMinorForEMinorPitchSet)
@@ -146,7 +146,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersEMinorForEMinorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 1);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersDMajorForDMajorPitchSet)
@@ -158,7 +158,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersDMajorForDMajorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 2);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersBMinorForBMinorPitchSet)
@@ -170,7 +170,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersBMinorForBMinorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 2);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersFMajorForFMajorPitchSet)
@@ -182,7 +182,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersFMajorForFMajorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -1);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersDMinorForDMinorPitchSet)
@@ -194,7 +194,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersDMinorForDMinorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -1);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersBbMajorForBbMajorPitchSet)
@@ -207,7 +207,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersBbMajorForBbMajorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -2);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, PrefersGMinorForGMinorPitchSet)
@@ -220,7 +220,7 @@ TEST(Composing_KeyModeAnalyzerTests, PrefersGMinorForGMinorPitchSet)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -2);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 // ── Relative major/minor disambiguation — post-hoc mutations ─────────────────
@@ -241,7 +241,7 @@ TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMajorFromRelativeMinorByComple
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMinorFromRelativeMajorByTonicEvidence)
@@ -254,7 +254,7 @@ TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMinorFromRelativeMajorByTonicE
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMajorWhenOnlyTonicAbsentInMinor)
@@ -267,7 +267,7 @@ TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMajorWhenOnlyTonicAbsentInMino
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMinorWhenOnlyMinorTonicPresent)
@@ -280,7 +280,7 @@ TEST(Composing_KeyModeAnalyzerTests, DisambiguatesMinorWhenOnlyMinorTonicPresent
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 0);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 // ── Key signature proximity bias ──────────────────────────────────────────────
@@ -302,7 +302,7 @@ TEST(Composing_KeyModeAnalyzerTests, KeySignatureProximityBiasesResultTowardNota
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -3);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, KeySignatureProximityBiasesMinorResult)
@@ -315,7 +315,7 @@ TEST(Composing_KeyModeAnalyzerTests, KeySignatureProximityBiasesMinorResult)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -3);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 // ── Bass weighting ────────────────────────────────────────────────────────────
@@ -343,9 +343,9 @@ TEST(Composing_KeyModeAnalyzerTests, BassTonicBoostsKeyScore)
     ASSERT_FALSE(resultsCBass.empty());
     ASSERT_FALSE(resultsGBass.empty());
     EXPECT_EQ(resultsCBass.front().keySignatureFifths, 0);
-    EXPECT_EQ(resultsCBass.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(resultsCBass.front().mode, KeySigMode::Ionian);
     EXPECT_EQ(resultsGBass.front().keySignatureFifths, 0);
-    EXPECT_EQ(resultsGBass.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(resultsGBass.front().mode, KeySigMode::Ionian);
 
     // C-bass version should score higher because the tonic's evidence weight is doubled.
     EXPECT_GT(resultsCBass.front().score, resultsGBass.front().score);
@@ -379,7 +379,7 @@ TEST(Composing_KeyModeAnalyzerTests, HighDurationWeightOnTonicIncreasesScore)
     ASSERT_FALSE(resultsHeavy.empty());
     ASSERT_FALSE(resultsLight.empty());
     EXPECT_EQ(resultsHeavy.front().keySignatureFifths, 0);
-    EXPECT_EQ(resultsHeavy.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(resultsHeavy.front().mode, KeySigMode::Ionian);
 
     // Heavy tonic → higher absolute score for the winning candidate.
     EXPECT_GT(resultsHeavy.front().score, resultsLight.front().score);
@@ -402,8 +402,8 @@ TEST(Composing_KeyModeAnalyzerTests, LeadingToneRaisesScore)
 
     ASSERT_FALSE(resultsNoLeading.empty());
     ASSERT_FALSE(resultsWithLeading.empty());
-    EXPECT_EQ(resultsNoLeading.front().mode, KeyMode::Ionian);
-    EXPECT_EQ(resultsWithLeading.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(resultsNoLeading.front().mode, KeySigMode::Ionian);
+    EXPECT_EQ(resultsWithLeading.front().mode, KeySigMode::Ionian);
 
     // Adding the leading tone should increase the score.
     EXPECT_GT(resultsWithLeading.front().score, resultsNoLeading.front().score);
@@ -473,7 +473,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesDMajorFromFullScale)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 2);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, IdentifiesBbMajorFromFullScale)
@@ -485,7 +485,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesBbMajorFromFullScale)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -2);
-    EXPECT_EQ(results.front().mode, KeyMode::Ionian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Ionian);
 }
 
 TEST(Composing_KeyModeAnalyzerTests, IdentifiesEMinorFromFullScale)
@@ -497,7 +497,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesEMinorFromFullScale)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, 1);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);
 }
 
 // ── Strongly weighted tonic overrides ambiguity ───────────────────────────────
@@ -520,7 +520,7 @@ TEST(Composing_KeyModeAnalyzerTests, HeavyTonicWeightOverridesAmbiguousContext)
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().keySignatureFifths, -3);
-    EXPECT_EQ(results.front().mode, KeyMode::Aeolian);   // C minor
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian);   // C minor
 }
 
 // ── Normalized confidence ───────────────────────────────────────────────────
@@ -590,7 +590,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesDDorianFromTonicTriadAndCharacter
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Dorian);
     EXPECT_EQ(results.front().tonicPc, 2);   // D
 }
 
@@ -608,7 +608,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesEPhrygianFromTonicTriadAndCharact
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Phrygian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Phrygian);
     EXPECT_EQ(results.front().tonicPc, 4);   // E
 }
 
@@ -626,7 +626,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesFLydianFromTonicTriadAndCharacter
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Lydian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Lydian);
     EXPECT_EQ(results.front().tonicPc, 5);   // F
 }
 
@@ -644,7 +644,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesGMixolydianFromTonicTriadAndChara
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Mixolydian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Mixolydian);
     EXPECT_EQ(results.front().tonicPc, 7);   // G
 }
 
@@ -661,7 +661,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesBLocrianFromTonicTriadAndCharacte
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Locrian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Locrian);
     EXPECT_EQ(results.front().tonicPc, 11);  // B
 }
 
@@ -683,7 +683,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesDDorianFromFullScale)
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Dorian);
     EXPECT_EQ(results.front().tonicPc, 2);
 }
 
@@ -703,7 +703,7 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesGMixolydianFromFullScale)
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 0);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Mixolydian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Mixolydian);
     EXPECT_EQ(results.front().tonicPc, 7);
 }
 
@@ -723,6 +723,237 @@ TEST(Composing_KeyModeAnalyzerTests, IdentifiesADorianWithKeySig1)
     const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 1);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().mode, KeyMode::Dorian);
+    EXPECT_EQ(results.front().mode, KeySigMode::Dorian);
     EXPECT_EQ(results.front().tonicPc, 9);   // A
+}
+
+// ── 21-mode expansion — melodic and harmonic minor families ──────────────────
+//
+// One test per new mode, rooted on C.  Tests use neutral priors (all 0.0) and
+// no key-signature distance penalty so only the structural pitch-membership and
+// characteristic-pitch scoring decide the winner.  This isolates the mode
+// identification logic from the prior calibration.
+
+namespace {
+
+/// Return a KeyModeAnalyzerPreferences with all mode priors zeroed and
+/// key-signature distance penalty removed.  Everything else at compile defaults.
+KeyModeAnalyzerPreferences neutralPrefs()
+{
+    KeyModeAnalyzerPreferences p;
+    p.modePriorIonian          = 0.0;
+    p.modePriorDorian          = 0.0;
+    p.modePriorPhrygian        = 0.0;
+    p.modePriorLydian          = 0.0;
+    p.modePriorMixolydian      = 0.0;
+    p.modePriorAeolian         = 0.0;
+    p.modePriorLocrian         = 0.0;
+    p.modePriorMelodicMinor    = 0.0;
+    p.modePriorDorianB2        = 0.0;
+    p.modePriorLydianAugmented = 0.0;
+    p.modePriorLydianDominant  = 0.0;
+    p.modePriorMixolydianB6    = 0.0;
+    p.modePriorAeolianB5       = 0.0;
+    p.modePriorAltered         = 0.0;
+    p.modePriorHarmonicMinor   = 0.0;
+    p.modePriorLocrianSharp6   = 0.0;
+    p.modePriorIonianSharp5    = 0.0;
+    p.modePriorDorianSharp4    = 0.0;
+    p.modePriorPhrygianDominant = 0.0;
+    p.modePriorLydianSharp2    = 0.0;
+    p.modePriorAlteredDomBB7   = 0.0;
+    p.keySignatureDistancePenalty = 0.0;
+    return p;
+}
+
+} // namespace
+
+// ── Mode-to-keySig mapping for C-rooted tests ────────────────────────────────
+//
+// The key-signature comparison path routes each mode to a tonic computed as
+//   tpc = (ionianTonicPcFromFifths(keySig) + keyModeTonicOffset(mode)) % 12
+// For C to be the expected tonic, keySig must satisfy that equation.  Computed
+// as: keySig whose Ionian tonic = ionianTonicPcForMode(0, modeIndex).
+//
+//   MelodicMinor:   parent Ionian = Bb → keySig=-2
+//   DorianB2:       parent Ionian = Ab → keySig=-4
+//   LydianAug:      parent Ionian = G  → keySig=+1
+//   LydianDom:      parent Ionian = F  → keySig=-1
+//   MixolydianB6:   parent Ionian = Eb → keySig=-3
+//   AeolianB5:      parent Ionian = Db → keySig=+7
+//   Altered:        parent Ionian = B  → keySig=+5
+//   HarmonicMinor:  parent Ionian = Eb → keySig=-3
+//   LocrianSharp6:  parent Ionian = Db → keySig=+7
+//   IonianSharp5:   parent Ionian = C  → keySig=0  (already passes)
+//   DorianSharp4:   parent Ionian = Bb → keySig=-2
+//   PhrygianDom:    parent Ionian = Ab → keySig=-4
+//   LydianSharp2:   parent Ionian = G  → keySig=+1
+//   AlteredDomBB7:  parent Ionian = E  → keySig=+4
+
+// C Melodic Minor: {0 2 3 5 7 9 11} — Eb (min3) + B (maj7) + A (maj6)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCMelodicMinor)
+{
+    // Full scale: C D Eb F G A B  (parent Bb major → keySig=-2)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 63, 65, 67, 69, 71 }), -2, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::MelodicMinor);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Dorian b2 (Phrygian #6): {0 1 3 5 7 9 10} — Db (min2) + A (maj6)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCDorianB2)
+{
+    // Full scale: C Db Eb F G A Bb  (parent Ab major → keySig=-4)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 61, 63, 65, 67, 69, 70 }), -4, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::DorianB2);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Lydian Augmented: {0 2 4 6 8 9 11} — F# (aug4) + G# (aug5)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCLydianAugmented)
+{
+    // Full scale: C D E F# G# A B  (parent G major → keySig=+1)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 64, 66, 68, 69, 71 }), 1, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::LydianAugmented);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Lydian Dominant: {0 2 4 6 7 9 10} — F# (aug4) + Bb (min7)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCLydianDominant)
+{
+    // Full scale: C D E F# G A Bb  (parent F major → keySig=-1)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 64, 66, 67, 69, 70 }), -1, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::LydianDominant);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Mixolydian b6: {0 2 4 5 7 8 10} — Ab (min6) + E (maj3)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCMixolydianB6)
+{
+    // Full scale: C D E F G Ab Bb  (parent Eb major → keySig=-3)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 64, 65, 67, 68, 70 }), -3, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::MixolydianB6);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Aeolian b5 (Locrian #2): {0 2 3 5 6 8 10} — Gb (dim5) + D (maj2)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCAeolianB5)
+{
+    // Full scale: C D Eb F Gb Ab Bb  (parent Db major → keySig=+7)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 63, 65, 66, 68, 70 }), 7, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::AeolianB5);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Altered (Super Locrian): {0 1 3 4 6 8 10} — Db (min2) + Bb (min7)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCAltered)
+{
+    // Full scale: C Db Eb E Gb Ab Bb  (parent B major → keySig=+5)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 61, 63, 64, 66, 68, 70 }), 5, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::Altered);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Harmonic Minor: {0 2 3 5 7 8 11} — B (maj7) + Ab (min6)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCHarmonicMinor)
+{
+    // Full scale: C D Eb F G Ab B  (parent Eb major → keySig=-3)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 63, 65, 67, 68, 71 }), -3, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::HarmonicMinor);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Locrian #6: {0 1 3 5 6 9 10} — A (maj6) in Locrian context
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCLocrianSharp6)
+{
+    // Full scale: C Db Eb F Gb A Bb  (parent Db major → keySig=+7)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 61, 63, 65, 66, 69, 70 }), 7, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::LocrianSharp6);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Ionian #5 (Major #5): {0 2 4 5 8 9 11} — Ab (aug5)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCIonianSharp5)
+{
+    // Full scale: C D E F Ab A B  (parent C major → keySig=0)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 64, 65, 68, 69, 71 }), 0, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::IonianSharp5);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Dorian #4: {0 2 3 6 7 9 10} — F# (aug4) + Eb (min3)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCDorianSharp4)
+{
+    // Full scale: C D Eb F# G A Bb  (parent Bb major → keySig=-2)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 62, 63, 66, 67, 69, 70 }), -2, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::DorianSharp4);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Phrygian Dominant: {0 1 4 5 7 8 10} — E (maj3) + Db (min2)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCPhrygianDominant)
+{
+    // Full scale: C Db E F G Ab Bb  (parent Ab major → keySig=-4)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 61, 64, 65, 67, 68, 70 }), -4, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::PhrygianDominant);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Lydian #2: {0 3 4 6 7 9 11} — D# (aug2) + F# (aug4)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCLydianSharp2)
+{
+    // Full scale: C D# E F# G A B  (parent G major → keySig=+1)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 63, 64, 66, 67, 69, 71 }), 1, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::LydianSharp2);
+    EXPECT_EQ(results.front().tonicPc, 0);
+}
+
+// C Altered Dominant bb7: {0 1 3 4 6 8 9} — Db (min2) + A (dim7=9)
+TEST(Composing_KeyModeAnalyzerTests, IdentifiesCAlteredDomBB7)
+{
+    // Full scale: C Db Eb E Gb Ab A  (parent E major → keySig=+4)
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(
+        flatPitches({ 60, 61, 63, 64, 66, 68, 69 }), 4, neutralPrefs());
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().mode, KeySigMode::AlteredDomBB7);
+    EXPECT_EQ(results.front().tonicPc, 0);
 }

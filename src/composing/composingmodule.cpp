@@ -25,6 +25,8 @@
 
 #include "composingconfiguration.h"
 #include "icomposingconfiguration.h"
+#include "icomposinganalysisconfiguration.h"
+#include "icomposingchordstaffconfiguration.h"
 
 using namespace mu::composing;
 using namespace muse::modularity;
@@ -39,7 +41,8 @@ std::string ComposingModule::moduleName() const
 void ComposingModule::registerExports()
 {
     m_configuration = std::make_shared<ComposingConfiguration>();
-    globalIoc()->registerExport<IComposingConfiguration>(mname, m_configuration);
+    globalIoc()->registerExport<IComposingAnalysisConfiguration>(mname, m_configuration);
+    globalIoc()->registerExport<IComposingChordStaffConfiguration>(mname, m_configuration);
 }
 
 void ComposingModule::onInit(const muse::IApplication::RunMode&)

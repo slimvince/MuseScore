@@ -22,14 +22,12 @@
 
 #pragma once
 
+#include <memory>
 #include <string>
 #include <vector>
 
-#include "keymodeanalyzer.h"
-
-namespace mu::engraving {
-class Note;
-}
+#include "analysisutils.h"
+#include "../key/keymodeanalyzer.h"
 
 namespace mu::composing::analysis {
 
@@ -52,55 +50,86 @@ struct ChordAnalysisTone {
     bool isBass = false;
 };
 
+// ── Extension bitmask ────────────────────────────────────────────────────────
+
+/// Chord extension and alteration flags.  Stored as a bitmask in ChordIdentity.
+/// Use hasExtension() / setExtension() rather than raw bit operations.
+enum class Extension : uint32_t {
+    MinorSeventh      = 1u << 0,   ///< b7 — minor seventh
+    MajorSeventh      = 1u << 1,   ///< M7 — major seventh
+    DiminishedSeventh = 1u << 2,   ///< dim7 (9 semitones) — Diminished quality only
+    AddedSixth        = 1u << 3,   ///< Added sixth (no seventh)
+    FlatNinth         = 1u << 4,   ///< b9
+    NaturalNinth      = 1u << 5,   ///< Natural 9th (add9 / sus, or upper extension)
+    SharpNinth        = 1u << 6,   ///< #9
+    NaturalEleventh   = 1u << 7,   ///< 11th (sus4 or upper extension)
+    SharpEleventh     = 1u << 8,   ///< #11 / Lydian dominant
+    FlatThirteenth    = 1u << 9,   ///< b13
+    NaturalThirteenth = 1u << 10,  ///< 13th
+    SharpThirteenth   = 1u << 11,  ///< #13
+    FlatFifth         = 1u << 12,  ///< b5 alteration
+    SharpFifth        = 1u << 13,  ///< #5 alteration
+    OmitsThird        = 1u << 14,  ///< No third present (power chord / open voicing)
+    SixNine           = 1u << 15,  ///< 6/9 chord special case
+};
+
+inline bool hasExtension(uint32_t ext, Extension flag)
+{
+    return (ext & static_cast<uint32_t>(flag)) != 0;
+}
+
+inline bool hasAnyNinth(uint32_t ext)
+{
+    return hasExtension(ext, Extension::FlatNinth)
+        || hasExtension(ext, Extension::NaturalNinth)
+        || hasExtension(ext, Extension::SharpNinth);
+}
+
+inline bool hasAnyThirteenth(uint32_t ext)
+{
+    return hasExtension(ext, Extension::FlatThirteenth)
+        || hasExtension(ext, Extension::NaturalThirteenth)
+        || hasExtension(ext, Extension::SharpThirteenth);
+}
+
+inline void setExtension(uint32_t& ext, Extension flag)
+{
+    ext |= static_cast<uint32_t>(flag);
+}
+
+// ── ChordIdentity ─────────────────────────────────────────────────────────────
+
+/// The pitch-content identity of a chord: root, quality, extensions, and bass.
+/// Contains no key-function information.
+struct ChordIdentity {
+    double score = 0.0;       ///< Template match score (higher = better); ranking only.
+    int rootPc = 0;           ///< Root pitch class (0–11)
+    int bassPc = 0;           ///< Bass pitch class (0–11)
+    int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
+    ChordQuality quality = ChordQuality::Unknown;
+    uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
+};
+
+// ── ChordFunction ─────────────────────────────────────────────────────────────
+
+/// The tonal function of a chord within its key and mode context.
+struct ChordFunction {
+    int degree = -1;           ///< 0..6 when diatonic degree is known; -1 otherwise
+    bool diatonicToKey = false;
+
+    // Key context — stored so formatRomanNumeral() can generate chromatic
+    // numerals (♭VII, ♭III, etc.) even when degree == -1 (non-diatonic root).
+    int keyTonicPc = 0;
+    KeySigMode keyMode = KeySigMode::Ionian;
+};
+
+// ── ChordAnalysisResult ───────────────────────────────────────────────────────
+
 /// Abstract analysis result — contains only harmonic data, no formatting.
 /// An empty result vector from analyzeChord() signals insufficient data.
 struct ChordAnalysisResult {
-    double score = 0.0;  // Raw template match score used for ranking; higher is better.
-                         // Reflects the winning template before post-scoring quality
-                         // normalisation: the reported quality field may differ from
-                         // the template quality that produced this score.
-
-    int rootPc = 0;      // Root pitch class (0–11)
-    int bassPc = 0;      // Bass pitch class (0–11)
-    int bassTpc = -1;    // Bass note TPC for enharmonic-correct naming; -1 = unknown
-    ChordQuality quality = ChordQuality::Unknown;
-
-    // 7th extensions
-    bool hasMinorSeventh = false;
-    bool hasMajorSeventh = false;
-    bool hasDiminishedSeventh = false;  // dim7 interval (9 semitones) — Diminished quality only
-
-    // 6th and 9th
-    bool hasAddedSixth = false;
-    bool hasNinth = false;
-    bool hasNinthNatural = false;
-    bool hasNinthFlat = false;
-    bool hasNinthSharp = false;
-
-    // 11th and 13th
-    bool hasEleventh = false;
-    bool hasEleventhSharp = false;
-    bool hasThirteenth = false;
-    bool hasThirteenthFlat = false;
-    bool hasThirteenthSharp = false;
-
-    // Alterations
-    bool hasFlatFifth = false;
-    bool hasSharpFifth = false;
-
-    // 6/9 chord special case
-    bool isSixNine = false;
-
-    // Omitted degrees
-    bool omitsThird = false;
-
-    int degree = -1;          // 0..6 when diatonic degree is known; -1 otherwise
-    bool diatonicToKey = false;
-
-    // Key context stored so formatRomanNumeral() can generate chromatic numerals
-    // (♭VII, ♭III, etc.) even when degree == -1 (non-diatonic root).
-    int keyTonicPc = 0;
-    KeyMode keyMode = KeyMode::Ionian;
+    ChordIdentity identity;
+    ChordFunction function;
 };
 
 /// Tunable parameters for chord analysis.
@@ -134,6 +163,20 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
+    // ── Inversion detection ──────────────────────────────────────────────────
+
+    /// If the best non-bass-root candidate's base score (without the bass bonus)
+    /// exceeds the bass-root candidate's base score by more than this threshold,
+    /// the chord is likely in inversion and the bass bonus is scaled down.
+    /// Empirically ~0.30 triggers on the SATB doubled-bass cases that cause
+    /// bass-as-root errors (gap ≈ 0.25 → fires just above that).
+    double inversionSuspicionThreshold = 0.30;
+
+    /// Scale factor applied to bassNoteRootBonus when inversion is suspected.
+    /// 0.25 preserves a small residual bass-note preference while letting the
+    /// harmonic evidence from the remaining tones dominate.
+    double inversionBonusReduction = 0.25;
+
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -153,6 +196,28 @@ struct ChordAnalyzerPreferences {
     // which extensions are considered idiomatic.
     // enum class StylePrior { General, Classical, Jazz, Pop, Blues, Folk };
     // StylePrior stylePrior = StylePrior::General;
+
+    /// Returns the valid range for every numeric scoring parameter.
+    ///
+    /// isManual=false parameters are safe to hand to automated optimizers
+    /// (grid search, gradient descent, Bayesian optimization).
+    /// isManual=true parameters are wired to user-visible preferences or have
+    /// a narrow hand-tuned sweet-spot and should not be auto-adjusted.
+    ///
+    /// The boolean toggle fields (useExistingChordSymbols, etc.) are omitted;
+    /// they are not continuous-valued and are not optimization targets.
+    ParameterBoundsMap bounds() const
+    {
+        return {
+            { "bassNoteRootBonus",           { 0.0, 2.0 } },
+            { "diatonicRootBonus",           { 0.0, 1.0 } },
+            { "tpcConsistencyBonusPerTone",  { 0.0, 1.0 } },
+            { "rootContinuityBonus",         { 0.0, 1.5 } },
+            { "resolutionBonus",             { 0.0, 1.5 } },
+            { "inversionSuspicionThreshold", { 0.0, 2.0 } },
+            { "inversionBonusReduction",     { 0.0, 1.0 } },
+        };
+    }
 };
 
 /// Global default preferences.  The analyzer uses this when no explicit
@@ -162,14 +227,26 @@ inline constexpr ChordAnalyzerPreferences kDefaultChordAnalyzerPreferences{};
 /// Optional temporal context passed between successive chord analyses.
 /// Enables root-continuity scoring and resolution biasing: when the preceding
 /// chord's root and quality are known, candidates are ranked accordingly.
+///
+/// Naming note: ChordTemporalContext carries the previous root/quality for
+/// single-chord analysis.  A future TemporalContext struct (planned for
+/// analysis/temporal/) will accumulate full progression context (chord
+/// history, cadence state) for use by a ProgressionAnalyzer.  These are
+/// distinct structs with distinct roles.
 struct ChordTemporalContext {
     int previousRootPc = -1;                              ///< Root pitch class of the preceding chord (-1 = no context).
     ChordQuality previousQuality = ChordQuality::Unknown; ///< Quality of the preceding chord (Unknown = no context).
 };
 
-class ChordAnalyzer
+/// Interface for chord analysis strategies.
+///
+/// Callers that need dependency injection (tests, bridge) should hold a
+/// const reference or pointer to IChordAnalyzer rather than a concrete type.
+class IChordAnalyzer
 {
 public:
+    virtual ~IChordAnalyzer() = default;
+
     /// Analyse a vertical sonority from sounding notes under a key context.
     ///
     /// keySignatureFifths: -7..+7, same convention as KeyModeAnalyzer.
@@ -179,12 +256,40 @@ public:
     ///
     /// Returns up to 3 candidates sorted by score descending. An empty result
     /// means fewer than 3 distinct pitch classes are sounding (insufficient data).
-    static std::vector<ChordAnalysisResult> analyzeChord(
+    virtual std::vector<ChordAnalysisResult> analyzeChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,
-        KeyMode keyMode,
+        KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
-        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences);
+        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const = 0;
+};
+
+/// Default chord analyzer: template-matching rule-based approach.
+class RuleBasedChordAnalyzer : public IChordAnalyzer
+{
+public:
+    std::vector<ChordAnalysisResult> analyzeChord(
+        const std::vector<ChordAnalysisTone>& tones,
+        int keySignatureFifths,
+        KeySigMode keyMode,
+        const ChordTemporalContext* context = nullptr,
+        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const override;
+};
+
+/// Analyzer implementation variants.
+enum class ChordAnalyzerType {
+    RuleBased,  ///< Template-matching rule-based analyzer (the only implemented type).
+};
+
+/// Factory for IChordAnalyzer instances.
+///
+/// Bridge files should obtain analyzers via this factory so callers depend only
+/// on IChordAnalyzer.  Test code can bypass the factory and inject a mock directly.
+class ChordAnalyzerFactory
+{
+public:
+    static std::unique_ptr<IChordAnalyzer> create(
+        ChordAnalyzerType type = ChordAnalyzerType::RuleBased);
 };
 
 /// Formatting utilities to generate display strings from analysis results.
@@ -209,7 +314,7 @@ std::string formatSymbol(const ChordAnalysisResult& result, int keySignatureFift
                          const Options& opts = kDefaultOptions);
 
 /// Format diatonic degree and quality into roman numeral notation (e.g. "V7", "iiø7").
-/// Returns an empty string when result.degree < 0 (non-diatonic chord).
+/// Returns an empty string when result.function.degree < 0 (non-diatonic chord).
 std::string formatRomanNumeral(const ChordAnalysisResult& result);
 
 
@@ -244,19 +349,5 @@ ClosePositionVoicing closePositionVoicing(const ChordAnalysisResult& result);
 /// If omitsThird is true in the result, the third is excluded.
 /// Altered fifths (b5, #5) replace the natural fifth when flagged.
 std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result);
-
-/// Bridge function: extracts pitch context from a selected note and runs the chord
-/// and key/mode analyzers.  Declared here in the composing module, but **defined in
-/// src/notation/internal/notationcomposingbridge.cpp** — that file is the only place
-/// where both the engraving model (Note, Chord, Segment, …) and the composing
-/// analysis API are available together.  All future notation–composing bridge code
-/// should follow this pattern: declare in composing/, define in notation/.
-///
-/// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).
-/// Also populates outKeyFifths and outKeyMode so callers can pass them to the formatter.
-std::vector<ChordAnalysisResult>
-analyzeNoteHarmonicContext(const mu::engraving::Note* note,
-                           int& outKeyFifths,
-                           KeyMode& outKeyMode);
 
 } // namespace mu::composing::analysis

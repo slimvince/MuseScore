@@ -44,7 +44,7 @@
 #include "update/iupdateconfiguration.h"
 #include "workspace/iworkspacemanager.h"
 
-#include "composing/icomposingconfiguration.h"
+#include "composing/icomposinganalysisconfiguration.h"
 #include "iappshellconfiguration.h"
 #include "internal/iappmenumodelhook.h"
 
@@ -69,7 +69,7 @@ public:
     muse::GlobalInject<muse::musesampler::IMuseSamplerInfo> museSamplerInfo;
 #endif
 
-    muse::GlobalInject<mu::composing::IComposingConfiguration> composingConfiguration;
+    muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> composingConfiguration;
 
     muse::ContextInject<muse::extensions::IExtensionsProvider> extensionsProvider = { this };
 

@@ -21,20 +21,69 @@
  */
 #pragma once
 
-#include <vector>
-#include <string>
+#include <cctype>
 #include <memory>
+#include <string>
+#include <string_view>
+#include <vector>
 #include "tuning_keys.h"
-#include "../analysis/keymodeanalyzer.h" // for KeyModeAnalysisResult
-#include "../analysis/chordanalyzer.h"   // for ChordQuality
-
-namespace mu::engraving {
-class Note;
-class Score;
-class Fraction;
-}
+#include "../analysis/key/keymodeanalyzer.h" // for KeyModeAnalysisResult
+#include "../analysis/chord/chordanalyzer.h"   // for ChordQuality
 
 namespace mu::composing::intonation {
+
+// ── Tuning anchor ─────────────────────────────────────────────────────────────
+//
+// A note carrying a MuseScore Expression element with this text is treated as
+// absolutely protected: zero tuning offset, never split, excluded from
+// zero-sum centering.  Keyword matching is case-insensitive with leading/
+// trailing whitespace trimmed.
+//
+// "anchor-pitch" is a placeholder — the final user-visible name is TBD.
+inline constexpr const char* kTuningAnchorKeyword = "anchor-pitch";
+
+/// Returns true when @p text, after trimming leading/trailing whitespace and
+/// lower-casing, equals kTuningAnchorKeyword.
+///
+/// Extracted as a pure function so it can be tested without MuseScore objects.
+/// hasTuningAnchorExpression() (notation bridge) calls this after lowering and
+/// trimming the Expression's plainText().
+inline bool isTuningAnchorText(std::string_view text)
+{
+    // Trim leading whitespace.
+    size_t start = text.find_first_not_of(" \t\r\n");
+    if (start == std::string_view::npos) { return false; }
+    // Trim trailing whitespace.
+    size_t end = text.find_last_not_of(" \t\r\n");
+    text = text.substr(start, end - start + 1);
+
+    if (text.size() != std::string_view(kTuningAnchorKeyword).size()) { return false; }
+
+    // Case-insensitive comparison.
+    for (size_t i = 0; i < text.size(); ++i) {
+        if (std::tolower(static_cast<unsigned char>(text[i]))
+                != kTuningAnchorKeyword[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+/// How susceptible a note is to being retuned.
+/// Computed per note before applying a tuning offset.
+enum class RetuningSusceptibility {
+    /// Zero tuning offset.  Never split.  Excluded from zero-sum centering.
+    /// Highest priority: overrides all duration-based and context-based rules.
+    /// Triggered by a kTuningAnchorKeyword Expression attached to the note.
+    AbsolutelyProtected,
+
+    /// Note may be retuned but must not be split across harmonic boundaries.
+    /// (Reserved for future use — long sustained notes, fermatas, etc.)
+    Adjustable,
+
+    /// Note is freely retunable and may be split.
+    Free,
+};
 
 /**
  * @brief Abstract base class for all tuning systems.
@@ -138,38 +187,5 @@ public:
     /// Returns all display names (for UI).
     static std::vector<std::string> allDisplayNames();
 };
-
-/// Bridge function: applies a tuning system to all notes sounding at the
-/// selected note's tick, splitting sustained notes as needed to create a
-/// clean onset boundary for tuning.
-///
-/// Declared here in the composing module; **defined in
-/// src/notation/internal/notationcomposingbridge.cpp** — the only file where
-/// both the engraving model and the composing intonation API are available.
-/// All future notation–composing tuning bridge code follows this pattern.
-///
-/// Returns true if tuning was applied.
-/// Returns false (no-op) when:
-///   - selectedNote is null or is itself an invisible tuning artifact, or
-///   - fewer than 3 distinct pitch classes are sounding (insufficient chord data).
-bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
-                       const TuningSystem& system);
-
-/// Apply tuning to all notes within a time range, using pre-computed harmonic
-/// regions from analyzeHarmonicRhythm().
-///
-/// For each region:
-///   - Notes that attack within the region get a tuning offset (cents only).
-///   - Notes sustained from a previous region are split at the boundary
-///     and the new portion is tuned to the current region's harmony.
-///
-/// Chord track staves (detected by name) are excluded.
-///
-/// Declared here; **defined in src/notation/internal/notationcomposingbridge.cpp**.
-///
-/// @return true if any tuning was applied.
-bool applyRegionTuning(mu::engraving::Score* score,
-                       const mu::engraving::Fraction& startTick,
-                       const mu::engraving::Fraction& endTick);
 
 } // namespace mu::composing::intonation

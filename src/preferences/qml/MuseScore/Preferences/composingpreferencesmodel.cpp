@@ -35,181 +35,211 @@ void ComposingPreferencesModel::load()
 
 void ComposingPreferencesModel::setupConnections()
 {
-    composingConfiguration()->analyzeForChordSymbolsChanged().onNotify(this, [this]() {
+    analysisConfig()->analyzeForChordSymbolsChanged().onNotify(this, [this]() {
         emit analyzeForChordSymbolsChanged();
     });
-    composingConfiguration()->analyzeForChordFunctionChanged().onNotify(this, [this]() {
+    analysisConfig()->analyzeForChordFunctionChanged().onNotify(this, [this]() {
         emit analyzeForChordFunctionChanged();
         emit inferKeyModeChanged(); // chord function forces key/mode on
     });
-    composingConfiguration()->inferKeyModeChanged().onNotify(this, [this]() {
+    analysisConfig()->inferKeyModeChanged().onNotify(this, [this]() {
         emit inferKeyModeChanged();
     });
-    composingConfiguration()->analysisAlternativesChanged().onNotify(this, [this]() {
+    analysisConfig()->analysisAlternativesChanged().onNotify(this, [this]() {
         emit analysisAlternativesChanged();
     });
-    composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
+    analysisConfig()->tuningSystemKeyChanged().onNotify(this, [this]() {
         emit tuningSystemKeyChanged();
     });
-    composingConfiguration()->tonicAnchoredTuningChanged().onNotify(this, [this]() {
+    analysisConfig()->tonicAnchoredTuningChanged().onNotify(this, [this]() {
         emit tonicAnchoredTuningChanged();
     });
-    composingConfiguration()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
+    analysisConfig()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
         emit minimizeTuningDeviationChanged();
     });
-    composingConfiguration()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
+    analysisConfig()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
         emit annotateTuningOffsetsChanged();
     });
-    composingConfiguration()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
+    chordStaffConfig()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
         emit chordStaffWriteChordSymbolsChanged();
     });
-    composingConfiguration()->chordStaffFunctionNotationChanged().onNotify(this, [this]() {
+    chordStaffConfig()->chordStaffFunctionNotationChanged().onNotify(this, [this]() {
         emit chordStaffFunctionNotationChanged();
     });
-    composingConfiguration()->chordStaffWriteKeyAnnotationsChanged().onNotify(this, [this]() {
+    chordStaffConfig()->chordStaffWriteKeyAnnotationsChanged().onNotify(this, [this]() {
         emit chordStaffWriteKeyAnnotationsChanged();
     });
-    composingConfiguration()->chordStaffHighlightNonDiatonicChanged().onNotify(this, [this]() {
+    chordStaffConfig()->chordStaffHighlightNonDiatonicChanged().onNotify(this, [this]() {
         emit chordStaffHighlightNonDiatonicChanged();
     });
-    composingConfiguration()->chordStaffWriteCadenceMarkersChanged().onNotify(this, [this]() {
+    chordStaffConfig()->chordStaffWriteCadenceMarkersChanged().onNotify(this, [this]() {
         emit chordStaffWriteCadenceMarkersChanged();
     });
-    composingConfiguration()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
+    analysisConfig()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
         emit showKeyModeInStatusBarChanged();
     });
-    composingConfiguration()->showChordSymbolsInStatusBarChanged().onNotify(this, [this]() {
+    analysisConfig()->showChordSymbolsInStatusBarChanged().onNotify(this, [this]() {
         emit showChordSymbolsInStatusBarChanged();
     });
-    composingConfiguration()->showRomanNumeralsInStatusBarChanged().onNotify(this, [this]() {
+    analysisConfig()->showRomanNumeralsInStatusBarChanged().onNotify(this, [this]() {
         emit showRomanNumeralsInStatusBarChanged();
     });
-    composingConfiguration()->showNashvilleNumbersInStatusBarChanged().onNotify(this, [this]() {
+    analysisConfig()->showNashvilleNumbersInStatusBarChanged().onNotify(this, [this]() {
         emit showNashvilleNumbersInStatusBarChanged();
     });
-    composingConfiguration()->modeTierWeight1Changed().onNotify(this, [this]() {
-        emit modeTierWeight1Changed();
-    });
-    composingConfiguration()->modeTierWeight2Changed().onNotify(this, [this]() {
-        emit modeTierWeight2Changed();
-    });
-    composingConfiguration()->modeTierWeight3Changed().onNotify(this, [this]() {
-        emit modeTierWeight3Changed();
-    });
-    composingConfiguration()->modeTierWeight4Changed().onNotify(this, [this]() {
-        emit modeTierWeight4Changed();
-    });
+    // Mode priors — diatonic
+    // Each handler emits the individual Changed signal AND currentModePriorPresetChanged
+    // so that preset buttons stay in sync whenever a slider is moved.
+    analysisConfig()->modePriorIonianChanged().onNotify(this, [this]()     { emit modePriorIonianChanged();     emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorDorianChanged().onNotify(this, [this]()     { emit modePriorDorianChanged();     emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorPhrygianChanged().onNotify(this, [this]()   { emit modePriorPhrygianChanged();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLydianChanged().onNotify(this, [this]()     { emit modePriorLydianChanged();     emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorMixolydianChanged().onNotify(this, [this]() { emit modePriorMixolydianChanged(); emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorAeolianChanged().onNotify(this, [this]()    { emit modePriorAeolianChanged();    emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLocrianChanged().onNotify(this, [this]()    { emit modePriorLocrianChanged();    emit currentModePriorPresetChanged(); });
+    // Mode priors — melodic minor family
+    analysisConfig()->modePriorMelodicMinorChanged().onNotify(this, [this]()   { emit modePriorMelodicMinorChanged();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorDorianB2Changed().onNotify(this, [this]()       { emit modePriorDorianB2Changed();       emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLydianAugmentedChanged().onNotify(this, [this]() { emit modePriorLydianAugmentedChanged(); emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLydianDominantChanged().onNotify(this, [this]()  { emit modePriorLydianDominantChanged();  emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorMixolydianB6Changed().onNotify(this, [this]()   { emit modePriorMixolydianB6Changed();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorAeolianB5Changed().onNotify(this, [this]()      { emit modePriorAeolianB5Changed();      emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorAlteredChanged().onNotify(this, [this]()        { emit modePriorAlteredChanged();        emit currentModePriorPresetChanged(); });
+    // Mode priors — harmonic minor family
+    analysisConfig()->modePriorHarmonicMinorChanged().onNotify(this, [this]()  { emit modePriorHarmonicMinorChanged();  emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLocrianSharp6Changed().onNotify(this, [this]()  { emit modePriorLocrianSharp6Changed();  emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorIonianSharp5Changed().onNotify(this, [this]()   { emit modePriorIonianSharp5Changed();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorDorianSharp4Changed().onNotify(this, [this]()   { emit modePriorDorianSharp4Changed();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorPhrygianDominantChanged().onNotify(this, [this]() { emit modePriorPhrygianDominantChanged(); emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorLydianSharp2Changed().onNotify(this, [this]()   { emit modePriorLydianSharp2Changed();   emit currentModePriorPresetChanged(); });
+    analysisConfig()->modePriorAlteredDomBB7Changed().onNotify(this, [this]()  { emit modePriorAlteredDomBB7Changed();  emit currentModePriorPresetChanged(); });
 }
 
 // ── Getters ──────────────────────────────────────────────────────────────────
 
 bool ComposingPreferencesModel::analyzeForChordSymbols() const
 {
-    return composingConfiguration()->analyzeForChordSymbols();
+    return analysisConfig()->analyzeForChordSymbols();
 }
 
 bool ComposingPreferencesModel::analyzeForChordFunction() const
 {
-    return composingConfiguration()->analyzeForChordFunction();
+    return analysisConfig()->analyzeForChordFunction();
 }
 
 bool ComposingPreferencesModel::inferKeyMode() const
 {
     // inferKeyMode is forced on when chord-function analysis is active.
-    if (composingConfiguration()->analyzeForChordFunction()) {
+    if (analysisConfig()->analyzeForChordFunction()) {
         return true;
     }
-    return composingConfiguration()->inferKeyMode();
+    return analysisConfig()->inferKeyMode();
 }
 
 int ComposingPreferencesModel::analysisAlternatives() const
 {
-    return composingConfiguration()->analysisAlternatives();
+    return analysisConfig()->analysisAlternatives();
 }
 
 QString ComposingPreferencesModel::tuningSystemKey() const
 {
-    return QString::fromStdString(composingConfiguration()->tuningSystemKey());
+    return QString::fromStdString(analysisConfig()->tuningSystemKey());
 }
 
 bool ComposingPreferencesModel::tonicAnchoredTuning() const
 {
-    return composingConfiguration()->tonicAnchoredTuning();
+    return analysisConfig()->tonicAnchoredTuning();
 }
 
 bool ComposingPreferencesModel::minimizeTuningDeviation() const
 {
-    return composingConfiguration()->minimizeTuningDeviation();
+    return analysisConfig()->minimizeTuningDeviation();
 }
 
 bool ComposingPreferencesModel::annotateTuningOffsets() const
 {
-    return composingConfiguration()->annotateTuningOffsets();
+    return analysisConfig()->annotateTuningOffsets();
 }
 
-double ComposingPreferencesModel::modeTierWeight1() const
+// ── Mode prior getters ────────────────────────────────────────────────────────
+
+double ComposingPreferencesModel::modePriorIonian() const     { return analysisConfig()->modePriorIonian(); }
+double ComposingPreferencesModel::modePriorDorian() const     { return analysisConfig()->modePriorDorian(); }
+double ComposingPreferencesModel::modePriorPhrygian() const   { return analysisConfig()->modePriorPhrygian(); }
+double ComposingPreferencesModel::modePriorLydian() const     { return analysisConfig()->modePriorLydian(); }
+double ComposingPreferencesModel::modePriorMixolydian() const { return analysisConfig()->modePriorMixolydian(); }
+double ComposingPreferencesModel::modePriorAeolian() const    { return analysisConfig()->modePriorAeolian(); }
+double ComposingPreferencesModel::modePriorLocrian() const    { return analysisConfig()->modePriorLocrian(); }
+
+double ComposingPreferencesModel::modePriorMelodicMinor() const  { return analysisConfig()->modePriorMelodicMinor(); }
+double ComposingPreferencesModel::modePriorDorianB2() const      { return analysisConfig()->modePriorDorianB2(); }
+double ComposingPreferencesModel::modePriorLydianAugmented() const { return analysisConfig()->modePriorLydianAugmented(); }
+double ComposingPreferencesModel::modePriorLydianDominant() const  { return analysisConfig()->modePriorLydianDominant(); }
+double ComposingPreferencesModel::modePriorMixolydianB6() const  { return analysisConfig()->modePriorMixolydianB6(); }
+double ComposingPreferencesModel::modePriorAeolianB5() const     { return analysisConfig()->modePriorAeolianB5(); }
+double ComposingPreferencesModel::modePriorAltered() const       { return analysisConfig()->modePriorAltered(); }
+
+double ComposingPreferencesModel::modePriorHarmonicMinor() const { return analysisConfig()->modePriorHarmonicMinor(); }
+double ComposingPreferencesModel::modePriorLocrianSharp6() const { return analysisConfig()->modePriorLocrianSharp6(); }
+double ComposingPreferencesModel::modePriorIonianSharp5() const  { return analysisConfig()->modePriorIonianSharp5(); }
+double ComposingPreferencesModel::modePriorDorianSharp4() const  { return analysisConfig()->modePriorDorianSharp4(); }
+double ComposingPreferencesModel::modePriorPhrygianDominant() const { return analysisConfig()->modePriorPhrygianDominant(); }
+double ComposingPreferencesModel::modePriorLydianSharp2() const  { return analysisConfig()->modePriorLydianSharp2(); }
+double ComposingPreferencesModel::modePriorAlteredDomBB7() const { return analysisConfig()->modePriorAlteredDomBB7(); }
+
+QString ComposingPreferencesModel::currentModePriorPreset() const
 {
-    return composingConfiguration()->modeTierWeight1();
+    return QString::fromStdString(analysisConfig()->currentModePriorPreset());
 }
 
-double ComposingPreferencesModel::modeTierWeight2() const
+void ComposingPreferencesModel::applyModePriorPreset(const QString& name)
 {
-    return composingConfiguration()->modeTierWeight2();
-}
-
-double ComposingPreferencesModel::modeTierWeight3() const
-{
-    return composingConfiguration()->modeTierWeight3();
-}
-
-double ComposingPreferencesModel::modeTierWeight4() const
-{
-    return composingConfiguration()->modeTierWeight4();
+    analysisConfig()->applyModePriorPreset(name.toStdString());
 }
 
 bool ComposingPreferencesModel::chordStaffWriteChordSymbols() const
 {
-    return composingConfiguration()->chordStaffWriteChordSymbols();
+    return chordStaffConfig()->chordStaffWriteChordSymbols();
 }
 
 QString ComposingPreferencesModel::chordStaffFunctionNotation() const
 {
-    return QString::fromStdString(composingConfiguration()->chordStaffFunctionNotation());
+    return QString::fromStdString(chordStaffConfig()->chordStaffFunctionNotation());
 }
 
 bool ComposingPreferencesModel::chordStaffWriteKeyAnnotations() const
 {
-    return composingConfiguration()->chordStaffWriteKeyAnnotations();
+    return chordStaffConfig()->chordStaffWriteKeyAnnotations();
 }
 
 bool ComposingPreferencesModel::chordStaffHighlightNonDiatonic() const
 {
-    return composingConfiguration()->chordStaffHighlightNonDiatonic();
+    return chordStaffConfig()->chordStaffHighlightNonDiatonic();
 }
 
 bool ComposingPreferencesModel::chordStaffWriteCadenceMarkers() const
 {
-    return composingConfiguration()->chordStaffWriteCadenceMarkers();
+    return chordStaffConfig()->chordStaffWriteCadenceMarkers();
 }
 
 bool ComposingPreferencesModel::showKeyModeInStatusBar() const
 {
-    return composingConfiguration()->showKeyModeInStatusBar();
+    return analysisConfig()->showKeyModeInStatusBar();
 }
 
 bool ComposingPreferencesModel::showChordSymbolsInStatusBar() const
 {
-    return composingConfiguration()->showChordSymbolsInStatusBar();
+    return analysisConfig()->showChordSymbolsInStatusBar();
 }
 
 bool ComposingPreferencesModel::showRomanNumeralsInStatusBar() const
 {
-    return composingConfiguration()->showRomanNumeralsInStatusBar();
+    return analysisConfig()->showRomanNumeralsInStatusBar();
 }
 
 bool ComposingPreferencesModel::showNashvilleNumbersInStatusBar() const
 {
-    return composingConfiguration()->showNashvilleNumbersInStatusBar();
+    return analysisConfig()->showNashvilleNumbersInStatusBar();
 }
 
 // ── Setters ──────────────────────────────────────────────────────────────────
@@ -219,7 +249,7 @@ void ComposingPreferencesModel::setAnalyzeForChordSymbols(bool value)
     if (analyzeForChordSymbols() == value) {
         return;
     }
-    composingConfiguration()->setAnalyzeForChordSymbols(value);
+    analysisConfig()->setAnalyzeForChordSymbols(value);
     emit analyzeForChordSymbolsChanged();
 }
 
@@ -228,20 +258,20 @@ void ComposingPreferencesModel::setAnalyzeForChordFunction(bool value)
     if (analyzeForChordFunction() == value) {
         return;
     }
-    composingConfiguration()->setAnalyzeForChordFunction(value);
+    analysisConfig()->setAnalyzeForChordFunction(value);
     emit analyzeForChordFunctionChanged();
 }
 
 void ComposingPreferencesModel::setInferKeyMode(bool value)
 {
     // Silently ignore if forced on by chord-function analysis.
-    if (composingConfiguration()->analyzeForChordFunction()) {
+    if (analysisConfig()->analyzeForChordFunction()) {
         return;
     }
-    if (composingConfiguration()->inferKeyMode() == value) {
+    if (analysisConfig()->inferKeyMode() == value) {
         return;
     }
-    composingConfiguration()->setInferKeyMode(value);
+    analysisConfig()->setInferKeyMode(value);
     emit inferKeyModeChanged();
 }
 
@@ -250,7 +280,7 @@ void ComposingPreferencesModel::setAnalysisAlternatives(int count)
     if (analysisAlternatives() == count) {
         return;
     }
-    composingConfiguration()->setAnalysisAlternatives(count);
+    analysisConfig()->setAnalysisAlternatives(count);
     emit analysisAlternativesChanged();
 }
 
@@ -259,7 +289,7 @@ void ComposingPreferencesModel::setTuningSystemKey(const QString& key)
     if (tuningSystemKey() == key) {
         return;
     }
-    composingConfiguration()->setTuningSystemKey(key.toStdString());
+    analysisConfig()->setTuningSystemKey(key.toStdString());
     emit tuningSystemKeyChanged();
 }
 
@@ -268,7 +298,7 @@ void ComposingPreferencesModel::setTonicAnchoredTuning(bool value)
     if (tonicAnchoredTuning() == value) {
         return;
     }
-    composingConfiguration()->setTonicAnchoredTuning(value);
+    analysisConfig()->setTonicAnchoredTuning(value);
     emit tonicAnchoredTuningChanged();
 }
 
@@ -277,7 +307,7 @@ void ComposingPreferencesModel::setMinimizeTuningDeviation(bool value)
     if (minimizeTuningDeviation() == value) {
         return;
     }
-    composingConfiguration()->setMinimizeTuningDeviation(value);
+    analysisConfig()->setMinimizeTuningDeviation(value);
     emit minimizeTuningDeviationChanged();
 }
 
@@ -286,78 +316,75 @@ void ComposingPreferencesModel::setAnnotateTuningOffsets(bool value)
     if (annotateTuningOffsets() == value) {
         return;
     }
-    composingConfiguration()->setAnnotateTuningOffsets(value);
+    analysisConfig()->setAnnotateTuningOffsets(value);
     emit annotateTuningOffsetsChanged();
 }
 
-void ComposingPreferencesModel::setModeTierWeight1(double value)
-{
-    if (qFuzzyCompare(modeTierWeight1(), value)) {
-        return;
-    }
-    composingConfiguration()->setModeTierWeight1(value);
-    emit modeTierWeight1Changed();
+// ── Mode prior setters ────────────────────────────────────────────────────────
+
+#define SET_MODE_PRIOR(Name) \
+void ComposingPreferencesModel::setModePrior##Name(double v) { \
+    if (qFuzzyCompare(modePrior##Name(), v)) { return; } \
+    analysisConfig()->setModePrior##Name(v); \
+    emit modePrior##Name##Changed(); \
 }
 
-void ComposingPreferencesModel::setModeTierWeight2(double value)
-{
-    if (qFuzzyCompare(modeTierWeight2(), value)) {
-        return;
-    }
-    composingConfiguration()->setModeTierWeight2(value);
-    emit modeTierWeight2Changed();
-}
+SET_MODE_PRIOR(Ionian)
+SET_MODE_PRIOR(Dorian)
+SET_MODE_PRIOR(Phrygian)
+SET_MODE_PRIOR(Lydian)
+SET_MODE_PRIOR(Mixolydian)
+SET_MODE_PRIOR(Aeolian)
+SET_MODE_PRIOR(Locrian)
+SET_MODE_PRIOR(MelodicMinor)
+SET_MODE_PRIOR(DorianB2)
+SET_MODE_PRIOR(LydianAugmented)
+SET_MODE_PRIOR(LydianDominant)
+SET_MODE_PRIOR(MixolydianB6)
+SET_MODE_PRIOR(AeolianB5)
+SET_MODE_PRIOR(Altered)
+SET_MODE_PRIOR(HarmonicMinor)
+SET_MODE_PRIOR(LocrianSharp6)
+SET_MODE_PRIOR(IonianSharp5)
+SET_MODE_PRIOR(DorianSharp4)
+SET_MODE_PRIOR(PhrygianDominant)
+SET_MODE_PRIOR(LydianSharp2)
+SET_MODE_PRIOR(AlteredDomBB7)
 
-void ComposingPreferencesModel::setModeTierWeight3(double value)
-{
-    if (qFuzzyCompare(modeTierWeight3(), value)) {
-        return;
-    }
-    composingConfiguration()->setModeTierWeight3(value);
-    emit modeTierWeight3Changed();
-}
-
-void ComposingPreferencesModel::setModeTierWeight4(double value)
-{
-    if (qFuzzyCompare(modeTierWeight4(), value)) {
-        return;
-    }
-    composingConfiguration()->setModeTierWeight4(value);
-    emit modeTierWeight4Changed();
-}
+#undef SET_MODE_PRIOR
 
 void ComposingPreferencesModel::setChordStaffWriteChordSymbols(bool value)
 {
     if (chordStaffWriteChordSymbols() == value) { return; }
-    composingConfiguration()->setChordStaffWriteChordSymbols(value);
+    chordStaffConfig()->setChordStaffWriteChordSymbols(value);
     emit chordStaffWriteChordSymbolsChanged();
 }
 
 void ComposingPreferencesModel::setChordStaffFunctionNotation(const QString& value)
 {
     if (chordStaffFunctionNotation() == value) { return; }
-    composingConfiguration()->setChordStaffFunctionNotation(value.toStdString());
+    chordStaffConfig()->setChordStaffFunctionNotation(value.toStdString());
     emit chordStaffFunctionNotationChanged();
 }
 
 void ComposingPreferencesModel::setChordStaffWriteKeyAnnotations(bool value)
 {
     if (chordStaffWriteKeyAnnotations() == value) { return; }
-    composingConfiguration()->setChordStaffWriteKeyAnnotations(value);
+    chordStaffConfig()->setChordStaffWriteKeyAnnotations(value);
     emit chordStaffWriteKeyAnnotationsChanged();
 }
 
 void ComposingPreferencesModel::setChordStaffHighlightNonDiatonic(bool value)
 {
     if (chordStaffHighlightNonDiatonic() == value) { return; }
-    composingConfiguration()->setChordStaffHighlightNonDiatonic(value);
+    chordStaffConfig()->setChordStaffHighlightNonDiatonic(value);
     emit chordStaffHighlightNonDiatonicChanged();
 }
 
 void ComposingPreferencesModel::setChordStaffWriteCadenceMarkers(bool value)
 {
     if (chordStaffWriteCadenceMarkers() == value) { return; }
-    composingConfiguration()->setChordStaffWriteCadenceMarkers(value);
+    chordStaffConfig()->setChordStaffWriteCadenceMarkers(value);
     emit chordStaffWriteCadenceMarkersChanged();
 }
 
@@ -366,7 +393,7 @@ void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)
     if (showKeyModeInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setShowKeyModeInStatusBar(value);
+    analysisConfig()->setShowKeyModeInStatusBar(value);
     emit showKeyModeInStatusBarChanged();
 }
 
@@ -375,7 +402,7 @@ void ComposingPreferencesModel::setShowChordSymbolsInStatusBar(bool value)
     if (showChordSymbolsInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setShowChordSymbolsInStatusBar(value);
+    analysisConfig()->setShowChordSymbolsInStatusBar(value);
     emit showChordSymbolsInStatusBarChanged();
 }
 
@@ -384,7 +411,7 @@ void ComposingPreferencesModel::setShowRomanNumeralsInStatusBar(bool value)
     if (showRomanNumeralsInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setShowRomanNumeralsInStatusBar(value);
+    analysisConfig()->setShowRomanNumeralsInStatusBar(value);
     emit showRomanNumeralsInStatusBarChanged();
 }
 
@@ -393,6 +420,6 @@ void ComposingPreferencesModel::setShowNashvilleNumbersInStatusBar(bool value)
     if (showNashvilleNumbersInStatusBar() == value) {
         return;
     }
-    composingConfiguration()->setShowNashvilleNumbersInStatusBar(value);
+    analysisConfig()->setShowNashvilleNumbersInStatusBar(value);
     emit showNashvilleNumbersInStatusBarChanged();
 }

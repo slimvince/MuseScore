@@ -22,11 +22,14 @@
 
 #include <gtest/gtest.h>
 
-#include "composing/analysis/chordanalyzer.h"
+#include "composing/analysis/chord/chordanalyzer.h"
 
 using namespace mu::composing::analysis;
 
 namespace {
+
+const RuleBasedChordAnalyzer kAnalyzer{};
+
 
 std::vector<ChordAnalysisTone> tones(std::initializer_list<int> pitches)
 {
@@ -51,19 +54,19 @@ ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
                                     bool hasMin7 = false, bool hasMaj7 = false,
                                     bool hasDim7 = false, bool hasAdd6 = false,
                                     int keyTonicPc = 0,
-                                    KeyMode keyMode = KeyMode::Ionian)
+                                    KeySigMode keyMode = KeySigMode::Ionian)
 {
     ChordAnalysisResult r;
-    r.degree               = degree;
-    r.quality              = quality;
-    r.rootPc               = rootPc;
-    r.bassPc               = bassPc;
-    r.hasMinorSeventh      = hasMin7;
-    r.hasMajorSeventh      = hasMaj7;
-    r.hasDiminishedSeventh = hasDim7;
-    r.hasAddedSixth        = hasAdd6;
-    r.keyTonicPc           = keyTonicPc;
-    r.keyMode              = keyMode;
+    r.function.degree               = degree;
+    r.identity.quality              = quality;
+    r.identity.rootPc               = rootPc;
+    r.identity.bassPc               = bassPc;
+    if (hasMin7) setExtension(r.identity.extensions, Extension::MinorSeventh);
+    if (hasMaj7) setExtension(r.identity.extensions, Extension::MajorSeventh);
+    if (hasDim7) setExtension(r.identity.extensions, Extension::DiminishedSeventh);
+    if (hasAdd6) setExtension(r.identity.extensions, Extension::AddedSixth);
+    r.function.keyTonicPc           = keyTonicPc;
+    r.function.keyMode              = keyMode;
     return r;
 }
 
@@ -71,7 +74,7 @@ ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
 {
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Ionian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "C");
@@ -80,7 +83,7 @@ TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
 
 TEST(Composing_ChordAnalyzerTests, DetectsMinorTriadInCMinor)
 {
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 60, 63, 67 }), -3, KeyMode::Aeolian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 67 }), -3, KeySigMode::Aeolian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -3), "Cm");
@@ -89,18 +92,18 @@ TEST(Composing_ChordAnalyzerTests, DetectsMinorTriadInCMinor)
 
 TEST(Composing_ChordAnalyzerTests, DetectsMinorSeventhQuality)
 {
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 64, 67, 71, 74 }), 0, KeyMode::Ionian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 64, 67, 71, 74 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Em7");
-    EXPECT_EQ(results.front().quality, ChordQuality::Minor);
-    EXPECT_TRUE(results.front().hasMinorSeventh);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    EXPECT_TRUE(hasExtension(results.front().identity.extensions, Extension::MinorSeventh));
 }
 
 TEST(Composing_ChordAnalyzerTests, KeepsFlatBassSpellingInFlatKey)
 {
     // Eb major triad in first inversion: Bb(70) Eb(75) G(79)
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 70, 75, 79 }), -3, KeyMode::Aeolian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 70, 75, 79 }), -3, KeySigMode::Aeolian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -3), "Eb/Bb");
@@ -109,28 +112,28 @@ TEST(Composing_ChordAnalyzerTests, KeepsFlatBassSpellingInFlatKey)
 TEST(Composing_ChordAnalyzerTests, DetectsDiminishedSeventh)
 {
     // Fully diminished seventh: B D F Ab = {11, 2, 5, 8}
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeyMode::Ionian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().quality, ChordQuality::Diminished);
-    EXPECT_TRUE(results.front().hasDiminishedSeventh);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished);
+    EXPECT_TRUE(hasExtension(results.front().identity.extensions, Extension::DiminishedSeventh));
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Bdim7");
 }
 
 TEST(Composing_ChordAnalyzerTests, DetectsHalfDiminished)
 {
     // Half-diminished (m7b5): B D F A = {11, 2, 5, 9}
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 59, 62, 65, 69 }), 0, KeyMode::Ionian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().quality, ChordQuality::HalfDiminished);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Bm7b5");
 }
 
 TEST(Composing_ChordAnalyzerTests, ReturnsEmptyForFewerThanThreeDistinctPitchClasses)
 {
     // Two-note interval — insufficient for chord analysis.
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 60, 64 }), 0, KeyMode::Ionian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64 }), 0, KeySigMode::Ionian);
     EXPECT_TRUE(results.empty());
 }
 
@@ -139,130 +142,130 @@ TEST(Composing_ChordAnalyzerTests, ReturnsEmptyForFewerThanThreeDistinctPitchCla
 // These tests verify that ChordAnalyzer::analyzeChord assigns the correct
 // diatonic degree when the key mode is Dorian, Phrygian, Lydian, Mixolydian,
 // or Locrian.  All use keySig=0 (sharing C major's pitch-class set) with
-// the appropriate KeyMode.
+// the appropriate KeySigMode.
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_TonicChord)
 {
     // D minor triad in D Dorian → degree 0 (i).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 62, 65, 69 }), 0, KeyMode::Dorian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 62, 65, 69 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 2);    // D
-    EXPECT_EQ(results.front().quality, ChordQuality::Minor);
-    EXPECT_EQ(results.front().degree, 0);
-    EXPECT_TRUE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().identity.rootPc, 2);    // D
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    EXPECT_EQ(results.front().function.degree, 0);
+    EXPECT_TRUE(results.front().function.diatonicToKey);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "i");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_IVChord)
 {
     // G major triad in D Dorian → degree 3 (IV).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 67, 71, 74 }), 0, KeyMode::Dorian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 7);    // G
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 3);
+    EXPECT_EQ(results.front().identity.rootPc, 7);    // G
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 3);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "IV");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_TonicChord)
 {
     // E minor triad in E Phrygian → degree 0 (i).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 64, 67, 71 }), 0, KeyMode::Phrygian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 64, 67, 71 }), 0, KeySigMode::Phrygian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 4);    // E
-    EXPECT_EQ(results.front().quality, ChordQuality::Minor);
-    EXPECT_EQ(results.front().degree, 0);
-    EXPECT_TRUE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().identity.rootPc, 4);    // E
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    EXPECT_EQ(results.front().function.degree, 0);
+    EXPECT_TRUE(results.front().function.diatonicToKey);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "i");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_FlatIIChord)
 {
     // F major triad in E Phrygian → degree 1 (II, the Phrygian bII).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 65, 69, 72 }), 0, KeyMode::Phrygian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Phrygian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 5);    // F
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 1);
+    EXPECT_EQ(results.front().identity.rootPc, 5);    // F
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 1);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "II");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_TonicChord)
 {
     // F major triad in F Lydian → degree 0 (I).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 65, 69, 72 }), 0, KeyMode::Lydian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Lydian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 5);    // F
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 0);
-    EXPECT_TRUE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().identity.rootPc, 5);    // F
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 0);
+    EXPECT_TRUE(results.front().function.diatonicToKey);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "I");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_IIChord)
 {
     // G major triad in F Lydian → degree 1 (II).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 67, 71, 74 }), 0, KeyMode::Lydian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Lydian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 7);    // G
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 1);
+    EXPECT_EQ(results.front().identity.rootPc, 7);    // G
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 1);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "II");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_TonicChord)
 {
     // G major triad in G Mixolydian → degree 0 (I).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 67, 71, 74 }), 0, KeyMode::Mixolydian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Mixolydian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 7);    // G
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 0);
-    EXPECT_TRUE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().identity.rootPc, 7);    // G
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 0);
+    EXPECT_TRUE(results.front().function.diatonicToKey);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "I");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_FlatVIIChord)
 {
     // F major triad in G Mixolydian → degree 6 (VII, the bVII).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 65, 69, 72 }), 0, KeyMode::Mixolydian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Mixolydian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 5);    // F
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 6);
+    EXPECT_EQ(results.front().identity.rootPc, 5);    // F
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 6);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "VII");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_TonicChord)
 {
     // B diminished triad in B Locrian → degree 0 (io).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 59, 62, 65 }), 0, KeyMode::Locrian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65 }), 0, KeySigMode::Locrian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 11);   // B
-    EXPECT_EQ(results.front().quality, ChordQuality::Diminished);
-    EXPECT_EQ(results.front().degree, 0);
-    EXPECT_TRUE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().identity.rootPc, 11);   // B
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished);
+    EXPECT_EQ(results.front().function.degree, 0);
+    EXPECT_TRUE(results.front().function.diatonicToKey);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "io");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_IIChord)
 {
     // C major triad in B Locrian → degree 1 (II).
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Locrian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Locrian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().rootPc, 0);    // C
-    EXPECT_EQ(results.front().quality, ChordQuality::Major);
-    EXPECT_EQ(results.front().degree, 1);
+    EXPECT_EQ(results.front().identity.rootPc, 0);    // C
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(results.front().function.degree, 1);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(results.front()), "II");
 }
 
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_Dorian_ChromaticChordIsNonDiatonic)
 {
     // F# major triad in D Dorian — F# is not in the D Dorian scale → degree = -1.
-    const auto results = ChordAnalyzer::analyzeChord(tones({ 66, 70, 73 }), 0, KeyMode::Dorian);
+    const auto results = kAnalyzer.analyzeChord(tones({ 66, 70, 73 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
-    EXPECT_EQ(results.front().degree, -1);
-    EXPECT_FALSE(results.front().diatonicToKey);
+    EXPECT_EQ(results.front().function.degree, -1);
+    EXPECT_FALSE(results.front().function.diatonicToKey);
 }
 
 // ── Context / resolution-bias tests ──────────────────────────────────────────
@@ -276,51 +279,51 @@ TEST(Composing_ChordAnalyzerTests, DimResolution_BoostsScoreOfLeadingToneTarget)
 {
     // viio → I: after B diminished the resolution target is C major (one semitone up).
     // Verify the C major score is higher with context than without.
-    const auto withoutCtx = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Ionian);
+    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 11;   // B
     ctx.previousQuality = ChordQuality::Diminished;
-    const auto withCtx = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Ionian, &ctx);
+    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
-    EXPECT_EQ(withCtx.front().rootPc, 0);
-    EXPECT_EQ(withCtx.front().quality, ChordQuality::Major);
+    EXPECT_EQ(withCtx.front().identity.rootPc, 0);
+    EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
     // The resolution bias must have increased the winning candidate's score.
-    EXPECT_GT(withCtx.front().score, withoutCtx.front().score);
+    EXPECT_GT(withCtx.front().identity.score, withoutCtx.front().identity.score);
 }
 
 TEST(Composing_ChordAnalyzerTests, HalfDimResolution_BoostsScoreOfDominantTarget)
 {
     // ii∅ → V: after Bm7b5 (root 11) the resolution target is E major (a perfect fourth up).
     // Key: A minor — E is the diatonic dominant.
-    const auto withoutCtx = ChordAnalyzer::analyzeChord(tones({ 64, 68, 71 }), 0, KeyMode::Aeolian);
+    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 11;   // B
     ctx.previousQuality = ChordQuality::HalfDiminished;
-    const auto withCtx = ChordAnalyzer::analyzeChord(tones({ 64, 68, 71 }), 0, KeyMode::Aeolian, &ctx);
+    const auto withCtx = kAnalyzer.analyzeChord(tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
-    EXPECT_EQ(withCtx.front().rootPc, 4);   // E
-    EXPECT_EQ(withCtx.front().quality, ChordQuality::Major);
-    EXPECT_GT(withCtx.front().score, withoutCtx.front().score);
+    EXPECT_EQ(withCtx.front().identity.rootPc, 4);   // E
+    EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
+    EXPECT_GT(withCtx.front().identity.score, withoutCtx.front().identity.score);
 }
 
 TEST(Composing_ChordAnalyzerTests, AugResolution_BoostsScoreOfSameRootReturn)
 {
     // I+ → I: after C augmented the resolution target is C major at the same root.
-    const auto withoutCtx = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Ionian);
+    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 0;    // C
     ctx.previousQuality = ChordQuality::Augmented;
-    const auto withCtx = ChordAnalyzer::analyzeChord(tones({ 60, 64, 67 }), 0, KeyMode::Ionian, &ctx);
+    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
-    EXPECT_EQ(withCtx.front().rootPc, 0);
-    EXPECT_EQ(withCtx.front().quality, ChordQuality::Major);
-    EXPECT_GT(withCtx.front().score, withoutCtx.front().score);
+    EXPECT_EQ(withCtx.front().identity.rootPc, 0);
+    EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
+    EXPECT_GT(withCtx.front().identity.score, withoutCtx.front().identity.score);
 }
 
 // ── Roman Numeral Formatter Tests ─────────────────────────────────────────────
@@ -575,7 +578,7 @@ TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVII_CMajor)
 {
     // Bb major in C major = bVII.  rootPc=10, keyTonicPc=0, Ionian.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Major, 10, 10, false, false, false, false, 0, KeyMode::Ionian)),
+                  makeRomanResult(-1, ChordQuality::Major, 10, 10, false, false, false, false, 0, KeySigMode::Ionian)),
               "bVII");
 }
 
@@ -583,7 +586,7 @@ TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatIII_CMajor)
 {
     // Eb major in C major = bIII.  rootPc=3, keyTonicPc=0, Ionian.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Major, 3, 3, false, false, false, false, 0, KeyMode::Ionian)),
+                  makeRomanResult(-1, ChordQuality::Major, 3, 3, false, false, false, false, 0, KeySigMode::Ionian)),
               "bIII");
 }
 
@@ -591,7 +594,7 @@ TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVI_CMajor)
 {
     // Ab major in C major = bVI.  rootPc=8, keyTonicPc=0, Ionian.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Major, 8, 8, false, false, false, false, 0, KeyMode::Ionian)),
+                  makeRomanResult(-1, ChordQuality::Major, 8, 8, false, false, false, false, 0, KeySigMode::Ionian)),
               "bVI");
 }
 
@@ -599,7 +602,7 @@ TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVII_Minor_CMajor)
 {
     // Bb minor in C major = bvii.  rootPc=10, minor quality.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Minor, 10, 10, false, false, false, false, 0, KeyMode::Ionian)),
+                  makeRomanResult(-1, ChordQuality::Minor, 10, 10, false, false, false, false, 0, KeySigMode::Ionian)),
               "bvii");
 }
 
@@ -607,7 +610,7 @@ TEST(Composing_ChordRomanNumeralTests, NonDiatonic_FlatVIIDom7_CMajor)
 {
     // Bb7 in C major = bVII7.  rootPc=10, minor seventh.
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(
-                  makeRomanResult(-1, ChordQuality::Major, 10, 10, true, false, false, false, 0, KeyMode::Ionian)),
+                  makeRomanResult(-1, ChordQuality::Major, 10, 10, true, false, false, false, 0, KeySigMode::Ionian)),
               "bVII7");
 }
 
@@ -705,7 +708,7 @@ TEST(Composing_ChordRomanNumeralTests, MajorSixNine_I69)
 {
     // C69 (C D E G A) — both add6 and add9 present → "I69" not "I(add6)".
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 0, 0, false, false, false, true);
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I69");
 }
 
@@ -713,7 +716,7 @@ TEST(Composing_ChordRomanNumeralTests, MinorSixNine_i69)
 {
     // Cm69 — minor 6/9 chord.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Minor, 0, 0, false, false, false, true);
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "i69");
 }
 
@@ -755,8 +758,8 @@ TEST(Composing_ChordRomanNumeralTests, DominantNinth_V9)
 {
     // V9: dominant 7th + natural 9th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V9");
 }
 
@@ -764,9 +767,9 @@ TEST(Composing_ChordRomanNumeralTests, DominantEleventh_V11)
 {
     // V11: dominant 7th + natural 11th (implies 9th).
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V11");
 }
 
@@ -774,10 +777,10 @@ TEST(Composing_ChordRomanNumeralTests, DominantThirteenth_V13)
 {
     // V13: dominant 7th + natural 13th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
-    r.hasThirteenth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    setExtension(r.identity.extensions, Extension::NaturalThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V13");
 }
 
@@ -785,8 +788,8 @@ TEST(Composing_ChordRomanNumeralTests, MajorNinth_IM9)
 {
     // IM9: major 7th + natural 9th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 0, 0, false, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "IM9");
 }
 
@@ -794,10 +797,10 @@ TEST(Composing_ChordRomanNumeralTests, MajorThirteenth_IM13)
 {
     // IM13: major 7th + natural 13th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 0, 0, false, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
-    r.hasThirteenth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    setExtension(r.identity.extensions, Extension::NaturalThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "IM13");
 }
 
@@ -805,8 +808,8 @@ TEST(Composing_ChordRomanNumeralTests, MinorNinth_ii9)
 {
     // ii9: minor 7th + natural 9th.
     ChordAnalysisResult r = makeRomanResult(1, ChordQuality::Minor, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "ii9");
 }
 
@@ -814,9 +817,9 @@ TEST(Composing_ChordRomanNumeralTests, MinorEleventh_ii11)
 {
     // ii11: minor 7th + natural 11th.
     ChordAnalysisResult r = makeRomanResult(1, ChordQuality::Minor, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "ii11");
 }
 
@@ -824,10 +827,10 @@ TEST(Composing_ChordRomanNumeralTests, MinorThirteenth_vi13)
 {
     // vi13: minor 7th + natural 13th.
     ChordAnalysisResult r = makeRomanResult(5, ChordQuality::Minor, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
-    r.hasThirteenth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    setExtension(r.identity.extensions, Extension::NaturalThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "vi13");
 }
 
@@ -837,8 +840,7 @@ TEST(Composing_ChordRomanNumeralTests, DominantFlatNinth_V7b9)
 {
     // V7b9: dominant 7th + flat 9th (no natural 9th → level stays at 7).
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthFlat = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::FlatNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7b9");
 }
 
@@ -846,8 +848,7 @@ TEST(Composing_ChordRomanNumeralTests, DominantSharpNinth_V7SharpNine)
 {
     // V7#9: dominant 7th + sharp 9th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthSharp = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::SharpNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7#9");
 }
 
@@ -855,9 +856,9 @@ TEST(Composing_ChordRomanNumeralTests, DominantNinthSharpEleven_V9SharpEleven)
 {
     // V9#11: dominant 9th + sharp 11th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventhSharp = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::SharpEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V9#11");
 }
 
@@ -865,10 +866,10 @@ TEST(Composing_ChordRomanNumeralTests, DominantThirteenthFlatNinth_V13b9)
 {
     // V13b9: dominant 13th + flat 9th alteration.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthFlat = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
-    r.hasThirteenth = true;
+    setExtension(r.identity.extensions, Extension::FlatNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    setExtension(r.identity.extensions, Extension::NaturalThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V13b9");
 }
 
@@ -876,7 +877,7 @@ TEST(Composing_ChordRomanNumeralTests, DominantSeventhFlatFive_V7b5)
 {
     // V7b5: dominant 7th + flat fifth.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasFlatFifth = true;
+    setExtension(r.identity.extensions, Extension::FlatFifth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7b5");
 }
 
@@ -884,7 +885,7 @@ TEST(Composing_ChordRomanNumeralTests, DominantSeventhSharpFive_V7SharpFive)
 {
     // V7#5: dominant 7th + sharp fifth (augmented quality would use "+" instead).
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasSharpFifth = true;
+    setExtension(r.identity.extensions, Extension::SharpFifth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7#5");
 }
 
@@ -892,9 +893,8 @@ TEST(Composing_ChordRomanNumeralTests, DominantSeventhFlatNinthSharpEleven_V7b9S
 {
     // V7b9#11: multiple alterations stacked.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasNinthFlat = true;
-    r.hasNinth = true;
-    r.hasEleventhSharp = true;
+    setExtension(r.identity.extensions, Extension::FlatNinth);
+    setExtension(r.identity.extensions, Extension::SharpEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7b9#11");
 }
 
@@ -902,7 +902,7 @@ TEST(Composing_ChordRomanNumeralTests, DominantSeventhFlatThirteenth_V7b13)
 {
     // V7b13: dominant 7th + flat 13th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 0, 0, true);
-    r.hasThirteenthFlat = true;
+    setExtension(r.identity.extensions, Extension::FlatThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7b13");
 }
 
@@ -912,8 +912,8 @@ TEST(Composing_ChordRomanNumeralTests, HalfDimNinth_iiHalfDim9)
 {
     // iiø9: half-diminished with natural 9th.
     ChordAnalysisResult r = makeRomanResult(1, ChordQuality::HalfDiminished);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "ii\xc3\xb8" "9");
 }
 
@@ -921,9 +921,9 @@ TEST(Composing_ChordRomanNumeralTests, HalfDimEleventh_iiHalfDim11)
 {
     // iiø11: half-diminished with natural 11th.
     ChordAnalysisResult r = makeRomanResult(1, ChordQuality::HalfDiminished);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "ii\xc3\xb8" "11");
 }
 
@@ -940,8 +940,8 @@ TEST(Composing_ChordRomanNumeralTests, SuspendedFour_V9sus4)
 {
     // V9sus4: suspended 4th + dominant 9th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Suspended4, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V9sus4");
 }
 
@@ -949,10 +949,10 @@ TEST(Composing_ChordRomanNumeralTests, SuspendedFour_V13sus4)
 {
     // V13sus4: suspended 4th + dominant 13th.
     ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Suspended4, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
-    r.hasEleventh = true;
-    r.hasThirteenth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    setExtension(r.identity.extensions, Extension::NaturalThirteenth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V13sus4");
 }
 
@@ -969,8 +969,8 @@ TEST(Composing_ChordRomanNumeralTests, AugmentedNinth_I_plus_9)
 {
     // I+9: augmented + dominant 9th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Augmented, 0, 0, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I+9");
 }
 
@@ -978,8 +978,8 @@ TEST(Composing_ChordRomanNumeralTests, AugmentedMajorNinth_I_plus_M9)
 {
     // I+M9: augmented + major 9th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Augmented, 0, 0, false, true);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I+M9");
 }
 
@@ -989,8 +989,8 @@ TEST(Composing_ChordRomanNumeralTests, MajorAddNinth_I_add9)
 {
     // I(add9): major triad + natural 9th, no 7th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I(add9)");
 }
 
@@ -998,8 +998,8 @@ TEST(Composing_ChordRomanNumeralTests, MinorAddNinth_i_add9)
 {
     // i(add9): minor triad + natural 9th, no 7th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Minor);
-    r.hasNinthNatural = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "i(add9)");
 }
 
@@ -1007,7 +1007,7 @@ TEST(Composing_ChordRomanNumeralTests, MajorAddSharpEleven_I_addSharpEleven)
 {
     // I(add#11): major triad + sharp 11th, no 7th (Lydian flavor).
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major);
-    r.hasEleventhSharp = true;
+    setExtension(r.identity.extensions, Extension::SharpEleventh);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I(add#11)");
 }
 
@@ -1015,7 +1015,7 @@ TEST(Composing_ChordRomanNumeralTests, MajorAddFlatNinth_I_addFlatNine)
 {
     // I(addb9): major triad + flat 9th, no 7th.
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major);
-    r.hasNinthFlat = true;
-    r.hasNinth = true;
+    setExtension(r.identity.extensions, Extension::FlatNinth);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I(addb9)");
 }
