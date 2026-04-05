@@ -19,6 +19,7 @@ build-*
 build
 ninja_build/
 ninja_build_rel/
+xxx ninja_build/
 tools
 Testing/Temporary/
 win32build

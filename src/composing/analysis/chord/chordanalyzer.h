@@ -163,6 +163,36 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
+    // ── Inversion / bass-root bias correction ──────────────────────────────
+    //
+    // When the winning candidate beat the best non-bass alternative by less
+    // than inversionSuspicionMargin, and a clean (triadic) non-bass alternative
+    // exists and noteCount >= 3, the bass-root bonus is suspected of firing
+    // incorrectly on an inverted chord.  The bonus contribution to the winner's
+    // score is reduced by (1 - inversionBonusReduction) * bassNoteRootBonus,
+    // then candidates are re-sorted.
+    //
+    // inversionSuspicionMargin = 0 disables the correction entirely.
+    // inversionBonusReduction = 1.0 means no reduction (NOP).
+    // inversionBonusReduction = 0.0 removes the bonus entirely for close-margin cases.
+    //
+    // Empirically tuned from Section 6.1 validation data (Bach chorales):
+    //   - 86.1% of confirmed genuine errors have margin < 0.25
+    //   - 100.0% of confirmed genuine errors have margin < 1.0
+    //   - 0% of genuine errors have noteCount < 3
+    // A margin threshold of 0.65 (= bassNoteRootBonus) catches all cases where
+    // the bonus is the sole reason the bass-root candidate wins.
+
+    /// Score-margin threshold below which the inversion correction activates.
+    /// Must be >= 0. Set to 0 to disable the correction.
+    /// Default: 0.65 (= bassNoteRootBonus — bass bonus is sole deciding factor).
+    double inversionSuspicionMargin = 0.65;
+
+    /// Multiplier applied to the bass-root bonus reduction when the correction fires.
+    /// 1.0 = no reduction (NOP).  0.0 = remove the bonus contribution entirely.
+    /// Default: 0.0 — fully remove the bonus so the non-bass alternative wins.
+    double inversionBonusReduction = 0.0;
+
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -195,11 +225,13 @@ struct ChordAnalyzerPreferences {
     ParameterBoundsMap bounds() const
     {
         return {
-            { "bassNoteRootBonus",        { 0.0, 2.0 } },
-            { "diatonicRootBonus",        { 0.0, 1.0 } },
-            { "tpcConsistencyBonusPerTone",{ 0.0, 1.0 } },
-            { "rootContinuityBonus",      { 0.0, 1.5 } },
-            { "resolutionBonus",          { 0.0, 1.5 } },
+            { "bassNoteRootBonus",           { 0.0, 2.0 } },
+            { "diatonicRootBonus",           { 0.0, 1.0 } },
+            { "tpcConsistencyBonusPerTone",  { 0.0, 1.0 } },
+            { "rootContinuityBonus",         { 0.0, 1.5 } },
+            { "resolutionBonus",             { 0.0, 1.5 } },
+            { "inversionSuspicionMargin",    { 0.0, 2.0 } },
+            { "inversionBonusReduction",     { 0.0, 1.0 } },
         };
     }
 };

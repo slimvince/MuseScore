@@ -1272,7 +1272,17 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         &IONIAN_SCALE, &DORIAN_SCALE, &PHRYGIAN_SCALE, &LYDIAN_SCALE,
         &MIXOLYDIAN_SCALE, &AEOLIAN_SCALE, &LOCRIAN_SCALE
     };
-    const std::array<int, 7>& scale = *MODE_SCALES[keyModeIndex(keyMode)];
+    // keyModeIndex() returns the raw enum ordinal (0–20 for all 21 KeySigMode values).
+    // MODE_SCALES only covers the 7 diatonic modes (0–6).  Non-diatonic modes are
+    // mapped to their diatonic key-signature parent so that diatonic-root bonus and
+    // scale-membership scoring stay correct for the parent tonal context.
+    static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
+        0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping
+        1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents
+        5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents
+    };
+    const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
+    const std::array<int, 7>& scale = *MODE_SCALES[modeScaleIdx];
 
     // Score every root × template combination.
     //
@@ -1462,6 +1472,74 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         results.push_back(r);
     }
 
+    // ── Inversion / bass-root bias correction ────────────────────────────────
+    //
+    // If the winner's bass-root bonus is the sole reason it beat the best
+    // non-bass alternative (margin < inversionSuspicionMargin), and a clean
+    // triadic/seventh alternative exists, and the chord has ≥ 3 distinct PCs
+    // (not an arpeggio artifact), remove the bonus contribution and re-sort.
+    //
+    // This corrects the systematic bias where inverted chords are labelled with
+    // the bass note as root instead of the actual chord root.
+    if (prefs.inversionSuspicionMargin > 0.0
+        && prefs.inversionBonusReduction < 1.0
+        && results.size() >= 2
+        && distinctPcs >= 3)
+    {
+        const ChordAnalysisResult& winner = results[0];
+        const bool winnerBassIsRoot = (winner.identity.rootPc == winner.identity.bassPc);
+
+        // The correction only targets Major and Minor winners — the typical inversion
+        // bias patterns (e.g. Bb6 labelled as root-position when it's really Gm/Bb).
+        // Augmented, Diminished, HalfDiminished, Suspended, and Power chords with
+        // bassIsRoot=true are far more often correct root-position identifications,
+        // and the correction causes regressions when applied to them.
+        const bool winnerQualityTargeted = (winner.identity.quality == ChordQuality::Major
+                                            || winner.identity.quality == ChordQuality::Minor);
+
+        if (winnerBassIsRoot && winnerQualityTargeted) {
+            // Find the best alternative that has clean (Major or Minor) quality.
+            // Seconds-chord, augmented, diminished, etc. are excluded as described above.
+            static constexpr std::array<ChordQuality, 2> kCleanQualities = {
+                ChordQuality::Major,
+                ChordQuality::Minor,
+            };
+            const ChordAnalysisResult* bestAlt = nullptr;
+            for (size_t i = 1; i < results.size(); ++i) {
+                const auto& alt = results[i];
+                // The alternative must have a DIFFERENT root — if it agrees on the
+                // root but differs only in extensions (e.g. CMaj9 vs CMaj9(no 3)),
+                // there is no inversion to correct.
+                if (alt.identity.rootPc == winner.identity.rootPc) {
+                    continue;
+                }
+                const bool isClean = std::find(kCleanQualities.begin(),
+                                               kCleanQualities.end(),
+                                               alt.identity.quality)
+                                     != kCleanQualities.end();
+                if (isClean) {
+                    bestAlt = &alt;
+                    break;
+                }
+            }
+
+            if (bestAlt != nullptr) {
+                const double margin = winner.identity.score - bestAlt->identity.score;
+                if (margin < prefs.inversionSuspicionMargin) {
+                    // Deduct the bass-bonus contribution from the winner and re-sort.
+                    const double deduction = prefs.bassNoteRootBonus
+                                            * (1.0 - prefs.inversionBonusReduction);
+                    results[0].identity.score -= deduction;
+                    std::stable_sort(results.begin(), results.end(),
+                                     [](const ChordAnalysisResult& a,
+                                        const ChordAnalysisResult& b) {
+                                         return a.identity.score > b.identity.score;
+                                     });
+                }
+            }
+        }
+    }
+
     return results;
 }
 
@@ -1525,7 +1603,14 @@ std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& 
                                      || result.identity.quality == Q::Diminished
                                      || result.identity.quality == Q::HalfDiminished);
         const int semitone = (result.identity.rootPc - result.function.keyTonicPc + 12) % 12;
-        const int modeIdx  = static_cast<int>(keyModeIndex(result.function.keyMode));
+        // chromaticRoman() only knows the 7 diatonic modes (SCALES[0..6]).
+        // Map non-diatonic modes to their diatonic parent before calling it.
+        static constexpr std::array<int, 21> CHR_DIATONIC_PARENT = {
+            0, 1, 2, 3, 4, 5, 6,  // diatonic: identity
+            1, 2, 3, 4, 5, 6, 0,  // melodic minor family
+            5, 6, 0, 1, 2, 3, 4   // harmonic minor family
+        };
+        const int modeIdx = CHR_DIATONIC_PARENT[static_cast<size_t>(keyModeIndex(result.function.keyMode))];
         const std::string chrBase = chromaticRoman(semitone, modeIdx, isMinorQuality);
         if (chrBase.empty()) {
             return "";  // Should not occur in standard 12-tone music

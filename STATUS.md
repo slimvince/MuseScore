@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — Section 1 doc corrections; Section 2 corpus filter + baseline; maddb13 fix (3.1); Section 4 three-way comparison vs When in Rome (72.2% all-agree, 8.4% genuine errors, mode inference mostly correct)*
+*Last updated: April 2026 — Section 5.0 enriched JSON output; crash fix for non-diatonic key modes; **74.3% of Bach chorale errors have bassIsRoot=true**; **59.4% of Beethoven quartet errors have bassIsRoot=true** — bass-as-root bias is the dominant error source across both corpora*
 
 ---
 
@@ -293,6 +293,30 @@ Three systematic error patterns account for the bulk of 673 disagreements:
    Bach; care needed to not suppress genuine fully-voiced dim7s.
 3. **sus4 vs quartal trichord** (~35 cases) — expected disagreement; documented in Known Gaps.
 
+### Two-Way Comparison Breakdown — Bass-as-Root Analysis
+
+Report: `tools/reports/reports/validation_20260405_183822.html`
+(Same corpus as corrected baseline above; binary: `ninja_build/batch_analyze.exe`)
+
+| Metric | Count |
+|--------|-------|
+| Total regions | 6032 |
+| chord\_disagree (genuine errors) | 673 |
+| **chord\_disagree with bassIsRoot=true** | **500** |
+| **bassIsRoot fraction of genuine errors** | **74.3%** |
+
+> **Primary accuracy target:** Any inversion/bass-as-root fix must be measured
+> against this 74.3% figure.  A successful fix reduces chord\_disagree by ~500
+> cases (from 673 toward ~173) while holding regressions to zero.
+>
+> Context: `bassIsRoot=true` means our analysis chose the bass note as the chord
+> root, while music21 chose a different root (typically reading the chord as a
+> first or second inversion of a chord rooted on a non-bass note).  This is the
+> dominant error source — more than three times larger than all other genuine
+> error causes combined.
+
+---
+
 ### Three-Way Comparison (ours vs music21 vs When in Rome)
 
 Corpus: When in Rome project Bach chorales (`tools/dcml/when_in_rome`).
@@ -370,6 +394,32 @@ Run: 410 unfiltered works, report: `tools/reports/validation_20260404_223531.htm
 The chord identity rate is identical (83.4%) — the 58 excluded non-chorale/variant
 works did not materially affect accuracy. The corrected corpus is the authoritative
 baseline going forward.
+
+---
+
+### ABC Beethoven Two-Way Comparison (5.4)
+
+Corpus: 70 movements from the ABC Beethoven string quartet corpus
+(`tools/dcml/ABC/`). Annotations: DCML `.harmonies.tsv` files. Comparison
+script: `tools/run_beethoven_validation.py`.
+
+| Metric | Value |
+|---|---|
+| Movements processed | 70/70 |
+| Our regions | 7,141 |
+| DCML-aligned | 2,973 (41.6% of ours) |
+| Root agreement | 1,850/2,973 (**62.2%**) |
+| Root disagreement | 1,123/2,973 (37.8%) |
+| bassIsRoot=true in disagreements | 667/1,123 (**59.4%**) |
+
+**59.4% bassIsRoot fraction** (vs 74.3% in Bach chorales) confirms the bass-as-root
+bias is the dominant error source across both tonal corpora and styles.
+The lower fraction in Beethoven string quartets (vs chorales) is expected:
+quartet writing has more explicit voice independence.
+
+Note on alignment: only 41.6% of our regions align with DCML annotations.
+The gap is partly methodological — our regions are note-by-note while DCML
+annotates harmony-level changes — so unaligned regions are not errors.
 
 ---
 
