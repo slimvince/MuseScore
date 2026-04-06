@@ -36,8 +36,10 @@ static const Settings::Key INFER_KEY_MODE(module_name,              "composing/i
 static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,       "composing/analysisAlternatives");
 static const Settings::Key TUNING_SYSTEM_KEY(module_name,           "composing/tuningSystemKey");
 static const Settings::Key TONIC_ANCHORED_TUNING(module_name,       "composing/tonicAnchoredTuning");
+static const Settings::Key TUNING_MODE(module_name,                  "composing/tuningMode");
 static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/minimizeTuningDeviation");
 static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
+static const Settings::Key ANNOTATE_DRIFT_AT_BOUNDARIES(module_name, "composing/annotateDriftAtBoundaries");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,       "composing/showKeyModeInStatusBar");
 static const Settings::Key SHOW_CHORD_SYMBOLS_IN_STATUS_BAR(module_name,  "composing/showChordSymbolsInStatusBar");
 static const Settings::Key SHOW_ROMAN_NUMERALS_IN_STATUS_BAR(module_name, "composing/showRomanNumeralsInStatusBar");
@@ -105,6 +107,12 @@ void ComposingConfiguration::init()
         m_tonicAnchoredTuningChanged.notify();
     });
 
+    settings()->setDefaultValue(TUNING_MODE,
+        Val(static_cast<int>(mu::composing::intonation::TuningMode::TonicAnchored)));
+    settings()->valueChanged(TUNING_MODE).onReceive(nullptr, [this](const Val&) {
+        m_tuningModeChanged.notify();
+    });
+
     settings()->setDefaultValue(MINIMIZE_TUNING_DEVIATION, Val(false));
     settings()->valueChanged(MINIMIZE_TUNING_DEVIATION).onReceive(nullptr, [this](const Val&) {
         m_minimizeTuningDeviationChanged.notify();
@@ -113,6 +121,11 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(ANNOTATE_TUNING_OFFSETS, Val(false));
     settings()->valueChanged(ANNOTATE_TUNING_OFFSETS).onReceive(nullptr, [this](const Val&) {
         m_annotateTuningOffsetsChanged.notify();
+    });
+
+    settings()->setDefaultValue(ANNOTATE_DRIFT_AT_BOUNDARIES, Val(false));
+    settings()->valueChanged(ANNOTATE_DRIFT_AT_BOUNDARIES).onReceive(nullptr, [this](const Val&) {
+        m_annotateDriftAtBoundariesChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -353,6 +366,24 @@ muse::async::Notification ComposingConfiguration::tonicAnchoredTuningChanged() c
     return m_tonicAnchoredTuningChanged;
 }
 
+// ── tuningMode ──────────────────────────────────────────────────────────────
+
+mu::composing::intonation::TuningMode ComposingConfiguration::tuningMode() const
+{
+    const int raw = settings()->value(TUNING_MODE).toInt();
+    return static_cast<mu::composing::intonation::TuningMode>(raw);
+}
+
+void ComposingConfiguration::setTuningMode(mu::composing::intonation::TuningMode mode)
+{
+    settings()->setSharedValue(TUNING_MODE, Val(static_cast<int>(mode)));
+}
+
+muse::async::Notification ComposingConfiguration::tuningModeChanged() const
+{
+    return m_tuningModeChanged;
+}
+
 // ── minimizeTuningDeviation ──────────────────────────────────────────────────
 
 bool ComposingConfiguration::minimizeTuningDeviation() const
@@ -385,6 +416,23 @@ void ComposingConfiguration::setAnnotateTuningOffsets(bool value)
 muse::async::Notification ComposingConfiguration::annotateTuningOffsetsChanged() const
 {
     return m_annotateTuningOffsetsChanged;
+}
+
+// ── annotateDriftAtBoundaries ────────────────────────────────────────────────
+
+bool ComposingConfiguration::annotateDriftAtBoundaries() const
+{
+    return settings()->value(ANNOTATE_DRIFT_AT_BOUNDARIES).toBool();
+}
+
+void ComposingConfiguration::setAnnotateDriftAtBoundaries(bool value)
+{
+    settings()->setSharedValue(ANNOTATE_DRIFT_AT_BOUNDARIES, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::annotateDriftAtBoundariesChanged() const
+{
+    return m_annotateDriftAtBoundariesChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

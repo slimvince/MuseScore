@@ -36,13 +36,14 @@ class Fraction;
 namespace mu::notation {
 
 /// Returns true if @p note has an Expression annotation whose trimmed,
-/// case-insensitive text equals kTuningAnchorKeyword ("anchor-pitch").
+/// case-insensitive text matches any entry in kTuningAnchorKeywords
+/// (e.g. "alt. rif.", "altezza di riferimento").
 /// The Expression must be attached to the same segment as the note.
 bool hasTuningAnchorExpression(const mu::engraving::Note* note);
 
 /// Compute the RetuningSusceptibility for a note.
 ///
-/// AbsolutelyProtected: note carries a kTuningAnchorKeyword Expression.
+/// AbsolutelyProtected: note carries a kTuningAnchorKeywords Expression.
 /// Free:                all other notes (duration-based classification is a
 ///                      future addition — see backlog).
 mu::composing::intonation::RetuningSusceptibility computeSusceptibility(

@@ -54,11 +54,17 @@ void ComposingPreferencesModel::setupConnections()
     analysisConfig()->tonicAnchoredTuningChanged().onNotify(this, [this]() {
         emit tonicAnchoredTuningChanged();
     });
+    analysisConfig()->tuningModeChanged().onNotify(this, [this]() {
+        emit tuningModeChanged();
+    });
     analysisConfig()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
         emit minimizeTuningDeviationChanged();
     });
     analysisConfig()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
         emit annotateTuningOffsetsChanged();
+    });
+    analysisConfig()->annotateDriftAtBoundariesChanged().onNotify(this, [this]() {
+        emit annotateDriftAtBoundariesChanged();
     });
     chordStaffConfig()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
         emit chordStaffWriteChordSymbolsChanged();
@@ -151,6 +157,11 @@ bool ComposingPreferencesModel::tonicAnchoredTuning() const
     return analysisConfig()->tonicAnchoredTuning();
 }
 
+int ComposingPreferencesModel::tuningMode() const
+{
+    return static_cast<int>(analysisConfig()->tuningMode());
+}
+
 bool ComposingPreferencesModel::minimizeTuningDeviation() const
 {
     return analysisConfig()->minimizeTuningDeviation();
@@ -159,6 +170,11 @@ bool ComposingPreferencesModel::minimizeTuningDeviation() const
 bool ComposingPreferencesModel::annotateTuningOffsets() const
 {
     return analysisConfig()->annotateTuningOffsets();
+}
+
+bool ComposingPreferencesModel::annotateDriftAtBoundaries() const
+{
+    return analysisConfig()->annotateDriftAtBoundaries();
 }
 
 // ── Mode prior getters ────────────────────────────────────────────────────────
@@ -302,6 +318,16 @@ void ComposingPreferencesModel::setTonicAnchoredTuning(bool value)
     emit tonicAnchoredTuningChanged();
 }
 
+void ComposingPreferencesModel::setTuningMode(int mode)
+{
+    const auto typedMode = static_cast<mu::composing::intonation::TuningMode>(mode);
+    if (analysisConfig()->tuningMode() == typedMode) {
+        return;
+    }
+    analysisConfig()->setTuningMode(typedMode);
+    emit tuningModeChanged();
+}
+
 void ComposingPreferencesModel::setMinimizeTuningDeviation(bool value)
 {
     if (minimizeTuningDeviation() == value) {
@@ -318,6 +344,15 @@ void ComposingPreferencesModel::setAnnotateTuningOffsets(bool value)
     }
     analysisConfig()->setAnnotateTuningOffsets(value);
     emit annotateTuningOffsetsChanged();
+}
+
+void ComposingPreferencesModel::setAnnotateDriftAtBoundaries(bool value)
+{
+    if (annotateDriftAtBoundaries() == value) {
+        return;
+    }
+    analysisConfig()->setAnnotateDriftAtBoundaries(value);
+    emit annotateDriftAtBoundariesChanged();
 }
 
 // ── Mode prior setters ────────────────────────────────────────────────────────

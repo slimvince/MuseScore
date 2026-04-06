@@ -35,8 +35,10 @@ BaseSection {
     property int  analysisAlternatives
     property string tuningSystemKey
     property bool tonicAnchoredTuning
+    property int  tuningMode          ///< 0 = TonicAnchored, 1 = FreeDrift
     property bool minimizeTuningDeviation
     property bool annotateTuningOffsets
+    property bool annotateDriftAtBoundaries
     // Mode priors — diatonic
     property real modePriorIonian
     property real modePriorDorian
@@ -69,8 +71,10 @@ BaseSection {
     signal analysisAlternativesChangeRequested(int count)
     signal tuningSystemKeyChangeRequested(string key)
     signal tonicAnchoredTuningChangeRequested(bool value)
+    signal tuningModeChangeRequested(int mode)
     signal minimizeTuningDeviationChangeRequested(bool value)
     signal annotateTuningOffsetsChangeRequested(bool value)
+    signal annotateDriftAtBoundariesChangeRequested(bool value)
     signal modePriorIonianChangeRequested(real value)
     signal modePriorDorianChangeRequested(real value)
     signal modePriorPhrygianChangeRequested(real value)
@@ -242,6 +246,35 @@ BaseSection {
                 root.tonicAnchoredTuningChangeRequested(!checked)
             }
         }
+        Row {
+            spacing: 12
+            enabled: root.analyzeForChordFunction
+
+            StyledTextLabel {
+                anchors.verticalCenter: parent.verticalCenter
+                text: qsTrc("preferences", "Drift mode")
+                horizontalAlignment: Text.AlignLeft
+            }
+
+            Row {
+                spacing: 4
+
+                FlatButton {
+                    text: qsTrc("preferences", "Tonic-anchored")
+                    accentButton: root.tuningMode === 0
+                    navigation.name: "TuningModeTonicAnchoredButton"
+                    navigation.panel: root.navigation
+                    onClicked: root.tuningModeChangeRequested(0)
+                }
+                FlatButton {
+                    text: qsTrc("preferences", "Free drift")
+                    accentButton: root.tuningMode === 1
+                    navigation.name: "TuningModeFreeDriftButton"
+                    navigation.panel: root.navigation
+                    onClicked: root.tuningModeChangeRequested(1)
+                }
+            }
+        }
         CheckBox {
             id: minimizeRetuneCheckBox
             width: root.columnWidth
@@ -264,6 +297,18 @@ BaseSection {
             navigation.panel: root.navigation
             onClicked: {
                 root.annotateTuningOffsetsChangeRequested(!checked)
+            }
+        }
+        CheckBox {
+            id: annotateDriftBoundariesCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Annotate pitch drift at region boundaries (Free drift only)")
+            checked: root.annotateDriftAtBoundaries
+            enabled: root.analyzeForChordFunction && root.tuningMode === 1
+            navigation.name: "AnnotateDriftAtBoundariesCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.annotateDriftAtBoundariesChangeRequested(!checked)
             }
         }
 

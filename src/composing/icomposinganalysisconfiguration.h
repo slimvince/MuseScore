@@ -25,6 +25,7 @@
 #include <vector>
 #include "modularity/imoduleinterface.h"
 #include "async/notification.h"
+#include "composing/intonation/tuning_system.h"  // TuningMode
 
 namespace mu::composing {
 
@@ -106,6 +107,12 @@ public:
     virtual void setTonicAnchoredTuning(bool value) = 0;
     virtual muse::async::Notification tonicAnchoredTuningChanged() const = 0;
 
+    /// High-level tuning behavior mode (TonicAnchored or FreeDrift).
+    /// Default: TonicAnchored (preserves pre-2.7 behavior).
+    virtual mu::composing::intonation::TuningMode tuningMode() const = 0;
+    virtual void setTuningMode(mu::composing::intonation::TuningMode mode) = 0;
+    virtual muse::async::Notification tuningModeChanged() const = 0;
+
     virtual bool minimizeTuningDeviation() const = 0;
     virtual void setMinimizeTuningDeviation(bool value) = 0;
     virtual muse::async::Notification minimizeTuningDeviationChanged() const = 0;
@@ -113,6 +120,13 @@ public:
     virtual bool annotateTuningOffsets() const = 0;
     virtual void setAnnotateTuningOffsets(bool value) = 0;
     virtual muse::async::Notification annotateTuningOffsetsChanged() const = 0;
+
+    /// When true and tuningMode is FreeDrift, insert a StaffText at each
+    /// harmonic region boundary showing the accumulated pitch drift in cents
+    /// (e.g. "d=+3").  Independent of annotateTuningOffsets.
+    virtual bool annotateDriftAtBoundaries() const = 0;
+    virtual void setAnnotateDriftAtBoundaries(bool value) = 0;
+    virtual muse::async::Notification annotateDriftAtBoundariesChanged() const = 0;
 
     // ── Status-bar display ───────────────────────────────────────────────────
 

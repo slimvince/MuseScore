@@ -50,8 +50,10 @@ PreferencesPage {
             analysisAlternatives:    preferencesModel.analysisAlternatives
             tuningSystemKey:         preferencesModel.tuningSystemKey
             tonicAnchoredTuning:     preferencesModel.tonicAnchoredTuning
+            tuningMode:              preferencesModel.tuningMode
             minimizeTuningDeviation: preferencesModel.minimizeTuningDeviation
-            annotateTuningOffsets:   preferencesModel.annotateTuningOffsets
+            annotateTuningOffsets:        preferencesModel.annotateTuningOffsets
+            annotateDriftAtBoundaries:    preferencesModel.annotateDriftAtBoundaries
             // Mode priors — diatonic
             modePriorIonian:     preferencesModel.modePriorIonian
             modePriorDorian:     preferencesModel.modePriorDorian
@@ -87,8 +89,10 @@ PreferencesPage {
             onAnalysisAlternativesChangeRequested:    function(count) { preferencesModel.analysisAlternatives    = count }
             onTuningSystemKeyChangeRequested:         function(key)   { preferencesModel.tuningSystemKey         = key   }
             onTonicAnchoredTuningChangeRequested:     function(value) { preferencesModel.tonicAnchoredTuning     = value }
+            onTuningModeChangeRequested:              function(mode)  { preferencesModel.tuningMode              = mode  }
             onMinimizeTuningDeviationChangeRequested: function(value) { preferencesModel.minimizeTuningDeviation = value }
-            onAnnotateTuningOffsetsChangeRequested:   function(value) { preferencesModel.annotateTuningOffsets   = value }
+            onAnnotateTuningOffsetsChangeRequested:        function(value) { preferencesModel.annotateTuningOffsets        = value }
+            onAnnotateDriftAtBoundariesChangeRequested:    function(value) { preferencesModel.annotateDriftAtBoundaries    = value }
             onModePriorIonianChangeRequested:         function(v) { preferencesModel.modePriorIonian     = v }
             onModePriorDorianChangeRequested:         function(v) { preferencesModel.modePriorDorian     = v }
             onModePriorPhrygianChangeRequested:       function(v) { preferencesModel.modePriorPhrygian   = v }

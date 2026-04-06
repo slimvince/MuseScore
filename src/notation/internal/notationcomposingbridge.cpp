@@ -211,8 +211,16 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
     resolveKeyAndMode(sc, tick, refStaff, excludeStaves,
                       outKeyFifths, outKeyMode, unusedConfidence);
 
+    // Derive current bass pc from the lowest sounding pitch (same logic as buildTones).
+    int currentBassPc = -1;
+    {
+        int lo = std::numeric_limits<int>::max();
+        for (const SoundingNote& sn : sounding) { lo = std::min(lo, sn.ppitch); }
+        if (lo != std::numeric_limits<int>::max()) { currentBassPc = lo % 12; }
+    }
+
     ChordTemporalContext temporalCtx
-        = findTemporalContext(sc, seg, excludeStaves, outKeyFifths, outKeyMode);
+        = findTemporalContext(sc, seg, excludeStaves, outKeyFifths, outKeyMode, currentBassPc);
 
     const auto analysisTones = buildTones(sounding);
     return ChordAnalyzerFactory::create()->analyzeChord(analysisTones, outKeyFifths, outKeyMode,

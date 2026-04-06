@@ -54,6 +54,10 @@ public:
     void setTonicAnchoredTuning(bool value) override;
     muse::async::Notification tonicAnchoredTuningChanged() const override;
 
+    mu::composing::intonation::TuningMode tuningMode() const override;
+    void setTuningMode(mu::composing::intonation::TuningMode mode) override;
+    muse::async::Notification tuningModeChanged() const override;
+
     bool minimizeTuningDeviation() const override;
     void setMinimizeTuningDeviation(bool value) override;
     muse::async::Notification minimizeTuningDeviationChanged() const override;
@@ -61,6 +65,10 @@ public:
     bool annotateTuningOffsets() const override;
     void setAnnotateTuningOffsets(bool value) override;
     muse::async::Notification annotateTuningOffsetsChanged() const override;
+
+    bool annotateDriftAtBoundaries() const override;
+    void setAnnotateDriftAtBoundaries(bool value) override;
+    muse::async::Notification annotateDriftAtBoundariesChanged() const override;
 
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
@@ -196,8 +204,10 @@ private:
     muse::async::Notification m_analysisAlternativesChanged;
     muse::async::Notification m_tuningSystemKeyChanged;
     muse::async::Notification m_tonicAnchoredTuningChanged;
+    muse::async::Notification m_tuningModeChanged;
     muse::async::Notification m_minimizeTuningDeviationChanged;
     muse::async::Notification m_annotateTuningOffsetsChanged;
+    muse::async::Notification m_annotateDriftAtBoundariesChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_showChordSymbolsInStatusBarChanged;
     muse::async::Notification m_showRomanNumeralsInStatusBarChanged;

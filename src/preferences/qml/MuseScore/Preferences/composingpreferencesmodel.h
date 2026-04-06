@@ -43,8 +43,10 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
     Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
     Q_PROPERTY(bool tonicAnchoredTuning      READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
+    Q_PROPERTY(int  tuningMode               READ tuningMode               WRITE setTuningMode               NOTIFY tuningModeChanged)
     Q_PROPERTY(bool minimizeTuningDeviation  READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
-    Q_PROPERTY(bool annotateTuningOffsets    READ annotateTuningOffsets    WRITE setAnnotateTuningOffsets    NOTIFY annotateTuningOffsetsChanged)
+    Q_PROPERTY(bool annotateTuningOffsets      READ annotateTuningOffsets      WRITE setAnnotateTuningOffsets      NOTIFY annotateTuningOffsetsChanged)
+    Q_PROPERTY(bool annotateDriftAtBoundaries  READ annotateDriftAtBoundaries  WRITE setAnnotateDriftAtBoundaries  NOTIFY annotateDriftAtBoundariesChanged)
 
     // Chord staff output
     Q_PROPERTY(bool    chordStaffWriteChordSymbols   READ chordStaffWriteChordSymbols   WRITE setChordStaffWriteChordSymbols   NOTIFY chordStaffWriteChordSymbolsChanged)
@@ -100,8 +102,10 @@ public:
     int  analysisAlternatives() const;
     QString tuningSystemKey() const;
     bool tonicAnchoredTuning() const;
+    int  tuningMode() const;
     bool minimizeTuningDeviation() const;
     bool annotateTuningOffsets() const;
+    bool annotateDriftAtBoundaries() const;
 
     // Mode priors — diatonic
     double modePriorIonian() const;
@@ -147,8 +151,10 @@ public slots:
     void setAnalysisAlternatives(int count);
     void setTuningSystemKey(const QString& key);
     void setTonicAnchoredTuning(bool value);
+    void setTuningMode(int mode);
     void setMinimizeTuningDeviation(bool value);
     void setAnnotateTuningOffsets(bool value);
+    void setAnnotateDriftAtBoundaries(bool value);
 
     // Mode priors — diatonic
     void setModePriorIonian(double value);
@@ -194,8 +200,10 @@ signals:
     void analysisAlternativesChanged();
     void tuningSystemKeyChanged();
     void tonicAnchoredTuningChanged();
+    void tuningModeChanged();
     void minimizeTuningDeviationChanged();
     void annotateTuningOffsetsChanged();
+    void annotateDriftAtBoundariesChanged();
 
     // Mode priors — diatonic
     void modePriorIonianChanged();

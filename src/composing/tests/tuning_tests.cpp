@@ -368,29 +368,65 @@ TEST(Tuning_CrossSystem, WellTemperamentsIgnoreQuality)
 
 // ── Tuning anchor keyword matching ───────────────────────────────────────────
 
-TEST(Tuning_Anchor, ExactMatch)
+TEST(Tuning_Anchor, FullItalianForm_ExactMatch)
 {
-    EXPECT_TRUE(isTuningAnchorText("anchor-pitch"));
+    EXPECT_TRUE(isTuningAnchorText("altezza di riferimento"));
 }
 
-TEST(Tuning_Anchor, CaseInsensitive_AllCaps)
+TEST(Tuning_Anchor, FullItalianForm_CaseInsensitive)
 {
-    EXPECT_TRUE(isTuningAnchorText("ANCHOR-PITCH"));
+    EXPECT_TRUE(isTuningAnchorText("ALTEZZA DI RIFERIMENTO"));
+    EXPECT_TRUE(isTuningAnchorText("Altezza di Riferimento"));
 }
 
-TEST(Tuning_Anchor, CaseInsensitive_MixedCase)
+TEST(Tuning_Anchor, FullItalianForm_Whitespace)
 {
-    EXPECT_TRUE(isTuningAnchorText("Anchor-Pitch"));
+    EXPECT_TRUE(isTuningAnchorText("  altezza di riferimento  "));
+    EXPECT_TRUE(isTuningAnchorText("\t altezza di riferimento\n"));
 }
 
-TEST(Tuning_Anchor, LeadingTrailingWhitespace)
+TEST(Tuning_Anchor, AbbreviatedForm_AltRifDot_ExactMatch)
 {
-    EXPECT_TRUE(isTuningAnchorText("  anchor-pitch  "));
+    EXPECT_TRUE(isTuningAnchorText("alt. rif."));
 }
 
-TEST(Tuning_Anchor, TabsAndNewlines)
+TEST(Tuning_Anchor, AbbreviatedForm_AltRifDot_CaseInsensitive)
 {
-    EXPECT_TRUE(isTuningAnchorText("\t anchor-pitch\n"));
+    EXPECT_TRUE(isTuningAnchorText("ALT. RIF."));
+    EXPECT_TRUE(isTuningAnchorText("Alt. Rif."));
+}
+
+TEST(Tuning_Anchor, AbbreviatedForm_AltRifDot_Whitespace)
+{
+    EXPECT_TRUE(isTuningAnchorText("  alt. rif.  "));
+}
+
+TEST(Tuning_Anchor, AbbreviatedForm_AltRifNospace_ExactMatch)
+{
+    EXPECT_TRUE(isTuningAnchorText("alt.rif."));
+}
+
+TEST(Tuning_Anchor, AbbreviatedForm_AltRifNospace_CaseInsensitive)
+{
+    EXPECT_TRUE(isTuningAnchorText("ALT.RIF."));
+}
+
+TEST(Tuning_Anchor, SemiAbbreviatedForm_ExactMatch)
+{
+    EXPECT_TRUE(isTuningAnchorText("altezza rif."));
+}
+
+TEST(Tuning_Anchor, SemiAbbreviatedForm_CaseInsensitive)
+{
+    EXPECT_TRUE(isTuningAnchorText("ALTEZZA RIF."));
+    EXPECT_TRUE(isTuningAnchorText("Altezza Rif."));
+}
+
+TEST(Tuning_Anchor, OldKeyword_NoLongerMatches)
+{
+    EXPECT_FALSE(isTuningAnchorText("anchor-pitch"));
+    EXPECT_FALSE(isTuningAnchorText("ANCHOR-PITCH"));
+    EXPECT_FALSE(isTuningAnchorText("Anchor-Pitch"));
 }
 
 TEST(Tuning_Anchor, EmptyString_ReturnsFalse)
@@ -403,12 +439,49 @@ TEST(Tuning_Anchor, WhitespaceOnly_ReturnsFalse)
     EXPECT_FALSE(isTuningAnchorText("   "));
 }
 
-TEST(Tuning_Anchor, WrongKeyword_ReturnsFalse)
+TEST(Tuning_Anchor, UnrelatedText_ReturnsFalse)
 {
-    EXPECT_FALSE(isTuningAnchorText("anchor"));
-    EXPECT_FALSE(isTuningAnchorText("anchor pitch"));
-    EXPECT_FALSE(isTuningAnchorText("anchor-pitchX"));
-    EXPECT_FALSE(isTuningAnchorText("Xanchor-pitch"));
+    EXPECT_FALSE(isTuningAnchorText("altezza"));
+    EXPECT_FALSE(isTuningAnchorText("riferimento"));
+    EXPECT_FALSE(isTuningAnchorText("alt."));
+    EXPECT_FALSE(isTuningAnchorText("rif."));
+    EXPECT_FALSE(isTuningAnchorText("altezza di riferimentoX"));
+    EXPECT_FALSE(isTuningAnchorText("Xaltezza di riferimento"));
+}
+
+// ── Anchor protection boundary tests (regression for applyRegionTuning 8.2) ──
+//
+// applyRegionTuning() Phase 2 and Phase 3 call hasTuningAnchorExpression()
+// which delegates to isTuningAnchorText().  These tests document the exact-match
+// contract: only the four accepted forms protect a note; prefixed/suffixed text
+// and "alt. rif." with missing internal space do NOT match, preventing
+// accidental over-protection of non-anchor notes.
+
+TEST(Tuning_AnchorProtection, ExactMatchRequired_NoTrailingText)
+{
+    // Anchor forms with appended text must NOT be treated as anchors.
+    EXPECT_FALSE(isTuningAnchorText("alt. rif. (see note)"));
+    EXPECT_FALSE(isTuningAnchorText("altezza di riferimento — bar 12"));
+    EXPECT_FALSE(isTuningAnchorText("altezza rif. extra"));
+}
+
+TEST(Tuning_AnchorProtection, ExactMatchRequired_NoLeadingText)
+{
+    // Anchor forms with prepended text must NOT be treated as anchors.
+    EXPECT_FALSE(isTuningAnchorText("see alt. rif."));
+    EXPECT_FALSE(isTuningAnchorText("NB altezza di riferimento"));
+    EXPECT_FALSE(isTuningAnchorText("(alt. rif.)"));
+}
+
+TEST(Tuning_AnchorProtection, SpacingInsideAbbreviationMatters)
+{
+    // "alt. rif." requires the space after the first dot.
+    // "alt.rif." (without that space) is a separate accepted form.
+    // Neither "altrif." nor "alt rif" are accepted.
+    EXPECT_TRUE(isTuningAnchorText("alt. rif."));   // space variant — accepted
+    EXPECT_TRUE(isTuningAnchorText("alt.rif."));    // no-space variant — accepted
+    EXPECT_FALSE(isTuningAnchorText("alt rif."));   // missing dot after "alt" — not accepted
+    EXPECT_FALSE(isTuningAnchorText("altrif."));    // missing both dots — not accepted
 }
 
 TEST(Tuning_Anchor, RetuningSusceptibility_AnchorIsAbsolutelyProtected)

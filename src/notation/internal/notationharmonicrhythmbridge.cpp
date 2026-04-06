@@ -52,6 +52,7 @@ using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
+using mu::notation::internal::isDiatonicStep;
 using mu::notation::internal::distinctPitchClasses;
 
 namespace mu::notation {
@@ -116,8 +117,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     };
 
     uint16_t prevBits = 0;
+    // currentBassPc for the very first chord is unknown at this point (sounding
+    // not yet collected); pass -1 so bassIsStepwiseFromPrevious stays false.
     ChordTemporalContext temporalCtx
-        = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode);
+        = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
 
     std::optional<KeyModeAnalysisResult> prevKeyResult;
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
@@ -140,6 +143,15 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         }
         prevBits = bits;
 
+        // Derive current bass pc from the lowest tone (§4.1b stepwise detection).
+        int currentBassPc = -1;
+        for (const auto& t : tones) {
+            if (t.isBass) { currentBassPc = t.pitch % 12; break; }
+        }
+        temporalCtx.bassIsStepwiseFromPrevious =
+            (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
+            && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
+
         int localKeyFifths = keyFifths;
         KeySigMode localKeyMode = keyMode;
         double localKeyConfidence = 0.0;
@@ -158,6 +170,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
         temporalCtx.previousRootPc  = results.front().identity.rootPc;
         temporalCtx.previousQuality = results.front().identity.quality;
+        temporalCtx.previousBassPc  = results.front().identity.bassPc;
+        // nextRootPc, nextBassPc, bassIsStepwiseToNext: populated in
+        // two-pass chord staff analysis only. Deferred — see §4.1b.
 
         KeyModeAnalysisResult kmResult;
         kmResult.keySignatureFifths   = localKeyFifths;

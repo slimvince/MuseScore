@@ -1125,6 +1125,26 @@ double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
             score += prefs.rootContinuityBonus;
         }
 
+        // Contextual inversion bonuses — §4.1b
+        // Only for inverted Major/Minor candidates (lesson from three-attempt
+        // inversion fix history: never apply to Diminished/HalfDiminished/Augmented).
+        const bool isInvertedMajMin =
+            (rootPc != bassPc)
+            && (quality == ChordQuality::Major || quality == ChordQuality::Minor);
+
+        if (isInvertedMajMin) {
+            if (context->bassIsStepwiseFromPrevious) {
+                score += prefs.stepwiseBassInversionBonus;
+            }
+            if (context->bassIsStepwiseToNext) {
+                score += prefs.stepwiseBassLookaheadBonus;
+            }
+            if (context->previousRootPc != -1
+                    && context->previousRootPc == rootPc) {
+                score += prefs.sameRootInversionBonus;
+            }
+        }
+
         // Quality-guided resolution bias: reward candidates at the typical
         // resolution target of the previous chord's quality.
         if (context->previousQuality != ChordQuality::Unknown

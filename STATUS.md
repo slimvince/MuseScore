@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — Inversion investigation complete. Six fix attempts across four corpora proved that 83–84% is the accuracy ceiling for vertical sonority analysis alone. Baseline is correct production baseline. Proceeding to Section 8 (tuning anchor).*
+*Last updated: April 2026 — §4.1b Contextual Inversion Resolution implemented. ChordTemporalContext extended with bass-note and stepwise-motion fields; three contextual inversion bonuses added to contextualBonuses(); chord identity 83.4% → 83.7%; chord_disagree 673 → 661; 280 tests passing.*
 
 ---
 
@@ -25,10 +25,27 @@ independent parameters replacing the former 4-tier grouping. The regression cata
 P4b added `ChordAnalyzerFactory` and documented `ChordTemporalContext` vs future `TemporalContext`.
 P4e reorganized `src/composing/analysis/` into subdirectories: `chord/`, `key/`, `region/`.
 
-**P7 (tuning anchor) is complete.** `kTuningAnchorKeyword = "anchor-pitch"` constant and
-`isTuningAnchorText()` pure function in `tuning_system.h`; `hasTuningAnchorExpression()` and
-`computeSusceptibility()` bridge functions in `notationtuningbridge.cpp`; `RetuningSusceptibility`
-enum (AbsolutelyProtected / Adjustable / Free); 10 unit tests all passing.
+**P7 (tuning anchor) is complete.** Italian keyword array `kTuningAnchorKeywords` (4 forms:
+"altezza di riferimento", "alt. rif.", "alt.rif.", "altezza rif.") replacing the old
+`"anchor-pitch"` placeholder. `trimAndLowercase()` / `isTuningAnchorText()` / `hasTuningAnchorExpression()`
+/ `computeSusceptibility()` / `RetuningSusceptibility` all wired; 16 anchor unit tests passing.
+
+**Section 8 (tuning anchor rename + drift modes) is complete.** (1) Italian keyword array
+replacing `"anchor-pitch"` with 16 unit tests (8.1). (2) Anchor protection wired into
+`applyRegionTuning()` Phase 2 and Phase 3 — anchor notes receive 0 ¢, are never split, and
+are excluded from the FreeDrift reference hierarchy (8.2). (3) `TuningMode` enum
+(TonicAnchored=0, FreeDrift=1) added to `tuning_system.h`, wired through
+`IComposingAnalysisConfiguration` → `ComposingConfiguration` → `composingpreferencesmodel` (8.3).
+(4) FreeDrift reference hierarchy implemented in `applyRegionTuning()`: P1=held notes,
+P2/P3=zero drift; Phase 3 (split-and-slur) skipped in FreeDrift mode (8.4). (5) QML tuning
+mode selector (two FlatButton widgets: "Tonic-anchored" / "Free drift") added to
+`ComposingAnalysisSection.qml` and wired in `ComposingPreferencesPage.qml` (8.5).
+(6) Drift boundary annotation: `annotateDriftAtBoundaries` preference (separate toggle
+from `annotateTuningOffsets`) wired through interface → config → QML; in FreeDrift mode
+inserts a StaffText "d=+N" at each region boundary when |drift| ≥ 0.5 ¢.
+FreeDrift anchor semantics clarified: anchor notes are pitched at the current drift
+level (not reset to 0 ¢) and annotated with `*` suffix.
+280/280 tests passing.
 
 **P8a (ChordAnalysisResult refactor) is complete.** `ChordAnalysisResult` now contains two
 nested sub-structs: `ChordIdentity` (pitch-content: score, rootPc, bassPc, bassTpc, quality,
@@ -66,7 +83,7 @@ format validation. Total test count: **271 tests, 0 failures**.
 
 ## Tuning Algorithm Status
 
-Relevant spec: §11.3a–11.3e in ARCHITECTURE.md.
+Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 
 ### What is implemented in `applyRegionTuning()` and `applyTuningAtNote()`
 
@@ -75,22 +92,24 @@ Relevant spec: §11.3a–11.3e in ARCHITECTURE.md.
 | JI offsets from tuning system lookup table | **Done** — `tuningSystem.tuningOffset()` |
 | Tonic-anchored root offset | **Done** — `tuningSystem.rootOffset()` added when `tonicAnchoredTuning` pref is on |
 | Basic (unweighted) zero-sum centering | **Done** — `minimizeTuningDeviation` pref; subtracts arithmetic mean of all note offsets (§11.3a basic form) |
-| Split-and-slur for sustained notes | **Done** — Phase 3 in both `applyTuningAtNote` and `applyRegionTuning` |
-| Tuning anchor expression (`anchor-pitch`) | **Done** — `hasTuningAnchorExpression()` / `computeSusceptibility()` wired in `applyTuningAtNote()`; **not wired in `applyRegionTuning()`** |
+| Split-and-slur for sustained notes (TonicAnchored) | **Done** — Phase 3 in both `applyTuningAtNote` and `applyRegionTuning`; skipped in FreeDrift mode |
+| Tuning anchor expression (Italian forms) | **Done** — `kTuningAnchorKeywords` array; `hasTuningAnchorExpression()` / `computeSusceptibility()` wired in `applyTuningAtNote()` and `applyRegionTuning()` (Phases 2+3) |
+| FreeDrift mode | **Done** — `TuningMode` enum; drift reference hierarchy P1→P2/P3; Phase 3 skipped |
+| Tuning mode selector (QML) | **Done** — two FlatButton widgets in ComposingAnalysisSection |
 | Cent annotation on score | **Done** — `annotateTuningOffsets` pref adds StaffText labels |
 
-### What is documented in §11.3a–11.3e but not yet implemented
+### What is documented in §11.3a–11.3f but not yet implemented
 
 | Feature | Spec section | Gap |
 |---------|--------------|-----|
 | Voice-role-weighted centering | §11.3b | `minimizeTuningDeviation` uses equal arithmetic mean; voice roles (melody/inner/bass) not tracked |
 | Duration-based susceptibility budget | §11.3c | `computeSusceptibility()` returns `Free` for all non-anchor notes; duration, register, instrument sensitivity not used |
-| Tuning anchor protection in region tuning | §11.3c | `applyRegionTuning()` does not call `computeSusceptibility()` or `hasTuningAnchorExpression()` — anchor notes in a region are retuned like any other note |
 | Sustained fifth/octave protection | §11.3e step 2 | Not implemented; sustained perfect fifths/octaves are retuned freely |
 | Susceptibility clamping | §11.3e step 5 | No per-note offset clamping to a budget |
 | Tuning session state / drift tracking | §11.3d | `TuningSessionState` struct is specified but not implemented; no drift accumulation |
+| FreeDrift reset marker | §11.3f / backlog | No mechanism yet to deliberately reset drift at structural boundaries; see `backlog_drift_reset.md` |
 
-The §11.3e "complete algorithm" (classify → identify anchors → compute JI offsets → weighted centering → clamp) describes the intended future design. The current implementation is approximately §11.3e steps 3–4 with unweighted centering and no clamping.
+The §11.3e "complete algorithm" (classify → identify anchors → compute JI offsets → weighted centering → clamp) describes the intended future design. The current implementation covers §11.3e steps 3–4 with unweighted centering and no clamping, plus §11.3f FreeDrift.
 
 ---
 
@@ -115,7 +134,8 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | `ChordAnalyzerFactory` | Done | `ChordAnalyzerFactory::create(ChordAnalyzerType::RuleBased)` |
 | Scoring parameter bounds | Done | `ChordAnalyzerPreferences::bounds()` + `KeyModeAnalyzerPreferences::bounds()` → `ParameterBoundsMap` |
 | `KeyModeAnalyzer` | Done | **21 modes** (7 diatonic + 7 melodic minor + 7 harmonic minor); 16-beat window; duration + beat + bass + decay weighting; 21 independent mode priors |
-| Tuning anchor | Done | `kTuningAnchorKeyword` / `isTuningAnchorText()` / `hasTuningAnchorExpression()` / `computeSusceptibility()` / `RetuningSusceptibility` |
+| Tuning anchor (Italian forms) | Done | `kTuningAnchorKeywords` (4 Italian forms) / `isTuningAnchorText()` / `hasTuningAnchorExpression()` / `computeSusceptibility()` / `RetuningSusceptibility`; wired in both `applyTuningAtNote` and `applyRegionTuning` |
+| FreeDrift mode | Done | `TuningMode` enum; drift reference hierarchy; Phase 3 skip; QML selector |
 | `analysis/` subdirectory layout | Done | reorganized into `chord/`, `key/`, `region/` subdirectories |
 | `ChordSymbolFormatter` | Done | chord symbols, Roman numerals, Nashville numbers |
 | Status bar integration | Done | `[C maj] Cmaj7 (IM7)` format; all display toggles in preferences |
@@ -125,7 +145,8 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | User preferences | Done | `IComposingAnalysisConfiguration` + `IComposingChordStaffConfiguration`; preferences page |
 | Bridge architecture | Done | all bridge functions in `mu::notation`; split into single-note bridge + harmonic rhythm bridge + shared helpers; composing module has no engraving dependency |
 | Mode prior preset system | Done | `ModePriorPreset` struct + `modePriorPresets()` + 5 named presets + `applyModePriorPreset()` / `currentModePriorPreset()`; QML FlatButton row highlights active preset |
-| Regression tests | Done | **271 tests**, 0 abstract (root/quality) mismatches |
+| §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → 83.7%; `previousBassPc` and `bassIsStepwiseFromPrevious` populated; `nextRootPc/nextBassPc/bassIsStepwiseToNext` deferred (two-pass) |
+| Regression tests | Done | **280 tests**, 0 abstract (root/quality) mismatches |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
 | Dynamic lookahead | Done | expands window when confidence < 0.60; caps at 24 beats |
@@ -264,7 +285,32 @@ These are not errors in chord identification.
 the Roman numeral base degree also matched. Key context disagreement is the only
 source of Roman numeral variation in matching-chord cases.
 
-Top 10 chord\_disagree patterns (673 total):
+### §4.1b Validation Run (2026-04-06)
+
+Run: `validation_20260406_122004`, git `bcc0811f67`, binary: `ninja_build_rel/batch_analyze.exe`
+Corpus: same 352 chorales, `--skip-music21` (reused existing music21 output, re-ran C++ analysis).
+
+| Metric | Count | % of total | % of aligned |
+|--------|-------|------------|--------------|
+| Total regions | 6032 | — | — |
+| Aligned regions | 4058 | 67.3% | — |
+| chord\_disagree | 661 | 11.0% | 16.3% |
+| **Chord identity agreement** | **3397** | **56.3%** | **83.7%** |
+
+**vs. baseline:** chord_disagree 673 → **661** (−12, −1.8%); chord identity 83.4% → **83.7%** (+0.3 pp).
+
+bassIsRoot fraction in chord\_disagree: **~72.9%** (estimated via tick-aligned comparison;
+down from 74.3% baseline — consistent with stepwise-bass bonus redirecting some
+bass-as-root reads toward inverted readings).
+
+Populated `ChordTemporalContext` fields: `previousRootPc`, `previousQuality`,
+`previousBassPc`, `bassIsStepwiseFromPrevious`.
+Deferred fields (two-pass chord staff analysis only): `nextRootPc`, `nextBassPc`,
+`bassIsStepwiseToNext`, `previousChordAge`.
+
+---
+
+Top 10 chord\_disagree patterns (673 total, pre-§4.1b baseline):
 
 | Rank | Pattern (ours → music21) | Count |
 |------|--------------------------|-------|

@@ -416,7 +416,8 @@ findTemporalContext(const mu::engraving::Score* sc,
                     const mu::engraving::Segment* seg,
                     const std::set<size_t>& excludeStaves,
                     int keyFifths,
-                    mu::composing::analysis::KeySigMode keyMode)
+                    mu::composing::analysis::KeySigMode keyMode,
+                    int currentBassPc)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -454,10 +455,20 @@ findTemporalContext(const mu::engraving::Score* sc,
             if (!prevResults.empty()) {
                 temporalCtx.previousRootPc  = prevResults.front().identity.rootPc;
                 temporalCtx.previousQuality = prevResults.front().identity.quality;
+                temporalCtx.previousBassPc  = prevResults.front().identity.bassPc;
             }
         }
         break;
     }
+
+    // Stepwise bass motion detection (§4.1b).
+    if (currentBassPc != -1 && temporalCtx.previousBassPc != -1) {
+        temporalCtx.bassIsStepwiseFromPrevious =
+            isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
+    }
+
+    // nextRootPc, nextBassPc, bassIsStepwiseToNext: populated in
+    // two-pass chord staff analysis only. Deferred — see §4.1b.
 
     return temporalCtx;
 }

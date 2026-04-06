@@ -163,6 +163,36 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
+    // ── Contextual inversion bonuses (§4.1b) ───────────────────────────────
+
+    /// Bonus applied to a non-bass-root candidate when the current
+    /// bass note moves by diatonic step FROM the previous region's
+    /// bass note.  Stepwise bass motion strongly implies inversion —
+    /// root-position chords produce leaping bass lines while inverted
+    /// chords enable smooth stepwise bass.
+    /// Only fires when candidate.rootPc != bassPc (inverted reading).
+    /// Only fires for Major or Minor quality candidates.
+    /// Range: 0.0–2.0.  Default: 0.5.
+    double stepwiseBassInversionBonus = 0.5;
+
+    /// Bonus applied to a non-bass-root candidate when the current
+    /// bass note also moves by diatonic step TO the next region's
+    /// bass note.  Both-direction stepwise motion is the strongest
+    /// linear bass signal available without full sequence analysis.
+    /// Only fires when nextBassPc is known (chord staff analysis only).
+    /// Only fires for Major or Minor quality candidates.
+    /// Range: 0.0–2.0.  Default: 0.5.
+    double stepwiseBassLookaheadBonus = 0.5;
+
+    /// Bonus applied to a non-bass-root candidate when the candidate
+    /// root matches the previous region's root (same harmony, different
+    /// inversion).  Bass arpeggiation — I → I6 → I — is one of the
+    /// most common inversion usages in tonal music.
+    /// Only fires when candidate.rootPc != bassPc (inverted reading).
+    /// Only fires for Major or Minor quality candidates.
+    /// Range: 0.0–2.0.  Default: 0.4.
+    double sameRootInversionBonus = 0.4;
+
     // ── Inversion / bass-root bias correction ──────────────────────────────
     //
     // When the winning candidate beat the best non-bass alternative by less
@@ -228,10 +258,13 @@ struct ChordAnalyzerPreferences {
             { "bassNoteRootBonus",           { 0.0, 2.0 } },
             { "diatonicRootBonus",           { 0.0, 1.0 } },
             { "tpcConsistencyBonusPerTone",  { 0.0, 1.0 } },
-            { "rootContinuityBonus",         { 0.0, 1.5 } },
-            { "resolutionBonus",             { 0.0, 1.5 } },
-            { "inversionSuspicionMargin",    { 0.0, 2.0 } },
-            { "inversionBonusReduction",     { 0.0, 1.0 } },
+            { "rootContinuityBonus",           { 0.0, 1.5 } },
+            { "resolutionBonus",               { 0.0, 1.5 } },
+            { "stepwiseBassInversionBonus",    { 0.0, 2.0 } },
+            { "stepwiseBassLookaheadBonus",    { 0.0, 2.0 } },
+            { "sameRootInversionBonus",        { 0.0, 2.0 } },
+            { "inversionSuspicionMargin",      { 0.0, 2.0 } },
+            { "inversionBonusReduction",       { 0.0, 1.0 } },
         };
     }
 };
@@ -241,17 +274,59 @@ struct ChordAnalyzerPreferences {
 inline constexpr ChordAnalyzerPreferences kDefaultChordAnalyzerPreferences{};
 
 /// Optional temporal context passed between successive chord analyses.
-/// Enables root-continuity scoring and resolution biasing: when the preceding
-/// chord's root and quality are known, candidates are ranked accordingly.
+/// Enables root-continuity scoring, resolution biasing, and contextual
+/// inversion resolution (§4.1b).
 ///
-/// Naming note: ChordTemporalContext carries the previous root/quality for
-/// single-chord analysis.  A future TemporalContext struct (planned for
-/// analysis/temporal/) will accumulate full progression context (chord
-/// history, cadence state) for use by a ProgressionAnalyzer.  These are
-/// distinct structs with distinct roles.
+/// Fields marked "populated" are set by the bridge on every call.
+/// Fields marked "deferred" are always at their default values until
+/// two-pass chord-staff analysis is implemented (§4.1b).
+///
+/// Naming note: ChordTemporalContext carries single-step look-around
+/// data for vertical chord analysis.  A future TemporalContext struct
+/// (planned for analysis/temporal/) will accumulate full progression
+/// context (chord history, cadence state) for a ProgressionAnalyzer.
+/// These are distinct structs with distinct roles.
 struct ChordTemporalContext {
-    int previousRootPc = -1;                              ///< Root pitch class of the preceding chord (-1 = no context).
-    ChordQuality previousQuality = ChordQuality::Unknown; ///< Quality of the preceding chord (Unknown = no context).
+    // ── Already implemented ─────────────────────────────────────────────────
+
+    /// Root pitch class of the most recently identified chord (-1 = none).
+    int previousRootPc = -1;
+
+    /// Quality of the most recently identified chord.
+    ChordQuality previousQuality = ChordQuality::Unknown;
+
+    /// Elapsed quarter-note time since the previous chord attacked.
+    /// 0.0 when unknown.  (Not yet populated — reserved for beat-strength
+    /// weighting of root-continuity bonus.)
+    double previousChordAge = 0.0;
+
+    // ── New fields (§4.1b — Contextual Inversion Resolution) ────────────────
+
+    /// Bass pitch class of the most recently identified chord.
+    /// Used to detect stepwise bass motion indicating inversion.
+    /// -1 if unknown.
+    int previousBassPc = -1;
+
+    /// Root pitch class of the next identified chord.
+    /// Populated by chord staff two-pass analysis only.
+    /// -1 if unknown (status bar single-note analysis never has this).
+    int nextRootPc = -1;
+
+    /// Bass pitch class of the next identified chord.
+    /// -1 if unknown.
+    int nextBassPc = -1;
+
+    /// True if the current region's bass note is one diatonic step
+    /// above or below the previous region's bass note.
+    /// Stepwise bass motion is a strong signal that the current
+    /// chord is an inversion within a linear bass line.
+    /// Computed by the bridge before passing to the analyzer.
+    bool bassIsStepwiseFromPrevious = false;
+
+    /// True if the current region's bass note is one diatonic step
+    /// above or below the next region's bass note.
+    /// False if nextBassPc is -1.
+    bool bassIsStepwiseToNext = false;
 };
 
 /// Interface for chord analysis strategies.

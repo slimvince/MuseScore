@@ -21,6 +21,7 @@
  */
 #pragma once
 
+#include <array>
 #include <cctype>
 #include <memory>
 #include <string>
@@ -34,47 +35,82 @@ namespace mu::composing::intonation {
 
 // ── Tuning anchor ─────────────────────────────────────────────────────────────
 //
-// A note carrying a MuseScore Expression element with this text is treated as
-// absolutely protected: zero tuning offset, never split, excluded from
-// zero-sum centering.  Keyword matching is case-insensitive with leading/
-// trailing whitespace trimmed.
+// A note carrying a MuseScore Expression element with any of the accepted
+// anchor texts is treated as absolutely protected: zero tuning offset, never
+// split, excluded from zero-sum centering.  Keyword matching is
+// case-insensitive with leading/trailing whitespace trimmed.
 //
-// "anchor-pitch" is a placeholder — the final user-visible name is TBD.
-inline constexpr const char* kTuningAnchorKeyword = "anchor-pitch";
+// Italian: altezza = pitch, riferimento = reference.
 
-/// Returns true when @p text, after trimming leading/trailing whitespace and
-/// lower-casing, equals kTuningAnchorKeyword.
+/// Accepted text forms for the tuning anchor expression.
+/// Any of these written as a staff text or expression text on a note
+/// marks that note as a local pitch reference — other voices tune to
+/// it; it is never retuned or split.
+/// Matching is case-insensitive and whitespace-trimmed.
+/// Full form ("altezza di riferimento") for performance notes;
+/// abbreviated form ("alt. rif.") for score use.
+inline constexpr std::array<const char*, 4> kTuningAnchorKeywords = {{
+    "altezza di riferimento",   // full Italian — for performance notes
+    "alt. rif.",                // standard score abbreviation
+    "alt.rif.",                 // without space after dot
+    "altezza rif."              // semi-abbreviated
+}};
+
+/// Trim leading/trailing ASCII whitespace and convert to lowercase.
+/// Returns the result as a std::string.
+inline std::string trimAndLowercase(std::string_view text)
+{
+    const size_t start = text.find_first_not_of(" \t\r\n");
+    if (start == std::string_view::npos) { return {}; }
+    const size_t end = text.find_last_not_of(" \t\r\n");
+    std::string result(text.substr(start, end - start + 1));
+    for (char& c : result) {
+        c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+    }
+    return result;
+}
+
+/// Returns true if the given text matches any accepted tuning anchor
+/// expression. Matching is case-insensitive and whitespace-trimmed.
 ///
 /// Extracted as a pure function so it can be tested without MuseScore objects.
-/// hasTuningAnchorExpression() (notation bridge) calls this after lowering and
-/// trimming the Expression's plainText().
+/// hasTuningAnchorExpression() (notation bridge) calls this on the
+/// Expression's plainText().
 inline bool isTuningAnchorText(std::string_view text)
 {
-    // Trim leading whitespace.
-    size_t start = text.find_first_not_of(" \t\r\n");
-    if (start == std::string_view::npos) { return false; }
-    // Trim trailing whitespace.
-    size_t end = text.find_last_not_of(" \t\r\n");
-    text = text.substr(start, end - start + 1);
-
-    if (text.size() != std::string_view(kTuningAnchorKeyword).size()) { return false; }
-
-    // Case-insensitive comparison.
-    for (size_t i = 0; i < text.size(); ++i) {
-        if (std::tolower(static_cast<unsigned char>(text[i]))
-                != kTuningAnchorKeyword[i]) {
-            return false;
-        }
+    const std::string t = trimAndLowercase(text);
+    for (const char* kw : kTuningAnchorKeywords) {
+        if (t == kw) { return true; }
     }
-    return true;
+    return false;
 }
+
+// ── Tuning mode ───────────────────────────────────────────────────────────────
+
+/// High-level tuning behavior mode, selected per user preference.
+///
+/// TonicAnchored: All tuning offsets are computed relative to the inferred
+///   tonic.  Each harmonic region independently places its chord tones at
+///   just-intonation intervals above the tonic scale degree.  This is the
+///   default and the only mode available prior to version 2.7.
+///
+/// FreeDrift: Tuning offsets accumulate naturally across regions.
+///   Within each region the reference pitch is derived from a priority
+///   hierarchy (P0 alt.rif. anchor → P1 held notes → P2 bass note → P3
+///   analyzer root).  Notes at the boundary are NOT split; drift
+///   accumulates silently and must be periodically reset via a drift-reset
+///   marker (see backlog_drift_reset.md).
+enum class TuningMode {
+    TonicAnchored = 0,  ///< Default: chord tones tuned relative to mode tonic.
+    FreeDrift     = 1,  ///< Pitch drift accumulates naturally across regions.
+};
 
 /// How susceptible a note is to being retuned.
 /// Computed per note before applying a tuning offset.
 enum class RetuningSusceptibility {
     /// Zero tuning offset.  Never split.  Excluded from zero-sum centering.
     /// Highest priority: overrides all duration-based and context-based rules.
-    /// Triggered by a kTuningAnchorKeyword Expression attached to the note.
+    /// Triggered by a kTuningAnchorKeywords Expression attached to the note.
     AbsolutelyProtected,
 
     /// Note may be retuned but must not be split across harmonic boundaries.

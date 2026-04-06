@@ -91,12 +91,23 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
                        const mu::composing::analysis::KeyModeAnalysisResult* prevResult = nullptr,
                        double* outScore = nullptr);
 
+/// Returns true if the interval between two pitch classes (0-11) is a
+/// diatonic step (1 or 2 semitones) in either direction.
+inline bool isDiatonicStep(int pc1, int pc2) {
+    int interval = std::abs(pc1 - pc2);
+    interval = std::min(interval, 12 - interval);
+    return interval == 1 || interval == 2;
+}
+
 /// Find the previous chord's temporal context by walking backward from seg.
+/// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
+/// or -1 if not yet known.  Used to compute bassIsStepwiseFromPrevious.
 mu::composing::analysis::ChordTemporalContext
 findTemporalContext(const mu::engraving::Score* sc,
                     const mu::engraving::Segment* seg,
                     const std::set<size_t>& excludeStaves,
                     int keyFifths,
-                    mu::composing::analysis::KeySigMode keyMode);
+                    mu::composing::analysis::KeySigMode keyMode,
+                    int currentBassPc = -1);
 
 } // namespace mu::notation::internal

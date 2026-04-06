@@ -573,9 +573,62 @@ public:
 
 All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, `notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through the factory rather than hard-coded at each call site. Tests that need a direct instance may use `RuleBasedChordAnalyzer{}` on the stack.
 
+#### §4.1b — Contextual Inversion Resolution
+
+**Problem:** The `bassNoteRootBonus` (0.65) biases vertical analysis toward choosing the
+bass note as the chord root. For inverted chords (e.g. `Gm/Bb` with Bb in bass) this
+produces correct bass-root readings that disagree with music21's functional notation.
+74.3% of corpus disagreements have `bassIsRoot=true`. Local scoring fixes for 3-note
+inversions consistently regress (see three-attempt history in Section 6).
+
+**Solution:** Contextual bonuses applied only to non-bass-root Major/Minor candidates,
+using information from neighbouring chords. Three bonuses added to `contextualBonuses()`:
+
+| Bonus | Condition | Default |
+|-------|-----------|---------|
+| `stepwiseBassInversionBonus` | Bass moves by diatonic step FROM previous region | 0.5 |
+| `stepwiseBassLookaheadBonus` | Bass moves by diatonic step TO next region (deferred) | 0.5 |
+| `sameRootInversionBonus` | Candidate root matches previous chord's root | 0.4 |
+
+**Safety constraints (lesson from three-attempt history):** Bonuses never fire for
+Diminished, HalfDiminished, Augmented, or Suspended candidates — only Major and Minor.
+The existing `inversionSuspicionMargin` / `inversionBonusReduction` mechanism is left
+unchanged.
+
+**`ChordTemporalContext` fields (§4.1b additions):**
+
+| Field | Populated by | Status |
+|-------|-------------|--------|
+| `previousRootPc` | Both bridges | ✅ Active |
+| `previousQuality` | Both bridges | ✅ Active |
+| `previousChordAge` | — | Reserved (not yet populated) |
+| `previousBassPc` | Both bridges | ✅ Active |
+| `bassIsStepwiseFromPrevious` | Both bridges | ✅ Active |
+| `nextRootPc` | — | Deferred (two-pass only) |
+| `nextBassPc` | — | Deferred (two-pass only) |
+| `bassIsStepwiseToNext` | — | Deferred (two-pass only) |
+
+`isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline).
+Both bridges (`notationcomposingbridge.cpp` and `notationharmonicrhythmbridge.cpp`) populate
+`previousBassPc` and compute `bassIsStepwiseFromPrevious` before each analysis call.
+
+**Validation (20260406_122004, git `bcc0811f67`):**
+
+| Metric | Baseline | §4.1b |
+|--------|----------|-------|
+| Chord identity | 83.4% (3383/4058) | **83.7% (3397/4058)** |
+| chord_disagree | 673 | **661** (−12) |
+| bassIsRoot fraction (est.) | 74.3% | ~72.9% |
+| Catalog regressions | 0 | 0 |
+
 #### Temporal context — `ChordTemporalContext` vs future `TemporalContext` (P4b)
 
-`ChordTemporalContext` carries only the **immediately preceding chord's** root and quality — sufficient for root-continuity and resolution-bias scoring. It is **not** a full progression context. A future `TemporalContext` will carry the full recent progression (chord sequence, cadence history, secondary dominants) once secondary dominant analysis (§5.6) is implemented. Keep the names distinct.
+`ChordTemporalContext` carries the **immediately preceding chord's** root, quality, and
+bass, plus stepwise-motion flags — sufficient for root-continuity, resolution-bias, and
+contextual inversion scoring (§4.1b). It is **not** a full progression context. A future
+`TemporalContext` will carry the full recent progression (chord sequence, cadence history,
+secondary dominants) once secondary dominant analysis (§5.6) is implemented. Keep the
+names distinct.
 
 #### Design boundary — vertical sonority vs functional/contextual harmony
 
@@ -1026,10 +1079,16 @@ The preferences are organised into three sections: Analysis, Status bar, and Cho
 - `tuningSystemKey` (string, default "equal") — tuning system for "tune as" action
 - `tonicAnchoredTuning` (bool, default true) — anchor each chord root to its JI
   scale-degree position above the mode tonic (§11.2a)
+- `tuningMode` (int, default 0 = TonicAnchored) — high-level drift behavior:
+  0 = Tonic-anchored (current behavior), 1 = Free drift (see §11.3f)
 - `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
   chord so the chord hovers near 0¢ while preserving internal JI ratios
 - `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
   offset of each tuned note (e.g. "+15 −2 +3") below the chord in the score
+- `annotateDriftAtBoundaries` (bool, default false) — in Free drift mode, insert a
+  StaffText above the first eligible staff at each harmonic region boundary showing
+  the accumulated pitch drift, e.g. "d=+3" or "d=-2" (only emitted when
+  |driftAdjustment| ≥ 0.5 ¢; independent of `annotateTuningOffsets`)
 
 **Mode detection weights** (21 independent sliders, one per mode, range −5.0 to +5.0, step 0.5):
 
@@ -2196,27 +2255,41 @@ instruments tune to, and will never receive tuning offsets themselves.
 #### User-defined tuning anchors
 
 A user can mark any note as a **tuning anchor** by attaching a MuseScore
-Expression element with the text `anchor-pitch` (placeholder name — final
-user-visible name TBD).
+Expression element with any of the accepted Italian forms:
+
+| Form | Context |
+|------|---------|
+| `altezza di riferimento` | Full form — for performance notes and program text |
+| `alt. rif.` | Standard score abbreviation (space after first dot) |
+| `alt.rif.` | Compact abbreviation (no space after first dot) |
+| `altezza rif.` | Semi-abbreviated form |
+
+Italian: *altezza* = pitch, *riferimento* = reference.
 
 **Rules for anchor notes:**
 - **Zero tuning offset** — the note is left exactly at 12-TET.
 - **Never split** — anchor notes are not divided at harmonic boundaries.
+- **Not a FreeDrift reference** — in FreeDrift mode the anchor note is
+  excluded from the drift reference hierarchy (P1/P2/P3); it sits at 0 ¢
+  and other notes accumulate drift around it.
 - **Excluded from zero-sum centering** — other voices in the harmonic region
   absorb the full centering correction; the anchor contributes zero.
 - Applies to the specific note carrying the Expression only — subsequent notes
   on the same staff are not automatically anchored.
 
-**Priority:** Highest. Overrides all duration-based and context-based
-susceptibility rules.
+**Priority:** Highest. Overrides all duration-based, context-based, and
+FreeDrift reference hierarchy rules.
 
 **Keyword matching:** Case-insensitive, leading/trailing whitespace trimmed.
-`"ANCHOR-PITCH"`, `"Anchor-Pitch"`, `"  anchor-pitch  "` all match.
+Exact match only — prefix/suffix text does not count.
+`"ALT. RIF."`, `"Alt. Rif."`, `"  alt. rif.  "` all match `alt. rif.`.
 
 **Implementation:**
-- `kTuningAnchorKeyword` constant in `composing/intonation/tuning_system.h`
+- `kTuningAnchorKeywords` array (`std::array<const char*, 4>`) in
+  `composing/intonation/tuning_system.h`
+- `trimAndLowercase(std::string_view)` — inline helper for normalization
 - `isTuningAnchorText(std::string_view)` — pure function for testable keyword
-  matching
+  matching; iterates `kTuningAnchorKeywords`
 - `RetuningSusceptibility` enum in `tuning_system.h` with values
   `AbsolutelyProtected`, `Adjustable`, `Free`
 - `hasTuningAnchorExpression(const Note*)` — bridge function in
@@ -2301,6 +2374,56 @@ notes never split — their tuning is set at onset only. Apply the split-and-slu
 
 **Step 8 — Apply tuning offsets**
 Write final cent values to all notes via `undoChangeProperty(Pid::TUNING, ...)`.
+
+### 11.3f FreeDrift Mode
+
+The `tuningMode` preference selects one of two high-level drift behaviors:
+
+**TonicAnchored (default):** Each harmonic region independently computes offsets
+relative to the mode tonic. The chord root is placed at its JI scale-degree
+position; individual chord tones are offset relative to that root. Sustained
+notes crossing region boundaries are split-and-slurred so each segment receives
+the correct offset for its region. Drift does not accumulate across regions.
+
+**FreeDrift:** Tuning offsets accumulate naturally across harmonic regions.
+The reference pitch for each region is determined by a priority hierarchy:
+
+| Priority | Source | Meaning |
+|----------|--------|---------|
+| P1 | Held note from previous region | Drift reference: existing tuning of the held note |
+| P2/P3 | Bass note / analyzer root | No prior drift — fresh baseline (adjustment = 0) |
+
+When a held note bridges regions (P1), the drift adjustment is:
+```
+driftAdjustment = heldNote.tuning() − desiredOffset(heldNote.ppitch())
+```
+All notes in the new region receive `desiredOffset(pitch) + driftAdjustment`.
+
+**`alt. rif.` anchor notes in FreeDrift:** Unlike in TonicAnchored mode (where
+an anchor forces all notes back to a 0 ¢ reference), in FreeDrift an anchor note
+is pitched *at the current drift level* — i.e. it receives `finalOffset(pitch)`
+exactly like any other note. It "confirms where we have drifted to" without
+pulling other notes back to 12-TET. Anchor notes are excluded from P1 held-note
+selection and annotated with a `*` suffix in cent annotations.
+
+**Key differences from TonicAnchored:**
+- Sustained notes are **never split** in FreeDrift mode (Phase 3 is skipped).
+  Held notes carry their existing tuning into the new region, providing the
+  drift baseline for other voices.
+- When no held note exists (no P1 candidate), drift resets to 0.0 (same
+  as a fresh TonicAnchored computation without the rootOffset term).
+
+**Drift boundary annotation (`annotateDriftAtBoundaries`, default off):**
+When enabled together with FreeDrift, a `StaffText` is inserted above the first
+eligible staff at each harmonic region boundary whenever |driftAdjustment| ≥ 0.5 ¢,
+showing the accumulated pitch drift, e.g. `d=+3` or `d=-2`. This is independent of
+the per-note `annotateTuningOffsets` toggle. A future drift-reset marker
+(see `backlog_drift_reset.md`) will allow composers to insert deliberate
+intonation resets at structural boundaries.
+
+**Implementation:** `applyRegionTuning()` in `notationtuningbridge.cpp`,
+controlled by `cfg->tuningMode()`. The drift computation happens between
+the minimizeRetune (meanShift) calculation and the Phase 2 note-assignment loop.
 
 ### 11.4 Score Mutation for Tuning Application
 
@@ -3215,6 +3338,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
+*Document version: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673); previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

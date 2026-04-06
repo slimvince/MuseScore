@@ -603,9 +603,13 @@ bool applyRegionTuning(mu::engraving::Score* score,
     const auto& tuningSystem = preferredTuningSystem();
 
     static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> cfg;
-    const bool tonicAnchored  = cfg.get() && cfg.get()->tonicAnchoredTuning();
-    const bool minimizeRetune = cfg.get() && cfg.get()->minimizeTuningDeviation();
-    const bool annotateTuning = cfg.get() && cfg.get()->annotateTuningOffsets();
+    const bool tonicAnchored       = cfg.get() && cfg.get()->tonicAnchoredTuning();
+    const bool minimizeRetune      = cfg.get() && cfg.get()->minimizeTuningDeviation();
+    const bool annotateTuning      = cfg.get() && cfg.get()->annotateTuningOffsets();
+    const bool annotateDriftBounds = cfg.get() && cfg.get()->annotateDriftAtBoundaries();
+    const auto tuningMode          = cfg.get()
+        ? cfg.get()->tuningMode()
+        : mu::composing::intonation::TuningMode::TonicAnchored;
 
     static constexpr double kEpsilonCents = 0.5;
 
@@ -626,7 +630,134 @@ bool applyRegionTuning(mu::engraving::Score* score,
             return offset;
         };
 
+        // ── Drift reference hierarchy ─────────────────────────────────────────
+        //
+        // TonicAnchored mode — P0 (anchor) → P2/P3 (zero drift):
+        //   If an alt.rif. note attacks at rStart, shift all other notes so the
+        //   anchor lands at exactly 0 ¢.  driftAdjustment = −desiredOffset(anchor).
+        //   Octave-equivalent notes then produce a pure octave from the anchor.
+        //
+        // FreeDrift mode — P1 (held note) → P2/P3 (zero drift):
+        //   Drift accumulates from the previous region via a held note (P1).
+        //   An anchor note in FreeDrift is pitched AT the current drift level,
+        //   not reset to 0 ¢ — it confirms "here is where we have drifted to"
+        //   without pulling other notes back to 12-TET.
+        //   The P0 driftAdjustment override therefore does NOT apply in FreeDrift.
+        //
+        // In FreeDrift mode sustained notes are NEVER split (Phase 3 is skipped).
+        double driftAdjustment = 0.0;
+        bool   foundAnchorRef  = false;
+
+        // P0: TonicAnchored only — anchor as intonation reset reference.
+        if (tuningMode == mu::composing::intonation::TuningMode::TonicAnchored) {
+            Segment* rStartSeg = score->tick2segment(rStart, true,
+                                                      SegmentType::ChordRest);
+            if (rStartSeg) {
+                for (size_t si = 0; si < score->nstaves() && !foundAnchorRef; ++si) {
+                    if (excludeStaves.count(si)
+                        || !staffIsEligible(score, si, rStart)) {
+                        continue;
+                    }
+                    for (int v = 0; v < VOICES && !foundAnchorRef; ++v) {
+                        const ChordRest* cr = rStartSeg->cr(
+                            static_cast<track_idx_t>(si) * VOICES + v);
+                        if (!cr || !cr->isChord() || cr->isGrace()) {
+                            continue;
+                        }
+                        for (const Note* n : toChord(cr)->notes()) {
+                            if (!n->play() || !n->visible()) {
+                                continue;
+                            }
+                            if (hasTuningAnchorExpression(n)) {
+                                driftAdjustment = -desiredOffset(n->ppitch());
+                                foundAnchorRef  = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ── P1 (FreeDrift only): held-note as drift reference ────────────────
+        if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift) {
+            const Fraction backLimit = rStart - Fraction(4, 1);
+            Segment* rStartSeg = score->tick2segment(rStart, true,
+                                                      SegmentType::ChordRest);
+            bool foundHeld = false;
+            if (rStartSeg) {
+                for (const Segment* s = rStartSeg->prev1(SegmentType::ChordRest);
+                     s && s->tick() >= backLimit && !foundHeld;
+                     s = s->prev1(SegmentType::ChordRest)) {
+                    for (size_t si = 0; si < score->nstaves() && !foundHeld; ++si) {
+                        if (excludeStaves.count(si)
+                            || !staffIsEligible(score, si, s->tick())) {
+                            continue;
+                        }
+                        for (int v = 0; v < VOICES && !foundHeld; ++v) {
+                            const ChordRest* cr = s->cr(
+                                static_cast<track_idx_t>(si) * VOICES + v);
+                            if (!cr || !cr->isChord() || cr->isGrace()) {
+                                continue;
+                            }
+                            const Chord* ch = toChord(cr);
+                            if (s->tick() + ch->actualTicks() <= rStart) {
+                                continue;  // ended before this region
+                            }
+                            for (const Note* n : ch->notes()) {
+                                if (!n->play() || !n->visible()) {
+                                    continue;
+                                }
+                                if (hasTuningAnchorExpression(n)) {
+                                    continue;  // anchor note: not a valid drift ref
+                                }
+                                driftAdjustment = n->tuning() - desiredOffset(n->ppitch());
+                                foundHeld = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            // P2/P3: no held note → driftAdjustment remains 0.0.
+        }
+
+        // ── Drift boundary annotation (FreeDrift, separate toggle) ────────────
+        //
+        // When annotateDriftAtBoundaries is enabled and we are in FreeDrift mode,
+        // insert a StaffText at the region start showing the accumulated drift,
+        // e.g. "d=+3" or "d=-2", on the first eligible non-chord-staff staff.
+        // Only emitted when |driftAdjustment| >= kEpsilonCents (meaningful drift).
+        if (annotateDriftBounds
+            && tuningMode == mu::composing::intonation::TuningMode::FreeDrift
+            && std::abs(driftAdjustment) >= kEpsilonCents) {
+
+            Segment* rStartSeg = score->tick2segment(rStart, true,
+                                                      SegmentType::ChordRest);
+            if (rStartSeg) {
+                for (size_t si = 0; si < score->nstaves(); ++si) {
+                    if (excludeStaves.count(si)
+                        || !staffIsEligible(score, si, rStart)) {
+                        continue;
+                    }
+                    const int cents = static_cast<int>(std::round(driftAdjustment));
+                    std::string label = "d=";
+                    label += (cents >= 0) ? "+" : "";
+                    label += std::to_string(cents);
+                    StaffText* dt = Factory::createStaffText(rStartSeg);
+                    dt->setTrack(static_cast<track_idx_t>(si) * VOICES);
+                    dt->setParent(rStartSeg);
+                    dt->setPlacement(PlacementV::ABOVE);
+                    dt->setPlainText(muse::String::fromStdString(label));
+                    score->undoAddElement(dt);
+                    anyApplied = true;
+                    break;  // one marker per region boundary is enough
+                }
+            }
+        }
+
         // ── "Minimize retune": subtract mean offset so chord hovers near 0 ¢ ──
+        // Anchor notes are excluded — they always contribute 0 ¢, not desiredOffset.
         double meanShift = 0.0;
         if (minimizeRetune) {
             double sum = 0.0;
@@ -649,7 +780,10 @@ bool applyRegionTuning(mu::engraving::Score* score,
                             if (!n->play() || !n->visible()) {
                                 continue;
                             }
-                            sum += desiredOffset(n->ppitch());
+                            if (hasTuningAnchorExpression(n)) {
+                                continue;  // anchor always at 0 ¢; exclude from mean
+                            }
+                            sum += desiredOffset(n->ppitch()) + driftAdjustment;
                             ++cnt;
                         }
                     }
@@ -659,7 +793,10 @@ bool applyRegionTuning(mu::engraving::Score* score,
                 meanShift = sum / cnt;
             }
         }
-        auto finalOffset = [&](int ppitch) { return desiredOffset(ppitch) - meanShift; };
+
+        auto finalOffset = [&](int ppitch) {
+            return desiredOffset(ppitch) + driftAdjustment - meanShift;
+        };
 
         // ── Phase 2: notes attacking within this region ──────────────────
         for (Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
@@ -680,6 +817,40 @@ bool applyRegionTuning(mu::engraving::Score* score,
                     std::string tuningAnnotation;
                     for (Note* n : toChord(cr)->notes()) {
                         if (!n->play() || !n->visible()) {
+                            continue;
+                        }
+                        if (hasTuningAnchorExpression(n)) {
+                            // Anchor note handling differs by mode:
+                            //
+                            // TonicAnchored: forced to 0 ¢ (12-TET fixed reference).
+                            //   Other notes are shifted via driftAdjustment so that
+                            //   JI intervals are computed relative to this 0 ¢ anchor.
+                            //
+                            // FreeDrift: pitched at finalOffset (current drift level).
+                            //   The anchor "confirms" where we have drifted to without
+                            //   resetting other notes back to 12-TET.
+                            if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift) {
+                                const double desired = finalOffset(n->ppitch());
+                                if (annotateTuning) {
+                                    const int cents = static_cast<int>(std::round(desired));
+                                    if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                                    tuningAnnotation += (cents >= 0 ? "+" : "")
+                                                        + std::to_string(cents) + "*";
+                                }
+                                if (std::abs(n->tuning() - desired) >= kEpsilonCents) {
+                                    n->undoChangeProperty(Pid::TUNING, desired);
+                                    anyApplied = true;
+                                }
+                            } else {
+                                if (std::abs(n->tuning()) >= kEpsilonCents) {
+                                    n->undoChangeProperty(Pid::TUNING, 0.0);
+                                    anyApplied = true;
+                                }
+                                if (annotateTuning) {
+                                    if (!tuningAnnotation.empty()) tuningAnnotation += ' ';
+                                    tuningAnnotation += "+0*";
+                                }
+                            }
                             continue;
                         }
                         const double desired = finalOffset(n->ppitch());
@@ -708,6 +879,14 @@ bool applyRegionTuning(mu::engraving::Score* score,
         }
 
         // ── Phase 3: sustained notes (started before this region) ────────
+        //
+        // In FreeDrift mode sustained notes are never split: the drift
+        // reference is derived from their existing tuning (Phase 2 above),
+        // and they continue to sound at that tuning unchanged.
+        if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift) {
+            continue;  // skip to next region; no splitting in FreeDrift mode
+        }
+
         // Walk backward from rStart to find chords that are still sounding.
         const Fraction backLimit = rStart - Fraction(4, 1);
         Segment* rStartSeg = score->tick2segment(rStart, true,
@@ -740,18 +919,26 @@ bool applyRegionTuning(mu::engraving::Score* score,
                     }
 
                     // Check if any note needs different tuning.
+                    // Anchor notes are protected: zero offset, never split.
                     bool anyNeedsTuning = false;
+                    bool hasAnchor = false;
                     for (const Note* n : ch->notes()) {
                         if (!n->play() || !n->visible()) {
                             continue;
                         }
+                        if (hasTuningAnchorExpression(n)) {
+                            hasAnchor = true;
+                            continue;  // anchor note never retuned or split
+                        }
                         if (std::abs(n->tuning() - finalOffset(n->ppitch()))
                             >= kEpsilonCents) {
                             anyNeedsTuning = true;
-                            break;
                         }
                     }
-                    if (!anyNeedsTuning) {
+                    // If any note in the chord is an anchor, do not split the
+                    // chord — splitting would duplicate the anchor note and
+                    // corrupt its protection semantics.
+                    if (hasAnchor || !anyNeedsTuning) {
                         continue;
                     }
 
