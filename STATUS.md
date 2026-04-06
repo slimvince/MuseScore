@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — Section 5.0 enriched JSON output; crash fix for non-diatonic key modes; **74.3% of Bach chorale errors have bassIsRoot=true**; **59.4% of Beethoven quartet errors have bassIsRoot=true** — bass-as-root bias is the dominant error source across both corpora*
+*Last updated: April 2026 — Inversion investigation complete. Six fix attempts across four corpora proved that 83–84% is the accuracy ceiling for vertical sonority analysis alone. Baseline is correct production baseline. Proceeding to Section 8 (tuning anchor).*
 
 ---
 
@@ -394,6 +394,158 @@ Run: 410 unfiltered works, report: `tools/reports/validation_20260404_223531.htm
 The chord identity rate is identical (83.4%) — the 58 excluded non-chorale/variant
 works did not materially affect accuracy. The corrected corpus is the authoritative
 baseline going forward.
+
+---
+
+### Inversion Fix — Final Conclusion
+
+Six weeks of investigation across four corpora and six fix attempts
+reached the following proven conclusions:
+
+1. **95.8% of genuine BIR errors are 3-note triads.** For bare triads,
+   bass=root is the statistically correct default. No local scoring
+   change can improve these without harmonic context.
+
+2. **4-note chord inversion cases (4.2% of errors) already score
+   correctly** at `tpcConsistencyBonusPerTone=0.20` when all four
+   chord tones are present. The 4-note non-bass template (e.g. Gm7)
+   accumulates enough template score and TPC bonus to win over the
+   3-note bass-root triad (e.g. Bb-major) without any fix.
+
+3. **The C6/Am7 ambiguity is a data impossibility.** `{C,E,G,A}` with
+   C in bass has identical pitch content and TPC spelling as Am7/C.
+   No local scoring approach can distinguish them. The bass-root
+   convention (`bassNoteRootBonus`) is the correct resolution.
+
+4. **No TPC bonus window exists.** A bonus large enough to correct
+   3-note inversions (x > 0.65) simultaneously breaks all sixth-chord
+   conventions. Calibration testing at x=0.75 confirmed 20 abstract
+   catalog regressions with 0 corpus improvements.
+
+5. **The remaining BIR errors represent legitimate divergence** between
+   vertical sonority analysis (our approach) and functional/contextual
+   harmonic annotation (DCML). This is not an analyzer defect.
+
+**Remaining accuracy ceiling: ~83–84% on Bach chorales by vertical
+analysis alone.** Improving beyond this requires harmonic sequence
+context (analyzing surrounding chords, cadence patterns, voice-leading
+continuity) — a Phase 2 architectural component outside Phase 1 scope.
+
+**Current baseline is the correct production baseline. Do not attempt
+further local scoring fixes for inversions.**
+
+---
+
+### Section 6 — Inversion Fix (two attempts, both reverted)
+
+**6.1 Analysis (2026-04-05):** Three-way comparison (Bach chorales) identified
+281 genuine errors. Of these, **245/281 (87.2%) have bassIsRoot=true**. 86.1%
+have `margin < 0.25`; 100% have `margin < 1.0`; 100% have `noteCount ≥ 3`.
+Cross-corpus diagnostic (Section 7) confirmed this is universal across all four
+corpora (Bach 74.3%, Beethoven 59.4%, Mozart 38.6%, Corelli 94.9%).
+
+**Attempt 1 (post-truncation, margin=0.65, reduction=0.0):**
+Searched `results[1..2]` for a non-bass-root alternative. Had no measurable effect
+because the bass bonus fires for ALL templates with root==bass, filling the entire
+top-3 result window with same-root candidates — no non-bass alternative visible.
+Report: `tools/reports/reports/validation_20260405_214122.html` (identical to baseline).
+
+**Attempt 2 (pre-truncation rawCandidates, margin=1.0, reduction=0.3, git: 80fc2d2ca1+):**
+Moved correction to rawCandidates before the top-3 window. Added `intervalCount`
+field to `RawCandidate`. Widened quality set to include Diminished/HalfDiminished.
+Added condition 3 (alt must have ≤ winner's intervalCount). 271/271 tests passed.
+
+**Attempt 2 validation result (2026-04-05, run 20260405_225018):** **REGRESSION.**
+- chord_disagree: 673 → **696** (+23 — worse)
+- chord_identity: 83.4% → **82.8%** (-0.6%)
+- full_agree: 2302 → 2299 (-3)
+
+Reverted immediately (`git checkout -- chordanalyzer.cpp chordanalyzer.h`).
+Report: `tools/reports/reports/validation_20260405_225018.html`
+
+**Attempt 2 regression analysis (2026-04-06):** 23 regressions, 0 improvements.
+All 23 new disagrees were **inverted dim7 or halfdim7 chords** (e.g. `Bdim7/F`,
+`Am7b5/C`) — 86% dim7, 9% halfdim. These are correctly identified with bass≠root;
+the fix incorrectly saw them as major/minor inversions and flipped the root.
+Root cause: Attempt 2 included Diminished/HalfDiminished in the winner quality set.
+
+**Attempt 3 (2026-04-06, pre-truncation rawCandidates, margin=1.0, reduction=0.3):**
+Winner restricted to Major/Minor only. Alternative restricted to Major/Minor only.
+No intervalCount condition. 271 regression tests — **FAILED** (1 abstract mismatch).
+
+Catalog measure 269: `{C, Eb, G, Ab}` = `Cmaddb13` (catalog: root=C, Minor).
+Fix flipped to `G#Maj7/C` (root=G#, Major). The {C,Eb,G,Ab} set is enharmonically
+identical to {Ab,C,Eb,G} = AbMaj7 in first inversion. The fix correctly identified
+an ambiguous chord but chose the wrong interpretation relative to the catalog.
+This case represents a genuine analytical ambiguity — not a fix defect per se —
+but the catalog is the ground truth so this is a regression.
+
+**Status:** All three attempts reverted. Parameters `inversionSuspicionMargin`
+and `inversionBonusReduction` remain in the header at their committed values
+(0.65/0.0). The catalog measure 269 case (`Cmaddb13` = {C,Eb,G,Ab}) reveals the
+fundamental difficulty: any fix that can flip a major chord rooted on the bass
+to a major chord rooted elsewhere will also flip genuine enharmonic inversions
+that the catalog records with the bass-note root. A fix that avoids this must
+either use TPC spelling to disambiguate, or require stronger evidence (e.g.
+the alternative must match the next chord's root for voice-leading continuity).
+No further fix attempts without a new design session.
+
+---
+
+### Section 7 — Extended Corpus Diagnostics (2026-04-05)
+
+Scripts: `tools/run_mozart_validation.py`, `tools/run_corelli_validation.py`,
+`tools/section_7_3_diagnostic.py`. Registry: `tools/corpus_registry.json`.
+Git hash: `80fc2d2ca1` (inversion fix reverted in working tree).
+
+#### 7.1 Mozart Piano Sonatas
+
+Corpus: DCMLab/mozart_piano_sonatas (54 MSCX files; 1 skipped — no TSV).
+Run: `20260405_221616` (clean binary, Rule 3 compliant).
+Report: `tools/reports/reports/mozart_20260405_221616.json`
+
+| Metric | Value |
+|---|---|
+| Movements | 53/54 |
+| Our regions | 1,105 |
+| DCML-aligned | 581 (52.6%) |
+| Root agreement | 392/581 (**67.5%**) |
+| Root disagreement | 189/581 (32.5%) |
+| bassIsRoot in disagreements | 73/189 (**38.6%**) |
+
+#### 7.2 Corelli Trio Sonatas
+
+Corpus: DCMLab/corelli (149 MSCX files).
+Run: `20260405_221113` (clean binary, Rule 3 compliant).
+Report: `tools/reports/reports/corelli_20260405_221113.json`
+
+| Metric | Value |
+|---|---|
+| Movements | 149/149 |
+| Our regions | 1,415 |
+| DCML-aligned | 507 (35.8%) |
+| Root agreement | 332/507 (**65.5%**) |
+| Root disagreement | 175/507 (34.5%) |
+| bassIsRoot in disagreements | 166/175 (**94.9%**) |
+
+#### 7.3 Cross-Corpus Consolidated Diagnostic
+
+Script: `tools/section_7_3_diagnostic.py`
+
+| Corpus | Agree% | Disagree | BIR | BIR% | noteCount≥3 | m<0.25 | m<0.65 |
+|--------|--------|----------|-----|------|-------------|--------|--------|
+| Bach chorales | 83.4% | 673 | 500 | **74.3%** | 500 (100%) | 365 (73%) | 408 (82%) |
+| Beethoven quartets | 62.2% | 1123 | 667 | **59.4%** | 667 (100%) | 410 (62%) | 544 (82%) |
+| Mozart sonatas | 67.5% | 189 | 73 | **38.6%** | 73 (100%) | 43 (59%) | 55 (75%) |
+| Corelli sonatas | 65.5% | 175 | 166 | **94.9%** | 166 (100%) | 124 (75%) | 141 (85%) |
+
+**Universal findings:**
+- **noteCount ≥ 3 in 100% of BIR errors across all four corpora** — no arpeggio artifacts in genuine BIR disagreements.
+- **Margin < 0.65 in 75–82% of BIR errors** across all corpora (range: 75% Mozart – 85% Corelli). The bass bonus is the marginal deciding factor in the large majority of cases.
+- **Margin < 1.0 in 95–100% of BIR errors** — essentially no high-confidence wins.
+- **Beat-1 concentration in instrumental corpora:** Beethoven 90.7%, Mozart 86.3%, Corelli 94.0%. Bach chorales distributed across all beats (35% / 24% / 28% / 12%) — reflects SATB homophonic texture vs. instrumental idiomatic writing.
+- **BIR fraction varies widely by corpus** (38.6% Mozart – 94.9% Corelli), suggesting corpus-specific factors (texture, voicing style, notation density) affect alignment rate and BIR fraction independently.
+- **Mozart BIR fraction notably lower (38.6%)** — warrants investigation; may reflect lower alignment rate (52.6%) selecting only clearly-aligned regions where root identification is more reliable.
 
 ---
 

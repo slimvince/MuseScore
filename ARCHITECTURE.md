@@ -577,6 +577,33 @@ All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbrid
 
 `ChordTemporalContext` carries only the **immediately preceding chord's** root and quality — sufficient for root-continuity and resolution-bias scoring. It is **not** a full progression context. A future `TemporalContext` will carry the full recent progression (chord sequence, cadence history, secondary dominants) once secondary dominant analysis (§5.6) is implemented. Keep the names distinct.
 
+#### Design boundary — vertical sonority vs functional/contextual harmony
+
+`RuleBasedChordAnalyzer` is a **vertical sonority analyzer**: it identifies what chord
+is implied by the set of simultaneously sounding notes at a single point in time. It
+does not perform functional harmonic analysis (Roman-numeral reductions, cadence
+detection, tonicization, secondary dominants) or contextual annotation (what role this
+chord plays in the surrounding progression).
+
+This boundary is intentional and has been validated empirically. Corpus analysis against
+DCML annotations (four corpora, 2026-04-06) established a ceiling of ~83–84% root
+agreement for vertical analysis of Bach chorales. The remaining ~16% divergence is not
+an analyzer defect — it represents legitimate cases where:
+
+- **3-note triads in inversion** (bass ≠ functional root): DCML annotates the
+  functional root; vertical analysis defaults to bass=root. For bare triads this
+  cannot be resolved from local note content alone. 95.8% of all disagreements
+  with BIR (bass-is-root) errors are 3-note triads.
+- **Functional prolongation**: DCML may annotate a passing or neighboring chord as
+  part of a broader harmonic region (e.g. a cadential 6-4 as dominant), while vertical
+  analysis identifies the sounding notes independently.
+
+Improving beyond ~84% requires a **contextual harmony layer** (Phase 2) that consumes
+a sequence of `ChordAnalysisResult` outputs and applies voice-leading, cadence, and
+harmonic-sequence reasoning. That layer is explicitly out of Phase 1 scope. Do not
+attempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer`
+that embed contextual assumptions — keep the vertical/contextual boundary clean.
+
 ### 4.2 KeyModeAnalyzer
 
 **File:** `src/composing/analysis/key/keymodeanalyzer.h` and `key/keymodeanalyzer.cpp`

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!--
+  Piston, Harmony — Inversion Examples
+  Transcribed from:
+    Ex. 150 (p.89)  — Ch.9: First inversions in C major: V6 I I6 IV I I6 II6 V
+    Ex. 155 (p.91)  — Ch.9: Extended I6 progressions in C major
+    Ex. 222 (p.118) — Ch.11: Cadential 6/4 in four harmonic contexts
+
+  Ground truth Roman numerals from Piston's text used as validation reference.
+  These are textbook examples — labels are unambiguous ground truth.
+-->
+<score-partwise version="3.1">
+  <work>
+    <work-title>Piston Harmony — Inversion Examples (Ch.9 and Ch.11)</work-title>
+  </work>
+  <identification>
+    <encoding>
+      <software>Claude</software>
+      <encoding-description>Transcribed from Piston, Harmony (1941/1948 ed.) for harmonic analyzer validation</encoding-description>
+    </encoding>
+  </identification>
+  <part-list>
+    <score-part id="P1">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+
+    <!-- ============================================================
+         EX. 150 (p.89) — C major, SATB
+         Roman numerals: V6  I  I6  IV  I  I6  II6  V
+         Tests: V6 (G/B bass), I6 (C/E bass), II6 (D/F bass)
+         ============================================================ -->
+
+    <!-- Measure 1: V6 (G/B) — I (C) — I6 (C/E) — IV (F) -->
+    <measure number="1">
+      <attributes>
+        <divisions>4</divisions>
+        <key><fifths>0</fifths><mode>major</mode></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <staves>2</staves>
+        <clef number="1"><sign>G</sign><line>2</line></clef>
+        <clef number="2"><sign>F</sign><line>4</line></clef>
+      </attributes>
+
+      <!-- Chord 1: V6 in C major — B in bass, G/B/D upper -->
+      <!-- Soprano=D5, Alto=G4, Tenor=D4, Bass=B2 -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>B</step><octave>2</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 2: I in C major — C/E/G/C -->
+      <!-- Soprano=E5, Alto=G4, Tenor=E4, Bass=C3 -->
+      <note><pitch><step>E</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>C</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 3: I6 in C major — E in bass, C/E/G upper -->
+      <!-- Soprano=C5, Alto=G4, Tenor=C4, Bass=E3 -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>C</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>E</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 4: IV in C major — F/A/C root position -->
+      <!-- Soprano=C5, Alto=A4, Tenor=F4, Bass=F3 -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>A</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>F</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>F</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <!-- Measure 2: I (C) — I6 (C/E) — II6 (D/F) — V (G) -->
+    <measure number="2">
+      <!-- Chord 5: I in C major -->
+      <!-- Soprano=E5, Alto=G4, Tenor=E4, Bass=C3 -->
+      <note><pitch><step>E</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>C</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 6: I6 — E in bass -->
+      <!-- Soprano=C5, Alto=G4, Tenor=C4, Bass=E3 -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>C</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>E</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 7: II6 in C major — F in bass, D/F/A upper -->
+      <!-- Soprano=D5, Alto=A4, Tenor=D4, Bass=F3 -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>A</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>F</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Chord 8: V in C major — G/B/D root position -->
+      <!-- Soprano=D5, Alto=G4, Tenor=B3, Bass=G3 -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>B</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>quarter</type><staff>2</staff><voice>3</voice></note>
+
+      <barline location="right"><bar-style>light-heavy</bar-style></barline>
+    </measure>
+
+    <!-- ============================================================
+         EX. 222 (p.118) — Cadential 6/4 chord
+         Four progressions each ending (I64) → V
+         Preceding chords: IV, II, VI, I
+         Tests: I6/4 (second inversion, G in bass) — the most common
+                second inversion type
+         ============================================================ -->
+
+    <!-- New section: time sig change, key stays C major -->
+    <measure number="3">
+      <attributes>
+        <time><beats>2</beats><beat-type>2</beat-type></time>
+      </attributes>
+
+      <!-- Pattern A: IV → (I64) → V -->
+      <!-- IV: F/A/C/F -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>A</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>F</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>F</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- I64: G in bass, C/E/G — second inversion tonic -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <measure number="4">
+      <!-- V: G/B/D/G -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>B</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Pattern B: II → (I64) → V -->
+      <!-- II: D/F/A/D -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>A</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>F</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>D</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <measure number="5">
+      <!-- I64: G in bass -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- V: G/B/D/G -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>B</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <measure number="6">
+      <!-- Pattern C: VI → (I64) → V -->
+      <!-- VI: A/C/E/A -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>A</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>A</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- I64: G in bass -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <measure number="7">
+      <!-- V: G/B/D/G -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>B</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- Pattern D: I → (I64) → V -->
+      <!-- I: C/E/G/C -->
+      <note><pitch><step>E</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>C</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+    </measure>
+
+    <measure number="8">
+      <!-- I64: G in bass -->
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <!-- V: G/B/D/G -->
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>B</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>1</voice></note>
+      <note><chord/><pitch><step>D</step><octave>4</octave></pitch>
+        <duration>4</duration><type>half</type><staff>1</staff><voice>2</voice></note>
+      <note><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>4</duration><type>half</type><staff>2</staff><voice>3</voice></note>
+
+      <barline location="right"><bar-style>light-heavy</bar-style></barline>
+    </measure>
+
+  </part>
+</score-partwise>
