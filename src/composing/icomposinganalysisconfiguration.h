@@ -128,6 +128,13 @@ public:
     virtual void setAnnotateDriftAtBoundaries(bool value) = 0;
     virtual muse::async::Notification annotateDriftAtBoundariesChanged() const = 0;
 
+    /// When true, harmonic boundary detection uses Jaccard distance on quarter-note
+    /// windows and chord analysis uses pitch evidence accumulated across the full
+    /// region (§4.1c).  When false, the legacy per-tick bitset path is used.
+    virtual bool useRegionalAccumulation() const = 0;
+    virtual void setUseRegionalAccumulation(bool value) = 0;
+    virtual muse::async::Notification useRegionalAccumulationChanged() const = 0;
+
     // ── Status-bar display ───────────────────────────────────────────────────
 
     virtual bool showKeyModeInStatusBar() const = 0;

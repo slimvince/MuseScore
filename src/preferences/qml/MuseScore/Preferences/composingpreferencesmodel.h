@@ -47,6 +47,7 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(bool minimizeTuningDeviation  READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
     Q_PROPERTY(bool annotateTuningOffsets      READ annotateTuningOffsets      WRITE setAnnotateTuningOffsets      NOTIFY annotateTuningOffsetsChanged)
     Q_PROPERTY(bool annotateDriftAtBoundaries  READ annotateDriftAtBoundaries  WRITE setAnnotateDriftAtBoundaries  NOTIFY annotateDriftAtBoundariesChanged)
+    Q_PROPERTY(bool useRegionalAccumulation    READ useRegionalAccumulation    WRITE setUseRegionalAccumulation    NOTIFY useRegionalAccumulationChanged)
 
     // Chord staff output
     Q_PROPERTY(bool    chordStaffWriteChordSymbols   READ chordStaffWriteChordSymbols   WRITE setChordStaffWriteChordSymbols   NOTIFY chordStaffWriteChordSymbolsChanged)
@@ -106,6 +107,7 @@ public:
     bool minimizeTuningDeviation() const;
     bool annotateTuningOffsets() const;
     bool annotateDriftAtBoundaries() const;
+    bool useRegionalAccumulation() const;
 
     // Mode priors — diatonic
     double modePriorIonian() const;
@@ -155,6 +157,7 @@ public slots:
     void setMinimizeTuningDeviation(bool value);
     void setAnnotateTuningOffsets(bool value);
     void setAnnotateDriftAtBoundaries(bool value);
+    void setUseRegionalAccumulation(bool value);
 
     // Mode priors — diatonic
     void setModePriorIonian(double value);
@@ -204,6 +207,7 @@ signals:
     void minimizeTuningDeviationChanged();
     void annotateTuningOffsetsChanged();
     void annotateDriftAtBoundariesChanged();
+    void useRegionalAccumulationChanged();
 
     // Mode priors — diatonic
     void modePriorIonianChanged();

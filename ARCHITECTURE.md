@@ -621,6 +621,52 @@ Both bridges (`notationcomposingbridge.cpp` and `notationharmonicrhythmbridge.cp
 | bassIsRoot fraction (est.) | 74.3% | ~72.9% |
 | Catalog regressions | 0 | 0 |
 
+#### §4.1c — Regional Note Accumulation (Classical Mode)
+
+**Problem:** Per-tick pitch-class snapshots treat all notes as equal regardless of
+duration, metric position, or repetition across a region. Short passing tones receive
+the same weight as sustained structural pitches.
+
+**Solution:** Replace per-tick evidence with pitch evidence accumulated across the
+entire harmonic region, weighted by three factors:
+
+1. **Beat weight** (Pass 1): `(durationInRegion / regionDuration) × beatWeight`
+   — DOWNBEAT 1.0, STRESSED 0.85, UNSTRESSED 0.75, SUBBEAT 0.5
+2. **Repetition boost** (Pass 2): `weight × (1.0 + 0.3 × (distinctMetricPositions − 1))`
+   for pitch classes appearing at more than one distinct metric position
+3. **Cross-voice boost** (Pass 3): `weight × 1.5` for pitch classes sounding in more
+   than one voice simultaneously
+
+Harmonic boundaries are detected via **Jaccard distance** between consecutive
+quarter-note window PC bitsets: `distance = 1 − |A∩B| / |A∪B|`. Threshold 0.6
+(`harmonicBoundaryJaccardThreshold` in `ChordAnalyzerPreferences`).
+
+**Sustained notes:** Notes that attack before `startTick` and are held into the
+region are captured by a backward walk (matching the `collectSoundingAt` pattern).
+
+**New API:**
+- `collectRegionTones(score, startTick, endTick, excludeStaves)` — implemented in
+  `notationcomposingbridgehelpers.cpp`; declared in `notationcomposingbridgehelpers.h`
+- `detectHarmonicBoundariesJaccard(score, startTick, endTick, excludeStaves, threshold)`
+  — returns sorted vector of boundary `Fraction` ticks; first = `startTick`
+- `ChordAnalysisTone` extended with 3 fields: `durationInRegion`, `distinctMetricPositions`,
+  `simultaneousVoiceCount` (all initialize to 0 for backward compatibility)
+- `useRegionalAccumulation()` / `setUseRegionalAccumulation()` in `IComposingAnalysisConfiguration`
+  (default `true`; settings key `composing/useRegionalAccumulation`)
+
+**Bridge wiring:** `notationharmonicrhythmbridge.cpp` branches on `useRegionalAccumulation`:
+- Regional path: `detectHarmonicBoundariesJaccard` → `collectRegionTones` → `analyzeChord`
+- Legacy path: per-tick PC bitset comparison (unchanged)
+
+**Validation (20260406_151131):**
+
+| Metric | §4.1b | §4.1c |
+|--------|-------|-------|
+| Chord identity (Bach 352 chorales) | 83.7% (3397/4058) | **83.7% (3397/4058)** |
+| chord_disagree | 661 | **661** (unchanged) |
+| Beethoven BIR% of disagreements | 59.4% | **57.3%** (−2.1 pp) |
+| Catalog regressions | 0 | 0 |
+
 #### Temporal context — `ChordTemporalContext` vs future `TemporalContext` (P4b)
 
 `ChordTemporalContext` carries the **immediately preceding chord's** root, quality, and

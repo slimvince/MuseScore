@@ -31,10 +31,13 @@
 
 #include <cmath>
 #include <limits>
+#include <map>
 #include <optional>
+#include <set>
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/key.h"
+#include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/segment.h"
@@ -409,6 +412,359 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     outMode       = top.mode;
     outConfidence = top.normalizedConfidence;
     if (outScore) *outScore = top.score;
+}
+
+std::vector<mu::composing::analysis::ChordAnalysisTone>
+collectRegionTones(const mu::engraving::Score* sc,
+                   int startTickInt,
+                   int endTickInt,
+                   const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+    using namespace mu::composing::analysis;
+
+    if (!sc || endTickInt <= startTickInt) {
+        return {};
+    }
+
+    const Fraction startTick = Fraction::fromTicks(startTickInt);
+    const Fraction endTick   = Fraction::fromTicks(endTickInt);
+    const int regionDuration = endTickInt - startTickInt;
+
+    // ── Inline beat-weight mapping ─────────────────────────────────────────
+    // Uses fixed weights — avoids dependency on KeyModeAnalyzerPreferences.
+    auto beatWeight = [](BeatType bt) -> double {
+        switch (bt) {
+        case BeatType::DOWNBEAT:            return 1.0;
+        case BeatType::SIMPLE_STRESSED:
+        case BeatType::COMPOUND_STRESSED:   return 0.85;
+        case BeatType::SIMPLE_UNSTRESSED:
+        case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+        default:                            return 0.5;  // SUBBEAT / COMPOUND_SUBBEAT
+        }
+    };
+
+    // ── Per-pitch-class accumulator ────────────────────────────────────────
+    struct PcAccum {
+        double totalWeight      = 0.0;
+        int    durationInRegion = 0;
+        std::set<int> metricTicks;      // distinct attack ticks (one per segment)
+        int lowestPitch = std::numeric_limits<int>::max();
+        int tpc = -1;
+    };
+    PcAccum accum[12];
+
+    // voiceCountAtTick[pc][segTick] = number of voices playing pc at that tick
+    std::map<int, int> voiceCountAtTick[12];
+
+    // ── Walk backward to catch notes sustained into the region ────────────────
+    // Notes that attacked before startTick but are still sounding at startTick
+    // must be included (e.g., a bass note held across a harmonic boundary).
+    // Walk back up to 4 quarter notes, mirroring collectSoundingAt behaviour.
+    const Fraction backLimit = startTick - Fraction(4, 1);
+
+    // Get beat weight at the region start (used for sustained notes from before).
+    auto bwAtRegionStart = [&]() -> double {
+        const Measure* m0 = sc->tick2measure(startTick);
+        if (!m0) { return 0.75; }
+        const TimeSigFrac tsig0(m0->timesig().numerator(), m0->timesig().denominator());
+        const Segment* s0 = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+        if (!s0) { return 0.75; }
+        return beatWeight(tsig0.rtick2beatType(s0->rtick().ticks()));
+    }();
+
+    const Segment* firstForward = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (firstForward && firstForward->tick() > startTick) {
+        // Walk backward to collect sustained notes.
+        for (const Segment* s = firstForward->prev1(SegmentType::ChordRest);
+             s && s->tick() >= backLimit;
+             s = s->prev1(SegmentType::ChordRest)) {
+            const int segTickInt = s->tick().ticks();
+            for (size_t si = 0; si < sc->nstaves(); ++si) {
+                if (excludeStaves.count(si) || !staffIsEligible(sc, si, startTick)) {
+                    continue;
+                }
+                for (int v = 0; v < VOICES; ++v) {
+                    const ChordRest* cr
+                        = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                    if (!cr || !cr->isChord() || cr->isGrace()) {
+                        continue;
+                    }
+                    const int noteEnd = segTickInt + cr->actualTicks().ticks();
+                    if (noteEnd <= startTickInt) {
+                        continue;  // ends before our region
+                    }
+                    const int clippedEnd  = std::min(noteEnd, endTickInt);
+                    const int durInRegion = clippedEnd - startTickInt;
+                    if (durInRegion <= 0) {
+                        continue;
+                    }
+                    const double baseWeight
+                        = (static_cast<double>(durInRegion) / regionDuration) * bwAtRegionStart;
+                    for (const Note* n : toChord(cr)->notes()) {
+                        if (!n->play() || !n->visible()) {
+                            continue;
+                        }
+                        const int pc = n->ppitch() % 12;
+                        PcAccum& a = accum[pc];
+                        a.totalWeight    += baseWeight;
+                        a.durationInRegion += durInRegion;
+                        a.metricTicks.insert(startTickInt);
+                        voiceCountAtTick[pc][startTickInt]++;
+                        if (n->ppitch() < a.lowestPitch) {
+                            a.lowestPitch = n->ppitch();
+                            a.tpc = n->tpc();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ── Forward walk: collect notes attacking within [startTick, endTick) ──────
+    const Segment* seg = firstForward;
+    if (!seg) {
+        return {};
+    }
+
+    for (const Segment* s = seg;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        const Measure* m = s->measure();
+        if (!m) {
+            continue;
+        }
+
+        const int segTickInt = s->tick().ticks();
+        const TimeSigFrac tsig(m->timesig().numerator(), m->timesig().denominator());
+        const BeatType bt = tsig.rtick2beatType(s->rtick().ticks());
+        const double bw = beatWeight(bt);
+
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr
+                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+
+                // Clip note duration to the region boundary.
+                const int noteEnd      = segTickInt + cr->actualTicks().ticks();
+                const int clippedEnd   = std::min(noteEnd, endTickInt);
+                const int durInRegion  = clippedEnd - segTickInt;
+                if (durInRegion <= 0) {
+                    continue;
+                }
+
+                const double baseWeight
+                    = (static_cast<double>(durInRegion) / regionDuration) * bw;
+
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+
+                    const int pc = n->ppitch() % 12;
+                    PcAccum& a = accum[pc];
+                    a.totalWeight    += baseWeight;
+                    a.durationInRegion += durInRegion;
+                    a.metricTicks.insert(segTickInt);
+                    voiceCountAtTick[pc][segTickInt]++;
+
+                    if (n->ppitch() < a.lowestPitch) {
+                        a.lowestPitch = n->ppitch();
+                        a.tpc = n->tpc();
+                    }
+                }
+            }
+        }
+    }
+
+    // ── Pass 2: repetition boost ───────────────────────────────────────────
+    // Reward pitch classes that recur at multiple metric positions.
+    for (int pc = 0; pc < 12; ++pc) {
+        PcAccum& a = accum[pc];
+        if (a.totalWeight == 0.0) {
+            continue;
+        }
+        const int distinct = static_cast<int>(a.metricTicks.size());
+        if (distinct > 1) {
+            a.totalWeight *= (1.0 + 0.3 * (distinct - 1));
+        }
+    }
+
+    // ── Pass 3: cross-voice boost ──────────────────────────────────────────
+    // Reward pitch classes reinforced by multiple simultaneous voices.
+    for (int pc = 0; pc < 12; ++pc) {
+        PcAccum& a = accum[pc];
+        if (a.totalWeight == 0.0) {
+            continue;
+        }
+        int maxVoices = 0;
+        for (const auto& kv : voiceCountAtTick[pc]) {
+            maxVoices = std::max(maxVoices, kv.second);
+        }
+        if (maxVoices > 1) {
+            a.totalWeight *= 1.5;
+        }
+    }
+
+    // ── Normalize ──────────────────────────────────────────────────────────
+    double totalWeight = 0.0;
+    for (int pc = 0; pc < 12; ++pc) {
+        totalWeight += accum[pc].totalWeight;
+    }
+    if (totalWeight == 0.0) {
+        return {};
+    }
+
+    // Bass = PC with the lowest actual MIDI pitch across the entire region.
+    int bassPitch = std::numeric_limits<int>::max();
+    for (int pc = 0; pc < 12; ++pc) {
+        if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
+            bassPitch = accum[pc].lowestPitch;
+        }
+    }
+    const int bassPC = (bassPitch < std::numeric_limits<int>::max())
+                       ? (bassPitch % 12) : -1;
+
+    // ── Build tones ────────────────────────────────────────────────────────
+    std::vector<ChordAnalysisTone> tones;
+    for (int pc = 0; pc < 12; ++pc) {
+        PcAccum& a = accum[pc];
+        if (a.totalWeight == 0.0) {
+            continue;
+        }
+
+        int maxVoices = 0;
+        for (const auto& kv : voiceCountAtTick[pc]) {
+            maxVoices = std::max(maxVoices, kv.second);
+        }
+
+        ChordAnalysisTone t;
+        t.pitch                  = a.lowestPitch;
+        t.tpc                    = a.tpc;
+        t.weight                 = a.totalWeight / totalWeight;
+        t.isBass                 = (pc == bassPC);
+        t.durationInRegion       = a.durationInRegion;
+        t.distinctMetricPositions = static_cast<int>(a.metricTicks.size());
+        t.simultaneousVoiceCount = maxVoices;
+        tones.push_back(t);
+    }
+
+    return tones;
+}
+
+std::vector<mu::engraving::Fraction>
+detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& startTick,
+                                const mu::engraving::Fraction& endTick,
+                                const std::set<size_t>& excludeStaves,
+                                double jaccardThreshold)
+{
+    using namespace mu::engraving;
+
+    // Portable 16-bit popcount (avoids MSVC vs GCC intrinsic divergence).
+    auto popcount16 = [](uint16_t x) -> int {
+        int n = 0;
+        while (x) { n += x & 1; x >>= 1; }
+        return n;
+    };
+
+    // ── Collect per-window PC bitsets ──────────────────────────────────────
+    // Window size = 1 quarter note (Constants::DIVISION ticks).
+    // Each window collects pitch classes that attack within it.
+    struct Window {
+        Fraction tick;
+        uint16_t bits = 0;
+    };
+    std::vector<Window> windows;
+
+    const Segment* seg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (!seg) {
+        return { startTick };
+    }
+
+    const int windowTicks = Constants::DIVISION;  // 1 quarter note
+
+    int currentWindowBeat = (startTick.ticks() / windowTicks) * windowTicks;
+    uint16_t currentBits  = 0;
+    bool     hasNotes     = false;
+
+    for (const Segment* s = seg;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        const int segTick    = s->tick().ticks();
+        const int segWindow  = (segTick / windowTicks) * windowTicks;
+
+        if (segWindow != currentWindowBeat) {
+            // Emit the completed window.
+            if (hasNotes) {
+                windows.push_back({ Fraction::fromTicks(currentWindowBeat), currentBits });
+            }
+            currentWindowBeat = segWindow;
+            currentBits = 0;
+            hasNotes = false;
+        }
+
+        // Collect pitch-class attacks at this segment.
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr
+                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    currentBits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
+                    hasNotes = true;
+                }
+            }
+        }
+    }
+    if (hasNotes) {
+        windows.push_back({ Fraction::fromTicks(currentWindowBeat), currentBits });
+    }
+
+    if (windows.empty()) {
+        return { startTick };
+    }
+
+    // ── Compute Jaccard between consecutive windows ────────────────────────
+    std::vector<Fraction> boundaries;
+    boundaries.push_back(startTick);
+
+    uint16_t prevBits = windows[0].bits;
+    for (size_t i = 1; i < windows.size(); ++i) {
+        const uint16_t bits     = windows[i].bits;
+        const uint16_t inter    = prevBits & bits;
+        const uint16_t uni      = prevBits | bits;
+        const int interCount    = popcount16(inter);
+        const int uniCount      = popcount16(uni);
+        const double jaccard    = (uniCount > 0)
+                                  ? (1.0 - static_cast<double>(interCount) / uniCount)
+                                  : 0.0;
+
+        if (jaccard >= jaccardThreshold) {
+            boundaries.push_back(windows[i].tick);
+            prevBits = bits;
+        } else {
+            // Accumulate into the running "previous" set — non-boundary windows
+            // merge so that gradual harmonic changes are compared holistically.
+            prevBits = uni;
+        }
+    }
+
+    return boundaries;
 }
 
 mu::composing::analysis::ChordTemporalContext

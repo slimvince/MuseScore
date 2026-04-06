@@ -40,6 +40,7 @@ static const Settings::Key TUNING_MODE(module_name,                  "composing/
 static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/minimizeTuningDeviation");
 static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
 static const Settings::Key ANNOTATE_DRIFT_AT_BOUNDARIES(module_name, "composing/annotateDriftAtBoundaries");
+static const Settings::Key USE_REGIONAL_ACCUMULATION(module_name,    "composing/useRegionalAccumulation");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,       "composing/showKeyModeInStatusBar");
 static const Settings::Key SHOW_CHORD_SYMBOLS_IN_STATUS_BAR(module_name,  "composing/showChordSymbolsInStatusBar");
 static const Settings::Key SHOW_ROMAN_NUMERALS_IN_STATUS_BAR(module_name, "composing/showRomanNumeralsInStatusBar");
@@ -126,6 +127,11 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(ANNOTATE_DRIFT_AT_BOUNDARIES, Val(false));
     settings()->valueChanged(ANNOTATE_DRIFT_AT_BOUNDARIES).onReceive(nullptr, [this](const Val&) {
         m_annotateDriftAtBoundariesChanged.notify();
+    });
+
+    settings()->setDefaultValue(USE_REGIONAL_ACCUMULATION, Val(true));
+    settings()->valueChanged(USE_REGIONAL_ACCUMULATION).onReceive(nullptr, [this](const Val&) {
+        m_useRegionalAccumulationChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -433,6 +439,23 @@ void ComposingConfiguration::setAnnotateDriftAtBoundaries(bool value)
 muse::async::Notification ComposingConfiguration::annotateDriftAtBoundariesChanged() const
 {
     return m_annotateDriftAtBoundariesChanged;
+}
+
+// ── useRegionalAccumulation ──────────────────────────────────────────────────
+
+bool ComposingConfiguration::useRegionalAccumulation() const
+{
+    return settings()->value(USE_REGIONAL_ACCUMULATION).toBool();
+}
+
+void ComposingConfiguration::setUseRegionalAccumulation(bool value)
+{
+    settings()->setSharedValue(USE_REGIONAL_ACCUMULATION, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::useRegionalAccumulationChanged() const
+{
+    return m_useRegionalAccumulationChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

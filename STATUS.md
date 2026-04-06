@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — §4.1b Contextual Inversion Resolution implemented. ChordTemporalContext extended with bass-note and stepwise-motion fields; three contextual inversion bonuses added to contextualBonuses(); chord identity 83.4% → 83.7%; chord_disagree 673 → 661; 280 tests passing.*
+*Last updated: April 2026 — §4.1c Regional Note Accumulation implemented. `collectRegionTones()` (7-step accumulation with beat-weight, repetition boost, cross-voice boost) and `detectHarmonicBoundariesJaccard()` added; `useRegionalAccumulation` preference wired through config stack; chord identity held at 83.7%; chord_disagree held at 661; Bach BIR concentration (Beethoven): 59.4% → 57.3%; 284 tests passing.*
 
 ---
 
@@ -146,7 +146,8 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | Bridge architecture | Done | all bridge functions in `mu::notation`; split into single-note bridge + harmonic rhythm bridge + shared helpers; composing module has no engraving dependency |
 | Mode prior preset system | Done | `ModePriorPreset` struct + `modePriorPresets()` + 5 named presets + `applyModePriorPreset()` / `currentModePriorPreset()`; QML FlatButton row highlights active preset |
 | §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → 83.7%; `previousBassPc` and `bassIsStepwiseFromPrevious` populated; `nextRootPc/nextBassPc/bassIsStepwiseToNext` deferred (two-pass) |
-| Regression tests | Done | **280 tests**, 0 abstract (root/quality) mismatches |
+| §4.1c Regional note accumulation | Done | `collectRegionTones()` (beat-weight + repetition boost + cross-voice boost) + `detectHarmonicBoundariesJaccard()` in bridge helpers; `useRegionalAccumulation` preference (default true) in config stack; both paths wired in `notationharmonicrhythmbridge.cpp`; `ChordAnalysisTone` extended with 3 new fields; chord identity held at 83.7%; chord_disagree held at 661 |
+| Regression tests | Done | **284 tests**, 0 abstract (root/quality) mismatches |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
 | Dynamic lookahead | Done | expands window when confidence < 0.60; caps at 24 beats |
@@ -307,6 +308,23 @@ Populated `ChordTemporalContext` fields: `previousRootPc`, `previousQuality`,
 `previousBassPc`, `bassIsStepwiseFromPrevious`.
 Deferred fields (two-pass chord staff analysis only): `nextRootPc`, `nextBassPc`,
 `bassIsStepwiseToNext`, `previousChordAge`.
+
+### §4.1c Validation Run (2026-04-06)
+
+Run: `validation_20260406_151131`, binary: `ninja_build_rel/batch_analyze.exe`, `useRegionalAccumulation=true`
+Corpus: 352 Bach chorales, `--skip-music21`.
+
+| Metric | Count | % of total | % of aligned |
+|--------|-------|------------|--------------|
+| Total regions | 6032 | — | — |
+| Aligned regions | 4058 | 67.3% | — |
+| chord\_disagree | 661 | 11.0% | 16.3% |
+| **Chord identity agreement** | **3397** | **56.3%** | **83.7%** |
+
+**vs. §4.1b:** chord_disagree **661 → 661** (unchanged); chord identity **83.7% → 83.7%** (no regression).
+
+**B.7 (ABC Beethoven string quartets, 70 movements):**
+Run `beethoven_20260406_152140`. Agreement 61.8% (1836/2973 aligned); BIR% of disagreements **59.4% → 57.3%** (−2.1 pp reduction — regional accumulation redistributes some inverted-bass reads toward correct roots).
 
 ---
 

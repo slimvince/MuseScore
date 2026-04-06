@@ -66,6 +66,9 @@ void ComposingPreferencesModel::setupConnections()
     analysisConfig()->annotateDriftAtBoundariesChanged().onNotify(this, [this]() {
         emit annotateDriftAtBoundariesChanged();
     });
+    analysisConfig()->useRegionalAccumulationChanged().onNotify(this, [this]() {
+        emit useRegionalAccumulationChanged();
+    });
     chordStaffConfig()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
         emit chordStaffWriteChordSymbolsChanged();
     });
@@ -175,6 +178,11 @@ bool ComposingPreferencesModel::annotateTuningOffsets() const
 bool ComposingPreferencesModel::annotateDriftAtBoundaries() const
 {
     return analysisConfig()->annotateDriftAtBoundaries();
+}
+
+bool ComposingPreferencesModel::useRegionalAccumulation() const
+{
+    return analysisConfig()->useRegionalAccumulation();
 }
 
 // ── Mode prior getters ────────────────────────────────────────────────────────
@@ -353,6 +361,15 @@ void ComposingPreferencesModel::setAnnotateDriftAtBoundaries(bool value)
     }
     analysisConfig()->setAnnotateDriftAtBoundaries(value);
     emit annotateDriftAtBoundariesChanged();
+}
+
+void ComposingPreferencesModel::setUseRegionalAccumulation(bool value)
+{
+    if (useRegionalAccumulation() == value) {
+        return;
+    }
+    analysisConfig()->setUseRegionalAccumulation(value);
+    emit useRegionalAccumulationChanged();
 }
 
 // ── Mode prior setters ────────────────────────────────────────────────────────

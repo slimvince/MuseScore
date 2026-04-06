@@ -46,8 +46,25 @@ enum class ChordQuality {
 struct ChordAnalysisTone {
     int pitch = 0;      // MIDI playback pitch (ppitch — honours ottavas and transpositions)
     int tpc = -1;       // MuseScore TPC (0–34, circle-of-fifths spelling). -1 = not provided.
-    double weight = 1;  // Relative evidence weight (future: populate from duration/beat)
+    double weight = 1;  // Relative evidence weight (duration × metric weight, normalised to [0,1])
     bool isBass = false;
+
+    // ── Regional accumulation fields (§4.1c) ───────────────────────────────
+    // Populated by collectRegionTones(); 0 when using the legacy single-tick path.
+
+    /// Total duration of this pitch class within the harmonic region, in ticks.
+    /// Summed across all voices and all note events that fall within [startTick, endTick).
+    int durationInRegion = 0;
+
+    /// Number of distinct metric positions (beat onsets) within the region at
+    /// which this pitch class appears in at least one voice.  Used by Pass 2
+    /// (repetition boost) to reward pitch classes that recur at multiple beats.
+    int distinctMetricPositions = 0;
+
+    /// Maximum number of voices in which this pitch class sounds simultaneously
+    /// at any single tick within the region.  Used by Pass 3 (cross-voice boost)
+    /// to reward pitch classes reinforced by multiple voices at once.
+    int simultaneousVoiceCount = 0;
 };
 
 // ── Extension bitmask ────────────────────────────────────────────────────────
@@ -223,6 +240,17 @@ struct ChordAnalyzerPreferences {
     /// Default: 0.0 — fully remove the bonus so the non-bass alternative wins.
     double inversionBonusReduction = 0.0;
 
+    // ── Harmonic boundary detection (§4.1c) ────────────────────────────────
+
+    /// Jaccard distance threshold for the beat-window boundary detector.
+    /// Jaccard distance = 1 - |A∩B| / |A∪B| where A and B are the pitch-class
+    /// bitsets of two consecutive quarter-note windows.
+    /// Values in [0,1]; 0 = identical harmony, 1 = no shared pitch classes.
+    /// 0.6 catches strong harmonic changes while ignoring ornamental tones.
+    /// Only used when useRegionalAccumulation is true.
+    /// Range: 0.0–1.0.  Default: 0.6.
+    double harmonicBoundaryJaccardThreshold = 0.6;
+
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -263,8 +291,9 @@ struct ChordAnalyzerPreferences {
             { "stepwiseBassInversionBonus",    { 0.0, 2.0 } },
             { "stepwiseBassLookaheadBonus",    { 0.0, 2.0 } },
             { "sameRootInversionBonus",        { 0.0, 2.0 } },
-            { "inversionSuspicionMargin",      { 0.0, 2.0 } },
-            { "inversionBonusReduction",       { 0.0, 1.0 } },
+            { "inversionSuspicionMargin",           { 0.0, 2.0 } },
+            { "inversionBonusReduction",            { 0.0, 1.0 } },
+            { "harmonicBoundaryJaccardThreshold",   { 0.0, 1.0 } },
         };
     }
 };

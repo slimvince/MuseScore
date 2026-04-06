@@ -70,6 +70,10 @@ public:
     void setAnnotateDriftAtBoundaries(bool value) override;
     muse::async::Notification annotateDriftAtBoundariesChanged() const override;
 
+    bool useRegionalAccumulation() const override;
+    void setUseRegionalAccumulation(bool value) override;
+    muse::async::Notification useRegionalAccumulationChanged() const override;
+
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
     muse::async::Notification showKeyModeInStatusBarChanged() const override;
@@ -208,6 +212,7 @@ private:
     muse::async::Notification m_minimizeTuningDeviationChanged;
     muse::async::Notification m_annotateTuningOffsetsChanged;
     muse::async::Notification m_annotateDriftAtBoundariesChanged;
+    muse::async::Notification m_useRegionalAccumulationChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_showChordSymbolsInStatusBarChanged;
     muse::async::Notification m_showRomanNumeralsInStatusBarChanged;

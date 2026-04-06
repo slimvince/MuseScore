@@ -45,11 +45,15 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/icomposinganalysisconfiguration.h"
+#include "modularity/ioc.h"
 
 using mu::notation::internal::staffIsEligible;
 using mu::notation::internal::SoundingNote;
 using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
+using mu::notation::internal::collectRegionTones;
+using mu::notation::internal::detectHarmonicBoundariesJaccard;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::isDiatonicStep;
@@ -94,10 +98,125 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     resolveKeyAndMode(score, startTick, refStaff, excludeStaves,
                       keyFifths, keyMode, keyConfidence);
 
-    // ── Pass 1: detect boundaries and analyze ────────────────────────────────
-    // At each ChordRest segment, collect the sounding pitch-class set (as a
-    // 12-bit bitset).  When it differs from the previous set, we have a new
-    // harmonic boundary.  Run chord analysis at each boundary.
+    // ── Read analysis preferences ────────────────────────────────────────────
+    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> composingConfig;
+    const auto* cfg = composingConfig.get().get();
+    const bool useRegional = (cfg == nullptr) || cfg->useRegionalAccumulation();
+
+    // Shared helpers used by both code paths.
+    const auto chordAnalyzer = ChordAnalyzerFactory::create();
+    static constexpr int kMinRegionTicks = Constants::DIVISION;  // 1 quarter note
+
+    // Helper: apply Pass 3 (absorb short regions) to a region list in-place.
+    auto absorbShortRegions = [](std::vector<HarmonicRegion>& regions) {
+        if (regions.size() <= 1) {
+            return;
+        }
+        std::vector<HarmonicRegion> filtered;
+        filtered.push_back(std::move(regions[0]));
+        for (size_t i = 1; i < regions.size(); ++i) {
+            const int duration = regions[i].endTick - regions[i].startTick;
+            if (duration < kMinRegionTicks) {
+                filtered.back().endTick = regions[i].endTick;
+            } else {
+                filtered.push_back(std::move(regions[i]));
+            }
+        }
+        regions = std::move(filtered);
+    };
+
+    // ── §4.1c regional accumulation path ────────────────────────────────────
+    if (useRegional) {
+        const double jaccardThreshold = 0.6;  // TODO: read from ChordAnalyzerPreferences
+
+        // B.4: detect boundaries via Jaccard distance on quarter-note windows.
+        const auto boundaryTicks = detectHarmonicBoundariesJaccard(
+            score, startTick, endTick, excludeStaves, jaccardThreshold);
+
+        ChordTemporalContext temporalCtx
+            = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
+        std::optional<KeyModeAnalysisResult> prevKeyResult;
+
+        std::vector<HarmonicRegion> regions;
+        regions.reserve(boundaryTicks.size());
+
+        for (size_t i = 0; i < boundaryTicks.size(); ++i) {
+            const Fraction regionStart = boundaryTicks[i];
+            const Fraction regionEnd   = (i + 1 < boundaryTicks.size())
+                                         ? boundaryTicks[i + 1] : endTick;
+
+            // B.3: collect accumulated pitch evidence for this region.
+            auto tones = collectRegionTones(score,
+                                            regionStart.ticks(),
+                                            regionEnd.ticks(),
+                                            excludeStaves);
+            if (tones.empty()) {
+                continue;
+            }
+
+            // Update temporal context with this region's bass.
+            int currentBassPc = -1;
+            for (const auto& t : tones) {
+                if (t.isBass) { currentBassPc = t.pitch % 12; break; }
+            }
+            temporalCtx.bassIsStepwiseFromPrevious =
+                (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
+                && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
+
+            int localKeyFifths = keyFifths;
+            KeySigMode localKeyMode = keyMode;
+            double localKeyConfidence = 0.0;
+            double localKeyScore = 0.0;
+            resolveKeyAndMode(score, regionStart, refStaff, excludeStaves,
+                              localKeyFifths, localKeyMode, localKeyConfidence,
+                              prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
+                              &localKeyScore);
+
+            const auto results = chordAnalyzer->analyzeChord(
+                tones, localKeyFifths, localKeyMode, &temporalCtx);
+
+            if (results.empty()) {
+                continue;  // < 3 distinct pitch classes
+            }
+
+            temporalCtx.previousRootPc  = results.front().identity.rootPc;
+            temporalCtx.previousQuality = results.front().identity.quality;
+            temporalCtx.previousBassPc  = results.front().identity.bassPc;
+
+            KeyModeAnalysisResult kmResult;
+            kmResult.keySignatureFifths   = localKeyFifths;
+            kmResult.mode                 = localKeyMode;
+            kmResult.normalizedConfidence = localKeyConfidence;
+            kmResult.score                = localKeyScore;
+            prevKeyResult = kmResult;
+
+            // Collapse same-chord consecutive regions (keep endTick of the later one).
+            if (!regions.empty()
+                && regions.back().chordResult.identity.rootPc == results.front().identity.rootPc
+                && regions.back().chordResult.identity.quality == results.front().identity.quality) {
+                regions.back().endTick = regionEnd.ticks();
+            } else {
+                HarmonicRegion region;
+                region.startTick     = regionStart.ticks();
+                region.endTick       = regionEnd.ticks();
+                region.chordResult   = results.front();
+                region.keyModeResult = kmResult;
+                region.tones         = std::move(tones);
+                regions.push_back(std::move(region));
+            }
+        }
+
+        if (regions.empty()) {
+            return {};
+        }
+
+        // Pass 3: absorb regions shorter than 1 quarter note.
+        absorbShortRegions(regions);
+        return regions;
+    }
+
+    // ── Legacy per-tick bitset path ──────────────────────────────────────────
+    // Detect boundaries whenever the sounding pitch-class set changes.
 
     struct BoundaryAnalysis {
         Fraction tick;
@@ -123,7 +242,6 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
 
     std::optional<KeyModeAnalysisResult> prevKeyResult;
-    const auto chordAnalyzer = ChordAnalyzerFactory::create();
 
     for (const Segment* s = seg;
          s && s->tick() < endTick;
@@ -216,24 +334,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     }
 
     // ── Pass 3: absorb short regions (passing tones, ornaments) ──────────────
-    static constexpr int kMinRegionTicks = Constants::DIVISION;  // 1 quarter note
-
-    if (regions.size() > 1) {
-        std::vector<HarmonicRegion> filtered;
-        filtered.push_back(std::move(regions[0]));
-
-        for (size_t i = 1; i < regions.size(); ++i) {
-            const int duration = regions[i].endTick - regions[i].startTick;
-            if (duration < kMinRegionTicks) {
-                filtered.back().endTick = regions[i].endTick;
-            } else {
-                filtered.push_back(std::move(regions[i]));
-            }
-        }
-
-        regions = std::move(filtered);
-    }
-
+    absorbShortRegions(regions);
     return regions;
 }
 

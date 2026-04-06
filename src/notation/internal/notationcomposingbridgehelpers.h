@@ -99,6 +99,40 @@ inline bool isDiatonicStep(int pc1, int pc2) {
     return interval == 1 || interval == 2;
 }
 
+/// Collect and accumulate pitch evidence for the harmonic region [startTick, endTick).
+///
+/// Walks all ChordRest segments in the region across eligible staves.  For each
+/// note event, computes a base weight = (durationInRegion / regionDuration) × beatWeight.
+/// Aggregates evidence by pitch class, then applies:
+///   Pass 2 — repetition boost: weight × (1 + 0.3 × (distinctMetricPositions − 1))
+///   Pass 3 — cross-voice boost: weight × 1.5 when simultaneousVoiceCount > 1
+/// Weights are normalised to sum to 1.0 before return.
+///
+/// Returns one ChordAnalysisTone per distinct pitch class, with all §4.1c fields
+/// populated.  Returns empty vector when the region contains no audible notes.
+std::vector<mu::composing::analysis::ChordAnalysisTone>
+collectRegionTones(const mu::engraving::Score* sc,
+                   int startTick,
+                   int endTick,
+                   const std::set<size_t>& excludeStaves);
+
+/// Detect harmonic region boundaries using Jaccard distance on quarter-note windows.
+///
+/// Divides [startTick, endTick) into Constants::DIVISION-tick (1 quarter note) windows.
+/// Collects the set of pitch classes that attack in each window.  Fires a boundary at
+/// the start of a window when Jaccard(prevWindow, currentWindow) >= jaccardThreshold,
+/// where Jaccard = 1 − |A∩B| / |A∪B|.  When no boundary fires, the current window's
+/// pitch classes are merged into the running "previous" set so that accumulated harmony
+/// is compared against the next window.
+///
+/// Returns a sorted list of boundary ticks.  The first element is always startTick.
+std::vector<mu::engraving::Fraction>
+detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& startTick,
+                                const mu::engraving::Fraction& endTick,
+                                const std::set<size_t>& excludeStaves,
+                                double jaccardThreshold);
+
 /// Find the previous chord's temporal context by walking backward from seg.
 /// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
 /// or -1 if not yet known.  Used to compute bassIsStepwiseFromPrevious.
