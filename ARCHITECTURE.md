@@ -820,6 +820,193 @@ public:
 };
 ```
 
+#### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)
+
+**Status: Implemented (2026-04-06).** Bridge: `analyzeHarmonicRhythmJazz()` + `scoreHasChordSymbols()` + `collectChordSymbolBoundaries()` in `notationharmonicrhythmbridge.cpp` / `notationcomposingbridgehelpers.cpp`. Batch: `analyzeScoreJazz()` + `scoreHasChordSymbols()` in `batch_analyze.cpp`. `HarmonicRegion` extended with `fromChordSymbol` and `writtenRootPc`. FiloSax/FiloBass validation unblocked.
+
+##### Problem
+
+The classical §4.1c Jaccard boundary detection is unsuitable for jazz scores because:
+
+1. Jazz scores already contain explicit harmonic annotations — the written chord symbols
+   (e.g. `Dm7`, `G7`, `CMaj7`) are ground truth for region boundaries and root identity.
+   Inferring boundaries from pitch-class Jaccard distance is redundant and error-prone.
+2. Jazz harmony uses voicings where the written root is frequently absent from the sounding
+   notes (shell voicings: root + 3rd + 7th only; rootless voicings). The vertical note-set
+   approach systematically misidentifies these.
+3. Monophonic melodic lines (saxophone, bass) cannot produce the 3 simultaneous pitch
+   classes required by the current 3-PC minimum.
+
+##### Detection gate
+
+Jazz mode activates automatically when **chord symbols (`Harmony` elements) are present
+in the score**. Detection algorithm:
+
+```cpp
+// In notationharmonicrhythmbridge.cpp (or a new notationjazzrhythmbridge.cpp)
+bool scoreHasChordSymbols(const Score* score,
+                          const Fraction& startTick,
+                          const Fraction& endTick) {
+    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        for (const EngravingItem* ann : s->annotations()) {
+            if (ann->isHarmony()) return true;
+        }
+    }
+    return false;
+}
+```
+
+This is a scan over `segment->annotations()` — O(n_segments). Called once per
+`analyzeHarmonicRhythm()` invocation before the main boundary-detection loop.
+If `true`, the jazz path runs; otherwise the classical Jaccard path runs.
+
+##### Jazz boundary extraction
+
+Instead of Jaccard distance, region boundaries are the ticks of `Harmony` elements.
+Each `Harmony` on a `ChordRest` segment defines a new harmonic region starting at
+that segment's tick and ending at the next `Harmony` tick (or `endTick`).
+
+```cpp
+std::vector<Fraction> collectChordSymbolBoundaries(
+    const Score* score,
+    const Fraction& startTick,
+    const Fraction& endTick)
+{
+    std::vector<Fraction> ticks;
+    ticks.push_back(startTick);
+    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        for (const EngravingItem* ann : s->annotations()) {
+            if (ann->isHarmony() && s->tick() > startTick) {
+                ticks.push_back(s->tick());
+                break;
+            }
+        }
+    }
+    return ticks;  // already sorted
+}
+```
+
+##### Root identity from chord symbol
+
+For jazz regions, the root pitch class is read directly from `Harmony::rootTpc()` rather
+than inferred from accumulated notes. `tpc2pc(rootTpc)` gives the pitch class (0–11).
+
+```cpp
+const Harmony* h = toHarmony(ann);
+int rootPc = tpc2pc(h->rootTpc());   // pitch class 0–11
+int bassPc  = (h->bassTpc() != Tpc::TPC_INVALID)
+              ? tpc2pc(h->bassTpc())
+              : rootPc;              // no slash → bass = root
+```
+
+Quality comes from `h->parsedForm()` (the `ParsedChord` struct) or from
+looking up `h->id()` in the chord description table via `score->chordList()`.
+For the initial implementation, map the DCML chord kind to `ChordQuality`:
+
+| Written symbol | `ParsedChord` kind | `ChordQuality` |
+|---------------|-------------------|----------------|
+| `Cmaj`, `C` | `major` | `Major` |
+| `Cm`, `Cmin` | `minor` | `Minor` |
+| `C7` | `dominant` | `Dominant7` |
+| `Cmaj7`, `CΔ7` | `major-seventh` | `Major7` |
+| `Cm7` | `minor-seventh` | `Minor7` |
+| `Cø7`, `Cm7b5` | `half-diminished` | `HalfDiminished` |
+| `Co7` | `diminished-seventh` | `Diminished7` |
+| `Csus4`, `Csus` | `suspended-fourth` | `Suspended4` |
+| (others) | — | `Unknown` |
+
+##### Accumulated-note analysis (optional)
+
+For jazz regions where we have the written root from the chord symbol, we can still
+run `collectRegionTones()` and `analyzeChord()` as a secondary analysis to:
+- Detect the actual voicing (which extensions are present)
+- Compute `chordScoreMargin` for confidence display
+- Identify rootless voicings (root absent from sounding notes)
+
+The primary `HarmonicRegion.chordResult.identity.rootPc` is set from the chord symbol,
+not from the analyzer. The analyzer result is stored as a secondary annotation.
+
+This keeps the jazz path simple and correct while still populating the analysis fields
+that the chord staff and status bar display use.
+
+##### Integration point
+
+`analyzeHarmonicRhythm()` in `notationharmonicrhythmbridge.cpp` gains a third branch:
+
+```cpp
+const bool hasChordSymbols = scoreHasChordSymbols(score, startTick, endTick);
+
+if (hasChordSymbols) {
+    // §4.1c Jazz path — chord-symbol-driven boundaries
+    return analyzeHarmonicRhythmJazz(score, startTick, endTick, excludeStaves);
+} else if (useRegional) {
+    // §4.1c Classical path — Jaccard boundaries + regional accumulation
+    ...
+} else {
+    // Legacy path — per-tick bitset
+    ...
+}
+```
+
+The jazz path can live in `notationharmonicrhythmbridge.cpp` as a static helper,
+or in a new `notationjazzrhythmbridge.cpp` if it grows large.
+
+##### Files to touch
+
+| File | Change |
+|------|--------|
+| `notationharmonicrhythmbridge.cpp` | Add `scoreHasChordSymbols()`, third branch in `analyzeHarmonicRhythm()` |
+| `notationcomposingbridgehelpers.h/.cpp` | Add `collectChordSymbolBoundaries()` |
+| `engraving/dom/harmony.h` | Read-only — `rootTpc()`, `bassTpc()`, `parsedForm()` |
+| `HarmonicRegion` struct | Add `chordSymbolSource` flag (or keep implicit) |
+| Tests | New `P7_JazzMode` test suite in `synthetic_tests.cpp` |
+
+No changes to `ChordAnalyzer`, `KeyModeAnalyzer`, or any composing-module files.
+The jazz path is entirely in the bridge layer, consistent with principle 2.2.
+
+##### Open questions before implementation
+
+1. **Quality mapping completeness:** The `ParsedChord` kind strings are not fully
+   documented in a single place. Need to enumerate all kinds in `chordlist.xml` and
+   map each to `ChordQuality`. Low risk — `Unknown` is a safe fallback.
+2. **Multi-staff chord symbols:** If chord symbols appear on multiple staves
+   (e.g. piano + chord staff), pick the one on the lowest non-excluded staff at each
+   tick. Duplicates at the same tick collapse to one region.
+3. **Chord symbol gaps:** Some jazz scores have chord symbols only on section starts,
+   not every chord change. The `collectChordSymbolBoundaries()` function already handles
+   this correctly — a region with no chord symbol simply extends from the previous one.
+4. **Interaction with `useRegionalAccumulation`:** The jazz detection gate
+   (`hasChordSymbols`) takes priority over `useRegionalAccumulation`. A score with
+   chord symbols always uses the jazz path, regardless of the preference setting.
+
+#### Known limitation — dominant seventh / Mixolydian ambiguity
+
+A dominant seventh chord (major triad + minor seventh) is the characteristic chord of
+Mixolydian mode. When such a chord appears in isolation or without sufficient surrounding
+diatonic context, the key analyzer may briefly declare Mixolydian even in a major-key
+passage. This produces false-positive Mixolydian detections (observed in Grieg corpus
+validation 2026-04-06: 32 cases / ~7% of disagreements).
+
+This is **not a prior calibration problem**. Adjusting the Mixolydian prior would either
+suppress genuine Mixolydian detection (lower prior) or increase false positives (higher
+prior). The correct fix is requiring more sustained evidence of the lowered 7th scale
+degree before declaring Mixolydian — an evidence-threshold improvement in `KeyModeAnalyzer`
+scoring, deferred to a future session.
+
+The same structural ambiguity applies to the Lydian raised 4th (an augmented fourth
+interval may appear briefly in major passages) but at much lower false-positive rates
+(12 cases in Grieg vs 32 for Mixolydian) because the raised 4th is less common in
+incidental voice leading than the dominant seventh.
+
+**Validated correct behaviour:** Lydian detection in Chopin (4.2% of regions) and
+Grieg (11.9%) reflects genuine raised-4th passages. Dorian detection (5.2% Grieg,
+5.9% Chopin) similarly reflects real modal content. The Mixolydian false-positive
+rate (7%) is a known, bounded limitation — not evidence of a miscalibrated prior.
+
 ### 4.3 ChordSymbolFormatter
 
 **File:** `src/composing/analysis/chordanalyzer.h` (namespace within)
@@ -3384,6 +3571,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673); previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
+*Document version: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673); previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

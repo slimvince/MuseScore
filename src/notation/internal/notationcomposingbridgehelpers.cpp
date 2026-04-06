@@ -36,6 +36,7 @@
 #include <set>
 
 #include "engraving/dom/chord.h"
+#include "engraving/dom/harmony.h"
 #include "engraving/dom/key.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
@@ -827,6 +828,46 @@ findTemporalContext(const mu::engraving::Score* sc,
     // two-pass chord staff analysis only. Deferred — see §4.1b.
 
     return temporalCtx;
+}
+
+// ── §4.1c Jazz mode — chord-symbol boundary helpers ─────────────────────────
+
+bool scoreHasChordSymbols(const mu::engraving::Score* score,
+                          const mu::engraving::Fraction& startTick,
+                          const mu::engraving::Fraction& endTick)
+{
+    using namespace mu::engraving;
+    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        for (const EngravingItem* ann : s->annotations()) {
+            if (ann->isHarmony()) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+std::vector<mu::engraving::Fraction>
+collectChordSymbolBoundaries(const mu::engraving::Score* score,
+                             const mu::engraving::Fraction& startTick,
+                             const mu::engraving::Fraction& endTick)
+{
+    using namespace mu::engraving;
+    std::vector<Fraction> ticks;
+    ticks.push_back(startTick);
+    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        for (const EngravingItem* ann : s->annotations()) {
+            if (ann->isHarmony() && s->tick() > startTick) {
+                ticks.push_back(s->tick());
+                break;  // one boundary per segment tick
+            }
+        }
+    }
+    return ticks;  // already sorted (segment iteration is tick-ordered)
 }
 
 } // namespace mu::notation::internal

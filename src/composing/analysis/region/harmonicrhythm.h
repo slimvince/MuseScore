@@ -44,6 +44,14 @@ struct HarmonicRegion {
     ChordAnalysisResult chordResult;                ///< Root, quality, extensions, degree
     KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
     std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
+
+    // ── §4.1c Jazz mode fields ──────────────────────────────────────────────
+    /// True when this region was produced by the chord-symbol (jazz) path.
+    /// False (default) when produced by Jaccard or legacy pitch-class detection.
+    bool fromChordSymbol = false;
+    /// Root pitch class (0–11) read directly from the written chord symbol.
+    /// -1 when fromChordSymbol is false or when the chord symbol had no parseable root.
+    int writtenRootPc = -1;
 };
 
 } // namespace mu::composing::analysis

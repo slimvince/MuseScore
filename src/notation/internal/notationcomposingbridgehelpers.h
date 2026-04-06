@@ -133,6 +133,22 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 double jaccardThreshold);
 
+/// Returns true if any Harmony (chord symbol) annotation exists on any ChordRest
+/// segment in [startTick, endTick).  O(n_segments).  Call once per
+/// analyzeHarmonicRhythm() invocation to select the jazz vs. classical path.
+bool scoreHasChordSymbols(const mu::engraving::Score* score,
+                          const mu::engraving::Fraction& startTick,
+                          const mu::engraving::Fraction& endTick);
+
+/// Collect sorted boundary ticks from Harmony annotations in [startTick, endTick).
+/// The first element is always startTick.  Each subsequent element is the tick of
+/// the first Harmony annotation found on a ChordRest segment strictly after the
+/// previous boundary tick.  Duplicates at the same tick collapse to one entry.
+std::vector<mu::engraving::Fraction>
+collectChordSymbolBoundaries(const mu::engraving::Score* score,
+                             const mu::engraving::Fraction& startTick,
+                             const mu::engraving::Fraction& endTick);
+
 /// Find the previous chord's temporal context by walking backward from seg.
 /// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
 /// or -1 if not yet known.  Used to compute bassIsStepwiseFromPrevious.
