@@ -113,9 +113,9 @@ public:
     virtual void setTuningMode(mu::composing::intonation::TuningMode mode) = 0;
     virtual muse::async::Notification tuningModeChanged() const = 0;
 
-    /// When true, TonicAnchored retuning may rewrite sustained events with
+    /// When true, region retuning may rewrite sustained events with
     /// split-and-slur, including converting existing tie boundaries into slurs
-    /// when region retuning needs independent playback events.
+    /// when the continuation needs an independent playback event.
     /// Default: true, matching existing sustained-note behavior.
     virtual bool allowSplitSlurOfSustainedEvents() const = 0;
     virtual void setAllowSplitSlurOfSustainedEvents(bool value) = 0;

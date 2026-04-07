@@ -282,7 +282,7 @@ BaseSection {
             width: root.columnWidth
             text: qsTrc("preferences", "Allow split/slurring of sustained events for retuning")
             checked: root.allowSplitSlurOfSustainedEvents
-            enabled: root.analyzeForChordFunction && root.tuningMode === 0
+            enabled: root.analyzeForChordFunction
             navigation.name: "AllowSplitSlurOfSustainedEventsCheckBox"
             navigation.panel: root.navigation
             onClicked: {

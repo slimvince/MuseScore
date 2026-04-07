@@ -69,7 +69,7 @@ void configureTuning(mu::composing::intonation::TuningMode mode,
     config->setUseRegionalAccumulation(true);
 }
 
-Note* noteAt(MasterScore* score, const Fraction& tick, track_idx_t track = kTopTrack)
+Chord* chordAt(MasterScore* score, const Fraction& tick, track_idx_t track = kTopTrack)
 {
     Measure* measure = score->tick2measure(tick);
     if (!measure) {
@@ -86,7 +86,39 @@ Note* noteAt(MasterScore* score, const Fraction& tick, track_idx_t track = kTopT
         return nullptr;
     }
 
-    return toChord(chordRest)->upNote();
+    return toChord(chordRest);
+}
+
+Note* noteAt(MasterScore* score, const Fraction& tick, track_idx_t track = kTopTrack)
+{
+    Chord* chord = chordAt(score, tick, track);
+    return chord ? chord->upNote() : nullptr;
+}
+
+bool chordHasAnyTie(const Chord* chord)
+{
+    if (!chord) {
+        return false;
+    }
+    for (const Note* note : chord->notes()) {
+        if (note->tieFor() || note->tieBack()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool anyTuningDifference(const Chord* first, const Chord* second)
+{
+    if (!first || !second || first->notes().size() != second->notes().size()) {
+        return false;
+    }
+    for (size_t index = 0; index < first->notes().size(); ++index) {
+        if (std::abs(first->notes()[index]->tuning() - second->notes()[index]->tuning()) > 0.5) {
+            return true;
+        }
+    }
+    return false;
 }
 
 int countChordStarts(MasterScore* score, track_idx_t track = kTopTrack)
@@ -167,6 +199,125 @@ TEST_F(Notation_TuningTests, FreeDriftKeepsNonTiedSustainedNoteWhole)
     EXPECT_EQ(countSlurs(score), 0);
     EXPECT_TRUE(noteAt(score, Fraction(0, 1)));
     EXPECT_FALSE(noteAt(score, Fraction(2, 4)));
+
+    delete score;
+}
+
+TEST_F(Notation_TuningTests, FreeDriftKeepsSimpleTieChainWholeWhenSplitPreferenceDisabled)
+{
+    configureTuning(mu::composing::intonation::TuningMode::FreeDrift, false);
+
+    MasterScore* score = ScoreRW::readScore(u"preserve_tie_chain.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_EQ(countChordStarts(score), 2);
+    ASSERT_EQ(countSlurs(score), 0);
+
+    applyRegionTuningForWholeScore(score);
+
+    EXPECT_EQ(countChordStarts(score), 2);
+    EXPECT_EQ(countSlurs(score), 0);
+
+    Note* firstNote = noteAt(score, Fraction(0, 1));
+    Note* secondNote = noteAt(score, Fraction(2, 4));
+    ASSERT_TRUE(firstNote);
+    ASSERT_TRUE(secondNote);
+    ASSERT_TRUE(firstNote->tieFor());
+    ASSERT_TRUE(secondNote->tieBack());
+    EXPECT_NEAR(firstNote->tuning(), secondNote->tuning(), 0.5);
+
+    delete score;
+}
+
+TEST_F(Notation_TuningTests, FreeDriftSplitsNonTiedSustainedChordWhenSplitPreferenceEnabled)
+{
+    configureTuning(mu::composing::intonation::TuningMode::FreeDrift, true);
+
+    MasterScore* score = ScoreRW::readScore(u"freedrift_split_sustained_chord.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_EQ(countChordStarts(score), 1);
+    ASSERT_EQ(countSlurs(score), 0);
+
+    applyRegionTuningForWholeScore(score);
+
+    EXPECT_EQ(countChordStarts(score), 2);
+    EXPECT_EQ(countSlurs(score), 1);
+
+    Chord* firstChord = chordAt(score, Fraction(0, 1));
+    Chord* secondChord = chordAt(score, Fraction(2, 4));
+    ASSERT_TRUE(firstChord);
+    ASSERT_TRUE(secondChord);
+    EXPECT_FALSE(chordHasAnyTie(firstChord));
+    EXPECT_FALSE(chordHasAnyTie(secondChord));
+    EXPECT_TRUE(anyTuningDifference(firstChord, secondChord));
+
+    delete score;
+}
+
+TEST_F(Notation_TuningTests, FreeDriftKeepsNonTiedSustainedChordWholeWhenSplitPreferenceDisabled)
+{
+    configureTuning(mu::composing::intonation::TuningMode::FreeDrift, false);
+
+    MasterScore* score = ScoreRW::readScore(u"freedrift_split_sustained_chord.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_EQ(countChordStarts(score), 1);
+    ASSERT_EQ(countSlurs(score), 0);
+
+    applyRegionTuningForWholeScore(score);
+
+    EXPECT_EQ(countChordStarts(score), 1);
+    EXPECT_EQ(countSlurs(score), 0);
+    EXPECT_TRUE(chordAt(score, Fraction(0, 1)));
+    EXPECT_FALSE(chordAt(score, Fraction(2, 4)));
+
+    delete score;
+}
+
+TEST_F(Notation_TuningTests, FreeDriftSplitsTieChainAtExistingBoundaryWhenSplitPreferenceEnabled)
+{
+    configureTuning(mu::composing::intonation::TuningMode::FreeDrift, true);
+
+    MasterScore* score = ScoreRW::readScore(u"freedrift_split_tie_chain.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_EQ(countChordStarts(score), 2);
+    ASSERT_EQ(countSlurs(score), 0);
+
+    applyRegionTuningForWholeScore(score);
+
+    EXPECT_EQ(countChordStarts(score), 2);
+    EXPECT_EQ(countSlurs(score), 1);
+
+    Chord* firstChord = chordAt(score, Fraction(0, 1));
+    Chord* secondChord = chordAt(score, Fraction(2, 4));
+    ASSERT_TRUE(firstChord);
+    ASSERT_TRUE(secondChord);
+    EXPECT_FALSE(chordHasAnyTie(firstChord));
+    EXPECT_FALSE(chordHasAnyTie(secondChord));
+    EXPECT_TRUE(anyTuningDifference(firstChord, secondChord));
+
+    delete score;
+}
+
+TEST_F(Notation_TuningTests, FreeDriftKeepsTieChainWholeWhenSplitPreferenceDisabled)
+{
+    configureTuning(mu::composing::intonation::TuningMode::FreeDrift, false);
+
+    MasterScore* score = ScoreRW::readScore(u"freedrift_split_tie_chain.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_EQ(countChordStarts(score), 2);
+    ASSERT_EQ(countSlurs(score), 0);
+
+    applyRegionTuningForWholeScore(score);
+
+    EXPECT_EQ(countChordStarts(score), 2);
+    EXPECT_EQ(countSlurs(score), 0);
+
+    Chord* firstChord = chordAt(score, Fraction(0, 1));
+    Chord* secondChord = chordAt(score, Fraction(2, 4));
+    ASSERT_TRUE(firstChord);
+    ASSERT_TRUE(secondChord);
+    EXPECT_TRUE(chordHasAnyTie(firstChord));
+    EXPECT_TRUE(chordHasAnyTie(secondChord));
+    EXPECT_FALSE(anyTuningDifference(firstChord, secondChord));
 
     delete score;
 }

@@ -1317,10 +1317,11 @@ The preferences are organised into three sections: Analysis, Status bar, and Cho
   scale-degree position above the mode tonic (§11.2a)
 - `tuningMode` (int, default 0 = TonicAnchored) — high-level drift behavior:
   0 = Tonic-anchored (current behavior), 1 = Free drift (see §11.3f)
-- `allowSplitSlurOfSustainedEvents` (bool, default true) — allows TonicAnchored
-  retuning to rewrite sustained events into independent playback events when later
-  harmony requires different tuning; applies to both single sustained notes and tied
-  chains at existing tie boundaries, but anchors still protect the full written duration
+- `allowSplitSlurOfSustainedEvents` (bool, default true) — allows region retuning
+  to rewrite sustained events into independent playback events when a continuation
+  needs different tuning; applies to both single sustained notes and tied chains at
+  existing tie boundaries in both TonicAnchored and FreeDrift, but anchors still
+  protect the full written duration
 - `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
   chord so the chord hovers near 0¢ while preserving internal JI ratios
 - `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
@@ -2249,13 +2250,16 @@ element below the chord in the score (one per chord voice, space-separated round
 values) for each chord processed in Phase 2 and Phase 3 of the tuning algorithm.
 
 **Allow split/slurring of sustained events for retuning**
-(`allowSplitSlurOfSustainedEvents`, default on): in TonicAnchored mode, lets region
-tuning rewrite sustained events when a later harmonic region needs an independent
-playback event with a different tuning. For an untied sustained note this is the
-existing split-and-slur behavior. For a tied chain, the bridge may reuse an existing
-tie boundary: the tie that crosses the region boundary is removed and replaced with a
-slur so the later segment can carry its own tuning. If the preference is off, the whole
-sustained event remains one tuning event.
+(`allowSplitSlurOfSustainedEvents`, default on): lets region tuning rewrite sustained
+events when a later harmonic region needs an independent playback event with a
+different tuning. In TonicAnchored mode this is the region-local retuning behavior
+already described above. In FreeDrift mode it means that a sustained event may be
+rewritten only when the continuation's target tuning differs meaningfully from the
+carried tuning. For an untied sustained note this uses split-and-slur at the region
+boundary. For a tied chain, the bridge may reuse an existing tie boundary: the tie
+that crosses the region boundary is removed and replaced with a slur so the later
+segment can carry its own tuning. If the preference is off, the whole sustained event
+remains one tuning event in both modes.
 
 **Anchor override:** anchor expressions (`alt. rif.` and the other Italian forms)
 protect the full written duration of the sustained event. An anchored sustained note is
@@ -2676,9 +2680,12 @@ pulling other notes back to 12-TET. Anchor notes are excluded from P1 held-note
 selection and annotated with a `*` suffix in cent annotations.
 
 **Key differences from TonicAnchored:**
-- Sustained notes are **never split** in FreeDrift mode (Phase 3 is skipped).
-  Held notes carry their existing tuning into the new region, providing the
+- Held notes carry their existing tuning into the new region first, providing the
   drift baseline for other voices.
+- If `allowSplitSlurOfSustainedEvents` is off, sustained events remain whole.
+- If `allowSplitSlurOfSustainedEvents` is on, a sustained event may be rewritten
+  only when the continuation target differs from the carried tuning. This applies
+  to both untied sustained notes and tied chains at existing tie boundaries.
 - When no held note exists (no P1 candidate), drift resets to 0.0 (same
   as a fresh TonicAnchored computation without the rootOffset term).
 

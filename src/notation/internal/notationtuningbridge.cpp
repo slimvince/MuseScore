@@ -961,12 +961,18 @@ bool applyRegionTuning(mu::engraving::Score* score,
                                     continue;
                                 }
 
-                                double tieOffset = 0.0;
-                                if (computeTieChainOffset(authorityNote, tuningSystem, tonicAnchored,
-                                                          tuningMode, tieOffset)) {
-                                    sum += tieOffset;
+                                if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift
+                                    && tieRoot->chord()
+                                    && tieRoot->chord()->tick() < rStart) {
+                                    sum += authorityNote->tuning();
                                     ++cnt;
+                                    continue;
                                 }
+
+                                const double tieOffset = desiredOffset(authorityNote->ppitch())
+                                    + driftAdjustment;
+                                sum += tieOffset;
+                                ++cnt;
                                 continue;
                             }
                             if (hasTuningAnchorExpression(n)) {
@@ -1012,33 +1018,46 @@ bool applyRegionTuning(mu::engraving::Score* score,
                             const Note* fullTieRoot = firstNonPartialTiedNote(n);
                             const Note* fullAuthorityNote = authorityNoteForTieChain(n);
                             const bool tieChainHasAnchor = hasTuningAnchorExpression(fullAuthorityNote);
+                            const Note* regionTieRoot = firstNonPartialTiedNoteInRegion(n, rStart);
+                            const bool boundaryCrossesRegion = regionTieRoot->tieBackNonPartial()
+                                && regionTieRoot->tieBackNonPartial()->startNote()
+                                && regionTieRoot->tieBackNonPartial()->startNote()->chord()
+                                && regionTieRoot->tieBackNonPartial()->startNote()->chord()->tick() < rStart;
                             const bool allowTieBoundarySegmentation
-                                = allowSplitSlurOfSustainedEvents && !tieChainHasAnchor;
-                            const Note* tieRoot = allowTieBoundarySegmentation
-                                ? firstNonPartialTiedNoteInRegion(n, rStart)
-                                : fullTieRoot;
+                                = boundaryCrossesRegion && allowSplitSlurOfSustainedEvents && !tieChainHasAnchor;
+                            const Note* tieRoot = allowTieBoundarySegmentation ? regionTieRoot : fullTieRoot;
                             if (processedTieRoots.count(tieRoot)) {
                                 continue;
                             }
                             processedTieRoots.insert(tieRoot);
 
-                            if (allowTieBoundarySegmentation
-                                && tieRoot->tieBackNonPartial()
-                                && tieRoot->tieBackNonPartial()->startNote()
-                                && tieRoot->tieBackNonPartial()->startNote()->chord()
-                                && tieRoot->tieBackNonPartial()->startNote()->chord()->tick() < rStart) {
-                                if (retuneAtExistingTieBoundary(score, const_cast<Note*>(tieRoot))) {
-                                    anyApplied = true;
-                                }
-                            }
-
                             const Note* authorityNote = allowTieBoundarySegmentation
                                 ? tieRoot
                                 : fullAuthorityNote;
+
                             double tieOffset = 0.0;
-                            if (!computeTieChainOffset(authorityNote, tuningSystem, tonicAnchored,
-                                                       tuningMode, tieOffset)) {
+                            if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift) {
+                                // In FreeDrift, carried tie chains stay whole unless the
+                                // user explicitly allows a boundary rewrite and the
+                                // continuation really needs a different tuning.
+                                if (boundaryCrossesRegion && !allowTieBoundarySegmentation) {
+                                    continue;
+                                }
+                                tieOffset = finalOffset(authorityNote->ppitch());
+                            } else if (!computeTieChainOffset(authorityNote, tuningSystem, tonicAnchored,
+                                                              tuningMode, tieOffset)) {
                                 continue;
+                            }
+
+                            if (allowTieBoundarySegmentation
+                                && std::abs(regionTieRoot->tuning() - tieOffset) < kEpsilonCents) {
+                                continue;
+                            }
+
+                            if (allowTieBoundarySegmentation) {
+                                if (retuneAtExistingTieBoundary(score, const_cast<Note*>(regionTieRoot))) {
+                                    anyApplied = true;
+                                }
                             }
 
                             std::vector<Note*> tiedNotes = allowTieBoundarySegmentation
@@ -1129,13 +1148,10 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
         // ── Phase 3: sustained notes (started before this region) ────────
         //
-        // In FreeDrift mode sustained notes are never split: the drift
-        // reference is derived from their existing tuning (Phase 2 above),
-        // and they continue to sound at that tuning unchanged.
-        // TonicAnchored mode also skips score mutation when the user disables
-        // sustained-event split/slur rewriting.
-        if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift
-            || !allowSplitSlurOfSustainedEvents) {
+        // Score mutation for sustained untied notes happens only when the user
+        // allows sustained-event rewriting. In both modes, the continuation is
+        // rewritten only if its target tuning differs from the carried tuning.
+        if (!allowSplitSlurOfSustainedEvents) {
             continue;
         }
 
