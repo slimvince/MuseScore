@@ -186,7 +186,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const mu::engraving::Score* score,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
-    const std::set<size_t>& excludeStaves)
+    const std::set<size_t>& excludeStaves,
+    HarmonicRegionGranularity granularity)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -256,13 +257,53 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         regions = std::move(filtered);
     };
 
+    auto denseBoundaryTicks = [&]() {
+        std::vector<Fraction> boundaries;
+        boundaries.push_back(startTick);
+
+        uint16_t prevBits = 0;
+        bool havePrevious = false;
+
+        for (const Segment* s = seg;
+             s && s->tick() < endTick;
+             s = s->next1(SegmentType::ChordRest)) {
+            std::vector<SoundingNote> sounding;
+            collectSoundingAt(score, s, excludeStaves, sounding);
+            if (sounding.empty()) {
+                continue;
+            }
+
+            uint16_t bits = 0;
+            for (const SoundingNote& sn : sounding) {
+                bits |= static_cast<uint16_t>(1u << (sn.ppitch % 12));
+            }
+
+            if (!havePrevious) {
+                prevBits = bits;
+                havePrevious = true;
+                continue;
+            }
+
+            if (bits == prevBits) {
+                continue;
+            }
+
+            boundaries.push_back(s->tick());
+            prevBits = bits;
+        }
+
+        return boundaries;
+    };
+
     // ── §4.1c regional accumulation path ────────────────────────────────────
     if (useRegional) {
         const double jaccardThreshold = 0.6;  // TODO: read from ChordAnalyzerPreferences
 
         // B.4: detect boundaries via Jaccard distance on quarter-note windows.
-        const auto boundaryTicks = detectHarmonicBoundariesJaccard(
-            score, startTick, endTick, excludeStaves, jaccardThreshold);
+        const auto boundaryTicks = (granularity == HarmonicRegionGranularity::PreserveAllChanges)
+            ? denseBoundaryTicks()
+            : detectHarmonicBoundariesJaccard(
+                score, startTick, endTick, excludeStaves, jaccardThreshold);
 
         ChordTemporalContext temporalCtx
             = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
@@ -322,7 +363,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             prevKeyResult = kmResult;
 
             // Collapse same-chord consecutive regions (keep endTick of the later one).
-            if (!regions.empty()
+            if (granularity == HarmonicRegionGranularity::Smoothed
+                && !regions.empty()
                 && regions.back().chordResult.identity.rootPc == results.front().identity.rootPc
                 && regions.back().chordResult.identity.quality == results.front().identity.quality) {
                 regions.back().endTick = regionEnd.ticks();
@@ -342,7 +384,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         }
 
         // Pass 3: absorb regions shorter than 1 quarter note.
-        absorbShortRegions(regions);
+        if (granularity == HarmonicRegionGranularity::Smoothed) {
+            absorbShortRegions(regions);
+        }
         return regions;
     }
 
@@ -448,7 +492,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                                    ? boundaries[i + 1].tick
                                    : endTick;
 
-        if (!regions.empty()
+        if (granularity == HarmonicRegionGranularity::Smoothed
+            && !regions.empty()
             && regions.back().chordResult.identity.rootPc == boundaries[i].chordResult.identity.rootPc
             && regions.back().chordResult.identity.quality == boundaries[i].chordResult.identity.quality) {
             regions.back().endTick = regionEnd.ticks();
@@ -465,7 +510,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     }
 
     // ── Pass 3: absorb short regions (passing tones, ornaments) ──────────────
-    absorbShortRegions(regions);
+    if (granularity == HarmonicRegionGranularity::Smoothed) {
+        absorbShortRegions(regions);
+    }
     return regions;
 }
 

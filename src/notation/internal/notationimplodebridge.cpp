@@ -111,7 +111,12 @@ mu::engraving::Chord* addChordChainFromPitches(
         return nullptr;
     }
 
-    Segment* seg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    Measure* startMeasure = sc->tick2measure(startTick);
+    if (!startMeasure) {
+        return nullptr;
+    }
+
+    Segment* seg = startMeasure->undoGetSegment(SegmentType::ChordRest, startTick);
     if (!seg) {
         return nullptr;
     }
@@ -173,7 +178,7 @@ mu::engraving::Chord* addChordChainFromPitches(
                 }
 
                 // Re-fetch segment after rest creation.
-                seg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+                seg = m->undoGetSegment(SegmentType::ChordRest, startTick);
                 if (!seg) {
                     return nullptr;
                 }
@@ -281,7 +286,8 @@ mu::engraving::Chord* addChordChainFromPitches(
         tick       = chunkTick;
 
         if (remaining > Fraction(0, 1)) {
-            seg = sc->tick2segment(tick, true, SegmentType::ChordRest);
+            Measure* nextMeasure = sc->tick2measure(tick);
+            seg = nextMeasure ? nextMeasure->undoGetSegment(SegmentType::ChordRest, tick) : nullptr;
             if (!seg) {
                 break;
             }
@@ -329,7 +335,8 @@ bool populateChordTrack(
 
     // ── Analyze ──────────────────────────────────────────────────────────────
     auto regions = analyzeHarmonicRhythm(score, startTick, endTick,
-                                         excludeStaves);
+                                         excludeStaves,
+                                         HarmonicRegionGranularity::PreserveAllChanges);
     if (regions.empty()) {
         return false;
     }
@@ -872,7 +879,8 @@ bool populateChordTrack(
         }
 
         // ── Harmony elements ─────────────────────────────────────────────
-        Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
+        Measure* regionMeasure = score->tick2measure(rStart);
+        Segment* seg = regionMeasure ? regionMeasure->undoGetSegment(SegmentType::ChordRest, rStart) : nullptr;
         if (!seg) {
             continue;
         }

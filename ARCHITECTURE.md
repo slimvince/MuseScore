@@ -356,7 +356,7 @@ A "bridge function" is a free function that:
 
 | File | Declares/defines | Called by |
 |------|-----------------|-----------|
-| `notationcomposingbridge.h` | Declares `harmonicAnnotation()`, `analyzeNoteHarmonicContext()`, `analyzeHarmonicRhythm()` | `notationaccessibility.cpp`, `notationinteraction.cpp`, `notationcontextmenumodel.cpp`, `notationimplodebridge.cpp`, `notationtuningbridge.cpp` |
+| `notationcomposingbridge.h` | Declares `harmonicAnnotation()`, `analyzeNoteHarmonicContext()`, `analyzeHarmonicRhythm()`, and `HarmonicRegionGranularity` | `notationaccessibility.cpp`, `notationinteraction.cpp`, `notationcontextmenumodel.cpp`, `notationimplodebridge.cpp`, `notationtuningbridge.cpp` |
 | `notationcomposingbridge.cpp` | `harmonicAnnotation()` — status bar string<br>`analyzeNoteHarmonicContext()` — single-note analysis | (implements declarations above) |
 | `notationharmonicrhythmbridge.cpp` | `analyzeHarmonicRhythm()` — time-range harmonic scanner | (implements declaration above) |
 | `notationcomposingbridgehelpers.h/.cpp` | Shared bridge helpers: `collectSoundingAt()`, `buildTones()`, `collectPitchContext()`, `resolveKeyAndMode()`, `findTemporalContext()`, … | `notationcomposingbridge.cpp`, `notationharmonicrhythmbridge.cpp` |
@@ -646,6 +646,9 @@ quarter-note window PC bitsets: `distance = 1 − |A∩B| / |A∪B|`. Threshold 
 
 **Sustained notes:** Notes that attack before `startTick` and are held into the
 region are captured by a backward walk (matching the `collectSoundingAt` pattern).
+This carry-in collection runs even when there is already a `ChordRest` segment exactly
+at `startTick`, so region analysis keeps pedal/support tones that continue across beat
+boundaries.
 
 **New API:**
 - `collectRegionTones(score, startTick, endTick, excludeStaves)` — implemented in
@@ -986,6 +989,237 @@ The jazz path is entirely in the bridge layer, consistent with principle 2.2.
    (`hasChordSymbols`) takes priority over `useRegionalAccumulation`. A score with
    chord symbols always uses the jazz path, regardless of the preference setting.
 
+#### §4.1d Monophonic Chord Inference — Provisional Phased Plan
+
+**Status:** provisional design note. Do not treat this section as a frozen
+implementation plan until Phase 1a validation has been run on annotated
+monophonic jazz material. The purpose of this section is to define the intended
+architecture and the next validation steps, not to claim that a dedicated
+monophonic engine is already required.
+
+**End-state architecture:**
+Monophonic and arpeggiated chord inference should use a separate internal engine
+from the current vertical chord analyzer, but both should be hidden behind one
+unified orchestration layer.
+
+This separation is necessary because the two engines use different evidence
+models:
+- the vertical engine reasons from simultaneous pitch-class evidence, bass-root
+  relations, and sonority-template matching
+- the monophonic engine must reason from temporal accumulation, structural-note
+  weighting, subset matching, and implied rather than explicit simultaneity
+
+The unified orchestration layer should expose one harmonic-analysis entry point
+to the rest of the system. Status-bar analysis, chord-staff population, tuning,
+and validation tooling should not need to know which internal engine produced
+the result.
+
+**Shared context:**
+Key/mode inference remains shared. The existing key/mode analyzer already
+provides a broader temporal prior than chord identity and should be reused by
+both vertical and monophonic chord inference. A separate monophonic mode
+analyzer is not planned for the initial implementation.
+
+**Score metadata:**
+Fields such as `fromChordSymbol` and `writtenRootPc` are score metadata rather
+than engine metadata. The unified orchestration layer must preserve them
+regardless of which analysis engine produced the winning harmonic result.
+
+### Phase 1a — Validate Existing Chord-Symbol-Driven Path
+
+Before implementing a dedicated monophonic engine, validate how far the current
+chord-symbol-driven region path already solves the annotated monophonic case.
+
+The existing chord-symbol-driven path already provides:
+- written chord-symbol boundaries
+- regional pitch accumulation within those boundaries
+- shared key/mode prior resolution
+- existing chord scoring on the accumulated regional note set
+
+Phase 1a should evaluate this path on annotated monophonic jazz corpora.
+
+**Primary targets:**
+- Charlie Parker Omnibook-style scores with embedded chord symbols
+- FiloSax / FiloBass-style corpora or equivalent note streams aligned with
+  harmonic labels
+
+**Phase 1a question:**
+How much of the annotated monophonic jazz problem is already solved by the
+current chord-symbol-driven harmonic-region pipeline?
+
+**Phase 1a success criterion:**
+Annotated monophonic jazz corpora either improve materially or already perform
+adequately under the current chord-symbol-driven path, without introducing
+meaningful regressions in existing polyphonic validation sets.
+
+If Phase 1a performs well, then the remaining monophonic problem is narrowed to
+unannotated single-line, arpeggiated, and compound-melody repertories. If it
+performs poorly, Phase 1b must be specified in response to the observed failure
+modes rather than from theory alone.
+
+Phase 1a validation results should be recorded in `STATUS.md` alongside the
+existing corpus-validation entries, using the same timestamp and git-hash
+discipline as other corpus runs.
+
+### Phase 1b — Minimal Monophonic Fallback Without Chord Symbols
+
+If Phase 1a shows that annotated monophonic material is largely handled, the
+next step is a minimal monophonic fallback for unannotated single-line or
+arpeggiated passages.
+
+This phase should remain intentionally modest:
+- simple boundary sources first
+- subset-based chord matching rather than full simultaneity requirements
+- bounded local-context expansion only when confidence is weak
+- lightweight smoothing heuristics rather than full sequence decoding
+
+**Boundary-source selection in Phase 1b:**
+Boundary choice should be repertoire- and texture-aware rather than globally
+ordered.
+
+Use:
+1. written chord symbols when present
+2. fine-grained Jaccard-style harmonic-boundary detection for faster harmonic
+   rhythm or classical material
+3. beat- or bar-quantized boundaries only as a simpler fallback for slower
+   harmonic-rhythm contexts
+
+Bar-quantized boundaries are intentionally not the default fallback for
+classical keyboard material, where within-bar harmony changes are common.
+
+**Subset-based matching in Phase 1b:**
+Phase 1b does not require three simultaneous pitch classes, but it also must not
+treat arbitrary one-note fragments as sufficient chord evidence.
+
+Initial rule:
+- 2 distinct pitch classes may nominate a candidate set
+- 2-PC evidence alone must not finalize a chord without contextual support
+- 1-PC evidence is insufficient for independent chord resolution and may only
+  participate in continuity-preserving abstention logic
+
+This keeps Phase 1b permissive enough to analyze broken-chord passages while
+avoiding over-interpretation of isolated tones.
+
+**Bounded expansion in Phase 1b:**
+Chord identity should remain local. When a local group is too weak to resolve,
+the analyzer may expand by one neighboring region and re-score. Expansion is
+bounded and should stop when:
+- confidence crosses threshold
+- top-vs-second margin crosses threshold
+- the same winner survives repeated expansion
+- the hard expansion cap is reached
+
+**Lightweight smoothing in Phase 1b:**
+Phase 1b should not implement full dynamic-programming or Viterbi decoding.
+Instead, it should use a simple continuity heuristic.
+
+Example intent:
+if the same chord wins strongly in adjacent groups, do not let one weak middle
+group overturn it unless the competing candidate wins by a substantial margin.
+
+These terms must be implemented as tunable parameters rather than prose-only
+rules.
+
+**Initial Phase 1b calibration parameters:**
+- `monoMinSubsetDistinctPcs` — initial default: 2
+- `monoWeakGroupConfidenceMax` — upper bound below which a local group is
+  treated as weak
+- `monoAdjacentAgreementMinConfidence` — minimum confidence required for the
+  neighboring groups to count as strong agreement
+- `monoWeakGroupOverrideMargin` — minimum margin required for a weak middle
+  group to overturn adjacent agreement
+- `monoExpansionMaxGroups` — hard cap on neighboring-group expansion
+
+As with other analyzer parameters, these should follow the existing
+preferences-and-`bounds()` pattern and remain explicitly calibratable.
+
+### Phase 2 — Full Monophonic Engine
+
+The full monophonic engine is still the intended long-term design, but it
+should follow Phase 1 validation rather than precede it.
+
+The full engine should add:
+- dedicated harmonic grouping from melodic structure
+- boundary scoring from duration, metric stress, rests, leaps, register shifts,
+  and pitch-class novelty
+- chord inference from weighted subsets rather than vertical simultaneity
+- sequence-level smoothing across neighboring groups
+- compound-melody handling for implied multiple voices in one line
+- explicit confidence calibration against the vertical engine
+
+The local grouping problem is intentionally deferred to Phase 2 because it is
+the hardest part of monophonic inference.
+
+### Unified Orchestration Layer
+
+The outer harmonic-analysis pipeline remains unified and selects among internal
+strategies.
+
+The orchestration layer should:
+1. gather texture facts for the requested span
+2. resolve shared key/mode prior
+3. run vertical analysis on the full texture where appropriate
+4. run monophonic analysis on individual staves or voices where appropriate
+5. compare calibrated confidence rather than raw internal scores
+6. return one ranked harmonic result list
+7. abstain when neither engine is sufficiently reliable
+
+**Mixed texture — explicit Phase 2 open question:**
+The most common unresolved orchestration problem is staff-level or voice-level
+mixed texture. A single passage may contain vertical evidence on one staff and
+arpeggiated or single-line evidence on another. The orchestrator must therefore
+eventually decide which staves or voices receive which analysis treatment.
+
+This is not required for Phase 1, but it is an explicit Phase 2 design question
+and should not be treated as solved by piece-level texture classification.
+
+### Confidence and Abstention
+
+The unified layer must not compare vertical and monophonic raw scores directly.
+The two engines use different evidence models and therefore require explicit
+confidence calibration.
+
+This remains an open design problem. Acceptable solutions include:
+- held-out corpus-based calibration
+- normalized confidence derived from score margin, coverage, and texture facts
+- a combination of both
+
+Abstention is a first-class outcome. It is preferable to emit no chord result
+than to emit a low-confidence result that later drives annotation or tuning
+incorrectly.
+
+### Interaction with Existing Temporal Context
+
+The monophonic path should reuse the same broad contextual ideas already used by
+the vertical path:
+- harmonic continuation
+- local stability versus change
+- cadence-like expectation
+- key/mode compatibility
+- continuity bonuses where musically justified
+
+This does not imply identical scoring formulas, but it does mean both engines
+should live inside one coherent harmonic-analysis framework rather than evolve
+as unrelated systems.
+
+### Implementation Priority
+
+**Immediate priority:**
+Run Phase 1a validation on annotated monophonic jazz material and let the corpus
+results determine whether a dedicated Phase 1b fallback is necessary.
+
+**Next priority:**
+If Phase 1a leaves clear failures on unannotated single-line passages, implement
+a minimal Phase 1b monophonic fallback with explicit thresholds and bounded
+behavior.
+
+**Later priority:**
+Implement the full monophonic engine for non-annotated and compound-melody
+repertoires.
+
+This ordering is intentional: it targets the fastest corpus-quality gains first
+while preserving the correct long-term architecture.
+
 #### Known limitation — dominant seventh / Mixolydian ambiguity
 
 A dominant seventh chord (major triad + minor seventh) is the characteristic chord of
@@ -1169,9 +1403,12 @@ bool populateChordTrack(
 ```
 
 `analyzeHarmonicRhythm()` scans all eligible staves, detects harmonic boundaries
-(ticks where the sounding pitch-class set changes), runs chord analysis at each
-boundary, and collapses consecutive same-chord regions.  Declared and defined in
-`mu::notation` (bridge pattern — requires engraving types `Score*`, `Fraction`).
+(ticks where the sounding pitch-class set changes), and runs chord analysis at each
+boundary. In its default smoothed mode it collapses consecutive same-chord regions and
+absorbs short regions; callers may instead request `HarmonicRegionGranularity::PreserveAllChanges`
+when every detected harmonic event must survive into output (the chord-staff populate
+path now does this). Declared and defined in `mu::notation` (bridge pattern — requires
+engraving types `Score*`, `Fraction`).
 
 `populateChordTrack()` clears the target grand-staff region and writes a harmonic
 reduction with the following layout:
@@ -1550,39 +1787,11 @@ Mode suffixes are abbreviated: "maj", "min", "Dor", "Phryg", "Lyd", "Mixolyd", "
 
 ### 5.5 Monophonic and Arpeggiated Input
 
-The current analyzer requires `distinctPcs >= 3`. Monophonic chord inference —
-inferring harmony from a single melodic instrument playing arpeggios — requires
-a different entry point.
-
-**Key concepts:**
-- **Note grouping** — determine which notes belong to the same harmonic unit
-  (metric position, register, repetition, duration are all cues)
-- **Subset matching** — identify chords consistent with the present notes, not
-  requiring an exact match
-- **Compound melody** — a single line that implies two or more independent voices
-  (Bach cello suites, violin partitas)
-
-**Planned interface:**
-
-```cpp
-class MonoAnalyzer {
-public:
-    // Group a melodic sequence into harmonic units
-    std::vector<HarmonicGroup> groupNotes(
-        const std::vector<MelodyNote>& notes,
-        const TimeSignature& meter,
-        const StyleContext& style
-    );
-
-    // Identify chord from incomplete note set (subset matching)
-    std::vector<ImpliedChord> identifyFromSubset(
-        const std::vector<Pitch>& presentNotes,
-        const KeyMode& key,
-        const HarmonicContext& context,
-        float minimumConfidence
-    );
-};
-```
+Monophonic and arpeggiated chord inference is now tracked under
+§4.1d. That section contains the current provisional phased plan,
+including the separate-engine / unified-orchestrator design,
+Phase 1a validation-first workflow, and the deferred full monophonic
+engine for unannotated material.
 
 ### 5.6 Extended Harmonic Functions — Planned
 
@@ -2304,6 +2513,17 @@ to a simultaneous solve across all voices at each harmonic region boundary.  The
 weight rather than a binary.  No implementation is planned yet — this section
 records the design space for future exploration.
 
+Another deferred design question is **which interval family to prefer for
+ambiguous sonorities**.  The current shipped tuning systems use fixed lookup
+tables (for example, 5-limit just intonation uses 9/5 for a minor seventh and
+15/8 for a major seventh) rather than a style-aware policy that can choose
+between alternatives such as 5-limit dominant sevenths versus septimal
+"harmonic sevenths" (7/4), or other competing targets for altered/extended
+sonorities.  This is not specific to seventh chords — similar ambiguity also
+appears in tritones, minor sonorities, diminished/augmented chords, and larger
+extensions.  This choice architecture should be explored later, but it is not a
+current implementation target.
+
 ### 11.2c Scoring Parameter Optimization Readiness (P8c)
 
 Both `ChordAnalyzerPreferences` and `KeyModeAnalyzerPreferences` expose a `bounds()` method that returns a `ParameterBoundsMap` — a `std::map<std::string, ParameterBound>` where each entry describes the valid range for one tunable parameter:
@@ -2841,10 +3061,13 @@ staff) within the selected time range, left to right, to identify every tick
 where the sounding pitch-class set changes — i.e. where any instrument starts or
 stops a note.  Each such tick is a potential chord boundary.
 
-Chord analysis runs at each boundary tick.  Consecutive boundaries that produce the
-**same root and quality** are collapsed into a single harmonic region.  This avoids
-unnecessary fragmentation: a string entrance that thickens a C major chord without
-changing the harmony does not create a new region.
+Chord analysis runs at each boundary tick. In the default smoothed mode,
+consecutive boundaries that produce the **same root and quality** are collapsed into a
+single harmonic region, and sub-quarter-note fragments are absorbed so tuning and other
+range operations do not overreact to ornaments. Chord-staff population uses the
+preserve-all mode instead: every detected harmonic event is kept, even when adjacent
+events share root and quality, and sustained carry-in notes still contribute at the new
+region start.
 
 The result is a sequence of harmonic regions, each with:
 - Start tick and end tick (duration = harmonic rhythm)

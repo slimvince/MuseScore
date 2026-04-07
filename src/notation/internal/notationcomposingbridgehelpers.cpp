@@ -475,7 +475,7 @@ collectRegionTones(const mu::engraving::Score* sc,
     }();
 
     const Segment* firstForward = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (firstForward && firstForward->tick() > startTick) {
+    if (firstForward) {
         // Walk backward to collect sustained notes.
         for (const Segment* s = firstForward->prev1(SegmentType::ChordRest);
              s && s->tick() >= backLimit;

@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — sustained-event retuning is now preference-controlled in both tuning modes for region tuning: untied sustained notes split/slur only when `allowSplitSlurOfSustainedEvents` is enabled and the continuation needs different tuning; tied chains may retune at existing tie boundaries by converting the crossing tie to a slur when independent playback is needed; anchors still protect the full written duration. `notation_tests` now contains 13 focused sustained-event regressions, all passing.*
+*Last updated: April 2026 — sustained-event retuning remains preference-controlled in both tuning modes, and chord-staff implosion now preserves every detected harmonic event instead of inheriting the smoothed tuning-style region merge. Notes sustained into a new beat are included reliably at region starts, and `notation_tests` now contains 15 focused notation-side regressions, all passing.*
 
 ---
 
@@ -12,7 +12,10 @@
 The Phase 1 analysis foundation is implemented and working. The status bar displays chord
 symbols, Roman numerals, and key/mode information on every note selection, using a 16-beat
 temporal window with time decay. The chord staff ("Implode to chord track") and region
-intonation ("Tune selection") are both in the Tools menu.
+intonation ("Tune selection") are both in the Tools menu. Chord-staff population now uses
+the preserve-all harmonic-event path rather than the smoothed region-tuning path, so
+beat-level harmony changes and sustained pedal/support tones are no longer dropped during
+implosion.
 
 **P3 (21-mode expansion) is complete.** `KeyModeAnalyzer` now evaluates all 21 modes
 (7 diatonic + 7 melodic minor family + 7 harmonic minor family). Mode priors are 21
@@ -72,6 +75,16 @@ includes non-tied sustained-note splitting, disabled split/slur behavior, tie-bo
 segmentation, disabled tie-chain segmentation, anchored sustained-note protection,
 anchored tie-chain protection, and FreeDrift on/off cases for both untied and tied
 sustained events. Current suite result: 13/13 passing in `notation_tests.exe`.
+
+**Chord-staff harmonic-event preservation fix is complete.** `populateChordTrack()` now
+requests `analyzeHarmonicRhythm(..., PreserveAllChanges)` so chord-staff output keeps every
+detected harmonic event instead of inheriting the smoothed region-tuning behavior.
+`collectRegionTones()` now always includes notes sustained into the region start, even when
+there is already a `ChordRest` segment exactly at that tick, and the implode writer creates
+or fetches exact region-start `ChordRest` segments before placing notes and Harmony
+annotations. Two notation-side implode regressions cover half-measure harmony changes and
+beat-by-beat changes supported by sustained pedal notes. Current `notation_tests.exe`
+result: 15/15 passing.
 
 **P8a (ChordAnalysisResult refactor) is complete.** `ChordAnalysisResult` now contains two
 nested sub-structs: `ChordIdentity` (pitch-content: score, rootPc, bassPc, bassTpc, quality,
@@ -168,7 +181,7 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | `analysis/` subdirectory layout | Done | reorganized into `chord/`, `key/`, `region/` subdirectories |
 | `ChordSymbolFormatter` | Done | chord symbols, Roman numerals, Nashville numbers |
 | Status bar integration | Done | `[C maj] Cmaj7 (IM7)` format; all display toggles in preferences |
-| Chord staff ("Implode to chord track") | Done | chord symbols, Roman numerals, Nashville, key annotations, borrowed chord labels, pivot detection, cadence markers |
+| Chord staff ("Implode to chord track") | Done | chord symbols, Roman numerals, Nashville, key annotations, borrowed chord labels, pivot detection, cadence markers; preserve-all harmonic events during implosion, including beat-level changes supported by sustained carry-in notes |
 | Region intonation ("Tune selection") | Done | split-and-slur; tonic-anchored JI; minimize-retune; cent annotation; preference-controlled sustained-event rewriting in both modes; tie chains can segment at existing tie boundaries when enabled; anchors protect full written duration |
 | Per-note tuning ("Tune as") | Done | context menu; explicit tuning system passed |
 | User preferences | Done | `IComposingAnalysisConfiguration` + `IComposingChordStaffConfiguration`; preferences page |
@@ -214,6 +227,11 @@ what is and is not done, relative to the planned design in §11.3a–11.3e.
 - Instrument sensitivity lookup by MuseScore instrument ID — §11.3c
 - `TuningSessionState` with global sensitivity and depth sliders — §11.3d
 - The complete 8-step algorithm integrating all of the above — §11.3e
+- Style-aware interval-family selection for ambiguous sonorities — deferred.
+  Current tuning uses fixed tables per tuning system; it does not yet choose
+  between alternatives such as 5-limit versus septimal dominant sevenths, nor
+  does it apply comparable policy decisions for other ambiguous chord types or
+  extensions. This is future exploration, not current work.
 
 The current implementation applies JI offsets independently per note with optional
 unweighted centering, plus preference-controlled sustained-event rewriting in region
@@ -252,7 +270,7 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
    no analyzer changes required
 8. **`TemporalContext` struct** — previous chord continuation scoring
 9. **Secondary dominants and non-diatonic Roman numerals** (§5.6)
-10. **Monophonic/arpeggiated chord inference** (§5.5)
+10. **Monophonic/arpeggiated chord inference** (§4.1d provisional phased plan; Phase 1a validation pending, with results to be recorded here using the usual timestamp/git-hash discipline)
 
 ---
 
@@ -929,6 +947,10 @@ FiloSax/FiloBass validation now unblocked.
 See ARCHITECTURE.md §4.1c for design.
 
 ### Step 3 — Jazz corpus and validation
+
+Phase 1a monophonic-jazz validation for the provisional §4.1d plan should be
+recorded in this section using the same timestamp and git-hash discipline as
+other corpus runs.
 
 **Why this ordering matters:**
 Jazz harmony has more inversions than classical. The §4.1b and §4.1c

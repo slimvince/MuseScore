@@ -46,6 +46,11 @@ class Fraction;
 
 namespace mu::notation {
 
+enum class HarmonicRegionGranularity {
+    Smoothed,
+    PreserveAllChanges,
+};
+
 /// Computes the harmonic annotation string appended to the status bar when a
 /// note is selected.  Returns "[Key] Sym [Roman] (score) | ..." or "" if no
 /// analysis is possible.
@@ -66,6 +71,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const mu::engraving::Score* score,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
-    const std::set<size_t>& excludeStaves = {});
+    const std::set<size_t>& excludeStaves = {},
+    HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed);
 
 } // namespace mu::notation
