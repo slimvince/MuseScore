@@ -87,7 +87,10 @@ pull requests are submitted.
   when a note is selected
 - **Intonation** — per-note and region tuning via split-and-slur; tonic-anchored JI
   places each chord root at its scale-degree position above the mode tonic rather than
-  always at 0¢; optional minimize-retune shift and per-note cent annotation in score
+  always at 0¢; optional minimize-retune shift and per-note cent annotation in score;
+  sustained-event rewriting is controlled by user preference, existing tie boundaries
+  may be converted to slurs when independent retuning is needed, and anchors protect
+  the full written duration from segmentation
 - **User preferences** — `IComposingAnalysisConfiguration` and
   `IComposingChordStaffConfiguration` expose analysis and output settings; preferences
   page in Edit → Preferences → Composing
@@ -1314,6 +1317,10 @@ The preferences are organised into three sections: Analysis, Status bar, and Cho
   scale-degree position above the mode tonic (§11.2a)
 - `tuningMode` (int, default 0 = TonicAnchored) — high-level drift behavior:
   0 = Tonic-anchored (current behavior), 1 = Free drift (see §11.3f)
+- `allowSplitSlurOfSustainedEvents` (bool, default true) — allows TonicAnchored
+  retuning to rewrite sustained events into independent playback events when later
+  harmony requires different tuning; applies to both single sustained notes and tied
+  chains at existing tie boundaries, but anchors still protect the full written duration
 - `minimizeTuningDeviation` (bool, default false) — subtract the mean offset per
   chord so the chord hovers near 0¢ while preserving internal JI ratios
 - `annotateTuningOffsets` (bool, default false) — add a staff text showing the cent
@@ -2241,6 +2248,21 @@ JI ratios.
 element below the chord in the score (one per chord voice, space-separated rounded cent
 values) for each chord processed in Phase 2 and Phase 3 of the tuning algorithm.
 
+**Allow split/slurring of sustained events for retuning**
+(`allowSplitSlurOfSustainedEvents`, default on): in TonicAnchored mode, lets region
+tuning rewrite sustained events when a later harmonic region needs an independent
+playback event with a different tuning. For an untied sustained note this is the
+existing split-and-slur behavior. For a tied chain, the bridge may reuse an existing
+tie boundary: the tie that crosses the region boundary is removed and replaced with a
+slur so the later segment can carry its own tuning. If the preference is off, the whole
+sustained event remains one tuning event.
+
+**Anchor override:** anchor expressions (`alt. rif.` and the other Italian forms)
+protect the full written duration of the sustained event. An anchored sustained note is
+never split, and an anchored tied chain is never segmented at a tie boundary even when
+`allowSplitSlurOfSustainedEvents` is enabled. If the anchor appears on any note in the
+tie chain, the chain remains one protected written-duration event.
+
 ### 11.2b Adaptive Tuning — Future Exploration
 
 The current tuning implementation computes offsets independently per note against
@@ -2438,10 +2460,20 @@ resonance — their overtones are interlaced and beats have disappeared. Both no
 near-zero budget and effectively become anchors for the new harmony to tune around. Neither
 note should be split; the new voices tune to them.
 
-**Tied notes:** A note explicitly tied across a harmonic boundary carries a compositional
-instruction of continuity. It must not be split. Its tuning is set at onset and protected
-thereafter — maximum budget of 1–2 cents regardless of duration. The new harmony tunes
-around it.
+**Tied notes:** A non-partial tie chain explicitly carries a compositional instruction of
+continuity. For region tuning, the entire non-partial tie chain is treated as one tuning
+event. The chain must not be split. Its tuning is set from a single authority note and
+protected thereafter; later harmonic regions tune around that established pitch.
+
+The authority note is chosen as follows:
+
+- If any note in the non-partial tie chain carries an `alt. rif.`-style anchor
+  expression, the earliest such note in the chain is authoritative.
+- Otherwise, the first note in the chain (the actual attack) is authoritative.
+
+The tuning offset is computed once from that authority note's harmonic context and applied
+unchanged to every note in the chain. If a user wants a sustained sound to be retuned when
+the harmony changes, they should replace the tie with a slur.
 
 **Unisons and octaves across voices:** Two or more notes sounding the same pitch class
 simultaneously (in unison or octave relationship) must receive identical tuning offsets.
@@ -2601,9 +2633,13 @@ retuning artifacts.
 Multiply all offsets by the global sensitivity parameter.
 
 **Step 7 — Determine which notes need splits**
-Notes with offsets exceeding `kEpsilonCents` (0.5 cents) and not tied need splitting. Tied
-notes never split — their tuning is set at onset only. Apply the split-and-slur mechanism
-(§11.4) for all notes requiring splits.
+Notes with offsets exceeding `kEpsilonCents` (0.5 cents) and not protected by anchor
+semantics may need independent playback events. Untied sustained notes use the normal
+split-and-slur mechanism. For tied sustained events, existing tie boundaries may be reused
+as segmentation points when preference and harmonic context allow; otherwise the tie chain
+remains one event and receives one chain-level tuning. Anchors override both cases and
+protect the full written duration from segmentation. Apply the split-and-slur mechanism
+(§11.4) for all notes requiring independent playback events.
 
 **Step 8 — Apply tuning offsets**
 Write final cent values to all notes via `undoChangeProperty(Pid::TUNING, ...)`.
@@ -2988,9 +3024,13 @@ descent).
 ### 11.6 Region Intonation
 
 Intonation over a region extends the single-note tuning workflow (§11.4) to a
-time range.  **Whatever the user selects gets tuned.**  No dedicated staff is
-needed — intonation is a playback-only concern that does not add visible notation
-beyond the split-and-slur artifacts.
+time range. No dedicated staff is needed — intonation is a playback-only concern
+that does not add visible notation beyond the split-and-slur artifacts.
+
+For ordinary untied notes, the user selection defines exactly what gets retuned.
+For non-partial tie chains, the chain is treated as an indivisible tuning event:
+if any note in the chain intersects the selected region, the tuning offset is
+applied to the entire chain, including members outside the selected span.
 
 #### Selection-based scoping
 
@@ -3006,6 +3046,10 @@ In every case the user selects what they want tuned; the tuning system is read f
 the user preference (§11.2a).  The analysis engine figures out the harmonic context
 at each tick, and the tuning logic handles the rest.
 
+For non-partial tie chains, the tuning annotation is placed at the first note in the
+chain even when that note lies outside the visible selection. This makes the one-event
+semantics explicit in the score.
+
 #### Algorithm
 
 1. **Harmonic rhythm detection** — same scan as §11.5: identify every tick in the
@@ -3013,15 +3057,20 @@ at each tick, and the tuning logic handles the rest.
    non-hidden tonal staves.  Run chord analysis at each boundary.  Collapse
    consecutive same-chord regions.
 2. **Compute tuning plan** — for each harmonic region and each sounding note in the
-   selected staves, compute the desired tuning offset.  Compare against the note's
-   current tuning.  Record which notes need changes and which sustained notes need
-   splits.
+  selected staves, compute the desired tuning offset. For non-partial tie chains,
+  choose the chain authority note (earliest anchor-marked note, otherwise first note
+  in the chain), compute the offset once from that authority note's harmonic context,
+  and reuse that same offset for every note in the chain. Compare against each note's
+  current tuning. Record which notes need changes and which sustained untied notes
+  need splits.
 3. **Execute splits** — because all boundaries are known upfront, the complete
    split plan is computed before any mutations.  Each sustained note crossing a
    region boundary is split-and-slurred once (§11.4 mechanics).  No cascading
    splits.
 4. **Apply tuning** — set cent offsets on all notes (attack and newly-split)
-   via `undoChangeProperty(Pid::TUNING, ...)`.
+  via `undoChangeProperty(Pid::TUNING, ...)`. If a non-partial tie chain intersects
+  the selected range, the final chain offset is written to every note in that chain,
+  even when some members lie outside the selection.
 
 The entire operation is one undo group.
 

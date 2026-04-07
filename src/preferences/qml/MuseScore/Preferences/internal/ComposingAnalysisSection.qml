@@ -36,6 +36,7 @@ BaseSection {
     property string tuningSystemKey
     property bool tonicAnchoredTuning
     property int  tuningMode          ///< 0 = TonicAnchored, 1 = FreeDrift
+    property bool allowSplitSlurOfSustainedEvents
     property bool minimizeTuningDeviation
     property bool annotateTuningOffsets
     property bool annotateDriftAtBoundaries
@@ -72,6 +73,7 @@ BaseSection {
     signal tuningSystemKeyChangeRequested(string key)
     signal tonicAnchoredTuningChangeRequested(bool value)
     signal tuningModeChangeRequested(int mode)
+    signal allowSplitSlurOfSustainedEventsChangeRequested(bool value)
     signal minimizeTuningDeviationChangeRequested(bool value)
     signal annotateTuningOffsetsChangeRequested(bool value)
     signal annotateDriftAtBoundariesChangeRequested(bool value)
@@ -273,6 +275,18 @@ BaseSection {
                     navigation.panel: root.navigation
                     onClicked: root.tuningModeChangeRequested(1)
                 }
+            }
+        }
+        CheckBox {
+            id: splitSlurSustainedEventsCheckBox
+            width: root.columnWidth
+            text: qsTrc("preferences", "Allow split/slurring of sustained events for retuning")
+            checked: root.allowSplitSlurOfSustainedEvents
+            enabled: root.analyzeForChordFunction && root.tuningMode === 0
+            navigation.name: "AllowSplitSlurOfSustainedEventsCheckBox"
+            navigation.panel: root.navigation
+            onClicked: {
+                root.allowSplitSlurOfSustainedEventsChangeRequested(!checked)
             }
         }
         CheckBox {

@@ -57,6 +57,9 @@ void ComposingPreferencesModel::setupConnections()
     analysisConfig()->tuningModeChanged().onNotify(this, [this]() {
         emit tuningModeChanged();
     });
+    analysisConfig()->allowSplitSlurOfSustainedEventsChanged().onNotify(this, [this]() {
+        emit allowSplitSlurOfSustainedEventsChanged();
+    });
     analysisConfig()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
         emit minimizeTuningDeviationChanged();
     });
@@ -163,6 +166,11 @@ bool ComposingPreferencesModel::tonicAnchoredTuning() const
 int ComposingPreferencesModel::tuningMode() const
 {
     return static_cast<int>(analysisConfig()->tuningMode());
+}
+
+bool ComposingPreferencesModel::allowSplitSlurOfSustainedEvents() const
+{
+    return analysisConfig()->allowSplitSlurOfSustainedEvents();
 }
 
 bool ComposingPreferencesModel::minimizeTuningDeviation() const
@@ -334,6 +342,15 @@ void ComposingPreferencesModel::setTuningMode(int mode)
     }
     analysisConfig()->setTuningMode(typedMode);
     emit tuningModeChanged();
+}
+
+void ComposingPreferencesModel::setAllowSplitSlurOfSustainedEvents(bool value)
+{
+    if (allowSplitSlurOfSustainedEvents() == value) {
+        return;
+    }
+    analysisConfig()->setAllowSplitSlurOfSustainedEvents(value);
+    emit allowSplitSlurOfSustainedEventsChanged();
 }
 
 void ComposingPreferencesModel::setMinimizeTuningDeviation(bool value)

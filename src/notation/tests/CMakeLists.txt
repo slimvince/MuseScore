@@ -21,14 +21,25 @@
 set(MODULE_TEST notation_tests)
 
 set(MODULE_TEST_SRC
+    ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/notationtuning_tests.cpp
+
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.cpp
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.h
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/mocks/engravingconfigurationmock.h
+
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationconfigurationmock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationinteractionmock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationselectionmock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationselectionrangemock.h
-    ${CMAKE_CURRENT_LIST_DIR}/mocks/controlledviewmock.h
 )
 
-set(MODULE_TEST_DATA_ROOT ${CMAKE_CURRENT_LIST_DIR})
+set(MODULE_TEST_DATA_ROOT "${CMAKE_CURRENT_LIST_DIR}/notationtuning_data")
 
-# At the moment no own tests
-# include(SetupGTest)
+set(MODULE_TEST_LINK
+    notation
+    composing
+    engraving
+)
+
+include(SetupGTest)

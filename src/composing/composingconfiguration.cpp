@@ -37,6 +37,7 @@ static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,       "composing/a
 static const Settings::Key TUNING_SYSTEM_KEY(module_name,           "composing/tuningSystemKey");
 static const Settings::Key TONIC_ANCHORED_TUNING(module_name,       "composing/tonicAnchoredTuning");
 static const Settings::Key TUNING_MODE(module_name,                  "composing/tuningMode");
+static const Settings::Key ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS(module_name, "composing/allowSplitSlurOfSustainedEvents");
 static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/minimizeTuningDeviation");
 static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
 static const Settings::Key ANNOTATE_DRIFT_AT_BOUNDARIES(module_name, "composing/annotateDriftAtBoundaries");
@@ -112,6 +113,11 @@ void ComposingConfiguration::init()
         Val(static_cast<int>(mu::composing::intonation::TuningMode::TonicAnchored)));
     settings()->valueChanged(TUNING_MODE).onReceive(nullptr, [this](const Val&) {
         m_tuningModeChanged.notify();
+    });
+
+    settings()->setDefaultValue(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS, Val(true));
+    settings()->valueChanged(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS).onReceive(nullptr, [this](const Val&) {
+        m_allowSplitSlurOfSustainedEventsChanged.notify();
     });
 
     settings()->setDefaultValue(MINIMIZE_TUNING_DEVIATION, Val(false));
@@ -388,6 +394,21 @@ void ComposingConfiguration::setTuningMode(mu::composing::intonation::TuningMode
 muse::async::Notification ComposingConfiguration::tuningModeChanged() const
 {
     return m_tuningModeChanged;
+}
+
+bool ComposingConfiguration::allowSplitSlurOfSustainedEvents() const
+{
+    return settings()->value(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS).toBool();
+}
+
+void ComposingConfiguration::setAllowSplitSlurOfSustainedEvents(bool value)
+{
+    settings()->setSharedValue(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::allowSplitSlurOfSustainedEventsChanged() const
+{
+    return m_allowSplitSlurOfSustainedEventsChanged;
 }
 
 // ── minimizeTuningDeviation ──────────────────────────────────────────────────

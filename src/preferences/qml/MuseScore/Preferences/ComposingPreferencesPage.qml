@@ -51,6 +51,7 @@ PreferencesPage {
             tuningSystemKey:         preferencesModel.tuningSystemKey
             tonicAnchoredTuning:     preferencesModel.tonicAnchoredTuning
             tuningMode:              preferencesModel.tuningMode
+            allowSplitSlurOfSustainedEvents: preferencesModel.allowSplitSlurOfSustainedEvents
             minimizeTuningDeviation: preferencesModel.minimizeTuningDeviation
             annotateTuningOffsets:        preferencesModel.annotateTuningOffsets
             annotateDriftAtBoundaries:    preferencesModel.annotateDriftAtBoundaries
@@ -90,6 +91,7 @@ PreferencesPage {
             onTuningSystemKeyChangeRequested:         function(key)   { preferencesModel.tuningSystemKey         = key   }
             onTonicAnchoredTuningChangeRequested:     function(value) { preferencesModel.tonicAnchoredTuning     = value }
             onTuningModeChangeRequested:              function(mode)  { preferencesModel.tuningMode              = mode  }
+            onAllowSplitSlurOfSustainedEventsChangeRequested: function(value) { preferencesModel.allowSplitSlurOfSustainedEvents = value }
             onMinimizeTuningDeviationChangeRequested: function(value) { preferencesModel.minimizeTuningDeviation = value }
             onAnnotateTuningOffsetsChangeRequested:        function(value) { preferencesModel.annotateTuningOffsets        = value }
             onAnnotateDriftAtBoundariesChangeRequested:    function(value) { preferencesModel.annotateDriftAtBoundaries    = value }

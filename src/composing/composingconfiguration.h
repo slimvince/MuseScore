@@ -58,6 +58,10 @@ public:
     void setTuningMode(mu::composing::intonation::TuningMode mode) override;
     muse::async::Notification tuningModeChanged() const override;
 
+    bool allowSplitSlurOfSustainedEvents() const override;
+    void setAllowSplitSlurOfSustainedEvents(bool value) override;
+    muse::async::Notification allowSplitSlurOfSustainedEventsChanged() const override;
+
     bool minimizeTuningDeviation() const override;
     void setMinimizeTuningDeviation(bool value) override;
     muse::async::Notification minimizeTuningDeviationChanged() const override;
@@ -209,6 +213,7 @@ private:
     muse::async::Notification m_tuningSystemKeyChanged;
     muse::async::Notification m_tonicAnchoredTuningChanged;
     muse::async::Notification m_tuningModeChanged;
+    muse::async::Notification m_allowSplitSlurOfSustainedEventsChanged;
     muse::async::Notification m_minimizeTuningDeviationChanged;
     muse::async::Notification m_annotateTuningOffsetsChanged;
     muse::async::Notification m_annotateDriftAtBoundariesChanged;

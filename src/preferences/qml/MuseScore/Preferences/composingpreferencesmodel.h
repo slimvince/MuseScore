@@ -44,6 +44,7 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
     Q_PROPERTY(bool tonicAnchoredTuning      READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
     Q_PROPERTY(int  tuningMode               READ tuningMode               WRITE setTuningMode               NOTIFY tuningModeChanged)
+    Q_PROPERTY(bool allowSplitSlurOfSustainedEvents READ allowSplitSlurOfSustainedEvents WRITE setAllowSplitSlurOfSustainedEvents NOTIFY allowSplitSlurOfSustainedEventsChanged)
     Q_PROPERTY(bool minimizeTuningDeviation  READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
     Q_PROPERTY(bool annotateTuningOffsets      READ annotateTuningOffsets      WRITE setAnnotateTuningOffsets      NOTIFY annotateTuningOffsetsChanged)
     Q_PROPERTY(bool annotateDriftAtBoundaries  READ annotateDriftAtBoundaries  WRITE setAnnotateDriftAtBoundaries  NOTIFY annotateDriftAtBoundariesChanged)
@@ -104,6 +105,7 @@ public:
     QString tuningSystemKey() const;
     bool tonicAnchoredTuning() const;
     int  tuningMode() const;
+    bool allowSplitSlurOfSustainedEvents() const;
     bool minimizeTuningDeviation() const;
     bool annotateTuningOffsets() const;
     bool annotateDriftAtBoundaries() const;
@@ -154,6 +156,7 @@ public slots:
     void setTuningSystemKey(const QString& key);
     void setTonicAnchoredTuning(bool value);
     void setTuningMode(int mode);
+    void setAllowSplitSlurOfSustainedEvents(bool value);
     void setMinimizeTuningDeviation(bool value);
     void setAnnotateTuningOffsets(bool value);
     void setAnnotateDriftAtBoundaries(bool value);
@@ -204,6 +207,7 @@ signals:
     void tuningSystemKeyChanged();
     void tonicAnchoredTuningChanged();
     void tuningModeChanged();
+    void allowSplitSlurOfSustainedEventsChanged();
     void minimizeTuningDeviationChanged();
     void annotateTuningOffsetsChanged();
     void annotateDriftAtBoundariesChanged();

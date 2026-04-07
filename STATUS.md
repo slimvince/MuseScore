@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — §4.1c jazz mode implemented. Chord-symbol-driven region boundaries active when score contains Harmony annotations; `scoreHasChordSymbols()` detection gate in bridge and batch_analyze; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` paths write `fromChordSymbol` and `writtenRootPc` to output; smoke test passes (4 regions, correct roots/qualities); 284 tests passing. FiloSax/FiloBass validation now unblocked.*
+*Last updated: April 2026 — sustained-event retuning is now preference-controlled in region tuning: untied sustained notes split/slur only when `allowSplitSlurOfSustainedEvents` is enabled; tied chains may retune at existing tie boundaries by converting the crossing tie to a slur when independent playback is needed; anchors still protect the full written duration. `notation_tests` now contains 8 focused sustained-event regressions, all passing.*
 
 ---
 
@@ -46,6 +46,22 @@ inserts a StaffText "d=+N" at each region boundary when |drift| ≥ 0.5 ¢.
 FreeDrift anchor semantics clarified: anchor notes are pitched at the current drift
 level (not reset to 0 ¢) and annotated with `*` suffix.
 280/280 tests passing.
+
+**Sustained-event split/slur preference iteration is complete.** `allowSplitSlurOfSustainedEvents`
+is wired through `IComposingAnalysisConfiguration` → `ComposingConfiguration` →
+`composingpreferencesmodel` → QML. In TonicAnchored mode the preference now controls
+whether sustained events may be rewritten for retuning. Untied sustained notes use the
+existing split-and-slur path when enabled. Non-partial tie chains now behave as follows:
+when enabled, a tie crossing a harmonic-region boundary may be removed and replaced by a
+slur so the later segment can carry independent tuning; when disabled, the chain remains
+one tuning event. Anchors override both cases and protect the full written duration.
+
+**Notation-side regression coverage for sustained events is now established.**
+`src/notation/tests/notationtuning_tests.cpp` and `src/notation/tests/notationtuning_data/`
+form an isolated regression island for notation-side retuning behavior. Current coverage
+includes non-tied sustained-note splitting, disabled split/slur behavior, tie-boundary
+segmentation, disabled tie-chain segmentation, anchored sustained-note protection, and
+anchored tie-chain protection. Current suite result: 8/8 passing in `notation_tests.exe`.
 
 **P8a (ChordAnalysisResult refactor) is complete.** `ChordAnalysisResult` now contains two
 nested sub-structs: `ChordIdentity` (pitch-content: score, rootPc, bassPc, bassTpc, quality,
@@ -92,10 +108,13 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 | JI offsets from tuning system lookup table | **Done** — `tuningSystem.tuningOffset()` |
 | Tonic-anchored root offset | **Done** — `tuningSystem.rootOffset()` added when `tonicAnchoredTuning` pref is on |
 | Basic (unweighted) zero-sum centering | **Done** — `minimizeTuningDeviation` pref; subtracts arithmetic mean of all note offsets (§11.3a basic form) |
-| Split-and-slur for sustained notes (TonicAnchored) | **Done** — Phase 3 in both `applyTuningAtNote` and `applyRegionTuning`; skipped in FreeDrift mode |
+| Split-and-slur for sustained notes (TonicAnchored) | **Done** — Phase 3 in both `applyTuningAtNote` and `applyRegionTuning`; in region tuning this is gated by `allowSplitSlurOfSustainedEvents`; skipped in FreeDrift mode |
+| Non-partial tie-chain continuity | **Done** — region tuning still computes one authority note per chain (earliest anchor in chain or first note), but when split/slur is enabled it may segment at an existing tie boundary by replacing the crossing tie with a slur; if disabled, the chain remains one event |
 | Tuning anchor expression (Italian forms) | **Done** — `kTuningAnchorKeywords` array; `hasTuningAnchorExpression()` / `computeSusceptibility()` wired in `applyTuningAtNote()` and `applyRegionTuning()` (Phases 2+3) |
+| Anchor override for sustained events | **Done** — anchored sustained notes and anchored tie chains remain whole protected written-duration events even when split/slur is enabled |
 | FreeDrift mode | **Done** — `TuningMode` enum; drift reference hierarchy P1→P2/P3; Phase 3 skipped |
 | Tuning mode selector (QML) | **Done** — two FlatButton widgets in ComposingAnalysisSection |
+| Sustained-event split/slur preference (QML) | **Done** — `allowSplitSlurOfSustainedEvents` wired through config/model/QML and used by region tuning |
 | Cent annotation on score | **Done** — `annotateTuningOffsets` pref adds StaffText labels |
 
 ### What is documented in §11.3a–11.3f but not yet implemented
@@ -140,7 +159,7 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | `ChordSymbolFormatter` | Done | chord symbols, Roman numerals, Nashville numbers |
 | Status bar integration | Done | `[C maj] Cmaj7 (IM7)` format; all display toggles in preferences |
 | Chord staff ("Implode to chord track") | Done | chord symbols, Roman numerals, Nashville, key annotations, borrowed chord labels, pivot detection, cadence markers |
-| Region intonation ("Tune selection") | Done | split-and-slur; tonic-anchored JI; minimize-retune; cent annotation |
+| Region intonation ("Tune selection") | Done | split-and-slur; tonic-anchored JI; minimize-retune; cent annotation; preference-controlled sustained-event rewriting; tie chains can segment at existing tie boundaries when enabled; anchors protect full written duration |
 | Per-note tuning ("Tune as") | Done | context menu; explicit tuning system passed |
 | User preferences | Done | `IComposingAnalysisConfiguration` + `IComposingChordStaffConfiguration`; preferences page |
 | Bridge architecture | Done | all bridge functions in `mu::notation`; split into single-note bridge + harmonic rhythm bridge + shared helpers; composing module has no engraving dependency |
@@ -162,18 +181,24 @@ The tuning system is partially implemented. The following is a precise account o
 what is and is not done, relative to the planned design in §11.3a–11.3e.
 
 **Implemented:**
-- Split-and-slur mechanism for applying different tuning to sustained notes
+- Split-and-slur mechanism for applying different tuning to sustained notes, gated in
+  region tuning by `allowSplitSlurOfSustainedEvents`
 - Per-note JI offset computation from tuning system lookup tables
 - Basic zero-sum centering (unweighted arithmetic mean subtracted from all offsets)
   — active when `minimizeTuningDeviation` preference is on
-- Expression-based tuning anchor (`anchor-pitch` keyword, P7)
+- Non-partial tie-chain continuity for region tuning: one authority note per chain
+  (earliest anchor-marked note or first note), one offset applied to the active tied
+  event, and tie boundaries may be reused as segmentation points by converting the
+  crossing tie to a slur when split/slur is enabled
+- Expression-based tuning anchor (Italian keyword forms, P7)
+- Anchor override for sustained events: anchored sustained notes and anchored tie chains
+  remain full-duration protected events even when split/slur is enabled
 - Epsilon threshold (0.5¢) — skips negligible changes
 
 **NOT implemented (planned in §11.3a–11.3e):**
 - Weighted centering by voice role (melody/bass/inner weights, inversion-aware
   bass weight) — §11.3b
 - Duration-based maximum adjustment budget — §11.3c
-- Tied note protection (`tieBack != nullptr` check) — §11.3c
 - Sustained perfect fifth/octave pair detection and protection — §11.3c
 - Unison/octave across voices as intentionally linked pairs — §11.3c
 - Instrument sensitivity lookup by MuseScore instrument ID — §11.3c
@@ -181,8 +206,10 @@ what is and is not done, relative to the planned design in §11.3a–11.3e.
 - The complete 8-step algorithm integrating all of the above — §11.3e
 
 The current implementation applies JI offsets independently per note with optional
-unweighted centering. The sophisticated algorithm in §11.3a–11.3e is designed but
-not yet implemented.
+unweighted centering, plus preference-controlled sustained-event rewriting in region
+tuning. Untied sustained notes may split/slur; tied chains may segment at existing tie
+boundaries; anchors override both and preserve the full written duration. The
+sophisticated algorithm in §11.3a–11.3e is designed but not yet implemented.
 
 ---
 
@@ -231,6 +258,10 @@ not yet implemented.
   substring; should be replaced with a Part-level flag (backlog)
 - **Mode restriction preference** — no user preference to restrict which modes
   `KeyModeAnalyzer` evaluates (backlog)
+- **Mixed sustained chords with ties** — if a sustained chord contains at least one
+  non-partial tie, Phase 3 region retuning skips splitting that chord entirely. This
+  preserves the tie-chain continuity rule, but untied neighbors in that same sustained
+  chord are not independently re-split by the current implementation.
 - **Cadence labels hardcoded in English** — PAC, HC, DC, PC not in translation system
   (backlog)
 - **MusicXML sus export bug** — C9sus2-style chords export with `text="92"`; upstream

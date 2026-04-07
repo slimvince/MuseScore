@@ -85,6 +85,136 @@ static const mu::composing::intonation::TuningSystem& preferredTuningSystem()
     return jiFallback;
 }
 
+bool noteHasNonPartialTie(const mu::engraving::Note* note)
+{
+    return note && (note->tieBackNonPartial() || note->tieForNonPartial());
+}
+
+const mu::engraving::Note* firstNonPartialTiedNote(const mu::engraving::Note* note)
+{
+    const mu::engraving::Note* current = note;
+    while (current && current->tieBackNonPartial() && current->tieBackNonPartial()->startNote()) {
+        current = current->tieBackNonPartial()->startNote();
+    }
+    return current;
+}
+
+const mu::engraving::Note* nextNonPartialTiedNote(const mu::engraving::Note* note)
+{
+    if (!note || !note->tieForNonPartial() || !note->tieForNonPartial()->endNote()) {
+        return nullptr;
+    }
+    return note->tieForNonPartial()->endNote();
+}
+
+const mu::engraving::Note* firstNonPartialTiedNoteInRegion(const mu::engraving::Note* note,
+                                                           const mu::engraving::Fraction& regionStart)
+{
+    const mu::engraving::Note* current = note;
+    while (current && current->tieBackNonPartial() && current->tieBackNonPartial()->startNote()) {
+        const mu::engraving::Note* previous = current->tieBackNonPartial()->startNote();
+        if (!previous->chord() || previous->chord()->tick() < regionStart) {
+            break;
+        }
+        current = previous;
+    }
+    return current;
+}
+
+std::vector<mu::engraving::Note*> collectNonPartialTieChain(mu::engraving::Note* note)
+{
+    std::vector<mu::engraving::Note*> chain;
+    for (mu::engraving::Note* current = const_cast<mu::engraving::Note*>(firstNonPartialTiedNote(note));
+         current;
+         current = const_cast<mu::engraving::Note*>(nextNonPartialTiedNote(current))) {
+        chain.push_back(current);
+    }
+    return chain;
+}
+
+std::vector<mu::engraving::Note*> collectNonPartialTieChainInRegion(mu::engraving::Note* note,
+                                                                    const mu::engraving::Fraction& regionStart,
+                                                                    const mu::engraving::Fraction& regionEnd)
+{
+    std::vector<mu::engraving::Note*> chain;
+    for (mu::engraving::Note* current = const_cast<mu::engraving::Note*>(firstNonPartialTiedNoteInRegion(note, regionStart));
+         current;
+         current = const_cast<mu::engraving::Note*>(nextNonPartialTiedNote(current))) {
+        if (!current->chord() || current->chord()->tick() >= regionEnd) {
+            break;
+        }
+        chain.push_back(current);
+    }
+    return chain;
+}
+
+const mu::engraving::Note* authorityNoteForTieChain(const mu::engraving::Note* note)
+{
+    const mu::engraving::Note* first = firstNonPartialTiedNote(note);
+    for (const mu::engraving::Note* current = first; current; current = nextNonPartialTiedNote(current)) {
+        if (mu::notation::hasTuningAnchorExpression(current)) {
+            return current;
+        }
+    }
+    return first;
+}
+
+bool computeTieChainOffset(const mu::engraving::Note* authorityNote,
+                           const mu::composing::intonation::TuningSystem& tuningSystem,
+                           bool tonicAnchored,
+                           mu::composing::intonation::TuningMode tuningMode,
+                           double& outOffset)
+{
+    using namespace mu::composing::analysis;
+    using namespace mu::composing::intonation;
+
+    if (!authorityNote || !authorityNote->visible() || !authorityNote->play()) {
+        return false;
+    }
+
+    if (mu::notation::hasTuningAnchorExpression(authorityNote)) {
+        outOffset = (tuningMode == TuningMode::FreeDrift) ? authorityNote->tuning() : 0.0;
+        return true;
+    }
+
+    int keyFifths = 0;
+    KeySigMode keyMode = KeySigMode::Ionian;
+    const auto results = mu::notation::analyzeNoteHarmonicContext(authorityNote, keyFifths, keyMode);
+    if (results.empty()) {
+        return false;
+    }
+
+    const auto& chordResult = results.front();
+
+    KeyModeAnalysisResult keyModeResult;
+    keyModeResult.keySignatureFifths = keyFifths;
+    keyModeResult.mode = keyMode;
+    {
+        const int ionianPc = ((keyFifths * 7) % 12 + 12) % 12;
+        keyModeResult.tonicPc = (ionianPc + keyModeTonicOffset(keyMode)) % 12;
+    }
+
+    const int semitones = semitoneFromPitches(authorityNote->ppitch() % 12,
+                                              chordResult.identity.rootPc);
+    outOffset = tuningSystem.tuningOffset(keyModeResult, chordResult.identity.quality,
+                                          chordResult.identity.rootPc, semitones);
+    if (tonicAnchored) {
+        outOffset += tuningSystem.rootOffset(keyModeResult, chordResult.identity.rootPc);
+    }
+
+    return true;
+}
+
+std::string formatTuningAnnotation(double offset, bool anchorAuthority)
+{
+    const int cents = static_cast<int>(std::round(offset));
+    std::string annotation = (cents >= 0 ? "+" : "") + std::to_string(cents);
+    if (anchorAuthority) {
+        annotation += "*";
+    }
+    return annotation;
+}
+
 // Walk the tieFor chain starting at @p root, calling @p fn on each Chord.
 template<typename Fn>
 void forEachChordInChain(mu::engraving::Chord* root, Fn fn)
@@ -236,6 +366,40 @@ void bridgeChains(mu::engraving::Score*  sc,
     slur->setStartElement(lastA);
     slur->setEndElement(chainB);
     sc->undoAddElement(slur);
+}
+
+bool retuneAtExistingTieBoundary(mu::engraving::Score* sc,
+                                 mu::engraving::Note* regionStartNote)
+{
+    using namespace mu::engraving;
+
+    if (!sc || !regionStartNote || !regionStartNote->tieBackNonPartial()) {
+        return false;
+    }
+
+    Note* previousNote = regionStartNote->tieBackNonPartial()->startNote();
+    Chord* currentChord = regionStartNote->chord();
+    Chord* previousChord = previousNote ? previousNote->chord() : nullptr;
+    if (!currentChord || !previousChord) {
+        return false;
+    }
+
+    bool removedAnyTie = false;
+    for (Note* note : currentChord->notes()) {
+        Tie* tieBack = note->tieBackNonPartial();
+        if (!tieBack || !tieBack->startNote() || tieBack->startNote()->chord() != previousChord) {
+            continue;
+        }
+        sc->undoRemoveElement(tieBack);
+        removedAnyTie = true;
+    }
+
+    if (!removedAnyTie) {
+        return false;
+    }
+
+    bridgeChains(sc, previousChord, currentChord);
+    return true;
 }
 
 /// Split a sustained chord at @p splitTick and apply tuning to the new portion.
@@ -607,6 +771,8 @@ bool applyRegionTuning(mu::engraving::Score* score,
     const bool minimizeRetune      = cfg.get() && cfg.get()->minimizeTuningDeviation();
     const bool annotateTuning      = cfg.get() && cfg.get()->annotateTuningOffsets();
     const bool annotateDriftBounds = cfg.get() && cfg.get()->annotateDriftAtBoundaries();
+    const bool allowSplitSlurOfSustainedEvents = !cfg.get()
+        || cfg.get()->allowSplitSlurOfSustainedEvents();
     const auto tuningMode          = cfg.get()
         ? cfg.get()->tuningMode()
         : mu::composing::intonation::TuningMode::TonicAnchored;
@@ -614,6 +780,7 @@ bool applyRegionTuning(mu::engraving::Score* score,
     static constexpr double kEpsilonCents = 0.5;
 
     bool anyApplied = false;
+    std::set<const Note*> processedTieRoots;
 
     for (const auto& region : regions) {
         const Fraction rStart = Fraction::fromTicks(region.startTick);
@@ -758,10 +925,12 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
         // ── "Minimize retune": subtract mean offset so chord hovers near 0 ¢ ──
         // Anchor notes are excluded — they always contribute 0 ¢, not desiredOffset.
+        // Non-partial tie chains count once, using the chain authority note.
         double meanShift = 0.0;
         if (minimizeRetune) {
             double sum = 0.0;
             int    cnt = 0;
+            std::set<const Note*> meanShiftTieRoots;
             for (Segment* mseg = score->tick2segment(rStart, true, SegmentType::ChordRest);
                  mseg && mseg->tick() < rEnd;
                  mseg = mseg->next1(SegmentType::ChordRest)) {
@@ -778,6 +947,26 @@ bool applyRegionTuning(mu::engraving::Score* score,
                         }
                         for (const Note* n : toChord(cr)->notes()) {
                             if (!n->play() || !n->visible()) {
+                                continue;
+                            }
+                            if (noteHasNonPartialTie(n)) {
+                                const Note* tieRoot = firstNonPartialTiedNote(n);
+                                if (meanShiftTieRoots.count(tieRoot)) {
+                                    continue;
+                                }
+                                meanShiftTieRoots.insert(tieRoot);
+
+                                const Note* authorityNote = authorityNoteForTieChain(n);
+                                if (hasTuningAnchorExpression(authorityNote)) {
+                                    continue;
+                                }
+
+                                double tieOffset = 0.0;
+                                if (computeTieChainOffset(authorityNote, tuningSystem, tonicAnchored,
+                                                          tuningMode, tieOffset)) {
+                                    sum += tieOffset;
+                                    ++cnt;
+                                }
                                 continue;
                             }
                             if (hasTuningAnchorExpression(n)) {
@@ -817,6 +1006,66 @@ bool applyRegionTuning(mu::engraving::Score* score,
                     std::string tuningAnnotation;
                     for (Note* n : toChord(cr)->notes()) {
                         if (!n->play() || !n->visible()) {
+                            continue;
+                        }
+                        if (noteHasNonPartialTie(n)) {
+                            const Note* fullTieRoot = firstNonPartialTiedNote(n);
+                            const Note* fullAuthorityNote = authorityNoteForTieChain(n);
+                            const bool tieChainHasAnchor = hasTuningAnchorExpression(fullAuthorityNote);
+                            const bool allowTieBoundarySegmentation
+                                = allowSplitSlurOfSustainedEvents && !tieChainHasAnchor;
+                            const Note* tieRoot = allowTieBoundarySegmentation
+                                ? firstNonPartialTiedNoteInRegion(n, rStart)
+                                : fullTieRoot;
+                            if (processedTieRoots.count(tieRoot)) {
+                                continue;
+                            }
+                            processedTieRoots.insert(tieRoot);
+
+                            if (allowTieBoundarySegmentation
+                                && tieRoot->tieBackNonPartial()
+                                && tieRoot->tieBackNonPartial()->startNote()
+                                && tieRoot->tieBackNonPartial()->startNote()->chord()
+                                && tieRoot->tieBackNonPartial()->startNote()->chord()->tick() < rStart) {
+                                if (retuneAtExistingTieBoundary(score, const_cast<Note*>(tieRoot))) {
+                                    anyApplied = true;
+                                }
+                            }
+
+                            const Note* authorityNote = allowTieBoundarySegmentation
+                                ? tieRoot
+                                : fullAuthorityNote;
+                            double tieOffset = 0.0;
+                            if (!computeTieChainOffset(authorityNote, tuningSystem, tonicAnchored,
+                                                       tuningMode, tieOffset)) {
+                                continue;
+                            }
+
+                            std::vector<Note*> tiedNotes = allowTieBoundarySegmentation
+                                ? collectNonPartialTieChainInRegion(n, rStart, rEnd)
+                                : collectNonPartialTieChain(n);
+                            for (Note* tiedNote : tiedNotes) {
+                                if (!tiedNote->play() || !tiedNote->visible()) {
+                                    continue;
+                                }
+                                if (std::abs(tiedNote->tuning() - tieOffset) < kEpsilonCents) {
+                                    continue;
+                                }
+                                tiedNote->undoChangeProperty(Pid::TUNING, tieOffset);
+                                anyApplied = true;
+                            }
+
+                            if (annotateTuning && tieRoot->chord() && tieRoot->chord()->segment()) {
+                                StaffText* at = Factory::createStaffText(tieRoot->chord()->segment());
+                                at->setTrack(tieRoot->chord()->track());
+                                at->setParent(tieRoot->chord()->segment());
+                                at->setPlacement(PlacementV::BELOW);
+                                at->setPlainText(muse::String::fromStdString(
+                                    formatTuningAnnotation(tieOffset,
+                                                           hasTuningAnchorExpression(authorityNote))));
+                                score->undoAddElement(at);
+                                anyApplied = true;
+                            }
                             continue;
                         }
                         if (hasTuningAnchorExpression(n)) {
@@ -883,8 +1132,11 @@ bool applyRegionTuning(mu::engraving::Score* score,
         // In FreeDrift mode sustained notes are never split: the drift
         // reference is derived from their existing tuning (Phase 2 above),
         // and they continue to sound at that tuning unchanged.
-        if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift) {
-            continue;  // skip to next region; no splitting in FreeDrift mode
+        // TonicAnchored mode also skips score mutation when the user disables
+        // sustained-event split/slur rewriting.
+        if (tuningMode == mu::composing::intonation::TuningMode::FreeDrift
+            || !allowSplitSlurOfSustainedEvents) {
+            continue;
         }
 
         // Walk backward from rStart to find chords that are still sounding.
@@ -920,10 +1172,18 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
                     // Check if any note needs different tuning.
                     // Anchor notes are protected: zero offset, never split.
+                    // Chords containing a non-partial tie are left to Phase 2,
+                    // which either keeps the chain whole or segments it at an
+                    // existing tie boundary depending on user preference.
                     bool anyNeedsTuning = false;
                     bool hasAnchor = false;
+                    bool hasNonPartialTie = false;
                     for (const Note* n : ch->notes()) {
                         if (!n->play() || !n->visible()) {
+                            continue;
+                        }
+                        if (noteHasNonPartialTie(n)) {
+                            hasNonPartialTie = true;
                             continue;
                         }
                         if (hasTuningAnchorExpression(n)) {
@@ -938,7 +1198,7 @@ bool applyRegionTuning(mu::engraving::Score* score,
                     // If any note in the chord is an anchor, do not split the
                     // chord — splitting would duplicate the anchor note and
                     // corrupt its protection semantics.
-                    if (hasAnchor || !anyNeedsTuning) {
+                    if (hasAnchor || hasNonPartialTie || !anyNeedsTuning) {
                         continue;
                     }
 
