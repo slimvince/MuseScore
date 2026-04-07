@@ -211,7 +211,12 @@ public:
     int maxDiff() const { return m_maxDiff; }
     void insertAdjustedDuration(engraving::Fraction key, engraving::Fraction value) { m_adjustedDurations.insert({ key, value }); }
     std::map<engraving::Fraction, engraving::Fraction>& adjustedDurations() { return m_adjustedDurations; }
-    void insertSeenDenominator(int val) { m_seenDenominators.emplace(val); }
+    void insertSeenDenominator(int val)
+    {
+        if (val > 0) {
+            m_seenDenominators.emplace(val);
+        }
+    }
     MusicXmlExporterSoftware exporterSoftware() const { return m_exporterSoftware; }
     bool sibOrDolet() const;
     bool dolet() const;

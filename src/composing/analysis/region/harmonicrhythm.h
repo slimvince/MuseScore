@@ -42,6 +42,7 @@ struct HarmonicRegion {
     int startTick = 0;                              ///< First tick of this region (raw tick integer)
     int endTick = 0;                                ///< First tick of the next region (exclusive)
     ChordAnalysisResult chordResult;                ///< Root, quality, extensions, degree
+    bool hasAnalyzedChord = true;                   ///< False when note-based chord analysis produced no candidate for this region
     KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
     std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
 

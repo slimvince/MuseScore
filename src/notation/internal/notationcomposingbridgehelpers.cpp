@@ -147,6 +147,24 @@ double beatTypeToWeight(mu::engraving::BeatType bt,
     return prefs.beatWeightSubbeat;
 }
 
+mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
+                                     const mu::engraving::Segment* segment)
+{
+    using namespace mu::engraving;
+
+    if (!measure || !segment) {
+        return BeatType::SUBBEAT;
+    }
+
+    const int numerator = measure->timesig().numerator();
+    const int denominator = measure->timesig().denominator();
+    if (numerator <= 0 || denominator <= 0) {
+        return BeatType::SUBBEAT;
+    }
+
+    return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
+}
+
 double timeDecay(double beatsAgo, double decayRate)
 {
     return std::pow(decayRate, beatsAgo / 4.0);
@@ -197,9 +215,7 @@ void collectPitchContext(const mu::engraving::Score* sc,
         }
 
         const Measure* m = s->measure();
-        const TimeSigFrac tsig(m->timesig().numerator(),
-                               m->timesig().denominator());
-        const BeatType bt = tsig.rtick2beatType(s->rtick().ticks());
+        const BeatType bt = safeBeatType(m, s);
         const double bw = beatTypeToWeight(bt, prefs);
 
         const double beatsFromTick =
@@ -468,10 +484,9 @@ collectRegionTones(const mu::engraving::Score* sc,
     auto bwAtRegionStart = [&]() -> double {
         const Measure* m0 = sc->tick2measure(startTick);
         if (!m0) { return 0.75; }
-        const TimeSigFrac tsig0(m0->timesig().numerator(), m0->timesig().denominator());
         const Segment* s0 = sc->tick2segment(startTick, true, SegmentType::ChordRest);
         if (!s0) { return 0.75; }
-        return beatWeight(tsig0.rtick2beatType(s0->rtick().ticks()));
+        return beatWeight(safeBeatType(m0, s0));
     }();
 
     const Segment* firstForward = sc->tick2segment(startTick, true, SegmentType::ChordRest);
@@ -537,8 +552,7 @@ collectRegionTones(const mu::engraving::Score* sc,
         }
 
         const int segTickInt = s->tick().ticks();
-        const TimeSigFrac tsig(m->timesig().numerator(), m->timesig().denominator());
-        const BeatType bt = tsig.rtick2beatType(s->rtick().ticks());
+        const BeatType bt = safeBeatType(m, s);
         const double bw = beatWeight(bt);
 
         for (size_t si = 0; si < sc->nstaves(); ++si) {

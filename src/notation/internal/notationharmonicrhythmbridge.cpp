@@ -68,39 +68,61 @@ namespace mu::notation {
 // ── §4.1c Jazz mode helpers ──────────────────────────────────────────────────
 
 /// Map ParsedChord::xmlKind() to ChordQuality.
-/// Matches on the base kind; extension suffixes (e.g. "-seventh", "-ninth") are
-/// handled by prefix matching so that e.g. "dominant-ninth" → Major.
+/// Dominant symbols map to Major because the current notation-side tuning path
+/// consumes root and base quality, not seventh/extension flags.
 static mu::composing::analysis::ChordQuality xmlKindToQuality(const muse::String& xmlKind)
 {
     using mu::composing::analysis::ChordQuality;
-    if (xmlKind == u"major"        || xmlKind.startsWith(u"major-"))     return ChordQuality::Major;
-    if (xmlKind == u"minor"        || xmlKind.startsWith(u"minor-"))     return ChordQuality::Minor;
-    if (xmlKind == u"dominant"     || xmlKind.startsWith(u"dominant-"))  return ChordQuality::Major;
-    if (xmlKind == u"diminished"   || xmlKind.startsWith(u"diminished-"))return ChordQuality::Diminished;
-    if (xmlKind == u"augmented"    || xmlKind.startsWith(u"augmented-")) return ChordQuality::Augmented;
-    if (xmlKind == u"half-diminished")                                   return ChordQuality::HalfDiminished;
-    if (xmlKind == u"suspended-second")                                  return ChordQuality::Suspended2;
-    if (xmlKind == u"suspended-fourth")                                  return ChordQuality::Suspended4;
-    if (xmlKind == u"power")                                             return ChordQuality::Power;
+    if (xmlKind == u"major" || xmlKind.startsWith(u"major-")) {
+        return ChordQuality::Major;
+    }
+    if (xmlKind == u"minor" || xmlKind.startsWith(u"minor-")) {
+        return ChordQuality::Minor;
+    }
+    if (xmlKind == u"dominant" || xmlKind.startsWith(u"dominant-")) {
+        return ChordQuality::Major;
+    }
+    if (xmlKind == u"diminished" || xmlKind.startsWith(u"diminished-")) {
+        return ChordQuality::Diminished;
+    }
+    if (xmlKind == u"augmented" || xmlKind.startsWith(u"augmented-")) {
+        return ChordQuality::Augmented;
+    }
+    if (xmlKind == u"half-diminished") {
+        return ChordQuality::HalfDiminished;
+    }
+    if (xmlKind == u"suspended-second") {
+        return ChordQuality::Suspended2;
+    }
+    if (xmlKind == u"suspended-fourth") {
+        return ChordQuality::Suspended4;
+    }
+    if (xmlKind == u"power") {
+        return ChordQuality::Power;
+    }
     return ChordQuality::Unknown;
 }
 
-/// Jazz path: build harmonic regions from written chord symbols.
-/// Each Harmony annotation defines a region boundary and provides the root PC
-/// and quality directly — no pitch-class accumulation is needed for root/quality.
-/// collectRegionTones() is still called to populate HarmonicRegion::tones for
-/// voicing/extension inspection and chordScoreMargin display.
+/// Notation-side chord-symbol path: use written Harmony elements for region
+/// boundaries and chord identity so explicit score annotations drive user-facing
+/// tuning and chord-track workflows deterministically.
 static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythmJazz(
     const mu::engraving::Score* score,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     const std::set<size_t>& excludeStaves,
-    mu::engraving::staff_idx_t refStaff)
+    mu::engraving::staff_idx_t refStaff,
+    int initialKeyFifths,
+    mu::composing::analysis::KeySigMode initialKeyMode)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
+    (void)initialKeyFifths;
+    (void)initialKeyMode;
+
     const auto boundaryTicks = collectChordSymbolBoundaries(score, startTick, endTick);
+    std::optional<KeyModeAnalysisResult> prevKeyResult;
 
     std::vector<HarmonicRegion> regions;
     regions.reserve(boundaryTicks.size());
@@ -114,7 +136,6 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
         int writtenRootPc  = -1;
         int writtenBassPc  = -1;
         ChordQuality writtenQuality = ChordQuality::Unknown;
-
         const Segment* seg = score->tick2segment(regionStart, true, SegmentType::ChordRest);
         if (seg && seg->tick() == regionStart) {
             for (const EngravingItem* ann : seg->annotations()) {
@@ -125,8 +146,8 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
                 if (h->rootTpc() != Tpc::TPC_INVALID) {
                     writtenRootPc = tpc2pitch(h->rootTpc()) % 12;
                     writtenBassPc = (h->bassTpc() != Tpc::TPC_INVALID)
-                                   ? tpc2pitch(h->bassTpc()) % 12
-                                   : writtenRootPc;
+                                    ? tpc2pitch(h->bassTpc()) % 12
+                                    : writtenRootPc;
                 }
                 if (const ParsedChord* pc = h->parsedForm()) {
                     writtenQuality = xmlKindToQuality(pc->xmlKind());
@@ -152,25 +173,30 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
         int localKeyFifths = 0;
         KeySigMode localKeyMode = KeySigMode::Ionian;
         double localKeyConfidence = 0.0;
+        double localKeyScore = 0.0;
         resolveKeyAndMode(score, regionStart, refStaff, excludeStaves,
-                          localKeyFifths, localKeyMode, localKeyConfidence);
+                          localKeyFifths, localKeyMode, localKeyConfidence,
+                          prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
+                          &localKeyScore);
 
-        // Build chord result: root and quality come from the chord symbol (primary).
         ChordAnalysisResult chordResult;
         chordResult.identity.rootPc  = writtenRootPc;
         chordResult.identity.bassPc  = writtenBassPc;
         chordResult.identity.quality = writtenQuality;
-        chordResult.identity.score   = 1.0;  // chord symbol is ground truth
+        chordResult.identity.score   = 1.0;
 
         KeyModeAnalysisResult kmResult;
         kmResult.keySignatureFifths   = localKeyFifths;
         kmResult.mode                 = localKeyMode;
         kmResult.normalizedConfidence = localKeyConfidence;
+        kmResult.score                = localKeyScore;
+        prevKeyResult = kmResult;
 
         HarmonicRegion region;
         region.startTick      = regionStart.ticks();
         region.endTick        = regionEnd.ticks();
         region.chordResult    = chordResult;
+        region.hasAnalyzedChord = true;
         region.keyModeResult  = kmResult;
         region.tones          = std::move(tones);
         region.fromChordSymbol = true;
@@ -227,12 +253,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
     // ── §4.1c Jazz detection gate ────────────────────────────────────────────
     // When the score contains written chord symbols, the jazz path takes priority
-    // over both the Jaccard and the legacy path.  Chord symbols are ground truth
-    // for boundaries and root identity.  useRegionalAccumulation still applies
-    // within each chord-symbol-defined region for voicing/extension analysis.
+    // for region boundaries only. Chord identity still comes from note-based
+    // analysis within each chord-symbol-defined region.
     if (scoreHasChordSymbols(score, startTick, endTick)) {
         return analyzeHarmonicRhythmJazz(score, startTick, endTick,
-                                         excludeStaves, refStaff);
+                                         excludeStaves, refStaff,
+                                         keyFifths, keyMode);
     }
 
     // Shared helpers used by both code paths.
@@ -373,6 +399,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 region.startTick     = regionStart.ticks();
                 region.endTick       = regionEnd.ticks();
                 region.chordResult   = results.front();
+                region.hasAnalyzedChord = true;
                 region.keyModeResult = kmResult;
                 region.tones         = std::move(tones);
                 regions.push_back(std::move(region));
@@ -504,6 +531,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         region.startTick    = boundaries[i].tick.ticks();
         region.endTick      = regionEnd.ticks();
         region.chordResult  = boundaries[i].chordResult;
+        region.hasAnalyzedChord = true;
         region.keyModeResult = boundaries[i].keyModeResult;
         region.tones        = std::move(boundaries[i].tones);
         regions.push_back(std::move(region));

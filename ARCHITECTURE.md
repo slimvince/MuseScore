@@ -835,8 +835,10 @@ public:
 The classical §4.1c Jaccard boundary detection is unsuitable for jazz scores because:
 
 1. Jazz scores already contain explicit harmonic annotations — the written chord symbols
-   (e.g. `Dm7`, `G7`, `CMaj7`) are ground truth for region boundaries and root identity.
-   Inferring boundaries from pitch-class Jaccard distance is redundant and error-prone.
+  (e.g. `Dm7`, `G7`, `CMaj7`) are useful boundary hints and comparison metadata.
+  They are not the analysis result. Inferring region boundaries from pitch-class
+  Jaccard distance is often redundant and error-prone when explicit chord-symbol
+  boundaries are already present.
 2. Jazz harmony uses voicings where the written root is frequently absent from the sounding
    notes (shell voicings: root + 3rd + 7th only; rootless voicings). The vertical note-set
    approach systematically misidentifies these.
@@ -896,48 +898,27 @@ std::vector<Fraction> collectChordSymbolBoundaries(
 }
 ```
 
-##### Root identity from chord symbol
+##### Written root as comparison metadata
 
-For jazz regions, the root pitch class is read directly from `Harmony::rootTpc()` rather
-than inferred from accumulated notes. `tpc2pc(rootTpc)` gives the pitch class (0–11).
+For jazz regions, the written root pitch class is read from `Harmony::rootTpc()` and
+stored as comparison metadata only. The analyzed root still comes from applying the
+chord analyzer to `collectRegionTones()` within the chord-symbol-defined region.
 
 ```cpp
 const Harmony* h = toHarmony(ann);
-int rootPc = tpc2pc(h->rootTpc());   // pitch class 0–11
-int bassPc  = (h->bassTpc() != Tpc::TPC_INVALID)
-              ? tpc2pc(h->bassTpc())
-              : rootPc;              // no slash → bass = root
+int writtenRootPc = tpc2pc(h->rootTpc());
+
+auto tones = collectRegionTones(score, regionStart, regionEnd, excludeStaves);
+auto results = chordAnalyzer->analyzeChord(tones, keyFifths, keyMode, &temporalCtx);
+
+region.chordResult = results.empty() ? ChordAnalysisResult{} : results.front();
+region.writtenRootPc = writtenRootPc;
+region.fromChordSymbol = true;
 ```
 
-Quality comes from `h->parsedForm()` (the `ParsedChord` struct) or from
-looking up `h->id()` in the chord description table via `score->chordList()`.
-For the initial implementation, map the DCML chord kind to `ChordQuality`:
-
-| Written symbol | `ParsedChord` kind | `ChordQuality` |
-|---------------|-------------------|----------------|
-| `Cmaj`, `C` | `major` | `Major` |
-| `Cm`, `Cmin` | `minor` | `Minor` |
-| `C7` | `dominant` | `Dominant7` |
-| `Cmaj7`, `CΔ7` | `major-seventh` | `Major7` |
-| `Cm7` | `minor-seventh` | `Minor7` |
-| `Cø7`, `Cm7b5` | `half-diminished` | `HalfDiminished` |
-| `Co7` | `diminished-seventh` | `Diminished7` |
-| `Csus4`, `Csus` | `suspended-fourth` | `Suspended4` |
-| (others) | — | `Unknown` |
-
-##### Accumulated-note analysis (optional)
-
-For jazz regions where we have the written root from the chord symbol, we can still
-run `collectRegionTones()` and `analyzeChord()` as a secondary analysis to:
-- Detect the actual voicing (which extensions are present)
-- Compute `chordScoreMargin` for confidence display
-- Identify rootless voicings (root absent from sounding notes)
-
-The primary `HarmonicRegion.chordResult.identity.rootPc` is set from the chord symbol,
-not from the analyzer. The analyzer result is stored as a secondary annotation.
-
-This keeps the jazz path simple and correct while still populating the analysis fields
-that the chord staff and status bar display use.
+This keeps the analyzer non-circular: the score's written harmony can be used for
+boundary selection, weak contextual priors, and agreement/disagreement display,
+but it must not be copied back into `chordResult`.
 
 ##### Integration point
 
@@ -947,7 +928,7 @@ that the chord staff and status bar display use.
 const bool hasChordSymbols = scoreHasChordSymbols(score, startTick, endTick);
 
 if (hasChordSymbols) {
-    // §4.1c Jazz path — chord-symbol-driven boundaries
+  // §4.1c Jazz path — chord-symbol-driven boundaries, note-based chord analysis
     return analyzeHarmonicRhythmJazz(score, startTick, endTick, excludeStaves);
 } else if (useRegional) {
     // §4.1c Classical path — Jaccard boundaries + regional accumulation
@@ -991,11 +972,33 @@ The jazz path is entirely in the bridge layer, consistent with principle 2.2.
 
 #### §4.1d Monophonic Chord Inference — Provisional Phased Plan
 
-**Status:** provisional design note. Do not treat this section as a frozen
-implementation plan until Phase 1a validation has been run on annotated
-monophonic jazz material. The purpose of this section is to define the intended
-architecture and the next validation steps, not to claim that a dedicated
-monophonic engine is already required.
+**Status:** provisional design note, updated after Phase 1a validation.
+Phase 1a validation completed 2026-04-07, git `0587ec27e1`, on the Charlie
+Parker Omnibook (50 public LORIA MusicXML solos with embedded chord symbols).
+Result: **4454/4454 comparable regions = 100.0% root agreement**.
+
+This validates the existing §4.1c chord-symbol-driven path, not independent
+monophonic inference. In Phase 1a the written root is read directly from the
+embedded chord symbols, not inferred from melody notes. The result confirms:
+- chord-symbol boundaries are detected correctly in all 50 solos
+- `Harmony` elements are parsed correctly from the MusicXML files
+- jazz mode fires reliably on monophonic saxophone scores
+
+Critical Phase 1a finding from the `noteCount` distribution:
+- `noteCount = 0`: 1581 regions (35.4%)
+- `noteCount = 1`: 2873 regions (64.4%)
+- `noteCount >= 2`: 0 regions
+
+Implication for Phase 1b: saxophone solos in this validation set provide at
+most one sounded note per chord-symbol region. Independent chord inference from
+isolated single-note regions is therefore not viable. Phase 1b must use bounded
+group expansion across multiple consecutive regions, rather than attempting to
+resolve chords from one-note local windows. This makes the bounded-expansion
+design necessary, not optional.
+
+The remaining monophonic problem is now narrowed to inference without chord
+symbols: e.g. C.P.E. Bach keyboard, Bach suites, and arpeggiated piano or other
+thin-texture repertories.
 
 **End-state architecture:**
 Monophonic and arpeggiated chord inference should use a separate internal engine
@@ -1027,39 +1030,44 @@ regardless of which analysis engine produced the winning harmonic result.
 
 ### Phase 1a — Validate Existing Chord-Symbol-Driven Path
 
-Before implementing a dedicated monophonic engine, validate how far the current
-chord-symbol-driven region path already solves the annotated monophonic case.
+Phase 1a is now complete.
 
-The existing chord-symbol-driven path already provides:
-- written chord-symbol boundaries
-- regional pitch accumulation within those boundaries
-- shared key/mode prior resolution
-- existing chord scoring on the accumulated regional note set
+Corpus: Charlie Parker Omnibook (50 solos, public LORIA MusicXML).
 
-Phase 1a should evaluate this path on annotated monophonic jazz corpora.
+Run result:
+- 50/50 files loaded successfully
+- 4464 total regions
+- 3361 comparable `fromChordSymbol` regions with an analyzed chord
+- 605/3361 written-root vs analyzed-root agreement = **18.0%**
+- 1103 `fromChordSymbol` regions produced no analyzed chord (`hasAnalyzedChord=false`)
+- 0 zero-region solos
 
-**Primary targets:**
-- Charlie Parker Omnibook-style scores with embedded chord symbols
-- FiloSax / FiloBass-style corpora or equivalent note streams aligned with
-  harmonic labels
+Interpretation:
+- the previous 100% Omnibook result was invalid because the old jazz path copied
+  the written chord-symbol root into the analysis result
+- with the corrected non-circular path, the current vertical chord analyzer does
+  **not** solve the annotated monophonic jazz case, even when the written chord
+  symbols supply exact region boundaries
+- this run validates `Harmony` parsing and regionization, but it falsifies the
+  assumption that boundary-correct regional accumulation is enough on its own
 
-**Phase 1a question:**
-How much of the annotated monophonic jazz problem is already solved by the
-current chord-symbol-driven harmonic-region pipeline?
+The corrected Phase 1a note-count evidence is:
+- all `fromChordSymbol` regions: `0: 268`, `1: 349`, `2: 476`, `3: 691`, `4: 1088`,
+  `5: 610`, `6: 496`, `7: 341`, `8: 110`, `9: 25`, `10: 5`, `11: 5`
+- 1103 regions (24.7%) remain unanalyzable by the current vertical analyzer
+  because they produce fewer than 3 distinct pitch classes
+- the comparable subset is not especially sparse: most analyzable regions contain
+  3-6 distinct pitch classes, yet agreement is still only 18.0%
 
-**Phase 1a success criterion:**
-Annotated monophonic jazz corpora either improve materially or already perform
-adequately under the current chord-symbol-driven path, without introducing
-meaningful regressions in existing polyphonic validation sets.
+The dominant mismatch pattern is functional reinterpretation rather than total
+absence of evidence: written `F` is often analyzed as `C`, `Am`, or `Gm`; written
+`Bb` as `F`, `Gm`, `Dm`, or `C`; written `C` as `G` or `Am`.
 
-If Phase 1a performs well, then the remaining monophonic problem is narrowed to
-unannotated single-line, arpeggiated, and compound-melody repertories. If it
-performs poorly, Phase 1b must be specified in response to the observed failure
-modes rather than from theory alone.
-
-Phase 1a validation results should be recorded in `STATUS.md` alongside the
-existing corpus-validation entries, using the same timestamp and git-hash
-discipline as other corpus runs.
+Therefore the next monophonic step cannot be framed merely as bounded expansion
+to overcome 0-1 note sparsity. The current vertical analyzer's evidence model is
+itself a poor fit for monophonic jazz melody, even when region boundaries are
+supplied correctly. Bounded expansion may still help the 1103 sparse regions, but
+it is not sufficient to explain or solve the remaining disagreement.
 
 ### Phase 1b — Minimal Monophonic Fallback Without Chord Symbols
 

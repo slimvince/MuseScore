@@ -3583,7 +3583,15 @@ Fraction MusicXmlParserPass1::calcTicks(const int& intTicks, const int& _divisio
             dura = m_adjustedDurations.at(dura);
         } else if (dura.reduced().denominator() > 64) {
             for (int seenDenominator : m_seenDenominators) {
+                if (seenDenominator <= 0) {
+                    continue;
+                }
+
                 int seenDenominatorTicks = Fraction(1, seenDenominator).ticks();
+                if (seenDenominatorTicks <= 0) {
+                    continue;
+                }
+
                 if (std::abs(dura.ticks() % seenDenominatorTicks) <= m_maxDiff) {
                     Fraction roundedDura = Fraction(std::round(dura.ticks() / double(seenDenominatorTicks)), seenDenominator);
                     roundedDura.reduce();

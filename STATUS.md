@@ -270,7 +270,7 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
    no analyzer changes required
 8. **`TemporalContext` struct** — previous chord continuation scoring
 9. **Secondary dominants and non-diatonic Roman numerals** (§5.6)
-10. **Monophonic/arpeggiated chord inference** (§4.1d provisional phased plan; Phase 1a validation pending, with results to be recorded here using the usual timestamp/git-hash discipline)
+10. **Monophonic/arpeggiated chord inference** (§4.1d provisional phased plan; corrected Phase 1a completed on Charlie Parker Omnibook, 20260407_205723 / git `0587ec27e1`)
 
 ---
 
@@ -386,6 +386,7 @@ Corpus: 352 Bach chorales, `--skip-music21`.
 
 **B.7 (ABC Beethoven string quartets, 70 movements):**
 Run `beethoven_20260406_152140`. Agreement 61.8% (1836/2973 aligned); BIR% of disagreements **59.4% → 57.3%** (−2.1 pp reduction — regional accumulation redistributes some inverted-bass reads toward correct roots).
+Note (2026-04-07): `tools/dcml/beethoven_piano_sonatas/` source files are not present in the current checkout and may have come from a temporary clone. The recorded Beethoven 57.3% BIR result remains valid because the run is preserved in `tools/corpus_registry.json` and the saved report artifacts.
 
 ### Chopin Mazurkas Validation (2026-04-06)
 
@@ -952,6 +953,16 @@ Phase 1a monophonic-jazz validation for the provisional §4.1d plan should be
 recorded in this section using the same timestamp and git-hash discipline as
 other corpus runs.
 
+**Phase 1a (Charlie Parker Omnibook, 50 MusicXML solos):**
+Run `omnibook_20260407_205723`, git `0587ec27e1`, preset `Jazz`, source `https://homepages.loria.fr/evincent/omnibook/omnibook_xml.zip`.
+All 50 files loaded successfully via `batch_analyze`; no zero-region solos.
+The embedded MusicXML chord symbols were parsed into `fromChordSymbol` regions as intended, but the corrected jazz path now analyzes notes rather than copying the written root.
+Total regions: 4464. Comparable chord-symbol regions with an analyzed chord: 3361. Written-root vs analyzed-root agreement: **605/3361 = 18.0%**. Regions with no analyzed chord: **1103**.
+This supersedes the earlier `omnibook_20260407_201517` result, which was invalid because the old jazz path copied `writtenRootPc` into `rootPitchClass`.
+`noteCount` across all `fromChordSymbol` regions: `0: 268`, `1: 349`, `2: 476`, `3: 691`, `4: 1088`, `5: 610`, `6: 496`, `7: 341`, `8: 110`, `9: 25`, `10: 5`, `11: 5`.
+This is the corrected Phase 1a design result: bounded expansion may still be needed for the 1103 sparse 0-2 PC regions, but that is not the main problem. Even the analyzable 3-11 PC regions only achieve 18.0% root agreement, so the current vertical analyzer is not an adequate model for monophonic jazz melody.
+Lowest-agreement 5: `Dewey_Square` 4%, `Red_Cross` 6%, `Thriving_From_A_Riff` 8%, `Kim_2` 10%, `Warming_Up_A_Riff` 10%. Highest-agreement 5: `Now's_The_Time_1` 41%, `Cosmic_Rays` 41%, `KC_Blues` 37%, `Ornithology` 37%, `Another_Hairdo` 35%. Report: `tools/reports/reports/omnibook_20260407_205723.txt`.
+
 **Why this ordering matters:**
 Jazz harmony has more inversions than classical. The §4.1b and §4.1c
 improvements must be validated and stable before jazz work begins.
@@ -961,13 +972,20 @@ this calibration produces uninterpretable results.
 
 **Available jazz corpora with notes + chord symbols:**
 
+Charlie Parker Omnibook — 50 public MusicXML files with embedded `<harmony>` chord symbols.
+Directly usable with §4.1c jazz mode; used for Phase 1a validation above.
+Source: `https://homepages.loria.fr/evincent/omnibook/omnibook_xml.zip`.
+
 FiloSax — 240 MusicXML saxophone solos (48 standards × 5 players)
-with per-note chord symbol annotations. Monophonic. Requires §4.1c
-jazz mode (chord-symbol-driven boundaries) to be useful.
+with per-note chord symbol annotations described publicly via JAMS and derived JSON.
+Monophonic. Public docs do not clearly confirm embedded MusicXML harmony,
+so a conversion step may still be required.
 Available on Zenodo with usage agreement.
 
 FiloBass — 48 MusicXML walking bass transcriptions from the same
-48 standards with chord symbols. Monophonic. Same requirement.
+48 standards with chord-symbol metadata described in the paper/metadata.
+Public page does not clearly confirm embedded MusicXML harmony,
+so a conversion step may still be required.
 
 Curated small ground truth set — 10–15 jazz standards manually
 verified in MuseScore. Full voicing (piano or combo scores).
