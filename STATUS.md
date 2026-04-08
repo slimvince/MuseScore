@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — sustained-event retuning remains preference-controlled in both tuning modes, chord-staff implosion preserves every detected harmonic event instead of inheriting the smoothed tuning-style region merge, and synthetic bass-injection diagnostics confirmed that the analyzer is already correct on jazz when complete tonal material is present. `notation_tests` still contains 15 focused notation-side regressions, all passing.*
+*Last updated: April 2026 — When in Rome RomanText comparison is now recorded at 38.8% matched-root agreement with 56.1% unmatched annotations, the valid-root chord-symbol gate fix is in place in both `notationcomposingbridgehelpers` and `batch_analyze`, and `notation_tests` still contains 15 focused notation-side regressions, all passing.*
 
 ---
 
@@ -218,7 +218,7 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | Mode prior preset system | Done | `ModePriorPreset` struct + `modePriorPresets()` + 5 named presets + `applyModePriorPreset()` / `currentModePriorPreset()`; QML FlatButton row highlights active preset |
 | §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → 83.7%; `previousBassPc` and `bassIsStepwiseFromPrevious` populated; `nextRootPc/nextBassPc/bassIsStepwiseToNext` deferred (two-pass) |
 | §4.1c Regional note accumulation | Done | `collectRegionTones()` (beat-weight + repetition boost + cross-voice boost) + `detectHarmonicBoundariesJaccard()` in bridge helpers; `useRegionalAccumulation` preference (default true) in config stack; both paths wired in `notationharmonicrhythmbridge.cpp`; `ChordAnalysisTone` extended with 3 new fields; chord identity held at 83.7%; chord_disagree held at 661 |
-| §4.1c Jazz mode | Done | `scoreHasChordSymbols()` detection gate (bridge + batch_analyze); `analyzeHarmonicRhythmJazz()` in bridge; `analyzeScoreJazz()` in batch_analyze; chord-symbol-driven boundaries; `fromChordSymbol` + `writtenRootPc` in `HarmonicRegion` and JSON output; `ChordTemporalContext::jazzMode` retained as a context flag; batch-only `--inject-written-root` provides a diagnostic upper bound showing current jazz corpora are incomplete rather than exposing an analyzer defect |
+| §4.1c Jazz mode | Done | `scoreHasValidChordSymbols()` detection gate (bridge + batch_analyze); `analyzeHarmonicRhythmJazz()` in bridge; `analyzeScoreJazz()` in batch_analyze; chord-symbol-driven boundaries; `fromChordSymbol` + `writtenRootPc` in `HarmonicRegion` and JSON output; `ChordTemporalContext::jazzMode` retained as a context flag; valid-root gate fix prevents Roman-numeral/function-only Harmony imports from misrouting When in Rome scores into the jazz path; batch-only `--inject-written-root` provides a diagnostic upper bound showing current jazz corpora are incomplete rather than exposing an analyzer defect |
 | Regression tests | Done | **289 composing tests** + **15 notation tests** + **1 batch_analyze regression**, all passing |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
@@ -329,6 +329,13 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
   are the same 3 pitch classes viewed through different analytical lenses: functional
   tonal harmony (us) vs pitch-set theory (music21). In Bach chorale contexts our sus4
   interpretation is correct; the disagreement is expected and not a bug.
+- **§4.1c piano pedal sustain** — long sustain-pedal carryover is preserved by design,
+  but the regional accumulator still lacks a decay model for stale support tones when the
+  harmony above changes. This affects Romantic piano corpora.
+- **Rampageswing walking bass** — walking bass passing tones dilute root signal in
+  regional accumulation. A jazz beat-weight fix was attempted, improved aggregate
+  Rampageswing agreement, regressed diminished chords, and was reverted. Deferred for a
+  more surgical approach.
 
 ---
 
@@ -851,6 +858,7 @@ we already do well.
 | Schumann Kinderszenen (13 mvts) | Piano | Romantic | 63.6% | 91.7% | 24.3% |
 | Tchaikovsky Seasons (12 mvts) | Piano | Romantic | 63.9% | 49.3% | 42.4% |
 | Dvorak Silhouettes (12 mvts) | Piano | Romantic | 66.9% | 70.8% | 50.0% |
+| When in Rome (334 local works, RomanText) | Mixed | Mixed | 38.8% | — | 43.9% matched |
 | Bach En/Fr Suites (89 mvts) | Keyboard | Baroque | 66.7% | 74.3% | 32.1% |
 | Bach En/Fr Suites dense mvts only | Keyboard | Baroque | 66.7% | 74.3% | 32.1% (partial) |
 | C.P.E. Bach Keyboard (66 mvts) | Keyboard | Late Baroque | — | — | 0 (deferred) |
@@ -859,6 +867,13 @@ Accuracy ceiling for vertical-only analysis: ~83–84% (proven).
 §4.1b contextual inversion adds ~0.3pp. §4.1c regional accumulation
 adds ~2pp on piano corpora. Further improvement requires two-pass
 lookahead (§4.1b deferred fields) and extended DCML corpus work.
+
+When in Rome is compared against adjacent `analysis.txt` RomanText files parsed through
+music21 rather than the sparser DCML TSV workflow used elsewhere. RomanText annotations are
+much denser than our emitted regions, so the key coverage metric is the 56.1% unmatched rate
+rather than a directly comparable DCML alignment percentage. These results are post-fix: the
+valid-root chord-symbol gate in `notationcomposingbridgehelpers` and `batch_analyze` prevents
+function-only Harmony imports from diverting Quartets and Piano Sonatas into the jazz path.
 
 ### Preset sensitivity checks (completed 2026-04-06)
 

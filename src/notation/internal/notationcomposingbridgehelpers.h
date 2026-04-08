@@ -133,12 +133,11 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 double jaccardThreshold);
 
-/// Returns true if any Harmony (chord symbol) annotation exists on any ChordRest
-/// segment in [startTick, endTick).  O(n_segments).  Call once per
-/// analyzeHarmonicRhythm() invocation to select the jazz vs. classical path.
-bool scoreHasChordSymbols(const mu::engraving::Score* score,
-                          const mu::engraving::Fraction& startTick,
-                          const mu::engraving::Fraction& endTick);
+/// Returns true if any Harmony annotation in [startTick, endTick) has a valid
+/// written root. Function-only Harmony imports should not activate the jazz path.
+bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
+                               const mu::engraving::Fraction& startTick,
+                               const mu::engraving::Fraction& endTick);
 
 /// Collect sorted boundary ticks from Harmony annotations in [startTick, endTick).
 /// The first element is always startTick.  Each subsequent element is the tick of

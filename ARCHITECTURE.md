@@ -651,6 +651,12 @@ This carry-in collection runs even when there is already a `ChordRest` segment e
 at `startTick`, so region analysis keeps pedal/support tones that continue across beat
 boundaries.
 
+**Known gap — piano pedal sustain:** The carry-in walk intentionally preserves held
+support tones, but §4.1c still treats a long sustain-pedal sonority as structurally
+active for the whole region. In Romantic piano textures this can smear the evidence for
+later harmonies instead of letting stale pedal support decay, so the remaining gap is a
+pedal-role/decay model rather than missing note collection.
+
 **New API:**
 - `collectRegionTones(score, startTick, endTick, excludeStaves)` — implemented in
   `notationcomposingbridgehelpers.cpp`; declared in `notationcomposingbridgehelpers.h`
@@ -3044,6 +3050,192 @@ intonation resets at structural boundaries.
 controlled by `cfg->tuningMode()`. The drift computation happens between
 the minimizeRetune (meanShift) calculation and the Phase 2 note-assignment loop.
 
+### 11.3g Harmonic Priority (Just Intonation Only)
+
+**Status: Design note.** The `HarmonicPriority` enum and `harmonicPriority()`
+preference are not yet implemented. The current JI implementation uses a fixed
+5-limit lookup table throughout.
+
+#### Scope
+
+Harmonic priority is only meaningful for just intonation family tuning systems.
+For all other implemented systems the interval sizes are uniquely determined by
+the system definition and no choice is available:
+
+| Tuning system | Interval sizes | Harmonic priority |
+|---------------|----------------|-------------------|
+| Equal temperament | Fixed by definition | Not applicable |
+| Pythagorean | Uniquely determined by stacking 3/2 fifths | Not applicable — equivalent to "Fifths first" JI |
+| Quarter-comma meantone | Uniquely determined by tempering fifths for pure 5/4 thirds | Not applicable |
+| Werckmeister / Kirnberger | Uniquely determined by their fixed compromises | Not applicable |
+| Just intonation | Multiple legitimate pure ratio interpretations per interval | Applies |
+| Adaptive JI (future) | JI ratios simultaneously optimized — same ambiguity | Applies |
+
+Note that Pythagorean tuning is mathematically equivalent to the "Fifths first"
+harmonic priority choice in just intonation — both derive all intervals by
+stacking pure 3/2 fifths. They are the same system under different names.
+
+The `HarmonicPriority` preference control must be hidden or disabled in the UI
+whenever a non-JI tuning system is active.
+
+#### Why the Choice Exists in JI
+
+In just intonation, every interval has multiple legitimate pure ratio
+interpretations derived from different prime factors. The choice of which primes
+to include as primary consonances determines the character of the tuning:
+
+| Interval | 3-limit (Pythagorean) | 5-limit (classical JI) | 7-limit (harmonic series) |
+|----------|-----------------------|------------------------|---------------------------|
+| Major third | 81/64 (+8¢) | 5/4 (-14¢) | 5/4 (-14¢) |
+| Minor third | 32/27 (-6¢) | 6/5 (+16¢) | 6/5 (+16¢) |
+| Perfect fifth | 3/2 (+2¢) | 3/2 (+2¢) | 3/2 (+2¢) |
+| Minor seventh | 16/9 (-4¢) | 9/5 (+18¢) | 7/4 (-31¢) |
+| Tritone | 729/512 (+12¢) | 45/32 (-10¢) | 7/5 (-17¢) |
+| Augmented sixth | — | 225/128 (+41¢) | 7/4 (-31¢) |
+
+Moving from 3-limit to 5-limit: thirds and sixths change dramatically (major
+third drops 22¢). The fifth is unchanged.
+
+Moving from 5-limit to 7-limit: sevenths and tritones change dramatically
+(minor seventh drops 49¢). Thirds and fifths are unchanged.
+
+The prime-limit choice implicitly sets the priority when simultaneous pure
+intervals conflict — four-note chords cannot have all intervals pure
+simultaneously, so the system must decide which intervals to prioritize:
+
+- **5-limit:** fifths and thirds are primary; sevenths are derived and end up
+  slightly impure.
+- **7-limit:** fifths, thirds, and sevenths are all primary; other
+  relationships absorb the remaining impurity.
+
+#### The Preference
+
+A single preference controls which prime limit is used as the primary
+consonance target:
+
+```cpp
+enum class HarmonicPriority {
+    /// Pure fifths only — Pythagorean ratios for all intervals.
+    /// Bright, tense thirds. Historically appropriate for medieval
+    /// and Renaissance music. Mathematically equivalent to the
+    /// Pythagorean tuning system.
+    FifthsFirst,
+
+    /// Pure fifths and thirds — 5-limit just intonation.
+    /// Warm, consonant triads. Standard for classical choral
+    /// and orchestral JI. Default.
+    ThirdsAndFifths,
+
+    /// Full chord purity — 7-limit harmonic series.
+    /// All chord tones (including sevenths) derived from pure
+    /// harmonic partials. Seventh chords lock into zero-beat
+    /// resonance. Appropriate for barbershop, close vocal harmony,
+    /// natural brass ensemble, some jazz vocal.
+    FullChordPurity,
+
+    /// Context-dependent — follows the active style preset.
+    /// The style preset maps chord function to prime limit:
+    /// dominant seventh chords may use 7-limit while triads
+    /// use 5-limit, etc.
+    Automatic,
+};
+```
+
+**Default:** `ThirdsAndFifths` — preserves current behavior (5-limit lookup
+table) for all existing users.
+
+#### UI Presentation
+
+Exposed in **Preferences → Composing → Intonation** as a radio button group,
+visible only when the active tuning system is Just intonation or Adaptive JI:
+
+```text
+Harmonic priority:  (only shown for Just intonation)
+  ○ Fifths first       — pure fifths, Pythagorean thirds
+  ● Thirds and fifths  — pure triads (standard)
+  ○ Full chord purity  — harmonic series, all chord tones pure
+  ○ Automatic          — follows style preset
+```
+
+#### Dominant Seventh Character
+
+When `FullChordPurity` or `Automatic` is active, a second sub-preference becomes
+relevant. The minor seventh in a dominant seventh chord has a unique musical
+function — it is both a primary consonance (7-limit) and a functional dissonance
+(resolution pull toward the tonic). The user may want to control this tension
+independently:
+
+```cpp
+enum class DominantSeventhCharacter {
+    /// Wide seventh (9/5, +18¢) — maximum tension, strong
+    /// resolution pull toward tonic. Appropriate for functional
+    /// harmony where V7 → I resolution is the goal.
+    Tense,
+
+    /// Pure harmonic seventh (7/4, -31¢) — zero-beat resonance,
+    /// floating quality. Appropriate for static dominant color,
+    /// barbershop tag chords, natural brass sonority.
+    Natural,
+
+    /// Pythagorean seventh (16/9, -4¢) — close to equal temperament.
+    /// Neutral character, minimal deviation from 12-TET.
+    Neutral,
+};
+```
+
+**Default:** `Natural` when `FullChordPurity` is active.
+
+This control only affects the minor seventh of dominant seventh chords — not the
+minor seventh in minor seventh chords (`Dm7`), half-diminished chords, or other
+contexts where the seventh does not carry dominant function. Other intervals
+(thirds, fifths, extensions) are not affected by this preference.
+
+UI: shown as a sub-option beneath `FullChordPurity` and `Automatic` in the
+harmonic priority group, enabled only when those options are selected.
+
+#### Relationship to the Generalized Tuning Algorithm
+
+The `HarmonicPriority` preference is the user-facing control for a deeper
+architectural choice: which prime limit to use when computing just intonation
+ratios.
+
+The full generalized algorithm (§11.2b, deferred) would:
+
+- Identify each note's harmonic function within the chord.
+- Select the prime limit based on `HarmonicPriority` and chord function.
+- Compute the canonical ratio via shortest lattice path (minimum Tenney height
+  within the chosen prime limit).
+- Resolve conflicts between simultaneously sounding notes via the simultaneous
+  optimizer.
+- Apply context modifiers (dominant tension, leading-tone pull, resolution
+  target).
+
+The current fixed 5-limit lookup table is a degenerate case of this algorithm —
+it hardcodes `ThirdsAndFifths` with no context modifiers and no simultaneous
+optimization. The `HarmonicPriority` preference adds the first degree of freedom
+without requiring the full algorithm to be implemented.
+
+#### Implementation Sequence
+
+- Add `HarmonicPriority` and `DominantSeventhCharacter` enums to
+  `tuning_system.h`.
+- Add `harmonicPriority()` and `dominantSeventhCharacter()` to
+  `IComposingAnalysisConfiguration`.
+- Wire through `ComposingConfiguration` → `composingpreferencesmodel` → QML
+  (same pattern as `TuningMode`).
+- In `applyRegionTuning()` and `applyTuningAtNote()`, branch on
+  `harmonicPriority()` when selecting the ratio for each interval:
+  - `FifthsFirst`: use Pythagorean ratios throughout.
+  - `ThirdsAndFifths`: use the current 5-limit table (no change).
+  - `FullChordPurity`: use 7-limit ratios for sevenths and tritones, 5-limit
+    for thirds and fifths, and apply `DominantSeventhCharacter` for dominant
+    seventh context.
+  - `Automatic`: consult the style preset for chord-type → prime-limit mapping.
+- UI: radio group in `ComposingAnalysisSection.qml`, visible only when tuning
+  system is JI or Adaptive JI.
+- Validate on a cappella choral scores with known tuning practice (barbershop
+  corpus when available).
+
 ### 11.4 Score Mutation for Tuning Application
 
 Applying a non-equal temperament writes cent deviations to individual notes via
@@ -3973,6 +4165,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673); previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
+*Document version: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673); previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

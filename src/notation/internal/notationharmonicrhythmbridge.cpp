@@ -60,7 +60,7 @@ using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::isDiatonicStep;
 using mu::notation::internal::distinctPitchClasses;
-using mu::notation::internal::scoreHasChordSymbols;
+using mu::notation::internal::scoreHasValidChordSymbols;
 using mu::notation::internal::collectChordSymbolBoundaries;
 
 namespace mu::notation {
@@ -255,7 +255,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     // When the score contains written chord symbols, the jazz path takes priority
     // for region boundaries only. Chord identity still comes from note-based
     // analysis within each chord-symbol-defined region.
-    if (scoreHasChordSymbols(score, startTick, endTick)) {
+    if (scoreHasValidChordSymbols(score, startTick, endTick)) {
         return analyzeHarmonicRhythmJazz(score, startTick, endTick,
                                          excludeStaves, refStaff,
                                          keyFifths, keyMode);

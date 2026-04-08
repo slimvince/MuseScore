@@ -846,18 +846,18 @@ findTemporalContext(const mu::engraving::Score* sc,
 
 // ── §4.1c Jazz mode — chord-symbol boundary helpers ─────────────────────────
 
-bool scoreHasChordSymbols(const mu::engraving::Score* score,
-                          const mu::engraving::Fraction& startTick,
-                          const mu::engraving::Fraction& endTick)
+bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
+                               const mu::engraving::Fraction& startTick,
+                               const mu::engraving::Fraction& endTick)
 {
     using namespace mu::engraving;
     for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
         for (const EngravingItem* ann : s->annotations()) {
-            if (ann->isHarmony()) {
-                return true;
-            }
+            if (!ann->isHarmony()) continue;
+            const Harmony* h = toHarmony(ann);
+            if (h->rootTpc() != Tpc::TPC_INVALID) return true;
         }
     }
     return false;
