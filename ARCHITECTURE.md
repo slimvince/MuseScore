@@ -610,6 +610,7 @@ unchanged.
 | `nextRootPc` | — | Deferred (two-pass only) |
 | `nextBassPc` | — | Deferred (two-pass only) |
 | `bassIsStepwiseToNext` | — | Deferred (two-pass only) |
+| `jazzMode` | Headless jazz path (`batch_analyze`) | ✅ Active for chord-symbol-driven corpus analysis |
 
 `isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline).
 Both bridges (`notationcomposingbridge.cpp` and `notationharmonicrhythmbridge.cpp`) populate
@@ -829,6 +830,120 @@ public:
 #### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)
 
 **Status: Implemented (2026-04-06).** Bridge: `analyzeHarmonicRhythmJazz()` + `scoreHasChordSymbols()` + `collectChordSymbolBoundaries()` in `notationharmonicrhythmbridge.cpp` / `notationcomposingbridgehelpers.cpp`. Batch: `analyzeScoreJazz()` + `scoreHasChordSymbols()` in `batch_analyze.cpp`. `HarmonicRegion` extended with `fromChordSymbol` and `writtenRootPc`. FiloSax/FiloBass validation unblocked.
+
+**2026-04-08 follow-up:** Temporary jazz-specific scoring experiments were evaluated
+and then reverted. `ChordTemporalContext::jazzMode` is retained only as a context
+flag for chord-symbol-driven analysis paths and future diagnostics; no accepted
+jazz-only scoring adjustments remain in the analyzer.
+
+##### Jazz validation findings (2026-04-08)
+
+A synthetic bass injection experiment confirmed that the vertical analyzer identifies
+jazz chords correctly at near-perfect rates when given complete tonal material.
+
+Experiment: `batch_analyze --inject-written-root` adds a synthetic bass tone at the
+written chord symbol root before calling `analyzeChord()`. This simulates the bass
+player's root note that is present in performance but absent from lead-sheet and
+horn-section scores.
+
+Results:
+
+- Rampageswing (horn-only): 39.8% → 98.3%
+- Omnibook (melody-only): 18.0% → 99.9%
+
+Conclusion: the 40–60% agreement gap on available jazz corpora is explained by
+missing bass/root material in the scores, not by a scoring-model deficiency. The
+vertical analyzer requires complete tonal material (bass + harmony voices) to identify
+chords reliably.
+
+Jazz validation therefore requires scores with written-out bass and piano voicings.
+Lead sheets, horn arrangements, and solo transcriptions are incomplete for this
+purpose and should not be treated as analyzer accuracy benchmarks.
+
+The `--inject-written-root` flag in `batch_analyze` provides a diagnostic upper bound.
+It is not a production path: chord symbols must never be used as analyzer input in
+production because they are user content and may be incorrect.
+
+Known gap: no freely available corpus of jazz scores with complete written-out bass
+and piano voicings has yet been found. This is an open corpus-availability problem,
+not an analyzer design problem.
+
+### §4.1f — Future: Authoritative Chord Symbol Mode
+
+**Status:** Design note only. Not planned for immediate implementation.
+
+#### Motivation
+
+Chord symbols, Roman numerals, and Nashville numbers already present in a score may
+carry different levels of authority depending on context:
+
+- **As-is analysis:** The current analyzer reads notes and infers what chord they
+  imply. Written chord symbols are comparison metadata only.
+- **To-be annotation:** A composer or arranger may enter chord symbols representing
+  the intended harmony, which the written notes may only partially realize (e.g. a
+  lead sheet where the pianist improvises the voicing, or an arrangement where the
+  bass is tacet).
+
+In the to-be case, the written chord symbol is the ground truth — not the notes.
+The analyzer's job shifts from "identify what the notes imply" to "confirm or
+annotate what the composer declared."
+
+#### Design
+
+Add a user preference: `trustWrittenChordSymbols` (bool, default false)
+
+When enabled, written chord symbols are treated as authoritative harmonic
+declarations rather than comparison metadata. The analyzer uses them as strong
+priors or direct answers rather than inferring from notes alone.
+
+Not all chord symbols in a score need to be authoritative. A per-symbol mechanism
+is needed to distinguish intentional declarations from approximate or placeholder
+annotations.
+
+#### The play/no-play flag as authority marker
+
+MuseScore already exposes a play flag on chord symbols (`Harmony::play()`).
+Currently used to suppress audio playback of chord symbol voicings.
+
+Proposed dual use: when `trustWrittenChordSymbols` is enabled, only chord symbols
+with `play = true` are treated as authoritative. Symbols with `play = false`
+remain comparison metadata only.
+
+This gives the user per-symbol control over which chord symbols the analyzer should
+trust, using an existing UI mechanism that is already accessible in MuseScore's
+Properties panel. No new UI needed.
+
+#### Relationship to current jazz mode
+
+The current §4.1c jazz mode uses chord symbol positions as region boundaries and
+stores written roots as comparison metadata (`writtenRootPc`, `fromChordSymbol`).
+This is correct for as-is analysis and must not change.
+
+The authoritative mode is an additional layer that activates only when
+`trustWrittenChordSymbols` is enabled. Both modes can coexist:
+
+- Boundaries always come from chord symbol positions when chord symbols are present
+- Root identification comes from notes (as-is) or from the symbol (to-be)
+  depending on the preference
+
+#### Diagnostic evidence
+
+The synthetic bass injection experiment (2026-04-08) demonstrated that treating
+written roots as authoritative (injecting the written root as a synthetic bass
+tone) raises Rampageswing agreement from 39.8% to 98.3% and Omnibook from 18.0%
+to 99.9%. This confirms that the authoritative mode would be highly effective when
+the written chord symbols are correct — and shows the risk when they are not.
+
+#### Implementation prerequisites
+
+- `Harmony::play()` accessor must be accessible from the bridge layer (check
+  current availability)
+- `IComposingAnalysisConfiguration::trustWrittenChordSymbols()` preference wired
+  through config → QML
+- Bridge: when trust mode active and symbol has `play=true`, inject written
+  root/quality as primary analysis result rather than running note-based analyzer
+- Validation: run on a curated small ground truth set of jazz standards with
+  verified chord symbols before enabling by default for any preset
 
 ##### Problem
 

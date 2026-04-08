@@ -70,6 +70,23 @@ ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
     return r;
 }
 
+const ChordAnalysisResult* findCandidate(const std::vector<ChordAnalysisResult>& results,
+                                         int rootPc,
+                                         ChordQuality quality,
+                                         bool hasMin7 = false)
+{
+    for (const auto& result : results) {
+        if (result.identity.rootPc != rootPc || result.identity.quality != quality) {
+            continue;
+        }
+        if (hasMin7 && !hasExtension(result.identity.extensions, Extension::MinorSeventh)) {
+            continue;
+        }
+        return &result;
+    }
+    return nullptr;
+}
+
 } // namespace
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
@@ -324,6 +341,90 @@ TEST(Composing_ChordAnalyzerTests, AugResolution_BoostsScoreOfSameRootReturn)
     EXPECT_EQ(withCtx.front().identity.rootPc, 0);
     EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
     EXPECT_GT(withCtx.front().identity.score, withoutCtx.front().identity.score);
+}
+
+TEST(Composing_ChordAnalyzerTests, JazzMode_KeepsBassRootBonus)
+{
+    const auto withoutJazz = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+
+    ChordTemporalContext jazzCtx;
+    jazzCtx.jazzMode = true;
+    const auto withJazz = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &jazzCtx);
+
+    ASSERT_FALSE(withoutJazz.empty());
+    ASSERT_FALSE(withJazz.empty());
+    EXPECT_EQ(withoutJazz.front().identity.rootPc, 0);
+    EXPECT_EQ(withJazz.front().identity.rootPc, 0);
+    EXPECT_NEAR(withoutJazz.front().identity.score, withJazz.front().identity.score,
+                1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, JazzMode_DoesNotChangeDominantGuideToneReading)
+{
+    const auto withoutJazz = kAnalyzer.analyzeChord(tones({ 52, 55, 58, 60 }), 0, KeySigMode::Ionian);
+
+    ChordTemporalContext jazzCtx;
+    jazzCtx.jazzMode = true;
+    const auto withJazz = kAnalyzer.analyzeChord(tones({ 52, 55, 58, 60 }), 0, KeySigMode::Ionian, &jazzCtx);
+
+    const auto* dominantWithoutJazz = findCandidate(withoutJazz, 0, ChordQuality::Major, true);
+    const auto* dominantWithJazz = findCandidate(withJazz, 0, ChordQuality::Major, true);
+
+    ASSERT_NE(dominantWithoutJazz, nullptr);
+    ASSERT_NE(dominantWithJazz, nullptr);
+    EXPECT_NEAR(dominantWithJazz->identity.score, dominantWithoutJazz->identity.score,
+                1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, JazzMode_DoesNotBoostMinorSeventhReading)
+{
+    const auto withoutJazz = kAnalyzer.analyzeChord(tones({ 62, 65, 69, 72 }), 0, KeySigMode::Ionian);
+
+    ChordTemporalContext jazzCtx;
+    jazzCtx.jazzMode = true;
+    const auto withJazz = kAnalyzer.analyzeChord(tones({ 62, 65, 69, 72 }), 0, KeySigMode::Ionian, &jazzCtx);
+
+    const auto* minorWithoutJazz = findCandidate(withoutJazz, 2, ChordQuality::Minor, true);
+    const auto* minorWithJazz = findCandidate(withJazz, 2, ChordQuality::Minor, true);
+
+    ASSERT_NE(minorWithoutJazz, nullptr);
+    ASSERT_NE(minorWithJazz, nullptr);
+    EXPECT_NEAR(minorWithJazz->identity.score, minorWithoutJazz->identity.score,
+                1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, JazzMode_DoesNotBoostDiminishedReading)
+{
+    const auto withoutJazz = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
+
+    ChordTemporalContext jazzCtx;
+    jazzCtx.jazzMode = true;
+    const auto withJazz = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian, &jazzCtx);
+
+    const auto* diminishedWithoutJazz = findCandidate(withoutJazz, 11, ChordQuality::Diminished);
+    const auto* diminishedWithJazz = findCandidate(withJazz, 11, ChordQuality::Diminished);
+
+    ASSERT_NE(diminishedWithoutJazz, nullptr);
+    ASSERT_NE(diminishedWithJazz, nullptr);
+    EXPECT_NEAR(diminishedWithJazz->identity.score, diminishedWithoutJazz->identity.score,
+                1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, JazzMode_DoesNotPenalizeSuspendedFourthReadings)
+{
+    const auto withoutJazz = kAnalyzer.analyzeChord(tones({ 48, 53, 55, 58 }), 0, KeySigMode::Ionian);
+
+    ChordTemporalContext jazzCtx;
+    jazzCtx.jazzMode = true;
+    const auto withJazz = kAnalyzer.analyzeChord(tones({ 48, 53, 55, 58 }), 0, KeySigMode::Ionian, &jazzCtx);
+
+    const auto* susWithoutJazz = findCandidate(withoutJazz, 0, ChordQuality::Suspended4);
+    const auto* susWithJazz = findCandidate(withJazz, 0, ChordQuality::Suspended4);
+
+    ASSERT_NE(susWithoutJazz, nullptr);
+    ASSERT_NE(susWithJazz, nullptr);
+    EXPECT_NEAR(susWithoutJazz->identity.score, susWithJazz->identity.score,
+                1e-9);
 }
 
 // ── Roman Numeral Formatter Tests ─────────────────────────────────────────────

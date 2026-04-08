@@ -1099,7 +1099,7 @@ double tpcConsistencyBonus(const TemplateDef& tpl, int rootPc,
 
 /// Score bonuses derived from musical context: bass note, key membership, and temporal
 /// information from the preceding chord.
-double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
+double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
                          int keyTonicPc, const std::array<int, 7>& scale,
                          const ChordAnalyzerPreferences& prefs,
                          const ChordTemporalContext* context)
@@ -1130,7 +1130,7 @@ double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
         // inversion fix history: never apply to Diminished/HalfDiminished/Augmented).
         const bool isInvertedMajMin =
             (rootPc != bassPc)
-            && (quality == ChordQuality::Major || quality == ChordQuality::Minor);
+            && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor);
 
         if (isInvertedMajMin) {
             if (context->bassIsStepwiseFromPrevious) {
@@ -1155,19 +1155,19 @@ double contextualBonuses(int rootPc, ChordQuality quality, int bassPc,
 
             // viio(7) → I: diminished resolves up by a semitone.
             if (prevQ == ChordQuality::Diminished
-                    && (quality == ChordQuality::Major || quality == ChordQuality::Minor)
+                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
                     && rootPc == (prevRoot + 1) % 12) {
                 score += rb;
             }
             // ii∅7 → V: half-diminished resolves up by a perfect fourth.
             if (prevQ == ChordQuality::HalfDiminished
-                    && quality == ChordQuality::Major
+                    && tpl.quality == ChordQuality::Major
                     && rootPc == (prevRoot + 5) % 12) {
                 score += rb;
             }
             // I+ → I (return): augmented resolves back to the same root.
             if (prevQ == ChordQuality::Augmented
-                    && (quality == ChordQuality::Major || quality == ChordQuality::Minor)
+                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
                     && rootPc == prevRoot) {
                 score += rb;
             }
@@ -1329,7 +1329,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
             score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
             score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            score += contextualBonuses(rootPc, tpl.quality, bassPc, keyTonicPc, scale,
+            score += contextualBonuses(tpl, rootPc, bassPc, keyTonicPc, scale,
                                        prefs, context);
 
             rawCandidates.push_back({ score, rootPc, tpl.quality,
