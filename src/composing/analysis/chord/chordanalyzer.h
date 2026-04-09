@@ -251,6 +251,12 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–1.0.  Default: 0.6.
     double harmonicBoundaryJaccardThreshold = 0.6;
 
+    /// Multiplier applied to the discounted sustain-pedal tail added after a
+    /// note's written note-off and before the pedal release.
+    /// Values in [0,1]; 0 disables pedal tails, 1 treats the tail as strongly
+    /// as the written attack weight.
+    double pedalTailWeightMultiplier = 0.3;
+
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -294,6 +300,7 @@ struct ChordAnalyzerPreferences {
             { "inversionSuspicionMargin",           { 0.0, 2.0 } },
             { "inversionBonusReduction",            { 0.0, 1.0 } },
             { "harmonicBoundaryJaccardThreshold",   { 0.0, 1.0 } },
+            { "pedalTailWeightMultiplier",          { 0.0, 1.0 } },
         };
     }
 };

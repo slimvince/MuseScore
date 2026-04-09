@@ -106,6 +106,7 @@ inline bool isDiatonicStep(int pc1, int pc2) {
 /// Aggregates evidence by pitch class, then applies:
 ///   Pass 2 — repetition boost: weight × (1 + 0.3 × (distinctMetricPositions − 1))
 ///   Pass 3 — cross-voice boost: weight × 1.5 when simultaneousVoiceCount > 1
+///   Pass 4 — discounted sustain-pedal tails after written note-off
 /// Weights are normalised to sum to 1.0 before return.
 ///
 /// Returns one ChordAnalysisTone per distinct pitch class, with all §4.1c fields

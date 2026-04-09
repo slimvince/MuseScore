@@ -37,6 +37,7 @@
 #include "engraving/tests/utils/scorerw.h"
 
 #include "notation/internal/notationcomposingbridge.h"
+#include "notation/internal/notationcomposingbridgehelpers.h"
 #include "notation/internal/notationimplodebridge.h"
 
 using namespace mu::engraving;
@@ -118,6 +119,19 @@ bool hasHarmonyAt(MasterScore* score, const Fraction& tick, track_idx_t track)
     return false;
 }
 
+const mu::composing::analysis::ChordAnalysisTone* findToneByPc(
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int pitchClass)
+{
+    for (const auto& tone : tones) {
+        if (tone.pitch % 12 == pitchClass) {
+            return &tone;
+        }
+    }
+
+    return nullptr;
+}
+
 void populateWholeScore(MasterScore* score, staff_idx_t trebleStaffIdx)
 {
     score->startCmd(TranslatableString::untranslatable("Notation implode tests"));
@@ -152,6 +166,38 @@ TEST_F(Notation_ImplodeTests, ImplodeChordTrackPreservesHalfMeasureHarmonyChange
     EXPECT_EQ(countHarmonyAnnotationsOnTrack(score, kTargetTrebleTrack), 2);
     EXPECT_TRUE(hasHarmonyAt(score, Fraction(0, 1), kTargetTrebleTrack));
     EXPECT_TRUE(hasHarmonyAt(score, Fraction(2, 4), kTargetTrebleTrack));
+
+    delete score;
+}
+
+TEST_F(Notation_ImplodeTests, CollectRegionTonesAddsPedalTailOnlyInsidePedaledRegion)
+{
+    MasterScore* score = ScoreRW::readScore(u"implode_pedal_tail_support.mscx");
+    ASSERT_TRUE(score);
+
+    const auto pedaledRegion = mu::notation::internal::collectRegionTones(
+        score,
+        Fraction(1, 4).ticks(),
+        Fraction(2, 4).ticks(),
+        {});
+    const auto unpedaledRegion = mu::notation::internal::collectRegionTones(
+        score,
+        Fraction(5, 4).ticks(),
+        Fraction(6, 4).ticks(),
+        {});
+
+    const auto* pedaledBassTone = findToneByPc(pedaledRegion, 0);
+    ASSERT_NE(pedaledBassTone, nullptr);
+    EXPECT_GT(pedaledBassTone->weight, 0.0);
+    EXPECT_GT(pedaledBassTone->durationInRegion, 0);
+
+    const auto* unpedaledBassTone = findToneByPc(unpedaledRegion, 2);
+    EXPECT_EQ(unpedaledBassTone, nullptr);
+
+    const auto* pedaledUpperTone = findToneByPc(pedaledRegion, 4);
+    const auto* unpedaledUpperTone = findToneByPc(unpedaledRegion, 5);
+    ASSERT_NE(pedaledUpperTone, nullptr);
+    ASSERT_NE(unpedaledUpperTone, nullptr);
 
     delete score;
 }

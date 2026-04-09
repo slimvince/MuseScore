@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — When in Rome RomanText comparison is now recorded at 38.8% matched-root agreement with 56.1% unmatched annotations, the valid-root chord-symbol gate fix is in place in both `notationcomposingbridgehelpers` and `batch_analyze`, and `notation_tests` still contains 15 focused notation-side regressions, all passing.*
+*Last updated: April 2026 — Bach now uses the 50.0% WIR structural baseline, the full classical v2 corpus rerun is recorded, the cross-corpus `bassIsRoot` signal is now documented as the next scoring priority, the batch classical path uses regional accumulation instead of the old onset-only prototype, the batch jazz-path regional collector mirrors the bridge sustain-pedal tail pass, and `notation_tests` contains 16 focused notation-side regressions, all passing.*
 
 ---
 
@@ -112,8 +112,9 @@ detected harmonic event instead of inheriting the smoothed region-tuning behavio
 there is already a `ChordRest` segment exactly at that tick, and the implode writer creates
 or fetches exact region-start `ChordRest` segments before placing notes and Harmony
 annotations. Two notation-side implode regressions cover half-measure harmony changes and
-beat-by-beat changes supported by sustained pedal notes. Current `notation_tests.exe`
-result: 15/15 passing.
+beat-by-beat changes supported by sustained pedal notes. A third implode regression now
+checks discounted sustain-pedal tail weighting inside a pedaled region without affecting
+an unpedaled region. Current `notation_tests.exe` result: 16/16 passing.
 
 **P8a (ChordAnalysisResult refactor) is complete.** `ChordAnalysisResult` now contains two
 nested sub-structs: `ChordIdentity` (pitch-content: score, rootPc, bassPc, bassTpc, quality,
@@ -216,10 +217,10 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 | User preferences | Done | `IComposingAnalysisConfiguration` + `IComposingChordStaffConfiguration`; preferences page |
 | Bridge architecture | Done | all bridge functions in `mu::notation`; split into single-note bridge + harmonic rhythm bridge + shared helpers; composing module has no engraving dependency |
 | Mode prior preset system | Done | `ModePriorPreset` struct + `modePriorPresets()` + 5 named presets + `applyModePriorPreset()` / `currentModePriorPreset()`; QML FlatButton row highlights active preset |
-| §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → 83.7%; `previousBassPc` and `bassIsStepwiseFromPrevious` populated; `nextRootPc/nextBassPc/bassIsStepwiseToNext` deferred (two-pass) |
-| §4.1c Regional note accumulation | Done | `collectRegionTones()` (beat-weight + repetition boost + cross-voice boost) + `detectHarmonicBoundariesJaccard()` in bridge helpers; `useRegionalAccumulation` preference (default true) in config stack; both paths wired in `notationharmonicrhythmbridge.cpp`; `ChordAnalysisTone` extended with 3 new fields; chord identity held at 83.7%; chord_disagree held at 661 |
+| §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → retired 83.7% onset-only/music21 figure (superseded 2026-04-09 by 50.0% WIR structural); `previousBassPc` and `bassIsStepwiseFromPrevious` populated; `nextRootPc/nextBassPc/bassIsStepwiseToNext` deferred (two-pass) |
+| §4.1c Regional note accumulation | Done | The notation bridge `collectRegionTones()` now includes beat-weight + repetition boost + cross-voice boost + sustain-pedal tail weighting; the duplicate batch_analyze collector is used by both the jazz and classical paths, and the classical path now uses Jaccard boundaries plus smoothed regional analysis instead of the onset-only prototype; `detectHarmonicBoundariesJaccard()` remains duplicated in batch_analyze; the Bach baseline correction is now recorded as 50.0% WIR structural with 38.0% music21 surface retained only as a secondary reference |
 | §4.1c Jazz mode | Done | `scoreHasValidChordSymbols()` detection gate (bridge + batch_analyze); `analyzeHarmonicRhythmJazz()` in bridge; `analyzeScoreJazz()` in batch_analyze; chord-symbol-driven boundaries; `fromChordSymbol` + `writtenRootPc` in `HarmonicRegion` and JSON output; `ChordTemporalContext::jazzMode` retained as a context flag; valid-root gate fix prevents Roman-numeral/function-only Harmony imports from misrouting When in Rome scores into the jazz path; batch-only `--inject-written-root` provides a diagnostic upper bound showing current jazz corpora are incomplete rather than exposing an analyzer defect |
-| Regression tests | Done | **289 composing tests** + **15 notation tests** + **1 batch_analyze regression**, all passing |
+| Regression tests | Done | **289 composing tests** + **16 notation tests** + **1 batch_analyze regression**, all passing |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
 | Dynamic lookahead | Done | expands window when confidence < 0.60; caps at 24 beats |
@@ -393,9 +394,9 @@ Corpus: same 352 chorales, `--skip-music21` (reused existing music21 output, re-
 | Total regions | 6032 | — | — |
 | Aligned regions | 4058 | 67.3% | — |
 | chord\_disagree | 661 | 11.0% | 16.3% |
-| **Chord identity agreement** | **3397** | **56.3%** | **83.7%** |
+| **Chord identity agreement (retired onset-only/music21 figure)** | **3397** | **56.3%** | **83.7% (superseded by 50.0% WIR structural)** |
 
-**vs. baseline:** chord_disagree 673 → **661** (−12, −1.8%); chord identity 83.4% → **83.7%** (+0.3 pp).
+**vs. baseline:** chord_disagree 673 → **661** (−12, −1.8%); chord identity 83.4% → **83.7%** (+0.3 pp in the retired onset-only/music21 workflow).
 
 bassIsRoot fraction in chord\_disagree: **~72.9%** (estimated via tick-aligned comparison;
 down from 74.3% baseline — consistent with stepwise-bass bonus redirecting some
@@ -416,9 +417,9 @@ Corpus: 352 Bach chorales, `--skip-music21`.
 | Total regions | 6032 | — | — |
 | Aligned regions | 4058 | 67.3% | — |
 | chord\_disagree | 661 | 11.0% | 16.3% |
-| **Chord identity agreement** | **3397** | **56.3%** | **83.7%** |
+| **Chord identity agreement (retired onset-only/music21 figure)** | **3397** | **56.3%** | **83.7% (superseded by 50.0% WIR structural)** |
 
-**vs. §4.1b:** chord_disagree **661 → 661** (unchanged); chord identity **83.7% → 83.7%** (no regression).
+**vs. §4.1b:** chord_disagree **661 → 661** (unchanged); chord identity **83.7% → 83.7%** (no regression in the retired onset-only/music21 workflow).
 
 **B.7 (ABC Beethoven string quartets, 70 movements):**
 Run `beethoven_20260406_152140`. Agreement 61.8% (1836/2973 aligned); BIR% of disagreements **59.4% → 57.3%** (−2.1 pp reduction — regional accumulation redistributes some inverted-bass reads toward correct roots).
@@ -676,10 +677,13 @@ reached the following proven conclusions:
    vertical sonority analysis (our approach) and functional/contextual
    harmonic annotation (DCML). This is not an analyzer defect.
 
-**Remaining accuracy ceiling: ~83–84% on Bach chorales by vertical
-analysis alone.** Improving beyond this requires harmonic sequence
-context (analyzing surrounding chords, cadence patterns, voice-leading
-continuity) — a Phase 2 architectural component outside Phase 1 scope.
+**Retired Bach ceiling:** the earlier ~83–84% figure applied only to the
+onset-only prototype measured against music21 surface labels. The current
+official Bach structural baseline is 50.0% root agreement against local
+When in Rome RomanText annotations. Improving beyond that structural
+baseline still requires harmonic sequence context (analyzing surrounding
+chords, cadence patterns, voice-leading continuity) — a Phase 2
+architectural component outside Phase 1 scope.
 
 **Current baseline is the correct production baseline. Do not attempt
 further local scoring fixes for inversions.**
@@ -848,25 +852,36 @@ we already do well.
 
 | Corpus | Genre | Period | Agree% | BIR% | Align% |
 |--------|-------|--------|--------|------|--------|
-| Bach chorales (352 SATB) | Choral | Baroque | 83.7% | ~72.9% | 67.3% |
-| ABC Beethoven string quartets (70 mvts) | Chamber | Classical | 62.2% | 59.4% | 41.6% |
-| Mozart piano sonatas (53 mvts) | Piano | Classical | 67.5% | 38.6% | 52.6% |
-| Corelli trio sonatas (149 mvts) | Chamber | Baroque | 65.5% | 94.9% | 35.8% |
-| Beethoven string quartets §4.1c | Chamber | Classical | 61.8% | 57.3% | 41.6% |
-| Chopin mazurkas (55 mvts) | Piano | Romantic | 60.0% | 77.2% | 11.3% |
-| Grieg lyric pieces (66 mvts) | Piano | Romantic | 54.8% | 67.1% | 42.2% |
-| Schumann Kinderszenen (13 mvts) | Piano | Romantic | 63.6% | 91.7% | 24.3% |
-| Tchaikovsky Seasons (12 mvts) | Piano | Romantic | 63.9% | 49.3% | 42.4% |
-| Dvorak Silhouettes (12 mvts) | Piano | Romantic | 66.9% | 70.8% | 50.0% |
+| Bach chorales (352 SATB) | Choral | Baroque | 50.0% WIR structural | 38.0% music21 surface | Preferred: WIR structural. Old 83.7% was onset-only prototype vs music21 surface labels — both wrong. Superseded. |
+| ABC Beethoven string quartets (70 mvts) | Chamber | Classical | 57.1% | 68.2% | 39.3% |
+| Mozart piano sonatas (53 mvts) | Piano | Classical | 56.7% | 68.3% | 39.8% |
+| Corelli trio sonatas (149 mvts) | Chamber | Baroque | 63.9% | 87.0% | 33.5% |
+| Chopin mazurkas (55 mvts) | Piano | Romantic | 57.5% | 78.3% | 41.7% |
+| Grieg lyric pieces (66 mvts) | Piano | Romantic | 47.3% | 73.1% | 39.5% |
+| Schumann Kinderszenen (13 mvts) | Piano | Romantic | 64.0% | 75.6% | 42.1% |
+| Tchaikovsky Seasons (12 mvts) | Piano | Romantic | 58.1% | 68.1% | 36.0% |
+| Dvorak Silhouettes (12 mvts) | Piano | Romantic | 68.0% | 67.6% | 45.7% |
 | When in Rome (334 local works, RomanText) | Mixed | Mixed | 38.8% | — | 43.9% matched |
 | Bach En/Fr Suites (89 mvts) | Keyboard | Baroque | 66.7% | 74.3% | 32.1% |
 | Bach En/Fr Suites dense mvts only | Keyboard | Baroque | 66.7% | 74.3% | 32.1% (partial) |
 | C.P.E. Bach Keyboard (66 mvts) | Keyboard | Late Baroque | — | — | 0 (deferred) |
 
-Accuracy ceiling for vertical-only analysis: ~83–84% (proven).
-§4.1b contextual inversion adds ~0.3pp. §4.1c regional accumulation
-adds ~2pp on piano corpora. Further improvement requires two-pass
-lookahead (§4.1b deferred fields) and extended DCML corpus work.
+**Bach chorale baseline correction (2026-04-09):**
+The previous 83.7% figure was measured using the onset-only prototype note
+collection path (path 3, now replaced) against music21's surface-level
+harmonic analysis. Both the algorithm and the reference were wrong for
+measuring structural harmonic accuracy.
+
+The corrected baseline uses:
+- Algorithm: full regional accumulation matching the live notation bridge (§4.1c)
+- Reference: When in Rome structural annotations (RomanText, about 138 labels per chorale when local analysis.txt exists)
+- Method: annotation-centric beat-proximity alignment, fair to structural region detection
+
+New baseline: 50.0% root agreement on the 352-chorale corpus, using the local WIR structural reference where analysis.txt is available. This is the official Bach baseline. The 38.0% music21 surface figure is retained only as a secondary surface-label reference. The old 83.7% onset-only/music21 result is superseded.
+
+Current cross-corpus picture: Chopin v2 moved from 60.0% to 57.5% while alignment rose from 11.3% to 41.7%; Grieg v2 moved from 54.8% to 47.3%; Schumann v2 moved from 63.6% to 64.0%; Tchaikovsky moved from 63.9% to 58.1%; Dvorak moved from 66.9% to 68.0%; Mozart moved from 67.5% to 56.7%; Corelli moved from 65.5% to 63.9%; Beethoven moved from 62.2% to 57.1%. The regional bridge-aligned path increases coverage substantially in several corpora, but the remaining accuracy limit is still root-identification quality rather than simple lack of aligned comparisons.
+
+Cross-corpus bassIsRoot diagnostic: across the seven non-Bach v2 corpora, weighted bassIsRoot in disagreements is 73.0%. Piano corpora are 72.4% weighted; chamber corpora are 73.7% weighted. This is not a piano-only phenomenon. Corelli is the strongest signal at 87.0%, while most other corpora cluster around 68–78%, so bass-root bias remains a general scoring lever rather than an Alberti-bass-only issue.
 
 When in Rome is compared against adjacent `analysis.txt` RomanText files parsed through
 music21 rather than the sparser DCML TSV workflow used elsewhere. RomanText annotations are
@@ -886,14 +901,16 @@ preset system is functioning and identify any preset-induced regressions.
 
 | Metric | Standard | Baroque | Delta |
 |--------|----------|---------|-------|
-| Chord identity | 83.7% | **83.7%** | 0.0 pp |
+| Chord identity (retired onset-only/music21 figure) | 83.7% (superseded) | **83.7% (superseded)** | 0.0 pp |
 | Aligned regions | 4 058 | 4 058 | — |
 | Mean per-chorale | — | 85.2% | — |
 
 **Finding:** Baroque preset produces identical chord identity to Standard
 on Bach SATB chorales. Expected — the chorales are overwhelmingly
 major/minor with unambiguous vertical evidence; mode priors have no
-effect when evidence is decisive.
+effect when evidence is decisive. This preset check remains historically
+useful, but its 83.7% value belongs to the retired onset-only/music21
+workflow; the official Bach baseline is now 50.0% WIR structural.
 
 **Check 2 — Grieg lyric pieces, Modal preset**
 `tools/reports/reports/grieg_20260406_173253.json` | git `601e13bab2`
@@ -939,8 +956,11 @@ Validates §4.1b and §4.1c improvements across styles.
 Chopin and Grieg calibrate modal priors before jazz work.
 
 **Step 1b — Preset sensitivity checks** ✓ Complete (2026-04-06)
-Baroque preset: no regression on Bach chorales (83.7% = Standard).
-Modal preset: no regression on Grieg (54.8% = Standard); modal
+Baroque preset: no regression on Bach chorales in the retired
+onset-only/music21 workflow (83.7% = Standard, now superseded).
+Modal preset: no regression on Grieg in the 2026-04-06 run (54.8% = Standard);
+that historical Standard figure is now superseded by the 2026-04-09 v2
+regional/DCML baseline of 47.3%. Modal
 distribution shifts as expected.
 
 **Step 2 — §4.1c jazz mode** ✓ Complete (2026-04-06)
@@ -1080,6 +1100,28 @@ Jazz preset calibration is deferred until jazz corpus
 validation begins — jazz harmony has substantially different
 mode prior requirements (Dorian, Lydian Dominant, Altered)
 that cannot be validated without jazz scores.
+
+## Next session priorities
+
+1. **Pedal-aware Jaccard boundary detection**
+  Fix over-segmentation in piano left-hand beat-1 patterns. Implement in both
+  `notationcomposingbridgehelpers.cpp` and `batch_analyze.cpp` (Rule 10).
+  Validate on Chopin BI16-1 measure 1 (expect: 4 regions → 1 region). Then
+  re-run Chopin corpus (expect improvement above 57.5%).
+
+2. **bassNoteRootBonus recalibration**
+  73% of all corpus disagreements are `bassIsRoot` errors. Investigate reducing
+  `bassNoteRootBonus` or adding inversion detection before adjusting. Must not
+  regress on corpora where bass is reliably the root (Corelli BIR 94.9% pre-v2).
+
+3. **Mozart KV279 key detection (F Lyd? error)**
+  Diagnostic pending from score inspection. Key inferrer returns F Lydian instead
+  of C major at piece opening. Likely piece-start shortcut issue in
+  `resolveKeyAndMode()`.
+
+4. **Mozart K533-3 batch_analyze crash**
+  53/54 movements processed. One remaining import crash. Isolate and fix or
+  permanent skip.
 
 ---
 

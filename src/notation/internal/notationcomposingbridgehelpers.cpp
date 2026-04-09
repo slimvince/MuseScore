@@ -29,6 +29,7 @@
 #include "notationcomposingbridgehelpers.h"
 #include "notationanalysisinternal.h"
 
+#include <algorithm>
 #include <cmath>
 #include <limits>
 #include <map>
@@ -41,6 +42,7 @@
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
+#include "engraving/dom/pedal.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/sig.h"
 #include "engraving/dom/staff.h"
@@ -444,6 +446,8 @@ collectRegionTones(const mu::engraving::Score* sc,
         return {};
     }
 
+    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences;
+
     const Fraction startTick = Fraction::fromTicks(startTickInt);
     const Fraction endTick   = Fraction::fromTicks(endTickInt);
     const int regionDuration = endTickInt - startTickInt;
@@ -474,6 +478,102 @@ collectRegionTones(const mu::engraving::Score* sc,
     // voiceCountAtTick[pc][segTick] = number of voices playing pc at that tick
     std::map<int, int> voiceCountAtTick[12];
 
+    struct PedalWindow {
+        int startTick = 0;
+        int endTick = 0;
+    };
+
+    struct PedalTailCandidate {
+        size_t staffIdx = 0;
+        int pc = 0;
+        int pitch = 0;
+        int tpc = -1;
+        int writtenEndTick = 0;
+        double attackBeatWeight = 0.0;
+    };
+
+    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
+    std::vector<PedalTailCandidate> pedalTailCandidates;
+
+    for (const auto& spannerEntry : sc->spanner()) {
+        const Spanner* spanner = spannerEntry.second;
+        if (!spanner || spanner->type() != ElementType::PEDAL) {
+            continue;
+        }
+
+        const Pedal* pedal = toPedal(spanner);
+        if (!pedal) {
+            continue;
+        }
+
+        const auto& beginText = pedal->beginText();
+        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
+            continue;
+        }
+
+        const int pedalStartTick = pedal->tick().ticks();
+        const int pedalEndTick = pedal->tick2().ticks();
+        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
+            continue;
+        }
+
+        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
+        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
+            continue;
+        }
+
+        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
+    }
+
+    for (auto& pedalEntry : pedalWindowsByStaff) {
+        auto& windows = pedalEntry.second;
+        std::sort(windows.begin(), windows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
+            if (lhs.startTick != rhs.startTick) {
+                return lhs.startTick < rhs.startTick;
+            }
+            return lhs.endTick < rhs.endTick;
+        });
+    }
+
+    auto earliestPedalReleaseTick = [&](const PedalTailCandidate& candidate) -> int {
+        const auto it = pedalWindowsByStaff.find(candidate.staffIdx);
+        if (it == pedalWindowsByStaff.end()) {
+            return -1;
+        }
+
+        int pedalReleaseTick = std::numeric_limits<int>::max();
+        for (const PedalWindow& window : it->second) {
+            if (window.startTick >= candidate.writtenEndTick) {
+                break;
+            }
+            if (window.endTick <= candidate.writtenEndTick) {
+                continue;
+            }
+            pedalReleaseTick = std::min(pedalReleaseTick, window.endTick);
+        }
+
+        return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
+    };
+
+    auto recordPedalTailCandidate = [&](size_t staffIdx, int writtenEndTick, double attackBeatWeight, const Note* note) {
+        if (!note || writtenEndTick >= endTickInt || pedalWindowsByStaff.empty()) {
+            return;
+        }
+
+        if (pedalWindowsByStaff.find(staffIdx) == pedalWindowsByStaff.end()) {
+            return;
+        }
+
+        pedalTailCandidates.push_back({
+            staffIdx,
+            note->ppitch() % 12,
+            note->ppitch(),
+            note->tpc(),
+            writtenEndTick,
+            attackBeatWeight,
+        });
+    };
+
     // ── Walk backward to catch notes sustained into the region ────────────────
     // Notes that attacked before startTick but are still sounding at startTick
     // must be included (e.g., a bass note held across a harmonic boundary).
@@ -496,6 +596,8 @@ collectRegionTones(const mu::engraving::Score* sc,
              s && s->tick() >= backLimit;
              s = s->prev1(SegmentType::ChordRest)) {
             const int segTickInt = s->tick().ticks();
+            const Measure* m = s->measure();
+            const double sustainBeatWeight = m ? beatWeight(safeBeatType(m, s)) : bwAtRegionStart;
             for (size_t si = 0; si < sc->nstaves(); ++si) {
                 if (excludeStaves.count(si) || !staffIsEligible(sc, si, startTick)) {
                     continue;
@@ -507,20 +609,25 @@ collectRegionTones(const mu::engraving::Score* sc,
                         continue;
                     }
                     const int noteEnd = segTickInt + cr->actualTicks().ticks();
-                    if (noteEnd <= startTickInt) {
-                        continue;  // ends before our region
-                    }
-                    const int clippedEnd  = std::min(noteEnd, endTickInt);
-                    const int durInRegion = clippedEnd - startTickInt;
-                    if (durInRegion <= 0) {
-                        continue;
-                    }
-                    const double baseWeight
-                        = (static_cast<double>(durInRegion) / regionDuration) * bwAtRegionStart;
                     for (const Note* n : toChord(cr)->notes()) {
                         if (!n->play() || !n->visible()) {
                             continue;
                         }
+
+                        recordPedalTailCandidate(si, noteEnd, sustainBeatWeight, n);
+
+                        if (noteEnd <= startTickInt) {
+                            continue;
+                        }
+
+                        const int clippedEnd  = std::min(noteEnd, endTickInt);
+                        const int durInRegion = clippedEnd - startTickInt;
+                        if (durInRegion <= 0) {
+                            continue;
+                        }
+
+                        const double baseWeight
+                            = (static_cast<double>(durInRegion) / regionDuration) * bwAtRegionStart;
                         const int pc = n->ppitch() % 12;
                         PcAccum& a = accum[pc];
                         a.totalWeight    += baseWeight;
@@ -582,6 +689,8 @@ collectRegionTones(const mu::engraving::Score* sc,
                         continue;
                     }
 
+                    recordPedalTailCandidate(si, noteEnd, bw, n);
+
                     const int pc = n->ppitch() % 12;
                     PcAccum& a = accum[pc];
                     a.totalWeight    += baseWeight;
@@ -624,6 +733,35 @@ collectRegionTones(const mu::engraving::Score* sc,
         }
         if (maxVoices > 1) {
             a.totalWeight *= 1.5;
+        }
+    }
+
+    // ── Pass 4: discounted sustain-pedal tails ───────────────────────────
+    // Add a smaller continuation weight after written note-off when an
+    // explicit sustain pedal is still active on the same staff.
+    if (prefs.pedalTailWeightMultiplier > 0.0) {
+        for (const PedalTailCandidate& candidate : pedalTailCandidates) {
+            const int pedalReleaseTick = earliestPedalReleaseTick(candidate);
+            if (pedalReleaseTick < 0) {
+                continue;
+            }
+
+            const int tailStartTick = std::max(candidate.writtenEndTick, startTickInt);
+            const int tailEndTick = std::min(pedalReleaseTick, endTickInt);
+            const int tailDuration = tailEndTick - tailStartTick;
+            if (tailDuration <= 0) {
+                continue;
+            }
+
+            PcAccum& a = accum[candidate.pc];
+            a.totalWeight += (static_cast<double>(tailDuration) / regionDuration)
+                             * candidate.attackBeatWeight
+                             * prefs.pedalTailWeightMultiplier;
+            a.durationInRegion += tailDuration;
+            if (candidate.pitch < a.lowestPitch) {
+                a.lowestPitch = candidate.pitch;
+                a.tpc = candidate.tpc;
+            }
         }
     }
 
