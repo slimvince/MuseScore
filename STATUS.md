@@ -1103,21 +1103,33 @@ that cannot be validated without jazz scores.
 
 ## Next session priorities
 
-1. **Pedal-aware Jaccard boundary detection**
-  Fix over-segmentation in piano left-hand beat-1 patterns. Implement in both
+1. **bassNoteRootBonus recalibration**
+  Root cause confirmed by 2026-04-09 score inspection. `bassNoteRootBonus` is
+  the primary failure mode across all corpora (73% of disagreements) and across
+  all texture types. Mozart KV279 movement 1 confirms the mechanism: an
+  arpeggiated left hand (C→E→G) causes the analyzer to promote each successive
+  bass note to root, yielding Em / Dm7 / Bdim instead of C major. The same
+  mechanism also drives Chopin beat-1 over-segmentation in broken-chord
+  textures. This is now the highest-priority next action because it addresses
+  both the scoring error and partially the boundary over-segmentation.
+
+  Proposed investigation:
+  - What is the current `bassNoteRootBonus` value?
+  - Under what conditions does it fire?
+  - Can inversion detection (3rd/5th in bass) suppress the bonus for non-root-position bass?
+  - What is the effect of reducing or conditioning the bonus on Bach/Corelli/Beethoven where bass is often the root?
+
+2. **Pedal-aware Jaccard boundary detection**
+  May partially resolve after `bassNoteRootBonus` recalibration. Implement in both
   `notationcomposingbridgehelpers.cpp` and `batch_analyze.cpp` (Rule 10).
   Validate on Chopin BI16-1 measure 1 (expect: 4 regions → 1 region). Then
-  re-run Chopin corpus (expect improvement above 57.5%).
+  re-run Chopin corpus.
 
-2. **bassNoteRootBonus recalibration**
-  73% of all corpus disagreements are `bassIsRoot` errors. Investigate reducing
-  `bassNoteRootBonus` or adding inversion detection before adjusting. Must not
-  regress on corpora where bass is reliably the root (Corelli BIR 94.9% pre-v2).
-
-3. **Mozart KV279 key detection (F Lyd? error)**
-  Diagnostic pending from score inspection. Key inferrer returns F Lydian instead
-  of C major at piece opening. Likely piece-start shortcut issue in
-  `resolveKeyAndMode()`.
+3. **Mozart KV279 key detection confidence**
+  Score inspection confirms the opening sonority is a C-major broken-chord
+  texture, so the immediate failure is scoring, not key identity. After
+  `bassNoteRootBonus` recalibration, re-check whether the opening F Lydian read
+  is a real key-confidence issue or a downstream effect of the wrong roots.
 
 4. **Mozart K533-3 batch_analyze crash**
   53/54 movements processed. One remaining import crash. Isolate and fix or
