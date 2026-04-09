@@ -2104,32 +2104,45 @@ one pitch-class set. Fix required: include pedal-sustained notes when computing 
 pitch-class sets for Jaccard boundary detection. Confirmed on Chopin BI16-1 measure 1.
 Next session priority.
 
-**bassNoteRootBonus miscalibration — universal**
+**bassNoteRootBonus miscalibration — confirmed by score inspection (2026-04-09):**
 
-Across all seven non-Bach v2 corpora, 73% of chord disagreements have the bass note as
-the analyzed root (`bassIsRoot`). This is not piano-specific: Corelli (87%), Beethoven
-(68%), Chopin (78%), and Mozart (68%) all show the same pattern. The bass note is being
-over-weighted as a root indicator in inverted chords and arpeggiated textures.
-Investigating `bassNoteRootBonus` magnitude and conditions is the next major scoring
-lever.
+Score inspection across four corpora confirms a single root cause:
+`bassNoteRootBonus` fires unconditionally on the lowest sounding note,
+regardless of whether that note is actually the chord root.
 
-**Root cause confirmed (2026-04-09 score inspection):** `bassNoteRootBonus` is the
-primary failure mode across all corpora (73% of disagreements) and across all texture
-types. Score inspection of Mozart KV279 movement 1 confirms the mechanism: arpeggiated
-left-hand patterns (C→E→G) cause `bassNoteRootBonus` to fire on each successive lowest
-note, producing Em / Dm7 / Bdim instead of C major. The same mechanism causes Chopin
-beat-1 over-segmentation in broken-chord textures. Fixing `bassNoteRootBonus`
-calibration is therefore the highest-priority next action because it addresses both the
-scoring error and partially the boundary over-segmentation.
+Confirmed failure patterns:
 
-Proposed investigation:
+- Chopin mazurka: single bass note on beat 1 (root) isolated from chord block on beats
+  2-3 — bass correctly identifies root but creates spurious boundary vs chord beats
+- Mozart sonata: arpeggiated left hand (C→E→G) — each successive lowest note promoted
+  to root, producing Em / Dm7 / Bdim instead of C
+- Corelli trio sonata: walking/stepping bass line — each bass step promoted to root,
+  producing one chord per bass note instead of recognizing the underlying harmony
+- Beethoven string quartet: cello moving in inversions and stepwise motion — same
+  pattern as Corelli
 
-- What is the current `bassNoteRootBonus` value?
-- Under what conditions does it fire?
-- Can inversion detection (is the bass note the 3rd or 5th of the candidate root?)
-  suppress the bonus for non-root-position bass?
-- What is the effect of reducing or conditioning the bonus on Bach/Corelli/Beethoven
-  where bass is often the root?
+All four cases share the same mechanism: the bass voice moves at a faster rate than the
+harmonic rhythm, and each bass note independently receives `bassNoteRootBonus`,
+overriding the correct root identification from the chord tones above.
+
+**Proposed fix:**
+
+Condition `bassNoteRootBonus` on corroborating evidence that the bass note is in root
+position:
+
+- Full bonus: bass note + perfect fifth above it both present in accumulated tones
+  (strong root position evidence)
+- Reduced bonus: bass note + major/minor third above it present, no fifth
+  (possible first inversion)
+- Minimal or no bonus: bass note alone, no third or fifth above it in tones
+  (passing tone, arpeggiated note, or insufficient evidence)
+
+This preserves the bonus for clear root-position chords (Bach chorales, homophonic
+writing) while suppressing it for moving bass lines, inversions, and arpeggiated
+textures.
+
+Must validate that Corelli BIR (94.9% pre-v2, meaning bass IS reliably root in
+Corelli's structural chords) does not regress after fix.
 
 ### 5.9 Key Signature Injection — Not Planned
 
@@ -4299,6 +4312,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
+*Document version: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*

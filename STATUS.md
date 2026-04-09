@@ -1119,6 +1119,17 @@ that cannot be validated without jazz scores.
   - Can inversion detection (3rd/5th in bass) suppress the bonus for non-root-position bass?
   - What is the effect of reducing or conditioning the bonus on Bach/Corelli/Beethoven where bass is often the root?
 
+  **Score inspection findings summary:**
+  Four scores inspected (Chopin BI16-1, Mozart KV279, Corelli op01n01a,
+  Beethoven Op18No1). All confirm `bassNoteRootBonus` as the primary failure
+  mode. Additionally: Beethoven opening (measures 1-3) produces zero regions
+  due to sparse 2-3 note texture — a separate thin-texture problem distinct
+  from `bassNoteRootBonus`.
+
+  Proposed `bassNoteRootBonus` fix: condition the bonus on presence of a fifth
+  or third above the bass note in accumulated tones before applying the full
+  bonus.
+
 2. **Pedal-aware Jaccard boundary detection**
   May partially resolve after `bassNoteRootBonus` recalibration. Implement in both
   `notationcomposingbridgehelpers.cpp` and `batch_analyze.cpp` (Rule 10).
