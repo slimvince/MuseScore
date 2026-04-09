@@ -1123,6 +1123,15 @@ that cannot be validated without jazz scores.
   53/54 movements processed. One remaining import crash. Isolate and fix or
   permanent skip.
 
+5. **Chord inference failure under Ped. markings**
+  Score inspection of Chopin BI16-1 shows that regions under explicit Ped.
+  markings produce no inferred chord in the chord track. This is distinct from
+  the beat-1 over-segmentation problem — it is a complete absence of chord
+  output under the pedal span. Likely cause: pedal spanner tick boundaries
+  interfering with region creation or absorption logic. Diagnose on BI16-1
+  before implementing the pedal-aware Jaccard fix, as the two problems may
+  share a root cause.
+
 ---
 
 ## Future Architectural Considerations
