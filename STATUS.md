@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: April 2026 — Bach now uses the 50.0% WIR structural baseline, the full classical v2 corpus rerun is recorded, the cross-corpus `bassIsRoot` signal is now documented as the next scoring priority, the batch classical path uses regional accumulation instead of the old onset-only prototype, the batch jazz-path regional collector mirrors the bridge sustain-pedal tail pass, and `notation_tests` contains 16 focused notation-side regressions, all passing.*
+*Last updated: April 2026 — the inference-quality assessment and reasonable-plateau roadmap are now documented explicitly, the plateau target is now qualified for full-texture tonal corpora only, benchmark interpretation is split between heuristic confidence, internal consistency, and external agreement, Mozart piano sonatas current direct DCML agreement is corrected to 26.7% and marked as non-comparable to the full-texture corpora, the final post-`bassNoteRootBonus` corpus rerun is recorded, Bach WIR structural is 52.3% and Bach music21 surface is 39.3%, Milestone A3 confidence gating is now implemented, Mozart K279-1 no longer opens in spurious F Lydian, Roman-analysis Harmony imports no longer activate the chord-symbol path, Milestone A2 batch/notation parity still passes exactly on BWV 227.7 and Chopin BI16-1, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, Corelli walking-bass sus/slash artifacts are documented as a deferred limitation, and `notation_tests` now has 23 focused regressions, all passing.*
 
 ---
 
@@ -111,10 +111,38 @@ detected harmonic event instead of inheriting the smoothed region-tuning behavio
 `collectRegionTones()` now always includes notes sustained into the region start, even when
 there is already a `ChordRest` segment exactly at that tick, and the implode writer creates
 or fetches exact region-start `ChordRest` segments before placing notes and Harmony
-annotations. Two notation-side implode regressions cover half-measure harmony changes and
-beat-by-beat changes supported by sustained pedal notes. A third implode regression now
-checks discounted sustain-pedal tail weighting inside a pedaled region without affecting
-an unpedaled region. Current `notation_tests.exe` result: 16/16 passing.
+annotations. Four notation-side implode regressions cover half-measure harmony changes,
+beat-by-beat changes supported by sustained pedal notes, Chopin BI16-1 opening-region
+collapse under `PreserveAllChanges`, and tupleted Dvorak `op08n06` chord-track population.
+A fifth implode regression checks discounted sustain-pedal tail weighting inside a pedaled
+region without affecting an unpedaled region. A sixth implode regression appends real
+chord-track staves to raw BI16-1 and verifies that `populateChordTrack()` does not leave
+any measure containing both chords and rests on the generated voice. To support that case,
+the writer now extends the first/last analyzable region within a measure across sparse
+gaps instead of serializing leftover rests. That preservation-focused regression set passed
+19/19 before the confidence/exposure pass below extended the suite further.
+
+**Chord-staff confidence/exposure cleanup is complete.** `populateChordTrack()` now
+gates key-dependent output by key confidence instead of always exposing it. When
+`normalizedConfidence < 0.5`, key labels, Roman/Nashville function text, and other
+key-dependent annotations are suppressed. For `0.5 <= confidence < 0.8`, only the
+tentative key label is written with a trailing `?`. At `confidence >= 0.8`, the full
+key-dependent annotation set is allowed again (key signatures, modulation labels,
+borrowed-chord markers, cadence markers, and function text). A new Dvorak `op08n06`
+implode regression locks in the high-vs-low confidence behavior. Current
+`notation_tests.exe` result: 23/23 passing.
+
+**Mozart K279 opening-mode regression is resolved.** Two issues were involved.
+First, Roman-analysis `Harmony` imports were still visible to the chord-symbol gate,
+so both the bridge helper and `batch_analyze` now restrict that path to rooted
+`HarmonyType::STANDARD` annotations only. Second, same-key-signature diatonic mode
+selection could let `tonalCenterScore` overrule a materially stronger raw winner,
+which produced the near-zero-confidence `F Lydian` opening on `K279-1`. The
+key-mode selector now keeps tonal-center disambiguation for close diatonic ties,
+but falls back to the stronger raw winner when the tonal-center choice trails by
+more than the existing comparison tolerance. Batch and notation now both open
+`K279-1` in `C major`, and parity re-checks still pass exactly on BWV 227.7 and
+Chopin BI16-1.
 
 **P8a (ChordAnalysisResult refactor) is complete.** `ChordAnalysisResult` now contains two
 nested sub-structs: `ChordIdentity` (pitch-content: score, rootPc, bassPc, bassTpc, quality,
@@ -746,7 +774,7 @@ No further fix attempts without a new design session.
 
 ---
 
-### Section 7 — Extended Corpus Diagnostics (2026-04-05)
+### Section 7 — Extended Corpus Diagnostics (2026-04-10)
 
 Scripts: `tools/run_mozart_validation.py`, `tools/run_corelli_validation.py`,
 `tools/section_7_3_diagnostic.py`. Registry: `tools/corpus_registry.json`.
@@ -754,18 +782,24 @@ Git hash: `80fc2d2ca1` (inversion fix reverted in working tree).
 
 #### 7.1 Mozart Piano Sonatas
 
-Corpus: DCMLab/mozart_piano_sonatas (54 MSCX files; 1 skipped — no TSV).
-Run: `20260405_221616` (clean binary, Rule 3 compliant).
-Report: `tools/reports/reports/mozart_20260405_221616.json`
+Corpus: DCMLab/mozart_piano_sonatas (54 MSCX files).
+Run: `20260410_002531` (clean binary, Rule 3 compliant).
+Report: `tools/reports/reports/mozart_20260410_002531.json`
 
 | Metric | Value |
 |---|---|
-| Movements | 53/54 |
-| Our regions | 1,105 |
-| DCML-aligned | 581 (52.6%) |
-| Root agreement | 392/581 (**67.5%**) |
-| Root disagreement | 189/581 (32.5%) |
-| bassIsRoot in disagreements | 73/189 (**38.6%**) |
+| Movements | 54/54 |
+| Our regions | 7,065 |
+| DCML-aligned | 2,293 (32.5%) |
+| Root agreement | 612/2,293 (**26.7%**) |
+| Root disagreement | 1,681/2,293 (73.3%) |
+| bassIsRoot in disagreements | 1,001/1,681 (**59.5%**) |
+
+Note (2026-04-10): this refreshed run supersedes the historical 53/54 snapshot.
+The previously skipped `K533-3` native MSCX path now completes successfully in
+`batch_analyze` after the headless loader stopped forcing full layout. Direct
+`K533-3.mscx` still matches the mirrored `score.mxl` path on detected key
+(`Fmaj` at 0.980275 confidence) and region count (317).
 
 #### 7.2 Corelli Trio Sonatas
 
@@ -790,16 +824,16 @@ Script: `tools/section_7_3_diagnostic.py`
 |--------|--------|----------|-----|------|-------------|--------|--------|
 | Bach chorales | 83.4% | 673 | 500 | **74.3%** | 500 (100%) | 365 (73%) | 408 (82%) |
 | Beethoven quartets | 62.2% | 1123 | 667 | **59.4%** | 667 (100%) | 410 (62%) | 544 (82%) |
-| Mozart sonatas | 67.5% | 189 | 73 | **38.6%** | 73 (100%) | 43 (59%) | 55 (75%) |
+| Mozart sonatas | 26.7% | 1681 | 1001 | **59.5%** | 1001 (100%) | 729 (73%) | 984 (98%) |
 | Corelli sonatas | 65.5% | 175 | 166 | **94.9%** | 166 (100%) | 124 (75%) | 141 (85%) |
 
 **Universal findings:**
 - **noteCount ≥ 3 in 100% of BIR errors across all four corpora** — no arpeggio artifacts in genuine BIR disagreements.
-- **Margin < 0.65 in 75–82% of BIR errors** across all corpora (range: 75% Mozart – 85% Corelli). The bass bonus is the marginal deciding factor in the large majority of cases.
-- **Margin < 1.0 in 95–100% of BIR errors** — essentially no high-confidence wins.
-- **Beat-1 concentration in instrumental corpora:** Beethoven 90.7%, Mozart 86.3%, Corelli 94.0%. Bach chorales distributed across all beats (35% / 24% / 28% / 12%) — reflects SATB homophonic texture vs. instrumental idiomatic writing.
-- **BIR fraction varies widely by corpus** (38.6% Mozart – 94.9% Corelli), suggesting corpus-specific factors (texture, voicing style, notation density) affect alignment rate and BIR fraction independently.
-- **Mozart BIR fraction notably lower (38.6%)** — warrants investigation; may reflect lower alignment rate (52.6%) selecting only clearly-aligned regions where root identification is more reliable.
+- **Margin < 0.65 in 81–98% of BIR errors** across all corpora (range: 81% Beethoven – 98% Mozart). The bass bonus is the marginal deciding factor in the large majority of cases.
+- **Margin < 1.0 in 98.5–100% of BIR errors** — essentially no high-confidence wins.
+- **Beat-1 concentration in instrumental corpora:** Beethoven 91.3%, Mozart 93.2%, Corelli 94.0%. Bach chorales distributed across all beats (35.4% / 24.1% / 27.9% / 12.3%) — reflects SATB homophonic texture vs. instrumental idiomatic writing.
+- **BIR fraction varies widely by corpus** (59.4% Beethoven – 94.9% Corelli), suggesting corpus-specific factors (texture, voicing style, notation density) affect alignment rate and BIR fraction independently.
+- **Mozart now clusters with the other instrumental corpora rather than as a low-BIR outlier**: 59.5% of disagreements are bassIsRoot, 93.2% of those land on beat 1, and 98.3% have chordScoreMargin < 0.65.
 
 ---
 
@@ -852,19 +886,21 @@ we already do well.
 
 | Corpus | Genre | Period | Agree% | BIR% | Align% |
 |--------|-------|--------|--------|------|--------|
-| Bach chorales (352 SATB) | Choral | Baroque | 50.0% WIR structural | 38.0% music21 surface | Preferred: WIR structural. Old 83.7% was onset-only prototype vs music21 surface labels — both wrong. Superseded. |
-| ABC Beethoven string quartets (70 mvts) | Chamber | Classical | 57.1% | 68.2% | 39.3% |
-| Mozart piano sonatas (53 mvts) | Piano | Classical | 56.7% | 68.3% | 39.8% |
-| Corelli trio sonatas (149 mvts) | Chamber | Baroque | 63.9% | 87.0% | 33.5% |
-| Chopin mazurkas (55 mvts) | Piano | Romantic | 57.5% | 78.3% | 41.7% |
-| Grieg lyric pieces (66 mvts) | Piano | Romantic | 47.3% | 73.1% | 39.5% |
-| Schumann Kinderszenen (13 mvts) | Piano | Romantic | 64.0% | 75.6% | 42.1% |
-| Tchaikovsky Seasons (12 mvts) | Piano | Romantic | 58.1% | 68.1% | 36.0% |
-| Dvorak Silhouettes (12 mvts) | Piano | Romantic | 68.0% | 67.6% | 45.7% |
+| Bach chorales (352 SATB) | Choral | Baroque | 52.3% WIR structural | 39.3% music21 surface | Preferred: WIR structural. 52.3% is the current final post-bassfix benchmark. |
+| ABC Beethoven string quartets (70 mvts) | Chamber | Classical | 59.9% | 53.6% | 39.5% |
+| Mozart piano sonatas (54 mvts)† | Piano | Classical | 26.7% | 59.5% | 32.5% |
+| Corelli trio sonatas (149 mvts) | Chamber | Baroque | 63.3% | 66.3% | 32.7% |
+| Chopin mazurkas (55 mvts) | Piano | Romantic | 57.5% | 64.9% | 40.9% |
+| Grieg lyric pieces (66 mvts) | Piano | Romantic | 50.3% | 62.7% | 39.6% |
+| Schumann Kinderszenen (13 mvts) | Piano | Romantic | 58.7% | 70.0% | 42.2% |
+| Tchaikovsky Seasons (12 mvts) | Piano | Romantic | 58.9% | 59.1% | 37.8% |
+| Dvorak Silhouettes (12 mvts) | Piano | Romantic | 66.2% | 55.8% | 45.5% |
 | When in Rome (334 local works, RomanText) | Mixed | Mixed | 38.8% | — | 43.9% matched |
 | Bach En/Fr Suites (89 mvts) | Keyboard | Baroque | 66.7% | 74.3% | 32.1% |
 | Bach En/Fr Suites dense mvts only | Keyboard | Baroque | 66.7% | 74.3% | 32.1% (partial) |
 | C.P.E. Bach Keyboard (66 mvts) | Keyboard | Late Baroque | — | — | 0 (deferred) |
+
+† Note: 26.7% is not directly comparable to other corpora. Two-voice texture means most regions do not align with DCML annotations, so agreement is computed on a small and unrepresentative subset (32.5% alignment). Thin-texture limitation is deferred until mixed-texture orchestration is implemented.
 
 **Bach chorale baseline correction (2026-04-09):**
 The previous 83.7% figure was measured using the onset-only prototype note
@@ -877,11 +913,11 @@ The corrected baseline uses:
 - Reference: When in Rome structural annotations (RomanText, about 138 labels per chorale when local analysis.txt exists)
 - Method: annotation-centric beat-proximity alignment, fair to structural region detection
 
-New baseline: 50.0% root agreement on the 352-chorale corpus, using the local WIR structural reference where analysis.txt is available. This is the official Bach baseline. The 38.0% music21 surface figure is retained only as a secondary surface-label reference. The old 83.7% onset-only/music21 result is superseded.
+New baseline: 52.3% root agreement on the 352-chorale corpus, using the local WIR structural reference where analysis.txt is available. This is the current Bach structural benchmark. The 39.3% music21 surface figure is retained only as a secondary surface-label reference. The old 83.7% onset-only/music21 result remains superseded.
 
-Current cross-corpus picture: Chopin v2 moved from 60.0% to 57.5% while alignment rose from 11.3% to 41.7%; Grieg v2 moved from 54.8% to 47.3%; Schumann v2 moved from 63.6% to 64.0%; Tchaikovsky moved from 63.9% to 58.1%; Dvorak moved from 66.9% to 68.0%; Mozart moved from 67.5% to 56.7%; Corelli moved from 65.5% to 63.9%; Beethoven moved from 62.2% to 57.1%. The regional bridge-aligned path increases coverage substantially in several corpora, but the remaining accuracy limit is still root-identification quality rather than simple lack of aligned comparisons.
+Current cross-corpus picture after the final post-fix rerun: Bach WIR moved from 50.0% to 52.3%; Beethoven reached 59.9%; Mozart direct DCML root agreement is 26.7% with 59.5% `bassIsRoot` among disagreements; Corelli 63.3%; Chopin 57.5%; Grieg 50.3%; Schumann 58.7%; Tchaikovsky 58.9%; Dvorak 66.2%. Score inspection shows that the remaining disagreements are no longer the original unconditional bass-root promotion failure mode. Dvorak `op08n06` is accepted as genuine harmonic ambiguity, Corelli `op01n08d` is a deferred Baroque walking-bass passing-tone limitation that still produces sus/slash artifacts, and Schumann slash-chord spellings are confirmed not to be a comparison artifact because both the generic comparator and the direct DCML runners compare root pitch class rather than inversion notation.
 
-Cross-corpus bassIsRoot diagnostic: across the seven non-Bach v2 corpora, weighted bassIsRoot in disagreements is 73.0%. Piano corpora are 72.4% weighted; chamber corpora are 73.7% weighted. This is not a piano-only phenomenon. Corelli is the strongest signal at 87.0%, while most other corpora cluster around 68–78%, so bass-root bias remains a general scoring lever rather than an Alberti-bass-only issue.
+Cross-corpus bassIsRoot diagnostic after the final rerun: across the eight non-Bach corpora, weighted bassIsRoot in disagreements drops from 73.0% to 58.0%. Piano corpora are 58.5% weighted; chamber corpora are 57.5% weighted. This confirms that the new tiered bass-root conditioning materially reduced the targeted failure signal even though the remaining ceiling is now dominated by ambiguity and known passing-bass artifacts rather than the original bass-root bug.
 
 When in Rome is compared against adjacent `analysis.txt` RomanText files parsed through
 music21 rather than the sparser DCML TSV workflow used elsewhere. RomanText annotations are
@@ -1101,50 +1137,142 @@ validation begins — jazz harmony has substantially different
 mode prior requirements (Dorian, Lydian Dominant, Altered)
 that cannot be validated without jazz scores.
 
+## Milestone A Status (2026-04-10)
+
+Milestone A now has three completed gates:
+
+1. **A1 — shared tone-merge/collapse alignment.** Validation is complete:
+   `composing_tests.exe` passed 295/295, `notation_tests.exe` passed 19/19,
+   `ctest -R batch_analyze_regressions --output-on-failure` passed, Bach WIR
+   structural remains 52.3%, and Chopin remains 57.5%.
+2. **A2 — reusable batch/notation parity harness.** `batch_analyze` now supports
+   `--dump-regions batch|notation|notation-premerge`, the notation bridge exposes
+   pre/post-merge debug capture, and `tools/check_parity.py` compares both paths on
+   one score. Exact parity currently passes for BWV 227.7 and Chopin BI16-1.
+   Reports: `tools/reports/parity/bwv227.7.txt` and `tools/reports/parity/BI16-1.txt`.
+3. **A3 — confidence/exposure cleanup.** Complete. `populateChordTrack()` now gates
+   key-dependent output by key confidence: below 0.5 it suppresses key labels and Roman/
+   Nashville function text entirely; from 0.5 to 0.8 it keeps only a tentative key label;
+   at 0.8 or above it allows the full key-dependent annotation set (key signatures,
+   modulation labels, borrowed-chord markers, cadence markers, and function text).
+  `notation_tests.exe` now passes 23/23, including the Dvorak `op08n06` exposure
+  regression, the Roman-harmony chord-symbol gate regressions, and a Mozart `K279-1`
+  opening-key regression.
+4. **Post-A follow-up — Mozart `K533-3` native MSCX crash.** Complete.
+   `batch_analyze` no longer forces layout on headless loads, so the direct
+   `K533-3.mscx` path now exits 0 instead of crashing. Validation: direct MSCX
+   and mirrored `score.mxl` both report `Fmaj` at 0.980275 confidence with 317
+  regions; `composing_tests.exe` remains 295/295 and `notation_tests.exe`
+  remains 23/23. Separately, full GUI open of the native `K533-3.mscx` file
+  is still treated as a bad-score / corruption issue on Windows rather than an
+  active product-fix target: investigation reproduced intermittent
+  `ucrtbase.dll c0000409` and `Qt6Gui.dll c0000005` failures, but no validated
+  MuseScore-side fix survived verification, so future sessions should keep this
+  file out of GUI-fix work unless a fresh reliable crash dump is captured.
+
+Milestone A is complete.
+
+## Inference Quality Assessment (2026-04-11)
+
+The current inferrers do not emit calibrated probabilities of correctness.
+`KeyModeAnalysisResult::normalizedConfidence` is a heuristic transform of the
+internal winner-vs-runner-up score gap, and `ChordAnalysisResult` still
+exposes only raw scores. The published corpus figures are therefore empirical
+agreement rates, not literal probabilities.
+
+Interpret the current quality evidence in three tiers:
+
+1. **Internal consistency** — batch vs notation vs UI-path parity. This should
+   converge toward near-100% because it measures whether our own paths agree.
+2. **External structural agreement** — currently mostly root-pitch-class or
+   root+quality comparison against DCML / When in Rome / music21 references.
+   These are useful trend signals, but they are not full harmonic-correctness
+   measures.
+3. **Full harmonic correctness** — chord identity + function + key/mode +
+   granularity agreement. This remains the desired long-term measure, but it is
+   not yet the dominant published benchmark.
+
+Current corpus tables are strongest as root-agreement trend indicators. They
+show most tonal corpora in the mid-50s to mid-60s, with Mozart currently at
+26.7% direct DCML root agreement and 59.5% `bassIsRoot` among disagreements.
+The earlier `59.4%` Mozart prose figure was stale and should not be reused as
+an accuracy claim.
+
+## Reasonable "Good" Plateau (planning target)
+
+A reasonable stopping point before sharply diminishing returns is:
+
+- near-perfect internal consistency across batch, chord track, status bar, and
+  context menu
+- calibrated high-confidence exposure: when the product chooses to show a
+  key-dependent inference, it should be right most of the time
+- exact external root+quality agreement roughly in the 65–75% band on tonal
+  corpora for the current vertical tertian engine family
+- exact Roman/function agreement expected to remain lower than root+quality;
+  optimize precision and abstention rather than forcing full coverage
+
+## Plateau Roadmap (highest ROI before diminishing returns)
+
+1. **Remaining recurring texture fixes.** Broken-chord/pedal boundary
+  handling, Baroque passing-bass handling, and phrase-aware key look-ahead.
+  These address primary failure modes that confidence calibration cannot fix.
+2. **Evaluation tier separation.** Split published quality reporting into:
+  internal consistency, root-only/root+quality external agreement on
+  full-texture corpora, and full harmonic correctness. Baselines must be
+  stable before held-out calibration is meaningful.
+3. **Chord confidence + calibration.** Add normalized confidence for chord
+  analysis and held-out calibration on stable baselines. This is only useful
+  after the primary texture failure modes are addressed.
+4. **Mixed-texture orchestration.** Add a lightweight second strategy for
+  obviously arpeggiated or single-line spans. "Obviously arpeggiated" means
+  maximum simultaneous pitch-class count in any beat window <= 2. Compare
+  calibrated confidence across strategies and treat abstention as valid.
+5. **Region identity decision.** Decide explicitly whether preserve-all
+  regions are keyed to root + quality (harmonic summary mode) or full
+  sonority identity (as-written mode). Fold the deferred chord-track octave
+  deduplication item into this decision. Both modes are needed; neither should
+  remain undecided.
+
+Work likely beyond the plateau:
+
+- quartal/quintal language detection
+- rootless ensemble awareness
+- polychordal/upper-structure detection
+- register-sensitive add2 vs add9
+- full monophonic engine
+
 ## Next session priorities
 
-1. **bassNoteRootBonus recalibration**
-  Root cause confirmed by 2026-04-09 score inspection. `bassNoteRootBonus` is
-  the primary failure mode across all corpora (73% of disagreements) and across
-  all texture types. Mozart KV279 movement 1 confirms the mechanism: an
-  arpeggiated left hand (C→E→G) causes the analyzer to promote each successive
-  bass note to root, yielding Em / Dm7 / Bdim instead of C major. The same
-  mechanism also drives Chopin beat-1 over-segmentation in broken-chord
-  textures. This is now the highest-priority next action because it addresses
-  both the scoring error and partially the boundary over-segmentation.
+1. **B1 — pedal-aware Jaccard boundary detection**
+  Start with Chopin BI16-1 measures 1–3. The immediate target is the beat-1
+  over-segmentation in left-hand bass-plus-chord patterns under pedal support.
 
-  Proposed investigation:
-  - What is the current `bassNoteRootBonus` value?
-  - Under what conditions does it fire?
-  - Can inversion detection (3rd/5th in bass) suppress the bonus for non-root-position bass?
-  - What is the effect of reducing or conditioning the bonus on Bach/Corelli/Beethoven where bass is often the root?
+2. **Baroque walking-bass passing-tone handling**
+  Corelli `op01n08d` remains the clearest residual vertical-engine limitation
+  after the bass-root fix.
 
-  **Score inspection findings summary:**
-  Four scores inspected (Chopin BI16-1, Mozart KV279, Corelli op01n01a,
-  Beethoven Op18No1). All confirm `bassNoteRootBonus` as the primary failure
-  mode. Additionally: Beethoven opening (measures 1-3) produces zero regions
-  due to sparse 2-3 note texture — a separate thin-texture problem distinct
-  from `bassNoteRootBonus`.
+3. **Evaluation tier separation**
+  Stabilize the reporting layers before confidence calibration: internal
+  consistency, full-texture external structural agreement, and full harmonic
+  correctness.
 
-  Proposed `bassNoteRootBonus` fix: condition the bonus on presence of a fifth
-  or third above the bass note in accumulated tones before applying the full
-  bonus.
+4. **Chord confidence calibration**
+  Add normalized chord confidence only after the primary texture failures and
+  benchmark baselines are stable.
 
-2. **Pedal-aware Jaccard boundary detection**
-  May partially resolve after `bassNoteRootBonus` recalibration. Implement in both
-  `notationcomposingbridgehelpers.cpp` and `batch_analyze.cpp` (Rule 10).
-  Validate on Chopin BI16-1 measure 1 (expect: 4 regions → 1 region). Then
-  re-run Chopin corpus.
+5. **Mixed-texture orchestration design**
+  Define the smallest viable second-strategy path for obviously arpeggiated or
+  single-line spans and compare calibrated confidence rather than raw scores.
 
-3. **Mozart KV279 key detection confidence**
-  Score inspection confirms the opening sonority is a C-major broken-chord
-  texture, so the immediate failure is scoring, not key identity. After
-  `bassNoteRootBonus` recalibration, re-check whether the opening F Lydian read
-  is a real key-confidence issue or a downstream effect of the wrong roots.
+6. **Region identity + as-written mode decision**
+  Decide explicitly between harmonic-summary and as-written region identity,
+  including the deferred chord-track octave-deduplication work.
 
-4. **Mozart K533-3 batch_analyze crash**
-  53/54 movements processed. One remaining import crash. Isolate and fix or
-  permanent skip.
+7. **K533 native-vs-mirrored measure-number normalization (optional)**
+  Direct `K533-3.mscx` and the mirrored `score.mxl` now agree on harmony,
+  detected key, confidence, and region count, but still differ by a one-measure
+  numbering offset. Normalize only if downstream tooling needs identical JSON
+  measure numbering across both import paths.
 
 ---
 
