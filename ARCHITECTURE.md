@@ -1176,6 +1176,12 @@ This keeps the analyzer non-circular: the score's written harmony can be used fo
 boundary selection, weak contextual priors, and agreement/disagreement display,
 but it must not be copied back into `chordResult`.
 
+Outside this explicit jazz-mode boundary path, existing Harmony annotations are
+strictly output/comparison metadata. In notation-side status-bar, context-menu,
+and chord-track inference for note-driven workflows, existing Roman, Nashville,
+or standard chord symbols on source staves must never be used as harmonic input
+or even as boundary hints. Those user-facing paths infer from notes only.
+
 ##### Integration point
 
 `analyzeHarmonicRhythm()` in `notationharmonicrhythmbridge.cpp` gains a third branch:

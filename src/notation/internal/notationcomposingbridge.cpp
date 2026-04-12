@@ -31,9 +31,13 @@
 #include "notationanalysisinternal.h"
 #include "notationcomposingbridgehelpers.h"
 
+#include <array>
+#include <iterator>
+#include <optional>
 #include <set>
 #include <string>
 
+#include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
@@ -52,9 +56,454 @@ using mu::notation::internal::buildTones;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 
+namespace {
+
+static constexpr int kInitialRegionalLookBehindMeasures = 1;
+static constexpr int kInitialRegionalLookAheadMeasures = 1;
+static constexpr int kMaxRegionalExpansionSteps = 8;
+
+const std::array<int, 7>& keyModeScaleIntervals(mu::composing::analysis::KeySigMode mode)
+{
+    static constexpr std::array<std::array<int, 7>, 21> MODE_SCALES = {{
+        { 0, 2, 4, 5, 7, 9, 11 },
+        { 0, 2, 3, 5, 7, 9, 10 },
+        { 0, 1, 3, 5, 7, 8, 10 },
+        { 0, 2, 4, 6, 7, 9, 11 },
+        { 0, 2, 4, 5, 7, 9, 10 },
+        { 0, 2, 3, 5, 7, 8, 10 },
+        { 0, 1, 3, 5, 6, 8, 10 },
+        { 0, 2, 3, 5, 7, 9, 11 },
+        { 0, 1, 3, 5, 7, 9, 10 },
+        { 0, 2, 4, 6, 8, 9, 11 },
+        { 0, 2, 4, 6, 7, 9, 10 },
+        { 0, 2, 4, 5, 7, 8, 10 },
+        { 0, 2, 3, 5, 6, 8, 10 },
+        { 0, 1, 3, 4, 6, 8, 10 },
+        { 0, 2, 3, 5, 7, 8, 11 },
+        { 0, 1, 3, 5, 6, 9, 10 },
+        { 0, 2, 4, 5, 8, 9, 11 },
+        { 0, 2, 3, 6, 7, 9, 10 },
+        { 0, 1, 4, 5, 7, 8, 10 },
+        { 0, 3, 4, 6, 7, 9, 11 },
+        { 0, 1, 3, 4, 6, 8, 9 },
+    }};
+
+    const size_t modeIdx = mu::composing::analysis::keyModeIndex(mode);
+    return MODE_SCALES[modeIdx < MODE_SCALES.size() ? modeIdx : 0];
+}
+
+void applySparseChordKeyContext(mu::composing::analysis::ChordAnalysisResult& result,
+                                const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+                                int keyFifths,
+                                mu::composing::analysis::KeySigMode keyMode)
+{
+    using namespace mu::composing::analysis;
+
+    const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
+    const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+    const auto& scale = keyModeScaleIntervals(keyMode);
+
+    result.function.keyTonicPc = tonicPc;
+    result.function.keyMode = keyMode;
+    result.function.degree = -1;
+    for (size_t degree = 0; degree < scale.size(); ++degree) {
+        if ((tonicPc + scale[degree]) % 12 == result.identity.rootPc) {
+            result.function.degree = static_cast<int>(degree);
+            break;
+        }
+    }
+
+    bool diatonicToKey = (result.function.degree >= 0);
+    if (diatonicToKey) {
+        for (const auto& tone : tones) {
+            const int pitchClass = tone.pitch % 12;
+            bool inScale = false;
+            for (int interval : scale) {
+                if ((tonicPc + interval) % 12 == pitchClass) {
+                    inScale = true;
+                    break;
+                }
+            }
+            if (!inScale) {
+                diatonicToKey = false;
+                break;
+            }
+        }
+    }
+
+    result.function.diatonicToKey = diatonicToKey;
+}
+
+std::optional<mu::composing::analysis::ChordAnalysisResult> inferSparseChordResult(
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode)
+{
+    using namespace mu::composing::analysis;
+
+    if (tones.empty()) {
+        return std::nullopt;
+    }
+
+    const ChordAnalysisTone* bassTone = bassToneFromTones(tones);
+    if (!bassTone) {
+        bassTone = &tones.front();
+        for (const auto& tone : tones) {
+            if (tone.pitch < bassTone->pitch) {
+                bassTone = &tone;
+            }
+        }
+    }
+
+    bool seenPitchClasses[12] = {};
+    std::vector<int> pitchClasses;
+    pitchClasses.reserve(tones.size());
+    for (const auto& tone : tones) {
+        const int pitchClass = tone.pitch % 12;
+        if (!seenPitchClasses[pitchClass]) {
+            seenPitchClasses[pitchClass] = true;
+            pitchClasses.push_back(pitchClass);
+        }
+    }
+
+    if (pitchClasses.empty()) {
+        return std::nullopt;
+    }
+
+    ChordAnalysisResult inferred;
+    inferred.identity.rootPc = bassTone->pitch % 12;
+    inferred.identity.bassPc = bassTone->pitch % 12;
+    inferred.identity.bassTpc = bassTone->tpc;
+    inferred.identity.score = 0.0;
+
+    if (pitchClasses.size() == 1) {
+        inferred.identity.quality = ChordQuality::Unknown;
+        applySparseChordKeyContext(inferred, tones, keyFifths, keyMode);
+        return inferred;
+    }
+
+    const int bassPitchClass = bassTone->pitch % 12;
+    for (int pitchClass : pitchClasses) {
+        if (pitchClass == bassPitchClass) {
+            continue;
+        }
+
+        const int intervalAboveBass = (pitchClass - bassPitchClass + 12) % 12;
+        if (intervalAboveBass == 3 || intervalAboveBass == 4) {
+            inferred.identity.quality = (intervalAboveBass == 3) ? ChordQuality::Minor : ChordQuality::Major;
+            applySparseChordKeyContext(inferred, tones, keyFifths, keyMode);
+            return inferred;
+        }
+    }
+
+    for (int pitchClass : pitchClasses) {
+        if (pitchClass == bassPitchClass) {
+            continue;
+        }
+
+        if ((pitchClass - bassPitchClass + 12) % 12 != 7) {
+            continue;
+        }
+
+        inferred.identity.quality = ChordQuality::Unknown;
+        applySparseChordKeyContext(inferred, tones, keyFifths, keyMode);
+        return inferred;
+    }
+
+    return std::nullopt;
+}
+
+mu::engraving::staff_idx_t resolveAnalysisReferenceStaff(const mu::engraving::Score* sc,
+                                                         const mu::engraving::Fraction& tick,
+                                                         size_t preferredStaffIdx,
+                                                         const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    staff_idx_t refStaff = static_cast<staff_idx_t>(preferredStaffIdx);
+    if (preferredStaffIdx >= sc->nstaves()
+        || excludeStaves.count(preferredStaffIdx)
+        || !staffIsEligible(sc, preferredStaffIdx, tick)) {
+        refStaff = 0;
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (!excludeStaves.count(si) && staffIsEligible(sc, si, tick)) {
+                refStaff = static_cast<staff_idx_t>(si);
+                break;
+            }
+        }
+    }
+
+    return refStaff;
+}
+
+mu::notation::NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* seg,
+    mu::engraving::staff_idx_t refStaff,
+    const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    mu::notation::NoteHarmonicContext context;
+
+    std::vector<SoundingNote> sounding;
+    collectSoundingAt(sc, seg, excludeStaves, sounding);
+    if (sounding.empty()) {
+        return context;
+    }
+
+    resolveKeyAndMode(sc, tick, refStaff, excludeStaves,
+                      context.keyFifths, context.keyMode, context.keyConfidence);
+
+    int currentBassPc = -1;
+    int lowestPitch = std::numeric_limits<int>::max();
+    for (const SoundingNote& soundingNote : sounding) {
+        lowestPitch = std::min(lowestPitch, soundingNote.ppitch);
+    }
+    if (lowestPitch != std::numeric_limits<int>::max()) {
+        currentBassPc = lowestPitch % 12;
+    }
+
+    mu::composing::analysis::ChordTemporalContext temporalCtx
+        = findTemporalContext(sc, seg, excludeStaves, context.keyFifths, context.keyMode, currentBassPc);
+
+    const auto analysisTones = buildTones(sounding);
+    context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(analysisTones,
+                                                                                                  context.keyFifths,
+                                                                                                  context.keyMode,
+                                                                                                  &temporalCtx);
+    if (context.chordResults.empty()) {
+        if (auto sparseResult = inferSparseChordResult(analysisTones,
+                                                       context.keyFifths,
+                                                       context.keyMode)) {
+            context.chordResults.push_back(*sparseResult);
+        }
+    }
+    for (auto& result : context.chordResults) {
+        mu::notation::internal::refineSparseChordQualityFromKeyContext(result,
+                                                                       analysisTones,
+                                                                       context.keyFifths,
+                                                                       context.keyMode);
+    }
+    return context;
+}
+
+struct RegionalContextSnapshot {
+    mu::notation::NoteHarmonicContext context;
+    std::string symbol;
+    std::string roman;
+    std::string nashville;
+    bool valid = false;
+};
+
+RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* seg,
+    const std::set<size_t>& excludeStaves,
+    const mu::engraving::Fraction& windowStartTick,
+    const mu::engraving::Fraction& windowEndTick)
+{
+    using namespace mu::engraving;
+
+    RegionalContextSnapshot snapshot;
+
+    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(sc,
+                                                                                  windowStartTick,
+                                                                                  windowEndTick,
+                                                                                  excludeStaves);
+    if (regions.empty()) {
+        return snapshot;
+    }
+
+    const int noteTick = tick.ticks();
+    auto it = std::find_if(regions.begin(), regions.end(), [noteTick](const auto& region) {
+        return region.startTick <= noteTick && noteTick < region.endTick;
+    });
+    if (it == regions.end()) {
+        const auto nextRegion = std::find_if(regions.begin(), regions.end(), [noteTick](const auto& region) {
+            return noteTick < region.startTick;
+        });
+
+        if (nextRegion == regions.begin()) {
+            it = nextRegion;
+        } else if (nextRegion == regions.end()) {
+            it = std::prev(regions.end());
+        } else {
+            it = std::prev(nextRegion);
+        }
+    }
+    if (it == regions.end()) {
+        return snapshot;
+    }
+
+    snapshot.context.keyFifths = it->keyModeResult.keySignatureFifths;
+    snapshot.context.keyMode = it->keyModeResult.mode;
+    snapshot.context.keyConfidence = it->keyModeResult.normalizedConfidence;
+
+    auto displayTones = mu::notation::internal::collectRegionTones(sc,
+                                                                   it->startTick,
+                                                                   it->endTick,
+                                                                   excludeStaves);
+    const int currentBassPc = it->chordResult.identity.bassPc;
+    const mu::composing::analysis::ChordTemporalContext* temporalCtxPtr = nullptr;
+    mu::composing::analysis::ChordTemporalContext temporalCtx;
+    if (seg) {
+        temporalCtx = findTemporalContext(sc, seg, excludeStaves,
+                                          snapshot.context.keyFifths, snapshot.context.keyMode, currentBassPc);
+        temporalCtxPtr = &temporalCtx;
+    }
+
+    const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(snapshot.context.keyFifths);
+    const int tonicPc = (ionianPc + mu::composing::analysis::keyModeTonicOffset(snapshot.context.keyMode)) % 12;
+    auto applyRegionalKeyContext = [tonicPc, &snapshot](mu::composing::analysis::ChordAnalysisResult& result) {
+        result.function.keyTonicPc = tonicPc;
+        result.function.keyMode = snapshot.context.keyMode;
+    };
+
+    mu::composing::analysis::ChordAnalysisResult preferredResult = it->chordResult;
+    applyRegionalKeyContext(preferredResult);
+
+    if (!displayTones.empty()) {
+        snapshot.context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(displayTones,
+                                                                                                               snapshot.context.keyFifths,
+                                                                                                               snapshot.context.keyMode,
+                                                                                                               temporalCtxPtr);
+    }
+    for (auto& result : snapshot.context.chordResults) {
+        applyRegionalKeyContext(result);
+    }
+
+    if (snapshot.context.chordResults.empty()) {
+        snapshot.context.chordResults.push_back(preferredResult);
+    } else {
+        auto sameDisplayResult = [keyFifths = snapshot.context.keyFifths](const auto& lhs, const auto& rhs) {
+            return mu::composing::analysis::ChordSymbolFormatter::formatSymbol(lhs, keyFifths)
+                   == mu::composing::analysis::ChordSymbolFormatter::formatSymbol(rhs, keyFifths)
+                   && mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(lhs)
+                   == mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(rhs)
+                   && mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(lhs, keyFifths)
+                   == mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(rhs, keyFifths);
+        };
+        if (!sameDisplayResult(snapshot.context.chordResults.front(), preferredResult)) {
+            // Keep the harmonic-region winner first so note context mirrors chord-track output.
+            snapshot.context.chordResults.insert(snapshot.context.chordResults.begin(), preferredResult);
+        }
+    }
+
+    snapshot.symbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(snapshot.context.chordResults.front(),
+                                                                                  snapshot.context.keyFifths);
+    snapshot.roman = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(snapshot.context.chordResults.front());
+    snapshot.nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(snapshot.context.chordResults.front(),
+                                                                                              snapshot.context.keyFifths);
+    snapshot.valid = true;
+    return snapshot;
+}
+
+bool regionalSnapshotsMatch(const RegionalContextSnapshot& lhs,
+                            const RegionalContextSnapshot& rhs)
+{
+    if (!lhs.valid || !rhs.valid) {
+        return false;
+    }
+
+    return lhs.context.keyFifths == rhs.context.keyFifths
+           && lhs.context.keyMode == rhs.context.keyMode
+           && lhs.symbol == rhs.symbol
+           && lhs.roman == rhs.roman
+           && lhs.nashville == rhs.nashville;
+}
+
+mu::notation::NoteHarmonicContext analyzeHarmonicContextRegionallyAtTick(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* seg,
+    const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    const Measure* currentMeasure = sc->tick2measure(tick);
+    if (!currentMeasure) {
+        return {};
+    }
+
+    const Measure* windowStartMeasure = currentMeasure;
+    for (int i = 0; i < kInitialRegionalLookBehindMeasures; ++i) {
+        if (const Measure* previousMeasure = windowStartMeasure->prevMeasure()) {
+            windowStartMeasure = previousMeasure;
+        }
+    }
+
+    const Measure* windowEndMeasure = currentMeasure;
+    for (int i = 0; i < kInitialRegionalLookAheadMeasures; ++i) {
+        if (const Measure* nextMeasure = windowEndMeasure->nextMeasure()) {
+            windowEndMeasure = nextMeasure;
+        }
+    }
+
+    RegionalContextSnapshot previousSnapshot;
+    RegionalContextSnapshot currentSnapshot;
+
+    for (int expansionStep = 0; expansionStep <= kMaxRegionalExpansionSteps; ++expansionStep) {
+        currentSnapshot = analyzeNoteHarmonicContextRegionallyInWindow(sc,
+                                                                       tick,
+                                                                       seg,
+                                                                       excludeStaves,
+                                                                       windowStartMeasure->tick(),
+                                                                       windowEndMeasure->endTick());
+        if (currentSnapshot.valid && regionalSnapshotsMatch(previousSnapshot, currentSnapshot)) {
+            return currentSnapshot.context;
+        }
+        previousSnapshot = currentSnapshot;
+
+        const Measure* nextStartMeasure = windowStartMeasure->prevMeasure();
+        const Measure* nextEndMeasure = windowEndMeasure->nextMeasure();
+        if (!nextStartMeasure && !nextEndMeasure) {
+            break;
+        }
+        if (nextStartMeasure) {
+            windowStartMeasure = nextStartMeasure;
+        }
+        if (nextEndMeasure) {
+            windowEndMeasure = nextEndMeasure;
+        }
+    }
+
+    return previousSnapshot.context;
+}
+
+}
+
 // ── harmonicAnnotation ──────────────────────────────────────────────────────
 
 namespace mu::notation {
+
+NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* score,
+                                                 const mu::engraving::Fraction& tick,
+                                                 size_t preferredStaffIdx,
+                                                 const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    if (!score) {
+        return {};
+    }
+
+    const Segment* seg = score->tick2segment(tick, true, SegmentType::ChordRest);
+    if (!seg) {
+        return {};
+    }
+
+    const staff_idx_t refStaff = resolveAnalysisReferenceStaff(score, tick, preferredStaffIdx, excludeStaves);
+
+    NoteHarmonicContext regional = analyzeHarmonicContextRegionallyAtTick(score, tick, seg, excludeStaves);
+    if (!regional.chordResults.empty()) {
+        return regional;
+    }
+
+    return analyzeHarmonicContextLocallyAtTick(score, tick, seg, refStaff, excludeStaves);
+}
 
 std::string harmonicAnnotation(const Note* note)
 {
@@ -64,9 +513,10 @@ std::string harmonicAnnotation(const Note* note)
         return "";
     }
 
-    int keyFifths = 0;
-    mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
-    const auto chordResults = analyzeNoteHarmonicContext(note, keyFifths, keyMode);
+    const NoteHarmonicContext context = analyzeNoteHarmonicContextDetails(note);
+    const int keyFifths = context.keyFifths;
+    const auto keyMode = context.keyMode;
+    const auto& chordResults = context.chordResults;
 
     // Key/mode string (optional)
     std::string keyStr;
@@ -86,8 +536,9 @@ std::string harmonicAnnotation(const Note* note)
     }
 
     // Determine which display formats are active
-    const bool wantSym      = prefs->analyzeForChordSymbols()   && prefs->showChordSymbolsInStatusBar();
-    const bool wantRoman    = prefs->analyzeForChordFunction()  && prefs->showRomanNumeralsInStatusBar();
+    const bool wantSym = prefs->analyzeForChordSymbols() && prefs->showChordSymbolsInStatusBar();
+    // Keep function labels paired with the shown chord analysis even when the key guess is tentative.
+    const bool wantRoman = prefs->analyzeForChordFunction() && prefs->showRomanNumeralsInStatusBar();
     const bool wantNashville = prefs->analyzeForChordFunction() && prefs->showNashvilleNumbersInStatusBar();
 
     int shown = 0;
@@ -160,27 +611,19 @@ std::string harmonicAnnotation(const Note* note)
 
 namespace mu::notation {
 
-std::vector<mu::composing::analysis::ChordAnalysisResult>
-analyzeNoteHarmonicContext(const mu::engraving::Note* note,
-                           int& outKeyFifths,
-                           mu::composing::analysis::KeySigMode& outKeyMode)
+NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note* note)
 {
     using namespace mu::engraving;
-    using namespace mu::composing::analysis;
-    using mu::composing::analysis::KeySigMode;  // disambiguate from mu::engraving::KeyMode
+
+    NoteHarmonicContext emptyContext;
 
     if (!note) {
-        return {};
+        return emptyContext;
     }
 
-    const Score*   sc   = note->score();
+    const Score* sc = note->score();
     const Fraction tick = note->tick();
-    const Segment* seg = sc->tick2segment(tick, true, SegmentType::ChordRest);
-    if (!seg) {
-        return {};
-    }
 
-    // Exclude chord-staff staves so their notes don't pollute the analysis.
     std::set<size_t> excludeStaves;
     for (size_t si = 0; si < sc->nstaves(); ++si) {
         if (isChordTrackStaff(sc, si)) {
@@ -188,43 +631,18 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
         }
     }
 
-    // If the selected note is itself on a chord-staff, fall back to the
-    // first eligible staff for key-signature lookup.
-    staff_idx_t refStaff = note->staffIdx();
-    if (excludeStaves.count(static_cast<size_t>(refStaff))) {
-        refStaff = 0;
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (!excludeStaves.count(si) && staffIsEligible(sc, si, tick)) {
-                refStaff = static_cast<staff_idx_t>(si);
-                break;
-            }
-        }
-    }
+    return analyzeHarmonicContextAtTick(sc, tick, static_cast<size_t>(note->staffIdx()), excludeStaves);
+}
 
-    std::vector<SoundingNote> sounding;
-    collectSoundingAt(sc, seg, excludeStaves, sounding);
-    if (sounding.empty()) {
-        return {};
-    }
-
-    double unusedConfidence = 0.0;
-    resolveKeyAndMode(sc, tick, refStaff, excludeStaves,
-                      outKeyFifths, outKeyMode, unusedConfidence);
-
-    // Derive current bass pc from the lowest sounding pitch (same logic as buildTones).
-    int currentBassPc = -1;
-    {
-        int lo = std::numeric_limits<int>::max();
-        for (const SoundingNote& sn : sounding) { lo = std::min(lo, sn.ppitch); }
-        if (lo != std::numeric_limits<int>::max()) { currentBassPc = lo % 12; }
-    }
-
-    ChordTemporalContext temporalCtx
-        = findTemporalContext(sc, seg, excludeStaves, outKeyFifths, outKeyMode, currentBassPc);
-
-    const auto analysisTones = buildTones(sounding);
-    return ChordAnalyzerFactory::create()->analyzeChord(analysisTones, outKeyFifths, outKeyMode,
-                                                        &temporalCtx);
+std::vector<mu::composing::analysis::ChordAnalysisResult>
+analyzeNoteHarmonicContext(const mu::engraving::Note* note,
+                           int& outKeyFifths,
+                           mu::composing::analysis::KeySigMode& outKeyMode)
+{
+    const NoteHarmonicContext context = analyzeNoteHarmonicContextDetails(note);
+    outKeyFifths = context.keyFifths;
+    outKeyMode = context.keyMode;
+    return context.chordResults;
 }
 
 } // namespace mu::notation

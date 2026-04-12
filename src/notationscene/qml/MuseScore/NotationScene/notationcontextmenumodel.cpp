@@ -57,17 +57,17 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
         return;
     }
 
-    bool wantChordSymbols     = m_composingConfig()->analyzeForChordSymbols();
-    bool wantRomanNumerals    = m_composingConfig()->analyzeForChordFunction();
-    bool wantNashvilleNumbers = m_composingConfig()->analyzeForChordFunction();
+    const auto context = mu::notation::analyzeNoteHarmonicContextDetails(note);
+    const int keyFifths = context.keyFifths;
+    const bool wantChordSymbols = m_composingConfig()->analyzeForChordSymbols();
+    const bool wantRomanNumerals = m_composingConfig()->analyzeForChordFunction();
+    const bool wantNashvilleNumbers = m_composingConfig()->analyzeForChordFunction();
 
     if (!wantChordSymbols && !wantRomanNumerals && !wantNashvilleNumbers) {
         return;
     }
 
-    int keyFifths = 0;
-    mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
-    auto analysisResults = mu::notation::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
+    const auto& analysisResults = context.chordResults;
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 

@@ -87,6 +87,15 @@ const ChordAnalysisResult* findCandidate(const std::vector<ChordAnalysisResult>&
     return nullptr;
 }
 
+ChordAnalyzerPreferences bassSupportPrefs()
+{
+    ChordAnalyzerPreferences prefs;
+    prefs.bassNoteRootBonus = 1.0;
+    prefs.bassRootThirdOnlyMultiplier = 0.3;
+    prefs.bassRootAloneMultiplier = 0.1;
+    return prefs;
+}
+
 } // namespace
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
@@ -152,6 +161,201 @@ TEST(Composing_ChordAnalyzerTests, ReturnsEmptyForFewerThanThreeDistinctPitchCla
     // Two-note interval — insufficient for chord analysis.
     const auto results = kAnalyzer.analyzeChord(tones({ 60, 64 }), 0, KeySigMode::Ionian);
     EXPECT_TRUE(results.empty());
+}
+
+TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesFullTierWhenPerfectFifthPresent)
+{
+    ChordAnalyzerPreferences tieredPrefs = bassSupportPrefs();
+    ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
+    noBassBonusPrefs.bassNoteRootBonus = 0.0;
+
+    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
+                                               nullptr, tieredPrefs);
+    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
+                                               nullptr, noBassBonusPrefs);
+
+    ASSERT_FALSE(tiered.empty());
+    ASSERT_FALSE(noBass.empty());
+    ASSERT_NE(findCandidate(tiered, 0, ChordQuality::Major), nullptr);
+    ASSERT_NE(findCandidate(noBass, 0, ChordQuality::Major), nullptr);
+
+    const double tieredScore = findCandidate(tiered, 0, ChordQuality::Major)->identity.score;
+    const double noBassScore = findCandidate(noBass, 0, ChordQuality::Major)->identity.score;
+    EXPECT_NEAR(tieredScore - noBassScore, 1.0, 1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesFullTierWhenCandidateHasAlteredFifth)
+{
+    ChordAnalyzerPreferences tieredPrefs = bassSupportPrefs();
+    ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
+    noBassBonusPrefs.bassNoteRootBonus = 0.0;
+
+    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, tieredPrefs);
+    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, noBassBonusPrefs);
+
+    ASSERT_FALSE(tiered.empty());
+    ASSERT_FALSE(noBass.empty());
+    ASSERT_NE(findCandidate(tiered, 0, ChordQuality::Augmented), nullptr);
+    ASSERT_NE(findCandidate(noBass, 0, ChordQuality::Augmented), nullptr);
+
+    const double tieredScore = findCandidate(tiered, 0, ChordQuality::Augmented)->identity.score;
+    const double noBassScore = findCandidate(noBass, 0, ChordQuality::Augmented)->identity.score;
+    EXPECT_NEAR(tieredScore - noBassScore, 1.0, 1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesThirdOnlyTierWithoutFifth)
+{
+    ChordAnalyzerPreferences tieredPrefs = bassSupportPrefs();
+    ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
+    noBassBonusPrefs.bassNoteRootBonus = 0.0;
+
+    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, tieredPrefs);
+    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, noBassBonusPrefs);
+
+    ASSERT_FALSE(tiered.empty());
+    ASSERT_FALSE(noBass.empty());
+    ASSERT_NE(findCandidate(tiered, 0, ChordQuality::Major), nullptr);
+    ASSERT_NE(findCandidate(noBass, 0, ChordQuality::Major), nullptr);
+
+    const double tieredScore = findCandidate(tiered, 0, ChordQuality::Major)->identity.score;
+    const double noBassScore = findCandidate(noBass, 0, ChordQuality::Major)->identity.score;
+    EXPECT_NEAR(tieredScore - noBassScore, 0.3, 1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesAloneTierWithoutThirdOrFifth)
+{
+    ChordAnalyzerPreferences tieredPrefs = bassSupportPrefs();
+    ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
+    noBassBonusPrefs.bassNoteRootBonus = 0.0;
+
+    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, tieredPrefs);
+    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
+                                               nullptr, noBassBonusPrefs);
+
+    ASSERT_FALSE(tiered.empty());
+    ASSERT_FALSE(noBass.empty());
+    ASSERT_NE(findCandidate(tiered, 0, ChordQuality::Suspended4), nullptr);
+    ASSERT_NE(findCandidate(noBass, 0, ChordQuality::Suspended4), nullptr);
+
+    const double tieredScore = findCandidate(tiered, 0, ChordQuality::Suspended4)->identity.score;
+    const double noBassScore = findCandidate(noBass, 0, ChordQuality::Suspended4)->identity.score;
+    EXPECT_NEAR(tieredScore - noBassScore, 0.1, 1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, BareSuspensionTriadDoesNotUseFullBassRootTier)
+{
+    ChordAnalyzerPreferences tieredPrefs = bassSupportPrefs();
+    ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
+    noBassBonusPrefs.bassNoteRootBonus = 0.0;
+
+    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
+                                               nullptr, tieredPrefs);
+    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
+                                               nullptr, noBassBonusPrefs);
+
+    ASSERT_FALSE(tiered.empty());
+    ASSERT_FALSE(noBass.empty());
+    ASSERT_NE(findCandidate(tiered, 0, ChordQuality::Suspended2), nullptr);
+    ASSERT_NE(findCandidate(noBass, 0, ChordQuality::Suspended2), nullptr);
+
+    const double tieredScore = findCandidate(tiered, 0, ChordQuality::Suspended2)->identity.score;
+    const double noBassScore = findCandidate(noBass, 0, ChordQuality::Suspended2)->identity.score;
+    EXPECT_NEAR(tieredScore - noBassScore, 0.3, 1e-9);
+}
+
+TEST(Composing_ChordAnalyzerTests, BoundsExposeBassRootSupportMultipliers)
+{
+    const ParameterBoundsMap bounds = ChordAnalyzerPreferences{}.bounds();
+
+    const auto thirdOnly = bounds.find("bassRootThirdOnlyMultiplier");
+    ASSERT_NE(thirdOnly, bounds.end());
+    EXPECT_DOUBLE_EQ(thirdOnly->second.min, 0.0);
+    EXPECT_DOUBLE_EQ(thirdOnly->second.max, 1.0);
+
+    const auto bassAlone = bounds.find("bassRootAloneMultiplier");
+    ASSERT_NE(bassAlone, bounds.end());
+    EXPECT_DOUBLE_EQ(bassAlone->second.min, 0.0);
+    EXPECT_DOUBLE_EQ(bassAlone->second.max, 1.0);
+}
+
+TEST(Composing_ChordAnalyzerTests, StepwiseBassEvidenceFavorsCompleteMajorFirstInversionTriad)
+{
+    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(withoutCtx.empty());
+    const ChordAnalysisResult* withoutCtxCandidate = findCandidate(withoutCtx, 8, ChordQuality::Major);
+    ASSERT_NE(withoutCtxCandidate, nullptr);
+
+    ChordTemporalContext ctx;
+    ctx.bassIsStepwiseFromPrevious = true;
+    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
+
+    ASSERT_FALSE(withCtx.empty());
+    const ChordAnalysisResult* withCtxCandidate = findCandidate(withCtx, 8, ChordQuality::Major);
+    ASSERT_NE(withCtxCandidate, nullptr);
+    EXPECT_GT(withCtxCandidate->identity.score, withoutCtxCandidate->identity.score);
+    EXPECT_EQ(withCtx.front().identity.rootPc, 8);
+    EXPECT_EQ(withCtx.front().identity.bassPc, 0);
+    EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
+}
+
+TEST(Composing_ChordAnalyzerTests, StepwiseBassEvidenceFavorsCompleteMinorFirstInversionTriad)
+{
+    ChordTemporalContext ctx;
+    ctx.bassIsStepwiseFromPrevious = true;
+    const auto results = kAnalyzer.analyzeChord(tones({ 56, 60, 65 }), 0, KeySigMode::Ionian, &ctx);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 5);
+    EXPECT_EQ(results.front().identity.bassPc, 8);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+}
+
+TEST(Composing_ChordAnalyzerTests, StepwiseLookaheadFavorsCompleteMajorFirstInversionTriad)
+{
+    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(withoutCtx.empty());
+    const ChordAnalysisResult* withoutCtxCandidate = findCandidate(withoutCtx, 8, ChordQuality::Major);
+    ASSERT_NE(withoutCtxCandidate, nullptr);
+
+    ChordTemporalContext ctx;
+    ctx.bassIsStepwiseToNext = true;
+    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
+
+    ASSERT_FALSE(withCtx.empty());
+    const ChordAnalysisResult* withCtxCandidate = findCandidate(withCtx, 8, ChordQuality::Major);
+    ASSERT_NE(withCtxCandidate, nullptr);
+    EXPECT_GT(withCtxCandidate->identity.score, withoutCtxCandidate->identity.score);
+    EXPECT_EQ(withCtx.front().identity.rootPc, 8);
+    EXPECT_EQ(withCtx.front().identity.bassPc, 0);
+    EXPECT_EQ(withCtx.front().identity.quality, ChordQuality::Major);
+}
+
+TEST(Composing_ChordAnalyzerTests, CorelliWeightedPassingBassPrefersTonicFirstInversion)
+{
+    ChordTemporalContext ctx;
+    ctx.previousRootPc = 5;
+    ctx.previousQuality = ChordQuality::Minor;
+    ctx.bassIsStepwiseFromPrevious = true;
+    ctx.bassIsStepwiseToNext = true;
+
+    const std::vector<ChordAnalysisTone> regionTones = {
+        { 51, -1, 1.283, true },
+        { 60, -1, 0.606, false },
+        { 62, -1, 0.045, false },
+        { 65, -1, 0.066, false },
+    };
+
+    const auto results = kAnalyzer.analyzeChord(regionTones, -3, KeySigMode::Aeolian, &ctx);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+    EXPECT_EQ(results.front().identity.bassPc, 3);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
 }
 
 // ── Degree assignment in non-Ionian/Aeolian modes ────────────────────────────

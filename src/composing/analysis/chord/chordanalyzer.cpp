@@ -573,6 +573,7 @@ static constexpr double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P
 static constexpr double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
 static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
 static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
+static constexpr double kBassSupportPresenceThreshold = 0.05;  // matches distinct-PC presence threshold
 
 // Fraction of the best raw score below which candidates are discarded.  [empirical]
 static constexpr double kScoreThresholdRatio     = 0.75;
@@ -1097,18 +1098,145 @@ double tpcConsistencyBonus(const TemplateDef& tpl, int rootPc,
     return tpc.matched * prefs.tpcConsistencyBonusPerTone;
 }
 
+double bassRootBonusMultiplier(const TemplateDef& tpl,
+                               int rootPc,
+                               const std::array<double, 12>& pcWeight,
+                               const ChordAnalyzerPreferences& prefs)
+{
+    const auto hasPitchClass = [&](int pc) {
+        return pcWeight[static_cast<size_t>(normalizePc(pc))] > kBassSupportPresenceThreshold;
+    };
+
+    const bool templateHasThird = std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                                              [](int interval) {
+        return interval == 3 || interval == 4;
+    });
+    const bool hasMatchingTemplateThird = std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                                                      [&](int interval) {
+        return (interval == 3 || interval == 4)
+               && hasPitchClass(rootPc + interval);
+    });
+
+    const bool hasTemplateFifth = std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                                              [&](int interval) {
+        return (interval == 6 || interval == 7 || interval == 8)
+               && hasPitchClass(rootPc + interval);
+    });
+    const bool isBareSuspensionTriad = ((tpl.quality == ChordQuality::Suspended2
+                                         || tpl.quality == ChordQuality::Suspended4)
+                                        && tpl.intervals.size() == 3);
+
+    if (hasTemplateFifth) {
+        if (hasMatchingTemplateThird) {
+            return 1.0;
+        }
+
+        if (!templateHasThird) {
+            // Bare sus triads should not outrank omitted-third triads purely because
+            // the suspension template receives a full bass-root bonus.
+            return isBareSuspensionTriad ? prefs.bassRootThirdOnlyMultiplier : 1.0;
+        }
+
+        // Root plus fifth is materially stronger than bass alone, even when the third
+        // is omitted from the local sonority.
+        return prefs.bassRootThirdOnlyMultiplier;
+    }
+
+    if (hasPitchClass(rootPc + 3) || hasPitchClass(rootPc + 4)) {
+        return prefs.bassRootThirdOnlyMultiplier;
+    }
+
+    return prefs.bassRootAloneMultiplier;
+}
+
+bool templateHasMatchingThird(const TemplateDef& tpl,
+                              int rootPc,
+                              const std::array<double, 12>& pcWeight)
+{
+    return std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                       [&](int interval) {
+        return (interval == 3 || interval == 4)
+               && pcWeight[static_cast<size_t>(normalizePc(rootPc + interval))] > 0.05;
+    });
+}
+
+bool templateHasMatchingFifth(const TemplateDef& tpl,
+                              int rootPc,
+                              const std::array<double, 12>& pcWeight)
+{
+    return std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                       [&](int interval) {
+        return (interval == 6 || interval == 7 || interval == 8)
+               && pcWeight[static_cast<size_t>(normalizePc(rootPc + interval))] > 0.05;
+    });
+}
+
+bool qualifiesForCompleteTriadInversionBonus(const TemplateDef& tpl,
+                                             int rootPc,
+                                             int bassPc,
+                                             const std::array<double, 12>& pcWeight,
+                                             int distinctPcs)
+{
+    if (distinctPcs != 3 || rootPc == bassPc) {
+        return false;
+    }
+
+    const bool supportedQuality = (tpl.quality == ChordQuality::Major
+                                   || tpl.quality == ChordQuality::Minor
+                                   || tpl.quality == ChordQuality::Diminished);
+    if (!supportedQuality) {
+        return false;
+    }
+
+    return templateHasMatchingThird(tpl, rootPc, pcWeight)
+           && templateHasMatchingFifth(tpl, rootPc, pcWeight);
+}
+
+bool supportsContextualInversionBonuses(const TemplateDef& tpl,
+                                        int rootPc,
+                                        int bassPc,
+                                        const std::array<double, 12>& pcWeight)
+{
+    const bool isInvertedMajMin = (rootPc != bassPc)
+                                  && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor);
+    return isInvertedMajMin && templateHasMatchingThird(tpl, rootPc, pcWeight);
+}
+
+double appliedBassRootBonus(const TemplateDef& tpl,
+                            int rootPc,
+                            int bassPc,
+                            const std::array<double, 12>& pcWeight,
+                            const ChordAnalyzerPreferences& prefs)
+{
+    if (rootPc != bassPc) {
+        return 0.0;
+    }
+
+    return prefs.bassNoteRootBonus * bassRootBonusMultiplier(tpl, rootPc, pcWeight, prefs);
+}
+
 /// Score bonuses derived from musical context: bass note, key membership, and temporal
 /// information from the preceding chord.
 double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
+                         double appliedBassBonus,
+                         int distinctPcs,
+                         const std::array<double, 12>& pcWeight,
                          int keyTonicPc, const std::array<int, 7>& scale,
                          const ChordAnalyzerPreferences& prefs,
                          const ChordTemporalContext* context)
 {
     double score = 0.0;
+    const bool hasStepwiseBassEvidence = context
+                                         && (context->bassIsStepwiseFromPrevious
+                                             || context->bassIsStepwiseToNext);
 
-    // Bass note as root is a strong harmonic signal.
-    if (rootPc == bassPc) {
-        score += prefs.bassNoteRootBonus;
+    // Only award the full bass-root bonus when the accumulated tones support root position.
+    score += appliedBassBonus;
+
+    // Only use this inversion preference when adjacent bass motion says the bass note is likely passing.
+    if (hasStepwiseBassEvidence
+            && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
+        score += prefs.completeTriadInversionBonus;
     }
 
     // Prefer roots that belong to the current key scale.
@@ -1128,9 +1256,7 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
         // Contextual inversion bonuses — §4.1b
         // Only for inverted Major/Minor candidates (lesson from three-attempt
         // inversion fix history: never apply to Diminished/HalfDiminished/Augmented).
-        const bool isInvertedMajMin =
-            (rootPc != bassPc)
-            && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor);
+        const bool isInvertedMajMin = supportsContextualInversionBonuses(tpl, rootPc, bassPc, pcWeight);
 
         if (isInvertedMajMin) {
             if (context->bassIsStepwiseFromPrevious) {
@@ -1310,6 +1436,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // above) so that each rule is independently readable and modifiable.
     struct RawCandidate {
         double score;
+        double appliedBassBonus;
         int rootPc;
         ChordQuality quality;
         int tiePriority;  // template index in the array above; lower = preferred on equal score
@@ -1322,6 +1449,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
             const TemplateDef& tpl = templates[tplIdx];
             double score = 0.0;
+            const double bassBonus = appliedBassRootBonus(tpl, rootPc, bassPc, pcWeight, prefs);
 
             score += scoreTemplateTones(tpl, rootPc, pcWeight);
             score += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
@@ -1329,10 +1457,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
             score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
             score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            score += contextualBonuses(tpl, rootPc, bassPc, keyTonicPc, scale,
+            score += contextualBonuses(tpl, rootPc, bassPc, bassBonus, distinctPcs, pcWeight,
+                                       keyTonicPc, scale,
                                        prefs, context);
 
-            rawCandidates.push_back({ score, rootPc, tpl.quality,
+            rawCandidates.push_back({ score, bassBonus, rootPc, tpl.quality,
                                       static_cast<int>(tplIdx) });
         }
     }
@@ -1515,7 +1644,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         // bassIsRoot=true are far more often correct root-position identifications,
         // and the correction causes regressions when applied to them.
         const bool winnerQualityTargeted = (winner.identity.quality == ChordQuality::Major
-                                            || winner.identity.quality == ChordQuality::Minor);
+                            || winner.identity.quality == ChordQuality::Minor);
 
         if (winnerBassIsRoot && winnerQualityTargeted) {
             // Find the best alternative that has clean (Major or Minor) quality.

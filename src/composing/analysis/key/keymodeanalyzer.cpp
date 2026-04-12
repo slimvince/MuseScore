@@ -604,24 +604,52 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
         const int keySigIonianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
 
-        // Compare all modes sharing this key signature via tonal-centre score.
-        double bestCenterScore = -std::numeric_limits<double>::infinity();
+        struct FamilyWinner {
+            int tonicPc = 0;
+            size_t modeSlot = 0;
+            size_t modeIndex = 0;
+            double rawScore = -std::numeric_limits<double>::infinity();
+            double centerScore = -std::numeric_limits<double>::infinity();
+        };
+
+        std::optional<FamilyWinner> bestByCenter;
+        std::optional<FamilyWinner> bestByRaw;
+
+        // Compare all modes sharing this key signature via tonal-centre score,
+        // but do not let tonal-centre disambiguation overturn a materially
+        // stronger raw winner. This keeps close modal ties stable while avoiding
+        // near-zero-confidence selections that lose badly on the underlying score.
         for (size_t modeSlot = 0; modeSlot < numModeSlots; ++modeSlot) {
             const size_t modeIndex = ACTIVE_MODE_INDICES[modeSlot];
             const int tonicPc = (keySigIonianTonicPc + keyModeTonicOffset(keyModeFromIndex(modeIndex))) % 12;
             const CandidateEvaluation& eval = evaluations[static_cast<size_t>(tonicPc) * numModeSlots + modeSlot];
             const double center = tonalCenterScore(eval, prefs);
-            // Use tonal-centre score as primary, raw score as tiebreaker.
-            if (center > bestCenterScore + prefs.tonalCenterDeltaThreshold
-                || (std::abs(center - bestCenterScore) <= prefs.tonalCenterDeltaThreshold
-                    && eval.score > bestScore))
-            {
-                bestCenterScore = center;
-                bestScore    = eval.score;
-                bestTonicPc  = tonicPc;
-                bestModeSlot = modeSlot;
+
+            if (!bestByCenter.has_value()
+                || center > bestByCenter->centerScore + prefs.tonalCenterDeltaThreshold
+                || (std::abs(center - bestByCenter->centerScore) <= prefs.tonalCenterDeltaThreshold
+                    && eval.score > bestByCenter->rawScore)) {
+                bestByCenter = FamilyWinner{ tonicPc, modeSlot, modeIndex, eval.score, center };
+            }
+
+            if (!bestByRaw.has_value() || eval.score > bestByRaw->rawScore) {
+                bestByRaw = FamilyWinner{ tonicPc, modeSlot, modeIndex, eval.score, center };
             }
         }
+
+        const bool diatonicTieBreak = bestByCenter.has_value()
+                                      && bestByRaw.has_value()
+                                      && bestByCenter->modeIndex < 7
+                                      && bestByRaw->modeIndex < 7;
+        const bool allowTonalCenterOverride = bestByCenter.has_value()
+                                              && bestByRaw.has_value()
+                                              && (!diatonicTieBreak
+                                                  || (bestByCenter->rawScore + prefs.tonalCenterDeltaThreshold
+                                                      >= bestByRaw->rawScore));
+        const FamilyWinner& chosen = allowTonalCenterOverride ? *bestByCenter : *bestByRaw;
+        bestScore = chosen.rawScore;
+        bestTonicPc = chosen.tonicPc;
+        bestModeSlot = chosen.modeSlot;
     } else {
         // Out-of-range key signature: use the global highest-scoring candidate.
         for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {

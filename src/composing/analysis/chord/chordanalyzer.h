@@ -67,6 +67,73 @@ struct ChordAnalysisTone {
     int simultaneousVoiceCount = 0;
 };
 
+inline void normalizeMergedBassTone(std::vector<ChordAnalysisTone>& tones)
+{
+    if (tones.empty()) {
+        return;
+    }
+
+    size_t lowestIndex = 0;
+    for (size_t index = 1; index < tones.size(); ++index) {
+        if (tones[index].pitch < tones[lowestIndex].pitch) {
+            lowestIndex = index;
+        }
+    }
+
+    for (auto& tone : tones) {
+        tone.isBass = false;
+    }
+    tones[lowestIndex].isBass = true;
+}
+
+inline void mergeChordAnalysisTones(std::vector<ChordAnalysisTone>& existingTones,
+                                    const std::vector<ChordAnalysisTone>& newTones)
+{
+    for (const auto& newTone : newTones) {
+        ChordAnalysisTone* mergedTone = nullptr;
+        for (auto& existingTone : existingTones) {
+            if ((existingTone.pitch % 12) == (newTone.pitch % 12)) {
+                mergedTone = &existingTone;
+                break;
+            }
+        }
+
+        if (!mergedTone) {
+            existingTones.push_back(newTone);
+            continue;
+        }
+
+        mergedTone->weight += newTone.weight;
+        mergedTone->durationInRegion += newTone.durationInRegion;
+        mergedTone->distinctMetricPositions += newTone.distinctMetricPositions;
+        if (newTone.simultaneousVoiceCount > mergedTone->simultaneousVoiceCount) {
+            mergedTone->simultaneousVoiceCount = newTone.simultaneousVoiceCount;
+        }
+        if (newTone.pitch < mergedTone->pitch) {
+            mergedTone->pitch = newTone.pitch;
+            mergedTone->tpc = newTone.tpc;
+        } else if (mergedTone->tpc == -1 && newTone.tpc != -1) {
+            mergedTone->tpc = newTone.tpc;
+        }
+    }
+
+    normalizeMergedBassTone(existingTones);
+}
+
+inline const ChordAnalysisTone* bassToneFromTones(const std::vector<ChordAnalysisTone>& tones)
+{
+    const ChordAnalysisTone* bassTone = nullptr;
+    for (const auto& tone : tones) {
+        if (!tone.isBass) {
+            continue;
+        }
+        if (!bassTone || tone.pitch < bassTone->pitch) {
+            bassTone = &tone;
+        }
+    }
+    return bassTone;
+}
+
 // ── Extension bitmask ────────────────────────────────────────────────────────
 
 /// Chord extension and alteration flags.  Stored as a bitmask in ChordIdentity.
@@ -159,7 +226,18 @@ struct ChordAnalyzerPreferences {
     // ── Scoring weights ─────────────────────────────────────────────────────
 
     /// Added to the score when the candidate root equals the bass note.
-    double bassNoteRootBonus = 0.65;
+    double bassNoteRootBonus = 0.70;
+
+    /// Multiplier applied to bassNoteRootBonus when the bass note is supported by a
+    /// weaker but still chord-defining shell: a major/minor third without a fifth,
+    /// a root-fifth shell whose third is omitted, or a bare suspended triad.
+    /// Range: 0.0–1.0. Default: 0.3.
+    double bassRootThirdOnlyMultiplier = 0.3;
+
+    /// Multiplier applied to bassNoteRootBonus when the bass note has neither a
+    /// major/minor third nor a perfect fifth above it in the accumulated tones.
+    /// Range: 0.0–1.0. Default: 0.1.
+    double bassRootAloneMultiplier = 0.1;
 
     /// Added to the score when the candidate root belongs to the current key scale.
     double diatonicRootBonus = 0.30;
@@ -201,6 +279,14 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–2.0.  Default: 0.5.
     double stepwiseBassLookaheadBonus = 0.5;
 
+    /// Bonus applied to an inverted triad candidate when all three chord tones
+    /// are present in a 3-pitch-class texture. This helps complete first- or
+    /// second-inversion triads outrank bass-root shell readings in walking-bass
+    /// passages without affecting denser sonorities.
+    /// Only fires for Major, Minor, or Diminished quality candidates.
+    /// Range: 0.0–2.0. Default: 0.45.
+    double completeTriadInversionBonus = 0.45;
+
     /// Bonus applied to a non-bass-root candidate when the candidate
     /// root matches the previous region's root (same harmony, different
     /// inversion).  Bass arpeggiation — I → I6 → I — is one of the
@@ -227,13 +313,13 @@ struct ChordAnalyzerPreferences {
     //   - 86.1% of confirmed genuine errors have margin < 0.25
     //   - 100.0% of confirmed genuine errors have margin < 1.0
     //   - 0% of genuine errors have noteCount < 3
-    // A margin threshold of 0.65 (= bassNoteRootBonus) catches all cases where
+    // A margin threshold of 0.70 (= bassNoteRootBonus) catches all cases where
     // the bonus is the sole reason the bass-root candidate wins.
 
     /// Score-margin threshold below which the inversion correction activates.
     /// Must be >= 0. Set to 0 to disable the correction.
-    /// Default: 0.65 (= bassNoteRootBonus — bass bonus is sole deciding factor).
-    double inversionSuspicionMargin = 0.65;
+    /// Default: 0.70 (= bassNoteRootBonus — bass bonus is sole deciding factor).
+    double inversionSuspicionMargin = 0.70;
 
     /// Multiplier applied to the bass-root bonus reduction when the correction fires.
     /// 1.0 = no reduction (NOP).  0.0 = remove the bonus contribution entirely.
@@ -290,12 +376,15 @@ struct ChordAnalyzerPreferences {
     {
         return {
             { "bassNoteRootBonus",           { 0.0, 2.0 } },
+            { "bassRootThirdOnlyMultiplier", { 0.0, 1.0 } },
+            { "bassRootAloneMultiplier",     { 0.0, 1.0 } },
             { "diatonicRootBonus",           { 0.0, 1.0 } },
             { "tpcConsistencyBonusPerTone",  { 0.0, 1.0 } },
             { "rootContinuityBonus",           { 0.0, 1.5 } },
             { "resolutionBonus",               { 0.0, 1.5 } },
             { "stepwiseBassInversionBonus",    { 0.0, 2.0 } },
             { "stepwiseBassLookaheadBonus",    { 0.0, 2.0 } },
+            { "completeTriadInversionBonus",  { 0.0, 2.0 } },
             { "sameRootInversionBonus",        { 0.0, 2.0 } },
             { "inversionSuspicionMargin",           { 0.0, 2.0 } },
             { "inversionBonusReduction",            { 0.0, 1.0 } },

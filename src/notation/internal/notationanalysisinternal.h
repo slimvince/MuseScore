@@ -35,7 +35,9 @@
 #pragma once
 
 #include <cstddef>
+#include <vector>
 
+#include "composing/analysis/region/harmonicrhythm.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/staff.h"
 #include "engraving/dom/part.h"
@@ -51,7 +53,16 @@ inline bool isChordTrackStaff(const mu::engraving::Score* sc, size_t si)
         return false;
     }
     const mu::engraving::Part* part = sc->staff(si)->part();
-    return part && part->partName().contains(CHORD_TRACK_MARKER);
+    if (!part) {
+        return false;
+    }
+
+    if (part->partName().contains(CHORD_TRACK_MARKER)) {
+        return true;
+    }
+
+    const mu::engraving::Instrument* instrument = part->instrument();
+    return instrument && instrument->trackName().contains(CHORD_TRACK_MARKER);
 }
 
 /// Is this staff eligible for harmonic analysis at the given tick?
@@ -71,5 +82,33 @@ inline bool staffIsEligible(const mu::engraving::Score* sc, size_t si,
     }
     return true;
 }
+
+struct HarmonicRegionDebugCapture {
+    std::vector<mu::composing::analysis::HarmonicRegion>* preMergeRegions = nullptr;
+    std::vector<mu::composing::analysis::HarmonicRegion>* postMergeRegions = nullptr;
+};
+
+void setHarmonicRegionDebugCapture(HarmonicRegionDebugCapture* capture);
+HarmonicRegionDebugCapture* harmonicRegionDebugCapture();
+
+class ScopedHarmonicRegionDebugCapture {
+public:
+    explicit ScopedHarmonicRegionDebugCapture(HarmonicRegionDebugCapture* capture)
+        : m_previous(harmonicRegionDebugCapture())
+    {
+        setHarmonicRegionDebugCapture(capture);
+    }
+
+    ~ScopedHarmonicRegionDebugCapture()
+    {
+        setHarmonicRegionDebugCapture(m_previous);
+    }
+
+    ScopedHarmonicRegionDebugCapture(const ScopedHarmonicRegionDebugCapture&) = delete;
+    ScopedHarmonicRegionDebugCapture& operator=(const ScopedHarmonicRegionDebugCapture&) = delete;
+
+private:
+    HarmonicRegionDebugCapture* m_previous = nullptr;
+};
 
 } // namespace mu::notation::internal

@@ -65,6 +65,26 @@ using mu::notation::internal::collectChordSymbolBoundaries;
 
 namespace mu::notation {
 
+namespace {
+
+thread_local internal::HarmonicRegionDebugCapture* s_harmonicRegionDebugCapture = nullptr;
+
+}
+
+namespace internal {
+
+void setHarmonicRegionDebugCapture(HarmonicRegionDebugCapture* capture)
+{
+    s_harmonicRegionDebugCapture = capture;
+}
+
+HarmonicRegionDebugCapture* harmonicRegionDebugCapture()
+{
+    return s_harmonicRegionDebugCapture;
+}
+
+} // namespace internal
+
 // ── §4.1c Jazz mode helpers ──────────────────────────────────────────────────
 
 /// Map ParsedChord::xmlKind() to ChordQuality.
@@ -121,7 +141,7 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
     (void)initialKeyFifths;
     (void)initialKeyMode;
 
-    const auto boundaryTicks = collectChordSymbolBoundaries(score, startTick, endTick);
+    const auto boundaryTicks = collectChordSymbolBoundaries(score, startTick, endTick, excludeStaves);
     std::optional<KeyModeAnalysisResult> prevKeyResult;
 
     std::vector<HarmonicRegion> regions;
@@ -139,16 +159,17 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
         const Segment* seg = score->tick2segment(regionStart, true, SegmentType::ChordRest);
         if (seg && seg->tick() == regionStart) {
             for (const EngravingItem* ann : seg->annotations()) {
-                if (!ann->isHarmony()) {
+                if (excludeStaves.count(static_cast<size_t>(ann->track() / VOICES)) > 0 || !ann->isHarmony()) {
                     continue;
                 }
                 const Harmony* h = toHarmony(ann);
-                if (h->rootTpc() != Tpc::TPC_INVALID) {
-                    writtenRootPc = tpc2pitch(h->rootTpc()) % 12;
-                    writtenBassPc = (h->bassTpc() != Tpc::TPC_INVALID)
-                                    ? tpc2pitch(h->bassTpc()) % 12
-                                    : writtenRootPc;
+                if (h->harmonyType() != HarmonyType::STANDARD || h->rootTpc() == Tpc::TPC_INVALID) {
+                    continue;
                 }
+                writtenRootPc = tpc2pitch(h->rootTpc()) % 12;
+                writtenBassPc = (h->bassTpc() != Tpc::TPC_INVALID)
+                                ? tpc2pitch(h->bassTpc()) % 12
+                                : writtenRootPc;
                 if (const ParsedChord* pc = h->parsedForm()) {
                     writtenQuality = xmlKindToQuality(pc->xmlKind());
                 }
@@ -205,6 +226,15 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
         regions.push_back(std::move(region));
     }
 
+    if (auto* debugCapture = internal::harmonicRegionDebugCapture()) {
+        if (debugCapture->preMergeRegions) {
+            *debugCapture->preMergeRegions = regions;
+        }
+        if (debugCapture->postMergeRegions) {
+            *debugCapture->postMergeRegions = regions;
+        }
+    }
+
     return regions;
 }
 
@@ -255,7 +285,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     // When the score contains written chord symbols, the jazz path takes priority
     // for region boundaries only. Chord identity still comes from note-based
     // analysis within each chord-symbol-defined region.
-    if (scoreHasValidChordSymbols(score, startTick, endTick)) {
+    if (scoreHasValidChordSymbols(score, startTick, endTick, excludeStaves)) {
         return analyzeHarmonicRhythmJazz(score, startTick, endTick,
                                          excludeStaves, refStaff,
                                          keyFifths, keyMode);
@@ -324,6 +354,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     // ── §4.1c regional accumulation path ────────────────────────────────────
     if (useRegional) {
         const double jaccardThreshold = 0.6;  // TODO: read from ChordAnalyzerPreferences
+        auto* debugCapture = internal::harmonicRegionDebugCapture();
+        std::vector<HarmonicRegion> preMergeRegions;
 
         // B.4: detect boundaries via Jaccard distance on quarter-note windows.
         const auto boundaryTicks = (granularity == HarmonicRegionGranularity::PreserveAllChanges)
@@ -361,6 +393,27 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
                 && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
 
+            int nextBassPc = -1;
+            if (currentBassPc != -1 && i + 1 < boundaryTicks.size()) {
+                const Fraction nextRegionStart = boundaryTicks[i + 1];
+                const Fraction nextRegionEnd = (i + 2 < boundaryTicks.size())
+                                               ? boundaryTicks[i + 2]
+                                               : endTick;
+                const auto nextTones = collectRegionTones(score,
+                                                          nextRegionStart.ticks(),
+                                                          nextRegionEnd.ticks(),
+                                                          excludeStaves);
+                for (const auto& nextTone : nextTones) {
+                    if (nextTone.isBass) {
+                        nextBassPc = nextTone.pitch % 12;
+                        break;
+                    }
+                }
+            }
+            temporalCtx.bassIsStepwiseToNext =
+                (currentBassPc != -1 && nextBassPc != -1)
+                && isDiatonicStep(currentBassPc, nextBassPc);
+
             int localKeyFifths = keyFifths;
             KeySigMode localKeyMode = keyMode;
             double localKeyConfidence = 0.0;
@@ -374,12 +427,18 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 tones, localKeyFifths, localKeyMode, &temporalCtx);
 
             if (results.empty()) {
-                continue;  // < 3 distinct pitch classes
+                continue;
             }
 
-            temporalCtx.previousRootPc  = results.front().identity.rootPc;
-            temporalCtx.previousQuality = results.front().identity.quality;
-            temporalCtx.previousBassPc  = results.front().identity.bassPc;
+            ChordAnalysisResult chosenResult = results.front();
+            mu::notation::internal::refineSparseChordQualityFromKeyContext(chosenResult,
+                                                                           tones,
+                                                                           localKeyFifths,
+                                                                           localKeyMode);
+
+            temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
+            temporalCtx.previousQuality = chosenResult.identity.quality;
+            temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
 
             KeyModeAnalysisResult kmResult;
             kmResult.keySignatureFifths   = localKeyFifths;
@@ -388,17 +447,37 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             kmResult.score                = localKeyScore;
             prevKeyResult = kmResult;
 
-            // Collapse same-chord consecutive regions (keep endTick of the later one).
-            if (granularity == HarmonicRegionGranularity::Smoothed
-                && !regions.empty()
-                && regions.back().chordResult.identity.rootPc == results.front().identity.rootPc
-                && regions.back().chordResult.identity.quality == results.front().identity.quality) {
+            if (debugCapture && debugCapture->preMergeRegions) {
+                HarmonicRegion preMergeRegion;
+                preMergeRegion.startTick = regionStart.ticks();
+                preMergeRegion.endTick = regionEnd.ticks();
+                preMergeRegion.chordResult = chosenResult;
+                preMergeRegion.hasAnalyzedChord = true;
+                preMergeRegion.keyModeResult = kmResult;
+                preMergeRegion.tones = tones;
+                preMergeRegions.push_back(std::move(preMergeRegion));
+            }
+
+            const bool isContiguousWithPreviousRegion = !regions.empty()
+                                                    && regions.back().endTick == regionStart.ticks();
+
+            // Collapse same-chord consecutive regions only when they are truly adjacent.
+            // If an unanalyzable sparse slice sits between two matching regions, keep
+            // them separate so later notation code can preserve the visible boundary.
+            if (isContiguousWithPreviousRegion
+                && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
+                && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
                 regions.back().endTick = regionEnd.ticks();
+                mu::composing::analysis::mergeChordAnalysisTones(regions.back().tones, tones);
+                if (const auto* bassTone = mu::composing::analysis::bassToneFromTones(regions.back().tones)) {
+                    regions.back().chordResult.identity.bassPc = bassTone->pitch % 12;
+                    regions.back().chordResult.identity.bassTpc = bassTone->tpc;
+                }
             } else {
                 HarmonicRegion region;
                 region.startTick     = regionStart.ticks();
                 region.endTick       = regionEnd.ticks();
-                region.chordResult   = results.front();
+                region.chordResult   = chosenResult;
                 region.hasAnalyzedChord = true;
                 region.keyModeResult = kmResult;
                 region.tones         = std::move(tones);
@@ -414,6 +493,16 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         if (granularity == HarmonicRegionGranularity::Smoothed) {
             absorbShortRegions(regions);
         }
+
+        if (debugCapture) {
+            if (debugCapture->preMergeRegions) {
+                *debugCapture->preMergeRegions = std::move(preMergeRegions);
+            }
+            if (debugCapture->postMergeRegions) {
+                *debugCapture->postMergeRegions = regions;
+            }
+        }
+
         return regions;
     }
 
@@ -428,6 +517,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     };
 
     std::vector<BoundaryAnalysis> boundaries;
+    auto* debugCapture = internal::harmonicRegionDebugCapture();
 
     auto pcBitset = [](const std::vector<ChordAnalysisTone>& tones) -> uint16_t {
         uint16_t bits = 0;
@@ -485,12 +575,14 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             tones, localKeyFifths, localKeyMode, &temporalCtx);
 
         if (results.empty()) {
-            continue;  // < 3 distinct pitch classes — skip
+            continue;
         }
 
-        temporalCtx.previousRootPc  = results.front().identity.rootPc;
-        temporalCtx.previousQuality = results.front().identity.quality;
-        temporalCtx.previousBassPc  = results.front().identity.bassPc;
+        const ChordAnalysisResult& chosenResult = results.front();
+
+        temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
+        temporalCtx.previousQuality = chosenResult.identity.quality;
+        temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
         // nextRootPc, nextBassPc, bassIsStepwiseToNext: populated in
         // two-pass chord staff analysis only. Deferred — see §4.1b.
 
@@ -502,12 +594,30 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
         prevKeyResult = kmResult;
 
-        boundaries.push_back({ s->tick(), results.front(), kmResult,
+        boundaries.push_back({ s->tick(), chosenResult, kmResult,
                                std::move(tones) });
     }
 
     if (boundaries.empty()) {
         return {};
+    }
+
+    std::vector<HarmonicRegion> preMergeRegions;
+    if (debugCapture && debugCapture->preMergeRegions) {
+        preMergeRegions.reserve(boundaries.size());
+        for (size_t i = 0; i < boundaries.size(); ++i) {
+            const Fraction regionEnd = (i + 1 < boundaries.size())
+                                       ? boundaries[i + 1].tick
+                                       : endTick;
+            HarmonicRegion region;
+            region.startTick = boundaries[i].tick.ticks();
+            region.endTick = regionEnd.ticks();
+            region.chordResult = boundaries[i].chordResult;
+            region.hasAnalyzedChord = true;
+            region.keyModeResult = boundaries[i].keyModeResult;
+            region.tones = boundaries[i].tones;
+            preMergeRegions.push_back(std::move(region));
+        }
     }
 
     // ── Pass 2: build regions and collapse same-chord neighbors ──────────────
@@ -519,11 +629,15 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                                    ? boundaries[i + 1].tick
                                    : endTick;
 
-        if (granularity == HarmonicRegionGranularity::Smoothed
-            && !regions.empty()
+        if (!regions.empty()
             && regions.back().chordResult.identity.rootPc == boundaries[i].chordResult.identity.rootPc
             && regions.back().chordResult.identity.quality == boundaries[i].chordResult.identity.quality) {
             regions.back().endTick = regionEnd.ticks();
+            mu::composing::analysis::mergeChordAnalysisTones(regions.back().tones, boundaries[i].tones);
+            if (const auto* bassTone = mu::composing::analysis::bassToneFromTones(regions.back().tones)) {
+                regions.back().chordResult.identity.bassPc = bassTone->pitch % 12;
+                regions.back().chordResult.identity.bassTpc = bassTone->tpc;
+            }
             continue;
         }
 
@@ -541,6 +655,16 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     if (granularity == HarmonicRegionGranularity::Smoothed) {
         absorbShortRegions(regions);
     }
+
+    if (debugCapture) {
+        if (debugCapture->preMergeRegions) {
+            *debugCapture->preMergeRegions = std::move(preMergeRegions);
+        }
+        if (debugCapture->postMergeRegions) {
+            *debugCapture->postMergeRegions = regions;
+        }
+    }
+
     return regions;
 }
 

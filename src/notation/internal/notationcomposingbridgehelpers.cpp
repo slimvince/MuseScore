@@ -28,13 +28,16 @@
 
 #include "notationcomposingbridgehelpers.h"
 #include "notationanalysisinternal.h"
+#include "notationcomposingbridge.h"
 
 #include <algorithm>
+#include <array>
 #include <cmath>
 #include <limits>
 #include <map>
 #include <optional>
 #include <set>
+#include <tuple>
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/harmony.h"
@@ -57,6 +60,254 @@ using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
 
 namespace mu::notation::internal {
+
+namespace {
+
+const std::array<int, 7>& keyModeScaleIntervals(mu::composing::analysis::KeySigMode mode)
+{
+    static constexpr std::array<std::array<int, 7>, 21> MODE_SCALES = {{
+        { 0, 2, 4, 5, 7, 9, 11 },
+        { 0, 2, 3, 5, 7, 9, 10 },
+        { 0, 1, 3, 5, 7, 8, 10 },
+        { 0, 2, 4, 6, 7, 9, 11 },
+        { 0, 2, 4, 5, 7, 9, 10 },
+        { 0, 2, 3, 5, 7, 8, 10 },
+        { 0, 1, 3, 5, 6, 8, 10 },
+        { 0, 2, 3, 5, 7, 9, 11 },
+        { 0, 1, 3, 5, 7, 9, 10 },
+        { 0, 2, 4, 6, 8, 9, 11 },
+        { 0, 2, 4, 6, 7, 9, 10 },
+        { 0, 2, 4, 5, 7, 8, 10 },
+        { 0, 2, 3, 5, 6, 8, 10 },
+        { 0, 1, 3, 4, 6, 8, 10 },
+        { 0, 2, 3, 5, 7, 8, 11 },
+        { 0, 1, 3, 5, 6, 9, 10 },
+        { 0, 2, 4, 5, 8, 9, 11 },
+        { 0, 2, 3, 6, 7, 9, 10 },
+        { 0, 1, 4, 5, 7, 8, 10 },
+        { 0, 3, 4, 6, 7, 9, 11 },
+        { 0, 1, 3, 4, 6, 8, 9 },
+    }};
+
+    const size_t modeIdx = mu::composing::analysis::keyModeIndex(mode);
+    return MODE_SCALES[modeIdx < MODE_SCALES.size() ? modeIdx : 0];
+}
+
+std::optional<std::tuple<mu::composing::analysis::ChordQuality, int, int>> diatonicTriadShapeForDegree(
+    int degree,
+    mu::composing::analysis::KeySigMode keyMode)
+{
+    using mu::composing::analysis::ChordQuality;
+
+    if (degree < 0 || degree > 6) {
+        return std::nullopt;
+    }
+
+    const auto& scale = keyModeScaleIntervals(keyMode);
+    const int rootInterval = scale[static_cast<size_t>(degree)];
+    const int thirdDegree = degree + 2;
+    const int fifthDegree = degree + 4;
+    const int thirdInterval = (scale[static_cast<size_t>(thirdDegree % 7)]
+                               + (thirdDegree >= 7 ? 12 : 0)
+                               - rootInterval) % 12;
+    const int fifthInterval = (scale[static_cast<size_t>(fifthDegree % 7)]
+                               + (fifthDegree >= 7 ? 12 : 0)
+                               - rootInterval) % 12;
+
+    if (thirdInterval == 4 && fifthInterval == 7) {
+        return std::make_tuple(ChordQuality::Major, thirdInterval, fifthInterval);
+    }
+    if (thirdInterval == 3 && fifthInterval == 7) {
+        return std::make_tuple(ChordQuality::Minor, thirdInterval, fifthInterval);
+    }
+    if (thirdInterval == 3 && fifthInterval == 6) {
+        return std::make_tuple(ChordQuality::Diminished, thirdInterval, fifthInterval);
+    }
+    if (thirdInterval == 4 && fifthInterval == 8) {
+        return std::make_tuple(ChordQuality::Augmented, thirdInterval, fifthInterval);
+    }
+
+    return std::nullopt;
+}
+
+int diatonicDegreeForRootPc(int rootPc, int keyFifths, mu::composing::analysis::KeySigMode keyMode)
+{
+    const int tonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
+                         + keyModeTonicOffset(keyMode)) % 12;
+    const auto& scale = keyModeScaleIntervals(keyMode);
+    for (size_t i = 0; i < scale.size(); ++i) {
+        if ((tonicPc + scale[i]) % 12 == rootPc) {
+            return static_cast<int>(i);
+        }
+    }
+
+    return -1;
+}
+
+bool tonesFitTriadShape(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+                       int rootPc,
+                       int thirdInterval,
+                       int fifthInterval)
+{
+    bool seenPitchClasses[12] = {};
+    for (const auto& tone : tones) {
+        const int pitchClass = tone.pitch % 12;
+        if (seenPitchClasses[pitchClass]) {
+            continue;
+        }
+        seenPitchClasses[pitchClass] = true;
+
+        const int interval = (pitchClass - rootPc + 12) % 12;
+        if (interval != 0 && interval != thirdInterval && interval != fifthInterval) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones)
+{
+    bool seenPitchClasses[12] = {};
+    int count = 0;
+    for (const auto& tone : tones) {
+        const int pitchClass = tone.pitch % 12;
+        if (seenPitchClasses[pitchClass]) {
+            continue;
+        }
+        seenPitchClasses[pitchClass] = true;
+        ++count;
+    }
+    return count;
+}
+
+} // anonymous namespace
+
+void refineSparseChordQualityFromKeyContext(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode)
+{
+    using namespace mu::composing::analysis;
+
+    if (result.identity.quality != ChordQuality::Unknown) {
+        return;
+    }
+
+    const int uniquePitchClasses = distinctPitchClassCount(tones);
+
+    int degree = result.function.degree;
+    if (degree < 0 || degree > 6) {
+        degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
+        if (degree < 0) {
+            return;
+        }
+
+        result.function.degree = degree;
+        result.function.keyTonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
+                                      + keyModeTonicOffset(keyMode)) % 12;
+        result.function.keyMode = keyMode;
+    }
+
+    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
+    if (!triadShape) {
+        return;
+    }
+
+    const auto [quality, thirdInterval, fifthInterval] = *triadShape;
+
+    // In plain Aeolian, a lone tonic or dominant pitch is too ambiguous to
+    // harden into a minor triad. Leave it unqualified and let richer later
+    // evidence decide the quality.
+    if (uniquePitchClasses == 1
+        && quality == ChordQuality::Minor
+        && keyMode == KeySigMode::Aeolian
+        && (degree == 0 || degree == 4)) {
+        return;
+    }
+
+    if (!tonesFitTriadShape(tones, result.identity.rootPc, thirdInterval, fifthInterval)) {
+        return;
+    }
+
+    result.identity.quality = quality;
+}
+
+namespace {
+
+void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::HarmonicRegion>& regions)
+{
+    using namespace mu::composing::analysis;
+
+    if (regions.empty()) {
+        return;
+    }
+
+    int stableKeyFifths = regions.front().keyModeResult.keySignatureFifths;
+    KeySigMode stableMode = regions.front().keyModeResult.mode;
+
+    for (size_t i = 1; i < regions.size(); ++i) {
+        const int regionKeyFifths = regions[i].keyModeResult.keySignatureFifths;
+        const KeySigMode regionMode = regions[i].keyModeResult.mode;
+        if (regionKeyFifths != stableKeyFifths || regionMode != stableMode) {
+            bool persistent = (i + 1 >= regions.size());
+            if (!persistent) {
+                const int nextKeyFifths = regions[i + 1].keyModeResult.keySignatureFifths;
+                const KeySigMode nextMode = regions[i + 1].keyModeResult.mode;
+                persistent = (nextKeyFifths == regionKeyFifths && nextMode == regionMode);
+            }
+            if (persistent) {
+                stableKeyFifths = regionKeyFifths;
+                stableMode = regionMode;
+            }
+        }
+        regions[i].keyModeResult.keySignatureFifths = stableKeyFifths;
+        regions[i].keyModeResult.mode = stableMode;
+    }
+
+    for (auto& region : regions) {
+        const int ionianPc = ionianTonicPcFromFifths(region.keyModeResult.keySignatureFifths);
+        const int tonicPc = (ionianPc + keyModeTonicOffset(region.keyModeResult.mode)) % 12;
+        const auto& scale = keyModeScaleIntervals(region.keyModeResult.mode);
+
+        int degree = -1;
+        for (size_t i = 0; i < scale.size(); ++i) {
+            if ((tonicPc + scale[i]) % 12 == region.chordResult.identity.rootPc) {
+                degree = static_cast<int>(i);
+                break;
+            }
+        }
+        region.chordResult.function.degree = degree;
+        region.chordResult.function.keyTonicPc = tonicPc;
+        region.chordResult.function.keyMode = region.keyModeResult.mode;
+
+        bool diatonic = (degree >= 0);
+        if (diatonic) {
+            for (const auto& tone : region.tones) {
+                const int pc = tone.pitch % 12;
+                bool inScale = false;
+                for (int interval : scale) {
+                    if ((tonicPc + interval) % 12 == pc) {
+                        inScale = true;
+                        break;
+                    }
+                }
+                if (!inScale) {
+                    diatonic = false;
+                    break;
+                }
+            }
+        }
+        region.chordResult.function.diatonicToKey = diatonic;
+        refineSparseChordQualityFromKeyContext(region.chordResult,
+                                               region.tones,
+                                               region.keyModeResult.keySignatureFifths,
+                                               region.keyModeResult.mode);
+    }
+}
+
+} // namespace
 
 void collectSoundingAt(const mu::engraving::Score* sc,
                        const mu::engraving::Segment* anchorSeg,
@@ -829,41 +1080,125 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
 
     // ── Collect per-window PC bitsets ──────────────────────────────────────
     // Window size = 1 quarter note (Constants::DIVISION ticks).
-    // Each window collects pitch classes that attack within it.
+    // Each window collects pitch classes that attack within it, plus any
+    // explicit sustain-pedal tails that keep those pitch classes sounding
+    // into later windows on the same staff.
     struct Window {
         Fraction tick;
         uint16_t bits = 0;
     };
     std::vector<Window> windows;
 
-    const Segment* seg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (!seg) {
+    const Segment* firstForward = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (!firstForward) {
         return { startTick };
     }
 
+    const int startTickInt = startTick.ticks();
+    const int endTickInt = endTick.ticks();
     const int windowTicks = Constants::DIVISION;  // 1 quarter note
 
-    int currentWindowBeat = (startTick.ticks() / windowTicks) * windowTicks;
-    uint16_t currentBits  = 0;
-    bool     hasNotes     = false;
+    struct PedalWindow {
+        int startTick = 0;
+        int endTick = 0;
+    };
 
-    for (const Segment* s = seg;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        const int segTick    = s->tick().ticks();
-        const int segWindow  = (segTick / windowTicks) * windowTicks;
-
-        if (segWindow != currentWindowBeat) {
-            // Emit the completed window.
-            if (hasNotes) {
-                windows.push_back({ Fraction::fromTicks(currentWindowBeat), currentBits });
-            }
-            currentWindowBeat = segWindow;
-            currentBits = 0;
-            hasNotes = false;
+    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
+    for (const auto& spannerEntry : sc->spanner()) {
+        const Spanner* spanner = spannerEntry.second;
+        if (!spanner || spanner->type() != ElementType::PEDAL) {
+            continue;
         }
 
-        // Collect pitch-class attacks at this segment.
+        const Pedal* pedal = toPedal(spanner);
+        if (!pedal) {
+            continue;
+        }
+
+        const auto& beginText = pedal->beginText();
+        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
+            continue;
+        }
+
+        const int pedalStartTick = pedal->tick().ticks();
+        const int pedalEndTick = pedal->tick2().ticks();
+        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
+            continue;
+        }
+
+        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
+        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
+            continue;
+        }
+
+        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
+    }
+
+    for (auto& pedalEntry : pedalWindowsByStaff) {
+        auto& pedalWindows = pedalEntry.second;
+        std::sort(pedalWindows.begin(), pedalWindows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
+            if (lhs.startTick != rhs.startTick) {
+                return lhs.startTick < rhs.startTick;
+            }
+            return lhs.endTick < rhs.endTick;
+        });
+    }
+
+    auto earliestPedalReleaseTick = [&](size_t staffIdx, int writtenEndTick) -> int {
+        const auto it = pedalWindowsByStaff.find(staffIdx);
+        if (it == pedalWindowsByStaff.end()) {
+            return -1;
+        }
+
+        int pedalReleaseTick = std::numeric_limits<int>::max();
+        for (const PedalWindow& window : it->second) {
+            if (window.startTick >= writtenEndTick) {
+                break;
+            }
+            if (window.endTick <= writtenEndTick) {
+                continue;
+            }
+            pedalReleaseTick = std::min(pedalReleaseTick, window.endTick);
+        }
+
+        return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
+    };
+
+    std::map<int, uint16_t> bitsByWindowTick;
+
+    auto addWindowBitsForSpan = [&](int spanStartTick, int spanEndTick, int pitchClass) {
+        const int clippedStartTick = std::max(spanStartTick, startTickInt);
+        const int clippedEndTick = std::min(spanEndTick, endTickInt);
+        if (clippedEndTick <= clippedStartTick) {
+            return;
+        }
+
+        for (int windowTick = (clippedStartTick / windowTicks) * windowTicks;
+             windowTick < clippedEndTick;
+             windowTick += windowTicks) {
+            bitsByWindowTick[windowTick] |= static_cast<uint16_t>(1u << pitchClass);
+        }
+    };
+
+    auto recordPedalTailSpan = [&](size_t staffIdx, int writtenEndTick, const Note* note) {
+        if (!note || pedalWindowsByStaff.empty()) {
+            return;
+        }
+
+        const int pedalReleaseTick = earliestPedalReleaseTick(staffIdx, writtenEndTick);
+        if (pedalReleaseTick <= writtenEndTick) {
+            return;
+        }
+
+        addWindowBitsForSpan(writtenEndTick, pedalReleaseTick, note->ppitch() % 12);
+    };
+
+    const Fraction backLimit = startTick - Fraction(4, 1);
+    for (const Segment* s = firstForward->prev1(SegmentType::ChordRest);
+         s && s->tick() >= backLimit;
+         s = s->prev1(SegmentType::ChordRest)) {
+        const int segTick = s->tick().ticks();
+
         for (size_t si = 0; si < sc->nstaves(); ++si) {
             if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
                 continue;
@@ -878,14 +1213,48 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                     if (!n->play() || !n->visible()) {
                         continue;
                     }
-                    currentBits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
-                    hasNotes = true;
+                    const int noteEndTick = segTick + cr->actualTicks().ticks();
+                    recordPedalTailSpan(si, noteEndTick, n);
                 }
             }
         }
     }
-    if (hasNotes) {
-        windows.push_back({ Fraction::fromTicks(currentWindowBeat), currentBits });
+
+    for (const Segment* s = firstForward;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        const int segTick = s->tick().ticks();
+        const int segWindowTick = (segTick / windowTicks) * windowTicks;
+
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr
+                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                const int noteEndTick = segTick + cr->actualTicks().ticks();
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+
+                    bitsByWindowTick[segWindowTick] |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
+                    recordPedalTailSpan(si, noteEndTick, n);
+                }
+            }
+        }
+    }
+
+    windows.reserve(bitsByWindowTick.size());
+    for (const auto& entry : bitsByWindowTick) {
+        if (entry.second == 0) {
+            continue;
+        }
+        windows.push_back({ Fraction::fromTicks(entry.first), entry.second });
     }
 
     if (windows.empty()) {
@@ -982,20 +1351,530 @@ findTemporalContext(const mu::engraving::Score* sc,
     return temporalCtx;
 }
 
+std::vector<mu::composing::analysis::HarmonicRegion>
+prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
+                                 const mu::engraving::Fraction& startTick,
+                                 const mu::engraving::Fraction& endTick,
+                                 const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+    using namespace mu::composing::analysis;
+
+    if (!sc || endTick <= startTick) {
+        return {};
+    }
+
+    auto regions = mu::notation::analyzeHarmonicRhythm(sc,
+                                                       startTick,
+                                                       endTick,
+                                                       excludeStaves,
+                                                       mu::notation::HarmonicRegionGranularity::Smoothed);
+    if (regions.empty()) {
+        return {};
+    }
+
+    const auto chordAnalyzer = ChordAnalyzerFactory::create();
+    auto sameChordIdentity = [](const HarmonicRegion& lhs, const HarmonicRegion& rhs) {
+        return lhs.chordResult.identity.rootPc == rhs.chordResult.identity.rootPc
+               && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality;
+    };
+    auto regionSupportsGapTones = [](const std::vector<ChordAnalysisTone>& gapTones,
+                                     const HarmonicRegion& region) {
+        if (region.chordResult.identity.quality == ChordQuality::Suspended2
+            || region.chordResult.identity.quality == ChordQuality::Suspended4) {
+            return false;
+        }
+
+        const std::vector<int> chordPitchClasses = chordTonePitchClasses(region.chordResult);
+        if (gapTones.empty() || chordPitchClasses.empty()) {
+            return false;
+        }
+
+        bool seenGapPitchClasses[12] = {};
+        bool matchesRegionAnchor = false;
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (seenGapPitchClasses[pitchClass]) {
+                continue;
+            }
+            seenGapPitchClasses[pitchClass] = true;
+
+            if (pitchClass == region.chordResult.identity.rootPc
+                || pitchClass == region.chordResult.identity.bassPc) {
+                matchesRegionAnchor = true;
+            }
+
+            if (std::find(chordPitchClasses.begin(), chordPitchClasses.end(), pitchClass) == chordPitchClasses.end()) {
+                return false;
+            }
+        }
+
+        return matchesRegionAnchor;
+    };
+    auto applyGapKeyContext = [](ChordAnalysisResult& result,
+                                 const std::vector<ChordAnalysisTone>& gapTones,
+                                 int keyFifths,
+                                 KeySigMode keyMode) {
+        const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
+        const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+        const auto& scale = keyModeScaleIntervals(keyMode);
+
+        result.function.keyTonicPc = tonicPc;
+        result.function.keyMode = keyMode;
+        result.function.degree = -1;
+        for (size_t degree = 0; degree < scale.size(); ++degree) {
+            if ((tonicPc + scale[degree]) % 12 == result.identity.rootPc) {
+                result.function.degree = static_cast<int>(degree);
+                break;
+            }
+        }
+
+        bool diatonicToKey = (result.function.degree >= 0);
+        if (diatonicToKey) {
+            for (const auto& tone : gapTones) {
+                const int pitchClass = tone.pitch % 12;
+                bool inScale = false;
+                for (int interval : scale) {
+                    if ((tonicPc + interval) % 12 == pitchClass) {
+                        inScale = true;
+                        break;
+                    }
+                }
+                if (!inScale) {
+                    diatonicToKey = false;
+                    break;
+                }
+            }
+        }
+
+        result.function.diatonicToKey = diatonicToKey;
+    };
+    auto inferSparseGapChord = [&](const std::vector<ChordAnalysisTone>& gapTones,
+                                   int keyFifths,
+                                   KeySigMode keyMode,
+                                   ChordAnalysisResult& outResult) {
+        const auto* bassTone = bassToneFromTones(gapTones);
+        if (!bassTone) {
+            bassTone = &gapTones.front();
+            for (const auto& tone : gapTones) {
+                if (tone.pitch < bassTone->pitch) {
+                    bassTone = &tone;
+                }
+            }
+        }
+
+        bool seenPitchClasses[12] = {};
+        std::vector<int> pitchClasses;
+        pitchClasses.reserve(gapTones.size());
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (!seenPitchClasses[pitchClass]) {
+                seenPitchClasses[pitchClass] = true;
+                pitchClasses.push_back(pitchClass);
+            }
+        }
+
+        if (pitchClasses.empty()) {
+            return false;
+        }
+
+        outResult = {};
+        outResult.identity.score = 0.0;
+
+        if (pitchClasses.size() == 1) {
+            outResult.identity.rootPc = pitchClasses.front();
+            outResult.identity.bassPc = pitchClasses.front();
+            outResult.identity.bassTpc = bassTone->tpc;
+            outResult.identity.quality = ChordQuality::Unknown;
+            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
+            return true;
+        }
+
+        struct SparseCandidate {
+            int rootPc = -1;
+            ChordQuality quality = ChordQuality::Unknown;
+            int priority = -1;
+        };
+
+        std::optional<SparseCandidate> bestCandidate;
+        for (int candidateRootPc : pitchClasses) {
+            bool hasMinorThird = false;
+            bool hasMajorThird = false;
+            bool hasFifth = false;
+            bool hasDimFifth = false;
+            bool supported = true;
+
+            for (int tonePc : pitchClasses) {
+                if (tonePc == candidateRootPc) {
+                    continue;
+                }
+
+                const int interval = (tonePc - candidateRootPc + 12) % 12;
+                if (interval == 3) {
+                    hasMinorThird = true;
+                } else if (interval == 4) {
+                    hasMajorThird = true;
+                } else if (interval == 6) {
+                    hasDimFifth = true;
+                } else if (interval == 7) {
+                    hasFifth = true;
+                } else {
+                    supported = false;
+                    break;
+                }
+            }
+
+            if (!supported) {
+                continue;
+            }
+
+            SparseCandidate candidate;
+            candidate.rootPc = candidateRootPc;
+            if (hasMajorThird) {
+                candidate.quality = ChordQuality::Major;
+                candidate.priority = 3;
+            } else if (hasMinorThird) {
+                candidate.quality = ChordQuality::Minor;
+                candidate.priority = 3;
+            } else if (hasDimFifth) {
+                candidate.quality = ChordQuality::Diminished;
+                candidate.priority = 2;
+            } else if (hasFifth) {
+                candidate.quality = ChordQuality::Unknown;
+                candidate.priority = 1;
+            } else {
+                continue;
+            }
+
+            if (!bestCandidate || candidate.priority > bestCandidate->priority) {
+                bestCandidate = candidate;
+            }
+        }
+
+        if (bestCandidate) {
+            outResult.identity.rootPc = bestCandidate->rootPc;
+            outResult.identity.bassPc = bestCandidate->rootPc;
+            outResult.identity.bassTpc = bassTone->tpc;
+            outResult.identity.quality = bestCandidate->quality;
+            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
+            return true;
+        }
+
+        return false;
+    };
+    auto analyzeGapWithContext = [&](const std::vector<ChordAnalysisTone>& gapTones,
+                                     const HarmonicRegion& contextRegion,
+                                     int gapStartTick,
+                                     int gapEndTick) -> std::optional<HarmonicRegion> {
+        HarmonicRegion inferredRegion;
+        inferredRegion.startTick = gapStartTick;
+        inferredRegion.endTick = gapEndTick;
+        inferredRegion.hasAnalyzedChord = true;
+        inferredRegion.keyModeResult = contextRegion.keyModeResult;
+        inferredRegion.tones = gapTones;
+
+        const auto results = chordAnalyzer->analyzeChord(gapTones,
+                                                         contextRegion.keyModeResult.keySignatureFifths,
+                                                         contextRegion.keyModeResult.mode);
+        if (!results.empty()) {
+            inferredRegion.chordResult = results.front();
+            return inferredRegion;
+        }
+
+        if (inferSparseGapChord(gapTones,
+                                contextRegion.keyModeResult.keySignatureFifths,
+                                contextRegion.keyModeResult.mode,
+                                inferredRegion.chordResult)) {
+            return inferredRegion;
+        }
+
+        return std::nullopt;
+    };
+    auto inferGapRegion = [&](int gapStartTick,
+                              int gapEndTick,
+                              const HarmonicRegion* previousRegion,
+                              const HarmonicRegion* nextRegion) -> std::optional<HarmonicRegion> {
+        if (gapEndTick <= gapStartTick) {
+            return std::nullopt;
+        }
+
+        const auto gapTones = collectRegionTones(sc,
+                                                 gapStartTick,
+                                                 gapEndTick,
+                                                 excludeStaves);
+        if (gapTones.empty()) {
+            const HarmonicRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
+            if (!carriedSource) {
+                return std::nullopt;
+            }
+
+            HarmonicRegion carriedRegion = *carriedSource;
+            carriedRegion.startTick = gapStartTick;
+            carriedRegion.endTick = gapEndTick;
+            carriedRegion.tones.clear();
+            carriedRegion.hasAnalyzedChord = true;
+            return carriedRegion;
+        }
+
+        auto carryGapRegion = [&](const HarmonicRegion& sourceRegion) {
+            HarmonicRegion carriedRegion = sourceRegion;
+            carriedRegion.startTick = gapStartTick;
+            carriedRegion.endTick = gapEndTick;
+            carriedRegion.tones = gapTones;
+            carriedRegion.hasAnalyzedChord = true;
+            return carriedRegion;
+        };
+
+        int uniqueGapPitchClasses = 0;
+        bool seenGapPitchClasses[12] = {};
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (seenGapPitchClasses[pitchClass]) {
+                continue;
+            }
+            seenGapPitchClasses[pitchClass] = true;
+            ++uniqueGapPitchClasses;
+        }
+
+        if (uniqueGapPitchClasses < 3) {
+            if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {
+                return carryGapRegion(*nextRegion);
+            }
+
+            if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {
+                return carryGapRegion(*previousRegion);
+            }
+        }
+
+        if (previousRegion) {
+            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
+                                                            *previousRegion,
+                                                            gapStartTick,
+                                                            gapEndTick)) {
+                return analyzedRegion;
+            }
+        }
+
+        if (nextRegion) {
+            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
+                                                            *nextRegion,
+                                                            gapStartTick,
+                                                            gapEndTick)) {
+                return analyzedRegion;
+            }
+        }
+
+        if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {
+            return carryGapRegion(*previousRegion);
+        }
+
+        if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {
+            return carryGapRegion(*nextRegion);
+        }
+
+        if (!previousRegion && nextRegion) {
+            HarmonicRegion openingRegion = *nextRegion;
+            openingRegion.startTick = gapStartTick;
+            openingRegion.endTick = gapEndTick;
+            openingRegion.tones = gapTones;
+            openingRegion.hasAnalyzedChord = true;
+            return openingRegion;
+        }
+
+        if (previousRegion && !nextRegion) {
+            HarmonicRegion trailingRegion = *previousRegion;
+            trailingRegion.startTick = gapStartTick;
+            trailingRegion.endTick = gapEndTick;
+            trailingRegion.tones = gapTones;
+            trailingRegion.hasAnalyzedChord = true;
+            return trailingRegion;
+        }
+
+        return std::nullopt;
+    };
+    auto nextRegionStartingAtOrAfter = [&](int tick) -> const HarmonicRegion* {
+        const auto nextRegion = std::find_if(regions.begin(), regions.end(), [tick](const auto& region) {
+            return region.startTick >= tick;
+        });
+        return nextRegion != regions.end() ? &*nextRegion : nullptr;
+    };
+
+    std::vector<HarmonicRegion> displayRegions;
+    displayRegions.reserve(regions.size() * 2);
+    const int analysisRangeStartTick = startTick.ticks();
+
+    for (Measure* measure = sc->tick2measure(startTick);
+         measure && measure->tick() < endTick;
+         measure = measure->nextMeasure()) {
+        const Fraction measureRangeStart = std::max(measure->tick(), startTick);
+        const Fraction measureRangeEnd = std::min(measure->endTick(), endTick);
+        const int measureStartTick = measureRangeStart.ticks();
+        const int measureEndTick = measureRangeEnd.ticks();
+
+        std::vector<size_t> overlappingRegions;
+        for (size_t i = 0; i < regions.size(); ++i) {
+            if (regions[i].endTick > measureStartTick && regions[i].startTick < measureEndTick) {
+                overlappingRegions.push_back(i);
+            }
+        }
+
+        std::vector<HarmonicRegion> measureRegions;
+        auto appendMeasureRegion = [&](HarmonicRegion region) {
+            if (region.startTick >= region.endTick) {
+                return;
+            }
+            if (!measureRegions.empty()
+                && measureRegions.back().endTick == region.startTick
+                && sameChordIdentity(measureRegions.back(), region)) {
+                measureRegions.back().endTick = region.endTick;
+                mergeChordAnalysisTones(measureRegions.back().tones, region.tones);
+                return;
+            }
+            measureRegions.push_back(std::move(region));
+        };
+
+        const auto previousRegion = std::find_if(regions.rbegin(), regions.rend(), [measureStartTick](const auto& region) {
+            return region.endTick <= measureStartTick;
+        });
+        const HarmonicRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
+        const HarmonicRegion* nextRegionAfterMeasurePtr = nextRegionStartingAtOrAfter(measureEndTick);
+
+        if (overlappingRegions.empty()) {
+            if (auto gapRegion = inferGapRegion(measureStartTick,
+                                                measureEndTick,
+                                                previousRegionPtr,
+                                                nextRegionAfterMeasurePtr)) {
+                appendMeasureRegion(std::move(*gapRegion));
+            }
+
+            for (auto& measureRegion : measureRegions) {
+                displayRegions.push_back(std::move(measureRegion));
+            }
+            continue;
+        }
+
+        std::optional<HarmonicRegion> previousDisplayRegion;
+        if (previousRegionPtr) {
+            previousDisplayRegion = *previousRegionPtr;
+        }
+
+        int cursor = measureStartTick;
+
+        for (size_t i = 0; i < overlappingRegions.size(); ++i) {
+            const auto& sourceRegion = regions[overlappingRegions[i]];
+            const int sourceStartTick = std::max(measureStartTick, sourceRegion.startTick);
+            const int sourceEndTick = std::min(measureEndTick, sourceRegion.endTick);
+
+            if (cursor < sourceStartTick) {
+                if (measureRegions.empty() && cursor == analysisRangeStartTick) {
+                    HarmonicRegion openingRegion = sourceRegion;
+                    openingRegion.startTick = cursor;
+                    openingRegion.endTick = sourceStartTick;
+                    openingRegion.tones = collectRegionTones(sc,
+                                                             openingRegion.startTick,
+                                                             openingRegion.endTick,
+                                                             excludeStaves);
+                    appendMeasureRegion(std::move(openingRegion));
+                } else if (auto gapRegion = inferGapRegion(cursor,
+                                                           sourceStartTick,
+                                                           previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
+                                                           &sourceRegion)) {
+                    appendMeasureRegion(std::move(*gapRegion));
+                }
+
+                if (!measureRegions.empty()) {
+                    previousDisplayRegion = measureRegions.back();
+                }
+            }
+
+            if (sourceStartTick >= sourceEndTick) {
+                cursor = std::max(cursor, sourceEndTick);
+                continue;
+            }
+
+            HarmonicRegion displayRegion = sourceRegion;
+            displayRegion.startTick = sourceStartTick;
+            displayRegion.endTick = sourceEndTick;
+            displayRegion.tones = collectRegionTones(sc,
+                                                     displayRegion.startTick,
+                                                     displayRegion.endTick,
+                                                     excludeStaves);
+            appendMeasureRegion(std::move(displayRegion));
+            previousDisplayRegion = measureRegions.back();
+            cursor = sourceEndTick;
+        }
+
+        if (cursor < measureEndTick) {
+            if (auto gapRegion = inferGapRegion(cursor,
+                                                measureEndTick,
+                                                previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
+                                                nextRegionAfterMeasurePtr)) {
+                appendMeasureRegion(std::move(*gapRegion));
+            }
+        }
+
+        if (measureRegions.size() >= 2
+            && measureRegions.front().startTick == measureStartTick
+            && distinctPitchClassCount(measureRegions.front().tones) < 3
+            && distinctPitchClassCount(measureRegions[1].tones) >= 3
+            && measureRegions[1].startTick - measureStartTick <= Constants::DIVISION) {
+            HarmonicRegion carriedMeasureOpening = measureRegions[1];
+            carriedMeasureOpening.startTick = measureStartTick;
+            carriedMeasureOpening.tones = collectRegionTones(sc,
+                                                             carriedMeasureOpening.startTick,
+                                                             carriedMeasureOpening.endTick,
+                                                             excludeStaves);
+            measureRegions[0] = std::move(carriedMeasureOpening);
+            measureRegions.erase(measureRegions.begin() + 1);
+        }
+
+        for (auto& measureRegion : measureRegions) {
+            displayRegions.push_back(std::move(measureRegion));
+        }
+    }
+
+    stabilizeHarmonicRegionsForDisplay(displayRegions);
+    return displayRegions;
+}
+
 // ── §4.1c Jazz mode — chord-symbol boundary helpers ─────────────────────────
+
+static bool isStandardChordSymbol(const mu::engraving::EngravingItem* annotation)
+{
+    using namespace mu::engraving;
+    if (!annotation || !annotation->isHarmony()) {
+        return false;
+    }
+
+    const Harmony* harmony = toHarmony(annotation);
+    return harmony->harmonyType() == HarmonyType::STANDARD
+           && harmony->rootTpc() != Tpc::TPC_INVALID;
+}
+
+static bool annotationIsOnExcludedStaff(const mu::engraving::EngravingItem* annotation,
+                                        const std::set<size_t>& excludeStaves)
+{
+    if (!annotation) {
+        return false;
+    }
+
+    return excludeStaves.count(static_cast<size_t>(annotation->track() / mu::engraving::VOICES)) > 0;
+}
 
 bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
                                const mu::engraving::Fraction& startTick,
-                               const mu::engraving::Fraction& endTick)
+                               const mu::engraving::Fraction& endTick,
+                               const std::set<size_t>& excludeStaves)
 {
     using namespace mu::engraving;
     for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
         for (const EngravingItem* ann : s->annotations()) {
-            if (!ann->isHarmony()) continue;
-            const Harmony* h = toHarmony(ann);
-            if (h->rootTpc() != Tpc::TPC_INVALID) return true;
+            if (annotationIsOnExcludedStaff(ann, excludeStaves)) {
+                continue;
+            }
+            if (isStandardChordSymbol(ann)) return true;
         }
     }
     return false;
@@ -1004,7 +1883,8 @@ bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
 std::vector<mu::engraving::Fraction>
 collectChordSymbolBoundaries(const mu::engraving::Score* score,
                              const mu::engraving::Fraction& startTick,
-                             const mu::engraving::Fraction& endTick)
+                             const mu::engraving::Fraction& endTick,
+                             const std::set<size_t>& excludeStaves)
 {
     using namespace mu::engraving;
     std::vector<Fraction> ticks;
@@ -1013,7 +1893,10 @@ collectChordSymbolBoundaries(const mu::engraving::Score* score,
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
         for (const EngravingItem* ann : s->annotations()) {
-            if (ann->isHarmony() && s->tick() > startTick) {
+            if (annotationIsOnExcludedStaff(ann, excludeStaves)) {
+                continue;
+            }
+            if (s->tick() > startTick && isStandardChordSymbol(ann)) {
                 ticks.push_back(s->tick());
                 break;  // one boundary per segment tick
             }

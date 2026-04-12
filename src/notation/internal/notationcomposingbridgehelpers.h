@@ -36,6 +36,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/region/harmonicrhythm.h"
 
 namespace mu::engraving {
 class Score;
@@ -134,20 +135,22 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 double jaccardThreshold);
 
-/// Returns true if any Harmony annotation in [startTick, endTick) has a valid
-/// written root. Function-only Harmony imports should not activate the jazz path.
+/// Returns true if any standard chord symbol in [startTick, endTick) has a valid
+/// written root. Roman/Nashville analysis annotations should not activate the jazz path.
 bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
                                const mu::engraving::Fraction& startTick,
-                               const mu::engraving::Fraction& endTick);
+                               const mu::engraving::Fraction& endTick,
+                               const std::set<size_t>& excludeStaves = {});
 
-/// Collect sorted boundary ticks from Harmony annotations in [startTick, endTick).
+/// Collect sorted boundary ticks from standard chord symbols in [startTick, endTick).
 /// The first element is always startTick.  Each subsequent element is the tick of
-/// the first Harmony annotation found on a ChordRest segment strictly after the
+/// the first standard chord symbol found on a ChordRest segment strictly after the
 /// previous boundary tick.  Duplicates at the same tick collapse to one entry.
 std::vector<mu::engraving::Fraction>
 collectChordSymbolBoundaries(const mu::engraving::Score* score,
                              const mu::engraving::Fraction& startTick,
-                             const mu::engraving::Fraction& endTick);
+                             const mu::engraving::Fraction& endTick,
+                             const std::set<size_t>& excludeStaves = {});
 
 /// Find the previous chord's temporal context by walking backward from seg.
 /// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
@@ -159,5 +162,22 @@ findTemporalContext(const mu::engraving::Score* sc,
                     int keyFifths,
                     mu::composing::analysis::KeySigMode keyMode,
                     int currentBassPc = -1);
+
+/// Upgrade user-facing sparse results from Unknown to the diatonic triad quality
+/// implied by the resolved key/mode when the sounding tones are compatible.
+void refineSparseChordQualityFromKeyContext(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode);
+
+/// Build the same user-facing harmonic regions consumed by chord-track population.
+/// Uses smoothed region analysis, fills leading sparse gaps conservatively, and
+/// stabilizes key/mode so Roman numerals remain consistent across display paths.
+std::vector<mu::composing::analysis::HarmonicRegion>
+prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
+                                 const mu::engraving::Fraction& startTick,
+                                 const mu::engraving::Fraction& endTick,
+                                 const std::set<size_t>& excludeStaves);
 
 } // namespace mu::notation::internal

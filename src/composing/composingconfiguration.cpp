@@ -21,6 +21,7 @@
  */
 #include "composingconfiguration.h"
 
+#include <algorithm>
 #include <cmath>
 
 #include "settings.h"
@@ -42,6 +43,9 @@ static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/m
 static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
 static const Settings::Key ANNOTATE_DRIFT_AT_BOUNDARIES(module_name, "composing/annotateDriftAtBoundaries");
 static const Settings::Key USE_REGIONAL_ACCUMULATION(module_name,    "composing/useRegionalAccumulation");
+static const Settings::Key MODE_NAME_CONFIDENCE_THRESHOLD(module_name, "composing/modeNameConfidenceThreshold");
+static const Settings::Key MINIMUM_DISPLAY_DURATION_BEATS(module_name, "composing/minimumDisplayDurationBeats");
+static const Settings::Key MIN_KEY_STABILITY_BEATS(module_name, "composing/minKeyStabilityBeats");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,       "composing/showKeyModeInStatusBar");
 static const Settings::Key SHOW_CHORD_SYMBOLS_IN_STATUS_BAR(module_name,  "composing/showChordSymbolsInStatusBar");
 static const Settings::Key SHOW_ROMAN_NUMERALS_IN_STATUS_BAR(module_name, "composing/showRomanNumeralsInStatusBar");
@@ -138,6 +142,21 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(USE_REGIONAL_ACCUMULATION, Val(true));
     settings()->valueChanged(USE_REGIONAL_ACCUMULATION).onReceive(nullptr, [this](const Val&) {
         m_useRegionalAccumulationChanged.notify();
+    });
+
+    settings()->setDefaultValue(MODE_NAME_CONFIDENCE_THRESHOLD, Val(0.35));
+    settings()->valueChanged(MODE_NAME_CONFIDENCE_THRESHOLD).onReceive(nullptr, [this](const Val&) {
+        m_modeNameConfidenceThresholdChanged.notify();
+    });
+
+    settings()->setDefaultValue(MINIMUM_DISPLAY_DURATION_BEATS, Val(0.5));
+    settings()->valueChanged(MINIMUM_DISPLAY_DURATION_BEATS).onReceive(nullptr, [this](const Val&) {
+        m_minimumDisplayDurationBeatsChanged.notify();
+    });
+
+    settings()->setDefaultValue(MIN_KEY_STABILITY_BEATS, Val(8.0));
+    settings()->valueChanged(MIN_KEY_STABILITY_BEATS).onReceive(nullptr, [this](const Val&) {
+        m_minKeyStabilityBeatsChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -477,6 +496,51 @@ void ComposingConfiguration::setUseRegionalAccumulation(bool value)
 muse::async::Notification ComposingConfiguration::useRegionalAccumulationChanged() const
 {
     return m_useRegionalAccumulationChanged;
+}
+
+double ComposingConfiguration::modeNameConfidenceThreshold() const
+{
+    return settings()->value(MODE_NAME_CONFIDENCE_THRESHOLD).toDouble();
+}
+
+void ComposingConfiguration::setModeNameConfidenceThreshold(double value)
+{
+    settings()->setSharedValue(MODE_NAME_CONFIDENCE_THRESHOLD, Val(std::clamp(value, 0.0, 1.0)));
+}
+
+muse::async::Notification ComposingConfiguration::modeNameConfidenceThresholdChanged() const
+{
+    return m_modeNameConfidenceThresholdChanged;
+}
+
+double ComposingConfiguration::minimumDisplayDurationBeats() const
+{
+    return settings()->value(MINIMUM_DISPLAY_DURATION_BEATS).toDouble();
+}
+
+void ComposingConfiguration::setMinimumDisplayDurationBeats(double value)
+{
+    settings()->setSharedValue(MINIMUM_DISPLAY_DURATION_BEATS, Val(std::clamp(value, 0.0, 4.0)));
+}
+
+muse::async::Notification ComposingConfiguration::minimumDisplayDurationBeatsChanged() const
+{
+    return m_minimumDisplayDurationBeatsChanged;
+}
+
+double ComposingConfiguration::minKeyStabilityBeats() const
+{
+    return settings()->value(MIN_KEY_STABILITY_BEATS).toDouble();
+}
+
+void ComposingConfiguration::setMinKeyStabilityBeats(double value)
+{
+    settings()->setSharedValue(MIN_KEY_STABILITY_BEATS, Val(std::clamp(value, 2.0, 16.0)));
+}
+
+muse::async::Notification ComposingConfiguration::minKeyStabilityBeatsChanged() const
+{
+    return m_minKeyStabilityBeatsChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

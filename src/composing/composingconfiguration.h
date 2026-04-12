@@ -78,6 +78,18 @@ public:
     void setUseRegionalAccumulation(bool value) override;
     muse::async::Notification useRegionalAccumulationChanged() const override;
 
+    double modeNameConfidenceThreshold() const override;
+    void setModeNameConfidenceThreshold(double value) override;
+    muse::async::Notification modeNameConfidenceThresholdChanged() const override;
+
+    double minimumDisplayDurationBeats() const override;
+    void setMinimumDisplayDurationBeats(double value) override;
+    muse::async::Notification minimumDisplayDurationBeatsChanged() const override;
+
+    double minKeyStabilityBeats() const override;
+    void setMinKeyStabilityBeats(double value) override;
+    muse::async::Notification minKeyStabilityBeatsChanged() const override;
+
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
     muse::async::Notification showKeyModeInStatusBarChanged() const override;
@@ -218,6 +230,9 @@ private:
     muse::async::Notification m_annotateTuningOffsetsChanged;
     muse::async::Notification m_annotateDriftAtBoundariesChanged;
     muse::async::Notification m_useRegionalAccumulationChanged;
+    muse::async::Notification m_modeNameConfidenceThresholdChanged;
+    muse::async::Notification m_minimumDisplayDurationBeatsChanged;
+    muse::async::Notification m_minKeyStabilityBeatsChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_showChordSymbolsInStatusBarChanged;
     muse::async::Notification m_showRomanNumeralsInStatusBarChanged;

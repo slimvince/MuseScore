@@ -143,6 +143,30 @@ public:
     virtual void setUseRegionalAccumulation(bool value) = 0;
     virtual muse::async::Notification useRegionalAccumulationChanged() const = 0;
 
+    /// Minimum normalized confidence required before chord-track key annotations
+    /// show a specific mode suffix (e.g. Dor, harm) instead of falling back to
+    /// the broader major/minor class for the inferred tonic.
+    /// Range: 0.0-1.0. Default: 0.35.
+    virtual double modeNameConfidenceThreshold() const = 0;
+    virtual void setModeNameConfidenceThreshold(double value) = 0;
+    virtual muse::async::Notification modeNameConfidenceThresholdChanged() const = 0;
+
+    /// Minimum region duration in quarter-note beats before chord-track
+    /// annotations are emitted for that region. Prevents very short
+    /// tonicizations and suspensions from creating visual noise.
+    /// Range: 0.0-4.0. Default: 0.5.
+    virtual double minimumDisplayDurationBeats() const = 0;
+    virtual void setMinimumDisplayDurationBeats(double value) = 0;
+    virtual muse::async::Notification minimumDisplayDurationBeatsChanged() const = 0;
+
+    /// Minimum duration in quarter-note beats that a new key inference must
+    /// remain stable before a key annotation is written to the chord track.
+    /// The analyzer may still update internally before this threshold is met.
+    /// Range: 2.0-16.0. Default: 8.0.
+    virtual double minKeyStabilityBeats() const = 0;
+    virtual void setMinKeyStabilityBeats(double value) = 0;
+    virtual muse::async::Notification minKeyStabilityBeatsChanged() const = 0;
+
     // ── Status-bar display ───────────────────────────────────────────────────
 
     virtual bool showKeyModeInStatusBar() const = 0;

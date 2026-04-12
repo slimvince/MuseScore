@@ -51,10 +51,29 @@ enum class HarmonicRegionGranularity {
     PreserveAllChanges,
 };
 
+struct NoteHarmonicContext {
+    std::vector<mu::composing::analysis::ChordAnalysisResult> chordResults;
+    int keyFifths = 0;
+    mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
+    double keyConfidence = 0.0;
+};
+
 /// Computes the harmonic annotation string appended to the status bar when a
 /// note is selected.  Returns "[Key] Sym [Roman] (score) | ..." or "" if no
 /// analysis is possible.
 std::string harmonicAnnotation(const mu::engraving::Note* note);
+
+/// Extract pitch context from a note and run harmonic analysis, preferring the
+/// same regional accumulation path used by chord-track population when enabled.
+NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note* note);
+
+/// Run the same user-facing harmonic inference used by note context at an
+/// arbitrary score tick. The implementation expands a bounded local window only
+/// until the displayed harmonic result stabilizes.
+NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* score,
+                                                 const mu::engraving::Fraction& tick,
+                                                 size_t preferredStaffIdx = 0,
+                                                 const std::set<size_t>& excludeStaves = {});
 
 /// Extract pitch context from a note and run harmonic analysis.
 /// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).
