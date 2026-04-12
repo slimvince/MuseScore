@@ -674,10 +674,7 @@ had WiR annotations.
 | Dor (Dorian) | 16 | ⚠ non-diatonic |
 
 87.9% of genuine errors occur in Ionian or Aeolian mode — **mode inference is
-mostly correct.** The 21-mode expansion is not introducing large-scale false-mode
-errors in Bach chorale contexts.
-
-The 18 Lydian cases warrant monitoring: Bach chorales virtually never use Lydian
+mostly correct.** The 18 Lydian cases warrant monitoring: Bach chorales virtually never use Lydian
 mode, so these may be false positives triggered by a raised 4th degree in an
 otherwise Ionian context. The 16 Dorian cases are plausible — some Bach chorales
 are genuinely Dorian.
@@ -1052,6 +1049,7 @@ distribution shifts as expected.
 **Step 2 — §4.1c jazz mode** ✓ Complete (2026-04-06)
 Chord-symbol-driven region boundaries implemented.
 FiloSax/FiloBass validation now unblocked.
+See ARCHITECTURE.md §4.1c for design.
 
 **Step 3 — Jazz infrastructure and validation**
 After Step 1 modal calibration confirms Jazz preset is well-tuned.

@@ -280,11 +280,25 @@ the following three scores before committing:
 | Chopin BI16-1 | `tools/dcml/chopin_mazurkas/MS3/BI16-1.mscx` | Bars 1-5, 10-16, trio |
 | Dvořák op08n06 | `tools/dcml/dvorak_silhouettes/MS3/op08n06.mscx` | Early slow section, chromatic middle |
 
+
 This is Rule 11 (score inspection before diagnosis) operationalized for the current
 development phase. Open the score in MuseScore Studio, implode to chord track, and
 confirm the key passages look reasonable before accepting any change. If a change
 improves corpus numbers but worsens any benchmark passage visually, treat it as a red
 flag and report before committing.
+
+**Rule 13 — Commit before session end**
+
+Every development session must end with a git commit of all working tree changes, even if changes are incomplete or tests are partially failing. An uncommitted working tree that spans multiple sessions makes it impossible to identify what changed between sessions and prevents reliable diagnosis of regressions.
+
+If tests are failing at session end:
+- Commit with a clear message noting the failing test names
+- Record the failing tests in STATUS.md current state summary
+- Do not leave uncommitted changes
+
+A commit with known failing tests is better than no commit. The commit history is the only reliable record of what changed and when.
+
+Corollary: at session start (Rule 9 stale binary checklist), if the working tree is dirty, stash or commit before doing anything else. Never diagnose test failures in a dirty working tree without first knowing what changed.
 
 ### 2.13 Cross-Platform by Default
 
@@ -1190,7 +1204,7 @@ or even as boundary hints. Those user-facing paths infer from notes only.
 const bool hasChordSymbols = scoreHasChordSymbols(score, startTick, endTick);
 
 if (hasChordSymbols) {
-  // §4.1c Jazz path — chord-symbol-driven boundaries, note-based chord analysis
+  // §4.
     return analyzeHarmonicRhythmJazz(score, startTick, endTick, excludeStaves);
 } else if (useRegional) {
     // §4.1c Classical path — Jaccard boundaries + regional accumulation
