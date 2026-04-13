@@ -36,11 +36,16 @@
 #include <optional>
 #include <set>
 #include <string>
+#include <vector>
 
+#include "engraving/dom/factory.h"
+#include "engraving/dom/harmony.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
+#include "engraving/dom/score.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
+#include "engraving/types/constants.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
@@ -643,6 +648,148 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
     outKeyFifths = context.keyFifths;
     outKeyMode = context.keyMode;
     return context.chordResults;
+}
+
+} // namespace mu::notation
+
+// ── addHarmonicAnnotationsToSelection ────────────────────────────────────────
+
+namespace mu::notation {
+
+void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
+                                       bool writeChordSymbols,
+                                       bool writeRomanNumerals,
+                                       bool writeNashvilleNumbers)
+{
+    using namespace mu::engraving;
+
+    if (!score) {
+        return;
+    }
+
+    const Selection& sel = score->selection();
+    if (!sel.isRange()) {
+        return;
+    }
+
+    if (!writeChordSymbols && !writeRomanNumerals && !writeNashvilleNumbers) {
+        return;
+    }
+
+    const Fraction startTick = sel.tickStart();
+    const Fraction endTick   = sel.tickEnd();
+    const staff_idx_t staffFirst = sel.staffStart();
+    const staff_idx_t staffLast  = sel.staffEnd(); // exclusive
+
+    // Build analysis exclude set: chord track staves contribute symbols, not notes.
+    std::set<size_t> excludeStaves;
+    for (size_t si = 0; si < score->nstaves(); ++si) {
+        if (isChordTrackStaff(score, si)) {
+            excludeStaves.insert(si);
+        }
+    }
+
+    // Chord-track priority rule: if any selected staff is a chord track staff,
+    // write only to those; otherwise write to all selected staves.
+    bool hasChordTrackInSelection = false;
+    for (staff_idx_t si = staffFirst; si < staffLast; ++si) {
+        if (isChordTrackStaff(score, si)) {
+            hasChordTrackInSelection = true;
+            break;
+        }
+    }
+
+    std::vector<staff_idx_t> writeStaves;
+    for (staff_idx_t si = staffFirst; si < staffLast; ++si) {
+        if (!hasChordTrackInSelection || isChordTrackStaff(score, si)) {
+            writeStaves.push_back(si);
+        }
+    }
+
+    if (writeStaves.empty()) {
+        return;
+    }
+
+    // Minimum duration preference (beats) for filtering short regions.
+    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
+    const auto* prefs = config.get().get();
+    const double minimumDisplayDurationBeats = prefs ? prefs->minimumDisplayDurationBeats() : 0.5;
+
+    // Run harmonic analysis over the selection tick range.
+    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(
+        score, startTick, endTick, excludeStaves);
+
+    if (regions.empty()) {
+        return;
+    }
+
+    score->startCmd(TranslatableString("undoableAction", "Add harmonic annotations to selection"));
+
+    for (const auto& region : regions) {
+        // Minimum duration filter.
+        const double regionDurationBeats = static_cast<double>(region.endTick - region.startTick)
+                                           / static_cast<double>(Constants::DIVISION);
+        if (regionDurationBeats < minimumDisplayDurationBeats) {
+            continue;
+        }
+
+        const Fraction rStart = Fraction::fromTicks(region.startTick);
+        Measure* regionMeasure = score->tick2measure(rStart);
+        Segment* seg = regionMeasure
+            ? regionMeasure->undoGetSegment(SegmentType::ChordRest, rStart)
+            : nullptr;
+        if (!seg) {
+            continue;
+        }
+
+        const int keyFifths = region.keyModeResult.keySignatureFifths;
+
+        const std::string symText = writeChordSymbols
+            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(region.chordResult, keyFifths)
+            : "";
+        const std::string romanText = writeRomanNumerals
+            ? mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(region.chordResult)
+            : "";
+        const std::string nashvilleText = writeNashvilleNumbers
+            ? mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(region.chordResult, keyFifths)
+            : "";
+
+        for (staff_idx_t si : writeStaves) {
+            const track_idx_t track = si * VOICES;
+
+            if (!symText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::STANDARD);
+                h->setHarmony(muse::String::fromStdString(symText));
+                h->setPlainText(muse::String::fromStdString(symText));
+                score->undoAddElement(h);
+            }
+
+            if (!romanText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::ROMAN);
+                h->setHarmony(muse::String::fromStdString(romanText));
+                h->setPlainText(muse::String::fromStdString(romanText));
+                score->undoAddElement(h);
+            }
+
+            if (!nashvilleText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::NASHVILLE);
+                h->setHarmony(muse::String::fromStdString(nashvilleText));
+                h->setPlainText(muse::String::fromStdString(nashvilleText));
+                score->undoAddElement(h);
+            }
+        }
+    }
+
+    score->endCmd();
 }
 
 } // namespace mu::notation

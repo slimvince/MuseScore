@@ -93,4 +93,14 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const std::set<size_t>& excludeStaves = {},
     HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed);
 
+/// Analyse the current selection range, compute harmonic regions, and write
+/// Harmony elements (chord symbols / Roman numerals / Nashville numbers) as
+/// an undoable command.  Applies chord-track priority: if any selected staff
+/// is a chord track staff, annotations are written only to those staves.
+/// Regions shorter than the minimumDisplayDurationBeats preference are skipped.
+void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
+                                       bool writeChordSymbols,
+                                       bool writeRomanNumerals,
+                                       bool writeNashvilleNumbers);
+
 } // namespace mu::notation
