@@ -8347,6 +8347,17 @@ void NotationInteraction::addAnalyzedHarmonyToSelection(mu::engraving::HarmonyTy
     apply();
 }
 
+void NotationInteraction::addHarmonicAnnotationsToSelection(bool writeChordSymbols,
+                                                            bool writeRomanNumerals,
+                                                            bool writeNashvilleNumbers)
+{
+    Score* sc = score();
+    if (!sc) {
+        return;
+    }
+    mu::notation::addHarmonicAnnotationsToSelection(sc, writeChordSymbols, writeRomanNumerals, writeNashvilleNumbers);
+}
+
 Harmony* NotationInteraction::editedHarmony() const
 {
     Harmony* harmony = toHarmony(m_editData.element);

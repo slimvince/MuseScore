@@ -376,13 +376,13 @@ void NotationActionController::init()
         currentNotationInteraction()->addAnalyzedHarmony(text, mu::engraving::HarmonyType::NASHVILLE);
     });
     registerAction("add-chord-symbols-to-selection", [this]() {
-        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::STANDARD);
+        currentNotationInteraction()->addHarmonicAnnotationsToSelection(true, false, false);
     });
     registerAction("add-roman-numerals-to-selection", [this]() {
-        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::ROMAN);
+        currentNotationInteraction()->addHarmonicAnnotationsToSelection(false, true, false);
     });
     registerAction("add-nashville-numbers-to-selection", [this]() {
-        currentNotationInteraction()->addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType::NASHVILLE);
+        currentNotationInteraction()->addHarmonicAnnotationsToSelection(false, false, true);
     });
     registerAction("compose-tune-as", [this](const ActionData& args) {
         IF_ASSERT_FAILED(args.count() >= 3) { return; }

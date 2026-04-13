@@ -266,6 +266,7 @@ public:
 
     void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) override;
     void addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType type) override;
+    void addHarmonicAnnotationsToSelection(bool writeChordSymbols, bool writeRomanNumerals, bool writeNashvilleNumbers) override;
     void addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey) override;
 
     void addStretch(qreal value) override;
