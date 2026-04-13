@@ -274,6 +274,43 @@ The §11.3e "complete algorithm" (classify → identify anchors → compute JI o
 
 ---
 
+## Preset selection guidance (2026-04-13)
+
+- **Standard**: Classical, Baroque, Romantic, Contemporary — default for all non-jazz
+- **Jazz**: scores with jazz harmony and complete voicings only
+- **Baroque**: Baroque repertoire with modal inflection
+- **Modal**: modal folk, contemporary modal
+
+Using Jazz preset on Classical scores produces measurably degraded output (confirmed on
+Mozart K279: C major reads as D Dorian with Jazz preset, correct with Standard preset).
+
+---
+
+## Pre-submission backlog (must fix before Phase 3 fork)
+
+1. **Formatter sussus/aussus bug**
+   Affects: 7+ scores across all styles
+   Fix: sanitize double quality prefix in formatSymbol / qualitySuffix
+   File: `src/composing/analysis/chord/chordanalyzer.cpp`
+   Tests needed: 3 unit tests
+
+2. **Formatter /p invalid bass note**
+   Affects: Dvořák Silhouettes
+   Fix: guard TPC_INVALID before appending slash bass suffix
+   File: `chordanalyzer.cpp`
+
+3. **Key detection relative major/minor**
+   Affects: BWV 227/7, BWV 66.6 (2 of 4 benchmark scores)
+   Fix: strengthen piece-start key anchor, improve relative pair tie-breaking via first
+   bass note
+   File: `notationcomposingbridgehelpers.cpp`
+   Tests needed: 2 regression tests
+
+These three items block Phase 3 (submission fork). All other findings are documented
+limitations or post-plateau work.
+
+---
+
 ## Strategic Priorities
 
 1. **Accuracy of harmonic analysis is the current priority** — prerequisite for MuseScore

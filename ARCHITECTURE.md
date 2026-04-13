@@ -2341,6 +2341,63 @@ validation:
 - Chopin BI16-1: bars 1–5, 10–16, trio
 - Dvorak op08n06: early slow section, chromatic middle, late modal stretch
 
+**Formatter: double quality prefix (confirmed 2026-04-13):**
+Chord symbol formatter produces unreadable strings when quality and extension share
+a prefix: `Csussus2` (suspended + sus extension), `G#aussus5` (augmented + sus
+extension), `Dsussus5D+` (worst case).
+Confirmed in 7+ scores across all styles.
+Fix: sanitize `sussus`→`sus`, `aussus`→`aug(sus...)` in formatSymbol.
+Active backlog item — fix before submission.
+
+**Formatter: invalid bass note name `/p` (confirmed 2026-04-13):**
+TPC resolution failure produces `p` as a bass note name, e.g. `BbMaj7/p`. Occurs
+when bassTpc is TPC_INVALID. Fix: guard against invalid TPC before appending
+slash bass suffix. Confirmed in Dvořák Silhouettes. Active backlog item.
+
+**Key detection: relative major/minor ambiguity (confirmed 2026-04-13):**
+When opening chord is in first inversion, the bass note matches the tonic of the
+relative key, causing the inferrer to lock onto the wrong member of the relative pair:
+- BWV 227/7 (E minor, 1♯): reads as G major throughout
+- BWV 66.6 (A major, 3♯): reads as F# minor throughout
+
+Makes all Roman numerals and Nashville numbers systematically wrong on these benchmark
+scores. Active backlog item — fix before submission.
+
+**Preset misuse degrades output (confirmed 2026-04-13):**
+Jazz preset causes key context drift on Classical scores. Mozart K279 with Jazz preset
+reads C major as D Dorian in multiple passages. Standard preset on same score produces
+output close to DCML reference. Preset selection is user responsibility — document
+clearly in UI and help text. Standard preset is correct default for all non-jazz
+repertoire.
+
+**Modulation tracking — philosophy difference (confirmed 2026-04-13):**
+Our analyzer stays in the home key and labels borrowed chords with chromatic scale
+degrees (e.g. `♭VII`, `II` in C major). DCML reference uses tonicization notation
+(e.g. `V/IV`, `IV/III`). Both are valid analytical approaches. Our approach is more
+accessible for general users. Not a bug — design choice.
+
+**Third-inversion dominant seventh ambiguity (confirmed 2026-04-13):**
+G7/C (G dominant seventh, C in bass) is sometimes identified as Gm/C (G minor over C).
+Occurs when B natural evidence is weak and Bb reading is slightly preferred. Confirmed
+in Mozart K279 and Chopin Mazurkas. Known limitation of vertical template matching on
+passing-bass textures.
+
+**Roman numeral quality at minor tonic cadences (confirmed 2026-04-13):**
+At minor key cadences, analyzer occasionally writes major `I` where minor `i` is
+correct. Confirmed in Corelli. Likely a chord quality threshold issue at cadential
+points.
+
+**Over-segmentation on dense piano texture (confirmed 2026-04-13):**
+Dvořák Silhouettes and Chopin Mazurkas show repeated identical chord labels
+(e.g. `Bb×8`, `Fsus×20`) from Jaccard boundary firing on dense arpeggiated texture.
+Same-chord merge logic is working but the merge threshold may be too fine. Known
+limitation — mixed texture orchestration would address this post-plateau.
+
+**`do` abstention in jazz context is correct behavior (confirmed 2026-04-13):**
+In "You Must Believe in Spring" (jazz ballad, 5 flats), the analyzer correctly abstains
+on highly chromatic passages, writing `do` (no label) rather than guessing wrong. This
+is confidence gating working as intended. More trustworthy than wrong labels.
+
 ### 5.9 Key Signature Injection — Not Planned
 
 An earlier design considered automatically suggesting key signature insertions in the main
