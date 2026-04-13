@@ -468,6 +468,17 @@ void applyPairwiseDisambiguation(
         evalB.score += prefs.disambiguationTriadBonus;
         evalA.score -= prefs.disambiguationTriadCost;
     }
+    // When both candidates have their tonic but only one has a complete triad,
+    // still prefer the side with the complete triad.  This handles the common
+    // relative-major/minor opening chord (e.g. Em/G = E-G-B): both keys have
+    // tonic presence (G and E are both in the chord) but only E minor has a
+    // complete triad (E-G-B) while G major is missing its fifth (D).
+    if (evalA.evidence.hasCompleteTriad && aHasTonic && bHasTonic && !evalB.evidence.hasCompleteTriad) {
+        evalA.score += prefs.disambiguationTriadBonus;
+    }
+    if (evalB.evidence.hasCompleteTriad && bHasTonic && aHasTonic && !evalA.evidence.hasCompleteTriad) {
+        evalB.score += prefs.disambiguationTriadBonus;
+    }
     if (aHasTonic && !bHasTonic) {
         evalA.score += prefs.disambiguationTonicBonus;
     }

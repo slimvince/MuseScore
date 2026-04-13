@@ -604,7 +604,11 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
         const int tonicPc = (ionianTonic + keyModeTonicOffset(*declaredMode)) % 12;
         outMode       = *declaredMode;
         outConfidence = 0.5;
-        if (outScore) *outScore = 0.0;
+        // Use the relative-key hysteresis margin as the piece-start anchor score so
+        // that the first analysis window must beat this threshold to override the
+        // declared key.  Returning 0.0 made the anchor too weak: any analysis
+        // score above 2.0 would immediately override the declared key.
+        if (outScore) *outScore = prefs.relativeKeyHysteresisMargin;
         (void)tonicPc;
         return;
     }

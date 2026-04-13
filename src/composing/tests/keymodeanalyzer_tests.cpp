@@ -450,6 +450,59 @@ TEST(Composing_KeyModeAnalyzerTests, OutOfRangeKeySignatureUsesGlobalPath)
     }
 }
 
+// ── Relative major/minor disambiguation — both tonics present ─────────────────
+//
+// Regression tests for the BWV 227/7 class of ambiguity: the opening chord
+// contains both the major tonic (G) and the minor tonic (E), so the old code
+// never fired the complete-triad bonus (it required one side to have NO tonic).
+// The new path fires whenever both have tonic but only one has a complete triad.
+
+TEST(Composing_KeyModeAnalyzerTests, PrefersEMinorOverGMajorWhenBothTonicsPresentButOnlyMinorTriadComplete)
+{
+    // G (bass, heavy), E (medium), B (medium) — keySig=1: G major / E minor pair.
+    // G major: tonic G present as bass with high weight; fifth D absent → no complete triad.
+    // E minor: tonic E present; complete triad E-G-B all present.
+    // Both tonics are present, so old "one side no tonic" rule never fires.
+    // New rule: E minor has complete triad AND G major does not → E minor gets the
+    // disambiguationTriadBonus → E minor wins despite G being the bass.
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(67, 2.0, 2.0, true),   // G4 — bass, strongly weighted (simulates G as tonic candidate)
+        makePitch(64, 1.0, 1.0, false),  // E4
+        makePitch(71, 1.0, 1.0, false),  // B4
+    };
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 1);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().keySignatureFifths, 1);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian)
+        << "E minor should win over G major when E-G-B provides E minor a complete triad "
+           "but G major lacks its fifth (D). Both G and E tonics present (old rule silent). "
+           "Regression for BWV 227/7 opening.";
+}
+
+TEST(Composing_KeyModeAnalyzerTests, PrefersBMinorOverDMajorWhenBothTonicsPresentButOnlyMinorTriadComplete)
+{
+    // D (bass, heavy), B (medium), F# (medium) — keySig=2: D major / B minor pair.
+    // D major: tonic D present as bass with high weight; fifth A absent → no complete triad.
+    // B minor: tonic B present; complete triad B-D-F# all present.
+    // Both tonics present → old "one side no tonic" rule silent.
+    // New rule: B minor has complete triad AND D major does not → B minor wins.
+    // B3=59, D4=62, F#4=66
+    std::vector<KeyModeAnalyzer::PitchContext> pitches = {
+        makePitch(62, 2.0, 2.0, true),   // D4 — bass, strongly weighted
+        makePitch(59, 1.0, 1.0, false),  // B3
+        makePitch(66, 1.0, 1.0, false),  // F#4
+    };
+    const auto results = KeyModeAnalyzer::analyzeKeyMode(pitches, 2);
+
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().keySignatureFifths, 2);
+    EXPECT_EQ(results.front().mode, KeySigMode::Aeolian)
+        << "B minor should win over D major when B-D-F# gives B minor a complete triad "
+           "but D major lacks its fifth (A). Both D and B tonics present (old rule silent). "
+           "Regression for BWV-class relative-key ambiguity.";
+}
+
 // ── All 12 chromatic pitches ──────────────────────────────────────────────────
 
 TEST(Composing_KeyModeAnalyzerTests, AllChromaticPitchesDoesNotCrash)

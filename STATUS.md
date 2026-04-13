@@ -300,11 +300,13 @@ Mozart K279: C major reads as D Dorian with Jazz preset, correct with Standard p
    File: `chordanalyzer.cpp`
 
 3. **Key detection relative major/minor**
-   Affects: BWV 227/7, BWV 66.6 (2 of 4 benchmark scores)
-   Fix: strengthen piece-start key anchor, improve relative pair tie-breaking via first
-   bass note
-   File: `notationcomposingbridgehelpers.cpp`
-   Tests needed: 2 regression tests
+   Affects: BWV 227/7 (genuinely fixed — now detects E minor correctly).
+   BWV 66.6 was never broken — F# minor is correct per music21 ground truth.
+   STATUS.md had incorrect expectation of A major (corrected 2026-04-13).
+   Fix: complete-triad bonus when both relative candidates have tonic present;
+   piece-start anchor score raised to `relativeKeyHysteresisMargin` (was 0.0)
+   Files: `keymodeanalyzer.cpp`, `notationcomposingbridgehelpers.cpp`
+   Tests added: 2 regression tests (PrefersEMinorOverGMajor…, PrefersBMinorOverDMajor…)
 
 These three items block Phase 3 (submission fork). All other findings are documented
 limitations or post-plateau work.
