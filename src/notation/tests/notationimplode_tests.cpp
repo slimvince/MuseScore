@@ -44,6 +44,7 @@
 #include "engraving/dom/staff.h"
 #include "engraving/dom/stafftext.h"
 
+#include "engraving/editing/undo.h"
 #include "engraving/tests/utils/scorerw.h"
 
 #include "notation/internal/notationcomposingbridge.h"
@@ -1493,6 +1494,75 @@ TEST_F(Notation_ImplodeTests, CorelliOp01n08dUserReportedChordTrackAudit)
     const auto measure9BassPitches = chordPitchesAt(score, measure9Beat3, targetBassTrack);
     EXPECT_LE(measure9TreblePitches.size(), 1u) << summarizePitches(measure9TreblePitches);
     EXPECT_LE(measure9BassPitches.size(), 1u) << summarizePitches(measure9BassPitches);
+
+    delete score;
+}
+
+// ── addHarmonicAnnotationsToSelection regression tests ───────────────────────
+
+class Notation_ComposingBridgeTests : public ::testing::Test
+{
+};
+
+TEST_F(Notation_ComposingBridgeTests, AddHarmonicAnnotationsToSelectionWritesAndUndoes)
+{
+    // This fixture has analyzable notes on staff 0 and no pre-existing chord track
+    // staves, so the chord-track priority rule does not apply and annotations are
+    // written to staff 0 (track 0).
+    auto analysis = analysisConfig();
+    ASSERT_TRUE(analysis);
+    analysis->setUseRegionalAccumulation(true);
+
+    MasterScore* score = ScoreRW::readScore(u"implode_sustained_support_each_beat.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_GE(score->nstaves(), 1u);
+
+    // This fixture has 4 staves: 0=Pedal, 1=Upper Motion, 2=Chord Track Treble,
+    // 3=Chord Track Bass.  Select only staves 0–1 so the chord-track priority
+    // rule does NOT apply and annotations land on the source staves.
+    ASSERT_GE(score->nstaves(), 2u);
+    Segment* startSeg = score->firstSegment(SegmentType::ChordRest);
+    ASSERT_TRUE(startSeg);
+    score->selection().setRange(startSeg, nullptr, 0, 2);
+    ASSERT_TRUE(score->selection().isRange());
+
+    // Baseline: no harmony on staff 0 before calling the function.
+    const track_idx_t track0 = 0;
+    const int annotationsBefore = countHarmonyAnnotationsOnTrack(score, track0);
+
+    // Write chord symbols to the selection.
+    mu::notation::addHarmonicAnnotationsToSelection(score, /*writeChordSymbols=*/true,
+                                                    /*writeRomanNumerals=*/false,
+                                                    /*writeNashvilleNumbers=*/false);
+
+    // At least one STANDARD harmony annotation must have been written.
+    const int annotationsAfter = countHarmonyAnnotationsOnTrack(score, track0);
+    EXPECT_GT(annotationsAfter, annotationsBefore)
+        << "addHarmonicAnnotationsToSelection wrote no STANDARD annotations to track 0";
+
+    // Verify they are STANDARD type.
+    bool hasStandard = false;
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        for (EngravingItem* ann : seg->annotations()) {
+            if (ann && ann->isHarmony() && ann->track() == track0
+                && toHarmony(ann)->harmonyType() == HarmonyType::STANDARD) {
+                hasStandard = true;
+                break;
+            }
+        }
+        if (hasStandard) {
+            break;
+        }
+    }
+    EXPECT_TRUE(hasStandard) << "no STANDARD-type harmony found on track 0 after annotation";
+
+    // Undo: all written annotations must be removed.
+    score->undoStack()->undo(nullptr);
+    const int annotationsAfterUndo = countHarmonyAnnotationsOnTrack(score, track0);
+    EXPECT_EQ(annotationsAfterUndo, annotationsBefore)
+        << "undo did not fully remove annotations: before=" << annotationsBefore
+        << " afterUndo=" << annotationsAfterUndo;
 
     delete score;
 }
