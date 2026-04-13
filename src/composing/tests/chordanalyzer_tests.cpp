@@ -1324,3 +1324,42 @@ TEST(Composing_ChordRomanNumeralTests, MajorAddFlatNinth_I_addFlatNine)
     setExtension(r.identity.extensions, Extension::NaturalNinth);
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I(addb9)");
 }
+
+// ── Formatter sanitization: double quality prefix (bug guard) ─────────────────
+
+TEST(Composing_ChordSymbolFormatterTests, NoDuplicateSusSuffix_Sus4WithNaturalNinth)
+{
+    // Suspended4 + natural 9th (no seventh): should format as "Csus", NOT "Csussus2".
+    // The natural 9th is a non-defining tone for sus4 and should not duplicate the sus prefix.
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended4);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(r, 0);
+    EXPECT_EQ(sym.find("sussus"), std::string::npos)
+        << "Double sus prefix in: " << sym;
+    EXPECT_FALSE(sym.empty());
+}
+
+TEST(Composing_ChordSymbolFormatterTests, NoDuplicateSusSuffix_Sus2WithNaturalEleventh)
+{
+    // Suspended2 + natural eleventh (no seventh): should format as "Csus2", NOT "Csus2sus" or "Csussus2".
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended2);
+    setExtension(r.identity.extensions, Extension::NaturalEleventh);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(r, 0);
+    EXPECT_EQ(sym.find("sussus"), std::string::npos)
+        << "Double sus prefix in: " << sym;
+    EXPECT_FALSE(sym.empty());
+}
+
+TEST(Composing_ChordSymbolFormatterTests, InvalidBassPcSuppressesSlashBass)
+{
+    // When bassPc is out of the valid 0–11 range (e.g. -1 from an analysis error),
+    // the slash bass suffix must be suppressed to avoid outputting garbage like "BbMaj7/p".
+    // bassTpc = -1 (normal "no TPC data" sentinel) is a separate, valid case handled
+    // by pitchClassName key-signature fallback and must NOT suppress the slash bass.
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 10 /*Bb*/, 3 /*Eb*/, false, true);
+    r.identity.bassPc = -1;  // Simulate an out-of-range bassPc that would cause UB in pitchClassName
+    const std::string sym = ChordSymbolFormatter::formatSymbol(r, -2);  // Bb key
+    EXPECT_EQ(sym.find('/'), std::string::npos)
+        << "Slash bass present despite invalid bassPc in: " << sym;
+    EXPECT_FALSE(sym.empty());
+}

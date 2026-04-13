@@ -1703,7 +1703,8 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
             && hasExtension(result.identity.extensions, Extension::NaturalEleventh) && !hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
         std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths));
         symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? "Maj9sus" : "Maj7sus";
-        if (result.identity.bassPc != result.identity.rootPc) {
+        if (result.identity.bassPc != result.identity.rootPc
+                && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
             symbol += "/";
             symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
         }
@@ -1733,9 +1734,31 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
         symbol += "(no 3)";
     }
 
-    if (result.identity.bassPc != result.identity.rootPc) {
+    if (result.identity.bassPc != result.identity.rootPc
+            && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
         symbol += "/";
         symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
+    }
+
+    // Sanitize double quality prefix artifacts that can arise from rare extension
+    // combinations where quality text and extension text share a prefix.
+    // "sussus..." → "sus...": redundant first "sus" from Suspended quality + sus extension
+    {
+        size_t pos = symbol.find("sussus");
+        while (pos != std::string::npos) {
+            symbol.erase(pos, 3);  // remove the first "sus"
+            pos = symbol.find("sussus", pos);
+        }
+    }
+    // "augsus..." → "aug(sus...)": augmented quality "aug" followed by sus extension
+    for (const char* pat : { "augsus", "aussus" }) {
+        const size_t pos = symbol.find(pat);
+        if (pos != std::string::npos) {
+            // insert "(" after the 3-char quality prefix, close with ")" at end
+            symbol.insert(pos + 3, "(");
+            symbol += ")";
+            break;  // only one aug-sus collision can occur per symbol
+        }
     }
 
     return symbol;
