@@ -734,11 +734,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         }
 
         const Fraction rStart = Fraction::fromTicks(region.startTick);
-        Measure* regionMeasure = score->tick2measure(rStart);
-        Segment* seg = regionMeasure
-            ? regionMeasure->undoGetSegment(SegmentType::ChordRest, rStart)
-            : nullptr;
-        if (!seg) {
+        Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
+        if (!seg || seg->tick() >= Fraction::fromTicks(region.endTick)) {
             continue;
         }
 

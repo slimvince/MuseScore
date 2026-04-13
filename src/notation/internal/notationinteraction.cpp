@@ -8356,6 +8356,7 @@ void NotationInteraction::addHarmonicAnnotationsToSelection(bool writeChordSymbo
         return;
     }
     mu::notation::addHarmonicAnnotationsToSelection(sc, writeChordSymbols, writeRomanNumerals, writeNashvilleNumbers);
+    notifyAboutNotationChanged();
 }
 
 Harmony* NotationInteraction::editedHarmony() const
