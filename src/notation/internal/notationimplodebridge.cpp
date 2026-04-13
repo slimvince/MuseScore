@@ -304,29 +304,21 @@ bool sameUserFacingInference(const mu::composing::analysis::HarmonicRegion& lhs,
               == keyExposureBucket(rhs.keyModeResult.normalizedConfidence);
 }
 
-mu::engraving::Tuplet* findTupletAtTick(
+
+// Returns the tuplet on the specified track at this segment, or nullptr if none.
+mu::engraving::Tuplet* findTupletOnTrack(
     mu::engraving::Segment* seg,
-    mu::engraving::track_idx_t excludeTrack)
+    mu::engraving::track_idx_t track)
 {
     using namespace mu::engraving;
     if (!seg) {
         return nullptr;
     }
-    const size_t ntracks = seg->score()->ntracks();
-    for (track_idx_t t = 0; t < static_cast<track_idx_t>(ntracks); ++t) {
-        if (t == excludeTrack) {
-            continue;
-        }
-        EngravingItem* el = seg->element(t);
-        if (!el || !el->isChordRest()) {
-            continue;
-        }
-        Tuplet* tup = toChordRest(el)->tuplet();
-        if (tup) {
-            return tup;
-        }
+    EngravingItem* el = seg->element(track);
+    if (!el || !el->isChordRest()) {
+        return nullptr;
     }
-    return nullptr;
+    return toChordRest(el)->tuplet();
 }
 
 mu::engraving::Chord* addChordChainFromPitches(
@@ -356,7 +348,7 @@ mu::engraving::Chord* addChordChainFromPitches(
     const Key key = Key(keySignatureFifths);
     const Fraction totalDur = endTick - startTick;
 
-    Tuplet* srcTuplet = findTupletAtTick(seg, track);
+    Tuplet* srcTuplet = findTupletOnTrack(seg, track);
     if (srcTuplet) {
         const Fraction elemDur = srcTuplet->baseLen().fraction()
                                  * srcTuplet->ratio().denominator()
@@ -367,48 +359,52 @@ mu::engraving::Chord* addChordChainFromPitches(
                 return nullptr;
             }
 
-            Tuplet* dstTuplet = nullptr;
-            ChordRest* existingCR = toChordRest(seg->element(track));
-            if (existingCR && existingCR->tuplet()) {
-                dstTuplet = existingCR->tuplet();
+
+            // Remove any stale ChordRest elements on the target track within the tuplet span, regardless of their tuplet association.
+            const Fraction tupFrom = srcTuplet->tick();
+            const Fraction tupTo   = tupFrom + srcTuplet->ticks();
+            for (Segment* clearSeg = sc->tick2segment(tupFrom, true, SegmentType::ChordRest);
+                 clearSeg && clearSeg->tick() < tupTo;
+                 clearSeg = clearSeg->next1(SegmentType::ChordRest)) {
+                ChordRest* stale = toChordRest(clearSeg->element(track));
+                if (stale) {
+                    sc->undoRemoveElement(stale);
+                }
+            }
+            // Now make the gap for the tuplet.
+            Segment* tupSeg = sc->tick2segment(srcTuplet->tick(), true, SegmentType::ChordRest);
+            if (tupSeg) {
+                sc->makeGap(tupSeg, track, srcTuplet->ticks(), nullptr);
             }
 
-            if (!dstTuplet) {
-                Segment* tupSeg = sc->tick2segment(srcTuplet->tick(), true,
-                                                   SegmentType::ChordRest);
-                if (tupSeg) {
-                    sc->makeGap(tupSeg, track, srcTuplet->ticks(), nullptr);
-                }
+            Tuplet* dstTuplet = Factory::createTuplet(m);
+            dstTuplet->setRatio(srcTuplet->ratio());
+            dstTuplet->setBaseLen(srcTuplet->baseLen());
+            dstTuplet->setTicks(srcTuplet->ticks());
+            dstTuplet->setTrack(track);
+            dstTuplet->setTick(srcTuplet->tick());
+            dstTuplet->setParent(m);
 
-                dstTuplet = Factory::createTuplet(m);
-                dstTuplet->setRatio(srcTuplet->ratio());
-                dstTuplet->setBaseLen(srcTuplet->baseLen());
-                dstTuplet->setTicks(srcTuplet->ticks());
-                dstTuplet->setTrack(track);
-                dstTuplet->setTick(srcTuplet->tick());
-                dstTuplet->setParent(m);
-
-                Fraction slotTick = srcTuplet->tick();
-                const int nSlots = srcTuplet->ratio().numerator();
-                for (int i = 0; i < nSlots; ++i) {
-                    Rest* r = Factory::createRest(sc->dummy()->segment());
-                    r->setTrack(track);
-                    r->setDurationType(dstTuplet->baseLen());
-                    r->setTicks(dstTuplet->baseLen().fraction());
-                    r->setTuplet(dstTuplet);
-                    sc->undoAddCR(r, m, slotTick);
-                    slotTick += elemDur;
-                }
-
-                seg = m->undoGetSegment(SegmentType::ChordRest, startTick);
-                if (!seg) {
-                    return nullptr;
-                }
-                existingCR = toChordRest(seg->element(track));
+            Fraction slotTick = srcTuplet->tick();
+            const int nSlots = srcTuplet->ratio().numerator();
+            for (int i = 0; i < nSlots; ++i) {
+                Rest* r = Factory::createRest(sc->dummy()->segment());
+                r->setTrack(track);
+                r->setDurationType(dstTuplet->baseLen());
+                r->setTicks(dstTuplet->baseLen().fraction());
+                r->setTuplet(dstTuplet);
+                sc->undoAddCR(r, m, slotTick);
+                slotTick += elemDur;
             }
 
-            if (existingCR && existingCR->tuplet() == dstTuplet) {
-                sc->undoRemoveElement(existingCR);
+            seg = m->undoGetSegment(SegmentType::ChordRest, startTick);
+
+            // Remove any rest in the tuplet slot where the chord will be added
+            if (seg) {
+                ChordRest* crInSlot = toChordRest(seg->element(track));
+                if (crInSlot && crInSlot->tuplet() == dstTuplet && crInSlot->isRest()) {
+                    sc->undoRemoveElement(crInSlot);
+                }
             }
 
             Chord* chord = Factory::createChord(sc->dummy()->segment());
@@ -695,7 +691,7 @@ bool populateChordTrack(
             // tuplet path in addChordChainFromPitches handles it.
             Segment* chkSeg = score->tick2segment(clearFrom, true,
                                                    SegmentType::ChordRest);
-            Tuplet* srcTup = chkSeg ? findTupletAtTick(chkSeg, track)
+            Tuplet* srcTup = chkSeg ? findTupletOnTrack(chkSeg, track)
                                     : nullptr;
             if (srcTup) {
                 const Fraction tupFrom = srcTup->tick();

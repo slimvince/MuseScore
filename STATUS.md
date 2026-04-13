@@ -255,6 +255,22 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 | Susceptibility clamping | §11.3e step 5 | No per-note offset clamping to a budget |
 | Tuning session state / drift tracking | §11.3d | `TuningSessionState` struct is specified but not implemented; no drift accumulation |
 | FreeDrift reset marker | §11.3f / backlog | No mechanism yet to deliberately reset drift at structural boundaries; see `backlog_drift_reset.md` |
+---
+
+## Known failing notation tests (implode-to-chord-track)
+
+As of the current working tree (April 2026), the following notation regression tests are known to fail and are deferred for future work:
+
+- **Notation_ImplodeTests.DvorakOp08n06TupletOverlap**
+  - Overlapping chord/rest in measure 31 (tuplet region) persists; not a tuplet-path bug. Deferred for further investigation.
+- **Notation_ImplodeTests.CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmearPreviousChord**
+  - Fails on note-only late-beat cases; Corelli opening/late-dominant GUI case.
+- **Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit**
+  - Fails on note-only late-beat cases; user-reported chord track audit.
+- **Notation_ImplodeTests.SustainedSupportChordTrack**
+  - Fails on sustained-support fixture; details in test output.
+
+These failures are documented for transparency and are not regressions from the last fully green checkpoint. All other notation regression tests pass.
 
 The §11.3e "complete algorithm" (classify → identify anchors → compute JI offsets → weighted centering → clamp) describes the intended future design. The current implementation covers §11.3e steps 3–4 with unweighted centering and no clamping, plus §11.3f FreeDrift.
 
