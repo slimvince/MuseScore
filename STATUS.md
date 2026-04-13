@@ -259,16 +259,18 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 
 ## Known failing notation tests (implode-to-chord-track)
 
-As of the current working tree (April 2026), the following notation regression tests are known to fail and are deferred for future work:
+As of 2026-04-13 (34 tests total, 30 passing), the following 4 notation regression tests are known to fail and are deferred for future work:
 
-- **Notation_ImplodeTests.DvorakOp08n06TupletOverlap**
-  - Overlapping chord/rest in measure 31 (tuplet region) persists; not a tuplet-path bug. Deferred for further investigation.
-- **Notation_ImplodeTests.CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmearPreviousChord**
-  - Fails on note-only late-beat cases; Corelli opening/late-dominant GUI case.
+- **Notation_ImplodeTests.ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries**
+  - Sustained-support fixture: chord track does not correctly carry support across beat boundaries.
+- **Notation_ImplodeTests.CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature**
+  - Corelli op01n08d: status-bar context does not match populate output when no forced key signature is present.
+- **Notation_ImplodeTests.PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16**
+  - Chopin BI16-1: mixed chord/rest measures remain on treble+bass chord tracks in measures 9, 26, 28, 29, 32, 33.
 - **Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit**
-  - Fails on note-only late-beat cases; user-reported chord track audit.
-- **Notation_ImplodeTests.SustainedSupportChordTrack**
-  - Fails on sustained-support fixture; details in test output.
+  - Corelli op01n08d: user-reported chord track audit fails on late-beat sparse cases.
+
+Previously failing test now fixed: `PopulateChordTrackHandlesTupletedDvorakOp08n06` (Dvorak op08n06 tuplet path) — now passes as of this session.
 
 These failures are documented for transparency and are not regressions from the last fully green checkpoint. All other notation regression tests pass.
 
