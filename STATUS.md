@@ -257,22 +257,18 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 | FreeDrift reset marker | §11.3f / backlog | No mechanism yet to deliberately reset drift at structural boundaries; see `backlog_drift_reset.md` |
 ---
 
-## Known failing notation tests (implode-to-chord-track)
+## Known failing notation tests (implode-to-chord-track, all deferred)
 
-As of 2026-04-13 (34 tests total, 30 passing), the following 4 notation regression tests are known to fail and are deferred for future work:
+As of 2026-04-13 (34 tests total, 30 passing):
 
-- **Notation_ImplodeTests.ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries**
-  - Sustained-support fixture: chord track does not correctly carry support across beat boundaries.
-- **Notation_ImplodeTests.CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature**
-  - Corelli op01n08d: status-bar context does not match populate output when no forced key signature is present.
-- **Notation_ImplodeTests.PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16**
-  - Chopin BI16-1: mixed chord/rest measures remain on treble+bass chord tracks in measures 9, 26, 28, 29, 32, 33.
-- **Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit**
-  - Corelli op01n08d: user-reported chord track audit fails on late-beat sparse cases.
+1. **ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries** — extra annotation at tick 3/4; `inferGapRegion` suspect.
+2. **CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature** — tick 1440 carry-forward mismatch between status-bar context and populate output.
+3. **PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16** — mixed chord/rest on BI16 chord tracks in measures 9, 26, 28, 29, 32, 33; deferred.
+4. **CorelliOp01n08dUserReportedChordTrackAudit** — missing bass annotation at m10; late-beat sparse cases.
 
-Previously failing test now fixed: `PopulateChordTrackHandlesTupletedDvorakOp08n06` (Dvorak op08n06 tuplet path) — now passes as of this session.
+`PopulateChordTrackHandlesTupletedDvorakOp08n06` is now **passing** — the `findTupletOnTrack` fix resolved it.
 
-These failures are documented for transparency and are not regressions from the last fully green checkpoint. All other notation regression tests pass.
+All other notation regression tests pass.
 
 The §11.3e "complete algorithm" (classify → identify anchors → compute JI offsets → weighted centering → clamp) describes the intended future design. The current implementation covers §11.3e steps 3–4 with unweighted centering and no clamping, plus §11.3f FreeDrift.
 
