@@ -287,6 +287,34 @@ confirm the key passages look reasonable before accepting any change. If a chang
 improves corpus numbers but worsens any benchmark passage visually, treat it as a red
 flag and report before committing.
 
+**Rule 14 — Shell discipline for long-running commands**
+
+All build and test commands must run synchronously (foreground). Never use background jobs or split output.
+
+Correct patterns:
+```bash
+# Build
+cmake --build ninja_build_rel --target notation_tests --parallel 2>&1 | tail -20
+
+# Tests — run once, capture tail
+./ninja_build_rel/notation_tests.exe 2>&1 | tail -10
+
+# Python scripts
+python tools/test_batch_analyze_regressions.py 2>&1 | tail -5
+
+# Long corpus runs — use tee
+python tools/run_corpus.py 2>&1 | tee /tmp/corpus_run.txt | tail -5
+# Then after completion:
+cat /tmp/corpus_run.txt
+```
+
+Never do:
+- `command &` (background job)
+- Run, decide too slow, kill and re-run differently
+- Check background task output more than once
+
+One run, one result. If output is unexpected, report it and ask for instructions. Do not silently re-run.
+
 **Rule 13 — Commit before session end**
 
 Every development session must end with a git commit of all working tree changes, even if changes are incomplete or tests are partially failing. An uncommitted working tree that spans multiple sessions makes it impossible to identify what changed between sessions and prevents reliable diagnosis of regressions.
