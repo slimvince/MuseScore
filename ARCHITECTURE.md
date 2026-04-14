@@ -4344,12 +4344,28 @@ implemented and passing all targeted tests. See STATUS.md for test counts.
 2e — Pre-submission backlog items fixed: formatter sussus/bassIsRoot bugs
   (commit `4c35da17`), relative major/minor key ambiguity (commit `3ba80cb7`).
 
-#### Phase 3 — Submission fork preparation *(next)*
+#### Phase 3 — Submission fork preparation **COMPLETE — `a97f9f6495`**
 
-- Create submission scope document (`docs/submission_scope.md`)
-- Identify files in scope vs out of scope for the PR
-- Create fork branch containing only submittable code
-- Final PR readiness review
+- Submission scope document: `docs/submission_scope.md`
+- Submission branch created: `submission-phase1` (from master `a97f9f6495`)
+- Implode-to-chord-track removed from submission branch (`814ffe4d36`)
+
+#### Phase 4 — Make it submittable **COMPLETE — `2bc34e2017`**
+
+4a: GPL headers corrected on all new files (`df49437388`)
+4b: Doxygen — already complete on all public interfaces, no changes needed
+4c: Translations — all user-visible strings already in TranslatableString, no changes needed
+4d: CMake — `environment.cpp` added to composing_tests (`fda8a6197d`)
+4e: External dependencies — zero new dependencies confirmed (`2bc34e2017`)
+
+Submission branch `submission-phase1` state: notation_tests 13/13, composing_tests 304/304.
+Master branch `943066809e`: intact, full tooling preserved.
+
+#### Phase 5 — Community submission *(next)*
+
+- Draft RFC post for MuseScore developer forum
+- Vincent reviews and posts RFC manually
+- After positive RFC response: open PR from `submission-phase1`
 
 ---
 

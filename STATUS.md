@@ -286,19 +286,26 @@ Mozart K279: C major reads as D Dorian with Jazz preset, correct with Standard p
 
 ---
 
-## Phase 4 — Submission preparation **IN PROGRESS (2026-04-14)**
+## Phase 4 — Make it submittable **COMPLETE — `2bc34e2017` (2026-04-14)**
 
 | Component | Status | Commit |
 |-----------|--------|--------|
-| 4a — GPL headers | ✓ Fixed copyright year on 3 notation bridge files | `df494373` |
-| 4b — Doxygen on public interfaces | ✓ Clean — all interfaces already documented | — |
-| 4c — Translations | ✓ Clean — all user strings already in TranslatableString | — |
-| 4d — CMake registration | ✓ Fixed missing environment.cpp in composing_tests | `fda8a619` |
-| 4e — No external dependencies | ✓ Confirmed — zero new third-party includes | — |
-| 4f — Tuning removal | Pending |  |
-| 4g — Tools/corpus removal | Pending |  |
+| 4a — GPL headers | ✓ Fixed copyright year on 3 notation bridge files | `df49437388` |
+| 4b — Doxygen | ✓ Already complete on all public interfaces, no changes needed | — |
+| 4c — Translations | ✓ All user-visible strings already in TranslatableString, no changes needed | — |
+| 4d — CMake | ✓ environment.cpp added to composing_tests | `fda8a6197d` |
+| 4e — External dependencies | ✓ Zero new dependencies confirmed | `2bc34e2017` |
 
-**External dependency verification (2026-04-14):** All `#include` directives in `src/composing/` and the notation bridge files resolve exclusively to standard library headers, MuseScore framework headers, and our own module headers. No new third-party libraries introduced.
+**Submission branch: `submission-phase1`**
+- notation_tests: 13/13 (tuning tests only — implode removed)
+- composing_tests: 304/304
+- Implode-to-chord-track: removed (separate future contribution)
+- Tuning system: present (separate future contribution, not yet removed)
+- batch_analyze / corpus data: not yet removed
+
+**Master branch: `943066809e`** — intact, full tooling and implode preserved.
+
+**Next: Phase 5 — Community submission (RFC post + PR)**
 
 ---
 
