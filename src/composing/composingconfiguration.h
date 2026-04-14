@@ -46,34 +46,6 @@ public:
     void setAnalysisAlternatives(int count) override;
     muse::async::Notification analysisAlternativesChanged() const override;
 
-    std::string tuningSystemKey() const override;
-    void setTuningSystemKey(const std::string& key) override;
-    muse::async::Notification tuningSystemKeyChanged() const override;
-
-    bool tonicAnchoredTuning() const override;
-    void setTonicAnchoredTuning(bool value) override;
-    muse::async::Notification tonicAnchoredTuningChanged() const override;
-
-    mu::composing::intonation::TuningMode tuningMode() const override;
-    void setTuningMode(mu::composing::intonation::TuningMode mode) override;
-    muse::async::Notification tuningModeChanged() const override;
-
-    bool allowSplitSlurOfSustainedEvents() const override;
-    void setAllowSplitSlurOfSustainedEvents(bool value) override;
-    muse::async::Notification allowSplitSlurOfSustainedEventsChanged() const override;
-
-    bool minimizeTuningDeviation() const override;
-    void setMinimizeTuningDeviation(bool value) override;
-    muse::async::Notification minimizeTuningDeviationChanged() const override;
-
-    bool annotateTuningOffsets() const override;
-    void setAnnotateTuningOffsets(bool value) override;
-    muse::async::Notification annotateTuningOffsetsChanged() const override;
-
-    bool annotateDriftAtBoundaries() const override;
-    void setAnnotateDriftAtBoundaries(bool value) override;
-    muse::async::Notification annotateDriftAtBoundariesChanged() const override;
-
     bool useRegionalAccumulation() const override;
     void setUseRegionalAccumulation(bool value) override;
     muse::async::Notification useRegionalAccumulationChanged() const override;
@@ -202,13 +174,6 @@ private:
     muse::async::Notification m_analyzeForChordFunctionChanged;
     muse::async::Notification m_inferKeyModeChanged;
     muse::async::Notification m_analysisAlternativesChanged;
-    muse::async::Notification m_tuningSystemKeyChanged;
-    muse::async::Notification m_tonicAnchoredTuningChanged;
-    muse::async::Notification m_tuningModeChanged;
-    muse::async::Notification m_allowSplitSlurOfSustainedEventsChanged;
-    muse::async::Notification m_minimizeTuningDeviationChanged;
-    muse::async::Notification m_annotateTuningOffsetsChanged;
-    muse::async::Notification m_annotateDriftAtBoundariesChanged;
     muse::async::Notification m_useRegionalAccumulationChanged;
     muse::async::Notification m_modeNameConfidenceThresholdChanged;
     muse::async::Notification m_minimumDisplayDurationBeatsChanged;

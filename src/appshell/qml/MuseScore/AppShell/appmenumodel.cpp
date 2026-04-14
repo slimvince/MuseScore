@@ -22,7 +22,6 @@
 #include "appmenumodel.h"
 
 #include "async/notifylist.h"
-#include "composing/intonation/tuning_system.h"
 #include "engraving/dom/part.h"
 #include "types/translatablestring.h"
 
@@ -148,19 +147,6 @@ void AppMenuModel::setupConnections()
 
     });
 
-    composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
-        using namespace mu::composing::intonation;
-        const std::string key = composingConfiguration()->tuningSystemKey();
-        const TuningSystem* sys = TuningRegistry::byKey(key);
-        const std::string displayName = sys ? sys->displayName() : key;
-        MenuItem& item = findItem(ActionCode("tune-selection"));
-        if (item.isValid()) {
-            ui::UiAction action = item.action();
-            action.title = TranslatableString::untranslatable(
-                QString("Tune as %1").arg(QString::fromStdString(displayName)));
-            item.setAction(action);
-        }
-    });
 }
 
 void AppMenuModel::onActionsStateChanges(const muse::actions::ActionCodeList& codes)
@@ -391,24 +377,6 @@ MenuItem* AppMenuModel::makeFormatMenu()
 }
 
 
-MenuItem* AppMenuModel::makeTuneSelectionItem()
-{
-    using namespace mu::composing::intonation;
-
-    const std::string tuningKey = composingConfiguration()->tuningSystemKey();
-    const TuningSystem* sys = TuningRegistry::byKey(tuningKey);
-    const std::string displayName = sys ? sys->displayName() : tuningKey;
-
-    MenuItem* item = makeMenuItem("tune-selection");
-    if (item) {
-        ui::UiAction action = item->action();
-        action.title = TranslatableString::untranslatable(
-            QString("Tune as %1").arg(QString::fromStdString(displayName)));
-        item->setAction(action);
-    }
-    return item;
-}
-
 MenuItem* AppMenuModel::makeToolsMenu()
 {
     MenuItemList voicesItems {
@@ -445,7 +413,6 @@ MenuItem* AppMenuModel::makeToolsMenu()
         makeMenuItem("realize-chord-symbols"),
         makeMenu(TranslatableString("appshell/menu/tools", "&Annotate selection"),
                  annotateSelectionItems, "menu-annotate-selection"),
-        makeTuneSelectionItem(),
         makeMenu(TranslatableString("appshell/menu/tools", "&Voices"), voicesItems, "menu-voices"),
         makeMenu(TranslatableString("appshell/menu/tools", "&Measures"), measuresItems, "menu-tools-measures"),
         makeMenuItem("time-delete"),

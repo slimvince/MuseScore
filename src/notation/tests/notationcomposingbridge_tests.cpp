@@ -28,7 +28,7 @@
 //   prepareUserFacingHarmonicRegions   — returns ≥1 region with a valid root
 //
 // All tests use the tracked fixture:
-//   notationtuning_data/implode_sustained_support_each_beat.mscx
+//   notationcomposing_data/implode_sustained_support_each_beat.mscx
 
 #include <gtest/gtest.h>
 

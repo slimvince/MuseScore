@@ -108,9 +108,7 @@
 #include "scorecallbacks.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
-#include "composing/intonation/tuning_system.h"
 #include "notationcomposingbridge.h"
-#include "notationtuningbridge.h"
 
 #include "utilities/scorerangeutilities.h"
 
@@ -8731,61 +8729,3 @@ void NotationInteraction::checkAndShowError()
     m_errorsController->checkAndShowMScoreError();
 }
 
-// ── Composing-module operations ─────────────────────────────────────────────
-
-void NotationInteraction::tuneSelection()
-{
-    const Selection& sel = score()->selection();
-
-    Fraction startTick;
-    Fraction endTick;
-    if (sel.isRange()) {
-        startTick = sel.tickStart();
-        endTick   = sel.tickEnd();
-    } else if (sel.isSingle() && sel.element() && sel.element()->isNote()) {
-        const Chord* ch = toNote(sel.element())->chord();
-        if (ch) {
-            const Measure* m = ch->findMeasure();
-            if (m) {
-                startTick = m->tick();
-                endTick   = m->endTick();
-            }
-        }
-    }
-
-    if (endTick <= startTick) {
-        startTick = Fraction(0, 1);
-        endTick   = score()->endTick();
-    }
-
-    startEdit(TranslatableString("undoableAction", "Tune selection"));
-
-    const bool ok = mu::notation::applyRegionTuning(score(), startTick, endTick);
-
-    if (ok) {
-        apply();
-    } else {
-        rollback();
-    }
-}
-
-void NotationInteraction::addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey)
-{
-    Q_UNUSED(rootPc);
-    Q_UNUSED(quality);
-    using namespace mu::composing::intonation;
-
-    const TuningSystem* sys = TuningRegistry::byKey(tuningKey.toStdString());
-    if (!sys) {
-        return;
-    }
-
-    EngravingItem* item = contextItem();
-    if (!item || !item->isNote()) {
-        return;
-    }
-
-    startEdit(TranslatableString("undoableAction", "Tune as"));
-    mu::notation::applyTuningAtNote(toNote(item), *sys);
-    apply();
-}

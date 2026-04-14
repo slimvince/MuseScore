@@ -71,8 +71,6 @@ target_sources(notation PRIVATE
     internal/notationcomposingbridgehelpers.cpp
     internal/notationcomposingbridgehelpers.h
     internal/notationharmonicrhythmbridge.cpp
-    internal/notationtuningbridge.cpp
-    internal/notationtuningbridge.h
     internal/notationconfiguration.cpp
     internal/notationconfiguration.h
     internal/notationcontextconfiguration.cpp
@@ -143,7 +141,6 @@ target_link_libraries(notation PRIVATE
     muse::draw
     engraving
     composing_analysis
-    intonation
 )
 
 if(MUE_BUILD_NOTATION_TESTS)

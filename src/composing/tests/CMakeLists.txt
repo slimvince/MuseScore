@@ -26,12 +26,10 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp
 )
 
 set(MODULE_TEST_LINK
     composing_analysis
-    intonation
     engraving
 )
 

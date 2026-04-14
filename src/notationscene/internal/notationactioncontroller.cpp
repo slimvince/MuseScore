@@ -384,13 +384,6 @@ void NotationActionController::init()
     registerAction("add-nashville-numbers-to-selection", [this]() {
         currentNotationInteraction()->addHarmonicAnnotationsToSelection(false, false, true);
     });
-    registerAction("compose-tune-as", [this](const ActionData& args) {
-        IF_ASSERT_FAILED(args.count() >= 3) { return; }
-        const int rootPc  = args.arg<int>(0);
-        const int quality = args.arg<int>(1);
-        const QString key = args.arg<QString>(2);
-        currentNotationInteraction()->addAnalyzedTuning(rootPc, quality, key);
-    });
     registerAction("nashville-number-text", [this]() { addText(TextStyleType::HARMONY_NASHVILLE); });
     registerAction("lyrics", [this]() { addText(TextStyleType::LYRICS_ODD); });
     registerAction("tempo", [this]() { addText(TextStyleType::TEMPO); });
@@ -417,9 +410,6 @@ void NotationActionController::init()
 
     registerAction("explode", &Interaction::explodeSelectedStaff);
     registerAction("implode", &Interaction::implodeSelectedStaff);
-    registerAction("tune-selection", [this](const ActionData&) {
-        currentNotationInteraction()->tuneSelection();
-    });
     registerAction("extend-to-next-note", &Interaction::extendToNextNote);
     registerAction("time-delete", &Interaction::removeSelectedRange);
     registerAction("del-empty-measures", &Interaction::removeEmptyTrailingMeasures);

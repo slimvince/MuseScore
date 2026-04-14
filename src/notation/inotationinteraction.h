@@ -257,7 +257,6 @@ public:
     virtual void addAnalyzedHarmony(const QString& text, mu::engraving::HarmonyType type) = 0;
     virtual void addAnalyzedHarmonyToSelection(mu::engraving::HarmonyType type) = 0;
     virtual void addHarmonicAnnotationsToSelection(bool writeChordSymbols, bool writeRomanNumerals, bool writeNashvilleNumbers) = 0;
-    virtual void addAnalyzedTuning(int rootPc, int quality, const QString& tuningKey) = 0;
 
     virtual void addStretch(qreal value) = 0;
 
@@ -266,7 +265,6 @@ public:
 
     virtual void explodeSelectedStaff() = 0;
     virtual void implodeSelectedStaff() = 0;
-    virtual void tuneSelection() = 0;
 
     virtual void realizeSelectedChordSymbols(bool literal, Voicing voicing, HarmonyDurationType durationType) = 0;
     virtual void extendToNextNote() = 0;

@@ -20,11 +20,6 @@
 
 add_subdirectory(analysis)
 
-# Add intonation module
-
-# Add intonation module
-add_subdirectory(intonation)
-
 muse_create_module(composing)
 
 target_sources(composing PRIVATE
@@ -39,7 +34,6 @@ target_sources(composing PRIVATE
 target_link_libraries(composing PRIVATE
     composing_analysis
     muse_global
-    intonation
 )
 
 if (MUE_BUILD_COMPOSING_TESTS)

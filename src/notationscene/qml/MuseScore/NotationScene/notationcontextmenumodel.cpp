@@ -35,8 +35,6 @@
 
 #include "notation/internal/notationcomposingbridge.h"  // analyzeNoteHarmonicContext (mu::notation)
 #include "composing/analysis/chord/chordanalyzer.h"           // ChordSymbolFormatter, ChordAnalysisResult
-#include "composing/intonation/tuning_system.h"         // TuningRegistry, TuningSystem
-
 #include <set>
 
 using namespace mu::notation;
@@ -71,14 +69,7 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
-    struct TuneAsEntry {
-        std::string label;
-        int rootPc;
-        int quality;
-    };
-
     MenuItemList chordMenuItems, romanMenuItems, nashvilleMenuItems;
-    std::vector<TuneAsEntry> tuneAsEntries;
     std::set<std::string> seenChordSymbols, seenNumerals, seenNashville;
     int chordCount = 0, romanCount = 0, nashvilleCount = 0;
 
@@ -121,7 +112,6 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
             item->setState(state);
             item->setArgs(ActionData::make_arg1<QString>(QString::fromStdString(numeral)));
             romanMenuItems << item;
-            tuneAsEntries.push_back({ label, res.identity.rootPc, static_cast<int>(res.identity.quality) });
             ++romanCount;
         }
 
@@ -156,34 +146,6 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
         items << makeMenu(TranslatableString("notation", "Add Nashville number"), nashvilleMenuItems);
     }
 
-    // "Tune as [system name]" nested submenu — one leaf per unique Roman numeral result.
-    if (wantRomanNumerals && !tuneAsEntries.empty()) {
-        const std::string tuningKey = m_composingConfig()->tuningSystemKey();
-        const composing::intonation::TuningSystem* sys
-            = composing::intonation::TuningRegistry::byKey(tuningKey);
-        const std::string displayName = sys ? sys->displayName() : tuningKey;
-
-        const QString submenuTitle = QString("Tune as %1").arg(QString::fromStdString(displayName));
-        MenuItemList tuneAsItems;
-        int tuneIdx = 0;
-        for (const TuneAsEntry& entry : tuneAsEntries) {
-            MenuItem* item = new MenuItem(this);
-            item->setId(QString("compose:tune-as:%1").arg(tuneIdx++));
-            ui::UiAction action;
-            action.title = TranslatableString::untranslatable(QString::fromStdString(entry.label));
-            action.code = "compose-tune-as";
-            item->setAction(action);
-            ui::UiActionState state;
-            state.enabled = true;
-            item->setState(state);
-            item->setArgs(ActionData::make_arg3<int, int, QString>(
-                              entry.rootPc,
-                              entry.quality,
-                              QString::fromStdString(tuningKey)));
-            tuneAsItems << item;
-        }
-        items << makeMenu(TranslatableString::untranslatable(submenuTitle), tuneAsItems);
-    }
 }
 
 MenuItemList NotationContextMenuModel::makeNoteItems()

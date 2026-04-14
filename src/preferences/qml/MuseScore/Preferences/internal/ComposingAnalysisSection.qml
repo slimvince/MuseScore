@@ -33,13 +33,6 @@ BaseSection {
     property bool analyzeForChordFunction
     property bool inferKeyMode
     property int  analysisAlternatives
-    property string tuningSystemKey
-    property bool tonicAnchoredTuning
-    property int  tuningMode          ///< 0 = TonicAnchored, 1 = FreeDrift
-    property bool allowSplitSlurOfSustainedEvents
-    property bool minimizeTuningDeviation
-    property bool annotateTuningOffsets
-    property bool annotateDriftAtBoundaries
     // Mode priors — diatonic
     property real modePriorIonian
     property real modePriorDorian
@@ -70,13 +63,6 @@ BaseSection {
     signal analyzeForChordFunctionChangeRequested(bool value)
     signal inferKeyModeChangeRequested(bool value)
     signal analysisAlternativesChangeRequested(int count)
-    signal tuningSystemKeyChangeRequested(string key)
-    signal tonicAnchoredTuningChangeRequested(bool value)
-    signal tuningModeChangeRequested(int mode)
-    signal allowSplitSlurOfSustainedEventsChangeRequested(bool value)
-    signal minimizeTuningDeviationChangeRequested(bool value)
-    signal annotateTuningOffsetsChangeRequested(bool value)
-    signal annotateDriftAtBoundariesChangeRequested(bool value)
     signal modePriorIonianChangeRequested(real value)
     signal modePriorDorianChangeRequested(real value)
     signal modePriorPhrygianChangeRequested(real value)
@@ -180,149 +166,6 @@ BaseSection {
                 onValueEdited: function(newIndex, newValue) {
                     root.analysisAlternativesChangeRequested(newValue)
                 }
-            }
-        }
-
-        // --- Section break ---
-        SeparatorLine { }
-
-        // --- Intonation ---
-        StyledTextLabel {
-            text: qsTrc("preferences", "Intonation")
-            width: root.columnWidth
-            font: ui.theme.bodyBoldFont
-            horizontalAlignment: Text.AlignLeft
-            wrapMode: Text.WordWrap
-            padding: 0
-            leftPadding: 0
-            rightPadding: 0
-            topPadding: root.rowSpacing
-            bottomPadding: root.rowSpacing / 2
-        }
-        Row {
-            spacing: 12
-            StyledTextLabel {
-                width: root.columnWidth
-                anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Tuning system")
-                horizontalAlignment: Text.AlignLeft
-                enabled: root.analyzeForChordFunction
-            }
-
-            property var tuningSystemModel: [
-                { text: qsTrc("preferences", "Equal Temperament"),      value: "equal" },
-                { text: qsTrc("preferences", "Just Intonation"),        value: "just" },
-                { text: qsTrc("preferences", "Pythagorean"),            value: "pythagorean" },
-                { text: qsTrc("preferences", "Quarter-Comma Meantone"), value: "quarter_comma_meantone" }
-            ]
-
-            ComboBoxWithTitle {
-                title: ""
-                model: parent.tuningSystemModel
-                currentIndex: {
-                    var key = root.tuningSystemKey
-                    for (var i = 0; i < parent.tuningSystemModel.length; i++) {
-                        if (parent.tuningSystemModel[i].value === key) { return i }
-                    }
-                    return 0
-                }
-                controlWidth: 200
-                navigationName: "TuningSystemComboBox"
-                navigationPanel: root.navigation
-                enabled: root.analyzeForChordFunction
-                onValueEdited: function(newIndex, newValue) {
-                    root.tuningSystemKeyChangeRequested(newValue)
-                }
-            }
-        }
-
-        CheckBox {
-            id: tonicAnchoredCheckBox
-            width: root.columnWidth
-            text: qsTrc("preferences", "Anchor tuning to mode tonic")
-            checked: root.tonicAnchoredTuning
-            enabled: root.analyzeForChordFunction
-            navigation.name: "TonicAnchoredTuningCheckBox"
-            navigation.panel: root.navigation
-            onClicked: {
-                root.tonicAnchoredTuningChangeRequested(!checked)
-            }
-        }
-        Row {
-            spacing: 12
-            enabled: root.analyzeForChordFunction
-
-            StyledTextLabel {
-                anchors.verticalCenter: parent.verticalCenter
-                text: qsTrc("preferences", "Drift mode")
-                horizontalAlignment: Text.AlignLeft
-            }
-
-            Row {
-                spacing: 4
-
-                FlatButton {
-                    text: qsTrc("preferences", "Tonic-anchored")
-                    accentButton: root.tuningMode === 0
-                    navigation.name: "TuningModeTonicAnchoredButton"
-                    navigation.panel: root.navigation
-                    onClicked: root.tuningModeChangeRequested(0)
-                }
-                FlatButton {
-                    text: qsTrc("preferences", "Free drift")
-                    accentButton: root.tuningMode === 1
-                    navigation.name: "TuningModeFreeDriftButton"
-                    navigation.panel: root.navigation
-                    onClicked: root.tuningModeChangeRequested(1)
-                }
-            }
-        }
-        CheckBox {
-            id: splitSlurSustainedEventsCheckBox
-            width: root.columnWidth
-            text: qsTrc("preferences", "Allow split/slurring of sustained events for retuning")
-            checked: root.allowSplitSlurOfSustainedEvents
-            enabled: root.analyzeForChordFunction
-            navigation.name: "AllowSplitSlurOfSustainedEventsCheckBox"
-            navigation.panel: root.navigation
-            onClicked: {
-                root.allowSplitSlurOfSustainedEventsChangeRequested(!checked)
-            }
-        }
-        CheckBox {
-            id: minimizeRetuneCheckBox
-            width: root.columnWidth
-            text: qsTrc("preferences", "Minimize average retune amount")
-            checked: root.minimizeTuningDeviation
-            enabled: root.analyzeForChordFunction
-            navigation.name: "MinimizeTuningDeviationCheckBox"
-            navigation.panel: root.navigation
-            onClicked: {
-                root.minimizeTuningDeviationChangeRequested(!checked)
-            }
-        }
-        CheckBox {
-            id: annotateOffsetsCheckBox
-            width: root.columnWidth
-            text: qsTrc("preferences", "Annotate tuning offsets in score (¢)")
-            checked: root.annotateTuningOffsets
-            enabled: root.analyzeForChordFunction
-            navigation.name: "AnnotateTuningOffsetsCheckBox"
-            navigation.panel: root.navigation
-            onClicked: {
-                root.annotateTuningOffsetsChangeRequested(!checked)
-            }
-        }
-        CheckBox {
-            id: annotateDriftBoundariesCheckBox
-            width: root.columnWidth
-            text: qsTrc("preferences", "Annotate pitch drift at region boundaries (Free drift only)")
-            checked: root.annotateDriftAtBoundaries
-            enabled: root.analyzeForChordFunction && root.tuningMode === 1
-            navigation.name: "AnnotateDriftAtBoundariesCheckBox"
-            navigation.panel: root.navigation
-            onClicked: {
-                root.annotateDriftAtBoundariesChangeRequested(!checked)
             }
         }
 

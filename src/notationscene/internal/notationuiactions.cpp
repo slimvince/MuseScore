@@ -439,12 +439,6 @@ const UiActionList NotationUiActions::s_actions = {
              TranslatableString("action", "&Implode"),
              TranslatableString("action", "Implode")
              ),
-    UiAction("tune-selection",
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_OPENED,
-             TranslatableString("action", "&Tune selection"),
-             TranslatableString("action", "Tune selection to just intonation")
-             ),
     UiAction("add-fretboard-diagram",
              mu::context::UiCtxProjectOpened,
              mu::context::CTX_NOTATION_FOCUSED,

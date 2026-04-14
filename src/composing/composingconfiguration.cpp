@@ -35,13 +35,6 @@ static const Settings::Key ANALYZE_FOR_CHORD_SYMBOLS(module_name,   "composing/a
 static const Settings::Key ANALYZE_FOR_CHORD_FUNCTION(module_name,  "composing/analyzeForChordFunction");
 static const Settings::Key INFER_KEY_MODE(module_name,              "composing/inferKeyMode");
 static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,       "composing/analysisAlternatives");
-static const Settings::Key TUNING_SYSTEM_KEY(module_name,           "composing/tuningSystemKey");
-static const Settings::Key TONIC_ANCHORED_TUNING(module_name,       "composing/tonicAnchoredTuning");
-static const Settings::Key TUNING_MODE(module_name,                  "composing/tuningMode");
-static const Settings::Key ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS(module_name, "composing/allowSplitSlurOfSustainedEvents");
-static const Settings::Key MINIMIZE_TUNING_DEVIATION(module_name,   "composing/minimizeTuningDeviation");
-static const Settings::Key ANNOTATE_TUNING_OFFSETS(module_name,     "composing/annotateTuningOffsets");
-static const Settings::Key ANNOTATE_DRIFT_AT_BOUNDARIES(module_name, "composing/annotateDriftAtBoundaries");
 static const Settings::Key USE_REGIONAL_ACCUMULATION(module_name,    "composing/useRegionalAccumulation");
 static const Settings::Key MODE_NAME_CONFIDENCE_THRESHOLD(module_name, "composing/modeNameConfidenceThreshold");
 static const Settings::Key MINIMUM_DISPLAY_DURATION_BEATS(module_name, "composing/minimumDisplayDurationBeats");
@@ -96,42 +89,6 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(ANALYSIS_ALTERNATIVES, Val(3));
     settings()->valueChanged(ANALYSIS_ALTERNATIVES).onReceive(nullptr, [this](const Val&) {
         m_analysisAlternativesChanged.notify();
-    });
-
-    settings()->setDefaultValue(TUNING_SYSTEM_KEY, Val(std::string("equal")));
-    settings()->valueChanged(TUNING_SYSTEM_KEY).onReceive(nullptr, [this](const Val&) {
-        m_tuningSystemKeyChanged.notify();
-    });
-
-    settings()->setDefaultValue(TONIC_ANCHORED_TUNING, Val(true));
-    settings()->valueChanged(TONIC_ANCHORED_TUNING).onReceive(nullptr, [this](const Val&) {
-        m_tonicAnchoredTuningChanged.notify();
-    });
-
-    settings()->setDefaultValue(TUNING_MODE,
-        Val(static_cast<int>(mu::composing::intonation::TuningMode::TonicAnchored)));
-    settings()->valueChanged(TUNING_MODE).onReceive(nullptr, [this](const Val&) {
-        m_tuningModeChanged.notify();
-    });
-
-    settings()->setDefaultValue(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS, Val(true));
-    settings()->valueChanged(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS).onReceive(nullptr, [this](const Val&) {
-        m_allowSplitSlurOfSustainedEventsChanged.notify();
-    });
-
-    settings()->setDefaultValue(MINIMIZE_TUNING_DEVIATION, Val(false));
-    settings()->valueChanged(MINIMIZE_TUNING_DEVIATION).onReceive(nullptr, [this](const Val&) {
-        m_minimizeTuningDeviationChanged.notify();
-    });
-
-    settings()->setDefaultValue(ANNOTATE_TUNING_OFFSETS, Val(false));
-    settings()->valueChanged(ANNOTATE_TUNING_OFFSETS).onReceive(nullptr, [this](const Val&) {
-        m_annotateTuningOffsetsChanged.notify();
-    });
-
-    settings()->setDefaultValue(ANNOTATE_DRIFT_AT_BOUNDARIES, Val(false));
-    settings()->valueChanged(ANNOTATE_DRIFT_AT_BOUNDARIES).onReceive(nullptr, [this](const Val&) {
-        m_annotateDriftAtBoundariesChanged.notify();
     });
 
     settings()->setDefaultValue(USE_REGIONAL_ACCUMULATION, Val(true));
@@ -331,124 +288,6 @@ void ComposingConfiguration::setAnalysisAlternatives(int count)
 muse::async::Notification ComposingConfiguration::analysisAlternativesChanged() const
 {
     return m_analysisAlternativesChanged;
-}
-
-// ── tuningSystemKey ──────────────────────────────────────────────────────────
-
-std::string ComposingConfiguration::tuningSystemKey() const
-{
-    return settings()->value(TUNING_SYSTEM_KEY).toString();
-}
-
-void ComposingConfiguration::setTuningSystemKey(const std::string& key)
-{
-    settings()->setSharedValue(TUNING_SYSTEM_KEY, Val(key));
-}
-
-muse::async::Notification ComposingConfiguration::tuningSystemKeyChanged() const
-{
-    return m_tuningSystemKeyChanged;
-}
-
-// ── tonicAnchoredTuning ──────────────────────────────────────────────────────
-
-bool ComposingConfiguration::tonicAnchoredTuning() const
-{
-    return settings()->value(TONIC_ANCHORED_TUNING).toBool();
-}
-
-void ComposingConfiguration::setTonicAnchoredTuning(bool value)
-{
-    settings()->setSharedValue(TONIC_ANCHORED_TUNING, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::tonicAnchoredTuningChanged() const
-{
-    return m_tonicAnchoredTuningChanged;
-}
-
-// ── tuningMode ──────────────────────────────────────────────────────────────
-
-mu::composing::intonation::TuningMode ComposingConfiguration::tuningMode() const
-{
-    const int raw = settings()->value(TUNING_MODE).toInt();
-    return static_cast<mu::composing::intonation::TuningMode>(raw);
-}
-
-void ComposingConfiguration::setTuningMode(mu::composing::intonation::TuningMode mode)
-{
-    settings()->setSharedValue(TUNING_MODE, Val(static_cast<int>(mode)));
-}
-
-muse::async::Notification ComposingConfiguration::tuningModeChanged() const
-{
-    return m_tuningModeChanged;
-}
-
-bool ComposingConfiguration::allowSplitSlurOfSustainedEvents() const
-{
-    return settings()->value(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS).toBool();
-}
-
-void ComposingConfiguration::setAllowSplitSlurOfSustainedEvents(bool value)
-{
-    settings()->setSharedValue(ALLOW_SPLIT_SLUR_OF_SUSTAINED_EVENTS, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::allowSplitSlurOfSustainedEventsChanged() const
-{
-    return m_allowSplitSlurOfSustainedEventsChanged;
-}
-
-// ── minimizeTuningDeviation ──────────────────────────────────────────────────
-
-bool ComposingConfiguration::minimizeTuningDeviation() const
-{
-    return settings()->value(MINIMIZE_TUNING_DEVIATION).toBool();
-}
-
-void ComposingConfiguration::setMinimizeTuningDeviation(bool value)
-{
-    settings()->setSharedValue(MINIMIZE_TUNING_DEVIATION, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::minimizeTuningDeviationChanged() const
-{
-    return m_minimizeTuningDeviationChanged;
-}
-
-// ── annotateTuningOffsets ────────────────────────────────────────────────────
-
-bool ComposingConfiguration::annotateTuningOffsets() const
-{
-    return settings()->value(ANNOTATE_TUNING_OFFSETS).toBool();
-}
-
-void ComposingConfiguration::setAnnotateTuningOffsets(bool value)
-{
-    settings()->setSharedValue(ANNOTATE_TUNING_OFFSETS, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::annotateTuningOffsetsChanged() const
-{
-    return m_annotateTuningOffsetsChanged;
-}
-
-// ── annotateDriftAtBoundaries ────────────────────────────────────────────────
-
-bool ComposingConfiguration::annotateDriftAtBoundaries() const
-{
-    return settings()->value(ANNOTATE_DRIFT_AT_BOUNDARIES).toBool();
-}
-
-void ComposingConfiguration::setAnnotateDriftAtBoundaries(bool value)
-{
-    settings()->setSharedValue(ANNOTATE_DRIFT_AT_BOUNDARIES, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::annotateDriftAtBoundariesChanged() const
-{
-    return m_annotateDriftAtBoundariesChanged;
 }
 
 // ── useRegionalAccumulation ──────────────────────────────────────────────────

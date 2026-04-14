@@ -41,13 +41,6 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(bool analyzeForChordFunction  READ analyzeForChordFunction  WRITE setAnalyzeForChordFunction  NOTIFY analyzeForChordFunctionChanged)
     Q_PROPERTY(bool inferKeyMode             READ inferKeyMode             WRITE setInferKeyMode             NOTIFY inferKeyModeChanged)
     Q_PROPERTY(int  analysisAlternatives     READ analysisAlternatives     WRITE setAnalysisAlternatives     NOTIFY analysisAlternativesChanged)
-    Q_PROPERTY(QString tuningSystemKey       READ tuningSystemKey          WRITE setTuningSystemKey          NOTIFY tuningSystemKeyChanged)
-    Q_PROPERTY(bool tonicAnchoredTuning      READ tonicAnchoredTuning      WRITE setTonicAnchoredTuning      NOTIFY tonicAnchoredTuningChanged)
-    Q_PROPERTY(int  tuningMode               READ tuningMode               WRITE setTuningMode               NOTIFY tuningModeChanged)
-    Q_PROPERTY(bool allowSplitSlurOfSustainedEvents READ allowSplitSlurOfSustainedEvents WRITE setAllowSplitSlurOfSustainedEvents NOTIFY allowSplitSlurOfSustainedEventsChanged)
-    Q_PROPERTY(bool minimizeTuningDeviation  READ minimizeTuningDeviation  WRITE setMinimizeTuningDeviation  NOTIFY minimizeTuningDeviationChanged)
-    Q_PROPERTY(bool annotateTuningOffsets      READ annotateTuningOffsets      WRITE setAnnotateTuningOffsets      NOTIFY annotateTuningOffsetsChanged)
-    Q_PROPERTY(bool annotateDriftAtBoundaries  READ annotateDriftAtBoundaries  WRITE setAnnotateDriftAtBoundaries  NOTIFY annotateDriftAtBoundariesChanged)
     Q_PROPERTY(bool useRegionalAccumulation    READ useRegionalAccumulation    WRITE setUseRegionalAccumulation    NOTIFY useRegionalAccumulationChanged)
 
     // Mode priors — diatonic
@@ -94,13 +87,6 @@ public:
     bool analyzeForChordFunction() const;
     bool inferKeyMode() const;
     int  analysisAlternatives() const;
-    QString tuningSystemKey() const;
-    bool tonicAnchoredTuning() const;
-    int  tuningMode() const;
-    bool allowSplitSlurOfSustainedEvents() const;
-    bool minimizeTuningDeviation() const;
-    bool annotateTuningOffsets() const;
-    bool annotateDriftAtBoundaries() const;
     bool useRegionalAccumulation() const;
 
     // Mode priors — diatonic
@@ -139,13 +125,6 @@ public slots:
     void setAnalyzeForChordFunction(bool value);
     void setInferKeyMode(bool value);
     void setAnalysisAlternatives(int count);
-    void setTuningSystemKey(const QString& key);
-    void setTonicAnchoredTuning(bool value);
-    void setTuningMode(int mode);
-    void setAllowSplitSlurOfSustainedEvents(bool value);
-    void setMinimizeTuningDeviation(bool value);
-    void setAnnotateTuningOffsets(bool value);
-    void setAnnotateDriftAtBoundaries(bool value);
     void setUseRegionalAccumulation(bool value);
 
     // Mode priors — diatonic
@@ -184,13 +163,6 @@ signals:
     void analyzeForChordFunctionChanged();
     void inferKeyModeChanged();
     void analysisAlternativesChanged();
-    void tuningSystemKeyChanged();
-    void tonicAnchoredTuningChanged();
-    void tuningModeChanged();
-    void allowSplitSlurOfSustainedEventsChanged();
-    void minimizeTuningDeviationChanged();
-    void annotateTuningOffsetsChanged();
-    void annotateDriftAtBoundariesChanged();
     void useRegionalAccumulationChanged();
 
     // Mode priors — diatonic

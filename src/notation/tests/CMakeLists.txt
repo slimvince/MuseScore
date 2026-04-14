@@ -22,7 +22,6 @@ set(MODULE_TEST notation_tests)
 
 set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/notationtuning_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationcomposingbridge_tests.cpp
 
     ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.cpp
@@ -35,7 +34,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationselectionrangemock.h
 )
 
-set(MODULE_TEST_DATA_ROOT "${CMAKE_CURRENT_LIST_DIR}/notationtuning_data")
+set(MODULE_TEST_DATA_ROOT "${CMAKE_CURRENT_LIST_DIR}/notationcomposing_data")
 
 set(MODULE_TEST_LINK
     notation

@@ -48,27 +48,6 @@ void ComposingPreferencesModel::setupConnections()
     analysisConfig()->analysisAlternativesChanged().onNotify(this, [this]() {
         emit analysisAlternativesChanged();
     });
-    analysisConfig()->tuningSystemKeyChanged().onNotify(this, [this]() {
-        emit tuningSystemKeyChanged();
-    });
-    analysisConfig()->tonicAnchoredTuningChanged().onNotify(this, [this]() {
-        emit tonicAnchoredTuningChanged();
-    });
-    analysisConfig()->tuningModeChanged().onNotify(this, [this]() {
-        emit tuningModeChanged();
-    });
-    analysisConfig()->allowSplitSlurOfSustainedEventsChanged().onNotify(this, [this]() {
-        emit allowSplitSlurOfSustainedEventsChanged();
-    });
-    analysisConfig()->minimizeTuningDeviationChanged().onNotify(this, [this]() {
-        emit minimizeTuningDeviationChanged();
-    });
-    analysisConfig()->annotateTuningOffsetsChanged().onNotify(this, [this]() {
-        emit annotateTuningOffsetsChanged();
-    });
-    analysisConfig()->annotateDriftAtBoundariesChanged().onNotify(this, [this]() {
-        emit annotateDriftAtBoundariesChanged();
-    });
     analysisConfig()->useRegionalAccumulationChanged().onNotify(this, [this]() {
         emit useRegionalAccumulationChanged();
     });
@@ -136,41 +115,6 @@ bool ComposingPreferencesModel::inferKeyMode() const
 int ComposingPreferencesModel::analysisAlternatives() const
 {
     return analysisConfig()->analysisAlternatives();
-}
-
-QString ComposingPreferencesModel::tuningSystemKey() const
-{
-    return QString::fromStdString(analysisConfig()->tuningSystemKey());
-}
-
-bool ComposingPreferencesModel::tonicAnchoredTuning() const
-{
-    return analysisConfig()->tonicAnchoredTuning();
-}
-
-int ComposingPreferencesModel::tuningMode() const
-{
-    return static_cast<int>(analysisConfig()->tuningMode());
-}
-
-bool ComposingPreferencesModel::allowSplitSlurOfSustainedEvents() const
-{
-    return analysisConfig()->allowSplitSlurOfSustainedEvents();
-}
-
-bool ComposingPreferencesModel::minimizeTuningDeviation() const
-{
-    return analysisConfig()->minimizeTuningDeviation();
-}
-
-bool ComposingPreferencesModel::annotateTuningOffsets() const
-{
-    return analysisConfig()->annotateTuningOffsets();
-}
-
-bool ComposingPreferencesModel::annotateDriftAtBoundaries() const
-{
-    return analysisConfig()->annotateDriftAtBoundaries();
 }
 
 bool ComposingPreferencesModel::useRegionalAccumulation() const
@@ -274,70 +218,6 @@ void ComposingPreferencesModel::setAnalysisAlternatives(int count)
     }
     analysisConfig()->setAnalysisAlternatives(count);
     emit analysisAlternativesChanged();
-}
-
-void ComposingPreferencesModel::setTuningSystemKey(const QString& key)
-{
-    if (tuningSystemKey() == key) {
-        return;
-    }
-    analysisConfig()->setTuningSystemKey(key.toStdString());
-    emit tuningSystemKeyChanged();
-}
-
-void ComposingPreferencesModel::setTonicAnchoredTuning(bool value)
-{
-    if (tonicAnchoredTuning() == value) {
-        return;
-    }
-    analysisConfig()->setTonicAnchoredTuning(value);
-    emit tonicAnchoredTuningChanged();
-}
-
-void ComposingPreferencesModel::setTuningMode(int mode)
-{
-    const auto typedMode = static_cast<mu::composing::intonation::TuningMode>(mode);
-    if (analysisConfig()->tuningMode() == typedMode) {
-        return;
-    }
-    analysisConfig()->setTuningMode(typedMode);
-    emit tuningModeChanged();
-}
-
-void ComposingPreferencesModel::setAllowSplitSlurOfSustainedEvents(bool value)
-{
-    if (allowSplitSlurOfSustainedEvents() == value) {
-        return;
-    }
-    analysisConfig()->setAllowSplitSlurOfSustainedEvents(value);
-    emit allowSplitSlurOfSustainedEventsChanged();
-}
-
-void ComposingPreferencesModel::setMinimizeTuningDeviation(bool value)
-{
-    if (minimizeTuningDeviation() == value) {
-        return;
-    }
-    analysisConfig()->setMinimizeTuningDeviation(value);
-    emit minimizeTuningDeviationChanged();
-}
-
-void ComposingPreferencesModel::setAnnotateTuningOffsets(bool value)
-{
-    if (annotateTuningOffsets() == value) {
-        return;
-    }
-    analysisConfig()->setAnnotateTuningOffsets(value);
-    emit annotateTuningOffsetsChanged();
-}
-
-void ComposingPreferencesModel::setAnnotateDriftAtBoundaries(bool value)
-{
-    if (annotateDriftAtBoundaries() == value) {
-        return;
-    }
-    analysisConfig()->setAnnotateDriftAtBoundaries(value);
-    emit annotateDriftAtBoundariesChanged();
 }
 
 void ComposingPreferencesModel::setUseRegionalAccumulation(bool value)
