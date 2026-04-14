@@ -21,6 +21,7 @@
 set(MODULE_TEST composing_tests)
 
 set(MODULE_TEST_SRC
+    ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
