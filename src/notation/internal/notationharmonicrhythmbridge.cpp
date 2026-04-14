@@ -56,6 +56,7 @@ using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
 using mu::notation::internal::collectRegionTones;
 using mu::notation::internal::detectHarmonicBoundariesJaccard;
+using mu::notation::internal::detectOnsetSubBoundaries;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::isDiatonicStep;
@@ -357,8 +358,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         auto* debugCapture = internal::harmonicRegionDebugCapture();
         std::vector<HarmonicRegion> preMergeRegions;
 
-        // B.4: detect boundaries via Jaccard distance on quarter-note windows.
-        const auto boundaryTicks = (granularity == HarmonicRegionGranularity::PreserveAllChanges)
+        // B.4: Pass 1 — detect coarse boundaries via Jaccard on accumulated quarter-note windows.
+        auto boundaryTicks = (granularity == HarmonicRegionGranularity::PreserveAllChanges)
             ? denseBoundaryTicks()
             : detectHarmonicBoundariesJaccard(
                 score, startTick, endTick, excludeStaves, jaccardThreshold);
@@ -483,6 +484,133 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 region.tones         = std::move(tones);
                 regions.push_back(std::move(region));
             }
+        }
+
+        // B.4b: Pass 2 post-processing — split large regions with onset-only sub-boundaries.
+        // Runs AFTER the main loop so sub-regions inherit the parent key/mode result:
+        // only collectRegionTones + analyzeChord are called (cheap), not resolveKeyAndMode.
+        if (granularity != HarmonicRegionGranularity::PreserveAllChanges && !regions.empty()) {
+            const double onsetThreshold = (cfg != nullptr) ? cfg->onsetBoundaryThreshold() : 0.25;
+            // Only split regions wider than one whole note; shorter ones are already
+            // fine-grained enough from Pass 1.
+            static constexpr int kPass2MinRegionTicks = 4 * Constants::DIVISION;
+
+            std::vector<HarmonicRegion> pass2Regions;
+            pass2Regions.reserve(regions.size() * 2);
+
+            for (const HarmonicRegion& parentRegion : regions) {
+                const int parentDuration = parentRegion.endTick - parentRegion.startTick;
+                if (parentDuration < kPass2MinRegionTicks) {
+                    pass2Regions.push_back(parentRegion);
+                    continue;
+                }
+
+                const Fraction parentStart = Fraction::fromTicks(parentRegion.startTick);
+                const Fraction parentEnd   = Fraction::fromTicks(parentRegion.endTick);
+                const auto subs = detectOnsetSubBoundaries(
+                    score, parentStart, parentEnd, excludeStaves, onsetThreshold);
+
+                if (subs.empty()) {
+                    pass2Regions.push_back(parentRegion);
+                    continue;
+                }
+
+                // Build boundary list: [parentStart, sub1, sub2, ..., parentEnd]
+                std::vector<Fraction> subBounds;
+                subBounds.reserve(subs.size() + 2);
+                subBounds.push_back(parentStart);
+                subBounds.insert(subBounds.end(), subs.begin(), subs.end());
+                subBounds.push_back(parentEnd);
+
+                // Inherit key/mode from parent — no resolveKeyAndMode call.
+                const int subKeyFifths        = parentRegion.keyModeResult.keySignatureFifths;
+                const KeySigMode subKeyMode   = parentRegion.keyModeResult.mode;
+
+                // Seed temporal context from the region immediately before this parent.
+                ChordTemporalContext subCtx;
+                if (!pass2Regions.empty()
+                    && pass2Regions.back().endTick == parentRegion.startTick) {
+                    subCtx.previousRootPc  = pass2Regions.back().chordResult.identity.rootPc;
+                    subCtx.previousQuality = pass2Regions.back().chordResult.identity.quality;
+                    subCtx.previousBassPc  = pass2Regions.back().chordResult.identity.bassPc;
+                }
+
+                for (size_t si = 0; si + 1 < subBounds.size(); ++si) {
+                    const Fraction subStart = subBounds[si];
+                    const Fraction subEnd   = subBounds[si + 1];
+
+                    auto subTones = collectRegionTones(
+                        score, subStart.ticks(), subEnd.ticks(), excludeStaves);
+
+                    if (subTones.empty()) {
+                        // Rest gap: preserve boundary using parent's chord identity.
+                        HarmonicRegion gap;
+                        gap.startTick        = subStart.ticks();
+                        gap.endTick          = subEnd.ticks();
+                        gap.chordResult      = parentRegion.chordResult;
+                        gap.hasAnalyzedChord = true;
+                        gap.keyModeResult    = parentRegion.keyModeResult;
+                        pass2Regions.push_back(std::move(gap));
+                        continue;
+                    }
+
+                    int subBassPc = -1;
+                    for (const auto& t : subTones) {
+                        if (t.isBass) { subBassPc = t.pitch % 12; break; }
+                    }
+                    subCtx.bassIsStepwiseFromPrevious =
+                        (subCtx.previousBassPc != -1 && subBassPc != -1)
+                        && isDiatonicStep(subCtx.previousBassPc, subBassPc);
+                    subCtx.bassIsStepwiseToNext = false;  // not computed for sub-regions
+
+                    const auto subResults = chordAnalyzer->analyzeChord(
+                        subTones, subKeyFifths, subKeyMode, &subCtx);
+
+                    if (subResults.empty()) {
+                        HarmonicRegion fallback;
+                        fallback.startTick        = subStart.ticks();
+                        fallback.endTick          = subEnd.ticks();
+                        fallback.chordResult      = parentRegion.chordResult;
+                        fallback.hasAnalyzedChord = true;
+                        fallback.keyModeResult    = parentRegion.keyModeResult;
+                        fallback.tones            = std::move(subTones);
+                        pass2Regions.push_back(std::move(fallback));
+                        continue;
+                    }
+
+                    ChordAnalysisResult chosenSub = subResults.front();
+                    mu::notation::internal::refineSparseChordQualityFromKeyContext(
+                        chosenSub, subTones, subKeyFifths, subKeyMode);
+
+                    subCtx.previousRootPc  = chosenSub.identity.rootPc;
+                    subCtx.previousQuality = chosenSub.identity.quality;
+                    subCtx.previousBassPc  = chosenSub.identity.bassPc;
+
+                    const bool isContiguous = !pass2Regions.empty()
+                        && pass2Regions.back().endTick == subStart.ticks();
+                    if (isContiguous
+                        && pass2Regions.back().chordResult.identity.rootPc == chosenSub.identity.rootPc
+                        && pass2Regions.back().chordResult.identity.quality == chosenSub.identity.quality) {
+                        pass2Regions.back().endTick = subEnd.ticks();
+                        mergeChordAnalysisTones(pass2Regions.back().tones, subTones);
+                        if (const auto* bt = bassToneFromTones(pass2Regions.back().tones)) {
+                            pass2Regions.back().chordResult.identity.bassPc  = bt->pitch % 12;
+                            pass2Regions.back().chordResult.identity.bassTpc = bt->tpc;
+                        }
+                    } else {
+                        HarmonicRegion subRegion;
+                        subRegion.startTick        = subStart.ticks();
+                        subRegion.endTick          = subEnd.ticks();
+                        subRegion.chordResult      = chosenSub;
+                        subRegion.hasAnalyzedChord = true;
+                        subRegion.keyModeResult    = parentRegion.keyModeResult;
+                        subRegion.tones            = std::move(subTones);
+                        pass2Regions.push_back(std::move(subRegion));
+                    }
+                }
+            }
+
+            regions = std::move(pass2Regions);
         }
 
         if (regions.empty()) {

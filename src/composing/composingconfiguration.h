@@ -78,6 +78,10 @@ public:
     void setUseRegionalAccumulation(bool value) override;
     muse::async::Notification useRegionalAccumulationChanged() const override;
 
+    double onsetBoundaryThreshold() const override;
+    void setOnsetBoundaryThreshold(double value) override;
+    muse::async::Notification onsetBoundaryThresholdChanged() const override;
+
     double modeNameConfidenceThreshold() const override;
     void setModeNameConfidenceThreshold(double value) override;
     muse::async::Notification modeNameConfidenceThresholdChanged() const override;
@@ -230,6 +234,7 @@ private:
     muse::async::Notification m_annotateTuningOffsetsChanged;
     muse::async::Notification m_annotateDriftAtBoundariesChanged;
     muse::async::Notification m_useRegionalAccumulationChanged;
+    muse::async::Notification m_onsetBoundaryThresholdChanged;
     muse::async::Notification m_modeNameConfidenceThresholdChanged;
     muse::async::Notification m_minimumDisplayDurationBeatsChanged;
     muse::async::Notification m_minKeyStabilityBeatsChanged;
