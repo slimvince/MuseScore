@@ -106,26 +106,6 @@ public:
     void setShowNashvilleNumbersInStatusBar(bool value) override;
     muse::async::Notification showNashvilleNumbersInStatusBarChanged() const override;
 
-    bool chordStaffWriteChordSymbols() const override;
-    void setChordStaffWriteChordSymbols(bool value) override;
-    muse::async::Notification chordStaffWriteChordSymbolsChanged() const override;
-
-    std::string chordStaffFunctionNotation() const override;
-    void setChordStaffFunctionNotation(const std::string& value) override;
-    muse::async::Notification chordStaffFunctionNotationChanged() const override;
-
-    bool chordStaffWriteKeyAnnotations() const override;
-    void setChordStaffWriteKeyAnnotations(bool value) override;
-    muse::async::Notification chordStaffWriteKeyAnnotationsChanged() const override;
-
-    bool chordStaffHighlightNonDiatonic() const override;
-    void setChordStaffHighlightNonDiatonic(bool value) override;
-    muse::async::Notification chordStaffHighlightNonDiatonicChanged() const override;
-
-    bool chordStaffWriteCadenceMarkers() const override;
-    void setChordStaffWriteCadenceMarkers(bool value) override;
-    muse::async::Notification chordStaffWriteCadenceMarkersChanged() const override;
-
     // ── Mode priors (21 independent values) ─────────────────────────────────
     // Diatonic
     double modePriorIonian() const override;
@@ -237,11 +217,6 @@ private:
     muse::async::Notification m_showChordSymbolsInStatusBarChanged;
     muse::async::Notification m_showRomanNumeralsInStatusBarChanged;
     muse::async::Notification m_showNashvilleNumbersInStatusBarChanged;
-    muse::async::Notification m_chordStaffWriteChordSymbolsChanged;
-    muse::async::Notification m_chordStaffFunctionNotationChanged;
-    muse::async::Notification m_chordStaffWriteKeyAnnotationsChanged;
-    muse::async::Notification m_chordStaffHighlightNonDiatonicChanged;
-    muse::async::Notification m_chordStaffWriteCadenceMarkersChanged;
     // Diatonic mode priors
     muse::async::Notification m_modePriorIonianChanged;
     muse::async::Notification m_modePriorDorianChanged;

@@ -72,21 +72,6 @@ void ComposingPreferencesModel::setupConnections()
     analysisConfig()->useRegionalAccumulationChanged().onNotify(this, [this]() {
         emit useRegionalAccumulationChanged();
     });
-    chordStaffConfig()->chordStaffWriteChordSymbolsChanged().onNotify(this, [this]() {
-        emit chordStaffWriteChordSymbolsChanged();
-    });
-    chordStaffConfig()->chordStaffFunctionNotationChanged().onNotify(this, [this]() {
-        emit chordStaffFunctionNotationChanged();
-    });
-    chordStaffConfig()->chordStaffWriteKeyAnnotationsChanged().onNotify(this, [this]() {
-        emit chordStaffWriteKeyAnnotationsChanged();
-    });
-    chordStaffConfig()->chordStaffHighlightNonDiatonicChanged().onNotify(this, [this]() {
-        emit chordStaffHighlightNonDiatonicChanged();
-    });
-    chordStaffConfig()->chordStaffWriteCadenceMarkersChanged().onNotify(this, [this]() {
-        emit chordStaffWriteCadenceMarkersChanged();
-    });
     analysisConfig()->showKeyModeInStatusBarChanged().onNotify(this, [this]() {
         emit showKeyModeInStatusBarChanged();
     });
@@ -227,31 +212,6 @@ QString ComposingPreferencesModel::currentModePriorPreset() const
 void ComposingPreferencesModel::applyModePriorPreset(const QString& name)
 {
     analysisConfig()->applyModePriorPreset(name.toStdString());
-}
-
-bool ComposingPreferencesModel::chordStaffWriteChordSymbols() const
-{
-    return chordStaffConfig()->chordStaffWriteChordSymbols();
-}
-
-QString ComposingPreferencesModel::chordStaffFunctionNotation() const
-{
-    return QString::fromStdString(chordStaffConfig()->chordStaffFunctionNotation());
-}
-
-bool ComposingPreferencesModel::chordStaffWriteKeyAnnotations() const
-{
-    return chordStaffConfig()->chordStaffWriteKeyAnnotations();
-}
-
-bool ComposingPreferencesModel::chordStaffHighlightNonDiatonic() const
-{
-    return chordStaffConfig()->chordStaffHighlightNonDiatonic();
-}
-
-bool ComposingPreferencesModel::chordStaffWriteCadenceMarkers() const
-{
-    return chordStaffConfig()->chordStaffWriteCadenceMarkers();
 }
 
 bool ComposingPreferencesModel::showKeyModeInStatusBar() const
@@ -421,41 +381,6 @@ SET_MODE_PRIOR(LydianSharp2)
 SET_MODE_PRIOR(AlteredDomBB7)
 
 #undef SET_MODE_PRIOR
-
-void ComposingPreferencesModel::setChordStaffWriteChordSymbols(bool value)
-{
-    if (chordStaffWriteChordSymbols() == value) { return; }
-    chordStaffConfig()->setChordStaffWriteChordSymbols(value);
-    emit chordStaffWriteChordSymbolsChanged();
-}
-
-void ComposingPreferencesModel::setChordStaffFunctionNotation(const QString& value)
-{
-    if (chordStaffFunctionNotation() == value) { return; }
-    chordStaffConfig()->setChordStaffFunctionNotation(value.toStdString());
-    emit chordStaffFunctionNotationChanged();
-}
-
-void ComposingPreferencesModel::setChordStaffWriteKeyAnnotations(bool value)
-{
-    if (chordStaffWriteKeyAnnotations() == value) { return; }
-    chordStaffConfig()->setChordStaffWriteKeyAnnotations(value);
-    emit chordStaffWriteKeyAnnotationsChanged();
-}
-
-void ComposingPreferencesModel::setChordStaffHighlightNonDiatonic(bool value)
-{
-    if (chordStaffHighlightNonDiatonic() == value) { return; }
-    chordStaffConfig()->setChordStaffHighlightNonDiatonic(value);
-    emit chordStaffHighlightNonDiatonicChanged();
-}
-
-void ComposingPreferencesModel::setChordStaffWriteCadenceMarkers(bool value)
-{
-    if (chordStaffWriteCadenceMarkers() == value) { return; }
-    chordStaffConfig()->setChordStaffWriteCadenceMarkers(value);
-    emit chordStaffWriteCadenceMarkersChanged();
-}
 
 void ComposingPreferencesModel::setShowKeyModeInStatusBar(bool value)
 {

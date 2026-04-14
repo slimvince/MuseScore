@@ -50,11 +50,6 @@ static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,       "compo
 static const Settings::Key SHOW_CHORD_SYMBOLS_IN_STATUS_BAR(module_name,  "composing/showChordSymbolsInStatusBar");
 static const Settings::Key SHOW_ROMAN_NUMERALS_IN_STATUS_BAR(module_name, "composing/showRomanNumeralsInStatusBar");
 static const Settings::Key SHOW_NASHVILLE_NUMBERS_IN_STATUS_BAR(module_name, "composing/showNashvilleNumbersInStatusBar");
-static const Settings::Key CHORD_STAFF_WRITE_CHORD_SYMBOLS(module_name,   "composing/chordStaffWriteChordSymbols");
-static const Settings::Key CHORD_STAFF_FUNCTION_NOTATION(module_name,    "composing/chordStaffFunctionNotation");
-static const Settings::Key CHORD_STAFF_WRITE_KEY_ANNOTATIONS(module_name, "composing/chordStaffWriteKeyAnnotations");
-static const Settings::Key CHORD_STAFF_HIGHLIGHT_NON_DIATONIC(module_name, "composing/chordStaffHighlightNonDiatonic");
-static const Settings::Key CHORD_STAFF_WRITE_CADENCE_MARKERS(module_name,  "composing/chordStaffWriteCadenceMarkers");
 // ── Mode prior Settings::Keys ────────────────────────────────────────────────
 // Diatonic
 static const Settings::Key MODE_PRIOR_IONIAN(module_name,     "composing/modePriorIonian");
@@ -177,31 +172,6 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(SHOW_NASHVILLE_NUMBERS_IN_STATUS_BAR, Val(false));
     settings()->valueChanged(SHOW_NASHVILLE_NUMBERS_IN_STATUS_BAR).onReceive(nullptr, [this](const Val&) {
         m_showNashvilleNumbersInStatusBarChanged.notify();
-    });
-
-    settings()->setDefaultValue(CHORD_STAFF_WRITE_CHORD_SYMBOLS, Val(true));
-    settings()->valueChanged(CHORD_STAFF_WRITE_CHORD_SYMBOLS).onReceive(nullptr, [this](const Val&) {
-        m_chordStaffWriteChordSymbolsChanged.notify();
-    });
-
-    settings()->setDefaultValue(CHORD_STAFF_FUNCTION_NOTATION, Val(std::string("roman")));
-    settings()->valueChanged(CHORD_STAFF_FUNCTION_NOTATION).onReceive(nullptr, [this](const Val&) {
-        m_chordStaffFunctionNotationChanged.notify();
-    });
-
-    settings()->setDefaultValue(CHORD_STAFF_WRITE_KEY_ANNOTATIONS, Val(true));
-    settings()->valueChanged(CHORD_STAFF_WRITE_KEY_ANNOTATIONS).onReceive(nullptr, [this](const Val&) {
-        m_chordStaffWriteKeyAnnotationsChanged.notify();
-    });
-
-    settings()->setDefaultValue(CHORD_STAFF_HIGHLIGHT_NON_DIATONIC, Val(true));
-    settings()->valueChanged(CHORD_STAFF_HIGHLIGHT_NON_DIATONIC).onReceive(nullptr, [this](const Val&) {
-        m_chordStaffHighlightNonDiatonicChanged.notify();
-    });
-
-    settings()->setDefaultValue(CHORD_STAFF_WRITE_CADENCE_MARKERS, Val(true));
-    settings()->valueChanged(CHORD_STAFF_WRITE_CADENCE_MARKERS).onReceive(nullptr, [this](const Val&) {
-        m_chordStaffWriteCadenceMarkersChanged.notify();
     });
 
     // ── Mode priors — diatonic ───────────────────────────────────────────────
@@ -609,91 +579,6 @@ void ComposingConfiguration::setShowNashvilleNumbersInStatusBar(bool value)
 muse::async::Notification ComposingConfiguration::showNashvilleNumbersInStatusBarChanged() const
 {
     return m_showNashvilleNumbersInStatusBarChanged;
-}
-
-// ── chordStaffWriteChordSymbols ──────────────────────────────────────────────
-
-bool ComposingConfiguration::chordStaffWriteChordSymbols() const
-{
-    return settings()->value(CHORD_STAFF_WRITE_CHORD_SYMBOLS).toBool();
-}
-
-void ComposingConfiguration::setChordStaffWriteChordSymbols(bool value)
-{
-    settings()->setSharedValue(CHORD_STAFF_WRITE_CHORD_SYMBOLS, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::chordStaffWriteChordSymbolsChanged() const
-{
-    return m_chordStaffWriteChordSymbolsChanged;
-}
-
-// ── chordStaffFunctionNotation ───────────────────────────────────────────────
-
-std::string ComposingConfiguration::chordStaffFunctionNotation() const
-{
-    return settings()->value(CHORD_STAFF_FUNCTION_NOTATION).toString();
-}
-
-void ComposingConfiguration::setChordStaffFunctionNotation(const std::string& value)
-{
-    settings()->setSharedValue(CHORD_STAFF_FUNCTION_NOTATION, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::chordStaffFunctionNotationChanged() const
-{
-    return m_chordStaffFunctionNotationChanged;
-}
-
-// ── chordStaffWriteKeyAnnotations ────────────────────────────────────────────
-
-bool ComposingConfiguration::chordStaffWriteKeyAnnotations() const
-{
-    return settings()->value(CHORD_STAFF_WRITE_KEY_ANNOTATIONS).toBool();
-}
-
-void ComposingConfiguration::setChordStaffWriteKeyAnnotations(bool value)
-{
-    settings()->setSharedValue(CHORD_STAFF_WRITE_KEY_ANNOTATIONS, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::chordStaffWriteKeyAnnotationsChanged() const
-{
-    return m_chordStaffWriteKeyAnnotationsChanged;
-}
-
-// ── chordStaffHighlightNonDiatonic ───────────────────────────────────────────
-
-bool ComposingConfiguration::chordStaffHighlightNonDiatonic() const
-{
-    return settings()->value(CHORD_STAFF_HIGHLIGHT_NON_DIATONIC).toBool();
-}
-
-void ComposingConfiguration::setChordStaffHighlightNonDiatonic(bool value)
-{
-    settings()->setSharedValue(CHORD_STAFF_HIGHLIGHT_NON_DIATONIC, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::chordStaffHighlightNonDiatonicChanged() const
-{
-    return m_chordStaffHighlightNonDiatonicChanged;
-}
-
-// ── chordStaffWriteCadenceMarkers ────────────────────────────────────────────
-
-bool ComposingConfiguration::chordStaffWriteCadenceMarkers() const
-{
-    return settings()->value(CHORD_STAFF_WRITE_CADENCE_MARKERS).toBool();
-}
-
-void ComposingConfiguration::setChordStaffWriteCadenceMarkers(bool value)
-{
-    settings()->setSharedValue(CHORD_STAFF_WRITE_CADENCE_MARKERS, Val(value));
-}
-
-muse::async::Notification ComposingConfiguration::chordStaffWriteCadenceMarkersChanged() const
-{
-    return m_chordStaffWriteCadenceMarkersChanged;
 }
 
 // ── Mode priors — diatonic ───────────────────────────────────────────────────

@@ -22,23 +22,16 @@
 #pragma once
 
 #include "icomposinganalysisconfiguration.h"
-#include "icomposingchordstaffconfiguration.h"
 
 namespace mu::composing {
 
-/// Full composing configuration: analysis + chord-staff output settings.
-///
-/// Code that only needs analysis settings should inject the narrower
-/// IComposingAnalysisConfiguration interface rather than this one.
-/// Code that needs chord-staff (implode) output settings should inject
-/// IComposingChordStaffConfiguration.
+/// Full composing configuration: analysis settings.
 ///
 /// IComposingConfiguration itself is NOT registered in the IoC container;
-/// only the two sub-interfaces are.  ComposingConfiguration inherits from
-/// both sub-interfaces and is registered under both.
+/// only IComposingAnalysisConfiguration is.  ComposingConfiguration inherits
+/// from it and is registered under that interface.
 class IComposingConfiguration
     : public IComposingAnalysisConfiguration
-    , public IComposingChordStaffConfiguration
 {
 public:
     virtual ~IComposingConfiguration() = default;

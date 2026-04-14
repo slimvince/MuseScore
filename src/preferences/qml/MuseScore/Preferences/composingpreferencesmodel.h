@@ -28,7 +28,7 @@
 #include "async/asyncable.h"
 
 #include "composing/icomposinganalysisconfiguration.h"
-#include "composing/icomposingchordstaffconfiguration.h"
+
 
 namespace mu::preferences {
 class ComposingPreferencesModel : public QObject, public muse::Contextable, public muse::async::Asyncable
@@ -49,13 +49,6 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(bool annotateTuningOffsets      READ annotateTuningOffsets      WRITE setAnnotateTuningOffsets      NOTIFY annotateTuningOffsetsChanged)
     Q_PROPERTY(bool annotateDriftAtBoundaries  READ annotateDriftAtBoundaries  WRITE setAnnotateDriftAtBoundaries  NOTIFY annotateDriftAtBoundariesChanged)
     Q_PROPERTY(bool useRegionalAccumulation    READ useRegionalAccumulation    WRITE setUseRegionalAccumulation    NOTIFY useRegionalAccumulationChanged)
-
-    // Chord staff output
-    Q_PROPERTY(bool    chordStaffWriteChordSymbols   READ chordStaffWriteChordSymbols   WRITE setChordStaffWriteChordSymbols   NOTIFY chordStaffWriteChordSymbolsChanged)
-    Q_PROPERTY(QString chordStaffFunctionNotation    READ chordStaffFunctionNotation    WRITE setChordStaffFunctionNotation    NOTIFY chordStaffFunctionNotationChanged)
-    Q_PROPERTY(bool    chordStaffWriteKeyAnnotations READ chordStaffWriteKeyAnnotations WRITE setChordStaffWriteKeyAnnotations NOTIFY chordStaffWriteKeyAnnotationsChanged)
-    Q_PROPERTY(bool    chordStaffHighlightNonDiatonic READ chordStaffHighlightNonDiatonic WRITE setChordStaffHighlightNonDiatonic NOTIFY chordStaffHighlightNonDiatonicChanged)
-    Q_PROPERTY(bool    chordStaffWriteCadenceMarkers READ chordStaffWriteCadenceMarkers WRITE setChordStaffWriteCadenceMarkers NOTIFY chordStaffWriteCadenceMarkersChanged)
 
     // Mode priors — diatonic
     Q_PROPERTY(double modePriorIonian     READ modePriorIonian     WRITE setModePriorIonian     NOTIFY modePriorIonianChanged)
@@ -91,7 +84,6 @@ class ComposingPreferencesModel : public QObject, public muse::Contextable, publ
     Q_PROPERTY(QString currentModePriorPreset READ currentModePriorPreset NOTIFY currentModePriorPresetChanged)
 
     muse::GlobalInject<composing::IComposingAnalysisConfiguration> analysisConfig;
-    muse::GlobalInject<composing::IComposingChordStaffConfiguration> chordStaffConfig;
 
 public:
     explicit ComposingPreferencesModel(QObject* parent = nullptr);
@@ -136,12 +128,6 @@ public:
     double modePriorLydianSharp2() const;
     double modePriorAlteredDomBB7() const;
     QString currentModePriorPreset() const;
-
-    bool    chordStaffWriteChordSymbols() const;
-    QString chordStaffFunctionNotation() const;
-    bool    chordStaffWriteKeyAnnotations() const;
-    bool    chordStaffHighlightNonDiatonic() const;
-    bool    chordStaffWriteCadenceMarkers() const;
 
     bool showKeyModeInStatusBar() const;
     bool showChordSymbolsInStatusBar() const;
@@ -188,12 +174,6 @@ public slots:
     void setModePriorAlteredDomBB7(double value);
     void applyModePriorPreset(const QString& name);
 
-    void setChordStaffWriteChordSymbols(bool value);
-    void setChordStaffFunctionNotation(const QString& value);
-    void setChordStaffWriteKeyAnnotations(bool value);
-    void setChordStaffHighlightNonDiatonic(bool value);
-    void setChordStaffWriteCadenceMarkers(bool value);
-
     void setShowKeyModeInStatusBar(bool value);
     void setShowChordSymbolsInStatusBar(bool value);
     void setShowRomanNumeralsInStatusBar(bool value);
@@ -238,12 +218,6 @@ signals:
     void modePriorLydianSharp2Changed();
     void modePriorAlteredDomBB7Changed();
     void currentModePriorPresetChanged();
-
-    void chordStaffWriteChordSymbolsChanged();
-    void chordStaffFunctionNotationChanged();
-    void chordStaffWriteKeyAnnotationsChanged();
-    void chordStaffHighlightNonDiatonicChanged();
-    void chordStaffWriteCadenceMarkersChanged();
 
     void showKeyModeInStatusBarChanged();
     void showChordSymbolsInStatusBarChanged();

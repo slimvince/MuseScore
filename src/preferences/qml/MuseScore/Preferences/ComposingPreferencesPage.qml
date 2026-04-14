@@ -139,26 +139,5 @@ PreferencesPage {
             onShowNashvilleNumbersInStatusBarChangeRequested: function(value) { preferencesModel.showNashvilleNumbersInStatusBar = value }
         }
 
-        SeparatorLine { }
-
-        ComposingChordStaffSection {
-            chordStaffWriteChordSymbols:   preferencesModel.chordStaffWriteChordSymbols
-            chordStaffFunctionNotation:    preferencesModel.chordStaffFunctionNotation
-            chordStaffWriteKeyAnnotations: preferencesModel.chordStaffWriteKeyAnnotations
-            chordStaffHighlightNonDiatonic: preferencesModel.chordStaffHighlightNonDiatonic
-            chordStaffWriteCadenceMarkers: preferencesModel.chordStaffWriteCadenceMarkers
-            analyzeForChordSymbols:        preferencesModel.analyzeForChordSymbols
-            analyzeForChordFunction:       preferencesModel.analyzeForChordFunction
-            inferKeyMode:                  preferencesModel.inferKeyMode
-
-            navigation.section: root.navigationSection
-            navigation.order: root.navigationOrderStart + 3
-
-            onChordStaffWriteChordSymbolsChangeRequested:    function(value) { preferencesModel.chordStaffWriteChordSymbols    = value }
-            onChordStaffFunctionNotationChangeRequested:     function(value) { preferencesModel.chordStaffFunctionNotation     = value }
-            onChordStaffWriteKeyAnnotationsChangeRequested:  function(value) { preferencesModel.chordStaffWriteKeyAnnotations  = value }
-            onChordStaffHighlightNonDiatonicChangeRequested: function(value) { preferencesModel.chordStaffHighlightNonDiatonic = value }
-            onChordStaffWriteCadenceMarkersChangeRequested:  function(value) { preferencesModel.chordStaffWriteCadenceMarkers  = value }
-        }
     }
 }
