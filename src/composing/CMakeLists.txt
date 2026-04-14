@@ -33,7 +33,6 @@ target_sources(composing PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/composingconfiguration.cpp
     ${CMAKE_CURRENT_LIST_DIR}/composingconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/icomposinganalysisconfiguration.h
-    ${CMAKE_CURRENT_LIST_DIR}/icomposingchordstaffconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/icomposingconfiguration.h
 )
 
