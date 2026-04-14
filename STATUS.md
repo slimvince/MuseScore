@@ -286,6 +286,22 @@ Mozart K279: C major reads as D Dorian with Jazz preset, correct with Standard p
 
 ---
 
+## Phase 4 — Submission preparation **IN PROGRESS (2026-04-14)**
+
+| Component | Status | Commit |
+|-----------|--------|--------|
+| 4a — GPL headers | ✓ Fixed copyright year on 3 notation bridge files | `df494373` |
+| 4b — Doxygen on public interfaces | ✓ Clean — all interfaces already documented | — |
+| 4c — Translations | ✓ Clean — all user strings already in TranslatableString | — |
+| 4d — CMake registration | ✓ Fixed missing environment.cpp in composing_tests | `fda8a619` |
+| 4e — No external dependencies | ✓ Confirmed — zero new third-party includes | — |
+| 4f — Tuning removal | Pending |  |
+| 4g — Tools/corpus removal | Pending |  |
+
+**External dependency verification (2026-04-14):** All `#include` directives in `src/composing/` and the notation bridge files resolve exclusively to standard library headers, MuseScore framework headers, and our own module headers. No new third-party libraries introduced.
+
+---
+
 ## Phase 2 — Inferrer stabilization **COMPLETE — `bc6f2edb` (2026-04-14)**
 
 All three pre-submission backlog items are fixed and the benchmark set has been
