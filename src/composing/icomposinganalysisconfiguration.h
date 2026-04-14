@@ -104,6 +104,12 @@ public:
     virtual void setUseRegionalAccumulation(bool value) = 0;
     virtual muse::async::Notification useRegionalAccumulationChanged() const = 0;
 
+    /// Jaccard distance threshold for Pass 2 onset-only sub-boundary detection.
+    /// Lower = more boundaries inserted. Range: 0.1–0.6. Default: 0.25.
+    virtual double onsetBoundaryThreshold() const = 0;
+    virtual void setOnsetBoundaryThreshold(double value) = 0;
+    virtual muse::async::Notification onsetBoundaryThresholdChanged() const = 0;
+
     /// Minimum normalized confidence required before chord-track key annotations
     /// show a specific mode suffix (e.g. Dor, harm) instead of falling back to
     /// the broader major/minor class for the inferred tonic.

@@ -36,6 +36,7 @@ static const Settings::Key ANALYZE_FOR_CHORD_FUNCTION(module_name,  "composing/a
 static const Settings::Key INFER_KEY_MODE(module_name,              "composing/inferKeyMode");
 static const Settings::Key ANALYSIS_ALTERNATIVES(module_name,       "composing/analysisAlternatives");
 static const Settings::Key USE_REGIONAL_ACCUMULATION(module_name,    "composing/useRegionalAccumulation");
+static const Settings::Key ONSET_BOUNDARY_THRESHOLD(module_name,     "composing/onsetBoundaryThreshold");
 static const Settings::Key MODE_NAME_CONFIDENCE_THRESHOLD(module_name, "composing/modeNameConfidenceThreshold");
 static const Settings::Key MINIMUM_DISPLAY_DURATION_BEATS(module_name, "composing/minimumDisplayDurationBeats");
 static const Settings::Key MIN_KEY_STABILITY_BEATS(module_name, "composing/minKeyStabilityBeats");
@@ -94,6 +95,11 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(USE_REGIONAL_ACCUMULATION, Val(true));
     settings()->valueChanged(USE_REGIONAL_ACCUMULATION).onReceive(nullptr, [this](const Val&) {
         m_useRegionalAccumulationChanged.notify();
+    });
+
+    settings()->setDefaultValue(ONSET_BOUNDARY_THRESHOLD, Val(0.25));
+    settings()->valueChanged(ONSET_BOUNDARY_THRESHOLD).onReceive(nullptr, [this](const Val&) {
+        m_onsetBoundaryThresholdChanged.notify();
     });
 
     settings()->setDefaultValue(MODE_NAME_CONFIDENCE_THRESHOLD, Val(0.35));
@@ -305,6 +311,23 @@ void ComposingConfiguration::setUseRegionalAccumulation(bool value)
 muse::async::Notification ComposingConfiguration::useRegionalAccumulationChanged() const
 {
     return m_useRegionalAccumulationChanged;
+}
+
+// ── onsetBoundaryThreshold ───────────────────────────────────────────────────
+
+double ComposingConfiguration::onsetBoundaryThreshold() const
+{
+    return settings()->value(ONSET_BOUNDARY_THRESHOLD).toDouble();
+}
+
+void ComposingConfiguration::setOnsetBoundaryThreshold(double value)
+{
+    settings()->setSharedValue(ONSET_BOUNDARY_THRESHOLD, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::onsetBoundaryThresholdChanged() const
+{
+    return m_onsetBoundaryThresholdChanged;
 }
 
 double ComposingConfiguration::modeNameConfidenceThreshold() const

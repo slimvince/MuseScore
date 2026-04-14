@@ -1293,6 +1293,114 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
     return boundaries;
 }
 
+// ── detectOnsetSubBoundaries ─────────────────────────────────────────────────
+// Pass 2: within a coarse Jaccard region, scan for sub-boundaries using
+// onset-only pitch class sets.  An onset-only set contains only pitch classes
+// whose start tick falls exactly at the current segment tick — no sustained
+// notes, no arpeggiated leftovers.  Because onset sets are small and clean,
+// a low threshold (default 0.25) catches genuine chord changes that sustained
+// windows blur together.
+std::vector<mu::engraving::Fraction>
+detectOnsetSubBoundaries(const mu::engraving::Score* sc,
+                         const mu::engraving::Fraction& startTick,
+                         const mu::engraving::Fraction& endTick,
+                         const std::set<size_t>& excludeStaves,
+                         double threshold)
+{
+    using namespace mu::engraving;
+
+    auto popcount16 = [](uint16_t x) -> int {
+        int n = 0;
+        while (x) { n += x & 1; x >>= 1; }
+        return n;
+    };
+
+    std::vector<Fraction> subBoundaries;
+
+    const Segment* firstSeg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (!firstSeg) {
+        return subBoundaries;
+    }
+
+    // Build onset-only bitset at each ChordRest segment tick.
+    struct OnsetWindow {
+        Fraction tick;
+        uint16_t bits = 0;
+    };
+    std::vector<OnsetWindow> onsets;
+
+    for (const Segment* s = firstSeg;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+
+        uint16_t bits = 0;
+        const int segTick = s->tick().ticks();
+
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                // Onset-only: only notes whose start tick equals this segment tick.
+                if (cr->tick().ticks() != segTick) {
+                    continue;
+                }
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    bits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
+                }
+            }
+        }
+
+        if (bits != 0) {
+            onsets.push_back({ s->tick(), bits });
+        }
+    }
+
+    if (onsets.size() < 2) {
+        return subBoundaries;
+    }
+
+    // Minimum gap between sub-boundaries: 2 quarter notes (half note).
+    // This prevents threshold=0.25 from inserting boundaries at every beat in
+    // arpeggiated passages.  The main loop calls resolveKeyAndMode per region,
+    // so too many sub-boundaries cause quadratic slowdown on long scores.
+    const int minGapTicks = 2 * Constants::DIVISION;
+
+    // Compare each onset set to the previous boundary's onset set; insert a sub-boundary
+    // when the Jaccard distance exceeds the threshold AND the gap since the last accepted
+    // boundary is at least one quarter note.
+    uint16_t prevBits = onsets[0].bits;
+    Fraction lastBoundaryTick = startTick;
+
+    for (size_t i = 1; i < onsets.size(); ++i) {
+        const uint16_t bits     = onsets[i].bits;
+        const uint16_t inter    = prevBits & bits;
+        const uint16_t uni      = prevBits | bits;
+        const int interCount    = popcount16(inter);
+        const int uniCount      = popcount16(uni);
+        const double jaccard    = (uniCount > 0)
+                                  ? (1.0 - static_cast<double>(interCount) / uniCount)
+                                  : 0.0;
+
+        const int gapTicks = (onsets[i].tick - lastBoundaryTick).ticks();
+        if (jaccard >= threshold && gapTicks >= minGapTicks) {
+            subBoundaries.push_back(onsets[i].tick);
+            lastBoundaryTick = onsets[i].tick;
+            prevBits = bits;
+        }
+        // No accumulation for Pass 2 — each onset is a fresh snapshot.
+    }
+
+    return subBoundaries;
+}
+
 mu::composing::analysis::ChordTemporalContext
 findTemporalContext(const mu::engraving::Score* sc,
                     const mu::engraving::Segment* seg,

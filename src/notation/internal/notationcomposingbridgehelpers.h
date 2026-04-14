@@ -135,6 +135,18 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 double jaccardThreshold);
 
+/// Pass 2: onset-only sub-boundary detection within a coarse Jaccard region.
+/// Collects only notes whose start tick equals the segment tick (no sustained
+/// notes), then computes Jaccard distance between consecutive onset sets.
+/// Lower threshold = more boundaries. Default 0.25.
+/// Returns sub-boundary ticks (not including startTick).
+std::vector<mu::engraving::Fraction>
+detectOnsetSubBoundaries(const mu::engraving::Score* sc,
+                         const mu::engraving::Fraction& startTick,
+                         const mu::engraving::Fraction& endTick,
+                         const std::set<size_t>& excludeStaves,
+                         double threshold = 0.25);
+
 /// Returns true if any standard chord symbol in [startTick, endTick) has a valid
 /// written root. Roman/Nashville analysis annotations should not activate the jazz path.
 bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
