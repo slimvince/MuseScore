@@ -23,6 +23,7 @@ set(MODULE_TEST notation_tests)
 set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationtuning_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/notationcomposingbridge_tests.cpp
 
     ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.cpp
     ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.h
