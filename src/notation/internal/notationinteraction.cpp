@@ -110,7 +110,6 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/intonation/tuning_system.h"
 #include "notationcomposingbridge.h"
-#include "notationimplodebridge.h"
 #include "notationtuningbridge.h"
 
 #include "utilities/scorerangeutilities.h"
@@ -8733,40 +8732,6 @@ void NotationInteraction::checkAndShowError()
 }
 
 // ── Composing-module operations ─────────────────────────────────────────────
-
-void NotationInteraction::implodeToChordTrack(engraving::staff_idx_t trebleStaffIdx, bool useCollectedTones)
-{
-    const Selection& sel = score()->selection();
-
-    Fraction startTick;
-    Fraction endTick;
-    if (sel.isRange()) {
-        startTick = sel.tickStart();
-        endTick   = sel.tickEnd();
-    } else if (sel.isSingle() && sel.element() && sel.element()->isNote()) {
-        const Chord* ch = toNote(sel.element())->chord();
-        if (ch) {
-            startTick = ch->tick();
-            endTick   = ch->tick() + ch->actualTicks();
-        }
-    }
-
-    if (endTick <= startTick) {
-        startTick = Fraction(0, 1);
-        endTick   = score()->endTick();
-    }
-
-    startEdit(TranslatableString("undoableAction", "Implode to chord track"));
-
-    const bool ok = mu::notation::populateChordTrack(
-        score(), startTick, endTick, trebleStaffIdx, useCollectedTones);
-
-    if (ok) {
-        apply();
-    } else {
-        rollback();
-    }
-}
 
 void NotationInteraction::tuneSelection()
 {

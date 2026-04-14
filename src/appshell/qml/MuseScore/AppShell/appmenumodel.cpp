@@ -146,16 +146,6 @@ void AppMenuModel::setupConnections()
 
         updateUndoRedoItems();
 
-        rebuildChordTrackMenu();
-
-        // Re-subscribe to parts changes for the new notation so the submenu
-        // stays current when chord tracks are added or removed mid-session.
-        auto notation = globalContext()->currentNotation();
-        if (notation && notation->parts()) {
-            notation->parts()->partsChanged().onNotify(this, [this]() {
-                rebuildChordTrackMenu();
-            }, Asyncable::Mode::SetReplace);
-        }
     });
 
     composingConfiguration()->tuningSystemKeyChanged().onNotify(this, [this]() {
@@ -400,83 +390,6 @@ MenuItem* AppMenuModel::makeFormatMenu()
     return makeMenu(TranslatableString("appshell/menu/format", "F&ormat"), formatItems, "menu-format");
 }
 
-void AppMenuModel::rebuildChordTrackMenu()
-{
-    MenuItem& chordTrackMenu = findMenu("menu-chord-track");
-    if (!chordTrackMenu.isValid()) {
-        return;
-    }
-    MenuItemList targets = makeChordTrackTargetItems();
-    chordTrackMenu.setSubitems(targets);
-    UiActionState state;
-    state.enabled = !targets.isEmpty();
-    chordTrackMenu.setState(state);
-}
-
-MenuItemList AppMenuModel::makeChordTrackTargetItems()
-{
-    MenuItemList items;
-
-    mu::notation::INotationPtr notation = globalContext()->currentNotation();
-    if (!notation) {
-        return items;
-    }
-
-    auto partsPtr = notation->parts();
-    if (!partsPtr) {
-        return items;
-    }
-
-    int idx = 0;
-    for (const mu::engraving::Part* part : partsPtr->partList()) {
-        if (!part || part->nstaves() < 2) {
-            continue;
-        }
-
-        // The treble staff is the first staff of the part.
-        const auto staves = part->staveIdxList();
-        if (staves.empty()) {
-            continue;
-        }
-        const mu::engraving::staff_idx_t trebleIdx = *staves.begin();
-
-        // "As written" — uses collected tones from the score.
-        MenuItem* asWritten = makeMenuItem("implode-to-chord-track");
-        if (!asWritten) {
-            continue;
-        }
-        asWritten->setId(QString("chord-track-%1-written").arg(idx));
-        {
-            UiAction a = asWritten->action();
-            a.title = TranslatableString::untranslatable(part->partName() + u" — As written");
-            asWritten->setAction(a);
-        }
-        asWritten->setArgs(ActionData::make_arg2<mu::engraving::staff_idx_t, bool>(trebleIdx, true));
-        items << asWritten;
-
-        // "Close position" — canonical voicing from analysis.
-        MenuItem* closePos = makeMenuItem("implode-to-chord-track");
-        if (!closePos) {
-            ++idx;
-            continue;
-        }
-        closePos->setId(QString("chord-track-%1-close").arg(idx));
-        {
-            UiAction a = closePos->action();
-            a.title = TranslatableString::untranslatable(part->partName() + u" — Close position");
-            closePos->setAction(a);
-        }
-        closePos->setArgs(ActionData::make_arg2<mu::engraving::staff_idx_t, bool>(trebleIdx, false));
-        items << closePos;
-
-        ++idx;
-    }
-
-    // TODO: "Create new..." item that opens the Add Instruments dialog
-    // and then runs implode-to-chord-track on the newly created staff.
-
-    return items;
-}
 
 MenuItem* AppMenuModel::makeTuneSelectionItem()
 {
@@ -518,8 +431,6 @@ MenuItem* AppMenuModel::makeToolsMenu()
         makeMenuItem("pitch-spell"),
     };
 
-    MenuItemList chordTrackItems = makeChordTrackTargetItems();
-
     MenuItemList annotateSelectionItems {
         makeMenuItem("add-chord-symbols-to-selection"),
         makeMenuItem("add-roman-numerals-to-selection"),
@@ -531,8 +442,6 @@ MenuItem* AppMenuModel::makeToolsMenu()
         makeSeparator(),
         makeMenuItem("explode"),
         makeMenuItem("implode"),
-        makeMenu(TranslatableString("appshell/menu/tools", "Implode to chord &track"),
-                 chordTrackItems, "menu-chord-track", !chordTrackItems.isEmpty()),
         makeMenuItem("realize-chord-symbols"),
         makeMenu(TranslatableString("appshell/menu/tools", "&Annotate selection"),
                  annotateSelectionItems, "menu-annotate-selection"),

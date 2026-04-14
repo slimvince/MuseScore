@@ -71,8 +71,6 @@ target_sources(notation PRIVATE
     internal/notationcomposingbridgehelpers.cpp
     internal/notationcomposingbridgehelpers.h
     internal/notationharmonicrhythmbridge.cpp
-    internal/notationimplodebridge.cpp
-    internal/notationimplodebridge.h
     internal/notationtuningbridge.cpp
     internal/notationtuningbridge.h
     internal/notationconfiguration.cpp

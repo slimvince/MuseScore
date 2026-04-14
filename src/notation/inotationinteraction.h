@@ -266,7 +266,6 @@ public:
 
     virtual void explodeSelectedStaff() = 0;
     virtual void implodeSelectedStaff() = 0;
-    virtual void implodeToChordTrack(engraving::staff_idx_t trebleStaffIdx, bool useCollectedTones = false) = 0;
     virtual void tuneSelection() = 0;
 
     virtual void realizeSelectedChordSymbols(bool literal, Voicing voicing, HarmonyDurationType durationType) = 0;
