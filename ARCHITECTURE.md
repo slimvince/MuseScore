@@ -315,6 +315,35 @@ Never do:
 
 One run, one result. If output is unexpected, report it and ask for instructions. Do not silently re-run.
 
+**Rule 15 — Test writing discipline**
+
+When writing new regression tests, follow this process:
+
+**Sources for test design (in priority order):**
+1. Read existing tests in the same module first — adopt their patterns for fixture loading, assertion style, and class structure
+2. Test observable outputs of public interfaces, not implementation internals
+3. Use two tiers:
+   - Abstract property tests: "result has a valid rootPc (0-11)" — survive implementation changes
+   - Concrete regression tests: "BWV 227/7 at tick 0 returns E minor" — lock in known-good behavior
+
+**Characterization testing for integration tests:**
+When the expected output cannot be derived analytically:
+1. Write the test structure first
+2. Run it — read the actual output
+3. If the output looks correct, lock it in as the expected value
+4. If the output looks wrong, fix the code before updating the test
+
+Never adjust an expected value just to make a test pass if the actual output looks wrong. A failing test that reveals a bug is more valuable than a passing test that hides one.
+
+**Fixture files:**
+- Use existing fixture MSCX/MXL files where possible
+- New fixture files go in the test data directory for the module
+- Fixture files must be minimal — only as complex as the test requires
+
+**Selection setup:**
+- Always read how existing tests set up selections before writing new selection-based tests
+- Never assume the selection API — grep for existing usage first
+
 **Rule 13 — Commit before session end**
 
 Every development session must end with a git commit of all working tree changes, even if changes are incomplete or tests are partially failing. An uncommitted working tree that spans multiple sessions makes it impossible to identify what changed between sessions and prevents reliable diagnosis of regressions.
