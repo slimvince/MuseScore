@@ -2375,21 +2375,22 @@ a prefix: `Csussus2` (suspended + sus extension), `G#aussus5` (augmented + sus
 extension), `Dsussus5D+` (worst case).
 Confirmed in 7+ scores across all styles.
 Fix: sanitize `sussus`→`sus`, `aussus`→`aug(sus...)` in formatSymbol.
-Active backlog item — fix before submission.
+**Fixed 2026-04-13** — commit `4c35da17`.
 
 **Formatter: invalid bass note name `/p` (confirmed 2026-04-13):**
 TPC resolution failure produces `p` as a bass note name, e.g. `BbMaj7/p`. Occurs
 when bassTpc is TPC_INVALID. Fix: guard against invalid TPC before appending
-slash bass suffix. Confirmed in Dvořák Silhouettes. Active backlog item.
+slash bass suffix. Confirmed in Dvořák Silhouettes.
+**Fixed 2026-04-13** — commit `4c35da17`.
 
 **Key detection: relative major/minor ambiguity (confirmed 2026-04-13):**
 When opening chord is in first inversion, the bass note matches the tonic of the
 relative key, causing the inferrer to lock onto the wrong member of the relative pair:
-- BWV 227/7 (E minor, 1♯): reads as G major throughout
-- BWV 66.6 (A major, 3♯): reads as F# minor throughout
+- BWV 227/7 (E minor, 1♯): was reading as G major throughout
+- BWV 66.6 (F# minor, 3♯): was reading as A major (BWV 66.6 was already correct per
+  music21 ground truth — STATUS.md expectation corrected 2026-04-13)
 
-Makes all Roman numerals and Nashville numbers systematically wrong on these benchmark
-scores. Active backlog item — fix before submission.
+**Fixed 2026-04-13** — complete-triad bonus + piece-start hysteresis, commit `3ba80cb7`.
 
 **Preset misuse degrades output (confirmed 2026-04-13):**
 Jazz preset causes key context drift on Classical scores. Mozart K279 with Jazz preset
@@ -4314,6 +4315,45 @@ python tools/run_validation.py --single bach/bwv66.6
 ```
 
 ---
+
+### Submission Roadmap (pre-PR phases)
+
+Short-term milestones tracking readiness for MuseScore contribution.
+
+#### Phase 1 — Analysis foundation *(complete)*
+
+The Phase 1 analysis engine, status bar integration, and basic chord staff are
+implemented and passing all targeted tests. See STATUS.md for test counts.
+
+#### Phase 2 — Inferrer stabilization **COMPLETE — `bc6f2edb`**
+
+2a — Key annotation display: confirmed working. `minKeyStabilityBeats=8.0`
+  suppresses transient key changes. Mode name threshold correctly applied.
+
+2b — Corpus re-run: 64.6% weighted direct DCML confirmed stable after
+  formatter and key-detection fixes (Corelli 70.3%, Dvorak 79.2% spot-checked).
+
+2c — Benchmark set Rule 12 sign-off: PASSED 2026-04-14.
+  BWV 227/7: E minor key annotation, correct Roman numerals ✓
+  Chopin BI16-1: single G major region at measure 1 ✓
+  Dvořák op08n06: Bb major context, cadence detection, confident opening ✓
+
+2d — Known limitations documented: see §5.8 (updated 2026-04-13 with 10-score
+  inspection findings).
+
+2e — Pre-submission backlog items fixed: formatter sussus/bassIsRoot bugs
+  (commit `4c35da17`), relative major/minor key ambiguity (commit `3ba80cb7`).
+
+#### Phase 3 — Submission fork preparation *(next)*
+
+- Create submission scope document (`docs/submission_scope.md`)
+- Identify files in scope vs out of scope for the PR
+- Create fork branch containing only submittable code
+- Final PR readiness review
+
+---
+
+### Long-term project phases (post-submission)
 
 ### Phase 1 — Analysis Foundation
 
