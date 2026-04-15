@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-15 (session 2) — three commits cherry-picked onto submission-phase1 (new HEAD `a8893a9bc4`), chord confidence normalization (P8d) implemented on both branches. submission-phase1: 247/247 composing, 3/3 notation. master: 305/305 composing, 26/34 notation (same 8 pre-existing). Next session priorities: score inference QA, then RFC draft, then upstream bug report for chordlist.cpp.*
+*Last updated: 2026-04-15 (session 3) — notation 26/34 regression confirmed and fixed: `3967db861c` removed `setPlainText()` from `populateChordTrack` without adding `afterRead()`, leaving `plainText()` empty in test context. Fix: `h->afterRead()` after `h->setHarmony()` at both call sites (`9c282f382b`). master: 305/305 composing, 30/34 notation (4 pre-existing deferred). Proceeding to inference QA.*
 
 ---
 
@@ -267,7 +267,7 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 
 ## Known failing notation tests (implode-to-chord-track, all deferred)
 
-As of 2026-04-13 (34 tests total, 30 passing):
+As of 2026-04-15 (34 tests total, 30 passing — confirmed after `afterRead()` regression fix `9c282f382b`):
 
 1. **ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries** — extra annotation at tick 3/4; `inferGapRegion` suspect.
 2. **CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature** — tick 1440 carry-forward mismatch between status-bar context and populate output.
@@ -1402,7 +1402,7 @@ Work likely beyond the plateau:
 
 ## Next session priorities
 
-1. **Score inference QA**
+1. **Score inference QA** ← current
   Verify that `normalizedConfidence` values are plausible on real corpus scores
   (low on sparse/ambiguous material, high on clean triadic passages). Use
   `batch_analyze` JSON output to spot-check. No scoring changes — diagnostic only.
