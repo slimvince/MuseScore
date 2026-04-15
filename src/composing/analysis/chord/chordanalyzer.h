@@ -187,7 +187,8 @@ inline void setExtension(uint32_t& ext, Extension flag)
 /// The pitch-content identity of a chord: root, quality, extensions, and bass.
 /// Contains no key-function information.
 struct ChordIdentity {
-    double score = 0.0;       ///< Template match score (higher = better); ranking only.
+    double score = 0.0;                ///< Template match score (higher = better); ranking only.
+    double normalizedConfidence = 0.0; ///< Sigmoid-normalized score gap, 0.0–1.0; see §P8d.
     int rootPc = 0;           ///< Root pitch class (0–11)
     int bassPc = 0;           ///< Bass pitch class (0–11)
     int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
@@ -344,6 +345,18 @@ struct ChordAnalyzerPreferences {
     /// as the written attack weight.
     double pedalTailWeightMultiplier = 0.3;
 
+    // ── Confidence normalization (§P8d) ─────────────────────────────────────
+
+    /// Score gap (winner − runner-up) at which normalizedConfidence = 0.5.
+    /// Same empirical default as KeyModeAnalyzerPreferences.
+    /// Range: 0.5–5.0.  Default: 2.0.
+    double confidenceSigmoidMidpoint = 2.0;
+
+    /// Steepness of the sigmoid mapping score gap to confidence.
+    /// Larger values produce sharper transitions; same as key analyzer.
+    /// Range: 0.5–5.0.  Default: 1.5.
+    double confidenceSigmoidSteepness = 1.5;
+
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
     // flip them on and wire up the corresponding logic.
@@ -391,6 +404,8 @@ struct ChordAnalyzerPreferences {
             { "inversionBonusReduction",            { 0.0, 1.0 } },
             { "harmonicBoundaryJaccardThreshold",   { 0.0, 1.0 } },
             { "pedalTailWeightMultiplier",          { 0.0, 1.0 } },
+            { "confidenceSigmoidMidpoint",          { 0.5, 5.0 } },
+            { "confidenceSigmoidSteepness",         { 0.5, 5.0 } },
         };
     }
 };

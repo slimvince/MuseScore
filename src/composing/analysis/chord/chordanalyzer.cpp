@@ -25,6 +25,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <limits>
 
 namespace mu::composing::analysis {
@@ -1303,6 +1304,19 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
     return score;
 }
 
+// ── Confidence normalization (§P8d) ────────────────────────────────────────────
+//
+// Maps the score gap between winner and runner-up through a sigmoid to produce
+// a 0.0–1.0 normalizedConfidence value.  Sigmoid shape and k parameter mirror
+// KeyModeAnalyzer's implementation so the two confidence values are comparable.
+static double normalizeChordConfidence(double winnerScore, double runnerUpScore,
+                                       const ChordAnalyzerPreferences& prefs)
+{
+    const double gap = winnerScore - runnerUpScore;
+    return 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
+                                  * (gap - prefs.confidenceSigmoidMidpoint)));
+}
+
 } // namespace
 
 std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
@@ -1686,6 +1700,19 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                      });
                 }
             }
+        }
+    }
+
+    // ── Populate normalizedConfidence for each result ─────────────────────────
+    if (!results.empty()) {
+        const double winnerScore = results.front().identity.score;
+        const double runnerUpScore = (results.size() >= 2) ? results[1].identity.score : 0.0;
+        results[0].identity.normalizedConfidence
+            = normalizeChordConfidence(winnerScore, runnerUpScore, prefs);
+        for (size_t i = 1; i < results.size(); ++i) {
+            const double iRunnerUp = (i + 1 < results.size()) ? results[i + 1].identity.score : 0.0;
+            results[i].identity.normalizedConfidence
+                = normalizeChordConfidence(results[i].identity.score, iRunnerUp, prefs);
         }
     }
 
