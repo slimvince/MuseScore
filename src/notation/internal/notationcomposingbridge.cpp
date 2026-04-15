@@ -760,7 +760,6 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 h->setParent(seg);
                 h->setHarmonyType(HarmonyType::STANDARD);
                 h->setHarmony(muse::String::fromStdString(symText));
-                h->setPlainText(muse::String::fromStdString(symText));
                 score->undoAddElement(h);
             }
 
@@ -770,7 +769,6 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 h->setParent(seg);
                 h->setHarmonyType(HarmonyType::ROMAN);
                 h->setHarmony(muse::String::fromStdString(romanText));
-                h->setPlainText(muse::String::fromStdString(romanText));
                 score->undoAddElement(h);
             }
 
@@ -780,7 +778,6 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 h->setParent(seg);
                 h->setHarmonyType(HarmonyType::NASHVILLE);
                 h->setHarmony(muse::String::fromStdString(nashvilleText));
-                h->setPlainText(muse::String::fromStdString(nashvilleText));
                 score->undoAddElement(h);
             }
         }

@@ -1350,6 +1350,18 @@ TEST(Composing_ChordSymbolFormatterTests, NoDuplicateSusSuffix_Sus2WithNaturalEl
     EXPECT_FALSE(sym.empty());
 }
 
+TEST(Composing_ChordSymbolFormatterTests, Sus4WithMin7AndNaturalNinthFormatsAsSusAdd9)
+{
+    // C-F-G-Bb-D: C suspended-4 with minor 7th and natural 9th.
+    // "9sus" is not in chords_std.xml and triggers a corrupted render ("sussus9").
+    // Must use "sus(add9)" instead.
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended4);
+    setExtension(r.identity.extensions, Extension::MinorSeventh);
+    setExtension(r.identity.extensions, Extension::NaturalNinth);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(r, 0);
+    EXPECT_EQ(sym, "Csus(add9)");
+}
+
 TEST(Composing_ChordSymbolFormatterTests, InvalidBassPcSuppressesSlashBass)
 {
     // When bassPc is out of the valid 0–11 range (e.g. -1 from an analysis error),
