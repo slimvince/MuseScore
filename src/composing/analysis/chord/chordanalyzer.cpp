@@ -218,7 +218,7 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
             if (hasThirteenth) {
                 suffix = "13sus";
             } else if (hasNinthNatural && !hasNinthFlat && !hasNinthSharp) {
-                suffix = "9sus";
+                suffix = "sus(add9)";
             } else {
                 suffix = "7sus";
             }

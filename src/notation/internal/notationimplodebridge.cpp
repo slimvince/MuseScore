@@ -1158,7 +1158,6 @@ bool populateChordTrack(
             h->setParent(seg);
             h->setHarmonyType(HarmonyType::STANDARD);
             h->setHarmony(muse::String::fromStdString(symText));
-            h->setPlainText(muse::String::fromStdString(symText));
             score->undoAddElement(h);
         }
 
@@ -1176,7 +1175,6 @@ bool populateChordTrack(
                 h->setParent(seg);
                 h->setHarmonyType(useNashville ? HarmonyType::NASHVILLE : HarmonyType::ROMAN);
                 h->setHarmony(muse::String::fromStdString(fnText));
-                h->setPlainText(muse::String::fromStdString(fnText));
                 score->undoAddElement(h);
             }
         }
