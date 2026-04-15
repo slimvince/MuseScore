@@ -203,7 +203,8 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         if (hasMin7) {
             suffix = hasThirteenth ? "13sus2" : hasEleventh ? "11sus2" : hasNinth ? "9sus2" : "7sus2";
         } else {
-            suffix = "sus2";
+            // Natural eleventh in a bare sus2 chord = added 4th.
+            suffix = hasEleventh ? "sus2(add4)" : "sus2";
         }
         break;
 
@@ -238,6 +239,9 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
                 else if (hasNinthSharp) { suffix += "#9"; }
             } else if (hasEleventhSharp) {
                 suffix = "sus#4";
+            } else if (hasNinthNatural) {
+                // Natural 9th in a bare sus4 chord = added 2nd.
+                suffix = "sus(add9)";
             } else {
                 suffix = "sus";
             }
@@ -1765,27 +1769,6 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
             && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
         symbol += "/";
         symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
-    }
-
-    // Sanitize double quality prefix artifacts that can arise from rare extension
-    // combinations where quality text and extension text share a prefix.
-    // "sussus..." → "sus...": redundant first "sus" from Suspended quality + sus extension
-    {
-        size_t pos = symbol.find("sussus");
-        while (pos != std::string::npos) {
-            symbol.erase(pos, 3);  // remove the first "sus"
-            pos = symbol.find("sussus", pos);
-        }
-    }
-    // "augsus..." → "aug(sus...)": augmented quality "aug" followed by sus extension
-    for (const char* pat : { "augsus", "aussus" }) {
-        const size_t pos = symbol.find(pat);
-        if (pos != std::string::npos) {
-            // insert "(" after the 3-char quality prefix, close with ")" at end
-            symbol.insert(pos + 3, "(");
-            symbol += ")";
-            break;  // only one aug-sus collision can occur per symbol
-        }
     }
 
     return symbol;

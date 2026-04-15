@@ -1325,29 +1325,26 @@ TEST(Composing_ChordRomanNumeralTests, MajorAddFlatNinth_I_addFlatNine)
     EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I(addb9)");
 }
 
-// ── Formatter sanitization: double quality prefix (bug guard) ─────────────────
+// ── Suspended chords with added colour tones ──────────────────────────────────
 
-TEST(Composing_ChordSymbolFormatterTests, NoDuplicateSusSuffix_Sus4WithNaturalNinth)
+TEST(Composing_ChordSymbolFormatterTests, Sus4WithNaturalNinthFormatsAsSusAdd9)
 {
-    // Suspended4 + natural 9th (no seventh): should format as "Csus", NOT "Csussus2".
-    // The natural 9th is a non-defining tone for sus4 and should not duplicate the sus prefix.
-    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended4);
+    // Bb-C-Eb-F: Bb suspended-4 with natural 9th (added 2nd).
+    // Should format as "Bbsus(add9)", not plain "Bbsus".
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended4, 10 /*Bb*/, 10 /*bass=root*/);
     setExtension(r.identity.extensions, Extension::NaturalNinth);
-    const std::string sym = ChordSymbolFormatter::formatSymbol(r, 0);
-    EXPECT_EQ(sym.find("sussus"), std::string::npos)
-        << "Double sus prefix in: " << sym;
-    EXPECT_FALSE(sym.empty());
+    const std::string sym = ChordSymbolFormatter::formatSymbol(r, -2 /*Bb key*/);
+    EXPECT_EQ(sym, "Bbsus(add9)");
 }
 
-TEST(Composing_ChordSymbolFormatterTests, NoDuplicateSusSuffix_Sus2WithNaturalEleventh)
+TEST(Composing_ChordSymbolFormatterTests, Sus2WithNaturalEleventhFormatsAsSus2Add4)
 {
-    // Suspended2 + natural eleventh (no seventh): should format as "Csus2", NOT "Csus2sus" or "Csussus2".
+    // C-D-F-G: C suspended-2 with natural eleventh (added 4th).
+    // Should format as "Csus2(add4)", not plain "Csus2".
     ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Suspended2);
     setExtension(r.identity.extensions, Extension::NaturalEleventh);
     const std::string sym = ChordSymbolFormatter::formatSymbol(r, 0);
-    EXPECT_EQ(sym.find("sussus"), std::string::npos)
-        << "Double sus prefix in: " << sym;
-    EXPECT_FALSE(sym.empty());
+    EXPECT_EQ(sym, "Csus2(add4)");
 }
 
 TEST(Composing_ChordSymbolFormatterTests, Sus4WithMin7AndNaturalNinthFormatsAsSusAdd9)
