@@ -614,6 +614,7 @@ ExtraNoteCategory categorizeExtraNote(int rel, ChordQuality quality)
         break;
     case ChordQuality::Diminished:
         if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not diminished
+        if (rel == 7)  return ExtraNoteCategory::Contradiction; // P5  → not diminished (requires ♭5) // BUG-10
         if (rel == 10) return ExtraNoteCategory::Contradiction; // m7  → half-diminished
         if (rel == 11) return ExtraNoteCategory::Contradiction; // M7  → not diminished
         break;
