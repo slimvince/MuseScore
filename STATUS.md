@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-15 — sussus root-cause fix complete and confirmed in MuseScore. One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` removes `tok1 = u"sus"` from the sus re-attachment block in `ParsedChord::parse()`. Double-sus render is gone on live testing. 305/305 composing tests passing; 8 notation tests failing (all pre-existing, same as prior session). Next session priorities: cherry-pick sussus fix to submission-phase1 branch (pending approval), chord confidence normalization, upstream bug report for chordlist.cpp.*
+*Last updated: 2026-04-15 (session 2) — three commits cherry-picked onto submission-phase1 (new HEAD `a8893a9bc4`), chord confidence normalization (P8d) implemented on both branches. submission-phase1: 247/247 composing, 3/3 notation. master: 305/305 composing, 26/34 notation (same 8 pre-existing). Next session priorities: score inference QA, then RFC draft, then upstream bug report for chordlist.cpp.*
 
 ---
 
@@ -202,6 +202,14 @@ extensions) and `ChordFunction` (tonal-function: degree, diatonicToKey, keyTonic
 **P8c (bounds() method) is complete.** Both `ChordAnalyzerPreferences` and
 `KeyModeAnalyzerPreferences` expose `bounds()` returning a `ParameterBoundsMap` with
 parameter name → {min, max, isManual} for each numeric scoring parameter.
+
+**P8d (chord confidence normalization) is complete.** `ChordIdentity` now carries
+`normalizedConfidence` (0.0–1.0) alongside `score`. `ChordAnalyzerPreferences` gains
+`confidenceSigmoidMidpoint = 2.0` and `confidenceSigmoidSteepness = 1.5` — same empirical
+defaults as the key analyzer — and both appear in `bounds()`. The `normalizeChordConfidence()`
+free function in `chordanalyzer.cpp` populates all returned results inside `analyzeChord()`
+just before return. No existing callers changed (additive only). Implemented on both master
+(`5ddcf616f0`) and `submission-phase1` (`a8893a9bc4`).
 
 **Mode prior naming cleanup is complete.** The three abbreviated mode prior accessors
 (`modePriorLydianAug`, `modePriorLydianDom`, `modePriorPhrygianDom`) were renamed to their
@@ -1394,33 +1402,36 @@ Work likely beyond the plateau:
 
 ## Next session priorities
 
-1. **Restore the current Corelli GUI regressions on the note-only path**
+1. **Score inference QA**
+  Verify that `normalizedConfidence` values are plausible on real corpus scores
+  (low on sparse/ambiguous material, high on clean triadic passages). Use
+  `batch_analyze` JSON output to spot-check. No scoring changes — diagnostic only.
+
+2. **RFC draft**
+  Draft the MuseScore contribution RFC for the composing module. Cover: module
+  boundaries, analysis architecture, data flow, test coverage, and what is
+  excluded from the submission (tuning, chord-staff UI). Target audience:
+  MuseScore core team.
+
+3. **Upstream bug report for chordlist.cpp**
+  File an issue or PR against MuseScore Studio upstream for the `tok1 = u"sus"`
+  root-cause bug in `ParsedChord::parse()` (`src/engraving/dom/chordlist.cpp:993`).
+  Reference commit `b1ba746483` and provide a minimal repro (Fsus4 + any maj7
+  chord producing "Fsussus9" display).
+
+4. **Restore the current Corelli GUI regressions on the note-only path**
   Specifically: `m1 b3` and `m10 b3` still show `Gm` instead of expected `G`,
   `m2 b3` and `m18 b3` still miss late local entries, and `m24` still serializes
   as `[0:Dm][480:Fm][960:F]`. Do not reintroduce Harmony-input shortcuts.
 
-2. **Evaluation tier separation**
+5. **Evaluation tier separation**
   Stabilize the reporting layers before confidence calibration: internal
   consistency, full-texture external structural agreement, and full harmonic
   correctness.
 
-3. **Chord confidence calibration**
-  Add normalized chord confidence only after the primary texture failures and
-  benchmark baselines are stable.
-
-4. **Mixed-texture orchestration design**
+6. **Mixed-texture orchestration design**
   Define the smallest viable second-strategy path for obviously arpeggiated or
   single-line spans and compare calibrated confidence rather than raw scores.
-
-5. **Region identity + as-written mode decision**
-  Decide explicitly between harmonic-summary and as-written region identity,
-  including the deferred chord-track octave-deduplication work.
-
-6. **K533 native-vs-mirrored measure-number normalization (optional)**
-  Direct `K533-3.mscx` and the mirrored `score.mxl` now agree on harmony,
-  detected key, confidence, and region count, but still differ by a one-measure
-  numbering offset. Normalize only if downstream tooling needs identical JSON
-  measure numbering across both import paths.
 
 ---
 
