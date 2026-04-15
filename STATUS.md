@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-14 — Phase 2a display verification complete. Corpus spot-check (Corelli 70.3%, Dvorak 79.2%) confirms no regression from the previous session's formatter and key-detection fixes. Benchmark score visual inspections (BWV 227/7, Chopin BI16-1, Dvořák op08n06) confirm key annotations, Roman numerals, and chord identities are all correct; two deferred items noted (BI16 region flooding = known deferred test; ⁶₄ inversion rendering character = needs zoom confirmation). Phase 2 sign-offs deferred pending those two items; important analysis is working correctly. Next: Phase 3 (submission fork preparation).*
+*Last updated: 2026-04-15 — sussus root-cause fix complete and confirmed in MuseScore. One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` removes `tok1 = u"sus"` from the sus re-attachment block in `ParsedChord::parse()`. Double-sus render is gone on live testing. 305/305 composing tests passing; 8 notation tests failing (all pre-existing, same as prior session). Next session priorities: cherry-pick sussus fix to submission-phase1 branch (pending approval), chord confidence normalization, upstream bug report for chordlist.cpp.*
 
 ---
 
@@ -311,6 +311,9 @@ Corelli 70.3%, Dvorak 79.2% — no regression from fixes. Weighted 64.6% across 
 
 **chords.xml is deprecated/buggy:**
 MuseScore's `chords.xml` is likely deprecated and contains bugs. Our formatter must only produce strings valid in `chords_std.xml`. This was the root cause of the `sussus` bug — `9sus` existed in `chords.xml` but not `chords_std.xml`, causing corrupted rendering under Standard chord style. See Rule 16 in ARCHITECTURE.md.
+
+**sussus root cause fixed (2026-04-15):**
+One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` — removed `tok1 = u"sus"` from the susPending re-attachment block in `ParsedChord::parse()`. This was a genuine MuseScore core bug causing double-sus render for all sus+alteration chord suffixes. Should be reported upstream. Commits: `3967db8` (main fix: remove redundant `setPlainText`, change `9sus` → `sus(add9)`, catalog ground truth, Rule 16) + `b1ba746` (cleanup: remove `tok1 = u"sus"`). Tests: 305/305 composing, 30/34 notation (4 known deferred).
 
 ---
 
