@@ -1372,3 +1372,48 @@ TEST(Composing_ChordSymbolFormatterTests, InvalidBassPcSuppressesSlashBass)
         << "Slash bass present despite invalid bassPc in: " << sym;
     EXPECT_FALSE(sym.empty());
 }
+
+// ── Bug-10: P5 presence is a hard contradiction against Diminished quality ────
+//
+// A chord with a perfect fifth above the root cannot be diminished (diminished
+// requires a ♭5).  This was causing I° output on plain tonic major/minor triads
+// when non-chord tones were present in the collected pitch set.
+
+TEST(Composing_ChordAnalyzerTests, CmajorTriadIsNeverDiminished)
+{
+    // {C, E, G} — plain major triad; must not score as diminished.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
+        << "C major triad must not be scored as diminished";
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+}
+
+TEST(Composing_ChordAnalyzerTests, CminorTriadIsNeverDiminished)
+{
+    // {C, Eb, G} — plain minor triad; must not score as diminished.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
+        << "C minor triad must not be scored as diminished";
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+}
+
+TEST(Composing_ChordAnalyzerTests, CdiminishedTriadIsDiminished)
+{
+    // {C, Eb, Gb} — only the chord with a ♭5 (no P5) should score as diminished.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 66 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished)
+        << "C diminished triad must score as diminished";
+}
+
+TEST(Composing_ChordAnalyzerTests, MajorTriadWithPassingToneIsNeverDiminished)
+{
+    // {C, Eb, E, G} — C major triad with chromatic passing tone Eb.
+    // The perfect fifth G must veto the Diminished reading even though Eb is present.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
+        << "C major with passing Eb must not be scored as diminished";
+}
