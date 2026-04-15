@@ -309,6 +309,9 @@ Corelli 70.3%, Dvorak 79.2% — no regression from fixes. Weighted 64.6% across 
 - BI16 region flooding (many identical chord symbols per measure) — `PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16` known deferred
 - ⁶₄ inversion rendering character (`‡`/`½`) — needs zoom confirmation, may be MuseScore glyph behavior
 
+**chords.xml is deprecated/buggy:**
+MuseScore's `chords.xml` is likely deprecated and contains bugs. Our formatter must only produce strings valid in `chords_std.xml`. This was the root cause of the `sussus` bug — `9sus` existed in `chords.xml` but not `chords_std.xml`, causing corrupted rendering under Standard chord style. See Rule 16 in ARCHITECTURE.md.
+
 ---
 
 ## Pre-submission backlog — CLEARED

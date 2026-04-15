@@ -328,6 +328,18 @@ A commit with known failing tests is better than no commit. The commit history i
 
 Corollary: at session start (Rule 9 stale binary checklist), if the working tree is dirty, stash or commit before doing anything else. Never diagnose test failures in a dirty working tree without first knowing what changed.
 
+**Rule 16 — Do not rely on chords.xml**
+
+MuseScore has two chord description files:
+- `share/chords/chords_std.xml` — the active standard chord list used by default in all scores
+- `share/chords/chords.xml` — legacy file, likely deprecated, contains known bugs and inconsistencies with the parser
+
+When our formatter produces a chord symbol string, it must be valid according to `chords_std.xml` only. Do not add chord symbol strings that exist only in `chords.xml` — they will fail to parse correctly under the Standard chord style and may produce corrupted output.
+
+Confirmed example: `9sus` exists in `chords.xml` (id=134) but not in `chords_std.xml`. When used with Standard chord style, it triggers `generateDescription()` which produces a corrupted render list causing `Fsussus9` in the display. Fix: use `sus(add9)` instead which is correctly handled by the parser.
+
+When adding new chord symbol formats, always verify against `chords_std.xml` first, not `chords.xml`.
+
 ### 2.13 Cross-Platform by Default
 
 All code must run on every platform officially supported by MuseScore Studio: Windows,
