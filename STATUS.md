@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-15 (session 3) — notation 26/34 regression confirmed and fixed: `3967db861c` removed `setPlainText()` from `populateChordTrack` without adding `afterRead()`, leaving `plainText()` empty in test context. Fix: `h->afterRead()` after `h->setHarmony()` at both call sites (`9c282f382b`). master: 305/305 composing, 30/34 notation (4 pre-existing deferred). Proceeding to inference QA.*
+*Last updated: 2026-04-16*
 
 ---
 
@@ -210,6 +210,52 @@ defaults as the key analyzer — and both appear in `bounds()`. The `normalizeCh
 free function in `chordanalyzer.cpp` populates all returned results inside `analyzeChord()`
 just before return. No existing callers changed (additive only). Implemented on both master
 (`5ddcf616f0`) and `submission-phase1` (`a8893a9bc4`).
+
+**Bug 10 (P5 contradiction against Diminished) is fixed.** `categorizeExtraNote()` now
+returns `Contradiction` for `rel == 7` (perfect fifth) when scoring against `Diminished`
+quality. Previously P5 was only penalised as Foreign (−0.45), which was insufficient to
+prevent I° output on major/minor triads containing non-chord tones. Commit `6ce067f49c`.
+Test count: 309/309 composing. Bugs 1–9 and 11 from the Poulenc-session bug list are
+**unconfirmed** — no reproduction site found in the formatter source; symptoms are
+consistent with font-rendering artifacts of the Campania RNA font (ø encoding, superscript
+rendering of "11"/"13") or with score-specific collection issues (Bug 11). These require
+either live-score reproduction or upstream font investigation to diagnose further.
+
+**Session 5 — Jazz-score bug audit (2026-04-15):**
+
+- **Bug 1 (flat-root TPC collection) — unconfirmed.** Investigation showed pitch-class
+  extraction uses `normalizePc(MIDI_pitch)` throughout, not TPC. Six targeted tests
+  (Ab/Gb/Db/Eb/Bb major triads + AbMaj7) all pass immediately with no fixes required.
+  Logged as unconfirmed per stop conditions.
+
+- **Bug 2 (°°° triple-diminished token) — fixed.** `formatNashvilleNumber` was
+  concatenating `°` from `nashvilleQualitySuffix` (Diminished quality) with `°7` from
+  `nashvilleExtensionSuffix` (DiminishedSeventh extension), producing `°°7`. A UTF-8-aware
+  deduplication pass now collapses consecutive `°` runs to one. Unit test
+  `FullyDiminishedSeventh_NashvilleHasExactlyOneDegreeSymbol` verifies exactly one `°`
+  in the fully-diminished seventh Nashville symbol.
+
+- **Bug 3 (° vs ø half/fully-diminished collapse) — unconfirmed.** Code review confirmed
+  explicit `Contradiction` penalties between the two families (m7 against Diminished; dim7
+  against HalfDiminished). Zero abstract mismatches in catalog. Two cross-check tests added
+  (`FullyDiminishedNotMisreadAsHalfDiminished`, `HalfDiminishedNotMisreadAsFullyDiminished`)
+  — both pass.
+
+- **Bug 4 (non-standard quality tokens) — verified correct.** Targeted unit tests confirm
+  the formatter produces `Csusb9`, `Csus#4`, `C5b`, and `CMaj9(no 3)` for the respective
+  catalog entries. No formatter bugs found; tests added for ongoing regression protection.
+
+- **Bug 5 (passing-tone bass filter) — implemented.** Added `bassPassingToneMinWeightFraction
+  = 0.05` to `ChordAnalyzerPreferences`. The `analyzeChord` bass-selection loop and the
+  bridge's bass-PC selection loop both now require the candidate PC's raw weight to be ≥
+  5% of total region weight, filtering chromatic passing tones from slash-chord bass
+  candidacy. Falls back to absolute lowest pitch if no tone meets the threshold. Two tests
+  (`PassingToneBassFilter_LowWeightBassNoteIgnored`,
+  `PassingToneBassFilter_NormalBassNoteKept`) verify the filter engages only for genuinely
+  low-weight tones.
+
+Test count after session: **324/324 composing** (+15 new tests), **30/34 notation**
+(4 pre-existing deferred — unchanged).
 
 **Mode prior naming cleanup is complete.** The three abbreviated mode prior accessors
 (`modePriorLydianAug`, `modePriorLydianDom`, `modePriorPhrygianDom`) were renamed to their
@@ -1400,38 +1446,82 @@ Work likely beyond the plateau:
 - register-sensitive add2 vs add9
 - full monophonic engine
 
+---
+
+## Session 5 (2026-04-16) — Jazz formatter & analyzer pass
+
+**master HEAD:** 6ce067f49c1eab6bf1d1b7a214628af738b20f92
+**composing:** 324/324 | **notation:** 30/34 (4 deferred)
+
+Bug outcomes:
+- °°° triple-diminished token: FIXED — dedup pass in `formatNashvilleNumber`
+  collapses `°°` → `°` (UTF-8 aware). Commit: b1ba746483
+- Passing-tone bass filter: IMPLEMENTED — `bassPassingToneMinWeightFraction=0.05`
+  in `ChordAnalyzerPreferences`, applied in `analyzeChord` and bridge. Commit: 6ce067f49c
+- Flat-root TPC collection error: UNCONFIRMED — pitch-class uses MIDI pitch
+  throughout; TPC not involved. 6 verification tests added, all pass. Real-score
+  failure site not yet located. Needs live score inspection on specific failing
+  measures (My Funny Valentine m.1, 'Round Midnight m.1).
+- ° vs ø half/fully-dim collapse: UNCONFIRMED — contradictions already wired
+  correctly on synthetic inputs. Likely a real-score boundary/scoring issue.
+  Needs live score inspection.
+- Non-standard quality tokens (susb9, sus#4, C5b, CMaj9(no 3)): VERIFIED CORRECT
+  — legitimate chord symbol outputs for specific voicings, not formatter bugs.
+  4 cross-check tests added.
+
++15 composing tests (324/324 total).
+
+---
+
 ## Next session priorities
 
-1. **Score inference QA** ← current
-  Verify that `normalizedConfidence` values are plausible on real corpus scores
-  (low on sparse/ambiguous material, high on clean triadic passages). Use
-  `batch_analyze` JSON output to spot-check. No scoring changes — diagnostic only.
+1. **Live score inspection — flat-root collection error**
+   Load My Funny Valentine (m.1) and 'Round Midnight (m.1) in `batch_analyze`
+   with diagnostic output. For each measure where Ab7 is read as Am7b5 or
+   Gb7 as Gm7b5:
+   - Dump the exact notes being collected in that region
+   - Dump the root candidates and their scores
+   - Determine whether the error is in: (a) boundary detection including wrong
+     notes, (b) root scoring selecting wrong candidate from correct note set,
+     or (c) output spelling of a correctly-scored root
+   Do not fix speculatively. Locate the failure site first, then fix.
 
-2. **RFC draft**
-  Draft the MuseScore contribution RFC for the composing module. Cover: module
-  boundaries, analysis architecture, data flow, test coverage, and what is
-  excluded from the submission (tuning, chord-staff UI). Target audience:
-  MuseScore core team.
+2. **Live score inspection — ° vs ø collapse**
+   Same approach. Load a score where fully diminished is being read as
+   half-diminished. Dump collected notes and quality scores for the affected
+   region. Confirm whether the issue is real-score boundary/scoring or
+   something else.
 
-3. **Upstream bug report for chordlist.cpp**
-  File an issue or PR against MuseScore Studio upstream for the `tok1 = u"sus"`
-  root-cause bug in `ParsedChord::parse()` (`src/engraving/dom/chordlist.cpp:993`).
-  Reference commit `b1ba746483` and provide a minimal repro (Fsus4 + any maj7
-  chord producing "Fsussus9" display).
+3. **Annotate path extension — cadence markers + pivot labels**
+   Extend "Annotate to chord track" (Roman numeral mode only) to include:
+   - Cadence markers (PAC, IAC, HC, DC, PC) — already firing in chord staff
+     path, expose in annotate path
+   - Pivot chord labels — already firing in chord staff path, expose in
+     annotate path
+   - Tonicization labels (V/V, V/ii etc.) — universal across all presets
+   - Augmented sixth chord labels (It+6, Fr+6, Ger+6) — Standard and Baroque
+     presets only, suppress in Jazz and Nashville presets
+   Nashville annotation mode: chord symbols only, no cadence/pivot/aug6.
+   See ARCHITECTURE.md §[annotate section] for full design.
 
-4. **Restore the current Corelli GUI regressions on the note-only path**
-  Specifically: `m1 b3` and `m10 b3` still show `Gm` instead of expected `G`,
-  `m2 b3` and `m18 b3` still miss late local entries, and `m24` still serializes
-  as `[0:Dm][480:Fm][960:F]`. Do not reintroduce Harmony-input shortcuts.
+4. **RFC draft**
+   `docs/rfc_musescore_forum_post.md` — markdown document for Vincent to review
+   and post manually. See ARCHITECTURE.md §15 for submission phase context.
+   Content: what the module does, architecture overview, corpus quality
+   evidence, contribution intent (GPL v3, CLA), call for review.
+   Hold until priorities 1–2 are resolved or confirmed unresolvable without
+   deeper investigation.
 
-5. **Evaluation tier separation**
-  Stabilize the reporting layers before confidence calibration: internal
-  consistency, full-texture external structural agreement, and full harmonic
-  correctness.
+5. **Upstream bug report — chordlist.cpp**
+   Document the double-sus fix for the MuseScore team. Already fixed in
+   master (`b1ba746`) and cherry-picked to `submission-phase1`. Write as a
+   GitHub issue draft: root cause, one-line fix, reproduction steps.
 
-6. **Mixed-texture orchestration design**
-  Define the smallest viable second-strategy path for obviously arpeggiated or
-  single-line spans and compare calibrated confidence rather than raw scores.
+6. **Automated annotation review tool (post-RFC)**
+   `tools/auto_review.py` — loads a directory of scores via `batch_analyze`,
+   runs annotation path, passes output to Anthropic API judge for theory-
+   correctness evaluation without corpus ground truth. Design documented,
+   implementation deferred until after RFC.
 
 ---
 
