@@ -67,7 +67,17 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
         return;
     }
 
-    const auto& analysisResults = context.chordResults;
+    // Sort a working copy by descending score so the highest-scoring candidate
+    // appears first in the submenu.  The chordResults vector may have a
+    // region-winner prepended at position 0 (potentially lower-scoring than the
+    // fresh display analysis); sorting ensures the user always sees the best
+    // candidate at the top, regardless of that prepend ordering.
+    auto analysisResults = context.chordResults;
+    std::sort(analysisResults.begin(), analysisResults.end(),
+              [](const mu::composing::analysis::ChordAnalysisResult& a,
+                 const mu::composing::analysis::ChordAnalysisResult& b) {
+                  return a.identity.score > b.identity.score;
+              });
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 

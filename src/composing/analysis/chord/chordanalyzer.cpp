@@ -580,6 +580,18 @@ static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without mino
 static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
 static constexpr double kBassSupportPresenceThreshold = 0.05;  // matches distinct-PC presence threshold
 
+/// Minimum pcWeight for a seventh interval (min7 = +10, maj7 = +11) to register
+/// as a chord seventh extension.  Seventh notes in lightly-voiced jazz chords
+/// consistently appear in the 0.12–0.19 range (below the 0.20 general threshold)
+/// so a separate, lower guard is needed.
+/// Must be strictly above the max(0.1, weight) floor (0.1) applied in analyzeChord.
+static constexpr double kSeventhThreshold        = 0.12;
+
+/// Minimum pcWeight for all other chord extensions (9th, 11th, 13th, alterations).
+/// Conservative at 0.20 so that brief ornamental notes in non-jazz contexts
+/// (passing tones, neighbor notes) do not trigger false extension labels.
+static constexpr double kExtensionThreshold      = 0.20;
+
 // Fraction of the best raw score below which candidates are discarded.  [empirical]
 static constexpr double kScoreThresholdRatio     = 0.75;
 
@@ -720,9 +732,9 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
 
     ExtensionFlags f;
 
-    const bool rawMin7  = w(10) > 0.2;
-    const bool rawMaj7  = w(11) > 0.2;
-    const bool rawDim7  = (quality == ChordQuality::Diminished) && (w(9) > 0.2);
+    const bool rawMin7  = w(10) > kSeventhThreshold;
+    const bool rawMaj7  = w(11) > kSeventhThreshold;
+    const bool rawDim7  = (quality == ChordQuality::Diminished) && (w(9) > kExtensionThreshold);
 
     // For HalfDiminished the minor 7th is structural, not an "added" extension.
     // Also suppress if pitch class 10 is spelled as A# (#13) rather than Bb (min7).
@@ -738,28 +750,28 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
     f.hasMajorSeventh     = rawMaj7;
     f.hasDiminishedSeventh = rawDim7;
 
-    f.hasAddedSixth = w(9) > 0.2 && !rawMin7 && !rawMaj7
+    f.hasAddedSixth = w(9) > kExtensionThreshold && !rawMin7 && !rawMaj7
                       && quality != ChordQuality::Diminished;
 
-    f.hasNinthNatural = w(2) > 0.2;
-    f.hasNinthFlat    = w(1) > 0.2;
+    f.hasNinthNatural = w(2) > kExtensionThreshold;
+    f.hasNinthFlat    = w(1) > kExtensionThreshold;
     // Interval 3 is the minor 3rd in minor/diminished templates — exclude it.
     // For Major quality, also require a major 3rd (interval 4) to be present:
     // without it the note at interval 3 is the minor 3rd of a minor chord, not
     // a #9 (e.g. {A,C,E} is Am, not Aadd#9).  Suspended chords have no major
     // 3rd by definition, so the requirement is skipped for them.
-    f.hasNinthSharp   = w(3) > 0.2
-                        && (quality != ChordQuality::Major || w(4) > 0.2)
+    f.hasNinthSharp   = w(3) > kExtensionThreshold
+                        && (quality != ChordQuality::Major || w(4) > kExtensionThreshold)
                         && quality != ChordQuality::Minor
                         && quality != ChordQuality::Diminished
                         && quality != ChordQuality::HalfDiminished;
     f.hasNinth        = f.hasNinthNatural || f.hasNinthFlat || f.hasNinthSharp;
 
-    f.hasEleventh = w(5) > 0.2;
+    f.hasEleventh = w(5) > kExtensionThreshold;  // P4: stays at general threshold
 
     const bool hasSeventh = rawMin7 || rawMaj7 || rawDim7
                             || f.hasEleventh || f.hasNinthNatural;
-    f.hasThirteenth = w(9) > 0.2 && hasSeventh;
+    f.hasThirteenth = w(9) > kExtensionThreshold && hasSeventh;
     // A# (#13) vs Bb (min7): same pitch class, distinguished by TPC.
     // TPC delta from root: min7 = -2, aug6 (#13) = +10.
     {
@@ -767,18 +779,18 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
         const int tpc10 = tpcForPc[static_cast<size_t>(pc10)];
         const bool isSharp13Spelling = (rootTpc >= 0 && tpc10 >= 0)
                                        && (tpc10 - rootTpc == 10);
-        f.hasThirteenthSharp = w(10) > 0.2 && isSharp13Spelling
+        f.hasThirteenthSharp = w(10) > kExtensionThreshold && isSharp13Spelling
                                && quality != ChordQuality::Diminished;
     }
 
     // Natural 5th presence distinguishes #5 (no natural 5th) from b13 (natural 5th
     // also present).  For Augmented quality the #5 is structural, not an extension.
-    const bool naturalFifthPresent = (quality != ChordQuality::Augmented) && (w(7) > 0.2);
+    const bool naturalFifthPresent = (quality != ChordQuality::Augmented) && (w(7) > kExtensionThreshold);
 
     // pc+6: distinguish b5 (flat Gb spelling, no natural 5th) from #11 (sharp F# spelling
     // or natural 5th also present).  Compute first so hasFlatFifth is available for
     // the fifthSlotFilled check on pc+8 below.
-    const bool rawFlatFifth = w(6) > 0.2
+    const bool rawFlatFifth = w(6) > kExtensionThreshold
                               && quality != ChordQuality::Diminished
                               && quality != ChordQuality::HalfDiminished;
     {
@@ -806,7 +818,7 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
     const bool fifthSlotFilled = naturalFifthPresent || f.hasFlatFifth;
     const bool fifthSlotOrMinorFlat6 = fifthSlotFilled
                                        || (quality == ChordQuality::Minor && tpc8SpellsAsFlat);
-    f.hasSharpFifth     = w(8) > 0.2 && !fifthSlotOrMinorFlat6;
+    f.hasSharpFifth     = w(8) > kExtensionThreshold && !fifthSlotOrMinorFlat6;
     // Allow b13 without a 7th for Minor quality only when the perfect 5th is also present
     // (e.g. "Cmaddb13" = {C,Eb,G,Ab}).  Without the 5th, {root,m3,b6} is more parsimoniously
     // a first-inversion major triad (e.g. {G,Bb,Eb} = Eb/G), so we suppress the b13 label.
@@ -947,7 +959,7 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
         return 0.0;
     }
     const int dim7Pc = (rootPc + 9) % 12;
-    if (pcWeight[static_cast<size_t>(dim7Pc)] <= 0.2) {
+    if (pcWeight[static_cast<size_t>(dim7Pc)] <= kExtensionThreshold) {
         return 0.0;
     }
     for (int interval : scale) {
@@ -1339,20 +1351,34 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     std::array<double, 12> pcWeight {};
     int lowestPitch = std::numeric_limits<int>::max();
 
+    double totalRawWeight = 0.0;
     for (const ChordAnalysisTone& t : tones) {
         const int pc = normalizePc(t.pitch);
         pcWeight[static_cast<size_t>(pc)] += std::max(0.1, t.weight);
+        totalRawWeight += std::max(0.0, t.weight);
         if (t.pitch < lowestPitch) {
             lowestPitch = t.pitch;
         }
     }
 
-    // Bass: lowest ppitch across all tones (isBass flag is informational but we
-    // derive bass from the minimum pitch to correctly handle ottavas).
-    const int bassPc  = normalizePc(lowestPitch);
+    // Bass: lowest pitch whose weight meets the passing-tone threshold.
+    // A tone with weight < (fraction × total) is treated as a chromatic passing
+    // tone or ornament and excluded from slash-chord bass candidacy.
+    // Falls back to the absolute lowest pitch when no tone meets the threshold
+    // (e.g. when all tones have equal weight and the region is evenly distributed).
+    const double bassMinWeight = prefs.bassPassingToneMinWeightFraction * totalRawWeight;
+    int lowestQualifyingPitch = std::numeric_limits<int>::max();
+    for (const ChordAnalysisTone& t : tones) {
+        if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
+            lowestQualifyingPitch = t.pitch;
+        }
+    }
+    const int lowestPitchForBass = (lowestQualifyingPitch < std::numeric_limits<int>::max())
+                                   ? lowestQualifyingPitch : lowestPitch;
+    const int bassPc  = normalizePc(lowestPitchForBass);
     int       bassTpc = -1;
     for (const ChordAnalysisTone& t : tones) {
-        if (t.pitch == lowestPitch && t.tpc >= 0) {
+        if (t.pitch == lowestPitchForBass && t.tpc >= 0) {
             bassTpc = t.tpc;
             break;
         }
@@ -1693,7 +1719,20 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
             if (bestAlt != nullptr) {
                 const double margin = winner.identity.score - bestAlt->identity.score;
-                if (margin < prefs.inversionSuspicionMargin) {
+
+                // Seventh-chord exemption: if the winner carries a minor or major
+                // seventh extension that the best alternative lacks, the bass-root
+                // bonus is not the sole structural advantage — the winner is a richer,
+                // more specific reading (e.g. Am7 vs Em triad).  Do not penalise it.
+                const bool winnerHasSeventh =
+                    hasExtension(winner.identity.extensions, Extension::MinorSeventh)
+                    || hasExtension(winner.identity.extensions, Extension::MajorSeventh);
+                const bool altHasSeventh =
+                    hasExtension(bestAlt->identity.extensions, Extension::MinorSeventh)
+                    || hasExtension(bestAlt->identity.extensions, Extension::MajorSeventh);
+                const bool seventhExempt = winnerHasSeventh && !altHasSeventh;
+
+                if (!seventhExempt && margin < prefs.inversionSuspicionMargin) {
                     // Deduct the bass-bonus contribution from the winner and re-sort.
                     const double deduction = prefs.bassNoteRootBonus
                                             * (1.0 - prefs.inversionBonusReduction);
@@ -1722,6 +1761,156 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     }
 
     return results;
+}
+
+ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
+    const std::vector<ChordAnalysisTone>& tones,
+    int keySignatureFifths,
+    KeySigMode keyMode,
+    const ChordTemporalContext* context,
+    const ChordAnalyzerPreferences& prefs) const
+{
+    ChordAnalysisDiagnosticResult diag;
+    if (tones.empty()) { return diag; }
+
+    // ── Build pcWeight histogram and find bass (mirrors analyzeChord) ────────
+    std::array<double, 12> pcWeight{};
+    int lowestPitch = std::numeric_limits<int>::max();
+    double totalRawWeight = 0.0;
+    for (const ChordAnalysisTone& t : tones) {
+        const int pc = normalizePc(t.pitch);
+        pcWeight[static_cast<size_t>(pc)] += std::max(0.1, t.weight);
+        totalRawWeight += std::max(0.0, t.weight);
+        if (t.pitch < lowestPitch) { lowestPitch = t.pitch; }
+    }
+    diag.pcWeights = pcWeight;
+
+    const double bassMinWeight = prefs.bassPassingToneMinWeightFraction * totalRawWeight;
+    int lowestQualifyingPitch = std::numeric_limits<int>::max();
+    for (const ChordAnalysisTone& t : tones) {
+        if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
+            lowestQualifyingPitch = t.pitch;
+        }
+    }
+    const int lowestPitchForBass = (lowestQualifyingPitch < std::numeric_limits<int>::max())
+                                   ? lowestQualifyingPitch : lowestPitch;
+    const int bassPc = normalizePc(lowestPitchForBass);
+    diag.bassPc = bassPc;
+
+    std::array<int, 12> tpcForPc;
+    tpcForPc.fill(-1);
+    for (const ChordAnalysisTone& t : tones) {
+        if (t.tpc >= 0) {
+            const int pc = normalizePc(t.pitch);
+            if (tpcForPc[static_cast<size_t>(pc)] == -1) {
+                tpcForPc[static_cast<size_t>(pc)] = t.tpc;
+            }
+        }
+    }
+
+    int distinctPcs = 0;
+    for (double w : pcWeight) { if (w > 0.05) { ++distinctPcs; } }
+    diag.distinctPcs = distinctPcs;
+    if (distinctPcs < 3) { return diag; }
+
+    // ── Templates (same ordering as analyzeChord) ────────────────────────────
+    static const std::array<TemplateDef, 16> kDiagTemplates = {{
+        { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
+        { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },
+        { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },
+        { ChordQuality::Major,          { 0, 4, 6, 10 },    { 0, +4, -6, -2 }   },
+        { ChordQuality::Minor,          { 0, 3, 7 },        { 0, -3, +1 }       },
+        { ChordQuality::Minor,          { 0, 3, 7, 10 },    { 0, -3, +1, -2 }   },
+        { ChordQuality::Diminished,     { 0, 3, 6 },        { 0, -3, -6 }       },
+        { ChordQuality::Suspended4,     { 0, 5, 6, 10 },    { 0, -1, -6, -2 }   },
+        { ChordQuality::HalfDiminished, { 0, 3, 6, 10 },    { 0, -3, -6, -2 }   },
+        { ChordQuality::Augmented,      { 0, 4, 8 },        { 0, +4, +8 }       },
+        { ChordQuality::Suspended2,     { 0, 2, 7 },        { 0, +2, +1 }       },
+        { ChordQuality::Suspended4,     { 0, 5, 7, 10 },    { 0, -1, +1, -2 }   },
+        { ChordQuality::Suspended4,     { 0, 5, 7, 11 },    { 0, -1, +1, +5 }   },
+        { ChordQuality::Suspended4,     { 0, 5, 8, 10 },    { 0, -1, +8, -2 }   },
+        { ChordQuality::Suspended4,     { 0, 6, 7 },        { 0, +6, +1 }       },
+        { ChordQuality::Power,          { 0, 7 },           { 0, +1 }           }
+    }};
+
+    // ── Key context ──────────────────────────────────────────────────────────
+    const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
+    const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+
+    static constexpr std::array<int, 7> IONIAN_SCALE     = { 0, 2, 4, 5, 7, 9, 11 };
+    static constexpr std::array<int, 7> DORIAN_SCALE      = { 0, 2, 3, 5, 7, 9, 10 };
+    static constexpr std::array<int, 7> PHRYGIAN_SCALE    = { 0, 1, 3, 5, 7, 8, 10 };
+    static constexpr std::array<int, 7> LYDIAN_SCALE      = { 0, 2, 4, 6, 7, 9, 11 };
+    static constexpr std::array<int, 7> MIXOLYDIAN_SCALE  = { 0, 2, 4, 5, 7, 9, 10 };
+    static constexpr std::array<int, 7> AEOLIAN_SCALE     = { 0, 2, 3, 5, 7, 8, 10 };
+    static constexpr std::array<int, 7> LOCRIAN_SCALE     = { 0, 1, 3, 5, 6, 8, 10 };
+    static constexpr std::array<const std::array<int, 7>*, 7> MODE_SCALES = {
+        &IONIAN_SCALE, &DORIAN_SCALE, &PHRYGIAN_SCALE, &LYDIAN_SCALE,
+        &MIXOLYDIAN_SCALE, &AEOLIAN_SCALE, &LOCRIAN_SCALE
+    };
+    static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
+        0, 1, 2, 3, 4, 5, 6,
+        1, 2, 3, 4, 5, 6, 0,
+        5, 6, 0, 1, 2, 3, 4
+    };
+    const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
+    const std::array<int, 7>& scale = *MODE_SCALES[modeScaleIdx];
+
+    // ── Score every root × template combination ──────────────────────────────
+    diag.candidates.reserve(12 * kDiagTemplates.size());
+
+    for (int rootPc = 0; rootPc < 12; ++rootPc) {
+        for (size_t tplIdx = 0; tplIdx < kDiagTemplates.size(); ++tplIdx) {
+            const TemplateDef& tpl = kDiagTemplates[tplIdx];
+
+            const double tplScore   = scoreTemplateTones(tpl, rootPc, pcWeight);
+            const double extraScore = scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
+            const double bbonus     = appliedBassRootBonus(tpl, rootPc, bassPc, pcWeight, prefs);
+            const double nonBassAdj = nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
+            const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
+            const double tpcBonus   = tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
+            const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale);
+
+            double diatonicBonus = 0.0;
+            for (int interval : scale) {
+                if ((keyTonicPc + interval) % 12 == rootPc) {
+                    diatonicBonus = prefs.diatonicRootBonus;
+                    break;
+                }
+            }
+
+            // contextualBonuses() includes bassBonus + diatonicBonus; subtract them
+            // to isolate the remaining contextual contributions.
+            const double totalContext = contextualBonuses(
+                tpl, rootPc, bassPc, bbonus, distinctPcs, pcWeight,
+                keyTonicPc, scale, prefs, context);
+            const double contextBonus = totalContext - bbonus - diatonicBonus;
+
+            ChordCandidateDiagnostic entry;
+            entry.rootPc             = rootPc;
+            entry.templateIdx        = static_cast<int>(tplIdx);
+            entry.quality            = tpl.quality;
+            entry.templateTonesScore = tplScore;
+            entry.extraNotesScore    = extraScore;
+            entry.dim7Bonus          = dim7;
+            entry.nonBassAdjust      = nonBassAdj;
+            entry.structuralPenalty  = structural;
+            entry.tpcBonus           = tpcBonus;
+            entry.bassBonus          = bbonus;
+            entry.diatonicBonus      = diatonicBonus;
+            entry.contextBonus       = contextBonus;
+            entry.totalScore         = tplScore + extraScore + dim7 + nonBassAdj
+                                       + structural + tpcBonus + bbonus + diatonicBonus + contextBonus;
+            diag.candidates.push_back(entry);
+        }
+    }
+
+    std::sort(diag.candidates.begin(), diag.candidates.end(),
+              [](const ChordCandidateDiagnostic& a, const ChordCandidateDiagnostic& b) {
+                  return a.totalScore > b.totalScore;
+              });
+
+    return diag;
 }
 
 std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result,
@@ -1886,6 +2075,17 @@ std::string formatNashvilleNumber(const ChordAnalysisResult& result, int keySign
 
     nashville += nashvilleQualitySuffix(result);
     nashville += nashvilleExtensionSuffix(result);
+
+    // Deduplication: if quality suffix ("°") and extension suffix ("°7") are both
+    // appended for a fully diminished chord, the combined string contains "°°7".
+    // Collapse any run of two or more consecutive "°" (U+00B0, 2-byte UTF-8 \xc2\xb0)
+    // to a single "°" so the output is "°7" not "°°7".
+    static const std::string kDegreeSymbol = "\xc2\xb0";  // UTF-8 for U+00B0 (°)
+    static const std::string kDoubleDegree = "\xc2\xb0\xc2\xb0";
+    while (nashville.find(kDoubleDegree) != std::string::npos) {
+        nashville.replace(nashville.find(kDoubleDegree), kDoubleDegree.size(), kDegreeSymbol);
+    }
+
     nashville += nashvilleBassSuffix(result);
 
     return nashville;

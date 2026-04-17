@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-16*
+*Last updated: 2026-04-17 (session 11)*
 
 ---
 
@@ -256,6 +256,234 @@ either live-score reproduction or upstream font investigation to diagnose furthe
 
 Test count after session: **324/324 composing** (+15 new tests), **30/34 notation**
 (4 pre-existing deferred — unchanged).
+
+**Session 7 — Context-menu score display investigation (2026-04-16):**
+
+- **Score "inversion" — not confirmed; no bug.** The context menu showed Am7b5 (1.00) first
+  and Asus (2.37) as a secondary candidate, leading to a hypothesis that the selection was
+  inverted (higher=better, so 2.37 should win). Investigation disproved this:
+  - `analyzeChord()` sorts DESCENDING (higher=better, confirmed). No inversion in the
+    scoring engine.
+  - The `score=1.0` on Am7b5 is a **sentinel value**, not a real low score. It is
+    hardcoded in `notationharmonicrhythmbridge.cpp:208` for all chord-symbol-derived
+    regions in the notation path (`analyzeHarmonicRhythmJazz`). All notation-path regions
+    carry `identity.score=1.0` (confirmed: all 217 regions in the MFV notation JSON output
+    have `chordScore=1`).
+  - The Asus (2.37) and Bb/A (2.25) scores are from a separate, independent display-tone
+    analysis (fresh `analyzeChord()` call at the specific display tick). These two scores
+    are from different analysis passes and are **not comparable** to the sentinel 1.0.
+  - The `notationcomposingbridge.cpp:394–396` prepend is **intentional architecture**: the
+    regional winner (from written chord symbols via the notation path) is placed first so
+    the context menu mirrors the chord-track annotation. The code comment confirms this.
+
+- **writtenQuality confirmed HalfDiminished for MFV m.4 b.1.** The MSCX chord at
+  sequential measure 4, beat 1 has `<name>09</name>`. MuseScore's chord parser gives
+  `xmlKind()="half-diminished"` for this token (the "0" in MuseScore chord MSCX
+  represents the ø/half-diminished symbol, not ° fully diminished). `xmlKindToQuality()`
+  correctly returns `HalfDiminished`. The notation path output of Am7b5 is therefore
+  correct per the written chord symbol — there is no quality-mapping bug.
+
+- **UX concern noted (backlog).** Displaying `identity.score=1.0` (sentinel) alongside
+  real pitch-based scores (2.37, 2.25) in the context menu is misleading — users can
+  reasonably interpret the lower number as "scored worse". The fix would be to either
+  display `normalizedConfidence` instead of raw score, or suppress/mark scores for
+  chord-symbol-derived results differently. Not blocking; logged for future attention.
+
+- **Test counts:** 324/324 composing, 30/34 notation (4 pre-existing deferred — unchanged).
+
+**Session 8 — Jazz Mode written-symbol short-circuit fix (2026-04-16):**
+
+- **Bug confirmed and fixed: `analyzeHarmonicRhythmJazz()` substituted written chord
+  symbols as analysis winners.** In `notationharmonicrhythmbridge.cpp`, the jazz
+  notation path used `writtenRootPc`, `writtenBassPc`, and `writtenQuality` from the
+  Harmony element directly as the region's `chordResult.identity`, hardcoding
+  `identity.score=1.0` as a sentinel (no actual `analyzeChord()` call on the notes).
+  This violated ARCHITECTURE.md §4.1c ("chord symbol positions as region boundaries...
+  written roots as comparison metadata") and implemented §4.1f behavior ("Authoritative
+  Chord Symbol Mode") unconditionally without the documented prerequisite preference gate.
+
+- **Fix: `analyzeChord()` now runs on sounding notes for every region.** Lines 204–208
+  of `notationharmonicrhythmbridge.cpp` were replaced with a `ChordAnalyzerFactory::create()`
+  + `ChordTemporalContext` (jazzMode=true) + `analyzeChord(tones, ...)` call pattern,
+  mirroring `analyzeScoreJazz()` in `batch_analyze.cpp`. Written chord symbol data is
+  retained only as metadata (`fromChordSymbol=true`, `writtenRootPc`) for future diagnostic
+  and comparison use. The dead `xmlKindToQuality()` helper (notation copy) was removed.
+
+- **Jazz Mode boundary detection preserved.** `collectChordSymbolBoundaries()` still drives
+  region segmentation. `fromChordSymbol=true` flag is still set on all jazz-path regions.
+
+- **Batch/notation path parity restored.** Post-fix verification:
+  - MFV: first 20+ regions 100% agree (m=4 b=1 now Asus/2.37, previously Am7b5/1.0)
+  - Round Midnight: 92/92 regions (100%) agree between batch and notation paths
+  - Sentinel `chordScore=1` is gone; scores are real note-based values (1.6–3.0 range)
+
+- **2 new tests added** (`JazzModeUsesChordSymbolPositionsAsBoundaries`,
+  `JazzModeChordIdentityComesFromNotesNotWrittenSymbol`) confirming boundary preservation
+  and note-based identity with deliberately wrong written symbols.
+
+- **Impact on prior QA:** Any QA results for jazz scores with written chord symbols
+  (MFV, Round Midnight, big band scores) that used the notation annotate path were
+  evaluating written transcription symbols, not our inferrer output. These need re-running
+  with the corrected path for valid QA evaluation.
+
+- **Test counts:** 324/324 composing, 32/36 notation (+2 new tests; 4 pre-existing deferred).
+
+**Session 10 — Regression suite audit, kNinthThreshold investigation, Dom7b5 TPC penalty, RFC draft (2026-04-17):**
+
+- **Step 1: Catalog and context files already fully wired into regression suite.** Both
+  `data/chordanalyzer_catalog.musicxml` (376 measures, 199 harmony annotations) and
+  `data/chordanalyzer_context.musicxml` (17 harmony annotations, 13 events loaded by test)
+  are already exercised by 6 tests in `chordanalyzer_musicxml_tests.cpp`:
+  `DetectsExpectedAbstractHarmonyFromCatalog`, `ReportsCatalogSymbolAndRomanMismatches`,
+  `CatalogMusicXmlCoversMuseScoreChordSuffixes`, `DetectsExpectedHarmonyWithTemporalContext`,
+  `CatalogMusicXmlHasRomanNumeralPerChord`, `DumpAllCandidatesForContextFile`.
+  Current baseline: **0 abstract mismatches** in catalog, **13/13 context events pass**.
+  Batch-path note: `batch_analyze` produces 0 regions from the catalog (isolated chord format
+  does not trigger harmonic rhythm segmentation) and 9 regions from the context file (17
+  harmony annotations → 9 after same-chord merge). No new tests added; infrastructure is
+  complete.
+
+- **Step 2: kNinthThreshold deferred — gap too narrow.** Direct weight measurement:
+  - E9#5 target (East of the Sun m4, F#): pcWeight = **0.153**
+  - Corelli op01n08d m1 D passing tone (interval 2 above C root): pcWeight = **0.15789**
+  - Jazz ninth (0.153) < Corelli passing tone (0.15789). No threshold safely separates them.
+  - Bm9 (m3, C# ninth): pcWeight = 0.100 (floor-clamped) — not detectable at any threshold
+    above 0.10; fundamental sparse-voicing limitation, same as C9b5.
+  - E9#5 remains as E7#5, Bm9 remains as Bm7. Both are corpus artifacts (missing voicings),
+    not scorer bugs.
+
+- **Step 3: Dom7b5 TPC penalty correct and necessary.** `kDom7FlatFiveTpcPenalty = 0.55`
+  applies when the tritone is not spelled as a flat fifth (Gb). In the East of the Sun m2
+  C9b5 case, F# TPC spelling (TPC=21, delta from C TPC=15 is +6, not −6) correctly triggers
+  the penalty. This prevents C7#11 (Lydian dominant with F# bass) from being misread as
+  C7b5. C9b5 remains unfixable: both b5 and 9th are at pcWeight floor (0.100); even without
+  the TPC penalty, neither extension would be detected. No change applied.
+
+- **RFC draft created:** `docs/rfc_musescore_forum_post.md`
+
+- **Test counts:** 324/324 composing (unchanged), 32/36 notation (4 pre-existing deferred —
+  unchanged). Master HEAD: `d07efbc270`.
+
+**Session 11 — Annotation path temporal-bias fix and context-menu ordering fix (2026-04-17):**
+
+- **Bug: `addHarmonicAnnotationsToSelection` used sequential temporal-bias winner.** The
+  annotation write path (`notationcomposingbridge.cpp`) consumed `region.chordResult` from
+  `prepareUserFacingHarmonicRegions`, which calls `analyzeHarmonicRhythm`. That pass updates
+  `temporalCtx.previousRootPc` sequentially after each region; a preceding F-major region
+  leaves `previousRootPc=F`, giving the next region's F-rooted candidates a
+  `rootContinuityBonus` (+0.40) that can tip the winner from Cm7/F to F. The display path
+  avoids this by calling `findTemporalContext` (reads the actual preceding chord from the
+  score) — the annotation path was not doing the same.
+
+- **Fix: annotation path re-runs `analyzeChord()` with display-style context.** Inside the
+  region loop in `addHarmonicAnnotationsToSelection`, a fresh `analyzeChord()` call is made
+  with a `ChordTemporalContext` obtained from `findTemporalContext(score, seg, ...)`, exactly
+  mirroring the display path. The `ChordIdentity` from `fresh.front()` replaces
+  `region.chordResult.identity`; the `ChordFunction` fields are recomputed for the fresh root.
+  The chord-staff population path (`analyzeHarmonicRhythm` → `region.chordResult`) is
+  unchanged — this fix affects only the annotation write path.
+
+- **Bug: context-menu "Add chord symbol" submenu showed candidates in ascending score order.**
+  `appendNoteAnalysisItems` in `notationcontextmenumodel.cpp` iterated `context.chordResults`
+  in the order returned by `analyzeNoteHarmonicContextRegionallyInWindow`. The
+  `sameDisplayResult` guard in that function prepends the lower-scoring region winner at
+  position 0 when it differs from the fresh display winner, leaving the list in ascending
+  order (lowest score first). Result: Am7/F(2.48), C7sus/F(2.60), Cm7/F(2.97) — the best
+  candidate appeared last.
+
+- **Fix: sort candidates descending before building menu items.** A `std::sort` by
+  `identity.score` descending is applied to a local copy of `context.chordResults` before
+  iterating. The sorted order matches what the user expects (best match first). No change to
+  the underlying analysis or sentinel-value architecture.
+
+- **Two unit tests added** for the Cm7/F slash-chord annotation regression guard:
+  - `Cm7SlashF_ChordTonesDominant_IsCm7WithoutContext`: C-chord tones heavily outweigh F
+    (0.2 bass weight) — Cm7/F wins without any temporal context.
+  - `Cm7SlashF_StepwiseBassContext_IsCm7NotFsus`: equal-weight tones (F:1.0, C:1.0, …) +
+    `previousRootPc=C` + `bassIsStepwiseFromPrevious=true` — rootContinuityBonus (+0.40),
+    sameRootInversionBonus (+0.40), stepwiseBassInversionBonus (+0.50) combine (+1.30) to
+    flip the winner from Fsus(add9) to Cm7add11/F. The `add11` suffix appears because F at
+    equal weight exceeds the extension threshold and is counted as the perfect-4th (add11)
+    above C root.
+
+- **Em/A at m.5 (East of the Sun) diagnosed — structural mismatch, not an inversion bug.**
+  Tones: A (bass), C, E, G, B (Gmaj key). All four of A, C, E, G match the Am7 template
+  exactly (B = natural 9th extension). Am7 wins on note content alone (4/4 template coverage,
+  plus bassRootBonus). "Em/A" from the ground truth reflects a functional reading (E
+  structural, A as pedal) that template-coverage analysis cannot distinguish from Am7. No
+  fix applied; deferred to functional-analysis / pedal-tone detection work.
+
+- **Test counts:** 326/326 composing (+2 new tests), 32/36 notation (4 pre-existing deferred —
+  unchanged). Master HEAD: `d07efbc270` (no commit this session — working tree modified).
+
+**Session 9 — Extension threshold calibration and inversion-correction fix (2026-04-17):**
+
+- **Root cause analysis of 6 failing jazz-score measures completed.** Diagnostic tracing
+  (using `diagnoseChord` on real-score region tones) confirmed two distinct failure modes:
+  - **Category B (4/6 measures):** Extension detection threshold (0.20) too high for
+    lightly-voiced jazz 7ths. Min7/Maj7 notes land at 0.12–0.19 pcWeight (below threshold,
+    above the `max(0.1, weight)` floor). Affected: Gmaj7 B=0.176, Bm9 A=0.186, Am7 G=0.179,
+    Cm7 Bb=0.129.
+  - **Category C (Measure 5):** Inversion correction misfires on legitimate root-position Am7.
+    Bass=root=A triggers the correction which promotes Em/A over Am7.
+
+- **Fix 1: `kSeventhThreshold = 0.12` introduced for min7/maj7 detection.** The general
+  `kExtensionThreshold` (0.20) is unchanged for all other extensions (9th, 11th, 13th,
+  alterations). Only `rawMin7` (w(10)) and `rawMaj7` (w(11)) now use the lower threshold,
+  catching lightly-voiced jazz 7ths without triggering false extension labels on Baroque
+  ornamental passing tones. This surgical change avoids regressions in Corelli tests
+  that were caused by an earlier blanket 0.20→0.12 change (interval 5 = P4 and interval
+  2 = M2 ornamental notes were falsely detected as add11/add9).
+
+- **Fix 2: Seventh-chord exemption added to inversion correction.** When the winning candidate
+  carries `MinorSeventh` or `MajorSeventh` (now detectable at 0.12) and the best alternative
+  does not, the bass-root inversion correction is skipped. Rationale: a richer, more specific
+  seventh-chord reading should not be penalized by the inversion heuristic designed for triadic
+  inversions. This resolves Measure 5 (Am7 correctly wins over Em/A).
+
+- **Verification:**
+  - Abstract chord mismatch total: **0** (down from ~6 before fixes; 7th-flag mismatches
+    for Gmaj7, Bm9, Am7, Cm7 and root-mismatch for Am7 all eliminated).
+  - Symbol/Roman mismatch total: 135 (unchanged — pre-existing catalog annotation
+    inconsistencies, not analyzer bugs; informational only, do not fail tests).
+  - Composing tests: **324/324** passing.
+  - Notation tests: **32/36** (4 pre-existing deferred — unchanged; two additional failures
+    that appeared during the broad threshold experiment were eliminated by the targeted
+    kSeventhThreshold approach).
+
+- **Remaining unfixed from the 6 jazz measures:**
+  - E9#5 (Measure 4): natural 9th F# at 0.153 below `kExtensionThreshold=0.20` — still
+    outputs `E7#5` instead of `E9#5`. The 9th threshold cannot be safely lowered without
+    Corelli regressions.
+  - C9b5 (Measure 2): D (9th) and F# (b5) both at pcWeight=0.100 (clamped floor) — not
+    detectable at any threshold above the floor. Dom7b5 template also blocked by TPC
+    penalty (F# spelling). Would require TPC-aware template disambiguation.
+
+**Session 6 — Live-score flat-root diagnostic (2026-04-16):**
+
+- **ARCHITECTURE.md version:** d07efbc270 committed with version 3.23 (intended 3.24 per
+  session plan — content (annotation color policy, three-mode design) correctly present,
+  minor version label discrepancy noted).
+
+- **Score load confirmed:** both `my-funny-valentine-bill-evans-transcription.mscz` and
+  `round-midnight-by-thelonius-monk.mscz` load cleanly in `batch_analyze` and produce
+  full JSON output.
+
+- **Flat-root bug investigation (stop condition triggered — no fix applied):**
+  The expected bugs (Ab7 being read as Am7b5; Gb7 being read as Gm7b5) do NOT exist in
+  the actual score files:
+  - **MFV m.1:** batch output is `Cmadd9` (C minor). No Am7b5 at m.1 at all.
+  - **Round Midnight m.1:** batch output is `Am7b5` with `writtenRootPc=9` (A natural).
+    MSCX inspection confirms `<root>17</root>` = TPC 17 = A natural. `tpc2pitch(17)%12=9`.
+    The score genuinely has A natural written as the root — not Ab (which would be TPC 10).
+    The analyzer output is correct per the written content of the score.
+  The session expectations were based on standard 'Round Midnight changes (Ab7 at m.1) but
+  this specific Thelonious Monk transcription uses A natural as the opening chord (A°7(11),
+  part of a descending natural-root sequence: A→G→F / D→C→Bb). No code change required.
+  Next step: confirm with user whether the score files are the intended diagnostic targets or
+  whether a different arrangement/version was expected.
+
+- **Test counts verified:** 324/324 composing, 30/34 notation (same 4 pre-existing deferred).
 
 **Mode prior naming cleanup is complete.** The three abbreviated mode prior accessors
 (`modePriorLydianAug`, `modePriorLydianDom`, `modePriorPhrygianDom`) were renamed to their

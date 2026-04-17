@@ -1567,4 +1567,130 @@ TEST_F(Notation_ComposingBridgeTests, AddHarmonicAnnotationsToSelectionWritesAnd
     delete score;
 }
 
+// ── Jazz Mode boundary-detection fix tests (§4.1c) ──────────────────────────
+//
+// Prior to the fix, analyzeHarmonicRhythmJazz() substituted written chord
+// symbol identity directly into HarmonicRegion::chordResult (score sentinel=1.0,
+// quality from xmlKind).  The tests below confirm that after the fix:
+//   1. Chord symbol positions are still used as region boundaries (boundary
+//      detection preserved).
+//   2. chordResult.identity comes from analyzeChord() on the sounding notes,
+//      not from the written symbol.
+//   3. identity.score is a real note-based value, not the old 1.0 sentinel.
+
+/// Helper: add a standard STANDARD Harmony annotation at the given segment.
+static Harmony* addHarmonyAtSegment(MasterScore* score, Segment* segment, const QString& text)
+{
+    ChordRest* cr = segment->cr(0);
+    if (!cr) {
+        return nullptr;
+    }
+    score->startCmd(TranslatableString::untranslatable("Add test harmony"));
+    Harmony* h = mu::engraving::Factory::createHarmony(segment);
+    h->setHarmonyType(HarmonyType::STANDARD);
+    h->setHarmony(text);
+    h->setTrack(cr->track());
+    h->setParent(segment);
+    score->undoAddElement(h);
+    score->endCmd();
+    return h;
+}
+
+TEST_F(Notation_ImplodeTests, JazzModeUsesChordSymbolPositionsAsBoundaries)
+{
+    // Adding a chord symbol at tick 0 and another at tick 960 (second half-note chord)
+    // must produce exactly 2 regions in the Jazz path, with boundaries at those ticks.
+    MasterScore* score = ScoreRW::readScore(u"implode_half_measure_harmony_changes.mscx");
+    ASSERT_TRUE(score);
+
+    Segment* seg0 = score->firstSegment(SegmentType::ChordRest);
+    ASSERT_TRUE(seg0);
+    Segment* seg1 = score->tick2segment(Fraction(1, 2), true, SegmentType::ChordRest);
+    ASSERT_TRUE(seg1) << "expected second ChordRest segment at tick Fraction(1,2)";
+
+    addHarmonyAtSegment(score, seg0, "C");
+    addHarmonyAtSegment(score, seg1, "G");
+    score->doLayout();
+
+    const auto regions = mu::notation::analyzeHarmonicRhythm(
+        score,
+        Fraction(0, 1),
+        score->endTick(),
+        {},
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+
+    ASSERT_EQ(regions.size(), 2u) << "expected one region per chord symbol";
+    EXPECT_EQ(regions[0].startTick, Fraction(0, 1).ticks());
+    EXPECT_EQ(regions[1].startTick, Fraction(1, 2).ticks());
+    EXPECT_TRUE(regions[0].fromChordSymbol);
+    EXPECT_TRUE(regions[1].fromChordSymbol);
+
+    delete score;
+}
+
+TEST_F(Notation_ImplodeTests, JazzModeChordIdentityComesFromNotesNotWrittenSymbol)
+{
+    // Load a score where:
+    //   tick 0–960:  C4+E4+G4 (C major triad) — written symbol "Dm" (D minor, wrong)
+    //   tick 960–end: G4+B4+D5 (G major triad) — written symbol "Em" (E minor, wrong)
+    //
+    // After the fix, analyzeChord() runs on the sounding notes.  The inferred root
+    // and quality must come from the notes, not the written symbols.
+    //
+    // Metadata checks:
+    //   regions[0].writtenRootPc == 2  (D = written root of "Dm")
+    //   regions[1].writtenRootPc == 4  (E = written root of "Em")
+    //
+    // Inferred identity checks (note-based):
+    //   regions[0] → C major: rootPc=0, quality=Major
+    //   regions[1] → G major: rootPc=7, quality=Major
+    MasterScore* score = ScoreRW::readScore(u"implode_half_measure_harmony_changes.mscx");
+    ASSERT_TRUE(score);
+
+    Segment* seg0 = score->firstSegment(SegmentType::ChordRest);
+    ASSERT_TRUE(seg0);
+    Segment* seg1 = score->tick2segment(Fraction(1, 2), true, SegmentType::ChordRest);
+    ASSERT_TRUE(seg1) << "expected second ChordRest segment at tick Fraction(1,2)";
+
+    addHarmonyAtSegment(score, seg0, "Dm");   // written D minor — notes say C major
+    addHarmonyAtSegment(score, seg1, "Em");   // written E minor — notes say G major
+    score->doLayout();
+
+    const auto regions = mu::notation::analyzeHarmonicRhythm(
+        score,
+        Fraction(0, 1),
+        score->endTick(),
+        {},
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+
+    ASSERT_EQ(regions.size(), 2u);
+
+    // ── Region 0: C4+E4+G4 (C major) vs written "Dm" ──
+    const auto& r0 = regions[0];
+    EXPECT_TRUE(r0.fromChordSymbol);
+    EXPECT_EQ(r0.writtenRootPc, 2) << "written root of 'Dm' should be stored as metadata (D=pc2)";
+    // Note analysis: C major (root=C, quality=Major)
+    EXPECT_EQ(r0.chordResult.identity.rootPc, 0)
+        << "note-based analysis of C4+E4+G4 should give root C (pc=0), not D (pc=2) from written symbol";
+    EXPECT_EQ(r0.chordResult.identity.quality, mu::composing::analysis::ChordQuality::Major)
+        << "note-based analysis of C4+E4+G4 should give Major quality, not Minor from written symbol";
+    EXPECT_NE(r0.chordResult.identity.score, 1.0)
+        << "identity.score must be a real note-based score, not the old 1.0 sentinel";
+    EXPECT_GT(r0.chordResult.identity.score, 0.0);
+
+    // ── Region 1: G4+B4+D5 (G major) vs written "Em" ──
+    const auto& r1 = regions[1];
+    EXPECT_TRUE(r1.fromChordSymbol);
+    EXPECT_EQ(r1.writtenRootPc, 4) << "written root of 'Em' should be stored as metadata (E=pc4)";
+    // Note analysis: G major (root=G, quality=Major)
+    EXPECT_EQ(r1.chordResult.identity.rootPc, 7)
+        << "note-based analysis of G4+B4+D5 should give root G (pc=7), not E (pc=4) from written symbol";
+    EXPECT_EQ(r1.chordResult.identity.quality, mu::composing::analysis::ChordQuality::Major)
+        << "note-based analysis of G4+B4+D5 should give Major quality, not Minor from written symbol";
+    EXPECT_NE(r1.chordResult.identity.score, 1.0)
+        << "identity.score must be a real note-based score, not the old 1.0 sentinel";
+
+    delete score;
+}
+
 

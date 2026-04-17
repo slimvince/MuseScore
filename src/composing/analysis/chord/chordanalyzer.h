@@ -23,6 +23,7 @@
 
 
 #pragma once
+#include <array>
 #include <memory>
 #include <string>
 #include <vector>
@@ -345,6 +346,13 @@ struct ChordAnalyzerPreferences {
     /// as the written attack weight.
     double pedalTailWeightMultiplier = 0.3;
 
+    /// Minimum weight fraction for a tone to be considered a valid bass-note candidate.
+    /// A tone whose weight is less than (fraction × total_weight) is treated as a
+    /// chromatic passing tone or ornament and excluded from slash-chord bass selection.
+    /// Set to 0.0 to disable the filter (all tones are valid bass candidates).
+    /// Range: 0.0–0.5.  Default: 0.05 (5 % of accumulated weight).
+    double bassPassingToneMinWeightFraction = 0.05;
+
     // ── Confidence normalization (§P8d) ─────────────────────────────────────
 
     /// Score gap (winner − runner-up) at which normalizedConfidence = 0.5.
@@ -402,10 +410,11 @@ struct ChordAnalyzerPreferences {
             { "sameRootInversionBonus",        { 0.0, 2.0 } },
             { "inversionSuspicionMargin",           { 0.0, 2.0 } },
             { "inversionBonusReduction",            { 0.0, 1.0 } },
-            { "harmonicBoundaryJaccardThreshold",   { 0.0, 1.0 } },
-            { "pedalTailWeightMultiplier",          { 0.0, 1.0 } },
-            { "confidenceSigmoidMidpoint",          { 0.5, 5.0 } },
-            { "confidenceSigmoidSteepness",         { 0.5, 5.0 } },
+            { "harmonicBoundaryJaccardThreshold",       { 0.0, 1.0 } },
+            { "pedalTailWeightMultiplier",              { 0.0, 1.0 } },
+            { "bassPassingToneMinWeightFraction",       { 0.0, 0.5 } },
+            { "confidenceSigmoidMidpoint",              { 0.5, 5.0 } },
+            { "confidenceSigmoidSteepness",             { 0.5, 5.0 } },
         };
     }
 };
@@ -475,6 +484,34 @@ struct ChordTemporalContext {
     bool jazzMode = false;
 };
 
+/// Per-candidate diagnostic entry from the full 12 × template scoring loop.
+/// Component scores sum (approximately) to totalScore.
+struct ChordCandidateDiagnostic {
+    int rootPc = 0;
+    int templateIdx = 0;                   ///< 0-based index into the 16-template array
+    ChordQuality quality = ChordQuality::Unknown;
+    double totalScore = 0.0;
+    // ── Additive scoring components ────────────────────────────────────────
+    double templateTonesScore = 0.0; ///< scoreTemplateTones() — template tone hits
+    double extraNotesScore    = 0.0; ///< scoreExtraNotes()    — extensions (+) / contradictions (−)
+    double dim7Bonus          = 0.0; ///< dim7CharacteristicBonus()
+    double nonBassAdjust      = 0.0; ///< nonBassAdjustment() — ≤ 0 for non-bass Min7/HalfDim/Sus4
+    double structuralPenalty  = 0.0; ///< structuralPenalties() — ≤ 0
+    double tpcBonus           = 0.0; ///< tpcConsistencyBonus()
+    double bassBonus          = 0.0; ///< appliedBassRootBonus() (0 when root ≠ bass)
+    double diatonicBonus      = 0.0; ///< diatonicRootBonus (0 when root is non-diatonic)
+    double contextBonus       = 0.0; ///< continuity + resolution + inversion bonuses
+};
+
+/// Full diagnostic output from a single chord analysis run.
+struct ChordAnalysisDiagnosticResult {
+    int bassPc = -1;                        ///< Bass PC chosen by the analyzer
+    std::array<double, 12> pcWeights{};    ///< Per-PC accumulated weights (pre-normalization)
+    int distinctPcs = 0;                    ///< Distinct PCs with weight > 0.05
+    /// All 12 × 16 = 192 candidates, sorted descending by totalScore.
+    std::vector<ChordCandidateDiagnostic> candidates;
+};
+
 /// Interface for chord analysis strategies.
 ///
 /// Callers that need dependency injection (tests, bridge) should hold a
@@ -511,6 +548,16 @@ public:
         KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const override;
+
+    /// Run the full 12 × template scoring loop and return per-candidate breakdowns.
+    /// Unlike analyzeChord(), post-scoring quality normalization is not applied, so
+    /// quality reflects the raw template that produced the score.
+    ChordAnalysisDiagnosticResult diagnoseChord(
+        const std::vector<ChordAnalysisTone>& tones,
+        int keySignatureFifths,
+        KeySigMode keyMode,
+        const ChordTemporalContext* context = nullptr,
+        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const;
 };
 
 /// Analyzer implementation variants.
