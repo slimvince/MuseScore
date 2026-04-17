@@ -723,6 +723,21 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         return;
     }
 
+    // Create a fresh analyzer for annotation writes.  The analyzeHarmonicRhythm
+    // pass carries sequential ChordTemporalContext (previousRootPc, etc.) which
+    // adds rootContinuityBonus across regions.  When that bonus tips a lower-
+    // scoring candidate to the top (e.g. a region-level F over Cm7/F because
+    // the preceding region was also F), the annotation diverges from what the
+    // display path would show.
+    //
+    // The display path (analyzeNoteHarmonicContextRegionallyInWindow) fixes this
+    // by calling analyzeChord() fresh with a segment-derived ChordTemporalContext
+    // via findTemporalContext() — which populates bassIsStepwiseFromPrevious and
+    // bassIsStepwiseToNext from the actual score context, enabling the
+    // stepwiseBassInversionBonus for inverted slash chords (e.g. Cm7/F over F).
+    // We replicate that approach here so annotation and display stay in sync.
+    const auto chordAnalyzerAnnotation = mu::composing::analysis::ChordAnalyzerFactory::create();
+
     score->startCmd(TranslatableString("undoableAction", "Add harmonic annotations to selection"));
 
     for (const auto& region : regions) {
@@ -740,15 +755,49 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         }
 
         const int keyFifths = region.keyModeResult.keySignatureFifths;
+        const auto keyMode   = region.keyModeResult.mode;
+
+        // Fresh chord analysis using a display-style temporal context (matching
+        // what analyzeNoteHarmonicContextRegionallyInWindow does), not the
+        // cumulative sequential context carried by analyzeHarmonicRhythm.
+        // Fall back to region.chordResult when tones are absent (carried gaps).
+        mu::composing::analysis::ChordAnalysisResult annotationResult = region.chordResult;
+        if (!region.tones.empty()) {
+            const int currentBassPc = region.chordResult.identity.bassPc;
+            const auto displayCtx = findTemporalContext(
+                score, seg, excludeStaves, keyFifths, keyMode, currentBassPc);
+            const auto fresh = chordAnalyzerAnnotation->analyzeChord(
+                region.tones, keyFifths, keyMode, &displayCtx);
+            if (!fresh.empty()) {
+                annotationResult.identity = fresh.front().identity;
+                // Recompute tonal-function fields for the fresh root so Roman
+                // numerals and Nashville numbers remain consistent.
+                const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(keyFifths);
+                const int tonicPc  = (ionianPc
+                    + mu::composing::analysis::keyModeTonicOffset(keyMode)) % 12;
+                annotationResult.function.keyTonicPc   = tonicPc;
+                annotationResult.function.keyMode      = keyMode;
+                annotationResult.function.degree       = -1;
+                const auto& scale = keyModeScaleIntervals(keyMode);
+                for (size_t i = 0; i < scale.size(); ++i) {
+                    if ((tonicPc + scale[i]) % 12
+                            == annotationResult.identity.rootPc) {
+                        annotationResult.function.degree = static_cast<int>(i);
+                        break;
+                    }
+                }
+                annotationResult.function.diatonicToKey = (annotationResult.function.degree >= 0);
+            }
+        }
 
         const std::string symText = writeChordSymbols
-            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(region.chordResult, keyFifths)
+            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths)
             : "";
         const std::string romanText = writeRomanNumerals
-            ? mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(region.chordResult)
+            ? mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(annotationResult)
             : "";
         const std::string nashvilleText = writeNashvilleNumbers
-            ? mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(region.chordResult, keyFifths)
+            ? mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(annotationResult, keyFifths)
             : "";
 
         for (staff_idx_t si : writeStaves) {

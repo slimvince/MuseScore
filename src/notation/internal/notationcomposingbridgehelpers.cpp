@@ -1029,11 +1029,24 @@ collectRegionTones(const mu::engraving::Score* sc,
         return {};
     }
 
-    // Bass = PC with the lowest actual MIDI pitch across the entire region.
+    // Bass = lowest MIDI pitch among PCs with sufficient accumulated weight.
+    // A PC whose weight is below bassPassingToneMinWeightFraction × totalWeight is
+    // treated as a chromatic passing tone or ornament and skipped for bass selection.
+    // Falls back to the absolute lowest pitch if no PC meets the threshold.
+    const double bassMinWeight = totalWeight * prefs.bassPassingToneMinWeightFraction;
     int bassPitch = std::numeric_limits<int>::max();
     for (int pc = 0; pc < 12; ++pc) {
-        if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
+        if (accum[pc].totalWeight >= bassMinWeight && accum[pc].lowestPitch < bassPitch) {
             bassPitch = accum[pc].lowestPitch;
+        }
+    }
+    // Fallback: if the threshold filtered everything (e.g. very sparse chord),
+    // use the absolute lowest pitch.
+    if (bassPitch == std::numeric_limits<int>::max()) {
+        for (int pc = 0; pc < 12; ++pc) {
+            if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
+                bassPitch = accum[pc].lowestPitch;
+            }
         }
     }
     const int bassPC = (bassPitch < std::numeric_limits<int>::max())

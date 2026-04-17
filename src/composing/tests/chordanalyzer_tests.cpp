@@ -49,6 +49,28 @@ std::vector<ChordAnalysisTone> tones(std::initializer_list<int> pitches)
     return out;
 }
 
+/// Build tones with explicit TPC data using the test TPC encoding:
+/// F=14, C=15, G=16, D=17, A=18, E=19, B=20; each flat -7, each sharp +7.
+/// So Ab=11, Gb=9, Db=10, Eb=12, Bb=13.  -1 = no TPC data.
+std::vector<ChordAnalysisTone> tonesWithTpc(std::initializer_list<std::pair<int,int>> pitchTpcPairs)
+{
+    std::vector<ChordAnalysisTone> out;
+    out.reserve(pitchTpcPairs.size());
+
+    bool first = true;
+    for (const auto& pt : pitchTpcPairs) {
+        ChordAnalysisTone t;
+        t.pitch  = pt.first;
+        t.tpc    = pt.second;
+        t.weight = 1.0;
+        t.isBass = first;
+        out.push_back(t);
+        first = false;
+    }
+
+    return out;
+}
+
 ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
                                     int rootPc = 0, int bassPc = 0,
                                     bool hasMin7 = false, bool hasMaj7 = false,
@@ -154,6 +176,30 @@ TEST(Composing_ChordAnalyzerTests, DetectsHalfDiminished)
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Bm7b5");
+}
+
+TEST(Composing_ChordAnalyzerTests, FullyDiminishedNotMisreadAsHalfDiminished)
+{
+    // {B,D,F,Ab}: dim7 interval (9 semitones) distinguishes fully dim from half-dim.
+    // Must be Diminished+DiminishedSeventh (B°7), never HalfDiminished (Bø7).
+    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished)
+        << "B,D,F,Ab must be Diminished, not HalfDiminished";
+    EXPECT_NE(results.front().identity.quality, ChordQuality::HalfDiminished)
+        << "B,D,F,Ab must not be classified as HalfDiminished";
+}
+
+TEST(Composing_ChordAnalyzerTests, HalfDiminishedNotMisreadAsFullyDiminished)
+{
+    // {B,D,F,A}: minor 7th (10 semitones) distinguishes half-dim from fully dim.
+    // Must be HalfDiminished (Bø7), never Diminished+DiminishedSeventh (B°7).
+    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished)
+        << "B,D,F,A must be HalfDiminished, not Diminished";
+    EXPECT_FALSE(hasExtension(results.front().identity.extensions, Extension::DiminishedSeventh))
+        << "B,D,F,A must not have DiminishedSeventh extension";
 }
 
 TEST(Composing_ChordAnalyzerTests, ReturnsEmptyForFewerThanThreeDistinctPitchClasses)
@@ -1416,4 +1462,331 @@ TEST(Composing_ChordAnalyzerTests, MajorTriadWithPassingToneIsNeverDiminished)
     ASSERT_FALSE(results.empty());
     EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
         << "C major with passing Eb must not be scored as diminished";
+}
+
+// ── Flat-root pitch-class extraction tests ────────────────────────────────────
+// These tests verify that flat-spelled roots (Ab, Gb, Db, Eb, Bb) are correctly
+// identified as their own pitch class and not misread a semitone sharp.
+// TPC encoding used below matches the test convention: F=14, C=15, G=16, D=17,
+// A=18, E=19, B=20; each flat subtracts 7.  So Ab=11, Gb=9, Db=10, Eb=12, Bb=13.
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_AbMajorTriad_RootIspc8)
+{
+    // Ab major triad: Ab4(68), C5(72), Eb5(75).  TPC: Ab=11, C=15, Eb=12.
+    // Root must be pc=8 (Ab), not pc=9 (A).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {68,11}, {72,15}, {75,12} }), -4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8)
+        << "Ab major triad: root must be pc=8 (Ab), not pc=9 (A)";
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -4), "Ab");
+}
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_GbMajorTriad_RootIspc6)
+{
+    // Gb major triad: Gb4(66), Bb4(70), Db5(73).  TPC: Gb=9, Bb=13, Db=10.
+    // Root must be pc=6 (Gb), not pc=7 (G).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {66,9}, {70,13}, {73,10} }), -6, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 6)
+        << "Gb major triad: root must be pc=6 (Gb), not pc=7 (G)";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -6), "Gb");
+}
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_DbMajorTriad_RootIspc1)
+{
+    // Db major triad: Db4(61), F4(65), Ab4(68).  TPC: Db=10, F=14, Ab=11.
+    // Root must be pc=1 (Db), not pc=2 (D).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {61,10}, {65,14}, {68,11} }), -5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 1)
+        << "Db major triad: root must be pc=1 (Db), not pc=2 (D)";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -5), "Db");
+}
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_EbMajorTriad_RootIspc3)
+{
+    // Eb major triad: Eb4(63), G4(67), Bb4(70).  TPC: Eb=12, G=16, Bb=13.
+    // Root must be pc=3 (Eb), not pc=4 (E).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {63,12}, {67,16}, {70,13} }), -3, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 3)
+        << "Eb major triad: root must be pc=3 (Eb), not pc=4 (E)";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -3), "Eb");
+}
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_BbMajorTriad_RootIspc10)
+{
+    // Bb major triad: Bb3(58), D4(62), F4(65).  TPC: Bb=13, D=17, F=14.
+    // Root must be pc=10 (Bb), not pc=11 (B).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10)
+        << "Bb major triad: root must be pc=10 (Bb), not pc=11 (B)";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2), "Bb");
+}
+
+TEST(Composing_ChordAnalyzerTests, FlatRoot_AbMaj7_DisplaysAbInFlatKey)
+{
+    // AbMaj7: Ab4(68), C5(72), Eb5(75), G5(79).  TPC: Ab=11, C=15, Eb=12, G=16.
+    // Symbol must be "AbMaj7" in Ab major context, not "G#Maj7" or "AMaj7".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {68,11}, {72,15}, {75,12}, {79,16} }), -4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8)
+        << "AbMaj7: root must be pc=8 (Ab)";
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -4);
+    EXPECT_EQ(sym, "AbMaj7") << "AbMaj7 symbol must use flat spelling in Ab major key";
+}
+
+TEST(Composing_ChordAnalyzerTests, FullyDiminishedSeventh_NashvilleHasExactlyOneDegreeSymbol)
+{
+    // B fully diminished seventh: B3(47), D4(50), F4(53), Ab4(56).
+    // TPC: B=20, D=17, F=14, Ab=11.  Key: C major (fifths=0).
+    // Nashville symbol must be "vii°7", not "vii°°7" — exactly one ° before the 7.
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {47,20}, {50,17}, {53,14}, {56,11} }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    const std::string nashville = ChordSymbolFormatter::formatNashvilleNumber(results.front(), 0);
+    // Count occurrences of the UTF-8 degree symbol \xc2\xb0 (2 bytes per symbol)
+    static const std::string kDeg = "\xc2\xb0";
+    size_t count = 0;
+    size_t pos = 0;
+    while ((pos = nashville.find(kDeg, pos)) != std::string::npos) {
+        ++count;
+        pos += kDeg.size();
+    }
+    EXPECT_EQ(count, 1u)
+        << "Fully diminished 7th Nashville symbol must contain exactly one ° symbol, got: " << nashville;
+    // Also verify the symbol ends with °7 (one degree + 7)
+    EXPECT_NE(nashville.find(kDeg + "7"), std::string::npos)
+        << "Fully diminished 7th Nashville symbol must contain °7, got: " << nashville;
+}
+
+// ── Non-standard quality token verification (Step 4) ────────────────────────
+// These tests confirm that each non-standard chord symbol token is generated
+// correctly by the formatter. Bugs here would surface as garbled chord labels
+// in real scores (jazz, film, pop contexts).
+
+TEST(Composing_ChordAnalyzerTests, NonStdToken_Susb9_ProducesCorrectSymbol)
+{
+    // Csusb9: C4(60), Db4(61), F4(65), G4(67) — sus4 with b9, no 7th.
+    // Catalog: measure 323, xml='Csusb9'.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 61, 65, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Csusb9");
+}
+
+TEST(Composing_ChordAnalyzerTests, NonStdToken_SusSharp4_ProducesCorrectSymbol)
+{
+    // Csus#4: C4(60), F#4(66), G4(67) — sus with augmented fourth.
+    // Catalog: measure 340, xml='Csus#4'.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 66, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Csus#4");
+}
+
+TEST(Composing_ChordAnalyzerTests, NonStdToken_5b_ProducesCorrectSymbol)
+{
+    // C5b: C4(60), E4(64), Gb4(66) — major triad with flat 5.
+    // MuseScore convention: flat-5 major triad uses "5b" (not "b5" or "C(b5)").
+    // Catalog: measure 4, xml='C5b'.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 66 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "C5b");
+}
+
+TEST(Composing_ChordAnalyzerTests, NonStdToken_No3_ProducesCorrectSymbol)
+{
+    // CMaj9(no 3): C4(60), G4(67), B4(71), D5(74) — major 9th with omitted third.
+    // Catalog: measure 20, xml='CMaj9(no 3)'.
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 67, 71, 74 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "CMaj9(no 3)");
+}
+
+// ── Passing-tone bass filter (Step 5) ───────────────────────────────────────
+
+TEST(Composing_ChordAnalyzerTests, PassingToneBassFilter_LowWeightBassNoteIgnored)
+{
+    // G major triad (G4=67, B4=71, D5=74) with a low-weight chromatic passing tone
+    // F#3(54) in the bass.  F# has weight 0.02 (fleeting 32nd note); the G tones
+    // have weight 1.0 each.  The passing-tone filter (threshold=5%) must discard F#
+    // as bass and identify G as bass → symbol "G" (root position), not "G/F#".
+    ChordAnalyzerPreferences prefs;
+    prefs.bassPassingToneMinWeightFraction = 0.05;
+
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = false;
+        ts.push_back(t);
+    };
+    addTone(54, 0.02);  // F#3 — low-weight passing tone
+    addTone(67, 1.0);   // G4
+    addTone(71, 1.0);   // B4
+    addTone(74, 1.0);   // D5
+    ts.front().isBass = true;  // F#3 is the lowest note
+
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    // Root should be G (pc=7), bass should also be G (root position) — F# filtered out.
+    EXPECT_EQ(results.front().identity.rootPc, 7)
+        << "Root must be G (pc=7), not F# (pc=6)";
+    EXPECT_EQ(results.front().identity.bassPc, 7)
+        << "Bass must be G (pc=7): F# passing tone must be filtered by weight threshold";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "G")
+        << "G major triad with filtered passing-tone bass must display as 'G' (root position)";
+}
+
+TEST(Composing_ChordAnalyzerTests, PassingToneBassFilter_NormalBassNoteKept)
+{
+    // G/F# first-inversion-style slash chord: F#3(54) with structural weight 1.0.
+    // The filter must NOT remove it — only genuine passing tones (low weight) are filtered.
+    ChordAnalyzerPreferences prefs;
+    prefs.bassPassingToneMinWeightFraction = 0.05;
+
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = false;
+        ts.push_back(t);
+    };
+    addTone(54, 1.0);  // F#3 — structural bass (not a passing tone)
+    addTone(67, 1.0);  // G4
+    addTone(71, 1.0);  // B4
+    addTone(74, 1.0);  // D5
+    ts.front().isBass = true;
+
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    // Bass should remain F# (pc=6); root should be G (pc=7) → symbol "G/F#"
+    EXPECT_EQ(results.front().identity.bassPc, 6)
+        << "Structural bass F# must not be filtered by passing-tone threshold";
+}
+
+// ── Slash-chord annotation path: Cm7/F must not be written as "F" ────────────
+//
+// Regression guard for the annotation-path temporal-bias bug.  The harmonic-
+// rhythm pass may carry rootContinuityBonus from a preceding F-major region,
+// promoting F over Cm7/F.  The annotation write path re-runs analyzeChord()
+// with a display-style ChordTemporalContext (from findTemporalContext) rather
+// than the sequential context from analyzeHarmonicRhythm.
+//
+// Two sub-cases exercised here:
+//
+//   (A) C-chord tones heavily dominate F — analyzeChord() gives Cm7/F even
+//       without any temporal context.  This verifies the analyzer correctly
+//       identifies the chord from note content alone when C is prominent.
+//
+//   (B) Equal-weight voicing (F bass + C,Eb,G,Bb at equal weight) + a
+//       ChordTemporalContext with bassIsStepwiseFromPrevious=true — mirrors
+//       the display path temporal bonus that selects Cm7/F over Fsus.
+//       Without temporal context (nullptr) the same tones produce Fsus(add9)
+//       (bass-root bonus tips it to F), confirming the annotation fix must
+//       supply context not null.
+
+TEST(Composing_ChordAnalyzerTests, Cm7SlashF_ChordTonesDominant_IsCm7WithoutContext)
+{
+    // F bass is deliberately light so that C-rooted chord tones dominate
+    // and Cm7/F wins on note content alone (no temporal context needed).
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight, bool isBass = false) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = isBass;
+        ts.push_back(t);
+    };
+    addTone(41, 0.2, true);   // F2  — bass (low weight: brief pedal)
+    addTone(48, 1.0);          // C4  — root (strong)
+    addTone(51, 1.0);          // Eb4 — minor third (strong)
+    addTone(55, 0.9);          // G4  — fifth
+    addTone(58, 0.8);          // Bb4 — minor seventh
+
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr);
+    ASSERT_FALSE(results.empty());
+
+    const ChordAnalysisResult& top = results.front();
+    EXPECT_EQ(top.identity.rootPc, 0)
+        << "Root must be C (pc=0); got " << top.identity.rootPc;
+    EXPECT_EQ(top.identity.bassPc, 5)
+        << "Bass must be F (pc=5)";
+    EXPECT_EQ(top.identity.quality, ChordQuality::Minor)
+        << "Quality must be Minor";
+    EXPECT_TRUE(hasExtension(top.identity.extensions, Extension::MinorSeventh))
+        << "MinorSeventh must be present";
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(top, 0), "Cm7/F");
+}
+
+TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
+{
+    // Equal-weight voicing: the bass-root bonus would push F to the top
+    // without temporal context.  With bassIsStepwiseFromPrevious=true the
+    // stepwiseBassInversionBonus fires for the inverted C-rooted candidate
+    // (bass != root, Major/Minor quality), flipping the result to Cm7/F.
+    // This is the mechanism the annotation-path fix relies on: it supplies
+    // findTemporalContext() to analyzeChord(), which populates the stepwise
+    // flag from the actual score, just as the display path does.
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight, bool isBass = false) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = isBass;
+        ts.push_back(t);
+    };
+    addTone(41, 1.0, true);   // F2  — bass (equal weight)
+    addTone(48, 1.0);          // C4
+    addTone(51, 0.9);          // Eb4
+    addTone(55, 0.8);          // G4
+    addTone(58, 0.7);          // Bb4
+
+    // Without context: Fsus(add9) wins.
+    {
+        const auto noCtx = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr);
+        ASSERT_FALSE(noCtx.empty());
+        EXPECT_NE(noCtx.front().identity.rootPc, 0)
+            << "Without context, F-rooted template should win (bass-root bonus)";
+    }
+
+    // With display-style context: Cm7/F must win.
+    // findTemporalContext() in the actual score sets previousRootPc from the
+    // previous chord.  If the preceding chord was Cm (root=C), Cm7/F gets:
+    //   rootContinuityBonus   (+0.40) — same root as before
+    //   sameRootInversionBonus(+0.40) — inversion of the same root
+    //   stepwiseBassInversionBonus (+0.50) — bass moved stepwise into F
+    // Combined (+1.30) these flip Cm7/F past the Fsus(add9) bass-root winner.
+    ChordTemporalContext ctx;
+    ctx.previousRootPc           = 0;    // previous chord root was C
+    ctx.previousBassPc           = 0;
+    ctx.previousQuality          = ChordQuality::Minor;
+    ctx.bassIsStepwiseFromPrevious = true;  // e.g. bass moved E → F
+    ctx.bassIsStepwiseToNext      = false;
+
+    const auto withCtx = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, &ctx);
+    ASSERT_FALSE(withCtx.empty());
+
+    const ChordAnalysisResult& top = withCtx.front();
+    EXPECT_EQ(top.identity.rootPc, 0)
+        << "With stepwise-bass context, root must be C (pc=0)";
+    EXPECT_EQ(top.identity.bassPc, 5)
+        << "Bass must be F (pc=5)";
+    EXPECT_EQ(top.identity.quality, ChordQuality::Minor)
+        << "Quality must be Minor";
+    EXPECT_TRUE(hasExtension(top.identity.extensions, Extension::MinorSeventh))
+        << "MinorSeventh must be present";
+    // F (pc=5) is both the bass note and a perfect fourth above C (= add11),
+    // so with equal-weight tones the extension threshold is exceeded and the
+    // formatter produces "Cm7add11/F".  The critical assertion is root=C, not F.
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(top, 0), "Cm7add11/F");
 }
