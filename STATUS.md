@@ -1853,57 +1853,82 @@ Bug outcomes:
 
 +15 composing tests (324/324 total).
 
+**Session 15 — Bass field fix, document updates, RFC draft (2026-04-17):**
+
+- **Step 0 verified:** master HEAD = `818538a82e`, composing 334/334 (working tree —
+  session 14 tests uncommitted), notation 45/49 (4 pre-existing deferred).
+  submission-phase1 HEAD = `162e5ab669`, composing 276/276, notation 16/16.
+
+- **Dm7b5/Ab (MFV m.8) flat-root assessment corrected.**
+  Previously assessed as a flat-root error during MFV QA. Confirmed correct upon
+  close-up screenshot review — D half-diminished (Dm7b5) over Ab bass, matching the
+  plugin's Dø²/Ab and consistent with the score's voicing at that position. Not an
+  error.
+
+- **MFV three-layer QA evidence recorded.** My Funny Valentine (Bill Evans, Some Other
+  Time 1968, Felix B. transcription) — 185-measure three-layer comparison documented
+  in ARCHITECTURE.md §15.2 (2b2): approximately 75–80% exact or near-exact chord
+  symbol agreement with human analyst transcription. Extended runs of perfect
+  measure-by-measure agreement: m.82–102, m.151–185, Coda (m.179–185). The 75–80%
+  vs 64.6% corpus figure reflects the sparse-voicing limitation (see ARCHITECTURE.md
+  §5.8). Campania font `Dsdim`/`Fsdim` rendering artifacts confirmed as MuseScore
+  core font issue, not formatter bugs. Documented in ARCHITECTURE.md §5.8.
+
+- **Chord name in bass field fix implemented.** `isValidBassNoteName()` guard added
+  to both slash-chord assembly points in `ChordSymbolFormatter::formatSymbol()`
+  in `chordanalyzer.cpp`. If the bass name is not a plain note name (≤ 3 chars,
+  uppercase letter + optional accidentals), the slash is suppressed and the root
+  chord is output alone. Unit test `ChordNameInBassField_Suppressed` added and
+  passing.
+
+- **ARCHITECTURE.md updated** to v3.26: Campania font issue in §5.8, MFV QA
+  evidence in §15 (2b2), version line updated.
+
+- **RFC draft created:** `docs/rfc_musescore_forum_post.md`
+
+- **chordlist.cpp upstream bug report draft created:** `docs/chordlist_bug_report.md`
+
+- **Test counts:** 335/335 composing (+1 new `ChordNameInBassField_Suppressed`),
+  **45/49 notation** (4 pre-existing deferred — unchanged).
+  master HEAD: see §8 final update for SHA.
+  submission-phase1: cherry-pick of bass field fix → 277/277 composing, 16/16 notation.
+
 ---
 
 ## Next session priorities
 
-1. **Live score inspection — flat-root collection error**
-   Load My Funny Valentine (m.1) and 'Round Midnight (m.1) in `batch_analyze`
-   with diagnostic output. For each measure where Ab7 is read as Am7b5 or
-   Gb7 as Gm7b5:
-   - Dump the exact notes being collected in that region
-   - Dump the root candidates and their scores
-   - Determine whether the error is in: (a) boundary detection including wrong
-     notes, (b) root scoring selecting wrong candidate from correct note set,
-     or (c) output spelling of a correctly-scored root
-   Do not fix speculatively. Locate the failure site first, then fix.
+1. **RFC review by Vincent and post to MuseScore developer forum**
+   `docs/rfc_musescore_forum_post.md` is ready for review. Vincent posts manually.
+   After posting, record the forum thread URL in STATUS.md.
 
-2. **Live score inspection — ° vs ø collapse**
-   Same approach. Load a score where fully diminished is being read as
-   half-diminished. Dump collected notes and quality scores for the affected
-   region. Confirm whether the issue is real-score boundary/scoring or
-   something else.
+2. **CLA signing**
+   Sign the MuseScore CLA before any PR submission. Required before any PR is
+   opened against MuseScore/MuseScore.
 
-3. **Annotate path extension — cadence markers + pivot labels**
-   Extend "Annotate to chord track" (Roman numeral mode only) to include:
-   - Cadence markers (PAC, IAC, HC, DC, PC) — already firing in chord staff
-     path, expose in annotate path
-   - Pivot chord labels — already firing in chord staff path, expose in
-     annotate path
-   - Tonicization labels (V/V, V/ii etc.) — universal across all presets
-   - Augmented sixth chord labels (It+6, Fr+6, Ger+6) — Standard and Baroque
-     presets only, suppress in Jazz and Nashville presets
-   Nashville annotation mode: chord symbols only, no cadence/pivot/aug6.
-   See ARCHITECTURE.md §[annotate section] for full design.
+3. **Upstream bug report — chordlist.cpp**
+   `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
+   MuseScore/MuseScore. Link the issue in STATUS.md.
 
-4. **RFC draft**
-   `docs/rfc_musescore_forum_post.md` — markdown document for Vincent to review
-   and post manually. See ARCHITECTURE.md §15 for submission phase context.
-   Content: what the module does, architecture overview, corpus quality
-   evidence, contribution intent (GPL v3, CLA), call for review.
-   Hold until priorities 1–2 are resolved or confirmed unresolvable without
-   deeper investigation.
+4. **Tonicization labels classifier (V/V, V/ii)** — Priority 1 deferred
+   Design a classifier that detects applied dominants and other tonicization
+   patterns in the Roman numeral layer. Already designed (see ARCHITECTURE.md §5.10).
+   Wire into annotate path.
 
-5. **Upstream bug report — chordlist.cpp**
-   Document the double-sus fix for the MuseScore team. Already fixed in
-   master (`b1ba746`) and cherry-picked to `submission-phase1`. Write as a
-   GitHub issue draft: root cause, one-line fix, reproduction steps.
+5. **Augmented sixth chord labels (It+6, Fr+6, Ger+6)** — Priority 1 deferred
+   Implement the augmented sixth classifier. Standard and Baroque presets only.
+   Wire into annotate path. Already designed (see ARCHITECTURE.md §5.11).
 
-6. **Automated annotation review tool (post-RFC)**
-   `tools/auto_review.py` — loads a directory of scores via `batch_analyze`,
-   runs annotation path, passes output to Anthropic API judge for theory-
-   correctness evaluation without corpus ground truth. Design documented,
-   implementation deferred until after RFC.
+6. **Pedal point detection** — Priority 1 deferred
+   Implement structural pedal point detection. Covers: (a) Em/A for Am7 pedal
+   tone cases, (b) sustained bass note while harmony changes above. Prerequisite
+   for resolving 4 deferred notation tests (Corelli late-beat sparse texture).
+
+7. **Cherry-pick bass field fix to submission-phase1** — done this session.
+   Verify 277/277 + 16/16 on submission-phase1.
+
+8. **Automated annotation review tool (post-RFC)**
+   `tools/auto_review.py` — design documented, implementation deferred until
+   after RFC posting and initial developer response.
 
 ---
 

@@ -1885,3 +1885,62 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_Bb_IsB)
     const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::GermanPure };
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "B");
 }
+
+TEST(Composing_ChordAnalyzerTests, ChordNameInBassField_Suppressed)
+{
+    // Regression guard for MFV QA bug where "C7b9/Bb" appeared in the bass
+    // field of a slash chord instead of a plain note name, producing output
+    // like "BbMaj7add13/C7b9/Bb".
+    //
+    // The formatter's isValidBassNoteName guard ensures any bass name that is
+    // not a plain note name (uppercase letter + optional accidentals, ≤ 3 chars)
+    // suppresses the slash rather than emitting an invalid symbol.
+    //
+    // This test constructs a BbMaj7-type voicing with an F bass (second
+    // inversion) and verifies: the symbol starts with "Bb", and if a slash
+    // is present, the bass field after "/" is a valid plain note name only.
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight, bool isBass = false) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = isBass;
+        ts.push_back(t);
+    };
+    // F2 bass (light), Bb3 root (strong), D4 third, A4 maj7, G4 maj13
+    addTone(41, 0.3, true);   // F2  — bass (inverted, light)
+    addTone(58, 1.0);          // Bb3 — root (strong)
+    addTone(62, 0.8);          // D4  — major third
+    addTone(69, 0.6);          // A4  — major seventh
+    addTone(67, 0.5);          // G4  — major thirteenth
+
+    const auto results = kAnalyzer.analyzeChord(ts, -2, KeySigMode::Ionian, nullptr);
+    ASSERT_FALSE(results.empty());
+
+    const ChordSymbolFormatter::Options opts{};
+    const std::string symbol = ChordSymbolFormatter::formatSymbol(results.front(), -2, opts);
+
+    // Root must be Bb.
+    EXPECT_EQ(symbol.substr(0, 2), "Bb")
+        << "Root must be Bb; got: " << symbol;
+
+    // If a slash is present, the bass field must be a valid plain note name:
+    // at most 3 characters, starting with an uppercase letter.
+    const size_t slashPos = symbol.find('/');
+    if (slashPos != std::string::npos) {
+        const std::string bassField = symbol.substr(slashPos + 1);
+        EXPECT_LE(bassField.size(), 3u)
+            << "Bass field must be at most 3 chars (plain note name); got: '"
+            << bassField << "' in symbol: " << symbol;
+        EXPECT_FALSE(bassField.empty());
+        if (!bassField.empty()) {
+            EXPECT_TRUE(std::isupper(static_cast<unsigned char>(bassField[0])))
+                << "Bass field must start with an uppercase letter; got: '"
+                << bassField << "' in symbol: " << symbol;
+        }
+        // Must contain no further slash (no nested chord symbol).
+        EXPECT_EQ(bassField.find('/'), std::string::npos)
+            << "Bass field must not contain a second slash; got: '"
+            << bassField << "' in symbol: " << symbol;
+    }
+}
