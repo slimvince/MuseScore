@@ -1942,6 +1942,22 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     return diag;
 }
 
+/// Returns true if bass is a valid plain note name: 1–3 chars,
+/// uppercase letter followed only by ASCII accidentals ('#' or 'b').
+/// Guards against chord symbol strings accidentally appearing in the
+/// bass field of slash chords (e.g. "C7b9/Bb" instead of "Bb").
+static bool isValidBassNoteName(const char* bass)
+{
+    if (!bass || bass[0] == '\0') return false;
+    if (!std::isupper(static_cast<unsigned char>(bass[0]))) return false;
+    size_t len = 1;
+    for (; bass[len] != '\0'; ++len) {
+        if (bass[len] != '#' && bass[len] != 'b') return false;
+        if (len >= 3) return false;   // max 3 chars
+    }
+    return true;
+}
+
 std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result,
                                                int keySignatureFifths,
                                                const Options& opts)
@@ -1954,8 +1970,11 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
         symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? "Maj9sus" : "Maj7sus";
         if (result.identity.bassPc != result.identity.rootPc
                 && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
-            symbol += "/";
-            symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
+            const char* bassName = pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
+            if (isValidBassNoteName(bassName)) {
+                symbol += "/";
+                symbol += bassName;
+            }
         }
         return symbol;
     }
@@ -1985,8 +2004,11 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
 
     if (result.identity.bassPc != result.identity.rootPc
             && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
-        symbol += "/";
-        symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
+        const char* bassName = pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
+        if (isValidBassNoteName(bassName)) {
+            symbol += "/";
+            symbol += bassName;
+        }
     }
 
     return symbol;
