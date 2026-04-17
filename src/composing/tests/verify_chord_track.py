@@ -580,8 +580,13 @@ def _classify_annotations(md: MeasureData) -> None:
             md.borrowed_from.append(text)
             continue
 
-        # Pivot chord
+        # Pivot chord — new format: "vi \u2192 ii" (two Roman numerals separated
+        # by U+2192 with no spaces inside either token).  Also handle the old
+        # "pivot: …" prefix for backward compatibility with legacy chord staff files.
         if text.startswith("pivot:") or text.startswith("pivot "):
+            md.pivot = text
+            continue
+        if re.match(r'^[^\s(]+\s+\u2192\s+[^\s]+$', text):
             md.pivot = text
             continue
 

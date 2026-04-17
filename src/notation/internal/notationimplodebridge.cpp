@@ -67,6 +67,7 @@
 #include "notationimplodebridge.h"
 
 using namespace mu::engraving;
+using mu::notation::internal::scoreNoteSpelling;
 
 namespace {
 
@@ -1024,16 +1025,10 @@ bool populateChordTrack(
                             ChordSymbolFormatter::formatRomanNumeral(pivotInNew);
 
                         if (!oldRoman.empty() && !newRoman.empty()) {
-                            using mu::composing::analysis::keyModeSuffix;
-                            pivotText = "pivot: " + oldRoman + " in "
-                                + keyModeTonicName(prevAssertiveKeyFifths, prevAssertiveMode)
-                                + " " + keyModeSuffix(prevAssertiveMode)
-                                + " \u2192 " + newRoman + " in "
-                                + keyModeTonicName(keyCandidate.keySignatureFifths, keyCandidate.representativeMode)
-                                + " " + keyModeSuffix(keyCandidate.representativeMode);
-                        } else {
-                            pivotText = "pivot: " + oldRoman + " \u2192 "
-                                + newRoman;
+                            // New format: "vi → ii"  (U+2192 RIGHT ARROW).
+                            // Left side = Roman numeral in the outgoing key;
+                            // right side = Roman numeral in the incoming key.
+                            pivotText = oldRoman + " \u2192 " + newRoman;
                         }
                         break;
                     }
@@ -1148,9 +1143,10 @@ bool populateChordTrack(
 
         // Chord symbol above treble.
         const bool writeChordSymbols = !prefs || prefs->chordStaffWriteChordSymbols();
+        const ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(score) };
         const std::string symText = (writeChordSymbols && passesMinimumDisplayDuration)
             ? sanitizeChordTrackSymbolForHarmonyRenderer(
-                ChordSymbolFormatter::formatSymbol(chord, localKeyFifths))
+                ChordSymbolFormatter::formatSymbol(chord, localKeyFifths, fmtOpts))
             : "";
         if (!symText.empty()) {
             Harmony* h = Factory::createHarmony(seg);

@@ -31,10 +31,14 @@
 namespace mu::composing::analysis {
 namespace {
 
-// TODO: B/H note naming (German/Nordic convention: H = B natural, B = Bb) should
-// follow user locale settings when that preference is exposed.  Until then, wire
-// ChordSymbolFormatter::Options::useGermanBHNaming through here.
-const char* pitchClassName(int pc, int keySignatureFifths)
+/// Return the standard English name for a pitch class, choosing flat vs sharp
+/// based on the key signature.  Applies German B/H mapping when spelling requires it.
+/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
+///   Rule 1: B natural → "H"
+///   Rule 2: Bb → "B"
+/// All other note names are unchanged.
+const char* pitchClassName(int pc, int keySignatureFifths,
+                           ChordSymbolFormatter::NoteSpelling spelling = ChordSymbolFormatter::NoteSpelling::Standard)
 {
     static constexpr std::array<const char*, 12> SHARP_NAMES = {
         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
@@ -42,13 +46,27 @@ const char* pitchClassName(int pc, int keySignatureFifths)
     static constexpr std::array<const char*, 12> FLAT_NAMES = {
         "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"
     };
+    // German/Nordic: SHARP_NAMES[11]="B" → "H", FLAT_NAMES[10]="Bb" → "B"
+    static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H"
+    };
+    static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {
+        "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B", "H"
+    };
     const size_t idx = static_cast<size_t>(normalizePc(pc));
-    return keySignatureFifths < 0 ? FLAT_NAMES[idx] : SHARP_NAMES[idx];
+    const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
+                        || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
+    if (keySignatureFifths < 0) {
+        return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+    }
+    return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
 }
 
 /// Name a pitch class using TPC spelling rather than key-signature convention.
 /// Covers cases like Eb (tpc=12), Bb (tpc=13), Ab (tpc=11) in C major.
-const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths)
+/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356).
+const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
+                                  ChordSymbolFormatter::NoteSpelling spelling = ChordSymbolFormatter::NoteSpelling::Standard)
 {
     static constexpr std::array<const char*, 12> SHARP_NAMES = {
         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
@@ -56,13 +74,24 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths)
     static constexpr std::array<const char*, 12> FLAT_NAMES = {
         "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"
     };
+    static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H"
+    };
+    static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {
+        "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B", "H"
+    };
+    const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
+                        || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
     if (tpc >= 0) {
         // TPC 7..13 covers Fb,Cb,Gb,Db,Ab,Eb,Bb — these spell with a flat
         const bool preferFlat = (tpc >= 7 && tpc <= 13);
         const size_t idx = static_cast<size_t>(normalizePc(pc));
-        return preferFlat ? FLAT_NAMES[idx] : SHARP_NAMES[idx];
+        if (preferFlat) {
+            return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+        }
+        return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
     }
-    return pitchClassName(pc, keySignatureFifths);
+    return pitchClassName(pc, keySignatureFifths, spelling);
 }
 
 std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool hasDim7,
@@ -1917,22 +1946,21 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
                                                int keySignatureFifths,
                                                const Options& opts)
 {
-    (void)opts;  // TODO: wire opts.useGermanBHNaming through pitchClassName once implemented
     // Sus4+Maj7 chords are requalified to Major+omitsThird internally.
     // Render them as "Maj7sus"/"Maj9sus" — the notation used for this chord type in the catalog.
     if (hasExtension(result.identity.extensions, Extension::OmitsThird) && hasExtension(result.identity.extensions, Extension::MajorSeventh)
             && hasExtension(result.identity.extensions, Extension::NaturalEleventh) && !hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
-        std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths));
+        std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling));
         symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? "Maj9sus" : "Maj7sus";
         if (result.identity.bassPc != result.identity.rootPc
                 && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
             symbol += "/";
-            symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
+            symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
         }
         return symbol;
     }
 
-    std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths))
+    std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling))
                         + qualitySuffix(result.identity.quality,
                                         hasExtension(result.identity.extensions, Extension::MinorSeventh),
                                         hasExtension(result.identity.extensions, Extension::MajorSeventh),
@@ -1958,7 +1986,7 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
     if (result.identity.bassPc != result.identity.rootPc
             && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
         symbol += "/";
-        symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
+        symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
     }
 
     return symbol;

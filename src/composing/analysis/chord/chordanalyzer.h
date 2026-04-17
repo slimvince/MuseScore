@@ -580,13 +580,24 @@ public:
 /// Kept separate from ChordAnalyzer so the analysis layer remains display-agnostic.
 namespace ChordSymbolFormatter {
 
+/// Note spelling convention for chord symbol root and bass names.
+/// Mirrors NoteSpellingType in src/engraving/types/types.h.
+/// The bridge reads Sid::chordSymbolSpelling from the score style and maps it here.
+/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
+///   B natural → "H", Bb → "B". All other note names unchanged.
+/// Solfeggio and French map to Standard (not yet supported in chord symbol output).
+enum class NoteSpelling {
+    Standard,    ///< English: B natural = "B", Bb = "Bb"
+    German,      ///< H = B natural, B = Bb  (mirrors NoteSpellingType::GERMAN)
+    GermanPure,  ///< Same B/H rules as German for chord symbols  (mirrors NoteSpellingType::GERMAN_PURE)
+};
+
 /// Display options for chord symbol and Roman numeral formatting.
 /// Kept separate from ChordAnalyzerPreferences so the abstract analysis layer
 /// has no knowledge of display conventions (locale, notation style, etc.).
 struct Options {
-    /// When true, display B natural as "H" and Bb as "B" (German/Nordic convention).
-    /// TODO: Replace with a locale-based lookup once user preferences are implemented.
-    bool useGermanBHNaming = false;
+    /// Note spelling convention for root/bass names.
+    NoteSpelling spelling = NoteSpelling::Standard;
 };
 
 /// Global default formatting options.

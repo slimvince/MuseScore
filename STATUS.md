@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-17 (session 11)*
+*Last updated: 2026-04-17 (session 14)*
 
 ---
 
@@ -416,6 +416,160 @@ Test count after session: **324/324 composing** (+15 new tests), **30/34 notatio
 - **Test counts:** 326/326 composing (+2 new tests), 32/36 notation (4 pre-existing deferred —
   unchanged). Master HEAD: `d07efbc270` (no commit this session — working tree modified).
 
+**Session 12 — Formatter artifact ground-truth audit (2026-04-17):**
+
+- **Step 0 verified:** HEAD = `615226f4be`, composing 326/326, notation 32/36 (4 pre-existing
+  deferred). Matches expected state from session 8–11 commit.
+
+- **Step 0.5: All suspected formatter artifacts are NOT present in batch JSON output.**
+  `batch_analyze` was run on all four jazz scores (MFV, East of the Sun, Round Midnight,
+  Like Someone in Love). The following categories were grepped and returned **no matches**:
+  - German notation tokens (sdim, sMaj, sm7, H note, As/Es/Des/Ges/Ces/Fes/Bes roots)
+  - Bare integer tokens (37, 47, b19)
+  - sus8
+  - Maj15 / compound interval extensions
+  - Bare /X slash chord (empty root)
+  - Apostrophe in root name
+  - Question mark uncertainty token
+  - Two-letter root name concatenation
+  - Chord name in bass field
+  
+  The only "space" found inside chord symbols is the intentional `(no 3)` omission-of-third
+  notation, which is correct behavior.
+
+  **Stop condition triggered:** no artifacts confirmed — all Steps 2–5 (German notation fix,
+  extension token guards, string formatting guards, output validation pass) are NOT required.
+
+- **Step 1: Formatter reviewed.** `pitchClassName()` and `pitchClassNameFromTpc()` use
+  self-contained English flat/sharp lookup tables at lines 37–66 of `chordanalyzer.cpp`.
+  There is no German notation source in the formatter. The TODO comment at line 34 confirms
+  German/Nordic B/H naming is a deferred future feature (`useGermanBHNaming` option, not yet
+  wired). Any H or sdim artifacts seen in prior screenshots were either font-rendering
+  artifacts (Campania RNA font) or from a different analysis path.
+
+- **Step 6: Full test suite confirmed.** 326/326 composing, 32/36 notation (4 pre-existing
+  deferred — same 4 tests listed in "Known failing notation tests" section below).
+  No regressions. Master HEAD unchanged: `615226f4be`.
+
+- **Next session:** RFC review with Vincent, then submission-phase1 cherry-picks.
+
+**Session 14 — Annotate path extension: cadence markers, pivot format replacement, pivot detection (2026-04-17):**
+
+- **Step 0 verified:** HEAD = `615226f4be`, composing 334/334 (working tree — session 13 B/H
+  naming tests uncommitted), notation 32/36 (4 pre-existing deferred). Matches expected state.
+
+- **Old pivot annotation format removed.** `notationimplodebridge.cpp` lines 1029–1038
+  replaced both format variants:
+  - Old full: `"pivot: vi in C major → ii in G major"` — removed
+  - Old short: `"pivot: vi → ii"` (with "pivot: " prefix) — removed
+  - New format: `"vi → ii"` (U+2192 RIGHT ARROW, outgoing Roman → incoming Roman, no prefix,
+    no key context). When both Roman numerals are non-empty; otherwise falls through to
+    `"direct modulation"` as before.
+  - `verify_chord_track.py` updated: new pivot format `^[^\s(]+ → [^\s]+$` detected before
+    the key-relationship `→` check; old `"pivot: "` prefix detection retained for backward
+    compatibility with legacy chord-staff files.
+
+- **Cadence detection extracted to shared helper** (`detectCadences` in
+  `notationcomposingbridgehelpers.cpp`/`.h`). Takes `vector<HarmonicRegion>` + `selectionCount`;
+  returns `vector<CadenceMarker>`. Detects PAC (V→I, viio→I), PC (IV→I), DC (V→vi),
+  HC (last in-selection dominant). When resolution chord is in the lookahead, label is
+  placed at the preparatory chord (stays within selection boundary).
+
+- **Pivot detection extracted to shared helper** (`detectPivotChords` in
+  `notationcomposingbridgehelpers.cpp`/`.h`). Takes `vector<HarmonicRegion>` + `selectionCount`;
+  returns `vector<PivotLabel>`. Detects key transitions from assertive key runs; walks
+  backward for pivot chord diatonic to old key AND in new scale. Label format: outgoingRoman
+  + " → " + incomingRoman (U+2192). New key confirmed by at least one additional assertive
+  region beyond the boundary, up to `kMaxPivotLookaheadRegions = 8`. Suppresses pivot if
+  new key unconfirmable.
+
+- **Annotate path extended.** `addHarmonicAnnotationsToSelection`
+  (`notationcomposingbridge.cpp`) now:
+  - Extends analysis range by `kMaxPivotLookaheadRegions * 4 * DIVISION` ticks when
+    `writeRomanNumerals=true`, providing lookahead for cadence/pivot detection.
+  - Computes `selectionCount` (first N regions with startTick < selectionEndTick).
+  - After the main region loop, calls `detectCadences` + `detectPivotChords` and writes
+    StaffText to the first write staff at each detected tick.
+  - Gate: entire cadence/pivot block is inside `if (writeRomanNumerals && ...)` — chord-symbol
+    and Nashville modes produce no structural markers.
+
+- **`kAnnotateKeyConfidenceThreshold = 0.8` and `kMaxPivotLookaheadRegions = 8`** added as
+  `inline constexpr` in `notationcomposingbridgehelpers.h`.
+
+- **Stop conditions triggered:**
+  - **Step 5 (tonicization V/V labels):** Not implemented anywhere in the codebase. The
+    borrowed-chord ★ marker exists (finds source key) but no V/V slash notation. Deferred.
+  - **Step 6 (augmented sixth It+6/Fr+6/Ger+6):** Not implemented anywhere. Per stop
+    condition, must be implemented as standalone composing unit first. Deferred.
+
+- **Nashville mode confirmed clean.** `writeRomanNumerals=false` (Nashville-only call) skips
+  the entire cadence/pivot annotation block. No pivot or cadence labels in Nashville output.
+
+- **13 new unit tests added** to `notationannotate_tests.cpp`:
+  - CadenceDetection: PAC_BothInSelection, PAC_ResolutionInLookahead,
+    PAC_LeadingToneDiminished, PC_PlagalCadence, DC_DeceptiveCadence,
+    HC_LastRegionIsDominant, NoCadence_AcrossKeyChange, NoCadence_LowConfidence
+  - PivotDetection: PivotInMiddleOfSelection, PivotAtSelectionEnd_ConfirmedByLookahead,
+    PivotSuppressed_NewKeyUnconfirmed, NoPivot_StableKey, PivotLabel_NoOldFormatPrefix
+  - All 13 pass.
+
+- **Test counts:** 334/334 composing (unchanged), **45/49 notation** (+13 new tests; same 4
+  pre-existing deferred). Master HEAD: `615226f4be` (no commit yet — working tree modified).
+
+- **Next session:** Commit, cherry-picks to submission-phase1, then RFC review.
+
+**Session 13 — B/H naming fix and flat-root diagnostic (2026-04-17):**
+
+- **Step 0 verified:** HEAD = `615226f4be`, composing 326/326, notation 32/36 (4 pre-existing
+  deferred). Matches expected state.
+
+- **B/H naming fix implemented.** `ChordSymbolFormatter::Options::useGermanBHNaming = false`
+  bool replaced by a `NoteSpelling` enum `{Standard, German, GermanPure}` in `chordanalyzer.h`.
+  `pitchClassName()` and `pitchClassNameFromTpc()` now accept a `NoteSpelling` parameter and
+  apply the German mapping (`B natural → "H"`, `Bb → "B"`) mirroring `tpc2name()` GERMAN case
+  (`pitchspelling.cpp:343-356`). The `formatSymbol()` function threads `opts.spelling` through
+  to all root/bass name calls — `(void)opts;` TODO removed.
+  
+  `scoreNoteSpelling()` helper added to `notationcomposingbridgehelpers.cpp` / `.h` — reads
+  `Sid::chordSymbolSpelling` from the score style and maps to `NoteSpelling`. Called at all
+  four `formatSymbol()` bridge call sites: `analyzeNoteHarmonicContextRegionallyInWindow`
+  (composing bridge), `harmonicAnnotation` (composing bridge), `addHarmonicAnnotationsToSelection`
+  (composing bridge), and `populateChordTrack` (implode bridge). No new includes needed — the
+  full chain was already transitively available via `engraving/dom/score.h`.
+
+  **8 unit tests added** (`NoteSpelling_Standard_BNatural_IsB`, `NoteSpelling_Standard_Bb_IsBb`,
+  `NoteSpelling_German_BNatural_IsH`, `NoteSpelling_German_Bb_IsB`, `NoteSpelling_German_C_Unchanged`,
+  `NoteSpelling_German_Ab_Unchanged`, `NoteSpelling_GermanPure_BNatural_IsH`,
+  `NoteSpelling_GermanPure_Bb_IsB`). All pass.
+
+- **Nashville and Roman numeral paths confirmed clean.** Neither `formatRomanNumeral` nor
+  `formatNashvilleNumber` use note names — they use degree integers and accidental tokens.
+  No changes needed to those paths.
+
+- **ARCHITECTURE.md §4.3 updated** with `NoteSpelling` enum, note naming convention
+  documentation, and correct `Options` struct.
+
+- **Flat-root diagnostic — all three QA failures are corpus artifacts or already fixed:**
+  - **East of Sun m.7 (infers as F):** Batch path always produced C7sus (root_pc=0 correct).
+    The "F" failure was the annotation-path temporal-bias bug, fixed in Session 11.
+    Current diagnostic: C(bass, 0.43) wins decisively over D/F/G/Bb (0.14 each).
+  - **MFV m.21 (Ab-9 → A):** Current batch gives EbMaj7 (root_pc=3, written_pc=3 Eb).
+    No flat-root mismatch in current state.
+  - **Round Midnight m.1 (Ab7(11) → Am7b5):** Current diagnostic: A is the actual bass
+    (MIDI 45, A2), root wins as A (Am7b5). Ab (pc=8) is not present in the notes.
+    **Missing-bass corpus artifact** — same category as Session 7 findings.
+  - **LSIL m.6 b3 (Db13 → F7sus/Db):** Db root note is absent from the piano transcription.
+    **Missing-bass corpus artifact.** F7sus/Db is correct given available notes.
+
+  **Stop condition: all failures are either already fixed or are missing-bass corpus artifacts.**
+  No Category B/C/D fix applied. No regression test needed.
+
+- **Test counts:** 334/334 composing (+8 new B/H naming tests), 32/36 notation
+  (4 pre-existing deferred — unchanged). Master HEAD: `615226f4be` (no commit this session —
+  working tree modified).
+
+- **Next session:** RFC review.
+
 **Session 9 — Extension threshold calibration and inversion-correction fix (2026-04-17):**
 
 - **Root cause analysis of 6 failing jazz-score measures completed.** Diagnostic tracing
@@ -541,7 +695,7 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 
 ## Known failing notation tests (implode-to-chord-track, all deferred)
 
-As of 2026-04-15 (34 tests total, 30 passing — confirmed after `afterRead()` regression fix `9c282f382b`):
+As of 2026-04-17 session 14 (49 tests total, 45 passing — 13 new annotation detection tests added in session 14; 4 pre-existing deferred remain from the earlier list):
 
 1. **ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries** — extra annotation at tick 3/4; `inferGapRegion` suspect.
 2. **CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature** — tick 1440 carry-forward mismatch between status-bar context and populate output.
