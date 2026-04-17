@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-17 (session 14)*
+*Last updated: 2026-04-17 (session 15)*
 
 ---
 
@@ -1889,9 +1889,9 @@ Bug outcomes:
 - **chordlist.cpp upstream bug report draft created:** `docs/chordlist_bug_report.md`
 
 - **Test counts:** 335/335 composing (+1 new `ChordNameInBassField_Suppressed`),
-  **45/49 notation** (4 pre-existing deferred — unchanged).
-  master HEAD: see §8 final update for SHA.
-  submission-phase1: cherry-pick of bass field fix → 277/277 composing, 16/16 notation.
+  **45/49 notation** (4 pre-existing deferred — unchanged). No regressions.
+  master HEAD: `11e6b16052`.
+  submission-phase1: cherry-pick `48fa374014` — 335/335 composing, 16/16 notation.
 
 ---
 
