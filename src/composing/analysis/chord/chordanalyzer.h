@@ -193,20 +193,8 @@ struct ChordIdentity {
     int rootPc = 0;           ///< Root pitch class (0–11)
     int bassPc = 0;           ///< Bass pitch class (0–11)
     int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
-    /// True if the perfect fifth above root is present in the input tones.
-    /// Used by the augmented sixth classifier to distinguish Italian +6 (no P5)
-    /// from German +6 (has P5). Both carry SharpThirteenth when TPC data is present.
-    bool naturalFifthPresent = false;
     ChordQuality quality = ChordQuality::Unknown;
     uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
-
-    /// True when the bass note is a structural pedal point: it is not a chord
-    /// tone of the upper-voice harmony and the upper voices produce a confident
-    /// independent chord (confidence ≥ pedalConfidenceThreshold).  When true,
-    /// the chord label describes the upper-voice harmony, not the full sonority,
-    /// and pedalBassPc identifies the sustained pedal note.
-    bool isPedalPoint = false;
-    int pedalBassPc = -1;  ///< Pedal bass pitch class; -1 when isPedalPoint is false
 };
 
 // ── ChordFunction ─────────────────────────────────────────────────────────────
@@ -220,12 +208,6 @@ struct ChordFunction {
     // numerals (♭VII, ♭III, etc.) even when degree == -1 (non-diatonic root).
     int keyTonicPc = 0;
     KeySigMode keyMode = KeySigMode::Ionian;
-
-    /// Root pitch class of the immediately following chord region (-1 = unknown).
-    /// Populated by the harmonic rhythm bridge after all regions are identified
-    /// (two-pass). Used by formatRomanNumeral() to emit V/x and vii°/x labels.
-    /// Always -1 for status-bar / single-note analysis.
-    int nextRootPc = -1;
 };
 
 // ── ChordAnalysisResult ───────────────────────────────────────────────────────
@@ -371,16 +353,6 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–0.5.  Default: 0.05 (5 % of accumulated weight).
     double bassPassingToneMinWeightFraction = 0.05;
 
-    // ── Pedal point detection (§5.12) ───────────────────────────────────────
-
-    /// Minimum normalizedConfidence for the upper-voice-only Pass 2 result to
-    /// confirm a structural pedal point.  If the upper voices produce a chord
-    /// with confidence below this threshold, the full-sonority Pass 1 result is
-    /// kept and no pedal annotation is made.
-    /// Conservative default — only flag very confident pedals.
-    /// Range: 0.3–0.95.  Default: 0.65.
-    double pedalConfidenceThreshold = 0.65;
-
     // ── Confidence normalization (§P8d) ─────────────────────────────────────
 
     /// Score gap (winner − runner-up) at which normalizedConfidence = 0.5.
@@ -441,7 +413,6 @@ struct ChordAnalyzerPreferences {
             { "harmonicBoundaryJaccardThreshold",       { 0.0, 1.0 } },
             { "pedalTailWeightMultiplier",              { 0.0, 1.0 } },
             { "bassPassingToneMinWeightFraction",       { 0.0, 0.5 } },
-            { "pedalConfidenceThreshold",               { 0.3, 0.95 } },
             { "confidenceSigmoidMidpoint",              { 0.5, 5.0 } },
             { "confidenceSigmoidSteepness",             { 0.5, 5.0 } },
         };
@@ -609,24 +580,13 @@ public:
 /// Kept separate from ChordAnalyzer so the analysis layer remains display-agnostic.
 namespace ChordSymbolFormatter {
 
-/// Note spelling convention for chord symbol root and bass names.
-/// Mirrors NoteSpellingType in src/engraving/types/types.h.
-/// The bridge reads Sid::chordSymbolSpelling from the score style and maps it here.
-/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
-///   B natural → "H", Bb → "B". All other note names unchanged.
-/// Solfeggio and French map to Standard (not yet supported in chord symbol output).
-enum class NoteSpelling {
-    Standard,    ///< English: B natural = "B", Bb = "Bb"
-    German,      ///< H = B natural, B = Bb  (mirrors NoteSpellingType::GERMAN)
-    GermanPure,  ///< Same B/H rules as German for chord symbols  (mirrors NoteSpellingType::GERMAN_PURE)
-};
-
 /// Display options for chord symbol and Roman numeral formatting.
 /// Kept separate from ChordAnalyzerPreferences so the abstract analysis layer
 /// has no knowledge of display conventions (locale, notation style, etc.).
 struct Options {
-    /// Note spelling convention for root/bass names.
-    NoteSpelling spelling = NoteSpelling::Standard;
+    /// When true, display B natural as "H" and Bb as "B" (German/Nordic convention).
+    /// TODO: Replace with a locale-based lookup once user preferences are implemented.
+    bool useGermanBHNaming = false;
 };
 
 /// Global default formatting options.

@@ -31,7 +31,6 @@
 #include "notationanalysisinternal.h"
 #include "notationcomposingbridgehelpers.h"
 
-#include <algorithm>
 #include <array>
 #include <iterator>
 #include <optional>
@@ -46,7 +45,6 @@
 #include "engraving/dom/score.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
-#include "engraving/dom/stafftext.h"
 #include "engraving/types/constants.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -62,9 +60,6 @@ using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
-using mu::notation::internal::scoreNoteSpelling;
-using mu::notation::internal::detectCadences;
-using mu::notation::internal::detectPivotChords;
 
 namespace {
 
@@ -388,10 +383,9 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
     if (snapshot.context.chordResults.empty()) {
         snapshot.context.chordResults.push_back(preferredResult);
     } else {
-        const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };
-        auto sameDisplayResult = [keyFifths = snapshot.context.keyFifths, &fmtOpts](const auto& lhs, const auto& rhs) {
-            return mu::composing::analysis::ChordSymbolFormatter::formatSymbol(lhs, keyFifths, fmtOpts)
-                   == mu::composing::analysis::ChordSymbolFormatter::formatSymbol(rhs, keyFifths, fmtOpts)
+        auto sameDisplayResult = [keyFifths = snapshot.context.keyFifths](const auto& lhs, const auto& rhs) {
+            return mu::composing::analysis::ChordSymbolFormatter::formatSymbol(lhs, keyFifths)
+                   == mu::composing::analysis::ChordSymbolFormatter::formatSymbol(rhs, keyFifths)
                    && mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(lhs)
                    == mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(rhs)
                    && mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(lhs, keyFifths)
@@ -403,9 +397,8 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
         }
     }
 
-    const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };
     snapshot.symbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(snapshot.context.chordResults.front(),
-                                                                                  snapshot.context.keyFifths, fmtOpts);
+                                                                                  snapshot.context.keyFifths);
     snapshot.roman = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(snapshot.context.chordResults.front());
     snapshot.nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(snapshot.context.chordResults.front(),
                                                                                               snapshot.context.keyFifths);
@@ -553,7 +546,6 @@ std::string harmonicAnnotation(const Note* note)
     const bool wantRoman = prefs->analyzeForChordFunction() && prefs->showRomanNumeralsInStatusBar();
     const bool wantNashville = prefs->analyzeForChordFunction() && prefs->showNashvilleNumbersInStatusBar();
 
-    const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(note->score()) };
     int shown = 0;
     const int maxShown = prefs->analysisAlternatives();
     std::string candidates;
@@ -566,7 +558,7 @@ std::string harmonicAnnotation(const Note* note)
 
         std::string sym, roman, nashville;
         if (wantSym) {
-            sym = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(result, keyFifths, fmtOpts);
+            sym = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(result, keyFifths);
         }
         if (wantRoman) {
             roman = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(result);
@@ -723,38 +715,13 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     const auto* prefs = config.get().get();
     const double minimumDisplayDurationBeats = prefs ? prefs->minimumDisplayDurationBeats() : 0.5;
 
-    // Run harmonic analysis over an extended tick range when Roman numerals
-    // are requested.  The lookahead regions are read-only: used for cadence
-    // and pivot detection but never annotated.
-    //
-    //   selectionEndTick: the first tick that is outside the user's selection.
-    //   lookaheadEndTick: extends the analysis to include up to
-    //       kMaxPivotLookaheadRegions extra regions for key confirmation.
-    const Fraction selectionEndTick = endTick;
-    const Fraction lookaheadEndTick = writeRomanNumerals
-        ? Fraction::fromTicks(endTick.ticks()
-            + mu::notation::internal::kMaxPivotLookaheadRegions
-              * 4 * Constants::DIVISION)  // ~8 measures of lookahead
-        : endTick;
+    // Run harmonic analysis over the selection tick range.
+    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(
+        score, startTick, endTick, excludeStaves);
 
-    const auto allRegions = mu::notation::internal::prepareUserFacingHarmonicRegions(
-        score, startTick, lookaheadEndTick, excludeStaves);
-
-    if (allRegions.empty()) {
+    if (regions.empty()) {
         return;
     }
-
-    // Split into in-selection vs. lookahead.
-    const size_t selectionCount = static_cast<size_t>(
-        std::count_if(allRegions.begin(), allRegions.end(),
-            [&selectionEndTick](const mu::composing::analysis::HarmonicRegion& r) {
-                return Fraction::fromTicks(r.startTick) < selectionEndTick;
-            }));
-
-    // The main annotation loop operates only on in-selection regions.
-    const auto regions = std::vector<mu::composing::analysis::HarmonicRegion>(
-        allRegions.begin(),
-        allRegions.begin() + static_cast<std::ptrdiff_t>(selectionCount));
 
     // Create a fresh analyzer for annotation writes.  The analyzeHarmonicRhythm
     // pass carries sequential ChordTemporalContext (previousRootPc, etc.) which
@@ -823,9 +790,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
             }
         }
 
-        const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(score) };
         const std::string symText = writeChordSymbols
-            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths, fmtOpts)
+            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths)
             : "";
         const std::string romanText = writeRomanNumerals
             ? mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(annotationResult)
@@ -863,74 +829,6 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 h->setHarmony(muse::String::fromStdString(nashvilleText));
                 score->undoAddElement(h);
             }
-        }
-
-        // ── Pedal bass annotation ─────────────────────────────────────────────
-        // When the chord analyzer identified a structural pedal point, write a
-        // StaffText "X ped." (e.g. "G ped.", "Eb ped.") on the first write staff,
-        // in the Roman numeral layer (alongside cadence markers and pivot labels).
-        // Only written when Roman numeral mode is active.
-        if (writeRomanNumerals
-                && !writeStaves.empty()
-                && annotationResult.identity.isPedalPoint
-                && annotationResult.identity.pedalBassPc >= 0) {
-            // Build a bare root-name result for the pedal bass PC.
-            mu::composing::analysis::ChordAnalysisResult pedalRoot = annotationResult;
-            pedalRoot.identity.rootPc  = annotationResult.identity.pedalBassPc;
-            pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
-            pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
-            pedalRoot.identity.extensions = 0;
-            const std::string baseName = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(
-                pedalRoot, keyFifths, fmtOpts);
-            if (!baseName.empty()) {
-                const std::string pedalText = baseName + " ped.";
-                const track_idx_t pedTrack = writeStaves.front() * VOICES;
-                StaffText* pt = Factory::createStaffText(seg);
-                pt->setTrack(pedTrack);
-                pt->setParent(seg);
-                pt->setPlainText(muse::String::fromStdString(pedalText));
-                score->undoAddElement(pt);
-            }
-        }
-    }
-
-    // ── Cadence markers and pivot labels (Roman numeral mode only) ──────────
-    //
-    // Cadence markers ("PAC", "HC", etc.) and pivot labels ("vi → ii") are
-    // analytically meaningful annotations associated with the Roman numeral
-    // layer.  They are suppressed in chord-symbol-only and Nashville modes.
-    //
-    // Both use the full allRegions vector (selection + lookahead) for
-    // detection; writing is restricted to in-selection ticks only.
-    if (writeRomanNumerals && !writeStaves.empty()) {
-        const track_idx_t annotateTrack = writeStaves.front() * VOICES;
-
-        const auto cadences = detectCadences(allRegions, selectionCount);
-        for (const auto& marker : cadences) {
-            const Fraction mTick = Fraction::fromTicks(marker.tick);
-            Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
-            if (!mSeg) {
-                continue;
-            }
-            StaffText* st = Factory::createStaffText(mSeg);
-            st->setTrack(annotateTrack);
-            st->setParent(mSeg);
-            st->setPlainText(muse::String::fromStdString(marker.label));
-            score->undoAddElement(st);
-        }
-
-        const auto pivots = detectPivotChords(allRegions, selectionCount);
-        for (const auto& pv : pivots) {
-            const Fraction pTick = Fraction::fromTicks(pv.tick);
-            Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);
-            if (!pSeg) {
-                continue;
-            }
-            StaffText* pt = Factory::createStaffText(pSeg);
-            pt->setTrack(annotateTrack);
-            pt->setParent(pSeg);
-            pt->setPlainText(muse::String::fromStdString(pv.label));
-            score->undoAddElement(pt);
         }
     }
 

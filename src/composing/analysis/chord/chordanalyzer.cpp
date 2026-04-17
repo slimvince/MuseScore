@@ -31,14 +31,10 @@
 namespace mu::composing::analysis {
 namespace {
 
-/// Return the standard English name for a pitch class, choosing flat vs sharp
-/// based on the key signature.  Applies German B/H mapping when spelling requires it.
-/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
-///   Rule 1: B natural → "H"
-///   Rule 2: Bb → "B"
-/// All other note names are unchanged.
-const char* pitchClassName(int pc, int keySignatureFifths,
-                           ChordSymbolFormatter::NoteSpelling spelling = ChordSymbolFormatter::NoteSpelling::Standard)
+// TODO: B/H note naming (German/Nordic convention: H = B natural, B = Bb) should
+// follow user locale settings when that preference is exposed.  Until then, wire
+// ChordSymbolFormatter::Options::useGermanBHNaming through here.
+const char* pitchClassName(int pc, int keySignatureFifths)
 {
     static constexpr std::array<const char*, 12> SHARP_NAMES = {
         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
@@ -46,27 +42,13 @@ const char* pitchClassName(int pc, int keySignatureFifths,
     static constexpr std::array<const char*, 12> FLAT_NAMES = {
         "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"
     };
-    // German/Nordic: SHARP_NAMES[11]="B" → "H", FLAT_NAMES[10]="Bb" → "B"
-    static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H"
-    };
-    static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {
-        "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B", "H"
-    };
     const size_t idx = static_cast<size_t>(normalizePc(pc));
-    const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
-                        || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
-    if (keySignatureFifths < 0) {
-        return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
-    }
-    return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
+    return keySignatureFifths < 0 ? FLAT_NAMES[idx] : SHARP_NAMES[idx];
 }
 
 /// Name a pitch class using TPC spelling rather than key-signature convention.
 /// Covers cases like Eb (tpc=12), Bb (tpc=13), Ab (tpc=11) in C major.
-/// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356).
-const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
-                                  ChordSymbolFormatter::NoteSpelling spelling = ChordSymbolFormatter::NoteSpelling::Standard)
+const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths)
 {
     static constexpr std::array<const char*, 12> SHARP_NAMES = {
         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
@@ -74,24 +56,13 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
     static constexpr std::array<const char*, 12> FLAT_NAMES = {
         "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"
     };
-    static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {
-        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H"
-    };
-    static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {
-        "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "B", "H"
-    };
-    const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
-                        || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
     if (tpc >= 0) {
         // TPC 7..13 covers Fb,Cb,Gb,Db,Ab,Eb,Bb — these spell with a flat
         const bool preferFlat = (tpc >= 7 && tpc <= 13);
         const size_t idx = static_cast<size_t>(normalizePc(pc));
-        if (preferFlat) {
-            return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
-        }
-        return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
+        return preferFlat ? FLAT_NAMES[idx] : SHARP_NAMES[idx];
     }
-    return pitchClassName(pc, keySignatureFifths, spelling);
+    return pitchClassName(pc, keySignatureFifths);
 }
 
 std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool hasDim7,
@@ -1363,80 +1334,6 @@ static double normalizeChordConfidence(double winnerScore, double runnerUpScore,
                                   * (gap - prefs.confidenceSigmoidMidpoint)));
 }
 
-/// Returns true if bassPc is a chord tone of the chord identified by (rootPc, quality,
-/// extensions).  Used by the two-pass pedal detection to decide whether the bass note
-/// belongs to the upper-voice chord or is a structural pedal point.
-///
-/// Checks: (1) quality-defined triad intervals, (2) 7th/9th extensions that are
-/// explicitly detected in the extension bitmask.  This correctly handles F13/Eb
-/// (Eb = m7 of F, MinorSeventh set → true → no pedal detected) and HalfDiminished
-/// (m7 is implicit in that quality → true for interval 10).
-static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32_t extensions)
-{
-    const int interval = (bassPc - rootPc + 12) % 12;
-    if (interval == 0) {
-        return true; // root is always a chord tone
-    }
-
-    // Quality-defined triad intervals
-    switch (quality) {
-    case ChordQuality::Major:
-        if (interval == 4 || interval == 7) { return true; }
-        break;
-    case ChordQuality::Minor:
-        if (interval == 3 || interval == 7) { return true; }
-        break;
-    case ChordQuality::Diminished:
-        if (interval == 3 || interval == 6) { return true; }
-        break;
-    case ChordQuality::HalfDiminished:
-        if (interval == 3 || interval == 6 || interval == 10) { return true; }
-        break;
-    case ChordQuality::Augmented:
-        if (interval == 4 || interval == 8) { return true; }
-        break;
-    case ChordQuality::Suspended2:
-        if (interval == 2 || interval == 7) { return true; }
-        break;
-    case ChordQuality::Suspended4:
-        if (interval == 5 || interval == 7) { return true; }
-        break;
-    case ChordQuality::Power:
-        if (interval == 7) { return true; }
-        break;
-    default:
-        break;
-    }
-
-    // 7th/9th/11th/13th extensions explicitly detected in the bitmask.
-    // A bass note that matches any detected extension is a chord tone — the chord
-    // should be labelled as a slash chord (Cm7/F) rather than a pedal point.
-    if (interval == 10 && hasExtension(extensions, Extension::MinorSeventh))      { return true; }
-    if (interval == 11 && hasExtension(extensions, Extension::MajorSeventh))      { return true; }
-    if (interval == 9  && hasExtension(extensions, Extension::DiminishedSeventh)) { return true; }
-    if (interval == 1  && hasExtension(extensions, Extension::FlatNinth))         { return true; }
-    if (interval == 2  && hasExtension(extensions, Extension::NaturalNinth))      { return true; }
-    if (interval == 3  && hasExtension(extensions, Extension::SharpNinth))        { return true; }
-    if (interval == 5  && hasExtension(extensions, Extension::NaturalEleventh))   { return true; }
-    if (interval == 6  && hasExtension(extensions, Extension::SharpEleventh))     { return true; }
-    if (interval == 8  && hasExtension(extensions, Extension::FlatThirteenth))    { return true; }
-    if (interval == 9  && hasExtension(extensions, Extension::NaturalThirteenth)) { return true; }
-
-    // If the chord carries any 7th, the perfect 4th above the root (interval 5,
-    // natural 11th) is a valid chord tone even when it sits exactly at the
-    // extension-detection threshold (detectExtensions uses strict '>').
-    // This correctly handles Cm7/F where F's pcWeight equals kExtensionThreshold
-    // and NaturalEleventh is therefore not formally detected, but the chord still
-    // qualifies as a slash chord rather than a pedal point.
-    // A bare triad (no 7th detected) still triggers pedal detection normally.
-    const bool hasAnySeventh = hasExtension(extensions, Extension::MinorSeventh)
-                            || hasExtension(extensions, Extension::MajorSeventh)
-                            || hasExtension(extensions, Extension::DiminishedSeventh);
-    if (interval == 5 && hasAnySeventh) { return true; }
-
-    return false;
-}
-
 } // namespace
 
 std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
@@ -1744,9 +1641,6 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         r.identity.rootPc               = rootPc;
         r.identity.bassPc               = bassPc;
         r.identity.bassTpc              = bassTpc;
-        r.identity.naturalFifthPresent  = (quality != ChordQuality::Augmented)
-                                          && (pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
-                                              > kExtensionThreshold);
         r.identity.quality              = quality;
         if (ext.hasMinorSeventh)      setExtension(r.identity.extensions, Extension::MinorSeventh);
         if (ext.hasMajorSeventh)      setExtension(r.identity.extensions, Extension::MajorSeventh);
@@ -1863,86 +1757,6 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             const double iRunnerUp = (i + 1 < results.size()) ? results[i + 1].identity.score : 0.0;
             results[i].identity.normalizedConfidence
                 = normalizeChordConfidence(results[i].identity.score, iRunnerUp, prefs);
-        }
-    }
-
-    // ── Two-pass pedal point detection ────────────────────────────────────────
-    //
-    // Definition: a structural pedal point is a sustained bass note that is NOT
-    // a chord tone of the upper-voice harmony.  This two-pass check identifies
-    // it when:
-    //   (1) Pass 1 (all voices) produces a confident winner R1 with bassPc X.
-    //   (2) X is not a chord tone of R1 (triad + detected 7th extensions).
-    //   (3) Pass 2 (upper voices only, X removed) produces a chord R2 with
-    //       confidence ≥ pedalConfidenceThreshold and ≥ 2 distinct pitch classes.
-    //
-    // When confirmed, the Pass 2 chord replaces the Pass 1 result: the label
-    // describes the upper-voice harmony and isPedalPoint / pedalBassPc are set.
-    //
-    // Safety checks:
-    //   - Bass IS a chord tone of R1 → no check (common-tone progressions, slash
-    //     chords, jazz ostinati like F13/Eb where Eb is the minor 7th).
-    //   - Upper voices have < 2 distinct pitch classes → insufficient evidence.
-    //   - Pass 2 confidence < pedalConfidenceThreshold → ambiguous; keep R1.
-    //   - bassPc < 0 → no valid bass (sparse region); skip.
-    if (!results.empty() && bassPc >= 0 && prefs.pedalConfidenceThreshold > 0.0) {
-        const ChordAnalysisResult& r1 = results.front();
-        const bool bassIsChordTone = isBassChordTone(bassPc,
-                                                     r1.identity.rootPc,
-                                                     r1.identity.quality,
-                                                     r1.identity.extensions);
-        if (!bassIsChordTone) {
-            // Remove all tones with the pedal pitch class and re-analyze.
-            std::vector<ChordAnalysisTone> upperTones;
-            upperTones.reserve(tones.size());
-            for (const ChordAnalysisTone& t : tones) {
-                if ((t.pitch % 12 + 12) % 12 != bassPc) {
-                    upperTones.push_back(t);
-                }
-            }
-
-            // Require at least 2 distinct pitch classes in the upper voices.
-            std::set<int> upperPcs;
-            for (const ChordAnalysisTone& t : upperTones) {
-                upperPcs.insert((t.pitch % 12 + 12) % 12);
-            }
-
-            if (upperPcs.size() >= 2) {
-                // Run Pass 2 — re-use the same key context and preferences.
-                // Do not pass temporal context to Pass 2: the context bonuses
-                // (rootContinuityBonus, stepwiseBass*) are anchored to the bass
-                // note and would distort the upper-voice-only result.
-                const auto pass2 = RuleBasedChordAnalyzer{}.analyzeChord(
-                    upperTones, keySignatureFifths, keyMode, nullptr, prefs);
-
-                if (!pass2.empty()) {
-                    // Confidence is measured against the first competitor with a
-                    // DIFFERENT root.  Multiple templates for the same chord quality
-                    // (triad / maj7 / dom7) can score identically when their extended
-                    // tones are absent, filling all three result slots with the same
-                    // root — making normalizedConfidence artificially low.
-                    // Comparing the winner's score against the best genuine alternative
-                    // (different rootPc) gives a meaningful pedal-confirmation signal.
-                    double pass2AltScore = 0.0;
-                    const int p2Root = pass2.front().identity.rootPc;
-                    for (size_t i = 1; i < pass2.size(); ++i) {
-                        if (pass2[i].identity.rootPc != p2Root) {
-                            pass2AltScore = pass2[i].identity.score;
-                            break;
-                        }
-                    }
-                    const double gap = pass2.front().identity.score - pass2AltScore;
-                    const double c2  = 1.0 / (1.0 + std::exp(
-                        -prefs.confidenceSigmoidSteepness
-                        * (gap - prefs.confidenceSigmoidMidpoint)));
-                    if (c2 >= prefs.pedalConfidenceThreshold) {
-                        // Confirmed pedal — replace results with Pass 2.
-                        results = pass2;
-                        results.front().identity.isPedalPoint = true;
-                        results.front().identity.pedalBassPc  = bassPc;
-                    }
-                }
-            }
         }
     }
 
@@ -2099,44 +1913,26 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     return diag;
 }
 
-/// Returns true if bass is a valid plain note name: 1–3 chars,
-/// uppercase letter followed only by ASCII accidentals ('#' or 'b').
-/// Guards against chord symbol strings accidentally appearing in the
-/// bass field of slash chords (e.g. "C7b9/Bb" instead of "Bb").
-static bool isValidBassNoteName(const char* bass)
-{
-    if (!bass || bass[0] == '\0') return false;
-    if (!std::isupper(static_cast<unsigned char>(bass[0]))) return false;
-    size_t len = 1;
-    for (; bass[len] != '\0'; ++len) {
-        if (bass[len] != '#' && bass[len] != 'b') return false;
-        if (len >= 3) return false;   // max 3 chars
-    }
-    return true;
-}
-
 std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result,
                                                int keySignatureFifths,
                                                const Options& opts)
 {
+    (void)opts;  // TODO: wire opts.useGermanBHNaming through pitchClassName once implemented
     // Sus4+Maj7 chords are requalified to Major+omitsThird internally.
     // Render them as "Maj7sus"/"Maj9sus" — the notation used for this chord type in the catalog.
     if (hasExtension(result.identity.extensions, Extension::OmitsThird) && hasExtension(result.identity.extensions, Extension::MajorSeventh)
             && hasExtension(result.identity.extensions, Extension::NaturalEleventh) && !hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
-        std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling));
+        std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths));
         symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? "Maj9sus" : "Maj7sus";
         if (result.identity.bassPc != result.identity.rootPc
                 && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
-            const char* bassName = pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
-            if (isValidBassNoteName(bassName)) {
-                symbol += "/";
-                symbol += bassName;
-            }
+            symbol += "/";
+            symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
         }
         return symbol;
     }
 
-    std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling))
+    std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths))
                         + qualitySuffix(result.identity.quality,
                                         hasExtension(result.identity.extensions, Extension::MinorSeventh),
                                         hasExtension(result.identity.extensions, Extension::MajorSeventh),
@@ -2161,56 +1957,11 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
 
     if (result.identity.bassPc != result.identity.rootPc
             && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
-        const char* bassName = pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths, opts.spelling);
-        if (isValidBassNoteName(bassName)) {
-            symbol += "/";
-            symbol += bassName;
-        }
+        symbol += "/";
+        symbol += pitchClassNameFromTpc(result.identity.bassPc, result.identity.bassTpc, keySignatureFifths);
     }
 
     return symbol;
-}
-
-// ── Tonicization helpers ──────────────────────────────────────────────────────
-
-/// Diatonic scale intervals for the seven diatonic modes (semitones from tonic).
-static constexpr std::array<int, 7> kTonicizationScales[7] = {
-    { 0, 2, 4, 5, 7, 9, 11 }, // Ionian
-    { 0, 2, 3, 5, 7, 9, 10 }, // Dorian
-    { 0, 1, 3, 5, 7, 8, 10 }, // Phrygian
-    { 0, 2, 4, 6, 7, 9, 11 }, // Lydian
-    { 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian
-    { 0, 2, 3, 5, 7, 8, 10 }, // Aeolian
-    { 0, 1, 3, 5, 6, 8, 10 }, // Locrian
-};
-
-/// Maps all 21 KeySigMode ordinals to their diatonic parent index (0..6).
-static constexpr std::array<size_t, 21> kTonicizationParent = {
-    0, 1, 2, 3, 4, 5, 6,   // diatonic: identity
-    1, 2, 3, 4, 5, 6, 0,   // melodic minor family
-    5, 6, 0, 1, 2, 3, 4    // harmonic minor family
-};
-
-/// Return the diatonic scale degree (0..6) for pitch class `pc` relative to
-/// `tonicPc` in `scale`, or -1 if `pc` is not a scale member.
-static int diatonicDegreeForPc(int pc, int tonicPc, const std::array<int, 7>& scale)
-{
-    const int interval = (pc - tonicPc + 12) % 12;
-    for (int d = 0; d < 7; ++d) {
-        if (scale[d] == interval) {
-            return d;
-        }
-    }
-    return -1;
-}
-
-/// Returns true if the natural triad built on scale degree `d` has a major
-/// third (4 semitones), meaning the Roman numeral target label is upper-case.
-static bool isDegreeMajorThird(int d, const std::array<int, 7>& scale)
-{
-    const int rootInterval  = scale[d];
-    const int thirdInterval = scale[(d + 2) % 7];
-    return (thirdInterval - rootInterval + 12) % 12 == 4;
 }
 
 std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& result)
@@ -2252,104 +2003,6 @@ std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& 
                                       result.identity.rootPc, result.identity.bassPc,
                                       hasExtension(result.identity.extensions, Extension::MinorSeventh), hasExtension(result.identity.extensions, Extension::MajorSeventh),
                                       hasExtension(result.identity.extensions, Extension::DiminishedSeventh));
-
-    // ── Augmented sixth label (It+6, Fr+6, Ger+6) — replaces chromatic Roman numeral ─
-    //
-    // Condition: root is ♭6̂ of the current key AND the note at interval 10 above root
-    // is spelled as an augmented sixth (TPC delta +10 from root), which the analysis
-    // phase encodes as SharpThirteenth (not MinorSeventh).  When TPC data is absent,
-    // SharpThirteenth is not set and detection is suppressed — this correctly avoids
-    // false positives on enharmonically identical dominant seventh chords (e.g. Ab7).
-    //
-    // Type determination (after confirming aug6 family):
-    //   French (+6): SharpEleventh set — note at interval 6 above root (D above Ab in C)
-    //                is spelled in the sharp direction (TPC delta +6 from root).
-    //   German (+6): naturalFifthPresent — the perfect fifth above root (Eb in C) is present.
-    //   Italian (+6): neither French nor German.
-    //
-    // The aug6 label REPLACES the diatonic/chromatic Roman numeral entirely.
-    // Preset gating (Standard/Baroque only): deferred — formatRomanNumeral() has no
-    // preset context; gating may be added when preset is threaded through the formatter.
-    {
-        using Q = ChordQuality;
-        const int rootPc     = result.identity.rootPc;
-        const int keyTonicPc = result.function.keyTonicPc;
-        if (result.identity.quality == Q::Major
-            && rootPc == (keyTonicPc + 8) % 12
-            && hasExtension(result.identity.extensions, Extension::SharpThirteenth)) {
-            if (hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
-                romanNumeral = "Fr+6";
-            } else if (result.identity.naturalFifthPresent) {
-                romanNumeral = "Ger+6";
-            } else {
-                romanNumeral = "It+6";
-            }
-        }
-    }
-
-    // ── Tonicization label (V7/x, vii°/x) — replaces normal Roman numeral ───
-    //
-    // Only fires when nextRootPc was populated by a two-pass sequential analysis
-    // (chord staff population). Status-bar single-note analysis leaves
-    // nextRootPc = -1 and shows the plain diatonic/chromatic label.
-    //
-    // When tonicization is detected the ENTIRE label is replaced, not appended.
-    // "V7/ii" is standard notation; "VI7/ii" (degree-in-home-key + /target) is not.
-    if (result.function.nextRootPc >= 0 && !romanNumeral.empty()) {
-        using Q = ChordQuality;
-        const Q quality  = result.identity.quality;
-        const int rootPc = result.identity.rootPc;
-        const int nextPc = result.function.nextRootPc;
-
-        // V/x: dominant seventh quality (major triad + minor seventh).
-        // rootPc must be a perfect fifth above nextPc.
-        const bool isDom7 = (quality == Q::Major)
-                            && hasExtension(result.identity.extensions, Extension::MinorSeventh);
-        // vii°/x: diminished or half-diminished.
-        // nextPc must be a semitone above rootPc.
-        const bool isDim = (quality == Q::Diminished || quality == Q::HalfDiminished);
-
-        const int upAFifth    = (rootPc - nextPc + 12) % 12; // 7 = rootPc is P5 above nextPc
-        const int upASemitone = (nextPc - rootPc + 12) % 12; // 1 = nextPc is semitone above rootPc
-
-        const bool isCandidateV    = isDom7 && (upAFifth == 7);
-        const bool isCandidateViio = isDim  && (upASemitone == 1);
-
-        if (isCandidateV || isCandidateViio) {
-            const size_t modeScaleIdx = kTonicizationParent[keyModeIndex(result.function.keyMode)];
-            const std::array<int, 7>& scale = kTonicizationScales[modeScaleIdx];
-
-            const int nextDegree = diatonicDegreeForPc(nextPc, result.function.keyTonicPc, scale);
-
-            // nextDegree > 0: exclude the tonic so plain V→I stays labeled "V7", not "V7/I".
-            if (nextDegree > 0) {
-                static constexpr const char* UPPER[7] = { "I","II","III","IV","V","VI","VII" };
-                static constexpr const char* LOWER[7] = { "i","ii","iii","iv","v","vi","vii" };
-
-                std::string tonicLabel;
-                if (isCandidateV) {
-                    // Dominant seventh: always "V7" (dom7 quality guaranteed by detection)
-                    tonicLabel = "V7";
-                } else {
-                    // Diminished leading-tone chord
-                    const bool isHalfDim = (quality == Q::HalfDiminished);
-                    tonicLabel = "vii";
-                    tonicLabel += isHalfDim ? "\xc3\xb8" : "o"; // ø or °
-                    if (isHalfDim
-                            || hasExtension(result.identity.extensions, Extension::DiminishedSeventh)
-                            || hasExtension(result.identity.extensions, Extension::MinorSeventh)) {
-                        tonicLabel += "7";
-                    }
-                }
-
-                const bool upper = isDegreeMajorThird(nextDegree, scale);
-                tonicLabel += "/";
-                tonicLabel += (upper ? UPPER[nextDegree] : LOWER[nextDegree]);
-                romanNumeral = tonicLabel; // replace the diatonic/chromatic label
-            }
-        }
-    }
-
     return romanNumeral;
 }
 
