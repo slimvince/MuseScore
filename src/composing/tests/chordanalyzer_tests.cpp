@@ -1790,3 +1790,98 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
     // formatter produces "Cm7add11/F".  The critical assertion is root=C, not F.
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(top, 0), "Cm7add11/F");
 }
+
+// ── B/H Note Naming (German/Nordic convention) ──────────────────────────────
+// NoteSpelling enum mirrors NoteSpellingType in src/engraving/types/types.h.
+// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
+//   Rule 1: B natural → "H"
+//   Rule 2: Bb → "B"
+// All other note names are unchanged.
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_BNatural_IsB)
+{
+    // B major triad in 5-sharp key. Standard spelling: root = "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::Standard };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "B");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_Bb_IsBb)
+{
+    // Bb major triad in 2-flat key. Standard spelling: root = "Bb".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::Standard };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "Bb");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_BNatural_IsH)
+{
+    // B major triad in 5-sharp key. German spelling: B natural → "H".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "H");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Bb_IsB)
+{
+    // Bb major triad in 2-flat key. German spelling: Bb → "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "B");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_C_Unchanged)
+{
+    // C major triad. German spelling: "C" is unchanged (not affected by B/H rule).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {60,15}, {64,19}, {67,16} }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0, opts), "C");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Ab_Unchanged)
+{
+    // Ab major triad in 4-flat key. German spelling: "Ab" is unchanged.
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {68,11}, {72,15}, {75,12} }), -4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -4, opts), "Ab");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_BNatural_IsH)
+{
+    // B major triad in 5-sharp key. GermanPure spelling: B natural → "H".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::GermanPure };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "H");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_Bb_IsB)
+{
+    // Bb major triad in 2-flat key. GermanPure spelling: Bb → "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::GermanPure };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "B");
+}

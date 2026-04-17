@@ -47,6 +47,12 @@ using staff_idx_t = size_t;
 
 namespace mu::notation::internal {
 
+/// Map the score's chord symbol spelling preference (Sid::chordSymbolSpelling) to
+/// ChordSymbolFormatter::NoteSpelling.  Returns Standard for a null score or for
+/// spelling types not yet supported in chord symbol output (Solfeggio, French).
+mu::composing::analysis::ChordSymbolFormatter::NoteSpelling scoreNoteSpelling(
+    const mu::engraving::Score* score);
+
 /// A raw sounding note: playback pitch + TPC spelling.
 struct SoundingNote { int ppitch; int tpc; };
 
@@ -191,5 +197,66 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
                                  const std::set<size_t>& excludeStaves);
+
+// ── Cadence and pivot detection ───────────────────────────────────────────────
+
+/// Minimum normalized key confidence required for cadence or pivot detection.
+/// Matches kAssertiveKeyExposureThreshold used by populateChordTrack.
+inline constexpr double kAnnotateKeyConfidenceThreshold = 0.8;
+
+/// Maximum number of lookahead regions (past the selection boundary) examined
+/// when trying to confirm that a candidate pivot chord's new key is stable.
+inline constexpr int kMaxPivotLookaheadRegions = 8;
+
+/// A cadence label ("PAC", "PC", "DC", "HC") at a score tick.
+struct CadenceMarker {
+    int tick;
+    std::string label;
+};
+
+/// A pivot chord label ("vi \u2192 ii" etc.) at a score tick.
+struct PivotLabel {
+    int tick;
+    std::string label;
+};
+
+/// Returns true if the key mode result meets the assertive confidence threshold
+/// used for cadence and pivot detection.
+bool hasAssertiveKeyConfidence(
+    const mu::composing::analysis::KeyModeAnalysisResult& kmr);
+
+/// Detect cadence markers from an ordered sequence of harmonic regions.
+///
+/// @param regions        All regions, including any read-only lookahead regions
+///                       past the selection boundary.
+/// @param selectionCount First N elements of regions[] are inside the user's
+///                       selection; elements at index N and above are lookahead.
+///
+/// PAC/PC/DC labels are placed at the resolution chord's tick. When the
+/// resolution chord is in the lookahead (outside the selection), the label is
+/// placed at the preparatory chord (last in-selection region) instead, so that
+/// every returned tick falls inside the selection.
+///
+/// HC is emitted when the last in-selection region is a dominant (degree 4).
+std::vector<CadenceMarker> detectCadences(
+    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    size_t selectionCount);
+
+/// Detect pivot chord labels from an ordered sequence of harmonic regions.
+///
+/// The pivot is the most recent in-selection chord that is diatonic to the
+/// outgoing key AND whose root also belongs to the incoming key's scale.
+/// Its label has the form "vi \u2192 ii" (outgoing Roman \u2192 incoming Roman).
+///
+/// @param regions        All regions including lookahead.
+/// @param selectionCount Index of first lookahead region (0 = no in-selection
+///                       regions; equal to regions.size() = no lookahead).
+///
+/// If the incoming key cannot be confirmed by an assertive region within
+/// kMaxPivotLookaheadRegions past the boundary, the pivot label is suppressed
+/// to avoid false positives.
+std::vector<PivotLabel> detectPivotChords(
+    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    size_t selectionCount);
 
 } // namespace mu::notation::internal
