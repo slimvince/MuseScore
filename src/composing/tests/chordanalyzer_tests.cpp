@@ -118,6 +118,28 @@ ChordAnalyzerPreferences bassSupportPrefs()
     return prefs;
 }
 
+/// Build tones with individual pitch/weight pairs.
+/// The first tone is flagged isBass=true; bass detection in the analyzer
+/// uses lowest pitch, so list pitches in ascending order if the first
+/// entry should genuinely be the bass.
+std::vector<ChordAnalysisTone> weightedTones(std::initializer_list<std::pair<int, double>> pitchWeightPairs)
+{
+    std::vector<ChordAnalysisTone> out;
+    out.reserve(pitchWeightPairs.size());
+
+    bool first = true;
+    for (const auto& pw : pitchWeightPairs) {
+        ChordAnalysisTone t;
+        t.pitch  = pw.first;
+        t.weight = pw.second;
+        t.isBass = first;
+        out.push_back(t);
+        first = false;
+    }
+
+    return out;
+}
+
 } // namespace
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
@@ -1789,4 +1811,535 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
     // so with equal-weight tones the extension threshold is exceeded and the
     // formatter produces "Cm7add11/F".  The critical assertion is root=C, not F.
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(top, 0), "Cm7add11/F");
+}
+
+// ── B/H Note Naming (German/Nordic convention) ──────────────────────────────
+// NoteSpelling enum mirrors NoteSpellingType in src/engraving/types/types.h.
+// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356):
+//   Rule 1: B natural → "H"
+//   Rule 2: Bb → "B"
+// All other note names are unchanged.
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_BNatural_IsB)
+{
+    // B major triad in 5-sharp key. Standard spelling: root = "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::Standard };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "B");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_Bb_IsBb)
+{
+    // Bb major triad in 2-flat key. Standard spelling: root = "Bb".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::Standard };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "Bb");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_BNatural_IsH)
+{
+    // B major triad in 5-sharp key. German spelling: B natural → "H".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "H");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Bb_IsB)
+{
+    // Bb major triad in 2-flat key. German spelling: Bb → "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "B");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_C_Unchanged)
+{
+    // C major triad. German spelling: "C" is unchanged (not affected by B/H rule).
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {60,15}, {64,19}, {67,16} }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0, opts), "C");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Ab_Unchanged)
+{
+    // Ab major triad in 4-flat key. German spelling: "Ab" is unchanged.
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {68,11}, {72,15}, {75,12} }), -4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::German };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -4, opts), "Ab");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_BNatural_IsH)
+{
+    // B major triad in 5-sharp key. GermanPure spelling: B natural → "H".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::GermanPure };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 5, opts), "H");
+}
+
+TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_Bb_IsB)
+{
+    // Bb major triad in 2-flat key. GermanPure spelling: Bb → "B".
+    const auto results = kAnalyzer.analyzeChord(
+        tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    const ChordSymbolFormatter::Options opts{ ChordSymbolFormatter::NoteSpelling::GermanPure };
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2, opts), "B");
+}
+
+TEST(Composing_ChordAnalyzerTests, ChordNameInBassField_Suppressed)
+{
+    // Regression guard for MFV QA bug where "C7b9/Bb" appeared in the bass
+    // field of a slash chord instead of a plain note name, producing output
+    // like "BbMaj7add13/C7b9/Bb".
+    //
+    // The formatter's isValidBassNoteName guard ensures any bass name that is
+    // not a plain note name (uppercase letter + optional accidentals, ≤ 3 chars)
+    // suppresses the slash rather than emitting an invalid symbol.
+    //
+    // This test constructs a BbMaj7-type voicing with an F bass (second
+    // inversion) and verifies: the symbol starts with "Bb", and if a slash
+    // is present, the bass field after "/" is a valid plain note name only.
+    std::vector<ChordAnalysisTone> ts;
+    auto addTone = [&](int pitch, double weight, bool isBass = false) {
+        ChordAnalysisTone t;
+        t.pitch  = pitch;
+        t.weight = weight;
+        t.isBass = isBass;
+        ts.push_back(t);
+    };
+    // F2 bass (light), Bb3 root (strong), D4 third, A4 maj7, G4 maj13
+    addTone(41, 0.3, true);   // F2  — bass (inverted, light)
+    addTone(58, 1.0);          // Bb3 — root (strong)
+    addTone(62, 0.8);          // D4  — major third
+    addTone(69, 0.6);          // A4  — major seventh
+    addTone(67, 0.5);          // G4  — major thirteenth
+
+    const auto results = kAnalyzer.analyzeChord(ts, -2, KeySigMode::Ionian, nullptr);
+    ASSERT_FALSE(results.empty());
+
+    const ChordSymbolFormatter::Options opts{};
+    const std::string symbol = ChordSymbolFormatter::formatSymbol(results.front(), -2, opts);
+
+    // Root must be Bb.
+    EXPECT_EQ(symbol.substr(0, 2), "Bb")
+        << "Root must be Bb; got: " << symbol;
+
+    // If a slash is present, the bass field must be a valid plain note name:
+    // at most 3 characters, starting with an uppercase letter.
+    const size_t slashPos = symbol.find('/');
+    if (slashPos != std::string::npos) {
+        const std::string bassField = symbol.substr(slashPos + 1);
+        EXPECT_LE(bassField.size(), 3u)
+            << "Bass field must be at most 3 chars (plain note name); got: '"
+            << bassField << "' in symbol: " << symbol;
+        EXPECT_FALSE(bassField.empty());
+        if (!bassField.empty()) {
+            EXPECT_TRUE(std::isupper(static_cast<unsigned char>(bassField[0])))
+                << "Bass field must start with an uppercase letter; got: '"
+                << bassField << "' in symbol: " << symbol;
+        }
+        // Must contain no further slash (no nested chord symbol).
+        EXPECT_EQ(bassField.find('/'), std::string::npos)
+            << "Bass field must not contain a second slash; got: '"
+            << bassField << "' in symbol: " << symbol;
+    }
+}
+
+// ── Tonicization label tests (V7/x, vii°/x) ─────────────────────────────────
+//
+// Tests use makeRomanResult() + manual nextRootPc assignment, so they are fully
+// decoupled from the chord analysis algorithm and bridge wiring.
+//
+// Convention:
+//   rootPc values: C=0 D=2 E=4 F=5 G=7 A=9 B=11  (C#=1 Eb=3 F#=6 Ab=8 Bb=10)
+//
+// All tests are in C major (keyTonicPc=0, Ionian) unless noted otherwise.
+
+// Helper: build a dom7 result for a given root in C major, then set nextRootPc.
+static ChordAnalysisResult dom7Result(int rootPc, int nextRootPc,
+                                      int keyTonicPc = 0,
+                                      KeySigMode keyMode = KeySigMode::Ionian)
+{
+    // degree = scale position of rootPc in the key (may be -1 for chromatic roots)
+    constexpr std::array<int, 7> ionianScale = { 0, 2, 4, 5, 7, 9, 11 };
+    constexpr std::array<int, 7> aeolianScale = { 0, 2, 3, 5, 7, 8, 10 };
+    const std::array<int, 7>& scale = (keyMode == KeySigMode::Aeolian) ? aeolianScale : ionianScale;
+    int degree = -1;
+    for (int i = 0; i < 7; ++i) {
+        if ((keyTonicPc + scale[i]) % 12 == rootPc) { degree = i; break; }
+    }
+    ChordAnalysisResult r = makeRomanResult(degree, ChordQuality::Major,
+                                            rootPc, rootPc, /*hasMin7=*/true,
+                                            false, false, false,
+                                            keyTonicPc, keyMode);
+    r.function.nextRootPc = nextRootPc;
+    return r;
+}
+
+// Helper: build a diminished triad result with optional dim7.
+static ChordAnalysisResult dimResult(int rootPc, int nextRootPc,
+                                     bool hasDim7 = false,
+                                     int keyTonicPc = 0,
+                                     KeySigMode keyMode = KeySigMode::Ionian)
+{
+    constexpr std::array<int, 7> ionianScale = { 0, 2, 4, 5, 7, 9, 11 };
+    int degree = -1;
+    for (int i = 0; i < 7; ++i) {
+        if ((keyTonicPc + ionianScale[i]) % 12 == rootPc) { degree = i; break; }
+    }
+    ChordAnalysisResult r = makeRomanResult(degree, ChordQuality::Diminished,
+                                            rootPc, rootPc, /*hasMin7=*/false,
+                                            false, hasDim7, false,
+                                            keyTonicPc, keyMode);
+    r.function.nextRootPc = nextRootPc;
+    return r;
+}
+
+// ── V7/x cases ────────────────────────────────────────────────────────────────
+
+// A7 → Dm in C major: A is a P5 above D; D is degree 1 (ii). → V7/ii
+TEST(Composing_TonicizationTests, A7_to_Dm_in_CMajor_is_V7ofII)
+{
+    const auto r = dom7Result(/*rootPc=*/9, /*nextRootPc=*/2);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/ii");
+}
+
+// E7 → Am in C major: E is a P5 above A; A is degree 5 (vi). → V7/vi
+TEST(Composing_TonicizationTests, E7_to_Am_in_CMajor_is_V7ofVI)
+{
+    const auto r = dom7Result(/*rootPc=*/4, /*nextRootPc=*/9);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/vi");
+}
+
+// D7 → G in C major: D is a P5 above G; G is degree 4 (V). → V7/V
+TEST(Composing_TonicizationTests, D7_to_G_in_CMajor_is_V7ofV)
+{
+    const auto r = dom7Result(/*rootPc=*/2, /*nextRootPc=*/7);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/V");
+}
+
+// B7 → Em in C major: B is a P5 above E; E is degree 2 (iii). → V7/iii
+TEST(Composing_TonicizationTests, B7_to_Em_in_CMajor_is_V7ofIII)
+{
+    const auto r = dom7Result(/*rootPc=*/11, /*nextRootPc=*/4);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/iii");
+}
+
+// C7 → F in C major: C is a P5 above F; F is degree 3 (IV). → V7/IV
+TEST(Composing_TonicizationTests, C7_to_F_in_CMajor_is_V7ofIV)
+{
+    const auto r = dom7Result(/*rootPc=*/0, /*nextRootPc=*/5);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/IV");
+}
+
+// G7 → C in C major: G is a P5 above C; C is degree 0 (tonic).
+// Must NOT produce V7/I — plain dominant stays "V7".
+TEST(Composing_TonicizationTests, G7_to_C_in_CMajor_is_V7_not_secondary)
+{
+    const auto r = dom7Result(/*rootPc=*/7, /*nextRootPc=*/0);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7");
+}
+
+// No nextRootPc: label must be the plain diatonic label (no slash suffix).
+TEST(Composing_TonicizationTests, G7_with_no_nextRoot_is_V7)
+{
+    ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 7, 7, /*hasMin7=*/true);
+    // nextRootPc not set → stays -1
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7");
+}
+
+// Non-dom7 major chord (no minor seventh) must not trigger tonicization.
+// C major triad → F: missing the minor 7th, so NOT a secondary dominant.
+TEST(Composing_TonicizationTests, CMajorTriad_to_F_is_not_tonicization)
+{
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 0, 0, /*hasMin7=*/false);
+    r.function.nextRootPc = 5; // F
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I");
+}
+
+// ── vii°/x cases ──────────────────────────────────────────────────────────────
+
+// C#dim → Dm in C major: C# is a semitone below D; D is degree 1 (ii). → viio/ii
+TEST(Composing_TonicizationTests, Csharpdim_to_Dm_in_CMajor_is_viioOfII)
+{
+    // C# (rootPc=1) is chromatic in C major → degree=-1
+    const auto r = dimResult(/*rootPc=*/1, /*nextRootPc=*/2);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio/ii");
+}
+
+// Bdim → C in C major: B is a semitone below C; C is degree 0 (tonic).
+// Must NOT produce viio/I — leading tone to tonic stays "viio".
+TEST(Composing_TonicizationTests, Bdim_to_C_in_CMajor_is_viio_not_secondary)
+{
+    const auto r = dimResult(/*rootPc=*/11, /*nextRootPc=*/0);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio");
+}
+
+// F#dim → Gm in C major: F# is a semitone below G; G is degree 4 (V). → viio/V
+TEST(Composing_TonicizationTests, Fsharpdim_to_G_in_CMajor_is_viioOfV)
+{
+    const auto r = dimResult(/*rootPc=*/6, /*nextRootPc=*/7);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio/V");
+}
+
+// C#dim7 → Dm in C major: same as C#dim but with diminished seventh. → viio7/ii
+TEST(Composing_TonicizationTests, CsharpDim7_to_Dm_in_CMajor_is_viio7OfII)
+{
+    const auto r = dimResult(/*rootPc=*/1, /*nextRootPc=*/2, /*hasDim7=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio7/ii");
+}
+
+// ── Augmented Sixth Chord Label Tests ──────────────────────────────────────
+//
+// ChordAnalysisResult objects are built manually to simulate what analyzeChord()
+// produces when TPC data is present:
+//   - SharpThirteenth set (F# spelling, TPC delta +10 from Ab root) — aug6 family
+//   - MinorSeventh set (Gb spelling, TPC delta -2 from Ab root)   — dom7 / tritone sub
+//
+// In all cases: root = ♭6̂ of key = (keyTonicPc + 8) % 12
+//               key  = C major (keyTonicPc=0) unless stated otherwise.
+
+/// Build a ChordAnalysisResult for an augmented sixth chord family.
+/// SharpThirteenth is always set (F# spelling, TPC delta +10 from root).
+/// Additional parameters control the specific type (It/Fr/Ger).
+static ChordAnalysisResult aug6Result(bool hasSharpEleventh = false,
+                                      bool naturalFifthPresentParam = false,
+                                      int keyTonicPc = 0,
+                                      KeySigMode keyMode = KeySigMode::Ionian)
+{
+    const int rootPc = (keyTonicPc + 8) % 12;    // ♭6̂ of the key
+    ChordAnalysisResult r;
+    r.function.degree               = -1;         // ♭6 is non-diatonic in Ionian
+    r.identity.quality              = ChordQuality::Major;
+    r.identity.rootPc               = rootPc;
+    r.identity.bassPc               = rootPc;
+    r.identity.naturalFifthPresent  = naturalFifthPresentParam;
+    setExtension(r.identity.extensions, Extension::SharpThirteenth); // aug6 spelling
+    if (hasSharpEleventh)
+        setExtension(r.identity.extensions, Extension::SharpEleventh);
+    r.function.keyTonicPc           = keyTonicPc;
+    r.function.keyMode              = keyMode;
+    return r;
+}
+
+// ── Italian +6 ────────────────────────────────────────────────────────────────
+
+// Ab-C-F# in C major (no P5, no French tone) → It+6
+TEST(Composing_AugmentedSixthTests, Italian_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/false, /*naturalFifthPresent=*/false);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "It+6");
+}
+
+// Same in C minor (Aeolian): same pitch classes, same result
+TEST(Composing_AugmentedSixthTests, Italian_CMinor)
+{
+    const auto r = aug6Result(false, false, 0, KeySigMode::Aeolian);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "It+6");
+}
+
+// ── French +6 ─────────────────────────────────────────────────────────────────
+
+// Ab-C-D-F# in C major (SharpEleventh = D spelled sharply above Ab) → Fr+6
+TEST(Composing_AugmentedSixthTests, French_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/true, /*naturalFifthPresent=*/false);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Fr+6");
+}
+
+// ── German +6 ─────────────────────────────────────────────────────────────────
+
+// Ab-C-Eb-F# in C major (P5 = Eb present, F# spelling) → Ger+6
+TEST(Composing_AugmentedSixthTests, German_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/false, /*naturalFifthPresent=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// Same in C minor
+TEST(Composing_AugmentedSixthTests, German_CMinor)
+{
+    const auto r = aug6Result(false, true, 0, KeySigMode::Aeolian);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// ── Ger+6 vs tritone-sub dominant — TPC spelling distinction ──────────────────
+
+// Ab-C-Eb-Gb (Ab dominant seventh, Gb spelling = min7, TPC delta -2): → NOT Ger+6
+// Expected: chromatic Roman numeral "bVI7" (SharpThirteenth is NOT set)
+TEST(Composing_AugmentedSixthTests, TritoneSubDominant_NotGerPlus6)
+{
+    ChordAnalysisResult r;
+    r.function.degree               = -1;
+    r.identity.quality              = ChordQuality::Major;
+    r.identity.rootPc               = 8;   // Ab
+    r.identity.bassPc               = 8;
+    r.identity.naturalFifthPresent  = true; // Eb present
+    setExtension(r.identity.extensions, Extension::MinorSeventh); // Gb spelling
+    r.function.keyTonicPc           = 0;
+    r.function.keyMode              = KeySigMode::Ionian;
+    // SharpThirteenth NOT set → aug6 detection suppressed → chromatic Roman numeral
+    EXPECT_NE(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "bVI7");
+}
+
+// Ab-C-Eb-F# (Ger+6, F# spelling = SharpThirteenth, TPC delta +10): → Ger+6
+TEST(Composing_AugmentedSixthTests, GermanSpelling_IsGerPlus6)
+{
+    const auto r = aug6Result(false, /*naturalFifthPresent=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// ── Non-aug6 chords must not produce aug6 labels ──────────────────────────────
+
+// Plain C major triad (root=0, not ♭6̂) → "I", not any aug6 label
+TEST(Composing_AugmentedSixthTests, PlainMajorChord_NotAugSixth)
+{
+    const auto r = makeRomanResult(0, ChordQuality::Major);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I");
+}
+
+// Plain minor chord at ♭6̂ position (quality=Minor, no SharpThirteenth) → no aug6
+// Expected: chromatic Roman numeral "bVI" (minor quality at ♭6)
+TEST(Composing_AugmentedSixthTests, MinorChordOnFlatSixth_NotAugSixth)
+{
+    // Ab minor triad in C major — minor quality, no SharpThirteenth
+    ChordAnalysisResult r;
+    r.function.degree       = -1;
+    r.identity.quality      = ChordQuality::Minor;
+    r.identity.rootPc       = 8;  // Ab
+    r.identity.bassPc       = 8;
+    r.function.keyTonicPc   = 0;
+    r.function.keyMode      = KeySigMode::Ionian;
+    // Minor quality → detection requires Major quality; this must NOT produce aug6
+    const std::string label = ChordSymbolFormatter::formatRomanNumeral(r);
+    EXPECT_NE(label, "It+6");
+    EXPECT_NE(label, "Fr+6");
+    EXPECT_NE(label, "Ger+6");
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// Pedal point detection (§5.12)
+// Two-pass logic: if the bass is NOT a chord tone of the Pass-1 winner,
+// re-analyze upper voices only; if Pass-2 confidence ≥ threshold and
+// ≥2 distinct upper PCs, the result is flagged as a pedal point.
+//
+// Bass weight must exceed bassPassingToneMinWeightFraction×totalWeight
+// (default 5 %) to be recognised as the structural bass; tests that
+// need a low-weight pedal bass use weight=0.2 with upper voices at 1.0
+// (0.2 / 3.2 = 6.25 % > 5 %).
+// ═══════════════════════════════════════════════════════════════════
+
+// Bass IS the root of the winning chord — interval=0 → always a chord tone.
+TEST(Composing_PedalPointTests, BassIsChordTone_NoPedalDetected)
+{
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Eb3 is the minor 7th of F dominant 7th (interval 10 from F, MinorSeventh flag set).
+// isBassChordTone checks the extension flags → chord tone → no pedal.
+TEST(Composing_PedalPointTests, F13overEb_BassIsChordTone_NoPedalDetected)
+{
+    // Eb3=51, F4=65, A4=69, C5=72  →  Fdom7/Eb
+    const auto results = kAnalyzer.analyzeChord(tones({ 51, 65, 69, 72 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// C3 at low weight under G–B–D: C is not a chord tone of G major (interval=5).
+// Pass-2 finds G major with high confidence → pedal confirmed.
+TEST(Composing_PedalPointTests, SustainedBassNotInUpperVoiceChord_PedalDetected)
+{
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
+    EXPECT_EQ(results.front().identity.rootPc, 7);        // G major above
+}
+
+// G3 at low weight under D–F–A: G is not a chord tone of D minor (interval=5, not 3 or 7).
+// Classic dominant-pedal scenario.
+TEST(Composing_PedalPointTests, DominantPedal_Detected)
+{
+    const auto ts = weightedTones({ { 55, 0.2 }, { 62, 1.0 }, { 65, 1.0 }, { 69, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 7);   // G pedal
+    EXPECT_EQ(results.front().identity.rootPc, 2);        // Dm above
+}
+
+// C3 at low weight under A major (A4–C#5–E5 at full weight).
+// C is not a chord tone of A major (interval=(0-9+12)%12=3, not 4 or 7) → pedal detected.
+// Note: Eb-G-Bb was the first design choice but Cm7 (C-Eb-G-Bb) wins Pass 1 via the
+// full bass-root bonus, making the bass appear to be the minor-7th chord tone.
+TEST(Composing_PedalPointTests, TonicPedal_Detected)
+{
+    // C3=48, A4=69, C#5=73, E5=76
+    const auto ts = weightedTones({ { 48, 0.2 }, { 69, 1.0 }, { 73, 1.0 }, { 76, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
+    EXPECT_EQ(results.front().identity.rootPc, 9);        // A major above
+}
+
+// pedalConfidenceThreshold=0.0 disables the two-pass check entirely (guard in analyzeChord).
+// Same voicing as SustainedBassNotInUpperVoiceChord_PedalDetected but pedal suppressed.
+TEST(Composing_PedalPointTests, PedalDetection_DisabledByZeroThreshold)
+{
+    ChordAnalyzerPreferences prefs;
+    prefs.pedalConfidenceThreshold = 0.0;
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// C major in first inversion: E3 is the bass note.
+// isBassChordTone(bassPc=4, rootPc=0, Major): interval=4 (M3) → chord tone → no pedal.
+TEST(Composing_PedalPointTests, SustainedInnerVoiceIsChordTone_NoPedalDetected)
+{
+    // E3=52 (bass), C4=60, E4=64, G4=67
+    const auto results = kAnalyzer.analyzeChord(tones({ 52, 60, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Same voicing as SustainedBassNotInUpperVoiceChord_PedalDetected but
+// pedalConfidenceThreshold=0.99 — G major's confidence (≈0.97) stays below this bar.
+TEST(Composing_PedalPointTests, LowConfidenceUpperVoices_NoPedalDetected)
+{
+    ChordAnalyzerPreferences prefs;
+    prefs.pedalConfidenceThreshold = 0.99;
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
