@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-18 (session 16)*
+*Last updated: 2026-04-18 (session 17)*
 
 ---
 
@@ -923,8 +923,10 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
 
 ## Regression Test Count
 
-**271 tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer (all 21 modes),
-tuning anchor, P6 synthetic suite (root coverage, inversions, modes, round-trip).
+**356 composing tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer
+(all 21 modes), tuning anchor, P6 synthetic suite (root coverage, inversions, modes,
+round-trip), tonicization labels, augmented sixth labels.
+**45/49 notation tests** — 4 pre-existing deferred (Corelli implode failures).
 0 abstract (root/quality) mismatches in the catalog.
 
 ---
@@ -1934,8 +1936,57 @@ Bug outcomes:
   C#dim7→Dm (viio7/ii).
 
 - **Test counts:** 347/347 composing (+12 tonicization tests), **45/49 notation** (4
-  pre-existing deferred unchanged). No regressions. master HEAD: `db869612a9` (tests
-  not yet committed — implemented in working tree).
+  pre-existing deferred unchanged). No regressions. master HEAD: `dff9e1a9f9` (combined
+  with session 17 in one implementation commit).
+  submission-phase1: cherry-pick `9b5cd98ddd` — 298/298 composing, notation tests pass.
+
+---
+
+**Session 17 — Augmented sixth chord labels: It+6, Fr+6, Ger+6 (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `db869612a9`, composing 347/347, notation 45/49
+  (4 pre-existing deferred unchanged). Implementation continues from session 16 working tree.
+
+- **`naturalFifthPresent` field added to `ChordIdentity`.**
+  New `bool naturalFifthPresent = false` field between `bassTpc` and `quality`.
+  Populated in `analyzeChord()` after the quality is known:
+  `(quality != ChordQuality::Augmented) && (pcWeight[(rootPc+7)%12] > kExtensionThreshold)`.
+  File-scope `kExtensionThreshold = 0.20` constant used for the threshold check.
+  Distinguishes German +6 (P5 present) from Italian +6 (P5 absent) in
+  `formatRomanNumeral()`.
+
+- **Augmented sixth classifier implemented in `formatRomanNumeral`.**
+  Block runs after the inversion-aware base Roman numeral and before tonicization.
+  Detection gate: root is ♭6̂ of current key (`rootPc == (keyTonicPc + 8) % 12`),
+  quality is Major, and `SharpThirteenth` extension is set. The TPC-dependent
+  extension encoding provides automatic suppression when TPC data is absent:
+  - Ab7 with Gb spelling (TPC delta −2 from root) → `MinorSeventh`, not `SharpThirteenth`
+    → no aug6 detection (correct: this is a tritone-sub dominant, not an aug6 chord).
+  - Ab7 with F# spelling (TPC delta +10 from root) → `SharpThirteenth` → aug6 family.
+  - `SharpEleventh` set → French +6 (D above Ab in C, TPC delta +6).
+  - `naturalFifthPresent` true → German +6.
+  - Neither → Italian +6.
+  - Label REPLACES the chromatic Roman numeral (♭VI7#13 → "Ger+6").
+  - Tonicization block not triggered (aug6 chords have `SharpThirteenth`, not
+    `MinorSeventh`, so `isDom7 = false`).
+  - Preset gating (Standard/Baroque only) deferred — `formatRomanNumeral()` has no
+    preset parameter; all presets emit the aug6 label in current implementation.
+
+- **Annotate path verified.** `annotationResult = region.chordResult` copies the full
+  struct including `naturalFifthPresent`; `formatRomanNumeral(annotationResult)` at
+  `notationcomposingbridge.cpp:831` writes the label verbatim to ROMAN harmony.
+
+- **9 new `Composing_AugmentedSixthTests` added.**
+  Italian_CMajor (→ "It+6"), Italian_CMinor (→ "It+6"), French_CMajor (→ "Fr+6"),
+  German_CMajor (→ "Ger+6"), German_CMinor (→ "Ger+6"),
+  TritoneSubDominant_NotGerPlus6 (MinorSeventh → "bVI7", not aug6),
+  GermanSpelling_IsGerPlus6 (SharpThirteenth + naturalFifthPresent → "Ger+6"),
+  PlainMajorChord_NotAugSixth (root ≠ ♭6̂ → "I"),
+  MinorChordOnFlatSixth_NotAugSixth (Minor quality → not aug6).
+
+- **Test counts:** 356/356 composing (+9 aug6 tests), **45/49 notation** (4
+  pre-existing deferred unchanged). No regressions. master HEAD: `dff9e1a9f9`.
+  submission-phase1: cherry-pick `9b5cd98ddd` — 298/298 composing, notation tests pass.
 
 ---
 
@@ -1953,17 +2004,17 @@ Bug outcomes:
    `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
    MuseScore/MuseScore. Link the issue in STATUS.md.
 
-4. **Augmented sixth chord labels (It+6, Fr+6, Ger+6)** — Priority 1 deferred
-   Implement the augmented sixth classifier. Standard and Baroque presets only.
-   Wire into annotate path. Already designed (see ARCHITECTURE.md §5.11).
-
-5. **Pedal point detection** — Priority 1 deferred
+4. **Pedal point detection** — Priority 1
    Implement structural pedal point detection. Covers: (a) Em/A for Am7 pedal
    tone cases, (b) sustained bass note while harmony changes above. Prerequisite
    for resolving 4 deferred notation tests (Corelli late-beat sparse texture).
 
-6. **Cherry-pick bass field fix to submission-phase1** — done session 15.
-   Verify 277/277 + 16/16 on submission-phase1.
+5. **Augmented sixth preset gating** — deferred from session 17
+   `formatRomanNumeral()` has no preset context; aug6 labels currently fire for all
+   presets. Gate to Standard/Baroque only when preset is threaded through the formatter.
+
+6. **Cherry-pick sessions 16–17 to submission-phase1** — done session 17.
+   submission-phase1 HEAD: `9b5cd98ddd`. 298/298 composing, notation tests pass.
 
 7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until
