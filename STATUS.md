@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-18 (session 17)*
+*Last updated: 2026-04-18 (session 18)*
 
 ---
 
@@ -795,7 +795,8 @@ Phase 3 is the next milestone.
 | §4.1b Contextual inversion bonuses | Done | `ChordTemporalContext` extended (+6 fields); `stepwiseBassInversionBonus` / `stepwiseBassLookaheadBonus` / `sameRootInversionBonus` in `ChordAnalyzerPreferences`; `isDiatonicStep()` helper; chord identity 83.4% → retired 83.7% onset-only/music21 figure (superseded 2026-04-09 by 50.0% WIR structural); `previousBassPc`, `bassIsStepwiseFromPrevious`, `nextBassPc`, and `bassIsStepwiseToNext` are now populated in regional analysis; `nextRootPc` and `previousChordAge` remain deferred |
 | §4.1c Regional note accumulation | Done | The notation bridge `collectRegionTones()` now includes beat-weight + repetition boost + cross-voice boost + sustain-pedal tail weighting; the duplicate batch_analyze collector is used by both the jazz and classical paths, and the classical path now uses Jaccard boundaries plus smoothed regional analysis instead of the onset-only prototype; `detectHarmonicBoundariesJaccard()` remains duplicated in batch_analyze; the Bach baseline correction is now recorded as 50.0% WIR structural with 38.0% music21 surface retained only as a secondary reference |
 | §4.1c Jazz mode | Done | `scoreHasValidChordSymbols()` detection gate (bridge + batch_analyze); `analyzeHarmonicRhythmJazz()` in bridge; `analyzeScoreJazz()` in batch_analyze; chord-symbol-driven boundaries; `fromChordSymbol` + `writtenRootPc` in `HarmonicRegion` and JSON output; `ChordTemporalContext::jazzMode` retained as a context flag; valid-root gate fix prevents Roman-numeral/function-only Harmony imports from misrouting When in Rome scores into the jazz path; batch-only `--inject-written-root` provides a diagnostic upper bound showing current jazz corpora are incomplete rather than exposing an analyzer defect |
-| Regression tests | Active | **299 composing tests** plus notation-side regression suites are in place; the last fully green implode checkpoint had 31 focused regressions passing, but the current working tree still has 2 open Corelli implode failures (see Current State) |
+| §5.12 Pedal point detection | Done | two-pass analysis: `isBassChordTone()` guard, upper-voice re-analysis, confidence gap vs. first different-root competitor; `isPedalPoint` / `pedalBassPc` on `ChordIdentity`; `pedalConfidenceThreshold = 0.65`; bridge writes `"X ped."` StaffText when Roman numerals enabled |
+| Regression tests | Active | **364 composing tests** plus notation-side regression suites are in place; the last fully green implode checkpoint had 31 focused regressions passing, but the current working tree still has 4 open notation failures (same 4 pre-existing deferred; see Current State) |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
 | Dynamic lookahead | Done | expands window when confidence < 0.60; caps at 24 beats |
@@ -923,9 +924,9 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
 
 ## Regression Test Count
 
-**356 composing tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer
+**364 composing tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer
 (all 21 modes), tuning anchor, P6 synthetic suite (root coverage, inversions, modes,
-round-trip), tonicization labels, augmented sixth labels.
+round-trip), tonicization labels, augmented sixth labels, pedal point detection.
 **45/49 notation tests** — 4 pre-existing deferred (Corelli implode failures).
 0 abstract (root/quality) mismatches in the catalog.
 
@@ -1990,6 +1991,60 @@ Bug outcomes:
 
 ---
 
+**Session 18 — Pedal point detection, two-pass analysis (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `bdcab49f26`, composing 356/356, notation 45/49
+  (4 pre-existing deferred unchanged). Matches expected state from session 17 close.
+
+- **Two-pass pedal detection implemented.** `analyzeChord()` in `chordanalyzer.cpp` now
+  performs a second analysis pass on the upper voices when the bass pitch class is not a
+  structural chord tone of the Pass 1 winner. Pedal is confirmed when Pass 2 normalized
+  confidence ≥ `pedalConfidenceThreshold` (default 0.65) and ≥ 2 distinct upper PCs exist.
+
+- **`isBassChordTone(bassPc, rootPc, quality, extensions)` static helper added.** Checks
+  quality-defined triad intervals plus all extensions in the bitmask. Two special rules:
+  (1) any 9th–13th extension in the bitmask makes the corresponding interval a chord tone;
+  (2) P4 (interval 5) is always a chord tone when the chord carries any seventh, preventing
+  false pedal triggering on slash chords like Cm7/F where F lands exactly at
+  `kExtensionThreshold = 0.20` (not strictly above).
+
+- **Confidence gap computed against first different-root competitor.** When multiple templates
+  share the same root (Major triad / Maj7 / Dom7 all score identically on a bare major triad),
+  comparing against `results[1]` yields gap≈0 → confidence≈0.047. Skipping same-root
+  duplicates until a different root is found gives a meaningful separation signal.
+
+- **`ChordIdentity` extended:**
+  ```
+  bool isPedalPoint = false;
+  int  pedalBassPc  = -1;
+  ```
+  `pedalConfidenceThreshold` added to `ChordAnalyzerPreferences` with range [0.30, 0.95]
+  in `bounds()`.
+
+- **Bridge annotation.** `addHarmonicAnnotationsToSelection` writes a StaffText `"X ped."`
+  (e.g. `"G ped."`) at the region segment when `isPedalPoint = true`, gated to
+  `writeRomanNumerals=true` only.
+
+- **8 unit tests added** (`Composing_PedalPointTests` suite):
+  `BassIsChordTone_NoPedalDetected`, `F13overEb_BassIsChordTone_NoPedalDetected`,
+  `SustainedBassNotInUpperVoiceChord_PedalDetected`, `DominantPedal_Detected`,
+  `TonicPedal_Detected`, `PedalDetection_DisabledByZeroThreshold`,
+  `SustainedInnerVoiceIsChordTone_NoPedalDetected`,
+  `LowConfidenceUpperVoices_NoPedalDetected`.
+
+- **Threshold calibration.** Default 0.65 confirmed correct: all 207 catalog regression
+  entries remain at 0 abstract mismatches; Em/A pedal case fires at ~0.97 confidence.
+
+- **Test counts:** **364/364 composing** (+8 pedal tests), **45/49 notation** (same 4
+  pre-existing deferred). Master HEAD: `fb9a27ce9a`. Submission-phase1 HEAD: `41ac0f7721`
+  (cherry-picked; 306/306 composing, 16/16 notation on that branch).
+
+- **ARCHITECTURE.md §5.12** added: two-pass algorithm, `isBassChordTone` rules,
+  confidence gap calculation rationale, `pedalConfidenceThreshold` parameter, bridge
+  annotation format.
+
+---
+
 ## Next session priorities
 
 1. **RFC review by Vincent and post to MuseScore developer forum**
@@ -2004,17 +2059,18 @@ Bug outcomes:
    `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
    MuseScore/MuseScore. Link the issue in STATUS.md.
 
-4. **Pedal point detection** — Priority 1
-   Implement structural pedal point detection. Covers: (a) Em/A for Am7 pedal
-   tone cases, (b) sustained bass note while harmony changes above. Prerequisite
-   for resolving 4 deferred notation tests (Corelli late-beat sparse texture).
+4. **Pedal point detection** — **DONE (session 18)**
+   Two-pass analysis implemented. `isPedalPoint` / `pedalBassPc` on `ChordIdentity`.
+   Bridge annotation "X ped." in Roman numeral mode. 8 unit tests. 364/364 composing,
+   45/49 notation (same 4 pre-existing deferred — Corelli late-beat sparse texture
+   cases are not yet resolved by pedal detection alone).
 
 5. **Augmented sixth preset gating** — deferred from session 17
    `formatRomanNumeral()` has no preset context; aug6 labels currently fire for all
    presets. Gate to Standard/Baroque only when preset is threaded through the formatter.
 
-6. **Cherry-pick sessions 16–17 to submission-phase1** — done session 17.
-   submission-phase1 HEAD: `9b5cd98ddd`. 298/298 composing, notation tests pass.
+6. **Cherry-pick sessions 16–18 to submission-phase1** — done sessions 17–18.
+   submission-phase1 HEAD: `41ac0f7721`. 306/306 composing, 16/16 notation.
 
 7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until

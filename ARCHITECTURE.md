@@ -2492,6 +2492,77 @@ analyzer detects the specific augmented sixth interval pattern. Gated to
 Standard and Baroque presets only. Jazz and Nashville presets continue to
 emit chromatic Roman numerals or chord symbols respectively.
 
+### §5.12 Pedal Point Detection — Two-Pass Analysis
+
+**Status: Implemented (Session 18, master `fb9a27ce9a`).**
+
+When the lowest-pitched tone in a window is structurally lighter than the upper
+voices — as in a dominant or tonic organ point — it may not belong to the chord
+formed by the upper voices. A single-pass template match will either (a) force a
+bass-root reading and suppress the upper-voice harmony, or (b) return a slash chord
+with the wrong root identity if the template accidentally fits. Two-pass analysis
+resolves this.
+
+#### Algorithm
+
+**Pass 1** runs normally on all voices. If the winning result's root is a chord
+tone of the detected quality (checked by `isBassChordTone()`), the bass is part of
+the chord (e.g. an inversion) and no pedal detection occurs.
+
+**Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the
+winner. It re-runs `analyzeChord()` on the upper voices only (the bass PC is removed
+from the tone list). Two conditions must both be met before the pedal reading is
+accepted:
+
+1. The upper voices produce at least 2 distinct pitch classes (prevents triggering
+   on a unison or single-note passage).
+2. The normalized confidence of the Pass 2 winner — computed as the score gap
+   between the winner and the best **different-root** competitor — reaches or
+   exceeds `pedalConfidenceThreshold` (default 0.65).
+
+When both conditions are met, the Pass 2 result replaces the full-pass result, and
+`ChordIdentity::isPedalPoint = true` / `pedalBassPc` are set on the returned
+`ChordAnalysisResult`.
+
+#### Why "different-root competitor"
+
+Multiple chord templates share the same root (e.g. Major triad, Maj7, and Dom7 all
+score identically when extension tones are absent). If the gap is computed against
+`results[1]` — which may be the same root — the gap is ~0 and confidence collapses
+to ~0.047, blocking pedal detection for bare major triads. Computing the gap against
+the first result whose `rootPc` differs from the winner gives a meaningful separation
+signal regardless of how many same-root templates appear in the candidate list.
+
+#### `isBassChordTone()` helper
+
+Checks whether a pitch class is a structural member of the chord (root, triad tone,
+or any detected extension). Quality-specific triadic intervals are checked first.
+Extensions are checked from the `extensions` bitmask (min7, maj7, dim7, b9, 9, #9,
+11, #11, b13, 13). Two additional rules handle borderline cases:
+
+- **Any extension (9th–13th) listed in the bitmask:** the corresponding interval
+  also marks the bass as a chord tone.
+- **P4 with any seventh present:** if the chord has a min7, maj7, or dim7 detected
+  (even at the lower `kSeventhThreshold = 0.12`) and the bass is a P4 above the
+  root, it is treated as a chord tone. This handles slash chords like Cm7/F where
+  the bass F is at exactly `kExtensionThreshold = 0.20` and therefore NOT detected
+  as `NaturalEleventh` by the extension scanner, yet is structurally part of the
+  chord.
+
+#### `pedalConfidenceThreshold` parameter
+
+Default 0.65. Appears in `ChordAnalyzerPreferences::bounds()` with range [0.30, 0.95].
+Set to 0.0 to disable pedal detection entirely (the `pedalConfidenceThreshold > 0.0`
+guard short-circuits Pass 2 before any analysis is attempted).
+
+#### Bridge annotation
+
+When `isPedalPoint = true`, the annotate path (`addHarmonicAnnotationsToSelection`)
+writes an additional `StaffText` at the same segment in the format `"X ped."` where
+`X` is the chord symbol of the pedal bass pitch class formatted as a simple major
+root name (e.g. `"G ped."`, `"C ped."`). This is placed only when Roman numeral
+annotations are enabled.
+
 ---
 
 ## 6. The Style System
