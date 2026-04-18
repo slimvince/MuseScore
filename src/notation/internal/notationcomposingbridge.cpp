@@ -864,6 +864,34 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 score->undoAddElement(h);
             }
         }
+
+        // ── Pedal bass annotation ─────────────────────────────────────────────
+        // When the chord analyzer identified a structural pedal point, write a
+        // StaffText "X ped." (e.g. "G ped.", "Eb ped.") on the first write staff,
+        // in the Roman numeral layer (alongside cadence markers and pivot labels).
+        // Only written when Roman numeral mode is active.
+        if (writeRomanNumerals
+                && !writeStaves.empty()
+                && annotationResult.identity.isPedalPoint
+                && annotationResult.identity.pedalBassPc >= 0) {
+            // Build a bare root-name result for the pedal bass PC.
+            mu::composing::analysis::ChordAnalysisResult pedalRoot = annotationResult;
+            pedalRoot.identity.rootPc  = annotationResult.identity.pedalBassPc;
+            pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
+            pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
+            pedalRoot.identity.extensions = 0;
+            const std::string baseName = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(
+                pedalRoot, keyFifths, fmtOpts);
+            if (!baseName.empty()) {
+                const std::string pedalText = baseName + " ped.";
+                const track_idx_t pedTrack = writeStaves.front() * VOICES;
+                StaffText* pt = Factory::createStaffText(seg);
+                pt->setTrack(pedTrack);
+                pt->setParent(seg);
+                pt->setPlainText(muse::String::fromStdString(pedalText));
+                score->undoAddElement(pt);
+            }
+        }
     }
 
     // ── Cadence markers and pivot labels (Roman numeral mode only) ──────────

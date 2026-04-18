@@ -118,6 +118,28 @@ ChordAnalyzerPreferences bassSupportPrefs()
     return prefs;
 }
 
+/// Build tones with individual pitch/weight pairs.
+/// The first tone is flagged isBass=true; bass detection in the analyzer
+/// uses lowest pitch, so list pitches in ascending order if the first
+/// entry should genuinely be the bass.
+std::vector<ChordAnalysisTone> weightedTones(std::initializer_list<std::pair<int, double>> pitchWeightPairs)
+{
+    std::vector<ChordAnalysisTone> out;
+    out.reserve(pitchWeightPairs.size());
+
+    bool first = true;
+    for (const auto& pw : pitchWeightPairs) {
+        ChordAnalysisTone t;
+        t.pitch  = pw.first;
+        t.weight = pw.second;
+        t.isBass = first;
+        out.push_back(t);
+        first = false;
+    }
+
+    return out;
+}
+
 } // namespace
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
@@ -2216,4 +2238,108 @@ TEST(Composing_AugmentedSixthTests, MinorChordOnFlatSixth_NotAugSixth)
     EXPECT_NE(label, "It+6");
     EXPECT_NE(label, "Fr+6");
     EXPECT_NE(label, "Ger+6");
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// Pedal point detection (§5.12)
+// Two-pass logic: if the bass is NOT a chord tone of the Pass-1 winner,
+// re-analyze upper voices only; if Pass-2 confidence ≥ threshold and
+// ≥2 distinct upper PCs, the result is flagged as a pedal point.
+//
+// Bass weight must exceed bassPassingToneMinWeightFraction×totalWeight
+// (default 5 %) to be recognised as the structural bass; tests that
+// need a low-weight pedal bass use weight=0.2 with upper voices at 1.0
+// (0.2 / 3.2 = 6.25 % > 5 %).
+// ═══════════════════════════════════════════════════════════════════
+
+// Bass IS the root of the winning chord — interval=0 → always a chord tone.
+TEST(Composing_PedalPointTests, BassIsChordTone_NoPedalDetected)
+{
+    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Eb3 is the minor 7th of F dominant 7th (interval 10 from F, MinorSeventh flag set).
+// isBassChordTone checks the extension flags → chord tone → no pedal.
+TEST(Composing_PedalPointTests, F13overEb_BassIsChordTone_NoPedalDetected)
+{
+    // Eb3=51, F4=65, A4=69, C5=72  →  Fdom7/Eb
+    const auto results = kAnalyzer.analyzeChord(tones({ 51, 65, 69, 72 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// C3 at low weight under G–B–D: C is not a chord tone of G major (interval=5).
+// Pass-2 finds G major with high confidence → pedal confirmed.
+TEST(Composing_PedalPointTests, SustainedBassNotInUpperVoiceChord_PedalDetected)
+{
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
+    EXPECT_EQ(results.front().identity.rootPc, 7);        // G major above
+}
+
+// G3 at low weight under D–F–A: G is not a chord tone of D minor (interval=5, not 3 or 7).
+// Classic dominant-pedal scenario.
+TEST(Composing_PedalPointTests, DominantPedal_Detected)
+{
+    const auto ts = weightedTones({ { 55, 0.2 }, { 62, 1.0 }, { 65, 1.0 }, { 69, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 7);   // G pedal
+    EXPECT_EQ(results.front().identity.rootPc, 2);        // Dm above
+}
+
+// C3 at low weight under A major (A4–C#5–E5 at full weight).
+// C is not a chord tone of A major (interval=(0-9+12)%12=3, not 4 or 7) → pedal detected.
+// Note: Eb-G-Bb was the first design choice but Cm7 (C-Eb-G-Bb) wins Pass 1 via the
+// full bass-root bonus, making the bass appear to be the minor-7th chord tone.
+TEST(Composing_PedalPointTests, TonicPedal_Detected)
+{
+    // C3=48, A4=69, C#5=73, E5=76
+    const auto ts = weightedTones({ { 48, 0.2 }, { 69, 1.0 }, { 73, 1.0 }, { 76, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_TRUE(results.front().identity.isPedalPoint);
+    EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
+    EXPECT_EQ(results.front().identity.rootPc, 9);        // A major above
+}
+
+// pedalConfidenceThreshold=0.0 disables the two-pass check entirely (guard in analyzeChord).
+// Same voicing as SustainedBassNotInUpperVoiceChord_PedalDetected but pedal suppressed.
+TEST(Composing_PedalPointTests, PedalDetection_DisabledByZeroThreshold)
+{
+    ChordAnalyzerPreferences prefs;
+    prefs.pedalConfidenceThreshold = 0.0;
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// C major in first inversion: E3 is the bass note.
+// isBassChordTone(bassPc=4, rootPc=0, Major): interval=4 (M3) → chord tone → no pedal.
+TEST(Composing_PedalPointTests, SustainedInnerVoiceIsChordTone_NoPedalDetected)
+{
+    // E3=52 (bass), C4=60, E4=64, G4=67
+    const auto results = kAnalyzer.analyzeChord(tones({ 52, 60, 64, 67 }), 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Same voicing as SustainedBassNotInUpperVoiceChord_PedalDetected but
+// pedalConfidenceThreshold=0.99 — G major's confidence (≈0.97) stays below this bar.
+TEST(Composing_PedalPointTests, LowConfidenceUpperVoices_NoPedalDetected)
+{
+    ChordAnalyzerPreferences prefs;
+    prefs.pedalConfidenceThreshold = 0.99;
+    const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
 }

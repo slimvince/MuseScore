@@ -199,6 +199,14 @@ struct ChordIdentity {
     bool naturalFifthPresent = false;
     ChordQuality quality = ChordQuality::Unknown;
     uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
+
+    /// True when the bass note is a structural pedal point: it is not a chord
+    /// tone of the upper-voice harmony and the upper voices produce a confident
+    /// independent chord (confidence ≥ pedalConfidenceThreshold).  When true,
+    /// the chord label describes the upper-voice harmony, not the full sonority,
+    /// and pedalBassPc identifies the sustained pedal note.
+    bool isPedalPoint = false;
+    int pedalBassPc = -1;  ///< Pedal bass pitch class; -1 when isPedalPoint is false
 };
 
 // ── ChordFunction ─────────────────────────────────────────────────────────────
@@ -363,6 +371,16 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–0.5.  Default: 0.05 (5 % of accumulated weight).
     double bassPassingToneMinWeightFraction = 0.05;
 
+    // ── Pedal point detection (§5.12) ───────────────────────────────────────
+
+    /// Minimum normalizedConfidence for the upper-voice-only Pass 2 result to
+    /// confirm a structural pedal point.  If the upper voices produce a chord
+    /// with confidence below this threshold, the full-sonority Pass 1 result is
+    /// kept and no pedal annotation is made.
+    /// Conservative default — only flag very confident pedals.
+    /// Range: 0.3–0.95.  Default: 0.65.
+    double pedalConfidenceThreshold = 0.65;
+
     // ── Confidence normalization (§P8d) ─────────────────────────────────────
 
     /// Score gap (winner − runner-up) at which normalizedConfidence = 0.5.
@@ -423,6 +441,7 @@ struct ChordAnalyzerPreferences {
             { "harmonicBoundaryJaccardThreshold",       { 0.0, 1.0 } },
             { "pedalTailWeightMultiplier",              { 0.0, 1.0 } },
             { "bassPassingToneMinWeightFraction",       { 0.0, 0.5 } },
+            { "pedalConfidenceThreshold",               { 0.3, 0.95 } },
             { "confidenceSigmoidMidpoint",              { 0.5, 5.0 } },
             { "confidenceSigmoidSteepness",             { 0.5, 5.0 } },
         };

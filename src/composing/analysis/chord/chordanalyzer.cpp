@@ -1363,6 +1363,80 @@ static double normalizeChordConfidence(double winnerScore, double runnerUpScore,
                                   * (gap - prefs.confidenceSigmoidMidpoint)));
 }
 
+/// Returns true if bassPc is a chord tone of the chord identified by (rootPc, quality,
+/// extensions).  Used by the two-pass pedal detection to decide whether the bass note
+/// belongs to the upper-voice chord or is a structural pedal point.
+///
+/// Checks: (1) quality-defined triad intervals, (2) 7th/9th extensions that are
+/// explicitly detected in the extension bitmask.  This correctly handles F13/Eb
+/// (Eb = m7 of F, MinorSeventh set → true → no pedal detected) and HalfDiminished
+/// (m7 is implicit in that quality → true for interval 10).
+static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32_t extensions)
+{
+    const int interval = (bassPc - rootPc + 12) % 12;
+    if (interval == 0) {
+        return true; // root is always a chord tone
+    }
+
+    // Quality-defined triad intervals
+    switch (quality) {
+    case ChordQuality::Major:
+        if (interval == 4 || interval == 7) { return true; }
+        break;
+    case ChordQuality::Minor:
+        if (interval == 3 || interval == 7) { return true; }
+        break;
+    case ChordQuality::Diminished:
+        if (interval == 3 || interval == 6) { return true; }
+        break;
+    case ChordQuality::HalfDiminished:
+        if (interval == 3 || interval == 6 || interval == 10) { return true; }
+        break;
+    case ChordQuality::Augmented:
+        if (interval == 4 || interval == 8) { return true; }
+        break;
+    case ChordQuality::Suspended2:
+        if (interval == 2 || interval == 7) { return true; }
+        break;
+    case ChordQuality::Suspended4:
+        if (interval == 5 || interval == 7) { return true; }
+        break;
+    case ChordQuality::Power:
+        if (interval == 7) { return true; }
+        break;
+    default:
+        break;
+    }
+
+    // 7th/9th/11th/13th extensions explicitly detected in the bitmask.
+    // A bass note that matches any detected extension is a chord tone — the chord
+    // should be labelled as a slash chord (Cm7/F) rather than a pedal point.
+    if (interval == 10 && hasExtension(extensions, Extension::MinorSeventh))      { return true; }
+    if (interval == 11 && hasExtension(extensions, Extension::MajorSeventh))      { return true; }
+    if (interval == 9  && hasExtension(extensions, Extension::DiminishedSeventh)) { return true; }
+    if (interval == 1  && hasExtension(extensions, Extension::FlatNinth))         { return true; }
+    if (interval == 2  && hasExtension(extensions, Extension::NaturalNinth))      { return true; }
+    if (interval == 3  && hasExtension(extensions, Extension::SharpNinth))        { return true; }
+    if (interval == 5  && hasExtension(extensions, Extension::NaturalEleventh))   { return true; }
+    if (interval == 6  && hasExtension(extensions, Extension::SharpEleventh))     { return true; }
+    if (interval == 8  && hasExtension(extensions, Extension::FlatThirteenth))    { return true; }
+    if (interval == 9  && hasExtension(extensions, Extension::NaturalThirteenth)) { return true; }
+
+    // If the chord carries any 7th, the perfect 4th above the root (interval 5,
+    // natural 11th) is a valid chord tone even when it sits exactly at the
+    // extension-detection threshold (detectExtensions uses strict '>').
+    // This correctly handles Cm7/F where F's pcWeight equals kExtensionThreshold
+    // and NaturalEleventh is therefore not formally detected, but the chord still
+    // qualifies as a slash chord rather than a pedal point.
+    // A bare triad (no 7th detected) still triggers pedal detection normally.
+    const bool hasAnySeventh = hasExtension(extensions, Extension::MinorSeventh)
+                            || hasExtension(extensions, Extension::MajorSeventh)
+                            || hasExtension(extensions, Extension::DiminishedSeventh);
+    if (interval == 5 && hasAnySeventh) { return true; }
+
+    return false;
+}
+
 } // namespace
 
 std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
@@ -1789,6 +1863,86 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             const double iRunnerUp = (i + 1 < results.size()) ? results[i + 1].identity.score : 0.0;
             results[i].identity.normalizedConfidence
                 = normalizeChordConfidence(results[i].identity.score, iRunnerUp, prefs);
+        }
+    }
+
+    // ── Two-pass pedal point detection ────────────────────────────────────────
+    //
+    // Definition: a structural pedal point is a sustained bass note that is NOT
+    // a chord tone of the upper-voice harmony.  This two-pass check identifies
+    // it when:
+    //   (1) Pass 1 (all voices) produces a confident winner R1 with bassPc X.
+    //   (2) X is not a chord tone of R1 (triad + detected 7th extensions).
+    //   (3) Pass 2 (upper voices only, X removed) produces a chord R2 with
+    //       confidence ≥ pedalConfidenceThreshold and ≥ 2 distinct pitch classes.
+    //
+    // When confirmed, the Pass 2 chord replaces the Pass 1 result: the label
+    // describes the upper-voice harmony and isPedalPoint / pedalBassPc are set.
+    //
+    // Safety checks:
+    //   - Bass IS a chord tone of R1 → no check (common-tone progressions, slash
+    //     chords, jazz ostinati like F13/Eb where Eb is the minor 7th).
+    //   - Upper voices have < 2 distinct pitch classes → insufficient evidence.
+    //   - Pass 2 confidence < pedalConfidenceThreshold → ambiguous; keep R1.
+    //   - bassPc < 0 → no valid bass (sparse region); skip.
+    if (!results.empty() && bassPc >= 0 && prefs.pedalConfidenceThreshold > 0.0) {
+        const ChordAnalysisResult& r1 = results.front();
+        const bool bassIsChordTone = isBassChordTone(bassPc,
+                                                     r1.identity.rootPc,
+                                                     r1.identity.quality,
+                                                     r1.identity.extensions);
+        if (!bassIsChordTone) {
+            // Remove all tones with the pedal pitch class and re-analyze.
+            std::vector<ChordAnalysisTone> upperTones;
+            upperTones.reserve(tones.size());
+            for (const ChordAnalysisTone& t : tones) {
+                if ((t.pitch % 12 + 12) % 12 != bassPc) {
+                    upperTones.push_back(t);
+                }
+            }
+
+            // Require at least 2 distinct pitch classes in the upper voices.
+            std::set<int> upperPcs;
+            for (const ChordAnalysisTone& t : upperTones) {
+                upperPcs.insert((t.pitch % 12 + 12) % 12);
+            }
+
+            if (upperPcs.size() >= 2) {
+                // Run Pass 2 — re-use the same key context and preferences.
+                // Do not pass temporal context to Pass 2: the context bonuses
+                // (rootContinuityBonus, stepwiseBass*) are anchored to the bass
+                // note and would distort the upper-voice-only result.
+                const auto pass2 = RuleBasedChordAnalyzer{}.analyzeChord(
+                    upperTones, keySignatureFifths, keyMode, nullptr, prefs);
+
+                if (!pass2.empty()) {
+                    // Confidence is measured against the first competitor with a
+                    // DIFFERENT root.  Multiple templates for the same chord quality
+                    // (triad / maj7 / dom7) can score identically when their extended
+                    // tones are absent, filling all three result slots with the same
+                    // root — making normalizedConfidence artificially low.
+                    // Comparing the winner's score against the best genuine alternative
+                    // (different rootPc) gives a meaningful pedal-confirmation signal.
+                    double pass2AltScore = 0.0;
+                    const int p2Root = pass2.front().identity.rootPc;
+                    for (size_t i = 1; i < pass2.size(); ++i) {
+                        if (pass2[i].identity.rootPc != p2Root) {
+                            pass2AltScore = pass2[i].identity.score;
+                            break;
+                        }
+                    }
+                    const double gap = pass2.front().identity.score - pass2AltScore;
+                    const double c2  = 1.0 / (1.0 + std::exp(
+                        -prefs.confidenceSigmoidSteepness
+                        * (gap - prefs.confidenceSigmoidMidpoint)));
+                    if (c2 >= prefs.pedalConfidenceThreshold) {
+                        // Confirmed pedal — replace results with Pass 2.
+                        results = pass2;
+                        results.front().identity.isPedalPoint = true;
+                        results.front().identity.pedalBassPc  = bassPc;
+                    }
+                }
+            }
         }
     }
 
