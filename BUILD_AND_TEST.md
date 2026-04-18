@@ -4,125 +4,145 @@ This document provides comprehensive, step-by-step instructions for building Mus
 
 ---
 
-## 1. Building the Project
+## 1. Build Scripts
 
-### Official Build Script (Windows)
-- **Always use:** `setup_and_build.bat` (project root)
-- **How to run:**
-  1. Open a Developer Command Prompt for MSVC 2022 (or compatible).
-  2. Navigate to the project root (`c:\s\MS`).
-  3. Run:
-     ```
-     cmd.exe /c "C:\s\MS\setup_and_build.bat"
-     ```
-  4. This script configures, generates, and builds the project using Ninja. The default build tree is `ninja_build_rel/`.
+There are three build scripts in the project root. All write to `ninja_build_rel/`.
 
-### Alternative Build Trees
-- You may also see `builds/`, `build.release/`, or custom CMake/Ninja trees. Always prefer `ninja_build_rel/` unless otherwise specified.
+### `setup_and_build_fast.bat` — First-time / CMake configure
+
+Runs CMake configuration if `ninja_build_rel/CMakeCache.txt` does not exist, then builds:
+- `composing_tests`
+- `MuseScore5.exe`
+- `batch_analyze`
+
+**Does NOT build `notation_tests`.** Use this the first time on a fresh checkout (or after deleting the build tree) to get a working composing build quickly without waiting for the full notation build.
+
+```
+cmd.exe //c "C:\s\MS\setup_and_build_fast.bat"
+```
+
+### `setup_and_build.bat` — Normal session script
+
+Assumes CMake has already been configured (build tree exists). Builds:
+- `composing_tests`
+- `notation_tests`
+- `MuseScore5.exe`
+- `batch_analyze`
+
+This is the **standard script for every development session**.
+
+```
+cmd.exe //c "C:\s\MS\setup_and_build.bat"
+```
+
+From Git Bash background tasks, invoke as:
+```
+cmd.exe //c "C:\s\MS\setup_and_build.bat"
+```
+
+### `build_tests.bat` — Tests only, no GUI
+
+Builds `composing_tests` and `notation_tests` only. No `MuseScore5.exe` or `batch_analyze`.
+Use when you only need to run the test suites and want the shortest possible build time.
+
+```
+cmd.exe //c "C:\s\MS\build_tests.bat"
+```
+
+### Recommended workflow
+
+| Situation | Script |
+|---|---|
+| First time / fresh checkout / deleted build tree | `setup_and_build_fast.bat`, then `setup_and_build.bat` |
+| Normal session | `setup_and_build.bat` |
+| Tests only (no GUI needed) | `build_tests.bat` |
 
 ---
 
 ## 2. Running Test Suites
 
-### Notation Tests
-- **Executable:** `notation_tests.exe`
-- **Location:** `ninja_build_rel/`
-- **How to run:**
-  1. Open a terminal (PowerShell or CMD).
-  2. Change directory:
-     ```
-     cd C:\s\MS\ninja_build_rel
-     ```
-  3. Run:
-     ```
-     ./notation_tests.exe
-     ```
-  4. Output: Shows passing/failing test count (e.g., 29/33 passing).
+All test executables are in `ninja_build_rel/`. Run from that directory.
+
+```
+cd C:\s\MS\ninja_build_rel
+```
 
 ### Composing Tests
-- **Executable:** `composing_tests.exe`
-- **Location:** `ninja_build_rel/`
-- **How to run:**
-  1. Open a terminal and `cd` as above.
-  2. Run:
-     ```
-     ./composing_tests.exe
-     ```
-  3. Output: Shows passing/failing test count (e.g., 299/299 passing).
+
+```
+./composing_tests.exe
+```
+
+**Current baseline: 364/364** passing.
+
+### Notation Tests
+
+```
+./notation_tests.exe
+```
+
+**Current baseline: 45/49** passing. 4 tests are deferred (Corelli late-beat sparse-texture cases — see "Known Failing Tests" in STATUS.md).
 
 ### Batch Analyze Regression Tests
-- **Python script:** `tools/test_batch_analyze_regressions.py`
-- **How to run:**
-     ```
-     python tools/test_batch_analyze_regressions.py --batch-analyze ninja_build_rel/batch_analyze.exe --repo-root .
-     ```
-  - Output: Should print `batch_analyze regressions passed` if successful.
+
+```
+python tools/test_batch_analyze_regressions.py --batch-analyze ninja_build_rel/batch_analyze.exe --repo-root .
+```
+
+Output: prints `batch_analyze regressions passed` if successful.
 
 ---
 
 ## 3. Running MuseScore Studio (GUI)
 
-### Main Executable
-- **Executable:** `musescore5.exe`
-- **Location:** `ninja_build_rel/`
-- **How to run:**
-  1. Open a terminal and `cd` to `ninja_build_rel`.
-  2. Run:
-     ```
-     ./musescore5.exe
-     ```
+```
+cd C:\s\MS\ninja_build_rel
+./musescore5.exe
+```
 
 ---
 
 ## 4. Running Score Reading and Analysis Tools
 
 ### Batch Analyzer
-- **Executable:** `batch_analyze.exe`
-- **Location:** `ninja_build_rel/`
-- **How to run:**
-     ```
-     ./batch_analyze.exe --help
-     ```
-  - See help output for options (corpus path, output directory, etc).
+
+```
+cd C:\s\MS\ninja_build_rel
+./batch_analyze.exe --help
+```
 
 ### Python Score Tools
-- **Typical usage:**
-     ```
-     python tools/your_script.py [args]
-     ```
-- **Common scripts:**
-  - `tools/inspect_musicxml.py` — Inspect MusicXML files.
-  - `tools/compare_omnibook.py` — Compare jazz corpus results.
-  - `tools/run_validation.py` — Run validation on corpora.
+
+Activate the project virtual environment first:
+
+- PowerShell: `& .venv\Scripts\Activate.ps1`
+- CMD: `.venv\Scripts\activate.bat`
+
+Common scripts:
+- `tools/inspect_musicxml.py` — Inspect MusicXML files
+- `tools/compare_omnibook.py` — Compare jazz corpus results
+- `tools/run_validation.py` — Run validation on corpora
 
 ---
 
 ## 5. Environment Setup
 
-- **Python:**
-  - Use the project virtual environment: `.venv/`
-  - Activate (PowerShell):
-    ```
-    & .venv\Scripts\Activate.ps1
-    ```
-  - Activate (CMD):
-    ```
-    .venv\Scripts\activate.bat
-    ```
-- **CMake/Ninja:**
-  - All configuration is handled by `setup_and_build.bat`.
+- **Python:** Use the project virtual environment at `.venv/`
+- **CMake/Ninja:** All configuration is handled by `setup_and_build_fast.bat`
+- **MSVC:** All build scripts call `vcvars64.bat` automatically
 
 ---
 
 ## 6. Troubleshooting
 
-- If you see build errors, always re-run `setup_and_build.bat` from a clean state.
+- If you see build errors about missing CMakeCache or googlemock, the build tree may be stale. Delete `ninja_build_rel/` and re-run `setup_and_build_fast.bat` followed by `setup_and_build.bat`.
 - If tests fail, check STATUS.md for known failures.
 - For Python errors, ensure `.venv` is activated and dependencies are installed (`pip install -r requirements.txt`).
+- **Note:** `build.release/` has a stale CMake tree (missing googlemock). Always use `ninja_build_rel/`.
 
 ---
 
 ## 7. Updating This Guide
 
 - Edit this file (`BUILD_AND_TEST.md` in the project root) to keep instructions current.
-- Notify all developers and agents of changes.
+- Update baseline test counts whenever the suite changes.
