@@ -193,6 +193,10 @@ struct ChordIdentity {
     int rootPc = 0;           ///< Root pitch class (0–11)
     int bassPc = 0;           ///< Bass pitch class (0–11)
     int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
+    /// True if the perfect fifth above root is present in the input tones.
+    /// Used by the augmented sixth classifier to distinguish Italian +6 (no P5)
+    /// from German +6 (has P5). Both carry SharpThirteenth when TPC data is present.
+    bool naturalFifthPresent = false;
     ChordQuality quality = ChordQuality::Unknown;
     uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
 };
@@ -208,6 +212,12 @@ struct ChordFunction {
     // numerals (♭VII, ♭III, etc.) even when degree == -1 (non-diatonic root).
     int keyTonicPc = 0;
     KeySigMode keyMode = KeySigMode::Ionian;
+
+    /// Root pitch class of the immediately following chord region (-1 = unknown).
+    /// Populated by the harmonic rhythm bridge after all regions are identified
+    /// (two-pass). Used by formatRomanNumeral() to emit V/x and vii°/x labels.
+    /// Always -1 for status-bar / single-note analysis.
+    int nextRootPc = -1;
 };
 
 // ── ChordAnalysisResult ───────────────────────────────────────────────────────
