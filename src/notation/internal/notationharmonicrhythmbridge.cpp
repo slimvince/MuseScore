@@ -70,6 +70,18 @@ namespace {
 
 thread_local internal::HarmonicRegionDebugCapture* s_harmonicRegionDebugCapture = nullptr;
 
+/// Second-pass helper: populate nextRootPc in each region's ChordFunction so
+/// that ChordSymbolFormatter::formatRomanNumeral() can emit V/x and vii°/x labels.
+/// Called after all merge/absorb passes, before returning the final regions vector.
+void backfillNextRootPc(std::vector<mu::composing::analysis::HarmonicRegion>& regions)
+{
+    for (size_t i = 0; i + 1 < regions.size(); ++i) {
+        regions[i].chordResult.function.nextRootPc
+            = regions[i + 1].chordResult.identity.rootPc;
+    }
+    // The last region has no successor — nextRootPc remains -1 (no tonicization label).
+}
+
 }
 
 namespace internal {
@@ -195,6 +207,8 @@ static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhyth
 
         regions.push_back(std::move(region));
     }
+
+    backfillNextRootPc(regions);
 
     if (auto* debugCapture = internal::harmonicRegionDebugCapture()) {
         if (debugCapture->preMergeRegions) {
@@ -591,6 +605,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             absorbShortRegions(regions);
         }
 
+        backfillNextRootPc(regions);
+
         if (debugCapture) {
             if (debugCapture->preMergeRegions) {
                 *debugCapture->preMergeRegions = std::move(preMergeRegions);
@@ -752,6 +768,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     if (granularity == HarmonicRegionGranularity::Smoothed) {
         absorbShortRegions(regions);
     }
+
+    backfillNextRootPc(regions);
 
     if (debugCapture) {
         if (debugCapture->preMergeRegions) {

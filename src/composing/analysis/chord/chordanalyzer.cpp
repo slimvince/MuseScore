@@ -1670,6 +1670,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         r.identity.rootPc               = rootPc;
         r.identity.bassPc               = bassPc;
         r.identity.bassTpc              = bassTpc;
+        r.identity.naturalFifthPresent  = (quality != ChordQuality::Augmented)
+                                          && (pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
+                                              > kExtensionThreshold);
         r.identity.quality              = quality;
         if (ext.hasMinorSeventh)      setExtension(r.identity.extensions, Extension::MinorSeventh);
         if (ext.hasMajorSeventh)      setExtension(r.identity.extensions, Extension::MajorSeventh);
@@ -2014,6 +2017,48 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
     return symbol;
 }
 
+// ── Tonicization helpers ──────────────────────────────────────────────────────
+
+/// Diatonic scale intervals for the seven diatonic modes (semitones from tonic).
+static constexpr std::array<int, 7> kTonicizationScales[7] = {
+    { 0, 2, 4, 5, 7, 9, 11 }, // Ionian
+    { 0, 2, 3, 5, 7, 9, 10 }, // Dorian
+    { 0, 1, 3, 5, 7, 8, 10 }, // Phrygian
+    { 0, 2, 4, 6, 7, 9, 11 }, // Lydian
+    { 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian
+    { 0, 2, 3, 5, 7, 8, 10 }, // Aeolian
+    { 0, 1, 3, 5, 6, 8, 10 }, // Locrian
+};
+
+/// Maps all 21 KeySigMode ordinals to their diatonic parent index (0..6).
+static constexpr std::array<size_t, 21> kTonicizationParent = {
+    0, 1, 2, 3, 4, 5, 6,   // diatonic: identity
+    1, 2, 3, 4, 5, 6, 0,   // melodic minor family
+    5, 6, 0, 1, 2, 3, 4    // harmonic minor family
+};
+
+/// Return the diatonic scale degree (0..6) for pitch class `pc` relative to
+/// `tonicPc` in `scale`, or -1 if `pc` is not a scale member.
+static int diatonicDegreeForPc(int pc, int tonicPc, const std::array<int, 7>& scale)
+{
+    const int interval = (pc - tonicPc + 12) % 12;
+    for (int d = 0; d < 7; ++d) {
+        if (scale[d] == interval) {
+            return d;
+        }
+    }
+    return -1;
+}
+
+/// Returns true if the natural triad built on scale degree `d` has a major
+/// third (4 semitones), meaning the Roman numeral target label is upper-case.
+static bool isDegreeMajorThird(int d, const std::array<int, 7>& scale)
+{
+    const int rootInterval  = scale[d];
+    const int thirdInterval = scale[(d + 2) % 7];
+    return (thirdInterval - rootInterval + 12) % 12 == 4;
+}
+
 std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& result)
 {
     std::string romanNumeral;
@@ -2053,6 +2098,104 @@ std::string ChordSymbolFormatter::formatRomanNumeral(const ChordAnalysisResult& 
                                       result.identity.rootPc, result.identity.bassPc,
                                       hasExtension(result.identity.extensions, Extension::MinorSeventh), hasExtension(result.identity.extensions, Extension::MajorSeventh),
                                       hasExtension(result.identity.extensions, Extension::DiminishedSeventh));
+
+    // ── Augmented sixth label (It+6, Fr+6, Ger+6) — replaces chromatic Roman numeral ─
+    //
+    // Condition: root is ♭6̂ of the current key AND the note at interval 10 above root
+    // is spelled as an augmented sixth (TPC delta +10 from root), which the analysis
+    // phase encodes as SharpThirteenth (not MinorSeventh).  When TPC data is absent,
+    // SharpThirteenth is not set and detection is suppressed — this correctly avoids
+    // false positives on enharmonically identical dominant seventh chords (e.g. Ab7).
+    //
+    // Type determination (after confirming aug6 family):
+    //   French (+6): SharpEleventh set — note at interval 6 above root (D above Ab in C)
+    //                is spelled in the sharp direction (TPC delta +6 from root).
+    //   German (+6): naturalFifthPresent — the perfect fifth above root (Eb in C) is present.
+    //   Italian (+6): neither French nor German.
+    //
+    // The aug6 label REPLACES the diatonic/chromatic Roman numeral entirely.
+    // Preset gating (Standard/Baroque only): deferred — formatRomanNumeral() has no
+    // preset context; gating may be added when preset is threaded through the formatter.
+    {
+        using Q = ChordQuality;
+        const int rootPc     = result.identity.rootPc;
+        const int keyTonicPc = result.function.keyTonicPc;
+        if (result.identity.quality == Q::Major
+            && rootPc == (keyTonicPc + 8) % 12
+            && hasExtension(result.identity.extensions, Extension::SharpThirteenth)) {
+            if (hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
+                romanNumeral = "Fr+6";
+            } else if (result.identity.naturalFifthPresent) {
+                romanNumeral = "Ger+6";
+            } else {
+                romanNumeral = "It+6";
+            }
+        }
+    }
+
+    // ── Tonicization label (V7/x, vii°/x) — replaces normal Roman numeral ───
+    //
+    // Only fires when nextRootPc was populated by a two-pass sequential analysis
+    // (chord staff population). Status-bar single-note analysis leaves
+    // nextRootPc = -1 and shows the plain diatonic/chromatic label.
+    //
+    // When tonicization is detected the ENTIRE label is replaced, not appended.
+    // "V7/ii" is standard notation; "VI7/ii" (degree-in-home-key + /target) is not.
+    if (result.function.nextRootPc >= 0 && !romanNumeral.empty()) {
+        using Q = ChordQuality;
+        const Q quality  = result.identity.quality;
+        const int rootPc = result.identity.rootPc;
+        const int nextPc = result.function.nextRootPc;
+
+        // V/x: dominant seventh quality (major triad + minor seventh).
+        // rootPc must be a perfect fifth above nextPc.
+        const bool isDom7 = (quality == Q::Major)
+                            && hasExtension(result.identity.extensions, Extension::MinorSeventh);
+        // vii°/x: diminished or half-diminished.
+        // nextPc must be a semitone above rootPc.
+        const bool isDim = (quality == Q::Diminished || quality == Q::HalfDiminished);
+
+        const int upAFifth    = (rootPc - nextPc + 12) % 12; // 7 = rootPc is P5 above nextPc
+        const int upASemitone = (nextPc - rootPc + 12) % 12; // 1 = nextPc is semitone above rootPc
+
+        const bool isCandidateV    = isDom7 && (upAFifth == 7);
+        const bool isCandidateViio = isDim  && (upASemitone == 1);
+
+        if (isCandidateV || isCandidateViio) {
+            const size_t modeScaleIdx = kTonicizationParent[keyModeIndex(result.function.keyMode)];
+            const std::array<int, 7>& scale = kTonicizationScales[modeScaleIdx];
+
+            const int nextDegree = diatonicDegreeForPc(nextPc, result.function.keyTonicPc, scale);
+
+            // nextDegree > 0: exclude the tonic so plain V→I stays labeled "V7", not "V7/I".
+            if (nextDegree > 0) {
+                static constexpr const char* UPPER[7] = { "I","II","III","IV","V","VI","VII" };
+                static constexpr const char* LOWER[7] = { "i","ii","iii","iv","v","vi","vii" };
+
+                std::string tonicLabel;
+                if (isCandidateV) {
+                    // Dominant seventh: always "V7" (dom7 quality guaranteed by detection)
+                    tonicLabel = "V7";
+                } else {
+                    // Diminished leading-tone chord
+                    const bool isHalfDim = (quality == Q::HalfDiminished);
+                    tonicLabel = "vii";
+                    tonicLabel += isHalfDim ? "\xc3\xb8" : "o"; // ø or °
+                    if (isHalfDim
+                            || hasExtension(result.identity.extensions, Extension::DiminishedSeventh)
+                            || hasExtension(result.identity.extensions, Extension::MinorSeventh)) {
+                        tonicLabel += "7";
+                    }
+                }
+
+                const bool upper = isDegreeMajorThird(nextDegree, scale);
+                tonicLabel += "/";
+                tonicLabel += (upper ? UPPER[nextDegree] : LOWER[nextDegree]);
+                romanNumeral = tonicLabel; // replace the diatonic/chromatic label
+            }
+        }
+    }
+
     return romanNumeral;
 }
 

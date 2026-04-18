@@ -1944,3 +1944,276 @@ TEST(Composing_ChordAnalyzerTests, ChordNameInBassField_Suppressed)
             << bassField << "' in symbol: " << symbol;
     }
 }
+
+// ── Tonicization label tests (V7/x, vii°/x) ─────────────────────────────────
+//
+// Tests use makeRomanResult() + manual nextRootPc assignment, so they are fully
+// decoupled from the chord analysis algorithm and bridge wiring.
+//
+// Convention:
+//   rootPc values: C=0 D=2 E=4 F=5 G=7 A=9 B=11  (C#=1 Eb=3 F#=6 Ab=8 Bb=10)
+//
+// All tests are in C major (keyTonicPc=0, Ionian) unless noted otherwise.
+
+// Helper: build a dom7 result for a given root in C major, then set nextRootPc.
+static ChordAnalysisResult dom7Result(int rootPc, int nextRootPc,
+                                      int keyTonicPc = 0,
+                                      KeySigMode keyMode = KeySigMode::Ionian)
+{
+    // degree = scale position of rootPc in the key (may be -1 for chromatic roots)
+    constexpr std::array<int, 7> ionianScale = { 0, 2, 4, 5, 7, 9, 11 };
+    constexpr std::array<int, 7> aeolianScale = { 0, 2, 3, 5, 7, 8, 10 };
+    const std::array<int, 7>& scale = (keyMode == KeySigMode::Aeolian) ? aeolianScale : ionianScale;
+    int degree = -1;
+    for (int i = 0; i < 7; ++i) {
+        if ((keyTonicPc + scale[i]) % 12 == rootPc) { degree = i; break; }
+    }
+    ChordAnalysisResult r = makeRomanResult(degree, ChordQuality::Major,
+                                            rootPc, rootPc, /*hasMin7=*/true,
+                                            false, false, false,
+                                            keyTonicPc, keyMode);
+    r.function.nextRootPc = nextRootPc;
+    return r;
+}
+
+// Helper: build a diminished triad result with optional dim7.
+static ChordAnalysisResult dimResult(int rootPc, int nextRootPc,
+                                     bool hasDim7 = false,
+                                     int keyTonicPc = 0,
+                                     KeySigMode keyMode = KeySigMode::Ionian)
+{
+    constexpr std::array<int, 7> ionianScale = { 0, 2, 4, 5, 7, 9, 11 };
+    int degree = -1;
+    for (int i = 0; i < 7; ++i) {
+        if ((keyTonicPc + ionianScale[i]) % 12 == rootPc) { degree = i; break; }
+    }
+    ChordAnalysisResult r = makeRomanResult(degree, ChordQuality::Diminished,
+                                            rootPc, rootPc, /*hasMin7=*/false,
+                                            false, hasDim7, false,
+                                            keyTonicPc, keyMode);
+    r.function.nextRootPc = nextRootPc;
+    return r;
+}
+
+// ── V7/x cases ────────────────────────────────────────────────────────────────
+
+// A7 → Dm in C major: A is a P5 above D; D is degree 1 (ii). → V7/ii
+TEST(Composing_TonicizationTests, A7_to_Dm_in_CMajor_is_V7ofII)
+{
+    const auto r = dom7Result(/*rootPc=*/9, /*nextRootPc=*/2);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/ii");
+}
+
+// E7 → Am in C major: E is a P5 above A; A is degree 5 (vi). → V7/vi
+TEST(Composing_TonicizationTests, E7_to_Am_in_CMajor_is_V7ofVI)
+{
+    const auto r = dom7Result(/*rootPc=*/4, /*nextRootPc=*/9);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/vi");
+}
+
+// D7 → G in C major: D is a P5 above G; G is degree 4 (V). → V7/V
+TEST(Composing_TonicizationTests, D7_to_G_in_CMajor_is_V7ofV)
+{
+    const auto r = dom7Result(/*rootPc=*/2, /*nextRootPc=*/7);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/V");
+}
+
+// B7 → Em in C major: B is a P5 above E; E is degree 2 (iii). → V7/iii
+TEST(Composing_TonicizationTests, B7_to_Em_in_CMajor_is_V7ofIII)
+{
+    const auto r = dom7Result(/*rootPc=*/11, /*nextRootPc=*/4);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/iii");
+}
+
+// C7 → F in C major: C is a P5 above F; F is degree 3 (IV). → V7/IV
+TEST(Composing_TonicizationTests, C7_to_F_in_CMajor_is_V7ofIV)
+{
+    const auto r = dom7Result(/*rootPc=*/0, /*nextRootPc=*/5);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7/IV");
+}
+
+// G7 → C in C major: G is a P5 above C; C is degree 0 (tonic).
+// Must NOT produce V7/I — plain dominant stays "V7".
+TEST(Composing_TonicizationTests, G7_to_C_in_CMajor_is_V7_not_secondary)
+{
+    const auto r = dom7Result(/*rootPc=*/7, /*nextRootPc=*/0);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7");
+}
+
+// No nextRootPc: label must be the plain diatonic label (no slash suffix).
+TEST(Composing_TonicizationTests, G7_with_no_nextRoot_is_V7)
+{
+    ChordAnalysisResult r = makeRomanResult(4, ChordQuality::Major, 7, 7, /*hasMin7=*/true);
+    // nextRootPc not set → stays -1
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "V7");
+}
+
+// Non-dom7 major chord (no minor seventh) must not trigger tonicization.
+// C major triad → F: missing the minor 7th, so NOT a secondary dominant.
+TEST(Composing_TonicizationTests, CMajorTriad_to_F_is_not_tonicization)
+{
+    ChordAnalysisResult r = makeRomanResult(0, ChordQuality::Major, 0, 0, /*hasMin7=*/false);
+    r.function.nextRootPc = 5; // F
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I");
+}
+
+// ── vii°/x cases ──────────────────────────────────────────────────────────────
+
+// C#dim → Dm in C major: C# is a semitone below D; D is degree 1 (ii). → viio/ii
+TEST(Composing_TonicizationTests, Csharpdim_to_Dm_in_CMajor_is_viioOfII)
+{
+    // C# (rootPc=1) is chromatic in C major → degree=-1
+    const auto r = dimResult(/*rootPc=*/1, /*nextRootPc=*/2);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio/ii");
+}
+
+// Bdim → C in C major: B is a semitone below C; C is degree 0 (tonic).
+// Must NOT produce viio/I — leading tone to tonic stays "viio".
+TEST(Composing_TonicizationTests, Bdim_to_C_in_CMajor_is_viio_not_secondary)
+{
+    const auto r = dimResult(/*rootPc=*/11, /*nextRootPc=*/0);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio");
+}
+
+// F#dim → Gm in C major: F# is a semitone below G; G is degree 4 (V). → viio/V
+TEST(Composing_TonicizationTests, Fsharpdim_to_G_in_CMajor_is_viioOfV)
+{
+    const auto r = dimResult(/*rootPc=*/6, /*nextRootPc=*/7);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio/V");
+}
+
+// C#dim7 → Dm in C major: same as C#dim but with diminished seventh. → viio7/ii
+TEST(Composing_TonicizationTests, CsharpDim7_to_Dm_in_CMajor_is_viio7OfII)
+{
+    const auto r = dimResult(/*rootPc=*/1, /*nextRootPc=*/2, /*hasDim7=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "viio7/ii");
+}
+
+// ── Augmented Sixth Chord Label Tests ──────────────────────────────────────
+//
+// ChordAnalysisResult objects are built manually to simulate what analyzeChord()
+// produces when TPC data is present:
+//   - SharpThirteenth set (F# spelling, TPC delta +10 from Ab root) — aug6 family
+//   - MinorSeventh set (Gb spelling, TPC delta -2 from Ab root)   — dom7 / tritone sub
+//
+// In all cases: root = ♭6̂ of key = (keyTonicPc + 8) % 12
+//               key  = C major (keyTonicPc=0) unless stated otherwise.
+
+/// Build a ChordAnalysisResult for an augmented sixth chord family.
+/// SharpThirteenth is always set (F# spelling, TPC delta +10 from root).
+/// Additional parameters control the specific type (It/Fr/Ger).
+static ChordAnalysisResult aug6Result(bool hasSharpEleventh = false,
+                                      bool naturalFifthPresentParam = false,
+                                      int keyTonicPc = 0,
+                                      KeySigMode keyMode = KeySigMode::Ionian)
+{
+    const int rootPc = (keyTonicPc + 8) % 12;    // ♭6̂ of the key
+    ChordAnalysisResult r;
+    r.function.degree               = -1;         // ♭6 is non-diatonic in Ionian
+    r.identity.quality              = ChordQuality::Major;
+    r.identity.rootPc               = rootPc;
+    r.identity.bassPc               = rootPc;
+    r.identity.naturalFifthPresent  = naturalFifthPresentParam;
+    setExtension(r.identity.extensions, Extension::SharpThirteenth); // aug6 spelling
+    if (hasSharpEleventh)
+        setExtension(r.identity.extensions, Extension::SharpEleventh);
+    r.function.keyTonicPc           = keyTonicPc;
+    r.function.keyMode              = keyMode;
+    return r;
+}
+
+// ── Italian +6 ────────────────────────────────────────────────────────────────
+
+// Ab-C-F# in C major (no P5, no French tone) → It+6
+TEST(Composing_AugmentedSixthTests, Italian_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/false, /*naturalFifthPresent=*/false);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "It+6");
+}
+
+// Same in C minor (Aeolian): same pitch classes, same result
+TEST(Composing_AugmentedSixthTests, Italian_CMinor)
+{
+    const auto r = aug6Result(false, false, 0, KeySigMode::Aeolian);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "It+6");
+}
+
+// ── French +6 ─────────────────────────────────────────────────────────────────
+
+// Ab-C-D-F# in C major (SharpEleventh = D spelled sharply above Ab) → Fr+6
+TEST(Composing_AugmentedSixthTests, French_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/true, /*naturalFifthPresent=*/false);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Fr+6");
+}
+
+// ── German +6 ─────────────────────────────────────────────────────────────────
+
+// Ab-C-Eb-F# in C major (P5 = Eb present, F# spelling) → Ger+6
+TEST(Composing_AugmentedSixthTests, German_CMajor)
+{
+    const auto r = aug6Result(/*hasSharpEleventh=*/false, /*naturalFifthPresent=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// Same in C minor
+TEST(Composing_AugmentedSixthTests, German_CMinor)
+{
+    const auto r = aug6Result(false, true, 0, KeySigMode::Aeolian);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// ── Ger+6 vs tritone-sub dominant — TPC spelling distinction ──────────────────
+
+// Ab-C-Eb-Gb (Ab dominant seventh, Gb spelling = min7, TPC delta -2): → NOT Ger+6
+// Expected: chromatic Roman numeral "bVI7" (SharpThirteenth is NOT set)
+TEST(Composing_AugmentedSixthTests, TritoneSubDominant_NotGerPlus6)
+{
+    ChordAnalysisResult r;
+    r.function.degree               = -1;
+    r.identity.quality              = ChordQuality::Major;
+    r.identity.rootPc               = 8;   // Ab
+    r.identity.bassPc               = 8;
+    r.identity.naturalFifthPresent  = true; // Eb present
+    setExtension(r.identity.extensions, Extension::MinorSeventh); // Gb spelling
+    r.function.keyTonicPc           = 0;
+    r.function.keyMode              = KeySigMode::Ionian;
+    // SharpThirteenth NOT set → aug6 detection suppressed → chromatic Roman numeral
+    EXPECT_NE(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "bVI7");
+}
+
+// Ab-C-Eb-F# (Ger+6, F# spelling = SharpThirteenth, TPC delta +10): → Ger+6
+TEST(Composing_AugmentedSixthTests, GermanSpelling_IsGerPlus6)
+{
+    const auto r = aug6Result(false, /*naturalFifthPresent=*/true);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "Ger+6");
+}
+
+// ── Non-aug6 chords must not produce aug6 labels ──────────────────────────────
+
+// Plain C major triad (root=0, not ♭6̂) → "I", not any aug6 label
+TEST(Composing_AugmentedSixthTests, PlainMajorChord_NotAugSixth)
+{
+    const auto r = makeRomanResult(0, ChordQuality::Major);
+    EXPECT_EQ(ChordSymbolFormatter::formatRomanNumeral(r), "I");
+}
+
+// Plain minor chord at ♭6̂ position (quality=Minor, no SharpThirteenth) → no aug6
+// Expected: chromatic Roman numeral "bVI" (minor quality at ♭6)
+TEST(Composing_AugmentedSixthTests, MinorChordOnFlatSixth_NotAugSixth)
+{
+    // Ab minor triad in C major — minor quality, no SharpThirteenth
+    ChordAnalysisResult r;
+    r.function.degree       = -1;
+    r.identity.quality      = ChordQuality::Minor;
+    r.identity.rootPc       = 8;  // Ab
+    r.identity.bassPc       = 8;
+    r.function.keyTonicPc   = 0;
+    r.function.keyMode      = KeySigMode::Ionian;
+    // Minor quality → detection requires Major quality; this must NOT produce aug6
+    const std::string label = ChordSymbolFormatter::formatRomanNumeral(r);
+    EXPECT_NE(label, "It+6");
+    EXPECT_NE(label, "Fr+6");
+    EXPECT_NE(label, "Ger+6");
+}
