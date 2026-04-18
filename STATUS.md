@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-17 (session 15)*
+*Last updated: 2026-04-18 (session 16)*
 
 ---
 
@@ -1895,6 +1895,50 @@ Bug outcomes:
 
 ---
 
+**Session 16 — Tonicization labels: V/x and vii°/x secondary dominant detection (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `db869612a9`, composing 335/335, notation 45/49
+  (4 pre-existing deferred unchanged).
+
+- **`nextRootPc` field added to `ChordFunction`.**
+  New `int nextRootPc = -1` field in `ChordFunction` (chordanalyzer.h). Populated by a
+  two-pass `backfillNextRootPc` post-analysis function in `notationharmonicrhythmbridge.cpp`
+  that sets `regions[i].chordResult.function.nextRootPc = regions[i+1].chordResult.identity.rootPc`
+  for all three bridge return paths (chord-symbol path, regional accumulation path, legacy
+  per-tick path). Always -1 for status-bar / single-note analysis.
+
+- **Tonicization classifier implemented in `formatRomanNumeral`.**
+  After computing the base Roman numeral with inversions, a new block checks:
+  - **V7/x:** chord is a dominant seventh AND rootPc is a P5 above nextRootPc
+    (`(rootPc - nextRootPc + 12) % 12 == 7`).
+  - **vii°/x and viiø/x:** chord is diminished/half-diminished AND nextRootPc is a
+    semitone above rootPc (`(nextRootPc - rootPc + 12) % 12 == 1`).
+  - **Tonic exclusion:** nextDegree == 0 suppresses the slash suffix (V7→I stays "V7").
+  - **Case of target:** `isDegreeMajorThird(nextDegree, scale)` — upper for major
+    quality targets (V7/V, V7/IV), lower for minor (V7/ii, V7/vi).
+  - **REPLACE semantics:** the tonicization label completely replaces the diatonic label
+    (standard music theory: "V7/ii", not "VI7/ii").
+  - Helpers `diatonicDegreeForPc` and `isDegreeMajorThird` added at file scope.
+  - Scale lookup uses `kTonicizationParent` to map extended modes back to their
+    diatonic parent for the secondary-target lookup.
+
+- **Annotate path verified:** `region.chordResult` is copied into `annotationResult`
+  (notationcomposingbridge.cpp:797), preserving the backfilled `nextRootPc`. Fresh
+  per-tick re-analysis overwrites only `identity`, not `function.nextRootPc`, so
+  `formatRomanNumeral` receives the correct backfilled value when writing to chord staff.
+
+- **12 new `Composing_TonicizationTests` added.** Covers: A7→Dm (V7/ii), E7→Am (V7/vi),
+  D7→G (V7/V), B7→Em (V7/iii), C7→F (V7/IV), G7→C (tonic exclusion → "V7"),
+  G7 with nextRootPc=-1 (→ "V7"), C major triad → F (no min7, not tonicization → "I"),
+  C#dim→Dm (viio/ii), Bdim→C (tonic exclusion → "viio"), F#dim→G (viio/V),
+  C#dim7→Dm (viio7/ii).
+
+- **Test counts:** 347/347 composing (+12 tonicization tests), **45/49 notation** (4
+  pre-existing deferred unchanged). No regressions. master HEAD: `db869612a9` (tests
+  not yet committed — implemented in working tree).
+
+---
+
 ## Next session priorities
 
 1. **RFC review by Vincent and post to MuseScore developer forum**
@@ -1909,24 +1953,19 @@ Bug outcomes:
    `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
    MuseScore/MuseScore. Link the issue in STATUS.md.
 
-4. **Tonicization labels classifier (V/V, V/ii)** — Priority 1 deferred
-   Design a classifier that detects applied dominants and other tonicization
-   patterns in the Roman numeral layer. Already designed (see ARCHITECTURE.md §5.10).
-   Wire into annotate path.
-
-5. **Augmented sixth chord labels (It+6, Fr+6, Ger+6)** — Priority 1 deferred
+4. **Augmented sixth chord labels (It+6, Fr+6, Ger+6)** — Priority 1 deferred
    Implement the augmented sixth classifier. Standard and Baroque presets only.
    Wire into annotate path. Already designed (see ARCHITECTURE.md §5.11).
 
-6. **Pedal point detection** — Priority 1 deferred
+5. **Pedal point detection** — Priority 1 deferred
    Implement structural pedal point detection. Covers: (a) Em/A for Am7 pedal
    tone cases, (b) sustained bass note while harmony changes above. Prerequisite
    for resolving 4 deferred notation tests (Corelli late-beat sparse texture).
 
-7. **Cherry-pick bass field fix to submission-phase1** — done this session.
+6. **Cherry-pick bass field fix to submission-phase1** — done session 15.
    Verify 277/277 + 16/16 on submission-phase1.
 
-8. **Automated annotation review tool (post-RFC)**
+7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until
    after RFC posting and initial developer response.
 
