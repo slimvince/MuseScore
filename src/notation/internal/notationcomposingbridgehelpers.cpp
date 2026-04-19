@@ -1451,6 +1451,98 @@ detectOnsetSubBoundaries(const mu::engraving::Score* sc,
     return subBoundaries;
 }
 
+// ── detectBassMovementSubBoundaries ─────────────────────────────────────────
+// Pass 2b: within a coarse Jaccard region, scan for sub-boundaries driven by
+// bass note changes.  At each ChordRest segment tick we collect onset-only notes
+// (notes whose start tick == segment tick) and find the lowest-pitched one as the
+// current bass.  When the bass pitch class changes from the last-accepted-boundary
+// bass, AND the gap since the last boundary is >= minGapTicks, we fire.
+// ANY bass PC change fires — no minimum interval threshold.  Downstream chord
+// analysis (bassPassingToneMinWeightFraction) handles passing-tone suppression.
+std::vector<mu::engraving::Fraction>
+detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& startTick,
+                                const mu::engraving::Fraction& endTick,
+                                const std::set<size_t>& excludeStaves,
+                                int minGapTicks)
+{
+    using namespace mu::engraving;
+
+    std::vector<Fraction> subBoundaries;
+
+    const Segment* firstSeg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (!firstSeg) {
+        return subBoundaries;
+    }
+
+    // Collect onset-only bass pitch class at each ChordRest segment tick.
+    struct BassOnset {
+        Fraction tick;
+        int bassPC = -1;   // -1 = no onset bass found at this tick
+    };
+    std::vector<BassOnset> onsets;
+
+    for (const Segment* s = firstSeg;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+
+        const int segTick = s->tick().ticks();
+        int lowestPitch = std::numeric_limits<int>::max();
+        int lowestPC    = -1;
+
+        for (size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                // Onset-only: skip notes sustained from a previous tick.
+                if (cr->tick().ticks() != segTick) {
+                    continue;
+                }
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    const int pitch = n->ppitch();
+                    if (pitch < lowestPitch) {
+                        lowestPitch = pitch;
+                        lowestPC    = pitch % 12;
+                    }
+                }
+            }
+        }
+
+        if (lowestPC >= 0) {
+            onsets.push_back({ s->tick(), lowestPC });
+        }
+    }
+
+    if (onsets.empty()) {
+        return subBoundaries;
+    }
+
+    // Track bass PC at the last accepted boundary (initially = bass at startTick).
+    int  lastBoundaryBassPC  = onsets[0].bassPC;
+    Fraction lastBoundaryTick = startTick;
+
+    for (size_t i = 1; i < onsets.size(); ++i) {
+        const int    curPC     = onsets[i].bassPC;
+        const int    gapTicks  = (onsets[i].tick - lastBoundaryTick).ticks();
+
+        if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {
+            subBoundaries.push_back(onsets[i].tick);
+            lastBoundaryTick   = onsets[i].tick;
+            lastBoundaryBassPC = curPC;
+        }
+    }
+
+    return subBoundaries;
+}
+
 mu::composing::analysis::ChordTemporalContext
 findTemporalContext(const mu::engraving::Score* sc,
                     const mu::engraving::Segment* seg,

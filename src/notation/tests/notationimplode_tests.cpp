@@ -1768,3 +1768,28 @@ TEST_F(Notation_ComposingBridgeTests, AnnotationOrderDoesNotAffectRomanNumeralOu
 
     delete score;
 }
+
+// Regression: when two half-measure voicings share the same pitch-class set but have
+// different bass notes (F→Bb), Jaccard distance = 0 — no Jaccard boundary fires.
+// Pass 2b (detectBassMovementSubBoundaries) must detect the bass change and fire
+// a sub-boundary at beat 3 (tick 960 = Fraction(2,4)).
+// Score: single staff, 4/4, 1 measure:
+//   Beat 1 (half): {F2(41), Bb3(58), C4(60), G4(67)} — PCs {0,5,7,10}, bass=F
+//   Beat 3 (half): {Bb2(46), F3(53), C4(60), G4(67)} — PCs {0,5,7,10}, bass=Bb
+TEST_F(Notation_ImplodeTests, BassMovementSubBoundaryFiresOnIdenticalPCSetsWithDifferentBass)
+{
+    MasterScore* score = ScoreRW::readScore(u"bass_movement_boundary.mscx");
+    ASSERT_TRUE(score);
+
+    const auto subs = mu::notation::internal::detectBassMovementSubBoundaries(
+        score,
+        Fraction(0, 1),
+        Fraction(4, 4),
+        {});
+
+    // Exactly one sub-boundary expected: at beat 3 (tick 960 = 2 quarter notes).
+    ASSERT_EQ(subs.size(), 1u);
+    EXPECT_EQ(subs.front(), Fraction(2, 4));
+
+    delete score;
+}

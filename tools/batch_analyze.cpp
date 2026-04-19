@@ -1368,6 +1368,96 @@ static std::vector<Fraction> detectHarmonicBoundariesJaccard(
     return boundaries;
 }
 
+// Pass 2b: bass-movement sub-boundary detection (local copy; canonical in notationcomposingbridgehelpers.cpp).
+// Within a coarse Jaccard region, scans onset-only notes and fires a sub-boundary
+// whenever the bass pitch class changes from the last-accepted-boundary bass.
+// ANY bass PC change fires; downstream chord analysis handles passing tones.
+static std::vector<Fraction> detectBassMovementSubBoundaries(
+    const Score* score,
+    const Fraction& startTick,
+    const Fraction& endTick,
+    const std::set<size_t>& excludeStaves,
+    int minGapTicks = 2 * Constants::DIVISION)
+{
+    std::vector<Fraction> subBoundaries;
+    if (!score || endTick <= startTick) {
+        return subBoundaries;
+    }
+
+    const Segment* firstSeg = score->tick2segment(startTick, true, SegmentType::ChordRest);
+    if (!firstSeg) {
+        return subBoundaries;
+    }
+
+    struct BassOnset {
+        Fraction tick;
+        int bassPC = -1;
+    };
+    std::vector<BassOnset> onsets;
+
+    for (const Segment* s = firstSeg;
+         s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+
+        const int segTick = s->tick().ticks();
+        int lowestPitch = std::numeric_limits<int>::max();
+        int lowestPC    = -1;
+
+        for (size_t si = 0; si < score->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
+                continue;
+            }
+            for (voice_idx_t v = 0; v < VOICES; ++v) {
+                const EngravingItem* e = s->element(staff2track(si, v));
+                if (!e || !e->isChord()) {
+                    continue;
+                }
+                const Chord* chord = toChord(e);
+                if (!chord || chord->isGrace()) {
+                    continue;
+                }
+                // Onset-only: skip notes sustained from a previous tick.
+                if (chord->tick().ticks() != segTick) {
+                    continue;
+                }
+                for (const Note* n : chord->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    const int pitch = n->ppitch();
+                    if (pitch < lowestPitch) {
+                        lowestPitch = pitch;
+                        lowestPC    = pitch % 12;
+                    }
+                }
+            }
+        }
+
+        if (lowestPC >= 0) {
+            onsets.push_back({ s->tick(), lowestPC });
+        }
+    }
+
+    if (onsets.empty()) {
+        return subBoundaries;
+    }
+
+    int  lastBoundaryBassPC   = onsets[0].bassPC;
+    Fraction lastBoundaryTick = startTick;
+
+    for (size_t i = 1; i < onsets.size(); ++i) {
+        const int curPC    = onsets[i].bassPC;
+        const int gapTicks = (onsets[i].tick - lastBoundaryTick).ticks();
+        if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {
+            subBoundaries.push_back(onsets[i].tick);
+            lastBoundaryTick   = onsets[i].tick;
+            lastBoundaryBassPC = curPC;
+        }
+    }
+
+    return subBoundaries;
+}
+
 struct SoundingNote {
     int ppitch = 0;
     int tpc = -1;
@@ -1695,7 +1785,33 @@ static std::vector<AnalyzedRegion> analyzeScore(
     const Fraction startTick = firstSegment->tick();
     const Fraction endTick = score->endTick();
     std::vector<AnalyzedRegion> result;
-    const auto boundaryTicks = detectHarmonicBoundariesJaccard(score, startTick, endTick, excludeStaves);
+    auto boundaryTicks = detectHarmonicBoundariesJaccard(score, startTick, endTick, excludeStaves);
+
+    // Pass 2b: expand coarse Jaccard regions with bass-movement sub-boundaries.
+    // Detects regions where the pitch-class set is identical across the region but
+    // the bass note changes (e.g. Eye of the Hurricane m.1: F-bass → Bb-bass with
+    // the same {C,D,F,G,Bb} pitch-class set).  ANY bass PC change fires; downstream
+    // chord analysis (bassPassingToneMinWeightFraction) handles passing tones.
+    {
+        static constexpr int kPass2bMinRegionTicks = 4 * Constants::DIVISION;
+        std::vector<Fraction> expandedTicks;
+        expandedTicks.reserve(boundaryTicks.size() * 2);
+        for (size_t bi = 0; bi < boundaryTicks.size(); ++bi) {
+            expandedTicks.push_back(boundaryTicks[bi]);
+            const Fraction regionStart = boundaryTicks[bi];
+            const Fraction regionEnd = (bi + 1 < boundaryTicks.size())
+                                       ? boundaryTicks[bi + 1] : endTick;
+            if ((regionEnd - regionStart).ticks() >= kPass2bMinRegionTicks) {
+                const auto subs = detectBassMovementSubBoundaries(
+                    score, regionStart, regionEnd, excludeStaves);
+                for (const Fraction& t : subs) {
+                    expandedTicks.push_back(t);
+                }
+            }
+        }
+        boundaryTicks = std::move(expandedTicks);
+    }
+
     result.reserve(boundaryTicks.size());
     const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
 

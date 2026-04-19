@@ -153,6 +153,21 @@ detectOnsetSubBoundaries(const mu::engraving::Score* sc,
                          const std::set<size_t>& excludeStaves,
                          double threshold = 0.25);
 
+/// Pass 2b: bass-movement sub-boundary detection within a coarse Jaccard region.
+/// Scans onset-only notes (notes whose start tick equals the segment tick) and
+/// tracks the lowest-pitch note at each segment as the "bass".  When the bass
+/// pitch class changes from the bass at the most recently accepted boundary, and
+/// the gap since that boundary is >= minGapTicks, fires a sub-boundary.
+/// ANY bass PC change fires — no minimum interval threshold.  Downstream chord
+/// analysis (bassPassingToneMinWeightFraction) handles passing-tone suppression.
+/// Returns sub-boundary ticks (not including startTick).
+std::vector<mu::engraving::Fraction>
+detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& startTick,
+                                const mu::engraving::Fraction& endTick,
+                                const std::set<size_t>& excludeStaves,
+                                int minGapTicks = 2 * mu::engraving::Constants::DIVISION);
+
 /// Returns true if any standard chord symbol in [startTick, endTick) has a valid
 /// written root. Roman/Nashville analysis annotations should not activate the jazz path.
 bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
