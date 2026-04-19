@@ -341,7 +341,10 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
         } else if (nextRegion == regions.end()) {
             it = std::prev(regions.end());
         } else {
-            it = std::prev(nextRegion);
+            // When the tick sits exactly at the end of the preceding region it
+            // belongs to the next harmonic period — prefer the forward region.
+            auto prev = std::prev(nextRegion);
+            it = (prev->endTick == noteTick) ? nextRegion : prev;
         }
     }
     if (it == regions.end()) {
@@ -737,8 +740,11 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
 
+    // forceClassicalPath=true: prevent chord symbols previously written by this
+    // annotator from triggering the Jazz boundary-detection path in a subsequent
+    // annotation call (order-of-annotation violation fix; see §analyzeHarmonicRhythm).
     const auto allRegions = mu::notation::internal::prepareUserFacingHarmonicRegions(
-        score, startTick, lookaheadEndTick, excludeStaves);
+        score, startTick, lookaheadEndTick, excludeStaves, /*forceClassicalPath=*/true);
 
     if (allRegions.empty()) {
         return;
@@ -827,9 +833,20 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         const std::string symText = writeChordSymbols
             ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths, fmtOpts)
             : "";
-        const std::string romanText = writeRomanNumerals
-            ? mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(annotationResult)
-            : "";
+        std::string romanText;
+        if (writeRomanNumerals) {
+            romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(annotationResult);
+            if (romanText.empty()
+                    && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
+                    && annotationResult.function.degree >= 0
+                    && annotationResult.function.degree <= 6) {
+                auto refinedForRoman = annotationResult;
+                mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
+                if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+                    romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
+                }
+            }
+        }
         const std::string nashvilleText = writeNashvilleNumbers
             ? mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(annotationResult, keyFifths)
             : "";

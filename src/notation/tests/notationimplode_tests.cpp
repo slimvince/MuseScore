@@ -1693,4 +1693,78 @@ TEST_F(Notation_ImplodeTests, JazzModeChordIdentityComesFromNotesNotWrittenSymbo
     delete score;
 }
 
+// ── Order-of-annotation consistency test (§5.13 forceClassicalPath) ──────────
+//
+// Regression guard: writing chord symbols first must not alter the region
+// boundaries produced by a subsequent Roman numeral annotation pass.
+// This protects the forceClassicalPath=true invariant in
+// addHarmonicAnnotationsToSelection.
 
+/// Collect tick positions of all ROMAN-type Harmony elements on track 0.
+static std::vector<int> collectRomanHarmonyTicks(MasterScore* score)
+{
+    std::vector<int> ticks;
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        for (EngravingItem* ann : seg->annotations()) {
+            if (ann && ann->isHarmony() && ann->track() == 0
+                    && toHarmony(ann)->harmonyType() == HarmonyType::ROMAN) {
+                ticks.push_back(seg->tick().ticks());
+            }
+        }
+    }
+    return ticks;
+}
+
+TEST_F(Notation_ComposingBridgeTests, AnnotationOrderDoesNotAffectRomanNumeralOutput)
+{
+    // forceClassicalPath=true must ensure that pre-existing STANDARD chord symbols
+    // written by a prior annotation call do not trigger the Jazz boundary-detection
+    // path and alter the Roman numeral region boundaries.
+    auto analysis = analysisConfig();
+    ASSERT_TRUE(analysis);
+    analysis->setUseRegionalAccumulation(true);
+
+    MasterScore* score = ScoreRW::readScore(u"implode_sustained_support_each_beat.mscx");
+    ASSERT_TRUE(score);
+    ASSERT_GE(score->nstaves(), 2u);
+
+    // Select staves 0-1 so chord-track priority does not apply.
+    Segment* startSeg = score->firstSegment(SegmentType::ChordRest);
+    ASSERT_TRUE(startSeg);
+    score->selection().setRange(startSeg, nullptr, 0, 2);
+    ASSERT_TRUE(score->selection().isRange());
+
+    // ── Pass A: Roman numerals only (no pre-existing chord symbols) ──
+    mu::notation::addHarmonicAnnotationsToSelection(score, /*writeChordSymbols=*/false,
+                                                    /*writeRomanNumerals=*/true,
+                                                    /*writeNashvilleNumbers=*/false);
+    const std::vector<int> romanTicksA = collectRomanHarmonyTicks(score);
+    ASSERT_FALSE(romanTicksA.empty()) << "Pass A: no Roman numeral annotations written";
+
+    // Undo Pass A so the score is clean again.
+    score->undoStack()->undo(nullptr);
+    ASSERT_EQ(collectRomanHarmonyTicks(score).size(), 0u) << "undo did not remove Pass A annotations";
+
+    // ── Pass B: chord symbols first, then Roman numerals ──
+    // Restore same selection.
+    score->selection().setRange(startSeg, nullptr, 0, 2);
+    mu::notation::addHarmonicAnnotationsToSelection(score, /*writeChordSymbols=*/true,
+                                                    /*writeRomanNumerals=*/false,
+                                                    /*writeNashvilleNumbers=*/false);
+
+    // Now the score has STANDARD harmonies.  A second annotation pass must ignore
+    // them (forceClassicalPath=true) and produce the same Roman numeral positions.
+    score->selection().setRange(startSeg, nullptr, 0, 2);
+    mu::notation::addHarmonicAnnotationsToSelection(score, /*writeChordSymbols=*/false,
+                                                    /*writeRomanNumerals=*/true,
+                                                    /*writeNashvilleNumbers=*/false);
+    const std::vector<int> romanTicksB = collectRomanHarmonyTicks(score);
+
+    EXPECT_EQ(romanTicksA.size(), romanTicksB.size())
+        << "Roman numeral annotation count differs depending on whether chord symbols were written first";
+    EXPECT_EQ(romanTicksA, romanTicksB)
+        << "Roman numeral annotation positions differ depending on whether chord symbols were written first";
+
+    delete score;
+}

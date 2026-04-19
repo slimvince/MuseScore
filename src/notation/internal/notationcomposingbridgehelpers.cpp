@@ -252,6 +252,25 @@ void refineSparseChordQualityFromKeyContext(
     result.identity.quality = quality;
 }
 
+void forceChordTrackQualityFromKeyContext(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    mu::composing::analysis::KeySigMode keyMode)
+{
+    using namespace mu::composing::analysis;
+
+    if (result.identity.quality != ChordQuality::Unknown) {
+        return;
+    }
+
+    const int degree = result.function.degree;
+    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
+    if (!triadShape) {
+        return;
+    }
+
+    result.identity.quality = std::get<0>(*triadShape);
+}
+
 namespace {
 
 void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::HarmonicRegion>& regions)
@@ -1498,7 +1517,8 @@ std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves)
+                                 const std::set<size_t>& excludeStaves,
+                                 bool forceClassicalPath)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -1511,7 +1531,8 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                                        startTick,
                                                        endTick,
                                                        excludeStaves,
-                                                       mu::notation::HarmonicRegionGranularity::Smoothed);
+                                                       mu::notation::HarmonicRegionGranularity::Smoothed,
+                                                       forceClassicalPath);
     if (regions.empty()) {
         return {};
     }
@@ -1831,6 +1852,14 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             trailingRegion.tones = gapTones;
             trailingRegion.hasAnalyzedChord = true;
             return trailingRegion;
+        }
+
+        // Both prev and next exist but no fitting test passed.  Rather than
+        // returning nullopt (which leaves an uncovered gap in the measure and
+        // produces mixed chord+rest measures on the chord track), carry the
+        // previous chord forward as a last resort.
+        if (previousRegion) {
+            return carryGapRegion(*previousRegion);
         }
 
         return std::nullopt;

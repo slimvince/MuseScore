@@ -81,7 +81,7 @@ cd C:\s\MS\ninja_build_rel
 ./notation_tests.exe
 ```
 
-**Current baseline: 45/49** passing. 4 tests are deferred (Corelli late-beat sparse-texture cases — see "Known Failing Tests" in STATUS.md).
+**Current baseline: 50/50** passing (all tests green as of session 19).
 
 ### Batch Analyze Regression Tests
 

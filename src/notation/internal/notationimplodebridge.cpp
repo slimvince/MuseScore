@@ -669,6 +669,41 @@ bool populateChordTrack(
         return false;
     }
 
+    // ── Coalesce consecutive regions with the same user-facing chord ─────────
+    // Inference ticks are collected from every chord attack in the source staves,
+    // including tied-note continuations.  This can split a single display region
+    // (e.g. [2/4, 4/4)) into several inference-tick sub-regions that share the
+    // same chord identity.  Merging them here prevents the chord track from
+    // writing a new chord+harmony annotation for each inference tick, which would
+    // over-segment the chord track relative to what the analysis prescribes.
+    //
+    // Exception: when consecutive same-chord sub-regions are separated by ≥ 2 quarter
+    // notes (2 * Constants::DIVISION ticks) from the previous annotation, keep them
+    // separate.  This re-annotates a chord at the second half-measure position when
+    // the melody restarts over a sustained bass (e.g. Corelli op01n08d m24 beat 3),
+    // while still merging eighth-note sub-regions and the first beat following a
+    // harmonic annotation (gap < 2 beats).
+    {
+        constexpr int kSameChordReannotationGap = 2 * 480; // 2 × Constants::DIVISION
+        std::vector<HarmonicRegion> merged;
+        merged.reserve(regions.size());
+        for (auto& r : regions) {
+            bool sameInf = !merged.empty() && sameUserFacingInference(merged.back(), r);
+            const int gapFromLastAnnotation = merged.empty() ? 0 : (r.startTick - merged.back().startTick);
+            if (sameInf && gapFromLastAnnotation < kSameChordReannotationGap) {
+                // Extend the last region to cover this inference window.
+                merged.back().endTick = r.endTick;
+                // Accumulate tones so voicing can draw on the full merged span.
+                for (const auto& tone : r.tones) {
+                    merged.back().tones.push_back(tone);
+                }
+            } else {
+                merged.push_back(std::move(r));
+            }
+        }
+        regions = std::move(merged);
+    }
+
     // ── Clear target region ──────────────────────────────────────────────────
     // Remove all existing content (notes, rests, annotations) from both staves
     // in voice 0 within the time range.  Measure rests that extend beyond the
@@ -1163,9 +1198,21 @@ bool populateChordTrack(
         const std::string fnKey = prefs ? prefs->chordStaffFunctionNotation() : "roman";
         if (fnKey != "none" && passesMinimumDisplayDuration) {
             const bool useNashville = (fnKey == "nashville");
-            const std::string fnText = useNashville
+            std::string fnText = useNashville
                 ? ChordSymbolFormatter::formatNashvilleNumber(chord, localKeyFifths)
                 : ChordSymbolFormatter::formatRomanNumeral(chord);
+            // Chord-track fallback: if the standard formatter produced empty text because
+            // the chord quality is Unknown (e.g. lone tonic/dominant in Aeolian), force-assign
+            // the diatonic quality for the degree and retry.  This is intentionally more
+            // aggressive than the status-bar refinement — users want every annotated
+            // region on the chord staff to show a Roman numeral.
+            if (fnText.empty() && !useNashville && chord.function.degree >= 0 && chord.function.degree <= 6) {
+                auto refinedChord = chord;
+                mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedChord, localMode);
+                if (refinedChord.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+                    fnText = ChordSymbolFormatter::formatRomanNumeral(refinedChord);
+                }
+            }
             if (!fnText.empty()) {
                 Harmony* h = Factory::createHarmony(seg);
                 h->setTrack(bassTrack);
@@ -1332,6 +1379,50 @@ bool populateChordTrack(
             hc->setParent(hSeg);
             hc->setPlainText(muse::String(u"HC"));
             score->undoAddElement(hc);
+        }
+    }
+
+    // ── Post-populate cleanup: remove residual rests inside chord spans ──────
+    // When a triplet region (e.g. 160-tick = Fraction(1,12)) is written via
+    // addChordChainFromPitches, Score::makeGap() must remove a larger existing
+    // rest to make room.  The "removed too much" branch in makeGap restores the
+    // overshoot using toRhythmicDurationList → toDurationList, which cannot
+    // represent triplet-derived Fractions (e.g. Fraction(2,3)) exactly.  This
+    // leaves a 1–6 tick integer gap that manifests as a Rest segment sitting
+    // inside the time span already claimed by the preceding Chord's ticks().
+    // Removing these orphan rests restores the invariant that each chord's
+    // stored ticks() matches the actual distance to the next segment.
+    for (track_idx_t track : { trebleTrack, bassTrack }) {
+        for (Measure* m = score->tick2measure(startTick);
+             m && m->tick() < endTick;
+             m = m->nextMeasure()) {
+
+            // Snapshot all ChordRest elements in this track for this measure.
+            std::vector<ChordRest*> elements;
+            for (Segment* s = m->first(SegmentType::ChordRest);
+                 s; s = s->next(SegmentType::ChordRest)) {
+                ChordRest* cr = s->cr(track);
+                if (cr) { elements.push_back(cr); }
+            }
+
+            // Remove any rest whose tick falls strictly inside the span of
+            // the nearest preceding chord.  Legitimate rests (those that
+            // start at or after the preceding chord's end tick) are kept.
+            for (size_t i = 0; i < elements.size(); ++i) {
+                if (!elements[i]->isRest()) { continue; }
+
+                for (int j = static_cast<int>(i) - 1; j >= 0; --j) {
+                    ChordRest* prev = elements[j];
+                    if (!prev->isChord()) { continue; }
+
+                    const Fraction chordEnd = prev->tick() + prev->ticks();
+                    if (elements[i]->tick() >= prev->tick()
+                        && elements[i]->tick() < chordEnd) {
+                        score->undoRemoveElement(elements[i]);
+                    }
+                    break; // stop at first preceding chord regardless
+                }
+            }
         }
     }
 
