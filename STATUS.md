@@ -2135,7 +2135,7 @@ regressions. Both are fixed in this session.
   `forceClassicalPath` applies, and the order-of-annotation safety guarantee.
 
 - **Test counts:** **364/364 composing** (unchanged), **50/50 notation** (1 new test).
-  Master HEAD: `edcafaa07d` (session 20 commit, preset-specific extension threshold).
+  Master HEAD: `a981c4ee3e`.
 
 **Session 20 — Preset-specific extension threshold for jazz ninth detection (2026-04-19):**
 
@@ -2186,7 +2186,11 @@ regressions. Both are fixed in this session.
   argument threading through `run_single()` and `run_full()`.
 
 - **Test counts:** **366/366 composing** (+2 new), **50/50 notation** (unchanged).
-  Master HEAD: `edcafaa07d`.
+  Master HEAD: `59db1c61b5`.
+
+- **Cherry-picks to submission-phase1:** all sessions 16–20 cherry-picked (HEAD `9d5c9d2c4a`).
+  Composing tests: 366/366 PASSED. Notation tests: 22 failures confirmed pre-existing at
+  `4eb5bba6d4` (before our cherry-picks) — no regressions introduced.
 
 ---
 
@@ -2214,10 +2218,10 @@ regressions. Both are fixed in this session.
    `formatRomanNumeral()` has no preset context; aug6 labels currently fire for all
    presets. Gate to Standard/Baroque only when preset is threaded through the formatter.
 
-6. **Cherry-pick sessions 16–20 to submission-phase1** — sessions 16–18 done.
-   submission-phase1 HEAD after session 18 cherry-picks: `41ac0f7721`.
-   Session 19 cherry-picks: pending (master commit SHA TBD — working tree has session 19 changes uncommitted).
-   Session 20 cherry-pick: `edcafaa07d` — pending cherry-pick to submission-phase1.
+6. **Cherry-pick sessions 16–20 to submission-phase1** — **DONE (session 20)**.
+   submission-phase1 HEAD: `9d5c9d2c4a` (all sessions 16–20 cherry-picked).
+   Composing tests: 366/366 PASSED. Notation tests: 22 pre-existing failures confirmed
+   pre-existing at `4eb5bba6d4` (before cherry-picks); no regressions introduced.
 
 7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until
