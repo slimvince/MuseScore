@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-18 (session 18)*
+*Last updated: 2026-04-19 (session 20)*
 
 ---
 
@@ -693,18 +693,15 @@ Relevant spec: §11.3a–11.3f in ARCHITECTURE.md.
 | FreeDrift reset marker | §11.3f / backlog | No mechanism yet to deliberately reset drift at structural boundaries; see `backlog_drift_reset.md` |
 ---
 
-## Known failing notation tests (implode-to-chord-track, all deferred)
+## Known failing notation tests (implode-to-chord-track)
 
-As of 2026-04-17 session 14 (49 tests total, 45 passing — 13 new annotation detection tests added in session 14; 4 pre-existing deferred remain from the earlier list):
+**As of session 19: 50/50 notation tests passing. No known deferred failures.**
 
-1. **ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries** — extra annotation at tick 3/4; `inferGapRegion` suspect.
-2. **CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature** — tick 1440 carry-forward mismatch between status-bar context and populate output.
-3. **PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16** — mixed chord/rest on BI16 chord tracks in measures 9, 26, 28, 29, 32, 33; deferred.
-4. **CorelliOp01n08dUserReportedChordTrackAudit** — missing bass annotation at m10; late-beat sparse cases.
-
-`PopulateChordTrackHandlesTupletedDvorakOp08n06` is now **passing** — the `findTupletOnTrack` fix resolved it.
-
-All other notation regression tests pass.
+Previously deferred tests and their resolution:
+1. **ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries** — **FIXED (session 19)** via `sameUserFacingInference` coalescing pass with `kSameChordReannotationGap` threshold.
+2. **CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature** — **FIXED (earlier session)** tick 1440 carry-forward resolved.
+3. **PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16** — **FIXED (session 19)** post-populate Rest cleanup pass.
+4. **CorelliOp01n08dUserReportedChordTrackAudit** — **FIXED (session 19)** via `forceChordTrackQualityFromKeyContext` (Aeolian Unknown quality) + `kSameChordReannotationGap` (m24 beat-3 re-annotation).
 
 The §11.3e "complete algorithm" (classify → identify anchors → compute JI offsets → weighted centering → clamp) describes the intended future design. The current implementation covers §11.3e steps 3–4 with unweighted centering and no clamping, plus §11.3f FreeDrift.
 
@@ -796,7 +793,7 @@ Phase 3 is the next milestone.
 | §4.1c Regional note accumulation | Done | The notation bridge `collectRegionTones()` now includes beat-weight + repetition boost + cross-voice boost + sustain-pedal tail weighting; the duplicate batch_analyze collector is used by both the jazz and classical paths, and the classical path now uses Jaccard boundaries plus smoothed regional analysis instead of the onset-only prototype; `detectHarmonicBoundariesJaccard()` remains duplicated in batch_analyze; the Bach baseline correction is now recorded as 50.0% WIR structural with 38.0% music21 surface retained only as a secondary reference |
 | §4.1c Jazz mode | Done | `scoreHasValidChordSymbols()` detection gate (bridge + batch_analyze); `analyzeHarmonicRhythmJazz()` in bridge; `analyzeScoreJazz()` in batch_analyze; chord-symbol-driven boundaries; `fromChordSymbol` + `writtenRootPc` in `HarmonicRegion` and JSON output; `ChordTemporalContext::jazzMode` retained as a context flag; valid-root gate fix prevents Roman-numeral/function-only Harmony imports from misrouting When in Rome scores into the jazz path; batch-only `--inject-written-root` provides a diagnostic upper bound showing current jazz corpora are incomplete rather than exposing an analyzer defect |
 | §5.12 Pedal point detection | Done | two-pass analysis: `isBassChordTone()` guard, upper-voice re-analysis, confidence gap vs. first different-root competitor; `isPedalPoint` / `pedalBassPc` on `ChordIdentity`; `pedalConfidenceThreshold = 0.65`; bridge writes `"X ped."` StaffText when Roman numerals enabled |
-| Regression tests | Active | **306 composing tests** on submission-phase1; 16/16 notation tests pass on this branch |
+| Regression tests | Active | **366 composing tests** plus notation-side regression suites are in place; 50/50 notation tests passing. No known deferred failures. |
 | Validation pipeline tools | Done | `batch_analyze`, `music21_batch.py` (SATB filter, dynamic corpus root), `compare_analyses.py` (chord identity rate), `run_validation.py` |
 | Temporal window | Done | 16-beat lookback + 8-beat lookahead, 0.7× decay per measure |
 | Dynamic lookahead | Done | expands window when confidence < 0.60; caps at 24 beats |
@@ -924,10 +921,10 @@ The sophisticated algorithm in §11.3a–11.3e is designed but not yet implement
 
 ## Regression Test Count
 
-**306 composing tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer
+**364 composing tests** — chord analyzer (unit + MusicXML integration), key/mode analyzer
 (all 21 modes), tuning anchor, P6 synthetic suite (root coverage, inversions, modes,
-round-trip), B/H naming, tonicization, augmented sixth labels, pedal point detection.
-**16/16 notation tests** — all passing on this branch.
+round-trip), tonicization labels, augmented sixth labels, pedal point detection.
+**45/49 notation tests** — 4 pre-existing deferred (Corelli implode failures).
 0 abstract (root/quality) mismatches in the catalog.
 
 ---
@@ -1898,6 +1895,301 @@ Bug outcomes:
 
 ---
 
+**Session 16 — Tonicization labels: V/x and vii°/x secondary dominant detection (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `db869612a9`, composing 335/335, notation 45/49
+  (4 pre-existing deferred unchanged).
+
+- **`nextRootPc` field added to `ChordFunction`.**
+  New `int nextRootPc = -1` field in `ChordFunction` (chordanalyzer.h). Populated by a
+  two-pass `backfillNextRootPc` post-analysis function in `notationharmonicrhythmbridge.cpp`
+  that sets `regions[i].chordResult.function.nextRootPc = regions[i+1].chordResult.identity.rootPc`
+  for all three bridge return paths (chord-symbol path, regional accumulation path, legacy
+  per-tick path). Always -1 for status-bar / single-note analysis.
+
+- **Tonicization classifier implemented in `formatRomanNumeral`.**
+  After computing the base Roman numeral with inversions, a new block checks:
+  - **V7/x:** chord is a dominant seventh AND rootPc is a P5 above nextRootPc
+    (`(rootPc - nextRootPc + 12) % 12 == 7`).
+  - **vii°/x and viiø/x:** chord is diminished/half-diminished AND nextRootPc is a
+    semitone above rootPc (`(nextRootPc - rootPc + 12) % 12 == 1`).
+  - **Tonic exclusion:** nextDegree == 0 suppresses the slash suffix (V7→I stays "V7").
+  - **Case of target:** `isDegreeMajorThird(nextDegree, scale)` — upper for major
+    quality targets (V7/V, V7/IV), lower for minor (V7/ii, V7/vi).
+  - **REPLACE semantics:** the tonicization label completely replaces the diatonic label
+    (standard music theory: "V7/ii", not "VI7/ii").
+  - Helpers `diatonicDegreeForPc` and `isDegreeMajorThird` added at file scope.
+  - Scale lookup uses `kTonicizationParent` to map extended modes back to their
+    diatonic parent for the secondary-target lookup.
+
+- **Annotate path verified:** `region.chordResult` is copied into `annotationResult`
+  (notationcomposingbridge.cpp:797), preserving the backfilled `nextRootPc`. Fresh
+  per-tick re-analysis overwrites only `identity`, not `function.nextRootPc`, so
+  `formatRomanNumeral` receives the correct backfilled value when writing to chord staff.
+
+- **12 new `Composing_TonicizationTests` added.** Covers: A7→Dm (V7/ii), E7→Am (V7/vi),
+  D7→G (V7/V), B7→Em (V7/iii), C7→F (V7/IV), G7→C (tonic exclusion → "V7"),
+  G7 with nextRootPc=-1 (→ "V7"), C major triad → F (no min7, not tonicization → "I"),
+  C#dim→Dm (viio/ii), Bdim→C (tonic exclusion → "viio"), F#dim→G (viio/V),
+  C#dim7→Dm (viio7/ii).
+
+- **Test counts:** 347/347 composing (+12 tonicization tests), **45/49 notation** (4
+  pre-existing deferred unchanged). No regressions. master HEAD: `dff9e1a9f9` (combined
+  with session 17 in one implementation commit).
+  submission-phase1: cherry-pick `9b5cd98ddd` — 298/298 composing, notation tests pass.
+
+---
+
+**Session 17 — Augmented sixth chord labels: It+6, Fr+6, Ger+6 (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `db869612a9`, composing 347/347, notation 45/49
+  (4 pre-existing deferred unchanged). Implementation continues from session 16 working tree.
+
+- **`naturalFifthPresent` field added to `ChordIdentity`.**
+  New `bool naturalFifthPresent = false` field between `bassTpc` and `quality`.
+  Populated in `analyzeChord()` after the quality is known:
+  `(quality != ChordQuality::Augmented) && (pcWeight[(rootPc+7)%12] > kExtensionThreshold)`.
+  File-scope `kExtensionThreshold = 0.20` constant used for the threshold check.
+  Distinguishes German +6 (P5 present) from Italian +6 (P5 absent) in
+  `formatRomanNumeral()`.
+
+- **Augmented sixth classifier implemented in `formatRomanNumeral`.**
+  Block runs after the inversion-aware base Roman numeral and before tonicization.
+  Detection gate: root is ♭6̂ of current key (`rootPc == (keyTonicPc + 8) % 12`),
+  quality is Major, and `SharpThirteenth` extension is set. The TPC-dependent
+  extension encoding provides automatic suppression when TPC data is absent:
+  - Ab7 with Gb spelling (TPC delta −2 from root) → `MinorSeventh`, not `SharpThirteenth`
+    → no aug6 detection (correct: this is a tritone-sub dominant, not an aug6 chord).
+  - Ab7 with F# spelling (TPC delta +10 from root) → `SharpThirteenth` → aug6 family.
+  - `SharpEleventh` set → French +6 (D above Ab in C, TPC delta +6).
+  - `naturalFifthPresent` true → German +6.
+  - Neither → Italian +6.
+  - Label REPLACES the chromatic Roman numeral (♭VI7#13 → "Ger+6").
+  - Tonicization block not triggered (aug6 chords have `SharpThirteenth`, not
+    `MinorSeventh`, so `isDom7 = false`).
+  - Preset gating (Standard/Baroque only) deferred — `formatRomanNumeral()` has no
+    preset parameter; all presets emit the aug6 label in current implementation.
+
+- **Annotate path verified.** `annotationResult = region.chordResult` copies the full
+  struct including `naturalFifthPresent`; `formatRomanNumeral(annotationResult)` at
+  `notationcomposingbridge.cpp:831` writes the label verbatim to ROMAN harmony.
+
+- **9 new `Composing_AugmentedSixthTests` added.**
+  Italian_CMajor (→ "It+6"), Italian_CMinor (→ "It+6"), French_CMajor (→ "Fr+6"),
+  German_CMajor (→ "Ger+6"), German_CMinor (→ "Ger+6"),
+  TritoneSubDominant_NotGerPlus6 (MinorSeventh → "bVI7", not aug6),
+  GermanSpelling_IsGerPlus6 (SharpThirteenth + naturalFifthPresent → "Ger+6"),
+  PlainMajorChord_NotAugSixth (root ≠ ♭6̂ → "I"),
+  MinorChordOnFlatSixth_NotAugSixth (Minor quality → not aug6).
+
+- **Test counts:** 356/356 composing (+9 aug6 tests), **45/49 notation** (4
+  pre-existing deferred unchanged). No regressions. master HEAD: `dff9e1a9f9`.
+  submission-phase1: cherry-pick `9b5cd98ddd` — 298/298 composing, notation tests pass.
+
+---
+
+**Session 18 — Pedal point detection, two-pass analysis (2026-04-18):**
+
+- **Step 0 verified:** master HEAD = `bdcab49f26`, composing 356/356, notation 45/49
+  (4 pre-existing deferred unchanged). Matches expected state from session 17 close.
+
+- **Two-pass pedal detection implemented.** `analyzeChord()` in `chordanalyzer.cpp` now
+  performs a second analysis pass on the upper voices when the bass pitch class is not a
+  structural chord tone of the Pass 1 winner. Pedal is confirmed when Pass 2 normalized
+  confidence ≥ `pedalConfidenceThreshold` (default 0.65) and ≥ 2 distinct upper PCs exist.
+
+- **`isBassChordTone(bassPc, rootPc, quality, extensions)` static helper added.** Checks
+  quality-defined triad intervals plus all extensions in the bitmask. Two special rules:
+  (1) any 9th–13th extension in the bitmask makes the corresponding interval a chord tone;
+  (2) P4 (interval 5) is always a chord tone when the chord carries any seventh, preventing
+  false pedal triggering on slash chords like Cm7/F where F lands exactly at
+  `kExtensionThreshold = 0.20` (not strictly above).
+
+- **Confidence gap computed against first different-root competitor.** When multiple templates
+  share the same root (Major triad / Maj7 / Dom7 all score identically on a bare major triad),
+  comparing against `results[1]` yields gap≈0 → confidence≈0.047. Skipping same-root
+  duplicates until a different root is found gives a meaningful separation signal.
+
+- **`ChordIdentity` extended:**
+  ```
+  bool isPedalPoint = false;
+  int  pedalBassPc  = -1;
+  ```
+  `pedalConfidenceThreshold` added to `ChordAnalyzerPreferences` with range [0.30, 0.95]
+  in `bounds()`.
+
+- **Bridge annotation.** `addHarmonicAnnotationsToSelection` writes a StaffText `"X ped."`
+  (e.g. `"G ped."`) at the region segment when `isPedalPoint = true`, gated to
+  `writeRomanNumerals=true` only.
+
+- **8 unit tests added** (`Composing_PedalPointTests` suite):
+  `BassIsChordTone_NoPedalDetected`, `F13overEb_BassIsChordTone_NoPedalDetected`,
+  `SustainedBassNotInUpperVoiceChord_PedalDetected`, `DominantPedal_Detected`,
+  `TonicPedal_Detected`, `PedalDetection_DisabledByZeroThreshold`,
+  `SustainedInnerVoiceIsChordTone_NoPedalDetected`,
+  `LowConfidenceUpperVoices_NoPedalDetected`.
+
+- **Threshold calibration.** Default 0.65 confirmed correct: all 207 catalog regression
+  entries remain at 0 abstract mismatches; Em/A pedal case fires at ~0.97 confidence.
+
+- **Test counts:** **364/364 composing** (+8 pedal tests), **45/49 notation** (same 4
+  pre-existing deferred). Master HEAD: `fb9a27ce9a`. Submission-phase1 HEAD: `41ac0f7721`
+  (cherry-picked; 306/306 composing, 16/16 notation on that branch).
+
+- **ARCHITECTURE.md §5.12** added: two-pass algorithm, `isBassChordTone` rules,
+  confidence gap calculation rationale, `pedalConfidenceThreshold` parameter, bridge
+  annotation format.
+
+---
+
+**Session 19 — Two-pass pedal point Class B regressions fixed (2026-04-19):**
+
+Session 18's two-pass pedal point detection (§5.12) introduced two notation test
+regressions. Both are fixed in this session.
+
+- **Step 0 verified:** master HEAD = `398774cd3a`, composing 364/364, notation 45/49
+  (2 pre-existing deferred + 2 new §5.12 regressions). Matches expected state from
+  session 18 close minus one note: the "notation 45/49" figure included 2 regressions
+  that were introduced by §5.12 and were not yet resolved.
+
+- **Regression 1 fixed — `PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16`.**
+  Root cause: `Score::makeGap()` "removed too much" branch restores overshot rests via
+  `toRhythmicDurationList()` → `toDurationList()`, which cannot represent triplet-derived
+  Fractions (e.g. Fraction(2,3) = 1280 integer ticks, but the greedy note-fitting covers
+  only 1279). Each triplet region in BI16-1's 5/8 and 3/4 measures introduced a 1-tick
+  integer gap that cascaded into residual Rest segments sitting inside the stored time span
+  of the preceding Chord. Fix: post-populate cleanup pass (in `populateChordTrack()`, after
+  cadence markers) that removes any Rest whose tick falls strictly inside the preceding
+  chord's `[tick, tick + ticks())` span. This is safe because the stored `ticks()` on each
+  chord already reflects the correct rhythmic value; the orphaned rests are purely artefacts
+  of Fraction-arithmetic imprecision in the makeGap restore path.
+
+- **Regression 2 fixed — `ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries`.**
+  Root cause: `collectSourceInferenceTicks()` adds an inference tick at every chord-attack
+  in the source staves, including the second note of a tied pair (which is a genuine `Chord`
+  element in MuseScore's DOM). This caused the region [2/4, 4/4) — correctly identified as
+  a single display region — to be split into [2/4, 3/4) + [3/4, 4/4) inside
+  `populateChordTrack()`, writing two separate chord+harmony events instead of one spanning
+  chord. Fix: coalescing pass on the `regions` vector (inserted between region construction
+  and the clear/populate loop) that merges consecutive regions where `sameUserFacingInference`
+  returns true. Merged regions extend `endTick` and accumulate `tones` from all sub-windows.
+
+- **`CorelliOp01n08dUserReportedChordTrackAudit` now passes (session 19 continued).**
+  Two sub-problems were resolved:
+
+  1. *m10:960 missing annotation (Unknown quality in Aeolian).* `formatRomanNumeral`
+     returns `""` for `ChordQuality::Unknown`. In Aeolian, lone tonic (i) and dominant (v)
+     chords survive refinement with Unknown quality when the chord is a bare perfect fifth.
+     Fix: `forceChordTrackQualityFromKeyContext()` helper in
+     `notationcomposingbridgehelpers.cpp` — if `fnText` is empty and quality is Unknown,
+     re-derive the diatonic quality from degree + mode and retry formatting.
+
+  2. *m24:960 missing re-annotation (same-chord gap).* Corelli m24 is a single Fm display
+     region covering all three beats (1440 ticks). The coalescing pass introduced for
+     regression 2 merged all 5 inference ticks into one annotation at beat 1, so beat 3
+     (tick offset 960) never received its annotation. The beat 3 annotation is musically
+     meaningful: the melody restarts with a new phrase over the sustained bass. Fix: a
+     `kSameChordReannotationGap = 2 * Constants::DIVISION` (960 ticks = 2 quarter notes)
+     threshold in the coalescing pass. Consecutive same-chord sub-regions are merged only
+     if `gap < kSameChordReannotationGap`. At m24:960 the gap equals exactly the threshold
+     (≥ 2 beats → keep separate); at sustained-support beat 4 the gap is 480 ticks (< 2
+     beats → merge). Both invariants are preserved with no regressions.
+
+- **Test counts:** **364/364 composing** (unchanged), **49/49 notation** (all passing).
+  Master HEAD: TBD (not yet committed). See session 19 continued block below for final counts.
+
+**Session 19 — Order-of-annotation violation + annotation path Unknown quality fallback (2026-04-19, continued):**
+
+- **Order-of-annotation violation fixed (`forceClassicalPath`).**
+  Root cause: `analyzeHarmonicRhythm()` has a Jazz gate: when
+  `scoreHasValidChordSymbols()` returns true (STANDARD harmonies present in range),
+  it activates the Jazz boundary-detection path which uses written chord symbol
+  positions as region boundaries. If the user first annotates chord symbols, then
+  annotates Roman numerals, the second call detects the STANDARD harmonies written by
+  the first call, activates Jazz mode, and produces different region boundaries —
+  diverging from a single "Annotate Both" call.
+  Fix: `analyzeHarmonicRhythm()` now takes `bool forceClassicalPath = false`. When
+  `true`, the Jazz gate is skipped unconditionally. `addHarmonicAnnotationsToSelection`
+  always passes `forceClassicalPath=true`. Threaded through:
+  `addHarmonicAnnotationsToSelection` →
+  `prepareUserFacingHarmonicRegions(forceClassicalPath=true)` →
+  `analyzeHarmonicRhythm(forceClassicalPath=true)`.
+
+- **Unknown quality Roman numeral fallback added to annotation path.**
+  `forceChordTrackQualityFromKeyContext()` was previously applied only in the chord
+  track path (`notationimplodebridge.cpp`). The annotation path
+  (`addHarmonicAnnotationsToSelection` in `notationcomposingbridge.cpp`) had the same
+  divergence: `formatRomanNumeral` returns `""` for `ChordQuality::Unknown` bare fifths,
+  so no Roman numeral was written at those positions. Same fix applied: when `romanText`
+  is empty, quality is Unknown, and degree is in [0, 6], a `refinedForRoman` copy is
+  made, `forceChordTrackQualityFromKeyContext` is applied, and `formatRomanNumeral` is
+  retried.
+
+- **New test `AnnotationOrderDoesNotAffectRomanNumeralOutput` (Step 6 verification).**
+  Regression guard for the `forceClassicalPath` invariant. Verifies that Roman numeral
+  annotation positions are identical whether written alone or after chord symbols have
+  been written to the same score.
+
+- **§5.13 added to ARCHITECTURE.md** — "Analyze-at-Tick Path Table" documents every
+  entry point that runs harmonic analysis, which code path it uses, whether
+  `forceClassicalPath` applies, and the order-of-annotation safety guarantee.
+
+- **Test counts:** **364/364 composing** (unchanged), **50/50 notation** (1 new test).
+  Master HEAD: `edcafaa07d` (session 20 commit, preset-specific extension threshold).
+
+**Session 20 — Preset-specific extension threshold for jazz ninth detection (2026-04-19):**
+
+- **Step 0 verified:** master HEAD = `398774cd3a`, composing 364/364, notation 50/50.
+  Matches expected state from session 19 close.
+
+- **Step 1: Preset-specific extension threshold implemented.** `ChordAnalyzerPreferences`
+  gains `extensionThreshold = 0.20` (default). Jazz preset uses `extensionThreshold = 0.12`
+  (= `kSeventhThreshold`) to detect lightly-voiced jazz ninths (pcWeight 0.12–0.19) that
+  fall below the conservative 0.20 used to suppress Baroque ornamental passing tones.
+  Rationale: jazz ninth at pcWeight 0.153 and Corelli passing tone at 0.158 are too close
+  to separate with a global threshold.
+
+  Implementation:
+  - `detectExtensions()` and `dim7CharacteristicBonus()` accept `double extThreshold` param
+    (default = `kExtensionThreshold`); all 3 `detectExtensions()` calls in `analyzeChord()`
+    and both `dim7CharacteristicBonus()` calls pass `prefs.extensionThreshold`.
+  - `ChordAnalyzerPreferences::bounds()` gains `{ "extensionThreshold", { 0.10, 0.30 } }`.
+  - `tools/batch_analyze.cpp`: after `applyPreset()`, a `ChordAnalyzerPreferences chordPrefs`
+    object is built; Jazz preset sets `chordPrefs.extensionThreshold = 0.12`; both
+    `analyzeScore()` and `analyzeScoreJazz()` accept and forward this object.
+  - 2 new tests (`Composing_ExtensionThresholdTests` suite): Jazz preset detects lightly-voiced
+    ninth at pcWeight 0.15; Standard preset does not.
+
+- **Step 2: Onset-age decay diagnostic completed (no code changes).**
+  Confirmed: note accumulation applies **no onset-age decay**. Weight =
+  `(durInRegion / regionDuration) × beatWeight(attackBeat)`. Beat weights: DOWNBEAT=1.0,
+  SIMPLE_STRESSED=0.85, SIMPLE_UNSTRESSED=0.75, DEFAULT=0.5 — uniform across instruments.
+  `pcWeight[pc] += max(0.1, t.weight)` (floor 0.10 per tone). No age factor exists anywhere.
+  The Corelli D passing tone at pcWeight 0.158 is a structural weight artifact, not a decay artifact.
+
+- **Step 3: Baroque preset corpus QA — Corelli (149 movements).**
+  Both Standard and Baroque presets produce identical rootPc agreement on Corelli:
+
+  | Preset   | Movements | Aligned | Agree | Root Agreement |
+  |----------|-----------|---------|-------|----------------|
+  | Standard | 149/149   | 2471    | 1735  | **70.2%**      |
+  | Baroque  | 149/149   | 2471    | 1734  | **70.2%**      |
+  | Diff     |           |         |       | **0.0%**       |
+
+  Decision: Baroque preset ships as-is (0.0% difference, well within the ≤2% threshold).
+  Expected result: mode priors shift key context but do not affect chord root detection.
+
+- **Infrastructure fix:** `run_corelli_validation.py` and `run_validation.py` updated to use
+  `_to_win_path()` (`C:/...` with forward slashes) for file arguments passed to the native
+  Windows Qt binary, instead of `_to_unix_path()` (`/c/...`). The rebuilt `batch_analyze.exe`
+  does not translate MSYS2-style paths for file I/O. Both scripts also gain `--preset NAME`
+  argument threading through `run_single()` and `run_full()`.
+
+- **Test counts:** **366/366 composing** (+2 new), **50/50 notation** (unchanged).
+  Master HEAD: `edcafaa07d`.
+
+---
+
 ## Next session priorities
 
 1. **RFC review by Vincent and post to MuseScore developer forum**
@@ -1912,23 +2204,22 @@ Bug outcomes:
    `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
    MuseScore/MuseScore. Link the issue in STATUS.md.
 
-4. **Tonicization labels classifier (V/V, V/ii)** — Priority 1 deferred
-   Design a classifier that detects applied dominants and other tonicization
-   patterns in the Roman numeral layer. Already designed (see ARCHITECTURE.md §5.10).
-   Wire into annotate path.
+4. **Pedal point detection** — **DONE (session 18)**
+   Two-pass analysis implemented. `isPedalPoint` / `pedalBassPc` on `ChordIdentity`.
+   Bridge annotation "X ped." in Roman numeral mode. 8 unit tests. 364/364 composing,
+   50/50 notation (all passing; Corelli late-beat and Aeolian Unknown-quality cases
+   resolved in session 19; order-of-annotation fix + 1 new test in session 19 final).
 
-5. **Augmented sixth chord labels (It+6, Fr+6, Ger+6)** — **DONE (sessions 16–17)**
-   Cherry-picked to submission-phase1 as `9b5cd98ddd`.
+5. **Augmented sixth preset gating** — deferred from session 17
+   `formatRomanNumeral()` has no preset context; aug6 labels currently fire for all
+   presets. Gate to Standard/Baroque only when preset is threaded through the formatter.
 
-6. **Pedal point detection** — **DONE (session 18)**
-   Two-pass analysis. `isPedalPoint` / `pedalBassPc` on `ChordIdentity`. Bridge
-   annotation "X ped." in Roman numeral mode. 8 unit tests. Cherry-picked to
-   submission-phase1 as `41ac0f7721`. 306/306 composing, 16/16 notation.
+6. **Cherry-pick sessions 16–20 to submission-phase1** — sessions 16–18 done.
+   submission-phase1 HEAD after session 18 cherry-picks: `41ac0f7721`.
+   Session 19 cherry-picks: pending (master commit SHA TBD — working tree has session 19 changes uncommitted).
+   Session 20 cherry-pick: `edcafaa07d` — pending cherry-pick to submission-phase1.
 
-7. **Cherry-pick bass field fix to submission-phase1** — done session 15.
-   submission-phase1 HEAD: `41ac0f7721`.
-
-8. **Automated annotation review tool (post-RFC)**
+7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until
    after RFC posting and initial developer response.
 

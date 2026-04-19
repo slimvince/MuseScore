@@ -658,6 +658,12 @@ struct ChordAnalyzerPreferences {
     // enum class StylePrior { General, Classical, Jazz, Pop, Blues, Folk };
     // StylePrior stylePrior = StylePrior::General;
 
+    // Extension detection threshold
+    // Jazz preset uses 0.12 (= kSeventhThreshold) to detect lightly-voiced ninths
+    // (pcWeight 0.12–0.19).  Standard and Baroque keep 0.20 to suppress ornamental
+    // passing tones in counterpoint textures.  Range: 0.10–0.30.
+    double extensionThreshold = 0.20;
+
     // P8c: optimization readiness
     ParameterBoundsMap bounds() const;   // parameter name → {min, max, isManual}
 };
@@ -1579,10 +1585,13 @@ be maintained throughout the codebase — analysis produces data, formatters pro
 ```cpp
 namespace ChordSymbolFormatter {
 
+    // Note spelling convention for chord symbol root and bass names.
+    // Mirrors NoteSpellingType in src/engraving/types/types.h.
+    enum class NoteSpelling { Standard, German, GermanPure };
+
     // Display options — locale/notation-style concerns kept separate from analysis.
     struct Options {
-        bool useGermanBHNaming = false;  // H = B natural, B = Bb (Nordic/German)
-        // TODO: wire through pitchClassName once implemented
+        NoteSpelling spelling = NoteSpelling::Standard;
     };
     inline constexpr Options kDefaultOptions{};
 
@@ -1601,6 +1610,20 @@ namespace ChordSymbolFormatter {
 
 Display options (`Options`) live in `ChordSymbolFormatter`, not in
 `ChordAnalyzerPreferences`, enforcing the analysis/display separation (principle 2.3).
+
+**Note naming convention:** Root and bass note names in chord symbol output
+respect the score's chord symbol spelling preference (Format → Style → Chord
+Symbols). The analysis layer implements a self-contained `NoteSpelling` enum
+`{Standard, German, GermanPure}` — defined in `chordanalyzer.h`, mirroring
+`NoteSpellingType` in `src/engraving/types/types.h`. The bridge reads
+`Sid::chordSymbolSpelling` from the score style via `scoreNoteSpelling()`
+(defined in `notationcomposingbridgehelpers.cpp`) and maps it to
+`ChordSymbolFormatter::Options::spelling`. German mapping mirrors
+`tpc2name()` GERMAN case (`pitchspelling.cpp:343-356`): B natural → "H",
+Bb → "B". All other note names are unchanged. Solfeggio and French map to
+Standard (not yet supported in chord symbol output). Roman numerals and
+Nashville numbers do not use note names — they use degree integers and
+accidental tokens — so the spelling setting does not affect them.
 
 **Roman numeral scope:** The formatter emits Roman numerals up to the 7th level
 (e.g. `I7`, `IM7`, `iø7`). Extensions beyond the 7th (9th, 11th, 13th) are not
@@ -2439,6 +2462,17 @@ In "You Must Believe in Spring" (jazz ballad, 5 flats), the analyzer correctly a
 on highly chromatic passages, writing `do` (no label) rather than guessing wrong. This
 is confidence gating working as intended. More trustworthy than wrong labels.
 
+**Campania font rendering artifact (`Dsdim`, `Fsdim` etc.) — MuseScore core issue, not our bug (confirmed 2026-04-17):**
+Certain chord symbol strings containing diminished chords on specific roots (D, F, C, A)
+render with a spurious `s` prefix in MuseScore's Campania chord symbol font — e.g.
+`Ddim7/A` renders visually as `Dsdim7/A`. The internal string produced by our formatter
+is correct: confirmed by clicking the element to edit it, which shows the correct string
+without the `s`. The same artifact affects other chord symbol tools including third-party
+plugins. This is a MuseScore core font rendering issue, not a bug in the composing module.
+The same artifact appears in chord symbol plugins used for comparison QA. Fix requires
+changes to the Campania font or MuseScore's chord symbol rendering pipeline — outside the
+scope of this module.
+
 ### 5.9 Key Signature Injection — Not Planned
 
 An earlier design considered automatically suggesting key signature insertions in the main
@@ -2448,6 +2482,146 @@ provides the same analytical information — inferred key regions with confidenc
 without modifying the main score. The user reads the chord track annotations and decides
 independently whether to add key signatures to the main score. No automatic key signature
 injection is planned.
+
+### §5.10 Tonicization Labels
+
+Secondary dominant and other tonicization labels (V/V, vii°/V, V/ii etc.)
+exposed in the annotate path Roman numeral layer. The analyzer already
+detects tonicizations internally; this exposes the conclusion as an
+annotation. Universal across all presets.
+
+### §5.11 Augmented Sixth Chord Labels
+
+Explicit It+6, Fr+6, Ger+6 labels in the annotate path Roman numeral layer.
+These replace the generic chromatic Roman numeral (e.g. ♭VI) when the
+analyzer detects the specific augmented sixth interval pattern. Gated to
+Standard and Baroque presets only. Jazz and Nashville presets continue to
+emit chromatic Roman numerals or chord symbols respectively.
+
+### §5.12 Pedal Point Detection — Two-Pass Analysis
+
+**Status: Implemented (Session 18, master `fb9a27ce9a`).**
+
+When the lowest-pitched tone in a window is structurally lighter than the upper
+voices — as in a dominant or tonic organ point — it may not belong to the chord
+formed by the upper voices. A single-pass template match will either (a) force a
+bass-root reading and suppress the upper-voice harmony, or (b) return a slash chord
+with the wrong root identity if the template accidentally fits. Two-pass analysis
+resolves this.
+
+#### Algorithm
+
+**Pass 1** runs normally on all voices. If the winning result's root is a chord
+tone of the detected quality (checked by `isBassChordTone()`), the bass is part of
+the chord (e.g. an inversion) and no pedal detection occurs.
+
+**Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the
+winner. It re-runs `analyzeChord()` on the upper voices only (the bass PC is removed
+from the tone list). Two conditions must both be met before the pedal reading is
+accepted:
+
+1. The upper voices produce at least 2 distinct pitch classes (prevents triggering
+   on a unison or single-note passage).
+2. The normalized confidence of the Pass 2 winner — computed as the score gap
+   between the winner and the best **different-root** competitor — reaches or
+   exceeds `pedalConfidenceThreshold` (default 0.65).
+
+When both conditions are met, the Pass 2 result replaces the full-pass result, and
+`ChordIdentity::isPedalPoint = true` / `pedalBassPc` are set on the returned
+`ChordAnalysisResult`.
+
+#### Why "different-root competitor"
+
+Multiple chord templates share the same root (e.g. Major triad, Maj7, and Dom7 all
+score identically when extension tones are absent). If the gap is computed against
+`results[1]` — which may be the same root — the gap is ~0 and confidence collapses
+to ~0.047, blocking pedal detection for bare major triads. Computing the gap against
+the first result whose `rootPc` differs from the winner gives a meaningful separation
+signal regardless of how many same-root templates appear in the candidate list.
+
+#### `isBassChordTone()` helper
+
+Checks whether a pitch class is a structural member of the chord (root, triad tone,
+or any detected extension). Quality-specific triadic intervals are checked first.
+Extensions are checked from the `extensions` bitmask (min7, maj7, dim7, b9, 9, #9,
+11, #11, b13, 13). Two additional rules handle borderline cases:
+
+- **Any extension (9th–13th) listed in the bitmask:** the corresponding interval
+  also marks the bass as a chord tone.
+- **P4 with any seventh present:** if the chord has a min7, maj7, or dim7 detected
+  (even at the lower `kSeventhThreshold = 0.12`) and the bass is a P4 above the
+  root, it is treated as a chord tone. This handles slash chords like Cm7/F where
+  the bass F is at exactly `kExtensionThreshold = 0.20` and therefore NOT detected
+  as `NaturalEleventh` by the extension scanner, yet is structurally part of the
+  chord.
+
+#### `pedalConfidenceThreshold` parameter
+
+Default 0.65. Appears in `ChordAnalyzerPreferences::bounds()` with range [0.30, 0.95].
+Set to 0.0 to disable pedal detection entirely (the `pedalConfidenceThreshold > 0.0`
+guard short-circuits Pass 2 before any analysis is attempted).
+
+#### Bridge annotation
+
+When `isPedalPoint = true`, the annotate path (`addHarmonicAnnotationsToSelection`)
+writes an additional `StaffText` at the same segment in the format `"X ped."` where
+`X` is the chord symbol of the pedal bass pitch class formatted as a simple major
+root name (e.g. `"G ped."`, `"C ped."`). This is placed only when Roman numeral
+annotations are enabled.
+
+---
+
+### §5.13 Analyze-at-Tick Path Table
+
+Every entry point that runs harmonic analysis against a tick position is listed here.
+Understanding which path each uses is critical for avoiding **order-of-annotation
+violations** — where previously-written chord symbols bias a subsequent analysis
+call by triggering the Jazz boundary-detection gate.
+
+#### Entry points
+
+| Entry point | File | Caller | forceClassicalPath | Notes |
+|---|---|---|---|---|
+| `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | N/A — single note, no Jazz gate | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeNoteHarmonicContextRegionallyInWindow()`. Uses a bounded expanding window around the note's tick. |
+| `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` | N/A — single note, no Jazz gate | Same regional-window path as above; returns ranked candidates for context menu display. |
+| `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp` | `notationtuningbridge.cpp`, `notationimplodebridge.cpp` | N/A — delegates to `analyzeNoteHarmonicContextRegionallyInWindow` | Tick-level query without a note anchor. Used by intonation (§11) and chord-track writer to re-analyze individual regions. |
+| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Passed through from caller | Time-range scanner. Contains the Jazz gate: if `!forceClassicalPath && scoreHasValidChordSymbols(…)` → Jazz path; else → Classical §4.1c path. |
+| `prepareUserFacingHarmonicRegions(score, start, end, …, forceClassicalPath)` | `notationcomposingbridgehelpers.cpp` | `addHarmonicAnnotationsToSelection()`, `populateChordTrack()` (indirectly via `analyzeHarmonicRhythm`) | Passed through | Thin wrapper: calls `analyzeHarmonicRhythm` then runs gap inference. |
+| `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp` | `notationinteraction.cpp` (menu action) | **Always `true`** | Annotation write path. Hard-codes `forceClassicalPath=true` to prevent previously-written chord symbols from biasing region boundary detection. |
+| `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Not currently passed (calls `analyzeHarmonicRhythm` via `analyzeHarmonicContextAtTick` per region) | Chord track write path. Uses `analyzeHarmonicRhythm` for boundary detection, then re-analyzes each region fresh via `analyzeHarmonicContextAtTick`. |
+
+#### Order-of-annotation safety guarantee
+
+**Rule:** any path that writes `HarmonyType::STANDARD` chord symbols to the score
+must pass `forceClassicalPath=true` to `analyzeHarmonicRhythm` (directly or via
+`prepareUserFacingHarmonicRegions`), or must not invoke `analyzeHarmonicRhythm` at
+all.
+
+**Violation scenario:** User runs "Annotate → Chord Symbols", then "Annotate →
+Roman Numerals" on the same selection. If `forceClassicalPath=false`, the second
+call detects the STANDARD harmonies written by the first call, activates the Jazz
+boundary path, and produces different region boundaries — causing divergent output
+from a single "Annotate → Both" call.
+
+**Resolution (Session 19):** `addHarmonicAnnotationsToSelection` hard-codes
+`forceClassicalPath=true`. The flag is threaded through:
+`addHarmonicAnnotationsToSelection` →
+`prepareUserFacingHarmonicRegions(forceClassicalPath=true)` →
+`analyzeHarmonicRhythm(forceClassicalPath=true)` →
+Jazz gate skipped.
+
+#### Unknown-quality Roman numeral fallback
+
+`ChordSymbolFormatter::formatRomanNumeral()` returns `""` when
+`ChordQuality::Unknown` — this occurs for bare fifths (no third detected) in
+Aeolian passages where the chord analyzer cannot determine major vs. minor quality
+from the available tones.
+
+Both the annotation path (`addHarmonicAnnotationsToSelection`) and the chord-track
+path (`populateChordTrack`) apply `forceChordTrackQualityFromKeyContext()` as a
+post-analysis fallback: when `formatRomanNumeral` returns empty and quality is
+Unknown, the diatonic triad shape for the current degree+mode is substituted.
+This ensures Roman numeral annotations are written even for bare-fifth regions.
 
 ---
 
@@ -3996,6 +4170,56 @@ context, once with the new — to produce both Roman numerals. When no pivot cho
 (direct chromatic modulation), annotate as "direct modulation". Enharmonic reinterpretation
 detection is a future refinement.
 
+### Annotate path annotation layers (Roman numeral mode)
+
+When the user selects a region and runs "Annotate to chord track" in Roman
+numeral mode, the following layers are written as StaffText annotations:
+
+- Chord symbols
+- Roman numerals (with chromatic/borrowed labels: ♭VII, ♭III etc.)
+- Cadence markers (PAC, HC, DC, PC) — **implemented** (Session 14);
+  uses `detectCadences()` in `notationcomposingbridgehelpers.cpp`
+- Pivot chord labels — **implemented** (Session 14); uses
+  `detectPivotChords()` in `notationcomposingbridgehelpers.cpp`
+- Tonicization labels (V/V, V/ii, V/IV etc.) — **NOT YET IMPLEMENTED**
+  (deferred; no `relativeRoot`/secondary-dominant field in
+  `ChordFunction`; requires standalone implementation first)
+- Augmented sixth chord labels (It+6, Fr+6, Ger+6) — **NOT YET
+  IMPLEMENTED** (deferred; no aug-sixth classifier in composing module;
+  requires standalone implementation first)
+
+Nashville annotation mode emits chord symbols and Nashville numbers only.
+No cadence markers, no pivot labels, no tonicization labels.
+
+**Cadence detection** (`detectCadences`): pairs of consecutive in-selection
+regions are examined. PAC = V→I or viio→I with assertive key confidence
+(≥ 0.8) on both. PC = IV→I. DC = V→vi. HC = last in-selection region is
+a dominant (degree V or viio). Label is placed at the resolution tick; if
+the resolution region is in lookahead (past `selectionEndTick`), the label
+is placed at the preparatory chord's tick instead. One harmonic region of
+read-only lookahead is used.
+
+**Pivot detection** (`detectPivotChords`): scans for assertive key
+transitions (consecutive regions with different `keyTonicPc` or `keyMode`).
+The new key is confirmed by finding at least one additional assertive region
+within `kMaxPivotLookaheadRegions = 8` regions past the boundary. The pivot
+chord is the last in-selection chord diatonic to both the old and new key.
+The pivot label format is `vi → ii` (U+2192 RIGHT ARROW, no "pivot:" prefix,
+no key-name context). Analysis window extended by up to
+`kMaxPivotLookaheadRegions × 1 whole note` past `selectionEndTick` in Roman
+numeral mode; no annotations written outside the selection boundary.
+
+**Annotation color policy:**
+
+Interactive annotate path (human use): annotations written in score default
+color (black). Publication-ready, indistinguishable from manually entered
+symbols. No user preference exposed.
+
+Automated pipeline (`batch_analyze` headless): annotations written in red,
+hardcoded in `tools/batch_analyze.cpp`. Never exposed to human user. Used by
+`auto_review.py` to filter our inferred annotations from pre-existing score
+content by color comparison.
+
 #### Future Extensions — Chord Track
 
 The following are possible future extensions. No implementation is planned.
@@ -4263,6 +4487,51 @@ struct ArrangerInteraction {
 };
 ```
 
+### Automated annotation review (planned, post-RFC)
+
+`tools/auto_review.py` — headless pipeline that loads a directory of scores
+via `batch_analyze`, runs the annotation path, and passes structured output
+to an LLM judge (Anthropic API) for music-theory-correctness evaluation
+without corpus ground truth dependency. Produces per-score judgment reports
+and aggregate quality summaries. Calibration requires a small hand-verified
+set of 10–15 scores. Intended as a scalable complement to corpus validation
+for repertoire not covered by DCML/WiR/Bach chorale annotations.
+
+**Three-mode design:**
+
+Mode 1 — No pre-existing symbols: judge evaluates our output against music
+theory rules only.
+
+Mode 2 — Pre-existing symbols present: treated as a second analyst's opinion,
+not ground truth. Judge comments on agreements and disagreements without
+scoring disagreements as errors. Framing: "two analysts may reach different
+but equally valid conclusions."
+
+Mode 3 — Known ground truth corpus (DCML/WiR/Bach chorales): judge scores
+errors directly against reference annotations.
+
+Mode detection is automatic: if Harmony elements exist in the score before
+annotation, use Mode 2. If the score is in the DCML registry, use Mode 3.
+Otherwise use Mode 1.
+
+**Report format:**
+Designed as input to a Claude conversation, not a standalone verdict.
+Requirements:
+- Compact enough for many scores in a single context window
+- Structured to make cross-score patterns visible
+- Flags specific measure locations for drill-down
+- Separates formatter artifacts (actionable) from analytical disagreements
+  (judgment call) from expected limitations (ignore)
+- Includes score metadata per entry: title, composer, key, time signature,
+  texture type, preset used
+
+**Pipeline boundary:**
+Entire `auto_review.py` pipeline lives in `tools/` — no MuseScore core
+involvement. Operates on JSON output from `batch_analyze`. Pre-existing
+chord symbols read from score as `writtenSymbols` field in JSON, our
+inferred symbols as `inferredSymbols` field. Color (red) used as filter
+criterion when both are present in the same score file.
+
 ---
 
 ## 15. Development Phases
@@ -4344,6 +4613,23 @@ implemented and passing all targeted tests. See STATUS.md for test counts.
 
 2b — Corpus re-run: 64.6% weighted direct DCML confirmed stable after
   formatter and key-detection fixes (Corelli 70.3%, Dvorak 79.2% spot-checked).
+
+2b2 — Complete-voicing jazz transcription QA (2026-04-17): My Funny Valentine
+  (Bill Evans, Some Other Time 1968, Felix B. transcription) — 185-measure
+  three-layer comparison (our annotations vs human analyst transcription vs
+  third-party plugin). Agreement with human transcription: approximately 75–80%
+  exact or near-exact chord symbol match. Extended runs of perfect
+  measure-by-measure agreement: m.82–102, m.151–185, Coda (m.179–185). Complex
+  extended chords correctly identified: AbΔ7#11, F-13, G7(#9b13), EbMaj7add13/Ab,
+  AbMaj7add13(no3)/Gm7/F, GbMaj7b9b5, GbMaj7add13, FmMaj7, CmMaj9, Asus(add9b5),
+  Eb7sus#5/B, G7sus#5#11, and many others. Bass solo ostinato (F13/Eb, m.106–142):
+  correctly held across 36 measures. Pedal point (Bb pedal, m.106): correctly labelled.
+  The 75–80% figure on complete voicings vs 64.6% weighted corpus figure reflects the
+  sparse-voicing limitation: the vertical analyzer performs substantially better when
+  bass notes and complete chord voicings are present. Both figures are cited in the RFC
+  with this context. Note: `Dsdim`/`Fsdim` visual artifacts in screenshots are Campania
+  font rendering artifacts (§5.8), not formatter output bugs. Internal strings confirmed
+  correct via edit dialog.
 
 2c — Benchmark set Rule 12 sign-off: PASSED 2026-04-14.
   BWV 227/7: E minor key annotation, correct Roman numerals ✓
@@ -4655,6 +4941,6 @@ segment->next1(SegmentType::ChordRest)
 
 ---
 
-*Document version: 3.21 — the plateau target is now qualified for full-texture tonal corpora only, the highest-ROI roadmap is reordered so texture fixes precede evaluation separation and confidence calibration, Rule 12 adds a permanent benchmark score set for visual review, region identity modes are now decided conceptually (harmonic summary vs as-written), and the Mozart 26.7% direct-DCML figure is explicitly marked as a thin-texture/non-comparable case; previous: 3.20 — confidence interpretation is now documented explicitly as heuristic rather than probabilistic, a reasonable "good enough" plateau is defined for the current vertical tertian engine, the highest-ROI pre-plateau roadmap is recorded, and the stale Mozart `59.4%` agreement reference is corrected to the current 26.7% direct-DCML root-agreement figure; previous: 3.19 — `batch_analyze` now skips forced post-load layout in headless mode because analysis uses logical score data only; this avoids the legacy native MSCX cache-overflow crash on Mozart `K533-3` while preserving JSON output parity with the mirrored `score.mxl` path; previous: 3.18 — same-key-signature key-mode selection now uses tonal-center comparison with a diatonic raw-score guard, preventing the Mozart `K279-1` opening from flipping to spurious `F Lydian`, while Roman/Nashville analysis annotations are excluded from chord-symbol-driven path activation; previous: 3.17 — Milestone A3 confidence gating is implemented for chord-track exposure, the key-confidence thresholds now suppress low-confidence key-dependent annotations, and the Dvorak `op08n06` regression locks that behavior in; previous: 3.16 — Milestone A benchmark passages are recorded, the reusable batch/notation parity harness is documented, and BWV 227.7 plus Chopin BI16-1 now pass exact parity gates; previous: 3.15 — final post-`bassNoteRootBonus` corpus baselines are recorded, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, and Corelli walking-bass sus/slash artifacts are documented as a deferred limitation; previous: 3.14 — `populateChordTrack()` now absorbs sparse intra-measure gaps into neighboring written regions so BI16-style chord-track generation does not leave mixed chord/rest measures; previous: 3.13 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the Chopin BI16-1 notation mismatch is resolved by aligning `PreserveAllChanges` collapse semantics with the batch path; previous: 3.12 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the remaining Chopin BI16-1 boundary issue is separated from the root-scoring fix; previous: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
+*Document version: 3.30 — Session 20: `ChordAnalyzerPreferences` gains `extensionThreshold = 0.20`; Jazz preset uses 0.12 (`kSeventhThreshold`) to detect lightly-voiced ninths; Standard/Baroque keep 0.20 to suppress counterpoint passing tones; documented in §4.6 `ChordAnalyzerPreferences`. previous: 3.29 — Session 19 (continued): order-of-annotation violation fix (`forceClassicalPath=true` in `addHarmonicAnnotationsToSelection`); Unknown quality Roman numeral fallback added to annotation path (`notationcomposingbridge.cpp`); §5.13 "Analyze-at-Tick Path Table" added; new test `AnnotationOrderDoesNotAffectRomanNumeralOutput`; notation test count 50/50 (all passing). previous: 3.28 — Session 19 (continued): two further chord-track annotation fixes bringing notation tests to 49/49 (all passing): (1) `forceChordTrackQualityFromKeyContext()` helper (in `notationcomposingbridgehelpers.cpp`) re-derives diatonic quality from degree+mode when `formatRomanNumeral` returns empty because quality is `ChordQuality::Unknown` — occurs for lone Aeolian tonic/dominant bare fifths; (2) `kSameChordReannotationGap = 2 * Constants::DIVISION` (960 ticks = 2 quarter notes) threshold in the coalescing pass: consecutive same-chord sub-regions are re-annotated when their gap from the previous annotation equals or exceeds the threshold, enabling the Corelli m24 beat-3 Fm re-annotation (gap=960 ≥ 960 → keep) while preserving the sustained-support merge (gap=480 < 960 → merge). previous: 3.27 — Session 19: two §5.12 regressions resolved: (1) `populateChordTrack()` now runs a post-populate cleanup pass that removes Rest segments sitting inside a Chord's stored time span (artefact of `makeGap`'s "removed too much" restore path on triplet Fractions); (2) `populateChordTrack()` now coalesces consecutive regions with the same user-facing chord identity before the populate loop, preventing over-segmentation when tied-note continuations create extra inference ticks within a single display region. Notation test count: 47/49 (up from 45/49). previous: 3.26 — Campania font rendering artifact (`Dsdim`/`Fsdim`) documented as MuseScore core issue in §5.8; complete-voicing jazz QA evidence added (MFV 185-measure three-layer comparison, 75–80% agreement); `isValidBassNoteName` guard added to `formatSymbol` suppressing slash chord when bass name is not a plain note name; chord name in bass field bug documented and fixed; RFC draft at `docs/rfc_musescore_forum_post.md`; chordlist.cpp upstream bug report draft at `docs/chordlist_bug_report.md`; previous: 3.25 — cadence markers (PAC/HC/DC/PC) and pivot chord labels (vi → ii format, U+2192) wired into annotate path via `detectCadences()`/`detectPivotChords()` helpers; tonicization and augmented sixth labels deferred (no classifier implemented); pivot annotation format updated from verbose "pivot: vi in C → ii in G" to concise "vi → ii"; `kMaxPivotLookaheadRegions = 8` lookahead for pivot confirmation; 13 new notation unit tests (45/49 passing, 4 deferred); previous: 3.24 — B/H naming convention fix for German locale chord names in jazz path; previous: 3.23 — annotation color policy documented (black for human use, red for headless pipeline); auto_review.py three-mode design and report format requirements added; previous: 3.22 — annotate path Roman numeral layer extended to include cadence markers, pivot labels, tonicization labels, and augmented sixth chord labels (Standard/Baroque presets only); automated annotation review tool design recorded; Session 5 jazz QA outcomes documented; previous: 3.21 — the plateau target is now qualified for full-texture tonal corpora only, the highest-ROI roadmap is reordered so texture fixes precede evaluation separation and confidence calibration, Rule 12 adds a permanent benchmark score set for visual review, region identity modes are now decided conceptually (harmonic summary vs as-written), and the Mozart 26.7% direct-DCML figure is explicitly marked as a thin-texture/non-comparable case; previous: 3.20 — confidence interpretation is now documented explicitly as heuristic rather than probabilistic, a reasonable "good enough" plateau is defined for the current vertical tertian engine, the highest-ROI pre-plateau roadmap is recorded, and the stale Mozart `59.4%` agreement reference is corrected to the current 26.7% direct-DCML root-agreement figure; previous: 3.19 — `batch_analyze` now skips forced post-load layout in headless mode because analysis uses logical score data only; this avoids the legacy native MSCX cache-overflow crash on Mozart `K533-3` while preserving JSON output parity with the mirrored `score.mxl` path; previous: 3.18 — same-key-signature key-mode selection now uses tonal-center comparison with a diatonic raw-score guard, preventing the Mozart `K279-1` opening from flipping to spurious `F Lydian`, while Roman/Nashville analysis annotations are excluded from chord-symbol-driven path activation; previous: 3.17 — Milestone A3 confidence gating is implemented for chord-track exposure, the key-confidence thresholds now suppress low-confidence key-dependent annotations, and the Dvorak `op08n06` regression locks that behavior in; previous: 3.16 — Milestone A benchmark passages are recorded, the reusable batch/notation parity harness is documented, and BWV 227.7 plus Chopin BI16-1 now pass exact parity gates; previous: 3.15 — final post-`bassNoteRootBonus` corpus baselines are recorded, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, and Corelli walking-bass sus/slash artifacts are documented as a deferred limitation; previous: 3.14 — `populateChordTrack()` now absorbs sparse intra-measure gaps into neighboring written regions so BI16-style chord-track generation does not leave mixed chord/rest measures; previous: 3.13 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the Chopin BI16-1 notation mismatch is resolved by aligning `PreserveAllChanges` collapse semantics with the batch path; previous: 3.12 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the remaining Chopin BI16-1 boundary issue is separated from the root-scoring fix; previous: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from "design complete" to "implemented"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 "Remaining Gap" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*
 *Last updated: April 2026*
 *Maintainer: Update this document whenever architectural decisions change*
