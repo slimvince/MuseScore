@@ -361,6 +361,20 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–0.5.  Default: 0.05 (5 % of accumulated weight).
     double bassPassingToneMinWeightFraction = 0.05;
 
+    // ── Extension detection threshold ──────────────────────────────────────
+    //
+    // Jazz voicings routinely place the ninth at pcWeight 0.12–0.19 (below the
+    // conservative 0.20 used to suppress ornamental passing tones in counterpoint
+    // textures).  Setting this to kSeventhThreshold (0.12) for the Jazz preset
+    // allows lightly-voiced ninths to register without disturbing classical corpora.
+    // Standard and Baroque keep the conservative 0.20 default.
+
+    /// Minimum pcWeight for chord extensions (9th, 11th, 13th, alterations).
+    /// Jazz preset should use 0.12 (= kSeventhThreshold) to detect lightly-voiced
+    /// ninths.  Standard/Baroque use 0.20 to suppress Baroque passing tones.
+    /// Range: 0.10–0.30.  Default: 0.20.
+    double extensionThreshold = 0.20;
+
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 
     /// Minimum normalizedConfidence for the upper-voice-only Pass 2 result to
@@ -434,6 +448,7 @@ struct ChordAnalyzerPreferences {
             { "pedalConfidenceThreshold",               { 0.3, 0.95 } },
             { "confidenceSigmoidMidpoint",              { 0.5, 5.0 } },
             { "confidenceSigmoidSteepness",             { 0.5, 5.0 } },
+            { "extensionThreshold",                     { 0.10, 0.30 } },
         };
     }
 };

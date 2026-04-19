@@ -724,7 +724,8 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
                                 int rootPc,
                                 ChordQuality quality,
                                 const std::array<int, 12>& tpcForPc,
-                                int rootTpc)
+                                int rootTpc,
+                                double extThreshold = kExtensionThreshold)
 {
     auto w = [&](int semitones) -> double {
         return pcWeight[static_cast<size_t>((rootPc + semitones) % 12)];
@@ -734,7 +735,7 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
 
     const bool rawMin7  = w(10) > kSeventhThreshold;
     const bool rawMaj7  = w(11) > kSeventhThreshold;
-    const bool rawDim7  = (quality == ChordQuality::Diminished) && (w(9) > kExtensionThreshold);
+    const bool rawDim7  = (quality == ChordQuality::Diminished) && (w(9) > extThreshold);
 
     // For HalfDiminished the minor 7th is structural, not an "added" extension.
     // Also suppress if pitch class 10 is spelled as A# (#13) rather than Bb (min7).
@@ -750,28 +751,28 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
     f.hasMajorSeventh     = rawMaj7;
     f.hasDiminishedSeventh = rawDim7;
 
-    f.hasAddedSixth = w(9) > kExtensionThreshold && !rawMin7 && !rawMaj7
+    f.hasAddedSixth = w(9) > extThreshold && !rawMin7 && !rawMaj7
                       && quality != ChordQuality::Diminished;
 
-    f.hasNinthNatural = w(2) > kExtensionThreshold;
-    f.hasNinthFlat    = w(1) > kExtensionThreshold;
+    f.hasNinthNatural = w(2) > extThreshold;
+    f.hasNinthFlat    = w(1) > extThreshold;
     // Interval 3 is the minor 3rd in minor/diminished templates — exclude it.
     // For Major quality, also require a major 3rd (interval 4) to be present:
     // without it the note at interval 3 is the minor 3rd of a minor chord, not
     // a #9 (e.g. {A,C,E} is Am, not Aadd#9).  Suspended chords have no major
     // 3rd by definition, so the requirement is skipped for them.
-    f.hasNinthSharp   = w(3) > kExtensionThreshold
-                        && (quality != ChordQuality::Major || w(4) > kExtensionThreshold)
+    f.hasNinthSharp   = w(3) > extThreshold
+                        && (quality != ChordQuality::Major || w(4) > extThreshold)
                         && quality != ChordQuality::Minor
                         && quality != ChordQuality::Diminished
                         && quality != ChordQuality::HalfDiminished;
     f.hasNinth        = f.hasNinthNatural || f.hasNinthFlat || f.hasNinthSharp;
 
-    f.hasEleventh = w(5) > kExtensionThreshold;  // P4: stays at general threshold
+    f.hasEleventh = w(5) > extThreshold;  // P4: stays at general threshold
 
     const bool hasSeventh = rawMin7 || rawMaj7 || rawDim7
                             || f.hasEleventh || f.hasNinthNatural;
-    f.hasThirteenth = w(9) > kExtensionThreshold && hasSeventh;
+    f.hasThirteenth = w(9) > extThreshold && hasSeventh;
     // A# (#13) vs Bb (min7): same pitch class, distinguished by TPC.
     // TPC delta from root: min7 = -2, aug6 (#13) = +10.
     {
@@ -779,18 +780,18 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
         const int tpc10 = tpcForPc[static_cast<size_t>(pc10)];
         const bool isSharp13Spelling = (rootTpc >= 0 && tpc10 >= 0)
                                        && (tpc10 - rootTpc == 10);
-        f.hasThirteenthSharp = w(10) > kExtensionThreshold && isSharp13Spelling
+        f.hasThirteenthSharp = w(10) > extThreshold && isSharp13Spelling
                                && quality != ChordQuality::Diminished;
     }
 
     // Natural 5th presence distinguishes #5 (no natural 5th) from b13 (natural 5th
     // also present).  For Augmented quality the #5 is structural, not an extension.
-    const bool naturalFifthPresent = (quality != ChordQuality::Augmented) && (w(7) > kExtensionThreshold);
+    const bool naturalFifthPresent = (quality != ChordQuality::Augmented) && (w(7) > extThreshold);
 
     // pc+6: distinguish b5 (flat Gb spelling, no natural 5th) from #11 (sharp F# spelling
     // or natural 5th also present).  Compute first so hasFlatFifth is available for
     // the fifthSlotFilled check on pc+8 below.
-    const bool rawFlatFifth = w(6) > kExtensionThreshold
+    const bool rawFlatFifth = w(6) > extThreshold
                               && quality != ChordQuality::Diminished
                               && quality != ChordQuality::HalfDiminished;
     {
@@ -818,7 +819,7 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
     const bool fifthSlotFilled = naturalFifthPresent || f.hasFlatFifth;
     const bool fifthSlotOrMinorFlat6 = fifthSlotFilled
                                        || (quality == ChordQuality::Minor && tpc8SpellsAsFlat);
-    f.hasSharpFifth     = w(8) > kExtensionThreshold && !fifthSlotOrMinorFlat6;
+    f.hasSharpFifth     = w(8) > extThreshold && !fifthSlotOrMinorFlat6;
     // Allow b13 without a 7th for Minor quality only when the perfect 5th is also present
     // (e.g. "Cmaddb13" = {C,Eb,G,Ab}).  Without the 5th, {root,m3,b6} is more parsimoniously
     // a first-inversion major triad (e.g. {G,Bb,Eb} = Eb/G), so we suppress the b13 label.
@@ -953,13 +954,14 @@ double scoreExtraNotes(const TemplateDef& tpl, int rootPc,
 double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
                                const std::array<double, 12>& pcWeight,
                                int keyTonicPc,
-                               const std::array<int, 7>& scale)
+                               const std::array<int, 7>& scale,
+                               double extThreshold = kExtensionThreshold)
 {
     if (tpl.quality != ChordQuality::Diminished) {
         return 0.0;
     }
     const int dim7Pc = (rootPc + 9) % 12;
-    if (pcWeight[static_cast<size_t>(dim7Pc)] <= kExtensionThreshold) {
+    if (pcWeight[static_cast<size_t>(dim7Pc)] <= extThreshold) {
         return 0.0;
     }
     for (int interval : scale) {
@@ -1572,7 +1574,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
             score += scoreTemplateTones(tpl, rootPc, pcWeight);
             score += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
-            score += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale);
+            score += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
             score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
             score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
             score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
@@ -1656,12 +1658,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         }
 
         const int rootTpc = tpcForPc[static_cast<size_t>(rootPc)];
-        ExtensionFlags ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc);
+        ExtensionFlags ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc, prefs.extensionThreshold);
 
         // 2. Sus2 → Sus4 upgrade: Sus4 is more specific when P4 is actually sounding.
         if (quality == ChordQuality::Suspended2 && ext.hasEleventh) {
             quality = ChordQuality::Suspended4;
-            ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc);
+            ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc, prefs.extensionThreshold);
         }
 
         // 3. Sus → Major (omitsThird): when Maj7 is present but no 3rd is sounding,
@@ -1677,7 +1679,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             && (quality == ChordQuality::Suspended2 || quality == ChordQuality::Suspended4)) {
             quality    = ChordQuality::Major;
             omitsThird = true;
-            ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc);
+            ext = detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc, prefs.extensionThreshold);
         }
 
         // Degree assignment.
@@ -1715,6 +1717,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         r.identity.rootPc               = rootPc;
         r.identity.bassPc               = bassPc;
         r.identity.bassTpc              = bassTpc;
+        r.identity.naturalFifthPresent  = (quality != ChordQuality::Augmented)
+                                          && (pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
+                                              > prefs.extensionThreshold);
         r.identity.quality              = quality;
         if (ext.hasMinorSeventh)      setExtension(r.identity.extensions, Extension::MinorSeventh);
         if (ext.hasMajorSeventh)      setExtension(r.identity.extensions, Extension::MajorSeventh);
@@ -2023,7 +2028,7 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
             const double nonBassAdj = nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
             const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
             const double tpcBonus   = tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale);
+            const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
 
             double diatonicBonus = 0.0;
             for (int interval : scale) {

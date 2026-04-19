@@ -2343,3 +2343,58 @@ TEST(Composing_PedalPointTests, LowConfidenceUpperVoices_NoPedalDetected)
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
+
+// ── Extension threshold preset tests ──────────────────────────────────────────
+//
+// Jazz ninths consistently appear at pcWeight 0.12–0.19 (below the conservative
+// 0.20 standard threshold).  The Jazz preset lowers extensionThreshold to 0.12
+// to detect them; Standard/Baroque keep 0.20 to suppress counterpoint passing tones.
+
+// Am7 with a lightly-voiced ninth (pcWeight ≈ 0.15, between 0.12 and 0.20).
+// Jazz preset (extensionThreshold=0.12): ninth detected → Am9.
+TEST(Composing_ExtensionThresholdTests, JazzPreset_LightlyVoicedNinth_Detected)
+{
+    // A4=69 (root, strong), C5=72 (m3), E5=76 (P5), G5=79 (m7), B5=83 (ninth — light)
+    // Weights: Root=1.0, m3=0.70, P5=0.70, m7=0.50, ninth=0.15.
+    // pcWeight[B] = max(0.1, 0.15) = 0.15.  Jazz threshold 0.12: 0.15 > 0.12 → detected.
+    const auto ts = weightedTones({
+        { 69, 1.0 },   // A  — root
+        { 72, 0.70 },  // C  — minor third
+        { 76, 0.70 },  // E  — perfect fifth
+        { 79, 0.50 },  // G  — minor seventh
+        { 83, 0.15 },  // B  — ninth (lightly voiced, between jazz 0.12 and standard 0.20)
+    });
+
+    ChordAnalyzerPreferences jazzPrefs;
+    jazzPrefs.extensionThreshold = 0.12;  // Jazz preset value
+
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 9);  // A
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    EXPECT_TRUE(hasExtension(results.front().identity.extensions, Extension::NaturalNinth))
+        << "Jazz preset (extensionThreshold=0.12) should detect lightly-voiced ninth";
+}
+
+// Same voicing: Standard preset (extensionThreshold=0.20) must NOT detect the ninth.
+TEST(Composing_ExtensionThresholdTests, StandardPreset_LightlyVoicedNinth_NotDetected)
+{
+    // Same tones as above.
+    const auto ts = weightedTones({
+        { 69, 1.0 },
+        { 72, 0.70 },
+        { 76, 0.70 },
+        { 79, 0.50 },
+        { 83, 0.15 },  // ninth — pcWeight 0.15 < standard threshold 0.20 → not detected
+    });
+
+    // Standard preset uses default extensionThreshold = 0.20.
+    ChordAnalyzerPreferences standardPrefs;  // extensionThreshold = 0.20 by default
+
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, standardPrefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 9);  // A
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    EXPECT_FALSE(hasExtension(results.front().identity.extensions, Extension::NaturalNinth))
+        << "Standard preset (extensionThreshold=0.20) should NOT detect lightly-voiced ninth";
+}
