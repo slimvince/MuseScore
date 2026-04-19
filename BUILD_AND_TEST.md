@@ -73,7 +73,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 364/364** passing.
+**Current baseline: 366/366** passing.
 
 ### Notation Tests
 
@@ -81,7 +81,11 @@ cd C:\s\MS\ninja_build_rel
 ./notation_tests.exe
 ```
 
-**Current baseline: 50/50** passing (all tests green as of session 19).
+**Current baseline: 50/50** passing on master HEAD `1ba5b1dd5d` (all tests green).
+**Note:** running notation_tests.exe while on `submission-phase1` will show 28/50 passing
+because the binary in `ninja_build_rel/` was compiled from master and uses
+`notationtuning_data/` (present on master) rather than `notationcomposing_data/`
+(present on submission-phase1). To verify the 50/50 baseline, switch to master and rebuild.
 
 ### Batch Analyze Regression Tests
 
@@ -142,7 +146,41 @@ Common scripts:
 
 ---
 
-## 7. Updating This Guide
+## 7. Score Locations
+
+### Corpus scores (validation)
+```
+tools/dcml/corelli/MS3/op01n08d.mscx
+tools/dcml/chopin_mazurkas/MS3/BI16-1.mscx
+tools/dcml/bach_chorales/...
+tools/dcml/beethoven/...
+```
+
+### Extra scores (QA and new corpus)
+```
+C:\s\MS\tools\extra scores\              — jazz root (47 scores)
+C:\s\MS\tools\extra scores\piazzolla\   — 6 Piazzolla scores
+C:\s\MS\tools\extra scores\steely dan\  — 11 Steely Dan scores
+```
+
+### Key individual scores frequently referenced
+```
+C:\s\MS\tools\extra scores\my-funny-valentine-bill-evans-transcription.mscz
+C:\s\MS\tools\extra scores\east-of-the-sun-west-of-the-moon.mscz
+C:\s\MS\tools\extra scores\the-eye-of-the-hurricane-herbie-hancock.mscz
+C:\s\MS\tools\extra scores\round-midnight-by-thelonius-monk.mscz
+C:\s\MS\tools\extra scores\like-someone-in-love-bill-evans.mscz
+```
+
+### Test data
+```
+src/composing/tests/data/chordanalyzer_catalog.musicxml
+src/composing/tests/data/chordanalyzer_context.musicxml
+```
+
+---
+
+## 8. Updating This Guide
 
 - Edit this file (`BUILD_AND_TEST.md` in the project root) to keep instructions current.
 - Update baseline test counts whenever the suite changes.
