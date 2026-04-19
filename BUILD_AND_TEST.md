@@ -73,7 +73,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 364/364** passing.
+**Current baseline: 366/366** passing.
 
 ### Notation Tests
 
@@ -81,7 +81,7 @@ cd C:\s\MS\ninja_build_rel
 ./notation_tests.exe
 ```
 
-**Current baseline: 50/50** passing (all tests green as of session 19).
+**Current baseline: 51/51** passing.
 
 ### Batch Analyze Regression Tests
 
@@ -142,7 +142,47 @@ Common scripts:
 
 ---
 
-## 7. Updating This Guide
+## 7. Score Locations
+
+### Corpus scores (validation)
+
+```
+tools/dcml/corelli/MS3/op01n08d.mscx
+tools/dcml/chopin_mazurkas/MS3/BI16-1.mscx
+tools/dcml/bach_chorales/...
+tools/dcml/beethoven/...
+tools/dcml/mozart_piano_sonatas/MS3/K279-1.mscx
+```
+
+### Extra scores (QA and new corpus)
+
+```
+C:\s\MS\tools\extra scores\              — jazz root (47 scores)
+C:\s\MS\tools\extra scores\piazzolla\   — 6 Piazzolla scores
+C:\s\MS\tools\extra scores\steely dan\  — 11 Steely Dan scores
+```
+
+### Key individual scores frequently referenced
+
+```
+C:\s\MS\tools\extra scores\the-eye-of-the-hurricane-herbie-hancock.mscz
+C:\s\MS\tools\extra scores\autumn-leaves-bill-evans.mscz
+C:\s\MS\tools\extra scores\all-the-things-you-are.mscz
+C:\s\MS\tools\extra scores\giant-steps-john-coltrane.mscz
+C:\s\MS\tools\extra scores\so-what-miles-davis.mscz
+```
+
+### Test data
+
+```
+src/composing/tests/data/chordanalyzer_catalog.musicxml
+src/composing/tests/data/chordanalyzer_context.musicxml
+src/notation/tests/notationtuning_data/   — MSCX fixtures for notation tests
+```
+
+---
+
+## 8. Updating This Guide
 
 - Edit this file (`BUILD_AND_TEST.md` in the project root) to keep instructions current.
 - Update baseline test counts whenever the suite changes.
