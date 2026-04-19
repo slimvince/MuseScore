@@ -189,14 +189,29 @@ void refineSparseChordQualityFromKeyContext(
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode);
 
+/// Force-assign the diatonic triad quality for a chord-track region that still has
+/// quality=Unknown after the standard refinement.  Unlike refineSparseChordQualityFromKeyContext,
+/// this does NOT apply the Aeolian lone-tonic/dominant exclusion — it is appropriate for
+/// chord-track annotation where annotating even sparse/monophonic regions is desirable.
+/// Does nothing when result.identity.quality is already non-Unknown, or when no diatonic
+/// triad shape can be determined for the degree.
+void forceChordTrackQualityFromKeyContext(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    mu::composing::analysis::KeySigMode keyMode);
+
 /// Build the same user-facing harmonic regions consumed by chord-track population.
 /// Uses smoothed region analysis, fills leading sparse gaps conservatively, and
 /// stabilizes key/mode so Roman numerals remain consistent across display paths.
+///
+/// Pass forceClassicalPath=true to skip the Jazz chord-symbol boundary gate even
+/// when the score contains STANDARD Harmony elements.  Used by the annotation
+/// write path to avoid order-of-annotation violations.
 std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves);
+                                 const std::set<size_t>& excludeStaves,
+                                 bool forceClassicalPath = false);
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 

@@ -227,7 +227,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     const std::set<size_t>& excludeStaves,
-    HarmonicRegionGranularity granularity)
+    HarmonicRegionGranularity granularity,
+    bool forceClassicalPath)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -269,7 +270,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     // When the score contains written chord symbols, the jazz path takes priority
     // for region boundaries only. Chord identity still comes from note-based
     // analysis within each chord-symbol-defined region.
-    if (scoreHasValidChordSymbols(score, startTick, endTick, excludeStaves)) {
+    //
+    // The gate is skipped when forceClassicalPath=true.  The annotation write
+    // path (addHarmonicAnnotationsToSelection) sets this to prevent chord symbols
+    // it previously wrote from influencing the Jazz-path boundary detection in
+    // a subsequent annotation call (order-of-annotation violation fix).
+    if (!forceClassicalPath
+            && scoreHasValidChordSymbols(score, startTick, endTick, excludeStaves)) {
         return analyzeHarmonicRhythmJazz(score, startTick, endTick,
                                          excludeStaves, refStaff,
                                          keyFifths, keyMode);

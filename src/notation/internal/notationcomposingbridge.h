@@ -86,12 +86,18 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
 /// Scan a time range across all eligible staves, detect harmonic boundaries,
 /// run chord analysis at each boundary, and collapse consecutive same-chord
 /// regions.  Returns the sequence of harmonic regions, or empty if no data.
+///
+/// When forceClassicalPath is true, the Jazz chord-symbol detection gate is
+/// skipped even if the score contains STANDARD Harmony elements.  This prevents
+/// the annotation write path from having its boundary detection influenced by
+/// previously-written chord symbol annotations (order-of-annotation violation).
 std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const mu::engraving::Score* score,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     const std::set<size_t>& excludeStaves = {},
-    HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed);
+    HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed,
+    bool forceClassicalPath = false);
 
 /// Analyse the current selection range, compute harmonic regions, and write
 /// Harmony elements (chord symbols / Roman numerals / Nashville numbers) as
