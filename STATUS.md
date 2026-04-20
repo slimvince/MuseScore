@@ -88,10 +88,20 @@ Fix:
   `BassMovementSubBoundaryFiresOnIdenticalPCSetsWithDifferentBass` in
   `notationimplode_tests.cpp`.
 
-**Verification:**
+**Verification (master):**
 - Eye of the Hurricane m.1 → 2 regions: `Fsus` (beat 1-2), `Bb69` (beat 3-4) ✓
+- 585 total regions (up from 578 pre-Pass-2b); 9 measures with beat-3 sub-boundaries ✓
 - 366/366 composing tests ✓
-- 51/51 notation tests (new test #51 passing) ✓
+- 51/51 notation tests (new test #51 `BassMovementSubBoundaryFiresOnIdenticalPCSetsWithDifferentBass` passing) ✓
+- Master commit: `9789ee1c3f`
+
+**submission-phase1 (cherry-pick + compilation fix):**
+- Compile fix: ported `naturalFifthPresent` (ChordIdentity), `nextRootPc` (ChordFunction),
+  `NoteSpelling` enum + `Options::spelling` (ChordSymbolFormatter), aug6/tonicization blocks
+  and helpers from master — all were missing from this branch
+- 308/308 composing tests ✓ (Pass 2b test #308 passing)
+- 16/16 notation tests ✓ (tuning tests not present on submission-phase1)
+- submission-phase1 HEAD: `64cd153868`
 
 **Corpus results post-Pass-2b:**
 | Corpus | Before | After | Delta |

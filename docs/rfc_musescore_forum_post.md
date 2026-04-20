@@ -49,6 +49,14 @@ Seven diatonic modes + seven melodic minor family + seven harmonic minor family.
 Independent mode prior parameters with five named presets (Standard, Jazz, Baroque,
 Modal, Contemporary). Adapts to repertoire style.
 
+Preset notes:
+- **Jazz preset:** uses a lower extension detection threshold (0.12 vs 0.20 for Standard
+  and Baroque), improving ninth detection on complete jazz voicings. Validated against
+  East of the Sun (Diana Krall) and Corelli corpus.
+- **Baroque preset:** mode priors tuned for modal/church modes. Corpus validation on
+  Corelli (149 movements) shows equivalent agreement to Standard preset (70.2%).
+  Available for use; no separate accuracy claim beyond Standard.
+
 **Intonation:**
 Per-note and region tuning via split-and-slur. Two modes: TonicAnchored (each chord
 root placed at its scale-degree position above the mode tonic in just intonation) and
@@ -81,7 +89,7 @@ src/composing/
 │   └── region/      HarmonicRegion, HarmonicRhythmBridge, Jaccard boundary detection
 ├── icomposinganalysisconfiguration.h   preference interface
 ├── composingconfiguration.{h,cpp}      concrete implementation
-└── tests/           GTest suite (335 unit tests)
+└── tests/           GTest suite (366 unit tests)
 ```
 
 Public surface is narrow: `IChordAnalyzer`, `IKeyModeAnalyzer`, and
@@ -156,9 +164,8 @@ chord identity across benchmark scores.
 
 ## Current status
 
-- **335/335** composing unit tests passing
-- **45/49** notation integration tests passing (4 known deferred — Corelli late-beat
-  sparse-texture cases that require pedal point detection, not yet implemented)
+- **366/366** composing unit tests passing
+- **50/50** notation integration tests passing
 - 0 abstract chord identity mismatches against the 376-entry chord catalog
 - Validated on Classical, Romantic, Baroque, and jazz repertoire
 
@@ -182,9 +189,15 @@ chord tones is limited by available note material.
 Melody notes in the same staff as chord voicings can affect chord root detection.
 Melody identification is a planned future capability.
 
+**Onset-age decay:**
+Note weighting uses duration and beat position only. No onset-age decay is applied —
+sustained notes from earlier beats carry full weight regardless of instrument type.
+Instrument-aware decay is planned for a future version.
+
 **Pedal point:**
 Structural pedal points (sustained bass note while harmony changes above) are not yet
-explicitly detected. This affects the 4 deferred notation tests.
+explicitly detected as a named construct, though region boundary detection handles
+many common cases.
 
 **Post-tonal language:**
 The current vertical tertian engine does not handle quartal, quintal, or polychordal
