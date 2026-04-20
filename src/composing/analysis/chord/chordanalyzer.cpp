@@ -63,7 +63,14 @@ const char* pitchClassName(int pc, int keySignatureFifths,
 }
 
 /// Name a pitch class using TPC spelling rather than key-signature convention.
-/// Covers cases like Eb (tpc=12), Bb (tpc=13), Ab (tpc=11) in C major.
+/// Covers cases like Eb (tpc=12), Bb (tpc=13), Ab (tpc=11) in C major (keyFifths=0).
+///
+/// TPC is consulted only when keySignatureFifths == 0 (C major / A minor), because
+/// that is the only context where the key signature does not disambiguate flat vs sharp
+/// spellings.  For any other key the key signature itself gives the correct spelling
+/// (flat keys → flat names, sharp keys → sharp names), and TPC is ignored — this
+/// avoids mislabelling enharmonic notes that are spelled "wrong" in the score data.
+///
 /// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356).
 const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
                                   ChordSymbolFormatter::NoteSpelling spelling = ChordSymbolFormatter::NoteSpelling::Standard)
@@ -82,8 +89,9 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
     };
     const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
                         || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
-    if (tpc >= 0) {
-        // TPC 7..13 covers Fb,Cb,Gb,Db,Ab,Eb,Bb — these spell with a flat
+    if (tpc >= 0 && keySignatureFifths == 0) {
+        // Key signature gives no flat/sharp preference (C major / A minor):
+        // use TPC to disambiguate.  TPC 7..13 = Fb..Bb → flat spelling.
         const bool preferFlat = (tpc >= 7 && tpc <= 13);
         const size_t idx = static_cast<size_t>(normalizePc(pc));
         if (preferFlat) {
@@ -1744,6 +1752,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         ChordAnalysisResult r;
         r.identity.score                = rc.score;
         r.identity.rootPc               = rootPc;
+        r.identity.rootTpc              = rootTpc;
         r.identity.bassPc               = bassPc;
         r.identity.bassTpc              = bassTpc;
         r.identity.naturalFifthPresent  = (quality != ChordQuality::Augmented)
@@ -2109,7 +2118,7 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
     // Render them as "Maj7sus"/"Maj9sus" — the notation used for this chord type in the catalog.
     if (hasExtension(result.identity.extensions, Extension::OmitsThird) && hasExtension(result.identity.extensions, Extension::MajorSeventh)
             && hasExtension(result.identity.extensions, Extension::NaturalEleventh) && !hasExtension(result.identity.extensions, Extension::SharpEleventh)) {
-        std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling));
+        std::string symbol = std::string(pitchClassNameFromTpc(result.identity.rootPc, result.identity.rootTpc, keySignatureFifths, opts.spelling));
         symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? "Maj9sus" : "Maj7sus";
         if (result.identity.bassPc != result.identity.rootPc
                 && result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
@@ -2119,7 +2128,7 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
         return symbol;
     }
 
-    std::string symbol = std::string(pitchClassName(result.identity.rootPc, keySignatureFifths, opts.spelling))
+    std::string symbol = std::string(pitchClassNameFromTpc(result.identity.rootPc, result.identity.rootTpc, keySignatureFifths, opts.spelling))
                         + qualitySuffix(result.identity.quality,
                                         hasExtension(result.identity.extensions, Extension::MinorSeventh),
                                         hasExtension(result.identity.extensions, Extension::MajorSeventh),
