@@ -31,6 +31,7 @@
 #include "notationanalysisinternal.h"
 #include "notationcomposingbridgehelpers.h"
 
+#include <algorithm>
 #include <array>
 #include <iterator>
 #include <optional>
@@ -45,6 +46,7 @@
 #include "engraving/dom/score.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
+#include "engraving/dom/stafftext.h"
 #include "engraving/types/constants.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -60,6 +62,9 @@ using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
+using mu::notation::internal::scoreNoteSpelling;
+using mu::notation::internal::detectCadences;
+using mu::notation::internal::detectPivotChords;
 
 namespace {
 
@@ -718,6 +723,20 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     const auto* prefs = config.get().get();
     const double minimumDisplayDurationBeats = prefs ? prefs->minimumDisplayDurationBeats() : 0.5;
 
+    // Run harmonic analysis over an extended tick range when Roman numerals
+    // are requested.  The lookahead regions are read-only: used for cadence
+    // and pivot detection but never annotated.
+    //
+    //   selectionEndTick: the first tick that is outside the user's selection.
+    //   lookaheadEndTick: extends the analysis to include up to
+    //       kMaxPivotLookaheadRegions extra regions for key confirmation.
+    const Fraction selectionEndTick = endTick;
+    const Fraction lookaheadEndTick = writeRomanNumerals
+        ? Fraction::fromTicks(endTick.ticks()
+            + mu::notation::internal::kMaxPivotLookaheadRegions
+              * 4 * Constants::DIVISION)  // ~8 measures of lookahead
+        : endTick;
+
     // forceClassicalPath=true: prevent chord symbols previously written by this
     // annotator from triggering the Jazz boundary-detection path in a subsequent
     // annotation call (order-of-annotation violation fix; see §analyzeHarmonicRhythm).
@@ -807,8 +826,9 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
             }
         }
 
+        const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(score) };
         const std::string symText = writeChordSymbols
-            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths)
+            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths, fmtOpts)
             : "";
         std::string romanText;
         if (writeRomanNumerals) {
@@ -885,6 +905,46 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                 pt->setPlainText(muse::String::fromStdString(pedalText));
                 score->undoAddElement(pt);
             }
+        }
+    }
+
+    // ── Cadence markers and pivot labels (Roman numeral mode only) ──────────
+    //
+    // Cadence markers ("PAC", "HC", etc.) and pivot labels ("vi → ii") are
+    // analytically meaningful annotations associated with the Roman numeral
+    // layer.  They are suppressed in chord-symbol-only and Nashville modes.
+    //
+    // Both use the full allRegions vector (selection + lookahead) for
+    // detection; writing is restricted to in-selection ticks only.
+    if (writeRomanNumerals && !writeStaves.empty()) {
+        const track_idx_t annotateTrack = writeStaves.front() * VOICES;
+
+        const auto cadences = detectCadences(allRegions, selectionCount);
+        for (const auto& marker : cadences) {
+            const Fraction mTick = Fraction::fromTicks(marker.tick);
+            Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
+            if (!mSeg) {
+                continue;
+            }
+            StaffText* st = Factory::createStaffText(mSeg);
+            st->setTrack(annotateTrack);
+            st->setParent(mSeg);
+            st->setPlainText(muse::String::fromStdString(marker.label));
+            score->undoAddElement(st);
+        }
+
+        const auto pivots = detectPivotChords(allRegions, selectionCount);
+        for (const auto& pv : pivots) {
+            const Fraction pTick = Fraction::fromTicks(pv.tick);
+            Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);
+            if (!pSeg) {
+                continue;
+            }
+            StaffText* pt = Factory::createStaffText(pSeg);
+            pt->setTrack(annotateTrack);
+            pt->setParent(pSeg);
+            pt->setPlainText(muse::String::fromStdString(pv.label));
+            score->undoAddElement(pt);
         }
     }
 
