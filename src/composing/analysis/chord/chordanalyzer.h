@@ -191,6 +191,7 @@ struct ChordIdentity {
     double score = 0.0;                ///< Template match score (higher = better); ranking only.
     double normalizedConfidence = 0.0; ///< Sigmoid-normalized score gap, 0.0–1.0; see §P8d.
     int rootPc = 0;           ///< Root pitch class (0–11)
+    int rootTpc = -1;         ///< Root TPC for enharmonic-correct naming; -1 = unknown
     int bassPc = 0;           ///< Bass pitch class (0–11)
     int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
     /// True if the perfect fifth above root is present in the input tones.

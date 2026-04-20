@@ -2398,3 +2398,140 @@ TEST(Composing_ExtensionThresholdTests, StandardPreset_LightlyVoicedNinth_NotDet
     EXPECT_FALSE(hasExtension(results.front().identity.extensions, Extension::NaturalNinth))
         << "Standard preset (extensionThreshold=0.20) should NOT detect lightly-voiced ninth";
 }
+
+// ── Enharmonic root spelling (TPC-driven) ─────────────────────────────────────
+//
+// Root spelling must use the note's TPC when available, not the key signature
+// alone.  This fixes spurious A#/D#/G# roots in flat-key or neutral-key contexts
+// where the underlying note is spelled Bb/Eb/Ab in the score.
+//
+// TPC reference (MuseScore circle-of-fifths encoding):
+//   TPC  9 = Gb,  10 = Db,  11 = Ab,  12 = Eb,  13 = Bb
+//   TPC 14 = F,   15 = C,   16 = G,   17 = D,   18 = A,   19 = E,   20 = B
+//   TPC 21 = F#,  22 = C#,  23 = G#,  24 = D#,  25 = A#
+//
+// Session 23 identified 18 wrong A# roots in sun-bear-osaka (C-major context),
+// 6 wrong D# bass notes in take-five (Eb-major context), and similar clusters.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Bb triad in C major — TPC=13 (Bb) on root note → should format as "Bb", not "A#"
+TEST(Composing_EnharmonicSpellingTests, BbRootInCMajorSpellsAsBb)
+{
+    // Bb2(TPC=13) D3(TPC=17) F3(TPC=14) — Bb major triad, bass = Bb2
+    const auto ts = tonesWithTpc({
+        { 46, 13 },  // Bb2 — bass, root
+        { 50, 17 },  // D3
+        { 53, 14 },  // F3
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Bb")
+        << "Bb root (TPC=13) in C major must format as Bb, not A#";
+}
+
+// Eb triad in C major — TPC=12 (Eb) on root note → should format as "Eb", not "D#"
+TEST(Composing_EnharmonicSpellingTests, EbRootInCMajorSpellsAsEb)
+{
+    // Eb2(TPC=12) G2(TPC=16) Bb2(TPC=13) — Eb major triad, bass = Eb2
+    const auto ts = tonesWithTpc({
+        { 39, 12 },  // Eb2 — bass, root
+        { 43, 16 },  // G2
+        { 46, 13 },  // Bb2
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 3);
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Eb")
+        << "Eb root (TPC=12) in C major must format as Eb, not D#";
+}
+
+// Ab triad in C major — TPC=11 (Ab) on root note → should format as "Ab", not "G#"
+TEST(Composing_EnharmonicSpellingTests, AbRootInCMajorSpellsAsAb)
+{
+    // Ab1(TPC=11) C2(TPC=15) Eb2(TPC=12) — Ab major triad, bass = Ab1
+    const auto ts = tonesWithTpc({
+        { 32, 11 },  // Ab1 — bass, root
+        { 36, 15 },  // C2
+        { 39, 12 },  // Eb2
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8);
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Ab")
+        << "Ab root (TPC=11) in C major must format as Ab, not G#";
+}
+
+// Bbsus4 in C major — the sun-bear-osaka pattern (A#sus → Bbsus)
+TEST(Composing_EnharmonicSpellingTests, BbSus4InCMajorSpellsAsBbsus)
+{
+    // Bbsus4 = {Bb, Eb, F} — intervals {0, 5, 7} from root Bb.
+    // Bb2(TPC=13) Eb3(TPC=12) F3(TPC=14)
+    const auto ts = tonesWithTpc({
+        { 46, 13 },  // Bb2 — bass, root
+        { 51, 12 },  // Eb3 (sus4)
+        { 53, 14 },  // F3 (fifth)
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);  // Bb
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
+    EXPECT_NE(sym.substr(0, 2), "A#")
+        << "Root Bb (TPC=13) in C major must not format as A#; got: " << sym;
+    EXPECT_EQ(sym.substr(0, 2), "Bb")
+        << "Root Bb (TPC=13) in C major must format starting with Bb; got: " << sym;
+}
+
+// Sharp root preserved in sharp-key context — G# in E major stays G#
+TEST(Composing_EnharmonicSpellingTests, GsharpRootInSharpKeyStaysGsharp)
+{
+    // G#2(TPC=23) B2(TPC=20) D#3(TPC=24) — G# minor triad in E major (keyFifths=4)
+    const auto ts = tonesWithTpc({
+        { 44, 23 },  // G#2 — bass, root
+        { 47, 20 },  // B2
+        { 51, 24 },  // D#3
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 8);   // G#
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 4), "G#m")
+        << "G# root (TPC=23) in E major (keyFifths=4) must remain G#m, not Abm";
+}
+
+// Fallback: when TPC is unknown (tpc=-1), key signature governs flat/sharp choice.
+// Flat key (keyFifths=-3) → flat spelling, even with no TPC data.
+TEST(Composing_EnharmonicSpellingTests, NoTpcFallsBackToKeySignatureFlat)
+{
+    // Same as KeepsFlatBassSpellingInFlatKey but now testing the root path:
+    // Bb(pc=10) as root in Bb minor (keyFifths=-5), no TPC supplied.
+    // pitchClassNameFromTpc(10, -1, -5) → falls back to pitchClassName(10, -5) → FLAT_NAMES[10] = "Bb"
+    const auto ts = tonesWithTpc({
+        { 46, -1 },  // Bb2 — no TPC supplied → tpc=-1
+        { 50, -1 },  // D3
+        { 53, -1 },  // F3
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, -5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -5), "Bb")
+        << "With no TPC, flat key (keyFifths=-5) must spell pc=10 as Bb";
+}
+
+// Key-signature override: sharp TPC in a flat-key context must still spell flat.
+// Covers score-data misspellings (e.g. D# where Eb is intended in C Dorian).
+TEST(Composing_EnharmonicSpellingTests, SharpTpcInFlatKeyUsesKeySignature)
+{
+    // D#2(TPC=24) in C Dorian (keyFifths=-2) — score mistakenly uses sharp TPC=24
+    // instead of flat TPC=12 (Eb).  Key signature must win: root should be "Eb" not "D#".
+    // Chord: D#/Eb (pc=3) + G (pc=7, major 3rd) + Bb (pc=10, perfect 5th) = major triad.
+    const auto ts = tonesWithTpc({
+        { 39, 24 },  // D#2 — bass, root; TPC=24 (D#, sharp range — misspelled Eb)
+        { 43, 16 },  // G2  (TPC=16, major 3rd from Eb)
+        { 46, 13 },  // Bb2 (TPC=13, perfect 5th from Eb)
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, -2, KeySigMode::Dorian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 3);   // pc=3 = D#/Eb
+    EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2), "Eb")
+        << "Sharp TPC (24=D#) in flat key (keyFifths=-2) must yield Eb, not D#";
+}
