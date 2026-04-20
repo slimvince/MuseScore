@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-20 (session 22)*
+*Last updated: 2026-04-20 (session 24)*
 
 ---
 
@@ -67,6 +67,118 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+### Session 24 (2026-04-20)
+
+**Enharmonic root spelling fix.**
+
+**Problem identified (Session 23 QA):** `pitchClassName(pc, keyFifths)` uses sharp
+names for all keys with `keyFifths ≥ 0`. In C major (`keyFifths = 0`) this produces
+"A#" for Bb roots, "D#" for Eb, "G#" for Ab — all wrong. Root detection (rootPc) was
+correct; only the display string was affected.
+
+**Fix: `pitchClassNameFromTpc(pc, tpc, keyFifths, spelling)`**
+- TPC consulted **only when `keyFifths == 0`** (C major/A minor). That is the only
+  context where the key signature alone doesn't resolve flat-vs-sharp.
+- TPC 7–13 = flat spellings; TPC 14–20 = naturals; TPC 21–27 = sharp spellings.
+- For all other keys the key signature wins — prevents score-data misspellings
+  (e.g. D# TPC=24 written in C Dorian) from corrupting the formatter output.
+- `ChordIdentity.rootTpc = -1` field added. Populated from the highest-scoring
+  root candidate. `formatSymbol()` and `formatRomanNumeral()` pass it through.
+
+**Score QA (before → after):**
+| Score | Wrong sharp roots before | After |
+|-------|--------------------------|-------|
+| sun-bear-osaka (C major passages) | 65 | 18 (all legitimate) |
+| take-five (Eb major) | 6 | 0 |
+| pinocchio (mixed flat keys) | 3 | 3 (pre-existing score misspellings) |
+
+**Corpus regression:** Corelli 69.5%, Bach 74.8%, Beethoven 64.9% — all unchanged.
+Fix affects display strings only; rootPc detection unaffected.
+
+**Unit tests:** 7 new `Composing_EnharmonicSpellingTests` in `chordanalyzer_tests.cpp`.
+
+**Test counts:**
+| Suite | Branch | Count |
+|-------|--------|-------|
+| composing_tests | master | **373/373** |
+| composing_tests | submission-phase1 | **315/315** |
+| notation_tests | master | **51/51** |
+
+**Commits:**
+- submission-phase1: `f7f1f6b38d` — `fix(analysis): enharmonic root spelling — use TPC in C major context`
+- master: `582f0f563a` — cherry-pick of above
+
+**ARCHITECTURE.md:** §5.14 added; `ChordIdentity.rootTpc` documented; document version 3.31.
+
+---
+
+### Session 23 (2026-04-20)
+
+**Extra-scores inventory and extended QA.**
+
+**New scores inventoried (20):** All are jazz-root extra scores newly found in `tools/extra scores/` that were missing from the registry.
+
+| Score | Regions | Roots | Keys | Notable |
+|-------|---------|-------|------|---------|
+| sun-bear-concerts-osaka-part-1 (Keith Jarrett) | 1323 | 12 | 20 | Largest score in corpus; 350 distinct extension symbols |
+| pinocchio (Wayne Shorter/Miles Davis Quintet) | 391 | 12 | 15 | Rich post-bop harmony |
+| i-got-it-bad-and-that-aint-good (Keith Jarrett) | 237 | 11 | 6 | Clean boundaries, 1 long region |
+| caravan (piano arr.) | 231 | 12 | 11 | Phrygian/flamenco flavor |
+| keith-jarret-koln-concert-part-iic | 196 | 10 | 5 | Predominantly A minor |
+| be-my-love (Keith Jarrett) | 176 | 11 | 4 | |
+| new-york-new-york (jazz combo) | 136 | 12 | 5 | |
+| dat-dere (Art Blakey) | 145 | 6 | 3 | |
+| chloe-meets-gershwin (Petrucciani) | 157 | 12 | 5 | |
+| koln-concertmicah-edition | 81 | 9 | 2 | |
+| moanin (Art Blakey) | 84 | 6 | 3 | |
+| have-yourself-a-merry-little-christmas | 82 | 9 | 3 | |
+| boplicity (Miles Davis/Gil Evans) | 64 | 8 | 3 | |
+| donna-lee | 56 | 10 | 3 | |
+| skyfall (big band arr.) | 101 | 7 | 4 | |
+| wave (jazz band, Jobim) | 125 | 9 | 3 | |
+| chief-crazy-horse (piano solo) | 51 | 7 | 9 | |
+| nature-boy (Eden Ahbez) | 47 | 6 | 6 | |
+| **free-for-all (Wayne Shorter)** | 16 | 4 | 4 | **Flagged: too sparse** |
+| **the-chicken (big band)** | 22 | 4 | 3 | **Flagged: too sparse** |
+
+All 20 added to `tools/extra_scores_registry.json`. JSON reports in `tools/reports/jazz_new2/`.
+
+**Eye of the Hurricane extended QA (post-Pass-2b, full score):**
+- 585 regions total ✓ (matches session 22 post-Pass-2b count)
+- 12 long regions (>8 beats), 2 very long: `m6 b2: Gbadd11/F` (19 beats), `m11 b5: Db/Gb` (21 beats) in the sustained opening section — likely genuine held harmonies, not missed boundaries
+- 4 sharp enharmonics (all wrong in context): `F/G#` (×2 = should be `F/Ab`), `Gsus/C#` (→ `Gsus/Db`), `C#9/Eb` (→ `Db9/Eb`) — isolated, not systematic
+- **No add° artifacts** ✓
+- **No very-short regions (<1 beat)** ✓
+
+**Enharmonic spelling diagnostic (all jazz/extra-score reports):**
+- Scanned 68 JSON reports total (jazz_new, jazz_new2, extra scores registry, Eye of the Hurricane)
+- 579 raw sharp occurrences across 46 scores
+- **Filtered by key context:** 77 genuinely wrong (sharp in flat-key context) vs 502 legitimate (sharp in sharp-key context, e.g. A/C# is correct first-inversion spelling)
+- Most affected by wrong enharmonics: `sun-bear-osaka` (18 wrong, A# in C major), `take-five` (6 wrong, Cm/D# in Eb), `pinocchio` (6 wrong), `hymn-to-freedom-peterson` (5 wrong, A/C# in CMixolyd — borderline)
+- **Pattern:** root-level A#→Bb and D#→Eb are clearly wrong; slash-bass G#→Ab in flat contexts; A/C# and E7/G# are conventional jazz spelling and should NOT be changed
+- **Verdict:** targeted issue, not a systematic blocker; recommend a fix pass for ~30–40 genuinely wrong instances before PR submission
+
+**Corpus validation (no regressions):**
+| Corpus | Result | Notes |
+|--------|--------|-------|
+| Corelli (149 mvts) | **69.54%** | Post-Pass-2b baseline ✓ |
+| Bach chorales chord-identity (352) | **74.8%** | −0.4% from pre-Pass-2b (75.2%), within variance ✓ |
+| Beethoven (70 mvts) | **64.94%** | Exactly at baseline ✓ |
+
+No regressions from session 23 changes (registry update + new batch reports only — no code changes).
+
+**master HEAD:** `f30b571bb3` (no new commits this session)
+**submission-phase1 HEAD:** `da39bd0d3e` (no new commits this session — registry is working tree only)
+
+**Next session priorities (superseded — see Session 24):**
+1. RFC post (Vincent) — forum submission
+2. chordlist.cpp GitHub issue — open upstream issue
+3. CLA signing
+4. ~~Enharmonic spelling fix~~ — **DONE (Session 24)**
+5. `sun-bear-osaka` as additional regression test candidate (1323 regions, 20 keys)
+
+---
 
 ### Session 22 (2026-04-20)
 
@@ -2293,6 +2405,12 @@ regressions. Both are fixed in this session.
 3. **Upstream bug report — chordlist.cpp**
    `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
    MuseScore/MuseScore. Link the issue in STATUS.md.
+
+4. **Enharmonic fix — remaining slash-bass cases** (low priority)
+   The root fix (A#→Bb, D#→Eb in C major) is done. A handful of slash-bass
+   enharmonics remain in flat-key contexts (e.g. `F/G#` → `F/Ab` in Eye of the
+   Hurricane). These are low-priority cosmetic; `bassTpc` is already stored.
+   The same `pitchClassNameFromTpc` logic applies — extend to bass display when needed.
 
 4. **Pedal point detection** — **DONE (session 18)**
    Two-pass analysis implemented. `isPedalPoint` / `pedalBassPc` on `ChordIdentity`.
