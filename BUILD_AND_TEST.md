@@ -73,7 +73,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 366/366** passing.
+**Current baseline: 373/373** passing.
 
 ### Notation Tests
 
