@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-21 (session 26)*
+*Last updated: 2026-04-21 (session 27)*
 
 ---
 
@@ -25,9 +25,9 @@ regional `bassIsStepwiseToNext` and the simplified no-third inversion gating red
 real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
 
 **Current working-tree note (updated 2026-04-21):** all 51/51 notation tests and 381/381
-composing tests pass on master. Session 26 adds declared-mode override, Pass2b iterative,
-D#→Eb enharmonic normalization, REST context-menu inference, status-bar sort, and
-track-specific annotation removal.
+composing tests pass on master (HEAD `3f186d38ea`). Session 27 adds look-ahead note
+exclusion fix (A13/F# → GMaj7 at Oak and the Lark m.10). submission-phase1 HEAD:
+`e40e9bb3f0` (sessions 15–27 cherry-picked, 16/16 notation tests passing).
 
 **Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
 DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
@@ -2496,42 +2496,33 @@ regressions. Both are fixed in this session.
 
 ## Next session priorities
 
-1. **RFC review by Vincent and post to MuseScore developer forum**
-   `docs/rfc_musescore_forum_post.md` is ready for review. Vincent posts manually.
-   After posting, record the forum thread URL in STATUS.md.
+### Blocking / needs fix
+1. Chord symbols still read as input in context menu path — `forceClassicalPath`
+   fix was reverted (broke 3 notation tests). Different approach needed.
+2. Key inference soft boost — `declaredMode` hard override (Session 26) should
+   be replaced with probabilistic boost. Fix attempted but abandoned due to
+   test complexity. Needs simpler approach.
+3. Implode chord track gaps — Oak and the Lark m.9-12: first bar missing chord,
+   repeated chord suppression too aggressive, beat missing.
 
-2. **CLA signing**
-   Sign the MuseScore CLA before any PR submission. Required before any PR is
-   opened against MuseScore/MuseScore.
+### Fixed this session (Session 27)
+4. Look-ahead note exclusion — FIXED commit 3f186d38ea. Notes not yet sounding
+   at region start tick excluded from chord inference when 3+ pitch classes
+   already sounding. Resolves A13/F# → GMaj7 at Oak and the Lark m.10 beat 1.
+5. All Session 26 fixes cherry-picked to submission-phase1 (HEAD e40e9bb3f0,
+   16/16 notation tests passing).
 
-3. **Upstream bug report — chordlist.cpp**
-   `docs/chordlist_bug_report.md` is a draft. Open as a GitHub issue against
-   MuseScore/MuseScore. Link the issue in STATUS.md.
+### Submission remaining
+6. RFC post — Vincent
+7. chordlist.cpp GitHub issue — draft at docs/chordlist_bug_report.md
+8. CLA signing
 
-4. **Enharmonic fix — remaining slash-bass cases** (low priority)
-   The root fix (A#→Bb, D#→Eb in C major) is done. A handful of slash-bass
-   enharmonics remain in flat-key contexts (e.g. `F/G#` → `F/Ab` in Eye of the
-   Hurricane). These are low-priority cosmetic; `bassTpc` is already stored.
-   The same `pitchClassNameFromTpc` logic applies — extend to bass display when needed.
-
-4. **Pedal point detection** — **DONE (session 18)**
-   Two-pass analysis implemented. `isPedalPoint` / `pedalBassPc` on `ChordIdentity`.
-   Bridge annotation "X ped." in Roman numeral mode. 8 unit tests. 364/364 composing,
-   50/50 notation (all passing; Corelli late-beat and Aeolian Unknown-quality cases
-   resolved in session 19; order-of-annotation fix + 1 new test in session 19 final).
-
-5. **Augmented sixth preset gating** — deferred from session 17
-   `formatRomanNumeral()` has no preset context; aug6 labels currently fire for all
-   presets. Gate to Standard/Baroque only when preset is threaded through the formatter.
-
-6. **Cherry-pick sessions 16–20 to submission-phase1** — **DONE (session 20)**.
-   submission-phase1 HEAD: `9d5c9d2c4a` (all sessions 16–20 cherry-picked).
-   Composing tests: 366/366 PASSED. Notation tests: 22 pre-existing failures confirmed
-   pre-existing at `4eb5bba6d4` (before cherry-picks); no regressions introduced.
-
-7. **Automated annotation review tool (post-RFC)**
-   `tools/auto_review.py` — design documented, implementation deferred until
-   after RFC posting and initial developer response.
+### Post-submission priorities
+9. Tonicization classifier (V/V, V/ii) — wired, no classifier implemented
+10. Pedal point calibration — needs more corpus evidence
+11. Ninth detection gap — fundamental limitation, melody/harmony conflation
+12. auto_review.py — designed, not implemented
+13. Corpus QA — 84 scores in registry, systematic QA pass needed
 
 ---
 
