@@ -994,6 +994,45 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
         return {};
     }
 
+    // Count distinct pitch classes already sounding at region start.
+    // These come from the backward pass (sustained notes) collected above.
+    // We also need to count notes attacking exactly at startTickInt.
+    // Rule: if 3 or more distinct pitch classes are sounding at the region
+    // start tick, exclude look-ahead notes (onset > startTickInt) from chord
+    // inference. If fewer than 3 are sounding, include all notes in the region
+    // (sparse texture — look-ahead needed to identify chord at all).
+    int pcsSoundingAtStart = 0;
+    for (int pc = 0; pc < 12; ++pc) {
+        if (accum[pc].totalWeight > 0.0) {
+            ++pcsSoundingAtStart;
+        }
+    }
+    // Count notes attacking exactly at startTickInt (not yet in accum).
+    if (firstForward && firstForward->tick().ticks() == startTickInt) {
+        for (size_t si = 0; si < score->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr = firstForward->cr(
+                    static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    const int pc = n->ppitch() % 12;
+                    if (accum[pc].totalWeight == 0.0) {
+                        ++pcsSoundingAtStart;
+                    }
+                }
+            }
+        }
+    }
+    const bool excludeLookAhead = (pcsSoundingAtStart >= 3);
+
     for (const Segment* s = firstForward;
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
@@ -1019,6 +1058,10 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
                 const int clippedEnd = std::min(noteEnd, endTickInt);
                 const int durInRegion = clippedEnd - segTickInt;
                 if (durInRegion <= 0) {
+                    continue;
+                }
+                // Exclude look-ahead notes when 3+ pitch classes sound at start.
+                if (excludeLookAhead && segTickInt > startTickInt) {
                     continue;
                 }
 
