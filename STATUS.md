@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-21 (session 25)*
+*Last updated: 2026-04-21 (session 26)*
 
 ---
 
@@ -24,9 +24,10 @@ should be treated as stale. On Corelli `op01n08d`, the corrected comparator plus
 regional `bassIsStepwiseToNext` and the simplified no-third inversion gating reduce the
 real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
 
-**Current working-tree note (updated 2026-04-21):** all 51/51 notation tests pass on
-master, including `CorelliOp01n08dUserReportedChordTrackAudit` (fixed in session 25
-via the Sus4 P4 penalty + root-only gap carry fix).
+**Current working-tree note (updated 2026-04-21):** all 51/51 notation tests and 381/381
+composing tests pass on master. Session 26 adds declared-mode override, Pass2b iterative,
+D#→Eb enharmonic normalization, REST context-menu inference, status-bar sort, and
+track-specific annotation removal.
 
 **Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
 DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
@@ -60,6 +61,79 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+### Session 26 (2026-04-21)
+
+**Declared-mode override, Pass2b iterative, D#→Eb enharmonic normalization, REST context-menu inference, status-bar sort, track-specific annotation removal.**
+
+**Fix 1 — Declared key-signature mode override (`notationcomposingbridgehelpers.cpp`)**
+- `resolveKeyAndMode` strong prior: when the key signature has an explicit Mode property
+  (Ionian=Major, Aeolian=Minor), override the top-voted mode if it is incompatible. Picks
+  the first compatible mode from the ranked list.
+- Root cause: Oak and the Lark m.14 key sig has Mode=Major; analyzer voted G# Dorian (1
+  sharp, close in score), overriding F# Ionian.
+
+**Fix 2 — Pass2b iterative bass-movement detection (`notationharmonicrhythmbridge.cpp`)**
+- Pass2b (bass-movement sub-boundary detection) is now iterative: up to
+  `kMaxBassMovementPasses=8` passes run until no new splits are found.
+- Validated: Eye of Hurricane m.14 and m.15 now each produce 2 regions (beat 1 and beat 3)
+  instead of one wide region spanning both.
+
+**Fix 3 — D#/G#/A# → Eb/Ab/Bb normalization in neutral/mild-sharp keys (`chordanalyzer.cpp`)**
+- `pitchClassNameFromTpc`: when the score writes a chromatic note with a sharp TPC (≥20)
+  in a key where the sharp spelling is not yet diatonic, normalize to conventional flat
+  chord-symbol name (Eb/Ab/Bb).
+- Thresholds: Eb (pc=3) diatonic at E major (keyFifths≥4); Ab (pc=8) at A major (keyFifths≥3);
+  Bb (pc=10) at B major (keyFifths≥5).
+- Root cause: Billy Boy Red Garland `Em7add11/D#` → now `Em7add11/Eb`; `D#Maj7` → `EbMaj7`.
+- Regression guard: D# stays D# in E major and sharper keys.
+
+**Fix 4 — Track-specific annotation removal (`notationinteraction.cpp`)**
+- `addAnalyzedHarmony` removal loop now checks `ann->track() == cr->track()` before
+  deleting existing harmony elements. Prevents removing chord symbols from wrong staves
+  when multiple staves are selected.
+
+**Fix 5 — REST context-menu harmonic inference (`notationcontextmenumodel.cpp`, bridge)**
+- Context menu now shows chord analysis when right-clicking a rest.
+- Added `analyzeRestHarmonicContextDetails(const Rest*)` bridge function.
+- Refactored `appendNoteAnalysisItems` → `appendAnalysisItemsForContext(items, context)`
+  taking `NoteHarmonicContext` directly, shared by note and rest paths.
+
+**Fix 6 — Status-bar alternatives sorted by confidence (`notationcomposingbridge.cpp`)**
+- `harmonicAnnotation` sorts alternative candidates (positions 1+) by descending
+  `normalizedConfidence`. Position 0 (region winner) is preserved at the top so the
+  harmonic-annotation text reflects the regional harmonic rhythm result.
+
+**Diagnostics (no code change):**
+- Step 6 (Em7/G vs GMaj7 at m.8): batch_analyze shows G Maj7 winning at beat 1; issue
+  appears resolved or occurs at a beat not sampled.
+- Step 7 (A13/F# at m.10): F# is the true bass; A13 comes from the wider regional window.
+  Fix deferred — regional analysis issue.
+- Step 8 (implode gaps): kSameChordReannotationGap=2 beats logic reviewed; no change this
+  session.
+- Step 11 (Round Midnight °7(11) and -11 density): 11th note weights measured for m17,
+  m30-33; m30 b2=23.6%, m30 b3=16.7%, m31 b1=12.5%. The °7(11) and -11 written symbols
+  are in XML measures 42-75 (outside the 41-measure playback window).
+
+**Unit tests added:**
+- `Composing_EnharmonicSpellingTests.DSharpBassInNeutralKeyBecomesEb` — Bb/D#2 bass → Eb
+- `Composing_EnharmonicSpellingTests.DSharpRootInNeutralKeyBecomesEb` — D# root → Eb in A minor
+- `Composing_EnharmonicSpellingTests.DSharpSurvivesInEMajorKey` — D# stays D# at keyFifths=4
+
+**Corpus results (session 26):**
+| Corpus | Session 25 baseline | Session 26 | Change |
+|--------|---------------------|------------|--------|
+| Corelli (149 mvts) | 70.9% | **70.9%** | 0.0% |
+| Bach chorales chord-identity (352) | 75.2% | **75.2%** | 0.0% (display-only changes) |
+| Beethoven (70 mvts) | 65.18% | **65.2%** | +0.02% ✓ |
+
+**Test counts:**
+| Suite | Branch | Count |
+|-------|--------|-------|
+| composing_tests | master | **381/381** (+3 from session 26) |
+| notation_tests | master | **51/51** |
+
+---
 
 ### Session 25 (2026-04-21)
 
