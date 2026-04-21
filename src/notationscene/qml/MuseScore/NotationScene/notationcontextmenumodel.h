@@ -28,6 +28,7 @@
 
 #include "uicomponents/qml/Muse/UiComponents/abstractmenumodel.h"
 #include "notation/notationtypes.h"
+#include "notation/internal/notationcomposingbridge.h"  // NoteHarmonicContext
 
 namespace mu::notation {
 class NotationContextMenuModel : public muse::uicomponents::AbstractMenuModel
@@ -66,6 +67,8 @@ private:
     muse::uicomponents::MenuItemList makeTextItems();
     muse::uicomponents::MenuItemList makeNoteItems();
     void appendNoteAnalysisItems(muse::uicomponents::MenuItemList& items, const mu::engraving::Note* note);
+    void appendAnalysisItemsForContext(muse::uicomponents::MenuItemList& items,
+                                       const mu::notation::NoteHarmonicContext& context);
 
     muse::uicomponents::MenuItem* makeEditStyle(const mu::engraving::EngravingItem* element);
 

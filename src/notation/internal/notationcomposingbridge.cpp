@@ -43,6 +43,7 @@
 #include "engraving/dom/harmony.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/note.h"
+#include "engraving/dom/rest.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
@@ -550,6 +551,17 @@ std::string harmonicAnnotation(const Note* note)
         return keyStr.empty() ? "" : "key: " + keyStr;
     }
 
+    // Sort alternatives by descending normalizedConfidence, keeping position 0 (region winner)
+    // fixed so the top-level annotation is always the region-level result.
+    auto sortedResults = chordResults;
+    if (sortedResults.size() > 1) {
+        std::sort(sortedResults.begin() + 1, sortedResults.end(),
+                  [](const mu::composing::analysis::ChordAnalysisResult& a,
+                     const mu::composing::analysis::ChordAnalysisResult& b) {
+                      return a.identity.normalizedConfidence > b.identity.normalizedConfidence;
+                  });
+    }
+
     // Determine which display formats are active
     const bool wantSym = prefs->analyzeForChordSymbols() && prefs->showChordSymbolsInStatusBar();
     // Keep function labels paired with the shown chord analysis even when the key guess is tentative.
@@ -562,7 +574,7 @@ std::string harmonicAnnotation(const Note* note)
     std::string candidates;
     std::set<std::string> seenKeys;
 
-    for (const auto& result : chordResults) {
+    for (const auto& result : sortedResults) {
         if (shown >= maxShown) {
             break;
         }
@@ -648,6 +660,27 @@ NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note*
     }
 
     return analyzeHarmonicContextAtTick(sc, tick, static_cast<size_t>(note->staffIdx()), excludeStaves);
+}
+
+NoteHarmonicContext analyzeRestHarmonicContextDetails(const mu::engraving::Rest* rest)
+{
+    if (!rest) {
+        return {};
+    }
+
+    const Score* sc = rest->score();
+    if (!sc) {
+        return {};
+    }
+
+    std::set<size_t> excludeStaves;
+    for (size_t si = 0; si < sc->nstaves(); ++si) {
+        if (isChordTrackStaff(sc, si)) {
+            excludeStaves.insert(si);
+        }
+    }
+
+    return analyzeHarmonicContextAtTick(sc, rest->tick(), static_cast<size_t>(rest->staffIdx()), excludeStaves);
 }
 
 std::vector<mu::composing::analysis::ChordAnalysisResult>

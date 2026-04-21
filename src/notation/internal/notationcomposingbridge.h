@@ -40,6 +40,7 @@
 
 namespace mu::engraving {
 class Note;
+class Rest;
 class Score;
 class Fraction;
 }
@@ -66,6 +67,10 @@ std::string harmonicAnnotation(const mu::engraving::Note* note);
 /// Extract pitch context from a note and run harmonic analysis, preferring the
 /// same regional accumulation path used by chord-track population when enabled.
 NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note* note);
+
+/// Same as analyzeNoteHarmonicContextDetails but takes a Rest — infers the
+/// prevailing harmony at the rest's tick position from surrounding note content.
+NoteHarmonicContext analyzeRestHarmonicContextDetails(const mu::engraving::Rest* rest);
 
 /// Run the same user-facing harmonic inference used by note context at an
 /// arbitrary score tick. The implementation expands a bounded local window only
