@@ -1893,11 +1893,30 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         }
 
         if (uniqueGapPitchClasses < 3) {
-            if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {
+            // When the gap has only one pitch class, a single note that coincides
+            // with the ROOT of an adjacent chord carries no quality information —
+            // the diatonic shape from the key context is more reliable.  But if
+            // the lone gap note is a non-root chord tone of the adjacent region
+            // (e.g. the third or fifth), the carry is appropriate because that
+            // interval relationship identifies the chord quality.
+            auto supportsCarry = [&](const HarmonicRegion& region) -> bool {
+                if (!regionSupportsGapTones(gapTones, region)) {
+                    return false;
+                }
+                if (uniqueGapPitchClasses == 1) {
+                    const int gapPc = gapTones.front().pitch % 12;
+                    if (gapPc == region.chordResult.identity.rootPc) {
+                        return false;  // root alone → key context is more reliable
+                    }
+                }
+                return true;
+            };
+
+            if (nextRegion && supportsCarry(*nextRegion)) {
                 return carryGapRegion(*nextRegion);
             }
 
-            if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {
+            if (previousRegion && supportsCarry(*previousRegion)) {
                 return carryGapRegion(*previousRegion);
             }
         }
