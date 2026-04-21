@@ -163,6 +163,14 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
     appendAnalysisItemsForContext(items, mu::notation::analyzeNoteHarmonicContextDetails(note));
 }
 
+void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, const mu::engraving::Note* note)
+{
+    if (!note) {
+        return;
+    }
+    appendAnalysisItemsForContext(items, mu::notation::analyzeNoteHarmonicContextDetails(note));
+}
+
 MenuItemList NotationContextMenuModel::makeNoteItems()
 {
     MenuItemList items = makeElementItems();
