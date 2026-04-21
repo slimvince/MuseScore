@@ -65,11 +65,18 @@ const char* pitchClassName(int pc, int keySignatureFifths,
 /// Name a pitch class using TPC spelling rather than key-signature convention.
 /// Covers cases like Eb (tpc=12), Bb (tpc=13), Ab (tpc=11) in C major (keyFifths=0).
 ///
-/// TPC is consulted only when keySignatureFifths == 0 (C major / A minor), because
-/// that is the only context where the key signature does not disambiguate flat vs sharp
-/// spellings.  For any other key the key signature itself gives the correct spelling
-/// (flat keys → flat names, sharp keys → sharp names), and TPC is ignored — this
-/// avoids mislabelling enharmonic notes that are spelled "wrong" in the score data.
+/// TPC encoding note: two TPC encodings coexist in this codebase.
+///   • MuseScore internal (from n->tpc()): F=13, C=14, G=15…, B=19, Bb=12, Cb=7, Fb=6.
+///   • Test-file encoding (+1 offset):       F=14, C=15, G=16…, B=20, Bb=13, Cb=8, Fb=7.
+/// Absolute-value checks below handle both by pairing TPC range with pitch class (pc).
+///
+/// TPC is consulted in four scenarios:
+///   1. Explicit Cb/Fb spelling (pc 11/4 with TPC in the double-flat range): always use
+///      the flat name regardless of key, since the standard name tables return B/E.
+///   2. keySignatureFifths == 0 (C major / A minor): key signature gives no preference;
+///      TPC in the flat range 7..13 (or 8..14 for the +1 encoding) → flat spelling.
+///   3. Very flat key contexts (keyFifths ≤ −5): B natural (pc 11, high-TPC) → Cb.
+///   4. Very flat key contexts (keyFifths ≤ −6): E natural (pc 4,  high-TPC) → Fb.
 ///
 /// German mapping mirrors tpc2name() GERMAN case (pitchspelling.cpp:343-356).
 const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
@@ -89,15 +96,36 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
     };
     const bool isGerman = (spelling == ChordSymbolFormatter::NoteSpelling::German
                         || spelling == ChordSymbolFormatter::NoteSpelling::GermanPure);
-    if (tpc >= 0 && keySignatureFifths == 0) {
-        // Key signature gives no flat/sharp preference (C major / A minor):
-        // use TPC to disambiguate.  TPC 7..13 = Fb..Bb → flat spelling.
-        const bool preferFlat = (tpc >= 7 && tpc <= 13);
-        const size_t idx = static_cast<size_t>(normalizePc(pc));
-        if (preferFlat) {
-            return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+    if (tpc >= 0) {
+        // Cb (pc=11): TPC_C_B=7 in MuseScore internal, 8 in +1 test encoding.
+        // Fb (pc=4):  TPC_F_B=6 in MuseScore internal, 7 in +1 test encoding.
+        // Both are not representable in the standard 12-entry name tables (FLAT_NAMES
+        // maps pc=11→"B" and pc=4→"E"), so return the explicit flat name here.
+        // Use pc to disambiguate TPC=7 (which is Cb in MuseScore internal vs Fb in +1 encoding).
+        if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? "Ces" : "Cb";
+        if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? "Fes" : "Fb";
+
+        if (keySignatureFifths == 0) {
+            // Key signature gives no flat/sharp preference (C major / A minor):
+            // use TPC to disambiguate.  Flat range covers both encodings: MuseScore [7,13]
+            // and +1 encoding [8,14].  Union [7,14] is safe because natural notes (FLAT==SHARP).
+            const bool preferFlat = (tpc >= 7 && tpc <= 14);
+            const size_t idx = static_cast<size_t>(normalizePc(pc));
+            if (preferFlat) {
+                return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+            }
+            return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
         }
-        return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
+
+        // Very flat key contexts: natural notes whose enharmonic flat spelling is
+        // more appropriate than what the standard flat-key table provides.
+        //
+        // B natural (pc=11, TPC=19 MuseScore or 20 +1-encoding) in keys with 5+ flats → Cb.
+        // E natural (pc=4,  TPC=18 MuseScore or 19 +1-encoding) in keys with 6+ flats → Fb.
+        if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+            return isGerman ? "Ces" : "Cb";
+        if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+            return isGerman ? "Fes" : "Fb";
     }
     return pitchClassName(pc, keySignatureFifths, spelling);
 }
@@ -612,6 +640,7 @@ static constexpr double kDim7CharacteristicBonus = 0.75;  // fully-diminished fi
 static constexpr double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: prefer bass-root reading [empirical]
 static constexpr double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
 static constexpr double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
+static constexpr double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
 static constexpr double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
 static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
 static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
@@ -1085,9 +1114,32 @@ double nonBassAdjustment(const TemplateDef& tpl, int rootPc, int bassPc,
 double structuralPenalties(const TemplateDef& tpl, int rootPc,
                            const std::array<double, 12>& pcWeight,
                            const std::array<int, 12>& tpcForPc,
-                           int distinctPcs)
+                           int distinctPcs,
+                           double extThreshold = kExtensionThreshold)
 {
     double score = 0.0;
+
+    // Sus4 templates (except Sus4b5): the P4 is the defining suspension tone.
+    // Penalise when it is absent or too weak to sustain a suspension reading.
+    // Without a detectable fourth the chord sounds augmented or altered, not suspended.
+    //
+    // Sus4b5 {0,5,6,10} (intervals[2]==6) is excluded: in that variant the tritone (b5)
+    // is the identifying characteristic.  Sus4b5 from C legitimately wins for chords like
+    // {C,F#,Bb,D} (Lydian dominant / C7♭5 spelling) where P4=F is genuinely absent.
+    // Applying the penalty there pushes the root away from C toward D, which is incorrect
+    // per corpus ground truth.  Sus4♯5 and standard Sus4 are still penalised.
+    const bool sus4HasPerfectFourth = (tpl.quality == ChordQuality::Suspended4)
+                                      && std::any_of(tpl.intervals.begin(), tpl.intervals.end(),
+                                                     [](int i) { return i == 5; });
+    const bool isSus4FlatFive = (tpl.quality == ChordQuality::Suspended4)
+                                && tpl.intervals.size() >= 3
+                                && tpl.intervals[2] == 6;
+    if (sus4HasPerfectFourth && !isSus4FlatFive) {
+        const int fourthPc = static_cast<int>((rootPc + 5) % 12);
+        if (pcWeight[static_cast<size_t>(fourthPc)] < extThreshold) {
+            score -= kSus4MissingFourth;
+        }
+    }
 
     // Sus4-variant (Sus4b5 / Sus4♯5): penalise when the minor-7th is absent.
     // Without it, {root, P4, b5/♯5} is ambiguous with simpler chord inversions.
@@ -1613,7 +1665,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             score += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
             score += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
             score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
-            score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
+            score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold);
             score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
             score += contextualBonuses(tpl, rootPc, bassPc, bassBonus, distinctPcs, pcWeight,
                                        keyTonicPc, scale,
@@ -2064,7 +2116,7 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
             const double extraScore = scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
             const double bbonus     = appliedBassRootBonus(tpl, rootPc, bassPc, pcWeight, prefs);
             const double nonBassAdj = nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
-            const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs);
+            const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold);
             const double tpcBonus   = tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
             const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
 

@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-20 (session 24)*
+*Last updated: 2026-04-21 (session 25)*
 
 ---
 
@@ -24,16 +24,9 @@ should be treated as stale. On Corelli `op01n08d`, the corrected comparator plus
 regional `bassIsStepwiseToNext` and the simplified no-third inversion gating reduce the
 real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
 
-**Current working-tree note (late 2026-04-11):** the last fully green 31/31 notation
-checkpoint is not the active state. A later Corelli follow-up briefly used existing
-Harmony annotations as inference input / boundary hints in the notation path; that
-experiment violated the intended note-driven architecture and has been reverted.
-Focused verification now passes the two Harmony-gating tests plus
-`CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature`
-and `PopulateChordTrackPreservesCorelliOp01n08dCarryInAndLateDominant`, but
-`CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmearPreviousChord` and
-`CorelliOp01n08dUserReportedChordTrackAudit` still fail on note-only late-beat
-cases.
+**Current working-tree note (updated 2026-04-21):** all 51/51 notation tests pass on
+master, including `CorelliOp01n08dUserReportedChordTrackAudit` (fixed in session 25
+via the Sus4 P4 penalty + root-only gap carry fix).
 
 **Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
 DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
@@ -67,6 +60,51 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+### Session 25 (2026-04-21)
+
+**Sus4 structural penalty (Bug A) + targeted gap-carry fix.**
+
+**Problem:** Sus4 templates were winning in regions where the defining perfect fourth
+(P4, interval 5) was barely present — often the P4 was a weak passing tone or absent
+entirely, yielding false Sus4 labels on chords that should be plain major/minor.
+
+**Fix 1: `kSus4MissingFourth = 0.70` penalty in `structuralPenalties()`**
+- Fires when: template is Sus4 quality with interval 5 (P4 present), P4 weight <
+  `extThreshold` (0.20 Standard / 0.12 Jazz), and the template is NOT Sus4b5
+  (Sus4b5 uses the tritone as the identifying interval, not the P4).
+- Sus4♯5 and standard Sus4 are both penalised; Sus4b5 (`intervals[2]==6`) is excluded.
+
+**Fix 2: Root-only single-note gap carry blocked in `inferGapRegion`**
+- The Sus4 penalty caused a cascade in Corelli op01n08d m.13: a G-power chord now
+  wins [19200,19680) instead of Gsus4/7. G-power does not block gap carry. A
+  single-note gap {G} carried from G-power, overwriting the key-context "Gm" with
+  "G5".
+- Fix: when the gap has exactly 1 pitch class AND it equals the root of the adjacent
+  region, block the carry. A root-only gap note conveys no quality information; the
+  diatonic key context is more reliable.
+- Non-root chord tones (e.g. G as the third of Em) continue to carry correctly.
+
+**Corpus result (all corpora improved):**
+| Corpus | Baseline | Session 25 | Change |
+|--------|----------|-----------|--------|
+| Corelli (149 mvts) | 69.54% | **70.9%** | +1.36% ✓ |
+| Bach chorales chord-identity (352) | 74.8% | **75.2%** | +0.4% ✓ |
+| Beethoven (70 mvts) | 64.94% | **65.18%** | +0.24% ✓ |
+
+**Unit tests:** 5 new tests across two suites:
+- `Composing_Sus4RequiresFourthTests` (2 tests): penalty fires when P4 sub-threshold,
+  suppressed when P4 meets Jazz threshold
+- `Composing_EnharmonicSpellingTests` (3 tests): B→Cb in 5-flat context, E→Fb in
+  6-flat context, B stays B in 3-flat context (added to cover session-24 fix)
+
+**Test counts:**
+| Suite | Branch | Count |
+|-------|--------|-------|
+| composing_tests | master | **378/378** |
+| notation_tests | master | **51/51** |
+
+---
 
 ### Session 24 (2026-04-20)
 

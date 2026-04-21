@@ -2535,3 +2535,122 @@ TEST(Composing_EnharmonicSpellingTests, SharpTpcInFlatKeyUsesKeySignature)
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2), "Eb")
         << "Sharp TPC (24=D#) in flat key (keyFifths=-2) must yield Eb, not D#";
 }
+
+// ── B → Cb / E → Fb enharmonic spelling in very flat key contexts ─────────────
+//
+// Session 24: In keys with 5+ flats (Db, Gb, Cb, Fb) the note B natural is
+// spelled Cb, and in 6+ flat keys (Gb, Cb, Fb) E natural is spelled Fb.
+// The standard flat-key name tables use "B" and "E" for those pitch classes;
+// pitchClassNameFromTpc() must detect the TPC evidence and return the flat
+// enharmonic instead.
+//
+// TPC encoding: the test file uses +1 offset from MuseScore's internal enum.
+//   B natural = TPC 20 (test encoding); MuseScore internal TPC_B = 19.
+//   E natural = TPC 19 (test encoding); MuseScore internal TPC_E = 18.
+// pitchClassNameFromTpc() handles both via pc+TPC disambiguation.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// B minor triad (B D F#) in Db major (keyFifths=-5, 5 flats).
+// Root B natural (TPC=20, pc=11) must format as "Cb" not "B".
+TEST(Composing_EnharmonicSpellingTests, BNaturalIn5FlatKeySpellsAsCb)
+{
+    // B2(TPC=20) D3(TPC=17) F#3(TPC=21) — B minor triad, keyFifths=-5 (Db major)
+    const auto ts = tonesWithTpc({
+        { 47, 20 },  // B2 — bass, root (TPC=20 = B natural, test encoding)
+        { 50, 17 },  // D3 (TPC=17 = D)
+        { 54, 21 },  // F#3 (TPC=21 = F#)
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, -5, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);  // pc=11 = B/Cb
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -5);
+    EXPECT_EQ(sym.substr(0, 2), "Cb")
+        << "B natural (TPC=20) in Db major (keyFifths=-5) must spell as Cb; got: " << sym;
+}
+
+// E major triad (E G# B) in Gb major (keyFifths=-6, 6 flats).
+// Root E natural (TPC=19, pc=4) must format as "Fb" not "E".
+TEST(Composing_EnharmonicSpellingTests, ENaturalIn6FlatKeySpellsAsFb)
+{
+    // E2(TPC=19) G#2(TPC=23) B2(TPC=20) — E major triad, keyFifths=-6 (Gb major)
+    const auto ts = tonesWithTpc({
+        { 40, 19 },  // E2 — bass, root (TPC=19 = E natural, test encoding)
+        { 44, 23 },  // G#2 (TPC=23 = G#)
+        { 47, 20 },  // B2 (TPC=20 = B natural)
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, -6, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 4);   // pc=4 = E/Fb
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -6);
+    EXPECT_EQ(sym.substr(0, 2), "Fb")
+        << "E natural (TPC=19) in Gb major (keyFifths=-6) must spell as Fb; got: " << sym;
+}
+
+// B minor triad (B D F#) in Eb minor (keyFifths=-3).
+// Root B natural (TPC=20) in a SHALLOW flat key must stay "B", not "Cb".
+// Only 5+ flats trigger the B→Cb conversion.
+TEST(Composing_EnharmonicSpellingTests, BNaturalIn3FlatKeyStaysB)
+{
+    // B2(TPC=20) D3(TPC=17) F#3(TPC=21) — B minor triad, keyFifths=-3 (Eb minor)
+    const auto ts = tonesWithTpc({
+        { 47, 20 },  // B2 — bass, root
+        { 50, 17 },  // D3
+        { 54, 21 },  // F#3
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, -3, KeySigMode::Aeolian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 11);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -3);
+    EXPECT_EQ(sym[0], 'B')
+        << "B natural (TPC=20) in Eb minor (keyFifths=-3) must remain B; got: " << sym;
+}
+
+// ── Sus4 requires a detectable perfect fourth ─────────────────────────────────
+//
+// Session 24 (Bug A): a Sus4 template (quality Suspended4 with interval 5 = P4)
+// must not win when the P4 is absent or sub-threshold.  The P4 is the defining
+// suspension tone; without it the chord sounds augmented or altered, not suspended.
+//
+// structuralPenalties() now applies kSus4MissingFourth when
+//   pcWeight[fourthPc] < extThreshold.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Csus4#5 candidate over E bass (root ≠ bass): C aug5 (G#) and m7 (Bb) are present,
+// but P4 (F) is very faint.  Bass=E, root=C → no bass-root bonus for Sus4#5/C.
+// The Sus4 penalty plus the non-bass penalty together must prevent Sus4 from winning.
+//
+// Voicing: E3(bass,0.80) F3(P4,0.04) G#3(aug5,0.80) Bb3(m7,0.70) C4(root,1.00)
+// Sus4#5 from C = {C,F,G#,Bb} = intervals {0,5,8,10}.  P4=F weight=0.04 < 0.20.
+TEST(Composing_Sus4RequiresFourthTests, Sus4SharpFiveNonBassRoot_SubThresholdFourth_NotSus4)
+{
+    const auto ts = weightedTones({
+        { 52, 0.80 },  // E3 — bass (lowest pitch)
+        { 53, 0.04 },  // F3 — P4 from C root (sub-threshold: 0.04 < 0.20 Standard)
+        { 56, 0.80 },  // G#3 — aug5 from C root (interval 8)
+        { 58, 0.70 },  // Bb3 — m7 from C root (interval 10)
+        { 60, 1.00 },  // C4 — root
+    });
+    // Standard preset (extThreshold=0.20).  Root=C (pc=0), bass=E (pc=4) → no bass bonus for Sus4/C.
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_NE(results.front().identity.quality, ChordQuality::Suspended4)
+        << "P4 weight 0.04 sub-threshold + non-bass root: Sus4#5/C must not win";
+}
+
+// Same scenario, Jazz preset (extThreshold=0.12): P4 barely above Jazz threshold (0.13).
+// Sus4 should be allowed (no penalty).
+TEST(Composing_Sus4RequiresFourthTests, FourthAboveJazzThreshold_JazzPreset_CanBeSus4)
+{
+    const auto ts = weightedTones({
+        { 52, 1.00 },  // E3 — root, bass
+        { 57, 0.13 },  // A3 — P4 (0.13 > 0.12 Jazz; above threshold)
+        { 60, 0.80 },  // C4 — aug5
+        { 62, 0.50 },  // D4 — m7
+    });
+    ChordAnalyzerPreferences jazzPrefs;
+    jazzPrefs.extensionThreshold = 0.12;
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Suspended4)
+        << "P4 weight 0.13 ≥ Jazz threshold 0.12; Sus4 must not be penalised";
+}

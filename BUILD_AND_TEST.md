@@ -4,6 +4,33 @@ This document provides comprehensive, step-by-step instructions for building Mus
 
 ---
 
+## Running from Git Bash / MSYS2 (Claude bash tool)
+
+Do **NOT** use `cmd.exe //c` — MSYS2 translates `//` as a UNC path, so the flag is dropped and cmd.exe opens interactively with no build output.
+
+**Build (from Git Bash):**
+```
+powershell.exe -Command "Start-Process 'C:\s\MS\setup_and_build.bat' -Wait -NoNewWindow"
+```
+
+**Run tests directly:**
+```
+/c/s/MS/ninja_build_rel/composing_tests.exe
+/c/s/MS/ninja_build_rel/notation_tests.exe
+```
+
+**Run batch_analyze:**
+```
+/c/s/MS/ninja_build_rel/batch_analyze.exe "<score>" --preset jazz
+```
+
+**Invoke ninja directly (without cmd.exe):**
+```
+/c/Qt/Tools/Ninja/ninja.exe -C /c/s/MS/ninja_build_rel composing_tests notation_tests MuseScore5.exe batch_analyze
+```
+
+---
+
 ## 1. Build Scripts
 
 There are three build scripts in the project root. All write to `ninja_build_rel/`.
@@ -73,7 +100,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 373/373** passing.
+**Current baseline: 378/378** passing.
 
 ### Notation Tests
 
