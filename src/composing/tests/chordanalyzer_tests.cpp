@@ -2605,6 +2605,76 @@ TEST(Composing_EnharmonicSpellingTests, BNaturalIn3FlatKeyStaysB)
         << "B natural (TPC=20) in Eb minor (keyFifths=-3) must remain B; got: " << sym;
 }
 
+// ── D#/G#/A# → Eb/Ab/Bb normalisation in neutral and mildly-sharp keys ─────────
+//
+// Session 26 (Step 12): In C major (keyFifths=0) and mildly-sharp key contexts,
+// a sharp-spelled accidental (D#, G#, A# TPC ≥ 20) must be normalised to its
+// conventional flat chord-symbol name (Eb, Ab, Bb).  The threshold for each PC is
+// the key signature where the sharp becomes diatonic:
+//   D# (pc=3)  diatonic at E major (keyFifths=4) → Eb in C/G/D/A major
+//   G# (pc=8)  diatonic at A major (keyFifths=3) → Ab in C/G/D major
+//   A# (pc=10) diatonic at B major (keyFifths=5) → Bb in C through 4 sharps
+//
+// Regression guard: D# spelling (TPC=24) must survive in keys where D# is diatonic.
+// ──────────────────────────────────────────────────────────────────────────────────
+
+// D# (TPC=24) as bass note in C major (keyFifths=0) must become Eb in slash notation.
+// Uses Bb/Eb (Bb major with D#/Eb bass) — a clear slash chord where D# is the bass.
+// Mirrors the Billy Boy "Em7add11/D#" → "Em7add11/Eb" fix (bass spelling normalisation).
+TEST(Composing_EnharmonicSpellingTests, DSharpBassInNeutralKeyBecomesEb)
+{
+    // Bb major chord with D#2/Eb2 bass (TPC=24, sharp-spelled):
+    // D#2(TPC=24) Bb3(TPC=13) D4(TPC=17) F4(TPC=14)
+    const auto ts = tonesWithTpc({
+        { 39, 24 },  // D#2/Eb2 — bass (TPC=24, sharp-spelled D#)
+        { 58, 13 },  // Bb3 — root
+        { 62, 17 },  // D4
+        { 65, 14 },  // F4
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
+    EXPECT_EQ(sym.find("D#"), std::string::npos)
+        << "D# bass (TPC=24) in C major must not produce D# in slash; got: " << sym;
+    EXPECT_NE(sym.find("Eb"), std::string::npos)
+        << "D# bass (TPC=24) in C major must be spelled Eb in slash; got: " << sym;
+}
+
+// D# (TPC=24) as root in A minor (keyFifths=0) must format as Eb.
+// Mirrors the Billy Boy "D#Maj7" → "EbMaj7" fix.
+TEST(Composing_EnharmonicSpellingTests, DSharpRootInNeutralKeyBecomesEb)
+{
+    // Eb major triad: D#2/Eb2 (TPC=24) + G2 (TPC=16) + Bb2 (TPC=13) — same as Eb major
+    const auto ts = tonesWithTpc({
+        { 39, 24 },  // D#2/Eb2 — root, bass (TPC=24, sharp-spelled D#)
+        { 43, 16 },  // G2
+        { 46, 13 },  // Bb2
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Aeolian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 3);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
+    EXPECT_EQ(sym.substr(0, 2), "Eb")
+        << "D# root (TPC=24) in A minor (keyFifths=0) must spell as Eb; got: " << sym;
+}
+
+// D# remains D# in E major (keyFifths=4) where it is a diatonic note.
+TEST(Composing_EnharmonicSpellingTests, DSharpSurvivesInEMajorKey)
+{
+    // D# minor triad (D# F# A#) in E major (keyFifths=4) — all diatonic.
+    const auto ts = tonesWithTpc({
+        { 39, 24 },  // D#2 — root, bass (TPC=24)
+        { 42, 21 },  // F#2 (TPC=21)
+        { 45, 25 },  // A#2 (TPC=25)
+    });
+    const auto results = kAnalyzer.analyzeChord(ts, 4, KeySigMode::Ionian);
+    ASSERT_FALSE(results.empty());
+    EXPECT_EQ(results.front().identity.rootPc, 3);
+    const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 4);
+    EXPECT_EQ(sym.substr(0, 2), "D#")
+        << "D# (TPC=24) in E major (keyFifths=4) must remain D#; got: " << sym;
+}
+
 // ── Sus4 requires a detectable perfect fourth ─────────────────────────────────
 //
 // Session 24 (Bug A): a Sus4 template (quality Suspended4 with interval 5 = P4)

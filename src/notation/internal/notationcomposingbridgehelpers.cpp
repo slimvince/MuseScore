@@ -719,6 +719,36 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
         }
     }
 
+    // ── Strong declared-mode prior ────────────────────────────────────────
+    // When the key signature carries an explicit Mode property, the composer's
+    // intent overrides note-content inference.  If the winning mode is
+    // incompatible with the declared class (e.g. G# Dorian vs declared F# Major),
+    // find the best result that IS compatible and return it instead.
+    // This path fires only when declaredMode is set (MAJOR/MINOR/specific mode).
+    if (declaredMode.has_value()) {
+        const bool topIsCompatible = (*declaredMode == KeySigMode::Ionian)
+            ? mu::composing::analysis::keyModeIsMajor(top.mode)
+            : (*declaredMode == KeySigMode::Aeolian)
+              ? !mu::composing::analysis::keyModeIsMajor(top.mode)
+              : (top.mode == *declaredMode);
+        if (!topIsCompatible) {
+            for (const auto& r : modeResults) {
+                const bool rCompatible = (*declaredMode == KeySigMode::Ionian)
+                    ? mu::composing::analysis::keyModeIsMajor(r.mode)
+                    : (*declaredMode == KeySigMode::Aeolian)
+                      ? !mu::composing::analysis::keyModeIsMajor(r.mode)
+                      : (r.mode == *declaredMode);
+                if (rCompatible) {
+                    outKeyFifths  = r.keySignatureFifths;
+                    outMode       = r.mode;
+                    outConfidence = r.normalizedConfidence;
+                    if (outScore) *outScore = r.score;
+                    return;
+                }
+            }
+        }
+    }
+
     outKeyFifths  = top.keySignatureFifths;
     outMode       = top.mode;
     outConfidence = top.normalizedConfidence;

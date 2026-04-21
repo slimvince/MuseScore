@@ -105,6 +105,25 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
         if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? "Ces" : "Cb";
         if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? "Fes" : "Fb";
 
+        // Sharp-spelled chromatic note in flat or mildly-sharp key contexts: normalise to
+        // the conventional flat chord-symbol name used in jazz/pop.  A sharp TPC (≥20,
+        // covering both MuseScore-internal and +1-offset encodings) means the score writer
+        // used a sharp accidental; below the diatonic-at key threshold the flat name is the
+        // canonical chord-symbol spelling.  Checked before the keySignatureFifths==0 TPC
+        // block so it intercepts sharp-spelled notes even in neutral-key contexts.
+        //   Eb (pc=3)  diatonic at E major (keyFifths=4) → D# in C/G/D/A major becomes Eb
+        //   Ab (pc=8)  diatonic at A major (keyFifths=3) → G# in C/G/D major becomes Ab
+        //   Bb (pc=10) diatonic at B major (keyFifths=5) → A# in C through 4 sharps → Bb
+        if (tpc >= 20) {
+            const size_t idx = static_cast<size_t>(normalizePc(pc));
+            if ((pc == 3  && keySignatureFifths < 4)   // D# → Eb
+             || (pc == 8  && keySignatureFifths < 3)   // G# → Ab
+             || (pc == 10 && keySignatureFifths < 5))  // A# → Bb
+            {
+                return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+            }
+        }
+
         if (keySignatureFifths == 0) {
             // Key signature gives no flat/sharp preference (C major / A minor):
             // use TPC to disambiguate.  Flat range covers both encodings: MuseScore [7,13]

@@ -604,14 +604,22 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             regions = std::move(pass2Regions);
         }
 
-        // Pass 2b: bass-movement sub-boundary detection.
+        // Pass 2b: bass-movement sub-boundary detection (iterative).
         // Runs after Pass 2 (onset Jaccard sub-boundaries). Splits regions that
         // still contain a bass PC change (e.g. identical pitch-class sets but
         // different bass notes), as long as the region is >= kPass2bMinRegionTicks.
         // ANY bass PC change fires; downstream bassPassingToneMinWeightFraction
         // suppresses passing tones during chord analysis.
+        // Iterates until no new splits are found (up to kMaxBassMovementPasses).
         if (granularity != HarmonicRegionGranularity::PreserveAllChanges && !regions.empty()) {
             static constexpr int kPass2bMinRegionTicks = 4 * Constants::DIVISION;
+            static constexpr int kMaxBassMovementPasses = 8;
+
+            bool anyNewSplit = true;
+            int passCount = 0;
+            while (anyNewSplit && passCount < kMaxBassMovementPasses) {
+            anyNewSplit = false;
+            ++passCount;
 
             std::vector<HarmonicRegion> pass2bRegions;
             pass2bRegions.reserve(regions.size() * 2);
@@ -632,6 +640,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     pass2bRegions.push_back(parentRegion);
                     continue;
                 }
+
+                anyNewSplit = true;
 
                 // Build boundary list: [parentStart, sub1, sub2, ..., parentEnd]
                 std::vector<Fraction> bounds;
@@ -716,6 +726,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             }
 
             regions = std::move(pass2bRegions);
+            } // end while (anyNewSplit && passCount < kMaxBassMovementPasses)
         }
 
         if (regions.empty()) {

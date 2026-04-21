@@ -8226,9 +8226,14 @@ void NotationInteraction::addAnalyzedHarmony(const QString& text, mu::engraving:
               ? TranslatableString("undoableAction", "Add Roman numeral")
               : TranslatableString("undoableAction", "Add chord symbol"));
 
-    // Remove any existing harmony of the same type on this segment
+    // Remove any existing harmony of the same type at the same track on this segment.
+    // Only replace the symbol at the annotating note's own track — never remove
+    // symbols belonging to other staves (e.g. a piano grand staff where staff 0
+    // already has a chord symbol must not be cleared when annotating from staff 1).
     for (EngravingItem* ann : segment->annotations()) {
-        if (ann->isHarmony() && toHarmony(ann)->harmonyType() == type) {
+        if (ann->isHarmony()
+            && toHarmony(ann)->harmonyType() == type
+            && ann->track() == cr->track()) {
             score()->undoRemoveElement(ann);
         }
     }

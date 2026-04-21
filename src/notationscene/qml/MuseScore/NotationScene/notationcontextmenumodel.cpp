@@ -32,6 +32,7 @@
 #include "engraving/dom/fret.h"
 #include "engraving/dom/chord.h"
 #include "engraving/dom/note.h"
+#include "engraving/dom/rest.h"
 
 #include "notation/internal/notationcomposingbridge.h"  // analyzeNoteHarmonicContext (mu::notation)
 #include "composing/analysis/chord/chordanalyzer.h"           // ChordSymbolFormatter, ChordAnalysisResult
@@ -49,13 +50,9 @@ muse::uicomponents::MenuItem* NotationContextMenuModel::makeEditStyle(const mu::
     return nullptr;
 }
 
-void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, const mu::engraving::Note* note)
+void NotationContextMenuModel::appendAnalysisItemsForContext(MenuItemList& items,
+                                                            const mu::notation::NoteHarmonicContext& context)
 {
-    if (!note) {
-        return;
-    }
-
-    const auto context = mu::notation::analyzeNoteHarmonicContextDetails(note);
     const int keyFifths = context.keyFifths;
     const bool wantChordSymbols = m_composingConfig()->analyzeForChordSymbols();
     const bool wantRomanNumerals = m_composingConfig()->analyzeForChordFunction();
@@ -74,7 +71,7 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
     std::sort(analysisResults.begin(), analysisResults.end(),
               [](const mu::composing::analysis::ChordAnalysisResult& a,
                  const mu::composing::analysis::ChordAnalysisResult& b) {
-                  return a.identity.score > b.identity.score;
+                  return a.identity.normalizedConfidence > b.identity.normalizedConfidence;
               });
 
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
@@ -158,6 +155,14 @@ void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, cons
 
 }
 
+void NotationContextMenuModel::appendNoteAnalysisItems(MenuItemList& items, const mu::engraving::Note* note)
+{
+    if (!note) {
+        return;
+    }
+    appendAnalysisItemsForContext(items, mu::notation::analyzeNoteHarmonicContextDetails(note));
+}
+
 MenuItemList NotationContextMenuModel::makeNoteItems()
 {
     MenuItemList items = makeElementItems();
@@ -175,6 +180,13 @@ MenuItemList NotationContextMenuModel::makeNoteItems()
         const auto* chord = engraving::toChord(element);
         if (chord && !chord->notes().empty()) {
             note = chord->notes().front();
+        }
+    } else if (element && element->isRest()) {
+        const auto* rest = engraving::toRest(element);
+        if (rest) {
+            const auto context = mu::notation::analyzeRestHarmonicContextDetails(rest);
+            appendAnalysisItemsForContext(items, context);
+            return items;
         }
     }
 
@@ -223,6 +235,7 @@ MenuItemList NotationContextMenuModel::makeItemsByElementType(ElementType elemen
         return makeTextItems();
     case ElementType::NOTE:
     case ElementType::CHORD:
+    case ElementType::REST:
         return makeNoteItems();
     default:
         break;
