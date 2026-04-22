@@ -1,0 +1,1042 @@
+{
+  "_description": "Extra scores available for batch analysis. Not part of DCML validation corpora. Ground truth not available for any of these scores.",
+  "_updated": "2026-04-22",
+  "jazz": [
+    {
+      "path": "tools/extra scores/Água_de_beber 5 smatb.mscz",
+      "title": "Água de Beber",
+      "composer": "Tom Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/better-than-anything-natalie-cole-diana-krallwheat-loughborough-duet-arrfor-big-band.mscz",
+      "title": "Better Than Anything (big band arr.)",
+      "composer": "Don Sebesky",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/bill-evans-on-autunm-leaves-from-the-album-portrait-in-jazz.mscz",
+      "title": "Autumn Leaves (Bill Evans, Portrait in Jazz)",
+      "composer": "Joseph Kosma",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/bill-evans-trio-how-my-heart-sings.mscz",
+      "title": "How My Heart Sings (Bill Evans Trio)",
+      "composer": "Earl Zindars",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/bill-evans-waltz-for-debby-medium.mscz",
+      "title": "Waltz for Debby (Bill Evans)",
+      "composer": "Bill Evans",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/billy-boy-red-garland.mscz",
+      "title": "Billy Boy (Red Garland)",
+      "composer": "Traditional",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Black_and_blues.mscz",
+      "title": "Black and Blues",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "thin-voicing",
+      "ground_truth": false,
+      "notes": "Only 1 region — analytically thin; may not load correctly"
+    },
+    {
+      "path": "tools/extra scores/blue-in-green-bill-evansmiles-davis.mscz",
+      "title": "Blue in Green (Bill Evans/Miles Davis)",
+      "composer": "Miles Davis",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/blue-in-green-miles-davis-bill-evans-full-piano-transcription.mscz",
+      "title": "Blue in Green (full piano transcription)",
+      "composer": "Miles Davis",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/blue-monk-thelonious-monk-blue-monk-thelonious-monk.mscz",
+      "title": "Blue Monk (Thelonious Monk)",
+      "composer": "Thelonious Monk",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Can_You_Feel_the_Love_Tonight_-_Pentatonix_Full_Sheet_Music_with_Lyrics.mscz",
+      "title": "Can You Feel the Love Tonight (Pentatonix)",
+      "composer": "Elton John",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Cant_Help_Falling_In_Love_-_Pentatonix_Full_Sheet_Music_w_Lyrics (1).mscz",
+      "title": "Can't Help Falling in Love (Pentatonix)",
+      "composer": "Luigi Creatore",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/cantaloupe-island-herbie-hancock.mscz",
+      "title": "Cantaloupe Island (Herbie Hancock)",
+      "composer": "Herbie Hancock",
+      "preset": "Jazz",
+      "style": "modal-thin",
+      "ground_truth": false,
+      "notes": "5 regions, 1 root — strongly modal, harmonically sparse"
+    },
+    {
+      "path": "tools/extra scores/Daft_Punk_-_Pentatonix_satb.mscz",
+      "title": "Daft Punk Medley (Pentatonix)",
+      "composer": "Daft Punk",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/danny-boybill-evans-ver.mscz",
+      "title": "Danny Boy (Bill Evans)",
+      "composer": "Traditional",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Dolores_In_a_Shoestand__Esbjrn_Svensson_Trio.mscz",
+      "title": "Dolores in a Shoestand (E.S.T.)",
+      "composer": "Esbjörn Svensson",
+      "preset": "Jazz",
+      "style": "contemporary-jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/driftin-herbie-hancock.mscz",
+      "title": "Driftin (Herbie Hancock)",
+      "composer": "Herbie Hancock",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/east-of-the-sun-west-of-the-moon-diana-krall.mscz",
+      "title": "East of the Sun (Diana Krall)",
+      "composer": "Brooks Bowman",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "Validation benchmark score from session 20"
+    },
+    {
+      "path": "tools/extra scores/eighty-one-ron-carter-herbie-hancock-on-piano.mscz",
+      "title": "Eighty One (Ron Carter/Herbie Hancock on piano)",
+      "composer": "Ron Carter",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Esbjrn_Svensson_Trio_-_Waltz_For_The_Lonely_Ones.mscz",
+      "title": "Waltz for the Lonely Ones (E.S.T.)",
+      "composer": "Esbjörn Svensson",
+      "preset": "Jazz",
+      "style": "contemporary-jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/God_Only_Knows_2.mscz",
+      "title": "God Only Knows",
+      "composer": "Brian Wilson",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/hymn-to-freedom-oscar-peterson.mscz",
+      "title": "Hymn to Freedom (Oscar Peterson)",
+      "composer": "Oscar Peterson",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Imagine pentaversion.mscz",
+      "title": "Imagine (a cappella arrangement)",
+      "composer": "John Lennon",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/it-could-happen-to-you-james-van-heusen.mscz",
+      "title": "It Could Happen to You (James Van Heusen)",
+      "composer": "James Van Heusen",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/like-someone-in-love-bill-evans (1).mscz",
+      "title": "Like Someone in Love (Bill Evans, v1)",
+      "composer": "Jimmy Van Heusen",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/like-someone-in-love-bill-evans.mscz",
+      "title": "Like Someone in Love (Bill Evans, v2)",
+      "composer": "Jimmy Van Heusen",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Mad_World.mscz",
+      "title": "Mad World",
+      "composer": "Roland Orzabal",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/maiden-voyage-herbie-hancock.mscz",
+      "title": "Maiden Voyage (Herbie Hancock)",
+      "composer": "Herbie Hancock",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Mingle_in_the_Mincing-Machine__Esbjrn_Svensson_Trio.mscz",
+      "title": "Mingle in the Mincing Machine (E.S.T.)",
+      "composer": "Esbjörn Svensson",
+      "preset": "Jazz",
+      "style": "contemporary-jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/my-favorite-things-mccoy-tyners-solo-from-grant-green-matador-album.mscz",
+      "title": "My Favorite Things (McCoy Tyner solo, Matador album)",
+      "composer": "Richard Rodgers",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/my-foolish-heart-bill-evans-head-coda-transcription.mscz",
+      "title": "My Foolish Heart (Bill Evans head/coda)",
+      "composer": "Victor Young",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/my-funny-valentine-bill-evans-transcription.mscz",
+      "title": "My Funny Valentine (Bill Evans transcription)",
+      "composer": "Richard Rodgers",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "Existing validation benchmark score"
+    },
+    {
+      "path": "tools/extra scores/Not_like_this_5 efter accent.mscz",
+      "title": "Not Like This (arr.)",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "contemporary-jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/oscar-peterson-blues-pattern.mscz",
+      "title": "Blues Pattern (Oscar Peterson)",
+      "composer": "Oscar Peterson",
+      "preset": "Jazz",
+      "style": "blues",
+      "ground_truth": false,
+      "notes": "12 regions — short etude/pattern"
+    },
+    {
+      "path": "tools/extra scores/Over_The_Rainbow.mscz",
+      "title": "Over the Rainbow",
+      "composer": "Harold Arlen",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/round-midnight-by-thelonius-monk.mscz",
+      "title": "Round Midnight (Thelonious Monk)",
+      "composer": "Thelonious Monk",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/ruby-my-dear-thelonious-monk-rubymydear.mscz",
+      "title": "Ruby My Dear (Thelonious Monk)",
+      "composer": "Thelonious Monk",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/smile_ben_bram.mscz",
+      "title": "Smile (a cappella arr., Ben Bram)",
+      "composer": "Charlie Chaplin",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/take-five-for-jazz-big-band.mscz",
+      "title": "Take Five (jazz big band arr.)",
+      "composer": "Paul Desmond",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Take_Me_Home_-_Pentatonix.mscz",
+      "title": "Take Me Home (Pentatonix)",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/the-eye-of-the-hurricane-herbie-hancock.mscz",
+      "title": "The Eye of the Hurricane (Herbie Hancock)",
+      "composer": "Herbie Hancock",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "578 regions — most comprehensive jazz score in corpus"
+    },
+    {
+      "path": "tools/extra scores/The_Sound_of_Silence.mscz",
+      "title": "The Sound of Silence",
+      "composer": "Paul Simon",
+      "preset": "Jazz",
+      "style": "satb-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/tranes-blues-red-garland-solo.mscz",
+      "title": "Trane's Blues (Red Garland solo)",
+      "composer": "John Coltrane",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/tristeza-oscar-peterson.mscz",
+      "title": "Tristeza (Oscar Peterson)",
+      "composer": "Haroldo Lobo / Roberto Menescal",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Waltz for the lonely ones - unrolled.mscz",
+      "title": "Waltz for the Lonely Ones - unrolled (E.S.T.)",
+      "composer": "Esbjörn Svensson",
+      "preset": "Jazz",
+      "style": "contemporary-jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/when-i-fall-in-love-victor-young-red-garland-transcription.mscz",
+      "title": "When I Fall in Love (Red Garland)",
+      "composer": "Victor Young",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "14 regions — head/coda fragment"
+    },
+    {
+      "path": "tools/extra scores/you-must-believe-in-spring-bill-evans.mscz",
+      "title": "You Must Believe in Spring (Bill Evans)",
+      "composer": "Michel Legrand",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/be-my-love-keith-jarrett.mscz",
+      "title": "Be My Love (Keith Jarrett)",
+      "composer": "Nicholas Brodszky",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "176 regions, 11 roots, 4 keys — rich voicings"
+    },
+    {
+      "path": "tools/extra scores/boplicity-be-bop-lives-miles-davis-and-gil-evans-boplicity.mscz",
+      "title": "Boplicity (Miles Davis / Gil Evans)",
+      "composer": "Miles Davis",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "64 regions, 8 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/caravan-piano-arrangement.mscz",
+      "title": "Caravan (piano arr.)",
+      "composer": "Juan Tizol / Duke Ellington",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "231 regions, 12 roots, 11 keys — promising QA candidate"
+    },
+    {
+      "path": "tools/extra scores/chief-crazy-horse-piano-solo.mscz",
+      "title": "Chief Crazy Horse (piano solo)",
+      "composer": "McCoy Tyner",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "51 regions, 7 roots, 9 keys"
+    },
+    {
+      "path": "tools/extra scores/chloe-meets-gerschwin-michel-petrucciani.mscz",
+      "title": "Chloe Meets Gershwin (Michel Petrucciani)",
+      "composer": "Michel Petrucciani",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "157 regions, 12 roots, 5 keys"
+    },
+    {
+      "path": "tools/extra scores/dat-dere-art-blakey-the-jazz-messengers.mscz",
+      "title": "Dat Dere (Art Blakey & The Jazz Messengers)",
+      "composer": "Bobby Timmons",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "145 regions, 6 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/donna-lee.mscz",
+      "title": "Donna Lee",
+      "composer": "Charlie Parker",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "56 regions, 10 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/free-for-all-wayne-shorter.mscz",
+      "title": "Free for All (Wayne Shorter)",
+      "composer": "Wayne Shorter",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "16 regions, 4 roots — too sparse/short for QA"
+    },
+    {
+      "path": "tools/extra scores/have-yourself-a-merry-little-christmas-for-jazz-band.mscz",
+      "title": "Have Yourself a Merry Little Christmas (jazz band arr.)",
+      "composer": "Hugh Martin",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false,
+      "notes": "82 regions, 9 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/i-got-it-bad-and-that-aint-good-keith-jarrett.mscz",
+      "title": "I Got It Bad (and That Ain't Good) (Keith Jarrett)",
+      "composer": "Duke Ellington",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "237 regions, 11 roots, 6 keys — promising QA candidate"
+    },
+    {
+      "path": "tools/extra scores/keith-jarret-the-koln-concert-part-iic-keith-jarret.mscz",
+      "title": "The Köln Concert Part IIc (Keith Jarrett)",
+      "composer": "Keith Jarrett",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "196 regions, 10 roots, 5 keys — promising QA candidate"
+    },
+    {
+      "path": "tools/extra scores/koln-concertmicah-edition.mscz",
+      "title": "Köln Concert (Micah Edition)",
+      "composer": "Keith Jarrett",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "81 regions, 9 roots, 2 keys"
+    },
+    {
+      "path": "tools/extra scores/moanin-art-blakey-and-the-jazz-messengers.mscz",
+      "title": "Moanin' (Art Blakey & The Jazz Messengers)",
+      "composer": "Bobby Timmons",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "84 regions, 6 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/nature-boy-eden-ahbez.mscz",
+      "title": "Nature Boy (Eden Ahbez)",
+      "composer": "Eden Ahbez",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "47 regions, 6 roots, 6 keys"
+    },
+    {
+      "path": "tools/extra scores/new-york-new-york-for-jazz-combo.mscz",
+      "title": "New York, New York (jazz combo arr.)",
+      "composer": "John Kander",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false,
+      "notes": "136 regions, 12 roots, 5 keys"
+    },
+    {
+      "path": "tools/extra scores/pinocchio-wayne-shortermiles-davis-quintet.mscz",
+      "title": "Pinocchio (Wayne Shorter / Miles Davis Quintet)",
+      "composer": "Wayne Shorter",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "391 regions, 12 roots, 15 keys — promising QA candidate"
+    },
+    {
+      "path": "tools/extra scores/skyfall-for-jazz-big-band.mscz",
+      "title": "Skyfall (jazz big band arr.)",
+      "composer": "Adele Adkins / Paul Epworth",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false,
+      "notes": "101 regions, 7 roots, 4 keys"
+    },
+    {
+      "path": "tools/extra scores/sun-bear-concerts-osaka-part-1-by-keith-jarrett-keith-jarrett.mscz",
+      "title": "Sun Bear Concerts: Osaka Part 1 (Keith Jarrett)",
+      "composer": "Keith Jarrett",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false,
+      "notes": "1323 regions, 12 roots, 20 keys, 350 ext symbols — largest score in corpus; promising QA candidate"
+    },
+    {
+      "path": "tools/extra scores/the-chicken-jazz-alfred-james-ellis-full-big-band-score.mscz",
+      "title": "The Chicken (Alfred James Ellis, big band)",
+      "composer": "Alfred James Ellis",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false,
+      "notes": "22 regions, 4 roots — too sparse for QA"
+    },
+    {
+      "path": "tools/extra scores/wave-jazz-band-antonio-carlos-jobim.mscz",
+      "title": "Wave (jazz band arr., Antonio Carlos Jobim)",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false,
+      "notes": "125 regions, 9 roots, 3 keys"
+    },
+    {
+      "path": "tools/extra scores/armageddon-wayne-shorter.mscz",
+      "title": "Armageddon",
+      "composer": "Wayne Shorter",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/infant-eyes-wayne-shorter.mscz",
+      "title": "Infant Eyes",
+      "composer": "Wayne Shorter",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/nefertiti-wayne-shorter.mscz",
+      "title": "Nefertiti",
+      "composer": "Wayne Shorter",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/september-15th.mscz",
+      "title": "September 15th",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/sienna.mscz",
+      "title": "Sienna",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/something-to-remind-you-pat-metheny.mscz",
+      "title": "Something to Remind You",
+      "composer": "Pat Metheny",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/waltz-for-bill-evans.mscz",
+      "title": "Waltz for Bill Evans",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/sun-bear-concerts-osaka-part-1-by-keith-jarrett-keith-jarrett p1-2.mscz",
+      "title": "Sun Bear Concerts Osaka Part 1-2",
+      "composer": "Keith Jarrett",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/the Oak and the lark.mscz",
+      "title": "The Oak and the Lark",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/after-all-al-jarreaudavid-fosterjay-graydon.mscz",
+      "title": "After All (Al Jarreau)",
+      "composer": "David Foster / Jay Graydon",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/answer-me-my-love-gerhard-winkler-fred-rauch-originally-performed-by-nat-king-cole.mscz",
+      "title": "Answer Me, My Love (Nat King Cole)",
+      "composer": "Gerhard Winkler / Fred Rauch",
+      "preset": "Jazz",
+      "style": "jazz-ballad",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/beatrice-brad-mehldau-transcription.mscz",
+      "title": "Beatrice (Brad Mehldau transcription)",
+      "composer": "Sam Rivers",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/bluesette.mscz",
+      "title": "Bluesette",
+      "composer": "Toots Thielemans",
+      "preset": "Jazz",
+      "style": "jazz-standard",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/bridge-over-troubled-water-jacob-collier-transcription.mscz",
+      "title": "Bridge Over Troubled Water (Jacob Collier transcription)",
+      "composer": "Paul Simon",
+      "preset": "Jazz",
+      "style": "vocal-arrangement",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/fly-me-to-the-moon.mscz",
+      "title": "Fly Me to the Moon",
+      "composer": "Bart Howard",
+      "preset": "Jazz",
+      "style": "jazz-standard",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/garota-de-ipanema-tom-jobim.mscz",
+      "title": "Garota de Ipanema (The Girl from Ipanema)",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/london-blues-brad-mehldau-transcription.mscz",
+      "title": "London Blues (Brad Mehldau transcription)",
+      "composer": "Brad Mehldau",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/meditation-meditacao-antonio-carlos-jobim.mscz",
+      "title": "Meditation (Meditação)",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/moonlighting-al-jarreau.mscz",
+      "title": "Moonlighting (Al Jarreau)",
+      "composer": "Al Jarreau / Lee Holdridge",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/my-foolish-heart-bill-evans-head-coda-transcription (1).mscz",
+      "title": "My Foolish Heart (Bill Evans head/coda, v2)",
+      "composer": "Victor Young",
+      "preset": "Jazz",
+      "style": "piano-transcription",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/not-like-this-performed-by-al-jarreau.mscz",
+      "title": "Not Like This (performed by Al Jarreau)",
+      "composer": "Unknown",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/o-grande-amor-by-antonio-carlos-jobim.mscz",
+      "title": "O Grande Amor",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/peau-dane-michel-legrand.mscz",
+      "title": "Peau d'Âne (Donkey Skin)",
+      "composer": "Michel Legrand",
+      "preset": "Jazz",
+      "style": "jazz-film",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/unforgettable-dinah-washington-irving-gordon-nat-king-cole-natalie-cole.mscz",
+      "title": "Unforgettable (Dinah Washington / Nat/Natalie Cole)",
+      "composer": "Irving Gordon",
+      "preset": "Jazz",
+      "style": "jazz-standard",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/unforgettable-nat-king-cole-unforgettable.mscz",
+      "title": "Unforgettable (Nat King Cole)",
+      "composer": "Irving Gordon",
+      "preset": "Jazz",
+      "style": "jazz-standard",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/unforgettable-reharmonized-nat-king-cole.mscz",
+      "title": "Unforgettable (reharmonized)",
+      "composer": "Irving Gordon",
+      "preset": "Jazz",
+      "style": "jazz-standard",
+      "ground_truth": false,
+      "notes": "Reharmonized variant — useful for testing harmonic analysis on non-canonical voicings"
+    },
+    {
+      "path": "tools/extra scores/wave-tom-jobim-original-arrangement.mscz",
+      "title": "Wave (original arrangement)",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/wave-tom-jobim.mscz",
+      "title": "Wave (Tom Jobim)",
+      "composer": "Antonio Carlos Jobim",
+      "preset": "Jazz",
+      "style": "bossa-nova",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/your-heart-is-as-black-as-night-melody-gardot.mscz",
+      "title": "Your Heart Is as Black as Night (Melody Gardot)",
+      "composer": "Melody Gardot",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    }
+  ],
+  "piazzolla": [
+    {
+      "path": "tools/extra scores/piazzolla/Adios Nonino.mscz",
+      "title": "Adiós Nonino",
+      "composer": "Astor Piazzolla",
+      "preset": "Standard",
+      "style": "tango",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/piazzolla/chiquilin de bachin.mscz",
+      "title": "Chiquilín de Bachín",
+      "composer": "Astor Piazzolla",
+      "preset": "Standard",
+      "style": "tango",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/piazzolla/Invierno porteño.mscz",
+      "title": "Invierno Porteño",
+      "composer": "Astor Piazzolla",
+      "preset": "Standard",
+      "style": "tango",
+      "ground_truth": false,
+      "notes": "119 regions, 12 keys — most harmonically rich Piazzolla score"
+    },
+    {
+      "path": "tools/extra scores/piazzolla/Oblivion.mscz",
+      "title": "Oblivion",
+      "composer": "Astor Piazzolla",
+      "preset": "Standard",
+      "style": "tango",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/piazzolla/Tanti Anni Prima Ensemble SLUTGILTIG.mscz",
+      "title": "Tanti Anni Prima (Ensemble)",
+      "composer": "Ennio Morricone",
+      "preset": "Standard",
+      "style": "tango-ensemble",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/piazzolla/Vesper.mscz",
+      "title": "Vesper",
+      "composer": "Astor Piazzolla",
+      "preset": "Standard",
+      "style": "tango",
+      "ground_truth": false
+    }
+  ],
+  "steelydan": [
+    {
+      "path": "tools/extra scores/Steely dan/Aja_-_Steely_Dan.mscz",
+      "title": "Aja",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Babylon sisters Steely a cappella.mscz",
+      "title": "Babylon Sisters (a cappella)",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "satb-jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Black Cow Steely a cappella.mscz",
+      "title": "Black Cow (a cappella)",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "satb-jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Black_Cow_-_Steely_Dan.mscz",
+      "title": "Black Cow (full score)",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/IGY.mscz",
+      "title": "IGY (What a Beautiful World)",
+      "composer": "Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Maxine Donald Fagen Steely a cappella.mscz",
+      "title": "Maxine (a cappella)",
+      "composer": "Donald Fagen",
+      "preset": "Jazz",
+      "style": "satb-jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Maxine__Donald_Fagen.mscz",
+      "title": "Maxine (full score)",
+      "composer": "Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false,
+      "notes": "10 regions — short/partial score"
+    },
+    {
+      "path": "tools/extra scores/Steely dan/night by night.mscz",
+      "title": "Night by Night",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false,
+      "notes": "28 regions — partial score"
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Peg Steely a cappella.mscz",
+      "title": "Peg (a cappella)",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "satb-jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Peg_-_Steely_Dan.mscz",
+      "title": "Peg (full score)",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/Reelin_In_The_Years_-_Steely_Dan.mscz",
+      "title": "Reelin' in the Years",
+      "composer": "Walter Becker / Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz-pop",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/aja-steely-dan.mscz",
+      "title": "Aja",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/deacon-blues-steely-dan.mscz",
+      "title": "Deacon Blues",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/fm-steely-dan.mscz",
+      "title": "FM",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/glamour-profession-steely-dan.mscz",
+      "title": "Glamour Profession",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/home-at-last.mscz",
+      "title": "Home at Last",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/igy-what-a-beautiful-world-steely-dan.mscz",
+      "title": "IGY (What a Beautiful World)",
+      "composer": "Donald Fagen / Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/jackofspeed.mscz",
+      "title": "Jack of Speed",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/maxine-donald-fagen.mscz",
+      "title": "Maxine",
+      "composer": "Donald Fagen",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/peg-by-steely-dan.mscz",
+      "title": "Peg",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/steely-dan-jack-of-speed.mscz",
+      "title": "Jack of Speed (alt transcription)",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/the-caves-of-altamira-steely-dan.mscz",
+      "title": "The Caves of Altamira",
+      "composer": "Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/Steely dan/true-companion-donald-fagen-steely-dan-piano-voice-guitar.mscz",
+      "title": "True Companion",
+      "composer": "Donald Fagen / Steely Dan",
+      "preset": "Jazz",
+      "style": "jazz",
+      "ground_truth": false,
+      "notes": "Low value: 3 regions"
+    }
+  ]
+}

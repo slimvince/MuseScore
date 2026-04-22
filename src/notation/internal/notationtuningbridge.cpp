@@ -190,7 +190,7 @@ bool computeTieChainOffset(const mu::engraving::Note* authorityNote,
     keyModeResult.keySignatureFifths = keyFifths;
     keyModeResult.mode = keyMode;
     {
-        const int ionianPc = ((keyFifths * 7) % 12 + 12) % 12;
+        const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(keyFifths);
         keyModeResult.tonicPc = (ionianPc + keyModeTonicOffset(keyMode)) % 12;
     }
 
@@ -549,7 +549,7 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
     keyModeResult.keySignatureFifths = keyFifths;
     keyModeResult.mode = keyMode;
     {
-        const int ionianPc = ((keyFifths * 7) % 12 + 12) % 12;
+        const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(keyFifths);
         keyModeResult.tonicPc = (ionianPc + keyModeTonicOffset(keyMode)) % 12;
     }
 
