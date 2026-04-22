@@ -1019,15 +1019,10 @@ bool populateChordTrack(
                         // numeral label.  Copy the chord result and override
                         // only the degree field.
                         ChordAnalysisResult pivotInNew = prev;
-                        const int semisFromNewTonic =
-                            ((prev.identity.rootPc - newTonicPc) % 12 + 12) % 12;
-                        pivotInNew.function.degree = -1;
-                        for (int d = 0; d < 7; ++d) {
-                            if (newScale[d] == semisFromNewTonic) {
-                                pivotInNew.function.degree = d;
-                                break;
-                            }
-                        }
+                        pivotInNew.function.degree = internal::diatonicDegreeForRootPc(
+                            prev.identity.rootPc,
+                            keyCandidate.keySignatureFifths,
+                            keyCandidate.representativeMode);
                         const std::string newRoman =
                             ChordSymbolFormatter::formatRomanNumeral(pivotInNew);
 
