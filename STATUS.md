@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-22 (deduplication iteration 2)*
+*Last updated: 2026-04-23 (deduplication iteration 3)*
 
 ---
 
@@ -61,6 +61,18 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — deduplication iteration 3
+
+- Commit(s): 82033b976d (3a, tuning bridge), 2041fa2d69 (3b, implode bridge)
+- Files touched: `src/notation/internal/notationtuningbridge.cpp` (lines 193 and 552), `src/notation/internal/notationimplodebridge.cpp` (line 993)
+- Cherry-picked: no (3b is implode-only; 3a is cherry-pick eligible)
+- Composing tests: 381/381 pass
+- Notation tests: 51/51 pass
+- Chord mismatch report: unchanged
+- Note: `tools/extra_scores_registry.json` (_updated 2026-04-22, 20 new jazz scores) could not be committed — `tools/` is gitignored. Needs a separate resolution (e.g. `git add -f` or adjusting .gitignore scope).
+
+---
 
 ### Session 26 (2026-04-21)
 
