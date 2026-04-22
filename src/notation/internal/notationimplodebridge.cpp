@@ -990,7 +990,7 @@ bool populateChordTrack(
                     && (keyCandidate.keySignatureFifths != prevAssertiveKeyFifths
                         || keyCandidate.representativeMode != prevAssertiveMode)) {
                     // Build the new key's scale pitch class set.
-                    const int newIonianPc = ((keyCandidate.keySignatureFifths * 7) % 12 + 12) % 12;
+                    const int newIonianPc = mu::composing::analysis::ionianTonicPcFromFifths(keyCandidate.keySignatureFifths);
                     const int newTonicOffset = keyModeTonicOffset(keyCandidate.representativeMode);
                     const auto& newScale = keyModeScaleIntervals(keyCandidate.representativeMode);
                     bool newScalePcs[12] = {};
