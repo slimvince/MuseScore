@@ -71,6 +71,8 @@ using mu::notation::internal::scoreNoteSpelling;
 
 namespace {
 
+using mu::composing::analysis::keyModeScaleIntervals;
+
 constexpr double kTentativeKeyExposureThreshold = 0.5;
 constexpr double kAssertiveKeyExposureThreshold = 0.8;
 
@@ -523,36 +525,6 @@ void setExplicitRestRange(mu::engraving::Score* sc,
     }
 
     sc->setRest(startTick, track, duration, false, tuplet, false);
-}
-
-const std::array<int, 7>& keyModeScaleIntervals(mu::composing::analysis::KeySigMode mode)
-{
-    static constexpr std::array<std::array<int, 7>, 21> MODE_SCALES = {{
-        { 0, 2, 4, 5, 7, 9, 11 },
-        { 0, 2, 3, 5, 7, 9, 10 },
-        { 0, 1, 3, 5, 7, 8, 10 },
-        { 0, 2, 4, 6, 7, 9, 11 },
-        { 0, 2, 4, 5, 7, 9, 10 },
-        { 0, 2, 3, 5, 7, 8, 10 },
-        { 0, 1, 3, 5, 6, 8, 10 },
-        { 0, 2, 3, 5, 7, 9, 11 },
-        { 0, 1, 3, 5, 7, 9, 10 },
-        { 0, 2, 4, 6, 8, 9, 11 },
-        { 0, 2, 4, 6, 7, 9, 10 },
-        { 0, 2, 4, 5, 7, 8, 10 },
-        { 0, 2, 3, 5, 6, 8, 10 },
-        { 0, 1, 3, 4, 6, 8, 10 },
-        { 0, 2, 3, 5, 7, 8, 11 },
-        { 0, 1, 3, 5, 6, 9, 10 },
-        { 0, 2, 4, 5, 8, 9, 11 },
-        { 0, 2, 3, 6, 7, 9, 10 },
-        { 0, 1, 4, 5, 7, 8, 10 },
-        { 0, 3, 4, 6, 7, 9, 11 },
-        { 0, 1, 3, 4, 6, 8, 9 },
-    }};
-
-    const size_t modeIdx = mu::composing::analysis::keyModeIndex(mode);
-    return MODE_SCALES[modeIdx < MODE_SCALES.size() ? modeIdx : 0];
 }
 
 } // anonymous namespace
