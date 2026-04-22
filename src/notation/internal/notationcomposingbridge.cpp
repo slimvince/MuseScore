@@ -70,6 +70,7 @@ using mu::notation::internal::detectPivotChords;
 namespace {
 
 using mu::composing::analysis::keyModeScaleIntervals;
+using mu::notation::internal::diatonicDegreeForRootPc;
 
 static constexpr int kInitialRegionalLookBehindMeasures = 1;
 static constexpr int kInitialRegionalLookAheadMeasures = 1;
@@ -88,13 +89,7 @@ void applySparseChordKeyContext(mu::composing::analysis::ChordAnalysisResult& re
 
     result.function.keyTonicPc = tonicPc;
     result.function.keyMode = keyMode;
-    result.function.degree = -1;
-    for (size_t degree = 0; degree < scale.size(); ++degree) {
-        if ((tonicPc + scale[degree]) % 12 == result.identity.rootPc) {
-            result.function.degree = static_cast<int>(degree);
-            break;
-        }
-    }
+    result.function.degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
 
     bool diatonicToKey = (result.function.degree >= 0);
     if (diatonicToKey) {
@@ -821,15 +816,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                     + mu::composing::analysis::keyModeTonicOffset(keyMode)) % 12;
                 annotationResult.function.keyTonicPc   = tonicPc;
                 annotationResult.function.keyMode      = keyMode;
-                annotationResult.function.degree       = -1;
-                const auto& scale = keyModeScaleIntervals(keyMode);
-                for (size_t i = 0; i < scale.size(); ++i) {
-                    if ((tonicPc + scale[i]) % 12
-                            == annotationResult.identity.rootPc) {
-                        annotationResult.function.degree = static_cast<int>(i);
-                        break;
-                    }
-                }
+                annotationResult.function.degree = internal::diatonicDegreeForRootPc(
+                    annotationResult.identity.rootPc, keyFifths, keyMode);
                 annotationResult.function.diatonicToKey = (annotationResult.function.degree >= 0);
             }
         }

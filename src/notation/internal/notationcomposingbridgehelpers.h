@@ -289,4 +289,9 @@ std::vector<PivotLabel> detectPivotChords(
     const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
     size_t selectionCount);
 
+/// Returns the diatonic scale degree [0..6] of rootPc in (keyFifths, keyMode),
+/// or -1 if rootPc is not in the scale.
+int diatonicDegreeForRootPc(int rootPc, int keyFifths,
+                            mu::composing::analysis::KeySigMode keyMode);
+
 } // namespace mu::notation::internal
