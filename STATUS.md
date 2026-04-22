@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-21 (session 27)*
+*Last updated: 2026-04-22 (deduplication iteration 2)*
 
 ---
 
@@ -2491,6 +2491,39 @@ regressions. Both are fixed in this session.
 - **Cherry-picks to submission-phase1:** all sessions 16–20 cherry-picked (HEAD `9d5c9d2c4a`).
   Composing tests: 366/366 PASSED. Notation tests: 22 failures confirmed pre-existing at
   `4eb5bba6d4` (before our cherry-picks) — no regressions introduced.
+
+---
+
+## 2026-04-22 — deduplication iteration 2
+
+- Commit 2a (cherry-pick): `bc1a43b25f` — notationcomposingbridgehelpers.h/cpp,
+  notationcomposingbridge.cpp
+- Commit 2b (do not cherry-pick): `a979513416` — notationimplodebridge.cpp
+- Files touched: `src/notation/internal/notationcomposingbridgehelpers.{h,cpp}`,
+  `src/notation/internal/notationcomposingbridge.cpp`,
+  `src/notation/internal/notationimplodebridge.cpp`
+- Cherry-picked: split (2a to cherry-pick; 2b implode-only)
+- Composing tests: 381/381 pass
+- Notation tests: 51/51 pass
+- Chord mismatch report: unchanged
+- Note: plan's "borrowed-chord path" in implode (~line 1265) turned out to be a
+  key-search loop (find which key contains the chord), not a degree-lookup loop;
+  5 inline loops found and removed as planned
+
+## 2026-04-22 — deduplication iteration 1
+
+- Commit 1a (cherry-pick): `8e26d7c0d9` — keymodeanalyzer.h/cpp, chordanalyzer.cpp,
+  notationcomposingbridge.cpp, notationcomposingbridgehelpers.cpp
+- Commit 1b (do not cherry-pick): `d1c7182776` — notationimplodebridge.cpp
+- Files touched: `src/composing/analysis/key/keymodeanalyzer.{h,cpp}`,
+  `src/composing/analysis/chord/chordanalyzer.cpp`,
+  `src/notation/internal/notationcomposingbridge.cpp`,
+  `src/notation/internal/notationcomposingbridgehelpers.cpp`,
+  `src/notation/internal/notationimplodebridge.cpp`
+- Cherry-picked: split (1a to cherry-pick; 1b implode-only)
+- Composing tests: 381/381 pass
+- Notation tests: 51/51 pass
+- Chord mismatch report: unchanged (total=0 abstract, 135 symbol)
 
 ---
 
