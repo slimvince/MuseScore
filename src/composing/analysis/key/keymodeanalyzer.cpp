@@ -750,6 +750,14 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     return results;
 }
 
+// ── Scale interval accessor ──────────────────────────────────────────────────
+
+const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode)
+{
+    const size_t modeIdx = keyModeIndex(mode);
+    return MODES[modeIdx < MODES.size() ? modeIdx : 0].intervals;
+}
+
 // ── Display helpers ─────────────────────────────────────────────────────────
 
 const char* keyModeTonicName(int fifths, KeySigMode mode)

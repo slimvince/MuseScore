@@ -471,6 +471,13 @@ public:
         std::optional<KeySigMode> declaredMode = std::nullopt);
 };
 
+/// Scale degrees (semitone offsets from tonic) for every mode defined
+/// by KeySigMode. Indexed by keyModeIndex(mode). Size is always 7 even
+/// for modes whose scale has fewer distinct pitch classes — the table
+/// expresses the canonical diatonic mapping used for Roman-numeral
+/// degree lookup.
+const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode);
+
 /// Maps a modal tonic pitch class to the equivalent Ionian tonic that shares
 /// the same key signature.  Defined in keymodeanalyzer.cpp; exposed here so the
 /// intonation module can convert a KeyModeAnalysisResult back to an Ionian tonic
