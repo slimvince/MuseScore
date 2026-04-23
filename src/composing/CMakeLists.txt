@@ -37,6 +37,11 @@ target_sources(composing PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/icomposingconfiguration.h
 )
 
+target_include_directories(composing_analysis INTERFACE
+    ${CMAKE_CURRENT_LIST_DIR}/..
+    ${CMAKE_CURRENT_BINARY_DIR}/..
+)
+
 target_link_libraries(composing PRIVATE
     composing_analysis
     muse_global
