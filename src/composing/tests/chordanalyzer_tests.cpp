@@ -24,30 +24,13 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 
+#include "test_helpers.h"
+
 using namespace mu::composing::analysis;
 
 namespace {
 
 const RuleBasedChordAnalyzer kAnalyzer{};
-
-
-std::vector<ChordAnalysisTone> tones(std::initializer_list<int> pitches)
-{
-    std::vector<ChordAnalysisTone> out;
-    out.reserve(pitches.size());
-
-    bool first = true;
-    for (int p : pitches) {
-        ChordAnalysisTone t;
-        t.pitch  = p;
-        t.weight = 1.0;
-        t.isBass = first;
-        out.push_back(t);
-        first = false;
-    }
-
-    return out;
-}
 
 /// Build tones with explicit TPC data using the test TPC encoding:
 /// F=14, C=15, G=16, D=17, A=18, E=19, B=20; each flat -7, each sharp +7.
@@ -69,44 +52,6 @@ std::vector<ChordAnalysisTone> tonesWithTpc(std::initializer_list<std::pair<int,
     }
 
     return out;
-}
-
-ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
-                                    int rootPc = 0, int bassPc = 0,
-                                    bool hasMin7 = false, bool hasMaj7 = false,
-                                    bool hasDim7 = false, bool hasAdd6 = false,
-                                    int keyTonicPc = 0,
-                                    KeySigMode keyMode = KeySigMode::Ionian)
-{
-    ChordAnalysisResult r;
-    r.function.degree               = degree;
-    r.identity.quality              = quality;
-    r.identity.rootPc               = rootPc;
-    r.identity.bassPc               = bassPc;
-    if (hasMin7) setExtension(r.identity.extensions, Extension::MinorSeventh);
-    if (hasMaj7) setExtension(r.identity.extensions, Extension::MajorSeventh);
-    if (hasDim7) setExtension(r.identity.extensions, Extension::DiminishedSeventh);
-    if (hasAdd6) setExtension(r.identity.extensions, Extension::AddedSixth);
-    r.function.keyTonicPc           = keyTonicPc;
-    r.function.keyMode              = keyMode;
-    return r;
-}
-
-const ChordAnalysisResult* findCandidate(const std::vector<ChordAnalysisResult>& results,
-                                         int rootPc,
-                                         ChordQuality quality,
-                                         bool hasMin7 = false)
-{
-    for (const auto& result : results) {
-        if (result.identity.rootPc != rootPc || result.identity.quality != quality) {
-            continue;
-        }
-        if (hasMin7 && !hasExtension(result.identity.extensions, Extension::MinorSeventh)) {
-            continue;
-        }
-        return &result;
-    }
-    return nullptr;
 }
 
 ChordAnalyzerPreferences bassSupportPrefs()

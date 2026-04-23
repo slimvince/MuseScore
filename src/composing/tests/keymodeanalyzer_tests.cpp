@@ -24,36 +24,9 @@
 
 #include "composing/analysis/key/keymodeanalyzer.h"
 
+#include "test_helpers.h"
+
 using namespace mu::composing::analysis;
-
-// ── Test helpers ─────────────────────────────────────────────────────────────
-
-namespace {
-
-KeyModeAnalyzer::PitchContext makePitch(int pitch, double durationWeight, double beatWeight, bool isBass)
-{
-    KeyModeAnalyzer::PitchContext p;
-    p.pitch          = pitch;
-    p.durationWeight = durationWeight;
-    p.beatWeight     = beatWeight;
-    p.isBass         = isBass;
-    return p;
-}
-
-/// Build a flat pitch list: all notes equal weight, first note is bass.
-std::vector<KeyModeAnalyzer::PitchContext> flatPitches(std::initializer_list<int> midiPitches)
-{
-    std::vector<KeyModeAnalyzer::PitchContext> out;
-    out.reserve(midiPitches.size());
-    bool first = true;
-    for (int p : midiPitches) {
-        out.push_back(makePitch(p, 1.0, 1.0, first));
-        first = false;
-    }
-    return out;
-}
-
-} // namespace
 
 // ── Edge cases ───────────────────────────────────────────────────────────────
 
