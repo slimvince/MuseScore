@@ -62,6 +62,21 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
 
+## 2026-04-23 — deduplication iteration 8 (submission-phase1)
+
+**Split: 2 commits cherry-picked, 8c kept on master only.**
+
+- Commit 8a (`0f4087a532`): `src/composing/tests/test_helpers.h` + consumers.
+  Conflict: submission's composing CMakeLists had `environment.cpp` at the insertion
+  point; resolved by keeping both. Clean.
+- Commit 8b (`6378a276ef`): `src/notation/tests/test_helpers.h` + consumers.
+  Conflict: `notationtuning_tests.cpp` deleted on submission (Phase 4h); git rm'd.
+  Also dropped `chordStaffConfig()` and `IComposingChordStaffConfiguration` include
+  from `test_helpers.h` (interface absent on submission-phase1).
+- Commit 8c: not cherry-picked (implode-only).
+
+**Baselines held:** 323/323 composing, 20/20 notation.
+
 ## 2026-04-23 — deduplication iteration 7
 
 - Commit(s): e1e92858eb (master), b289e0771e (submission-phase1 cherry-pick)
