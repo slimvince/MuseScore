@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication iteration 3)*
+*Last updated: 2026-04-23 (deduplication iteration 8.5)*
 
 ---
 
@@ -61,6 +61,18 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — deduplication iteration 8.5
+
+- Commit(s): f22d71da3d
+- Files touched: `src/notation/tests/notationinteraction_harmony_pinning_tests.cpp` (new), `src/notation/tests/notationtuning_data/harmony_pinning_i_iv_v_i.mscx` (new), `src/notation/tests/CMakeLists.txt`, `REFACTOR_DEDUPLICATION_PLAN.md`
+- Cherry-picked: no (awaiting commit)
+- Composing tests: 381/381 pass
+- Notation tests: 55/55 pass (51 pre-existing + 4 new BehaviorSnapshot tests)
+- Chord mismatch report: unchanged (no production code touched)
+- Note: All 4 new tests pass with hardcoded expected strings. Surprises: none — C/F/G/C chord symbols, I/IV/V/I Roman numerals, 1/4/5/1 Nashville numbers, and F major (rootPc=5) for the rest-path bonus test all matched predictions on first run. Staff 1 (Chord Track Piano) entries appear in the snapshot confirming the chord-track-output-exclusion bug that iter 9 will fix.
+
+---
 
 ## 2026-04-23 — deduplication iteration 3
 
@@ -2505,6 +2517,19 @@ regressions. Both are fixed in this session.
   `4eb5bba6d4` (before our cherry-picks) — no regressions introduced.
 
 ---
+
+## 2026-04-23 — deduplication iteration 4
+
+- Commit: `7781e0ad2e`
+- Files touched: `src/notation/internal/notationtuningbridge.cpp`
+- Cherry-picked: yes (cherry-pick not yet run — pending instruction)
+- Composing tests: 381/381 pass
+- Notation tests: 51/51 pass
+- Chord mismatch report: unchanged (total=0 abstract, 135 symbol)
+- Note: plan spec showed `s_cfg.get().get()` — confirmed correct; GlobalInject::get()
+  returns shared_ptr, second .get() yields raw pointer. Pattern already used at
+  line 78 in preferredTuningSystem(). Sites 2 & 3 used shared_ptr directly
+  (cfg.get() && cfg.get()->method()); converted to raw-pointer idiom (cfg && cfg->method()).
 
 ## 2026-04-22 — deduplication iteration 2
 
