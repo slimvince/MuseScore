@@ -294,4 +294,19 @@ std::vector<PivotLabel> detectPivotChords(
 int diatonicDegreeForRootPc(int rootPc, int keyFifths,
                             mu::composing::analysis::KeySigMode keyMode);
 
+/// Replaces a region's chord result with a fresh analysis using a
+/// display-style ChordTemporalContext at the segment.  Recomputes identity
+/// and all tonal-function fields (keyTonicPc, keyMode, degree, diatonicToKey)
+/// from the new root.  Returns fallbackResult unchanged when tones is empty
+/// or when the fresh analysis yields no candidates.
+mu::composing::analysis::ChordAnalysisResult
+refreshChordResultWithDisplayContext(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Segment* seg,
+    const std::set<size_t>& excludeStaves,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode,
+    const mu::composing::analysis::ChordAnalysisResult& fallbackResult);
+
 } // namespace mu::notation::internal
