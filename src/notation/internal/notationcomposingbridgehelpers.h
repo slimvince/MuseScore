@@ -289,6 +289,11 @@ std::vector<PivotLabel> detectPivotChords(
     const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
     size_t selectionCount);
 
+/// Returns the diatonic scale degree [0..6] of rootPc in (keyFifths, keyMode),
+/// or -1 if rootPc is not in the scale.
+int diatonicDegreeForRootPc(int rootPc, int keyFifths,
+                            mu::composing::analysis::KeySigMode keyMode);
+
 /// Replaces a region's chord result with a fresh analysis using a
 /// display-style ChordTemporalContext at the segment.  Recomputes identity
 /// and all tonal-function fields (keyTonicPc, keyMode, degree, diatonicToKey)

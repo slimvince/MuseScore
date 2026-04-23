@@ -120,20 +120,6 @@ std::optional<std::tuple<mu::composing::analysis::ChordQuality, int, int>> diato
     return std::nullopt;
 }
 
-int diatonicDegreeForRootPc(int rootPc, int keyFifths, mu::composing::analysis::KeySigMode keyMode)
-{
-    const int tonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
-                         + keyModeTonicOffset(keyMode)) % 12;
-    const auto& scale = keyModeScaleIntervals(keyMode);
-    for (size_t i = 0; i < scale.size(); ++i) {
-        if ((tonicPc + scale[i]) % 12 == rootPc) {
-            return static_cast<int>(i);
-        }
-    }
-
-    return -1;
-}
-
 bool tonesFitTriadShape(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
                        int rootPc,
                        int thirdInterval,
@@ -172,6 +158,19 @@ int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnal
 }
 
 } // anonymous namespace
+
+int diatonicDegreeForRootPc(int rootPc, int keyFifths, mu::composing::analysis::KeySigMode keyMode)
+{
+    const int tonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
+                         + mu::composing::analysis::keyModeTonicOffset(keyMode)) % 12;
+    const auto& scale = mu::composing::analysis::keyModeScaleIntervals(keyMode);
+    for (size_t i = 0; i < scale.size(); ++i) {
+        if ((tonicPc + scale[i]) % 12 == rootPc) {
+            return static_cast<int>(i);
+        }
+    }
+    return -1;
+}
 
 void refineSparseChordQualityFromKeyContext(
     mu::composing::analysis::ChordAnalysisResult& result,
@@ -280,18 +279,14 @@ void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::Har
         const int tonicPc = (ionianPc + keyModeTonicOffset(region.keyModeResult.mode)) % 12;
         const auto& scale = keyModeScaleIntervals(region.keyModeResult.mode);
 
-        int degree = -1;
-        for (size_t i = 0; i < scale.size(); ++i) {
-            if ((tonicPc + scale[i]) % 12 == region.chordResult.identity.rootPc) {
-                degree = static_cast<int>(i);
-                break;
-            }
-        }
-        region.chordResult.function.degree = degree;
+        region.chordResult.function.degree = diatonicDegreeForRootPc(
+            region.chordResult.identity.rootPc,
+            region.keyModeResult.keySignatureFifths,
+            region.keyModeResult.mode);
         region.chordResult.function.keyTonicPc = tonicPc;
         region.chordResult.function.keyMode = region.keyModeResult.mode;
 
-        bool diatonic = (degree >= 0);
+        bool diatonic = (region.chordResult.function.degree >= 0);
         if (diatonic) {
             for (const auto& tone : region.tones) {
                 const int pc = tone.pitch % 12;
@@ -1679,13 +1674,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
 
         result.function.keyTonicPc = tonicPc;
         result.function.keyMode = keyMode;
-        result.function.degree = -1;
-        for (size_t degree = 0; degree < scale.size(); ++degree) {
-            if ((tonicPc + scale[degree]) % 12 == result.identity.rootPc) {
-                result.function.degree = static_cast<int>(degree);
-                break;
-            }
-        }
+        result.function.degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
 
         bool diatonicToKey = (result.function.degree >= 0);
         if (diatonicToKey) {
