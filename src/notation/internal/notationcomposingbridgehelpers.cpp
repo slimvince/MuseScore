@@ -722,6 +722,64 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     if (outScore) *outScore = top.score;
 }
 
+struct PedalWindow {
+    int startTick = 0;
+    int endTick = 0;
+};
+
+std::map<size_t, std::vector<PedalWindow>>
+buildPedalWindowIndex(const mu::engraving::Score* sc,
+                      int startTickInt,
+                      int endTickInt,
+                      const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+    const Fraction startTick = Fraction::fromTicks(startTickInt);
+
+    std::map<size_t, std::vector<PedalWindow>> result;
+    for (const auto& spannerEntry : sc->spanner()) {
+        const Spanner* spanner = spannerEntry.second;
+        if (!spanner || spanner->type() != ElementType::PEDAL) {
+            continue;
+        }
+
+        const Pedal* pedal = toPedal(spanner);
+        if (!pedal) {
+            continue;
+        }
+
+        const auto& beginText = pedal->beginText();
+        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
+            continue;
+        }
+
+        const int pedalStartTick = pedal->tick().ticks();
+        const int pedalEndTick = pedal->tick2().ticks();
+        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
+            continue;
+        }
+
+        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
+        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
+            continue;
+        }
+
+        result[staffIdx].push_back({ pedalStartTick, pedalEndTick });
+    }
+
+    for (auto& entry : result) {
+        auto& windows = entry.second;
+        std::sort(windows.begin(), windows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
+            if (lhs.startTick != rhs.startTick) {
+                return lhs.startTick < rhs.startTick;
+            }
+            return lhs.endTick < rhs.endTick;
+        });
+    }
+
+    return result;
+}
+
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTickInt,
@@ -767,11 +825,6 @@ collectRegionTones(const mu::engraving::Score* sc,
     // voiceCountAtTick[pc][segTick] = number of voices playing pc at that tick
     std::map<int, int> voiceCountAtTick[12];
 
-    struct PedalWindow {
-        int startTick = 0;
-        int endTick = 0;
-    };
-
     struct PedalTailCandidate {
         size_t staffIdx = 0;
         int pc = 0;
@@ -781,48 +834,8 @@ collectRegionTones(const mu::engraving::Score* sc,
         double attackBeatWeight = 0.0;
     };
 
-    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
+    std::map<size_t, std::vector<PedalWindow>> pedalWindowsByStaff = buildPedalWindowIndex(sc, startTickInt, endTickInt, excludeStaves);
     std::vector<PedalTailCandidate> pedalTailCandidates;
-
-    for (const auto& spannerEntry : sc->spanner()) {
-        const Spanner* spanner = spannerEntry.second;
-        if (!spanner || spanner->type() != ElementType::PEDAL) {
-            continue;
-        }
-
-        const Pedal* pedal = toPedal(spanner);
-        if (!pedal) {
-            continue;
-        }
-
-        const auto& beginText = pedal->beginText();
-        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
-            continue;
-        }
-
-        const int pedalStartTick = pedal->tick().ticks();
-        const int pedalEndTick = pedal->tick2().ticks();
-        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
-            continue;
-        }
-
-        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
-        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
-            continue;
-        }
-
-        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
-    }
-
-    for (auto& pedalEntry : pedalWindowsByStaff) {
-        auto& windows = pedalEntry.second;
-        std::sort(windows.begin(), windows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
-            if (lhs.startTick != rhs.startTick) {
-                return lhs.startTick < rhs.startTick;
-            }
-            return lhs.endTick < rhs.endTick;
-        });
-    }
 
     auto earliestPedalReleaseTick = [&](const PedalTailCandidate& candidate) -> int {
         const auto it = pedalWindowsByStaff.find(candidate.staffIdx);
@@ -1149,51 +1162,7 @@ detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
     const int endTickInt = endTick.ticks();
     const int windowTicks = Constants::DIVISION;  // 1 quarter note
 
-    struct PedalWindow {
-        int startTick = 0;
-        int endTick = 0;
-    };
-
-    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
-    for (const auto& spannerEntry : sc->spanner()) {
-        const Spanner* spanner = spannerEntry.second;
-        if (!spanner || spanner->type() != ElementType::PEDAL) {
-            continue;
-        }
-
-        const Pedal* pedal = toPedal(spanner);
-        if (!pedal) {
-            continue;
-        }
-
-        const auto& beginText = pedal->beginText();
-        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
-            continue;
-        }
-
-        const int pedalStartTick = pedal->tick().ticks();
-        const int pedalEndTick = pedal->tick2().ticks();
-        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
-            continue;
-        }
-
-        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
-        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
-            continue;
-        }
-
-        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
-    }
-
-    for (auto& pedalEntry : pedalWindowsByStaff) {
-        auto& pedalWindows = pedalEntry.second;
-        std::sort(pedalWindows.begin(), pedalWindows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
-            if (lhs.startTick != rhs.startTick) {
-                return lhs.startTick < rhs.startTick;
-            }
-            return lhs.endTick < rhs.endTick;
-        });
-    }
+    std::map<size_t, std::vector<PedalWindow>> pedalWindowsByStaff = buildPedalWindowIndex(sc, startTickInt, endTickInt, excludeStaves);
 
     auto earliestPedalReleaseTick = [&](size_t staffIdx, int writtenEndTick) -> int {
         const auto it = pedalWindowsByStaff.find(staffIdx);
