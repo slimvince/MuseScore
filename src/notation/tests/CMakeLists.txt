@@ -24,6 +24,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationannotate_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationcomposingbridge_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/notationinteraction_harmony_pinning_tests.cpp
 
     ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.cpp
     ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.h
