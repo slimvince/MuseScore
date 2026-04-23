@@ -62,6 +62,18 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
 
+## 2026-04-23 — deduplication iteration 6
+
+- Commit(s): 4e2ee4cc34 (master), d3fd647247 (submission-phase1 cherry-pick)
+- Files touched: `src/notation/internal/notationcomposingbridgehelpers.h` (add `refreshChordResultWithDisplayContext` + `diatonicDegreeForRootPc` declarations), `src/notation/internal/notationcomposingbridgehelpers.cpp` (add `refreshChordResultWithDisplayContext` definition), `src/notation/internal/notationcomposingbridge.cpp` (remove long replication comment + `chordAnalyzerAnnotation`, replace annotationResult block with helper call)
+- Cherry-picked: yes — d3fd647247 (conflict on helpers.h: submission-phase1 has `diatonicDegreeForRootPc` still in anonymous namespace; suppressed its header declaration on submission-phase1 to avoid ambiguity; helpers.cpp anonymous-namespace version used by the new helper on that branch)
+- Composing tests: 381/381 pass (master); 20/20 pass (submission-phase1, fewer tests on that branch)
+- Notation tests: 55/55 pass (master)
+- Chord mismatch report: unchanged (0 abstract, 135 symbol)
+- Note: Plan step 3 (use helper in window path for `preferredResult`) not applied — `analyzeNoteHarmonicContextRegionallyInWindow` keeps all-candidates structure that does not map cleanly to the single-return helper. Only the annotation write path (step 4) uses the helper. The replication comment at lines 751-763 and the `chordAnalyzerAnnotation` pre-creation are deleted; the annotation block collapses to 3 lines.
+
+---
+
 ## 2026-04-23 — deduplication iteration 5
 
 - Commit(s): 57ae81792b (5a, single commit — no implode sites found)
