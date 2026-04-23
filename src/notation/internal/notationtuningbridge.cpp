@@ -67,15 +67,20 @@ using mu::notation::internal::staffIsEligible;
 
 namespace {
 
+const mu::composing::IComposingAnalysisConfiguration* analysisConfig()
+{
+    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> s_cfg;
+    return s_cfg.get().get();
+}
+
 // Returns the TuningSystem selected in user preferences, falling back to
 // JustIntonation if the preference is unset or refers to an unknown key.
 static const mu::composing::intonation::TuningSystem& preferredTuningSystem()
 {
     using namespace mu::composing::intonation;
-    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
     static const JustIntonation jiFallback;
 
-    const auto* prefs = config.get().get();
+    const auto* prefs = analysisConfig();
     if (prefs) {
         const TuningSystem* sys = TuningRegistry::byKey(prefs->tuningSystemKey());
         if (sys) {
@@ -553,10 +558,10 @@ bool applyTuningAtNote(const mu::engraving::Note* selectedNote,
         keyModeResult.tonicPc = (ionianPc + keyModeTonicOffset(keyMode)) % 12;
     }
 
-    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> cfg;
-    const bool tonicAnchored  = cfg.get() && cfg.get()->tonicAnchoredTuning();
-    const bool minimizeRetune = cfg.get() && cfg.get()->minimizeTuningDeviation();
-    const bool annotateTuning = cfg.get() && cfg.get()->annotateTuningOffsets();
+    const auto* cfg = analysisConfig();
+    const bool tonicAnchored  = cfg && cfg->tonicAnchoredTuning();
+    const bool minimizeRetune = cfg && cfg->minimizeTuningDeviation();
+    const bool annotateTuning = cfg && cfg->annotateTuningOffsets();
 
     static constexpr double kEpsilonCents = 0.5;
 
@@ -766,15 +771,15 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
     const auto& tuningSystem = preferredTuningSystem();
 
-    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> cfg;
-    const bool tonicAnchored       = cfg.get() && cfg.get()->tonicAnchoredTuning();
-    const bool minimizeRetune      = cfg.get() && cfg.get()->minimizeTuningDeviation();
-    const bool annotateTuning      = cfg.get() && cfg.get()->annotateTuningOffsets();
-    const bool annotateDriftBounds = cfg.get() && cfg.get()->annotateDriftAtBoundaries();
-    const bool allowSplitSlurOfSustainedEvents = !cfg.get()
-        || cfg.get()->allowSplitSlurOfSustainedEvents();
-    const auto tuningMode          = cfg.get()
-        ? cfg.get()->tuningMode()
+    const auto* cfg = analysisConfig();
+    const bool tonicAnchored       = cfg && cfg->tonicAnchoredTuning();
+    const bool minimizeRetune      = cfg && cfg->minimizeTuningDeviation();
+    const bool annotateTuning      = cfg && cfg->annotateTuningOffsets();
+    const bool annotateDriftBounds = cfg && cfg->annotateDriftAtBoundaries();
+    const bool allowSplitSlurOfSustainedEvents = !cfg
+        || cfg->allowSplitSlurOfSustainedEvents();
+    const auto tuningMode          = cfg
+        ? cfg->tuningMode()
         : mu::composing::intonation::TuningMode::TonicAnchored;
 
     static constexpr double kEpsilonCents = 0.5;
