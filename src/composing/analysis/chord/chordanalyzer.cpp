@@ -1634,30 +1634,17 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
     const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
 
-    // Mode scale intervals — all seven diatonic modes
-    static constexpr std::array<int, 7> IONIAN_SCALE     = { 0, 2, 4, 5, 7, 9, 11 };
-    static constexpr std::array<int, 7> DORIAN_SCALE      = { 0, 2, 3, 5, 7, 9, 10 };
-    static constexpr std::array<int, 7> PHRYGIAN_SCALE    = { 0, 1, 3, 5, 7, 8, 10 };
-    static constexpr std::array<int, 7> LYDIAN_SCALE      = { 0, 2, 4, 6, 7, 9, 11 };
-    static constexpr std::array<int, 7> MIXOLYDIAN_SCALE  = { 0, 2, 4, 5, 7, 9, 10 };
-    static constexpr std::array<int, 7> AEOLIAN_SCALE     = { 0, 2, 3, 5, 7, 8, 10 };
-    static constexpr std::array<int, 7> LOCRIAN_SCALE     = { 0, 1, 3, 5, 6, 8, 10 };
-
-    static constexpr std::array<const std::array<int, 7>*, 7> MODE_SCALES = {
-        &IONIAN_SCALE, &DORIAN_SCALE, &PHRYGIAN_SCALE, &LYDIAN_SCALE,
-        &MIXOLYDIAN_SCALE, &AEOLIAN_SCALE, &LOCRIAN_SCALE
-    };
     // keyModeIndex() returns the raw enum ordinal (0–20 for all 21 KeySigMode values).
-    // MODE_SCALES only covers the 7 diatonic modes (0–6).  Non-diatonic modes are
-    // mapped to their diatonic key-signature parent so that diatonic-root bonus and
-    // scale-membership scoring stay correct for the parent tonal context.
+    // Non-diatonic modes are mapped to their diatonic key-signature parent so that
+    // diatonic-root bonus and scale-membership scoring stay correct for the parent
+    // tonal context.
     static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
         0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping
         1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents
         5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents
     };
     const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
-    const std::array<int, 7>& scale = *MODE_SCALES[modeScaleIdx];
+    const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));
 
     // Score every root × template combination.
     //
@@ -2105,24 +2092,13 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
     const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
 
-    static constexpr std::array<int, 7> IONIAN_SCALE     = { 0, 2, 4, 5, 7, 9, 11 };
-    static constexpr std::array<int, 7> DORIAN_SCALE      = { 0, 2, 3, 5, 7, 9, 10 };
-    static constexpr std::array<int, 7> PHRYGIAN_SCALE    = { 0, 1, 3, 5, 7, 8, 10 };
-    static constexpr std::array<int, 7> LYDIAN_SCALE      = { 0, 2, 4, 6, 7, 9, 11 };
-    static constexpr std::array<int, 7> MIXOLYDIAN_SCALE  = { 0, 2, 4, 5, 7, 9, 10 };
-    static constexpr std::array<int, 7> AEOLIAN_SCALE     = { 0, 2, 3, 5, 7, 8, 10 };
-    static constexpr std::array<int, 7> LOCRIAN_SCALE     = { 0, 1, 3, 5, 6, 8, 10 };
-    static constexpr std::array<const std::array<int, 7>*, 7> MODE_SCALES = {
-        &IONIAN_SCALE, &DORIAN_SCALE, &PHRYGIAN_SCALE, &LYDIAN_SCALE,
-        &MIXOLYDIAN_SCALE, &AEOLIAN_SCALE, &LOCRIAN_SCALE
-    };
     static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
         0, 1, 2, 3, 4, 5, 6,
         1, 2, 3, 4, 5, 6, 0,
         5, 6, 0, 1, 2, 3, 4
     };
     const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
-    const std::array<int, 7>& scale = *MODE_SCALES[modeScaleIdx];
+    const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));
 
     // ── Score every root × template combination ──────────────────────────────
     diag.candidates.reserve(12 * kDiagTemplates.size());
