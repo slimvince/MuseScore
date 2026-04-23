@@ -58,6 +58,7 @@
 using namespace mu::engraving;
 using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
+using mu::notation::internal::chordTrackExcludeStaves;
 using mu::notation::internal::SoundingNote;
 using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
@@ -619,12 +620,7 @@ NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note*
     const Score* sc = note->score();
     const Fraction tick = note->tick();
 
-    std::set<size_t> excludeStaves;
-    for (size_t si = 0; si < sc->nstaves(); ++si) {
-        if (isChordTrackStaff(sc, si)) {
-            excludeStaves.insert(si);
-        }
-    }
+    std::set<size_t> excludeStaves = chordTrackExcludeStaves(sc);
 
     return analyzeHarmonicContextAtTick(sc, tick, static_cast<size_t>(note->staffIdx()), excludeStaves);
 }
@@ -640,12 +636,7 @@ NoteHarmonicContext analyzeRestHarmonicContextDetails(const mu::engraving::Rest*
         return {};
     }
 
-    std::set<size_t> excludeStaves;
-    for (size_t si = 0; si < sc->nstaves(); ++si) {
-        if (isChordTrackStaff(sc, si)) {
-            excludeStaves.insert(si);
-        }
-    }
+    std::set<size_t> excludeStaves = chordTrackExcludeStaves(sc);
 
     return analyzeHarmonicContextAtTick(sc, rest->tick(), static_cast<size_t>(rest->staffIdx()), excludeStaves);
 }
@@ -693,12 +684,7 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     const staff_idx_t staffLast  = sel.staffEnd(); // exclusive
 
     // Build analysis exclude set: chord track staves contribute symbols, not notes.
-    std::set<size_t> excludeStaves;
-    for (size_t si = 0; si < score->nstaves(); ++si) {
-        if (isChordTrackStaff(score, si)) {
-            excludeStaves.insert(si);
-        }
-    }
+    std::set<size_t> excludeStaves = chordTrackExcludeStaves(score);
 
     // Chord-track priority rule: if any selected staff is a chord track staff,
     // write only to those; otherwise write to all selected staves.

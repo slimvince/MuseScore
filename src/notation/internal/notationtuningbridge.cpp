@@ -64,6 +64,7 @@
 using namespace mu::engraving;
 using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
+using mu::notation::internal::chordTrackExcludeStaves;
 
 namespace {
 
@@ -755,12 +756,7 @@ bool applyRegionTuning(mu::engraving::Score* score,
     }
 
     // Exclude chord staff staves from both analysis and tuning.
-    std::set<size_t> excludeStaves;
-    for (size_t si = 0; si < score->nstaves(); ++si) {
-        if (isChordTrackStaff(score, si)) {
-            excludeStaves.insert(si);
-        }
-    }
+    std::set<size_t> excludeStaves = chordTrackExcludeStaves(score);
 
     // ── Harmonic analysis ────────────────────────────────────────────────────
     const auto regions = analyzeHarmonicRhythm(score, startTick, endTick,
