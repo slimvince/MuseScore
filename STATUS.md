@@ -2535,6 +2535,15 @@ regressions. Both are fixed in this session.
 
 ---
 
+## 2026-04-23 — deduplication iteration 4 (submission-phase1)
+
+Iter 4 (7781e0ad2e): N/A for submission-phase1. Commit refactors
+`notationtuningbridge.cpp`, which was removed in Phase 4h. No cherry-pick
+attempted; no equivalent refactor proposed for remaining submission bridges
+at this time.
+
+---
+
 ## Future Architectural Considerations
 
 - **Bridge file reorganization by musical concept vs mechanism** — revisit when more bridges
