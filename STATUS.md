@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication iteration 8.5)*
+*Last updated: 2026-04-23 (deduplication iteration 5)*
 
 ---
 
@@ -61,6 +61,18 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — deduplication iteration 5
+
+- Commit(s): 57ae81792b (5a, single commit — no implode sites found)
+- Files touched: `src/notation/internal/notationanalysisinternal.h` (add `chordTrackExcludeStaves` helper + `#include <set>`), `src/notation/internal/notationcomposingbridge.cpp` (3 sites replaced), `src/notation/internal/notationtuningbridge.cpp` (1 site replaced)
+- Cherry-picked: pending (submission-phase1 cherry-pick blocked; see Part B conflict note)
+- Composing tests: 381/381 pass
+- Notation tests: 55/55 pass
+- Chord mismatch report: unchanged (0 abstract mismatches)
+- Audit note: Plan listed 3 sites in notationcomposingbridge.cpp — confirmed. Line numbers shifted since plan was written (plan: 655-660, 676-681, 728-734; actual: ~622, ~643, ~696) because `analyzeRestHarmonicContextDetails` was added in session 26. Count still 3+1=4. No implode sites; iter 5 collapses to 5a-only commit as anticipated.
+
+---
 
 ## 2026-04-23 — deduplication iteration 8.5
 
