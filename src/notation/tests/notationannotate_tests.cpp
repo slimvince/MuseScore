@@ -39,6 +39,8 @@
 
 #include "notation/internal/notationcomposingbridgehelpers.h"
 
+#include "test_helpers.h"
+
 using namespace mu::composing::analysis;
 using namespace mu::notation::internal;
 
@@ -50,22 +52,6 @@ namespace {
 constexpr int kQ = 480;
 
 // ── Region construction helpers ──────────────────────────────────────────────
-
-/// Build a ChordAnalysisResult for a diatonic chord in C major (keyFifths=0,
-/// Ionian).  degree: 0=I, 1=ii, 2=iii, 3=IV, 4=V, 5=vi, 6=viio.
-ChordAnalysisResult diatonicResult(int degree, ChordQuality quality)
-{
-    static const int kIonianIntervals[7] = { 0, 2, 4, 5, 7, 9, 11 };
-    ChordAnalysisResult r;
-    r.identity.rootPc = (kIonianIntervals[degree] + 0) % 12; // C major tonic = 0
-    r.identity.bassPc = r.identity.rootPc;
-    r.identity.quality = quality;
-    r.function.degree = degree;
-    r.function.diatonicToKey = true;
-    r.function.keyTonicPc = 0;   // C
-    r.function.keyMode = KeySigMode::Ionian;
-    return r;
-}
 
 /// Build a KeyModeAnalysisResult for a given key/mode and confidence.
 KeyModeAnalysisResult keyResult(int fifths, KeySigMode mode, double confidence)

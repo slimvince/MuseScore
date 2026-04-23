@@ -21,6 +21,7 @@
 set(MODULE_TEST notation_tests)
 
 set(MODULE_TEST_SRC
+    ${CMAKE_CURRENT_LIST_DIR}/test_helpers.h
     ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationannotate_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/notationimplode_tests.cpp

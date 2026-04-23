@@ -25,10 +25,9 @@
 #include <gtest/gtest.h>
 
 #include "global/types/translatablestring.h"
-#include "modularity/ioc.h"
-
-#include "composing/icomposinganalysisconfiguration.h"
 #include "composing/intonation/tuning_system.h"
+
+#include "test_helpers.h"
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/chordrest.h"
@@ -47,11 +46,6 @@ using namespace mu::engraving;
 namespace {
 
 constexpr track_idx_t kTopTrack = 0;
-
-std::shared_ptr<mu::composing::IComposingAnalysisConfiguration> analysisConfig()
-{
-    return muse::modularity::globalIoc()->resolve<mu::composing::IComposingAnalysisConfiguration>("composing");
-}
 
 void configureTuning(mu::composing::intonation::TuningMode mode,
                      bool allowSplitSlurOfSustainedEvents = true)
