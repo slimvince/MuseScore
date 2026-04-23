@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication iteration 5)*
+*Last updated: 2026-04-23 (iter 8 follow-up: retire local analysisConfig() in harmony pinning tests)*
 
 ---
 
@@ -97,6 +97,18 @@ Major7, Minor7, etc.).
 - Notation tests: 55/55 pass
 - Chord mismatch report: unchanged (0 abstract mismatches)
 - Audit note: Plan listed 3 sites in notationcomposingbridge.cpp — confirmed. Line numbers shifted since plan was written (plan: 655-660, 676-681, 728-734; actual: ~622, ~643, ~696) because `analyzeRestHarmonicContextDetails` was added in session 26. Count still 3+1=4. No implode sites; iter 5 collapses to 5a-only commit as anticipated.
+
+---
+
+## 2026-04-23 — iter 8 follow-up: retire local analysisConfig() in harmony pinning tests
+
+- Commit(s): `7632f43f2f` (master), `87d94f339c` (submission-phase1 cherry-pick)
+- Files touched: `src/notation/tests/notationinteraction_harmony_pinning_tests.cpp` only
+- Cherry-picked: yes — applied cleanly, no conflicts
+- Composing tests: 381/381 (master); 323/323 (submission-phase1) — unchanged
+- Notation tests: 55/55 (master); 20/20 (submission-phase1) — all 4 BehaviorSnapshot pinning tests green
+- Diff: 2 insertions (`#include "test_helpers.h"`), 5 deletions (local `analysisConfig()` + blank lines)
+- Note: `analysisConfig()` bodies identical in both files; only difference was `inline` keyword and anonymous-namespace wrapper — both give internal linkage, no semantic difference.
 
 ---
 
