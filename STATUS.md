@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication iteration 8.5 salvage onto submission-phase1)*
+*Last updated: 2026-04-23 (deduplication iteration 6 cherry-pick onto submission-phase1)*
 
 ---
 
@@ -61,6 +61,15 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — deduplication iteration 6 (submission-phase1)
+
+- Commit: d3fd647247
+- Files touched: `notationcomposingbridgehelpers.h` (add `refreshChordResultWithDisplayContext`; `diatonicDegreeForRootPc` NOT declared here — anonymous-namespace version in helpers.cpp used internally), `notationcomposingbridgehelpers.cpp` (add `refreshChordResultWithDisplayContext`), `notationcomposingbridge.cpp` (remove replication comment + `chordAnalyzerAnnotation`, one-line helper call)
+- Cherry-picked from: master 4e2ee4cc34 (conflict resolved manually)
+- Notation tests: 20/20 pass
+
+---
 
 ### Session 26 (2026-04-21)
 
