@@ -2438,4 +2438,34 @@ std::vector<PivotLabel> detectPivotChords(
     return labels;
 }
 
+mu::composing::analysis::ChordAnalysisResult refreshChordResultWithDisplayContext(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Segment* seg,
+    const std::set<size_t>& excludeStaves,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode,
+    const mu::composing::analysis::ChordAnalysisResult& fallbackResult)
+{
+    if (tones.empty()) {
+        return fallbackResult;
+    }
+    const int currentBassPc = fallbackResult.identity.bassPc;
+    const auto displayCtx = findTemporalContext(sc, seg, excludeStaves, keyFifths, keyMode, currentBassPc);
+    const auto fresh = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(
+        tones, keyFifths, keyMode, &displayCtx);
+    if (fresh.empty()) {
+        return fallbackResult;
+    }
+    mu::composing::analysis::ChordAnalysisResult result = fallbackResult;
+    result.identity = fresh.front().identity;
+    const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(keyFifths);
+    const int tonicPc  = (ionianPc + mu::composing::analysis::keyModeTonicOffset(keyMode)) % 12;
+    result.function.keyTonicPc   = tonicPc;
+    result.function.keyMode      = keyMode;
+    result.function.degree       = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
+    result.function.diatonicToKey = (result.function.degree >= 0);
+    return result;
+}
+
 } // namespace mu::notation::internal
