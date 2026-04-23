@@ -35,6 +35,7 @@
 #pragma once
 
 #include <cstddef>
+#include <set>
 #include <vector>
 
 #include "composing/analysis/region/harmonicrhythm.h"
@@ -81,6 +82,20 @@ inline bool staffIsEligible(const mu::engraving::Score* sc, size_t si,
         return false;
     }
     return true;
+}
+
+/// Returns the set of staff indices that are chord-track staves in sc.
+/// These should be excluded from harmonic analysis input but may receive
+/// annotation output (see chord-track priority rule).
+inline std::set<size_t> chordTrackExcludeStaves(const mu::engraving::Score* sc)
+{
+    std::set<size_t> out;
+    for (size_t si = 0; si < sc->nstaves(); ++si) {
+        if (isChordTrackStaff(sc, si)) {
+            out.insert(si);
+        }
+    }
+    return out;
 }
 
 struct HarmonicRegionDebugCapture {
