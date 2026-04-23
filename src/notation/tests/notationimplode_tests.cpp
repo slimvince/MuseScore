@@ -25,10 +25,7 @@
 #include <sstream>
 
 #include "global/types/translatablestring.h"
-#include "modularity/ioc.h"
-
-#include "composing/icomposinganalysisconfiguration.h"
-#include "composing/icomposingchordstaffconfiguration.h"
+#include "test_helpers.h"
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/chordrest.h"
@@ -55,16 +52,6 @@
 using namespace mu::engraving;
 
 namespace {
-
-std::shared_ptr<mu::composing::IComposingAnalysisConfiguration> analysisConfig()
-{
-    return muse::modularity::globalIoc()->resolve<mu::composing::IComposingAnalysisConfiguration>("composing");
-}
-
-std::shared_ptr<mu::composing::IComposingChordStaffConfiguration> chordStaffConfig()
-{
-    return muse::modularity::globalIoc()->resolve<mu::composing::IComposingChordStaffConfiguration>("composing");
-}
 
 void configureChordStaffPopulate()
 {
