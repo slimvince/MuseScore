@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication back-fill audit: iters 1a, 2a, 5 onto submission-phase1; iter 6 re-alignment)*
+*Last updated: 2026-04-23 (iter 8 follow-up: retire local analysisConfig() in harmony pinning tests)*
 
 ---
 
@@ -61,6 +61,18 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — iter 8 follow-up: retire local analysisConfig() in harmony pinning tests
+
+- Commit(s): `7632f43f2f` (master), `87d94f339c` (submission-phase1 cherry-pick)
+- Files touched: `src/notation/tests/notationinteraction_harmony_pinning_tests.cpp` only
+- Cherry-picked: yes — applied cleanly, no conflicts
+- Composing tests: 381/381 (master); 323/323 (submission-phase1) — unchanged
+- Notation tests: 55/55 (master); 20/20 (submission-phase1) — all 4 BehaviorSnapshot pinning tests green
+- Diff: 2 insertions (`#include "test_helpers.h"`), 5 deletions (local `analysisConfig()` + blank lines)
+- Note: `analysisConfig()` bodies identical in both files; only difference was `inline` keyword and anonymous-namespace wrapper — both give internal linkage, no semantic difference.
+
+---
 
 ## 2026-04-23 — deduplication iteration 8 (submission-phase1)
 
