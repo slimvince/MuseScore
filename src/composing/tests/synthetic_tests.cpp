@@ -37,6 +37,8 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 
+#include "test_helpers.h"
+
 using namespace mu::composing::analysis;
 
 // ── Test helpers ─────────────────────────────────────────────────────────────
@@ -44,29 +46,6 @@ using namespace mu::composing::analysis;
 namespace {
 
 const RuleBasedChordAnalyzer kAnalyzer{};
-
-/// Build tones from MIDI pitches (first note = bass).
-template<typename Range>
-std::vector<ChordAnalysisTone> tonesFromRange(const Range& pitches)
-{
-    std::vector<ChordAnalysisTone> out;
-    out.reserve(std::distance(std::begin(pitches), std::end(pitches)));
-    bool first = true;
-    for (int p : pitches) {
-        ChordAnalysisTone t;
-        t.pitch  = p;
-        t.weight = 1.0;
-        t.isBass = first;
-        out.push_back(t);
-        first = false;
-    }
-    return out;
-}
-
-std::vector<ChordAnalysisTone> tones(std::initializer_list<int> pitches)
-{
-    return tonesFromRange(pitches);
-}
 
 /// Analyze and return the best candidate, or empty result on failure.
 ChordAnalysisResult best(const std::vector<ChordAnalysisTone>& t,
