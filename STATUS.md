@@ -62,6 +62,20 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
 
+## 2026-04-23 — deduplication iteration 7
+
+- Commit(s): e1e92858eb (master), b289e0771e (submission-phase1 cherry-pick)
+- Files touched: `src/notation/internal/notationcomposingbridgehelpers.cpp` only (internal refactor)
+- Cherry-picked: yes — applied cleanly, no conflicts
+- Composing tests: 381/381 pass (master); 323/323 pass (submission-phase1)
+- Notation tests: 55/55 pass (master); 20/20 pass (submission-phase1)
+- Chord mismatch report: unchanged (0 abstract, 135 symbol)
+- Filter criteria verified identical before factoring: same PEDAL type check, same sostenuto/soft-pedal exclusion, same tick boundary convention, same `staffIsEligible` call. No parameterization needed.
+- `buildPedalWindowIndex` added at file scope in anonymous namespace (just before `collectRegionTones`); `PedalWindow` struct hoisted alongside it. Net: 60 insertions, 91 deletions.
+- Final line numbers of factored sites: `collectRegionTones` call at line 837; `detectHarmonicBoundariesJaccard` call at line 1165.
+
+---
+
 ## 2026-04-23 — deduplication iteration 6
 
 - Commit(s): 4e2ee4cc34 (master), d3fd647247 (submission-phase1 cherry-pick)
