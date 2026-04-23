@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (deduplication iteration 6 cherry-pick onto submission-phase1)*
+*Last updated: 2026-04-23 (deduplication back-fill audit: iters 1a, 2a, 5 onto submission-phase1; iter 6 re-alignment)*
 
 ---
 
@@ -61,6 +61,26 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-23 — deduplication back-fill audit + iter 1a/2a/5 back-fill + iter 6 re-alignment (submission-phase1)
+
+**Audit findings (pre-back-fill, HEAD 53295bbdca):**
+- Iter 1a (`keyModeScaleIntervals` promotion): MISSING — declaration absent from `keymodeanalyzer.h`; anonymous-namespace copies still live in `notationcomposingbridge.cpp:77` and `notationcomposingbridgehelpers.cpp:84`.
+- Iter 2a (`diatonicDegreeForRootPc` export): MISSING — not declared in `notationcomposingbridgehelpers.h`; still in anonymous namespace at helpers.cpp:151.
+- Iter 3 (`ionianTonicPcFromFifths` in tuning bridge): N/A — `notationtuningbridge.cpp` does not exist on submission-phase1. True no-op.
+- Iter 5 (`chordTrackExcludeStaves` helper): MISSING — not declared in `notationanalysisinternal.h`; 3 inline loops still present at bridge.cpp:655, 676, 729 (4th site gone with tuning bridge).
+- Iter 6 (`refreshChordResultWithDisplayContext`): PRESENT (`d3fd647247`), but with `diatonicDegreeForRootPc` header declaration suppressed (known at time of cherry-pick).
+- Composing test baseline on submission-phase1 is 323 vs master's 381; 58-test gap predates this session and is not a consequence of the refactor back-fills. Flagged for a future audit session to classify (intentional phase-removal vs. missed cherry-pick drift) and close as appropriate.
+
+**Back-fill commits (this session):**
+- Iter 1a back-fill: `e804d53337` — clean cherry-pick of `8e26d7c0d9`; 323/323 composing + 20/20 notation.
+- Iter 2a back-fill: `c077da05e3` — cherry-pick of `bc1a43b25f`; 2 conflicts resolved: bridge.cpp kept HEAD (iter-6 `refreshChordResultWithDisplayContext` call); helpers.h kept both `diatonicDegreeForRootPc` + `refreshChordResultWithDisplayContext` declarations; 323/323 composing + 20/20 notation.
+- Iter 5 back-fill: `6492c06751` — cherry-pick of `57ae81792b`; modify/delete conflict on tuning bridge resolved by `git rm` (branch deleted it); 3 sites replaced in bridge.cpp; 323/323 composing + 20/20 notation.
+- Iter 6 re-alignment: `6b3c0ae4d9` — empty tracking commit; `diatonicDegreeForRootPc` header declaration already restored by iter 2a back-fill conflict resolution; no code change.
+
+**Post-back-fill HEAD:** `6b3c0ae4d9`
+
+---
 
 ## 2026-04-23 — deduplication iteration 6 (submission-phase1)
 
