@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-21 (session 26)*
+*Last updated: 2026-04-23 (deduplication iteration 8.5 salvage onto submission-phase1)*
 
 ---
 
@@ -2532,6 +2532,24 @@ regressions. Both are fixed in this session.
 7. **Automated annotation review tool (post-RFC)**
    `tools/auto_review.py` — design documented, implementation deferred until
    after RFC posting and initial developer response.
+
+---
+
+## 2026-04-23 — deduplication iteration 8.5 (submission-phase1)
+
+- Commit: `e21c64d4c1` (manual salvage of master f22d71da3d)
+- Files touched: `src/notation/tests/notationinteraction_harmony_pinning_tests.cpp` (new),
+  `src/notation/tests/notationcomposing_data/harmony_pinning_i_iv_v_i.mscx` (new; fixture
+  moved to `notationcomposing_data/` — submission data root differs from master),
+  `src/notation/tests/CMakeLists.txt` (hand-merged: added pinning test alongside
+  `notationcomposingbridge_tests.cpp`; dropped implode/tuning entries absent on submission),
+  `src/composing/CMakeLists.txt` (INTERFACE include-dir for IComposingAnalysisConfiguration),
+  `REFACTOR_DEDUPLICATION_PLAN.md` (new; dedup plan document, first commit on this branch)
+- Cherry-picked: manual salvage (not a clean cherry-pick; CMakeLists.txt hand-merged,
+  fixture path adjusted from `notationtuning_data/` → `notationcomposing_data/`)
+- Notation tests: 20/20 pass (16 pre-existing + 4 new BehaviorSnapshot tests)
+- Composing tests: 323/323 pass
+- Chord mismatch report: unchanged (no production code touched)
 
 ---
 
