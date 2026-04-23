@@ -2556,6 +2556,39 @@ regressions. Both are fixed in this session.
 
 ---
 
+## 2026-04-23 — deduplication iteration 8
+
+**Split: 3 commits on master, 2 cherry-picked to submission-phase1.**
+
+- Commit 8a (master `ad6ca33248`, submission `0f4087a532`):
+  New `src/composing/tests/test_helpers.h`. Consumers: `chordanalyzer_tests.cpp`,
+  `synthetic_tests.cpp`, `keymodeanalyzer_tests.cpp`. CMakeLists updated.
+- Commit 8b (master `1a135fefc1`, submission `6378a276ef`):
+  New `src/notation/tests/test_helpers.h`. Consumers: `notationannotate_tests.cpp`,
+  `notationtuning_tests.cpp` (master only — file absent on submission). CMakeLists updated.
+  Submission cherry-pick: dropped `notationtuning_tests.cpp` hunk (file removed in Phase 4h)
+  and dropped `chordStaffConfig()` / `IComposingChordStaffConfiguration` include
+  (interface absent on submission).
+- Commit 8c (master `3799bfe0e3`, submission: **not cherry-picked** — implode-only):
+  Consumer changes in `notationimplode_tests.cpp`.
+
+**Helpers unified vs kept local:**
+- Unified into `composing/tests/test_helpers.h`: `tones`, `tonesFromRange`, `makePitch`,
+  `flatPitches`, `makeRomanResult`, `findCandidate`.
+- Unified into `notation/tests/test_helpers.h`: `analysisConfig`, `chordStaffConfig`
+  (master only), `diatonicResult`.
+- Kept local (genuinely unique):
+  - `tonesWithTpc` — chordanalyzer_tests.cpp only (TPC-encoding contract).
+  - `findToneByPc` — notationimplode_tests.cpp only.
+  - `keyResult`, `region` — notationannotate_tests.cpp only.
+- **Fourth site reported:** `notationinteraction_harmony_pinning_tests.cpp` has a local
+  `analysisConfig()` declaration not mentioned in the plan (file added in iter 8.5).
+  NOT bundled per stop-condition; awaiting decision.
+
+**Baselines held:**
+- Master: 381/381 composing, 55/55 notation, 0 abstract / 135 symbol.
+- Submission-phase1: 323/323 composing, 20/20 notation.
+
 ## 2026-04-23 — deduplication iteration 4
 
 - Commit: `7781e0ad2e`
