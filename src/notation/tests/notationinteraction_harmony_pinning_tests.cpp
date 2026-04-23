@@ -86,15 +86,12 @@
 
 #include "notation/internal/notationcomposingbridge.h"
 
+#include "test_helpers.h"
+
 using namespace mu::engraving;
 using namespace mu::composing::analysis;
 
 namespace {
-
-std::shared_ptr<mu::composing::IComposingAnalysisConfiguration> analysisConfig()
-{
-    return muse::modularity::globalIoc()->resolve<mu::composing::IComposingAnalysisConfiguration>("composing");
-}
 
 void configureAnalysis()
 {
