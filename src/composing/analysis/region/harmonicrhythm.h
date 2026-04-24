@@ -46,11 +46,12 @@ struct HarmonicRegion {
     KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
     std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
 
-    // ── §4.1c Jazz mode fields ──────────────────────────────────────────────
-    /// True when this region was produced by the chord-symbol (jazz) path.
-    /// False (default) when produced by Jaccard or legacy pitch-class detection.
+    // ── Tool-path metadata fields ───────────────────────────────────────────
+    // Production analysis paths never set these (always false / -1).
+    // batch_analyze's analyzeScoreJazz sets them for comparison output.
+    /// True when this region was produced by a chord-symbol-driven tool path.
     bool fromChordSymbol = false;
-    /// Root pitch class (0–11) read directly from the written chord symbol.
+    /// Root pitch class (0–11) read from the written chord symbol.
     /// -1 when fromChordSymbol is false or when the chord symbol had no parseable root.
     int writtenRootPc = -1;
 };

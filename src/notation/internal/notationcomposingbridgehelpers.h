@@ -168,23 +168,6 @@ detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 int minGapTicks = 2 * mu::engraving::Constants::DIVISION);
 
-/// Returns true if any standard chord symbol in [startTick, endTick) has a valid
-/// written root. Roman/Nashville analysis annotations should not activate the jazz path.
-bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
-                               const mu::engraving::Fraction& startTick,
-                               const mu::engraving::Fraction& endTick,
-                               const std::set<size_t>& excludeStaves = {});
-
-/// Collect sorted boundary ticks from standard chord symbols in [startTick, endTick).
-/// The first element is always startTick.  Each subsequent element is the tick of
-/// the first standard chord symbol found on a ChordRest segment strictly after the
-/// previous boundary tick.  Duplicates at the same tick collapse to one entry.
-std::vector<mu::engraving::Fraction>
-collectChordSymbolBoundaries(const mu::engraving::Score* score,
-                             const mu::engraving::Fraction& startTick,
-                             const mu::engraving::Fraction& endTick,
-                             const std::set<size_t>& excludeStaves = {});
-
 /// Find the previous chord's temporal context by walking backward from seg.
 /// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
 /// or -1 if not yet known.  Used to compute bassIsStepwiseFromPrevious.
@@ -217,16 +200,11 @@ void forceChordTrackQualityFromKeyContext(
 /// Build the same user-facing harmonic regions consumed by chord-track population.
 /// Uses smoothed region analysis, fills leading sparse gaps conservatively, and
 /// stabilizes key/mode so Roman numerals remain consistent across display paths.
-///
-/// Pass forceClassicalPath=true to skip the Jazz chord-symbol boundary gate even
-/// when the score contains STANDARD Harmony elements.  Used by the annotation
-/// write path to avoid order-of-annotation violations.
 std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves,
-                                 bool forceClassicalPath = false);
+                                 const std::set<size_t>& excludeStaves);
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 

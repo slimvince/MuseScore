@@ -750,11 +750,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
 
-    // forceClassicalPath=true: prevent chord symbols previously written by this
-    // annotator from triggering the Jazz boundary-detection path in a subsequent
-    // annotation call (order-of-annotation violation fix; see §analyzeHarmonicRhythm).
     const auto allRegions = mu::notation::internal::prepareUserFacingHarmonicRegions(
-        score, startTick, lookaheadEndTick, excludeStaves, /*forceClassicalPath=*/true);
+        score, startTick, lookaheadEndTick, excludeStaves);
 
     if (allRegions.empty()) {
         return;

@@ -524,8 +524,8 @@ struct ChordTemporalContext {
     bool bassIsStepwiseToNext = false;
 
     /// True when the current chord is being analyzed inside a chord-symbol-
-    /// driven region. Retained as a context flag for batch/bridge jazz paths
-    /// and future diagnostics, but no scoring rules currently depend on it.
+    /// driven region. Used by tool paths (batch_analyze analyzeScoreJazz);
+    /// production analysis paths do not set this.
     bool jazzMode = false;
 };
 

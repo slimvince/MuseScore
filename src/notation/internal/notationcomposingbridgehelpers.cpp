@@ -40,7 +40,6 @@
 #include <tuple>
 
 #include "engraving/dom/chord.h"
-#include "engraving/dom/harmony.h"
 #include "engraving/dom/key.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
@@ -1575,8 +1574,7 @@ std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves,
-                                 bool forceClassicalPath)
+                                 const std::set<size_t>& excludeStaves)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -1589,8 +1587,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                                        startTick,
                                                        endTick,
                                                        excludeStaves,
-                                                       mu::notation::HarmonicRegionGranularity::Smoothed,
-                                                       forceClassicalPath);
+                                                       mu::notation::HarmonicRegionGranularity::Smoothed);
     if (regions.empty()) {
         return {};
     }
@@ -2078,74 +2075,6 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
 
     stabilizeHarmonicRegionsForDisplay(displayRegions);
     return displayRegions;
-}
-
-// ── §4.1c Jazz mode — chord-symbol boundary helpers ─────────────────────────
-
-static bool isStandardChordSymbol(const mu::engraving::EngravingItem* annotation)
-{
-    using namespace mu::engraving;
-    if (!annotation || !annotation->isHarmony()) {
-        return false;
-    }
-
-    const Harmony* harmony = toHarmony(annotation);
-    return harmony->harmonyType() == HarmonyType::STANDARD
-           && harmony->rootTpc() != Tpc::TPC_INVALID;
-}
-
-static bool annotationIsOnExcludedStaff(const mu::engraving::EngravingItem* annotation,
-                                        const std::set<size_t>& excludeStaves)
-{
-    if (!annotation) {
-        return false;
-    }
-
-    return excludeStaves.count(static_cast<size_t>(annotation->track() / mu::engraving::VOICES)) > 0;
-}
-
-bool scoreHasValidChordSymbols(const mu::engraving::Score* score,
-                               const mu::engraving::Fraction& startTick,
-                               const mu::engraving::Fraction& endTick,
-                               const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::engraving;
-    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        for (const EngravingItem* ann : s->annotations()) {
-            if (annotationIsOnExcludedStaff(ann, excludeStaves)) {
-                continue;
-            }
-            if (isStandardChordSymbol(ann)) return true;
-        }
-    }
-    return false;
-}
-
-std::vector<mu::engraving::Fraction>
-collectChordSymbolBoundaries(const mu::engraving::Score* score,
-                             const mu::engraving::Fraction& startTick,
-                             const mu::engraving::Fraction& endTick,
-                             const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::engraving;
-    std::vector<Fraction> ticks;
-    ticks.push_back(startTick);
-    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        for (const EngravingItem* ann : s->annotations()) {
-            if (annotationIsOnExcludedStaff(ann, excludeStaves)) {
-                continue;
-            }
-            if (s->tick() > startTick && isStandardChordSymbol(ann)) {
-                ticks.push_back(s->tick());
-                break;  // one boundary per segment tick
-            }
-        }
-    }
-    return ticks;  // already sorted (segment iteration is tick-ordered)
 }
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────

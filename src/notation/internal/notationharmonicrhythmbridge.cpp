@@ -39,9 +39,7 @@
 #include <vector>
 
 #include "engraving/dom/chord.h"
-#include "engraving/dom/harmony.h"
 #include "engraving/dom/masterscore.h"
-#include "engraving/dom/pitchspelling.h"
 #include "engraving/dom/segment.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -62,8 +60,6 @@ using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::isDiatonicStep;
 using mu::notation::internal::distinctPitchClasses;
-using mu::notation::internal::scoreHasValidChordSymbols;
-using mu::notation::internal::collectChordSymbolBoundaries;
 
 namespace mu::notation {
 
@@ -99,137 +95,12 @@ HarmonicRegionDebugCapture* harmonicRegionDebugCapture()
 
 } // namespace internal
 
-/// Notation-side chord-symbol path: use written Harmony elements for region
-/// boundaries (§4.1c Jazz Mode) and run analyzeChord() on the accumulated notes
-/// to determine chord identity.  Written symbols provide comparison metadata
-/// (writtenRootPc, fromChordSymbol) only — they do not substitute the inferrer
-/// output.  See §4.1f for the future opt-in "Authoritative Chord Symbol Mode"
-/// where written symbols are treated as winners.
-static std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythmJazz(
-    const mu::engraving::Score* score,
-    const mu::engraving::Fraction& startTick,
-    const mu::engraving::Fraction& endTick,
-    const std::set<size_t>& excludeStaves,
-    mu::engraving::staff_idx_t refStaff,
-    int initialKeyFifths,
-    mu::composing::analysis::KeySigMode initialKeyMode)
-{
-    using namespace mu::engraving;
-    using namespace mu::composing::analysis;
-
-    (void)initialKeyFifths;
-    (void)initialKeyMode;
-
-    const auto boundaryTicks = collectChordSymbolBoundaries(score, startTick, endTick, excludeStaves);
-    std::optional<KeyModeAnalysisResult> prevKeyResult;
-
-    const auto chordAnalyzer = ChordAnalyzerFactory::create();
-    ChordTemporalContext temporalCtx;
-    temporalCtx.jazzMode = true;
-
-    std::vector<HarmonicRegion> regions;
-    regions.reserve(boundaryTicks.size());
-
-    for (size_t i = 0; i < boundaryTicks.size(); ++i) {
-        const Fraction regionStart = boundaryTicks[i];
-        const Fraction regionEnd   = (i + 1 < boundaryTicks.size())
-                                     ? boundaryTicks[i + 1] : endTick;
-
-        // Find the Harmony annotation at this boundary tick.
-        // Root and quality are stored as comparison metadata only (writtenRootPc,
-        // fromChordSymbol) — they do not substitute the note-based inferrer output.
-        int writtenRootPc  = -1;
-        const Segment* seg = score->tick2segment(regionStart, true, SegmentType::ChordRest);
-        if (seg && seg->tick() == regionStart) {
-            for (const EngravingItem* ann : seg->annotations()) {
-                if (excludeStaves.count(static_cast<size_t>(ann->track() / VOICES)) > 0 || !ann->isHarmony()) {
-                    continue;
-                }
-                const Harmony* h = toHarmony(ann);
-                if (h->harmonyType() != HarmonyType::STANDARD || h->rootTpc() == Tpc::TPC_INVALID) {
-                    continue;
-                }
-                writtenRootPc = tpc2pitch(h->rootTpc()) % 12;
-                break;  // first Harmony at this tick wins (Q2: first staff)
-            }
-        }
-
-        if (writtenRootPc < 0) {
-            // No parseable chord symbol at this boundary — skip region.
-            // (Q3: gaps where no chord symbol exists are currently skipped;
-            // full Jaccard fallback for gap spans is deferred.)
-            continue;
-        }
-
-        // Collect accumulated notes across the region.
-        auto tones = collectRegionTones(score,
-                                        regionStart.ticks(),
-                                        regionEnd.ticks(),
-                                        excludeStaves);
-
-        // Resolve key/mode at this region start.
-        int localKeyFifths = 0;
-        KeySigMode localKeyMode = KeySigMode::Ionian;
-        double localKeyConfidence = 0.0;
-        double localKeyScore = 0.0;
-        resolveKeyAndMode(score, regionStart, refStaff, excludeStaves,
-                          localKeyFifths, localKeyMode, localKeyConfidence,
-                          prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
-                          &localKeyScore);
-
-        // Run note-based chord analysis on the accumulated tones.
-        ChordAnalysisResult chordResult;
-        bool hasAnalyzedChord = false;
-        const auto candidates = chordAnalyzer->analyzeChord(tones, localKeyFifths, localKeyMode, &temporalCtx);
-        if (!candidates.empty()) {
-            chordResult = candidates.front();
-            hasAnalyzedChord = true;
-            temporalCtx.previousRootPc  = chordResult.identity.rootPc;
-            temporalCtx.previousQuality = chordResult.identity.quality;
-            temporalCtx.previousBassPc  = chordResult.identity.bassPc;
-        }
-
-        KeyModeAnalysisResult kmResult;
-        kmResult.keySignatureFifths   = localKeyFifths;
-        kmResult.mode                 = localKeyMode;
-        kmResult.normalizedConfidence = localKeyConfidence;
-        kmResult.score                = localKeyScore;
-        prevKeyResult = kmResult;
-
-        HarmonicRegion region;
-        region.startTick       = regionStart.ticks();
-        region.endTick         = regionEnd.ticks();
-        region.chordResult     = chordResult;
-        region.hasAnalyzedChord = hasAnalyzedChord;
-        region.keyModeResult   = kmResult;
-        region.tones           = std::move(tones);
-        region.fromChordSymbol = true;
-        region.writtenRootPc   = writtenRootPc;
-
-        regions.push_back(std::move(region));
-    }
-
-    backfillNextRootPc(regions);
-
-    if (auto* debugCapture = internal::harmonicRegionDebugCapture()) {
-        if (debugCapture->preMergeRegions) {
-            *debugCapture->preMergeRegions = regions;
-        }
-        if (debugCapture->postMergeRegions) {
-            *debugCapture->postMergeRegions = regions;
-        }
-    }
-
-    return regions;
-}
-
 std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const mu::engraving::Score* score,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     const std::set<size_t>& excludeStaves,
-    HarmonicRegionGranularity granularity,
-    bool forceClassicalPath)
+    HarmonicRegionGranularity granularity)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -266,22 +137,6 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> composingConfig;
     const auto* cfg = composingConfig.get().get();
     const bool useRegional = (cfg == nullptr) || cfg->useRegionalAccumulation();
-
-    // ── §4.1c Jazz detection gate ────────────────────────────────────────────
-    // When the score contains written chord symbols, the jazz path takes priority
-    // for region boundaries only. Chord identity still comes from note-based
-    // analysis within each chord-symbol-defined region.
-    //
-    // The gate is skipped when forceClassicalPath=true.  The annotation write
-    // path (addHarmonicAnnotationsToSelection) sets this to prevent chord symbols
-    // it previously wrote from influencing the Jazz-path boundary detection in
-    // a subsequent annotation call (order-of-annotation violation fix).
-    if (!forceClassicalPath
-            && scoreHasValidChordSymbols(score, startTick, endTick, excludeStaves)) {
-        return analyzeHarmonicRhythmJazz(score, startTick, endTick,
-                                         excludeStaves, refStaff,
-                                         keyFifths, keyMode);
-    }
 
     // Shared helpers used by both code paths.
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
