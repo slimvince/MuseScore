@@ -750,7 +750,7 @@ unchanged.
 | `nextRootPc` | — | Deferred (two-pass only) |
 | `nextBassPc` | — | Deferred (two-pass only) |
 | `bassIsStepwiseToNext` | — | Deferred (two-pass only) |
-| `jazzMode` | Headless jazz path (`batch_analyze`) | ✅ Active for chord-symbol-driven corpus analysis |
+| `jazzMode` | Retired (69716deead) | Removed — no remaining callers after tool-side Jazz path deletion |
 
 `isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline).
 Both bridges (`notationcomposingbridge.cpp` and `notationharmonicrhythmbridge.cpp`) populate
@@ -1031,7 +1031,7 @@ public:
 
 #### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)
 
-**Status: Implemented (2026-04-06).** Bridge: `analyzeHarmonicRhythmJazz()` + `scoreHasChordSymbols()` + `collectChordSymbolBoundaries()` in `notationharmonicrhythmbridge.cpp` / `notationcomposingbridgehelpers.cpp`. Batch: `analyzeScoreJazz()` + `scoreHasChordSymbols()` in `batch_analyze.cpp`. `HarmonicRegion` extended with `fromChordSymbol` and `writtenRootPc`. FiloSax/FiloBass validation unblocked.
+**Status: Retired** — production analysis paths in commit 02e3733afb, tool-side surfaces in 69716deead. Chord symbols are no longer read by any analysis or tool path. See §4.1f for the future per-symbol trust-mode design.
 
 **2026-04-08 follow-up:** Temporary jazz-specific scoring experiments were evaluated
 and then reverted. `ChordTemporalContext::jazzMode` is retained only as a context
@@ -1070,9 +1070,42 @@ Known gap: no freely available corpus of jazz scores with complete written-out b
 and piano voicings has yet been found. This is an open corpus-availability problem,
 not an analyzer design problem.
 
+##### Original problem statement (historical record)
+
+The Jazz mode was motivated by three structural claims about note-based analysis of
+jazz scores:
+
+1. Jazz scores already contain explicit harmonic annotations — the written chord symbols
+   (e.g. `Dm7`, `G7`, `CMaj7`) are useful boundary hints and comparison metadata.
+   They are not the analysis result. Inferring region boundaries from pitch-class
+   Jaccard distance is often redundant and error-prone when explicit chord-symbol
+   boundaries are already present.
+2. Jazz harmony uses voicings where the written root is frequently absent from the
+   sounding notes (shell voicings: root + 3rd + 7th only; rootless voicings). The
+   vertical note-set approach systematically misidentifies these.
+3. Monophonic melodic lines (saxophone, bass) cannot produce the 3 simultaneous pitch
+   classes required by the current 3-PC minimum.
+
+##### Retirement rationale
+
+- **Reason 1 (redundancy)** was a value judgment, not structural. Jaccard boundaries
+  can still be computed; the question is whether symbol-boundary output is *better*
+  than note-boundary output, not whether it is *possible*.
+- **Reason 2 (rootless voicings)** concerned identity, not boundaries, so it does not
+  justify symbol-driven boundaries. The vertical analyzer's identity problem on
+  rootless voicings exists regardless of how regions are delimited.
+- **Reason 3 (monophonic / sparse voicings)** was load-bearing only if identity
+  inference from sparse notes also succeeded — it does not. Boundaries without usable
+  identity produce symbol-echoed output, not analysis.
+- **Core principle:** chord symbols are user-written instructions, not analysis
+  results. Analyzer output is a pure function of notes + key signature + preferences.
+- **Tool-side retirement** (`analyzeScoreJazz`, `--inject-written-root`, `jazzMode`
+  flag) completed the principle — tools may read symbols only to compare against
+  analyzer output produced from notes.
+
 ### §4.1f — Future: Authoritative Chord Symbol Mode
 
-**Status:** Design note only. Not planned for immediate implementation.
+**Status:** Designed, not implemented. No current timeline.
 
 #### Motivation
 
@@ -1092,206 +1125,32 @@ annotate what the composer declared."
 
 #### Design
 
-Add a user preference: `trustWrittenChordSymbols` (bool, default false)
+**Per-symbol trust, not per-score preference.** A per-score toggle is explicitly
+rejected — too coarse-grained, since a single score may contain both trusted
+lead-sheet-style annotations and untrusted draft symbols.
 
-When enabled, written chord symbols are treated as authoritative harmonic
-declarations rather than comparison metadata. The analyzer uses them as strong
-priors or direct answers rather than inferring from notes alone.
+**Storage:** A boolean `trusted` property on the `Harmony` engraving element,
+stored as a new MSCX attribute. Default `false`. Survives save/load roundtrip.
 
-Not all chord symbols in a score need to be authoritative. A per-symbol mechanism
-is needed to distinguish intentional declarations from approximate or placeholder
-annotations.
+**UX:** A context-menu action "Mark symbol as authoritative" toggles the `trusted`
+flag on selected `Harmony` elements. Trusted symbols receive a distinct visual cue
+(color or small icon) to make authority status visible in the score editor.
 
-#### The play/no-play flag as authority marker
-
-MuseScore already exposes a play flag on chord symbols (`Harmony::play()`).
-Currently used to suppress audio playback of chord symbol voicings.
-
-Proposed dual use: when `trustWrittenChordSymbols` is enabled, only chord symbols
-with `play = true` are treated as authoritative. Symbols with `play = false`
-remain comparison metadata only.
-
-This gives the user per-symbol control over which chord symbols the analyzer should
-trust, using an existing UI mechanism that is already accessible in MuseScore's
-Properties panel. No new UI needed.
-
-#### Relationship to current jazz mode
-
-The current §4.1c jazz mode uses chord symbol positions as region boundaries and
-stores written roots as comparison metadata (`writtenRootPc`, `fromChordSymbol`).
-This is correct for as-is analysis and must not change.
-
-The authoritative mode is an additional layer that activates only when
-`trustWrittenChordSymbols` is enabled. Both modes can coexist:
-
-- Boundaries always come from chord symbol positions when chord symbols are present
-- Root identification comes from notes (as-is) or from the symbol (to-be)
-  depending on the preference
+**Analyzer semantics:** Only when a `Harmony` element has `trusted = true` does it
+become boundary AND identity input for the harmonic region it opens. The analyzed
+root and quality are taken from the written symbol, not from note-based inference.
+Untrusted symbols remain comparison metadata only and are never read by the analysis
+pipeline.
 
 #### Diagnostic evidence
 
 The synthetic bass injection experiment (2026-04-08) demonstrated that treating
-written roots as authoritative (injecting the written root as a synthetic bass
-tone) raises Rampageswing agreement from 39.8% to 98.3% and Omnibook from 18.0%
-to 99.9%. This confirms that the authoritative mode would be highly effective when
-the written chord symbols are correct — and shows the risk when they are not.
-
-#### Implementation prerequisites
-
-- `Harmony::play()` accessor must be accessible from the bridge layer (check
-  current availability)
-- `IComposingAnalysisConfiguration::trustWrittenChordSymbols()` preference wired
-  through config → QML
-- Bridge: when trust mode active and symbol has `play=true`, inject written
-  root/quality as primary analysis result rather than running note-based analyzer
-- Validation: run on a curated small ground truth set of jazz standards with
-  verified chord symbols before enabling by default for any preset
-
-##### Problem
-
-The classical §4.1c Jaccard boundary detection is unsuitable for jazz scores because:
-
-1. Jazz scores already contain explicit harmonic annotations — the written chord symbols
-  (e.g. `Dm7`, `G7`, `CMaj7`) are useful boundary hints and comparison metadata.
-  They are not the analysis result. Inferring region boundaries from pitch-class
-  Jaccard distance is often redundant and error-prone when explicit chord-symbol
-  boundaries are already present.
-2. Jazz harmony uses voicings where the written root is frequently absent from the sounding
-   notes (shell voicings: root + 3rd + 7th only; rootless voicings). The vertical note-set
-   approach systematically misidentifies these.
-3. Monophonic melodic lines (saxophone, bass) cannot produce the 3 simultaneous pitch
-   classes required by the current 3-PC minimum.
-
-##### Detection gate
-
-Jazz mode activates automatically when **chord symbols (`Harmony` elements) are present
-in the score**. Detection algorithm:
-
-```cpp
-// In notationharmonicrhythmbridge.cpp (or a new notationjazzrhythmbridge.cpp)
-bool scoreHasChordSymbols(const Score* score,
-                          const Fraction& startTick,
-                          const Fraction& endTick) {
-    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        for (const EngravingItem* ann : s->annotations()) {
-            if (ann->isHarmony()) return true;
-        }
-    }
-    return false;
-}
-```
-
-This is a scan over `segment->annotations()` — O(n_segments). Called once per
-`analyzeHarmonicRhythm()` invocation before the main boundary-detection loop.
-If `true`, the jazz path runs; otherwise the classical Jaccard path runs.
-
-##### Jazz boundary extraction
-
-Instead of Jaccard distance, region boundaries are the ticks of `Harmony` elements.
-Each `Harmony` on a `ChordRest` segment defines a new harmonic region starting at
-that segment's tick and ending at the next `Harmony` tick (or `endTick`).
-
-```cpp
-std::vector<Fraction> collectChordSymbolBoundaries(
-    const Score* score,
-    const Fraction& startTick,
-    const Fraction& endTick)
-{
-    std::vector<Fraction> ticks;
-    ticks.push_back(startTick);
-    for (const Segment* s = score->tick2segment(startTick, true, SegmentType::ChordRest);
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        for (const EngravingItem* ann : s->annotations()) {
-            if (ann->isHarmony() && s->tick() > startTick) {
-                ticks.push_back(s->tick());
-                break;
-            }
-        }
-    }
-    return ticks;  // already sorted
-}
-```
-
-##### Written root as comparison metadata
-
-For jazz regions, the written root pitch class is read from `Harmony::rootTpc()` and
-stored as comparison metadata only. The analyzed root still comes from applying the
-chord analyzer to `collectRegionTones()` within the chord-symbol-defined region.
-
-```cpp
-const Harmony* h = toHarmony(ann);
-int writtenRootPc = tpc2pc(h->rootTpc());
-
-auto tones = collectRegionTones(score, regionStart, regionEnd, excludeStaves);
-auto results = chordAnalyzer->analyzeChord(tones, keyFifths, keyMode, &temporalCtx);
-
-region.chordResult = results.empty() ? ChordAnalysisResult{} : results.front();
-region.writtenRootPc = writtenRootPc;
-region.fromChordSymbol = true;
-```
-
-This keeps the analyzer non-circular: the score's written harmony can be used for
-boundary selection, weak contextual priors, and agreement/disagreement display,
-but it must not be copied back into `chordResult`.
-
-Outside this explicit jazz-mode boundary path, existing Harmony annotations are
-strictly output/comparison metadata. In notation-side status-bar, context-menu,
-and chord-track inference for note-driven workflows, existing Roman, Nashville,
-or standard chord symbols on source staves must never be used as harmonic input
-or even as boundary hints. Those user-facing paths infer from notes only.
-
-##### Integration point
-
-`analyzeHarmonicRhythm()` in `notationharmonicrhythmbridge.cpp` gains a third branch:
-
-```cpp
-const bool hasChordSymbols = scoreHasChordSymbols(score, startTick, endTick);
-
-if (hasChordSymbols) {
-  // §4.
-    return analyzeHarmonicRhythmJazz(score, startTick, endTick, excludeStaves);
-} else if (useRegional) {
-    // §4.1c Classical path — Jaccard boundaries + regional accumulation
-    ...
-} else {
-    // Legacy path — per-tick bitset
-    ...
-}
-```
-
-The jazz path can live in `notationharmonicrhythmbridge.cpp` as a static helper,
-or in a new `notationjazzrhythmbridge.cpp` if it grows large.
-
-##### Files to touch
-
-| File | Change |
-|------|--------|
-| `notationharmonicrhythmbridge.cpp` | Add `scoreHasChordSymbols()`, third branch in `analyzeHarmonicRhythm()` |
-| `notationcomposingbridgehelpers.h/.cpp` | Add `collectChordSymbolBoundaries()` |
-| `engraving/dom/harmony.h` | Read-only — `rootTpc()`, `bassTpc()`, `parsedForm()` |
-| `HarmonicRegion` struct | Add `chordSymbolSource` flag (or keep implicit) |
-| Tests | New `P7_JazzMode` test suite in `synthetic_tests.cpp` |
-
-No changes to `ChordAnalyzer`, `KeyModeAnalyzer`, or any composing-module files.
-The jazz path is entirely in the bridge layer, consistent with principle 2.2.
-
-##### Open questions before implementation
-
-1. **Quality mapping completeness:** The `ParsedChord` kind strings are not fully
-   documented in a single place. Need to enumerate all kinds in `chordlist.xml` and
-   map each to `ChordQuality`. Low risk — `Unknown` is a safe fallback.
-2. **Multi-staff chord symbols:** If chord symbols appear on multiple staves
-   (e.g. piano + chord staff), pick the one on the lowest non-excluded staff at each
-   tick. Duplicates at the same tick collapse to one region.
-3. **Chord symbol gaps:** Some jazz scores have chord symbols only on section starts,
-   not every chord change. The `collectChordSymbolBoundaries()` function already handles
-   this correctly — a region with no chord symbol simply extends from the previous one.
-4. **Interaction with `useRegionalAccumulation`:** The jazz detection gate
-   (`hasChordSymbols`) takes priority over `useRegionalAccumulation`. A score with
-   chord symbols always uses the jazz path, regardless of the preference setting.
+written roots as authoritative (injecting the written root as a synthetic bass tone)
+raises Rampageswing agreement from 39.8% to 98.3% and Omnibook from 18.0% to 99.9%.
+This confirms the authoritative mode would be highly effective when the written chord
+symbols are correct — and shows the risk when they are not. The injection tool
+(`--inject-written-root`) was retired in 69716deead; the experiment data stands as
+calibration evidence.
 
 #### §4.1d Monophonic Chord Inference — Provisional Phased Plan
 
@@ -2575,41 +2434,29 @@ annotations are enabled.
 ### §5.13 Analyze-at-Tick Path Table
 
 Every entry point that runs harmonic analysis against a tick position is listed here.
-Understanding which path each uses is critical for avoiding **order-of-annotation
-violations** — where previously-written chord symbols bias a subsequent analysis
-call by triggering the Jazz boundary-detection gate.
+All analyze-at-tick paths go through a single classical path; there is no Jazz path,
+no path-selection flag, and no symbol reading anywhere in the analysis pipeline.
 
 #### Entry points
 
-| Entry point | File | Caller | forceClassicalPath | Notes |
-|---|---|---|---|---|
-| `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | N/A — single note, no Jazz gate | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeNoteHarmonicContextRegionallyInWindow()`. Uses a bounded expanding window around the note's tick. |
-| `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` | N/A — single note, no Jazz gate | Same regional-window path as above; returns ranked candidates for context menu display. |
-| `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp` | `notationtuningbridge.cpp`, `notationimplodebridge.cpp` | N/A — delegates to `analyzeNoteHarmonicContextRegionallyInWindow` | Tick-level query without a note anchor. Used by intonation (§11) and chord-track writer to re-analyze individual regions. |
-| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Passed through from caller | Time-range scanner. Contains the Jazz gate: if `!forceClassicalPath && scoreHasValidChordSymbols(…)` → Jazz path; else → Classical §4.1c path. |
-| `prepareUserFacingHarmonicRegions(score, start, end, …, forceClassicalPath)` | `notationcomposingbridgehelpers.cpp` | `addHarmonicAnnotationsToSelection()`, `populateChordTrack()` (indirectly via `analyzeHarmonicRhythm`) | Passed through | Thin wrapper: calls `analyzeHarmonicRhythm` then runs gap inference. |
-| `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp` | `notationinteraction.cpp` (menu action) | **Always `true`** | Annotation write path. Hard-codes `forceClassicalPath=true` to prevent previously-written chord symbols from biasing region boundary detection. |
-| `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Not currently passed (calls `analyzeHarmonicRhythm` via `analyzeHarmonicContextAtTick` per region) | Chord track write path. Uses `analyzeHarmonicRhythm` for boundary detection, then re-analyzes each region fresh via `analyzeHarmonicContextAtTick`. |
+| Entry point | File | Caller | Notes |
+|---|---|---|---|
+| `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeNoteHarmonicContextRegionallyInWindow()`. Uses a bounded expanding window around the note's tick. |
+| `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` | Same regional-window path as above; returns ranked candidates for context menu display. |
+| `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp` | `notationtuningbridge.cpp`, `notationimplodebridge.cpp` | Tick-level query without a note anchor. Used by intonation (§11) and chord-track writer to re-analyze individual regions. |
+| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Time-range scanner. Uses Jaccard boundary detection (§4.1c classical path) only — no Jazz path, no symbol reading. |
+| `prepareUserFacingHarmonicRegions(score, start, end, …)` | `notationcomposingbridgehelpers.cpp` | `addHarmonicAnnotationsToSelection()`, `populateChordTrack()` (indirectly via `analyzeHarmonicRhythm`) | Thin wrapper: calls `analyzeHarmonicRhythm` then runs gap inference. |
+| `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp` | `notationinteraction.cpp` (menu action) | Annotation write path. Calls `analyzeHarmonicRhythm` via `prepareUserFacingHarmonicRegions`; no special flags needed — the classical path reads only notes. |
+| `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Chord track write path. Uses `analyzeHarmonicRhythm` for boundary detection, then re-analyzes each region fresh via `analyzeHarmonicContextAtTick`. |
 
-#### Order-of-annotation safety guarantee
+#### Order-of-annotation safety
 
-**Rule:** any path that writes `HarmonyType::STANDARD` chord symbols to the score
-must pass `forceClassicalPath=true` to `analyzeHarmonicRhythm` (directly or via
-`prepareUserFacingHarmonicRegions`), or must not invoke `analyzeHarmonicRhythm` at
-all.
+Because there is no Jazz path and no symbol-reading gate, order of annotation has no
+effect on region boundaries. Writing chord symbols to the score via one path does not
+change what any other path produces from the same notes.
 
-**Violation scenario:** User runs "Annotate → Chord Symbols", then "Annotate →
-Roman Numerals" on the same selection. If `forceClassicalPath=false`, the second
-call detects the STANDARD harmonies written by the first call, activates the Jazz
-boundary path, and produces different region boundaries — causing divergent output
-from a single "Annotate → Both" call.
-
-**Resolution (Session 19):** `addHarmonicAnnotationsToSelection` hard-codes
-`forceClassicalPath=true`. The flag is threaded through:
-`addHarmonicAnnotationsToSelection` →
-`prepareUserFacingHarmonicRegions(forceClassicalPath=true)` →
-`analyzeHarmonicRhythm(forceClassicalPath=true)` →
-Jazz gate skipped.
+The `forceClassicalPath` flag that previously short-circuited Jazz boundary detection
+has been removed (02e3733afb). The classical §4.1c Jaccard path is now the only path.
 
 #### Unknown-quality Roman numeral fallback
 

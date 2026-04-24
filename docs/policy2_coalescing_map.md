@@ -5,6 +5,14 @@ Scope: read-only analysis; no source edits.
 
 ---
 
+## Closed divergences
+
+| Divergence | Closed by | Notes |
+|---|---|---|
+| **B — Jazz-path suppression** (`forceClassicalPath`) | 02e3733afb (production) + 69716deead (tools) | The Jazz path and `forceClassicalPath` flag are deleted. All paths now use the single classical §4.1c Jaccard path; boundary divergence between P2 and P1/P3 on Jazz scores is eliminated by removing the Jazz path entirely. |
+
+---
+
 ## Q1 — The Coalescing Surface
 
 All region merging, gap-filling, and key-smoothing is encapsulated in
@@ -15,20 +23,13 @@ Its internal passes, in execution order:
 
 Delegated to `analyzeHarmonicRhythm(Smoothed)` (`notationharmonicrhythmbridge.cpp`).
 
-**Classical path** (no STANDARD chord symbols):
+**Classical path** (single path — no Jazz path, no `forceClassicalPath` flag):
 
 | Function | Location | Role |
 |---|---|---|
 | `detectHarmonicBoundariesJaccard` | `notationcomposingbridgehelpers.cpp` | Jaccard distance on 1-quarter-note windows; fires boundary when ≥ threshold |
 | `detectOnsetSubBoundaries` | `notationcomposingbridgehelpers.cpp` | Onset-only Jaccard within each coarse region; threshold 0.25 |
 | `detectBassMovementSubBoundaries` | `notationcomposingbridgehelpers.cpp` | Fires sub-boundary on any bass PC change ≥ `minGapTicks` |
-
-**Jazz path** (score has STANDARD chord symbols AND `forceClassicalPath=false`):
-
-| Function | Location | Role |
-|---|---|---|
-| `collectChordSymbolBoundaries` | `notationcomposingbridgehelpers.cpp` | Boundaries taken from existing STANDARD harmony ticks instead of Jaccard/onset |
-| `scoreHasValidChordSymbols` | `notationcomposingbridgehelpers.cpp` | Gate predicate for the Jazz path |
 
 ### Pass 1 — Gap-tone region insertion
 
@@ -83,14 +84,14 @@ via `analyzeNoteHarmonicContext` → `analyzeNoteHarmonicContextDetails` →
 | Pass 0 — Jaccard boundary detection | ✓ | ✓ | ✓ | — |
 | Pass 0 — Onset sub-boundaries | ✓ | ✓ | ✓ | — |
 | Pass 0 — Bass-movement sub-boundaries | ✓ | ✓ | ✓ | — |
-| Pass 0 — Jazz path (`collectChordSymbolBoundaries`) | ✓ | **suppressed** | ✓ | — |
+| Pass 0 — Jazz path (`collectChordSymbolBoundaries`) | ~~retired~~ | ~~retired~~ | ~~retired~~ | — |
 | Pass 1 — `inferGapRegion` / `analyzeGapWithContext` | ✓ | ✓ | ✓ | — |
 | Pass 1 — `regionSupportsGapTones` / `inferSparseGapChord` | ✓ | ✓ | ✓ | — |
 | Pass 2 — same-chord merge (`appendMeasureRegion`) | ✓ | ✓ | ✓ | — |
 | Pass 3 — measure-opening carry | ✓ | ✓ | ✓ | — |
 | Pass 4 — key/mode stabilization | ✓ | ✓ | ✓ | — |
 | `minimumDisplayDurationBeats` filter | — | ✓ | — | — |
-| `forceClassicalPath=true` | — | ✓ | — | — |
+| `forceClassicalPath=true` | ~~retired~~ | ~~retired~~ | ~~retired~~ | — |
 | Post-region display re-analysis (`collectRegionTones` + `analyzeChord` re-run) | — | — | ✓ | — |
 | `collectSoundingAt` (4-beat backward sweep) | — | — | — | ✓ |
 | `resolveKeyAndMode` with hysteresis | — | — | — | ✓ |
@@ -118,21 +119,19 @@ The tuning bridge also calls it directly.
 
 ---
 
-### Divergence B — Annotation Jazz-path suppression (P2 vs. P1/P3 on Jazz scores)
+### Divergence B — Annotation Jazz-path suppression (**CLOSED**)
 
-**What differs:** P2 passes `forceClassicalPath=true`, forcing Jaccard boundaries
-even when the score contains STANDARD chord symbols.  P1 and P3 use the default
-`forceClassicalPath=false`, so on a Jazz score they take chord-symbol boundaries.
+**Closed by:** 02e3733afb (production Jazz path retired) + 69716deead (tool-side
+cleanup). The Jazz boundary path (`collectChordSymbolBoundaries`,
+`scoreHasValidChordSymbols`) and `forceClassicalPath` flag have been deleted.
+All paths — P1, P2, P3 — now use the single §4.1c Jaccard classical path.
 
-**Effect:** On a score with existing STANDARD harmony elements, the annotation
-written by P2 may carve regions at different ticks than the status-bar tooltip
-(P3) or an implode operation (P1) shows.  The annotation then *becomes* the
-chord symbols that P1/P3 would use as Jazz boundaries in subsequent calls —
-but P2 still ignores them on its next run.
-
-**Rationale:** `forceClassicalPath=true` prevents an order-of-annotation
-violation where chord symbols written earlier in the same command invocation
-shift boundaries for later annotations.
+**Historical summary:** P2 previously passed `forceClassicalPath=true` to force
+Jaccard boundaries even when the score contained STANDARD chord symbols, while P1
+and P3 defaulted to `forceClassicalPath=false` and would take chord-symbol
+boundaries on Jazz scores. This caused boundary divergence between annotation and
+implode/status-bar on any score with existing chord symbols. The fix was not to
+unify the flag, but to retire the Jazz path entirely.
 
 ---
 
@@ -173,21 +172,22 @@ and what P2 annotated.
 ```
                        P1 Implode  P2 Annotation  P3 Tick-regional  P4 Tick-local
 prepareUserFacing          ✓            ✓               ✓               —
-forceClassicalPath         no           YES             no              —
+forceClassicalPath         retired      retired         retired         —
 minimumDuration gate       —            ✓               —               —
 display re-analysis        —            —               ✓               —
 tick-local fallback        —            —               —               ✓
 ```
 
-**Three live divergences** exist between paths that share `prepareUserFacingHarmonicRegions`:
+**Two live divergences** remain between paths that share `prepareUserFacingHarmonicRegions`:
 
-- **B** (Jazz-path suppression) causes different region boundaries between
-  annotation and implode/status-bar on Jazz scores.
 - **C** (duration gate) causes annotation to silently drop sub-beat regions that
   implode and status-bar expose.
 - **D** (display re-analysis) means status-bar temporal-context fields can differ
   from annotation output even when the top-level chord identity matches.
 
-**Highest priority:** Divergence B — on Jazz scores the annotation writes different
-Roman numerals than the status-bar shows for the same tick.  A unified boundary
-source (shared pre-computed regions passed to all callers) would resolve B, C, and D.
+Divergence B (Jazz-path suppression) is **closed** — the Jazz path and
+`forceClassicalPath` flag were deleted in 02e3733afb + 69716deead. All paths now
+share the single classical §4.1c boundary detection.
+
+**Highest priority:** Divergence C/D — a unified boundary source (shared
+pre-computed regions passed to all callers) would resolve both.

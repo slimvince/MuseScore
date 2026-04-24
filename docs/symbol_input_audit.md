@@ -338,3 +338,9 @@ it slightly simplifies the API surface. If C.1 is accepted, keeping the
 flag (as documentation that the tool path is intentionally jazz-mode)
 is harmless. If C.1 is retired, the flag's only write site disappears
 and it becomes truly orphaned.
+
+---
+
+**Status:** All Category-C findings resolved in 69716deead (`analyzeScoreJazz`,
+`--inject-written-root`, `jazzMode` field deleted). Category A remained at zero
+throughout. Audit actionable items complete.
