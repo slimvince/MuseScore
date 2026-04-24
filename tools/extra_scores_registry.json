@@ -448,14 +448,6 @@
       "ground_truth": false
     },
     {
-      "path": "tools/extra scores/keith-jarret-the-koln-concert-part-iic-keith-jarret (1).mscz",
-      "title": "The Köln Concert, Part IIc (duplicate file)",
-      "composer": "Keith Jarrett",
-      "preset": "Jazz",
-      "style": "piano-transcription",
-      "ground_truth": false
-    },
-    {
       "path": "tools/extra scores/keith-jarret-the-koln-concert-part-iic-keith-jarret.mscz",
       "title": "The Köln Concert Part IIc (Keith Jarrett)",
       "composer": "Keith Jarrett",
@@ -472,14 +464,6 @@
       "style": "piano-transcription",
       "ground_truth": false,
       "notes": "81 regions, 9 roots, 2 keys"
-    },
-    {
-      "path": "tools/extra scores/like-someone-in-love-bill-evans (1).mscz",
-      "title": "Like Someone in Love (Bill Evans, v1)",
-      "composer": "Jimmy Van Heusen",
-      "preset": "Jazz",
-      "style": "piano-transcription",
-      "ground_truth": false
     },
     {
       "path": "tools/extra scores/like-someone-in-love-bill-evans.mscz",
@@ -534,14 +518,6 @@
       "path": "tools/extra scores/my-favorite-things-mccoy-tyners-solo-from-grant-green-matador-album.mscz",
       "title": "My Favorite Things (McCoy Tyner solo, Matador album)",
       "composer": "Richard Rodgers",
-      "preset": "Jazz",
-      "style": "piano-transcription",
-      "ground_truth": false
-    },
-    {
-      "path": "tools/extra scores/my-foolish-heart-bill-evans-head-coda-transcription (1).mscz",
-      "title": "My Foolish Heart (Bill Evans head/coda, v2)",
-      "composer": "Victor Young",
       "preset": "Jazz",
       "style": "piano-transcription",
       "ground_truth": false
@@ -1125,6 +1101,66 @@
       "style": "jazz",
       "ground_truth": false,
       "notes": "Low value: 3 regions"
+    }
+  ],
+  "snarkypuppy": [
+    {
+      "path": "tools/extra scores/hit-me-dirty-loops.mscz",
+      "title": "Hit Me (Dirty Loops arr.)",
+      "composer": "Snarky Puppy / Dirty Loops",
+      "preset": "Jazz",
+      "style": "fusion",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/snarky-puppy-lingus-big-band-arrangement.mscz",
+      "title": "Lingus (big band arr.)",
+      "composer": "Snarky Puppy",
+      "preset": "Jazz",
+      "style": "big-band",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/snarky-puppy-shofukan-for-concert-band.mscz",
+      "title": "Shofukan (concert band arr.)",
+      "composer": "Snarky Puppy",
+      "preset": "Jazz",
+      "style": "concert-band",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/kite-snarky-puppy.mscz",
+      "title": "Kite",
+      "composer": "Snarky Puppy",
+      "preset": "Jazz",
+      "style": "fusion",
+      "ground_truth": false,
+      "notes": "Small file (~10KB) — may be thin/partial"
+    },
+    {
+      "path": "tools/extra scores/liquid-love-chris-turner-and-snarky-puppy.mscz",
+      "title": "Liquid Love (Chris Turner & Snarky Puppy)",
+      "composer": "Chris Turner",
+      "preset": "Jazz",
+      "style": "fusion",
+      "ground_truth": false
+    },
+    {
+      "path": "tools/extra scores/snarky-puppy-semente-work-in-progress.mscz",
+      "title": "Semente (work-in-progress transcription)",
+      "composer": "Snarky Puppy",
+      "preset": "Jazz",
+      "style": "fusion",
+      "ground_truth": false,
+      "notes": "Work-in-progress — may be incomplete"
+    },
+    {
+      "path": "tools/extra scores/what-about-me-snarky-puppy.mscz",
+      "title": "What About Me?",
+      "composer": "Snarky Puppy",
+      "preset": "Jazz",
+      "style": "fusion",
+      "ground_truth": false
     }
   ]
 }
