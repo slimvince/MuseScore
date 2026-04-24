@@ -568,32 +568,46 @@ numerals / Nashville numbers" per-note action.
 
 ---
 
-## Iteration 10 — STOP — REQUIRES USER APPROVAL
+## Iteration 10 — Unify implode cadence detection and pivot helper
 
-**Title.** Reconcile implode's cadence / pivot logic with
-`detectCadences` / `detectPivotChords`.
+**Commits:** `6e1ab4b700` (Commit A, master + cherry-picked to submission-phase1),
+`2c9d3f2f30` (Commit B, master-only — implode not on submission-phase1)
 
-**Why this needs approval.** Implode has already diverged from the shared
-helpers. Reconciling is behavioral work that will shift cadence labels in
-chord-track output. Catalog-grade changes are not pre-authorized.
+**Files touched:**
+- Commit A: `src/notation/internal/notationcomposingbridgehelpers.cpp`
+- Commit B: `src/notation/internal/notationimplodebridge.cpp`,
+  `src/notation/tests/notationimplode_tests.cpp`
 
-**Before starting, post to user:**
-1. Run this diff exercise on a representative score (Dvořák op08n06 or
-   BWV 227.7): generate the chord-track annotations with the current
-   inline cadence logic, then with `detectCadences`. Report label deltas
-   per measure.
-2. Propose one of:
-   - **(a) Adopt the shared helpers** — accept any label changes, update
-     any tests that codify the old labels, commit.
-   - **(b) Keep implode's version and rename it** — e.g. rename the inline
-     logic to `classifyChordStaffCadence` with a comment explaining why it
-     differs from `detectCadences`. No sharing, but the divergence becomes
-     explicit and no one is tempted to reconcile them silently.
-3. Ask the user which.
+**Decision 1a — confidence gate.** `supportsAssertiveKeyExposure` (implodebridge.cpp,
+threshold 0.8) is byte-identical to `hasAssertiveKeyConfidence` (bridgehelpers.h).
+Retired the implode-local function; added `using mu::notation::internal::hasAssertiveKeyConfidence`
+and replaced the 3 external call sites (original lines 194, 252, 863).
+`kAssertiveKeyExposureThreshold` retained — `keyExposureBucket()` still references it.
+The 3 call sites inside the cadence block (lines 1287, 1288, 1338) vanish with Decision 3c.
 
-**Do not proceed** until the user picks.
+**Decision 2 — pivot helper (Commit A).** The 12-line `semisFromNewTonic`/`newScalePcs`
+loop in `detectPivotChords` is replaced by `diatonicDegreeForRootPc(prev.identity.rootPc,
+tr.newFifths, tr.newMode)`. Behavior-identical; `newScale`, `newScalePcs`, and the
+`semisFromNewTonic` local are removed. `newTonicPc` is retained for
+`pivotInNew.function.keyTonicPc`.
 
-**Cherry-pick: no (implode-only).**
+**Decision 3c — cadence routing (Commit B).** The inline PAC/PC/DC/HC block
+(lines 1277–1350) is replaced by a `detectCadences(regions, regions.size())` call.
+`selectionCount == regions.size()` means no lookahead — HC dedup in `detectCadences`
+cannot trigger on this call shape, so the refactor is structurally behavior-preserving
+on the chord-track path.
+
+**Decision 4-defer — HC dedup pinning test.** The HC dedup behavioral edge case
+(last-region tick coincides with a PAC resolution tick) was deferred. Constructing
+a reliable synthetic fixture for this collision requires a score where the confidence
+analysis reliably puts the final region in both the dominant (HC candidate) and
+resolution (PAC candidate) positions at the same tick. Two tests added instead:
+cadence smoke (`PopulateChordTrackEmitsCadenceMarkersOnCorelli`) and preference gate
+(`PopulateChordTrackCadenceMarkersGatedByPreference`).
+
+**Test counts:** composing 381 → 381, notation 55 → 57 (both branches).
+
+**Cherry-pick:** Commit A only.
 
 ---
 

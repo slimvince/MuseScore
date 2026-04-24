@@ -102,7 +102,7 @@ Major7, Minor7, etc.).
 
 ## 2026-04-24 — deduplication iteration 10
 
-- Commit(s): Commit A `6e1ab4b700` (master); Commit B — see below
+- Commit(s): Commit A `6e1ab4b700`, Commit B `2c9d3f2f30` (both on master)
 - Files touched:
   - **Commit A** (cherry-pickable): `src/notation/internal/notationcomposingbridgehelpers.cpp` — replace inline scale search in `detectPivotChords` with `diatonicDegreeForRootPc()` (12-line block → 2 lines)
   - **Commit B** (implode-only): `src/notation/internal/notationimplodebridge.cpp` (retire `supportsAssertiveKeyExposure`; route cadence block through `detectCadences`); `src/notation/tests/notationimplode_tests.cpp` (new cadence smoke + preference-gate tests)
