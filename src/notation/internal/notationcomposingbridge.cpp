@@ -67,7 +67,6 @@ using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::scoreNoteSpelling;
 using mu::notation::internal::detectCadences;
 using mu::notation::internal::detectPivotChords;
-using mu::notation::internal::refreshChordResultWithDisplayContext;
 
 namespace {
 
@@ -792,9 +791,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         const int keyFifths = region.keyModeResult.keySignatureFifths;
         const auto keyMode   = region.keyModeResult.mode;
 
-        const mu::composing::analysis::ChordAnalysisResult annotationResult
-            = refreshChordResultWithDisplayContext(
-                score, seg, excludeStaves, region.tones, keyFifths, keyMode, region.chordResult);
+        const mu::composing::analysis::ChordAnalysisResult& annotationResult
+            = region.chordResult;
 
         const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, keyFifths);
         const std::string symText = writeChordSymbols ? fmt.symbol : "";
