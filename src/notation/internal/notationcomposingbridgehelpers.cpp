@@ -2311,14 +2311,9 @@ std::vector<PivotLabel> detectPivotChords(
             continue;  // new key not confirmed — suppress pivot to avoid false positive
         }
 
-        // Build the incoming key's scale pitch-class set.
+        // Build the incoming key's tonic pitch class (still needed for keyTonicPc).
         const int newIonianPc = ionianTonicPcFromFifths(tr.newFifths);
         const int newTonicPc  = (newIonianPc + keyModeTonicOffset(tr.newMode)) % 12;
-        const auto& newScale  = keyModeScaleIntervals(tr.newMode);
-        bool newScalePcs[12]  = {};
-        for (int iv : newScale) {
-            newScalePcs[(newTonicPc + iv) % 12] = true;
-        }
 
         // Walk backward from the boundary through the in-selection regions,
         // looking for the first chord that is:
@@ -2332,7 +2327,7 @@ std::vector<PivotLabel> detectPivotChords(
             if (prev.function.degree < 0) {
                 continue;  // not diatonic to outgoing key
             }
-            if (!newScalePcs[prev.identity.rootPc]) {
+            if (diatonicDegreeForRootPc(prev.identity.rootPc, tr.newFifths, tr.newMode) < 0) {
                 continue;  // root not in incoming scale
             }
 
@@ -2341,18 +2336,11 @@ std::vector<PivotLabel> detectPivotChords(
 
             // Compute the degree in the incoming key.
             ChordAnalysisResult pivotInNew = prev;
-            const int semisFromNewTonic =
-                ((prev.identity.rootPc - newTonicPc) % 12 + 12) % 12;
-            pivotInNew.function.degree    = -1;
+            pivotInNew.function.degree = diatonicDegreeForRootPc(
+                prev.identity.rootPc, tr.newFifths, tr.newMode);
+            pivotInNew.function.diatonicToKey = (pivotInNew.function.degree >= 0);
             pivotInNew.function.keyTonicPc = newTonicPc;
             pivotInNew.function.keyMode    = tr.newMode;
-            for (int d = 0; d < 7; ++d) {
-                if (newScale[d] == semisFromNewTonic) {
-                    pivotInNew.function.degree       = d;
-                    pivotInNew.function.diatonicToKey = true;
-                    break;
-                }
-            }
             const std::string newRoman = ChordSymbolFormatter::formatRomanNumeral(pivotInNew);
 
             if (!oldRoman.empty() && !newRoman.empty()) {
