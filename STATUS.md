@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-23 (iter 8 follow-up: retire local analysisConfig() in harmony pinning tests)*
+*Last updated: 2026-04-24 (deduplication iteration 9)*
 
 ---
 
@@ -97,6 +97,25 @@ Major7, Minor7, etc.).
 - Notation tests: 55/55 pass
 - Chord mismatch report: unchanged (0 abstract mismatches)
 - Audit note: Plan listed 3 sites in notationcomposingbridge.cpp — confirmed. Line numbers shifted since plan was written (plan: 655-660, 676-681, 728-734; actual: ~622, ~643, ~696) because `analyzeRestHarmonicContextDetails` was added in session 26. Count still 3+1=4. No implode sites; iter 5 collapses to 5a-only commit as anticipated.
+
+---
+
+## 2026-04-24 — deduplication iteration 9
+
+- Commit(s): `062cc59d1e` (master), `0bf75c2901` (submission-phase1 cherry-pick)
+- Files touched: `src/notation/internal/notationcomposingbridge.h` (FormattedChordResult struct + formatChordResultForStatusBar + chordTrackExcludeStaves declarations), `src/notation/internal/notationcomposingbridge.cpp` (implementations + annotation path routed through helper), `src/notation/internal/notationinteraction.cpp` (per-note path routed through helper + chord-track exclusion added), `src/notation/tests/notationinteraction_harmony_pinning_tests.cpp` (pinning test assertions flipped + helper updated)
+- Cherry-picked: yes — applied cleanly, no conflicts
+- Composing tests: 381/381 pass (master); 323/323 pass (submission-phase1)
+- Notation tests: 55/55 pass (master); 20/20 pass (submission-phase1)
+- Chord mismatch report: unchanged (0 abstract, 135 symbol)
+- Behavior changes introduced:
+  - **Bug 1 — chord-track-staff exclusion**: `addAnalyzedHarmonyToSelection` now skips chord-track staves in the output loop via `chordTrackExcludeStaves(sc)`. Previously it wrote harmony annotations onto chord-track staff 1 entries.
+  - **Bug 2 — scoreNoteSpelling honored**: per-note path now routes through `formatChordResultForStatusBar` which passes `ChordSymbolFormatter::Options{scoreNoteSpelling(sc)}` to `formatSymbol`. Previously called `formatSymbol(top, keyFifths)` with no Options, always using Standard spelling.
+  - **Bug 3 — single formatter**: both the region annotation path (`addHarmonicAnnotationsToSelection`) and per-note path now share `formatChordResultForStatusBar`. No behavior change for the region path (it already used fmtOpts); only the per-note path changes observably.
+- Pinning test assertion flip: **7 → 4** (three BehaviorSnapshot tests each had 7 rows — 4 staff-0 + 3 staff-1 chord-track entries — now 4 rows staff-0 only, exactly "previous minus 3 chord-track-staff entries" as predicted). `BehaviorSnapshot_RestContext` unchanged.
+- Deliberate divergence: per-note path retains **no minimum-duration gate**. The user clicked a specific note; a result is the correct UX regardless of duration. Annotated with a comment in `notationinteraction.cpp`.
+- scoreNoteSpelling confirmation: the per-note formatter now calls `scoreNoteSpelling(sc)` via `formatChordResultForStatusBar`, which is defined in the bridge and has full access to the IoC configuration and Score pointer. No stop condition triggered.
+- notationinteraction.cpp flags: file is cleanly modifiable. The only unusual aspect is that `mu::notation::chordTrackExcludeStaves` is called via the bridge's public API (rather than including `notationanalysisinternal.h` directly), respecting the internal-only scope policy.
 
 ---
 
