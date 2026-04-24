@@ -21,7 +21,14 @@ ninja_build/
 msvc.build/
 ninja_build_rel/
 xxx ninja_build/
-tools
+/tools/dcml/
+/tools/reports/
+/tools/corpus/
+/tools/corpus_*/
+/tools/bach_path3fix_*/
+/tools/validation_*/
+/tools/pdmx/
+/tools/tools/
 Testing/Temporary/
 win32build
 win32install

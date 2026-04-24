@@ -1,0 +1,44 @@
+{
+  "source": "score.mxl",
+  "preset": "Standard",
+  "detectedKey": "Cmaj",
+  "keyConfidence": 0.975397,
+  "regions": [
+    {
+      "measureNumber": 35,
+      "beat": 1,
+      "startTick": 65280,
+      "endTick": 67200,
+      "duration": 4,
+      "rootPitchClass": 0,
+      "quality": "Major",
+      "chordSymbol": "C",
+      "romanNumeral": "I",
+      "chordScore": 8.95,
+      "chordScoreMargin": 0,
+      "key": "Cmaj",
+      "keyConfidence": 0.862781,
+      "keyModeRunnerUp": {"key": "Emin", "confidence": 0.209841},
+      "pitchClassSet": 145,
+      "bassPitchClass": 0,
+      "bassIsRoot": true,
+      "noteCount": 3,
+      "diatonicToKey": true,
+      "hasAnalyzedChord": true,
+      "fromChordSymbol": false,
+      "writtenRootPc": -1,
+      "writtenQuality": "Unknown",
+      "tones": [
+        {"pitch": 64, "tpc": 18, "weight": 1, "isBass": false, "durationInRegion": 0, "distinctMetricPositions": 0, "simultaneousVoiceCount": 0},
+        {"pitch": 67, "tpc": 15, "weight": 1, "isBass": false, "durationInRegion": 0, "distinctMetricPositions": 0, "simultaneousVoiceCount": 0},
+        {"pitch": 72, "tpc": 14, "weight": 1, "isBass": false, "durationInRegion": 0, "distinctMetricPositions": 0, "simultaneousVoiceCount": 0},
+        {"pitch": 48, "tpc": 14, "weight": 1, "isBass": false, "durationInRegion": 0, "distinctMetricPositions": 0, "simultaneousVoiceCount": 0},
+        {"pitch": 36, "tpc": 14, "weight": 1, "isBass": true, "durationInRegion": 0, "distinctMetricPositions": 0, "simultaneousVoiceCount": 0}
+      ],
+      "alternatives": [
+        {"chordSymbol": "C", "romanNumeral": "I", "score": 8.95},
+        {"chordSymbol": "C", "romanNumeral": "I", "score": 8.95}
+      ]
+    }
+  ]
+}
