@@ -29,6 +29,8 @@ xxx ninja_build/
 /tools/validation_*/
 /tools/pdmx/
 /tools/tools/
+/tools/arriving_soon_test.json
+/tools/wir_test.json
 Testing/Temporary/
 win32build
 win32install
