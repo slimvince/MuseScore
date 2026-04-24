@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-24 (deduplication iteration 9)*
+*Last updated: 2026-04-24 (deduplication iteration 10)*
 
 ---
 
@@ -97,6 +97,24 @@ Major7, Minor7, etc.).
 - Notation tests: 55/55 pass
 - Chord mismatch report: unchanged (0 abstract mismatches)
 - Audit note: Plan listed 3 sites in notationcomposingbridge.cpp — confirmed. Line numbers shifted since plan was written (plan: 655-660, 676-681, 728-734; actual: ~622, ~643, ~696) because `analyzeRestHarmonicContextDetails` was added in session 26. Count still 3+1=4. No implode sites; iter 5 collapses to 5a-only commit as anticipated.
+
+---
+
+## 2026-04-24 — deduplication iteration 10
+
+- Commit(s): Commit A `6e1ab4b700` (master); Commit B — see below
+- Files touched:
+  - **Commit A** (cherry-pickable): `src/notation/internal/notationcomposingbridgehelpers.cpp` — replace inline scale search in `detectPivotChords` with `diatonicDegreeForRootPc()` (12-line block → 2 lines)
+  - **Commit B** (implode-only): `src/notation/internal/notationimplodebridge.cpp` (retire `supportsAssertiveKeyExposure`; route cadence block through `detectCadences`); `src/notation/tests/notationimplode_tests.cpp` (new cadence smoke + preference-gate tests)
+- Cherry-picked: Commit A only (Commit B stays master-only — implode not on submission-phase1)
+- Composing tests: 381/381 pass (master); 323/323 pass (submission-phase1)
+- Notation tests: 57/57 pass (master, 55 + 2 new); 20/20 pass (submission-phase1)
+- Chord mismatch report: unchanged (behavior-preserving refactor on chord-track path)
+- Decisions made:
+  - **1a (confidence gate):** `supportsAssertiveKeyExposure` retired; 3 external call sites (original lines 194, 252, 863) replaced with `hasAssertiveKeyConfidence`. `kAssertiveKeyExposureThreshold` retained (used by `keyExposureBucket`). The 3 internal cadence-block call sites vanish with the block replacement.
+  - **2 (pivot helper):** Done in Commit A. `diatonicDegreeForRootPc` replaces the 12-line `semisFromNewTonic` / `newScalePcs` loop in `detectPivotChords`. Behavior-identical; no test delta.
+  - **3c (cadence routing):** Inline PAC/PC/DC/HC block replaced by `detectCadences(regions, regions.size())` call. `selectionCount == regions.size()` → no lookahead → HC dedup in `detectCadences` cannot trigger on this call shape. Structurally behavior-preserving; the HC dedup edge case (last-region tick coincides with PAC tick) is deferred.
+  - **4-defer (HC-dedup pinning test):** HC dedup behavioral edge case test deferred. Constructing a reliable synthetic fixture for the PAC/HC same-tick collision requires a score where the last region is simultaneously a PAC resolution and a dominant — hard to guarantee against real-analysis confidence. The two new tests (smoke + preference-gate) provide sufficient regression coverage for the refactor.
 
 ---
 

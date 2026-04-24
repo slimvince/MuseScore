@@ -559,6 +559,41 @@ std::string summarizeMeasureHarmonyTexts(MasterScore* score, int measureNumber, 
     return out.str();
 }
 
+void configureCadenceMarkersEnabled()
+{
+    auto analysis = analysisConfig();
+    ASSERT_TRUE(analysis);
+    analysis->setUseRegionalAccumulation(true);
+
+    auto chordStaff = chordStaffConfig();
+    ASSERT_TRUE(chordStaff);
+    chordStaff->setChordStaffWriteChordSymbols(true);
+    chordStaff->setChordStaffFunctionNotation("none");
+    chordStaff->setChordStaffWriteKeyAnnotations(false);
+    chordStaff->setChordStaffHighlightNonDiatonic(false);
+    chordStaff->setChordStaffWriteCadenceMarkers(true);
+}
+
+bool isCadenceLabel(const std::string& s)
+{
+    return s == "PAC" || s == "PC" || s == "DC" || s == "HC";
+}
+
+int countCadenceMarkersOnTrack(MasterScore* score, track_idx_t track)
+{
+    int count = 0;
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest);
+         seg; seg = seg->next1(SegmentType::ChordRest)) {
+        for (EngravingItem* ann : seg->annotations()) {
+            if (ann && ann->isStaffText() && ann->track() == track
+                && isCadenceLabel(toStaffText(ann)->plainText().toStdString())) {
+                ++count;
+            }
+        }
+    }
+    return count;
+}
+
 } // namespace
 
 class Notation_ImplodeTests : public ::testing::Test
@@ -1777,6 +1812,66 @@ TEST_F(Notation_ImplodeTests, BassMovementSubBoundaryFiresOnIdenticalPCSetsWithD
     // Exactly one sub-boundary expected: at beat 3 (tick 960 = 2 quarter notes).
     ASSERT_EQ(subs.size(), 1u);
     EXPECT_EQ(subs.front(), Fraction(2, 4));
+
+    delete score;
+}
+
+// ── Cadence marker integration tests (iter 10 behavior lock) ─────────────────
+//
+// Fixture: corelli/MS3/op01n08d.mscx — a full trio sonata in C minor (26+
+// measures, many G→Cm and related V→i transitions) with natural high-confidence
+// C-minor analysis.  These tests pin that cadence marker emission on the
+// chord-track path is live and that the chordStaffWriteCadenceMarkers preference
+// gate works on the caller side.
+
+TEST_F(Notation_ImplodeTests, PopulateChordTrackEmitsCadenceMarkersOnCorelli)
+{
+    // With cadence markers enabled, at least one PAC/PC/DC/HC must appear on the
+    // bass track.  The Corelli sonata has assertive-confidence C-minor regions
+    // and G major → Cm (V→i) transitions that satisfy the PAC rule.
+    configureCadenceMarkersEnabled();
+
+    MasterScore* score = ScoreRW::readScore(
+        u"../../../../tools/dcml/corelli/MS3/op01n08d.mscx");
+    ASSERT_TRUE(score);
+
+    const staff_idx_t targetTrebleStaff = appendChordTrackStaffPair(score);
+    const track_idx_t targetBassTrack = (targetTrebleStaff + 1) * VOICES;
+
+    populateWholeScore(score, targetTrebleStaff);
+
+    EXPECT_GT(countCadenceMarkersOnTrack(score, targetBassTrack), 0)
+        << "expected at least one cadence marker (PAC/PC/DC/HC) on bass track";
+
+    delete score;
+}
+
+TEST_F(Notation_ImplodeTests, PopulateChordTrackCadenceMarkersGatedByPreference)
+{
+    // Same fixture; markers disabled — confirms that the chordStaffWriteCadenceMarkers
+    // preference gate on the caller side suppresses all cadence emission.
+    auto analysis = analysisConfig();
+    ASSERT_TRUE(analysis);
+    analysis->setUseRegionalAccumulation(true);
+
+    auto chordStaff = chordStaffConfig();
+    ASSERT_TRUE(chordStaff);
+    chordStaff->setChordStaffWriteChordSymbols(true);
+    chordStaff->setChordStaffFunctionNotation("none");
+    chordStaff->setChordStaffWriteKeyAnnotations(false);
+    chordStaff->setChordStaffHighlightNonDiatonic(false);
+    chordStaff->setChordStaffWriteCadenceMarkers(false);
+
+    MasterScore* score = ScoreRW::readScore(
+        u"../../../../tools/dcml/corelli/MS3/op01n08d.mscx");
+    ASSERT_TRUE(score);
+
+    const staff_idx_t targetTrebleStaff = appendChordTrackStaffPair(score);
+    const track_idx_t targetBassTrack = (targetTrebleStaff + 1) * VOICES;
+
+    populateWholeScore(score, targetTrebleStaff);
+
+    EXPECT_EQ(countCadenceMarkersOnTrack(score, targetBassTrack), 0);
 
     delete score;
 }

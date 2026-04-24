@@ -68,6 +68,8 @@
 
 using namespace mu::engraving;
 using mu::notation::internal::scoreNoteSpelling;
+using mu::notation::internal::hasAssertiveKeyConfidence;
+using mu::notation::internal::detectCadences;
 
 namespace {
 
@@ -79,11 +81,6 @@ constexpr double kAssertiveKeyExposureThreshold = 0.8;
 bool supportsTentativeKeyExposure(const mu::composing::analysis::KeyModeAnalysisResult& keyModeResult)
 {
     return keyModeResult.normalizedConfidence >= kTentativeKeyExposureThreshold;
-}
-
-bool supportsAssertiveKeyExposure(const mu::composing::analysis::KeyModeAnalysisResult& keyModeResult)
-{
-    return keyModeResult.normalizedConfidence >= kAssertiveKeyExposureThreshold;
 }
 
 int keyExposureBucket(double confidence)
@@ -191,7 +188,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
                                                region.keyModeResult.normalizedConfidence,
                                                modeNameConfidenceThreshold);
         run.hasTentativeExposure = supportsTentativeKeyExposure(region.keyModeResult);
-        run.hasAssertiveExposure = supportsAssertiveKeyExposure(region.keyModeResult);
+        run.hasAssertiveExposure = hasAssertiveKeyConfidence(region.keyModeResult);
     };
 
     auto finishRun = [&]() {
@@ -249,7 +246,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
 
         run.endTick = region.endTick;
         run.hasTentativeExposure = run.hasTentativeExposure || supportsTentativeKeyExposure(region.keyModeResult);
-        if (!run.hasAssertiveExposure && supportsAssertiveKeyExposure(region.keyModeResult)) {
+        if (!run.hasAssertiveExposure && hasAssertiveKeyConfidence(region.keyModeResult)) {
             run.hasAssertiveExposure = true;
             run.representativeRegionIdx = regionIdx;
             run.representativeMode = region.keyModeResult.mode;
@@ -860,7 +857,7 @@ bool populateChordTrack(
         const auto& chord = region.chordResult;
         const int localKeyFifths = region.keyModeResult.keySignatureFifths;
         const KeySigMode localMode  = region.keyModeResult.mode;
-        const bool allowAssertiveKeyExposure = supportsAssertiveKeyExposure(region.keyModeResult);
+        const bool allowAssertiveKeyExposure = hasAssertiveKeyConfidence(region.keyModeResult);
 
         // ── Key signature + mode annotation at key/mode boundaries ───────
         const bool writeKeyAnnotations = !prefs || prefs->chordStaffWriteKeyAnnotations();
@@ -1275,77 +1272,20 @@ bool populateChordTrack(
     }
 
     // ── Cadence markers ─────────────────────────────────────────────────────
-    // Detect standard cadence patterns from consecutive region pairs and
-    // annotate the resolution chord with a staff text label on the bass staff.
-    //   Authentic  (PAC): V → I
-    //   Plagal     (PC):  IV → I
-    //   Deceptive  (DC):  V → vi
-    //   Half       (HC):  → V  (last region, or followed by key change)
     const bool writeCadenceMarkers = !prefs || prefs->chordStaffWriteCadenceMarkers();
-    if (writeCadenceMarkers)
-    for (size_t i = 0; i + 1 < regions.size(); ++i) {
-        if (!supportsAssertiveKeyExposure(regions[i].keyModeResult)
-            || !supportsAssertiveKeyExposure(regions[i + 1].keyModeResult)) {
-            continue;
-        }
-
-        const auto& a = regions[i].chordResult;
-        const auto& b = regions[i + 1].chordResult;
-
-        // Cadences require same key context and different chord roots.
-        if (regions[i].keyModeResult.keySignatureFifths
-            != regions[i + 1].keyModeResult.keySignatureFifths
-            || regions[i].keyModeResult.mode
-               != regions[i + 1].keyModeResult.mode) {
-            continue;  // key change — not a cadence
-        }
-        if (a.identity.rootPc == b.identity.rootPc) {
-            continue;  // same root (e.g. F#m → F#7) — not a cadence
-        }
-
-        const char* label = nullptr;
-
-        // PAC: V → I (major dominant) or viio → I (leading-tone diminished).
-        if (b.function.degree == 0
-            && ((a.function.degree == 4 && a.identity.quality != ChordQuality::Minor)
-                || (a.function.degree == 6 && a.identity.quality == ChordQuality::Diminished))) {
-            label = "PAC";        // Authentic: V → I  or  viio → I
-        } else if (a.function.degree == 3 && b.function.degree == 0) {
-            label = "PC";         // Plagal: IV → I
-        } else if (a.function.degree == 4 && b.function.degree == 5
-                   && a.identity.quality != ChordQuality::Minor
-                   && b.identity.quality == ChordQuality::Minor) {
-            label = "DC";         // Deceptive: V → vi
-        }
-
-        if (label) {
-            const Fraction bStart = Fraction::fromTicks(regions[i + 1].startTick);
-            Segment* cSeg = score->tick2segment(bStart, true,
-                                                 SegmentType::ChordRest);
-            if (cSeg) {
-                StaffText* ct = Factory::createStaffText(cSeg);
-                ct->setTrack(bassTrack);
-                ct->setParent(cSeg);
-                ct->setPlainText(muse::String::fromStdString(label));
-                score->undoAddElement(ct);
+    if (writeCadenceMarkers) {
+        const auto cadences = detectCadences(regions, regions.size());
+        for (const auto& marker : cadences) {
+            const Fraction mTick = Fraction::fromTicks(marker.tick);
+            Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
+            if (!mSeg) {
+                continue;
             }
-        }
-    }
-
-    // Half cadence: last region is V (dominant arrival at end of range).
-    if (writeCadenceMarkers
-        && !regions.empty()
-        && supportsAssertiveKeyExposure(regions.back().keyModeResult)
-        && regions.back().chordResult.function.degree == 4) {
-        const Fraction hStart = Fraction::fromTicks(regions.back().startTick);
-        Segment* hSeg = score->tick2segment(hStart, true,
-                                             SegmentType::ChordRest);
-        if (hSeg) {
-            StaffText* hc = Factory::createStaffText(hSeg);
-            hc->setTrack(bassTrack);
-            hc->setParent(hSeg);
-            hc->setPlainText(muse::String(u"HC"));
-            score->undoAddElement(hc);
+            StaffText* ct = Factory::createStaffText(mSeg);
+            ct->setTrack(bassTrack);
+            ct->setParent(mSeg);
+            ct->setPlainText(muse::String::fromStdString(marker.label));
+            score->undoAddElement(ct);
         }
     }
 
