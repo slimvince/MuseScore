@@ -1,0 +1,1244 @@
+{
+    "annotation": [
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 0
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 0
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "C",
+            "text": "Csus2",
+            "tick": 960
+        },
+        {
+            "key": "C",
+            "text": "Isus2",
+            "tick": 960
+        },
+        {
+            "key": "C",
+            "text": "Csus2",
+            "tick": 960
+        },
+        {
+            "key": "C",
+            "text": "Isus2",
+            "tick": 960
+        },
+        {
+            "key": "C",
+            "text": "Cadd11/E",
+            "tick": 1440
+        },
+        {
+            "key": "C",
+            "text": "I(add11)6",
+            "tick": 1440
+        },
+        {
+            "key": "C",
+            "text": "Cadd11/E",
+            "tick": 1440
+        },
+        {
+            "key": "C",
+            "text": "I(add11)6",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "text": "Dm/F",
+            "tick": 1920
+        },
+        {
+            "key": "F",
+            "text": "vi6",
+            "tick": 1920
+        },
+        {
+            "key": "F",
+            "text": "Dm/F",
+            "tick": 1920
+        },
+        {
+            "key": "F",
+            "text": "vi6",
+            "tick": 1920
+        },
+        {
+            "key": "F",
+            "text": "Em7/D",
+            "tick": 2400
+        },
+        {
+            "key": "F",
+            "text": "vii7b942",
+            "tick": 2400
+        },
+        {
+            "key": "F",
+            "text": "Em7/D",
+            "tick": 2400
+        },
+        {
+            "key": "F",
+            "text": "vii7b942",
+            "tick": 2400
+        },
+        {
+            "key": "F",
+            "text": "C/E",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "V6",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "C/E",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "V6",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "G7/F",
+            "tick": 3360
+        },
+        {
+            "key": "F",
+            "text": "V7/V",
+            "tick": 3360
+        },
+        {
+            "key": "F",
+            "text": "G7/F",
+            "tick": 3360
+        },
+        {
+            "key": "F",
+            "text": "V7/V",
+            "tick": 3360
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 3840
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 3840
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 3840
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 3840
+        },
+        {
+            "key": "F",
+            "text": "Csus2",
+            "tick": 4800
+        },
+        {
+            "key": "F",
+            "text": "Vsus2",
+            "tick": 4800
+        },
+        {
+            "key": "F",
+            "text": "Csus2",
+            "tick": 4800
+        },
+        {
+            "key": "F",
+            "text": "Vsus2",
+            "tick": 4800
+        },
+        {
+            "key": "F",
+            "text": "Cadd11/E",
+            "tick": 5280
+        },
+        {
+            "key": "F",
+            "text": "V(add11)6",
+            "tick": 5280
+        },
+        {
+            "key": "F",
+            "text": "Cadd11/E",
+            "tick": 5280
+        },
+        {
+            "key": "F",
+            "text": "V(add11)6",
+            "tick": 5280
+        },
+        {
+            "key": "A",
+            "text": "Dm/F",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "text": "iv6",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "text": "Dm/F",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "text": "iv6",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "text": "Em7/D",
+            "tick": 6240
+        },
+        {
+            "key": "A",
+            "text": "v7b942",
+            "tick": 6240
+        },
+        {
+            "key": "A",
+            "text": "Em7/D",
+            "tick": 6240
+        },
+        {
+            "key": "A",
+            "text": "v7b942",
+            "tick": 6240
+        },
+        {
+            "key": "A",
+            "text": "C/E",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "text": "III6",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "text": "C/E",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "text": "III6",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "text": "G7/F",
+            "tick": 7200
+        },
+        {
+            "key": "A",
+            "text": "V7/III",
+            "tick": 7200
+        },
+        {
+            "key": "A",
+            "text": "G7/F",
+            "tick": 7200
+        },
+        {
+            "key": "A",
+            "text": "V7/III",
+            "tick": 7200
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 7680
+        },
+        {
+            "key": "A",
+            "text": "III",
+            "tick": 7680
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 7680
+        },
+        {
+            "key": "A",
+            "text": "III",
+            "tick": 7680
+        },
+        {
+            "key": "A",
+            "text": "G/B",
+            "tick": 8640
+        },
+        {
+            "key": "A",
+            "text": "VII6",
+            "tick": 8640
+        },
+        {
+            "key": "A",
+            "text": "G/B",
+            "tick": 8640
+        },
+        {
+            "key": "A",
+            "text": "VII6",
+            "tick": 8640
+        },
+        {
+            "key": "A",
+            "text": "G/B",
+            "tick": 9600
+        },
+        {
+            "key": "A",
+            "text": "VII6",
+            "tick": 9600
+        },
+        {
+            "key": "A",
+            "text": "G/B",
+            "tick": 9600
+        },
+        {
+            "key": "A",
+            "text": "VII6",
+            "tick": 9600
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 10560
+        },
+        {
+            "key": "A",
+            "text": "III(add#9)",
+            "tick": 10560
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 10560
+        },
+        {
+            "key": "A",
+            "text": "III(add#9)",
+            "tick": 10560
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 11520
+        },
+        {
+            "key": "A",
+            "text": "III(add#9)",
+            "tick": 11520
+        },
+        {
+            "key": "A",
+            "text": "C",
+            "tick": 11520
+        },
+        {
+            "key": "A",
+            "text": "III(add#9)",
+            "tick": 11520
+        },
+        {
+            "key": "A",
+            "text": "C+",
+            "tick": 12480
+        },
+        {
+            "key": "A",
+            "text": "III+",
+            "tick": 12480
+        },
+        {
+            "key": "A",
+            "text": "C+",
+            "tick": 12480
+        },
+        {
+            "key": "A",
+            "text": "III+",
+            "tick": 12480
+        },
+        {
+            "key": "A",
+            "text": "C6",
+            "tick": 13440
+        },
+        {
+            "key": "A",
+            "text": "III(add6)",
+            "tick": 13440
+        },
+        {
+            "key": "A",
+            "text": "C6",
+            "tick": 13440
+        },
+        {
+            "key": "A",
+            "text": "III(add6)",
+            "tick": 13440
+        },
+        {
+            "key": "A",
+            "text": "C/E",
+            "tick": 15360
+        },
+        {
+            "key": "A",
+            "text": "III6",
+            "tick": 15360
+        },
+        {
+            "key": "A",
+            "text": "C/E",
+            "tick": 15360
+        },
+        {
+            "key": "A",
+            "text": "III6",
+            "tick": 15360
+        },
+        {
+            "key": "C",
+            "text": "F",
+            "tick": 16320
+        },
+        {
+            "key": "C",
+            "text": "IV",
+            "tick": 16320
+        },
+        {
+            "key": "C",
+            "text": "F",
+            "tick": 16320
+        },
+        {
+            "key": "C",
+            "text": "IV",
+            "tick": 16320
+        },
+        {
+            "key": "C",
+            "text": "Em7/G",
+            "tick": 17280
+        },
+        {
+            "key": "C",
+            "text": "iii65",
+            "tick": 17280
+        },
+        {
+            "key": "C",
+            "text": "Em7/G",
+            "tick": 17280
+        },
+        {
+            "key": "C",
+            "text": "iii65",
+            "tick": 17280
+        },
+        {
+            "key": "C",
+            "text": "E7b9/Ab",
+            "tick": 18240
+        },
+        {
+            "key": "C",
+            "text": "III7b965",
+            "tick": 18240
+        },
+        {
+            "key": "C",
+            "text": "E7b9/Ab",
+            "tick": 18240
+        },
+        {
+            "key": "C",
+            "text": "III7b965",
+            "tick": 18240
+        },
+        {
+            "key": "C",
+            "text": "Em",
+            "tick": 18720
+        },
+        {
+            "key": "C",
+            "text": "iii",
+            "tick": 18720
+        },
+        {
+            "key": "C",
+            "text": "Em",
+            "tick": 18720
+        },
+        {
+            "key": "C",
+            "text": "iii",
+            "tick": 18720
+        },
+        {
+            "key": "C",
+            "text": "Em",
+            "tick": 19200
+        },
+        {
+            "key": "C",
+            "text": "iii",
+            "tick": 19200
+        },
+        {
+            "key": "C",
+            "text": "Em",
+            "tick": 19200
+        },
+        {
+            "key": "C",
+            "text": "iii",
+            "tick": 19200
+        },
+        {
+            "key": "C",
+            "text": "Am",
+            "tick": 20640
+        },
+        {
+            "key": "C",
+            "text": "vi",
+            "tick": 20640
+        },
+        {
+            "key": "C",
+            "text": "Am",
+            "tick": 20640
+        },
+        {
+            "key": "C",
+            "text": "vi",
+            "tick": 20640
+        },
+        {
+            "key": "C",
+            "text": "G",
+            "tick": 21120
+        },
+        {
+            "key": "C",
+            "text": "V",
+            "tick": 21120
+        },
+        {
+            "key": "C",
+            "text": "G",
+            "tick": 21120
+        },
+        {
+            "key": "C",
+            "text": "V",
+            "tick": 21120
+        },
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 22080
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 22080
+        },
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 22080
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 22080
+        },
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 23040
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 23040
+        },
+        {
+            "key": "C",
+            "text": "C",
+            "tick": 23040
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 23040
+        },
+        {
+            "key": "C",
+            "text": "C7",
+            "tick": 24960
+        },
+        {
+            "key": "C",
+            "text": "I7",
+            "tick": 24960
+        },
+        {
+            "key": "C",
+            "text": "C7",
+            "tick": 24960
+        },
+        {
+            "key": "C",
+            "text": "I7",
+            "tick": 24960
+        },
+        {
+            "key": "C",
+            "text": "C/G",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "text": "I64",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "text": "C/G",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "text": "I64",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "text": "Gadd11",
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "V(add11)",
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "Gadd11",
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "V(add11)",
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "Gadd11",
+            "tick": 28800
+        },
+        {
+            "key": "C",
+            "text": "V(add11)",
+            "tick": 28800
+        },
+        {
+            "key": "C",
+            "text": "Gadd11",
+            "tick": 28800
+        },
+        {
+            "key": "C",
+            "text": "V(add11)",
+            "tick": 28800
+        },
+        {
+            "key": "C",
+            "text": "Dm",
+            "tick": 29760
+        },
+        {
+            "key": "C",
+            "text": "ii",
+            "tick": 29760
+        },
+        {
+            "key": "C",
+            "text": "Dm",
+            "tick": 29760
+        },
+        {
+            "key": "C",
+            "text": "ii",
+            "tick": 29760
+        }
+    ],
+    "implode": [
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 0
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "sus2",
+            "root": "C",
+            "tick": 960
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 1440
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "minor",
+            "root": "D",
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "minor",
+            "root": "E",
+            "tick": 2400
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "major",
+            "root": "C",
+            "tick": 2880
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "major",
+            "root": "G",
+            "tick": 3360
+        },
+        {
+            "durationTicks": 960,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "major",
+            "root": "C",
+            "tick": 3840
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "sus2",
+            "root": "C",
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "Lyd",
+            "quality": "major",
+            "root": "C",
+            "tick": 5280
+        },
+        {
+            "durationTicks": 480,
+            "key": "A",
+            "mode": "min",
+            "quality": "minor",
+            "root": "D",
+            "tick": 5760
+        },
+        {
+            "durationTicks": 480,
+            "key": "A",
+            "mode": "min",
+            "quality": "minor",
+            "root": "E",
+            "tick": 6240
+        },
+        {
+            "durationTicks": 480,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 6720
+        },
+        {
+            "durationTicks": 480,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "G",
+            "tick": 7200
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 7680
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "G",
+            "tick": 8640
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "G",
+            "tick": 9600
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 10560
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 11520
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "augmented",
+            "root": "C",
+            "tick": 12480
+        },
+        {
+            "durationTicks": 1920,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 13440
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "min",
+            "quality": "major",
+            "root": "C",
+            "tick": 15360
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 16320
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "E",
+            "tick": 17280
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "E",
+            "tick": 18240
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "E",
+            "tick": 18720
+        },
+        {
+            "durationTicks": 1440,
+            "key": "C",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "E",
+            "tick": 19200
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "A",
+            "tick": 20640
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 21120
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 22080
+        },
+        {
+            "durationTicks": 1920,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 23040
+        },
+        {
+            "durationTicks": 1920,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 24960
+        },
+        {
+            "durationTicks": 1440,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 26880
+        },
+        {
+            "durationTicks": 480,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 28320
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 28800
+        },
+        {
+            "durationTicks": 960,
+            "key": "C",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "D",
+            "tick": 29760
+        }
+    ],
+    "schemaVersion": 1,
+    "score": "tools/dcml/mozart_piano_sonatas/MS3/K279-1.mscx",
+    "tickLocal": [
+    ],
+    "tickRegional": [
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 0,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "sus2",
+            "root": "C",
+            "tick": 960,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "minor",
+            "root": "D",
+            "tick": 1920,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 2880,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 3840,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "sus2",
+            "root": "C",
+            "tick": 4800,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "D",
+            "tick": 5760,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 6720,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 7680,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "G",
+            "tick": 8640,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "G",
+            "tick": 9600,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 10560,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 11520,
+            "wasRegional": true
+        },
+        {
+            "key": "A",
+            "quality": "augmented",
+            "root": "C",
+            "tick": 12480,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 13440,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 14400,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 15360,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "F",
+            "tick": 16320,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 17280,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "E",
+            "tick": 18240,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 19200,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 20160,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 21120,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 22080,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 23040,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 24000,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 24960,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 25920,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 26880,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 27840,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 28800,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "D",
+            "tick": 29760,
+            "wasRegional": true
+        }
+    ]
+}

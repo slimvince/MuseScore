@@ -483,10 +483,13 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
 
     NoteHarmonicContext regional = analyzeHarmonicContextRegionallyAtTick(score, tick, seg, excludeStaves);
     if (!regional.chordResults.empty()) {
+        regional.wasRegional = true;
         return regional;
     }
 
-    return analyzeHarmonicContextLocallyAtTick(score, tick, seg, refStaff, excludeStaves);
+    NoteHarmonicContext local = analyzeHarmonicContextLocallyAtTick(score, tick, seg, refStaff, excludeStaves);
+    local.wasRegional = false;
+    return local;
 }
 
 std::string harmonicAnnotation(const Note* note)

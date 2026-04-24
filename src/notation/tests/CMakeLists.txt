@@ -47,3 +47,9 @@ set(MODULE_TEST_LINK
 )
 
 include(SetupGTest)
+
+# Phase 1b pipeline snapshot harness — builds a second notation-level test
+# binary that pins current P1/P2/P3/P4 output against a DCML-backed corpus.
+# See docs/unified_analysis_pipeline.md and
+# pipeline_snapshot_tests/corpus/README.md.
+add_subdirectory(pipeline_snapshot_tests)

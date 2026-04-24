@@ -1,0 +1,1104 @@
+{
+    "annotation": [
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 0
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 0
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "text": "Bb/F",
+            "tick": 4320
+        },
+        {
+            "key": "F",
+            "text": "IV64",
+            "tick": 4320
+        },
+        {
+            "key": "F",
+            "text": "Bb/F",
+            "tick": 4320
+        },
+        {
+            "key": "F",
+            "text": "IV64",
+            "tick": 4320
+        },
+        {
+            "key": "F",
+            "text": "Bbsus/F",
+            "tick": 5760
+        },
+        {
+            "key": "F",
+            "text": "IVsus464",
+            "tick": 5760
+        },
+        {
+            "key": "F",
+            "text": "Bbsus/F",
+            "tick": 5760
+        },
+        {
+            "key": "F",
+            "text": "IVsus464",
+            "tick": 5760
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 7200
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 7200
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 7200
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 7200
+        },
+        {
+            "key": "F",
+            "text": "C/E",
+            "tick": 8640
+        },
+        {
+            "key": "F",
+            "text": "V6",
+            "tick": 8640
+        },
+        {
+            "key": "F",
+            "text": "C/E",
+            "tick": 8640
+        },
+        {
+            "key": "F",
+            "text": "V6",
+            "tick": 8640
+        },
+        {
+            "key": "F",
+            "text": "FMaj9(no 3)/E",
+            "tick": 9120
+        },
+        {
+            "key": "F",
+            "text": "IM942",
+            "tick": 9120
+        },
+        {
+            "key": "F",
+            "text": "FMaj9(no 3)/E",
+            "tick": 9120
+        },
+        {
+            "key": "F",
+            "text": "IM942",
+            "tick": 9120
+        },
+        {
+            "key": "F",
+            "text": "C9/Bb",
+            "tick": 9600
+        },
+        {
+            "key": "F",
+            "text": "V942",
+            "tick": 9600
+        },
+        {
+            "key": "F",
+            "text": "C9/Bb",
+            "tick": 9600
+        },
+        {
+            "key": "F",
+            "text": "V942",
+            "tick": 9600
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 10080
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 10080
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 10080
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 10080
+        },
+        {
+            "key": "F",
+            "text": "Cadd11/G",
+            "tick": 10560
+        },
+        {
+            "key": "F",
+            "text": "V(add11)64",
+            "tick": 10560
+        },
+        {
+            "key": "F",
+            "text": "Cadd11/G",
+            "tick": 10560
+        },
+        {
+            "key": "F",
+            "text": "V(add11)64",
+            "tick": 10560
+        },
+        {
+            "key": "F",
+            "text": "Bb",
+            "tick": 11520
+        },
+        {
+            "key": "F",
+            "text": "IV",
+            "tick": 11520
+        },
+        {
+            "key": "F",
+            "text": "Bb",
+            "tick": 11520
+        },
+        {
+            "key": "F",
+            "text": "IV",
+            "tick": 11520
+        },
+        {
+            "key": "F",
+            "text": "Gm",
+            "tick": 12000
+        },
+        {
+            "key": "F",
+            "text": "ii",
+            "tick": 12000
+        },
+        {
+            "key": "F",
+            "text": "Gm",
+            "tick": 12000
+        },
+        {
+            "key": "F",
+            "text": "ii",
+            "tick": 12000
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 12480
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 12480
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 12480
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 12480
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 12960
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 12960
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 12960
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 12960
+        },
+        {
+            "key": "F",
+            "text": "FMaj9(no 3)/E",
+            "tick": 13440
+        },
+        {
+            "key": "F",
+            "text": "IM942",
+            "tick": 13440
+        },
+        {
+            "key": "F",
+            "text": "FMaj9(no 3)/E",
+            "tick": 13440
+        },
+        {
+            "key": "F",
+            "text": "IM942",
+            "tick": 13440
+        },
+        {
+            "key": "F",
+            "text": "C9/Bb",
+            "tick": 13920
+        },
+        {
+            "key": "F",
+            "text": "V942",
+            "tick": 13920
+        },
+        {
+            "key": "F",
+            "text": "C9/Bb",
+            "tick": 13920
+        },
+        {
+            "key": "F",
+            "text": "V942",
+            "tick": 13920
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 14400
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 14400
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 14400
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 14400
+        },
+        {
+            "key": "F",
+            "text": "Bb",
+            "tick": 15840
+        },
+        {
+            "key": "F",
+            "text": "IV",
+            "tick": 15840
+        },
+        {
+            "key": "F",
+            "text": "Bb",
+            "tick": 15840
+        },
+        {
+            "key": "F",
+            "text": "IV",
+            "tick": 15840
+        },
+        {
+            "key": "F",
+            "text": "Gm",
+            "tick": 16320
+        },
+        {
+            "key": "F",
+            "text": "ii",
+            "tick": 16320
+        },
+        {
+            "key": "F",
+            "text": "Gm",
+            "tick": 16320
+        },
+        {
+            "key": "F",
+            "text": "ii",
+            "tick": 16320
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 16800
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 16800
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 16800
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 16800
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 17280
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 17280
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 17280
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 17280
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 18240
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 18240
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 18240
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 18240
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 18720
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 18720
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 18720
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 18720
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 19200
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 19200
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 19200
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 19200
+        },
+        {
+            "key": "F",
+            "text": "F/C",
+            "tick": 19680
+        },
+        {
+            "key": "F",
+            "text": "I64",
+            "tick": 19680
+        },
+        {
+            "key": "F",
+            "text": "F/C",
+            "tick": 19680
+        },
+        {
+            "key": "F",
+            "text": "I64",
+            "tick": 19680
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 20160
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 20160
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 20160
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 20160
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 21120
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 21120
+        },
+        {
+            "key": "F",
+            "text": "F",
+            "tick": 21120
+        },
+        {
+            "key": "F",
+            "text": "I",
+            "tick": 21120
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 21600
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 21600
+        },
+        {
+            "key": "F",
+            "text": "C",
+            "tick": 21600
+        },
+        {
+            "key": "F",
+            "text": "V",
+            "tick": 21600
+        },
+        {
+            "key": "F",
+            "text": "F/C",
+            "tick": 22080
+        },
+        {
+            "key": "F",
+            "text": "I64",
+            "tick": 22080
+        },
+        {
+            "key": "F",
+            "text": "F/C",
+            "tick": 22080
+        },
+        {
+            "key": "F",
+            "text": "I64",
+            "tick": 22080
+        },
+        {
+            "key": "F",
+            "text": "C7",
+            "tick": 22560
+        },
+        {
+            "key": "F",
+            "text": "V7",
+            "tick": 22560
+        },
+        {
+            "key": "F",
+            "text": "C7",
+            "tick": 22560
+        },
+        {
+            "key": "F",
+            "text": "V7",
+            "tick": 22560
+        }
+    ],
+    "implode": [
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 0
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 1440
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 2880
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 4320
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "sus4",
+            "root": "Bb",
+            "tick": 5760
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 7200
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 8640
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 9120
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 9600
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 10080
+        },
+        {
+            "durationTicks": 960,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 10560
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 11520
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "G",
+            "tick": 12000
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 12480
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 12960
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 13440
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 13920
+        },
+        {
+            "durationTicks": 1440,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 14400
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 15840
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "G",
+            "tick": 16320
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 16800
+        },
+        {
+            "durationTicks": 960,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 17280
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 18240
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 18720
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 19200
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 19680
+        },
+        {
+            "durationTicks": 960,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 20160
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 21120
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 21600
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "F",
+            "tick": 22080
+        },
+        {
+            "durationTicks": 480,
+            "key": "F",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 22560
+        }
+    ],
+    "schemaVersion": 1,
+    "score": "tools/dcml/mozart_piano_sonatas/MS3/K280-1.mscx",
+    "tickLocal": [
+    ],
+    "tickRegional": [
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 0,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 720,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 1440,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 2160,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 2880,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 3600,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 4320,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 5040,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "sus4",
+            "root": "Bb",
+            "tick": 5760,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "sus4",
+            "root": "Bb",
+            "tick": 6480,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 7200,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 7920,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 8640,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 9360,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 10080,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 10800,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 11520,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "minor",
+            "root": "G",
+            "tick": 12240,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 12960,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 13680,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 14400,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 15120,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 15840,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "minor",
+            "root": "G",
+            "tick": 16560,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 17280,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 18000,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 18720,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 19440,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 20160,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 20880,
+            "wasRegional": true
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 21600,
+            "wasRegional": true
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 22320,
+            "wasRegional": true
+        }
+    ]
+}

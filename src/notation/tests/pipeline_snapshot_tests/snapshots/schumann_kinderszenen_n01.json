@@ -1,0 +1,964 @@
+{
+    "annotation": [
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 0
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 0
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 0
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 480
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 480
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 480
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 480
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 960
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 960
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 960
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 960
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 2400
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 2400
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 2400
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 2400
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 2880
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 2880
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 2880
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 2880
+        },
+        {
+            "key": "G",
+            "text": "G/B",
+            "tick": 3840
+        },
+        {
+            "key": "G",
+            "text": "I6",
+            "tick": 3840
+        },
+        {
+            "key": "G",
+            "text": "G/B",
+            "tick": 3840
+        },
+        {
+            "key": "G",
+            "text": "I6",
+            "tick": 3840
+        },
+        {
+            "key": "G",
+            "text": "Am7/C",
+            "tick": 4800
+        },
+        {
+            "key": "G",
+            "text": "ii65",
+            "tick": 4800
+        },
+        {
+            "key": "G",
+            "text": "Am7/C",
+            "tick": 4800
+        },
+        {
+            "key": "G",
+            "text": "ii65",
+            "tick": 4800
+        },
+        {
+            "key": "G",
+            "text": "Am7/C",
+            "tick": 5760
+        },
+        {
+            "key": "G",
+            "text": "ii65",
+            "tick": 5760
+        },
+        {
+            "key": "G",
+            "text": "Am7/C",
+            "tick": 5760
+        },
+        {
+            "key": "G",
+            "text": "ii65",
+            "tick": 5760
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 6240
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 6240
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 6240
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 6240
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 6720
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 6720
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 6720
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 6720
+        },
+        {
+            "key": "G",
+            "text": "Em",
+            "tick": 7200
+        },
+        {
+            "key": "G",
+            "text": "vi",
+            "tick": 7200
+        },
+        {
+            "key": "G",
+            "text": "Em",
+            "tick": 7200
+        },
+        {
+            "key": "G",
+            "text": "vi",
+            "tick": 7200
+        },
+        {
+            "key": "G",
+            "text": "Em",
+            "tick": 7680
+        },
+        {
+            "key": "G",
+            "text": "vi",
+            "tick": 7680
+        },
+        {
+            "key": "G",
+            "text": "Em",
+            "tick": 7680
+        },
+        {
+            "key": "G",
+            "text": "vi",
+            "tick": 7680
+        },
+        {
+            "key": "G",
+            "text": "Am",
+            "tick": 8160
+        },
+        {
+            "key": "G",
+            "text": "ii",
+            "tick": 8160
+        },
+        {
+            "key": "G",
+            "text": "Am",
+            "tick": 8160
+        },
+        {
+            "key": "G",
+            "text": "ii",
+            "tick": 8160
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 8640
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 8640
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 8640
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 8640
+        },
+        {
+            "key": "G",
+            "text": "G/B",
+            "tick": 9120
+        },
+        {
+            "key": "G",
+            "text": "I6",
+            "tick": 9120
+        },
+        {
+            "key": "G",
+            "text": "G/B",
+            "tick": 9120
+        },
+        {
+            "key": "G",
+            "text": "I6",
+            "tick": 9120
+        },
+        {
+            "key": "G",
+            "text": "C",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "text": "IV",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "text": "C",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "text": "IV",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "text": "F#m7b5",
+            "tick": 10080
+        },
+        {
+            "key": "G",
+            "text": "viiø7",
+            "tick": 10080
+        },
+        {
+            "key": "G",
+            "text": "F#m7b5",
+            "tick": 10080
+        },
+        {
+            "key": "G",
+            "text": "viiø7",
+            "tick": 10080
+        },
+        {
+            "key": "G",
+            "text": "B",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "text": "III",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "text": "B",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "text": "III",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 11040
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 11040
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 11040
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 11040
+        },
+        {
+            "key": "G",
+            "text": "C",
+            "tick": 11520
+        },
+        {
+            "key": "G",
+            "text": "IV",
+            "tick": 11520
+        },
+        {
+            "key": "G",
+            "text": "C",
+            "tick": 11520
+        },
+        {
+            "key": "G",
+            "text": "IV",
+            "tick": 11520
+        },
+        {
+            "key": "G",
+            "text": "Csus#4",
+            "tick": 12000
+        },
+        {
+            "key": "G",
+            "text": "IVsus4",
+            "tick": 12000
+        },
+        {
+            "key": "G",
+            "text": "Csus#4",
+            "tick": 12000
+        },
+        {
+            "key": "G",
+            "text": "IVsus4",
+            "tick": 12000
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 12480
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 12480
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 12480
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 12480
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 13440
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 13440
+        },
+        {
+            "key": "G",
+            "text": "G",
+            "tick": 13440
+        },
+        {
+            "key": "G",
+            "text": "I",
+            "tick": 13440
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 13920
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 13920
+        },
+        {
+            "key": "G",
+            "text": "Gm/C#",
+            "tick": 13920
+        },
+        {
+            "key": "G",
+            "text": "i",
+            "tick": 13920
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 14400
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 14400
+        },
+        {
+            "key": "G",
+            "text": "D",
+            "tick": 14400
+        },
+        {
+            "key": "G",
+            "text": "V",
+            "tick": 14400
+        }
+    ],
+    "implode": [
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 0
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "G",
+            "tick": 480
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "D",
+            "tick": 960
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "G",
+            "tick": 2400
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "D",
+            "tick": 2880
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 3840
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "A",
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "A",
+            "tick": 5760
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 6240
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 6720
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "E",
+            "tick": 7200
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "E",
+            "tick": 7680
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "A",
+            "tick": 8160
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "D",
+            "tick": 8640
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 9120
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 9600
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "halfDiminished",
+            "root": "F#",
+            "tick": 10080
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "B",
+            "tick": 10560
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 11040
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C",
+            "tick": 11520
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "sus4",
+            "root": "C",
+            "tick": 12000
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 12480
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "G",
+            "tick": 13440
+        },
+        {
+            "durationTicks": 480,
+            "key": "G",
+            "mode": "maj",
+            "quality": "minor",
+            "root": "G",
+            "tick": 13920
+        },
+        {
+            "durationTicks": 960,
+            "key": "G",
+            "mode": "maj",
+            "quality": "major",
+            "root": "D",
+            "tick": 14400
+        }
+    ],
+    "schemaVersion": 1,
+    "score": "tools/dcml/schumann_kinderszenen/MS3/n01.mscx",
+    "tickLocal": [
+    ],
+    "tickRegional": [
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 0,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 480,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 960,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 1440,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 1920,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 2400,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 2880,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 3360,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 3840,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 4320,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "A",
+            "tick": 4800,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "A",
+            "tick": 5280,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "A",
+            "tick": 5760,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 6240,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 6720,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "E",
+            "tick": 7200,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 7680,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "A",
+            "tick": 8160,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 8640,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 9120,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "C",
+            "tick": 9600,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "halfDiminished",
+            "root": "F#",
+            "tick": 10080,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "B",
+            "tick": 10560,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 11040,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "C",
+            "tick": 11520,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "C",
+            "tick": 12000,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 12480,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 12960,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 13440,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 13920,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 14400,
+            "wasRegional": true
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 14880,
+            "wasRegional": true
+        }
+    ]
+}

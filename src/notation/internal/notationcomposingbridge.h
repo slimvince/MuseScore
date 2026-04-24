@@ -57,6 +57,12 @@ struct NoteHarmonicContext {
     int keyFifths = 0;
     mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
     double keyConfidence = 0.0;
+
+    /// True when the result was produced by the regional (P3) path.  False when
+    /// analyzeHarmonicContextAtTick fell back to the tick-local (P4) path because
+    /// regional analysis produced no result.  Lets callers (and snapshot tests)
+    /// observe Divergence A between the two paths.
+    bool wasRegional = true;
 };
 
 /// Computes the harmonic annotation string appended to the status bar when a
