@@ -80,8 +80,10 @@ python tools/music21_batch.py --composer bach --output tools/corpus
 - **Size:** ~11 MB
 - **Content:** Charlie Parker Omnibook scores as MusicXML files.
   Used by `compare_omnibook.py` for jazz analysis validation.
-- **Source:** TODO: source unknown — Vincent to fill in
-- **Retrieval:** TODO: Vincent to fill in
+- **Source:** https://homepages.loria.fr/evincent/omnibook/
+- **Retrieval:** Download the MusicXML files from the Omnibook page at
+  homepages.loria.fr/evincent/omnibook/. Extract into
+  `tools/corpus_omnibook_src/`.
 
 ---
 
@@ -90,8 +92,9 @@ python tools/music21_batch.py --composer bach --output tools/corpus
 - **Size:** ~29 MB
 - **Content:** MusicXML scores used for Effendi jazz corpus validation.
   Filtered by `filter_effendi.py` to select scores with harmony tags.
-- **Source:** TODO: source unknown — Vincent to fill in
-- **Retrieval:** TODO: Vincent to fill in
+- **Source:** https://effendi.me/jazz/repo/
+- **Retrieval:** Fetch MusicXML files from the Effendi jazz repository at
+  effendi.me/jazz/repo/. Extract into `tools/corpus_effendi_src/`.
 
 ---
 
@@ -100,8 +103,11 @@ python tools/music21_batch.py --composer bach --output tools/corpus
 - **Size:** ~27 MB
 - **Content:** Jazz big-band scores in MXL format. Used for jazz analysis
   validation.
-- **Source:** TODO: source unknown — Vincent to fill in
-- **Retrieval:** TODO: Vincent to fill in
+- **Source:** https://www.rampageswing.com/
+- **Retrieval:** Corpus was assembled by crawling www.rampageswing.com; the
+  exact crawl script was not preserved. Re-crawl the site to reconstruct
+  (typical pattern: walk the site's arrangement pages and download MXL
+  files linked from each). Extract into `tools/corpus_rampageswing_full/`.
 
 ---
 
