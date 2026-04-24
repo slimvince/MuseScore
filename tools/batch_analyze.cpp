@@ -13,7 +13,6 @@
 // Usage:
 //   batch_analyze <input.[xml|musicxml|mxl|mscz|mscx]> [output.json]
 //                [--preset Standard|Jazz|Modal|Baroque|Contemporary]
-//                [--inject-written-root]
 //                [--dump-regions batch|notation|notation-premerge]
 //   batch_analyze --help
 
@@ -68,12 +67,10 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "engraving/dom/staff.h"
 #include "engraving/dom/part.h"
 #include "engraving/dom/instrument.h"
-#include "engraving/dom/harmony.h"
 #include "engraving/dom/keysig.h"
 #include "engraving/dom/layoutbreak.h"
 #include "engraving/dom/mscore.h"
 #include "engraving/dom/pedal.h"
-#include "engraving/dom/pitchspelling.h"
 #include "engraving/dom/instrtemplate.h"
 #include "engraving/dom/sig.h"
 #include "engraving/compat/scoreaccess.h"
@@ -721,10 +718,6 @@ struct AnalyzedRegion {
     std::vector<ChordAnalysisTone> tones;
     uint16_t pcMask = 0;   // 12-bit pitch-class bitmask of sounding notes
     int bassPc = -1;       // pitch class of the lowest-sounding note
-    // §4.1c Jazz mode
-    bool fromChordSymbol = false;  // true when root/quality came from a written chord symbol
-    int writtenRootPc = -1;        // root PC from the chord symbol (-1 when not jazz path)
-    ChordQuality writtenQuality = ChordQuality::Unknown;
 };
 
 enum class RegionDumpMode {
@@ -751,49 +744,6 @@ static const char* regionDumpModeName(RegionDumpMode mode)
     case RegionDumpMode::NotationRefreshed:   return "notation-refreshed";
     }
     return "batch";
-}
-
-// ── §4.1c Jazz mode helpers ──────────────────────────────────────────────────
-
-static ChordQuality xmlKindToQuality(const muse::String& xmlKind)
-{
-    if (xmlKind == u"major" || xmlKind.startsWith(u"major-")) return ChordQuality::Major;
-    if (xmlKind == u"minor" || xmlKind.startsWith(u"minor-")) return ChordQuality::Minor;
-    if (xmlKind == u"dominant" || xmlKind.startsWith(u"dominant-")) return ChordQuality::Major;
-    if (xmlKind == u"diminished" || xmlKind.startsWith(u"diminished-")) return ChordQuality::Diminished;
-    if (xmlKind == u"augmented" || xmlKind.startsWith(u"augmented-")) return ChordQuality::Augmented;
-    if (xmlKind == u"half-diminished") return ChordQuality::HalfDiminished;
-    if (xmlKind == u"suspended-second") return ChordQuality::Suspended2;
-    if (xmlKind == u"suspended-fourth") return ChordQuality::Suspended4;
-    if (xmlKind == u"power") return ChordQuality::Power;
-    return ChordQuality::Unknown;
-}
-
-static bool isStandardChordSymbol(const EngravingItem* annotation)
-{
-    if (!annotation || !annotation->isHarmony()) {
-        return false;
-    }
-
-    const Harmony* harmony = toHarmony(annotation);
-    return harmony->harmonyType() == HarmonyType::STANDARD
-           && harmony->rootTpc() != Tpc::TPC_INVALID;
-}
-
-static bool scoreHasValidChordSymbols(Score* score)
-{
-    for (const MeasureBase* mb = score->measures()->first(); mb; mb = mb->next()) {
-        if (!mb->isMeasure()) continue;
-        const Measure* m = toMeasure(mb);
-        for (const Segment* seg = m->first(SegmentType::ChordRest); seg;
-             seg = seg->next1(SegmentType::ChordRest)) {
-            if (seg->measure() != m) break;
-            for (const EngravingItem* ann : seg->annotations()) {
-                if (isStandardChordSymbol(ann)) return true;
-            }
-        }
-    }
-    return false;
 }
 
 static std::vector<ChordAnalysisTone> collectRegionTones(
@@ -1650,181 +1600,12 @@ static ChordTemporalContext findTemporalContext(
     return temporalContext;
 }
 
-static void injectWrittenRootTone(
-    std::vector<ChordAnalysisTone>& tones,
-    int writtenRootPc,
-    int regionDurationTicks)
-{
-    if (writtenRootPc < 0) {
-        return;
-    }
-
-    for (auto& tone : tones) {
-        tone.isBass = false;
-    }
-
-    ChordAnalysisTone syntheticBass;
-    syntheticBass.pitch = analysis::normalizePc(writtenRootPc) + 36;
-    syntheticBass.tpc = -1;
-    syntheticBass.weight = 2.0;
-    syntheticBass.isBass = true;
-    syntheticBass.durationInRegion = regionDurationTicks;
-    syntheticBass.distinctMetricPositions = 4;
-    syntheticBass.simultaneousVoiceCount = 1;
-    tones.insert(tones.begin(), syntheticBass);
-}
-
-/// Jazz path: build AnalyzedRegion list from written chord symbols.
-/// Written chord symbols define the region boundaries and provide comparison
-/// metadata only. Chord identity still comes from note-based analysis.
-static std::vector<AnalyzedRegion> analyzeScoreJazz(
-    Score* score,
-    const std::set<size_t>& excludeStaves,
-    const analysis::KeyModeAnalyzerPreferences& keyPrefs,
-    bool injectWrittenRoot,
-    const analysis::ChordAnalyzerPreferences& chordPrefs = analysis::kDefaultChordAnalyzerPreferences)
-{
-    // Collect all (tick, Harmony*) pairs in score order.
-    struct ChordSymbolEvent {
-        Fraction tick;
-        const Harmony* harmony;
-        int measureNumber;
-        double beat;
-    };
-    std::vector<ChordSymbolEvent> events;
-
-    const int division = Constants::DIVISION;
-    int nextMeasureNumber = 0;
-    for (const MeasureBase* mb = score->measures()->first(); mb; mb = mb->next()) {
-        if (!mb->isMeasure()) continue;
-        const Measure* m = toMeasure(mb);
-        nextMeasureNumber += m->measureNumberOffset();
-        const int displayedMeasureNumber = nextMeasureNumber + 1;
-        for (const Segment* seg = m->first(SegmentType::ChordRest); seg;
-             seg = seg->next1(SegmentType::ChordRest)) {
-            if (seg->measure() != m) break;
-            for (const EngravingItem* ann : seg->annotations()) {
-                if (!isStandardChordSymbol(ann)) continue;
-                const Harmony* h = toHarmony(ann);
-                // Deduplicate: skip if we already have a chord symbol at this tick.
-                if (!events.empty() && events.back().tick == seg->tick()) break;
-                const int tickInMeasure = seg->tick().ticks() - m->tick().ticks();
-                ChordSymbolEvent ev;
-                ev.tick          = seg->tick();
-                ev.harmony       = h;
-                ev.measureNumber = displayedMeasureNumber;
-                ev.beat          = 1.0 + static_cast<double>(tickInMeasure) / division;
-                events.push_back(ev);
-                break;  // first Harmony at this tick wins
-            }
-        }
-
-        if (!m->excludeFromNumbering()) {
-            ++nextMeasureNumber;
-        }
-
-        const LayoutBreak* layoutBreak = m->sectionBreakElement();
-        if (layoutBreak && layoutBreak->startWithMeasureOne()) {
-            nextMeasureNumber = 0;
-        }
-    }
-
-    if (events.empty()) return {};
-
-    const Fraction endTick = score->endTick();
-    std::vector<AnalyzedRegion> result;
-    result.reserve(events.size());
-    const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
-
-    ChordTemporalContext ctx;
-    ctx.previousRootPc = -1;
-    ctx.previousQuality = ChordQuality::Unknown;
-    ctx.jazzMode = true;
-
-    std::optional<KeyModeAnalysisResult> prevKey;
-
-    for (size_t i = 0; i < events.size(); ++i) {
-        const auto& ev = events[i];
-        const Fraction regionEnd = (i + 1 < events.size()) ? events[i + 1].tick : endTick;
-
-        const int writtenRootPc = tpc2pitch(ev.harmony->rootTpc()) % 12;
-        ChordQuality writtenQuality = ChordQuality::Unknown;
-        if (const ParsedChord* parsedChord = ev.harmony->parsedForm()) {
-            writtenQuality = xmlKindToQuality(parsedChord->xmlKind());
-        }
-
-        auto regionTones = collectRegionTones(score,
-                                              ev.tick.ticks(),
-                                              regionEnd.ticks(),
-                                              excludeStaves);
-        if (injectWrittenRoot) {
-            injectWrittenRootTone(regionTones, writtenRootPc, regionEnd.ticks() - ev.tick.ticks());
-        }
-
-        const std::vector<KeyModeAnalysisResult> keyRanked = inferLocalKey(
-            score, refStaff, excludeStaves, ev.tick,
-            prevKey.has_value() ? &prevKey.value() : nullptr, keyPrefs);
-        const KeyModeAnalysisResult& localKey = keyRanked[0];
-        prevKey = localKey;
-
-        ChordAnalysisResult chord;
-        bool hasAnalyzedChord = false;
-        auto candidates = analysis::RuleBasedChordAnalyzer{}.analyzeChord(
-            regionTones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
-        if (!candidates.empty()) {
-            chord = candidates[0];
-            hasAnalyzedChord = true;
-            ctx.previousRootPc = candidates[0].identity.rootPc;
-            ctx.previousQuality = candidates[0].identity.quality;
-            ctx.previousBassPc = candidates[0].identity.bassPc;
-        }
-
-        const uint16_t pcMask = pitchClassMask(regionTones);
-        int bassPc = -1;
-        for (const auto& t : regionTones) {
-            if (t.isBass) { bassPc = t.pitch % 12; break; }
-        }
-
-        AnalyzedRegion ar;
-        ar.startTick      = ev.tick.ticks();
-        ar.endTick        = regionEnd.ticks();
-        ar.measureNumber  = ev.measureNumber;
-        ar.beat           = ev.beat;
-        ar.chord          = chord;
-        ar.hasAnalyzedChord = hasAnalyzedChord;
-        ar.key            = localKey;
-        ar.keyRanked      = keyRanked;
-        ar.tones          = std::move(regionTones);
-        ar.pcMask         = pcMask;
-        ar.bassPc         = bassPc;
-        ar.fromChordSymbol = true;
-        ar.writtenRootPc   = writtenRootPc;
-        ar.writtenQuality  = writtenQuality;
-
-        for (size_t candidateIndex = 1; candidateIndex < candidates.size() && candidateIndex <= 2; ++candidateIndex) {
-            ar.alternatives.push_back(candidates[candidateIndex]);
-        }
-
-        result.push_back(std::move(ar));
-    }
-
-    return result;
-}
-
 static std::vector<AnalyzedRegion> analyzeScore(
     Score* score,
     const std::set<size_t>& excludeStaves,
     const analysis::KeyModeAnalyzerPreferences& keyPrefs = analysis::KeyModeAnalyzerPreferences{},
-    bool injectWrittenRoot = false,
     const analysis::ChordAnalyzerPreferences& chordPrefs = analysis::kDefaultChordAnalyzerPreferences)
 {
-    // §4.1c Jazz detection gate: when the score contains written chord symbols,
-    // use chord-symbol-driven boundaries but still analyze note content within
-    // those regions.
-    if (scoreHasValidChordSymbols(score)) {
-        return analyzeScoreJazz(score, excludeStaves, keyPrefs, injectWrittenRoot, chordPrefs);
-    }
-
     const Segment* firstSegment = score->tick2segment(Fraction(0, 1), true, SegmentType::ChordRest);
     if (!firstSegment) {
         return {};
@@ -2012,8 +1793,6 @@ static AnalyzedRegion convertNotationRegion(
     converted.tones = region.tones;
     converted.pcMask = pitchClassMask(converted.tones);
     converted.bassPc = region.chordResult.identity.bassPc;
-    converted.fromChordSymbol = region.fromChordSymbol;
-    converted.writtenRootPc = region.writtenRootPc;
 
     if (converted.bassPc < 0) {
         if (const auto* bassTone = analysis::bassToneFromTones(converted.tones)) {
@@ -2220,9 +1999,6 @@ static void writeJson(
         out << "      \"noteCount\": "       << noteCount                                            << ",\n";
         out << "      \"diatonicToKey\": "    << (r.chord.function.diatonicToKey ? "true" : "false") << ",\n";
         out << "      \"hasAnalyzedChord\": " << (r.hasAnalyzedChord ? "true" : "false")           << ",\n";
-        out << "      \"fromChordSymbol\": " << (r.fromChordSymbol ? "true" : "false")             << ",\n";
-        out << "      \"writtenRootPc\": "   << r.writtenRootPc                                     << ",\n";
-        out << "      \"writtenQuality\": \"" << qualityToString(r.writtenQuality)                  << "\",\n";
         out << "      \"tones\": [\n";
 
         for (size_t ti = 0; ti < r.tones.size(); ++ti) {
@@ -2492,10 +2268,6 @@ static void printHelp(const std::string& prog)
         << "  --preset  Apply a named mode prior preset (default: Standard).\n"
         << "            Run the same corpus under different presets and diff the\n"
         << "            results to identify mode-inference improvements.\n"
-        << "  --inject-written-root\n"
-        << "            Diagnostic batch-only option for chord-symbol-driven jazz\n"
-        << "            regions: inject the written root as a synthetic bass tone\n"
-        << "            before chord analysis. Does not affect any bridge path.\n"
         << "  --dump-regions <mode>\n"
         << "            Select which analysis path to serialize. 'batch' writes the\n"
         << "            tool's current batch path, 'notation' writes the live notation\n"
@@ -2536,14 +2308,13 @@ int main(int argc, char* argv[])
     }
 
     // ── Parse arguments ────────────────────────────────────────────────────
-    // Syntax: <input> [output] [--preset <name>] [--inject-written-root]
+    // Syntax: <input> [output] [--preset <name>]
     //         [--dump-regions <batch|notation|notation-premerge>]
     //         [--diagnose-measures N[,N,...]]
     // Options may appear anywhere after the input path.
     muse::io::path_t inputPath;
     muse::io::path_t outputPath;
     std::string presetName = "Standard";
-    bool injectWrittenRoot = false;
     RegionDumpMode dumpMode = RegionDumpMode::Batch;
     std::set<int> diagnoseMeasures;
 
@@ -2556,8 +2327,6 @@ int main(int argc, char* argv[])
                 std::cerr << "ERROR: --preset requires a name argument\n";
                 return 1;
             }
-        } else if (a == "--inject-written-root") {
-            injectWrittenRoot = true;
         } else if (a == "--dump-regions") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --dump-regions requires a mode argument\n";
@@ -2649,7 +2418,7 @@ int main(int argc, char* argv[])
     // ── Analyze harmonic regions (key inferred locally per region) ────────
     std::vector<AnalyzedRegion> regions;
     if (dumpMode == RegionDumpMode::Batch) {
-        regions = analyzeScore(score, excludeStaves, keyPrefs, injectWrittenRoot, chordPrefs);
+        regions = analyzeScore(score, excludeStaves, keyPrefs, chordPrefs);
     } else if (dumpMode == RegionDumpMode::NotationPrepared) {
         regions = analyzeScoreNotationPrepared(score, excludeStaves);
     } else if (dumpMode == RegionDumpMode::NotationRefreshed) {

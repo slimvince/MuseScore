@@ -522,11 +522,6 @@ struct ChordTemporalContext {
     /// above or below the next region's bass note.
     /// False if nextBassPc is -1.
     bool bassIsStepwiseToNext = false;
-
-    /// True when the current chord is being analyzed inside a chord-symbol-
-    /// driven region. Used by tool paths (batch_analyze analyzeScoreJazz);
-    /// production analysis paths do not set this.
-    bool jazzMode = false;
 };
 
 /// Per-candidate diagnostic entry from the full 12 × template scoring loop.

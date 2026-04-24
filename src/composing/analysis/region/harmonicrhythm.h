@@ -45,15 +45,6 @@ struct HarmonicRegion {
     bool hasAnalyzedChord = true;                   ///< False when note-based chord analysis produced no candidate for this region
     KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
     std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
-
-    // ── Tool-path metadata fields ───────────────────────────────────────────
-    // Production analysis paths never set these (always false / -1).
-    // batch_analyze's analyzeScoreJazz sets them for comparison output.
-    /// True when this region was produced by a chord-symbol-driven tool path.
-    bool fromChordSymbol = false;
-    /// Root pitch class (0–11) read from the written chord symbol.
-    /// -1 when fromChordSymbol is false or when the chord symbol had no parseable root.
-    int writtenRootPc = -1;
 };
 
 } // namespace mu::composing::analysis
