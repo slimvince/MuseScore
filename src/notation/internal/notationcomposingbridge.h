@@ -114,4 +114,25 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                                        bool writeRomanNumerals,
                                        bool writeNashvilleNumbers);
 
+/// Formatted presentation strings for a chord analysis result.
+struct FormattedChordResult {
+    std::string symbol;
+    std::string roman;
+    std::string nashville;
+};
+
+/// Shared formatter for chord-result presentation. Used by both the region
+/// annotation path (addHarmonicAnnotationsToSelection) and the per-note UI
+/// path (NotationInteraction::addAnalyzedHarmonyToSelection).
+/// Honors scoreNoteSpelling via the ChordSymbolFormatter.
+FormattedChordResult formatChordResultForStatusBar(
+    const mu::engraving::Score* sc,
+    const mu::composing::analysis::ChordAnalysisResult& result,
+    int keyFifths);
+
+/// Returns the set of staff indices that are chord-track staves in sc.
+/// These staves should be excluded from annotation OUTPUT on the per-note path
+/// (the region path handles them via chord-track priority).
+std::set<size_t> chordTrackExcludeStaves(const mu::engraving::Score* sc);
+
 } // namespace mu::notation
