@@ -61,14 +61,20 @@ pipeline still shows up in the snapshot.
 
 ## The `tickLocal` slot
 
-`tickLocal` is intentionally empty in every Phase 1b snapshot. The P4 function
-`analyzeHarmonicContextLocallyAtTick` lives in an anonymous namespace inside
-`notationcomposingbridge.cpp`, and the Phase 1b scope guardrail permits only
-one change to the bridge public header (the `wasRegional` field). Divergence A
-— when the P3 regional path returns no result and the code falls back to P4 —
-is still observable via `tickRegional[].wasRegional == false` entries in the
-same snapshot. Phase 2+ is the right place to widen P4 observability, since it
-is already scheduled to unify the P3/P4 public API.
+Phase 2 exposes `analyzeHarmonicContextLocallyAtTick` via
+`notationcomposingbridge.h`, and the harness now populates `tickLocal` at the
+same sample tick set as `tickRegional`. Divergence A (Policy #2) can be
+read two ways in the same snapshot:
+
+- `tickRegional[].wasRegional == false` at a tick marks a P3→P4 fallback
+  (the regional path returned no result and the bridge fell through).
+- For ticks where both `tickRegional` and `tickLocal` entries exist, the
+  two arrays encode what each path independently reports — any difference
+  between them is divergence A showing up at a tick both paths covered.
+
+Sample ticks for `tickLocal` are the same as for `tickRegional` (one per
+measure downbeat plus one mid-measure tick), so the two arrays align
+index-for-index.
 
 ## Updating the baselines
 

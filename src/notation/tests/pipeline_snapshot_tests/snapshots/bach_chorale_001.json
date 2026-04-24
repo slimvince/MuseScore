@@ -706,6 +706,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx",
     "tickLocal": [
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 240
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 480
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "E",
+            "tick": 1200
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 2640
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "C",
+            "tick": 3360
+        },
+        {
+            "key": "G",
+            "quality": "diminished",
+            "root": "F#",
+            "tick": 4080
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 4800
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 5520
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 6240
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 6960
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 7680
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 8400
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 9120
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 10080
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 10320
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "quality": "diminished",
+            "root": "F#",
+            "tick": 11280
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "B",
+            "tick": 12000
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 12720
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 13440
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 14160
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "E",
+            "tick": 14880
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "B",
+            "tick": 15600
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "B",
+            "tick": 16320
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "D",
+            "tick": 17040
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 17760
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 18480
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "C",
+            "tick": 19200
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 19920
+        }
     ],
     "tickRegional": [
         {

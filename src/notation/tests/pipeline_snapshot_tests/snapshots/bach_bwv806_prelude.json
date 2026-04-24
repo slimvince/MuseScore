@@ -1518,6 +1518,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/bach_en_fr_suites/MS3/BWV806_01_Prelude.mscx",
     "tickLocal": [
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 0
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 1440
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 2880
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 4320
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 7200
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "C#",
+            "tick": 8640
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 10080
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 11520
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 12960
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 14400
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "D",
+            "tick": 15840
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "D#",
+            "tick": 17280
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 18720
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 20160
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "B",
+            "tick": 21600
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 23040
+        },
+        {
+            "key": "E",
+            "quality": "major",
+            "root": "E",
+            "tick": 24480
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 25920
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 27360
+        },
+        {
+            "key": "A",
+            "quality": "",
+            "root": "",
+            "tick": 28800
+        },
+        {
+            "key": "A",
+            "quality": "",
+            "root": "",
+            "tick": 30240
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 31680
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "G",
+            "tick": 33120
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "D",
+            "tick": 34560
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "C#",
+            "tick": 36000
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "C#",
+            "tick": 37440
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "C#",
+            "tick": 38880
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "D",
+            "tick": 40320
+        },
+        {
+            "key": "F#",
+            "quality": "major",
+            "root": "E",
+            "tick": 41760
+        },
+        {
+            "key": "F#",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 43200
+        },
+        {
+            "key": "F#",
+            "quality": "unknown",
+            "root": "F#",
+            "tick": 44640
+        }
     ],
     "tickRegional": [
         {

@@ -42,6 +42,7 @@ namespace mu::engraving {
 class Note;
 class Rest;
 class Score;
+class Segment;
 class Fraction;
 }
 
@@ -85,6 +86,19 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
                                                  const mu::engraving::Fraction& tick,
                                                  size_t preferredStaffIdx = 0,
                                                  const std::set<size_t>& excludeStaves = {});
+
+/// Tick-local (P4) harmonic analysis — the fallback path used by
+/// analyzeHarmonicContextAtTick when regional (P3) analysis produces no
+/// result.  Exposed so the pipeline snapshot harness can pin tick-local
+/// output directly (Divergence A observability).  Callers must pre-resolve
+/// the anchor segment and reference staff; see analyzeHarmonicContextAtTick
+/// for the canonical resolution.
+NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* seg,
+    size_t refStaff,
+    const std::set<size_t>& excludeStaves = {});
 
 /// Extract pitch context from a note and run harmonic analysis.
 /// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).

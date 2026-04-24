@@ -594,6 +594,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/chopin_mazurkas/MS3/BI105-2op30-2.mscx",
     "tickLocal": [
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "D",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 240
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "B",
+            "tick": 480
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 1200
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "F#",
+            "tick": 1920
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 2640
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "B",
+            "tick": 3360
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 4080
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 4800
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 5520
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "G",
+            "tick": 6240
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 6960
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "D",
+            "tick": 7680
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 8400
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "E",
+            "tick": 9120
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 9840
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "B",
+            "tick": 10560
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 11280
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "B",
+            "tick": 12000
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 12720
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "F#",
+            "tick": 13440
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 14160
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "B",
+            "tick": 14880
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 15600
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 16320
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 17040
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "G",
+            "tick": 17760
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 18480
+        },
+        {
+            "key": "B",
+            "quality": "major",
+            "root": "D",
+            "tick": 19200
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 19920
+        },
+        {
+            "key": "B",
+            "quality": "minor",
+            "root": "E",
+            "tick": 20640
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 21360
+        }
     ],
     "tickRegional": [
         {

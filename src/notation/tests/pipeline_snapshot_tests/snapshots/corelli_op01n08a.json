@@ -2118,6 +2118,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/corelli/MS3/op01n08a.mscx",
     "tickLocal": [
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 0
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "G",
+            "tick": 960
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 1920
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "G",
+            "tick": 2880
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 3840
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "Ab",
+            "tick": 4800
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 5760
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 6720
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 7680
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "D",
+            "tick": 8640
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 9600
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "D",
+            "tick": 10560
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 11520
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "Eb",
+            "tick": 12480
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "D",
+            "tick": 13440
+        },
+        {
+            "key": "G",
+            "quality": "",
+            "root": "",
+            "tick": 14400
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 15360
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 16320
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "F",
+            "tick": 17280
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "G",
+            "tick": 18240
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 19200
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "F",
+            "tick": 20160
+        },
+        {
+            "key": "G",
+            "quality": "sus4",
+            "root": "C",
+            "tick": 21120
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "F",
+            "tick": 22080
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "F",
+            "tick": 23040
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 24000
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "C",
+            "tick": 24960
+        },
+        {
+            "key": "G",
+            "quality": "minor",
+            "root": "F",
+            "tick": 25920
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "quality": "sus4",
+            "root": "G",
+            "tick": 27840
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "C",
+            "tick": 28800
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 29760
+        }
     ],
     "tickRegional": [
         {

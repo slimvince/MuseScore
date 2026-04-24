@@ -37,6 +37,7 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
+#include "composing/analyzed_section.h"
 
 namespace mu::engraving {
 class Score;
@@ -205,6 +206,21 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
                                  const std::set<size_t>& excludeStaves);
+
+/// Phase 2 entry point for the unified analysis pipeline.  Translates the
+/// shared `HarmonicRegion` output from `prepareUserFacingHarmonicRegions`
+/// into the Phase 2 shared-output types
+/// (`AnalyzedRegion` / `KeyArea` / `AnalyzedSection`).
+///
+/// Pure translation for Phase 2 — no behavior change, no additional analyzer
+/// calls, no callers yet.  Phase 3a/3b/3c wire each emitter over; Phase 4
+/// retires `prepareUserFacingHarmonicRegions` and moves this function into
+/// src/composing/.
+mu::composing::analysis::AnalyzedSection
+analyzeSection(const mu::engraving::Score* sc,
+               const mu::engraving::Fraction& from,
+               const mu::engraving::Fraction& to,
+               const std::set<size_t>& excludeStaves = {});
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 

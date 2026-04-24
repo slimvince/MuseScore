@@ -1014,6 +1014,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/mozart_piano_sonatas/MS3/K279-1.mscx",
     "tickLocal": [
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 0
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "D",
+            "tick": 960
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 1920
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 3840
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "D",
+            "tick": 4800
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "F",
+            "tick": 5760
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "C",
+            "tick": 7680
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 8640
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "B",
+            "tick": 9600
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "C",
+            "tick": 10560
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 11520
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 12480
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 13440
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 14400
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 15360
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "F",
+            "tick": 16320
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 17280
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 18240
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 19200
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "F",
+            "tick": 20160
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 21120
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 22080
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 23040
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 24000
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 24960
+        },
+        {
+            "key": "C",
+            "quality": "",
+            "root": "",
+            "tick": 25920
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 26880
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "E",
+            "tick": 27840
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "C",
+            "tick": 28800
+        },
+        {
+            "key": "C",
+            "quality": "minor",
+            "root": "D",
+            "tick": 29760
+        }
     ],
     "tickRegional": [
         {

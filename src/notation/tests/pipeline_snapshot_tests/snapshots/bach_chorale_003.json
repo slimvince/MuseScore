@@ -930,6 +930,150 @@
     "schemaVersion": 1,
     "score": "tools/dcml/bach_chorales/MS3/003 Ach Gott, vom Himmel sieh darein.mscx",
     "tickLocal": [
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 240
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "A",
+            "tick": 480
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "A",
+            "tick": 1440
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 2400
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 3360
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "A",
+            "tick": 4320
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "F",
+            "tick": 5280
+        },
+        {
+            "key": "A",
+            "quality": "augmented",
+            "root": "E",
+            "tick": 6240
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 6960
+        },
+        {
+            "key": "E",
+            "quality": "sus4",
+            "root": "A",
+            "tick": 7680
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 7920
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 8160
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "B",
+            "tick": 9120
+        },
+        {
+            "key": "E",
+            "quality": "minor",
+            "root": "E",
+            "tick": 10080
+        },
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "B",
+            "tick": 11040
+        },
+        {
+            "key": "E",
+            "quality": "major",
+            "root": "F",
+            "tick": 12000
+        },
+        {
+            "key": "E",
+            "quality": "major",
+            "root": "E",
+            "tick": 12960
+        },
+        {
+            "key": "E",
+            "quality": "minor",
+            "root": "A",
+            "tick": 13920
+        },
+        {
+            "key": "E",
+            "quality": "minor",
+            "root": "A",
+            "tick": 14880
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 15840
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "D",
+            "tick": 16800
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "D",
+            "tick": 17760
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 18480
+        }
     ],
     "tickRegional": [
         {

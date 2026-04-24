@@ -215,59 +215,6 @@ mu::engraving::staff_idx_t resolveAnalysisReferenceStaff(const mu::engraving::Sc
     return refStaff;
 }
 
-mu::notation::NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
-    const mu::engraving::Score* sc,
-    const mu::engraving::Fraction& tick,
-    const mu::engraving::Segment* seg,
-    mu::engraving::staff_idx_t refStaff,
-    const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::engraving;
-
-    mu::notation::NoteHarmonicContext context;
-
-    std::vector<SoundingNote> sounding;
-    collectSoundingAt(sc, seg, excludeStaves, sounding);
-    if (sounding.empty()) {
-        return context;
-    }
-
-    resolveKeyAndMode(sc, tick, refStaff, excludeStaves,
-                      context.keyFifths, context.keyMode, context.keyConfidence);
-
-    int currentBassPc = -1;
-    int lowestPitch = std::numeric_limits<int>::max();
-    for (const SoundingNote& soundingNote : sounding) {
-        lowestPitch = std::min(lowestPitch, soundingNote.ppitch);
-    }
-    if (lowestPitch != std::numeric_limits<int>::max()) {
-        currentBassPc = lowestPitch % 12;
-    }
-
-    mu::composing::analysis::ChordTemporalContext temporalCtx
-        = findTemporalContext(sc, seg, excludeStaves, context.keyFifths, context.keyMode, currentBassPc);
-
-    const auto analysisTones = buildTones(sounding);
-    context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(analysisTones,
-                                                                                                  context.keyFifths,
-                                                                                                  context.keyMode,
-                                                                                                  &temporalCtx);
-    if (context.chordResults.empty()) {
-        if (auto sparseResult = inferSparseChordResult(analysisTones,
-                                                       context.keyFifths,
-                                                       context.keyMode)) {
-            context.chordResults.push_back(*sparseResult);
-        }
-    }
-    for (auto& result : context.chordResults) {
-        mu::notation::internal::refineSparseChordQualityFromKeyContext(result,
-                                                                       analysisTones,
-                                                                       context.keyFifths,
-                                                                       context.keyMode);
-    }
-    return context;
-}
-
 struct RegionalContextSnapshot {
     mu::notation::NoteHarmonicContext context;
     std::string symbol;
@@ -458,6 +405,65 @@ mu::notation::NoteHarmonicContext analyzeHarmonicContextRegionallyAtTick(
 }
 
 }
+
+// ── Tick-local (P4) path ─────────────────────────────────────────────────────
+
+namespace mu::notation {
+
+NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* seg,
+    size_t refStaff,
+    const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    NoteHarmonicContext context;
+
+    std::vector<SoundingNote> sounding;
+    collectSoundingAt(sc, seg, excludeStaves, sounding);
+    if (sounding.empty()) {
+        return context;
+    }
+
+    resolveKeyAndMode(sc, tick, static_cast<staff_idx_t>(refStaff), excludeStaves,
+                      context.keyFifths, context.keyMode, context.keyConfidence);
+
+    int currentBassPc = -1;
+    int lowestPitch = std::numeric_limits<int>::max();
+    for (const SoundingNote& soundingNote : sounding) {
+        lowestPitch = std::min(lowestPitch, soundingNote.ppitch);
+    }
+    if (lowestPitch != std::numeric_limits<int>::max()) {
+        currentBassPc = lowestPitch % 12;
+    }
+
+    mu::composing::analysis::ChordTemporalContext temporalCtx
+        = findTemporalContext(sc, seg, excludeStaves, context.keyFifths, context.keyMode, currentBassPc);
+
+    const auto analysisTones = buildTones(sounding);
+    context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(analysisTones,
+                                                                                                  context.keyFifths,
+                                                                                                  context.keyMode,
+                                                                                                  &temporalCtx);
+    if (context.chordResults.empty()) {
+        if (auto sparseResult = inferSparseChordResult(analysisTones,
+                                                       context.keyFifths,
+                                                       context.keyMode)) {
+            context.chordResults.push_back(*sparseResult);
+        }
+    }
+    for (auto& result : context.chordResults) {
+        mu::notation::internal::refineSparseChordQualityFromKeyContext(result,
+                                                                       analysisTones,
+                                                                       context.keyFifths,
+                                                                       context.keyMode);
+    }
+    return context;
+}
+
+} // namespace mu::notation
 
 // ── harmonicAnnotation ──────────────────────────────────────────────────────
 

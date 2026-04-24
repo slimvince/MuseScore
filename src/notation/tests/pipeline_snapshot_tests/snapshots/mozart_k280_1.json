@@ -874,6 +874,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/mozart_piano_sonatas/MS3/K280-1.mscx",
     "tickLocal": [
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 720
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 1440
+        },
+        {
+            "key": "F",
+            "quality": "",
+            "root": "",
+            "tick": 2160
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 2880
+        },
+        {
+            "key": "F",
+            "quality": "minor",
+            "root": "G",
+            "tick": 3600
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 4320
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 5040
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 5760
+        },
+        {
+            "key": "F",
+            "quality": "minor",
+            "root": "G",
+            "tick": 6480
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 7200
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 7920
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 8640
+        },
+        {
+            "key": "F",
+            "quality": "diminished",
+            "root": "E",
+            "tick": 9360
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 10080
+        },
+        {
+            "key": "F",
+            "quality": "",
+            "root": "",
+            "tick": 10800
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 11520
+        },
+        {
+            "key": "F",
+            "quality": "",
+            "root": "",
+            "tick": 12240
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 12960
+        },
+        {
+            "key": "F",
+            "quality": "diminished",
+            "root": "E",
+            "tick": 13680
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 14400
+        },
+        {
+            "key": "F",
+            "quality": "",
+            "root": "",
+            "tick": 15120
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 15840
+        },
+        {
+            "key": "F",
+            "quality": "",
+            "root": "",
+            "tick": 16560
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 17280
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 18000
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "F",
+            "tick": 18720
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 19440
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 20160
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 20880
+        },
+        {
+            "key": "F",
+            "quality": "major",
+            "root": "C",
+            "tick": 21600
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 22320
+        }
     ],
     "tickRegional": [
         {

@@ -35,6 +35,11 @@ target_sources(composing PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/icomposinganalysisconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/icomposingchordstaffconfiguration.h
     ${CMAKE_CURRENT_LIST_DIR}/icomposingconfiguration.h
+
+    # Phase 2 — shared unified-pipeline output types.  See
+    # docs/unified_analysis_pipeline.md.  Phase 4 will retire the bridge-side
+    # analyzeSection() delegate and move the entry point into composing/.
+    ${CMAKE_CURRENT_LIST_DIR}/analyzed_section.h
 )
 
 target_include_directories(composing_analysis INTERFACE

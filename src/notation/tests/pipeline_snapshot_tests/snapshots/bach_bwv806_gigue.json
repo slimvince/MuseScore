@@ -818,6 +818,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/bach_en_fr_suites/MS3/BWV806_10_Gigue.mscx",
     "tickLocal": [
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 120
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 240
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 960
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "C#",
+            "tick": 1680
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 2400
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "G#",
+            "tick": 3120
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "B",
+            "tick": 3840
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 4560
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 5280
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "C#",
+            "tick": 6000
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "E",
+            "tick": 6720
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "D",
+            "tick": 7440
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 8160
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 8880
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "G#",
+            "tick": 9600
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 10320
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 11040
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "G#",
+            "tick": 11760
+        },
+        {
+            "key": "E",
+            "quality": "major",
+            "root": "E",
+            "tick": 12480
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 13200
+        },
+        {
+            "key": "E",
+            "quality": "minor",
+            "root": "D#",
+            "tick": 13920
+        },
+        {
+            "key": "E",
+            "quality": "major",
+            "root": "E",
+            "tick": 14640
+        },
+        {
+            "key": "A",
+            "quality": "",
+            "root": "",
+            "tick": 15360
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "E",
+            "tick": 16080
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 16800
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "B",
+            "tick": 17520
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "G#",
+            "tick": 18240
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 18960
+        },
+        {
+            "key": "A",
+            "quality": "minor",
+            "root": "F#",
+            "tick": 19680
+        },
+        {
+            "key": "A",
+            "quality": "",
+            "root": "",
+            "tick": 20400
+        },
+        {
+            "key": "A",
+            "quality": "major",
+            "root": "A",
+            "tick": 21120
+        }
     ],
     "tickRegional": [
         {

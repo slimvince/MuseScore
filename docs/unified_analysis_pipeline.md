@@ -281,6 +281,86 @@ key sequences, `ChordTemporalExtensions` population.
 must continue to pass at every phase boundary. Mismatch baseline
 (0/135 abstract, 135/135 symbol/roman) must hold.
 
+## ChordTemporalContext audit (Phase 2)
+
+Read-only audit against the struct defined at
+`src/composing/analysis/chord/chordanalyzer.h:484-525`. Goal: classify each
+field as dead, emitter-leaked, or an `AnalyzedRegion` migration candidate, so
+Phase 3c can define `ChordTemporalExtensions` narrowly and confidently.
+
+All eight fields are classified below. Nothing is moved, deleted, or renamed
+in Phase 2 — each row is a finding for Phase 3+ to act on.
+
+### (i) Dead fields — never read, safe to retire in Phase 3c cleanup
+
+| Field | Declaration | Status |
+|-------|-------------|--------|
+| `nextRootPc` | `chordanalyzer.h:508` | Declared, never set, never read on `ChordTemporalContext`. The `nextRootPc` reads in the codebase (`chordanalyzer.cpp:2356`, `notationharmonicrhythmbridge.cpp:76`, three sites in `chordanalyzer_tests.cpp`) are all on `ChordFunction::nextRootPc` — a separate field on `ChordAnalysisResult::function`. |
+| `nextBassPc` | `chordanalyzer.h:512` | Declared, never set, never read anywhere. Added in the §4.1b "Contextual Inversion Resolution" batch alongside `bassIsStepwiseToNext`; the boolean is populated and read but the raw pitch class was never wired up. |
+| `previousChordAge` | `chordanalyzer.h:496` | Declared, never set, never read. The declaration comment already concedes this: *"0.0 when unknown. (Not yet populated — reserved for beat-strength weighting of root-continuity bonus.)"* Reservation has never been cashed. |
+
+Precedent: the `jazzMode` field removed in commits `02e3733afb` and
+`69716deead` had exactly this pattern — present on the context, set by one
+caller, never read by any scoring logic. Same retirement treatment would
+apply cleanly to the three fields above. Leaving them in place during
+Phase 2 per the guardrail ("report only").
+
+### (ii) Emitter-leaked fields — none found
+
+No `ChordTemporalContext` field is read by emitter code (implode chord-track
+writer `notationimplodebridge.cpp`, annotation writer
+`notationcomposingbridge.cpp::addHarmonicAnnotationsToSelection`, status-bar
+formatter `notationaccessibility.cpp`). All live fields are consumed by the
+analyzer during scoring. Emitters read from `ChordAnalysisResult` directly
+(e.g., `result.identity.rootPc`, `result.function.nextRootPc`) or from the
+surrounding `HarmonicRegion` / `KeyModeAnalysisResult`.
+
+This matches the original design intent recorded at `chordanalyzer.h:479-483`
+— "ChordTemporalContext carries single-step look-around data for vertical
+chord analysis" — and means no emitter-side reverse dependency has leaked
+in. Good news for Phase 3c: the migration of live fields onto
+`AnalyzedRegion::temporalExtensions` will not force any emitter rewrite.
+
+### (iii) `AnalyzedRegion` migration candidates — five fields
+
+These fields are live analyzer inputs today, populated by the bridge
+(`notationcomposingbridgehelpers.cpp:1511-1570`, the three sites in
+`notationharmonicrhythmbridge.cpp:213,376,514`, and `batch_analyze.cpp:1545`)
+and read by the chord analyzer's inversion and root-continuity scoring
+(`chordanalyzer.cpp:1358-1407`).
+
+Phase 3c is scheduled to promote them to **output** fields on
+`AnalyzedRegion::temporalExtensions` — the analyzer records what context
+it saw per region, so P3's tick-regional path can read that record
+directly instead of re-invoking `analyzeChord` with a fresh display context
+(divergence D). The live fields are:
+
+| Field | Declaration | Analyzer read site | Notes |
+|-------|-------------|--------------------|-------|
+| `bassIsStepwiseFromPrevious` | `chordanalyzer.h:519` | `chordanalyzer.cpp:1358-1359, 1390` | Already matches the `ChordTemporalExtensions` sketch in this doc's Architecture section verbatim. |
+| `bassIsStepwiseToNext` | `chordanalyzer.h:524` | `chordanalyzer.cpp:1358-1359, 1393` | Ditto. |
+| `previousRootPc` | `chordanalyzer.h:488` | `chordanalyzer.cpp:1380, 1396-1397, 1404-1406` | The plan's "`sameRootAsPrevious` bool" is this field compared against `result.identity.rootPc`. Both a raw PC and a derived bool are reasonable — decide in Phase 3c. |
+| `previousQuality` | `chordanalyzer.h:491` | `chordanalyzer.cpp:1404-1407` | Resolution bias bonus. Candidate for promotion as a `sameQualityAsPrevious` derived bool or as the raw quality. |
+| `previousBassPc` | `chordanalyzer.h:503` | Read only by the bridge to derive `bassIsStepwiseFromPrevious` (`notationcomposingbridgehelpers.cpp:1562-1564`, five sites in `notationharmonicrhythmbridge.cpp`, `batch_analyze.cpp:1595-1597`). | Narrowly a bridge-internal intermediate; if the bridge moves to `analyzeSection` in Phase 4, this can become a local variable and never surface on `temporalExtensions`. |
+
+### Audit appendix — deferred refactors
+
+Two tempting cleanups surfaced during the audit. Both are Phase 3+ territory
+and deliberately left untouched:
+
+- **`ChordTemporalContext` naming** — the struct header comment acknowledges
+  this already: the class name "carries single-step look-around data" but the
+  fields mix analyzer inputs (temporal bias) with bridge-internal bookkeeping
+  (`previousBassPc`). Once migration (iii) is done, the remaining struct is
+  genuinely "per-chord analyzer input only", and a rename (e.g.,
+  `ChordAnalyzerInputContext`) would remove the confusion flagged in the
+  Phase 2 prompt between this struct and the planned `ChordTemporalExtensions`.
+- **Duplicated bridge computation** — `notationcomposingbridgehelpers.cpp:1562`,
+  `notationharmonicrhythmbridge.cpp:240,408,545,663`, and
+  `batch_analyze.cpp:1680` all compute `bassIsStepwiseFromPrevious` the same
+  way (`isDiatonicStep(previousBassPc, currentBassPc)`). Phase 4 consolidates
+  this into the `analyzeSection` implementation.
+
 ## Open questions
 
 1. **`HarmonicRegionGranularity` enum** — three values (Default, Coarse,

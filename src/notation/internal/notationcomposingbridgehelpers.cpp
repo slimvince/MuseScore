@@ -2285,4 +2285,81 @@ std::vector<PivotLabel> detectPivotChords(
     return labels;
 }
 
+// ── analyzeSection ───────────────────────────────────────────────────────────
+//
+// Phase 2 entry point for the unified analysis pipeline
+// (docs/unified_analysis_pipeline.md).  Currently a pure-translation delegate
+// over `prepareUserFacingHarmonicRegions`; no caller consumes it yet.
+//
+// Phase 4 retires the `prepareUserFacingHarmonicRegions` delegate and moves
+// this function into `src/composing/` so the pipeline has no dependency on
+// the notation/ bridge layer.  Keeping it here today preserves the correct
+// dependency direction (bridge depends on composing, not the reverse).
+mu::composing::analysis::AnalyzedSection
+analyzeSection(const mu::engraving::Score* sc,
+               const mu::engraving::Fraction& from,
+               const mu::engraving::Fraction& to,
+               const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::composing::analysis;
+
+    AnalyzedSection out;
+    out.startTick = from.ticks();
+    out.endTick   = to.ticks();
+
+    const auto regions = prepareUserFacingHarmonicRegions(sc, from, to, excludeStaves);
+    if (regions.empty()) {
+        return out;
+    }
+
+    // Regions: 1:1 translation from HarmonicRegion.  hasAssertiveExposure is
+    // derived per-region from the same key-confidence helper the implode
+    // emitter uses internally (Phase 3a will switch implode over to read
+    // this field directly instead of recomputing it).
+    out.regions.reserve(regions.size());
+    for (const auto& src : regions) {
+        AnalyzedRegion r;
+        r.startTick            = src.startTick;
+        r.endTick              = src.endTick;
+        r.chordResult          = src.chordResult;
+        r.hasAnalyzedChord     = src.hasAnalyzedChord;
+        r.keyModeResult        = src.keyModeResult;
+        r.tones                = src.tones;
+        r.hasAssertiveExposure = hasAssertiveKeyConfidence(src.keyModeResult);
+        r.keyAreaId            = -1;  // filled below
+        out.regions.push_back(std::move(r));
+    }
+
+    // Key-areas: collapse adjacent regions sharing (keyFifths, mode).  Phase 5
+    // will replace this naive pass with a confidence-aware smoother once
+    // modulation-aware Roman numeral annotation is implemented.
+    for (size_t i = 0; i < out.regions.size(); ++i) {
+        const AnalyzedRegion& region = out.regions[i];
+        const int regionFifths = region.keyModeResult.keySignatureFifths;
+        const KeySigMode regionMode = region.keyModeResult.mode;
+        const double regionConfidence = region.keyModeResult.normalizedConfidence;
+
+        if (out.keyAreas.empty()
+            || out.keyAreas.back().keyFifths != regionFifths
+            || out.keyAreas.back().mode != regionMode) {
+            KeyArea area;
+            area.startTick  = region.startTick;
+            area.endTick    = region.endTick;
+            area.keyFifths  = regionFifths;
+            area.mode       = regionMode;
+            area.confidence = regionConfidence;
+            out.keyAreas.push_back(area);
+        } else {
+            KeyArea& back = out.keyAreas.back();
+            back.endTick = region.endTick;
+            if (regionConfidence > back.confidence) {
+                back.confidence = regionConfidence;
+            }
+        }
+        out.regions[i].keyAreaId = static_cast<int>(out.keyAreas.size()) - 1;
+    }
+
+    return out;
+}
+
 } // namespace mu::notation::internal

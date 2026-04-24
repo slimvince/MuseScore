@@ -622,6 +622,198 @@
     "schemaVersion": 1,
     "score": "tools/dcml/chopin_mazurkas/MS3/BI105-1op30-1.mscx",
     "tickLocal": [
+        {
+            "key": "G",
+            "quality": "major",
+            "root": "G",
+            "tick": 0
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 240
+        },
+        {
+            "key": "Eb",
+            "quality": "minor",
+            "root": "G",
+            "tick": 480
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 1200
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "Eb",
+            "tick": 1920
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 2640
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 3360
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 4080
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 4800
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 5520
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 6240
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "D",
+            "tick": 6960
+        },
+        {
+            "key": "Eb",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 7680
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 8400
+        },
+        {
+            "key": "Eb",
+            "quality": "minor",
+            "root": "C",
+            "tick": 9120
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 9840
+        },
+        {
+            "key": "Eb",
+            "quality": "minor",
+            "root": "G",
+            "tick": 10560
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 11280
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 12000
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "G",
+            "tick": 12720
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "Eb",
+            "tick": 13440
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 14160
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 14880
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 15600
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 16320
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 17040
+        },
+        {
+            "key": "C",
+            "quality": "diminished",
+            "root": "D",
+            "tick": 17760
+        },
+        {
+            "key": "C",
+            "quality": "major",
+            "root": "D",
+            "tick": 18480
+        },
+        {
+            "key": "Eb",
+            "quality": "major",
+            "root": "Bb",
+            "tick": 19200
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 19920
+        },
+        {
+            "key": "Eb",
+            "quality": "minor",
+            "root": "C",
+            "tick": 20640
+        },
+        {
+            "key": "",
+            "quality": "",
+            "root": "",
+            "tick": 21360
+        }
     ],
     "tickRegional": [
         {

@@ -36,12 +36,13 @@
 //   P2 Annotation     — Harmony elements written by addHarmonicAnnotationsToSelection.
 //   P3 Tick-regional  — analyzeHarmonicContextAtTick at one-per-measure-downbeat
 //                       plus one-mid-measure ticks, with wasRegional flag.
-//   P4 Tick-local     — Phase-1 limitation: analyzeHarmonicContextLocallyAtTick
-//                       is file-private and exposing it is out of Phase 1b
-//                       scope.  Divergence A (Policy #2) is still observable
-//                       via tickRegional[].wasRegional=false entries.  Phase 2
-//                       can widen P4 observability when the P3/P4 public API
-//                       is unified.
+//   P4 Tick-local     — analyzeHarmonicContextLocallyAtTick (exposed in
+//                       Phase 2) at the same sample ticks as tickRegional.
+//                       Divergence A (Policy #2) is observable two ways:
+//                       tickRegional[].wasRegional=false marks a P3→P4
+//                       fallback, and tickLocal vs. tickRegional entries at
+//                       the same tick show how the two paths disagree when
+//                       both produce a result.
 //
 // Running:
 //   ./pipeline_snapshot_tests.exe --update-goldens   # write/refresh baselines
@@ -427,15 +428,41 @@ QJsonArray buildTickRegionalArray(MasterScore* score,
     return arr;
 }
 
-QJsonArray buildTickLocalArrayPlaceholder()
+QJsonArray buildTickLocalArray(MasterScore* score,
+                               const std::vector<SampleTick>& sampleTicks)
 {
-    // Phase-1b limitation: analyzeHarmonicContextLocallyAtTick lives in an
-    // anonymous namespace in notationcomposingbridge.cpp and exposing it is
-    // outside the scope defined for this phase (which permits only the
-    // wasRegional field addition on the public bridge header).  Divergence A
-    // is still observable via tickRegional[].wasRegional=false entries.
-    // Phase 2 can introduce a dedicated P4 entry point and replace this stub.
-    return QJsonArray();
+    // Phase 2 added a public analyzeHarmonicContextLocallyAtTick so the
+    // snapshot can pin P4 output directly.  The DCML corpus scores always
+    // have staff 0 eligible for analysis (no chord-track staves, no drumset);
+    // passing 0 as refStaff matches what resolveAnalysisReferenceStaff in
+    // notationcomposingbridge.cpp would pick anyway.
+    QJsonArray arr;
+    for (const SampleTick& s : sampleTicks) {
+        const Fraction t = Fraction::fromTicks(s.tickValue);
+        Segment* seg = score->tick2segment(t, /*first=*/true, SegmentType::ChordRest);
+        QJsonObject o;
+        o[QStringLiteral("tick")] = s.tickValue;
+        if (!seg) {
+            o[QStringLiteral("root")] = QStringLiteral("");
+            o[QStringLiteral("quality")] = QStringLiteral("");
+            o[QStringLiteral("key")] = QStringLiteral("");
+            arr.append(o);
+            continue;
+        }
+        NoteHarmonicContext ctx = mu::notation::analyzeHarmonicContextLocallyAtTick(
+            score, t, seg, /*refStaff=*/0, /*excludeStaves=*/{});
+        if (ctx.chordResults.empty()) {
+            o[QStringLiteral("root")] = QStringLiteral("");
+            o[QStringLiteral("quality")] = QStringLiteral("");
+        } else {
+            const auto& r = ctx.chordResults.front();
+            o[QStringLiteral("root")] = QString::fromStdString(rootName(r.identity.rootPc, ctx.keyFifths));
+            o[QStringLiteral("quality")] = QString::fromStdString(qualityName(r.identity.quality));
+        }
+        o[QStringLiteral("key")] = QString::fromStdString(keyName(ctx.keyFifths, ctx.keyMode));
+        arr.append(o);
+    }
+    return arr;
 }
 
 // ── Snapshot assembly ────────────────────────────────────────────────────────
@@ -465,7 +492,7 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
     // (analysis reads only notes, not symbols — but this ordering keeps the
     // snapshot deterministic even if future code drifts on that invariant).
     snap[QStringLiteral("tickRegional")] = buildTickRegionalArray(score, samples);
-    snap[QStringLiteral("tickLocal")] = buildTickLocalArrayPlaceholder();
+    snap[QStringLiteral("tickLocal")] = buildTickLocalArray(score, samples);
 
     // Annotation runs last because it mutates the score with Harmony elements.
     snap[QStringLiteral("annotation")] = buildAnnotationArray(score, cappedEnd, regions);
