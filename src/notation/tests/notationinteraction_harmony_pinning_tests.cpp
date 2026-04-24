@@ -104,18 +104,25 @@ void configureAnalysis()
 // Iterates every segment of the score, deduplicates by (staffIdx, tick),
 // keeping the first note encountered per pair — exactly as the production function does
 // when sc->selection().elements() covers the whole score.
+// excludeStaves: staves to skip — pass chordTrackExcludeStaves(score) to mirror
+// the iter-9 chord-track exclusion fix.
 struct NoteEntry {
     int staffIdx;
     int tick;
     Note* note;
 };
 
-std::vector<NoteEntry> collectNotesByStaffTick(MasterScore* score)
+std::vector<NoteEntry> collectNotesByStaffTick(MasterScore* score,
+                                               const std::set<size_t>& excludeStaves = {})
 {
     std::map<std::pair<int, int>, Note*> byStaffTick;
     for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg;
          seg = seg->next1(SegmentType::ChordRest)) {
         for (track_idx_t t = 0; t < score->ntracks(); ++t) {
+            int staffIdx = static_cast<int>(track2staff(t));
+            if (excludeStaves.count(static_cast<size_t>(staffIdx))) {
+                continue;
+            }
             ChordRest* cr = seg->cr(t);
             if (!cr || !cr->isChord()) {
                 continue;
@@ -124,7 +131,6 @@ std::vector<NoteEntry> collectNotesByStaffTick(MasterScore* score)
             if (notes.empty()) {
                 continue;
             }
-            int staffIdx = static_cast<int>(track2staff(t));
             int tick = seg->tick().ticks();
             auto key = std::make_pair(staffIdx, tick);
             byStaffTick.emplace(key, notes.front());
@@ -149,11 +155,9 @@ class NotationInteractionHarmonyPinning : public ::testing::Test {};
 // Pins what addAnalyzedHarmonyToSelection(HarmonyType::STANDARD) would write
 // for each note position in the fixture.
 //
-// Pinned pre-iter-9:
-//   - Staff 1 (chord track) entries appear because the function does not yet
-//     exclude chord-track staves from output.  Iter 9 will remove them and update
-//     the ASSERT_EQ size and the expectation list.
-//   - No ChordSymbolFormatter::Options passed (spelling = Standard default).
+// Pinned at iter 9 correction: chord-track staves excluded via bridge routing.
+//   - Staff 1 (chord track) entries removed; only staff 0's 4 notes remain.
+//   - scoreNoteSpelling honored via formatChordResultForStatusBar.
 
 TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_ChordSymbol)
 {
@@ -162,7 +166,7 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_ChordSymbol)
     MasterScore* score = ScoreRW::readScore(u"harmony_pinning_i_iv_v_i.mscx");
     ASSERT_TRUE(score) << "Failed to load harmony_pinning_i_iv_v_i.mscx";
 
-    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score);
+    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score, mu::notation::chordTrackExcludeStaves(score));
 
     // Collect (staffIdx, tick, symbol) for each entry.
     struct Row { int staffIdx; int tick; std::string symbol; };
@@ -174,26 +178,20 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_ChordSymbol)
         if (results.empty()) {
             continue;
         }
-        rows.push_back({ e.staffIdx, e.tick, ChordSymbolFormatter::formatSymbol(results[0], keyFifths) });
+        const mu::notation::FormattedChordResult fmt
+            = mu::notation::formatChordResultForStatusBar(score, results[0], keyFifths);
+        rows.push_back({ e.staffIdx, e.tick, fmt.symbol });
     }
 
-    // Pinned pre-iter-9: 7 entries — staff 0 (4 notes) + staff 1 (3 notes; M2 is a rest).
-    // Chord-track staves not excluded from output; iter 9 will reduce this to 4.
-    ASSERT_EQ(rows.size(), 7u)
-        << "Entry count changed — update expectations if iter 9 added the chord-track exclusion";
+    // Pinned at iter 9: 4 entries — staff 0 only (chord-track staff 1 excluded).
+    ASSERT_EQ(rows.size(), 4u)
+        << "Entry count changed — verify chord-track exclusion is active";
 
     // Staff 0: I-IV-V-I chord symbols.
     EXPECT_EQ(rows[0].staffIdx, 0); EXPECT_EQ(rows[0].symbol, "C");   // measure 1: I
     EXPECT_EQ(rows[1].staffIdx, 0); EXPECT_EQ(rows[1].symbol, "F");   // measure 2: IV
     EXPECT_EQ(rows[2].staffIdx, 0); EXPECT_EQ(rows[2].symbol, "G");   // measure 3: V
     EXPECT_EQ(rows[3].staffIdx, 0); EXPECT_EQ(rows[3].symbol, "C");   // measure 4: I
-
-    // Staff 1 (Chord Track Piano): Pinned pre-iter-9 — should NOT be written after iter 9.
-    // Analysis still uses staff 0 pitch data (chord-track excluded from analysis input),
-    // so the symbols match staff 0's output at the same ticks.
-    EXPECT_EQ(rows[4].staffIdx, 1); EXPECT_EQ(rows[4].symbol, "C");   // measure 1 (M2 is rest, so M3 tick next)
-    EXPECT_EQ(rows[5].staffIdx, 1); EXPECT_EQ(rows[5].symbol, "G");   // measure 3: V
-    EXPECT_EQ(rows[6].staffIdx, 1); EXPECT_EQ(rows[6].symbol, "C");   // measure 4: I
 
     delete score;
 }
@@ -204,8 +202,8 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_ChordSymbol)
 // formatRomanNumeral returns "" for non-diatonic chords; all I-IV-V-I chords
 // are diatonic in C major so all entries should be non-empty.
 //
-// Pinned pre-iter-9:
-//   - Staff 1 entries present (chord-track not excluded from output).
+// Pinned at iter 9 correction: chord-track staves excluded via bridge routing.
+//   - Staff 1 entries removed; only staff 0's 4 notes remain.
 //   - nextRootPc is -1 (single-note path, not two-pass), so no V/x tonicization labels.
 
 TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_RomanNumeral)
@@ -215,7 +213,7 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_RomanNumeral)
     MasterScore* score = ScoreRW::readScore(u"harmony_pinning_i_iv_v_i.mscx");
     ASSERT_TRUE(score) << "Failed to load harmony_pinning_i_iv_v_i.mscx";
 
-    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score);
+    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score, mu::notation::chordTrackExcludeStaves(score));
 
     struct Row { int staffIdx; int tick; std::string roman; };
     std::vector<Row> rows;
@@ -226,27 +224,23 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_RomanNumeral)
         if (results.empty()) {
             continue;
         }
-        const std::string roman = ChordSymbolFormatter::formatRomanNumeral(results[0]);
-        if (roman.empty()) {
+        const mu::notation::FormattedChordResult fmt
+            = mu::notation::formatChordResultForStatusBar(score, results[0], keyFifths);
+        if (fmt.roman.empty()) {
             continue;  // non-diatonic; not written by addAnalyzedHarmonyToSelection
         }
-        rows.push_back({ e.staffIdx, e.tick, roman });
+        rows.push_back({ e.staffIdx, e.tick, fmt.roman });
     }
 
-    // Pinned pre-iter-9: 7 entries (chord-track not excluded).
-    ASSERT_EQ(rows.size(), 7u)
-        << "Entry count changed — update expectations if iter 9 added the chord-track exclusion";
+    // Pinned at iter 9: 4 entries — staff 0 only (chord-track staff 1 excluded).
+    ASSERT_EQ(rows.size(), 4u)
+        << "Entry count changed — verify chord-track exclusion is active";
 
     // Staff 0.
     EXPECT_EQ(rows[0].staffIdx, 0); EXPECT_EQ(rows[0].roman, "I");    // measure 1
     EXPECT_EQ(rows[1].staffIdx, 0); EXPECT_EQ(rows[1].roman, "IV");   // measure 2
     EXPECT_EQ(rows[2].staffIdx, 0); EXPECT_EQ(rows[2].roman, "V");    // measure 3
     EXPECT_EQ(rows[3].staffIdx, 0); EXPECT_EQ(rows[3].roman, "I");    // measure 4
-
-    // Staff 1 (Chord Track Piano): Pinned pre-iter-9.
-    EXPECT_EQ(rows[4].staffIdx, 1); EXPECT_EQ(rows[4].roman, "I");    // measure 1
-    EXPECT_EQ(rows[5].staffIdx, 1); EXPECT_EQ(rows[5].roman, "V");    // measure 3
-    EXPECT_EQ(rows[6].staffIdx, 1); EXPECT_EQ(rows[6].roman, "I");    // measure 4
 
     delete score;
 }
@@ -255,8 +249,8 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_RomanNumeral)
 //
 // Pins what addAnalyzedHarmonyToSelection(HarmonyType::NASHVILLE) would write.
 //
-// Pinned pre-iter-9:
-//   - Staff 1 entries present (chord-track not excluded from output).
+// Pinned at iter 9 correction: chord-track staves excluded via bridge routing.
+//   - Staff 1 entries removed; only staff 0's 4 notes remain.
 
 TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_Nashville)
 {
@@ -265,7 +259,7 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_Nashville)
     MasterScore* score = ScoreRW::readScore(u"harmony_pinning_i_iv_v_i.mscx");
     ASSERT_TRUE(score) << "Failed to load harmony_pinning_i_iv_v_i.mscx";
 
-    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score);
+    const std::vector<NoteEntry> entries = collectNotesByStaffTick(score, mu::notation::chordTrackExcludeStaves(score));
 
     struct Row { int staffIdx; int tick; std::string nashville; };
     std::vector<Row> rows;
@@ -276,27 +270,23 @@ TEST_F(NotationInteractionHarmonyPinning, BehaviorSnapshot_Nashville)
         if (results.empty()) {
             continue;
         }
-        const std::string nashville = ChordSymbolFormatter::formatNashvilleNumber(results[0], keyFifths);
-        if (nashville.empty()) {
+        const mu::notation::FormattedChordResult fmt
+            = mu::notation::formatChordResultForStatusBar(score, results[0], keyFifths);
+        if (fmt.nashville.empty()) {
             continue;
         }
-        rows.push_back({ e.staffIdx, e.tick, nashville });
+        rows.push_back({ e.staffIdx, e.tick, fmt.nashville });
     }
 
-    // Pinned pre-iter-9: 7 entries (chord-track not excluded).
-    ASSERT_EQ(rows.size(), 7u)
-        << "Entry count changed — update expectations if iter 9 added the chord-track exclusion";
+    // Pinned at iter 9: 4 entries — staff 0 only (chord-track staff 1 excluded).
+    ASSERT_EQ(rows.size(), 4u)
+        << "Entry count changed — verify chord-track exclusion is active";
 
     // Staff 0: Nashville numbers for I-IV-V-I in C major (degree+1).
     EXPECT_EQ(rows[0].staffIdx, 0); EXPECT_EQ(rows[0].nashville, "1");  // I
     EXPECT_EQ(rows[1].staffIdx, 0); EXPECT_EQ(rows[1].nashville, "4");  // IV
     EXPECT_EQ(rows[2].staffIdx, 0); EXPECT_EQ(rows[2].nashville, "5");  // V
     EXPECT_EQ(rows[3].staffIdx, 0); EXPECT_EQ(rows[3].nashville, "1");  // I
-
-    // Staff 1 (Chord Track Piano): Pinned pre-iter-9.
-    EXPECT_EQ(rows[4].staffIdx, 1); EXPECT_EQ(rows[4].nashville, "1");  // measure 1
-    EXPECT_EQ(rows[5].staffIdx, 1); EXPECT_EQ(rows[5].nashville, "5");  // measure 3
-    EXPECT_EQ(rows[6].staffIdx, 1); EXPECT_EQ(rows[6].nashville, "1");  // measure 4
 
     delete score;
 }

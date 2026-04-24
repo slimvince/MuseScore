@@ -652,6 +652,30 @@ analyzeNoteHarmonicContext(const mu::engraving::Note* note,
 
 } // namespace mu::notation
 
+// ── formatChordResultForStatusBar / chordTrackExcludeStaves ──────────────────
+
+namespace mu::notation {
+
+FormattedChordResult formatChordResultForStatusBar(
+    const mu::engraving::Score* sc,
+    const mu::composing::analysis::ChordAnalysisResult& result,
+    int keyFifths)
+{
+    const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };
+    return FormattedChordResult{
+        mu::composing::analysis::ChordSymbolFormatter::formatSymbol(result, keyFifths, fmtOpts),
+        mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(result),
+        mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(result, keyFifths)
+    };
+}
+
+std::set<size_t> chordTrackExcludeStaves(const mu::engraving::Score* sc)
+{
+    return mu::notation::internal::chordTrackExcludeStaves(sc);
+}
+
+} // namespace mu::notation
+
 // ── addHarmonicAnnotationsToSelection ────────────────────────────────────────
 
 namespace mu::notation {
@@ -769,27 +793,20 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
             = refreshChordResultWithDisplayContext(
                 score, seg, excludeStaves, region.tones, keyFifths, keyMode, region.chordResult);
 
-        const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(score) };
-        const std::string symText = writeChordSymbols
-            ? mu::composing::analysis::ChordSymbolFormatter::formatSymbol(annotationResult, keyFifths, fmtOpts)
-            : "";
-        std::string romanText;
-        if (writeRomanNumerals) {
-            romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(annotationResult);
-            if (romanText.empty()
-                    && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
-                    && annotationResult.function.degree >= 0
-                    && annotationResult.function.degree <= 6) {
-                auto refinedForRoman = annotationResult;
-                mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
-                if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
-                    romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
-                }
+        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, keyFifths);
+        const std::string symText = writeChordSymbols ? fmt.symbol : "";
+        std::string romanText = writeRomanNumerals ? fmt.roman : "";
+        if (writeRomanNumerals && romanText.empty()
+                && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
+                && annotationResult.function.degree >= 0
+                && annotationResult.function.degree <= 6) {
+            auto refinedForRoman = annotationResult;
+            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
+            if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+                romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
             }
         }
-        const std::string nashvilleText = writeNashvilleNumbers
-            ? mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(annotationResult, keyFifths)
-            : "";
+        const std::string nashvilleText = writeNashvilleNumbers ? fmt.nashville : "";
 
         for (staff_idx_t si : writeStaves) {
             const track_idx_t track = si * VOICES;
@@ -837,8 +854,7 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
             pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
             pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
             pedalRoot.identity.extensions = 0;
-            const std::string baseName = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(
-                pedalRoot, keyFifths, fmtOpts);
+            const std::string baseName = formatChordResultForStatusBar(score, pedalRoot, keyFifths).symbol;
             if (!baseName.empty()) {
                 const std::string pedalText = baseName + " ped.";
                 const track_idx_t pedTrack = writeStaves.front() * VOICES;

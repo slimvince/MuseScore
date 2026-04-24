@@ -8285,6 +8285,12 @@ void NotationInteraction::addAnalyzedHarmonyToSelection(mu::engraving::HarmonyTy
         return;
     }
 
+    // Chord-track staves are excluded from annotation OUTPUT on the per-note path.
+    // The region path (addHarmonicAnnotationsToSelection) handles those staves via
+    // chord-track priority.  This path deliberately has no minimum-duration gate:
+    // the user clicked a specific note and always expects a result.
+    const std::set<size_t> chordTrackStaves = mu::notation::chordTrackExcludeStaves(sc);
+
     const TranslatableString undoLabel =
         type == mu::engraving::HarmonyType::ROMAN
             ? TranslatableString("undoableAction", "Add Roman numerals to selection")
@@ -8295,6 +8301,10 @@ void NotationInteraction::addAnalyzedHarmonyToSelection(mu::engraving::HarmonyTy
     startEdit(undoLabel);
 
     for (auto& [key, note] : byStaffTick) {
+        if (chordTrackStaves.count(static_cast<size_t>(key.first))) {
+            continue;
+        }
+
         int keyFifths = 0;
         mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
         const auto results = mu::notation::analyzeNoteHarmonicContext(note, keyFifths, keyMode);
@@ -8303,16 +8313,18 @@ void NotationInteraction::addAnalyzedHarmonyToSelection(mu::engraving::HarmonyTy
         }
 
         const ChordAnalysisResult& top = results[0];
+        const mu::notation::FormattedChordResult fmt
+            = mu::notation::formatChordResultForStatusBar(sc, top, keyFifths);
         std::string text;
         switch (type) {
         case mu::engraving::HarmonyType::STANDARD:
-            text = ChordSymbolFormatter::formatSymbol(top, keyFifths);
+            text = fmt.symbol;
             break;
         case mu::engraving::HarmonyType::ROMAN:
-            text = ChordSymbolFormatter::formatRomanNumeral(top);
+            text = fmt.roman;
             break;
         case mu::engraving::HarmonyType::NASHVILLE:
-            text = ChordSymbolFormatter::formatNashvilleNumber(top, keyFifths);
+            text = fmt.nashville;
             break;
         default:
             break;
