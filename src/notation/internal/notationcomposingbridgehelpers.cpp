@@ -243,7 +243,7 @@ void forceChordTrackQualityFromKeyContext(
 
 namespace {
 
-void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::HarmonicRegion>& regions)
+void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::AnalyzedRegion>& regions)
 {
     using namespace mu::composing::analysis;
 
@@ -1570,516 +1570,36 @@ findTemporalContext(const mu::engraving::Score* sc,
     return temporalCtx;
 }
 
+// Deprecated shim — calls analyzeSection and reverse-translates to
+// vector<HarmonicRegion> for callers not yet ported (tools/batch_analyze.cpp).
+// Do not add new callers.
 std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
                                  const std::set<size_t>& excludeStaves)
 {
-    using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
-    if (!sc || endTick <= startTick) {
-        return {};
+    const auto section = analyzeSection(sc, startTick, endTick, excludeStaves);
+
+    std::vector<HarmonicRegion> result;
+    result.reserve(section.regions.size());
+    for (const auto& src : section.regions) {
+        HarmonicRegion r;
+        r.startTick          = src.startTick;
+        r.endTick            = src.endTick;
+        r.chordResult        = src.chordResult;
+        r.alternatives       = src.alternatives;
+        r.hasAnalyzedChord   = src.hasAnalyzedChord;
+        r.keyModeResult      = src.keyModeResult;
+        r.tones              = src.tones;
+        r.temporalExtensions = src.temporalExtensions;
+        result.push_back(std::move(r));
     }
-
-    auto regions = mu::notation::analyzeHarmonicRhythm(sc,
-                                                       startTick,
-                                                       endTick,
-                                                       excludeStaves,
-                                                       mu::notation::HarmonicRegionGranularity::Smoothed);
-    if (regions.empty()) {
-        return {};
-    }
-
-    const auto chordAnalyzer = ChordAnalyzerFactory::create();
-    auto sameChordIdentity = [](const HarmonicRegion& lhs, const HarmonicRegion& rhs) {
-        return lhs.chordResult.identity.rootPc == rhs.chordResult.identity.rootPc
-               && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality;
-    };
-    auto regionSupportsGapTones = [](const std::vector<ChordAnalysisTone>& gapTones,
-                                     const HarmonicRegion& region) {
-        if (region.chordResult.identity.quality == ChordQuality::Suspended2
-            || region.chordResult.identity.quality == ChordQuality::Suspended4) {
-            return false;
-        }
-
-        const std::vector<int> chordPitchClasses = chordTonePitchClasses(region.chordResult);
-        if (gapTones.empty() || chordPitchClasses.empty()) {
-            return false;
-        }
-
-        bool seenGapPitchClasses[12] = {};
-        bool matchesRegionAnchor = false;
-        for (const auto& tone : gapTones) {
-            const int pitchClass = tone.pitch % 12;
-            if (seenGapPitchClasses[pitchClass]) {
-                continue;
-            }
-            seenGapPitchClasses[pitchClass] = true;
-
-            if (pitchClass == region.chordResult.identity.rootPc
-                || pitchClass == region.chordResult.identity.bassPc) {
-                matchesRegionAnchor = true;
-            }
-
-            if (std::find(chordPitchClasses.begin(), chordPitchClasses.end(), pitchClass) == chordPitchClasses.end()) {
-                return false;
-            }
-        }
-
-        return matchesRegionAnchor;
-    };
-    auto applyGapKeyContext = [](ChordAnalysisResult& result,
-                                 const std::vector<ChordAnalysisTone>& gapTones,
-                                 int keyFifths,
-                                 KeySigMode keyMode) {
-        const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
-        const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
-        const auto& scale = keyModeScaleIntervals(keyMode);
-
-        result.function.keyTonicPc = tonicPc;
-        result.function.keyMode = keyMode;
-        result.function.degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
-
-        bool diatonicToKey = (result.function.degree >= 0);
-        if (diatonicToKey) {
-            for (const auto& tone : gapTones) {
-                const int pitchClass = tone.pitch % 12;
-                bool inScale = false;
-                for (int interval : scale) {
-                    if ((tonicPc + interval) % 12 == pitchClass) {
-                        inScale = true;
-                        break;
-                    }
-                }
-                if (!inScale) {
-                    diatonicToKey = false;
-                    break;
-                }
-            }
-        }
-
-        result.function.diatonicToKey = diatonicToKey;
-    };
-    auto inferSparseGapChord = [&](const std::vector<ChordAnalysisTone>& gapTones,
-                                   int keyFifths,
-                                   KeySigMode keyMode,
-                                   ChordAnalysisResult& outResult) {
-        const auto* bassTone = bassToneFromTones(gapTones);
-        if (!bassTone) {
-            bassTone = &gapTones.front();
-            for (const auto& tone : gapTones) {
-                if (tone.pitch < bassTone->pitch) {
-                    bassTone = &tone;
-                }
-            }
-        }
-
-        bool seenPitchClasses[12] = {};
-        std::vector<int> pitchClasses;
-        pitchClasses.reserve(gapTones.size());
-        for (const auto& tone : gapTones) {
-            const int pitchClass = tone.pitch % 12;
-            if (!seenPitchClasses[pitchClass]) {
-                seenPitchClasses[pitchClass] = true;
-                pitchClasses.push_back(pitchClass);
-            }
-        }
-
-        if (pitchClasses.empty()) {
-            return false;
-        }
-
-        outResult = {};
-        outResult.identity.score = 0.0;
-
-        if (pitchClasses.size() == 1) {
-            outResult.identity.rootPc = pitchClasses.front();
-            outResult.identity.bassPc = pitchClasses.front();
-            outResult.identity.bassTpc = bassTone->tpc;
-            outResult.identity.quality = ChordQuality::Unknown;
-            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
-            return true;
-        }
-
-        struct SparseCandidate {
-            int rootPc = -1;
-            ChordQuality quality = ChordQuality::Unknown;
-            int priority = -1;
-        };
-
-        std::optional<SparseCandidate> bestCandidate;
-        for (int candidateRootPc : pitchClasses) {
-            bool hasMinorThird = false;
-            bool hasMajorThird = false;
-            bool hasFifth = false;
-            bool hasDimFifth = false;
-            bool supported = true;
-
-            for (int tonePc : pitchClasses) {
-                if (tonePc == candidateRootPc) {
-                    continue;
-                }
-
-                const int interval = (tonePc - candidateRootPc + 12) % 12;
-                if (interval == 3) {
-                    hasMinorThird = true;
-                } else if (interval == 4) {
-                    hasMajorThird = true;
-                } else if (interval == 6) {
-                    hasDimFifth = true;
-                } else if (interval == 7) {
-                    hasFifth = true;
-                } else {
-                    supported = false;
-                    break;
-                }
-            }
-
-            if (!supported) {
-                continue;
-            }
-
-            SparseCandidate candidate;
-            candidate.rootPc = candidateRootPc;
-            if (hasMajorThird) {
-                candidate.quality = ChordQuality::Major;
-                candidate.priority = 3;
-            } else if (hasMinorThird) {
-                candidate.quality = ChordQuality::Minor;
-                candidate.priority = 3;
-            } else if (hasDimFifth) {
-                candidate.quality = ChordQuality::Diminished;
-                candidate.priority = 2;
-            } else if (hasFifth) {
-                candidate.quality = ChordQuality::Unknown;
-                candidate.priority = 1;
-            } else {
-                continue;
-            }
-
-            if (!bestCandidate || candidate.priority > bestCandidate->priority) {
-                bestCandidate = candidate;
-            }
-        }
-
-        if (bestCandidate) {
-            outResult.identity.rootPc = bestCandidate->rootPc;
-            outResult.identity.bassPc = bestCandidate->rootPc;
-            outResult.identity.bassTpc = bassTone->tpc;
-            outResult.identity.quality = bestCandidate->quality;
-            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
-            return true;
-        }
-
-        return false;
-    };
-    auto analyzeGapWithContext = [&](const std::vector<ChordAnalysisTone>& gapTones,
-                                     const HarmonicRegion& contextRegion,
-                                     int gapStartTick,
-                                     int gapEndTick) -> std::optional<HarmonicRegion> {
-        HarmonicRegion inferredRegion;
-        inferredRegion.startTick = gapStartTick;
-        inferredRegion.endTick = gapEndTick;
-        inferredRegion.hasAnalyzedChord = true;
-        inferredRegion.keyModeResult = contextRegion.keyModeResult;
-        inferredRegion.tones = gapTones;
-
-        const auto results = chordAnalyzer->analyzeChord(gapTones,
-                                                         contextRegion.keyModeResult.keySignatureFifths,
-                                                         contextRegion.keyModeResult.mode);
-        if (!results.empty()) {
-            inferredRegion.chordResult = results.front();
-            if (results.size() > 1) {
-                inferredRegion.alternatives.assign(results.begin() + 1, results.end());
-            }
-            // Gap analyzer is invoked context-free; temporalExtensions stays at defaults.
-            return inferredRegion;
-        }
-
-        if (inferSparseGapChord(gapTones,
-                                contextRegion.keyModeResult.keySignatureFifths,
-                                contextRegion.keyModeResult.mode,
-                                inferredRegion.chordResult)) {
-            return inferredRegion;
-        }
-
-        return std::nullopt;
-    };
-    auto inferGapRegion = [&](int gapStartTick,
-                              int gapEndTick,
-                              const HarmonicRegion* previousRegion,
-                              const HarmonicRegion* nextRegion) -> std::optional<HarmonicRegion> {
-        if (gapEndTick <= gapStartTick) {
-            return std::nullopt;
-        }
-
-        const auto gapTones = collectRegionTones(sc,
-                                                 gapStartTick,
-                                                 gapEndTick,
-                                                 excludeStaves);
-        if (gapTones.empty()) {
-            const HarmonicRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
-            if (!carriedSource) {
-                return std::nullopt;
-            }
-
-            HarmonicRegion carriedRegion = *carriedSource;
-            carriedRegion.startTick = gapStartTick;
-            carriedRegion.endTick = gapEndTick;
-            carriedRegion.tones.clear();
-            carriedRegion.hasAnalyzedChord = true;
-            return carriedRegion;
-        }
-
-        auto carryGapRegion = [&](const HarmonicRegion& sourceRegion) {
-            HarmonicRegion carriedRegion = sourceRegion;
-            carriedRegion.startTick = gapStartTick;
-            carriedRegion.endTick = gapEndTick;
-            carriedRegion.tones = gapTones;
-            carriedRegion.hasAnalyzedChord = true;
-            return carriedRegion;
-        };
-
-        int uniqueGapPitchClasses = 0;
-        bool seenGapPitchClasses[12] = {};
-        for (const auto& tone : gapTones) {
-            const int pitchClass = tone.pitch % 12;
-            if (seenGapPitchClasses[pitchClass]) {
-                continue;
-            }
-            seenGapPitchClasses[pitchClass] = true;
-            ++uniqueGapPitchClasses;
-        }
-
-        if (uniqueGapPitchClasses < 3) {
-            // When the gap has only one pitch class, a single note that coincides
-            // with the ROOT of an adjacent chord carries no quality information —
-            // the diatonic shape from the key context is more reliable.  But if
-            // the lone gap note is a non-root chord tone of the adjacent region
-            // (e.g. the third or fifth), the carry is appropriate because that
-            // interval relationship identifies the chord quality.
-            auto supportsCarry = [&](const HarmonicRegion& region) -> bool {
-                if (!regionSupportsGapTones(gapTones, region)) {
-                    return false;
-                }
-                if (uniqueGapPitchClasses == 1) {
-                    const int gapPc = gapTones.front().pitch % 12;
-                    if (gapPc == region.chordResult.identity.rootPc) {
-                        return false;  // root alone → key context is more reliable
-                    }
-                }
-                return true;
-            };
-
-            if (nextRegion && supportsCarry(*nextRegion)) {
-                return carryGapRegion(*nextRegion);
-            }
-
-            if (previousRegion && supportsCarry(*previousRegion)) {
-                return carryGapRegion(*previousRegion);
-            }
-        }
-
-        if (previousRegion) {
-            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
-                                                            *previousRegion,
-                                                            gapStartTick,
-                                                            gapEndTick)) {
-                return analyzedRegion;
-            }
-        }
-
-        if (nextRegion) {
-            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
-                                                            *nextRegion,
-                                                            gapStartTick,
-                                                            gapEndTick)) {
-                return analyzedRegion;
-            }
-        }
-
-        if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {
-            return carryGapRegion(*previousRegion);
-        }
-
-        if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {
-            return carryGapRegion(*nextRegion);
-        }
-
-        if (!previousRegion && nextRegion) {
-            HarmonicRegion openingRegion = *nextRegion;
-            openingRegion.startTick = gapStartTick;
-            openingRegion.endTick = gapEndTick;
-            openingRegion.tones = gapTones;
-            openingRegion.hasAnalyzedChord = true;
-            return openingRegion;
-        }
-
-        if (previousRegion && !nextRegion) {
-            HarmonicRegion trailingRegion = *previousRegion;
-            trailingRegion.startTick = gapStartTick;
-            trailingRegion.endTick = gapEndTick;
-            trailingRegion.tones = gapTones;
-            trailingRegion.hasAnalyzedChord = true;
-            return trailingRegion;
-        }
-
-        // Both prev and next exist but no fitting test passed.  Rather than
-        // returning nullopt (which leaves an uncovered gap in the measure and
-        // produces mixed chord+rest measures on the chord track), carry the
-        // previous chord forward as a last resort.
-        if (previousRegion) {
-            return carryGapRegion(*previousRegion);
-        }
-
-        return std::nullopt;
-    };
-    auto nextRegionStartingAtOrAfter = [&](int tick) -> const HarmonicRegion* {
-        const auto nextRegion = std::find_if(regions.begin(), regions.end(), [tick](const auto& region) {
-            return region.startTick >= tick;
-        });
-        return nextRegion != regions.end() ? &*nextRegion : nullptr;
-    };
-
-    std::vector<HarmonicRegion> displayRegions;
-    displayRegions.reserve(regions.size() * 2);
-    const int analysisRangeStartTick = startTick.ticks();
-
-    for (Measure* measure = sc->tick2measure(startTick);
-         measure && measure->tick() < endTick;
-         measure = measure->nextMeasure()) {
-        const Fraction measureRangeStart = std::max(measure->tick(), startTick);
-        const Fraction measureRangeEnd = std::min(measure->endTick(), endTick);
-        const int measureStartTick = measureRangeStart.ticks();
-        const int measureEndTick = measureRangeEnd.ticks();
-
-        std::vector<size_t> overlappingRegions;
-        for (size_t i = 0; i < regions.size(); ++i) {
-            if (regions[i].endTick > measureStartTick && regions[i].startTick < measureEndTick) {
-                overlappingRegions.push_back(i);
-            }
-        }
-
-        std::vector<HarmonicRegion> measureRegions;
-        auto appendMeasureRegion = [&](HarmonicRegion region) {
-            if (region.startTick >= region.endTick) {
-                return;
-            }
-            if (!measureRegions.empty()
-                && measureRegions.back().endTick == region.startTick
-                && sameChordIdentity(measureRegions.back(), region)) {
-                measureRegions.back().endTick = region.endTick;
-                mergeChordAnalysisTones(measureRegions.back().tones, region.tones);
-                return;
-            }
-            measureRegions.push_back(std::move(region));
-        };
-
-        const auto previousRegion = std::find_if(regions.rbegin(), regions.rend(), [measureStartTick](const auto& region) {
-            return region.endTick <= measureStartTick;
-        });
-        const HarmonicRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
-        const HarmonicRegion* nextRegionAfterMeasurePtr = nextRegionStartingAtOrAfter(measureEndTick);
-
-        if (overlappingRegions.empty()) {
-            if (auto gapRegion = inferGapRegion(measureStartTick,
-                                                measureEndTick,
-                                                previousRegionPtr,
-                                                nextRegionAfterMeasurePtr)) {
-                appendMeasureRegion(std::move(*gapRegion));
-            }
-
-            for (auto& measureRegion : measureRegions) {
-                displayRegions.push_back(std::move(measureRegion));
-            }
-            continue;
-        }
-
-        std::optional<HarmonicRegion> previousDisplayRegion;
-        if (previousRegionPtr) {
-            previousDisplayRegion = *previousRegionPtr;
-        }
-
-        int cursor = measureStartTick;
-
-        for (size_t i = 0; i < overlappingRegions.size(); ++i) {
-            const auto& sourceRegion = regions[overlappingRegions[i]];
-            const int sourceStartTick = std::max(measureStartTick, sourceRegion.startTick);
-            const int sourceEndTick = std::min(measureEndTick, sourceRegion.endTick);
-
-            if (cursor < sourceStartTick) {
-                if (measureRegions.empty() && cursor == analysisRangeStartTick) {
-                    HarmonicRegion openingRegion = sourceRegion;
-                    openingRegion.startTick = cursor;
-                    openingRegion.endTick = sourceStartTick;
-                    openingRegion.tones = collectRegionTones(sc,
-                                                             openingRegion.startTick,
-                                                             openingRegion.endTick,
-                                                             excludeStaves);
-                    appendMeasureRegion(std::move(openingRegion));
-                } else if (auto gapRegion = inferGapRegion(cursor,
-                                                           sourceStartTick,
-                                                           previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
-                                                           &sourceRegion)) {
-                    appendMeasureRegion(std::move(*gapRegion));
-                }
-
-                if (!measureRegions.empty()) {
-                    previousDisplayRegion = measureRegions.back();
-                }
-            }
-
-            if (sourceStartTick >= sourceEndTick) {
-                cursor = std::max(cursor, sourceEndTick);
-                continue;
-            }
-
-            HarmonicRegion displayRegion = sourceRegion;
-            displayRegion.startTick = sourceStartTick;
-            displayRegion.endTick = sourceEndTick;
-            displayRegion.tones = collectRegionTones(sc,
-                                                     displayRegion.startTick,
-                                                     displayRegion.endTick,
-                                                     excludeStaves);
-            appendMeasureRegion(std::move(displayRegion));
-            previousDisplayRegion = measureRegions.back();
-            cursor = sourceEndTick;
-        }
-
-        if (cursor < measureEndTick) {
-            if (auto gapRegion = inferGapRegion(cursor,
-                                                measureEndTick,
-                                                previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
-                                                nextRegionAfterMeasurePtr)) {
-                appendMeasureRegion(std::move(*gapRegion));
-            }
-        }
-
-        if (measureRegions.size() >= 2
-            && measureRegions.front().startTick == measureStartTick
-            && distinctPitchClassCount(measureRegions.front().tones) < 3
-            && distinctPitchClassCount(measureRegions[1].tones) >= 3
-            && measureRegions[1].startTick - measureStartTick <= Constants::DIVISION) {
-            HarmonicRegion carriedMeasureOpening = measureRegions[1];
-            carriedMeasureOpening.startTick = measureStartTick;
-            carriedMeasureOpening.tones = collectRegionTones(sc,
-                                                             carriedMeasureOpening.startTick,
-                                                             carriedMeasureOpening.endTick,
-                                                             excludeStaves);
-            measureRegions[0] = std::move(carriedMeasureOpening);
-            measureRegions.erase(measureRegions.begin() + 1);
-        }
-
-        for (auto& measureRegion : measureRegions) {
-            displayRegions.push_back(std::move(measureRegion));
-        }
-    }
-
-    stabilizeHarmonicRegionsForDisplay(displayRegions);
-    return displayRegions;
+    return result;
 }
+
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 
@@ -2291,37 +1811,41 @@ std::vector<PivotLabel> detectPivotChords(
 
 // ── analyzeSection ───────────────────────────────────────────────────────────
 //
-// Phase 2 entry point for the unified analysis pipeline
-// (docs/unified_analysis_pipeline.md).  Currently a pure-translation delegate
-// over `prepareUserFacingHarmonicRegions`; no caller consumes it yet.
-//
-// Phase 4 retires the `prepareUserFacingHarmonicRegions` delegate and moves
-// this function into `src/composing/` so the pipeline has no dependency on
-// the notation/ bridge layer.  Keeping it here today preserves the correct
-// dependency direction (bridge depends on composing, not the reverse).
+// Canonical implementation of the unified analysis pipeline
+// (docs/unified_analysis_pipeline.md).  Inlines Passes 0–4 (previously in
+// prepareUserFacingHarmonicRegions) and operates natively on AnalyzedRegion.
+// prepareUserFacingHarmonicRegions is a deprecated shim that reverse-translates
+// for tools/batch_analyze.cpp.
 mu::composing::analysis::AnalyzedSection
 analyzeSection(const mu::engraving::Score* sc,
                const mu::engraving::Fraction& from,
                const mu::engraving::Fraction& to,
                const std::set<size_t>& excludeStaves)
 {
+    using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
     AnalyzedSection out;
     out.startTick = from.ticks();
     out.endTick   = to.ticks();
 
-    const auto regions = prepareUserFacingHarmonicRegions(sc, from, to, excludeStaves);
-    if (regions.empty()) {
+    if (!sc || to <= from) {
         return out;
     }
 
-    // Regions: 1:1 translation from HarmonicRegion.  hasAssertiveExposure is
-    // derived per-region from the same key-confidence helper the implode
-    // emitter uses internally (Phase 3a will switch implode over to read
-    // this field directly instead of recomputing it).
-    out.regions.reserve(regions.size());
-    for (const auto& src : regions) {
+    // Pass 0: boundary detection via analyzeHarmonicRhythm.
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(sc, from, to, excludeStaves,
+                                                                 mu::notation::HarmonicRegionGranularity::Smoothed);
+    if (rawRegions.empty()) {
+        return out;
+    }
+
+    // Boundary: convert HarmonicRegion → AnalyzedRegion.  All display passes
+    // below operate on AnalyzedRegion natively.  hasAssertiveExposure is
+    // recomputed per-region after Pass 4 (stabilization).
+    std::vector<AnalyzedRegion> regions;
+    regions.reserve(rawRegions.size());
+    for (const auto& src : rawRegions) {
         AnalyzedRegion r;
         r.startTick            = src.startTick;
         r.endTick              = src.endTick;
@@ -2330,11 +1854,507 @@ analyzeSection(const mu::engraving::Score* sc,
         r.hasAnalyzedChord     = src.hasAnalyzedChord;
         r.keyModeResult        = src.keyModeResult;
         r.tones                = src.tones;
-        r.hasAssertiveExposure = hasAssertiveKeyConfidence(src.keyModeResult);
         r.temporalExtensions   = src.temporalExtensions;
-        r.keyAreaId            = -1;  // filled below
-        out.regions.push_back(std::move(r));
+        r.hasAssertiveExposure = false;  // recomputed after stabilization
+        r.keyAreaId            = -1;
+        regions.push_back(std::move(r));
     }
+
+    // Pass 1: gap-tone region insertion and measure-level layout.
+    const auto chordAnalyzer = ChordAnalyzerFactory::create();
+    auto sameChordIdentity = [](const AnalyzedRegion& lhs, const AnalyzedRegion& rhs) {
+        return lhs.chordResult.identity.rootPc == rhs.chordResult.identity.rootPc
+               && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality;
+    };
+    auto regionSupportsGapTones = [](const std::vector<ChordAnalysisTone>& gapTones,
+                                     const AnalyzedRegion& region) {
+        if (region.chordResult.identity.quality == ChordQuality::Suspended2
+            || region.chordResult.identity.quality == ChordQuality::Suspended4) {
+            return false;
+        }
+
+        const std::vector<int> chordPitchClasses = chordTonePitchClasses(region.chordResult);
+        if (gapTones.empty() || chordPitchClasses.empty()) {
+            return false;
+        }
+
+        bool seenGapPitchClasses[12] = {};
+        bool matchesRegionAnchor = false;
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (seenGapPitchClasses[pitchClass]) {
+                continue;
+            }
+            seenGapPitchClasses[pitchClass] = true;
+
+            if (pitchClass == region.chordResult.identity.rootPc
+                || pitchClass == region.chordResult.identity.bassPc) {
+                matchesRegionAnchor = true;
+            }
+
+            if (std::find(chordPitchClasses.begin(), chordPitchClasses.end(), pitchClass) == chordPitchClasses.end()) {
+                return false;
+            }
+        }
+
+        return matchesRegionAnchor;
+    };
+    auto applyGapKeyContext = [](ChordAnalysisResult& result,
+                                 const std::vector<ChordAnalysisTone>& gapTones,
+                                 int keyFifths,
+                                 KeySigMode keyMode) {
+        const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
+        const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+        const auto& scale = keyModeScaleIntervals(keyMode);
+
+        result.function.keyTonicPc = tonicPc;
+        result.function.keyMode = keyMode;
+        result.function.degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
+
+        bool diatonicToKey = (result.function.degree >= 0);
+        if (diatonicToKey) {
+            for (const auto& tone : gapTones) {
+                const int pitchClass = tone.pitch % 12;
+                bool inScale = false;
+                for (int interval : scale) {
+                    if ((tonicPc + interval) % 12 == pitchClass) {
+                        inScale = true;
+                        break;
+                    }
+                }
+                if (!inScale) {
+                    diatonicToKey = false;
+                    break;
+                }
+            }
+        }
+
+        result.function.diatonicToKey = diatonicToKey;
+    };
+    auto inferSparseGapChord = [&](const std::vector<ChordAnalysisTone>& gapTones,
+                                   int keyFifths,
+                                   KeySigMode keyMode,
+                                   ChordAnalysisResult& outResult) {
+        const auto* bassTone = bassToneFromTones(gapTones);
+        if (!bassTone) {
+            bassTone = &gapTones.front();
+            for (const auto& tone : gapTones) {
+                if (tone.pitch < bassTone->pitch) {
+                    bassTone = &tone;
+                }
+            }
+        }
+
+        bool seenPitchClasses[12] = {};
+        std::vector<int> pitchClasses;
+        pitchClasses.reserve(gapTones.size());
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (!seenPitchClasses[pitchClass]) {
+                seenPitchClasses[pitchClass] = true;
+                pitchClasses.push_back(pitchClass);
+            }
+        }
+
+        if (pitchClasses.empty()) {
+            return false;
+        }
+
+        outResult = {};
+        outResult.identity.score = 0.0;
+
+        if (pitchClasses.size() == 1) {
+            outResult.identity.rootPc = pitchClasses.front();
+            outResult.identity.bassPc = pitchClasses.front();
+            outResult.identity.bassTpc = bassTone->tpc;
+            outResult.identity.quality = ChordQuality::Unknown;
+            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
+            return true;
+        }
+
+        struct SparseCandidate {
+            int rootPc = -1;
+            ChordQuality quality = ChordQuality::Unknown;
+            int priority = -1;
+        };
+
+        std::optional<SparseCandidate> bestCandidate;
+        for (int candidateRootPc : pitchClasses) {
+            bool hasMinorThird = false;
+            bool hasMajorThird = false;
+            bool hasFifth = false;
+            bool hasDimFifth = false;
+            bool supported = true;
+
+            for (int tonePc : pitchClasses) {
+                if (tonePc == candidateRootPc) {
+                    continue;
+                }
+
+                const int interval = (tonePc - candidateRootPc + 12) % 12;
+                if (interval == 3) {
+                    hasMinorThird = true;
+                } else if (interval == 4) {
+                    hasMajorThird = true;
+                } else if (interval == 6) {
+                    hasDimFifth = true;
+                } else if (interval == 7) {
+                    hasFifth = true;
+                } else {
+                    supported = false;
+                    break;
+                }
+            }
+
+            if (!supported) {
+                continue;
+            }
+
+            SparseCandidate candidate;
+            candidate.rootPc = candidateRootPc;
+            if (hasMajorThird) {
+                candidate.quality = ChordQuality::Major;
+                candidate.priority = 3;
+            } else if (hasMinorThird) {
+                candidate.quality = ChordQuality::Minor;
+                candidate.priority = 3;
+            } else if (hasDimFifth) {
+                candidate.quality = ChordQuality::Diminished;
+                candidate.priority = 2;
+            } else if (hasFifth) {
+                candidate.quality = ChordQuality::Unknown;
+                candidate.priority = 1;
+            } else {
+                continue;
+            }
+
+            if (!bestCandidate || candidate.priority > bestCandidate->priority) {
+                bestCandidate = candidate;
+            }
+        }
+
+        if (bestCandidate) {
+            outResult.identity.rootPc = bestCandidate->rootPc;
+            outResult.identity.bassPc = bestCandidate->rootPc;
+            outResult.identity.bassTpc = bassTone->tpc;
+            outResult.identity.quality = bestCandidate->quality;
+            applyGapKeyContext(outResult, gapTones, keyFifths, keyMode);
+            return true;
+        }
+
+        return false;
+    };
+    auto analyzeGapWithContext = [&](const std::vector<ChordAnalysisTone>& gapTones,
+                                     const AnalyzedRegion& contextRegion,
+                                     int gapStartTick,
+                                     int gapEndTick) -> std::optional<AnalyzedRegion> {
+        AnalyzedRegion inferredRegion;
+        inferredRegion.startTick = gapStartTick;
+        inferredRegion.endTick = gapEndTick;
+        inferredRegion.hasAnalyzedChord = true;
+        inferredRegion.keyModeResult = contextRegion.keyModeResult;
+        inferredRegion.tones = gapTones;
+
+        const auto results = chordAnalyzer->analyzeChord(gapTones,
+                                                         contextRegion.keyModeResult.keySignatureFifths,
+                                                         contextRegion.keyModeResult.mode);
+        if (!results.empty()) {
+            inferredRegion.chordResult = results.front();
+            if (results.size() > 1) {
+                inferredRegion.alternatives.assign(results.begin() + 1, results.end());
+            }
+            // Gap analyzer is invoked context-free; temporalExtensions stays at defaults.
+            return inferredRegion;
+        }
+
+        if (inferSparseGapChord(gapTones,
+                                contextRegion.keyModeResult.keySignatureFifths,
+                                contextRegion.keyModeResult.mode,
+                                inferredRegion.chordResult)) {
+            return inferredRegion;
+        }
+
+        return std::nullopt;
+    };
+    auto inferGapRegion = [&](int gapStartTick,
+                              int gapEndTick,
+                              const AnalyzedRegion* previousRegion,
+                              const AnalyzedRegion* nextRegion) -> std::optional<AnalyzedRegion> {
+        if (gapEndTick <= gapStartTick) {
+            return std::nullopt;
+        }
+
+        const auto gapTones = collectRegionTones(sc,
+                                                 gapStartTick,
+                                                 gapEndTick,
+                                                 excludeStaves);
+        if (gapTones.empty()) {
+            const AnalyzedRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
+            if (!carriedSource) {
+                return std::nullopt;
+            }
+
+            AnalyzedRegion carriedRegion = *carriedSource;
+            carriedRegion.startTick = gapStartTick;
+            carriedRegion.endTick = gapEndTick;
+            carriedRegion.tones.clear();
+            carriedRegion.hasAnalyzedChord = true;
+            return carriedRegion;
+        }
+
+        auto carryGapRegion = [&](const AnalyzedRegion& sourceRegion) {
+            AnalyzedRegion carriedRegion = sourceRegion;
+            carriedRegion.startTick = gapStartTick;
+            carriedRegion.endTick = gapEndTick;
+            carriedRegion.tones = gapTones;
+            carriedRegion.hasAnalyzedChord = true;
+            return carriedRegion;
+        };
+
+        int uniqueGapPitchClasses = 0;
+        bool seenGapPitchClasses[12] = {};
+        for (const auto& tone : gapTones) {
+            const int pitchClass = tone.pitch % 12;
+            if (seenGapPitchClasses[pitchClass]) {
+                continue;
+            }
+            seenGapPitchClasses[pitchClass] = true;
+            ++uniqueGapPitchClasses;
+        }
+
+        if (uniqueGapPitchClasses < 3) {
+            // When the gap has only one pitch class, a single note that coincides
+            // with the ROOT of an adjacent chord carries no quality information —
+            // the diatonic shape from the key context is more reliable.  But if
+            // the lone gap note is a non-root chord tone of the adjacent region
+            // (e.g. the third or fifth), the carry is appropriate because that
+            // interval relationship identifies the chord quality.
+            auto supportsCarry = [&](const AnalyzedRegion& region) -> bool {
+                if (!regionSupportsGapTones(gapTones, region)) {
+                    return false;
+                }
+                if (uniqueGapPitchClasses == 1) {
+                    const int gapPc = gapTones.front().pitch % 12;
+                    if (gapPc == region.chordResult.identity.rootPc) {
+                        return false;  // root alone → key context is more reliable
+                    }
+                }
+                return true;
+            };
+
+            if (nextRegion && supportsCarry(*nextRegion)) {
+                return carryGapRegion(*nextRegion);
+            }
+
+            if (previousRegion && supportsCarry(*previousRegion)) {
+                return carryGapRegion(*previousRegion);
+            }
+        }
+
+        if (previousRegion) {
+            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
+                                                            *previousRegion,
+                                                            gapStartTick,
+                                                            gapEndTick)) {
+                return analyzedRegion;
+            }
+        }
+
+        if (nextRegion) {
+            if (auto analyzedRegion = analyzeGapWithContext(gapTones,
+                                                            *nextRegion,
+                                                            gapStartTick,
+                                                            gapEndTick)) {
+                return analyzedRegion;
+            }
+        }
+
+        if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {
+            return carryGapRegion(*previousRegion);
+        }
+
+        if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {
+            return carryGapRegion(*nextRegion);
+        }
+
+        if (!previousRegion && nextRegion) {
+            AnalyzedRegion openingRegion = *nextRegion;
+            openingRegion.startTick = gapStartTick;
+            openingRegion.endTick = gapEndTick;
+            openingRegion.tones = gapTones;
+            openingRegion.hasAnalyzedChord = true;
+            return openingRegion;
+        }
+
+        if (previousRegion && !nextRegion) {
+            AnalyzedRegion trailingRegion = *previousRegion;
+            trailingRegion.startTick = gapStartTick;
+            trailingRegion.endTick = gapEndTick;
+            trailingRegion.tones = gapTones;
+            trailingRegion.hasAnalyzedChord = true;
+            return trailingRegion;
+        }
+
+        // Both prev and next exist but no fitting test passed.  Rather than
+        // returning nullopt (which leaves an uncovered gap in the measure and
+        // produces mixed chord+rest measures on the chord track), carry the
+        // previous chord forward as a last resort.
+        if (previousRegion) {
+            return carryGapRegion(*previousRegion);
+        }
+
+        return std::nullopt;
+    };
+    auto nextRegionStartingAtOrAfter = [&](int tick) -> const AnalyzedRegion* {
+        const auto nextRegion = std::find_if(regions.begin(), regions.end(), [tick](const auto& region) {
+            return region.startTick >= tick;
+        });
+        return nextRegion != regions.end() ? &*nextRegion : nullptr;
+    };
+
+    std::vector<AnalyzedRegion> displayRegions;
+    displayRegions.reserve(regions.size() * 2);
+    const int analysisRangeStartTick = from.ticks();
+
+    for (Measure* measure = sc->tick2measure(from);
+         measure && measure->tick() < to;
+         measure = measure->nextMeasure()) {
+        const Fraction measureRangeStart = std::max(measure->tick(), from);
+        const Fraction measureRangeEnd = std::min(measure->endTick(), to);
+        const int measureStartTick = measureRangeStart.ticks();
+        const int measureEndTick = measureRangeEnd.ticks();
+
+        std::vector<size_t> overlappingRegions;
+        for (size_t i = 0; i < regions.size(); ++i) {
+            if (regions[i].endTick > measureStartTick && regions[i].startTick < measureEndTick) {
+                overlappingRegions.push_back(i);
+            }
+        }
+
+        std::vector<AnalyzedRegion> measureRegions;
+        auto appendMeasureRegion = [&](AnalyzedRegion region) {
+            if (region.startTick >= region.endTick) {
+                return;
+            }
+            if (!measureRegions.empty()
+                && measureRegions.back().endTick == region.startTick
+                && sameChordIdentity(measureRegions.back(), region)) {
+                measureRegions.back().endTick = region.endTick;
+                mergeChordAnalysisTones(measureRegions.back().tones, region.tones);
+                return;
+            }
+            measureRegions.push_back(std::move(region));
+        };
+
+        const auto previousRegion = std::find_if(regions.rbegin(), regions.rend(), [measureStartTick](const auto& region) {
+            return region.endTick <= measureStartTick;
+        });
+        const AnalyzedRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
+        const AnalyzedRegion* nextRegionAfterMeasurePtr = nextRegionStartingAtOrAfter(measureEndTick);
+
+        if (overlappingRegions.empty()) {
+            if (auto gapRegion = inferGapRegion(measureStartTick,
+                                                measureEndTick,
+                                                previousRegionPtr,
+                                                nextRegionAfterMeasurePtr)) {
+                appendMeasureRegion(std::move(*gapRegion));
+            }
+
+            for (auto& measureRegion : measureRegions) {
+                displayRegions.push_back(std::move(measureRegion));
+            }
+            continue;
+        }
+
+        std::optional<AnalyzedRegion> previousDisplayRegion;
+        if (previousRegionPtr) {
+            previousDisplayRegion = *previousRegionPtr;
+        }
+
+        int cursor = measureStartTick;
+
+        for (size_t i = 0; i < overlappingRegions.size(); ++i) {
+            const auto& sourceRegion = regions[overlappingRegions[i]];
+            const int sourceStartTick = std::max(measureStartTick, sourceRegion.startTick);
+            const int sourceEndTick = std::min(measureEndTick, sourceRegion.endTick);
+
+            if (cursor < sourceStartTick) {
+                if (measureRegions.empty() && cursor == analysisRangeStartTick) {
+                    AnalyzedRegion openingRegion = sourceRegion;
+                    openingRegion.startTick = cursor;
+                    openingRegion.endTick = sourceStartTick;
+                    openingRegion.tones = collectRegionTones(sc,
+                                                             openingRegion.startTick,
+                                                             openingRegion.endTick,
+                                                             excludeStaves);
+                    appendMeasureRegion(std::move(openingRegion));
+                } else if (auto gapRegion = inferGapRegion(cursor,
+                                                           sourceStartTick,
+                                                           previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
+                                                           &sourceRegion)) {
+                    appendMeasureRegion(std::move(*gapRegion));
+                }
+
+                if (!measureRegions.empty()) {
+                    previousDisplayRegion = measureRegions.back();
+                }
+            }
+
+            if (sourceStartTick >= sourceEndTick) {
+                cursor = std::max(cursor, sourceEndTick);
+                continue;
+            }
+
+            AnalyzedRegion displayRegion = sourceRegion;
+            displayRegion.startTick = sourceStartTick;
+            displayRegion.endTick = sourceEndTick;
+            displayRegion.tones = collectRegionTones(sc,
+                                                     displayRegion.startTick,
+                                                     displayRegion.endTick,
+                                                     excludeStaves);
+            appendMeasureRegion(std::move(displayRegion));
+            previousDisplayRegion = measureRegions.back();
+            cursor = sourceEndTick;
+        }
+
+        if (cursor < measureEndTick) {
+            if (auto gapRegion = inferGapRegion(cursor,
+                                                measureEndTick,
+                                                previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,
+                                                nextRegionAfterMeasurePtr)) {
+                appendMeasureRegion(std::move(*gapRegion));
+            }
+        }
+
+        if (measureRegions.size() >= 2
+            && measureRegions.front().startTick == measureStartTick
+            && distinctPitchClassCount(measureRegions.front().tones) < 3
+            && distinctPitchClassCount(measureRegions[1].tones) >= 3
+            && measureRegions[1].startTick - measureStartTick <= Constants::DIVISION) {
+            AnalyzedRegion carriedMeasureOpening = measureRegions[1];
+            carriedMeasureOpening.startTick = measureStartTick;
+            carriedMeasureOpening.tones = collectRegionTones(sc,
+                                                             carriedMeasureOpening.startTick,
+                                                             carriedMeasureOpening.endTick,
+                                                             excludeStaves);
+            measureRegions[0] = std::move(carriedMeasureOpening);
+            measureRegions.erase(measureRegions.begin() + 1);
+        }
+
+        for (auto& measureRegion : measureRegions) {
+            displayRegions.push_back(std::move(measureRegion));
+        }
+    }
+
+    // Pass 4: key/mode stabilization.
+    stabilizeHarmonicRegionsForDisplay(displayRegions);
+
+    // Post-stabilization: set hasAssertiveExposure on each display region.
+    for (auto& r : displayRegions) {
+        r.hasAssertiveExposure = hasAssertiveKeyConfidence(r.keyModeResult);
+    }
+
+    out.regions = std::move(displayRegions);
 
     // Key-areas: collapse adjacent regions sharing (keyFifths, mode).  Phase 5
     // will replace this naive pass with a confidence-aware smoother once
