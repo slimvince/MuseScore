@@ -249,7 +249,7 @@ struct PivotLabel {
 bool hasAssertiveKeyConfidence(
     const mu::composing::analysis::KeyModeAnalysisResult& kmr);
 
-/// Detect cadence markers from an ordered sequence of harmonic regions.
+/// Detect cadence markers from an ordered sequence of analyzed regions.
 ///
 /// @param regions        All regions, including any read-only lookahead regions
 ///                       past the selection boundary.
@@ -263,10 +263,10 @@ bool hasAssertiveKeyConfidence(
 ///
 /// HC is emitted when the last in-selection region is a dominant (degree 4).
 std::vector<CadenceMarker> detectCadences(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
     size_t selectionCount);
 
-/// Detect pivot chord labels from an ordered sequence of harmonic regions.
+/// Detect pivot chord labels from an ordered sequence of analyzed regions.
 ///
 /// The pivot is the most recent in-selection chord that is diatonic to the
 /// outgoing key AND whose root also belongs to the incoming key's scale.
@@ -280,7 +280,7 @@ std::vector<CadenceMarker> detectCadences(
 /// kMaxPivotLookaheadRegions past the boundary, the pivot label is suppressed
 /// to avoid false positives.
 std::vector<PivotLabel> detectPivotChords(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
     size_t selectionCount);
 
 /// Returns the diatonic scale degree [0..6] of rootPc in (keyFifths, keyMode),

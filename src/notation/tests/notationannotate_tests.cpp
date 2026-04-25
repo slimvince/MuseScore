@@ -24,7 +24,7 @@
 //
 // Tests for detectCadences() and detectPivotChords() in
 // notationcomposingbridgehelpers.h/cpp.  These functions take
-// HarmonicRegion vectors; no Score object is required.
+// AnalyzedRegion vectors; no Score object is required.
 
 #include <gtest/gtest.h>
 
@@ -35,7 +35,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
-#include "composing/analysis/region/harmonicrhythm.h"
+#include "composing/analyzed_section.h"
 
 #include "notation/internal/notationcomposingbridgehelpers.h"
 
@@ -63,12 +63,12 @@ KeyModeAnalysisResult keyResult(int fifths, KeySigMode mode, double confidence)
     return km;
 }
 
-/// Build a minimal HarmonicRegion at the given tick range.
-HarmonicRegion region(int startTick, int endTick,
+/// Build a minimal AnalyzedRegion at the given tick range.
+AnalyzedRegion region(int startTick, int endTick,
                       const ChordAnalysisResult& chord,
                       const KeyModeAnalysisResult& km)
 {
-    HarmonicRegion r;
+    AnalyzedRegion r;
     r.startTick = startTick;
     r.endTick = endTick;
     r.chordResult = chord;
@@ -89,7 +89,7 @@ TEST(CadenceDetection, PAC_BothInSelection)
 {
     // V → I in C major, both regions inside the selection.
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),  // V
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I
     };
@@ -109,7 +109,7 @@ TEST(CadenceDetection, PAC_ResolutionInLookahead)
     // V is the last in-selection region; I is a lookahead region.
     // The label must be placed at the V tick (within the selection).
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),  // V  (in selection)
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I  (lookahead)
     };
@@ -128,7 +128,7 @@ TEST(CadenceDetection, PAC_ResolutionInLookahead)
 TEST(CadenceDetection, PAC_LeadingToneDiminished)
 {
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(6, ChordQuality::Diminished), cMajor),  // viio
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major),      cMajor),  // I
     };
@@ -143,7 +143,7 @@ TEST(CadenceDetection, PAC_LeadingToneDiminished)
 TEST(CadenceDetection, PC_PlagalCadence)
 {
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(3, ChordQuality::Major), cMajor),  // IV
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I
     };
@@ -158,7 +158,7 @@ TEST(CadenceDetection, PC_PlagalCadence)
 TEST(CadenceDetection, DC_DeceptiveCadence)
 {
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),  // V
         region(4 * kQ, 8 * kQ, diatonicResult(5, ChordQuality::Minor), cMajor),  // vi
     };
@@ -173,7 +173,7 @@ TEST(CadenceDetection, DC_DeceptiveCadence)
 TEST(CadenceDetection, HC_LastRegionIsDominant)
 {
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I
         region(4 * kQ, 8 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),  // V
     };
@@ -193,7 +193,7 @@ TEST(CadenceDetection, NoCadence_AcrossKeyChange)
     // The two regions are in different keys — no cadence should be detected.
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
     const auto gMajor = keyResult(1, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),  // V in C
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major), gMajor),  // I in G (different key)
     };
@@ -212,7 +212,7 @@ TEST(CadenceDetection, NoCadence_AcrossKeyChange)
 TEST(CadenceDetection, NoCadence_LowConfidence)
 {
     const auto cMajorLow  = keyResult(0, KeySigMode::Ionian, kLow);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      4 * kQ, diatonicResult(4, ChordQuality::Major), cMajorLow),
         region(4 * kQ, 8 * kQ, diatonicResult(0, ChordQuality::Major), cMajorLow),
     };
@@ -255,7 +255,7 @@ TEST(PivotDetection, PivotInMiddleOfSelection)
     gMajorI.function.keyTonicPc = 7;
     gMajorI.function.keyMode = KeySigMode::Ionian;
 
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,          kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I in C
         region(kQ,      2 * kQ, cMajorII,                              cMajor),  // ii in C (= pivot candidate)
         region(2 * kQ,  3 * kQ, gMajorI,                               gMajor),  // I in G (key boundary)
@@ -301,7 +301,7 @@ TEST(PivotDetection, PivotAtSelectionEnd_ConfirmedByLookahead)
     gMajorI.function.keyTonicPc = 7;
     gMajorI.function.keyMode = KeySigMode::Ionian;
 
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,          kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I in C  (in selection)
         region(kQ,      2 * kQ, cMajorII,                              cMajor),  // ii in C (in selection, pivot candidate)
         region(2 * kQ,  3 * kQ, gMajorI,                               gMajor),  // I in G  (LOOKAHEAD, key boundary)
@@ -342,7 +342,7 @@ TEST(PivotDetection, PivotSuppressed_NewKeyUnconfirmed)
 
     // Only ONE G-major region in lookahead — detection requires TWO assertive
     // G-major regions (the transition region + at least one confirming region).
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,      kQ, diatonicResult(0, ChordQuality::Major), cMajor),  // I in C (in selection)
         region(kQ,  2 * kQ, cMajorII,                              cMajor),  // ii in C (in selection, pivot candidate)
         region(2 * kQ, 3 * kQ, gMajorI,                            gMajor),  // I in G (LOOKAHEAD, boundary — but no confirming region follows)
@@ -360,7 +360,7 @@ TEST(PivotDetection, NoPivot_StableKey)
 {
     // Four regions all in C major — no modulation, no pivot.
     const auto cMajor = keyResult(0, KeySigMode::Ionian, kHigh);
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,          kQ, diatonicResult(0, ChordQuality::Major), cMajor),
         region(kQ,      2 * kQ, diatonicResult(4, ChordQuality::Major), cMajor),
         region(2 * kQ,  3 * kQ, diatonicResult(3, ChordQuality::Major), cMajor),
@@ -403,7 +403,7 @@ TEST(PivotDetection, PivotLabel_NoOldFormatPrefix)
     gMajorV.function.keyTonicPc = 7;
     gMajorV.function.keyMode = KeySigMode::Ionian;
 
-    std::vector<HarmonicRegion> regions = {
+    std::vector<AnalyzedRegion> regions = {
         region(0,          kQ, diatonicResult(0, ChordQuality::Major), cMajor),
         region(kQ,      2 * kQ, cMajorII,                              cMajor),
         region(2 * kQ,  3 * kQ, gMajorI,                               gMajor),

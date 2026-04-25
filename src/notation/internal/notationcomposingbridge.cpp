@@ -701,7 +701,6 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
 {
     using namespace mu::engraving;
     using mu::composing::analysis::AnalyzedRegion;
-    using mu::composing::analysis::HarmonicRegion;
 
     if (!score || section.regions.empty() || options.writeStaves.empty()) {
         return;
@@ -835,28 +834,10 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
     //
     // Both use the full allRegions vector (selection + lookahead) for
     // detection; writing is restricted to in-selection ticks only.
-    //
-    // detectCadences / detectPivotChords still take vector<HarmonicRegion> —
-    // build a 1:1 view from the AnalyzedRegion list (the same adapter
-    // pattern Phase 3a's emitImplodedChordTrack uses).  Phase 4 retires
-    // HarmonicRegion entirely.
     if (options.writeRomanNumerals && !options.writeStaves.empty()) {
         const track_idx_t annotateTrack = options.writeStaves.front() * VOICES;
 
-        std::vector<HarmonicRegion> regionsAsHarmonicRegions;
-        regionsAsHarmonicRegions.reserve(allRegions.size());
-        for (const auto& r : allRegions) {
-            HarmonicRegion h;
-            h.startTick        = r.startTick;
-            h.endTick          = r.endTick;
-            h.chordResult      = r.chordResult;
-            h.hasAnalyzedChord = r.hasAnalyzedChord;
-            h.keyModeResult    = r.keyModeResult;
-            h.tones            = r.tones;
-            regionsAsHarmonicRegions.push_back(std::move(h));
-        }
-
-        const auto cadences = detectCadences(regionsAsHarmonicRegions, selectionCount);
+        const auto cadences = detectCadences(allRegions, selectionCount);
         for (const auto& marker : cadences) {
             const Fraction mTick = Fraction::fromTicks(marker.tick);
             Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
@@ -870,7 +851,7 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
             score->undoAddElement(st);
         }
 
-        const auto pivots = detectPivotChords(regionsAsHarmonicRegions, selectionCount);
+        const auto pivots = detectPivotChords(allRegions, selectionCount);
         for (const auto& pv : pivots) {
             const Fraction pTick = Fraction::fromTicks(pv.tick);
             Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);

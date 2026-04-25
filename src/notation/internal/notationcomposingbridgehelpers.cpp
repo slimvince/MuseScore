@@ -2090,7 +2090,7 @@ bool hasAssertiveKeyConfidence(
 }
 
 std::vector<CadenceMarker> detectCadences(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
     size_t selectionCount)
 {
     using namespace mu::composing::analysis;
@@ -2175,7 +2175,7 @@ std::vector<CadenceMarker> detectCadences(
 }
 
 std::vector<PivotLabel> detectPivotChords(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
     size_t selectionCount)
 {
     using namespace mu::composing::analysis;
