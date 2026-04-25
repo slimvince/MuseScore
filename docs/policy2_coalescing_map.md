@@ -10,6 +10,7 @@ Scope: read-only analysis; no source edits.
 | Divergence | Closed by | Notes |
 |---|---|---|
 | **B — Jazz-path suppression** (`forceClassicalPath`) | 02e3733afb (production) + 69716deead (tools) | The Jazz path and `forceClassicalPath` flag are deleted. All paths now use the single classical §4.1c Jaccard path; boundary divergence between P2 and P1/P3 on Jazz scores is eliminated by removing the Jazz path entirely. |
+| **D — Tick-regional post-region re-analysis** (display-context re-`analyzeChord`) | Phase 3c commit (recon at d35f003aa2) | The display-context re-analysis in P3 (`collectRegionTones` + `findTemporalContext` + second `analyzeChord` re-run) is deleted. P3 now consumes `AnalyzedSection` via `analyzeSection()`, identical to the per-region pipeline used by P2. Extension fields and alternatives are now consistent across P2 and P3. |
 
 ---
 
@@ -92,7 +93,7 @@ via `analyzeNoteHarmonicContext` → `analyzeNoteHarmonicContextDetails` →
 | Pass 4 — key/mode stabilization | ✓ | ✓ | ✓ | — |
 | `minimumDisplayDurationBeats` filter | — | ✓ | — | — |
 | `forceClassicalPath=true` | ~~retired~~ | ~~retired~~ | ~~retired~~ | — |
-| Post-region display re-analysis (`collectRegionTones` + `analyzeChord` re-run) | — | — | ✓ | — |
+| Post-region display re-analysis (`collectRegionTones` + `analyzeChord` re-run) | — | — | ~~retired~~ | — |
 | `collectSoundingAt` (4-beat backward sweep) | — | — | — | ✓ |
 | `resolveKeyAndMode` with hysteresis | — | — | — | ✓ |
 | `refineSparseChordQualityFromKeyContext` | — | — | — | ✓ |
@@ -147,23 +148,33 @@ P2 (no annotation written).
 
 ---
 
-### Divergence D — Tick-regional post-region re-analysis (P3 vs. P1/P2)
+### Divergence D — Tick-regional post-region re-analysis (P3 vs. P1/P2) (**CLOSED**)
 
-**What differs:** After `prepareUserFacingHarmonicRegions`, P3 re-collects tones
-for the matched region via `collectRegionTones`, builds a `findTemporalContext`
-display context, and re-runs `analyzeChord` (lines 327–354).  P1 and P2 use
-`region.chordResult` directly.
+**Closed by:** Phase 3c implementation (see commit following `d35f003aa2`
+recon report). The display-context re-analysis (`collectRegionTones` +
+`findTemporalContext` + `analyzeChord` re-run) in P3 was deleted; P3 now
+consumes `AnalyzedSection` (the canonical per-region pipeline output) via
+`analyzeSection()`, identical to what P2 annotates.
 
-**Tie-break rule (lines 372–375):** when the display re-analysis produces a
-different formatted symbol/Roman/Nashville than `region.chordResult`, P3 **prepends**
-`region.chordResult` so the harmonic-region winner stays first.  The status-bar
-display therefore mirrors `region.chordResult` in the disagreement case.
+**Historical summary:** After `prepareUserFacingHarmonicRegions`, P3 previously
+re-collected tones for the matched region via `collectRegionTones`, built a
+`findTemporalContext` display context, and re-ran `analyzeChord`.  P1 and P2
+used `region.chordResult` directly, producing divergent extension fields and
+alternative candidates on any tick not at a region boundary.
 
-**Residual risk:** when display re-analysis *agrees* with the region result, the
-re-analysis becomes the returned `chordResults[0]`; the temporal-context
-extensions (e.g. `bassIsStepwiseFromPrevious`) are populated differently than in
-the region-level analysis.  Extension fields may differ between what P3 returns
-and what P2 annotated.
+**Tie-break rule (deleted):** when the display re-analysis produced a different
+formatted symbol/Roman/Nashville than `region.chordResult`, P3 prepended
+`region.chordResult` so the harmonic-region winner stayed first.  This rule and
+the entire display re-analysis code path are now deleted.
+
+**Alternatives improvement:** the retired path produced degenerate inversion-noise
+alternatives (e.g. 3× D-major entries at scores 2.818 / 2.563 / 2.563 in
+`bach_bwv806_gigue`) because the segment-local lookback diverged from the
+per-region-evolved temporal context at every non-boundary tick.  The canonical
+per-region path now supplies alternatives that are harmonically distinct candidates
+(confirmed via Step D snapshot diff, ~58% of sampled ticks affected).
+
+**Recon report:** `docs/divergence_d_recon.md`, committed at `d35f003aa2`.
 
 ---
 
@@ -174,20 +185,21 @@ and what P2 annotated.
 prepareUserFacing          ✓            ✓               ✓               —
 forceClassicalPath         retired      retired         retired         —
 minimumDuration gate       —            ✓               —               —
-display re-analysis        —            —               ✓               —
+display re-analysis        —            —               retired         —
 tick-local fallback        —            —               —               ✓
 ```
 
-**Two live divergences** remain between paths that share `prepareUserFacingHarmonicRegions`:
+**One live divergence** remains between paths that share `prepareUserFacingHarmonicRegions`:
 
 - **C** (duration gate) causes annotation to silently drop sub-beat regions that
   implode and status-bar expose.
-- **D** (display re-analysis) means status-bar temporal-context fields can differ
-  from annotation output even when the top-level chord identity matches.
 
-Divergence B (Jazz-path suppression) is **closed** — the Jazz path and
-`forceClassicalPath` flag were deleted in 02e3733afb + 69716deead. All paths now
-share the single classical §4.1c boundary detection.
+Divergences B (Jazz-path suppression) and D (display re-analysis) are **closed**:
 
-**Highest priority:** Divergence C/D — a unified boundary source (shared
-pre-computed regions passed to all callers) would resolve both.
+- **B** — Jazz path and `forceClassicalPath` flag deleted in 02e3733afb + 69716deead.
+  All paths share the single classical §4.1c boundary detection.
+- **D** — Display-context re-analysis deleted in Phase 3c (recon at d35f003aa2).
+  P3 now consumes `analyzeSection()` output, consistent with P2.
+
+**Highest priority:** Divergence C — a unified boundary source (shared pre-computed
+regions passed to all callers) would resolve it and complete pipeline unification.

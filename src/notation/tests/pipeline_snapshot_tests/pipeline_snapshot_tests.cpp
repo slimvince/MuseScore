@@ -447,6 +447,40 @@ QJsonArray buildTickRegionalArray(MasterScore* score,
         }
         o[QStringLiteral("key")] = QString::fromStdString(keyName(ctx.keyFifths, ctx.keyMode));
         o[QStringLiteral("wasRegional")] = ctx.wasRegional;
+
+        // Phase 3c: capture the per-region temporal-extension snapshot fed
+        // to the chosen result's analyzeChord call.  Pre-refactor this is
+        // sourced from the canonical per-region pipeline (just plumbed
+        // through HarmonicRegion → NoteHarmonicContext); post-refactor
+        // (after divergence D closes) it is read identically from
+        // AnalyzedRegion::temporalExtensions, so this should be byte-
+        // identical across the refactor.
+        const auto& ext = ctx.temporalExtensions;
+        o[QStringLiteral("bassIsStepwiseFromPrevious")] = ext.bassIsStepwiseFromPrevious;
+        o[QStringLiteral("bassIsStepwiseToNext")] = ext.bassIsStepwiseToNext;
+        o[QStringLiteral("previousRootPc")] = ext.previousRootPc;
+        o[QStringLiteral("previousBassPc")] = ext.previousBassPc;
+        o[QStringLiteral("previousQuality")] = QString::fromStdString(qualityName(ext.previousQuality));
+
+        // Phase 3c: capture chordResults[1..N] as alternatives.  Pre-refactor
+        // this comes from P3's cruft display-context analyzeChord (with
+        // possible region-winner prepend at [0]); post-refactor it comes
+        // from AnalyzedRegion::alternatives (per-region-evolved context).
+        // The alternatives content is expected to shift on a small subset
+        // of ticks across the refactor — that is the documented unification.
+        QJsonArray alts;
+        if (ctx.chordResults.size() > 1) {
+            for (size_t i = 1; i < ctx.chordResults.size(); ++i) {
+                const auto& alt = ctx.chordResults[i];
+                QJsonObject ao;
+                ao[QStringLiteral("root")] = QString::fromStdString(rootName(alt.identity.rootPc, ctx.keyFifths));
+                ao[QStringLiteral("quality")] = QString::fromStdString(qualityName(alt.identity.quality));
+                ao[QStringLiteral("score")] = std::round(alt.identity.score * 1000.0) / 1000.0;
+                alts.append(ao);
+            }
+        }
+        o[QStringLiteral("alternatives")] = alts;
+
         arr.append(o);
     }
     return arr;
@@ -651,7 +685,7 @@ QJsonArray buildImplodedChordTrackArray(const QString& corpusAbsPath, int capped
 
 // ── Snapshot assembly ────────────────────────────────────────────────────────
 
-constexpr int kSchemaVersion = 1;
+constexpr int kSchemaVersion = 2;  // Phase 3c: tickRegional gained alternatives + temporal-extension fields
 
 QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
 {

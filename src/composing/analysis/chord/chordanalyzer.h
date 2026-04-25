@@ -482,34 +482,16 @@ inline constexpr ChordAnalyzerPreferences kDefaultChordAnalyzerPreferences{};
 /// context (chord history, cadence state) for a ProgressionAnalyzer.
 /// These are distinct structs with distinct roles.
 struct ChordTemporalContext {
-    // ── Already implemented ─────────────────────────────────────────────────
-
     /// Root pitch class of the most recently identified chord (-1 = none).
     int previousRootPc = -1;
 
     /// Quality of the most recently identified chord.
     ChordQuality previousQuality = ChordQuality::Unknown;
 
-    /// Elapsed quarter-note time since the previous chord attacked.
-    /// 0.0 when unknown.  (Not yet populated — reserved for beat-strength
-    /// weighting of root-continuity bonus.)
-    double previousChordAge = 0.0;
-
-    // ── New fields (§4.1b — Contextual Inversion Resolution) ────────────────
-
     /// Bass pitch class of the most recently identified chord.
     /// Used to detect stepwise bass motion indicating inversion.
     /// -1 if unknown.
     int previousBassPc = -1;
-
-    /// Root pitch class of the next identified chord.
-    /// Populated by chord staff two-pass analysis only.
-    /// -1 if unknown (status bar single-note analysis never has this).
-    int nextRootPc = -1;
-
-    /// Bass pitch class of the next identified chord.
-    /// -1 if unknown.
-    int nextBassPc = -1;
 
     /// True if the current region's bass note is one diatonic step
     /// above or below the previous region's bass note.
@@ -520,7 +502,6 @@ struct ChordTemporalContext {
 
     /// True if the current region's bass note is one diatonic step
     /// above or below the next region's bass note.
-    /// False if nextBassPc is -1.
     bool bassIsStepwiseToNext = false;
 };
 

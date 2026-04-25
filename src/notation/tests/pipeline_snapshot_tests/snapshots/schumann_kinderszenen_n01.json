@@ -972,7 +972,7 @@
             "tick": 14400
         }
     ],
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "score": "tools/dcml/schumann_kinderszenen/MS3/n01.mscx",
     "tickLocal": [
         {
@@ -1170,224 +1170,768 @@
     ],
     "tickRegional": [
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.805
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.805
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": -1,
+            "previousQuality": "unknown",
+            "previousRootPc": -1,
             "quality": "major",
             "root": "G",
             "tick": 0,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "G",
+                    "score": 3.134
+                },
+                {
+                    "quality": "diminished",
+                    "root": "G",
+                    "score": 2.357
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "G",
             "tick": 480,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 960,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 1440,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.805
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.805
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 2,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "major",
             "root": "G",
             "tick": 1920,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "G",
+                    "score": 3.134
+                },
+                {
+                    "quality": "diminished",
+                    "root": "G",
+                    "score": 2.357
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "G",
             "tick": 2400,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 2880,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 3360,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.283
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.283
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 2,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "major",
             "root": "G",
             "tick": 3840,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.283
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.283
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 2,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "major",
             "root": "G",
             "tick": 4320,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.788
+                },
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.533
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "A",
             "tick": 4800,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.788
+                },
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.533
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "A",
             "tick": 5280,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.788
+                },
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.533
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "A",
             "tick": 5760,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.529
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.529
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "minor",
+            "previousRootPc": 9,
             "quality": "major",
             "root": "G",
             "tick": 6240,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.529
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.529
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "minor",
+            "previousRootPc": 9,
             "quality": "major",
             "root": "G",
             "tick": 6720,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.524
+                },
+                {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 1.915
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "E",
             "tick": 7200,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.785
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.785
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 2,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "major",
             "root": "G",
             "tick": 7680,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 3.12
+                },
+                {
+                    "quality": "power",
+                    "root": "A",
+                    "score": 2.487
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "A",
             "tick": 8160,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.713
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.713
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 9,
+            "previousQuality": "minor",
+            "previousRootPc": 9,
             "quality": "major",
             "root": "D",
             "tick": 8640,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.093
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.093
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 2,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "major",
             "root": "G",
             "tick": 9120,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.75
+                },
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.75
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "C",
             "tick": 9600,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "diminished",
+                    "root": "F#",
+                    "score": 2.369
+                },
+                {
+                    "quality": "sus4",
+                    "root": "F#",
+                    "score": 2.316
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "major",
+            "previousRootPc": 0,
             "quality": "halfDiminished",
             "root": "F#",
             "tick": 10080,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "B",
+                    "score": 3.063
+                },
+                {
+                    "quality": "major",
+                    "root": "B",
+                    "score": 3.063
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 6,
+            "previousQuality": "halfDiminished",
+            "previousRootPc": 6,
             "quality": "major",
             "root": "B",
             "tick": 10560,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.104
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 3.104
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 11,
             "quality": "major",
             "root": "G",
             "tick": 11040,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.965
+                },
+                {
+                    "quality": "major",
+                    "root": "C",
+                    "score": 2.965
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "C",
             "tick": 11520,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.189
+                },
+                {
+                    "quality": "sus2",
+                    "root": "C",
+                    "score": 2.03
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "major",
+            "previousRootPc": 0,
             "quality": "sus4",
             "root": "C",
             "tick": 12000,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "sus4",
+            "previousRootPc": 0,
             "quality": "major",
             "root": "G",
             "tick": 12480,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "sus4",
+            "previousRootPc": 0,
             "quality": "major",
             "root": "G",
             "tick": 12960,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                },
+                {
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.671
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 0,
+            "previousQuality": "sus4",
+            "previousRootPc": 0,
             "quality": "major",
             "root": "G",
             "tick": 13440,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "minor",
+                    "root": "G",
+                    "score": 3.134
+                },
+                {
+                    "quality": "diminished",
+                    "root": "G",
+                    "score": 2.357
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": true,
             "key": "G",
+            "previousBassPc": 7,
+            "previousQuality": "major",
+            "previousRootPc": 7,
             "quality": "minor",
             "root": "G",
             "tick": 13920,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 14400,
             "wasRegional": true
         },
         {
+            "alternatives": [
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.881
+                }
+            ],
+            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseToNext": false,
             "key": "G",
+            "previousBassPc": 1,
+            "previousQuality": "minor",
+            "previousRootPc": 7,
             "quality": "major",
             "root": "D",
             "tick": 14880,

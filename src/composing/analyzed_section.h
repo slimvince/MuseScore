@@ -37,14 +37,18 @@
 //     chord-track writer (voicing choice), the annotation writer (text
 //     format), or the status-bar formatter, it belongs on the emitter-side
 //     options struct, not here.
-//   • `ChordTemporalExtensions` will be added in Phase 3c when divergence D
-//     is closed.  See the "ChordTemporalContext audit (Phase 2)" section of
-//     docs/unified_analysis_pipeline.md for the migration candidates.
+//   • `ChordTemporalExtensions` is the Phase 3c snapshot-output struct
+//     mirroring the analyzer-input `ChordTemporalContext` fields used per
+//     region.  Emitters and tick-regional consumers read this struct
+//     directly; the analyzer continues to read `ChordTemporalContext` as
+//     input.  See the "ChordTemporalContext audit (Phase 2)" section of
+//     docs/unified_analysis_pipeline.md for the audit lineage.
 
 #include <vector>
 
 #include "analysis/chord/chordanalyzer.h"
 #include "analysis/key/keymodeanalyzer.h"
+#include "analysis/region/harmonicrhythm.h"  // ChordTemporalExtensions
 
 namespace mu::composing::analysis {
 
@@ -61,7 +65,17 @@ struct AnalyzedRegion {
     int endTick = 0;
 
     /// Root, quality, extensions, and tonal-function payload for this region.
+    /// Equivalent to position [0] in the per-region `analyzeChord` candidate
+    /// vector; subsequent candidates live in `alternatives`.
     ChordAnalysisResult chordResult;
+
+    /// Candidates [1..N-1] from the per-region `analyzeChord` invocation, in
+    /// score-descending order.  Empty when `analyzeChord` returned a single
+    /// candidate or when this region was a gap fallback (no analyzer call).
+    /// Phase 3c added this so the tick-regional consumer (status-bar
+    /// alternatives list, right-click menu) can surface alternatives without
+    /// re-running `analyzeChord` per tick — closes divergence D.
+    std::vector<ChordAnalysisResult> alternatives;
 
     /// False when the per-region note set was too sparse to produce a
     /// confident chord-analyzer candidate; the bridge may have inferred a
@@ -83,6 +97,12 @@ struct AnalyzedRegion {
     /// cadence / pivot detection).  Promoted from implode-internal state
     /// so annotation and tick-regional paths can gate on the same flag.
     bool hasAssertiveExposure = false;
+
+    /// Snapshot of the `ChordTemporalContext` that fed this region's
+    /// `analyzeChord` call.  Tick-regional and emitter consumers read this
+    /// instead of re-deriving context per tick (Phase 3c — closes divergence
+    /// D).
+    ChordTemporalExtensions temporalExtensions;
 
     /// Index into `AnalyzedSection::keyAreas` identifying the key-area span
     /// that contains this region.  -1 when the region was built without a

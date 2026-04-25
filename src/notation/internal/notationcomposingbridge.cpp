@@ -226,7 +226,7 @@ struct RegionalContextSnapshot {
 RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
     const mu::engraving::Score* sc,
     const mu::engraving::Fraction& tick,
-    const mu::engraving::Segment* seg,
+    const mu::engraving::Segment* /*seg — unused after Phase 3c*/,
     const std::set<size_t>& excludeStaves,
     const mu::engraving::Fraction& windowStartTick,
     const mu::engraving::Fraction& windowEndTick)
@@ -235,15 +235,22 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
 
     RegionalContextSnapshot snapshot;
 
-    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(sc,
-                                                                                  windowStartTick,
-                                                                                  windowEndTick,
-                                                                                  excludeStaves);
-    if (regions.empty()) {
+    // Phase 3c: consume AnalyzedSection.  The cruft path (display-context
+    // collectRegionTones + findTemporalContext + second analyzeChord +
+    // tie-break prepend) is gone — see docs/divergence_d_recon.md for the
+    // archaeology.  chordResults[0] now comes from the per-region winner,
+    // chordResults[1..] from the canonical alternatives the per-region
+    // analyzeChord produced (and previously discarded).
+    const auto section = mu::notation::internal::analyzeSection(sc,
+                                                                windowStartTick,
+                                                                windowEndTick,
+                                                                excludeStaves);
+    if (section.regions.empty()) {
         return snapshot;
     }
 
     const int noteTick = tick.ticks();
+    const auto& regions = section.regions;
     auto it = std::find_if(regions.begin(), regions.end(), [noteTick](const auto& region) {
         return region.startTick <= noteTick && noteTick < region.endTick;
     });
@@ -270,19 +277,7 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
     snapshot.context.keyFifths = it->keyModeResult.keySignatureFifths;
     snapshot.context.keyMode = it->keyModeResult.mode;
     snapshot.context.keyConfidence = it->keyModeResult.normalizedConfidence;
-
-    auto displayTones = mu::notation::internal::collectRegionTones(sc,
-                                                                   it->startTick,
-                                                                   it->endTick,
-                                                                   excludeStaves);
-    const int currentBassPc = it->chordResult.identity.bassPc;
-    const mu::composing::analysis::ChordTemporalContext* temporalCtxPtr = nullptr;
-    mu::composing::analysis::ChordTemporalContext temporalCtx;
-    if (seg) {
-        temporalCtx = findTemporalContext(sc, seg, excludeStaves,
-                                          snapshot.context.keyFifths, snapshot.context.keyMode, currentBassPc);
-        temporalCtxPtr = &temporalCtx;
-    }
+    snapshot.context.temporalExtensions = it->temporalExtensions;
 
     const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(snapshot.context.keyFifths);
     const int tonicPc = (ionianPc + mu::composing::analysis::keyModeTonicOffset(snapshot.context.keyMode)) % 12;
@@ -291,35 +286,13 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
         result.function.keyMode = snapshot.context.keyMode;
     };
 
-    mu::composing::analysis::ChordAnalysisResult preferredResult = it->chordResult;
-    applyRegionalKeyContext(preferredResult);
-
-    if (!displayTones.empty()) {
-        snapshot.context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(displayTones,
-                                                                                                               snapshot.context.keyFifths,
-                                                                                                               snapshot.context.keyMode,
-                                                                                                               temporalCtxPtr);
+    snapshot.context.chordResults.reserve(1 + it->alternatives.size());
+    snapshot.context.chordResults.push_back(it->chordResult);
+    for (const auto& alt : it->alternatives) {
+        snapshot.context.chordResults.push_back(alt);
     }
     for (auto& result : snapshot.context.chordResults) {
         applyRegionalKeyContext(result);
-    }
-
-    if (snapshot.context.chordResults.empty()) {
-        snapshot.context.chordResults.push_back(preferredResult);
-    } else {
-        const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };
-        auto sameDisplayResult = [keyFifths = snapshot.context.keyFifths, &fmtOpts](const auto& lhs, const auto& rhs) {
-            return mu::composing::analysis::ChordSymbolFormatter::formatSymbol(lhs, keyFifths, fmtOpts)
-                   == mu::composing::analysis::ChordSymbolFormatter::formatSymbol(rhs, keyFifths, fmtOpts)
-                   && mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(lhs)
-                   == mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(rhs)
-                   && mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(lhs, keyFifths)
-                   == mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(rhs, keyFifths);
-        };
-        if (!sameDisplayResult(snapshot.context.chordResults.front(), preferredResult)) {
-            // Keep the harmonic-region winner first so note context mirrors chord-track output.
-            snapshot.context.chordResults.insert(snapshot.context.chordResults.begin(), preferredResult);
-        }
     }
 
     const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };

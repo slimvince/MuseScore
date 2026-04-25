@@ -59,6 +59,14 @@ struct NoteHarmonicContext {
     mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
     double keyConfidence = 0.0;
 
+    /// Snapshot of the per-region temporal context that produced
+    /// `chordResults[0]`.  Populated on the regional (P3) path; left at
+    /// defaults on the tick-local (P4) fallback (which has no per-region
+    /// concept).  Phase 3c surface for emitter and snapshot consumers
+    /// (closes divergence D — was previously re-derived via per-tick
+    /// `findTemporalContext`).
+    mu::composing::analysis::ChordTemporalExtensions temporalExtensions;
+
     /// True when the result was produced by the regional (P3) path.  False when
     /// analyzeHarmonicContextAtTick fell back to the tick-local (P4) path because
     /// regional analysis produced no result.  Lets callers (and snapshot tests)

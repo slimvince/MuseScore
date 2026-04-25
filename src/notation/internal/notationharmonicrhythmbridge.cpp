@@ -283,6 +283,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                                                                            localKeyFifths,
                                                                            localKeyMode);
 
+            // Capture the snapshot before mutating temporalCtx for the next region.
+            const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);
+            std::vector<ChordAnalysisResult> alternativesSnapshot;
+            if (results.size() > 1) {
+                alternativesSnapshot.assign(results.begin() + 1, results.end());
+            }
+
             temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
             temporalCtx.previousQuality = chosenResult.identity.quality;
             temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
@@ -299,9 +306,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 preMergeRegion.startTick = regionStart.ticks();
                 preMergeRegion.endTick = regionEnd.ticks();
                 preMergeRegion.chordResult = chosenResult;
+                preMergeRegion.alternatives = alternativesSnapshot;
                 preMergeRegion.hasAnalyzedChord = true;
                 preMergeRegion.keyModeResult = kmResult;
                 preMergeRegion.tones = tones;
+                preMergeRegion.temporalExtensions = extensionsSnapshot;
                 preMergeRegions.push_back(std::move(preMergeRegion));
             }
 
@@ -311,6 +320,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             // Collapse same-chord consecutive regions only when they are truly adjacent.
             // If an unanalyzable sparse slice sits between two matching regions, keep
             // them separate so later notation code can preserve the visible boundary.
+            //
+            // Phase 3c: on collapse, retain the merged region's existing
+            // `alternatives` and `temporalExtensions` (set when it was first
+            // emitted).  The downstream consumer reads these as the snapshot
+            // for the chosen region; mixing values across the merge would
+            // muddy that contract.
             if (isContiguousWithPreviousRegion
                 && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
                 && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
@@ -325,9 +340,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 region.startTick     = regionStart.ticks();
                 region.endTick       = regionEnd.ticks();
                 region.chordResult   = chosenResult;
+                region.alternatives  = std::move(alternativesSnapshot);
                 region.hasAnalyzedChord = true;
                 region.keyModeResult = kmResult;
                 region.tones         = std::move(tones);
+                region.temporalExtensions = extensionsSnapshot;
                 regions.push_back(std::move(region));
             }
         }
@@ -394,8 +411,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         gap.startTick        = subStart.ticks();
                         gap.endTick          = subEnd.ticks();
                         gap.chordResult      = parentRegion.chordResult;
+                        gap.alternatives     = parentRegion.alternatives;
                         gap.hasAnalyzedChord = true;
                         gap.keyModeResult    = parentRegion.keyModeResult;
+                        gap.temporalExtensions = parentRegion.temporalExtensions;
                         pass2Regions.push_back(std::move(gap));
                         continue;
                     }
@@ -420,6 +439,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         fallback.hasAnalyzedChord = true;
                         fallback.keyModeResult    = parentRegion.keyModeResult;
                         fallback.tones            = std::move(subTones);
+                        fallback.temporalExtensions = toExtensionsSnapshot(subCtx);
                         pass2Regions.push_back(std::move(fallback));
                         continue;
                     }
@@ -427,6 +447,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     ChordAnalysisResult chosenSub = subResults.front();
                     mu::notation::internal::refineSparseChordQualityFromKeyContext(
                         chosenSub, subTones, subKeyFifths, subKeyMode);
+
+                    const ChordTemporalExtensions subExtensionsSnapshot = toExtensionsSnapshot(subCtx);
+                    std::vector<ChordAnalysisResult> subAlternativesSnapshot;
+                    if (subResults.size() > 1) {
+                        subAlternativesSnapshot.assign(subResults.begin() + 1, subResults.end());
+                    }
 
                     subCtx.previousRootPc  = chosenSub.identity.rootPc;
                     subCtx.previousQuality = chosenSub.identity.quality;
@@ -448,9 +474,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         subRegion.startTick        = subStart.ticks();
                         subRegion.endTick          = subEnd.ticks();
                         subRegion.chordResult      = chosenSub;
+                        subRegion.alternatives     = std::move(subAlternativesSnapshot);
                         subRegion.hasAnalyzedChord = true;
                         subRegion.keyModeResult    = parentRegion.keyModeResult;
                         subRegion.tones            = std::move(subTones);
+                        subRegion.temporalExtensions = subExtensionsSnapshot;
                         pass2Regions.push_back(std::move(subRegion));
                     }
                 }
@@ -554,9 +582,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         subRegion.startTick        = subStart.ticks();
                         subRegion.endTick          = subEnd.ticks();
                         subRegion.chordResult      = parentRegion.chordResult;
+                        subRegion.alternatives     = parentRegion.alternatives;
                         subRegion.hasAnalyzedChord = parentRegion.hasAnalyzedChord;
                         subRegion.keyModeResult    = parentRegion.keyModeResult;
                         subRegion.tones            = std::move(subTones);
+                        subRegion.temporalExtensions = toExtensionsSnapshot(subCtx);
                         pass2bRegions.push_back(std::move(subRegion));
                         continue;
                     }
@@ -564,6 +594,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     ChordAnalysisResult chosenSub = subResults.front();
                     mu::notation::internal::refineSparseChordQualityFromKeyContext(
                         chosenSub, subTones, subKeyFifths, subKeyMode);
+
+                    const ChordTemporalExtensions subExtensionsSnapshot = toExtensionsSnapshot(subCtx);
+                    std::vector<ChordAnalysisResult> subAlternativesSnapshot;
+                    if (subResults.size() > 1) {
+                        subAlternativesSnapshot.assign(subResults.begin() + 1, subResults.end());
+                    }
 
                     subCtx.previousRootPc  = chosenSub.identity.rootPc;
                     subCtx.previousQuality = chosenSub.identity.quality;
@@ -573,9 +609,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     subRegion.startTick        = subStart.ticks();
                     subRegion.endTick          = subEnd.ticks();
                     subRegion.chordResult      = chosenSub;
+                    subRegion.alternatives     = std::move(subAlternativesSnapshot);
                     subRegion.hasAnalyzedChord = true;
                     subRegion.keyModeResult    = parentRegion.keyModeResult;
                     subRegion.tones            = std::move(subTones);
+                    subRegion.temporalExtensions = subExtensionsSnapshot;
                     pass2bRegions.push_back(std::move(subRegion));
                 }
             }
@@ -613,8 +651,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     struct BoundaryAnalysis {
         Fraction tick;
         ChordAnalysisResult chordResult;
+        std::vector<ChordAnalysisResult> alternatives;
         KeyModeAnalysisResult keyModeResult;
         std::vector<ChordAnalysisTone> tones;
+        ChordTemporalExtensions temporalExtensions;
     };
 
     std::vector<BoundaryAnalysis> boundaries;
@@ -681,11 +721,17 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
         const ChordAnalysisResult& chosenResult = results.front();
 
+        const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);
+        std::vector<ChordAnalysisResult> alternativesSnapshot;
+        if (results.size() > 1) {
+            alternativesSnapshot.assign(results.begin() + 1, results.end());
+        }
+
         temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
         temporalCtx.previousQuality = chosenResult.identity.quality;
         temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
-        // nextRootPc, nextBassPc, bassIsStepwiseToNext: populated in
-        // two-pass chord staff analysis only. Deferred — see §4.1b.
+        // bassIsStepwiseToNext: populated only in the per-region pass above
+        // where lookahead `collectRegionTones` is run; left false here.
 
         KeyModeAnalysisResult kmResult;
         kmResult.keySignatureFifths   = localKeyFifths;
@@ -695,8 +741,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
         prevKeyResult = kmResult;
 
-        boundaries.push_back({ s->tick(), chosenResult, kmResult,
-                               std::move(tones) });
+        boundaries.push_back({ s->tick(), chosenResult, std::move(alternativesSnapshot),
+                               kmResult, std::move(tones), extensionsSnapshot });
     }
 
     if (boundaries.empty()) {
@@ -714,9 +760,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             region.startTick = boundaries[i].tick.ticks();
             region.endTick = regionEnd.ticks();
             region.chordResult = boundaries[i].chordResult;
+            region.alternatives = boundaries[i].alternatives;
             region.hasAnalyzedChord = true;
             region.keyModeResult = boundaries[i].keyModeResult;
             region.tones = boundaries[i].tones;
+            region.temporalExtensions = boundaries[i].temporalExtensions;
             preMergeRegions.push_back(std::move(region));
         }
     }
@@ -746,9 +794,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         region.startTick    = boundaries[i].tick.ticks();
         region.endTick      = regionEnd.ticks();
         region.chordResult  = boundaries[i].chordResult;
+        region.alternatives = std::move(boundaries[i].alternatives);
         region.hasAnalyzedChord = true;
         region.keyModeResult = boundaries[i].keyModeResult;
         region.tones        = std::move(boundaries[i].tones);
+        region.temporalExtensions = boundaries[i].temporalExtensions;
         regions.push_back(std::move(region));
     }
 

@@ -1564,8 +1564,8 @@ findTemporalContext(const mu::engraving::Score* sc,
             isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
     }
 
-    // nextRootPc, nextBassPc, bassIsStepwiseToNext: populated in
-    // two-pass chord staff analysis only. Deferred — see §4.1b.
+    // bassIsStepwiseToNext: not populated by findTemporalContext
+    // (segment-local lookback has no forward visibility).
 
     return temporalCtx;
 }
@@ -1791,6 +1791,10 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                                          contextRegion.keyModeResult.mode);
         if (!results.empty()) {
             inferredRegion.chordResult = results.front();
+            if (results.size() > 1) {
+                inferredRegion.alternatives.assign(results.begin() + 1, results.end());
+            }
+            // Gap analyzer is invoked context-free; temporalExtensions stays at defaults.
             return inferredRegion;
         }
 
@@ -2322,10 +2326,12 @@ analyzeSection(const mu::engraving::Score* sc,
         r.startTick            = src.startTick;
         r.endTick              = src.endTick;
         r.chordResult          = src.chordResult;
+        r.alternatives         = src.alternatives;
         r.hasAnalyzedChord     = src.hasAnalyzedChord;
         r.keyModeResult        = src.keyModeResult;
         r.tones                = src.tones;
         r.hasAssertiveExposure = hasAssertiveKeyConfidence(src.keyModeResult);
+        r.temporalExtensions   = src.temporalExtensions;
         r.keyAreaId            = -1;  // filled below
         out.regions.push_back(std::move(r));
     }
