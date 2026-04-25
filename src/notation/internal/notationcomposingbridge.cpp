@@ -691,6 +691,237 @@ std::set<size_t> chordTrackExcludeStaves(const mu::engraving::Score* sc)
 
 namespace mu::notation {
 
+namespace {
+
+// Phase 3b: emitter-side options for emitHarmonicAnnotations.  Defaults
+// reproduce the pre-refactor addHarmonicAnnotationsToSelection behaviour
+// — most importantly the 0.5-beat divergence-C duration gate.
+//
+// Kept anonymous-namespace-internal: the only caller today is the wrapper
+// addHarmonicAnnotationsToSelection below.  Phase 4+ may promote to the
+// public bridge header if a second caller appears.
+struct EmitAnnotationOptions {
+    /// Regions shorter than this are silently dropped (divergence C).
+    /// Default Fraction(1, 2) = 0.5 beats matches the pre-Phase-3b default
+    /// preference and the snapshot baseline.  Phase 3b ships an observation
+    /// report (docs/divergence_c_observation.md) summarising the corpus
+    /// regions affected by this gate; resolution is a follow-up decision.
+    mu::engraving::Fraction minimumDisplayDurationBeats = mu::engraving::Fraction(1, 2);
+
+    /// Selection upper bound in ticks (exclusive).  Regions whose startTick
+    /// is below this are emitted; later regions are read-only lookahead used
+    /// only by cadence / pivot detection.
+    int selectionEndTick = 0;
+
+    /// Output staves resolved by the wrapper using the chord-track-priority
+    /// rule.  Empty = nothing to emit.
+    std::vector<mu::engraving::staff_idx_t> writeStaves;
+
+    bool writeChordSymbols = false;
+    bool writeRomanNumerals = false;
+    bool writeNashvilleNumbers = false;
+};
+
+void emitHarmonicAnnotations(mu::engraving::Score* score,
+                             const mu::composing::analysis::AnalyzedSection& section,
+                             const EmitAnnotationOptions& options)
+{
+    using namespace mu::engraving;
+    using mu::composing::analysis::AnalyzedRegion;
+    using mu::composing::analysis::HarmonicRegion;
+
+    if (!score || section.regions.empty() || options.writeStaves.empty()) {
+        return;
+    }
+    if (!options.writeChordSymbols
+        && !options.writeRomanNumerals
+        && !options.writeNashvilleNumbers) {
+        return;
+    }
+
+    const auto& allRegions = section.regions;
+
+    // Split into in-selection vs. lookahead based on options.selectionEndTick.
+    const size_t selectionCount = static_cast<size_t>(
+        std::count_if(allRegions.begin(), allRegions.end(),
+            [&options](const AnalyzedRegion& r) {
+                return r.startTick < options.selectionEndTick;
+            }));
+
+    // Convert the Fraction-of-beats gate to an integer tick threshold once.
+    // The pre-Phase-3b gate compared `(endTick - startTick) / DIVISION` against
+    // the preference value as doubles; the integer form is exact for any
+    // Fraction-typed option (including the default Fraction(1, 2) → 240 ticks).
+    const int minDurationTicks =
+        static_cast<int>(static_cast<int64_t>(options.minimumDisplayDurationBeats.numerator())
+                         * Constants::DIVISION
+                         / options.minimumDisplayDurationBeats.denominator());
+
+    score->startCmd(TranslatableString("undoableAction", "Add harmonic annotations to selection"));
+
+    for (size_t i = 0; i < selectionCount; ++i) {
+        const AnalyzedRegion& region = allRegions[i];
+
+        // Divergence-C minimum duration gate.
+        if (minDurationTicks > 0
+            && (region.endTick - region.startTick) < minDurationTicks) {
+            continue;
+        }
+
+        const Fraction rStart = Fraction::fromTicks(region.startTick);
+        Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
+        if (!seg || seg->tick() >= Fraction::fromTicks(region.endTick)) {
+            continue;
+        }
+
+        const int keyFifths = region.keyModeResult.keySignatureFifths;
+        const auto keyMode   = region.keyModeResult.mode;
+
+        const mu::composing::analysis::ChordAnalysisResult& annotationResult
+            = region.chordResult;
+
+        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, keyFifths);
+        const std::string symText = options.writeChordSymbols ? fmt.symbol : "";
+        std::string romanText = options.writeRomanNumerals ? fmt.roman : "";
+        if (options.writeRomanNumerals && romanText.empty()
+                && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
+                && annotationResult.function.degree >= 0
+                && annotationResult.function.degree <= 6) {
+            auto refinedForRoman = annotationResult;
+            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
+            if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+                romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
+            }
+        }
+        const std::string nashvilleText = options.writeNashvilleNumbers ? fmt.nashville : "";
+
+        for (staff_idx_t si : options.writeStaves) {
+            const track_idx_t track = si * VOICES;
+
+            if (!symText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::STANDARD);
+                h->setHarmony(muse::String::fromStdString(symText));
+                score->undoAddElement(h);
+            }
+
+            if (!romanText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::ROMAN);
+                h->setHarmony(muse::String::fromStdString(romanText));
+                score->undoAddElement(h);
+            }
+
+            if (!nashvilleText.empty()) {
+                Harmony* h = Factory::createHarmony(seg);
+                h->setTrack(track);
+                h->setParent(seg);
+                h->setHarmonyType(HarmonyType::NASHVILLE);
+                h->setHarmony(muse::String::fromStdString(nashvilleText));
+                score->undoAddElement(h);
+            }
+        }
+
+        // ── Pedal bass annotation ─────────────────────────────────────────────
+        // When the chord analyzer identified a structural pedal point, write a
+        // StaffText "X ped." (e.g. "G ped.", "Eb ped.") on the first write staff,
+        // in the Roman numeral layer (alongside cadence markers and pivot labels).
+        // Only written when Roman numeral mode is active.
+        if (options.writeRomanNumerals
+                && !options.writeStaves.empty()
+                && annotationResult.identity.isPedalPoint
+                && annotationResult.identity.pedalBassPc >= 0) {
+            // Build a bare root-name result for the pedal bass PC.
+            mu::composing::analysis::ChordAnalysisResult pedalRoot = annotationResult;
+            pedalRoot.identity.rootPc  = annotationResult.identity.pedalBassPc;
+            pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
+            pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
+            pedalRoot.identity.extensions = 0;
+            const std::string baseName = formatChordResultForStatusBar(score, pedalRoot, keyFifths).symbol;
+            if (!baseName.empty()) {
+                const std::string pedalText = baseName + " ped.";
+                const track_idx_t pedTrack = options.writeStaves.front() * VOICES;
+                StaffText* pt = Factory::createStaffText(seg);
+                pt->setTrack(pedTrack);
+                pt->setParent(seg);
+                pt->setPlainText(muse::String::fromStdString(pedalText));
+                score->undoAddElement(pt);
+            }
+        }
+    }
+
+    // ── Cadence markers and pivot labels (Roman numeral mode only) ──────────
+    //
+    // Cadence markers ("PAC", "HC", etc.) and pivot labels ("vi → ii") are
+    // analytically meaningful annotations associated with the Roman numeral
+    // layer.  They are suppressed in chord-symbol-only and Nashville modes.
+    //
+    // Both use the full allRegions vector (selection + lookahead) for
+    // detection; writing is restricted to in-selection ticks only.
+    //
+    // detectCadences / detectPivotChords still take vector<HarmonicRegion> —
+    // build a 1:1 view from the AnalyzedRegion list (the same adapter
+    // pattern Phase 3a's emitImplodedChordTrack uses).  Phase 4 retires
+    // HarmonicRegion entirely.
+    if (options.writeRomanNumerals && !options.writeStaves.empty()) {
+        const track_idx_t annotateTrack = options.writeStaves.front() * VOICES;
+
+        std::vector<HarmonicRegion> regionsAsHarmonicRegions;
+        regionsAsHarmonicRegions.reserve(allRegions.size());
+        for (const auto& r : allRegions) {
+            HarmonicRegion h;
+            h.startTick        = r.startTick;
+            h.endTick          = r.endTick;
+            h.chordResult      = r.chordResult;
+            h.hasAnalyzedChord = r.hasAnalyzedChord;
+            h.keyModeResult    = r.keyModeResult;
+            h.tones            = r.tones;
+            regionsAsHarmonicRegions.push_back(std::move(h));
+        }
+
+        const auto cadences = detectCadences(regionsAsHarmonicRegions, selectionCount);
+        for (const auto& marker : cadences) {
+            const Fraction mTick = Fraction::fromTicks(marker.tick);
+            Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
+            if (!mSeg) {
+                continue;
+            }
+            StaffText* st = Factory::createStaffText(mSeg);
+            st->setTrack(annotateTrack);
+            st->setParent(mSeg);
+            st->setPlainText(muse::String::fromStdString(marker.label));
+            score->undoAddElement(st);
+        }
+
+        const auto pivots = detectPivotChords(regionsAsHarmonicRegions, selectionCount);
+        for (const auto& pv : pivots) {
+            const Fraction pTick = Fraction::fromTicks(pv.tick);
+            Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);
+            if (!pSeg) {
+                continue;
+            }
+            StaffText* pt = Factory::createStaffText(pSeg);
+            pt->setTrack(annotateTrack);
+            pt->setParent(pSeg);
+            pt->setPlainText(muse::String::fromStdString(pv.label));
+            score->undoAddElement(pt);
+        }
+    }
+
+    score->endCmd();
+}
+
+} // namespace
+
+// Phase 3b: thin wrapper over the unified analyzeSection() + emitter split.
+// Builds the EmitAnnotationOptions that reproduce the pre-refactor behaviour
+// (lookahead range for Roman numerals, chord-track-priority output staves,
+// 0.5-beat default duration gate from the user preference) and forwards.
+// Kept at this signature so existing call sites stay untouched.
 void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
                                        bool writeChordSymbols,
                                        bool writeRomanNumerals,
@@ -729,192 +960,50 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         }
     }
 
-    std::vector<staff_idx_t> writeStaves;
+    EmitAnnotationOptions options;
+    options.selectionEndTick = endTick.ticks();
+    options.writeChordSymbols    = writeChordSymbols;
+    options.writeRomanNumerals   = writeRomanNumerals;
+    options.writeNashvilleNumbers = writeNashvilleNumbers;
     for (staff_idx_t si = staffFirst; si < staffLast; ++si) {
         if (!hasChordTrackInSelection || isChordTrackStaff(score, si)) {
-            writeStaves.push_back(si);
+            options.writeStaves.push_back(si);
         }
     }
 
-    if (writeStaves.empty()) {
+    if (options.writeStaves.empty()) {
         return;
     }
 
-    // Minimum duration preference (beats) for filtering short regions.
+    // Translate the user-pref double into the Fraction-typed option.  The
+    // default 0.5 maps to Fraction(1, 2) → 240 ticks at DIVISION = 480, which
+    // is exactly the pre-refactor gate.  A denominator of 1024 keeps any
+    // non-default user preference within sub-tick precision so the integer
+    // tick threshold matches the original double comparison.
     static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
     const auto* prefs = config.get().get();
-    const double minimumDisplayDurationBeats = prefs ? prefs->minimumDisplayDurationBeats() : 0.5;
+    const double prefBeats = prefs ? prefs->minimumDisplayDurationBeats() : 0.5;
+    constexpr int kFractionDenom = 1024;
+    options.minimumDisplayDurationBeats =
+        Fraction(static_cast<int>(prefBeats * kFractionDenom + 0.5), kFractionDenom);
 
     // Run harmonic analysis over an extended tick range when Roman numerals
     // are requested.  The lookahead regions are read-only: used for cadence
     // and pivot detection but never annotated.
-    //
-    //   selectionEndTick: the first tick that is outside the user's selection.
-    //   lookaheadEndTick: extends the analysis to include up to
-    //       kMaxPivotLookaheadRegions extra regions for key confirmation.
-    const Fraction selectionEndTick = endTick;
     const Fraction lookaheadEndTick = writeRomanNumerals
         ? Fraction::fromTicks(endTick.ticks()
             + mu::notation::internal::kMaxPivotLookaheadRegions
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
 
-    const auto allRegions = mu::notation::internal::prepareUserFacingHarmonicRegions(
+    const auto section = mu::notation::internal::analyzeSection(
         score, startTick, lookaheadEndTick, excludeStaves);
 
-    if (allRegions.empty()) {
+    if (section.regions.empty()) {
         return;
     }
 
-    // Split into in-selection vs. lookahead.
-    const size_t selectionCount = static_cast<size_t>(
-        std::count_if(allRegions.begin(), allRegions.end(),
-            [&selectionEndTick](const mu::composing::analysis::HarmonicRegion& r) {
-                return Fraction::fromTicks(r.startTick) < selectionEndTick;
-            }));
-
-    // The main annotation loop operates only on in-selection regions.
-    const auto regions = std::vector<mu::composing::analysis::HarmonicRegion>(
-        allRegions.begin(),
-        allRegions.begin() + static_cast<std::ptrdiff_t>(selectionCount));
-
-    score->startCmd(TranslatableString("undoableAction", "Add harmonic annotations to selection"));
-
-    for (const auto& region : regions) {
-        // Minimum duration filter.
-        const double regionDurationBeats = static_cast<double>(region.endTick - region.startTick)
-                                           / static_cast<double>(Constants::DIVISION);
-        if (regionDurationBeats < minimumDisplayDurationBeats) {
-            continue;
-        }
-
-        const Fraction rStart = Fraction::fromTicks(region.startTick);
-        Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
-        if (!seg || seg->tick() >= Fraction::fromTicks(region.endTick)) {
-            continue;
-        }
-
-        const int keyFifths = region.keyModeResult.keySignatureFifths;
-        const auto keyMode   = region.keyModeResult.mode;
-
-        const mu::composing::analysis::ChordAnalysisResult& annotationResult
-            = region.chordResult;
-
-        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, keyFifths);
-        const std::string symText = writeChordSymbols ? fmt.symbol : "";
-        std::string romanText = writeRomanNumerals ? fmt.roman : "";
-        if (writeRomanNumerals && romanText.empty()
-                && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
-                && annotationResult.function.degree >= 0
-                && annotationResult.function.degree <= 6) {
-            auto refinedForRoman = annotationResult;
-            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
-            if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
-                romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
-            }
-        }
-        const std::string nashvilleText = writeNashvilleNumbers ? fmt.nashville : "";
-
-        for (staff_idx_t si : writeStaves) {
-            const track_idx_t track = si * VOICES;
-
-            if (!symText.empty()) {
-                Harmony* h = Factory::createHarmony(seg);
-                h->setTrack(track);
-                h->setParent(seg);
-                h->setHarmonyType(HarmonyType::STANDARD);
-                h->setHarmony(muse::String::fromStdString(symText));
-                score->undoAddElement(h);
-            }
-
-            if (!romanText.empty()) {
-                Harmony* h = Factory::createHarmony(seg);
-                h->setTrack(track);
-                h->setParent(seg);
-                h->setHarmonyType(HarmonyType::ROMAN);
-                h->setHarmony(muse::String::fromStdString(romanText));
-                score->undoAddElement(h);
-            }
-
-            if (!nashvilleText.empty()) {
-                Harmony* h = Factory::createHarmony(seg);
-                h->setTrack(track);
-                h->setParent(seg);
-                h->setHarmonyType(HarmonyType::NASHVILLE);
-                h->setHarmony(muse::String::fromStdString(nashvilleText));
-                score->undoAddElement(h);
-            }
-        }
-
-        // ── Pedal bass annotation ─────────────────────────────────────────────
-        // When the chord analyzer identified a structural pedal point, write a
-        // StaffText "X ped." (e.g. "G ped.", "Eb ped.") on the first write staff,
-        // in the Roman numeral layer (alongside cadence markers and pivot labels).
-        // Only written when Roman numeral mode is active.
-        if (writeRomanNumerals
-                && !writeStaves.empty()
-                && annotationResult.identity.isPedalPoint
-                && annotationResult.identity.pedalBassPc >= 0) {
-            // Build a bare root-name result for the pedal bass PC.
-            mu::composing::analysis::ChordAnalysisResult pedalRoot = annotationResult;
-            pedalRoot.identity.rootPc  = annotationResult.identity.pedalBassPc;
-            pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
-            pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
-            pedalRoot.identity.extensions = 0;
-            const std::string baseName = formatChordResultForStatusBar(score, pedalRoot, keyFifths).symbol;
-            if (!baseName.empty()) {
-                const std::string pedalText = baseName + " ped.";
-                const track_idx_t pedTrack = writeStaves.front() * VOICES;
-                StaffText* pt = Factory::createStaffText(seg);
-                pt->setTrack(pedTrack);
-                pt->setParent(seg);
-                pt->setPlainText(muse::String::fromStdString(pedalText));
-                score->undoAddElement(pt);
-            }
-        }
-    }
-
-    // ── Cadence markers and pivot labels (Roman numeral mode only) ──────────
-    //
-    // Cadence markers ("PAC", "HC", etc.) and pivot labels ("vi → ii") are
-    // analytically meaningful annotations associated with the Roman numeral
-    // layer.  They are suppressed in chord-symbol-only and Nashville modes.
-    //
-    // Both use the full allRegions vector (selection + lookahead) for
-    // detection; writing is restricted to in-selection ticks only.
-    if (writeRomanNumerals && !writeStaves.empty()) {
-        const track_idx_t annotateTrack = writeStaves.front() * VOICES;
-
-        const auto cadences = detectCadences(allRegions, selectionCount);
-        for (const auto& marker : cadences) {
-            const Fraction mTick = Fraction::fromTicks(marker.tick);
-            Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
-            if (!mSeg) {
-                continue;
-            }
-            StaffText* st = Factory::createStaffText(mSeg);
-            st->setTrack(annotateTrack);
-            st->setParent(mSeg);
-            st->setPlainText(muse::String::fromStdString(marker.label));
-            score->undoAddElement(st);
-        }
-
-        const auto pivots = detectPivotChords(allRegions, selectionCount);
-        for (const auto& pv : pivots) {
-            const Fraction pTick = Fraction::fromTicks(pv.tick);
-            Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);
-            if (!pSeg) {
-                continue;
-            }
-            StaffText* pt = Factory::createStaffText(pSeg);
-            pt->setTrack(annotateTrack);
-            pt->setParent(pSeg);
-            pt->setPlainText(muse::String::fromStdString(pv.label));
-            score->undoAddElement(pt);
-        }
-    }
-
-    score->endCmd();
+    emitHarmonicAnnotations(score, section, options);
 }
 
 } // namespace mu::notation

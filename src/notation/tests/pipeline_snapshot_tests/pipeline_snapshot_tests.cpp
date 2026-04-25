@@ -876,4 +876,200 @@ INSTANTIATE_TEST_SUITE_P(Corpus,
                          ::testing::ValuesIn(kCorpus),
                          corpusIdForTestName);
 
+// ── Divergence-C observation report (Phase 3b) ───────────────────────────────
+//
+// One-shot diagnostic gated by the env var PIPELINE_OBSERVE_DIVERGENCE_C=1.
+// Generates docs/divergence_c_observation.md by enumerating, per corpus
+// score, the regions shorter than 0.5 beats — exactly the regions the
+// implode and tick-regional paths surface but addHarmonicAnnotationsToSelection
+// silently drops via the minimumDisplayDurationBeats gate.
+//
+// Not part of the regular CI assertion set: this is a snapshot of corpus
+// state at a point in time, not a regression target.  See
+// docs/unified_analysis_pipeline.md §"Divergence resolution" for the
+// follow-up decision the report informs.
+
+bool shouldObserveDivergenceC()
+{
+    return qEnvironmentVariableIsSet("PIPELINE_OBSERVE_DIVERGENCE_C");
+}
+
+struct SubBeatRegionRow {
+    int measureNumber = 0;       // 1-based.
+    double beatPosition = 0.0;   // 1-based; e.g. "2.5" = halfway through beat 2.
+    double durationBeats = 0.0;
+    std::string symbolText;
+    std::string romanText;
+};
+
+// Same logic as emitHarmonicAnnotations (notationcomposingbridge.cpp): start
+// from formatChordResultForStatusBar, then refine the Roman numeral when the
+// chord came back Unknown but the key context yields a usable degree.
+void computeWouldBeAnnotationText(const mu::engraving::Score* score,
+                                   const mu::composing::analysis::AnalyzedRegion& region,
+                                   std::string& outSymbol,
+                                   std::string& outRoman)
+{
+    using namespace mu::composing::analysis;
+
+    const int keyFifths = region.keyModeResult.keySignatureFifths;
+    const auto& result = region.chordResult;
+    const auto fmt = mu::notation::formatChordResultForStatusBar(score, result, keyFifths);
+    outSymbol = fmt.symbol;
+    outRoman  = fmt.roman;
+
+    if (outRoman.empty()
+        && result.identity.quality == ChordQuality::Unknown
+        && result.function.degree >= 0
+        && result.function.degree <= 6) {
+        ChordAnalysisResult refined = result;
+        mu::notation::internal::forceChordTrackQualityFromKeyContext(
+            refined, region.keyModeResult.mode);
+        if (refined.identity.quality != ChordQuality::Unknown) {
+            outRoman = ChordSymbolFormatter::formatRomanNumeral(refined);
+        }
+    }
+}
+
+std::vector<SubBeatRegionRow> collectSubBeatRegions(MasterScore* score,
+                                                     const mu::composing::analysis::AnalyzedSection& section)
+{
+    std::vector<SubBeatRegionRow> rows;
+    constexpr int kHalfBeatTicks = Constants::DIVISION / 2;  // 0.5 beats
+    for (const auto& region : section.regions) {
+        const int durationTicks = region.endTick - region.startTick;
+        if (durationTicks <= 0 || durationTicks >= kHalfBeatTicks) {
+            continue;
+        }
+
+        const Fraction startFrac = Fraction::fromTicks(region.startTick);
+        Measure* m = score->tick2measure(startFrac);
+        if (!m) {
+            continue;
+        }
+        const int tickInMeasure = region.startTick - m->tick().ticks();
+
+        SubBeatRegionRow row;
+        row.measureNumber = m->measureNumber() + 1;  // measureNumber() is 0-based.
+        row.beatPosition  = 1.0 + static_cast<double>(tickInMeasure) / static_cast<double>(Constants::DIVISION);
+        row.durationBeats = static_cast<double>(durationTicks) / static_cast<double>(Constants::DIVISION);
+        computeWouldBeAnnotationText(score, region, row.symbolText, row.romanText);
+        rows.push_back(std::move(row));
+    }
+    return rows;
+}
+
+std::string formatDouble(double v, int decimals)
+{
+    std::ostringstream os;
+    os.setf(std::ios::fixed);
+    os.precision(decimals);
+    os << v;
+    return os.str();
+}
+
+TEST(PipelineDivergenceCObservation, GenerateReport)
+{
+    if (!shouldObserveDivergenceC()) {
+        GTEST_SKIP() << "Set PIPELINE_OBSERVE_DIVERGENCE_C=1 to regenerate "
+                        "docs/divergence_c_observation.md.";
+    }
+
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+    }
+
+    struct PerScore {
+        const CorpusEntry* entry;
+        int totalRegions = 0;
+        std::vector<SubBeatRegionRow> rows;
+    };
+    std::vector<PerScore> perScore;
+    perScore.reserve(std::size(kCorpus));
+
+    for (const CorpusEntry& entry : kCorpus) {
+        const QString scorePath = corpusPath(entry);
+        ASSERT_TRUE(QFileInfo::exists(scorePath))
+            << "Corpus score missing on disk: " << scorePath.toStdString();
+
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "Failed to load corpus score: " << scorePath.toStdString();
+
+        const Fraction cappedEnd = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+
+        const auto section = mu::notation::internal::analyzeSection(
+            score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{});
+
+        PerScore p;
+        p.entry         = &entry;
+        p.totalRegions  = static_cast<int>(section.regions.size());
+        p.rows          = collectSubBeatRegions(score, section);
+        perScore.push_back(std::move(p));
+
+        delete score;
+    }
+
+    // Build the markdown report.
+    std::ostringstream md;
+    md << "# Divergence C \xE2\x80\x94 Observation Report\n\n"
+       << "Generated by `pipeline_snapshot_tests` "
+          "(`PIPELINE_OBSERVE_DIVERGENCE_C=1`).\n"
+       << "Per-score enumeration of sub-beat (< 0.5 beat) regions that "
+          "implode and tick-regional surface but annotation silently drops via "
+          "the `minimumDisplayDurationBeats` gate.\n\n"
+       << "Window: first " << kMaxAnalysisMeasures
+       << " measures of each corpus score (matches the snapshot harness).\n"
+       << "Beat position is 1-based within the containing measure; a value "
+          "of 2.5 means halfway through beat 2.\n\n"
+       << "## Summary\n\n"
+       << "| Score | Total regions | Sub-beat regions (delta set) |\n"
+       << "|---|---:|---:|\n";
+
+    int grandTotalDelta = 0;
+    for (const auto& p : perScore) {
+        md << "| " << p.entry->id
+           << " | " << p.totalRegions
+           << " | " << p.rows.size() << " |\n";
+        grandTotalDelta += static_cast<int>(p.rows.size());
+    }
+    md << "\nTotal delta-set regions across the corpus: **"
+       << grandTotalDelta << "**.\n\n";
+
+    md << "## Per-score detail\n\n";
+    for (const auto& p : perScore) {
+        md << "### " << p.entry->id << "\n\n";
+        md << "_" << p.entry->description << "_\n\n";
+        if (p.rows.empty()) {
+            md << "No sub-beat regions in the analysed window.\n\n";
+            continue;
+        }
+        md << "| Measure | Beat | Duration (beats) | Would-be symbol | Would-be Roman |\n";
+        md << "|---:|---:|---:|---|---|\n";
+        for (const auto& row : p.rows) {
+            md << "| " << row.measureNumber
+               << " | " << formatDouble(row.beatPosition, 3)
+               << " | " << formatDouble(row.durationBeats, 3)
+               << " | " << (row.symbolText.empty() ? "_(none)_" : row.symbolText)
+               << " | " << (row.romanText.empty()  ? "_(none)_" : row.romanText)
+               << " |\n";
+        }
+        md << "\n";
+    }
+
+    const QString docsDir = QStringLiteral(PIPELINE_SNAPSHOT_DOCS_DIR);
+    const QString outPath = docsDir + QStringLiteral("/divergence_c_observation.md");
+    QFile file(outPath);
+    ASSERT_TRUE(file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+        << "Failed to open " << outPath.toStdString()
+        << ": " << file.errorString().toStdString();
+    const QByteArray bytes = QByteArray::fromStdString(md.str());
+    const qint64 written = file.write(bytes);
+    file.close();
+    ASSERT_EQ(written, bytes.size())
+        << "Short write to " << outPath.toStdString();
+}
+
 } // namespace
