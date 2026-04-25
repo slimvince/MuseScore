@@ -48,16 +48,32 @@ Brahms, Haydn, and the WTC fugues/inventions are absent from the DCML corpus
 as shipped; they would need separate fixture copies. That work is deferred —
 the substitutions above cover the same stylistic neighborhoods.
 
-## Why the `implode` snapshot captures regions, not chord-track pitches
+## P1 Implode is captured by two complementary keys
 
-The `implode` array in each snapshot records the output of
-`prepareUserFacingHarmonicRegions` — the sequence of harmonic regions
-`populateChordTrack` consumes as input. Reading the chord-track staves back
-after emission would couple the snapshot to voicing logic, notation font
-rendering, and the chord-track staff-pair setup; for a Phase 1b safety net the
-region list is the cleaner observable. Phase 2+ (`emitImplodedChordTrack`)
-continues to consume this same region list, so drift on either side of the
-pipeline still shows up in the snapshot.
+The Phase 1b `implode` array records the output of
+`prepareUserFacingHarmonicRegions` — the region list that
+`populateChordTrack` consumes as input. It pins the analysis side of the
+implode path: if the shared region pipeline drifts, every chord-track-using
+piece notices.
+
+Phase 3a added a second key, `implodedChordTrack`, that records what
+`populateChordTrack` actually writes to the chord-track staves: per-segment
+`{tick, durationTicks, pitches[], harmonyText}` entries read back after the
+emitter runs on a freshly-loaded copy of the score. This pins the emitter
+side: voicing choices, harmony-name formatting, and chord-track segment
+placement all show up here.
+
+The two keys together let the Phase 3a refactor (split into `analyzeSection`
++ `emitImplodedChordTrack`) prove byte-exact behavior preservation: the
+pre-refactor `implode` and `implodedChordTrack` arrays are the baseline that
+the post-refactor wrapper must reproduce.
+
+The `implodedChordTrack` pass loads its own score copy. The implode emitter
+mutates the score (appends two staves, writes notes and Harmony elements);
+running it on the same `MasterScore` as `addHarmonicAnnotationsToSelection`
+would also flip on the chord-track-priority rule and change the `annotation`
+array. Loading fresh is the simple way to keep the snapshot keys
+independent.
 
 ## The `tickLocal` slot
 

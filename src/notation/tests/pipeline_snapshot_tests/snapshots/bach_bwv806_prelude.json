@@ -1515,6 +1515,654 @@
             "tick": 45600
         }
     ],
+    "implodedChordTrack": [
+        {
+            "durationTicks": 480,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 0
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 480
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bmadd9",
+            "pitches": [
+                61,
+                62,
+                66
+            ],
+            "tick": 960
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 1440
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm9/A",
+            "pitches": [
+                61,
+                62,
+                66,
+                69
+            ],
+            "tick": 2400
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                61,
+                62,
+                66,
+                69
+            ],
+            "tick": 2880
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "AMaj7add13/E",
+            "pitches": [
+                61,
+                64,
+                66,
+                68
+            ],
+            "tick": 3360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 3840
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D/F#",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 4320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Esus",
+            "pitches": [
+                69,
+                71
+            ],
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 5280
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 5760
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Dadd9",
+            "pitches": [
+                64,
+                66,
+                69
+            ],
+            "tick": 6240
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "AMaj7/E",
+            "pitches": [
+                61,
+                64,
+                68
+            ],
+            "tick": 7200
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm/D",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 8160
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A/C#",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 8640
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "A/C#",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 9600
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 10080
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 11040
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 11520
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/G#",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 12000
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A/E",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 12960
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "DMaj7",
+            "pitches": [
+                66,
+                69,
+                73
+            ],
+            "tick": 13920
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 14400
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 15360
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 15840
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 16800
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "B",
+            "pitches": [
+                63,
+                66
+            ],
+            "tick": 17280
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "B",
+            "pitches": [
+                63,
+                66
+            ],
+            "tick": 18240
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 18720
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 19680
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 20160
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Eadd11/G#",
+            "pitches": [
+                68,
+                69,
+                71
+            ],
+            "tick": 20640
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G#m/B",
+            "pitches": [
+                71,
+                75
+            ],
+            "tick": 21600
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "B/C#",
+            "pitches": [
+                63,
+                66
+            ],
+            "tick": 22080
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "B9sus2",
+            "pitches": [
+                61,
+                66,
+                69
+            ],
+            "tick": 22560
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G#m7",
+            "pitches": [
+                71,
+                75,
+                78
+            ],
+            "tick": 23040
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G#m7",
+            "pitches": [
+                71,
+                75,
+                78
+            ],
+            "tick": 24000
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 24960
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Esus",
+            "pitches": [
+                69,
+                71
+            ],
+            "tick": 25440
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 25920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#m7/E",
+            "pitches": [
+                69,
+                73,
+                76
+            ],
+            "tick": 26880
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 27360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "E/B",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 28320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 28800
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/G#",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 29280
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E/G#",
+            "pitches": [
+                68,
+                71
+            ],
+            "tick": 30240
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm7/A",
+            "pitches": [
+                62,
+                66,
+                69
+            ],
+            "tick": 31200
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 31680
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 32640
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "A",
+            "pitches": [
+                61,
+                64
+            ],
+            "tick": 33600
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "E7/G#",
+            "pitches": [
+                68,
+                71,
+                74
+            ],
+            "tick": 34560
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm7/F",
+            "pitches": [
+                62,
+                66,
+                69
+            ],
+            "tick": 35520
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "C#/F",
+            "pitches": [
+                65,
+                68
+            ],
+            "tick": 36480
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "C#m7/D",
+            "pitches": [
+                64,
+                68,
+                71
+            ],
+            "tick": 36960
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "C#",
+            "pitches": [
+                65,
+                68
+            ],
+            "tick": 37440
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "C#7#5",
+            "pitches": [
+                65,
+                69,
+                71
+            ],
+            "tick": 38400
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "C#7",
+            "pitches": [
+                65,
+                68,
+                71
+            ],
+            "tick": 38880
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "C#7",
+            "pitches": [
+                65,
+                68,
+                71
+            ],
+            "tick": 39840
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 40320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D5",
+            "pitches": [
+                69
+            ],
+            "tick": 40800
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G#m7/Eb",
+            "pitches": [
+                71,
+                75,
+                78
+            ],
+            "tick": 41280
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G#dim7/E",
+            "pitches": [
+                71,
+                74,
+                77
+            ],
+            "tick": 42240
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D/F#",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 43200
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G#m7/B",
+            "pitches": [
+                71,
+                75,
+                78
+            ],
+            "tick": 43680
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "C#sus",
+            "pitches": [
+                66,
+                68
+            ],
+            "tick": 44160
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#",
+            "pitches": [
+                70,
+                73
+            ],
+            "tick": 45120
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#+",
+            "pitches": [
+                70,
+                71,
+                74
+            ],
+            "tick": 45600
+        }
+    ],
     "schemaVersion": 1,
     "score": "tools/dcml/bach_en_fr_suites/MS3/BWV806_01_Prelude.mscx",
     "tickLocal": [

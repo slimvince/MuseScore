@@ -703,6 +703,294 @@
             "tick": 20160
         }
     ],
+    "implodedChordTrack": [
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 0
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 480
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Em",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 960
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D/F#",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 1440
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G/D",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G/D",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 2880
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Am7",
+            "pitches": [
+                60,
+                64,
+                67
+            ],
+            "tick": 3360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 4320
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 5760
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 6240
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G/F#",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 6720
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Gadd11/A",
+            "pitches": [
+                71,
+                72,
+                74
+            ],
+            "tick": 7680
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "C69",
+            "pitches": [
+                62,
+                64,
+                67,
+                69
+            ],
+            "tick": 8160
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 9120
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 10080
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 10560
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 11040
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G/A",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 12000
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G/A",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 12960
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 13440
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Em",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 14400
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 14880
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "CMaj7",
+            "pitches": [
+                64,
+                67,
+                71
+            ],
+            "tick": 15360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm7",
+            "pitches": [
+                62,
+                66,
+                69
+            ],
+            "tick": 16320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Dsus/B",
+            "pitches": [
+                67,
+                69
+            ],
+            "tick": 16800
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D7",
+            "pitches": [
+                66,
+                69,
+                72
+            ],
+            "tick": 17280
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 17760
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 18720
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "C",
+            "pitches": [
+                64,
+                67
+            ],
+            "tick": 19200
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 20160
+        }
+    ],
     "schemaVersion": 1,
     "score": "tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx",
     "tickLocal": [

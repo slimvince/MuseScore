@@ -619,6 +619,291 @@
             "tick": 20640
         }
     ],
+    "implodedChordTrack": [
+        {
+            "durationTicks": 480,
+            "harmonyText": "G",
+            "pitches": [
+                79
+            ],
+            "tick": 0
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 480
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G7sus",
+            "pitches": [
+                60,
+                62,
+                65
+            ],
+            "tick": 1440
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 2880
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Csus",
+            "pitches": [
+                65,
+                67
+            ],
+            "tick": 3360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Csus",
+            "pitches": [
+                65,
+                67
+            ],
+            "tick": 4320
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 5760
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 6240
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D7sus",
+            "pitches": [
+                67,
+                69,
+                72
+            ],
+            "tick": 7200
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Gm",
+            "pitches": [
+                70,
+                74
+            ],
+            "tick": 7680
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Eb/Bb",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 8640
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 9120
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Eb/Bb",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 9600
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 10560
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Gsus",
+            "pitches": [
+                60,
+                62
+            ],
+            "tick": 11520
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G7",
+            "pitches": [
+                71,
+                74,
+                77
+            ],
+            "tick": 12000
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "G7",
+            "pitches": [
+                71,
+                74,
+                77
+            ],
+            "tick": 12960
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 13440
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 14400
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Csus",
+            "pitches": [
+                65,
+                67
+            ],
+            "tick": 14880
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Csus",
+            "pitches": [
+                65,
+                67
+            ],
+            "tick": 15840
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 16320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Cm",
+            "pitches": [
+                63,
+                67
+            ],
+            "tick": 17280
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 17760
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D7sus",
+            "pitches": [
+                67,
+                69,
+                72
+            ],
+            "tick": 18720
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Gm",
+            "pitches": [
+                70,
+                74
+            ],
+            "tick": 19200
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Eb/Bb",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 20160
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 20640
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Eb/Bb",
+            "pitches": [
+                67,
+                70
+            ],
+            "tick": 21120
+        }
+    ],
     "schemaVersion": 1,
     "score": "tools/dcml/chopin_mazurkas/MS3/BI105-1op30-1.mscx",
     "tickLocal": [

@@ -28,11 +28,16 @@
 // preservation can be verified before, during, and after the refactor.
 //
 // Paths captured per score:
-//   P1 Implode        — regions out of prepareUserFacingHarmonicRegions (the
-//                       exact input populateChordTrack consumes).  See
-//                       corpus/README.md for the rationale — this phase treats
-//                       the region list as the pinned observable rather than
-//                       re-parsing emitted chord-track pitches.
+//   P1 Implode        — two complementary slices:
+//                         "implode" — the region list out of
+//                         prepareUserFacingHarmonicRegions (the input
+//                         populateChordTrack consumes).
+//                         "implodedChordTrack" — the actual chord-track
+//                         output (notes + chord-symbol annotations) read
+//                         back after running populateChordTrack on a fresh
+//                         score copy.  Added in Phase 3a to pin the
+//                         emitter side before the analyzeSection +
+//                         emitImplodedChordTrack split.
 //   P2 Annotation     — Harmony elements written by addHarmonicAnnotationsToSelection.
 //   P3 Tick-regional  — analyzeHarmonicContextAtTick at one-per-measure-downbeat
 //                       plus one-mid-measure ticks, with wasRegional flag.
@@ -74,11 +79,16 @@
 #include "global/types/translatablestring.h"
 
 #include "engraving/dom/chord.h"
+#include "engraving/dom/factory.h"
 #include "engraving/dom/harmony.h"
+#include "engraving/dom/instrument.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
+#include "engraving/dom/note.h"
+#include "engraving/dom/part.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/select.h"
+#include "engraving/dom/staff.h"
 #include "engraving/types/constants.h"
 
 #include "engraving/tests/utils/scorerw.h"
@@ -89,21 +99,35 @@
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/icomposinganalysisconfiguration.h"
+#include "composing/icomposingchordstaffconfiguration.h"
+
+#include "notation/internal/notationimplodebridge.h"
 
 #include "notation/internal/notationcomposingbridge.h"
 #include "notation/internal/notationcomposingbridgehelpers.h"
 
+using mu::engraving::Chord;
+using mu::engraving::ChordRest;
 using mu::engraving::Constants;
+using mu::engraving::Factory;
 using mu::engraving::Fraction;
 using mu::engraving::Harmony;
 using mu::engraving::HarmonyType;
+using mu::engraving::Instrument;
 using mu::engraving::MasterScore;
 using mu::engraving::Measure;
+using mu::engraving::Note;
+using mu::engraving::Part;
 using mu::engraving::ScoreRW;
 using mu::engraving::Segment;
 using mu::engraving::SegmentType;
+using mu::engraving::Staff;
 using mu::engraving::staff_idx_t;
+using mu::engraving::toChord;
+using mu::engraving::toChordRest;
 using mu::engraving::toHarmony;
+using mu::engraving::track_idx_t;
+using mu::engraving::VOICES;
 using mu::notation::NoteHarmonicContext;
 using mu::composing::analysis::ChordAnalysisResult;
 using mu::composing::analysis::ChordQuality;
@@ -465,6 +489,166 @@ QJsonArray buildTickLocalArray(MasterScore* score,
     return arr;
 }
 
+// Forward declaration so buildImplodedChordTrackArray can use corpusPath (the
+// snapshot-disk-IO helpers below all live in the same anonymous namespace).
+QString corpusPath(const CorpusEntry& entry);
+
+// ── implodedChordTrack: read back what populateChordTrack emits ──────────────
+//
+// The chord-track output is the *user-visible* implode result: the notes and
+// chord-symbol annotations written to a dedicated grand-staff pair appended
+// to the score.  This snapshot pins that output byte-exact so the Phase 3a
+// emitter split (analyzeSection + emitImplodedChordTrack) can prove byte
+// identity against the pre-refactor baseline.
+//
+// The implode pass mutates the score (adds two staves, writes notes and
+// Harmony elements).  Running it on the same MasterScore that produced the
+// other snapshot fields would change those fields too — adding chord-track
+// staves activates `addHarmonicAnnotationsToSelection`'s chord-track-priority
+// rule, for example.  So we load a separate fresh copy here.
+
+void configureChordStaffForSnapshot()
+{
+    auto chordStaffCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingChordStaffConfiguration>("composing");
+    if (!chordStaffCfg) {
+        return;
+    }
+    // Deterministic settings — the same set used by the implode-test suite's
+    // configureChordStaffPopulate(). Keeping these explicit makes the snapshot
+    // independent of any user-preference defaults that might shift.
+    chordStaffCfg->setChordStaffWriteChordSymbols(true);
+    chordStaffCfg->setChordStaffFunctionNotation("none");
+    chordStaffCfg->setChordStaffWriteKeyAnnotations(false);
+    chordStaffCfg->setChordStaffHighlightNonDiatonic(false);
+    chordStaffCfg->setChordStaffWriteCadenceMarkers(false);
+}
+
+// Append a "Chord Track Treble" + "Chord Track Bass" pair, mirroring
+// notationimplode_tests.cpp::appendChordTrackStaffPair so populateChordTrack
+// has somewhere to write.
+staff_idx_t appendChordTrackStaffPair(MasterScore* score)
+{
+    score->startCmd(muse::TranslatableString::untranslatable("pipeline_snapshot_tests append chord-track staves"));
+
+    auto appendStaff = [&](const muse::String& trackName) {
+        Part* part = new Part(score);
+        Instrument instrument;
+        instrument.setTrackName(trackName);
+        part->setInstrument(instrument);
+        score->appendPart(part);
+
+        Staff* staff = Factory::createStaff(part);
+        score->undoInsertStaff(staff, 0, true);
+    };
+
+    const staff_idx_t trebleStaffIdx = score->nstaves();
+    appendStaff(u"Chord Track Treble");
+    appendStaff(u"Chord Track Bass");
+
+    score->endCmd();
+    return trebleStaffIdx;
+}
+
+// One entry per chord-track segment that has either a Chord or a Harmony.
+// Pitches are sorted ascending for stable diffs across runs.
+QJsonArray buildImplodedChordTrackArray(const QString& corpusAbsPath, int cappedEndTickValue)
+{
+    QJsonArray arr;
+    if (corpusAbsPath.isEmpty() || cappedEndTickValue <= 0) {
+        return arr;
+    }
+
+    configureChordStaffForSnapshot();
+
+    MasterScore* score = ScoreRW::readScore(muse::String::fromQString(corpusAbsPath),
+                                             /*isAbsolutePath=*/true);
+    if (!score) {
+        return arr;
+    }
+    if (score->nstaves() == 0) {
+        delete score;
+        return arr;
+    }
+
+    const staff_idx_t trebleStaffIdx = appendChordTrackStaffPair(score);
+    const track_idx_t trebleTrack = trebleStaffIdx * VOICES;
+
+    score->startCmd(muse::TranslatableString::untranslatable("pipeline_snapshot_tests populate chord track"));
+    const bool ok = mu::notation::populateChordTrack(score,
+                                                      Fraction(0, 1),
+                                                      Fraction::fromTicks(cappedEndTickValue),
+                                                      trebleStaffIdx);
+    score->endCmd();
+    if (!ok) {
+        delete score;
+        return arr;
+    }
+
+    const Fraction cappedEnd = Fraction::fromTicks(cappedEndTickValue);
+
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest);
+         seg;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        if (seg->tick() >= cappedEnd) {
+            break;
+        }
+
+        // Pitches: only when the treble-track element is an actual Chord
+        // (rests on the chord track are silent positions and do not warrant
+        // a snapshot row of their own).
+        std::vector<int> pitches;
+        int durationTicks = 0;
+        ChordRest* cr = seg->cr(trebleTrack) ? toChordRest(seg->cr(trebleTrack)) : nullptr;
+        if (cr) {
+            durationTicks = cr->actualTicks().ticks();
+            if (cr->isChord()) {
+                Chord* chord = toChord(cr);
+                for (Note* n : chord->notes()) {
+                    if (n) {
+                        pitches.push_back(n->pitch());
+                    }
+                }
+                std::sort(pitches.begin(), pitches.end());
+            }
+        }
+
+        // Harmony text: pick the first Harmony annotation on the treble track
+        // (implode writes one per region; multiple is a current-code bug, not
+        // something the snapshot needs to disambiguate).
+        QString harmonyText;
+        for (mu::engraving::EngravingItem* ann : seg->annotations()) {
+            if (!ann || !ann->isHarmony() || ann->track() != trebleTrack) {
+                continue;
+            }
+            Harmony* h = toHarmony(ann);
+            harmonyText = h->harmonyName().toQString();
+            if (harmonyText.isEmpty()) {
+                harmonyText = h->plainText().toQString();
+            }
+            break;
+        }
+
+        if (pitches.empty() && harmonyText.isEmpty()) {
+            continue;
+        }
+
+        QJsonObject o;
+        o[QStringLiteral("tick")] = seg->tick().ticks();
+        o[QStringLiteral("durationTicks")] = durationTicks;
+        QJsonArray pitchArr;
+        for (int p : pitches) {
+            pitchArr.append(p);
+        }
+        o[QStringLiteral("pitches")] = pitchArr;
+        o[QStringLiteral("harmonyText")] = harmonyText;
+        arr.append(o);
+    }
+
+    delete score;
+    return arr;
+}
+
 // ── Snapshot assembly ────────────────────────────────────────────────────────
 
 constexpr int kSchemaVersion = 1;
@@ -496,6 +680,13 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
 
     // Annotation runs last because it mutates the score with Harmony elements.
     snap[QStringLiteral("annotation")] = buildAnnotationArray(score, cappedEnd, regions);
+
+    // implodedChordTrack reads back what populateChordTrack writes to a
+    // freshly-loaded copy of the score (chord-track staves alter the original
+    // score's chord-track-priority behaviour for annotation, so isolation
+    // matters — see the function's comment block).
+    snap[QStringLiteral("implodedChordTrack")] = buildImplodedChordTrackArray(
+        corpusPath(entry), cappedEnd.ticks());
 
     return snap;
 }

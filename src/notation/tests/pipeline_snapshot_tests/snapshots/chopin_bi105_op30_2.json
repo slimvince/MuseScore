@@ -591,6 +591,298 @@
             "tick": 21600
         }
     ],
+    "implodedChordTrack": [
+        {
+            "durationTicks": 480,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 0
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 480
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 1440
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "F#",
+            "pitches": [
+                70,
+                73
+            ],
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#",
+            "pitches": [
+                70,
+                73
+            ],
+            "tick": 2880
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 3360
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 4320
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "F#m",
+            "pitches": [
+                69,
+                73
+            ],
+            "tick": 4800
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#m",
+            "pitches": [
+                69,
+                73
+            ],
+            "tick": 5760
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Em/G",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 6240
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 6720
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Dadd9",
+            "pitches": [
+                64,
+                66,
+                69
+            ],
+            "tick": 7680
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Dadd9",
+            "pitches": [
+                64,
+                66,
+                69
+            ],
+            "tick": 8640
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Em",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 9120
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Esus2/F#",
+            "pitches": [
+                66,
+                71
+            ],
+            "tick": 10080
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 10560
+        },
+        {
+            "durationTicks": 240,
+            "harmonyText": "",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 11520
+        },
+        {
+            "durationTicks": 240,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 11760
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 12000
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 12960
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "F#",
+            "pitches": [
+                70,
+                73
+            ],
+            "tick": 13440
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#",
+            "pitches": [
+                70,
+                73
+            ],
+            "tick": 14400
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 14880
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Bm",
+            "pitches": [
+                62,
+                66
+            ],
+            "tick": 15840
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "F#m",
+            "pitches": [
+                69,
+                73
+            ],
+            "tick": 16320
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "F#m",
+            "pitches": [
+                69,
+                73
+            ],
+            "tick": 17280
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Em/G",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 17760
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "G",
+            "pitches": [
+                71,
+                74
+            ],
+            "tick": 18240
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 19200
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "D",
+            "pitches": [
+                66,
+                69
+            ],
+            "tick": 20160
+        },
+        {
+            "durationTicks": 960,
+            "harmonyText": "Em",
+            "pitches": [
+                67,
+                71
+            ],
+            "tick": 20640
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "Esus2/F#",
+            "pitches": [
+                66,
+                71
+            ],
+            "tick": 21600
+        }
+    ],
     "schemaVersion": 1,
     "score": "tools/dcml/chopin_mazurkas/MS3/BI105-2op30-2.mscx",
     "tickLocal": [

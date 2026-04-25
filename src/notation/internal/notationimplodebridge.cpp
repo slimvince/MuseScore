@@ -147,11 +147,11 @@ struct KeyAnnotationCandidate {
 };
 
 std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
     double modeNameConfidenceThreshold,
     double minKeyStabilityBeats)
 {
-    using mu::composing::analysis::HarmonicRegion;
+    using mu::composing::analysis::AnalyzedRegion;
 
     struct PendingRun {
         bool active = false;
@@ -175,7 +175,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
     std::string lastWrittenLabel;
     PendingRun run;
 
-    auto startRun = [&](size_t regionIdx, const HarmonicRegion& region) {
+    auto startRun = [&](size_t regionIdx, const AnalyzedRegion& region) {
         run.active = true;
         run.firstRegionIdx = regionIdx;
         run.representativeRegionIdx = regionIdx;
@@ -188,7 +188,10 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
                                                region.keyModeResult.normalizedConfidence,
                                                modeNameConfidenceThreshold);
         run.hasTentativeExposure = supportsTentativeKeyExposure(region.keyModeResult);
-        run.hasAssertiveExposure = hasAssertiveKeyConfidence(region.keyModeResult);
+        // Phase 3a: read AnalyzedRegion::hasAssertiveExposure (populated by
+        // analyzeSection from the same hasAssertiveKeyConfidence helper) instead
+        // of recomputing it here.
+        run.hasAssertiveExposure = region.hasAssertiveExposure;
     };
 
     auto finishRun = [&]() {
@@ -246,7 +249,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
 
         run.endTick = region.endTick;
         run.hasTentativeExposure = run.hasTentativeExposure || supportsTentativeKeyExposure(region.keyModeResult);
-        if (!run.hasAssertiveExposure && hasAssertiveKeyConfidence(region.keyModeResult)) {
+        if (!run.hasAssertiveExposure && region.hasAssertiveExposure) {
             run.hasAssertiveExposure = true;
             run.representativeRegionIdx = regionIdx;
             run.representativeMode = region.keyModeResult.mode;
@@ -293,8 +296,8 @@ std::vector<mu::engraving::Fraction> collectSourceInferenceTicks(
     return ticks;
 }
 
-bool sameUserFacingInference(const mu::composing::analysis::HarmonicRegion& lhs,
-                             const mu::composing::analysis::HarmonicRegion& rhs)
+bool sameUserFacingInference(const mu::composing::analysis::AnalyzedRegion& lhs,
+                             const mu::composing::analysis::AnalyzedRegion& rhs)
 {
     return lhs.chordResult.identity.rootPc == rhs.chordResult.identity.rootPc
            && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality
@@ -528,8 +531,9 @@ void setExplicitRestRange(mu::engraving::Score* sc,
 
 namespace mu::notation {
 
-bool populateChordTrack(
+bool emitImplodedChordTrack(
     mu::engraving::Score* score,
+    const mu::composing::analysis::AnalyzedSection& section,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     mu::engraving::staff_idx_t trebleStaffIdx,
@@ -553,21 +557,20 @@ bool populateChordTrack(
         return false;
     }
 
-    // The target staves are excluded from the analysis input.
+    // The target staves are excluded from the source-side scan that produces
+    // inference ticks; the analysis-side excludeStaves is whatever
+    // populateChordTrack passed to analyzeSection.
     const std::set<size_t> excludeStaves = {
         static_cast<size_t>(trebleStaffIdx),
         static_cast<size_t>(bassStaffIdx)
     };
 
-    // ── Analyze ──────────────────────────────────────────────────────────────
-    const auto displayRegions = mu::notation::internal::prepareUserFacingHarmonicRegions(score,
-                                                                                          startTick,
-                                                                                          endTick,
-                                                                                          excludeStaves);
-    std::vector<HarmonicRegion> regions;
+    // ── Consume analyzed regions ─────────────────────────────────────────────
+    const auto& displayRegions = section.regions;
+    std::vector<AnalyzedRegion> regions;
     const auto inferenceTicks = collectSourceInferenceTicks(score, startTick, endTick, excludeStaves);
 
-    auto selectDisplayRegionForTick = [&](const Fraction& tick) -> const HarmonicRegion* {
+    auto selectDisplayRegionForTick = [&](const Fraction& tick) -> const AnalyzedRegion* {
         const int tickValue = tick.ticks();
         const auto containingRegion = std::find_if(displayRegions.begin(), displayRegions.end(), [tickValue](const auto& region) {
             return region.startTick <= tickValue && tickValue < region.endTick;
@@ -617,12 +620,12 @@ bool populateChordTrack(
             continue;
         }
 
-        const HarmonicRegion* displayRegion = selectDisplayRegionForTick(regionStart);
+        const AnalyzedRegion* displayRegion = selectDisplayRegionForTick(regionStart);
         if (!displayRegion) {
             continue;
         }
 
-        HarmonicRegion region = *displayRegion;
+        AnalyzedRegion region = *displayRegion;
         region.startTick = regionStart.ticks();
         region.endTick = regionEnd.ticks();
 
@@ -654,7 +657,7 @@ bool populateChordTrack(
     // harmonic annotation (gap < 2 beats).
     {
         constexpr int kSameChordReannotationGap = 2 * 480; // 2 × Constants::DIVISION
-        std::vector<HarmonicRegion> merged;
+        std::vector<AnalyzedRegion> merged;
         merged.reserve(regions.size());
         for (auto& r : regions) {
             bool sameInf = !merged.empty() && sameUserFacingInference(merged.back(), r);
@@ -857,7 +860,9 @@ bool populateChordTrack(
         const auto& chord = region.chordResult;
         const int localKeyFifths = region.keyModeResult.keySignatureFifths;
         const KeySigMode localMode  = region.keyModeResult.mode;
-        const bool allowAssertiveKeyExposure = hasAssertiveKeyConfidence(region.keyModeResult);
+        // Phase 3a: read AnalyzedRegion::hasAssertiveExposure populated by
+        // analyzeSection() rather than recomputing it here.
+        const bool allowAssertiveKeyExposure = region.hasAssertiveExposure;
 
         // ── Key signature + mode annotation at key/mode boundaries ───────
         const bool writeKeyAnnotations = !prefs || prefs->chordStaffWriteKeyAnnotations();
@@ -1274,7 +1279,23 @@ bool populateChordTrack(
     // ── Cadence markers ─────────────────────────────────────────────────────
     const bool writeCadenceMarkers = !prefs || prefs->chordStaffWriteCadenceMarkers();
     if (writeCadenceMarkers) {
-        const auto cadences = detectCadences(regions, regions.size());
+        // detectCadences still consumes HarmonicRegion (Phase 3a doesn't touch
+        // the cadence detector).  Build a 1:1 view from the AnalyzedRegion list
+        // for the call.
+        std::vector<HarmonicRegion> regionsAsHarmonicRegions;
+        regionsAsHarmonicRegions.reserve(regions.size());
+        for (const auto& r : regions) {
+            HarmonicRegion h;
+            h.startTick        = r.startTick;
+            h.endTick          = r.endTick;
+            h.chordResult      = r.chordResult;
+            h.hasAnalyzedChord = r.hasAnalyzedChord;
+            h.keyModeResult    = r.keyModeResult;
+            h.tones            = r.tones;
+            regionsAsHarmonicRegions.push_back(std::move(h));
+        }
+        const auto cadences = detectCadences(regionsAsHarmonicRegions,
+                                              regionsAsHarmonicRegions.size());
         for (const auto& marker : cadences) {
             const Fraction mTick = Fraction::fromTicks(marker.tick);
             Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
@@ -1334,6 +1355,42 @@ bool populateChordTrack(
     }
 
     return anyWritten;
+}
+
+// Phase 3a: thin wrapper over the unified-pipeline analysis +
+// implode-emitter split.  Kept at this signature so existing call sites
+// (notationinteraction "Implode to chord staff" action, the implode test
+// suite) remain untouched.  Phase 4+ may inline this.
+bool populateChordTrack(
+    mu::engraving::Score* score,
+    const mu::engraving::Fraction& startTick,
+    const mu::engraving::Fraction& endTick,
+    mu::engraving::staff_idx_t trebleStaffIdx,
+    bool useCollectedTones)
+{
+    using namespace mu::engraving;
+
+    if (!score || endTick <= startTick) {
+        return false;
+    }
+    const staff_idx_t bassStaffIdx = trebleStaffIdx + 1;
+    if (bassStaffIdx >= score->nstaves()) {
+        return false;
+    }
+
+    // Same exclude-set the pre-Phase-3a populateChordTrack used for analysis
+    // input — the chord-track staves never feed their own population.
+    const std::set<size_t> excludeStaves = {
+        static_cast<size_t>(trebleStaffIdx),
+        static_cast<size_t>(bassStaffIdx)
+    };
+
+    auto section = mu::notation::internal::analyzeSection(score,
+                                                          startTick,
+                                                          endTick,
+                                                          excludeStaves);
+    return emitImplodedChordTrack(score, section, startTick, endTick,
+                                   trebleStaffIdx, useCollectedTones);
 }
 
 } // namespace mu::notation
