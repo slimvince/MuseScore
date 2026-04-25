@@ -972,7 +972,16 @@
             "tick": 14400
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.735,
+            "endTick": 15360,
+            "keyFifths": 1,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/schumann_kinderszenen/MS3/n01.mscx",
     "tickLocal": [
         {

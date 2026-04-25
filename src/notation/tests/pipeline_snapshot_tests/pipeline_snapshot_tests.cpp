@@ -686,7 +686,23 @@ QJsonArray buildImplodedChordTrackArray(const QString& corpusAbsPath, int capped
 
 // ── Snapshot assembly ────────────────────────────────────────────────────────
 
-constexpr int kSchemaVersion = 2;  // Phase 3c: tickRegional gained alternatives + temporal-extension fields
+constexpr int kSchemaVersion = 3;  // Phase 5a: keyAreas array added
+
+QJsonArray buildKeyAreasArray(const AnalyzedSection& section)
+{
+    using mu::composing::analysis::KeyArea;
+    QJsonArray arr;
+    for (const KeyArea& ka : section.keyAreas) {
+        QJsonObject o;
+        o[QStringLiteral("startTick")]  = ka.startTick;
+        o[QStringLiteral("endTick")]    = ka.endTick;
+        o[QStringLiteral("keyFifths")]  = ka.keyFifths;
+        o[QStringLiteral("mode")]       = QString::fromStdString(modeName(ka.mode));
+        o[QStringLiteral("confidence")] = std::round(ka.confidence * 1000.0) / 1000.0;
+        arr.append(o);
+    }
+    return arr;
+}
 
 QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
 {
@@ -705,6 +721,7 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
         implodeArr.append(regionToImplodeEntry(r));
     }
     snap[QStringLiteral("implode")] = implodeArr;
+    snap[QStringLiteral("keyAreas")] = buildKeyAreasArray(section);
 
     // Tick-sampled paths run before the annotation emitter writes Harmony
     // elements so annotation writes do not affect the regional context match

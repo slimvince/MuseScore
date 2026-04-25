@@ -1225,7 +1225,16 @@
             "tick": 22560
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.915,
+            "endTick": 23040,
+            "keyFifths": -1,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/mozart_piano_sonatas/MS3/K280-1.mscx",
     "tickLocal": [
         {

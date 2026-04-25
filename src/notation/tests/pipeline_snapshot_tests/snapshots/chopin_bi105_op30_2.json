@@ -883,7 +883,16 @@
             "tick": 21600
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.914,
+            "endTick": 22080,
+            "keyFifths": 2,
+            "mode": "min",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/chopin_mazurkas/MS3/BI105-2op30-2.mscx",
     "tickLocal": [
         {

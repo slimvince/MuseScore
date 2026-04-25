@@ -1257,7 +1257,16 @@
             "tick": 21120
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 1,
+            "endTick": 21840,
+            "keyFifths": 3,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/bach_en_fr_suites/MS3/BWV806_10_Gigue.mscx",
     "tickLocal": [
         {

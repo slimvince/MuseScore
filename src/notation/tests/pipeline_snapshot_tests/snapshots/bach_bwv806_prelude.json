@@ -2163,7 +2163,16 @@
             "tick": 45600
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 1,
+            "endTick": 46080,
+            "keyFifths": 3,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/bach_en_fr_suites/MS3/BWV806_01_Prelude.mscx",
     "tickLocal": [
         {

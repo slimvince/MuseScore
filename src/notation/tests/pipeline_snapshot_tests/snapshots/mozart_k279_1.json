@@ -1402,7 +1402,23 @@
             "tick": 29760
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.169,
+            "endTick": 8640,
+            "keyFifths": 0,
+            "mode": "maj",
+            "startTick": 0
+        },
+        {
+            "confidence": 1,
+            "endTick": 30720,
+            "keyFifths": 0,
+            "mode": "min",
+            "startTick": 8640
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/mozart_piano_sonatas/MS3/K279-1.mscx",
     "tickLocal": [
         {

@@ -991,7 +991,16 @@
             "tick": 20160
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.916,
+            "endTick": 20640,
+            "keyFifths": 1,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx",
     "tickLocal": [
         {

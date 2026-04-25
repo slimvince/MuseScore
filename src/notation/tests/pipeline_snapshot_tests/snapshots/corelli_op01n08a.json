@@ -2541,7 +2541,16 @@
             "tick": 28800
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 1,
+            "endTick": 30720,
+            "keyFifths": -2,
+            "mode": "min",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/corelli/MS3/op01n08a.mscx",
     "tickLocal": [
         {

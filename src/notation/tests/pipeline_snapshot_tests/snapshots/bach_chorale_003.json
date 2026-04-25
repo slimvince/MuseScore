@@ -1253,7 +1253,16 @@
             "tick": 18720
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.182,
+            "endTick": 19200,
+            "keyFifths": 1,
+            "mode": "mel",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/bach_chorales/MS3/003 Ach Gott, vom Himmel sieh darein.mscx",
     "tickLocal": [
         {

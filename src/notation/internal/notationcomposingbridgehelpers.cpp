@@ -2356,18 +2356,28 @@ analyzeSection(const mu::engraving::Score* sc,
 
     out.regions = std::move(displayRegions);
 
-    // Key-areas: collapse adjacent regions sharing (keyFifths, mode).  Phase 5
-    // will replace this naive pass with a confidence-aware smoother once
-    // modulation-aware Roman numeral annotation is implemented.
+    // Key-areas: confidence-gated grouping per docs/unified_analysis_pipeline.md:149-163.
+    //
+    // A new KeyArea opens at the first region, then only when:
+    //   (a) the region's (keyFifths, mode) differs from the enclosing area, AND
+    //   (b) the region's normalizedConfidence >= kAnnotateKeyConfidenceThreshold (0.8).
+    //
+    // Regions that disagree with the enclosing area but fall below the threshold
+    // are silently grouped into the enclosing area (keyAreaId unchanged).
+    // Their own keyModeResult is preserved verbatim — status-bar display remains
+    // accurate; only the keyAreaId annotation grouping is affected.
     for (size_t i = 0; i < out.regions.size(); ++i) {
         const AnalyzedRegion& region = out.regions[i];
         const int regionFifths = region.keyModeResult.keySignatureFifths;
         const KeySigMode regionMode = region.keyModeResult.mode;
         const double regionConfidence = region.keyModeResult.normalizedConfidence;
 
+        const bool diverges = !out.keyAreas.empty()
+            && (out.keyAreas.back().keyFifths != regionFifths
+                || out.keyAreas.back().mode != regionMode);
+
         if (out.keyAreas.empty()
-            || out.keyAreas.back().keyFifths != regionFifths
-            || out.keyAreas.back().mode != regionMode) {
+            || (diverges && regionConfidence >= kAnnotateKeyConfidenceThreshold)) {
             KeyArea area;
             area.startTick  = region.startTick;
             area.endTick    = region.endTick;
