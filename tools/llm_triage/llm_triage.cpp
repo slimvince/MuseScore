@@ -1308,13 +1308,31 @@ static void emitNoteLines(std::ostream& out,
 {
     if (!score) return;
 
-    // Collect part names for eligible staves (used as labels).
-    std::vector<std::string> staffPartName(score->nstaves(), "");
+    // Build per-staff display labels, disambiguating staves that share partName()
+    // (e.g. piano: one Part, two Staves both named "Piano") so LLM input can
+    // distinguish upper from lower without pitch-range inference.
+    // Only eligible staves are counted — excluded staves (percussion, chord track)
+    // are invisible in output and must not consume ordinal slots.
+    std::map<std::string, int> partNameCount;
     for (size_t si = 0; si < score->nstaves(); ++si) {
         if (!staffIsEligible(score, si)) continue;
         const Staff* st = score->staff(si);
         if (st && st->part()) {
-            staffPartName[si] = st->part()->partName().toStdString();
+            partNameCount[st->part()->partName().toStdString()]++;
+        }
+    }
+    std::map<std::string, int> partNameOrdinal; // running ordinal within each part name
+    std::vector<std::string> staffPartName(score->nstaves(), "");
+    for (size_t si = 0; si < score->nstaves(); ++si) {
+        if (!staffIsEligible(score, si)) continue;
+        const Staff* st = score->staff(si);
+        if (!st || !st->part()) continue;
+        const std::string name = st->part()->partName().toStdString();
+        if (partNameCount[name] > 1) {
+            const int ordinal = ++partNameOrdinal[name];
+            staffPartName[si] = name + " #" + std::to_string(ordinal);
+        } else {
+            staffPartName[si] = name;
         }
     }
 
