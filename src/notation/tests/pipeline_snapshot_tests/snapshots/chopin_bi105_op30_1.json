@@ -147,7 +147,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII7sus4",
+            "text": "II7sus4",
             "tick": 7200
         },
         {
@@ -157,7 +157,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII7sus4",
+            "text": "II7sus4",
             "tick": 7200
         },
         {
@@ -167,7 +167,7 @@
         },
         {
             "key": "Eb",
-            "text": "iii",
+            "text": "v",
             "tick": 7680
         },
         {
@@ -177,7 +177,7 @@
         },
         {
             "key": "Eb",
-            "text": "iii",
+            "text": "v",
             "tick": 7680
         },
         {
@@ -187,7 +187,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 8640
         },
         {
@@ -197,7 +197,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 8640
         },
         {
@@ -207,7 +207,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 9120
         },
         {
@@ -217,7 +217,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 9120
         },
         {
@@ -227,7 +227,7 @@
         },
         {
             "key": "Eb",
-            "text": "III",
+            "text": "V",
             "tick": 10560
         },
         {
@@ -237,7 +237,7 @@
         },
         {
             "key": "Eb",
-            "text": "III",
+            "text": "V",
             "tick": 10560
         },
         {
@@ -247,7 +247,7 @@
         },
         {
             "key": "Eb",
-            "text": "IIIsus4",
+            "text": "Vsus4",
             "tick": 11520
         },
         {
@@ -257,7 +257,7 @@
         },
         {
             "key": "Eb",
-            "text": "IIIsus4",
+            "text": "Vsus4",
             "tick": 11520
         },
         {
@@ -267,7 +267,7 @@
         },
         {
             "key": "Eb",
-            "text": "V7/vi",
+            "text": "V7",
             "tick": 12000
         },
         {
@@ -277,7 +277,7 @@
         },
         {
             "key": "Eb",
-            "text": "V7/vi",
+            "text": "V7",
             "tick": 12000
         },
         {
@@ -287,7 +287,7 @@
         },
         {
             "key": "Eb",
-            "text": "vi",
+            "text": "i",
             "tick": 13440
         },
         {
@@ -297,7 +297,7 @@
         },
         {
             "key": "Eb",
-            "text": "vi",
+            "text": "i",
             "tick": 13440
         },
         {
@@ -307,7 +307,7 @@
         },
         {
             "key": "Eb",
-            "text": "VIsus4",
+            "text": "Isus4",
             "tick": 14880
         },
         {
@@ -317,7 +317,7 @@
         },
         {
             "key": "Eb",
-            "text": "VIsus4",
+            "text": "Isus4",
             "tick": 14880
         },
         {
@@ -327,7 +327,7 @@
         },
         {
             "key": "Eb",
-            "text": "vi",
+            "text": "i",
             "tick": 16320
         },
         {
@@ -337,7 +337,7 @@
         },
         {
             "key": "Eb",
-            "text": "vi",
+            "text": "i",
             "tick": 16320
         },
         {
@@ -347,7 +347,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII",
+            "text": "II",
             "tick": 17760
         },
         {
@@ -357,7 +357,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII",
+            "text": "II",
             "tick": 17760
         },
         {
@@ -367,7 +367,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII7sus4",
+            "text": "II7sus4",
             "tick": 18720
         },
         {
@@ -377,7 +377,7 @@
         },
         {
             "key": "Eb",
-            "text": "VII7sus4",
+            "text": "II7sus4",
             "tick": 18720
         },
         {
@@ -387,7 +387,7 @@
         },
         {
             "key": "Eb",
-            "text": "iii",
+            "text": "v",
             "tick": 19200
         },
         {
@@ -397,7 +397,7 @@
         },
         {
             "key": "Eb",
-            "text": "iii",
+            "text": "v",
             "tick": 19200
         },
         {
@@ -407,7 +407,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 20160
         },
         {
@@ -417,7 +417,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 20160
         },
         {
@@ -427,7 +427,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 20640
         },
         {
@@ -437,7 +437,7 @@
         },
         {
             "key": "Eb",
-            "text": "I64",
+            "text": "III64",
             "tick": 20640
         }
     ],

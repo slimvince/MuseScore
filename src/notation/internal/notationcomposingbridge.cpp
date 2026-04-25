@@ -279,6 +279,13 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
     snapshot.context.keyConfidence = it->keyModeResult.normalizedConfidence;
     snapshot.context.temporalExtensions = it->temporalExtensions;
 
+    // Populate enclosingKeyArea from the matched region's keyAreaId.
+    // P4 fallback leaves this nullopt — graceful degradation per recon Q3.
+    const int kaId = it->keyAreaId;
+    if (kaId >= 0 && kaId < static_cast<int>(section.keyAreas.size())) {
+        snapshot.context.enclosingKeyArea = section.keyAreas[kaId];
+    }
+
     const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(snapshot.context.keyFifths);
     const int tonicPc = (ionianPc + mu::composing::analysis::keyModeTonicOffset(snapshot.context.keyMode)) % 12;
     auto applyRegionalKeyContext = [tonicPc, &snapshot](mu::composing::analysis::ChordAnalysisResult& result) {
@@ -577,8 +584,29 @@ std::string harmonicAnnotation(const Note* note)
     }
 
     const std::string headed = "Chord: " + candidates;
+
+    // When the enclosing KeyArea differs from the per-region key, surface both:
+    // the per-region analysis (what the analyzer saw locally) and the enclosing
+    // structural area (what the gate determined for the broader context).
+    std::string areaStr;
+    if (context.enclosingKeyArea.has_value()) {
+        const auto& ka = *context.enclosingKeyArea;
+        if (ka.keyFifths != keyFifths || ka.mode != keyMode) {
+            using mu::composing::analysis::keyModeTonicName;
+            using mu::composing::analysis::keyModeSuffix;
+            areaStr = std::string(keyModeTonicName(ka.keyFifths, ka.mode))
+                      + " " + keyModeSuffix(ka.mode);
+        }
+    }
+
+    if (!keyStr.empty() && !areaStr.empty()) {
+        return headed + " in key: " + keyStr + " (in area: " + areaStr + ")";
+    }
     if (!keyStr.empty()) {
         return headed + " in key: " + keyStr;
+    }
+    if (!areaStr.empty()) {
+        return headed + " (in area: " + areaStr + ")";
     }
     return headed;
 }
@@ -701,6 +729,14 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
 {
     using namespace mu::engraving;
     using mu::composing::analysis::AnalyzedRegion;
+    using mu::composing::analysis::KeyArea;
+    using mu::composing::analysis::KeySigMode;
+    using mu::composing::analysis::ChordQuality;
+    using mu::composing::analysis::ionianTonicPcFromFifths;
+    using mu::composing::analysis::keyModeTonicOffset;
+    using mu::composing::analysis::keyModeTonicName;
+    using mu::composing::analysis::keyModeSuffix;
+    using mu::notation::internal::PivotLabel;
 
     if (!score || section.regions.empty() || options.writeStaves.empty()) {
         return;
@@ -712,6 +748,7 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
     }
 
     const auto& allRegions = section.regions;
+    const auto& keyAreas   = section.keyAreas;
 
     // Split into in-selection vs. lookahead based on options.selectionEndTick.
     const size_t selectionCount = static_cast<size_t>(
@@ -729,7 +766,38 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
                          * Constants::DIVISION
                          / options.minimumDisplayDurationBeats.denominator());
 
+    // Pre-compute pivot labels: needed before the main loop (to suppress duplicate
+    // boundary markers at pivot transitions) and reused for final emission.
+    // detectPivotChords is called once here instead of twice.
+    std::vector<PivotLabel> allPivots;
+    if (options.writeRomanNumerals && !options.writeStaves.empty()) {
+        allPivots = detectPivotChords(allRegions, selectionCount);
+    }
+
+    // Bracket marker format: "[G:]" major, "[g:]" minor, "[D Dor:]" Dorian, etc.
+    // Aldwell/Laitz: major-like modes uppercase tonic, minor-like modes lowercase.
+    auto makeBracketMarker = [](const KeyArea& ka) -> std::string {
+        const char* tonicRaw = keyModeTonicName(ka.keyFifths, ka.mode);
+        std::string tonic(tonicRaw);
+        const bool isMajorLike = (ka.mode == KeySigMode::Ionian
+                                  || ka.mode == KeySigMode::Lydian
+                                  || ka.mode == KeySigMode::Mixolydian);
+        if (!isMajorLike && !tonic.empty() && tonic[0] >= 'A' && tonic[0] <= 'Z') {
+            tonic[0] = static_cast<char>(tonic[0] + ('a' - 'A'));
+        }
+        if (ka.mode == KeySigMode::Ionian
+            || ka.mode == KeySigMode::Aeolian
+            || ka.mode == KeySigMode::HarmonicMinor
+            || ka.mode == KeySigMode::MelodicMinor) {
+            return "[" + tonic + ":]";
+        }
+        return "[" + tonic + " " + keyModeSuffix(ka.mode) + ":]";
+    };
+
     score->startCmd(TranslatableString("undoableAction", "Add harmonic annotations to selection"));
+
+    // Tracks the enclosing KeyArea as we iterate regions.  -1 = not yet entered.
+    int activeKeyAreaId = -1;
 
     for (size_t i = 0; i < selectionCount; ++i) {
         const AnalyzedRegion& region = allRegions[i];
@@ -740,28 +808,89 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
             continue;
         }
 
+        // ── KeyArea transition (Phase 5b) ─────────────────────────────────────
+        // When the region's enclosing KeyArea changes, write a bracketed key-
+        // prefix marker ("[G:]") at the new area's first tick — unless
+        // detectPivotChords already placed a pivot label in the outgoing area
+        // (the pivot communicates the transition; the bracket would be redundant).
+        const int regionKeyAreaId = region.keyAreaId;
+        if (options.writeRomanNumerals
+            && regionKeyAreaId >= 0
+            && regionKeyAreaId != activeKeyAreaId
+            && activeKeyAreaId >= 0
+            && regionKeyAreaId < static_cast<int>(keyAreas.size())) {
+            const int prevAreaStart = keyAreas[activeKeyAreaId].startTick;
+            const int newAreaStart  = keyAreas[regionKeyAreaId].startTick;
+            const bool hasPivot = std::any_of(allPivots.begin(), allPivots.end(),
+                [prevAreaStart, newAreaStart](const PivotLabel& pv) {
+                    return pv.tick >= prevAreaStart && pv.tick < newAreaStart;
+                });
+            if (!hasPivot && newAreaStart < options.selectionEndTick) {
+                const Fraction mTick = Fraction::fromTicks(newAreaStart);
+                Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);
+                if (mSeg) {
+                    Harmony* bh = Factory::createHarmony(mSeg);
+                    bh->setTrack(options.writeStaves.front() * VOICES);
+                    bh->setParent(mSeg);
+                    bh->setHarmonyType(HarmonyType::ROMAN);
+                    bh->setHarmony(muse::String::fromStdString(
+                        makeBracketMarker(keyAreas[regionKeyAreaId])));
+                    score->undoAddElement(bh);
+                }
+            }
+        }
+        if (regionKeyAreaId >= 0) {
+            activeKeyAreaId = regionKeyAreaId;
+        }
+
         const Fraction rStart = Fraction::fromTicks(region.startTick);
         Segment* seg = score->tick2segment(rStart, true, SegmentType::ChordRest);
         if (!seg || seg->tick() >= Fraction::fromTicks(region.endTick)) {
             continue;
         }
 
-        const int keyFifths = region.keyModeResult.keySignatureFifths;
-        const auto keyMode   = region.keyModeResult.mode;
+        // Per-region key (accurate for status bar and chord symbol spelling).
+        const int perRegionFifths = region.keyModeResult.keySignatureFifths;
+        const auto perRegionMode  = region.keyModeResult.mode;
 
-        const mu::composing::analysis::ChordAnalysisResult& annotationResult
-            = region.chordResult;
+        // Effective key for Roman numerals: enclosing KeyArea when available,
+        // per-region key as fallback.  This is the Phase 5b behavior change:
+        // regions absorbed into an enclosing area get Romans in the area's key,
+        // not the transient local key the confidence gate suppressed.
+        int romanKeyFifths = perRegionFifths;
+        KeySigMode romanKeyMode = perRegionMode;
+        if (options.writeRomanNumerals
+            && activeKeyAreaId >= 0
+            && activeKeyAreaId < static_cast<int>(keyAreas.size())) {
+            romanKeyFifths = keyAreas[activeKeyAreaId].keyFifths;
+            romanKeyMode   = keyAreas[activeKeyAreaId].mode;
+        }
 
-        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, keyFifths);
+        // Re-contextualize the chord result when the roman key differs from the
+        // per-region key: recompute degree and tonal function for the area key.
+        mu::composing::analysis::ChordAnalysisResult annotationResult = region.chordResult;
+        if (options.writeRomanNumerals
+            && (romanKeyFifths != perRegionFifths || romanKeyMode != perRegionMode)) {
+            const int ionianPc = ionianTonicPcFromFifths(romanKeyFifths);
+            const int tonicPc  = (ionianPc + keyModeTonicOffset(romanKeyMode)) % 12;
+            annotationResult.function.degree
+                = diatonicDegreeForRootPc(annotationResult.identity.rootPc,
+                                          romanKeyFifths, romanKeyMode);
+            annotationResult.function.diatonicToKey = (annotationResult.function.degree >= 0);
+            annotationResult.function.keyTonicPc    = tonicPc;
+            annotationResult.function.keyMode       = romanKeyMode;
+        }
+
+        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, perRegionFifths);
         const std::string symText = options.writeChordSymbols ? fmt.symbol : "";
         std::string romanText = options.writeRomanNumerals ? fmt.roman : "";
         if (options.writeRomanNumerals && romanText.empty()
-                && annotationResult.identity.quality == mu::composing::analysis::ChordQuality::Unknown
+                && annotationResult.identity.quality == ChordQuality::Unknown
                 && annotationResult.function.degree >= 0
                 && annotationResult.function.degree <= 6) {
             auto refinedForRoman = annotationResult;
-            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, keyMode);
-            if (refinedForRoman.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, romanKeyMode);
+            if (refinedForRoman.identity.quality != ChordQuality::Unknown) {
                 romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
             }
         }
@@ -811,9 +940,9 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
             mu::composing::analysis::ChordAnalysisResult pedalRoot = annotationResult;
             pedalRoot.identity.rootPc  = annotationResult.identity.pedalBassPc;
             pedalRoot.identity.bassPc  = annotationResult.identity.pedalBassPc;
-            pedalRoot.identity.quality = mu::composing::analysis::ChordQuality::Major;
+            pedalRoot.identity.quality = ChordQuality::Major;
             pedalRoot.identity.extensions = 0;
-            const std::string baseName = formatChordResultForStatusBar(score, pedalRoot, keyFifths).symbol;
+            const std::string baseName = formatChordResultForStatusBar(score, pedalRoot, perRegionFifths).symbol;
             if (!baseName.empty()) {
                 const std::string pedalText = baseName + " ped.";
                 const track_idx_t pedTrack = options.writeStaves.front() * VOICES;
@@ -851,8 +980,8 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
             score->undoAddElement(st);
         }
 
-        const auto pivots = detectPivotChords(allRegions, selectionCount);
-        for (const auto& pv : pivots) {
+        // allPivots pre-computed above; reuse here to avoid a second detectPivotChords call.
+        for (const auto& pv : allPivots) {
             const Fraction pTick = Fraction::fromTicks(pv.tick);
             Segment* pSeg = score->tick2segment(pTick, true, SegmentType::ChordRest);
             if (!pSeg) {

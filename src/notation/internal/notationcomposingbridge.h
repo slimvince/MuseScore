@@ -31,10 +31,12 @@
 // Callers outside the notation module should include this header rather
 // than calling composing functions directly.
 
+#include <optional>
 #include <set>
 #include <string>
 #include <vector>
 
+#include "composing/analyzed_section.h"               // KeyArea
 #include "composing/analysis/chord/chordanalyzer.h"   // ChordAnalysisResult, KeyMode, ChordAnalysisTone
 #include "composing/analysis/region/harmonicrhythm.h"  // HarmonicRegion
 
@@ -72,6 +74,13 @@ struct NoteHarmonicContext {
     /// regional analysis produced no result.  Lets callers (and snapshot tests)
     /// observe Divergence A between the two paths.
     bool wasRegional = true;
+
+    /// The key-area span enclosing this note's region.  Populated on the P3 path
+    /// from the matched region's keyAreaId; left as nullopt on the P4 fallback
+    /// (which has no region/section concept — graceful degradation per recon Q3).
+    /// Phase 5b: status-bar and right-click menu can surface both the per-region
+    /// key (keyFifths/keyMode) and the enclosing structural key area.
+    std::optional<mu::composing::analysis::KeyArea> enclosingKeyArea;
 };
 
 /// Computes the harmonic annotation string appended to the status bar when a
