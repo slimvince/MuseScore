@@ -90,21 +90,30 @@ No quirks to work around. No sub-recon needed.
 
 ## Q2 — Authoritative corpora for modulation tuning
 
-### Chord-symbol-ban applicability
+### Ban applicability
 
-`docs/symbol_input_audit.md` states the operating principle:
+The principle (per `docs/symbol_input_audit.md` and the generalized
+`project_chord_symbol_ban` memory): user-written analytical content is
+banned as analyzer input regardless of storage type. The check is
+content-based, not storage-format-based.
 
-> Symbols are instructions written by the user, not analysis results. Production
-> paths must not read them as input to analysis. Tools may read them only as
-> comparison/ground-truth labels — never as input that influences what the analyzer
-> computes.
+The proposed use of DCML key labels in Phase 5 is **comparison metadata
+only** — the analyzer runs from notes + structural metadata alone, and
+a separate tool compares analyzer output (`AnalyzedSection.keyAreas`)
+to the DCML reference labels post-hoc. The labels are not fed into the
+analyzer; they are not used to seed key analysis; they are not used to
+influence what the analyzer computes. They are consumed exclusively by
+the comparison/tuning workflow.
 
-This ban applies to **Harmony elements** (DOM objects) as analysis input. It does
-not apply to external TSV/CSV files (DCML key labels are flat data files, not
-Harmony elements). The audit's §A confirms: "Production retirement complete: YES.
-No production path … reads a `Harmony` element … to influence analysis output."
-Key label files from DCML are a completely different data source and are not
-subject to this ban.
+This is the allowed-in-tools pattern. The ban prohibits *use as
+analyzer input* of any user-written analytical content; it explicitly
+permits use as comparison metadata. DCML labels qualify under that
+permission regardless of being TSV files rather than Harmony elements.
+
+(Earlier drafts of this section reasoned from storage type — "TSV
+files are not Harmony elements" — which is the wrong framing per the
+generalized ban principle. The verdict is unchanged; the reasoning
+was corrected post-recon.)
 
 ### DCML corpus key labels
 
@@ -148,10 +157,15 @@ aligning them with `KeyArea` spans would require new tooling. The effort is mode
 
 ### Verdict
 
-DCML key labels are usable for modulation-detection tuning (**yes-with-tooling**).
-The ban on chord-symbol input does not apply. The primary modulation-rich
-collections (Corelli 149, Mozart 54, Chopin 55) overlap with the pipeline snapshot
-corpus and are immediately available for comparison. New tooling is needed to
+DCML key labels are usable for modulation-detection tuning
+(**yes-with-tooling**). They serve as comparison metadata only —
+analyzer runs from notes alone, tool compares output to DCML labels
+post-hoc. This is the allowed-in-tools pattern per the generalized
+chord-symbol-ban principle (regardless of TSV vs. Harmony storage).
+
+The primary modulation-rich collections (Corelli 149, Mozart 54,
+Chopin 55) overlap with the pipeline snapshot corpus and are
+immediately available for comparison. New tooling is needed to
 automate the comparison; it can be developed as part of Phase 5a or 5b.
 
 ---
