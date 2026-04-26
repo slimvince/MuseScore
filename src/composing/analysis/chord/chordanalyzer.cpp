@@ -225,7 +225,13 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
 
     case ChordQuality::Minor:
         if (hasMaj7 && hasExtended) {
-            suffix = (hasNinth && hasNinthNatural) ? "mMaj9" : "mMaj7";
+            if (hasThirteenth) {
+                suffix = hasNinth ? "mMaj13" : "mMaj7add13";
+            } else if (hasEleventh) {
+                suffix = hasNinth ? "mMaj11" : "mMaj7add11";
+            } else {
+                suffix = hasNinthNatural ? "mMaj9" : "mMaj7";
+            }
         } else if (hasMin7 && hasThirteenth) {
             suffix = hasThirteenthFlat ? "mb13" : "m13";
         } else if (hasMin7 && hasEleventh) {
@@ -257,10 +263,14 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         break;
 
     case ChordQuality::HalfDiminished:
-        if (hasNinthNatural) {
+        if (hasNinthNatural && hasEleventh) {
+            suffix = "m11b5";
+        } else if (hasNinthNatural) {
             suffix = "m9b5";
         } else if (hasNinthFlat) {
             suffix = "m7b5b9";
+        } else if (hasEleventh) {
+            suffix = "m7b5add11";
         } else {
             suffix = "m7b5";
         }
@@ -270,7 +280,13 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         // Catalog convention: "#5" suffix notation (e.g. "7#5", "9#5", "Maj7#5"),
         // not "aug" prefix.  Order: [7|9|13] [#5] [b9|#9] [#11].
         if (hasMaj7) {
-            suffix = hasNinth ? "Maj9#5" : "Maj7#5";
+            if (hasNinthNatural) {
+                suffix = "Maj9#5";
+            } else {
+                suffix = "Maj7#5";
+                if (hasNinthFlat)  { suffix += "b9"; }
+                if (hasNinthSharp) { suffix += "#9"; }
+            }
         } else if (hasMin7) {
             if (hasThirteenth) {
                 suffix = "13#5";
@@ -299,10 +315,12 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         break;
 
     case ChordQuality::Suspended4:
-        if (hasMaj7 && hasNinth) {
+        if (hasMaj7 && hasNinthNatural) {
             suffix = "Maj9sus";
         } else if (hasMaj7) {
             suffix = "Maj7sus";
+            if (hasNinthFlat)  { suffix += "b9"; }
+            if (hasNinthSharp) { suffix += "#9"; }
         } else if (hasMin7) {
             // Base: highest implied extension.  Natural 9th only → "9sus".  Altered 9th or
             // no 9th → "7sus" (alteration appended below).  13th → "13sus".
