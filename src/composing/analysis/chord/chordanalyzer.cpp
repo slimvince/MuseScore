@@ -257,7 +257,13 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         break;
 
     case ChordQuality::HalfDiminished:
-        suffix = "m7b5";
+        if (hasNinthNatural) {
+            suffix = "m9b5";
+        } else if (hasNinthFlat) {
+            suffix = "m7b5b9";
+        } else {
+            suffix = "m7b5";
+        }
         break;
 
     case ChordQuality::Augmented:
