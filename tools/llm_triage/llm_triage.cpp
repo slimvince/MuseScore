@@ -1702,6 +1702,7 @@ static void emitAnalyzerJson(std::ostream& out,
         j["key"]                      = QString::fromStdString(keyShortStr(r.key));
         j["mode"]                     = QString::fromStdString(keySigModeStr(r.key.mode));
         j["confidence"]               = QString::fromStdString(confidenceOrdinal(nc, r.hasAnalyzedChord));
+        j["confidence_raw"]           = nc;
         j["reasoning"]                = "Analyzer call from collected pitch-class set; no free-form rationale.";
         j["tones_pc_set"]             = QString::fromStdString(pcSet);
         judgments.append(j);
