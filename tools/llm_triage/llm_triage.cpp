@@ -60,13 +60,18 @@
 #include <vector>
 
 // ── Qt ─────────────────────────────────────────────────────────────────────
+#include <QByteArray>
 #include <QCoreApplication>
+#include <QCryptographicHash>
 #include <QDateTime>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QGuiApplication>
 #include <QIODevice>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 #ifdef _WIN32
 extern "C" __declspec(dllimport) void* __stdcall GetCurrentProcess(void);
@@ -1542,6 +1547,180 @@ static void emitAnalyzerOutput(std::ostream& out,
 }
 
 // ══════════════════════════════════════════════════════════════════════════
+// Emitter 4: analyzer_response.json
+//
+// Emits a JSON file whose top-level shape (metadata + tool_input) matches the
+// LLM-side response files so v1.3's comparator can read all four sources
+// provider-agnostically.  Analyzer-specific additions (tick_start, tick_end,
+// tones_pc_set) are superset fields; the comparator must tolerate extra keys.
+//
+// Beat-range convention: "<startBeat>-<endBeat>" where both are 1-indexed
+// integer beats within the region's start measure and endBeat is exclusive.
+// "N-end" is used when the region extends to or past the measure boundary.
+// ══════════════════════════════════════════════════════════════════════════
+
+static std::string keySigModeStr(analysis::KeySigMode mode)
+{
+    switch (mode) {
+    case analysis::KeySigMode::Ionian:     return "Ionian";
+    case analysis::KeySigMode::Dorian:     return "Dorian";
+    case analysis::KeySigMode::Phrygian:   return "Phrygian";
+    case analysis::KeySigMode::Lydian:     return "Lydian";
+    case analysis::KeySigMode::Mixolydian: return "Mixolydian";
+    case analysis::KeySigMode::Aeolian:    return "Aeolian";
+    case analysis::KeySigMode::Locrian:    return "Locrian";
+    default:                               return "Ionian";
+    }
+}
+
+static std::string keyShortStr(const KeyModeAnalysisResult& key)
+{
+    const char* tonic = analysis::keyModeTonicName(key.keySignatureFifths, key.mode);
+    std::string display;
+    switch (key.mode) {
+    case analysis::KeySigMode::Ionian:  display = "major"; break;
+    case analysis::KeySigMode::Aeolian: display = "minor"; break;
+    default:                            display = keySigModeStr(key.mode); break;
+    }
+    return std::string(tonic) + " " + display;
+}
+
+// Maps normalizedConfidence (0–1 sigmoid-normalized score gap) to the LLM
+// schema ordinal.  Abstain when !hasAnalyzedChord or nc < 0.05.
+static std::string confidenceOrdinal(double nc, bool hasAnalyzedChord)
+{
+    if (!hasAnalyzedChord || nc < 0.05) return "abstain";
+    if (nc >= 0.80) return "very_high";
+    if (nc >= 0.60) return "high";
+    if (nc >= 0.40) return "medium";
+    if (nc >= 0.20) return "low";
+    return "very_low";
+}
+
+static void emitAnalyzerJson(std::ostream& out,
+                             const std::string& sourcePrefix,
+                             const std::string& sourcePath,
+                             const std::string& scoreContentHash,
+                             const std::vector<AnalyzedRegion>& regions,
+                             const Score* score)
+{
+    // Deterministic response ID: first 16 hex chars of SHA-256(hash || regionCount).
+    const std::string idInput = scoreContentHash + std::to_string(regions.size());
+    const QByteArray idHash = QCryptographicHash::hash(
+        QByteArray::fromStdString(idInput), QCryptographicHash::Sha256);
+    const std::string modelResponseId = "deterministic-"
+        + idHash.toHex().left(16).toStdString();
+
+    const QString tsUtc = QDateTime::currentDateTimeUtc().toString(Qt::ISODate);
+
+    QJsonObject metadata;
+    metadata["score_basename"]       = QString::fromStdString(sourcePrefix);
+    metadata["score_path"]           = QString::fromStdString(sourcePath);
+    metadata["score_content_hash"]   = QString::fromStdString(scoreContentHash);
+    metadata["requested_model"]      = "chordanalyzer-v0";
+    metadata["provider"]             = "musescore_analyzer";
+    metadata["model"]                = "chordanalyzer-v0";
+    metadata["model_response_id"]    = QString::fromStdString(modelResponseId);
+    metadata["prompt_version"]       = "v1.3-pre";
+    metadata["system_prompt_hash"]   = "";
+    metadata["tool_definition_hash"] = "";
+    metadata["timestamp_utc"]        = tsUtc;
+    metadata["input_tokens"]         = 0;
+    metadata["output_tokens"]        = 0;
+    metadata["stop_reason"]          = "completed";
+
+    QJsonArray judgments;
+    for (size_t i = 0; i < regions.size(); ++i) {
+        const AnalyzedRegion& r = regions[i];
+
+        const MeasureTickInfo startMti = locateMeasureByTick(
+            score, Fraction::fromTicks(r.startTick));
+        const MeasureTickInfo endMti = locateMeasureByTick(
+            score, Fraction::fromTicks(r.endTick));
+
+        const int startTickInMsr = r.startTick
+            - (startMti.measure ? startMti.measure->tick().ticks() : 0);
+        const int endTickInMsr = r.endTick
+            - (endMti.measure ? endMti.measure->tick().ticks() : 0);
+
+        const int startBeatInt = 1 + startTickInMsr / Constants::DIVISION;
+        std::string beatRange;
+        if (!startMti.measure) {
+            beatRange = "?";
+        } else {
+            const int msrDuration = startMti.measure->ticks().ticks();
+            const int endTickInStartMsr =
+                (endMti.measure && startMti.number == endMti.number)
+                ? endTickInMsr : msrDuration;
+            if (endTickInStartMsr >= msrDuration) {
+                beatRange = std::to_string(startBeatInt) + "-end";
+            } else {
+                const int endBeatInt = 1 + endTickInStartMsr / Constants::DIVISION;
+                beatRange = std::to_string(startBeatInt) + "-" + std::to_string(endBeatInt);
+            }
+        }
+
+        const std::string chordLabel = analysis::ChordSymbolFormatter::formatSymbol(
+            r.chord, r.key.keySignatureFifths);
+
+        // Alternatives deduped against the primary and against each other.
+        QJsonArray altArray;
+        {
+            std::set<std::string> seen;
+            seen.insert(chordLabel);
+            for (const auto& alt : r.alternatives) {
+                const std::string altSym = analysis::ChordSymbolFormatter::formatSymbol(
+                    alt, r.key.keySignatureFifths);
+                if (!seen.count(altSym)) {
+                    altArray.append(QString::fromStdString(altSym));
+                    seen.insert(altSym);
+                }
+            }
+        }
+
+        // tones_pc_set: sounding pitches sorted by MIDI pitch.
+        std::string pcSet;
+        {
+            std::vector<std::pair<int, int>> pitchTpc;
+            for (const auto& t : r.tones) pitchTpc.push_back({ t.pitch, t.tpc });
+            std::sort(pitchTpc.begin(), pitchTpc.end());
+            for (size_t pi = 0; pi < pitchTpc.size(); ++pi) {
+                if (pi > 0) pcSet += " ";
+                pcSet += pitchName(pitchTpc[pi].second, pitchTpc[pi].first);
+            }
+        }
+
+        const double nc = r.chord.identity.normalizedConfidence;
+
+        QJsonObject j;
+        j["measure"]                  = startMti.number;
+        j["beat_range"]               = QString::fromStdString(beatRange);
+        j["tick_start"]               = r.startTick;
+        j["tick_end"]                 = r.endTick;
+        j["chord_label"]              = QString::fromStdString(chordLabel);
+        j["chord_label_alternatives"] = altArray;
+        j["key"]                      = QString::fromStdString(keyShortStr(r.key));
+        j["mode"]                     = QString::fromStdString(keySigModeStr(r.key.mode));
+        j["confidence"]               = QString::fromStdString(confidenceOrdinal(nc, r.hasAnalyzedChord));
+        j["reasoning"]                = "Analyzer call from collected pitch-class set; no free-form rationale.";
+        j["tones_pc_set"]             = QString::fromStdString(pcSet);
+        judgments.append(j);
+    }
+
+    QJsonObject toolInput;
+    toolInput["judgments"]       = judgments;
+    toolInput["key_summary"]     = "";
+    toolInput["ambiguity_flags"] = QJsonArray{};
+    toolInput["format_friction"] = "";
+
+    QJsonObject root;
+    root["metadata"]   = metadata;
+    root["tool_input"] = toolInput;
+
+    out << QJsonDocument(root).toJson(QJsonDocument::Indented).constData();
+}
+
+// ══════════════════════════════════════════════════════════════════════════
 // main
 // ══════════════════════════════════════════════════════════════════════════
 
@@ -1586,6 +1765,16 @@ int main(int argc, char* argv[])
     }
     const size_t eligible = score->nstaves() - excludeStaves.size();
     std::cout << "staves: " << eligible << "/" << score->nstaves() << "\n";
+
+    // SHA-256 of the raw score file bytes (used in analyzer JSON metadata).
+    std::string scoreContentHash;
+    {
+        QFile f(args.at(1));
+        if (f.open(QIODevice::ReadOnly)) {
+            scoreContentHash = QCryptographicHash::hash(
+                f.readAll(), QCryptographicHash::Sha256).toHex().toStdString();
+        }
+    }
 
     // Analyze.
     const std::vector<AnalyzedRegion> regions = analyzeScore(score, excludeStaves);
@@ -1638,6 +1827,14 @@ int main(int argc, char* argv[])
         if (f.is_open()) {
             emitHeader(f, sourceBasename, sourcePath, "analyzer_output", score);
             emitAnalyzerOutput(f, regions, score);
+        }
+    }
+
+    // File 4: analyzer_response (JSON, parallel to LLM provider responses)
+    {
+        std::ofstream f = openOut("analyzer_response.json");
+        if (f.is_open()) {
+            emitAnalyzerJson(f, prefix, sourcePath, scoreContentHash, regions, score);
         }
     }
 
