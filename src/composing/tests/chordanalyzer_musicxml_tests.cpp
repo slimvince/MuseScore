@@ -10,6 +10,7 @@
 
 #include <cctype>
 #include <fstream>
+#include <map>
 #include <optional>
 #include <sstream>
 #include <set>
@@ -18,8 +19,10 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "engraving/dom/chordlist.h"
+#include "comparison_utils.h"
 
 using namespace mu::composing::analysis;
+using namespace mu::composing::testing;
 
 namespace {
 
@@ -859,6 +862,76 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         }
     }
 
+    // ── Classify symbol/roman mismatches via progressive comparison protocol ─
+    // Each mismatch entry may have a symbol field mismatch, a roman field
+    // mismatch, or both.  classifyComparison is called on each non-trivially-
+    // mismatched field; the entry's overall classification is the "worst" result
+    // (RealDiff > ConventionDiff > DirectMatch).
+    //
+    // ConventionDiff: the analyzer's output matches the catalog entry after
+    //   stripping extensions/alterations to some degree — a notation-convention
+    //   difference, not a real disagreement.
+    // RealDiff: no stripping degree + alteration-mode produces a match — the
+    //   analyzer and catalog identify substantively different content.
+
+    struct EntryClassification {
+        ComparisonResult::Kind kind  = ComparisonResult::RealDiff;
+        int  matchedAtDegree         = 0;
+        bool matchedWithAltsPreserved = false;
+    };
+
+    // Bucket: (degree, altsPreserved) → count for ConventionDiff entries
+    struct ConvDiffKey {
+        int  degree;
+        bool altsPreserved;
+        bool operator<(const ConvDiffKey& o) const {
+            if (degree != o.degree) { return degree > o.degree; } // descending
+            return static_cast<int>(altsPreserved) > static_cast<int>(o.altsPreserved);
+        }
+    };
+    std::map<ConvDiffKey, int> convDiffCounts;
+    std::vector<const MismatchEntry*> realDiffEntries;
+
+    for (const MismatchEntry& mm : symbolMismatches) {
+        const bool hasSym = !mm.expectedSymbol.empty()
+                            && !equivalentSymbolSpelling(mm.actualSymbol, mm.expectedSymbol);
+        const bool hasRom = !mm.expectedRoman.empty() && mm.actualRoman != mm.expectedRoman;
+
+        EntryClassification entry;
+        entry.kind = ComparisonResult::DirectMatch; // start optimistic; worst wins
+
+        auto worsen = [&](const ComparisonResult& cr) {
+            if (cr.kind > entry.kind) {
+                entry.kind                  = cr.kind;
+                entry.matchedAtDegree       = cr.matchedAtDegree;
+                entry.matchedWithAltsPreserved = cr.matchedWithAlterationsPreserved;
+            } else if (cr.kind == ComparisonResult::ConventionDiff
+                       && entry.kind == ComparisonResult::ConventionDiff
+                       && cr.matchedAtDegree < entry.matchedAtDegree) {
+                // Both ConventionDiff: keep the more restrictive (lower degree).
+                entry.matchedAtDegree          = cr.matchedAtDegree;
+                entry.matchedWithAltsPreserved  = cr.matchedWithAlterationsPreserved;
+            }
+        };
+
+        if (hasSym) {
+            worsen(classifyComparison(
+                QString::fromStdString(mm.actualSymbol),
+                QString::fromStdString(mm.expectedSymbol)));
+        }
+        if (hasRom) {
+            worsen(classifyComparison(
+                QString::fromStdString(mm.actualRoman),
+                QString::fromStdString(mm.expectedRoman)));
+        }
+
+        if (entry.kind == ComparisonResult::ConventionDiff) {
+            convDiffCounts[{ entry.matchedAtDegree, entry.matchedWithAltsPreserved }]++;
+        } else {
+            realDiffEntries.push_back(&mm);
+        }
+    }
+
     // ── Build report ─────────────────────────────────────────────────────────
     std::ostringstream report;
 
@@ -869,22 +942,35 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
     }
 
-    report << "\n=== Symbol/Roman mismatch summary: total=" << symbolMismatches.size() << " ===\n";
-    report << "Per-measure symbol mismatches (abstract correct; inspect pitches to determine\n"
-           << "  whether this is a formatter bug or a catalog annotation inconsistency):\n";
-    for (const MismatchEntry& mm : symbolMismatches) {
-        const bool sym = !mm.expectedSymbol.empty() && mm.expectedSymbol != mm.actualSymbol;
-        const bool rom = !mm.expectedRoman.empty()  && mm.expectedRoman  != mm.actualRoman;
+    report << "\n=== Symbol/Roman mismatch classification (total=" << symbolMismatches.size() << ") ===\n";
+    report << "Progressive comparison protocol applied per entry.\n\n";
+
+    // ConventionDiff buckets (sorted descending by degree)
+    int convDiffTotal = 0;
+    for (const auto& kv : convDiffCounts) {
+        convDiffTotal += kv.second;
+        report << "ConventionDiff at degree " << kv.first.degree
+               << " (alterations " << (kv.first.altsPreserved ? "preserved" : "dropped")
+               << "): " << kv.second << "\n";
+    }
+    report << "ConventionDiff total: " << convDiffTotal << "\n";
+    report << "RealDiff: " << realDiffEntries.size() << "\n\n";
+
+    report << "=== RealDiff entries (actionable) ===\n";
+    for (const MismatchEntry* mm : realDiffEntries) {
+        const bool sym = !mm->expectedSymbol.empty()
+                         && !equivalentSymbolSpelling(mm->actualSymbol, mm->expectedSymbol);
+        const bool rom = !mm->expectedRoman.empty() && mm->expectedRoman != mm->actualRoman;
         const char* cat = (sym && rom) ? "symbol+roman" : (sym ? "symbol" : "roman");
-        report << "measure " << mm.measureNumber << " [" << cat << "]";
+        report << "measure " << mm->measureNumber << " [" << cat << "]";
         if (sym) {
-            report << "  xml='" << mm.expectedSymbol << "'  analyzer='" << mm.actualSymbol << "'";
+            report << "  xml='" << mm->expectedSymbol << "'  analyzer='" << mm->actualSymbol << "'";
         }
         if (rom) {
-            report << "  roman xml='" << mm.expectedRoman << "'  analyzer='" << mm.actualRoman << "'";
+            report << "  roman xml='" << mm->expectedRoman << "'  analyzer='" << mm->actualRoman << "'";
         }
         report << "\n";
-        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
+        writeMismatchDebugContext(report, mm->pitches, mm->tpcs, mm->keyFifths, mm->keyMode);
     }
 
     const std::string reportPath = (QString::fromUtf8(composing_tests_DATA_ROOT)
@@ -894,15 +980,27 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         reportFile << report.str();
     }
 
-    // Only hard-fail on abstract mismatches; symbol mismatches are informational.
+    // Hard-fail on abstract mismatches (root/quality wrong — real analyzer bugs).
     if (!abstractMismatches.empty()) {
         std::ostringstream failMsg;
-        failMsg << "Abstract chord mismatch summary: total=" << abstractMismatches.size() << "\n";
-        failMsg << "Per-measure mismatches:\n";
+        failMsg << "Abstract chord mismatches: " << abstractMismatches.size() << "\n";
         for (const MismatchEntry& mm : abstractMismatches) {
             failMsg << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
             writeMismatchDebugContext(failMsg, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
         }
+        FAIL() << failMsg.str();
+    }
+
+    // Hard-fail when RealDiff count exceeds the pinned baseline.
+    // RealDiff entries are actionable analyzer disagreements — notation-convention
+    // differences (ConventionDiff) are expected and not failures.
+    // Baseline pinned after empirical Step-D run; initially set conservatively.
+    constexpr int kRealDiffBaseline = 10;
+    if (static_cast<int>(realDiffEntries.size()) > kRealDiffBaseline) {
+        std::ostringstream failMsg;
+        failMsg << "RealDiff count " << realDiffEntries.size()
+                << " exceeds baseline " << kRealDiffBaseline << "\n";
+        failMsg << "ConventionDiff total: " << convDiffTotal << "\n";
         FAIL() << failMsg.str();
     }
 }
