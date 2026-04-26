@@ -189,7 +189,6 @@ inline void setExtension(uint32_t& ext, Extension flag)
 /// Contains no key-function information.
 struct ChordIdentity {
     double score = 0.0;                ///< Template match score (higher = better); ranking only.
-    double normalizedConfidence = 0.0; ///< Sigmoid-normalized score gap, 0.0–1.0; see §P8d.
     int rootPc = 0;           ///< Root pitch class (0–11)
     int rootTpc = -1;         ///< Root TPC for enharmonic-correct naming; -1 = unknown
     int bassPc = 0;           ///< Bass pitch class (0–11)
@@ -388,25 +387,14 @@ struct ChordAnalyzerPreferences {
 
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 
-    /// Minimum normalizedConfidence for the upper-voice-only Pass 2 result to
-    /// confirm a structural pedal point.  If the upper voices produce a chord
-    /// with confidence below this threshold, the full-sonority Pass 1 result is
-    /// kept and no pedal annotation is made.
+    /// Minimum confidence for the upper-voice-only Pass 2 result to confirm a
+    /// structural pedal point.  Confidence is computed inline as a sigmoid of
+    /// the score gap to the best different-root competitor (midpoint=2.0,
+    /// steepness=1.5).  If below this threshold, the full-sonority Pass 1 result
+    /// is kept and no pedal annotation is made.
     /// Conservative default — only flag very confident pedals.
     /// Range: 0.3–0.95.  Default: 0.65.
     double pedalConfidenceThreshold = 0.65;
-
-    // ── Confidence normalization (§P8d) ─────────────────────────────────────
-
-    /// Score gap (winner − runner-up) at which normalizedConfidence = 0.5.
-    /// Same empirical default as KeyModeAnalyzerPreferences.
-    /// Range: 0.5–5.0.  Default: 2.0.
-    double confidenceSigmoidMidpoint = 2.0;
-
-    /// Steepness of the sigmoid mapping score gap to confidence.
-    /// Larger values produce sharper transitions; same as key analyzer.
-    /// Range: 0.5–5.0.  Default: 1.5.
-    double confidenceSigmoidSteepness = 1.5;
 
     // ── Score annotations (future — not yet implemented) ────────────────────
     // These are intentionally off.  When the score-annotation pipeline is ready,
@@ -457,8 +445,6 @@ struct ChordAnalyzerPreferences {
             { "pedalTailWeightMultiplier",              { 0.0, 1.0 } },
             { "bassPassingToneMinWeightFraction",       { 0.0, 0.5 } },
             { "pedalConfidenceThreshold",               { 0.3, 0.95 } },
-            { "confidenceSigmoidMidpoint",              { 0.5, 5.0 } },
-            { "confidenceSigmoidSteepness",             { 0.5, 5.0 } },
             { "extensionThreshold",                     { 0.10, 0.30 } },
         };
     }

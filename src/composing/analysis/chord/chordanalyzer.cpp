@@ -1459,19 +1459,6 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
     return score;
 }
 
-// ── Confidence normalization (§P8d) ────────────────────────────────────────────
-//
-// Maps the score gap between winner and runner-up through a sigmoid to produce
-// a 0.0–1.0 normalizedConfidence value.  Sigmoid shape and k parameter mirror
-// KeyModeAnalyzer's implementation so the two confidence values are comparable.
-static double normalizeChordConfidence(double winnerScore, double runnerUpScore,
-                                       const ChordAnalyzerPreferences& prefs)
-{
-    const double gap = winnerScore - runnerUpScore;
-    return 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
-                                  * (gap - prefs.confidenceSigmoidMidpoint)));
-}
-
 /// Returns true if bassPc is a chord tone of the chord identified by (rootPc, quality,
 /// extensions).  Used by the two-pass pedal detection to decide whether the bass note
 /// belongs to the upper-voice chord or is a structural pedal point.
@@ -1950,19 +1937,6 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         }
     }
 
-    // ── Populate normalizedConfidence for each result ─────────────────────────
-    if (!results.empty()) {
-        const double winnerScore = results.front().identity.score;
-        const double runnerUpScore = (results.size() >= 2) ? results[1].identity.score : 0.0;
-        results[0].identity.normalizedConfidence
-            = normalizeChordConfidence(winnerScore, runnerUpScore, prefs);
-        for (size_t i = 1; i < results.size(); ++i) {
-            const double iRunnerUp = (i + 1 < results.size()) ? results[i + 1].identity.score : 0.0;
-            results[i].identity.normalizedConfidence
-                = normalizeChordConfidence(results[i].identity.score, iRunnerUp, prefs);
-        }
-    }
-
     // ── Two-pass pedal point detection ────────────────────────────────────────
     //
     // Definition: a structural pedal point is a sustained bass note that is NOT
@@ -2017,9 +1991,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     // DIFFERENT root.  Multiple templates for the same chord quality
                     // (triad / maj7 / dom7) can score identically when their extended
                     // tones are absent, filling all three result slots with the same
-                    // root — making normalizedConfidence artificially low.
+                    // root — making a gap-to-next-in-list metric artificially low.
                     // Comparing the winner's score against the best genuine alternative
                     // (different rootPc) gives a meaningful pedal-confirmation signal.
+                    // Sigmoid constants (midpoint=2.0, steepness=1.5) are the empirical
+                    // defaults from ChordAnalyzerPreferences, inlined here after the
+                    // chord-level normalizedConfidence field was removed as dead code.
                     double pass2AltScore = 0.0;
                     const int p2Root = pass2.front().identity.rootPc;
                     for (size_t i = 1; i < pass2.size(); ++i) {
@@ -2029,9 +2006,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         }
                     }
                     const double gap = pass2.front().identity.score - pass2AltScore;
-                    const double c2  = 1.0 / (1.0 + std::exp(
-                        -prefs.confidenceSigmoidSteepness
-                        * (gap - prefs.confidenceSigmoidMidpoint)));
+                    const double c2  = 1.0 / (1.0 + std::exp(-1.5 * (gap - 2.0)));
                     if (c2 >= prefs.pedalConfidenceThreshold) {
                         // Confirmed pedal — replace results with Pass 2.
                         results = pass2;
