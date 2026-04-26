@@ -1,20 +1,20 @@
 === Abstract chord mismatch summary: total=0 ===
 Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
 
-=== Symbol/Roman mismatch classification (total=135) ===
+=== Symbol/Roman mismatch classification (total=131) ===
 Progressive comparison protocol applied per entry.
 
 ConventionDiff at degree 13 (alterations preserved): 3
 ConventionDiff at degree 11 (alterations dropped): 3
 ConventionDiff at degree 9 (alterations preserved): 2
-ConventionDiff at degree 9 (alterations dropped): 4
-ConventionDiff at degree 7 (alterations preserved): 41
-ConventionDiff at degree 7 (alterations dropped): 72
-ConventionDiff total: 125
-RealDiff: 10
+ConventionDiff at degree 9 (alterations dropped): 3
+ConventionDiff at degree 7 (alterations preserved): 42
+ConventionDiff at degree 7 (alterations dropped): 71
+ConventionDiff total: 124
+RealDiff: 7
 
 === RealDiff entries (actionable) ===
-measure 60 [symbol+roman]  xml='Cm9b5'  analyzer='Cm7b5'  roman xml='iø7'  analyzer='iø9#11'
+measure 60 [symbol+roman]  xml='Cm9b5'  analyzer='Cm7b5'  roman xml='iø7'  analyzer='iø9'
   key=0maj  pitches=[60,63,66,70,74]  pcs=[0,3,6,10,2]  tpcs=[15,12,9,13,17]
 measure 164 [symbol+roman]  xml='C7alt'  analyzer='C7b9b5'  roman xml='I7'  analyzer='I7b5b9'
   key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
@@ -28,9 +28,3 @@ measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm7add11'  roman xml='i7'  a
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
 measure 340 [roman]  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,67]  pcs=[0,6,7]  tpcs=[15,21,16]
-measure 364 [roman]  roman xml='viiø65'  analyzer='viiø7#1165'
-  key=0maj  pitches=[62,65,69,71]  pcs=[2,5,9,11]  tpcs=[17,14,18,20]
-measure 366 [roman]  roman xml='viiø43'  analyzer='viiø7#1143'
-  key=0maj  pitches=[65,69,71,74]  pcs=[5,9,11,2]  tpcs=[14,18,20,17]
-measure 368 [roman]  roman xml='viiø42'  analyzer='viiø7#1142'
-  key=0maj  pitches=[57,59,62,65]  pcs=[9,11,2,5]  tpcs=[18,20,17,14]

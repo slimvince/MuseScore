@@ -889,7 +889,11 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
         f.hasFlatFifth = rawFlatFifth && !preferSharp11;
     }
     // Suppress #11 flag when treating pc+6 as b5 to avoid double-counting.
-    f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth;
+    // Also suppress for HalfDiminished: the b5 is structural there (rawFlatFifth
+    // is blocked above), so hasFlatFifth is always false for half-dim even though
+    // the note at +6 is the chord's own diminished fifth, not an added #11.
+    f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth
+                         && quality != ChordQuality::HalfDiminished;
 
     // pc+8: flat-13th when a "fifth slot" is filled (natural 5th or flat 5th present);
     // augmented-5th (#5) otherwise.  When a b5 (Gb) already occupies the fifth slot,
