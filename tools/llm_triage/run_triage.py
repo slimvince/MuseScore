@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Python interpreter: /c/s/MS/.venv/Scripts/python.exe  (mainline venv, anthropic 0.97.0, google-genai 1.73.1)
+# Python interpreter: /c/s/MS/.venv/Scripts/python.exe  (mainline venv, anthropic 0.97.0, google-genai 1.73.1, openai 2.32.0)
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import anthropic
+import openai
 from google import genai
 from google.genai import types as gtypes
 
@@ -213,6 +214,21 @@ def _base_metadata(
     }
 
 
+def _is_cached(json_path: Path, expected: dict) -> bool:
+    """Return True if json_path exists with metadata matching all five
+    cache-key fields. Error-stub responses are never treated as cached."""
+    if not json_path.exists():
+        return False
+    try:
+        existing = json.loads(json_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return False
+    if "error" in existing:
+        return False
+    meta = existing.get("metadata", {})
+    return all(meta.get(k) == v for k, v in expected.items())
+
+
 # ---------------------------------------------------------------------------
 # Claude provider
 # ---------------------------------------------------------------------------
@@ -388,11 +404,85 @@ def call_gemini(
 
 
 # ---------------------------------------------------------------------------
+# OpenAI provider
+# ---------------------------------------------------------------------------
+
+def call_openai(
+    notes_only_text: str, model: str, max_tokens: int, prompt_version: str
+) -> ProviderResult:
+    client = openai.OpenAI()  # reads OPENAI_API_KEY from env
+
+    tool_param = {
+        "type": "function",
+        "function": {
+            "name": TOOL_NAME,
+            "description": TOOL_DESCRIPTION,
+            "parameters": INPUT_SCHEMA,
+        },
+    }
+
+    last_exc = None
+    response = None
+
+    for attempt in range(3):
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": notes_only_text},
+                ],
+                tools=[tool_param],
+                tool_choice={
+                    "type": "function",
+                    "function": {"name": TOOL_NAME},
+                },
+                max_completion_tokens=max_tokens,
+            )
+            break
+        except (openai.RateLimitError, openai.APIStatusError) as exc:
+            last_exc = exc
+            if attempt == 2:
+                raise
+            time.sleep([1, 4, 16][attempt])
+    else:
+        raise RuntimeError(
+            f"OpenAI API failed after 3 attempts. Last: {last_exc}"
+        ) from last_exc
+
+    msg = response.choices[0].message
+    if not msg.tool_calls:
+        raise RuntimeError("OpenAI response missing tool_calls")
+    args_str = msg.tool_calls[0].function.arguments  # JSON string
+    tool_input = json.loads(args_str)
+
+    metadata = _base_metadata(
+        provider="openai",
+        model=response.model,
+        response_id=response.id,
+        input_tokens=response.usage.prompt_tokens,
+        output_tokens=response.usage.completion_tokens,
+        stop_reason=response.choices[0].finish_reason or "",
+        prompt_version=prompt_version,
+    )
+
+    # Record reasoning tokens separately if the model reported them.
+    details = getattr(response.usage, "completion_tokens_details", None)
+    if details is not None:
+        reasoning_tokens = getattr(details, "reasoning_tokens", None)
+        if reasoning_tokens is not None:
+            metadata["reasoning_tokens"] = reasoning_tokens
+
+    return ProviderResult(tool_input=tool_input, metadata=metadata)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 _CLAUDE_DEFAULT = "claude-sonnet-4-6"
 _GEMINI_DEFAULT = "gemini-3.1-pro-preview"
+_OPENAI_DEFAULT = "gpt-5.5"
 
 
 def main() -> None:
@@ -408,8 +498,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--providers",
-        default="claude,gemini",
-        help="Comma-separated list of providers to call (default: claude,gemini)",
+        default="claude,gemini,openai",
+        help="Comma-separated list of providers to call (default: claude,gemini,openai)",
     )
     parser.add_argument(
         "--claude-model",
@@ -422,8 +512,13 @@ def main() -> None:
         help=f"Gemini model ID (default: {_GEMINI_DEFAULT})",
     )
     parser.add_argument(
+        "--openai-model",
+        default=_OPENAI_DEFAULT,
+        help=f"OpenAI model ID (default: {_OPENAI_DEFAULT})",
+    )
+    parser.add_argument(
         "--prompt-version",
-        default="v1.1",
+        default="v1.2",
         help="Short string for traceability in the response file",
     )
     parser.add_argument(
@@ -431,6 +526,11 @@ def main() -> None:
         type=int,
         default=32768,
         help="max_tokens for API calls (default: 32768)",
+    )
+    parser.add_argument(
+        "--force-refresh",
+        action="store_true",
+        help="Re-call all selected providers, ignoring the cache.",
     )
     args = parser.parse_args()
 
@@ -442,7 +542,14 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     providers = [p.strip() for p in args.providers.split(",") if p.strip()]
-    model_for = {"claude": args.claude_model, "gemini": args.gemini_model}
+    model_for = {
+        "claude": args.claude_model,
+        "gemini": args.gemini_model,
+        "openai": args.openai_model,
+    }
+
+    # Compute score hash once; used as part of each provider's cache key.
+    score_content_hash = hashlib.sha256(score_path.read_bytes()).hexdigest()
 
     # Invoke the C++ binary once to produce the .txt artifacts.
     binary = Path(args.llm_triage_binary)
@@ -468,18 +575,41 @@ def main() -> None:
 
     notes_only_content = notes_only_path.read_text(encoding="utf-8")
 
+    # Pre-compute the cache-key fields that are constant across providers.
+    system_prompt_hash = _sha256(SYSTEM_PROMPT)
+    tool_definition_hash = _sha256(json.dumps(TOOL, sort_keys=True))
+
     # Call each provider; isolate failures.
     succeeded = 0
     failed = 0
+    skipped = 0
 
     for provider in providers:
         model = model_for.get(provider, "")
         json_path = output_dir / f"{basename}.{provider}_response.json"
+
+        expected_cache_key = {
+            "score_content_hash": score_content_hash,
+            "requested_model": model,
+            "prompt_version": args.prompt_version,
+            "system_prompt_hash": system_prompt_hash,
+            "tool_definition_hash": tool_definition_hash,
+        }
+
+        if not args.force_refresh and _is_cached(json_path, expected_cache_key):
+            existing = json.loads(json_path.read_text(encoding="utf-8"))
+            n = len(existing.get("tool_input", {}).get("judgments", []))
+            print(f"provider={provider}  CACHED  judgments={n}  output={json_path}")
+            skipped += 1
+            continue
+
         try:
             if provider == "claude":
                 pr = call_claude(notes_only_content, model, args.max_tokens, args.prompt_version)
             elif provider == "gemini":
                 pr = call_gemini(notes_only_content, model, args.max_tokens, args.prompt_version)
+            elif provider == "openai":
+                pr = call_openai(notes_only_content, model, args.max_tokens, args.prompt_version)
             else:
                 raise ValueError(f"Unknown provider: {provider!r}")
 
@@ -487,6 +617,8 @@ def main() -> None:
                 "metadata": {
                     "score_basename": basename,
                     "score_path": str(score_path.resolve()),
+                    "score_content_hash": score_content_hash,
+                    "requested_model": model,
                     **pr.metadata,
                 },
                 "tool_input": pr.tool_input,
@@ -522,10 +654,10 @@ def main() -> None:
                 f"provider={provider}  status=FAILED  error_stub={json_path}"
             )
 
-    # Exit codes: 0 = all OK, 1 = partial, 2 = all failed.
+    # Exit codes: 0 = all OK (including all-cached), 1 = partial, 2 = all failed.
     if failed == 0:
         sys.exit(0)
-    elif succeeded > 0:
+    elif (succeeded + skipped) > 0:
         sys.exit(1)
     else:
         sys.exit(2)
