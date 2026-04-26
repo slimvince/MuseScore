@@ -82,7 +82,7 @@
         },
         {
             "key": "F",
-            "text": "Em7/D",
+            "text": "Em7b9/D",
             "tick": 2400
         },
         {
@@ -92,7 +92,7 @@
         },
         {
             "key": "F",
-            "text": "Em7/D",
+            "text": "Em7b9/D",
             "tick": 2400
         },
         {
@@ -222,7 +222,7 @@
         },
         {
             "key": "A",
-            "text": "Em7/D",
+            "text": "Em7b9/D",
             "tick": 6240
         },
         {
@@ -232,7 +232,7 @@
         },
         {
             "key": "A",
-            "text": "Em7/D",
+            "text": "Em7b9/D",
             "tick": 6240
         },
         {
@@ -347,7 +347,7 @@
         },
         {
             "key": "A",
-            "text": "C",
+            "text": "Cadd#9",
             "tick": 10560
         },
         {
@@ -357,7 +357,7 @@
         },
         {
             "key": "A",
-            "text": "C",
+            "text": "Cadd#9",
             "tick": 10560
         },
         {
@@ -367,7 +367,7 @@
         },
         {
             "key": "A",
-            "text": "C",
+            "text": "Cadd#9",
             "tick": 11520
         },
         {
@@ -377,7 +377,7 @@
         },
         {
             "key": "A",
-            "text": "C",
+            "text": "Cadd#9",
             "tick": 11520
         },
         {
@@ -1056,7 +1056,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Em7/D",
+            "harmonyText": "Em7b9/D",
             "pitches": [
                 65,
                 67,
@@ -1123,7 +1123,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Em7/D",
+            "harmonyText": "Em7b9/D",
             "pitches": [
                 65,
                 67,
@@ -1180,7 +1180,7 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "C",
+            "harmonyText": "Cadd#9",
             "pitches": [
                 63,
                 64,
@@ -1190,7 +1190,7 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "C",
+            "harmonyText": "Cadd#9",
             "pitches": [
                 63,
                 64,

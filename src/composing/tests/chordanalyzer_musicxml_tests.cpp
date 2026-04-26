@@ -995,7 +995,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
     // RealDiff entries are actionable analyzer disagreements — notation-convention
     // differences (ConventionDiff) are expected and not failures.
     // Baseline pinned after empirical Step-D run; initially set conservatively.
-    constexpr int kRealDiffBaseline = 7;
+    constexpr int kRealDiffBaseline = 5;
     if (static_cast<int>(realDiffEntries.size()) > kRealDiffBaseline) {
         std::ostringstream failMsg;
         failMsg << "RealDiff count " << realDiffEntries.size()

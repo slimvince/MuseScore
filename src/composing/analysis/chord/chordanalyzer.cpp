@@ -2204,7 +2204,9 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
                                         hasExtension(result.identity.extensions, Extension::MajorSeventh),
                                         hasExtension(result.identity.extensions, Extension::DiminishedSeventh),
                                         hasExtension(result.identity.extensions, Extension::AddedSixth),
-                                        hasExtension(result.identity.extensions, Extension::NaturalNinth),
+                                        hasExtension(result.identity.extensions, Extension::NaturalNinth)
+                                            || hasExtension(result.identity.extensions, Extension::FlatNinth)
+                                            || hasExtension(result.identity.extensions, Extension::SharpNinth),
                                         hasExtension(result.identity.extensions, Extension::NaturalNinth),
                                         hasExtension(result.identity.extensions, Extension::NaturalEleventh),
                                         hasExtension(result.identity.extensions, Extension::NaturalThirteenth),

@@ -9,9 +9,9 @@ ConventionDiff at degree 11 (alterations dropped): 3
 ConventionDiff at degree 9 (alterations preserved): 2
 ConventionDiff at degree 9 (alterations dropped): 3
 ConventionDiff at degree 7 (alterations preserved): 42
-ConventionDiff at degree 7 (alterations dropped): 71
-ConventionDiff total: 124
-RealDiff: 7
+ConventionDiff at degree 7 (alterations dropped): 73
+ConventionDiff total: 126
+RealDiff: 5
 
 === RealDiff entries (actionable) ===
 measure 60 [symbol+roman]  xml='Cm9b5'  analyzer='Cm7b5'  roman xml='iø7'  analyzer='iø9'
@@ -20,11 +20,7 @@ measure 164 [symbol+roman]  xml='C7alt'  analyzer='C7b9b5'  roman xml='I7'  anal
   key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
 measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,70,74]  pcs=[0,6,10,2]  tpcs=[15,21,25,17]
-measure 316 [symbol+roman]  xml='CMaj7#9'  analyzer='CMaj7'  roman xml='IM7'  analyzer='IM7#9'
-  key=0maj  pitches=[60,64,67,71,75]  pcs=[0,4,7,11,3]  tpcs=[15,19,16,20,24]
-measure 329 [symbol+roman]  xml='Cm7b9'  analyzer='Cm7'  roman xml='i7'  analyzer='i7b9'
-  key=0maj  pitches=[60,63,67,70,73]  pcs=[0,3,7,10,1]  tpcs=[15,12,16,13,10]
-measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm7add11'  roman xml='i7'  analyzer='i11b9'
+measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm11'  roman xml='i7'  analyzer='i11b9'
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
 measure 340 [roman]  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,67]  pcs=[0,6,7]  tpcs=[15,21,16]

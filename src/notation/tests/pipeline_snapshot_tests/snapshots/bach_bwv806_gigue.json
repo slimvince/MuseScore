@@ -322,7 +322,7 @@
         },
         {
             "key": "A",
-            "text": "G#m",
+            "text": "G#maddb9",
             "tick": 10680
         },
         {
@@ -332,7 +332,7 @@
         },
         {
             "key": "A",
-            "text": "G#m",
+            "text": "G#maddb9",
             "tick": 10680
         },
         {
@@ -402,7 +402,7 @@
         },
         {
             "key": "A",
-            "text": "G#m7",
+            "text": "G#m7b9",
             "tick": 15360
         },
         {
@@ -412,7 +412,7 @@
         },
         {
             "key": "A",
-            "text": "G#m7",
+            "text": "G#m7b9",
             "tick": 15360
         },
         {
@@ -1059,7 +1059,7 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "G#m",
+            "harmonyText": "G#maddb9",
             "pitches": [
                 69,
                 71,
@@ -1144,7 +1144,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "G#m7",
+            "harmonyText": "G#m7b9",
             "pitches": [
                 69,
                 71,
