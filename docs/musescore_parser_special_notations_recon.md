@@ -20,11 +20,26 @@ is emittable and represents an actionable analyzer gap.
 | m164 | `C7alt` | `C7b9b5` | Recognized (id=113) | No | Semantic mismatch |
 | m285 | `CTristan` | `''` | Recognized (id=195) | No | Formatter-gap |
 | m333 | `CPhryg` | `Cm11` | Recognized (id=222) | No | Formatter-gap |
-| m340 | `Csus#4` ¹ | `Csus#4` | Recognized | Yes | Symbol matches; Roman mismatch only |
+| m340 | `Csus#4` ¹ | `Csus#4` | Recognized | Yes | RealDiff (Roman field only) — see ¹ |
 
 ¹ m340's symbol is `Csus#4` per the catalog XML, NOT a special notation; the
 analyzer correctly emits `Csus#4`. Only the Roman numeral mismatches (`I` vs
 `Isus4`). m340 is out of scope for this recon's special-notation question.
+
+The Roman mismatch is **correctly classified as RealDiff** by
+`classifyComparison`. `stripSymbol` is intentionally scoped to degree
+extensions (7/9/11/13) and alteration tokens (b9, #9, #11, b13, b5, #5); it
+does not strip quality suffixes. Reducing `Isus4 → I` would remove a quality
+identifier, not decoration — outside the protocol's scope by design.
+
+The classification reflects a known analyzer-vs-convention difference: the
+analyzer emits `Isus4` because the sus tone is sounding; traditional Roman
+numeral convention writes bare `I`, treating the suspension as a non-chord-tone
+decoration. NCT detection (deferred; design at `docs/nct_detection_design.md`,
+`project_nct_detection_deferred` memory) would close this case if pursued.
+
+m340 is in `kSymbolExceptions` so no test hard-fails on it. The RealDiff
+informational entry in `chord_mismatch_report.txt` is accurate.
 
 **Recommended resolution: Option (A) + targeted Option (B)**  
 Extend `classifyComparison` with a `FormatterGap` sub-category for `CTristan` and
@@ -212,11 +227,17 @@ Tristan")` → root=C, extension=`" Tristan"` (leading space). The name lookup
    ```
 5. **RECOGNIZED.** Voicing C Db Eb F G Bb exactly matches m333's pitches {0,1,3,5,7,10}.
 
-### m340 `Csus#4` (symbol only; no charter for this recon)
+### m340 `Csus#4` (symbol matches; Roman numeral mismatch only)
 
 Confirmed from catalog XML that the expected symbol is `Csus#4` (not a special
-notation). `sus#4` is in `chords.xml`. The analyzer correctly emits `Csus#4`. The
-only mismatch is the Roman numeral (`I` vs `Isus4`). Out of scope for this recon.
+notation). `sus#4` is in `chords.xml`. The analyzer correctly emits `Csus#4`.
+The `[roman]` tag in the mismatch report confirms the symbol comparison passes;
+only the Roman numeral differs (`I` vs `Isus4`).
+
+The mismatch is correctly classified as RealDiff — see footnote ¹ in the
+Verdict table for the full rationale (protocol scope, analyzer-vs-convention
+difference, NCT detection deferral). Out of scope for this recon's
+special-notation question.
 
 ---
 
