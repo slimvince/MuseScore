@@ -1010,7 +1010,7 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     }
 
     const Selection& sel = score->selection();
-    if (!sel.isRange()) {
+    if (sel.isNone()) {
         return;
     }
 
@@ -1018,10 +1018,36 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
         return;
     }
 
-    const Fraction startTick = sel.tickStart();
-    const Fraction endTick   = sel.tickEnd();
-    const staff_idx_t staffFirst = sel.staffStart();
-    const staff_idx_t staffLast  = sel.staffEnd(); // exclusive
+    Fraction startTick;
+    Fraction endTick;
+    staff_idx_t staffFirst = 0;
+    staff_idx_t staffLast  = 0; // exclusive
+
+    if (sel.isRange()) {
+        startTick  = sel.tickStart();
+        endTick    = sel.tickEnd();
+        staffFirst = sel.staffStart();
+        staffLast  = sel.staffEnd();
+    } else {
+        // List or single-element selection: derive range from selected notes.
+        const std::vector<Note*> notes = sel.noteList();
+        if (notes.empty()) {
+            return;
+        }
+        startTick  = notes.front()->tick();
+        endTick    = startTick;
+        staffFirst = notes.front()->staffIdx();
+        staffLast  = staffFirst + 1;
+        for (const Note* n : notes) {
+            const Fraction t    = n->tick();
+            const Fraction tend = t + n->chord()->ticks();
+            if (t < startTick)       startTick  = t;
+            if (tend > endTick)      endTick    = tend;
+            const staff_idx_t si = n->staffIdx();
+            if (si < staffFirst)     staffFirst = si;
+            if (si + 1 > staffLast)  staffLast  = si + 1;
+        }
+    }
 
     // Build analysis exclude set: chord track staves contribute symbols, not notes.
     std::set<size_t> excludeStaves = chordTrackExcludeStaves(score);
