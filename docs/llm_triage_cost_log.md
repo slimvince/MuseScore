@@ -98,3 +98,64 @@ calls made since the last entry, and anything notable (reasoning-token
 usage, surprise cost spikes, provider outages, model deprecations).
 Don't overwrite the previous entry — keeping the running history
 makes drift visible.
+
+## Update — 2026-04-26 (v1.3-prep round)
+
+Added one Bach chorale to the cache: `bwv10.7` (~46-68 judgments per
+source depending on granularity). All three LLMs called fresh
+(no cache hits — first run on this score).
+
+| Provider | Calls (since prior log) | Tokens (in+out) | Actual spend |
+|----------|-------------------------|-----------------|--------------|
+| Claude   | 1   | 4099 + 7462         | $0.12        |
+| Gemini   | 1   | 3205 + 3730         | 2.36 SEK     |
+| OpenAI   | 1   | 3108 + 10637        | $0.34        |
+
+Total round: $0.12 + 2.36 SEK (~$0.22) + $0.34 ≈ **$0.68 USD**
+across all three providers on this single Bach chorale (much
+shorter than Pachelbel).
+
+**Forecasting recalibration.** Pre-bwv10.7 forecasts (per the
+"Per-call cost shape" section earlier in this doc) underestimated
+Gemini and OpenAI costs:
+
+- **Gemini was the surprise.** Visible tokens (3205 in + 3730 out)
+  suggest a small bill, but `gemini-3.1-pro-preview` either bills
+  reasoning/thinking tokens beyond the visible output, or its rates
+  are higher than the modest tier most older Gemini models used.
+  Per-call reality is ~$0.20-0.25 on a small score, **not 5× cheaper
+  than OpenAI as I'd modeled — closer to par.**
+- **OpenAI** continues to be expensive due to reasoning-mode billing
+  (10,637 output tokens for 65 judgments — much of that is internal
+  reasoning).
+- **Claude** matches the $3-in/$15-out Sonnet rate model accurately.
+
+## Updated cumulative totals (Pachelbel + bwv10.7)
+
+| Provider | Total spend         | Paid calls | Per-call average      |
+|----------|---------------------|------------|-----------------------|
+| Claude   | $2.52 USD           | 5          | ~$0.50                |
+| Gemini   | 9.76 SEK (~$0.91)   | 4          | ~2.44 SEK (~$0.23)    |
+| OpenAI   | ~$2.68 USD          | 3          | ~$0.89                |
+| **Total**| **~$6.11 USD**      | **12**     |                       |
+
+## Recalibrated Hiromi corpus forecast
+
+With actuals showing Gemini and OpenAI both at roughly $0.20-0.30
+per Bach-chorale-sized call, the per-Pachelbel-equivalent cost is
+roughly:
+
+- Claude: ~$0.50 per Pachelbel-eq
+- Gemini: ~$0.40 per Pachelbel-eq (recalibrated up from initial estimate)
+- OpenAI: ~$1.00 per Pachelbel-eq (largely from reasoning tokens)
+- **All three together: ~$1.90 per Pachelbel-eq**
+
+Hiromi corpus average ~2 Pachelbel-eq per score × 20 scores × $1.90
+≈ **$76 worst-case fresh full-corpus run**. Realistic figure
+**$40-60** with the small-score / large-score mix averaging out.
+
+Slightly higher than the original $30-50 forecast, but still
+hobby-budget territory. The correction is mostly Gemini —
+free-tier-pricing intuitions don't transfer to the Pro/preview
+tier we're actually using.
+
