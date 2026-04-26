@@ -11,6 +11,7 @@ Scope: read-only analysis; no source edits.
 |---|---|---|
 | **B — Jazz-path suppression** (`forceClassicalPath`) | 02e3733afb (production) + 69716deead (tools) | The Jazz path and `forceClassicalPath` flag are deleted. All paths now use the single classical §4.1c Jaccard path; boundary divergence between P2 and P1/P3 on Jazz scores is eliminated by removing the Jazz path entirely. |
 | **D — Tick-regional post-region re-analysis** (display-context re-`analyzeChord`) | Phase 3c commit (recon at d35f003aa2) | The display-context re-analysis in P3 (`collectRegionTones` + `findTemporalContext` + second `analyzeChord` re-run) is deleted. P3 now consumes `AnalyzedSection` via `analyzeSection()`, identical to the per-region pipeline used by P2. Extension fields and alternatives are now consistent across P2 and P3. |
+| **E — Presentation sort mismatch (status bar vs. right-click)** (`normalizedConfidence` re-sort) | Drop-sort commit (recon at 094f7aef2c) | Both `appendAnalysisItemsForContext` (right-click, `notationcontextmenumodel.cpp`) and `harmonicAnnotation` (status bar, `notationcomposingbridge.cpp`) were sorting a copy of `chordResults` by `normalizedConfidence`, a leftover workaround from the pre-Phase-3c-impl era when a prepend could place a lower-scoring region-winner at position 0. Phase 3c-impl (9f515d6372) deleted the prepend; `chordResults[0]` is now the analyzer's top-ranked candidate. Both sorts are dropped; both consumers iterate `chordResults` in analyzer-given order. |
 
 ---
 

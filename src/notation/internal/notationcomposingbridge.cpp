@@ -508,16 +508,9 @@ std::string harmonicAnnotation(const Note* note)
         return keyStr.empty() ? "" : "key: " + keyStr;
     }
 
-    // Sort alternatives by descending normalizedConfidence, keeping position 0 (region winner)
-    // fixed so the top-level annotation is always the region-level result.
-    auto sortedResults = chordResults;
-    if (sortedResults.size() > 1) {
-        std::sort(sortedResults.begin() + 1, sortedResults.end(),
-                  [](const mu::composing::analysis::ChordAnalysisResult& a,
-                     const mu::composing::analysis::ChordAnalysisResult& b) {
-                      return a.identity.normalizedConfidence > b.identity.normalizedConfidence;
-                  });
-    }
+    // chordResults is sorted by analyzeChord's internal score descending;
+    // [0] is the top-ranked candidate.  Trust the analyzer's ranking.
+    // (Phase 3c-impl deleted the legacy prepend pattern; see docs/divergence_d_recon.md.)
 
     // Determine which display formats are active
     const bool wantSym = prefs->analyzeForChordSymbols() && prefs->showChordSymbolsInStatusBar();
@@ -531,7 +524,7 @@ std::string harmonicAnnotation(const Note* note)
     std::string candidates;
     std::set<std::string> seenKeys;
 
-    for (const auto& result : sortedResults) {
+    for (const auto& result : chordResults) {
         if (shown >= maxShown) {
             break;
         }

@@ -64,18 +64,11 @@ void NotationContextMenuModel::appendAnalysisItemsForContext(MenuItemList& items
         return;
     }
 
-    // Sort a working copy by descending score so the highest-scoring candidate
-    // appears first in the submenu.  The chordResults vector may have a
-    // region-winner prepended at position 0 (potentially lower-scoring than the
-    // fresh display analysis); sorting ensures the user always sees the best
-    // candidate at the top, regardless of that prepend ordering.
-    auto analysisResults = context.chordResults;
-    std::sort(analysisResults.begin(), analysisResults.end(),
-              [](const mu::composing::analysis::ChordAnalysisResult& a,
-                 const mu::composing::analysis::ChordAnalysisResult& b) {
-                  return a.identity.normalizedConfidence > b.identity.normalizedConfidence;
-              });
-
+    // chordResults is sorted by analyzeChord's internal score descending;
+    // chordResults[0] is the analyzer's top-ranked candidate.  Trust the
+    // analyzer's ranking — do not re-sort by a derivative metric.
+    // (Phase 3c-impl deleted the legacy prepend pattern that this code's
+    // earlier sort was compensating for; see docs/divergence_d_recon.md.)
     int maxAlternatives = m_composingConfig()->analysisAlternatives();
 
     struct TuneAsEntry {
@@ -89,7 +82,7 @@ void NotationContextMenuModel::appendAnalysisItemsForContext(MenuItemList& items
     std::set<std::string> seenChordSymbols, seenNumerals, seenNashville;
     int chordCount = 0, romanCount = 0, nashvilleCount = 0;
 
-    for (const auto& res : analysisResults) {
+    for (const auto& res : context.chordResults) {
         std::string symbol    = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(res, keyFifths);
         std::string numeral   = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(res);
         std::string nashville = mu::composing::analysis::ChordSymbolFormatter::formatNashvilleNumber(res, keyFifths);
