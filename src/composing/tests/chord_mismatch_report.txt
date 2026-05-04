@@ -8,14 +8,12 @@ ConventionDiff at degree 13 (alterations preserved): 3
 ConventionDiff at degree 11 (alterations dropped): 3
 ConventionDiff at degree 9 (alterations preserved): 2
 ConventionDiff at degree 9 (alterations dropped): 3
-ConventionDiff at degree 7 (alterations preserved): 42
+ConventionDiff at degree 7 (alterations preserved): 43
 ConventionDiff at degree 7 (alterations dropped): 73
-ConventionDiff total: 126
-RealDiff: 5
+ConventionDiff total: 127
+RealDiff: 4
 
 === RealDiff entries (actionable) ===
-measure 60 [symbol+roman]  xml='Cm9b5'  analyzer='Cm7b5'  roman xml='iø7'  analyzer='iø9'
-  key=0maj  pitches=[60,63,66,70,74]  pcs=[0,3,6,10,2]  tpcs=[15,12,9,13,17]
 measure 164 [symbol+roman]  xml='C7alt'  analyzer='C7b9b5'  roman xml='I7'  analyzer='I7b5b9'
   key=0maj  pitches=[60,64,66,70,73]  pcs=[0,4,6,10,1]  tpcs=[15,19,9,13,10]
 measure 285 [symbol+roman]  xml='CTristan'  analyzer=''  roman xml='I'  analyzer='Isus4'

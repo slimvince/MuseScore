@@ -684,6 +684,11 @@ static constexpr double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: 
 static constexpr double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
 static constexpr double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
 static constexpr double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
+/// Minimum pcWeight for the defining P4 to be treated as a structural suspension
+/// tone.  Below this, the Sus4 template is penalised even when the P4 is
+/// technically present — passing or ornamental fourths routinely clear 0.20
+/// (extensionThreshold) but rarely reach 0.50.
+static constexpr double kSus4StructuralFourthThreshold = 0.50;
 static constexpr double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
 static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
 static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
@@ -1183,7 +1188,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
                                 && tpl.intervals[2] == 6;
     if (sus4HasPerfectFourth && !isSus4FlatFive) {
         const int fourthPc = static_cast<int>((rootPc + 5) % 12);
-        if (pcWeight[static_cast<size_t>(fourthPc)] < extThreshold) {
+        if (pcWeight[static_cast<size_t>(fourthPc)] < kSus4StructuralFourthThreshold) {
             score -= kSus4MissingFourth;
         }
     }
@@ -1708,7 +1713,20 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
               });
 
     const double bestRawScore = rawCandidates.empty() ? 0.0 : rawCandidates.front().score;
-    const double threshold = bestRawScore * kScoreThresholdRatio;
+
+    // De-inflate the threshold when the best-scoring candidate's lead comes from a
+    // bass-root bonus.  A bass-inflated winner sets an artificially high bar that
+    // can exclude its enharmonic non-bass alternative (e.g. Gm7 when Bb6 wins, or
+    // the correct non-sus chord when a sus template wins from the bass note).
+    // Using the de-bonused score as the threshold base ensures those alternatives
+    // survive into results[] where the post-ranking inversion correction can
+    // evaluate and flip them.
+    // When the winner carries no bass bonus (winnerBassBonus == 0) this is
+    // identical to the original formula.
+    const double winnerBassBonus = rawCandidates.empty()
+                                   ? 0.0
+                                   : rawCandidates.front().appliedBassBonus;
+    const double threshold = (bestRawScore - winnerBassBonus) * kScoreThresholdRatio;
 
     std::vector<ChordAnalysisResult> results;
     results.reserve(3);
