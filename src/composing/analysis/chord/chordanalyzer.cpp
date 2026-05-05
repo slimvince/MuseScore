@@ -1958,6 +1958,34 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                             || winner.identity.quality == ChordQuality::Minor);
 
         if (winnerBassIsRoot && winnerQualityTargeted) {
+            // ── Gate G: Minor-add6 ↔ HalfDim7 ────────────────────────────────────────
+            //
+            // Symmetric to Gate A (Major-add6 ↔ Minor7). When the winner is a Minor chord
+            // with an added sixth, it shares all four pitch classes with the half-diminished
+            // seventh whose root lies a minor third above the winner root (9 semitones mod 12):
+            //   halfDimRootPc == (winnerRootPc + 9) % 12
+            // In Baroque/Classical context, the half-diminished seventh reading is always
+            // preferred over the minor-add-6 reading.
+            //
+            // Unlike Gates B–F, this gate requires no temporal context — it fires on
+            // structural grounds alone, like Gate A.
+            // Gated by preferMinorOverMajorAdd6 (classical presets only).
+            bool didGateGFire = false;
+            if (prefs.preferMinorOverMajorAdd6
+                && winner.identity.quality == ChordQuality::Minor
+                && hasExtension(winner.identity.extensions, Extension::AddedSixth)) {
+                const int expectedHalfDimRootPc = (winner.identity.rootPc + 9) % 12;
+                for (size_t i = 1; i < results.size(); ++i) {
+                    if (results[i].identity.rootPc == expectedHalfDimRootPc
+                        && results[i].identity.quality == ChordQuality::HalfDiminished) {
+                        std::swap(results[0], results[i]);
+                        didGateGFire = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!didGateGFire) {
             // Find the best alternative that has clean (Major or Minor) quality.
             // Seconds-chord, augmented, diminished, etc. are excluded as described above.
             static constexpr std::array<ChordQuality, 2> kCleanQualities = {
@@ -2125,6 +2153,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     }
                 }
             }
+            }  // end if (!didGateGFire)
         }
     }
 
