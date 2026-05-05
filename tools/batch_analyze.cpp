@@ -2431,10 +2431,11 @@ int main(int argc, char* argv[])
     //       inversion bonuses are reduced because bass-root 6th chords (C6, Bb6)
     //       are idiomatic labels and should not be de-emphasised.
     //
-    // Baroque: preferMinorOverMajorAdd6 as last-resort fallback for isolated regions
-    //          with no temporal context; all inversion bonuses amplified because
-    //          stepwise bass lines and passing inversions are characteristic of
-    //          contrapuntal writing.
+    // Baroque preset: only preferMinorOverMajorAdd6 differs from Standard.
+    // Inversion bonuses use struct defaults (stepwiseBassInversionBonus=0.50,
+    // stepwiseBassLookaheadBonus=0.50, sameRootInversionBonus=0.40,
+    // completeTriadInversionBonus=0.45). Tuning of these values is tracked
+    // in docs/prompts/iteration_plan_inversion_redesign.md Iteration 4.
     //
     // Standard, Modal, Contemporary: defaults + preferMinorOverMajorAdd6 (added-sixth
     //          chords are rare in tonal and modal writing; Minor7 inversions are the

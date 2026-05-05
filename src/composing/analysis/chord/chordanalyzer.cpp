@@ -2056,6 +2056,47 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     }
                 }
 
+                // ── Gate E: first-inversion detection ─────────────────────────────────────
+                //
+                // When the winner is Minor with bassIsRoot=true and the best Major alternative
+                // has its root a minor-6th above the winner root (= winner root is the major
+                // 3rd of the alt), the scorer has likely identified the bass note (= 3rd of
+                // the actual chord) as the root.  E.g., F#m wins when D/F# is correct.
+                //
+                // Relationship: altRootPc == (winnerRootPc + 8) % 12
+                // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
+                // bass signal (temporal context required).
+                if (!didEnharmonicFlip
+                    && prefs.preferMinorOverMajorAdd6
+                    && context != nullptr
+                    && winner.identity.quality == ChordQuality::Minor
+                    && bestAlt->identity.quality == ChordQuality::Major
+                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 8) % 12
+                    && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
+                    std::swap(results[0], results[bestAltIdx]);
+                    didEnharmonicFlip = true;
+                }
+
+                // ── Gate F: second-inversion detection ────────────────────────────────────
+                //
+                // When the best Major alternative has its root a perfect-4th above the winner
+                // root (= winner root is the 5th of the alt), the scorer has likely identified
+                // the bass note (= 5th of the actual chord) as the root.
+                // E.g., B or BAug wins when E/B is correct.
+                //
+                // Relationship: altRootPc == (winnerRootPc + 5) % 12
+                // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
+                // bass signal (temporal context required).
+                if (!didEnharmonicFlip
+                    && prefs.preferMinorOverMajorAdd6
+                    && context != nullptr
+                    && bestAlt->identity.quality == ChordQuality::Major
+                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 5) % 12
+                    && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
+                    std::swap(results[0], results[bestAltIdx]);
+                    didEnharmonicFlip = true;
+                }
+
                 if (!didEnharmonicFlip) {
                     const double margin = winner.identity.score - bestAlt->identity.score;
 
