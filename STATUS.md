@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-05 — Gate G reverted (commit `89ad75d7d1`); corpus baselines corrected after stale-corpus discovery. See 2026-05-05 entry below. 407/407 composing, 53/53 notation, 10/11 pipeline snapshot tests pass. BIR baselines (fresh corpus): BIR=true 111, BIR=false 788.*
+*Last updated: 2026-05-05 — Iteration 6: Gates G-B/G-C/G-D added (MinorAdd6/HalfDim7 temporal gates). 407/407 composing, 53/53 notation, 10/10 pipeline snapshot tests pass. BIR unchanged: BIR=true 111, BIR=false 788 (expected — §2.10 temporal gates not measured by batch path).*
 
 ---
 
@@ -134,6 +134,22 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
   correction via progression context. Commit `f168ee5dab`.
 - Iteration 4: stepwise lookahead tuning; added gates E/F for first/second inversion.
   Commit `41913a7cf9`.
+
+**2026-05-05 — Iteration 6: Gates G-B/G-C/G-D — MinorAdd6/HalfDim7 temporal gates (commit TBD):**
+- Three context-dependent gates added to the `if (prefs.preferMinorOverMajorAdd6)` block,
+  immediately after Gate D. These are exact parallels of Gates B/C/D for the second enharmonic
+  equivalence pair: MinorAdd6 (e.g. Cm6 = C–Eb–G–A) ↔ HalfDim7 whose root is 9 semitones above
+  the MinorAdd6 root (e.g. Am7b5).
+- Gate G-B: fires when `context->nextRootPc == expectedAltRoot` (forward-looking root match).
+- Gate G-C: fires when HalfDim root appears in 3-region window AND bass is stepwise from previous.
+- Gate G-D: fires when `consecutiveBassStepwiseCount >= 2` (scalar bass line).
+- kCleanQualities excludes HalfDiminished, so a separate one-pass search finds the HalfDim alt.
+- Categorical gate (Gate G) was reverted in Iteration 5 at 96% false-positive rate; temporal
+  evidence is required before preferring HalfDim over MinorAdd6.
+- Corpus (Baroque preset): BIR=true **111**, BIR=false **788** — unchanged (expected per §2.10;
+  batch path does not populate temporal context, so G-B/G-C/G-D fire 0 times there).
+- Pipeline snapshot tests: 10/10 pass, no golden changes (gates did not fire on the 10-score corpus).
+- 407/407 composing tests, 53/53 notation tests pass.
 
 **2026-05-05 — Iteration 5: Gate G attempted and reverted (commit `89ad75d7d1`):**
 - Gate G (MinorAdd6 ↔ HalfDim7 categorical swap, symmetric to Gate A) was implemented,
