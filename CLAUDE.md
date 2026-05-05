@@ -48,6 +48,15 @@ cd C:\s\MS\ninja_build && ./composing_tests.exe
 src/composing/tests/chord_mismatch_report.txt
 ```
 
+## Score corpora
+
+For any task involving scores (validation, snapshot tests, manual QA,
+LLM-triage, qualitative review), read `docs/score_inventory.md` first. It
+maps every score location to its intended use and lists the do-not-touch
+files. Companion references: `tools/REPRODUCIBILITY.md` (how to recreate
+corpora) and the JSON registries (`tools/corpus_registry.json`,
+`tools/extra_scores_registry.json`).
+
 ## Conventions
 
 - American English throughout — "analyzer" not "analyser"

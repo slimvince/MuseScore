@@ -28,6 +28,20 @@ namespace {
 
 const RuleBasedChordAnalyzer kAnalyzer{};
 
+// Preferences for each catalog preset.
+// Jazz: lower extensionThreshold detects lightly-voiced ninths in jazz voicings.
+// Standard: conservative defaults for classical/traditional repertoire.
+const ChordAnalyzerPreferences kJazzPrefs = []() {
+    ChordAnalyzerPreferences p;
+    p.extensionThreshold = 0.12;
+    return p;
+}();
+const ChordAnalyzerPreferences kStandardPrefs = []() {
+    ChordAnalyzerPreferences p;
+    p.preferMinorOverMajorAdd6 = true;
+    return p;
+}();
+
 
 struct ExpectedHarmony {
     int rootPc = -1;
@@ -585,14 +599,7 @@ std::set<std::string> loadMuseScoreCatalogSuffixes(const QString& filePath)
 
 TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCatalog)
 {
-    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog.musicxml";
-    const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
-
-    ASSERT_FALSE(events.empty());
-
-    std::vector<SymbolRomanMismatch> symbolOrRomanMismatches;
-
-    // Named / modal chord exceptions: these catalog entries use informal labels
+    // Named / modal chord exceptions for the Jazz catalog: these entries use informal labels
     // that go beyond pitch-content analysis.  Abstract detection (root/quality/7th)
     // is correct; only the symbol or Roman numeral string differs because the
     // catalog annotation encodes information the analyzer cannot derive from pitches.
@@ -604,102 +611,126 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
     //   m333 CPhryg: modal label for Cm11 — Phrygian flat-2 is not a chord quality.
     //   m340 Csus#4: catalog Roman numeral is "I" (tonic, no quality suffix);
     //        analyzer correctly returns "Isus4" — annotation style difference.
-    static const std::set<int> kSymbolExceptions = { 60, 164, 285, 316, 329, 333, 340 };
+    static const std::set<int> kJazzSymbolExceptions = { 60, 164, 285, 316, 329, 333, 340 };
 
-    // Thread temporal context between successive catalog entries so the
-    // root-continuity bonus can resolve ambiguous chords (e.g. m264 {C,Eb,Ab}).
-    int previousRootPc = -1;
+    // Helper: run one catalog through the abstract harmony detection checks.
+    auto runCatalog = [&](const QString& fixturePath,
+                          const ChordAnalyzerPreferences& prefs,
+                          const std::set<int>& symbolExceptions)
+    {
+        const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
+        ASSERT_FALSE(events.empty()) << "Catalog is empty: " << fixturePath.toStdString();
 
-    for (const FixtureEvent& event : events) {
-        ChordTemporalContext temporalCtx;
-        temporalCtx.previousRootPc = previousRootPc;
-        const auto results = kAnalyzer.analyzeChord(
-            toAnalysisTones(event.pitches, event.tpcs),
-            event.keyFifths,
-            event.keyMode,
-            &temporalCtx);
+        std::vector<SymbolRomanMismatch> symbolOrRomanMismatches;
 
-        if (event.expected.quality != ChordQuality::Unknown
-            && event.expected.quality != ChordQuality::Power) {
-            EXPECT_FALSE(results.empty());
+        // Thread temporal context between successive catalog entries so the
+        // root-continuity bonus can resolve ambiguous chords (e.g. m264 {C,Eb,Ab}).
+        int previousRootPc = -1;
+
+        for (const FixtureEvent& event : events) {
+            ChordTemporalContext temporalCtx;
+            temporalCtx.previousRootPc = previousRootPc;
+            const auto results = kAnalyzer.analyzeChord(
+                toAnalysisTones(event.pitches, event.tpcs),
+                event.keyFifths,
+                event.keyMode,
+                &temporalCtx,
+                prefs);
+
+            if (event.expected.quality != ChordQuality::Unknown
+                && event.expected.quality != ChordQuality::Power) {
+                EXPECT_FALSE(results.empty());
+            }
+            if (results.empty()) {
+                previousRootPc = -1;
+                continue;
+            }
+            const ChordAnalysisResult& result = results.front();
+            previousRootPc = result.identity.rootPc;
+
+            if (event.expected.rootPc >= 0) {
+                EXPECT_EQ(result.identity.rootPc, event.expected.rootPc);
+            }
+
+            if (event.expected.quality != ChordQuality::Unknown) {
+                EXPECT_EQ(result.identity.quality, event.expected.quality);
+            }
+
+            if (event.expected.bassPc.has_value()) {
+                EXPECT_EQ(result.identity.bassPc, *event.expected.bassPc);
+            }
+
+            EXPECT_EQ(hasExtension(result.identity.extensions, Extension::MinorSeventh), event.expected.hasMinorSeventh);
+            EXPECT_EQ(hasExtension(result.identity.extensions, Extension::MajorSeventh), event.expected.hasMajorSeventh);
+
+            std::string actualSymbol;
+            if (!event.expected.symbolText.empty()
+                    && !symbolExceptions.count(event.measureNumber)) {
+                actualSymbol = ChordSymbolFormatter::formatSymbol(result, event.keyFifths);
+                EXPECT_TRUE(equivalentSymbolSpelling(actualSymbol, event.expected.symbolText));
+            }
+
+            // Roman numerals are checked informally — the catalog annotates only up to the 7th
+            // level, while the analyzer includes higher extension suffixes (e.g. "IM9" vs "IM7").
+            // Hard failures for roman-numeral differences are in ReportsCatalogSymbolAndRomanMismatches.
+            std::string actualRoman;
+            if (!event.expectedRoman.empty()
+                    && !symbolExceptions.count(event.measureNumber)) {
+                actualRoman = ChordSymbolFormatter::formatRomanNumeral(result);
+            }
+
+            const bool symbolMismatch = !event.expected.symbolText.empty()
+                            && !symbolExceptions.count(event.measureNumber)
+                            && !equivalentSymbolSpelling(actualSymbol, event.expected.symbolText);
+            const bool romanMismatch = !event.expectedRoman.empty()
+                            && !symbolExceptions.count(event.measureNumber)
+                            && actualRoman != event.expectedRoman;
+            if (symbolMismatch || romanMismatch) {
+                SymbolRomanMismatch mm;
+                mm.measureNumber = event.measureNumber;
+                mm.expectedSymbol = event.expected.symbolText;
+                mm.actualSymbol = actualSymbol;
+                mm.expectedRoman = event.expectedRoman;
+                mm.actualRoman = actualRoman;
+                mm.expectedRootPc = event.expected.rootPc;
+                mm.actualRootPc = result.identity.rootPc;
+                mm.expectedQuality = event.expected.quality;
+                mm.actualQuality = result.identity.quality;
+                symbolOrRomanMismatches.push_back(std::move(mm));
+            }
         }
-        if (results.empty()) {
-            previousRootPc = -1;
-            continue;
-        }
-        const ChordAnalysisResult& result = results.front();
-        previousRootPc = result.identity.rootPc;
 
-        if (event.expected.rootPc >= 0) {
-            EXPECT_EQ(result.identity.rootPc, event.expected.rootPc);
+        // Only hard-fail on symbol mismatches; roman numeral differences are informational
+        // (the catalog annotates at the 7th level, not full extension level).
+        std::vector<SymbolRomanMismatch> hardSymbolMismatches;
+        for (const SymbolRomanMismatch& mm : symbolOrRomanMismatches) {
+            if (!mm.expectedSymbol.empty() && !equivalentSymbolSpelling(mm.actualSymbol, mm.expectedSymbol)) {
+                hardSymbolMismatches.push_back(mm);
+            }
         }
+        if (!hardSymbolMismatches.empty()) {
+            std::ostringstream oss;
+            oss << "Symbol mismatches in " << fixturePath.toStdString() << " (measure, XML vs Analyzer):\n";
+            for (const SymbolRomanMismatch& mm : hardSymbolMismatches) {
+                oss << "measure " << mm.measureNumber
+                    << " | symbol XML='" << mm.expectedSymbol
+                    << "' Analyzer='" << mm.actualSymbol << "'\n";
+            }
+            ADD_FAILURE() << oss.str();
+        }
+    };
 
-        if (event.expected.quality != ChordQuality::Unknown) {
-            EXPECT_EQ(result.identity.quality, event.expected.quality);
-        }
+    // Jazz catalog: full vocabulary, jazz prefs (lower extensionThreshold).
+    runCatalog(
+        QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_jazz.musicxml",
+        kJazzPrefs,
+        kJazzSymbolExceptions);
 
-        if (event.expected.bassPc.has_value()) {
-            EXPECT_EQ(result.identity.bassPc, *event.expected.bassPc);
-        }
-
-        EXPECT_EQ(hasExtension(result.identity.extensions, Extension::MinorSeventh), event.expected.hasMinorSeventh);
-        EXPECT_EQ(hasExtension(result.identity.extensions, Extension::MajorSeventh), event.expected.hasMajorSeventh);
-
-        std::string actualSymbol;
-        if (!event.expected.symbolText.empty()
-                && !kSymbolExceptions.count(event.measureNumber)) {
-            actualSymbol = ChordSymbolFormatter::formatSymbol(result, event.keyFifths);
-            EXPECT_TRUE(equivalentSymbolSpelling(actualSymbol, event.expected.symbolText));
-        }
-
-        // Roman numerals are checked informally — the catalog annotates only up to the 7th
-        // level, while the analyzer includes higher extension suffixes (e.g. "IM9" vs "IM7").
-        // Hard failures for roman-numeral differences are in ReportsCatalogSymbolAndRomanMismatches.
-        std::string actualRoman;
-        if (!event.expectedRoman.empty()
-                && !kSymbolExceptions.count(event.measureNumber)) {
-            actualRoman = ChordSymbolFormatter::formatRomanNumeral(result);
-        }
-
-        const bool symbolMismatch = !event.expected.symbolText.empty()
-                        && !kSymbolExceptions.count(event.measureNumber)
-                        && !equivalentSymbolSpelling(actualSymbol, event.expected.symbolText);
-        const bool romanMismatch = !event.expectedRoman.empty()
-                        && !kSymbolExceptions.count(event.measureNumber)
-                        && actualRoman != event.expectedRoman;
-        if (symbolMismatch || romanMismatch) {
-            SymbolRomanMismatch mm;
-            mm.measureNumber = event.measureNumber;
-            mm.expectedSymbol = event.expected.symbolText;
-            mm.actualSymbol = actualSymbol;
-            mm.expectedRoman = event.expectedRoman;
-            mm.actualRoman = actualRoman;
-            mm.expectedRootPc = event.expected.rootPc;
-            mm.actualRootPc = result.identity.rootPc;
-            mm.expectedQuality = event.expected.quality;
-            mm.actualQuality = result.identity.quality;
-            symbolOrRomanMismatches.push_back(std::move(mm));
-        }
-    }
-
-    // Only hard-fail on symbol mismatches; roman numeral differences are informational
-    // (the catalog annotates at the 7th level, not full extension level).
-    std::vector<SymbolRomanMismatch> hardSymbolMismatches;
-    for (const SymbolRomanMismatch& mm : symbolOrRomanMismatches) {
-        if (!mm.expectedSymbol.empty() && !equivalentSymbolSpelling(mm.actualSymbol, mm.expectedSymbol)) {
-            hardSymbolMismatches.push_back(mm);
-        }
-    }
-    if (!hardSymbolMismatches.empty()) {
-        std::ostringstream oss;
-        oss << "Symbol mismatches (measure, XML vs Analyzer):\n";
-        for (const SymbolRomanMismatch& mm : hardSymbolMismatches) {
-            oss << "measure " << mm.measureNumber
-                << " | symbol XML='" << mm.expectedSymbol
-                << "' Analyzer='" << mm.actualSymbol << "'\n";
-        }
-        ADD_FAILURE() << oss.str();
-    }
+    // Standard catalog: classical/traditional vocabulary, conservative prefs.
+    runCatalog(
+        QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_standard.musicxml",
+        kStandardPrefs,
+        {});
 }
 
 // Writes a debug context block (pitches, pitch classes, TPCs, key) to a stream.
@@ -728,7 +759,8 @@ static void writeMismatchDebugContext(std::ostringstream& oss,
     oss << "]\n";
 }
 
-/// Writes two-section mismatch report to chord_mismatch_report.txt:
+/// Writes sectioned mismatch report to chord_mismatch_report.txt:
+///   For each catalog (Jazz, Standard):
 ///   Section 1 — Abstract mismatches (root / quality / 7th flags wrong).
 ///                These are real analyzer bugs; the test FAILs when any are present.
 ///   Section 2 — Symbol / Roman-numeral mismatches (abstract correct but text differs).
@@ -736,11 +768,6 @@ static void writeMismatchDebugContext(std::ostringstream& oss,
 ///                catalog annotation inconsistencies by inspecting the pitch content.
 TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatches)
 {
-    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog.musicxml";
-    const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
-
-    ASSERT_FALSE(events.empty());
-
     struct MismatchEntry {
         int measureNumber = -1;
         // Abstract fields
@@ -761,113 +788,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
         KeySigMode keyMode = KeySigMode::Ionian;
     };
 
-    std::vector<MismatchEntry> abstractMismatches;
-    std::vector<MismatchEntry> symbolMismatches;
-
-    int previousRootPcReport = -1;
-
-    for (const FixtureEvent& event : events) {
-        // Skip events that produce insufficient pitch classes for analysis.
-        // This happens when the catalog measure has fewer than 3 distinct sounding PCs
-        // (e.g. a dyad or single note used as a section separator).
-        ChordTemporalContext temporalCtx;
-        temporalCtx.previousRootPc = previousRootPcReport;
-        const auto results = kAnalyzer.analyzeChord(
-            toAnalysisTones(event.pitches, event.tpcs),
-            event.keyFifths,
-            event.keyMode,
-            &temporalCtx);
-
-        if (results.empty()) {
-            previousRootPcReport = -1;
-            continue;
-        }
-        const ChordAnalysisResult& result = results.front();
-        previousRootPcReport = result.identity.rootPc;
-
-        // ── Abstract mismatch detection ──────────────────────────────────────
-        std::ostringstream abstractDetail;
-        bool hasAbstractMismatch = false;
-
-        if (event.expected.rootPc >= 0 && result.identity.rootPc != event.expected.rootPc) {
-            hasAbstractMismatch = true;
-            abstractDetail << "root(xml=" << event.expected.rootPc << ",ana=" << result.identity.rootPc << ") ";
-        }
-        if (event.expected.bassPc.has_value() && result.identity.bassPc != *event.expected.bassPc) {
-            hasAbstractMismatch = true;
-            abstractDetail << "bass(xml=" << *event.expected.bassPc << ",ana=" << result.identity.bassPc << ") ";
-        }
-        if (event.expected.quality != ChordQuality::Unknown && result.identity.quality != event.expected.quality) {
-            hasAbstractMismatch = true;
-            abstractDetail << "quality(xml=" << chordQualityToString(event.expected.quality)
-                           << ",ana=" << chordQualityToString(result.identity.quality) << ") ";
-        }
-        if (hasExtension(result.identity.extensions, Extension::MinorSeventh) != event.expected.hasMinorSeventh) {
-            hasAbstractMismatch = true;
-            abstractDetail << "minor7(xml=" << event.expected.hasMinorSeventh
-                           << ",ana=" << hasExtension(result.identity.extensions, Extension::MinorSeventh) << ") ";
-        }
-        if (hasExtension(result.identity.extensions, Extension::MajorSeventh) != event.expected.hasMajorSeventh) {
-            hasAbstractMismatch = true;
-            abstractDetail << "major7(xml=" << event.expected.hasMajorSeventh
-                           << ",ana=" << hasExtension(result.identity.extensions, Extension::MajorSeventh) << ") ";
-        }
-
-        if (hasAbstractMismatch) {
-            MismatchEntry mm;
-            mm.measureNumber   = event.measureNumber;
-            mm.expectedRootPc  = event.expected.rootPc;
-            mm.actualRootPc    = result.identity.rootPc;
-            mm.expectedQuality = event.expected.quality;
-            mm.actualQuality   = result.identity.quality;
-            mm.abstractDetail  = abstractDetail.str();
-            mm.pitches         = event.pitches;
-            mm.tpcs            = event.tpcs;
-            mm.keyFifths       = event.keyFifths;
-            mm.keyMode         = event.keyMode;
-            abstractMismatches.push_back(std::move(mm));
-        }
-
-        // ── Symbol / Roman mismatch detection ────────────────────────────────
-        // Checked independently of abstract — a symbol mismatch on an abstractly
-        // correct chord signals a formatter bug or a catalog annotation inconsistency.
-        // Skip symbol check when catalog quality is Unknown (blues, non-standard kinds).
-        const std::string actualSymbol =
-            (!event.expected.symbolText.empty() && event.expected.quality != ChordQuality::Unknown)
-            ? ChordSymbolFormatter::formatSymbol(result, event.keyFifths) : "";
-        const std::string actualRoman =
-            !event.expectedRoman.empty()
-            ? ChordSymbolFormatter::formatRomanNumeral(result) : "";
-
-        const bool symbolMismatch = !actualSymbol.empty()
-                                    && !equivalentSymbolSpelling(actualSymbol, event.expected.symbolText);
-        const bool romanMismatch  = !actualRoman.empty() && actualRoman != event.expectedRoman;
-
-        if (symbolMismatch || romanMismatch) {
-            MismatchEntry mm;
-            mm.measureNumber   = event.measureNumber;
-            mm.expectedRootPc  = event.expected.rootPc;
-            mm.actualRootPc    = result.identity.rootPc;
-            mm.expectedQuality = event.expected.quality;
-            mm.actualQuality   = result.identity.quality;
-            mm.expectedSymbol  = event.expected.symbolText;
-            mm.actualSymbol    = actualSymbol;
-            mm.expectedRoman   = event.expectedRoman;
-            mm.actualRoman     = actualRoman;
-            mm.pitches         = event.pitches;
-            mm.tpcs            = event.tpcs;
-            mm.keyFifths       = event.keyFifths;
-            mm.keyMode         = event.keyMode;
-            symbolMismatches.push_back(std::move(mm));
-        }
-    }
-
     // ── Classify symbol/roman mismatches via progressive comparison protocol ─
-    // Each mismatch entry may have a symbol field mismatch, a roman field
-    // mismatch, or both.  classifyComparison is called on each non-trivially-
-    // mismatched field; the entry's overall classification is the "worst" result
-    // (RealDiff > ConventionDiff > DirectMatch).
-    //
     // ConventionDiff: the analyzer's output matches the catalog entry after
     //   stripping extensions/alterations to some degree — a notation-convention
     //   difference, not a real disagreement.
@@ -889,90 +810,237 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             return static_cast<int>(altsPreserved) > static_cast<int>(o.altsPreserved);
         }
     };
-    std::map<ConvDiffKey, int> convDiffCounts;
-    std::vector<const MismatchEntry*> realDiffEntries;
 
-    for (const MismatchEntry& mm : symbolMismatches) {
-        const bool hasSym = !mm.expectedSymbol.empty()
-                            && !equivalentSymbolSpelling(mm.actualSymbol, mm.expectedSymbol);
-        const bool hasRom = !mm.expectedRoman.empty() && mm.actualRoman != mm.expectedRoman;
+    // Per-catalog RealDiff baselines.
+    // Jazz: pinned after empirical Step-D run; Standard: zero (strict — only clean classical vocabulary).
+    constexpr int kJazzRealDiffBaseline     = 4;
+    constexpr int kStandardRealDiffBaseline = 0;
 
-        EntryClassification entry;
-        entry.kind = ComparisonResult::DirectMatch; // start optimistic; worst wins
-
-        auto worsen = [&](const ComparisonResult& cr) {
-            if (cr.kind > entry.kind) {
-                entry.kind                  = cr.kind;
-                entry.matchedAtDegree       = cr.matchedAtDegree;
-                entry.matchedWithAltsPreserved = cr.matchedWithAlterationsPreserved;
-            } else if (cr.kind == ComparisonResult::ConventionDiff
-                       && entry.kind == ComparisonResult::ConventionDiff
-                       && cr.matchedAtDegree < entry.matchedAtDegree) {
-                // Both ConventionDiff: keep the more restrictive (lower degree).
-                entry.matchedAtDegree          = cr.matchedAtDegree;
-                entry.matchedWithAltsPreserved  = cr.matchedWithAlterationsPreserved;
-            }
-        };
-
-        if (hasSym) {
-            worsen(classifyComparison(
-                QString::fromStdString(mm.actualSymbol),
-                QString::fromStdString(mm.expectedSymbol)));
-        }
-        if (hasRom) {
-            worsen(classifyComparison(
-                QString::fromStdString(mm.actualRoman),
-                QString::fromStdString(mm.expectedRoman)));
-        }
-
-        if (entry.kind == ComparisonResult::ConventionDiff) {
-            convDiffCounts[{ entry.matchedAtDegree, entry.matchedWithAltsPreserved }]++;
-        } else {
-            realDiffEntries.push_back(&mm);
-        }
-    }
-
-    // ── Build report ─────────────────────────────────────────────────────────
     std::ostringstream report;
 
-    report << "=== Abstract chord mismatch summary: total=" << abstractMismatches.size() << " ===\n";
-    report << "Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):\n";
-    for (const MismatchEntry& mm : abstractMismatches) {
-        report << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
-        writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
-    }
+    bool anyAbstractMismatch = false;
+    bool anyRealDiffViolation = false;
 
-    report << "\n=== Symbol/Roman mismatch classification (total=" << symbolMismatches.size() << ") ===\n";
-    report << "Progressive comparison protocol applied per entry.\n\n";
+    // Helper: run one catalog through the full mismatch detection + reporting.
+    auto runCatalog = [&](const QString& fixturePath,
+                          const ChordAnalyzerPreferences& prefs,
+                          const std::string& catalogLabel,
+                          int realDiffBaseline)
+    {
+        const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
+        ASSERT_FALSE(events.empty()) << "Catalog is empty: " << fixturePath.toStdString();
 
-    // ConventionDiff buckets (sorted descending by degree)
-    int convDiffTotal = 0;
-    for (const auto& kv : convDiffCounts) {
-        convDiffTotal += kv.second;
-        report << "ConventionDiff at degree " << kv.first.degree
-               << " (alterations " << (kv.first.altsPreserved ? "preserved" : "dropped")
-               << "): " << kv.second << "\n";
-    }
-    report << "ConventionDiff total: " << convDiffTotal << "\n";
-    report << "RealDiff: " << realDiffEntries.size() << "\n\n";
+        std::vector<MismatchEntry> abstractMismatches;
+        std::vector<MismatchEntry> symbolMismatches;
 
-    report << "=== RealDiff entries (actionable) ===\n";
-    for (const MismatchEntry* mm : realDiffEntries) {
-        const bool sym = !mm->expectedSymbol.empty()
-                         && !equivalentSymbolSpelling(mm->actualSymbol, mm->expectedSymbol);
-        const bool rom = !mm->expectedRoman.empty() && mm->expectedRoman != mm->actualRoman;
-        const char* cat = (sym && rom) ? "symbol+roman" : (sym ? "symbol" : "roman");
-        report << "measure " << mm->measureNumber << " [" << cat << "]";
-        if (sym) {
-            report << "  xml='" << mm->expectedSymbol << "'  analyzer='" << mm->actualSymbol << "'";
+        int previousRootPcReport = -1;
+
+        for (const FixtureEvent& event : events) {
+            // Skip events that produce insufficient pitch classes for analysis.
+            // This happens when the catalog measure has fewer than 3 distinct sounding PCs
+            // (e.g. a dyad or single note used as a section separator).
+            ChordTemporalContext temporalCtx;
+            temporalCtx.previousRootPc = previousRootPcReport;
+            const auto results = kAnalyzer.analyzeChord(
+                toAnalysisTones(event.pitches, event.tpcs),
+                event.keyFifths,
+                event.keyMode,
+                &temporalCtx,
+                prefs);
+
+            if (results.empty()) {
+                previousRootPcReport = -1;
+                continue;
+            }
+            const ChordAnalysisResult& result = results.front();
+            previousRootPcReport = result.identity.rootPc;
+
+            // ── Abstract mismatch detection ──────────────────────────────────────
+            std::ostringstream abstractDetail;
+            bool hasAbstractMismatch = false;
+
+            if (event.expected.rootPc >= 0 && result.identity.rootPc != event.expected.rootPc) {
+                hasAbstractMismatch = true;
+                abstractDetail << "root(xml=" << event.expected.rootPc << ",ana=" << result.identity.rootPc << ") ";
+            }
+            if (event.expected.bassPc.has_value() && result.identity.bassPc != *event.expected.bassPc) {
+                hasAbstractMismatch = true;
+                abstractDetail << "bass(xml=" << *event.expected.bassPc << ",ana=" << result.identity.bassPc << ") ";
+            }
+            if (event.expected.quality != ChordQuality::Unknown && result.identity.quality != event.expected.quality) {
+                hasAbstractMismatch = true;
+                abstractDetail << "quality(xml=" << chordQualityToString(event.expected.quality)
+                               << ",ana=" << chordQualityToString(result.identity.quality) << ") ";
+            }
+            if (hasExtension(result.identity.extensions, Extension::MinorSeventh) != event.expected.hasMinorSeventh) {
+                hasAbstractMismatch = true;
+                abstractDetail << "minor7(xml=" << event.expected.hasMinorSeventh
+                               << ",ana=" << hasExtension(result.identity.extensions, Extension::MinorSeventh) << ") ";
+            }
+            if (hasExtension(result.identity.extensions, Extension::MajorSeventh) != event.expected.hasMajorSeventh) {
+                hasAbstractMismatch = true;
+                abstractDetail << "major7(xml=" << event.expected.hasMajorSeventh
+                               << ",ana=" << hasExtension(result.identity.extensions, Extension::MajorSeventh) << ") ";
+            }
+
+            if (hasAbstractMismatch) {
+                MismatchEntry mm;
+                mm.measureNumber   = event.measureNumber;
+                mm.expectedRootPc  = event.expected.rootPc;
+                mm.actualRootPc    = result.identity.rootPc;
+                mm.expectedQuality = event.expected.quality;
+                mm.actualQuality   = result.identity.quality;
+                mm.abstractDetail  = abstractDetail.str();
+                mm.pitches         = event.pitches;
+                mm.tpcs            = event.tpcs;
+                mm.keyFifths       = event.keyFifths;
+                mm.keyMode         = event.keyMode;
+                abstractMismatches.push_back(std::move(mm));
+            }
+
+            // ── Symbol / Roman mismatch detection ────────────────────────────────
+            // Checked independently of abstract — a symbol mismatch on an abstractly
+            // correct chord signals a formatter bug or a catalog annotation inconsistency.
+            // Skip symbol check when catalog quality is Unknown (blues, non-standard kinds).
+            const std::string actualSymbol =
+                (!event.expected.symbolText.empty() && event.expected.quality != ChordQuality::Unknown)
+                ? ChordSymbolFormatter::formatSymbol(result, event.keyFifths) : "";
+            const std::string actualRoman =
+                !event.expectedRoman.empty()
+                ? ChordSymbolFormatter::formatRomanNumeral(result) : "";
+
+            const bool symbolMismatch = !actualSymbol.empty()
+                                        && !equivalentSymbolSpelling(actualSymbol, event.expected.symbolText);
+            const bool romanMismatch  = !actualRoman.empty() && actualRoman != event.expectedRoman;
+
+            if (symbolMismatch || romanMismatch) {
+                MismatchEntry mm;
+                mm.measureNumber   = event.measureNumber;
+                mm.expectedRootPc  = event.expected.rootPc;
+                mm.actualRootPc    = result.identity.rootPc;
+                mm.expectedQuality = event.expected.quality;
+                mm.actualQuality   = result.identity.quality;
+                mm.expectedSymbol  = event.expected.symbolText;
+                mm.actualSymbol    = actualSymbol;
+                mm.expectedRoman   = event.expectedRoman;
+                mm.actualRoman     = actualRoman;
+                mm.pitches         = event.pitches;
+                mm.tpcs            = event.tpcs;
+                mm.keyFifths       = event.keyFifths;
+                mm.keyMode         = event.keyMode;
+                symbolMismatches.push_back(std::move(mm));
+            }
         }
-        if (rom) {
-            report << "  roman xml='" << mm->expectedRoman << "'  analyzer='" << mm->actualRoman << "'";
+
+        // ── Classify symbol/roman mismatches ─────────────────────────────────
+        std::map<ConvDiffKey, int> convDiffCounts;
+        std::vector<const MismatchEntry*> realDiffEntries;
+
+        for (const MismatchEntry& mm : symbolMismatches) {
+            const bool hasSym = !mm.expectedSymbol.empty()
+                                && !equivalentSymbolSpelling(mm.actualSymbol, mm.expectedSymbol);
+            const bool hasRom = !mm.expectedRoman.empty() && mm.actualRoman != mm.expectedRoman;
+
+            EntryClassification entry;
+            entry.kind = ComparisonResult::DirectMatch; // start optimistic; worst wins
+
+            auto worsen = [&](const ComparisonResult& cr) {
+                if (cr.kind > entry.kind) {
+                    entry.kind                  = cr.kind;
+                    entry.matchedAtDegree       = cr.matchedAtDegree;
+                    entry.matchedWithAltsPreserved = cr.matchedWithAlterationsPreserved;
+                } else if (cr.kind == ComparisonResult::ConventionDiff
+                           && entry.kind == ComparisonResult::ConventionDiff
+                           && cr.matchedAtDegree < entry.matchedAtDegree) {
+                    // Both ConventionDiff: keep the more restrictive (lower degree).
+                    entry.matchedAtDegree          = cr.matchedAtDegree;
+                    entry.matchedWithAltsPreserved  = cr.matchedWithAlterationsPreserved;
+                }
+            };
+
+            if (hasSym) {
+                worsen(classifyComparison(
+                    QString::fromStdString(mm.actualSymbol),
+                    QString::fromStdString(mm.expectedSymbol)));
+            }
+            if (hasRom) {
+                worsen(classifyComparison(
+                    QString::fromStdString(mm.actualRoman),
+                    QString::fromStdString(mm.expectedRoman)));
+            }
+
+            if (entry.kind == ComparisonResult::ConventionDiff) {
+                convDiffCounts[{ entry.matchedAtDegree, entry.matchedWithAltsPreserved }]++;
+            } else {
+                realDiffEntries.push_back(&mm);
+            }
+        }
+
+        // ── Append to report ──────────────────────────────────────────────────
+        report << "=== " << catalogLabel << ": abstract chord mismatch summary: total="
+               << abstractMismatches.size() << " ===\n";
+        report << "Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):\n";
+        for (const MismatchEntry& mm : abstractMismatches) {
+            report << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
+            writeMismatchDebugContext(report, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
+        }
+
+        report << "\n=== " << catalogLabel << ": Symbol/Roman mismatch classification (total="
+               << symbolMismatches.size() << ") ===\n";
+        report << "Progressive comparison protocol applied per entry.\n\n";
+
+        int convDiffTotal = 0;
+        for (const auto& kv : convDiffCounts) {
+            convDiffTotal += kv.second;
+            report << "ConventionDiff at degree " << kv.first.degree
+                   << " (alterations " << (kv.first.altsPreserved ? "preserved" : "dropped")
+                   << "): " << kv.second << "\n";
+        }
+        report << "ConventionDiff total: " << convDiffTotal << "\n";
+        report << "RealDiff: " << realDiffEntries.size() << "\n\n";
+
+        report << "=== RealDiff entries (actionable) ===\n";
+        for (const MismatchEntry* mm : realDiffEntries) {
+            const bool sym = !mm->expectedSymbol.empty()
+                             && !equivalentSymbolSpelling(mm->actualSymbol, mm->expectedSymbol);
+            const bool rom = !mm->expectedRoman.empty() && mm->expectedRoman != mm->actualRoman;
+            const char* cat = (sym && rom) ? "symbol+roman" : (sym ? "symbol" : "roman");
+            report << "measure " << mm->measureNumber << " [" << cat << "]";
+            if (sym) {
+                report << "  xml='" << mm->expectedSymbol << "'  analyzer='" << mm->actualSymbol << "'";
+            }
+            if (rom) {
+                report << "  roman xml='" << mm->expectedRoman << "'  analyzer='" << mm->actualRoman << "'";
+            }
+            report << "\n";
+            writeMismatchDebugContext(report, mm->pitches, mm->tpcs, mm->keyFifths, mm->keyMode);
         }
         report << "\n";
-        writeMismatchDebugContext(report, mm->pitches, mm->tpcs, mm->keyFifths, mm->keyMode);
-    }
 
+        // ── Record failures for deferred FAIL() ───────────────────────────────
+        if (!abstractMismatches.empty()) {
+            anyAbstractMismatch = true;
+        }
+        if (static_cast<int>(realDiffEntries.size()) > realDiffBaseline) {
+            anyRealDiffViolation = true;
+            report << "*** " << catalogLabel << ": RealDiff " << realDiffEntries.size()
+                   << " exceeds baseline " << realDiffBaseline << " ***\n\n";
+        }
+    };
+
+    runCatalog(
+        QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_jazz.musicxml",
+        kJazzPrefs,
+        "Jazz catalog",
+        kJazzRealDiffBaseline);
+
+    runCatalog(
+        QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_standard.musicxml",
+        kStandardPrefs,
+        "Standard catalog",
+        kStandardRealDiffBaseline);
+
+    // ── Write report file ─────────────────────────────────────────────────────
     const std::string reportPath = (QString::fromUtf8(composing_tests_DATA_ROOT)
                                     + "/chord_mismatch_report.txt").toStdString();
     std::ofstream reportFile(reportPath);
@@ -981,33 +1049,19 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
     }
 
     // Hard-fail on abstract mismatches (root/quality wrong — real analyzer bugs).
-    if (!abstractMismatches.empty()) {
-        std::ostringstream failMsg;
-        failMsg << "Abstract chord mismatches: " << abstractMismatches.size() << "\n";
-        for (const MismatchEntry& mm : abstractMismatches) {
-            failMsg << "measure " << mm.measureNumber << ": " << mm.abstractDetail << "\n";
-            writeMismatchDebugContext(failMsg, mm.pitches, mm.tpcs, mm.keyFifths, mm.keyMode);
-        }
-        FAIL() << failMsg.str();
+    if (anyAbstractMismatch) {
+        FAIL() << "Abstract chord mismatches detected — see chord_mismatch_report.txt for details.";
     }
 
-    // Hard-fail when RealDiff count exceeds the pinned baseline.
-    // RealDiff entries are actionable analyzer disagreements — notation-convention
-    // differences (ConventionDiff) are expected and not failures.
-    // Baseline pinned after empirical Step-D run; initially set conservatively.
-    constexpr int kRealDiffBaseline = 4;
-    if (static_cast<int>(realDiffEntries.size()) > kRealDiffBaseline) {
-        std::ostringstream failMsg;
-        failMsg << "RealDiff count " << realDiffEntries.size()
-                << " exceeds baseline " << kRealDiffBaseline << "\n";
-        failMsg << "ConventionDiff total: " << convDiffTotal << "\n";
-        FAIL() << failMsg.str();
+    // Hard-fail when RealDiff count exceeds the pinned baseline for any catalog.
+    if (anyRealDiffViolation) {
+        FAIL() << "RealDiff baseline exceeded — see chord_mismatch_report.txt for details.";
     }
 }
 
 TEST(Composing_ChordAnalyzerMusicXmlTests, CatalogMusicXmlCoversMuseScoreChordSuffixes)
 {
-    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog.musicxml";
+    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_jazz.musicxml";
     const QString museScoreCatalogPath = QString::fromUtf8(composing_tests_DATA_ROOT)
                                          + "/../../engraving/data/chords/chords.xml";
 
@@ -1095,7 +1149,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedHarmonyWithTemporalCon
 
 TEST(Composing_ChordAnalyzerMusicXmlTests, CatalogMusicXmlHasRomanNumeralPerChord)
 {
-    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog.musicxml";
+    const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT) + "/data/chordanalyzer_catalog_jazz.musicxml";
 
     const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
     ASSERT_FALSE(events.empty());
@@ -1120,7 +1174,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, CatalogMusicXmlHasRomanNumeralPerChor
 TEST(Composing_ChordAnalyzerMusicXmlTests, DumpAllCandidatesForContextFile)
 {
     const QString fixturePath = QString::fromUtf8(composing_tests_DATA_ROOT)
-                                + "/data/chordanalyzer_catalog.musicxml";
+                                + "/data/chordanalyzer_catalog_jazz.musicxml";
     const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
 
     const char* pcNames[12] = { "C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B" };

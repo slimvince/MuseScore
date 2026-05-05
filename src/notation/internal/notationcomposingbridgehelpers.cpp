@@ -421,6 +421,19 @@ mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
     return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
 }
 
+double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
+{
+    using namespace mu::engraving;
+    switch (bt) {
+    case BeatType::DOWNBEAT:            return 1.0;
+    case BeatType::SIMPLE_STRESSED:
+    case BeatType::COMPOUND_STRESSED:   return 0.85;
+    case BeatType::SIMPLE_UNSTRESSED:
+    case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+    default:                            return 0.5;
+    }
+}
+
 double timeDecay(double beatsAgo, double decayRate)
 {
     return std::pow(decayRate, beatsAgo / 4.0);

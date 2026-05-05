@@ -1,0 +1,178 @@
+[==========] Running 49 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 8 tests from CadenceDetection
+[ RUN      ] CadenceDetection.PAC_BothInSelection
+[       OK ] CadenceDetection.PAC_BothInSelection (0 ms)
+[ RUN      ] CadenceDetection.PAC_ResolutionInLookahead
+[       OK ] CadenceDetection.PAC_ResolutionInLookahead (0 ms)
+[ RUN      ] CadenceDetection.PAC_LeadingToneDiminished
+[       OK ] CadenceDetection.PAC_LeadingToneDiminished (0 ms)
+[ RUN      ] CadenceDetection.PC_PlagalCadence
+[       OK ] CadenceDetection.PC_PlagalCadence (0 ms)
+[ RUN      ] CadenceDetection.DC_DeceptiveCadence
+[       OK ] CadenceDetection.DC_DeceptiveCadence (0 ms)
+[ RUN      ] CadenceDetection.HC_LastRegionIsDominant
+[       OK ] CadenceDetection.HC_LastRegionIsDominant (0 ms)
+[ RUN      ] CadenceDetection.NoCadence_AcrossKeyChange
+[       OK ] CadenceDetection.NoCadence_AcrossKeyChange (0 ms)
+[ RUN      ] CadenceDetection.NoCadence_LowConfidence
+[       OK ] CadenceDetection.NoCadence_LowConfidence (0 ms)
+[----------] 8 tests from CadenceDetection (0 ms total)
+
+[----------] 5 tests from PivotDetection
+[ RUN      ] PivotDetection.PivotInMiddleOfSelection
+[       OK ] PivotDetection.PivotInMiddleOfSelection (0 ms)
+[ RUN      ] PivotDetection.PivotAtSelectionEnd_ConfirmedByLookahead
+[       OK ] PivotDetection.PivotAtSelectionEnd_ConfirmedByLookahead (0 ms)
+[ RUN      ] PivotDetection.PivotSuppressed_NewKeyUnconfirmed
+[       OK ] PivotDetection.PivotSuppressed_NewKeyUnconfirmed (0 ms)
+[ RUN      ] PivotDetection.NoPivot_StableKey
+[       OK ] PivotDetection.NoPivot_StableKey (0 ms)
+[ RUN      ] PivotDetection.PivotLabel_NoOldFormatPrefix
+[       OK ] PivotDetection.PivotLabel_NoOldFormatPrefix (0 ms)
+[----------] 5 tests from PivotDetection (0 ms total)
+
+[----------] 22 tests from Notation_ImplodeTests
+[ RUN      ] Notation_ImplodeTests.ImplodeChordTrackPreservesHalfMeasureHarmonyChanges
+[       OK ] Notation_ImplodeTests.ImplodeChordTrackPreservesHalfMeasureHarmonyChanges (69 ms)
+[ RUN      ] Notation_ImplodeTests.CollectRegionTonesAddsPedalTailOnlyInsidePedaledRegion
+[       OK ] Notation_ImplodeTests.CollectRegionTonesAddsPedalTailOnlyInsidePedaledRegion (26 ms)
+[ RUN      ] Notation_ImplodeTests.ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(673): error: Expected equality of these values:
+  countChordStartsOnStaff(score, kTargetTrebleStaff)
+    Which is: 4
+  3
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(674): error: Expected equality of these values:
+  countChordStartsOnStaff(score, kTargetTrebleStaff + 1)
+    Which is: 4
+  3
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(675): error: Expected equality of these values:
+  countHarmonyAnnotationsOnTrack(score, kTargetTrebleTrack)
+    Which is: 4
+  3
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(681): error: Value of: hasHarmonyAt(score, Fraction(3, 4), kTargetTrebleTrack)
+  Actual: true
+Expected: false
+
+[  FAILED  ] Notation_ImplodeTests.ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries (61 ms)
+[ RUN      ] Notation_ImplodeTests.JaccardBoundaryDetectionCarriesPedalTailsIntoLaterBeatWindows
+[       OK ] Notation_ImplodeTests.JaccardBoundaryDetectionCarriesPedalTailsIntoLaterBeatWindows (24 ms)
+[ RUN      ] Notation_ImplodeTests.ChopinBI16OpeningCollapsesRepeatedTonicRegions
+[       OK ] Notation_ImplodeTests.ChopinBI16OpeningCollapsesRepeatedTonicRegions (361 ms)
+[ RUN      ] Notation_ImplodeTests.ScoreHasValidChordSymbolsIgnoresRomanHarmonyImports
+[       OK ] Notation_ImplodeTests.ScoreHasValidChordSymbolsIgnoresRomanHarmonyImports (3809 ms)
+[ RUN      ] Notation_ImplodeTests.ScoreHasValidChordSymbolsDetectsStandardHarmonyAnnotations
+[       OK ] Notation_ImplodeTests.ScoreHasValidChordSymbolsDetectsStandardHarmonyAnnotations (19 ms)
+[ RUN      ] Notation_ImplodeTests.MozartK279OpeningPrefersCMajorOverFLydian
+[       OK ] Notation_ImplodeTests.MozartK279OpeningPrefersCMajorOverFLydian (2005 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dKeepsLaterDominantEntriesSeparateAcrossSparseGap
+[       OK ] Notation_ImplodeTests.CorelliOp01n08dKeepsLaterDominantEntriesSeparateAcrossSparseGap (359 ms)
+[ RUN      ] Notation_ImplodeTests.NoteContextMatchesRegionalChordOnSustainedSupportFixture
+[       OK ] Notation_ImplodeTests.NoteContextMatchesRegionalChordOnSustainedSupportFixture (28 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dMeasureThreeOpeningNoteGetsRegionalChordContext
+[       OK ] Notation_ImplodeTests.CorelliOp01n08dMeasureThreeOpeningNoteGetsRegionalChordContext (828 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dOpeningNoteContextMatchesPopulateInCMinor
+[       OK ] Notation_ImplodeTests.CorelliOp01n08dOpeningNoteContextMatchesPopulateInCMinor (2794 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1044): error: Value of: expectedRoman.empty()
+  Actual: true
+Expected: false
+1440
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1048): error: Expected equality of these values:
+  trebleTexts.front()
+    Which is: "Cm"
+  expectedSymbol
+    Which is: "G"
+1440
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1052): error: Expected equality of these values:
+  bassTexts.front()
+    Which is: "i"
+  expectedRoman
+    Which is: ""
+1440
+
+[  FAILED  ] Notation_ImplodeTests.CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature (4349 ms)
+[ RUN      ] Notation_ImplodeTests.PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1100): error: Value of: trebleMixed.empty()
+  Actual: false
+Expected: true
+{ 9, 26, 28, 29, 32, 33 }
+
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1101): error: Value of: bassMixed.empty()
+  Actual: false
+Expected: true
+{ 9, 26, 28, 29, 32, 33 }
+
+[  FAILED  ] Notation_ImplodeTests.PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16 (52303 ms)
+[ RUN      ] Notation_ImplodeTests.PopulateChordTrackPreservesCorelliOp01n08dCarryInAndLateDominant
+[       OK ] Notation_ImplodeTests.PopulateChordTrackPreservesCorelliOp01n08dCarryInAndLateDominant (2610 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmearPreviousChord
+[       OK ] Notation_ImplodeTests.CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmearPreviousChord (5575 ms)
+[ RUN      ] Notation_ImplodeTests.PopulateChordTrackHandlesTupletedDvorakOp08n06
+[       OK ] Notation_ImplodeTests.PopulateChordTrackHandlesTupletedDvorakOp08n06 (176281 ms)
+[ RUN      ] Notation_ImplodeTests.PopulateChordTrackKeepsRomanAtLowConfidenceButSuppressesKeyAnnotationsOnDvorakOp08n06
+[       OK ] Notation_ImplodeTests.PopulateChordTrackKeepsRomanAtLowConfidenceButSuppressesKeyAnnotationsOnDvorakOp08n06 (7667 ms)
+[ RUN      ] Notation_ImplodeTests.HarmonicAnnotationKeepsRomanAtLowConfidenceNoteContext
+[       OK ] Notation_ImplodeTests.HarmonicAnnotationKeepsRomanAtLowConfidenceNoteContext (9761 ms)
+[ RUN      ] Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit
+C:\s\MS\src\notation\tests\notationimplode_tests.cpp(1458): error: Value of: bassTexts.empty()
+  Actual: true
+Expected: false
+10:960 bass=[0:V][240:V][480:V][720:V]
+
+[  FAILED  ] Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit (2434 ms)
+[ RUN      ] Notation_ImplodeTests.JazzModeUsesChordSymbolPositionsAsBoundaries
+[       OK ] Notation_ImplodeTests.JazzModeUsesChordSymbolPositionsAsBoundaries (24 ms)
+[ RUN      ] Notation_ImplodeTests.JazzModeChordIdentityComesFromNotesNotWrittenSymbol
+[       OK ] Notation_ImplodeTests.JazzModeChordIdentityComesFromNotesNotWrittenSymbol (23 ms)
+[----------] 22 tests from Notation_ImplodeTests (271423 ms total)
+
+[----------] 1 test from Notation_ComposingBridgeTests
+[ RUN      ] Notation_ComposingBridgeTests.AddHarmonicAnnotationsToSelectionWritesAndUndoes
+[       OK ] Notation_ComposingBridgeTests.AddHarmonicAnnotationsToSelectionWritesAndUndoes (26 ms)
+[----------] 1 test from Notation_ComposingBridgeTests (26 ms total)
+
+[----------] 13 tests from Notation_TuningTests
+[ RUN      ] Notation_TuningTests.TonicAnchoredSplitsNonTiedSustainedNote
+[       OK ] Notation_TuningTests.TonicAnchoredSplitsNonTiedSustainedNote (57 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftKeepsNonTiedSustainedNoteWhole
+[       OK ] Notation_TuningTests.FreeDriftKeepsNonTiedSustainedNoteWhole (24 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftKeepsSimpleTieChainWholeWhenSplitPreferenceDisabled
+[       OK ] Notation_TuningTests.FreeDriftKeepsSimpleTieChainWholeWhenSplitPreferenceDisabled (31 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftSplitsNonTiedSustainedChordWhenSplitPreferenceEnabled
+[       OK ] Notation_TuningTests.FreeDriftSplitsNonTiedSustainedChordWhenSplitPreferenceEnabled (37 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftKeepsNonTiedSustainedChordWholeWhenSplitPreferenceDisabled
+[       OK ] Notation_TuningTests.FreeDriftKeepsNonTiedSustainedChordWholeWhenSplitPreferenceDisabled (18 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftSplitsTieChainAtExistingBoundaryWhenSplitPreferenceEnabled
+[       OK ] Notation_TuningTests.FreeDriftSplitsTieChainAtExistingBoundaryWhenSplitPreferenceEnabled (48 ms)
+[ RUN      ] Notation_TuningTests.FreeDriftKeepsTieChainWholeWhenSplitPreferenceDisabled
+[       OK ] Notation_TuningTests.FreeDriftKeepsTieChainWholeWhenSplitPreferenceDisabled (31 ms)
+[ RUN      ] Notation_TuningTests.TonicAnchoredKeepsNonTiedSustainedNoteWholeWhenSplitPreferenceDisabled
+[       OK ] Notation_TuningTests.TonicAnchoredKeepsNonTiedSustainedNoteWholeWhenSplitPreferenceDisabled (18 ms)
+[ RUN      ] Notation_TuningTests.TonicAnchoredKeepsAnchoredNonTiedSustainedNoteWhole
+[       OK ] Notation_TuningTests.TonicAnchoredKeepsAnchoredNonTiedSustainedNoteWhole (42 ms)
+[ RUN      ] Notation_TuningTests.TonicAnchoredRetunesTieChainAtExistingBoundaryWhenSplitPreferenceEnabled
+[       OK ] Notation_TuningTests.TonicAnchoredRetunesTieChainAtExistingBoundaryWhenSplitPreferenceEnabled (21 ms)
+[ RUN      ] Notation_TuningTests.TonicAnchoredKeepsAnchoredTieChainWhole
+[       OK ] Notation_TuningTests.TonicAnchoredKeepsAnchoredTieChainWhole (51 ms)
+[ RUN      ] Notation_TuningTests.TonicAnchoredKeepsTieChainWholeWhenSplitPreferenceDisabled
+[       OK ] Notation_TuningTests.TonicAnchoredKeepsTieChainWholeWhenSplitPreferenceDisabled (19 ms)
+[ RUN      ] Notation_TuningTests.SplitSlurPreferenceRoundTrips
+[       OK ] Notation_TuningTests.SplitSlurPreferenceRoundTrips (0 ms)
+[----------] 13 tests from Notation_TuningTests (403 ms total)
+
+[----------] Global test environment tear-down
+[==========] 49 tests from 5 test suites ran. (271854 ms total)
+[  PASSED  ] 45 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] Notation_ImplodeTests.ImplodeChordTrackKeepsSustainedSupportAcrossBeatBoundaries
+[  FAILED  ] Notation_ImplodeTests.CorelliOp01n08dOpeningBarsStatusContextMatchPopulateWithoutForcedKeySignature
+[  FAILED  ] Notation_ImplodeTests.PopulateChordTrackDoesNotLeaveMixedChordRestMeasuresOnBI16
+[  FAILED  ] Notation_ImplodeTests.CorelliOp01n08dUserReportedChordTrackAudit
+
+ 4 FAILED TESTS

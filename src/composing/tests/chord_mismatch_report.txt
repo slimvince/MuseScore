@@ -1,7 +1,7 @@
-=== Abstract chord mismatch summary: total=0 ===
+=== Jazz catalog: abstract chord mismatch summary: total=0 ===
 Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
 
-=== Symbol/Roman mismatch classification (total=131) ===
+=== Jazz catalog: Symbol/Roman mismatch classification (total=131) ===
 Progressive comparison protocol applied per entry.
 
 ConventionDiff at degree 13 (alterations preserved): 3
@@ -22,3 +22,16 @@ measure 333 [symbol+roman]  xml='CPhryg'  analyzer='Cm11'  roman xml='i7'  analy
   key=0maj  pitches=[60,61,63,65,67,70]  pcs=[0,1,3,5,7,10]  tpcs=[15,10,12,14,16,13]
 measure 340 [roman]  roman xml='I'  analyzer='Isus4'
   key=0maj  pitches=[60,66,67]  pcs=[0,6,7]  tpcs=[15,21,16]
+
+=== Standard catalog: abstract chord mismatch summary: total=0 ===
+Per-measure abstract mismatches (root/quality wrong — real analyzer bugs):
+
+=== Standard catalog: Symbol/Roman mismatch classification (total=1) ===
+Progressive comparison protocol applied per entry.
+
+ConventionDiff at degree 13 (alterations preserved): 1
+ConventionDiff total: 1
+RealDiff: 0
+
+=== RealDiff entries (actionable) ===
+

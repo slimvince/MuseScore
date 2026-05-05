@@ -1,0 +1,118 @@
+{
+  "source": "the-eye-of-the-hurricane-herbie-hancock.mscz",
+  "diagnose_measures": [
+    {
+      "measure": 1,
+      "beat": 1,
+      "key": "EbMixolyd",
+      "output_symbol": "Fsus69",
+      "collected_notes": [
+        {"pitch_class": 0, "pc_name": "C", "midi": 48, "weight": 0.30955, "duration_ticks": 4800, "is_bass": false},
+        {"pitch_class": 2, "pc_name": "D", "midi": 50, "weight": 0.187706, "duration_ticks": 2880, "is_bass": false},
+        {"pitch_class": 5, "pc_name": "F", "midi": 41, "weight": 0.187706, "duration_ticks": 2880, "is_bass": true},
+        {"pitch_class": 7, "pc_name": "G", "midi": 55, "weight": 0.233809, "duration_ticks": 3840, "is_bass": false},
+        {"pitch_class": 10, "pc_name": "Bb", "midi": 46, "weight": 0.0812294, "duration_ticks": 1920, "is_bass": false}
+      ],
+      "bass_pc": 5,
+      "bass_pc_name": "F",
+      "distinct_pcs": 5,
+      "pc_weights": {"C(0)": 0.30955, "D(2)": 0.18771, "F(5)": 0.18771, "G(7)": 0.23381, "Bb(10)": 0.1},
+      "top_candidates": [
+        {
+          "rank": 1,
+          "root_pc": 5,
+          "root_name": "F",
+          "template_idx": 12,
+          "template_name": "Sus4+Maj7 {0,5,7,11}",
+          "quality": "Suspended4",
+          "total_score": 2.315,
+          "template_tones": 0.76742,
+          "extra_notes": 0.14753,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0.3,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.4,
+          "context_bonus": 5.5511e-17,
+          "dim7_bonus": 0
+        },
+        {
+          "rank": 2,
+          "root_pc": 5,
+          "root_name": "F",
+          "template_idx": 11,
+          "template_name": "Sus4 {0,5,7,10}",
+          "quality": "Suspended4",
+          "total_score": 2.315,
+          "template_tones": 0.76742,
+          "extra_notes": 0.14753,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0.3,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.4,
+          "context_bonus": 5.5511e-17,
+          "dim7_bonus": 0
+        },
+        {
+          "rank": 3,
+          "root_pc": 5,
+          "root_name": "F",
+          "template_idx": 15,
+          "template_name": "Power {0,7}",
+          "quality": "Power",
+          "total_score": 1.7919,
+          "template_tones": 0.70933,
+          "extra_notes": 0.18253,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0.3,
+          "non_bass_adj": 0,
+          "structural_penalty": -0.3,
+          "tpc_bonus": 0.2,
+          "context_bonus": 5.5511e-17,
+          "dim7_bonus": 0
+        },
+        {
+          "rank": 4,
+          "root_pc": 5,
+          "root_name": "F",
+          "template_idx": 10,
+          "template_name": "Sus2 {0,2,7}",
+          "quality": "Suspended2",
+          "total_score": 1.7387,
+          "template_tones": 0.92799,
+          "extra_notes": 0.1007,
+          "bass_bonus": 0.21,
+          "diatonic_bonus": 0.3,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.2,
+          "context_bonus": 5.5511e-17,
+          "dim7_bonus": 0
+        }
+      ],
+      "extension_flags": {
+        "hasMinorSeventh": false,
+        "hasMajorSeventh": false,
+        "hasDimSeventh": false,
+        "hasAddedSixth": true,
+        "hasNaturalNinth": true,
+        "hasFlatNinth": false,
+        "hasSharpNinth": false,
+        "hasNaturalEleventh": false,
+        "hasSharpEleventh": false,
+        "hasNaturalThirteenth": true,
+        "hasFlatThirteenth": false,
+        "hasSharpThirteenth": false,
+        "hasFlatFifth": false,
+        "hasSharpFifth": false,
+        "omitsThird": false,
+        "isSixNine": true
+      }
+    },
+    {"measure": 14, "error": "measure not found"}
+,
+    {"measure": 15, "error": "measure not found"}
+
+  ]
+}

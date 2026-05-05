@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include <array>
 #include <set>
 #include <vector>
 
@@ -43,6 +44,10 @@ struct ChordTemporalExtensions {
     ChordQuality previousQuality = ChordQuality::Unknown;
     bool bassIsStepwiseFromPrevious = false;
     bool bassIsStepwiseToNext = false;
+    int nextRootPc = -1;                           ///< Root PC of next region; -1 = unknown.
+    int consecutiveBassStepwiseCount = 0;          ///< Consecutive stepwise bass moves ending here.
+    std::array<int, 3> recentRootPcs = {-1,-1,-1}; ///< Root PCs of 3 most recent regions.
+    double regionMetricWeight = 1.0;               ///< Metric weight [0,1]; 1 = downbeat.
 };
 
 /// Snapshot the analyzer-input temporal context as a downstream-facing
@@ -55,6 +60,10 @@ inline ChordTemporalExtensions toExtensionsSnapshot(const ChordTemporalContext& 
     ext.previousQuality = ctx.previousQuality;
     ext.bassIsStepwiseFromPrevious = ctx.bassIsStepwiseFromPrevious;
     ext.bassIsStepwiseToNext = ctx.bassIsStepwiseToNext;
+    ext.nextRootPc = ctx.nextRootPc;
+    ext.consecutiveBassStepwiseCount = ctx.consecutiveBassStepwiseCount;
+    ext.recentRootPcs = ctx.recentRootPcs;
+    ext.regionMetricWeight = ctx.regionMetricWeight;
     return ext;
 }
 

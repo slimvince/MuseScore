@@ -42,6 +42,7 @@
 namespace mu::engraving {
 class Score;
 class Segment;
+class Measure;
 class Fraction;
 using staff_idx_t = size_t;
 }
@@ -71,6 +72,16 @@ buildTones(const std::vector<SoundingNote>& sounding);
 /// Map MuseScore's BeatType enum to a weight for key/mode analysis.
 double beatTypeToWeight(mu::engraving::BeatType bt,
                         const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs);
+
+/// Return BeatType safely, falling back to SUBBEAT for null or invalid inputs.
+mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
+                                     const mu::engraving::Segment* segment);
+
+/// Normalised metric weight [0,1] for a beat type: 1.0 = downbeat, 0.85 = stressed,
+/// 0.75 = unstressed, 0.5 = subbeat.  Matches the scale used by collectRegionTones().
+// TODO (ARCHITECTURE.md §2.10): duplicate of batch_analyze.cpp's
+// regionMetricWeightForBeatType. Move to a shared composing-module utility.
+double regionMetricWeightForBeatType(mu::engraving::BeatType bt);
 
 /// Exponential time decay: notes further from the analysis tick carry less weight.
 double timeDecay(double beatsAgo, double decayRate = 0.7);

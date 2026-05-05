@@ -1,0 +1,95 @@
+{
+  "source": "the Oak and the lark.mscz",
+  "diagnose_measures": [
+    {
+      "measure": 10,
+      "beat": 1,
+      "key": "BDor",
+      "output_symbol": "GMaj7",
+      "collected_notes": [
+        {"pitch_class": 2, "pc_name": "D", "midi": 62, "weight": 0.166667, "duration_ticks": 360, "is_bass": false},
+        {"pitch_class": 6, "pc_name": "F#", "midi": 66, "weight": 0.166667, "duration_ticks": 360, "is_bass": false},
+        {"pitch_class": 7, "pc_name": "G", "midi": 43, "weight": 0.5, "duration_ticks": 720, "is_bass": true},
+        {"pitch_class": 11, "pc_name": "B", "midi": 71, "weight": 0.166667, "duration_ticks": 360, "is_bass": false}
+      ],
+      "bass_pc": 7,
+      "bass_pc_name": "G",
+      "distinct_pcs": 4,
+      "pc_weights": {"D(2)": 0.16667, "F#(6)": 0.16667, "G(7)": 0.5, "B(11)": 0.16667},
+      "top_candidates": [
+        {
+          "rank": 1,
+          "root_pc": 7,
+          "root_name": "G",
+          "template_idx": 1,
+          "template_name": "Maj7 {0,4,7,11}",
+          "quality": "Major",
+          "total_score": 2.7333,
+          "template_tones": 1.4333,
+          "extra_notes": 0,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.6,
+          "context_bonus": 0,
+          "dim7_bonus": 0
+        },
+        {
+          "rank": 2,
+          "root_pc": 7,
+          "root_name": "G",
+          "template_idx": 0,
+          "template_name": "Major triad {0,4,7}",
+          "quality": "Major",
+          "total_score": 2.4417,
+          "template_tones": 1.2667,
+          "extra_notes": 0.075,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.4,
+          "context_bonus": 0,
+          "dim7_bonus": 0
+        },
+        {
+          "rank": 3,
+          "root_pc": 7,
+          "root_name": "G",
+          "template_idx": 2,
+          "template_name": "Dom7 {0,4,7,10}",
+          "quality": "Major",
+          "total_score": 2.4417,
+          "template_tones": 1.2667,
+          "extra_notes": 0.075,
+          "bass_bonus": 0.7,
+          "diatonic_bonus": 0,
+          "non_bass_adj": 0,
+          "structural_penalty": 0,
+          "tpc_bonus": 0.4,
+          "context_bonus": 0,
+          "dim7_bonus": 0
+        }
+      ],
+      "extension_flags": {
+        "hasMinorSeventh": false,
+        "hasMajorSeventh": true,
+        "hasDimSeventh": false,
+        "hasAddedSixth": false,
+        "hasNaturalNinth": false,
+        "hasFlatNinth": false,
+        "hasSharpNinth": false,
+        "hasNaturalEleventh": false,
+        "hasSharpEleventh": false,
+        "hasNaturalThirteenth": false,
+        "hasFlatThirteenth": false,
+        "hasSharpThirteenth": false,
+        "hasFlatFifth": false,
+        "hasSharpFifth": false,
+        "omitsThird": false,
+        "isSixNine": false
+      }
+    }
+  ]
+}

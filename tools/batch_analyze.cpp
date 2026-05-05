@@ -1698,14 +1698,18 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.bassIsStepwiseFromPrevious = (ctx.previousBassPc != -1 && currentBassPc != -1)
             && isDiatonicStep(ctx.previousBassPc, currentBassPc);
 
-        // Update consecutive stepwise count and snapshot the recent-root buffer.
+        // NOTE: consecutiveBassStepwiseCount, recentRootPcs, regionMetricWeight, nextRootPc
+        // are no longer populated here. They are now computed in the shared bridge pipeline
+        // (notationharmonicrhythmbridge.cpp). analyzeScore() is a parallel legacy path
+        // pending retirement (see iteration_plan_inversion_redesign.md). Until retirement,
+        // these fields default to 0 / {-1,-1,-1} / 1.0 / -1 in the batch path.
+        // TODO (ARCHITECTURE.md §2.10): retire analyzeScore() and route batch mode through
+        // analyzeScoreNotationPrepared() to restore these fields in the batch path.
         if (ctx.bassIsStepwiseFromPrevious) {
             ++runningStepwiseCount;
         } else {
             runningStepwiseCount = 0;
         }
-        ctx.consecutiveBassStepwiseCount = runningStepwiseCount;
-        ctx.recentRootPcs = recentRootsBuf;
 
         // Infer key using the same windowed approach as the bridge.
         // Pass the previous result for hysteresis (nullptr on the first region).
@@ -1716,18 +1720,9 @@ static std::vector<AnalyzedRegion> analyzeScore(
         const KeyModeAnalysisResult& localKey = keyRanked[0];
         prevKey = localKey;
 
-        // Region metric weight — needs the measure, computed above.
-        {
-            const Segment* regionSeg = score->tick2segment(
-                regionStart, false, SegmentType::ChordRest);
-            ctx.regionMetricWeight = regionMetricWeightForBeatType(
-                safeBeatType(measure, regionSeg));
-        }
-
         // Look-ahead: collect next region's tones for nextBassPc and nextRootPc.
         // nextRootPc uses the current region's key as a lightweight approximation.
         int nextBassPc = -1;
-        ctx.nextRootPc = -1;
         if (boundaryIndex + 1 < boundaryTicks.size()) {
             const Fraction nextRegionStart = boundaryTicks[boundaryIndex + 1];
             const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
@@ -1741,13 +1736,6 @@ static std::vector<AnalyzedRegion> analyzeScore(
                 if (tone.isBass) {
                     nextBassPc = tone.pitch % 12;
                     break;
-                }
-            }
-            if (!nextTones.empty()) {
-                const auto nextCandidates = chordAnalyzer->analyzeChord(
-                    nextTones, localKey.keySignatureFifths, localKey.mode, nullptr, chordPrefs);
-                if (!nextCandidates.empty()) {
-                    ctx.nextRootPc = nextCandidates[0].identity.rootPc;
                 }
             }
         }
