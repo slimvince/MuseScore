@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-05 — Iteration 6: Gates G-B/G-C/G-D added (MinorAdd6/HalfDim7 temporal gates). 407/407 composing, 53/53 notation, 10/10 pipeline snapshot tests pass. BIR unchanged: BIR=true 111, BIR=false 788 (expected — §2.10 temporal gates not measured by batch path).*
+*Last updated: 2026-05-06 — Iteration 7B: FM2 fix for Gate A MajorAdd6 misses. 407/407 composing, 53/53 notation, 10/10 pipeline snapshot tests pass. BIR=true: 109 (was 111, -2), BIR=false: 788.*
 
 ---
 

@@ -2015,6 +2015,21 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
                     }
+                    // FM2 fallback: a higher-scoring different-root alt (e.g. Em/C) may have
+                    // blocked the enharmonic partner from entering results[] via the append path.
+                    // Scan rawCandidates above threshold for the Minor alt at expectedAltRoot.
+                    if (!didEnharmonicFlip && winnerIsMajor && winnerHasAddedSixth) {
+                        for (const RawCandidate& rc : rawCandidates) {
+                            if (rc.score < threshold) { break; }
+                            if (rc.rootPc == expectedAltRoot
+                                && rc.quality == ChordQuality::Minor) {
+                                results.push_back(buildResult(rc));
+                                std::swap(results[0], results.back());
+                                didEnharmonicFlip = true;
+                                break;
+                            }
+                        }
+                    }
                     // Gate B: the next region's inferred root matches the alternative (Minor) root.
                     // Strong forward evidence that this harmony persists — the bass is passing through
                     // a chord tone, not establishing a new root.
