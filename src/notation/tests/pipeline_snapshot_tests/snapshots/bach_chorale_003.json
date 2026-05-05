@@ -422,22 +422,22 @@
         },
         {
             "key": "E",
-            "text": "Esus#5/C",
+            "text": "Am/C",
             "tick": 12000
         },
         {
             "key": "E",
-            "text": "Vsus4",
+            "text": "i6",
             "tick": 12000
         },
         {
             "key": "E",
-            "text": "Esus#5/C",
+            "text": "Am/C",
             "tick": 12000
         },
         {
             "key": "E",
-            "text": "Vsus4",
+            "text": "i6",
             "tick": 12000
         },
         {
@@ -582,22 +582,22 @@
         },
         {
             "key": "E",
-            "text": "Asus#5/E",
+            "text": "Dm/E",
             "tick": 16800
         },
         {
             "key": "E",
-            "text": "Isus464",
+            "text": "iv",
             "tick": 16800
         },
         {
             "key": "E",
-            "text": "Asus#5/E",
+            "text": "Dm/E",
             "tick": 16800
         },
         {
             "key": "E",
-            "text": "Isus464",
+            "text": "iv",
             "tick": 16800
         },
         {
@@ -834,8 +834,8 @@
             "durationTicks": 960,
             "key": "E",
             "mode": "min",
-            "quality": "sus4",
-            "root": "E",
+            "quality": "minor",
+            "root": "A",
             "tick": 12000
         },
         {
@@ -898,8 +898,8 @@
             "durationTicks": 480,
             "key": "E",
             "mode": "min",
-            "quality": "sus4",
-            "root": "A",
+            "quality": "minor",
+            "root": "D",
             "tick": 16800
         },
         {
@@ -1145,10 +1145,10 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "Esus(add#5)/C",
+            "harmonyText": "Am/C",
             "pitches": [
-                69,
-                72
+                60,
+                64
             ],
             "tick": 12000
         },
@@ -1217,10 +1217,10 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Asus(add#5)/E",
+            "harmonyText": "Dm/E",
             "pitches": [
-                62,
-                65
+                65,
+                69
             ],
             "tick": 16800
         },
@@ -1529,9 +1529,14 @@
                     "score": 2.613
                 },
                 {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 2.529
+                },
+                {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.613
+                    "score": 2.168
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1762,6 +1767,11 @@
                     "quality": "major",
                     "root": "B",
                     "score": 2.92
+                },
+                {
+                    "quality": "minor",
+                    "root": "G#",
+                    "score": 1.96
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1778,14 +1788,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "sus4",
-                    "root": "E",
-                    "score": 2.038
-                },
-                {
                     "quality": "minor",
                     "root": "A",
                     "score": 2.036
+                },
+                {
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 2.01
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1794,8 +1804,8 @@
             "previousBassPc": 4,
             "previousQuality": "minor",
             "previousRootPc": 4,
-            "quality": "sus4",
-            "root": "E",
+            "quality": "minor",
+            "root": "A",
             "tick": 12000,
             "wasRegional": true
         },
@@ -1804,20 +1814,20 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.32
+                    "score": 2.92
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.32
+                    "score": 2.92
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "E",
             "previousBassPc": 0,
-            "previousQuality": "sus4",
-            "previousRootPc": 4,
+            "previousQuality": "minor",
+            "previousRootPc": 9,
             "quality": "major",
             "root": "E",
             "tick": 12960,
@@ -1831,9 +1841,14 @@
                     "score": 2.711
                 },
                 {
-                    "quality": "sus4",
+                    "quality": "power",
+                    "root": "A",
+                    "score": 1.961
+                },
+                {
+                    "quality": "major",
                     "root": "E",
-                    "score": 2.312
+                    "score": 1.791
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1858,6 +1873,11 @@
                     "quality": "power",
                     "root": "A",
                     "score": 2.29
+                },
+                {
+                    "quality": "major",
+                    "root": "F",
+                    "score": 2.07
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1898,14 +1918,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "sus4",
-                    "root": "A",
-                    "score": 1.959
-                },
-                {
                     "quality": "minor",
                     "root": "D",
                     "score": 1.945
+                },
+                {
+                    "quality": "major",
+                    "root": "F",
+                    "score": 1.732
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1914,8 +1934,8 @@
             "previousBassPc": 9,
             "previousQuality": "minor",
             "previousRootPc": 9,
-            "quality": "sus4",
-            "root": "A",
+            "quality": "minor",
+            "root": "D",
             "tick": 16800,
             "wasRegional": true
         },
@@ -1928,8 +1948,13 @@
                 },
                 {
                     "quality": "major",
+                    "root": "E",
+                    "score": 2.744
+                },
+                {
+                    "quality": "major",
                     "root": "D",
-                    "score": 3.264
+                    "score": 2.564
                 }
             ],
             "bassIsStepwiseFromPrevious": true,

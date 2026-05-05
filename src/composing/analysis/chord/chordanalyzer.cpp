@@ -2015,6 +2015,45 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
                     }
+                    // Gate B: the next region's inferred root matches the alternative (Minor) root.
+                    // Strong forward evidence that this harmony persists — the bass is passing through
+                    // a chord tone, not establishing a new root.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->nextRootPc != -1
+                        && context->nextRootPc == bestAlt->identity.rootPc) {
+                        std::swap(results[0], results[bestAltIdx]);
+                        didEnharmonicFlip = true;
+                    }
+                    // Gate C: the alternative root appears in the 3-region window AND the bass is
+                    // moving stepwise from the previous region.  The root has been recently active
+                    // and the bass is passing through it — strong evidence of an inversion.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->bassIsStepwiseFromPrevious) {
+                        const auto& rpc = context->recentRootPcs;
+                        const bool altRootIsRecent = (rpc[0] == bestAlt->identity.rootPc
+                                                      || rpc[1] == bestAlt->identity.rootPc
+                                                      || rpc[2] == bestAlt->identity.rootPc);
+                        if (altRootIsRecent) {
+                            std::swap(results[0], results[bestAltIdx]);
+                            didEnharmonicFlip = true;
+                        }
+                    }
+                    // Gate D: two or more consecutive stepwise bass moves ending here.
+                    // A scalar bass line is strong evidence of a passing inversion, not a new root.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->consecutiveBassStepwiseCount >= 2) {
+                        std::swap(results[0], results[bestAltIdx]);
+                        didEnharmonicFlip = true;
+                    }
                 }
 
                 if (!didEnharmonicFlip) {

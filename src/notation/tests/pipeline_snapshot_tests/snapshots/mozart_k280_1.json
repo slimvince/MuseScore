@@ -1480,6 +1480,11 @@
                     "quality": "major",
                     "root": "F",
                     "score": 3.018
+                },
+                {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 1.936
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1504,6 +1509,11 @@
                     "quality": "major",
                     "root": "F",
                     "score": 3.018
+                },
+                {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 1.936
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1669,9 +1679,14 @@
                     "score": 3.049
                 },
                 {
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 2.735
+                },
+                {
                     "quality": "major",
                     "root": "F",
-                    "score": 3.049
+                    "score": 2.349
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1693,9 +1708,14 @@
                     "score": 3.049
                 },
                 {
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 2.735
+                },
+                {
                     "quality": "major",
                     "root": "F",
-                    "score": 3.049
+                    "score": 2.349
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1765,9 +1785,14 @@
                     "score": 2.782
                 },
                 {
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 2.223
+                },
+                {
                     "quality": "major",
                     "root": "F",
-                    "score": 2.782
+                    "score": 2.082
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1813,9 +1838,14 @@
                     "score": 2.85
                 },
                 {
+                    "quality": "minor",
+                    "root": "G",
+                    "score": 2.213
+                },
+                {
                     "quality": "major",
                     "root": "Bb",
-                    "score": 2.85
+                    "score": 2.15
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1851,9 +1881,14 @@
                     "score": 2.671
                 },
                 {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 2.58
+                },
+                {
                     "quality": "major",
                     "root": "C",
-                    "score": 2.671
+                    "score": 2.226
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1899,9 +1934,14 @@
                     "score": 2.637
                 },
                 {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 2.539
+                },
+                {
                     "quality": "major",
                     "root": "F",
-                    "score": 2.637
+                    "score": 1.937
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1923,9 +1963,14 @@
                     "score": 2.637
                 },
                 {
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 2.539
+                },
+                {
                     "quality": "major",
                     "root": "F",
-                    "score": 2.637
+                    "score": 1.937
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1947,9 +1992,14 @@
                     "score": 2.85
                 },
                 {
+                    "quality": "minor",
+                    "root": "G",
+                    "score": 2.213
+                },
+                {
                     "quality": "major",
                     "root": "Bb",
-                    "score": 2.85
+                    "score": 2.15
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1988,6 +2038,11 @@
                     "quality": "major",
                     "root": "F",
                     "score": 3.118
+                },
+                {
+                    "quality": "sus4",
+                    "root": "C",
+                    "score": 2.109
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2026,6 +2081,11 @@
                     "quality": "major",
                     "root": "F",
                     "score": 3.263
+                },
+                {
+                    "quality": "sus4",
+                    "root": "C",
+                    "score": 2.211
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
