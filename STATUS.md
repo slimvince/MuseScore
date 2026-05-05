@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-05 — Temporal context expansion + total-bonus cap implemented (uncommitted). Four new inversion signals added (nextRootPc, consecutiveBassStepwiseCount, recentRootPcs, regionMetricWeight). Cap at `maxTotalInversionContextBonus` prevents stacking runaway. Baroque preset cap=1.0 found optimal: bassIsRoot genuine errors 119→66 (−45%), overall chord identity 75%→80.3%. Tests 407/407, RealDiff still 4.*
+*Last updated: 2026-05-05 — Inversion redesign Iteration 3 complete (commit `f168ee5dab`). Temporal gates B/C/D added to post-ranking correction block in `chordanalyzer.cpp` inside the `preferMinorOverMajorAdd6` block. Gates fire in P1/P2/P3/P4 bridge paths (confirmed by 10-score snapshot corpus changes). Batch path does not populate the 3 new temporal fields (known TODO §2.10 in batch_analyze.cpp) — corpus BIR unchanged at 119/252. BIR=false held at 252 (no false positives). 407/407 composing tests pass, 53/53 notation tests pass, 10/10 pipeline snapshot goldens updated. Iteration 4 (empirical tuning) pending.*
 
 ---
 
@@ -107,7 +107,28 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
 - Cadence-aware duration gate idea (post-Phase-5; per-onset analysis alternative rejected for chicken-and-egg)
 - composing_tests 135 baseline is synthetic — real-music backlog unmeasured
 
-**2026-05-05 — Temporal context expansion + total-bonus cap (uncommitted):**
+**2026-05-05 — Inversion redesign Iterations 0–2 (commit `1d3e8d9a59`):**
+- Iteration 0: reverted all harmful changes from the earlier cap/bonus experiment:
+  removed five `ChordAnalyzerPreferences` fields (`nextRootMatchesAltInversionBonus`,
+  `consecutiveBassStepwiseInversionBonus`, `recentRootMatchesAltInversionBonus`,
+  `weakBeatInversionBonus`, `weakBeatThreshold`); removed their scoring code from
+  `contextualBonuses()`; reverted Baroque/Jazz preset amplified values to defaults.
+  Clean baseline: 119 genuine BIR=true, 252 BIR=false (commit `46c76ad67f`).
+- Iteration 1: read-only investigation of `analyzeSection` / bridge pipeline structure.
+  Found that `analyzeSection` delegates to `analyzeHarmonicRhythm()` in
+  `notationharmonicrhythmbridge.cpp` — the §4.1c loop is the correct insertion point
+  for temporal context population (Option B).
+- Iteration 2: moved temporal context computation into the shared bridge pipeline
+  (`notationharmonicrhythmbridge.cpp`). Added four fields to `ChordTemporalExtensions`
+  and `toExtensionsSnapshot()`; added rolling state + per-region population of
+  `nextRootPc`, `consecutiveBassStepwiseCount`, `recentRootPcs`, `regionMetricWeight`
+  in the §4.1c main loop and Pass 2/2b sub-loops; removed duplicate computation from
+  `batch_analyze.cpp` with NOTE comment. All P1/P2/P3/P4 paths now receive full
+  temporal context. Corpus numbers unchanged (119/252) — no scoring changes in Iter 2.
+- Master plan: `docs/prompts/iteration_plan_inversion_redesign.md`
+- Next: Iteration 3 — temporal gates B/C/D in post-ranking correction (`chordanalyzer.cpp`)
+
+**2026-05-05 — Temporal context expansion + total-bonus cap (REVERTED in Iter 0 above):**
 - Four new inversion signals added to `ChordTemporalContext` / `ChordAnalyzerPreferences` /
   `contextualBonuses()`: `nextRootPc` (look-ahead root match), `consecutiveBassStepwiseCount`
   (scalar bass run), `recentRootPcs` (3-region root window), `regionMetricWeight` (beat strength).
