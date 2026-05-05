@@ -135,7 +135,7 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
 - Iteration 4: stepwise lookahead tuning; added gates E/F for first/second inversion.
   Commit `41913a7cf9`.
 
-**2026-05-05 — Iteration 6: Gates G-B/G-C/G-D — MinorAdd6/HalfDim7 temporal gates (commit TBD):**
+**2026-05-05 — Iteration 6: Gates G-B/G-C/G-D — MinorAdd6/HalfDim7 temporal gates (commit `2850bb4705`):**
 - Three context-dependent gates added to the `if (prefs.preferMinorOverMajorAdd6)` block,
   immediately after Gate D. These are exact parallels of Gates B/C/D for the second enharmonic
   equivalence pair: MinorAdd6 (e.g. Cm6 = C–Eb–G–A) ↔ HalfDim7 whose root is 9 semitones above
