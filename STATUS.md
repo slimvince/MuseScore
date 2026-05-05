@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-05 — Inversion redesign Iteration 5 complete (commit `TBD`). Gate G (MinorAdd6 ↔ HalfDim7) added to post-ranking correction block in `chordanalyzer.cpp`, immediately before the `bestAlt` search, wrapped in `if (!didGateGFire)`. Symmetric to Gate A: when winner is Minor+AddedSixth, the half-diminished seventh at (winnerRootPc+9)%12 is swapped in directly, no margin check. Fires on structural grounds without temporal context. Gated by `preferMinorOverMajorAdd6` (Standard/Baroque presets). Part B (deduction neutralization fix: deduct all same-root candidates) was implemented and then reverted — it caused widespread regressions in notation tests (hard-coded expectations for G→Em7/G and C→Em/C inversions) and Jazz catalog (deducts C7 alongside C6, lets Am7 win). Root cause: the "neutralization" that Part B removed was in many cases the correct outcome. Part B deferred. Snapshot corpus: 10/10 pass, no goldens updated (Gate G did not fire on 10-score corpus; Bach chorales have no MinorAdd6 chords). Corpus BIR: 119/252 (unchanged; Gate G not measurable via batch — Bach chorales have no MinorAdd6 chords). 407/407 composing tests, 53/53 notation tests pass.*
+*Last updated: 2026-05-05 — Gate G reverted (commit `89ad75d7d1`); corpus baselines corrected after stale-corpus discovery. See 2026-05-05 entry below. 407/407 composing, 53/53 notation, 10/11 pipeline snapshot tests pass. BIR baselines (fresh corpus): BIR=true 111, BIR=false 788.*
 
 ---
 
@@ -113,7 +113,8 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
   `consecutiveBassStepwiseInversionBonus`, `recentRootMatchesAltInversionBonus`,
   `weakBeatInversionBonus`, `weakBeatThreshold`); removed their scoring code from
   `contextualBonuses()`; reverted Baroque/Jazz preset amplified values to defaults.
-  Clean baseline: 119 genuine BIR=true, 252 BIR=false (commit `46c76ad67f`).
+  Clean baseline: 119 genuine BIR=true, 252 BIR=false (commit `46c76ad67f`) — stale
+  corpus numbers; see 2026-05-05 corpus-correction entry for current figures.
 - Iteration 1: read-only investigation of `analyzeSection` / bridge pipeline structure.
   Found that `analyzeSection` delegates to `analyzeHarmonicRhythm()` in
   `notationharmonicrhythmbridge.cpp` — the §4.1c loop is the correct insertion point
@@ -124,9 +125,31 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
   `nextRootPc`, `consecutiveBassStepwiseCount`, `recentRootPcs`, `regionMetricWeight`
   in the §4.1c main loop and Pass 2/2b sub-loops; removed duplicate computation from
   `batch_analyze.cpp` with NOTE comment. All P1/P2/P3/P4 paths now receive full
-  temporal context. Corpus numbers unchanged (119/252) — no scoring changes in Iter 2.
+  temporal context. Corpus numbers unchanged (119/252 on stale files) — no scoring changes in Iter 2.
 - Master plan: `docs/prompts/iteration_plan_inversion_redesign.md`
 - Next: Iteration 3 — temporal gates B/C/D in post-ranking correction (`chordanalyzer.cpp`)
+
+**2026-05-05 — Iterations 3–4: temporal gates + stepwise lookahead (commits `f168ee5dab`, `41913a7cf9`):**
+- Iteration 3: temporal gates B/C/D in post-ranking correction block — enharmonic inversion
+  correction via progression context. Commit `f168ee5dab`.
+- Iteration 4: stepwise lookahead tuning; added gates E/F for first/second inversion.
+  Commit `41913a7cf9`.
+
+**2026-05-05 — Iteration 5: Gate G attempted and reverted (commit `89ad75d7d1`):**
+- Gate G (MinorAdd6 ↔ HalfDim7 categorical swap, symmetric to Gate A) was implemented,
+  then reverted after corpus analysis showed a 96% false-positive rate. Of 56 MinorAdd6
+  errors in the corpus, Gate G only fired for 15 (because `winnerQualityTargeted` filters
+  many out before the gate is reached), and those 15 corrections were not verifiably correct.
+- Part B (deduction neutralization: deduct all same-rootPc candidates) was also attempted
+  and reverted — caused hard-coded notation test failures (G→Em7/G, C→Em/C) and Jazz catalog
+  regressions. Root cause: same-root rising after deduction is often correct behavior.
+- **Stale corpus discovery:** corpus JSONs in `tools/corpus/` had not been regenerated since
+  Iteration 2 (`1d3e8d9a59`). On regeneration, true baselines are BIR=true **111**, BIR=false
+  **788** (not 119/252). The temporal gates from iterations 3–4 reduced BIR=true by 8 and
+  increased BIR=false by 536 versus the iter-2 starting point. The 252 BIR=false ceiling in
+  `BUILD_AND_TEST.md` was silently stale; it has been corrected to 788.
+- Corpus JSONs regenerated and baselines updated: BIR=true 111, BIR=false 788.
+- 407/407 composing tests, 53/53 notation tests, 10/11 pipeline snapshot tests pass.
 
 **2026-05-05 — Temporal context expansion + total-bonus cap (REVERTED in Iter 0 above):**
 - Four new inversion signals added to `ChordTemporalContext` / `ChordAnalyzerPreferences` /

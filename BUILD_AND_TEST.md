@@ -100,7 +100,10 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 378/378** passing.
+**Current baseline: 378/378** passing (verify with CC — count changes as tests are added).
+
+Tests `analyzeChord()` directly in the composing module. Run after any change to `src/composing/`.
+After each run, read `src/composing/tests/chord_mismatch_report.txt`.
 
 ### Notation Tests
 
@@ -108,7 +111,32 @@ cd C:\s\MS\ninja_build_rel
 ./notation_tests.exe
 ```
 
-**Current baseline: 51/51** passing.
+**Current baseline: 51/51** passing (verify with CC — count changes as tests are added).
+
+Run after any change to bridge code (`notationharmonicrhythmbridge.cpp`,
+`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, etc.) **and** after
+any change to `chordanalyzer.cpp` that alters chord output.
+
+**P1–P4 pipeline snapshot test** (`pipeline_snapshot_tests.cpp`) is a SEPARATE
+executable from `notation_tests.exe`. Both are built by the standard build scripts.
+It snapshots the output of all four analysis paths (P1 implode, P2 annotation,
+P3 tick-regional, P4 tick-local) against golden JSON files for a 10-score corpus.
+
+```
+./pipeline_snapshot_tests.exe
+```
+
+If a code change intentionally alters chord output (e.g. a new inversion gate fires),
+the snapshot test will fail — this is expected. Refresh the goldens only after
+verifying the new output is correct:
+
+```
+./pipeline_snapshot_tests.exe --update-goldens
+```
+
+Then re-run `./pipeline_snapshot_tests.exe` to confirm all pass.
+Never run `--update-goldens` without first confirming the output change is intentional
+and correct.
 
 ### Batch Analyze Regression Tests
 
@@ -117,6 +145,40 @@ python tools/test_batch_analyze_regressions.py --batch-analyze ninja_build_rel/b
 ```
 
 Output: prints `batch_analyze regressions passed` if successful.
+Run after any change to `tools/batch_analyze.cpp`.
+
+### Corpus Regression Check
+
+```
+cd C:\s\MS && python tools/analyze_inversion_errors.py
+```
+
+Always use `--preset Baroque` unless the iteration explicitly says otherwise.
+This measures genuine inversion error counts against the Bach chorale corpus.
+
+**Current baseline (commit `89ad75d7d1`, fresh corpus regeneration 2026-05-05):**
+- 3-way genuine BIR=true: 111
+- 3-way genuine BIR=false: 788
+
+These figures supersede the stale Iteration 2 values (119 / 252). The old numbers were
+from corpus JSONs last generated at commit `1d3e8d9a59` and never refreshed across
+iterations 3–5. The temporal gates added in iterations 3–4 changed chord identifications
+across the corpus; 111/788 is the true baseline for the current codebase.
+
+**IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
+`analyze_inversion_errors.py` reads existing `.ours.json` files from `tools/corpus/` and
+will silently report stale numbers if those files are not current. Whenever you update
+the BIR baselines here, you must first regenerate the corpus:
+
+```
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
+```
+
+Then run `python tools/analyze_inversion_errors.py` and record the new figures here.
+
+Run after any change that could affect chord identification quality. If the numbers
+change unexpectedly (i.e. not due to an intentional scoring or gate change), stop and
+report before proceeding.
 
 ---
 
