@@ -279,6 +279,11 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
+    // TODO (ARCHITECTURE.md §4.1c): These four score-addition signals belong in the
+    // post-ranking correction layer, not in the vertical sonority scorer. They are
+    // left here as pre-existing technical debt; do not add further contextual signals
+    // to this section.
+
     // ── Contextual inversion bonuses (§4.1b) ───────────────────────────────
 
     /// Bonus applied to a non-bass-root candidate when the current
@@ -317,6 +322,17 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.0–2.0.  Default: 0.4.
     double sameRootInversionBonus = 0.4;
 
+    /// Maximum total context bonus that can be applied to any single inversion
+    /// candidate across ALL temporal signals combined (stepwise, lookahead,
+    /// sameRoot, completeTriad, nextRoot, consecutive, recentRoot, weakBeat).
+    /// Prevents runaway stacking when multiple signals fire simultaneously.
+    /// Default 2.0 — slightly above the old implicit ceiling of 1.85 so new
+    /// signals can contribute marginally at default prefs without large risk.
+    /// Baroque: 2.5 — ~0.65 headroom above old max for amplified signals.
+    /// Jazz: 0.6 — inversion bonuses heavily suppressed.
+    /// Range: 0.0–10.0.  Default: 2.0.
+    double maxTotalInversionContextBonus = 2.0;
+
     // ── Inversion / bass-root bias correction ──────────────────────────────
     //
     // When the winning candidate beat the best non-bass alternative by less
@@ -346,6 +362,16 @@ struct ChordAnalyzerPreferences {
     /// 1.0 = no reduction (NOP).  0.0 = remove the bonus contribution entirely.
     /// Default: 0.0 — fully remove the bonus so the non-bass alternative wins.
     double inversionBonusReduction = 0.0;
+
+    /// When true, prefer a Minor reading over a bass-root Major reading when the
+    /// two span identical pitch classes (the enharmonic Major-add6 / Minor7 pair:
+    /// e.g. Bb6 vs Gm7/Bb, C6 vs Am7/C).  The preference is applied unconditionally
+    /// — no margin check — because score-based discrimination cannot reliably
+    /// resolve this pair in bass-heavy textures.
+    /// Set true for Standard and Baroque presets where added-sixth chords are rare;
+    /// leave false for Jazz where C6, Bb6, etc. are idiomatic labels.
+    /// Default: false.
+    bool preferMinorOverMajorAdd6 = false;
 
     // ── Harmonic boundary detection (§4.1c) ────────────────────────────────
 
@@ -438,8 +464,9 @@ struct ChordAnalyzerPreferences {
             { "stepwiseBassInversionBonus",    { 0.0, 2.0 } },
             { "stepwiseBassLookaheadBonus",    { 0.0, 2.0 } },
             { "completeTriadInversionBonus",  { 0.0, 2.0 } },
-            { "sameRootInversionBonus",        { 0.0, 2.0 } },
-            { "inversionSuspicionMargin",           { 0.0, 2.0 } },
+            { "sameRootInversionBonus",                    { 0.0, 2.0 } },
+            { "maxTotalInversionContextBonus",            { 0.0, 10.0 } },
+            { "inversionSuspicionMargin",                 { 0.0, 2.0 } },
             { "inversionBonusReduction",            { 0.0, 1.0 } },
             { "harmonicBoundaryJaccardThreshold",       { 0.0, 1.0 } },
             { "pedalTailWeightMultiplier",              { 0.0, 1.0 } },
@@ -489,6 +516,26 @@ struct ChordTemporalContext {
     /// True if the current region's bass note is one diatonic step
     /// above or below the next region's bass note.
     bool bassIsStepwiseToNext = false;
+
+    /// Inferred root pitch class of the next harmonic region; -1 if unknown.
+    /// Populated by batch_analyze via a one-region look-ahead analyzeChord call.
+    int nextRootPc = -1;
+
+    /// Number of consecutive regions (including this one) whose bass moved by
+    /// diatonic step from the preceding region's bass.  0 if this region's bass
+    /// is not stepwise from the previous one.  Scalar bass lines are strong
+    /// evidence that non-root-bass readings are passing inversions.
+    int consecutiveBassStepwiseCount = 0;
+
+    /// Root pitch classes of the 3 most recent regions, most-recent first.
+    /// -1 for slots that are not yet populated (start of piece).
+    /// Used to detect harmony persistence across a short window.
+    std::array<int, 3> recentRootPcs = {-1, -1, -1};
+
+    /// Normalised metric strength of this region's onset: 1.0 = strong downbeat,
+    /// lower values for weaker beats, 0.5 for subbeatoffbeats.
+    /// Root-position chords cluster on strong beats; inversions on weak beats.
+    double regionMetricWeight = 1.0;
 };
 
 /// Per-candidate diagnostic entry from the full 12 × template scoring loop.
