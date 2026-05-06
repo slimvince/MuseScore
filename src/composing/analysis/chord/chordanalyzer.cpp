@@ -2035,10 +2035,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     // a chord tone, not establishing a new root.
                     if (!didEnharmonicFlip
                         && context != nullptr
-                        && winnerIsMajor && altIsMinor
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
                         && bestAlt->identity.rootPc == expectedAltRoot
                         && context->nextRootPc != -1
-                        && context->nextRootPc == bestAlt->identity.rootPc) {
+                        && context->nextRootPc == bestAlt->identity.rootPc
+                        && context->bassIsStepwiseToNext) {
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
                     }
@@ -2047,7 +2048,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     // and the bass is passing through it — strong evidence of an inversion.
                     if (!didEnharmonicFlip
                         && context != nullptr
-                        && winnerIsMajor && altIsMinor
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
                         && bestAlt->identity.rootPc == expectedAltRoot
                         && context->bassIsStepwiseFromPrevious) {
                         const auto& rpc = context->recentRootPcs;
@@ -2063,7 +2064,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     // A scalar bass line is strong evidence of a passing inversion, not a new root.
                     if (!didEnharmonicFlip
                         && context != nullptr
-                        && winnerIsMajor && altIsMinor
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
                         && bestAlt->identity.rootPc == expectedAltRoot
                         && context->consecutiveBassStepwiseCount >= 2) {
                         std::swap(results[0], results[bestAltIdx]);
@@ -2099,7 +2100,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                             if (!didEnharmonicFlip
                                 && context != nullptr
                                 && context->nextRootPc != -1
-                                && context->nextRootPc == expectedAltRoot) {
+                                && context->nextRootPc == expectedAltRoot
+                                && context->bassIsStepwiseToNext) {
                                 std::swap(results[0], results[halfDimAltIdx]);
                                 didEnharmonicFlip = true;
                             }
@@ -2231,7 +2233,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 // Gate H-B: next region's inferred root matches the alt augmented root.
                 if (!didAugmentedFlip
                     && context->nextRootPc != -1
-                    && context->nextRootPc == altRoot) {
+                    && context->nextRootPc == altRoot
+                    && context->bassIsStepwiseToNext) {
                     std::swap(results[0], results[augAltIdx]);
                     didAugmentedFlip = true;
                 }

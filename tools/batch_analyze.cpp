@@ -1698,13 +1698,12 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.bassIsStepwiseFromPrevious = (ctx.previousBassPc != -1 && currentBassPc != -1)
             && isDiatonicStep(ctx.previousBassPc, currentBassPc);
 
-        // NOTE: consecutiveBassStepwiseCount, recentRootPcs, regionMetricWeight, nextRootPc
-        // are no longer populated here. They are now computed in the shared bridge pipeline
-        // (notationharmonicrhythmbridge.cpp). analyzeScore() is a parallel legacy path
-        // pending retirement (see iteration_plan_inversion_redesign.md). Until retirement,
-        // these fields default to 0 / {-1,-1,-1} / 1.0 / -1 in the batch path.
-        // TODO (ARCHITECTURE.md §2.10): retire analyzeScore() and route batch mode through
-        // analyzeScoreNotationPrepared() to restore these fields in the batch path.
+        // Temporal context is now fully populated before analyzeChord():
+        //   bassIsStepwiseFromPrevious, bassIsStepwiseToNext — computed above
+        //   consecutiveBassStepwiseCount, recentRootPcs — assigned below
+        //   nextRootPc — computed in look-ahead block below
+        //   regionMetricWeight — left at default 1.0 (no gate uses it)
+        // §2.10: analyzeScore() and the bridge now use identical temporal signals.
         if (ctx.bassIsStepwiseFromPrevious) {
             ++runningStepwiseCount;
         } else {
@@ -1723,6 +1722,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         // Look-ahead: collect next region's tones for nextBassPc and nextRootPc.
         // nextRootPc uses the current region's key as a lightweight approximation.
         int nextBassPc = -1;
+        ctx.nextRootPc = -1;
         if (boundaryIndex + 1 < boundaryTicks.size()) {
             const Fraction nextRegionStart = boundaryTicks[boundaryIndex + 1];
             const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
@@ -1738,10 +1738,22 @@ static std::vector<AnalyzedRegion> analyzeScore(
                     break;
                 }
             }
+            // nextRootPc: lightweight analyzeChord on next region (no context — avoids recursion).
+            if (!nextTones.empty()) {
+                const auto nextCandidates = chordAnalyzer->analyzeChord(
+                    nextTones, localKey.keySignatureFifths, localKey.mode,
+                    nullptr, chordPrefs);
+                ctx.nextRootPc = nextCandidates.empty()
+                                 ? -1 : nextCandidates[0].identity.rootPc;
+            } else {
+                ctx.nextRootPc = -1;
+            }
         }
         ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
             && isDiatonicStep(currentBassPc, nextBassPc);
 
+        ctx.consecutiveBassStepwiseCount = runningStepwiseCount;
+        ctx.recentRootPcs                = recentRootsBuf;
         auto candidates = chordAnalyzer->analyzeChord(
             tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
 
