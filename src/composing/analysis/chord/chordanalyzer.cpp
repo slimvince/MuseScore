@@ -2070,65 +2070,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
                     }
-                    // ── Gates G-B / G-C / G-D: Minor-add6 ↔ HalfDim7 (temporal context required)
-                    // ─────────────────────────────────────────────────────────────────────────────
-                    //
-                    // Symmetric to Gates B/C/D but for the second enharmonic equivalence pair:
-                    // Minor-add6 (e.g. Cm6 = C–Eb–G–A) shares all four pitch classes with the
-                    // half-diminished seventh whose root is a minor-third above the winner root
-                    // (= 9 semitones mod 12, the same formula as expectedAltRoot above).
-                    //
-                    // A categorical gate (like Gate A for MajorAdd6) was attempted and reverted
-                    // because MinorAdd6 is a legitimate root-position chord in the corpus at a
-                    // ~96% rate.  Temporal evidence is required before preferring HalfDim.
-                    //
-                    // kCleanQualities excludes HalfDiminished, so the alt is found by a separate
-                    // one-pass search.  halfDimAltIdx is a sentinel (results.size()) if absent.
-                    const bool winnerIsMinor = !winnerIsMajor;
-                    if (winnerIsMinor && winnerHasAddedSixth) {
-                        size_t halfDimAltIdx = results.size();
-                        for (size_t i = 1; i < results.size(); ++i) {
-                            if (results[i].identity.quality == ChordQuality::HalfDiminished
-                                && results[i].identity.rootPc == expectedAltRoot) {
-                                halfDimAltIdx = i;
-                                break;
-                            }
-                        }
-                        if (halfDimAltIdx != results.size()) {
-                            // Gate G-B: next region's inferred root matches the HalfDim root.
-                            // Strong forward evidence the harmony continues on that root.
-                            if (!didEnharmonicFlip
-                                && context != nullptr
-                                && context->nextRootPc != -1
-                                && context->nextRootPc == expectedAltRoot
-                                && context->bassIsStepwiseToNext) {
-                                std::swap(results[0], results[halfDimAltIdx]);
-                                didEnharmonicFlip = true;
-                            }
-                            // Gate G-C: HalfDim root appears in the 3-region window AND bass
-                            // is moving stepwise from the previous region.  The root was recently
-                            // established and the bass is passing through a chord tone.
-                            if (!didEnharmonicFlip
-                                && context != nullptr
-                                && context->bassIsStepwiseFromPrevious) {
-                                const auto& rpc = context->recentRootPcs;
-                                if (rpc[0] == expectedAltRoot
-                                    || rpc[1] == expectedAltRoot
-                                    || rpc[2] == expectedAltRoot) {
-                                    std::swap(results[0], results[halfDimAltIdx]);
-                                    didEnharmonicFlip = true;
-                                }
-                            }
-                            // Gate G-D: two or more consecutive stepwise bass moves ending here.
-                            // A scalar bass line is strong evidence of a passing inversion.
-                            if (!didEnharmonicFlip
-                                && context != nullptr
-                                && context->consecutiveBassStepwiseCount >= 2) {
-                                std::swap(results[0], results[halfDimAltIdx]);
-                                didEnharmonicFlip = true;
-                            }
-                        }
-                    }
+
                 }
 
                 // ── Gate E: first-inversion detection ─────────────────────────────────────
@@ -2200,6 +2142,77 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     }
                 }
             }
+        // ── Gates G-E / G-B / G-C / G-D: Minor-add6 ↔ HalfDim7 ─────────────────────
+        //
+        // MinorAdd6 and HalfDim7 share identical pitch classes.
+        // kCleanQualities excludes HalfDiminished, so this block runs independently
+        // of the bestAlt path above.
+        //
+        // Gate G-E (key-context): fires when the HalfDim7 alt is a functional chord
+        // of the current key — either the leading-tone seventh (viiø7, alt root at
+        // tonicPc+11) or the supertonic seventh (iiø7, alt root at tonicPc+2).
+        // No temporal signals required.
+        //
+        // Gates G-B/C/D: temporal fallbacks for the remaining cases.
+        if (prefs.preferMinorOverMajorAdd6
+            && winner.identity.quality == ChordQuality::Minor
+            && hasExtension(winner.identity.extensions, Extension::AddedSixth)) {
+            const int gExpectedAltRoot = (winner.identity.rootPc + 9) % 12;
+            // Find the HalfDim7 alt in results[].
+            size_t halfDimAltIdx = results.size();
+            for (size_t i = 1; i < results.size(); ++i) {
+                if (results[i].identity.quality == ChordQuality::HalfDiminished
+                    && results[i].identity.rootPc == gExpectedAltRoot) {
+                    halfDimAltIdx = i;
+                    break;
+                }
+            }
+            if (halfDimAltIdx != results.size()) {
+                bool didGFlip = false;
+                // Gate G-E: leading-tone key-context gate.
+                // The half-diminished seventh is the standard functional reading when
+                // it is rooted on the leading tone (viiø7) or supertonic (iiø7) of
+                // the current key.  No temporal signals required.
+                const int gLeadingTonePc  = (keyTonicPc + 11) % 12;
+                const int gSupersonicPc   = (keyTonicPc + 2) % 12;
+                if (!didGFlip
+                    && (results[halfDimAltIdx].identity.rootPc == gLeadingTonePc
+                        || results[halfDimAltIdx].identity.rootPc == gSupersonicPc)) {
+                    std::swap(results[0], results[halfDimAltIdx]);
+                    didGFlip = true;
+                }
+                // Gate G-B: next region's inferred root matches the HalfDim root.
+                // Strong forward evidence the harmony continues on that root.
+                if (!didGFlip
+                    && context != nullptr
+                    && context->nextRootPc != -1
+                    && context->nextRootPc == gExpectedAltRoot
+                    && context->bassIsStepwiseToNext) {
+                    std::swap(results[0], results[halfDimAltIdx]);
+                    didGFlip = true;
+                }
+                // Gate G-C: HalfDim root appears in the 3-region window AND bass
+                // is moving stepwise from the previous region.
+                if (!didGFlip
+                    && context != nullptr
+                    && context->bassIsStepwiseFromPrevious) {
+                    const auto& rpc = context->recentRootPcs;
+                    if (rpc[0] == gExpectedAltRoot
+                        || rpc[1] == gExpectedAltRoot
+                        || rpc[2] == gExpectedAltRoot) {
+                        std::swap(results[0], results[halfDimAltIdx]);
+                        didGFlip = true;
+                    }
+                }
+                // Gate G-D: two or more consecutive stepwise bass moves ending here.
+                if (!didGFlip
+                    && context != nullptr
+                    && context->consecutiveBassStepwiseCount >= 2) {
+                    std::swap(results[0], results[halfDimAltIdx]);
+                    didGFlip = true;
+                }
+            }
+        }
         }
 
         // ── Gate H: Augmented triad root-symmetry resolution ──────────────────────────

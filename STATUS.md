@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 9B: §2.10 fully retired. Bridge temporal context now complete (rolling state + nextRootPc already in place). `inferNextRootPc` extracted as shared helper; batch and bridge use identical look-ahead logic. BIR=true: 109, BIR=false: 788 (baselines held). 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
+*Last updated: 2026-05-06 — Iteration 12: Gate G-E added (MinorAdd6 → HalfDim7 via leading-tone/supertonic key context: viiø7 at tonicPc+11, iiø7 at tonicPc+2). Structural fix: G block moved outside `if (bestAlt != nullptr)` (was unreachable for MinorAdd6 winners since kCleanQualities excludes HalfDiminished). 9 of 48 MinorAdd6 errors fixed; 0 new BIR=false false positives. BIR=true: 100 (was 109), BIR=false: 788 (unchanged). 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
 
 ---
 
