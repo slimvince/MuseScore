@@ -619,6 +619,52 @@ inline int inferNextRootPc(
     return candidates.empty() ? -1 : candidates[0].identity.rootPc;
 }
 
+/// Advances the temporal context and rolling state after a region has been analyzed.
+/// Call once per region, after analyzeChord() has been called and the final result
+/// chosen. Updates: rolling stepwise count, recent-roots window, and previous-chord
+/// fields. After returning, ctx is ready for the next region's analyzeChord() call
+/// (except for bassIsStepwiseFromPrevious / bassIsStepwiseToNext / nextRootPc which
+/// depend on the next region's tones and must be set separately).
+inline void advanceTemporalContext(
+    ChordTemporalContext& ctx,
+    int& runningStepwiseCount,
+    std::array<int, 3>& recentRootsBuf,
+    int chosenRootPc,
+    int chosenBassPc,
+    ChordQuality chosenQuality) noexcept
+{
+    // Rolling stepwise count.
+    if (ctx.bassIsStepwiseFromPrevious) {
+        ++runningStepwiseCount;
+    } else {
+        runningStepwiseCount = 0;
+    }
+
+    // Recent-roots window (most-recent first).
+    recentRootsBuf[2] = recentRootsBuf[1];
+    recentRootsBuf[1] = recentRootsBuf[0];
+    recentRootsBuf[0] = chosenRootPc;
+
+    // Pre-populate rolling fields for the next call to analyzeChord.
+    ctx.consecutiveBassStepwiseCount = runningStepwiseCount;
+    ctx.recentRootPcs                = recentRootsBuf;
+
+    // Advance previous-chord fields.
+    ctx.previousRootPc  = chosenRootPc;
+    ctx.previousBassPc  = chosenBassPc;
+    ctx.previousQuality = chosenQuality;
+}
+
+inline void advanceTemporalContext(
+    ChordTemporalContext& ctx,
+    int& runningStepwiseCount,
+    std::array<int, 3>& recentRootsBuf,
+    const ChordIdentity& chosen) noexcept
+{
+    advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf,
+                           chosen.rootPc, chosen.bassPc, chosen.quality);
+}
+
 /// Default chord analyzer: template-matching rule-based approach.
 class RuleBasedChordAnalyzer : public IChordAnalyzer
 {

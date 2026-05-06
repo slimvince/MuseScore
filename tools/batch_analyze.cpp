@@ -99,6 +99,7 @@ using analysis::ChordQuality;
 using analysis::ChordTemporalContext;
 using analysis::isDiatonicStep;
 using analysis::inferNextRootPc;
+using analysis::advanceTemporalContext;
 using analysis::KeyModeAnalysisResult;
 // Note: analysis::KeySigMode and mu::engraving::KeyMode are both in scope;
 //       always qualify as analysis::KeySigMode to avoid ambiguity.
@@ -1693,18 +1694,6 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.bassIsStepwiseFromPrevious = (ctx.previousBassPc != -1 && currentBassPc != -1)
             && isDiatonicStep(ctx.previousBassPc, currentBassPc);
 
-        // Temporal context is now fully populated before analyzeChord():
-        //   bassIsStepwiseFromPrevious, bassIsStepwiseToNext — computed above
-        //   consecutiveBassStepwiseCount, recentRootPcs — assigned below
-        //   nextRootPc — computed in look-ahead block below
-        //   regionMetricWeight — left at default 1.0 (no gate uses it)
-        // §2.10: analyzeScore() and the bridge now use identical temporal signals.
-        if (ctx.bassIsStepwiseFromPrevious) {
-            ++runningStepwiseCount;
-        } else {
-            runningStepwiseCount = 0;
-        }
-
         // Infer key using the same windowed approach as the bridge.
         // Pass the previous result for hysteresis (nullptr on the first region).
         const std::vector<KeyModeAnalysisResult> keyRanked = inferLocalKey(
@@ -1740,8 +1729,6 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
             && isDiatonicStep(currentBassPc, nextBassPc);
 
-        ctx.consecutiveBassStepwiseCount = runningStepwiseCount;
-        ctx.recentRootPcs                = recentRootsBuf;
         auto candidates = chordAnalyzer->analyzeChord(
             tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
 
@@ -1753,14 +1740,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
         const uint16_t pcMask = pitchClassMask(tones);
         const int bassPc = currentBassPc;
 
-        ctx.previousRootPc = candidates[0].identity.rootPc;
-        ctx.previousQuality = candidates[0].identity.quality;
-        ctx.previousBassPc = candidates[0].identity.bassPc;
-
-        // Advance the rolling root window (most-recent first).
-        recentRootsBuf[2] = recentRootsBuf[1];
-        recentRootsBuf[1] = recentRootsBuf[0];
-        recentRootsBuf[0] = candidates[0].identity.rootPc;
+        advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf,
+                               candidates[0].identity);
 
         if (!result.empty()
             && result.back().chord.identity.rootPc == candidates[0].identity.rootPc

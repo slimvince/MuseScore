@@ -61,6 +61,7 @@ using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::composing::analysis::isDiatonicStep;
 using mu::composing::analysis::inferNextRootPc;
+using mu::composing::analysis::advanceTemporalContext;
 using mu::notation::internal::distinctPitchClasses;
 using mu::notation::internal::safeBeatType;
 using mu::notation::internal::regionMetricWeightForBeatType;
@@ -279,12 +280,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 (currentBassPc != -1 && nextBassPc != -1)
                 && isDiatonicStep(currentBassPc, nextBassPc);
 
-            // Temporal context — rolling signals
+            // Temporal context — metric weight
             const Segment* regionStartSeg = score->tick2segment(
                 regionStart, false, SegmentType::ChordRest);
             const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
-            temporalCtx.consecutiveBassStepwiseCount = runningStepwiseCount;
-            temporalCtx.recentRootPcs = recentRootsBuf;
             temporalCtx.regionMetricWeight = regionMetricWeightForBeatType(
                 safeBeatType(currentMeasure, regionStartSeg));
 
@@ -308,19 +307,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 alternativesSnapshot.assign(results.begin() + 1, results.end());
             }
 
-            temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
-            temporalCtx.previousQuality = chosenResult.identity.quality;
-            temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
-
-            // Update rolling state for next region
-            if (temporalCtx.bassIsStepwiseFromPrevious) {
-                ++runningStepwiseCount;
-            } else {
-                runningStepwiseCount = 0;
-            }
-            recentRootsBuf[2] = recentRootsBuf[1];
-            recentRootsBuf[1] = recentRootsBuf[0];
-            recentRootsBuf[0] = chosenResult.identity.rootPc;
+            advanceTemporalContext(temporalCtx, runningStepwiseCount, recentRootsBuf,
+                                   chosenResult.identity);
             // Reset nextRootPc for next iteration
             temporalCtx.nextRootPc = -1;
 
