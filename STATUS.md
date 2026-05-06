@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 8: batch temporal context wired (§2.10 partial retirement). BIR=true: 109, BIR=false: 788 (baselines held). 407/407 composing, notation, pipeline snapshot tests pass.*
+*Last updated: 2026-05-06 — Iteration 9B: §2.10 fully retired. Bridge temporal context now complete (rolling state + nextRootPc already in place). `inferNextRootPc` extracted as shared helper; batch and bridge use identical look-ahead logic. BIR=true: 109, BIR=false: 788 (baselines held). 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
 
 ---
 
