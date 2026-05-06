@@ -156,14 +156,14 @@ cd C:\s\MS && python tools/analyze_inversion_errors.py
 Always use `--preset Baroque` unless the iteration explicitly says otherwise.
 This measures genuine inversion error counts against the Bach chorale corpus.
 
-**Current baseline (Iteration 7B, fresh corpus regeneration 2026-05-06):**
+**Current baseline (Iteration 8, fresh corpus regeneration 2026-05-06):**
 - 3-way genuine BIR=true: 109
 - 3-way genuine BIR=false: 788
 
-These figures supersede the stale Iteration 2 values (119 / 252). The old numbers were
-from corpus JSONs last generated at commit `1d3e8d9a59` and never refreshed across
-iterations 3–5. The temporal gates added in iterations 3–4 changed chord identifications
-across the corpus; 111/788 is the true baseline for the current codebase.
+These figures supersede the stale Iteration 2 values (119 / 252). Batch temporal context
+(consecutiveBassStepwiseCount, recentRootPcs, nextRootPc) is now fully wired in
+analyzeScore() as of Iteration 8; the temporal gates are batch-measurable and their
+effect is included in the 109 / 788 baseline.
 
 **IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
 `analyze_inversion_errors.py` reads existing `.ours.json` files from `tools/corpus/` and
