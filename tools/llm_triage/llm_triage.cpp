@@ -127,6 +127,9 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/chord/analysisutils.h"
 
+// ── Plugin reimplementation (chordIdentifierPopJazz) ───────────────────────
+#include "../batch_analyze_plugin_impl.h"
+
 // ── Namespace aliases ──────────────────────────────────────────────────────
 using namespace mu::engraving;
 namespace analysis = mu::composing::analysis;
@@ -1836,6 +1839,20 @@ int main(int argc, char* argv[])
         std::ofstream f = openOut("analyzer_response.json");
         if (f.is_open()) {
             emitAnalyzerJson(f, prefix, sourcePath, scoreContentHash, regions, score);
+        }
+    }
+
+    // File 5: chordIdentifierPopJazz_response.json
+    // Fourth triage source — rule-based plugin algorithm reimplemented in C++.
+    {
+        const std::string tsUtc =
+            QDateTime::currentDateTimeUtc().toString(Qt::ISODate).toStdString();
+        auto pluginRegions = runPluginAnalysis(score);
+        std::cout << "plugin regions: " << pluginRegions.size() << "\n";
+        std::ofstream f = openOut("chordIdentifierPopJazz_response.json");
+        if (f.is_open()) {
+            writePluginResponseJson(pluginRegions, prefix, sourcePath,
+                                    scoreContentHash, tsUtc, f);
         }
     }
 

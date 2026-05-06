@@ -9,6 +9,7 @@
 
 add_executable(llm_triage
     llm_triage.cpp
+    ../batch_analyze_plugin_impl.cpp
 )
 
 set_target_properties(llm_triage PROPERTIES
