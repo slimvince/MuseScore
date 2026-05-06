@@ -110,14 +110,6 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
                        const mu::composing::analysis::KeyModeAnalysisResult* prevResult = nullptr,
                        double* outScore = nullptr);
 
-/// Returns true if the interval between two pitch classes (0-11) is a
-/// diatonic step (1 or 2 semitones) in either direction.
-inline bool isDiatonicStep(int pc1, int pc2) {
-    int interval = std::abs(pc1 - pc2);
-    interval = std::min(interval, 12 - interval);
-    return interval == 1 || interval == 2;
-}
-
 /// Collect and accumulate pitch evidence for the harmonic region [startTick, endTick).
 ///
 /// Walks all ChordRest segments in the region across eligible staves.  For each

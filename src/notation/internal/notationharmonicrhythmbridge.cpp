@@ -59,7 +59,7 @@ using mu::notation::internal::detectOnsetSubBoundaries;
 using mu::notation::internal::detectBassMovementSubBoundaries;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
-using mu::notation::internal::isDiatonicStep;
+using mu::composing::analysis::isDiatonicStep;
 using mu::notation::internal::distinctPitchClasses;
 using mu::notation::internal::safeBeatType;
 using mu::notation::internal::regionMetricWeightForBeatType;

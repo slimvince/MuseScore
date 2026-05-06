@@ -23,7 +23,9 @@
 
 
 #pragma once
+#include <algorithm>
 #include <array>
+#include <cstdlib>
 #include <memory>
 #include <string>
 #include <vector>
@@ -134,6 +136,15 @@ inline const ChordAnalysisTone* bassToneFromTones(const std::vector<ChordAnalysi
         }
     }
     return bassTone;
+}
+
+/// Returns true if two pitch classes are a diatonic step apart
+/// (chromatic interval of 1 or 2 semitones, shortest path).
+inline bool isDiatonicStep(int pc1, int pc2) noexcept
+{
+    int interval = std::abs(pc1 - pc2);
+    interval = std::min(interval, 12 - interval);
+    return interval == 1 || interval == 2;
 }
 
 // ── Extension bitmask ────────────────────────────────────────────────────────

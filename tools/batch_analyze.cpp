@@ -97,6 +97,7 @@ using analysis::ChordAnalysisTone;
 using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
 using analysis::ChordTemporalContext;
+using analysis::isDiatonicStep;
 using analysis::KeyModeAnalysisResult;
 // Note: analysis::KeySigMode and mu::engraving::KeyMode are both in scope;
 //       always qualify as analysis::KeySigMode to avoid ambiguity.
@@ -1547,13 +1548,6 @@ static std::vector<ChordAnalysisTone> buildTones(const std::vector<SoundingNote>
         tones.push_back(tone);
     }
     return tones;
-}
-
-static bool isDiatonicStep(int pc1, int pc2)
-{
-    int interval = std::abs(pc1 - pc2);
-    interval = std::min(interval, 12 - interval);
-    return interval == 1 || interval == 2;
 }
 
 static ChordTemporalContext findTemporalContext(

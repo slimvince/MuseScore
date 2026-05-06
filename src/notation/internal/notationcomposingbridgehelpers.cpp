@@ -55,6 +55,7 @@
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
+using mu::composing::analysis::isDiatonicStep;
 using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
 
