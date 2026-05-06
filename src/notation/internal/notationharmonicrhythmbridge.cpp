@@ -40,6 +40,7 @@
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/masterscore.h"
+#include "engraving/dom/measure.h"
 #include "engraving/dom/segment.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -58,8 +59,10 @@ using mu::notation::internal::detectOnsetSubBoundaries;
 using mu::notation::internal::detectBassMovementSubBoundaries;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
-using mu::notation::internal::isDiatonicStep;
+using mu::composing::analysis::isDiatonicStep;
 using mu::notation::internal::distinctPitchClasses;
+using mu::notation::internal::safeBeatType;
+using mu::notation::internal::regionMetricWeightForBeatType;
 
 namespace mu::notation {
 
@@ -214,6 +217,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
         std::optional<KeyModeAnalysisResult> prevKeyResult;
 
+        int runningStepwiseCount = 0;
+        std::array<int, 3> recentRootsBuf = {-1, -1, -1};
+
         std::vector<HarmonicRegion> regions;
         regions.reserve(boundaryTicks.size());
 
@@ -240,6 +246,15 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
                 && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
 
+            int localKeyFifths = keyFifths;
+            KeySigMode localKeyMode = keyMode;
+            double localKeyConfidence = 0.0;
+            double localKeyScore = 0.0;
+            resolveKeyAndMode(score, regionStart, refStaff, excludeStaves,
+                              localKeyFifths, localKeyMode, localKeyConfidence,
+                              prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
+                              &localKeyScore);
+
             int nextBassPc = -1;
             if (currentBassPc != -1 && i + 1 < boundaryTicks.size()) {
                 const Fraction nextRegionStart = boundaryTicks[i + 1];
@@ -256,19 +271,26 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         break;
                     }
                 }
+                if (!nextTones.empty()) {
+                    const auto nextCandidates = chordAnalyzer->analyzeChord(
+                        nextTones, localKeyFifths, localKeyMode, nullptr);
+                    if (!nextCandidates.empty()) {
+                        temporalCtx.nextRootPc = nextCandidates[0].identity.rootPc;
+                    }
+                }
             }
             temporalCtx.bassIsStepwiseToNext =
                 (currentBassPc != -1 && nextBassPc != -1)
                 && isDiatonicStep(currentBassPc, nextBassPc);
 
-            int localKeyFifths = keyFifths;
-            KeySigMode localKeyMode = keyMode;
-            double localKeyConfidence = 0.0;
-            double localKeyScore = 0.0;
-            resolveKeyAndMode(score, regionStart, refStaff, excludeStaves,
-                              localKeyFifths, localKeyMode, localKeyConfidence,
-                              prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr,
-                              &localKeyScore);
+            // Temporal context — rolling signals
+            const Segment* regionStartSeg = score->tick2segment(
+                regionStart, false, SegmentType::ChordRest);
+            const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
+            temporalCtx.consecutiveBassStepwiseCount = runningStepwiseCount;
+            temporalCtx.recentRootPcs = recentRootsBuf;
+            temporalCtx.regionMetricWeight = regionMetricWeightForBeatType(
+                safeBeatType(currentMeasure, regionStartSeg));
 
             const auto results = chordAnalyzer->analyzeChord(
                 tones, localKeyFifths, localKeyMode, &temporalCtx);
@@ -293,6 +315,18 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             temporalCtx.previousRootPc  = chosenResult.identity.rootPc;
             temporalCtx.previousQuality = chosenResult.identity.quality;
             temporalCtx.previousBassPc  = chosenResult.identity.bassPc;
+
+            // Update rolling state for next region
+            if (temporalCtx.bassIsStepwiseFromPrevious) {
+                ++runningStepwiseCount;
+            } else {
+                runningStepwiseCount = 0;
+            }
+            recentRootsBuf[2] = recentRootsBuf[1];
+            recentRootsBuf[1] = recentRootsBuf[0];
+            recentRootsBuf[0] = chosenResult.identity.rootPc;
+            // Reset nextRootPc for next iteration
+            temporalCtx.nextRootPc = -1;
 
             KeyModeAnalysisResult kmResult;
             kmResult.keySignatureFifths   = localKeyFifths;
@@ -397,6 +431,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     subCtx.previousQuality = pass2Regions.back().chordResult.identity.quality;
                     subCtx.previousBassPc  = pass2Regions.back().chordResult.identity.bassPc;
                 }
+                // TODO: Sub-region temporal context carries parent state for rolling signals.
+                // For full fidelity, sub-regions should compute their own rolling counts and
+                // nextRootPc look-ahead. Deferred.
+                subCtx.consecutiveBassStepwiseCount
+                    = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
+                subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
+                subCtx.nextRootPc = -1;
 
                 for (size_t si = 0; si + 1 < subBounds.size(); ++si) {
                     const Fraction subStart = subBounds[si];
@@ -427,6 +468,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         (subCtx.previousBassPc != -1 && subBassPc != -1)
                         && isDiatonicStep(subCtx.previousBassPc, subBassPc);
                     subCtx.bassIsStepwiseToNext = false;  // not computed for sub-regions
+                    {
+                        const Segment* subSeg = score->tick2segment(
+                            subStart, false, SegmentType::ChordRest);
+                        subCtx.regionMetricWeight = regionMetricWeightForBeatType(
+                            safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));
+                    }
 
                     const auto subResults = chordAnalyzer->analyzeChord(
                         subTones, subKeyFifths, subKeyMode, &subCtx);
@@ -546,6 +593,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     subCtx.previousQuality = pass2bRegions.back().chordResult.identity.quality;
                     subCtx.previousBassPc  = pass2bRegions.back().chordResult.identity.bassPc;
                 }
+                // TODO: Sub-region temporal context carries parent state for rolling signals.
+                // For full fidelity, sub-regions should compute their own rolling counts and
+                // nextRootPc look-ahead. Deferred.
+                subCtx.consecutiveBassStepwiseCount
+                    = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
+                subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
+                subCtx.nextRootPc = -1;
 
                 for (size_t bi = 0; bi + 1 < bounds.size(); ++bi) {
                     const Fraction subStart = bounds[bi];
@@ -573,6 +627,12 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         (subCtx.previousBassPc != -1 && subBassPc != -1)
                         && isDiatonicStep(subCtx.previousBassPc, subBassPc);
                     subCtx.bassIsStepwiseToNext = false;
+                    {
+                        const Segment* subSeg = score->tick2segment(
+                            subStart, false, SegmentType::ChordRest);
+                        subCtx.regionMetricWeight = regionMetricWeightForBeatType(
+                            safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));
+                    }
 
                     const auto subResults = chordAnalyzer->analyzeChord(
                         subTones, subKeyFifths, subKeyMode, &subCtx);

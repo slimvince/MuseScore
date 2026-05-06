@@ -225,7 +225,13 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
 
     case ChordQuality::Minor:
         if (hasMaj7 && hasExtended) {
-            suffix = (hasNinth && hasNinthNatural) ? "mMaj9" : "mMaj7";
+            if (hasThirteenth) {
+                suffix = hasNinth ? "mMaj13" : "mMaj7add13";
+            } else if (hasEleventh) {
+                suffix = hasNinth ? "mMaj11" : "mMaj7add11";
+            } else {
+                suffix = hasNinthNatural ? "mMaj9" : "mMaj7";
+            }
         } else if (hasMin7 && hasThirteenth) {
             suffix = hasThirteenthFlat ? "mb13" : "m13";
         } else if (hasMin7 && hasEleventh) {
@@ -257,14 +263,30 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         break;
 
     case ChordQuality::HalfDiminished:
-        suffix = "m7b5";
+        if (hasNinthNatural && hasEleventh) {
+            suffix = "m11b5";
+        } else if (hasNinthNatural) {
+            suffix = "m9b5";
+        } else if (hasNinthFlat) {
+            suffix = "m7b5b9";
+        } else if (hasEleventh) {
+            suffix = "m7b5add11";
+        } else {
+            suffix = "m7b5";
+        }
         break;
 
     case ChordQuality::Augmented:
         // Catalog convention: "#5" suffix notation (e.g. "7#5", "9#5", "Maj7#5"),
         // not "aug" prefix.  Order: [7|9|13] [#5] [b9|#9] [#11].
         if (hasMaj7) {
-            suffix = hasNinth ? "Maj9#5" : "Maj7#5";
+            if (hasNinthNatural) {
+                suffix = "Maj9#5";
+            } else {
+                suffix = "Maj7#5";
+                if (hasNinthFlat)  { suffix += "b9"; }
+                if (hasNinthSharp) { suffix += "#9"; }
+            }
         } else if (hasMin7) {
             if (hasThirteenth) {
                 suffix = "13#5";
@@ -293,10 +315,12 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
         break;
 
     case ChordQuality::Suspended4:
-        if (hasMaj7 && hasNinth) {
+        if (hasMaj7 && hasNinthNatural) {
             suffix = "Maj9sus";
         } else if (hasMaj7) {
             suffix = "Maj7sus";
+            if (hasNinthFlat)  { suffix += "b9"; }
+            if (hasNinthSharp) { suffix += "#9"; }
         } else if (hasMin7) {
             // Base: highest implied extension.  Natural 9th only → "9sus".  Altered 9th or
             // no 9th → "7sus" (alteration appended below).  13th → "13sus".
@@ -660,6 +684,11 @@ static constexpr double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: 
 static constexpr double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
 static constexpr double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
 static constexpr double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
+/// Minimum pcWeight for the defining P4 to be treated as a structural suspension
+/// tone.  Below this, the Sus4 template is penalised even when the P4 is
+/// technically present — passing or ornamental fourths routinely clear 0.20
+/// (extensionThreshold) but rarely reach 0.50.
+static constexpr double kSus4StructuralFourthThreshold = 0.50;
 static constexpr double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
 static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
 static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
@@ -889,7 +918,11 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
         f.hasFlatFifth = rawFlatFifth && !preferSharp11;
     }
     // Suppress #11 flag when treating pc+6 as b5 to avoid double-counting.
-    f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth;
+    // Also suppress for HalfDiminished: the b5 is structural there (rawFlatFifth
+    // is blocked above), so hasFlatFifth is always false for half-dim even though
+    // the note at +6 is the chord's own diminished fifth, not an added #11.
+    f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth
+                         && quality != ChordQuality::HalfDiminished;
 
     // pc+8: flat-13th when a "fifth slot" is filled (natural 5th or flat 5th present);
     // augmented-5th (#5) otherwise.  When a b5 (Gb) already occupies the fifth slot,
@@ -1155,7 +1188,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
                                 && tpl.intervals[2] == 6;
     if (sus4HasPerfectFourth && !isSus4FlatFive) {
         const int fourthPc = static_cast<int>((rootPc + 5) % 12);
-        if (pcWeight[static_cast<size_t>(fourthPc)] < extThreshold) {
+        if (pcWeight[static_cast<size_t>(fourthPc)] < kSus4StructuralFourthThreshold) {
             score -= kSus4MissingFourth;
         }
     }
@@ -1361,12 +1394,6 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
     // Only award the full bass-root bonus when the accumulated tones support root position.
     score += appliedBassBonus;
 
-    // Only use this inversion preference when adjacent bass motion says the bass note is likely passing.
-    if (hasStepwiseBassEvidence
-            && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
-        score += prefs.completeTriadInversionBonus;
-    }
-
     // Prefer roots that belong to the current key scale.
     for (int interval : scale) {
         if ((keyTonicPc + interval) % 12 == rootPc) {
@@ -1382,22 +1409,37 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
         }
 
         // Contextual inversion bonuses — §4.1b
+        // Accumulated into a local variable so the total can be capped before
+        // application (prevents runaway stacking when multiple signals fire).
         // Only for inverted Major/Minor candidates (lesson from three-attempt
         // inversion fix history: never apply to Diminished/HalfDiminished/Augmented).
         const bool isInvertedMajMin = supportsContextualInversionBonuses(tpl, rootPc, bassPc, pcWeight);
+        double inversionContextBonus = 0.0;
+
+        // completeTriadInversionBonus gates on stepwise evidence (checked here
+        // rather than in the isInvertedMajMin block because it guards a structural
+        // condition independent of Major/Minor quality).
+        if (hasStepwiseBassEvidence
+                && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
+            inversionContextBonus += prefs.completeTriadInversionBonus;
+        }
 
         if (isInvertedMajMin) {
             if (context->bassIsStepwiseFromPrevious) {
-                score += prefs.stepwiseBassInversionBonus;
+                inversionContextBonus += prefs.stepwiseBassInversionBonus;
             }
             if (context->bassIsStepwiseToNext) {
-                score += prefs.stepwiseBassLookaheadBonus;
+                inversionContextBonus += prefs.stepwiseBassLookaheadBonus;
             }
             if (context->previousRootPc != -1
                     && context->previousRootPc == rootPc) {
-                score += prefs.sameRootInversionBonus;
+                inversionContextBonus += prefs.sameRootInversionBonus;
             }
         }
+
+        // Apply the cap — prevents multi-signal stacking from overwhelming the
+        // bass-root bonus on genuinely root-position chords.
+        score += std::min(inversionContextBonus, prefs.maxTotalInversionContextBonus);
 
         // Quality-guided resolution bias: reward candidates at the typical
         // resolution target of the previous chord's quality.
@@ -1429,19 +1471,6 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
     }
 
     return score;
-}
-
-// ── Confidence normalization (§P8d) ────────────────────────────────────────────
-//
-// Maps the score gap between winner and runner-up through a sigmoid to produce
-// a 0.0–1.0 normalizedConfidence value.  Sigmoid shape and k parameter mirror
-// KeyModeAnalyzer's implementation so the two confidence values are comparable.
-static double normalizeChordConfidence(double winnerScore, double runnerUpScore,
-                                       const ChordAnalyzerPreferences& prefs)
-{
-    const double gap = winnerScore - runnerUpScore;
-    return 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
-                                  * (gap - prefs.confidenceSigmoidMidpoint)));
 }
 
 /// Returns true if bassPc is a chord tone of the chord identified by (rootPc, quality,
@@ -1693,19 +1722,29 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
               });
 
     const double bestRawScore = rawCandidates.empty() ? 0.0 : rawCandidates.front().score;
-    const double threshold = bestRawScore * kScoreThresholdRatio;
 
-    std::vector<ChordAnalysisResult> results;
-    results.reserve(3);
+    // De-inflate the threshold when the best-scoring candidate's lead comes from a
+    // bass-root bonus.  A bass-inflated winner sets an artificially high bar that
+    // can exclude its enharmonic non-bass alternative (e.g. Gm7 when Bb6 wins, or
+    // the correct non-sus chord when a sus template wins from the bass note).
+    // Using the de-bonused score as the threshold base ensures those alternatives
+    // survive into results[] where the post-ranking inversion correction can
+    // evaluate and flip them.
+    // When the winner carries no bass bonus (winnerBassBonus == 0) this is
+    // identical to the original formula.
+    const double winnerBassBonus = rawCandidates.empty()
+                                   ? 0.0
+                                   : rawCandidates.front().appliedBassBonus;
+    const double threshold = (bestRawScore - winnerBassBonus) * kScoreThresholdRatio;
 
-    for (const RawCandidate& rc : rawCandidates) {
-        if (results.size() >= 3) {
-            break;
-        }
-        if (rc.score < threshold) {
-            break;
-        }
-
+    // ── Result builder ───────────────────────────────────────────────────────
+    //
+    // Converts a RawCandidate into a fully-populated ChordAnalysisResult applying
+    // post-scoring quality normalisation (augmented root correction, Sus2→Sus4
+    // upgrade, Sus→Major omitsThird), extension detection, degree assignment, and
+    // diatonic check.  Extracted as a lambda so the same logic can be used both in
+    // the main filling loop and in the guaranteed-inversion-alternative append below.
+    const auto buildResult = [&](const RawCandidate& rc) -> ChordAnalysisResult {
         int rootPc    = rc.rootPc;
         ChordQuality quality = rc.quality;
 
@@ -1838,7 +1877,59 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         r.function.keyTonicPc           = keyTonicPc;
         r.function.keyMode              = keyMode;
 
-        results.push_back(r);
+        return r;
+    };
+
+    std::vector<ChordAnalysisResult> results;
+    results.reserve(3);
+
+    for (const RawCandidate& rc : rawCandidates) {
+        if (results.size() >= 3) {
+            break;
+        }
+        if (rc.score < threshold) {
+            break;
+        }
+        results.push_back(buildResult(rc));
+    }
+
+    // ── Guaranteed inversion alternative ─────────────────────────────────────
+    //
+    // When the winner is a bass-root candidate (rootPc == bassPc), the results[]
+    // cap of 3 is routinely exhausted by same-rootPc extensions/variants (e.g.
+    // Bb, Bb7, BbMaj7) before the correct enharmonic alternative (e.g. Gm7) can
+    // enter.  The post-ranking inversion correction requires a different-rootPc
+    // Major/Minor candidate in results[] to function.
+    //
+    // If every entry in results[] shares the winner's rootPc, scan rawCandidates
+    // for the highest-scoring different-rootPc candidate that clears the threshold
+    // and append it.  The correction then has a target to evaluate and potentially
+    // promote.
+    //
+    // This append only fires when:
+    //   (a) the winner is a bass-root candidate (rootPc == bassPc), AND
+    //   (b) no different-rootPc candidate already made it into results[].
+    // It is a no-op for all other cases.
+    if (!results.empty()
+        && bassPc >= 0
+        && prefs.inversionSuspicionMargin > 0.0
+        && results.front().identity.rootPc == static_cast<int>(bassPc))
+    {
+        const int winnerRootPc = results.front().identity.rootPc;
+        const bool hasDiffRoot = std::any_of(results.begin(), results.end(),
+            [winnerRootPc](const ChordAnalysisResult& r) {
+                return r.identity.rootPc != winnerRootPc;
+            });
+
+        if (!hasDiffRoot) {
+            for (const RawCandidate& rc : rawCandidates) {
+                if (rc.score < threshold)        { break; }
+                if (rc.rootPc == winnerRootPc)   { continue; }
+
+                results.push_back(buildResult(rc));
+                break;
+            }
+        }
     }
 
     // ── Inversion / bass-root bias correction ────────────────────────────────
@@ -1874,6 +1965,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 ChordQuality::Minor,
             };
             const ChordAnalysisResult* bestAlt = nullptr;
+            size_t bestAltIdx = 0;
             for (size_t i = 1; i < results.size(); ++i) {
                 const auto& alt = results[i];
                 // The alternative must have a DIFFERENT root — if it agrees on the
@@ -1888,50 +1980,279 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                      != kCleanQualities.end();
                 if (isClean) {
                     bestAlt = &alt;
+                    bestAltIdx = i;
                     break;
                 }
             }
 
             if (bestAlt != nullptr) {
-                const double margin = winner.identity.score - bestAlt->identity.score;
+                // ── Enharmonic equivalence fast path ─────────────────────────
+                //
+                // Major-add6 and Minor7 chords span identical pitch classes when
+                // the Minor7 root is a minor third below the Major root:
+                //   altRootPc == (winnerRootPc + 9) % 12
+                // In bass-heavy textures the scorer systematically favours the
+                // bass-root Major reading; margin comparison cannot reliably
+                // distinguish the two.  When preferMinorOverMajorAdd6 is set
+                // (Standard/Baroque), prefer the Minor alternative directly.
+                bool didEnharmonicFlip = false;
+                if (prefs.preferMinorOverMajorAdd6) {
+                    const bool winnerIsMajor =
+                        (winner.identity.quality == ChordQuality::Major);
+                    // The added-sixth guard restricts the fast path to sonorities
+                    // where the sixth (e.g. G in Bb-D-F-G) is present with enough
+                    // structural weight that the analyzer already labeled it as an
+                    // added-sixth chord.  Without this guard the fast path fires on
+                    // plain C major triads (C-E-G) just because Am is a candidate,
+                    // producing a flood of Am7/C regressions on root-position chords.
+                    const bool winnerHasAddedSixth =
+                        hasExtension(winner.identity.extensions, Extension::AddedSixth);
+                    const bool altIsMinor =
+                        (bestAlt->identity.quality == ChordQuality::Minor);
+                    const int expectedAltRoot = (winner.identity.rootPc + 9) % 12;
+                    if (winnerIsMajor && winnerHasAddedSixth && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot) {
+                        std::swap(results[0], results[bestAltIdx]);
+                        didEnharmonicFlip = true;
+                    }
+                    // FM2 fallback: a higher-scoring different-root alt (e.g. Em/C) may have
+                    // blocked the enharmonic partner from entering results[] via the append path.
+                    // Scan rawCandidates above threshold for the Minor alt at expectedAltRoot.
+                    if (!didEnharmonicFlip && winnerIsMajor && winnerHasAddedSixth) {
+                        for (const RawCandidate& rc : rawCandidates) {
+                            if (rc.score < threshold) { break; }
+                            if (rc.rootPc == expectedAltRoot
+                                && rc.quality == ChordQuality::Minor) {
+                                results.push_back(buildResult(rc));
+                                std::swap(results[0], results.back());
+                                didEnharmonicFlip = true;
+                                break;
+                            }
+                        }
+                    }
+                    // Gate B: the next region's inferred root matches the alternative (Minor) root.
+                    // Strong forward evidence that this harmony persists — the bass is passing through
+                    // a chord tone, not establishing a new root.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->nextRootPc != -1
+                        && context->nextRootPc == bestAlt->identity.rootPc
+                        && context->bassIsStepwiseToNext) {
+                        std::swap(results[0], results[bestAltIdx]);
+                        didEnharmonicFlip = true;
+                    }
+                    // Gate C: the alternative root appears in the 3-region window AND the bass is
+                    // moving stepwise from the previous region.  The root has been recently active
+                    // and the bass is passing through it — strong evidence of an inversion.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->bassIsStepwiseFromPrevious) {
+                        const auto& rpc = context->recentRootPcs;
+                        const bool altRootIsRecent = (rpc[0] == bestAlt->identity.rootPc
+                                                      || rpc[1] == bestAlt->identity.rootPc
+                                                      || rpc[2] == bestAlt->identity.rootPc);
+                        if (altRootIsRecent) {
+                            std::swap(results[0], results[bestAltIdx]);
+                            didEnharmonicFlip = true;
+                        }
+                    }
+                    // Gate D: two or more consecutive stepwise bass moves ending here.
+                    // A scalar bass line is strong evidence of a passing inversion, not a new root.
+                    if (!didEnharmonicFlip
+                        && context != nullptr
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
+                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && context->consecutiveBassStepwiseCount >= 2) {
+                        std::swap(results[0], results[bestAltIdx]);
+                        didEnharmonicFlip = true;
+                    }
+                    // ── Gates G-B / G-C / G-D: Minor-add6 ↔ HalfDim7 (temporal context required)
+                    // ─────────────────────────────────────────────────────────────────────────────
+                    //
+                    // Symmetric to Gates B/C/D but for the second enharmonic equivalence pair:
+                    // Minor-add6 (e.g. Cm6 = C–Eb–G–A) shares all four pitch classes with the
+                    // half-diminished seventh whose root is a minor-third above the winner root
+                    // (= 9 semitones mod 12, the same formula as expectedAltRoot above).
+                    //
+                    // A categorical gate (like Gate A for MajorAdd6) was attempted and reverted
+                    // because MinorAdd6 is a legitimate root-position chord in the corpus at a
+                    // ~96% rate.  Temporal evidence is required before preferring HalfDim.
+                    //
+                    // kCleanQualities excludes HalfDiminished, so the alt is found by a separate
+                    // one-pass search.  halfDimAltIdx is a sentinel (results.size()) if absent.
+                    const bool winnerIsMinor = !winnerIsMajor;
+                    if (winnerIsMinor && winnerHasAddedSixth) {
+                        size_t halfDimAltIdx = results.size();
+                        for (size_t i = 1; i < results.size(); ++i) {
+                            if (results[i].identity.quality == ChordQuality::HalfDiminished
+                                && results[i].identity.rootPc == expectedAltRoot) {
+                                halfDimAltIdx = i;
+                                break;
+                            }
+                        }
+                        if (halfDimAltIdx != results.size()) {
+                            // Gate G-B: next region's inferred root matches the HalfDim root.
+                            // Strong forward evidence the harmony continues on that root.
+                            if (!didEnharmonicFlip
+                                && context != nullptr
+                                && context->nextRootPc != -1
+                                && context->nextRootPc == expectedAltRoot
+                                && context->bassIsStepwiseToNext) {
+                                std::swap(results[0], results[halfDimAltIdx]);
+                                didEnharmonicFlip = true;
+                            }
+                            // Gate G-C: HalfDim root appears in the 3-region window AND bass
+                            // is moving stepwise from the previous region.  The root was recently
+                            // established and the bass is passing through a chord tone.
+                            if (!didEnharmonicFlip
+                                && context != nullptr
+                                && context->bassIsStepwiseFromPrevious) {
+                                const auto& rpc = context->recentRootPcs;
+                                if (rpc[0] == expectedAltRoot
+                                    || rpc[1] == expectedAltRoot
+                                    || rpc[2] == expectedAltRoot) {
+                                    std::swap(results[0], results[halfDimAltIdx]);
+                                    didEnharmonicFlip = true;
+                                }
+                            }
+                            // Gate G-D: two or more consecutive stepwise bass moves ending here.
+                            // A scalar bass line is strong evidence of a passing inversion.
+                            if (!didEnharmonicFlip
+                                && context != nullptr
+                                && context->consecutiveBassStepwiseCount >= 2) {
+                                std::swap(results[0], results[halfDimAltIdx]);
+                                didEnharmonicFlip = true;
+                            }
+                        }
+                    }
+                }
 
-                // Seventh-chord exemption: if the winner carries a minor or major
-                // seventh extension that the best alternative lacks, the bass-root
-                // bonus is not the sole structural advantage — the winner is a richer,
-                // more specific reading (e.g. Am7 vs Em triad).  Do not penalise it.
-                const bool winnerHasSeventh =
-                    hasExtension(winner.identity.extensions, Extension::MinorSeventh)
-                    || hasExtension(winner.identity.extensions, Extension::MajorSeventh);
-                const bool altHasSeventh =
-                    hasExtension(bestAlt->identity.extensions, Extension::MinorSeventh)
-                    || hasExtension(bestAlt->identity.extensions, Extension::MajorSeventh);
-                const bool seventhExempt = winnerHasSeventh && !altHasSeventh;
+                // ── Gate E: first-inversion detection ─────────────────────────────────────
+                //
+                // When the winner is Minor with bassIsRoot=true and the best Major alternative
+                // has its root a minor-6th above the winner root (= winner root is the major
+                // 3rd of the alt), the scorer has likely identified the bass note (= 3rd of
+                // the actual chord) as the root.  E.g., F#m wins when D/F# is correct.
+                //
+                // Relationship: altRootPc == (winnerRootPc + 8) % 12
+                // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
+                // bass signal (temporal context required).
+                if (!didEnharmonicFlip
+                    && prefs.preferMinorOverMajorAdd6
+                    && context != nullptr
+                    && winner.identity.quality == ChordQuality::Minor
+                    && bestAlt->identity.quality == ChordQuality::Major
+                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 8) % 12
+                    && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
+                    std::swap(results[0], results[bestAltIdx]);
+                    didEnharmonicFlip = true;
+                }
 
-                if (!seventhExempt && margin < prefs.inversionSuspicionMargin) {
-                    // Deduct the bass-bonus contribution from the winner and re-sort.
-                    const double deduction = prefs.bassNoteRootBonus
-                                            * (1.0 - prefs.inversionBonusReduction);
-                    results[0].identity.score -= deduction;
-                    std::stable_sort(results.begin(), results.end(),
-                                     [](const ChordAnalysisResult& a,
-                                        const ChordAnalysisResult& b) {
-                                         return a.identity.score > b.identity.score;
-                                     });
+                // ── Gate F: second-inversion detection ────────────────────────────────────
+                //
+                // When the best Major alternative has its root a perfect-4th above the winner
+                // root (= winner root is the 5th of the alt), the scorer has likely identified
+                // the bass note (= 5th of the actual chord) as the root.
+                // E.g., B or BAug wins when E/B is correct.
+                //
+                // Relationship: altRootPc == (winnerRootPc + 5) % 12
+                // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
+                // bass signal (temporal context required).
+                if (!didEnharmonicFlip
+                    && prefs.preferMinorOverMajorAdd6
+                    && context != nullptr
+                    && bestAlt->identity.quality == ChordQuality::Major
+                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 5) % 12
+                    && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
+                    std::swap(results[0], results[bestAltIdx]);
+                    didEnharmonicFlip = true;
+                }
+
+                if (!didEnharmonicFlip) {
+                    const double margin = winner.identity.score - bestAlt->identity.score;
+
+                    // Seventh-chord exemption: if the winner carries a minor or major
+                    // seventh extension that the best alternative lacks, the bass-root
+                    // bonus is not the sole structural advantage — the winner is a richer,
+                    // more specific reading (e.g. Am7 vs Em triad).  Do not penalise it.
+                    const bool winnerHasSeventh =
+                        hasExtension(winner.identity.extensions, Extension::MinorSeventh)
+                        || hasExtension(winner.identity.extensions, Extension::MajorSeventh);
+                    const bool altHasSeventh =
+                        hasExtension(bestAlt->identity.extensions, Extension::MinorSeventh)
+                        || hasExtension(bestAlt->identity.extensions, Extension::MajorSeventh);
+                    const bool seventhExempt = winnerHasSeventh && !altHasSeventh;
+
+                    if (!seventhExempt && margin < prefs.inversionSuspicionMargin) {
+                        // Deduct the bass-bonus contribution from the winner and re-sort.
+                        const double deduction = prefs.bassNoteRootBonus
+                                                * (1.0 - prefs.inversionBonusReduction);
+                        results[0].identity.score -= deduction;
+                        std::stable_sort(results.begin(), results.end(),
+                                         [](const ChordAnalysisResult& a,
+                                            const ChordAnalysisResult& b) {
+                                             return a.identity.score > b.identity.score;
+                                         });
+                    }
                 }
             }
         }
-    }
 
-    // ── Populate normalizedConfidence for each result ─────────────────────────
-    if (!results.empty()) {
-        const double winnerScore = results.front().identity.score;
-        const double runnerUpScore = (results.size() >= 2) ? results[1].identity.score : 0.0;
-        results[0].identity.normalizedConfidence
-            = normalizeChordConfidence(winnerScore, runnerUpScore, prefs);
-        for (size_t i = 1; i < results.size(); ++i) {
-            const double iRunnerUp = (i + 1 < results.size()) ? results[i + 1].identity.score : 0.0;
-            results[i].identity.normalizedConfidence
-                = normalizeChordConfidence(results[i].identity.score, iRunnerUp, prefs);
+        // ── Gate H: Augmented triad root-symmetry resolution ──────────────────────────
+        //
+        // An augmented triad has three enharmonic roots (±4 semitones mod 12): D+, F#+,
+        // and Bb+ are the same chord.  When the analyzer picks root R but the correct
+        // root is (R+4)%12 or (R+8)%12, the two candidates represent the same sonority
+        // with different root labels.  Temporal evidence resolves the ambiguity.
+        //
+        // Unlike the main correction block, this gate handles Augmented winners
+        // (excluded from winnerQualityTargeted = Major/Minor).  It fires only with
+        // temporal context and is gated by preferMinorOverMajorAdd6 (classical presets).
+        if (winnerBassIsRoot
+            && winner.identity.quality == ChordQuality::Augmented
+            && prefs.preferMinorOverMajorAdd6
+            && context != nullptr) {
+            bool didAugmentedFlip = false;
+            for (const int semitones : {4, 8}) {
+                if (didAugmentedFlip) break;
+                const int altRoot = (winner.identity.rootPc + semitones) % 12;
+                // Find an Augmented candidate at this root.
+                size_t augAltIdx = results.size();
+                for (size_t i = 1; i < results.size(); ++i) {
+                    if (results[i].identity.quality == ChordQuality::Augmented
+                        && results[i].identity.rootPc == altRoot) {
+                        augAltIdx = i;
+                        break;
+                    }
+                }
+                if (augAltIdx == results.size()) continue;
+                // Gate H-B: next region's inferred root matches the alt augmented root.
+                if (!didAugmentedFlip
+                    && context->nextRootPc != -1
+                    && context->nextRootPc == altRoot
+                    && context->bassIsStepwiseToNext) {
+                    std::swap(results[0], results[augAltIdx]);
+                    didAugmentedFlip = true;
+                }
+                // Gate H-C: alt root appears in the 3-region window AND bass is stepwise.
+                if (!didAugmentedFlip && context->bassIsStepwiseFromPrevious) {
+                    const auto& rpc = context->recentRootPcs;
+                    if (rpc[0] == altRoot || rpc[1] == altRoot || rpc[2] == altRoot) {
+                        std::swap(results[0], results[augAltIdx]);
+                        didAugmentedFlip = true;
+                    }
+                }
+                // Gate H-D: two or more consecutive stepwise bass moves.
+                if (!didAugmentedFlip
+                    && context->consecutiveBassStepwiseCount >= 2) {
+                    std::swap(results[0], results[augAltIdx]);
+                    didAugmentedFlip = true;
+                }
+            }
         }
     }
 
@@ -1981,17 +2302,26 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 // Do not pass temporal context to Pass 2: the context bonuses
                 // (rootContinuityBonus, stepwiseBass*) are anchored to the bass
                 // note and would distort the upper-voice-only result.
+                // Disable the inversion correction and guaranteed-alt append for
+                // Pass 2: in the upper-voice-only analysis there is no sustained
+                // bass to correct against, and those blocks distort the confidence
+                // gap used to confirm the pedal.
+                ChordAnalyzerPreferences pass2Prefs = prefs;
+                pass2Prefs.inversionSuspicionMargin = 0.0;
                 const auto pass2 = RuleBasedChordAnalyzer{}.analyzeChord(
-                    upperTones, keySignatureFifths, keyMode, nullptr, prefs);
+                    upperTones, keySignatureFifths, keyMode, nullptr, pass2Prefs);
 
                 if (!pass2.empty()) {
                     // Confidence is measured against the first competitor with a
                     // DIFFERENT root.  Multiple templates for the same chord quality
                     // (triad / maj7 / dom7) can score identically when their extended
                     // tones are absent, filling all three result slots with the same
-                    // root — making normalizedConfidence artificially low.
+                    // root — making a gap-to-next-in-list metric artificially low.
                     // Comparing the winner's score against the best genuine alternative
                     // (different rootPc) gives a meaningful pedal-confirmation signal.
+                    // Sigmoid constants (midpoint=2.0, steepness=1.5) are the empirical
+                    // defaults from ChordAnalyzerPreferences, inlined here after the
+                    // chord-level normalizedConfidence field was removed as dead code.
                     double pass2AltScore = 0.0;
                     const int p2Root = pass2.front().identity.rootPc;
                     for (size_t i = 1; i < pass2.size(); ++i) {
@@ -2001,9 +2331,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         }
                     }
                     const double gap = pass2.front().identity.score - pass2AltScore;
-                    const double c2  = 1.0 / (1.0 + std::exp(
-                        -prefs.confidenceSigmoidSteepness
-                        * (gap - prefs.confidenceSigmoidMidpoint)));
+                    const double c2  = 1.0 / (1.0 + std::exp(-1.5 * (gap - 2.0)));
                     if (c2 >= prefs.pedalConfidenceThreshold) {
                         // Confirmed pedal — replace results with Pass 2.
                         results = pass2;
@@ -2200,7 +2528,9 @@ std::string ChordSymbolFormatter::formatSymbol(const ChordAnalysisResult& result
                                         hasExtension(result.identity.extensions, Extension::MajorSeventh),
                                         hasExtension(result.identity.extensions, Extension::DiminishedSeventh),
                                         hasExtension(result.identity.extensions, Extension::AddedSixth),
-                                        hasExtension(result.identity.extensions, Extension::NaturalNinth),
+                                        hasExtension(result.identity.extensions, Extension::NaturalNinth)
+                                            || hasExtension(result.identity.extensions, Extension::FlatNinth)
+                                            || hasExtension(result.identity.extensions, Extension::SharpNinth),
                                         hasExtension(result.identity.extensions, Extension::NaturalNinth),
                                         hasExtension(result.identity.extensions, Extension::NaturalEleventh),
                                         hasExtension(result.identity.extensions, Extension::NaturalThirteenth),

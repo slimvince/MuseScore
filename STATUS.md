@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-04-24 — Jazz-path retirement complete — production (02e3733afb) and tools (69716deead). Chord-symbol reads eliminated from analysis pipeline; tools retain symbol access only as comparison metadata. Mismatch baseline held at 0/135. FiloSax and similar lead-sheet corpora moved to deferred — awaits §4.1f per-symbol trust mode.*
+*Last updated: 2026-05-06 — Iteration 8: batch temporal context wired (§2.10 partial retirement). BIR=true: 109, BIR=false: 788 (baselines held). 407/407 composing, notation, pipeline snapshot tests pass.*
 
 ---
 
@@ -61,6 +61,179 @@ corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regio
 `compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
 files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
 Major7, Minor7, etc.).
+
+## 2026-04-25 → 2026-05-04 — post-Phase-5 quality cycle (rollup)
+
+This rollup covers the cycle from the end of the unified analysis pipeline refactor through
+the parking-lot trio cleanup. Per-commit detail lives in `git log` and in the prompt and
+recon docs under `docs/` and `docs/prompts/`. A new session should read MEMORY.md (auto-
+loaded), this section, and the relevant docs/ memos for the area being worked on.
+
+**Unified analysis pipeline refactor — structurally complete:**
+- Phase 1b: snapshot harness (`pipeline_snapshot_tests`, 10-corpus suite) — commit `efb60ca1ab`
+- Phase 2: type introduction (`AnalyzedSection` / `AnalyzedRegion` / `KeyArea`) — `4ff4a444a4`
+- Phase 3a: P1 implode conversion — `7eafbab253`
+- Phase 3b: P2 annotation conversion — `ee8e2655bd`
+- Phase 3c-recon: divergence D shown to be display-context cruft predating per-region pipeline by 12 days — `d35f003aa2`
+- Phase 3c-impl: P3 (tick-regional) converted; divergence D closed; alternatives field added; temporal extension fields migrated
+- Phase 4a/4b: `detectCadences` / `detectPivotChords` signatures converted to consume `analyzeSection`; `HarmonicRegion` retired via shim approach for `batch_analyze`
+- Phase 5a/5b: KeyArea consumption + 0.8 confidence gate (`kAnnotateKeyConfidenceThreshold`); modulation-aware Roman annotation with existing `→` (pivot) and new `[D:]` bracket-prefix (non-pivot transition) conventions
+- Phase 4c (`analyzeSection` move to composing module) deferred — gated on consumer need
+- Divergence B and E closed; A remains by design; C parked (cadence-aware duration gate idea)
+
+**Mode 1 QA + extension stripping (the big reclassification):**
+- Mode 1 QA at commit `3378b9c7da` found ALL 135 baseline mismatches come from a single synthetic C-major catalog. Real-world analyzer quality remains unmeasured — Mode 2 + LLM-triage moved up in priority. (See memory `project_composing_tests_baseline_synthetic.md`.)
+- Extension-stripping policy implemented as test-only utility (`stripSymbol`, `classifyComparison`); never in production. Per principle in memory `project_no_stripping_in_production.md` — analyzers always emit maximal output, stripping happens only at corpus-comparison boundaries. Design memo: `docs/extension_stripping_policy.md`.
+- After stripping protocol, baseline reduced 135 → 10. Subsequent analyzer fixes reduced further: viiø Pattern E (10 → 7), b9/#9 (7 → 5), m7b5 9th (5 → 4). Stable at **4 RealDiff** (pinned).
+
+**formatSymbol audit (per-quality branch bugs):**
+- Three closed bugs (`59f65d569f`, `da68035054`, `e529b736a1`) traced to the formatter, not detection. Pattern saved as memory `project_format_symbol_per_quality_bugs.md`.
+- Systematic audit produced `docs/format_symbol_audit.md`; 5 hidden bugs found (F1–F5) and bundled-fixed; 0 open formatSymbol bugs after audit.
+
+**Three-paths divergence (m285) and parser recon:**
+- m285 investigated as three-paths divergence — same data, different consumer-side sort logic; both UIs now trust analyzer order (divergence E closed). Recon at `docs/three_paths_divergence_recon.md`, `docs/musescore_parser_special_notations_recon.md`.
+- Underlying cause is vocabulary mismatch (CTristan unparseable by MuseScore parser) plus former selection-handling bug (since fixed by user).
+
+**Cleanup pass (parking-lot trio):**
+- score vs normalizedConfidence: confirmed unused metric (`docs/score_vs_normalized_confidence_recon.md`, commit `dbcf0d5ee6`); dead code removed in `92adbbbb43` (-39 LoC).
+- Selection-handling fix (annotate-on-list-selections producing empty output): fixed by user.
+- m340 reclassification: RealDiff because Roman field differs even when chord symbol matches under stripping. Documented; `kRealDiffBaseline` tightened from 5 to 4 in commit `27426bc6da`.
+- Policy #1 refresh helper deleted in `ff1780d9` (49,549-region structural proof of no-op). See memory `project_policy1_refresh_dead_code.md`.
+
+**Architectural memos retained as guardrails (in `.auto-memory/`):**
+- Generalized chord-symbol-ban (content-based, not storage-type-based — covers Romans, function/cadence/key annotations; structural metadata like key sig still allowed)
+- No stripping in production (analyzers always maximal)
+- NCT detection deferred until LLM-triage corpus data exists; if pursued, must be Shape A (NCT-aware chord ID) not Shape B (post-analysis stripping)
+- Cadence-aware duration gate idea (post-Phase-5; per-onset analysis alternative rejected for chicken-and-egg)
+- composing_tests 135 baseline is synthetic — real-music backlog unmeasured
+
+**2026-05-05 — Inversion redesign Iterations 0–2 (commit `1d3e8d9a59`):**
+- Iteration 0: reverted all harmful changes from the earlier cap/bonus experiment:
+  removed five `ChordAnalyzerPreferences` fields (`nextRootMatchesAltInversionBonus`,
+  `consecutiveBassStepwiseInversionBonus`, `recentRootMatchesAltInversionBonus`,
+  `weakBeatInversionBonus`, `weakBeatThreshold`); removed their scoring code from
+  `contextualBonuses()`; reverted Baroque/Jazz preset amplified values to defaults.
+  Clean baseline: 119 genuine BIR=true, 252 BIR=false (commit `46c76ad67f`) — stale
+  corpus numbers; see 2026-05-05 corpus-correction entry for current figures.
+- Iteration 1: read-only investigation of `analyzeSection` / bridge pipeline structure.
+  Found that `analyzeSection` delegates to `analyzeHarmonicRhythm()` in
+  `notationharmonicrhythmbridge.cpp` — the §4.1c loop is the correct insertion point
+  for temporal context population (Option B).
+- Iteration 2: moved temporal context computation into the shared bridge pipeline
+  (`notationharmonicrhythmbridge.cpp`). Added four fields to `ChordTemporalExtensions`
+  and `toExtensionsSnapshot()`; added rolling state + per-region population of
+  `nextRootPc`, `consecutiveBassStepwiseCount`, `recentRootPcs`, `regionMetricWeight`
+  in the §4.1c main loop and Pass 2/2b sub-loops; removed duplicate computation from
+  `batch_analyze.cpp` with NOTE comment. All P1/P2/P3/P4 paths now receive full
+  temporal context. Corpus numbers unchanged (119/252 on stale files) — no scoring changes in Iter 2.
+- Master plan: `docs/prompts/iteration_plan_inversion_redesign.md`
+- Next: Iteration 3 — temporal gates B/C/D in post-ranking correction (`chordanalyzer.cpp`)
+
+**2026-05-05 — Iterations 3–4: temporal gates + stepwise lookahead (commits `f168ee5dab`, `41913a7cf9`):**
+- Iteration 3: temporal gates B/C/D in post-ranking correction block — enharmonic inversion
+  correction via progression context. Commit `f168ee5dab`.
+- Iteration 4: stepwise lookahead tuning; added gates E/F for first/second inversion.
+  Commit `41913a7cf9`.
+
+**2026-05-06 — Iteration 8: batch temporal context wired, §2.10 partial retirement (commit `6d198e69fd`):**
+- `analyzeScore()` in `tools/batch_analyze.cpp` now populates all three previously-defaulted
+  temporal fields before each `analyzeChord()` call: `consecutiveBassStepwiseCount` (from a
+  rolling `runningStepwiseCount`), `recentRootPcs` (from a 3-slot ring buffer), and `nextRootPc`
+  (from a lightweight look-ahead `analyzeChord` on the next boundary's tones, no context passed
+  to avoid recursion). The batch path now uses identical temporal signals as the bridge path
+  (§2.10 partial retirement).
+- **Regression found and fixed:** wiring context caused Gates B/C/D to fire in the batch path
+  for the first time, adding 434 spurious BIR=false errors (788→1222). Root cause: Gates B/C/D
+  lacked the `winnerHasAddedSixth` guard that Gate A already required. Without it they fired on
+  plain-Major winners where Gate A's `winnerHasAddedSixth` check prevented Gate A from firing.
+  Fix: `&& winnerHasAddedSixth` added to the conditions of Gates B, C, and D. Gate B also
+  retains the `&& context->bassIsStepwiseToNext` guard added in an earlier sub-iteration.
+- Corpus (Baroque preset): BIR=true **109**, BIR=false **788** — baselines held exactly.
+- 407/407 composing tests, notation tests, 11/11 pipeline snapshot tests pass.
+
+**2026-05-05 — Iteration 6: Gates G-B/G-C/G-D — MinorAdd6/HalfDim7 temporal gates (commit `2850bb4705`):**
+- Three context-dependent gates added to the `if (prefs.preferMinorOverMajorAdd6)` block,
+  immediately after Gate D. These are exact parallels of Gates B/C/D for the second enharmonic
+  equivalence pair: MinorAdd6 (e.g. Cm6 = C–Eb–G–A) ↔ HalfDim7 whose root is 9 semitones above
+  the MinorAdd6 root (e.g. Am7b5).
+- Gate G-B: fires when `context->nextRootPc == expectedAltRoot` (forward-looking root match).
+- Gate G-C: fires when HalfDim root appears in 3-region window AND bass is stepwise from previous.
+- Gate G-D: fires when `consecutiveBassStepwiseCount >= 2` (scalar bass line).
+- kCleanQualities excludes HalfDiminished, so a separate one-pass search finds the HalfDim alt.
+- Categorical gate (Gate G) was reverted in Iteration 5 at 96% false-positive rate; temporal
+  evidence is required before preferring HalfDim over MinorAdd6.
+- Corpus (Baroque preset): BIR=true **111**, BIR=false **788** — unchanged (expected per §2.10;
+  batch path does not populate temporal context, so G-B/G-C/G-D fire 0 times there).
+- Pipeline snapshot tests: 10/10 pass, no golden changes (gates did not fire on the 10-score corpus).
+- 407/407 composing tests, 53/53 notation tests pass.
+
+**2026-05-05 — Iteration 5: Gate G attempted and reverted (commit `89ad75d7d1`):**
+- Gate G (MinorAdd6 ↔ HalfDim7 categorical swap, symmetric to Gate A) was implemented,
+  then reverted after corpus analysis showed a 96% false-positive rate. Of 56 MinorAdd6
+  errors in the corpus, Gate G only fired for 15 (because `winnerQualityTargeted` filters
+  many out before the gate is reached), and those 15 corrections were not verifiably correct.
+- Part B (deduction neutralization: deduct all same-rootPc candidates) was also attempted
+  and reverted — caused hard-coded notation test failures (G→Em7/G, C→Em/C) and Jazz catalog
+  regressions. Root cause: same-root rising after deduction is often correct behavior.
+- **Stale corpus discovery:** corpus JSONs in `tools/corpus/` had not been regenerated since
+  Iteration 2 (`1d3e8d9a59`). On regeneration, true baselines are BIR=true **111**, BIR=false
+  **788** (not 119/252). The temporal gates from iterations 3–4 reduced BIR=true by 8 and
+  increased BIR=false by 536 versus the iter-2 starting point. The 252 BIR=false ceiling in
+  `BUILD_AND_TEST.md` was silently stale; it has been corrected to 788.
+- Corpus JSONs regenerated and baselines updated: BIR=true 111, BIR=false 788.
+- 407/407 composing tests, 53/53 notation tests, 10/11 pipeline snapshot tests pass.
+
+**2026-05-05 — Temporal context expansion + total-bonus cap (REVERTED in Iter 0 above):**
+- Four new inversion signals added to `ChordTemporalContext` / `ChordAnalyzerPreferences` /
+  `contextualBonuses()`: `nextRootPc` (look-ahead root match), `consecutiveBassStepwiseCount`
+  (scalar bass run), `recentRootPcs` (3-region root window), `regionMetricWeight` (beat strength).
+- Cap `maxTotalInversionContextBonus` added: all inversion bonuses (original four + four new) are
+  accumulated into a local variable and clamped before application, preventing stacking runaway.
+- Baroque preset cap=1.0 found via binary search to be the optimal tradeoff (per stopping rules:
+  reduce in 0.1 steps until bassIsRoot=false ≈ baseline or genuine reduction < 50; cap=0.9 dropped
+  reduction to 47, so final value is 1.0).
+- Baroque corpus results (cap=1.0): genuine bassIsRoot=true errors 119→66 (−45%), 2-way bassIsRoot
+  755→620 (−18%), bassIsRoot=false genuine errors 252→364 (+112 above old baseline), overall chord
+  identity improved from ~75% to 80.3%.
+- Tests 407/407, RealDiff still 4. No regressions in unit tests or catalog.
+- Jazz preset cap=0.6, Standard/Modal/Contemporary cap=2.0 (default).
+- Prompt: `docs/prompts/design_temporal_context_inversion.md`
+
+**2026-05-04 — Systematic corpus error fixes (inversion confusion + sus misread):**
+- Root cause: bass-root bonus (+0.70) + nonBassAdjustment penalty (−0.35) = 1.05 scoring gap
+  pushes correct enharmonic alternative below the 75%-of-winner threshold in sparse-upper-voice
+  regions; post-ranking inversion correction had nothing to flip to.
+- Fix 1 (threshold de-inflation, `chordanalyzer.cpp` line ~1711): threshold now computed as
+  `(bestRawScore - winnerBassBonus) * kScoreThresholdRatio` instead of `bestRawScore * ratio`.
+  Ensures enharmonic alternatives (Gm7 when Bb6 wins, correct non-sus chord when sus wins from
+  bass) survive into results[]. Commit `31ea993f46`.
+- Fix 2 (sus structural fourth, same commit): `kSus4StructuralFourthThreshold = 0.50` replaces
+  `extensionThreshold` (0.20) as gate for `kSus4MissingFourth` penalty. Passing/ornamental P4s
+  (weight 0.20–0.45) no longer suppress the penalty; genuine suspension tones (≥ 0.50) still
+  clear it. Addresses sus mislabels where root is correct but quality is wrong.
+- Pre-fix scale: 491 cells (60% of corpus) inversion bias + 210 cells (38%) sus bias.
+  Post-fix corpus comparison pending.
+- Strategic principle established: fix everything not classifiable as genuine ambiguity,
+  convention difference, or vocabulary mismatch. No error percentage target — fix real errors.
+- Prompt: `docs/prompts/fix_inversion_and_sus_misread.md`
+
+**Open / pending work (carried forward):**
+- Post-fix corpus comparison — measure inversion + sus error reduction; feed into next triage pass
+- Systematic triage of remaining genuine errors (pattern analysis → classify → fix loop)
+- FormatterGap classification (extend `classifyComparison` with VocabularyMismatch bucket; would drop m285, m333 from RealDiff)
+- m164 C7alt catalog edit — needs explicit approval (catalog is do-not-touch)
+- DCML comparison tooling (~100 LOC Python script)
+- K.279 second-theme verification (extend snapshot window beyond first 30720 ticks)
+- NCT detection (deferred until LLM-triage data)
+- Per-symbol trust mode (ARCHITECTURE.md §4.1f long-horizon)
+- Phase 4c (`analyzeSection` move to composing module — gated on consumer need)
+- LLM-triage build (parallel Cowork session)
+- pipeline_snapshot_tests corpus expansion (sub-beat regions, ambiguous cadences)
+
+**Useful reading for a new session in this area:**
+`docs/unified_analysis_pipeline.md` (refactor spine), `docs/extension_stripping_policy.md`, `docs/mismatch_classification.md`, `docs/format_symbol_audit.md`, `docs/score_vs_normalized_confidence_recon.md`, `docs/musescore_parser_special_notations_recon.md`, `docs/three_paths_divergence_recon.md`, `docs/divergence_d_recon.md`, `docs/nct_detection_design.md`, `docs/llm_triage_design.md`. Implementation prompts (one-per-task) live in `docs/prompts/`.
+
+---
 
 ## 2026-04-23 — deduplication iteration 7
 

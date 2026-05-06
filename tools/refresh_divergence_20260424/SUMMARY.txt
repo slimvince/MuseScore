@@ -1,0 +1,62 @@
+=== BWV 525 (Bach organ sonata) ===
+Regions in prepared path:           101
+Regions in refreshed path:          101
+Shared ticks (comparable):          101
+  Prepared-only (absorbed in refreshed): 0
+  Refreshed-only (new in refreshed):     0
+
+Among shared regions:
+  Identical:              101 (100.0%)
+  Inversion/bass changed: 0 (0.0%)
+  Quality changed:        0 (0.0%)
+  Root changed:           0 (0.0%)
+  Extensions changed:     0 (0.0%)
+
+[Note] analyzeHarmonicRhythm regions: 114  vs prepareUserFacingHarmonicRegions: 101  (shared ticks: 79)
+
+No identity divergences among shared regions.
+
+=== Poulenc O Magnum Mysterium ===
+Regions in prepared path:           78
+Regions in refreshed path:          78
+Shared ticks (comparable):          78
+  Prepared-only (absorbed in refreshed): 0
+  Refreshed-only (new in refreshed):     0
+
+Among shared regions:
+  Identical:              78 (100.0%)
+  Inversion/bass changed: 0 (0.0%)
+  Quality changed:        0 (0.0%)
+  Root changed:           0 (0.0%)
+  Extensions changed:     0 (0.0%)
+
+[Note] analyzeHarmonicRhythm regions: 67  vs prepareUserFacingHarmonicRegions: 78  (shared ticks: 60)
+
+No identity divergences among shared regions.
+
+=== Solid Theory (subst. for op01n08d — not found on master) ===
+Regions in prepared path:           59
+Regions in refreshed path:          59
+Shared ticks (comparable):          59
+  Prepared-only (absorbed in refreshed): 0
+  Refreshed-only (new in refreshed):     0
+
+Among shared regions:
+  Identical:              59 (100.0%)
+  Inversion/bass changed: 0 (0.0%)
+  Quality changed:        0 (0.0%)
+  Root changed:           0 (0.0%)
+  Extensions changed:     0 (0.0%)
+
+[Note] analyzeHarmonicRhythm regions: 53  vs prepareUserFacingHarmonicRegions: 59  (shared ticks: 52)
+
+No identity divergences among shared regions.
+
+=== AGGREGATE (prepared → refreshed, shared ticks only) ===
+Total shared regions:               238
+Changed by refresh:                 0 (0.0%)
+Dominant change class:              (none — all identical)
+  inversion_bass            0
+  quality_changed           0
+  root_changed              0
+  extensions_changed        0

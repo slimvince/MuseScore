@@ -363,11 +363,11 @@ staff_idx_t appendChordTrackStaffPair(MasterScore* score)
 }
 
 void normalizePopulatedRegionStarts(MasterScore* score,
-                                    std::vector<mu::composing::analysis::HarmonicRegion>& regions,
+                                    std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
                                     const Fraction& startTick,
                                     const Fraction& endTick)
 {
-    std::vector<mu::composing::analysis::HarmonicRegion> normalizedRegions;
+    std::vector<mu::composing::analysis::AnalyzedRegion> normalizedRegions;
     normalizedRegions.reserve(regions.size() * 2);
     const int analysisRangeStartTick = startTick.ticks();
 

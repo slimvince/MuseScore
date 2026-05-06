@@ -14,7 +14,9 @@ Usage:
 """
 from __future__ import annotations
 
+import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from collections import Counter
@@ -22,8 +24,32 @@ from collections import Counter
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 _ROOT       = Path(__file__).resolve().parent.parent
-_CORPUS_DIR = _ROOT / "tools" / "reports" / "corpus"
+_CORPUS_DIR = _ROOT / "tools" / "corpus"
 _WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
+
+
+def _infer_quality(sym: str) -> str:
+    """Infer a quality category name from a chord symbol string."""
+    s = sym.split('/')[0]
+    m = re.match(r'^[A-G][#b]?', s)
+    if not m:
+        return ""
+    body = s[m.end():]
+    if 'dim7' in body or '°7' in body:
+        return "Diminished7"
+    if body.startswith('ø') or 'm7b5' in body.lower():
+        return "HalfDiminished"
+    if 'maj7' in body.lower() or body.startswith('M7'):
+        return "Major7"
+    if body.startswith('m7') or body.startswith('min7'):
+        return "Minor7"
+    if body.startswith('7'):
+        return "Dominant7"
+    if 'dim' in body.lower() or '°' in body:
+        return "Diminished"
+    if body.startswith('m') or body.startswith('min'):
+        return "Minor"
+    return "Major"
 
 sys.path.insert(0, str(_ROOT / "tools"))
 import compare_analyses as cmp
@@ -31,8 +57,15 @@ import dcml_parser as dcml
 
 
 def main():
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--ours-dir", default=None,
+                        help="Directory containing *.ours.json files (default: tools/corpus)")
+    args, _ = parser.parse_known_args()
+
+    ours_dir = Path(args.ours_dir).resolve() if args.ours_dir else _CORPUS_DIR
+
     # ── Find enriched JSON files ──────────────────────────────────────────
-    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+    ours_files = sorted(ours_dir.glob("*.ours.json"))
     if not ours_files:
         print("ERROR: No .ours.json files in tools/reports/corpus/", file=sys.stderr)
         sys.exit(1)
@@ -170,7 +203,7 @@ def main():
             continue
         found_clean = False
         for alt in alts:
-            q = alt.get("quality", "")
+            q = _infer_quality(alt.get("chordSymbol", ""))
             alt_quality_counts[q] += 1
             if q in CLEAN:
                 found_clean = True
@@ -244,6 +277,59 @@ def main():
     hi_cnt = sum(1 for m in margins if m >= 3.0)
     if hi_cnt:
         print(f"  [3.00, ∞   ): {hi_cnt:4d}")
+
+    # ── Blocker analysis ──────────────────────────────────────────────────
+    # Post-ranking inversion correction fires only when:
+    #   margin < inversionSuspicionMargin (0.70) AND a clean Major/Minor alt exists.
+    # Three distinct reasons it can still fail:
+    #   Blocker B: margin >= 0.70 (winner wins on merits even without bass bonus)
+    #   Blocker C: margin < 0.70 but no clean alt in results[]
+    #   Blocker A: margin < 0.70, clean alt present, but winner has 7th and alt does not
+    #              (seventh-exemption guard at chordanalyzer.cpp ~1916-1923)
+    INVERSION_SUSPICION_MARGIN = 0.70
+    SEVENTH_QUALITIES = {"Dominant7", "Major7", "Minor7", "HalfDiminished", "Diminished7"}
+
+    blocker_b = blocker_c = blocker_a = other = 0
+
+    def _has_clean_alt(r) -> tuple[bool, dict | None]:
+        for alt in (r.alternatives or []):
+            q = _infer_quality(alt.get("chordSymbol", ""))
+            if q in CLEAN:
+                return True, alt
+        return False, None
+
+    for r in errors:
+        margin = r.chord_score_margin or 0.0
+        if margin >= INVERSION_SUSPICION_MARGIN:
+            blocker_b += 1
+            continue
+        clean_present, best_clean_alt = _has_clean_alt(r)
+        if not clean_present:
+            blocker_c += 1
+            continue
+        # Should-have-fired — check Blocker A
+        winner_has_7th = r.quality in SEVENTH_QUALITIES
+        alt_has_7th = '7' in (best_clean_alt or {}).get("chordSymbol", "")
+        if winner_has_7th and not alt_has_7th:
+            blocker_a += 1
+        else:
+            other += 1
+
+    should_have_fired = blocker_a + other
+    print(f"\n{'='*70}")
+    print("BLOCKER ANALYSIS")
+    print(f"{'='*70}")
+    print(f"  Margin >= {INVERSION_SUSPICION_MARGIN} (Blocker B, correct suppression): "
+          f"  {blocker_b:4d}  ({100*blocker_b/n:.1f}%)")
+    print(f"  No clean alt in results (Blocker C):              "
+          f"  {blocker_c:4d}  ({100*blocker_c/n:.1f}%)")
+    print(f"  Should-have-fired total:                          "
+          f"  {should_have_fired:4d}  ({100*should_have_fired/n:.1f}%)")
+    if should_have_fired:
+        print(f"    of which Blocker A (seventh exemption):       "
+              f"  {blocker_a:4d}  ({100*blocker_a/should_have_fired:.1f}%)")
+        print(f"    of which other / unclear:                     "
+              f"  {other:4d}  ({100*other/should_have_fired:.1f}%)")
 
 
 if __name__ == "__main__":

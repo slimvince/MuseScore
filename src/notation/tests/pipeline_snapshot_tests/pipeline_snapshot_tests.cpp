@@ -97,7 +97,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
-#include "composing/analysis/region/harmonicrhythm.h"
+#include "composing/analyzed_section.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "composing/icomposingchordstaffconfiguration.h"
 
@@ -131,7 +131,8 @@ using mu::engraving::VOICES;
 using mu::notation::NoteHarmonicContext;
 using mu::composing::analysis::ChordAnalysisResult;
 using mu::composing::analysis::ChordQuality;
-using mu::composing::analysis::HarmonicRegion;
+using mu::composing::analysis::AnalyzedRegion;
+using mu::composing::analysis::AnalyzedSection;
 using mu::composing::analysis::KeySigMode;
 
 namespace {
@@ -185,6 +186,10 @@ constexpr CorpusEntry kCorpus[] = {
     { "schumann_kinderszenen_n01",
       "tools/dcml/schumann_kinderszenen/MS3/n01.mscx",
       "Schumann Kinderszenen No. 1 — fills the sub-beat-passing-harmony slot (per the prompt, a second Chopin piece was considered; Schumann gives more rhythmic variety)." },
+
+    { "bach_chorale_137",
+      "tools/dcml/bach_chorales/MS3/137 Du, o schönes Weltgebäude.mscx",
+      "Bach Chorale No. 137 (BWV 301) — contains MinorAdd6 inversions at mm. 2, 4, 14; verifies gates G-B/G-C/G-D fire in the bridge path." },
 };
 
 // Number of opening measures analysed per score.  Caps end-to-end runtime on
@@ -282,7 +287,7 @@ Fraction endTickForMeasureCap(MasterScore* score, int maxMeasures)
 
 // ── Snapshot builders (one JSON array per path) ──────────────────────────────
 
-QJsonObject regionToImplodeEntry(const HarmonicRegion& r)
+QJsonObject regionToImplodeEntry(const AnalyzedRegion& r)
 {
     QJsonObject o;
     o[QStringLiteral("tick")] = r.startTick;
@@ -296,9 +301,9 @@ QJsonObject regionToImplodeEntry(const HarmonicRegion& r)
 }
 
 // Find the region containing (or most recently preceding) a tick.
-const HarmonicRegion* regionContaining(const std::vector<HarmonicRegion>& regions, int tick)
+const AnalyzedRegion* regionContaining(const std::vector<AnalyzedRegion>& regions, int tick)
 {
-    const HarmonicRegion* best = nullptr;
+    const AnalyzedRegion* best = nullptr;
     for (const auto& r : regions) {
         if (r.startTick <= tick && tick < r.endTick) {
             return &r;
@@ -312,10 +317,10 @@ const HarmonicRegion* regionContaining(const std::vector<HarmonicRegion>& region
 
 QJsonArray buildImplodeArray(MasterScore* score, const Fraction& endTick)
 {
-    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(
+    const auto section = mu::notation::internal::analyzeSection(
         score, Fraction(0, 1), endTick, /*excludeStaves=*/{});
     QJsonArray arr;
-    for (const auto& r : regions) {
+    for (const auto& r : section.regions) {
         arr.append(regionToImplodeEntry(r));
     }
     return arr;
@@ -361,7 +366,7 @@ Segment* segmentAtOrAfter(MasterScore* score, const Fraction& cappedEnd)
 
 QJsonArray buildAnnotationArray(MasterScore* score,
                                 const Fraction& endTick,
-                                const std::vector<HarmonicRegion>& regions)
+                                const std::vector<AnalyzedRegion>& regions)
 {
     // Snapshot our pipeline's written annotations specifically — not the
     // DCML-sourced Roman numerals that some corpus scores ship with.  The
@@ -415,7 +420,7 @@ QJsonArray buildAnnotationArray(MasterScore* score,
             text = entry.harmony->plainText().toQString();
         }
         o[QStringLiteral("text")] = text;
-        const HarmonicRegion* reg = regionContaining(regions, entry.segment->tick().ticks());
+        const AnalyzedRegion* reg = regionContaining(regions, entry.segment->tick().ticks());
         if (reg) {
             o[QStringLiteral("key")] = QString::fromStdString(
                 keyName(reg->keyModeResult.keySignatureFifths, reg->keyModeResult.mode));
@@ -685,14 +690,30 @@ QJsonArray buildImplodedChordTrackArray(const QString& corpusAbsPath, int capped
 
 // ── Snapshot assembly ────────────────────────────────────────────────────────
 
-constexpr int kSchemaVersion = 2;  // Phase 3c: tickRegional gained alternatives + temporal-extension fields
+constexpr int kSchemaVersion = 3;  // Phase 5a: keyAreas array added
+
+QJsonArray buildKeyAreasArray(const AnalyzedSection& section)
+{
+    using mu::composing::analysis::KeyArea;
+    QJsonArray arr;
+    for (const KeyArea& ka : section.keyAreas) {
+        QJsonObject o;
+        o[QStringLiteral("startTick")]  = ka.startTick;
+        o[QStringLiteral("endTick")]    = ka.endTick;
+        o[QStringLiteral("keyFifths")]  = ka.keyFifths;
+        o[QStringLiteral("mode")]       = QString::fromStdString(modeName(ka.mode));
+        o[QStringLiteral("confidence")] = std::round(ka.confidence * 1000.0) / 1000.0;
+        arr.append(o);
+    }
+    return arr;
+}
 
 QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
 {
     const Fraction cappedEnd = endTickForMeasureCap(score, kMaxAnalysisMeasures);
     const auto samples = collectSampleTicks(score, kMaxAnalysisMeasures);
 
-    const auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(
+    const auto section = mu::notation::internal::analyzeSection(
         score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{});
 
     QJsonObject snap;
@@ -700,10 +721,11 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
     snap[QStringLiteral("schemaVersion")] = kSchemaVersion;
 
     QJsonArray implodeArr;
-    for (const auto& r : regions) {
+    for (const auto& r : section.regions) {
         implodeArr.append(regionToImplodeEntry(r));
     }
     snap[QStringLiteral("implode")] = implodeArr;
+    snap[QStringLiteral("keyAreas")] = buildKeyAreasArray(section);
 
     // Tick-sampled paths run before the annotation emitter writes Harmony
     // elements so annotation writes do not affect the regional context match
@@ -713,7 +735,7 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
     snap[QStringLiteral("tickLocal")] = buildTickLocalArray(score, samples);
 
     // Annotation runs last because it mutates the score with Harmony elements.
-    snap[QStringLiteral("annotation")] = buildAnnotationArray(score, cappedEnd, regions);
+    snap[QStringLiteral("annotation")] = buildAnnotationArray(score, cappedEnd, section.regions);
 
     // implodedChordTrack reads back what populateChordTrack writes to a
     // freshly-loaded copy of the score (chord-track staves alter the original
@@ -740,7 +762,7 @@ QString snapshotPath(const CorpusEntry& entry)
 QString corpusPath(const CorpusEntry& entry)
 {
     return QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
-           + QLatin1Char('/') + QString::fromLatin1(entry.relativePath);
+           + QLatin1Char('/') + QString::fromUtf8(entry.relativePath);
 }
 
 QString serializeSnapshot(const QJsonObject& snap)

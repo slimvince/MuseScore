@@ -1,0 +1,5 @@
+[1/6] Automatic MOC and UIC for target notation
+[2/6] Running AUTOMOC file extraction for target notation
+[3/5] Building CXX object src\notation\CMakeFiles\notation.dir\Unity\unity_0_cxx.cxx.obj
+[4/5] Linking CXX static library src\notation\notation.lib
+[5/5] Linking CXX executable notation_tests.exe

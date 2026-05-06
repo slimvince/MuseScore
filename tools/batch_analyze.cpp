@@ -97,6 +97,7 @@ using analysis::ChordAnalysisTone;
 using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
 using analysis::ChordTemporalContext;
+using analysis::isDiatonicStep;
 using analysis::KeyModeAnalysisResult;
 // Note: analysis::KeySigMode and mu::engraving::KeyMode are both in scope;
 //       always qualify as analysis::KeySigMode to avoid ambiguity.
@@ -480,6 +481,20 @@ static BeatType safeBeatType(const Measure* measure, const Segment* segment)
     }
 
     return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
+}
+
+/// Normalised metric weight [0,1] for a beat type, matching the scale used by
+/// collectRegionTones(): 1.0 = downbeat, 0.85 = stressed, 0.75 = unstressed, 0.5 = subbeat.
+static double regionMetricWeightForBeatType(BeatType bt)
+{
+    switch (bt) {
+    case BeatType::DOWNBEAT:            return 1.0;
+    case BeatType::SIMPLE_STRESSED:
+    case BeatType::COMPOUND_STRESSED:   return 0.85;
+    case BeatType::SIMPLE_UNSTRESSED:
+    case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+    default:                            return 0.5;
+    }
 }
 
 static double timeDecay(double beatsAgo)
@@ -1535,13 +1550,6 @@ static std::vector<ChordAnalysisTone> buildTones(const std::vector<SoundingNote>
     return tones;
 }
 
-static bool isDiatonicStep(int pc1, int pc2)
-{
-    int interval = std::abs(pc1 - pc2);
-    interval = std::min(interval, 12 - interval);
-    return interval == 1 || interval == 2;
-}
-
 static ChordTemporalContext findTemporalContext(
     const Score* score,
     const Segment* segment,
@@ -1650,6 +1658,10 @@ static std::vector<AnalyzedRegion> analyzeScore(
 
     const auto chordAnalyzer = analysis::ChordAnalyzerFactory::create();
 
+    // Temporal context accumulation state — carried across iterations.
+    int runningStepwiseCount = 0;                            // consecutive stepwise bass count
+    std::array<int, 3> recentRootsBuf = {-1, -1, -1};       // rolling 3-region root window
+
     // Hysteresis: track the previous key result across regions.
     std::optional<KeyModeAnalysisResult> prevKey;
 
@@ -1680,8 +1692,32 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.bassIsStepwiseFromPrevious = (ctx.previousBassPc != -1 && currentBassPc != -1)
             && isDiatonicStep(ctx.previousBassPc, currentBassPc);
 
+        // Temporal context is now fully populated before analyzeChord():
+        //   bassIsStepwiseFromPrevious, bassIsStepwiseToNext — computed above
+        //   consecutiveBassStepwiseCount, recentRootPcs — assigned below
+        //   nextRootPc — computed in look-ahead block below
+        //   regionMetricWeight — left at default 1.0 (no gate uses it)
+        // §2.10: analyzeScore() and the bridge now use identical temporal signals.
+        if (ctx.bassIsStepwiseFromPrevious) {
+            ++runningStepwiseCount;
+        } else {
+            runningStepwiseCount = 0;
+        }
+
+        // Infer key using the same windowed approach as the bridge.
+        // Pass the previous result for hysteresis (nullptr on the first region).
+        const std::vector<KeyModeAnalysisResult> keyRanked = inferLocalKey(
+            score, refStaff, excludeStaves, regionStart,
+            prevKey.has_value() ? &prevKey.value() : nullptr,
+            keyPrefs);
+        const KeyModeAnalysisResult& localKey = keyRanked[0];
+        prevKey = localKey;
+
+        // Look-ahead: collect next region's tones for nextBassPc and nextRootPc.
+        // nextRootPc uses the current region's key as a lightweight approximation.
         int nextBassPc = -1;
-        if (currentBassPc != -1 && boundaryIndex + 1 < boundaryTicks.size()) {
+        ctx.nextRootPc = -1;
+        if (boundaryIndex + 1 < boundaryTicks.size()) {
             const Fraction nextRegionStart = boundaryTicks[boundaryIndex + 1];
             const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
                                            ? boundaryTicks[boundaryIndex + 2]
@@ -1696,19 +1732,22 @@ static std::vector<AnalyzedRegion> analyzeScore(
                     break;
                 }
             }
+            // nextRootPc: lightweight analyzeChord on next region (no context — avoids recursion).
+            if (!nextTones.empty()) {
+                const auto nextCandidates = chordAnalyzer->analyzeChord(
+                    nextTones, localKey.keySignatureFifths, localKey.mode,
+                    nullptr, chordPrefs);
+                ctx.nextRootPc = nextCandidates.empty()
+                                 ? -1 : nextCandidates[0].identity.rootPc;
+            } else {
+                ctx.nextRootPc = -1;
+            }
         }
         ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
             && isDiatonicStep(currentBassPc, nextBassPc);
 
-        // Infer key using the same windowed approach as the bridge.
-        // Pass the previous result for hysteresis (nullptr on the first region).
-        const std::vector<KeyModeAnalysisResult> keyRanked = inferLocalKey(
-            score, refStaff, excludeStaves, regionStart,
-            prevKey.has_value() ? &prevKey.value() : nullptr,
-            keyPrefs);
-        const KeyModeAnalysisResult& localKey = keyRanked[0];
-        prevKey = localKey;
-
+        ctx.consecutiveBassStepwiseCount = runningStepwiseCount;
+        ctx.recentRootPcs                = recentRootsBuf;
         auto candidates = chordAnalyzer->analyzeChord(
             tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
 
@@ -1723,6 +1762,11 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ctx.previousRootPc = candidates[0].identity.rootPc;
         ctx.previousQuality = candidates[0].identity.quality;
         ctx.previousBassPc = candidates[0].identity.bassPc;
+
+        // Advance the rolling root window (most-recent first).
+        recentRootsBuf[2] = recentRootsBuf[1];
+        recentRootsBuf[1] = recentRootsBuf[0];
+        recentRootsBuf[0] = candidates[0].identity.rootPc;
 
         if (!result.empty()
             && result.back().chord.identity.rootPc == candidates[0].identity.rootPc
@@ -2387,13 +2431,39 @@ int main(int argc, char* argv[])
     }
 
     // ── Build chord analyzer preferences from preset ────────────────────────
-    // Jazz preset uses the lower seventh threshold (0.12) for extension detection
-    // so that lightly-voiced ninths (pcWeight 0.12–0.19) register as extensions.
-    // Standard and Baroque keep the conservative 0.20 threshold to suppress
-    // ornamental passing tones common in counterpoint textures.
+    // Preset-specific chord analysis tuning.
+    //
+    // Jazz: lower extension threshold (0.12) so lightly-voiced ninths register;
+    //       inversion bonuses are reduced because bass-root 6th chords (C6, Bb6)
+    //       are idiomatic labels and should not be de-emphasised.
+    //
+    // Baroque preset: only preferMinorOverMajorAdd6 differs from Standard.
+    // Inversion bonuses use struct defaults (stepwiseBassInversionBonus=0.50,
+    // stepwiseBassLookaheadBonus=0.50, sameRootInversionBonus=0.40,
+    // completeTriadInversionBonus=0.45). Tuning of these values is tracked
+    // in docs/prompts/iteration_plan_inversion_redesign.md Iteration 4.
+    //
+    // Standard, Modal, Contemporary: defaults + preferMinorOverMajorAdd6 (added-sixth
+    //          chords are rare in tonal and modal writing; Minor7 inversions are the
+    //          correct reading for the Bb6/Gm7 enharmonic pair).
     analysis::ChordAnalyzerPreferences chordPrefs;
+
     if (presetName == "Jazz") {
-        chordPrefs.extensionThreshold = 0.12;  // kSeventhThreshold — matches seventh detection
+        chordPrefs.extensionThreshold                    = 0.12;
+        chordPrefs.preferMinorOverMajorAdd6              = false;
+        // Contextual inversion bonuses reduced — bass-root 6th chords are idiomatic
+        chordPrefs.stepwiseBassInversionBonus            = 0.20;
+        chordPrefs.stepwiseBassLookaheadBonus            = 0.20;
+        chordPrefs.sameRootInversionBonus                = 0.15;
+        chordPrefs.completeTriadInversionBonus           = 0.20;
+
+    } else if (presetName == "Baroque") {
+        chordPrefs.preferMinorOverMajorAdd6              = true;
+
+    } else {
+        // Standard, Modal, Contemporary: defaults + prefer Minor over Major add6
+        chordPrefs.preferMinorOverMajorAdd6              = true;
+        // maxTotalInversionContextBonus stays at default (2.0)
     }
 
     // ── Initialize MuseScore headless ──────────────────────────────────────

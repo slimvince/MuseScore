@@ -1,9 +1,13 @@
 # Unified Analysis + Emission Pipeline
 
-Date: 2026-04-24
-Status: Draft — Phase 0 design, pre-implementation.
-Predecessors: `docs/policy2_coalescing_map.md` (divergences A/C/D still
-open after Jazz retirement), project memory
+Date: 2026-04-24 (design); refactor structurally complete by 2026-05-04.
+Status: **Phases 1b–5b complete and merged.** P1/P2/P3 all consume `analyzeSection`;
+P4 stays parallel by design. Divergences B, D, E closed; A remains by design;
+C parked (cadence-aware duration gate idea — see memory `project_cadence_aware_duration_gate.md`).
+Phase 4c (`analyzeSection` move to composing module) deferred — gated on consumer need.
+For per-phase commit hashes and the post-Phase-5 quality cycle, see STATUS.md
+(top dated section). The design content below is retained as the spine of the refactor.
+Predecessors: `docs/policy2_coalescing_map.md`, project memory
 `project_unified_analysis_pipeline.md`.
 
 ## Problem

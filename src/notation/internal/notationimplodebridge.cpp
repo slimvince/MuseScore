@@ -1279,23 +1279,7 @@ bool emitImplodedChordTrack(
     // ── Cadence markers ─────────────────────────────────────────────────────
     const bool writeCadenceMarkers = !prefs || prefs->chordStaffWriteCadenceMarkers();
     if (writeCadenceMarkers) {
-        // detectCadences still consumes HarmonicRegion (Phase 3a doesn't touch
-        // the cadence detector).  Build a 1:1 view from the AnalyzedRegion list
-        // for the call.
-        std::vector<HarmonicRegion> regionsAsHarmonicRegions;
-        regionsAsHarmonicRegions.reserve(regions.size());
-        for (const auto& r : regions) {
-            HarmonicRegion h;
-            h.startTick        = r.startTick;
-            h.endTick          = r.endTick;
-            h.chordResult      = r.chordResult;
-            h.hasAnalyzedChord = r.hasAnalyzedChord;
-            h.keyModeResult    = r.keyModeResult;
-            h.tones            = r.tones;
-            regionsAsHarmonicRegions.push_back(std::move(h));
-        }
-        const auto cadences = detectCadences(regionsAsHarmonicRegions,
-                                              regionsAsHarmonicRegions.size());
+        const auto cadences = detectCadences(regions, regions.size());
         for (const auto& marker : cadences) {
             const Fraction mTick = Fraction::fromTicks(marker.tick);
             Segment* mSeg = score->tick2segment(mTick, true, SegmentType::ChordRest);

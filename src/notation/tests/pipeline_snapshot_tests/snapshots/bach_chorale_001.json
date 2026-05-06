@@ -991,7 +991,16 @@
             "tick": 20160
         }
     ],
-    "schemaVersion": 2,
+    "keyAreas": [
+        {
+            "confidence": 0.916,
+            "endTick": 20640,
+            "keyFifths": 1,
+            "mode": "maj",
+            "startTick": 0
+        }
+    ],
+    "schemaVersion": 3,
     "score": "tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx",
     "tickLocal": [
         {
@@ -1282,9 +1291,14 @@
                     "score": 2.92
                 },
                 {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.26
+                },
+                {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 2.22
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1306,9 +1320,14 @@
                     "score": 2.92
                 },
                 {
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.26
+                },
+                {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 2.22
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1379,8 +1398,13 @@
                 },
                 {
                     "quality": "major",
+                    "root": "D",
+                    "score": 2.487
+                },
+                {
+                    "quality": "major",
                     "root": "G",
-                    "score": 2.549
+                    "score": 2.104
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1495,6 +1519,11 @@
                     "quality": "major",
                     "root": "G",
                     "score": 2.92
+                },
+                {
+                    "quality": "sus4",
+                    "root": "D",
+                    "score": 2.05
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1533,6 +1562,11 @@
                     "quality": "major",
                     "root": "G",
                     "score": 2.92
+                },
+                {
+                    "quality": "sus4",
+                    "root": "D",
+                    "score": 2.05
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1769,24 +1803,24 @@
         {
             "alternatives": [
                 {
-                    "quality": "minor",
+                    "quality": "halfDiminished",
                     "root": "B",
-                    "score": 2.117
+                    "score": 2.19
                 },
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.117
+                    "quality": "major",
+                    "root": "G",
+                    "score": 2.16
                 }
             ],
-            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
             "key": "G",
-            "previousBassPc": 11,
+            "previousBassPc": 0,
             "previousQuality": "minor",
-            "previousRootPc": 11,
-            "quality": "sus4",
-            "root": "D",
+            "previousRootPc": 9,
+            "quality": "minor",
+            "root": "B",
             "tick": 17040,
             "wasRegional": true
         },
@@ -1801,6 +1835,11 @@
                     "quality": "major",
                     "root": "G",
                     "score": 2.824
+                },
+                {
+                    "quality": "sus4",
+                    "root": "D",
+                    "score": 2.278
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1839,6 +1878,11 @@
                     "quality": "major",
                     "root": "C",
                     "score": 2.92
+                },
+                {
+                    "quality": "sus4",
+                    "root": "G",
+                    "score": 2.05
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

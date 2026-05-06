@@ -55,6 +55,7 @@
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
+using mu::composing::analysis::isDiatonicStep;
 using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
 
@@ -243,7 +244,7 @@ void forceChordTrackQualityFromKeyContext(
 
 namespace {
 
-void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::HarmonicRegion>& regions)
+void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::AnalyzedRegion>& regions)
 {
     using namespace mu::composing::analysis;
 
@@ -419,6 +420,19 @@ mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
     }
 
     return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
+}
+
+double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
+{
+    using namespace mu::engraving;
+    switch (bt) {
+    case BeatType::DOWNBEAT:            return 1.0;
+    case BeatType::SIMPLE_STRESSED:
+    case BeatType::COMPOUND_STRESSED:   return 0.85;
+    case BeatType::SIMPLE_UNSTRESSED:
+    case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+    default:                            return 0.5;
+    }
 }
 
 double timeDecay(double beatsAgo, double decayRate)
@@ -1570,35 +1584,304 @@ findTemporalContext(const mu::engraving::Score* sc,
     return temporalCtx;
 }
 
+// Deprecated shim — calls analyzeSection and reverse-translates to
+// vector<HarmonicRegion> for callers not yet ported (tools/batch_analyze.cpp).
+// Do not add new callers.
 std::vector<mu::composing::analysis::HarmonicRegion>
 prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                  const mu::engraving::Fraction& startTick,
                                  const mu::engraving::Fraction& endTick,
                                  const std::set<size_t>& excludeStaves)
 {
+    using namespace mu::composing::analysis;
+
+    const auto section = analyzeSection(sc, startTick, endTick, excludeStaves);
+
+    std::vector<HarmonicRegion> result;
+    result.reserve(section.regions.size());
+    for (const auto& src : section.regions) {
+        HarmonicRegion r;
+        r.startTick          = src.startTick;
+        r.endTick            = src.endTick;
+        r.chordResult        = src.chordResult;
+        r.alternatives       = src.alternatives;
+        r.hasAnalyzedChord   = src.hasAnalyzedChord;
+        r.keyModeResult      = src.keyModeResult;
+        r.tones              = src.tones;
+        r.temporalExtensions = src.temporalExtensions;
+        result.push_back(std::move(r));
+    }
+    return result;
+}
+
+
+// ── Cadence and pivot detection ───────────────────────────────────────────────
+
+bool hasAssertiveKeyConfidence(
+    const mu::composing::analysis::KeyModeAnalysisResult& kmr)
+{
+    return kmr.normalizedConfidence >= kAnnotateKeyConfidenceThreshold;
+}
+
+std::vector<CadenceMarker> detectCadences(
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
+    size_t selectionCount)
+{
+    using namespace mu::composing::analysis;
+
+    std::vector<CadenceMarker> markers;
+
+    const size_t total = regions.size();
+    if (total == 0 || selectionCount == 0) {
+        return markers;
+    }
+
+    // Clamp: selectionCount may equal total (no lookahead), that is fine.
+    const size_t n = std::min(selectionCount, total);
+
+    // ── PAC / PC / DC ───────────────────────────────────────────────────────
+    // Examine consecutive pairs (i, i+1) where i is inside the selection.
+    for (size_t i = 0; i + 1 < total && i < n; ++i) {
+        if (!hasAssertiveKeyConfidence(regions[i].keyModeResult)
+            || !hasAssertiveKeyConfidence(regions[i + 1].keyModeResult)) {
+            continue;
+        }
+
+        const auto& a = regions[i].chordResult;
+        const auto& b = regions[i + 1].chordResult;
+
+        // Cadence requires same key / mode context.
+        if (regions[i].keyModeResult.keySignatureFifths
+            != regions[i + 1].keyModeResult.keySignatureFifths
+            || regions[i].keyModeResult.mode
+               != regions[i + 1].keyModeResult.mode) {
+            continue;  // key change — not a cadence
+        }
+        // And different chord roots.
+        if (a.identity.rootPc == b.identity.rootPc) {
+            continue;
+        }
+
+        const char* label = nullptr;
+
+        // PAC: V → I (non-minor dominant) or viio → I (leading-tone diminished).
+        if (b.function.degree == 0
+            && ((a.function.degree == 4 && a.identity.quality != ChordQuality::Minor)
+                || (a.function.degree == 6 && a.identity.quality == ChordQuality::Diminished))) {
+            label = "PAC";
+        } else if (a.function.degree == 3 && b.function.degree == 0) {
+            label = "PC";   // Plagal: IV → I
+        } else if (a.function.degree == 4 && b.function.degree == 5
+                   && a.identity.quality != ChordQuality::Minor
+                   && b.identity.quality == ChordQuality::Minor) {
+            label = "DC";   // Deceptive: V → vi
+        }
+
+        if (!label) {
+            continue;
+        }
+
+        // Place the label at the resolution chord tick (b / regions[i+1]).
+        // If that chord is in the lookahead region (outside the selection)
+        // place it at the preparatory chord instead so the annotation stays
+        // within the selection boundary.
+        const int writeTick = (i + 1 < n)
+            ? regions[i + 1].startTick
+            : regions[i].startTick;
+
+        markers.push_back({ writeTick, std::string(label) });
+    }
+
+    // ── Half cadence ────────────────────────────────────────────────────────
+    // Last in-selection region is degree 4 (dominant arrival).
+    if (hasAssertiveKeyConfidence(regions[n - 1].keyModeResult)
+        && regions[n - 1].chordResult.function.degree == 4) {
+        const int hcTick = regions[n - 1].startTick;
+        // Do not emit HC if another cadence label already occupies this tick.
+        const bool alreadyLabelled = std::any_of(markers.begin(), markers.end(),
+            [hcTick](const CadenceMarker& m) { return m.tick == hcTick; });
+        if (!alreadyLabelled) {
+            markers.push_back({ hcTick, "HC" });
+        }
+    }
+
+    return markers;
+}
+
+std::vector<PivotLabel> detectPivotChords(
+    const std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
+    size_t selectionCount)
+{
+    using namespace mu::composing::analysis;
+
+    std::vector<PivotLabel> labels;
+
+    if (regions.empty() || selectionCount == 0) {
+        return labels;
+    }
+
+    const size_t total = regions.size();
+    const size_t n = std::min(selectionCount, total);
+
+    // Walk all regions (including lookahead) to find assertive key transitions.
+    // A transition occurs when consecutive assertive regions disagree on key/mode.
+    struct KeyTransition {
+        size_t boundaryIdx;  // index of first region in the new (incoming) key
+        int oldFifths;
+        KeySigMode oldMode;
+        int newFifths;
+        KeySigMode newMode;
+    };
+
+    std::vector<KeyTransition> transitions;
+    int prevFifths  = std::numeric_limits<int>::min();
+    KeySigMode prevMode = KeySigMode::Ionian;
+
+    for (size_t i = 0; i < total; ++i) {
+        const auto& km = regions[i].keyModeResult;
+        if (!hasAssertiveKeyConfidence(km)) {
+            continue;
+        }
+        if (prevFifths == std::numeric_limits<int>::min()) {
+            // First assertive region establishes the baseline key.
+            prevFifths = km.keySignatureFifths;
+            prevMode   = km.mode;
+            continue;
+        }
+        if (km.keySignatureFifths != prevFifths || km.mode != prevMode) {
+            // Key has changed — record the transition.
+            transitions.push_back({ i, prevFifths, prevMode,
+                                     km.keySignatureFifths, km.mode });
+            prevFifths = km.keySignatureFifths;
+            prevMode   = km.mode;
+        }
+    }
+
+    for (const auto& tr : transitions) {
+        // Confirm that the new key is stable by finding at least one more
+        // assertive region beyond the boundary that agrees with it.
+        // Limit the search to kMaxPivotLookaheadRegions past the boundary.
+        bool confirmed = false;
+        const size_t searchEnd = std::min(tr.boundaryIdx + 1
+                                          + static_cast<size_t>(kMaxPivotLookaheadRegions),
+                                          total);
+        for (size_t k = tr.boundaryIdx + 1; k < searchEnd; ++k) {
+            const auto& km = regions[k].keyModeResult;
+            if (hasAssertiveKeyConfidence(km)
+                && km.keySignatureFifths == tr.newFifths
+                && km.mode == tr.newMode) {
+                confirmed = true;
+                break;
+            }
+        }
+        if (!confirmed) {
+            continue;  // new key not confirmed — suppress pivot to avoid false positive
+        }
+
+        // Build the incoming key's tonic pitch class (still needed for keyTonicPc).
+        const int newIonianPc = ionianTonicPcFromFifths(tr.newFifths);
+        const int newTonicPc  = (newIonianPc + keyModeTonicOffset(tr.newMode)) % 12;
+
+        // Walk backward from the boundary through the in-selection regions,
+        // looking for the first chord that is:
+        //   (a) diatonic to the outgoing key  (function.degree >= 0), AND
+        //   (b) its root pitch class is in the incoming key's scale.
+        const size_t searchBack = std::min(tr.boundaryIdx, n);  // stay in selection
+        for (size_t j = searchBack; j > 0; --j) {
+            const size_t idx = j - 1;
+            const auto& prev = regions[idx].chordResult;
+
+            if (prev.function.degree < 0) {
+                continue;  // not diatonic to outgoing key
+            }
+            if (diatonicDegreeForRootPc(prev.identity.rootPc, tr.newFifths, tr.newMode) < 0) {
+                continue;  // root not in incoming scale
+            }
+
+            // Found the pivot chord.  Format in both keys.
+            const std::string oldRoman = ChordSymbolFormatter::formatRomanNumeral(prev);
+
+            // Compute the degree in the incoming key.
+            ChordAnalysisResult pivotInNew = prev;
+            pivotInNew.function.degree = diatonicDegreeForRootPc(
+                prev.identity.rootPc, tr.newFifths, tr.newMode);
+            pivotInNew.function.diatonicToKey = (pivotInNew.function.degree >= 0);
+            pivotInNew.function.keyTonicPc = newTonicPc;
+            pivotInNew.function.keyMode    = tr.newMode;
+            const std::string newRoman = ChordSymbolFormatter::formatRomanNumeral(pivotInNew);
+
+            if (!oldRoman.empty() && !newRoman.empty()) {
+                // U+2192 RIGHT ARROW — pivot chord separator (same encoding
+                // used in the chord staff path).
+                labels.push_back({ regions[idx].startTick,
+                                   oldRoman + " \u2192 " + newRoman });
+            }
+            break;  // one pivot per key transition
+        }
+    }
+
+    return labels;
+}
+
+// ── analyzeSection ───────────────────────────────────────────────────────────
+//
+// Canonical implementation of the unified analysis pipeline
+// (docs/unified_analysis_pipeline.md).  Inlines Passes 0–4 (previously in
+// prepareUserFacingHarmonicRegions) and operates natively on AnalyzedRegion.
+// prepareUserFacingHarmonicRegions is a deprecated shim that reverse-translates
+// for tools/batch_analyze.cpp.
+mu::composing::analysis::AnalyzedSection
+analyzeSection(const mu::engraving::Score* sc,
+               const mu::engraving::Fraction& from,
+               const mu::engraving::Fraction& to,
+               const std::set<size_t>& excludeStaves)
+{
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
-    if (!sc || endTick <= startTick) {
-        return {};
+    AnalyzedSection out;
+    out.startTick = from.ticks();
+    out.endTick   = to.ticks();
+
+    if (!sc || to <= from) {
+        return out;
     }
 
-    auto regions = mu::notation::analyzeHarmonicRhythm(sc,
-                                                       startTick,
-                                                       endTick,
-                                                       excludeStaves,
-                                                       mu::notation::HarmonicRegionGranularity::Smoothed);
-    if (regions.empty()) {
-        return {};
+    // Pass 0: boundary detection via analyzeHarmonicRhythm.
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(sc, from, to, excludeStaves,
+                                                                 mu::notation::HarmonicRegionGranularity::Smoothed);
+    if (rawRegions.empty()) {
+        return out;
     }
 
+    // Boundary: convert HarmonicRegion → AnalyzedRegion.  All display passes
+    // below operate on AnalyzedRegion natively.  hasAssertiveExposure is
+    // recomputed per-region after Pass 4 (stabilization).
+    std::vector<AnalyzedRegion> regions;
+    regions.reserve(rawRegions.size());
+    for (const auto& src : rawRegions) {
+        AnalyzedRegion r;
+        r.startTick            = src.startTick;
+        r.endTick              = src.endTick;
+        r.chordResult          = src.chordResult;
+        r.alternatives         = src.alternatives;
+        r.hasAnalyzedChord     = src.hasAnalyzedChord;
+        r.keyModeResult        = src.keyModeResult;
+        r.tones                = src.tones;
+        r.temporalExtensions   = src.temporalExtensions;
+        r.hasAssertiveExposure = false;  // recomputed after stabilization
+        r.keyAreaId            = -1;
+        regions.push_back(std::move(r));
+    }
+
+    // Pass 1: gap-tone region insertion and measure-level layout.
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
-    auto sameChordIdentity = [](const HarmonicRegion& lhs, const HarmonicRegion& rhs) {
+    auto sameChordIdentity = [](const AnalyzedRegion& lhs, const AnalyzedRegion& rhs) {
         return lhs.chordResult.identity.rootPc == rhs.chordResult.identity.rootPc
                && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality;
     };
     auto regionSupportsGapTones = [](const std::vector<ChordAnalysisTone>& gapTones,
-                                     const HarmonicRegion& region) {
+                                     const AnalyzedRegion& region) {
         if (region.chordResult.identity.quality == ChordQuality::Suspended2
             || region.chordResult.identity.quality == ChordQuality::Suspended4) {
             return false;
@@ -1776,10 +2059,10 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         return false;
     };
     auto analyzeGapWithContext = [&](const std::vector<ChordAnalysisTone>& gapTones,
-                                     const HarmonicRegion& contextRegion,
+                                     const AnalyzedRegion& contextRegion,
                                      int gapStartTick,
-                                     int gapEndTick) -> std::optional<HarmonicRegion> {
-        HarmonicRegion inferredRegion;
+                                     int gapEndTick) -> std::optional<AnalyzedRegion> {
+        AnalyzedRegion inferredRegion;
         inferredRegion.startTick = gapStartTick;
         inferredRegion.endTick = gapEndTick;
         inferredRegion.hasAnalyzedChord = true;
@@ -1809,8 +2092,8 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
     };
     auto inferGapRegion = [&](int gapStartTick,
                               int gapEndTick,
-                              const HarmonicRegion* previousRegion,
-                              const HarmonicRegion* nextRegion) -> std::optional<HarmonicRegion> {
+                              const AnalyzedRegion* previousRegion,
+                              const AnalyzedRegion* nextRegion) -> std::optional<AnalyzedRegion> {
         if (gapEndTick <= gapStartTick) {
             return std::nullopt;
         }
@@ -1820,12 +2103,12 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                                                  gapEndTick,
                                                  excludeStaves);
         if (gapTones.empty()) {
-            const HarmonicRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
+            const AnalyzedRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
             if (!carriedSource) {
                 return std::nullopt;
             }
 
-            HarmonicRegion carriedRegion = *carriedSource;
+            AnalyzedRegion carriedRegion = *carriedSource;
             carriedRegion.startTick = gapStartTick;
             carriedRegion.endTick = gapEndTick;
             carriedRegion.tones.clear();
@@ -1833,8 +2116,8 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             return carriedRegion;
         }
 
-        auto carryGapRegion = [&](const HarmonicRegion& sourceRegion) {
-            HarmonicRegion carriedRegion = sourceRegion;
+        auto carryGapRegion = [&](const AnalyzedRegion& sourceRegion) {
+            AnalyzedRegion carriedRegion = sourceRegion;
             carriedRegion.startTick = gapStartTick;
             carriedRegion.endTick = gapEndTick;
             carriedRegion.tones = gapTones;
@@ -1860,7 +2143,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             // the lone gap note is a non-root chord tone of the adjacent region
             // (e.g. the third or fifth), the carry is appropriate because that
             // interval relationship identifies the chord quality.
-            auto supportsCarry = [&](const HarmonicRegion& region) -> bool {
+            auto supportsCarry = [&](const AnalyzedRegion& region) -> bool {
                 if (!regionSupportsGapTones(gapTones, region)) {
                     return false;
                 }
@@ -1909,7 +2192,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         }
 
         if (!previousRegion && nextRegion) {
-            HarmonicRegion openingRegion = *nextRegion;
+            AnalyzedRegion openingRegion = *nextRegion;
             openingRegion.startTick = gapStartTick;
             openingRegion.endTick = gapEndTick;
             openingRegion.tones = gapTones;
@@ -1918,7 +2201,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         }
 
         if (previousRegion && !nextRegion) {
-            HarmonicRegion trailingRegion = *previousRegion;
+            AnalyzedRegion trailingRegion = *previousRegion;
             trailingRegion.startTick = gapStartTick;
             trailingRegion.endTick = gapEndTick;
             trailingRegion.tones = gapTones;
@@ -1936,22 +2219,22 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
 
         return std::nullopt;
     };
-    auto nextRegionStartingAtOrAfter = [&](int tick) -> const HarmonicRegion* {
+    auto nextRegionStartingAtOrAfter = [&](int tick) -> const AnalyzedRegion* {
         const auto nextRegion = std::find_if(regions.begin(), regions.end(), [tick](const auto& region) {
             return region.startTick >= tick;
         });
         return nextRegion != regions.end() ? &*nextRegion : nullptr;
     };
 
-    std::vector<HarmonicRegion> displayRegions;
+    std::vector<AnalyzedRegion> displayRegions;
     displayRegions.reserve(regions.size() * 2);
-    const int analysisRangeStartTick = startTick.ticks();
+    const int analysisRangeStartTick = from.ticks();
 
-    for (Measure* measure = sc->tick2measure(startTick);
-         measure && measure->tick() < endTick;
+    for (Measure* measure = sc->tick2measure(from);
+         measure && measure->tick() < to;
          measure = measure->nextMeasure()) {
-        const Fraction measureRangeStart = std::max(measure->tick(), startTick);
-        const Fraction measureRangeEnd = std::min(measure->endTick(), endTick);
+        const Fraction measureRangeStart = std::max(measure->tick(), from);
+        const Fraction measureRangeEnd = std::min(measure->endTick(), to);
         const int measureStartTick = measureRangeStart.ticks();
         const int measureEndTick = measureRangeEnd.ticks();
 
@@ -1962,8 +2245,8 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             }
         }
 
-        std::vector<HarmonicRegion> measureRegions;
-        auto appendMeasureRegion = [&](HarmonicRegion region) {
+        std::vector<AnalyzedRegion> measureRegions;
+        auto appendMeasureRegion = [&](AnalyzedRegion region) {
             if (region.startTick >= region.endTick) {
                 return;
             }
@@ -1980,8 +2263,8 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         const auto previousRegion = std::find_if(regions.rbegin(), regions.rend(), [measureStartTick](const auto& region) {
             return region.endTick <= measureStartTick;
         });
-        const HarmonicRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
-        const HarmonicRegion* nextRegionAfterMeasurePtr = nextRegionStartingAtOrAfter(measureEndTick);
+        const AnalyzedRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
+        const AnalyzedRegion* nextRegionAfterMeasurePtr = nextRegionStartingAtOrAfter(measureEndTick);
 
         if (overlappingRegions.empty()) {
             if (auto gapRegion = inferGapRegion(measureStartTick,
@@ -1997,7 +2280,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             continue;
         }
 
-        std::optional<HarmonicRegion> previousDisplayRegion;
+        std::optional<AnalyzedRegion> previousDisplayRegion;
         if (previousRegionPtr) {
             previousDisplayRegion = *previousRegionPtr;
         }
@@ -2011,7 +2294,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
 
             if (cursor < sourceStartTick) {
                 if (measureRegions.empty() && cursor == analysisRangeStartTick) {
-                    HarmonicRegion openingRegion = sourceRegion;
+                    AnalyzedRegion openingRegion = sourceRegion;
                     openingRegion.startTick = cursor;
                     openingRegion.endTick = sourceStartTick;
                     openingRegion.tones = collectRegionTones(sc,
@@ -2036,7 +2319,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
                 continue;
             }
 
-            HarmonicRegion displayRegion = sourceRegion;
+            AnalyzedRegion displayRegion = sourceRegion;
             displayRegion.startTick = sourceStartTick;
             displayRegion.endTick = sourceEndTick;
             displayRegion.tones = collectRegionTones(sc,
@@ -2062,7 +2345,7 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
             && distinctPitchClassCount(measureRegions.front().tones) < 3
             && distinctPitchClassCount(measureRegions[1].tones) >= 3
             && measureRegions[1].startTick - measureStartTick <= Constants::DIVISION) {
-            HarmonicRegion carriedMeasureOpening = measureRegions[1];
+            AnalyzedRegion carriedMeasureOpening = measureRegions[1];
             carriedMeasureOpening.startTick = measureStartTick;
             carriedMeasureOpening.tones = collectRegionTones(sc,
                                                              carriedMeasureOpening.startTick,
@@ -2077,277 +2360,38 @@ prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
         }
     }
 
+    // Pass 4: key/mode stabilization.
     stabilizeHarmonicRegionsForDisplay(displayRegions);
-    return displayRegions;
-}
 
-// ── Cadence and pivot detection ───────────────────────────────────────────────
-
-bool hasAssertiveKeyConfidence(
-    const mu::composing::analysis::KeyModeAnalysisResult& kmr)
-{
-    return kmr.normalizedConfidence >= kAnnotateKeyConfidenceThreshold;
-}
-
-std::vector<CadenceMarker> detectCadences(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
-    size_t selectionCount)
-{
-    using namespace mu::composing::analysis;
-
-    std::vector<CadenceMarker> markers;
-
-    const size_t total = regions.size();
-    if (total == 0 || selectionCount == 0) {
-        return markers;
+    // Post-stabilization: set hasAssertiveExposure on each display region.
+    for (auto& r : displayRegions) {
+        r.hasAssertiveExposure = hasAssertiveKeyConfidence(r.keyModeResult);
     }
 
-    // Clamp: selectionCount may equal total (no lookahead), that is fine.
-    const size_t n = std::min(selectionCount, total);
+    out.regions = std::move(displayRegions);
 
-    // ── PAC / PC / DC ───────────────────────────────────────────────────────
-    // Examine consecutive pairs (i, i+1) where i is inside the selection.
-    for (size_t i = 0; i + 1 < total && i < n; ++i) {
-        if (!hasAssertiveKeyConfidence(regions[i].keyModeResult)
-            || !hasAssertiveKeyConfidence(regions[i + 1].keyModeResult)) {
-            continue;
-        }
-
-        const auto& a = regions[i].chordResult;
-        const auto& b = regions[i + 1].chordResult;
-
-        // Cadence requires same key / mode context.
-        if (regions[i].keyModeResult.keySignatureFifths
-            != regions[i + 1].keyModeResult.keySignatureFifths
-            || regions[i].keyModeResult.mode
-               != regions[i + 1].keyModeResult.mode) {
-            continue;  // key change — not a cadence
-        }
-        // And different chord roots.
-        if (a.identity.rootPc == b.identity.rootPc) {
-            continue;
-        }
-
-        const char* label = nullptr;
-
-        // PAC: V → I (non-minor dominant) or viio → I (leading-tone diminished).
-        if (b.function.degree == 0
-            && ((a.function.degree == 4 && a.identity.quality != ChordQuality::Minor)
-                || (a.function.degree == 6 && a.identity.quality == ChordQuality::Diminished))) {
-            label = "PAC";
-        } else if (a.function.degree == 3 && b.function.degree == 0) {
-            label = "PC";   // Plagal: IV → I
-        } else if (a.function.degree == 4 && b.function.degree == 5
-                   && a.identity.quality != ChordQuality::Minor
-                   && b.identity.quality == ChordQuality::Minor) {
-            label = "DC";   // Deceptive: V → vi
-        }
-
-        if (!label) {
-            continue;
-        }
-
-        // Place the label at the resolution chord tick (b / regions[i+1]).
-        // If that chord is in the lookahead region (outside the selection)
-        // place it at the preparatory chord instead so the annotation stays
-        // within the selection boundary.
-        const int writeTick = (i + 1 < n)
-            ? regions[i + 1].startTick
-            : regions[i].startTick;
-
-        markers.push_back({ writeTick, std::string(label) });
-    }
-
-    // ── Half cadence ────────────────────────────────────────────────────────
-    // Last in-selection region is degree 4 (dominant arrival).
-    if (hasAssertiveKeyConfidence(regions[n - 1].keyModeResult)
-        && regions[n - 1].chordResult.function.degree == 4) {
-        const int hcTick = regions[n - 1].startTick;
-        // Do not emit HC if another cadence label already occupies this tick.
-        const bool alreadyLabelled = std::any_of(markers.begin(), markers.end(),
-            [hcTick](const CadenceMarker& m) { return m.tick == hcTick; });
-        if (!alreadyLabelled) {
-            markers.push_back({ hcTick, "HC" });
-        }
-    }
-
-    return markers;
-}
-
-std::vector<PivotLabel> detectPivotChords(
-    const std::vector<mu::composing::analysis::HarmonicRegion>& regions,
-    size_t selectionCount)
-{
-    using namespace mu::composing::analysis;
-
-    std::vector<PivotLabel> labels;
-
-    if (regions.empty() || selectionCount == 0) {
-        return labels;
-    }
-
-    const size_t total = regions.size();
-    const size_t n = std::min(selectionCount, total);
-
-    // Walk all regions (including lookahead) to find assertive key transitions.
-    // A transition occurs when consecutive assertive regions disagree on key/mode.
-    struct KeyTransition {
-        size_t boundaryIdx;  // index of first region in the new (incoming) key
-        int oldFifths;
-        KeySigMode oldMode;
-        int newFifths;
-        KeySigMode newMode;
-    };
-
-    std::vector<KeyTransition> transitions;
-    int prevFifths  = std::numeric_limits<int>::min();
-    KeySigMode prevMode = KeySigMode::Ionian;
-
-    for (size_t i = 0; i < total; ++i) {
-        const auto& km = regions[i].keyModeResult;
-        if (!hasAssertiveKeyConfidence(km)) {
-            continue;
-        }
-        if (prevFifths == std::numeric_limits<int>::min()) {
-            // First assertive region establishes the baseline key.
-            prevFifths = km.keySignatureFifths;
-            prevMode   = km.mode;
-            continue;
-        }
-        if (km.keySignatureFifths != prevFifths || km.mode != prevMode) {
-            // Key has changed — record the transition.
-            transitions.push_back({ i, prevFifths, prevMode,
-                                     km.keySignatureFifths, km.mode });
-            prevFifths = km.keySignatureFifths;
-            prevMode   = km.mode;
-        }
-    }
-
-    for (const auto& tr : transitions) {
-        // Confirm that the new key is stable by finding at least one more
-        // assertive region beyond the boundary that agrees with it.
-        // Limit the search to kMaxPivotLookaheadRegions past the boundary.
-        bool confirmed = false;
-        const size_t searchEnd = std::min(tr.boundaryIdx + 1
-                                          + static_cast<size_t>(kMaxPivotLookaheadRegions),
-                                          total);
-        for (size_t k = tr.boundaryIdx + 1; k < searchEnd; ++k) {
-            const auto& km = regions[k].keyModeResult;
-            if (hasAssertiveKeyConfidence(km)
-                && km.keySignatureFifths == tr.newFifths
-                && km.mode == tr.newMode) {
-                confirmed = true;
-                break;
-            }
-        }
-        if (!confirmed) {
-            continue;  // new key not confirmed — suppress pivot to avoid false positive
-        }
-
-        // Build the incoming key's tonic pitch class (still needed for keyTonicPc).
-        const int newIonianPc = ionianTonicPcFromFifths(tr.newFifths);
-        const int newTonicPc  = (newIonianPc + keyModeTonicOffset(tr.newMode)) % 12;
-
-        // Walk backward from the boundary through the in-selection regions,
-        // looking for the first chord that is:
-        //   (a) diatonic to the outgoing key  (function.degree >= 0), AND
-        //   (b) its root pitch class is in the incoming key's scale.
-        const size_t searchBack = std::min(tr.boundaryIdx, n);  // stay in selection
-        for (size_t j = searchBack; j > 0; --j) {
-            const size_t idx = j - 1;
-            const auto& prev = regions[idx].chordResult;
-
-            if (prev.function.degree < 0) {
-                continue;  // not diatonic to outgoing key
-            }
-            if (diatonicDegreeForRootPc(prev.identity.rootPc, tr.newFifths, tr.newMode) < 0) {
-                continue;  // root not in incoming scale
-            }
-
-            // Found the pivot chord.  Format in both keys.
-            const std::string oldRoman = ChordSymbolFormatter::formatRomanNumeral(prev);
-
-            // Compute the degree in the incoming key.
-            ChordAnalysisResult pivotInNew = prev;
-            pivotInNew.function.degree = diatonicDegreeForRootPc(
-                prev.identity.rootPc, tr.newFifths, tr.newMode);
-            pivotInNew.function.diatonicToKey = (pivotInNew.function.degree >= 0);
-            pivotInNew.function.keyTonicPc = newTonicPc;
-            pivotInNew.function.keyMode    = tr.newMode;
-            const std::string newRoman = ChordSymbolFormatter::formatRomanNumeral(pivotInNew);
-
-            if (!oldRoman.empty() && !newRoman.empty()) {
-                // U+2192 RIGHT ARROW — pivot chord separator (same encoding
-                // used in the chord staff path).
-                labels.push_back({ regions[idx].startTick,
-                                   oldRoman + " \u2192 " + newRoman });
-            }
-            break;  // one pivot per key transition
-        }
-    }
-
-    return labels;
-}
-
-// ── analyzeSection ───────────────────────────────────────────────────────────
-//
-// Phase 2 entry point for the unified analysis pipeline
-// (docs/unified_analysis_pipeline.md).  Currently a pure-translation delegate
-// over `prepareUserFacingHarmonicRegions`; no caller consumes it yet.
-//
-// Phase 4 retires the `prepareUserFacingHarmonicRegions` delegate and moves
-// this function into `src/composing/` so the pipeline has no dependency on
-// the notation/ bridge layer.  Keeping it here today preserves the correct
-// dependency direction (bridge depends on composing, not the reverse).
-mu::composing::analysis::AnalyzedSection
-analyzeSection(const mu::engraving::Score* sc,
-               const mu::engraving::Fraction& from,
-               const mu::engraving::Fraction& to,
-               const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::composing::analysis;
-
-    AnalyzedSection out;
-    out.startTick = from.ticks();
-    out.endTick   = to.ticks();
-
-    const auto regions = prepareUserFacingHarmonicRegions(sc, from, to, excludeStaves);
-    if (regions.empty()) {
-        return out;
-    }
-
-    // Regions: 1:1 translation from HarmonicRegion.  hasAssertiveExposure is
-    // derived per-region from the same key-confidence helper the implode
-    // emitter uses internally (Phase 3a will switch implode over to read
-    // this field directly instead of recomputing it).
-    out.regions.reserve(regions.size());
-    for (const auto& src : regions) {
-        AnalyzedRegion r;
-        r.startTick            = src.startTick;
-        r.endTick              = src.endTick;
-        r.chordResult          = src.chordResult;
-        r.alternatives         = src.alternatives;
-        r.hasAnalyzedChord     = src.hasAnalyzedChord;
-        r.keyModeResult        = src.keyModeResult;
-        r.tones                = src.tones;
-        r.hasAssertiveExposure = hasAssertiveKeyConfidence(src.keyModeResult);
-        r.temporalExtensions   = src.temporalExtensions;
-        r.keyAreaId            = -1;  // filled below
-        out.regions.push_back(std::move(r));
-    }
-
-    // Key-areas: collapse adjacent regions sharing (keyFifths, mode).  Phase 5
-    // will replace this naive pass with a confidence-aware smoother once
-    // modulation-aware Roman numeral annotation is implemented.
+    // Key-areas: confidence-gated grouping per docs/unified_analysis_pipeline.md:149-163.
+    //
+    // A new KeyArea opens at the first region, then only when:
+    //   (a) the region's (keyFifths, mode) differs from the enclosing area, AND
+    //   (b) the region's normalizedConfidence >= kAnnotateKeyConfidenceThreshold (0.8).
+    //
+    // Regions that disagree with the enclosing area but fall below the threshold
+    // are silently grouped into the enclosing area (keyAreaId unchanged).
+    // Their own keyModeResult is preserved verbatim — status-bar display remains
+    // accurate; only the keyAreaId annotation grouping is affected.
     for (size_t i = 0; i < out.regions.size(); ++i) {
         const AnalyzedRegion& region = out.regions[i];
         const int regionFifths = region.keyModeResult.keySignatureFifths;
         const KeySigMode regionMode = region.keyModeResult.mode;
         const double regionConfidence = region.keyModeResult.normalizedConfidence;
 
+        const bool diverges = !out.keyAreas.empty()
+            && (out.keyAreas.back().keyFifths != regionFifths
+                || out.keyAreas.back().mode != regionMode);
+
         if (out.keyAreas.empty()
-            || out.keyAreas.back().keyFifths != regionFifths
-            || out.keyAreas.back().mode != regionMode) {
+            || (diverges && regionConfidence >= kAnnotateKeyConfidenceThreshold)) {
             KeyArea area;
             area.startTick  = region.startTick;
             area.endTick    = region.endTick;
