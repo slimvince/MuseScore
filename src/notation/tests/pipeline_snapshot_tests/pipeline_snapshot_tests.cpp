@@ -186,6 +186,10 @@ constexpr CorpusEntry kCorpus[] = {
     { "schumann_kinderszenen_n01",
       "tools/dcml/schumann_kinderszenen/MS3/n01.mscx",
       "Schumann Kinderszenen No. 1 — fills the sub-beat-passing-harmony slot (per the prompt, a second Chopin piece was considered; Schumann gives more rhythmic variety)." },
+
+    { "bach_chorale_137",
+      "tools/dcml/bach_chorales/MS3/137 Du, o schönes Weltgebäude.mscx",
+      "Bach Chorale No. 137 (BWV 301) — contains MinorAdd6 inversions at mm. 2, 4, 14; verifies gates G-B/G-C/G-D fire in the bridge path." },
 };
 
 // Number of opening measures analysed per score.  Caps end-to-end runtime on
@@ -758,7 +762,7 @@ QString snapshotPath(const CorpusEntry& entry)
 QString corpusPath(const CorpusEntry& entry)
 {
     return QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
-           + QLatin1Char('/') + QString::fromLatin1(entry.relativePath);
+           + QLatin1Char('/') + QString::fromUtf8(entry.relativePath);
 }
 
 QString serializeSnapshot(const QJsonObject& snap)

@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 7B: FM2 fix for Gate A MajorAdd6 misses. 407/407 composing, 53/53 notation, 10/10 pipeline snapshot tests pass. BIR=true: 109 (was 111, -2), BIR=false: 788.*
+*Last updated: 2026-05-06 — Iteration 7A: Add Bach Chorale 137 (BWV 301) to pipeline snapshot corpus; fix corpusPath() fromLatin1→fromUtf8. 11/11 pipeline snapshots, 407/407 composing, 53/53 notation. BIR=true: 109, BIR=false: 788. Gates G-B/C/D finding: do not fire for 48 MinorAdd6 corpus errors because bass approaches non-stepwise in all cases.*
 
 ---
 

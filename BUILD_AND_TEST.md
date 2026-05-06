@@ -100,7 +100,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 378/378** passing (verify with CC — count changes as tests are added).
+**Current baseline: 407/407** passing (verify with CC — count changes as tests are added).
 
 Tests `analyzeChord()` directly in the composing module. Run after any change to `src/composing/`.
 After each run, read `src/composing/tests/chord_mismatch_report.txt`.
@@ -111,7 +111,7 @@ After each run, read `src/composing/tests/chord_mismatch_report.txt`.
 ./notation_tests.exe
 ```
 
-**Current baseline: 51/51** passing (verify with CC — count changes as tests are added).
+**Current baseline: 53/53** passing (verify with CC — count changes as tests are added).
 
 Run after any change to bridge code (`notationharmonicrhythmbridge.cpp`,
 `notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, etc.) **and** after
@@ -156,8 +156,8 @@ cd C:\s\MS && python tools/analyze_inversion_errors.py
 Always use `--preset Baroque` unless the iteration explicitly says otherwise.
 This measures genuine inversion error counts against the Bach chorale corpus.
 
-**Current baseline (commit `89ad75d7d1`, fresh corpus regeneration 2026-05-05):**
-- 3-way genuine BIR=true: 111
+**Current baseline (Iteration 7B, fresh corpus regeneration 2026-05-06):**
+- 3-way genuine BIR=true: 109
 - 3-way genuine BIR=false: 788
 
 These figures supersede the stale Iteration 2 values (119 / 252). The old numbers were
