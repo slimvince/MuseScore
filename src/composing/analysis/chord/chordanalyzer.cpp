@@ -2199,6 +2199,58 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 }
             }
         }
+
+        // ── Gate H: Augmented triad root-symmetry resolution ──────────────────────────
+        //
+        // An augmented triad has three enharmonic roots (±4 semitones mod 12): D+, F#+,
+        // and Bb+ are the same chord.  When the analyzer picks root R but the correct
+        // root is (R+4)%12 or (R+8)%12, the two candidates represent the same sonority
+        // with different root labels.  Temporal evidence resolves the ambiguity.
+        //
+        // Unlike the main correction block, this gate handles Augmented winners
+        // (excluded from winnerQualityTargeted = Major/Minor).  It fires only with
+        // temporal context and is gated by preferMinorOverMajorAdd6 (classical presets).
+        if (winnerBassIsRoot
+            && winner.identity.quality == ChordQuality::Augmented
+            && prefs.preferMinorOverMajorAdd6
+            && context != nullptr) {
+            bool didAugmentedFlip = false;
+            for (const int semitones : {4, 8}) {
+                if (didAugmentedFlip) break;
+                const int altRoot = (winner.identity.rootPc + semitones) % 12;
+                // Find an Augmented candidate at this root.
+                size_t augAltIdx = results.size();
+                for (size_t i = 1; i < results.size(); ++i) {
+                    if (results[i].identity.quality == ChordQuality::Augmented
+                        && results[i].identity.rootPc == altRoot) {
+                        augAltIdx = i;
+                        break;
+                    }
+                }
+                if (augAltIdx == results.size()) continue;
+                // Gate H-B: next region's inferred root matches the alt augmented root.
+                if (!didAugmentedFlip
+                    && context->nextRootPc != -1
+                    && context->nextRootPc == altRoot) {
+                    std::swap(results[0], results[augAltIdx]);
+                    didAugmentedFlip = true;
+                }
+                // Gate H-C: alt root appears in the 3-region window AND bass is stepwise.
+                if (!didAugmentedFlip && context->bassIsStepwiseFromPrevious) {
+                    const auto& rpc = context->recentRootPcs;
+                    if (rpc[0] == altRoot || rpc[1] == altRoot || rpc[2] == altRoot) {
+                        std::swap(results[0], results[augAltIdx]);
+                        didAugmentedFlip = true;
+                    }
+                }
+                // Gate H-D: two or more consecutive stepwise bass moves.
+                if (!didAugmentedFlip
+                    && context->consecutiveBassStepwiseCount >= 2) {
+                    std::swap(results[0], results[augAltIdx]);
+                    didAugmentedFlip = true;
+                }
+            }
+        }
     }
 
     // ── Two-pass pedal point detection ────────────────────────────────────────

@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 7A: Add Bach Chorale 137 (BWV 301) to pipeline snapshot corpus; fix corpusPath() fromLatin1→fromUtf8. 11/11 pipeline snapshots, 407/407 composing, 53/53 notation. BIR=true: 109, BIR=false: 788. Gates G-B/C/D finding: do not fire for 48 MinorAdd6 corpus errors because bass approaches non-stepwise in all cases.*
+*Last updated: 2026-05-06 — Iteration 7C: Gate H (augmented triad root-symmetry resolution) added. 407/407 composing, 53/53 notation, 11/11 pipeline snapshot. BIR=true: 109 (unchanged), BIR=false: 788. Gate H fires only with temporal context (context != nullptr); zero batch firings confirmed.*
 
 ---
 
