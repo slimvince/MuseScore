@@ -603,6 +603,22 @@ public:
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const = 0;
 };
 
+/// Lightweight root-PC inference for a neighbouring region.
+/// Calls analyzeChord with nullptr context (no temporal signals) to avoid recursion.
+/// Returns -1 if tones is empty or analyzeChord returns no candidates.
+inline int inferNextRootPc(
+    const IChordAnalyzer* analyzer,
+    const std::vector<ChordAnalysisTone>& tones,
+    int keySignatureFifths,
+    KeySigMode keyMode,
+    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences)
+{
+    if (tones.empty()) return -1;
+    const auto candidates = analyzer->analyzeChord(
+        tones, keySignatureFifths, keyMode, nullptr, prefs);
+    return candidates.empty() ? -1 : candidates[0].identity.rootPc;
+}
+
 /// Default chord analyzer: template-matching rule-based approach.
 class RuleBasedChordAnalyzer : public IChordAnalyzer
 {

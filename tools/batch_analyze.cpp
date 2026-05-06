@@ -98,6 +98,7 @@ using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
 using analysis::ChordTemporalContext;
 using analysis::isDiatonicStep;
+using analysis::inferNextRootPc;
 using analysis::KeyModeAnalysisResult;
 // Note: analysis::KeySigMode and mu::engraving::KeyMode are both in scope;
 //       always qualify as analysis::KeySigMode to avoid ambiguity.
@@ -1732,16 +1733,9 @@ static std::vector<AnalyzedRegion> analyzeScore(
                     break;
                 }
             }
-            // nextRootPc: lightweight analyzeChord on next region (no context — avoids recursion).
-            if (!nextTones.empty()) {
-                const auto nextCandidates = chordAnalyzer->analyzeChord(
-                    nextTones, localKey.keySignatureFifths, localKey.mode,
-                    nullptr, chordPrefs);
-                ctx.nextRootPc = nextCandidates.empty()
-                                 ? -1 : nextCandidates[0].identity.rootPc;
-            } else {
-                ctx.nextRootPc = -1;
-            }
+            ctx.nextRootPc = inferNextRootPc(
+                chordAnalyzer.get(), nextTones,
+                localKey.keySignatureFifths, localKey.mode, chordPrefs);
         }
         ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
             && isDiatonicStep(currentBassPc, nextBassPc);

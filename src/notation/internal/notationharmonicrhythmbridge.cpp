@@ -60,6 +60,7 @@ using mu::notation::internal::detectBassMovementSubBoundaries;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::composing::analysis::isDiatonicStep;
+using mu::composing::analysis::inferNextRootPc;
 using mu::notation::internal::distinctPitchClasses;
 using mu::notation::internal::safeBeatType;
 using mu::notation::internal::regionMetricWeightForBeatType;
@@ -271,13 +272,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         break;
                     }
                 }
-                if (!nextTones.empty()) {
-                    const auto nextCandidates = chordAnalyzer->analyzeChord(
-                        nextTones, localKeyFifths, localKeyMode, nullptr);
-                    if (!nextCandidates.empty()) {
-                        temporalCtx.nextRootPc = nextCandidates[0].identity.rootPc;
-                    }
-                }
+                temporalCtx.nextRootPc = inferNextRootPc(
+                    chordAnalyzer.get(), nextTones, localKeyFifths, localKeyMode);
             }
             temporalCtx.bassIsStepwiseToNext =
                 (currentBassPc != -1 && nextBassPc != -1)
