@@ -1539,7 +1539,7 @@ static void emitAnalyzerOutput(std::ostream& out,
         out << "  key:          " << keyDisplayStr(r.key) << "\n";
 
         char confBuf[64];
-        std::snprintf(confBuf, sizeof(confBuf), "%.2f", r.chord.identity.normalizedConfidence);
+        std::snprintf(confBuf, sizeof(confBuf), "%.2f", r.chord.identity.score);
         out << "  confidence:   " << confBuf << "\n";
 
         // key_area: always n/a in v0 (flat vector, no AnalyzedSection).
@@ -1588,15 +1588,17 @@ static std::string keyShortStr(const KeyModeAnalysisResult& key)
     return std::string(tonic) + " " + display;
 }
 
-// Maps normalizedConfidence (0–1 sigmoid-normalized score gap) to the LLM
-// schema ordinal.  Abstain when !hasAnalyzedChord or nc < 0.05.
-static std::string confidenceOrdinal(double nc, bool hasAnalyzedChord)
+// Maps raw template-match score to the LLM schema ordinal.
+// normalizedConfidence was removed from ChordIdentity (now dead code in
+// master). Thresholds are calibrated for the raw score scale (max per-tone
+// contribution ≈ 3.6, typical 3-4 tone chord ≈ 5–15).
+static std::string confidenceOrdinal(double score, bool hasAnalyzedChord)
 {
-    if (!hasAnalyzedChord || nc < 0.05) return "abstain";
-    if (nc >= 0.80) return "very_high";
-    if (nc >= 0.60) return "high";
-    if (nc >= 0.40) return "medium";
-    if (nc >= 0.20) return "low";
+    if (!hasAnalyzedChord || score < 1.0) return "abstain";
+    if (score >= 15.0) return "very_high";
+    if (score >= 10.0) return "high";
+    if (score >= 6.0)  return "medium";
+    if (score >= 3.0)  return "low";
     return "very_low";
 }
 
@@ -1693,7 +1695,7 @@ static void emitAnalyzerJson(std::ostream& out,
             }
         }
 
-        const double nc = r.chord.identity.normalizedConfidence;
+        const double nc = r.chord.identity.score;
 
         QJsonObject j;
         j["measure"]                  = startMti.number;
