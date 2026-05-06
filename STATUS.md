@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 7C: Gate H (augmented triad root-symmetry resolution) added. 407/407 composing, 53/53 notation, 11/11 pipeline snapshot. BIR=true: 109 (unchanged), BIR=false: 788. Gate H fires only with temporal context (context != nullptr); zero batch firings confirmed.*
+*Last updated: 2026-05-06 — Iteration 8: batch temporal context wired (§2.10 partial retirement). BIR=true: 109, BIR=false: 788 (baselines held). 407/407 composing, notation, pipeline snapshot tests pass.*
 
 ---
 
@@ -134,6 +134,22 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
   correction via progression context. Commit `f168ee5dab`.
 - Iteration 4: stepwise lookahead tuning; added gates E/F for first/second inversion.
   Commit `41913a7cf9`.
+
+**2026-05-06 — Iteration 8: batch temporal context wired, §2.10 partial retirement (commit `6d198e69fd`):**
+- `analyzeScore()` in `tools/batch_analyze.cpp` now populates all three previously-defaulted
+  temporal fields before each `analyzeChord()` call: `consecutiveBassStepwiseCount` (from a
+  rolling `runningStepwiseCount`), `recentRootPcs` (from a 3-slot ring buffer), and `nextRootPc`
+  (from a lightweight look-ahead `analyzeChord` on the next boundary's tones, no context passed
+  to avoid recursion). The batch path now uses identical temporal signals as the bridge path
+  (§2.10 partial retirement).
+- **Regression found and fixed:** wiring context caused Gates B/C/D to fire in the batch path
+  for the first time, adding 434 spurious BIR=false errors (788→1222). Root cause: Gates B/C/D
+  lacked the `winnerHasAddedSixth` guard that Gate A already required. Without it they fired on
+  plain-Major winners where Gate A's `winnerHasAddedSixth` check prevented Gate A from firing.
+  Fix: `&& winnerHasAddedSixth` added to the conditions of Gates B, C, and D. Gate B also
+  retains the `&& context->bassIsStepwiseToNext` guard added in an earlier sub-iteration.
+- Corpus (Baroque preset): BIR=true **109**, BIR=false **788** — baselines held exactly.
+- 407/407 composing tests, notation tests, 11/11 pipeline snapshot tests pass.
 
 **2026-05-05 — Iteration 6: Gates G-B/G-C/G-D — MinorAdd6/HalfDim7 temporal gates (commit `2850bb4705`):**
 - Three context-dependent gates added to the `if (prefs.preferMinorOverMajorAdd6)` block,
