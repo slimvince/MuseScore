@@ -1964,8 +1964,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 ChordQuality::Major,
                 ChordQuality::Minor,
             };
-            const ChordAnalysisResult* bestAlt = nullptr;
-            size_t bestAltIdx = 0;
+            size_t bestAltIdx = results.size();
             for (size_t i = 1; i < results.size(); ++i) {
                 const auto& alt = results[i];
                 // The alternative must have a DIFFERENT root — if it agrees on the
@@ -1979,13 +1978,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                                alt.identity.quality)
                                      != kCleanQualities.end();
                 if (isClean) {
-                    bestAlt = &alt;
                     bestAltIdx = i;
                     break;
                 }
             }
 
-            if (bestAlt != nullptr) {
+            if (bestAltIdx < results.size()) {
                 // ── Enharmonic equivalence fast path ─────────────────────────
                 //
                 // Major-add6 and Minor7 chords span identical pitch classes when
@@ -2008,10 +2006,10 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     const bool winnerHasAddedSixth =
                         hasExtension(winner.identity.extensions, Extension::AddedSixth);
                     const bool altIsMinor =
-                        (bestAlt->identity.quality == ChordQuality::Minor);
+                        (results[bestAltIdx].identity.quality == ChordQuality::Minor);
                     const int expectedAltRoot = (winner.identity.rootPc + 9) % 12;
                     if (winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && bestAlt->identity.rootPc == expectedAltRoot) {
+                        && results[bestAltIdx].identity.rootPc == expectedAltRoot) {
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
                     }
@@ -2036,9 +2034,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     if (!didEnharmonicFlip
                         && context != nullptr
                         && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
                         && context->nextRootPc != -1
-                        && context->nextRootPc == bestAlt->identity.rootPc
+                        && context->nextRootPc == results[bestAltIdx].identity.rootPc
                         && context->bassIsStepwiseToNext) {
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
@@ -2049,12 +2047,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     if (!didEnharmonicFlip
                         && context != nullptr
                         && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
                         && context->bassIsStepwiseFromPrevious) {
                         const auto& rpc = context->recentRootPcs;
-                        const bool altRootIsRecent = (rpc[0] == bestAlt->identity.rootPc
-                                                      || rpc[1] == bestAlt->identity.rootPc
-                                                      || rpc[2] == bestAlt->identity.rootPc);
+                        const bool altRootIsRecent = (rpc[0] == results[bestAltIdx].identity.rootPc
+                                                      || rpc[1] == results[bestAltIdx].identity.rootPc
+                                                      || rpc[2] == results[bestAltIdx].identity.rootPc);
                         if (altRootIsRecent) {
                             std::swap(results[0], results[bestAltIdx]);
                             didEnharmonicFlip = true;
@@ -2065,7 +2063,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     if (!didEnharmonicFlip
                         && context != nullptr
                         && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && bestAlt->identity.rootPc == expectedAltRoot
+                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
                         && context->consecutiveBassStepwiseCount >= 2) {
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
@@ -2087,8 +2085,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     && prefs.preferMinorOverMajorAdd6
                     && context != nullptr
                     && winner.identity.quality == ChordQuality::Minor
-                    && bestAlt->identity.quality == ChordQuality::Major
-                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 8) % 12
+                    && results[bestAltIdx].identity.quality == ChordQuality::Major
+                    && results[bestAltIdx].identity.rootPc == (winner.identity.rootPc + 8) % 12
                     && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
                     std::swap(results[0], results[bestAltIdx]);
                     didEnharmonicFlip = true;
@@ -2107,15 +2105,15 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 if (!didEnharmonicFlip
                     && prefs.preferMinorOverMajorAdd6
                     && context != nullptr
-                    && bestAlt->identity.quality == ChordQuality::Major
-                    && bestAlt->identity.rootPc == (winner.identity.rootPc + 5) % 12
+                    && results[bestAltIdx].identity.quality == ChordQuality::Major
+                    && results[bestAltIdx].identity.rootPc == (winner.identity.rootPc + 5) % 12
                     && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
                     std::swap(results[0], results[bestAltIdx]);
                     didEnharmonicFlip = true;
                 }
 
                 if (!didEnharmonicFlip) {
-                    const double margin = winner.identity.score - bestAlt->identity.score;
+                    const double margin = winner.identity.score - results[bestAltIdx].identity.score;
 
                     // Seventh-chord exemption: if the winner carries a minor or major
                     // seventh extension that the best alternative lacks, the bass-root
@@ -2125,8 +2123,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         hasExtension(winner.identity.extensions, Extension::MinorSeventh)
                         || hasExtension(winner.identity.extensions, Extension::MajorSeventh);
                     const bool altHasSeventh =
-                        hasExtension(bestAlt->identity.extensions, Extension::MinorSeventh)
-                        || hasExtension(bestAlt->identity.extensions, Extension::MajorSeventh);
+                        hasExtension(results[bestAltIdx].identity.extensions, Extension::MinorSeventh)
+                        || hasExtension(results[bestAltIdx].identity.extensions, Extension::MajorSeventh);
                     const bool seventhExempt = winnerHasSeventh && !altHasSeventh;
 
                     if (!seventhExempt && margin < prefs.inversionSuspicionMargin) {
