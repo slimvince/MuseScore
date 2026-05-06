@@ -1946,7 +1946,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         && results.size() >= 2
         && distinctPcs >= 3)
     {
+        // Live reference — winner tracks results[0] through any swap.
+        // Use originalWinnerQuality (captured below) when you need the
+        // pre-swap quality in gates that run after A–F.
         const ChordAnalysisResult& winner = results[0];
+        const ChordQuality originalWinnerQuality = winner.identity.quality;
         const bool winnerBassIsRoot = (winner.identity.rootPc == winner.identity.bassPc);
 
         // The correction only targets Major and Minor winners — the typical inversion
@@ -2153,7 +2157,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         //
         // Gates G-B/C/D: temporal fallbacks for the remaining cases.
         if (prefs.preferMinorOverMajorAdd6
-            && winner.identity.quality == ChordQuality::Minor
+            && originalWinnerQuality == ChordQuality::Minor
             && hasExtension(winner.identity.extensions, Extension::AddedSixth)) {
             const int gExpectedAltRoot = (winner.identity.rootPc + 9) % 12;
             // Find the HalfDim7 alt in results[].
