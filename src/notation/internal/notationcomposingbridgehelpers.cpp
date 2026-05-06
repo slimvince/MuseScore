@@ -793,6 +793,9 @@ buildPedalWindowIndex(const mu::engraving::Score* sc,
     return result;
 }
 
+// TODO (ARCHITECTURE.md §2.10 / §4.1c): duplicate of batch_analyze.cpp's
+// collectRegionTones(). Move to src/composing/ with a note-provider interface
+// so bridge and batch_analyze call one implementation.
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTickInt,
@@ -1139,6 +1142,9 @@ collectRegionTones(const mu::engraving::Score* sc,
     return tones;
 }
 
+// TODO (ARCHITECTURE.md §2.10 / §4.1c): duplicate of batch_analyze.cpp's
+// detectHarmonicBoundariesJaccard(). Move to src/composing/ with a note-provider
+// interface so bridge and batch_analyze call one implementation.
 std::vector<mu::engraving::Fraction>
 detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
                                 const mu::engraving::Fraction& startTick,

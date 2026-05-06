@@ -2174,10 +2174,10 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 // it is rooted on the leading tone (viiø7) or supertonic (iiø7) of
                 // the current key.  No temporal signals required.
                 const int gLeadingTonePc  = (keyTonicPc + 11) % 12;
-                const int gSupersonicPc   = (keyTonicPc + 2) % 12;
+                const int gSupertonicPc   = (keyTonicPc + 2) % 12;
                 if (!didGFlip
                     && (results[halfDimAltIdx].identity.rootPc == gLeadingTonePc
-                        || results[halfDimAltIdx].identity.rootPc == gSupersonicPc)) {
+                        || results[halfDimAltIdx].identity.rootPc == gSupertonicPc)) {
                     std::swap(results[0], results[halfDimAltIdx]);
                     didGFlip = true;
                 }
