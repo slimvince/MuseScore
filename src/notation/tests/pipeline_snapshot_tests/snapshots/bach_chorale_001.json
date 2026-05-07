@@ -42,22 +42,22 @@
         },
         {
             "key": "G",
-            "text": "Em",
+            "text": "C/E",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "vi",
+            "text": "IV6",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "Em",
+            "text": "C/E",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "vi",
+            "text": "IV6",
             "tick": 960
         },
         {
@@ -382,22 +382,22 @@
         },
         {
             "key": "G",
-            "text": "Bm7",
+            "text": "G/B",
             "tick": 16320
         },
         {
             "key": "G",
-            "text": "iii7",
+            "text": "I6",
             "tick": 16320
         },
         {
             "key": "G",
-            "text": "Bm7",
+            "text": "G/B",
             "tick": 16320
         },
         {
             "key": "G",
-            "text": "iii7",
+            "text": "I6",
             "tick": 16320
         },
         {
@@ -522,8 +522,8 @@
             "durationTicks": 480,
             "key": "G",
             "mode": "maj",
-            "quality": "minor",
-            "root": "E",
+            "quality": "major",
+            "root": "C",
             "tick": 960
         },
         {
@@ -658,8 +658,8 @@
             "durationTicks": 480,
             "key": "G",
             "mode": "maj",
-            "quality": "minor",
-            "root": "B",
+            "quality": "major",
+            "root": "G",
             "tick": 16320
         },
         {
@@ -724,10 +724,10 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Em",
+            "harmonyText": "C/E",
             "pitches": [
-                67,
-                71
+                64,
+                67
             ],
             "tick": 960
         },
@@ -927,11 +927,10 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Bm7",
+            "harmonyText": "G/B",
             "pitches": [
-                62,
-                66,
-                69
+                71,
+                74
             ],
             "tick": 16320
         },
@@ -1125,8 +1124,8 @@
         },
         {
             "key": "G",
-            "quality": "minor",
-            "root": "B",
+            "quality": "major",
+            "root": "G",
             "tick": 12000
         },
         {
@@ -1262,9 +1261,9 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "C",
-                    "score": 2.638
+                    "quality": "minor",
+                    "root": "E",
+                    "score": 2.886
                 },
                 {
                     "quality": "minor",
@@ -1278,8 +1277,8 @@
             "previousBassPc": 7,
             "previousQuality": "major",
             "previousRootPc": 7,
-            "quality": "minor",
-            "root": "E",
+            "quality": "major",
+            "root": "C",
             "tick": 1200,
             "wasRegional": true
         },
@@ -1745,8 +1744,8 @@
             "bassIsStepwiseToNext": true,
             "key": "G",
             "previousBassPc": 7,
-            "previousQuality": "minor",
-            "previousRootPc": 11,
+            "previousQuality": "major",
+            "previousRootPc": 2,
             "quality": "minor",
             "root": "E",
             "tick": 14880,
@@ -1784,9 +1783,9 @@
                     "score": 2.19
                 },
                 {
-                    "quality": "major",
-                    "root": "G",
-                    "score": 2.16
+                    "quality": "minor",
+                    "root": "B",
+                    "score": 2.19
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1795,8 +1794,8 @@
             "previousBassPc": 0,
             "previousQuality": "minor",
             "previousRootPc": 9,
-            "quality": "minor",
-            "root": "B",
+            "quality": "major",
+            "root": "G",
             "tick": 16320,
             "wasRegional": true
         },
@@ -1808,9 +1807,9 @@
                     "score": 2.19
                 },
                 {
-                    "quality": "major",
-                    "root": "G",
-                    "score": 2.16
+                    "quality": "minor",
+                    "root": "B",
+                    "score": 2.19
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1819,8 +1818,8 @@
             "previousBassPc": 0,
             "previousQuality": "minor",
             "previousRootPc": 9,
-            "quality": "minor",
-            "root": "B",
+            "quality": "major",
+            "root": "G",
             "tick": 17040,
             "wasRegional": true
         },

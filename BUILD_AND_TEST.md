@@ -156,15 +156,16 @@ cd C:\s\MS && python tools/analyze_inversion_errors.py
 Always use `--preset Baroque` unless the iteration explicitly says otherwise.
 This measures genuine inversion error counts against the Bach chorale corpus.
 
-**Current baseline (Iteration 21, fresh corpus regeneration 2026-05-07):**
-- 3-way genuine BIR=true: 71
-- 3-way genuine BIR=false: 788
+**Current baseline (Iteration 25, fresh corpus regeneration 2026-05-07):**
+- 3-way genuine BIR=true: 53
+- 3-way genuine BIR=false: 787
 
-These figures supersede the Iteration 18 values (98 / 788). Iteration 21 changes:
-Gate G-E rawCandidates fallback — when HalfDim is absent from results[] due to
-rootContinuityBonus suppression, scan rawCandidates for HalfDim at gExpectedAltRoot
-and append before the inner swap fires. 27 additional MinorAdd6 → HalfDim7 fixes;
-0 new BIR=false false positives.
+These figures supersede the Iteration 21 values (71 / 788). Iteration 25 changes:
+Gate I — prefer diatonic first-inversion major over root-position minor. When the
+winner is Minor bassIsRoot=true and a runner-up has the same bass note at interval+4
+from its own root (I4 = major-third inversion), and the runner-up's root is diatonic
+to the current key, and the score margin is ≤ 0.45, swap to the first-inversion reading.
+18 BIR=true fixes (17 targeted I4 Cat-2 cases + 1 bonus); BIR=false improved by 1.
 
 **IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
 `analyze_inversion_errors.py` reads existing `.ours.json` files from `tools/corpus/` and

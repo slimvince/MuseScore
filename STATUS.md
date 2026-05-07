@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-07 — Iter 21: Gate G-E rawCandidates extension. Diagnosis (Iter 20): Gate G-E fired correctly in inferNextRootPc look-ahead (ctx=null) for 21 Am6/HalfDim cases, but main pass excluded HalfDim from results[] due to rootContinuityBonus raising Am6's effective threshold. Fix: when halfDimAltIdx not found in results[], search rawCandidates for HalfDim at gExpectedAltRoot and append to results[] before Gate G-E fires. Net improvement: BIR=true 98→71 (27 targeted fixes; 3 WRONG-PC cases unaffected). BIR=false: unchanged at 788. New baselines: BIR=true=71, BIR=false=788. 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
+*Last updated: 2026-05-07 — Iter 25: Gate I — first-inversion preference for diatonic chords. Pattern: Minor root-position winner (e.g. Em) beats correct first-inversion major chord (e.g. C/E) at the same bass by a small score margin (~0.09 typical). Fix: Gate I fires when winner is Minor bassIsRoot=true, runner-up has same bass at interval+4 from its own root (I4 = major-third inversion), root is diatonic to key, and score margin ≤ 0.45. Net improvement: BIR=true 71→53 (18 fixes: 17 targeted I4 Cat-2 cases + 1 bonus; 7 I3 cases deferred). BIR=false: 788→787 (improved by 1). New baselines: BIR=true=53, BIR=false=787. 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
 
 ---
 

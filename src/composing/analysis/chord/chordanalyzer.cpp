@@ -2285,6 +2285,38 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 }
             }
         }
+
+        // ── Gate I: prefer diatonic first-inversion major over root-position minor ──────
+        //
+        // When the winner is a Minor chord with bassIsRoot=true and a runner-up shares
+        // the same bass note but is a first-inversion chord whose root lies a major third
+        // below the bass (I4 interval), and that root is diatonic to the current key,
+        // prefer the first-inversion reading.  E.g., Em → C/E when C is diatonic.
+        //
+        // Score margin guard (≤ 0.45) ensures the gate only fires when the two readings
+        // are genuinely competitive — not when the Minor winner is strongly confirmed.
+        if (winnerBassIsRoot
+            && originalWinnerQuality == ChordQuality::Minor
+            && results.size() >= 2
+            && keyTonicPc >= 0) {
+            for (size_t iIdx = 1; iIdx < results.size(); ++iIdx) {
+                const ChordAnalysisResult& inv = results[iIdx];
+                const int invBassPc = inv.identity.bassPc;
+                const int invRootPc = inv.identity.rootPc;
+                if (invBassPc != winner.identity.bassPc)                   continue;  // different bass
+                if (invBassPc == invRootPc)                                continue;  // root position
+                if ((winner.identity.bassPc - invRootPc + 12) % 12 != 4)  continue;  // not I4 interval
+                const int invInterval = (invRootPc - keyTonicPc + 12) % 12;
+                bool invRootIsDiatonic = false;
+                for (int d = 0; d < 7; ++d) {
+                    if (scale[d] == invInterval) { invRootIsDiatonic = true; break; }
+                }
+                if (!invRootIsDiatonic)                                    continue;  // not diatonic
+                if (winner.identity.score - inv.identity.score > 0.45f)   continue;  // margin too wide
+                std::swap(results[0], results[iIdx]);
+                break;
+            }
+        }
     }
 
     // ── Two-pass pedal point detection ────────────────────────────────────────

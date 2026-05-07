@@ -547,22 +547,22 @@
         },
         {
             "key": "C",
-            "text": "Am",
+            "text": "F/A",
             "tick": 20640
         },
         {
             "key": "C",
-            "text": "i",
+            "text": "VI6",
             "tick": 20640
         },
         {
             "key": "C",
-            "text": "Am",
+            "text": "F/A",
             "tick": 20640
         },
         {
             "key": "C",
-            "text": "i",
+            "text": "VI6",
             "tick": 20640
         },
         {
@@ -947,8 +947,8 @@
             "durationTicks": 480,
             "key": "C",
             "mode": "maj",
-            "quality": "minor",
-            "root": "A",
+            "quality": "major",
+            "root": "F",
             "tick": 20640
         },
         {
@@ -1296,10 +1296,10 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Am",
+            "harmonyText": "F/A",
             "pitches": [
-                60,
-                64
+                69,
+                72
             ],
             "tick": 20640
         },
@@ -2376,18 +2376,18 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.723
+                    "score": 2.673
                 },
                 {
                     "quality": "major",
                     "root": "C",
-                    "score": 2.614
+                    "score": 2.524
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "C",
-            "previousBassPc": 2,
+            "previousBassPc": 7,
             "previousQuality": "major",
             "previousRootPc": 0,
             "quality": "major",
