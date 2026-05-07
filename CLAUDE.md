@@ -14,8 +14,8 @@ When working on the `src/composing/` module you are **pre-authorized** to:
 - Edit any file under `src/composing/` without asking for confirmation
 - Edit `src/notation/internal/notationaccessibility.cpp` without asking
 - Edit `ARCHITECTURE.md` (project root) without asking
-- Run the build: `cmd.exe //c "C:\s\MS\setup_and_build.bat"`
-- Run the tests: `./composing_tests.exe` from `ninja_build/`
+- Run the build: `powershell.exe -Command "Start-Process 'C:\s\MS\setup_and_build.bat' -Wait -NoNewWindow"`
+- Run the tests: `./composing_tests.exe` from `ninja_build_rel/`
 - Read `src/composing/tests/chord_mismatch_report.txt` after each test run
 
 **Standard loop for mismatch reduction work** — do all of the following without
@@ -37,16 +37,35 @@ Only stop and ask if:
 
 ## Build and test commands
 
-```
-# Build (from any directory — bat handles cwd)
-cmd.exe //c "C:\s\MS\setup_and_build.bat"
+**Always read `C:\s\MS\build_and_test.md` at the start of every session** — it has the authoritative commands for all build variants, both test suites, and all Python tools.
 
-# Run tests (must be in ninja_build/)
-cd C:\s\MS\ninja_build && ./composing_tests.exe
+```
+# Build — use PowerShell Start-Process (cmd.exe //c fails in MSYS2/Git Bash)
+powershell.exe -Command "Start-Process 'C:\s\MS\setup_and_build.bat' -Wait -NoNewWindow"
+
+# Run composing tests (must be in ninja_build_rel/)
+cd C:\s\MS\ninja_build_rel && ./composing_tests.exe
+
+# Run notation tests — includes P1/P2/P3/P4 pipeline regression test
+cd C:\s\MS\ninja_build_rel && ./notation_tests.exe
+
+# Corpus quality check (always --preset Baroque unless iteration says otherwise)
+cd C:\s\MS && python tools/analyze_inversion_errors.py
 
 # Mismatch report written to:
 src/composing/tests/chord_mismatch_report.txt
 ```
+
+**Both test suites must pass after every code change.** The notation tests include
+`pipeline_snapshot_tests` which pins P1/P2/P3/P4 output against golden JSON files.
+If a change intentionally alters chord output (e.g. a new inversion gate fires),
+the pipeline snapshot goldens need refreshing. Note: `pipeline_snapshot_tests.exe`
+is a SEPARATE binary from `notation_tests.exe` — pass `--update-goldens` to it:
+```
+cd C:\s\MS\ninja_build_rel && ./pipeline_snapshot_tests.exe --update-goldens
+```
+Then re-run `./pipeline_snapshot_tests.exe` to confirm all pass.
+Only run `--update-goldens` when the output change is verified correct.
 
 ## Score corpora
 

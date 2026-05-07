@@ -1946,11 +1946,13 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         && results.size() >= 2
         && distinctPcs >= 3)
     {
-        // Live reference — winner tracks results[0] through any swap.
-        // Use originalWinnerQuality (captured below) when you need the
-        // pre-swap quality in gates that run after A–F.
+        // Live reference — winner tracks results[0] through any swap or re-sort.
+        // Use originalWinnerQuality and originalWinnerHasAddedSixth (captured
+        // below) when you need the pre-swap state in gates that run after A–F.
         const ChordAnalysisResult& winner = results[0];
         const ChordQuality originalWinnerQuality = winner.identity.quality;
+        const bool originalWinnerHasAddedSixth =
+            hasExtension(winner.identity.extensions, Extension::AddedSixth);
         const bool winnerBassIsRoot = (winner.identity.rootPc == winner.identity.bassPc);
 
         // The correction only targets Major and Minor winners — the typical inversion
@@ -2158,7 +2160,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         // Gates G-B/C/D: temporal fallbacks for the remaining cases.
         if (prefs.preferMinorOverMajorAdd6
             && originalWinnerQuality == ChordQuality::Minor
-            && hasExtension(winner.identity.extensions, Extension::AddedSixth)) {
+            && originalWinnerHasAddedSixth) {
             const int gExpectedAltRoot = (winner.identity.rootPc + 9) % 12;
             // Find the HalfDim7 alt in results[].
             size_t halfDimAltIdx = results.size();
@@ -2175,11 +2177,13 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 // The half-diminished seventh is the standard functional reading when
                 // it is rooted on the leading tone (viiø7) or supertonic (iiø7) of
                 // the current key.  No temporal signals required.
-                const int gLeadingTonePc  = (keyTonicPc + 11) % 12;
-                const int gSupertonicPc   = (keyTonicPc + 2) % 12;
+                const int gLeadingTonePc  = (keyTonicPc + 11) % 12;  // viiø7
+                const int gSupertonicPc   = (keyTonicPc + 2) % 12;   // iiø7
+                const int gMediantPc      = (keyTonicPc + 4) % 12;   // iiiø7 / mediant
                 if (!didGFlip
                     && (results[halfDimAltIdx].identity.rootPc == gLeadingTonePc
-                        || results[halfDimAltIdx].identity.rootPc == gSupertonicPc)) {
+                        || results[halfDimAltIdx].identity.rootPc == gSupertonicPc
+                        || results[halfDimAltIdx].identity.rootPc == gMediantPc)) {
                     std::swap(results[0], results[halfDimAltIdx]);
                     didGFlip = true;
                 }

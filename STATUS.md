@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-06 — Iteration 12: Gate G-E added (MinorAdd6 → HalfDim7 via leading-tone/supertonic key context: viiø7 at tonicPc+11, iiø7 at tonicPc+2). Structural fix: G block moved outside `if (bestAlt != nullptr)` (was unreachable for MinorAdd6 winners since kCleanQualities excludes HalfDiminished). 9 of 48 MinorAdd6 errors fixed; 0 new BIR=false false positives. BIR=true: 100 (was 109), BIR=false: 788 (unchanged). 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
+*Last updated: 2026-05-07 — Iteration 18: Gate G-E runtime fix + mediant expansion. (1) Snapshot `originalWinnerHasAddedSixth` alongside `originalWinnerQuality` to prevent Gate G from silently failing when `inversionSuspicionMargin` re-sorts before Gate G reads `winner.identity.extensions`. (2) Gate G-E expanded: added mediant condition (iiiø7, altRoot at tonicPc+4) alongside existing viiø7 and iiø7. 2 additional MinorAdd6 → HalfDim7 fixes; 0 new BIR=false false positives. BIR=true: 98 (was 100), BIR=false: 788 (unchanged). 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
 
 ---
 
