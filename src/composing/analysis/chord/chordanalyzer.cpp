@@ -2171,6 +2171,18 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     break;
                 }
             }
+            // Gate G-E: if HalfDim not in results[], look in rawCandidates (temporal
+            // context may have suppressed it via rootContinuityBonus)
+            if (halfDimAltIdx >= results.size()) {
+                for (const auto& rc : rawCandidates) {
+                    if (rc.quality == ChordQuality::HalfDiminished
+                        && rc.rootPc == gExpectedAltRoot) {
+                        results.push_back(buildResult(rc));
+                        halfDimAltIdx = results.size() - 1;
+                        break;
+                    }
+                }
+            }
             if (halfDimAltIdx != results.size()) {
                 bool didGFlip = false;
                 // Gate G-E: leading-tone key-context gate.
