@@ -2317,6 +2317,43 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 break;
             }
         }
+
+        // ── Gate K: prefer first-inversion augmented over root-position augmented ──────────
+        //
+        // When the winner is an Augmented chord with bassIsRoot=true and a runner-up shares
+        // the same bass note but is NOT root-position, with its root a major third below
+        // the bass (I4 interval), prefer the first-inversion reading.  E.g., D+ → Bb#5/D.
+        //
+        // Quality condition covers both encoding variants of an augmented-collection chord:
+        // Augmented quality directly, or Major with SharpFifth extension.
+        //
+        // Margin guard (≤ 0.20) keeps the gate narrow; all reachable targets have margin ≤ 0.12.
+        if (winnerBassIsRoot
+            && originalWinnerQuality == ChordQuality::Augmented
+            && results.size() >= 2
+            && keyTonicPc >= 0) {
+            for (size_t iIdx = 1; iIdx < results.size(); ++iIdx) {
+                const ChordAnalysisResult& inv = results[iIdx];
+                if (inv.identity.bassPc != winner.identity.bassPc)                   continue;  // different bass
+                if (inv.identity.bassPc == inv.identity.rootPc)                      continue;  // root position
+                if ((winner.identity.bassPc - inv.identity.rootPc + 12) % 12 != 4)  continue;  // not I4 interval
+                const bool isAugmentedCollection =
+                    inv.identity.quality == ChordQuality::Augmented
+                    || (inv.identity.quality == ChordQuality::Major
+                        && hasExtension(inv.identity.extensions, Extension::SharpFifth));
+                if (!isAugmentedCollection)                                          continue;  // not augmented quality
+                const int invInterval = (inv.identity.rootPc - keyTonicPc + 12) % 12;
+                bool invRootIsDiatonic = false;
+                for (int d = 0; d < 7; ++d) {
+                    if (scale[d] == invInterval) { invRootIsDiatonic = true; break; }
+                }
+                if (!invRootIsDiatonic)                                              continue;  // not diatonic
+                if (winner.identity.score - inv.identity.score > 0.20f)             continue;  // margin too wide
+                std::swap(results[0], results[iIdx]);
+                break;
+            }
+        }
+
     }
 
     // ── Two-pass pedal point detection ────────────────────────────────────────
