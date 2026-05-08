@@ -149,18 +149,39 @@ Run after any change to `tools/batch_analyze.cpp`.
 
 ### Corpus Regression Check
 
+For any gate addition or modification, run BOTH presets and confirm zero BIR=false
+regression in each before committing:
+
 ```
+# Baroque (primary — regenerate corpus first)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
+cd C:\s\MS && python tools/analyze_inversion_errors.py
+
+# Jazz (run immediately after)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus
 cd C:\s\MS && python tools/analyze_inversion_errors.py
 ```
 
-Always use `--preset Baroque` unless the iteration explicitly says otherwise.
-This measures genuine inversion error counts against the Bach chorale corpus.
+**Threshold policy**: gate thresholds are calibrated against the Baroque corpus and
+must not be adjusted to accommodate other styles. If a gate causes BIR=false
+regressions in Jazz, fix it with a tighter structural condition or a preset-specific
+override — never by widening the Baroque-tuned threshold. See CLAUDE.md for details.
 
-**Current baseline (Iteration 30, fresh corpus regeneration 2026-05-08):**
-- 3-way genuine BIR=true: 52
+**Current Baroque baseline (Iteration 32, fresh corpus regeneration 2026-05-08):**
+- 3-way genuine BIR=true: 48
 - 3-way genuine BIR=false: 787
 
-These figures supersede the Iteration 25 values (53 / 787). Iteration 30 changes:
+These figures supersede the Iteration 30 values (52 / 787). Iteration 32 changes:
+Gate L — prefer same-root Major over root-position Augmented plain triad (TYPE-A quality
+correction). When the winner is a plain Augmented chord (no 7th extension) with
+bassIsRoot=true and a runner-up has the same root AND same bass (root-position), has
+Major quality, its root is diatonic to the key, and the score margin is ≤ 0.35, swap
+to the Major reading.
+4 BIR=true fixes (bwv144.6 B+→B, bwv245.15 E+→E, bwv312 E+→E, bwv245.37 F+→F);
+BIR=false unchanged at 787.
+
+Previous baselines for reference:
+Iteration 30 (2026-05-08): BIR=true=52, BIR=false=787.
 Gate K — prefer first-inversion augmented over root-position augmented. When the
 winner is Augmented bassIsRoot=true and a runner-up has the same bass note at interval+4
 from its own root (I4 = major-third inversion), the runner-up quality is Augmented or
@@ -171,13 +192,8 @@ is ≤ 0.20, swap to the first-inversion reading.
 **IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
 `analyze_inversion_errors.py` reads existing `.ours.json` files from `tools/corpus/` and
 will silently report stale numbers if those files are not current. Whenever you update
-the BIR baselines here, you must first regenerate the corpus:
-
-```
-cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
-```
-
-Then run `python tools/analyze_inversion_errors.py` and record the new figures here.
+the BIR baselines here, you must first regenerate the corpus with the Baroque preset
+(as above), then run `python tools/analyze_inversion_errors.py` and record the new figures.
 
 Run after any change that could affect chord identification quality. If the numbers
 change unexpectedly (i.e. not due to an intentional scoring or gate change), stop and

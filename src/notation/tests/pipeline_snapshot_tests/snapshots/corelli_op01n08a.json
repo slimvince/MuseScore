@@ -1602,47 +1602,37 @@
         },
         {
             "key": "C",
-            "text": "G+",
-            "tick": 27360
+            "text": "G5",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "I+",
-            "tick": 27360
+            "text": "I",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "G+",
-            "tick": 27360
+            "text": "G5",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "I+",
-            "tick": 27360
+            "text": "I",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "G+",
-            "tick": 27360
+            "text": "G5",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "I+",
-            "tick": 27360
+            "text": "I",
+            "tick": 27840
         },
         {
             "key": "C",
-            "text": "G+",
-            "tick": 27360
-        },
-        {
-            "key": "C",
-            "text": "I+",
-            "tick": 27360
-        },
-        {
-            "key": "C",
-            "text": "G",
+            "text": "G5",
             "tick": 27840
         },
         {
@@ -1653,32 +1643,42 @@
         {
             "key": "C",
             "text": "G",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "key": "C",
             "text": "I",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "key": "C",
             "text": "G",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "key": "C",
             "text": "I",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "key": "C",
             "text": "G",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "key": "C",
             "text": "I",
-            "tick": 27840
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "G",
+            "tick": 28320
+        },
+        {
+            "key": "C",
+            "text": "I",
+            "tick": 28320
         },
         {
             "key": "C",
@@ -2035,7 +2035,7 @@
             "tick": 26400
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 960,
             "key": "C",
             "mode": "mel",
             "quality": "major",
@@ -2046,17 +2046,17 @@
             "durationTicks": 480,
             "key": "C",
             "mode": "mel",
-            "quality": "augmented",
+            "quality": "power",
             "root": "G",
-            "tick": 27360
+            "tick": 27840
         },
         {
-            "durationTicks": 960,
+            "durationTicks": 480,
             "key": "C",
             "mode": "mel",
             "quality": "major",
             "root": "G",
-            "tick": 27840
+            "tick": 28320
         },
         {
             "durationTicks": 1920,
@@ -2448,7 +2448,7 @@
             "tick": 26400
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 960,
             "harmonyText": "G",
             "pitches": [
                 71,
@@ -2458,21 +2458,20 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "G+",
+            "harmonyText": "G5",
             "pitches": [
-                71,
-                75
+                62
             ],
-            "tick": 27360
+            "tick": 27840
         },
         {
-            "durationTicks": 960,
+            "durationTicks": 480,
             "harmonyText": "G",
             "pitches": [
                 71,
                 74
             ],
-            "tick": 27840
+            "tick": 28320
         },
         {
             "durationTicks": 1920,
@@ -3374,14 +3373,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
+                    "quality": "sus4",
                     "root": "G",
-                    "score": 2.81
+                    "score": 2.62
                 },
                 {
-                    "quality": "major",
+                    "quality": "sus4",
                     "root": "G",
-                    "score": 2.81
+                    "score": 2.62
                 },
                 {
                     "quality": "sus4",
@@ -3393,9 +3392,9 @@
             "bassIsStepwiseToNext": false,
             "key": "C",
             "previousBassPc": 7,
-            "previousQuality": "augmented",
+            "previousQuality": "major",
             "previousRootPc": 7,
-            "quality": "major",
+            "quality": "power",
             "root": "G",
             "tick": 27840,
             "wasRegional": true
