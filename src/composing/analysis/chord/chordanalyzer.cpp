@@ -1342,9 +1342,14 @@ bool qualifiesForCompleteTriadInversionBonus(const TemplateDef& tpl,
         return false;
     }
 
+    // Extended in Iter 46 to include Augmented and HalfDiminished: these quality
+    // types were systematically excluded from inversion bonuses, causing correct
+    // inverted readings to fall below the results[] threshold.
     const bool supportedQuality = (tpl.quality == ChordQuality::Major
                                    || tpl.quality == ChordQuality::Minor
-                                   || tpl.quality == ChordQuality::Diminished);
+                                   || tpl.quality == ChordQuality::Diminished
+                                   || tpl.quality == ChordQuality::Augmented
+                                   || tpl.quality == ChordQuality::HalfDiminished);
     if (!supportedQuality) {
         return false;
     }
@@ -1358,9 +1363,16 @@ bool supportsContextualInversionBonuses(const TemplateDef& tpl,
                                         int bassPc,
                                         const std::array<double, 12>& pcWeight)
 {
-    const bool isInvertedMajMin = (rootPc != bassPc)
-                                  && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor);
-    return isInvertedMajMin && templateHasMatchingThird(tpl, rootPc, pcWeight);
+    // Extended in Iter 46 to include Augmented and HalfDiminished: these quality
+    // types were systematically excluded from inversion bonuses, causing correct
+    // inverted readings (e.g. C+/E, Yø7/X) to fall below the results[] threshold.
+    // They now compete on equal terms with Major/Minor inversions.
+    const bool isInvertedSupportedQuality = (rootPc != bassPc)
+                                  && (tpl.quality == ChordQuality::Major
+                                      || tpl.quality == ChordQuality::Minor
+                                      || tpl.quality == ChordQuality::Augmented
+                                      || tpl.quality == ChordQuality::HalfDiminished);
+    return isInvertedSupportedQuality && templateHasMatchingThird(tpl, rootPc, pcWeight);
 }
 
 double appliedBassRootBonus(const TemplateDef& tpl,
