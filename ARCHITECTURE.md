@@ -676,6 +676,16 @@ The `StylePrior` commented-out code is the planned connection between
 `ChordAnalyzerPreferences` and the style system (Section 6). When the style system
 is implemented, the active style will populate the analyzer's preferences.
 
+**Gate threshold policy**: the inversion-preference gate thresholds in
+`chordanalyzer.cpp` (Gate I: 0.45, Gate K: 0.20, Gate L: 0.35, etc.) are empirically
+calibrated against the Baroque corpus and are Baroque-specific. They must not be
+loosened to accommodate other styles. When a gate causes regressions in a non-Baroque
+preset, the fix is either (a) a tighter structural entry condition that excludes the
+problematic chord type in all styles, or (b) a preset-specific threshold value passed
+through `ChordAnalyzerPreferences` — leaving the Baroque-tuned default unchanged.
+Both corpus presets (Baroque and Jazz) must pass BIR=false regression checks before
+any gate change is committed.
+
 #### Public Interface
 
 ```cpp
@@ -908,6 +918,140 @@ a sequence of `ChordAnalysisResult` outputs and applies voice-leading, cadence, 
 harmonic-sequence reasoning. That layer is explicitly out of Phase 1 scope. Do not
 attempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer`
 that embed contextual assumptions — keep the vertical/contextual boundary clean.
+
+#### §4.1g — Iteration Path 1 Close (final state)
+
+Iteration path 1 — incremental gate additions and scoring tweaks on the existing
+`RuleBasedChordAnalyzer` — is complete as of commit `5df8421114` (2026-05-10).
+The remaining residual is fully characterised and not further reducible without
+architectural changes (boundary-detection replacement, contextual harmony layer).
+
+**Final BIR baselines (Iteration Path 1 close):**
+
+| Metric | Value | Source |
+|---|---|---|
+| Three-way genuine BIR=true | **21** | Baroque corpus, 353 chorales |
+| Three-way genuine BIR=false | **128** | Baroque corpus, 353 chorales |
+| Jazz BIR=false (hard-stop reference) | **20** | ≤ 75 hard-stop |
+| Two-way chord_disagree | 1575 | Baroque corpus |
+
+"Three-way genuine" = our analysis disagrees with **both** music21 and the
+DCML-annotated reference (When-in-Rome). Two-way `chord_disagree` is our vs music21;
+the gap between two-way and three-way is the `near_agree` reclassification — regions
+where music21 matches our 2nd or 3rd alternative (genuine partial successes, not
+uncounted failures).
+
+**Active gates (chordanalyzer.cpp):**
+
+Gates fire in `analyzeChord()` after the initial scoring pass, before results
+are returned. Each operates on **structured fields only** (rootPc, bassPc, quality,
+extensions, key tonic, scale, score margin) — no chord-symbol string parsing,
+no Roman-numeral inference. Conditions are pre-conditions on `winner` and a
+candidate runner-up `inv`/`alt`. Iteration number is the path-1 iteration in which
+the gate was introduced or last modified.
+
+| Gate | Iter | Condition (winner → preferred alt) | Effect at introduction |
+|---|---|---|---|
+| **A** (winnerCorrection enharmonic flip) | 2–3 | MajorAdd6 ↔ Minor7 inversion enharmonic pair; bestAlt at expectedAltRoot in results[] | Foundational; pre-path-1 |
+| **B** | 3 | + context.nextRootPc == altRoot && bassIsStepwiseToNext | Foundational |
+| **C** | 3 | + altRoot in recentRootPcs && bassIsStepwiseFromPrevious | Foundational |
+| **D** | 3 | + consecutiveBassStepwiseCount ≥ 2 | Foundational |
+| **E** (first-inversion) | 4 | Minor winner; bestAlt.rootPc == (winner.rootPc + 8) % 12; stepwise bass | Foundational |
+| **F** (second-inversion) | 4 | Major bestAlt; altRoot == (winner.rootPc + 5) % 12; stepwise bass | Foundational |
+| **G-E** (key-context) | 12, 21 | Minor+Add6 winner; HalfDim7 alt rooted on leading-tone, supertonic, or mediant of key; rawCandidates fallback (Iter 21) when HalfDim suppressed by temporal context | 27 BIR=true |
+| **G-B / G-C / G-D** | 12 | Temporal fallbacks for MinorAdd6 → HalfDim7 (analogous to B/C/D) | (part of Iter 12 / 21) |
+| **H** | 7C | Augmented winner; alt rooted at winner.rootPc + 4 or +8 (root-symmetry); + temporal evidence (H-B/H-C/H-D) | Augmented root-disambiguation |
+| **I** | 25 | Minor winner, bassIsRoot=true; alt with same bass, non-root-position, root a major-third below bass (I4 interval), diatonic; score margin ≤ 0.45 | 18 BIR=true |
+| **K** | 30 | Augmented winner, bassIsRoot=true; alt same bass, non-root-position, root a major-third below bass; quality Augmented or Major+SharpFifth; diatonic; margin ≤ 0.20 | 1 BIR=true |
+| **L** | 32 | Plain Augmented winner (no 7th), bassIsRoot=true; alt has same root AND same bass (root-position), Major quality, diatonic; margin ≤ 0.35 | 4 BIR=true |
+
+**Active scoring extensions — Iter 46 (`36bf4738a8`):**
+
+`supportsContextualInversionBonuses()` and `qualifiesForCompleteTriadInversionBonus()`
+in `chordanalyzer.cpp` were extended to include `Augmented` and `HalfDiminished` in
+addition to the original `Major`/`Minor` (and `Diminished` for the latter). Before
+Iter 46, Augmented and HalfDiminished inversion candidates received neither
+`stepwiseBassInversionBonus` (+0.50), `stepwiseBassLookaheadBonus` (+0.50),
+`sameRootInversionBonus` (+0.40), nor `completeTriadInversionBonus` (+0.45) — so
+correct inverted readings (e.g. `C+/E`, `Yø7/X`) fell below the `results[]` cutoff
+entirely and were unreachable by Gate H/Q. Extending these gates put Augmented and
+HalfDiminished inversion candidates on equal footing with Major/Minor.
+
+**Effect of Iter 46 scoring extension:** BIR=true 32→21 (Δ −11), BIR=false 177→128
+(Δ −49). Largest single improvement of iteration path 1.
+
+**Active counting methodology — Iter 36 (`5df8421114`, recovered 2026-05-10):**
+
+`tools/batch_analyze.cpp` emits `rootPitchClass`, `bassPitchClass`, `quality`, and
+`bassIsRoot` on each alternative entry in `.ours.json`. This activates the
+`_matches_alternative` reclassification in `tools/compare_analyses.py`, which moves
+chord_disagree regions where music21 matches our 2nd or 3rd alternative into the
+`near_agree` bucket. Without these fields the comparison reverts to pre-Iter-36
+counts (~700 BIR=false). The change was originally Iter 36 but the commit was lost
+to a git reset on 2026-05-09; recovered and re-committed at `5df8421114`.
+
+**Deprecated algorithm — `detectHarmonicBoundariesJaccard`:**
+
+The Jaccard-based boundary detector
+([notationcomposingbridgehelpers.cpp](src/notation/internal/notationcomposingbridgehelpers.cpp);
+duplicate in [tools/batch_analyze.cpp](tools/batch_analyze.cpp), see Task #58 below)
+is deprecated and slated for replacement by **Task #62**. Reasons:
+
+- **Fixed quarter-note window** (`Constants::DIVISION`) — wrong for non-4/4
+  meters, swing-eighth feel, or any meter where the harmonic rhythm does not
+  align with the quarter-note grid.
+- **Jaccard measures pitch-class overlap, not harmonic function** — two regions
+  sharing 70 % of their pitch classes can still be functionally distinct (a IV–V
+  motion has high pitch overlap if the bass moves diatonically), and two regions
+  with low overlap can be the same chord under embellishment.
+- **Running accumulation** suppresses subsequent boundaries within a region
+  (`prevBits = unionBits` on non-boundary windows), so a gradual harmonic shift
+  never fires a boundary even when the shift is complete.
+- **Single-pass with no revision** — once a boundary is missed or spuriously
+  fired, there is no later pass that re-evaluates segmentation in light of the
+  inferred chord identities.
+
+Parameter tuning was exhausted in Iter 48/48b/48c: threshold 0.50 regresses
+(BIR=true 21→29, BIR=false 128→154); threshold 0.60 is the local optimum and
+the documented quality ceiling for this algorithm.
+
+**Replacement (Task #62):** iterative greedy-expand algorithm with
+preset-controlled stopping threshold. Both implementations
+(`notationcomposingbridgehelpers.cpp` and `tools/batch_analyze.cpp`) must be
+consolidated into one `src/composing/` implementation (Task #58, §2.10) before
+replacement. The §2.10 TODO remains open.
+
+**Genuine-21 residual — why this is the floor for the current architecture:**
+
+The 21 remaining BIR=true errors break down into four clusters. Each was
+individually characterised; none has a viable gate at the current architecture.
+
+| Cluster | Count | Pattern | Why blocked |
+|---|---|---|---|
+| **Gate M cluster** | 7 | Winner = Minor (root-position); correct = Diminished or HalfDiminished at same bass | Iter 47 diagnostic: no temporal signal reliably separates genuine from false-positive at any viable threshold. A gate broad enough to fire on the genuine cases also fires on far more correct-Minor cases. |
+| **Cluster A** (Minor6 ↔ HalfDim 1st-inv) | 7 | Winner = Minor6 root-position; correct = HalfDiminished 1st inversion at same bass (enharmonic pair `Xm6 ≡ Yø7/X`) | 5/7 cases: correct alternative absent from `results[]` even after Iter 46 scoring extension — a candidate-generation gap, not a scoring gap. 2/7 cases: false-positive rate 9:2 at all viable margin thresholds. |
+| **Power / Suspended** | 4 | Winner = Power or Suspended quality at root-position | Not fully diagnosed. Defer to natural calibration during Task #62 replacement-algorithm design. |
+| **Edge cases** | 2–3 | Individually examined; no shared pattern | No common signal across cases; spot-fix gates would have FP rates much higher than benefit. |
+
+The 128 BIR=false residual was not separately re-characterised in path 1;
+remediation is expected from the Task #62 replacement algorithm, which will
+change the region boundaries on which inversion analysis runs.
+
+**Pending tasks (carried into iteration path 2):**
+
+- **Task #36** — Move gate thresholds (`0.45`, `0.20`, `0.35`, etc.) from
+  inline literals in `chordanalyzer.cpp` into `ChordAnalyzerPreferences`.
+  Required before any preset-specific calibration is attempted.
+- **Task #50** — Build verified BWV→DCML MSCX mapping registry. Current
+  mapping is implicit in `tools/dcml/when_in_rome` directory layout and is
+  not verified score-by-score.
+- **Task #58** — Consolidate duplicate `detectHarmonicBoundariesJaccard`
+  implementations (§2.10 violation). Prerequisite for Task #62.
+- **Task #62** — Design and implement replacement segmentation algorithm
+  (iterative greedy-expand with preset-controlled stopping threshold). Next
+  major initiative.
+- **Task #63** — Iteration-path-1 wrap-up (this section / closing summary
+  document / tag).
 
 ### 4.2 KeyModeAnalyzer
 

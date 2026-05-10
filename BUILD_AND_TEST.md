@@ -193,6 +193,12 @@ genuine partial successes, not uncounted failures. Raw-field scans (Gate M etc.)
 are unaffected — they query `.ours.json` alternatives directly without using the
 chord_disagree/near_agree classification.
 
+The Iter 36 `batch_analyze.cpp` change (structured fields on alternative entries)
+was originally lost to a git reset and re-recovered at **commit `5df8421114`**
+(2026-05-10). Without this commit a fresh build reverts to pre-Iter-36 counts
+(~700 BIR=false); the 21/128 baseline depends on both `36bf4738a8` and
+`5df8421114` being present.
+
 **Jazz baseline (Iteration 46 binary, validated 2026-05-09) — hard stop reference:**
 - 3-way genuine BIR=true: 106  (Jazz harmony is outside Baroque gate scope — not a target)
 - 3-way genuine BIR=false: 20  ← hard stop: must remain ≤ 75 for any gate
