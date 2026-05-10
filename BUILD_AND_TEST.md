@@ -167,11 +167,48 @@ must not be adjusted to accommodate other styles. If a gate causes BIR=false
 regressions in Jazz, fix it with a tighter structural condition or a preset-specific
 override — never by widening the Baroque-tuned threshold. See CLAUDE.md for details.
 
-**Current Baroque baseline (Iteration 32, fresh corpus regeneration 2026-05-08):**
+**Current Baroque baseline (Iteration 46, corpus regeneration 2026-05-09):**
+- 3-way genuine BIR=true: 21
+- 3-way genuine BIR=false: 128
+
+Update rationale: Iteration 46 extended `supportsContextualInversionBonuses` and
+`qualifiesForCompleteTriadInversionBonus` to include Augmented and HalfDiminished quality
+types. This removed a systematic disadvantage that was preventing correct inversion
+candidates from appearing in results[]. The extension reduced bassIsRoot=true errors by 11
+and bassIsRoot=false errors by 49 without introducing regressions.
+Commit: 36bf4738a8
+
+Previous baseline (Iteration 36, corpus regeneration 2026-05-08 with new alternatives JSON):
+- 3-way genuine BIR=true: 32
+- 3-way genuine BIR=false: 177
+
+NOTE — counting methodology changed in Iteration 36: `batch_analyze` now emits
+`rootPitchClass`, `bassPitchClass`, `quality`, and `bassIsRoot` on each alternative
+entry. This activated the previously-dormant `_matches_alternative` logic in
+`compare_analyses.py`, which reclassifies regions where music21's chord matches our
+2nd/3rd candidate from `chord_disagree` to `near_agree`. Near-agree cases are
+excluded from the genuine-error counts; disabling this logic restores the Iter 32
+counts exactly (48 / 787). The new baselines are correct: near-agree cases are
+genuine partial successes, not uncounted failures. Raw-field scans (Gate M etc.)
+are unaffected — they query `.ours.json` alternatives directly without using the
+chord_disagree/near_agree classification.
+
+**Jazz baseline (Iteration 46 binary, validated 2026-05-09) — hard stop reference:**
+- 3-way genuine BIR=true: 106  (Jazz harmony is outside Baroque gate scope — not a target)
+- 3-way genuine BIR=false: 20  ← hard stop: must remain ≤ 75 for any gate
+- Total regions: 9389 across 353 scores; chord identity agreement 80.3%
+
+Note: Iter 46 scoring extension (Augmented/HalfDiminished inversion bonuses) kept Jazz
+BIR=false well within the hard stop (20 ≤ 75). The Jazz preset's low
+maxTotalInversionContextBonus (0.6) suppresses inversions, so most Jazz errors are
+root-position misidentifications (BIR=true), not inversion errors.
+
+Previous figures for reference (Iteration 32, Baroque):**
 - 3-way genuine BIR=true: 48
 - 3-way genuine BIR=false: 787
+(With _matches_alternative disabled these are still recoverable from the Iter 36 corpus.)
 
-These figures supersede the Iteration 30 values (52 / 787). Iteration 32 changes:
+Iteration 32 changes:
 Gate L — prefer same-root Major over root-position Augmented plain triad (TYPE-A quality
 correction). When the winner is a plain Augmented chord (no 7th extension) with
 bassIsRoot=true and a runner-up has the same root AND same bass (root-position), has

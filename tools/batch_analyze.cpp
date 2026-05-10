@@ -2044,7 +2044,12 @@ static void writeJson(
                 alt, r.key.keySignatureFifths);
             const std::string altRn = analysis::ChordSymbolFormatter::formatRomanNumeral(alt);
 
+            const bool altBassIsRoot = (alt.identity.bassPc == alt.identity.rootPc);
             out << "        {"
+                << "\"rootPitchClass\": " << alt.identity.rootPc << ", "
+                << "\"bassPitchClass\": " << alt.identity.bassPc << ", "
+                << "\"quality\": \""      << qualityToString(alt.identity.quality) << "\", "
+                << "\"bassIsRoot\": "     << (altBassIsRoot ? "true" : "false") << ", "
                 << "\"chordSymbol\": \""  << jsonEscape(altSym) << "\", "
                 << "\"romanNumeral\": \"" << jsonEscape(altRn)  << "\", "
                 << "\"score\": "          << fmtDouble(alt.identity.score, 5)
