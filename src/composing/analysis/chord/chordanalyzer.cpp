@@ -1983,6 +1983,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 ChordQuality::Minor,
             };
             size_t bestAltIdx = results.size();
+            bool bestAltIsHalfDimInversion = false;
             for (size_t i = 1; i < results.size(); ++i) {
                 const auto& alt = results[i];
                 // The alternative must have a DIFFERENT root — if it agrees on the
@@ -2021,6 +2022,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 }
                 if (isClean || isHalfDimInversion) {
                     bestAltIdx = i;
+                    bestAltIsHalfDimInversion = isHalfDimInversion;
                     break;
                 }
             }
@@ -2174,6 +2176,21 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         const double deduction = prefs.bassNoteRootBonus
                                                 * (1.0 - prefs.inversionBonusReduction);
                         results[0].identity.score -= deduction;
+                        // Confirmed first-inversion HalfDim bonus: when the bestAlt
+                        // is a HalfDim with all four chord tones present and the
+                        // winner's bass is one of those tones (m3/b5/m7), the
+                        // deduction alone is not enough to flip — the bass-root
+                        // Minor/Major reading carries residual scoring advantages
+                        // (e.g. AddedSixth extension fit) that keep it ahead.
+                        // Gated by preferMinorOverMajorAdd6 (same gate as the
+                        // existing Minor-add6 ↔ HalfDim7 path, Gate G-E below):
+                        // Jazz prefs disable this preference because the
+                        // genuine Cm6/Cm69 chord vocabulary is idiomatic and
+                        // must outrank the enharmonic Aø7/C inversion reading.
+                        if (bestAltIsHalfDimInversion && prefs.preferMinorOverMajorAdd6) {
+                            constexpr double kHalfDimFirstInversionBonus = 0.55;
+                            results[bestAltIdx].identity.score += kHalfDimFirstInversionBonus;
+                        }
                         std::stable_sort(results.begin(), results.end(),
                                          [](const ChordAnalysisResult& a,
                                             const ChordAnalysisResult& b) {
