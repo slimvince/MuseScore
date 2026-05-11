@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-08 — Iter 32: Gate L — Augmented root-position → same-root Major (TYPE-A quality correction). Pattern: Augmented root-position winner (e.g. E+) beats correct Major at same root (E) at small margin; Cat 1 / TYPE-A quality error. Seen in Bmin, Cmaj, FDor contexts. Fix: Gate L promotes Major alt when same root, same bass (root-position), diatonic, quality==Major, no 7th extension on winner, margin ≤ 0.35. Inserted after Gate K. Seventh exclusion guard prevents incorrect demotion of jazz +7 chords. Targets: bwv144.6 B+→B (Bmin), bwv245.15 E+→E (Cmaj), bwv312 E+→E (Cmaj), bwv245.37 F+→F (FDor). Diagnostic confirmed 0 false positives at threshold 0.35 across full Baroque corpus. Also correctly fixed spurious G+ at tick 27360 in corelli_op01n08a (P3/P4 paths) — notes there are G+C+Eb = Cm/G, not G augmented. Net improvement: BIR=true 52→48 (4 fixes). BIR=false: 787 (unchanged). New baselines: BIR=true=48, BIR=false=787. 407/407 composing, 53/53 notation, 11/11 pipeline snapshot tests pass.*
+*Last updated: 2026-05-11 — Iter 63 complete. Current baselines: BIR=true=6, BIR=false=125, Jazz BIR=false=12. Tests: 407/407 composing, 53/53 notation. Segmentation: greedy-expand active on batch path (Rounds 1+2, commit f92a4f1a3b); bridge path still Jaccard (Task #62). Corpus regen parallelised (24 workers, ~204s). Genuine BIR=true=6 breakdown: Scoring gap ×2 (bwv184.5 m13b3 Power/Sus2, bwv187.7 m14b2 HalfDim/Gm6), Hypothesis A ×2 (bwv184.5 m13b4 over-merge, bwv372 m10b1.5 missing Bb), Correct ×1 (bwv371 annotation disagreement), Unknown ×1 (bwv43.11 sus2 candidate absent). Iter 64 in progress: root-present pre-filter (perf only). Iter 65 queued: extend HalfDim bonus to MinorSixth winners (bwv187.7) + diagnose bwv43.11 sus2. BIR=false=125 enumerated: tools/birfalse_baseline_iter61.txt. Previous milestone: Iters 50–54 replaced Jaccard with greedy-expand (BIR=true 21→14, BIR=false 128→132); Iters 60–61 raised alt cap 2→3 and added HalfDim inversion preference (BIR=true 14→6, BIR=false 132→125). Gates I–O implemented in Iters 25–42 (BIR=true 111→21). Gates M and N definitively deferred (Iters 37–39): FP:genuine ratio too high without harmonic-function context.*
 
 ---
 
@@ -24,10 +24,9 @@ should be treated as stale. On Corelli `op01n08d`, the corrected comparator plus
 regional `bassIsStepwiseToNext` and the simplified no-third inversion gating reduce the
 real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
 
-**Current working-tree note (updated 2026-04-21):** all 51/51 notation tests and 381/381
-composing tests pass on master (HEAD `3f186d38ea`). Session 27 adds look-ahead note
-exclusion fix (A13/F# → GMaj7 at Oak and the Lark m.10). submission-phase1 HEAD:
-`e40e9bb3f0` (sessions 15–27 cherry-picked, 16/16 notation tests passing).
+**Current working-tree note (updated 2026-05-11):** all 53/53 notation tests and 407/407
+composing tests pass on master (HEAD `cd6a61e6a0`, Iter 63). Pipeline snapshot tests:
+12/12. Iter 64 (root-present pre-filter) in progress.
 
 **Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
 DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
@@ -217,9 +216,70 @@ loaded), this section, and the relevant docs/ memos for the area being worked on
   convention difference, or vocabulary mismatch. No error percentage target — fix real errors.
 - Prompt: `docs/prompts/fix_inversion_and_sus_misread.md`
 
+**2026-05-08 — Iter 36: Corpus regeneration — new Baroque baselines (BIR=true=32, BIR=false=177):**
+- `batch_analyze` now emits `rootPitchClass`, `bassPitchClass`, `quality`, and `bassIsRoot` on each
+  alternative entry. This activates the previously-dormant `_matches_alternative()` logic in
+  `compare_analyses.py`, reclassifying regions where music21's chord matches our 2nd/3rd candidate
+  from `chord_disagree` to `near_agree`. Near-agree cases are excluded from the genuine-error
+  counts. Old Iter 32 counts (BIR=true=48, BIR=false=787) are recoverable by disabling
+  `_matches_alternative`. New baselines: **BIR=true=32, BIR=false=177**.
+- 16 BIR=true cases (DCML-confirmed three-way genuine errors with bassIsRoot=true) moved from
+  chord_disagree to near_agree. These are regions where our alternative[1] IS the correct chord —
+  our scorer finds it but doesn't promote it to winner.
+
+**2026-05-09 — Gate M (Minor→Diminished TYPE-A) definitively deferred (Iter 37):**
+
+```
+Gate M — Minor→Diminished TYPE-A (deferred, Iter 37, 2026-05-09)
+  Genuine cases:  8  (Minor root-pos winner, Diminished alt at same root)
+  FP count:      25  (using any available JSON structural fields)
+  Reason: The 8 genuine cases split into two structural subgroups, each
+  sharing an identical structural profile with a large FP cluster.
+  GROUP A (4 cases, margin 0.29–0.44, minor keys, P5 in pitch set): one FP
+  (bwv227.1) is structurally identical to genuine bwv227.11 — same chorale,
+  key, pitch class set, margin.
+  GROUP B (4 cases, margin=0.00, 3-note chord, no P5/d5): 22 FPs share the
+  same profile.
+  No JSON field or combination (rootPc, keyTonic, keyMode, margin, noteCount,
+  pitchClassSet, beat, bassIsRoot) cleanly separates genuine from FP.
+  Leading-tone hypothesis tested and falsified (0/8 genuine match).
+  Requires DCML harmonic function context not available at runtime.
+  Do not attempt again without a new runtime signal source.
+```
+
+**2026-05-09 — Gate N (Major→Minor TYPE-A) definitively deferred (Iter 39):**
+
+```
+Gate N — Major root-pos → Minor first-inversion TYPE-A (deferred, Iter 39, 2026-05-09)
+  Pattern:  winner=Major+bassIsRoot, alt=Minor at (bassPc−altRootPc+12)%12==3
+  Genuine targets (DCML-confirmed near_agree):  6
+    bwv123.6 m7, bwv322 m1, bwv337 m1, bwv392 m11, bwv417 m3, bwv425 m22
+    All are vi/3 (minor submediant first-inversion) in a major key.
+    Margins: 0.022–0.293 (all positive).
+  Anomalies excluded (negative margin, D∉F#m):  2 (bwv245.14 m13, bwv335 m6)
+    These have (bassPc−altRootPc+12)%12=8, NOT a first-inversion pattern.
+    Mechanism unclear — diagnosable only with runtime binary tracing.
+  FP count:  291 at threshold=0.45;  270 at threshold=0.30
+  FP:genuine ratio: 45:1 — structurally irreducible.
+  Reason: (Major, bassPc) → (Minor, altRoot at interval 3) is architecturally
+  embedded in all major/minor voice-leading — vi/3 always scores close to I in
+  any major key. Diatonic root check, key-mode guard, and margin tightening do
+  not reduce FP count (the pattern is endemic across 125+ corpus scores).
+  Gate I's successful companion condition (diatonic + margin ≤ 0.45) yields
+  270 FPs vs 6 genuine — Gate N has the same root limitation as Gate M.
+  Requires harmonic-function context (vi vs I) not computable from single-region
+  pitch content. Do not attempt again without a multi-region progressional model
+  or runtime DCML labels.
+```
+
 **Open / pending work (carried forward):**
 - Post-fix corpus comparison — measure inversion + sus error reduction; feed into next triage pass
 - Systematic triage of remaining genuine errors (pattern analysis → classify → fix loop)
+- **Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.
+  Requires DCML harmonic context not available at runtime.
+- **Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.
+  FP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.
+  The 6 genuine cases (vi/3 in major key) remain as unresolvable BIR=true errors.
 - FormatterGap classification (extend `classifyComparison` with VocabularyMismatch bucket; would drop m285, m333 from RealDiff)
 - m164 C7alt catalog edit — needs explicit approval (catalog is do-not-touch)
 - DCML comparison tooling (~100 LOC Python script)
