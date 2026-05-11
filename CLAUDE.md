@@ -67,6 +67,34 @@ cd C:\s\MS\ninja_build_rel && ./pipeline_snapshot_tests.exe --update-goldens
 Then re-run `./pipeline_snapshot_tests.exe` to confirm all pass.
 Only run `--update-goldens` when the output change is verified correct.
 
+## Gate threshold and preset policy
+
+Gate thresholds (e.g. Gate I: 0.45, Gate K: 0.20, Gate L: 0.35) are **calibrated
+against the Baroque corpus** and are intentionally Baroque-specific. Do NOT adjust
+them to accommodate other musical styles.
+
+**Before committing any gate addition or modification**, corpus analysis must be run
+for BOTH Baroque and Jazz presets. Any BIR=false increase in either preset is a
+hard stop:
+
+```
+# Baroque
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
+cd C:\s\MS && python tools/analyze_inversion_errors.py
+
+# Jazz  (run immediately after — reuses same output dir)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus
+cd C:\s\MS && python tools/analyze_inversion_errors.py
+```
+
+If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix is:
+1. A tighter **structural entry condition** that excludes the problematic chord type
+   regardless of preset (preferred — e.g. an extension guard blocks augmented+seventh
+   chords in all styles), OR
+2. A **preset-specific threshold override** that leaves the Baroque-tuned value unchanged.
+
+Never widen a Baroque-tuned threshold to cover a non-Baroque edge case.
+
 ## Score corpora
 
 For any task involving scores (validation, snapshot tests, manual QA,
