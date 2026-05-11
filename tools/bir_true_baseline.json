@@ -1,0 +1,638 @@
+{
+  "bwv110.7|2|2.0": {
+    "stem": "bwv110.7",
+    "m": 2,
+    "b": 2.0,
+    "winner": "F#",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "F#",
+      "F#"
+    ]
+  },
+  "bwv123.6|7|2.0": {
+    "stem": "bwv123.6",
+    "m": 7,
+    "b": 2.0,
+    "winner": "GMaj7add13",
+    "key": "Bmin",
+    "margin": 0.21,
+    "alts": [
+      "Emadd9/G",
+      "Emadd9/G"
+    ]
+  },
+  "bwv144.6|15|2.0": {
+    "stem": "bwv144.6",
+    "m": 15,
+    "b": 2.0,
+    "winner": "B+",
+    "key": "Bmin",
+    "margin": 0.3,
+    "alts": [
+      "B",
+      "B"
+    ]
+  },
+  "bwv184.5|10|3.0": {
+    "stem": "bwv184.5",
+    "m": 10,
+    "b": 3.0,
+    "winner": "Em",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv184.5|13|4.0": {
+    "stem": "bwv184.5",
+    "m": 13,
+    "b": 4.0,
+    "winner": "A7",
+    "key": "Dmaj",
+    "margin": 0.3375,
+    "alts": [
+      "A7",
+      "A7"
+    ]
+  },
+  "bwv187.7|14|2.0": {
+    "stem": "bwv187.7",
+    "m": 14,
+    "b": 2.0,
+    "winner": "Gm6",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm6",
+      "Gdim7"
+    ]
+  },
+  "bwv187.7|14|3.0": {
+    "stem": "bwv187.7",
+    "m": 14,
+    "b": 3.0,
+    "winner": "Gdim7",
+    "key": "Gmin",
+    "margin": 0.21714,
+    "alts": [
+      "A7/G",
+      "Gsus69"
+    ]
+  },
+  "bwv20.11|7|3.0": {
+    "stem": "bwv20.11",
+    "m": 7,
+    "b": 3.0,
+    "winner": "D+",
+    "key": "Fmaj",
+    "margin": 0.04,
+    "alts": [
+      "GmMaj7/D",
+      "Bb/D"
+    ]
+  },
+  "bwv227.1|11|3.0": {
+    "stem": "bwv227.1",
+    "m": 11,
+    "b": 3.0,
+    "winner": "B5",
+    "key": "Emin",
+    "margin": 0.048,
+    "alts": [
+      "Esus2/B",
+      "Bsus"
+    ]
+  },
+  "bwv227.11|10|3.0": {
+    "stem": "bwv227.11",
+    "m": 10,
+    "b": 3.0,
+    "winner": "Em6",
+    "key": "Emin",
+    "margin": 0.3775,
+    "alts": [
+      "Edim7",
+      "C#m7b5/E"
+    ]
+  },
+  "bwv227.7|13|2.0": {
+    "stem": "bwv227.7",
+    "m": 13,
+    "b": 2.0,
+    "winner": "F#m7b5",
+    "key": "Emin",
+    "margin": 0.066667,
+    "alts": [
+      "Am6/F#",
+      "Am6/F#"
+    ]
+  },
+  "bwv244.40|8|2.0": {
+    "stem": "bwv244.40",
+    "m": 8,
+    "b": 2.0,
+    "winner": "E",
+    "key": "F#min",
+    "margin": 0.0,
+    "alts": [
+      "E",
+      "C#m7/E"
+    ]
+  },
+  "bwv245.14|13|2.0": {
+    "stem": "bwv245.14",
+    "m": 13,
+    "b": 2.0,
+    "winner": "DMaj7",
+    "key": "Amaj",
+    "margin": -0.31,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.15|16|4.0": {
+    "stem": "bwv245.15",
+    "m": 16,
+    "b": 4.0,
+    "winner": "E+",
+    "key": "Cmaj",
+    "margin": 0.3,
+    "alts": [
+      "E",
+      "E"
+    ]
+  },
+  "bwv245.37|16|4.0": {
+    "stem": "bwv245.37",
+    "m": 16,
+    "b": 4.0,
+    "winner": "F+",
+    "key": "FDor",
+    "margin": 0.3,
+    "alts": [
+      "F",
+      "F"
+    ]
+  },
+  "bwv259|8|1.0": {
+    "stem": "bwv259",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Em6",
+    "key": "Emin",
+    "margin": 0.37857,
+    "alts": [
+      "G/E",
+      "Em6"
+    ]
+  },
+  "bwv261|1|4.0": {
+    "stem": "bwv261",
+    "m": 1,
+    "b": 4.0,
+    "winner": "F#+",
+    "key": "Bmin",
+    "margin": 0.18,
+    "alts": [
+      "D/F#",
+      "D/F#"
+    ]
+  },
+  "bwv261|15|3.0": {
+    "stem": "bwv261",
+    "m": 15,
+    "b": 3.0,
+    "winner": "Gsus2",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "Gsus(add9)",
+      "A11/G"
+    ]
+  },
+  "bwv272|9|3.0": {
+    "stem": "bwv272",
+    "m": 9,
+    "b": 3.0,
+    "winner": "Gsus(add9)",
+    "key": "Dmin",
+    "margin": 0.26286,
+    "alts": [
+      "F/G",
+      "F/G"
+    ]
+  },
+  "bwv278|1|1.0": {
+    "stem": "bwv278",
+    "m": 1,
+    "b": 1.0,
+    "winner": "Edim7",
+    "key": "Emin",
+    "margin": 0.26556,
+    "alts": [
+      "F#7/E",
+      "Esus69"
+    ]
+  },
+  "bwv278|8|2.0": {
+    "stem": "bwv278",
+    "m": 8,
+    "b": 2.0,
+    "winner": "Em6",
+    "key": "Emin",
+    "margin": 0.0,
+    "alts": [
+      "Em6",
+      "Edim7"
+    ]
+  },
+  "bwv284|3|3.0": {
+    "stem": "bwv284",
+    "m": 3,
+    "b": 3.0,
+    "winner": "Cm6",
+    "key": "Cmaj",
+    "margin": 0.0625,
+    "alts": [
+      "Eb6/C",
+      "Cm6"
+    ]
+  },
+  "bwv288|11|1.0": {
+    "stem": "bwv288",
+    "m": 11,
+    "b": 1.0,
+    "winner": "E+",
+    "key": "Amin",
+    "margin": 0.47667,
+    "alts": [
+      "AmMaj7/E",
+      "C/E"
+    ]
+  },
+  "bwv293|5|3.0": {
+    "stem": "bwv293",
+    "m": 5,
+    "b": 3.0,
+    "winner": "FMaj7",
+    "key": "Cmaj",
+    "margin": 0.0078261,
+    "alts": [
+      "Dm/F",
+      "C6/F"
+    ]
+  },
+  "bwv301|2|3.0": {
+    "stem": "bwv301",
+    "m": 2,
+    "b": 3.0,
+    "winner": "Dm6",
+    "key": "Dmin",
+    "margin": 0.3775,
+    "alts": [
+      "Ddim7",
+      "Bm7b5/D"
+    ]
+  },
+  "bwv302|1|4.0": {
+    "stem": "bwv302",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Em",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "Em",
+      "Edim"
+    ]
+  },
+  "bwv309|12|3.0": {
+    "stem": "bwv309",
+    "m": 12,
+    "b": 3.0,
+    "winner": "D+",
+    "key": "Dmin",
+    "margin": 0.47667,
+    "alts": [
+      "GmMaj7/D",
+      "Bb/D"
+    ]
+  },
+  "bwv312|7|3.0": {
+    "stem": "bwv312",
+    "m": 7,
+    "b": 3.0,
+    "winner": "E+",
+    "key": "Cmaj",
+    "margin": 0.24,
+    "alts": [
+      "E",
+      "E"
+    ]
+  },
+  "bwv322|1|3.0": {
+    "stem": "bwv322",
+    "m": 1,
+    "b": 3.0,
+    "winner": "C",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "C",
+      "Am/C"
+    ]
+  },
+  "bwv322|15|1.0": {
+    "stem": "bwv322",
+    "m": 15,
+    "b": 1.0,
+    "winner": "Adim7",
+    "key": "Cmaj",
+    "margin": 0.75,
+    "alts": [
+      "Am6",
+      "Am6"
+    ]
+  },
+  "bwv331|2|1.0": {
+    "stem": "bwv331",
+    "m": 2,
+    "b": 1.0,
+    "winner": "E+",
+    "key": "Aharm",
+    "margin": 0.04,
+    "alts": [
+      "AmMaj7/E",
+      "C/E"
+    ]
+  },
+  "bwv335|6|3.0": {
+    "stem": "bwv335",
+    "m": 6,
+    "b": 3.0,
+    "winner": "DMaj7",
+    "key": "Emin",
+    "margin": -0.95,
+    "alts": [
+      "F#m",
+      "F#5"
+    ]
+  },
+  "bwv335|8|1.0": {
+    "stem": "bwv335",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Em",
+    "key": "Emin",
+    "margin": 0.62,
+    "alts": [
+      "C#m7/E",
+      "Em"
+    ]
+  },
+  "bwv337|1|2.0": {
+    "stem": "bwv337",
+    "m": 1,
+    "b": 2.0,
+    "winner": "C",
+    "key": "Amin",
+    "margin": 0.0,
+    "alts": [
+      "C",
+      "Am/C"
+    ]
+  },
+  "bwv361|5|4.0": {
+    "stem": "bwv361",
+    "m": 5,
+    "b": 4.0,
+    "winner": "G5",
+    "key": "Bbmaj",
+    "margin": 0.086667,
+    "alts": [
+      "Csus2/G",
+      "Gsus"
+    ]
+  },
+  "bwv362|19|1.0": {
+    "stem": "bwv362",
+    "m": 19,
+    "b": 1.0,
+    "winner": "G+",
+    "key": "Bbmaj",
+    "margin": 0.67824,
+    "alts": [
+      "G#5",
+      "G#5"
+    ]
+  },
+  "bwv379|8|4.0": {
+    "stem": "bwv379",
+    "m": 8,
+    "b": 4.0,
+    "winner": "Asus(add9)",
+    "key": "Gmaj",
+    "margin": 0.26286,
+    "alts": [
+      "G/A",
+      "G/A"
+    ]
+  },
+  "bwv383|4|3.0": {
+    "stem": "bwv383",
+    "m": 4,
+    "b": 3.0,
+    "winner": "Bdim#5",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm7b5#5",
+      "G7/B"
+    ]
+  },
+  "bwv392|11|4.0": {
+    "stem": "bwv392",
+    "m": 11,
+    "b": 4.0,
+    "winner": "Eb",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Eb",
+      "Cm7/Eb"
+    ]
+  },
+  "bwv40.3|6|1.0": {
+    "stem": "bwv40.3",
+    "m": 6,
+    "b": 1.0,
+    "winner": "Cm6",
+    "key": "Dmin",
+    "margin": 0.2,
+    "alts": [
+      "Am7b5/C",
+      "Cm6"
+    ]
+  },
+  "bwv40.3|9|1.0": {
+    "stem": "bwv40.3",
+    "m": 9,
+    "b": 1.0,
+    "winner": "D+",
+    "key": "Dmin",
+    "margin": 0.50294,
+    "alts": [
+      "GmMaj7/D",
+      "Bb#5/D"
+    ]
+  },
+  "bwv40.6|6|1.0": {
+    "stem": "bwv40.6",
+    "m": 6,
+    "b": 1.0,
+    "winner": "A+",
+    "key": "Dmin",
+    "margin": 0.0029412,
+    "alts": [
+      "DmMaj7/A",
+      "F#5/A"
+    ]
+  },
+  "bwv40.6|14|2.0": {
+    "stem": "bwv40.6",
+    "m": 14,
+    "b": 2.0,
+    "winner": "Gm",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm",
+      "Gdim"
+    ]
+  },
+  "bwv40.8|10|1.0": {
+    "stem": "bwv40.8",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Ebm6",
+    "key": "Cmin",
+    "margin": 0.11429,
+    "alts": [
+      "Cm7b5/Eb",
+      "Ebm6"
+    ]
+  },
+  "bwv407|7|4.0": {
+    "stem": "bwv407",
+    "m": 7,
+    "b": 4.0,
+    "winner": "Dm6",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm6",
+      "Bm7b5/D"
+    ]
+  },
+  "bwv417|3|2.0": {
+    "stem": "bwv417",
+    "m": 3,
+    "b": 2.0,
+    "winner": "G",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "G",
+      "Em/G"
+    ]
+  },
+  "bwv423|9|2.0": {
+    "stem": "bwv423",
+    "m": 9,
+    "b": 2.0,
+    "winner": "Gm",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Gdim",
+      "Eb/G"
+    ]
+  },
+  "bwv425|22|3.0": {
+    "stem": "bwv425",
+    "m": 22,
+    "b": 3.0,
+    "winner": "F",
+    "key": "DDor",
+    "margin": 0.0,
+    "alts": [
+      "F",
+      "Dm/F"
+    ]
+  },
+  "bwv43.11|3|2.0": {
+    "stem": "bwv43.11",
+    "m": 3,
+    "b": 2.0,
+    "winner": "A5",
+    "key": "Gmaj",
+    "margin": 0.07,
+    "alts": [
+      "Asus",
+      "Asus"
+    ]
+  },
+  "bwv64.8|9|3.0": {
+    "stem": "bwv64.8",
+    "m": 9,
+    "b": 3.0,
+    "winner": "F#+",
+    "key": "Emin",
+    "margin": 0.50294,
+    "alts": [
+      "BmMaj7/F#",
+      "D#5/F#"
+    ]
+  },
+  "bwv65.7|8|3.0": {
+    "stem": "bwv65.7",
+    "m": 8,
+    "b": 3.0,
+    "winner": "Adim7",
+    "key": "Cmaj",
+    "margin": 0.75,
+    "alts": [
+      "Am6",
+      "Am6"
+    ]
+  },
+  "bwv85.6|5|1.0": {
+    "stem": "bwv85.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Fm",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Fm",
+      "Fdim"
+    ]
+  },
+  "bwv90.5|8|2.0": {
+    "stem": "bwv90.5",
+    "m": 8,
+    "b": 2.0,
+    "winner": "Dm6",
+    "key": "Dmin",
+    "margin": 0.23,
+    "alts": [
+      "F/D",
+      "Dm6"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+Iter 54 — Genuine BIR=true=14 cluster summary
+==============================================
+
+Source data: tools/iter54_genuine14_characterization.txt
+            tools/iter54_genuine14_alts_full.txt
+
+CLUSTER A — Minor winner, HalfDim with different root expected (n=9)
+--------------------------------------------------------------------
+Winner is Minor BIR=true with bass=root. Agreed root (music21 ∩ DCML)
+is a third below (or otherwise different), implying the correct reading
+is a HalfDiminished or Minor7 chord with a different root.
+
+| # | stem      | m  | b   | winner  | agreed | alt[1]                | correct alt? |
+|---|-----------|----|-----|---------|--------|-----------------------|--------------|
+| 1 | bwv187.7  | 14 | 2.0 | Gm  (7) | E  (4) | Dim same-root G       | absent       |
+| 2 | bwv194.12 | 10 | 1.0 | Cm  (0) | A  (9) | Dim same-root C       | absent       |
+| 3 | bwv227.11 | 10 | 3.0 | Em  (4) | C# (1) | HalfDim C#/E          | PRESENT      |
+| 4 | bwv244.15 |  5 | 1.0 | Em  (4) | C# (1) | Dim same-root E       | absent       |
+| 5 | bwv244.44 |  5 | 1.0 | Em  (4) | C# (1) | Dim same-root E       | absent       |
+| 6 | bwv38.6   |  7 | 3.0 | Dm  (2) | B (11) | Dim same-root D       | absent       |
+| 7 | bwv40.6   | 14 | 2.0 | Gm  (7) | E  (4) | Dim same-root G       | absent       |
+| 8 | bwv435    |  8 | 2.5 | Am  (9) | F# (6) | Dim same-root A       | absent       |
+| 9 | bwv84.5   |  2 | 2.0 | Em  (4) | C# (1) | Dim same-root E       | absent       |
+
+Observations:
+- 1/9 cases (bwv227.11) has the correct HalfDim alt at the agreed root —
+  this is a candidate for a Gate M-style post-ranking correction.
+- 8/9 cases (Blocker C) have NO alt at the agreed root, so no post-ranking
+  swap can fix them; root cause is upstream (candidate generation).
+- alt[1] in the Blocker C cases is always same-root Diminished tied at the
+  same score (2.1000) — characteristic of incomplete pitch sets where both
+  Minor and Diminished are equally consistent with the observed notes.
+
+CLUSTER B — Power winner with Suspended/Major alts (n=3)
+--------------------------------------------------------
+| # | stem      | m  | b   | winner  | agreed | best alt              | correct alt? |
+|---|-----------|----|-----|---------|--------|-----------------------|--------------|
+| 1 | bwv184.5  | 13 | 3.0 | A5  (9) | D  (2) | Suspended2 D/A        | PRESENT      |
+| 2 | bwv372    | 10 | 1.5 | C5  (0) | Bb(10) | Major C same-root     | absent       |
+| 3 | bwv43.11  |  3 | 2.0 | A5  (9) | D  (2) | Suspended4 same-root A| absent       |
+
+Observations:
+- 1/3 cases (bwv184.5 m=13 b=3) has correct Suspended2 alt at agreed root.
+- bwv43.11 still in residual after Iter 30/32 work — alt list lacks any
+  candidate with agreed root D (slash-2 reading not generated).
+
+CLUSTER C — Major outliers (n=2)
+--------------------------------
+| # | stem      | m  | b   | winner  | agreed | alt list                       |
+|---|-----------|----|-----|---------|--------|--------------------------------|
+| 1 | bwv184.5  | 13 | 4.0 | A7  (9) | D  (2) | same A Major repeated          |
+| 2 | bwv371    | 35 | 2.5 | D   (2) | G  (7) | alt[1] Bm/D — agreed G absent  |
+
+Observations:
+- Both have agreed root completely absent from alts. Upstream candidate-
+  generation failure; not actionable via post-ranking gates.
+
+OVERALL SUMMARY
+---------------
+                                    Total | Correct alt in results?
+                                          | Yes (gate-fixable) | No (upstream)
+Cluster A (Minor→HalfDim)            9    |        1           |     8
+Cluster B (Power→Sus/Major)          3    |        1           |     2
+Cluster C (Major outlier)            2    |        0           |     2
+                                   ---    |       ---          |    ---
+Total                               14    |        2           |    12
+
+Conclusion
+----------
+Only 2 of the 14 remaining genuine BIR=true cases are gate-fixable in the
+post-ranking pipeline (alt with agreed root is already in results[]).
+The other 12 require upstream candidate-generation changes.
+
+Comparison with Iter 46 characterization (25 cases listed in
+iter46_genuine21_characterization.txt; documented baseline was 21):
+- 5 cases overlap with iter54: bwv184.5 m=13 b=4, bwv187.7, bwv227.11,
+  bwv40.6, bwv43.11.
+- 20 iter46 cases no longer in genuine-14 (resolved by Iter 54 greedy
+  segmentation or moved to different position).
+- 9 cases in iter54 are not in the iter46 list — positions created or
+  modified by greedy-expand segmentation.
+
+The Iter 46 Cluster A pattern (Min winner with HalfDim alt[1] at agreed
+root PRESENT) was 7/25 cases; in iter54 only 1/14 retains that pattern
+(bwv227.11). The 8 other Minor cases now show same-root Diminished alts
+without the correct HalfDim alt — the upstream candidate generator no
+longer produces the HalfDim reading for these regions. Investigating why
+(likely a pitch-set difference from greedy segmentation cutting one of
+the chord tones out) is the next step for further BIR=true reductions.

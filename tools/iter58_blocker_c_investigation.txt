@@ -1,0 +1,301 @@
+=== Blocker C Investigation — Iter 58 ===
+
+Corpus baseline: BIR=true=14, BIR=false=132 (Iter 55 corpus state)
+Cluster A Blocker C cases identified (Minor winner + same-root Dim alt, no HalfDim-at-agreed-root alt): 8
+
+
+--- bwv187.7  m=14 b=2.0  (region idx=23) ---
+  Our root: G (Minor)  Agreed root: E
+  Expected HalfDim Em7b5 PC set: [D,E,G,A#]
+  Erroneous region:
+    startTick=19200 endTick=19680 dur=1
+    pitchClassSet=0x0494  PCs=[D,E,G,A#]  count=4
+    tones PCs=[D,E,G,A#]
+    bass pc=7 (G)
+    winner: Minor root=7 score=2.3857
+    Missing PCs for HalfDim E: none
+    Extra PCs vs HalfDim E:   none
+  alternatives (2):
+    [0] root=7 (G) qual=Minor bassIsRoot=True score=2.3857 sym=Gm6
+    [1] root=7 (G) qual=Diminished bassIsRoot=True score=1.9457 sym=Gdim7
+  Neighbours (idx ±3):
+    [idx= 20] m= 12 b=1.00 dur=4 qual=Major PCs=[C,F,A]
+    [idx= 21] m= 13 b=2.00 dur=1 qual=Major PCs=[D,F,G,B]
+    [idx= 22] m= 13 b=3.00 dur=2 qual=HalfDiminished PCs=[C#,E,G]
+    [idx= 24] m= 14 b=3.00 dur=1 qual=Major PCs=[C#,E,G,A]
+    [idx= 25] m= 15 b=1.00 dur=2 qual=Major PCs=[D,E,F,G,A#]
+    [idx= 26] m= 15 b=3.00 dur=1 qual=Major PCs=[C#,E,A]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: C
+    Evidence:   all HalfDim PCs present in region, but HalfDim candidate not generated
+
+--- bwv194.12  m=10 b=1.0  (region idx=20) ---
+  Our root: C (Minor)  Agreed root: A
+  Expected HalfDim Am7b5 PC set: [C,D#,G,A]
+  Erroneous region:
+    startTick=13440 endTick=14880 dur=3
+    pitchClassSet=0x0209  PCs=[C,D#,A]  count=3
+    tones PCs=[C,D#,A]
+    bass pc=0 (C)
+    winner: Minor root=0 score=2.1000
+    Missing PCs for HalfDim A: [G]
+    Extra PCs vs HalfDim A:   none
+  alternatives (2):
+    [0] root=0 (C) qual=Minor bassIsRoot=True score=2.1000 sym=Cm
+    [1] root=0 (C) qual=Diminished bassIsRoot=True score=2.1000 sym=Cdim
+  Neighbours (idx ±3):
+    [idx= 17] m=  9 b=1.00 dur=1 qual=Major PCs=[D,F#,A]
+    [idx= 18] m=  9 b=1.00 dur=2 qual=Minor PCs=[D,G,A#] ***HAS-MISSING***
+    [idx= 19] m=  9 b=3.00 dur=1 qual=Major PCs=[D#,G,A#] ***HAS-MISSING***
+    [idx= 21] m= 11 b=1.00 dur=3 qual=Major PCs=[C,E,A#]
+    [idx= 22] m= 12 b=1.00 dur=2 qual=Major PCs=[C,F,A]
+    [idx= 23] m= 12 b=3.00 dur=1 qual=Major PCs=[D,F#,A]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: A
+    Evidence:   missing PC [G] in IMMEDIATE neighbour (prev, idx=19, m=9 b=3.00, dur=1) — greedy boundary split
+
+--- bwv244.15  m=5 b=1.0  (region idx=12) ---
+  Our root: E (Minor)  Agreed root: C#
+  Expected HalfDim C#m7b5 PC set: [C#,E,G,B]
+  Erroneous region:
+    startTick=8160 endTick=8640 dur=1
+    pitchClassSet=0x0896  PCs=[C#,D,E,G,B]  count=5
+    tones PCs=[C#,D,E,G,B]
+    bass pc=4 (E)
+    winner: Minor root=4 score=2.1000
+    Missing PCs for HalfDim C#: none
+    Extra PCs vs HalfDim C#:   [D]
+  alternatives (2):
+    [0] root=4 (E) qual=Minor bassIsRoot=True score=2.1000 sym=Em
+    [1] root=4 (E) qual=Diminished bassIsRoot=True score=2.1000 sym=Edim
+  Neighbours (idx ±3):
+    [idx=  9] m=  3 b=3.00 dur=1 qual=Power PCs=[C#,F#,B]
+    [idx= 10] m=  3 b=4.00 dur=4 qual=Major PCs=[C#,F#,A#]
+    [idx= 11] m=  5 b=1.00 dur=1 qual=Minor PCs=[D,F#,A,B]
+    [idx= 13] m=  5 b=2.00 dur=1 qual=Major PCs=[C#,F#,A]
+    [idx= 14] m=  5 b=3.00 dur=1 qual=Minor PCs=[D,F#,G,A,B]
+    [idx= 15] m=  5 b=4.00 dur=1 qual=HalfDiminished PCs=[C#,E,G]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: C
+    Evidence:   all HalfDim PCs present in region, but HalfDim candidate not generated
+
+--- bwv244.44  m=5 b=1.0  (region idx=12) ---
+  Our root: E (Minor)  Agreed root: C#
+  Expected HalfDim C#m7b5 PC set: [C#,E,G,B]
+  Erroneous region:
+    startTick=8160 endTick=8640 dur=1
+    pitchClassSet=0x0892  PCs=[C#,E,G,B]  count=4
+    tones PCs=[C#,E,G,B]
+    bass pc=4 (E)
+    winner: Minor root=4 score=2.1000
+    Missing PCs for HalfDim C#: none
+    Extra PCs vs HalfDim C#:   none
+  alternatives (2):
+    [0] root=4 (E) qual=Minor bassIsRoot=True score=2.1000 sym=Em
+    [1] root=4 (E) qual=Diminished bassIsRoot=True score=2.1000 sym=Edim
+  Neighbours (idx ±3):
+    [idx=  9] m=  3 b=3.00 dur=1 qual=Power PCs=[C#,F#,B]
+    [idx= 10] m=  3 b=4.00 dur=4 qual=Major PCs=[C#,F#,A#]
+    [idx= 11] m=  5 b=1.00 dur=1 qual=Minor PCs=[D,F#,B]
+    [idx= 13] m=  5 b=2.00 dur=1 qual=Major PCs=[C#,D,E,F#,A]
+    [idx= 14] m=  5 b=3.00 dur=1 qual=Minor PCs=[D,F#,G,A,B]
+    [idx= 15] m=  5 b=4.00 dur=1 qual=HalfDiminished PCs=[C#,E,G]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: C
+    Evidence:   all HalfDim PCs present in region, but HalfDim candidate not generated
+
+--- bwv38.6  m=7 b=3.0  (region idx=19) ---
+  Our root: D (Minor)  Agreed root: B
+  Expected HalfDim Bm7b5 PC set: [D,F,A,B]
+  Erroneous region:
+    startTick=12480 endTick=12960 dur=1
+    pitchClassSet=0x0A25  PCs=[C,D,F,A,B]  count=5
+    tones PCs=[C,D,F,A,B]
+    bass pc=2 (D)
+    winner: Minor root=2 score=2.1000
+    Missing PCs for HalfDim B: none
+    Extra PCs vs HalfDim B:   [C]
+  alternatives (2):
+    [0] root=2 (D) qual=Minor bassIsRoot=True score=2.1000 sym=Dm
+    [1] root=2 (D) qual=Diminished bassIsRoot=True score=2.1000 sym=Ddim
+  Neighbours (idx ±3):
+    [idx= 16] m=  6 b=3.00 dur=1 qual=Major PCs=[D,G,B]
+    [idx= 17] m=  6 b=4.00 dur=2 qual=Minor PCs=[C,E,F#,A]
+    [idx= 18] m=  7 b=2.00 dur=1 qual=Augmented PCs=[D,F,A]
+    [idx= 20] m=  7 b=4.00 dur=1 qual=Major PCs=[E,G#,B]
+    [idx= 21] m=  8 b=1.00 dur=4 qual=Minor PCs=[C,E,A]
+    [idx= 22] m=  9 b=1.00 dur=2 qual=Minor PCs=[E,G,B]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: C
+    Evidence:   all HalfDim PCs present in region, but HalfDim candidate not generated
+
+--- bwv40.6  m=14 b=2.0  (region idx=38) ---
+  Our root: G (Minor)  Agreed root: E
+  Expected HalfDim Em7b5 PC set: [D,E,G,A#]
+  Erroneous region:
+    startTick=25440 endTick=25920 dur=1
+    pitchClassSet=0x0490  PCs=[E,G,A#]  count=3
+    tones PCs=[E,G,A#]
+    bass pc=7 (G)
+    winner: Minor root=7 score=2.1000
+    Missing PCs for HalfDim E: [D]
+    Extra PCs vs HalfDim E:   none
+  alternatives (2):
+    [0] root=7 (G) qual=Minor bassIsRoot=True score=2.1000 sym=Gm
+    [1] root=7 (G) qual=Diminished bassIsRoot=True score=2.1000 sym=Gdim
+  Neighbours (idx ±3):
+    [idx= 35] m= 13 b=3.00 dur=1 qual=Major PCs=[C,E,G]
+    [idx= 36] m= 13 b=4.00 dur=1 qual=Major PCs=[C#,E,G,A]
+    [idx= 37] m= 14 b=1.00 dur=1 qual=Major PCs=[D,F,A] ***HAS-MISSING***
+    [idx= 39] m= 14 b=3.00 dur=2 qual=Major PCs=[C#,E,G,A]
+    [idx= 40] m= 15 b=1.00 dur=2 qual=Minor PCs=[D,E,F,A,B] ***HAS-MISSING***
+    [idx= 41] m= 15 b=3.00 dur=3 qual=HalfDiminished PCs=[C#,E,G]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: A
+    Evidence:   missing PC [D] in IMMEDIATE neighbour (prev, idx=37, m=14 b=1.00, dur=1) — greedy boundary split
+
+--- bwv435  m=8 b=2.5  (region idx=17) ---
+  Our root: A (Minor)  Agreed root: F#
+  Expected HalfDim F#m7b5 PC set: [C,E,F#,A]
+  Erroneous region:
+    startTick=14640 endTick=15120 dur=1
+    pitchClassSet=0x0241  PCs=[C,F#,A]  count=3
+    tones PCs=[C,F#,A]
+    bass pc=9 (A)
+    winner: Minor root=9 score=2.1000
+    Missing PCs for HalfDim F#: [E]
+    Extra PCs vs HalfDim F#:   none
+  alternatives (2):
+    [0] root=9 (A) qual=Minor bassIsRoot=True score=2.1000 sym=Am
+    [1] root=9 (A) qual=Diminished bassIsRoot=True score=2.1000 sym=Adim
+  Neighbours (idx ±3):
+    [idx= 14] m=  6 b=1.50 dur=4 qual=Major PCs=[D,E,G,A] ***HAS-MISSING***
+    [idx= 15] m=  7 b=1.50 dur=4 qual=Major PCs=[C#,G,A]
+    [idx= 16] m=  8 b=1.50 dur=1 qual=Major PCs=[C,E,G,B] ***HAS-MISSING***
+    [idx= 18] m=  8 b=3.50 dur=1.5 qual=Major PCs=[C,D,G,A,B]
+    [idx= 19] m=  9 b=1.00 dur=1 qual=Power PCs=[D,G,A]
+    [idx= 20] m=  9 b=2.00 dur=1 qual=Major PCs=[D#,F#,A,B]
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: A
+    Evidence:   missing PC [E] in IMMEDIATE neighbour (prev, idx=16, m=8 b=1.50, dur=1) — greedy boundary split
+
+--- bwv84.5  m=2 b=2.0  (region idx=6) ---
+  Our root: E (Minor)  Agreed root: C#
+  Expected HalfDim C#m7b5 PC set: [C#,E,G,B]
+  Erroneous region:
+    startTick=2880 endTick=3360 dur=1
+    pitchClassSet=0x0096  PCs=[C#,D,E,G]  count=4
+    tones PCs=[C#,D,E,G]
+    bass pc=4 (E)
+    winner: Minor root=4 score=2.1000
+    Missing PCs for HalfDim C#: [B]
+    Extra PCs vs HalfDim C#:   [D]
+  alternatives (2):
+    [0] root=4 (E) qual=Minor bassIsRoot=True score=2.1000 sym=Em
+    [1] root=4 (E) qual=Diminished bassIsRoot=True score=2.1000 sym=Edim
+  Neighbours (idx ±3):
+    [idx=  3] m=  1 b=3.00 dur=1 qual=Major PCs=[D,F#,B] ***HAS-MISSING***
+    [idx=  4] m=  1 b=4.00 dur=1 qual=Major PCs=[C#,F#,A#]
+    [idx=  5] m=  2 b=1.00 dur=1 qual=Major PCs=[D,G,B] ***HAS-MISSING***
+    [idx=  7] m=  2 b=3.00 dur=5 qual=Major PCs=[C#,F#,A#]
+    [idx=  8] m=  3 b=4.00 dur=1 qual=Minor PCs=[C#,F#,A]
+    [idx=  9] m=  4 b=1.00 dur=1 qual=Minor PCs=[D,F#,A,B] ***HAS-MISSING***
+  HYPOTHESIS ANALYSIS:
+    Hypothesis: A
+    Evidence:   missing PC [B] in IMMEDIATE neighbour (prev, idx=5, m=2 b=1.00, dur=1) — greedy boundary split
+
+======================================================================
+CORPUS-WIDE HalfDim CANDIDATE SCAN
+======================================================================
+Regions with HalfDim as WINNER:       484
+Alternative entries with HalfDim:     693
+Confirms: candidate generation produces HalfDim freely when pitch-class set supports it.
+Samples (winner only):
+  ('winner', 'bwv10.7.ours', 12, 2, 'HalfDiminished', 521, 9)
+  ('winner', 'bwv10.7.ours', 17, 4, 'HalfDiminished', 577, 6)
+  ('winner', 'bwv10.7.ours', 18, 4, 'HalfDiminished', 521, 9)
+  ('winner', 'bwv101.7.ours', 9, 2, 'HalfDiminished', 2084, 11)
+  ('winner', 'bwv101.7.ours', 11, 4, 'HalfDiminished', 1680, 4)
+
+======================================================================
+HYPOTHESIS SUMMARY
+======================================================================
+Hypothesis A (boundary split):       4 cases
+Hypothesis B (accumulation gap):     0 cases
+Hypothesis C (candidate generation): 4 cases
+Unclear:                             0 cases
+
+======================================================================
+FIX-DIRECTION RECOMMENDATION
+======================================================================
+Result: 4 cases Hypothesis A (boundary split), 4 cases Hypothesis C (candidate gap), 0 cases Hypothesis B, 0 unclear.
+
+The Iter 56 working hypothesis ("greedy boundary split fragmented the Xm6")
+is only HALF the story. Two distinct root causes co-exist:
+
+-- Hypothesis A (4 cases) --------------------------------------------
+  The erroneous region has a 3-PC subset of the would-be HalfDim, and
+  the missing chord tone sits in the IMMEDIATELY-preceding short region.
+  Greedy segmentation placed a boundary between the bass entry and the
+  added tone (or between the m7 release and the rest of the chord).
+
+  Fix direction:
+    R3-MERGE — after Round 2 boundaries are placed, run a "completion
+    pass" that merges two adjacent regions when (a) both have duration
+    < DIVISION/2 (i.e. they are short fragments, not full beats), (b) the
+    UNION of their pitch-class sets matches a known seventh-chord PC mask
+    (HalfDim, MinMaj7, Dom7, etc.), and (c) the bass PC remains unchanged
+    across the boundary. The merge reconstructs the full PC set so the
+    candidate generator sees the complete chord.
+
+    Risk on BIR=false: LOW–MEDIUM. The duration guard limits merging to
+    very short fragments; long Diminished/Minor chords are untouched.
+    But the merge could occasionally swap a correct two-chord reading
+    (e.g. passing-tone followed by chord) into a false single-chord call.
+    Mitigation: require the union to be a strict match against a known
+    seventh-chord pattern, not merely a superset of three notes.
+
+-- Hypothesis C (4 cases) --------------------------------------------
+  The erroneous region has the COMPLETE HalfDim PC set, yet the
+  candidate generator does NOT produce a HalfDim candidate with the
+  agreed root (the bass-minus-m3). It only produces same-root Minor and
+  same-root Diminished alternatives.
+
+  Concrete example — bwv244.44 m=5 b=1.0:
+    PC set = {C#, E, G, B}, bass = E. C#m7b5 = {C#, E, G, B} exactly.
+    Yet alternatives are only Em (alt[0]) and Edim (alt[1]). No C#m7b5.
+
+  This indicates the candidate generator restricts root selection to a
+  subset of the present PCs (likely bass-pc or strongly-weighted PCs).
+  It does not enumerate "what if the M6-above-bass is the actual root,
+  making this an X-half-diminished?" — even though that interpretation
+  is enharmonically equivalent and structurally consistent.
+
+  Fix direction:
+    In the chord-candidate generator, when the bass pc forms a minor third
+    above some other PC in the set, ADD a HalfDim candidate rooted at that
+    other PC. (Equivalently: for any PC in the set, generate a HalfDim
+    candidate rooted at PC if the set contains PC + {m3, b5, m7}.)
+
+    Risk on BIR=false: MEDIUM. This is a broader candidate-pool change
+    affecting all minor-triad-plus-major-6th voicings. Many of these
+    are correctly read as Xm6 in the corpus. Mitigation:
+      - Require minimum support score (e.g. all 4 chord tones present)
+        before HalfDim is added, never as a fallback.
+      - Let downstream gates (Gate K/L/M-style preferences) decide
+        between Xm6 and (X+m3)m7b5 in tied-score situations using key
+        context (the agreed root should be diatonic).
+
+-- Combined recommendation -------------------------------------------
+  Both fixes are needed for the full 8-case Blocker C reduction.
+  Recommended sequencing:
+    1. Tackle Hypothesis C first (4 cases). The fix is localized to
+       candidate generation; once HalfDim candidates appear in
+       alternatives, the existing post-ranking infrastructure (Gate M-
+       style preferences) can rank them. Verify zero BIR=false regressions
+       on Baroque and Jazz before proceeding.
+    2. Tackle Hypothesis A second (4 cases). The R3-merge change is
+       more invasive (touches segmentation), so isolating it from the
+       candidate-generation change keeps the regression surface small.
+       After the C fix, A cases will likely become "post-merge -> full PC
+       set -> HalfDim candidate" — i.e. they depend on C.

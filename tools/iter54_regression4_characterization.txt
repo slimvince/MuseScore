@@ -1,0 +1,62 @@
+Iter 54 BIR=false regression characterization
+==============================================
+
+Baseline transition: Baroque BIR=false 128 (Iter 46) -> 132 (Iter 54)
+Delta: +4 regressions.
+
+NOTE ON METHODOLOGY
+-------------------
+No prior BIR=false=128 enumeration file exists on disk. The 4 "regressed"
+cases cannot be pinpointed exactly via diff. The current 132 BIR=false set
+is enumerated in iter54_bir_false_enumeration.txt.
+
+Indirect evidence — migration audit
+-----------------------------------
+For each of the 20 iter46 genuine BIR=true cases no longer in genuine-14,
+checked whether the same stem now has a BIR=false case at the same
+(measure, beat). None match exactly:
+
+  iter46 BIR=true (no longer in genuine-14) | matching BIR=false at same m/b?
+  ------------------------------------------+--------------------------------
+  bwv110.7  m=2  b=2.00                     | no
+  bwv184.5  m=10 b=3.00                     | no
+  bwv227.1  m=11 b=3.00                     | no
+  bwv244.40 m=8  b=2.00                     | no
+  bwv259    m=8  b=1.00                     | no
+  bwv278    m=8  b=2.00                     | no
+  bwv293    m=5  b=3.00                     | no (bwv293 m=7 b=4 in BIR=false,
+                                                   different position)
+  bwv301    m=2  b=3.00                     | no
+  bwv302    m=1  b=4.00                     | no (bwv302 m=5 b=1 in BIR=false,
+                                                   different position)
+  bwv322    m=15 b=1.00                     | no
+  bwv335    m=8  b=1.00                     | no
+  bwv361    m=5  b=4.00                     | no
+  bwv40.6   m=14 b=2.00 (still in 14)       | -
+  bwv407    m=7  b=4.00                     | no
+  bwv43.11  (still in 14)                   | -
+  bwv65.7   m=8  b=3.00                     | no (bwv65.7 m=11 b=1 in BIR=false,
+                                                   different position)
+  bwv78.7   m=16 b=1.00                     | no
+  bwv84.5   m=5  b=1.00                     | no
+  bwv85.6   m=5  b=1.00                     | no
+  bwv90.5   m=8  b=2.00                     | no (bwv90.5 m=10 b=3 in BIR=false,
+                                                   different position)
+  bwv90.5   m=12 b=2.00                     | no
+  bwv96.6   m=2  b=1.00                     | no (bwv96.6 m=8 b=3 in BIR=false,
+                                                   different position)
+
+Conclusion
+----------
+The 4 new BIR=false cases are not direct migrations from former BIR=true
+positions; they appear at different (measure, beat) coordinates created or
+modified by greedy-expand segmentation. Without snapshotting the prior
+BIR=false=128 list at Iter 46, the four specific regressed cases cannot be
+identified deterministically from the current data.
+
+Recommendation
+--------------
+If precise tracking of BIR=false regressions matters going forward,
+introduce a saved baseline enumeration step in run_bach_preset.py output
+(write tools/corpus/bir_false_baseline_<iter>.txt at each baseline update),
+so the next iteration can do a deterministic diff.

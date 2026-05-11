@@ -1,0 +1,70 @@
+
+=== bwv184.5  m=13  b=3.0  agreed_root=D (pc=2) ===
+  winner: Power root=A bass=A score=2.0500
+  alt[0]: Suspended2 root=D bass=A BIR=False score=1.9800 <- AGREED ROOT
+  alt[1]: Suspended4 root=A bass=A BIR=True score=1.9000
+
+=== bwv184.5  m=13  b=4.0  agreed_root=D (pc=2) ===
+  winner: Major root=A bass=A score=3.2500
+  alt[0]: Major root=A bass=A BIR=True score=2.9125
+  alt[1]: Major root=A bass=A BIR=True score=2.9125
+
+=== bwv187.7  m=14  b=2.0  agreed_root=E (pc=4) ===
+  winner: Minor root=G bass=G score=2.3857
+  alt[0]: Minor root=G bass=G BIR=True score=2.3857
+  alt[1]: Diminished root=G bass=G BIR=True score=1.9457
+
+=== bwv194.12  m=10  b=1.0  agreed_root=A (pc=9) ===
+  winner: Minor root=C bass=C score=2.1000
+  alt[0]: Minor root=C bass=C BIR=True score=2.1000
+  alt[1]: Diminished root=C bass=C BIR=True score=2.1000
+
+=== bwv227.11  m=10  b=3.0  agreed_root=C# (pc=1) ===
+  winner: Minor root=E bass=E score=2.4875
+  alt[0]: Minor root=E bass=E BIR=True score=2.4875
+  alt[1]: HalfDiminished root=C# bass=E BIR=False score=2.3500 <- AGREED ROOT
+
+=== bwv244.15  m=5  b=1.0  agreed_root=C# (pc=1) ===
+  winner: Minor root=E bass=E score=2.1000
+  alt[0]: Minor root=E bass=E BIR=True score=2.1000
+  alt[1]: Diminished root=E bass=E BIR=True score=2.1000
+
+=== bwv244.44  m=5  b=1.0  agreed_root=C# (pc=1) ===
+  winner: Minor root=E bass=E score=2.1000
+  alt[0]: Minor root=E bass=E BIR=True score=2.1000
+  alt[1]: Diminished root=E bass=E BIR=True score=2.1000
+
+=== bwv371  m=35  b=2.5  agreed_root=G (pc=7) ===
+  winner: Major root=D bass=D score=2.8706
+  alt[0]: Major root=D bass=D BIR=True score=2.8706
+  alt[1]: Minor root=B bass=D BIR=False score=2.2265
+
+=== bwv372  m=10  b=1.5  agreed_root=Bb (pc=10) ===
+  winner: Power root=C bass=C score=2.9350
+  alt[0]: Major root=C bass=C BIR=True score=2.7183
+  alt[1]: Major root=C bass=C BIR=True score=2.7183
+
+=== bwv38.6  m=7  b=3.0  agreed_root=B (pc=11) ===
+  winner: Minor root=D bass=D score=2.1000
+  alt[0]: Minor root=D bass=D BIR=True score=2.1000
+  alt[1]: Diminished root=D bass=D BIR=True score=2.1000
+
+=== bwv40.6  m=14  b=2.0  agreed_root=E (pc=4) ===
+  winner: Minor root=G bass=G score=2.1000
+  alt[0]: Minor root=G bass=G BIR=True score=2.1000
+  alt[1]: Diminished root=G bass=G BIR=True score=2.1000
+
+=== bwv43.11  m=3  b=2.0  agreed_root=D (pc=2) ===
+  winner: Power root=A bass=A score=2.2900
+  alt[0]: Suspended4 root=A bass=A BIR=True score=2.2200
+  alt[1]: Suspended4 root=A bass=A BIR=True score=2.2200
+
+=== bwv435  m=8  b=2.5  agreed_root=F# (pc=6) ===
+  winner: Minor root=A bass=A score=2.1000
+  alt[0]: Minor root=A bass=A BIR=True score=2.1000
+  alt[1]: Diminished root=A bass=A BIR=True score=2.1000
+
+=== bwv84.5  m=2  b=2.0  agreed_root=C# (pc=1) ===
+  winner: Minor root=E bass=E score=2.1000
+  alt[0]: Minor root=E bass=E BIR=True score=2.1000
+  alt[1]: Diminished root=E bass=E BIR=True score=2.1000

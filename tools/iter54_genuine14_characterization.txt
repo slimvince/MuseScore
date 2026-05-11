@@ -1,0 +1,94 @@
+Genuine BIR=true (three-way) total: 14
+
+  #  stem             m     b  q              root bass   BIR   score  margin  group
+------------------------------------------------------------------------------------------------
+  1  bwv184.5        13  3.00  Power             9    9  True  2.0500  0.0700  UNCHARACTERIZED
+  2  bwv184.5        13  4.00  Major             9    9  True  3.2500  0.3375  UNCHARACTERIZED
+  3  bwv187.7        14  2.00  Minor             7    7  True  2.3857  0.0000  Gate M
+  4  bwv194.12       10  1.00  Minor             0    0  True  2.1000  0.0000  UNCHARACTERIZED
+  5  bwv227.11       10  3.00  Minor             4    4  True  2.4875  0.0000  Gate M
+  6  bwv244.15        5  1.00  Minor             4    4  True  2.1000  0.0000  UNCHARACTERIZED
+  7  bwv244.44        5  1.00  Minor             4    4  True  2.1000  0.0000  UNCHARACTERIZED
+  8  bwv371          35  2.50  Major             2    2  True  2.8706  0.0000  UNCHARACTERIZED
+  9  bwv372          10  1.50  Power             0    0  True  2.9350  0.2167  UNCHARACTERIZED
+ 10  bwv38.6          7  3.00  Minor             2    2  True  2.1000  0.0000  UNCHARACTERIZED
+ 11  bwv40.6         14  2.00  Minor             7    7  True  2.1000  0.0000  Gate M
+ 12  bwv43.11         3  2.00  Power             9    9  True  2.2900  0.0700  UNCHARACTERIZED
+ 13  bwv435           8  2.50  Minor             9    9  True  2.1000  0.0000  UNCHARACTERIZED
+ 14  bwv84.5          2  2.00  Minor             4    4  True  2.1000  0.0000  UNCHARACTERIZED
+
+  Gate M               3
+  Gate N               0
+  TYPE-B residual      0
+  MinMaj7              0
+  UNCHARACTERIZED      11
+
+================================================================================================
+UNCHARACTERIZED cases (11):
+================================================================================================
+
+--- bwv184.5  m=13 b=3.0  ---
+  winner: quality=Power rootPc=9 bassPc=9 bassIsRoot=True score=2.0500 margin=0.0700
+  symbol='A5'  noteCount=4
+  alt[0]: quality=Suspended2 rootPc=2 bassPc=9 bassIsRoot=False score=1.9800 chordSymbol='Dsus2/A'
+  alt[1]: quality=Suspended4 rootPc=9 bassPc=9 bassIsRoot=True score=1.9000 chordSymbol='Asus'
+
+--- bwv184.5  m=13 b=4.0  ---
+  winner: quality=Major rootPc=9 bassPc=9 bassIsRoot=True score=3.2500 margin=0.3375
+  symbol='A7'  noteCount=6
+  alt[0]: quality=Major rootPc=9 bassPc=9 bassIsRoot=True score=2.9125 chordSymbol='A7'
+  alt[1]: quality=Major rootPc=9 bassPc=9 bassIsRoot=True score=2.9125 chordSymbol='A7'
+
+--- bwv194.12  m=10 b=1.0  ---
+  winner: quality=Minor rootPc=0 bassPc=0 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Cm'  noteCount=3
+  alt[0]: quality=Minor rootPc=0 bassPc=0 bassIsRoot=True score=2.1000 chordSymbol='Cm'
+  alt[1]: quality=Diminished rootPc=0 bassPc=0 bassIsRoot=True score=2.1000 chordSymbol='Cdim'
+
+--- bwv244.15  m=5 b=1.0  ---
+  winner: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Em'  noteCount=5
+  alt[0]: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Em'
+  alt[1]: quality=Diminished rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Edim'
+
+--- bwv244.44  m=5 b=1.0  ---
+  winner: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Em'  noteCount=4
+  alt[0]: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Em'
+  alt[1]: quality=Diminished rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Edim'
+
+--- bwv371  m=35 b=2.5  ---
+  winner: quality=Major rootPc=2 bassPc=2 bassIsRoot=True score=2.8706 margin=0.0000
+  symbol='D'  noteCount=3
+  alt[0]: quality=Major rootPc=2 bassPc=2 bassIsRoot=True score=2.8706 chordSymbol='D'
+  alt[1]: quality=Minor rootPc=11 bassPc=2 bassIsRoot=False score=2.2265 chordSymbol='Bm7/D'
+
+--- bwv372  m=10 b=1.5  ---
+  winner: quality=Power rootPc=0 bassPc=0 bassIsRoot=True score=2.9350 margin=0.2167
+  symbol='C5'  noteCount=3
+  alt[0]: quality=Major rootPc=0 bassPc=0 bassIsRoot=True score=2.7183 chordSymbol='C'
+  alt[1]: quality=Major rootPc=0 bassPc=0 bassIsRoot=True score=2.7183 chordSymbol='C'
+
+--- bwv38.6  m=7 b=3.0  ---
+  winner: quality=Minor rootPc=2 bassPc=2 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Dm'  noteCount=5
+  alt[0]: quality=Minor rootPc=2 bassPc=2 bassIsRoot=True score=2.1000 chordSymbol='Dm'
+  alt[1]: quality=Diminished rootPc=2 bassPc=2 bassIsRoot=True score=2.1000 chordSymbol='Ddim'
+
+--- bwv43.11  m=3 b=2.0  ---
+  winner: quality=Power rootPc=9 bassPc=9 bassIsRoot=True score=2.2900 margin=0.0700
+  symbol='A5'  noteCount=3
+  alt[0]: quality=Suspended4 rootPc=9 bassPc=9 bassIsRoot=True score=2.2200 chordSymbol='Asus'
+  alt[1]: quality=Suspended4 rootPc=9 bassPc=9 bassIsRoot=True score=2.2200 chordSymbol='Asus'
+
+--- bwv435  m=8 b=2.5  ---
+  winner: quality=Minor rootPc=9 bassPc=9 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Am'  noteCount=3
+  alt[0]: quality=Minor rootPc=9 bassPc=9 bassIsRoot=True score=2.1000 chordSymbol='Am'
+  alt[1]: quality=Diminished rootPc=9 bassPc=9 bassIsRoot=True score=2.1000 chordSymbol='Adim'
+
+--- bwv84.5  m=2 b=2.0  ---
+  winner: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 margin=0.0000
+  symbol='Em'  noteCount=4
+  alt[0]: quality=Minor rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Em'
+  alt[1]: quality=Diminished rootPc=4 bassPc=4 bassIsRoot=True score=2.1000 chordSymbol='Edim'

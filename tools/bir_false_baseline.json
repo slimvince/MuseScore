@@ -1,0 +1,9445 @@
+{
+  "bwv10.7|1|1.0": {
+    "stem": "bwv10.7",
+    "m": 1,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv10.7|2|1.0": {
+    "stem": "bwv10.7",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Dm/Bb",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Bb"
+    ]
+  },
+  "bwv10.7|2|3.0": {
+    "stem": "bwv10.7",
+    "m": 2,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv10.7|9|1.0": {
+    "stem": "bwv10.7",
+    "m": 9,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv10.7|18|3.0": {
+    "stem": "bwv10.7",
+    "m": 18,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Gmin",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv101.7|2|3.0": {
+    "stem": "bwv101.7",
+    "m": 2,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv101.7|5|1.0": {
+    "stem": "bwv101.7",
+    "m": 5,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv101.7|5|2.0": {
+    "stem": "bwv101.7",
+    "m": 5,
+    "b": 2.0,
+    "winner": "Eb/G",
+    "key": "Dmin",
+    "margin": -0.39444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv101.7|7|4.0": {
+    "stem": "bwv101.7",
+    "m": 7,
+    "b": 4.0,
+    "winner": "Ddim7/Ab",
+    "key": "Dmin",
+    "margin": 0.175,
+    "alts": [
+      "Abdim#5",
+      "Abm7b5#5"
+    ]
+  },
+  "bwv101.7|9|2.0": {
+    "stem": "bwv101.7",
+    "m": 9,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Dmin",
+    "margin": 0.05,
+    "alts": [
+      "Bb/D",
+      "Bb/D"
+    ]
+  },
+  "bwv101.7|11|1.0": {
+    "stem": "bwv101.7",
+    "m": 11,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.31471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv102.7|1|2.0": {
+    "stem": "bwv102.7",
+    "m": 1,
+    "b": 2.0,
+    "winner": "AbMaj7/C",
+    "key": "Cmel",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv102.7|9|2.0": {
+    "stem": "bwv102.7",
+    "m": 9,
+    "b": 2.0,
+    "winner": "F7/C",
+    "key": "Gmin",
+    "margin": 0.11,
+    "alts": [
+      "F7/C",
+      "F7/C"
+    ]
+  },
+  "bwv102.7|11|1.0": {
+    "stem": "bwv102.7",
+    "m": 11,
+    "b": 1.0,
+    "winner": "DbMaj7/F",
+    "key": "Gmin",
+    "margin": -0.35,
+    "alts": [
+      "Fm",
+      "Fm"
+    ]
+  },
+  "bwv102.7|11|3.0": {
+    "stem": "bwv102.7",
+    "m": 11,
+    "b": 3.0,
+    "winner": "Cm/Ab",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm/Ab",
+      "Ab"
+    ]
+  },
+  "bwv103.6|10|4.0": {
+    "stem": "bwv103.6",
+    "m": 10,
+    "b": 4.0,
+    "winner": "G/B",
+    "key": "Bmin",
+    "margin": -0.17667,
+    "alts": [
+      "Bm7b5",
+      "Bm"
+    ]
+  },
+  "bwv103.6|11|4.0": {
+    "stem": "bwv103.6",
+    "m": 11,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.40714,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv108.6|1|3.0": {
+    "stem": "bwv108.6",
+    "m": 1,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.28333,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv108.6|2|2.0": {
+    "stem": "bwv108.6",
+    "m": 2,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": 0.12941,
+    "alts": [
+      "GMaj7/B",
+      "GMaj7/B"
+    ]
+  },
+  "bwv108.6|7|3.0": {
+    "stem": "bwv108.6",
+    "m": 7,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.014706,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv11.6|5|1.0": {
+    "stem": "bwv11.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "G6/E",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv11.6|10|1.0": {
+    "stem": "bwv11.6",
+    "m": 10,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Dmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv11.6|18|1.0": {
+    "stem": "bwv11.6",
+    "m": 18,
+    "b": 1.0,
+    "winner": "Gsus/E",
+    "key": "Dmaj",
+    "margin": 0.23077,
+    "alts": [
+      "Gdim/E",
+      "G/E"
+    ]
+  },
+  "bwv110.7|5|3.0": {
+    "stem": "bwv110.7",
+    "m": 5,
+    "b": 3.0,
+    "winner": "C#m/B",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "C#m7b5/B",
+      "C#m/B"
+    ]
+  },
+  "bwv112.5|1|4.0": {
+    "stem": "bwv112.5",
+    "m": 1,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Gmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv117.4|1|4.0": {
+    "stem": "bwv117.4",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Dm7/A",
+    "key": "Gmaj",
+    "margin": 0.076667,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv117.4|7|4.0": {
+    "stem": "bwv117.4",
+    "m": 7,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": 0.073333,
+    "alts": [
+      "CMaj7/E",
+      "CMaj7/E"
+    ]
+  },
+  "bwv117.4|8|4.0": {
+    "stem": "bwv117.4",
+    "m": 8,
+    "b": 4.0,
+    "winner": "Em7/G",
+    "key": "Gmaj",
+    "margin": 0.14,
+    "alts": [
+      "G",
+      "G"
+    ]
+  },
+  "bwv121.6|2|1.0": {
+    "stem": "bwv121.6",
+    "m": 2,
+    "b": 1.0,
+    "winner": "GMaj7/E",
+    "key": "Bmin",
+    "margin": 0.38333,
+    "alts": [
+      "GMaj7/E",
+      "GMaj7/E"
+    ]
+  },
+  "bwv121.6|2|4.0": {
+    "stem": "bwv121.6",
+    "m": 2,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Bmin",
+    "margin": -0.85,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv121.6|4|1.0": {
+    "stem": "bwv121.6",
+    "m": 4,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Bmin",
+    "margin": -0.39444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv121.6|7|4.0": {
+    "stem": "bwv121.6",
+    "m": 7,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv122.6|2|3.0": {
+    "stem": "bwv122.6",
+    "m": 2,
+    "b": 3.0,
+    "winner": "Eb/G",
+    "key": "Gharm",
+    "margin": -0.094444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv122.6|3|3.0": {
+    "stem": "bwv122.6",
+    "m": 3,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv122.6|9|2.0": {
+    "stem": "bwv122.6",
+    "m": 9,
+    "b": 2.0,
+    "winner": "Cm6/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm6/G",
+      "Am7b5/G"
+    ]
+  },
+  "bwv122.6|10|1.0": {
+    "stem": "bwv122.6",
+    "m": 10,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv122.6|14|3.0": {
+    "stem": "bwv122.6",
+    "m": 14,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv123.6|1|1.0": {
+    "stem": "bwv123.6",
+    "m": 1,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv127.5|8|3.0": {
+    "stem": "bwv127.5",
+    "m": 8,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Fmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv127.5|10|1.0": {
+    "stem": "bwv127.5",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Eb/G",
+    "key": "Fmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv13.6|4|3.0": {
+    "stem": "bwv13.6",
+    "m": 4,
+    "b": 3.0,
+    "winner": "Am/F",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "F"
+    ]
+  },
+  "bwv13.6|5|1.0": {
+    "stem": "bwv13.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Bb/G",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bb/G",
+      "Bb/G"
+    ]
+  },
+  "bwv13.6|7|1.0": {
+    "stem": "bwv13.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv13.6|11|2.0": {
+    "stem": "bwv13.6",
+    "m": 11,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv13.6|11|4.0": {
+    "stem": "bwv13.6",
+    "m": 11,
+    "b": 4.0,
+    "winner": "F7/C",
+    "key": "Bbmaj",
+    "margin": 0.038235,
+    "alts": [
+      "Amb5/C",
+      "Amb5/C"
+    ]
+  },
+  "bwv133.6|10|1.0": {
+    "stem": "bwv133.6",
+    "m": 10,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv140.7|14|3.0": {
+    "stem": "bwv140.7",
+    "m": 14,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv144.6|5|1.0": {
+    "stem": "bwv144.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv144.6|11|1.0": {
+    "stem": "bwv144.6",
+    "m": 11,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.93667,
+    "alts": [
+      "F#m",
+      "F#5"
+    ]
+  },
+  "bwv144.6|11|4.0": {
+    "stem": "bwv144.6",
+    "m": 11,
+    "b": 4.0,
+    "winner": "D/B",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "D/B",
+      "D/B"
+    ]
+  },
+  "bwv144.6|14|2.0": {
+    "stem": "bwv144.6",
+    "m": 14,
+    "b": 2.0,
+    "winner": "D6/F#",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "D6/F#",
+      "D6/F#"
+    ]
+  },
+  "bwv151.5|6|3.0": {
+    "stem": "bwv151.5",
+    "m": 6,
+    "b": 3.0,
+    "winner": "F#m/D",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "F#m/D",
+      "D"
+    ]
+  },
+  "bwv153.1|1|1.0": {
+    "stem": "bwv153.1",
+    "m": 1,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amel",
+    "margin": -0.85,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv153.1|3|3.0": {
+    "stem": "bwv153.1",
+    "m": 3,
+    "b": 3.0,
+    "winner": "Am/F",
+    "key": "Amel",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "Dm7/F"
+    ]
+  },
+  "bwv153.1|3|4.0": {
+    "stem": "bwv153.1",
+    "m": 3,
+    "b": 4.0,
+    "winner": "Dm/E",
+    "key": "Amel",
+    "margin": 0.0,
+    "alts": [
+      "Dm/E",
+      "Bmb5/E"
+    ]
+  },
+  "bwv153.1|5|2.0": {
+    "stem": "bwv153.1",
+    "m": 5,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv153.1|6|4.0": {
+    "stem": "bwv153.1",
+    "m": 6,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.51471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv153.1|8|3.0": {
+    "stem": "bwv153.1",
+    "m": 8,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Emin",
+    "margin": -0.85,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv153.1|9|2.0": {
+    "stem": "bwv153.1",
+    "m": 9,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Emin",
+    "margin": -0.81471,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv153.5|1|3.0": {
+    "stem": "bwv153.5",
+    "m": 1,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv153.5|5|4.0": {
+    "stem": "bwv153.5",
+    "m": 5,
+    "b": 4.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv153.5|7|4.0": {
+    "stem": "bwv153.5",
+    "m": 7,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv153.5|11|1.0": {
+    "stem": "bwv153.5",
+    "m": 11,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv153.5|12|2.0": {
+    "stem": "bwv153.5",
+    "m": 12,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv153.9|10|1.0": {
+    "stem": "bwv153.9",
+    "m": 10,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv153.9|11|2.0": {
+    "stem": "bwv153.9",
+    "m": 11,
+    "b": 2.0,
+    "winner": "Am7/E",
+    "key": "Cmaj",
+    "margin": 0.05,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv153.9|13|2.0": {
+    "stem": "bwv153.9",
+    "m": 13,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv153.9|14|2.0": {
+    "stem": "bwv153.9",
+    "m": 14,
+    "b": 2.0,
+    "winner": "Bm/G",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "G"
+    ]
+  },
+  "bwv154.3|6|3.0": {
+    "stem": "bwv154.3",
+    "m": 6,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -1.25,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv154.8|3|4.0": {
+    "stem": "bwv154.8",
+    "m": 3,
+    "b": 4.0,
+    "winner": "E7/D",
+    "key": "Dmaj",
+    "margin": 0.03,
+    "alts": [
+      "Bm/D",
+      "Bm/D"
+    ]
+  },
+  "bwv155.5|1|4.0": {
+    "stem": "bwv155.5",
+    "m": 1,
+    "b": 4.0,
+    "winner": "AbMaj7/C",
+    "key": "Fmaj",
+    "margin": -0.63824,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv155.5|8|4.0": {
+    "stem": "bwv155.5",
+    "m": 8,
+    "b": 4.0,
+    "winner": "Dm7/A",
+    "key": "Fmaj",
+    "margin": 0.023529,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv156.6|6|4.0": {
+    "stem": "bwv156.6",
+    "m": 6,
+    "b": 4.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv156.6|9|3.0": {
+    "stem": "bwv156.6",
+    "m": 9,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.05,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv159.5|1|3.0": {
+    "stem": "bwv159.5",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7add13/C",
+    "key": "Ebmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv159.5|3|1.0": {
+    "stem": "bwv159.5",
+    "m": 3,
+    "b": 1.0,
+    "winner": "Cm/Ab",
+    "key": "Ebmaj",
+    "margin": 0.0,
+    "alts": [
+      "Cm/Ab",
+      "Fm/Ab"
+    ]
+  },
+  "bwv159.5|3|2.0": {
+    "stem": "bwv159.5",
+    "m": 3,
+    "b": 2.0,
+    "winner": "Gm/Bb",
+    "key": "Ebmaj",
+    "margin": 0.32333,
+    "alts": [
+      "Bb",
+      "Gm/Bb"
+    ]
+  },
+  "bwv159.5|7|1.0": {
+    "stem": "bwv159.5",
+    "m": 7,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv159.5|9|4.0": {
+    "stem": "bwv159.5",
+    "m": 9,
+    "b": 4.0,
+    "winner": "AbMaj7add13/G",
+    "key": "Ebmaj",
+    "margin": 0.25714,
+    "alts": [
+      "Fm/G",
+      "Fm/G"
+    ]
+  },
+  "bwv16.6|5|2.0": {
+    "stem": "bwv16.6",
+    "m": 5,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.063333,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv16.6|5|4.0": {
+    "stem": "bwv16.6",
+    "m": 5,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Cmaj",
+    "margin": 0.061111,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv16.6|7|1.0": {
+    "stem": "bwv16.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv164.6|1|4.0": {
+    "stem": "bwv164.6",
+    "m": 1,
+    "b": 4.0,
+    "winner": "EbMaj7/C",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv166.6|1|3.0": {
+    "stem": "bwv166.6",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv166.6|6|1.0": {
+    "stem": "bwv166.6",
+    "m": 6,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv168.6|8|2.0": {
+    "stem": "bwv168.6",
+    "m": 8,
+    "b": 2.0,
+    "winner": "E7/B",
+    "key": "Bmin",
+    "margin": 0.05,
+    "alts": [
+      "G/B",
+      "G/B"
+    ]
+  },
+  "bwv168.6|9|1.0": {
+    "stem": "bwv168.6",
+    "m": 9,
+    "b": 1.0,
+    "winner": "D6/B",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "D6/B",
+      "D6/B"
+    ]
+  },
+  "bwv17.7|6|1.0": {
+    "stem": "bwv17.7",
+    "m": 6,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv17.7|11|1.0": {
+    "stem": "bwv17.7",
+    "m": 11,
+    "b": 1.0,
+    "winner": "DMaj7/B",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv17.7|16|1.0": {
+    "stem": "bwv17.7",
+    "m": 16,
+    "b": 1.0,
+    "winner": "A/E",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "A/F#",
+      "A/F#"
+    ]
+  },
+  "bwv17.7|20|1.0": {
+    "stem": "bwv17.7",
+    "m": 20,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv17.7|24|1.0": {
+    "stem": "bwv17.7",
+    "m": 24,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv17.7|30|2.0": {
+    "stem": "bwv17.7",
+    "m": 30,
+    "b": 2.0,
+    "winner": "B7/F#",
+    "key": "Amaj",
+    "margin": 0.03,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv17.7|31|3.0": {
+    "stem": "bwv17.7",
+    "m": 31,
+    "b": 3.0,
+    "winner": "E/C#",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "E/C#",
+      "E/C#"
+    ]
+  },
+  "bwv17.7|32|3.0": {
+    "stem": "bwv17.7",
+    "m": 32,
+    "b": 3.0,
+    "winner": "A/Eb",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "A/Eb",
+      "A/Eb"
+    ]
+  },
+  "bwv174.5|3|1.0": {
+    "stem": "bwv174.5",
+    "m": 3,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv174.5|4|1.0": {
+    "stem": "bwv174.5",
+    "m": 4,
+    "b": 1.0,
+    "winner": "E/Ab",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "E/Ab",
+      "E/Ab"
+    ]
+  },
+  "bwv174.5|4|3.0": {
+    "stem": "bwv174.5",
+    "m": 4,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv174.5|5|1.0": {
+    "stem": "bwv174.5",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Bm/G",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "G"
+    ]
+  },
+  "bwv174.5|12|4.0": {
+    "stem": "bwv174.5",
+    "m": 12,
+    "b": 4.0,
+    "winner": "A7/E",
+    "key": "Dmaj",
+    "margin": 0.11,
+    "alts": [
+      "A7/E",
+      "A7/E"
+    ]
+  },
+  "bwv174.5|13|4.0": {
+    "stem": "bwv174.5",
+    "m": 13,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv174.5|15|2.0": {
+    "stem": "bwv174.5",
+    "m": 15,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv174.5|17|3.0": {
+    "stem": "bwv174.5",
+    "m": 17,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv176.6|7|1.0": {
+    "stem": "bwv176.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "CDor",
+    "margin": -0.89444,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv176.6|7|4.0": {
+    "stem": "bwv176.6",
+    "m": 7,
+    "b": 4.0,
+    "winner": "Bbm/Db",
+    "key": "CDor",
+    "margin": 0.0,
+    "alts": [
+      "Bbm/Db"
+    ]
+  },
+  "bwv176.6|9|1.0": {
+    "stem": "bwv176.6",
+    "m": 9,
+    "b": 1.0,
+    "winner": "Fadd11/D",
+    "key": "CDor",
+    "margin": 0.0,
+    "alts": [
+      "Fadd11/D",
+      "Fadd11/D"
+    ]
+  },
+  "bwv176.6|14|2.0": {
+    "stem": "bwv176.6",
+    "m": 14,
+    "b": 2.0,
+    "winner": "DbMaj7/F",
+    "key": "CDor",
+    "margin": -0.85,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv179.6|8|3.0": {
+    "stem": "bwv179.6",
+    "m": 8,
+    "b": 3.0,
+    "winner": "CMaj7#5/E",
+    "key": "Amin",
+    "margin": 0.12941,
+    "alts": [
+      "CMaj7#5/E",
+      "CMaj7#5/E"
+    ]
+  },
+  "bwv183.5|5|1.0": {
+    "stem": "bwv183.5",
+    "m": 5,
+    "b": 1.0,
+    "winner": "D13/B",
+    "key": "Aharm",
+    "margin": 0.15833,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv183.5|5|4.0": {
+    "stem": "bwv183.5",
+    "m": 5,
+    "b": 4.0,
+    "winner": "Dm/F",
+    "key": "Aharm",
+    "margin": 0.35,
+    "alts": [
+      "Dm/F",
+      "FMaj7"
+    ]
+  },
+  "bwv183.5|9|1.0": {
+    "stem": "bwv183.5",
+    "m": 9,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv187.7|5|2.0": {
+    "stem": "bwv187.7",
+    "m": 5,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv187.7|7|1.0": {
+    "stem": "bwv187.7",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv187.7|19|3.0": {
+    "stem": "bwv187.7",
+    "m": 19,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv187.7|21|1.0": {
+    "stem": "bwv187.7",
+    "m": 21,
+    "b": 1.0,
+    "winner": "D+/Bb",
+    "key": "Gmin",
+    "margin": 0.15,
+    "alts": [
+      "Gm/Bb",
+      "Gm/Bb"
+    ]
+  },
+  "bwv187.7|27|1.0": {
+    "stem": "bwv187.7",
+    "m": 27,
+    "b": 1.0,
+    "winner": "EbMaj7/C",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv190.7|1|4.0": {
+    "stem": "bwv190.7",
+    "m": 1,
+    "b": 4.0,
+    "winner": "D7/A",
+    "key": "Dmaj",
+    "margin": 0.11,
+    "alts": [
+      "D7/A",
+      "D7/A"
+    ]
+  },
+  "bwv190.7|15|3.0": {
+    "stem": "bwv190.7",
+    "m": 15,
+    "b": 3.0,
+    "winner": "Dsus2/A",
+    "key": "Dmaj",
+    "margin": 0.10714,
+    "alts": [
+      "A7sus",
+      "A11"
+    ]
+  },
+  "bwv194.12|13|2.0": {
+    "stem": "bwv194.12",
+    "m": 13,
+    "b": 2.0,
+    "winner": "Cm/A",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Cm/A",
+      "F7/A"
+    ]
+  },
+  "bwv197.10|1|3.0": {
+    "stem": "bwv197.10",
+    "m": 1,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv197.10|4|4.0": {
+    "stem": "bwv197.10",
+    "m": 4,
+    "b": 4.0,
+    "winner": "GmMaj7/F#",
+    "key": "Bmin",
+    "margin": 0.06,
+    "alts": [
+      "F#7",
+      "F#7"
+    ]
+  },
+  "bwv197.10|6|1.0": {
+    "stem": "bwv197.10",
+    "m": 6,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv2.6|1|1.0": {
+    "stem": "bwv2.6",
+    "m": 1,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv2.6|2|2.0": {
+    "stem": "bwv2.6",
+    "m": 2,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv2.6|4|1.0": {
+    "stem": "bwv2.6",
+    "m": 4,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv2.6|5|2.0": {
+    "stem": "bwv2.6",
+    "m": 5,
+    "b": 2.0,
+    "winner": "BbMaj7/D",
+    "key": "Gmel",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv2.6|6|4.0": {
+    "stem": "bwv2.6",
+    "m": 6,
+    "b": 4.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.51471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv2.6|8|3.0": {
+    "stem": "bwv2.6",
+    "m": 8,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv2.6|9|2.0": {
+    "stem": "bwv2.6",
+    "m": 9,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv2.6|10|2.0": {
+    "stem": "bwv2.6",
+    "m": 10,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv20.11|1|2.0": {
+    "stem": "bwv20.11",
+    "m": 1,
+    "b": 2.0,
+    "winner": "C7/G",
+    "key": "Fmaj",
+    "margin": 0.33,
+    "alts": [
+      "C7/G",
+      "C7/G"
+    ]
+  },
+  "bwv20.11|7|1.0": {
+    "stem": "bwv20.11",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Gm/E",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "Gm/E",
+      "C7/E"
+    ]
+  },
+  "bwv20.11|7|2.0": {
+    "stem": "bwv20.11",
+    "m": 7,
+    "b": 2.0,
+    "winner": "Cm6/Eb",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "Cm6/Eb",
+      "Am7b5/Eb"
+    ]
+  },
+  "bwv20.11|8|3.0": {
+    "stem": "bwv20.11",
+    "m": 8,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv20.7|1|2.0": {
+    "stem": "bwv20.7",
+    "m": 1,
+    "b": 2.0,
+    "winner": "C7/G",
+    "key": "Fmaj",
+    "margin": 0.33,
+    "alts": [
+      "C7/G",
+      "C7/G"
+    ]
+  },
+  "bwv227.1|1|1.0": {
+    "stem": "bwv227.1",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv227.1|6|1.0": {
+    "stem": "bwv227.1",
+    "m": 6,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Eharm",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv227.11|1|1.0": {
+    "stem": "bwv227.11",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv227.11|6|1.0": {
+    "stem": "bwv227.11",
+    "m": 6,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv227.11|9|2.0": {
+    "stem": "bwv227.11",
+    "m": 9,
+    "b": 2.0,
+    "winner": "Edim7",
+    "key": "Emin",
+    "margin": 0.75,
+    "alts": [
+      "Em6",
+      "Em6"
+    ]
+  },
+  "bwv227.11|10|1.0": {
+    "stem": "bwv227.11",
+    "m": 10,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv227.11|11|3.0": {
+    "stem": "bwv227.11",
+    "m": 11,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv244.10|5|2.0": {
+    "stem": "bwv244.10",
+    "m": 5,
+    "b": 2.0,
+    "winner": "Gb/Bb",
+    "key": "Abmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Bbm",
+      "Bbm"
+    ]
+  },
+  "bwv244.10|7|1.0": {
+    "stem": "bwv244.10",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Db/F",
+    "key": "Abmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Fm",
+      "Fm"
+    ]
+  },
+  "bwv244.10|8|4.0": {
+    "stem": "bwv244.10",
+    "m": 8,
+    "b": 4.0,
+    "winner": "Db/F",
+    "key": "Abmaj",
+    "margin": -0.59444,
+    "alts": [
+      "Fm",
+      "Fm"
+    ]
+  },
+  "bwv244.15|5|2.0": {
+    "stem": "bwv244.15",
+    "m": 5,
+    "b": 2.0,
+    "winner": "DMaj7/F#",
+    "key": "Emaj",
+    "margin": 0.035294,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv244.15|5|3.0": {
+    "stem": "bwv244.15",
+    "m": 5,
+    "b": 3.0,
+    "winner": "Bm/G",
+    "key": "Emaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "G"
+    ]
+  },
+  "bwv244.25|5|4.0": {
+    "stem": "bwv244.25",
+    "m": 5,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv244.25|9|3.0": {
+    "stem": "bwv244.25",
+    "m": 9,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv244.3|2|3.0": {
+    "stem": "bwv244.3",
+    "m": 2,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.51471,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.3|3|2.0": {
+    "stem": "bwv244.3",
+    "m": 3,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.3|4|1.0": {
+    "stem": "bwv244.3",
+    "m": 4,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.3|9|4.0": {
+    "stem": "bwv244.3",
+    "m": 9,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.05,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.32|5|3.0": {
+    "stem": "bwv244.32",
+    "m": 5,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.125,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv244.32|8|2.0": {
+    "stem": "bwv244.32",
+    "m": 8,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv244.32|8|3.0": {
+    "stem": "bwv244.32",
+    "m": 8,
+    "b": 3.0,
+    "winner": "Cm7/Ab",
+    "key": "Bbmaj",
+    "margin": 0.28571,
+    "alts": [
+      "Abadd9",
+      "Abadd9"
+    ]
+  },
+  "bwv244.32|9|4.0": {
+    "stem": "bwv244.32",
+    "m": 9,
+    "b": 4.0,
+    "winner": "Bb6/G",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bb6/G",
+      "Bb6/G"
+    ]
+  },
+  "bwv244.37|4|2.0": {
+    "stem": "bwv244.37",
+    "m": 4,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Fmaj",
+    "margin": 0.13,
+    "alts": [
+      "Bb/D",
+      "Bb/D"
+    ]
+  },
+  "bwv244.37|5|1.0": {
+    "stem": "bwv244.37",
+    "m": 5,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Fmaj",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv244.37|7|1.0": {
+    "stem": "bwv244.37",
+    "m": 7,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Fmaj",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv244.37|8|1.0": {
+    "stem": "bwv244.37",
+    "m": 8,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv244.37|11|2.0": {
+    "stem": "bwv244.37",
+    "m": 11,
+    "b": 2.0,
+    "winner": "Eb/G",
+    "key": "Fmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv244.44|11|1.0": {
+    "stem": "bwv244.44",
+    "m": 11,
+    "b": 1.0,
+    "winner": "G6/E",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv244.46|1|1.0": {
+    "stem": "bwv244.46",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Bmin",
+    "margin": -0.35,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv244.46|2|3.0": {
+    "stem": "bwv244.46",
+    "m": 2,
+    "b": 3.0,
+    "winner": "D6/B",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "D6/B",
+      "D6/B"
+    ]
+  },
+  "bwv244.46|3|2.0": {
+    "stem": "bwv244.46",
+    "m": 3,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.46|4|1.0": {
+    "stem": "bwv244.46",
+    "m": 4,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.46|9|3.0": {
+    "stem": "bwv244.46",
+    "m": 9,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv244.54|1|3.0": {
+    "stem": "bwv244.54",
+    "m": 1,
+    "b": 3.0,
+    "winner": "Eb/G",
+    "key": "Dmin",
+    "margin": -0.39444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv244.54|11|1.0": {
+    "stem": "bwv244.54",
+    "m": 11,
+    "b": 1.0,
+    "winner": "Bb6/G",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Bb6/G",
+      "Bb6/G"
+    ]
+  },
+  "bwv245.11|2|4.0": {
+    "stem": "bwv245.11",
+    "m": 2,
+    "b": 4.0,
+    "winner": "D/F#",
+    "key": "Amaj",
+    "margin": -0.59444,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.11|4|3.0": {
+    "stem": "bwv245.11",
+    "m": 4,
+    "b": 3.0,
+    "winner": "AMaj7/C#",
+    "key": "Amaj",
+    "margin": 0.14,
+    "alts": [
+      "E/C#",
+      "E/C#"
+    ]
+  },
+  "bwv245.11|5|2.0": {
+    "stem": "bwv245.11",
+    "m": 5,
+    "b": 2.0,
+    "winner": "G/B",
+    "key": "Amaj",
+    "margin": -0.39444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv245.11|7|1.0": {
+    "stem": "bwv245.11",
+    "m": 7,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.11|8|1.0": {
+    "stem": "bwv245.11",
+    "m": 8,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv245.14|1|1.0": {
+    "stem": "bwv245.14",
+    "m": 1,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.14|1|3.0": {
+    "stem": "bwv245.14",
+    "m": 1,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.14|6|2.0": {
+    "stem": "bwv245.14",
+    "m": 6,
+    "b": 2.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.14|7|1.0": {
+    "stem": "bwv245.14",
+    "m": 7,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.14|8|3.0": {
+    "stem": "bwv245.14",
+    "m": 8,
+    "b": 3.0,
+    "winner": "G#m6/F",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "G#m6/F",
+      "C#7/F"
+    ]
+  },
+  "bwv245.15|1|3.0": {
+    "stem": "bwv245.15",
+    "m": 1,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv245.15|3|1.0": {
+    "stem": "bwv245.15",
+    "m": 3,
+    "b": 1.0,
+    "winner": "F/A",
+    "key": "Amin",
+    "margin": -0.59444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv245.15|3|2.0": {
+    "stem": "bwv245.15",
+    "m": 3,
+    "b": 2.0,
+    "winner": "D#Maj7/G",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv245.15|4|1.0": {
+    "stem": "bwv245.15",
+    "m": 4,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv245.15|5|1.0": {
+    "stem": "bwv245.15",
+    "m": 5,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv245.15|6|2.0": {
+    "stem": "bwv245.15",
+    "m": 6,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv245.15|7|1.0": {
+    "stem": "bwv245.15",
+    "m": 7,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv245.15|8|1.0": {
+    "stem": "bwv245.15",
+    "m": 8,
+    "b": 1.0,
+    "winner": "D#Maj7/G",
+    "key": "Amin",
+    "margin": -0.37222,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv245.15|9|4.0": {
+    "stem": "bwv245.15",
+    "m": 9,
+    "b": 4.0,
+    "winner": "G/B",
+    "key": "Amin",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv245.15|10|1.0": {
+    "stem": "bwv245.15",
+    "m": 10,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.05,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv245.15|14|2.0": {
+    "stem": "bwv245.15",
+    "m": 14,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv245.15|15|1.0": {
+    "stem": "bwv245.15",
+    "m": 15,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv245.17|9|1.0": {
+    "stem": "bwv245.17",
+    "m": 9,
+    "b": 1.0,
+    "winner": "FMaj7/D",
+    "key": "Cmaj",
+    "margin": 0.0071429,
+    "alts": [
+      "Dmadd9",
+      "Dmadd9"
+    ]
+  },
+  "bwv245.26|2|1.0": {
+    "stem": "bwv245.26",
+    "m": 2,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv245.26|10|3.0": {
+    "stem": "bwv245.26",
+    "m": 10,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv245.28|7|1.0": {
+    "stem": "bwv245.28",
+    "m": 7,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv245.28|11|3.0": {
+    "stem": "bwv245.28",
+    "m": 11,
+    "b": 3.0,
+    "winner": "A6/F#",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "A6/F#",
+      "A6/F#"
+    ]
+  },
+  "bwv245.3|2|3.0": {
+    "stem": "bwv245.3",
+    "m": 2,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "DPhrygDom",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv245.3|3|2.0": {
+    "stem": "bwv245.3",
+    "m": 3,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "DPhrygDom",
+    "margin": 0.11,
+    "alts": [
+      "EbMaj7/G",
+      "EbMaj7/G"
+    ]
+  },
+  "bwv245.3|7|1.0": {
+    "stem": "bwv245.3",
+    "m": 7,
+    "b": 1.0,
+    "winner": "F/C",
+    "key": "Bbmaj",
+    "margin": 0.055556,
+    "alts": [
+      "Am/C",
+      "Am/C"
+    ]
+  },
+  "bwv245.3|10|2.0": {
+    "stem": "bwv245.3",
+    "m": 10,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.92222,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv245.37|1|3.0": {
+    "stem": "bwv245.37",
+    "m": 1,
+    "b": 3.0,
+    "winner": "GbMaj7/Bb",
+    "key": "FDor",
+    "margin": -0.85,
+    "alts": [
+      "Bbm",
+      "Bb5"
+    ]
+  },
+  "bwv245.37|5|1.0": {
+    "stem": "bwv245.37",
+    "m": 5,
+    "b": 1.0,
+    "winner": "GbMaj7/Bb",
+    "key": "FDor",
+    "margin": -0.85,
+    "alts": [
+      "Bbm",
+      "Bb5"
+    ]
+  },
+  "bwv245.37|6|2.0": {
+    "stem": "bwv245.37",
+    "m": 6,
+    "b": 2.0,
+    "winner": "BMaj7/Eb",
+    "key": "Cmin",
+    "margin": -0.85,
+    "alts": [
+      "Ebm",
+      "Eb5"
+    ]
+  },
+  "bwv245.37|8|1.0": {
+    "stem": "bwv245.37",
+    "m": 8,
+    "b": 1.0,
+    "winner": "EMaj7/Ab",
+    "key": "Cmin",
+    "margin": -0.72222,
+    "alts": [
+      "Abm",
+      "Abm"
+    ]
+  },
+  "bwv245.37|14|2.0": {
+    "stem": "bwv245.37",
+    "m": 14,
+    "b": 2.0,
+    "winner": "BMaj7/Eb",
+    "key": "FDor",
+    "margin": -0.85,
+    "alts": [
+      "Ebm",
+      "Eb5"
+    ]
+  },
+  "bwv245.37|15|1.0": {
+    "stem": "bwv245.37",
+    "m": 15,
+    "b": 1.0,
+    "winner": "BMaj7/Eb",
+    "key": "FDor",
+    "margin": -0.85,
+    "alts": [
+      "Ebm",
+      "Eb5"
+    ]
+  },
+  "bwv245.40|1|2.0": {
+    "stem": "bwv245.40",
+    "m": 1,
+    "b": 2.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv245.40|3|1.0": {
+    "stem": "bwv245.40",
+    "m": 3,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Ebmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv248.33-3|2|1.0": {
+    "stem": "bwv248.33-3",
+    "m": 2,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Gmaj",
+    "margin": -0.31471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv248.33-3|4|1.0": {
+    "stem": "bwv248.33-3",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Gmaj",
+    "margin": -0.85,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv248.33-3|10|3.0": {
+    "stem": "bwv248.33-3",
+    "m": 10,
+    "b": 3.0,
+    "winner": "C/A",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "C/A",
+      "C/A"
+    ]
+  },
+  "bwv248.35-3|2|3.0": {
+    "stem": "bwv248.35-3",
+    "m": 2,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "F#harm",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv248.35-3|8|3.0": {
+    "stem": "bwv248.35-3",
+    "m": 8,
+    "b": 3.0,
+    "winner": "C#m7/E",
+    "key": "F#min",
+    "margin": 0.24,
+    "alts": [
+      "C#m7/E",
+      "E"
+    ]
+  },
+  "bwv248.35-3|10|3.0": {
+    "stem": "bwv248.35-3",
+    "m": 10,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "F#min",
+    "margin": -0.425,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv248.46-5|8|3.0": {
+    "stem": "bwv248.46-5",
+    "m": 8,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv248.46-5|9|1.0": {
+    "stem": "bwv248.46-5",
+    "m": 9,
+    "b": 1.0,
+    "winner": "Bm/G",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "G"
+    ]
+  },
+  "bwv248.5|5|2.0": {
+    "stem": "bwv248.5",
+    "m": 5,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": 0.12941,
+    "alts": [
+      "CMaj7/E",
+      "CMaj7/E"
+    ]
+  },
+  "bwv248.5|5|4.0": {
+    "stem": "bwv248.5",
+    "m": 5,
+    "b": 4.0,
+    "winner": "Fsus/D",
+    "key": "Amin",
+    "margin": 0.24706,
+    "alts": [
+      "Fdim7/D",
+      "Bdim/D"
+    ]
+  },
+  "bwv248.5|12|2.0": {
+    "stem": "bwv248.5",
+    "m": 12,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv25.6|2|1.0": {
+    "stem": "bwv25.6",
+    "m": 2,
+    "b": 1.0,
+    "winner": "F/A",
+    "key": "Cmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv25.6|3|2.0": {
+    "stem": "bwv25.6",
+    "m": 3,
+    "b": 2.0,
+    "winner": "A#/D",
+    "key": "Cmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv25.6|6|2.0": {
+    "stem": "bwv25.6",
+    "m": 6,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.925,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv25.6|9|3.0": {
+    "stem": "bwv25.6",
+    "m": 9,
+    "b": 3.0,
+    "winner": "F6/D",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "F6/D",
+      "F6/D"
+    ]
+  },
+  "bwv25.6|10|1.0": {
+    "stem": "bwv25.6",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Am/F",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "F"
+    ]
+  },
+  "bwv25.6|11|1.0": {
+    "stem": "bwv25.6",
+    "m": 11,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.05,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv25.6|12|1.0": {
+    "stem": "bwv25.6",
+    "m": 12,
+    "b": 1.0,
+    "winner": "F6/D",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "F6/D",
+      "F6/D"
+    ]
+  },
+  "bwv253|2|1.0": {
+    "stem": "bwv253",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Em7/G",
+    "key": "Amaj",
+    "margin": 0.15588,
+    "alts": [
+      "G",
+      "G"
+    ]
+  },
+  "bwv253|6|3.0": {
+    "stem": "bwv253",
+    "m": 6,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv254|6|1.0": {
+    "stem": "bwv254",
+    "m": 6,
+    "b": 1.0,
+    "winner": "C9/G",
+    "key": "Cmaj",
+    "margin": 4.4409e-16,
+    "alts": [
+      "Gm6",
+      "Gm6"
+    ]
+  },
+  "bwv254|6|3.0": {
+    "stem": "bwv254",
+    "m": 6,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv254|7|2.0": {
+    "stem": "bwv254",
+    "m": 7,
+    "b": 2.0,
+    "winner": "D#/G",
+    "key": "Cmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv254|8|1.0": {
+    "stem": "bwv254",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Am/C",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Am/C",
+      "Dm7/C"
+    ]
+  },
+  "bwv255|2|2.0": {
+    "stem": "bwv255",
+    "m": 2,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv255|5|1.0": {
+    "stem": "bwv255",
+    "m": 5,
+    "b": 1.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv257|9|3.0": {
+    "stem": "bwv257",
+    "m": 9,
+    "b": 3.0,
+    "winner": "AmMaj7/E",
+    "key": "Cmaj",
+    "margin": 0.0033333,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv258|4|3.0": {
+    "stem": "bwv258",
+    "m": 4,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv259|6|3.0": {
+    "stem": "bwv259",
+    "m": 6,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv26.6|1|1.0": {
+    "stem": "bwv26.6",
+    "m": 1,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv260|6|3.0": {
+    "stem": "bwv260",
+    "m": 6,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Gmaj",
+    "margin": -0.85,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv260|7|3.0": {
+    "stem": "bwv260",
+    "m": 7,
+    "b": 3.0,
+    "winner": "G/B",
+    "key": "Gmaj",
+    "margin": -0.59444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv261|4|4.0": {
+    "stem": "bwv261",
+    "m": 4,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.2,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv261|5|4.0": {
+    "stem": "bwv261",
+    "m": 5,
+    "b": 4.0,
+    "winner": "C#m/Bb",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "C#m/Bb",
+      "Bbdim"
+    ]
+  },
+  "bwv261|12|4.0": {
+    "stem": "bwv261",
+    "m": 12,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv262|3|3.0": {
+    "stem": "bwv262",
+    "m": 3,
+    "b": 3.0,
+    "winner": "G6/E",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv262|10|1.0": {
+    "stem": "bwv262",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Gadd9/B",
+    "key": "Dmaj",
+    "margin": -0.06,
+    "alts": [
+      "Bm7b5",
+      "Bm7"
+    ]
+  },
+  "bwv262|11|3.0": {
+    "stem": "bwv262",
+    "m": 11,
+    "b": 3.0,
+    "winner": "G6/E",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv265|1|2.0": {
+    "stem": "bwv265",
+    "m": 1,
+    "b": 2.0,
+    "winner": "Am7/F",
+    "key": "Amin",
+    "margin": 0.16429,
+    "alts": [
+      "F",
+      "F"
+    ]
+  },
+  "bwv265|3|4.0": {
+    "stem": "bwv265",
+    "m": 3,
+    "b": 4.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv265|6|3.0": {
+    "stem": "bwv265",
+    "m": 6,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Dmel",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv266|2|3.0": {
+    "stem": "bwv266",
+    "m": 2,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Eharm",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv266|3|3.0": {
+    "stem": "bwv266",
+    "m": 3,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.072222,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv266|5|3.0": {
+    "stem": "bwv266",
+    "m": 5,
+    "b": 3.0,
+    "winner": "C/E",
+    "key": "Emin",
+    "margin": -0.59444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv266|6|3.0": {
+    "stem": "bwv266",
+    "m": 6,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv266|11|1.0": {
+    "stem": "bwv266",
+    "m": 11,
+    "b": 1.0,
+    "winner": "Am/E",
+    "key": "Emin",
+    "margin": 0.0,
+    "alts": [
+      "Am/E",
+      "F#m7b5/E"
+    ]
+  },
+  "bwv268|5|4.0": {
+    "stem": "bwv268",
+    "m": 5,
+    "b": 4.0,
+    "winner": "Edim7/G",
+    "key": "Gmaj",
+    "margin": 0.025,
+    "alts": [
+      "A7/G",
+      "Gsus69"
+    ]
+  },
+  "bwv269|15|2.0": {
+    "stem": "bwv269",
+    "m": 15,
+    "b": 2.0,
+    "winner": "Bm7/G",
+    "key": "Gmaj",
+    "margin": 0.16429,
+    "alts": [
+      "G",
+      "G"
+    ]
+  },
+  "bwv269|15|3.0": {
+    "stem": "bwv269",
+    "m": 15,
+    "b": 3.0,
+    "winner": "D7/A",
+    "key": "Gmaj",
+    "margin": 0.33,
+    "alts": [
+      "D7/A",
+      "D7/A"
+    ]
+  },
+  "bwv270|4|1.0": {
+    "stem": "bwv270",
+    "m": 4,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv271|1|3.0": {
+    "stem": "bwv271",
+    "m": 1,
+    "b": 3.0,
+    "winner": "C/E",
+    "key": "Dmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv271|11|1.0": {
+    "stem": "bwv271",
+    "m": 11,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Dmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv272|5|4.0": {
+    "stem": "bwv272",
+    "m": 5,
+    "b": 4.0,
+    "winner": "Ddim7/G",
+    "key": "Dmin",
+    "margin": 0.014286,
+    "alts": [
+      "Gaddb9",
+      "Gaddb9"
+    ]
+  },
+  "bwv272|10|4.0": {
+    "stem": "bwv272",
+    "m": 10,
+    "b": 4.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv275|13|1.0": {
+    "stem": "bwv275",
+    "m": 13,
+    "b": 1.0,
+    "winner": "D#Maj7/G",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv276|4|1.0": {
+    "stem": "bwv276",
+    "m": 4,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "DDor",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv276|7|1.0": {
+    "stem": "bwv276",
+    "m": 7,
+    "b": 1.0,
+    "winner": "FMaj7add13/D",
+    "key": "Amin",
+    "margin": 0.20714,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv276|14|3.0": {
+    "stem": "bwv276",
+    "m": 14,
+    "b": 3.0,
+    "winner": "Dm/A",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Gm7/Bb"
+    ]
+  },
+  "bwv279|3|1.0": {
+    "stem": "bwv279",
+    "m": 3,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv279|4|3.0": {
+    "stem": "bwv279",
+    "m": 4,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv279|7|1.0": {
+    "stem": "bwv279",
+    "m": 7,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv28.6|1|3.0": {
+    "stem": "bwv28.6",
+    "m": 1,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv28.6|4|1.0": {
+    "stem": "bwv28.6",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv28.6|7|1.0": {
+    "stem": "bwv28.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv28.6|9|2.0": {
+    "stem": "bwv28.6",
+    "m": 9,
+    "b": 2.0,
+    "winner": "A#/D",
+    "key": "Cmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv280|3|1.0": {
+    "stem": "bwv280",
+    "m": 3,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv280|5|1.0": {
+    "stem": "bwv280",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Dadd11/B",
+    "key": "Amin",
+    "margin": 0.0,
+    "alts": [
+      "Dadd11/B",
+      "Dadd11/B"
+    ]
+  },
+  "bwv280|10|2.0": {
+    "stem": "bwv280",
+    "m": 10,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv281|5|2.0": {
+    "stem": "bwv281",
+    "m": 5,
+    "b": 2.0,
+    "winner": "Em/C",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "Em/C",
+      "Am/C"
+    ]
+  },
+  "bwv282|13|3.0": {
+    "stem": "bwv282",
+    "m": 13,
+    "b": 3.0,
+    "winner": "D7/A",
+    "key": "Gmaj",
+    "margin": 0.11,
+    "alts": [
+      "D7/A",
+      "D7/A"
+    ]
+  },
+  "bwv282|17|3.0": {
+    "stem": "bwv282",
+    "m": 17,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.05,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv283|3|1.0": {
+    "stem": "bwv283",
+    "m": 3,
+    "b": 1.0,
+    "winner": "Am/F",
+    "key": "Aharm",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "Dm/F"
+    ]
+  },
+  "bwv283|7|1.0": {
+    "stem": "bwv283",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Dm/Bb",
+    "key": "Amin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Gm7/Bb"
+    ]
+  },
+  "bwv283|12|1.0": {
+    "stem": "bwv283",
+    "m": 12,
+    "b": 1.0,
+    "winner": "A#/D",
+    "key": "Cmaj",
+    "margin": -0.0061538,
+    "alts": [
+      "Dm7b5",
+      "Dm7"
+    ]
+  },
+  "bwv283|13|3.0": {
+    "stem": "bwv283",
+    "m": 13,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Cmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv283|17|2.0": {
+    "stem": "bwv283",
+    "m": 17,
+    "b": 2.0,
+    "winner": "FMaj7add13/D",
+    "key": "Cmaj",
+    "margin": 0.15833,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv284|3|1.0": {
+    "stem": "bwv284",
+    "m": 3,
+    "b": 1.0,
+    "winner": "C6/A",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "C6/A",
+      "C6/A"
+    ]
+  },
+  "bwv284|3|2.0": {
+    "stem": "bwv284",
+    "m": 3,
+    "b": 2.0,
+    "winner": "D#Maj7/G",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv284|4|1.0": {
+    "stem": "bwv284",
+    "m": 4,
+    "b": 1.0,
+    "winner": "D#Maj7/G",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv284|5|1.0": {
+    "stem": "bwv284",
+    "m": 5,
+    "b": 1.0,
+    "winner": "D#Maj7/G",
+    "key": "Cmaj",
+    "margin": 0.07,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv284|11|3.0": {
+    "stem": "bwv284",
+    "m": 11,
+    "b": 3.0,
+    "winner": "D#Maj7/G",
+    "key": "Cmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv285|1|2.0": {
+    "stem": "bwv285",
+    "m": 1,
+    "b": 2.0,
+    "winner": "EbMaj7add13/C",
+    "key": "Charm",
+    "margin": 0.20714,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv285|2|3.0": {
+    "stem": "bwv285",
+    "m": 2,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Cmin",
+    "margin": -0.05,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv285|9|4.0": {
+    "stem": "bwv285",
+    "m": 9,
+    "b": 4.0,
+    "winner": "Bb7/F",
+    "key": "Cmin",
+    "margin": 0.11,
+    "alts": [
+      "Bb7/F",
+      "Bb7/F"
+    ]
+  },
+  "bwv286|4|1.0": {
+    "stem": "bwv286",
+    "m": 4,
+    "b": 1.0,
+    "winner": "E+/C",
+    "key": "Cmaj",
+    "margin": 0.15,
+    "alts": [
+      "Am/C",
+      "Am/C"
+    ]
+  },
+  "bwv288|4|3.0": {
+    "stem": "bwv288",
+    "m": 4,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv288|8|1.0": {
+    "stem": "bwv288",
+    "m": 8,
+    "b": 1.0,
+    "winner": "D#Maj7/G",
+    "key": "Amin",
+    "margin": -0.83667,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv289|2|3.0": {
+    "stem": "bwv289",
+    "m": 2,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv289|4|1.0": {
+    "stem": "bwv289",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Emin",
+    "margin": -1.1647,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv289|4|3.0": {
+    "stem": "bwv289",
+    "m": 4,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv289|6|3.0": {
+    "stem": "bwv289",
+    "m": 6,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv289|11|1.0": {
+    "stem": "bwv289",
+    "m": 11,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv290|2|1.0": {
+    "stem": "bwv290",
+    "m": 2,
+    "b": 1.0,
+    "winner": "FMaj7add13/D",
+    "key": "Fmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv290|6|3.0": {
+    "stem": "bwv290",
+    "m": 6,
+    "b": 3.0,
+    "winner": "Gsus/C",
+    "key": "Fmaj",
+    "margin": 0.0055556,
+    "alts": [
+      "C5",
+      "Csus"
+    ]
+  },
+  "bwv292|11|4.0": {
+    "stem": "bwv292",
+    "m": 11,
+    "b": 4.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv292|13|3.0": {
+    "stem": "bwv292",
+    "m": 13,
+    "b": 3.0,
+    "winner": "FMaj7add13/D",
+    "key": "Cmaj",
+    "margin": 0.27857,
+    "alts": [
+      "FMaj7add13/D",
+      "FMaj7add13/D"
+    ]
+  },
+  "bwv293|1|3.0": {
+    "stem": "bwv293",
+    "m": 1,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv293|2|4.0": {
+    "stem": "bwv293",
+    "m": 2,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv293|3|3.0": {
+    "stem": "bwv293",
+    "m": 3,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv293|6|4.0": {
+    "stem": "bwv293",
+    "m": 6,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv293|7|3.0": {
+    "stem": "bwv293",
+    "m": 7,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv294|1|3.0": {
+    "stem": "bwv294",
+    "m": 1,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Gmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv295|14|1.0": {
+    "stem": "bwv295",
+    "m": 14,
+    "b": 1.0,
+    "winner": "Gm6/D",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Em7b5/D",
+      "Gm6/D"
+    ]
+  },
+  "bwv298|6|3.0": {
+    "stem": "bwv298",
+    "m": 6,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv3.6|6|4.0": {
+    "stem": "bwv3.6",
+    "m": 6,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv300|1|4.0": {
+    "stem": "bwv300",
+    "m": 1,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv300|5|4.0": {
+    "stem": "bwv300",
+    "m": 5,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.89444,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv300|7|3.0": {
+    "stem": "bwv300",
+    "m": 7,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.89444,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv300|8|4.0": {
+    "stem": "bwv300",
+    "m": 8,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Emin",
+    "margin": -0.51471,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv301|5|1.0": {
+    "stem": "bwv301",
+    "m": 5,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv301|9|3.0": {
+    "stem": "bwv301",
+    "m": 9,
+    "b": 3.0,
+    "winner": "BbMaj7add13/G",
+    "key": "Dmin",
+    "margin": 0.20714,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv302|2|4.0": {
+    "stem": "bwv302",
+    "m": 2,
+    "b": 4.0,
+    "winner": "G/B",
+    "key": "Dmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv302|3|3.0": {
+    "stem": "bwv302",
+    "m": 3,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.91471,
+    "alts": [
+      "F#m",
+      "F#5"
+    ]
+  },
+  "bwv302|5|1.0": {
+    "stem": "bwv302",
+    "m": 5,
+    "b": 1.0,
+    "winner": "A/F#",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "A/F#",
+      "A/F#"
+    ]
+  },
+  "bwv302|9|4.0": {
+    "stem": "bwv302",
+    "m": 9,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.85,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv302|10|3.0": {
+    "stem": "bwv302",
+    "m": 10,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv303|2|4.0": {
+    "stem": "bwv303",
+    "m": 2,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.33824,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv303|3|2.0": {
+    "stem": "bwv303",
+    "m": 3,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv303|3|3.0": {
+    "stem": "bwv303",
+    "m": 3,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.014706,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv303|6|4.0": {
+    "stem": "bwv303",
+    "m": 6,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.35,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv303|9|2.0": {
+    "stem": "bwv303",
+    "m": 9,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.85,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv303|9|4.0": {
+    "stem": "bwv303",
+    "m": 9,
+    "b": 4.0,
+    "winner": "G/B",
+    "key": "Dmaj",
+    "margin": -0.99444,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv304|5|4.0": {
+    "stem": "bwv304",
+    "m": 5,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.33667,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv304|7|2.0": {
+    "stem": "bwv304",
+    "m": 7,
+    "b": 2.0,
+    "winner": "C#m7/A",
+    "key": "Dmaj",
+    "margin": 0.16429,
+    "alts": [
+      "A",
+      "A"
+    ]
+  },
+  "bwv306|5|3.0": {
+    "stem": "bwv306",
+    "m": 5,
+    "b": 3.0,
+    "winner": "Bb/D",
+    "key": "Fmaj",
+    "margin": -0.99444,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv306|15|1.0": {
+    "stem": "bwv306",
+    "m": 15,
+    "b": 1.0,
+    "winner": "FMaj7/D",
+    "key": "Fmaj",
+    "margin": 0.0071429,
+    "alts": [
+      "Dmadd9",
+      "Dmadd9"
+    ]
+  },
+  "bwv308|1|2.0": {
+    "stem": "bwv308",
+    "m": 1,
+    "b": 2.0,
+    "winner": "F7/C",
+    "key": "Bbmaj",
+    "margin": 0.12222,
+    "alts": [
+      "F7/C",
+      "F7/C"
+    ]
+  },
+  "bwv309|6|1.0": {
+    "stem": "bwv309",
+    "m": 6,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -1.25,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv309|12|1.0": {
+    "stem": "bwv309",
+    "m": 12,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv309|13|1.0": {
+    "stem": "bwv309",
+    "m": 13,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.86333,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv310|4|3.0": {
+    "stem": "bwv310",
+    "m": 4,
+    "b": 3.0,
+    "winner": "GMaj7add13/E",
+    "key": "Emin",
+    "margin": 0.20714,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv310|7|1.0": {
+    "stem": "bwv310",
+    "m": 7,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv311|1|1.0": {
+    "stem": "bwv311",
+    "m": 1,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv311|2|4.0": {
+    "stem": "bwv311",
+    "m": 2,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv311|4|1.0": {
+    "stem": "bwv311",
+    "m": 4,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.51471,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv311|5|4.0": {
+    "stem": "bwv311",
+    "m": 5,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Bmin",
+    "margin": -0.31471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv311|9|1.0": {
+    "stem": "bwv311",
+    "m": 9,
+    "b": 1.0,
+    "winner": "G/B",
+    "key": "Bmin",
+    "margin": -0.59444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv311|10|2.0": {
+    "stem": "bwv311",
+    "m": 10,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv311|11|2.0": {
+    "stem": "bwv311",
+    "m": 11,
+    "b": 2.0,
+    "winner": "A6/F#",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "A6/F#",
+      "A6/F#"
+    ]
+  },
+  "bwv311|16|4.0": {
+    "stem": "bwv311",
+    "m": 16,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv312|3|4.0": {
+    "stem": "bwv312",
+    "m": 3,
+    "b": 4.0,
+    "winner": "A#/D",
+    "key": "Amin",
+    "margin": -0.89444,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv312|11|4.0": {
+    "stem": "bwv312",
+    "m": 11,
+    "b": 4.0,
+    "winner": "A#/D",
+    "key": "Cmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv312|12|3.0": {
+    "stem": "bwv312",
+    "m": 12,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.37857,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv313|5|1.0": {
+    "stem": "bwv313",
+    "m": 5,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.87222,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv313|5|4.0": {
+    "stem": "bwv313",
+    "m": 5,
+    "b": 4.0,
+    "winner": "Gm/Eb",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/Eb",
+      "Cm7/Eb"
+    ]
+  },
+  "bwv313|6|1.0": {
+    "stem": "bwv313",
+    "m": 6,
+    "b": 1.0,
+    "winner": "Am/F",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "Dm7/F"
+    ]
+  },
+  "bwv314|3|3.0": {
+    "stem": "bwv314",
+    "m": 3,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Bmin",
+    "margin": -0.125,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv314|9|3.0": {
+    "stem": "bwv314",
+    "m": 9,
+    "b": 3.0,
+    "winner": "D/F#",
+    "key": "Bmin",
+    "margin": -0.59444,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv316|4|1.0": {
+    "stem": "bwv316",
+    "m": 4,
+    "b": 1.0,
+    "winner": "Bb/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Bb/G",
+      "Bb/G"
+    ]
+  },
+  "bwv316|4|3.0": {
+    "stem": "bwv316",
+    "m": 4,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv316|6|3.0": {
+    "stem": "bwv316",
+    "m": 6,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv317|3|3.0": {
+    "stem": "bwv317",
+    "m": 3,
+    "b": 3.0,
+    "winner": "F#m7/D",
+    "key": "Dmaj",
+    "margin": 0.16429,
+    "alts": [
+      "D",
+      "D"
+    ]
+  },
+  "bwv317|11|1.0": {
+    "stem": "bwv317",
+    "m": 11,
+    "b": 1.0,
+    "winner": "F#m7/D",
+    "key": "Dmaj",
+    "margin": 0.16429,
+    "alts": [
+      "D",
+      "D"
+    ]
+  },
+  "bwv317|11|4.0": {
+    "stem": "bwv317",
+    "m": 11,
+    "b": 4.0,
+    "winner": "Bm7b13/G",
+    "key": "Dmaj",
+    "margin": 0.10833,
+    "alts": [
+      "G",
+      "G"
+    ]
+  },
+  "bwv318|3|3.0": {
+    "stem": "bwv318",
+    "m": 3,
+    "b": 3.0,
+    "winner": "G/E",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "G/E",
+      "G/E"
+    ]
+  },
+  "bwv318|7|2.0": {
+    "stem": "bwv318",
+    "m": 7,
+    "b": 2.0,
+    "winner": "A7/E",
+    "key": "Gmaj",
+    "margin": 0.05,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv319|1|2.0": {
+    "stem": "bwv319",
+    "m": 1,
+    "b": 2.0,
+    "winner": "C/E",
+    "key": "Eharm",
+    "margin": -0.094444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv319|3|2.0": {
+    "stem": "bwv319",
+    "m": 3,
+    "b": 2.0,
+    "winner": "C/E",
+    "key": "Emin",
+    "margin": -0.59444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv319|7|1.0": {
+    "stem": "bwv319",
+    "m": 7,
+    "b": 1.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv32.6|3|1.0": {
+    "stem": "bwv32.6",
+    "m": 3,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.05,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv32.6|3|4.0": {
+    "stem": "bwv32.6",
+    "m": 3,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Gmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv32.6|9|3.0": {
+    "stem": "bwv32.6",
+    "m": 9,
+    "b": 3.0,
+    "winner": "C6/A",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "C6/A",
+      "C6/A"
+    ]
+  },
+  "bwv32.6|10|2.0": {
+    "stem": "bwv32.6",
+    "m": 10,
+    "b": 2.0,
+    "winner": "D7/A",
+    "key": "Gmaj",
+    "margin": 0.11,
+    "alts": [
+      "D7/A",
+      "D7/A"
+    ]
+  },
+  "bwv320|3|2.0": {
+    "stem": "bwv320",
+    "m": 3,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv320|10|1.0": {
+    "stem": "bwv320",
+    "m": 10,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv320|24|3.0": {
+    "stem": "bwv320",
+    "m": 24,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv320|28|2.0": {
+    "stem": "bwv320",
+    "m": 28,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Fmaj",
+    "margin": 0.05,
+    "alts": [
+      "Bb/D",
+      "Bb/D"
+    ]
+  },
+  "bwv320|33|1.0": {
+    "stem": "bwv320",
+    "m": 33,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv321|14|1.0": {
+    "stem": "bwv321",
+    "m": 14,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Bbmaj",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv322|13|3.0": {
+    "stem": "bwv322",
+    "m": 13,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv322|14|2.0": {
+    "stem": "bwv322",
+    "m": 14,
+    "b": 2.0,
+    "winner": "D7/A",
+    "key": "Cmaj",
+    "margin": 0.05,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv322|16|2.0": {
+    "stem": "bwv322",
+    "m": 16,
+    "b": 2.0,
+    "winner": "Dm7/A",
+    "key": "Cmaj",
+    "margin": 0.046667,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv323|1|1.0": {
+    "stem": "bwv323",
+    "m": 1,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "F#min",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv323|2|1.0": {
+    "stem": "bwv323",
+    "m": 2,
+    "b": 1.0,
+    "winner": "C#m/A",
+    "key": "F#min",
+    "margin": 0.0,
+    "alts": [
+      "C#m/A",
+      "A"
+    ]
+  },
+  "bwv324|1|1.0": {
+    "stem": "bwv324",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv324|2|1.0": {
+    "stem": "bwv324",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Bm/G",
+    "key": "Emin",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "G"
+    ]
+  },
+  "bwv324|2|3.0": {
+    "stem": "bwv324",
+    "m": 2,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.05,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv325|12|3.0": {
+    "stem": "bwv325",
+    "m": 12,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Fmaj",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv325|13|3.0": {
+    "stem": "bwv325",
+    "m": 13,
+    "b": 3.0,
+    "winner": "C/A",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "C/A",
+      "C/A"
+    ]
+  },
+  "bwv326|1|3.0": {
+    "stem": "bwv326",
+    "m": 1,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Bbmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv326|5|1.0": {
+    "stem": "bwv326",
+    "m": 5,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv326|12|1.0": {
+    "stem": "bwv326",
+    "m": 12,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv327|5|1.0": {
+    "stem": "bwv327",
+    "m": 5,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv327|12|1.0": {
+    "stem": "bwv327",
+    "m": 12,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv327|13|1.0": {
+    "stem": "bwv327",
+    "m": 13,
+    "b": 1.0,
+    "winner": "F#m/C#",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "F#m/D",
+      "D"
+    ]
+  },
+  "bwv327|13|3.0": {
+    "stem": "bwv327",
+    "m": 13,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.05,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv328|1|2.0": {
+    "stem": "bwv328",
+    "m": 1,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv328|9|2.0": {
+    "stem": "bwv328",
+    "m": 9,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.59615,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv328|25|4.0": {
+    "stem": "bwv328",
+    "m": 25,
+    "b": 4.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv328|34|4.0": {
+    "stem": "bwv328",
+    "m": 34,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv328|38|1.0": {
+    "stem": "bwv328",
+    "m": 38,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv328|43|2.0": {
+    "stem": "bwv328",
+    "m": 43,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv328|44|2.0": {
+    "stem": "bwv328",
+    "m": 44,
+    "b": 2.0,
+    "winner": "D#/G",
+    "key": "Cmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv329|12|1.0": {
+    "stem": "bwv329",
+    "m": 12,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.05,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv33.6|10|3.0": {
+    "stem": "bwv33.6",
+    "m": 10,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv330|5|1.0": {
+    "stem": "bwv330",
+    "m": 5,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv331|1|4.0": {
+    "stem": "bwv331",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Dm6/F",
+    "key": "Aharm",
+    "margin": 0.0,
+    "alts": [
+      "Dm6/F",
+      "Bm7b5/F"
+    ]
+  },
+  "bwv331|3|1.0": {
+    "stem": "bwv331",
+    "m": 3,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv331|6|1.0": {
+    "stem": "bwv331",
+    "m": 6,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv331|9|4.0": {
+    "stem": "bwv331",
+    "m": 9,
+    "b": 4.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv333|4|3.0": {
+    "stem": "bwv333",
+    "m": 4,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv333|5|1.0": {
+    "stem": "bwv333",
+    "m": 5,
+    "b": 1.0,
+    "winner": "BbMaj7add13/G",
+    "key": "Gmin",
+    "margin": 0.20714,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv334|1|3.0": {
+    "stem": "bwv334",
+    "m": 1,
+    "b": 3.0,
+    "winner": "Gm/Eb",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/Eb",
+      "Eb"
+    ]
+  },
+  "bwv334|1|4.0": {
+    "stem": "bwv334",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Cm6/D",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Amb5/D",
+      "Cm6/D"
+    ]
+  },
+  "bwv334|3|1.0": {
+    "stem": "bwv334",
+    "m": 3,
+    "b": 1.0,
+    "winner": "Cm6/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm6/G",
+      "Am7b5/G"
+    ]
+  },
+  "bwv335|1|4.0": {
+    "stem": "bwv335",
+    "m": 1,
+    "b": 4.0,
+    "winner": "CMaj7/A",
+    "key": "Eharm",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv336|5|1.0": {
+    "stem": "bwv336",
+    "m": 5,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.072222,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv337|2|1.0": {
+    "stem": "bwv337",
+    "m": 2,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv337|10|1.0": {
+    "stem": "bwv337",
+    "m": 10,
+    "b": 1.0,
+    "winner": "CMaj7/A",
+    "key": "Cmaj",
+    "margin": 0.0071429,
+    "alts": [
+      "Amadd9",
+      "Amadd9"
+    ]
+  },
+  "bwv338|6|3.0": {
+    "stem": "bwv338",
+    "m": 6,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv338|6|4.0": {
+    "stem": "bwv338",
+    "m": 6,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv339|1|3.0": {
+    "stem": "bwv339",
+    "m": 1,
+    "b": 3.0,
+    "winner": "E7/B",
+    "key": "Amaj",
+    "margin": 0.11,
+    "alts": [
+      "E7/B",
+      "E7/B"
+    ]
+  },
+  "bwv340|4|1.0": {
+    "stem": "bwv340",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.59615,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv340|17|3.0": {
+    "stem": "bwv340",
+    "m": 17,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv341|1|4.0": {
+    "stem": "bwv341",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Eb/G",
+    "key": "GDor",
+    "margin": -0.89444,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv342|2|3.0": {
+    "stem": "bwv342",
+    "m": 2,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv342|15|3.0": {
+    "stem": "bwv342",
+    "m": 15,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv342|19|2.0": {
+    "stem": "bwv342",
+    "m": 19,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv343|5|1.0": {
+    "stem": "bwv343",
+    "m": 5,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv343|6|1.0": {
+    "stem": "bwv343",
+    "m": 6,
+    "b": 1.0,
+    "winner": "G+/Eb",
+    "key": "Dmin",
+    "margin": 0.035294,
+    "alts": [
+      "Cm/Eb",
+      "Cm/Eb"
+    ]
+  },
+  "bwv343|16|1.0": {
+    "stem": "bwv343",
+    "m": 16,
+    "b": 1.0,
+    "winner": "Eb/G",
+    "key": "Dmin",
+    "margin": -0.39444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv344|1|3.0": {
+    "stem": "bwv344",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "GDor",
+    "margin": -1.25,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv344|3|1.0": {
+    "stem": "bwv344",
+    "m": 3,
+    "b": 1.0,
+    "winner": "Cm6/G",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm6/G",
+      "Am7b5/G"
+    ]
+  },
+  "bwv344|11|3.0": {
+    "stem": "bwv344",
+    "m": 11,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv344|13|3.0": {
+    "stem": "bwv344",
+    "m": 13,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv344|14|1.0": {
+    "stem": "bwv344",
+    "m": 14,
+    "b": 1.0,
+    "winner": "F/A",
+    "key": "Gmel",
+    "margin": -0.03,
+    "alts": [
+      "Am7b5",
+      "Am7"
+    ]
+  },
+  "bwv344|22|1.0": {
+    "stem": "bwv344",
+    "m": 22,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv344|24|1.0": {
+    "stem": "bwv344",
+    "m": 24,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv345|7|1.0": {
+    "stem": "bwv345",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.57222,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv346|1|2.0": {
+    "stem": "bwv346",
+    "m": 1,
+    "b": 2.0,
+    "winner": "D7/A",
+    "key": "Cmaj",
+    "margin": 0.05,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv346|9|2.0": {
+    "stem": "bwv346",
+    "m": 9,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv346|9|4.0": {
+    "stem": "bwv346",
+    "m": 9,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv347|2|1.0": {
+    "stem": "bwv347",
+    "m": 2,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv347|7|1.0": {
+    "stem": "bwv347",
+    "m": 7,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.36333,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv347|8|1.0": {
+    "stem": "bwv347",
+    "m": 8,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv349|5|3.0": {
+    "stem": "bwv349",
+    "m": 5,
+    "b": 3.0,
+    "winner": "Ab/C",
+    "key": "Fmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv349|14|1.0": {
+    "stem": "bwv349",
+    "m": 14,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv350|3|3.0": {
+    "stem": "bwv350",
+    "m": 3,
+    "b": 3.0,
+    "winner": "Dsus/G",
+    "key": "Gmin",
+    "margin": 0.0055556,
+    "alts": [
+      "G5",
+      "Gsus"
+    ]
+  },
+  "bwv351|2|1.0": {
+    "stem": "bwv351",
+    "m": 2,
+    "b": 1.0,
+    "winner": "F/C",
+    "key": "Dmin",
+    "margin": 0.055556,
+    "alts": [
+      "Am/C",
+      "Am/C"
+    ]
+  },
+  "bwv351|6|2.0": {
+    "stem": "bwv351",
+    "m": 6,
+    "b": 2.0,
+    "winner": "Am/F",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "Dm7/F"
+    ]
+  },
+  "bwv352|1|1.0": {
+    "stem": "bwv352",
+    "m": 1,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.53667,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv354|7|1.0": {
+    "stem": "bwv354",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Gb/Bb",
+    "key": "Fmin",
+    "margin": -0.39444,
+    "alts": [
+      "Bbm",
+      "Bbm"
+    ]
+  },
+  "bwv356|2|1.0": {
+    "stem": "bwv356",
+    "m": 2,
+    "b": 1.0,
+    "winner": "BbMaj7add13/G",
+    "key": "Gmin",
+    "margin": 0.20714,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv356|6|1.0": {
+    "stem": "bwv356",
+    "m": 6,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv356|10|1.0": {
+    "stem": "bwv356",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Am7/F",
+    "key": "Gmin",
+    "margin": 0.16429,
+    "alts": [
+      "F",
+      "F"
+    ]
+  },
+  "bwv356|10|2.0": {
+    "stem": "bwv356",
+    "m": 10,
+    "b": 2.0,
+    "winner": "C7/G",
+    "key": "Gmin",
+    "margin": 0.05,
+    "alts": [
+      "Eb/G",
+      "Eb/G"
+    ]
+  },
+  "bwv356|11|2.0": {
+    "stem": "bwv356",
+    "m": 11,
+    "b": 2.0,
+    "winner": "Gm/E",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/E",
+      "C7/E"
+    ]
+  },
+  "bwv356|11|3.0": {
+    "stem": "bwv356",
+    "m": 11,
+    "b": 3.0,
+    "winner": "Dm/F",
+    "key": "Gmin",
+    "margin": 0.23667,
+    "alts": [
+      "G9sus2/F",
+      "F"
+    ]
+  },
+  "bwv356|14|1.0": {
+    "stem": "bwv356",
+    "m": 14,
+    "b": 1.0,
+    "winner": "Bb6/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Bb6/G",
+      "Bb6/G"
+    ]
+  },
+  "bwv357|1|1.0": {
+    "stem": "bwv357",
+    "m": 1,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.81364,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv357|1|4.0": {
+    "stem": "bwv357",
+    "m": 1,
+    "b": 4.0,
+    "winner": "AbMaj7/C",
+    "key": "Cmel",
+    "margin": -0.35,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv357|5|3.0": {
+    "stem": "bwv357",
+    "m": 5,
+    "b": 3.0,
+    "winner": "Cm/Ab",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm/Ab",
+      "Fm7/Ab"
+    ]
+  },
+  "bwv357|10|2.0": {
+    "stem": "bwv357",
+    "m": 10,
+    "b": 2.0,
+    "winner": "Bb7/F",
+    "key": "Gmin",
+    "margin": 0.12941,
+    "alts": [
+      "Bb7/F",
+      "Bb7/F"
+    ]
+  },
+  "bwv358|1|1.0": {
+    "stem": "bwv358",
+    "m": 1,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.53667,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv358|2|3.0": {
+    "stem": "bwv358",
+    "m": 2,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Dharm",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv358|6|1.0": {
+    "stem": "bwv358",
+    "m": 6,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv359|6|3.0": {
+    "stem": "bwv359",
+    "m": 6,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -1.25,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv360|1|3.0": {
+    "stem": "bwv360",
+    "m": 1,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv360|2|1.0": {
+    "stem": "bwv360",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Eb6/C",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Eb6/C",
+      "Eb6/C"
+    ]
+  },
+  "bwv360|3|2.0": {
+    "stem": "bwv360",
+    "m": 3,
+    "b": 2.0,
+    "winner": "F7/C",
+    "key": "Bbmaj",
+    "margin": 0.35,
+    "alts": [
+      "Ab/C",
+      "Ab/C"
+    ]
+  },
+  "bwv360|6|3.0": {
+    "stem": "bwv360",
+    "m": 6,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Bbmaj",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv361|8|2.0": {
+    "stem": "bwv361",
+    "m": 8,
+    "b": 2.0,
+    "winner": "Eb/G",
+    "key": "Bbmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv361|9|2.5": {
+    "stem": "bwv361",
+    "m": 9,
+    "b": 2.5,
+    "winner": "Cm/G",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Cm/G",
+      "G+"
+    ]
+  },
+  "bwv361|11|1.0": {
+    "stem": "bwv361",
+    "m": 11,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv362|17|3.0": {
+    "stem": "bwv362",
+    "m": 17,
+    "b": 3.0,
+    "winner": "DbMaj7/F",
+    "key": "Bbmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv362|20|2.0": {
+    "stem": "bwv362",
+    "m": 20,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.31,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv362|25|1.0": {
+    "stem": "bwv362",
+    "m": 25,
+    "b": 1.0,
+    "winner": "Dm/Bb",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Bb"
+    ]
+  },
+  "bwv363|5|4.0": {
+    "stem": "bwv363",
+    "m": 5,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.046667,
+    "alts": [
+      "Am7b5",
+      "Am7"
+    ]
+  },
+  "bwv364|3|1.0": {
+    "stem": "bwv364",
+    "m": 3,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.45,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv364|8|1.0": {
+    "stem": "bwv364",
+    "m": 8,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.51471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv365|3|1.0": {
+    "stem": "bwv365",
+    "m": 3,
+    "b": 1.0,
+    "winner": "Am/F",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "F"
+    ]
+  },
+  "bwv368|12|1.0": {
+    "stem": "bwv368",
+    "m": 12,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Fmaj",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv368|23|1.0": {
+    "stem": "bwv368",
+    "m": 23,
+    "b": 1.0,
+    "winner": "FMaj7add13/C",
+    "key": "Fmaj",
+    "margin": 0.125,
+    "alts": [
+      "C69/D",
+      "C69/D"
+    ]
+  },
+  "bwv37.6|2|1.0": {
+    "stem": "bwv37.6",
+    "m": 2,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv37.6|11|1.0": {
+    "stem": "bwv37.6",
+    "m": 11,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.35,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv37.6|12|1.0": {
+    "stem": "bwv37.6",
+    "m": 12,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv37.6|13|1.0": {
+    "stem": "bwv37.6",
+    "m": 13,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv370|1|3.0": {
+    "stem": "bwv370",
+    "m": 1,
+    "b": 3.0,
+    "winner": "FMaj7add13/D",
+    "key": "Cmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv370|3|1.0": {
+    "stem": "bwv370",
+    "m": 3,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Cmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv370|3|2.0": {
+    "stem": "bwv370",
+    "m": 3,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv370|6|3.0": {
+    "stem": "bwv370",
+    "m": 6,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv370|6|4.0": {
+    "stem": "bwv370",
+    "m": 6,
+    "b": 4.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv374|3|1.0": {
+    "stem": "bwv374",
+    "m": 3,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.925,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv374|10|1.0": {
+    "stem": "bwv374",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Eb/G",
+    "key": "Gmel",
+    "margin": -0.89444,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv374|15|1.0": {
+    "stem": "bwv374",
+    "m": 15,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv377|3|1.0": {
+    "stem": "bwv377",
+    "m": 3,
+    "b": 1.0,
+    "winner": "G/B",
+    "key": "Dmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv38.6|2|1.0": {
+    "stem": "bwv38.6",
+    "m": 2,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.05,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv38.6|4|1.0": {
+    "stem": "bwv38.6",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv38.6|5|2.0": {
+    "stem": "bwv38.6",
+    "m": 5,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.31471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv38.6|6|4.0": {
+    "stem": "bwv38.6",
+    "m": 6,
+    "b": 4.0,
+    "winner": "C6/A",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "C6/A",
+      "C6/A"
+    ]
+  },
+  "bwv38.6|9|1.0": {
+    "stem": "bwv38.6",
+    "m": 9,
+    "b": 1.0,
+    "winner": "CMaj7/D",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv38.6|13|2.0": {
+    "stem": "bwv38.6",
+    "m": 13,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv383|3|1.0": {
+    "stem": "bwv383",
+    "m": 3,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv383|4|1.0": {
+    "stem": "bwv383",
+    "m": 4,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.89615,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv384|1|1.0": {
+    "stem": "bwv384",
+    "m": 1,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv385|8|1.0": {
+    "stem": "bwv385",
+    "m": 8,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv386|10|1.0": {
+    "stem": "bwv386",
+    "m": 10,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv387|2|3.0": {
+    "stem": "bwv387",
+    "m": 2,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv388|2|4.0": {
+    "stem": "bwv388",
+    "m": 2,
+    "b": 4.0,
+    "winner": "G6/E",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv388|3|2.0": {
+    "stem": "bwv388",
+    "m": 3,
+    "b": 2.0,
+    "winner": "F/A",
+    "key": "Gmaj",
+    "margin": -0.89444,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv388|8|3.0": {
+    "stem": "bwv388",
+    "m": 8,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.95,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv389|1|2.0": {
+    "stem": "bwv389",
+    "m": 1,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv389|3|3.0": {
+    "stem": "bwv389",
+    "m": 3,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv389|15|3.0": {
+    "stem": "bwv389",
+    "m": 15,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Cmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv389|16|1.0": {
+    "stem": "bwv389",
+    "m": 16,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Cmaj",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv389|16|4.0": {
+    "stem": "bwv389",
+    "m": 16,
+    "b": 4.0,
+    "winner": "D9/F#",
+    "key": "Cmaj",
+    "margin": 0.15714,
+    "alts": [
+      "D9/F#",
+      "D9/F#"
+    ]
+  },
+  "bwv390|6|1.0": {
+    "stem": "bwv390",
+    "m": 6,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv390|11|1.0": {
+    "stem": "bwv390",
+    "m": 11,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.53667,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv390|32|1.0": {
+    "stem": "bwv390",
+    "m": 32,
+    "b": 1.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv391|6|3.0": {
+    "stem": "bwv391",
+    "m": 6,
+    "b": 3.0,
+    "winner": "A7/E",
+    "key": "Gmaj",
+    "margin": 0.05,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv391|8|2.0": {
+    "stem": "bwv391",
+    "m": 8,
+    "b": 2.0,
+    "winner": "F#m/A",
+    "key": "Gmaj",
+    "margin": 0.31,
+    "alts": [
+      "A7",
+      "F#m/A"
+    ]
+  },
+  "bwv391|9|3.0": {
+    "stem": "bwv391",
+    "m": 9,
+    "b": 3.0,
+    "winner": "F#m/A",
+    "key": "Gmaj",
+    "margin": 0.084444,
+    "alts": [
+      "A",
+      "A"
+    ]
+  },
+  "bwv391|12|1.0": {
+    "stem": "bwv391",
+    "m": 12,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Gmaj",
+    "margin": -0.35,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv392|1|2.0": {
+    "stem": "bwv392",
+    "m": 1,
+    "b": 2.0,
+    "winner": "Cm6/D",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Amb5/D",
+      "Cm6/D"
+    ]
+  },
+  "bwv392|4|1.0": {
+    "stem": "bwv392",
+    "m": 4,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv392|5|2.0": {
+    "stem": "bwv392",
+    "m": 5,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv392|8|1.0": {
+    "stem": "bwv392",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Eb/G",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Eb/G",
+      "Eb/G"
+    ]
+  },
+  "bwv393|1|1.0": {
+    "stem": "bwv393",
+    "m": 1,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv393|4|2.0": {
+    "stem": "bwv393",
+    "m": 4,
+    "b": 2.0,
+    "winner": "B7/F#",
+    "key": "Amaj",
+    "margin": 0.03,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv393|5|1.0": {
+    "stem": "bwv393",
+    "m": 5,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": 0.14,
+    "alts": [
+      "A/F#",
+      "A/F#"
+    ]
+  },
+  "bwv393|7|1.0": {
+    "stem": "bwv393",
+    "m": 7,
+    "b": 1.0,
+    "winner": "AMaj7add13/F#",
+    "key": "Amaj",
+    "margin": 0.20714,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv393|12|2.0": {
+    "stem": "bwv393",
+    "m": 12,
+    "b": 2.0,
+    "winner": "Asus2/E",
+    "key": "Amaj",
+    "margin": 0.17778,
+    "alts": [
+      "E5",
+      "Esus"
+    ]
+  },
+  "bwv394|7|1.0": {
+    "stem": "bwv394",
+    "m": 7,
+    "b": 1.0,
+    "winner": "D/F#",
+    "key": "Amaj",
+    "margin": -0.59444,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv395|2|4.0": {
+    "stem": "bwv395",
+    "m": 2,
+    "b": 4.0,
+    "winner": "D/F#",
+    "key": "Amaj",
+    "margin": -0.59444,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv395|5|2.0": {
+    "stem": "bwv395",
+    "m": 5,
+    "b": 2.0,
+    "winner": "G/B",
+    "key": "Amaj",
+    "margin": -0.39444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv395|7|1.0": {
+    "stem": "bwv395",
+    "m": 7,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv395|8|1.0": {
+    "stem": "bwv395",
+    "m": 8,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Amaj",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv395|11|2.0": {
+    "stem": "bwv395",
+    "m": 11,
+    "b": 2.0,
+    "winner": "G/B",
+    "key": "Amaj",
+    "margin": -0.39444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv396|5|4.0": {
+    "stem": "bwv396",
+    "m": 5,
+    "b": 4.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv396|7|2.0": {
+    "stem": "bwv396",
+    "m": 7,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv397|11|1.0": {
+    "stem": "bwv397",
+    "m": 11,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv397|12|1.0": {
+    "stem": "bwv397",
+    "m": 12,
+    "b": 1.0,
+    "winner": "Dm/Bb",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Gm7/Bb"
+    ]
+  },
+  "bwv399|5|2.0": {
+    "stem": "bwv399",
+    "m": 5,
+    "b": 2.0,
+    "winner": "GMaj7/E",
+    "key": "Emin",
+    "margin": 0.14,
+    "alts": [
+      "E9sus2",
+      "GMaj7/E"
+    ]
+  },
+  "bwv4.8|3|1.0": {
+    "stem": "bwv4.8",
+    "m": 3,
+    "b": 1.0,
+    "winner": "A#/D",
+    "key": "ADor",
+    "margin": -0.89444,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv4.8|6|1.0": {
+    "stem": "bwv4.8",
+    "m": 6,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "ADor",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv4.8|8|1.0": {
+    "stem": "bwv4.8",
+    "m": 8,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "ADor",
+    "margin": -0.85,
+    "alts": [
+      "Am",
+      "A5"
+    ]
+  },
+  "bwv40.3|2|3.0": {
+    "stem": "bwv40.3",
+    "m": 2,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv40.3|7|2.0": {
+    "stem": "bwv40.3",
+    "m": 7,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv40.3|9|2.0": {
+    "stem": "bwv40.3",
+    "m": 9,
+    "b": 2.0,
+    "winner": "Gm/Eb",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/Eb",
+      "Cm7/Eb"
+    ]
+  },
+  "bwv40.6|1|1.0": {
+    "stem": "bwv40.6",
+    "m": 1,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv40.6|5|3.0": {
+    "stem": "bwv40.6",
+    "m": 5,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.31471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv40.6|6|2.0": {
+    "stem": "bwv40.6",
+    "m": 6,
+    "b": 2.0,
+    "winner": "Dm/Bb",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Gm7/Bb"
+    ]
+  },
+  "bwv40.6|7|1.0": {
+    "stem": "bwv40.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "C6/A",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "C6/A",
+      "C6/A"
+    ]
+  },
+  "bwv40.6|7|2.0": {
+    "stem": "bwv40.6",
+    "m": 7,
+    "b": 2.0,
+    "winner": "Cm6/G",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Cm6/G",
+      "Am7b5/G"
+    ]
+  },
+  "bwv40.6|11|4.0": {
+    "stem": "bwv40.6",
+    "m": 11,
+    "b": 4.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv40.6|12|3.0": {
+    "stem": "bwv40.6",
+    "m": 12,
+    "b": 3.0,
+    "winner": "Dm/A",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Bb"
+    ]
+  },
+  "bwv40.6|14|1.0": {
+    "stem": "bwv40.6",
+    "m": 14,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv40.8|1|1.0": {
+    "stem": "bwv40.8",
+    "m": 1,
+    "b": 1.0,
+    "winner": "DbMaj7/F",
+    "key": "Cmin",
+    "margin": -0.85,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv40.8|11|3.0": {
+    "stem": "bwv40.8",
+    "m": 11,
+    "b": 3.0,
+    "winner": "Eb/G",
+    "key": "Cmin",
+    "margin": 0.0,
+    "alts": [
+      "Eb/G",
+      "Eb/G"
+    ]
+  },
+  "bwv40.8|11|4.0": {
+    "stem": "bwv40.8",
+    "m": 11,
+    "b": 4.0,
+    "winner": "DbMaj7/F",
+    "key": "Cmin",
+    "margin": -0.85,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv40.8|12|3.0": {
+    "stem": "bwv40.8",
+    "m": 12,
+    "b": 3.0,
+    "winner": "DbMaj7/F",
+    "key": "Cmin",
+    "margin": -0.85,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv40.8|15|3.0": {
+    "stem": "bwv40.8",
+    "m": 15,
+    "b": 3.0,
+    "winner": "Gb/Bb",
+    "key": "Cmin",
+    "margin": -0.89444,
+    "alts": [
+      "Bbm",
+      "Bb5"
+    ]
+  },
+  "bwv400|6|3.0": {
+    "stem": "bwv400",
+    "m": 6,
+    "b": 3.0,
+    "winner": "F7/C",
+    "key": "Ebmaj",
+    "margin": 0.05,
+    "alts": [
+      "Ab/C",
+      "Ab/C"
+    ]
+  },
+  "bwv400|12|1.0": {
+    "stem": "bwv400",
+    "m": 12,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv400|13|1.0": {
+    "stem": "bwv400",
+    "m": 13,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.558,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv401|3|1.0": {
+    "stem": "bwv401",
+    "m": 3,
+    "b": 1.0,
+    "winner": "FMaj7add13/D",
+    "key": "Fmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv401|9|2.0": {
+    "stem": "bwv401",
+    "m": 9,
+    "b": 2.0,
+    "winner": "FMaj7add13/D",
+    "key": "Fmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv402|2|3.0": {
+    "stem": "bwv402",
+    "m": 2,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Ebmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv402|7|4.0": {
+    "stem": "bwv402",
+    "m": 7,
+    "b": 4.0,
+    "winner": "Bbm6/Db",
+    "key": "Ebmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bbm6/Db",
+      "Eb7/Db"
+    ]
+  },
+  "bwv402|12|3.0": {
+    "stem": "bwv402",
+    "m": 12,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Ebmaj",
+    "margin": -0.05,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv402|14|1.0": {
+    "stem": "bwv402",
+    "m": 14,
+    "b": 1.0,
+    "winner": "Db/F",
+    "key": "Ebmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Fm",
+      "Fm"
+    ]
+  },
+  "bwv402|16|3.0": {
+    "stem": "bwv402",
+    "m": 16,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Ebmaj",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv403|4|3.0": {
+    "stem": "bwv403",
+    "m": 4,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv403|16|1.0": {
+    "stem": "bwv403",
+    "m": 16,
+    "b": 1.0,
+    "winner": "BbMaj7/G",
+    "key": "Gmel",
+    "margin": 0.0071429,
+    "alts": [
+      "Gmadd9",
+      "Gmadd9"
+    ]
+  },
+  "bwv403|18|1.0": {
+    "stem": "bwv403",
+    "m": 18,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmel",
+    "margin": -0.35,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv403|19|1.0": {
+    "stem": "bwv403",
+    "m": 19,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "GDor",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv404|3|1.0": {
+    "stem": "bwv404",
+    "m": 3,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv404|6|2.0": {
+    "stem": "bwv404",
+    "m": 6,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv405|1|1.0": {
+    "stem": "bwv405",
+    "m": 1,
+    "b": 1.0,
+    "winner": "BbMaj7/C",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv405|9|3.0": {
+    "stem": "bwv405",
+    "m": 9,
+    "b": 3.0,
+    "winner": "Bb/D",
+    "key": "Dharm",
+    "margin": -0.094444,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv406|7|3.0": {
+    "stem": "bwv406",
+    "m": 7,
+    "b": 3.0,
+    "winner": "C7/G",
+    "key": "Dmin",
+    "margin": 0.075,
+    "alts": [
+      "Gm6",
+      "Gm6"
+    ]
+  },
+  "bwv407|3|1.0": {
+    "stem": "bwv407",
+    "m": 3,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv408|10|1.0": {
+    "stem": "bwv408",
+    "m": 10,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv409|2|3.0": {
+    "stem": "bwv409",
+    "m": 2,
+    "b": 3.0,
+    "winner": "D/F#",
+    "key": "Amaj",
+    "margin": -0.094444,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv410|1|1.0": {
+    "stem": "bwv410",
+    "m": 1,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv410|3|1.0": {
+    "stem": "bwv410",
+    "m": 3,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.95,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv410|13|4.0": {
+    "stem": "bwv410",
+    "m": 13,
+    "b": 4.0,
+    "winner": "Bb/D",
+    "key": "Gmin",
+    "margin": -0.57667,
+    "alts": [
+      "Dm7b5",
+      "Dm"
+    ]
+  },
+  "bwv412|1|3.0": {
+    "stem": "bwv412",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmel",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv413|5|3.0": {
+    "stem": "bwv413",
+    "m": 5,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Dmin",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv413|9|1.0": {
+    "stem": "bwv413",
+    "m": 9,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv413|29|1.0": {
+    "stem": "bwv413",
+    "m": 29,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv414|2|1.0": {
+    "stem": "bwv414",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Dm7/F",
+    "key": "Gmaj",
+    "margin": 0.15588,
+    "alts": [
+      "F",
+      "F"
+    ]
+  },
+  "bwv414|6|3.0": {
+    "stem": "bwv414",
+    "m": 6,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv415|3|2.0": {
+    "stem": "bwv415",
+    "m": 3,
+    "b": 2.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv416|1|2.0": {
+    "stem": "bwv416",
+    "m": 1,
+    "b": 2.0,
+    "winner": "BbMaj7/D",
+    "key": "Dharm",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv416|2|3.0": {
+    "stem": "bwv416",
+    "m": 2,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv416|4|2.0": {
+    "stem": "bwv416",
+    "m": 4,
+    "b": 2.0,
+    "winner": "Gm/Bb",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/Bb",
+      "Em7b5/Bb"
+    ]
+  },
+  "bwv416|5|4.0": {
+    "stem": "bwv416",
+    "m": 5,
+    "b": 4.0,
+    "winner": "C7/G",
+    "key": "Dmin",
+    "margin": 0.11,
+    "alts": [
+      "C7/G",
+      "C7/G"
+    ]
+  },
+  "bwv416|7|1.0": {
+    "stem": "bwv416",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Am/C",
+    "key": "Dmin",
+    "margin": 0.0011111,
+    "alts": [
+      "C",
+      "G6/C"
+    ]
+  },
+  "bwv416|7|3.0": {
+    "stem": "bwv416",
+    "m": 7,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv416|8|1.0": {
+    "stem": "bwv416",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Am/F",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Am/F",
+      "Dm/F"
+    ]
+  },
+  "bwv416|8|3.0": {
+    "stem": "bwv416",
+    "m": 8,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv416|9|2.0": {
+    "stem": "bwv416",
+    "m": 9,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Dmin",
+    "margin": 0.05,
+    "alts": [
+      "Bb/D",
+      "Bb/D"
+    ]
+  },
+  "bwv416|11|1.0": {
+    "stem": "bwv416",
+    "m": 11,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.81471,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv416|11|3.0": {
+    "stem": "bwv416",
+    "m": 11,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.51471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv417|4|1.0": {
+    "stem": "bwv417",
+    "m": 4,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": 0.33,
+    "alts": [
+      "GMaj7/B",
+      "GMaj7/B"
+    ]
+  },
+  "bwv417|7|4.0": {
+    "stem": "bwv417",
+    "m": 7,
+    "b": 4.0,
+    "winner": "D6/B",
+    "key": "Bmin",
+    "margin": 0.0,
+    "alts": [
+      "D6/B",
+      "D6/B"
+    ]
+  },
+  "bwv418|1|3.0": {
+    "stem": "bwv418",
+    "m": 1,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv418|4|1.0": {
+    "stem": "bwv418",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv418|5|2.0": {
+    "stem": "bwv418",
+    "m": 5,
+    "b": 2.0,
+    "winner": "G/B",
+    "key": "Cmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv418|6|3.0": {
+    "stem": "bwv418",
+    "m": 6,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv418|11|1.0": {
+    "stem": "bwv418",
+    "m": 11,
+    "b": 1.0,
+    "winner": "C/A",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "C/A",
+      "C/A"
+    ]
+  },
+  "bwv418|14|3.0": {
+    "stem": "bwv418",
+    "m": 14,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv419|2|3.0": {
+    "stem": "bwv419",
+    "m": 2,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv419|5|2.0": {
+    "stem": "bwv419",
+    "m": 5,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.063333,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv419|5|4.0": {
+    "stem": "bwv419",
+    "m": 5,
+    "b": 4.0,
+    "winner": "F/A",
+    "key": "Cmaj",
+    "margin": 0.061111,
+    "alts": [
+      "F/A",
+      "F/A"
+    ]
+  },
+  "bwv419|7|1.0": {
+    "stem": "bwv419",
+    "m": 7,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv42.7|5|4.0": {
+    "stem": "bwv42.7",
+    "m": 5,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "F#min",
+    "margin": -0.51471,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv42.7|8|1.0": {
+    "stem": "bwv42.7",
+    "m": 8,
+    "b": 1.0,
+    "winner": "F#m/D",
+    "key": "F#min",
+    "margin": 0.0,
+    "alts": [
+      "F#m/D",
+      "D"
+    ]
+  },
+  "bwv42.7|8|3.0": {
+    "stem": "bwv42.7",
+    "m": 8,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "F#min",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv42.7|23|4.0": {
+    "stem": "bwv42.7",
+    "m": 23,
+    "b": 4.0,
+    "winner": "GMaj7/B",
+    "key": "F#min",
+    "margin": -0.85,
+    "alts": [
+      "Bm",
+      "B5"
+    ]
+  },
+  "bwv421|2|1.0": {
+    "stem": "bwv421",
+    "m": 2,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.7,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv421|7|3.0": {
+    "stem": "bwv421",
+    "m": 7,
+    "b": 3.0,
+    "winner": "Dm/Bb",
+    "key": "Amin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Bb"
+    ]
+  },
+  "bwv421|9|2.0": {
+    "stem": "bwv421",
+    "m": 9,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv422|4|1.0": {
+    "stem": "bwv422",
+    "m": 4,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv423|15|3.0": {
+    "stem": "bwv423",
+    "m": 15,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Dmin",
+    "margin": -0.925,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv424|4|2.0": {
+    "stem": "bwv424",
+    "m": 4,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv425|3|3.0": {
+    "stem": "bwv425",
+    "m": 3,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv425|9|1.0": {
+    "stem": "bwv425",
+    "m": 9,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Amin",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv425|12|1.0": {
+    "stem": "bwv425",
+    "m": 12,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv425|20|3.0": {
+    "stem": "bwv425",
+    "m": 20,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.87222,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv425|21|1.0": {
+    "stem": "bwv425",
+    "m": 21,
+    "b": 1.0,
+    "winner": "Dm/Bb",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Gm7/Bb"
+    ]
+  },
+  "bwv426|5|2.0": {
+    "stem": "bwv426",
+    "m": 5,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.16471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv426|8|1.0": {
+    "stem": "bwv426",
+    "m": 8,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.05,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv426|11|3.0": {
+    "stem": "bwv426",
+    "m": 11,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.46429,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv427|1|4.0": {
+    "stem": "bwv427",
+    "m": 1,
+    "b": 4.0,
+    "winner": "Bb7/F",
+    "key": "Ebmaj",
+    "margin": 0.11,
+    "alts": [
+      "Bb7/F",
+      "Bb7/F"
+    ]
+  },
+  "bwv427|5|1.0": {
+    "stem": "bwv427",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Cm7/Ab",
+    "key": "Ebmaj",
+    "margin": 0.16429,
+    "alts": [
+      "Ab",
+      "Ab"
+    ]
+  },
+  "bwv427|7|1.0": {
+    "stem": "bwv427",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7add13/C",
+    "key": "Ebmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv428|1|2.0": {
+    "stem": "bwv428",
+    "m": 1,
+    "b": 2.0,
+    "winner": "Gm6/A#",
+    "key": "Gmaj",
+    "margin": 0.0,
+    "alts": [
+      "Gm6/A#",
+      "C7/A#"
+    ]
+  },
+  "bwv428|1|3.0": {
+    "stem": "bwv428",
+    "m": 1,
+    "b": 3.0,
+    "winner": "D7/A",
+    "key": "Gmaj",
+    "margin": 0.11,
+    "alts": [
+      "D7/A",
+      "D7/A"
+    ]
+  },
+  "bwv428|5|3.0": {
+    "stem": "bwv428",
+    "m": 5,
+    "b": 3.0,
+    "winner": "F#dim7/Eb",
+    "key": "Gmaj",
+    "margin": 0.025,
+    "alts": [
+      "Ebdim#5",
+      "Ebm7b5#5"
+    ]
+  },
+  "bwv428|6|3.0": {
+    "stem": "bwv428",
+    "m": 6,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.95,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv429|1|2.0": {
+    "stem": "bwv429",
+    "m": 1,
+    "b": 2.0,
+    "winner": "D/F#",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "D/F#",
+      "D/F#"
+    ]
+  },
+  "bwv429|2|3.0": {
+    "stem": "bwv429",
+    "m": 2,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.05,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv429|3|3.0": {
+    "stem": "bwv429",
+    "m": 3,
+    "b": 3.0,
+    "winner": "C#m7/A",
+    "key": "Amaj",
+    "margin": 0.17143,
+    "alts": [
+      "Aadd9",
+      "Aadd9"
+    ]
+  },
+  "bwv429|10|3.0": {
+    "stem": "bwv429",
+    "m": 10,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.95,
+    "alts": [
+      "F#m",
+      "F#5"
+    ]
+  },
+  "bwv43.11|7|1.0": {
+    "stem": "bwv43.11",
+    "m": 7,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.05,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv43.11|16|1.0": {
+    "stem": "bwv43.11",
+    "m": 16,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Gmaj",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv430|1|4.0": {
+    "stem": "bwv430",
+    "m": 1,
+    "b": 4.0,
+    "winner": "A/F#",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "A/F#",
+      "A/F#"
+    ]
+  },
+  "bwv430|6|3.0": {
+    "stem": "bwv430",
+    "m": 6,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv431|6|1.0": {
+    "stem": "bwv431",
+    "m": 6,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.86333,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv431|8|1.0": {
+    "stem": "bwv431",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Bb6/G",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bb6/G",
+      "Bb6/G"
+    ]
+  },
+  "bwv433|4|3.0": {
+    "stem": "bwv433",
+    "m": 4,
+    "b": 3.0,
+    "winner": "GMaj7add13/E",
+    "key": "Gmaj",
+    "margin": 0.20714,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv433|5|3.0": {
+    "stem": "bwv433",
+    "m": 5,
+    "b": 3.0,
+    "winner": "Cadd9/E",
+    "key": "Gmaj",
+    "margin": -0.06,
+    "alts": [
+      "Em7b5",
+      "Em7"
+    ]
+  },
+  "bwv434|2|2.0": {
+    "stem": "bwv434",
+    "m": 2,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Aharm",
+    "margin": 0.12941,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv434|6|1.0": {
+    "stem": "bwv434",
+    "m": 6,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv435|2|2.0": {
+    "stem": "bwv435",
+    "m": 2,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv435|4|1.0": {
+    "stem": "bwv435",
+    "m": 4,
+    "b": 1.0,
+    "winner": "C/E",
+    "key": "Emin",
+    "margin": -0.59444,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv435|9|3.0": {
+    "stem": "bwv435",
+    "m": 9,
+    "b": 3.0,
+    "winner": "G6/E",
+    "key": "Emin",
+    "margin": 0.0,
+    "alts": [
+      "G6/E",
+      "G6/E"
+    ]
+  },
+  "bwv435|10|1.0": {
+    "stem": "bwv435",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Bm/G",
+    "key": "Emin",
+    "margin": 0.0,
+    "alts": [
+      "Bm/G",
+      "Em/G"
+    ]
+  },
+  "bwv435|10|3.0": {
+    "stem": "bwv435",
+    "m": 10,
+    "b": 3.0,
+    "winner": "F/A",
+    "key": "Emin",
+    "margin": -0.39444,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv436|9|1.0": {
+    "stem": "bwv436",
+    "m": 9,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Emaj",
+    "margin": -0.35,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv437|19|2.0": {
+    "stem": "bwv437",
+    "m": 19,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": -0.036667,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv437|25|4.0": {
+    "stem": "bwv437",
+    "m": 25,
+    "b": 4.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv437|29|3.0": {
+    "stem": "bwv437",
+    "m": 29,
+    "b": 3.0,
+    "winner": "Gm7/Bb",
+    "key": "DDor",
+    "margin": 0.24,
+    "alts": [
+      "Gm7/Bb",
+      "Dm/Bb"
+    ]
+  },
+  "bwv438|7|1.0": {
+    "stem": "bwv438",
+    "m": 7,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Fmaj",
+    "margin": -0.51471,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv44.7|4|1.0": {
+    "stem": "bwv44.7",
+    "m": 4,
+    "b": 1.0,
+    "winner": "Eb/G",
+    "key": "Bbmaj",
+    "margin": -0.19,
+    "alts": [
+      "Gm7b5",
+      "Gm7"
+    ]
+  },
+  "bwv44.7|5|2.0": {
+    "stem": "bwv44.7",
+    "m": 5,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv44.7|7|1.0": {
+    "stem": "bwv44.7",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv44.7|8|1.0": {
+    "stem": "bwv44.7",
+    "m": 8,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Bbmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv44.7|11|1.0": {
+    "stem": "bwv44.7",
+    "m": 11,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.05,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv45.7|1|2.0": {
+    "stem": "bwv45.7",
+    "m": 1,
+    "b": 2.0,
+    "winner": "B7/F#",
+    "key": "Emaj",
+    "margin": 0.12941,
+    "alts": [
+      "B7/F#",
+      "B7/F#"
+    ]
+  },
+  "bwv45.7|7|2.0": {
+    "stem": "bwv45.7",
+    "m": 7,
+    "b": 2.0,
+    "winner": "F#7/C#",
+    "key": "Emaj",
+    "margin": 0.05,
+    "alts": [
+      "A/C#",
+      "A/C#"
+    ]
+  },
+  "bwv45.7|11|4.0": {
+    "stem": "bwv45.7",
+    "m": 11,
+    "b": 4.0,
+    "winner": "A/C#",
+    "key": "Emaj",
+    "margin": 0.0,
+    "alts": [
+      "A/C#",
+      "A/C#"
+    ]
+  },
+  "bwv46.6|1|1.0": {
+    "stem": "bwv46.6",
+    "m": 1,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv46.6|2|1.0": {
+    "stem": "bwv46.6",
+    "m": 2,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Fmaj",
+    "margin": -0.35,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv46.6|3|3.0": {
+    "stem": "bwv46.6",
+    "m": 3,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv46.6|11|3.0": {
+    "stem": "bwv46.6",
+    "m": 11,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv46.6|14|2.0": {
+    "stem": "bwv46.6",
+    "m": 14,
+    "b": 2.0,
+    "winner": "Bb/D",
+    "key": "Fmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv46.6|15|3.0": {
+    "stem": "bwv46.6",
+    "m": 15,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv46.6|16|4.0": {
+    "stem": "bwv46.6",
+    "m": 16,
+    "b": 4.0,
+    "winner": "F6/D",
+    "key": "Fmaj",
+    "margin": 0.0,
+    "alts": [
+      "F6/D",
+      "F6/D"
+    ]
+  },
+  "bwv46.6|17|1.0": {
+    "stem": "bwv46.6",
+    "m": 17,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Fmaj",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv46.6|17|2.0": {
+    "stem": "bwv46.6",
+    "m": 17,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "DMix\u266d6",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv47.5|1|1.0": {
+    "stem": "bwv47.5",
+    "m": 1,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "Gharm",
+    "margin": -0.89444,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv47.5|1|4.0": {
+    "stem": "bwv47.5",
+    "m": 1,
+    "b": 4.0,
+    "winner": "D+/Bb",
+    "key": "Gharm",
+    "margin": 0.15,
+    "alts": [
+      "Gm/Bb",
+      "Gm/Bb"
+    ]
+  },
+  "bwv47.5|2|2.0": {
+    "stem": "bwv47.5",
+    "m": 2,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv47.5|5|4.0": {
+    "stem": "bwv47.5",
+    "m": 5,
+    "b": 4.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv47.5|9|1.0": {
+    "stem": "bwv47.5",
+    "m": 9,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "Gmin",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv48.3|2|1.0": {
+    "stem": "bwv48.3",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Bbm6/Db",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Gm7b5/Db",
+      "Bbm6/Db"
+    ]
+  },
+  "bwv48.3|2|3.0": {
+    "stem": "bwv48.3",
+    "m": 2,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv48.3|3|1.0": {
+    "stem": "bwv48.3",
+    "m": 3,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Bbmaj",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv48.7|7|2.0": {
+    "stem": "bwv48.7",
+    "m": 7,
+    "b": 2.0,
+    "winner": "Eb/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Eb/G",
+      "Eb/G"
+    ]
+  },
+  "bwv48.7|9|2.0": {
+    "stem": "bwv48.7",
+    "m": 9,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Gmin",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv5.7|1|3.0": {
+    "stem": "bwv5.7",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv5.7|3|3.0": {
+    "stem": "bwv5.7",
+    "m": 3,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv5.7|5|1.0": {
+    "stem": "bwv5.7",
+    "m": 5,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv5.7|7|1.0": {
+    "stem": "bwv5.7",
+    "m": 7,
+    "b": 1.0,
+    "winner": "Bb/G",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Bb/G",
+      "Bb/G"
+    ]
+  },
+  "bwv55.5|2|1.0": {
+    "stem": "bwv55.5",
+    "m": 2,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Ab/C",
+      "Ab/C"
+    ]
+  },
+  "bwv55.5|6|3.0": {
+    "stem": "bwv55.5",
+    "m": 6,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Bbmaj",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv55.5|10|1.0": {
+    "stem": "bwv55.5",
+    "m": 10,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Ab/C",
+      "Ab/C"
+    ]
+  },
+  "bwv55.5|11|2.0": {
+    "stem": "bwv55.5",
+    "m": 11,
+    "b": 2.0,
+    "winner": "F7/C",
+    "key": "Bbmaj",
+    "margin": 0.35,
+    "alts": [
+      "Ab/C",
+      "Ab/C"
+    ]
+  },
+  "bwv56.5|6|1.0": {
+    "stem": "bwv56.5",
+    "m": 6,
+    "b": 1.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv56.5|8|1.0": {
+    "stem": "bwv56.5",
+    "m": 8,
+    "b": 1.0,
+    "winner": "DbMaj7/F",
+    "key": "Gmin",
+    "margin": -0.85,
+    "alts": [
+      "Fm",
+      "F5"
+    ]
+  },
+  "bwv56.5|8|4.0": {
+    "stem": "bwv56.5",
+    "m": 8,
+    "b": 4.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv57.8|4|2.0": {
+    "stem": "bwv57.8",
+    "m": 4,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Bbmaj",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv57.8|6|2.0": {
+    "stem": "bwv57.8",
+    "m": 6,
+    "b": 2.0,
+    "winner": "F7/C",
+    "key": "Bbmaj",
+    "margin": 0.29118,
+    "alts": [
+      "F7/C",
+      "F7/C"
+    ]
+  },
+  "bwv57.8|12|1.0": {
+    "stem": "bwv57.8",
+    "m": 12,
+    "b": 1.0,
+    "winner": "Bb/G",
+    "key": "Bbmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bb/G",
+      "Bb/G"
+    ]
+  },
+  "bwv6.6|5|1.0": {
+    "stem": "bwv6.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "Ab/C",
+    "key": "Gmin",
+    "margin": -0.89444,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv6.6|7|1.0": {
+    "stem": "bwv6.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.014706,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv6.6|8|1.0": {
+    "stem": "bwv6.6",
+    "m": 8,
+    "b": 1.0,
+    "winner": "Gm/Eb",
+    "key": "Gmin",
+    "margin": 0.0,
+    "alts": [
+      "Gm/Eb",
+      "Cm7/Eb"
+    ]
+  },
+  "bwv60.5|10|2.0": {
+    "stem": "bwv60.5",
+    "m": 10,
+    "b": 2.0,
+    "winner": "F#dim7/A",
+    "key": "Amaj",
+    "margin": 0.025,
+    "alts": [
+      "B7/A",
+      "Asus69"
+    ]
+  },
+  "bwv60.5|16|2.0": {
+    "stem": "bwv60.5",
+    "m": 16,
+    "b": 2.0,
+    "winner": "Dm6/F",
+    "key": "Amaj",
+    "margin": 0.0,
+    "alts": [
+      "Dm6/F",
+      "Bm7b5/F"
+    ]
+  },
+  "bwv60.5|16|3.0": {
+    "stem": "bwv60.5",
+    "m": 16,
+    "b": 3.0,
+    "winner": "C#m/E",
+    "key": "Amaj",
+    "margin": 0.31,
+    "alts": [
+      "E7",
+      "C#m/E"
+    ]
+  },
+  "bwv60.5|19|1.0": {
+    "stem": "bwv60.5",
+    "m": 19,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv64.2|2|3.0": {
+    "stem": "bwv64.2",
+    "m": 2,
+    "b": 3.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv64.2|5|1.0": {
+    "stem": "bwv64.2",
+    "m": 5,
+    "b": 1.0,
+    "winner": "C6/A",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "C6/A",
+      "C6/A"
+    ]
+  },
+  "bwv64.2|8|1.0": {
+    "stem": "bwv64.2",
+    "m": 8,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv64.4|14|1.0": {
+    "stem": "bwv64.4",
+    "m": 14,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Dmaj",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv64.8|6|1.0": {
+    "stem": "bwv64.8",
+    "m": 6,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.95,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv64.8|9|2.0": {
+    "stem": "bwv64.8",
+    "m": 9,
+    "b": 2.0,
+    "winner": "A7/E",
+    "key": "Emin",
+    "margin": 0.05,
+    "alts": [
+      "C/E",
+      "C/E"
+    ]
+  },
+  "bwv65.2|6|1.0": {
+    "stem": "bwv65.2",
+    "m": 6,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv65.2|11|3.0": {
+    "stem": "bwv65.2",
+    "m": 11,
+    "b": 3.0,
+    "winner": "A+/F",
+    "key": "Cmaj",
+    "margin": 0.15,
+    "alts": [
+      "Dm/F",
+      "Dm/F"
+    ]
+  },
+  "bwv65.2|15|1.0": {
+    "stem": "bwv65.2",
+    "m": 15,
+    "b": 1.0,
+    "winner": "Am7/Eb",
+    "key": "Cmaj",
+    "margin": 0.125,
+    "alts": [
+      "Emaddb9#5/F",
+      "Fadd9"
+    ]
+  },
+  "bwv65.7|1|1.0": {
+    "stem": "bwv65.7",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": -0.51471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv65.7|5|1.0": {
+    "stem": "bwv65.7",
+    "m": 5,
+    "b": 1.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv65.7|10|2.0": {
+    "stem": "bwv65.7",
+    "m": 10,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": -0.93667,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv65.7|11|1.0": {
+    "stem": "bwv65.7",
+    "m": 11,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "CMaj7/E",
+      "CMaj7/E"
+    ]
+  },
+  "bwv65.7|13|3.0": {
+    "stem": "bwv65.7",
+    "m": 13,
+    "b": 3.0,
+    "winner": "Bm/Ab",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "Bm/Ab",
+      "E7/Ab"
+    ]
+  },
+  "bwv67.7|6|1.0": {
+    "stem": "bwv67.7",
+    "m": 6,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv67.7|7|1.0": {
+    "stem": "bwv67.7",
+    "m": 7,
+    "b": 1.0,
+    "winner": "DMaj7/F#",
+    "key": "Amaj",
+    "margin": -0.55,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv74.8|2|2.0": {
+    "stem": "bwv74.8",
+    "m": 2,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv74.8|4|2.0": {
+    "stem": "bwv74.8",
+    "m": 4,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Aharm",
+    "margin": 0.11,
+    "alts": [
+      "FMaj7/A",
+      "FMaj7/A"
+    ]
+  },
+  "bwv74.8|8|2.0": {
+    "stem": "bwv74.8",
+    "m": 8,
+    "b": 2.0,
+    "winner": "FMaj7/A",
+    "key": "Cmaj",
+    "margin": -0.55,
+    "alts": [
+      "Am",
+      "Am"
+    ]
+  },
+  "bwv77.6|3|4.0": {
+    "stem": "bwv77.6",
+    "m": 3,
+    "b": 4.0,
+    "winner": "BbMaj7/D",
+    "key": "Gmel",
+    "margin": -0.51471,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv77.6|6|2.0": {
+    "stem": "bwv77.6",
+    "m": 6,
+    "b": 2.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv77.6|7|2.0": {
+    "stem": "bwv77.6",
+    "m": 7,
+    "b": 2.0,
+    "winner": "Eb/G",
+    "key": "Dmin",
+    "margin": -0.39444,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv77.6|10|1.0": {
+    "stem": "bwv77.6",
+    "m": 10,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.85,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  },
+  "bwv77.6|11|2.0": {
+    "stem": "bwv77.6",
+    "m": 11,
+    "b": 2.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv77.6|12|1.0": {
+    "stem": "bwv77.6",
+    "m": 12,
+    "b": 1.0,
+    "winner": "F7/C",
+    "key": "Dmin",
+    "margin": 0.11,
+    "alts": [
+      "F7/C",
+      "F7/C"
+    ]
+  },
+  "bwv78.7|1|1.0": {
+    "stem": "bwv78.7",
+    "m": 1,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.53667,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv78.7|1|4.0": {
+    "stem": "bwv78.7",
+    "m": 1,
+    "b": 4.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv78.7|11|2.0": {
+    "stem": "bwv78.7",
+    "m": 11,
+    "b": 2.0,
+    "winner": "Ab/C",
+    "key": "Gmin",
+    "margin": -0.39444,
+    "alts": [
+      "Cm",
+      "Cm"
+    ]
+  },
+  "bwv78.7|14|1.0": {
+    "stem": "bwv78.7",
+    "m": 14,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.46429,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv78.7|15|1.0": {
+    "stem": "bwv78.7",
+    "m": 15,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.53667,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv78.7|15|4.0": {
+    "stem": "bwv78.7",
+    "m": 15,
+    "b": 4.0,
+    "winner": "EbMaj7/C",
+    "key": "Gmin",
+    "margin": 0.11,
+    "alts": [
+      "EbMaj7/G",
+      "EbMaj7/G"
+    ]
+  },
+  "bwv80.8|2|4.0": {
+    "stem": "bwv80.8",
+    "m": 2,
+    "b": 4.0,
+    "winner": "G/B",
+    "key": "Dmaj",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv80.8|3|2.0": {
+    "stem": "bwv80.8",
+    "m": 3,
+    "b": 2.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.81471,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv80.8|3|3.0": {
+    "stem": "bwv80.8",
+    "m": 3,
+    "b": 3.0,
+    "winner": "DMaj7/F#",
+    "key": "Dmaj",
+    "margin": -0.014706,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv81.7|1|1.0": {
+    "stem": "bwv81.7",
+    "m": 1,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv81.7|4|1.0": {
+    "stem": "bwv81.7",
+    "m": 4,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.51471,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv81.7|6|1.0": {
+    "stem": "bwv81.7",
+    "m": 6,
+    "b": 1.0,
+    "winner": "CMaj7/E",
+    "key": "Emin",
+    "margin": -0.55,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv81.7|9|3.0": {
+    "stem": "bwv81.7",
+    "m": 9,
+    "b": 3.0,
+    "winner": "GmMaj7/F#",
+    "key": "Emin",
+    "margin": 0.04,
+    "alts": [
+      "F#+",
+      "GmMaj7/F#"
+    ]
+  },
+  "bwv83.5|1|2.0": {
+    "stem": "bwv83.5",
+    "m": 1,
+    "b": 2.0,
+    "winner": "A#Maj7/D",
+    "key": "Amin",
+    "margin": -0.35,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv83.5|1|3.0": {
+    "stem": "bwv83.5",
+    "m": 1,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Amin",
+    "margin": -0.05,
+    "alts": [
+      "Em",
+      "Em"
+    ]
+  },
+  "bwv83.5|5|2.0": {
+    "stem": "bwv83.5",
+    "m": 5,
+    "b": 2.0,
+    "winner": "G7/D",
+    "key": "Cmaj",
+    "margin": 0.11,
+    "alts": [
+      "G7/D",
+      "G7/D"
+    ]
+  },
+  "bwv83.5|9|2.0": {
+    "stem": "bwv83.5",
+    "m": 9,
+    "b": 2.0,
+    "winner": "F/D",
+    "key": "Cmaj",
+    "margin": 0.0,
+    "alts": [
+      "F/D",
+      "F/D"
+    ]
+  },
+  "bwv83.5|11|1.0": {
+    "stem": "bwv83.5",
+    "m": 11,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "Dmel",
+    "margin": -0.81471,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv84.5|1|3.0": {
+    "stem": "bwv84.5",
+    "m": 1,
+    "b": 3.0,
+    "winner": "GMaj7/B",
+    "key": "Bharm",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv84.5|6|1.0": {
+    "stem": "bwv84.5",
+    "m": 6,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.55,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv85.6|1|3.0": {
+    "stem": "bwv85.6",
+    "m": 1,
+    "b": 3.0,
+    "winner": "AbMaj7/C",
+    "key": "Gmin",
+    "margin": -0.85,
+    "alts": [
+      "Cm",
+      "C5"
+    ]
+  },
+  "bwv86.6|8|2.0": {
+    "stem": "bwv86.6",
+    "m": 8,
+    "b": 2.0,
+    "winner": "DMaj7/F#",
+    "key": "Emaj",
+    "margin": -1.2,
+    "alts": [
+      "F#m",
+      "F#5"
+    ]
+  },
+  "bwv87.7|1|3.0": {
+    "stem": "bwv87.7",
+    "m": 1,
+    "b": 3.0,
+    "winner": "Gm6/Bb",
+    "key": "Dmel",
+    "margin": 0.0,
+    "alts": [
+      "Em7b5/Bb",
+      "Gm6/Bb"
+    ]
+  },
+  "bwv87.7|2|3.0": {
+    "stem": "bwv87.7",
+    "m": 2,
+    "b": 3.0,
+    "winner": "A#Maj7/D",
+    "key": "Dmel",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv87.7|6|1.0": {
+    "stem": "bwv87.7",
+    "m": 6,
+    "b": 1.0,
+    "winner": "A#Maj7/D",
+    "key": "DDor",
+    "margin": -0.85,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv88.7|1|3.0": {
+    "stem": "bwv88.7",
+    "m": 1,
+    "b": 3.0,
+    "winner": "G/B",
+    "key": "Bharm",
+    "margin": -0.59444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv88.7|1|4.0": {
+    "stem": "bwv88.7",
+    "m": 1,
+    "b": 4.0,
+    "winner": "DMaj7/F#",
+    "key": "Bharm",
+    "margin": -0.33824,
+    "alts": [
+      "F#m",
+      "F#m"
+    ]
+  },
+  "bwv88.7|4|4.0": {
+    "stem": "bwv88.7",
+    "m": 4,
+    "b": 4.0,
+    "winner": "GmMaj7/F#",
+    "key": "Bmin",
+    "margin": 0.06,
+    "alts": [
+      "F#7",
+      "F#7"
+    ]
+  },
+  "bwv88.7|6|1.0": {
+    "stem": "bwv88.7",
+    "m": 6,
+    "b": 1.0,
+    "winner": "GMaj7/B",
+    "key": "Bmin",
+    "margin": -0.56333,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv88.7|8|2.0": {
+    "stem": "bwv88.7",
+    "m": 8,
+    "b": 2.0,
+    "winner": "G/B",
+    "key": "Bmin",
+    "margin": -0.094444,
+    "alts": [
+      "Bm",
+      "Bm"
+    ]
+  },
+  "bwv89.6|1|3.0": {
+    "stem": "bwv89.6",
+    "m": 1,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.51471,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv89.6|3|3.0": {
+    "stem": "bwv89.6",
+    "m": 3,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv89.6|5|1.0": {
+    "stem": "bwv89.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gharm",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv89.6|7|1.0": {
+    "stem": "bwv89.6",
+    "m": 7,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.014706,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv89.6|9|4.0": {
+    "stem": "bwv89.6",
+    "m": 9,
+    "b": 4.0,
+    "winner": "EbMaj7/G",
+    "key": "Gmin",
+    "margin": -0.55,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv9.7|5|1.0": {
+    "stem": "bwv9.7",
+    "m": 5,
+    "b": 1.0,
+    "winner": "A/C#",
+    "key": "Emaj",
+    "margin": -0.094444,
+    "alts": [
+      "C#m",
+      "C#m"
+    ]
+  },
+  "bwv90.5|1|2.0": {
+    "stem": "bwv90.5",
+    "m": 1,
+    "b": 2.0,
+    "winner": "BbMaj7/D",
+    "key": "Dharm",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv90.5|2|3.0": {
+    "stem": "bwv90.5",
+    "m": 2,
+    "b": 3.0,
+    "winner": "BbMaj7/D",
+    "key": "Dharm",
+    "margin": -0.95,
+    "alts": [
+      "Dm",
+      "D5"
+    ]
+  },
+  "bwv90.5|6|1.0": {
+    "stem": "bwv90.5",
+    "m": 6,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv90.5|9|1.0": {
+    "stem": "bwv90.5",
+    "m": 9,
+    "b": 1.0,
+    "winner": "C/A",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "C/A",
+      "C/A"
+    ]
+  },
+  "bwv94.8|1|2.0": {
+    "stem": "bwv94.8",
+    "m": 1,
+    "b": 2.0,
+    "winner": "A7/E",
+    "key": "Dmaj",
+    "margin": 0.12941,
+    "alts": [
+      "A7/E",
+      "A7/E"
+    ]
+  },
+  "bwv94.8|7|2.0": {
+    "stem": "bwv94.8",
+    "m": 7,
+    "b": 2.0,
+    "winner": "Bdim7",
+    "key": "Dmaj",
+    "margin": 0.75,
+    "alts": [
+      "Bm6",
+      "Bm6"
+    ]
+  },
+  "bwv94.8|13|3.0": {
+    "stem": "bwv94.8",
+    "m": 13,
+    "b": 3.0,
+    "winner": "CMaj7/E",
+    "key": "Dmaj",
+    "margin": -0.83667,
+    "alts": [
+      "Em",
+      "E5"
+    ]
+  },
+  "bwv94.8|14|1.0": {
+    "stem": "bwv94.8",
+    "m": 14,
+    "b": 1.0,
+    "winner": "D/B",
+    "key": "Dmaj",
+    "margin": 0.0,
+    "alts": [
+      "D/B",
+      "D/B"
+    ]
+  },
+  "bwv96.6|1|4.0": {
+    "stem": "bwv96.6",
+    "m": 1,
+    "b": 4.0,
+    "winner": "BbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.55,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv96.6|5|1.0": {
+    "stem": "bwv96.6",
+    "m": 5,
+    "b": 1.0,
+    "winner": "BbMaj7/D",
+    "key": "Dmin",
+    "margin": -0.05,
+    "alts": [
+      "Dm",
+      "Dm"
+    ]
+  },
+  "bwv96.6|7|3.0": {
+    "stem": "bwv96.6",
+    "m": 7,
+    "b": 3.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.35,
+    "alts": [
+      "Gm",
+      "Gm"
+    ]
+  },
+  "bwv96.6|8|3.0": {
+    "stem": "bwv96.6",
+    "m": 8,
+    "b": 3.0,
+    "winner": "Dm/Bb",
+    "key": "Dmin",
+    "margin": 0.0,
+    "alts": [
+      "Dm/Bb",
+      "Bb"
+    ]
+  },
+  "bwv96.6|9|1.0": {
+    "stem": "bwv96.6",
+    "m": 9,
+    "b": 1.0,
+    "winner": "EbMaj7/G",
+    "key": "Dmin",
+    "margin": -0.76429,
+    "alts": [
+      "Gm",
+      "G5"
+    ]
+  }
+}

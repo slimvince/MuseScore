@@ -1,0 +1,169 @@
+[PROCESSING] bwv11.6
+[DIAG20-ENTRY] root=9 bass=9 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=6 hdBass=9 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=6
+[DIAG20-ENTRY] root=9 bass=9 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv254
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=11 gST=2 gMed=4
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=4
+[DIAG20-HDX] not-found nResults=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=11 gST=2 gMed=4
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv26.6
+[DIAG20-ENTRY] root=2 bass=2 ktonic=9 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=8 gST=11 gMed=1
+[DIAG20-FIRE] swapping root=11
+[DIAG20-ENTRY] root=2 bass=2 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=11 gST=2 gMed=4
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv268
+[DIAG20-ENTRY] root=9 bass=9 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=6 hdBass=9 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=6
+[DIAG20-ENTRY] root=9 bass=9 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv291
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv295
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv301
+[DIAG20-ENTRY] root=2 bass=2 ktonic=2 didGFlip=0 nResults=4
+[DIAG20-HDX] found hdIdx=3 hdRoot=11 hdBass=2 gLT=1 gST=4 gMed=6
+[DIAG20-ENTRY] root=2 bass=2 ktonic=2 didGFlip=0 nResults=4
+[DIAG20-HDX] not-found nResults=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=4 hdBass=7 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=4
+[DIAG20-ENTRY] root=7 bass=7 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv327
+[DIAG20-ENTRY] root=4 bass=4 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=1 hdBass=4 gLT=1 gST=4 gMed=6
+[DIAG20-FIRE] swapping root=1
+[DIAG20-ENTRY] root=4 bass=4 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv334
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv350
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=4
+[DIAG20-HDX] not-found nResults=4
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=4
+[DIAG20-HDX] not-found nResults=4
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv381
+[DIAG20-ENTRY] root=9 bass=9 ktonic=4 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=6 hdBass=9 gLT=3 gST=6 gMed=8
+[DIAG20-FIRE] swapping root=6
+[DIAG20-ENTRY] root=9 bass=9 ktonic=4 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv391
+[DIAG20-ENTRY] root=2 bass=2 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=11
+[DIAG20-ENTRY] root=2 bass=2 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv397
+[DIAG20-ENTRY] root=0 bass=0 ktonic=5 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=4 gST=7 gMed=9
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=5 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv40.3
+[DIAG20-ENTRY] root=0 bass=0 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=1 gST=4 gMed=6
+[DIAG20-ENTRY] root=0 bass=0 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv40.8
+[DIAG20-ENTRY] root=10 bass=10 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=7 hdBass=10 gLT=11 gST=2 gMed=4
+[DIAG20-ENTRY] root=10 bass=10 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=7 hdBass=10 gLT=11 gST=2 gMed=4
+[DIAG20-ENTRY] root=10 bass=10 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=3 bass=3 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=0 hdBass=3 gLT=11 gST=2 gMed=4
+[DIAG20-ENTRY] root=3 bass=3 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=10 bass=10 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=7 hdBass=10 gLT=11 gST=2 gMed=4
+[DIAG20-ENTRY] root=10 bass=10 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv407
+[DIAG20-ENTRY] root=2 bass=2 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=1 gST=4 gMed=6
+[DIAG20-ENTRY] root=2 bass=2 ktonic=2 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=1 gST=4 gMed=6
+[PROCESSING] bwv424
+[DIAG20-ENTRY] root=2 bass=2 ktonic=9 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=8 gST=11 gMed=1
+[DIAG20-FIRE] swapping root=11
+[DIAG20-ENTRY] root=2 bass=2 ktonic=9 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[DIAG20-ENTRY] root=2 bass=2 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=11 gST=2 gMed=4
+[DIAG20-FIRE] swapping root=11
+[PROCESSING] bwv425
+[DIAG20-ENTRY] root=2 bass=2 ktonic=9 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=11 hdBass=2 gLT=8 gST=11 gMed=1
+[DIAG20-FIRE] swapping root=11
+[DIAG20-ENTRY] root=2 bass=2 ktonic=0 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv46.6
+[DIAG20-ENTRY] root=0 bass=0 ktonic=5 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=4 gST=7 gMed=9
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=5 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv48.7
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=9 hdBass=0 gLT=6 gST=9 gMed=11
+[DIAG20-FIRE] swapping root=9
+[DIAG20-ENTRY] root=0 bass=0 ktonic=7 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
+[PROCESSING] bwv64.8
+[DIAG20-ENTRY] root=9 bass=9 ktonic=4 didGFlip=0 nResults=3
+[DIAG20-HDX] found hdIdx=2 hdRoot=6 hdBass=9 gLT=3 gST=6 gMed=8
+[DIAG20-FIRE] swapping root=6
+[DIAG20-ENTRY] root=9 bass=9 ktonic=4 didGFlip=0 nResults=3
+[DIAG20-HDX] not-found nResults=3
