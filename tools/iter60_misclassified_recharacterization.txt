@@ -1,0 +1,87 @@
+Iteration 60 — re-characterization of 3 cases previously misclassified
+into Iter 58's "Hypothesis C" cluster.
+Corpus: Baroque, post Iter 60 build (C-1 + C-2 applied).
+
+Format per case:
+  - target region (winner, alts)
+  - PC mask decoded
+  - cluster assignment + one-sentence evidence
+
+
+────────────────────────────────────────────────────────────────────────
+Case 1 — bwv244.15  m=5  b=1.0
+────────────────────────────────────────────────────────────────────────
+Region idx=11
+  Winner: root=11 (B) qual=Minor  bass=11 (B) bassIsRoot=True  score=2.92
+  PC mask = 2628 = bits {2, 6, 9, 11} = {D, F#, A, B}
+  alt[0]: Bm 2.92   alt[1]: B-power 2.29   alt[2]: F#sus4 2.02
+
+  All 4 chord tones of Bm7 (= D6) are present. Our reading is Bm in root
+  position (m7 extension not detected → pcWeight[A] < extensionThreshold,
+  or the extension was suppressed). Music21/DCML almost certainly reads
+  this as D6/B (first-inversion D major add6) or Bm7 — both spellings
+  are enharmonic.
+
+  CLUSTER: Correct
+  Evidence: Analyzer identifies the correct PC set; the disagreement
+  is the root label (B vs D) for the enharmonic Bm7 ≡ D6 pair, not a
+  structural inversion miss. The bass IS the labeled root in our reading.
+  Adding the m7 extension to Bm (Bm → Bm7) would make this a near-agree
+  with music21's typical Bm7 spelling.
+  Sub-issue noted: m7 extension not surfaced despite A being in pcMask.
+
+
+────────────────────────────────────────────────────────────────────────
+Case 2 — bwv244.44  m=5  b=1.0
+────────────────────────────────────────────────────────────────────────
+Region idx=11
+  Winner: root=11 (B) qual=Minor  bass=11 (B) bassIsRoot=True  score=2.8706
+  PC mask = 2116 = bits {2, 6, 11} = {D, F#, B}   (only 3 PCs)
+  alt[0]: Bm 2.87   alt[1]: B-power 2.22   alt[2]: F#sus4 2.01
+
+  Adjacent region idx=13 (m=5 b=2.0): PC mask = 598 = bits {1, 2, 4, 6, 9}
+  = {C#, D, E, F#, A}.  The A (m7 of Bm7 / 5th of D) and additional tones
+  appear in the next region.
+
+  CLUSTER: Hypothesis A (boundary/merge — Round 3 merge target)
+  Evidence: Only 3 PCs in the target region — the m7 (A) is in the
+  adjacent b=2.0 region, not this one. The greedy boundary detector
+  split what should be a single Bm7/D6 harmony. Resolving requires
+  the Round 3 merge step (Iter 61+) that re-aggregates adjacent
+  short regions sharing a PC superset.
+
+
+────────────────────────────────────────────────────────────────────────
+Case 3 — bwv38.6  m=7  b=3.0
+────────────────────────────────────────────────────────────────────────
+Region idx=19
+  Winner: root=2 (D) qual=Minor  bass=2 (D) bassIsRoot=True  score=2.10
+  PC mask = 2597 = bits {0, 2, 5, 9, 11} = {C, D, F, A, B}
+  alt[0]: Dm 2.10   alt[1]: Ddim 2.10   alt[2]: Bdim/D 1.98 (bassIsRoot=False)
+
+  Five PCs present in pcMask, including B. The original Iter 59 note
+  claimed "pcWeight drops B" — pcMask shows B *is* present (above the
+  0.05 inclusion threshold) but the analyzer reads root D, suggesting
+  pcWeight[B] is below the 0.2 structural-tone threshold used by the
+  scoring path. With B at structural weight, the correct Bø7 (B-D-F-A)
+  reading would emerge: B is m3-below-D so D in bass = first-inversion
+  Bø7 — exactly the C-1 target pattern. Our HalfDim alt for root B is
+  not in the top 3 alts here because B's low weight suppresses it.
+
+  CLUSTER: pcWeight
+  Evidence: B is in pcMask but evidently below the 0.2 structural
+  threshold (no HalfDim7-rooted-on-B alt in top 3, and no MinorSeventh
+  extension on the Dm winner despite C being in pcMask too). Fix requires
+  pcWeight aggregation tuning so that the leading-tone B in this voice
+  context is recognized as a structural chord tone, not a passing/embellishing
+  tone. Bdim/D alt[2] confirms an inversion-style alt exists but on the
+  wrong root (B-diminished, not Bø7) because m7 (A) wasn't woven into
+  the candidate.
+
+
+────────────────────────────────────────────────────────────────────────
+Summary
+────────────────────────────────────────────────────────────────────────
+  bwv244.15  m=5 b=1.0  → Correct           (root-spelling, m7 ext)
+  bwv244.44  m=5 b=1.0  → Hypothesis A      (boundary/merge)
+  bwv38.6    m=7 b=3.0  → pcWeight          (B below structural thr)

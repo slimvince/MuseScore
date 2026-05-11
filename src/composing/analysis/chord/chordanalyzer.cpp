@@ -1995,7 +1995,31 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                                kCleanQualities.end(),
                                                alt.identity.quality)
                                      != kCleanQualities.end();
-                if (isClean) {
+                // HalfDiminished first/second/third-inversion exception:
+                // accept a HalfDim alt only when all four chord tones (root, m3,
+                // b5, m7) are present in the region and the winner's bass pitch
+                // class (= winner root, since this block requires bassIsRoot=true)
+                // is the alt's m3, b5, or m7. Targets bwv187.7-style cases where
+                // the bass-root bonus on a clean Minor reading is blocking the
+                // correct inverted half-diminished seventh.
+                bool isHalfDimInversion = false;
+                if (!isClean && alt.identity.quality == ChordQuality::HalfDiminished) {
+                    const int aR = alt.identity.rootPc;
+                    const int thirdPc   = (aR + 3) % 12;
+                    const int fifthPc   = (aR + 6) % 12;
+                    const int seventhPc = (aR + 10) % 12;
+                    const double thr = prefs.extensionThreshold;
+                    const bool allTonesPresent =
+                        pcWeight[static_cast<size_t>(aR)] > thr
+                        && pcWeight[static_cast<size_t>(thirdPc)] > thr
+                        && pcWeight[static_cast<size_t>(fifthPc)] > thr
+                        && pcWeight[static_cast<size_t>(seventhPc)] > thr;
+                    const int wb = winner.identity.bassPc;
+                    const bool bassIsInversion =
+                        (wb == thirdPc || wb == fifthPc || wb == seventhPc);
+                    isHalfDimInversion = allTonesPresent && bassIsInversion;
+                }
+                if (isClean || isHalfDimInversion) {
                     bestAltIdx = i;
                     break;
                 }

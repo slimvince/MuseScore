@@ -1682,14 +1682,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "minor",
-                    "root": "D",
-                    "score": 2.488
-                },
-                {
                     "quality": "halfDiminished",
                     "root": "B",
                     "score": 2.35
+                },
+                {
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 1.787
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

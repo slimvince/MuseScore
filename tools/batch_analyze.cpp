@@ -2234,8 +2234,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ar.pcMask        = pcMask;
         ar.bassPc        = bassPc;
 
-        // Up to 2 alternatives (indices 1 and 2 from analyzeChord)
-        for (size_t candidateIndex = 1; candidateIndex < candidates.size() && candidateIndex <= 2; ++candidateIndex) {
+        // Up to 3 alternatives (indices 1, 2, 3 from analyzeChord)
+        for (size_t candidateIndex = 1; candidateIndex < candidates.size() && candidateIndex <= 3; ++candidateIndex) {
             ar.alternatives.push_back(candidates[candidateIndex]);
         }
 
