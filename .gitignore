@@ -105,3 +105,8 @@ compile_commands.json
 
 # QML language server
 **/.qmlls.ini
+
+# Claude Code local session state
+.claude/scheduled_tasks.lock
+.claude/settings.json
+.claude/settings.local.json
