@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -69,6 +69,7 @@ const std::array<StyleDef::StyleValue, size_t(Sid::STYLES)> StyleDef::styleValue
     styleDef(instrumentNamesAlignLong,                   InstrumentNamesAlign::RIGHT_RIGHT),
     styleDef(instrumentNamesAlignShort,                  InstrumentNamesAlign::RIGHT_RIGHT),
     styleDef(instrumentNamesStackVertically,             false),
+    styleDef(instrumentNamesAlignIncludeGroupBrackets,   true),
     styleDef(windsNameByGroup,                           true),
     styleDef(vocalsNameByGroup,                          true),
     styleDef(stringsNameByGroup,                         false),
@@ -172,6 +173,13 @@ const std::array<StyleDef::StyleValue, size_t(Sid::STYLES)> StyleDef::styleValue
     styleDef(bracketDistance,                            0.45_sp),
     styleDef(akkoladeWidth,                              1.5_sp),
     styleDef(akkoladeBarDistance,                        0.35_sp),
+    styleDef(groupBracketLineWidth,                      0.11_sp),
+    styleDef(groupBracketHookLen,                        1.0_sp),
+    styleDef(groupBracketTextOrientation,                Orientation::VERTICAL),
+    styleDef(groupBracketTextAlign,                      DirectionH::AUTO),
+    styleDef(groupBracketHangTextIntoMargin,             true),
+    styleDef(groupBracketDistanceToNames,                1.0_sp),
+    styleDef(groupBracketDistanceToGroupBracket,         1.0_sp),
 
     styleDef(dividerLeft,                                false),
     styleDef(dividerLeftSym,                             String(u"systemDivider")),
@@ -292,6 +300,8 @@ const std::array<StyleDef::StyleValue, size_t(Sid::STYLES)> StyleDef::styleValue
     styleDef(articulationKeepTogether,                   true),
     styleDef(trillAlwaysShowCueNote,                  false),
     styleDef(lastSystemFillLimit,                        PropertyValue(0.3)),
+
+    styleDef(enableStaveSharing,                         false),
 
     styleDef(hairpinPlacement,                           PlacementV::BELOW),
     styleDef(hairpinPosAbove,                            PointF(0.0, -1.75)),
@@ -1123,6 +1133,22 @@ const std::array<StyleDef::StyleValue, size_t(Sid::STYLES)> StyleDef::styleValue
     styleDef(partInstrumentFrameFgColor,                 PropertyValue::fromValue(Color::BLACK)),
     styleDef(partInstrumentFrameBgColor,                 PropertyValue::fromValue(Color::transparent)),
     styleDef(partInstrumentPosition,                     AlignH::LEFT),
+
+    styleDef(groupBracketFontFace,                     "Edwin"),
+    styleDef(groupBracketFontSize,                     10.0),
+    styleDef(groupBracketLineSpacing,                  1.0),
+    styleDef(groupBracketFontSpatiumDependent,         true),
+    styleDef(groupBracketFontStyle,                    int(FontStyle::Normal)),
+    styleDef(groupBracketColor,                        PropertyValue::fromValue(Color::BLACK)),
+    styleDef(groupBracketAlign,                        Align(AlignH::HCENTER, AlignV::VCENTER)),
+    styleDef(groupBracketOffset,                       PointF(.0, .0)),
+    styleDef(groupBracketFrameType,                    int(FrameType::NO_FRAME)),
+    styleDef(groupBracketFramePadding,                 0.2_sp),
+    styleDef(groupBracketFrameWidth,                   0.1_sp),
+    styleDef(groupBracketFrameRound,                   0.0_sp),
+    styleDef(groupBracketFrameFgColor,                 PropertyValue::fromValue(Color::BLACK)),
+    styleDef(groupBracketFrameBgColor,                 PropertyValue::fromValue(Color::transparent)),
+    styleDef(groupBracketPosition,                     AlignH::HCENTER),
 
     // OBSOLETE after version 4.1. Dynamic text now takes its setting from expression.
     styleDef(dynamicsFontFace,                           "Edwin"),
@@ -2046,6 +2072,7 @@ const std::array<StyleDef::StyleValue, size_t(Sid::STYLES)> StyleDef::styleValue
     styleDef(fretDiagramFingeringMusicalSymbolSize,               6.0),
     styleDef(fretDiagramFretNumberMusicalSymbolSize,              6.0),
     styleDef(glissandoMusicalSymbolSize,                          8.0),
+    styleDef(groupBracketMusicalSymbolSize,                       10.0),
     styleDef(hairpinMusicalSymbolSize,                            10.0),
     styleDef(hammerOnPullOffTappingMusicalSymbolSize,             8.0),
     styleDef(harpPedalDiagramMusicalSymbolSize,                   10.0),

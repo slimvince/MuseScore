@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -305,34 +305,6 @@ void System::deleteLockIndicators()
 {
     muse::DeleteAll(m_lockIndicators);
     m_lockIndicators.clear();
-}
-
-void System::setBracketsXPosition(const double xPosition)
-{
-    for (Bracket* b1 : m_brackets) {
-        BracketType bracketType = b1->bracketType();
-        // For brackets that are drawn, we must correct for half line width
-        double lineWidthCorrection = 0.0;
-        if (bracketType == BracketType::NORMAL || bracketType == BracketType::LINE) {
-            lineWidthCorrection = style().styleAbsolute(Sid::bracketWidth) / 2;
-        }
-        // Compute offset cause by other stacked brackets
-        double xOffset = 0;
-        for (const Bracket* b2 : m_brackets) {
-            if (!b2->bracketItem()->visible()) {
-                continue;
-            }
-            bool b1FirstStaffInB2 = (b1->firstStaff() >= b2->firstStaff() && b1->firstStaff() <= b2->lastStaff());
-            bool b1LastStaffInB2 = (b1->lastStaff() >= b2->firstStaff() && b1->lastStaff() <= b2->lastStaff());
-            if (b1->column() > b2->column()
-                && (b1FirstStaffInB2 || b1LastStaffInB2)) {
-                xOffset += b2->ldata()->bracketWidth();
-            }
-        }
-        // Set position
-        double x = xPosition - xOffset - b1->ldata()->bracketWidth() + lineWidthCorrection;
-        b1->mutldata()->setPosX(x);
-    }
 }
 
 //---------------------------------------------------------
@@ -727,7 +699,7 @@ void System::scanElements(std::function<void(EngravingItem*)> func)
         return;
     }
     for (Bracket* b : m_brackets) {
-        func(b);
+        b->scanElements(func);
     }
 
     if (m_systemDividerLeft) {

@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2023 MuseScore Limited
+ * Copyright (C) 2023 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -154,6 +154,7 @@ System* SystemLayout::collectSystem(LayoutContext& ctx)
     while (ctx.state().curMeasure()) {      // collect measure for system
         oldSystem = ctx.mutState().curMeasure()->system();
         system->appendMeasure(ctx.mutState().curMeasure());
+        MeasureLayout::layoutMeasure(ctx.mutState().curMeasure(), ctx);
 
         if (ctx.state().curMeasure()->isMeasure()) {
             Measure* m = toMeasure(ctx.mutState().curMeasure());
@@ -200,6 +201,7 @@ System* SystemLayout::collectSystem(LayoutContext& ctx)
         } else {
             // vbox:
             MeasureLayout::getNextMeasure(ctx);
+            MeasureLayout::layoutMeasure(ctx.mutState().curMeasure(), ctx);
             SystemLayout::layout2(system, ctx);         // compute staff distances
             return system;
         }
@@ -548,6 +550,10 @@ enum class StaffHideMode {
 static StaffHideMode computeHideMode(const System* system, const Staff* staff, const staff_idx_t staffIdx, const bool globalHideIfEmpty,
                                      bool& hasSystemSpecificOverrides)
 {
+    if (Part* part = staff->part(); part && part->isSharedPart() && staff != part->staves().front()) {
+        return StaffHideMode::HIDE_WHEN_STAFF_EMPTY;
+    }
+
     // Check for system-specific overrides
     bool hasSystemSpecificOverrideHide = false;
     bool hasSystemSpecificOverrideDontHide = false;
@@ -1845,7 +1851,7 @@ void SystemLayout::processLines(System* system, LayoutContext& ctx, const std::v
             }
         }
         for (SpannerSegment* ss : segments) {
-            if (!ss->isStyled(Pid::OFFSET)) {
+            if (!ss->offset().isNull()) {
                 continue;
             }
             const double& staffY = ss->spanner() && ss->spanner()->placeAbove() ? yAbove[ss->staffIdx()] : yBelow[ss->staffIdx()];
@@ -2134,9 +2140,10 @@ void SystemLayout::layoutSystem(System* system, LayoutContext& ctx, double xo1, 
     //  layout brackets
     //---------------------------------------------------
 
-    system->setBracketsXPosition(xo1 + system->leftMargin());
+    SystemHeaderLayout::setBracketsXPosition(system, xo1 + system->leftMargin());
 
     SystemHeaderLayout::setInstrumentNamesHorizontalPos(system);
+    SystemHeaderLayout::setGroupBracketsHorizontalPos(system);
 
     for (MeasureBase* mb : system->measures()) {
         if (!mb->isMeasure()) {
@@ -2287,7 +2294,7 @@ void SystemLayout::layout2(System* system, LayoutContext& ctx)
     //  layout brackets vertical position
     //---------------------------------------------------
 
-    SystemLayout::layoutBracketsVertical(system, ctx);
+    SystemHeaderLayout::layoutBracketsVertical(system, ctx);
 
     //---------------------------------------------------
     //  layout instrument names
@@ -2388,7 +2395,7 @@ void SystemLayout::restoreLayout2(System* system, LayoutContext& ctx)
 
     // Reused systems can move across pages during partial relayout.
     // Refresh geometry derived from SysStaff vertical positions.
-    SystemLayout::layoutBracketsVertical(system, ctx);
+    SystemHeaderLayout::layoutBracketsVertical(system, ctx);
     SystemHeaderLayout::setInstrumentNamesVerticalPos(system, ctx);
 }
 
@@ -2411,40 +2418,6 @@ void SystemLayout::setMeasureHeight(System* system, double height, const LayoutC
         } else {
             LOGD("unhandled measure type %s", m->typeName());
         }
-    }
-}
-
-void SystemLayout::layoutBracketsVertical(System* system, LayoutContext& ctx)
-{
-    for (Bracket* b : system->brackets()) {
-        int staffIdx1 = static_cast<int>(b->firstStaff());
-        int staffIdx2 = static_cast<int>(b->lastStaff());
-        double sy = 0;                           // assume bracket not visible
-        double ey = 0;
-        // if start staff not visible, try next staff
-        while (staffIdx1 <= staffIdx2 && !system->staves().at(staffIdx1)->show()) {
-            ++staffIdx1;
-        }
-        // if end staff not visible, try prev staff
-        while (staffIdx1 <= staffIdx2 && !system->staves().at(staffIdx2)->show()) {
-            --staffIdx2;
-        }
-        // if the score doesn't have "alwaysShowBracketsWhenEmptyStavesAreHidden" as true,
-        // the bracket will be shown IF:
-        // it spans at least 2 visible staves (staffIdx1 < staffIdx2) OR
-        // it spans just one visible staff (staffIdx1 == staffIdx2) but it is required to do so
-        // (the second case happens at least when the bracket is initially dropped)
-        bool notHidden = ctx.conf().styleB(Sid::alwaysShowBracketsWhenEmptyStavesAreHidden)
-                         ? (staffIdx1 <= staffIdx2) : (staffIdx1 < staffIdx2) || (b->span() == 1 && staffIdx1 == staffIdx2);
-        if (notHidden) {                        // set vert. pos. and height to visible spanned staves
-            sy = system->staves().at(staffIdx1)->bbox().top();
-            ey = system->staves().at(staffIdx2)->bbox().bottom();
-        }
-
-        Bracket::LayoutData* bldata = b->mutldata();
-        bldata->setPosY(sy);
-        bldata->bracketHeight = ey - sy;
-        TLayout::layoutBracket(b, bldata, ctx.conf());
     }
 }
 

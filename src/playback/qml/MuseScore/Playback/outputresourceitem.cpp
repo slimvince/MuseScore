@@ -2,6 +2,8 @@
 
 #include <QList>
 
+#include "audio/common/audioutils.h"
+
 #include "log.h"
 #include "translation.h"
 #include "stringutils.h"
@@ -181,7 +183,9 @@ void OutputResourceItem::updateCurrentFxParams(const AudioResourceMeta& newMeta)
     requestToCloseNativeEditorView();
 
     audio::AudioFxParams newParams = m_currentFxParams;
+    newParams.categories = audio::audioFxCategoriesFromString(newMeta.attributeVal(audio::CATEGORIES_ATTRIBUTE));
     newParams.resourceMeta = newMeta;
+    newParams.configuration.clear();
     newParams.active = newMeta.isValid();
 
     setParams(newParams);

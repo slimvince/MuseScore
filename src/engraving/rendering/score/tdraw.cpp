@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2023 MuseScore Limited
+ * Copyright (C) 2023 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -1125,7 +1125,8 @@ void TDraw::draw(const Bracket* item, Painter* painter, const PaintOptions& opt)
         item->drawSymbol(SymId::bracketBottom, painter, PointF(x, y2));
     }
     break;
-    case BracketType::SQUARE: {
+    case BracketType::SQUARE:
+    {
         double h = ldata->bracketHeight;
         double lineW = item->style().styleAbsolute(Sid::staffLineWidth);
         double bracketWidth = ldata->bracketWidth - lineW / 2;
@@ -1143,6 +1144,28 @@ void TDraw::draw(const Bracket* item, Painter* painter, const PaintOptions& opt)
         painter->setPen(pen);
         double bd = item->style().styleAbsolute(Sid::staffLineWidth) * 0.5;
         painter->drawLine(LineF(0.0, -bd, 0.0, h + bd));
+    }
+    break;
+    case BracketType::GROUP:
+    {
+        if (!item->bracketItem()->showBracket() && (!item->score()->isShowInvisible() || opt.isPrinting)) {
+            return;
+        }
+
+        painter->save();
+        setMask(item, painter);
+
+        double h = ldata->bracketHeight;
+        double lineW = item->style().styleAbsolute(Sid::groupBracketLineWidth);
+        double hookLen = item->style().styleAbsolute(Sid::groupBracketHookLen);
+        Color color = item->curColor(item->visible() && item->bracketItem()->showBracket(), opt);
+        Pen pen(color, lineW, PenStyle::SolidLine, PenCapStyle::FlatCap);
+        painter->setPen(pen);
+        painter->drawLine(LineF(0.5 * lineW, 0.0, 0.5 * lineW, h));
+        painter->drawLine(LineF(0.0, 0.0, hookLen, 0.0));
+        painter->drawLine(LineF(0.0, h, hookLen, h));
+
+        painter->restore();
     }
     break;
     case BracketType::NO_BRACKET:
@@ -1701,6 +1724,10 @@ void TDraw::draw(const GuitarBendHoldSegment* item, Painter* painter, const Pain
 void TDraw::drawTextBase(const TextBase* item, Painter* painter, const PaintOptions& opt)
 {
     TRACE_DRAW_ITEM;
+
+    painter->save();
+    painter->rotate(item->textAngle());
+
     const TextBase::LayoutData* ldata = item->ldata();
     if (item->hasFrame()) {
         double baseSpatium = DefaultStyle::baseStyle().value(Sid::spatium).toReal();
@@ -1727,6 +1754,8 @@ void TDraw::drawTextBase(const TextBase* item, Painter* painter, const PaintOpti
     for (const TextBlock& t : ldata->blocks) {
         draw(t, item, painter);
     }
+
+    painter->restore();
 }
 
 void TDraw::draw(const TextBlock& textBlock, const TextBase* item, Painter* painter)
@@ -2305,7 +2334,7 @@ void TDraw::draw(const Note* item, Painter* painter, const PaintOptions& opt)
 
     const bool isTabStaff = staffType && staffType->isTabStaff();
     const bool negativeFret = isTabStaff && item->negativeFretUsed();
-    const bool useCriticalColor = negativeFret && !item->deadNote() && opt.isPrinting;
+    const bool useCriticalColor = negativeFret && !item->deadNote() && !opt.isPrinting;
 
     painter->setPen(useCriticalColor ? config->criticalColor() : item->curColor(opt));
 
@@ -2317,7 +2346,7 @@ void TDraw::draw(const Note* item, Painter* painter, const PaintOptions& opt)
         const Staff* st = item->staff();
         const StaffType* tab = st->staffTypeForElement(item);
 
-        if (negativeFret || (item->fretConflict() && !opt.isPrinting && item->score()->showUnprintable())) { // fret conflict
+        if (!opt.isPrinting && item->score()->showUnprintable() && (negativeFret || item->fretConflict())) { // fret conflict
             painter->save();
             painter->setPen(config->criticalColor());
             painter->setBrush(config->criticalBackgroundColor());

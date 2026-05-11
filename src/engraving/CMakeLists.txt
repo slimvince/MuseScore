@@ -4,7 +4,7 @@
 # MuseScore Studio
 # Music Composition & Notation
 #
-# Copyright (C) 2021 MuseScore Limited
+# Copyright (C) 2021 MuseScore Limited and others
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as
@@ -103,6 +103,8 @@ target_sources(engraving PRIVATE
 
     editing/addremoveelement.cpp
     editing/addremoveelement.h
+    editing/clonevoice.cpp
+    editing/clonevoice.h
     editing/cmd.cpp
     editing/cmd.h
     editing/edit.cpp
@@ -142,6 +144,8 @@ target_sources(engraving PRIVATE
     editing/editspanner.h
     editing/editstaff.cpp
     editing/editstaff.h
+    editing/editstavesharing.cpp
+    editing/editstavesharing.h
     editing/editstyle.cpp
     editing/editstyle.h
     editing/editsystemlocks.cpp
@@ -150,8 +154,10 @@ target_sources(engraving PRIVATE
     editing/edittie.h
     editing/edittremolo.cpp
     editing/edittremolo.h
-    editing/editvoicing.cpp
-    editing/editvoicing.h
+    editing/exchangevoices.cpp
+    editing/exchangevoices.h
+    editing/implodeexplode.cpp
+    editing/implodeexplode.h
     editing/inserttime.cpp
     editing/inserttime.h
     editing/elementeditdata.h
@@ -244,6 +250,19 @@ target_sources(engraving PRIVATE
     rw/read460/tread.h
     rw/read460/connectorinforeader.cpp
     rw/read460/connectorinforeader.h
+
+    rw/read500/read500.cpp
+    rw/read500/read500.h
+    rw/read500/staffread.cpp
+    rw/read500/staffread.h
+    rw/read500/measureread.cpp
+    rw/read500/measureread.h
+    rw/read500/readcontext.cpp
+    rw/read500/readcontext.h
+    rw/read500/tread.cpp
+    rw/read500/tread.h
+    rw/read500/connectorinforeader.cpp
+    rw/read500/connectorinforeader.h
 
     rw/compat/readstyle.cpp
     rw/compat/readstyle.h
@@ -392,6 +411,13 @@ set_source_files_properties(
     rw/read460/readcontext.cpp
     rw/read460/tread.cpp
     rw/read460/connectorinforeader.cpp
+    
+    #rw/read500/read500.cpp
+    rw/read500/staffread.cpp
+    rw/read500/measureread.cpp
+    rw/read500/readcontext.cpp
+    rw/read500/tread.cpp
+    rw/read500/connectorinforeader.cpp
 
     PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON
 )

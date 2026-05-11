@@ -4,7 +4,7 @@
 # MuseScore Studio
 # Music Composition & Notation
 #
-# Copyright (C) 2021 MuseScore Limited
+# Copyright (C) 2021 MuseScore Limited and others
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as
@@ -38,8 +38,8 @@ qt_add_qml_module(preferences_qml
         canvaspreferencesmodel.h
         composingpreferencesmodel.cpp
         composingpreferencesmodel.h
-        commonaudioapiconfigurationmodel.cpp
-        commonaudioapiconfigurationmodel.h
+        commonaudiodriverconfigurationmodel.cpp
+        commonaudiodriverconfigurationmodel.h
         folderspreferencesmodel.cpp
         folderspreferencesmodel.h
         generalpreferencesmodel.cpp
@@ -84,7 +84,7 @@ qt_add_qml_module(preferences_qml
 
         internal/AccentColorsSection.qml
         internal/AdvancedTopSection.qml
-        internal/AudioApiSection.qml
+        internal/AudioDriverSection.qml
         internal/AudioEngineSection.qml
         internal/AutomaticUpdateSection.qml
         internal/AutoSaveSection.qml
@@ -97,7 +97,7 @@ qt_add_qml_module(preferences_qml
         internal/ComposingAnalysisSection.qml
         internal/ComposingChordStaffSection.qml
         internal/ComposingStatusBarSection.qml
-        internal/CommonAudioApiConfiguration.qml
+        internal/CommonAudioDriverConfiguration.qml
         internal/DefaultStyleSection.qml
         internal/FoldersSection.qml
         internal/ImportStyleSection.qml

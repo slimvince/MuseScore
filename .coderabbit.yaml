@@ -2,7 +2,7 @@
 language: "en-US"
 early_access: false
 reviews:
-  profile: "assertive"
+  profile: "chill"
   review_status: false
   review_details: false
   poem: false
@@ -24,3 +24,7 @@ reviews:
     label: "slop"
 chat:
   auto_reply: true
+
+issue_enrichment:
+  auto_enrich:
+    enabled: false  

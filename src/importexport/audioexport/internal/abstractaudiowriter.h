@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -39,6 +39,7 @@ class AbstractAudioWriter : public project::INotationWriter, public muse::Contex
 public:
     muse::GlobalInject<IAudioExportConfiguration> configuration;
     muse::GlobalInject<muse::IApplication> application;
+    muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
 
 public:
     AbstractAudioWriter(const muse::modularity::ContextPtr& iocCtx)

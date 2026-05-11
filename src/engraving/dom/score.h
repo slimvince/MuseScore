@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -90,6 +90,10 @@ class Read410;
 
 namespace mu::engraving::read460 {
 class Read460;
+}
+
+namespace mu::engraving::read500 {
+class Read500;
 }
 
 namespace mu::engraving::write {
@@ -488,7 +492,6 @@ public:
     void undoChangeElement(EngravingItem* oldElement, EngravingItem* newElement);
     void spellNotelist(std::vector<Note*>& notes);
     void undoChangeChordRestLen(ChordRest* cr, const TDuration&);
-    void undoExchangeVoice(Measure* measure, voice_idx_t val1, voice_idx_t val2, staff_idx_t staff1, staff_idx_t staff2);
     void undoRemovePart(Part* part, size_t partIdx = muse::nidx);
     void undoInsertPart(Part* part, size_t targetPartIndex);
     void undoRemoveStaff(Staff* staff);
@@ -574,8 +577,6 @@ public:
     muse::Ret putNote(const PointF&, bool replace, bool insert);
     muse::Ret insertChordByInsertingTime(const Position&);
 
-    void cloneVoice(track_idx_t strack, track_idx_t dtrack, Segment* sf, const Fraction& lTick, bool link = true, bool spanner = true);
-
     muse::Ret repitchNote(const Position& pos, bool replace);
     std::pair<Note*, Note*> repitchReplaceNote(Chord*, const NoteVal&, bool forceAccidental = false);   // returns new note and last tied note
     void regroupNotesAndRests(const Fraction& startTick, const Fraction& endTick, track_idx_t track);
@@ -618,6 +619,8 @@ public:
 
     const std::vector<Part*>& parts() const;
     size_t visiblePartCount() const;
+    std::vector<SharedPart*> sharedParts() const;
+    bool hasSharedParts() const;
 
     using StaffAccepted = std::function<bool (const Staff&)>;
     std::set<staff_idx_t> staffIdxSetFromRange(const track_idx_t trackFrom, const track_idx_t trackTo,
@@ -1002,12 +1005,9 @@ public:
 
     void cmdInsertClef(Clef* clef, ChordRest* cr);
 
-    bool cmdExplode();
-    bool cmdImplode();
     void cmdSlashFill();
     void cmdSlashRhythm();
     void cmdResequenceRehearsalMarks();
-    void cmdExchangeVoice(voice_idx_t, voice_idx_t);
     void cmdRemoveEmptyTrailingMeasures();
     void cmdRealizeChordSymbols(bool lit = true, Voicing v = Voicing(-1), HDuration durationType = HDuration(-1));
 
@@ -1085,6 +1085,7 @@ private:
     friend class read400::Read400;
     friend class read410::Read410;
     friend class read460::Read460;
+    friend class read500::Read500;
     friend class write::Writer;
 
     static std::set<Score*> validScores;

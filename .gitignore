@@ -80,6 +80,7 @@ VERSION
 
 temp_*
 
+*.local
 *.local.cmake
 
 # Python

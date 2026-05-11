@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2023 MuseScore Limited
+ * Copyright (C) 2023 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -75,7 +75,6 @@ public:
     static void layout2(System* system, LayoutContext& ctx);
     static void restoreLayout2(System* system, LayoutContext& ctx);
     static void setMeasureHeight(System* system, double height, const LayoutContext& ctx);
-    static void layoutBracketsVertical(System* system, LayoutContext& ctx);
 
     static double minDistance(const System* top, const System* bottom, const LayoutContext& ctx);
 

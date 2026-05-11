@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -79,6 +79,7 @@ enum class Sid : short {
     instrumentNamesAlignLong,
     instrumentNamesAlignShort,
     instrumentNamesStackVertically,
+    instrumentNamesAlignIncludeGroupBrackets,
     windsNameByGroup,
     vocalsNameByGroup,
     stringsNameByGroup,
@@ -180,6 +181,13 @@ enum class Sid : short {
     bracketDistance,
     akkoladeWidth,
     akkoladeBarDistance,
+    groupBracketLineWidth,
+    groupBracketHookLen,
+    groupBracketTextOrientation,
+    groupBracketTextAlign,
+    groupBracketHangTextIntoMargin,
+    groupBracketDistanceToNames,
+    groupBracketDistanceToGroupBracket,
     dividerLeft,
     dividerLeftSym,
     dividerLeftX,
@@ -295,6 +303,8 @@ enum class Sid : short {
     articulationKeepTogether,
     trillAlwaysShowCueNote,
     lastSystemFillLimit,
+
+    enableStaveSharing,
 
     hairpinPlacement,
     hairpinPosAbove,
@@ -1132,6 +1142,22 @@ enum class Sid : short {
     partInstrumentFrameFgColor,
     partInstrumentFrameBgColor,
     partInstrumentPosition,
+
+    groupBracketFontFace,
+    groupBracketFontSize,
+    groupBracketLineSpacing,
+    groupBracketFontSpatiumDependent,
+    groupBracketFontStyle,
+    groupBracketColor,
+    groupBracketAlign,
+    groupBracketOffset,
+    groupBracketFrameType,
+    groupBracketFramePadding,
+    groupBracketFrameWidth,
+    groupBracketFrameRound,
+    groupBracketFrameFgColor,
+    groupBracketFrameBgColor,
+    groupBracketPosition,
 
     dynamicsFontFace,
     dynamicsFontSize,
@@ -2053,6 +2079,7 @@ enum class Sid : short {
     fretDiagramFingeringMusicalSymbolSize,
     fretDiagramFretNumberMusicalSymbolSize,
     glissandoMusicalSymbolSize,
+    groupBracketMusicalSymbolSize,
     hairpinMusicalSymbolSize,
     hammerOnPullOffTappingMusicalSymbolSize,
     harpPedalDiagramMusicalSymbolSize,

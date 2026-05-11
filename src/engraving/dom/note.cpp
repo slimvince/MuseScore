@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -2047,65 +2047,6 @@ EngravingItem* Note::drop(EditData& data)
 }
 
 //---------------------------------------------------------
-//   setDotY
-//    dotMove is number of staff spaces/lines to move from the note's
-//    space or line
-//---------------------------------------------------------
-
-void Note::setDotRelativeLine(int dotMove)
-{
-    double y = dotMove / 2.0;
-    if (staff()->isTabStaff(chord()->tick())) {
-        // with TAB's, dotPosX is not set:
-        // get dot X from width of fret text and use TAB default spacing
-        const Staff* st = staff();
-        const StaffType* tab = st->staffTypeForElement(this);
-        if (tab->stemThrough()) {
-            // if fret mark on lines, use standard processing
-            if (!tab->onLines()) {
-                // if fret marks above lines, raise the dots by half line distance
-                y = -0.5;
-            }
-            if (dotMove == 0) {
-                bool oddVoice = voice() & 1;
-                y = oddVoice ? 0.5 : -0.5;
-            } else {
-                y = 0.5;
-            }
-        }
-        // if stems beside staff, do nothing
-        else {
-            return;
-        }
-    }
-    y *= spatium() * staff()->lineDistance(tick());
-
-    // apply to dots
-
-    int cdots = static_cast<int>(chord()->dots());
-    int ndots = static_cast<int>(m_dots.size());
-
-    int n = cdots - ndots;
-    for (int i = 0; i < n; ++i) {
-        NoteDot* dot = Factory::createNoteDot(this);
-        dot->setParent(this);
-        dot->setTrack(track());      // needed to know the staff it belongs to (and detect tablature)
-        dot->setVisible(visible());
-        score()->undoAddElement(dot);
-    }
-    if (n < 0) {
-        for (int i = 0; i < -n; ++i) {
-            score()->undoRemoveElement(m_dots.back());
-        }
-    }
-
-    for (NoteDot* dot : m_dots) {
-        renderer()->layoutItem(dot);
-        dot->mutldata()->setPosY(y);
-    }
-}
-
-//---------------------------------------------------------
 //   dotIsUp
 //---------------------------------------------------------
 
@@ -2138,6 +2079,16 @@ static bool hasAlteredUnison(Note* note)
 
 void Note::updateAccidental(AccidentalState* as)
 {
+    if (deadNote() && configuration()->keepDeadNotesUnchangedOnTranspose()) {
+        if (m_accidental) {
+            score()->undoRemoveElement(m_accidental);
+        }
+        int eAbsLine = absStep(tpc(), epitch());
+        as->setAccidentalVal(eAbsLine, tpc2alter(tpc()), false);
+        updateRelLine(eAbsLine, true);
+        return;
+    }
+
     int absLine = absStep(tpc(), epitch());
 
     // Ensure m_centOffset and microtonal accidental match (they can mismatch when switching from TAB)
@@ -3364,19 +3315,30 @@ String Note::accessibleInfo() const
 
 String Note::screenReaderInfo() const
 {
-    const Instrument* instrument = part()->instrument(chord()->tick());
-    String duration = chord()->durationUserName();
-    Measure* m = chord()->measure();
+    const Part* part = this->part();
+    if (!part) {
+        return String(); // part is nullptr on Linux after an instrument is deleted.
+    }
+
+    const Fraction tick = this->tick();
+    const Chord* chord = this->chord();
+    const Instrument* instrument = part->instrument(tick);
+
+    IF_ASSERT_FAILED(chord && instrument) {
+        return String();
+    }
+
+    String duration = chord->durationUserName();
+    Measure* m = chord->measure();
     bool voices = m ? m->hasVoices(staffIdx()) : false;
     String voice = voices ? muse::mtrc("engraving", "Voice: %1").arg(track() % VOICES + 1) : u"";
     String pitchName;
     String pitchOutOfRangeWarning;
-    const Drumset* drumset = instrument->drumset();
     if (fixed() && headGroup() == NoteHeadGroup::HEAD_SLASH) {
-        pitchName = chord()->noStem() ? muse::mtrc("engraving", "Beat slash") : muse::mtrc("engraving", "Rhythm slash");
-    } else if (staff()->isDrumStaff(tick()) && drumset) {
-        pitchName = drumset->translatedName(pitch());
-    } else if (staff()->isTabStaff(tick())) {
+        pitchName = chord->noStem() ? muse::mtrc("engraving", "Beat slash") : muse::mtrc("engraving", "Rhythm slash");
+    } else if (const Drumset* d = instrument->drumset(); d&& instrument->useDrumset()) {
+        pitchName = d->translatedName(m_pitch);
+    } else if (const Staff* staff = this->staff(); staff&& staff->isTabStaff(tick)) {
         pitchName = muse::mtrc("engraving", "%1; String: %2; Fret: %3")
                     .arg(tpcUserName(true, true), String::number(string() + 1), String::number(fret()));
     } else {
@@ -3384,24 +3346,24 @@ String Note::screenReaderInfo() const
                     ? tpcUserName(true, true)
                     //: head as in note head. %1 is head type (circle, cross, etc.). %2 is pitch (e.g. Db4).
                     : muse::mtrc("engraving", "%1 head %2").arg(translatedSubtypeUserName()).arg(tpcUserName(true));
-        if (chord()->staffMove() < 0) {
+        if (chord->staffMove() < 0) {
             duration += u"; " + muse::mtrc("engraving", "Cross-staff above");
-        } else if (chord()->staffMove() > 0) {
+        } else if (chord->staffMove() > 0) {
             duration += u"; " + muse::mtrc("engraving", "Cross-staff below");
         }
 
-        if (pitch() < instrument->minPitchP()) {
+        if (m_pitch < instrument->minPitchP()) {
             pitchOutOfRangeWarning = u" " + muse::mtrc("engraving", "too low");
-        } else if (pitch() > instrument->maxPitchP()) {
+        } else if (m_pitch > instrument->maxPitchP()) {
             pitchOutOfRangeWarning = u" " + muse::mtrc("engraving", "too high");
-        } else if (pitch() < instrument->minPitchA()) {
+        } else if (m_pitch < instrument->minPitchA()) {
             pitchOutOfRangeWarning = u" " + muse::mtrc("engraving", "too low for amateurs");
-        } else if (pitch() > instrument->maxPitchA()) {
+        } else if (m_pitch > instrument->maxPitchA()) {
             pitchOutOfRangeWarning = u" " + muse::mtrc("engraving", "too high for amateurs");
         }
     }
     return String(u"%1 %2 %3%4%5").arg(noteTypeUserName(), pitchName, duration, pitchOutOfRangeWarning,
-                                       (chord()->isGrace() ? u"" : String(u"; %1").arg(voice)));
+                                       (chord->isGrace() ? u"" : String(u"; %1").arg(voice)));
 }
 
 //---------------------------------------------------------
@@ -4090,7 +4052,7 @@ void Note::addLineAttachPoint(PointF point, EngravingItem* line, bool start)
 
 bool Note::negativeFretUsed() const
 {
-    return configuration()->negativeFretsAllowed() && m_fret < 0;
+    return configuration()->negativeFretsAllowed() && m_fret < 0 && m_string != INVALID_STRING_INDEX;
 }
 
 int Note::stringOrLine() const

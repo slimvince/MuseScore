@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -128,6 +128,9 @@ static void translate_dashPattern(QVector<qreal> pattern, const qreal& width, QS
 
     // Note that SVG operates in absolute lengths, whereas Qt uses a length/width ratio.
     foreach (qreal entry, pattern) {
+        if (entry < 0) {
+            entry = -entry;
+        }
         *pattern_string += QString::fromLatin1("%1,").arg(entry * width);
     }
 

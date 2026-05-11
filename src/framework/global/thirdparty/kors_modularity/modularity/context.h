@@ -28,12 +28,12 @@ SOFTWARE.
 #include <functional>
 
 namespace kors::modularity {
-using IoCID = int;
+using IoCID = uint16_t;
 struct Context
 {
-    IoCID id = -1;
+    IoCID id = static_cast<IoCID>(-1);
 
-    Context(IoCID id = -1)
+    Context(IoCID id = static_cast<IoCID>(-1))
         : id(id) {}
 };
 

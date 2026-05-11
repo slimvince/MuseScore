@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -34,6 +34,7 @@
 #include "engraving/editing/editpart.h"
 #include "engraving/editing/editscoreproperties.h"
 #include "engraving/editing/editstaff.h"
+#include "engraving/editing/editstavesharing.h"
 #include "engraving/editing/editsystemlocks.h"
 #include "engraving/editing/transpose.h"
 
@@ -48,24 +49,13 @@ using namespace mu::engraving;
 
 static const mu::engraving::Fraction DEFAULT_TICK = mu::engraving::Fraction(0, 1);
 
-static String formatInstrumentTitleOnScore(const String& instrumentName, const Trait& trait)
-{
-    // Comments for translators start with //:
-
-    if (trait.type == TraitType::Transposition && !trait.isHiddenOnScore) {
-        //: %1=name ("Horn"), %2=transposition ("C alto"). Example: "Horn in C alto"
-        return muse::qtrc("notation", "%1 in %2", "Transposing instrument displayed in the score")
-               .arg(instrumentName, trait.name);
-    }
-
-    return instrumentName; // Example: "Flute"
-}
-
-NotationParts::NotationParts(IGetScore* getScore, INotationInteractionPtr interaction, INotationUndoStackPtr undoStack)
-    : m_getScore(getScore), m_undoStack(undoStack), m_interaction(interaction)
+NotationParts::NotationParts(IGetScore* getScore, INotationInteractionPtr interaction, INotationUndoStackPtr undoStack,
+                             INotationStylePtr style)
+    : m_getScore(getScore), m_undoStack(undoStack), m_interaction(interaction), m_style(style)
 {
     m_getScore->scoreInited().onNotify(this, [this]() {
         listenUndoStackChanges();
+        listenStyleChanges();
     });
 }
 
@@ -314,6 +304,7 @@ void NotationParts::listenUndoStackChanges()
             ElementType::SCORE,
             ElementType::STAFF,
             ElementType::PART,
+            ElementType::SHARED_PART,
         };
 
         for (ElementType type : TYPES_TO_CHECK) {
@@ -340,6 +331,10 @@ void NotationParts::updatePartsAndSystemObjectStaves(const mu::engraving::ScoreC
 
     if (systemObjectStavesChanged) {
         m_systemObjectStavesChanged.notify();
+    }
+
+    if (muse::contains(changes.changedTypes, ElementType::SHARED_PART)) {
+        m_sharedPartsChanged.notify();
     }
 
     std::vector<Staff*> removedStaves;
@@ -378,6 +373,15 @@ void NotationParts::updatePartsAndSystemObjectStaves(const mu::engraving::ScoreC
     for (Staff* staff: addedStaves) {
         notifyAboutStaffAdded(staff);
     }
+}
+
+void NotationParts::listenStyleChanges()
+{
+    if (!score()) {
+        return;
+    }
+
+    m_style->styleChanged().onNotify(this, [this]{ m_sharedPartsChanged.notify(); });
 }
 
 void NotationParts::doSetScoreOrder(const ScoreOrder& order)
@@ -562,7 +566,8 @@ void NotationParts::setStaffVisible(const ID& staffId, bool visible)
 
     startEdit(actionName);
 
-    mu::engraving::EditPart::setStaffVisible(score(), staff, visible);
+    config.visible = visible;
+    doSetStaffConfig(staff, config);
 
     if (visible) {
         EditSystemLocks::removeSystemLocksContainingMMRests(score());
@@ -617,6 +622,32 @@ void NotationParts::setStaffConfig(const ID& staffId, const StaffConfig& config,
     apply();
 
     notifyAboutStaffChanged(staff);
+}
+
+void NotationParts::setSharedPartEnabled(const muse::ID& partId, bool enable)
+{
+    TRACEFUNC;
+
+    Part* part = partModifiable(partId);
+    if (!part) {
+        return;
+    }
+
+    if (part->getProperty(Pid::SHARED_PART_ENABLED).toBool() == enable) {
+        return;
+    }
+
+    const TranslatableString actionName = enable
+                                          ? TranslatableString("undoableAction", "Enable shared staff")
+                                          : TranslatableString("undoableAction", "Disable shared staff");
+
+    startEdit(actionName);
+
+    part->undoChangeProperty(Pid::SHARED_PART_ENABLED, enable);
+
+    apply();
+
+    notifyAboutPartChanged(part);
 }
 
 bool NotationParts::appendStaff(Staff* staff, const ID& destinationPartId)
@@ -762,7 +793,14 @@ void NotationParts::replaceDrumset(const InstrumentKey& instrumentKey, const Dru
 
     if (undoable) {
         startEdit(TranslatableString("undoableAction", "Edit drumset"));
-        EditPart::replaceDrumset(score(), part, instrumentKey.instrumentId, newDrumset);
+
+        for (auto pair : part->instruments()) {
+            Instrument* instrument = pair.second;
+            if (instrument && instrument->drumset() && instrument->id() == instrumentKey.instrumentId) {
+                EditPart::replaceDrumset(score(), part, Fraction::fromTicks(pair.first), newDrumset);
+            }
+        }
+
         apply();
     } else {
         for (auto pair : part->instruments()) {
@@ -850,6 +888,20 @@ void NotationParts::moveSystemObjectLayerAboveBottomStaff()
     score()->undoChangeStyleVal(Sid::systemObjectsBelowBottomStaff, false);
 
     apply();
+}
+
+void NotationParts::toggleStaveSharing(bool on)
+{
+    startEdit(TranslatableString("undoableAction", "Toggle stave sharing"));
+
+    EditStaveSharing::toggleStaveSharing(score(), on);
+
+    apply();
+}
+
+Notification NotationParts::sharedPartsChanged() const
+{
+    return m_sharedPartsChanged;
 }
 
 Notification NotationParts::partsChanged() const

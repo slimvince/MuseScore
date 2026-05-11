@@ -4,7 +4,7 @@
 # MuseScore Studio
 # Music Composition & Notation
 #
-# Copyright (C) 2021-2024 MuseScore Limited
+# Copyright (C) 2021-2024 MuseScore Limited and others
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as
@@ -122,7 +122,8 @@ add_to_link_if_exists(muse::accessibility)
 add_to_link_if_exists(muse::actions)
 add_to_link_if_exists(muse::audio)
 add_to_link_if_exists(muse::audioplugins)
-add_to_link_if_exists(muse::autobot)
+add_to_link_if_exists(muse::testflow)
+add_to_link_if_exists(muse::automation)
 add_to_link_if_exists(muse::cloud)
 add_to_link_if_exists(muse::diagnostics)
 add_to_link_if_exists(muse::dockwindow)
@@ -131,6 +132,7 @@ add_to_link_if_exists(muse::interactive)
 add_to_link_if_exists(muse::languages)
 add_to_link_if_exists(muse::learn)
 add_to_link_if_exists(muse::midi)
+add_to_link_if_exists(muse::midiremote)
 add_to_link_if_exists(muse::mpe)
 add_to_link_if_exists(muse::multiwindows)
 add_to_link_if_exists(muse::musesampler)

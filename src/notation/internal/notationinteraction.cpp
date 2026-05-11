@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -94,9 +94,11 @@
 #include "engraving/editing/editnote.h"
 #include "engraving/editing/editpart.h"
 #include "engraving/editing/editsystemlocks.h"
+#include "engraving/editing/exchangevoices.h"
+#include "engraving/editing/implodeexplode.h"
 #include "engraving/editing/splitjoinmeasure.h"
-#include "engraving/editing/transpose.h"
 #include "engraving/editing/textedit.h"
+#include "engraving/editing/transpose.h"
 #include "engraving/rw/rwregister.h"
 #include "engraving/rw/xmlreader.h"
 
@@ -4980,17 +4982,19 @@ void NotationInteraction::editElement(QKeyEvent* event)
     m_editData.key = event->key();
     m_editData.s = event->text();
 
-    // Brackets may be deleted and replaced
+    // Brackets get deleted during layout with their system, so the best we can do to maintain
+    // the bracket selected is to store their indices and use them to find the new ones
     bool isBracket = m_editData.element->isBracket();
-    const mu::engraving::System* system = nullptr;
     size_t bracketIndex = muse::nidx;
+    size_t systemIndex = muse::nidx;
 
     if (isBracket) {
-        const mu::engraving::Bracket* bracket = mu::engraving::toBracket(m_editData.element);
-        system = bracket->system();
+        const Bracket* bracket = toBracket(m_editData.element);
+        System* system = bracket->system();
 
         if (system) {
             bracketIndex = muse::indexOf(system->brackets(), bracket);
+            systemIndex = muse::indexOf(score()->systems(), system);
         }
     } else if (m_editData.element->isHarmony()) {
         if (isTextEditingStarted() && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)) {
@@ -5004,10 +5008,14 @@ void NotationInteraction::editElement(QKeyEvent* event)
     }
 
     if (handleKeyPress(event)) {
-        if (isBracket && system && bracketIndex != muse::nidx) {
-            mu::engraving::EngravingItem* bracket = system->brackets().at(bracketIndex);
-            m_editData.element = bracket;
-            select({ bracket }, SelectType::SINGLE);
+        if (isBracket && bracketIndex != muse::nidx && systemIndex != muse::nidx) {
+            // Try to restore selected bracket
+            System* system = systemIndex < score()->systems().size() ? score()->systems().at(systemIndex) : nullptr;
+            EngravingItem* bracket = system && bracketIndex < system->brackets().size() ? system->brackets().at(bracketIndex) : nullptr;
+            if (bracket) {
+                m_editData.element = bracket;
+                select({ bracket }, SelectType::SINGLE);
+            }
         }
 
         if (isGripEditStarted()) {
@@ -6149,7 +6157,7 @@ void NotationInteraction::swapVoices(voice_idx_t voiceIndex1, voice_idx_t voiceI
     }
 
     startEdit(TranslatableString("undoableAction", "Swap voices"));
-    score()->cmdExchangeVoice(voiceIndex1, voiceIndex2);
+    ExchangeVoices::exchangeVoicesInSelection(score(), voiceIndex1, voiceIndex2);
     apply();
 }
 
@@ -6464,7 +6472,7 @@ void NotationInteraction::explodeSelectedStaff()
     }
 
     startEdit(TranslatableString("undoableAction", "Explode"));
-    if (score()->cmdExplode()) {
+    if (ImplodeExplode::explode(score())) {
         apply();
     } else {
         rollback();
@@ -6480,7 +6488,7 @@ void NotationInteraction::implodeSelectedStaff()
     }
 
     startEdit(TranslatableString("undoableAction", "Implode"));
-    if (score()->cmdImplode()) {
+    if (ImplodeExplode::implode(score())) {
         apply();
     } else {
         rollback();
@@ -6997,6 +7005,8 @@ void NotationInteraction::navigateToNextSyllable()
         return;
     }
 
+    PartialLyricsLine* prevPartialLyricsLine = findPrevPartialLyricsLineDash(lyrics);
+
     endEditText();
 
     // look for the lyrics we are moving from; may be the current lyrics or a previous one
@@ -7039,6 +7049,7 @@ void NotationInteraction::navigateToNextSyllable()
 
         if (hasPrecedingRepeat) {
             score()->endCmd();
+            score()->startCmd(TranslatableString("undoableAction", "Add partial lyrics dash"));
             // No from lyrics - create incoming partial dash
             PartialLyricsLine* dash = Factory::createPartialLyricsLine(score()->dummy());
             dash->setIsEndMelisma(false);
@@ -7124,20 +7135,6 @@ void NotationInteraction::navigateToNextSyllable()
         }
     }
 
-    PartialLyricsLine* prevPartialLyricsLine = nullptr;
-
-    for (auto sp : score()->spannerMap().findOverlapping(initialCR->tick().ticks(), initialCR->tick().ticks())) {
-        if (!sp.value->isPartialLyricsLine() || sp.value->track() != track) {
-            continue;
-        }
-        PartialLyricsLine* partialLine = toPartialLyricsLine(sp.value);
-        if (partialLine->isEndMelisma() || partialLine->verse() != lyrics->verse() || partialLine->placement() != lyrics->placement()) {
-            continue;
-        }
-        prevPartialLyricsLine = partialLine;
-        break;
-    }
-
     bool newLyrics = (toLyrics == 0);
     if (!toLyrics || hasPrecedingRepeat) {
         // Don't advance cursor if we are after a repeat, there is no partial dash present and we are inputting a dash
@@ -7195,6 +7192,7 @@ void NotationInteraction::navigateToNextSyllable()
     } else if (prevPartialLyricsLine) {
         const Fraction tickDiff = cr->tick() - prevPartialLyricsLine->tick2();
         prevPartialLyricsLine->undoMoveEnd(tickDiff);
+        score()->undoAddElement(prevPartialLyricsLine);
         prevPartialLyricsLine->triggerLayout();
     }
 

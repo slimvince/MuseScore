@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -180,6 +180,12 @@ bool MStyle::readProperties(XmlReader& e)
                 break;
             case P_TYPE::PLACEMENT_H:
                 set(idx, PlacementH(e.readText().toInt()));
+                break;
+            case P_TYPE::DIRECTION_H:
+                set(idx, DirectionH(e.readText().toInt()));
+                break;
+            case P_TYPE::ORIENTATION:
+                set(idx, TConv::fromXml(e.readAsciiText(), Orientation::HORIZONTAL));
                 break;
             case P_TYPE::HOOK_TYPE:
                 set(idx, HookType(e.readText().toInt()));
@@ -741,6 +747,8 @@ void MStyle::save(XmlWriter& xml, bool optimize)
             xml.tag(st.xmlName, value(idx).value<Spatium>().val());
         } else if (P_TYPE::DIRECTION_V == type) {
             xml.tag(st.xmlName, int(value(idx).value<DirectionV>()));
+        } else if (P_TYPE::ORIENTATION == type) {
+            xml.tag(st.xmlName, TConv::toXml(value(idx).value<Orientation>()));
         } else if (P_TYPE::ALIGN == type) {
             Align a = value(idx).value<Align>();
             // Don't write if it's the default value

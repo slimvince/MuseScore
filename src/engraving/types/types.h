@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -69,6 +69,7 @@ enum class ElementType : unsigned char {
     INVALID = 0,
     BRACKET_ITEM,
     PART,
+    SHARED_PART,
     STAFF,
     SCORE,
     TEXT,
@@ -836,6 +837,7 @@ enum class TextStyleType : unsigned char {
     INSTRUMENT_LONG,
     INSTRUMENT_SHORT,
     INSTRUMENT_CHANGE,
+    GROUP_BRACKET,
     HEADER,
     FOOTER,
     COPYRIGHT,
@@ -1131,7 +1133,7 @@ enum class TremoloChordType : unsigned char {
 };
 
 enum class BracketType : signed char {
-    NORMAL, BRACE, SQUARE, LINE, NO_BRACKET = -1
+    NORMAL, BRACE, SQUARE, LINE, GROUP, NO_BRACKET = -1
 };
 
 using InstrumentTrackIdList = std::vector<InstrumentTrackId>;

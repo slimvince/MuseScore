@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2021 MuseScore Limited
+ * Copyright (C) 2021 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -66,6 +66,7 @@ static const QStringList ALL_PAGE_CODES {
     "measure-number",
     "system",
     "instrument-names",
+    "stave-sharing",
     "clefs-key-and-time-signatures",
     "accidentals",
     "barlines",
@@ -113,6 +114,7 @@ static const QStringList ALL_TEXT_STYLE_SUBPAGE_CODES {
     "instrument-name-long",
     "instrument-name-short",
     "instrument-change",
+    "group-bracket",
     "header",
     "footer",
     "copyright",
@@ -328,6 +330,24 @@ void EditStyle::classBegin()
     dividerRightAlignToSystemBarline->addButton(rightDividerAlignToSystemBarline, 1);
     dividerRightAlignToSystemBarline->addButton(rightDividerAlignToPageMargin, 0);
 
+    QButtonGroup* groupBracketTextAlign = new QButtonGroup(this);
+    groupBracketTextAlign->addButton(groupBracketTextLeft, 1);
+    groupBracketTextAlign->addButton(groupBracketTextCenter, 0);
+    groupBracketTextAlign->addButton(groupBracketTextRight, 2);
+
+    QButtonGroup* groupBracketOrientation = new QButtonGroup(this);
+    groupBracketOrientation->addButton(groupBracketTextVertical, 0);
+    groupBracketOrientation->addButton(groupBracketTextHorizontal, 1);
+
+    auto updateHangIntoMarginEnabled = [&]() {
+        bool rightAlign = groupBracketTextRight->isChecked();
+        bool vertical = groupBracketTextVertical->isChecked();
+        groupBracketHangIntoMargin->setEnabled(vertical && !rightAlign);
+    };
+
+    connect(groupBracketTextAlign, &QButtonGroup::buttonClicked, this, updateHangIntoMarginEnabled);
+    connect(groupBracketOrientation, &QButtonGroup::buttonClicked, this, updateHangIntoMarginEnabled);
+
     // ====================================================
     // Style widgets
     // ====================================================
@@ -486,6 +506,14 @@ void EditStyle::classBegin()
         { StyleId::bracketDistance,         false, bracketDistance,         resetBracketDistance },
         { StyleId::akkoladeWidth,           false, akkoladeWidth,           resetBraceThickness },
         { StyleId::akkoladeBarDistance,     false, akkoladeBarDistance,     resetBraceDistance },
+        { StyleId::groupBracketLineWidth,   false, groupBracketLineThick,   groupBracketLineThickReset },
+        { StyleId::groupBracketHookLen,     false, groupBracketHookLen,     groupBracketHookLenReset },
+        { StyleId::groupBracketTextAlign,   false, groupBracketTextAlign,   0 },
+        { StyleId::groupBracketHangTextIntoMargin, false, groupBracketHangIntoMargin, 0 },
+        { StyleId::groupBracketDistanceToNames, false, groupBracketDistanceToNames, groupBracketDistanceToNamesReset },
+        { StyleId::groupBracketDistanceToGroupBracket, false, groupBracketDistanceToBrackets, groupBracketDistanceToBracketsReset },
+        { StyleId::groupBracketTextOrientation, false, groupBracketOrientation },
+
         { StyleId::dividerLeft,             false, dividerLeft,             0 },
         { StyleId::dividerLeftX,            false, dividerLeftX,            dividerLeftXReset },
         { StyleId::dividerLeftY,            false, dividerLeftY,            dividerLeftYReset },
@@ -982,7 +1010,16 @@ void EditStyle::classBegin()
         QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/InstrumentNamesPage.qml")));
     instrNamesPage.widget->setMinimumSize(224, 400);
     pageInstrumentNames->layout()->addWidget(instrNamesPage.widget);
-    //connect(instrNamesPage.view->rootObject(), SIGNAL(goToTextStylePage(int)), this, SLOT(goToTextStylePage(int)));
+
+    // ====================================================
+    // Stave sharing page (QML)
+    // ====================================================
+
+    auto staveSharingPage = createQmlWidget(
+        PageStaveSharing,
+        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/StaveSharingPage.qml")));
+    staveSharingPage.widget->setMinimumSize(224, 400);
+    PageStaveSharing->layout()->addWidget(staveSharingPage.widget);
 
     // ====================================================
     // Figured Bass
@@ -1273,6 +1310,14 @@ void EditStyle::classBegin()
     connect(resetLyricsMaxDashCount, &QCheckBox::clicked, this, [this] () {
         resetStyleValue(int(StyleId::lyricsLimitDashCount));
         resetStyleValue(int(StyleId::lyricsMaxDashCount));
+    });
+
+    editGroupBracketTextStyleLink->setChecked(false);
+    connect(editGroupBracketTextStyleLink, &QPushButton::clicked, pageList, [=](){
+        pageList->setCurrentRow(ALL_PAGE_CODES.indexOf("text-styles"));
+    });
+    connect(editGroupBracketTextStyleLink, &QPushButton::clicked, textStyles, [=](){
+        textStyles->setCurrentRow(ALL_TEXT_STYLE_SUBPAGE_CODES.indexOf("group-bracket"));
     });
 
     adjustPagesStackSize(0);
@@ -1783,6 +1828,8 @@ PropertyValue EditStyle::getValue(StyleId idx)
     } break;
     case P_TYPE::PLACEMENT_H:
     case P_TYPE::PLACEMENT_V:
+    case P_TYPE::DIRECTION_H:
+    case P_TYPE::ORIENTATION:
     case P_TYPE::LINE_TYPE:
     case P_TYPE::TIMESIG_PLACEMENT:
     case P_TYPE::TIMESIG_STYLE:
@@ -1902,6 +1949,8 @@ void EditStyle::setValues()
         } break;
         case P_TYPE::PLACEMENT_H:
         case P_TYPE::PLACEMENT_V:
+        case P_TYPE::DIRECTION_H:
+        case P_TYPE::ORIENTATION:
         case P_TYPE::BARLINE_TYPE:
         case P_TYPE::LINE_TYPE:
         case P_TYPE::HOOK_TYPE:
@@ -2049,6 +2098,11 @@ void EditStyle::setValues()
                                            != defaultStyleValue(StyleId::lyricsDashMaxDistance));
 
     updateParenthesisIndicatingTiesGroupState();
+
+    bool textBracketRight = styleValue(StyleId::groupBracketTextAlign).value<DirectionH>() == DirectionH::RIGHT;
+    bool vertical = styleValue(StyleId::groupBracketTextOrientation).value<mu::engraving::Orientation>()
+                    == mu::engraving::Orientation::VERTICAL;
+    groupBracketHangIntoMargin->setEnabled(vertical && !textBracketRight);
 }
 
 //---------------------------------------------------------
@@ -2405,11 +2459,6 @@ void EditStyle::textStyleChanged(int row)
             resetTextStyleAlign->setEnabled(styleValue(a.sid) != defaultStyleValue(a.sid));
             break;
 
-        case TextStylePropertyType::Offset:
-            textStyleOffset->setOffset(styleValue(a.sid).value<PointF>());
-            resetTextStyleOffset->setEnabled(styleValue(a.sid) != defaultStyleValue(a.sid));
-            break;
-
         case TextStylePropertyType::SizeSpatiumDependent: {
             PropertyValue val = styleValue(a.sid);
             textStyleSpatiumDependent->setChecked(val.toBool());
@@ -2459,6 +2508,9 @@ void EditStyle::textStyleChanged(int row)
         }
     }
 
+    textStyleOffset->setOffset(styleValue(ts->offsetSids.above).value<PointF>());
+    resetTextStyleOffset->setEnabled(styleValue(ts->offsetSids.above) != defaultStyleValue(ts->offsetSids.above));
+
     INotationPtr notation = globalContext()->currentNotation();
     IF_ASSERT_FAILED(notation) {
         return;
@@ -2487,14 +2539,18 @@ void EditStyle::textStyleValueChanged(TextStylePropertyType type, const Property
     TextStyleType tid = TextStyleType(textStyles->currentItem()->data(Qt::UserRole).toInt());
     const TextStyle* ts = textStyle(tid);
 
-    for (const auto& a : *ts) {
-        if (a.type == type) {
-            if (type == TextStylePropertyType::MusicalSymbolsScale) {
-                setStyleValue(a.sid, value.toDouble() / 100);
-            } else {
-                setStyleValue(a.sid, value);
+    if (type == TextStylePropertyType::Offset) {
+        setStyleValue(ts->offsetSids.above, value);
+    } else {
+        for (const auto& a : *ts) {
+            if (a.type == type) {
+                if (type == TextStylePropertyType::MusicalSymbolsScale) {
+                    setStyleValue(a.sid, value.toDouble() / 100);
+                } else {
+                    setStyleValue(a.sid, value);
+                }
+                break;
             }
-            break;
         }
     }
     textStyleChanged(textStyles->currentRow()); // update GUI (reset buttons)
@@ -2509,12 +2565,17 @@ void EditStyle::resetTextStyle(TextStylePropertyType type)
     TextStyleType tid = TextStyleType(textStyles->currentItem()->data(Qt::UserRole).toInt());
     const TextStyle* ts = textStyle(tid);
 
-    for (const auto& a : *ts) {
-        if (a.type == type) {
-            setStyleValue(a.sid, defaultStyleValue(a.sid));
-            break;
+    if (type == TextStylePropertyType::Offset) {
+        setStyleValue(ts->offsetSids.above, defaultStyleValue(ts->offsetSids.above));
+    } else {
+        for (const auto& a : *ts) {
+            if (a.type == type) {
+                setStyleValue(a.sid, defaultStyleValue(a.sid));
+                break;
+            }
         }
     }
+
     textStyleChanged(textStyles->currentRow()); // update GUI
 }
 

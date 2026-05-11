@@ -4,7 +4,7 @@
 # MuseScore Studio
 # Music Composition & Notation
 #
-# Copyright (C) 2024 MuseScore Limited
+# Copyright (C) 2024 MuseScore Limited and others
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as
@@ -32,16 +32,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(MUSE_FRAMEWORK_PATH "${CMAKE_CURRENT_LIST_DIR}/muse" CACHE PATH "Path to muse framework")
+
+set(MUSE_FRAMEWORK_SRC_PATH ${MUSE_FRAMEWORK_PATH}/framework)
+
 set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_LIST_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/buildscripts
     ${CMAKE_CURRENT_LIST_DIR}/buildscripts/cmake
-    ${CMAKE_CURRENT_LIST_DIR}/src/framework/cmake
+    ${MUSE_FRAMEWORK_SRC_PATH}/cmake
     ${CMAKE_MODULE_PATH}
     )
-
-set(MUSE_FRAMEWORK_PATH ${CMAKE_CURRENT_LIST_DIR})
-set(MUSE_FRAMEWORK_SRC_PATH ${CMAKE_CURRENT_LIST_DIR}/src/framework)
 
 ###########################################
 # Setup option and build settings
@@ -146,6 +147,8 @@ option(MUE_RUN_WINDEPLOYQT "Run windeployqt" ON)
 
 # === Tests ===
 set(MUE_VTEST_MSCORE_REF_BIN "${CMAKE_CURRENT_LIST_DIR}/../MU_ORIGIN/MuseScore/build.debug/install/${INSTALL_SUBDIR}/mscore" CACHE PATH "Path to mscore ref bin")
+set(APP_WORKSPACE_CONFIG_FILE "${CMAKE_CURRENT_LIST_DIR}/src/app/configs/workspaces.cfg")
+set(APP_BUILTIN_WORKSPACES_DIR "${CMAKE_CURRENT_LIST_DIR}/share/workspaces")
 
 # === Compile ===
 set(MUE_COMPILE_MACOS_PRECOMPILED_DEPS_PATH "" CACHE PATH "Path to precompiled dependencies (macOS only; optional: if not specified, some libraries will be used from the system and others will be built from source)")
@@ -184,6 +187,7 @@ set(QT_ADD_WEBSOCKET OFF)
 set(QT_QPROCESS_SUPPORTED ON)
 set(QT_CONCURRENT_SUPPORTED ON)
 set(QT_NO_PRIVATE_MODULE_WARNING ON)
+set(MUSE_MODULE_MULTIWINDOWS_SINGLEPROC_MODE ON)
 
 if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/SetupConfigure.local.cmake")
     include(${CMAKE_CURRENT_LIST_DIR}/SetupConfigure.local.cmake)
@@ -191,7 +195,6 @@ else()
     include(SetupConfigure)
 endif()
 
-set(MUSE_FRAMEWORK_SRC_PATH ${PROJECT_SOURCE_DIR}/src/framework)
 set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/thirdparty)
 
 ###########################################
@@ -224,6 +227,8 @@ if (MUE_DOWNLOAD_SOUNDFONT)
     include(DownloadSoundFont)
 endif(MUE_DOWNLOAD_SOUNDFONT)
 
+include(SetupDependencies)
+
 ###########################################
 # Add source tree
 ###########################################
@@ -233,6 +238,7 @@ if (MUSE_ENABLE_UNIT_TESTS)
 endif()
 
 add_subdirectory(share)
+add_subdirectory(${MUSE_FRAMEWORK_SRC_PATH})
 add_subdirectory(src)
 add_subdirectory(tools)
 
