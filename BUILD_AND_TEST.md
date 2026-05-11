@@ -167,14 +167,26 @@ must not be adjusted to accommodate other styles. If a gate causes BIR=false
 regressions in Jazz, fix it with a tighter structural condition or a preset-specific
 override — never by widening the Baroque-tuned threshold. See CLAUDE.md for details.
 
-**Current Baroque baseline (Iteration 54, corpus regeneration 2026-05-11):**
+**Current Baroque baseline (Iteration 61/62, validated 2026-05-11):**
+- 3-way genuine BIR=true: 6
+- 3-way genuine BIR=false: 125
+- Commits: a34dba041e (Iter 61 HalfDim first-inversion bonus),
+  ee337aeca4 (Iter 62 parallelization)
+- Regression tolerance: investigate before committing if BIR=false > 135
+  (current 125 + 10).
+- BIR=false enumeration: `tools/birfalse_baseline_iter61.txt`
+- Genuine BIR=true characterization: `tools/iter63_genuine6_characterization.txt`
+
+Update rationale: Iteration 61 added the HalfDim first-inversion bonus
+(Option B), moving BIR=true 7→6 and BIR=false 132→125 without regressions in
+Jazz. Iter 62 was a tools-only parallelization with no chord-output impact.
+
+Previous baseline (Iteration 54, corpus regeneration 2026-05-11):
 - 3-way genuine BIR=true: 14
 - 3-way genuine BIR=false: 132
 - Commit: f92a4f1a3b (greedy-expand segmentation, batch path)
-- Regression tolerance: investigate before committing if BIR=false > 142
-  (current 132 + 10).
 
-Update rationale: Iteration 54 switched `batch_analyze` from Jaccard-based segmentation
+Iteration 54 switched `batch_analyze` from Jaccard-based segmentation
 to greedy-expand, producing different (improved) chord boundaries. The bridge path
 (`notationcomposingbridgehelpers.cpp`) still uses Jaccard; bridge replacement is in
 progress (Task #62).

@@ -1,0 +1,129 @@
+Genuine BIR=false (three-way) total: 125
+
+  #  stem             m     b  q                r b_pc   BIR agreed   score  margin
+------------------------------------------------------------------------------------------
+  1  bwv10.7          2  1.00  Minor            2   10 False     10  2.8600  0.0000
+  2  bwv102.7        11  3.00  Minor            0    7 False      8  2.8600  0.0000
+  3  bwv103.6         7  3.00  Major            2   11 False     11  2.8176  0.0000
+  4  bwv11.6         18  2.00  Minor            4    1 False      1  2.8176  0.0000
+  5  bwv117.4         3  3.00  Major            7    4 False      4  2.8900  0.0000
+  6  bwv117.4         5  1.00  Minor           11    7 False      7  2.6200  0.0000
+  7  bwv121.6         5  3.00  Minor           11    7 False      7  2.8600  0.0000
+  8  bwv121.6        13  2.00  Minor            4   11 False      0  2.8600  0.0000
+  9  bwv127.5         2  1.00  Minor            2    9 False     10  2.8600  0.0000
+ 10  bwv13.6          9  3.00  Minor            9    5 False      5  2.6200  0.0000
+ 11  bwv144.3         3  3.00  Minor           11    6 False      7  2.8600  0.0000
+ 12  bwv151.5         8  1.00  Major            7    4 False      4  2.8900  0.0000
+ 13  bwv153.1         3  3.00  Minor            9    5 False      5  2.7824  0.0000
+ 14  bwv153.9        14  2.00  Minor           11    7 False      7  2.8600  0.0000
+ 15  bwv155.5         5  1.00  Major           10    2 False      2  2.7971  0.1559
+ 16  bwv168.6         8  1.00  Minor            6    1 False      2  2.8600  0.0000
+ 17  bwv17.7         31  3.00  Major            4    1 False      1  2.8900  0.0000
+ 18  bwv17.7         32  3.00  Major           11    3 False      3  3.0100  0.1200
+ 19  bwv174.5         4  1.00  Major            4    8 False      8  2.1600  0.0000
+ 20  bwv176.6        15  1.00  Minor            5    0 False      1  2.8600  0.0000
+ 21  bwv179.6         8  4.00  Minor            9    5 False      5  2.8778  0.0000
+ 22  bwv194.12       13  2.00  Minor            0    9 False      9  2.8900  0.0000
+ 23  bwv197.5         9  3.00  Minor            6    2 False      2  2.6200  0.0000
+ 24  bwv20.11         7  1.00  Minor            7    4 False      4  2.8900  0.0000
+ 25  bwv244.15        5  3.00  Minor           11    6 False      7  2.8600  0.0000
+ 26  bwv244.3         5  4.00  Major            2    9 False     11  2.8900  0.0000
+ 27  bwv244.44        5  3.00  Minor           11    6 False      7  2.8600  0.0000
+ 28  bwv244.46        3  2.00  Major            7   11 False     11  3.1700  0.1100
+ 29  bwv244.46        4  4.00  Minor           11    6 False      7  2.8600  0.0000
+ 30  bwv244.46        5  1.00  Major            7    4 False      4  2.8900  0.0000
+ 31  bwv245.11        4  3.00  Major            9    1 False      1  2.7900  0.1400
+ 32  bwv245.28        3  2.00  Major           11    8 False      4  1.9200  0.0000
+ 33  bwv245.3         3  2.00  Major            3    7 False      7  3.1700  0.1100
+ 34  bwv248.33-3     10  3.00  Major            0    9 False      9  2.8900  0.0000
+ 35  bwv248.46-5      9  1.00  Minor           11    7 False      7  2.4267  0.0000
+ 36  bwv253           9  1.00  Major            9    1 False      6  2.6900  0.0000
+ 37  bwv261           2  2.00  Major            2    9 False     11  2.8900  0.0000
+ 38  bwv263           8  1.00  Major            0    7 False      9  2.8700  0.3100
+ 39  bwv266           8  2.00  Major            0    9 False      9  2.2500  0.0000
+ 40  bwv271           9  3.00  Major            2   11 False     11  2.9111  0.0000
+ 41  bwv279          10  1.00  Major            7    4 False      4  2.8900  0.0000
+ 42  bwv279          11  4.50  Major            7    4 False     11  2.2900  0.0400
+ 43  bwv280          11  1.00  Minor            2    9 False     10  2.8600  0.0000
+ 44  bwv281           5  2.00  Minor            4    0 False      0  2.8778  0.0000
+ 45  bwv283           5  1.00  Minor            9    4 False      5  2.8600  0.0000
+ 46  bwv292          11  3.00  Minor            9    4 False      5  2.8400  0.0000
+ 47  bwv293           1  4.00  Major            7    2 False      4  3.1900  0.0000
+ 48  bwv293           3  4.00  Major            7    2 False      4  3.1900  0.0000
+ 49  bwv293           7  4.00  Major            7    2 False      4  2.8900  0.0000
+ 50  bwv294           4  1.00  Major            7    4 False      4  2.9111  0.0000
+ 51  bwv302           5  1.00  Major            9    6 False      6  2.8900  0.0000
+ 52  bwv306          15  1.00  Major            5    0 False      2  2.7875  0.1250
+ 53  bwv307           5  3.00  Major           10    7 False      7  2.9111  0.0000
+ 54  bwv307           5  4.00  Major            5    9 False      9  2.8111  0.0000
+ 55  bwv307           7  4.00  Minor            2    9 False     10  2.8600  0.0000
+ 56  bwv307           8  1.00  Major           10    5 False      7  2.8900  0.0000
+ 57  bwv310           8  3.00  Minor            4    0 False      0  2.8600  0.0000
+ 58  bwv313           2  4.00  Minor            2    9 False     10  3.1600  0.0000
+ 59  bwv316           9  3.00  Minor            2   10 False     10  2.8600  0.0000
+ 60  bwv318           3  3.00  Major            7    4 False      4  2.8900  0.0000
+ 61  bwv319           6  3.00  Minor            4    0 False      0  2.8600  0.0000
+ 62  bwv32.6         10  1.00  Minor            4   11 False      0  2.8600  0.0000
+ 63  bwv323           2  1.00  Minor            1    9 False      9  2.8600  0.0000
+ 64  bwv323           7  3.00  Major           11    3 False      4  2.6500  0.3375
+ 65  bwv324           2  1.00  Minor           11    7 False      7  2.8600  0.0000
+ 66  bwv325           3  3.00  Major            5    0 False      2  2.8900  0.0000
+ 67  bwv328           7  3.00  Minor            9    4 False      5  2.8600  0.0000
+ 68  bwv334           1  3.00  Minor            7    3 False      3  2.8600  0.0000
+ 69  bwv340          18  1.00  Minor            9    5 False      5  2.6200  0.0000
+ 70  bwv344           5  1.00  Minor            2   10 False     10  3.0222  0.0000
+ 71  bwv346           9  1.00  Minor            9    4 False      5  2.8400  0.0000
+ 72  bwv350           7  3.00  Minor            7    3 False      3  2.8600  0.0000
+ 73  bwv352           7  1.00  Major            0    9 False      9  2.8900  0.0000
+ 74  bwv356          11  2.00  Minor            7    4 False      4  2.8900  0.0000
+ 75  bwv362          20  2.00  Major            3    7 False      7  2.7900  0.1400
+ 76  bwv365           3  1.00  Minor            9    5 False      5  2.7824  0.0000
+ 77  bwv366           6  1.50  Augmented        9    2 False      2  2.8714  0.2286
+ 78  bwv374           7  3.50  Major            3    7 False      0  1.9400 -0.1600
+ 79  bwv377           2  1.00  Major            7    4 False      4  2.9111  0.0000
+ 80  bwv38.6          2  3.00  Minor            4   11 False      0  2.8600  0.0000
+ 81  bwv38.6          7  2.00  Augmented        9    5 False      2  2.2188  0.1000
+ 82  bwv380           1  3.00  Minor            0    7 False      8  2.8600  0.0000
+ 83  bwv381           9  3.00  Minor            9    0 False      0  2.6441  0.3000
+ 84  bwv383          22  1.00  Minor            9    4 False      5  2.8600  0.0000
+ 85  bwv392           8  1.00  Major            3    7 False      0  2.0000  0.0000
+ 86  bwv393           4  2.00  Major           11    6 False      3  2.6400  0.0900
+ 87  bwv393           5  1.00  Major            2    6 False      6  2.7900  0.1400
+ 88  bwv393           6  1.00  Minor            8    4 False      4  2.6200  0.0000
+ 89  bwv395           2  2.00  Minor           11    6 False      8  2.8900  0.0000
+ 90  bwv395           6  1.00  Minor            8    4 False      4  2.6200  0.0000
+ 91  bwv397          10  1.00  Major           10    5 False      7  2.8900  0.0000
+ 92  bwv397          10  2.00  Minor            7    2 False      3  2.6200  0.0000
+ 93  bwv397          12  1.00  Minor            2   10 False     10  2.9267  0.0000
+ 94  bwv40.3          9  2.00  Minor            7    3 False      3  2.6059  0.0000
+ 95  bwv40.6          6  2.00  Minor            2    9 False     10  2.8600  0.0000
+ 96  bwv40.6          7  1.00  Major            0    9 False      9  2.8176  0.0000
+ 97  bwv40.6          7  2.00  Minor            0    7 False      9  3.5875  0.0000
+ 98  bwv40.6         12  3.00  Minor            2    9 False     10  2.8600  0.0000
+ 99  bwv407          22  1.00  Minor            6    2 False      2  2.7323  0.0000
+100  bwv414           9  1.00  Major            7   11 False      4  2.6900  0.0000
+101  bwv417           4  1.00  Major            7   11 False     11  2.7900  0.1400
+102  bwv418          11  1.00  Major            0    9 False      9  2.8900  0.0000
+103  bwv420           5  4.00  Major            5    9 False      9  2.2167  0.0000
+104  bwv425          21  1.00  Minor            2   10 False     10  2.8600  0.0000
+105  bwv426           9  2.00  Minor           11    6 False      7  2.8600  0.0000
+106  bwv427           1  3.00  Minor            0    7 False      8  2.8600  0.0000
+107  bwv428           6  3.00  Major            7    4 False      4  2.9600  0.0000
+108  bwv429           7  1.00  Major            9    1 False      1  3.0900  0.1100
+109  bwv430           1  4.00  Major            9    6 False      6  2.8900  0.0000
+110  bwv430           7  4.00  Major            4    1 False      9  1.9200  0.0000
+111  bwv437          29  3.00  Minor            2   10 False     10  2.8600  0.0000
+112  bwv45.7         14  1.00  Major            4    1 False      1  2.8900  0.0000
+113  bwv5.7          11  3.00  Minor            7    3 False      3  2.7824  0.0000
+114  bwv56.5         12  1.00  Augmented        7    3 False      0  2.0889  0.0889
+115  bwv57.8         12  1.00  Major           10    7 False      7  2.8900  0.0000
+116  bwv64.8          3  3.00  Major            9    6 False      6  2.8900  0.0000
+117  bwv65.2          8  2.00  Diminished       9    6 False      2  2.5750  0.3500
+118  bwv65.2         15  1.00  Minor            9    3 False      5  2.7500  0.0000
+119  bwv65.7         11  1.00  Major            0    4 False      4  3.1700  0.1100
+120  bwv81.7          5  1.00  Augmented       11    7 False      4  2.0889  0.0889
+121  bwv83.5          9  2.00  Major            5    2 False      2  2.8900  0.0000
+122  bwv89.6         10  1.00  Diminished       7    4 False      0  2.1750  0.0250
+123  bwv90.5         10  3.00  Minor            5    1 False      1  2.8600  0.0000
+124  bwv94.8         14  1.00  Major            2   11 False     11  2.8900  0.0000
+125  bwv96.6          8  3.00  Minor            2   10 False     10  2.8600  0.0000

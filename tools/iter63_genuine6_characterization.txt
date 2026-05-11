@@ -1,0 +1,177 @@
+=== Genuine BIR=true=6 — Iter 63 characterization ===
+Baselines: BIR=true=6  BIR=false=125  (commit a34dba041e Iter 61,
+                                       confirmed ee337aeca4 Iter 62)
+
+Note on cluster vocabulary: prior characterization files
+(iter54_genuine14_characterization.txt, iter46_genuine21_characterization.txt)
+used the labels Gate M / Gate N / TYPE-B residual / MinMaj7 / UNCHARACTERIZED
+rather than "Cluster B" / "Cluster C". The Iter 63 prompt's "Cluster B" and
+"Cluster C" terms therefore have no concrete prior definition we can map
+to. This file uses the prompt's primary buckets (Hypothesis A, Scoring gap,
+pcWeight, Correct, Unknown) and notes any prior Gate-* tag in the
+cross-reference line.
+
+Pitch-class set encoding key (bit i set ⇔ pc i present):
+  pcSet=596  → pcs {2,4,6,9}    = D, E, F#, A      (4 PCs)
+  pcSet=726  → pcs {1,2,4,6,7,9}= C#, D, E, F#, G, A (6 PCs)
+  pcSet=1172 → pcs {2,4,7,10}   = D, E, G, Bb      (4 PCs)
+  pcSet=580  → pcs {2,6,9}      = D, F#, A         (3 PCs)
+  pcSet=641  → pcs {0,7,9}      = C, G, A          (3 PCs)
+  pcSet=532  → pcs {2,4,9}      = D, E, A          (3 PCs)
+
+----------------------------------------------------------------------
+[1] bwv184.5  m=13 b=3.00
+  winner: root=9 qual=Power score=2.0500 bassIsRoot=True   (sym 'A5')
+  pcSet:  596 = {D, E, F#, A}  dur=480 ticks  noteCount=4
+  agreed root: 2 (D)
+  alts:
+    alt[0] root=2  Suspended2     score=1.9800  bass=9  bassIsRoot=False (Dsus2/A)
+    alt[1] root=9  Suspended4     score=1.9000  bass=9  bassIsRoot=True  (Asus)
+  cluster: Scoring gap
+  evidence: Agreed root (D=2) appears as alt[0] Dsus2/A at score 1.9800;
+            winner A5 leads by only 0.0700. Full agreed-root candidate is
+            present in alternatives but ranks below the Power winner.
+  in prior genuine-14: yes — was bwv184.5 m=13 b=3.0 (UNCHARACTERIZED)
+  fix visible: investigate — would need either downweighting Power when
+            the pcSet contains a non-fifth chord tone (E above A makes
+            D-E-A more natural as D-rooted), or boosting same-bass first-
+            inversion Sus2 when bass is the chord 5th.
+
+----------------------------------------------------------------------
+[2] bwv184.5  m=13 b=4.00
+  winner: root=9 qual=Major score=3.2500 bassIsRoot=True   (sym 'A7')
+  pcSet:  726 = {C#, D, E, F#, G, A}  dur=1920 ticks  noteCount=6
+  agreed root: 2 (D)
+  alts:
+    alt[0] root=9  Major          score=2.9125  bass=9  bassIsRoot=True  (A7)
+    alt[1] root=9  Major          score=2.9125  bass=9  bassIsRoot=True  (A7)
+  cluster: Hypothesis A
+  evidence: 6 PCs over a long 1920-tick region — strongly suggests the
+            region is over-merged across what DCML treats as a V-I cadence
+            (A7→D). No D-rooted candidate survives because the region
+            collapses both harmonies. Preceding region (m=13 b=3.0) is
+            already an A5 over 480 ticks; this 1920-tick continuation
+            likely subsumes the D-major resolution.
+  in prior genuine-14: yes — was bwv184.5 m=13 b=4.0 (UNCHARACTERIZED)
+  fix visible: investigate — segmentation refinement at cadence
+            resolutions, not a scoring fix.
+
+----------------------------------------------------------------------
+[3] bwv187.7  m=14 b=2.00
+  winner: root=7 qual=Minor score=2.3857 bassIsRoot=True   (sym 'Gm6')
+  pcSet:  1172 = {D, E, G, Bb}  dur=480 ticks  noteCount=4
+  agreed root: 4 (E)
+  alts:
+    alt[0] root=7  Minor          score=2.3857  bass=7  bassIsRoot=True  (Gm6)
+    alt[1] root=7  Diminished     score=1.9457  bass=7  bassIsRoot=True  (Gdim7)
+    alt[2] root=4  HalfDiminished score=1.8571  bass=7  bassIsRoot=False (Em7b5/G)
+  cluster: Scoring gap
+  evidence: PCs {E,G,Bb,D} are exactly Em7b5 in first inversion.
+            Agreed root (E=4) appears as alt[2] HalfDiminished/G at
+            score 1.8571; winner Gm6 leads by 0.5286 (margin shown 0.00
+            because alt[0] duplicates the winner). Em7b5 is the more
+            stable Baroque reading — Iter 61 added the first-inversion
+            HalfDim bonus but apparently did not cover the m6 vs m7b5/3
+            tie-break.
+  in prior genuine-14: yes — was bwv187.7 m=14 b=2.0 (Gate M)
+  fix visible: yes — extend the HalfDim first-inversion contextual bonus
+            (or tighten the Minor6 preference) so that an Em7b5/G reading
+            outscores Gm6 when the bass is the chord 3rd of the HalfDim
+            and a leading-tone resolution context is present. This is the
+            same family the Iter 61 fix addressed; this specific instance
+            survived because the winner is Minor (not Major+6).
+
+----------------------------------------------------------------------
+[4] bwv371  m=35 b=2.50
+  winner: root=2 qual=Major score=2.8706 bassIsRoot=True   (sym 'D')
+  pcSet:  580 = {D, F#, A}  dur=720 ticks  noteCount=3
+  agreed root: 7 (G)
+  alts:
+    alt[0] root=2  Major          score=2.8706  bass=2  bassIsRoot=True  (D)
+    alt[1] root=11 Minor          score=2.2265  bass=2  bassIsRoot=False (Bm7/D)
+    alt[2] root=2  Major          score=2.1706  bass=2  bassIsRoot=True  (D)
+  cluster: Correct
+  evidence: pcSet contains only {D, F#, A} — a clean D major triad with
+            no PC supporting G as root (no G, no B). Both music21 and
+            DCML annotate G at this slot, but the underlying audio/voicing
+            does not contain those tones. Likely annotation models harmonic
+            function across a longer span (G followed by V[D] resolution),
+            not the literal pcs at b=2.5. The analyzer is correct on PCs.
+  in prior genuine-14: yes — was bwv371 m=35 b=2.5 (UNCHARACTERIZED)
+  fix visible: no — would require either ground-truth re-annotation or
+            harmonic-function reasoning across regions, which is out of
+            scope for the local chord analyzer.
+
+----------------------------------------------------------------------
+[5] bwv372  m=10 b=1.50
+  winner: root=0 qual=Power score=2.9350 bassIsRoot=True   (sym 'C5')
+  pcSet:  641 = {C, G, A}  dur=1680 ticks  noteCount=3
+  agreed root: 10 (Bb)
+  alts:
+    alt[0] root=0  Major          score=2.7183  bass=0  bassIsRoot=True  (C)
+    alt[1] root=0  Major          score=2.7183  bass=0  bassIsRoot=True  (C)
+    alt[2] root=9  Minor          score=2.4733  bass=0  bassIsRoot=False (Am7/C)
+  cluster: Hypothesis A
+  evidence: pcSet {C, G, A} = 3 PCs — no Bb present in the region.
+            Adjacent neighbours hold Bb-rooted harmonies: m=9 b=1.0 is
+            Bb (root=10, dur 1200), m=11 b=1.0 is Bb (root=10, dur 720).
+            The agreed root tone is entirely outside this region — a
+            classic boundary-shift / region-coarsening case, not a
+            scoring problem.
+  in prior genuine-14: yes — was bwv372 m=10 b=1.5 (UNCHARACTERIZED)
+  fix visible: investigate — segmentation refinement to bias region
+            boundaries toward retaining Bb when both neighbours are Bb-
+            rooted (continuity), or to split this 1680-tick region.
+
+----------------------------------------------------------------------
+[6] bwv43.11  m=3 b=2.00
+  winner: root=9 qual=Power score=2.2900 bassIsRoot=True   (sym 'A5')
+  pcSet:  532 = {D, E, A}  dur=480 ticks  noteCount=3
+  agreed root: 2 (D)
+  alts:
+    alt[0] root=9  Suspended4     score=2.2200  bass=9  bassIsRoot=True  (Asus)
+    alt[1] root=9  Suspended4     score=2.2200  bass=9  bassIsRoot=True  (Asus)
+    alt[2] root=4  Suspended4     score=1.9800  bass=9  bassIsRoot=False (E7sus/A)
+  cluster: Unknown
+  evidence: PCs {D, E, A} are exactly Dsus2 (D-E-A). The agreed root
+            (D=2) IS present in the region pcs but NO D-rooted candidate
+            appears in alternatives — analogous to case [1] (same PCs
+            without F#) where alt[0] Dsus2/A did surface. The asymmetric
+            candidate generation needs investigation: why does the
+            D-Sus2 candidate template fire for {D,E,F#,A} but not for
+            {D,E,A}? Possibly tied to the missing third (F#) and a
+            template-completeness threshold.
+  in prior genuine-14: yes — was bwv43.11 m=3 b=2.0 (UNCHARACTERIZED)
+  fix visible: investigate — diagnostic needed on candidate generation
+            for sus2 templates without the chord 3rd present.
+
+----------------------------------------------------------------------
+Summary:
+  Hypothesis A:   2 cases   (bwv184.5 m=13 b=4.0, bwv372 m=10 b=1.5)
+  Scoring gap:    2 cases   (bwv184.5 m=13 b=3.0, bwv187.7 m=14 b=2.0)
+  pcWeight:       0 cases
+  Cluster B:      0 cases   (label undefined in this characterization)
+  Cluster C:      0 cases   (label undefined in this characterization)
+  Correct:        1 case    (bwv371 m=35 b=2.5)
+  Unknown:        1 case    (bwv43.11 m=3 b=2.0)
+
+Cross-reference with prior genuine-14 (iter54_genuine14_characterization.txt):
+  All 6 current cases were present in the prior 14. No new BIR=true cases
+  have been introduced by Iter 55 — Iter 61. The Iter 61 HalfDim bonus
+  removed 1 case (bwv227.11 m=10 b=3.0 — old "Gate M") and 7 others from
+  the prior 14 (likely via segmentation/boundary changes during the
+  intervening iterations). The surviving 6 are the most stubborn members
+  of the prior set: scoring ties on sus templates, segmentation collapses
+  at cadences, and one annotation-driven discrepancy (bwv371).
+
+Recommended next iterations (priority order):
+  1. Case [3] bwv187.7 — extend HalfDim first-inversion preference to
+     cover Minor (m6) winners, not just Major+6/Aug. One-case targeted
+     fix, in the same family as Iter 61.
+  2. Cases [1] + [6] — diagnostic on sus2 candidate generation (why
+     {D,E,A} does not produce a Dsus2 alt) plus a small scoring nudge
+     when the resulting Power winner has only fourth-stacking PCs.
+  3. Cases [2] + [5] — segmentation refinement (Hypothesis A); higher
+     leverage but bigger scope and risk of cross-style regression.
+  4. Case [4] bwv371 — likely not actionable; defer or down-grade ground
+     truth confidence.
