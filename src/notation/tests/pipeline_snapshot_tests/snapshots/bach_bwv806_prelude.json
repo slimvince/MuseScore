@@ -3054,9 +3054,9 @@
                     "score": 2.655
                 },
                 {
-                    "quality": "minor",
-                    "root": "A#",
-                    "score": 2.042
+                    "quality": "augmented",
+                    "root": "A",
+                    "score": 2.342
                 }
             ],
             "bassIsStepwiseFromPrevious": true,

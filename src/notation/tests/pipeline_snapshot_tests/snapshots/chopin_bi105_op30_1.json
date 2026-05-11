@@ -1006,8 +1006,8 @@
         },
         {
             "key": "Eb",
-            "quality": "minor",
-            "root": "C",
+            "quality": "halfDiminished",
+            "root": "A",
             "tick": 9120
         },
         {
@@ -1102,8 +1102,8 @@
         },
         {
             "key": "Eb",
-            "quality": "minor",
-            "root": "C",
+            "quality": "halfDiminished",
+            "root": "A",
             "tick": 20640
         },
         {
@@ -1327,9 +1327,9 @@
                     "score": 3.045
                 },
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.024
+                    "quality": "augmented",
+                    "root": "Bb",
+                    "score": 2.324
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1356,9 +1356,9 @@
                     "score": 3.045
                 },
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.024
+                    "quality": "augmented",
+                    "root": "Bb",
+                    "score": 2.324
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1459,6 +1459,11 @@
                     "quality": "major",
                     "root": "G",
                     "score": 3.32
+                },
+                {
+                    "quality": "augmented",
+                    "root": "Eb",
+                    "score": 2.26
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1671,9 +1676,9 @@
                     "score": 3.045
                 },
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.024
+                    "quality": "augmented",
+                    "root": "Bb",
+                    "score": 2.324
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1700,9 +1705,9 @@
                     "score": 3.045
                 },
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.024
+                    "quality": "augmented",
+                    "root": "Bb",
+                    "score": 2.324
                 }
             ],
             "bassIsStepwiseFromPrevious": true,

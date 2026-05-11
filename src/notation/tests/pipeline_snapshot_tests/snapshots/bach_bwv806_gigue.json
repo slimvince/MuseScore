@@ -1922,9 +1922,9 @@
                     "score": 2.773
                 },
                 {
-                    "quality": "major",
-                    "root": "E",
-                    "score": 2.478
+                    "quality": "halfDiminished",
+                    "root": "F#",
+                    "score": 2.572
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1946,9 +1946,9 @@
                     "score": 2.773
                 },
                 {
-                    "quality": "major",
-                    "root": "E",
-                    "score": 2.478
+                    "quality": "halfDiminished",
+                    "root": "F#",
+                    "score": 2.572
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1970,9 +1970,9 @@
                     "score": 2.963
                 },
                 {
-                    "quality": "major",
-                    "root": "A",
-                    "score": 2.693
+                    "quality": "halfDiminished",
+                    "root": "F#",
+                    "score": 2.793
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1994,9 +1994,9 @@
                     "score": 2.963
                 },
                 {
-                    "quality": "major",
-                    "root": "A",
-                    "score": 2.693
+                    "quality": "halfDiminished",
+                    "root": "F#",
+                    "score": 2.793
                 }
             ],
             "bassIsStepwiseFromPrevious": true,

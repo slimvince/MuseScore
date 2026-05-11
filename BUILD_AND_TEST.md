@@ -167,11 +167,23 @@ must not be adjusted to accommodate other styles. If a gate causes BIR=false
 regressions in Jazz, fix it with a tighter structural condition or a preset-specific
 override — never by widening the Baroque-tuned threshold. See CLAUDE.md for details.
 
-**Current Baroque baseline (Iteration 46, corpus regeneration 2026-05-09):**
+**Current Baroque baseline (Iteration 54, corpus regeneration 2026-05-11):**
+- 3-way genuine BIR=true: 14
+- 3-way genuine BIR=false: 132
+- Commit: f92a4f1a3b (greedy-expand segmentation, batch path)
+- Regression tolerance: investigate before committing if BIR=false > 142
+  (current 132 + 10).
+
+Update rationale: Iteration 54 switched `batch_analyze` from Jaccard-based segmentation
+to greedy-expand, producing different (improved) chord boundaries. The bridge path
+(`notationcomposingbridgehelpers.cpp`) still uses Jaccard; bridge replacement is in
+progress (Task #62).
+
+Previous baseline (Iteration 46, corpus regeneration 2026-05-09):
 - 3-way genuine BIR=true: 21
 - 3-way genuine BIR=false: 128
 
-Update rationale: Iteration 46 extended `supportsContextualInversionBonuses` and
+Iteration 46 extended `supportsContextualInversionBonuses` and
 `qualifiesForCompleteTriadInversionBonus` to include Augmented and HalfDiminished quality
 types. This removed a systematic disadvantage that was preventing correct inversion
 candidates from appearing in results[]. The extension reduced bassIsRoot=true errors by 11
@@ -199,15 +211,17 @@ was originally lost to a git reset and re-recovered at **commit `5df8421114`**
 (~700 BIR=false); the 21/128 baseline depends on both `36bf4738a8` and
 `5df8421114` being present.
 
-**Jazz baseline (Iteration 46 binary, validated 2026-05-09) — hard stop reference:**
+**Jazz baseline (Iteration 54 binary, validated 2026-05-11) — hard stop reference:**
+- 3-way genuine BIR=false: 12  ← hard stop: must remain ≤ 75 for any gate
+- Commit: f92a4f1a3b
+
+Previous Jazz baseline (Iteration 46 binary, validated 2026-05-09):
 - 3-way genuine BIR=true: 106  (Jazz harmony is outside Baroque gate scope — not a target)
-- 3-way genuine BIR=false: 20  ← hard stop: must remain ≤ 75 for any gate
+- 3-way genuine BIR=false: 20
 - Total regions: 9389 across 353 scores; chord identity agreement 80.3%
 
-Note: Iter 46 scoring extension (Augmented/HalfDiminished inversion bonuses) kept Jazz
-BIR=false well within the hard stop (20 ≤ 75). The Jazz preset's low
-maxTotalInversionContextBonus (0.6) suppresses inversions, so most Jazz errors are
-root-position misidentifications (BIR=true), not inversion errors.
+Note: The Jazz preset's low maxTotalInversionContextBonus (0.6) suppresses inversions,
+so most Jazz errors are root-position misidentifications (BIR=true), not inversion errors.
 
 Previous figures for reference (Iteration 32, Baroque):**
 - 3-way genuine BIR=true: 48
