@@ -2010,12 +2010,20 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     const int fifthPc   = (aR + 6) % 12;
                     const int seventhPc = (aR + 10) % 12;
                     const double thr = prefs.extensionThreshold;
-                    const bool allTonesPresent =
-                        pcWeight[static_cast<size_t>(aR)] > thr
-                        && pcWeight[static_cast<size_t>(thirdPc)] > thr
-                        && pcWeight[static_cast<size_t>(fifthPc)] > thr
-                        && pcWeight[static_cast<size_t>(seventhPc)] > thr;
                     const int wb = winner.identity.bassPc;
+                    // The bass pc is by definition sounding — exempt it from the
+                    // weight threshold so a briefly-sounded inversion bass (e.g.
+                    // bwv187.7 m=14 G at 0.14 vs thr 0.20) does not block the
+                    // inversion reading.  Targets Minor-add6 winners where the
+                    // bass=m3 of the HalfDim root has short metric duration.
+                    auto tonePresent = [&](int pc) {
+                        return pc == wb || pcWeight[static_cast<size_t>(pc)] > thr;
+                    };
+                    const bool allTonesPresent =
+                        tonePresent(aR)
+                        && tonePresent(thirdPc)
+                        && tonePresent(fifthPc)
+                        && tonePresent(seventhPc);
                     const bool bassIsInversion =
                         (wb == thirdPc || wb == fifthPc || wb == seventhPc);
                     isHalfDimInversion = allTonesPresent && bassIsInversion;
