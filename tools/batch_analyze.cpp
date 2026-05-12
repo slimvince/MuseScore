@@ -46,10 +46,12 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "global/globalmodule.h"
 #include "draw/internal/ifontsdatabase.h"
 #include "global/iapplication.h"
+#include "global/modularity/ioc.h"
 #include "global/modularity/imodulesetup.h"
 #include "global/io/path.h"
 #include "global/types/string.h"
 #include "global/types/ret.h"
+#include "global/tests/mocks/applicationstub.h"
 
 // ── Draw ───────────────────────────────────────────────────────────────────
 #include "draw/drawmodule.h"
@@ -230,12 +232,16 @@ static void initModules()
     using namespace muse;
     using namespace muse::modularity;
 
-    // Follows the initialization sequence from src/framework/testing/environment.cpp
-    // (Environment::setup).  GlobalModule must come first; dependency modules
-    // receive setApplication() before registerResources().
+    // Follows the initialization sequence from muse/framework/testing/environment.cpp
+    // (Environment::setup).  An IApplication implementation must be registered
+    // with globalIoc() before any module init — modules resolve it via inject<>.
+    // (setApplication() was removed upstream in muse_framework commit 9c9cd29255.)
     // loadInstrumentTemplates() runs last (post-onStartApp), matching the
     // engraving test environment's postInit callback pattern.
     const IApplication::RunMode mode = IApplication::RunMode::GuiApp;
+
+    muse::modularity::globalIoc()->registerExport<IApplication>("batch_analyze",
+        new muse::ApplicationStub());
 
     static GlobalModule globalModule;
     globalModule.registerResources();
@@ -251,7 +257,6 @@ static void initModules()
     };
 
     for (auto* m : depModules) {
-        m->setApplication(globalModule.application());
         m->registerResources();
     }
     for (auto* m : depModules) {

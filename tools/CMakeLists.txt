@@ -32,6 +32,8 @@ target_include_directories(batch_analyze PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/framework
     ${CMAKE_SOURCE_DIR}/src/framework/global
+    ${CMAKE_SOURCE_DIR}/muse/framework
+    ${CMAKE_SOURCE_DIR}/muse/framework/global
     ${CMAKE_BINARY_DIR}/tools
 )
 
