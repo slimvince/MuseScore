@@ -23,6 +23,7 @@
 #include "harmonicsegmenter.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstdio>
 #include <set>
 
@@ -226,7 +227,8 @@ void fillGap(std::vector<PlacedRegion>& regions,
              analysis::IChordAnalyzer* chordAnalyzer,
              int globalKeyFifths,
              analysis::KeySigMode globalKeyMode,
-             const HarmonicSegmenterCallbacks& callbacks)
+             const HarmonicSegmenterCallbacks& callbacks,
+             double effectiveRound2MinScore)
 {
     if (!score || !chordAnalyzer || gapEndTick <= gapStartTick) {
         return;
@@ -299,7 +301,7 @@ void fillGap(std::vector<PlacedRegion>& regions,
     };
 
     for (const Scored& sc : scored) {
-        if (sc.initialScore < kRound2MinScore) continue;
+        if (sc.initialScore < effectiveRound2MinScore) continue;
         PlacedRegion& r = regions[sc.idx];
 
         const Neighbour* L = nullptr;
@@ -378,6 +380,76 @@ greedyExpandSegmentation(const Score* score,
         return candidates;
     }
 
+    // Iter 69 — texture-adaptive thresholds.
+    //
+    // Greedy-expand was tuned against SATB chorales (dense vertical texture,
+    // regular horizontal rhythm). Replace the SATB-hardcoded constants with
+    // thresholds derived from two density dimensions measured per-score:
+    //
+    //   Vertical density   — mean concurrent eligible staves at candidate ticks
+    //   Horizontal density — mean gap between note-change ticks
+    //
+    // SATB (~4 eligible staves, meanActiveStaves ~3.5, meanTickSpacing ~DIVISION)
+    // self-calibrates to the previous constants (3-staff gate, 1.5 score, 1*DIVISION
+    // duration, 1.25 Round-2 score). Sparser textures get proportionally relaxed
+    // gates so genuine anchors aren't rejected for low voice count or sparse onsets.
+    int nEligibleStaves = 0;
+    if (score) {
+        for (size_t s = 0; s < score->nstaves(); ++s) {
+            if (!excludeStaves.count(s) && callbacks.staffIsEligible(s)) {
+                ++nEligibleStaves;
+            }
+        }
+    }
+
+    double meanActiveStaves = 0.0;
+    for (size_t i = 0; i < changeTicks.size(); ++i) {
+        const Fraction regStart = changeTicks[i];
+        const Fraction regEnd   = (i + 1 < changeTicks.size())
+                                  ? changeTicks[i + 1] : endTick;
+        if (regEnd <= regStart) continue;
+        meanActiveStaves += countParticipatingStaves(
+            score, regStart, regEnd, excludeStaves, callbacks.staffIsEligible);
+    }
+    if (!changeTicks.empty()) {
+        meanActiveStaves /= double(changeTicks.size());
+    }
+
+    const double totalSpan = double(endTick.ticks() - startTick.ticks());
+    const double meanTickSpacing = (changeTicks.size() > 1)
+        ? totalSpan / double(changeTicks.size() - 1)
+        : std::max(totalSpan, 1.0);
+
+    // Staff-count gate: round(75% of eligible staves), min 1.
+    // SATB-4 -> 3 (unchanged), trio-3 -> 2, piano/duo-2 -> 2.
+    const int effectiveStaveThreshold = std::max(
+        1, static_cast<int>(std::round(double(nEligibleStaves) * 0.75)));
+
+    // Vertical factor: 1.0 at SATB density (mean ~3.5 active staves), lower for sparse.
+    // Score scaling derived from Step 2 corpus inspection: Baroque chord scores are
+    // largely flat across voice count (mean ~2.85 for nc=3-4, ~2.77 for nc=5+),
+    // so the relaxation slope is shallow (A = 0.75 — close to 1.0).
+    // SATB:  factor=1.0 -> eff = 1.5 (unchanged)
+    // 2-voice: factor~0.57 -> eff ~ 1.34
+    // 1-voice: factor~0.29 -> eff ~ 1.23
+    constexpr double kRefActiveStaves = 3.5;
+    constexpr double kScoreFloorFraction = 0.75;
+    const double verticalFactor = (kRefActiveStaves > 0.0)
+        ? std::min(1.0, meanActiveStaves / kRefActiveStaves) : 1.0;
+    const double scoreScale
+        = kScoreFloorFraction + (1.0 - kScoreFloorFraction) * verticalFactor;
+    const double effectiveAnchorMinScore = kAnchorMinScore * scoreScale;
+    const double effectiveRound2MinScore = kRound2MinScore * scoreScale;
+
+    // Horizontal factor: 1.0 at SATB pacing (~DIVISION between onsets), lower for
+    // sparser/larger gaps. Sparse horizontal -> shorter minimum duration required.
+    const double kRefTickSpacing = double(Constants::DIVISION);
+    const double horizontalFactor = (meanTickSpacing > 0.0)
+        ? std::min(1.0, kRefTickSpacing / meanTickSpacing) : 1.0;
+    const int effectiveAnchorMinDurationTicks = std::max(
+        Constants::DIVISION / 4,
+        static_cast<int>(std::round(double(kAnchorMinDurationTicks) * horizontalFactor)));
+
     candidates.reserve(changeTicks.size());
     for (size_t i = 0; i < changeTicks.size(); ++i) {
         PlacedRegion pr;
@@ -397,9 +469,11 @@ greedyExpandSegmentation(const Score* score,
 
     // Round 1: promote candidates that satisfy all of
     //   (a) onset on a quarter-note beat boundary,
-    //   (b) duration ≥ 2×DIVISION (half note),
-    //   (c) ≥3 chord-bearing staves participating,
-    //   (d) analyzeChord winner score ≥ kAnchorMinScore.
+    //   (b) duration ≥ effectiveAnchorMinDurationTicks,
+    //   (c) ≥ effectiveStaveThreshold chord-bearing staves participating,
+    //   (d) analyzeChord winner score ≥ effectiveAnchorMinScore.
+    // All four thresholds are texture-adaptive (Iter 69); SATB reproduces the
+    // previous SATB-tuned constants.
     if (!chordAnalyzer) {
         return candidates;
     }
@@ -410,11 +484,11 @@ greedyExpandSegmentation(const Score* score,
         if (!isOnBeat(score, regionStart)) {
             continue;
         }
-        if ((region.endTick - region.startTick) < kAnchorMinDurationTicks) {
+        if ((region.endTick - region.startTick) < effectiveAnchorMinDurationTicks) {
             continue;
         }
         if (countParticipatingStaves(score, regionStart, regionEnd, excludeStaves,
-                                     callbacks.staffIsEligible) < 3) {
+                                     callbacks.staffIsEligible) < effectiveStaveThreshold) {
             continue;
         }
 
@@ -428,7 +502,7 @@ greedyExpandSegmentation(const Score* score,
             continue;
         }
         const double winnerScore = chordCands[0].identity.score;
-        if (winnerScore < kAnchorMinScore) {
+        if (winnerScore < effectiveAnchorMinScore) {
             continue;
         }
 
@@ -441,10 +515,11 @@ greedyExpandSegmentation(const Score* score,
 
         const int beatNum = 1 + (region.startTick - score->tick2measure(regionStart)->tick().ticks())
                                 / Constants::DIVISION;
-        char buf[160];
+        char buf[200];
         std::snprintf(buf, sizeof(buf),
-                      "Round 1 anchor: beat=%d dur>=%dtk voice>=3 score=%.3f",
-                      beatNum, kAnchorMinDurationTicks, winnerScore);
+                      "Round 1 anchor: beat=%d dur>=%dtk voice>=%d score=%.3f>=%.3f",
+                      beatNum, effectiveAnchorMinDurationTicks,
+                      effectiveStaveThreshold, winnerScore, effectiveAnchorMinScore);
         region.reason = buf;
     }
 
@@ -462,19 +537,22 @@ greedyExpandSegmentation(const Score* score,
     if (!placed.empty() && placed.front()->startTick > startTick.ticks()) {
         fillGap(candidates, startTick.ticks(), placed.front()->startTick,
                 nullptr, placed.front(), 2, score, excludeStaves, prefs,
-                chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks);
+                chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
+                effectiveRound2MinScore);
     }
     for (size_t i = 0; i + 1 < placed.size(); ++i) {
         if (placed[i]->endTick < placed[i + 1]->startTick) {
             fillGap(candidates, placed[i]->endTick, placed[i + 1]->startTick,
                     placed[i], placed[i + 1], 2, score, excludeStaves, prefs,
-                    chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks);
+                    chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
+                    effectiveRound2MinScore);
         }
     }
     if (!placed.empty() && placed.back()->endTick < endTick.ticks()) {
         fillGap(candidates, placed.back()->endTick, endTick.ticks(),
                 placed.back(), nullptr, 2, score, excludeStaves, prefs,
-                chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks);
+                chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
+                effectiveRound2MinScore);
     }
 
     return candidates;
