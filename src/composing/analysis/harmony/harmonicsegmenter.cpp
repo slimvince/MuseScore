@@ -33,6 +33,7 @@
 #include "engraving/dom/chord.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/staff.h"
+#include "engraving/dom/tuplet.h"
 #include "engraving/types/fraction.h"
 #include "engraving/types/constants.h"
 #include "engraving/types/types.h"
@@ -44,6 +45,7 @@ using mu::engraving::Segment;
 using mu::engraving::Measure;
 using mu::engraving::Chord;
 using mu::engraving::Note;
+using mu::engraving::Tuplet;
 using mu::engraving::EngravingItem;
 using mu::engraving::Fraction;
 using mu::engraving::SegmentType;
@@ -201,6 +203,51 @@ collectNoteChangeTicks(const Score* score,
         }
     }
 
+    // Iter 71 — Fix B: tuplet alignment.
+    //
+    // populateChordTrack must emit chord-track entries at beat-aligned ticks;
+    // a tick inside a tuplet group (not its first element) is not beat-aligned
+    // on the chord-track staff and causes overlapping chord/rest insertions.
+    // Snap any mid-tuplet tick to the start tick of its (outermost) enclosing
+    // tuplet group, then deduplicate. The boundary at startTick is never
+    // snapped below itself — the caller's range is authoritative.
+    if (score) {
+        std::set<int> snapped;
+        const int startTickI = startTick.ticks();
+        for (int t : tickSet) {
+            const Fraction tickF = Fraction::fromTicks(t);
+            const Segment* seg = score->tick2segment(tickF, true, SegmentType::ChordRest);
+            int snapTick = t;
+            if (seg) {
+                for (size_t staffIdx = 0; staffIdx < score->nstaves(); ++staffIdx) {
+                    if (excludeStaves.count(staffIdx) || !staffIsEligible(staffIdx)) {
+                        continue;
+                    }
+                    for (voice_idx_t v = 0; v < VOICES; ++v) {
+                        const EngravingItem* e = seg->element(staff2track(staffIdx, v));
+                        if (!e || !e->isChord()) {
+                            continue;
+                        }
+                        const Chord* chord = toChord(e);
+                        if (chord->isGrace()) {
+                            continue;
+                        }
+                        const Tuplet* top = chord->topTuplet();
+                        if (!top) {
+                            continue;
+                        }
+                        const int tupletStart = top->tick().ticks();
+                        if (tupletStart < snapTick && tupletStart >= startTickI) {
+                            snapTick = tupletStart;
+                        }
+                    }
+                }
+            }
+            snapped.insert(snapTick);
+        }
+        tickSet.swap(snapped);
+    }
+
     std::vector<Fraction> result;
     result.reserve(tickSet.size());
     for (int t : tickSet) {
@@ -241,6 +288,15 @@ void fillGap(std::vector<PlacedRegion>& regions,
         int                     initialRootPc = -1;
         int                     initialBassPc = -1;
         analysis::ChordQuality  initialQuality = analysis::ChordQuality::Unknown;
+        // Iter 71 Fix A — true-local (no bilateral context) result.
+        // Used for the distinctness comparison so that bilateral-context
+        // bonuses (rootContinuityBonus, resolutionBonus) cannot mask
+        // candidates whose local chord identity genuinely differs from
+        // surrounding anchor identities (Pattern 2 — tonic smearing).
+        double                  localScore = 0.0;
+        int                     localRootPc = -1;
+        int                     localBassPc = -1;
+        analysis::ChordQuality  localQuality = analysis::ChordQuality::Unknown;
     };
     std::vector<Scored> scored;
     scored.reserve(16);
@@ -260,12 +316,23 @@ void fillGap(std::vector<PlacedRegion>& regions,
             tones, globalKeyFifths, globalKeyMode, &initCtx, prefs);
         if (cands.empty()) continue;
 
+        // Iter 71 Fix A — second analyzeChord call with no bilateral
+        // context. Same tones, no anchor influence.
+        const auto localCands = chordAnalyzer->analyzeChord(
+            tones, globalKeyFifths, globalKeyMode, nullptr, prefs);
+
         Scored s;
         s.idx            = i;
         s.initialScore   = cands[0].identity.score;
         s.initialRootPc  = cands[0].identity.rootPc;
         s.initialBassPc  = cands[0].identity.bassPc;
         s.initialQuality = cands[0].identity.quality;
+        if (!localCands.empty()) {
+            s.localScore   = localCands[0].identity.score;
+            s.localRootPc  = localCands[0].identity.rootPc;
+            s.localBassPc  = localCands[0].identity.bassPc;
+            s.localQuality = localCands[0].identity.quality;
+        }
         scored.push_back(s);
     }
 
@@ -309,25 +376,51 @@ void fillGap(std::vector<PlacedRegion>& regions,
         const Neighbour* R = nullptr;
         findNeighbours(r.startTick, &L, &R);
 
-        const std::string candQ = qualityToString(sc.initialQuality);
+        // Iter 71 Fix A — Pattern 2 (smearing).
+        // When both anchors share a root (the smearing pattern: tonic
+        // anchors on both sides of a non-tonic region), the bilateral
+        // context bonuses (rootContinuity / resolution) can pull the
+        // candidate's initial root toward the shared anchor root,
+        // defeating the distinctness check. In that specific topology,
+        // re-evaluate with a true-local analyzeChord (no bilateral
+        // context). When the true-local result differs from the
+        // bilateral one and clears the Round 2 score floor, prefer
+        // the true-local identity for both distinctness and placement.
+        // Gated on L && R && L->rootPc == R->rootPc to keep the rest
+        // of the Baroque corpus untouched.
+        const bool smearingTopology
+            = L && R && L->rootPc == R->rootPc;
+        const bool useTrueLocal
+            = smearingTopology
+            && sc.localRootPc >= 0
+            && sc.localRootPc != sc.initialRootPc
+            && sc.localScore >= effectiveRound2MinScore;
+
+        const int       useRootPc  = useTrueLocal ? sc.localRootPc  : sc.initialRootPc;
+        const int       useBassPc  = useTrueLocal ? sc.localBassPc  : sc.initialBassPc;
+        const auto      useQuality = useTrueLocal ? sc.localQuality : sc.initialQuality;
+        const double    useScore   = useTrueLocal ? sc.localScore   : sc.initialScore;
+        const std::string candQ    = qualityToString(useQuality);
+
         auto distinct = [&](const Neighbour* nb) {
             if (!nb) return true;
-            return nb->rootPc != sc.initialRootPc || nb->quality != candQ;
+            return nb->rootPc != useRootPc || nb->quality != candQ;
         };
         if (!distinct(L) || !distinct(R)) continue;
 
         r.round           = targetRound;
-        r.confidence      = sc.initialScore;
-        r.rootPitchClass  = sc.initialRootPc;
-        r.bassPitchClass  = sc.initialBassPc;
+        r.confidence      = useScore;
+        r.rootPitchClass  = useRootPc;
+        r.bassPitchClass  = useBassPc;
         r.quality         = candQ;
         char buf[200];
         std::snprintf(buf, sizeof(buf),
-                      "Round %d fill: distinct from L(root=%d) and R(root=%d) score=%.3f",
+                      "Round %d fill%s: distinct from L(root=%d) and R(root=%d) score=%.3f",
                       targetRound,
+                      useTrueLocal ? " (true-local)" : "",
                       L ? L->rootPc : -1,
                       R ? R->rootPc : -1,
-                      sc.initialScore);
+                      useScore);
         r.reason = buf;
 
         promotedIdxs.push_back(sc.idx);
