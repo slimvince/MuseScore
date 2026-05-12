@@ -228,7 +228,8 @@ void fillGap(std::vector<PlacedRegion>& regions,
              int globalKeyFifths,
              analysis::KeySigMode globalKeyMode,
              const HarmonicSegmenterCallbacks& callbacks,
-             double effectiveRound2MinScore)
+             double effectiveRound2MinScore,
+             int effectiveAnchorMinDurationTicks)
 {
     if (!score || !chordAnalyzer || gapEndTick <= gapStartTick) {
         return;
@@ -337,6 +338,17 @@ void fillGap(std::vector<PlacedRegion>& regions,
     }
 
     // Step 4: re-score each promoted candidate with updated bilateral context.
+    //
+    // Iter 70 — local-evidence preference. For long gaps (Pattern 2: tonic
+    // smearing), the bilateral re-score would otherwise overwrite a clear
+    // local dominant identity with the dominant root of distant anchors.
+    // When the local identity differs from both anchor roots, the original
+    // placement score met effectiveRound2MinScore, AND the re-score would
+    // flip the chord identity, trust the local placement and keep its
+    // identity instead. For very long gaps (> 4 × min-anchor-duration),
+    // also drop the bilateral context entirely from the re-score itself.
+    const int gapLength = gapEndTick - gapStartTick;
+    const bool longGap = gapLength > 4 * effectiveAnchorMinDurationTicks;
     for (size_t pi : promotedIdxs) {
         PlacedRegion& r = regions[pi];
         const Neighbour* L = nullptr;
@@ -344,14 +356,33 @@ void fillGap(std::vector<PlacedRegion>& regions,
         findNeighbours(r.startTick, &L, &R);
 
         analysis::ChordTemporalContext ctx;
-        ctx.previousRootPc = L ? L->rootPc : -1;
-        ctx.nextRootPc     = R ? R->rootPc : -1;
+        if (!longGap) {
+            ctx.previousRootPc = L ? L->rootPc : -1;
+            ctx.nextRootPc     = R ? R->rootPc : -1;
+        }
 
         auto tones = callbacks.collectRegionTones(r.startTick, r.endTick);
         if (tones.empty()) continue;
         const auto cands = chordAnalyzer->analyzeChord(
             tones, globalKeyFifths, globalKeyMode, &ctx, prefs);
         if (cands.empty()) continue;
+
+        const int newRootPc = cands[0].identity.rootPc;
+        const bool reScoreFlipsIdentity = (newRootPc != r.rootPitchClass);
+        const bool localDiffersFromAnchors =
+            (!L || L->rootPc != r.rootPitchClass)
+            && (!R || R->rootPc != r.rootPitchClass);
+        if (reScoreFlipsIdentity
+            && r.confidence >= effectiveRound2MinScore
+            && localDiffersFromAnchors) {
+            char buf[200];
+            std::snprintf(buf, sizeof(buf),
+                          "Round %d fill (local-preferred): rejected bilateral flip to root=%d, kept local root=%d score=%.3f gap=%d%s",
+                          targetRound, newRootPc, r.rootPitchClass,
+                          r.confidence, gapLength, longGap ? " long" : "");
+            r.reason = buf;
+            continue;
+        }
 
         r.confidence     = cands[0].identity.score;
         r.rootPitchClass = cands[0].identity.rootPc;
@@ -420,10 +451,14 @@ greedyExpandSegmentation(const Score* score,
         ? totalSpan / double(changeTicks.size() - 1)
         : std::max(totalSpan, 1.0);
 
-    // Staff-count gate: round(75% of eligible staves), min 1.
-    // SATB-4 -> 3 (unchanged), trio-3 -> 2, piano/duo-2 -> 2.
+    // Staff-count gate: round(75% of MEAN ACTIVE staves), min 1 (Iter 70 — Pattern 3).
+    // Previously used nEligibleStaves (total eligible) which over-counted on fixtures
+    // where staves alternate rather than play simultaneously (Corelli trio, small piano).
+    // SATB (meanActive ≈ 3.5):  round(2.625) = 3  ← matches prior SATB behaviour
+    // Trio alternating (≈ 1.5): round(1.125) = 1
+    // Piano alternating (≈ 1.0): round(0.75) = 1
     const int effectiveStaveThreshold = std::max(
-        1, static_cast<int>(std::round(double(nEligibleStaves) * 0.75)));
+        1, static_cast<int>(std::round(meanActiveStaves * 0.75)));
 
     // Vertical factor: 1.0 at SATB density (mean ~3.5 active staves), lower for sparse.
     // Score scaling derived from Step 2 corpus inspection: Baroque chord scores are
@@ -446,8 +481,17 @@ greedyExpandSegmentation(const Score* score,
     const double kRefTickSpacing = double(Constants::DIVISION);
     const double horizontalFactor = (meanTickSpacing > 0.0)
         ? std::min(1.0, kRefTickSpacing / meanTickSpacing) : 1.0;
+    // Iter 70 (Pattern 1): floor scales with meanTickSpacing so short-duration
+    // note-change events in sparse horizontal textures reach Round 1 eligibility.
+    // SATB (meanTickSpacing ≈ DIVISION): floor = max(DIVISION/8, DIVISION*0.1)
+    //   = max(60, 48) = 60; threshold = max(60, DIVISION) = DIVISION (unchanged).
+    // Sparse (meanTickSpacing very small horizontalFactor): threshold = floor,
+    //   which sits well below kAnchorMinDurationTicks so the short entry passes.
+    const int durationFloor = std::max(
+        Constants::DIVISION / 8,
+        static_cast<int>(meanTickSpacing * 0.1));
     const int effectiveAnchorMinDurationTicks = std::max(
-        Constants::DIVISION / 4,
+        durationFloor,
         static_cast<int>(std::round(double(kAnchorMinDurationTicks) * horizontalFactor)));
 
     candidates.reserve(changeTicks.size());
@@ -538,21 +582,21 @@ greedyExpandSegmentation(const Score* score,
         fillGap(candidates, startTick.ticks(), placed.front()->startTick,
                 nullptr, placed.front(), 2, score, excludeStaves, prefs,
                 chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
-                effectiveRound2MinScore);
+                effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
     }
     for (size_t i = 0; i + 1 < placed.size(); ++i) {
         if (placed[i]->endTick < placed[i + 1]->startTick) {
             fillGap(candidates, placed[i]->endTick, placed[i + 1]->startTick,
                     placed[i], placed[i + 1], 2, score, excludeStaves, prefs,
                     chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
-                    effectiveRound2MinScore);
+                    effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
         }
     }
     if (!placed.empty() && placed.back()->endTick < endTick.ticks()) {
         fillGap(candidates, placed.back()->endTick, endTick.ticks(),
                 placed.back(), nullptr, 2, score, excludeStaves, prefs,
                 chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
-                effectiveRound2MinScore);
+                effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
     }
 
     return candidates;

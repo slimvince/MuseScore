@@ -3,7 +3,7 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-11 — Iter 63 complete. Current baselines: BIR=true=6, BIR=false=125, Jazz BIR=false=12. Tests: 407/407 composing, 53/53 notation. Segmentation: greedy-expand active on batch path (Rounds 1+2, commit f92a4f1a3b); bridge path still Jaccard (Task #62). Corpus regen parallelised (24 workers, ~204s). Genuine BIR=true=6 breakdown: Scoring gap ×2 (bwv184.5 m13b3 Power/Sus2, bwv187.7 m14b2 HalfDim/Gm6), Hypothesis A ×2 (bwv184.5 m13b4 over-merge, bwv372 m10b1.5 missing Bb), Correct ×1 (bwv371 annotation disagreement), Unknown ×1 (bwv43.11 sus2 candidate absent). Iter 64 in progress: root-present pre-filter (perf only). Iter 65 queued: extend HalfDim bonus to MinorSixth winners (bwv187.7) + diagnose bwv43.11 sus2. BIR=false=125 enumerated: tools/birfalse_baseline_iter61.txt. Previous milestone: Iters 50–54 replaced Jaccard with greedy-expand (BIR=true 21→14, BIR=false 128→132); Iters 60–61 raised alt cap 2→3 and added HalfDim inversion preference (BIR=true 14→6, BIR=false 132→125). Gates I–O implemented in Iters 25–42 (BIR=true 111→21). Gates M and N definitively deferred (Iters 37–39): FP:genuine ratio too high without harmonic-function context.*
+*Last updated: 2026-05-12 — Iter 70 sparse fixes committed / bridge switch pending. Current baselines: BIR=true=5, BIR=false=125, Jazz BIR=false=12. Tests: 407/407 composing, 53/53 notation. HEAD (sparse fixes) — see git log. Segmentation: greedy-expand active on batch path (Rounds 1+2, commit f92a4f1a3b); bridge path still Jaccard (Task #62 not yet applied to bridge; Task #58 consolidation prerequisite still open). Corpus regen parallelised (24 workers, ~204s). Genuine BIR=true=5 breakdown: Scoring gap ×2 (bwv184.5 m13b3 sus2/Power, bwv43.11 m3b2 Dsus2 absent from results[]), Hypothesis A ×2 (bwv184.5 m13b4 over-merge, bwv372 m10b1.5 missing Bb), Correct ×1 (bwv371 annotation disagreement). Iter 64 pending (not committed — was in-progress when upstream merge interrupted; instruction at docs/prompts/iteration_64_root_present_prefilter.md): root-present pre-filter, perf only, no BIR change expected. Iter 66 queued: sus2 P5-inversion bonus — fix bwv184.5 m13b3 and bwv43.11 m3b2 (instruction at docs/prompts/iteration_66_sus2_inversion_bonus.md). Upstream merge: 434 commits from musescore/MuseScore brought in (merge commit d6ddb6a3b1; chords.xml preserved as custom version). Deferred investigations: bwv38.6 — note B present in score but pcWeight below 0.2 threshold; pcWeight aggregation may be under-counting it (not yet diagnosed). BIR=false=125 enumerated: tools/birfalse_baseline_iter61.txt. Previous milestones: Iter 65 (af785da463) bass-PC exemption in allTonesPresent → BIR=true 6→5; Iter 61 (a34dba041e) HalfDim first-inversion bonus → BIR=true 7→6, BIR=false 132→125; Iters 60 (381b401add) alt cap 2→3 + kCleanQualities guard → BIR=true 14→7; Iters 50–54 greedy-expand → BIR=true 21→14; Gates I–O Iters 25–42 → BIR=true 111→21.*
 
 ---
 
@@ -25,8 +25,9 @@ regional `bassIsStepwiseToNext` and the simplified no-third inversion gating red
 real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
 
 **Current working-tree note (updated 2026-05-11):** all 53/53 notation tests and 407/407
-composing tests pass on master (HEAD `cd6a61e6a0`, Iter 63). Pipeline snapshot tests:
-12/12. Iter 64 (root-present pre-filter) in progress.
+composing tests pass on master (HEAD `af785da463`, Iter 65). Pipeline snapshot tests:
+11/11. Iter 64 (root-present pre-filter, perf-only) not yet committed — see header.
+Iter 66 (sus2 P5-inversion bonus) queued.
 
 **Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
 DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
