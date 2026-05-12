@@ -32,4 +32,8 @@ target_sources(composing_analysis PRIVATE
 
     # region/ — harmonic region types
     ${CMAKE_CURRENT_LIST_DIR}/region/harmonicrhythm.h
+
+    # harmony/ — region-level harmonic segmentation (greedy-expand, Iter 67)
+    ${CMAKE_CURRENT_LIST_DIR}/harmony/harmonicsegmenter.h
+    ${CMAKE_CURRENT_LIST_DIR}/harmony/harmonicsegmenter.cpp
 )

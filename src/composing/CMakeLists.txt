@@ -47,6 +47,10 @@ target_include_directories(composing_analysis INTERFACE
     ${CMAKE_CURRENT_BINARY_DIR}/..
 )
 
+# Iter 67: harmonicsegmenter.cpp uses engraving Score/Segment/Chord/Note types,
+# so composing_analysis now depends on engraving for compilation and linkage.
+target_link_libraries(composing_analysis PUBLIC engraving)
+
 target_link_libraries(composing PRIVATE
     composing_analysis
     muse_global
