@@ -142,8 +142,11 @@ int countParticipatingStaves(const Score* score,
 }
 
 /// Returns all ticks within [startTick, endTick) at which any note in a
-/// chord-bearing stave attacks (new onset). The result is sorted and
-/// deduplicated. Always includes startTick.
+/// chord-bearing stave attacks (new onset) OR releases (Iter 73 Fix A).
+/// Per Pardo & Birmingham (Computer Music Journal, 2002), harmonic changes
+/// may occur at note-on OR note-off; music21's chordify implements the same
+/// salami-slicing principle. The result is sorted and deduplicated. Always
+/// includes startTick.
 std::vector<Fraction>
 collectNoteChangeTicks(const Score* score,
                        const Fraction& startTick,
@@ -198,6 +201,60 @@ collectNoteChangeTicks(const Score* score,
                 if (hasOnset) {
                     tickSet.insert(segTick);
                     break;  // one onset per staff is enough to record the tick
+                }
+            }
+        }
+    }
+
+    // Iter 73 Fix A — note-end pass.
+    //
+    // Per Pardo & Birmingham (CMJ 2002), harmonic boundaries occur at
+    // note-on OR note-off. Collect release ticks for notes that do not
+    // tie forward — sustained voices that release without a coincident
+    // new onset would otherwise be invisible to the onset-only pass.
+    // Deduplication is automatic (tickSet is a std::set).
+    for (const Segment* s = firstSeg; s && s->tick() < endTick;
+         s = s->next1(SegmentType::ChordRest)) {
+        const int segTick = s->tick().ticks();
+        if (segTick < startTick.ticks()) {
+            continue;
+        }
+
+        for (size_t staffIdx = 0; staffIdx < score->nstaves(); ++staffIdx) {
+            if (excludeStaves.count(staffIdx) || !staffIsEligible(staffIdx)) {
+                continue;
+            }
+            for (voice_idx_t v = 0; v < VOICES; ++v) {
+                const EngravingItem* e = s->element(staff2track(staffIdx, v));
+                if (!e || !e->isChord()) {
+                    continue;
+                }
+                const Chord* chord = toChord(e);
+                if (chord->isGrace()) {
+                    continue;
+                }
+                // True-release: at least one playing note in this chord
+                // does not tie forward into the next chord. Tied-forward
+                // notes continue sounding so they do not contribute a
+                // release event here.
+                bool anyRelease = false;
+                for (const Note* n : chord->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    if (n->tieFor()) {
+                        continue;
+                    }
+                    anyRelease = true;
+                    break;
+                }
+                if (!anyRelease) {
+                    continue;
+                }
+                const int endTickVal = segTick + chord->actualTicks().ticks();
+                if (endTickVal > startTick.ticks()
+                    && endTickVal < endTick.ticks()) {
+                    tickSet.insert(endTickVal);
                 }
             }
         }
@@ -701,6 +758,81 @@ greedyExpandSegmentation(const Score* score,
                 placed.back(), nullptr, 2, score, excludeStaves, sparsePrefs,
                 chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
                 effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
+    }
+
+    // Iter 73 Fix B — head-gap synthesis safety net.
+    //
+    // If Round 1 + Round 2 produced no placed region covering the start
+    // of the analysis window, synthesize one covering region from the
+    // tones in the uncovered head span. The analysis window was
+    // requested for a reason; leaving its head uncovered is always wrong.
+    int firstPlacedStart = endTick.ticks();
+    for (const auto& r : candidates) {
+        if (r.round >= 1) {
+            firstPlacedStart = r.startTick;
+            break;
+        }
+    }
+    if (firstPlacedStart > startTick.ticks()) {
+        const auto headTones = callbacks.collectRegionTones(
+            startTick.ticks(), firstPlacedStart);
+        if (!headTones.empty()) {
+            const auto headCands = chordAnalyzer->analyzeChord(
+                headTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
+            if (!headCands.empty() && headCands[0].identity.score > 0.0) {
+                PlacedRegion headRegion;
+                headRegion.startTick      = startTick.ticks();
+                headRegion.endTick        = firstPlacedStart;
+                headRegion.round          = 2;
+                headRegion.confidence     = headCands[0].identity.score;
+                headRegion.isAnchor       = false;
+                headRegion.rootPitchClass = headCands[0].identity.rootPc;
+                headRegion.bassPitchClass = headCands[0].identity.bassPc;
+                headRegion.quality        = qualityToString(headCands[0].identity.quality);
+                char buf[200];
+                std::snprintf(buf, sizeof(buf),
+                              "head-gap-synthesized: [%d,%d) score=%.3f",
+                              headRegion.startTick, headRegion.endTick,
+                              headRegion.confidence);
+                headRegion.reason = buf;
+                candidates.insert(candidates.begin(), std::move(headRegion));
+            }
+        }
+    }
+
+    // Tail-gap synthesis — symmetric safety net for the end of the window.
+    int lastPlacedEnd = startTick.ticks();
+    for (auto it = candidates.rbegin(); it != candidates.rend(); ++it) {
+        if (it->round >= 1) {
+            lastPlacedEnd = it->endTick;
+            break;
+        }
+    }
+    if (lastPlacedEnd < endTick.ticks()) {
+        const auto tailTones = callbacks.collectRegionTones(
+            lastPlacedEnd, endTick.ticks());
+        if (!tailTones.empty()) {
+            const auto tailCands = chordAnalyzer->analyzeChord(
+                tailTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
+            if (!tailCands.empty() && tailCands[0].identity.score > 0.0) {
+                PlacedRegion tailRegion;
+                tailRegion.startTick      = lastPlacedEnd;
+                tailRegion.endTick        = endTick.ticks();
+                tailRegion.round          = 2;
+                tailRegion.confidence     = tailCands[0].identity.score;
+                tailRegion.isAnchor       = false;
+                tailRegion.rootPitchClass = tailCands[0].identity.rootPc;
+                tailRegion.bassPitchClass = tailCands[0].identity.bassPc;
+                tailRegion.quality        = qualityToString(tailCands[0].identity.quality);
+                char buf[200];
+                std::snprintf(buf, sizeof(buf),
+                              "tail-gap-synthesized: [%d,%d) score=%.3f",
+                              tailRegion.startTick, tailRegion.endTick,
+                              tailRegion.confidence);
+                tailRegion.reason = buf;
+                candidates.push_back(std::move(tailRegion));
+            }
+        }
     }
 
     return candidates;
