@@ -614,6 +614,17 @@ greedyExpandSegmentation(const Score* score,
     if (!chordAnalyzer) {
         return candidates;
     }
+    // Iter 72 — relax analyzeChord's distinctPcs gate for greedy-expand only.
+    //
+    // The analyzer defaults to requiring ≥ 3 distinct pitch classes before it
+    // returns any candidate. SATB chorale regions always satisfy this; Corelli
+    // trio-sonata dominant entries do not (G unison, G+B / G+Bb dyads at
+    // m1b3, m6b3, m8b1, m10b3, m11b3 — all 1-2 PC). Without scoring, those
+    // beats can never become anchors. We relax the gate to 1 for our calls
+    // only; every other caller in the system keeps the default behaviour.
+    analysis::ChordAnalyzerPreferences sparsePrefs = prefs;
+    sparsePrefs.minDistinctPcsForCandidate = 1;
+
     for (PlacedRegion& region : candidates) {
         const Fraction regionStart = Fraction::fromTicks(region.startTick);
         const Fraction regionEnd   = Fraction::fromTicks(region.endTick);
@@ -634,7 +645,7 @@ greedyExpandSegmentation(const Score* score,
             continue;
         }
         const auto chordCands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, nullptr, prefs);
+            tones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
         if (chordCands.empty()) {
             continue;
         }
@@ -673,21 +684,21 @@ greedyExpandSegmentation(const Score* score,
 
     if (!placed.empty() && placed.front()->startTick > startTick.ticks()) {
         fillGap(candidates, startTick.ticks(), placed.front()->startTick,
-                nullptr, placed.front(), 2, score, excludeStaves, prefs,
+                nullptr, placed.front(), 2, score, excludeStaves, sparsePrefs,
                 chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
                 effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
     }
     for (size_t i = 0; i + 1 < placed.size(); ++i) {
         if (placed[i]->endTick < placed[i + 1]->startTick) {
             fillGap(candidates, placed[i]->endTick, placed[i + 1]->startTick,
-                    placed[i], placed[i + 1], 2, score, excludeStaves, prefs,
+                    placed[i], placed[i + 1], 2, score, excludeStaves, sparsePrefs,
                     chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
                     effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
         }
     }
     if (!placed.empty() && placed.back()->endTick < endTick.ticks()) {
         fillGap(candidates, placed.back()->endTick, endTick.ticks(),
-                placed.back(), nullptr, 2, score, excludeStaves, prefs,
+                placed.back(), nullptr, 2, score, excludeStaves, sparsePrefs,
                 chordAnalyzer, globalKeyFifths, globalKeyMode, callbacks,
                 effectiveRound2MinScore, effectiveAnchorMinDurationTicks);
     }

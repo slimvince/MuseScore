@@ -422,6 +422,15 @@ struct ChordAnalyzerPreferences {
     /// Range: 0.10–0.30.  Default: 0.20.
     double extensionThreshold = 0.20;
 
+    /// Minimum number of distinct pitch classes (counted at pcWeight > 0.05) for
+    /// analyzeChord() to return any candidates. SATB chorale regions always have
+    /// 3+ distinct PCs and gate at the conservative default; thin-PC entry points
+    /// in non-SATB textures (e.g. Corelli trio sonata dominant beats — G unison,
+    /// G+B dyad) need the gate relaxed to be scored at all. greedyExpandSegmentation
+    /// sets this to 1 so it can promote sparse anchors; all other callers keep 3.
+    /// Range: 1–3.  Default: 3.
+    int minDistinctPcsForCandidate = 3;
+
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 
     /// Minimum confidence for the upper-voice-only Pass 2 result to confirm a

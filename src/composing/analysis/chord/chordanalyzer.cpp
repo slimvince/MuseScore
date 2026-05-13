@@ -1622,14 +1622,17 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         }
     }
 
-    // Count distinct pitch classes; require at least 3 for meaningful analysis.
+    // Count distinct pitch classes; require at least prefs.minDistinctPcsForCandidate
+    // (default 3) for meaningful analysis. Greedy-expand callers relax this to 1 so
+    // sparse 1–2 PC entries can be scored, then apply a PC-count-adaptive threshold
+    // at the comparison site.
     int distinctPcs = 0;
     for (double w : pcWeight) {
         if (w > 0.05) {
             ++distinctPcs;
         }
     }
-    if (distinctPcs < 3) {
+    if (distinctPcs < prefs.minDistinctPcsForCandidate) {
         return {};
     }
 
