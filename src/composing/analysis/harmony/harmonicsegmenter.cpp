@@ -27,6 +27,7 @@
 #include <cstdio>
 #include <set>
 
+#include "../chord/analysisutils.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/segment.h"
@@ -795,6 +796,58 @@ greedyExpandSegmentation(const Score* score,
                               headRegion.startTick, headRegion.endTick,
                               headRegion.confidence);
                 headRegion.reason = buf;
+
+                // Iter 74 Fix B — key-tonic prior in head-gap synthesis.
+                // In a tonal opening without a confirmed anchor, the tonic
+                // is the statistically dominant harmony. Asserting a
+                // non-tonic chord requires clear evidence (margin >=
+                // kHeadGapTonicPreferenceMargin). When the margin is
+                // thin, prefer a tonic-rooted alternative if present
+                // among headCands, or fall back to the modal tonic
+                // quality (Major for major keys, Minor for minor keys).
+                const int ionianTonicPc
+                    = analysis::ionianTonicPcFromFifths(globalKeyFifths);
+                const int tonicPc
+                    = (ionianTonicPc
+                       + analysis::keyModeTonicOffset(globalKeyMode)) % 12;
+                const bool resultIsTonic = (headRegion.rootPitchClass == tonicPc);
+                const double headRunnerUp = (headCands.size() > 1)
+                    ? headCands[1].identity.score : 0.0;
+                const double headMargin
+                    = headCands[0].identity.score - headRunnerUp;
+                static constexpr double kHeadGapTonicPreferenceMargin = 0.4;
+
+                if (!resultIsTonic && headMargin < kHeadGapTonicPreferenceMargin) {
+                    int overrideIdx = -1;
+                    for (size_t k = 1; k < headCands.size(); ++k) {
+                        if (headCands[k].identity.rootPc == tonicPc) {
+                            overrideIdx = static_cast<int>(k);
+                            break;
+                        }
+                    }
+                    if (overrideIdx >= 0) {
+                        const auto& alt = headCands[static_cast<size_t>(overrideIdx)];
+                        headRegion.rootPitchClass = alt.identity.rootPc;
+                        headRegion.bassPitchClass = alt.identity.bassPc;
+                        headRegion.quality        = qualityToString(alt.identity.quality);
+                        headRegion.confidence     = alt.identity.score;
+                    } else {
+                        const auto modalQuality
+                            = analysis::keyModeIsMajor(globalKeyMode)
+                            ? analysis::ChordQuality::Major
+                            : analysis::ChordQuality::Minor;
+                        headRegion.rootPitchClass = tonicPc;
+                        headRegion.bassPitchClass = tonicPc;
+                        headRegion.quality        = qualityToString(modalQuality);
+                    }
+                    std::snprintf(buf, sizeof(buf),
+                                  "head-gap-tonic-prior: [%d,%d) margin=%.3f<%.2f tonicPc=%d",
+                                  headRegion.startTick, headRegion.endTick,
+                                  headMargin, kHeadGapTonicPreferenceMargin,
+                                  tonicPc);
+                    headRegion.reason = buf;
+                }
+
                 candidates.insert(candidates.begin(), std::move(headRegion));
             }
         }

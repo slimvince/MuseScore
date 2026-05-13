@@ -1721,6 +1721,23 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                        keyTonicPc, scale,
                                        prefs, context);
 
+            // Iter 74 Fix A — template complexity preference.
+            // When the region provides fewer distinct PCs than half the
+            // template defines, the template is asserting many unstated
+            // tones. Apply a proportional penalty so the simpler template
+            // (root + minor third) outranks a richer one (root + minor
+            // third + 5th + 7th) on identical thin evidence. SATB chorale
+            // regions and any region with ≥ templateDefinedTones/2 PCs
+            // are unaffected (factor = 1.0).
+            const int templateDefinedTones = static_cast<int>(tpl.intervals.size());
+            const double evidenceRatio
+                = (distinctPcs >= templateDefinedTones)
+                ? 1.0
+                : static_cast<double>(distinctPcs) / templateDefinedTones;
+            const double complexityPenaltyFactor
+                = (evidenceRatio >= 0.5) ? 1.0 : (0.5 + evidenceRatio);
+            score *= complexityPenaltyFactor;
+
             rawCandidates.push_back({ score, bassBonus, rootPc, tpl.quality,
                                       static_cast<int>(tplIdx) });
         }
