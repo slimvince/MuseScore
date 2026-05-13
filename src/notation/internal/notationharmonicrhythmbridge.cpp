@@ -147,6 +147,20 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
     static constexpr int kMinRegionTicks = Constants::DIVISION;  // 1 quarter note
 
+    // Iter 75 — sparse-texture analysis preferences for the main Pass 1 loop.
+    //
+    // The analyzer defaults to requiring >=3 distinct pitch classes before
+    // emitting any candidate. Sparse trio/duet textures (Corelli op01n08d)
+    // routinely produce 1-2 PC slices that the default gate rejects, leaving
+    // multi-measure gaps in chord coverage. Matching greedy-expand's internal
+    // sparsePrefs (Iter 72) here lets the bridge analyse the same sparse
+    // content. Dense SATB regions are unaffected — the gate only filters
+    // when distinctPcs < threshold, so >=3 PCs always pass under both
+    // settings. Restricted to Pass 1 (not Pass 2 / Pass 2b sub-region
+    // splits) to avoid changing merge behaviour on already-emitted boundaries.
+    mu::composing::analysis::ChordAnalyzerPreferences sparsePrefs;
+    sparsePrefs.minDistinctPcsForCandidate = 1;
+
     // Helper: apply Pass 3 (absorb short regions) to a region list in-place.
     auto absorbShortRegions = [](std::vector<HarmonicRegion>& regions) {
         if (regions.size() <= 1) {
@@ -288,7 +302,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 safeBeatType(currentMeasure, regionStartSeg));
 
             const auto results = chordAnalyzer->analyzeChord(
-                tones, localKeyFifths, localKeyMode, &temporalCtx);
+                tones, localKeyFifths, localKeyMode, &temporalCtx, sparsePrefs);
 
             if (results.empty()) {
                 continue;
@@ -299,6 +313,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                                                                            tones,
                                                                            localKeyFifths,
                                                                            localKeyMode);
+            // Iter 75 — promote Power/Sus on tonic root to the diatonic tonic triad.
+            mu::notation::internal::applyTonicPriorToSparseChord(
+                chosenResult, localKeyFifths, localKeyMode);
 
             // Capture the snapshot before mutating temporalCtx for the next region.
             const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);

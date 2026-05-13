@@ -223,6 +223,32 @@ void refineSparseChordQualityFromKeyContext(
     result.identity.quality = quality;
 }
 
+void applyTonicPriorToSparseChord(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode)
+{
+    using namespace mu::composing::analysis;
+
+    const auto q = result.identity.quality;
+    const bool isThin = (q == ChordQuality::Power
+                      || q == ChordQuality::Suspended2
+                      || q == ChordQuality::Suspended4);
+    if (!isThin) {
+        return;
+    }
+
+    const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
+    const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+    if (result.identity.rootPc != tonicPc) {
+        return;
+    }
+
+    result.identity.quality = keyModeIsMajor(keyMode)
+        ? ChordQuality::Major
+        : ChordQuality::Minor;
+}
+
 void forceChordTrackQualityFromKeyContext(
     mu::composing::analysis::ChordAnalysisResult& result,
     mu::composing::analysis::KeySigMode keyMode)

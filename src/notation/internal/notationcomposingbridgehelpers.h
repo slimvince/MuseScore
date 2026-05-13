@@ -191,6 +191,20 @@ void refineSparseChordQualityFromKeyContext(
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode);
 
+/// Iter 75 — tonic prior for thin-evidence sparse-texture regions.
+///
+/// When the bridge's analyzeChord call (with sparse prefs) returns a
+/// Power/Suspended2/Suspended4 candidate whose root matches the key's tonic
+/// pitch class, the most musically plausible interpretation is the diatonic
+/// tonic triad — promote the quality accordingly. Generalises Iter 74 Fix B
+/// (which was restricted to head-gap synthesis) to the regular per-region
+/// loop, so a bare tonic at the opening or anywhere mid-piece reads as i / I
+/// rather than C5 / Csus.
+void applyTonicPriorToSparseChord(
+    mu::composing::analysis::ChordAnalysisResult& result,
+    int keyFifths,
+    mu::composing::analysis::KeySigMode keyMode);
+
 /// Force-assign the diatonic triad quality for a chord-track region that still has
 /// quality=Unknown after the standard refinement.  Unlike refineSparseChordQualityFromKeyContext,
 /// this does NOT apply the Aeolian lone-tonic/dominant exclusion — it is appropriate for
