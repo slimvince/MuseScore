@@ -225,6 +225,7 @@ void refineSparseChordQualityFromKeyContext(
 
 void applyTonicPriorToSparseChord(
     mu::composing::analysis::ChordAnalysisResult& result,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode)
 {
@@ -238,15 +239,25 @@ void applyTonicPriorToSparseChord(
         return;
     }
 
-    const int ionianTonicPc = ionianTonicPcFromFifths(keyFifths);
-    const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
-    if (result.identity.rootPc != tonicPc) {
+    // Dense regions (3+ PCs) carry their own quality evidence; overriding
+    // them with a diatonic assumption would suppress legitimate chord color.
+    if (distinctPitchClassCount(tones) > 2) {
         return;
     }
 
-    result.identity.quality = keyModeIsMajor(keyMode)
-        ? ChordQuality::Major
-        : ChordQuality::Minor;
+    const int degree = diatonicDegreeForRootPc(
+        result.identity.rootPc, keyFifths, keyMode);
+    if (degree < 0) {
+        return;
+    }
+
+    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
+    if (!triadShape) {
+        return;
+    }
+    const auto diatonicQuality = std::get<0>(*triadShape);
+
+    result.identity.quality = diatonicQuality;
 }
 
 void forceChordTrackQualityFromKeyContext(

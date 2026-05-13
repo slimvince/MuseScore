@@ -313,9 +313,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                                                                            tones,
                                                                            localKeyFifths,
                                                                            localKeyMode);
-            // Iter 75 — promote Power/Sus on tonic root to the diatonic tonic triad.
+            // Iter 75/76 — promote Power/Sus on a diatonic root to the diatonic
+            // triad quality for that scale degree (≤2-PC regions only).
             mu::notation::internal::applyTonicPriorToSparseChord(
-                chosenResult, localKeyFifths, localKeyMode);
+                chosenResult, tones, localKeyFifths, localKeyMode);
 
             // Capture the snapshot before mutating temporalCtx for the next region.
             const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);

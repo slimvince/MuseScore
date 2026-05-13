@@ -1320,8 +1320,15 @@ TEST_F(Notation_ImplodeTests, PopulateChordTrackKeepsRomanAtLowConfidenceButSupp
     delete score;
 }
 
-TEST_F(Notation_ImplodeTests, HarmonicAnnotationKeepsRomanAtLowConfidenceNoteContext)
+TEST_F(Notation_ImplodeTests, HarmonicAnnotationKeepsRomanAtAmbiguousChordNoteContext)
 {
+    // Iter 76 re-anchor — the previous "low key-confidence" anchor was a
+    // Jaccard-segmentation artifact: greedy-expand correctly places the
+    // earlier note in a high-confidence key region. The original assertion
+    // (chord symbol + Roman both surfaced in the annotation, with " / "
+    // separating them) is still valuable; re-anchor it to a region where
+    // the chord identity itself is genuinely ambiguous (Dvorak op08n06 m4 b2
+    // — Bbsus/G vs F/G, top-two score margin ~0.14).
     auto analysis = analysisConfig();
     ASSERT_TRUE(analysis);
     analysis->setUseRegionalAccumulation(true);
@@ -1331,31 +1338,31 @@ TEST_F(Notation_ImplodeTests, HarmonicAnnotationKeepsRomanAtLowConfidenceNoteCon
     analysis->setShowRomanNumeralsInStatusBar(true);
     analysis->setShowNashvilleNumbersInStatusBar(false);
     analysis->setShowKeyModeInStatusBar(false);
-    analysis->setAnalysisAlternatives(1);
+    analysis->setAnalysisAlternatives(3);
 
     MasterScore* score = ScoreRW::readScore(
         u"../../../../tools/dcml/dvorak_silhouettes/MS3/op08n06.mscx");
     ASSERT_TRUE(score);
 
-    const auto regions = mu::notation::analyzeHarmonicRhythm(
-        score,
-        Fraction(0, 1),
-        score->endTick(),
-        {},
-        mu::notation::HarmonicRegionGranularity::PreserveAllChanges);
-    const auto lowConfidenceRegion = std::find_if(regions.begin(), regions.end(), [](const auto& region) {
-        return region.keyModeResult.normalizedConfidence < 0.5;
-    });
-    ASSERT_NE(lowConfidenceRegion, regions.end());
+    const Fraction tick = tickInMeasure(score, 4, 480);  // m4 b2 (quarter-note offset)
+    ASSERT_GE(tick.ticks(), 0);
 
-    Note* note = firstSourceNoteInRange(score,
-                                        Fraction::fromTicks(lowConfidenceRegion->startTick),
-                                        Fraction::fromTicks(lowConfidenceRegion->endTick));
+    Note* note = firstSourceNoteInRange(score, tick, tick + Fraction::fromTicks(1));
     ASSERT_TRUE(note);
 
     const auto context = mu::notation::analyzeNoteHarmonicContextDetails(note);
-    EXPECT_LT(context.keyConfidence, 0.5);
-    ASSERT_FALSE(context.chordResults.empty());
+    ASSERT_GE(context.chordResults.size(), 2u);
+
+    const double topScore = context.chordResults[0].identity.score;
+    const double runnerUpScore = context.chordResults[1].identity.score;
+    const double scoreMargin = topScore - runnerUpScore;
+    // The top two readings (e.g. Bbsus/G vs F/G in greedy-expand, similar
+    // competing pair under Jaccard) sit close enough on the chord scoring
+    // scale (~3.0–3.5) to indicate genuine ambiguity. The bridge migration
+    // ticket sets ~0.14 for greedy-expand; Jaccard measures around 0.25.
+    EXPECT_LT(scoreMargin, 0.3)
+        << "expected chord-level ambiguity at m4 b2 — top=" << topScore
+        << " runner-up=" << runnerUpScore;
 
     const std::string expectedSymbol = mu::composing::analysis::ChordSymbolFormatter::formatSymbol(
         context.chordResults.front(),

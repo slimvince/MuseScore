@@ -191,17 +191,20 @@ void refineSparseChordQualityFromKeyContext(
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode);
 
-/// Iter 75 — tonic prior for thin-evidence sparse-texture regions.
+/// Iter 75/76 — diatonic-quality prior for thin-evidence sparse-texture regions.
 ///
 /// When the bridge's analyzeChord call (with sparse prefs) returns a
-/// Power/Suspended2/Suspended4 candidate whose root matches the key's tonic
-/// pitch class, the most musically plausible interpretation is the diatonic
-/// tonic triad — promote the quality accordingly. Generalises Iter 74 Fix B
-/// (which was restricted to head-gap synthesis) to the regular per-region
-/// loop, so a bare tonic at the opening or anywhere mid-piece reads as i / I
-/// rather than C5 / Csus.
+/// Power/Suspended2/Suspended4 candidate on a region with ≤ 2 distinct pitch
+/// classes, and the candidate's root is a diatonic scale degree of the current
+/// key/mode, promote the quality to that degree's diatonic triad quality if the
+/// present tones are consistent with that shape. Iter 75 restricted this to the
+/// tonic; Iter 76 generalises to all diatonic degrees so a sparse non-tonic
+/// passage (e.g. G5 on V, C5 on iv) reads as the correct triad rather than as a
+/// power chord. Dense regions (3+ PCs) are unaffected — their winner quality is
+/// taken at face value.
 void applyTonicPriorToSparseChord(
     mu::composing::analysis::ChordAnalysisResult& result,
+    const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode);
 
