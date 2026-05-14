@@ -1441,37 +1441,6 @@ findTemporalContext(const mu::engraving::Score* sc,
     return temporalCtx;
 }
 
-// Deprecated shim — calls analyzeSection and reverse-translates to
-// vector<HarmonicRegion> for callers not yet ported (tools/batch_analyze.cpp).
-// Do not add new callers.
-std::vector<mu::composing::analysis::HarmonicRegion>
-prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
-                                 const mu::engraving::Fraction& startTick,
-                                 const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::composing::analysis;
-
-    const auto section = analyzeSection(sc, startTick, endTick, excludeStaves);
-
-    std::vector<HarmonicRegion> result;
-    result.reserve(section.regions.size());
-    for (const auto& src : section.regions) {
-        HarmonicRegion r;
-        r.startTick          = src.startTick;
-        r.endTick            = src.endTick;
-        r.chordResult        = src.chordResult;
-        r.alternatives       = src.alternatives;
-        r.hasAnalyzedChord   = src.hasAnalyzedChord;
-        r.keyModeResult      = src.keyModeResult;
-        r.tones              = src.tones;
-        r.temporalExtensions = src.temporalExtensions;
-        result.push_back(std::move(r));
-    }
-    return result;
-}
-
-
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 
 bool hasAssertiveKeyConfidence(
@@ -1683,10 +1652,8 @@ std::vector<PivotLabel> detectPivotChords(
 // ── analyzeSection ───────────────────────────────────────────────────────────
 //
 // Canonical implementation of the unified analysis pipeline
-// (docs/unified_analysis_pipeline.md).  Inlines Passes 0–4 (previously in
-// prepareUserFacingHarmonicRegions) and operates natively on AnalyzedRegion.
-// prepareUserFacingHarmonicRegions is a deprecated shim that reverse-translates
-// for tools/batch_analyze.cpp.
+// (docs/unified_analysis_pipeline.md).  Inlines Passes 0–4 and operates
+// natively on AnalyzedRegion.
 mu::composing::analysis::AnalyzedSection
 analyzeSection(const mu::engraving::Score* sc,
                const mu::engraving::Fraction& from,

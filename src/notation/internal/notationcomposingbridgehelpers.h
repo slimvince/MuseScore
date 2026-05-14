@@ -201,24 +201,11 @@ void forceChordTrackQualityFromKeyContext(
     mu::composing::analysis::ChordAnalysisResult& result,
     mu::composing::analysis::KeySigMode keyMode);
 
-/// Build the same user-facing harmonic regions consumed by chord-track population.
-/// Uses smoothed region analysis, fills leading sparse gaps conservatively, and
-/// stabilizes key/mode so Roman numerals remain consistent across display paths.
-std::vector<mu::composing::analysis::HarmonicRegion>
-prepareUserFacingHarmonicRegions(const mu::engraving::Score* sc,
-                                 const mu::engraving::Fraction& startTick,
-                                 const mu::engraving::Fraction& endTick,
-                                 const std::set<size_t>& excludeStaves);
-
-/// Phase 2 entry point for the unified analysis pipeline.  Translates the
-/// shared `HarmonicRegion` output from `prepareUserFacingHarmonicRegions`
-/// into the Phase 2 shared-output types
+/// Canonical entry point for the unified analysis pipeline.  Runs the
+/// smoothed region analysis, fills leading sparse gaps conservatively, and
+/// stabilizes key/mode so Roman numerals remain consistent across display
+/// paths, producing the shared-output types
 /// (`AnalyzedRegion` / `KeyArea` / `AnalyzedSection`).
-///
-/// Pure translation for Phase 2 — no behavior change, no additional analyzer
-/// calls, no callers yet.  Phase 3a/3b/3c wire each emitter over; Phase 4
-/// retires `prepareUserFacingHarmonicRegions` and moves this function into
-/// src/composing/.
 mu::composing::analysis::AnalyzedSection
 analyzeSection(const mu::engraving::Score* sc,
                const mu::engraving::Fraction& from,

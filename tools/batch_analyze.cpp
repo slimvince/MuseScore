@@ -747,8 +747,6 @@ enum class RegionDumpMode {
     Batch,
     Notation,
     NotationPreMerge,
-    NotationPrepared,
-    NotationRefreshed,
 };
 
 struct RegionDumpBundle {
@@ -763,8 +761,6 @@ static const char* regionDumpModeName(RegionDumpMode mode)
     case RegionDumpMode::Batch:               return "batch";
     case RegionDumpMode::Notation:            return "notation";
     case RegionDumpMode::NotationPreMerge:    return "notation-premerge";
-    case RegionDumpMode::NotationPrepared:    return "notation-prepared";
-    case RegionDumpMode::NotationRefreshed:   return "notation-refreshed";
     }
     return "batch";
 }
@@ -1914,33 +1910,6 @@ static RegionDumpBundle analyzeScoreNotation(
     return dump;
 }
 
-static std::vector<AnalyzedRegion> analyzeScoreNotationPrepared(
-    Score* score,
-    const std::set<size_t>& excludeStaves)
-{
-    const Segment* firstSegment = score->tick2segment(Fraction(0, 1), true, SegmentType::ChordRest);
-    if (!firstSegment) {
-        return {};
-    }
-    const Fraction startTick = firstSegment->tick();
-    const Fraction endTick   = score->endTick();
-
-    auto regions = mu::notation::internal::prepareUserFacingHarmonicRegions(
-        score, startTick, endTick, excludeStaves);
-
-    return convertNotationRegions(regions, score);
-}
-
-// refreshChordResultWithDisplayContext was deleted (policy #1, 2026-04-24):
-// confirmed no-op across 49,549 regions / 870 scores. This mode now
-// returns the same result as notation-prepared.
-static std::vector<AnalyzedRegion> analyzeScoreNotationRefreshed(
-    Score* score,
-    const std::set<size_t>& excludeStaves)
-{
-    return analyzeScoreNotationPrepared(score, excludeStaves);
-}
-
 // ══════════════════════════════════════════════════════════════════════════
 // Formatting helpers
 // ══════════════════════════════════════════════════════════════════════════
@@ -2324,11 +2293,7 @@ static void printHelp(const std::string& prog)
         << "            Select which analysis path to serialize. 'batch' writes the\n"
         << "            tool's current batch path, 'notation' writes the live notation\n"
         << "            bridge result, 'notation-premerge' writes the notation\n"
-        << "            bridge regions before same-chord merge/absorption,\n"
-        << "            'notation-prepared' writes prepareUserFacingHarmonicRegions\n"
-        << "            output without refresh (clean baseline for divergence analysis),\n"
-        << "            and 'notation-refreshed' applies refreshChordResultWithDisplayContext\n"
-        << "            to each final region before serializing (diagnostic mode).\n"
+        << "            bridge regions before same-chord merge/absorption.\n"
         << "  --diagnose-measures N[,N,...]\n"
         << "            Per-measure diagnostic mode. For each listed measure number,\n"
         << "            emits a JSON block with collected notes, per-PC weights, and\n"
@@ -2392,13 +2357,9 @@ int main(int argc, char* argv[])
                 dumpMode = RegionDumpMode::Notation;
             } else if (mode == "notation-premerge") {
                 dumpMode = RegionDumpMode::NotationPreMerge;
-            } else if (mode == "notation-prepared") {
-                dumpMode = RegionDumpMode::NotationPrepared;
-            } else if (mode == "notation-refreshed") {
-                dumpMode = RegionDumpMode::NotationRefreshed;
             } else {
                 std::cerr << "ERROR: unknown --dump-regions mode '" << mode
-                          << "'. Valid values: batch, notation, notation-premerge, notation-prepared, notation-refreshed\n";
+                          << "'. Valid values: batch, notation, notation-premerge\n";
                 return 1;
             }
         } else if (a == "--diagnose-measures") {
@@ -2497,10 +2458,6 @@ int main(int argc, char* argv[])
     std::vector<AnalyzedRegion> regions;
     if (dumpMode == RegionDumpMode::Batch) {
         regions = analyzeScore(score, excludeStaves, keyPrefs, chordPrefs);
-    } else if (dumpMode == RegionDumpMode::NotationPrepared) {
-        regions = analyzeScoreNotationPrepared(score, excludeStaves);
-    } else if (dumpMode == RegionDumpMode::NotationRefreshed) {
-        regions = analyzeScoreNotationRefreshed(score, excludeStaves);
     } else {
         RegionDumpBundle notationDump = analyzeScoreNotation(score, excludeStaves);
         if (dumpMode == RegionDumpMode::NotationPreMerge) {
