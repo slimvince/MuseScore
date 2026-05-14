@@ -55,7 +55,6 @@ using mu::notation::internal::SoundingNote;
 using mu::notation::internal::collectSoundingAt;
 using mu::notation::internal::buildTones;
 using mu::notation::internal::collectRegionTones;
-using mu::notation::internal::detectHarmonicBoundariesJaccard;
 using mu::notation::internal::detectOnsetSubBoundaries;
 using mu::notation::internal::detectBassMovementSubBoundaries;
 using mu::notation::internal::resolveKeyAndMode;

@@ -705,24 +705,6 @@ TEST_F(Notation_ImplodeTests, ImplodeChordTrackKeepsSustainedSupportAcrossBeatBo
     delete score;
 }
 
-TEST_F(Notation_ImplodeTests, JaccardBoundaryDetectionCarriesPedalTailsIntoLaterBeatWindows)
-{
-    MasterScore* score = ScoreRW::readScore(u"jaccard_pedal_support_same_harmony.mscx");
-    ASSERT_TRUE(score);
-
-    const auto boundaries = mu::notation::internal::detectHarmonicBoundariesJaccard(
-        score,
-        Fraction(0, 1),
-        Fraction(4, 4),
-        {},
-        0.6);
-
-    ASSERT_EQ(boundaries.size(), 1u);
-    EXPECT_EQ(boundaries.front(), Fraction(0, 1));
-
-    delete score;
-}
-
 TEST_F(Notation_ImplodeTests, ChopinBI16OpeningCollapsesRepeatedTonicRegions)
 {
     MasterScore* score = ScoreRW::readScore(

@@ -128,23 +128,6 @@ collectRegionTones(const mu::engraving::Score* sc,
                    int endTick,
                    const std::set<size_t>& excludeStaves);
 
-/// Detect harmonic region boundaries using Jaccard distance on quarter-note windows.
-///
-/// Divides [startTick, endTick) into Constants::DIVISION-tick (1 quarter note) windows.
-/// Collects the set of pitch classes that attack in each window.  Fires a boundary at
-/// the start of a window when Jaccard(prevWindow, currentWindow) >= jaccardThreshold,
-/// where Jaccard = 1 − |A∩B| / |A∪B|.  When no boundary fires, the current window's
-/// pitch classes are merged into the running "previous" set so that accumulated harmony
-/// is compared against the next window.
-///
-/// Returns a sorted list of boundary ticks.  The first element is always startTick.
-std::vector<mu::engraving::Fraction>
-detectHarmonicBoundariesJaccard(const mu::engraving::Score* sc,
-                                const mu::engraving::Fraction& startTick,
-                                const mu::engraving::Fraction& endTick,
-                                const std::set<size_t>& excludeStaves,
-                                double jaccardThreshold);
-
 /// Pass 2: onset-only sub-boundary detection within a coarse Jaccard region.
 /// Collects only notes whose start tick equals the segment tick (no sustained
 /// notes), then computes Jaccard distance between consecutive onset sets.
