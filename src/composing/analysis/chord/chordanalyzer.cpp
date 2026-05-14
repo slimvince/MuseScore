@@ -109,16 +109,25 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
         // the conventional flat chord-symbol name used in jazz/pop.  A sharp TPC (≥20,
         // covering both MuseScore-internal and +1-offset encodings) means the score writer
         // used a sharp accidental; below the diatonic-at key threshold the flat name is the
-        // canonical chord-symbol spelling.  Checked before the keySignatureFifths==0 TPC
-        // block so it intercepts sharp-spelled notes even in neutral-key contexts.
+        // canonical chord-symbol spelling.
         //   Eb (pc=3)  diatonic at E major (keyFifths=4) → D# in C/G/D/A major becomes Eb
         //   Ab (pc=8)  diatonic at A major (keyFifths=3) → G# in C/G/D major becomes Ab
         //   Bb (pc=10) diatonic at B major (keyFifths=5) → A# in C through 4 sharps → Bb
+        //
+        // Iter 78 — G# (pc=8) is exempt at keySignatureFifths == 0.  The only
+        // minor key with no key signature is A minor, where G# is the raised
+        // 7th — the leading tone — and is conventionally spelled sharp in
+        // classical/Baroque writing.  Flattening it to "Ab" (e.g. "Abm7b5"
+        // for a viiø7 on G#) is wrong there.  At keyFifths == 0 the explicit
+        // sharp TPC is authoritative for G#, so fall through to the
+        // keySignatureFifths == 0 block below, which disambiguates by TPC.
+        // D# (pc=3) and A# (pc=10) have no analogous privileged status at
+        // keyFifths == 0 and still normalise to Eb / Bb.
         if (tpc >= 20) {
             const size_t idx = static_cast<size_t>(normalizePc(pc));
-            if ((pc == 3  && keySignatureFifths < 4)   // D# → Eb
-             || (pc == 8  && keySignatureFifths < 3)   // G# → Ab
-             || (pc == 10 && keySignatureFifths < 5))  // A# → Bb
+            if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
+             || (pc == 8  && keySignatureFifths < 3 && keySignatureFifths != 0) // G# → Ab
+             || (pc == 10 && keySignatureFifths < 5))                         // A# → Bb
             {
                 return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
             }
@@ -1737,6 +1746,24 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             const double complexityPenaltyFactor
                 = (evidenceRatio >= 0.5) ? 1.0 : (0.5 + evidenceRatio);
             score *= complexityPenaltyFactor;
+
+            // Iter 78 Fix C — thin-evidence augmented templates require their
+            // root to actually sound.  The augmented triad is symmetric (three
+            // stacked major thirds), so any two notes a major third apart match
+            // three different augmented roots equally well.  A root-absent match
+            // on only two distinct pitch classes — e.g. {G,B} scored as Eb+ when
+            // no Eb sounds — is pure guesswork and routinely edges out a
+            // root-present major/minor reading by a thin margin (Corelli
+            // op01n08d m6 b3: Eb+/G 2.46 vs G 2.40).  Restricted to
+            // distinctPcs <= 2: a complete (3-PC) augmented triad always has its
+            // own root present regardless of which symmetric root is chosen, so
+            // this gate never fires on a genuine augmented chord and leaves the
+            // dense Baroque corpus (3-4 PC SATB regions) untouched.
+            if (tpl.quality == ChordQuality::Augmented
+                && distinctPcs <= 2
+                && pcWeight[static_cast<size_t>(rootPc)] <= prefs.extensionThreshold) {
+                score *= 0.5;
+            }
 
             rawCandidates.push_back({ score, bassBonus, rootPc, tpl.quality,
                                       static_cast<int>(tplIdx) });

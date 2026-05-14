@@ -171,24 +171,26 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         filtered.push_back(std::move(regions[0]));
         for (size_t i = 1; i < regions.size(); ++i) {
             const int duration = regions[i].endTick - regions[i].startTick;
-            // Iter 77 Fix A — fast secondary-function chord preservation.
-            //
             // absorbShortRegions exists to suppress passing-tone artifacts:
             // a momentary sonority that is really a perturbation of one of
-            // its neighbours and shares that neighbour's root. A genuine
-            // fast intervening harmony — e.g. the vii°7/V (C#°7) on beat 2
-            // of each bar in Schumann's Kinderszenen No. 1 — has a root
-            // distinct from BOTH neighbours. Preserve such a region even
-            // when it is shorter than kMinRegionTicks.
+            // its neighbours and shares that neighbour's root.
+            //
+            // Iter 78 Fix A — only absorb into the previous region when the
+            // short region shares the previous region's root. Absorbing a
+            // differently-rooted short region into the previous region
+            // silently extends that region's span across a genuinely
+            // distinct harmony (e.g. Corelli op01n08d m18 beat 1: a 240-tick
+            // Cm region between two Gm-rooted regions was absorbed into the
+            // preceding Gm, leaving beat 1 with no chord symbol). A short
+            // region distinct from the previous region is either a genuine
+            // intervening harmony or an early onset of the next chord —
+            // either way it must keep its own boundary. This subsumes the
+            // Iter 77 fast-secondary-function case (C#°7 in Schumann's
+            // Kinderszenen No. 1, distinct from both neighbours).
             const int thisRoot = regions[i].chordResult.identity.rootPc;
-            const bool distinctFromPrev =
-                filtered.back().chordResult.identity.rootPc != thisRoot;
-            const bool distinctFromNext =
-                (i + 1 >= regions.size())
-                || (regions[i + 1].chordResult.identity.rootPc != thisRoot);
-            const bool genuineInterveningHarmony =
-                distinctFromPrev && distinctFromNext;
-            if (duration < kMinRegionTicks && !genuineInterveningHarmony) {
+            const bool sharesPrevRoot =
+                filtered.back().chordResult.identity.rootPc == thisRoot;
+            if (duration < kMinRegionTicks && sharesPrevRoot) {
                 filtered.back().endTick = regions[i].endTick;
             } else {
                 filtered.push_back(std::move(regions[i]));
