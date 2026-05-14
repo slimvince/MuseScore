@@ -37,7 +37,11 @@ Only stop and ask if:
 
 ## Build and test commands
 
-**Always read `C:\s\MS\build_and_test.md` at the start of every session** — it has the authoritative commands for all build variants, both test suites, and all Python tools.
+**Always read these two files at the start of every session:**
+- `C:\s\MS\build_and_test.md` — authoritative commands for all build variants, both test suites, and all Python tools
+- `C:\s\MS\STATUS.md` — current BIR baselines, HEAD commit, active iteration, and known regressions
+
+Do not rely on memory of previous sessions for BIR numbers or iteration state — read STATUS.md.
 
 ```
 # Build — use PowerShell Start-Process (cmd.exe //c fails in MSYS2/Git Bash)
@@ -104,8 +108,8 @@ files. Companion references: `tools/REPRODUCIBILITY.md` (how to recreate
 corpora) and the JSON registries (`tools/corpus_registry.json`,
 `tools/extra_scores_registry.json`).
 
-## Conventions
+## Local patches — do not revert
 
-- American English throughout — "analyzer" not "analyser"
-- No confirmation prompts between analyse → implement → build → test steps
-- Commit only when explicitly asked
+The following changes have been made intentionally to fix bugs unrelated to the
+composing module. Do **not** revert them, and do not let build scripts or
+depe
