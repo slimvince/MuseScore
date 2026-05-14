@@ -387,7 +387,12 @@ std::string qualitySuffix(ChordQuality quality, bool hasMin7, bool hasMaj7, bool
     // For Suspended4, #5 is already appended inline above (before #11/b13 to match catalog
     // ordering).  Use contains-check to avoid double-appending for all other qualities.
     // b5 is suppressed when hasSharpFifth is true (mutually exclusive via detectExtensions).
+    // Diminished/HalfDiminished are excluded: their suffix already asserts a diminished
+    // fifth ("dim", "m7b5"), so appending "#5" would yield a self-contradictory symbol
+    // (e.g. "m7b5#5") — mirrors the HalfDiminished guard on the b5 block below.
     if (hasSharpFifth && quality != ChordQuality::Augmented
+            && quality != ChordQuality::Diminished
+            && quality != ChordQuality::HalfDiminished
             && suffix.find("#5") == std::string::npos) {
         suffix += "#5";
     }
@@ -1763,6 +1768,36 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 && distinctPcs <= 2
                 && pcWeight[static_cast<size_t>(rootPc)] <= prefs.extensionThreshold) {
                 score *= 0.5;
+            }
+
+            // Iter 79 — augmented templates supported by their root alone.
+            // Fix C above covers the distinctPcs <= 2 root-absent case, but an
+            // augmented candidate can also win in a denser region (distinctPcs
+            // >= 3) when only its root sounds and the other present pitch
+            // classes belong to a different chord — bach_chorale_003 tick 6240:
+            // pitch set {F,A,C} (a rootless Dm7 / clean F major) was read as
+            // C+/E although C+'s 3rd (E) and 5th (G#) are both absent.  An
+            // augmented triad with both defining upper tones missing is
+            // unsupported guesswork; penalise it so a root-present triad that
+            // actually covers the pitch set wins.  A genuine augmented chord
+            // has all three tones present and is never affected.  The seventh
+            // check keeps an augmented-seventh reading (e.g. C#7#5 — augmented
+            // triad template plus a detected minor 7th) intact: a sounding 7th
+            // is real evidence breaking the bare-root symmetry, so the gate
+            // only fires when literally nothing but the root is present.  This
+            // gate is disjoint from Fix C (a root-absent 2-PC match a major
+            // third apart has both its 3rd and 5th present).
+            if (tpl.quality == ChordQuality::Augmented) {
+                const double thirdW   = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
+                const double fifthW   = pcWeight[static_cast<size_t>((rootPc + 8) % 12)];
+                const double min7W    = pcWeight[static_cast<size_t>((rootPc + 10) % 12)];
+                const double maj7W    = pcWeight[static_cast<size_t>((rootPc + 11) % 12)];
+                if (thirdW <= prefs.extensionThreshold
+                    && fifthW <= prefs.extensionThreshold
+                    && min7W <= prefs.extensionThreshold
+                    && maj7W <= prefs.extensionThreshold) {
+                    score *= 0.5;
+                }
             }
 
             rawCandidates.push_back({ score, bassBonus, rootPc, tpl.quality,

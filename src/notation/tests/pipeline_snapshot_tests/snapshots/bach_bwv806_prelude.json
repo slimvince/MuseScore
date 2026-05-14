@@ -522,7 +522,7 @@
         },
         {
             "key": "A",
-            "text": "G#m7b5#5",
+            "text": "G#m7b5",
             "tick": 34800
         },
         {
@@ -532,7 +532,7 @@
         },
         {
             "key": "A",
-            "text": "G#m7b5#5",
+            "text": "G#m7b5",
             "tick": 34800
         },
         {
@@ -602,42 +602,42 @@
         },
         {
             "key": "A",
-            "text": "C#7#5",
+            "text": "C#7sus",
             "tick": 39600
         },
         {
             "key": "A",
-            "text": "III+7",
+            "text": "III7sus4",
             "tick": 39600
         },
         {
             "key": "A",
-            "text": "C#7#5",
+            "text": "C#7sus",
             "tick": 39600
         },
         {
             "key": "A",
-            "text": "III+7",
+            "text": "III7sus4",
             "tick": 39600
         },
         {
             "key": "A",
-            "text": "C#7#5",
+            "text": "C#7sus",
             "tick": 40320
         },
         {
             "key": "A",
-            "text": "III+7",
+            "text": "III7sus4",
             "tick": 40320
         },
         {
             "key": "A",
-            "text": "C#7#5",
+            "text": "C#7sus",
             "tick": 40320
         },
         {
             "key": "A",
-            "text": "III+7",
+            "text": "III7sus4",
             "tick": 40320
         },
         {
@@ -986,7 +986,7 @@
             "durationTicks": 720,
             "key": "A",
             "mode": "maj",
-            "quality": "augmented",
+            "quality": "sus4",
             "root": "C#",
             "tick": 39600
         },
@@ -994,7 +994,7 @@
             "durationTicks": 240,
             "key": "A",
             "mode": "maj",
-            "quality": "augmented",
+            "quality": "sus4",
             "root": "C#",
             "tick": 40320
         },
@@ -1475,7 +1475,7 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "G#m7b5#5",
+            "harmonyText": "G#m7b5",
             "pitches": [
                 71,
                 74,
@@ -1535,10 +1535,10 @@
         },
         {
             "durationTicks": 720,
-            "harmonyText": "C#7#5",
+            "harmonyText": "C#7sus",
             "pitches": [
-                65,
-                69,
+                66,
+                68,
                 71
             ],
             "tick": 39600
@@ -1547,8 +1547,8 @@
             "durationTicks": 240,
             "harmonyText": "",
             "pitches": [
-                65,
-                69,
+                66,
+                68,
                 71
             ],
             "tick": 40320
