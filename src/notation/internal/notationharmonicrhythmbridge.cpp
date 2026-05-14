@@ -44,6 +44,7 @@
 #include "engraving/dom/segment.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/harmony/harmonicsegmenter.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/icomposinganalysisconfiguration.h"
@@ -170,7 +171,24 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         filtered.push_back(std::move(regions[0]));
         for (size_t i = 1; i < regions.size(); ++i) {
             const int duration = regions[i].endTick - regions[i].startTick;
-            if (duration < kMinRegionTicks) {
+            // Iter 77 Fix A — fast secondary-function chord preservation.
+            //
+            // absorbShortRegions exists to suppress passing-tone artifacts:
+            // a momentary sonority that is really a perturbation of one of
+            // its neighbours and shares that neighbour's root. A genuine
+            // fast intervening harmony — e.g. the vii°7/V (C#°7) on beat 2
+            // of each bar in Schumann's Kinderszenen No. 1 — has a root
+            // distinct from BOTH neighbours. Preserve such a region even
+            // when it is shorter than kMinRegionTicks.
+            const int thisRoot = regions[i].chordResult.identity.rootPc;
+            const bool distinctFromPrev =
+                filtered.back().chordResult.identity.rootPc != thisRoot;
+            const bool distinctFromNext =
+                (i + 1 >= regions.size())
+                || (regions[i + 1].chordResult.identity.rootPc != thisRoot);
+            const bool genuineInterveningHarmony =
+                distinctFromPrev && distinctFromNext;
+            if (duration < kMinRegionTicks && !genuineInterveningHarmony) {
                 filtered.back().endTick = regions[i].endTick;
             } else {
                 filtered.push_back(std::move(regions[i]));
@@ -219,15 +237,57 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
     // ── §4.1c regional accumulation path ────────────────────────────────────
     if (useRegional) {
-        const double jaccardThreshold = 0.6;  // TODO: read from ChordAnalyzerPreferences
         auto* debugCapture = internal::harmonicRegionDebugCapture();
         std::vector<HarmonicRegion> preMergeRegions;
 
-        // B.4: Pass 1 — detect coarse boundaries via Jaccard on accumulated quarter-note windows.
-        auto boundaryTicks = (granularity == HarmonicRegionGranularity::PreserveAllChanges)
-            ? denseBoundaryTicks()
-            : detectHarmonicBoundariesJaccard(
-                score, startTick, endTick, excludeStaves, jaccardThreshold);
+        // B.4: Pass 1 — detect coarse boundaries.
+        //
+        // Iter 77 (Task #58 Part B / ARCHITECTURE.md §2.10): the bridge path
+        // now uses greedy-expand segmentation, the same algorithm the batch
+        // path has used since Iter 54. detectHarmonicBoundariesJaccard() is
+        // retained in notationcomposingbridgehelpers.cpp as dead code pending
+        // a separate cleanup step.
+        std::vector<Fraction> boundaryTicks;
+        if (granularity == HarmonicRegionGranularity::PreserveAllChanges) {
+            boundaryTicks = denseBoundaryTicks();
+        } else {
+            mu::composing::HarmonicSegmenterCallbacks segCallbacks;
+            segCallbacks.staffIsEligible = [&](size_t s) {
+                return mu::notation::internal::staffIsEligible(score, s, startTick);
+            };
+            segCallbacks.collectRegionTones = [&](int s, int e) {
+                return collectRegionTones(score, s, e, excludeStaves);
+            };
+            const auto placedRegions = mu::composing::greedyExpandSegmentation(
+                score, startTick, endTick, excludeStaves,
+                mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                chordAnalyzer.get(), keyFifths, keyMode, segCallbacks);
+            // Iter 77 Fix B — opening region accuracy.
+            //
+            // placedRegionsToTicks() returns only the START ticks of placed
+            // regions. When a confident Round 1 anchor (e.g. the opening Dm
+            // of BWV 301) is followed by an unplaced gap, the next boundary
+            // is the gap's far end, so the bridge builds a region spanning
+            // [anchorStart, gapEnd) and re-analyses that wider tone union —
+            // which can flip the reading (Dm → BbMaj7/D). Emitting each
+            // placed region's END tick as well keeps the anchor span intact
+            // as its own bridge region; the gap becomes its own region.
+            std::set<int> boundaryTickSet;
+            for (const auto& pr : placedRegions) {
+                if (pr.round >= 1) {
+                    boundaryTickSet.insert(pr.startTick);
+                    boundaryTickSet.insert(pr.endTick);
+                }
+            }
+            for (int t : boundaryTickSet) {
+                if (t >= startTick.ticks() && t < endTick.ticks()) {
+                    boundaryTicks.push_back(Fraction::fromTicks(t));
+                }
+            }
+            if (boundaryTicks.empty()) {
+                boundaryTicks.push_back(startTick);
+            }
+        }
 
         ChordTemporalContext temporalCtx
             = findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1);
