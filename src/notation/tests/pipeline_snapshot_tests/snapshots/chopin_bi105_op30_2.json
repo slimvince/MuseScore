@@ -302,22 +302,22 @@
         },
         {
             "key": "B",
-            "text": "Bm",
+            "text": "F#",
             "tick": 13440
         },
         {
             "key": "B",
-            "text": "i",
+            "text": "V",
             "tick": 13440
         },
         {
             "key": "B",
-            "text": "Bm",
+            "text": "F#",
             "tick": 13440
         },
         {
             "key": "B",
-            "text": "i",
+            "text": "V",
             "tick": 13440
         },
         {
@@ -603,20 +603,12 @@
             "tick": 12000
         },
         {
-            "durationTicks": 240,
+            "durationTicks": 360,
             "key": "B",
             "mode": "min",
-            "quality": "minor",
-            "root": "B",
-            "tick": 13440
-        },
-        {
-            "durationTicks": 120,
-            "key": "B",
-            "mode": "min",
-            "quality": "minor",
+            "quality": "major",
             "root": "F#",
-            "tick": 13680
+            "tick": 13440
         },
         {
             "durationTicks": 120,
@@ -886,10 +878,10 @@
         },
         {
             "durationTicks": 360,
-            "harmonyText": "",
+            "harmonyText": "F#",
             "pitches": [
-                62,
-                66
+                70,
+                73
             ],
             "tick": 13440
         },
@@ -1634,29 +1626,29 @@
         {
             "alternatives": [
                 {
-                    "quality": "minor",
-                    "root": "B",
-                    "score": 2.165
+                    "quality": "major",
+                    "root": "F#",
+                    "score": 2.21
                 },
                 {
-                    "quality": "diminished",
-                    "root": "B",
-                    "score": 2.165
+                    "quality": "major",
+                    "root": "F#",
+                    "score": 2.21
                 },
                 {
-                    "quality": "sus2",
-                    "root": "D",
-                    "score": 1.857
+                    "quality": "major",
+                    "root": "B",
+                    "score": 1.7
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "B",
-            "previousBassPc": 2,
-            "previousQuality": "major",
-            "previousRootPc": 2,
-            "quality": "minor",
-            "root": "B",
+            "previousBassPc": 11,
+            "previousQuality": "minor",
+            "previousRootPc": 11,
+            "quality": "major",
+            "root": "F#",
             "tick": 13440,
             "wasRegional": true
         },
