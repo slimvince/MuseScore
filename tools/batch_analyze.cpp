@@ -1652,7 +1652,30 @@ static std::vector<AnalyzedRegion> analyzeScore(
         score, startTick, endTick, excludeStaves, chordPrefs,
         chordAnalyzer.get(), initialKey.keySignatureFifths, initialKey.mode,
         segCallbacks);
-    auto boundaryTicks = placedRegionsToTicks(greedyRegions);
+    // Iter 83: port Iter 77 Fix B from notationharmonicrhythmbridge.cpp.
+    // placedRegionsToTicks() returns only START ticks; emitting each placed
+    // region's END tick as well keeps confident Round 1 anchors intact when
+    // followed by an unplaced gap (otherwise the bridge/batch builds one wide
+    // region spanning [anchorStart, gapEnd) and re-analysis can flip the
+    // reading).
+    std::vector<Fraction> boundaryTicks;
+    {
+        std::set<int> boundaryTickSet;
+        for (const auto& pr : greedyRegions) {
+            if (pr.round >= 1) {
+                boundaryTickSet.insert(pr.startTick);
+                boundaryTickSet.insert(pr.endTick);
+            }
+        }
+        for (int t : boundaryTickSet) {
+            if (t >= startTick.ticks() && t < endTick.ticks()) {
+                boundaryTicks.push_back(Fraction::fromTicks(t));
+            }
+        }
+        if (boundaryTicks.empty()) {
+            boundaryTicks.push_back(startTick);
+        }
+    }
 
     // Pass 2b: expand coarse regions with bass-movement sub-boundaries.
     // Detects regions where the pitch-class set is identical across the region but
