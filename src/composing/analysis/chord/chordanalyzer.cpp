@@ -138,12 +138,25 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
         }
 
         if (keySignatureFifths == 0
-            || (keySignatureFifths == 1 && pc == 8)) {
-            // Key signature gives no decisive flat/sharp preference (C major /
-            // A minor at fifths=0; A melodic minor mapped to fifths=+1 for the
-            // pc=8 leading tone): use TPC to disambiguate.  Flat range covers
-            // both encodings: MuseScore [7,13] and +1 encoding [8,14].  Union
-            // [7,14] is safe because natural notes (FLAT==SHARP).
+            || (keySignatureFifths == 1 && pc == 8)
+            || (keySignatureFifths < 0 && pc == 6)) {
+            // Key signature gives no decisive flat/sharp preference, or the
+            // composer's TPC is the only reliable signal:
+            //   • fifths==0 (C major / A minor): no key preference at all.
+            //   • fifths==1 && pc==8: A melodic minor mapped to its Dorian
+            //     parent slot at +1 fifths; G# is the leading tone.
+            //   • fifths<0 && pc==6 (Iter 88): F# is the leading tone in
+            //     G minor and a frequent secondary leading tone (V/V third,
+            //     tonicized V6) in flat-key Baroque writing.  pitchClassName()
+            //     unconditionally returns "Gb" for any keyFifths<0, but a
+            //     score-authored sharp TPC (e.g. F#=20/21) means the composer
+            //     wrote F# explicitly and the chord symbol must honor that.
+            //     Gb-authored TPCs (tpc=8/9) still fall through to "Gb" via
+            //     the flat range below, so deep flat keys (Ab/Db/Gb major,
+            //     where pc=6 is the diatonic Gb) are unaffected.
+            // Flat range covers both encodings: MuseScore [7,13] and +1
+            // encoding [8,14].  Union [7,14] is safe because natural notes
+            // (FLAT==SHARP).
             const bool preferFlat = (tpc >= 7 && tpc <= 14);
             const size_t idx = static_cast<size_t>(normalizePc(pc));
             if (preferFlat) {

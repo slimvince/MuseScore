@@ -1442,7 +1442,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 23520
         },
         {
@@ -1452,7 +1452,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 23520
         },
         {
@@ -1462,7 +1462,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 23520
         },
         {
@@ -1472,7 +1472,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 23520
         },
         {
@@ -1642,7 +1642,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 26400
         },
         {
@@ -1652,7 +1652,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 26400
         },
         {
@@ -1662,7 +1662,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 26400
         },
         {
@@ -1672,7 +1672,7 @@
         },
         {
             "key": "G",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 26400
         },
         {
@@ -2561,7 +2561,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "D/Gb",
+            "harmonyText": "D/F#",
             "pitches": [
                 66,
                 69
@@ -2607,7 +2607,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "D/Gb",
+            "harmonyText": "D/F#",
             "pitches": [
                 66,
                 69

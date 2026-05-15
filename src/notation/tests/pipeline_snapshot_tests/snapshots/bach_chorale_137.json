@@ -582,7 +582,7 @@
         },
         {
             "key": "D",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 15840
         },
         {
@@ -592,7 +592,7 @@
         },
         {
             "key": "D",
-            "text": "D/Gb",
+            "text": "D/F#",
             "tick": 15840
         },
         {
@@ -1731,7 +1731,7 @@
         },
         {
             "durationTicks": 720,
-            "harmonyText": "D/Gb",
+            "harmonyText": "D/F#",
             "pitches": [
                 66,
                 69
