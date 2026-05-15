@@ -1843,6 +1843,41 @@ static std::vector<AnalyzedRegion> analyzeScore(
         }
     }
 
+    // ── Iter 87 — post-merge bass-b7 promotion ───────────────────────────────
+    // The same-root same-quality merge above keeps result.back()'s chord
+    // identity but updates bassPc/bassTpc.  When a late-entering b7 in the bass
+    // promotes a later sub-region to MinorSeventh (Iter 86 stamp inside
+    // analyzeChord), the merge discards that candidate identity in favour of
+    // the earlier sub-region's plain triad reading.  Re-apply the b7 promotion
+    // on the merged region using the merged tones and final bass so the chord
+    // symbol (Am7/G, Em7/D) reflects the slash bass that the analyzer already
+    // emits via formatSymbol.
+    for (AnalyzedRegion& r : filtered) {
+        if (!r.hasAnalyzedChord) { continue; }
+        const int rPc = r.chord.identity.rootPc;
+        const int bPc = r.bassPc;
+        if (bPc < 0 || bPc == rPc) { continue; }
+        if (((bPc - rPc + 12) % 12) != 10) { continue; }
+        const ChordQuality q = r.chord.identity.quality;
+        if (q != ChordQuality::Major && q != ChordQuality::Minor) { continue; }
+        if (analysis::hasExtension(r.chord.identity.extensions,
+                                   analysis::Extension::MinorSeventh)) { continue; }
+        if (analysis::hasExtension(r.chord.identity.extensions,
+                                   analysis::Extension::MajorSeventh)) { continue; }
+
+        double bassPcWeight = 0.0;
+        for (const auto& t : r.tones) {
+            const int tonePc = ((t.pitch % 12) + 12) % 12;
+            if (tonePc == bPc) {
+                bassPcWeight += std::max(0.1, t.weight);
+            }
+        }
+        if (bassPcWeight > chordPrefs.extensionThreshold) {
+            analysis::setExtension(r.chord.identity.extensions,
+                                   analysis::Extension::MinorSeventh);
+        }
+    }
+
     return filtered;
 }
 

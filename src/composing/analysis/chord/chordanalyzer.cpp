@@ -2544,6 +2544,30 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
     }
 
+    // ── Iter 86 — bass-b7 promotion ──────────────────────────────────────────
+    // If the winner is a Major or Minor triad whose bass is the b7 of the
+    // root (interval 10) and that b7 is genuinely present in the score, stamp
+    // the MinorSeventh extension so the chord symbol (Am7/G) and Roman numeral
+    // (i65 / V42) match the literal slash-bass that the symbol formatter
+    // already emits.  Also suppresses spurious pedal-point classification on
+    // these cases — once MinorSeventh is stamped, isBassChordTone() treats
+    // interval 10 as a chord tone and the pedal check below is skipped.
+    if (!results.empty() && bassPc >= 0) {
+        ChordAnalysisResult& winner = results.front();
+        const ChordQuality q = winner.identity.quality;
+        const int rPc        = winner.identity.rootPc;
+        const bool bassIsB7  = (bassPc != rPc)
+                               && ((bassPc - rPc + 12) % 12) == 10;
+        const bool isPlainTriad = (q == ChordQuality::Major || q == ChordQuality::Minor)
+                                  && !hasExtension(winner.identity.extensions, Extension::MinorSeventh)
+                                  && !hasExtension(winner.identity.extensions, Extension::MajorSeventh);
+        if (bassIsB7
+            && isPlainTriad
+            && pcWeight[static_cast<size_t>(bassPc)] > prefs.extensionThreshold) {
+            setExtension(winner.identity.extensions, Extension::MinorSeventh);
+        }
+    }
+
     // ── Two-pass pedal point detection ────────────────────────────────────────
     //
     // Definition: a structural pedal point is a sustained bass note that is NOT
