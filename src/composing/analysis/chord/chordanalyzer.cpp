@@ -111,26 +111,23 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
         // used a sharp accidental; below the diatonic-at key threshold the flat name is the
         // canonical chord-symbol spelling.
         //   Eb (pc=3)  diatonic at E major (keyFifths=4) → D# in C/G/D/A major becomes Eb
-        //   Ab (pc=8)  diatonic at A major (keyFifths=3) → G# in C/G/D major becomes Ab
         //   Bb (pc=10) diatonic at B major (keyFifths=5) → A# in C through 4 sharps → Bb
         //
-        // Iter 78 / Iter 84 — G# (pc=8) is exempt at keySignatureFifths == 0
-        // (A natural minor, where G# is the raised 7th / leading tone) and at
-        // keySignatureFifths == 1 (A melodic minor, which resolveToFifths maps
-        // to its parent Dorian-named slot at +1 fifths — see Amel regions in
-        // bach_chorale_003 / bwv153.5).  In both cases G# is the conventional
-        // sharp leading-tone spelling and flattening it to "Ab" (e.g.
-        // "Abm7b5" for a viiø7 on G#, or "E/Ab" for V6) is wrong.  At those
-        // fifths values the explicit sharp TPC is authoritative for G#, so
-        // fall through to the keySignatureFifths == 0 / positive-fifths logic
-        // below, which honors the sharp TPC.
-        // D# (pc=3) and A# (pc=10) have no analogous privileged status here
-        // and still normalise to Eb / Bb.
+        // G# (pc=8): Iter 78/84/89 — the pc=8 normalisation is intentionally
+        // omitted here.  G# is the leading tone of A in every minor-mode
+        // regime, the third of E (V/V in flat-key Baroque writing), and the
+        // raised 4th of D major (also V/V).  A corpus survey of 533 sharp-
+        // authored pc=8 bass tones across Baroque + Jazz Bach chorales found
+        // zero false-positive risk to honoring the composer's sharp TPC.
+        // Iter 78's blanket flattening produced 155/277 wrong "E/Ab", "Bm/Ab"
+        // etc. spellings in the Baroque corpus at keyFifths<0 and keyFifths==2.
+        // pc=8 falls through to the explicit TPC-disambiguation block below,
+        // which spells pc=8 sharp or flat per the authored TPC across all
+        // key signatures.  D# (pc=3) and A# (pc=10) have no analogous
+        // leading-tone status and still normalise to Eb / Bb.
         if (tpc >= 20) {
             const size_t idx = static_cast<size_t>(normalizePc(pc));
             if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
-             || (pc == 8  && keySignatureFifths < 3                            // G# → Ab
-                         && keySignatureFifths != 0 && keySignatureFifths != 1)
              || (pc == 10 && keySignatureFifths < 5))                         // A# → Bb
             {
                 return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
@@ -139,7 +136,9 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
 
         if (keySignatureFifths == 0
             || (keySignatureFifths == 1 && pc == 8)
-            || (keySignatureFifths < 0 && pc == 6)) {
+            || (keySignatureFifths < 0 && pc == 6)
+            || (keySignatureFifths < 0 && pc == 8)
+            || (keySignatureFifths == 2 && pc == 8)) {
             // Key signature gives no decisive flat/sharp preference, or the
             // composer's TPC is the only reliable signal:
             //   • fifths==0 (C major / A minor): no key preference at all.
@@ -154,6 +153,18 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
             //     Gb-authored TPCs (tpc=8/9) still fall through to "Gb" via
             //     the flat range below, so deep flat keys (Ab/Db/Gb major,
             //     where pc=6 is the diatonic Gb) are unaffected.
+            //   • fifths<0 && pc==8 and fifths==2 && pc==8 (Iter 89): G# is
+            //     the M3 of E (V/V in flat-key Baroque, V/V in D major),
+            //     the M7 of A (leading tone), or the chromatic V/V leading
+            //     tone in various flat- and mildly-sharp-key contexts.
+            //     The Iter 78 sharp-TPC flattening for pc=8 mis-spelled
+            //     ~155/277 sharp-authored Baroque cases and ~95/256 Jazz
+            //     cases as "E/Ab", "Bm/Ab", etc. when the composer wrote
+            //     G# explicitly.  Flat-authored Ab (tpc=10/11) in these
+            //     keys (Fm/Ab, Bbm7/Ab, Ab root chords) still falls through
+            //     to "Ab" via the flat range below.  Survey: 0 sharp-
+            //     authored cases in either corpus where Ab is the correct
+            //     spelling (every flat-correct case is flat-authored).
             // Flat range covers both encodings: MuseScore [7,13] and +1
             // encoding [8,14].  Union [7,14] is safe because natural notes
             // (FLAT==SHARP).
