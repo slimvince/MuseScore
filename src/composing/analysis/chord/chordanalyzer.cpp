@@ -2221,6 +2221,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     && winner.identity.quality == ChordQuality::Minor
                     && results[bestAltIdx].identity.quality == ChordQuality::Major
                     && results[bestAltIdx].identity.rootPc == (winner.identity.rootPc + 8) % 12
+                    && pcWeight[static_cast<size_t>(results[bestAltIdx].identity.rootPc)] > prefs.extensionThreshold
                     && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
                     std::swap(results[0], results[bestAltIdx]);
                     didEnharmonicFlip = true;
@@ -2455,6 +2456,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     if (scale[d] == invInterval) { invRootIsDiatonic = true; break; }
                 }
                 if (!invRootIsDiatonic)                                    continue;  // not diatonic
+                if (pcWeight[static_cast<size_t>(invRootPc)] <= prefs.extensionThreshold) {
+                    continue;  // promoted root absent from the score — do not invent a rootless inversion
+                }
                 if (winner.identity.score - inv.identity.score > 0.45f)   continue;  // margin too wide
                 std::swap(results[0], results[iIdx]);
                 break;

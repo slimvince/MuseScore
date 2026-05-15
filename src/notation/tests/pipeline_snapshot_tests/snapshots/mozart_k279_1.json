@@ -627,22 +627,22 @@
         },
         {
             "key": "C",
-            "text": "FMaj7/A",
+            "text": "Am",
             "tick": 18720
         },
         {
             "key": "C",
-            "text": "VI65",
+            "text": "i",
             "tick": 18720
         },
         {
             "key": "C",
-            "text": "FMaj7/A",
+            "text": "Am",
             "tick": 18720
         },
         {
             "key": "C",
-            "text": "VI65",
+            "text": "i",
             "tick": 18720
         },
         {
@@ -1859,8 +1859,8 @@
             "durationTicks": 480,
             "key": "C",
             "mode": "maj",
-            "quality": "major",
-            "root": "F",
+            "quality": "minor",
+            "root": "A",
             "tick": 18720
         },
         {
@@ -3144,11 +3144,10 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "FMaj7/A",
+            "harmonyText": "Am",
             "pitches": [
-                69,
-                72,
-                76
+                60,
+                64
             ],
             "tick": 18720
         },
@@ -4298,12 +4297,12 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "E",
-                    "score": 1.808
+                    "quality": "power",
+                    "root": "A",
+                    "score": 1.9
                 },
                 {
-                    "quality": "minor",
+                    "quality": "major",
                     "root": "E",
                     "score": 1.808
                 }
@@ -4312,8 +4311,8 @@
             "bassIsStepwiseToNext": false,
             "key": "C",
             "previousBassPc": 9,
-            "previousQuality": "major",
-            "previousRootPc": 5,
+            "previousQuality": "minor",
+            "previousRootPc": 9,
             "quality": "minor",
             "root": "E",
             "tick": 19200,

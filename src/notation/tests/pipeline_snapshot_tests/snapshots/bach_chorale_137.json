@@ -522,23 +522,43 @@
         },
         {
             "key": "D",
-            "text": "C/E",
+            "text": "Em7",
             "tick": 14880
+        },
+        {
+            "key": "D",
+            "text": "ii7",
+            "tick": 14880
+        },
+        {
+            "key": "D",
+            "text": "Em7",
+            "tick": 14880
+        },
+        {
+            "key": "D",
+            "text": "ii7",
+            "tick": 14880
+        },
+        {
+            "key": "D",
+            "text": "C/E",
+            "tick": 15120
         },
         {
             "key": "D",
             "text": "VII6",
-            "tick": 14880
+            "tick": 15120
         },
         {
             "key": "D",
             "text": "C/E",
-            "tick": 14880
+            "tick": 15120
         },
         {
             "key": "D",
             "text": "VII6",
-            "tick": 14880
+            "tick": 15120
         },
         {
             "key": "D",
@@ -602,23 +622,43 @@
         },
         {
             "key": "D",
-            "text": "F/A",
+            "text": "Am7",
             "tick": 16800
+        },
+        {
+            "key": "D",
+            "text": "v7",
+            "tick": 16800
+        },
+        {
+            "key": "D",
+            "text": "Am7",
+            "tick": 16800
+        },
+        {
+            "key": "D",
+            "text": "v7",
+            "tick": 16800
+        },
+        {
+            "key": "D",
+            "text": "F/A",
+            "tick": 17040
         },
         {
             "key": "D",
             "text": "III6",
-            "tick": 16800
+            "tick": 17040
         },
         {
             "key": "D",
             "text": "F/A",
-            "tick": 16800
+            "tick": 17040
         },
         {
             "key": "D",
             "text": "III6",
-            "tick": 16800
+            "tick": 17040
         },
         {
             "key": "D",
@@ -1211,12 +1251,20 @@
             "tick": 14400
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 240,
+            "key": "D",
+            "mode": "min",
+            "quality": "minor",
+            "root": "E",
+            "tick": 14880
+        },
+        {
+            "durationTicks": 240,
             "key": "D",
             "mode": "min",
             "quality": "major",
             "root": "C",
-            "tick": 14880
+            "tick": 15120
         },
         {
             "durationTicks": 480,
@@ -1243,12 +1291,20 @@
             "tick": 16560
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 240,
+            "key": "D",
+            "mode": "min",
+            "quality": "minor",
+            "root": "A",
+            "tick": 16800
+        },
+        {
+            "durationTicks": 240,
             "key": "D",
             "mode": "min",
             "quality": "major",
             "root": "F",
-            "tick": 16800
+            "tick": 17040
         },
         {
             "durationTicks": 480,
@@ -1646,13 +1702,23 @@
             "tick": 14400
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 240,
+            "harmonyText": "Em7",
+            "pitches": [
+                67,
+                71,
+                74
+            ],
+            "tick": 14880
+        },
+        {
+            "durationTicks": 240,
             "harmonyText": "C/E",
             "pitches": [
                 64,
                 67
             ],
-            "tick": 14880
+            "tick": 15120
         },
         {
             "durationTicks": 480,
@@ -1682,13 +1748,23 @@
             "tick": 16560
         },
         {
-            "durationTicks": 480,
+            "durationTicks": 240,
+            "harmonyText": "Am7",
+            "pitches": [
+                60,
+                64,
+                67
+            ],
+            "tick": 16800
+        },
+        {
+            "durationTicks": 240,
             "harmonyText": "F/A",
             "pitches": [
                 69,
                 72
             ],
-            "tick": 16800
+            "tick": 17040
         },
         {
             "durationTicks": 480,
