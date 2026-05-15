@@ -169,8 +169,11 @@ def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> int:
 
 def align_regions(ours: list[Region], theirs: list[Region]) -> list[tuple[Region, Optional[Region]]]:
     """
-    For each of our regions, find the music21 region with the longest overlap.
-    Returns a list of (ours_region, best_match_or_None) pairs.
+    For each of our regions, find the `theirs` region with the longest tick
+    overlap.  A pair is aligned iff the overlap covers ≥50% of *either*
+    region's duration (lenient OR — a sub-beat region fully contained in a
+    longer `theirs` region stays aligned, and a `theirs` region fully
+    contained in our region also stays aligned).
     """
     aligned: list[tuple[Region, Optional[Region]]] = []
 
@@ -178,6 +181,7 @@ def align_regions(ours: list[Region], theirs: list[Region]) -> list[tuple[Region
         our_dur = our.end_tick - our.start_tick
         best_overlap = 0
         best: Optional[Region] = None
+        best_their_dur = 0
 
         for their in theirs:
             ov = _overlap(our.start_tick, our.end_tick,
@@ -185,9 +189,11 @@ def align_regions(ours: list[Region], theirs: list[Region]) -> list[tuple[Region
             if ov > best_overlap:
                 best_overlap = ov
                 best = their
+                best_their_dur = their.end_tick - their.start_tick
 
-        # Only consider it aligned if the best overlap covers ≥ 50% of our region
-        if best is not None and our_dur > 0 and best_overlap / our_dur >= 0.5:
+        if best is not None and our_dur > 0 and best_overlap > 0 \
+                and ((best_overlap / our_dur) >= 0.5
+                     or (best_their_dur > 0 and best_overlap / best_their_dur >= 0.5)):
             aligned.append((our, best))
         else:
             aligned.append((our, None))
@@ -347,12 +353,164 @@ def _extract_mode(key_str: str) -> str:
     return m.group(1) if m else key_str
 
 
+# ── DCML region matching ──────────────────────────────────────────────────
+# Two matching modes are supported:
+#   "time-overlap" (default): convert DCML (measure, beat) onsets to ticks
+#       using the analyzer regions' (measure, beat, start_tick) anchors, treat
+#       each DCML region as spanning [start_tick, next_dcml.start_tick), and
+#       match each of our regions to the DCML region with the maximum tick
+#       overlap.  A pair is aligned iff the overlap covers ≥50% of *either*
+#       region's duration (lenient OR — a sub-beat region fully contained in
+#       a longer DCML region is still aligned).
+#   "beat-snap" (legacy): match by smallest |Δbeat| within the same measure,
+#       tolerance 0.5 beats.  Retained as a backward-compat flag.
+#
+# The time-overlap mode is needed because Iters 72/73/83 introduced sub-beat
+# region boundaries that DCML's beat-anchored annotations cannot reach, so
+# beat-snap silently flagged genuinely-correct regions as unaligned.
+
+DEFAULT_DCML_MATCH_MODE = "time-overlap"
+
+
+def _median(values: list[float]) -> float:
+    if not values:
+        return 0.0
+    s = sorted(values)
+    n = len(s)
+    return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+
+
+def _infer_ticks_per_beat(ours_regions: list[Region]) -> float:
+    """Estimate ticks-per-beat from analyzer region durations (median)."""
+    samples = [
+        (r.end_tick - r.start_tick) / r.duration
+        for r in ours_regions
+        if r.duration > 0 and r.end_tick > r.start_tick
+    ]
+    return _median(samples) if samples else 480.0
+
+
+def _build_measure_anchors(ours_regions: list[Region],
+                            tpb: float) -> dict[int, int]:
+    """
+    For each measure_number observed in the analyzer regions, derive the tick
+    at beat 1 of that measure.  Uses the region with the smallest beat in
+    each measure as anchor:
+        measure_start_tick = region.start_tick - (region.beat - 1) * tpb.
+    """
+    anchors: dict[int, tuple[int, float]] = {}
+    for r in ours_regions:
+        cur = anchors.get(r.measure_number)
+        if cur is None or r.beat < cur[1]:
+            anchors[r.measure_number] = (r.start_tick, r.beat)
+    return {m: int(round(at - (ab - 1) * tpb)) for m, (at, ab) in anchors.items()}
+
+
+def _dcml_tick_for(measure: int, beat: float,
+                   measure_starts: dict[int, int],
+                   tpb: float) -> Optional[int]:
+    """Convert a DCML (measure, beat) onset to a tick.  Linearly interpolates
+    across measures with no analyzer-region anchor."""
+    if not measure_starts:
+        return None
+    if measure in measure_starts:
+        return int(round(measure_starts[measure] + (beat - 1) * tpb))
+    prev_m = max((m for m in measure_starts if m < measure), default=None)
+    next_m = min((m for m in measure_starts if m > measure), default=None)
+    if prev_m is not None and next_m is not None and next_m > prev_m:
+        prev_t = measure_starts[prev_m]
+        next_t = measure_starts[next_m]
+        tick_per_measure = (next_t - prev_t) / (next_m - prev_m)
+        m_start = prev_t + (measure - prev_m) * tick_per_measure
+        return int(round(m_start + (beat - 1) * tpb))
+    if prev_m is not None:
+        return int(round(measure_starts[prev_m]
+                         + (measure - prev_m) * 4 * tpb
+                         + (beat - 1) * tpb))
+    if next_m is not None:
+        return int(round(measure_starts[next_m]
+                         - (next_m - measure) * 4 * tpb
+                         + (beat - 1) * tpb))
+    return None
+
+
+def _dcml_time_spans(ours_regions: list[Region],
+                     dcml_regions: list) -> list[tuple[int, int]]:
+    """
+    Compute (start_tick, end_tick) for each DCML region.  Each region's
+    end_tick is the start_tick of the next DCML region (or the piece's end
+    tick).  Spans where the start tick cannot be resolved come back as (-1,-1).
+    """
+    if not dcml_regions or not ours_regions:
+        return []
+    tpb = _infer_ticks_per_beat(ours_regions)
+    measure_starts = _build_measure_anchors(ours_regions, tpb)
+    piece_end = max(r.end_tick for r in ours_regions) if ours_regions else 0
+    starts: list[Optional[int]] = [
+        _dcml_tick_for(dr.measure_number, dr.beat, measure_starts, tpb)
+        for dr in dcml_regions
+    ]
+    spans: list[tuple[int, int]] = []
+    for i, s in enumerate(starts):
+        if s is None:
+            spans.append((-1, -1))
+            continue
+        end = piece_end
+        for j in range(i + 1, len(starts)):
+            if starts[j] is not None and starts[j] > s:
+                end = starts[j]
+                break
+        spans.append((s, max(end, s)))
+    return spans
+
+
+def _best_dcml_match_by_overlap(our: Region,
+                                 dcml_regions: list,
+                                 dcml_spans: list[tuple[int, int]],
+                                 ) -> Optional[object]:
+    """Return the DCML region with maximum tick overlap with `our`, aligned
+    iff the overlap covers ≥50% of *either* region's duration (lenient OR)."""
+    our_dur = our.end_tick - our.start_tick
+    if our_dur <= 0:
+        return None
+    best = None
+    best_ov = 0
+    best_their_dur = 0
+    for dr, (ds, de) in zip(dcml_regions, dcml_spans):
+        if ds < 0 or de <= ds:
+            continue
+        ov = _overlap(our.start_tick, our.end_tick, ds, de)
+        if ov > best_ov:
+            best_ov = ov
+            best = dr
+            best_their_dur = de - ds
+    if best is None or best_ov == 0:
+        return None
+    if (best_ov / our_dur) >= 0.5 \
+            or (best_their_dur > 0 and best_ov / best_their_dur >= 0.5):
+        return best
+    return None
+
+
 def align_dcml_regions(ours_regions: list[Region],
-                        dcml_regions: list) -> list[Optional[object]]:
+                        dcml_regions: list,
+                        mode: str = DEFAULT_DCML_MATCH_MODE,
+                        ) -> list[Optional[object]]:
     """
-    For each of our regions, find the DCML region with matching measure number
-    and beat within 0.5.  Returns a parallel list of DcmlRegion | None.
+    For each of our regions, return the matching DCML region (or None).
+
+    mode = "time-overlap" (default): best tick-overlap match, lenient OR-50%.
+    mode = "beat-snap"   (legacy):   smallest |Δbeat| within same measure,
+                                     tolerance 0.5 beats.
     """
+    if mode == "time-overlap":
+        spans = _dcml_time_spans(ours_regions, dcml_regions)
+        if not spans:
+            return [None] * len(ours_regions)
+        return [_best_dcml_match_by_overlap(our, dcml_regions, spans)
+                for our in ours_regions]
+
+    # ── beat-snap (legacy) ────────────────────────────────────────────────
     result: list[Optional[object]] = []
     for our in ours_regions:
         best = None
@@ -384,35 +542,118 @@ class DcmlDirectResult:
 def compare_ours_vs_dcml_direct(
         ours_regions: list[Region],
         dcml_regions: list,
+        mode: str = DEFAULT_DCML_MATCH_MODE,
 ) -> list[DcmlDirectResult]:
     """
     Direct two-way comparison of our regions against DCML annotations.
-    Each of our regions is matched to the DCML region with the closest
-    measure+beat (within 0.5 beats).  Category:
+    Uses `align_dcml_regions(mode=...)` to pair each of our regions with at
+    most one DCML region.  Category:
 
       dcml_agree     — root pitch class matches
       dcml_disagree  — root pitch class differs (genuine analysis difference)
-      unaligned      — no DCML region within tolerance
+      unaligned      — no DCML region matched
     """
-    results = []
-    for ours in ours_regions:
-        best = None
-        best_dist = float('inf')
-        for dr in dcml_regions:
-            if dr.measure_number != ours.measure_number:
-                continue
-            dist = abs(dr.beat - ours.beat)
-            if dist < best_dist and dist <= 0.5:
-                best_dist = dist
-                best = dr
-
-        if best is None:
+    matches = align_dcml_regions(ours_regions, dcml_regions, mode=mode)
+    results: list[DcmlDirectResult] = []
+    for ours, dr in zip(ours_regions, matches):
+        if dr is None:
             results.append(DcmlDirectResult(ours=ours, dcml=None, category='unaligned'))
-        elif best.root_pc is not None and best.root_pc == ours.root_pc:
-            results.append(DcmlDirectResult(ours=ours, dcml=best, category='dcml_agree'))
+        elif dr.root_pc is not None and dr.root_pc == ours.root_pc:
+            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_agree'))
         else:
-            results.append(DcmlDirectResult(ours=ours, dcml=best, category='dcml_disagree'))
+            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_disagree'))
     return results
+
+
+# ── DCML-anchored matching ────────────────────────────────────────────────
+# Inverts the iteration: walks every DCML annotation and picks the single
+# best of our regions for it (largest tick overlap).  Answers the question
+# "for each chord DCML annotates, did we get it right?" — closer in intent
+# to what the old beat-snap numbers tried to measure, but without the
+# sampling bias (every DCML annotation counts, not just the ones where one
+# of our regions happens to land near the beat).
+
+@dataclass
+class DcmlAnchoredResult:
+    """One result row per DCML annotation."""
+    dcml:       object                 # DcmlRegion
+    ours:       Optional[Region]       # best-overlapping ours region (or None)
+    category:   str                    # 'dcml_agree' | 'dcml_disagree' | 'no_ours_coverage'
+
+
+def compare_dcml_anchored(
+        ours_regions: list[Region],
+        dcml_regions: list,
+) -> list[DcmlAnchoredResult]:
+    """
+    DCML-anchored time-overlap comparison.  For each DCML annotation, find
+    the ours region with the largest tick overlap of its span and compare
+    root pitch class.  No alignment threshold is applied — every DCML
+    annotation is counted, and 'no_ours_coverage' is only emitted when
+    literally zero overlap exists.
+    """
+    if not ours_regions or not dcml_regions:
+        return [
+            DcmlAnchoredResult(dcml=dr, ours=None, category='no_ours_coverage')
+            for dr in dcml_regions
+        ]
+    spans = _dcml_time_spans(ours_regions, dcml_regions)
+    out: list[DcmlAnchoredResult] = []
+    for dr, (ds, de) in zip(dcml_regions, spans):
+        if ds < 0 or de <= ds:
+            out.append(DcmlAnchoredResult(dcml=dr, ours=None,
+                                           category='no_ours_coverage'))
+            continue
+        best = None
+        best_ov = 0
+        for r in ours_regions:
+            ov = _overlap(r.start_tick, r.end_tick, ds, de)
+            if ov > best_ov:
+                best_ov = ov
+                best = r
+        if best is None or best_ov == 0:
+            out.append(DcmlAnchoredResult(dcml=dr, ours=None,
+                                           category='no_ours_coverage'))
+        elif dr.root_pc is not None and dr.root_pc == best.root_pc:
+            out.append(DcmlAnchoredResult(dcml=dr, ours=best,
+                                           category='dcml_agree'))
+        else:
+            out.append(DcmlAnchoredResult(dcml=dr, ours=best,
+                                           category='dcml_disagree'))
+    return out
+
+
+def dcml_anchored_summarize(results: list[DcmlAnchoredResult]) -> dict:
+    """Aggregate counts for a DCML-anchored comparison.  Denominator is the
+    set of DCML annotations whose root pitch class could be resolved (some
+    DCML rows are e.g. @none / unparseable and have root_pc=None)."""
+    total              = len(results)
+    no_ours_coverage   = sum(1 for r in results if r.category == 'no_ours_coverage')
+    with_ours_coverage = total - no_ours_coverage
+    agree              = sum(1 for r in results if r.category == 'dcml_agree')
+    disagree           = sum(1 for r in results if r.category == 'dcml_disagree')
+    # Only count rows where DCML resolved a root_pc; some annotations
+    # (@none, unparseable applied chords) have root_pc=None and are skipped.
+    scoreable = sum(1 for r in results
+                    if r.dcml is not None and r.dcml.root_pc is not None
+                    and r.category != 'no_ours_coverage')
+    bir_in_disagree = sum(
+        1 for r in results
+        if r.category == 'dcml_disagree' and r.ours is not None
+        and r.ours.bass_is_root
+    )
+    return {
+        'total_dcml':           total,
+        'with_ours_coverage':   with_ours_coverage,
+        'scoreable':            scoreable,
+        'agree':                agree,
+        'disagree':             disagree,
+        'no_ours_coverage':     no_ours_coverage,
+        'coverage_pct':         100 * with_ours_coverage / total if total else 0.0,
+        'agree_pct':            100 * agree / scoreable if scoreable else 0.0,
+        'bass_is_root_in_disagree':     bir_in_disagree,
+        'bass_is_root_pct_of_disagree': 100 * bir_in_disagree / disagree if disagree else 0.0,
+    }
 
 
 def dcml_direct_summarize(results: list[DcmlDirectResult]) -> dict:
@@ -759,11 +1000,13 @@ def render_html_fragment(ours_meta: dict, m21_meta: dict,
 
 def compare_files(ours_path: Path, m21_path: Path,
                    dcml_regions: Optional[list] = None,
+                   dcml_match_mode: str = DEFAULT_DCML_MATCH_MODE,
                    ) -> tuple[dict, dict, list[ComparedRegion]]:
     """Load and compare two analysis JSON files.  Returns (ours_meta, m21_meta, compared).
 
     If dcml_regions is supplied, each ComparedRegion will have dcml_region and
-    three_way_cat populated.
+    three_way_cat populated.  `dcml_match_mode` selects the DCML alignment
+    strategy ("time-overlap" by default; pass "beat-snap" for legacy behavior).
     """
     ours_meta, ours_regions = load_analysis(ours_path)
     m21_meta,  m21_regions  = load_analysis(m21_path)
@@ -772,7 +1015,8 @@ def compare_files(ours_path: Path, m21_path: Path,
     compared = [classify(ours_r, their_r) for ours_r, their_r in aligned]
 
     if dcml_regions is not None:
-        dcml_matches = align_dcml_regions(ours_regions, dcml_regions)
+        dcml_matches = align_dcml_regions(ours_regions, dcml_regions,
+                                          mode=dcml_match_mode)
         for cr, dm in zip(compared, dcml_matches):
             cr.dcml_region = dm
             dcml_pc = dm.root_pc if dm is not None else None
