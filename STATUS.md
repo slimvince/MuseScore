@@ -9,58 +9,73 @@
 
 ## Current State (summary)
 
-The Phase 1 analysis foundation is implemented and working. The status bar displays chord
-symbols, Roman numerals, and key/mode information on every note selection, using a bounded
-adaptive local window that expands only until the displayed harmonic result stabilizes. The
-chord staff ("Implode to chord track") and region intonation ("Tune selection") are both in
-the Tools menu. Chord-staff population now drives the same adaptive inference helper across
-the selection's source-note ticks rather than maintaining a separate whole-range user-facing
-inference path, while preserve-all analysis remains available for exact boundary/debug
-workflows.
+**Last committed:** `eefa412b6f` — DCML time-overlap comparator
+(tools/compare_analyses.py + tools/rerun_dcml_comparison.py).
 
-The DCML/ABC comparison path now resolves applied-chord `relativeroot` before computing
-reference `root_pc`, so older Corelli one-score comparisons that ignored `relativeroot`
-should be treated as stale. On Corelli `op01n08d`, the corrected comparator plus populated
-regional `bassIsStepwiseToNext` and the simplified no-third inversion gating reduce the
-real disagreement set to two beats (`m20 b1`, `m23 b1`) and raise aligned agreement to 11/13.
+**Prior commits in this cycle (all on master):**
+- `2085f11322` Iter 89 — honor sharp TPC for pc=8 (G#/Ab) across flat and mildly-sharp keys
+- `bea00f3482` Iter 88 — honor sharp TPC for pc=6 (F#/Gb) in flat keys
+- `2dd2f35c17` Iter 87 — bass-b7 post-merge re-stamp (fixes analyzeScore merge discarding
+  MinorSeventh extension); companion Iter 86 stamp inside analyzeChord retained
+- `4da8252c9e` Iter 84 — R4 narrow G# leading-tone fix at keyFifths=1 (A melodic minor)
 
-**Current working-tree note (updated 2026-05-11):** all 53/53 notation tests and 407/407
-composing tests pass on master (HEAD `af785da463`, Iter 65). Pipeline snapshot tests:
-11/11. Iter 64 (root-present pre-filter, perf-only) not yet committed — see header.
-Iter 66 (sus2 P5-inversion bonus) queued.
+**Test baseline (as of Iter 89 / eefa412b6f — no code changes in comparator commit):**
+- Composing tests: 407/407 passing
+- Notation tests: 50/52 passing (2 pre-existing Corelli implode failures remain —
+  `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
+- Pipeline snapshot tests: 11 passed / 1 skipped (`PipelineDivergenceCObservation.GenerateReport`
+  — intentional opt-in, not a failure)
+- Chord mismatch report: 4 RealDiff (pinned baseline), 127 ConventionDiff (Jazz catalog)
 
-**Fresh multi-corpus rerun (late 2026-04-11, current working tree):** fresh direct
-DCML reruns were written to `tools/reports/live_20260411/reports/` for ten corpora.
-Completed aggregates are now: Dvorak 79.2% (12 mvts), Chopin 71.6% (55 processed;
-1 score missing DCML TSV), Corelli 70.3% (149 mvts), Beethoven 64.9% (70 mvts),
-Mozart 61.8% (54 mvts), Schumann 61.6% (13 mvts), Tchaikovsky 61.0% (12 mvts),
-Grieg 60.7% (66 mvts), Bach En/Fr Suites 52.4% (89 mvts), and C.P.E. Bach keyboard
-still 0 regions across 66 mvts. Across those ten completed corpora the weighted
-result is 10,830 / 16,765 aligned rows = 64.6% root agreement with 38.1% alignment
-of our emitted regions. The broad Bach chorales rerun has now completed via
-`run_validation.py` into `tools/reports/live_20260412_bach/`: 352 chorales,
-9511 total regions, 4150 full matches, 0 near matches, 43.6% overall agreement,
-and 75.2% chord-identity agreement (5823 / 7748 aligned regions). The fresh HTML
-report is `tools/reports/live_20260412_bach/reports/validation_20260412_041114.html`.
+**BIR baselines (Baroque preset, batch path, unchanged since Iter 82):**
+- BIR=true=4, BIR=false=118
+- Jazz BIR=false=7 (Jazz BIR=true=63)
 
-**Windows batch-validation tooling note (late 2026-04-11):** the stalled Bach
-chorales run did not stop on a bad `bwv351` analysis. The emitted
-`tools/reports/live_20260411/corpus/bwv351.ours.json` exactly matches fresh direct
-reruns of `batch_analyze`, and a dump of the orphaned Windows process showed it
-stuck in the final `_Exit(0)` / process-shutdown path of `tools/batch_analyze.cpp`,
-inside Qt TLS cleanup (`QBasicMutex` wait) after JSON writeout had completed.
-`tools/batch_analyze.cpp` now flushes output explicitly and uses
-`TerminateProcess(GetCurrentProcess(), 0)` on Windows after `delete score` to bypass
-that exit path. A fresh full Bach chorales rerun completed successfully with the
-patched tool and produced the report above, so the earlier Windows stall is no
-longer blocking the corpus pipeline.
+**Iter 90 — shelved (no commit):**
+Bass-as-root promotion for 122 wrong-root cases. Characterization showed 84% of BIR=false=118
+are iii/III triad confusion ({C,E,G} = C major vs Em/C) — non-local ambiguity that cannot be
+resolved with a local gate. Variant A (+12 errors) and Variant B (+22 errors) both regressed.
+Design note at `docs/iter90_bass_as_root_promotion_shelved.md`. Paths for future Iter 91:
+(a) bridge-level adjacent-context pass using nextRootPc/previousRootPc, or (b) temporal-context-
+gated promotion using existing ChordTemporalExtensions fields.
 
-**Full Rampageswing polyphonic-jazz baseline is now established.** With all available
-Rampage Swing charts included (31 XML charts with harmony + 2 MXL-only charts), the
-corrected baseline is 39.8% root agreement on 1735 comparable chord-symbol regions.
-`compare_omnibook.py` now infers Rampageswing source directories, reads `.mxl` source
-files, and uses source `kind` tags for richer written-quality breakdown (Dominant7,
-Major7, Minor7, etc.).
+**DCML ground-truth comparison — current figures (post-eefa412b6f):**
+
+PRIMARY metric: DCML-anchored time-overlap comparator (lenient-OR-50% overlap threshold).
+Old beat-snap comparator was biased +21pp because it only scored the ~35% of regions that
+happened to land near a DCML annotation boundary. Time-overlap scores ALL emitted regions
+against their overlapping DCML annotation span.
+
+Cross-corpus weighted root agreement (10 non-Bach corpora):
+  **47.8%** (time-overlap, honest) — was 69.1% (beat-snap, biased)
+
+Bach chorales (352 chorales, run via run_validation.py):
+  **64.9%** overall root agreement
+  **87.2%** chord-identity agreement on aligned regions
+  **100%** region alignment (was 73% with old beat-snap; drop was a measurement artifact
+  from sub-beat boundaries from Iters 72/73/83 not matching music21's beat-anchored positions)
+
+Per-corpus DCML-anchored (time-overlap):
+  Chopin       65.6%
+  Dvorak       57.5%
+  Grieg        53.0%
+  Beethoven    49.2%
+  Tchaikovsky  46.0%
+  Schumann     43.6%
+  Mozart       40.2%
+  Corelli      39.6%
+  Bach suites  37.7%
+  C.P.E. Bach  0 regions (pre-existing issue — batch_analyze produces 0 output for all 66 mvts)
+
+Reports at `tools/reports/` (most recent run: post-eefa412b6f).
+
+**Queued / open:**
+- Iter 91: bass-as-root promotion via bridge-level adjacent-context (see design note)
+- C.P.E. Bach 0-regions: pre-existing, undiagnosed
+- Sub-beat boundary cleanup: Iters 72/73/83 introduced sub-beat boundaries that don't align
+  with music21's beat-anchored DCML comparison; harmless to accuracy but creates alignment
+  measurement noise
+- STATUS.md header prose is intentionally long (full audit trail); do not shorten it
 
 ## 2026-04-25 → 2026-05-04 — post-Phase-5 quality cycle (rollup)
 
