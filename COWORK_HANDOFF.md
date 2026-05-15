@@ -28,7 +28,7 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 
 ## Current state (as of 2026-05-15, updated after Iter 89 + DCML comparator commit)
 
-- **HEAD:** `eefa412b6f` on master (DCML time-overlap comparator —
+- **HEAD:** `4cb1bfb274` on master (last code commit: `eefa412b6f` — DCML time-overlap comparator —
   tools/compare_analyses.py + tools/rerun_dcml_comparison.py)
 - **Prior HEAD in cycle:** `2085f11322` (Iter 89 — pc=8 G#/Ab TPC sharp-honor fix)
 - **Working tree (uncommitted):**
@@ -123,7 +123,7 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Read first (every session):** `C:\s\MS\CLAUDE.md`, `C:\s\MS\STATUS.md` (header only),
 > `C:\s\MS\build_and_test.md`
 >
-> **Current state:** Branch `master`, HEAD `eefa412b6f` (DCML time-overlap comparator;
+> **Current state:** Branch `master`, HEAD `4cb1bfb274` (last code commit: `eefa412b6f` — DCML time-overlap comparator;
 > prior: Iter 89 pc=8 G#/Ab fix at `2085f11322`).
 > Baselines: 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not
 > regress), pipeline_snapshot 11 passed / 1 skipped, BIR=true=4, BIR=false=118, Jazz BIR=false=7.

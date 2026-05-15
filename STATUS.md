@@ -9,8 +9,7 @@
 
 ## Current State (summary)
 
-**Last committed:** `eefa412b6f` — DCML time-overlap comparator
-(tools/compare_analyses.py + tools/rerun_dcml_comparison.py).
+**Last committed:** `4cb1bfb274` — docs update (STATUS/COWORK_HANDOFF/ARCHITECTURE for Iter 89 + DCML comparator; last code commit: `eefa412b6f`).
 
 **Prior commits in this cycle (all on master):**
 - `2085f11322` Iter 89 — honor sharp TPC for pc=8 (G#/Ab) across flat and mildly-sharp keys
@@ -19,7 +18,7 @@
   MinorSeventh extension); companion Iter 86 stamp inside analyzeChord retained
 - `4da8252c9e` Iter 84 — R4 narrow G# leading-tone fix at keyFifths=1 (A melodic minor)
 
-**Test baseline (as of Iter 89 / eefa412b6f — no code changes in comparator commit):**
+**Test baseline (as of Iter 89 / 4cb1bfb274 — no code changes in comparator commit):**
 - Composing tests: 407/407 passing
 - Notation tests: 50/52 passing (2 pre-existing Corelli implode failures remain —
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
@@ -39,7 +38,7 @@ Design note at `docs/iter90_bass_as_root_promotion_shelved.md`. Paths for future
 (a) bridge-level adjacent-context pass using nextRootPc/previousRootPc, or (b) temporal-context-
 gated promotion using existing ChordTemporalExtensions fields.
 
-**DCML ground-truth comparison — current figures (post-eefa412b6f):**
+**DCML ground-truth comparison — current figures (post-4cb1bfb274):**
 
 PRIMARY metric: DCML-anchored time-overlap comparator (lenient-OR-50% overlap threshold).
 Old beat-snap comparator was biased +21pp because it only scored the ~35% of regions that
@@ -67,7 +66,7 @@ Per-corpus DCML-anchored (time-overlap):
   Bach suites  37.7%
   C.P.E. Bach  0 regions (pre-existing issue — batch_analyze produces 0 output for all 66 mvts)
 
-Reports at `tools/reports/` (most recent run: post-eefa412b6f).
+Reports at `tools/reports/` (most recent run: post-4cb1bfb274).
 
 **Queued / open:**
 - Iter 91: bass-as-root promotion via bridge-level adjacent-context (see design note)
