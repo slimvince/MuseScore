@@ -114,29 +114,36 @@ const char* pitchClassNameFromTpc(int pc, int tpc, int keySignatureFifths,
         //   Ab (pc=8)  diatonic at A major (keyFifths=3) → G# in C/G/D major becomes Ab
         //   Bb (pc=10) diatonic at B major (keyFifths=5) → A# in C through 4 sharps → Bb
         //
-        // Iter 78 — G# (pc=8) is exempt at keySignatureFifths == 0.  The only
-        // minor key with no key signature is A minor, where G# is the raised
-        // 7th — the leading tone — and is conventionally spelled sharp in
-        // classical/Baroque writing.  Flattening it to "Ab" (e.g. "Abm7b5"
-        // for a viiø7 on G#) is wrong there.  At keyFifths == 0 the explicit
-        // sharp TPC is authoritative for G#, so fall through to the
-        // keySignatureFifths == 0 block below, which disambiguates by TPC.
-        // D# (pc=3) and A# (pc=10) have no analogous privileged status at
-        // keyFifths == 0 and still normalise to Eb / Bb.
+        // Iter 78 / Iter 84 — G# (pc=8) is exempt at keySignatureFifths == 0
+        // (A natural minor, where G# is the raised 7th / leading tone) and at
+        // keySignatureFifths == 1 (A melodic minor, which resolveToFifths maps
+        // to its parent Dorian-named slot at +1 fifths — see Amel regions in
+        // bach_chorale_003 / bwv153.5).  In both cases G# is the conventional
+        // sharp leading-tone spelling and flattening it to "Ab" (e.g.
+        // "Abm7b5" for a viiø7 on G#, or "E/Ab" for V6) is wrong.  At those
+        // fifths values the explicit sharp TPC is authoritative for G#, so
+        // fall through to the keySignatureFifths == 0 / positive-fifths logic
+        // below, which honors the sharp TPC.
+        // D# (pc=3) and A# (pc=10) have no analogous privileged status here
+        // and still normalise to Eb / Bb.
         if (tpc >= 20) {
             const size_t idx = static_cast<size_t>(normalizePc(pc));
             if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
-             || (pc == 8  && keySignatureFifths < 3 && keySignatureFifths != 0) // G# → Ab
+             || (pc == 8  && keySignatureFifths < 3                            // G# → Ab
+                         && keySignatureFifths != 0 && keySignatureFifths != 1)
              || (pc == 10 && keySignatureFifths < 5))                         // A# → Bb
             {
                 return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
             }
         }
 
-        if (keySignatureFifths == 0) {
-            // Key signature gives no flat/sharp preference (C major / A minor):
-            // use TPC to disambiguate.  Flat range covers both encodings: MuseScore [7,13]
-            // and +1 encoding [8,14].  Union [7,14] is safe because natural notes (FLAT==SHARP).
+        if (keySignatureFifths == 0
+            || (keySignatureFifths == 1 && pc == 8)) {
+            // Key signature gives no decisive flat/sharp preference (C major /
+            // A minor at fifths=0; A melodic minor mapped to fifths=+1 for the
+            // pc=8 leading tone): use TPC to disambiguate.  Flat range covers
+            // both encodings: MuseScore [7,13] and +1 encoding [8,14].  Union
+            // [7,14] is safe because natural notes (FLAT==SHARP).
             const bool preferFlat = (tpc >= 7 && tpc <= 14);
             const size_t idx = static_cast<size_t>(normalizePc(pc));
             if (preferFlat) {

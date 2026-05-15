@@ -42,7 +42,7 @@
         },
         {
             "key": "A",
-            "text": "Abm7b5/B",
+            "text": "G#m7b5/B",
             "tick": 960
         },
         {
@@ -52,7 +52,7 @@
         },
         {
             "key": "A",
-            "text": "Abm7b5/B",
+            "text": "G#m7b5/B",
             "tick": 960
         },
         {
@@ -122,7 +122,7 @@
         },
         {
             "key": "A",
-            "text": "E/Ab",
+            "text": "E/G#",
             "tick": 2400
         },
         {
@@ -132,7 +132,7 @@
         },
         {
             "key": "A",
-            "text": "E/Ab",
+            "text": "E/G#",
             "tick": 2400
         },
         {
@@ -802,7 +802,7 @@
         },
         {
             "key": "E",
-            "text": "E/Ab",
+            "text": "E/G#",
             "tick": 15840
         },
         {
@@ -812,7 +812,7 @@
         },
         {
             "key": "E",
-            "text": "E/Ab",
+            "text": "E/G#",
             "tick": 15840
         },
         {
@@ -1312,7 +1312,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Abm7b5/B",
+            "harmonyText": "G#m7b5/B",
             "pitches": [
                 71,
                 74,
@@ -1350,7 +1350,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "E/Ab",
+            "harmonyText": "E/G#",
             "pitches": [
                 68,
                 71
@@ -1663,7 +1663,7 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "E/Ab",
+            "harmonyText": "E/G#",
             "pitches": [
                 68,
                 71
