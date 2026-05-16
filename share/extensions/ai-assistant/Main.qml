@@ -765,7 +765,7 @@ Rectangle {
     //      and exit the loop.
     //
     // Hard cap at maxToolIterations to avoid infinite tool loops.
-    readonly property int maxToolIterations: 10
+    readonly property int maxToolIterations: 30
 
     function sendMessage(userText) {
         if (isStreaming || !userText.trim()) return

@@ -45,7 +45,9 @@ function getToolSchemas(providerFormat) {
                 "Returns basic metadata about the open score: title, composer, lyricist, " +
                 "copyright, subtitle, measure count, duration (seconds), initial key/time/tempo, " +
                 "and the list of parts (instruments). Use this when the user asks about the score " +
-                "in general terms (\"what is this piece?\", \"who composed it?\", \"how long is it?\").",
+                "in general terms (\"what is this piece?\", \"who composed it?\", \"how long is it?\"). " +
+                "Each part includes firstStaff (global 1-based staff number from the top of the score) " +
+                "— use this value with get_notes_in_range and get_lyrics_in_range to target a specific staff.",
             parameters: {
                 type: "object",
                 properties: {},
@@ -87,17 +89,18 @@ function getToolSchemas(providerFormat) {
         {
             name: "get_notes_in_range",
             description:
-                "Returns all notes and rests in the given measure range. Optional filters narrow by " +
-                "instrument (part name as in the score), staff (1-based within instrument), or voice " +
-                "(1–4). Use this tool to read actual pitches and rhythms in the score.",
+                "Returns all notes and rests in the given measure range. Use startStaff/endStaff " +
+                "(global 1-based staff numbers from get_score_info) to filter by staff — this is the " +
+                "only reliable way to target a specific instrument when a score has multiple staves " +
+                "with the same name. Omit staff filters to read all staves. Optional voice filter (1–4).",
             parameters: {
                 type: "object",
                 properties: {
                     startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
                     endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
-                    instrument:   { type: "string",  description: "Part name as it appears in the score; omit for all instruments." },
-                    staff:        { type: "integer", description: "1-based staff index within the instrument (e.g. piano treble=1, bass=2); omit for all staves." },
-                    voice:        { type: "integer", description: "Voice number 1–4; omit for all voices." }
+                    startStaff:   { type: "integer", description: "Global staff number of the first staff to include (1 = top staff of the score). Obtain staff numbers from get_score_info (firstStaff field). Omit to include all staves." },
+                    endStaff:     { type: "integer", description: "Global staff number of the last staff to include (inclusive). Set equal to startStaff for a single staff. Omit to include through the last staff." },
+                    voice:        { type: "integer", description: "Voice 1–4; omit for all voices." }
                 },
                 required: ["startMeasure", "endMeasure"]
             }
@@ -125,7 +128,8 @@ function getToolSchemas(providerFormat) {
                 properties: {
                     startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
                     endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
-                    instrument:   { type: "string",  description: "Part name as in the score; omit for all instruments." }
+                    startStaff:   { type: "integer", description: "Global staff number of the first staff to include. Obtain from get_score_info (firstStaff field). Omit for all staves." },
+                    endStaff:     { type: "integer", description: "Global staff number of the last staff to include (inclusive). Omit for all remaining staves." }
                 },
                 required: ["startMeasure", "endMeasure"]
             }

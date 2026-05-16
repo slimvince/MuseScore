@@ -16,9 +16,9 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "get_score_info")       return scoreAccess.getScoreInfo()
         if (name === "get_structure")        return scoreAccess.getStructure(a.startMeasure, a.endMeasure)
         if (name === "add_rehearsal_mark")   return scoreAccess.addRehearsalMark(a.measure, a.text)
-        if (name === "get_notes_in_range")   return scoreAccess.getNotesInRange(a.startMeasure, a.endMeasure, a.instrument, a.staff, a.voice)
+        if (name === "get_notes_in_range")   return scoreAccess.getNotesInRange(a.startMeasure, a.endMeasure, a.startStaff, a.endStaff, a.voice)
         if (name === "get_harmony_in_range") return scoreAccess.getHarmonyInRange(a.startMeasure, a.endMeasure)
-        if (name === "get_lyrics_in_range")  return scoreAccess.getLyricsInRange(a.startMeasure, a.endMeasure, a.instrument)
+        if (name === "get_lyrics_in_range")  return scoreAccess.getLyricsInRange(a.startMeasure, a.endMeasure, a.startStaff, a.endStaff)
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

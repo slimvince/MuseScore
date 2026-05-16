@@ -194,16 +194,22 @@ function getScoreInfo() {
 
         var parts = s.parts
         if (parts) {
-            for (var i = 0; i < parts.length; i++) {
-                var p = parts[i]
-                info.parts.push({
-                    name:       p.partName  || p.longName || "",
-                    shortName:  p.shortName || "",
-                    staves:     (p.staves && p.staves.length) ? p.staves.length : 1,
-                    startTrack: p.startTrack,
-                    endTrack:   p.endTrack
+            var partsList = []
+            // Precompute: staffNameMap[globalStaffIndex] = longName (0-based index, so staff 1 → index 0)
+            var staffNameMap = []
+            for (var pi = 0; pi < parts.length; pi++) {
+                var pp    = parts[pi]
+                var lName = pp.longName || pp.partName || ""
+                var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
+                for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
+                partsList.push({
+                    longName:   lName,
+                    shortName:  pp.shortName || "",
+                    staves:     nStv,
+                    firstStaff: Math.floor(pp.startTrack / 4) + 1  // 1-based global
                 })
             }
+            info.parts = partsList
         }
 
         // Initial time signature: read from the first staff at tick 0.
@@ -322,63 +328,49 @@ function getStructure(startMeasure, endMeasure) {
     }
 }
 
-// Notes and rests in a 1-based measure range, optionally filtered by instrument,
-// staff (1-based within instrument), and voice (1-based, 1..4).
+// Notes and rests in a 1-based measure range, optionally filtered by a global
+// 1-based staff range (startStaff..endStaff, from getScoreInfo's firstStaff)
+// and voice (1-based, 1..4).
 // Returns { ok, notes: [...], rests: [...] } or { error }.
-function getNotesInRange(startMeasure, endMeasure, instrument, staff, voice) {
-    var score = _score()
+function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) {
+    var score = api.engraving.curScore
     if (!score) return { error: "No score open" }
     if (typeof startMeasure !== "number" || typeof endMeasure !== "number")
         return { error: "startMeasure and endMeasure must be numbers" }
     if (startMeasure > endMeasure)
         return { error: "startMeasure must be <= endMeasure" }
 
-    var parts    = score.parts
-    var trackLo  = 0
-    var trackHi  = score.ntracks - 1
+    var totalTracks = score.ntracks
 
-    if (instrument !== undefined && instrument !== null && instrument !== "") {
-        var found = false
-        for (var pi = 0; pi < parts.length; pi++) {
-            var p = parts[pi]
-            var pName = p.partName || p.longName || p.shortName || ""
-            if (pName === instrument || p.longName === instrument || p.shortName === instrument) {
-                trackLo = p.startTrack
-                trackHi = p.endTrack - 1
-                if (staff !== undefined && staff !== null && typeof staff === "number") {
-                    var sOff = staff - 1
-                    trackLo  = p.startTrack + sOff * 4
-                    trackHi  = trackLo + 3
-                }
-                found = true
-                break
-            }
-        }
-        if (!found) return { error: "Instrument not found: " + instrument }
-    }
+    // --- Resolve track range from optional global staff numbers ---
+    var trackLo = 0
+    var trackHi = totalTracks - 1
+    if (typeof startStaff === "number" && startStaff >= 1)
+        trackLo = (startStaff - 1) * 4
+    if (typeof endStaff === "number" && endStaff >= 1)
+        trackHi = endStaff * 4 - 1
+    if (trackLo < 0) trackLo = 0
+    if (trackHi >= totalTracks) trackHi = totalTracks - 1
 
+    // --- Voice filter: 1-based in API, 0-based internally (track % 4) ---
     var voiceFilter = -1
-    if (voice !== undefined && voice !== null && typeof voice === "number")
+    if (typeof voice === "number" && voice >= 1 && voice <= 4)
         voiceFilter = voice - 1
 
-    function _trackInfo(track) {
-        for (var i = 0; i < parts.length; i++) {
-            var pp = parts[i]
-            if (track >= pp.startTrack && track < pp.endTrack) {
-                return {
-                    instrument: pp.partName || pp.longName || "",
-                    staff:      Math.floor((track - pp.startTrack) / 4) + 1
-                }
-            }
-        }
-        return { instrument: "", staff: 1 }
+    // --- Precompute globalStaff → instrument longName ---
+    var parts = score.parts
+    var staffNameMap = []   // staffNameMap[i] = longName of global staff (i+1)
+    for (var pi = 0; pi < parts.length; pi++) {
+        var pp    = parts[pi]
+        var lName = pp.longName || pp.partName || ""
+        var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
+        for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
     }
 
     var notes = []
     var rests = []
-
-    var m   = score.firstMeasure
-    var idx = 1
+    var m     = score.firstMeasure
+    var idx   = 1
     while (m) {
         if (idx > endMeasure) break
         if (idx >= startMeasure) {
@@ -387,23 +379,21 @@ function getNotesInRange(startMeasure, endMeasure, instrument, staff, voice) {
             while (seg) {
                 var segTick = _getTickInt(seg.tick)
                 var beat    = _tickToBeat(segTick, measureTick)
-
                 for (var track = trackLo; track <= trackHi; track++) {
                     if (voiceFilter >= 0 && (track % 4) !== voiceFilter) continue
-
                     var el = seg.elementAt(track)
                     if (!el) continue
-
                     var isChord = (el.type === api.engraving.Element.CHORD)
                     var isRest  = (el.type === api.engraving.Element.REST)
                     if (!isChord && !isRest) continue
 
-                    var info = _trackInfo(track)
+                    var globalStaff  = Math.floor(track / 4) + 1
+                    var instrName    = staffNameMap[globalStaff - 1] || ""
                     var location = {
                         measure:    idx,
                         beat:       beat,
-                        instrument: info.instrument,
-                        staff:      info.staff,
+                        instrument: instrName,
+                        staff:      globalStaff,
                         voice:      (track % 4) + 1
                     }
 
@@ -412,32 +402,24 @@ function getNotesInRange(startMeasure, endMeasure, instrument, staff, voice) {
                         var duration = _durationStr(chord.duration.str)
                         var isGrace  = false
                         try { isGrace = (chord.noteType !== api.engraving.NoteType.NORMAL) } catch(e) {}
-
-                        var artList = []
+                        var artList  = []
                         try {
                             var arts = chord.articulations
                             for (var ai = 0; ai < arts.length; ai++) {
-                                try {
-                                    var aName = arts[ai].subtypeName()
-                                    if (aName) artList.push(aName)
-                                } catch(e2) {}
+                                try { var aName = arts[ai].subtypeName(); if (aName) artList.push(aName) } catch(e2) {}
                             }
                         } catch(e) {}
-
                         var noteArr = chord.notes
                         for (var ni = 0; ni < noteArr.length; ni++) {
-                            var note     = noteArr[ni]
-                            var noteName = _tpcToNoteName(note.tpc, note.pitch)
-                            var acc = null
-                            var t   = note.tpc
-                            if      (t >=  0 && t <  6) acc = "doubleFlat"
-                            else if (t >=  6 && t < 13) acc = "flat"
-                            else if (t >= 13 && t < 20) acc = null
+                            var note = noteArr[ni]
+                            var t    = note.tpc
+                            var acc  = null
+                            if      (t >= 0  && t <  6) acc = "doubleFlat"
+                            else if (t >= 6  && t < 13) acc = "flat"
                             else if (t >= 20 && t < 27) acc = "sharp"
                             else if (t >= 27 && t <= 33) acc = "doubleSharp"
-
                             notes.push({
-                                noteName:      noteName,
+                                noteName:      _tpcToNoteName(note.tpc, note.pitch),
                                 duration:      duration,
                                 location:      location,
                                 tiedForward:   !!note.tieForward,
@@ -464,7 +446,6 @@ function getNotesInRange(startMeasure, endMeasure, instrument, staff, voice) {
         idx++
         m = m.nextMeasure
     }
-
     return { ok: true, notes: notes, rests: rests }
 }
 
@@ -513,52 +494,40 @@ function getHarmonyInRange(startMeasure, endMeasure) {
     return { ok: true, harmonies: result }
 }
 
-// Lyrics in a 1-based measure range, optionally filtered by instrument.
+// Lyrics in a 1-based measure range, optionally filtered by a global 1-based
+// staff range (startStaff..endStaff, from getScoreInfo's firstStaff).
 // Verse number derived from index in chord.lyrics[] (verse 1 = index 0) since
 // lyrics.no is not a Q_PROPERTY in the apiv1 wrapper.
-function getLyricsInRange(startMeasure, endMeasure, instrument) {
-    var score = _score()
+function getLyricsInRange(startMeasure, endMeasure, startStaff, endStaff) {
+    var score = api.engraving.curScore
     if (!score) return { error: "No score open" }
     if (typeof startMeasure !== "number" || typeof endMeasure !== "number")
         return { error: "startMeasure and endMeasure must be numbers" }
 
-    var parts   = score.parts
+    var totalTracks = score.ntracks
     var trackLo = 0
-    var trackHi = score.ntracks - 1
+    var trackHi = totalTracks - 1
+    if (typeof startStaff === "number" && startStaff >= 1)
+        trackLo = (startStaff - 1) * 4
+    if (typeof endStaff === "number" && endStaff >= 1)
+        trackHi = endStaff * 4 - 1
+    if (trackLo < 0) trackLo = 0
+    if (trackHi >= totalTracks) trackHi = totalTracks - 1
 
-    if (instrument !== undefined && instrument !== null && instrument !== "") {
-        var found = false
-        for (var pi = 0; pi < parts.length; pi++) {
-            var p     = parts[pi]
-            var pName = p.partName || p.longName || p.shortName || ""
-            if (pName === instrument || p.longName === instrument || p.shortName === instrument) {
-                trackLo = p.startTrack
-                trackHi = p.endTrack - 1
-                found   = true
-                break
-            }
-        }
-        if (!found) return { error: "Instrument not found: " + instrument }
-    }
-
-    function _trackInfo2(track) {
-        for (var i = 0; i < parts.length; i++) {
-            var pp = parts[i]
-            if (track >= pp.startTrack && track < pp.endTrack) {
-                return {
-                    instrument: pp.partName || pp.longName || "",
-                    staff:      Math.floor((track - pp.startTrack) / 4) + 1
-                }
-            }
-        }
-        return { instrument: "", staff: 1 }
+    // Precompute globalStaff → instrument longName
+    var parts = score.parts
+    var staffNameMap = []
+    for (var pi = 0; pi < parts.length; pi++) {
+        var pp    = parts[pi]
+        var lName = pp.longName || pp.partName || ""
+        var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
+        for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
     }
 
     var SYLLABIC_STR = ["single", "begin", "end", "middle"]
-
-    var result = []
-    var m      = score.firstMeasure
-    var idx    = 1
+    var result  = []
+    var m       = score.firstMeasure
+    var idx     = 1
     while (m) {
         if (idx > endMeasure) break
         if (idx >= startMeasure) {
@@ -567,6 +536,7 @@ function getLyricsInRange(startMeasure, endMeasure, instrument) {
             while (seg) {
                 var segTick = _getTickInt(seg.tick)
                 var beat    = _tickToBeat(segTick, measureTick)
+                // Iterate voice-1 tracks only (trackLo is always 4-aligned)
                 for (var track = trackLo; track <= trackHi; track += 4) {
                     var el = seg.elementAt(track)
                     if (!el) continue
@@ -575,7 +545,8 @@ function getLyricsInRange(startMeasure, endMeasure, instrument) {
                     var lyricsList
                     try { lyricsList = el.lyrics } catch(e) { continue }
                     if (!lyricsList || lyricsList.length === 0) continue
-                    var info = _trackInfo2(track)
+                    var globalStaff = Math.floor(track / 4) + 1
+                    var instrName   = staffNameMap[globalStaff - 1] || ""
                     for (var li = 0; li < lyricsList.length; li++) {
                         var lyr  = lyricsList[li]
                         var text = ""
@@ -583,10 +554,7 @@ function getLyricsInRange(startMeasure, endMeasure, instrument) {
                             try { text = lyr.text || "" } catch(e2) {}
                         }
                         var syllabic = "single"
-                        try {
-                            var sIdx = lyr.syllabic
-                            syllabic = SYLLABIC_STR[sIdx] || "single"
-                        } catch(e) {}
+                        try { syllabic = SYLLABIC_STR[lyr.syllabic] || "single" } catch(e) {}
                         result.push({
                             text:     text,
                             syllabic: syllabic,
@@ -594,8 +562,8 @@ function getLyricsInRange(startMeasure, endMeasure, instrument) {
                             location: {
                                 measure:    idx,
                                 beat:       beat,
-                                instrument: info.instrument,
-                                staff:      info.staff,
+                                instrument: instrName,
+                                staff:      globalStaff,
                                 voice:      1
                             }
                         })
@@ -607,7 +575,6 @@ function getLyricsInRange(startMeasure, endMeasure, instrument) {
         idx++
         m = m.nextMeasure
     }
-
     return { ok: true, lyrics: result }
 }
 
