@@ -206,7 +206,8 @@ function getScoreInfo() {
                     longName:   lName,
                     shortName:  pp.shortName || "",
                     staves:     nStv,
-                    firstStaff: Math.floor(pp.startTrack / 4) + 1  // 1-based global
+                    firstStaff: Math.floor(pp.startTrack / 4) + 1, // 1-based global
+                    visible:    (pp.show !== false)
                 })
             }
             info.parts = partsList
@@ -426,7 +427,8 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                                 tiedBack:      !!note.tieBack,
                                 grace:         isGrace,
                                 articulations: artList,
-                                accidental:    acc
+                                accidental:    acc,
+                                visible:       (note.visible !== false)
                             })
                         }
                     } else {
@@ -436,7 +438,8 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                         rests.push({
                             duration:      _durationStr(rest.duration.str),
                             location:      location,
-                            isFullMeasure: isFullMeasure
+                            isFullMeasure: isFullMeasure,
+                            visible:       (rest.visible !== false)
                         })
                     }
                 }
@@ -480,7 +483,8 @@ function getHarmonyInRange(startMeasure, endMeasure) {
                         result.push({
                             text:    text,
                             measure: idx,
-                            beat:    _tickToBeat(segTick, measureTick)
+                            beat:    _tickToBeat(segTick, measureTick),
+                            visible: (el.visible !== false)
                         })
                     }
                 }
@@ -565,7 +569,8 @@ function getLyricsInRange(startMeasure, endMeasure, startStaff, endStaff) {
                                 instrument: instrName,
                                 staff:      globalStaff,
                                 voice:      1
-                            }
+                            },
+                            visible:  (lyr.visible !== false)
                         })
                     }
                 }
