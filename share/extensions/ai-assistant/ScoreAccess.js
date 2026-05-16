@@ -102,6 +102,72 @@ function _styleValue(score, key, fallback) {
     }
 }
 
+// Normalise a tick value that may be a plain int or a MuseScore Fraction.
+function _getTickInt(tick) {
+    if (typeof tick === "number") return tick
+    if (tick && typeof tick.ticks === "number") return tick.ticks
+    return 0
+}
+
+// Greatest-common-divisor (Euclidean), used for beat-fraction simplification.
+function _gcd(a, b) {
+    while (b > 0) { var t = b; b = a % b; a = t }
+    return a
+}
+
+// Convert a segment tick position into a Beat object { beat, fraction }.
+// Quarter-note based; correct for 4/4, 3/4, etc. Simplification for compound meters.
+function _tickToBeat(segTick, measureTick) {
+    var QUARTER = 480
+    var offset = segTick - measureTick
+    if (offset < 0) offset = 0
+    var beatN = Math.floor(offset / QUARTER) + 1
+    var rem   = offset % QUARTER
+    var frac  = "0"
+    if (rem > 0) {
+        var g = _gcd(rem, QUARTER)
+        frac = (rem / g) + "/" + (QUARTER / g)
+    }
+    return { beat: beatN, fraction: frac }
+}
+
+// Convert MuseScore TPC + MIDI pitch to a NoteName string ("C4", "F#3", "Bb5"…).
+// TPC ordering: F=13, C=14, G=15, D=16, A=17, E=18, B=19; each sharp +7, each flat -7.
+function _tpcToNoteName(tpc, pitch) {
+    if (tpc < -1 || tpc > 33) return "?"
+    var LETTERS = ["F","C","G","D","A","E","B"]
+    var acc
+    if      (tpc <  6) acc = "bb"
+    else if (tpc < 13) acc = "b"
+    else if (tpc < 20) acc = ""
+    else if (tpc < 27) acc = "#"
+    else               acc = "##"
+    var letterIdx = ((tpc - 13) % 7 + 7) % 7
+    var letter    = LETTERS[letterIdx]
+    var basePc    = { "C":0,"D":2,"E":4,"F":5,"G":7,"A":9,"B":11 }[letter]
+    var shift     = acc === "bb" ? -2 : acc === "b" ? -1 : acc === "#" ? 1 : acc === "##" ? 2 : 0
+    var writtenPc = ((basePc + shift) % 12 + 12) % 12
+    var octave    = Math.round((pitch - writtenPc) / 12) - 1
+    return letter + acc + octave
+}
+
+// Map a MuseScore duration Fraction string ("1/4", "3/8") to an infomodel
+// Duration string. Falls back to the raw fraction if unrecognised.
+function _durationStr(fracStr) {
+    var map = {
+        "8/1": "longa",       "4/1": "breve",
+        "1/1": "whole",       "3/2": "dotted whole",
+        "1/2": "half",        "3/4": "dotted half",        "7/8":  "double-dotted half",
+        "1/4": "quarter",     "3/8": "dotted quarter",     "7/16": "double-dotted quarter",
+        "1/8": "eighth",      "3/16": "dotted eighth",     "7/32": "double-dotted eighth",
+        "1/16": "16th",       "3/32": "dotted 16th",       "7/64": "double-dotted 16th",
+        "1/32": "32nd",       "3/64": "dotted 32nd",
+        "1/64": "64th",       "3/128": "dotted 64th",
+        "1/128": "128th"
+    }
+    return map[fracStr] || fracStr
+}
+
 // ── Public reads ──────────────────────────────────────────────────────────
 
 // Top-level score metadata. Matches ScoreInfo in infomodel_score.md.
@@ -256,6 +322,295 @@ function getStructure(startMeasure, endMeasure) {
     }
 }
 
+// Notes and rests in a 1-based measure range, optionally filtered by instrument,
+// staff (1-based within instrument), and voice (1-based, 1..4).
+// Returns { ok, notes: [...], rests: [...] } or { error }.
+function getNotesInRange(startMeasure, endMeasure, instrument, staff, voice) {
+    var score = _score()
+    if (!score) return { error: "No score open" }
+    if (typeof startMeasure !== "number" || typeof endMeasure !== "number")
+        return { error: "startMeasure and endMeasure must be numbers" }
+    if (startMeasure > endMeasure)
+        return { error: "startMeasure must be <= endMeasure" }
+
+    var parts    = score.parts
+    var trackLo  = 0
+    var trackHi  = score.ntracks - 1
+
+    if (instrument !== undefined && instrument !== null && instrument !== "") {
+        var found = false
+        for (var pi = 0; pi < parts.length; pi++) {
+            var p = parts[pi]
+            var pName = p.partName || p.longName || p.shortName || ""
+            if (pName === instrument || p.longName === instrument || p.shortName === instrument) {
+                trackLo = p.startTrack
+                trackHi = p.endTrack - 1
+                if (staff !== undefined && staff !== null && typeof staff === "number") {
+                    var sOff = staff - 1
+                    trackLo  = p.startTrack + sOff * 4
+                    trackHi  = trackLo + 3
+                }
+                found = true
+                break
+            }
+        }
+        if (!found) return { error: "Instrument not found: " + instrument }
+    }
+
+    var voiceFilter = -1
+    if (voice !== undefined && voice !== null && typeof voice === "number")
+        voiceFilter = voice - 1
+
+    function _trackInfo(track) {
+        for (var i = 0; i < parts.length; i++) {
+            var pp = parts[i]
+            if (track >= pp.startTrack && track < pp.endTrack) {
+                return {
+                    instrument: pp.partName || pp.longName || "",
+                    staff:      Math.floor((track - pp.startTrack) / 4) + 1
+                }
+            }
+        }
+        return { instrument: "", staff: 1 }
+    }
+
+    var notes = []
+    var rests = []
+
+    var m   = score.firstMeasure
+    var idx = 1
+    while (m) {
+        if (idx > endMeasure) break
+        if (idx >= startMeasure) {
+            var measureTick = _getTickInt(m.tick)
+            var seg = m.firstSegment
+            while (seg) {
+                var segTick = _getTickInt(seg.tick)
+                var beat    = _tickToBeat(segTick, measureTick)
+
+                for (var track = trackLo; track <= trackHi; track++) {
+                    if (voiceFilter >= 0 && (track % 4) !== voiceFilter) continue
+
+                    var el = seg.elementAt(track)
+                    if (!el) continue
+
+                    var isChord = (el.type === api.engraving.Element.CHORD)
+                    var isRest  = (el.type === api.engraving.Element.REST)
+                    if (!isChord && !isRest) continue
+
+                    var info = _trackInfo(track)
+                    var location = {
+                        measure:    idx,
+                        beat:       beat,
+                        instrument: info.instrument,
+                        staff:      info.staff,
+                        voice:      (track % 4) + 1
+                    }
+
+                    if (isChord) {
+                        var chord    = el
+                        var duration = _durationStr(chord.duration.str)
+                        var isGrace  = false
+                        try { isGrace = (chord.noteType !== api.engraving.NoteType.NORMAL) } catch(e) {}
+
+                        var artList = []
+                        try {
+                            var arts = chord.articulations
+                            for (var ai = 0; ai < arts.length; ai++) {
+                                try {
+                                    var aName = arts[ai].subtypeName()
+                                    if (aName) artList.push(aName)
+                                } catch(e2) {}
+                            }
+                        } catch(e) {}
+
+                        var noteArr = chord.notes
+                        for (var ni = 0; ni < noteArr.length; ni++) {
+                            var note     = noteArr[ni]
+                            var noteName = _tpcToNoteName(note.tpc, note.pitch)
+                            var acc = null
+                            var t   = note.tpc
+                            if      (t >=  0 && t <  6) acc = "doubleFlat"
+                            else if (t >=  6 && t < 13) acc = "flat"
+                            else if (t >= 13 && t < 20) acc = null
+                            else if (t >= 20 && t < 27) acc = "sharp"
+                            else if (t >= 27 && t <= 33) acc = "doubleSharp"
+
+                            notes.push({
+                                noteName:      noteName,
+                                duration:      duration,
+                                location:      location,
+                                tiedForward:   !!note.tieForward,
+                                tiedBack:      !!note.tieBack,
+                                grace:         isGrace,
+                                articulations: artList,
+                                accidental:    acc
+                            })
+                        }
+                    } else {
+                        var rest = el
+                        var isFullMeasure = false
+                        try { isFullMeasure = !!rest.isFullMeasureRest } catch(e) {}
+                        rests.push({
+                            duration:      _durationStr(rest.duration.str),
+                            location:      location,
+                            isFullMeasure: isFullMeasure
+                        })
+                    }
+                }
+                seg = seg.nextInMeasure
+            }
+        }
+        idx++
+        m = m.nextMeasure
+    }
+
+    return { ok: true, notes: notes, rests: rests }
+}
+
+// Chord symbols (harmony annotations) in a 1-based measure range.
+function getHarmonyInRange(startMeasure, endMeasure) {
+    var score = _score()
+    if (!score) return { error: "No score open" }
+    if (typeof startMeasure !== "number" || typeof endMeasure !== "number")
+        return { error: "startMeasure and endMeasure must be numbers" }
+
+    var result = []
+
+    var m   = score.firstMeasure
+    var idx = 1
+    while (m) {
+        if (idx > endMeasure) break
+        if (idx >= startMeasure) {
+            var measureTick = _getTickInt(m.tick)
+            var seg = m.firstSegment
+            while (seg) {
+                var anns = seg.annotations
+                if (anns) {
+                    for (var ai = 0; ai < anns.length; ai++) {
+                        var el = anns[ai]
+                        if (el.type !== api.engraving.Element.HARMONY) continue
+                        var text = ""
+                        try { text = el.plainText || el.text || "" } catch(e) {
+                            try { text = el.text || "" } catch(e2) {}
+                        }
+                        if (!text) continue
+                        var segTick = _getTickInt(seg.tick)
+                        result.push({
+                            text:    text,
+                            measure: idx,
+                            beat:    _tickToBeat(segTick, measureTick)
+                        })
+                    }
+                }
+                seg = seg.nextInMeasure
+            }
+        }
+        idx++
+        m = m.nextMeasure
+    }
+
+    return { ok: true, harmonies: result }
+}
+
+// Lyrics in a 1-based measure range, optionally filtered by instrument.
+// Verse number derived from index in chord.lyrics[] (verse 1 = index 0) since
+// lyrics.no is not a Q_PROPERTY in the apiv1 wrapper.
+function getLyricsInRange(startMeasure, endMeasure, instrument) {
+    var score = _score()
+    if (!score) return { error: "No score open" }
+    if (typeof startMeasure !== "number" || typeof endMeasure !== "number")
+        return { error: "startMeasure and endMeasure must be numbers" }
+
+    var parts   = score.parts
+    var trackLo = 0
+    var trackHi = score.ntracks - 1
+
+    if (instrument !== undefined && instrument !== null && instrument !== "") {
+        var found = false
+        for (var pi = 0; pi < parts.length; pi++) {
+            var p     = parts[pi]
+            var pName = p.partName || p.longName || p.shortName || ""
+            if (pName === instrument || p.longName === instrument || p.shortName === instrument) {
+                trackLo = p.startTrack
+                trackHi = p.endTrack - 1
+                found   = true
+                break
+            }
+        }
+        if (!found) return { error: "Instrument not found: " + instrument }
+    }
+
+    function _trackInfo2(track) {
+        for (var i = 0; i < parts.length; i++) {
+            var pp = parts[i]
+            if (track >= pp.startTrack && track < pp.endTrack) {
+                return {
+                    instrument: pp.partName || pp.longName || "",
+                    staff:      Math.floor((track - pp.startTrack) / 4) + 1
+                }
+            }
+        }
+        return { instrument: "", staff: 1 }
+    }
+
+    var SYLLABIC_STR = ["single", "begin", "end", "middle"]
+
+    var result = []
+    var m      = score.firstMeasure
+    var idx    = 1
+    while (m) {
+        if (idx > endMeasure) break
+        if (idx >= startMeasure) {
+            var measureTick = _getTickInt(m.tick)
+            var seg = m.firstSegment
+            while (seg) {
+                var segTick = _getTickInt(seg.tick)
+                var beat    = _tickToBeat(segTick, measureTick)
+                for (var track = trackLo; track <= trackHi; track += 4) {
+                    var el = seg.elementAt(track)
+                    if (!el) continue
+                    if (el.type !== api.engraving.Element.CHORD &&
+                        el.type !== api.engraving.Element.REST) continue
+                    var lyricsList
+                    try { lyricsList = el.lyrics } catch(e) { continue }
+                    if (!lyricsList || lyricsList.length === 0) continue
+                    var info = _trackInfo2(track)
+                    for (var li = 0; li < lyricsList.length; li++) {
+                        var lyr  = lyricsList[li]
+                        var text = ""
+                        try { text = lyr.plainText || lyr.text || "" } catch(e) {
+                            try { text = lyr.text || "" } catch(e2) {}
+                        }
+                        var syllabic = "single"
+                        try {
+                            var sIdx = lyr.syllabic
+                            syllabic = SYLLABIC_STR[sIdx] || "single"
+                        } catch(e) {}
+                        result.push({
+                            text:     text,
+                            syllabic: syllabic,
+                            verse:    li + 1,
+                            location: {
+                                measure:    idx,
+                                beat:       beat,
+                                instrument: info.instrument,
+                                staff:      info.staff,
+                                voice:      1
+                            }
+                        })
+                    }
+                }
+                seg = seg.nextInMeasure
+            }
+        }
+        idx++
+        m = m.nextMeasure
+    }
+
+    return { ok: true, lyrics: result }
+}
+
 // ── Public writes ─────────────────────────────────────────────────────────
 
 // Add a rehearsal mark at the start of the given 1-based measure.
@@ -275,17 +630,11 @@ function addRehearsalMark(measureNo, text) {
         s.startCmd("add rehearsal mark")
         var c = s.newCursor()
         c.track = 0
-        // m.tick is a Fraction; the cursor accepts either rewindToTick(int) or
-        // rewindToFraction(Fraction). The Fraction object has a .ticks property
-        // exposing the int form. Use rewindToTick for consistency with the
-        // documented pattern in api_write.md.
-        var tickInt = 0
-        if (typeof m.tick === "number") {
-            tickInt = m.tick
-        } else if (m.tick && typeof m.tick.ticks === "number") {
-            tickInt = m.tick.ticks
-        } else {
-            try { tickInt = m.firstSegment.tick } catch(e) {}
+        // m.tick is a Fraction; use _getTickInt helper. Fall back to first
+        // segment's tick if m.tick is somehow neither int nor Fraction.
+        var tickInt = _getTickInt(m.tick)
+        if (tickInt === 0 && m.tick === undefined) {
+            try { tickInt = _getTickInt(m.firstSegment.tick) } catch(e) {}
         }
         c.rewindToTick(tickInt)
 

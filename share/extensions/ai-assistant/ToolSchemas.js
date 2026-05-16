@@ -56,6 +56,52 @@ var CORE = [
             },
             required: ["measure", "text"]
         }
+    },
+    {
+        name: "get_notes_in_range",
+        description:
+            "Returns all notes and rests in the given measure range. Optional filters narrow by " +
+            "instrument (part name as in the score), staff (1-based within instrument), or voice " +
+            "(1–4). Use this tool to read actual pitches and rhythms in the score.",
+        parameters: {
+            type: "object",
+            properties: {
+                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
+                instrument:   { type: "string",  description: "Part name as it appears in the score; omit for all instruments." },
+                staff:        { type: "integer", description: "1-based staff index within the instrument (e.g. piano treble=1, bass=2); omit for all staves." },
+                voice:        { type: "integer", description: "Voice number 1–4; omit for all voices." }
+            },
+            required: ["startMeasure", "endMeasure"]
+        }
+    },
+    {
+        name: "get_harmony_in_range",
+        description:
+            "Returns all chord symbols (harmony markings) in the given measure range.",
+        parameters: {
+            type: "object",
+            properties: {
+                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." }
+            },
+            required: ["startMeasure", "endMeasure"]
+        }
+    },
+    {
+        name: "get_lyrics_in_range",
+        description:
+            "Returns all lyrics in the given measure range, with syllabic type " +
+            "(single/begin/middle/end) and verse number.",
+        parameters: {
+            type: "object",
+            properties: {
+                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
+                instrument:   { type: "string",  description: "Part name as in the score; omit for all instruments." }
+            },
+            required: ["startMeasure", "endMeasure"]
+        }
     }
 ]
 
