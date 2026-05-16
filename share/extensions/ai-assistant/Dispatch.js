@@ -54,6 +54,15 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "set_note_duration")    return scoreAccess.setNoteDuration(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.duration)
         if (name === "add_fermata")          return scoreAccess.addFermata(a.measure, a.beat, a.beatFraction || "0", a.staff, a.type || "normal")
 
+        // ── Batch 6 tools ──
+        if (name === "get_selection")              return scoreAccess.getSelection()
+        if (name === "get_view_settings")          return scoreAccess.getViewSettings()
+        if (name === "get_midi_channel_settings")  return scoreAccess.getMidiChannelSettings(a.instrument || null)
+        // set_view_settings: LLM may nest under `settings` or pass top-level fields; accept both.
+        if (name === "set_view_settings")          return scoreAccess.setViewSettings(a.settings || a)
+        if (name === "set_note_accidental")        return scoreAccess.setNoteAccidental(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null, a.accidental)
+        if (name === "set_note_velocity")          return scoreAccess.setNoteVelocity(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null, a.velocity)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

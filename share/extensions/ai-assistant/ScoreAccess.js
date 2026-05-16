@@ -176,6 +176,25 @@ function _findMeasure(measureNo) {
     return _findMeasureByNumber(s, measureNo)
 }
 
+// Reverse of _findMeasure: take an absolute tick (int) and return the 1-based
+// measure number that contains it. Walks measures in order; returns the last
+// measure if tick is past end. Used by getSelection() to map segment ticks
+// back to measure numbers for the LLM-facing musical address.
+function _tickToMeasureNo(tick) {
+    var s = _score()
+    if (!s) return null
+    var m = s.firstMeasure
+    var no = 1
+    while (m) {
+        var next = m.nextMeasure
+        var nextTick = next ? _getTickInt(next.firstSegment.tick) : Number.MAX_VALUE
+        if (tick < nextTick) return no
+        m = next
+        no++
+    }
+    return no - 1
+}
+
 // Convert a NoteName string ("C4", "F#3", "Bb5", "B##4") to a MIDI pitch
 // integer. Middle C = "C4" = 60.
 function _noteNameToMidi(pitchStr) {
@@ -1607,5 +1626,354 @@ function addFermata(measure, beat, beatFraction, staff, type) {
     } catch (e) {
         try { s.endCmd(true) } catch (ee) {}
         return { error: "addFermata failed: " + e }
+    }
+}
+
+// ── BATCH 6: selection, view settings, accidental, velocity, MIDI read ───
+
+// Return the current MuseScore selection — either a range (with extent) or a
+// list of individually-selected elements. Read-only, no startCmd needed.
+//
+// Track→staff conversion: track = (staff-1)*4 + (voice-1), with global 1-based
+// staff. C++ Selection.startStaff/endStaff are 0-based — convert by +1.
+function getSelection() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var sel = s.selection
+    if (!sel) return { error: "No selection" }
+
+    // sel.isRange may be either a boolean property or a callable in different
+    // MS4 builds — normalise.
+    var isRange = sel.isRange
+    if (typeof isRange === "function") {
+        try { isRange = sel.isRange() } catch (e) { isRange = false }
+    }
+
+    var result = {
+        isRange:      !!isRange,
+        elements:     [],
+        startMeasure: null,
+        endMeasure:   null,
+        startStaff:   null,
+        endStaff:     null
+    }
+
+    if (isRange) {
+        try {
+            var ss = sel.startSegment
+            var es = sel.endSegment
+            if (ss) result.startMeasure = _tickToMeasureNo(_getTickInt(ss.tick))
+            if (es) result.endMeasure   = _tickToMeasureNo(_getTickInt(es.tick))
+        } catch (e) {}
+        try {
+            if (sel.startStaff !== undefined && sel.startStaff !== null)
+                result.startStaff = sel.startStaff + 1
+            if (sel.endStaff !== undefined && sel.endStaff !== null)
+                result.endStaff = sel.endStaff + 1
+        } catch (e) {}
+    }
+
+    // Precompute globalStaff → instrument longName (matches getNotesInRange).
+    var parts = s.parts
+    var staffNameMap = []
+    for (var pi = 0; pi < parts.length; pi++) {
+        var pp    = parts[pi]
+        var lName = pp.longName || pp.partName || ""
+        var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
+        for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
+    }
+
+    var els = null
+    try { els = sel.elements } catch (e) {}
+    if (els && els.length > 0) {
+        for (var i = 0; i < els.length; i++) {
+            var e = els[i]
+            if (!e) continue
+            var track = (e.track !== undefined && e.track !== null) ? e.track : 0
+            var staff = Math.floor(track / 4) + 1
+            var voice = (track % 4) + 1
+            var tick = -1
+            try {
+                if (e.tick !== undefined && e.tick !== null) tick = _getTickInt(e.tick)
+                else if (e.parent && e.parent.tick !== undefined) tick = _getTickInt(e.parent.tick)
+            } catch (e2) {}
+            var mno = tick >= 0 ? _tickToMeasureNo(tick) : null
+            var instrName = staffNameMap[staff - 1] || ""
+            var typeStr = ""
+            try { typeStr = String(e.name || e.type || "") } catch (e3) {}
+            result.elements.push({
+                type:       typeStr,
+                measure:    mno,
+                staff:      staff,
+                voice:      voice,
+                instrument: instrName
+            })
+        }
+    }
+
+    return result
+}
+
+// Return current score-level display settings. Read-only.
+function getViewSettings() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    // LayoutMode enum (engraving/rendering/layoutoptions.h): PAGE=0, FLOAT=1,
+    // LINE=2 (continuous), SYSTEM=3 (single), HORIZONTAL_FIXED=4.
+    var lmMap = { 0: "page", 1: "float", 2: "continuous", 3: "single", 4: "horizontal" }
+    var lmInt = s.layoutMode
+    var layoutMode = (lmMap[lmInt] !== undefined) ? lmMap[lmInt] : String(lmInt)
+
+    var getBool = function(prop, dflt) {
+        try {
+            var v = s[prop]
+            if (v === undefined || v === null) return dflt
+            return !!v
+        } catch (e) { return dflt }
+    }
+
+    return {
+        layoutMode:            layoutMode,
+        showInvisible:         getBool("showInvisible", false),
+        showUnprintable:       getBool("showUnprintable", false),
+        showFrames:            getBool("showFrames", false),
+        showPageBorders:       getBool("showPageBorders", false),
+        showSoundFlags:        getBool("showSoundFlags", false),
+        showVerticalFrames:    getBool("showVerticalFrames", false),
+        showInstrumentNames:   getBool("showInstrumentNames", false),
+        markIrregularMeasures: getBool("markIrregularMeasures", false),
+        concertPitch:          !!_styleValue(s, "concertPitch", false)
+    }
+}
+
+// Read MIDI channel parameters per instrument. `instrument` is an optional
+// case-insensitive substring filter against the part long/short name.
+// Channels are byte-valued (0–127), not audio mixer dB.
+function getMidiChannelSettings(instrument) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var results = []
+    var filterName = instrument ? String(instrument).toLowerCase() : null
+
+    var parts = s.parts
+    for (var pi = 0; pi < parts.length; pi++) {
+        var part = parts[pi]
+        var partName = part.longName || part.shortName || ""
+        if (filterName && partName.toLowerCase().indexOf(filterName) < 0) continue
+
+        // part.instruments — try direct indexing first, fall back to .get(i)
+        var insts = part.instruments
+        if (!insts) continue
+        var nInsts = insts.length !== undefined ? insts.length : 0
+        for (var ii = 0; ii < nInsts; ii++) {
+            var inst = insts[ii]
+            if (!inst && typeof insts.get === "function") {
+                try { inst = insts.get(ii) } catch (e) {}
+            }
+            if (!inst) continue
+            var channels = inst.channels
+            if (!channels) continue
+            var nChan = channels.length !== undefined ? channels.length : 0
+            for (var ci = 0; ci < nChan; ci++) {
+                var ch = channels[ci]
+                if (!ch && typeof channels.get === "function") {
+                    try { ch = channels.get(ci) } catch (e) {}
+                }
+                if (!ch) continue
+                results.push({
+                    instrument:  partName,
+                    channelName: ch.name || "normal",
+                    volume:      ch.volume,
+                    pan:         ch.pan,
+                    chorus:      ch.chorus,
+                    reverb:      ch.reverb,
+                    mute:        !!ch.mute,
+                    midiProgram: ch.midiProgram,
+                    midiBank:    (ch.midiBank !== undefined) ? ch.midiBank : 0
+                })
+            }
+        }
+    }
+    return results
+}
+
+// Write score-level display toggles. Two-phase because direct property writes
+// need startCmd/endCmd; cmd()-based writes (concertPitch toggle, layoutMode)
+// must NOT be wrapped — those handlers own their own undo entry and become
+// no-ops when the stack is locked.
+function setViewSettings(settings) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (!settings) return { error: "settings object required" }
+
+    var updated = []
+    var anyDirect = (settings.showInvisible       !== undefined) ||
+                    (settings.showUnprintable     !== undefined) ||
+                    (settings.showFrames          !== undefined) ||
+                    (settings.showPageBorders     !== undefined) ||
+                    (settings.showSoundFlags      !== undefined) ||
+                    (settings.showVerticalFrames  !== undefined) ||
+                    (settings.showInstrumentNames !== undefined) ||
+                    (settings.markIrregularMeasures !== undefined)
+
+    if (anyDirect) {
+        var trySet = function(prop, key) {
+            if (settings[key] === undefined) return
+            try { s[prop] = !!settings[key]; updated.push(key) } catch (e) {}
+        }
+        try {
+            s.startCmd("set view settings")
+            trySet("showInvisible",         "showInvisible")
+            trySet("showUnprintable",       "showUnprintable")
+            trySet("showFrames",            "showFrames")
+            trySet("showPageBorders",       "showPageBorders")
+            trySet("showSoundFlags",        "showSoundFlags")
+            trySet("showVerticalFrames",    "showVerticalFrames")
+            trySet("showInstrumentNames",   "showInstrumentNames")
+            trySet("markIrregularMeasures", "markIrregularMeasures")
+            s.endCmd()
+        } catch (e) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "setViewSettings phase 1 failed: " + e }
+        }
+    }
+
+    // Phase 2: cmd()-based writes — NO startCmd wrapper.
+    try {
+        if (settings.concertPitch !== undefined) {
+            var current = !!_styleValue(s, "concertPitch", false)
+            if (current !== !!settings.concertPitch) {
+                api.engraving.cmd("concert-pitch")
+                updated.push("concertPitch")
+            }
+        }
+        if (settings.layoutMode !== undefined) {
+            // Registered cmd strings (notationuiactions.cpp:547+):
+            //   view-mode-page, view-mode-float, view-mode-continuous, view-mode-single
+            // HORIZONTAL_FIXED has no registered cmd path.
+            var lmCmds = {
+                "page":       "view-mode-page",
+                "float":      "view-mode-float",
+                "continuous": "view-mode-continuous",
+                "single":     "view-mode-single"
+            }
+            var c = lmCmds[settings.layoutMode]
+            if (c) {
+                api.engraving.cmd(c)
+                updated.push("layoutMode")
+            }
+        }
+    } catch (e) {
+        return { error: "setViewSettings phase 2 failed: " + e }
+    }
+
+    return { ok: true, updated: updated }
+}
+
+// Set or remove the accidental on a note. AccidentalType enum (apitypes.h:48):
+// NONE=0, FLAT, NATURAL, SHARP, SHARP2 (double sharp), FLAT2 (double flat),
+// plus dozens of microtonal variants we don't expose. Use the symbolic form
+// `api.engraving.AccidentalType.SHARP` etc. with a defensive fallback.
+function setNoteAccidental(measure, beat, beatFraction, staff, voice, pitch, accidental) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    var c = s.newCursor()
+    c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    c.rewindToTick(tick)
+    var chord = c.element
+    if (!chord || chord.type !== api.engraving.Element.CHORD)
+        return { error: "No chord at measure " + measure + " beat " + beat }
+
+    var pitchInt = pitch ? _noteNameToMidi(pitch) : -1
+    var targetNote = null
+    for (var i = 0; i < chord.notes.length; i++) {
+        var n = chord.notes[i]
+        if (pitchInt < 0 || n.pitch === pitchInt) { targetNote = n; break }
+    }
+    if (!targetNote) return { error: "Note not found at that position" }
+
+    // Map accidental string to AccidentalType enum. Use api.engraving.AccidentalType
+    // when available; fall back to integer literals (verified from apitypes.h
+    // mu::engraving::AccidentalType order: NONE=0, FLAT, NATURAL, SHARP, SHARP2, FLAT2).
+    var AT = api.engraving.AccidentalType
+    var accMap
+    if (AT && AT.SHARP !== undefined) {
+        accMap = {
+            "none":        AT.NONE,
+            "flat":        AT.FLAT,
+            "natural":     AT.NATURAL,
+            "sharp":       AT.SHARP,
+            "doubleSharp": AT.SHARP2,
+            "doubleFlat":  AT.FLAT2
+        }
+    } else {
+        // Fallback integers — apitypes.h declares values by int(mu::engraving::AccidentalType::X).
+        // Confirmed enum order: NONE=0, FLAT, NATURAL, SHARP, SHARP2, FLAT2.
+        accMap = {
+            "none": 0, "flat": 1, "natural": 2, "sharp": 3, "doubleSharp": 4, "doubleFlat": 5
+        }
+    }
+    var accType = accMap[accidental]
+    if (accType === undefined) return { error: "Unknown accidental: " + accidental }
+
+    try {
+        s.startCmd("set note accidental")
+        targetNote.accidentalType = accType
+        s.endCmd()
+        return { ok: true, accidental: accidental }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setNoteAccidental failed: " + e }
+    }
+}
+
+// Per-note playback velocity override (0–127). Sets veloType=USER_VAL so the
+// custom userVelocity is honoured (otherwise score-dynamics drive playback).
+// VeloType enum (apitypes.h:661): OFFSET_VAL=0, USER_VAL=1.
+function setNoteVelocity(measure, beat, beatFraction, staff, voice, pitch, velocity) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    var c = s.newCursor()
+    c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    c.rewindToTick(tick)
+    var chord = c.element
+    if (!chord || chord.type !== api.engraving.Element.CHORD)
+        return { error: "No chord at measure " + measure + " beat " + beat }
+
+    var pitchInt = pitch ? _noteNameToMidi(pitch) : -1
+    var targetNote = null
+    for (var i = 0; i < chord.notes.length; i++) {
+        var n = chord.notes[i]
+        if (pitchInt < 0 || n.pitch === pitchInt) { targetNote = n; break }
+    }
+    if (!targetNote) return { error: "Note not found at that position" }
+
+    var USER_VAL = 1
+    try {
+        if (api.engraving.VeloType && api.engraving.VeloType.USER_VAL !== undefined)
+            USER_VAL = api.engraving.VeloType.USER_VAL
+    } catch (e) {}
+
+    var v = velocity
+    if (typeof v !== "number") return { error: "velocity must be a number 0–127" }
+    if (v < 0)   v = 0
+    if (v > 127) v = 127
+
+    try {
+        s.startCmd("set note velocity")
+        targetNote.veloType     = USER_VAL    // must come before userVelocity takes effect
+        targetNote.userVelocity = v
+        s.endCmd()
+        return { ok: true, velocity: v }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setNoteVelocity failed: " + e }
     }
 }

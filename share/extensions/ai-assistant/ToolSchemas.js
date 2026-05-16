@@ -555,6 +555,98 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measure", "beat", "staff"]
             }
+        },
+
+        // ── BATCH 6: selection, view settings, accidental, velocity, MIDI read ─
+
+        {
+            name: "get_selection",
+            description:
+                "Returns the current selection in the score — the element(s) or range the user has highlighted in MuseScore. Use this when the user refers to 'the selected notes', 'this measure', or otherwise expects context from what's highlighted.",
+            parameters: {
+                type: "object",
+                properties: {},
+                required: []
+            }
+        },
+        {
+            name: "get_view_settings",
+            description:
+                "Returns current score view and display settings: layout mode, visibility toggles (invisible elements, frames, page borders, instrument names), and concert pitch mode.",
+            parameters: {
+                type: "object",
+                properties: {},
+                required: []
+            }
+        },
+        {
+            name: "get_midi_channel_settings",
+            description:
+                "Returns MIDI channel parameters (volume, pan, chorus, reverb, mute, program, bank) for one or all instruments. These are MIDI byte values (0–127), not audio mixer dB levels.",
+            parameters: {
+                type: "object",
+                properties: {
+                    instrument: { type: "string", description: "Part name (case-insensitive substring match). Omit for all instruments." }
+                },
+                required: []
+            }
+        },
+        {
+            name: "set_view_settings",
+            description:
+                "Sets score display toggles. Only provided fields are updated.",
+            parameters: {
+                type: "object",
+                properties: {
+                    layoutMode:            { type: "string", enum: ["page","continuous","single","float"], description: "Score layout mode. 'page' is paginated; 'continuous' is a single horizontal line; 'single' fits one system per page; 'float' is the float layout." },
+                    showInvisible:         { type: "boolean", description: "Show invisible elements." },
+                    showUnprintable:       { type: "boolean", description: "Show unprintable formatting elements." },
+                    showFrames:            { type: "boolean", description: "Show frame elements." },
+                    showPageBorders:       { type: "boolean", description: "Show page border lines." },
+                    showSoundFlags:        { type: "boolean", description: "Show sound flag indicators." },
+                    showVerticalFrames:    { type: "boolean", description: "Show vertical frame elements." },
+                    showInstrumentNames:   { type: "boolean", description: "Show instrument name labels." },
+                    markIrregularMeasures: { type: "boolean", description: "Mark irregular (pickup/partial) measures." },
+                    concertPitch:          { type: "boolean", description: "Concert pitch display mode (true = concert pitch, false = transposing pitch)." }
+                },
+                required: []
+            }
+        },
+        {
+            name: "set_note_accidental",
+            description:
+                "Sets or removes the accidental on a note. Use 'none' to let the key signature determine the accidental.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "1-based global staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    pitch:        { type: "string",  description: "Note pitch to target in a chord (e.g. 'C4'). Optional if chord has one note." },
+                    accidental:   { type: "string",  enum: ["sharp","flat","natural","doubleSharp","doubleFlat","none"], description: "Accidental to apply. 'none' removes an explicit accidental." }
+                },
+                required: ["measure", "beat", "staff", "accidental"]
+            }
+        },
+        {
+            name: "set_note_velocity",
+            description:
+                "Sets a per-note playback velocity override (0–127). This overrides score dynamics for that note. Prefer add_dynamic for musical expression; use this only for fine-grained per-note control.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', etc." },
+                    staff:        { type: "integer", description: "1-based global staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    pitch:        { type: "string",  description: "Note pitch to target in a chord (e.g. 'G3'). Optional if chord has one note." },
+                    velocity:     { type: "integer", minimum: 0, maximum: 127, description: "Velocity value 0–127." }
+                },
+                required: ["measure", "beat", "staff", "velocity"]
+            }
         }
     ]
 
