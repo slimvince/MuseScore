@@ -1,0 +1,10 @@
+{
+  "uri":   "musescore://extensions/ai-assistant",
+  "type":  "form",
+  "title": "AI Assistant",
+  "actions": [{
+    "code":  "open",
+    "title": "AI Assistant",
+    "path":  "Main.qml"
+  }]
+}
