@@ -19,6 +19,23 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "get_notes_in_range")   return scoreAccess.getNotesInRange(a.startMeasure, a.endMeasure, a.startStaff, a.endStaff, a.voice)
         if (name === "get_harmony_in_range") return scoreAccess.getHarmonyInRange(a.startMeasure, a.endMeasure)
         if (name === "get_lyrics_in_range")  return scoreAccess.getLyricsInRange(a.startMeasure, a.endMeasure, a.startStaff, a.endStaff)
+
+        // ── Batch 3 write tools ──
+        if (name === "add_dynamic")          return scoreAccess.addDynamic(a.measure, a.beat, a.beatFraction || "0", a.staff, a.dynamic)
+        if (name === "add_tempo_mark")       return scoreAccess.addTempoMark(a.measure, a.bpm, a.unit || "quarter", a.text || "")
+        if (name === "add_staff_text")       return scoreAccess.addStaffText(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
+        if (name === "add_system_text")      return scoreAccess.addSystemText(a.measure, a.text)
+        if (name === "add_harmony")          return scoreAccess.addHarmony(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
+        if (name === "add_hairpin")          return scoreAccess.addHairpin(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff, a.type)
+        if (name === "add_slur")             return scoreAccess.addSlur(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff)
+        if (name === "add_ottava")           return scoreAccess.addOttava(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff, a.type)
+        if (name === "insert_measures")      return scoreAccess.insertMeasures(a.afterMeasure, a.count)
+        if (name === "append_measures")      return scoreAccess.appendMeasures(a.count)
+        if (name === "delete_measure")       return scoreAccess.deleteMeasure(a.measure)
+        if (name === "add_section_break")    return scoreAccess.addSectionBreak(a.measure)
+        if (name === "add_system_break")     return scoreAccess.addSystemBreak(a.measure)
+        if (name === "set_score_metadata")   return scoreAccess.setScoreMetadata(a.title || "", a.composer || "", a.lyricist || "", a.copyright || "", a.subtitle || "")
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }
