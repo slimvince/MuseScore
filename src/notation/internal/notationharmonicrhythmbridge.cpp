@@ -354,6 +354,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             temporalCtx.bassIsStepwiseToNext =
                 (currentBassPc != -1 && nextBassPc != -1)
                 && isDiatonicStep(currentBassPc, nextBassPc);
+            temporalCtx.nextBassPc = nextBassPc;
 
             // Temporal context — metric weight
             const Segment* regionStartSeg = score->tick2segment(
@@ -388,8 +389,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
             advanceTemporalContext(temporalCtx, runningStepwiseCount, recentRootsBuf,
                                    chosenResult.identity);
-            // Reset nextRootPc for next iteration
+            // Reset nextRootPc / nextBassPc for next iteration
             temporalCtx.nextRootPc = -1;
+            temporalCtx.nextBassPc = -1;
 
             KeyModeAnalysisResult kmResult;
             kmResult.keySignatureFifths   = localKeyFifths;

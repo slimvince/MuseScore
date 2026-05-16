@@ -798,6 +798,9 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
         std::set<int> metricTicks;
         int lowestPitch = std::numeric_limits<int>::max();
         int tpc = -1;
+        // Iter 92: forward-walk TRUE attack at startTickInt (sustained-from-
+        // before notes do not set this flag).
+        bool trueAttackAtStart = false;
     };
     PcAccum accum[12];
     std::map<int, int> voiceCountAtTick[12];
@@ -1055,6 +1058,9 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
                     a.durationInRegion += durInRegion;
                     a.metricTicks.insert(segTickInt);
                     voiceCountAtTick[pc][segTickInt]++;
+                    if (segTickInt == startTickInt) {
+                        a.trueAttackAtStart = true;
+                    }
 
                     if (n->ppitch() < a.lowestPitch) {
                         a.lowestPitch = n->ppitch();
@@ -1154,6 +1160,7 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
         t.durationInRegion = a.durationInRegion;
         t.distinctMetricPositions = static_cast<int>(a.metricTicks.size());
         t.simultaneousVoiceCount = maxVoices;
+        t.onsetAtRegionStart = a.trueAttackAtStart;
         tones.push_back(t);
     }
 
@@ -1754,6 +1761,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         // nextRootPc uses the current region's key as a lightweight approximation.
         int nextBassPc = -1;
         ctx.nextRootPc = -1;
+        ctx.nextBassPc = -1;
         if (boundaryIndex + 1 < boundaryTicks.size()) {
             const Fraction nextRegionStart = boundaryTicks[boundaryIndex + 1];
             const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
@@ -1775,6 +1783,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         }
         ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
             && isDiatonicStep(currentBassPc, nextBassPc);
+        ctx.nextBassPc = nextBassPc;
 
         auto candidates = chordAnalyzer->analyzeChord(
             tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);

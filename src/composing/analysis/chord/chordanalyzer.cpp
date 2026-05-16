@@ -1604,6 +1604,110 @@ static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32
     return false;
 }
 
+// Iter 92 — bass-split contextual bonuses.
+//
+// contextualBonuses() above is a monolithic helper.  The two helpers below
+// split its body so that the (rootPc, templateIdx) scoring loop can compute
+// the bass-INDEPENDENT contribution exactly once per cell and then evaluate
+// each bass-candidate by adding the bass-DEPENDENT delta only.
+//
+// Invariant:
+//   bassIndependentContextualBonuses(tpl, rootPc, ..., context)
+//   + bassDependentContextualBonuses(tpl, rootPc, bassPc, appliedBassBonus, ...)
+//   == contextualBonuses(tpl, rootPc, bassPc, appliedBassBonus, ..., context)
+//
+// for every (tpl, rootPc, bassPc, context).  This is asserted by Step 2's
+// byte-identical verification.
+double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
+                                        int keyTonicPc, const std::array<int, 7>& scale,
+                                        const ChordAnalyzerPreferences& prefs,
+                                        const ChordTemporalContext* context)
+{
+    double score = 0.0;
+
+    // Prefer roots that belong to the current key scale.
+    for (int interval : scale) {
+        if ((keyTonicPc + interval) % 12 == rootPc) {
+            score += prefs.diatonicRootBonus;
+            break;
+        }
+    }
+
+    if (context) {
+        // Root-continuity: prefer keeping the same root across successive chords.
+        if (context->previousRootPc == rootPc) {
+            score += prefs.rootContinuityBonus;
+        }
+
+        // Quality-guided resolution bias: reward candidates at the typical
+        // resolution target of the previous chord's quality.
+        if (context->previousQuality != ChordQuality::Unknown
+                && context->previousRootPc >= 0) {
+            const int prevRoot = context->previousRootPc;
+            const ChordQuality prevQ = context->previousQuality;
+            const double rb = prefs.resolutionBonus;
+
+            if (prevQ == ChordQuality::Diminished
+                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
+                    && rootPc == (prevRoot + 1) % 12) {
+                score += rb;
+            }
+            if (prevQ == ChordQuality::HalfDiminished
+                    && tpl.quality == ChordQuality::Major
+                    && rootPc == (prevRoot + 5) % 12) {
+                score += rb;
+            }
+            if (prevQ == ChordQuality::Augmented
+                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
+                    && rootPc == prevRoot) {
+                score += rb;
+            }
+        }
+    }
+
+    return score;
+}
+
+double bassDependentContextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
+                                      double appliedBassBonus,
+                                      int distinctPcs,
+                                      const std::array<double, 12>& pcWeight,
+                                      const ChordAnalyzerPreferences& prefs,
+                                      const ChordTemporalContext* context)
+{
+    double score = appliedBassBonus;
+
+    if (context) {
+        const bool hasStepwiseBassEvidence =
+            context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext;
+        const bool isInvertedMajMin =
+            supportsContextualInversionBonuses(tpl, rootPc, bassPc, pcWeight);
+        double inversionContextBonus = 0.0;
+
+        if (hasStepwiseBassEvidence
+                && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
+            inversionContextBonus += prefs.completeTriadInversionBonus;
+        }
+
+        if (isInvertedMajMin) {
+            if (context->bassIsStepwiseFromPrevious) {
+                inversionContextBonus += prefs.stepwiseBassInversionBonus;
+            }
+            if (context->bassIsStepwiseToNext) {
+                inversionContextBonus += prefs.stepwiseBassLookaheadBonus;
+            }
+            if (context->previousRootPc != -1
+                    && context->previousRootPc == rootPc) {
+                inversionContextBonus += prefs.sameRootInversionBonus;
+            }
+        }
+
+        score += std::min(inversionContextBonus, prefs.maxTotalInversionContextBonus);
+    }
+
+    return score;
+}
+
 } // namespace
 
 std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
@@ -1631,28 +1735,131 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         }
     }
 
-    // Bass: lowest pitch whose weight meets the passing-tone threshold.
-    // A tone with weight < (fraction × total) is treated as a chromatic passing
-    // tone or ornament and excluded from slash-chord bass candidacy.
-    // Falls back to the absolute lowest pitch when no tone meets the threshold
-    // (e.g. when all tones have equal weight and the region is evenly distributed).
+    // Iter 92 — bass candidate enumeration (joint scoring).
+    //
+    // Pre-Iter 92 the analyzer committed to a single bass (the lowest qualifying
+    // pitch) before the chord scorer ran.  This caused two coupled bugs:
+    //   Bug 1 (bwv103.6 m3 b2): a passing eighth note that happens to be the
+    //     absolute lowest pitch in the region won bass selection over a
+    //     beat-onset bass a step above it.
+    //   Bug 2 (bwv310 m8 b3): a slash-chord reading (Em/C) outscored the
+    //     root-position triad (C major) because the bass-root bonus + complete-
+    //     triad evidence on C had no way to flip the global ranking.
+    //
+    // Both bugs are fixed by enumerating multiple bass candidates and scoring
+    // each against the full 12 × 16 template grid, then picking the global
+    // best (rootPc, templateIdx, bassPc) triple.
+    //
+    // Joint scoring is gated on the input coming from regional accumulation —
+    // any tone with onsetAtRegionStart=true OR distinctMetricPositions>0 (both
+    // are populated by collectRegionTones but not by the single-tick buildTones
+    // path used by status-bar analysis and unit tests).  Synthetic single-tick
+    // inputs fall back to the legacy single-bass selection (the absolute lowest
+    // qualifying pitch) so that scoring-rule unit tests remain valid.
     const double bassMinWeight = prefs.bassPassingToneMinWeightFraction * totalRawWeight;
-    int lowestQualifyingPitch = std::numeric_limits<int>::max();
+
+    // Joint scoring is enabled when the input came from regional accumulation
+    // (collectRegionTones).  buildTones / status-bar inputs default to false
+    // and fall back to legacy single-bass scoring.
+    bool jointScoringEnabled = false;
     for (const ChordAnalysisTone& t : tones) {
-        if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
-            lowestQualifyingPitch = t.pitch;
-        }
-    }
-    const int lowestPitchForBass = (lowestQualifyingPitch < std::numeric_limits<int>::max())
-                                   ? lowestQualifyingPitch : lowestPitch;
-    const int bassPc  = normalizePc(lowestPitchForBass);
-    int       bassTpc = -1;
-    for (const ChordAnalysisTone& t : tones) {
-        if (t.pitch == lowestPitchForBass && t.tpc >= 0) {
-            bassTpc = t.tpc;
+        if (t.onsetAtRegionStart || t.distinctMetricPositions > 0) {
+            jointScoringEnabled = true;
             break;
         }
     }
+
+    struct BassCandidate {
+        int pitch = std::numeric_limits<int>::max();
+        int pc = -1;
+        int tpc = -1;
+        bool onsetAtRegionStart = false;
+    };
+    std::vector<BassCandidate> bassCandidates;
+    if (jointScoringEnabled) {
+        // Scan tones in the bass register (lowest pitch + one octave) for
+        // multi-bass enumeration candidates.  The actual enumeration only
+        // fires when there is musical evidence that the bass voice moves
+        // within the region — at least one candidate with onsetAtRegionStart
+        // = true AND at least one with onsetAtRegionStart = false.  This
+        // distinguishes the bwv103.6 m3 b2 scenario (bass voice has G at
+        // start, F# mid-region) from a static SATB / Jazz voicing where the
+        // bass and upper voices all attack at the region start (one bass
+        // candidate, no enumeration).
+        const int bassRegisterCutoff = (lowestPitch != std::numeric_limits<int>::max())
+                                       ? lowestPitch + 12
+                                       : std::numeric_limits<int>::max();
+        std::array<int, 12> bestPitchPerPc;
+        std::array<int, 12> tpcPerPc;
+        std::array<bool, 12> onsetPerPc;
+        bestPitchPerPc.fill(std::numeric_limits<int>::max());
+        tpcPerPc.fill(-1);
+        onsetPerPc.fill(false);
+        for (const ChordAnalysisTone& t : tones) {
+            if (t.pitch > bassRegisterCutoff) { continue; }
+            if (t.weight < bassMinWeight)      { continue; }
+            const int pc = normalizePc(t.pitch);
+            const size_t pcIdx = static_cast<size_t>(pc);
+            if (t.pitch < bestPitchPerPc[pcIdx]) {
+                bestPitchPerPc[pcIdx] = t.pitch;
+                tpcPerPc[pcIdx]       = t.tpc;
+            }
+            if (t.onsetAtRegionStart) {
+                onsetPerPc[pcIdx] = true;
+            }
+        }
+        std::vector<BassCandidate> regionalCandidates;
+        for (int pc = 0; pc < 12; ++pc) {
+            const size_t pcIdx = static_cast<size_t>(pc);
+            if (bestPitchPerPc[pcIdx] != std::numeric_limits<int>::max()) {
+                regionalCandidates.push_back({ bestPitchPerPc[pcIdx], pc,
+                                               tpcPerPc[pcIdx], onsetPerPc[pcIdx] });
+            }
+        }
+        std::sort(regionalCandidates.begin(), regionalCandidates.end(),
+                  [](const BassCandidate& a, const BassCandidate& b) { return a.pitch < b.pitch; });
+        bool hasOnsetTrue  = false;
+        bool hasOnsetFalse = false;
+        for (const auto& rc : regionalCandidates) {
+            if (rc.onsetAtRegionStart) { hasOnsetTrue = true; }
+            else                       { hasOnsetFalse = true; }
+        }
+        if (hasOnsetTrue && hasOnsetFalse) {
+            bassCandidates = std::move(regionalCandidates);
+            if (bassCandidates.size() > 4) {
+                bassCandidates.resize(4);
+            }
+        }
+    }
+    // Legacy single-bass fallback (used when joint enumeration declines to fire
+    // or when the weight filter eliminated every candidate).
+    if (bassCandidates.empty() && lowestPitch != std::numeric_limits<int>::max()) {
+        int lowestQualifyingPitch = std::numeric_limits<int>::max();
+        for (const ChordAnalysisTone& t : tones) {
+            if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
+                lowestQualifyingPitch = t.pitch;
+            }
+        }
+        const int chosenPitch = (lowestQualifyingPitch < std::numeric_limits<int>::max())
+                                ? lowestQualifyingPitch : lowestPitch;
+        int chosenTpc = -1;
+        bool chosenOnsetAtStart = false;
+        for (const ChordAnalysisTone& t : tones) {
+            if (t.pitch == chosenPitch) {
+                if (t.tpc >= 0) { chosenTpc = t.tpc; }
+                if (t.onsetAtRegionStart) { chosenOnsetAtStart = true; }
+            }
+        }
+        bassCandidates.push_back({ chosenPitch, normalizePc(chosenPitch),
+                                   chosenTpc, chosenOnsetAtStart });
+    }
+
+    // Working bass: defaults to the lowest candidate.  Re-assigned to the winning
+    // bass after joint enumeration runs (see scoring loop below).  Downstream
+    // result-building, post-ranking inversion correction and pedal detection all
+    // consume these as the chosen bass.
+    int bassPc  = bassCandidates.empty() ? 0  : bassCandidates.front().pc;
+    int bassTpc = bassCandidates.empty() ? -1 : bassCandidates.front().tpc;
 
     // TPC lookup: for each pitch class, store the TPC of the first sounding tone
     // that has TPC data.  -1 means no TPC data for that pitch class.
@@ -1747,92 +1954,169 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         int tiePriority;  // template index in the array above; lower = preferred on equal score
     };
 
-    std::vector<RawCandidate> rawCandidates;
-    rawCandidates.reserve(12 * templates.size());
-
+    // Iter 92 — joint (bass, chord) scoring.
+    //
+    // For each (rootPc, templateIdx) compute the bass-INDEPENDENT base once.
+    // For each enumerated bass candidate, add the bass-DEPENDENT delta plus
+    // the JOINT terms (w_complete in Step 3a, w_onset / w_passing in 3b,
+    // w_stepIn / w_stepOut in 3c), build full rawCandidates, and track the
+    // global best (rootPc, templateIdx, bassPc) triple.  The winning bass
+    // becomes the working bass for downstream result-building, post-ranking
+    // inversion correction and pedal detection.
+    std::array<std::array<double, 16>, 12> basisIndepMatrix{};
+    std::array<std::array<double, 16>, 12> complexityFactorMatrix{};
+    std::array<std::array<double, 16>, 12> augFactorMatrix{};
     for (int rootPc = 0; rootPc < 12; ++rootPc) {
         for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
             const TemplateDef& tpl = templates[tplIdx];
-            double score = 0.0;
-            const double bassBonus = appliedBassRootBonus(tpl, rootPc, bassPc, pcWeight, prefs);
 
-            score += scoreTemplateTones(tpl, rootPc, pcWeight);
-            score += scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
-            score += dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
-            score += nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
-            score += structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold);
-            score += tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            score += contextualBonuses(tpl, rootPc, bassPc, bassBonus, distinctPcs, pcWeight,
-                                       keyTonicPc, scale,
-                                       prefs, context);
+            basisIndepMatrix[rootPc][tplIdx] =
+                scoreTemplateTones(tpl, rootPc, pcWeight)
+                + scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc)
+                + dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold)
+                + structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold)
+                + tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs)
+                + bassIndependentContextualBonuses(tpl, rootPc, keyTonicPc, scale, prefs, context);
 
-            // Iter 74 Fix A — template complexity preference.
-            // When the region provides fewer distinct PCs than half the
-            // template defines, the template is asserting many unstated
-            // tones. Apply a proportional penalty so the simpler template
-            // (root + minor third) outranks a richer one (root + minor
-            // third + 5th + 7th) on identical thin evidence. SATB chorale
-            // regions and any region with ≥ templateDefinedTones/2 PCs
-            // are unaffected (factor = 1.0).
+            // Iter 74 Fix A — template complexity preference (bass-independent).
             const int templateDefinedTones = static_cast<int>(tpl.intervals.size());
             const double evidenceRatio
                 = (distinctPcs >= templateDefinedTones)
                 ? 1.0
                 : static_cast<double>(distinctPcs) / templateDefinedTones;
-            const double complexityPenaltyFactor
+            complexityFactorMatrix[rootPc][tplIdx]
                 = (evidenceRatio >= 0.5) ? 1.0 : (0.5 + evidenceRatio);
-            score *= complexityPenaltyFactor;
 
-            // Iter 78 Fix C — thin-evidence augmented templates require their
-            // root to actually sound.  The augmented triad is symmetric (three
-            // stacked major thirds), so any two notes a major third apart match
-            // three different augmented roots equally well.  A root-absent match
-            // on only two distinct pitch classes — e.g. {G,B} scored as Eb+ when
-            // no Eb sounds — is pure guesswork and routinely edges out a
-            // root-present major/minor reading by a thin margin (Corelli
-            // op01n08d m6 b3: Eb+/G 2.46 vs G 2.40).  Restricted to
-            // distinctPcs <= 2: a complete (3-PC) augmented triad always has its
-            // own root present regardless of which symmetric root is chosen, so
-            // this gate never fires on a genuine augmented chord and leaves the
-            // dense Baroque corpus (3-4 PC SATB regions) untouched.
+            // Iter 78 Fix C + Iter 79 — augmented bare-root / thin-evidence
+            // penalties (both bass-independent).
+            double augFactor = 1.0;
             if (tpl.quality == ChordQuality::Augmented
                 && distinctPcs <= 2
                 && pcWeight[static_cast<size_t>(rootPc)] <= prefs.extensionThreshold) {
-                score *= 0.5;
+                augFactor *= 0.5;
             }
-
-            // Iter 79 — augmented templates supported by their root alone.
-            // Fix C above covers the distinctPcs <= 2 root-absent case, but an
-            // augmented candidate can also win in a denser region (distinctPcs
-            // >= 3) when only its root sounds and the other present pitch
-            // classes belong to a different chord — bach_chorale_003 tick 6240:
-            // pitch set {F,A,C} (a rootless Dm7 / clean F major) was read as
-            // C+/E although C+'s 3rd (E) and 5th (G#) are both absent.  An
-            // augmented triad with both defining upper tones missing is
-            // unsupported guesswork; penalise it so a root-present triad that
-            // actually covers the pitch set wins.  A genuine augmented chord
-            // has all three tones present and is never affected.  The seventh
-            // check keeps an augmented-seventh reading (e.g. C#7#5 — augmented
-            // triad template plus a detected minor 7th) intact: a sounding 7th
-            // is real evidence breaking the bare-root symmetry, so the gate
-            // only fires when literally nothing but the root is present.  This
-            // gate is disjoint from Fix C (a root-absent 2-PC match a major
-            // third apart has both its 3rd and 5th present).
             if (tpl.quality == ChordQuality::Augmented) {
-                const double thirdW   = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
-                const double fifthW   = pcWeight[static_cast<size_t>((rootPc + 8) % 12)];
-                const double min7W    = pcWeight[static_cast<size_t>((rootPc + 10) % 12)];
-                const double maj7W    = pcWeight[static_cast<size_t>((rootPc + 11) % 12)];
+                const double thirdW = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
+                const double fifthW = pcWeight[static_cast<size_t>((rootPc + 8) % 12)];
+                const double min7W  = pcWeight[static_cast<size_t>((rootPc + 10) % 12)];
+                const double maj7W  = pcWeight[static_cast<size_t>((rootPc + 11) % 12)];
                 if (thirdW <= prefs.extensionThreshold
                     && fifthW <= prefs.extensionThreshold
                     && min7W <= prefs.extensionThreshold
                     && maj7W <= prefs.extensionThreshold) {
-                    score *= 0.5;
+                    augFactor *= 0.5;
                 }
             }
+            augFactorMatrix[rootPc][tplIdx] = augFactor;
+        }
+    }
 
-            rawCandidates.push_back({ score, bassBonus, rootPc, tpl.quality,
-                                      static_cast<int>(tplIdx) });
+    // Iter 92 Step 3a — w_complete.
+    //
+    // When the candidate root equals the bass, all three triad tones are
+    // present above extensionThreshold, and the region has exactly 3 distinct
+    // pitch classes, promote the root-position triad by w_complete.  This
+    // unblocks the Em/C → C major flip (bwv310 m8 b3, Bug 2) without
+    // promoting slash-chord candidates that are missing a triad tone (the
+    // Iter 90 regression mode).  Gated on jointScoringEnabled so single-tick
+    // (status-bar / unit test) inputs preserve their pre-Iter-92 scores.
+    static constexpr double kWComplete = 0.50;
+    auto wCompleteBonus = [&](const TemplateDef& tpl, int rootPc, int candBassPc) -> double {
+        if (!jointScoringEnabled || candBassPc != rootPc || distinctPcs != 3) {
+            return 0.0;
+        }
+        const double thr = prefs.extensionThreshold;
+        int thirdInterval = -1;
+        int fifthInterval = -1;
+        switch (tpl.quality) {
+        case ChordQuality::Major:      thirdInterval = 4; fifthInterval = 7; break;
+        case ChordQuality::Minor:      thirdInterval = 3; fifthInterval = 7; break;
+        case ChordQuality::Diminished: thirdInterval = 3; fifthInterval = 6; break;
+        case ChordQuality::Augmented:  thirdInterval = 4; fifthInterval = 8; break;
+        default:                       return 0.0;  // gate only fires for plain triads
+        }
+        const double rootW  = pcWeight[static_cast<size_t>(rootPc)];
+        const double thirdW = pcWeight[static_cast<size_t>((rootPc + thirdInterval) % 12)];
+        const double fifthW = pcWeight[static_cast<size_t>((rootPc + fifthInterval) % 12)];
+        // "Present" = above the distinctPcs gate (0.05), matching how the rest
+        // of the analyzer defines a sounding tone.  This avoids the floating-
+        // point boundary at exactly extensionThreshold (bwv310 m8 b3 has C and
+        // G with pcWeight that prints as 0.200 but rounds slightly below in
+        // double).  Iter-90's regression mode (slash chord with missing fifth)
+        // is still excluded — an absent tone gives pcWeight = 0.  `thr` is
+        // accepted into the API for a future tightening pass.
+        (void)thr;
+        constexpr double kPresenceThreshold = 0.05;
+        const bool allTriadPresent = (rootW > kPresenceThreshold)
+                                  && (thirdW > kPresenceThreshold)
+                                  && (fifthW > kPresenceThreshold);
+        return allTriadPresent ? kWComplete : 0.0;
+    };
+
+    // Iter 92 Step 3b — w_onset / w_passing (NOT enabled in this iteration).
+    //
+    // Design: bias bass-candidate selection toward tones that attack at the
+    // region's startTick (beat-onset bass: +0.15) and away from tones that
+    // attack mid-region (passing-tone bass: -0.10).  Closes Bug 1 conceptually.
+    //
+    // Disabled because applying the bonus at SUB-region scope (which is the
+    // only granularity batch_analyze currently calls analyzeChord at) produces
+    // BIR=false regressions in both Baroque (+6) and Jazz (+3): sub-regions
+    // boundaries align with note onsets, so every tone tends to be
+    // "onsetAtRegionStart=true" at some sub-region.  The post-merge
+    // analyzeChord re-invocation needed to apply this signal at full-region
+    // scope is out of scope for Iter 92 and is queued as Iter 93.
+
+    // Iter 92 Step 3c — w_stepIn / w_stepOut (NOT enabled in this iteration).
+    //
+    // Design: reward bass candidates that participate in stepwise motion from
+    // the previous region's bass and/or to the next region's bass.  Same
+    // sub-region-scope regression mode as Step 3b — Baroque BIR=false +5
+    // when applied to sub-region analyzeChord calls.  Queued behind the
+    // full-region analyzeChord re-invocation work (Iter 93).
+
+    // Build per-bass-candidate rawCandidates; pick the global winner.
+    std::vector<RawCandidate> rawCandidates;
+    rawCandidates.reserve(12 * templates.size());
+    {
+        double globalBestScore = -std::numeric_limits<double>::infinity();
+        std::vector<RawCandidate> bestPerBassCandidates;
+        size_t winnerIdx = 0;
+        for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
+            const int candBassPc = bassCandidates[bi].pc;
+            std::vector<RawCandidate> perBass;
+            perBass.reserve(12 * templates.size());
+            double localBest = -std::numeric_limits<double>::infinity();
+            for (int rootPc = 0; rootPc < 12; ++rootPc) {
+                for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
+                    const TemplateDef& tpl = templates[tplIdx];
+                    const double bassBonus = appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
+                    const double basisDep =
+                        nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
+                        + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
+                                                         distinctPcs, pcWeight, prefs, context);
+                    double score = basisIndepMatrix[rootPc][tplIdx] + basisDep;
+                    score *= complexityFactorMatrix[rootPc][tplIdx];
+                    score *= augFactorMatrix[rootPc][tplIdx];
+                    score += wCompleteBonus(tpl, rootPc, candBassPc);
+
+                    perBass.push_back({ score, bassBonus, rootPc, tpl.quality,
+                                        static_cast<int>(tplIdx) });
+                    if (score > localBest) {
+                        localBest = score;
+                    }
+                }
+            }
+            if (localBest > globalBestScore) {
+                globalBestScore = localBest;
+                bestPerBassCandidates = std::move(perBass);
+                winnerIdx = bi;
+            }
+        }
+        rawCandidates = std::move(bestPerBassCandidates);
+        if (!bassCandidates.empty()) {
+            bassPc  = bassCandidates[winnerIdx].pc;
+            bassTpc = bassCandidates[winnerIdx].tpc;
         }
     }
 
@@ -1911,7 +2195,10 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     }
                 }
                 if (isAug) {
-                    rootPc = normalizePc(lowestPitch);
+                    // Iter 92 — use the joint-winner bass instead of the absolute
+                    // lowest pitch. The two could disagree when the joint pass
+                    // picks an octave-up bass-register candidate as the winner.
+                    rootPc = bassPc;
                 }
             }
         }
@@ -2589,6 +2876,47 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             && isPlainTriad
             && pcWeight[static_cast<size_t>(bassPc)] > prefs.extensionThreshold) {
             setExtension(winner.identity.extensions, Extension::MinorSeventh);
+        }
+    }
+
+    // ── Iter 91 — bass-as-root promotion (forward-context gated) ─────────────
+    // When the winner is a Major/Minor plain-triad slash chord and the bass
+    // sits a third (m3 or M3) above the root — Patterns A and B from the
+    // iii/III ambiguity study (docs/iter90_bass_as_root_promotion_shelved.md):
+    //   Pattern A: bassPc - rootPc ≡ 8 (mod 12), winner Minor — e.g. Em/C → C
+    //   Pattern B: bassPc - rootPc ≡ 9 (mod 12), winner Major — e.g. C/A  → Am
+    // promote the bass-rooted reading IF the following region's inferred
+    // root equals the current bass (context->nextRootPc == bassPc).  That
+    // forward resolution is the structural signal that the current bass is
+    // the chord root, not the third of an iii/III triad.  previousRootPc was
+    // deliberately omitted — it fired too broadly on genuine I → I6
+    // progressions where the previous chord shares the iii/III root.
+    if (!results.empty()
+        && bassPc >= 0
+        && context != nullptr
+        && context->nextRootPc != -1
+        && context->nextRootPc == bassPc) {
+        ChordAnalysisResult& winner = results.front();
+        const ChordQuality q = winner.identity.quality;
+        const int rPc        = winner.identity.rootPc;
+        const int delta      = (bassPc - rPc + 12) % 12;
+        const bool patternA  = (delta == 8) && (q == ChordQuality::Minor);
+        const bool patternB  = (delta == 9) && (q == ChordQuality::Major);
+        const bool isPlainTriad = !hasExtension(winner.identity.extensions, Extension::MinorSeventh)
+                                  && !hasExtension(winner.identity.extensions, Extension::MajorSeventh);
+        if ((patternA || patternB) && (bassPc != rPc) && isPlainTriad) {
+            // Find the bass-rooted candidate in rawCandidates (the top-3 results[]
+            // cap is routinely exhausted by same-rootPc variants of the iii/III
+            // reading; the bass-rooted target often lives only in rawCandidates).
+            for (const RawCandidate& rc : rawCandidates) {
+                if (rc.rootPc != bassPc) continue;
+                // Append a built result for the bass-rooted candidate and swap
+                // it into the winner slot (same swap pattern as the FM2 fallback
+                // at the start of the inversion-correction block, line ~2189).
+                results.push_back(buildResult(rc));
+                std::swap(results[0], results.back());
+                break;
+            }
         }
     }
 

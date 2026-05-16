@@ -3460,14 +3460,14 @@
         {
             "alternatives": [
                 {
+                    "quality": "minor",
+                    "root": "F",
+                    "score": 3.42
+                },
+                {
                     "quality": "major",
                     "root": "Db",
                     "score": 2.57
-                },
-                {
-                    "quality": "minor",
-                    "root": "F",
-                    "score": 2.22
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -3486,12 +3486,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 3.42
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 3.42
                 },
                 {
                     "quality": "augmented",
@@ -3532,14 +3532,14 @@
         {
             "alternatives": [
                 {
+                    "quality": "minor",
+                    "root": "F",
+                    "score": 3.42
+                },
+                {
                     "quality": "major",
                     "root": "Db",
                     "score": 2.57
-                },
-                {
-                    "quality": "minor",
-                    "root": "F",
-                    "score": 2.22
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -3558,12 +3558,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 3.42
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.92
+                    "score": 3.42
                 },
                 {
                     "quality": "augmented",

@@ -69,6 +69,13 @@ struct ChordAnalysisTone {
     /// at any single tick within the region.  Used by Pass 3 (cross-voice boost)
     /// to reward pitch classes reinforced by multiple voices at once.
     int simultaneousVoiceCount = 0;
+
+    /// True when this tone has at least one attack at the region's startTick.
+    /// Used by Iter 92 joint (bass, chord) scoring to distinguish beat-onset
+    /// bass candidates from passing-tone mid-region bass candidates.
+    /// Set by collectRegionTones; left at the default false on single-segment
+    /// tone-collection paths (status-bar analysis).
+    bool onsetAtRegionStart = false;
 };
 
 inline void normalizeMergedBassTone(std::vector<ChordAnalysisTone>& tones)
@@ -112,6 +119,9 @@ inline void mergeChordAnalysisTones(std::vector<ChordAnalysisTone>& existingTone
         mergedTone->distinctMetricPositions += newTone.distinctMetricPositions;
         if (newTone.simultaneousVoiceCount > mergedTone->simultaneousVoiceCount) {
             mergedTone->simultaneousVoiceCount = newTone.simultaneousVoiceCount;
+        }
+        if (newTone.onsetAtRegionStart) {
+            mergedTone->onsetAtRegionStart = true;
         }
         if (newTone.pitch < mergedTone->pitch) {
             mergedTone->pitch = newTone.pitch;
@@ -536,6 +546,12 @@ struct ChordTemporalContext {
     /// True if the current region's bass note is one diatonic step
     /// above or below the next region's bass note.
     bool bassIsStepwiseToNext = false;
+
+    /// Bass pitch class of the next harmonic region (-1 if unknown).
+    /// Iter 92: separated from bassIsStepwiseToNext so the joint scoring pass
+    /// can compute step-out plausibility against any candidate bass, not just
+    /// the bass that was committed before the analyzer ran.
+    int nextBassPc = -1;
 
     /// Inferred root pitch class of the next harmonic region; -1 if unknown.
     /// Populated by batch_analyze via a one-region look-ahead analyzeChord call.

@@ -872,6 +872,11 @@ collectRegionTones(const mu::engraving::Score* sc,
         std::set<int> metricTicks;      // distinct attack ticks (one per segment)
         int lowestPitch = std::numeric_limits<int>::max();
         int tpc = -1;
+        // Iter 92: true if this PC has a TRUE forward-walk attack at startTickInt.
+        // Sustained-from-before notes do NOT set this flag (they have no attack
+        // within the region; their start-tick presence comes from the backward
+        // walk and is recorded only in metricTicks for repetition counting).
+        bool trueAttackAtStart = false;
     };
     PcAccum accum[12];
 
@@ -1052,6 +1057,9 @@ collectRegionTones(const mu::engraving::Score* sc,
                     a.durationInRegion += durInRegion;
                     a.metricTicks.insert(segTickInt);
                     voiceCountAtTick[pc][segTickInt]++;
+                    if (segTickInt == startTickInt) {
+                        a.trueAttackAtStart = true;
+                    }
 
                     if (n->ppitch() < a.lowestPitch) {
                         a.lowestPitch = n->ppitch();
@@ -1173,6 +1181,7 @@ collectRegionTones(const mu::engraving::Score* sc,
         t.durationInRegion       = a.durationInRegion;
         t.distinctMetricPositions = static_cast<int>(a.metricTicks.size());
         t.simultaneousVoiceCount = maxVoices;
+        t.onsetAtRegionStart     = a.trueAttackAtStart;
         tones.push_back(t);
     }
 
