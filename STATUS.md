@@ -26,9 +26,16 @@
   — intentional opt-in, not a failure)
 - Chord mismatch report: 4 RealDiff (pinned baseline), 127 ConventionDiff (Jazz catalog)
 
-**BIR baselines (Baroque preset, batch path, unchanged since Iter 82):**
-- BIR=true=4, BIR=false=118
-- Jazz BIR=false=7 (Jazz BIR=true=63)
+**BIR baselines (Baroque preset, batch path, re-measured 2026-05-16 under lenient-OR align_regions):**
+- Baroque BIR=true=38, BIR=false=188
+- Jazz BIR=true=103, BIR=false=13
+
+The prior figures (Baroque BIR=true=4 / BIR=false=118, Jazz BIR=false=7) were
+rendered stale by the lenient-OR `align_regions` change in `eefa412b6f` (DCML
+time-overlap comparator). Both `analyze_inversion_errors.py` and the DCML
+comparator share the same `align_regions` helper, so the prior numbers cannot
+be reproduced at HEAD; baselines were re-established at `4cb1bfb274` post-A1
+golden refresh. Use these as the comparison points for any new gate work.
 
 **Iter 90 — shelved (no commit):**
 Bass-as-root promotion for 122 wrong-root cases. Characterization showed 84% of BIR=false=118

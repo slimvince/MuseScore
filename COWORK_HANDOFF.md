@@ -39,7 +39,12 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
 - **Pipeline snapshot tests:** 11 passed / 1 skipped (skip = `PipelineDivergenceCObservation.
   GenerateReport`, intentional opt-in)
-- **BIR baselines:** BIR=true=4, BIR=false=118, Jazz BIR=false=7 (unchanged since Iter 82)
+- **BIR baselines (re-measured 2026-05-16 under lenient-OR `align_regions`):**
+  Baroque BIR=true=38, BIR=false=188; Jazz BIR=true=103, BIR=false=13.
+  Prior figures (4/118/7) were rendered stale by the lenient-OR alignment
+  change in `eefa412b6f` (DCML time-overlap comparator) — both
+  `analyze_inversion_errors.py` and the DCML comparator share the same
+  `align_regions` helper, so the old numbers cannot be reproduced at HEAD.
 - **Chord mismatch report:** 4 RealDiff (pinned), 127 ConventionDiff (Jazz)
 
 ---
@@ -126,7 +131,8 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Current state:** Branch `master`, HEAD `4cb1bfb274` (last code commit: `eefa412b6f` — DCML time-overlap comparator;
 > prior: Iter 89 pc=8 G#/Ab fix at `2085f11322`).
 > Baselines: 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not
-> regress), pipeline_snapshot 11 passed / 1 skipped, BIR=true=4, BIR=false=118, Jazz BIR=false=7.
+> regress), pipeline_snapshot 11 passed / 1 skipped, Baroque BIR=true=38, BIR=false=188,
+> Jazz BIR=true=103, BIR=false=13 (re-measured 2026-05-16 under lenient-OR `align_regions`).
 
 This preamble goes before EVERY task description, no exceptions.
 
