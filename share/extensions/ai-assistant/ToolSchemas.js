@@ -10,101 +10,6 @@
 // NOTE: kept without `.pragma library` for consistency with the other modules
 // — none of them are library-mode (see ScoreAccess.js for why).
 
-// Core, provider-neutral definitions.
-var CORE = [
-    {
-        name: "get_score_info",
-        description:
-            "Returns basic metadata about the open score: title, composer, lyricist, " +
-            "copyright, subtitle, measure count, duration (seconds), initial key/time/tempo, " +
-            "and the list of parts (instruments). Use this when the user asks about the score " +
-            "in general terms (\"what is this piece?\", \"who composed it?\", \"how long is it?\").",
-        parameters: {
-            type: "object",
-            properties: {},
-            required: []
-        }
-    },
-    {
-        name: "get_structure",
-        description:
-            "Returns a per-measure structural snapshot covering the requested range. For each " +
-            "measure, reports any change in key signature, time signature, tempo marking, or " +
-            "rehearsal mark. Use this to find a specific section (\"where does the B section start?\"), " +
-            "to list rehearsal letters, or to detect tempo/key changes. Measures are 1-based. " +
-            "Both bounds are optional — default is the whole score.",
-        parameters: {
-            type: "object",
-            properties: {
-                startMeasure: { type: "integer", description: "First measure (1-based, inclusive). Default: 1." },
-                endMeasure:   { type: "integer", description: "Last measure (1-based, inclusive). Default: last measure." }
-            },
-            required: []
-        }
-    },
-    {
-        name: "add_rehearsal_mark",
-        description:
-            "Inserts a rehearsal mark at the start of the given measure. The change is undoable " +
-            "with Ctrl+Z. Use this when the user asks to label a section (\"add rehearsal mark A " +
-            "at bar 17\", \"mark the chorus\").",
-        parameters: {
-            type: "object",
-            properties: {
-                measure: { type: "integer", description: "Measure number, 1-based." },
-                text:    { type: "string",  description: "Rehearsal mark text, e.g. \"A\", \"B\", \"Verse\", \"Chorus\"." }
-            },
-            required: ["measure", "text"]
-        }
-    },
-    {
-        name: "get_notes_in_range",
-        description:
-            "Returns all notes and rests in the given measure range. Optional filters narrow by " +
-            "instrument (part name as in the score), staff (1-based within instrument), or voice " +
-            "(1–4). Use this tool to read actual pitches and rhythms in the score.",
-        parameters: {
-            type: "object",
-            properties: {
-                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
-                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
-                instrument:   { type: "string",  description: "Part name as it appears in the score; omit for all instruments." },
-                staff:        { type: "integer", description: "1-based staff index within the instrument (e.g. piano treble=1, bass=2); omit for all staves." },
-                voice:        { type: "integer", description: "Voice number 1–4; omit for all voices." }
-            },
-            required: ["startMeasure", "endMeasure"]
-        }
-    },
-    {
-        name: "get_harmony_in_range",
-        description:
-            "Returns all chord symbols (harmony markings) in the given measure range.",
-        parameters: {
-            type: "object",
-            properties: {
-                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
-                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." }
-            },
-            required: ["startMeasure", "endMeasure"]
-        }
-    },
-    {
-        name: "get_lyrics_in_range",
-        description:
-            "Returns all lyrics in the given measure range, with syllabic type " +
-            "(single/begin/middle/end) and verse number.",
-        parameters: {
-            type: "object",
-            properties: {
-                startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
-                endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
-                instrument:   { type: "string",  description: "Part name as in the score; omit for all instruments." }
-            },
-            required: ["startMeasure", "endMeasure"]
-        }
-    }
-]
-
 // Anthropic format: top-level array of { name, description, input_schema }.
 function _toAnthropic(t) {
     return { name: t.name, description: t.description, input_schema: t.parameters }
@@ -129,12 +34,110 @@ function _toGemini(t) {
 }
 
 function getToolSchemas(providerFormat) {
+    // CORE lives inside this function (not at module level) because QML's JS
+    // import scope does not reliably initialise module-level `var` arrays
+    // before the first call site — moving it in here forces evaluation at
+    // call time, which is when `api`/`curScore` are also reachable.
+    var CORE = [
+        {
+            name: "get_score_info",
+            description:
+                "Returns basic metadata about the open score: title, composer, lyricist, " +
+                "copyright, subtitle, measure count, duration (seconds), initial key/time/tempo, " +
+                "and the list of parts (instruments). Use this when the user asks about the score " +
+                "in general terms (\"what is this piece?\", \"who composed it?\", \"how long is it?\").",
+            parameters: {
+                type: "object",
+                properties: {},
+                required: []
+            }
+        },
+        {
+            name: "get_structure",
+            description:
+                "Returns a per-measure structural snapshot covering the requested range. For each " +
+                "measure, reports any change in key signature, time signature, tempo marking, or " +
+                "rehearsal mark. Use this to find a specific section (\"where does the B section start?\"), " +
+                "to list rehearsal letters, or to detect tempo/key changes. Measures are 1-based. " +
+                "Both bounds are optional — default is the whole score.",
+            parameters: {
+                type: "object",
+                properties: {
+                    startMeasure: { type: "integer", description: "First measure (1-based, inclusive). Default: 1." },
+                    endMeasure:   { type: "integer", description: "Last measure (1-based, inclusive). Default: last measure." }
+                },
+                required: []
+            }
+        },
+        {
+            name: "add_rehearsal_mark",
+            description:
+                "Inserts a rehearsal mark at the start of the given measure. The change is undoable " +
+                "with Ctrl+Z. Use this when the user asks to label a section (\"add rehearsal mark A " +
+                "at bar 17\", \"mark the chorus\").",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "Measure number, 1-based." },
+                    text:    { type: "string",  description: "Rehearsal mark text, e.g. \"A\", \"B\", \"Verse\", \"Chorus\"." }
+                },
+                required: ["measure", "text"]
+            }
+        },
+        {
+            name: "get_notes_in_range",
+            description:
+                "Returns all notes and rests in the given measure range. Optional filters narrow by " +
+                "instrument (part name as in the score), staff (1-based within instrument), or voice " +
+                "(1–4). Use this tool to read actual pitches and rhythms in the score.",
+            parameters: {
+                type: "object",
+                properties: {
+                    startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                    endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
+                    instrument:   { type: "string",  description: "Part name as it appears in the score; omit for all instruments." },
+                    staff:        { type: "integer", description: "1-based staff index within the instrument (e.g. piano treble=1, bass=2); omit for all staves." },
+                    voice:        { type: "integer", description: "Voice number 1–4; omit for all voices." }
+                },
+                required: ["startMeasure", "endMeasure"]
+            }
+        },
+        {
+            name: "get_harmony_in_range",
+            description:
+                "Returns all chord symbols (harmony markings) in the given measure range.",
+            parameters: {
+                type: "object",
+                properties: {
+                    startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                    endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." }
+                },
+                required: ["startMeasure", "endMeasure"]
+            }
+        },
+        {
+            name: "get_lyrics_in_range",
+            description:
+                "Returns all lyrics in the given measure range, with syllabic type " +
+                "(single/begin/middle/end) and verse number.",
+            parameters: {
+                type: "object",
+                properties: {
+                    startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                    endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
+                    instrument:   { type: "string",  description: "Part name as in the score; omit for all instruments." }
+                },
+                required: ["startMeasure", "endMeasure"]
+            }
+        }
+    ]
+
     var out = []
     for (var i = 0; i < CORE.length; i++) {
         var t = CORE[i]
-        if (providerFormat === "anthropic")    out.push(_toAnthropic(t))
-        else if (providerFormat === "gemini")  out.push(_toGemini(t))
-        else                                   out.push(_toOpenAI(t))   // openai + custom
+        if      (providerFormat === "anthropic") out.push(_toAnthropic(t))
+        else if (providerFormat === "gemini")    out.push(_toGemini(t))
+        else                                     out.push(_toOpenAI(t))   // openai + custom
     }
     return out
 }
