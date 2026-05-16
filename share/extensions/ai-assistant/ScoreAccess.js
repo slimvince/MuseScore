@@ -862,14 +862,14 @@ function _rangeCmdWrite(cmdLabel, cmdStr,
     var s0 = startStaff - 1   // inclusive, 0-based
     var s1 = endStaff         // exclusive, 0-based
 
+    // NO startCmd/endCmd here: api.engraving.cmd() handlers run
+    // prepareChanges/commitChanges internally, and those become no-ops while
+    // the undo stack is locked by an outer startCmd — the cmd silently drops.
     try {
-        s.startCmd(cmdLabel)
         s.selection.selectRange(startTick, endTick, s0, s1)
         api.engraving.cmd(cmdStr)
-        s.endCmd()
         return { ok: true }
     } catch(e) {
-        try { s.endCmd(true) } catch(ee) {}
         return { error: cmdLabel + " failed: " + e }
     }
 }
@@ -926,8 +926,10 @@ function insertMeasures(afterMeasure, count) {
     }
     var tick = m ? _getTickInt(m.firstSegment.tick) : -1
 
+    // NO startCmd/endCmd: each cmd("insert-measure") manages its own undo
+    // entry. Wrapping locks the stack and makes the inner commits no-op.
+    // Trade-off: count>1 produces N undo steps instead of one.
     try {
-        s.startCmd("insert measures")
         if (tick >= 0) {
             var c = s.newCursor()
             c.track = 0
@@ -936,10 +938,8 @@ function insertMeasures(afterMeasure, count) {
         for (var i = 0; i < count; i++) {
             api.engraving.cmd("insert-measure")
         }
-        s.endCmd()
         return { ok: true, inserted: count, afterMeasure: afterMeasure }
     } catch(e) {
-        try { s.endCmd(true) } catch(ee) {}
         return { error: "insertMeasures failed: " + e }
     }
 }
@@ -977,14 +977,12 @@ function deleteMeasure(measureNo) {
         ? _getTickInt(m.nextMeasure.firstSegment.tick)
         : _getTickInt(m.lastSegment.tick) + 1
 
+    // NO startCmd/endCmd: cmd("time-delete") owns its undo entry.
     try {
-        s.startCmd("delete measure")
         s.selection.selectRange(startTick, endTick, 0, s.nstaves)
         api.engraving.cmd("time-delete")
-        s.endCmd()
         return { ok: true, deletedMeasure: measureNo }
     } catch(e) {
-        try { s.endCmd(true) } catch(ee) {}
         return { error: "deleteMeasure failed: " + e }
     }
 }
