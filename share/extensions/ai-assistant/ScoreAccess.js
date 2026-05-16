@@ -696,8 +696,12 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
         var d = api.engraving.newElement(api.engraving.Element.DYNAMIC)
-        c.add(d)                  // real-parent FIRST
-        d.dynamicType = dynType   // THEN set properties
+        // EXCEPTION to the add-first-then-set pattern: dynamicType determines
+        // which element variant the engraving layer commits, so it must be
+        // set BEFORE c.add(). Setting it after produces a hairpin pair instead
+        // of the requested glyph (and only the first call works).
+        d.dynamicType = dynType
+        c.add(d)
         s.endCmd()
         var res = { ok: true, measure: measureNo, beat: beat, dynamic: dynamic }
         if (fellBack) res.note = "Unknown dynamic '" + dynamic + "'; fell back to mf"
@@ -969,12 +973,9 @@ function deleteMeasure(measureNo) {
     if (!m) return { error: "Measure " + measureNo + " not found" }
 
     var startTick = _getTickInt(m.firstSegment.tick)
-    var endTick
-    if (m.nextMeasure) {
-        endTick = _getTickInt(m.nextMeasure.firstSegment.tick) - 1
-    } else {
-        endTick = _getTickInt(m.lastSegment.tick) + 1
-    }
+    var endTick = m.nextMeasure
+        ? _getTickInt(m.nextMeasure.firstSegment.tick)
+        : _getTickInt(m.lastSegment.tick) + 1
 
     try {
         s.startCmd("delete measure")
@@ -988,21 +989,32 @@ function deleteMeasure(measureNo) {
     }
 }
 
-// Helper for breaks: select the full measure across all staves, then cmd().
-function _measureBreakCmd(cmdLabel, cmdStr, measureNo) {
+// Helper for breaks: construct a LayoutBreak element directly and attach it
+// to the measure via Cursor::add. The cursor's add() routes LAYOUT_BREAK to
+// MeasureBase::addInternal(_segment->measure(), ...), so any segment within
+// the measure works. layoutBreakType MUST be set BEFORE c.add() — the engraving
+// layer uses it to determine the element's identity at insertion time (same
+// constraint as Dynamic::dynamicType).
+//
+// Replaces the previous selectRange+cmd("section-break")/cmd("system-break")
+// approach, which crashed MuseScore. Cmd strings "section-break" and
+// "system-break" ARE registered (notationactioncontroller.cpp:268,272) but the
+// handler path interacts badly with plugin-side startCmd/endCmd wrapping.
+function _addLayoutBreak(cmdLabel, layoutBreakType, measureNo) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var m = _findMeasure(measureNo)
     if (!m) return { error: "Measure " + measureNo + " not found" }
-    var startTick = _getTickInt(m.firstSegment.tick)
-    var endTick = m.nextMeasure
-        ? _getTickInt(m.nextMeasure.firstSegment.tick) - 1
-        : _getTickInt(m.lastSegment.tick) + 1
+    var tickInt = _getTickInt(m.firstSegment.tick)
 
     try {
         s.startCmd(cmdLabel)
-        s.selection.selectRange(startTick, endTick, 0, s.nstaves)
-        api.engraving.cmd(cmdStr)
+        var c = s.newCursor()
+        c.track = 0
+        c.rewindToTick(tickInt)
+        var lb = api.engraving.newElement(api.engraving.Element.LAYOUT_BREAK)
+        lb.layoutBreakType = layoutBreakType
+        c.add(lb)
         s.endCmd()
         return { ok: true, measure: measureNo }
     } catch(e) {
@@ -1011,14 +1023,17 @@ function _measureBreakCmd(cmdLabel, cmdStr, measureNo) {
     }
 }
 
+// LayoutBreakType integer values from src/engraving/types/types.h:412
+// PAGE=0, LINE=1, SECTION=2, NOBREAK=3.
+
 // Section break at end of a measure.
 function addSectionBreak(measureNo) {
-    return _measureBreakCmd("add section break", "section-break", measureNo)
+    return _addLayoutBreak("add section break", 2 /* SECTION */, measureNo)
 }
 
 // System break at end of a measure.
 function addSystemBreak(measureNo) {
-    return _measureBreakCmd("add system break", "system-break", measureNo)
+    return _addLayoutBreak("add system break", 1 /* LINE */, measureNo)
 }
 
 // Set score metadata. Empty/null fields are skipped.
