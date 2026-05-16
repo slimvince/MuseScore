@@ -82,8 +82,10 @@ function _firstRehearsalMarkInMeasure(measure) {
 function _findMeasureByNumber(score, n) {
     if (!score || typeof n !== "number" || n < 1) return null
     var m = score.firstMeasure
+    var idx = 1
     while (m) {
-        if (m.measureNumber === n) return m
+        if (idx === n) return m
+        idx++
         m = m.nextMeasure
     }
     return null
@@ -189,8 +191,9 @@ function getStructure(startMeasure, endMeasure) {
         var lastKeyFifths = null
         var lastTsNum = null, lastTsDen = null
 
+        var idx = 1
         while (m) {
-            var n = m.measureNumber
+            var n = idx
             if (n >= lo && n <= hi) {
                 var entry = {
                     number:        n,
@@ -244,6 +247,7 @@ function getStructure(startMeasure, endMeasure) {
                 out.push(entry)
             }
             if (n > hi) break
+            idx++
             m = m.nextMeasure
         }
         return out
@@ -275,7 +279,14 @@ function addRehearsalMark(measureNo, text) {
         // rewindToFraction(Fraction). The Fraction object has a .ticks property
         // exposing the int form. Use rewindToTick for consistency with the
         // documented pattern in api_write.md.
-        var tickInt = (m.tick && typeof m.tick.ticks === "number") ? m.tick.ticks : 0
+        var tickInt = 0
+        if (typeof m.tick === "number") {
+            tickInt = m.tick
+        } else if (m.tick && typeof m.tick.ticks === "number") {
+            tickInt = m.tick.ticks
+        } else {
+            try { tickInt = m.firstSegment.tick } catch(e) {}
+        }
         c.rewindToTick(tickInt)
 
         var rm = api.engraving.newElement(api.engraving.Element.REHEARSAL_MARK)
