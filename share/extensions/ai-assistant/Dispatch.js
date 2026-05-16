@@ -26,9 +26,12 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "add_staff_text")       return scoreAccess.addStaffText(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
         if (name === "add_system_text")      return scoreAccess.addSystemText(a.measure, a.text)
         if (name === "add_harmony")          return scoreAccess.addHarmony(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
-        if (name === "add_hairpin")          return scoreAccess.addHairpin(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff, a.type)
-        if (name === "add_slur")             return scoreAccess.addSlur(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff)
-        if (name === "add_ottava")           return scoreAccess.addOttava(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff, a.type)
+        // endStaff defaults to startStaff: LLMs frequently omit it on single-staff
+        // spans ("hairpin on staff 1"), and a missing endStaff propagated as
+        // undefined into selectRange silently dropped the cmd.
+        if (name === "add_hairpin")          return scoreAccess.addHairpin(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff || a.startStaff, a.type)
+        if (name === "add_slur")             return scoreAccess.addSlur(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff || a.startStaff)
+        if (name === "add_ottava")           return scoreAccess.addOttava(a.startMeasure, a.startBeat, a.startBeatFraction || "0", a.startStaff, a.endMeasure, a.endBeat, a.endBeatFraction || "0", a.endStaff || a.startStaff, a.type)
         if (name === "insert_measures")      return scoreAccess.insertMeasures(a.afterMeasure, a.count)
         if (name === "append_measures")      return scoreAccess.appendMeasures(a.count)
         if (name === "delete_measure")       return scoreAccess.deleteMeasure(a.measure)

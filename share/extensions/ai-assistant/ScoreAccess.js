@@ -286,7 +286,15 @@ function _barlineTypeStr(typeInt) {
 // representing the sub-beat offset. Returns -1 if the measure is not found.
 //
 // Ticks-per-beat is derived from the time signature denominator at the start
-// of the measure (480 ticks/quarter, beat = whole / denominator).
+// of the measure (curScore.division ticks/quarter, beat = whole / denominator).
+//
+// Returns the exact-match ChordRest segment tick when one exists at the
+// requested position. Falls back to the nearest ChordRest segment within
+// ticksPerBeat/2 of the computed target — handles small rounding mismatches
+// (e.g. beatFraction "1/3" vs actual triplet division) and the common case
+// where a long note covers a later beat with no segment at the beat boundary.
+// Returns the raw computed tick (no nearby ChordRest) when nothing is close
+// enough — callers will then see c.element === null and error appropriately.
 function _posToTick(measureNo, beat, beatFraction) {
     var m = _findMeasure(measureNo)
     if (!m) return -1
@@ -306,6 +314,10 @@ function _posToTick(measureNo, beat, beatFraction) {
         if (!seg) break
     }
     var tpq = 480
+    try {
+        var sc = _score()
+        if (sc && typeof sc.division === "number" && sc.division > 0) tpq = sc.division
+    } catch(e) {}
     var ticksPerBeat = Math.floor(tpq * 4 / tsDen)
     var offset = ((typeof beat === "number" ? beat : 1) - 1) * ticksPerBeat
     var frac = beatFraction || "0"
@@ -317,7 +329,24 @@ function _posToTick(measureNo, beat, beatFraction) {
             if (den > 0) offset += Math.floor(ticksPerBeat * num / den)
         }
     }
-    return mTick + offset
+    var targetTick = mTick + offset
+
+    // Walk ChordRest segments within this measure; prefer exact match, else
+    // return the nearest one within half a beat. SegmentType::ChordRest = 0x2000 (8192).
+    var bestTick = -1
+    var bestDelta = Math.floor(ticksPerBeat / 2) + 1
+    var seg2 = m.firstSegment
+    while (seg2) {
+        if (seg2.segmentType & 8192) {
+            var segTick = _getTickInt(seg2.tick)
+            if (segTick === targetTick) return targetTick
+            var d = segTick > targetTick ? segTick - targetTick : targetTick - segTick
+            if (d < bestDelta) { bestDelta = d; bestTick = segTick }
+        }
+        seg2 = seg2.nextInMeasure ? seg2.nextInMeasure : null
+    }
+    if (bestTick >= 0) return bestTick
+    return targetTick
 }
 
 // ── Public reads ──────────────────────────────────────────────────────────
@@ -788,9 +817,14 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         ppp: 4, pp: 5, p: 6, mp: 7, mf: 8, f: 9, ff: 10, fff: 11,
         fp: 15, sf: 17, sfz: 18, sfp: 23, rfz: 25, fz: 27
     }
-    var dynType = dynamicMap[dynamic]
-    var fellBack = false
-    if (dynType === undefined) { dynType = 8; fellBack = true }
+    // Normalise case — LLM occasionally sends "F" or "MP". Reject unknown
+    // values rather than silently substituting (a silent fallback rendered
+    // the wrong glyph and looked invisible to the user in earlier smoke tests).
+    var dynLc = (typeof dynamic === "string") ? dynamic.toLowerCase() : ""
+    var dynType = dynamicMap[dynLc]
+    if (dynType === undefined) {
+        return { error: "Unknown dynamic '" + dynamic + "'. Valid: " + Object.keys(dynamicMap).join(", ") }
+    }
 
     var tick = _posToTick(measureNo, beat, beatFraction)
     if (tick < 0) return { error: "Measure " + measureNo + " not found" }
@@ -808,9 +842,7 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         d.dynamicType = dynType
         c.add(d)
         s.endCmd()
-        var res = { ok: true, measure: measureNo, beat: beat, dynamic: dynamic }
-        if (fellBack) res.note = "Unknown dynamic '" + dynamic + "'; fell back to mf"
-        return res
+        return { ok: true, measure: measureNo, beat: beat, dynamic: dynLc }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addDynamic failed: " + e }
@@ -894,15 +926,18 @@ function addStaffText(measureNo, beat, beatFraction, staff, text) {
 }
 
 // System text at the start of a measure, track 0 (applies to all staves).
+// Anchors to the first ChordRest segment of the measure — anchoring to
+// `m.firstSegment.tick` lands the cursor on a TimeSig/KeySig segment when
+// the measure begins with one, and cursor.add(SYSTEM_TEXT) silently fails
+// on a non-ChordRest segment.
 function addSystemText(measureNo, text) {
     var s = _score()
     if (!s) return { error: "No score open" }
     if (typeof text !== "string" || text.length === 0)
         return { error: "System text must be a non-empty string" }
 
-    var m = _findMeasure(measureNo)
-    if (!m) return { error: "Measure " + measureNo + " not found" }
-    var mTick = _getTickInt(m.firstSegment.tick)
+    var mTick = _posToTick(measureNo, 1, "0")
+    if (mTick < 0) return { error: "Measure " + measureNo + " not found or has no chord/rest segment" }
 
     try {
         s.startCmd("add system text")
@@ -956,8 +991,10 @@ function _rangeCmdWrite(cmdLabel, cmdStr,
     if (!s) return { error: "No score open" }
     if (typeof startStaff !== "number" || startStaff < 1)
         return { error: "Invalid startStaff: " + startStaff }
-    if (typeof endStaff !== "number" || endStaff < 1)
-        return { error: "Invalid endStaff: " + endStaff }
+    // Defense in depth — Dispatch.js already defaults endStaff to startStaff
+    // when the LLM omits it, but a missing/invalid value here would silently
+    // propagate as undefined into selectRange and drop the cmd.
+    if (typeof endStaff !== "number" || endStaff < 1) endStaff = startStaff
 
     var startTick = _posToTick(startMeasure, startBeat, startBeatFraction)
     if (startTick < 0) return { error: "Start measure " + startMeasure + " not found" }
@@ -1010,9 +1047,15 @@ function addOttava(startMeasure, startBeat, startBeatFraction, startStaff,
 }
 
 // Insert `count` empty measures after `afterMeasure`. Pass afterMeasure=0 to
-// insert before measure 1. Each iteration calls cmd("insert-measure"), which
-// inserts a single measure at the cursor's current measure (pushing subsequent
-// measures to the right).
+// insert before measure 1.
+//
+// cmd("insert-measure") routes to NotationActionController which requires
+// hasSelection — a cursor position alone is NOT a selection. Earlier code
+// positioned a cursor and called the cmd, which silently no-op'd. The fix
+// selectRange's the target measure (the measure we want to insert BEFORE),
+// then fires the cmd. Each iteration re-finds the target by 1-based number;
+// after each insert, the just-inserted empty measure occupies that number
+// and the next iteration inserts before IT.
 function insertMeasures(afterMeasure, count) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -1021,27 +1064,22 @@ function insertMeasures(afterMeasure, count) {
     if (typeof count !== "number" || count < 1)
         return { error: "count must be >= 1" }
 
-    var m
-    if (afterMeasure === 0) {
-        m = s.firstMeasure
-    } else {
-        var mAfter = _findMeasure(afterMeasure)
-        if (!mAfter) return { error: "Measure " + afterMeasure + " not found" }
-        m = mAfter.nextMeasure
-    }
-    var tick = m ? _getTickInt(m.firstSegment.tick) : -1
+    var targetNo = afterMeasure + 1   // 1-based number of measure to insert BEFORE
 
-    // NO startCmd/endCmd: each cmd("insert-measure") manages its own undo
-    // entry. Wrapping locks the stack and makes the inner commits no-op.
-    // Trade-off: count>1 produces N undo steps instead of one.
     try {
-        if (tick >= 0) {
-            var c = s.newCursor()
-            c.track = 0
-            c.rewindToTick(tick)
-        }
         for (var i = 0; i < count; i++) {
-            api.engraving.cmd("insert-measure")
+            var target = _findMeasure(targetNo)
+            if (!target) {
+                // No measure at position N — fall through to append.
+                api.engraving.cmd("append-measure")
+            } else {
+                var st = _getTickInt(target.firstSegment.tick)
+                var et = target.nextMeasure
+                    ? _getTickInt(target.nextMeasure.firstSegment.tick)
+                    : _getTickInt(target.lastSegment.tick) + 1
+                s.selection.selectRange(st, et, 0, s.nstaves)
+                api.engraving.cmd("insert-measure")
+            }
         }
         return { ok: true, inserted: count, afterMeasure: afterMeasure }
     } catch(e) {
@@ -1049,22 +1087,25 @@ function insertMeasures(afterMeasure, count) {
     }
 }
 
-// Append `count` empty measures at the end of the score. Wrapped in startCmd/
-// endCmd for consistent undo even if curScore.appendMeasures handles undo
-// internally — extra wrap is harmless.
+// Append `count` empty measures at the end of the score.
+//
+// Uses cmd("append-measure") in a loop instead of curScore.appendMeasures(n).
+// Reason: Score::appendMeasures creates measures with createMeasureRests=false
+// (engraving/dom/score.cpp:4407-4415), which leaves the staves of the new
+// measure empty — no full-measure rest is laid out, so the measure looks
+// invisible in the editor. The cmd("append-measure") path goes through
+// NotationActionController::addBoxes which properly populates rests.
 function appendMeasures(count) {
     var s = _score()
     if (!s) return { error: "No score open" }
     if (typeof count !== "number" || count < 1)
         return { error: "count must be >= 1" }
 
+    // NO startCmd/endCmd — cmd owns its own undo entry.
     try {
-        s.startCmd("append measures")
-        s.appendMeasures(count)
-        s.endCmd()
+        for (var i = 0; i < count; i++) api.engraving.cmd("append-measure")
         return { ok: true, appended: count }
     } catch(e) {
-        try { s.endCmd(true) } catch(ee) {}
         return { error: "appendMeasures failed: " + e }
     }
 }
@@ -1116,8 +1157,14 @@ function _addLayoutBreak(cmdLabel, layoutBreakType, measureNo) {
         c.track = 0
         c.rewindToTick(tickInt)
         var lb = api.engraving.newElement(api.engraving.Element.LAYOUT_BREAK)
+        // Set type both BEFORE and AFTER add: empirically system break (LINE=1)
+        // works either way because LINE is the constructor default, but
+        // section break (SECTION=2) was silently dropped when set only BEFORE
+        // — the engraving layer initialises the LayoutBreak with the default
+        // LINE type at add() and only honours a post-add type assignment.
         lb.layoutBreakType = layoutBreakType
         c.add(lb)
+        lb.layoutBreakType = layoutBreakType
         s.endCmd()
         return { ok: true, measure: measureNo }
     } catch(e) {
@@ -1140,21 +1187,30 @@ function addSystemBreak(measureNo) {
 }
 
 // Set score metadata. Empty/null fields are skipped.
+//
+// NOTE: Score::setMetaTag (engraving/dom/score.cpp:2002) writes directly to
+// m_metaTags WITHOUT pushing an undo entry. So the change persists with the
+// score (and round-trips through save/load) but no Undo entry appears in
+// MuseScore's stack — the previous startCmd/endCmd wrap registered as an
+// empty command. Visible title/composer text frames rendered from these
+// tags are also NOT auto-refreshed; the user has to re-open the score or
+// trigger a redraw to see the updated header.
 function setScoreMetadata(title, composer, lyricist, copyright, subtitle) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var updates = []
     try {
-        s.startCmd("set score metadata")
         if (title)     { s.setMetaTag("workTitle",  title);     updates.push("title") }
         if (composer)  { s.setMetaTag("composer",   composer);  updates.push("composer") }
         if (lyricist)  { s.setMetaTag("lyricist",   lyricist);  updates.push("lyricist") }
         if (copyright) { s.setMetaTag("copyright",  copyright); updates.push("copyright") }
         if (subtitle)  { s.setMetaTag("workNumber", subtitle);  updates.push("subtitle") }
-        s.endCmd()
-        return { ok: true, updated: updates }
+        return {
+            ok: true,
+            updated: updates,
+            note: "Tags saved with score. Not undoable; visible header text may need a manual redraw."
+        }
     } catch(e) {
-        try { s.endCmd(true) } catch(ee) {}
         return { error: "setScoreMetadata failed: " + e }
     }
 }
@@ -1732,8 +1788,18 @@ function getSelection() {
         for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
     }
 
+    // sel.elements for a range selection enumerates every element inside the
+    // range (notes, rests, beams, ties, articulations...). Order and count
+    // vary between calls because some intermediate elements are layout-derived
+    // and rebuilt on demand — observed instability in repeat smoke tests.
+    //
+    // For ranges, range bounds (startMeasure/endMeasure/startStaff/endStaff)
+    // are the stable answer; the elements list adds noise. Populate elements
+    // only for single-element (non-range) selections.
     var els = null
-    try { els = sel.elements } catch (e) {}
+    if (!isRange) {
+        try { els = sel.elements } catch (e) {}
+    }
     if (els && els.length > 0) {
         for (var i = 0; i < els.length; i++) {
             var e = els[i]
@@ -1782,12 +1848,15 @@ function getViewSettings() {
         } catch (e) { return dflt }
     }
 
+    // NOTE: the underlying Q_PROPERTY is `showPageborders` (lowercase b) —
+    // engraving/api/v1/score.h:325. Read from that, expose as the more
+    // conventional `showPageBorders` in the result so the schema is consistent.
     return {
         layoutMode:            layoutMode,
         showInvisible:         getBool("showInvisible", false),
         showUnprintable:       getBool("showUnprintable", false),
         showFrames:            getBool("showFrames", false),
-        showPageBorders:       getBool("showPageBorders", false),
+        showPageBorders:       getBool("showPageborders", false),
         showSoundFlags:        getBool("showSoundFlags", false),
         showVerticalFrames:    getBool("showVerticalFrames", false),
         showInstrumentNames:   getBool("showInstrumentNames", false),
@@ -1847,74 +1916,85 @@ function getMidiChannelSettings(instrument) {
     return results
 }
 
-// Write score-level display toggles. Two-phase because direct property writes
-// need startCmd/endCmd; cmd()-based writes (concertPitch toggle, layoutMode)
-// must NOT be wrapped — those handlers own their own undo entry and become
-// no-ops when the stack is locked.
+// Write score-level display toggles.
+//
+// Two strategies depending on the property:
+//
+// (a) cmd-based toggle for properties with a registered handler — direct
+//     property writes do change the underlying field but the scene/viewport
+//     isn't notified, so the score view doesn't repaint. The cmd handlers
+//     route through NotationActionController::toggleScoreConfig which fires
+//     the proper view-refresh signal. cmd handlers TOGGLE the current value,
+//     so we compare current to desired and only fire when they differ.
+//
+// (b) Direct Q_PROPERTY write for properties with no registered cmd path
+//     (showSoundFlags, showInstrumentNames, showVerticalFrames). Not
+//     undoable, but the only path available.
+//
+// (c) Cmd-based for concertPitch (toggle) and layoutMode (per-mode cmd).
+//
+// No startCmd/endCmd wrappers — cmd-based handlers own their undo entries,
+// and direct writes here are not undoable anyway.
 function setViewSettings(settings) {
     var s = _score()
     if (!s) return { error: "No score open" }
     if (!settings) return { error: "settings object required" }
 
     var updated = []
-    var anyDirect = (settings.showInvisible       !== undefined) ||
-                    (settings.showUnprintable     !== undefined) ||
-                    (settings.showFrames          !== undefined) ||
-                    (settings.showPageBorders     !== undefined) ||
-                    (settings.showSoundFlags      !== undefined) ||
-                    (settings.showVerticalFrames  !== undefined) ||
-                    (settings.showInstrumentNames !== undefined) ||
-                    (settings.markIrregularMeasures !== undefined)
 
-    if (anyDirect) {
-        var trySet = function(prop, key) {
-            if (settings[key] === undefined) return
-            try { s[prop] = !!settings[key]; updated.push(key) } catch (e) {}
-        }
-        try {
-            s.startCmd("set view settings")
-            trySet("showInvisible",         "showInvisible")
-            trySet("showUnprintable",       "showUnprintable")
-            trySet("showFrames",            "showFrames")
-            trySet("showPageBorders",       "showPageBorders")
-            trySet("showSoundFlags",        "showSoundFlags")
-            trySet("showVerticalFrames",    "showVerticalFrames")
-            trySet("showInstrumentNames",   "showInstrumentNames")
-            trySet("markIrregularMeasures", "markIrregularMeasures")
-            s.endCmd()
-        } catch (e) {
-            try { s.endCmd(true) } catch (ee) {}
-            return { error: "setViewSettings phase 1 failed: " + e }
+    // (a) Toggleable scene flags via registered cmd handlers
+    // (notationactioncontroller.cpp:409-414). The underlying Q_PROPERTY
+    // name `showPageborders` (lowercase b) differs from the schema key.
+    var toggles = [
+        { key: "showInvisible",         prop: "showInvisible",         cmd: "show-invisible" },
+        { key: "showUnprintable",       prop: "showUnprintable",       cmd: "show-unprintable" },
+        { key: "showFrames",            prop: "showFrames",            cmd: "show-frames" },
+        { key: "showPageBorders",       prop: "showPageborders",       cmd: "show-pageborders" },
+        { key: "markIrregularMeasures", prop: "markIrregularMeasures", cmd: "show-irregular" }
+    ]
+    for (var i = 0; i < toggles.length; i++) {
+        var t = toggles[i]
+        if (settings[t.key] === undefined) continue
+        var current = false
+        try { current = !!s[t.prop] } catch (e) {}
+        if (current !== !!settings[t.key]) {
+            try { api.engraving.cmd(t.cmd); updated.push(t.key) } catch (e) {}
         }
     }
 
-    // Phase 2: cmd()-based writes — NO startCmd wrapper.
-    try {
-        if (settings.concertPitch !== undefined) {
-            var current = !!_styleValue(s, "concertPitch", false)
-            if (current !== !!settings.concertPitch) {
-                api.engraving.cmd("concert-pitch")
-                updated.push("concertPitch")
-            }
+    // (b) Direct Q_PROPERTY writes — no registered cmd handler for these.
+    var directProps = [
+        { key: "showSoundFlags",      prop: "showSoundFlags" },
+        { key: "showInstrumentNames", prop: "showInstrumentNames" },
+        { key: "showVerticalFrames",  prop: "showVerticalFrames" }
+    ]
+    for (var j = 0; j < directProps.length; j++) {
+        var dp = directProps[j]
+        if (settings[dp.key] === undefined) continue
+        try { s[dp.prop] = !!settings[dp.key]; updated.push(dp.key) } catch (e) {}
+    }
+
+    // (c) Concert pitch — toggle cmd compared against the style value.
+    if (settings.concertPitch !== undefined) {
+        var cur = !!_styleValue(s, "concertPitch", false)
+        if (cur !== !!settings.concertPitch) {
+            try { api.engraving.cmd("concert-pitch"); updated.push("concertPitch") } catch (e) {}
         }
-        if (settings.layoutMode !== undefined) {
-            // Registered cmd strings (notationuiactions.cpp:547+):
-            //   view-mode-page, view-mode-float, view-mode-continuous, view-mode-single
-            // HORIZONTAL_FIXED has no registered cmd path.
-            var lmCmds = {
-                "page":       "view-mode-page",
-                "float":      "view-mode-float",
-                "continuous": "view-mode-continuous",
-                "single":     "view-mode-single"
-            }
-            var c = lmCmds[settings.layoutMode]
-            if (c) {
-                api.engraving.cmd(c)
-                updated.push("layoutMode")
-            }
+    }
+
+    // (c) Layout mode — one cmd per mode (notationuiactions.cpp:547+).
+    // HORIZONTAL_FIXED has no registered cmd path.
+    if (settings.layoutMode !== undefined) {
+        var lmCmds = {
+            "page":       "view-mode-page",
+            "float":      "view-mode-float",
+            "continuous": "view-mode-continuous",
+            "single":     "view-mode-single"
         }
-    } catch (e) {
-        return { error: "setViewSettings phase 2 failed: " + e }
+        var lmc = lmCmds[settings.layoutMode]
+        if (lmc) {
+            try { api.engraving.cmd(lmc); updated.push("layoutMode") } catch (e) {}
+        }
     }
 
     return { ok: true, updated: updated }

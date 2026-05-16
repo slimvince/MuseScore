@@ -1040,7 +1040,12 @@ Rectangle {
             for (var j = 0; j < funcCalls.length; j++) {
                 var fc = funcCalls[j]
                 var r = Dispatch.dispatchTool(ScoreAccess, fc.name, fc.args || {})
-                respParts.push({ functionResponse: { name: fc.name, response: r } })
+                // Gemini's functionResponse.response proto field is a non-repeating
+                // STRUCT (object). Tools that return raw arrays (getStructure,
+                // getMidiChannelSettings) or scalars must be wrapped — otherwise
+                // Gemini rejects with HTTP 400 "Proto field is not repeating".
+                var resp = (r && typeof r === "object" && !Array.isArray(r)) ? r : { result: r }
+                respParts.push({ functionResponse: { name: fc.name, response: resp } })
             }
             nextContents.push({ role: "user", parts: respParts })
 
