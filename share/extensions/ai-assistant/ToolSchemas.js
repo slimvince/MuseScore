@@ -368,6 +368,127 @@ function getToolSchemas(providerFormat) {
                 },
                 required: []
             }
+        },
+
+        // ── DIAGNOSTIC ─────────────────────────────────────────────────────
+
+        {
+            name: "get_debug_info",
+            description:
+                "Returns internal API values and score state for debugging purposes. Call this when you need to verify enum integer values, check which API surfaces are available, or diagnose unexpected tool behaviour. Not for musical use.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+
+        // ── BATCH 4: NOTE ENTRY, LYRICS, ARTICULATIONS, TIE, METADATA READ ─
+
+        {
+            name: "get_score_metadata",
+            description:
+                "Returns the score's writable metadata fields: title, composer, lyricist, copyright, subtitle, arranger, translator. Complement to get_score_info (which returns structural data). Use this before calling set_score_metadata to see what's already set.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "add_note",
+            description:
+                "Adds a note at a specific position in the score, overwriting any existing note or rest at that location. Use add_note_to_chord to add a pitch to an existing chord without replacing it. Always call get_score_info first to confirm staff numbers.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4', '3/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Use 1 unless the user specifies otherwise." },
+                    pitch:        { type: "string",  description: "Note name with octave: 'C4', 'F#3', 'Bb5', 'B4'. Middle C = C4." },
+                    duration:     { type: "string",  description: "Note duration: 'whole', 'half', 'quarter', 'eighth', '16th', '32nd', '64th', 'dotted half', 'dotted quarter', 'dotted eighth', 'double-dotted quarter', etc." }
+                },
+                required: ["measure", "beat", "staff", "voice", "pitch", "duration"]
+            }
+        },
+        {
+            name: "add_note_to_chord",
+            description:
+                "Adds a pitch to an existing chord without changing its duration. Use this to build chords note by note. Fails if there is no chord (note) at the given position — use add_note first to create the first note of the chord.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4." },
+                    pitch:        { type: "string",  description: "Note to add: 'C4', 'F#3', 'Bb5' etc." }
+                },
+                required: ["measure", "beat", "staff", "voice", "pitch"]
+            }
+        },
+        {
+            name: "add_rest",
+            description: "Adds a rest at a specific position, overwriting any existing content.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4." },
+                    duration:     { type: "string",  description: "Rest duration: 'whole', 'half', 'quarter', 'eighth', '16th', '32nd', '64th', 'dotted quarter', etc." }
+                },
+                required: ["measure", "beat", "staff", "voice", "duration"]
+            }
+        },
+        {
+            name: "add_lyric",
+            description:
+                "Adds a lyric syllable to the note/chord at the given position. For multi-syllable words use syllabic to indicate the syllable's position within the word: 'begin' for the first syllable, 'middle' for inner syllables, 'end' for the last, 'single' for a complete word.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4. Lyrics follow the voice of the sung melody." },
+                    text:         { type: "string",  description: "The syllable text." },
+                    syllabic:     { type: "string",  enum: ["single","begin","middle","end"], description: "'single' = complete word, 'begin' = first syllable of word, 'middle' = inner syllable, 'end' = last syllable." },
+                    verse:        { type: "integer", description: "1-based verse number. Defaults to 1 if omitted." }
+                },
+                required: ["measure", "beat", "staff", "voice", "text", "syllabic"]
+            }
+        },
+        {
+            name: "add_tie",
+            description:
+                "Ties the note at the given position to the next occurrence of the same pitch, indicating that the note is sustained rather than re-attacked. A tie is different from a slur: a tie connects identical pitches; a slur connects different pitches and indicates legato.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4." }
+                },
+                required: ["measure", "beat", "staff", "voice"]
+            }
+        },
+        {
+            name: "add_articulation",
+            description:
+                "Adds an articulation marking to the note or chord at the given position. Supported articulations: staccato, tenuto, accent, marcato, trill, mordent, turn, upBow, downBow. Other articulations (staccatissimo, fermata variants, snapPizzicato, harmonic, tremolo, etc.) are not yet implemented.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4." },
+                    articulation: { type: "string",  enum: ["staccato","tenuto","accent","marcato","trill","mordent","turn","upBow","downBow"], description: "The articulation to add." }
+                },
+                required: ["measure", "beat", "staff", "voice", "articulation"]
+            }
         }
     ]
 

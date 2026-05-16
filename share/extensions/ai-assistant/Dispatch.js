@@ -36,6 +36,18 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "add_system_break")     return scoreAccess.addSystemBreak(a.measure)
         if (name === "set_score_metadata")   return scoreAccess.setScoreMetadata(a.title || "", a.composer || "", a.lyricist || "", a.copyright || "", a.subtitle || "")
 
+        // ── Diagnostic ──
+        if (name === "get_debug_info")       return scoreAccess.getDebugInfo()
+
+        // ── Batch 4 tools ──
+        if (name === "get_score_metadata")   return scoreAccess.getScoreMetadata()
+        if (name === "add_note")             return scoreAccess.addNote(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.pitch, a.duration)
+        if (name === "add_note_to_chord")    return scoreAccess.addNoteToChord(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.pitch)
+        if (name === "add_rest")             return scoreAccess.addRest(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.duration)
+        if (name === "add_lyric")            return scoreAccess.addLyric(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.text, a.syllabic || "single", a.verse || 1)
+        if (name === "add_tie")              return scoreAccess.addTie(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice)
+        if (name === "add_articulation")     return scoreAccess.addArticulation(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.articulation)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

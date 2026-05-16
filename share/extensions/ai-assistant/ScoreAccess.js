@@ -176,6 +176,54 @@ function _findMeasure(measureNo) {
     return _findMeasureByNumber(s, measureNo)
 }
 
+// Convert a NoteName string ("C4", "F#3", "Bb5", "B##4") to a MIDI pitch
+// integer. Middle C = "C4" = 60.
+function _noteNameToMidi(pitchStr) {
+    var classBase = { C:0, D:2, E:4, F:5, G:7, A:9, B:11 }
+    var cls = pitchStr[0].toUpperCase()
+    var i = 1
+    var acc = 0
+    while (i < pitchStr.length && (pitchStr[i] === '#' || pitchStr[i] === 'b')) {
+        acc += (pitchStr[i] === '#') ? 1 : -1
+        i++
+    }
+    var octave = parseInt(pitchStr.slice(i))
+    return (octave + 1) * 12 + (classBase[cls] || 0) + acc
+}
+
+// Convert a Duration string to [numerator, denominator] for cursor.setDuration.
+// Falls back to quarter-note for unrecognised input.
+function _durationToFraction(durationStr) {
+    var map = {
+        "longa":                   [4, 1],
+        "breve":                   [2, 1],
+        "whole":                   [1, 1],
+        "half":                    [1, 2],
+        "quarter":                 [1, 4],
+        "eighth":                  [1, 8],
+        "16th":                    [1, 16],
+        "32nd":                    [1, 32],
+        "64th":                    [1, 64],
+        "128th":                   [1, 128],
+        "dotted half":             [3, 4],
+        "dotted quarter":          [3, 8],
+        "dotted eighth":           [3, 16],
+        "dotted 16th":             [3, 32],
+        "dotted 32nd":             [3, 64],
+        "double-dotted half":      [7, 8],
+        "double-dotted quarter":   [7, 16],
+        "double-dotted eighth":    [7, 32]
+    }
+    return map[durationStr] || [1, 4]
+}
+
+// SyllabicType string → integer used by Lyrics.syllabic
+// (api.engraving.Lyrics.{SINGLE:0, BEGIN:1, END:2, MIDDLE:3} per runtime probe).
+function _syllabicToInt(syllabic) {
+    var map = { "single": 0, "begin": 1, "end": 2, "middle": 3 }
+    return (map[syllabic] !== undefined) ? map[syllabic] : 0
+}
+
 // Convert a (measure, beat, beatFraction) musical address to an integer tick.
 // `beat` is 1-based. `beatFraction` is a string like "0", "1/2", "1/4", "1/3"
 // representing the sub-beat offset. Returns -1 if the measure is not found.
@@ -1051,6 +1099,237 @@ function setScoreMetadata(title, composer, lyricist, copyright, subtitle) {
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "setScoreMetadata failed: " + e }
+    }
+}
+
+// ── BATCH 4: note entry, lyrics, articulations, tie, metadata read ───────
+
+// Read-only writable-metadata tags. Complement to getScoreInfo (which reports
+// structural data). Call before setScoreMetadata to see existing values.
+function getScoreMetadata() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    return {
+        title:      s.metaTag("workTitle")   || "",
+        subtitle:   s.metaTag("workNumber")  || "",
+        composer:   s.metaTag("composer")    || "",
+        lyricist:   s.metaTag("lyricist")    || "",
+        copyright:  s.metaTag("copyright")   || "",
+        arranger:   s.metaTag("arranger")    || "",
+        translator: s.metaTag("translator")  || ""
+    }
+}
+
+// Add a note at (measure, beat, beatFraction) on (staff, voice), overwriting
+// whatever is there (note or rest). Uses cursor.addNote(midi, false) so the
+// cursor does not advance.
+function addNote(measure, beat, beatFraction, staff, voice, pitch, duration) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    var midiPitch = _noteNameToMidi(pitch)
+    var frac = _durationToFraction(duration)
+    try {
+        s.startCmd("add note")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        c.setDuration(frac[0], frac[1])
+        c.addNote(midiPitch, false)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, pitch: pitch, duration: duration }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addNote failed: " + e }
+    }
+}
+
+// Add a pitch to an existing chord without changing its duration. Fails if
+// there is no chord at the given position.
+function addNoteToChord(measure, beat, beatFraction, staff, voice, pitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    var midiPitch = _noteNameToMidi(pitch)
+    try {
+        s.startCmd("add note to chord")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        c.addNote(midiPitch, true)
+        s.endCmd()
+        return { ok: true, pitch: pitch }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addNoteToChord failed: " + e }
+    }
+}
+
+// Add a rest at the given position, overwriting whatever is there.
+function addRest(measure, beat, beatFraction, staff, voice, duration) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    var frac = _durationToFraction(duration)
+    try {
+        s.startCmd("add rest")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        c.setDuration(frac[0], frac[1])
+        c.addRest()
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, duration: duration }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addRest failed: " + e }
+    }
+}
+
+// Add a lyric syllable to the chord at the given position. Attaches with
+// chord.add(ly), NOT cursor.add(ly) — that distinction is load-bearing.
+// `verse` is 1-based externally, 0-based internally (Lyrics.verse).
+function addLyric(measure, beat, beatFraction, staff, voice, text, syllabic, verse) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        s.startCmd("add lyric")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+        if (!chord) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "No element at measure " + measure + " beat " + beat }
+        }
+        var ly = api.engraving.newElement(api.engraving.Element.LYRICS)
+        chord.add(ly)                       // chord.add, NOT cursor.add
+        ly.text = text
+        ly.syllabic = _syllabicToInt(syllabic)
+        ly.verse = (verse || 1) - 1         // 0-based internally
+        s.endCmd()
+        return { ok: true, text: text, syllabic: syllabic, verse: verse || 1 }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addLyric failed: " + e }
+    }
+}
+
+// Tie the note at the given position to the next note of the same pitch.
+// cmd("tie") — NOT "add-tie" (the registered action ID is just "tie",
+// notationactioncontroller.cpp:240). cmd-based, so NO startCmd wrapper.
+function addTie(measure, beat, beatFraction, staff, voice) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        var s0 = staff - 1
+        s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
+        api.engraving.cmd("tie")
+        return { ok: true }
+    } catch (e) {
+        return { error: "addTie failed: " + e }
+    }
+}
+
+// Add an articulation to the chord at the given position. cmd-based, so NO
+// startCmd wrapper. Only articulations with a verified registered cmd string
+// are included — others return an "unsupported" error rather than guessing.
+//
+// Sources (notationactioncontroller.cpp / notationuiactions.cpp):
+//   add-staccato   (controller:181, uiactions:2526)
+//   add-tenuto     (controller:180, uiactions:2519)
+//   add-sforzato   (controller:179, uiactions:2512) ← maps "accent"
+//   add-marcato    (controller:178, uiactions:2505)
+//   add-trill      (controller:503, uiactions:1972)
+//   add-mordent    (controller:505, uiactions:1984)
+//   add-turn       (controller:498, uiactions:1942)
+//   add-up-bow     (controller:513, uiactions:2026)
+//   add-down-bow   (controller:514, uiactions:2032)
+//
+// NOT registered (no cmd path): staccatissimo, fermata, shortFermata,
+// longFermata, veryLongFermata, snapPizzicato, leftHandPizzicato, harmonic,
+// tremolo, stress, unstress. These would need direct-element construction.
+function addArticulation(measure, beat, beatFraction, staff, voice, articulation) {
+    var articulationCmdMap = {
+        "staccato": "add-staccato",
+        "tenuto":   "add-tenuto",
+        "accent":   "add-sforzato",
+        "marcato":  "add-marcato",
+        "trill":    "add-trill",
+        "mordent":  "add-mordent",
+        "turn":     "add-turn",
+        "upBow":    "add-up-bow",
+        "downBow":  "add-down-bow"
+    }
+    var cmdStr = articulationCmdMap[articulation]
+    if (!cmdStr) return { error: "Articulation '" + articulation + "' not yet implemented" }
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        var s0 = staff - 1
+        s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
+        api.engraving.cmd(cmdStr)
+        return { ok: true, articulation: articulation }
+    } catch (e) {
+        return { error: "addArticulation failed: " + e }
+    }
+}
+
+// ── Diagnostic ───────────────────────────────────────────────────────────
+//
+// console.log() is silently swallowed in MS4 extensions, so returning enum
+// integers as tool output is the only way to inspect API surface from inside
+// the extension. Originally specified in CC_INSTRUCTION_batch3_fixes.md Fix 4
+// but not previously landed.
+function getDebugInfo() {
+    var el  = api.engraving.Element
+    var dt  = api.engraving.DynamicType
+    var lbt = api.engraving.LayoutBreakType
+    return {
+        elementTypes: {
+            DYNAMIC:        el ? el.DYNAMIC        : "undefined",
+            LAYOUT_BREAK:   el ? el.LAYOUT_BREAK   : "undefined",
+            HAIRPIN:        el ? el.HAIRPIN        : "undefined",
+            SLUR:           el ? el.SLUR           : "undefined",
+            OTTAVA:         el ? el.OTTAVA         : "undefined",
+            TEMPO_TEXT:     el ? el.TEMPO_TEXT     : "undefined",
+            STAFF_TEXT:     el ? el.STAFF_TEXT     : "undefined",
+            SYSTEM_TEXT:    el ? el.SYSTEM_TEXT    : "undefined",
+            REHEARSAL_MARK: el ? el.REHEARSAL_MARK : "undefined",
+            HARMONY:        el ? el.HARMONY        : "undefined",
+            LYRICS:         el ? el.LYRICS         : "undefined"
+        },
+        dynamicTypes: {
+            PPP: dt ? dt.PPP : "undefined",
+            PP:  dt ? dt.PP  : "undefined",
+            P:   dt ? dt.P   : "undefined",
+            MP:  dt ? dt.MP  : "undefined",
+            MF:  dt ? dt.MF  : "undefined",
+            F:   dt ? dt.F   : "undefined",
+            FF:  dt ? dt.FF  : "undefined",
+            FFF: dt ? dt.FFF : "undefined",
+            FP:  dt ? dt.FP  : "undefined",
+            SFZ: dt ? dt.SFZ : "undefined"
+        },
+        layoutBreakTypes: {
+            LINE:    lbt ? lbt.LINE    : "undefined",
+            PAGE:    lbt ? lbt.PAGE    : "undefined",
+            SECTION: lbt ? lbt.SECTION : "undefined",
+            NOBREAK: lbt ? lbt.NOBREAK : "undefined"
+        },
+        score: curScore ? {
+            nstaves:   curScore.nstaves,
+            nmeasures: curScore.nmeasures
+        } : null
     }
 }
 
