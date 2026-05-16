@@ -489,6 +489,72 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measure", "beat", "staff", "voice", "articulation"]
             }
+        },
+
+        // ── BATCH 5: get_measure, set_note_pitch, set_note_duration, add_fermata ─
+
+        {
+            name: "get_measure",
+            description:
+                "Returns structural metadata for a single measure: time signature, key signature, tempo marking, rehearsal mark, end barline type, and chord symbols. Does NOT return notes or lyrics — use get_notes_in_range and get_lyrics_in_range for those. Use this to get a quick structural snapshot of a specific measure.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number." }
+                },
+                required: ["measure"]
+            }
+        },
+        {
+            name: "set_note_pitch",
+            description:
+                "Changes the pitch of a specific note at the given position. Use oldPitch to identify which note in a chord to change; if the chord has only one note, oldPitch can be omitted. Both oldPitch and newPitch are NoteName strings like 'C4', 'F#3', 'Bb5'.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4." },
+                    oldPitch:     { type: "string",  description: "Current pitch of the note to change: 'C4', 'F#3' etc. Omit if the chord has only one note." },
+                    newPitch:     { type: "string",  description: "New pitch: 'D4', 'Bb3' etc." }
+                },
+                required: ["measure", "beat", "staff", "voice", "newPitch"]
+            }
+        },
+        {
+            name: "set_note_duration",
+            description:
+                "Changes the duration of the note or chord at the given position. The chord's pitches are preserved; only the duration changes. This overwrites the position — if the new duration is shorter, trailing content is unaffected; if longer, it may overwrite subsequent notes.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    voice:        { type: "integer", description: "Voice 1–4." },
+                    duration:     { type: "string",  description: "New duration: 'whole', 'half', 'quarter', 'eighth', '16th', 'dotted quarter', etc." }
+                },
+                required: ["measure", "beat", "staff", "voice", "duration"]
+            }
+        },
+        {
+            name: "add_fermata",
+            description:
+                "Adds a fermata (hold/pause symbol) above the note or rest at the given position. Type controls the length of the pause: 'normal' is the standard fermata, 'short' is a brief pause, 'long' is an extended hold, 'veryLong' is the longest.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number." },
+                    type:         { type: "string",  enum: ["normal","short","long","veryLong"], description: "Fermata duration type. Defaults to 'normal'." }
+                },
+                required: ["measure", "beat", "staff"]
+            }
         }
     ]
 

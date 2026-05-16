@@ -48,6 +48,12 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "add_tie")              return scoreAccess.addTie(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice)
         if (name === "add_articulation")     return scoreAccess.addArticulation(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.articulation)
 
+        // ── Batch 5 tools ──
+        if (name === "get_measure")          return scoreAccess.getMeasure(a.measure)
+        if (name === "set_note_pitch")       return scoreAccess.setNotePitch(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.oldPitch || null, a.newPitch)
+        if (name === "set_note_duration")    return scoreAccess.setNoteDuration(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.duration)
+        if (name === "add_fermata")          return scoreAccess.addFermata(a.measure, a.beat, a.beatFraction || "0", a.staff, a.type || "normal")
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

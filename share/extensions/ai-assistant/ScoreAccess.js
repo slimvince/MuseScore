@@ -224,6 +224,44 @@ function _syllabicToInt(syllabic) {
     return (map[syllabic] !== undefined) ? map[syllabic] : 0
 }
 
+// NoteName string → TPC (Tonal Pitch Class) integer.
+// TPC line of fifths: F=13, C=14, G=15, D=16, A=17, E=18, B=19 for naturals.
+// Each sharp adds 7; each flat subtracts 7.
+function _noteNameToTpc(pitchStr) {
+    var baseMap = { C:14, D:16, E:18, F:13, G:15, A:17, B:19 }
+    var cls = pitchStr[0].toUpperCase()
+    var i = 1
+    var acc = 0
+    while (i < pitchStr.length && (pitchStr[i] === '#' || pitchStr[i] === 'b')) {
+        acc += (pitchStr[i] === '#') ? 7 : -7
+        i++
+    }
+    return (baseMap[cls] !== undefined ? baseMap[cls] : 14) + acc
+}
+
+// Key fifths int (-7..+7) → "<tonic> major" label. Mode disambiguation is not
+// possible from the signature alone, so we always label as major (same as
+// _keysigToString — kept as a separate name for getMeasure clarity).
+function _keyIntToString(key) {
+    return _keysigToString(key)
+}
+
+// BarLine type bit-flag int → human-readable string. BarLineType in
+// src/engraving/types/types.h:422 — flag enum, so we test bits in priority
+// order (compound flags would otherwise be misreported).
+function _barlineTypeStr(typeInt) {
+    if (typeInt === 1)      return "normal"          // NORMAL/SINGLE
+    if (typeInt === 2)      return "double"          // DOUBLE
+    if (typeInt === 4)      return "startRepeat"     // START_REPEAT
+    if (typeInt === 8)      return "endRepeat"       // END_REPEAT
+    if (typeInt === 16)     return "dashed"          // BROKEN/DASHED
+    if (typeInt === 32)     return "end"             // END/FINAL
+    if (typeInt === 64)     return "endStartRepeat"  // END_START_REPEAT
+    if (typeInt === 128)    return "dotted"          // DOTTED
+    if (typeInt === 256)    return "reverseEnd"      // REVERSE_END
+    return "type=" + typeInt
+}
+
 // Convert a (measure, beat, beatFraction) musical address to an integer tick.
 // `beat` is 1-based. `beatFraction` is a string like "0", "1/2", "1/4", "1/3"
 // representing the sub-beat offset. Returns -1 if the measure is not found.
@@ -1360,4 +1398,214 @@ function getConcertPitch() {
     if (typeof v === "boolean") return v
     if (typeof v === "number")  return v !== 0
     return null
+}
+
+// ── BATCH 5: get_measure, set_note_pitch, set_note_duration, add_fermata ──
+
+// Structural metadata for ONE measure: time/key signature, tempo, rehearsal
+// mark, end-barline type, and chord symbols. Notes/rests/lyrics intentionally
+// omitted — callers should use getNotesInRange / getLyricsInRange for content.
+function getMeasure(measureNo) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var m = _findMeasureByNumber(s, measureNo)
+    if (!m) return { error: "Measure " + measureNo + " not found" }
+
+    var result = { number: measureNo }
+
+    // Active key/time signature at this measure (via Staff API, same path as
+    // getStructure — segment-walking misses changes carried from prior measures).
+    var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
+    try {
+        if (st0 && m.tick) {
+            var ts = st0.timeSig(m.tick)
+            if (ts && ts.timesigNominal) {
+                result.timeSignature = {
+                    numerator:   ts.timesigNominal.numerator,
+                    denominator: ts.timesigNominal.denominator
+                }
+            }
+        }
+    } catch(e) {}
+    try {
+        if (st0 && m.tick) {
+            var k = st0.key(m.tick)
+            if (typeof k === "number") result.keySignature = _keyIntToString(k)
+        }
+    } catch(e) {}
+
+    // Tempo + rehearsal mark in this measure (reuse existing helpers).
+    try {
+        var t = _firstTempoInMeasure(m)
+        if (t) {
+            result.tempo = {
+                text: t.text || null,
+                bpm:  t.tempo ? Math.round(t.tempo * 60.0) : null
+            }
+        }
+    } catch(e) {}
+    try {
+        var r = _firstRehearsalMarkInMeasure(m)
+        if (r) result.rehearsalMark = r.text || ""
+    } catch(e) {}
+
+    // End barline — look for the EndBarLine segment (SegmentType 0x20000),
+    // falling back to the last segment if absent.
+    try {
+        var seg = m.firstSegment
+        var blSeg = null
+        while (seg) {
+            if (seg.segmentType & 0x20000) { blSeg = seg; break }
+            seg = seg.next
+        }
+        if (!blSeg) blSeg = m.lastSegment
+        if (blSeg) {
+            var bl = blSeg.elementAt(0)
+            if (bl && typeof bl.barlineType === "number")
+                result.barlineEnd = _barlineTypeStr(bl.barlineType)
+        }
+    } catch(e) {}
+
+    // Chord symbols in this measure (reuse existing reader).
+    try {
+        var harm = getHarmonyInRange(measureNo, measureNo)
+        if (harm && harm.harmonies) result.harmonies = harm.harmonies
+        else result.harmonies = []
+    } catch(e) {
+        result.harmonies = []
+    }
+
+    return result
+}
+
+// Change the pitch of a specific note within the chord at the given position.
+// `oldPitch` (NoteName) identifies which note to change (by MIDI pitch match);
+// if null/omitted, changes the first (lowest) note.
+function setNotePitch(measure, beat, beatFraction, staff, voice, oldPitch, newPitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    var newMidi = _noteNameToMidi(newPitch)
+    var newTpc  = _noteNameToTpc(newPitch)
+    var oldMidi = oldPitch ? _noteNameToMidi(oldPitch) : null
+
+    try {
+        s.startCmd("set note pitch")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+        if (!chord || !chord.notes) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "No chord at measure " + measure + " beat " + beat }
+        }
+        var target = null
+        for (var i = 0; i < chord.notes.length; i++) {
+            if (oldMidi === null || chord.notes[i].pitch === oldMidi) {
+                target = chord.notes[i]
+                break
+            }
+        }
+        if (!target) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "Note " + oldPitch + " not found at that position" }
+        }
+        target.pitch = newMidi
+        target.tpc   = newTpc
+        s.endCmd()
+        return { ok: true, from: oldPitch, to: newPitch }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setNotePitch failed: " + e }
+    }
+}
+
+// Change the duration of the chord/rest at the given position. Pitches are
+// preserved; only duration changes. Overwrites the position — trailing
+// content past the new duration may be overwritten if the new duration is
+// longer than the old.
+function setNoteDuration(measure, beat, beatFraction, staff, voice, duration) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    var frac = _durationToFraction(duration)
+
+    try {
+        s.startCmd("set note duration")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+
+        var pitches = []
+        var isRest = (!chord || !chord.notes || chord.notes.length === 0)
+        if (!isRest) {
+            for (var i = 0; i < chord.notes.length; i++)
+                pitches.push(chord.notes[i].pitch)
+        }
+
+        c.setDuration(frac[0], frac[1])
+        if (isRest || pitches.length === 0) {
+            c.addRest()
+        } else {
+            c.addNote(pitches[0], false)          // replaces with new duration + first pitch
+            for (var j = 1; j < pitches.length; j++)
+                c.addNote(pitches[j], true)       // restore remaining chord notes
+        }
+        s.endCmd()
+        return { ok: true, duration: duration, pitchCount: pitches.length }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setNoteDuration failed: " + e }
+    }
+}
+
+// Add a fermata above the note/rest at the given position.
+//
+// Fermata variants are keyed by SymId, not by a separate FermataType property:
+// Fermata::setProperty only handles Pid::SYMBOL (engraving/dom/fermata.cpp:151).
+// FermataType is a read-only derived value — see Fermata::fermataType() at
+// fermata.cpp:254 which maps SymId → FermataType via a lookup table.
+//
+// So we set `f.symbol = api.engraving.SymId.fermata{Type}Above` BEFORE c.add()
+// — same set-before-add discipline as Dynamic.dynamicType / LayoutBreak.layoutBreakType.
+// SymId values exposed in apiv1 at src/engraving/api/v1/apitypes.h:2721,2723,2727,2731.
+function addFermata(measure, beat, beatFraction, staff, type) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof staff !== "number" || staff < 1)
+        return { error: "Invalid staff number: " + staff }
+
+    var symId = api.engraving.SymId
+    if (!symId) return { error: "FERMATA: api.engraving.SymId not exposed" }
+
+    var symMap = {
+        "normal":   symId.fermataAbove,
+        "short":    symId.fermataShortAbove,
+        "long":     symId.fermataLongAbove,
+        "veryLong": symId.fermataVeryLongAbove
+    }
+    var typeKey = type || "normal"
+    var symValue = symMap[typeKey]
+    if (symValue === undefined) symValue = symMap["normal"]
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    try {
+        s.startCmd("add fermata")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4       // fermatas attach to the staff, not a voice
+        c.rewindToTick(tick)
+        var f = api.engraving.newElement(api.engraving.Element.FERMATA)
+        f.symbol = symValue              // SET BEFORE add — Pid::SYMBOL keys the variant
+        c.add(f)
+        s.endCmd()
+        return { ok: true, type: typeKey }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addFermata failed: " + e }
+    }
 }
