@@ -2108,3 +2108,75 @@ function getSpannersInRange(startMeasure, endMeasure, instrument) {
 
     return { ok: true, spanners: results }
 }
+
+// ── BATCH 8: set_midi_channel_settings ───────────────────────────────────
+
+// Write MIDI channel parameters for an instrument channel. Partial update —
+// only fields present on `settings` are written. Wrapped in startCmd/endCmd
+// since these are direct property writes (no cmd path exists).
+//
+// Channel lookup mirrors getMidiChannelSettings: walk parts → instruments →
+// channels with the Qt-model-vs-plain-array fallback. `chFilter === "normal"`
+// also accepts the first channel of an instrument when no channel of that
+// name is present (the unnamed primary channel).
+function setMidiChannelSettings(instrument, channelName, settings) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (!instrument) return { error: "instrument is required" }
+    if (!settings) return { error: "settings is required" }
+
+    var filterName = String(instrument).toLowerCase()
+    var chFilter   = String(channelName || "normal").toLowerCase()
+
+    var targetCh = null
+    var parts = s.parts
+    for (var pi = 0; pi < parts.length && !targetCh; pi++) {
+        var part = parts[pi]
+        var pName = (part.longName || part.shortName || "").toLowerCase()
+        if (pName.indexOf(filterName) < 0) continue
+
+        var insts = part.instruments
+        if (!insts) continue
+        var nInsts = insts.length !== undefined ? insts.length : 0
+        for (var ii = 0; ii < nInsts && !targetCh; ii++) {
+            var inst = insts[ii]
+            if (!inst && typeof insts.get === "function") {
+                try { inst = insts.get(ii) } catch (e) {}
+            }
+            if (!inst) continue
+            var channels = inst.channels
+            if (!channels) continue
+            var nChan = channels.length !== undefined ? channels.length : 0
+            for (var ci = 0; ci < nChan; ci++) {
+                var ch = channels[ci]
+                if (!ch && typeof channels.get === "function") {
+                    try { ch = channels.get(ci) } catch (e) {}
+                }
+                if (!ch) continue
+                var cName = (ch.name || "normal").toLowerCase()
+                if (cName === chFilter || (chFilter === "normal" && ci === 0)) {
+                    targetCh = ch
+                    break
+                }
+            }
+        }
+    }
+    if (!targetCh) return { error: "Channel not found for instrument '" + instrument + "' channel '" + channelName + "'" }
+
+    var updated = []
+    try {
+        s.startCmd("set MIDI channel settings")
+        if (settings.volume      !== undefined) { targetCh.volume      = settings.volume;      updated.push("volume") }
+        if (settings.pan         !== undefined) { targetCh.pan         = settings.pan;         updated.push("pan") }
+        if (settings.chorus      !== undefined) { targetCh.chorus      = settings.chorus;      updated.push("chorus") }
+        if (settings.reverb      !== undefined) { targetCh.reverb      = settings.reverb;      updated.push("reverb") }
+        if (settings.mute        !== undefined) { targetCh.mute        = !!settings.mute;      updated.push("mute") }
+        if (settings.midiProgram !== undefined) { targetCh.midiProgram = settings.midiProgram; updated.push("midiProgram") }
+        if (settings.midiBank    !== undefined) { targetCh.midiBank    = settings.midiBank;    updated.push("midiBank") }
+        s.endCmd()
+        return { ok: true, updated: updated }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setMidiChannelSettings failed: " + e }
+    }
+}

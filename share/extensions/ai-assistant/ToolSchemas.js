@@ -269,7 +269,10 @@ function getToolSchemas(providerFormat) {
             name: "add_ottava",
             description:
                 "Adds an ottava line (8va or 8vb) spanning from one position to another. " +
-                "8va: play one octave higher than written. 8vb: play one octave lower than written.",
+                "8va: play one octave higher than written. 8vb: play one octave lower than written. " +
+                "Two-octave variants (15ma, 15mb) are not supported — MuseScore exposes only 8va/8vb " +
+                "through the registered command handlers, and constructing a 15ma/15mb spanner directly " +
+                "via the cursor does not set up the spanner's end tick.",
             parameters: {
                 type: "object",
                 properties: {
@@ -663,6 +666,54 @@ function getToolSchemas(providerFormat) {
                     instrument:   { type: "string",  description: "Optional case-insensitive substring filter on the instrument long name (e.g. 'violin'). Omit to include all staves." }
                 },
                 required: ["startMeasure", "endMeasure"]
+            }
+        },
+
+        // ── BATCH 8: set_midi_channel_settings ──
+
+        {
+            name: "set_midi_channel_settings",
+            description:
+                "Sets MIDI playback parameters (volume, pan, chorus, reverb, mute, program, bank) for an instrument channel. Values are MIDI bytes (0–127), not audio dB. Prefer add_dynamic for score-level dynamics — use this only for raw MIDI control. Only fields you provide are written; others are left unchanged.",
+            parameters: {
+                type: "object",
+                properties: {
+                    instrument: {
+                        type: "string",
+                        description: "Part name as in score (case-insensitive substring match)."
+                    },
+                    channelName: {
+                        type: "string",
+                        description: "Channel name within the instrument (e.g. 'normal', 'pizzicato', 'tremolo'). Default: 'normal'."
+                    },
+                    volume: {
+                        type: "integer",
+                        minimum: 0,
+                        maximum: 127,
+                        description: "MIDI volume (0–127)."
+                    },
+                    pan: {
+                        type: "integer",
+                        minimum: 0,
+                        maximum: 127,
+                        description: "Pan position (0=hard left, 64=centre, 127=hard right)."
+                    },
+                    chorus: { type: "integer", minimum: 0, maximum: 127 },
+                    reverb: { type: "integer", minimum: 0, maximum: 127 },
+                    mute:   { type: "boolean" },
+                    midiProgram: {
+                        type: "integer",
+                        minimum: 0,
+                        maximum: 127,
+                        description: "General MIDI program number (0–127)."
+                    },
+                    midiBank: {
+                        type: "integer",
+                        minimum: 0,
+                        description: "MIDI bank number."
+                    }
+                },
+                required: ["instrument"]
             }
         }
     ]

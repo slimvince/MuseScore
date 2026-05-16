@@ -66,6 +66,9 @@ function dispatchTool(scoreAccess, name, args) {
         // ── Batch 7 tools ──
         if (name === "get_spanners_in_range")      return scoreAccess.getSpannersInRange(a.startMeasure, a.endMeasure, a.instrument || null)
 
+        // ── Batch 8 tools ──
+        if (name === "set_midi_channel_settings")  return scoreAccess.setMidiChannelSettings(a.instrument, a.channelName || "normal", a)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }
