@@ -476,7 +476,7 @@ function getToolSchemas(providerFormat) {
         {
             name: "add_articulation",
             description:
-                "Adds an articulation marking to the note or chord at the given position. Supported articulations: staccato, tenuto, accent, marcato, trill, mordent, turn, upBow, downBow. Other articulations (staccatissimo, fermata variants, snapPizzicato, harmonic, tremolo, etc.) are not yet implemented.",
+                "Adds an articulation marking to the note or chord at the given position. Supported articulations: staccato, tenuto, accent, marcato, trill, mordent, turn, upBow, downBow, staccatissimo, snapPizzicato, harmonic, stress, unstress. For fermatas use add_fermata. Tremolo is not yet implemented.",
             parameters: {
                 type: "object",
                 properties: {
@@ -485,7 +485,7 @@ function getToolSchemas(providerFormat) {
                     beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
                     staff:        { type: "integer", description: "Global 1-based staff number." },
                     voice:        { type: "integer", description: "Voice 1–4." },
-                    articulation: { type: "string",  enum: ["staccato","tenuto","accent","marcato","trill","mordent","turn","upBow","downBow"], description: "The articulation to add." }
+                    articulation: { type: "string",  enum: ["staccato","tenuto","accent","marcato","trill","mordent","turn","upBow","downBow","staccatissimo","snapPizzicato","harmonic","stress","unstress"], description: "The articulation to add." }
                 },
                 required: ["measure", "beat", "staff", "voice", "articulation"]
             }
@@ -646,6 +646,23 @@ function getToolSchemas(providerFormat) {
                     velocity:     { type: "integer", minimum: 0, maximum: 127, description: "Velocity value 0–127." }
                 },
                 required: ["measure", "beat", "staff", "velocity"]
+            }
+        },
+
+        // ── BATCH 7: get_spanners_in_range ──
+
+        {
+            name: "get_spanners_in_range",
+            description:
+                "Returns all spanners (hairpins, slurs, ottavas, pedals, voltas, etc.) intersecting the given measure range. Each entry includes the spanner type, start and end measure, the staff it belongs to, the instrument name, and visibility.",
+            parameters: {
+                type: "object",
+                properties: {
+                    startMeasure: { type: "integer", description: "First measure to include (1-based, inclusive)." },
+                    endMeasure:   { type: "integer", description: "Last measure to include (1-based, inclusive)." },
+                    instrument:   { type: "string",  description: "Optional case-insensitive substring filter on the instrument long name (e.g. 'violin'). Omit to include all staves." }
+                },
+                required: ["startMeasure", "endMeasure"]
             }
         }
     ]

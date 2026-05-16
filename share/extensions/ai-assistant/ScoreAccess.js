@@ -1310,10 +1310,63 @@ function addTie(measure, beat, beatFraction, staff, voice) {
 //   add-up-bow     (controller:513, uiactions:2026)
 //   add-down-bow   (controller:514, uiactions:2032)
 //
-// NOT registered (no cmd path): staccatissimo, fermata, shortFermata,
-// longFermata, veryLongFermata, snapPizzicato, leftHandPizzicato, harmonic,
-// tremolo, stress, unstress. These would need direct-element construction.
+// Direct-construction articulations (no registered cmd path): staccatissimo,
+// snapPizzicato, harmonic, stress, unstress. These use `newElement(ARTICULATION)`
+// + `art.symbol = SymId.<...>` BEFORE `chord.add(art)` — same set-before-add
+// discipline as Fermata. The SYMBOL property is defined on the base EngravingItem
+// (elements.h:828) and is documented as valid for symbols, articulation,
+// fermatas and breaths.
+//
+// Still NOT covered: shortFermata/longFermata/veryLongFermata (use add_fermata
+// instead), leftHandPizzicato, tremolo (own element type).
 function addArticulation(measure, beat, beatFraction, staff, voice, articulation) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    // ── Direct-construction branch (SymId-keyed; no cmd path exists) ──
+    // SymId names verified in src/engraving/api/v1/apitypes.h:
+    //   articStaccatissimoAbove   (2369)
+    //   pluckedSnapPizzicatoAbove (4267)
+    //   stringsHarmonic           (4411)  — no Above variant; bare name
+    //   articStressAbove          (2377)
+    //   articUnstressAbove        (2385)
+    var directSymIds = {
+        "staccatissimo": "articStaccatissimoAbove",
+        "snapPizzicato": "pluckedSnapPizzicatoAbove",
+        "harmonic":      "stringsHarmonic",
+        "stress":        "articStressAbove",
+        "unstress":      "articUnstressAbove"
+    }
+    if (directSymIds[articulation] !== undefined) {
+        var symIdName = directSymIds[articulation]
+        var SymId = api.engraving.SymId
+        if (!SymId) return { error: "api.engraving.SymId not exposed" }
+        var symValue = SymId[symIdName]
+        if (symValue === undefined) return { error: "SymId not found: " + symIdName }
+
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+        if (!chord || chord.type !== api.engraving.Element.CHORD)
+            return { error: "No chord at measure " + measure + " beat " + beat }
+
+        try {
+            s.startCmd("add articulation")
+            var art = api.engraving.newElement(api.engraving.Element.ARTICULATION)
+            art.symbol = symValue       // SET BEFORE add — Pid::SYMBOL keys the variant (same as Fermata)
+            chord.add(art)              // chord.add, NOT cursor.add — same pattern as add_lyric
+            s.endCmd()
+            return { ok: true, articulation: articulation }
+        } catch (e) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "addArticulation (direct) failed: " + e }
+        }
+    }
+
+    // ── Cmd-based branch (registered action handlers) ──
     var articulationCmdMap = {
         "staccato": "add-staccato",
         "tenuto":   "add-tenuto",
@@ -1327,10 +1380,6 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
     }
     var cmdStr = articulationCmdMap[articulation]
     if (!cmdStr) return { error: "Articulation '" + articulation + "' not yet implemented" }
-    var s = _score()
-    if (!s) return { error: "No score open" }
-    var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
     try {
         var s0 = staff - 1
         s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
@@ -1976,4 +2025,86 @@ function setNoteVelocity(measure, beat, beatFraction, staff, voice, pitch, veloc
         try { s.endCmd(true) } catch (ee) {}
         return { error: "setNoteVelocity failed: " + e }
     }
+}
+
+// ── BATCH 7: get_spanners_in_range ───────────────────────────────────────
+
+// Enumerate spanners (hairpins, slurs, ottavas, etc.) intersecting a measure
+// range. curScore.spanners is a QQmlListProperty<apiv1::Spanner> (score.h:203,
+// added in 4.7) — iterable via .length / [i] in QML JS.
+//
+// Spanner inherits from EngravingItem, so its position is exposed as
+// `spannerTick` (start) + `spannerTicks` (duration as a Fraction), and the
+// usual `track` / `staffIdx` / `visible` / `subtypeName()` come from the base.
+// End tick = spannerTick + spannerTicks (NOT a separate tick2 property in
+// the apiv1 wrapper).
+function getSpannersInRange(startMeasure, endMeasure, instrument) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var startM = _findMeasure(startMeasure)
+    var endM   = _findMeasure(endMeasure)
+    if (!startM) return { error: "Start measure " + startMeasure + " not found" }
+    if (!endM)   return { error: "End measure "   + endMeasure   + " not found" }
+
+    var startTick = _getTickInt(startM.firstSegment.tick)
+    var endTick   = endM.nextMeasure
+        ? _getTickInt(endM.nextMeasure.firstSegment.tick)
+        : _getTickInt(endM.lastSegment.tick) + 1
+
+    var filterName = instrument ? String(instrument).toLowerCase() : null
+
+    // Precompute globalStaff → instrument longName (matches getNotesInRange).
+    var parts = s.parts
+    var staffNameMap = []
+    for (var pi = 0; pi < parts.length; pi++) {
+        var pp    = parts[pi]
+        var lName = pp.longName || pp.partName || ""
+        var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
+        for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
+    }
+
+    var spanners = null
+    try { spanners = s.spanners } catch (e) { return { error: "curScore.spanners not readable: " + e } }
+    if (!spanners) return { ok: true, spanners: [] }
+    var nSpanners = (spanners.length !== undefined) ? spanners.length : 0
+
+    var results = []
+    for (var i = 0; i < nSpanners; i++) {
+        var sp = spanners[i]
+        if (!sp) continue
+
+        var spStart = -1, spDur = 0
+        try { spStart = _getTickInt(sp.spannerTick) } catch (e) {}
+        try { spDur   = _getTickInt(sp.spannerTicks) } catch (e) {}
+        if (spStart < 0) continue
+        var spEnd = spStart + spDur
+
+        // Range overlap test: spanner intersects [startTick, endTick)
+        if (spEnd <= startTick || spStart >= endTick) continue
+
+        var spStaffIdx = 0
+        try { spStaffIdx = sp.staffIdx } catch (e) {}
+        var globalStaff = spStaffIdx + 1
+        var instrName = staffNameMap[globalStaff - 1] || ""
+
+        if (filterName && instrName.toLowerCase().indexOf(filterName) < 0) continue
+
+        var spType = ""
+        try { spType = String(sp.subtypeName() || "") } catch (e) {}
+        if (!spType) {
+            try { spType = "type=" + String(sp.type) } catch (e) {}
+        }
+
+        results.push({
+            type:         spType,
+            startMeasure: _tickToMeasureNo(spStart),
+            endMeasure:   _tickToMeasureNo(spEnd > spStart ? spEnd - 1 : spStart),
+            staff:        globalStaff,
+            instrument:   instrName,
+            visible:      (sp.visible !== false)
+        })
+    }
+
+    return { ok: true, spanners: results }
 }

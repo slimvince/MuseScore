@@ -63,6 +63,9 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "set_note_accidental")        return scoreAccess.setNoteAccidental(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null, a.accidental)
         if (name === "set_note_velocity")          return scoreAccess.setNoteVelocity(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null, a.velocity)
 
+        // ── Batch 7 tools ──
+        if (name === "get_spanners_in_range")      return scoreAccess.getSpannersInRange(a.startMeasure, a.endMeasure, a.instrument || null)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

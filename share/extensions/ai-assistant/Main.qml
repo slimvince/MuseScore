@@ -1347,8 +1347,9 @@ Rectangle {
                                         color: isUser ? "#ffffff" : "#212121"
                                         topPadding:    12
                                         bottomPadding: 12
-                                        leftPadding:   12
-                                        rightPadding:  40
+                                        // Padding mirrors the copy-button side so text doesn't sit under it.
+                                        leftPadding:   isUser ? 40 : 12
+                                        rightPadding:  isUser ? 12 : 40
                                         Keys.priority: Keys.BeforeItem
                                         Keys.onPressed: function(event) {
                                             if ((event.modifiers & Qt.ControlModifier) && !(event.modifiers & Qt.AltModifier)) {
@@ -1362,8 +1363,12 @@ Rectangle {
 
                                     Rectangle {
                                         id: copyBtn
-                                        visible: !isUser
-                                        anchors { right: parent.right; bottom: parent.bottom; margins: 6 }
+                                        anchors.bottom: parent.bottom
+                                        anchors.bottomMargin: 6
+                                        anchors.right: isUser ? undefined : parent.right
+                                        anchors.rightMargin: 6
+                                        anchors.left:  isUser ? parent.left : undefined
+                                        anchors.leftMargin: 6
                                         width: 28; height: 20
                                         radius: 4
                                         color: copyMouse.containsMouse ? "#e8eaf6" : "#f0f0f0"
