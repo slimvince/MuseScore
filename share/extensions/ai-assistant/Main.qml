@@ -134,12 +134,9 @@ Rectangle {
     property var appSettings: null
 
     // ── DEBUG LOGGING — remove before shipping ────────────────────────────────
-    // _debugLines accumulates one JSON line per tool-call event (call args
-    // before dispatch, parsed result after). _writeLogViaProcess() overwrites
-    // the log file after every entry — small file, synchronous, easy to read.
+    // _writeLogViaProcess(line) appends one JSON line per call to the canonical
+    // log at AppData\Local\MuseScore\MuseScore4\logs\ai-assistant-debug.log.
     readonly property bool debugMode: true
-    property var _debugLines: []
-    property int _debugLinesWritten: 0
 
     // Enter-to-send workaround for MS4 extensions.
     //
@@ -187,30 +184,24 @@ Rectangle {
     }
 
     // DEBUG LOGGING — remove before shipping.
-    // Bypass FileIO's sandbox by shelling out via apiv1 MsProcess (registered
-    // as `QProcess` under `import MuseScore 3.0` at qmlpluginapi.cpp:205).
+    // Shell out via apiv1 MsProcess (registered as QProcess by `import MuseScore 3.0`
+    // at qmlpluginapi.cpp:205). Fresh process per call: a persistent element
+    // silently no-op'd from the second call onward — MsProcess::startWithArgs
+    // requires NotRunning state, and back-to-back tool calls landed while the
+    // prior spawn was still in flight. Each call here gets its own instance.
     //
-    // MsProcess (util.h:166-188) exposes two start methods:
-    //   * start(QString)            — single-string form, deprecated
-    //   * startWithArgs(prog, args) — the right one for our argv-style call
-    // The plain Qt5 QProcess::start(prog, args) is NOT exposed on the QML
-    // object, so startWithArgs is the path.
-    //
-    // PowerShell Set-Content handles the log as a real string argument:
-    //   * Single-quoted PS strings preserve literal newlines and disable all
-    //     escape interpretation; only ' itself needs escaping (doubled '').
-    //   * -LiteralPath suppresses glob expansion on the path.
-    //   * -Encoding UTF8 — JSON content survives unmangled.
-    //   * Cold start is ~200-500ms; callers run via Qt.callLater so the spawn
-    //     doesn't block the QML event handler that triggered it.
-    function _writeLogViaProcess() {
-        if (!debugMode || _debugLines.length <= _debugLinesWritten) return
-        var newLines = _debugLines.slice(_debugLinesWritten)
-        var content = newLines.join("\n").replace(/'/g, "''")
+    // MsProcess (util.h:166-188) exposes start(QString) and startWithArgs(prog,
+    // args); the plain Qt5 QProcess::start(prog, args) is NOT exposed, so
+    // startWithArgs is the path. PowerShell single-quoted strings preserve
+    // literal content; only ' itself needs escaping (doubled '').
+    function _writeLogViaProcess(line) {
+        if (!debugMode) return
+        var proc = Qt.createQmlObject('import MuseScore 3.0; QProcess { }', root, "logProc")
+        if (!proc) { console.log("DEBUG: QProcess unavailable"); return }
         var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
-        var psCmd = "Add-Content -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
-        _debugLinesWritten = _debugLines.length
-        debugLogProc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
+        var safe = line.replace(/'/g, "''")
+        var psCmd = "Add-Content -LiteralPath '" + logPath + "' -Value '" + safe + "' -Encoding UTF8"
+        proc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -239,6 +230,16 @@ Rectangle {
         // Initial live fetch if a key is already saved — otherwise users would see
         // the stale hardcoded fallback until they next touch the Settings UI.
         if (providerApiKey && providerApiKey.length > 0) fetchModels()
+
+        // DEBUG LOGGING — remove before shipping. Also serves as smoke test:
+        // if no session_start line appears after launch, the QProcess path is broken.
+        if (debugMode) {
+            _writeLogViaProcess(JSON.stringify({
+                session_start: true,
+                version: "v" + pluginVersion,
+                t: new Date().toISOString()
+            }))
+        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -919,14 +920,7 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
-                    if (_debugLines.length === 0) {
-                        _debugLines.push(JSON.stringify({
-                            session_start: true,
-                            version: "v" + pluginVersion,
-                            t: new Date().toISOString()
-                        }))
-                    }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         call: tu.name,
                         args: tu.input || {}
@@ -937,12 +931,11 @@ Rectangle {
                 if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    Qt.callLater(_writeLogViaProcess)
                 }
                 resultBlocks.push({
                     type:         "tool_result",
@@ -1021,14 +1014,7 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
-                    if (_debugLines.length === 0) {
-                        _debugLines.push(JSON.stringify({
-                            session_start: true,
-                            version: "v" + pluginVersion,
-                            t: new Date().toISOString()
-                        }))
-                    }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         call: name,
                         args: args
@@ -1039,12 +1025,11 @@ Rectangle {
                 if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    Qt.callLater(_writeLogViaProcess)
                 }
                 nextMsgs.push({
                     role:         "tool",
@@ -1132,14 +1117,7 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
-                    if (_debugLines.length === 0) {
-                        _debugLines.push(JSON.stringify({
-                            session_start: true,
-                            version: "v" + pluginVersion,
-                            t: new Date().toISOString()
-                        }))
-                    }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         call: fc.name,
                         args: fc.args || {}
@@ -1150,12 +1128,11 @@ Rectangle {
                 if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
-                    _debugLines.push(JSON.stringify({
+                    _writeLogViaProcess(JSON.stringify({
                         t: new Date().toISOString(),
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    Qt.callLater(_writeLogViaProcess)
                 }
                 // Gemini's functionResponse.response proto field is a non-repeating
                 // STRUCT (object). Tools that return raw arrays (getStructure,
@@ -2124,10 +2101,5 @@ Rectangle {
         } // end main Rectangle
     } // end SplitView
 
-    // DEBUG LOGGING — remove before shipping.
-    // Persistent QProcess element reused by _writeLogViaProcess on every tool
-    // call. Avoids Qt.createQmlObject per call (which leaks an unnamed object
-    // tree and intermittently fails to spawn on cold start).
-    QProcess { id: debugLogProc }
 
 } // end root Rectangle
