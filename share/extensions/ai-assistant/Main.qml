@@ -208,8 +208,7 @@ Rectangle {
         var newLines = _debugLines.slice(_debugLinesWritten)
         var content = newLines.join("\n").replace(/'/g, "''")
         var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
-        var psCmd = (_debugLinesWritten === 0 ? "Set-Content" : "Add-Content")
-            + " -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
+        var psCmd = "Add-Content -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
         _debugLinesWritten = _debugLines.length
         debugLogProc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
     }
