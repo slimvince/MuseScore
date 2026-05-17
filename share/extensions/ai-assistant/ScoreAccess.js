@@ -86,9 +86,11 @@ function _findAnnotation(segment, elementType) {
 // Find the first TempoText anywhere in a measure's segments.
 function _firstTempoInMeasure(measure) {
     if (!measure) return null
+    // Hoist: api.engraving.Element.X rebuilds the full enum on every access on 4.7.0.
+    var TEMPO_TEXT = api.engraving.Element.TEMPO_TEXT
     var s = measure.firstSegment
     while (s) {
-        var t = _findAnnotation(s, api.engraving.Element.TEMPO_TEXT)
+        var t = _findAnnotation(s, TEMPO_TEXT)
         if (t) return t
         s = s.nextInMeasure
     }
@@ -98,9 +100,10 @@ function _firstTempoInMeasure(measure) {
 // Find the first RehearsalMark anywhere in a measure's segments.
 function _firstRehearsalMarkInMeasure(measure) {
     if (!measure) return null
+    var REHEARSAL_MARK = api.engraving.Element.REHEARSAL_MARK
     var s = measure.firstSegment
     while (s) {
-        var r = _findAnnotation(s, api.engraving.Element.REHEARSAL_MARK)
+        var r = _findAnnotation(s, REHEARSAL_MARK)
         if (r) return r
         s = s.nextInMeasure
     }
@@ -651,6 +654,9 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
 
     var notes = []
     var rests = []
+    // Hoist: api.engraving.Element.X rebuilds the full enum on every access on 4.7.0.
+    var CHORD_TYPE = api.engraving.Element.CHORD
+    var REST_TYPE  = api.engraving.Element.REST
     var m     = score.firstMeasure
     var idx   = 1
     while (m) {
@@ -665,8 +671,8 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                     if (voiceFilter >= 0 && (track % 4) !== voiceFilter) continue
                     var el = seg.elementAt(track)
                     if (!el) continue
-                    var isChord = (el.type === api.engraving.Element.CHORD)
-                    var isRest  = (el.type === api.engraving.Element.REST)
+                    var isChord = (el.type === CHORD_TYPE)
+                    var isRest  = (el.type === REST_TYPE)
                     if (!isChord && !isRest) continue
 
                     var globalStaff  = Math.floor(track / 4) + 1
@@ -741,6 +747,8 @@ function getHarmonyInRange(startMeasure, endMeasure) {
         return { error: "startMeasure and endMeasure must be numbers" }
 
     var result = []
+    // Hoist: api.engraving.Element.X rebuilds the full enum on every access on 4.7.0.
+    var HARMONY = api.engraving.Element.HARMONY
 
     var m   = score.firstMeasure
     var idx = 1
@@ -754,7 +762,7 @@ function getHarmonyInRange(startMeasure, endMeasure) {
                 if (anns) {
                     for (var ai = 0; ai < anns.length; ai++) {
                         var el = anns[ai]
-                        if (el.type !== api.engraving.Element.HARMONY) continue
+                        if (el.type !== HARMONY) continue
                         var text = ""
                         try { text = el.plainText || el.text || "" } catch(e) {
                             try { text = el.text || "" } catch(e2) {}
@@ -811,6 +819,9 @@ function getLyricsInRange(startMeasure, endMeasure, startStaff, endStaff) {
 
     var SYLLABIC_STR = ["single", "begin", "end", "middle"]
     var result  = []
+    // Hoist: api.engraving.Element.X rebuilds the full enum on every access on 4.7.0.
+    var CHORD_TYPE = api.engraving.Element.CHORD
+    var REST_TYPE  = api.engraving.Element.REST
     var m       = score.firstMeasure
     var idx     = 1
     while (m) {
@@ -825,8 +836,8 @@ function getLyricsInRange(startMeasure, endMeasure, startStaff, endStaff) {
                 for (var track = trackLo; track <= trackHi; track += 4) {
                     var el = seg.elementAt(track)
                     if (!el) continue
-                    if (el.type !== api.engraving.Element.CHORD &&
-                        el.type !== api.engraving.Element.REST) continue
+                    if (el.type !== CHORD_TYPE &&
+                        el.type !== REST_TYPE) continue
                     var lyricsList
                     try { lyricsList = el.lyrics } catch(e) { continue }
                     if (!lyricsList || lyricsList.length === 0) continue

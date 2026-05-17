@@ -1,4 +1,4 @@
-// AI Assistant v0.5.3 — Conversational Chat UI + LLM tool calling
+// AI Assistant v0.5.4 — Conversational Chat UI + LLM tool calling
 // MS4-safe: no FlatButton, no import Muse.*, no QtQuick.LocalStorage top-level import
 import QtQuick 2.15
 import QtQuick.Controls 2.15
@@ -552,6 +552,10 @@ Rectangle {
             // prompt for large orchestral scores.
             var notes = []
             try {
+                // Hoist enum lookup: on 4.7.0, api.engraving.Element.<KEY> rebuilds
+                // the entire ~120-key enum object on every access. Evaluating it
+                // inside the inner loop produced a ~100s startup freeze.
+                var CHORD = api.engraving.Element.CHORD
                 var measure = s.firstMeasure
                 while (measure) {
                     var segment = measure.firstSegment
@@ -559,7 +563,7 @@ Rectangle {
                         for (var staffIdx = 0; staffIdx < s.nstaves; staffIdx++) {
                             for (var voice = 0; voice < 4; voice++) {
                                 var el = segment.elementAt(staffIdx * 4 + voice)
-                                if (el && el.type === api.engraving.Element.CHORD) {
+                                if (el && el.type === CHORD) {
                                     for (var ni = 0; ni < el.notes.length; ni++) {
                                         var n = el.notes[ni]
                                         notes.push({
