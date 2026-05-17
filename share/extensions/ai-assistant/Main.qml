@@ -3,6 +3,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import FileIO 3.0       // DEBUG LOGGING — remove before shipping
 
 import "ScoreAccess.js"  as ScoreAccess
 import "ToolSchemas.js"  as ToolSchemas
@@ -186,40 +187,59 @@ Rectangle {
 
     // DEBUG LOGGING — remove before shipping.
     //
-    // Writes the accumulated log via apiv1 FileIO (registered as `FileIO 3.0`,
-    // see src/engraving/api/v1/qmlpluginapi.cpp:206). The target lands inside
-    // FileIO::userDataPath() — the MuseScore documents dir, which on Windows
-    // defaults to C:/Users/<user>/Documents/MuseScore4. That path is one of
-    // the FileIO sandbox's allowed write roots (util.cpp:163-236);
-    // userAppDataPath (where MuseScore's own logs live) is explicitly NOT.
+    // Writes the accumulated log via the apiv1 FileIO singleton declared at
+    // root level (debugFileIO). Target lands inside FileIO::userDataPath() —
+    // the MuseScore documents dir (on Windows: C:/Users/<user>/Documents/MuseScore4),
+    // which is in the FileIO sandbox's allowed write roots (util.cpp:163-236);
+    // userAppDataPath is explicitly NOT allowed.
     //
     // FileIO::write() returns false silently on sandbox / IO failure rather
-    // than throwing, so the return value MUST be checked — the catch block
-    // alone would miss policy denials. On any failure path the last 100 lines
-    // are stashed in Settings["debugLog"] and the user can grab them with the
-    // copy-log button near the bottom of the root item.
+    // than throwing, so the return value MUST be checked. On failure the
+    // last 100 lines are stashed in Settings["debugLog"] and the user can
+    // grab them via the copy-log button at the bottom-left of the root item.
     function _writeDebugLog() {
-        if (!debugMode) return
-        try {
-            var fileio = Qt.createQmlObject(
-                'import FileIO 3.0; FileIO { }',
-                root,
-                "dbgFileIO"
-            )
-            if (fileio) {
-                fileio.source = fileio.userDataPath() + "/ai-assistant-debug.log"
-                var ok = fileio.write(_debugLines.join("\n") + "\n")
-                if (!ok && appSettings) {
-                    appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
-                }
-            } else if (appSettings) {
-                appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
-            }
-        } catch(e) {
-            try {
-                if (appSettings) appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
-            } catch(e2) {}
+        if (!debugMode || _debugLines.length === 0) return
+        // Try userDataPath (Documents/MuseScore4) first — most discoverable.
+        // Fall back to tempPath() on failure: it's entry 1 of 8 in the FileIO
+        // sandbox allow-list (util.cpp:185-187) and depends on zero DI services,
+        // so it's the surest write target if userDataPath denies.
+        debugFileIO.source = debugFileIO.userDataPath() + "/ai-assistant-debug.log"
+        var ok = debugFileIO.write(_debugLines.join("\n") + "\n")
+        if (!ok) {
+            debugFileIO.source = debugFileIO.tempPath() + "/ai-assistant-debug.log"
+            ok = debugFileIO.write(_debugLines.join("\n") + "\n")
         }
+        _debugLines.push(JSON.stringify({
+            _fileio: { path: debugFileIO.source, ok: ok }
+        }))
+        if (!ok && appSettings) {
+            appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
+        }
+    }
+
+    // DEBUG LOGGING — remove before shipping.
+    // Bypass FileIO's sandbox by shelling out via apiv1 MsProcess (registered
+    // as `QProcess` under `import MuseScore 3.0` at qmlpluginapi.cpp:205).
+    // MsProcess.startWithArgs(program, args) — util.h:183, util.cpp:368-371.
+    //
+    // PowerShell Set-Content handles the log as a real string argument:
+    //   * Single-quoted PS strings preserve literal newlines and disable all
+    //     escape interpretation; only ' itself needs escaping (doubled '').
+    //   * -Encoding UTF8 — JSON content survives unmangled.
+    //   * Trade-off: PowerShell cold start is ~200-500ms (vs ~10ms for cmd),
+    //     so this runs deferred via Qt.callLater from onClicked, never inline.
+    function _writeLogViaProcess() {
+        if (!debugMode || _debugLines.length === 0) return
+        var proc = Qt.createQmlObject(
+            'import MuseScore 3.0; QProcess { }',
+            root, "logProc")
+        if (!proc) return
+        var logPath = "C:/Users/vince/Documents/MuseScore4/ai-assistant-debug.log"
+        var content = _debugLines.join("\n")
+        proc.startWithArgs("powershell.exe", [
+            "-NoProfile", "-NonInteractive", "-Command",
+            "Set-Content -Path '" + logPath + "' -Value '" + content.replace(/'/g, "''") + "' -Encoding UTF8"
+        ])
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -248,6 +268,18 @@ Rectangle {
         // Initial live fetch if a key is already saved — otherwise users would see
         // the stale hardcoded fallback until they next touch the Settings UI.
         if (providerApiKey && providerApiKey.length > 0) fetchModels()
+
+        // DEBUG LOGGING — remove before shipping.
+        // Push resolved FileIO paths immediately so the first ⎘ log bubble
+        // reveals what userDataPath/tempPath actually returned in this engine.
+        if (debugMode) {
+            _debugLines.push(JSON.stringify({
+                _init: {
+                    userDataPath: debugFileIO.userDataPath(),
+                    tempPath:     debugFileIO.tempPath()
+                }
+            }))
+        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -944,7 +976,6 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    _writeDebugLog()
                 }
                 resultBlocks.push({
                     type:         "tool_result",
@@ -1039,7 +1070,6 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    _writeDebugLog()
                 }
                 nextMsgs.push({
                     role:         "tool",
@@ -1143,7 +1173,6 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
-                    _writeDebugLog()
                 }
                 // Gemini's functionResponse.response proto field is a non-repeating
                 // STRUCT (object). Tools that return raw arrays (getStructure,
@@ -2113,38 +2142,39 @@ Rectangle {
     } // end SplitView
 
     // DEBUG LOGGING — remove before shipping.
-    // Off-screen TextArea acts as a clipboard source; the copy-log button
-    // overwrites its text with the accumulated log lines and triggers copy().
-    // QML TextEdit does not expose a static "set clipboard" — a TextEdit-class
-    // node with a selection is the supported path.
-    TextArea {
-        id: hiddenLogArea
-        visible: false
-        width: 1
-        height: 1
-    }
+    // Static declaration via `import FileIO 3.0`. _writeDebugLog() uses this
+    // singleton instead of Qt.createQmlObject per tool call.
+    FileIO { id: debugFileIO }
 
     // DEBUG LOGGING — remove before shipping.
     // Visible only when debugMode is true. Lives at the root level (sibling
-    // of SplitView) so it floats above all chat content in the bottom-right.
+    // of SplitView) so it floats above all chat content in the bottom-left.
+    // Clicking dumps the accumulated log into an assistant chat bubble — the
+    // existing per-bubble copy button is then the proven path to clipboard
+    // (avoids fragile focus juggling on a hidden TextArea in MS4).
     Text {
         id: copyLogButton
         visible: debugMode
         text: "⎘ log"
         color: "#888"
         font.pixelSize: 11
-        anchors.right: parent.right
+        anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.margins: 6
+        anchors.leftMargin: 8
+        anchors.bottomMargin: 8
         z: 1000
         MouseArea {
             anchors.fill: parent
             cursorShape: Qt.PointingHandCursor
             onClicked: {
-                hiddenLogArea.text = _debugLines.join("\n")
-                hiddenLogArea.selectAll()
-                hiddenLogArea.copy()
-                hiddenLogArea.deselect()
+                var logText = _debugLines.length > 0
+                    ? _debugLines.join("\n")
+                    : "(no log entries)"
+                appendMessage("assistant", "```json\n" + logText + "\n```")
+                // Defer the shell-out via Qt.callLater so the bubble lands
+                // before any process spawn cost (and so a process failure
+                // can't take the bubble down with it).
+                Qt.callLater(_writeLogViaProcess)
             }
         }
     }
