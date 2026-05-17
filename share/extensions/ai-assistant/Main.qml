@@ -185,17 +185,36 @@ Rectangle {
     }
 
     // DEBUG LOGGING — remove before shipping.
-    // Synchronous PUT to a local file URL. Qt 5.15 QML XMLHttpRequest permits
-    // PUT to file:// on Windows when no sandbox restricts it; if the build
-    // disallows it the catch saves the last 100 lines to Settings under
-    // "debugLog" so the user can recover them manually.
+    //
+    // Writes the accumulated log via apiv1 FileIO (registered as `FileIO 3.0`,
+    // see src/engraving/api/v1/qmlpluginapi.cpp:206). The target lands inside
+    // FileIO::userDataPath() — the MuseScore documents dir, which on Windows
+    // defaults to C:/Users/<user>/Documents/MuseScore4. That path is one of
+    // the FileIO sandbox's allowed write roots (util.cpp:163-236);
+    // userAppDataPath (where MuseScore's own logs live) is explicitly NOT.
+    //
+    // FileIO::write() returns false silently on sandbox / IO failure rather
+    // than throwing, so the return value MUST be checked — the catch block
+    // alone would miss policy denials. On any failure path the last 100 lines
+    // are stashed in Settings["debugLog"] and the user can grab them with the
+    // copy-log button near the bottom of the root item.
     function _writeDebugLog() {
         if (!debugMode) return
         try {
-            var xhr = new XMLHttpRequest()
-            xhr.open("PUT", "file:///C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log", false)
-            xhr.setRequestHeader("Content-Type", "text/plain")
-            xhr.send(_debugLines.join("\n") + "\n")
+            var fileio = Qt.createQmlObject(
+                'import FileIO 3.0; FileIO { }',
+                root,
+                "dbgFileIO"
+            )
+            if (fileio) {
+                fileio.source = fileio.userDataPath() + "/ai-assistant-debug.log"
+                var ok = fileio.write(_debugLines.join("\n") + "\n")
+                if (!ok && appSettings) {
+                    appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
+                }
+            } else if (appSettings) {
+                appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
+            }
         } catch(e) {
             try {
                 if (appSettings) appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
@@ -2092,4 +2111,41 @@ Rectangle {
 
         } // end main Rectangle
     } // end SplitView
+
+    // DEBUG LOGGING — remove before shipping.
+    // Off-screen TextArea acts as a clipboard source; the copy-log button
+    // overwrites its text with the accumulated log lines and triggers copy().
+    // QML TextEdit does not expose a static "set clipboard" — a TextEdit-class
+    // node with a selection is the supported path.
+    TextArea {
+        id: hiddenLogArea
+        visible: false
+        width: 1
+        height: 1
+    }
+
+    // DEBUG LOGGING — remove before shipping.
+    // Visible only when debugMode is true. Lives at the root level (sibling
+    // of SplitView) so it floats above all chat content in the bottom-right.
+    Text {
+        id: copyLogButton
+        visible: debugMode
+        text: "⎘ log"
+        color: "#888"
+        font.pixelSize: 11
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.margins: 6
+        z: 1000
+        MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+            onClicked: {
+                hiddenLogArea.text = _debugLines.join("\n")
+                hiddenLogArea.selectAll()
+                hiddenLogArea.copy()
+                hiddenLogArea.deselect()
+            }
+        }
+    }
 } // end root Rectangle
