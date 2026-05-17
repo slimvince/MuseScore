@@ -139,6 +139,7 @@ Rectangle {
     // the log file after every entry — small file, synchronous, easy to read.
     readonly property bool debugMode: true
     property var _debugLines: []
+    property int _debugLinesWritten: 0
 
     // Enter-to-send workaround for MS4 extensions.
     //
@@ -203,13 +204,14 @@ Rectangle {
     //   * Cold start is ~200-500ms; callers run via Qt.callLater so the spawn
     //     doesn't block the QML event handler that triggered it.
     function _writeLogViaProcess() {
-        if (!debugMode || _debugLines.length === 0) return
+        if (!debugMode || _debugLines.length <= _debugLinesWritten) return
+        var newLines = _debugLines.slice(_debugLinesWritten)
+        var content = newLines.join("\n").replace(/'/g, "''")
         var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
-        var content = _debugLines.join("\n").replace(/'/g, "''")
-        var psCmd   = "Set-Content -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
-        debugLogProc.startWithArgs("powershell.exe", [
-            "-NoProfile", "-NonInteractive", "-Command", psCmd
-        ])
+        var psCmd = (_debugLinesWritten === 0 ? "Set-Content" : "Add-Content")
+            + " -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
+        _debugLinesWritten = _debugLines.length
+        debugLogProc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
     }
 
     // ─────────────────────────────────────────────────────────────────────────
