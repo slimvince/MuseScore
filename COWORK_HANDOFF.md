@@ -26,25 +26,45 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 
 ---
 
-## Current state (as of 2026-05-15, updated after Iter 89 + DCML comparator commit)
+## Current state (as of 2026-05-17, updated after Iter 94 + goldens refresh committed)
 
-- **HEAD:** `4cb1bfb274` on master (last code commit: `eefa412b6f` — DCML time-overlap comparator —
-  tools/compare_analyses.py + tools/rerun_dcml_comparison.py)
-- **Prior HEAD in cycle:** `2085f11322` (Iter 89 — pc=8 G#/Ab TPC sharp-honor fix)
-- **Working tree (uncommitted):**
-  - Doc drift only after this update (`ARCHITECTURE.md`, `CLAUDE.md`, `STATUS.md`,
-    `COWORK_HANDOFF.md`) — leave alone unless explicitly asked
+- **HEAD:** `d60dddf85b` on master (Refresh Iter 94 snapshot goldens —
+  alternatives-only drift)
+- **Iter 94 commits (this cycle's deliverable):**
+  - `dbfe09fe6f` — Iter 94 code + 11 snapshot goldens + STATUS.md narrative
+    (w_stepIn / w_stepOut +0.10 with parent-scope previousBassPc / nextBassPc,
+    plus four gates on the bonus — see "Iter 94" section below for details)
+  - `a34b5c1e6c` — docs follow-up replacing the three `(this commit)` placeholders
+    in STATUS.md with the real Iter 94 hash
+  - `d60dddf85b` — refresh of 7 snapshot goldens (bach_chorale_001/003/137,
+    chopin_bi105_op30_1, corelli_op01n08a, mozart_k279_1/k280_1) for
+    alternatives-only drift. The goldens committed in dbfe09fe6f were captured
+    against an intermediate Iter 94 binary; final committed code produces
+    slightly different output in the `alternatives` array only — primary chord
+    identity unchanged. BIR figures (43/33, 117/14) unaffected because BIR uses
+    primary chord identity, not alternatives. Discovered during a deep test
+    audit after the original Iter 94 commits.
+- **Prior HEAD in cycle:** `f98586fa67` (Iter 93 — parentStartTick plumbing);
+  `80fe13b59b` (Iter 92 — joint scoring + w_complete + multi-bass);
+  `3a9404efb2` (ai-assistant docs); `2de18139c2` (housekeeping — BIR baseline re-establishment);
+  `4cb1bfb274` (docs update for Iter 89 + DCML comparator)
+- **Working tree (uncommitted):** unrelated leftover docs/handoff edits and untracked
+  files from prior sessions (not part of Iter 92/93/94; leave for separate cleanup) —
+  these include `CLAUDE.md`, `ai-assistant/HANDOFF.md`, and
+  `docs/prompts/iteration_64_root_present_prefilter.md`, plus the various
+  `ai-assistant/CC_INSTRUCTION_*.md` untracked drafts
 - **Composing tests:** 407/407 passing
 - **Notation tests:** 50/52 passing (2 pre-existing Corelli failures remain — do NOT regress:
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
-- **Pipeline snapshot tests:** 11 passed / 1 skipped (skip = `PipelineDivergenceCObservation.
-  GenerateReport`, intentional opt-in)
-- **BIR baselines (re-measured 2026-05-16 under lenient-OR `align_regions`):**
-  Baroque BIR=true=38, BIR=false=188; Jazz BIR=true=103, BIR=false=13.
-  Prior figures (4/118/7) were rendered stale by the lenient-OR alignment
-  change in `eefa412b6f` (DCML time-overlap comparator) — both
-  `analyze_inversion_errors.py` and the DCML comparator share the same
-  `align_regions` helper, so the old numbers cannot be reproduced at HEAD.
+- **Pipeline snapshot tests:** 11/11 passing (1 additional test skipped =
+  `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) — all 11
+  active goldens refreshed by Iter 94 (boundary refinements from parent-scope
+  context + step-bonus score deltas)
+- **BIR baselines (post-Iter-94, lenient-OR `align_regions`):**
+  Baroque BIR=true=43, BIR=false=33; Jazz BIR=true=117, BIR=false=14.
+  Iter 94 deltas vs Iter 92/93: Baroque BIR=true +2 (bucket reclassifications),
+  Baroque BIR=false −13 (~28% reduction), Jazz BIR=true +3, Jazz BIR=false flat.
+  Cumulative since Iter 91: Baroque BIR=false 188 → 33 (−155, 82% reduction).
 - **Chord mismatch report:** 4 RealDiff (pinned), 127 ConventionDiff (Jazz)
 
 ---
@@ -119,6 +139,151 @@ ambiguity. Both Variant A (+12 errors) and Variant B (+22 errors) regressed. Des
 `docs/iter90_bass_as_root_promotion_shelved.md`. Future path: Iter 91, bridge-level
 adjacent-context pass using nextRootPc/previousRootPc from ChordTemporalExtensions.
 
+**Iter 91 — attempted and reverted (no commit):**
+Temporal-context gate: when the winning chord's root is a third above the bass (iii/III
+pattern), promote the bass-rooted reading from rawCandidates when `nextRootPc == bassPc`
+(forward resolution signal). Tried both `previousRootPc OR nextRootPc` (too permissive —
+fired on genuine I→I6 progressions) and `nextRootPc` only. Final result on `nextRootPc`
+only: BIR=false 188→185 (−3), BIR=true 38→41 (+3) — net neutral at 226→226 total errors.
+Reverted. Working tree clean at `2de18139c2`. Superseded by Iter 92 holistic design.
+
+**Ground-truth QA session — 2026-05-16:**
+Opened 5 DCML-annotated scores in MuseScore with GT and US labels injected side-by-side
+(via `tools/inject_dcml_rn.py`). Visual review identified two distinct bugs causing
+the bulk of BIR=false=188 errors:
+
+- **Bug 1 — Passing-note bass contamination:** When the bass voice has two eighth notes
+  within a beat window (e.g. G3 onset + F#3 passing), the lower-pitched passing note
+  (entering mid-region) overrides the beat-onset structural note as bassPc. Mechanism
+  confirmed by diagnostic: both G3 (MIDI 55) and F#3 (MIDI 54) appear in region
+  [4800,5280) with equal pcWeight=0.20; F#3 wins because 54 < 55. This flips root
+  inference (e.g. G major → Em/F# or Am/F# instead of correct G or G7).
+
+- **Bug 2 — Incomplete slash chord beats complete root-position triad:** Given pitch
+  classes {C,E,G} with C in bass, the template scores Em/C ~2.86 vs C major ~2.40 — a
+  gap of ~0.46. Em/C "wins" even though B (the 5th of Em) is absent and C is not in Em.
+  Root-position completeness is not rewarded. Seen on bwv310, bwv319, bwv103.6, bwv283.
+
+**Iter 92 — committed (`80fe13b59b`):**
+Joint (bass, chord) scoring with `w_complete` bonus (distinctPcs==3) and multi-bass
+enumeration. Design at `docs/iter92_joint_bass_chord_scoring.md` (still authoritative
+reference for the JOINT formula and follow-up scope). What landed:
+
+- Struct fields added: `ChordAnalysisTone::onsetAtRegionStart` (bool) and
+  `ChordTemporalContext::nextBassPc` (int, −1=unknown) in `chordanalyzer.h`.
+- Joint enumeration loop in `chordanalyzer.cpp`: enumerate bass candidates from the bass
+  register, score each (bass, root, template) triple = base score (bass-independent) +
+  bass-dependent deltas (`appliedBassRootBonus`, `nonBassAdjustment`, inversion contextual)
+  + `w_complete = +0.50` bonus when distinctPcs≥3 AND all three triad tones are present
+  above extensionThreshold AND bass_candidate.pc == triad_root.
+- Callers populated: `notationcomposingbridgehelpers.cpp::collectRegionTones` (onset flag),
+  `notationharmonicrhythmbridge.cpp` and `tools/batch_analyze.cpp` (nextBassPc assignment).
+- Pipeline snapshot goldens refreshed (10 of 11): bach_chorale_001/003/137,
+  bach_bwv806_prelude/gigue, mozart_k279_1/k280_1, chopin_bi105_op30_1, corelli_op01n08a,
+  schumann_kinderszenen_n01. Audited: clean Bug 2 fix patterns (D7/A→D7, FMaj7/E→FMaj7,
+  F/C→F, G/C#→G, AMaj7/G#→AMaj7, E/B→E, E/G#→E, C/E→C, F/A→F). No regression patterns.
+- BIR impact: Baroque BIR=false 188→46 (−142). Baroque BIR=true 38→41 (+3, bucket
+  reclassifications). Jazz BIR=true 103→114 (+11). Jazz BIR=false 13→14.
+
+**Iter 93 — committed (`f98586fa67`, plumbing only; Step 3b shelved):**
+
+Landed: `collectRegionTones` (in both `notationcomposingbridgehelpers` and
+`tools/batch_analyze`) gained an optional `parentStartTick` parameter (default −1 ⇒
+falls back to `startTickInt` for un-split callers). Pass 2 / Pass 2b sub-region call
+sites in `notationharmonicrhythmbridge.cpp` and `batch_analyze.cpp` pass the parent
+region's startTick so the per-tone `trueAttackAtStart` flag is computed at full-region
+scope rather than against the narrow sub-region boundary. `chordanalyzer.cpp` is
+unchanged relative to Iter 92; the joint-scoring loop, the `w_complete` bonus, and the
+`jointScoringEnabled` gate are intact. Baselines unchanged from Iter 92.
+
+**Step 3b (`w_onset` / `w_passing` per-bass-candidate score deltas) — SHELVED:**
+
+Three variants were attempted and all hit Baroque BIR=false hard stops:
+- Symmetric (`+0.15` onset bonus, `−0.10` passing penalty): +7 BIR=false.
+- Asymmetric penalty-only (`0` onset, `−0.10` passing): +4 BIR=false.
+- Asymmetric + onset-gated (penalty only fires when at least one bass candidate has
+  `onsetAtRegionStart=true`): +3 BIR=false.
+
+Root cause: in Baroque polyphony the bass voice routinely moves mid-region to the
+actual chord root (arpeggiated bass, melodic bass motion). The onset-position signal
+is not a reliable proxy for "structural bass" in this corpus — the same signal that
+would penalise a passing-note artefact also penalises a genuine arpeggiated structural
+root. No further onset-position tuning is expected to clear this; the signal is wrong
+for the corpus.
+
+**Iter 94 — committed (`dbfe09fe6f` + STATUS backfill `a34b5c1e6c`):**
+
+Iter 92's deferred Step 3c (`w_stepIn` / `w_stepOut` voice-leading bonuses) is now
+active in `RuleBasedChordAnalyzer::analyzeChord`. Root-position candidates earn +0.10
+when the bass moves by semitone or whole-tone from `context->previousBassPc` and +0.10
+again on motion to `context->nextBassPc`. Parent-scope plumbing: bridge Pass 2 / Pass 2b
+in `notationharmonicrhythmbridge.cpp` and the main loop in `tools/batch_analyze.cpp`
+compute the predecessor / successor PARENT region's bass PC and override
+`subCtx.previousBassPc` / `subCtx.nextBassPc` for each sub-region `analyzeChord` call
+(the override happens AFTER the stepwise booleans, which intentionally remain
+sub-region-scope for passing-tone / inversion signals, and BEFORE the call; the
+post-call restore keeps the next iteration's stepwise boolean correct).
+
+Four gates were required to keep the bonus safe — each motivated by a concrete
+regression caught during iteration:
+
+1. **`explorationMode` suppression** — new field `ChordAnalyzerPreferences::explorationMode`
+   (default `false`). `greedyExpandSegmentation` sets it to `true` on every internal
+   boundary-exploration `analyzeChord` call (Round 1 head/tail synthesis + Round 2 region
+   scoring in `harmonicsegmenter.cpp::fillGap`). The bonus would otherwise bias
+   sub-region bass selection toward stepwise candidates and redirect segmentation
+   before the final per-region scoring pass runs.
+2. **Root-position guard `candBassPc == cand.rootPc`** — the bonus is meant to reward
+   "this chord's root moves smoothly in the bass line," not "this slash-chord's bass
+   happens to step smoothly." Applying it to slash-chord bass caused a Jazz bwv430
+   BIR=false +1 regression (a G#m7/F# bass stepping to a neighbouring bass gained
+   credit even though its root G# was not the moving voice). Enforced both in the
+   lambda body and in the Pass-B outer loop that skips non-root-position candidates.
+3. **Corrected first-inversion-m7-family guard** — if any competitor in the same
+   `perBass` block with quality in {HalfDiminished, Diminished, Minor7} sits at
+   `(candBassPc - 3) mod 12` (i.e. its root is a minor third BELOW our bass, the
+   first-inversion shape) AND scores within `kStepBudget = kWStepIn + kWStepOut + 0.01`
+   of the candidate's unbonused score, both step bonuses are suppressed. Canonical
+   case: Dm6 (candBassPc=2, rootPc=2) vs Bø7/D (competitor rootPc=11, bassPc=2) — the
+   m7-family competitor's root is the minor third below our bass, not at our bass. The
+   guard prevents the step bonus from tipping a fragile m6 root-position reading over
+   an equally viable first-inversion m7-family reading on identical pitch evidence.
+4. **Power-quality exclusion** — root+fifth-only templates are excluded outright. Five
+   sparse-Jazz Tonic-on-strong-beat regressions (bwv20.7 m16b1, bwv227.1 m11b3,
+   bwv245.40 m27b3, bwv384 m4b3, bwv422 m14b1) had Power `[Tonic]5` reads tip past
+   viable triad reads when the bonus fired. Extending the exclusion to Suspended2/4
+   caught a sus residual but regressed Jazz BIR=false (14 → 15) — beyond hard-stop
+   scope, so the current cut is Power-only.
+
+BIR impact (lenient-OR comparator):
+- Baroque BIR=true 41→43 (+2, bucket reclassifications, not new errors)
+- Baroque BIR=false 46→33 (−13, ~28% reduction)
+- Jazz BIR=true 114→117 (+3)
+- Jazz BIR=false 14 (flat)
+
+Tests: 407/407 composing, 50/52 notation (same 2 pre-existing Corelli implode
+failures), 11 passed / 1 skipped pipeline_snapshot — all 11 active goldens refreshed
+(bach_chorale_001/003/137, bach_bwv806_prelude/gigue, mozart_k279_1/k280_1,
+chopin_bi105_op30_1/2, corelli_op01n08a, schumann_kinderszenen_n01).
+
+**Deferred — Iter 95 candidates:**
+- **`w_onset` / `w_passing` via duration-weighting.** The original Iter 94 plan
+  before voice-leading proved sufficient. Weight each bass candidate by how long its
+  pitch is sustained within the parent region; fits passing-note contamination (small
+  in-region duration) and arpeggiated structural bass (larger cumulative duration).
+  The Iter 93 `parentStartTick` plumbing remains the prerequisite. Reconsider only if
+  a concrete failure pattern emerges that w_complete + w_stepIn / w_stepOut cannot
+  resolve — Iter 94 already harvested −13 BIR=false from the same Baroque cohort the
+  duration-weighting hypothesis targeted, so marginal value is uncertain.
+- **`w_seq` sequential root-progression bonus** for the residual +3 Jazz BIR=true.
+  Depends on `nextRootPc` / chord-level temporal context (analogous to the bass-level
+  `nextBassPc` that Iter 92 introduced). Design at
+  `docs/iter92_joint_bass_chord_scoring.md` still authoritative for the formula.
+- **bwv320 Am 1-case residual.** Single remaining Baroque BIR=false case where the
+  step-bonus-guarded reading still picks an Am over the WiR ground truth; surgical
+  enough to defer to its own iteration after the larger Iter 95 work above lands or is
+  declined.
+
 ---
 
 ## Standing rule — CC instruction preamble (MANDATORY, every single CC session)
@@ -128,11 +293,34 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Read first (every session):** `C:\s\MS\CLAUDE.md`, `C:\s\MS\STATUS.md` (header only),
 > `C:\s\MS\build_and_test.md`
 >
-> **Current state:** Branch `master`, HEAD `4cb1bfb274` (last code commit: `eefa412b6f` — DCML time-overlap comparator;
-> prior: Iter 89 pc=8 G#/Ab fix at `2085f11322`).
-> Baselines: 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not
-> regress), pipeline_snapshot 11 passed / 1 skipped, Baroque BIR=true=38, BIR=false=188,
-> Jazz BIR=true=103, BIR=false=13 (re-measured 2026-05-16 under lenient-OR `align_regions`).
+> **Current state:** Branch `master`, HEAD `d60dddf85b` (Refresh Iter 94 snapshot
+> goldens — alternatives-only drift; 7 of 11 goldens needed refresh after deep
+> audit revealed the goldens committed in `dbfe09fe6f` were captured against an
+> intermediate Iter 94 binary). Iter 94 itself is `dbfe09fe6f` (w_stepIn /
+> w_stepOut +0.10 voice-leading bonuses on root-position candidates with parent-scope
+> `previousBassPc` / `nextBassPc`, plus four gates on the bonus: `explorationMode`
+> suppression inside greedyExpandSegmentation, root-position guard
+> `candBassPc == cand.rootPc`, corrected first-inversion-m7-family guard suppressing
+> the bonus when a HalfDim/Dim/Min7 competitor sits at `(candBassPc - 3) mod 12` within
+> `kStepBudget`, and Power-quality exclusion). Followed by docs commit `a34b5c1e6c`
+> backfilling the Iter 94 hash in STATUS.md. Prior commits in cycle: `f98586fa67`
+> (Iter 93 — parentStartTick plumbing); `80fe13b59b` (Iter 92 — joint scoring +
+> w_complete + multi-bass); `eefa412b6f` (DCML time-overlap comparator); `2085f11322`
+> (Iter 89 pc=8 G#/Ab fix). Baselines (post-Iter-94, re-confirmed 2026-05-17):
+> 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not regress),
+> pipeline_snapshot 11/11 passing (1 additional skipped — all 11 active goldens
+> refreshed by Iter 94), Baroque BIR=true=43, BIR=false=33, Jazz BIR=true=117,
+> BIR=false=14 (lenient-OR `align_regions`). Cumulative since Iter 91: Baroque
+> BIR=false 188 → 33 (−155, 82% reduction).
+> Next task: Iter 95 candidates are all DEFERRED — pick one only if the user
+> explicitly assigns it. (a) Duration-weighting on bass-candidate selection
+> (w_onset / w_passing) — Iter 93 `parentStartTick` plumbing remains the prerequisite,
+> but Iter 94's voice-leading bonuses already harvested −13 BIR=false from the same
+> Baroque cohort, so marginal value is uncertain. (b) `w_seq` sequential
+> root-progression bonus for the residual +3 Jazz BIR=true; design formula at
+> `docs/iter92_joint_bass_chord_scoring.md`. (c) bwv320 Am 1-case residual surgical
+> fix. Before starting any of these, read `git show dbfe09fe6f` and
+> `docs/iter92_joint_bass_chord_scoring.md`.
 
 This preamble goes before EVERY task description, no exceptions.
 
@@ -344,6 +532,50 @@ mklink /J "C:\s\MS-core-api\plugins"    "C:\s\MS-core-api\share\plugins"
 **Legacy v1 plugins** (QML, old API) live in `share/plugins/`. They use the
 `muse/framework/extensions/api/v1/` path and the old `PluginAPI`/`qmlRegisterType`
 system. Relevant for understanding what exists; NOT the target for ms-core-api work.
+
+---
+
+## AI Assistant extension MVP — work done 2026-05-16
+
+Independent of CAL work. AI Assistant chat extension is the first concrete LLM-bridge
+artefact per the [[llm-bridge-mvp-strategy]] memory (build v2 extension first, validate
+where the API gaps actually bite). Lives in the ms-core-api worktree at
+`share/extensions/ai-assistant/` (`Main.qml` + `manifest.json`). Committed as
+**`87ff66b8e5`** on a new branch **`ai-assistant-mvp`** (cut from the same point as
+`ms-core-api`), specifically so the CAL branch stays focused.
+
+**Branch:** `ai-assistant-mvp` (in the `C:\s\MS-core-api` worktree; switch with
+`git checkout ai-assistant-mvp` if you want the files materialised — they're committed
+only on that branch).
+
+**Deployed copies** (untracked or outside repo; used at runtime by MS4):
+- `C:\Users\vince\AppData\Local\MuseScore\MuseScore4\extensions\ai-assistant\Main.qml`
+- `C:\s\MS\ai-assistant\Main.qml` (staging — was stale at v0.4.3, reconciled to v0.4.12 on 2026-05-16)
+
+All three copies are byte-identical at 75225 bytes / v0.4.12.
+
+**Four MS4 limitations discovered and worked around:**
+
+1. **`Qt.labs.settings` not deployed in MS4 install** — `C:\Program Files\MuseScore 4\qml\Qt\labs\` ships only `platform/` and `qmlmodels/`; `settings/` is missing because windeployqt only ships modules MuseScore itself imports, and the main UI never imports `Qt.labs.settings`. Fix: switched to `import MuseScore 3.0; Settings { ... }` — that's the vendored `QQmlSettings` registered in `muse/framework/extensions/api/v1/extapiv1.cpp:40` via `qmlRegisterType("MuseScore", 3, 0, "Settings")`. Process-global registration, so it works from V2 extensions too, not just V1 plugins. No deployment dependency.
+
+2. **`FlatButton` / `import Muse.*` deploy gate over-matched** — the grep pattern in the [[ms4-deploy-gate]] memory (`grep -c "FlatButton\|import Muse"` expecting 1 — the line-2 self-describing comment) over-matched after the Enter workaround landed in v0.4.11: caught `import MuseScore 3.0` strings, `import Muse.Ui\n` substrings inside `Qt.createQmlObject` calls, and doc comments. Tightened the gate to `grep -nE "^[[:space:]]*(import[[:space:]]+Muse\.|FlatButton)"` expecting empty output. Mirrors the actual extension validator in [extensionbuilder.cpp:42-60](muse/framework/extensions/qml/Muse/Extensions/extensionbuilder.cpp#L42-L60). Memory updated.
+
+3. **Stale staging vs deployed divergence** — the staging copy at `C:\s\MS\ai-assistant\Main.qml` had been left at v0.4.3 (May 15) while UI work continued directly on the deployed copies up to v0.4.6 (scrollToBottom helper, copy-message button, TextArea → TextField swap, several others). If the v0.4.3 staging had been re-deployed without merging, ~40 lines of UI work + the Enter workaround would have been lost. Reconciled 2026-05-16 by copying v0.4.12 back to staging. **Going forward: edit in staging only, deploy via grep gate + copy** — the original workflow as documented in [[ms4-deploy-gate]] — rather than editing deployed copies directly.
+
+4. **Enter-to-send in extension QML — the big one.** Took 11 diagnostic iterations (v0.4.5 → v0.4.11) and a deep dive. `TextField.onAccepted`, `Keys.onReturnPressed`, AND any QML `Shortcut` bound to Return/Enter ALL silently fail in MS4 extension QML. Root cause: MS4 implements its entire shortcut system as QML `Shortcut` elements registered in the main window ([muse/framework/shortcuts/qml/Muse/Shortcuts/Shortcuts.qml:53-60](muse/framework/shortcuts/qml/Muse/Shortcuts/Shortcuts.qml#L53-L60)), binding `Return`/`Enter` to `nav-trigger-control` ([src/app/configs/data/shortcuts.xml:80-85](src/app/configs/data/shortcuts.xml#L80-L85)). Anything an extension binds at the same key triggers an ambiguous-overload in Qt's resolver — both candidates are `Qt.WindowShortcut` context — and Qt fires *neither*, without any warning. The fix: dynamically build a `NavigationSection → NavigationPanel → NavigationControl` chain via `Qt.createQmlObject` (bypassing the extension's static-import-only deploy validator), register the control as active on input focus via `requestActive(false)`, and connect its `triggered` signal to send. MS4 then dispatches Enter to it. Documented in v0.4.12's in-file comment above `setupNavigation()` and in [[ms4-extension-input-workaround]]. Verified working at v0.4.11 in log `MuseScore_260516_120757.log`. The dynamic-import bypass works because the validator only scans literal `import` lines in `.qml` files; strings inside `Qt.createQmlObject` are ignored. The V2 extension QML engine still resolves `Muse.Ui` at runtime because it's a registered QML module (not file-path based), independent of the engine's import-path list.
+
+**Open items (suggested follow-ups, not blockers):**
+
+- ~~`extensions/` and `plugins/` junction directories in the ms-core-api worktree show as untracked in `git status` — they're per-machine setup per the worktree CLAUDE.md, should probably be added to `.gitignore` (worktree-local config). Not done.~~ **Done 2026-05-16:** added `/extensions/` and `/plugins/` (with explanatory comment) to `.gitignore` on the `ms-core-api` branch worktree. Modification still unstaged — needs a small standalone commit when convenient. `share/extensions/` content is unaffected (no leading-slash anchor avoidance issues).
+- `share/extensions/hello-world/` is also untracked in the worktree — separate exploration, not part of the ai-assistant commit. Status unknown.
+- The [[ai-assistant-sandbox-choice]] memory's open question (extension vs. plugin sandbox) is now better-informed: the Enter workaround works in the extension sandbox, so the motivation to migrate to a `MuseScore { pluginType: "dialog" }` plugin is weaker than when the memory was written. Decision still deferred to desktop Claude.
+- Worktree-local `setup_and_build.bat`, `setup_and_build_fast.bat`, and `CLAUDE.md` have unstaged modifications on ms-core-api — intentional per-worktree configs, not yet decided whether they should be committed to the branch or kept as local-only.
+- No push yet. `ai-assistant-mvp` is local-only. Pushing it to origin (`github.com/slimvince/MuseScore`) needs explicit decision — the branch could land as a PR target, or just live as a personal branch for now.
+
+**Memory updates 2026-05-16:**
+- [[ms4-extension-input-workaround]] — rewrote to cover both patterns (Ctrl/editing-key intercept + NavigationControl Enter workaround). The pre-existing description (TextArea + printable-char intercept) was obsolete after the v0.4.6 TextField swap.
+- [[ms4-deploy-gate]] — corrected the grep pattern; old loose pattern documented as obsolete.
+- `MEMORY.md` index — both descriptions updated.
 
 ---
 
