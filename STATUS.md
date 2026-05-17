@@ -55,7 +55,16 @@ pcs-ungated initial variant cleared the Corelli regression *but* produced a clea
 Bdim misfire at bwv296 m12 (3-PC sparse Major chord wrongly flipped to diminished)
 and a corelli_op01n08a snapshot regression (F7/A → Adim, dropping the structural
 7th); tightening to `distinctPcs >= 4` eliminated both while preserving the −3
-Baroque BIR=true improvement.
+Baroque BIR=true improvement. Two correct-looking snapshot improvements that the
+loose gate had produced (`schumann_kinderszenen_n01` tick 480 `bvo7 → viio7/V` —
+canonical leading-tone labeling; `bach_chorale_003` tick 2640 `Am → G#dim` —
+vii°→i resolution in A minor) were ALSO suppressed by the `distinctPcs >= 4`
+gate. Both occur on sparse regions where the diminished tone-evidence is thin,
+so the gate is correct to exclude them — without the gate they came with the
+bwv296 / corelli misfires as a package, and the misfires outweighed the wins.
+Future iterations may revisit these with a stronger structural condition (e.g.
+quality of the *current* winner being also Dim/HalfDim, indicating the analyzer
+is already certain about diminished and only the rotation is in question).
 
 Iter 95 Step 1 dropped Baroque BIR=false from 33 → 27 (−6, ~18% reduction) and Jazz
 BIR=true from 117 → 68 (−49, ~42% reduction) via the `w_seq` +0.20 bonus on candidates
