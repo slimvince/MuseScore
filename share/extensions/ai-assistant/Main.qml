@@ -132,6 +132,13 @@ Rectangle {
     // ── Persistence ───────────────────────────────────────────────────────────
     property var appSettings: null
 
+    // ── DEBUG LOGGING — remove before shipping ────────────────────────────────
+    // _debugLines accumulates one JSON line per tool-call event (call args
+    // before dispatch, parsed result after). _writeDebugLog() overwrites the
+    // log file after every entry — small file, synchronous, easy to read.
+    readonly property bool DEBUG_LOG: true
+    property var _debugLines: []
+
     // Enter-to-send workaround for MS4 extensions.
     //
     // The chat input cannot use TextField.onAccepted, Keys.onReturnPressed, or a QML Shortcut bound to
@@ -174,6 +181,25 @@ Rectangle {
             })
         } catch(e) {
             console.warn("AIAssistant: Enter-to-send navigation chain creation FAILED — Enter key will not work: " + e)
+        }
+    }
+
+    // DEBUG LOGGING — remove before shipping.
+    // Synchronous PUT to a local file URL. Qt 5.15 QML XMLHttpRequest permits
+    // PUT to file:// on Windows when no sandbox restricts it; if the build
+    // disallows it the catch saves the last 100 lines to Settings under
+    // "debugLog" so the user can recover them manually.
+    function _writeDebugLog() {
+        if (!DEBUG_LOG) return
+        try {
+            var xhr = new XMLHttpRequest()
+            xhr.open("PUT", "file:///C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log", false)
+            xhr.setRequestHeader("Content-Type", "text/plain")
+            xhr.send(_debugLines.join("\n") + "\n")
+        } catch(e) {
+            try {
+                if (appSettings) appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
+            } catch(e2) {}
         }
     }
 
@@ -880,7 +906,27 @@ Rectangle {
             var resultBlocks = []
             for (var j = 0; j < toolUses.length; j++) {
                 var tu = toolUses[j]
+                // DEBUG LOGGING — remove before shipping
+                var _t0 = Date.now()
+                if (DEBUG_LOG) {
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        call: tu.name,
+                        args: tu.input || {}
+                    }))
+                }
                 var r = Dispatch.dispatchTool(ScoreAccess, tu.name, tu.input || {})
+                // DEBUG LOGGING — remove before shipping
+                if (DEBUG_LOG) {
+                    var _parsed
+                    try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        result: _parsed,
+                        ms: Date.now() - _t0
+                    }))
+                    _writeDebugLog()
+                }
                 resultBlocks.push({
                     type:         "tool_result",
                     tool_use_id:  tu.id,
@@ -955,7 +1001,27 @@ Rectangle {
                 var name = tc.function ? tc.function.name : ""
                 var args = {}
                 try { args = JSON.parse(tc.function.arguments || "{}") } catch(e) {}
+                // DEBUG LOGGING — remove before shipping
+                var _t0 = Date.now()
+                if (DEBUG_LOG) {
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        call: name,
+                        args: args
+                    }))
+                }
                 var r = Dispatch.dispatchTool(ScoreAccess, name, args)
+                // DEBUG LOGGING — remove before shipping
+                if (DEBUG_LOG) {
+                    var _parsed
+                    try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        result: _parsed,
+                        ms: Date.now() - _t0
+                    }))
+                    _writeDebugLog()
+                }
                 nextMsgs.push({
                     role:         "tool",
                     tool_call_id: tc.id,
@@ -1039,7 +1105,27 @@ Rectangle {
             var respParts = []
             for (var j = 0; j < funcCalls.length; j++) {
                 var fc = funcCalls[j]
+                // DEBUG LOGGING — remove before shipping
+                var _t0 = Date.now()
+                if (DEBUG_LOG) {
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        call: fc.name,
+                        args: fc.args || {}
+                    }))
+                }
                 var r = Dispatch.dispatchTool(ScoreAccess, fc.name, fc.args || {})
+                // DEBUG LOGGING — remove before shipping
+                if (DEBUG_LOG) {
+                    var _parsed
+                    try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
+                    _debugLines.push(JSON.stringify({
+                        t: new Date().toISOString(),
+                        result: _parsed,
+                        ms: Date.now() - _t0
+                    }))
+                    _writeDebugLog()
+                }
                 // Gemini's functionResponse.response proto field is a non-repeating
                 // STRUCT (object). Tools that return raw arrays (getStructure,
                 // getMidiChannelSettings) or scalars must be wrapped — otherwise

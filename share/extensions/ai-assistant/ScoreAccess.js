@@ -823,11 +823,17 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
     var dynLc = (typeof dynamic === "string") ? dynamic.toLowerCase() : ""
     var dynType = dynamicMap[dynLc]
     if (dynType === undefined) {
-        return { error: "Unknown dynamic '" + dynamic + "'. Valid: " + Object.keys(dynamicMap).join(", ") }
+        return {
+            error: "Unknown dynamic '" + dynamic + "'. Valid: " + Object.keys(dynamicMap).join(", "),
+            _debug: { fn: "addDynamic", input: dynamic, normalized: dynLc }
+        }
     }
 
     var tick = _posToTick(measureNo, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measureNo + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measureNo + " not found",
+        _debug: { fn: "addDynamic", measureNo: measureNo, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
+    }
 
     try {
         s.startCmd("add dynamic")
@@ -842,10 +848,10 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         d.dynamicType = dynType
         c.add(d)
         s.endCmd()
-        return { ok: true, measure: measureNo, beat: beat, dynamic: dynLc }
+        return { ok: true, measure: measureNo, beat: beat, dynamic: dynLc, _debug: { dynType: dynType, tick: tick } }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
-        return { error: "addDynamic failed: " + e }
+        return { error: "addDynamic failed: " + e, _debug: { fn: "addDynamic", dynType: dynType, tick: tick } }
     }
 }
 
@@ -907,7 +913,10 @@ function addStaffText(measureNo, beat, beatFraction, staff, text) {
         return { error: "Staff text must be a non-empty string" }
 
     var tick = _posToTick(measureNo, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measureNo + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measureNo + " not found",
+        _debug: { fn: "addStaffText", measureNo: measureNo, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
+    }
 
     try {
         s.startCmd("add staff text")
@@ -937,7 +946,10 @@ function addSystemText(measureNo, text) {
         return { error: "System text must be a non-empty string" }
 
     var mTick = _posToTick(measureNo, 1, "0")
-    if (mTick < 0) return { error: "Measure " + measureNo + " not found or has no chord/rest segment" }
+    if (mTick < 0) return {
+        error: "Measure " + measureNo + " not found or has no chord/rest segment",
+        _debug: { fn: "addSystemText", measureNo: measureNo, tick: mTick }
+    }
 
     try {
         s.startCmd("add system text")
@@ -965,7 +977,10 @@ function addHarmony(measureNo, beat, beatFraction, staff, text) {
         return { error: "Chord symbol text must be a non-empty string" }
 
     var tick = _posToTick(measureNo, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measureNo + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measureNo + " not found",
+        _debug: { fn: "addHarmony", measureNo: measureNo, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
+    }
 
     try {
         s.startCmd("add chord symbol")
@@ -997,9 +1012,15 @@ function _rangeCmdWrite(cmdLabel, cmdStr,
     if (typeof endStaff !== "number" || endStaff < 1) endStaff = startStaff
 
     var startTick = _posToTick(startMeasure, startBeat, startBeatFraction)
-    if (startTick < 0) return { error: "Start measure " + startMeasure + " not found" }
+    if (startTick < 0) return {
+        error: "Start measure " + startMeasure + " not found",
+        _debug: { fn: cmdLabel, side: "start", measureNo: startMeasure, beat: startBeat, beatFraction: startBeatFraction || "0", staff: startStaff, tick: startTick }
+    }
     var endTick   = _posToTick(endMeasure,   endBeat,   endBeatFraction)
-    if (endTick < 0)   return { error: "End measure " + endMeasure + " not found" }
+    if (endTick < 0)   return {
+        error: "End measure " + endMeasure + " not found",
+        _debug: { fn: cmdLabel, side: "end", measureNo: endMeasure, beat: endBeat, beatFraction: endBeatFraction || "0", staff: endStaff, tick: endTick }
+    }
 
     var s0 = startStaff - 1   // inclusive, 0-based
     var s1 = endStaff         // exclusive, 0-based
@@ -1240,7 +1261,10 @@ function addNote(measure, beat, beatFraction, staff, voice, pitch, duration) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addNote", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     var midiPitch = _noteNameToMidi(pitch)
     var frac = _durationToFraction(duration)
     try {
@@ -1264,7 +1288,10 @@ function addNoteToChord(measure, beat, beatFraction, staff, voice, pitch) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addNoteToChord", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     var midiPitch = _noteNameToMidi(pitch)
     try {
         s.startCmd("add note to chord")
@@ -1285,7 +1312,10 @@ function addRest(measure, beat, beatFraction, staff, voice, duration) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addRest", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     var frac = _durationToFraction(duration)
     try {
         s.startCmd("add rest")
@@ -1309,7 +1339,10 @@ function addLyric(measure, beat, beatFraction, staff, voice, text, syllabic, ver
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addLyric", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     try {
         s.startCmd("add lyric")
         var c = s.newCursor()
@@ -1318,7 +1351,10 @@ function addLyric(measure, beat, beatFraction, staff, voice, text, syllabic, ver
         var chord = c.element
         if (!chord) {
             try { s.endCmd(true) } catch (ee) {}
-            return { error: "No element at measure " + measure + " beat " + beat }
+            return {
+                error: "No element at measure " + measure + " beat " + beat,
+                _debug: { fn: "addLyric", tick: tick, elementType: null }
+            }
         }
         var ly = api.engraving.newElement(api.engraving.Element.LYRICS)
         chord.add(ly)                       // chord.add, NOT cursor.add
@@ -1340,7 +1376,10 @@ function addTie(measure, beat, beatFraction, staff, voice) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addTie", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     try {
         var s0 = staff - 1
         s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
@@ -1379,7 +1418,10 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addArticulation", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, articulation: articulation, tick: tick }
+    }
 
     // ── Direct-construction branch (SymId-keyed; no cmd path exists) ──
     // SymId names verified in src/engraving/api/v1/apitypes.h:
@@ -1407,7 +1449,10 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
         c.rewindToTick(tick)
         var chord = c.element
         if (!chord || chord.type !== api.engraving.Element.CHORD)
-            return { error: "No chord at measure " + measure + " beat " + beat }
+            return {
+                error: "No chord at measure " + measure + " beat " + beat,
+                _debug: { fn: "addArticulation", tick: tick, elementType: chord ? chord.type : null, CHORD_TYPE: api.engraving.Element.CHORD }
+            }
 
         try {
             s.startCmd("add articulation")
@@ -1609,7 +1654,10 @@ function setNotePitch(measure, beat, beatFraction, staff, voice, oldPitch, newPi
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "setNotePitch", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     var newMidi = _noteNameToMidi(newPitch)
     var newTpc  = _noteNameToTpc(newPitch)
     var oldMidi = oldPitch ? _noteNameToMidi(oldPitch) : null
@@ -1622,7 +1670,10 @@ function setNotePitch(measure, beat, beatFraction, staff, voice, oldPitch, newPi
         var chord = c.element
         if (!chord || !chord.notes) {
             try { s.endCmd(true) } catch (ee) {}
-            return { error: "No chord at measure " + measure + " beat " + beat }
+            return {
+                error: "No chord at measure " + measure + " beat " + beat,
+                _debug: { fn: "setNotePitch", tick: tick, elementType: chord ? chord.type : null, CHORD_TYPE: api.engraving.Element.CHORD }
+            }
         }
         var target = null
         for (var i = 0; i < chord.notes.length; i++) {
@@ -1653,7 +1704,10 @@ function setNoteDuration(measure, beat, beatFraction, staff, voice, duration) {
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "setNoteDuration", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
     var frac = _durationToFraction(duration)
 
     try {
@@ -1716,7 +1770,10 @@ function addFermata(measure, beat, beatFraction, staff, type) {
     if (symValue === undefined) symValue = symMap["normal"]
 
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addFermata", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
+    }
 
     try {
         s.startCmd("add fermata")
@@ -2008,14 +2065,20 @@ function setNoteAccidental(measure, beat, beatFraction, staff, voice, pitch, acc
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "setNoteAccidental", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
 
     var c = s.newCursor()
     c.track = (staff - 1) * 4 + ((voice || 1) - 1)
     c.rewindToTick(tick)
     var chord = c.element
     if (!chord || chord.type !== api.engraving.Element.CHORD)
-        return { error: "No chord at measure " + measure + " beat " + beat }
+        return {
+            error: "No chord at measure " + measure + " beat " + beat,
+            _debug: { fn: "setNoteAccidental", tick: tick, elementType: chord ? chord.type : null, CHORD_TYPE: api.engraving.Element.CHORD }
+        }
 
     var pitchInt = pitch ? _noteNameToMidi(pitch) : -1
     var targetNote = null
@@ -2067,14 +2130,20 @@ function setNoteVelocity(measure, beat, beatFraction, staff, voice, pitch, veloc
     var s = _score()
     if (!s) return { error: "No score open" }
     var tick = _posToTick(measure, beat, beatFraction)
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "setNoteVelocity", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
+    }
 
     var c = s.newCursor()
     c.track = (staff - 1) * 4 + ((voice || 1) - 1)
     c.rewindToTick(tick)
     var chord = c.element
     if (!chord || chord.type !== api.engraving.Element.CHORD)
-        return { error: "No chord at measure " + measure + " beat " + beat }
+        return {
+            error: "No chord at measure " + measure + " beat " + beat,
+            _debug: { fn: "setNoteVelocity", tick: tick, elementType: chord ? chord.type : null, CHORD_TYPE: api.engraving.Element.CHORD }
+        }
 
     var pitchInt = pitch ? _noteNameToMidi(pitch) : -1
     var targetNote = null
