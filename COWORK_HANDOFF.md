@@ -26,30 +26,35 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 
 ---
 
-## Current state (as of 2026-05-17, updated after Iter 94 + goldens refresh committed)
+## Current state (as of 2026-05-17, updated after Iter 95 Step 1 committed)
 
-- **HEAD:** `d60dddf85b` on master (Refresh Iter 94 snapshot goldens —
-  alternatives-only drift)
-- **Iter 94 commits (this cycle's deliverable):**
-  - `dbfe09fe6f` — Iter 94 code + 11 snapshot goldens + STATUS.md narrative
-    (w_stepIn / w_stepOut +0.10 with parent-scope previousBassPc / nextBassPc,
-    plus four gates on the bonus — see "Iter 94" section below for details)
-  - `a34b5c1e6c` — docs follow-up replacing the three `(this commit)` placeholders
-    in STATUS.md with the real Iter 94 hash
-  - `d60dddf85b` — refresh of 7 snapshot goldens (bach_chorale_001/003/137,
-    chopin_bi105_op30_1, corelli_op01n08a, mozart_k279_1/k280_1) for
-    alternatives-only drift. The goldens committed in dbfe09fe6f were captured
-    against an intermediate Iter 94 binary; final committed code produces
-    slightly different output in the `alternatives` array only — primary chord
-    identity unchanged. BIR figures (43/33, 117/14) unaffected because BIR uses
-    primary chord identity, not alternatives. Discovered during a deep test
-    audit after the original Iter 94 commits.
-- **Prior HEAD in cycle:** `f98586fa67` (Iter 93 — parentStartTick plumbing);
-  `80fe13b59b` (Iter 92 — joint scoring + w_complete + multi-bass);
-  `3a9404efb2` (ai-assistant docs); `2de18139c2` (housekeeping — BIR baseline re-establishment);
-  `4cb1bfb274` (docs update for Iter 89 + DCML comparator)
+- **HEAD:** `85c835359a` on master (Iter 95 Step 1 — `w_seq` sequential
+  root-progression bonus, +0.20, `distinctPcs >= 4`, chord-level,
+  `explorationMode`-gated)
+- **Iter 95 Step 1 commit (this cycle's deliverable):**
+  - `85c835359a` — Iter 95 Step 1 code (single-line gate added to `wSeqBonus`
+    lambda in `chordanalyzer.cpp`) + 5 snapshot goldens refreshed
+    (`bach_chorale_001`, `bach_chorale_137`, `chopin_bi105_op30_2`,
+    `mozart_k280_1`, `schumann_kinderszenen_n01`). The bonus rewards a candidate
+    whose root sits a perfect fourth below the next region's root (descending-fifth
+    root motion, classic V→I). Chord-level: any inversion qualifies; the
+    first-inversion-m7-family surgical guard does NOT apply. `distinctPcs >= 4`
+    is the critical gate — without it the bonus over-fires on 3-PC sparse Jazz
+    regions, producing 2 new Corelli notation failures and a Jazz BIR=false +2
+    regression in the initial variant. **Step 2 (bridge Pass 2/2b `nextRootPc`
+    plumbing) deferred** — sub-region `analyzeChord` calls in
+    `notationharmonicrhythmbridge.cpp` currently set `subCtx.nextRootPc = -1`,
+    so `w_seq` no-ops on bridge sub-region calls; parent-region calls already
+    receive `w_seq` via the existing `inferNextRootPc` plumbing at ~line 351.
+- **Prior HEAD in cycle:** `d60dddf85b` (Refresh Iter 94 snapshot goldens —
+  alternatives-only drift); `a34b5c1e6c` (Iter 94 docs follow-up); `dbfe09fe6f`
+  (Iter 94 — w_stepIn / w_stepOut +0.10 with parent-scope context + four gates);
+  `f98586fa67` (Iter 93 — parentStartTick plumbing); `80fe13b59b` (Iter 92 —
+  joint scoring + w_complete + multi-bass); `3a9404efb2` (ai-assistant docs);
+  `2de18139c2` (housekeeping — BIR baseline re-establishment); `4cb1bfb274`
+  (docs update for Iter 89 + DCML comparator)
 - **Working tree (uncommitted):** unrelated leftover docs/handoff edits and untracked
-  files from prior sessions (not part of Iter 92/93/94; leave for separate cleanup) —
+  files from prior sessions (not part of Iter 92/93/94/95; leave for separate cleanup) —
   these include `CLAUDE.md`, `ai-assistant/HANDOFF.md`, and
   `docs/prompts/iteration_64_root_present_prefilter.md`, plus the various
   `ai-assistant/CC_INSTRUCTION_*.md` untracked drafts
@@ -57,14 +62,17 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 - **Notation tests:** 50/52 passing (2 pre-existing Corelli failures remain — do NOT regress:
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
 - **Pipeline snapshot tests:** 11/11 passing (1 additional test skipped =
-  `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) — all 11
-  active goldens refreshed by Iter 94 (boundary refinements from parent-scope
-  context + step-bonus score deltas)
-- **BIR baselines (post-Iter-94, lenient-OR `align_regions`):**
-  Baroque BIR=true=43, BIR=false=33; Jazz BIR=true=117, BIR=false=14.
-  Iter 94 deltas vs Iter 92/93: Baroque BIR=true +2 (bucket reclassifications),
-  Baroque BIR=false −13 (~28% reduction), Jazz BIR=true +3, Jazz BIR=false flat.
-  Cumulative since Iter 91: Baroque BIR=false 188 → 33 (−155, 82% reduction).
+  `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) — 5 of 11
+  active goldens refreshed by Iter 95 Step 1 (4 winner / boundary diffs from
+  parent-region w_seq application + 1 alt-only score delta)
+- **BIR baselines (post-Iter-95-Step-1, lenient-OR `align_regions`):**
+  Baroque BIR=true=44, BIR=false=27; Jazz BIR=true=68, BIR=false=13.
+  Iter 95 Step 1 deltas vs Iter 94: Baroque BIR=true +1 (bucket reclassification),
+  Baroque BIR=false −6 (~18% reduction), Jazz BIR=true −49 (~42% reduction —
+  w_seq dense-region-only correctly suppresses spurious dominant-resolution
+  misreads in dense Jazz cadences), Jazz BIR=false −1.
+  Cumulative since Iter 91: Baroque BIR=false 188 → 27 (−161, ~86% reduction);
+  Jazz BIR=true 103 → 68 (−35, ~34% reduction).
 - **Chord mismatch report:** 4 RealDiff (pinned), 127 ConventionDiff (Jazz)
 
 ---
@@ -293,34 +301,49 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Read first (every session):** `C:\s\MS\CLAUDE.md`, `C:\s\MS\STATUS.md` (header only),
 > `C:\s\MS\build_and_test.md`
 >
-> **Current state:** Branch `master`, HEAD `a1bf6c3934` (Refresh Iter 94 snapshot
-> goldens — alternatives-only drift; 7 of 11 goldens needed refresh after deep
-> audit revealed the goldens committed in `dbfe09fe6f` were captured against an
-> intermediate Iter 94 binary). Iter 94 itself is `dbfe09fe6f` (w_stepIn /
-> w_stepOut +0.10 voice-leading bonuses on root-position candidates with parent-scope
-> `previousBassPc` / `nextBassPc`, plus four gates on the bonus: `explorationMode`
-> suppression inside greedyExpandSegmentation, root-position guard
-> `candBassPc == cand.rootPc`, corrected first-inversion-m7-family guard suppressing
-> the bonus when a HalfDim/Dim/Min7 competitor sits at `(candBassPc - 3) mod 12` within
-> `kStepBudget`, and Power-quality exclusion). Followed by docs commit `a34b5c1e6c`
-> backfilling the Iter 94 hash in STATUS.md. Prior commits in cycle: `f98586fa67`
-> (Iter 93 — parentStartTick plumbing); `80fe13b59b` (Iter 92 — joint scoring +
-> w_complete + multi-bass); `eefa412b6f` (DCML time-overlap comparator); `2085f11322`
-> (Iter 89 pc=8 G#/Ab fix). Baselines (post-Iter-94, re-confirmed 2026-05-17):
-> 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not regress),
-> pipeline_snapshot 11/11 passing (1 additional skipped — all 11 active goldens
-> refreshed by Iter 94), Baroque BIR=true=43, BIR=false=33, Jazz BIR=true=117,
-> BIR=false=14 (lenient-OR `align_regions`). Cumulative since Iter 91: Baroque
-> BIR=false 188 → 33 (−155, 82% reduction).
-> Next task: Iter 95 candidates are all DEFERRED — pick one only if the user
-> explicitly assigns it. (a) Duration-weighting on bass-candidate selection
-> (w_onset / w_passing) — Iter 93 `parentStartTick` plumbing remains the prerequisite,
-> but Iter 94's voice-leading bonuses already harvested −13 BIR=false from the same
-> Baroque cohort, so marginal value is uncertain. (b) `w_seq` sequential
-> root-progression bonus for the residual +3 Jazz BIR=true; design formula at
-> `docs/iter92_joint_bass_chord_scoring.md`. (c) bwv320 Am 1-case residual surgical
-> fix. Before starting any of these, read `git show dbfe09fe6f` and
-> `docs/iter92_joint_bass_chord_scoring.md`.
+> **Current state:** Branch `master`, HEAD `85c835359a` (Iter 95 Step 1 —
+> `w_seq` sequential root-progression bonus, +0.20, `distinctPcs >= 4`,
+> chord-level, `explorationMode`-gated). Single-line gate added to `wSeqBonus`
+> lambda in `chordanalyzer.cpp`; 5 snapshot goldens refreshed
+> (`bach_chorale_001`, `bach_chorale_137`, `chopin_bi105_op30_2`,
+> `mozart_k280_1`, `schumann_kinderszenen_n01`). The bonus rewards a candidate
+> whose root sits a perfect fourth below the next region's root
+> (`((context->nextRootPc - candRootPc) mod 12) == 5`, i.e. descending-fifth
+> root motion / classic V→I). Chord-level: any inversion qualifies; the
+> first-inversion-m7-family surgical guard does NOT apply. The `distinctPcs >= 4`
+> gate is critical — without it the bonus over-fires on 3-PC sparse Jazz regions,
+> producing 2 new Corelli notation failures and a Jazz BIR=false +2 regression
+> in the initial variant. **Step 2 (bridge Pass 2/2b `nextRootPc` plumbing)
+> deferred** — sub-region `analyzeChord` calls in
+> `notationharmonicrhythmbridge.cpp` set `subCtx.nextRootPc = -1`, so `w_seq`
+> no-ops on bridge sub-region calls; parent-region calls already receive
+> `w_seq` via the existing `inferNextRootPc` plumbing at ~line 351. Prior
+> commits in cycle: `d60dddf85b` (refresh Iter 94 snapshot goldens —
+> alternatives-only drift); `a34b5c1e6c` (Iter 94 docs follow-up); `dbfe09fe6f`
+> (Iter 94 — w_stepIn / w_stepOut +0.10 voice-leading bonuses with parent-scope
+> `previousBassPc` / `nextBassPc` and four gates); `f98586fa67` (Iter 93 —
+> parentStartTick plumbing); `80fe13b59b` (Iter 92 — joint scoring + w_complete
+> + multi-bass); `eefa412b6f` (DCML time-overlap comparator); `2085f11322`
+> (Iter 89 pc=8 G#/Ab fix). Baselines (post-Iter-95-Step-1, 2026-05-17): 407/407
+> composing, 50/52 notation (2 pre-existing Corelli failures — do not regress),
+> pipeline_snapshot 11/11 passing (1 additional skipped — 5 of 11 active goldens
+> refreshed by Iter 95 Step 1), Baroque BIR=true=44, BIR=false=27, Jazz
+> BIR=true=68, BIR=false=13 (lenient-OR `align_regions`). Cumulative since
+> Iter 91: Baroque BIR=false 188 → 27 (−161, ~86% reduction); Jazz BIR=true
+> 103 → 68 (−35, ~34% reduction).
+> Next task: Iter 95 Step 2 — bridge Pass 2/2b `nextRootPc` plumbing in
+> `notationharmonicrhythmbridge.cpp`. Sub-region `analyzeChord` calls currently
+> set `subCtx.nextRootPc = -1`, suppressing `w_seq` on the notation path's
+> sub-region splits (Pass 2 / Pass 2b). Goal: populate `subCtx.nextRootPc` so
+> `w_seq` fires on sub-region calls too. Initial spike (already shelved) tried
+> `subCtx.nextRootPc = regions[parentIdx + 1].chordResult.identity.rootPc`
+> (next parent's root) but the right design needs investigation — sub-regions
+> may need the NEXT SUB-REGION's root (within or across parents), not the next
+> parent's root. Other Iter 95 candidates remain DEFERRED unless the user
+> assigns them: (a) duration-weighting (w_onset / w_passing) on bass-candidate
+> selection; (b) bwv320 Am 1-case residual surgical fix. Before Step 2, read
+> `git show 85c835359a` and the bridge sub-region context-construction blocks
+> at `notationharmonicrhythmbridge.cpp:505–525` and `:691–711`.
 
 This preamble goes before EVERY task description, no exceptions.
 
