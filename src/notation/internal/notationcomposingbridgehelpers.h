@@ -122,11 +122,18 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
 ///
 /// Returns one ChordAnalysisTone per distinct pitch class, with all §4.1c fields
 /// populated.  Returns empty vector when the region contains no audible notes.
+/// `parentStartTick`: tick used for the per-tone `onsetAtRegionStart` flag.
+///   - For un-split (parent-scope) calls, pass -1 to default to startTick.
+///   - For Pass 2 / Pass 2b sub-region calls, pass the parent region's
+///     startTick so onset flags remain meaningful at full-region scope
+///     (Iter 93). Tones attacking mid-parent no longer look like beat-onset
+///     bass candidates within the sub-region's narrow window.
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTick,
                    int endTick,
-                   const std::set<size_t>& excludeStaves);
+                   const std::set<size_t>& excludeStaves,
+                   int parentStartTick = -1);
 
 /// Pass 2: onset-only sub-boundary detection within a coarse Jaccard region.
 /// Collects only notes whose start tick equals the segment tick (no sustained

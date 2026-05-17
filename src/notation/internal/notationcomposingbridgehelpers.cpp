@@ -837,13 +837,21 @@ std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTickInt,
                    int endTickInt,
-                   const std::set<size_t>& excludeStaves)
+                   const std::set<size_t>& excludeStaves,
+                   int parentStartTickInt)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
     if (!sc || endTickInt <= startTickInt) {
         return {};
+    }
+
+    // Iter 93: onsetAtRegionStart is computed against parentStartTickInt so
+    // that sub-region calls (Pass 2 / Pass 2b) see the parent-scope onset
+    // truth. Default to startTickInt for parent-scope / unsplit callers.
+    if (parentStartTickInt < 0) {
+        parentStartTickInt = startTickInt;
     }
 
     const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences;
@@ -1057,7 +1065,7 @@ collectRegionTones(const mu::engraving::Score* sc,
                     a.durationInRegion += durInRegion;
                     a.metricTicks.insert(segTickInt);
                     voiceCountAtTick[pc][segTickInt]++;
-                    if (segTickInt == startTickInt) {
+                    if (segTickInt == parentStartTickInt) {
                         a.trueAttackAtStart = true;
                     }
 

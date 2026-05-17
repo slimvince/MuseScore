@@ -769,12 +769,21 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
     const Score* score,
     int startTickInt,
     int endTickInt,
-    const std::set<size_t>& excludeStaves)
+    const std::set<size_t>& excludeStaves,
+    int parentStartTickInt = -1)
 {
     const analysis::ChordAnalyzerPreferences& prefs = analysis::kDefaultChordAnalyzerPreferences;
 
     if (!score || endTickInt <= startTickInt) {
         return {};
+    }
+
+    // Iter 93: onsetAtRegionStart is computed against parentStartTickInt so
+    // that Pass 2b sub-region calls (boundaryTicks expansion at line ~1709)
+    // see the parent-scope onset truth — tones that attack at a bass-movement
+    // sub-boundary mid-parent no longer look like beat-onset bass candidates.
+    if (parentStartTickInt < 0) {
+        parentStartTickInt = startTickInt;
     }
 
     const Fraction startTick = Fraction::fromTicks(startTickInt);
@@ -1058,7 +1067,7 @@ static std::vector<ChordAnalysisTone> collectRegionTones(
                     a.durationInRegion += durInRegion;
                     a.metricTicks.insert(segTickInt);
                     voiceCountAtTick[pc][segTickInt]++;
-                    if (segTickInt == startTickInt) {
+                    if (segTickInt == parentStartTickInt) {
                         a.trueAttackAtStart = true;
                     }
 
@@ -1684,6 +1693,15 @@ static std::vector<AnalyzedRegion> analyzeScore(
         }
     }
 
+    // Iter 93: preserve pre-Pass-2b parent boundaries so the main analyzeChord
+    // loop can compute onsetAtRegionStart at full-region scope (against the
+    // parent's startTick, not the sub-region's). Indexed by tick value; the
+    // parent for a given sub-region is the largest entry ≤ sub-region start.
+    std::set<int> parentBoundaryTicks;
+    for (const Fraction& t : boundaryTicks) {
+        parentBoundaryTicks.insert(t.ticks());
+    }
+
     // Pass 2b: expand coarse regions with bass-movement sub-boundaries.
     // Detects regions where the pitch-class set is identical across the region but
     // the bass note changes (e.g. Eye of the Hurricane m.1: F-bass → Bb-bass with
@@ -1724,10 +1742,21 @@ static std::vector<AnalyzedRegion> analyzeScore(
     for (size_t boundaryIndex = 0; boundaryIndex < boundaryTicks.size(); ++boundaryIndex) {
         const Fraction regionStart = boundaryTicks[boundaryIndex];
         const Fraction regionEnd = (boundaryIndex + 1 < boundaryTicks.size()) ? boundaryTicks[boundaryIndex + 1] : endTick;
+        // Iter 93: resolve parent-region startTick for onsetAtRegionStart.
+        // Largest pre-Pass-2b boundary ≤ regionStart.
+        int parentStartTick = regionStart.ticks();
+        {
+            auto it = parentBoundaryTicks.upper_bound(regionStart.ticks());
+            if (it != parentBoundaryTicks.begin()) {
+                --it;
+                parentStartTick = *it;
+            }
+        }
         auto tones = collectRegionTones(score,
                                         regionStart.ticks(),
                                         regionEnd.ticks(),
-                                        excludeStaves);
+                                        excludeStaves,
+                                        parentStartTick);
         if (tones.empty()) {
             continue;
         }
@@ -1767,10 +1796,19 @@ static std::vector<AnalyzedRegion> analyzeScore(
             const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
                                            ? boundaryTicks[boundaryIndex + 2]
                                            : endTick;
+            int nextParentStartTick = nextRegionStart.ticks();
+            {
+                auto it = parentBoundaryTicks.upper_bound(nextRegionStart.ticks());
+                if (it != parentBoundaryTicks.begin()) {
+                    --it;
+                    nextParentStartTick = *it;
+                }
+            }
             const auto nextTones = collectRegionTones(score,
                                                       nextRegionStart.ticks(),
                                                       nextRegionEnd.ticks(),
-                                                      excludeStaves);
+                                                      excludeStaves,
+                                                      nextParentStartTick);
             for (const auto& tone : nextTones) {
                 if (tone.isBass) {
                     nextBassPc = tone.pitch % 12;

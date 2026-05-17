@@ -508,8 +508,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     const Fraction subStart = subBounds[si];
                     const Fraction subEnd   = subBounds[si + 1];
 
+                    // Iter 93: pass parentRegion.startTick so onsetAtRegionStart
+                    // is computed at full-region scope (not at sub-region scope,
+                    // which would mark the sub-region splitting onset as a
+                    // beat-onset bass candidate).
                     auto subTones = collectRegionTones(
-                        score, subStart.ticks(), subEnd.ticks(), excludeStaves);
+                        score, subStart.ticks(), subEnd.ticks(), excludeStaves,
+                        parentRegion.startTick);
 
                     if (subTones.empty()) {
                         // Rest gap: preserve boundary using parent's chord identity.
@@ -670,8 +675,11 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     const Fraction subStart = bounds[bi];
                     const Fraction subEnd   = bounds[bi + 1];
 
+                    // Iter 93: pass parentRegion.startTick so onsetAtRegionStart
+                    // is computed at full-region scope (see Pass 2 site above).
                     auto subTones = collectRegionTones(
-                        score, subStart.ticks(), subEnd.ticks(), excludeStaves);
+                        score, subStart.ticks(), subEnd.ticks(), excludeStaves,
+                        parentRegion.startTick);
 
                     if (subTones.empty()) {
                         HarmonicRegion subRegion;
