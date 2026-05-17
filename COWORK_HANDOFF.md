@@ -26,12 +26,28 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 
 ---
 
-## Current state (as of 2026-05-17, updated after Iter 95 Step 1 committed)
+## Current state (as of 2026-05-17, updated after Iter 95 Step 2 committed)
 
-- **HEAD:** `85c835359a` on master (Iter 95 Step 1 — `w_seq` sequential
-  root-progression bonus, +0.20, `distinctPcs >= 4`, chord-level,
-  `explorationMode`-gated)
-- **Iter 95 Step 1 commit (this cycle's deliverable):**
+- **HEAD:** `9fc27888d0` on master (Iter 95 Step 2 — bridge Pass 2/2b
+  `nextRootPc` plumbing; activates `w_seq` on live MuseScore chord track and
+  status bar via parent-scope successor-root override)
+- **Iter 95 Step 2 commit (this cycle's deliverable):**
+  - `9fc27888d0` — Iter 95 Step 2 code: at both bridge sub-region call
+    sites in `notationharmonicrhythmbridge.cpp` (Pass 2 ~line 499; Pass 2b
+    ~line 683), capture `parentSuccRootPc = regions[parentIdx + 1].chordResult.identity.rootPc`
+    (or `-1` when `parentIdx + 1 == regions.size()`), captured ONCE before
+    each sub-loop exactly as `parentPredBassPc` / `parentSuccBassPc` were in
+    Iter 94, then assign `subCtx.nextRootPc = parentSuccRootPc` (previously
+    `-1`). With this in place the live chord track and the status bar now
+    receive the same `w_seq` +0.20 promotion that the batch path already
+    enjoys from Step 1 — both paths now produce identical chord readings for
+    descending-fifth root motion. 3 snapshot goldens refreshed
+    (`bach_bwv806_prelude` alt-only +0.20, `bach_bwv806_gigue` winner
+    `DMaj9 → E7/D` / `IVM9 → V42` at tick 960, `mozart_k280_1` alt-only with
+    inversion-stack reshuffle). BIR figures unchanged from Step 1 baselines —
+    expected, since BIR is measured via the batch path which already had
+    `w_seq` from Step 1.
+- **Iter 95 Step 1 (prior commit):**
   - `85c835359a` — Iter 95 Step 1 code (single-line gate added to `wSeqBonus`
     lambda in `chordanalyzer.cpp`) + 5 snapshot goldens refreshed
     (`bach_chorale_001`, `bach_chorale_137`, `chopin_bi105_op30_2`,
@@ -41,11 +57,7 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
     first-inversion-m7-family surgical guard does NOT apply. `distinctPcs >= 4`
     is the critical gate — without it the bonus over-fires on 3-PC sparse Jazz
     regions, producing 2 new Corelli notation failures and a Jazz BIR=false +2
-    regression in the initial variant. **Step 2 (bridge Pass 2/2b `nextRootPc`
-    plumbing) deferred** — sub-region `analyzeChord` calls in
-    `notationharmonicrhythmbridge.cpp` currently set `subCtx.nextRootPc = -1`,
-    so `w_seq` no-ops on bridge sub-region calls; parent-region calls already
-    receive `w_seq` via the existing `inferNextRootPc` plumbing at ~line 351.
+    regression in the initial variant.
 - **Prior HEAD in cycle:** `d60dddf85b` (Refresh Iter 94 snapshot goldens —
   alternatives-only drift); `a34b5c1e6c` (Iter 94 docs follow-up); `dbfe09fe6f`
   (Iter 94 — w_stepIn / w_stepOut +0.10 with parent-scope context + four gates);
@@ -62,15 +74,19 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 - **Notation tests:** 50/52 passing (2 pre-existing Corelli failures remain — do NOT regress:
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
 - **Pipeline snapshot tests:** 11/11 passing (1 additional test skipped =
-  `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) — 5 of 11
-  active goldens refreshed by Iter 95 Step 1 (4 winner / boundary diffs from
-  parent-region w_seq application + 1 alt-only score delta)
-- **BIR baselines (post-Iter-95-Step-1, lenient-OR `align_regions`):**
+  `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) —
+  Step 2 refreshed 3 goldens (`bach_bwv806_prelude`, `bach_bwv806_gigue`,
+  `mozart_k280_1`); Step 1 had refreshed 5 (`bach_chorale_001`,
+  `bach_chorale_137`, `chopin_bi105_op30_2`, `mozart_k280_1`,
+  `schumann_kinderszenen_n01`) — `mozart_k280_1` refreshed in both steps
+- **BIR baselines (post-Iter-95-Step-2, lenient-OR `align_regions`):**
   Baroque BIR=true=44, BIR=false=27; Jazz BIR=true=68, BIR=false=13.
-  Iter 95 Step 1 deltas vs Iter 94: Baroque BIR=true +1 (bucket reclassification),
-  Baroque BIR=false −6 (~18% reduction), Jazz BIR=true −49 (~42% reduction —
-  w_seq dense-region-only correctly suppresses spurious dominant-resolution
-  misreads in dense Jazz cadences), Jazz BIR=false −1.
+  Step 2 deltas: all four figures unchanged from Step 1 (Step 2 modifies the
+  bridge path which is not the BIR-measurement path; the change is observable
+  on the live MuseScore chord track and in the status bar, and via the
+  pipeline snapshot diff). Iter 95 Step 1 deltas vs Iter 94: Baroque BIR=true +1
+  (bucket reclassification), Baroque BIR=false −6 (~18% reduction), Jazz
+  BIR=true −49 (~42% reduction), Jazz BIR=false −1.
   Cumulative since Iter 91: Baroque BIR=false 188 → 27 (−161, ~86% reduction);
   Jazz BIR=true 103 → 68 (−35, ~34% reduction).
 - **Chord mismatch report:** 4 RealDiff (pinned), 127 ConventionDiff (Jazz)
