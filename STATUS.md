@@ -9,10 +9,10 @@
 
 ## Current State (summary)
 
-**Last committed:** Iter 94 (this commit) — w_stepIn / w_stepOut voice-leading bonuses (+0.10 each) with parent-scope previousBassPc/nextBassPc, surgical first-inversion-m7-family guard, root-position-only restriction, Power-quality exclusion, and `explorationMode` flag to suppress the bonus inside greedyExpandSegmentation.
+**Last committed:** `dbfe09fe6f` — Iter 94 (w_stepIn / w_stepOut voice-leading bonuses +0.10 each with parent-scope previousBassPc/nextBassPc, surgical first-inversion-m7-family guard, root-position-only restriction, Power-quality exclusion, and `explorationMode` flag to suppress the bonus inside greedyExpandSegmentation).
 
 **Prior commits in this cycle (all on master):**
-- (this commit) Iter 94 — w_stepIn / w_stepOut +0.10 with parent-scope context and surgical m7-family / Power / slash-bass guards
+- `dbfe09fe6f` Iter 94 — w_stepIn / w_stepOut +0.10 with parent-scope context and surgical m7-family / Power / slash-bass guards
 - `f98586fa67` Iter 93 — parentStartTick plumbing (plumbing only; Step 3b shelved)
 - `80fe13b59b` Iter 92 — joint (bass, chord) scoring; w_complete bonus (distinctPcs==3); multi-bass enumeration
 - `3a9404efb2` ai-assistant docs: record batch 4 + correct get_debug_info provenance
@@ -24,7 +24,7 @@
   MinorSeventh extension); companion Iter 86 stamp inside analyzeChord retained
 - `4da8252c9e` Iter 84 — R4 narrow G# leading-tone fix at keyFifths=1 (A melodic minor)
 
-**Test baseline (as of Iter 94 / this commit — unchanged from Iter 92/93):**
+**Test baseline (as of Iter 94 / dbfe09fe6f — unchanged from Iter 92/93):**
 - Composing tests: 407/407 passing
 - Notation tests: 50/52 passing (2 pre-existing Corelli implode failures remain —
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
@@ -101,7 +101,7 @@ Reports at `tools/reports/` (most recent run: post-4cb1bfb274).
   cannot resolve — Iter 94 already harvested −13 BIR=false from the same Baroque
   cohort that the duration-weighting hypothesis targeted, so the marginal value is
   uncertain.
-- Iter 94 — committed (this commit). w_stepIn / w_stepOut +0.10 on root-position
+- Iter 94 — committed (dbfe09fe6f). w_stepIn / w_stepOut +0.10 on root-position
   candidates with parent-scope previousBassPc / nextBassPc. Baroque BIR=false 46→33.
 - Iter 93 — committed (f98586fa67). parentStartTick plumbing for trueAttackAtStart
   sub-region scope. Step 3b (`w_onset` / `w_passing`) shelved after three variants all
