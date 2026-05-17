@@ -2062,8 +2062,8 @@
                 },
                 {
                     "quality": "major",
-                    "root": "G",
-                    "score": 2.008
+                    "root": "Eb",
+                    "score": 1.833
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -2086,8 +2086,8 @@
                 },
                 {
                     "quality": "major",
-                    "root": "G",
-                    "score": 2.008
+                    "root": "Eb",
+                    "score": 1.833
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -2106,7 +2106,7 @@
                 {
                     "quality": "major",
                     "root": "F",
-                    "score": 2.43
+                    "score": 2.33
                 },
                 {
                     "quality": "minor",

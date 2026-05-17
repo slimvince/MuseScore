@@ -82,42 +82,42 @@
         },
         {
             "key": "G",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "I",
+            "text": "Isus4",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "I",
+            "text": "Isus4",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "I",
+            "text": "Isus4",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 960
         },
         {
             "key": "G",
-            "text": "I",
+            "text": "Isus4",
             "tick": 960
         },
         {
@@ -202,42 +202,42 @@
         },
         {
             "key": "C",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "I",
+            "text": "Isus4",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "I",
+            "text": "Isus4",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "I",
+            "text": "Isus4",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "G5",
+            "text": "Gsus",
             "tick": 2880
         },
         {
             "key": "C",
-            "text": "I",
+            "text": "Isus4",
             "tick": 2880
         },
         {
@@ -562,42 +562,42 @@
         },
         {
             "key": "G",
-            "text": "D5",
+            "text": "Dsus",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "V",
+            "text": "Vsus4",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "D5",
+            "text": "Dsus",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "V",
+            "text": "Vsus4",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "D5",
+            "text": "Dsus",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "V",
+            "text": "Vsus4",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "D5",
+            "text": "Dsus",
             "tick": 10560
         },
         {
             "key": "G",
-            "text": "V",
+            "text": "Vsus4",
             "tick": 10560
         },
         {
@@ -1242,42 +1242,42 @@
         },
         {
             "key": "G",
-            "text": "C5",
+            "text": "Csus",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "IV",
+            "text": "IVsus4",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "C5",
+            "text": "Csus",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "IV",
+            "text": "IVsus4",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "C5",
+            "text": "Csus",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "IV",
+            "text": "IVsus4",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "C5",
+            "text": "Csus",
             "tick": 21120
         },
         {
             "key": "G",
-            "text": "IV",
+            "text": "IVsus4",
             "tick": 21120
         },
         {
@@ -1902,7 +1902,7 @@
             "durationTicks": 480,
             "key": "G",
             "mode": "min",
-            "quality": "power",
+            "quality": "sus4",
             "root": "G",
             "tick": 960
         },
@@ -1926,7 +1926,7 @@
             "durationTicks": 480,
             "key": "C",
             "mode": "mel",
-            "quality": "power",
+            "quality": "sus4",
             "root": "G",
             "tick": 2880
         },
@@ -1998,7 +1998,7 @@
             "durationTicks": 480,
             "key": "G",
             "mode": "min",
-            "quality": "power",
+            "quality": "sus4",
             "root": "D",
             "tick": 10560
         },
@@ -2134,7 +2134,7 @@
             "durationTicks": 480,
             "key": "G",
             "mode": "min",
-            "quality": "power",
+            "quality": "sus4",
             "root": "C",
             "tick": 21120
         },
@@ -2280,8 +2280,9 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "G5",
+            "harmonyText": "Gsus",
             "pitches": [
+                60,
                 62
             ],
             "tick": 960
@@ -2306,8 +2307,9 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "G5",
+            "harmonyText": "Gsus",
             "pitches": [
+                60,
                 62
             ],
             "tick": 2880
@@ -2395,8 +2397,9 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "D5",
+            "harmonyText": "Dsus",
             "pitches": [
+                67,
                 69
             ],
             "tick": 10560
@@ -2562,8 +2565,9 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "C5",
+            "harmonyText": "Csus",
             "pitches": [
+                65,
                 67
             ],
             "tick": 21120
@@ -2942,11 +2946,6 @@
                     "score": 2.32
                 },
                 {
-                    "quality": "sus4",
-                    "root": "G",
-                    "score": 2.32
-                },
-                {
                     "quality": "sus2",
                     "root": "C",
                     "score": 2.3
@@ -2958,7 +2957,7 @@
             "previousBassPc": 8,
             "previousQuality": "augmented",
             "previousRootPc": 0,
-            "quality": "power",
+            "quality": "sus4",
             "root": "G",
             "tick": 960,
             "wasRegional": true
@@ -3000,11 +2999,6 @@
                     "score": 2.32
                 },
                 {
-                    "quality": "sus4",
-                    "root": "G",
-                    "score": 2.32
-                },
-                {
                     "quality": "sus2",
                     "root": "C",
                     "score": 2.3
@@ -3016,7 +3010,7 @@
             "previousBassPc": 5,
             "previousQuality": "minor",
             "previousRootPc": 0,
-            "quality": "power",
+            "quality": "sus4",
             "root": "G",
             "tick": 2880,
             "wasRegional": true
@@ -3222,11 +3216,6 @@
                     "score": 2.32
                 },
                 {
-                    "quality": "sus4",
-                    "root": "D",
-                    "score": 2.32
-                },
-                {
                     "quality": "sus2",
                     "root": "G",
                     "score": 2.3
@@ -3238,7 +3227,7 @@
             "previousBassPc": 0,
             "previousQuality": "minor",
             "previousRootPc": 7,
-            "quality": "power",
+            "quality": "sus4",
             "root": "D",
             "tick": 10560,
             "wasRegional": true
@@ -3476,9 +3465,9 @@
                     "score": 2.32
                 },
                 {
-                    "quality": "sus4",
+                    "quality": "power",
                     "root": "C",
-                    "score": 2.32
+                    "score": 2.29
                 },
                 {
                     "quality": "sus4",
@@ -3492,7 +3481,7 @@
             "previousBassPc": 10,
             "previousQuality": "minor",
             "previousRootPc": 10,
-            "quality": "power",
+            "quality": "sus4",
             "root": "C",
             "tick": 21120,
             "wasRegional": true

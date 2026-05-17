@@ -2161,14 +2161,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "minor",
-                    "root": "A",
-                    "score": 2.36
+                    "quality": "diminished",
+                    "root": "F#",
+                    "score": 2.35
                 },
                 {
-                    "quality": "minor",
-                    "root": "A",
-                    "score": 2.36
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.29
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2279,11 +2279,6 @@
                     "quality": "minor",
                     "root": "E",
                     "score": 3.52
-                },
-                {
-                    "quality": "power",
-                    "root": "E",
-                    "score": 2.39
                 },
                 {
                     "quality": "major",
