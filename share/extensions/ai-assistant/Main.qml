@@ -3,7 +3,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import FileIO 3.0       // DEBUG LOGGING — remove before shipping
+import MuseScore 3.0    // for QProcess (apiv1 MsProcess) — DEBUG LOGGING, remove before shipping
 
 import "ScoreAccess.js"  as ScoreAccess
 import "ToolSchemas.js"  as ToolSchemas
@@ -135,8 +135,8 @@ Rectangle {
 
     // ── DEBUG LOGGING — remove before shipping ────────────────────────────────
     // _debugLines accumulates one JSON line per tool-call event (call args
-    // before dispatch, parsed result after). _writeDebugLog() overwrites the
-    // log file after every entry — small file, synchronous, easy to read.
+    // before dispatch, parsed result after). _writeLogViaProcess() overwrites
+    // the log file after every entry — small file, synchronous, easy to read.
     readonly property bool debugMode: true
     property var _debugLines: []
 
@@ -182,38 +182,6 @@ Rectangle {
             })
         } catch(e) {
             console.warn("AIAssistant: Enter-to-send navigation chain creation FAILED — Enter key will not work: " + e)
-        }
-    }
-
-    // DEBUG LOGGING — remove before shipping.
-    //
-    // Writes the accumulated log via the apiv1 FileIO singleton declared at
-    // root level (debugFileIO). Target lands inside FileIO::userDataPath() —
-    // the MuseScore documents dir (on Windows: C:/Users/<user>/Documents/MuseScore4),
-    // which is in the FileIO sandbox's allowed write roots (util.cpp:163-236);
-    // userAppDataPath is explicitly NOT allowed.
-    //
-    // FileIO::write() returns false silently on sandbox / IO failure rather
-    // than throwing, so the return value MUST be checked. On failure the
-    // last 100 lines are stashed in Settings["debugLog"] and the user can
-    // grab them via the copy-log button at the bottom-left of the root item.
-    function _writeDebugLog() {
-        if (!debugMode || _debugLines.length === 0) return
-        // Try userDataPath (Documents/MuseScore4) first — most discoverable.
-        // Fall back to tempPath() on failure: it's entry 1 of 8 in the FileIO
-        // sandbox allow-list (util.cpp:185-187) and depends on zero DI services,
-        // so it's the surest write target if userDataPath denies.
-        debugFileIO.source = debugFileIO.userDataPath() + "/ai-assistant-debug.log"
-        var ok = debugFileIO.write(_debugLines.join("\n") + "\n")
-        if (!ok) {
-            debugFileIO.source = debugFileIO.tempPath() + "/ai-assistant-debug.log"
-            ok = debugFileIO.write(_debugLines.join("\n") + "\n")
-        }
-        _debugLines.push(JSON.stringify({
-            _fileio: { path: debugFileIO.source, ok: ok }
-        }))
-        if (!ok && appSettings) {
-            appSettings.setValue("debugLog", _debugLines.slice(-100).join("\n"))
         }
     }
 
@@ -2154,11 +2122,6 @@ Rectangle {
 
         } // end main Rectangle
     } // end SplitView
-
-    // DEBUG LOGGING — remove before shipping.
-    // Static declaration via `import FileIO 3.0`. _writeDebugLog() uses this
-    // singleton instead of Qt.createQmlObject per tool call.
-    FileIO { id: debugFileIO }
 
     // DEBUG LOGGING — remove before shipping.
     // Persistent QProcess element reused by _writeLogViaProcess on every tool
