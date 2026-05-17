@@ -2129,12 +2129,12 @@
                 {
                     "quality": "major",
                     "root": "C#",
-                    "score": 2.041
+                    "score": 2.241
                 },
                 {
                     "quality": "minor",
                     "root": "C#",
-                    "score": 2.041
+                    "score": 2.241
                 },
                 {
                     "quality": "minor",
@@ -2158,12 +2158,12 @@
                 {
                     "quality": "minor",
                     "root": "C#",
-                    "score": 3.222
+                    "score": 3.422
                 },
                 {
-                    "quality": "major",
-                    "root": "E",
-                    "score": 2.974
+                    "quality": "halfDiminished",
+                    "root": "C#",
+                    "score": 2.976
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -2182,12 +2182,12 @@
                 {
                     "quality": "minor",
                     "root": "C#",
-                    "score": 2.51
+                    "score": 2.71
                 },
                 {
                     "quality": "halfDiminished",
                     "root": "C#",
-                    "score": 2.135
+                    "score": 2.335
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2209,14 +2209,14 @@
                     "score": 2.827
                 },
                 {
-                    "quality": "major",
-                    "root": "A",
-                    "score": 2.827
-                },
-                {
                     "quality": "minor",
                     "root": "C#",
-                    "score": 2.374
+                    "score": 2.574
+                },
+                {
+                    "quality": "major",
+                    "root": "A",
+                    "score": 2.382
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2437,17 +2437,12 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.238
+                    "score": 3.438
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.238
-                },
-                {
-                    "quality": "minor",
-                    "root": "C#",
-                    "score": 2.135
+                    "score": 3.438
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2466,17 +2461,12 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.238
+                    "score": 3.438
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.238
-                },
-                {
-                    "quality": "minor",
-                    "root": "C#",
-                    "score": 2.135
+                    "score": 3.438
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

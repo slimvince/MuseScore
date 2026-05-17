@@ -500,6 +500,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     ? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
                 const int parentSuccBassPc = (parentIdx + 1 < regions.size())
                     ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
+                // Iter 95 Step 2 — parent-scope successor root PC for w_seq.
+                const int parentSuccRootPc = (parentIdx + 1 < regions.size())
+                    ? regions[parentIdx + 1].chordResult.identity.rootPc : -1;
 
                 // Seed temporal context from the region immediately before this parent.
                 ChordTemporalContext subCtx;
@@ -515,7 +518,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 subCtx.consecutiveBassStepwiseCount
                     = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
                 subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
-                subCtx.nextRootPc = -1;
+                subCtx.nextRootPc = parentSuccRootPc;
 
                 for (size_t si = 0; si + 1 < subBounds.size(); ++si) {
                     const Fraction subStart = subBounds[si];
@@ -684,6 +687,9 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                     ? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
                 const int parentSuccBassPc = (parentIdx + 1 < regions.size())
                     ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
+                // Iter 95 Step 2 — parent-scope successor root PC for w_seq.
+                const int parentSuccRootPc = (parentIdx + 1 < regions.size())
+                    ? regions[parentIdx + 1].chordResult.identity.rootPc : -1;
 
                 // Seed temporal context from the region immediately before this parent.
                 ChordTemporalContext subCtx;
@@ -699,7 +705,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 subCtx.consecutiveBassStepwiseCount
                     = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
                 subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
-                subCtx.nextRootPc = -1;
+                subCtx.nextRootPc = parentSuccRootPc;
 
                 for (size_t bi = 0; bi + 1 < bounds.size(); ++bi) {
                     const Fraction subStart = bounds[bi];
