@@ -136,7 +136,7 @@ Rectangle {
     // _debugLines accumulates one JSON line per tool-call event (call args
     // before dispatch, parsed result after). _writeDebugLog() overwrites the
     // log file after every entry — small file, synchronous, easy to read.
-    readonly property bool DEBUG_LOG: true
+    readonly property bool debugMode: true
     property var _debugLines: []
 
     // Enter-to-send workaround for MS4 extensions.
@@ -190,7 +190,7 @@ Rectangle {
     // disallows it the catch saves the last 100 lines to Settings under
     // "debugLog" so the user can recover them manually.
     function _writeDebugLog() {
-        if (!DEBUG_LOG) return
+        if (!debugMode) return
         try {
             var xhr = new XMLHttpRequest()
             xhr.open("PUT", "file:///C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log", false)
@@ -908,7 +908,7 @@ Rectangle {
                 var tu = toolUses[j]
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: tu.name,
@@ -917,7 +917,7 @@ Rectangle {
                 }
                 var r = Dispatch.dispatchTool(ScoreAccess, tu.name, tu.input || {})
                 // DEBUG LOGGING — remove before shipping
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
                     _debugLines.push(JSON.stringify({
@@ -1003,7 +1003,7 @@ Rectangle {
                 try { args = JSON.parse(tc.function.arguments || "{}") } catch(e) {}
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: name,
@@ -1012,7 +1012,7 @@ Rectangle {
                 }
                 var r = Dispatch.dispatchTool(ScoreAccess, name, args)
                 // DEBUG LOGGING — remove before shipping
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
                     _debugLines.push(JSON.stringify({
@@ -1107,7 +1107,7 @@ Rectangle {
                 var fc = funcCalls[j]
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: fc.name,
@@ -1116,7 +1116,7 @@ Rectangle {
                 }
                 var r = Dispatch.dispatchTool(ScoreAccess, fc.name, fc.args || {})
                 // DEBUG LOGGING — remove before shipping
-                if (DEBUG_LOG) {
+                if (debugMode) {
                     var _parsed
                     try { _parsed = (typeof r === "string") ? JSON.parse(r) : r } catch(_e) { _parsed = r }
                     _debugLines.push(JSON.stringify({
