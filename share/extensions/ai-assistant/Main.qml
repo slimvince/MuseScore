@@ -289,19 +289,6 @@ Rectangle {
                 }
             }))
         }
-
-        // DEBUG LOGGING — session-start marker. Resets accumulator from prior
-        // session and writes a "session_start" line with the build version so
-        // Cowork can confirm which deploy is running before any tool call.
-        if (debugMode) {
-            _debugLines = []
-            _debugLines.push(JSON.stringify({
-                session_start: true,
-                version: "v" + pluginVersion,
-                t: new Date().toISOString()
-            }))
-            Qt.callLater(_writeLogViaProcess)
-        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -982,6 +969,13 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
+                    if (_debugLines.length === 0) {
+                        _debugLines.push(JSON.stringify({
+                            session_start: true,
+                            version: "v" + pluginVersion,
+                            t: new Date().toISOString()
+                        }))
+                    }
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: tu.name,
@@ -1077,6 +1071,13 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
+                    if (_debugLines.length === 0) {
+                        _debugLines.push(JSON.stringify({
+                            session_start: true,
+                            version: "v" + pluginVersion,
+                            t: new Date().toISOString()
+                        }))
+                    }
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: name,
@@ -1181,6 +1182,13 @@ Rectangle {
                 // DEBUG LOGGING — remove before shipping
                 var _t0 = Date.now()
                 if (debugMode) {
+                    if (_debugLines.length === 0) {
+                        _debugLines.push(JSON.stringify({
+                            session_start: true,
+                            version: "v" + pluginVersion,
+                            t: new Date().toISOString()
+                        }))
+                    }
                     _debugLines.push(JSON.stringify({
                         t: new Date().toISOString(),
                         call: fc.name,
