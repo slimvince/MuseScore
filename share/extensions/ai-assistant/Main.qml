@@ -220,25 +220,34 @@ Rectangle {
     // DEBUG LOGGING — remove before shipping.
     // Bypass FileIO's sandbox by shelling out via apiv1 MsProcess (registered
     // as `QProcess` under `import MuseScore 3.0` at qmlpluginapi.cpp:205).
-    // MsProcess.startWithArgs(program, args) — util.h:183, util.cpp:368-371.
+    //
+    // MsProcess (util.h:166-188) exposes two start methods:
+    //   * start(QString)            — single-string form, deprecated
+    //   * startWithArgs(prog, args) — the right one for our argv-style call
+    // The plain Qt5 QProcess::start(prog, args) is NOT exposed on the QML
+    // object, so startWithArgs is the path.
     //
     // PowerShell Set-Content handles the log as a real string argument:
     //   * Single-quoted PS strings preserve literal newlines and disable all
     //     escape interpretation; only ' itself needs escaping (doubled '').
+    //   * -LiteralPath suppresses glob expansion on the path.
     //   * -Encoding UTF8 — JSON content survives unmangled.
-    //   * Trade-off: PowerShell cold start is ~200-500ms (vs ~10ms for cmd),
-    //     so this runs deferred via Qt.callLater from onClicked, never inline.
+    //   * Cold start is ~200-500ms; callers run via Qt.callLater so the spawn
+    //     doesn't block the QML event handler that triggered it.
     function _writeLogViaProcess() {
         if (!debugMode || _debugLines.length === 0) return
         var proc = Qt.createQmlObject(
             'import MuseScore 3.0; QProcess { }',
             root, "logProc")
-        if (!proc) return
+        if (!proc) {
+            console.log("DEBUG: QProcess unavailable")
+            return
+        }
         var logPath = "C:/Users/vince/Documents/MuseScore4/ai-assistant-debug.log"
-        var content = _debugLines.join("\n")
+        var content = _debugLines.join("\n").replace(/'/g, "''")
+        var psCmd   = "Set-Content -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
         proc.startWithArgs("powershell.exe", [
-            "-NoProfile", "-NonInteractive", "-Command",
-            "Set-Content -Path '" + logPath + "' -Value '" + content.replace(/'/g, "''") + "' -Encoding UTF8"
+            "-NoProfile", "-NonInteractive", "-Command", psCmd
         ])
     }
 
@@ -976,6 +985,7 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
+                    Qt.callLater(_writeLogViaProcess)
                 }
                 resultBlocks.push({
                     type:         "tool_result",
@@ -1070,6 +1080,7 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
+                    Qt.callLater(_writeLogViaProcess)
                 }
                 nextMsgs.push({
                     role:         "tool",
@@ -1173,6 +1184,7 @@ Rectangle {
                         result: _parsed,
                         ms: Date.now() - _t0
                     }))
+                    Qt.callLater(_writeLogViaProcess)
                 }
                 // Gemini's functionResponse.response proto field is a non-repeating
                 // STRUCT (object). Tools that return raw arrays (getStructure,
@@ -2146,36 +2158,4 @@ Rectangle {
     // singleton instead of Qt.createQmlObject per tool call.
     FileIO { id: debugFileIO }
 
-    // DEBUG LOGGING — remove before shipping.
-    // Visible only when debugMode is true. Lives at the root level (sibling
-    // of SplitView) so it floats above all chat content in the bottom-left.
-    // Clicking dumps the accumulated log into an assistant chat bubble — the
-    // existing per-bubble copy button is then the proven path to clipboard
-    // (avoids fragile focus juggling on a hidden TextArea in MS4).
-    Text {
-        id: copyLogButton
-        visible: debugMode
-        text: "⎘ log"
-        color: "#888"
-        font.pixelSize: 11
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 8
-        anchors.bottomMargin: 8
-        z: 1000
-        MouseArea {
-            anchors.fill: parent
-            cursorShape: Qt.PointingHandCursor
-            onClicked: {
-                var logText = _debugLines.length > 0
-                    ? _debugLines.join("\n")
-                    : "(no log entries)"
-                appendMessage("assistant", "```json\n" + logText + "\n```")
-                // Defer the shell-out via Qt.callLater so the bubble lands
-                // before any process spawn cost (and so a process failure
-                // can't take the bubble down with it).
-                Qt.callLater(_writeLogViaProcess)
-            }
-        }
-    }
 } // end root Rectangle
