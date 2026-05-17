@@ -285,6 +285,13 @@ function _barlineTypeStr(typeInt) {
 // `beat` is 1-based. `beatFraction` is a string like "0", "1/2", "1/4", "1/3"
 // representing the sub-beat offset. Returns -1 if the measure is not found.
 //
+// Loop terminator is pure tick arithmetic — `seg.tick < measureEndTick`. We
+// deliberately do NOT compare segment proxies for identity ("seg.parent === m"
+// or similar): in QML non-library JS, two proxy wrappers around the same
+// underlying C++ object obtained via different access paths are NOT === equal,
+// so an identity-based guard can exit on the first iteration and silently
+// return -1 for every valid position.
+//
 // Ticks-per-beat is derived from the time signature denominator at the start
 // of the measure (curScore.division ticks/quarter, beat = whole / denominator).
 //
@@ -299,10 +306,31 @@ function _posToTick(measureNo, beat, beatFraction) {
     var m = _findMeasure(measureNo)
     if (!m) return -1
     var mTick = _getTickInt(m.firstSegment.tick)
+
+    // Measure end tick — preferred path m.ticks (Fraction).ticks, with fallback
+    // to nextMeasure.firstSegment.tick or lastSegment.tick+1. Used as the
+    // hard upper bound for segment walks below.
+    var measureEndTick = -1
+    try {
+        if (m.ticks && typeof m.ticks.ticks === "number" && m.ticks.ticks > 0) {
+            measureEndTick = mTick + m.ticks.ticks
+        }
+    } catch(e) {}
+    if (measureEndTick <= mTick) {
+        try {
+            var nm = m.nextMeasure
+            if (nm && nm.firstSegment) measureEndTick = _getTickInt(nm.firstSegment.tick)
+            else if (m.lastSegment)    measureEndTick = _getTickInt(m.lastSegment.tick) + 1
+        } catch(e) {}
+    }
+    if (measureEndTick <= mTick) measureEndTick = mTick + 1920   // emergency: 4/4 @ 480 tpq
+
+    // Detect time-signature denominator for this measure. Walk segments via
+    // tick-bound guard so we cannot wander past the measure boundary even if
+    // nextInMeasure behaves unexpectedly. SegmentType::TimeSig = 0x20 (32).
     var tsDen = 4
     var seg = m.firstSegment
-    while (seg) {
-        // SegmentType::TimeSig = 0x20 (32) — see src/engraving/dom/segment.h
+    while (seg && _getTickInt(seg.tick) < measureEndTick) {
         if (seg.segmentType & 32) {
             try {
                 var tsEl = seg.elementAt(0)
@@ -310,9 +338,9 @@ function _posToTick(measureNo, beat, beatFraction) {
             } catch(e) {}
             break
         }
-        seg = seg.nextInMeasure ? seg.nextInMeasure : seg.next
-        if (!seg) break
+        seg = seg.nextInMeasure ? seg.nextInMeasure : null
     }
+
     var tpq = 480
     try {
         var sc = _score()
@@ -332,11 +360,13 @@ function _posToTick(measureNo, beat, beatFraction) {
     var targetTick = mTick + offset
 
     // Walk ChordRest segments within this measure; prefer exact match, else
-    // return the nearest one within half a beat. SegmentType::ChordRest = 0x2000 (8192).
+    // return the nearest one within half a beat. SegmentType::ChordRest =
+    // 0x2000 (8192). Loop guard is pure tick arithmetic — seg must satisfy
+    // mTick <= seg.tick < measureEndTick.
     var bestTick = -1
     var bestDelta = Math.floor(ticksPerBeat / 2) + 1
     var seg2 = m.firstSegment
-    while (seg2) {
+    while (seg2 && _getTickInt(seg2.tick) < measureEndTick) {
         if (seg2.segmentType & 8192) {
             var segTick = _getTickInt(seg2.tick)
             if (segTick === targetTick) return targetTick
@@ -429,7 +459,9 @@ function getScoreInfo() {
 }
 
 // Per-measure structural snapshot, optionally limited to a 1-based measure range.
-// Returns an array of { number, keySignature, timeSignature, tempo, rehearsalMark }.
+// Returns an array of { number, keySignature, timeSignature, tempo, rehearsalMark,
+// repeatStart, repeatEnd, jumps[], markers[] }. Repeat/jump/marker fields are
+// omitted when absent.
 function getStructure(startMeasure, endMeasure) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -440,6 +472,8 @@ function getStructure(startMeasure, endMeasure) {
         if (hi < lo) { var tmp = lo; lo = hi; hi = tmp }
 
         var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
+        var JUMP_TYPE   = (api.engraving.Element && api.engraving.Element.JUMP   !== undefined) ? api.engraving.Element.JUMP   : -1
+        var MARKER_TYPE = (api.engraving.Element && api.engraving.Element.MARKER !== undefined) ? api.engraving.Element.MARKER : -1
         var out = []
         var m = s.firstMeasure
         var lastKeyFifths = null
@@ -496,6 +530,43 @@ function getStructure(startMeasure, endMeasure) {
                 try {
                     var r = _firstRehearsalMarkInMeasure(m)
                     if (r) entry.rehearsalMark = r.text || ""
+                } catch(e) {}
+
+                // Repeat barlines — Measure.repeatStart / repeatEnd are bool
+                // API_PROPERTYs on MeasureBase (elements.h:1906-1908).
+                try {
+                    if (m.repeatStart) entry.repeatStart = true
+                    if (m.repeatEnd)   entry.repeatEnd   = true
+                } catch(e) {}
+
+                // Jump / marker elements — found on Measure.elements, which is
+                // the QQmlListProperty<EngravingItem> documented as containing
+                // "layout breaks, jump/repeat markings etc." (elements.h:1925).
+                try {
+                    var els = m.elements
+                    var nEls = (els && els.length !== undefined) ? els.length : 0
+                    var jumpsList = []
+                    var markersList = []
+                    for (var ei = 0; ei < nEls; ei++) {
+                        var el = els[ei]
+                        if (!el) continue
+                        var etype = el.type
+                        if (JUMP_TYPE !== -1 && etype === JUMP_TYPE) {
+                            var jEntry = {}
+                            try { jEntry.text       = el.text       || "" } catch(e2) {}
+                            try { jEntry.jumpTo     = el.jumpTo     || "" } catch(e2) {}
+                            try { jEntry.playUntil  = el.playUntil  || "" } catch(e2) {}
+                            try { jEntry.continueAt = el.continueAt || "" } catch(e2) {}
+                            jumpsList.push(jEntry)
+                        } else if (MARKER_TYPE !== -1 && etype === MARKER_TYPE) {
+                            var mkEntry = {}
+                            try { mkEntry.text  = el.text  || "" } catch(e2) {}
+                            try { mkEntry.label = el.label || "" } catch(e2) {}
+                            markersList.push(mkEntry)
+                        }
+                    }
+                    if (jumpsList.length   > 0) entry.jumps   = jumpsList
+                    if (markersList.length > 0) entry.markers = markersList
                 } catch(e) {}
 
                 out.push(entry)
@@ -835,6 +906,25 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         _debug: { fn: "addDynamic", measureNo: measureNo, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
     }
 
+    // Cursor must land on a ChordRest before c.add(d) — dynamics attach to a
+    // ChordRest segment. If c.element is null or wrong type, c.add() either
+    // silently no-ops or attaches to a non-ChordRest segment and renders
+    // invisibly while still showing "Add dynamic" in the undo stack — the
+    // worst possible failure mode for the user. Guard BEFORE startCmd so a
+    // bad position never produces a phantom undo entry.
+    var probe = s.newCursor()
+    probe.track = (staff - 1) * 4
+    probe.rewindToTick(tick)
+    var probeEl = probe.element
+    var CHORD = api.engraving.Element.CHORD
+    var REST  = api.engraving.Element.REST
+    if (!probeEl || (probeEl.type !== CHORD && probeEl.type !== REST)) {
+        return {
+            error: "No chord/rest at measure " + measureNo + " beat " + beat + " staff " + staff,
+            _debug: { fn: "addDynamic", tick: tick, elementType: probeEl ? probeEl.type : null, CHORD: CHORD, REST: REST }
+        }
+    }
+
     try {
         s.startCmd("add dynamic")
         var c = s.newCursor()
@@ -881,9 +971,17 @@ function addTempoMark(measureNo, bpm, unit, text) {
 
     var displayText = (text ? text + " " : "") + noteSymbol + " = " + bpm
 
-    var m = _findMeasure(measureNo)
-    if (!m) return { error: "Measure " + measureNo + " not found" }
-    var mTick = _getTickInt(m.firstSegment.tick)
+    // Anchor to the first ChordRest segment of the measure. Anchoring to the
+    // raw m.firstSegment.tick lands the cursor on a TimeSig or KeySig segment
+    // for measures that start with one (always true for measure 1, and again
+    // wherever a sig change occurs). cursor.add(TEMPO_TEXT) on a non-ChordRest
+    // segment shows "Add tempo mark" in the undo stack but renders invisibly
+    // — the same failure mode that bit addSystemText before fixes1.
+    var mTick = _posToTick(measureNo, 1, "0")
+    if (mTick < 0) return {
+        error: "Measure " + measureNo + " not found or has no chord/rest segment",
+        _debug: { fn: "addTempoMark", measureNo: measureNo, tick: mTick }
+    }
 
     try {
         s.startCmd("add tempo")
@@ -904,7 +1002,13 @@ function addTempoMark(measureNo, bpm, unit, text) {
 }
 
 // Staff text at a (measure, beat) position, voice 1, single staff.
-function addStaffText(measureNo, beat, beatFraction, staff, text) {
+//
+// `textType` is optional: "staff" (default) → STAFF_TEXT, "expression" →
+// EXPRESSION element. EXPRESSION uses italic typography and is the correct
+// element for performance expressions like dolce, espressivo, cantabile etc.
+// If the EXPRESSION element type is not exposed in this build the function
+// falls back to STAFF_TEXT and notes it in the response.
+function addStaffText(measureNo, beat, beatFraction, staff, text, textType) {
     var s = _score()
     if (!s) return { error: "No score open" }
     if (typeof staff !== "number" || staff < 1)
@@ -918,16 +1022,30 @@ function addStaffText(measureNo, beat, beatFraction, staff, text) {
         _debug: { fn: "addStaffText", measureNo: measureNo, beat: beat, beatFraction: beatFraction || "0", staff: staff, tick: tick }
     }
 
+    var elemKind = "staff"
+    var elemType = api.engraving.Element.STAFF_TEXT
+    var fellBack = false
+    if (textType === "expression") {
+        if (api.engraving.Element.EXPRESSION !== undefined) {
+            elemType = api.engraving.Element.EXPRESSION
+            elemKind = "expression"
+        } else {
+            fellBack = true   // EXPRESSION not exposed; keep STAFF_TEXT
+        }
+    }
+
     try {
-        s.startCmd("add staff text")
+        s.startCmd("add " + elemKind + " text")
         var c = s.newCursor()
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
-        var st = api.engraving.newElement(api.engraving.Element.STAFF_TEXT)
+        var st = api.engraving.newElement(elemType)
         c.add(st)
         st.text = text
         s.endCmd()
-        return { ok: true, measure: measureNo, beat: beat, staff: staff }
+        var res = { ok: true, measure: measureNo, beat: beat, staff: staff, textType: elemKind }
+        if (fellBack) res.note = "EXPRESSION element type not exposed in this build; rendered as staff text."
+        return res
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addStaffText failed: " + e }
@@ -1225,11 +1343,16 @@ function setScoreMetadata(title, composer, lyricist, copyright, subtitle) {
         if (composer)  { s.setMetaTag("composer",   composer);  updates.push("composer") }
         if (lyricist)  { s.setMetaTag("lyricist",   lyricist);  updates.push("lyricist") }
         if (copyright) { s.setMetaTag("copyright",  copyright); updates.push("copyright") }
-        if (subtitle)  { s.setMetaTag("workNumber", subtitle);  updates.push("subtitle") }
+        // The subtitle field in MuseScore Score Properties is keyed by the
+        // tag "subtitle". An earlier implementation used "workNumber", which
+        // landed the value in the "Work number" field instead — that field is
+        // a separate piece of metadata (catalogue/opus number) and is not what
+        // the LLM means when the user asks for a subtitle.
+        if (subtitle)  { s.setMetaTag("subtitle",   subtitle);  updates.push("subtitle") }
         return {
             ok: true,
             updated: updates,
-            note: "Tags saved with score. Not undoable; visible header text may need a manual redraw."
+            note: "Tags saved with score. Not undoable; the visible title-frame text may not refresh until the score is saved and re-opened."
         }
     } catch(e) {
         return { error: "setScoreMetadata failed: " + e }
@@ -1245,12 +1368,13 @@ function getScoreMetadata() {
     if (!s) return { error: "No score open" }
     return {
         title:      s.metaTag("workTitle")   || "",
-        subtitle:   s.metaTag("workNumber")  || "",
+        subtitle:   s.metaTag("subtitle")    || "",
         composer:   s.metaTag("composer")    || "",
         lyricist:   s.metaTag("lyricist")    || "",
         copyright:  s.metaTag("copyright")   || "",
         arranger:   s.metaTag("arranger")    || "",
-        translator: s.metaTag("translator")  || ""
+        translator: s.metaTag("translator")  || "",
+        workNumber: s.metaTag("workNumber")  || ""
     }
 }
 
@@ -1293,6 +1417,23 @@ function addNoteToChord(measure, beat, beatFraction, staff, voice, pitch) {
         _debug: { fn: "addNoteToChord", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
     }
     var midiPitch = _noteNameToMidi(pitch)
+
+    // Cursor must land on a CHORD before c.addNote(p, true) — the "add to
+    // chord" path requires an existing chord; on a rest or empty position
+    // it silently fails (the user sees "Add note" in the undo stack but
+    // nothing happens to their pitch set). Probe before startCmd.
+    var probe = s.newCursor()
+    probe.track = (staff - 1) * 4 + (voice - 1)
+    probe.rewindToTick(tick)
+    var probeEl = probe.element
+    var CHORD = api.engraving.Element.CHORD
+    if (!probeEl || probeEl.type !== CHORD) {
+        return {
+            error: "No chord at measure " + measure + " beat " + beat + " — use add_note to create the first note",
+            _debug: { fn: "addNoteToChord", tick: tick, elementType: probeEl ? probeEl.type : null, CHORD: CHORD }
+        }
+    }
+
     try {
         s.startCmd("add note to chord")
         var c = s.newCursor()

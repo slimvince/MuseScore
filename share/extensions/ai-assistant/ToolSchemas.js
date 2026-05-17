@@ -177,7 +177,8 @@ function getToolSchemas(providerFormat) {
             description:
                 "Adds a staff text annotation (free text) above a specific staff at a beat " +
                 "position. Visible above the staff only. Use for performance instructions " +
-                "specific to one instrument.",
+                "specific to one instrument. Set textType='expression' for italic performance " +
+                "expression markings (dolce, espressivo, cantabile etc.); default is regular staff text.",
             parameters: {
                 type: "object",
                 properties: {
@@ -185,7 +186,8 @@ function getToolSchemas(providerFormat) {
                     beat:         { type: "integer", description: "1-based beat number." },
                     beatFraction: { type: "string",  description: "Sub-beat offset string: '0', '1/2', '1/4' etc. Omit for exact beat." },
                     staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
-                    text:         { type: "string",  description: "The text to add." }
+                    text:         { type: "string",  description: "The text to add." },
+                    textType:     { type: "string",  enum: ["staff", "expression"], description: "Text style: 'staff' (default) for regular staff text; 'expression' for italic performance expressions (dolce, espressivo, cantabile etc.)." }
                 },
                 required: ["measure", "beat", "staff", "text"]
             }

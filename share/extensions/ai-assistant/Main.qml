@@ -1,4 +1,4 @@
-// AI Assistant v0.5.0 — Conversational Chat UI + LLM tool calling
+// AI Assistant v0.5.1 — Conversational Chat UI + LLM tool calling
 // MS4-safe: no FlatButton, no import Muse.*, no QtQuick.LocalStorage top-level import
 import QtQuick 2.15
 import QtQuick.Controls 2.15
@@ -16,7 +16,7 @@ Rectangle {
     color: "#f5f5f5"
 
     // ── Version ───────────────────────────────────────────────────────────────
-    readonly property string pluginVersion: "0.5.0"
+    readonly property string pluginVersion: "0.5.1"
 
     // ── Provider config ───────────────────────────────────────────────────────
     property string providerPreset:          "Anthropic"
@@ -288,6 +288,19 @@ Rectangle {
                     tempPath:     debugFileIO.tempPath()
                 }
             }))
+        }
+
+        // DEBUG LOGGING — session-start marker. Resets accumulator from prior
+        // session and writes a "session_start" line with the build version so
+        // Cowork can confirm which deploy is running before any tool call.
+        if (debugMode) {
+            _debugLines = []
+            _debugLines.push(JSON.stringify({
+                session_start: true,
+                version: "v" + pluginVersion,
+                t: new Date().toISOString()
+            }))
+            Qt.callLater(_writeLogViaProcess)
         }
     }
 

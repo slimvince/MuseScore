@@ -23,7 +23,7 @@ function dispatchTool(scoreAccess, name, args) {
         // ── Batch 3 write tools ──
         if (name === "add_dynamic")          return scoreAccess.addDynamic(a.measure, a.beat, a.beatFraction || "0", a.staff, a.dynamic)
         if (name === "add_tempo_mark")       return scoreAccess.addTempoMark(a.measure, a.bpm, a.unit || "quarter", a.text || "")
-        if (name === "add_staff_text")       return scoreAccess.addStaffText(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
+        if (name === "add_staff_text")       return scoreAccess.addStaffText(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text, a.textType || "staff")
         if (name === "add_system_text")      return scoreAccess.addSystemText(a.measure, a.text)
         if (name === "add_harmony")          return scoreAccess.addHarmony(a.measure, a.beat, a.beatFraction || "0", a.staff, a.text)
         // endStaff defaults to startStaff: LLMs frequently omit it on single-staff
