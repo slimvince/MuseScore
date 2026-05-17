@@ -293,7 +293,7 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Read first (every session):** `C:\s\MS\CLAUDE.md`, `C:\s\MS\STATUS.md` (header only),
 > `C:\s\MS\build_and_test.md`
 >
-> **Current state:** Branch `master`, HEAD `d60dddf85b` (Refresh Iter 94 snapshot
+> **Current state:** Branch `master`, HEAD `a1bf6c3934` (Refresh Iter 94 snapshot
 > goldens — alternatives-only drift; 7 of 11 goldens needed refresh after deep
 > audit revealed the goldens committed in `dbfe09fe6f` were captured against an
 > intermediate Iter 94 binary). Iter 94 itself is `dbfe09fe6f` (w_stepIn /
