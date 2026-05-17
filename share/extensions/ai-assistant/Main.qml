@@ -236,17 +236,10 @@ Rectangle {
     //     doesn't block the QML event handler that triggered it.
     function _writeLogViaProcess() {
         if (!debugMode || _debugLines.length === 0) return
-        var proc = Qt.createQmlObject(
-            'import MuseScore 3.0; QProcess { }',
-            root, "logProc")
-        if (!proc) {
-            console.log("DEBUG: QProcess unavailable")
-            return
-        }
-        var logPath = "C:/Users/vince/Documents/MuseScore4/ai-assistant-debug.log"
+        var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
         var content = _debugLines.join("\n").replace(/'/g, "''")
         var psCmd   = "Set-Content -LiteralPath '" + logPath + "' -Value '" + content + "' -Encoding UTF8"
-        proc.startWithArgs("powershell.exe", [
+        debugLogProc.startWithArgs("powershell.exe", [
             "-NoProfile", "-NonInteractive", "-Command", psCmd
         ])
     }
@@ -277,18 +270,6 @@ Rectangle {
         // Initial live fetch if a key is already saved — otherwise users would see
         // the stale hardcoded fallback until they next touch the Settings UI.
         if (providerApiKey && providerApiKey.length > 0) fetchModels()
-
-        // DEBUG LOGGING — remove before shipping.
-        // Push resolved FileIO paths immediately so the first ⎘ log bubble
-        // reveals what userDataPath/tempPath actually returned in this engine.
-        if (debugMode) {
-            _debugLines.push(JSON.stringify({
-                _init: {
-                    userDataPath: debugFileIO.userDataPath(),
-                    tempPath:     debugFileIO.tempPath()
-                }
-            }))
-        }
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -2178,5 +2159,11 @@ Rectangle {
     // Static declaration via `import FileIO 3.0`. _writeDebugLog() uses this
     // singleton instead of Qt.createQmlObject per tool call.
     FileIO { id: debugFileIO }
+
+    // DEBUG LOGGING — remove before shipping.
+    // Persistent QProcess element reused by _writeLogViaProcess on every tool
+    // call. Avoids Qt.createQmlObject per call (which leaks an unnamed object
+    // tree and intermittently fails to spawn on cold start).
+    QProcess { id: debugLogProc }
 
 } // end root Rectangle
