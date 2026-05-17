@@ -2079,14 +2079,14 @@
         {
             "alternatives": [
                 {
+                    "quality": "halfDiminished",
+                    "root": "D#",
+                    "score": 2.599
+                },
+                {
                     "quality": "sus4",
                     "root": "D#",
                     "score": 2.457
-                },
-                {
-                    "quality": "halfDiminished",
-                    "root": "D#",
-                    "score": 2.449
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

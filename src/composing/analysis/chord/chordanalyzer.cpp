@@ -2135,6 +2135,26 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         return (delta == 5) ? kWSeq : 0.0;
     };
 
+    // Iter 96 — w_dim: diminished/half-dim leading-tone resolution tiebreaker.
+    // When a Diminished or HalfDiminished candidate's root sits one semitone
+    // below the next region's root (i.e. it IS the leading tone of the next
+    // chord, e.g. vii°7 → I), apply a small bonus.  Diminished sevenths are
+    // fully symmetric — all four rotations produce identical pc-sets — so
+    // without a context tiebreaker the analyzer's choice of rotation is
+    // essentially arbitrary; the leading-tone-of-next-root resolution is the
+    // canonical Western tonal signal that selects the correct spelling.
+    // Same gating as w_seq.  Reuses context->nextRootPc plumbing (Iter 95
+    // Steps 1 & 2 — populated on both batch and bridge paths).
+    static constexpr double kWDim = 0.15;
+    auto wDimBonus = [&](int candRootPc, ChordQuality quality) -> double {
+        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
+        if (context->nextRootPc < 0) return 0.0;
+        if (quality != ChordQuality::Diminished && quality != ChordQuality::HalfDiminished) return 0.0;
+        if (distinctPcs < 4) return 0.0;
+        const int delta = ((context->nextRootPc - candRootPc) % 12 + 12) % 12;
+        return (delta == 1) ? kWDim : 0.0;
+    };
+
     // Build per-bass-candidate rawCandidates; pick the global winner.
     //
     // Two-pass per candBassPc:
@@ -2178,6 +2198,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     score *= augFactorMatrix[rootPc][tplIdx];
                     score += wCompleteBonus(tpl, rootPc, candBassPc);
                     score += wSeqBonus(rootPc);
+                    score += wDimBonus(rootPc, tpl.quality);
 
                     perBass.push_back({ score, bassBonus, rootPc, tpl.quality,
                                         static_cast<int>(tplIdx) });
