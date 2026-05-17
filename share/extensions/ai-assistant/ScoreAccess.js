@@ -18,6 +18,35 @@
 // can access the global object, but not the QML scope"), and we need
 // `api.engraving.curScore` everywhere.
 
+// ── ElementType integer map (MuseScore 4.7.0) ─────────────────────────────
+//
+// On 4.7.0 (apiversion=2), api.engraving.Element.XXXX returns a string name
+// instead of an integer. newElement() only accepts integers. These values were
+// verified by probing newElement(0..200) on the actual 4.7.0 release binary —
+// do NOT replace them with source-derived estimates.
+var _EL = {
+    TEXT:             5,
+    LAYOUT_BREAK:     6,
+    ACCIDENTAL:       20,
+    NOTE:             24,
+    REST:             29,
+    TIE:              35,
+    ARTICULATION:     38,
+    FERMATA:          40,
+    DYNAMIC:          42,
+    EXPRESSION:       43,
+    LYRICS:           45,
+    TEMPO_TEXT:       52,
+    STAFF_TEXT:       53,
+    SYSTEM_TEXT:      54,
+    REHEARSAL_MARK:   61,
+    HARMONY:          65,
+    HAIRPIN:          102,
+    OTTAVA:           103,
+    CHORD:            123,
+    SLUR:             124
+}
+
 // ── Internal helpers ──────────────────────────────────────────────────────
 
 // Return curScore or null. Callers should check before continuing.
@@ -862,7 +891,7 @@ function addRehearsalMark(measureNo, text) {
         }
         c.rewindToTick(tickInt)
 
-        var rm = api.engraving.newElement(api.engraving.Element.REHEARSAL_MARK)
+        var rm = api.engraving.newElement(_EL.REHEARSAL_MARK)
         c.add(rm)          // real-parent FIRST
         rm.text = text     // THEN set properties
         s.endCmd()
@@ -887,6 +916,30 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
     var dynamicMap = {
         ppp: 4, pp: 5, p: 6, mp: 7, mf: 8, f: 9, ff: 10, fff: 11,
         fp: 15, sf: 17, sfz: 18, sfp: 23, rfz: 25, fz: 27
+    }
+    // SMuFL-marked-up glyph text for each dynamic, sourced from
+    // src/engraving/dom/dynamic.cpp DYN_LIST. We need this because the
+    // enum overload Dynamic::setDynamicType(DynamicType) (dynamic.cpp:230 vs.
+    // 238) sets ONLY the enum — the string overload also calls setXmlText(),
+    // and without text the element is added but renders no glyph. v0.5.1
+    // smoke test 16/17 reported this: undo entry + layout space + no glyph.
+    // We set text AFTER c.add(d) (the dynamicType-determined variant must be
+    // committed first, same constraint as the existing set-before-add note).
+    var dynamicTextMap = {
+        ppp: "<sym>dynamicPiano</sym><sym>dynamicPiano</sym><sym>dynamicPiano</sym>",
+        pp:  "<sym>dynamicPiano</sym><sym>dynamicPiano</sym>",
+        p:   "<sym>dynamicPiano</sym>",
+        mp:  "<sym>dynamicMezzo</sym><sym>dynamicPiano</sym>",
+        mf:  "<sym>dynamicMezzo</sym><sym>dynamicForte</sym>",
+        f:   "<sym>dynamicForte</sym>",
+        ff:  "<sym>dynamicForte</sym><sym>dynamicForte</sym>",
+        fff: "<sym>dynamicForte</sym><sym>dynamicForte</sym><sym>dynamicForte</sym>",
+        fp:  "<sym>dynamicForte</sym><sym>dynamicPiano</sym>",
+        sf:  "<sym>dynamicSforzando</sym><sym>dynamicForte</sym>",
+        sfz: "<sym>dynamicSforzando</sym><sym>dynamicForte</sym><sym>dynamicZ</sym>",
+        sfp: "<sym>dynamicSforzando</sym><sym>dynamicForte</sym><sym>dynamicPiano</sym>",
+        rfz: "<sym>dynamicRinforzando</sym><sym>dynamicForte</sym><sym>dynamicZ</sym>",
+        fz:  "<sym>dynamicForte</sym><sym>dynamicZ</sym>"
     }
     // Normalise case — LLM occasionally sends "F" or "MP". Reject unknown
     // values rather than silently substituting (a silent fallback rendered
@@ -930,13 +983,19 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         var c = s.newCursor()
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
-        var d = api.engraving.newElement(api.engraving.Element.DYNAMIC)
+        var d = api.engraving.newElement(_EL.DYNAMIC)
         // EXCEPTION to the add-first-then-set pattern: dynamicType determines
         // which element variant the engraving layer commits, so it must be
         // set BEFORE c.add(). Setting it after produces a hairpin pair instead
         // of the requested glyph (and only the first call works).
         d.dynamicType = dynType
         c.add(d)
+        // Set the visible glyph text AFTER add. Required because the enum
+        // overload Dynamic::setDynamicType(DynamicType) does NOT populate
+        // xmlText — without text the element renders as an invisible spacer.
+        // See dynamicTextMap above for the SMuFL mapping.
+        var glyphText = dynamicTextMap[dynLc]
+        if (glyphText) d.text = glyphText
         s.endCmd()
         return { ok: true, measure: measureNo, beat: beat, dynamic: dynLc, _debug: { dynType: dynType, tick: tick } }
     } catch(e) {
@@ -983,16 +1042,34 @@ function addTempoMark(measureNo, bpm, unit, text) {
         _debug: { fn: "addTempoMark", measureNo: measureNo, tick: mTick }
     }
 
+    // Duplicate guard: a tempo mark already exists in this measure. Adding
+    // another stacks them at the same anchor, with the second silently
+    // overriding playback (v0.5.1 smoke test 20 observation). Return ok with
+    // a note rather than corrupting the score.
+    var measure = _findMeasure(measureNo)
+    if (measure && _firstTempoInMeasure(measure)) {
+        return {
+            ok: true,
+            measure: measureNo,
+            note: "tempo mark already exists at measure " + measureNo + " — no change made"
+        }
+    }
+
     try {
         s.startCmd("add tempo")
         var c = s.newCursor()
         c.track = 0
         c.rewindToTick(mTick)
-        var tt = api.engraving.newElement(api.engraving.Element.TEMPO_TEXT)
+        var tt = api.engraving.newElement(_EL.TEMPO_TEXT)
         c.add(tt)                    // real-parent FIRST
         tt.text = displayText        // THEN set properties
-        tt.tempo = qps
-        tt.tempoFollowText = false   // honor .tempo, not text-parse
+        tt.tempo = qps               // playback fallback if text parse fails
+        // tempoFollowText=true matches the toolbar default ("Follow written
+        // tempo"). Smoke test v0.5.1 test 20 flagged the previous Override
+        // setting as a behavioural mismatch with user-added marks. With
+        // follow=true, MuseScore re-parses displayText on edit and keeps
+        // playback in sync with the visible mark.
+        tt.tempoFollowText = true
         s.endCmd()
         return { ok: true, measure: measureNo, bpm: bpm, tempo: qps, text: displayText }
     } catch(e) {
@@ -1023,11 +1100,11 @@ function addStaffText(measureNo, beat, beatFraction, staff, text, textType) {
     }
 
     var elemKind = "staff"
-    var elemType = api.engraving.Element.STAFF_TEXT
+    var elemType = _EL.STAFF_TEXT
     var fellBack = false
     if (textType === "expression") {
         if (api.engraving.Element.EXPRESSION !== undefined) {
-            elemType = api.engraving.Element.EXPRESSION
+            elemType = _EL.EXPRESSION
             elemKind = "expression"
         } else {
             fellBack = true   // EXPRESSION not exposed; keep STAFF_TEXT
@@ -1074,7 +1151,7 @@ function addSystemText(measureNo, text) {
         var c = s.newCursor()
         c.track = 0
         c.rewindToTick(mTick)
-        var sysT = api.engraving.newElement(api.engraving.Element.SYSTEM_TEXT)
+        var sysT = api.engraving.newElement(_EL.SYSTEM_TEXT)
         c.add(sysT)
         sysT.text = text
         s.endCmd()
@@ -1105,7 +1182,7 @@ function addHarmony(measureNo, beat, beatFraction, staff, text) {
         var c = s.newCursor()
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
-        var h = api.engraving.newElement(api.engraving.Element.HARMONY)
+        var h = api.engraving.newElement(_EL.HARMONY)
         c.add(h)
         h.text = text
         s.endCmd()
@@ -1116,8 +1193,38 @@ function addHarmony(measureNo, beat, beatFraction, staff, text) {
     }
 }
 
+// Count spanners on the given staff (0-based) whose start tick lies within
+// [startTick, endTick]. Used as a before/after probe to detect silent no-ops
+// in slur/ottava cmd handlers — the cmd returns no error when its selection
+// preconditions aren't met (e.g. selection has < 2 distinct chord-rests for a
+// slur), and the only way to know nothing happened is to count.
+function _countSpannersAt(score, startTick, endTick, staff0) {
+    try {
+        var sps = score.spanners
+        if (!sps || sps.length === undefined) return 0
+        var n = 0
+        for (var i = 0; i < sps.length; i++) {
+            var sp = sps[i]
+            if (!sp) continue
+            var spTick = -1, spStaff = -1
+            try { spTick  = _getTickInt(sp.spannerTick) } catch (e) {}
+            try { spStaff = sp.staffIdx } catch (e) {}
+            if (spTick < startTick || spTick > endTick) continue
+            if (staff0 >= 0 && spStaff !== staff0) continue
+            n++
+        }
+        return n
+    } catch (e) { return 0 }
+}
+
 // Helper: range-select + cmd() write — shared by hairpin, slur, ottava.
-function _rangeCmdWrite(cmdLabel, cmdStr,
+//
+// `verifyKind` is "spanner" for slur/ottava — we count score-level spanners on
+// the target staff before and after, and return an error if the count didn't
+// increase (cmd silently no-op'd). Hairpin doesn't need verification: the cmd
+// handler has a `noteOrRestSelected` guard that produces no entry only when
+// the selection is genuinely empty, and our probe ensures it isn't.
+function _rangeCmdWrite(cmdLabel, cmdStr, verifyKind,
                         startMeasure, startBeat, startBeatFraction, startStaff,
                         endMeasure,   endBeat,   endBeatFraction,   endStaff) {
     var s = _score()
@@ -1143,12 +1250,32 @@ function _rangeCmdWrite(cmdLabel, cmdStr,
     var s0 = startStaff - 1   // inclusive, 0-based
     var s1 = endStaff         // exclusive, 0-based
 
+    // selectRange's end tick is exclusive. Without extension a request like
+    // "slur from beat 1 to beat 4" selects chords on beats 1..3 only — the
+    // chord at beat 4 is omitted, and doAddSlur() (notationinteraction.cpp
+    // line 2943) silently drops the slur when first == second chord-rest.
+    // Extending end by 1 tick puts the chord at endTick inside the [start, end)
+    // range. Hairpin tolerates the extra chord (the line just spans further by
+    // one chord, matching the user's intent), so we extend for all spanners.
+    var selEndTick = endTick + 1
+
+    var before = (verifyKind === "spanner") ? _countSpannersAt(s, startTick, endTick, s0) : 0
+
     // NO startCmd/endCmd here: api.engraving.cmd() handlers run
     // prepareChanges/commitChanges internally, and those become no-ops while
     // the undo stack is locked by an outer startCmd — the cmd silently drops.
     try {
-        s.selection.selectRange(startTick, endTick, s0, s1)
+        s.selection.selectRange(startTick, selEndTick, s0, s1)
         api.engraving.cmd(cmdStr)
+        if (verifyKind === "spanner") {
+            var after = _countSpannersAt(s, startTick, endTick, s0)
+            if (after <= before) {
+                return {
+                    error: cmdLabel + " had no effect — selection may contain too few notes or no compatible target",
+                    _debug: { fn: cmdLabel, cmd: cmdStr, startTick: startTick, selEndTick: selEndTick, staff0: s0, before: before, after: after }
+                }
+            }
+        }
         return { ok: true }
     } catch(e) {
         return { error: cmdLabel + " failed: " + e }
@@ -1159,7 +1286,7 @@ function _rangeCmdWrite(cmdLabel, cmdStr,
 function addHairpin(startMeasure, startBeat, startBeatFraction, startStaff,
                     endMeasure, endBeat, endBeatFraction, endStaff, type) {
     var cmdStr = (type === "decresc") ? "add-hairpin-reverse" : "add-hairpin"
-    var res = _rangeCmdWrite("add hairpin", cmdStr,
+    var res = _rangeCmdWrite("add hairpin", cmdStr, "spanner",
                              startMeasure, startBeat, startBeatFraction, startStaff,
                              endMeasure, endBeat, endBeatFraction, endStaff)
     if (res.ok) res.type = (type === "decresc") ? "decresc" : "cresc"
@@ -1169,7 +1296,7 @@ function addHairpin(startMeasure, startBeat, startBeatFraction, startStaff,
 // Slur spanning two positions on the same staff.
 function addSlur(startMeasure, startBeat, startBeatFraction, startStaff,
                  endMeasure, endBeat, endBeatFraction, endStaff) {
-    return _rangeCmdWrite("add slur", "add-slur",
+    return _rangeCmdWrite("add slur", "add-slur", "spanner",
                           startMeasure, startBeat, startBeatFraction, startStaff,
                           endMeasure, endBeat, endBeatFraction, endStaff)
 }
@@ -1178,7 +1305,7 @@ function addSlur(startMeasure, startBeat, startBeatFraction, startStaff,
 function addOttava(startMeasure, startBeat, startBeatFraction, startStaff,
                    endMeasure, endBeat, endBeatFraction, endStaff, type) {
     var cmdStr = (type === "8vb") ? "add-8vb" : "add-8va"
-    var res = _rangeCmdWrite("add ottava", cmdStr,
+    var res = _rangeCmdWrite("add ottava", cmdStr, "spanner",
                              startMeasure, startBeat, startBeatFraction, startStaff,
                              endMeasure, endBeat, endBeatFraction, endStaff)
     if (res.ok) res.type = (type === "8vb") ? "8vb" : "8va"
@@ -1240,13 +1367,25 @@ function appendMeasures(count) {
     if (typeof count !== "number" || count < 1)
         return { error: "count must be >= 1" }
 
-    // NO startCmd/endCmd — cmd owns its own undo entry.
+    // NO startCmd/endCmd — cmd owns its own undo entry. Verify against
+    // s.nmeasures before/after — cmd("append-measure") will silently no-op
+    // if the action dispatcher rejects it (e.g. score-locked state), and the
+    // bare ok:true would otherwise mislead.
+    var before = s.nmeasures
     try {
         for (var i = 0; i < count; i++) api.engraving.cmd("append-measure")
-        return { ok: true, appended: count }
     } catch(e) {
         return { error: "appendMeasures failed: " + e }
     }
+    var after = s.nmeasures
+    var added = after - before
+    if (added <= 0) {
+        return {
+            error: "append-measure cmd had no effect (score may be locked or read-only)",
+            _debug: { fn: "appendMeasures", before: before, after: after, requested: count }
+        }
+    }
+    return { ok: true, appended: added }
 }
 
 // Delete one measure across all staves and shift later measures left.
@@ -1262,14 +1401,23 @@ function deleteMeasure(measureNo) {
         ? _getTickInt(m.nextMeasure.firstSegment.tick)
         : _getTickInt(m.lastSegment.tick) + 1
 
-    // NO startCmd/endCmd: cmd("time-delete") owns its undo entry.
+    // NO startCmd/endCmd: cmd("time-delete") owns its undo entry. Verify
+    // against s.nmeasures before/after — see appendMeasures for rationale.
+    var before = s.nmeasures
     try {
         s.selection.selectRange(startTick, endTick, 0, s.nstaves)
         api.engraving.cmd("time-delete")
-        return { ok: true, deletedMeasure: measureNo }
     } catch(e) {
         return { error: "deleteMeasure failed: " + e }
     }
+    var after = s.nmeasures
+    if (after >= before) {
+        return {
+            error: "time-delete cmd had no effect — measure may be protected or selection failed",
+            _debug: { fn: "deleteMeasure", measureNo: measureNo, before: before, after: after, startTick: startTick, endTick: endTick }
+        }
+    }
+    return { ok: true, deletedMeasure: measureNo }
 }
 
 // Helper for breaks: construct a LayoutBreak element directly and attach it
@@ -1283,6 +1431,29 @@ function deleteMeasure(measureNo) {
 // approach, which crashed MuseScore. Cmd strings "section-break" and
 // "system-break" ARE registered (notationactioncontroller.cpp:268,272) but the
 // handler path interacts badly with plugin-side startCmd/endCmd wrapping.
+// Walk Measure.elements looking for an existing LayoutBreak of the given type.
+// Returns true if one is already attached. Used to suppress duplicate adds —
+// otherwise calling add_system_break twice on the same measure produces two
+// stacked LayoutBreak elements at the same position (visible in v0.5.1 smoke
+// test 14).
+function _hasLayoutBreak(measure, layoutBreakType) {
+    if (!measure) return false
+    try {
+        var els = measure.elements
+        var nE = (els && els.length !== undefined) ? els.length : 0
+        var LB = api.engraving.Element ? api.engraving.Element.LAYOUT_BREAK : -1
+        for (var i = 0; i < nE; i++) {
+            var el = els[i]
+            if (!el) continue
+            if (el.type !== LB) continue
+            var t = -1
+            try { t = el.layoutBreakType } catch (e) {}
+            if (t === layoutBreakType) return true
+        }
+    } catch (e) {}
+    return false
+}
+
 function _addLayoutBreak(cmdLabel, layoutBreakType, measureNo) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -1290,12 +1461,20 @@ function _addLayoutBreak(cmdLabel, layoutBreakType, measureNo) {
     if (!m) return { error: "Measure " + measureNo + " not found" }
     var tickInt = _getTickInt(m.firstSegment.tick)
 
+    if (_hasLayoutBreak(m, layoutBreakType)) {
+        return {
+            ok: true,
+            measure: measureNo,
+            note: cmdLabel + " already exists at measure " + measureNo + " — no change made"
+        }
+    }
+
     try {
         s.startCmd(cmdLabel)
         var c = s.newCursor()
         c.track = 0
         c.rewindToTick(tickInt)
-        var lb = api.engraving.newElement(api.engraving.Element.LAYOUT_BREAK)
+        var lb = api.engraving.newElement(_EL.LAYOUT_BREAK)
         // Set type both BEFORE and AFTER add: empirically system break (LINE=1)
         // works either way because LINE is the constructor default, but
         // section break (SECTION=2) was silently dropped when set only BEFORE
@@ -1337,25 +1516,61 @@ function addSystemBreak(measureNo) {
 function setScoreMetadata(title, composer, lyricist, copyright, subtitle) {
     var s = _score()
     if (!s) return { error: "No score open" }
+    // Readiness guard. Score::setMetaTag is non-undoable and writes directly
+    // to m_metaTags; in v0.5.1 smoke test 22 the first call silently failed
+    // and the second worked. Best hypothesis is the score wasn't fully in a
+    // writable state on the first call (e.g. mid-layout or before
+    // post-load init). Refusing to attempt the write when nmeasures is 0 or
+    // firstMeasure is null gives a clean error instead of a phantom ok.
+    if (!s.firstMeasure || !s.nmeasures || s.nmeasures < 1) {
+        return { error: "Score not ready (no measures available) — try again after the score is fully loaded" }
+    }
+
+    // Write + read-back verify each tag. If the read-back disagrees with the
+    // write, try once more before reporting failure. Avoids the silent-fail
+    // mode without making the function block indefinitely.
+    var pairs = []
+    if (title)     pairs.push(["workTitle", title,     "title"])
+    if (composer)  pairs.push(["composer",  composer,  "composer"])
+    if (lyricist)  pairs.push(["lyricist",  lyricist,  "lyricist"])
+    if (copyright) pairs.push(["copyright", copyright, "copyright"])
+    // The subtitle field in MuseScore Score Properties is keyed by the
+    // tag "subtitle". An earlier implementation used "workNumber", which
+    // landed the value in the "Work number" field instead.
+    if (subtitle)  pairs.push(["subtitle",  subtitle,  "subtitle"])
+
     var updates = []
+    var stillFailed = []
     try {
-        if (title)     { s.setMetaTag("workTitle",  title);     updates.push("title") }
-        if (composer)  { s.setMetaTag("composer",   composer);  updates.push("composer") }
-        if (lyricist)  { s.setMetaTag("lyricist",   lyricist);  updates.push("lyricist") }
-        if (copyright) { s.setMetaTag("copyright",  copyright); updates.push("copyright") }
-        // The subtitle field in MuseScore Score Properties is keyed by the
-        // tag "subtitle". An earlier implementation used "workNumber", which
-        // landed the value in the "Work number" field instead — that field is
-        // a separate piece of metadata (catalogue/opus number) and is not what
-        // the LLM means when the user asks for a subtitle.
-        if (subtitle)  { s.setMetaTag("subtitle",   subtitle);  updates.push("subtitle") }
-        return {
-            ok: true,
-            updated: updates,
-            note: "Tags saved with score. Not undoable; the visible title-frame text may not refresh until the score is saved and re-opened."
+        for (var i = 0; i < pairs.length; i++) {
+            var key = pairs[i][0], val = pairs[i][1], label = pairs[i][2]
+            s.setMetaTag(key, val)
+            var got = ""
+            try { got = s.metaTag(key) || "" } catch (e) {}
+            if (got !== val) {
+                // Retry once — covers the timing-sensitive case observed
+                // in smoke test 22 where the second call worked.
+                s.setMetaTag(key, val)
+                try { got = s.metaTag(key) || "" } catch (e) {}
+            }
+            if (got === val) updates.push(label)
+            else             stillFailed.push(label)
         }
     } catch(e) {
         return { error: "setScoreMetadata failed: " + e }
+    }
+    if (stillFailed.length > 0) {
+        return {
+            ok: true,
+            updated: updates,
+            failed: stillFailed,
+            note: "Some tags could not be persisted after retry: " + stillFailed.join(", ") + ". Tag writes are non-undoable; visible title-frame text may also need a save+reopen to refresh."
+        }
+    }
+    return {
+        ok: true,
+        updated: updates,
+        note: "Tags saved with score. Not undoable; the visible title-frame text may not refresh until the score is saved and re-opened."
     }
 }
 
@@ -1497,7 +1712,7 @@ function addLyric(measure, beat, beatFraction, staff, voice, text, syllabic, ver
                 _debug: { fn: "addLyric", tick: tick, elementType: null }
             }
         }
-        var ly = api.engraving.newElement(api.engraving.Element.LYRICS)
+        var ly = api.engraving.newElement(_EL.LYRICS)
         chord.add(ly)                       // chord.add, NOT cursor.add
         ly.text = text
         ly.syllabic = _syllabicToInt(syllabic)
@@ -1513,6 +1728,12 @@ function addLyric(measure, beat, beatFraction, staff, voice, text, syllabic, ver
 // Tie the note at the given position to the next note of the same pitch.
 // cmd("tie") — NOT "add-tie" (the registered action ID is just "tie",
 // notationactioncontroller.cpp:240). cmd-based, so NO startCmd wrapper.
+//
+// The cmd silently no-ops when its selection has no note (e.g. selectRange
+// was too tight to include the chord segment) or when the chord has no
+// next-position note of matching pitch to tie to. We probe the chord first
+// and then verify that some note's tieForward flipped — otherwise we return
+// an error rather than a misleading ok:true.
 function addTie(measure, beat, beatFraction, staff, voice) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -1521,10 +1742,48 @@ function addTie(measure, beat, beatFraction, staff, voice) {
         error: "Measure " + measure + " not found",
         _debug: { fn: "addTie", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, tick: tick }
     }
+
+    var s0 = staff - 1
+    var probe = s.newCursor()
+    probe.track = s0 * 4 + ((voice || 1) - 1)
+    probe.rewindToTick(tick)
+    var chord = probe.element
+    var CHORD = api.engraving.Element.CHORD
+    if (!chord || chord.type !== CHORD) {
+        return {
+            error: "No chord at measure " + measure + " beat " + beat + " staff " + staff + " — nothing to tie",
+            _debug: { fn: "addTie", tick: tick, elementType: chord ? chord.type : null }
+        }
+    }
+
+    // Snapshot tieForward flags so we can detect a no-op.
+    var before = []
+    var nNotes = chord.notes ? chord.notes.length : 0
+    for (var i = 0; i < nNotes; i++) before.push(!!chord.notes[i].tieForward)
+
+    // Selection range must cover the chord segment. The chord's duration in
+    // ticks tells us where the next chord-rest segment starts; selecting up
+    // to (but not including) that boundary covers exactly this chord.
+    var dTicks = 1
+    try { if (chord.duration && typeof chord.duration.ticks === "number") dTicks = chord.duration.ticks } catch (e) {}
+    if (dTicks < 1) dTicks = 1
+
     try {
-        var s0 = staff - 1
-        s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
+        s.selection.selectRange(tick, tick + dTicks, s0, s0 + 1)
         api.engraving.cmd("tie")
+
+        // Verify: at least one note's tieForward flipped on.
+        var changed = false
+        for (var j = 0; j < nNotes; j++) {
+            var now = !!chord.notes[j].tieForward
+            if (now && !before[j]) { changed = true; break }
+        }
+        if (!changed) {
+            return {
+                error: "tie cmd had no effect — the next position likely has no note of matching pitch",
+                _debug: { fn: "addTie", tick: tick, durationTicks: dTicks, noteCount: nNotes }
+            }
+        }
         return { ok: true }
     } catch (e) {
         return { error: "addTie failed: " + e }
@@ -1564,14 +1823,15 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
         _debug: { fn: "addArticulation", measureNo: measure, beat: beat, beatFraction: beatFraction || "0", staff: staff, voice: voice, articulation: articulation, tick: tick }
     }
 
-    // ── Direct-construction branch (SymId-keyed; no cmd path exists) ──
-    // SymId names verified in src/engraving/api/v1/apitypes.h:
-    //   articStaccatissimoAbove   (2369)
-    //   pluckedSnapPizzicatoAbove (4267)
-    //   stringsHarmonic           (4411)  — no Above variant; bare name
-    //   articStressAbove          (2377)
-    //   articUnstressAbove        (2385)
+    // ── Direct-construction branch (SymId-keyed) ──
+    // SymId names verified in src/engraving/api/v1/apitypes.h.
+    // `staccato` originally went through the cmd("add-staccato") path, but in
+    // smoke-test v0.5.1 that path silently no-op'd (ok:true returned in ~8ms,
+    // no undo entry, no glyph). Moving it to direct construction matches the
+    // proven-working staccatissimo / snapPizzicato path and bypasses whatever
+    // selection-state requirement the cmd handler was failing on.
     var directSymIds = {
+        "staccato":      "articStaccatoAbove",
         "staccatissimo": "articStaccatissimoAbove",
         "snapPizzicato": "pluckedSnapPizzicatoAbove",
         "harmonic":      "stringsHarmonic",
@@ -1597,7 +1857,7 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
 
         try {
             s.startCmd("add articulation")
-            var art = api.engraving.newElement(api.engraving.Element.ARTICULATION)
+            var art = api.engraving.newElement(_EL.ARTICULATION)
             art.symbol = symValue       // SET BEFORE add — Pid::SYMBOL keys the variant (same as Fermata)
             chord.add(art)              // chord.add, NOT cursor.add — same pattern as add_lyric
             s.endCmd()
@@ -1609,8 +1869,11 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
     }
 
     // ── Cmd-based branch (registered action handlers) ──
+    // `staccato` is intentionally absent here — it lives in directSymIds now
+    // (see Fix 1 in this version). Other cmd-based articulations still go
+    // through toggleArticulation; we probe the chord first and verify the
+    // articulation count actually increased to detect silent no-ops.
     var articulationCmdMap = {
-        "staccato": "add-staccato",
         "tenuto":   "add-tenuto",
         "accent":   "add-sforzato",
         "marcato":  "add-marcato",
@@ -1622,10 +1885,34 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
     }
     var cmdStr = articulationCmdMap[articulation]
     if (!cmdStr) return { error: "Articulation '" + articulation + "' not yet implemented" }
+
+    var s0 = staff - 1
+    var probeC = s.newCursor()
+    probeC.track = s0 * 4 + ((voice || 1) - 1)
+    probeC.rewindToTick(tick)
+    var probeChord = probeC.element
+    if (!probeChord || probeChord.type !== api.engraving.Element.CHORD) {
+        return {
+            error: "No chord at measure " + measure + " beat " + beat + " staff " + staff,
+            _debug: { fn: "addArticulation", tick: tick, elementType: probeChord ? probeChord.type : null }
+        }
+    }
+    var beforeArts = (probeChord.articulations && probeChord.articulations.length) || 0
+
+    var dTicks = 1
+    try { if (probeChord.duration && typeof probeChord.duration.ticks === "number") dTicks = probeChord.duration.ticks } catch (e) {}
+    if (dTicks < 1) dTicks = 1
+
     try {
-        var s0 = staff - 1
-        s.selection.selectRange(tick, tick + 1, s0, s0 + 1)
+        s.selection.selectRange(tick, tick + dTicks, s0, s0 + 1)
         api.engraving.cmd(cmdStr)
+        var afterArts = (probeChord.articulations && probeChord.articulations.length) || 0
+        if (afterArts <= beforeArts) {
+            return {
+                error: "Articulation cmd had no effect — selection may have missed the chord",
+                _debug: { fn: "addArticulation", cmd: cmdStr, tick: tick, before: beforeArts, after: afterArts }
+            }
+        }
         return { ok: true, articulation: articulation }
     } catch (e) {
         return { error: "addArticulation failed: " + e }
@@ -1674,10 +1961,10 @@ function getDebugInfo() {
             SECTION: lbt ? lbt.SECTION : "undefined",
             NOBREAK: lbt ? lbt.NOBREAK : "undefined"
         },
-        score: curScore ? {
-            nstaves:   curScore.nstaves,
-            nmeasures: curScore.nmeasures
-        } : null
+        score: (function() {
+            var sc = _score()
+            return sc ? { nstaves: sc.nstaves, nmeasures: sc.nmeasures } : null
+        })()
     }
 }
 
@@ -1921,7 +2208,7 @@ function addFermata(measure, beat, beatFraction, staff, type) {
         var c = s.newCursor()
         c.track = (staff - 1) * 4       // fermatas attach to the staff, not a voice
         c.rewindToTick(tick)
-        var f = api.engraving.newElement(api.engraving.Element.FERMATA)
+        var f = api.engraving.newElement(_EL.FERMATA)
         f.symbol = symValue              // SET BEFORE add — Pid::SYMBOL keys the variant
         c.add(f)
         s.endCmd()
@@ -1951,9 +2238,32 @@ function getSelection() {
     if (typeof isRange === "function") {
         try { isRange = sel.isRange() } catch (e) { isRange = false }
     }
+    isRange = !!isRange
+
+    // Read segment / staff bounds regardless of isRange — they're populated
+    // for any non-list selection and let us infer rangeness when isRange is
+    // false but the user has actually selected a range. Smoke test v0.5.1
+    // observed isRange:false for what was clearly a range; segments
+    // disagreed and were the truthful indicator.
+    var ss = null, es = null
+    try { ss = sel.startSegment } catch (e) {}
+    try { es = sel.endSegment } catch (e) {}
+
+    var ssTick = -1, esTick = -1
+    try { if (ss && ss.tick !== undefined) ssTick = _getTickInt(ss.tick) } catch (e) {}
+    try { if (es && es.tick !== undefined) esTick = _getTickInt(es.tick) } catch (e) {}
+
+    var startStaffRaw = null, endStaffRaw = null
+    try { if (sel.startStaff !== undefined && sel.startStaff !== null) startStaffRaw = sel.startStaff } catch (e) {}
+    try { if (sel.endStaff   !== undefined && sel.endStaff   !== null) endStaffRaw   = sel.endStaff } catch (e) {}
+
+    // Promote to range if segments span more than a point OR staves span > 1.
+    var segmentSpan = (ssTick >= 0 && esTick >= 0 && esTick !== ssTick)
+    var staffSpan   = (startStaffRaw !== null && endStaffRaw !== null && (endStaffRaw - startStaffRaw) > 1)
+    if (!isRange && (segmentSpan || staffSpan)) isRange = true
 
     var result = {
-        isRange:      !!isRange,
+        isRange:      isRange,
         elements:     [],
         startMeasure: null,
         endMeasure:   null,
@@ -1962,18 +2272,13 @@ function getSelection() {
     }
 
     if (isRange) {
-        try {
-            var ss = sel.startSegment
-            var es = sel.endSegment
-            if (ss) result.startMeasure = _tickToMeasureNo(_getTickInt(ss.tick))
-            if (es) result.endMeasure   = _tickToMeasureNo(_getTickInt(es.tick))
-        } catch (e) {}
-        try {
-            if (sel.startStaff !== undefined && sel.startStaff !== null)
-                result.startStaff = sel.startStaff + 1
-            if (sel.endStaff !== undefined && sel.endStaff !== null)
-                result.endStaff = sel.endStaff + 1
-        } catch (e) {}
+        if (ssTick >= 0) result.startMeasure = _tickToMeasureNo(ssTick)
+        // endSegment is one segment PAST the selection end (it's the segment
+        // the selection stops at, exclusive). Report the measure containing
+        // the last included tick — esTick - 1 covers the typical range end.
+        if (esTick >= 0) result.endMeasure   = _tickToMeasureNo(esTick > ssTick ? esTick - 1 : esTick)
+        if (startStaffRaw !== null) result.startStaff = startStaffRaw + 1
+        if (endStaffRaw   !== null) result.endStaff   = endStaffRaw   + 1   // already 1-past
     }
 
     // Precompute globalStaff → instrument longName (matches getNotesInRange).
@@ -1989,11 +2294,8 @@ function getSelection() {
     // sel.elements for a range selection enumerates every element inside the
     // range (notes, rests, beams, ties, articulations...). Order and count
     // vary between calls because some intermediate elements are layout-derived
-    // and rebuilt on demand — observed instability in repeat smoke tests.
-    //
-    // For ranges, range bounds (startMeasure/endMeasure/startStaff/endStaff)
-    // are the stable answer; the elements list adds noise. Populate elements
-    // only for single-element (non-range) selections.
+    // and rebuilt on demand. Range bounds are the stable answer; populate
+    // elements only for non-range selections.
     var els = null
     if (!isRange) {
         try { els = sel.elements } catch (e) {}
@@ -2005,11 +2307,27 @@ function getSelection() {
             var track = (e.track !== undefined && e.track !== null) ? e.track : 0
             var staff = Math.floor(track / 4) + 1
             var voice = (track % 4) + 1
+            // Walk parent chain to find a tick — leaf elements (notes,
+            // articulations, accidentals) often don't carry a tick directly;
+            // their containing chord or segment does. Previous code stopped
+            // at e.parent.tick, which left tick = -1 (and measure = null) for
+            // anything one extra hop deep, e.g. articulations on chord notes.
             var tick = -1
-            try {
-                if (e.tick !== undefined && e.tick !== null) tick = _getTickInt(e.tick)
-                else if (e.parent && e.parent.tick !== undefined) tick = _getTickInt(e.parent.tick)
-            } catch (e2) {}
+            try { if (e.tick !== undefined && e.tick !== null) tick = _getTickInt(e.tick) } catch (e2) {}
+            if (tick < 0) {
+                var anc = e.parent
+                var hops = 0
+                while (anc && hops < 4) {
+                    try {
+                        if (anc.tick !== undefined && anc.tick !== null) {
+                            tick = _getTickInt(anc.tick)
+                            if (tick >= 0) break
+                        }
+                    } catch (e3) {}
+                    anc = anc.parent
+                    hops++
+                }
+            }
             var mno = tick >= 0 ? _tickToMeasureNo(tick) : null
             var instrName = staffNameMap[staff - 1] || ""
             var typeStr = ""
@@ -2173,10 +2491,38 @@ function setViewSettings(settings) {
     }
 
     // (c) Concert pitch — toggle cmd compared against the style value.
+    //
+    // cmd("concert-pitch") routes through Controller::toggleConcertPitch
+    // (notationactioncontroller.cpp:416) which is the only path that fires
+    // the proper UI refresh signal (the toolbar indicator binds to it). A
+    // direct style write changes the value but leaves the indicator stale.
+    //
+    // We verify the post-cmd style value to detect dispatcher failure — the
+    // smoke test v0.5.1 test 40 reported updated:['concertPitch'] returned
+    // while the indicator stayed unchanged, which would indicate the cmd
+    // didn't actually land. Returning a note in that case is more honest
+    // than claiming success.
     if (settings.concertPitch !== undefined) {
-        var cur = !!_styleValue(s, "concertPitch", false)
-        if (cur !== !!settings.concertPitch) {
-            try { api.engraving.cmd("concert-pitch"); updated.push("concertPitch") } catch (e) {}
+        var desiredCP = !!settings.concertPitch
+        var curCP     = !!_styleValue(s, "concertPitch", false)
+        if (curCP !== desiredCP) {
+            try { api.engraving.cmd("concert-pitch") } catch (e) {}
+            var afterCP = !!_styleValue(s, "concertPitch", false)
+            if (afterCP === desiredCP) {
+                updated.push("concertPitch")
+            } else {
+                // cmd dispatched but had no observable effect.
+                if (!updated._notes) updated._notes = []
+                return {
+                    ok: true,
+                    updated: updated,
+                    note: "concertPitch cmd was dispatched but the style value did not change (cur=" + curCP + ", after=" + afterCP + ", desired=" + desiredCP + "). The notation panel may need focus."
+                }
+            }
+        } else {
+            // Already at desired — surface this so the LLM doesn't conclude
+            // the cmd failed silently.
+            updated.push("concertPitch (already " + desiredCP + ")")
         }
     }
 
@@ -2354,46 +2700,97 @@ function getSpannersInRange(startMeasure, endMeasure, instrument) {
         for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
     }
 
-    var spanners = null
-    try { spanners = s.spanners } catch (e) { return { error: "curScore.spanners not readable: " + e } }
-    if (!spanners) return { ok: true, spanners: [] }
-    var nSpanners = (spanners.length !== undefined) ? spanners.length : 0
-
     var results = []
-    for (var i = 0; i < nSpanners; i++) {
-        var sp = spanners[i]
-        if (!sp) continue
-
-        var spStart = -1, spDur = 0
-        try { spStart = _getTickInt(sp.spannerTick) } catch (e) {}
-        try { spDur   = _getTickInt(sp.spannerTicks) } catch (e) {}
-        if (spStart < 0) continue
-        var spEnd = spStart + spDur
-
-        // Range overlap test: spanner intersects [startTick, endTick)
-        if (spEnd <= startTick || spStart >= endTick) continue
-
-        var spStaffIdx = 0
-        try { spStaffIdx = sp.staffIdx } catch (e) {}
+    var seen = {}   // dedupe key "startTick:type:staff"
+    var pushSpanner = function(spStart, spEnd, spStaffIdx, spType, visibleFlag) {
+        if (spStart < 0) return
+        if (spEnd <= startTick || spStart >= endTick) return
         var globalStaff = spStaffIdx + 1
         var instrName = staffNameMap[globalStaff - 1] || ""
-
-        if (filterName && instrName.toLowerCase().indexOf(filterName) < 0) continue
-
-        var spType = ""
-        try { spType = String(sp.subtypeName() || "") } catch (e) {}
-        if (!spType) {
-            try { spType = "type=" + String(sp.type) } catch (e) {}
-        }
-
+        if (filterName && instrName.toLowerCase().indexOf(filterName) < 0) return
+        var key = spStart + ":" + spType + ":" + globalStaff
+        if (seen[key]) return
+        seen[key] = true
         results.push({
             type:         spType,
             startMeasure: _tickToMeasureNo(spStart),
             endMeasure:   _tickToMeasureNo(spEnd > spStart ? spEnd - 1 : spStart),
             staff:        globalStaff,
             instrument:   instrName,
-            visible:      (sp.visible !== false)
+            visible:      visibleFlag
         })
+    }
+
+    // Primary path: curScore.spanners (QQmlListProperty<Spanner>, MS 4.7+).
+    var spanners = null
+    try { spanners = s.spanners } catch (e) {}
+    var nSpanners = (spanners && spanners.length !== undefined) ? spanners.length : 0
+    for (var i = 0; i < nSpanners; i++) {
+        var sp = spanners[i]
+        if (!sp) continue
+        var spStart = -1, spDur = 0, spStaffIdx = 0
+        try { spStart = _getTickInt(sp.spannerTick) } catch (e) {}
+        try { spDur   = _getTickInt(sp.spannerTicks) } catch (e) {}
+        try { spStaffIdx = sp.staffIdx } catch (e) {}
+        var spType = ""
+        try { spType = String(sp.subtypeName() || "") } catch (e) {}
+        if (!spType) { try { spType = "type=" + String(sp.type) } catch (e) {} }
+        pushSpanner(spStart, spStart + spDur, spStaffIdx, spType,
+                    (sp.visible !== false))
+    }
+
+    // Fallback path: walk every note in the range and pull forward spanners
+    // off note.spannerForward (apiv1 elements.h:1377). Catches the cases
+    // where curScore.spanners returns empty — observed in smoke test v0.5.1
+    // where slurs and hairpins were confirmed present but s.spanners.length
+    // came back 0. Note-anchored spanners (slurs, ties, glissandi) appear
+    // here; chord-rest-anchored spanners (hairpins, ottavas) generally do
+    // not — those rely on the primary path above.
+    var ELEM = api.engraving.Element
+    var CHORD = ELEM ? ELEM.CHORD : -1
+    var mIter = s.firstMeasure
+    var idx = 1
+    while (mIter) {
+        var mTick = _getTickInt(mIter.firstSegment.tick)
+        if (mTick >= endTick) break
+        if (idx >= startMeasure && idx <= endMeasure) {
+            var seg = mIter.firstSegment
+            while (seg) {
+                if (seg.segmentType & 8192) {   // ChordRest
+                    for (var t = 0; t < s.ntracks; t++) {
+                        var el = seg.elementAt(t)
+                        if (!el || el.type !== CHORD) continue
+                        var notes = el.notes
+                        var nN = notes ? notes.length : 0
+                        for (var ni = 0; ni < nN; ni++) {
+                            var note = notes[ni]
+                            var fwd = null
+                            try { fwd = note.spannerForward } catch (e) {}
+                            if (!fwd || fwd.length === undefined) continue
+                            for (var fi = 0; fi < fwd.length; fi++) {
+                                var fsp = fwd[fi]
+                                if (!fsp) continue
+                                var fStart = -1, fDur = 0, fStaff = Math.floor(t / 4)
+                                try { fStart = _getTickInt(fsp.spannerTick) } catch (e) {}
+                                try { fDur   = _getTickInt(fsp.spannerTicks) } catch (e) {}
+                                if (fStart < 0) {
+                                    try { fStart = _getTickInt(seg.tick) } catch (e) {}
+                                }
+                                var fType = ""
+                                try { fType = String(fsp.subtypeName() || "") } catch (e) {}
+                                if (!fType) { try { fType = "type=" + String(fsp.type) } catch (e) {} }
+                                pushSpanner(fStart, fStart + fDur, fStaff, fType,
+                                            (fsp.visible !== false))
+                            }
+                        }
+                    }
+                }
+                seg = seg.nextInMeasure ? seg.nextInMeasure : null
+            }
+        }
+        idx++
+        if (idx > endMeasure) break
+        mIter = mIter.nextMeasure
     }
 
     return { ok: true, spanners: results }

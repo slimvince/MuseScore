@@ -1,4 +1,4 @@
-// AI Assistant v0.5.1 — Conversational Chat UI + LLM tool calling
+// AI Assistant v0.5.3 — Conversational Chat UI + LLM tool calling
 // MS4-safe: no FlatButton, no import Muse.*, no QtQuick.LocalStorage top-level import
 import QtQuick 2.15
 import QtQuick.Controls 2.15
@@ -16,7 +16,7 @@ Rectangle {
     color: "#f5f5f5"
 
     // ── Version ───────────────────────────────────────────────────────────────
-    readonly property string pluginVersion: "0.5.1"
+    readonly property string pluginVersion: "0.5.2"
 
     // ── Provider config ───────────────────────────────────────────────────────
     property string providerPreset:          "Anthropic"
