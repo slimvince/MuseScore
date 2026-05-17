@@ -441,6 +441,15 @@ struct ChordAnalyzerPreferences {
     /// Range: 1–3.  Default: 3.
     int minDistinctPcsForCandidate = 3;
 
+    /// When true, suppress voice-leading step bonuses (w_stepIn / w_stepOut) inside
+    /// analyzeChord().  greedyExpandSegmentation() sets this on every internal
+    /// analyzeChord call it makes during boundary exploration: the step bonus would
+    /// otherwise bias sub-region bass selection toward stepwise candidates and
+    /// redirect segmentation before the final per-region scoring pass runs.  The
+    /// final per-region pass (bridge / batch_analyze callers, after segmentation
+    /// returns boundaries) leaves this at the default false so the bonus applies.
+    bool explorationMode = false;
+
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 
     /// Minimum confidence for the upper-voice-only Pass 2 result to confirm a

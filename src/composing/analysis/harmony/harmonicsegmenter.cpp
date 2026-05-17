@@ -340,6 +340,12 @@ void fillGap(std::vector<PlacedRegion>& regions,
         return;
     }
 
+    // Iter 94 — suppress voice-leading step bonuses for all internal greedy-expand
+    // boundary-exploration analyzeChord calls.  The bonus is only applied in the
+    // final per-region pass after segmentation has produced boundaries.
+    analysis::ChordAnalyzerPreferences explorePrefs = prefs;
+    explorePrefs.explorationMode = true;
+
     struct Scored {
         size_t                  idx = 0;
         double                  initialScore = 0.0;
@@ -371,13 +377,13 @@ void fillGap(std::vector<PlacedRegion>& regions,
         auto tones = callbacks.collectRegionTones(r.startTick, r.endTick);
         if (tones.empty()) continue;
         const auto cands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, &initCtx, prefs);
+            tones, globalKeyFifths, globalKeyMode, &initCtx, explorePrefs);
         if (cands.empty()) continue;
 
         // Iter 71 Fix A — second analyzeChord call with no bilateral
         // context. Same tones, no anchor influence.
         const auto localCands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, nullptr, prefs);
+            tones, globalKeyFifths, globalKeyMode, nullptr, explorePrefs);
 
         Scored s;
         s.idx            = i;
@@ -515,7 +521,7 @@ void fillGap(std::vector<PlacedRegion>& regions,
         auto tones = callbacks.collectRegionTones(r.startTick, r.endTick);
         if (tones.empty()) continue;
         const auto cands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, &ctx, prefs);
+            tones, globalKeyFifths, globalKeyMode, &ctx, explorePrefs);
         if (cands.empty()) continue;
 
         const int newRootPc = cands[0].identity.rootPc;
@@ -682,6 +688,9 @@ greedyExpandSegmentation(const Score* score,
     // only; every other caller in the system keeps the default behaviour.
     analysis::ChordAnalyzerPreferences sparsePrefs = prefs;
     sparsePrefs.minDistinctPcsForCandidate = 1;
+    // Iter 94 — internal greedy-expand analyzeChord calls suppress voice-leading
+    // step bonuses; the bonus only applies in the final per-region pass.
+    sparsePrefs.explorationMode = true;
 
     for (PlacedRegion& region : candidates) {
         const Fraction regionStart = Fraction::fromTicks(region.startTick);

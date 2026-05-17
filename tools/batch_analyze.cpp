@@ -29,6 +29,7 @@
 #include <set>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 // ── Qt ─────────────────────────────────────────────────────────────────────
@@ -1702,6 +1703,30 @@ static std::vector<AnalyzedRegion> analyzeScore(
         parentBoundaryTicks.insert(t.ticks());
     }
 
+    // Iter 94 — pre-compute each parent region's bass PC (lowest qualifying
+    // tone over the whole parent span) so the main loop can supply parent-
+    // scope previousBassPc / nextBassPc to analyzeChord for w_stepIn /
+    // w_stepOut.  Without this override, sub-region calls would see adjacent
+    // sub-region neighbors' bass values — the scope mismatch behind the Iter
+    // 92 Step 3c +5 Baroque BIR=false regression.
+    std::unordered_map<int, int> parentBassPcMap;
+    {
+        std::vector<int> sortedParentTicks(parentBoundaryTicks.begin(),
+                                           parentBoundaryTicks.end());
+        for (size_t pi = 0; pi < sortedParentTicks.size(); ++pi) {
+            const int pStart = sortedParentTicks[pi];
+            const int pEnd = (pi + 1 < sortedParentTicks.size())
+                             ? sortedParentTicks[pi + 1] : endTick.ticks();
+            const auto pTones = collectRegionTones(
+                score, pStart, pEnd, excludeStaves, pStart);
+            int pBassPc = -1;
+            for (const auto& t : pTones) {
+                if (t.isBass) { pBassPc = ((t.pitch % 12) + 12) % 12; break; }
+            }
+            parentBassPcMap[pStart] = pBassPc;
+        }
+    }
+
     // Pass 2b: expand coarse regions with bass-movement sub-boundaries.
     // Detects regions where the pitch-class set is identical across the region but
     // the bass note changes (e.g. Eye of the Hurricane m.1: F-bass → Bb-bass with
@@ -1823,8 +1848,37 @@ static std::vector<AnalyzedRegion> analyzeScore(
             && isDiatonicStep(currentBassPc, nextBassPc);
         ctx.nextBassPc = nextBassPc;
 
+        // Iter 94 — override previousBassPc / nextBassPc to parent scope for
+        // w_stepIn / w_stepOut.  Computed AFTER the stepwise booleans (which
+        // intentionally use sub-region scope: passing-tone / inversion
+        // signals are local) and BEFORE analyzeChord.  The next iteration's
+        // ctx.previousBassPc is restored by advanceTemporalContext below.
+        int parentPredBassPc = -1;
+        int parentSuccBassPc = -1;
+        {
+            auto pIt = parentBoundaryTicks.lower_bound(parentStartTick);
+            if (pIt != parentBoundaryTicks.begin()) {
+                auto prevIt = pIt;
+                --prevIt;
+                auto m = parentBassPcMap.find(*prevIt);
+                if (m != parentBassPcMap.end()) parentPredBassPc = m->second;
+            }
+            auto nIt = parentBoundaryTicks.upper_bound(parentStartTick);
+            if (nIt != parentBoundaryTicks.end()) {
+                auto m = parentBassPcMap.find(*nIt);
+                if (m != parentBassPcMap.end()) parentSuccBassPc = m->second;
+            }
+        }
+        const int savedPrevBassPc = ctx.previousBassPc;
+        ctx.previousBassPc = parentPredBassPc;
+        ctx.nextBassPc     = parentSuccBassPc;
+
         auto candidates = chordAnalyzer->analyzeChord(
             tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
+
+        // Restore sub-region-scope previousBassPc; advanceTemporalContext will
+        // overwrite it shortly anyway, but keep the invariant clean.
+        ctx.previousBassPc = savedPrevBassPc;
 
         if (candidates.empty()) {
             continue;

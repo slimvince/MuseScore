@@ -2067,26 +2067,80 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // analyzeChord re-invocation needed to apply this signal at full-region
     // scope is out of scope for Iter 92 and is queued as Iter 93.
 
-    // Iter 92 Step 3c — w_stepIn / w_stepOut (NOT enabled in this iteration).
+    // Iter 94 — w_stepIn / w_stepOut.
     //
-    // Design: reward bass candidates that participate in stepwise motion from
-    // the previous region's bass and/or to the next region's bass.  Same
-    // sub-region-scope regression mode as Step 3b — Baroque BIR=false +5
-    // when applied to sub-region analyzeChord calls.  Queued behind the
-    // full-region analyzeChord re-invocation work (Iter 93).
+    // Reward bass candidates that participate in semitone / whole-tone motion
+    // from the previous region's bass (stepIn) and/or to the next region's
+    // bass (stepOut).  The previous/next bass PCs are supplied by the bridge
+    // and batch_analyze callers at FULL-REGION scope — for sub-region
+    // analyzeChord calls these are overridden to the parent's predecessor /
+    // successor bass PCs so the bonus reflects structural voice-leading rather
+    // than within-parent micromotion (which caused the Iter 92 Step 3c +5
+    // Baroque BIR=false regression).  Gated on jointScoringEnabled so the
+    // single-tick (status-bar / unit test) path is untouched, and on
+    // !prefs.explorationMode so greedyExpandSegmentation's internal boundary-
+    // search analyzeChord calls do not let the step bonus redirect segmentation
+    // before the final per-region scoring pass runs.
+    //
+    // Additionally restricted to root-position candidates (candBassPc ==
+    // rootPc): the bonus is meant to reward "this chord's root moves smoothly
+    // in the bass line," not "this slash-chord's bass happens to step
+    // smoothly."  Without this guard, a slash-chord bass (e.g. F# in G#m7/F#)
+    // that steps to a neighbouring bass gets credit even though its root (G#)
+    // is not the moving voice — caused the Iter 94 Jazz bwv430 regression
+    // (BIR=false 14→15).
+    static constexpr double kWStepIn  = 0.10;
+    static constexpr double kWStepOut = 0.10;
+    auto isSemitoneOrToneStep = [](int interval) {
+        return interval == 1 || interval == 2 || interval == 10 || interval == 11;
+    };
+    auto wStepInBonus = [&](int candBassPc, int rootPc) -> double {
+        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
+        if (candBassPc != rootPc) return 0.0;
+        const int prev = context->previousBassPc;
+        if (prev < 0 || prev == candBassPc) return 0.0;
+        const int delta = ((candBassPc - prev) % 12 + 12) % 12;
+        return isSemitoneOrToneStep(delta) ? kWStepIn : 0.0;
+    };
+    auto wStepOutBonus = [&](int candBassPc, int rootPc) -> double {
+        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
+        if (candBassPc != rootPc) return 0.0;
+        const int next = context->nextBassPc;
+        if (next < 0 || next == candBassPc) return 0.0;
+        const int delta = ((next - candBassPc) % 12 + 12) % 12;
+        return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
+    };
 
     // Build per-bass-candidate rawCandidates; pick the global winner.
+    //
+    // Two-pass per candBassPc:
+    //   Pass A — compute the unbonused score (template + bass-dependent deltas
+    //            + w_complete) for every (rootPc, tplIdx); push into perBass.
+    //   Pass B — for each root-position candidate eligible for w_stepIn/w_stepOut,
+    //            apply the SURGICAL GUARD: suppress both step bonuses if any
+    //            competitor in perBass with quality in {HalfDiminished,
+    //            Diminished, Minor7} sits a minor third below our bass
+    //            (competitor.rootPc == (candBassPc - 3) mod 12) AND scores
+    //            within (kWStepIn + kWStepOut + 0.01) of the candidate's
+    //            unbonused score.  The canonical case is Dm6 vs Bø7/D:
+    //            candBassPc=2 (D), competitor.rootPc=11 (B) — competitor's
+    //            root sits a minor third below our bass candidate, not at
+    //            our bass.  Otherwise the step bonus would tip a fragile
+    //            m6 root-position reading over an equally viable
+    //            first-inversion m7-family reading on identical pitch evidence.
     std::vector<RawCandidate> rawCandidates;
     rawCandidates.reserve(12 * templates.size());
     {
         double globalBestScore = -std::numeric_limits<double>::infinity();
         std::vector<RawCandidate> bestPerBassCandidates;
         size_t winnerIdx = 0;
+        constexpr double kStepBudget = kWStepIn + kWStepOut + 0.01;
         for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
             const int candBassPc = bassCandidates[bi].pc;
             std::vector<RawCandidate> perBass;
             perBass.reserve(12 * templates.size());
-            double localBest = -std::numeric_limits<double>::infinity();
+
+            // Pass A — unbonused scores.
             for (int rootPc = 0; rootPc < 12; ++rootPc) {
                 for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
                     const TemplateDef& tpl = templates[tplIdx];
@@ -2102,9 +2156,61 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
                     perBass.push_back({ score, bassBonus, rootPc, tpl.quality,
                                         static_cast<int>(tplIdx) });
-                    if (score > localBest) {
-                        localBest = score;
+                }
+            }
+
+            // Pass B — step bonus with surgical first-inversion-m7-family guard.
+            // Power-quality candidates are excluded outright: a root+fifth-only
+            // template gaining +0.20 from stepwise bass motion will tip past a
+            // viable triad reading in sparse Jazz tonic-on-strong-beat contexts
+            // (5 of the 6 corrected-guard Jazz BIR=true regressions were
+            // `[Tonic]5` Power reads vs WiR `I`/`i` triads — bwv20.7 m16b1,
+            // bwv227.1 m11b3, bwv245.40 m27b3, bwv384 m4b3, bwv422 m14b1).
+            // Extending the exclusion to Suspended2/4 caught the Sus residuals
+            // but regressed Jazz BIR=false (14 → 15) — beyond hard-stop scope.
+            const int compRootPc = ((candBassPc - 3) % 12 + 12) % 12;
+            for (auto& cand : perBass) {
+                if (cand.rootPc != candBassPc) {
+                    continue;  // step bonus is root-position-only (lambda also enforces)
+                }
+                if (cand.quality == ChordQuality::Power) {
+                    continue;
+                }
+                const double stepIn  = wStepInBonus(candBassPc, cand.rootPc);
+                const double stepOut = wStepOutBonus(candBassPc, cand.rootPc);
+                if (stepIn == 0.0 && stepOut == 0.0) {
+                    continue;
+                }
+
+                bool blocked = false;
+                for (const auto& other : perBass) {
+                    if (other.rootPc != compRootPc) {
+                        continue;
                     }
+                    const TemplateDef& otherTpl = templates[static_cast<size_t>(other.tiePriority)];
+                    const bool isMin7 = (other.quality == ChordQuality::Minor)
+                                        && (otherTpl.intervals.size() == 4);
+                    const bool relevantQuality = (other.quality == ChordQuality::HalfDiminished)
+                                                 || (other.quality == ChordQuality::Diminished)
+                                                 || isMin7;
+                    if (!relevantQuality) {
+                        continue;
+                    }
+                    if (other.score >= cand.score - kStepBudget) {
+                        blocked = true;
+                        break;
+                    }
+                }
+                if (!blocked) {
+                    cand.score += stepIn + stepOut;
+                }
+            }
+
+            // Pass C — compute localBest from final scores.
+            double localBest = -std::numeric_limits<double>::infinity();
+            for (const auto& c : perBass) {
+                if (c.score > localBest) {
+                    localBest = c.score;
                 }
             }
             if (localBest > globalBestScore) {

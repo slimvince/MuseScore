@@ -460,7 +460,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             std::vector<HarmonicRegion> pass2Regions;
             pass2Regions.reserve(regions.size() * 2);
 
-            for (const HarmonicRegion& parentRegion : regions) {
+            for (size_t parentIdx = 0; parentIdx < regions.size(); ++parentIdx) {
+                const HarmonicRegion& parentRegion = regions[parentIdx];
                 const int parentDuration = parentRegion.endTick - parentRegion.startTick;
                 if (parentDuration < kPass2MinRegionTicks) {
                     pass2Regions.push_back(parentRegion);
@@ -487,6 +488,18 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 // Inherit key/mode from parent — no resolveKeyAndMode call.
                 const int subKeyFifths        = parentRegion.keyModeResult.keySignatureFifths;
                 const KeySigMode subKeyMode   = parentRegion.keyModeResult.mode;
+
+                // Iter 94 — capture parent-scope neighboring bass PCs for
+                // w_stepIn / w_stepOut.  Sub-region analyzeChord calls override
+                // subCtx.previousBassPc / nextBassPc with these values just
+                // before the call, so the joint-scoring step bonuses reward
+                // structural (parent-to-parent) voice-leading rather than the
+                // within-parent micromotion that caused the Iter 92 Step 3c
+                // +5 BIR=false regression.
+                const int parentPredBassPc = (parentIdx > 0)
+                    ? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
+                const int parentSuccBassPc = (parentIdx + 1 < regions.size())
+                    ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
 
                 // Seed temporal context from the region immediately before this parent.
                 ChordTemporalContext subCtx;
@@ -544,6 +557,15 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         subCtx.regionMetricWeight = regionMetricWeightForBeatType(
                             safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));
                     }
+
+                    // Iter 94 — override previousBassPc / nextBassPc to parent
+                    // scope for w_stepIn / w_stepOut.  Done AFTER the stepwise
+                    // boolean computation (which intentionally uses sub-region
+                    // scope) and BEFORE analyzeChord.  The post-call assignment
+                    // below restores subCtx.previousBassPc to the sub-region
+                    // chain for the next iteration's stepwise boolean.
+                    subCtx.previousBassPc = parentPredBassPc;
+                    subCtx.nextBassPc     = parentSuccBassPc;
 
                     const auto subResults = chordAnalyzer->analyzeChord(
                         subTones, subKeyFifths, subKeyMode, &subCtx);
@@ -624,7 +646,8 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
             std::vector<HarmonicRegion> pass2bRegions;
             pass2bRegions.reserve(regions.size() * 2);
 
-            for (const HarmonicRegion& parentRegion : regions) {
+            for (size_t parentIdx = 0; parentIdx < regions.size(); ++parentIdx) {
+                const HarmonicRegion& parentRegion = regions[parentIdx];
                 const int parentDuration = parentRegion.endTick - parentRegion.startTick;
                 if (parentDuration < kPass2bMinRegionTicks) {
                     pass2bRegions.push_back(parentRegion);
@@ -654,6 +677,13 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                 // Inherit key/mode from parent — no resolveKeyAndMode call.
                 const int subKeyFifths      = parentRegion.keyModeResult.keySignatureFifths;
                 const KeySigMode subKeyMode = parentRegion.keyModeResult.mode;
+
+                // Iter 94 — parent-scope neighboring bass PCs for w_stepIn /
+                // w_stepOut (see Pass 2 site above).
+                const int parentPredBassPc = (parentIdx > 0)
+                    ? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
+                const int parentSuccBassPc = (parentIdx + 1 < regions.size())
+                    ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
 
                 // Seed temporal context from the region immediately before this parent.
                 ChordTemporalContext subCtx;
@@ -706,6 +736,10 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
                         subCtx.regionMetricWeight = regionMetricWeightForBeatType(
                             safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));
                     }
+
+                    // Iter 94 — parent-scope override (see Pass 2 site above).
+                    subCtx.previousBassPc = parentPredBassPc;
+                    subCtx.nextBassPc     = parentSuccBassPc;
 
                     const auto subResults = chordAnalyzer->analyzeChord(
                         subTones, subKeyFifths, subKeyMode, &subCtx);
