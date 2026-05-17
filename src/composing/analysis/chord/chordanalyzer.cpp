@@ -2111,6 +2111,30 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
     };
 
+    // Iter 95 Step 1 — w_seq.
+    //
+    // Reward a candidate whose root is a perfect fourth below the next region's
+    // root (equivalently: descending-fifth root motion into the successor —
+    // ((nextRootPc - candRootPc) mod 12) == 5 means the successor sits a P4
+    // above us, i.e. classic V→I).  Unlike w_stepIn / w_stepOut this is a
+    // CHORD-LEVEL signal: any inversion of the candidate qualifies (the bonus
+    // does NOT require candBassPc == candRootPc), and it is NOT subject to the
+    // first-inversion-m7-family surgical guard — sequential root motion is
+    // about the root identity, not the bass.
+    //
+    // Same gating as the step bonuses: jointScoringEnabled and
+    // !prefs.explorationMode keep the single-tick / segmentation-internal
+    // paths untouched.  Requires context->nextRootPc >= 0 (populated by the
+    // bridge / batch_analyze look-ahead).
+    static constexpr double kWSeq = 0.20;
+    auto wSeqBonus = [&](int candRootPc) -> double {
+        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
+        if (context->nextRootPc < 0) return 0.0;
+        if (distinctPcs < 4) return 0.0;
+        const int delta = ((context->nextRootPc - candRootPc) % 12 + 12) % 12;
+        return (delta == 5) ? kWSeq : 0.0;
+    };
+
     // Build per-bass-candidate rawCandidates; pick the global winner.
     //
     // Two-pass per candBassPc:
@@ -2153,6 +2177,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     score *= complexityFactorMatrix[rootPc][tplIdx];
                     score *= augFactorMatrix[rootPc][tplIdx];
                     score += wCompleteBonus(tpl, rootPc, candBassPc);
+                    score += wSeqBonus(rootPc);
 
                     perBass.push_back({ score, bassBonus, rootPc, tpl.quality,
                                         static_cast<int>(tplIdx) });

@@ -102,22 +102,22 @@
         },
         {
             "key": "D",
-            "text": "Dm6",
+            "text": "Bm7b5/D",
             "tick": 2880
         },
         {
             "key": "D",
-            "text": "i(add6)",
+            "text": "bviiø65",
             "tick": 2880
         },
         {
             "key": "D",
-            "text": "Dm6",
+            "text": "Bm7b5/D",
             "tick": 2880
         },
         {
             "key": "D",
-            "text": "i(add6)",
+            "text": "bviiø65",
             "tick": 2880
         },
         {
@@ -1086,8 +1086,8 @@
             "durationTicks": 480,
             "key": "D",
             "mode": "min",
-            "quality": "minor",
-            "root": "D",
+            "quality": "halfDiminished",
+            "root": "B",
             "tick": 2880
         },
         {
@@ -1524,11 +1524,11 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Dm6",
+            "harmonyText": "Bm7b5/D",
             "pitches": [
+                62,
                 65,
-                69,
-                71
+                69
             ],
             "tick": 2880
         },
@@ -2238,14 +2238,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "halfDiminished",
-                    "root": "B",
-                    "score": 2.35
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 2.488
                 },
                 {
                     "quality": "minor",
                     "root": "D",
-                    "score": 1.787
+                    "score": 2.488
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2254,8 +2254,8 @@
             "previousBassPc": 9,
             "previousQuality": "minor",
             "previousRootPc": 9,
-            "quality": "minor",
-            "root": "D",
+            "quality": "halfDiminished",
+            "root": "B",
             "tick": 2880,
             "wasRegional": true
         },
@@ -2345,7 +2345,7 @@
                 },
                 {
                     "quality": "minor",
-                    "root": "G",
+                    "root": "E",
                     "score": 2.488
                 }
             ],

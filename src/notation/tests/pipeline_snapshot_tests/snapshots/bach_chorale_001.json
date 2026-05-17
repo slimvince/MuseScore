@@ -502,22 +502,22 @@
         },
         {
             "key": "G",
-            "text": "Bm7b9",
+            "text": "Bm7b5b9",
             "tick": 12240
         },
         {
             "key": "G",
-            "text": "iii7b9",
+            "text": "iiiø7b9",
             "tick": 12240
         },
         {
             "key": "G",
-            "text": "Bm7b9",
+            "text": "Bm7b5b9",
             "tick": 12240
         },
         {
             "key": "G",
-            "text": "iii7b9",
+            "text": "iiiø7b9",
             "tick": 12240
         },
         {
@@ -1026,7 +1026,7 @@
             "durationTicks": 240,
             "key": "G",
             "mode": "maj",
-            "quality": "minor",
+            "quality": "halfDiminished",
             "root": "B",
             "tick": 12240
         },
@@ -1384,11 +1384,11 @@
         },
         {
             "durationTicks": 240,
-            "harmonyText": "Bm7b9",
+            "harmonyText": "Bm7b5b9",
             "pitches": [
                 60,
                 62,
-                66,
+                65,
                 69
             ],
             "tick": 12240
@@ -2211,12 +2211,12 @@
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.813
+                    "score": 3.013
                 },
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.813
+                    "score": 3.013
                 }
             ],
             "bassIsStepwiseFromPrevious": true,

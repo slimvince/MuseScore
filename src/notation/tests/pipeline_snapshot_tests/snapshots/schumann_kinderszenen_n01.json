@@ -2360,12 +2360,12 @@
                 {
                     "quality": "diminished",
                     "root": "F#",
-                    "score": 2.369
+                    "score": 2.569
                 },
                 {
                     "quality": "sus4",
                     "root": "F#",
-                    "score": 2.316
+                    "score": 2.516
                 },
                 {
                     "quality": "major",
@@ -2471,12 +2471,12 @@
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.602
+                    "score": 2.802
                 },
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.602
+                    "score": 2.802
                 },
                 {
                     "quality": "halfDiminished",
