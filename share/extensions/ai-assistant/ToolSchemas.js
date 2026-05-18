@@ -393,6 +393,30 @@ function getToolSchemas(providerFormat) {
             parameters: { type: "object", properties: {}, required: [] }
         },
         {
+            name: "get_key_at",
+            description:
+                "Returns the key signature active at a given measure number. Use this to find out what key a specific section is in — useful when a score has key signature changes mid-piece. Returns { measure, keySignature, fifths } where keySignature is a string like \"C major\" or \"G major\" and fifths is the raw integer (-7..+7, negative = flats, positive = sharps).",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number." }
+                },
+                required: ["measure"]
+            }
+        },
+        {
+            name: "get_time_sig_at",
+            description:
+                "Returns the time signature active at a given measure number. Use this to find the meter at a specific point in the score — useful when a score has time signature changes. Returns { measure, numerator, denominator, display } where display is e.g. \"4/4\" or \"3/8\".",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number." }
+                },
+                required: ["measure"]
+            }
+        },
+        {
             name: "add_note",
             description:
                 "Adds a note at a specific position in the score, overwriting any existing note or rest at that location. Use add_note_to_chord to add a pitch to an existing chord without replacing it. Always call get_score_info first to confirm staff numbers.",

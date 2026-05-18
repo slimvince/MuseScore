@@ -1589,18 +1589,23 @@ function setScoreMetadata(title, composer, lyricist, copyright, subtitle) {
     } catch(e) {
         return { error: "setScoreMetadata failed: " + e }
     }
+    var subtitleNote = subtitle
+        ? " Subtitle tag saved. Visual title-frame display refreshes on save — to verify, call get_score_metadata."
+        : ""
     if (stillFailed.length > 0) {
         return {
             ok: true,
             updated: updates,
             failed: stillFailed,
-            note: "Some tags could not be persisted after retry: " + stillFailed.join(", ") + ". Tag writes are non-undoable; visible title-frame text may also need a save+reopen to refresh."
+            titleFrameUpdated: false,
+            note: "Some tags could not be persisted after retry: " + stillFailed.join(", ") + ". Tag writes are non-undoable; visible title-frame text may also need a save+reopen to refresh." + subtitleNote
         }
     }
     return {
         ok: true,
         updated: updates,
-        note: "Tags saved with score. Not undoable; the visible title-frame text may not refresh until the score is saved and re-opened."
+        titleFrameUpdated: false,
+        note: "Tags saved with score. Not undoable; the visible title-frame text may not refresh until the score is saved and re-opened." + subtitleNote
     }
 }
 
@@ -1620,6 +1625,54 @@ function getScoreMetadata() {
         arranger:   s.metaTag("arranger")    || "",
         translator: s.metaTag("translator")  || "",
         workNumber: s.metaTag("workNumber")  || ""
+    }
+}
+
+// Key signature active at a given 1-based measure number.
+// Returns { measure, keySignature, fifths } where keySignature is a string
+// ("C major", "G major", "D minor" etc.) and fifths is the raw integer
+// (-7..+7, negative = flats, positive = sharps).
+function getKeyAt(measure) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
+    if (!st0) return { error: "No staves found" }
+    var tick = _posToTick(measure, 1, "0")
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        var k = st0.key(tick)
+        return {
+            measure:       measure,
+            keySignature:  _keysigToString(k),
+            fifths:        k
+        }
+    } catch(e) {
+        return { error: "getKeyAt failed: " + e }
+    }
+}
+
+// Time signature active at a given 1-based measure number.
+// Returns { measure, numerator, denominator, display } where display is e.g. "4/4", "3/8".
+function getTimeSigAt(measure) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
+    if (!st0) return { error: "No staves found" }
+    var tick = _posToTick(measure, 1, "0")
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        var ts = st0.timeSig(tick)
+        if (!ts || !ts.timesigNominal) return { error: "No time signature found at measure " + measure }
+        var num = ts.timesigNominal.numerator
+        var den = ts.timesigNominal.denominator
+        return {
+            measure:     measure,
+            numerator:   num,
+            denominator: den,
+            display:     num + "/" + den
+        }
+    } catch(e) {
+        return { error: "getTimeSigAt failed: " + e }
     }
 }
 
@@ -2368,13 +2421,29 @@ function getSelection() {
             var instrName = staffNameMap[staff - 1] || ""
             var typeStr = ""
             try { typeStr = String(e.name || e.type || "") } catch (e3) {}
-            result.elements.push({
+            var elemObj = {
                 type:       typeStr,
                 measure:    mno,
                 staff:      staff,
                 voice:      voice,
                 instrument: instrName
-            })
+            }
+            // For Note elements, add pitch and beat position.
+            var NOTE = api.engraving.Element.NOTE
+            if (typeStr === "Note" || typeStr === String(NOTE)) {
+                try {
+                    elemObj.pitch = _tpcToNoteName(e.tpc, e.pitch)
+                } catch(e2) {}
+                if (tick >= 0 && mno !== null) {
+                    try {
+                        var measureStartTick = _posToTick(mno, 1, "0")
+                        var beatObj = _tickToBeat(tick, measureStartTick)
+                        elemObj.beat         = beatObj.beat
+                        elemObj.beatFraction = beatObj.fraction
+                    } catch(e3) {}
+                }
+            }
+            result.elements.push(elemObj)
         }
     }
 

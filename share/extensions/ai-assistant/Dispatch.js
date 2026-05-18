@@ -44,6 +44,8 @@ function dispatchTool(scoreAccess, name, args) {
 
         // ── Batch 4 tools ──
         if (name === "get_score_metadata")   return scoreAccess.getScoreMetadata()
+        if (name === "get_key_at")           return scoreAccess.getKeyAt(a.measure)
+        if (name === "get_time_sig_at")      return scoreAccess.getTimeSigAt(a.measure)
         if (name === "add_note")             return scoreAccess.addNote(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.pitch, a.duration)
         if (name === "add_note_to_chord")    return scoreAccess.addNoteToChord(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.pitch)
         if (name === "add_rest")             return scoreAccess.addRest(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice, a.duration)
