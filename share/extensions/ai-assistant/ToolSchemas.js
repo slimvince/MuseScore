@@ -358,6 +358,62 @@ function getToolSchemas(providerFormat) {
             }
         },
         {
+            name: "add_page_break",
+            description:
+                "Inserts a page break at the end of the specified measure. Idempotent — does " +
+                "nothing if a page break already exists there.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number after which to add the page break." }
+                },
+                required: ["measure"]
+            }
+        },
+        {
+            name: "add_fingering",
+            description:
+                "Adds a fingering annotation to a note. `finger` is the digit or symbol to " +
+                "display (e.g. 1, 2, 3, 4, 5, 0, or classical guitar letters p/i/m/a). " +
+                "`pitch` is optional — if the beat contains a chord with multiple notes, " +
+                "provide the pitch (e.g. 'C4') to target a specific note; otherwise the " +
+                "lowest note is used.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    finger:       { description: "Fingering digit or symbol. Integer (0–5) or string ('p', 'i', 'm', 'a' etc.)." },
+                    pitch:        { type: "string",  description: "Pitch of the note to annotate within a chord (e.g. 'C4'). Omit to target the lowest note." }
+                },
+                required: ["measure", "beat", "staff", "finger"]
+            }
+        },
+        {
+            name: "add_string_number",
+            description:
+                "Adds a string number annotation to a note (used in string and guitar " +
+                "notation). `stringNumber` is 1–6 (or 0 for open string). `pitch` is optional " +
+                "— if the beat contains a chord, provide the pitch to target a specific note; " +
+                "otherwise the lowest note is used.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    stringNumber: { type: "integer", description: "String number (1–6, or 0 for open string)." },
+                    pitch:        { type: "string",  description: "Pitch of the note to annotate within a chord (e.g. 'C4'). Omit to target the lowest note." }
+                },
+                required: ["measure", "beat", "staff", "stringNumber"]
+            }
+        },
+        {
             name: "set_score_metadata",
             description:
                 "Sets score metadata fields (title, composer, lyricist, copyright, subtitle). " +

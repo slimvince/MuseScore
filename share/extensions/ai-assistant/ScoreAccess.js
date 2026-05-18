@@ -36,6 +36,7 @@ var _EL = {
     DYNAMIC:          42,
     EXPRESSION:       43,
     LYRICS:           45,
+    FINGERING:        50,
     TEMPO_TEXT:       52,
     STAFF_TEXT:       53,
     SYSTEM_TEXT:      54,
@@ -45,6 +46,22 @@ var _EL = {
     OTTAVA:           103,
     CHORD:            123,
     SLUR:             124
+}
+
+// ── TextStyleType integer values ──────────────────────────────────────────
+//
+// Note-level text annotations (FINGERING, STRING_NUMBER, LH_GUITAR_FINGERING,
+// RH_GUITAR_FINGERING) are NOT separate ElementTypes — they are all
+// ElementType::FINGERING with a different TextStyleType, distinguished via
+// Pid::TEXT_STYLE. The QML surface exposes Pid::TEXT_STYLE through the
+// writable `subStyle` property on EngravingItem (see API_PROPERTY(subStyle,
+// TEXT_STYLE) in src/engraving/api/v1/elements.h).
+//
+// Values are source-derived from the TextStyleType enum in
+// src/engraving/types/types.h. STRING_NUMBER's position in the enum is 45
+// (DEFAULT=0, then 44 entries before STRING_NUMBER).
+var _TS = {
+    STRING_NUMBER:    45
 }
 
 // ── Internal helpers ──────────────────────────────────────────────────────
@@ -1532,6 +1549,130 @@ function addSectionBreak(measureNo) {
 // System break at end of a measure.
 function addSystemBreak(measureNo) {
     return _addLayoutBreak("add system break", 1 /* LINE */, measureNo)
+}
+
+// Page break at end of a measure.
+function addPageBreak(measureNo) {
+    return _addLayoutBreak("add page break", 0 /* PAGE */, measureNo)
+}
+
+// Add a fingering annotation to a note. `finger` is the fingering digit or
+// symbol as a string or integer (e.g. 1, 2, 3, 4, 5, 0, "p", "i", "m", "a").
+// `pitch` is optional (e.g. "C4") — if provided, targets the matching note in
+// the chord; if omitted, targets chord.notes[0] (lowest note).
+function addFingering(measure, beat, beatFraction, staff, voice, finger, pitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (finger === undefined || finger === null || finger === "")
+        return { error: "finger is required" }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addFingering", measureNo: measure, beat: beat, staff: staff }
+    }
+
+    var c = s.newCursor()
+    c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    c.rewindToTick(tick)
+    var chord = c.element
+    var CHORD = api.engraving.Element.CHORD
+    if (!chord || chord.type !== CHORD) {
+        return {
+            error: "No chord at measure " + measure + " beat " + beat + " staff " + staff,
+            _debug: { fn: "addFingering", tick: tick, elementType: chord ? chord.type : null }
+        }
+    }
+
+    var targetNote = null
+    if (pitch !== null && pitch !== undefined) {
+        var targetMidi = _noteNameToMidi(pitch)
+        if (targetMidi < 0) return { error: "Unrecognised pitch: " + pitch }
+        for (var i = 0; i < chord.notes.length; i++) {
+            if (chord.notes[i].pitch === targetMidi) { targetNote = chord.notes[i]; break }
+        }
+        if (!targetNote) return {
+            error: "No note with pitch " + pitch + " found at measure " + measure + " beat " + beat,
+            _debug: { fn: "addFingering", tick: tick, targetMidi: targetMidi }
+        }
+    } else {
+        if (!chord.notes || chord.notes.length === 0)
+            return { error: "Chord at measure " + measure + " beat " + beat + " has no notes" }
+        targetNote = chord.notes[0]
+    }
+
+    try {
+        s.startCmd("add fingering")
+        var el = api.engraving.newElement(_EL.FINGERING)
+        el.text = String(finger)
+        targetNote.add(el)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, finger: String(finger) }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addFingering failed: " + e }
+    }
+}
+
+// Add a string number annotation to a note. `stringNumber` is 1–6 (or 0 for
+// open string). `pitch` is optional — same semantics as addFingering.
+//
+// String numbers share ElementType::FINGERING with regular fingerings; the
+// distinction is the TextStyleType (Pid::TEXT_STYLE = STRING_NUMBER), set
+// via the writable `subStyle` property after construction.
+function addStringNumber(measure, beat, beatFraction, staff, voice, stringNumber, pitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (stringNumber === undefined || stringNumber === null || stringNumber === "")
+        return { error: "stringNumber is required" }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addStringNumber", measureNo: measure, beat: beat, staff: staff }
+    }
+
+    var c = s.newCursor()
+    c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    c.rewindToTick(tick)
+    var chord = c.element
+    var CHORD = api.engraving.Element.CHORD
+    if (!chord || chord.type !== CHORD) {
+        return {
+            error: "No chord at measure " + measure + " beat " + beat + " staff " + staff,
+            _debug: { fn: "addStringNumber", tick: tick, elementType: chord ? chord.type : null }
+        }
+    }
+
+    var targetNote = null
+    if (pitch !== null && pitch !== undefined) {
+        var targetMidi = _noteNameToMidi(pitch)
+        if (targetMidi < 0) return { error: "Unrecognised pitch: " + pitch }
+        for (var i = 0; i < chord.notes.length; i++) {
+            if (chord.notes[i].pitch === targetMidi) { targetNote = chord.notes[i]; break }
+        }
+        if (!targetNote) return {
+            error: "No note with pitch " + pitch + " found at measure " + measure + " beat " + beat,
+            _debug: { fn: "addStringNumber", tick: tick, targetMidi: targetMidi }
+        }
+    } else {
+        if (!chord.notes || chord.notes.length === 0)
+            return { error: "Chord at measure " + measure + " beat " + beat + " has no notes" }
+        targetNote = chord.notes[0]
+    }
+
+    try {
+        s.startCmd("add string number")
+        var el = api.engraving.newElement(_EL.FINGERING)
+        el.subStyle = _TS.STRING_NUMBER
+        el.text = String(stringNumber)
+        targetNote.add(el)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, stringNumber: String(stringNumber) }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addStringNumber failed: " + e }
+    }
 }
 
 // Set score metadata. Empty/null fields are skipped.

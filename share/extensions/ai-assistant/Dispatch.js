@@ -37,6 +37,9 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "delete_measure")       return scoreAccess.deleteMeasure(a.measure)
         if (name === "add_section_break")    return scoreAccess.addSectionBreak(a.measure)
         if (name === "add_system_break")     return scoreAccess.addSystemBreak(a.measure)
+        if (name === "add_page_break")       return scoreAccess.addPageBreak(a.measure)
+        if (name === "add_fingering")        return scoreAccess.addFingering(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.finger, a.pitch || null)
+        if (name === "add_string_number")    return scoreAccess.addStringNumber(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.stringNumber, a.pitch || null)
         if (name === "set_score_metadata")   return scoreAccess.setScoreMetadata(a.title || "", a.composer || "", a.lyricist || "", a.copyright || "", a.subtitle || "")
 
         // ── Diagnostic ──
