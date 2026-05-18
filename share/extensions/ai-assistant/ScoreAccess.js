@@ -1261,13 +1261,21 @@ function _rangeCmdWrite(cmdLabel, cmdStr, verifyKind,
     var s0 = startStaff - 1   // inclusive, 0-based
     var s1 = endStaff         // exclusive, 0-based
 
-    // selectRange's end tick is exclusive. Without extension a request like
-    // "slur from beat 1 to beat 4" selects chords on beats 1..3 only — the
-    // chord at beat 4 is omitted, and doAddSlur() (notationinteraction.cpp
-    // line 2943) silently drops the slur when first == second chord-rest.
-    // Extending end by 1 tick puts the chord at endTick inside the [start, end)
-    // range. Hairpin tolerates the extra chord (the line just spans further by
-    // one chord, matching the user's intent), so we extend for all spanners.
+    // KNOWN BROKEN — MuseScore upstream bug #24673.
+    // api.engraving.cmd("add-slur") / "add-8va" / "add-8vb" are silently
+    // discarded from form-extension context. NotationActionController rejects
+    // them via isNotationPage() because the extension dialog has UI focus
+    // (resolveCurrentUiContext returns UiCtxUnknown). Confirmed on MS 4.7 and
+    // master as of May 2026. Fix is tracked at:
+    // https://github.com/musescore/MuseScore/issues/24673
+    if (cmdStr === "add-slur" || cmdStr === "add-8va" || cmdStr === "add-8vb") {
+        return {
+            error: cmdLabel + " is not available due to a known MuseScore bug that affects form-extensions. "
+                   + "See https://github.com/musescore/MuseScore/issues/24673 — upvoting the issue helps prioritize a fix."
+        }
+    }
+
+    // Hairpin and other range cmds: selectRange approach.
     var selEndTick = endTick + 1
 
     var before = (verifyKind === "spanner") ? _countSpannersAt(s, startTick, endTick, s0) : 0
@@ -1343,6 +1351,7 @@ function insertMeasures(afterMeasure, count) {
 
     var targetNo = afterMeasure + 1   // 1-based number of measure to insert BEFORE
 
+    var before = s.nmeasures
     try {
         for (var i = 0; i < count; i++) {
             var target = _findMeasure(targetNo)
@@ -1358,10 +1367,18 @@ function insertMeasures(afterMeasure, count) {
                 api.engraving.cmd("insert-measure")
             }
         }
-        return { ok: true, inserted: count, afterMeasure: afterMeasure }
     } catch(e) {
         return { error: "insertMeasures failed: " + e }
     }
+    var after = s.nmeasures
+    if (after - before < count) {
+        return {
+            error: "insert_measures had no effect — this is likely caused by a known MuseScore bug that prevents certain commands from dispatching in form-extension context. "
+                   + "See https://github.com/musescore/MuseScore/issues/24673",
+            _debug: { fn: "insertMeasures", before: before, after: after, requested: count }
+        }
+    }
+    return { ok: true, inserted: after - before, afterMeasure: afterMeasure }
 }
 
 // Append `count` empty measures at the end of the score.
@@ -1392,7 +1409,8 @@ function appendMeasures(count) {
     var added = after - before
     if (added <= 0) {
         return {
-            error: "append-measure cmd had no effect (score may be locked or read-only)",
+            error: "append_measures had no effect — this is likely caused by a known MuseScore bug that prevents certain commands from dispatching in form-extension context. "
+                   + "See https://github.com/musescore/MuseScore/issues/24673",
             _debug: { fn: "appendMeasures", before: before, after: after, requested: count }
         }
     }
@@ -1424,7 +1442,8 @@ function deleteMeasure(measureNo) {
     var after = s.nmeasures
     if (after >= before) {
         return {
-            error: "time-delete cmd had no effect — measure may be protected or selection failed",
+            error: "delete_measure had no effect — this is likely caused by a known MuseScore bug that prevents certain commands from dispatching in form-extension context. "
+                   + "See https://github.com/musescore/MuseScore/issues/24673",
             _debug: { fn: "deleteMeasure", measureNo: measureNo, before: before, after: after, startTick: startTick, endTick: endTick }
         }
     }
@@ -1783,11 +1802,17 @@ function addTie(measure, beat, beatFraction, staff, voice) {
         s.selection.selectRange(tick, tick + dTicks, s0, s0 + 1)
         api.engraving.cmd("tie")
 
-        // Verify: at least one note's tieForward flipped on.
+        // Verify: re-fetch chord via fresh cursor — old `chord` ref is stale
+        // after cmd() replaces the engraving objects in the model.
+        var recheck = s.newCursor()
+        recheck.track = s0 * 4 + ((voice || 1) - 1)
+        recheck.rewindToTick(tick)
+        var freshChord = recheck.element
         var changed = false
-        for (var j = 0; j < nNotes; j++) {
-            var now = !!chord.notes[j].tieForward
-            if (now && !before[j]) { changed = true; break }
+        if (freshChord && freshChord.type === CHORD && freshChord.notes) {
+            for (var j = 0; j < Math.min(freshChord.notes.length, before.length); j++) {
+                if (!!freshChord.notes[j].tieForward && !before[j]) { changed = true; break }
+            }
         }
         if (!changed) {
             return {
@@ -2522,12 +2547,10 @@ function setViewSettings(settings) {
             if (afterCP === desiredCP) {
                 updated.push("concertPitch")
             } else {
-                // cmd dispatched but had no observable effect.
-                if (!updated._notes) updated._notes = []
                 return {
-                    ok: true,
-                    updated: updated,
-                    note: "concertPitch cmd was dispatched but the style value did not change (cur=" + curCP + ", after=" + afterCP + ", desired=" + desiredCP + "). The notation panel may need focus."
+                    error: "concert_pitch could not be changed — this is likely caused by a known MuseScore bug that prevents certain commands from dispatching in form-extension context. "
+                           + "See https://github.com/musescore/MuseScore/issues/24673",
+                    _debug: { fn: "setScoreSettings", curCP: curCP, afterCP: afterCP, desiredCP: desiredCP }
                 }
             }
         } else {
