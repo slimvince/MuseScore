@@ -1589,7 +1589,7 @@ function addFingering(measure, beat, beatFraction, staff, voice, finger, pitch) 
         var targetMidi = _noteNameToMidi(pitch)
         if (targetMidi < 0) return { error: "Unrecognised pitch: " + pitch }
         for (var i = 0; i < chord.notes.length; i++) {
-            if (chord.notes[i].pitch === targetMidi) { targetNote = chord.notes[i]; break }
+            if (parseInt(chord.notes[i].pitch) === targetMidi) { targetNote = chord.notes[i]; break }
         }
         if (!targetNote) return {
             error: "No note with pitch " + pitch + " found at measure " + measure + " beat " + beat,
@@ -1649,7 +1649,7 @@ function addStringNumber(measure, beat, beatFraction, staff, voice, stringNumber
         var targetMidi = _noteNameToMidi(pitch)
         if (targetMidi < 0) return { error: "Unrecognised pitch: " + pitch }
         for (var i = 0; i < chord.notes.length; i++) {
-            if (chord.notes[i].pitch === targetMidi) { targetNote = chord.notes[i]; break }
+            if (parseInt(chord.notes[i].pitch) === targetMidi) { targetNote = chord.notes[i]; break }
         }
         if (!targetNote) return {
             error: "No note with pitch " + pitch + " found at measure " + measure + " beat " + beat,
