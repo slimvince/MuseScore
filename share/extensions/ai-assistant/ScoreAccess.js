@@ -29,6 +29,9 @@ var _EL = {
     LAYOUT_BREAK:     6,
     ACCIDENTAL:       20,
     NOTE:             24,
+    CLEF:             25,   // source position 26
+    KEYSIG:           26,   // source position 27
+    TIMESIG:          28,   // source position 29 (AMBITUS=28 sits between KEYSIG and TIMESIG in source)
     REST:             29,
     TIE:              35,
     ARTICULATION:     38,
@@ -62,6 +65,24 @@ var _EL = {
 // (DEFAULT=0, then 44 entries before STRING_NUMBER).
 var _TS = {
     STRING_NUMBER:    45
+}
+
+// ── ClefType integer map ──────────────────────────────────────────────────
+//
+// From the ClefType enum in src/engraving/types/types.h. These are literal
+// enum values — NOT subject to the source_position−1 offset used for
+// ElementType. Set via `el.concertClefType` (Pid::CLEF_TYPE_CONCERT).
+var _CLEF = {
+    "treble":     0,   // G
+    "treble8vb":  2,   // G8_VB (guitar treble, sounds 8vb)
+    "treble8va":  3,   // G8_VA
+    "tenor":      11,  // C4 (viola/cello tenor position)
+    "alto":       10,  // C3
+    "bass":       21,  // F
+    "bass8vb":    22,  // F15_MB
+    "percussion": 29,  // PERC
+    "tab":        31,  // TAB
+    "tab4":       32   // TAB4
 }
 
 // ── Internal helpers ──────────────────────────────────────────────────────
@@ -1554,6 +1575,88 @@ function addSystemBreak(measureNo) {
 // Page break at end of a measure.
 function addPageBreak(measureNo) {
     return _addLayoutBreak("add page break", 0 /* PAGE */, measureNo)
+}
+
+// Add or change a key signature at the start of a measure.
+// key: integer -7 (7 flats) to +7 (7 sharps), 0 = C major / A minor.
+function addKeySignature(measure, key) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof key !== "number" || key < -7 || key > 7)
+        return { error: "key must be an integer from -7 (7 flats) to +7 (7 sharps)" }
+
+    var tick = _posToTick(measure, 1, "0")
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    try {
+        s.startCmd("add key signature")
+        var c = s.newCursor()
+        c.track = 0
+        c.rewindToTick(tick)
+        var el = api.engraving.newElement(_EL.KEYSIG)
+        el.concertKey = key
+        c.add(el)
+        s.endCmd()
+        return { ok: true, measure: measure, key: key, keySignature: _keysigToString(key) }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addKeySignature failed: " + e }
+    }
+}
+
+// Add or change a time signature at a measure.
+// denominator must be a power of 2 (1, 2, 4, 8, 16, 32).
+// NOTE: cursor.add() for TIMESIG calls score->cmdAddTimeSig() which manages
+// its own startCmd/endCmd — do NOT wrap in an outer transaction.
+function addTimeSignature(measure, numerator, denominator) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (!numerator || !denominator || numerator < 1 || denominator < 1)
+        return { error: "numerator and denominator are required and must be positive integers" }
+
+    var tick = _posToTick(measure, 1, "0")
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    try {
+        var c = s.newCursor()
+        c.track = 0
+        c.rewindToTick(tick)
+        var el = api.engraving.newElement(_EL.TIMESIG)
+        el.timesig = api.engraving.fraction(numerator, denominator)
+        c.add(el)
+        return { ok: true, measure: measure, numerator: numerator, denominator: denominator }
+    } catch(e) {
+        return { error: "addTimeSignature failed: " + e }
+    }
+}
+
+// Add or change a clef at a position in the score.
+// clefType: "treble", "treble8vb", "treble8va", "tenor", "alto", "bass",
+//           "bass8vb", "percussion", "tab", "tab4"
+function addClef(measure, beat, beatFraction, staff, clefType) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var clefInt = _CLEF[clefType]
+    if (clefInt === undefined)
+        return { error: "Unknown clefType '" + clefType + "'. Valid values: " + Object.keys(_CLEF).join(", ") }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    try {
+        s.startCmd("add clef")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4
+        c.rewindToTick(tick)
+        var el = api.engraving.newElement(_EL.CLEF)
+        el.concertClefType = clefInt
+        c.add(el)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, clefType: clefType }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addClef failed: " + e }
+    }
 }
 
 // Add a fingering annotation to a note. `finger` is the fingering digit or

@@ -371,6 +371,55 @@ function getToolSchemas(providerFormat) {
             }
         },
         {
+            name: "add_key_signature",
+            description:
+                "Adds or changes a key signature at the start of a measure. `key` is an integer " +
+                "from -7 (7 flats / C♭ major) to +7 (7 sharps / C# major), with 0 being C major / " +
+                "A minor. Negative values add flats; positive values add sharps.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number." },
+                    key:     { type: "integer", minimum: -7, maximum: 7, description: "Integer -7..+7. Negative = flats, positive = sharps, 0 = C major / A minor." }
+                },
+                required: ["measure", "key"]
+            }
+        },
+        {
+            name: "add_time_signature",
+            description:
+                "Adds or changes a time signature at a measure. Provide `numerator` (beats per " +
+                "measure) and `denominator` (beat unit as a power of 2: 2, 4, 8, 16). Changes the " +
+                "rhythmic structure of the score from that measure onward.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:     { type: "integer", description: "1-based measure number." },
+                    numerator:   { type: "integer", description: "Beats per measure (e.g. 4 for 4/4, 3 for 3/4, 6 for 6/8)." },
+                    denominator: { type: "integer", description: "Beat unit as a power of 2: 2, 4, 8, 16." }
+                },
+                required: ["measure", "numerator", "denominator"]
+            }
+        },
+        {
+            name: "add_clef",
+            description:
+                "Adds or changes a clef at a position in the score. `clefType` must be one of: " +
+                "treble, treble8vb, treble8va, tenor, alto, bass, bass8vb, percussion, tab, tab4. " +
+                "Use `beat` and `beatFraction` to place mid-measure clef changes.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number. Defaults to 1." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Defaults to '0'." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    clefType:     { type: "string",  enum: ["treble","treble8vb","treble8va","tenor","alto","bass","bass8vb","percussion","tab","tab4"], description: "Clef type." }
+                },
+                required: ["measure", "staff", "clefType"]
+            }
+        },
+        {
             name: "add_fingering",
             description:
                 "Adds a fingering annotation to a note. `finger` is the digit or symbol to " +
