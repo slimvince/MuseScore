@@ -1038,6 +1038,29 @@ function addDynamic(measureNo, beat, beatFraction, staff, dynamic) {
         }
     }
 
+    // Hoist element type constant — api.engraving.Element.X rebuilds the full
+    // enum on every access on 4.7.0; hoist before any call that uses it.
+    var DYNAMIC = api.engraving.Element.DYNAMIC
+
+    // Idempotency: if a dynamic already exists at this tick on this staff,
+    // update it in-place instead of stacking a duplicate.
+    // Walk BEFORE startCmd (and before any cursor) — no rewindToTick yet,
+    // so no GC invalidation risk.
+    var existingDyn = _findAnnotationAtTickAndStaff(s, measureNo, tick, staff - 1, DYNAMIC)
+    if (existingDyn) {
+        try {
+            s.startCmd("update dynamic")
+            existingDyn.dynamicType = dynType
+            var glyphTextUpd = dynamicTextMap[dynLc]
+            if (glyphTextUpd) existingDyn.text = glyphTextUpd
+            s.endCmd()
+            return { ok: true, measure: measureNo, beat: beat, dynamic: dynLc, updated: "in-place" }
+        } catch(e) {
+            try { s.endCmd(true) } catch(ee) {}
+            return { error: "updateDynamic failed: " + e }
+        }
+    }
+
     try {
         s.startCmd("add dynamic")
         var c = s.newCursor()
@@ -1533,6 +1556,58 @@ function _hasLayoutBreak(measure, layoutBreakType) {
     return false
 }
 
+// Find a segment-resident element (stored in segment._elist[track], NOT annotations)
+// at an exact tick on a given track, in segments matching segTypeMask.
+// Examples: Clef (segTypeMask=0x400), KeySig (0x40), TimeSig (0x20).
+// Returns the element if found, null otherwise.
+//
+// ALWAYS call this BEFORE c.rewindToTick(tick). Accessing m.firstSegment and
+// seg.nextInMeasure creates QML wrapper objects; if called after rewindToTick,
+// GC of those wrappers invalidates the cursor's internal segment pointer and
+// c.add() silently no-ops.
+function _findSegmentElAtTick(s, measure, tick, track, segTypeMask) {
+    var m = _findMeasureByNumber(s, measure)
+    if (!m) return null
+    try {
+        var seg = m.firstSegment
+        while (seg) {
+            var segTick = _getTickInt(seg.tick)
+            if (segTick > tick) break
+            if (segTick === tick && (seg.segmentType & segTypeMask)) {
+                return seg.elementAt(track)
+            }
+            seg = seg.nextInMeasure ? seg.nextInMeasure : null
+        }
+    } catch (e) {}
+    return null
+}
+
+// Find a segment annotation at an exact tick on a given 0-based staffIdx.
+// Annotations include DYNAMIC, TEMPO_TEXT, STAFF_TEXT, SYSTEM_TEXT, etc.
+// elType: pass a pre-hoisted api.engraving.Element.XXX value (string on 4.7.0).
+// Returns the matching annotation if found, null otherwise.
+//
+// ALWAYS call this BEFORE c.rewindToTick(tick). Same GC invalidation risk as above.
+function _findAnnotationAtTickAndStaff(s, measure, tick, staffIdx, elType) {
+    var m = _findMeasureByNumber(s, measure)
+    if (!m) return null
+    try {
+        var seg = m.firstSegment
+        while (seg) {
+            var segTick = _getTickInt(seg.tick)
+            if (segTick > tick) break
+            if (segTick === tick) {
+                var ann = seg.annotations
+                for (var i = 0; i < ann.length; i++) {
+                    if (ann[i] && ann[i].type === elType && ann[i].staffIdx === staffIdx) return ann[i]
+                }
+            }
+            seg = seg.nextInMeasure ? seg.nextInMeasure : null
+        }
+    } catch (e) {}
+    return null
+}
+
 function _addLayoutBreak(cmdLabel, layoutBreakType, measureNo) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -1662,28 +1737,25 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
         var c = s.newCursor()
         var track = (staff - 1) * 4
         c.track = track
-        c.rewindToTick(tick)
 
-        // Before adding, remove any existing user-placed CLEF at this tick+track to
-        // prevent stacking. SegmentType::Clef = 0x400 (mid-measure user-added clefs).
-        // HeaderClef segments (0x2) are system-generated courtesy elements — leave them.
-        var m = _findMeasureByNumber(s, measure)
-        if (m) {
-            var seg = m.firstSegment
-            while (seg) {
-                var segTick = _getTickInt(seg.tick)
-                if (segTick > tick) break
-                if (segTick === tick && (seg.segmentType & 0x400)) {
-                    var existingEl = seg.elementAt(track)
-                    if (existingEl) {
-                        try { api.engraving.removeElement(existingEl) } catch (re) { /* non-fatal */ }
-                    }
-                    break
-                }
-                seg = seg.nextInMeasure ? seg.nextInMeasure : null
-            }
+        // Walk FIRST (before rewindToTick) to avoid QML GC cursor invalidation.
+        // SegmentType::Clef = 0x400 — user-added mid-measure clef changes.
+        // HeaderClef (0x2) segments are system-generated; _findSegmentElAtTick
+        // only targets 0x400 so they are never touched.
+        var existingEl = _findSegmentElAtTick(s, measure, tick, track, 0x400)
+
+        if (existingEl) {
+            // Update in-place: property writes call undoPropertyChanged — fully undo-tracked.
+            // No cursor.add() needed for this path.
+            existingEl.concertClefType    = clefInt   // Pid::CLEF_TYPE_CONCERT
+            existingEl.transposingClefType = clefInt  // Pid::CLEF_TYPE_TRANSPOSING
+            s.endCmd()
+            return { ok: true, measure: measure, beat: beat, staff: staff, clefType: clefType,
+                     updated: "in-place" }
         }
 
+        // No existing element — position cursor NOW (after walk) and add.
+        c.rewindToTick(tick)
         var el = api.engraving.newElement(_EL.CLEF)
         el.concertClefType     = clefInt   // Pid::CLEF_TYPE_CONCERT
         el.transposingClefType = clefInt   // Pid::CLEF_TYPE_TRANSPOSING
