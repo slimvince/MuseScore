@@ -71,15 +71,16 @@ var _TS = {
 //
 // From the ClefType enum in src/engraving/types/types.h. These are literal
 // enum values — NOT subject to the source_position−1 offset used for
-// ElementType. Set via `el.concertClefType` (Pid::CLEF_TYPE_CONCERT).
+// ElementType. Set via both el.concertClefType (Pid::CLEF_TYPE_CONCERT)
+// and el.transposingClefType (Pid::CLEF_TYPE_TRANSPOSING).
 var _CLEF = {
     "treble":     0,   // G
     "treble8vb":  2,   // G8_VB (guitar treble, sounds 8vb)
     "treble8va":  3,   // G8_VA
     "tenor":      11,  // C4 (viola/cello tenor position)
     "alto":       10,  // C3
-    "bass":       21,  // F
-    "bass8vb":    22,  // F15_MB
+    "bass":       20,  // F  (was 21 = F15_MB sub-bass — off by one, now fixed)
+    "bass8vb":    22,  // F8_VB
     "percussion": 29,  // PERC
     "tab":        31,  // TAB
     "tab4":       32   // TAB4
@@ -1652,27 +1653,11 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
         var el = api.engraving.newElement(_EL.CLEF)
-        el.clefType = clefInt
-        el.concertClefType = clefInt
-        // Read back before add — confirms whether writes stuck
-        var preClefType         = el.clefType
-        var preConcertClefType  = el.concertClefType
+        el.concertClefType    = clefInt   // Pid::CLEF_TYPE_CONCERT (bound API_PROPERTY)
+        el.transposingClefType = clefInt  // Pid::CLEF_TYPE_TRANSPOSING (bound API_PROPERTY)
         c.add(el)
-        // Read back after add — el may be stale after add, but try
-        var postClefType        = el.clefType
-        var postConcertClefType = el.concertClefType
         s.endCmd()
-        return {
-            ok: true,
-            measure: measure, beat: beat, staff: staff, clefType: clefType,
-            _debug: {
-                clefInt:             clefInt,
-                pre_clefType:        preClefType,
-                pre_concertClefType: preConcertClefType,
-                post_clefType:       postClefType,
-                post_concertClefType: postConcertClefType
-            }
-        }
+        return { ok: true, measure: measure, beat: beat, staff: staff, clefType: clefType }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addClef failed: " + e }
