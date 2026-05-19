@@ -91,6 +91,9 @@ function dispatchTool(scoreAccess, name, args) {
         // ── Batch D2 tools ──
         if (name === "add_tuplet")    return scoreAccess.addTuplet(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.ratio, a.noteDuration, a.pitches || [])
 
+        // ── Batch D3 tools ──
+        if (name === "transpose_notes") return scoreAccess.transposeNotes(a.measureStart, a.measureEnd || a.measureStart, a.staff || null, a.voice || null, a.interval, a.direction)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

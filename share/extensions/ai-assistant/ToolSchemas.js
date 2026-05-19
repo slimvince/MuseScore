@@ -949,6 +949,36 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measure", "beat", "staff", "ratio", "noteDuration"]
             }
+        },
+
+        // ── BATCH D3: transpose_notes ──
+
+        {
+            name: "transpose_notes",
+            description:
+                "Transposes all notes in a measure range by a given musical interval. " +
+                "interval must be a standard abbreviation: P1 (unison), m2 (minor 2nd), M2 (major 2nd), " +
+                "m3 (minor 3rd), M3 (major 3rd), P4 (perfect 4th), A4 (augmented 4th / tritone, sharp-ward), " +
+                "d5 (diminished 5th / tritone, flat-ward), P5 (perfect 5th), m6, M6, m7, M7, " +
+                "P8 (octave), m9, M9, m10, M10, P11, P12. " +
+                "direction: 'up' or 'down'. " +
+                "staff: 1-based global staff number from get_score_info. Omit to transpose all staves. " +
+                "voice: 1–4. Omit to transpose all voices. " +
+                "The entire range is a single undo entry (one Ctrl+Z). " +
+                "Note: for transposing instruments (Bb clarinet, Eb saxophone, etc.) the display in " +
+                "transposing-pitch view may need manual correction after this operation.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measureStart: { type: "integer", description: "First measure of the range (1-based, inclusive)." },
+                    measureEnd:   { type: "integer", description: "Last measure of the range (1-based, inclusive). Omit to transpose a single measure." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info. Omit to transpose all staves." },
+                    voice:        { type: "integer", description: "Voice 1–4. Omit to transpose all voices." },
+                    interval:     { type: "string",  description: "Interval abbreviation. Examples: 'M3' (major third), 'P5' (perfect fifth), 'P8' (octave), 'm2' (semitone). A4/d5 are both tritones — use A4 to spell sharps, d5 to spell flats." },
+                    direction:    { type: "string",  enum: ["up", "down"], description: "'up' or 'down'." }
+                },
+                required: ["measureStart", "interval", "direction"]
+            }
         }
     ]
 

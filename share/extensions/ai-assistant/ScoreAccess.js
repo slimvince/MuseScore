@@ -2838,6 +2838,146 @@ function addTuplet(measure, beat, beatFraction, staff, voice, ratio, noteDuratio
     }
 }
 
+// ── BATCH D3: transpose_notes ──
+//
+// Transpose all notes in a measure range by the given interval.
+// interval: standard interval abbreviation — "P5", "M3", "m7", "P8", etc.
+//   Full list: P1, m2, M2, m3, M3, P4, A4, d5, P5, m6, M6, m7, M7, P8,
+//              m9, M9, m10, M10, P11, P12.
+// direction: "up" or "down".
+// staff: 1-based staff number. If null/omitted, transposes all staves.
+// voice: 1–4. If null/omitted, transposes all voices.
+// The change is a single undo entry (one Ctrl+Z undoes the whole range).
+//
+// Why per-note writes instead of api.engraving.cmd("transpose"): all
+// dispatcher-based transpose actions use the isNotationPage predicate and
+// are silently dropped from form-extension context (upstream bug #24673).
+// No native range-transpose API is exposed on the apiv1 cursor.
+//
+// tpc1 vs tpc2 vs tpc (source-verified at src/engraving/api/v1/elements.h
+// lines 1410-1420 and elements.cpp:168-180):
+//   - tpc1 (API_PROPERTY_T → Pid::TPC1): concert-pitch TPC. Directly writable.
+//   - tpc2 (API_PROPERTY_T → Pid::TPC2): transposing-pitch TPC. Directly writable.
+//   - tpc  (Q_PROPERTY with setTpc): writes TPC1 if concertPitch is ON, else
+//     TPC2 — i.e. mode-dependent and leaves the other stale.
+// We write both tpc1 and tpc2 to the same value so the result is deterministic
+// regardless of the current concert-pitch view setting. For transposing
+// instruments (Bb clarinet, Eb alto sax, etc.) tpc2 should actually differ
+// from tpc1 by the instrument's transposition; we can't read the instrument
+// definition from extension JS, so transposing-view accidentals on those
+// instruments may be wrong until re-saved. Concert pitch view will be correct.
+//
+// GC safety: this is a pure segment walk (no cursor, no rewindToTick), with
+// property writes on existing elements inside startCmd/endCmd. Same pattern
+// as addClef's in-place update — no GC invalidation risk.
+function transposeNotes(measureStart, measureEnd, staff, voice, interval, direction) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    // Interval table: [semitones, tpcDelta] for upward transposition.
+    // tpcDelta values verified against _noteNameToTpc baseMap
+    // (C=14, D=16, E=18, F=13, G=15, A=17, B=19; #=+7, b=-7).
+    // For downward: negate both.
+    var INTERVAL_TABLE = {
+        "P1":  [0,   0],
+        "m2":  [1,  -5],
+        "M2":  [2,   2],
+        "m3":  [3,  -3],
+        "M3":  [4,   4],
+        "P4":  [5,  -1],
+        "A4":  [6,   6],
+        "d5":  [6,  -6],
+        "P5":  [7,   1],
+        "m6":  [8,  -4],
+        "M6":  [9,   3],
+        "m7":  [10, -2],
+        "M7":  [11,  5],
+        "P8":  [12,  0],
+        "m9":  [13, -5],
+        "M9":  [14,  2],
+        "m10": [15, -3],
+        "M10": [16,  4],
+        "P11": [17, -1],
+        "P12": [19,  1]
+    }
+
+    var entry = INTERVAL_TABLE[interval]
+    if (!entry) return {
+        error: "Unknown interval '" + interval + "'. Valid: P1 m2 M2 m3 M3 P4 A4 d5 P5 m6 M6 m7 M7 P8 m9 M9 m10 M10 P11 P12"
+    }
+    var semiDelta = entry[0]
+    var tpcDelta  = entry[1]
+    if (direction === "down") {
+        semiDelta = -semiDelta
+        tpcDelta  = -tpcDelta
+    } else if (direction !== "up") {
+        return { error: "direction must be 'up' or 'down'. Got: " + direction }
+    }
+
+    var staffFrom = staff ? (staff - 1) : 0
+    var staffTo   = staff ? (staff - 1) : (s.nstaves - 1)
+    var voiceFrom = voice ? (voice - 1) : 0
+    var voiceTo   = voice ? (voice - 1) : 3
+
+    var mStart = _findMeasureByNumber(s, measureStart)
+    if (!mStart) return { error: "Measure " + measureStart + " not found" }
+    var mEnd   = _findMeasureByNumber(s, measureEnd || measureStart)
+    if (!mEnd)   return { error: "Measure " + (measureEnd || measureStart) + " not found" }
+    var endTick = _getTickInt(mEnd.lastSegment.tick) + 1  // exclusive upper bound
+
+    var notesChanged = 0
+    var CHORD = api.engraving.Element.CHORD
+
+    try {
+        s.startCmd("transpose notes")
+        var m = mStart
+        while (m) {
+            var mTick = _getTickInt(m.firstSegment.tick)
+            if (mTick >= endTick) break
+            var seg = m.firstSegment
+            while (seg) {
+                for (var st = staffFrom; st <= staffTo; st++) {
+                    for (var vo = voiceFrom; vo <= voiceTo; vo++) {
+                        var track = st * 4 + vo
+                        var el = seg.elementAt(track)
+                        if (!el || el.type !== CHORD) continue
+                        for (var ni = 0; ni < el.notes.length; ni++) {
+                            var note = el.notes[ni]
+                            // note.pitch and note.tpc return strings on 4.7.0
+                            // (same as addFingering fix d23112d44b). parseInt
+                            // before arithmetic.
+                            var newMidi = parseInt(note.pitch) + semiDelta
+                            var newTpc  = parseInt(note.tpc)   + tpcDelta
+                            if (newMidi < 0 || newMidi > 127) continue
+                            note.pitch = newMidi
+                            note.tpc1  = newTpc
+                            note.tpc2  = newTpc
+                            notesChanged++
+                        }
+                    }
+                }
+                seg = seg.nextInMeasure
+            }
+            if (m === mEnd) break
+            m = m.nextMeasure
+        }
+        s.endCmd()
+        return {
+            ok: true,
+            measureStart: measureStart,
+            measureEnd:   measureEnd || measureStart,
+            interval:     interval,
+            direction:    direction,
+            staff:        staff || "all",
+            voice:        voice || "all",
+            notesChanged: notesChanged
+        }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "transposeNotes failed: " + e }
+    }
+}
+
 // Change the duration of the chord/rest at the given position. Pitches are
 // preserved; only duration changes. Overwrites the position — trailing
 // content past the new duration may be overwritten if the new duration is
