@@ -18,10 +18,6 @@ Rectangle {
     // ── System palette (dark mode support) ────────────────────────────────────
     SystemPalette { id: sysPalette; colorGroup: SystemPalette.Active }
 
-    // ── Input history (Up/Down arrow navigation) ──────────────────────────────
-    property var inputHistory: []    // sent messages, most-recent last
-    property int historyIdx:   -1    // -1 = not browsing history
-
     // ── Version ───────────────────────────────────────────────────────────────
     readonly property string pluginVersion: "0.5.5"
 
@@ -839,8 +835,6 @@ Rectangle {
     function sendMessage(userText) {
         if (isStreaming || !userText.trim()) return
         var trimmed = userText.trim()
-        inputHistory.push(trimmed)
-        historyIdx = -1
         appendMessage("user", trimmed)
         Qt.callLater(scrollToBottom)
         isStreaming   = true
@@ -1649,32 +1643,6 @@ Rectangle {
                                     if (event.key === Qt.Key_A) { event.accepted = true; selectAll(); return }
                                     if (event.key === Qt.Key_Z) { event.accepted = true; undo();      return }
                                     if (event.key === Qt.Key_Y) { event.accepted = true; redo();      return }
-                                    // ── Input history (Ctrl+Up = back, Ctrl+Down = forward/clear) ──
-                                    if (event.key === Qt.Key_Up) {
-                                        if (inputHistory.length > 0) {
-                                            event.accepted = true
-                                            var nextIdx = (historyIdx === -1) ? inputHistory.length - 1
-                                                                               : Math.max(0, historyIdx - 1)
-                                            historyIdx = nextIdx
-                                            inputField.text = inputHistory[historyIdx]
-                                            inputField.cursorPosition = inputField.length
-                                        }
-                                        return
-                                    }
-                                    if (event.key === Qt.Key_Down) {
-                                        if (historyIdx !== -1) {
-                                            event.accepted = true
-                                            if (historyIdx >= inputHistory.length - 1) {
-                                                historyIdx = -1
-                                                inputField.text = ""
-                                            } else {
-                                                historyIdx++
-                                                inputField.text = inputHistory[historyIdx]
-                                                inputField.cursorPosition = inputField.length
-                                            }
-                                        }
-                                        return
-                                    }
                                     return  // unhandled Ctrl+key: do not accept — let MS4 handle (e.g. Ctrl+S saves score)
                                 }
 
