@@ -77,6 +77,9 @@ function dispatchTool(scoreAccess, name, args) {
 
         // ── Batch 7 tools ──
         if (name === "get_spanners_in_range")      return scoreAccess.getSpannersInRange(a.startMeasure, a.endMeasure, a.instrument || null)
+        if (name === "get_clef_at")                return scoreAccess.getClefAt(a.measure, a.staff || 1)
+        if (name === "get_chord_symbol_spelling")  return scoreAccess.getChordSymbolSpelling()
+        if (name === "get_concert_pitch")          return scoreAccess.getConcertPitch()
 
         // ── Batch 8 tools ──
         if (name === "set_midi_channel_settings")  return scoreAccess.setMidiChannelSettings(a.instrument, a.channelName || "normal", a)

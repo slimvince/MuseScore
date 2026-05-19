@@ -86,6 +86,16 @@ var _CLEF = {
     "tab4":       32   // TAB4
 }
 
+// Reverse lookup: ClefType integer → string name used in the _CLEF map.
+// Returns the string key if found, or "unknown(" + clefInt + ")" if not.
+function _clefIntToName(clefInt) {
+    var keys = Object.keys(_CLEF)
+    for (var i = 0; i < keys.length; i++) {
+        if (_CLEF[keys[i]] === clefInt) return keys[i]
+    }
+    return "unknown(" + clefInt + ")"
+}
+
 // ── Internal helpers ──────────────────────────────────────────────────────
 
 // Return curScore or null. Callers should check before continuing.
@@ -1647,6 +1657,18 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
     var tick = _posToTick(measure, beat, beatFraction)
     if (tick < 0) return { error: "Measure " + measure + " not found" }
 
+    // Idempotency check: skip if the clef is already correct at this position.
+    try {
+        var staffIdx = (staff || 1) - 1
+        if (s.staves && staffIdx >= 0 && staffIdx < s.staves.length) {
+            var existing = s.staves[staffIdx].clefType(tick)
+            if (existing === clefInt)
+                return { ok: true, measure: measure, beat: beat || 1, staff: staff,
+                         clefType: clefType, unchanged: true,
+                         note: "Clef already set to " + clefType + " at this position" }
+        }
+    } catch(e) { /* if read fails, proceed with add */ }
+
     try {
         s.startCmd("add clef")
         var c = s.newCursor()
@@ -1944,6 +1966,30 @@ function getTimeSigAt(measure) {
         }
     } catch(e) {
         return { error: "getTimeSigAt failed: " + e }
+    }
+}
+
+// Clef type active at a given 1-based measure number on a given 1-based staff.
+// Returns { measure, staff, clefType, clefInt } where clefType is the string
+// name from the _CLEF map (e.g. "bass", "treble") and clefInt is the raw integer.
+function getClefAt(measure, staff) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var staffIdx = (staff || 1) - 1
+    if (!s.staves || staffIdx < 0 || staffIdx >= s.staves.length)
+        return { error: "Staff " + staff + " not found (score has " + (s.staves ? s.staves.length : 0) + " staves)" }
+    var tick = _posToTick(measure, 1, "0")
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    try {
+        var clefInt = s.staves[staffIdx].clefType(tick)
+        return {
+            measure:  measure,
+            staff:    staff,
+            clefType: _clefIntToName(clefInt),
+            clefInt:  clefInt
+        }
+    } catch(e) {
+        return { error: "getClefAt failed: " + e }
     }
 }
 

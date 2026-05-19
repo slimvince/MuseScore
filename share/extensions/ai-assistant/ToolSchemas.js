@@ -522,6 +522,31 @@ function getToolSchemas(providerFormat) {
             }
         },
         {
+            name: "get_clef_at",
+            description:
+                "Returns the clef type currently active at a given staff and measure. Use this before calling add_clef to check whether a change is actually needed. Returns { measure, staff, clefType, clefInt } where clefType is a string name (e.g. \"treble\", \"bass\", \"alto\", \"tenor\") and clefInt is the raw ClefType enum integer.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number." },
+                    staff:   { type: "integer", description: "Global 1-based staff number from get_score_info." }
+                },
+                required: ["measure", "staff"]
+            }
+        },
+        {
+            name: "get_chord_symbol_spelling",
+            description:
+                "Returns the chord symbol spelling convention used in this score. Possible values: \"STANDARD\", \"GERMAN\", \"GERMAN_PURE\", \"SOLFEGGIO\", \"FRENCH\", or null if unset.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "get_concert_pitch",
+            description:
+                "Returns whether concert pitch is currently enabled for this score (true/false). When concert pitch is on, all staves are shown at concert (sounding) pitch; when off, transposing instruments show written pitch. Returns null if the setting is unreadable.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
             name: "add_note",
             description:
                 "Adds a note at a specific position in the score, overwriting any existing note or rest at that location. Use add_note_to_chord to add a pitch to an existing chord without replacing it. Always call get_score_info first to confirm staff numbers.",
