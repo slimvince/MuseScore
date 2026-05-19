@@ -48,7 +48,14 @@ var _EL = {
     HAIRPIN:          102,
     OTTAVA:           103,
     CHORD:            123,
-    SLUR:             124
+    SLUR:             124,
+    // TREMOLO_SINGLECHORD: 139 is derived from src/engraving/types/types.h line 209
+    // (ElementType::TREMOLO_SINGLECHORD), following the established line−70 offset
+    // that every other _EL entry matches exactly. NOT runtime-probed yet — verify
+    // with newElement(139) on a 4.7.0 binary before relying on it. The Batch D1
+    // instruction proposed 459 (derived from apitypes.h line 460−1); that derivation
+    // is wrong — apitypes.h line numbers are NOT the enum integer values.
+    TREMOLO_SINGLECHORD: 139
 }
 
 // ── TextStyleType integer values ──────────────────────────────────────────
@@ -2629,6 +2636,118 @@ function setNotePitch(measure, beat, beatFraction, staff, voice, oldPitch, newPi
     } catch (e) {
         try { s.endCmd(true) } catch (ee) {}
         return { error: "setNotePitch failed: " + e }
+    }
+}
+
+// Remove a note from a chord at the given position.
+// If pitch is provided, removes only the note matching that pitch.
+// If pitch is omitted and the chord has exactly one note, removes it.
+// If pitch is omitted and the chord has multiple notes, returns an error.
+// When the last note is removed, the engine atomically replaces the chord
+// with a rest of equal duration (Score::deleteItem handles this).
+function deleteNote(measure, beat, beatFraction, staff, voice, pitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "deleteNote", measureNo: measure, beat: beat, beatFraction: beatFraction || "0" }
+    }
+    var targetMidi = pitch ? _noteNameToMidi(pitch) : null
+
+    try {
+        s.startCmd("delete note")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + (voice - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+        if (!chord || !chord.notes) {
+            try { s.endCmd(true) } catch (ee) {}
+            return {
+                error: "No chord at measure " + measure + " beat " + beat,
+                _debug: { fn: "deleteNote", tick: tick, elementType: chord ? chord.type : null }
+            }
+        }
+        if (!targetMidi && chord.notes.length > 1) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "Multiple notes at this position — specify pitch to delete (e.g. 'C4')" }
+        }
+        var target = null
+        for (var i = 0; i < chord.notes.length; i++) {
+            if (targetMidi === null || parseInt(chord.notes[i].pitch) === targetMidi) {
+                target = chord.notes[i]
+                break
+            }
+        }
+        if (!target) {
+            try { s.endCmd(true) } catch (ee) {}
+            return { error: "Note " + pitch + " not found at that position" }
+        }
+        api.engraving.removeElement(target)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, voice: voice, deleted: pitch || "note" }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "deleteNote failed: " + e }
+    }
+}
+
+// Adds a single-note tremolo to the chord at the given position.
+// type: "buzz" (buzz roll), "8th", "16th", "32nd", "64th".
+// Two-note tremolo is not implemented — requires C++ API additions
+// (TremoloTwoChord::setChord1/setChord2 are not Q_INVOKABLE).
+//
+// On 4.7.0, api.engraving.TremoloType.X may return either an integer or a
+// string name (same enum-string issue as api.engraving.Element.X). Either way
+// the assignment `tr.tremoloType = val` should work — EngravingItem::setProperty
+// for Pid::TREMOLO_TYPE accepts both forms via QVariant coercion. If this
+// proves wrong at runtime, fall back to literal string names (e.g. "R16").
+function addTremolo(measure, beat, beatFraction, staff, voice, type) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var _TREMOLO_TYPE = {
+        "buzz":  "BUZZ_ROLL",
+        "8th":   "R8",
+        "16th":  "R16",
+        "32nd":  "R32",
+        "64th":  "R64"
+    }
+    var typeName = _TREMOLO_TYPE[type]
+    if (!typeName) return { error: "Unknown tremolo type '" + type + "'. Valid: buzz, 8th, 16th, 32nd, 64th" }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addTremolo", measureNo: measure, beat: beat }
+    }
+
+    var TremoloType = api.engraving.TremoloType
+    if (!TremoloType) return { error: "api.engraving.TremoloType not exposed" }
+    var tremoloTypeVal = TremoloType[typeName]
+    if (tremoloTypeVal === undefined) return { error: "TremoloType." + typeName + " not found" }
+
+    try {
+        s.startCmd("add tremolo")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+        c.rewindToTick(tick)
+        var chord = c.element
+        if (!chord || chord.type !== api.engraving.Element.CHORD) {
+            try { s.endCmd(true) } catch (ee) {}
+            return {
+                error: "No chord at measure " + measure + " beat " + beat + " — tremolo requires a note, not a rest",
+                _debug: { fn: "addTremolo", tick: tick, elementType: chord ? chord.type : null }
+            }
+        }
+        var tr = api.engraving.newElement(_EL.TREMOLO_SINGLECHORD)
+        c.add(tr)                          // cursor.add routes through Chord::addInternal
+        tr.tremoloType = tremoloTypeVal    // set AFTER add (element must be parented first)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, voice: voice, type: type }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addTremolo failed: " + e }
     }
 }
 

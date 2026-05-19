@@ -873,6 +873,49 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["instrument"]
             }
+        },
+
+        // ── BATCH D1: delete_note, add_tremolo ──
+
+        {
+            name: "delete_note",
+            description:
+                "Removes a note from a chord or replaces a single-note beat with a rest of the same duration. " +
+                "If the beat has a chord (multiple notes), specify pitch to identify which note to remove. " +
+                "If the beat has only one note, pitch can be omitted. " +
+                "The change is undoable with Ctrl+Z.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    pitch:        { type: "string",  description: "Pitch of the note to remove, e.g. 'C4', 'F#3'. Required if the chord has multiple notes; omit if the chord has only one note." }
+                },
+                required: ["measure", "beat", "staff"]
+            }
+        },
+        {
+            name: "add_tremolo",
+            description:
+                "Adds a single-note tremolo (rapid repeated-stroke effect) to a note or chord. " +
+                "type controls the stroke subdivision: 'buzz' = unmeasured buzz roll, '8th' = eighth-note strokes, " +
+                "'16th' = sixteenth-note strokes (most common), '32nd' = 32nd-note strokes, '64th' = 64th-note strokes. " +
+                "Two-note (measured) tremolo between two chords is not yet supported.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    type:         { type: "string",  enum: ["buzz","8th","16th","32nd","64th"], description: "Tremolo stroke type." }
+                },
+                required: ["measure", "beat", "staff", "type"]
+            }
         }
     ]
 

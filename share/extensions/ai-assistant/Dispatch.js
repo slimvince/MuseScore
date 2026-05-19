@@ -84,6 +84,10 @@ function dispatchTool(scoreAccess, name, args) {
         // ── Batch 8 tools ──
         if (name === "set_midi_channel_settings")  return scoreAccess.setMidiChannelSettings(a.instrument, a.channelName || "normal", a)
 
+        // ── Batch D1 tools ──
+        if (name === "delete_note")   return scoreAccess.deleteNote(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null)
+        if (name === "add_tremolo")   return scoreAccess.addTremolo(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.type)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }
