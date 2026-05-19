@@ -47,6 +47,7 @@ function dispatchTool(scoreAccess, name, args) {
 
         // ── Diagnostic ──
         if (name === "get_debug_info")       return scoreAccess.getDebugInfo()
+        if (name === "probe_clef_type_enum") return scoreAccess.probeClefTypeEnum()
 
         // ── Batch 4 tools ──
         if (name === "get_score_metadata")   return scoreAccess.getScoreMetadata()

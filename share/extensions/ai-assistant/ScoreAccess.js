@@ -1654,12 +1654,50 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
         var el = api.engraving.newElement(_EL.CLEF)
         el.clefType = clefInt
         el.concertClefType = clefInt
+        // Read back before add — confirms whether writes stuck
+        var preClefType         = el.clefType
+        var preConcertClefType  = el.concertClefType
         c.add(el)
+        // Read back after add — el may be stale after add, but try
+        var postClefType        = el.clefType
+        var postConcertClefType = el.concertClefType
         s.endCmd()
-        return { ok: true, measure: measure, beat: beat, staff: staff, clefType: clefType }
+        return {
+            ok: true,
+            measure: measure, beat: beat, staff: staff, clefType: clefType,
+            _debug: {
+                clefInt:             clefInt,
+                pre_clefType:        preClefType,
+                pre_concertClefType: preConcertClefType,
+                post_clefType:       postClefType,
+                post_concertClefType: postConcertClefType
+            }
+        }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addClef failed: " + e }
+    }
+}
+
+// Diagnostic: probe whether api.engraving.ClefType QML enum is accessible
+// and what values it reports for common clef types.
+function probeClefTypeEnum() {
+    try {
+        var ct = api.engraving.ClefType
+        if (!ct) return { error: "api.engraving.ClefType is null or undefined" }
+        return {
+            ok: true,
+            G:       ct.G       !== undefined ? ct.G       : "missing",
+            F:       ct.F       !== undefined ? ct.F       : "missing",
+            C3:      ct.C3      !== undefined ? ct.C3      : "missing",
+            C4:      ct.C4      !== undefined ? ct.C4      : "missing",
+            G8_VB:   ct.G8_VB   !== undefined ? ct.G8_VB   : "missing",
+            PERC:    ct.PERC    !== undefined ? ct.PERC    : "missing",
+            TAB:     ct.TAB     !== undefined ? ct.TAB     : "missing",
+            INVALID: ct.INVALID !== undefined ? ct.INVALID : "missing"
+        }
+    } catch(e) {
+        return { error: "probeClefTypeEnum failed: " + e }
     }
 }
 
