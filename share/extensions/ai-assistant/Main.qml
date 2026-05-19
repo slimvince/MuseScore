@@ -310,7 +310,12 @@ Rectangle {
             "When the user's request leaves a required parameter ambiguous, ask for " +
             "clarification before calling the tool. Exception: if the score structure makes " +
             "the answer unambiguous (e.g. there is only one staff), you may infer it and " +
-            "state your assumption."
+            "state your assumption.\n\n" +
+            "When the user refers to a staff by instrument name (e.g. 'Soprano', 'Violin II', " +
+            "'Bandoneon') rather than an explicit staff number, you MUST call get_score_info " +
+            "first to look up the correct global staff number before calling any tool that " +
+            "requires a staff parameter. Never assume staff=1 for an instrument name. " +
+            "The staff number returned by get_score_info is the one to use."
 
         var l2lines = []
         var spelling = ScoreAccess.getChordSymbolSpelling()
