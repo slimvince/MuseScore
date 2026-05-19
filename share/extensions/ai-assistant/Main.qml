@@ -13,7 +13,14 @@ Rectangle {
     id: root
     width: 1100
     height: 760
-    color: "#f5f5f5"
+    color: sysPalette.window
+
+    // ── System palette (dark mode support) ────────────────────────────────────
+    SystemPalette { id: sysPalette; colorGroup: SystemPalette.Active }
+
+    // ── Input history (Up/Down arrow navigation) ──────────────────────────────
+    property var inputHistory: []    // sent messages, most-recent last
+    property int historyIdx:   -1    // -1 = not browsing history
 
     // ── Version ───────────────────────────────────────────────────────────────
     readonly property string pluginVersion: "0.5.5"
@@ -831,7 +838,10 @@ Rectangle {
 
     function sendMessage(userText) {
         if (isStreaming || !userText.trim()) return
-        appendMessage("user", userText.trim())
+        var trimmed = userText.trim()
+        inputHistory.push(trimmed)
+        historyIdx = -1
+        appendMessage("user", trimmed)
         Qt.callLater(scrollToBottom)
         isStreaming   = true
         streamingText = ""
@@ -1278,18 +1288,18 @@ Rectangle {
                             }
 
                             Button {
-                                implicitWidth:  20
-                                implicitHeight: 20
+                                implicitWidth:  32
+                                implicitHeight: 32
                                 text:           "×"
                                 visible:        convMa.containsMouse
                                 background: Rectangle {
-                                    color: parent.pressed ? "#f38ba8" : "transparent"
-                                    radius: 3
+                                    color: parent.pressed ? "#f38ba8" : parent.hovered ? "#3d3f5c" : "transparent"
+                                    radius: 4
                                 }
                                 contentItem: Label {
                                     text:  parent.text
                                     color: "#f38ba8"
-                                    font.pixelSize: 14
+                                    font.pixelSize: 16
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment:   Text.AlignVCenter
                                 }
@@ -1331,7 +1341,7 @@ Rectangle {
         // ── Main area ─────────────────────────────────────────────────────────
         Rectangle {
             SplitView.fillWidth: true
-            color: "#f5f5f5"
+            color: sysPalette.window
 
             // ── Chat view ─────────────────────────────────────────────────────
             ColumnLayout {
@@ -1339,11 +1349,12 @@ Rectangle {
                 spacing: 0
                 visible: !showSettings
 
-                // Score context chip
+                // Score context chip — hidden (UI-2: adds visual noise without user value)
                 Rectangle {
                     Layout.fillWidth: true
                     height: scoreContextExpanded ? scoreCtxText.implicitHeight + 40 : 40
                     color:  "#e8eaf6"
+                    visible: false
                     clip:   true
                     Behavior on height { NumberAnimation { duration: 150 } }
 
@@ -1403,7 +1414,7 @@ Rectangle {
                         wrapMode:       TextEdit.Wrap
                         selectByMouse:  true
                         font.pixelSize: 11
-                        color:          "#37474f"
+                        color:          sysPalette.text
                         background:     null
                         visible:        scoreContextExpanded
                     }
@@ -1423,12 +1434,25 @@ Rectangle {
                     Layout.fillWidth:  true
                     Layout.fillHeight: true
                     clip: true
+                    ScrollBar.vertical.policy: ScrollBar.AlwaysOn
 
                     // Disable Flickable drag so TextArea selection works inside bubbles.
                     // Scrollbar still scrolls the view.
                     Component.onCompleted: {
                         if (contentItem && "interactive" in contentItem)
                             contentItem.interactive = false
+                    }
+
+                    WheelHandler {
+                        // Restore scroll-wheel scrolling that was disabled along with
+                        // contentItem.interactive = false (needed for TextArea selection).
+                        onWheel: function(event) {
+                            var flick = chatScroll.contentItem
+                            if (!flick) return
+                            var maxY = Math.max(0, flick.contentHeight - chatScroll.height)
+                            flick.contentY = Math.max(0, Math.min(flick.contentY - event.angleDelta.y / 2, maxY))
+                            event.accepted = true
+                        }
                     }
 
                     Column {
@@ -1452,7 +1476,7 @@ Rectangle {
                                     property real renderedHeight: 44
                                     height: renderedHeight
                                     radius: 10
-                                    color:  isUser ? "#5c6bc0" : "#ffffff"
+                                    color:  isUser ? "#5c6bc0" : sysPalette.base
                                     border.color: isUser ? "transparent" : "#e0e0e0"
                                     border.width: 1
 
@@ -1465,7 +1489,7 @@ Rectangle {
                                         selectByMouse: true
                                         background:    null
                                         font.pixelSize: 13
-                                        color: isUser ? "#ffffff" : "#212121"
+                                        color: isUser ? "#ffffff" : sysPalette.text
                                         topPadding:    12
                                         bottomPadding: 12
                                         // Padding mirrors the copy-button side so text doesn't sit under it.
@@ -1604,9 +1628,9 @@ Rectangle {
                             font.pixelSize:  13
                             selectByMouse:   true
                             background: Rectangle {
-                                color:        "#f8f9fa"
+                                color:        sysPalette.base
                                 radius:       8
-                                border.color: inputField.activeFocus ? "#5c6bc0" : "#e0e0e0"
+                                border.color: inputField.activeFocus ? "#5c6bc0" : sysPalette.mid
                                 border.width: 1
                             }
                             onActiveFocusChanged: {
@@ -1645,6 +1669,31 @@ Rectangle {
                                 if (event.key === Qt.Key_Right) { event.accepted = true; if (cursorPosition < length) cursorPosition += 1; return }
                                 if (event.key === Qt.Key_Home)  { event.accepted = true; cursorPosition = 0;           return }
                                 if (event.key === Qt.Key_End)   { event.accepted = true; cursorPosition = length;      return }
+
+                                // ── Input history navigation ──────────────────────────
+                                if (event.key === Qt.Key_Up) {
+                                    event.accepted = true
+                                    if (inputHistory.length === 0) return
+                                    var nextIdx = (historyIdx === -1) ? inputHistory.length - 1
+                                                                       : Math.max(0, historyIdx - 1)
+                                    historyIdx = nextIdx
+                                    text = inputHistory[historyIdx]
+                                    cursorPosition = length
+                                    return
+                                }
+                                if (event.key === Qt.Key_Down) {
+                                    event.accepted = true
+                                    if (historyIdx === -1) return
+                                    if (historyIdx >= inputHistory.length - 1) {
+                                        historyIdx = -1
+                                        text = ""
+                                    } else {
+                                        historyIdx++
+                                        text = inputHistory[historyIdx]
+                                        cursorPosition = length
+                                    }
+                                    return
+                                }
                             }
                         }
 
