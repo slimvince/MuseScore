@@ -1095,23 +1095,31 @@ function addTempoMark(measureNo, bpm, unit, text) {
     if (!s) return { error: "No score open" }
     if (typeof measureNo !== "number" || measureNo < 1)
         return { error: "Invalid measure number: " + measureNo }
-    if (typeof bpm !== "number" || bpm <= 0)
-        return { error: "Invalid bpm: " + bpm }
+    var hasBpm = (typeof bpm === "number" && bpm > 0)
+    var qps, displayText
+    if (hasBpm) {
+        var unitLower = (unit || "quarter").toLowerCase()
+        qps = bpm / 60.0
+        if      (unitLower === "half")            qps = bpm / 30.0
+        else if (unitLower === "eighth")          qps = bpm / 120.0
+        else if (unitLower === "dotted quarter")  qps = bpm * 1.5 / 60.0
+        else if (unitLower === "dotted half")     qps = bpm * 1.5 / 30.0
 
-    var unitLower = (unit || "quarter").toLowerCase()
-    var qps = bpm / 60.0
-    if      (unitLower === "half")            qps = bpm / 30.0
-    else if (unitLower === "eighth")          qps = bpm / 120.0
-    else if (unitLower === "dotted quarter")  qps = bpm * 1.5 / 60.0
-    else if (unitLower === "dotted half")     qps = bpm * 1.5 / 30.0
+        var noteSymbol = "♩"
+        if      (unitLower === "half")            noteSymbol = "𝅝"
+        else if (unitLower === "eighth")          noteSymbol = "♪"
+        else if (unitLower === "dotted quarter")  noteSymbol = "♩."
+        else if (unitLower === "dotted half")     noteSymbol = "𝅝."
 
-    var noteSymbol = "♩"  // ♩
-    if      (unitLower === "half")            noteSymbol = "𝅝"        // 𝅝
-    else if (unitLower === "eighth")          noteSymbol = "♪"              // ♪
-    else if (unitLower === "dotted quarter")  noteSymbol = "♩."
-    else if (unitLower === "dotted half")     noteSymbol = "𝅝."
-
-    var displayText = (text ? text + " " : "") + noteSymbol + " = " + bpm
+        displayText = (text ? text + " " : "") + noteSymbol + " = " + bpm
+    } else {
+        // Text-only tempo word (e.g. "Allegro") — no metronome mark.
+        // tt.tempo is a fallback QPS; tempoFollowText=true lets MuseScore
+        // parse playback speed from the Italian word where possible.
+        if (!text) return { error: "Either bpm or text is required for a tempo mark" }
+        qps = 2.0   // 120 BPM fallback
+        displayText = text
+    }
 
     // Anchor to the first ChordRest segment of the measure. Anchoring to the
     // raw m.firstSegment.tick lands the cursor on a TimeSig or KeySig segment
@@ -1154,7 +1162,7 @@ function addTempoMark(measureNo, bpm, unit, text) {
         // playback in sync with the visible mark.
         tt.tempoFollowText = true
         s.endCmd()
-        return { ok: true, measure: measureNo, bpm: bpm, tempo: qps, text: displayText }
+        return { ok: true, measure: measureNo, bpm: hasBpm ? bpm : null, tempo: qps, text: displayText }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addTempoMark failed: " + e }

@@ -158,18 +158,19 @@ function getToolSchemas(providerFormat) {
         {
             name: "add_tempo_mark",
             description:
-                "Adds a tempo marking at the start of a measure, setting the playback BPM. " +
-                "Use for metronome marks (e.g. '♩=120') with an optional text label (e.g. " +
-                "'Allegro'). Always positioned at beat 1 of the given measure.",
+                "Adds a tempo marking at the start of a measure. Use this tool for ALL tempo " +
+                "indications — both metronome marks (e.g. '♩=120') and tempo words (e.g. " +
+                "'Allegro', 'Andante', 'Presto'). Do NOT use add_system_text for tempo words. " +
+                "Always positioned at beat 1 of the given measure.",
             parameters: {
                 type: "object",
                 properties: {
                     measure: { type: "integer", description: "1-based measure number." },
-                    bpm:     { type: "integer", description: "Beats per minute (e.g. 120)." },
-                    unit:    { type: "string",  description: "Beat unit for the metronome mark: 'quarter', 'half', 'eighth', 'dotted quarter', 'dotted half'. Defaults to 'quarter'." },
-                    text:    { type: "string",  description: "Optional text label e.g. 'Allegro', 'Andante con moto'. Omit to show only the metronome mark." }
+                    bpm:     { type: "integer", description: "Beats per minute (e.g. 120). Required for a metronome mark. Omit when adding a tempo word only (e.g. 'Allegro') — MuseScore will derive playback speed from the word." },
+                    unit:    { type: "string",  description: "Beat unit for the metronome mark: 'quarter', 'half', 'eighth', 'dotted quarter', 'dotted half'. Defaults to 'quarter'. Ignored if bpm is omitted." },
+                    text:    { type: "string",  description: "Tempo word or label, e.g. 'Allegro', 'Andante con moto'. Required if bpm is omitted. Optional if bpm is provided (shows alongside the metronome mark)." }
                 },
-                required: ["measure", "bpm"]
+                required: ["measure"]
             }
         },
         {
@@ -197,7 +198,8 @@ function getToolSchemas(providerFormat) {
             description:
                 "Adds a system text annotation that appears above all staves (applies to the " +
                 "whole ensemble). Positioned at the start of the given measure. Use for " +
-                "instructions that affect all instruments (e.g. 'D.C. al Fine', 'Coda', 'Segue').",
+                "rehearsal instructions (e.g. 'D.C. al Fine', 'Coda', 'Segue'). " +
+                "Do NOT use for tempo words (Allegro, Andante, Presto, etc.) — use add_tempo_mark for those.",
             parameters: {
                 type: "object",
                 properties: {
