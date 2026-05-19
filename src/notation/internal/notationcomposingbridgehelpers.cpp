@@ -52,12 +52,15 @@
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
 using mu::composing::analysis::isDiatonicStep;
 using mu::notation::internal::isChordTrackStaff;
 using mu::notation::internal::staffIsEligible;
+
+namespace shv = mu::composing::analysis::scoreharvest;
 
 namespace mu::notation::internal {
 
@@ -425,71 +428,36 @@ buildTones(const std::vector<SoundingNote>& sounding)
     return tones;
 }
 
+// beatTypeToWeight, safeBeatType, regionMetricWeightForBeatType, timeDecay,
+// distinctPitchClasses are now thin pass-throughs to the shared
+// composing/analysis/scoreharvest/ implementation.  See docs/duplication_audit.md §5.8.
+
 double beatTypeToWeight(mu::engraving::BeatType bt,
                         const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs)
 {
-    using mu::engraving::BeatType;
-    switch (bt) {
-    case BeatType::DOWNBEAT:              return prefs.beatWeightDownbeat;
-    case BeatType::COMPOUND_STRESSED:     return prefs.beatWeightCompoundStressed;
-    case BeatType::SIMPLE_STRESSED:       return prefs.beatWeightSimpleStressed;
-    case BeatType::COMPOUND_UNSTRESSED:   return prefs.beatWeightCompoundUnstressed;
-    case BeatType::SIMPLE_UNSTRESSED:     return prefs.beatWeightSimpleUnstressed;
-    case BeatType::COMPOUND_SUBBEAT:      return prefs.beatWeightCompoundSubbeat;
-    case BeatType::SUBBEAT:               return prefs.beatWeightSubbeat;
-    }
-    return prefs.beatWeightSubbeat;
+    return shv::beatTypeToWeight(bt, prefs);
 }
 
 mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
                                      const mu::engraving::Segment* segment)
 {
-    using namespace mu::engraving;
-
-    if (!measure || !segment) {
-        return BeatType::SUBBEAT;
-    }
-
-    const int numerator = measure->timesig().numerator();
-    const int denominator = measure->timesig().denominator();
-    if (numerator <= 0 || denominator <= 0) {
-        return BeatType::SUBBEAT;
-    }
-
-    return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
+    return shv::safeBeatType(measure, segment);
 }
 
 double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
 {
-    using namespace mu::engraving;
-    switch (bt) {
-    case BeatType::DOWNBEAT:            return 1.0;
-    case BeatType::SIMPLE_STRESSED:
-    case BeatType::COMPOUND_STRESSED:   return 0.85;
-    case BeatType::SIMPLE_UNSTRESSED:
-    case BeatType::COMPOUND_UNSTRESSED: return 0.75;
-    default:                            return 0.5;
-    }
+    return shv::regionMetricWeightForBeatType(bt);
 }
 
 double timeDecay(double beatsAgo, double decayRate)
 {
-    return std::pow(decayRate, beatsAgo / 4.0);
+    return shv::timeDecay(beatsAgo, decayRate);
 }
 
 int distinctPitchClasses(
     const std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx)
 {
-    bool seen[12] = {};
-    int count = 0;
-    for (const auto& p : ctx) {
-        int pc = p.pitch % 12;
-        if (!seen[pc]) {
-            seen[pc] = true;
-            ++count;
-        }
-    }
-    return count;
+    return shv::distinctPitchClasses(ctx);
 }
 
 void collectPitchContext(const mu::engraving::Score* sc,
@@ -502,8 +470,6 @@ void collectPitchContext(const mu::engraving::Score* sc,
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
-
-    static constexpr double LOOKAHEAD_WEIGHT = 0.5;
 
     const Measure* startMeasure = sc->tick2measure(windowStart);
     if (!startMeasure) {
@@ -531,7 +497,7 @@ void collectPitchContext(const mu::engraving::Score* sc,
         const double decay = timeDecay(beatsFromTick);
 
         const bool isLookahead = (segTick > tick);
-        const double lookaheadMul = isLookahead ? LOOKAHEAD_WEIGHT : 1.0;
+        const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;
 
         struct NoteInfo { int ppitch; double durationQn; };
         std::vector<NoteInfo> segNotes;
@@ -643,10 +609,7 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     }
 
     // ── Fixed lookback window ─────────────────────────────────────────────
-    static constexpr int LOOKBACK_BEATS  = 16;
-    static constexpr int INITIAL_LOOKAHEAD_BEATS = 8;
-
-    const Fraction lookbackDuration = Fraction(LOOKBACK_BEATS, 4);
+    const Fraction lookbackDuration = Fraction(shv::LOOKBACK_BEATS, 4);
     const Fraction windowStart = (tick > lookbackDuration)
                                  ? tick - lookbackDuration
                                  : Fraction(0, 1);
@@ -671,7 +634,7 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     std::vector<KeyModeAnalyzer::PitchContext> ctx;
     std::vector<KeyModeAnalysisResult> modeResults;
 
-    int lookaheadBeats = INITIAL_LOOKAHEAD_BEATS;
+    int lookaheadBeats = shv::LOOKAHEAD_BEATS;
     while (true) {
         ctx.clear();
         const Fraction windowEnd = tick + Fraction(lookaheadBeats, 4);
@@ -772,73 +735,18 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
     if (outScore) *outScore = top.score;
 }
 
-struct PedalWindow {
-    int startTick = 0;
-    int endTick = 0;
-};
+// PedalWindow and buildPedalWindowIndex moved to
+// composing/analysis/scoreharvest/metricweights.{h,cpp}.  Local alias kept
+// so existing callers in this TU continue to compile unchanged.
+using PedalWindow = mu::composing::analysis::scoreharvest::PedalWindow;
 
-std::map<size_t, std::vector<PedalWindow>>
-buildPedalWindowIndex(const mu::engraving::Score* sc,
-                      int startTickInt,
-                      int endTickInt,
-                      const std::set<size_t>& excludeStaves)
-{
-    using namespace mu::engraving;
-    const Fraction startTick = Fraction::fromTicks(startTickInt);
-
-    std::map<size_t, std::vector<PedalWindow>> result;
-    for (const auto& spannerEntry : sc->spanner()) {
-        const Spanner* spanner = spannerEntry.second;
-        if (!spanner || spanner->type() != ElementType::PEDAL) {
-            continue;
-        }
-
-        const Pedal* pedal = toPedal(spanner);
-        if (!pedal) {
-            continue;
-        }
-
-        const auto& beginText = pedal->beginText();
-        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
-            continue;
-        }
-
-        const int pedalStartTick = pedal->tick().ticks();
-        const int pedalEndTick = pedal->tick2().ticks();
-        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
-            continue;
-        }
-
-        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
-        if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(sc, staffIdx, startTick)) {
-            continue;
-        }
-
-        result[staffIdx].push_back({ pedalStartTick, pedalEndTick });
-    }
-
-    for (auto& entry : result) {
-        auto& windows = entry.second;
-        std::sort(windows.begin(), windows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
-            if (lhs.startTick != rhs.startTick) {
-                return lhs.startTick < rhs.startTick;
-            }
-            return lhs.endTick < rhs.endTick;
-        });
-    }
-
-    return result;
-}
-
-// TODO (ARCHITECTURE.md §2.10 / §4.1c): duplicate of batch_analyze.cpp's
-// collectRegionTones(). Move to src/composing/ with a note-provider interface
-// so bridge and batch_analyze call one implementation.
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTickInt,
                    int endTickInt,
                    const std::set<size_t>& excludeStaves,
-                   int parentStartTickInt)
+                   int parentStartTickInt,
+                   bool excludeLookAheadOnDenseStart)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -900,7 +808,10 @@ collectRegionTones(const mu::engraving::Score* sc,
         double attackBeatWeight = 0.0;
     };
 
-    std::map<size_t, std::vector<PedalWindow>> pedalWindowsByStaff = buildPedalWindowIndex(sc, startTickInt, endTickInt, excludeStaves);
+    std::map<size_t, std::vector<PedalWindow>> pedalWindowsByStaff
+        = shv::buildPedalWindowIndex(
+            sc, startTickInt, endTickInt, excludeStaves,
+            [&](size_t si) { return staffIsEligible(sc, si, startTick); });
     std::vector<PedalTailCandidate> pedalTailCandidates;
 
     auto earliestPedalReleaseTick = [&](const PedalTailCandidate& candidate) -> int {
@@ -1018,6 +929,46 @@ collectRegionTones(const mu::engraving::Score* sc,
         return {};
     }
 
+    // D2: optional look-ahead exclusion when ≥3 pitch classes already sounding.
+    // When excludeLookAheadOnDenseStart=true and ≥3 distinct PCs are present at
+    // the region start (from the backward walk above plus any onset at startTick),
+    // notes whose onset is strictly after startTick are excluded.  This was the
+    // old batch behavior.  Default false = bridge behavior (accumulate all tones).
+    bool excludeLookAhead = false;
+    if (excludeLookAheadOnDenseStart) {
+        int pcsSoundingAtStart = 0;
+        for (int pc = 0; pc < 12; ++pc) {
+            if (accum[pc].totalWeight > 0.0) {
+                ++pcsSoundingAtStart;
+            }
+        }
+        // Also count PCs that attack exactly at startTickInt (not yet in accum).
+        if (seg->tick().ticks() == startTickInt) {
+            for (size_t si = 0; si < sc->nstaves(); ++si) {
+                if (excludeStaves.count(si) || !staffIsEligible(sc, si, startTick)) {
+                    continue;
+                }
+                for (int v = 0; v < VOICES; ++v) {
+                    const ChordRest* cr
+                        = seg->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                    if (!cr || !cr->isChord() || cr->isGrace()) {
+                        continue;
+                    }
+                    for (const Note* n : toChord(cr)->notes()) {
+                        if (!n->play() || !n->visible()) {
+                            continue;
+                        }
+                        const int pc = n->ppitch() % 12;
+                        if (accum[pc].totalWeight == 0.0) {
+                            ++pcsSoundingAtStart;
+                        }
+                    }
+                }
+            }
+        }
+        excludeLookAhead = (pcsSoundingAtStart >= 3);
+    }
+
     for (const Segment* s = seg;
          s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
@@ -1029,6 +980,11 @@ collectRegionTones(const mu::engraving::Score* sc,
         const int segTickInt = s->tick().ticks();
         const BeatType bt = safeBeatType(m, s);
         const double bw = beatWeight(bt);
+
+        // D2: skip look-ahead notes when flag is set and region start is dense.
+        if (excludeLookAhead && segTickInt > startTickInt) {
+            continue;
+        }
 
         for (size_t si = 0; si < sc->nstaves(); ++si) {
             if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {

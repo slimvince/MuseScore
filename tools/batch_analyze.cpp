@@ -88,8 +88,10 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 // ── Analysis ───────────────────────────────────────────────────────────────
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/key/modepriorpresets.h"
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
+#include "composing/analysis/scoreharvest/metricweights.h"
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
 #include "notation/internal/notationcomposingbridgehelpers.h"
@@ -97,6 +99,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 // ── Namespace aliases ──────────────────────────────────────────────────────
 using namespace mu::engraving;
 namespace analysis = mu::composing::analysis;
+namespace shv = mu::composing::analysis::scoreharvest;
 using analysis::ChordAnalysisTone;
 using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
@@ -147,9 +150,9 @@ static std::string fmtDouble(double v, int precision = 6)
 // ══════════════════════════════════════════════════════════════════════════
 // Mode prior preset application
 //
-// Mirrors modePriorPresets() in composingconfiguration.cpp.
-// batch_analyze links against composing_analysis (not the composing module),
-// so preset values are inlined here.  Keep in sync with composingconfiguration.cpp.
+// Preset values are owned by mu::composing::modePriorPresets() in
+// composing_analysis (see composing/analysis/key/modepriorpresets.cpp).
+// This used to inline the same 5x21 table — see docs/duplication_audit.md §5.8.
 // ══════════════════════════════════════════════════════════════════════════
 
 /// Apply a named mode prior preset to @p prefs.
@@ -158,43 +161,8 @@ static std::string fmtDouble(double v, int precision = 6)
 static bool applyPreset(const std::string& name,
                         analysis::KeyModeAnalyzerPreferences& prefs)
 {
-    struct PresetValues {
-        const char* name;
-        // Diatonic
-        double ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian;
-        // Melodic minor
-        double melodicMinor, dorianB2, lydianAugmented, lydianDominant,
-               mixolydianB6, aeolianB5, altered;
-        // Harmonic minor
-        double harmonicMinor, locrianSharp6, ionianSharp5, dorianSharp4,
-               phrygianDominant, lydianSharp2, alteredDomBB7;
-    };
-
-    // clang-format off
-    static constexpr PresetValues PRESETS[] = {
-        //                   Ion    Dor    Phr    Lyd    Mix    Aeo    Loc
-        //                   MelMin DorB2  LydAug LydDom MixB6  AeoB5  Alt
-        //                   HarMin LcrS6  IonS5  DorS4  PhrDom LydS2  AltBB7
-        { "Standard",        1.20, -0.50, -1.50, -1.50, -0.50,  1.00, -3.00,
-                            -0.50, -1.50, -2.00, -1.00, -1.50, -2.50, -3.50,
-                            -0.30, -2.50, -2.00, -2.00, -0.80, -2.50, -3.50 },
-        { "Jazz",            0.50,  0.80, -1.00, -0.50,  0.80,  0.50, -1.50,
-                             0.50, -0.50, -0.50,  0.80, -0.50, -1.00,  0.50,
-                            -0.30, -1.50, -1.50, -0.50,  0.20, -1.50, -1.50 },
-        { "Modal",           0.50,  0.50,  0.50,  0.50,  0.50,  0.50, -1.00,
-                            -1.00, -1.50, -2.00, -1.50, -1.50, -2.50, -3.50,
-                            -1.00, -2.50, -2.00, -2.00, -1.50, -2.50, -3.50 },
-        { "Baroque",         1.20, -0.70, -1.50, -2.00, -0.70,  1.00, -3.00,
-                            -1.50, -2.00, -2.50, -2.00, -2.00, -3.00, -3.50,
-                             0.50, -2.00, -1.50, -2.50,  0.50, -2.00, -3.50 },
-        { "Contemporary",    0.80,  0.20, -0.50, -0.20,  0.20,  0.80, -2.00,
-                             0.20, -0.80, -1.00,  0.20, -0.50, -1.50, -1.50,
-                             0.20, -1.50, -1.00, -1.00,  0.00, -1.50, -2.00 },
-    };
-    // clang-format on
-
-    for (const auto& p : PRESETS) {
-        if (std::string(p.name) != name) continue;
+    for (const auto& p : mu::composing::modePriorPresets()) {
+        if (p.name != name) continue;
         prefs.modePriorIonian           = p.ionian;
         prefs.modePriorDorian           = p.dorian;
         prefs.modePriorPhrygian         = p.phrygian;
@@ -370,11 +338,6 @@ static bool staffIsEligible(const Score* score, size_t staffIdx)
     return !isChordTrackStaff(st);
 }
 
-static bool staffIsEligible(const Score* score, size_t staffIdx, const Fraction&)
-{
-    return staffIsEligible(score, staffIdx);
-}
-
 static size_t referenceStaffForAnalysis(const Score* score,
                                         const std::set<size_t>& excludeStaves)
 {
@@ -457,67 +420,23 @@ static MeasureTickInfo locateMeasureByTick(const Score* score, const Fraction& t
 //   - Key signature fifths read from staff 0 at the analysis tick
 // ══════════════════════════════════════════════════════════════════════════
 
-static constexpr int    LOOKBACK_BEATS   = 16;
-static constexpr int    LOOKAHEAD_BEATS  = 8;
-static constexpr double LOOKAHEAD_WEIGHT = 0.5;
-static constexpr double DECAY_RATE       = 0.7;  // multiplier per measure (4 quarter notes)
+// Constants and trivial helpers moved to composing/analysis/scoreharvest/metricweights.h.
+// See docs/duplication_audit.md §5.8.  These thin file-scope aliases keep the existing
+// call sites below readable without re-typing the namespace at every reference.
 
-static double beatTypeToWeight(BeatType bt,
-                               const analysis::KeyModeAnalyzerPreferences& prefs)
+using shv::LOOKBACK_BEATS;
+using shv::LOOKAHEAD_BEATS;
+using shv::LOOKAHEAD_WEIGHT;
+using shv::DECAY_RATE;
+using shv::beatTypeToWeight;
+using shv::safeBeatType;
+using shv::regionMetricWeightForBeatType;
+using shv::distinctPitchClasses;
+
+// timeDecay defaults to DECAY_RATE in the shared header.
+static inline double timeDecay(double beatsAgo)
 {
-    switch (bt) {
-    case BeatType::DOWNBEAT:              return prefs.beatWeightDownbeat;
-    case BeatType::COMPOUND_STRESSED:     return prefs.beatWeightCompoundStressed;
-    case BeatType::SIMPLE_STRESSED:       return prefs.beatWeightSimpleStressed;
-    case BeatType::COMPOUND_UNSTRESSED:   return prefs.beatWeightCompoundUnstressed;
-    case BeatType::SIMPLE_UNSTRESSED:     return prefs.beatWeightSimpleUnstressed;
-    case BeatType::COMPOUND_SUBBEAT:      return prefs.beatWeightCompoundSubbeat;
-    case BeatType::SUBBEAT:               return prefs.beatWeightSubbeat;
-    }
-    return prefs.beatWeightSubbeat;
-}
-
-static BeatType safeBeatType(const Measure* measure, const Segment* segment)
-{
-    if (!measure || !segment) {
-        return BeatType::SUBBEAT;
-    }
-
-    const int numerator = measure->timesig().numerator();
-    const int denominator = measure->timesig().denominator();
-    if (numerator <= 0 || denominator <= 0) {
-        return BeatType::SUBBEAT;
-    }
-
-    return TimeSigFrac(numerator, denominator).rtick2beatType(segment->rtick().ticks());
-}
-
-/// Normalised metric weight [0,1] for a beat type, matching the scale used by
-/// collectRegionTones(): 1.0 = downbeat, 0.85 = stressed, 0.75 = unstressed, 0.5 = subbeat.
-static double regionMetricWeightForBeatType(BeatType bt)
-{
-    switch (bt) {
-    case BeatType::DOWNBEAT:            return 1.0;
-    case BeatType::SIMPLE_STRESSED:
-    case BeatType::COMPOUND_STRESSED:   return 0.85;
-    case BeatType::SIMPLE_UNSTRESSED:
-    case BeatType::COMPOUND_UNSTRESSED: return 0.75;
-    default:                            return 0.5;
-    }
-}
-
-static double timeDecay(double beatsAgo)
-{
-    return std::pow(DECAY_RATE, beatsAgo / 4.0);
-}
-
-static int distinctPitchClasses(const std::vector<analysis::KeyModeAnalyzer::PitchContext>& ctx)
-{
-    std::set<int> pcs;
-    for (const auto& pitchContext : ctx) {
-        pcs.insert(analysis::normalizePc(pitchContext.pitch));
-    }
-    return static_cast<int>(pcs.size());
+    return shv::timeDecay(beatsAgo);
 }
 
 /// Collect pitch context for [windowStart, windowEnd] around @p tick.
@@ -766,868 +685,23 @@ static const char* regionDumpModeName(RegionDumpMode mode)
     return "batch";
 }
 
-static std::vector<ChordAnalysisTone> collectRegionTones(
-    const Score* score,
-    int startTickInt,
-    int endTickInt,
-    const std::set<size_t>& excludeStaves,
-    int parentStartTickInt = -1)
-{
-    const analysis::ChordAnalyzerPreferences& prefs = analysis::kDefaultChordAnalyzerPreferences;
+// ── Shared tone-collection functions ──────────────────────────────────────────
+// The five functions below (collectRegionTones, detectBassMovementSubBoundaries,
+// SoundingNote, collectSoundingAt, buildTones, findTemporalContext) have been
+// consolidated into the canonical implementations in:
+//   src/notation/internal/notationcomposingbridgehelpers.{h,cpp}
+//
+// batch_analyze links against 'notation' and includes the header above, so
+// these are now thin aliases/using declarations into that namespace.
+// See docs/duplication_audit.md §5.8 (Step 3).
+
+using mu::notation::internal::SoundingNote;
+using mu::notation::internal::collectSoundingAt;
+using mu::notation::internal::buildTones;
+using mu::notation::internal::collectRegionTones;
+using mu::notation::internal::detectBassMovementSubBoundaries;
+using mu::notation::internal::findTemporalContext;
 
-    if (!score || endTickInt <= startTickInt) {
-        return {};
-    }
-
-    // Iter 93: onsetAtRegionStart is computed against parentStartTickInt so
-    // that Pass 2b sub-region calls (boundaryTicks expansion at line ~1709)
-    // see the parent-scope onset truth — tones that attack at a bass-movement
-    // sub-boundary mid-parent no longer look like beat-onset bass candidates.
-    if (parentStartTickInt < 0) {
-        parentStartTickInt = startTickInt;
-    }
-
-    const Fraction startTick = Fraction::fromTicks(startTickInt);
-    const Fraction endTick = Fraction::fromTicks(endTickInt);
-    const int regionDuration = endTickInt - startTickInt;
-
-    auto beatWeight = [](BeatType bt) -> double {
-        switch (bt) {
-        case BeatType::DOWNBEAT:            return 1.0;
-        case BeatType::SIMPLE_STRESSED:
-        case BeatType::COMPOUND_STRESSED:   return 0.85;
-        case BeatType::SIMPLE_UNSTRESSED:
-        case BeatType::COMPOUND_UNSTRESSED: return 0.75;
-        default:                            return 0.5;
-        }
-    };
-
-    struct PcAccum {
-        double totalWeight = 0.0;
-        int durationInRegion = 0;
-        std::set<int> metricTicks;
-        int lowestPitch = std::numeric_limits<int>::max();
-        int tpc = -1;
-        // Iter 92: forward-walk TRUE attack at startTickInt (sustained-from-
-        // before notes do not set this flag).
-        bool trueAttackAtStart = false;
-    };
-    PcAccum accum[12];
-    std::map<int, int> voiceCountAtTick[12];
-
-    struct PedalWindow {
-        int startTick = 0;
-        int endTick = 0;
-    };
-
-    struct PedalTailCandidate {
-        size_t staffIdx = 0;
-        int pc = 0;
-        int pitch = 0;
-        int tpc = -1;
-        int writtenEndTick = 0;
-        double attackBeatWeight = 0.0;
-    };
-
-    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
-    std::vector<PedalTailCandidate> pedalTailCandidates;
-
-    for (const auto& spannerEntry : score->spanner()) {
-        const Spanner* spanner = spannerEntry.second;
-        if (!spanner || spanner->type() != ElementType::PEDAL) {
-            continue;
-        }
-
-        const Pedal* pedal = toPedal(spanner);
-        if (!pedal) {
-            continue;
-        }
-
-        const auto& beginText = pedal->beginText();
-        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
-            continue;
-        }
-
-        const int pedalStartTick = pedal->tick().ticks();
-        const int pedalEndTick = pedal->tick2().ticks();
-        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
-            continue;
-        }
-
-        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
-        if (staffIdx >= score->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(score, staffIdx)) {
-            continue;
-        }
-
-        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
-    }
-
-    for (auto& pedalEntry : pedalWindowsByStaff) {
-        auto& windows = pedalEntry.second;
-        std::sort(windows.begin(), windows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
-            if (lhs.startTick != rhs.startTick) {
-                return lhs.startTick < rhs.startTick;
-            }
-            return lhs.endTick < rhs.endTick;
-        });
-    }
-
-    auto earliestPedalReleaseTick = [&](const PedalTailCandidate& candidate) -> int {
-        const auto it = pedalWindowsByStaff.find(candidate.staffIdx);
-        if (it == pedalWindowsByStaff.end()) {
-            return -1;
-        }
-
-        int pedalReleaseTick = std::numeric_limits<int>::max();
-        for (const PedalWindow& window : it->second) {
-            if (window.startTick >= candidate.writtenEndTick) {
-                break;
-            }
-            if (window.endTick <= candidate.writtenEndTick) {
-                continue;
-            }
-            pedalReleaseTick = std::min(pedalReleaseTick, window.endTick);
-        }
-
-        return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
-    };
-
-    auto recordPedalTailCandidate = [&](size_t staffIdx, int writtenEndTick, double attackBeatWeight, const Note* note) {
-        if (!note || writtenEndTick >= endTickInt || pedalWindowsByStaff.empty()) {
-            return;
-        }
-
-        if (pedalWindowsByStaff.find(staffIdx) == pedalWindowsByStaff.end()) {
-            return;
-        }
-
-        pedalTailCandidates.push_back({
-            staffIdx,
-            note->ppitch() % 12,
-            note->ppitch(),
-            note->tpc(),
-            writtenEndTick,
-            attackBeatWeight,
-        });
-    };
-
-    const Fraction backLimit = startTick - Fraction(4, 1);
-    const Segment* firstForward = score->tick2segment(startTick, true, SegmentType::ChordRest);
-    const double bwAtRegionStart = [&]() -> double {
-        const Measure* measure = score->tick2measure(startTick);
-        if (!measure) {
-            return 0.75;
-        }
-        const Segment* seg = score->tick2segment(startTick, true, SegmentType::ChordRest);
-        if (!seg) {
-            return 0.75;
-        }
-        return beatWeight(safeBeatType(measure, seg));
-    }();
-
-    if (firstForward) {
-        for (const Segment* s = firstForward->prev1(SegmentType::ChordRest);
-             s && s->tick() >= backLimit;
-             s = s->prev1(SegmentType::ChordRest)) {
-            const int segTickInt = s->tick().ticks();
-            const Measure* measure = s->measure();
-            const double sustainBeatWeight = measure ? beatWeight(safeBeatType(measure, s)) : bwAtRegionStart;
-            for (size_t si = 0; si < score->nstaves(); ++si) {
-                if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                    continue;
-                }
-                for (int v = 0; v < VOICES; ++v) {
-                    const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                    if (!cr || !cr->isChord() || cr->isGrace()) {
-                        continue;
-                    }
-                    const int noteEnd = segTickInt + cr->actualTicks().ticks();
-                    for (const Note* n : toChord(cr)->notes()) {
-                        if (!n->play() || !n->visible()) {
-                            continue;
-                        }
-
-                        recordPedalTailCandidate(si, noteEnd, sustainBeatWeight, n);
-
-                        if (noteEnd <= startTickInt) {
-                            continue;
-                        }
-
-                        const int clippedEnd = std::min(noteEnd, endTickInt);
-                        const int durInRegion = clippedEnd - startTickInt;
-                        if (durInRegion <= 0) {
-                            continue;
-                        }
-
-                        const double baseWeight =
-                            (static_cast<double>(durInRegion) / regionDuration) * bwAtRegionStart;
-                        const int pc = n->ppitch() % 12;
-                        PcAccum& a = accum[pc];
-                        a.totalWeight += baseWeight;
-                        a.durationInRegion += durInRegion;
-                        a.metricTicks.insert(startTickInt);
-                        voiceCountAtTick[pc][startTickInt]++;
-                        if (n->ppitch() < a.lowestPitch) {
-                            a.lowestPitch = n->ppitch();
-                            a.tpc = n->tpc();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    if (!firstForward) {
-        return {};
-    }
-
-    // Count distinct pitch classes already sounding at region start.
-    // These come from the backward pass (sustained notes) collected above.
-    // We also need to count notes attacking exactly at startTickInt.
-    // Rule: if 3 or more distinct pitch classes are sounding at the region
-    // start tick, exclude look-ahead notes (onset > startTickInt) from chord
-    // inference. If fewer than 3 are sounding, include all notes in the region
-    // (sparse texture — look-ahead needed to identify chord at all).
-    int pcsSoundingAtStart = 0;
-    for (int pc = 0; pc < 12; ++pc) {
-        if (accum[pc].totalWeight > 0.0) {
-            ++pcsSoundingAtStart;
-        }
-    }
-    // Count notes attacking exactly at startTickInt (not yet in accum).
-    if (firstForward && firstForward->tick().ticks() == startTickInt) {
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr = firstForward->cr(
-                    static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-                    const int pc = n->ppitch() % 12;
-                    if (accum[pc].totalWeight == 0.0) {
-                        ++pcsSoundingAtStart;
-                    }
-                }
-            }
-        }
-    }
-    const bool excludeLookAhead = (pcsSoundingAtStart >= 3);
-
-    for (const Segment* s = firstForward;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        const Measure* measure = s->measure();
-        if (!measure) {
-            continue;
-        }
-
-        const int segTickInt = s->tick().ticks();
-        const BeatType bt = safeBeatType(measure, s);
-        const double bw = beatWeight(bt);
-
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-                const int noteEnd = segTickInt + cr->actualTicks().ticks();
-                const int clippedEnd = std::min(noteEnd, endTickInt);
-                const int durInRegion = clippedEnd - segTickInt;
-                if (durInRegion <= 0) {
-                    continue;
-                }
-                // Exclude look-ahead notes when 3+ pitch classes sound at start.
-                if (excludeLookAhead && segTickInt > startTickInt) {
-                    continue;
-                }
-
-                const double baseWeight =
-                    (static_cast<double>(durInRegion) / regionDuration) * bw;
-
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-
-                    recordPedalTailCandidate(si, noteEnd, bw, n);
-
-                    const int pc = n->ppitch() % 12;
-                    PcAccum& a = accum[pc];
-                    a.totalWeight += baseWeight;
-                    a.durationInRegion += durInRegion;
-                    a.metricTicks.insert(segTickInt);
-                    voiceCountAtTick[pc][segTickInt]++;
-                    if (segTickInt == parentStartTickInt) {
-                        a.trueAttackAtStart = true;
-                    }
-
-                    if (n->ppitch() < a.lowestPitch) {
-                        a.lowestPitch = n->ppitch();
-                        a.tpc = n->tpc();
-                    }
-                }
-            }
-        }
-    }
-
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-        const int distinct = static_cast<int>(a.metricTicks.size());
-        if (distinct > 1) {
-            a.totalWeight *= (1.0 + 0.3 * (distinct - 1));
-        }
-    }
-
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-        int maxVoices = 0;
-        for (const auto& kv : voiceCountAtTick[pc]) {
-            maxVoices = std::max(maxVoices, kv.second);
-        }
-        if (maxVoices > 1) {
-            a.totalWeight *= 1.5;
-        }
-    }
-
-    // Pass 4: add a discounted sustain-pedal tail after written note-off when an
-    // explicit sustain pedal remains active on the same staff.
-    if (prefs.pedalTailWeightMultiplier > 0.0) {
-        for (const PedalTailCandidate& candidate : pedalTailCandidates) {
-            const int pedalReleaseTick = earliestPedalReleaseTick(candidate);
-            if (pedalReleaseTick < 0) {
-                continue;
-            }
-
-            const int tailStartTick = std::max(candidate.writtenEndTick, startTickInt);
-            const int tailEndTick = std::min(pedalReleaseTick, endTickInt);
-            const int tailDuration = tailEndTick - tailStartTick;
-            if (tailDuration <= 0) {
-                continue;
-            }
-
-            PcAccum& a = accum[candidate.pc];
-            a.totalWeight += (static_cast<double>(tailDuration) / regionDuration)
-                             * candidate.attackBeatWeight
-                             * prefs.pedalTailWeightMultiplier;
-            a.durationInRegion += tailDuration;
-            if (candidate.pitch < a.lowestPitch) {
-                a.lowestPitch = candidate.pitch;
-                a.tpc = candidate.tpc;
-            }
-        }
-    }
-
-    double totalWeight = 0.0;
-    for (int pc = 0; pc < 12; ++pc) {
-        totalWeight += accum[pc].totalWeight;
-    }
-    if (totalWeight == 0.0) {
-        return {};
-    }
-
-    int bassPitch = std::numeric_limits<int>::max();
-    for (int pc = 0; pc < 12; ++pc) {
-        if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
-            bassPitch = accum[pc].lowestPitch;
-        }
-    }
-    const int bassPc = (bassPitch < std::numeric_limits<int>::max()) ? (bassPitch % 12) : -1;
-
-    std::vector<ChordAnalysisTone> tones;
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-
-        int maxVoices = 0;
-        for (const auto& kv : voiceCountAtTick[pc]) {
-            maxVoices = std::max(maxVoices, kv.second);
-        }
-
-        ChordAnalysisTone t;
-        t.pitch = a.lowestPitch;
-        t.tpc = a.tpc;
-        t.weight = a.totalWeight / totalWeight;
-        t.isBass = (pc == bassPc);
-        t.durationInRegion = a.durationInRegion;
-        t.distinctMetricPositions = static_cast<int>(a.metricTicks.size());
-        t.simultaneousVoiceCount = maxVoices;
-        t.onsetAtRegionStart = a.trueAttackAtStart;
-        tones.push_back(t);
-    }
-
-    return tones;
-}
-
-static std::vector<Fraction> detectHarmonicBoundariesJaccard(
-    const Score* score,
-    const Fraction& startTick,
-    const Fraction& endTick,
-    const std::set<size_t>& excludeStaves)
-{
-    if (!score || endTick <= startTick) {
-        return {};
-    }
-
-    const analysis::ChordAnalyzerPreferences& prefs = analysis::kDefaultChordAnalyzerPreferences;
-    const int startTickInt = startTick.ticks();
-    const int endTickInt = endTick.ticks();
-
-    auto popcount16 = [](uint16_t bits) -> int {
-        int count = 0;
-        while (bits) {
-            count += bits & 1u;
-            bits >>= 1u;
-        }
-        return count;
-    };
-
-    struct Window {
-        Fraction tick;
-        uint16_t bits = 0;
-    };
-    std::vector<Window> windows;
-
-    const Segment* seg = score->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (!seg) {
-        return { startTick };
-    }
-
-    const int windowTicks = Constants::DIVISION;
-
-    struct PedalWindow {
-        int startTick = 0;
-        int endTick = 0;
-    };
-
-    std::map<size_t, std::vector<PedalWindow> > pedalWindowsByStaff;
-    for (const auto& spannerEntry : score->spanner()) {
-        const Spanner* spanner = spannerEntry.second;
-        if (!spanner || spanner->type() != ElementType::PEDAL) {
-            continue;
-        }
-
-        const Pedal* pedal = toPedal(spanner);
-        if (!pedal) {
-            continue;
-        }
-
-        const auto& beginText = pedal->beginText();
-        if (beginText == u"<sym>keyboardPedalSost</sym>" || beginText == u"<sym>keyboardPedalS</sym>") {
-            continue;
-        }
-
-        const int pedalStartTick = pedal->tick().ticks();
-        const int pedalEndTick = pedal->tick2().ticks();
-        if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
-            continue;
-        }
-
-        const size_t staffIdx = static_cast<size_t>(pedal->track() / VOICES);
-        if (staffIdx >= score->nstaves() || excludeStaves.count(staffIdx) || !staffIsEligible(score, staffIdx)) {
-            continue;
-        }
-
-        pedalWindowsByStaff[staffIdx].push_back({ pedalStartTick, pedalEndTick });
-    }
-
-    for (auto& pedalEntry : pedalWindowsByStaff) {
-        auto& pedalWindows = pedalEntry.second;
-        std::sort(pedalWindows.begin(), pedalWindows.end(), [](const PedalWindow& lhs, const PedalWindow& rhs) {
-            if (lhs.startTick != rhs.startTick) {
-                return lhs.startTick < rhs.startTick;
-            }
-            return lhs.endTick < rhs.endTick;
-        });
-    }
-
-    auto earliestPedalReleaseTick = [&](size_t staffIdx, int writtenEndTick) -> int {
-        const auto it = pedalWindowsByStaff.find(staffIdx);
-        if (it == pedalWindowsByStaff.end()) {
-            return -1;
-        }
-
-        int pedalReleaseTick = std::numeric_limits<int>::max();
-        for (const PedalWindow& window : it->second) {
-            if (window.startTick >= writtenEndTick) {
-                break;
-            }
-            if (window.endTick <= writtenEndTick) {
-                continue;
-            }
-            pedalReleaseTick = std::min(pedalReleaseTick, window.endTick);
-        }
-
-        return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
-    };
-
-    std::map<int, uint16_t> bitsByWindowTick;
-
-    auto addWindowBitsForSpan = [&](int spanStartTick, int spanEndTick, int pitchClass) {
-        const int clippedStartTick = std::max(spanStartTick, startTickInt);
-        const int clippedEndTick = std::min(spanEndTick, endTickInt);
-        if (clippedEndTick <= clippedStartTick) {
-            return;
-        }
-
-        for (int windowTick = (clippedStartTick / windowTicks) * windowTicks;
-             windowTick < clippedEndTick;
-             windowTick += windowTicks) {
-            bitsByWindowTick[windowTick] |= static_cast<uint16_t>(1u << pitchClass);
-        }
-    };
-
-    auto recordPedalTailSpan = [&](size_t staffIdx, int writtenEndTick, const Note* note) {
-        if (!note || pedalWindowsByStaff.empty()) {
-            return;
-        }
-
-        const int pedalReleaseTick = earliestPedalReleaseTick(staffIdx, writtenEndTick);
-        if (pedalReleaseTick <= writtenEndTick) {
-            return;
-        }
-
-        addWindowBitsForSpan(writtenEndTick, pedalReleaseTick, note->ppitch() % 12);
-    };
-
-    const Fraction backLimit = startTick - Fraction(4, 1);
-    for (const Segment* s = seg->prev1(SegmentType::ChordRest);
-         s && s->tick() >= backLimit;
-         s = s->prev1(SegmentType::ChordRest)) {
-        const int segTick = s->tick().ticks();
-
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                continue;
-            }
-            for (voice_idx_t v = 0; v < VOICES; ++v) {
-                const EngravingItem* e = s->element(staff2track(si, v));
-                if (!e || !e->isChord()) {
-                    continue;
-                }
-
-                const Chord* chord = toChord(e);
-                if (chord->isGrace()) {
-                    continue;
-                }
-
-                for (const Note* note : chord->notes()) {
-                    const int noteEndTick = segTick + chord->actualTicks().ticks();
-                    recordPedalTailSpan(si, noteEndTick, note);
-                }
-            }
-        }
-    }
-
-    for (const Segment* s = seg; s && s->tick() < endTick; s = s->next1(SegmentType::ChordRest)) {
-        const int segTick = s->tick().ticks();
-        const int segWindowTick = (segTick / windowTicks) * windowTicks;
-
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                continue;
-            }
-            for (voice_idx_t v = 0; v < VOICES; ++v) {
-                const EngravingItem* e = s->element(staff2track(si, v));
-                if (!e || !e->isChord()) {
-                    continue;
-                }
-
-                const Chord* chord = toChord(e);
-                if (chord->isGrace()) {
-                    continue;
-                }
-
-                const int noteEndTick = segTick + chord->actualTicks().ticks();
-                for (const Note* note : chord->notes()) {
-                    bitsByWindowTick[segWindowTick] |= static_cast<uint16_t>(1u << (note->ppitch() % 12));
-                    recordPedalTailSpan(si, noteEndTick, note);
-                }
-            }
-        }
-    }
-
-    windows.reserve(bitsByWindowTick.size());
-    for (const auto& entry : bitsByWindowTick) {
-        if (entry.second == 0) {
-            continue;
-        }
-        windows.push_back({ Fraction::fromTicks(entry.first), entry.second });
-    }
-
-    if (windows.empty()) {
-        return { startTick };
-    }
-
-    std::vector<Fraction> boundaries;
-    boundaries.push_back(startTick);
-
-    uint16_t previousBits = windows[0].bits;
-    for (size_t i = 1; i < windows.size(); ++i) {
-        const uint16_t bits = windows[i].bits;
-        const uint16_t intersection = previousBits & bits;
-        const uint16_t unionBits = previousBits | bits;
-        const int intersectionCount = popcount16(intersection);
-        const int unionCount = popcount16(unionBits);
-        const double distance = (unionCount > 0)
-            ? (1.0 - static_cast<double>(intersectionCount) / unionCount)
-            : 0.0;
-
-        if (distance >= prefs.harmonicBoundaryJaccardThreshold) {
-            boundaries.push_back(windows[i].tick);
-            previousBits = bits;
-        } else {
-            previousBits = unionBits;
-        }
-    }
-
-    return boundaries;
-}
-
-// Pass 2b: bass-movement sub-boundary detection (local copy; canonical in notationcomposingbridgehelpers.cpp).
-// Within a coarse Jaccard region, scans onset-only notes and fires a sub-boundary
-// whenever the bass pitch class changes from the last-accepted-boundary bass.
-// ANY bass PC change fires; downstream chord analysis handles passing tones.
-static std::vector<Fraction> detectBassMovementSubBoundaries(
-    const Score* score,
-    const Fraction& startTick,
-    const Fraction& endTick,
-    const std::set<size_t>& excludeStaves,
-    int minGapTicks = 2 * Constants::DIVISION)
-{
-    std::vector<Fraction> subBoundaries;
-    if (!score || endTick <= startTick) {
-        return subBoundaries;
-    }
-
-    const Segment* firstSeg = score->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (!firstSeg) {
-        return subBoundaries;
-    }
-
-    struct BassOnset {
-        Fraction tick;
-        int bassPC = -1;
-    };
-    std::vector<BassOnset> onsets;
-
-    for (const Segment* s = firstSeg;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-
-        const int segTick = s->tick().ticks();
-        int lowestPitch = std::numeric_limits<int>::max();
-        int lowestPC    = -1;
-
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(score, si)) {
-                continue;
-            }
-            for (voice_idx_t v = 0; v < VOICES; ++v) {
-                const EngravingItem* e = s->element(staff2track(si, v));
-                if (!e || !e->isChord()) {
-                    continue;
-                }
-                const Chord* chord = toChord(e);
-                if (!chord || chord->isGrace()) {
-                    continue;
-                }
-                // Onset-only: skip notes sustained from a previous tick.
-                if (chord->tick().ticks() != segTick) {
-                    continue;
-                }
-                for (const Note* n : chord->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-                    const int pitch = n->ppitch();
-                    if (pitch < lowestPitch) {
-                        lowestPitch = pitch;
-                        lowestPC    = pitch % 12;
-                    }
-                }
-            }
-        }
-
-        if (lowestPC >= 0) {
-            onsets.push_back({ s->tick(), lowestPC });
-        }
-    }
-
-    if (onsets.empty()) {
-        return subBoundaries;
-    }
-
-    int  lastBoundaryBassPC   = onsets[0].bassPC;
-    Fraction lastBoundaryTick = startTick;
-
-    for (size_t i = 1; i < onsets.size(); ++i) {
-        const int curPC    = onsets[i].bassPC;
-        const int gapTicks = (onsets[i].tick - lastBoundaryTick).ticks();
-        if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {
-            subBoundaries.push_back(onsets[i].tick);
-            lastBoundaryTick   = onsets[i].tick;
-            lastBoundaryBassPC = curPC;
-        }
-    }
-
-    return subBoundaries;
-}
-
-struct SoundingNote {
-    int ppitch = 0;
-    int tpc = -1;
-};
-
-static void collectSoundingAt(const Score* score,
-                              const Segment* anchorSegment,
-                              const std::set<size_t>& excludeStaves,
-                              std::vector<SoundingNote>& out)
-{
-    if (!score || !anchorSegment) {
-        return;
-    }
-
-    const Fraction anchorTick = anchorSegment->tick();
-
-    auto collectChordRest = [&](const Segment* segment, const ChordRest* chordRest) {
-        if (!chordRest || !chordRest->isChord() || chordRest->isGrace()) {
-            return;
-        }
-        if (segment->tick() < anchorTick) {
-            const Fraction noteEnd = segment->tick() + toChord(chordRest)->actualTicks();
-            if (noteEnd <= anchorTick) {
-                return;
-            }
-        }
-        for (const Note* note : toChord(chordRest)->notes()) {
-            if (!note->play() || !note->visible()) {
-                continue;
-            }
-            out.push_back({ note->ppitch(), note->tpc() });
-        }
-    };
-
-    for (size_t staffIndex = 0; staffIndex < score->nstaves(); ++staffIndex) {
-        if (excludeStaves.count(staffIndex) || !staffIsEligible(score, staffIndex, anchorTick)) {
-            continue;
-        }
-        for (voice_idx_t voice = 0; voice < VOICES; ++voice) {
-            collectChordRest(anchorSegment,
-                             anchorSegment->cr(static_cast<track_idx_t>(staffIndex) * VOICES + voice));
-        }
-    }
-
-    const Fraction backLimit = anchorTick - Fraction(4, 1);
-    for (const Segment* segment = anchorSegment->prev1(SegmentType::ChordRest);
-         segment && segment->tick() >= backLimit;
-         segment = segment->prev1(SegmentType::ChordRest)) {
-        for (size_t staffIndex = 0; staffIndex < score->nstaves(); ++staffIndex) {
-            if (excludeStaves.count(staffIndex) || !staffIsEligible(score, staffIndex, anchorTick)) {
-                continue;
-            }
-            for (voice_idx_t voice = 0; voice < VOICES; ++voice) {
-                collectChordRest(segment,
-                                 segment->cr(static_cast<track_idx_t>(staffIndex) * VOICES + voice));
-            }
-        }
-    }
-}
-
-static std::vector<ChordAnalysisTone> buildTones(const std::vector<SoundingNote>& sounding)
-{
-    int lowestPitch = std::numeric_limits<int>::max();
-    for (const auto& soundingNote : sounding) {
-        lowestPitch = std::min(lowestPitch, soundingNote.ppitch);
-    }
-
-    std::vector<ChordAnalysisTone> tones;
-    tones.reserve(sounding.size());
-    for (const auto& soundingNote : sounding) {
-        ChordAnalysisTone tone;
-        tone.pitch = soundingNote.ppitch;
-        tone.tpc = soundingNote.tpc;
-        tone.isBass = (soundingNote.ppitch == lowestPitch);
-        tones.push_back(tone);
-    }
-    return tones;
-}
-
-static ChordTemporalContext findTemporalContext(
-    const Score* score,
-    const Segment* segment,
-    const std::set<size_t>& excludeStaves,
-    int keyFifths,
-    analysis::KeySigMode keyMode,
-    int currentBassPc)
-{
-    ChordTemporalContext temporalContext;
-    if (!score || !segment) {
-        return temporalContext;
-    }
-
-    const Fraction tick = segment->tick();
-    const auto chordAnalyzer = analysis::ChordAnalyzerFactory::create();
-
-    for (const Segment* previousSegment = segment->prev1(SegmentType::ChordRest);
-         previousSegment != nullptr;
-         previousSegment = previousSegment->prev1(SegmentType::ChordRest)) {
-        bool hasAttacks = false;
-        for (size_t staffIndex = 0; staffIndex < score->nstaves() && !hasAttacks; ++staffIndex) {
-            if (excludeStaves.count(staffIndex) || !staffIsEligible(score, staffIndex, tick)) {
-                continue;
-            }
-            for (int voice = 0; voice < VOICES && !hasAttacks; ++voice) {
-                const ChordRest* chordRest = previousSegment->cr(
-                    static_cast<track_idx_t>(staffIndex) * VOICES + voice);
-                if (chordRest && chordRest->isChord() && !chordRest->isGrace()) {
-                    hasAttacks = true;
-                }
-            }
-        }
-        if (!hasAttacks) {
-            continue;
-        }
-
-        std::vector<SoundingNote> previousSounding;
-        collectSoundingAt(score, previousSegment, excludeStaves, previousSounding);
-        if (!previousSounding.empty()) {
-            const auto previousTones = buildTones(previousSounding);
-            const auto previousResults = chordAnalyzer->analyzeChord(previousTones, keyFifths, keyMode);
-            if (!previousResults.empty()) {
-                temporalContext.previousRootPc = previousResults.front().identity.rootPc;
-                temporalContext.previousQuality = previousResults.front().identity.quality;
-                temporalContext.previousBassPc = previousResults.front().identity.bassPc;
-            }
-        }
-        break;
-    }
-
-    if (currentBassPc != -1 && temporalContext.previousBassPc != -1) {
-        temporalContext.bassIsStepwiseFromPrevious = isDiatonicStep(
-            temporalContext.previousBassPc, currentBassPc);
-    }
-
-    return temporalContext;
-}
 
 using mu::composing::PlacedRegion;
 using mu::composing::HarmonicSegmenterCallbacks;
@@ -1656,14 +730,13 @@ static std::vector<AnalyzedRegion> analyzeScore(
     const auto initialKey = inferLocalKey(score, refStaff, excludeStaves, startTick, nullptr, keyPrefs)[0];
     const auto chordAnalyzer = analysis::ChordAnalyzerFactory::create();
 
-    // Iter 54: switch to greedy-expand segmentation (Task #62).
-    // detectHarmonicBoundariesJaccard is deprecated and retained in this file for reference.
+    // Iter 54: greedy-expand segmentation (Task #62).
     HarmonicSegmenterCallbacks segCallbacks;
     segCallbacks.staffIsEligible = [score](size_t staffIdx) {
         return staffIsEligible(score, staffIdx);
     };
     segCallbacks.collectRegionTones = [score, &excludeStaves](int s, int e) {
-        return collectRegionTones(score, s, e, excludeStaves);
+        return collectRegionTones(score, s, e, excludeStaves, -1, true);
     };
     auto greedyRegions = greedyExpandSegmentation(
         score, startTick, endTick, excludeStaves, chordPrefs,
@@ -1718,7 +791,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
             const int pEnd = (pi + 1 < sortedParentTicks.size())
                              ? sortedParentTicks[pi + 1] : endTick.ticks();
             const auto pTones = collectRegionTones(
-                score, pStart, pEnd, excludeStaves, pStart);
+                score, pStart, pEnd, excludeStaves, pStart, true);
             int pBassPc = -1;
             for (const auto& t : pTones) {
                 if (t.isBass) { pBassPc = ((t.pitch % 12) + 12) % 12; break; }
@@ -1733,7 +806,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
     // the same {C,D,F,G,Bb} pitch-class set).  ANY bass PC change fires; downstream
     // chord analysis (bassPassingToneMinWeightFraction) handles passing tones.
     {
-        static constexpr int kPass2bMinRegionTicks = 4 * Constants::DIVISION;
+        constexpr int kPass2bMinRegionTicks = shv::kPass2bMinRegionTicks;
         std::vector<Fraction> expandedTicks;
         expandedTicks.reserve(boundaryTicks.size() * 2);
         for (size_t bi = 0; bi < boundaryTicks.size(); ++bi) {
@@ -1781,7 +854,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
                                         regionStart.ticks(),
                                         regionEnd.ticks(),
                                         excludeStaves,
-                                        parentStartTick);
+                                        parentStartTick,
+                                        true);
         if (tones.empty()) {
             continue;
         }
@@ -1833,7 +907,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
                                                       nextRegionStart.ticks(),
                                                       nextRegionEnd.ticks(),
                                                       excludeStaves,
-                                                      nextParentStartTick);
+                                                      nextParentStartTick,
+                                                      true);
             for (const auto& tone : nextTones) {
                 if (tone.isBass) {
                     nextBassPc = tone.pitch % 12;
@@ -1931,7 +1006,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         return {};
     }
 
-    const int minRegionTicks = Constants::DIVISION;
+    constexpr int minRegionTicks = shv::kMinRegionTicks;
     std::vector<AnalyzedRegion> filtered;
     filtered.reserve(result.size());
     filtered.push_back(std::move(result[0]));

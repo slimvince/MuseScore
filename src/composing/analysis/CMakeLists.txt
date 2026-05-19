@@ -29,6 +29,8 @@ target_sources(composing_analysis PRIVATE
     # key/ — key and mode analysis
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
 
     # region/ — harmonic region types
     ${CMAKE_CURRENT_LIST_DIR}/region/harmonicrhythm.h
@@ -36,4 +38,9 @@ target_sources(composing_analysis PRIVATE
     # harmony/ — region-level harmonic segmentation (greedy-expand, Iter 67)
     ${CMAKE_CURRENT_LIST_DIR}/harmony/harmonicsegmenter.h
     ${CMAKE_CURRENT_LIST_DIR}/harmony/harmonicsegmenter.cpp
+
+    # scoreharvest/ — shared score-walking helpers used by both the notation
+    # bridge and tools/batch_analyze.cpp. See docs/duplication_audit.md §5.8.
+    ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.h
+    ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.cpp
 )

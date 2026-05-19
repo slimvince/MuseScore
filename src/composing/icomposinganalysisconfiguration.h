@@ -25,49 +25,10 @@
 #include <vector>
 #include "modularity/imoduleinterface.h"
 #include "async/notification.h"
-#include "composing/intonation/tuning_system.h"  // TuningMode
+#include "composing/analysis/key/modepriorpresets.h"   // ModePriorPreset, modePriorPresets()
+#include "composing/intonation/tuning_system.h"        // TuningMode
 
 namespace mu::composing {
-
-// ── Mode prior preset ────────────────────────────────────────────────────────
-
-/// All 21 mode priors bundled under a display name.
-/// The five built-in presets are returned by IComposingAnalysisConfiguration::modePriorPresets().
-/// The "Standard" preset matches the compile-time defaults in KeyModeAnalyzerPreferences.
-struct ModePriorPreset {
-    std::string name;               ///< Display name (e.g. "Standard", "Jazz")
-
-    // Diatonic modes
-    double ionian          =  1.20;
-    double dorian          = -0.50;
-    double phrygian        = -1.50;
-    double lydian          = -1.50;
-    double mixolydian      = -0.50;
-    double aeolian         =  1.00;
-    double locrian         = -3.00;
-
-    // Melodic minor family
-    double melodicMinor    = -0.50;
-    double dorianB2        = -1.50;
-    double lydianAugmented = -2.00;
-    double lydianDominant  = -1.00;
-    double mixolydianB6    = -1.50;
-    double aeolianB5       = -2.50;
-    double altered         = -3.50;
-
-    // Harmonic minor family
-    double harmonicMinor      = -0.30;
-    double locrianSharp6      = -2.50;
-    double ionianSharp5       = -2.00;
-    double dorianSharp4       = -2.00;
-    double phrygianDominant   = -0.80;
-    double lydianSharp2       = -2.50;
-    double alteredDomBB7      = -3.50;
-};
-
-/// Returns the five built-in mode prior presets in display order:
-/// Standard, Jazz, Modal, Baroque, Contemporary.
-std::vector<ModePriorPreset> modePriorPresets();
 
 /// Settings required by the analysis bridge, context menu, and status bar.
 /// Does NOT include chord-staff (implode) output settings.

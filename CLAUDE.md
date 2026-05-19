@@ -112,4 +112,56 @@ corpora) and the JSON registries (`tools/corpus_registry.json`,
 
 The following changes have been made intentionally to fix bugs unrelated to the
 composing module. Do **not** revert them, and do not let build scripts or
-depe
+dependency updates overwrite them without explicit approval.
+
+### Windows Snap fix — `muse` submodule (applied 2026-05-14)
+
+**File:** `muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp`  
+**Function:** `calculateWindowSize()`
+
+Two lines were removed that set `ptMinTrackSize` equal to the full monitor work
+area inside the `WM_GETMINMAXINFO` handler. This told Windows the minimum
+allowed window size was the entire screen, which prevented Windows Snap from
+resizing a maximised MuseScore window into a chosen snap zone (the window
+stayed full-screen and lost its title-bar controls).
+
+The fix: `ptMaxSize` and `ptMaxPosition` are kept (they correctly constrain the
+maximised position); `ptMinTrackSize` is intentionally left unset.
+
+Upstream issue: musescore/MuseScore#25823 (related cousins: #21344, #16794).  
+Introduced by upstream commit `4ad218709` (5 Aug 2025).  
+**Do not restore the `ptMinTrackSize` lines.**
+
+## VS Code extension — bash command rules (MANDATORY, every session)
+
+The Claude Code VS Code extension (v2.1.141+) has a 15-second stall detector. If the
+API stream is silent for >15 seconds — which happens any time a bash command is running
+— the extension marks the session `idle` and hands control back to the user, even though
+CC is still running. This causes silent disconnects that are hard to detect.
+
+**Two rules that apply to every bash command, no exceptions:**
+
+**Rule 1 — Always append `; echo "exit:$?"` to any command that may return non-zero.**
+A non-zero exit code also triggers an immediate idle transition. The echo always returns 0.
+- BAD:  `./pipeline_snapshot_tests.exe --gtest_filter='*name*'`
+- GOOD: `./pipeline_snapshot_tests.exe --gtest_filter='*name*'; echo "exit:$?"`
+- BAD:  `grep -n "pattern" file.cpp`
+- GOOD: `grep -n "pattern" file.cpp; echo "exit:$?"`
+
+**Rule 2 — Never let a single bash call produce large output.**
+Large output (thousands of lines) takes >15 seconds to process and triggers the stall
+detector. Redirect to a file and read separately.
+- BAD:  `./pipeline_snapshot_tests.exe`  (many failing tests = large output)
+- GOOD: `./pipeline_snapshot_tests.exe > /tmp/snap_out.txt 2>&1; echo "exit:$?"`
+         then `head -50 /tmp/snap_out.txt`
+- BAD:  `batch_analyze <score> --dump-regions notation`
+- GOOD: `batch_analyze <score> --dump-regions notation > /tmp/out.json; echo "exit:$?"`
+         then `head -50 /tmp/out.json`
+
+Build commands via `Start-Process` are isolated from these rules (exit code not exposed).
+
+## Conventions
+
+- American English throughout — "analyzer" not "analyser"
+- No confirmation prompts between analyse → implement → build → test steps
+- Commit only when explicitly asked

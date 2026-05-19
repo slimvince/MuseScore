@@ -758,9 +758,9 @@ unchanged.
 | `previousChordAge` | — | Reserved (not yet populated) |
 | `previousBassPc` | Both bridges | ✅ Active |
 | `bassIsStepwiseFromPrevious` | Both bridges | ✅ Active |
-| `nextRootPc` | — | Deferred (two-pass only) |
-| `nextBassPc` | — | Deferred (two-pass only) |
-| `bassIsStepwiseToNext` | — | Deferred (two-pass only) |
+| `nextRootPc` | batch (Iter 92); bridge parent-scope (Iter 95 Step 1); bridge sub-region (Iter 95 Step 2) | ✅ Active |
+| `nextBassPc` | batch + bridge parent-scope (Iter 92) | ✅ Active |
+| `bassIsStepwiseToNext` | — | Deferred |
 | `jazzMode` | Retired (69716deead) | Removed — no remaining callers after tool-side Jazz path deletion |
 
 `isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline).
@@ -891,6 +891,69 @@ contextual inversion scoring (§4.1b). It is **not** a full progression context.
 `TemporalContext` will carry the full recent progression (chord sequence, cadence history,
 secondary dominants) once secondary dominant analysis (§5.6) is implemented. Keep the
 names distinct.
+
+#### §4.1d — Joint (bass, chord) scoring bonuses (Iters 92–96)
+
+The core scoring loop in `RuleBasedChordAnalyzer::analyzeChord` enumerates
+`(bass candidate, root, template)` triples and applies a set of contextual
+bonuses layered on top of the base template score. All bonuses share three
+common gates: `jointScoringEnabled` (false on single-tick / unit-test path),
+`!prefs.explorationMode` (false during `greedyExpandSegmentation`'s internal
+boundary-exploration calls — prevents the bonus from biasing segmentation
+before the final per-region pass), and a populated `context` pointer.
+
+| Bonus | Lambda | Value | Quality gate | Extra gates | Iter |
+|-------|--------|-------|--------------|-------------|------|
+| `w_complete` | `wCompleteBonus` | +0.50 | root-position only (`bassPc == rootPc`) | `distinctPcs >= 3`, all three triad tones present above `extensionThreshold` | 92 |
+| `w_stepIn` | `wStepInBonus` | +0.10 | root-position only | `previousBassPc` moves ≤2 semitones to bass; not Power quality; m7-family guard | 94 |
+| `w_stepOut` | `wStepOutBonus` | +0.10 | root-position only | bass moves ≤2 semitones to `nextBassPc`; same guards as `w_stepIn` | 94 |
+| `w_seq` | `wSeqBonus` | +0.20 | any inversion | `nextRootPc >= 0`; `((nextRootPc - rootPc + 12) % 12) == 5` (P4-below = descending-fifth); `distinctPcs >= 4` | 95 |
+| `w_dim` | `wDimBonus` | +0.15 | Diminished or HalfDiminished only | `nextRootPc >= 0`; `((nextRootPc - rootPc + 12) % 12) == 1` (semitone resolution = leading-tone); `distinctPcs >= 4` | 96 |
+
+**`w_stepIn` / `w_stepOut` surgical guards (Iter 94):**
+
+Two additional guards beyond the root-position and Power exclusions:
+
+1. *First-inversion-m7-family guard* — if any competitor in the same `perBass`
+   block with quality in {HalfDiminished, Diminished, Minor7} sits at
+   `(candBassPc − 3) mod 12` (minor third below our bass = first-inversion
+   shape) AND scores within `kStepBudget = kWStepIn + kWStepOut + 0.01` of the
+   candidate's unbonused score, both step bonuses are suppressed. Prevents
+   `w_stepIn`/`w_stepOut` from tipping a fragile m6 root-position reading
+   (e.g. Dm6) over an equally viable first-inversion m7-family reading (e.g.
+   Bø7/D) on identical pitch evidence.
+
+2. *Power exclusion* — root+fifth-only templates are excluded outright.
+   Extending the exclusion to Suspended2/4 regressed Jazz BIR=false, so the
+   current cut is Power-only.
+
+**Parent-scope context plumbing (Iter 94):**
+
+Bridge Pass 2 / Pass 2b in `notationharmonicrhythmbridge.cpp` and the main
+analysis loop in `tools/batch_analyze.cpp` compute the predecessor / successor
+PARENT region's bass PC and override `subCtx.previousBassPc` / `subCtx.nextBassPc`
+for each sub-region call. The override happens AFTER the stepwise booleans
+(which remain sub-region-scope for passing-tone/inversion signals) and BEFORE the
+`analyzeChord` call; a post-call restore keeps the next iteration's stepwise
+boolean correct. The same pattern was applied to `nextRootPc` in Iter 95 Step 2.
+
+**`explorationMode` flag (Iter 94):**
+
+`ChordAnalyzerPreferences::explorationMode` (default `false`) is set to `true`
+by `greedyExpandSegmentation` on every internal boundary-exploration call. This
+prevents the contextual bonuses from biasing sub-region bass selection during
+segmentation, before the final per-region scoring pass.
+
+**`w_dim` gate note (Iter 96):**
+
+The `distinctPcs >= 4` gate confines `w_dim` to fully-stated dim7 chords (4 PCs)
+and rules out 3-PC sparse regions where dim-triad vs Major/Minor is a quality
+contest rather than a rotation contest. A future variant may add a rotation-only
+condition (require the current winner to also be Dim/HalfDim) to recover
+improvements on the sparse-region tier (e.g. `schumann bvo7→viio7/V`,
+`chorale_003 Am→G#dim`) that the `distinctPcs >= 4` gate currently suppresses.
+
+---
 
 #### Design boundary — vertical sonority vs functional/contextual harmony
 

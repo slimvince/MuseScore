@@ -128,12 +128,18 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
 ///     startTick so onset flags remain meaningful at full-region scope
 ///     (Iter 93). Tones attacking mid-parent no longer look like beat-onset
 ///     bass candidates within the sub-region's narrow window.
+/// `excludeLookAheadOnDenseStart`: when true and ≥3 distinct pitch classes are
+///   already sounding at the region start tick, notes whose onset is strictly
+///   after startTick are excluded from chord inference.  This was the batch
+///   pipeline's legacy behavior; the bridge always leaves this false (default).
+///   Set to false for both paths unless A/B comparison shows benefit.
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTick,
                    int endTick,
                    const std::set<size_t>& excludeStaves,
-                   int parentStartTick = -1);
+                   int parentStartTick = -1,
+                   bool excludeLookAheadOnDenseStart = false);
 
 /// Pass 2: onset-only sub-boundary detection within a coarse Jaccard region.
 /// Collects only notes whose start tick equals the segment tick (no sustained

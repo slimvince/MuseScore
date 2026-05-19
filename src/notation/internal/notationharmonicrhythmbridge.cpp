@@ -47,6 +47,7 @@
 #include "composing/analysis/harmony/harmonicsegmenter.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
@@ -145,7 +146,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
 
     // Shared helpers used by both code paths.
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
-    static constexpr int kMinRegionTicks = Constants::DIVISION;  // 1 quarter note
+    constexpr int kMinRegionTicks = mu::composing::analysis::scoreharvest::kMinRegionTicks;
 
     // Iter 75 — sparse-texture analysis preferences for the main Pass 1 loop.
     //
@@ -637,7 +638,7 @@ std::vector<mu::composing::analysis::HarmonicRegion> analyzeHarmonicRhythm(
         // suppresses passing tones during chord analysis.
         // Iterates until no new splits are found (up to kMaxBassMovementPasses).
         if (granularity != HarmonicRegionGranularity::PreserveAllChanges && !regions.empty()) {
-            static constexpr int kPass2bMinRegionTicks = 4 * Constants::DIVISION;
+            constexpr int kPass2bMinRegionTicks = mu::composing::analysis::scoreharvest::kPass2bMinRegionTicks;
             static constexpr int kMaxBassMovementPasses = 8;
 
             bool anyNewSplit = true;

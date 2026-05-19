@@ -1952,6 +1952,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         int rootPc;
         ChordQuality quality;
         int tiePriority;  // template index in the array above; lower = preferred on equal score
+        double wDimDelta; // Iter 97a-v3 — w_dim bonus applied to score (for post-bonus quality guard)
     };
 
     // Iter 92 — joint (bass, chord) scoring.
@@ -2175,45 +2176,37 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     std::vector<RawCandidate> rawCandidates;
     rawCandidates.reserve(12 * templates.size());
     {
-        double globalBestScore = -std::numeric_limits<double>::infinity();
-        std::vector<RawCandidate> bestPerBassCandidates;
-        size_t winnerIdx = 0;
+        // Iter 97a-v3 — post-bonus quality guard for w_dim.
+        //
+        // Invariant: wDimBonus should only change which Dim chord wins, never
+        // change what quality the winner is.  If after applying the bonus the
+        // global winner is not Dim/HalfDim, the bonus has caused cross-bass
+        // contamination (a Dim triple under bass B1 boosted enough that B1
+        // wins the global bass, but B1's own best candidate is Minor) and must
+        // be suppressed.  Prior alpha attempts that guarded on the pre-bonus
+        // global leader missed this case because the contamination is observable
+        // only at the post-bonus winner level.
+        //
+        // Implementation: maintain TWO parallel global trackings across the bass
+        // loop — one with wDim included in cand.score, one without.  After the
+        // loop, inspect the with-wDim global winner's quality.  If it is Dim or
+        // HalfDim, accept the with-wDim result; otherwise fall back to the
+        // without-wDim result.  Pass B (step bonus + surgical m7-family guard)
+        // is applied independently to both score variants — wDim can lift a
+        // Dim/HalfDim competitor into the kStepBudget blocking band, so the
+        // without-wDim variant must run Pass B over its own scores to be a true
+        // reflection of "what we'd get if wDim never fired".
+        double globalBestScoreWith = -std::numeric_limits<double>::infinity();
+        double globalBestScoreWithout = -std::numeric_limits<double>::infinity();
+        std::vector<RawCandidate> bestPerBassWith;
+        std::vector<RawCandidate> bestPerBassWithout;
+        size_t winnerIdxWith = 0;
+        size_t winnerIdxWithout = 0;
         constexpr double kStepBudget = kWStepIn + kWStepOut + 0.01;
-        for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
-            const int candBassPc = bassCandidates[bi].pc;
-            std::vector<RawCandidate> perBass;
-            perBass.reserve(12 * templates.size());
 
-            // Pass A — unbonused scores.
-            for (int rootPc = 0; rootPc < 12; ++rootPc) {
-                for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
-                    const TemplateDef& tpl = templates[tplIdx];
-                    const double bassBonus = appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
-                    const double basisDep =
-                        nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
-                        + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
-                                                         distinctPcs, pcWeight, prefs, context);
-                    double score = basisIndepMatrix[rootPc][tplIdx] + basisDep;
-                    score *= complexityFactorMatrix[rootPc][tplIdx];
-                    score *= augFactorMatrix[rootPc][tplIdx];
-                    score += wCompleteBonus(tpl, rootPc, candBassPc);
-                    score += wSeqBonus(rootPc);
-                    score += wDimBonus(rootPc, tpl.quality);
-
-                    perBass.push_back({ score, bassBonus, rootPc, tpl.quality,
-                                        static_cast<int>(tplIdx) });
-                }
-            }
-
-            // Pass B — step bonus with surgical first-inversion-m7-family guard.
-            // Power-quality candidates are excluded outright: a root+fifth-only
-            // template gaining +0.20 from stepwise bass motion will tip past a
-            // viable triad reading in sparse Jazz tonic-on-strong-beat contexts
-            // (5 of the 6 corrected-guard Jazz BIR=true regressions were
-            // `[Tonic]5` Power reads vs WiR `I`/`i` triads — bwv20.7 m16b1,
-            // bwv227.1 m11b3, bwv245.40 m27b3, bwv384 m4b3, bwv422 m14b1).
-            // Extending the exclusion to Suspended2/4 caught the Sus residuals
-            // but regressed Jazz BIR=false (14 → 15) — beyond hard-stop scope.
+        // Pass B factored as a lambda so it can run independently against the
+        // with-wDim and without-wDim per-bass arrays.
+        auto applyStepBonusGuard = [&](std::vector<RawCandidate>& perBass, int candBassPc) {
             const int compRootPc = ((candBassPc - 3) % 12 + 12) % 12;
             for (auto& cand : perBass) {
                 if (cand.rootPc != candBassPc) {
@@ -2251,21 +2244,99 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     cand.score += stepIn + stepOut;
                 }
             }
+        };
 
-            // Pass C — compute localBest from final scores.
-            double localBest = -std::numeric_limits<double>::infinity();
-            for (const auto& c : perBass) {
-                if (c.score > localBest) {
-                    localBest = c.score;
+        for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
+            const int candBassPc = bassCandidates[bi].pc;
+            std::vector<RawCandidate> perBassWith;
+            std::vector<RawCandidate> perBassWithout;
+            perBassWith.reserve(12 * templates.size());
+            perBassWithout.reserve(12 * templates.size());
+
+            // Pass A — build two parallel score variants. The with-wDim variant
+            // is the iteration's candidate post-bonus reading; the without-wDim
+            // variant is the pre-bonus fallback the post-bonus quality guard
+            // restores to when the bonus's post-bonus winner is not Dim/HalfDim.
+            for (int rootPc = 0; rootPc < 12; ++rootPc) {
+                for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
+                    const TemplateDef& tpl = templates[tplIdx];
+                    const double bassBonus = appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
+                    const double basisDep =
+                        nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
+                        + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
+                                                         distinctPcs, pcWeight, prefs, context);
+                    double scoreNoWDim = basisIndepMatrix[rootPc][tplIdx] + basisDep;
+                    scoreNoWDim *= complexityFactorMatrix[rootPc][tplIdx];
+                    scoreNoWDim *= augFactorMatrix[rootPc][tplIdx];
+                    scoreNoWDim += wCompleteBonus(tpl, rootPc, candBassPc);
+                    scoreNoWDim += wSeqBonus(rootPc);
+
+                    const double wDimDelta = wDimBonus(rootPc, tpl.quality);
+                    const double scoreWith = scoreNoWDim + wDimDelta;
+
+                    perBassWith.push_back({ scoreWith, bassBonus, rootPc, tpl.quality,
+                                            static_cast<int>(tplIdx), wDimDelta });
+                    perBassWithout.push_back({ scoreNoWDim, bassBonus, rootPc, tpl.quality,
+                                               static_cast<int>(tplIdx), 0.0 });
                 }
             }
-            if (localBest > globalBestScore) {
-                globalBestScore = localBest;
-                bestPerBassCandidates = std::move(perBass);
-                winnerIdx = bi;
+
+            // Pass B — step bonus with surgical first-inversion-m7-family guard.
+            // Power-quality candidates are excluded outright: a root+fifth-only
+            // template gaining +0.20 from stepwise bass motion will tip past a
+            // viable triad reading in sparse Jazz tonic-on-strong-beat contexts
+            // (5 of the 6 corrected-guard Jazz BIR=true regressions were
+            // `[Tonic]5` Power reads vs WiR `I`/`i` triads — bwv20.7 m16b1,
+            // bwv227.1 m11b3, bwv245.40 m27b3, bwv384 m4b3, bwv422 m14b1).
+            applyStepBonusGuard(perBassWith, candBassPc);
+            applyStepBonusGuard(perBassWithout, candBassPc);
+
+            // Pass C — compute localBest from final scores for each variant.
+            double localBestWith = -std::numeric_limits<double>::infinity();
+            for (const auto& c : perBassWith) {
+                if (c.score > localBestWith) {
+                    localBestWith = c.score;
+                }
+            }
+            double localBestWithout = -std::numeric_limits<double>::infinity();
+            for (const auto& c : perBassWithout) {
+                if (c.score > localBestWithout) {
+                    localBestWithout = c.score;
+                }
+            }
+            if (localBestWith > globalBestScoreWith) {
+                globalBestScoreWith = localBestWith;
+                bestPerBassWith = std::move(perBassWith);
+                winnerIdxWith = bi;
+            }
+            if (localBestWithout > globalBestScoreWithout) {
+                globalBestScoreWithout = localBestWithout;
+                bestPerBassWithout = std::move(perBassWithout);
+                winnerIdxWithout = bi;
             }
         }
-        rawCandidates = std::move(bestPerBassCandidates);
+
+        // Post-bonus quality guard: inspect the with-wDim global winner.  If it
+        // is Diminished or HalfDiminished, the bonus did its intended job
+        // (chose the correct rotation/spelling of a diminished chord); accept
+        // the with-wDim result.  Otherwise the bonus caused cross-bass
+        // contamination — discard the with-wDim result and fall back to the
+        // without-wDim result.
+        ChordQuality postBonusWinnerQuality = ChordQuality::Unknown;
+        double postBonusBestScore = -std::numeric_limits<double>::infinity();
+        for (const auto& c : bestPerBassWith) {
+            if (c.score > postBonusBestScore) {
+                postBonusBestScore = c.score;
+                postBonusWinnerQuality = c.quality;
+            }
+        }
+        const bool acceptPostBonus = (postBonusWinnerQuality == ChordQuality::Diminished
+                                      || postBonusWinnerQuality == ChordQuality::HalfDiminished);
+
+        const size_t winnerIdx = acceptPostBonus ? winnerIdxWith : winnerIdxWithout;
+        rawCandidates = acceptPostBonus
+                        ? std::move(bestPerBassWith)
+                        : std::move(bestPerBassWithout);
         if (!bassCandidates.empty()) {
             bassPc  = bassCandidates[winnerIdx].pc;
             bassTpc = bassCandidates[winnerIdx].tpc;

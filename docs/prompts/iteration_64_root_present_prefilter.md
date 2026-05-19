@@ -5,7 +5,8 @@
 **No chord symbol string parsing. No Roman numeral inference. Structured fields only.**
 
 Read `C:\s\MS\CLAUDE.md` and `C:\s\MS\build_and_test.md` first.
-Baselines: BIR=true=6, BIR=false=125. Jazz BIR=false=12.
+Baselines: BIR=true=5, BIR=false=125. Jazz BIR=false=12.
+(Commit af785da463 — Iter 65 Part A.)
 
 Build fresh before every BIR measurement. Verify binary is newer than source.
 
@@ -37,7 +38,7 @@ no parallelism to hide behind). Secondary benefit: modest corpus regen speedup
 cd C:\s\MS && python tools/analyze_inversion_errors.py
 ```
 
-The corpus is current from Iter 63. Record BIR=true and BIR=false.
+The corpus is current from Iter 65. Record BIR=true and BIR=false.
 
 ---
 
@@ -84,7 +85,7 @@ cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque \
 cd C:\s\MS && python tools/analyze_inversion_errors.py
 ```
 
-**Required**: BIR=true and BIR=false must be identical to baseline (6/125).
+**Required**: BIR=true and BIR=false must be identical to baseline (5/125).
 If any BIR change: stop, revert, report — the filter is wrong.
 
 Record the elimination fraction from the counter: skipped/total.
