@@ -29,6 +29,8 @@ target_sources(composing_analysis PRIVATE
     # key/ — key and mode analysis
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/key/keyresolver.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/key/keyresolver.h
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
 
@@ -43,4 +45,11 @@ target_sources(composing_analysis PRIVATE
     # bridge and tools/batch_analyze.cpp. See docs/duplication_audit.md §5.8.
     ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.h
     ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.cpp
+
+    # engravingbridge/ — single source of truth for the score-walking helpers
+    # shared by the notation bridge and tools/batch_analyze.cpp. Replaces the
+    # Step-3 using-declaration plumbing in batch_analyze.cpp. See
+    # docs/duplication_audit.md §§2.1-2.13 and §5.1.
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontonecollector.h
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontonecollector.cpp
 )

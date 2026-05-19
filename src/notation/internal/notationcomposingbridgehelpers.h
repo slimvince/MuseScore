@@ -35,6 +35,7 @@
 #include <vector>
 
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analyzed_section.h"
@@ -55,19 +56,15 @@ namespace mu::notation::internal {
 mu::composing::analysis::ChordSymbolFormatter::NoteSpelling scoreNoteSpelling(
     const mu::engraving::Score* score);
 
-/// A raw sounding note: playback pitch + TPC spelling.
-struct SoundingNote { int ppitch; int tpc; };
-
-/// Collect all notes sounding at anchorSeg's tick across eligible staves.
-/// Walks backward up to 4 quarter notes to catch sustained notes.
-void collectSoundingAt(const mu::engraving::Score* sc,
-                       const mu::engraving::Segment* anchorSeg,
-                       const std::set<size_t>& excludeStaves,
-                       std::vector<SoundingNote>& out);
-
-/// Convert raw sounding notes to analysis tones.  Marks the lowest pitch as bass.
-std::vector<mu::composing::analysis::ChordAnalysisTone>
-buildTones(const std::vector<SoundingNote>& sounding);
+/// SoundingNote, collectSoundingAt, and buildTones are aliases for the
+/// engravingbridge module's versions — same types, same functions — so
+/// existing callers in notation::internal continue to compile, while the
+/// implementation lives once in composing/analysis/engravingbridge/.
+/// Using-declarations (not separate overloads) avoid ADL ambiguity at call
+/// sites where SoundingNote is in scope.
+using SoundingNote = mu::composing::analysis::engravingbridge::SoundingNote;
+using mu::composing::analysis::engravingbridge::collectSoundingAt;
+using mu::composing::analysis::engravingbridge::buildTones;
 
 /// Map MuseScore's BeatType enum to a weight for key/mode analysis.
 double beatTypeToWeight(mu::engraving::BeatType bt,
@@ -79,8 +76,6 @@ mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
 
 /// Normalised metric weight [0,1] for a beat type: 1.0 = downbeat, 0.85 = stressed,
 /// 0.75 = unstressed, 0.5 = subbeat.  Matches the scale used by collectRegionTones().
-// TODO (ARCHITECTURE.md §2.10): duplicate of batch_analyze.cpp's
-// regionMetricWeightForBeatType. Move to a shared composing-module utility.
 double regionMetricWeightForBeatType(mu::engraving::BeatType bt);
 
 /// Exponential time decay: notes further from the analysis tick carry less weight.

@@ -51,16 +51,18 @@
 
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
 using mu::composing::analysis::isDiatonicStep;
-using mu::notation::internal::isChordTrackStaff;
-using mu::notation::internal::staffIsEligible;
 
 namespace shv = mu::composing::analysis::scoreharvest;
+namespace ebr = mu::composing::analysis::engravingbridge;
+namespace kr  = mu::composing::analysis::keyresolver;
 
 namespace mu::notation::internal {
 
@@ -353,80 +355,16 @@ void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::Ana
 
 } // namespace
 
-void collectSoundingAt(const mu::engraving::Score* sc,
-                       const mu::engraving::Segment* anchorSeg,
-                       const std::set<size_t>& excludeStaves,
-                       std::vector<SoundingNote>& out)
-{
-    using namespace mu::engraving;
-
-    const Fraction anchorTick = anchorSeg->tick();
-
-    auto collectCr = [&](const Segment* s, const ChordRest* cr) {
-        if (!cr || !cr->isChord() || cr->isGrace()) {
-            return;
-        }
-        if (s->tick() < anchorTick) {
-            const Fraction noteEnd = s->tick() + toChord(cr)->actualTicks();
-            if (noteEnd <= anchorTick) {
-                return;
-            }
-        }
-        for (const Note* n : toChord(cr)->notes()) {
-            if (!n->play() || !n->visible()) {
-                continue;  // skip silent notes and invisible tuning artifacts
-            }
-            out.push_back({ n->ppitch(), n->tpc() });
-        }
-    };
-
-    for (size_t si = 0; si < sc->nstaves(); ++si) {
-        if (excludeStaves.count(si) || !staffIsEligible(sc, si, anchorTick)) {
-            continue;
-        }
-        for (int v = 0; v < VOICES; ++v) {
-            collectCr(anchorSeg,
-                      anchorSeg->cr(static_cast<track_idx_t>(si) * VOICES + v));
-        }
-    }
-
-    const Fraction backLimit = anchorTick - Fraction(4, 1);
-    for (const Segment* s = anchorSeg->prev1(SegmentType::ChordRest);
-         s && s->tick() >= backLimit;
-         s = s->prev1(SegmentType::ChordRest)) {
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, anchorTick)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                collectCr(s, s->cr(static_cast<track_idx_t>(si) * VOICES + v));
-            }
-        }
-    }
-}
-
-std::vector<mu::composing::analysis::ChordAnalysisTone>
-buildTones(const std::vector<SoundingNote>& sounding)
-{
-    using mu::composing::analysis::ChordAnalysisTone;
-
-    int lowestPpitch = std::numeric_limits<int>::max();
-    for (const SoundingNote& sn : sounding) {
-        if (sn.ppitch < lowestPpitch) {
-            lowestPpitch = sn.ppitch;
-        }
-    }
-    std::vector<ChordAnalysisTone> tones;
-    tones.reserve(sounding.size());
-    for (const SoundingNote& sn : sounding) {
-        ChordAnalysisTone t;
-        t.pitch  = sn.ppitch;
-        t.tpc    = sn.tpc;
-        t.isBass = (sn.ppitch == lowestPpitch);
-        tones.push_back(t);
-    }
-    return tones;
-}
+// collectSoundingAt and buildTones are exposed via using-declarations in
+// notationcomposingbridgehelpers.h — the engravingbridge implementations are
+// the only definitions, so there is no separate notation::internal overload
+// to confuse argument-dependent lookup.
+//
+// collectPitchContext, collectRegionTones, detectOnsetSubBoundaries,
+// detectBassMovementSubBoundaries, and findTemporalContext have separate
+// notation::internal entry points so existing notation TUs keep their
+// using-declarations; each is a thin pass-through to engravingbridge.
+// See docs/duplication_audit.md §§2.1-2.13.
 
 // beatTypeToWeight, safeBeatType, regionMetricWeightForBeatType, timeDecay,
 // distinctPitchClasses are now thin pass-throughs to the shared
@@ -468,75 +406,7 @@ void collectPitchContext(const mu::engraving::Score* sc,
                          const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
                          std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx)
 {
-    using namespace mu::engraving;
-    using namespace mu::composing::analysis;
-
-    const Measure* startMeasure = sc->tick2measure(windowStart);
-    if (!startMeasure) {
-        startMeasure = sc->firstMeasure();
-    }
-    if (!startMeasure) {
-        return;
-    }
-
-    for (const Segment* s = startMeasure->first(SegmentType::ChordRest);
-         s && s->tick() <= windowEnd;
-         s = s->next1(SegmentType::ChordRest)) {
-        const Fraction segTick = s->tick();
-        if (segTick < windowStart) {
-            continue;
-        }
-
-        const Measure* m = s->measure();
-        const BeatType bt = safeBeatType(m, s);
-        const double bw = beatTypeToWeight(bt, prefs);
-
-        const double beatsFromTick =
-            std::abs((segTick - tick).ticks())
-            / static_cast<double>(Constants::DIVISION);
-        const double decay = timeDecay(beatsFromTick);
-
-        const bool isLookahead = (segTick > tick);
-        const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;
-
-        struct NoteInfo { int ppitch; double durationQn; };
-        std::vector<NoteInfo> segNotes;
-        int lowestPitch = std::numeric_limits<int>::max();
-
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr
-                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-                const double durQn = cr->actualTicks().ticks()
-                                     / static_cast<double>(Constants::DIVISION);
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-                    const int pp = n->ppitch();
-                    segNotes.push_back({ pp, durQn });
-                    if (pp < lowestPitch) {
-                        lowestPitch = pp;
-                    }
-                }
-            }
-        }
-
-        for (const auto& ni : segNotes) {
-            KeyModeAnalyzer::PitchContext p;
-            p.pitch          = ni.ppitch;
-            p.durationWeight = ni.durationQn * decay * lookaheadMul;
-            p.beatWeight     = bw;
-            p.isBass         = (ni.ppitch == lowestPitch);
-            ctx.push_back(p);
-        }
-    }
+    ebr::collectPitchContext(sc, tick, windowStart, windowEnd, excludeStaves, prefs, ctx);
 }
 
 void resolveKeyAndMode(const mu::engraving::Score* sc,
@@ -549,20 +419,18 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
                        const mu::composing::analysis::KeyModeAnalysisResult* prevResult,
                        double* outScore)
 {
-    using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
-    const KeySigEvent keySig = sc->staff(staffIdx)->keySigEvent(tick);
-    const int keyFifths = static_cast<int>(keySig.concertKey());
-    outKeyFifths = keyFifths;
-
-    // ── Analyzer preferences ──────────────────────────────────────────────
+    // ── Load analyzer preferences from the bridge config ─────────────────
+    // The CLI tool (batch_analyze) configures prefs via --preset; the bridge
+    // loads them from IComposingAnalysisConfiguration so the live UI honours
+    // the user's mode-prior settings. After loading, resolution itself is
+    // identical: delegate to the shared keyresolver.
     KeyModeAnalyzerPreferences prefs;
     {
         static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
         const auto* cfg = config.get().get();
         if (cfg) {
-            // Diatonic
             prefs.modePriorIonian     = cfg->modePriorIonian();
             prefs.modePriorDorian     = cfg->modePriorDorian();
             prefs.modePriorPhrygian   = cfg->modePriorPhrygian();
@@ -570,7 +438,6 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
             prefs.modePriorMixolydian = cfg->modePriorMixolydian();
             prefs.modePriorAeolian    = cfg->modePriorAeolian();
             prefs.modePriorLocrian    = cfg->modePriorLocrian();
-            // Melodic minor family
             prefs.modePriorMelodicMinor  = cfg->modePriorMelodicMinor();
             prefs.modePriorDorianB2      = cfg->modePriorDorianB2();
             prefs.modePriorLydianAugmented = cfg->modePriorLydianAugmented();
@@ -578,7 +445,6 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
             prefs.modePriorMixolydianB6  = cfg->modePriorMixolydianB6();
             prefs.modePriorAeolianB5     = cfg->modePriorAeolianB5();
             prefs.modePriorAltered       = cfg->modePriorAltered();
-            // Harmonic minor family
             prefs.modePriorHarmonicMinor = cfg->modePriorHarmonicMinor();
             prefs.modePriorLocrianSharp6 = cfg->modePriorLocrianSharp6();
             prefs.modePriorIonianSharp5  = cfg->modePriorIonianSharp5();
@@ -589,156 +455,17 @@ void resolveKeyAndMode(const mu::engraving::Score* sc,
         }
     }
 
-    // ── Declared mode from key signature ─────────────────────────────────
-    std::optional<mu::composing::analysis::KeySigMode> declaredMode;
-    {
-        using EMode = mu::engraving::KeyMode;
-        using AMode = mu::composing::analysis::KeySigMode;
-        switch (keySig.mode()) {
-        case EMode::MAJOR:
-        case EMode::IONIAN:      declaredMode = AMode::Ionian;     break;
-        case EMode::MINOR:
-        case EMode::AEOLIAN:     declaredMode = AMode::Aeolian;    break;
-        case EMode::DORIAN:      declaredMode = AMode::Dorian;     break;
-        case EMode::PHRYGIAN:    declaredMode = AMode::Phrygian;   break;
-        case EMode::LYDIAN:      declaredMode = AMode::Lydian;     break;
-        case EMode::MIXOLYDIAN:  declaredMode = AMode::Mixolydian; break;
-        case EMode::LOCRIAN:     declaredMode = AMode::Locrian;    break;
-        default:                 declaredMode = std::nullopt;      break;
-        }
+    const auto ranked = kr::resolveKeyAndModeRanked(sc, tick, staffIdx,
+                                                    excludeStaves, prefs, prevResult);
+    // Resolver always returns ≥ 1 result.
+    const auto& chosen = ranked.front();
+    outKeyFifths  = chosen.keySignatureFifths;
+    outMode       = chosen.mode;
+    outConfidence = chosen.normalizedConfidence;
+    if (outScore) {
+        *outScore = chosen.score;
     }
-
-    // ── Fixed lookback window ─────────────────────────────────────────────
-    const Fraction lookbackDuration = Fraction(shv::LOOKBACK_BEATS, 4);
-    const Fraction windowStart = (tick > lookbackDuration)
-                                 ? tick - lookbackDuration
-                                 : Fraction(0, 1);
-
-    // ── Piece-start shortcut ──────────────────────────────────────────────
-    if (prevResult == nullptr && declaredMode.has_value()
-        && windowStart == Fraction(0, 1) && tick < lookbackDuration) {
-        const int ionianTonic = ionianTonicPcFromFifths(keyFifths);
-        const int tonicPc = (ionianTonic + keyModeTonicOffset(*declaredMode)) % 12;
-        outMode       = *declaredMode;
-        outConfidence = 0.5;
-        // Use the relative-key hysteresis margin as the piece-start anchor score so
-        // that the first analysis window must beat this threshold to override the
-        // declared key.  Returning 0.0 made the anchor too weak: any analysis
-        // score above 2.0 would immediately override the declared key.
-        if (outScore) *outScore = prefs.relativeKeyHysteresisMargin;
-        (void)tonicPc;
-        return;
-    }
-
-    // ── Dynamic lookahead loop ────────────────────────────────────────────
-    std::vector<KeyModeAnalyzer::PitchContext> ctx;
-    std::vector<KeyModeAnalysisResult> modeResults;
-
-    int lookaheadBeats = shv::LOOKAHEAD_BEATS;
-    while (true) {
-        ctx.clear();
-        const Fraction windowEnd = tick + Fraction(lookaheadBeats, 4);
-        collectPitchContext(sc, tick, windowStart, windowEnd,
-                            excludeStaves, prefs, ctx);
-
-        modeResults = KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths,
-                                                      prefs, declaredMode);
-
-        const bool confident = !modeResults.empty()
-            && modeResults.front().normalizedConfidence
-               >= prefs.dynamicLookaheadConfidenceThreshold;
-        const bool atMax = lookaheadBeats >= prefs.dynamicLookaheadMaxBeats;
-
-        if (confident || atMax) {
-            break;
-        }
-        lookaheadBeats += prefs.dynamicLookaheadStepBeats;
-    }
-
-    // Fall back to notated key signature only when pitch data is insufficient
-    if (modeResults.empty() || distinctPitchClasses(ctx) < 3) {
-        const mu::engraving::KeyMode mode = keySig.mode();
-        using CKeyMode = mu::composing::analysis::KeySigMode;
-        switch (mode) {
-        case mu::engraving::KeyMode::MINOR:
-        case mu::engraving::KeyMode::AEOLIAN:    outMode = CKeyMode::Aeolian;    break;
-        case mu::engraving::KeyMode::DORIAN:     outMode = CKeyMode::Dorian;     break;
-        case mu::engraving::KeyMode::PHRYGIAN:   outMode = CKeyMode::Phrygian;   break;
-        case mu::engraving::KeyMode::LYDIAN:     outMode = CKeyMode::Lydian;     break;
-        case mu::engraving::KeyMode::MIXOLYDIAN: outMode = CKeyMode::Mixolydian; break;
-        case mu::engraving::KeyMode::LOCRIAN:    outMode = CKeyMode::Locrian;    break;
-        default:                                 outMode = CKeyMode::Ionian;     break;
-        }
-        outConfidence = 0.0;
-        if (outScore) *outScore = 0.0;
-        return;
-    }
-
-    // ── Hysteresis ───────────────────────────────────────────────────────
-    const KeyModeAnalysisResult& top = modeResults.front();
-    if (prevResult != nullptr && top.mode != prevResult->mode) {
-        const double hysteresis = (top.keySignatureFifths == prevResult->keySignatureFifths)
-                                  ? prefs.relativeKeyHysteresisMargin
-                                  : prefs.hysteresisMargin;
-        if (top.score < prevResult->score + hysteresis) {
-            const KeyModeAnalysisResult* incumbent = nullptr;
-            for (const auto& r : modeResults) {
-                if (r.mode == prevResult->mode
-                    && r.keySignatureFifths == prevResult->keySignatureFifths) {
-                    incumbent = &r;
-                    break;
-                }
-            }
-            if (incumbent) {
-                outKeyFifths  = incumbent->keySignatureFifths;
-                outMode       = incumbent->mode;
-                outConfidence = incumbent->normalizedConfidence;
-                if (outScore) *outScore = incumbent->score;
-                return;
-            }
-        }
-    }
-
-    // ── Strong declared-mode prior ────────────────────────────────────────
-    // When the key signature carries an explicit Mode property, the composer's
-    // intent overrides note-content inference.  If the winning mode is
-    // incompatible with the declared class (e.g. G# Dorian vs declared F# Major),
-    // find the best result that IS compatible and return it instead.
-    // This path fires only when declaredMode is set (MAJOR/MINOR/specific mode).
-    if (declaredMode.has_value()) {
-        const bool topIsCompatible = (*declaredMode == KeySigMode::Ionian)
-            ? mu::composing::analysis::keyModeIsMajor(top.mode)
-            : (*declaredMode == KeySigMode::Aeolian)
-              ? !mu::composing::analysis::keyModeIsMajor(top.mode)
-              : (top.mode == *declaredMode);
-        if (!topIsCompatible) {
-            for (const auto& r : modeResults) {
-                const bool rCompatible = (*declaredMode == KeySigMode::Ionian)
-                    ? mu::composing::analysis::keyModeIsMajor(r.mode)
-                    : (*declaredMode == KeySigMode::Aeolian)
-                      ? !mu::composing::analysis::keyModeIsMajor(r.mode)
-                      : (r.mode == *declaredMode);
-                if (rCompatible) {
-                    outKeyFifths  = r.keySignatureFifths;
-                    outMode       = r.mode;
-                    outConfidence = r.normalizedConfidence;
-                    if (outScore) *outScore = r.score;
-                    return;
-                }
-            }
-        }
-    }
-
-    outKeyFifths  = top.keySignatureFifths;
-    outMode       = top.mode;
-    outConfidence = top.normalizedConfidence;
-    if (outScore) *outScore = top.score;
 }
-
-// PedalWindow and buildPedalWindowIndex moved to
-// composing/analysis/scoreharvest/metricweights.{h,cpp}.  Local alias kept
-// so existing callers in this TU continue to compile unchanged.
-using PedalWindow = mu::composing::analysis::scoreharvest::PedalWindow;
 
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
@@ -748,417 +475,10 @@ collectRegionTones(const mu::engraving::Score* sc,
                    int parentStartTickInt,
                    bool excludeLookAheadOnDenseStart)
 {
-    using namespace mu::engraving;
-    using namespace mu::composing::analysis;
-
-    if (!sc || endTickInt <= startTickInt) {
-        return {};
-    }
-
-    // Iter 93: onsetAtRegionStart is computed against parentStartTickInt so
-    // that sub-region calls (Pass 2 / Pass 2b) see the parent-scope onset
-    // truth. Default to startTickInt for parent-scope / unsplit callers.
-    if (parentStartTickInt < 0) {
-        parentStartTickInt = startTickInt;
-    }
-
-    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences;
-
-    const Fraction startTick = Fraction::fromTicks(startTickInt);
-    const Fraction endTick   = Fraction::fromTicks(endTickInt);
-    const int regionDuration = endTickInt - startTickInt;
-
-    // ── Inline beat-weight mapping ─────────────────────────────────────────
-    // Uses fixed weights — avoids dependency on KeyModeAnalyzerPreferences.
-    auto beatWeight = [](BeatType bt) -> double {
-        switch (bt) {
-        case BeatType::DOWNBEAT:            return 1.0;
-        case BeatType::SIMPLE_STRESSED:
-        case BeatType::COMPOUND_STRESSED:   return 0.85;
-        case BeatType::SIMPLE_UNSTRESSED:
-        case BeatType::COMPOUND_UNSTRESSED: return 0.75;
-        default:                            return 0.5;  // SUBBEAT / COMPOUND_SUBBEAT
-        }
-    };
-
-    // ── Per-pitch-class accumulator ────────────────────────────────────────
-    struct PcAccum {
-        double totalWeight      = 0.0;
-        int    durationInRegion = 0;
-        std::set<int> metricTicks;      // distinct attack ticks (one per segment)
-        int lowestPitch = std::numeric_limits<int>::max();
-        int tpc = -1;
-        // Iter 92: true if this PC has a TRUE forward-walk attack at startTickInt.
-        // Sustained-from-before notes do NOT set this flag (they have no attack
-        // within the region; their start-tick presence comes from the backward
-        // walk and is recorded only in metricTicks for repetition counting).
-        bool trueAttackAtStart = false;
-    };
-    PcAccum accum[12];
-
-    // voiceCountAtTick[pc][segTick] = number of voices playing pc at that tick
-    std::map<int, int> voiceCountAtTick[12];
-
-    struct PedalTailCandidate {
-        size_t staffIdx = 0;
-        int pc = 0;
-        int pitch = 0;
-        int tpc = -1;
-        int writtenEndTick = 0;
-        double attackBeatWeight = 0.0;
-    };
-
-    std::map<size_t, std::vector<PedalWindow>> pedalWindowsByStaff
-        = shv::buildPedalWindowIndex(
-            sc, startTickInt, endTickInt, excludeStaves,
-            [&](size_t si) { return staffIsEligible(sc, si, startTick); });
-    std::vector<PedalTailCandidate> pedalTailCandidates;
-
-    auto earliestPedalReleaseTick = [&](const PedalTailCandidate& candidate) -> int {
-        const auto it = pedalWindowsByStaff.find(candidate.staffIdx);
-        if (it == pedalWindowsByStaff.end()) {
-            return -1;
-        }
-
-        int pedalReleaseTick = std::numeric_limits<int>::max();
-        for (const PedalWindow& window : it->second) {
-            if (window.startTick >= candidate.writtenEndTick) {
-                break;
-            }
-            if (window.endTick <= candidate.writtenEndTick) {
-                continue;
-            }
-            pedalReleaseTick = std::min(pedalReleaseTick, window.endTick);
-        }
-
-        return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
-    };
-
-    auto recordPedalTailCandidate = [&](size_t staffIdx, int writtenEndTick, double attackBeatWeight, const Note* note) {
-        if (!note || writtenEndTick >= endTickInt || pedalWindowsByStaff.empty()) {
-            return;
-        }
-
-        if (pedalWindowsByStaff.find(staffIdx) == pedalWindowsByStaff.end()) {
-            return;
-        }
-
-        pedalTailCandidates.push_back({
-            staffIdx,
-            note->ppitch() % 12,
-            note->ppitch(),
-            note->tpc(),
-            writtenEndTick,
-            attackBeatWeight,
-        });
-    };
-
-    // ── Walk backward to catch notes sustained into the region ────────────────
-    // Notes that attacked before startTick but are still sounding at startTick
-    // must be included (e.g., a bass note held across a harmonic boundary).
-    // Walk back up to 4 quarter notes, mirroring collectSoundingAt behaviour.
-    const Fraction backLimit = startTick - Fraction(4, 1);
-
-    // Get beat weight at the region start (used for sustained notes from before).
-    auto bwAtRegionStart = [&]() -> double {
-        const Measure* m0 = sc->tick2measure(startTick);
-        if (!m0) { return 0.75; }
-        const Segment* s0 = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-        if (!s0) { return 0.75; }
-        return beatWeight(safeBeatType(m0, s0));
-    }();
-
-    const Segment* firstForward = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (firstForward) {
-        // Walk backward to collect sustained notes.
-        for (const Segment* s = firstForward->prev1(SegmentType::ChordRest);
-             s && s->tick() >= backLimit;
-             s = s->prev1(SegmentType::ChordRest)) {
-            const int segTickInt = s->tick().ticks();
-            const Measure* m = s->measure();
-            const double sustainBeatWeight = m ? beatWeight(safeBeatType(m, s)) : bwAtRegionStart;
-            for (size_t si = 0; si < sc->nstaves(); ++si) {
-                if (excludeStaves.count(si) || !staffIsEligible(sc, si, startTick)) {
-                    continue;
-                }
-                for (int v = 0; v < VOICES; ++v) {
-                    const ChordRest* cr
-                        = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                    if (!cr || !cr->isChord() || cr->isGrace()) {
-                        continue;
-                    }
-                    const int noteEnd = segTickInt + cr->actualTicks().ticks();
-                    for (const Note* n : toChord(cr)->notes()) {
-                        if (!n->play() || !n->visible()) {
-                            continue;
-                        }
-
-                        recordPedalTailCandidate(si, noteEnd, sustainBeatWeight, n);
-
-                        if (noteEnd <= startTickInt) {
-                            continue;
-                        }
-
-                        const int clippedEnd  = std::min(noteEnd, endTickInt);
-                        const int durInRegion = clippedEnd - startTickInt;
-                        if (durInRegion <= 0) {
-                            continue;
-                        }
-
-                        const double baseWeight
-                            = (static_cast<double>(durInRegion) / regionDuration) * bwAtRegionStart;
-                        const int pc = n->ppitch() % 12;
-                        PcAccum& a = accum[pc];
-                        a.totalWeight    += baseWeight;
-                        a.durationInRegion += durInRegion;
-                        a.metricTicks.insert(startTickInt);
-                        voiceCountAtTick[pc][startTickInt]++;
-                        if (n->ppitch() < a.lowestPitch) {
-                            a.lowestPitch = n->ppitch();
-                            a.tpc = n->tpc();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // ── Forward walk: collect notes attacking within [startTick, endTick) ──────
-    const Segment* seg = firstForward;
-    if (!seg) {
-        return {};
-    }
-
-    // D2: optional look-ahead exclusion when ≥3 pitch classes already sounding.
-    // When excludeLookAheadOnDenseStart=true and ≥3 distinct PCs are present at
-    // the region start (from the backward walk above plus any onset at startTick),
-    // notes whose onset is strictly after startTick are excluded.  This was the
-    // old batch behavior.  Default false = bridge behavior (accumulate all tones).
-    bool excludeLookAhead = false;
-    if (excludeLookAheadOnDenseStart) {
-        int pcsSoundingAtStart = 0;
-        for (int pc = 0; pc < 12; ++pc) {
-            if (accum[pc].totalWeight > 0.0) {
-                ++pcsSoundingAtStart;
-            }
-        }
-        // Also count PCs that attack exactly at startTickInt (not yet in accum).
-        if (seg->tick().ticks() == startTickInt) {
-            for (size_t si = 0; si < sc->nstaves(); ++si) {
-                if (excludeStaves.count(si) || !staffIsEligible(sc, si, startTick)) {
-                    continue;
-                }
-                for (int v = 0; v < VOICES; ++v) {
-                    const ChordRest* cr
-                        = seg->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                    if (!cr || !cr->isChord() || cr->isGrace()) {
-                        continue;
-                    }
-                    for (const Note* n : toChord(cr)->notes()) {
-                        if (!n->play() || !n->visible()) {
-                            continue;
-                        }
-                        const int pc = n->ppitch() % 12;
-                        if (accum[pc].totalWeight == 0.0) {
-                            ++pcsSoundingAtStart;
-                        }
-                    }
-                }
-            }
-        }
-        excludeLookAhead = (pcsSoundingAtStart >= 3);
-    }
-
-    for (const Segment* s = seg;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-        const Measure* m = s->measure();
-        if (!m) {
-            continue;
-        }
-
-        const int segTickInt = s->tick().ticks();
-        const BeatType bt = safeBeatType(m, s);
-        const double bw = beatWeight(bt);
-
-        // D2: skip look-ahead notes when flag is set and region start is dense.
-        if (excludeLookAhead && segTickInt > startTickInt) {
-            continue;
-        }
-
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr
-                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-
-                // Clip note duration to the region boundary.
-                const int noteEnd      = segTickInt + cr->actualTicks().ticks();
-                const int clippedEnd   = std::min(noteEnd, endTickInt);
-                const int durInRegion  = clippedEnd - segTickInt;
-                if (durInRegion <= 0) {
-                    continue;
-                }
-
-                const double baseWeight
-                    = (static_cast<double>(durInRegion) / regionDuration) * bw;
-
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-
-                    recordPedalTailCandidate(si, noteEnd, bw, n);
-
-                    const int pc = n->ppitch() % 12;
-                    PcAccum& a = accum[pc];
-                    a.totalWeight    += baseWeight;
-                    a.durationInRegion += durInRegion;
-                    a.metricTicks.insert(segTickInt);
-                    voiceCountAtTick[pc][segTickInt]++;
-                    if (segTickInt == parentStartTickInt) {
-                        a.trueAttackAtStart = true;
-                    }
-
-                    if (n->ppitch() < a.lowestPitch) {
-                        a.lowestPitch = n->ppitch();
-                        a.tpc = n->tpc();
-                    }
-                }
-            }
-        }
-    }
-
-    // ── Pass 2: repetition boost ───────────────────────────────────────────
-    // Reward pitch classes that recur at multiple metric positions.
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-        const int distinct = static_cast<int>(a.metricTicks.size());
-        if (distinct > 1) {
-            a.totalWeight *= (1.0 + 0.3 * (distinct - 1));
-        }
-    }
-
-    // ── Pass 3: cross-voice boost ──────────────────────────────────────────
-    // Reward pitch classes reinforced by multiple simultaneous voices.
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-        int maxVoices = 0;
-        for (const auto& kv : voiceCountAtTick[pc]) {
-            maxVoices = std::max(maxVoices, kv.second);
-        }
-        if (maxVoices > 1) {
-            a.totalWeight *= 1.5;
-        }
-    }
-
-    // ── Pass 4: discounted sustain-pedal tails ───────────────────────────
-    // Add a smaller continuation weight after written note-off when an
-    // explicit sustain pedal is still active on the same staff.
-    if (prefs.pedalTailWeightMultiplier > 0.0) {
-        for (const PedalTailCandidate& candidate : pedalTailCandidates) {
-            const int pedalReleaseTick = earliestPedalReleaseTick(candidate);
-            if (pedalReleaseTick < 0) {
-                continue;
-            }
-
-            const int tailStartTick = std::max(candidate.writtenEndTick, startTickInt);
-            const int tailEndTick = std::min(pedalReleaseTick, endTickInt);
-            const int tailDuration = tailEndTick - tailStartTick;
-            if (tailDuration <= 0) {
-                continue;
-            }
-
-            PcAccum& a = accum[candidate.pc];
-            a.totalWeight += (static_cast<double>(tailDuration) / regionDuration)
-                             * candidate.attackBeatWeight
-                             * prefs.pedalTailWeightMultiplier;
-            a.durationInRegion += tailDuration;
-            if (candidate.pitch < a.lowestPitch) {
-                a.lowestPitch = candidate.pitch;
-                a.tpc = candidate.tpc;
-            }
-        }
-    }
-
-    // ── Normalize ──────────────────────────────────────────────────────────
-    double totalWeight = 0.0;
-    for (int pc = 0; pc < 12; ++pc) {
-        totalWeight += accum[pc].totalWeight;
-    }
-    if (totalWeight == 0.0) {
-        return {};
-    }
-
-    // Bass = lowest MIDI pitch among PCs with sufficient accumulated weight.
-    // A PC whose weight is below bassPassingToneMinWeightFraction × totalWeight is
-    // treated as a chromatic passing tone or ornament and skipped for bass selection.
-    // Falls back to the absolute lowest pitch if no PC meets the threshold.
-    const double bassMinWeight = totalWeight * prefs.bassPassingToneMinWeightFraction;
-    int bassPitch = std::numeric_limits<int>::max();
-    for (int pc = 0; pc < 12; ++pc) {
-        if (accum[pc].totalWeight >= bassMinWeight && accum[pc].lowestPitch < bassPitch) {
-            bassPitch = accum[pc].lowestPitch;
-        }
-    }
-    // Fallback: if the threshold filtered everything (e.g. very sparse chord),
-    // use the absolute lowest pitch.
-    if (bassPitch == std::numeric_limits<int>::max()) {
-        for (int pc = 0; pc < 12; ++pc) {
-            if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
-                bassPitch = accum[pc].lowestPitch;
-            }
-        }
-    }
-    const int bassPC = (bassPitch < std::numeric_limits<int>::max())
-                       ? (bassPitch % 12) : -1;
-
-    // ── Build tones ────────────────────────────────────────────────────────
-    std::vector<ChordAnalysisTone> tones;
-    for (int pc = 0; pc < 12; ++pc) {
-        PcAccum& a = accum[pc];
-        if (a.totalWeight == 0.0) {
-            continue;
-        }
-
-        int maxVoices = 0;
-        for (const auto& kv : voiceCountAtTick[pc]) {
-            maxVoices = std::max(maxVoices, kv.second);
-        }
-
-        ChordAnalysisTone t;
-        t.pitch                  = a.lowestPitch;
-        t.tpc                    = a.tpc;
-        t.weight                 = a.totalWeight / totalWeight;
-        t.isBass                 = (pc == bassPC);
-        t.durationInRegion       = a.durationInRegion;
-        t.distinctMetricPositions = static_cast<int>(a.metricTicks.size());
-        t.simultaneousVoiceCount = maxVoices;
-        t.onsetAtRegionStart     = a.trueAttackAtStart;
-        tones.push_back(t);
-    }
-
-    return tones;
+    return ebr::collectRegionTones(sc, startTickInt, endTickInt, excludeStaves,
+                                   parentStartTickInt, excludeLookAheadOnDenseStart);
 }
 
-// ── detectOnsetSubBoundaries ─────────────────────────────────────────────────
-// Pass 2: within a coarse Jaccard region, scan for sub-boundaries using
-// onset-only pitch class sets.  An onset-only set contains only pitch classes
-// whose start tick falls exactly at the current segment tick — no sustained
-// notes, no arpeggiated leftovers.  Because onset sets are small and clean,
-// a low threshold (default 0.25) catches genuine chord changes that sustained
-// windows blur together.
 std::vector<mu::engraving::Fraction>
 detectOnsetSubBoundaries(const mu::engraving::Score* sc,
                          const mu::engraving::Fraction& startTick,
@@ -1166,108 +486,9 @@ detectOnsetSubBoundaries(const mu::engraving::Score* sc,
                          const std::set<size_t>& excludeStaves,
                          double threshold)
 {
-    using namespace mu::engraving;
-
-    auto popcount16 = [](uint16_t x) -> int {
-        int n = 0;
-        while (x) { n += x & 1; x >>= 1; }
-        return n;
-    };
-
-    std::vector<Fraction> subBoundaries;
-
-    const Segment* firstSeg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (!firstSeg) {
-        return subBoundaries;
-    }
-
-    // Build onset-only bitset at each ChordRest segment tick.
-    struct OnsetWindow {
-        Fraction tick;
-        uint16_t bits = 0;
-    };
-    std::vector<OnsetWindow> onsets;
-
-    for (const Segment* s = firstSeg;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-
-        uint16_t bits = 0;
-        const int segTick = s->tick().ticks();
-
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-                // Onset-only: only notes whose start tick equals this segment tick.
-                if (cr->tick().ticks() != segTick) {
-                    continue;
-                }
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-                    bits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
-                }
-            }
-        }
-
-        if (bits != 0) {
-            onsets.push_back({ s->tick(), bits });
-        }
-    }
-
-    if (onsets.size() < 2) {
-        return subBoundaries;
-    }
-
-    // Minimum gap between sub-boundaries: 2 quarter notes (half note).
-    // This prevents threshold=0.25 from inserting boundaries at every beat in
-    // arpeggiated passages.  The main loop calls resolveKeyAndMode per region,
-    // so too many sub-boundaries cause quadratic slowdown on long scores.
-    const int minGapTicks = 2 * Constants::DIVISION;
-
-    // Compare each onset set to the previous boundary's onset set; insert a sub-boundary
-    // when the Jaccard distance exceeds the threshold AND the gap since the last accepted
-    // boundary is at least one quarter note.
-    uint16_t prevBits = onsets[0].bits;
-    Fraction lastBoundaryTick = startTick;
-
-    for (size_t i = 1; i < onsets.size(); ++i) {
-        const uint16_t bits     = onsets[i].bits;
-        const uint16_t inter    = prevBits & bits;
-        const uint16_t uni      = prevBits | bits;
-        const int interCount    = popcount16(inter);
-        const int uniCount      = popcount16(uni);
-        const double jaccard    = (uniCount > 0)
-                                  ? (1.0 - static_cast<double>(interCount) / uniCount)
-                                  : 0.0;
-
-        const int gapTicks = (onsets[i].tick - lastBoundaryTick).ticks();
-        if (jaccard >= threshold && gapTicks >= minGapTicks) {
-            subBoundaries.push_back(onsets[i].tick);
-            lastBoundaryTick = onsets[i].tick;
-            prevBits = bits;
-        }
-        // No accumulation for Pass 2 — each onset is a fresh snapshot.
-    }
-
-    return subBoundaries;
+    return ebr::detectOnsetSubBoundaries(sc, startTick, endTick, excludeStaves, threshold);
 }
 
-// ── detectBassMovementSubBoundaries ─────────────────────────────────────────
-// Pass 2b: within a coarse Jaccard region, scan for sub-boundaries driven by
-// bass note changes.  At each ChordRest segment tick we collect onset-only notes
-// (notes whose start tick == segment tick) and find the lowest-pitched one as the
-// current bass.  When the bass pitch class changes from the last-accepted-boundary
-// bass, AND the gap since the last boundary is >= minGapTicks, we fire.
-// ANY bass PC change fires — no minimum interval threshold.  Downstream chord
-// analysis (bassPassingToneMinWeightFraction) handles passing-tone suppression.
 std::vector<mu::engraving::Fraction>
 detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
                                 const mu::engraving::Fraction& startTick,
@@ -1275,81 +496,7 @@ detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
                                 const std::set<size_t>& excludeStaves,
                                 int minGapTicks)
 {
-    using namespace mu::engraving;
-
-    std::vector<Fraction> subBoundaries;
-
-    const Segment* firstSeg = sc->tick2segment(startTick, true, SegmentType::ChordRest);
-    if (!firstSeg) {
-        return subBoundaries;
-    }
-
-    // Collect onset-only bass pitch class at each ChordRest segment tick.
-    struct BassOnset {
-        Fraction tick;
-        int bassPC = -1;   // -1 = no onset bass found at this tick
-    };
-    std::vector<BassOnset> onsets;
-
-    for (const Segment* s = firstSeg;
-         s && s->tick() < endTick;
-         s = s->next1(SegmentType::ChordRest)) {
-
-        const int segTick = s->tick().ticks();
-        int lowestPitch = std::numeric_limits<int>::max();
-        int lowestPC    = -1;
-
-        for (size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (!cr || !cr->isChord() || cr->isGrace()) {
-                    continue;
-                }
-                // Onset-only: skip notes sustained from a previous tick.
-                if (cr->tick().ticks() != segTick) {
-                    continue;
-                }
-                for (const Note* n : toChord(cr)->notes()) {
-                    if (!n->play() || !n->visible()) {
-                        continue;
-                    }
-                    const int pitch = n->ppitch();
-                    if (pitch < lowestPitch) {
-                        lowestPitch = pitch;
-                        lowestPC    = pitch % 12;
-                    }
-                }
-            }
-        }
-
-        if (lowestPC >= 0) {
-            onsets.push_back({ s->tick(), lowestPC });
-        }
-    }
-
-    if (onsets.empty()) {
-        return subBoundaries;
-    }
-
-    // Track bass PC at the last accepted boundary (initially = bass at startTick).
-    int  lastBoundaryBassPC  = onsets[0].bassPC;
-    Fraction lastBoundaryTick = startTick;
-
-    for (size_t i = 1; i < onsets.size(); ++i) {
-        const int    curPC     = onsets[i].bassPC;
-        const int    gapTicks  = (onsets[i].tick - lastBoundaryTick).ticks();
-
-        if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {
-            subBoundaries.push_back(onsets[i].tick);
-            lastBoundaryTick   = onsets[i].tick;
-            lastBoundaryBassPC = curPC;
-        }
-    }
-
-    return subBoundaries;
+    return ebr::detectBassMovementSubBoundaries(sc, startTick, endTick, excludeStaves, minGapTicks);
 }
 
 mu::composing::analysis::ChordTemporalContext
@@ -1360,58 +507,7 @@ findTemporalContext(const mu::engraving::Score* sc,
                     mu::composing::analysis::KeySigMode keyMode,
                     int currentBassPc)
 {
-    using namespace mu::engraving;
-    using namespace mu::composing::analysis;
-
-    ChordTemporalContext temporalCtx;
-    const Fraction tick = seg->tick();
-    const auto chordAnalyzer = ChordAnalyzerFactory::create();
-
-    for (const Segment* s = seg->prev1(SegmentType::ChordRest);
-         s != nullptr;
-         s = s->prev1(SegmentType::ChordRest)) {
-        bool hasAttacks = false;
-        for (size_t si = 0; si < sc->nstaves() && !hasAttacks; ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES && !hasAttacks; ++v) {
-                const ChordRest* cr
-                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
-                if (cr && cr->isChord() && !cr->isGrace()) {
-                    hasAttacks = true;
-                }
-            }
-        }
-        if (!hasAttacks) {
-            continue;
-        }
-
-        std::vector<SoundingNote> prevSounding;
-        collectSoundingAt(sc, s, excludeStaves, prevSounding);
-        if (!prevSounding.empty()) {
-            const auto prevTones = buildTones(prevSounding);
-            const auto prevResults =
-                chordAnalyzer->analyzeChord(prevTones, keyFifths, keyMode);
-            if (!prevResults.empty()) {
-                temporalCtx.previousRootPc  = prevResults.front().identity.rootPc;
-                temporalCtx.previousQuality = prevResults.front().identity.quality;
-                temporalCtx.previousBassPc  = prevResults.front().identity.bassPc;
-            }
-        }
-        break;
-    }
-
-    // Stepwise bass motion detection (§4.1b).
-    if (currentBassPc != -1 && temporalCtx.previousBassPc != -1) {
-        temporalCtx.bassIsStepwiseFromPrevious =
-            isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
-    }
-
-    // bassIsStepwiseToNext: not populated by findTemporalContext
-    // (segment-local lookback has no forward visibility).
-
-    return temporalCtx;
+    return ebr::findTemporalContext(sc, seg, excludeStaves, keyFifths, keyMode, currentBassPc);
 }
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────

@@ -87,7 +87,9 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 
 // ── Analysis ───────────────────────────────────────────────────────────────
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/key/modepriorpresets.h"
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
@@ -364,10 +366,8 @@ static uint16_t pitchClassMask(const std::vector<ChordAnalysisTone>& tones)
 }
 
 // ══════════════════════════════════════════════════════════════════════════
-// Per-region local key inference
-//
-// TODO(Rule 10): The batch-side helpers below mirror live bridge logic in
-// notationcomposingbridgehelpers.cpp. Move shared note collection, boundary
+// Measure location helpers
+// ══════════════════════════════════════════════════════════════════════════
 
 struct MeasureTickInfo {
     const Measure* measure = nullptr;
@@ -407,108 +407,20 @@ static MeasureTickInfo locateMeasureByTick(const Score* score, const Fraction& t
 
     return {};
 }
-// detection, key resolution, and temporal-context code into src/composing/
-// so the bridge and batch_analyze call one implementation. See
-// ARCHITECTURE.md §2.10 and §4.1c.
+
+// ══════════════════════════════════════════════════════════════════════════
+// Key/mode resolution
 //
-// Mirrors the windowed pitch collection in notationcomposingbridge.cpp:
-//   - 16 beats lookback, 8 beats lookahead
-//   - Exponential time decay (0.7× per measure) for lookback notes
-//   - Lookahead notes at 0.5× weight
-//   - Beat-type weights from TimeSigFrac::rtick2beatType
-//   - Two-pass per segment (lowest pitch first, then isBass assignment)
-//   - Key signature fifths read from staff 0 at the analysis tick
+// Phase 3 of the duplication remediation (docs/duplication_audit.md §5.3)
+// moved the shared resolver into composing/analysis/key/keyresolver.{h,cpp}.
+// This translation unit no longer carries any pitch-context collection or
+// windowed-resolution code; it only adapts the call into the JSON-emitting
+// region pipeline below.
 // ══════════════════════════════════════════════════════════════════════════
 
-// Constants and trivial helpers moved to composing/analysis/scoreharvest/metricweights.h.
-// See docs/duplication_audit.md §5.8.  These thin file-scope aliases keep the existing
-// call sites below readable without re-typing the namespace at every reference.
-
-using shv::LOOKBACK_BEATS;
-using shv::LOOKAHEAD_BEATS;
-using shv::LOOKAHEAD_WEIGHT;
-using shv::DECAY_RATE;
-using shv::beatTypeToWeight;
-using shv::safeBeatType;
-using shv::regionMetricWeightForBeatType;
-using shv::distinctPitchClasses;
-
-// timeDecay defaults to DECAY_RATE in the shared header.
-static inline double timeDecay(double beatsAgo)
-{
-    return shv::timeDecay(beatsAgo);
-}
-
-/// Collect pitch context for [windowStart, windowEnd] around @p tick.
-static void collectPitchContext(Score* score,
-                                const std::set<size_t>& excludeStaves,
-                                const Fraction& tick,
-                                const Fraction& windowStart,
-                                const Fraction& windowEnd,
-                                const analysis::KeyModeAnalyzerPreferences& prefs,
-                                std::vector<analysis::KeyModeAnalyzer::PitchContext>& ctx)
-{
-    const int division = Constants::DIVISION;
-
-    const Measure* startMeasure = score->tick2measure(windowStart);
-    if (!startMeasure) startMeasure = score->firstMeasure();
-    if (!startMeasure) return;
-
-    for (const Segment* s = startMeasure->first(SegmentType::ChordRest);
-         s && s->tick() <= windowEnd;
-         s = s->next1(SegmentType::ChordRest))
-    {
-        const Fraction segTick = s->tick();
-        if (segTick < windowStart) continue;
-
-        const Measure* m = s->measure();
-        const BeatType bt = safeBeatType(m, s);
-        const double bw = beatTypeToWeight(bt, prefs);
-
-        const double beatsFromTick = std::abs((segTick - tick).ticks())
-                                     / static_cast<double>(division);
-        const double decay = timeDecay(beatsFromTick);
-        const double lookaheadMul = (segTick > tick) ? LOOKAHEAD_WEIGHT : 1.0;
-
-        struct NoteInfo { int ppitch; double durationQn; };
-        std::vector<NoteInfo> segNotes;
-        int lowestPitch = std::numeric_limits<int>::max();
-
-        for (size_t si = 0; si < score->nstaves(); ++si) {
-            if (excludeStaves.count(si)) continue;
-            for (voice_idx_t v = 0; v < VOICES; ++v) {
-                const EngravingItem* e = s->element(staff2track(si, v));
-                if (!e || !e->isChord()) continue;
-                const Chord* chord = toChord(e);
-                if (chord->isGrace()) continue;
-                const double durQn = static_cast<double>(chord->ticks().ticks()) / division;
-                for (const Note* note : chord->notes()) {
-                    segNotes.push_back({ note->ppitch(), durQn });
-                    if (note->ppitch() < lowestPitch) lowestPitch = note->ppitch();
-                }
-            }
-        }
-
-        for (const auto& ni : segNotes) {
-            analysis::KeyModeAnalyzer::PitchContext p;
-            p.pitch          = ni.ppitch;
-            p.durationWeight = ni.durationQn * decay * lookaheadMul;
-            p.beatWeight     = bw;
-            p.isBass         = (ni.ppitch == lowestPitch);
-            ctx.push_back(p);
-        }
-    }
-}
-
-/// Infer key/mode at @p tick using the same windowed approach as the bridge.
-/// The selected reference staff supplies the key signature at @p tick.
-/// @param prevResult  Previous inference for hysteresis.  Pass nullptr at the
-///                    first region (no incumbent mode yet).
-/// @param keyPrefs    KeyModeAnalyzerPreferences to use (e.g. a specific preset).
-///
-/// Returns up to 3 ranked key/mode candidates.  [0] is the winner (after
-/// applying hysteresis); [1] and [2] are the next-best alternatives from
-/// analyzeKeyMode(), useful for diagnosing near-ties and confidence levels.
+/// Infer key/mode at @p tick — thin wrapper around the shared resolver.
+/// Returns ranked candidates; element [0] is the winner, [1] feeds the
+/// `keyModeRunnerUp` JSON field.
 static std::vector<KeyModeAnalysisResult> inferLocalKey(
     Score* score,
     size_t keySigStaffIdx,
@@ -517,126 +429,10 @@ static std::vector<KeyModeAnalysisResult> inferLocalKey(
     const KeyModeAnalysisResult* prevResult = nullptr,
     const analysis::KeyModeAnalyzerPreferences& keyPrefs = analysis::KeyModeAnalyzerPreferences{})
 {
-    const size_t clampedStaffIdx = std::min(keySigStaffIdx, score->nstaves() - 1);
-    const KeySigEvent keySig = score->staff(clampedStaffIdx)->keySigEvent(tick);
-    const int keyFifths = static_cast<int>(keySig.concertKey());
-
-    // Declared mode from key signature.
-    std::optional<analysis::KeySigMode> declaredMode;
-    {
-        using EMode = mu::engraving::KeyMode;
-        using AMode = analysis::KeySigMode;
-        switch (keySig.mode()) {
-        case EMode::MAJOR:
-        case EMode::IONIAN:      declaredMode = AMode::Ionian;     break;
-        case EMode::MINOR:
-        case EMode::AEOLIAN:     declaredMode = AMode::Aeolian;    break;
-        case EMode::DORIAN:      declaredMode = AMode::Dorian;     break;
-        case EMode::PHRYGIAN:    declaredMode = AMode::Phrygian;   break;
-        case EMode::LYDIAN:      declaredMode = AMode::Lydian;     break;
-        case EMode::MIXOLYDIAN:  declaredMode = AMode::Mixolydian; break;
-        case EMode::LOCRIAN:     declaredMode = AMode::Locrian;    break;
-        default:                 declaredMode = std::nullopt;      break;
-        }
-    }
-
-    // Fixed lookback; lookahead expands dynamically until confident.
-    const Fraction lookbackDuration = Fraction(LOOKBACK_BEATS, 4);
-    const Fraction windowStart = (tick > lookbackDuration)
-                                 ? tick - lookbackDuration
-                                 : Fraction(0, 1);
-
-    // Piece-start shortcut: no lookback + no previous result + declared mode
-    // → trust the key signature declaration rather than thin lookahead evidence.
-    if (prevResult == nullptr && declaredMode.has_value()
-        && windowStart == Fraction(0, 1) && tick < lookbackDuration) {
-        KeyModeAnalysisResult decl;
-        decl.keySignatureFifths   = keyFifths;
-        decl.mode                 = *declaredMode;
-        decl.tonicPc              = (analysis::ionianTonicPcFromFifths(keyFifths)
-                                     + analysis::keyModeTonicOffset(*declaredMode)) % 12;
-        decl.score                = 0.0;
-        decl.normalizedConfidence = 0.5;
-        return { decl };
-    }
-
-    std::vector<analysis::KeyModeAnalyzer::PitchContext> ctx;
-    std::vector<KeyModeAnalysisResult> results;
-
-    int lookaheadBeats = LOOKAHEAD_BEATS;
-    while (true) {
-        ctx.clear();
-        collectPitchContext(score, excludeStaves, tick,
-                            windowStart, tick + Fraction(lookaheadBeats, 4),
-                            keyPrefs, ctx);
-
-        results = analysis::KeyModeAnalyzer::analyzeKeyMode(
-            ctx, keyFifths, keyPrefs, declaredMode);
-
-        const bool confident = !results.empty()
-            && results.front().normalizedConfidence
-               >= keyPrefs.dynamicLookaheadConfidenceThreshold;
-        const bool atMax = lookaheadBeats >= keyPrefs.dynamicLookaheadMaxBeats;
-        if (confident || atMax) break;
-        lookaheadBeats += keyPrefs.dynamicLookaheadStepBeats;
-    }
-
-    if (results.empty() || distinctPitchClasses(ctx) < 3) {
-        KeyModeAnalysisResult fallback;
-        fallback.keySignatureFifths = keyFifths;
-        fallback.mode = declaredMode.value_or(analysis::KeySigMode::Ionian);
-        fallback.tonicPc = (analysis::ionianTonicPcFromFifths(keyFifths)
-                            + analysis::keyModeTonicOffset(fallback.mode)) % 12;
-        fallback.score = 0.0;
-        fallback.normalizedConfidence = 0.0;
-        return { fallback };
-    }
-
-    // Build top-3 list from raw results (before hysteresis adjustment).
-    std::vector<KeyModeAnalysisResult> topN(
-        results.begin(),
-        results.begin() + std::min(results.size(), static_cast<size_t>(3)));
-
-    // Hysteresis: require a score margin to switch away from the previous mode.
-    // Same-key-signature switches (relative major/minor) use a higher margin
-    // because the shared diatonic pool makes them structurally ambiguous.
-    if (!results.empty() && prevResult != nullptr
-        && results.front().mode != prevResult->mode) {
-        const double hysteresis = (results.front().keySignatureFifths == prevResult->keySignatureFifths)
-                                  ? keyPrefs.relativeKeyHysteresisMargin
-                                  : keyPrefs.hysteresisMargin;
-        if (results.front().score < prevResult->score + hysteresis) {
-            for (const auto& r : results) {
-                if (r.mode == prevResult->mode
-                    && r.keySignatureFifths == prevResult->keySignatureFifths) {
-                    // Incumbent wins via hysteresis.  Return [incumbent, original top-N sans incumbent].
-                    std::vector<KeyModeAnalysisResult> out = { r };
-                    for (const auto& candidate : topN) {
-                        if (out.size() >= 3) break;
-                        if (candidate.mode != r.mode
-                                || candidate.keySignatureFifths != r.keySignatureFifths) {
-                            out.push_back(candidate);
-                        }
-                    }
-                    return out;
-                }
-            }
-            // Incumbent not in candidate list — fall through.
-        }
-    }
-
-    if (!topN.empty()) {
-        return topN;
-    }
-
-    // Fallback: key signature fifths, Ionian
-    KeyModeAnalysisResult fallback;
-    fallback.keySignatureFifths   = keyFifths;
-    fallback.mode                 = analysis::KeySigMode::Ionian;
-    fallback.tonicPc              = analysis::ionianTonicPcFromFifths(keyFifths);
-    fallback.score                = 0.0;
-    fallback.normalizedConfidence = 0.0;
-    return { fallback };
+    return mu::composing::analysis::keyresolver::resolveKeyAndModeRanked(
+        score, tick,
+        static_cast<mu::engraving::staff_idx_t>(keySigStaffIdx),
+        excludeStaves, keyPrefs, prevResult);
 }
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -686,21 +482,17 @@ static const char* regionDumpModeName(RegionDumpMode mode)
 }
 
 // ── Shared tone-collection functions ──────────────────────────────────────────
-// The five functions below (collectRegionTones, detectBassMovementSubBoundaries,
-// SoundingNote, collectSoundingAt, buildTones, findTemporalContext) have been
-// consolidated into the canonical implementations in:
-//   src/notation/internal/notationcomposingbridgehelpers.{h,cpp}
-//
-// batch_analyze links against 'notation' and includes the header above, so
-// these are now thin aliases/using declarations into that namespace.
-// See docs/duplication_audit.md §5.8 (Step 3).
+// Canonical implementations live in composing/analysis/engravingbridge/.
+// Phase 2 of the duplication remediation (docs/duplication_audit.md §5.1)
+// moved the bodies out of notation/internal into the composing layer, so
+// batch_analyze now calls them directly without going through notation.
 
-using mu::notation::internal::SoundingNote;
-using mu::notation::internal::collectSoundingAt;
-using mu::notation::internal::buildTones;
-using mu::notation::internal::collectRegionTones;
-using mu::notation::internal::detectBassMovementSubBoundaries;
-using mu::notation::internal::findTemporalContext;
+using mu::composing::analysis::engravingbridge::SoundingNote;
+using mu::composing::analysis::engravingbridge::collectSoundingAt;
+using mu::composing::analysis::engravingbridge::buildTones;
+using mu::composing::analysis::engravingbridge::collectRegionTones;
+using mu::composing::analysis::engravingbridge::detectBassMovementSubBoundaries;
+using mu::composing::analysis::engravingbridge::findTemporalContext;
 
 
 using mu::composing::PlacedRegion;

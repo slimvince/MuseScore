@@ -1,0 +1,200 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-only
+ * MuseScore-Studio-CLA-applies
+ *
+ * MuseScore Studio
+ * Music Composition & Notation
+ *
+ * Copyright (C) 2026 MuseScore Limited
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+#pragma once
+
+// ── composing/analysis/engravingbridge ───────────────────────────────────────
+//
+// Single source of truth for the score-walking helpers used by both the
+// notation bridge (analyzeHarmonicRhythm) and tools/batch_analyze.cpp.
+//
+// Before this module existed each helper was implemented twice (once in
+// notationcomposingbridgehelpers.cpp, once in batch_analyze.cpp) and the
+// two copies drifted in semantically important ways — see
+// docs/duplication_audit.md §§2.1–2.13 and the bwv356 m19 b1 finding (§4).
+//
+// All implementations live here. notationcomposingbridgehelpers.cpp keeps a
+// public API in mu::notation::internal as a thin pass-through, so other
+// notation TUs do not need to change. tools/batch_analyze.cpp calls this
+// module directly.
+//
+// The module depends only on the engraving layer (Score, Segment, Measure,
+// Fraction), the composing analysis types (ChordAnalysisTone, ChordTemporalContext,
+// KeyModeAnalyzer::PitchContext) and the scoreharvest helpers — never on
+// notation/internal.
+
+#include <cstddef>
+#include <set>
+#include <vector>
+
+#include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/key/keymodeanalyzer.h"
+#include "engraving/dom/part.h"
+#include "engraving/dom/score.h"
+#include "engraving/dom/staff.h"
+#include "engraving/types/constants.h"
+#include "engraving/types/fraction.h"
+
+namespace mu::engraving {
+class Segment;
+class Measure;
+}
+
+namespace mu::composing::analysis::engravingbridge {
+
+// ── Staff-eligibility predicates ─────────────────────────────────────────────
+//
+// Matches the inline definitions in src/notation/internal/notationanalysisinternal.h.
+// Re-implemented here so this module does not include notation-layer headers.
+// The functions are trivial and live in the header so they remain inline.
+
+inline bool isChordTrackStaff(const mu::engraving::Score* sc, std::size_t si)
+{
+    static const muse::String CHORD_TRACK_MARKER = u"Chord Track";
+    if (si >= sc->nstaves()) {
+        return false;
+    }
+    const mu::engraving::Part* part = sc->staff(si)->part();
+    if (!part) {
+        return false;
+    }
+    if (part->partName().contains(CHORD_TRACK_MARKER)) {
+        return true;
+    }
+    const mu::engraving::Instrument* instrument = part->instrument();
+    return instrument && instrument->trackName().contains(CHORD_TRACK_MARKER);
+}
+
+/// Is this staff eligible for harmonic analysis at the given tick?
+/// Excludes hidden staves, percussion instruments, and chord-track staves.
+inline bool staffIsEligible(const mu::engraving::Score* sc, std::size_t si,
+                            const mu::engraving::Fraction& tick)
+{
+    const mu::engraving::Staff* st = sc->staff(si);
+    if (!st->show()) {
+        return false;
+    }
+    if (st->part()->instrument(tick)->useDrumset()) {
+        return false;
+    }
+    if (isChordTrackStaff(sc, si)) {
+        return false;
+    }
+    return true;
+}
+
+// ── Sounding-note primitives ─────────────────────────────────────────────────
+
+/// A raw sounding note: playback pitch + TPC spelling.
+struct SoundingNote { int ppitch; int tpc; };
+
+/// Collect all notes sounding at anchorSeg's tick across eligible staves.
+/// Walks backward up to 4 quarter notes to catch sustained notes.
+void collectSoundingAt(const mu::engraving::Score* sc,
+                       const mu::engraving::Segment* anchorSeg,
+                       const std::set<std::size_t>& excludeStaves,
+                       std::vector<SoundingNote>& out);
+
+/// Convert raw sounding notes to analysis tones. Marks the lowest pitch as bass.
+std::vector<mu::composing::analysis::ChordAnalysisTone>
+buildTones(const std::vector<SoundingNote>& sounding);
+
+// ── Region-scope tone accumulation ───────────────────────────────────────────
+
+/// Collect and accumulate pitch evidence for the harmonic region [startTick, endTick).
+///
+/// Walks all ChordRest segments in the region across eligible staves. For each
+/// note event, computes a base weight = (durationInRegion / regionDuration) × beatWeight.
+/// Aggregates evidence by pitch class, then applies:
+///   Pass 2 — repetition boost: weight × (1 + 0.3 × (distinctMetricPositions − 1))
+///   Pass 3 — cross-voice boost: weight × 1.5 when simultaneousVoiceCount > 1
+///   Pass 4 — discounted sustain-pedal tails after written note-off
+/// Weights are normalised to sum to 1.0 before return.
+///
+/// `parentStartTick`: tick used for the per-tone `onsetAtRegionStart` flag.
+///   - For un-split (parent-scope) calls, pass -1 to default to startTick.
+///   - For Pass 2 / Pass 2b sub-region calls, pass the parent region's
+///     startTick so onset flags remain meaningful at full-region scope
+///     (Iter 93).
+/// `excludeLookAheadOnDenseStart`: when true and ≥3 distinct pitch classes are
+///   already sounding at the region start tick, notes whose onset is strictly
+///   after startTick are excluded from chord inference. This was the batch
+///   pipeline's legacy behavior; the bridge always leaves this false (default).
+std::vector<mu::composing::analysis::ChordAnalysisTone>
+collectRegionTones(const mu::engraving::Score* sc,
+                   int startTick,
+                   int endTick,
+                   const std::set<std::size_t>& excludeStaves,
+                   int parentStartTick = -1,
+                   bool excludeLookAheadOnDenseStart = false);
+
+// ── Sub-boundary detectors ───────────────────────────────────────────────────
+
+/// Pass 2: onset-only sub-boundary detection within a coarse Jaccard region.
+/// Collects only notes whose start tick equals the segment tick (no sustained
+/// notes), then computes Jaccard distance between consecutive onset sets.
+/// Lower threshold = more boundaries. Default 0.25.
+/// Returns sub-boundary ticks (not including startTick).
+std::vector<mu::engraving::Fraction>
+detectOnsetSubBoundaries(const mu::engraving::Score* sc,
+                         const mu::engraving::Fraction& startTick,
+                         const mu::engraving::Fraction& endTick,
+                         const std::set<std::size_t>& excludeStaves,
+                         double threshold = 0.25);
+
+/// Pass 2b: bass-movement sub-boundary detection within a coarse Jaccard region.
+/// Scans onset-only notes and tracks the lowest-pitch note at each segment as the
+/// "bass". When the bass pitch class changes from the bass at the most recently
+/// accepted boundary, and the gap since that boundary is >= minGapTicks, fires a
+/// sub-boundary. ANY bass PC change fires — no minimum interval threshold.
+/// Returns sub-boundary ticks (not including startTick).
+std::vector<mu::engraving::Fraction>
+detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
+                                const mu::engraving::Fraction& startTick,
+                                const mu::engraving::Fraction& endTick,
+                                const std::set<std::size_t>& excludeStaves,
+                                int minGapTicks = 2 * mu::engraving::Constants::DIVISION);
+
+// ── Temporal context ─────────────────────────────────────────────────────────
+
+/// Find the previous chord's temporal context by walking backward from seg.
+/// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
+/// or -1 if not yet known. Used to compute bassIsStepwiseFromPrevious.
+mu::composing::analysis::ChordTemporalContext
+findTemporalContext(const mu::engraving::Score* sc,
+                    const mu::engraving::Segment* seg,
+                    const std::set<std::size_t>& excludeStaves,
+                    int keyFifths,
+                    mu::composing::analysis::KeySigMode keyMode,
+                    int currentBassPc = -1);
+
+// ── Pitch context for key/mode resolution ────────────────────────────────────
+
+/// Collect pitch context for the window [windowStart, windowEnd], appending to ctx.
+void collectPitchContext(const mu::engraving::Score* sc,
+                         const mu::engraving::Fraction& tick,
+                         const mu::engraving::Fraction& windowStart,
+                         const mu::engraving::Fraction& windowEnd,
+                         const std::set<std::size_t>& excludeStaves,
+                         const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
+                         std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx);
+
+} // namespace mu::composing::analysis::engravingbridge
