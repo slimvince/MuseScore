@@ -753,6 +753,16 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                                 try { var aName = arts[ai].subtypeName(); if (aName) artList.push(aName) } catch(e2) {}
                             }
                         } catch(e) {}
+                        // Chord-level display properties (apiversion=2: stemDirection
+                        // is API_PROPERTY_ENUM → "UP"/"DOWN"/"AUTO" verbatim; beamMode
+                        // is plain API_PROPERTY → integer, mapped back via _BEAM_INT).
+                        var stemDir = null
+                        var bmMode  = null
+                        try { stemDir = String(chord.stemDirection) } catch(e) {}
+                        try {
+                            var bmRaw = parseInt(chord.beamMode)
+                            bmMode = (_BEAM_INT[bmRaw] !== undefined) ? _BEAM_INT[bmRaw] : bmRaw
+                        } catch(e) {}
                         var noteArr = chord.notes
                         for (var ni = 0; ni < noteArr.length; ni++) {
                             var note = noteArr[ni]
@@ -762,6 +772,19 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                             else if (t >= 6  && t < 13) acc = "flat"
                             else if (t >= 20 && t < 27) acc = "sharp"
                             else if (t >= 27 && t <= 33) acc = "doubleSharp"
+                            // Per-note head properties. apiv1 enum names are HEAD_-prefixed
+                            // (HEAD_NORMAL, HEAD_DIAMOND, …); strip the 5-char prefix so
+                            // the value matches what set_note_head accepts.
+                            var hg = null
+                            var ht = null
+                            try {
+                                var hgRaw = String(note.headGroup)
+                                hg = hgRaw.indexOf("HEAD_") === 0 ? hgRaw.slice(5) : hgRaw
+                            } catch(e) {}
+                            try {
+                                var htRaw = String(note.headType)
+                                ht = htRaw.indexOf("HEAD_") === 0 ? htRaw.slice(5) : htRaw
+                            } catch(e) {}
                             notes.push({
                                 noteName:      _tpcToNoteName(note.tpc, note.pitch),
                                 duration:      duration,
@@ -771,7 +794,11 @@ function getNotesInRange(startMeasure, endMeasure, startStaff, endStaff, voice) 
                                 grace:         isGrace,
                                 articulations: artList,
                                 accidental:    acc,
-                                visible:       (note.visible !== false)
+                                visible:       (note.visible !== false),
+                                headGroup:     hg,
+                                headType:      ht,
+                                stemDirection: stemDir,
+                                beamMode:      bmMode
                             })
                         }
                     } else {
@@ -3026,20 +3053,30 @@ function setStemDirection(measure, beat, beatFraction, staff, voice, direction) 
 
 // Set the beam mode for the chord at the given position. Values keyed off
 // types.h BeamMode enum integers (beamMode is plain API_PROPERTY).
+// BeamMode integer values — confirmed from src/engraving/types/types.h:376-389.
+// apitypes.h misnames BEGIN16/BEGIN32 as BEGIN32/BEGIN64; do NOT trust those.
+// Lifted to module scope (Batch F1) so getNotesInRange can reuse the inverse
+// without redeclaring the integer table.
+var _BEAM_MODE_MAP = {
+    "AUTO":    0,
+    "NONE":    1,
+    "BEGIN":   2,
+    "BEGIN16": 3,
+    "BEGIN32": 4,
+    "MID":     5,
+    "END":     6
+}
+var _BEAM_INT = (function() {
+    var inv = {}
+    for (var k in _BEAM_MODE_MAP) inv[_BEAM_MODE_MAP[k]] = k
+    return inv
+})()
+
 function setBeamMode(measure, beat, beatFraction, staff, voice, mode) {
     var s = _score()
     if (!s) return { error: "No score open" }
 
-    var BEAM_MODE_MAP = {
-        "AUTO":    0,
-        "NONE":    1,
-        "BEGIN":   2,
-        "BEGIN16": 3,
-        "BEGIN32": 4,
-        "MID":     5,
-        "END":     6
-    }
-    var modeVal = BEAM_MODE_MAP[mode]
+    var modeVal = _BEAM_MODE_MAP[mode]
     if (modeVal === undefined) return {
         error: "Unknown beam mode '" + mode + "'. Valid: AUTO BEGIN MID END NONE BEGIN16 BEGIN32"
     }

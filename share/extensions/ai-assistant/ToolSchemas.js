@@ -92,7 +92,12 @@ function getToolSchemas(providerFormat) {
                 "Returns all notes and rests in the given measure range. Use startStaff/endStaff " +
                 "(global 1-based staff numbers from get_score_info) to filter by staff — this is the " +
                 "only reliable way to target a specific instrument when a score has multiple staves " +
-                "with the same name. Omit staff filters to read all staves. Optional voice filter (1–4).",
+                "with the same name. Omit staff filters to read all staves. Optional voice filter (1–4). " +
+                "Each note object also includes: headGroup (notehead shape, e.g. 'NORMAL', 'DIAMOND', 'CROSS'), " +
+                "headType ('AUTO', 'WHOLE', 'HALF', 'QUARTER', 'BREVIS' — 'AUTO' means duration-matched), " +
+                "stemDirection ('UP', 'DOWN', or 'AUTO'), " +
+                "beamMode ('AUTO', 'BEGIN', 'MID', 'END', 'NONE', 'BEGIN16', 'BEGIN32'). " +
+                "These fields are null if the value could not be read.",
             parameters: {
                 type: "object",
                 properties: {
