@@ -1657,26 +1657,36 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
     var tick = _posToTick(measure, beat, beatFraction)
     if (tick < 0) return { error: "Measure " + measure + " not found" }
 
-    // Idempotency check: skip if the clef is already correct at this position.
-    try {
-        var staffIdx = (staff || 1) - 1
-        if (s.staves && staffIdx >= 0 && staffIdx < s.staves.length) {
-            var existing = s.staves[staffIdx].clefType(tick)
-            if (existing === clefInt)
-                return { ok: true, measure: measure, beat: beat || 1, staff: staff,
-                         clefType: clefType, unchanged: true,
-                         note: "Clef already set to " + clefType + " at this position" }
-        }
-    } catch(e) { /* if read fails, proceed with add */ }
-
     try {
         s.startCmd("add clef")
         var c = s.newCursor()
-        c.track = (staff - 1) * 4
+        var track = (staff - 1) * 4
+        c.track = track
         c.rewindToTick(tick)
+
+        // Before adding, remove any existing user-placed CLEF at this tick+track to
+        // prevent stacking. SegmentType::Clef = 0x400 (mid-measure user-added clefs).
+        // HeaderClef segments (0x2) are system-generated courtesy elements — leave them.
+        var m = _findMeasureByNumber(s, measure)
+        if (m) {
+            var seg = m.firstSegment
+            while (seg) {
+                var segTick = _getTickInt(seg.tick)
+                if (segTick > tick) break
+                if (segTick === tick && (seg.segmentType & 0x400)) {
+                    var existingEl = seg.elementAt(track)
+                    if (existingEl) {
+                        try { api.engraving.removeElement(existingEl) } catch (re) { /* non-fatal */ }
+                    }
+                    break
+                }
+                seg = seg.nextInMeasure ? seg.nextInMeasure : null
+            }
+        }
+
         var el = api.engraving.newElement(_EL.CLEF)
-        el.concertClefType    = clefInt   // Pid::CLEF_TYPE_CONCERT (bound API_PROPERTY)
-        el.transposingClefType = clefInt  // Pid::CLEF_TYPE_TRANSPOSING (bound API_PROPERTY)
+        el.concertClefType     = clefInt   // Pid::CLEF_TYPE_CONCERT
+        el.transposingClefType = clefInt   // Pid::CLEF_TYPE_TRANSPOSING
         c.add(el)
         s.endCmd()
         return { ok: true, measure: measure, beat: beat, staff: staff, clefType: clefType }
