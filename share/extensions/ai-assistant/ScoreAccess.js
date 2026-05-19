@@ -1678,8 +1678,20 @@ function addKeySignature(measure, key) {
         s.startCmd("add key signature")
         var nStaves = s.nstaves
         for (var st = 0; st < nStaves; st++) {
+            var track = st * 4
+
+            // Walk FIRST (before rewindToTick) to avoid QML GC cursor invalidation.
+            // SegmentType::KeySig = 0x40.
+            var existingEl = _findSegmentElAtTick(s, measure, tick, track, 0x40)
+            if (existingEl) {
+                // Update in-place: property write calls undoPropertyChanged — fully undo-tracked.
+                existingEl.concertKey = key
+                continue
+            }
+
+            // No existing element — position cursor NOW (after walk) and add.
             var c = s.newCursor()
-            c.track = st * 4
+            c.track = track
             c.rewindToTick(tick)
             var el = api.engraving.newElement(_EL.KEYSIG)
             el.concertKey = key
