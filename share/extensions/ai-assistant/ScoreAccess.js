@@ -3183,12 +3183,55 @@ function getScoreStyle(keys) {
     var s = _score()
     if (!s) return { error: "No score open" }
 
+    // Curated list of style keys (64 entries) — all verified verbatim against
+    // src/engraving/style/styledef.cpp. Arbitrary other keys can still be
+    // queried by passing them explicitly via the `keys` argument; this list
+    // is only the default-return set when no keys are specified.
     var KNOWN_KEYS = [
-        "showMeasureNumber", "measureNumberInterval",
+        // Page layout & margins
+        "pageWidth", "pageHeight", "pageTwosided",
+        "pageEvenLeftMargin", "pageOddLeftMargin",
+        "pageEvenTopMargin", "pageOddTopMargin",
+        "pageEvenBottomMargin", "pageOddBottomMargin",
+        // Spacing & layout
+        "spatium", "staffDistance", "akkoladeDistance", "bracketDistance",
+        "minSystemDistance", "maxSystemDistance",
+        "minSystemSpread", "maxSystemSpread",
+        "minStaffSpread", "maxStaffSpread",
+        "alignSystemToMargin", "enableVerticalSpread",
+        "minNoteDistance", "barNoteDistance", "frameSystemDistance",
+        // Measure numbers
+        "showMeasureNumber", "showMeasureNumberOne",
+        "measureNumberInterval", "measureNumberSystem",
+        // Multi-measure rests
         "createMultiMeasureRests", "minEmptyMeasures",
+        "minMMRestWidth", "multiMeasureRestMargin",
+        // Staves & visibility
         "hideEmptyStaves", "dontHideStavesInFirstSystem",
-        "enableVerticalSpread",
-        "spatium"
+        "hideInstrumentNameIfOneInstrument",
+        "alwaysShowBracketsWhenEmptyStavesAreHidden",
+        // Clefs / key signatures / time signatures
+        "genClef", "genKeysig",
+        "genCourtesyClef", "genCourtesyKeysig", "genCourtesyTimesig",
+        "barlineBeforeSigChange",
+        "doubleBarlineBeforeKeySig", "doubleBarlineBeforeTimeSig",
+        // Beams
+        "beamWidth", "beamMinLen",
+        // Hairpins
+        "hairpinHeight", "hairpinContHeight",
+        // Slurs
+        "slurMidWidth", "slurMinDistance",
+        // Tuplets
+        "tupletBracketType", "tupletOutOfStaff",
+        // Lyrics
+        "lyricsPlacement", "lyricsMinBottomDistance", "lyricsLineHeight",
+        // Dynamics
+        "dynamicsSize", "dynamicsFont",
+        // Chord symbols
+        "chordStyle", "chordDescriptionFile", "concertPitch",
+        // Tempo & rehearsal marks
+        "tempoPlacement", "tempoSystemFlag",
+        "rehearsalMarkPlacement", "rehearsalMarkFrameType"
     ]
     var queryKeys = (keys && keys.length > 0) ? keys : KNOWN_KEYS
     var result = {}

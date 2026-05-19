@@ -1079,14 +1079,27 @@ function getToolSchemas(providerFormat) {
             name: "get_score_style",
             description:
                 "Reads score-wide style settings. " +
-                "keys: optional array of specific style keys to read. If omitted, returns all known style properties. " +
-                "Known keys: showMeasureNumber (bool), measureNumberInterval (int), createMultiMeasureRests (bool), " +
-                "minEmptyMeasures (int), hideEmptyStaves (bool), dontHideStavesInFirstSystem (bool), " +
-                "enableVerticalSpread (bool, controls page-fill), spatium (double, staff line-spacing in MuseScore's internal point units).",
+                "keys: optional array of specific style keys to read. Omit to return the full curated set below. " +
+                "Arbitrary keys not in this list can still be requested explicitly — pass them in keys. " +
+                "Curated keys, grouped by category:\n" +
+                "• Page layout (double, inches): pageWidth, pageHeight, pageEvenLeftMargin, pageOddLeftMargin, pageEvenTopMargin, pageOddTopMargin, pageEvenBottomMargin, pageOddBottomMargin. pageTwosided (bool).\n" +
+                "• Spacing (double, spatium units unless noted): spatium (mm × DPMM), staffDistance, akkoladeDistance, bracketDistance, minSystemDistance, maxSystemDistance, minSystemSpread, maxSystemSpread, minStaffSpread, maxStaffSpread, minNoteDistance, barNoteDistance, frameSystemDistance. alignSystemToMargin (bool), enableVerticalSpread (bool — MS4 replacement for pageFillLimit).\n" +
+                "• Measure numbers: showMeasureNumber (bool), showMeasureNumberOne (bool), measureNumberInterval (int), measureNumberSystem (bool — once per system vs every-N).\n" +
+                "• Multi-measure rests: createMultiMeasureRests (bool), minEmptyMeasures (int), minMMRestWidth (double sp), multiMeasureRestMargin (double sp).\n" +
+                "• Staves: hideEmptyStaves (bool), dontHideStavesInFirstSystem (bool), hideInstrumentNameIfOneInstrument (bool), alwaysShowBracketsWhenEmptyStavesAreHidden (bool).\n" +
+                "• Clefs/keys/time-sigs (bool): genClef, genKeysig, genCourtesyClef, genCourtesyKeysig, genCourtesyTimesig, barlineBeforeSigChange, doubleBarlineBeforeKeySig, doubleBarlineBeforeTimeSig.\n" +
+                "• Beams (double sp): beamWidth, beamMinLen.\n" +
+                "• Hairpins (double sp): hairpinHeight, hairpinContHeight.\n" +
+                "• Slurs (double sp): slurMidWidth, slurMinDistance.\n" +
+                "• Tuplets: tupletBracketType (int enum — 0=AUTO, 1=BRACKET, 2=NONE), tupletOutOfStaff (bool).\n" +
+                "• Lyrics: lyricsPlacement (int — 0=ABOVE, 1=BELOW), lyricsMinBottomDistance (double sp), lyricsLineHeight (double, multiplier).\n" +
+                "• Dynamics: dynamicsSize (double, fraction of standard size), dynamicsFont (string font family).\n" +
+                "• Chord symbols: chordStyle (int enum — STANDARD/JAZZ/CUSTOM preset), chordDescriptionFile (string xml file), concertPitch (bool).\n" +
+                "• Tempo/rehearsal marks: tempoPlacement (int — ABOVE/BELOW), tempoSystemFlag (bool — show on every system), rehearsalMarkPlacement (int — ABOVE/BELOW), rehearsalMarkFrameType (int — 0=SQUARE/1=CIRCLE/2=ROUND_RECT/3=NONE).",
             parameters: {
                 type: "object",
                 properties: {
-                    keys: { type: "array", items: { type: "string" }, description: "Style key names to read. Omit to read all known keys." }
+                    keys: { type: "array", items: { type: "string" }, description: "Style key names to read. Omit to read all curated keys. You may also pass keys outside the curated set." }
                 },
                 required: []
             }
@@ -1096,10 +1109,17 @@ function getToolSchemas(providerFormat) {
             description:
                 "Changes one or more score-wide style settings in a single undoable operation. " +
                 "Pass a styles object with key:value pairs. " +
-                "Examples: { 'showMeasureNumber': false } to hide measure numbers; " +
-                "{ 'createMultiMeasureRests': true, 'minEmptyMeasures': 2 } to enable multi-measure rests; " +
-                "{ 'hideEmptyStaves': true } to hide empty staves; " +
-                "{ 'enableVerticalSpread': false } to disable vertical justification. " +
+                "Accepts the same keys as get_score_style (see that tool for the full curated list). " +
+                "Arbitrary keys not in the curated list can still be set if you know the Sid name from MuseScore source. " +
+                "Common examples:\n" +
+                "• { 'showMeasureNumber': false } — hide measure numbers.\n" +
+                "• { 'measureNumberInterval': 1 } — number every measure.\n" +
+                "• { 'createMultiMeasureRests': true, 'minEmptyMeasures': 2 } — collapse 2+ empty measures to MMR.\n" +
+                "• { 'hideEmptyStaves': true, 'dontHideStavesInFirstSystem': false } — hide empty staves everywhere.\n" +
+                "• { 'enableVerticalSpread': false } — disable page vertical justification.\n" +
+                "• { 'concertPitch': true } — display in concert pitch (transposes all transposing instruments).\n" +
+                "• { 'spatium': 6.61 } — adjust staff size (value is mm × DPMM ≈ 1.764 × mm; 6.61 ≈ a 1.76mm staff).\n" +
+                "• { 'genCourtesyKeysig': false, 'genCourtesyTimesig': false } — suppress courtesy accidentals at system end.\n" +
                 "Use get_score_style first to read current values. " +
                 "Note: 'pageFillLimit' is the MS3 name and does not exist in MS4 — use 'enableVerticalSpread' instead.",
             parameters: {
