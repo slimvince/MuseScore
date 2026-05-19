@@ -1,0 +1,9 @@
+{
+    "uri": "musescore://extensions/hello-world",
+    "type": "macros",
+    "title": "Hello World (ms-core-api)",
+    "description": "Minimal smoke-test extension for the ms-core-api worktree. Confirms that extensions in this build load, run, and can show a dialog.",
+    "actions": [
+        { "path": "main.js" }
+    ]
+}

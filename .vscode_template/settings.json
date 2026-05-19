@@ -1,4 +1,31 @@
 {
+    "permissions": {
+    "allow": [
+      "Edit",
+      "Copy-Item",
+      "Get-Item",
+      "Grep",
+      "Glob",
+      "Read",
+      "Bash",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(git:*)",
+      "Bash(npm:*)",
+      "Bash(cmake:*)",
+      "Bash(ninja:*)",
+      "Bash(python:*)",
+      "Bash(cmd.exe:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\",
+      "\\tmp",
+      "C:\\s\\MS\\tools\\tools\\corpus",
+      "C:\\tmp"
+    ]
+  },
+
   "workbench.colorTheme": "Default Dark+",
 
   "cmake.debugConfig": {

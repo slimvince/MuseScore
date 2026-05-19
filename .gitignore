@@ -107,6 +107,14 @@ compile_commands.json
 # QML language server
 **/.qmlls.ini
 
+# Per-machine Windows junctions (created with `mklink /J`) — at runtime
+# MuseScore looks for shipped extensions/plugins next to the exe, but the
+# source tree keeps them under share/extensions and share/plugins. These
+# two junctions redirect <repo>/extensions and <repo>/plugins to the share
+# locations. No canonical content — pure local dev convenience.
+/extensions/
+/plugins/
+
 # Claude Code local session state
 .claude/scheduled_tasks.lock
 .claude/settings.json
