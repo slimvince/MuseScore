@@ -3185,6 +3185,14 @@ function setBarlineType(measureNo, type) {
     }
 }
 
+// Spatium is stored internally as (millimetres × DPMM). Constants confirmed
+// from src/engraving/dom/mscore.h:66-71 — DPI=1200, INCH=25.4,
+// DPMM = DPI/INCH = 47.244…. So spatium_mm = raw / DPMM and raw = mm × DPMM.
+// The apiv1 MStyle::value/setValue pass the raw value through unconverted
+// (src/engraving/api/v1/style.cpp:59-86). Default raw is 1.75mm × DPMM ≈ 82.68
+// (styledef.cpp:777); a raw of ~70.866 is a 1.5mm staff.
+var _SPATIUM_DPMM = 1200 / 25.4
+
 // Read one or more score-wide style properties. Pass keys=null to return
 // all curated keys. Style key names verified verbatim against
 // src/engraving/style/styledef.cpp (lines 78, 492, 494, 544, 545, 562, 563,
@@ -3253,14 +3261,32 @@ function getScoreStyle(keys) {
             result[k] = null
         }
     }
+    // When spatium is present, also expose it in millimetres for human/LLM
+    // reasoning (raw value is mm × DPMM internal units — see _SPATIUM_DPMM).
+    if (typeof result.spatium === "number") {
+        result.spatium_mm = Math.round(result.spatium / _SPATIUM_DPMM * 1000) / 1000
+    }
     return { ok: true, styles: result }
 }
 
 // Set one or more score-wide style properties in a single undo entry.
+// spatium_mm is accepted as a mm-valued alias for spatium and converted to
+// internal units before writing.
 function setScoreStyle(styles) {
     var s = _score()
     if (!s) return { error: "No score open" }
     if (!styles || typeof styles !== "object") return { error: "styles must be an object of key:value pairs" }
+
+    // Translate spatium_mm → spatium (raw = mm × DPMM). Clone first so the
+    // caller's object is not mutated.
+    if (styles["spatium_mm"] !== undefined) {
+        var mmVal = parseFloat(styles["spatium_mm"])
+        styles = JSON.parse(JSON.stringify(styles))
+        delete styles["spatium_mm"]
+        if (!isNaN(mmVal) && mmVal > 0) {
+            styles["spatium"] = Math.round(mmVal * _SPATIUM_DPMM * 1000) / 1000
+        }
+    }
 
     var keys = Object.keys(styles)
     if (keys.length === 0) return { error: "styles object is empty" }

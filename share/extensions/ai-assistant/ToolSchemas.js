@@ -1087,7 +1087,8 @@ function getToolSchemas(providerFormat) {
                 "Arbitrary keys not in this list can still be requested explicitly — pass them in keys. " +
                 "Curated keys, grouped by category:\n" +
                 "• Page layout (double, inches): pageWidth, pageHeight, pageEvenLeftMargin, pageOddLeftMargin, pageEvenTopMargin, pageOddTopMargin, pageEvenBottomMargin, pageOddBottomMargin. pageTwosided (bool).\n" +
-                "• Spacing (double, spatium units unless noted): spatium (mm × DPMM), staffDistance, akkoladeDistance, bracketDistance, minSystemDistance, maxSystemDistance, minSystemSpread, maxSystemSpread, minStaffSpread, maxStaffSpread, minNoteDistance, barNoteDistance, frameSystemDistance. alignSystemToMargin (bool), enableVerticalSpread (bool — MS4 replacement for pageFillLimit).\n" +
+                "• Spacing (double, spatium units unless noted): spatium (raw internal units = mm × 47.244), staffDistance, akkoladeDistance, bracketDistance, minSystemDistance, maxSystemDistance, minSystemSpread, maxSystemSpread, minStaffSpread, maxStaffSpread, minNoteDistance, barNoteDistance, frameSystemDistance. alignSystemToMargin (bool), enableVerticalSpread (bool — MS4 replacement for pageFillLimit).\n" +
+                "  spatium_mm is also returned automatically whenever spatium is read, giving the staff spacing in millimetres (default ≈ 1.75 mm). Prefer reasoning about spatium_mm rather than the raw spatium value.\n" +
                 "• Measure numbers: showMeasureNumber (bool), showMeasureNumberOne (bool), measureNumberInterval (int), measureNumberSystem (bool — once per system vs every-N).\n" +
                 "• Multi-measure rests: createMultiMeasureRests (bool), minEmptyMeasures (int), minMMRestWidth (double sp), multiMeasureRestMargin (double sp).\n" +
                 "• Staves: hideEmptyStaves (bool), dontHideStavesInFirstSystem (bool), hideInstrumentNameIfOneInstrument (bool), alwaysShowBracketsWhenEmptyStavesAreHidden (bool).\n" +
@@ -1122,7 +1123,7 @@ function getToolSchemas(providerFormat) {
                 "• { 'hideEmptyStaves': true, 'dontHideStavesInFirstSystem': false } — hide empty staves everywhere.\n" +
                 "• { 'enableVerticalSpread': false } — disable page vertical justification.\n" +
                 "• { 'concertPitch': true } — display in concert pitch (transposes all transposing instruments).\n" +
-                "• { 'spatium': 6.61 } — adjust staff size (value is mm × DPMM ≈ 1.764 × mm; 6.61 ≈ a 1.76mm staff).\n" +
+                "• { 'spatium_mm': 1.764 } — adjust staff size in millimetres (preferred). spatium_mm is a convenience alias accepting a value in mm; it is converted to internal units automatically. Default is ≈ 1.75 mm; smaller = smaller staves / more music per page.\n" +
                 "• { 'genCourtesyKeysig': false, 'genCourtesyTimesig': false } — suppress courtesy accidentals at system end.\n" +
                 "Use get_score_style first to read current values. " +
                 "Note: 'pageFillLimit' is the MS3 name and does not exist in MS4 — use 'enableVerticalSpread' instead.",
