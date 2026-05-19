@@ -94,6 +94,11 @@ function dispatchTool(scoreAccess, name, args) {
         // ── Batch D3 tools ──
         if (name === "transpose_notes") return scoreAccess.transposeNotes(a.measureStart, a.measureEnd || a.measureStart, a.staff || null, a.voice || null, a.interval, a.direction)
 
+        // ── Batch E2 tools ──
+        if (name === "set_note_head")      return scoreAccess.setNoteHead(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.headGroup, a.headType || null, a.pitch || null)
+        if (name === "set_stem_direction") return scoreAccess.setStemDirection(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.direction)
+        if (name === "set_beam_mode")      return scoreAccess.setBeamMode(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.mode)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

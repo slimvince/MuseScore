@@ -979,6 +979,74 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measureStart", "interval", "direction"]
             }
+        },
+
+        // ── BATCH E2: set_note_head, set_stem_direction, set_beam_mode ──
+
+        {
+            name: "set_note_head",
+            description:
+                "Changes the notehead shape of a note or all notes in a chord. " +
+                "headGroup controls the shape: 'NORMAL' (default filled/open oval), 'DIAMOND' (harmonics, sul ponticello), " +
+                "'CROSS' (muted/dead notes), 'SLASH' (rhythmic slash notation), 'TRIANGLE_UP', 'TRIANGLE_DOWN', " +
+                "'XCIRCLE', 'WITHX', 'DO', 'RE', 'MI', 'FA', 'SOL', 'LA', 'TI' (solfège noteheads). " +
+                "The HEAD_ prefix is added automatically — pass either 'DIAMOND' or 'HEAD_DIAMOND'. " +
+                "headType overrides the duration-based open/closed appearance: 'AUTO' (default), 'WHOLE', 'HALF', 'QUARTER', 'BREVIS'. " +
+                "pitch identifies a specific note in a chord (e.g. 'C4'); omit to apply to all notes in the chord.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    headGroup:    { type: "string",  description: "Notehead shape. Common values: 'NORMAL', 'DIAMOND', 'CROSS', 'SLASH', 'TRIANGLE_UP', 'XCIRCLE', 'DO', 'RE', 'MI', 'FA', 'SOL', 'LA', 'TI'." },
+                    headType:     { type: "string",  description: "Duration appearance override: 'AUTO', 'WHOLE', 'HALF', 'QUARTER', 'BREVIS'. Omit to use AUTO." },
+                    pitch:        { type: "string",  description: "Target pitch (e.g. 'C4') to change only one note in a chord. Omit to change all notes." }
+                },
+                required: ["measure", "beat", "staff", "headGroup"]
+            }
+        },
+        {
+            name: "set_stem_direction",
+            description:
+                "Forces the stem of a chord up or down, or resets it to automatic. " +
+                "'UP' forces stem up; 'DOWN' forces stem down; 'AUTO' restores MuseScore's default " +
+                "(based on staff position and voice).",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    direction:    { type: "string",  enum: ["UP", "DOWN", "AUTO"], description: "Stem direction." }
+                },
+                required: ["measure", "beat", "staff", "direction"]
+            }
+        },
+        {
+            name: "set_beam_mode",
+            description:
+                "Controls how a note's beam connects to adjacent notes. " +
+                "'BEGIN' starts a new beam group; 'MID' continues an existing beam; 'END' ends a beam group; " +
+                "'NONE' removes beaming (makes the note flagged/unbeamed); 'AUTO' restores default beaming. " +
+                "'BEGIN16' starts a secondary 16th-note beam subdivision; 'BEGIN32' starts a 32nd-note subdivision. " +
+                "Useful for creating non-standard beam groupings within a beat.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    mode:         { type: "string",  enum: ["AUTO","BEGIN","MID","END","NONE","BEGIN16","BEGIN32"], description: "Beam mode." }
+                },
+                required: ["measure", "beat", "staff", "mode"]
+            }
         }
     ]
 

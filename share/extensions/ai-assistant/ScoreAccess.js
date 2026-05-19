@@ -2931,6 +2931,142 @@ function transposeNotes(measureStart, measureEnd, staff, voice, interval, direct
     }
 }
 
+// ── Batch E2 — chord/note display properties ─────────────────────────────
+//
+// Direct property writes on existing elements inside startCmd/endCmd — no
+// cursor.add() needed (same pattern as transposeNotes writing note.pitch/tpc).
+//
+// API_PROPERTY_ENUM properties take *string* enum member names under
+// apiversion=2 (the macro routes via QMetaEnum::keyToValue at runtime). The
+// apiv1 enum names are:
+//   NoteHeadGroup: HEAD_NORMAL, HEAD_CROSS, HEAD_DIAMOND, HEAD_SLASH,
+//                  HEAD_TRIANGLE_UP, HEAD_TRIANGLE_DOWN, HEAD_XCIRCLE,
+//                  HEAD_DO/RE/MI/FA/SOL/LA/TI, etc. (apitypes.h:792-822)
+//   NoteHeadType:  HEAD_AUTO, HEAD_WHOLE, HEAD_HALF, HEAD_QUARTER, HEAD_BREVIS
+//   Direction:     AUTO, UP, DOWN (no prefix)
+//
+// `beamMode` is plain API_PROPERTY (not _ENUM) so it takes integers. Values
+// from src/engraving/types/types.h BeamMode enum:
+//   AUTO=0, NONE=1, BEGIN=2, BEGIN16=3, BEGIN32=4, MID=5, END=6.
+// (apitypes.h misnames BEGIN16/32 as BEGIN32/64 — do NOT trust those names.)
+
+// Set the note head shape and/or appearance for one note in a chord, or all
+// notes. headGroup names accepted with or without the HEAD_ prefix; the
+// prefix is added internally when missing so the LLM can pass "DIAMOND".
+function setNoteHead(measure, beat, beatFraction, staff, voice, headGroup, headType, pitch) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    var hg = headGroup ? (headGroup.indexOf("HEAD_") === 0 ? headGroup : "HEAD_" + headGroup) : null
+    var ht = headType  ? (headType.indexOf("HEAD_")  === 0 ? headType  : "HEAD_" + headType)  : null
+    if (!hg && !ht) return { error: "Must provide headGroup or headType" }
+
+    var CHORD = api.engraving.Element.CHORD
+    var probe = s.newCursor()
+    probe.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    probe.rewindToTick(tick)
+    var chord = probe.element
+    if (!chord || chord.type !== CHORD) return {
+        error: "No chord at measure " + measure + " beat " + beat,
+        _debug: { fn: "setNoteHead", tick: tick, elementType: chord ? chord.type : null }
+    }
+
+    var targetMidi = pitch ? _noteNameToMidi(pitch) : null
+    var changed = 0
+    try {
+        s.startCmd("set note head")
+        for (var i = 0; i < chord.notes.length; i++) {
+            var note = chord.notes[i]
+            if (targetMidi !== null && parseInt(note.pitch) !== targetMidi) continue
+            if (hg) note.headGroup = hg
+            if (ht) note.headType  = ht
+            changed++
+        }
+        s.endCmd()
+        if (changed === 0) return { error: pitch ? "Note " + pitch + " not found at that position" : "No notes found" }
+        return { ok: true, measure: measure, beat: beat, staff: staff, headGroup: hg, headType: ht, notesChanged: changed }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setNoteHead failed: " + e }
+    }
+}
+
+// Force a chord's stem direction up or down, or reset to AUTO.
+function setStemDirection(measure, beat, beatFraction, staff, voice, direction) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var valid = { "UP": true, "DOWN": true, "AUTO": true }
+    if (!valid[direction]) return { error: "direction must be 'UP', 'DOWN', or 'AUTO'. Got: " + direction }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    var CHORD = api.engraving.Element.CHORD
+    var probe = s.newCursor()
+    probe.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    probe.rewindToTick(tick)
+    var chord = probe.element
+    if (!chord || chord.type !== CHORD) return {
+        error: "No chord at measure " + measure + " beat " + beat
+    }
+
+    try {
+        s.startCmd("set stem direction")
+        chord.stemDirection = direction   // API_PROPERTY_ENUM — string under apiversion=2
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, direction: direction }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setStemDirection failed: " + e }
+    }
+}
+
+// Set the beam mode for the chord at the given position. Values keyed off
+// types.h BeamMode enum integers (beamMode is plain API_PROPERTY).
+function setBeamMode(measure, beat, beatFraction, staff, voice, mode) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var BEAM_MODE_MAP = {
+        "AUTO":    0,
+        "NONE":    1,
+        "BEGIN":   2,
+        "BEGIN16": 3,
+        "BEGIN32": 4,
+        "MID":     5,
+        "END":     6
+    }
+    var modeVal = BEAM_MODE_MAP[mode]
+    if (modeVal === undefined) return {
+        error: "Unknown beam mode '" + mode + "'. Valid: AUTO BEGIN MID END NONE BEGIN16 BEGIN32"
+    }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return { error: "Measure " + measure + " not found" }
+
+    var CHORD = api.engraving.Element.CHORD
+    var probe = s.newCursor()
+    probe.track = (staff - 1) * 4 + ((voice || 1) - 1)
+    probe.rewindToTick(tick)
+    var chord = probe.element
+    if (!chord || chord.type !== CHORD) return {
+        error: "No chord at measure " + measure + " beat " + beat
+    }
+
+    try {
+        s.startCmd("set beam mode")
+        chord.beamMode = modeVal   // API_PROPERTY (int)
+        s.endCmd()
+        return { ok: true, measure: measure, beat: beat, staff: staff, mode: mode }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setBeamMode failed: " + e }
+    }
+}
+
 // Change the duration of the chord/rest at the given position. Pitches are
 // preserved; only duration changes. Overwrites the position — trailing
 // content past the new duration may be overwritten if the new duration is
