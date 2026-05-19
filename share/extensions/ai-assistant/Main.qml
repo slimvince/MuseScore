@@ -303,7 +303,14 @@ Rectangle {
             "confirm what you did.\n\n" +
             "When a tool returns an error, report the exact error text verbatim. " +
             "Do not invent an explanation for why it failed — you do not have visibility into " +
-            "MuseScore's internal state and guessing causes confusion."
+            "MuseScore's internal state and guessing causes confusion.\n\n" +
+            "If you use a position (measure, beat, staff) that differs from what the user " +
+            "specified — for example because you rounded to the nearest note onset — state " +
+            "the adjustment explicitly. Never silently use a different position than requested. " +
+            "When the user's request leaves a required parameter ambiguous, ask for " +
+            "clarification before calling the tool. Exception: if the score structure makes " +
+            "the answer unambiguous (e.g. there is only one staff), you may infer it and " +
+            "state your assumption."
 
         var l2lines = []
         var spelling = ScoreAccess.getChordSymbolSpelling()
