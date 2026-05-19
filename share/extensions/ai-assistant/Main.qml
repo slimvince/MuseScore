@@ -318,7 +318,13 @@ Rectangle {
             "'Bandoneon') rather than an explicit staff number, you MUST call get_score_info " +
             "first to look up the correct global staff number before calling any tool that " +
             "requires a staff parameter. Never assume staff=1 for an instrument name. " +
-            "The staff number returned by get_score_info is the one to use."
+            "The staff number returned by get_score_info is the one to use.\n\n" +
+            "When a tool returns a collection of settings or properties — such as " +
+            "get_score_style, get_score_info, or get_measure — report ALL returned " +
+            "fields in your response. Do not silently omit fields you consider " +
+            "unimportant or technical. You may group them by category for readability, " +
+            "but every returned key must appear. If the list is long, tell the user " +
+            "the total count and present all of them."
 
         var l2lines = []
         var spelling = ScoreAccess.getChordSymbolSpelling()
