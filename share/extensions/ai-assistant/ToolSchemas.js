@@ -662,7 +662,11 @@ function getToolSchemas(providerFormat) {
         {
             name: "get_measure",
             description:
-                "Returns structural metadata for a single measure: time signature, key signature, tempo marking, rehearsal mark, end barline type, and chord symbols. Does NOT return notes or lyrics — use get_notes_in_range and get_lyrics_in_range for those. Use this to get a quick structural snapshot of a specific measure.",
+                "Returns structural metadata for a single measure: time signature, key signature, tempo marking, rehearsal mark, end barline type, and chord symbols. Does NOT return notes or lyrics — use get_notes_in_range and get_lyrics_in_range for those. Use this to get a quick structural snapshot of a specific measure. " +
+                "Also returns barlineStart: the barline type at the beginning of the measure — " +
+                "'startRepeat' if a start-repeat barline is present, 'normal' otherwise. " +
+                "Use barlineStart together with barlineEnd to verify repeat barline placements " +
+                "after calling set_barline_type.",
             parameters: {
                 type: "object",
                 properties: {

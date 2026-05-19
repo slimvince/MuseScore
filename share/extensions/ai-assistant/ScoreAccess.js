@@ -2541,6 +2541,16 @@ function getMeasure(measureNo) {
         if (r) result.rehearsalMark = r.text || ""
     } catch(e) {}
 
+    // Start barline — set_barline_type writes m.repeatStart for START_REPEAT
+    // and also handles END_START_REPEAT (which sets repeatStart on the next measure).
+    try {
+        if (m.repeatStart) {
+            result.barlineStart = "startRepeat"
+        } else {
+            result.barlineStart = "normal"
+        }
+    } catch(e) {}
+
     // End barline — look for the EndBarLine segment (SegmentType 0x20000),
     // falling back to the last segment if absent.
     try {
