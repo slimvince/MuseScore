@@ -2305,30 +2305,16 @@ function addTie(measure, beat, beatFraction, staff, voice) {
     }
 }
 
-// Add an articulation to the chord at the given position. cmd-based, so NO
-// startCmd wrapper. Only articulations with a verified registered cmd string
-// are included — others return an "unsupported" error rather than guessing.
+// Add an articulation to the chord at the given position. Direct-construction
+// only: `newElement(ARTICULATION)` + `art.symbol = SymId.<...>` BEFORE
+// `chord.add(art)`. The cmd path (add-tenuto, add-marcato, …) is
+// isNotationPage-gated and silently no-ops in form-extension context (upstream
+// bug #24673), so every articulation is keyed off `directSymIds`. The SYMBOL
+// property lives on the base EngravingItem (elements.h:828) and is documented
+// as valid for symbols, articulation, fermatas, ornaments and breaths.
 //
-// Sources (notationactioncontroller.cpp / notationuiactions.cpp):
-//   add-staccato   (controller:181, uiactions:2526)
-//   add-tenuto     (controller:180, uiactions:2519)
-//   add-sforzato   (controller:179, uiactions:2512) ← maps "accent"
-//   add-marcato    (controller:178, uiactions:2505)
-//   add-trill      (controller:503, uiactions:1972)
-//   add-mordent    (controller:505, uiactions:1984)
-//   add-turn       (controller:498, uiactions:1942)
-//   add-up-bow     (controller:513, uiactions:2026)
-//   add-down-bow   (controller:514, uiactions:2032)
-//
-// Direct-construction articulations (no registered cmd path): staccatissimo,
-// snapPizzicato, harmonic, stress, unstress. These use `newElement(ARTICULATION)`
-// + `art.symbol = SymId.<...>` BEFORE `chord.add(art)` — same set-before-add
-// discipline as Fermata. The SYMBOL property is defined on the base EngravingItem
-// (elements.h:828) and is documented as valid for symbols, articulation,
-// fermatas and breaths.
-//
-// Still NOT covered: shortFermata/longFermata/veryLongFermata (use add_fermata
-// instead), leftHandPizzicato, tremolo (own element type).
+// Not covered here: shortFermata/longFermata/veryLongFermata (use add_fermata),
+// leftHandPizzicato, tremolo (own element type).
 function addArticulation(measure, beat, beatFraction, staff, voice, articulation) {
     var s = _score()
     if (!s) return { error: "No score open" }
@@ -2353,6 +2339,21 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
         "stress":        "articStressAbove",
         "unstress":      "articUnstressAbove"
     }
+
+    // ── Extended direct-construction entries (Batch E1) ──
+    // All formerly cmd-based articulations converted to SymId path.
+    // cmd("add-tenuto") etc. are isNotationPage-gated and silently no-op in
+    // form-extension context (upstream bug #24673). SymId names verified
+    // verbatim against src/engraving/api/v1/apitypes.h.
+    directSymIds["tenuto"]   = "articTenutoAbove"
+    directSymIds["accent"]   = "articAccentAbove"      // was add-sforzato cmd
+    directSymIds["marcato"]  = "articMarcatoAbove"
+    directSymIds["trill"]    = "ornamentTrill"
+    directSymIds["mordent"]  = "ornamentMordent"
+    directSymIds["turn"]     = "ornamentTurn"
+    directSymIds["upBow"]    = "stringsUpBow"
+    directSymIds["downBow"]  = "stringsDownBow"
+
     if (directSymIds[articulation] !== undefined) {
         var symIdName = directSymIds[articulation]
         var SymId = api.engraving.SymId
@@ -2383,55 +2384,7 @@ function addArticulation(measure, beat, beatFraction, staff, voice, articulation
         }
     }
 
-    // ── Cmd-based branch (registered action handlers) ──
-    // `staccato` is intentionally absent here — it lives in directSymIds now
-    // (see Fix 1 in this version). Other cmd-based articulations still go
-    // through toggleArticulation; we probe the chord first and verify the
-    // articulation count actually increased to detect silent no-ops.
-    var articulationCmdMap = {
-        "tenuto":   "add-tenuto",
-        "accent":   "add-sforzato",
-        "marcato":  "add-marcato",
-        "trill":    "add-trill",
-        "mordent":  "add-mordent",
-        "turn":     "add-turn",
-        "upBow":    "add-up-bow",
-        "downBow":  "add-down-bow"
-    }
-    var cmdStr = articulationCmdMap[articulation]
-    if (!cmdStr) return { error: "Articulation '" + articulation + "' not yet implemented" }
-
-    var s0 = staff - 1
-    var probeC = s.newCursor()
-    probeC.track = s0 * 4 + ((voice || 1) - 1)
-    probeC.rewindToTick(tick)
-    var probeChord = probeC.element
-    if (!probeChord || probeChord.type !== api.engraving.Element.CHORD) {
-        return {
-            error: "No chord at measure " + measure + " beat " + beat + " staff " + staff,
-            _debug: { fn: "addArticulation", tick: tick, elementType: probeChord ? probeChord.type : null }
-        }
-    }
-    var beforeArts = (probeChord.articulations && probeChord.articulations.length) || 0
-
-    var dTicks = 1
-    try { if (probeChord.duration && typeof probeChord.duration.ticks === "number") dTicks = probeChord.duration.ticks } catch (e) {}
-    if (dTicks < 1) dTicks = 1
-
-    try {
-        s.selection.selectRange(tick, tick + dTicks, s0, s0 + 1)
-        api.engraving.cmd(cmdStr)
-        var afterArts = (probeChord.articulations && probeChord.articulations.length) || 0
-        if (afterArts <= beforeArts) {
-            return {
-                error: "Articulation cmd had no effect — selection may have missed the chord",
-                _debug: { fn: "addArticulation", cmd: cmdStr, tick: tick, before: beforeArts, after: afterArts }
-            }
-        }
-        return { ok: true, articulation: articulation }
-    } catch (e) {
-        return { error: "addArticulation failed: " + e }
-    }
+    return { error: "Articulation '" + articulation + "' not yet implemented" }
 }
 
 // ── Diagnostic ───────────────────────────────────────────────────────────
