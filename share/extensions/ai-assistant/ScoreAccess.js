@@ -2751,6 +2751,93 @@ function addTremolo(measure, beat, beatFraction, staff, voice, type) {
     }
 }
 
+// Adds a tuplet (triplet, quintuplet, etc.) at the given position.
+//
+// Native cursor.addTuplet — no dispatcher dependency.
+// ratio: "N:D" string. N = actual notes; D = normal notes for the same total
+//   duration (e.g. "3:2" = triplet, "5:4" = quintuplet).
+// noteDuration: per-slot duration (e.g. "eighth" for an eighth-note triplet).
+// pitches: optional pitch-string array (e.g. ["C4","E4","G4"]). Length must
+//   equal N. Omit / pass empty array to fill all slots with rests.
+//
+// Total span = noteDuration * D; MuseScore adjusts the existing CR at the
+// position to match this span (changeCRlen in cursor.cpp), so the position
+// need not hold a rest of exact duration — anything CR can be replaced.
+//
+// Source verification (2026-05-19):
+//  - cursor.h:215, cursor.cpp:516-571: addTuplet sets cursor at slot 1 with
+//    duration = baseLen after creating the tuplet structure.
+//  - edit.cpp:4534-4585 (cmdCreateTuplet): slot 1 retains original chord notes
+//    if the position held a chord; slots 2..N are pre-filled rests. Calling
+//    addNote/addRest N times below overwrites slot 1 then each pre-filled rest,
+//    so the end state is correct whether the position started as chord or rest.
+//  - addNote(midi, false) and addRest() both call score->addPitch/enterRest
+//    which advance the cursor's input state segment, so no explicit
+//    setDuration/rewind is needed between slots inside the tuplet.
+function addTuplet(measure, beat, beatFraction, staff, voice, ratio, noteDuration, pitches) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var parts = (ratio || "").split(":")
+    if (parts.length !== 2) return { error: "ratio must be 'N:D' (e.g. '3:2', '5:4'). Got: " + ratio }
+    var ratioNum = parseInt(parts[0])
+    var ratioDen = parseInt(parts[1])
+    if (!ratioNum || !ratioDen || ratioNum < 2 || ratioDen < 1)
+        return { error: "Invalid ratio '" + ratio + "'. Both N and D must be positive integers, N >= 2." }
+
+    var dur = _durationToFraction(noteDuration)
+    // _durationToFraction silently falls back to [1,4] (quarter) on unknown input —
+    // detect typos explicitly so the user gets an error instead of a silent quarter default.
+    if (noteDuration !== "quarter" && dur[0] === 1 && dur[1] === 4) {
+        return { error: "Unknown noteDuration '" + noteDuration + "'" }
+    }
+    var spanN = dur[0] * ratioDen
+    var spanD = dur[1]
+
+    var pitchList = (pitches && pitches.length > 0) ? pitches : null
+    if (pitchList && pitchList.length !== ratioNum)
+        return { error: "pitches array length (" + pitchList.length + ") must equal tuplet count (" + ratioNum + ")" }
+
+    var tick = _posToTick(measure, beat, beatFraction)
+    if (tick < 0) return {
+        error: "Measure " + measure + " not found",
+        _debug: { fn: "addTuplet", measureNo: measure, beat: beat, beatFraction: beatFraction || "0" }
+    }
+
+    try {
+        s.startCmd("add tuplet")
+        var c = s.newCursor()
+        c.track = (staff - 1) * 4 + ((voice || 1) - 1)
+        c.rewindToTick(tick)
+
+        var ratioFrac = api.engraving.fraction(ratioNum, ratioDen)
+        var spanFrac  = api.engraving.fraction(spanN, spanD)
+        c.addTuplet(ratioFrac, spanFrac)
+
+        // Overwrite every slot uniformly. After addTuplet, cursor is at slot 1
+        // with duration = baseLen; addNote/addRest each preserve that duration
+        // and advance the cursor's input state to the next segment.
+        for (var i = 0; i < ratioNum; i++) {
+            if (pitchList) {
+                c.addNote(_noteNameToMidi(pitchList[i]), false)
+            } else {
+                c.addRest()
+            }
+        }
+
+        s.endCmd()
+        return {
+            ok: true,
+            measure: measure, beat: beat, staff: staff, voice: voice || 1,
+            ratio: ratio, noteDuration: noteDuration,
+            pitches: pitchList || "rests"
+        }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "addTuplet failed: " + e }
+    }
+}
+
 // Change the duration of the chord/rest at the given position. Pitches are
 // preserved; only duration changes. Overwrites the position — trailing
 // content past the new duration may be overwritten if the new duration is

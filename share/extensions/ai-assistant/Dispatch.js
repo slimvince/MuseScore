@@ -88,6 +88,9 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "delete_note")   return scoreAccess.deleteNote(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.pitch || null)
         if (name === "add_tremolo")   return scoreAccess.addTremolo(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.type)
 
+        // ── Batch D2 tools ──
+        if (name === "add_tuplet")    return scoreAccess.addTuplet(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.ratio, a.noteDuration, a.pitches || [])
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

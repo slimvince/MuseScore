@@ -916,6 +916,39 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measure", "beat", "staff", "type"]
             }
+        },
+
+        // ── BATCH D2: add_tuplet ──
+
+        {
+            name: "add_tuplet",
+            description:
+                "Adds a tuplet (triplet, quintuplet, etc.) at the given beat position. " +
+                "ratio controls the grouping: '3:2' = triplet (3 notes in time of 2), " +
+                "'5:4' = quintuplet (5 in time of 4), '6:4' = sextuplet, '7:4' = septuplet. " +
+                "noteDuration is the duration of each individual note within the tuplet. " +
+                "Common combinations: ratio='3:2' + noteDuration='eighth' = eighth-note triplet " +
+                "(fills one quarter note); ratio='3:2' + noteDuration='quarter' = quarter-note triplet " +
+                "(fills one half note); ratio='5:4' + noteDuration='16th' = 16th-note quintuplet " +
+                "(fills one quarter note). " +
+                "pitches: optional array of pitch strings (e.g. ['C4','E4','G4']). " +
+                "If provided, length must match the N in ratio. If omitted, all slots become rests. " +
+                "MuseScore adjusts the existing content at the position to match the tuplet's total span — " +
+                "the position need not hold a rest of exact duration.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure:      { type: "integer", description: "1-based measure number." },
+                    beat:         { type: "integer", description: "1-based beat number." },
+                    beatFraction: { type: "string",  description: "Sub-beat offset: '0', '1/2', '1/4' etc. Omit for exact beat." },
+                    staff:        { type: "integer", description: "Global 1-based staff number from get_score_info." },
+                    voice:        { type: "integer", description: "Voice 1–4. Defaults to 1." },
+                    ratio:        { type: "string",  description: "Tuplet ratio as 'N:D'. Examples: '3:2' (triplet), '5:4' (quintuplet), '6:4' (sextuplet), '7:4' (septuplet)." },
+                    noteDuration: { type: "string",  description: "Duration of each note in the tuplet. Same values as add_note: 'eighth', '16th', 'quarter', '32nd', 'half' etc." },
+                    pitches:      { type: "array", items: { type: "string" }, description: "Optional. Pitch strings for each slot (e.g. ['C4','E4','G4']). Length must equal N in ratio. Omit to fill with rests." }
+                },
+                required: ["measure", "beat", "staff", "ratio", "noteDuration"]
+            }
         }
     ]
 
