@@ -99,6 +99,11 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "set_stem_direction") return scoreAccess.setStemDirection(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.direction)
         if (name === "set_beam_mode")      return scoreAccess.setBeamMode(a.measure, a.beat, a.beatFraction || "0", a.staff, a.voice || 1, a.mode)
 
+        // ── Batch E3 tools ──
+        if (name === "set_barline_type")   return scoreAccess.setBarlineType(a.measure, a.type)
+        if (name === "get_score_style")    return scoreAccess.getScoreStyle(a.keys || null)
+        if (name === "set_score_style")    return scoreAccess.setScoreStyle(a.styles)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

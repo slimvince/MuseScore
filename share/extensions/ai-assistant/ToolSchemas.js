@@ -1047,6 +1047,63 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["measure", "beat", "staff", "mode"]
             }
+        },
+
+        // ── BATCH E3: set_barline_type, get_score_style, set_score_style ──
+
+        {
+            name: "set_barline_type",
+            description:
+                "Changes the barline at the end of a measure. " +
+                "'NORMAL' = single barline; 'DOUBLE' = double barline; " +
+                "'START_REPEAT' = repeat start (at the START of the named measure); " +
+                "'END_REPEAT' = repeat end (at the END of the named measure); " +
+                "'END_START_REPEAT' = end-repeat at the named measure AND start-repeat at the next measure; " +
+                "'END' = final barline (thick); 'BROKEN' = dashed barline; 'DOTTED' = dotted barline. " +
+                "Switching to a non-repeat type clears any existing repeat flags on the measure. The change is undoable.",
+            parameters: {
+                type: "object",
+                properties: {
+                    measure: { type: "integer", description: "1-based measure number. For START_REPEAT this is the measure where the repeat begins; for END_REPEAT this is the measure where the repeat ends." },
+                    type:    { type: "string",  enum: ["NORMAL","DOUBLE","START_REPEAT","END_REPEAT","END_START_REPEAT","END","BROKEN","DOTTED"], description: "Barline type." }
+                },
+                required: ["measure", "type"]
+            }
+        },
+        {
+            name: "get_score_style",
+            description:
+                "Reads score-wide style settings. " +
+                "keys: optional array of specific style keys to read. If omitted, returns all known style properties. " +
+                "Known keys: showMeasureNumber (bool), measureNumberInterval (int), createMultiMeasureRests (bool), " +
+                "minEmptyMeasures (int), hideEmptyStaves (bool), dontHideStavesInFirstSystem (bool), " +
+                "enableVerticalSpread (bool, controls page-fill), spatium (double, staff line-spacing in MuseScore's internal point units).",
+            parameters: {
+                type: "object",
+                properties: {
+                    keys: { type: "array", items: { type: "string" }, description: "Style key names to read. Omit to read all known keys." }
+                },
+                required: []
+            }
+        },
+        {
+            name: "set_score_style",
+            description:
+                "Changes one or more score-wide style settings in a single undoable operation. " +
+                "Pass a styles object with key:value pairs. " +
+                "Examples: { 'showMeasureNumber': false } to hide measure numbers; " +
+                "{ 'createMultiMeasureRests': true, 'minEmptyMeasures': 2 } to enable multi-measure rests; " +
+                "{ 'hideEmptyStaves': true } to hide empty staves; " +
+                "{ 'enableVerticalSpread': false } to disable vertical justification. " +
+                "Use get_score_style first to read current values. " +
+                "Note: 'pageFillLimit' is the MS3 name and does not exist in MS4 — use 'enableVerticalSpread' instead.",
+            parameters: {
+                type: "object",
+                properties: {
+                    styles: { type: "object", description: "Object of style key:value pairs to set." }
+                },
+                required: ["styles"]
+            }
         }
     ]
 

@@ -3067,6 +3067,127 @@ function setBeamMode(measure, beat, beatFraction, staff, voice, mode) {
     }
 }
 
+// ── Batch E3 — barline types + general style read/write ──────────────────
+//
+// Two paths for barline types:
+//   Repeats (START_REPEAT / END_REPEAT / END_START_REPEAT) use the
+//     MeasureBase repeatStart / repeatEnd bool flags (elements.h:1906-1908).
+//   Other types write barlineType directly on the BarLine element in the
+//     measure's EndBarLine segment. barlineType is plain API_PROPERTY,
+//     takes the integer value from src/engraving/types/types.h BarLineType:
+//       NORMAL=1, DOUBLE=2, START_REPEAT=4, END_REPEAT=8, BROKEN=16,
+//       END=32, END_START_REPEAT=64, DOTTED=128.
+//   The EndBarLine segment is found by walking measure.lastSegment back.
+//   In MuseScore, m.lastSegment is typically the EndBarLine segment itself.
+function setBarlineType(measureNo, type) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var BAR_TYPE_INT = {
+        "NORMAL":           1,
+        "DOUBLE":           2,
+        "START_REPEAT":     4,
+        "END_REPEAT":       8,
+        "BROKEN":          16,
+        "END":             32,   // final barline (thick)
+        "END_START_REPEAT": 64,
+        "DOTTED":         128
+    }
+    if (BAR_TYPE_INT[type] === undefined) return {
+        error: "Unknown barline type '" + type + "'. Valid: NORMAL DOUBLE START_REPEAT END_REPEAT END_START_REPEAT END BROKEN DOTTED"
+    }
+
+    var m = _findMeasureByNumber(s, measureNo)
+    if (!m) return { error: "Measure " + measureNo + " not found" }
+
+    try {
+        s.startCmd("set barline type")
+
+        // Reset repeat flags first so previously-set repeats are cleared
+        // when switching to a non-repeat type.
+        m.repeatStart = false
+        m.repeatEnd   = false
+
+        if (type === "START_REPEAT") {
+            m.repeatStart = true
+        } else if (type === "END_REPEAT") {
+            m.repeatEnd = true
+        } else if (type === "END_START_REPEAT") {
+            m.repeatEnd = true
+            if (m.nextMeasure) m.nextMeasure.repeatStart = true
+        } else {
+            // NORMAL / DOUBLE / END / BROKEN / DOTTED — write the BarLine element
+            // in the measure's last segment.
+            var seg = m.lastSegment
+            var bl = seg ? seg.elementAt(0) : null
+            if (!bl || bl.type !== api.engraving.Element.BAR_LINE) {
+                s.endCmd(true)
+                return {
+                    error: "Could not locate end barline element for measure " + measureNo,
+                    _debug: { fn: "setBarlineType", segType: seg ? seg.segmentType : null, blType: bl ? bl.type : null, BAR_LINE: api.engraving.Element.BAR_LINE }
+                }
+            }
+            bl.barlineType = BAR_TYPE_INT[type]
+        }
+
+        s.endCmd()
+        return { ok: true, measure: measureNo, type: type }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setBarlineType failed: " + e }
+    }
+}
+
+// Read one or more score-wide style properties. Pass keys=null to return
+// all curated keys. Style key names verified verbatim against
+// src/engraving/style/styledef.cpp (lines 78, 492, 494, 544, 545, 562, 563,
+// 777). pageFillLimit is the MS3 name; MS4 uses enableVerticalSpread.
+function getScoreStyle(keys) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+
+    var KNOWN_KEYS = [
+        "showMeasureNumber", "measureNumberInterval",
+        "createMultiMeasureRests", "minEmptyMeasures",
+        "hideEmptyStaves", "dontHideStavesInFirstSystem",
+        "enableVerticalSpread",
+        "spatium"
+    ]
+    var queryKeys = (keys && keys.length > 0) ? keys : KNOWN_KEYS
+    var result = {}
+    for (var i = 0; i < queryKeys.length; i++) {
+        var k = queryKeys[i]
+        try {
+            result[k] = s.style.value(k)
+        } catch (e) {
+            result[k] = null
+        }
+    }
+    return { ok: true, styles: result }
+}
+
+// Set one or more score-wide style properties in a single undo entry.
+function setScoreStyle(styles) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (!styles || typeof styles !== "object") return { error: "styles must be an object of key:value pairs" }
+
+    var keys = Object.keys(styles)
+    if (keys.length === 0) return { error: "styles object is empty" }
+
+    try {
+        s.startCmd("set score style")
+        for (var i = 0; i < keys.length; i++) {
+            s.style.setValue(keys[i], styles[keys[i]])
+        }
+        s.endCmd()
+        return { ok: true, changed: keys }
+    } catch (e) {
+        try { s.endCmd(true) } catch (ee) {}
+        return { error: "setScoreStyle failed: " + e }
+    }
+}
+
 // Change the duration of the chord/rest at the given position. Pitches are
 // preserved; only duration changes. Overwrites the position — trailing
 // content past the new duration may be overwritten if the new duration is
