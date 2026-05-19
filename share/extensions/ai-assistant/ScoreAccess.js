@@ -1577,7 +1577,7 @@ function addPageBreak(measureNo) {
     return _addLayoutBreak("add page break", 0 /* PAGE */, measureNo)
 }
 
-// Add or change a key signature at the start of a measure.
+// Add or change a key signature at the start of a measure, applied to ALL staves.
 // key: integer -7 (7 flats) to +7 (7 sharps), 0 = C major / A minor.
 function addKeySignature(measure, key) {
     var s = _score()
@@ -1590,14 +1590,17 @@ function addKeySignature(measure, key) {
 
     try {
         s.startCmd("add key signature")
-        var c = s.newCursor()
-        c.track = 0
-        c.rewindToTick(tick)
-        var el = api.engraving.newElement(_EL.KEYSIG)
-        el.concertKey = key
-        c.add(el)
+        var nStaves = s.nstaves
+        for (var st = 0; st < nStaves; st++) {
+            var c = s.newCursor()
+            c.track = st * 4
+            c.rewindToTick(tick)
+            var el = api.engraving.newElement(_EL.KEYSIG)
+            el.concertKey = key
+            c.add(el)
+        }
         s.endCmd()
-        return { ok: true, measure: measure, key: key, keySignature: _keysigToString(key) }
+        return { ok: true, measure: measure, key: key, keySignature: _keysigToString(key), stavesUpdated: nStaves }
     } catch(e) {
         try { s.endCmd(true) } catch(ee) {}
         return { error: "addKeySignature failed: " + e }
@@ -1649,6 +1652,7 @@ function addClef(measure, beat, beatFraction, staff, clefType) {
         c.track = (staff - 1) * 4
         c.rewindToTick(tick)
         var el = api.engraving.newElement(_EL.CLEF)
+        el.clefType = clefInt
         el.concertClefType = clefInt
         c.add(el)
         s.endCmd()
