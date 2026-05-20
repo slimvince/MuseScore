@@ -175,6 +175,38 @@ Matching rules:
    does not exercise honest-error handling. Substituted a deterministic error:
    a `get_key_at` on a non-existent measure (999), which returns
    `{"error":"Measure 999 not found"}`.
+4. **`test_llm_behaviour_requery`** accepts any of `get_key_at` / `get_structure`
+   / `get_score_info` / `get_measure` — answering "what key is this score in?"
+   by calling *any* of them satisfies the LLM-1 re-query rule. (`expect_tool`
+   may be a single name or a list.)
+5. **`test_add_key_signature` verifies with `get_measure`, not `get_key_at`** —
+   `get_key_at` is currently broken on a valid measure (see Findings).
+
+## Findings from running the suite
+
+These are real issues the suite surfaced (the extension source was NOT modified
+per the task constraints):
+
+- **`get_key_at` is broken on a valid measure.** `get_key_at {measure:1}`
+  returns `{"error":"getKeyAt failed: TypeError: Passing incompatible arguments
+  to C++ functions from JavaScript is not allowed."}` — `st0.key(tick)` in
+  `ScoreAccess.getKeyAt` is being passed an incompatible `tick`. (Out-of-range
+  measures return cleanly because the `tick < 0` guard fires first, which is why
+  the honest-error test still works.) Worth fixing in `ScoreAccess.js`.
+- **The debug logger races and can drop a line.** `_writeLogViaProcess` appends
+  each line with a *separate* PowerShell `Add-Content` process; back-to-back
+  call+result writes occasionally collide on the file and one is lost (observed:
+  an `add_key_signature` call with no following result). This affects any
+  log-based observation of the extension. The runner mitigates it by re-sending
+  a step once when a call is seen but its result is missing (`STEP_ATTEMPTS`);
+  a real fix would serialize writes (one persistent writer / a mutex) in the
+  extension.
+- **Responses can exceed a short timeout under load.** A single tool call
+  occasionally took >45 s, so `LLM_TIMEOUT_SEC` is 90 s.
+- **API errors are invisible to the log.** Backend failures (HTTP 500 /
+  OVERLOADED, credit-balance, bad key) show only in the chat UI, so they look
+  like "no tool call". The runner saves a screenshot on that failure to tell
+  them apart (see Known fragilities).
 
 ## How a send works (and the streaming guard)
 

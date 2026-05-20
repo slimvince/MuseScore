@@ -5,7 +5,7 @@
   "steps": [
     {
       "prompt": "What key is this score in?",
-      "expect_tool": "get_key_at"
+      "expect_tool": ["get_key_at", "get_structure", "get_score_info", "get_measure"]
     }
   ]
 }

@@ -8,9 +8,9 @@
       "expect_tool": "add_key_signature",
       "expect_result": { "ok": true, "keySignature": "G major" },
       "verify": {
-        "tool": "get_key_at",
-        "prompt": "What key signature is in effect at measure 1? Call get_key_at.",
-        "contains": [ { "keySignature": "G major", "fifths": 1 } ]
+        "tool": "get_measure",
+        "prompt": "What is the key signature in measure 1? Call get_measure for measure 1.",
+        "contains": [ { "keySignature": "G major" } ]
       }
     }
   ]

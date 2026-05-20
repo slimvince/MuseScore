@@ -75,6 +75,15 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
+# Tool results contain non-cp1252 glyphs (e.g. the quarter-note U+2669 in tempo
+# text). On Windows the default console/file encoding is cp1252, so printing
+# them raises UnicodeEncodeError and aborts a spec. Force UTF-8 on stdout/stderr.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001  (older Python / non-reconfigurable stream)
+        pass
+
 # ---------------------------------------------------------------------------
 # Configuration  (edit here)
 # ---------------------------------------------------------------------------
@@ -93,8 +102,9 @@ TESTS_DIR       = str(SCRIPT_DIR / "tests")
 SESSION_STATE_FILE = str(Path(DEBUG_LOG).parent.parent / "session" / "session.json")
 
 # How long to wait for each LLM response (seconds). LLM calls typically 3-8s,
-# but a multi-tool turn (read then write) can chain, so allow headroom.
-LLM_TIMEOUT_SEC = 45
+# but a multi-tool turn (read then write) can chain and the model can be slow
+# under load, so allow generous headroom.
+LLM_TIMEOUT_SEC = 90
 
 # How long to wait for MuseScore to start and load a score (seconds).
 MS_LAUNCH_TIMEOUT_SEC = 30
@@ -109,6 +119,12 @@ SETTLE_SEC = 2.5
 # The extension ignores Enter while it is streaming a reply. Re-press Enter this
 # often (seconds) until the message actually sends and a tool call appears.
 NUDGE_ENTER_SEC = 3.0
+
+# Per-step attempts. The extension's debug logger (separate PowerShell process
+# per line) occasionally races and drops a result line; on "call seen but no
+# result" (or no call) the runner re-sends the (idempotent) prompt this many
+# times before failing.
+STEP_ATTEMPTS = 2
 
 # Substring used to find the MuseScore main window title.
 WINDOW_TITLE_RE = "MuseScore"
@@ -289,9 +305,11 @@ def _parse_iso(t: str) -> float:
 
 
 def find_call(events, tool_name):
-    """First call event with matching tool name, else None."""
+    """First call event whose tool name matches. `tool_name` may be a single
+    name or a list/tuple of acceptable names."""
+    names = tool_name if isinstance(tool_name, (list, tuple)) else [tool_name]
     for e in events:
-        if e.get("call") == tool_name:
+        if e.get("call") in names:
             return e
     return None
 
@@ -306,22 +324,27 @@ def all_results(events):
 
 def pair_result_for_call(events, call_event):
     """
-    Pair a result to its call by timestamp: a result logged at result.t with
-    elapsed `ms` came from a call at approximately (result.t - ms/1000). Pick
-    the result whose implied call-time is closest to this call's timestamp.
-    File order is unreliable (separate writer processes), so we use 't'.
+    Pair a result to its call. Tools execute sequentially, so a call's result is
+    the chronologically next result at/after the call's timestamp -- robust when
+    the LLM makes several calls in a turn (results carry no tool name). File
+    order is unreliable (separate writer processes), so 't' is authoritative.
+    Falls back to nearest implied call-time (result.t - ms) if nothing is after.
     """
     if not call_event:
         return None
     ct = _parse_iso(call_event.get("t", ""))
+    results = [(_parse_iso(e.get("t", "")), e) for e in events if "result" in e]
+    if not results:
+        return None
+    results.sort(key=lambda x: x[0])
+    EPS = 0.5  # seconds of clock tolerance for "at/after the call"
+    after = [e for (rt, e) in results if rt >= ct - EPS]
+    if after:
+        return after[0]
     best, best_d = None, None
-    for e in events:
-        if "result" not in e:
-            continue
-        rt = _parse_iso(e.get("t", ""))
-        ms = e.get("ms", 0) or 0
-        implied_call_t = rt - (ms / 1000.0)
-        d = abs(implied_call_t - ct)
+    for rt, e in results:
+        implied = rt - (e.get("ms", 0) or 0) / 1000.0
+        d = abs(implied - ct)
         if best is None or d < best_d:
             best, best_d = e, d
     return best
@@ -724,10 +747,29 @@ def run_step(step: dict, index: int, spec_name: str, verbose: bool):
     verify = step.get("verify")
     label = f"{spec_name} / step {index}"
 
-    before = get_log_offset()
-    events, after = send_and_wait(before, prompt, timeout=LLM_TIMEOUT_SEC)
-
     detail = []
+    needs_result = (expect_result is not None) or bool(expect_keys)
+    events, call, result_value = [], None, None
+
+    # Retry loop: the extension's debug logger writes each line via a separate
+    # PowerShell process, and back-to-back call+result writes occasionally race
+    # and drop the result line. So if a tool call is seen but no result is
+    # captured (or no call at all), re-send the prompt once. The prompts here are
+    # idempotent writes (overwrite / update-in-place), so re-sending is safe.
+    for attempt in range(max(1, STEP_ATTEMPTS)):
+        before = get_log_offset()
+        events, _ = send_and_wait(before, prompt, timeout=LLM_TIMEOUT_SEC)
+        calls = all_calls(events)
+        call = find_call(events, expect_tool) if expect_tool else (calls[0] if calls else None)
+        result_event = pair_result_for_call(events, call) if call else None
+        result_value = result_event.get("result") if result_event else None
+        if (call is not None and (result_value is not None or not needs_result)) \
+                or attempt == max(1, STEP_ATTEMPTS) - 1:
+            break
+        detail.append(f"       (attempt {attempt + 1}: "
+                      f"{'no tool call' if call is None else 'call seen but result line dropped'}"
+                      f" -- retrying)")
+
     if verbose:
         detail.append(f'       prompt:   "{prompt}"')
         for e in events:
@@ -743,21 +785,16 @@ def run_step(step: dict, index: int, spec_name: str, verbose: bool):
         ]
         return False, f"[FAIL] {label}: no tool call seen within {LLM_TIMEOUT_SEC}s", detail
 
-    # Resolve which call we assert against.
-    if expect_tool:
-        call = find_call(events, expect_tool)
-        if call is None:
-            got = ", ".join(c.get("call", "?") for c in calls) or "none"
-            line = (f"[FAIL] {label}: expected tool '{expect_tool}', got '{got}'")
-            detail = [f'       prompt:   "{prompt}"',
-                      f"       expected: {expect_tool}",
-                      f"       actual:   {got}"] + detail
-            return False, line, detail
-    else:
+    if expect_tool and call is None:
+        got = ", ".join(c.get("call", "?") for c in calls) or "none"
+        line = (f"[FAIL] {label}: expected tool '{expect_tool}', got '{got}'")
+        detail = [f'       prompt:   "{prompt}"',
+                  f"       expected: {expect_tool}",
+                  f"       actual:   {got}"] + detail
+        return False, line, detail
+    if call is None:
         call = calls[0]
 
-    result_event = pair_result_for_call(events, call)
-    result_value = result_event.get("result") if result_event else None
     tool = call.get("call")
 
     # expect_result subset check
