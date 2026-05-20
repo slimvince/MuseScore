@@ -622,62 +622,62 @@
         },
         {
             "key": "A",
-            "text": "G#dim7/F",
+            "text": "Bm9b5",
             "tick": 35760
         },
         {
             "key": "A",
-            "text": "viio42",
+            "text": "iiø9",
             "tick": 35760
         },
         {
             "key": "A",
-            "text": "G#dim7/F",
+            "text": "Bm9b5",
             "tick": 35760
         },
         {
             "key": "A",
-            "text": "viio42",
+            "text": "iiø9",
             "tick": 35760
         },
         {
             "key": "A",
-            "text": "C#",
+            "text": "Bmadd9/C#",
             "tick": 36720
         },
         {
             "key": "A",
-            "text": "III",
+            "text": "ii(add9)",
             "tick": 36720
         },
         {
             "key": "A",
-            "text": "C#",
+            "text": "Bmadd9/C#",
             "tick": 36720
         },
         {
             "key": "A",
-            "text": "III",
+            "text": "ii(add9)",
             "tick": 36720
         },
         {
             "key": "A",
-            "text": "C#",
+            "text": "C#7",
             "tick": 37440
         },
         {
             "key": "A",
-            "text": "III",
+            "text": "III7",
             "tick": 37440
         },
         {
             "key": "A",
-            "text": "C#",
+            "text": "C#7",
             "tick": 37440
         },
         {
             "key": "A",
-            "text": "III",
+            "text": "III7",
             "tick": 37440
         },
         {
@@ -1074,16 +1074,16 @@
             "durationTicks": 960,
             "key": "A",
             "mode": "maj",
-            "quality": "diminished",
-            "root": "G#",
+            "quality": "halfDiminished",
+            "root": "B",
             "tick": 35760
         },
         {
             "durationTicks": 720,
             "key": "A",
             "mode": "maj",
-            "quality": "major",
-            "root": "C#",
+            "quality": "minor",
+            "root": "B",
             "tick": 36720
         },
         {
@@ -1606,50 +1606,54 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "G#dim7/F",
+            "harmonyText": "Bm9b5",
             "pitches": [
-                71,
-                73,
-                74,
-                77
+                61,
+                62,
+                65,
+                69
             ],
             "tick": 35760
         },
         {
             "durationTicks": 720,
-            "harmonyText": "C#",
+            "harmonyText": "Bmadd9/C#",
             "pitches": [
-                65,
-                68
+                61,
+                62,
+                66
             ],
             "tick": 36720
         },
         {
-            "durationTicks": 240,
-            "harmonyText": "",
+            "durationTicks": 960,
+            "harmonyText": "C#7",
             "pitches": [
                 65,
-                68
+                68,
+                71
             ],
             "tick": 37440
         },
         {
             "durationTicks": 960,
-            "harmonyText": "C#",
+            "harmonyText": "C#7",
             "pitches": [
                 65,
-                68
+                68,
+                71
             ],
-            "tick": 37680
+            "tick": 38400
         },
         {
-            "durationTicks": 960,
-            "harmonyText": "C#",
+            "durationTicks": 240,
+            "harmonyText": "C#7",
             "pitches": [
                 65,
-                68
+                68,
+                71
             ],
-            "tick": 38640
+            "tick": 39360
         },
         {
             "durationTicks": 720,
@@ -2731,24 +2735,24 @@
         {
             "alternatives": [
                 {
-                    "quality": "halfDiminished",
-                    "root": "G#",
-                    "score": 2.58
-                },
-                {
                     "quality": "sus4",
                     "root": "C#",
-                    "score": 2.349
+                    "score": 2.494
+                },
+                {
+                    "quality": "minor",
+                    "root": "F#",
+                    "score": 2.261
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "F#",
             "previousBassPc": -1,
-            "previousQuality": "diminished",
-            "previousRootPc": 8,
-            "quality": "minor",
-            "root": "G#",
+            "previousQuality": "major",
+            "previousRootPc": 1,
+            "quality": "sus4",
+            "root": "C#",
             "tick": 43200,
             "wasRegional": true
         },
@@ -2767,15 +2771,15 @@
                 {
                     "quality": "sus4",
                     "root": "C#",
-                    "score": 2.186
+                    "score": 2.586
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "F#",
             "previousBassPc": -1,
-            "previousQuality": "minor",
-            "previousRootPc": 8,
+            "previousQuality": "sus4",
+            "previousRootPc": 1,
             "quality": "sus2",
             "root": "F#",
             "tick": 44640,

@@ -482,83 +482,63 @@
         },
         {
             "key": "G",
-            "text": "D7",
+            "text": "G",
             "tick": 13440
         },
         {
             "key": "G",
-            "text": "V7",
+            "text": "I",
             "tick": 13440
         },
         {
             "key": "G",
-            "text": "D7",
+            "text": "G",
             "tick": 13440
         },
         {
             "key": "G",
-            "text": "V7",
+            "text": "I",
             "tick": 13440
         },
         {
             "key": "G",
-            "text": "Gm/C#",
-            "tick": 13680
-        },
-        {
-            "key": "G",
-            "text": "i",
-            "tick": 13680
-        },
-        {
-            "key": "G",
-            "text": "Gm/C#",
-            "tick": 13680
-        },
-        {
-            "key": "G",
-            "text": "i",
-            "tick": 13680
-        },
-        {
-            "key": "G",
-            "text": "Gm/C#",
+            "text": "G",
             "tick": 14400
         },
         {
             "key": "G",
-            "text": "i",
-            "tick": 14400
-        },
-        {
-            "key": "G",
-            "text": "Gm/C#",
-            "tick": 14400
-        },
-        {
-            "key": "G",
-            "text": "i",
+            "text": "I",
             "tick": 14400
         },
         {
             "key": "G",
             "text": "G",
-            "tick": 15120
+            "tick": 14400
         },
         {
             "key": "G",
             "text": "I",
-            "tick": 15120
+            "tick": 14400
         },
         {
             "key": "G",
-            "text": "G",
-            "tick": 15120
+            "text": "D7/F#",
+            "tick": 14880
         },
         {
             "key": "G",
-            "text": "I",
-            "tick": 15120
+            "text": "V65",
+            "tick": 14880
+        },
+        {
+            "key": "G",
+            "text": "D7/F#",
+            "tick": 14880
+        },
+        {
+            "key": "G",
+            "text": "V65",
+            "tick": 14880
         }
     ],
     "implode": [
@@ -1887,11 +1867,6 @@
                     "quality": "major",
                     "root": "B",
                     "score": 3.678
-                },
-                {
-                    "quality": "diminished",
-                    "root": "F#",
-                    "score": 2.382
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

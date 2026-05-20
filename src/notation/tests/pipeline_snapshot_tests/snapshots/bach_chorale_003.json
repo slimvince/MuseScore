@@ -82,22 +82,42 @@
         },
         {
             "key": "A",
-            "text": "E/G#",
+            "text": "E7/G#",
+            "tick": 1920
+        },
+        {
+            "key": "A",
+            "text": "V65",
+            "tick": 1920
+        },
+        {
+            "key": "A",
+            "text": "E7/G#",
+            "tick": 1920
+        },
+        {
+            "key": "A",
+            "text": "V65",
+            "tick": 1920
+        },
+        {
+            "key": "A",
+            "text": "E7/G#",
             "tick": 2400
         },
         {
             "key": "A",
-            "text": "V6",
+            "text": "V65",
             "tick": 2400
         },
         {
             "key": "A",
-            "text": "E/G#",
+            "text": "E7/G#",
             "tick": 2400
         },
         {
             "key": "A",
-            "text": "V6",
+            "text": "V65",
             "tick": 2400
         },
         {
@@ -627,12 +647,20 @@
             "tick": 960
         },
         {
-            "durationTicks": 960,
+            "durationTicks": 480,
             "key": "A",
             "mode": "mel",
             "quality": "minor",
             "root": "A",
             "tick": 1440
+        },
+        {
+            "durationTicks": 480,
+            "key": "A",
+            "mode": "mel",
+            "quality": "major",
+            "root": "E",
+            "tick": 1920
         },
         {
             "durationTicks": 1440,
@@ -873,7 +901,7 @@
             "tick": 960
         },
         {
-            "durationTicks": 960,
+            "durationTicks": 480,
             "harmonyText": "Am/C",
             "pitches": [
                 60,
@@ -882,22 +910,34 @@
             "tick": 1440
         },
         {
-            "durationTicks": 960,
-            "harmonyText": "E/G#",
+            "durationTicks": 480,
+            "harmonyText": "E7/G#",
             "pitches": [
                 68,
-                71
+                71,
+                74
+            ],
+            "tick": 1920
+        },
+        {
+            "durationTicks": 480,
+            "harmonyText": "",
+            "pitches": [
+                68,
+                71,
+                74
             ],
             "tick": 2400
         },
         {
-            "durationTicks": 480,
-            "harmonyText": "E/G#",
+            "durationTicks": 960,
+            "harmonyText": "E7/G#",
             "pitches": [
                 68,
-                71
+                71,
+                74
             ],
-            "tick": 3360
+            "tick": 2880
         },
         {
             "durationTicks": 480,
@@ -1393,18 +1433,18 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.85
+                    "score": 2.513
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.85
+                    "score": 2.513
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
             "key": "A",
-            "previousBassPc": 9,
+            "previousBassPc": 0,
             "previousQuality": "minor",
             "previousRootPc": 9,
             "quality": "major",
@@ -1417,18 +1457,18 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.85
+                    "score": 2.513
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.85
+                    "score": 2.513
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
             "key": "A",
-            "previousBassPc": 9,
+            "previousBassPc": 0,
             "previousQuality": "minor",
             "previousRootPc": 9,
             "quality": "major",

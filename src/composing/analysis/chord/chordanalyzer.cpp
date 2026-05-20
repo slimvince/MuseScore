@@ -1127,6 +1127,20 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
     if (pcWeight[static_cast<size_t>(dim7Pc)] <= extThreshold) {
         return 0.0;
     }
+    // The dim7 characteristic only applies to a fully-formed diminished triad.
+    // Without root, minor-third AND diminished-fifth all sounding, the root+9
+    // tone is not functioning as a diminished seventh — it belongs to another
+    // harmony (e.g. {C#,E,F#,A#} is F#7, not an incomplete C#°7 missing its G).
+    // Requiring the complete triad leaves genuine vii°7 / chromatic °7 chords
+    // (which always voice root + b3 + b5) untouched, while suppressing the
+    // spurious bonus that let an incomplete °7 outscore a perfect dominant-7th.
+    const int b3Pc = (rootPc + 3) % 12;
+    const int b5Pc = (rootPc + 6) % 12;
+    if (pcWeight[static_cast<size_t>(rootPc)] <= extThreshold
+        || pcWeight[static_cast<size_t>(b3Pc)] <= extThreshold
+        || pcWeight[static_cast<size_t>(b5Pc)] <= extThreshold) {
+        return 0.0;
+    }
     for (int interval : scale) {
         if ((keyTonicPc + interval) % 12 == dim7Pc) {
             return 0.0;  // diatonic — no bonus
@@ -3073,6 +3087,39 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 if (winner.identity.score - inv.identity.score > 0.35f)                continue;  // margin too wide
                 std::swap(results[0], results[iIdx]);
                 break;
+            }
+        }
+
+        // ── Gate J: prefer inverted dominant-7th over root-position diminished triad ──────
+        //
+        // A root-position diminished TRIAD whose would-be dominant root (a major third
+        // below the dim root) is also sounding is, by construction, the 3rd/5th/7th of
+        // that dominant seventh — i.e. an inverted V7, not a root-position vii°.  The
+        // four pcs {R-4, R, R+3, R+6} are exactly a dominant seventh rooted at R-4
+        // (root, M3, P5, m7).  Promote the dominant reading.
+        //   E.g. {C#,E,F#,A#} bass A#:  A#° (vii° of Bm) → F#7/A# (V6/5).
+        // A genuine standalone vii° / vii°7 never voices the dominant root, so the
+        // present-root guard means this cannot misfire on real leading-tone chords.
+        // No diatonic guard — a secondary dominant (V7/x) is just as validly completed.
+        if (originalWinnerQuality == ChordQuality::Diminished
+            && results.size() >= 2) {
+            const ChordAnalysisResult& dimWinner = results[0];
+            if (dimWinner.identity.quality == ChordQuality::Diminished
+                && dimWinner.identity.rootPc == dimWinner.identity.bassPc            // root position
+                && !hasExtension(dimWinner.identity.extensions, Extension::DiminishedSeventh)) {
+                const int domRootPc = (dimWinner.identity.rootPc - 4 + 12) % 12;     // major 3rd below
+                if (pcWeight[static_cast<size_t>(domRootPc)] > prefs.extensionThreshold) {
+                    for (size_t iIdx = 1; iIdx < results.size(); ++iIdx) {
+                        const ChordAnalysisResult& dom = results[iIdx];
+                        if (dom.identity.rootPc != domRootPc)                          continue;  // not the V7 root
+                        if (dom.identity.quality != ChordQuality::Major)              continue;  // dom7 is Major+m7
+                        if (!hasExtension(dom.identity.extensions, Extension::MinorSeventh)) {
+                            continue;  // must carry the dominant seventh
+                        }
+                        std::swap(results[0], results[iIdx]);
+                        break;
+                    }
+                }
             }
         }
 
