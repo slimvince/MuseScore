@@ -263,135 +263,165 @@ analyzeRegions(const mu::engraving::Score* score,
         }
     }
 
-    ChordTemporalContext temporalCtx = ebr::findTemporalContext(
-        score, seg, excludeStaves, keyFifths, keyMode, -1);
-    std::optional<KeyModeAnalysisResult> prevKeyResult;
+    // Pass 1 — analyze each coarse boundary region into a HarmonicRegion stream.
+    // Factored into a lambda so it can be retried under a relaxed admission
+    // threshold. On thin / homophonic textures greedy-expand sometimes emits a
+    // single whole-score boundary; with the batch options
+    // (excludeLookAheadOnDenseStart=true) that lone coarse region collapses to
+    // its sparse opening, falls below minDistinctPcsForCandidate, and Pass 1
+    // returns empty — at which point Pass 2/2b (gated on a non-empty Pass 1)
+    // never run and the orchestrator returns nothing. The retry below rescues
+    // exactly that case by re-running Pass 1 with sparse admission (=1, the
+    // value the bridge already uses), letting the coarse region survive so
+    // Pass 2/2b can subdivide it. The retry fires only when Pass 1 would
+    // otherwise be empty, so it is a no-op for every score that already
+    // produces regions (provably zero BIR impact).
+    auto runPass1 = [&](int minDistinctOverride) -> std::vector<HarmonicRegion> {
+        ChordAnalyzerPreferences attemptPrefs = pass1Prefs;
+        attemptPrefs.minDistinctPcsForCandidate = minDistinctOverride;
 
-    int runningStepwiseCount = 0;
-    std::array<int, 3> recentRootsBuf = { -1, -1, -1 };
+        ChordTemporalContext temporalCtx = ebr::findTemporalContext(
+            score, seg, excludeStaves, keyFifths, keyMode, -1);
+        std::optional<KeyModeAnalysisResult> prevKeyResult;
 
-    std::vector<HarmonicRegion> regions;
-    regions.reserve(boundaryTicks.size());
-
-    for (size_t i = 0; i < boundaryTicks.size(); ++i) {
-        const Fraction regionStart = boundaryTicks[i];
-        const Fraction regionEnd   = (i + 1 < boundaryTicks.size())
-                                     ? boundaryTicks[i + 1] : endTick;
-
-        auto tones = ebr::collectRegionTones(
-            score, regionStart.ticks(), regionEnd.ticks(), excludeStaves, -1,
-            opts.excludeLookAheadOnDenseStart);
-        if (tones.empty()) {
-            continue;
-        }
-
-        int currentBassPc = -1;
-        for (const auto& t : tones) {
-            if (t.isBass) { currentBassPc = t.pitch % 12; break; }
-        }
-        temporalCtx.bassIsStepwiseFromPrevious =
-            (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
-            && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
-
-        // Per-region key resolution with hysteresis.
-        const auto ranked = kr::resolveKeyAndModeRanked(
-            score, regionStart, refStaff, excludeStaves, keyPrefs,
-            prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr);
-        const KeyModeAnalysisResult localKey = ranked.front();
-        const int localKeyFifths = localKey.keySignatureFifths;
-        const KeySigMode localKeyMode = localKey.mode;
-
-        // Next-region lookahead (bass + root) for joint scoring.
-        int nextBassPc = -1;
-        temporalCtx.nextRootPc = -1;
-        if (currentBassPc != -1 && i + 1 < boundaryTicks.size()) {
-            const Fraction nextRegionStart = boundaryTicks[i + 1];
-            const Fraction nextRegionEnd = (i + 2 < boundaryTicks.size())
-                                           ? boundaryTicks[i + 2] : endTick;
-            const auto nextTones = ebr::collectRegionTones(
-                score, nextRegionStart.ticks(), nextRegionEnd.ticks(), excludeStaves, -1,
-                opts.excludeLookAheadOnDenseStart);
-            for (const auto& nextTone : nextTones) {
-                if (nextTone.isBass) { nextBassPc = nextTone.pitch % 12; break; }
-            }
-            temporalCtx.nextRootPc = inferNextRootPc(
-                chordAnalyzer.get(), nextTones, localKeyFifths, localKeyMode);
-        }
-        temporalCtx.bassIsStepwiseToNext =
-            (currentBassPc != -1 && nextBassPc != -1)
-            && isDiatonicStep(currentBassPc, nextBassPc);
-        temporalCtx.nextBassPc = nextBassPc;
-
-        const Segment* regionStartSeg = score->tick2segment(
-            regionStart, false, SegmentType::ChordRest);
-        const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
-        temporalCtx.regionMetricWeight = shv::regionMetricWeightForBeatType(
-            shv::safeBeatType(currentMeasure, regionStartSeg));
-
-        const auto results = chordAnalyzer->analyzeChord(
-            tones, localKeyFifths, localKeyMode, &temporalCtx, pass1Prefs);
-
-        if (results.empty()) {
-            continue;
-        }
-
-        ChordAnalysisResult chosenResult = results.front();
-        refineSparseChordQualityFromKeyContext(
-            chosenResult, tones, localKeyFifths, localKeyMode);
-        applyTonicPriorToSparseChord(
-            chosenResult, tones, localKeyFifths, localKeyMode);
-
-        const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);
-        std::vector<ChordAnalysisResult> alternativesSnapshot;
-        if (results.size() > 1) {
-            alternativesSnapshot.assign(results.begin() + 1, results.end());
-        }
-
-        advanceTemporalContext(temporalCtx, runningStepwiseCount, recentRootsBuf,
-                               chosenResult.identity);
-        temporalCtx.nextRootPc = -1;
-        temporalCtx.nextBassPc = -1;
-
-        prevKeyResult = localKey;
+        int runningStepwiseCount = 0;
+        std::array<int, 3> recentRootsBuf = { -1, -1, -1 };
 
         if (opts.hooks && opts.hooks->preMergeRegions) {
-            HarmonicRegion preMergeRegion;
-            preMergeRegion.startTick = regionStart.ticks();
-            preMergeRegion.endTick = regionEnd.ticks();
-            preMergeRegion.chordResult = chosenResult;
-            preMergeRegion.alternatives = alternativesSnapshot;
-            preMergeRegion.hasAnalyzedChord = true;
-            preMergeRegion.keyModeResult = localKey;
-            preMergeRegion.tones = tones;
-            preMergeRegion.temporalExtensions = extensionsSnapshot;
-            preMergeRegions.push_back(std::move(preMergeRegion));
+            preMergeRegions.clear();
         }
 
-        const bool isContiguousWithPreviousRegion = !regions.empty()
-                                                && regions.back().endTick == regionStart.ticks();
+        std::vector<HarmonicRegion> regions;
+        regions.reserve(boundaryTicks.size());
 
-        // Collapse same-chord consecutive regions only when truly adjacent.
-        if (isContiguousWithPreviousRegion
-            && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
-            && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
-            regions.back().endTick = regionEnd.ticks();
-            mergeChordAnalysisTones(regions.back().tones, tones);
-            if (const auto* bassTone = bassToneFromTones(regions.back().tones)) {
-                regions.back().chordResult.identity.bassPc = bassTone->pitch % 12;
-                regions.back().chordResult.identity.bassTpc = bassTone->tpc;
+        for (size_t i = 0; i < boundaryTicks.size(); ++i) {
+            const Fraction regionStart = boundaryTicks[i];
+            const Fraction regionEnd   = (i + 1 < boundaryTicks.size())
+                                         ? boundaryTicks[i + 1] : endTick;
+
+            auto tones = ebr::collectRegionTones(
+                score, regionStart.ticks(), regionEnd.ticks(), excludeStaves, -1,
+                opts.excludeLookAheadOnDenseStart);
+            if (tones.empty()) {
+                continue;
             }
-        } else {
-            HarmonicRegion region;
-            region.startTick     = regionStart.ticks();
-            region.endTick       = regionEnd.ticks();
-            region.chordResult   = chosenResult;
-            region.alternatives  = std::move(alternativesSnapshot);
-            region.hasAnalyzedChord = true;
-            region.keyModeResult = localKey;
-            region.tones         = std::move(tones);
-            region.temporalExtensions = extensionsSnapshot;
-            regions.push_back(std::move(region));
+
+            int currentBassPc = -1;
+            for (const auto& t : tones) {
+                if (t.isBass) { currentBassPc = t.pitch % 12; break; }
+            }
+            temporalCtx.bassIsStepwiseFromPrevious =
+                (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
+                && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
+
+            // Per-region key resolution with hysteresis.
+            const auto ranked = kr::resolveKeyAndModeRanked(
+                score, regionStart, refStaff, excludeStaves, keyPrefs,
+                prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr);
+            const KeyModeAnalysisResult localKey = ranked.front();
+            const int localKeyFifths = localKey.keySignatureFifths;
+            const KeySigMode localKeyMode = localKey.mode;
+
+            // Next-region lookahead (bass + root) for joint scoring.
+            int nextBassPc = -1;
+            temporalCtx.nextRootPc = -1;
+            if (currentBassPc != -1 && i + 1 < boundaryTicks.size()) {
+                const Fraction nextRegionStart = boundaryTicks[i + 1];
+                const Fraction nextRegionEnd = (i + 2 < boundaryTicks.size())
+                                               ? boundaryTicks[i + 2] : endTick;
+                const auto nextTones = ebr::collectRegionTones(
+                    score, nextRegionStart.ticks(), nextRegionEnd.ticks(), excludeStaves, -1,
+                    opts.excludeLookAheadOnDenseStart);
+                for (const auto& nextTone : nextTones) {
+                    if (nextTone.isBass) { nextBassPc = nextTone.pitch % 12; break; }
+                }
+                temporalCtx.nextRootPc = inferNextRootPc(
+                    chordAnalyzer.get(), nextTones, localKeyFifths, localKeyMode);
+            }
+            temporalCtx.bassIsStepwiseToNext =
+                (currentBassPc != -1 && nextBassPc != -1)
+                && isDiatonicStep(currentBassPc, nextBassPc);
+            temporalCtx.nextBassPc = nextBassPc;
+
+            const Segment* regionStartSeg = score->tick2segment(
+                regionStart, false, SegmentType::ChordRest);
+            const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
+            temporalCtx.regionMetricWeight = shv::regionMetricWeightForBeatType(
+                shv::safeBeatType(currentMeasure, regionStartSeg));
+
+            const auto results = chordAnalyzer->analyzeChord(
+                tones, localKeyFifths, localKeyMode, &temporalCtx, attemptPrefs);
+
+            if (results.empty()) {
+                continue;
+            }
+
+            ChordAnalysisResult chosenResult = results.front();
+            refineSparseChordQualityFromKeyContext(
+                chosenResult, tones, localKeyFifths, localKeyMode);
+            applyTonicPriorToSparseChord(
+                chosenResult, tones, localKeyFifths, localKeyMode);
+
+            const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);
+            std::vector<ChordAnalysisResult> alternativesSnapshot;
+            if (results.size() > 1) {
+                alternativesSnapshot.assign(results.begin() + 1, results.end());
+            }
+
+            advanceTemporalContext(temporalCtx, runningStepwiseCount, recentRootsBuf,
+                                   chosenResult.identity);
+            temporalCtx.nextRootPc = -1;
+            temporalCtx.nextBassPc = -1;
+
+            prevKeyResult = localKey;
+
+            if (opts.hooks && opts.hooks->preMergeRegions) {
+                HarmonicRegion preMergeRegion;
+                preMergeRegion.startTick = regionStart.ticks();
+                preMergeRegion.endTick = regionEnd.ticks();
+                preMergeRegion.chordResult = chosenResult;
+                preMergeRegion.alternatives = alternativesSnapshot;
+                preMergeRegion.hasAnalyzedChord = true;
+                preMergeRegion.keyModeResult = localKey;
+                preMergeRegion.tones = tones;
+                preMergeRegion.temporalExtensions = extensionsSnapshot;
+                preMergeRegions.push_back(std::move(preMergeRegion));
+            }
+
+            const bool isContiguousWithPreviousRegion = !regions.empty()
+                                                    && regions.back().endTick == regionStart.ticks();
+
+            // Collapse same-chord consecutive regions only when truly adjacent.
+            if (isContiguousWithPreviousRegion
+                && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
+                && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
+                regions.back().endTick = regionEnd.ticks();
+                mergeChordAnalysisTones(regions.back().tones, tones);
+                if (const auto* bassTone = bassToneFromTones(regions.back().tones)) {
+                    regions.back().chordResult.identity.bassPc = bassTone->pitch % 12;
+                    regions.back().chordResult.identity.bassTpc = bassTone->tpc;
+                }
+            } else {
+                HarmonicRegion region;
+                region.startTick     = regionStart.ticks();
+                region.endTick       = regionEnd.ticks();
+                region.chordResult   = chosenResult;
+                region.alternatives  = std::move(alternativesSnapshot);
+                region.hasAnalyzedChord = true;
+                region.keyModeResult = localKey;
+                region.tones         = std::move(tones);
+                region.temporalExtensions = extensionsSnapshot;
+                regions.push_back(std::move(region));
+            }
         }
+
+        return regions;
+    };
+
+    std::vector<HarmonicRegion> regions = runPass1(pass1Prefs.minDistinctPcsForCandidate);
+    if (regions.empty() && pass1Prefs.minDistinctPcsForCandidate > 1) {
+        // Sparse-admission fallback (thin-texture rescue; see runPass1 comment).
+        regions = runPass1(1);
     }
 
     // ── Pass 2 — onset-Jaccard sub-boundary detection ────────────────────────
