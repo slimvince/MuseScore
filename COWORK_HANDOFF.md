@@ -22,7 +22,7 @@ Two mandatory reads at the start of every session:
 - `C:\s\MS` — **master** branch (main working tree — use this for all development)
 - `C:\s\MS-llm-triage` — `llm-triage` branch (separate worktree, only for LLM triage work)
 
-All Iter 78 work is on **master**. Always confirm which worktree CC is in before giving it instructions.
+All active development is on **master**. Always confirm which worktree CC is in before giving it instructions.
 
 ---
 
@@ -174,6 +174,8 @@ bach_chorale_003 golden refreshed. BIR unchanged (BIR operates on root_pc/bass_p
   re-aggregation driver. Old beat-snap 69.1% figure retired (biased +21pp). New primary
   metric: 47.8% weighted root agreement across 10 non-Bach corpora (DCML-anchored).
   Bach chorales: 64.9% overall, 87.2% chord-identity, 100% alignment.
+  **Superseded:** the live baseline is now **53.8%** (regenerated 2026-05-20 at HEAD
+  `a69a23e59b`; see "Current state" block above). The 47.8% figure is historical only.
 
 **Iter 90 — shelved (no commit):**
 122 wrong-root cases characterized (tools/analyze_wrong_root_iter90.py,
@@ -513,10 +515,9 @@ Two silent failure modes that produce plausible-looking but wrong results:
 
 **Stale build** — if the working tree has uncommitted changes and the binary
 hasn't been rebuilt, corpus analysis runs against the old logic. BIR numbers
-look correct (because the v3 / Iter 96 delta is 0) but the characterization
-is wrong. **Always rebuild before any corpus run when the working tree has
-been modified**, or when there is any doubt about whether the binary matches
-the source.
+will look identical to the last clean run but the characterization is wrong.
+**Always rebuild before any corpus run when the working tree has been modified**,
+or when there is any doubt about whether the binary matches the source.
 
 **Stale corpus output** — `analyze_inversion_errors.py` reads whatever JSON
 files are already in `tools/corpus/`. If `run_bach_preset.py` was not run
@@ -707,7 +708,8 @@ All three copies are byte-identical at 75225 bytes / v0.4.12.
 | File | Purpose |
 |------|---------|
 | `src/composing/analysis/chord/chordanalyzer.cpp` | Main analyzer — all scoring logic |
-| `src/notation/internal/notationharmonicrhythmbridge.cpp` | Bridge — region segmentation |
+| `src/composing/analysis/region/regionanalyzer.cpp` | Canonical region orchestrator — Pass 1/2/2b, absorb, backfill, restamp |
+| `src/notation/internal/notationharmonicrhythmbridge.cpp` | Bridge — thin wrapper over `regionanalyzer` |
 | `docs/llm_integration.md` | LLM / Claude Composer full design document |
 | `docs/quality_observations_iter76.md` | R1–R5 recurring themes for Iter 79+ |
 | `docs/score_inventory.md` | Score paths for all test/corpus files |
