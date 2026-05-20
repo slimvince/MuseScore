@@ -7,6 +7,11 @@
 *.ps1           text            eol=lf
 build.cmake     text            eol=lf
 
+# Snapshot/test JSON goldens must stay LF: the pipeline snapshot test emits LF and
+# compares byte-exact, so an autocrlf CRLF checkout makes the whole suite spuriously
+# all-fail after any git checkout / worktree switch / bisect.
+src/notation/tests/**/*.json  text  eol=lf
+
 # Batch files need CRLF line endings
 *.bat           text            eol=crlf
 *.cmd           text            eol=crlf
