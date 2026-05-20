@@ -98,8 +98,22 @@ TYPE_INTERVAL = 0.05
 # before deciding a step's tool activity is finished (handles multi-tool turns).
 SETTLE_SEC = 2.5
 
+# The extension ignores Enter while it is streaming a reply. Re-press Enter this
+# often (seconds) until the message actually sends and a tool call appears.
+NUDGE_ENTER_SEC = 3.0
+
 # Substring used to find the MuseScore main window title.
 WINDOW_TITLE_RE = "MuseScore"
+
+# Readiness is detected from the extension's own debug-log "session_start"
+# line (written when the panel's Main.qml loads) -- far more reliable than
+# pywinauto, which cannot see Qt-Quick windows consistently. Max time to wait
+# for that line after launch (gives a human time to open the panel manually).
+PANEL_READY_TIMEOUT_SEC = 90
+
+# After the panel reports ready, time for the operator to click the chat input
+# so keystrokes land in it (not the score view). Only used in "manual" mode.
+INPUT_FOCUS_GRACE_SEC = 10
 
 # ---- Panel-open strategy --------------------------------------------------
 # "manual"        : pause and ask the operator to open Plugins -> AI Assistant
@@ -216,6 +230,22 @@ def collect_events(since_offset: int, timeout: float = LLM_TIMEOUT_SEC,
         time.sleep(0.35)
 
     return events, offset
+
+
+def wait_for_session_start(since_offset: int, timeout: float):
+    """
+    Wait for a new {"session_start":...} line to appear in the debug log after
+    `since_offset`. This is the extension panel's own "loaded" signal -- the
+    definitive, pywinauto-independent readiness check. Returns True if seen.
+    """
+    deadline = time.time() + timeout
+    offset = since_offset
+    while time.time() < deadline:
+        events, offset = _read_new_events(offset)
+        if any(isinstance(e, dict) and e.get("session_start") for e in events):
+            return True
+        time.sleep(0.5)
+    return False
 
 
 def _parse_iso(t: str) -> float:
@@ -343,6 +373,7 @@ def compare_result(actual: dict, expected: dict):
 # ===========================================================================
 _pyautogui = None
 _pywinauto = None
+_ms_window = None   # cached MuseScore window handle, for re-foregrounding before sends
 
 
 def _gui():
@@ -365,28 +396,39 @@ def launch_musescore(score_path: str) -> subprocess.Popen:
     return subprocess.Popen([MUSESCORE_EXE, score_path])
 
 
-def wait_for_musescore_window(timeout: float):
+def try_get_musescore_window(timeout: float):
     """
-    Poll until a MuseScore main window exists and looks ready. Returns the
-    pywinauto WindowSpecification. Raises TimeoutError on failure.
+    Best-effort: return a pywinauto window handle for the MuseScore main window
+    (used only to bring it to the foreground). Returns None on failure -- the
+    run does NOT depend on this; readiness comes from wait_for_session_start.
+    On failure, prints the visible top-level window titles for diagnosis.
     """
     _, pywinauto = _gui()
     from pywinauto import Desktop
     deadline = time.time() + timeout
-    last_err = None
     while time.time() < deadline:
         try:
-            desk = Desktop(backend="uia")
-            win = desk.window(title_re=f".*{WINDOW_TITLE_RE}.*")
-            if win.exists() and win.is_visible():
+            win = Desktop(backend="uia").window(title_re=f".*{WINDOW_TITLE_RE}.*")
+            if win.exists(timeout=0.5):
                 return win
-        except Exception as e:  # noqa: BLE001
-            last_err = e
+        except Exception:  # noqa: BLE001
+            pass
         time.sleep(0.5)
-    raise TimeoutError(f"MuseScore window not ready within {timeout}s (last: {last_err})")
+    # Diagnostics: what top-level windows CAN we see?
+    for backend in ("uia", "win32"):
+        try:
+            titles = [w.window_text() for w in Desktop(backend=backend).windows()]
+            titles = [t for t in titles if t]
+            print(f"  [warn] no '{WINDOW_TITLE_RE}' window via {backend}; visible: "
+                  + ", ".join(repr(t) for t in titles)[:600])
+        except Exception as e:  # noqa: BLE001
+            print(f"  [warn] window enumeration ({backend}) failed: {e}")
+    return None
 
 
 def _focus_window(win):
+    if win is None:
+        return
     try:
         win.set_focus()
     except Exception:  # noqa: BLE001
@@ -404,9 +446,11 @@ def open_extension_panel(win):
     _focus_window(win)
 
     if OPEN_PANEL_METHOD == "manual":
+        # No blind wait here: run_test_file waits for the panel's session_start
+        # log line, so it proceeds the instant the panel actually opens.
         print("\n  >>> MANUAL STEP: in MuseScore, open  Plugins -> AI Assistant,")
-        print("  >>> then click in the chat input box at the bottom of the panel.")
-        input("  >>> Press Enter here once the chat input is focused... ")
+        print("  >>> then click in the chat input box at the bottom of the panel.",
+              flush=True)
         return
 
     if OPEN_PANEL_METHOD == "menu_keyboard":
@@ -433,18 +477,15 @@ def open_extension_panel(win):
     raise ValueError(f"unknown OPEN_PANEL_METHOD: {OPEN_PANEL_METHOD!r}")
 
 
-def wait_for_extension_ready():
-    """
-    The panel opens with its chat TextField focus:true, so there is no robust
-    cross-process handle to test (Qt Quick controls are invisible to UIA).
-    Give the QML form a moment to finish loading and registering navigation.
-    """
-    time.sleep(1.5)
-
-
-def send_prompt(text: str):
-    """Focus the chat input (if coords known), clear it, type text, press Enter."""
+def _focus_and_type(text: str):
+    """Bring MuseScore forward, focus the chat input, clear it, and type `text`
+    (without pressing Enter)."""
     pyautogui, _ = _gui()
+    # Re-foreground MuseScore so keystrokes don't leak into whatever window the
+    # operator clicked. Windows restores focus to the last-focused child, so if
+    # the chat input was clicked once, it regains focus here.
+    if _ms_window is not None:
+        _focus_window(_ms_window)
     if INPUT_FIELD_COORDS:
         pyautogui.click(*INPUT_FIELD_COORDS)
         time.sleep(0.2)
@@ -456,7 +497,55 @@ def send_prompt(text: str):
     time.sleep(0.05)
     pyautogui.typewrite(text, interval=TYPE_INTERVAL)
     time.sleep(0.1)
-    pyautogui.press("enter")
+
+
+def send_and_wait(before_offset: int, prompt: str,
+                  timeout: float = LLM_TIMEOUT_SEC, settle: float = SETTLE_SEC):
+    """
+    Type `prompt` into the chat, then press Enter repeatedly until the message
+    actually sends and a tool call appears, collecting events until they settle.
+
+    The extension ignores Enter/sendMessage while isStreaming is true (the
+    nav-send handler and sendMessage both guard on it), and a blocked send does
+    NOT clear the input -- so the typed text persists and a later Enter sends
+    it once streaming ends. Re-pressing Enter on an already-sent (now empty)
+    input is a guarded no-op, so this never double-sends.
+
+    Returns (events, final_offset).
+    """
+    pyautogui, _ = _gui()
+    _focus_and_type(prompt)
+
+    deadline = time.time() + timeout
+    offset = before_offset
+    events = []
+    last_new_t = None
+    saw_call = False
+    saw_result = False
+    next_enter = 0.0
+
+    while time.time() < deadline:
+        # Nudge: keep pressing Enter until the send takes (a call appears).
+        if not saw_call and time.time() >= next_enter:
+            if _ms_window is not None:
+                _focus_window(_ms_window)
+            pyautogui.press("enter")
+            next_enter = time.time() + NUDGE_ENTER_SEC
+
+        new_events, offset = _read_new_events(offset)
+        relevant = [e for e in new_events if ("call" in e or "result" in e)]
+        if relevant:
+            events.extend(relevant)
+            last_new_t = time.time()
+            if any("call" in e for e in relevant):
+                saw_call = True
+            if any("result" in e for e in relevant):
+                saw_result = True
+        if saw_result and last_new_t is not None and (time.time() - last_new_t) >= settle:
+            break
+        time.sleep(0.35)
+
+    return events, offset
 
 
 def close_musescore(proc: subprocess.Popen):
@@ -490,8 +579,7 @@ def run_step(step: dict, index: int, spec_name: str, verbose: bool):
     label = f"{spec_name} / step {index}"
 
     before = get_log_offset()
-    send_prompt(prompt)
-    events, after = collect_events(before, timeout=LLM_TIMEOUT_SEC)
+    events, after = send_and_wait(before, prompt, timeout=LLM_TIMEOUT_SEC)
 
     detail = []
     if verbose:
@@ -559,8 +647,7 @@ def run_verify(verify: dict, verbose: bool, detail: list):
     contains = verify.get("contains", [])
 
     before = get_log_offset()
-    send_prompt(vprompt)
-    events, _ = collect_events(before, timeout=LLM_TIMEOUT_SEC)
+    events, _ = send_and_wait(before, vprompt, timeout=LLM_TIMEOUT_SEC)
 
     if verbose:
         detail.append(f'       verify:   "{vprompt}"')
@@ -622,11 +709,27 @@ def run_test_file(spec_path: str, verbose: bool, stop_on_fail: bool):
     passed = failed = 0
     results = []
     try:
+        global _ms_window
+        log_offset_before = get_log_offset()
         proc = launch_musescore(tmp_score)
-        win = wait_for_musescore_window(MS_LAUNCH_TIMEOUT_SEC)
-        time.sleep(2.0)  # let the score finish loading
+        # Best-effort foreground handle; the run does NOT depend on finding it,
+        # but if found it is reused to re-foreground MuseScore before each send.
+        win = try_get_musescore_window(MS_LAUNCH_TIMEOUT_SEC)
+        _ms_window = win
         open_extension_panel(win)
-        wait_for_extension_ready()
+
+        # Definitive readiness: the panel writes a session_start log line on load.
+        if wait_for_session_start(log_offset_before, PANEL_READY_TIMEOUT_SEC):
+            print("  panel ready (session_start seen)")
+        else:
+            print(f"  [warn] no session_start within {PANEL_READY_TIMEOUT_SEC}s; "
+                  "proceeding anyway")
+        if OPEN_PANEL_METHOD == "manual":
+            print(f"  grace: {INPUT_FOCUS_GRACE_SEC}s for you to click the chat input...",
+                  flush=True)
+            time.sleep(INPUT_FOCUS_GRACE_SEC)
+        else:
+            time.sleep(1.5)
 
         for i, step in enumerate(spec.get("steps", []), start=1):
             ok, line, detail = run_step(step, i, spec_name, verbose)

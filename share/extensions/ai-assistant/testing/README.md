@@ -75,6 +75,17 @@ Default is `manual` — the only strategy that is reliable on an un-calibrated
 machine. Once you know the menu/input coordinates for your display, switch to
 `coords` (or try `menu_keyboard`) for unattended runs.
 
+**Readiness is detected from the log, not pywinauto.** After launch the runner
+waits for a new `{"session_start":...}` line — written by `Main.qml` when the
+panel loads — which is the panel's own "I'm up" signal. pywinauto UIA detection
+of the MuseScore window proved flaky/timing-dependent, so it is best-effort
+(used only to re-foreground the window before each send) and the run never
+depends on it.
+
+**Verified end-to-end** on 2026-05-20: `test_add_note.json` passed both its
+write step (`add_note → {ok:true,...}`) and its verify step
+(`get_notes_in_range`, with `noteName:"A4"` found nested in `result.notes`).
+
 ## Debug-log format (verified against the live log, 2026-05-20)
 
 The original brief described result lines as
@@ -145,14 +156,40 @@ Matching rules:
    a `get_key_at` on a non-existent measure (999), which returns
    `{"error":"Measure 999 not found"}`.
 
+## How a send works (and the streaming guard)
+
+`send_and_wait()` re-foregrounds MuseScore, clears the chat input, types the
+prompt, then **presses Enter repeatedly** (every `NUDGE_ENTER_SEC`) until a tool
+call appears. This is required because the extension **ignores Enter while it is
+streaming a reply** — both the Enter nav-send handler and `sendMessage()` guard
+on `isStreaming`, and a blocked send does *not* clear the input. So after one
+step's tool call the LLM keeps streaming its final prose, and a verify prompt
+sent during that window would be silently dropped. The typed text persists
+across blocked sends, and a second Enter on an already-sent (empty) input is a
+guarded no-op, so re-pressing Enter is safe and never double-sends.
+
 ## Known fragilities
 
+- **The chat input must be MuseScore's focused control.** Keystrokes go to
+  whatever control has focus. The runner re-foregrounds the MuseScore window
+  before each send (Windows restores focus to the last-focused child), so in
+  `manual` mode you only need to **click the chat input once** at the start and
+  keep MuseScore the active app. Don't type into other windows mid-run. For
+  fully unattended runs, set `INPUT_FIELD_COORDS` to click the input directly.
 - **Single-instance MuseScore.** Specs run one launch each, fully killing
   MuseScore between files (`taskkill /F`). Don't run two harness processes at
   once.
-- **Qt Quick opacity.** Individual chat controls aren't visible to UIA, so
-  input goes to the focused window by simulated typing. If focus is unreliable,
-  set `INPUT_FIELD_COORDS`.
+- **Qt Quick opacity.** Individual chat controls aren't visible to UIA; that is
+  why readiness uses the `session_start` log line and input uses simulated
+  typing rather than control handles.
 - **Force-kill on close** skips the unsaved-changes dialog (the score is a
   throwaway temp copy). MuseScore may offer session restore on the next launch;
   handle/dismiss if it appears.
+
+## Baseline score note
+
+`empty_4_4.mscz` was generated `music21 → MusicXML → MuseScore CLI`. The
+MusicXML→MuseScore instrument mapping labels the (Piano) part **"Bandoneon"** in
+the imported score. It is still a single treble staff in 4/4 over 8 measures, so
+this is cosmetic and the specs don't assert on instrument. Regenerate with
+`test_scores/empty_4_4.musicxml` if you need a different instrument label.
