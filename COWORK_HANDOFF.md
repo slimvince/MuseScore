@@ -26,13 +26,32 @@ All Iter 78 work is on **master**. Always confirm which worktree CC is in before
 
 ---
 
-## Current state (as of 2026-05-20, updated after Phase 4 hard stop)
+## Current state (as of 2026-05-20, updated after the Phase-4 0-region fix)
 
-- **HEAD:** `16b5bdfa57` on master — Iter 97 duplication-remediation Phases 2+3
-  (pushed 2026-05-19). Two new composing modules carry the canonical
-  implementations: `src/composing/analysis/engravingbridge/regiontonecollector.{h,cpp}`
-  and `src/composing/analysis/key/keyresolver.{h,cpp}`. BIR baselines
-  unchanged from Iter 96.
+- **HEAD:** `53c4f2d50c` on master — regionanalyzer Pass-1 sparse-admission fallback.
+  Fixes the Phase-4 0-region regression on Mozart K283-2/3, Corelli op04n08c and Bach
+  BWV814_03 (0 → 80/187/24/35 regions). When Pass 1 yields zero regions (all-empty case;
+  thin/homophonic textures where greedy emits a single whole-score boundary that collapses
+  below `minDistinctPcsForCandidate=3` under `excludeLookAheadOnDenseStart=true`), Pass 1
+  is retried once with `minDistinctPcsForCandidate=1` (the bridge's value) so the coarse
+  region survives and Pass 2/2b subdivide it. **Provably zero BIR impact** — the fallback is
+  unreachable for any score that already produces a region. Baroque BIR=34/25, Jazz=56/13
+  (both == baseline); composing 407/407, notation 50/52, pipeline 11/11.
+
+  Recent master lineage: `53c4f2d50c` (this fix) ← `1384997fd6` (doc) ← `34800682f9` /
+  `045cb54e0d` Phase 4 ← `16b5bdfa57` Phases 2+3 ← `79ad7e26e7` Steps 1-3+7 ←
+  `0de94516ff` Iter 96. The Phase 2+3 modules
+  (`engravingbridge/regiontonecollector.{h,cpp}`, `key/keyresolver.{h,cpp}`) and the Phase 4
+  orchestrator (`region/regionanalyzer.{h,cpp}`, `region/sparsechordrefinement.{h,cpp}`)
+  are all live.
+
+- **DCML cross-corpus baseline = 46.8%** (15928/34022, post-fix, `tools/reports/live_post_fix/`).
+  This is the CONFIRMED post-fix baseline, not a residual bug. The fix restored the 4 movements
+  (516 → 520 mv) but did not lift the aggregate: those movements agree at ~44% (below the mean,
+  bridge-like fine granularity), and the residual 48.4% (pre-Phase-4, Iter 96) → 46.8% gap is
+  genuine Phase-4 scoring change (unconditional `absorbShortRegions` + `w_seq` on both paths).
+  C.P.E. Bach remains 0 regions — a SEPARATE, deferred issue (genuinely thin single-voice;
+  the sparse-admission fallback does not rescue it).
 
 - **✅ PHASE 4 — implemented, resolved, ready to commit:**
   Phase 4 created `src/composing/analysis/region/regionanalyzer.{h,cpp}` and

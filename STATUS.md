@@ -3,7 +3,10 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-20 — Phase 4 (shared region orchestrator) implemented and resolved; ready to commit. See Phase 4 status block below.*
+*Last updated: 2026-05-20 — Phase 4 committed; the Phase-4 0-region regression on Mozart
+K283-2/3, Corelli op04n08c and Bach BWV814_03 is FIXED via the Pass-1 sparse-admission
+fallback (`53c4f2d50c`). Post-fix cross-corpus DCML baseline confirmed at 46.8%
+(15928/34022). See the Phase 4 and post-fix blocks below.*
 
 *Phases 2+3 pushed as `16b5bdfa57` (2026-05-19). Two new composing modules carry the canonical implementations: `src/composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` and `src/composing/analysis/key/keyresolver.{h,cpp}`. BIR baselines unchanged from Iter 96.*
 
@@ -48,7 +51,21 @@ goldens. Diagnostic scaffolding fully removed from all files.
 
 ## Current State (summary)
 
-**Last committed:** `0de94516ff` — Iter 96 (`w_dim` diminished/half-dim leading-tone resolution tiebreaker, +0.15, `distinctPcs >= 4`, Diminished/HalfDiminished only). New `wDimBonus` lambda in `chordanalyzer.cpp` alongside `wSeqBonus`. 2 alt-only snapshot goldens refreshed (`bach_bwv806_gigue`, `schumann_kinderszenen_n01`).
+**Last committed:** `53c4f2d50c` — regionanalyzer Pass-1 sparse-admission fallback. When
+Pass 1 yields zero regions (all-empty case: thin/homophonic textures where greedy emits a
+single whole-score boundary that, under `excludeLookAheadOnDenseStart=true`, collapses below
+`minDistinctPcsForCandidate=3`), Pass 1 is retried once with `minDistinctPcsForCandidate=1`
+(the value the bridge already uses) so the coarse region survives and Pass 2/2b subdivide it.
+Fixes the Phase-4 0-region regression: K283-2/3, op04n08c, BWV814_03 go 0 → 80/187/24/35
+regions (now matching the bridge path). Provably zero BIR impact — the fallback is
+unreachable for any score that already produces a region, so all BIR-measured corpora are
+untouched. Validated: composing 407/407, notation 50/52 (same 2 Corelli implodes), pipeline
+11/11, Baroque BIR=34/25, Jazz BIR=56/13 (both == baseline). Single-file change
+(`regionanalyzer.cpp`); no golden refresh.
+
+**Prior commits on master:** `1384997fd6` (doc: sparse-admission note + live DCML baseline),
+`34800682f9`/`045cb54e0d` Phase 4, `16b5bdfa57` Phases 2+3, `79ad7e26e7` Steps 1-3+7,
+`0de94516ff` Iter 96 (`w_dim` tiebreaker).
 
 **Prior commits in this cycle (all on master):**
 - `0de94516ff` Iter 96 — w_dim +0.15 with distinctPcs>=4 and semitone-resolution gate
@@ -144,13 +161,27 @@ happened to land near a DCML annotation boundary. Time-overlap scores ALL emitte
 against their overlapping DCML annotation span.
 
 Cross-corpus weighted root agreement (10 non-Bach corpora):
-  **46.8%** (15802/33734) — live regen at HEAD `34800682f9` on 2026-05-20, output in
-  `tools/reports/live_20260520/`. This SUPERSEDES the frozen Iter-89 figure of 47.8% and is
-  the first genuine live regeneration of the cross-corpus DCML baseline since Iter 89 — every
-  intervening figure was the frozen 47.8% carried forward. The 47.8% → 46.8% delta therefore
-  spans Iters 90–96 scoring changes plus Phase 4; see the dedicated Phase-4 isolation note
-  for the three-point breakdown. The 47.8% beat-snap-vs-time-overlap context below is retained
-  as the historical record of the comparator change at `eefa412b6f`/`4cb1bfb274`:
+  **46.8%** (15928/34022) — CONFIRMED POST-FIX BASELINE. Live regen at HEAD `53c4f2d50c`
+  on 2026-05-20, output in `tools/reports/live_post_fix/`. The Pass-1 sparse-admission
+  fallback fixed the Phase-4 0-region regression on K283-2/3, op04n08c and BWV814_03
+  (0 → 80/187/24/35 regions), restoring the cross-corpus movement count 516 → 520. This did
+  NOT lift the aggregate, and that is expected, not a bug: the restored movements agree at
+  ~44% (below the 46.8% mean, because the fallback yields bridge-like fine granularity that
+  the time-overlap comparator scores slightly lower than pre-Phase-4's coarser segmentation),
+  and the residual pre-Phase-4 (48.4%) → post-fix (46.8%) gap is GENUINE Phase-4 scoring
+  change (unconditional `absorbShortRegions` + `w_seq` active on both paths), NOT a residual
+  0-region defect. **46.8% is the correct post-fix baseline — do not treat it as a bug to
+  chase.**
+
+  Three-point lineage (all measured 2026-05-20, identical comparator):
+    47.8% — frozen at Iter 89 (carried forward unchanged until this session's live regens).
+    48.4% (16560/34238) — pre-Phase-4 (Iter 96, `0de94516ff`), 520 mv.
+    46.8% (15802/33734) — HEAD pre-fix (`34800682f9`), 516 mv (4 movements zeroed).
+    46.8% (15928/34022) — HEAD post-fix (`53c4f2d50c`), 520 mv (4 movements restored).
+  Split: Iter 89 → pre-Phase-4 ≈ +0.6pp (Iters 90–96 scoring); pre-Phase-4 → HEAD −1.6pp
+  (Phase 4: ~0.0 from the now-fixed 0-region drop once movements are restored, the rest
+  genuine Phase-4 chord-output change). The 47.8% beat-snap-vs-time-overlap context below is
+  the historical record of the comparator change at `eefa412b6f`/`4cb1bfb274`:
   **47.8%** (time-overlap, honest, frozen at Iter 89) — was 69.1% (beat-snap, biased)
 
 Bach chorales (352 chorales, run via run_validation.py):
@@ -169,9 +200,13 @@ Per-corpus DCML-anchored (time-overlap):
   Mozart       40.2%
   Corelli      39.6%
   Bach suites  37.7%
-  C.P.E. Bach  0 regions (pre-existing issue — batch_analyze produces 0 output for all 66 mvts)
+  C.P.E. Bach  0 regions (pre-existing, SEPARATE issue — still 0 post-fix. Genuinely thin
+               single-voice texture: collectRegionTones yields too little even under the
+               `minDistinctPcsForCandidate=1` fallback, so this is a different root cause from
+               the K283-2/3 / op04n08c / BWV814_03 class that `53c4f2d50c` fixed. Deferred —
+               needs melodic/single-line harmonic inference, not an admission-threshold tweak.)
 
-Reports at `tools/reports/` (most recent run: post-4cb1bfb274).
+Reports at `tools/reports/` (most recent run: post-fix `53c4f2d50c`, `tools/reports/live_post_fix/`).
 
 **Queued / open:**
 - **Iter 95 (next, conditionally):** Duration-weighting on bass-candidate selection
@@ -193,7 +228,11 @@ Reports at `tools/reports/` (most recent run: post-4cb1bfb274).
 - Iter 92 — committed (80fe13b59b). Joint (bass, chord) scoring; BIR=false 188 → 46.
 - Iter 91 was attempted (temporal-context gate, nextRootPc == bassPc) and reverted:
   net neutral 226→226 total errors (BIR=false −3, BIR=true +3). Superseded by Iter 92.
-- C.P.E. Bach 0-regions: pre-existing, undiagnosed
+- C.P.E. Bach 0-regions: pre-existing, distinct from the now-fixed K283-2/3 class
+  (`53c4f2d50c`). C.P.E. Bach stays 0 even with the sparse-admission fallback because the
+  single-voice texture yields too little tone evidence; needs melodic/single-line inference.
+- DONE (`53c4f2d50c`): Phase-4 0-region regression on K283-2/3, op04n08c, BWV814_03 fixed
+  via Pass-1 sparse-admission fallback (0 → 80/187/24/35 regions; zero BIR impact).
 - Sub-beat boundary cleanup: Iters 72/73/83 introduced sub-beat boundaries that don't align
   with music21's beat-anchored DCML comparison; harmless to accuracy but creates alignment
   measurement noise
