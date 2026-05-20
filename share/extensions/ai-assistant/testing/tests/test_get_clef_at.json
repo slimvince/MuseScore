@@ -1,0 +1,12 @@
+{
+  "name": "get_clef_at_valid",
+  "description": "getClefAt returns clef type for a valid measure without TypeError",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "What clef is at measure 1 staff 1? Use get_clef_at.",
+      "expect_tool": "get_clef_at",
+      "expect_result": { "measure": 1 }
+    }
+  ]
+}

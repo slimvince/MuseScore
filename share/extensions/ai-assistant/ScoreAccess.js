@@ -518,10 +518,13 @@ function getScoreInfo() {
                 var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
                 if (st0 && s.firstMeasure.tick) {
                     var ts = st0.timeSig(s.firstMeasure.tick)
-                    if (ts && ts.timesigNominal) {
+                    // BUG-4: numerator/denominator are on the TimeSig element's
+                    // .timesig (Fraction), not .timesigNominal (a Measure property).
+                    var sig = ts ? ts.timesig : null
+                    if (sig && typeof sig.numerator === "number") {
                         info.initialTimeSignature = {
-                            numerator:   ts.timesigNominal.numerator,
-                            denominator: ts.timesigNominal.denominator
+                            numerator:   sig.numerator,
+                            denominator: sig.denominator
                         }
                     }
                 }
@@ -2135,10 +2138,13 @@ function getClefAt(measure, staff) {
     var staffIdx = (staff || 1) - 1
     if (!s.staves || staffIdx < 0 || staffIdx >= s.staves.length)
         return { error: "Staff " + staff + " not found (score has " + (s.staves ? s.staves.length : 0) + " staves)" }
-    var tick = _posToTick(measure, 1, "0")
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    // BUG-4: clefType() requires the measure's native (Fraction) tick object —
+    // it rejects a plain integer tick with "incompatible arguments". Pass m.tick,
+    // mirroring the BUG-2 getKeyAt / BUG-3 getTimeSigAt fix.
+    var m = _findMeasure(measure)
+    if (!m || !m.tick) return { error: "Measure " + measure + " not found" }
     try {
-        var clefInt = s.staves[staffIdx].clefType(tick)
+        var clefInt = s.staves[staffIdx].clefType(m.tick)
         return {
             measure:  measure,
             staff:    staff,
@@ -2532,10 +2538,13 @@ function getMeasure(measureNo) {
     try {
         if (st0 && m.tick) {
             var ts = st0.timeSig(m.tick)
-            if (ts && ts.timesigNominal) {
+            // BUG-4: numerator/denominator are on the TimeSig element's .timesig
+            // (Fraction), not .timesigNominal (a Measure property).
+            var sig = ts ? ts.timesig : null
+            if (sig && typeof sig.numerator === "number") {
                 result.timeSignature = {
-                    numerator:   ts.timesigNominal.numerator,
-                    denominator: ts.timesigNominal.denominator
+                    numerator:   sig.numerator,
+                    denominator: sig.denominator
                 }
             }
         }
