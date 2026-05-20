@@ -1,0 +1,17 @@
+{
+  "name": "remove_instrument_basic",
+  "description": "LLM adds then removes a flute part",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a flute instrument to the score.",
+      "expect_tool": "add_instrument",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Remove the flute part (part index 1) from the score.",
+      "expect_tool": "remove_instrument",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

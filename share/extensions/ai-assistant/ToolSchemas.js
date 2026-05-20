@@ -1134,6 +1134,97 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["styles"]
             }
+        },
+
+        // ── INSTRUMENT & STAFF MANAGEMENT ──────────────────────────────────
+
+        {
+            name: "add_instrument",
+            description:
+                "Add a new instrument/part to the score. Use get_score_info to see current parts. Instrument IDs are MuseScore internal IDs (e.g. 'flute', 'violin', 'piano', 'trumpet', 'guitar'). If position is omitted the part is appended at the end.",
+            parameters: {
+                type: "object",
+                properties: {
+                    instrumentId: { type: "string", description: "MuseScore instrument ID" },
+                    position: { type: "integer", description: "0-based index to insert at (optional; appends if omitted)" }
+                },
+                required: ["instrumentId"]
+            }
+        },
+        {
+            name: "remove_instrument",
+            description:
+                "Remove a part/instrument from the score by its 0-based index. Use get_score_info to see current parts and their indices. Removing a part removes all its staves and notes.",
+            parameters: {
+                type: "object",
+                properties: {
+                    partIndex: { type: "integer", description: "0-based index of the part to remove" }
+                },
+                required: ["partIndex"]
+            }
+        },
+        {
+            name: "reorder_instrument",
+            description:
+                "Move a part to a different position in the score. Use get_score_info to see current part order and indices.",
+            parameters: {
+                type: "object",
+                properties: {
+                    fromIndex: { type: "integer", description: "0-based current index of the part" },
+                    toIndex:   { type: "integer", description: "0-based target index" }
+                },
+                required: ["fromIndex", "toIndex"]
+            }
+        },
+        {
+            name: "replace_instrument",
+            description:
+                "Replace the instrument of an existing part (keeps the part's notes, changes the instrument sound and transposition). Use get_score_info to see current parts.",
+            parameters: {
+                type: "object",
+                properties: {
+                    partIndex:    { type: "integer", description: "0-based index of the part" },
+                    instrumentId: { type: "string",  description: "new MuseScore instrument ID" }
+                },
+                required: ["partIndex", "instrumentId"]
+            }
+        },
+        {
+            name: "add_staff",
+            description:
+                "Add an extra staff to an existing part (e.g. add a bass clef staff to a piano part to make it a grand staff). Use get_score_info to see current parts.",
+            parameters: {
+                type: "object",
+                properties: {
+                    partIndex: { type: "integer", description: "0-based index of the part" }
+                },
+                required: ["partIndex"]
+            }
+        },
+        {
+            name: "add_linked_staff",
+            description:
+                "Add a linked staff to a part. Linked staves share the same notes — editing one updates both (used for e.g. tab + standard notation, or conductor score + part). staffIndex is the 0-based index of the source staff to link from.",
+            parameters: {
+                type: "object",
+                properties: {
+                    staffIndex: { type: "integer", description: "0-based index of the source staff" },
+                    partIndex:  { type: "integer", description: "0-based index of the destination part" }
+                },
+                required: ["staffIndex", "partIndex"]
+            }
+        },
+        {
+            name: "remove_staff",
+            description:
+                "Remove a staff from a part. Cannot remove the last staff of a part — use remove_instrument instead. Use get_score_info to see current staff indices.",
+            parameters: {
+                type: "object",
+                properties: {
+                    staffIndex: { type: "integer", description: "0-based global staff index to remove" }
+                },
+                required: ["staffIndex"]
+            }
         }
     ]
 

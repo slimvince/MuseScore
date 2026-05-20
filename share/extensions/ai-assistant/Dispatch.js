@@ -104,6 +104,17 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "get_score_style")    return scoreAccess.getScoreStyle(a.keys || null)
         if (name === "set_score_style")    return scoreAccess.setScoreStyle(a.styles)
 
+        // ── Instrument & staff management tools ──
+        // position is optional for add_instrument: pass through only when the LLM
+        // provided it (null appends), so don't coalesce to a default index.
+        if (name === "add_instrument")     return scoreAccess.addInstrument(a.instrumentId, (typeof a.position === "number") ? a.position : null)
+        if (name === "remove_instrument")  return scoreAccess.removeInstrument(a.partIndex)
+        if (name === "reorder_instrument") return scoreAccess.reorderInstrument(a.fromIndex, a.toIndex)
+        if (name === "replace_instrument") return scoreAccess.replaceInstrument(a.partIndex, a.instrumentId)
+        if (name === "add_staff")          return scoreAccess.addStaff(a.partIndex)
+        if (name === "add_linked_staff")   return scoreAccess.addLinkedStaff(a.staffIndex, a.partIndex)
+        if (name === "remove_staff")       return scoreAccess.removeStaff(a.staffIndex)
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

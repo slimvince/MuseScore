@@ -1,0 +1,17 @@
+{
+  "name": "add_instrument_basic",
+  "description": "LLM adds a flute part to an existing score",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a flute instrument to the score.",
+      "expect_tool": "add_instrument",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "How many parts does this score have? Call get_score_info.",
+      "expect_tool": "get_score_info",
+      "expect_result": { "nparts": 2 }
+    }
+  ]
+}

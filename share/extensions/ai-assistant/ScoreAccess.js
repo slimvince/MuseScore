@@ -483,7 +483,9 @@ function getScoreInfo() {
             subtitle:               null,
             measureCount:           s.nmeasures,
             durationSeconds:        s.duration,
+            nparts:                 0,
             parts:                  [],
+            staves:                 [],
             initialKeySignature:    _keysigToString(s.keysig),
             initialTimeSignature:   null,
             initialTempo:           null
@@ -494,22 +496,35 @@ function getScoreInfo() {
         var parts = s.parts
         if (parts) {
             var partsList = []
+            var stavesList = []   // top-level: { staffIndex (0-based global), partIndex }
             // Precompute: staffNameMap[globalStaffIndex] = longName (0-based index, so staff 1 → index 0)
             var staffNameMap = []
             for (var pi = 0; pi < parts.length; pi++) {
                 var pp    = parts[pi]
                 var lName = pp.longName || pp.partName || ""
                 var nStv  = Math.floor((pp.endTrack - pp.startTrack) / 4)
-                for (var si = 0; si < nStv; si++) staffNameMap.push(lName)
+                var firstStaff0 = Math.floor(pp.startTrack / 4)   // 0-based global
+                var instId = ""
+                try { instId = pp.instrumentId || "" } catch(e) {}
+                for (var si = 0; si < nStv; si++) {
+                    staffNameMap.push(lName)
+                    stavesList.push({ staffIndex: firstStaff0 + si, partIndex: pi })
+                }
                 partsList.push({
-                    longName:   lName,
-                    shortName:  pp.shortName || "",
-                    staves:     nStv,
-                    firstStaff: Math.floor(pp.startTrack / 4) + 1, // 1-based global
-                    visible:    (pp.show !== false)
+                    partIndex:    pi,                  // 0-based — pass to instrument tools
+                    name:         lName,
+                    longName:     lName,
+                    shortName:    pp.shortName || "",
+                    instrumentId: instId,
+                    nstaves:      nStv,
+                    staves:       nStv,                // retained for back-compat
+                    firstStaff:   firstStaff0 + 1,     // 1-based global
+                    visible:      (pp.show !== false)
                 })
             }
-            info.parts = partsList
+            info.parts  = partsList
+            info.staves = stavesList
+            info.nparts = partsList.length
         }
 
         // Initial time signature: read from the first staff at tick 0.
@@ -4092,5 +4107,251 @@ function setMidiChannelSettings(instrument, channelName, settings) {
     } catch (e) {
         try { s.endCmd(true) } catch (ee) {}
         return { error: "setMidiChannelSettings failed: " + e }
+    }
+}
+
+// ── Instrument & staff management (apiv1 Score Q_INVOKABLE, since 4.7) ──────
+//
+// All seven functions below call Q_INVOKABLE methods on the apiv1 Score wrapper
+// directly (s.appendPart, s.removeParts, s.moveParts, …). These bypass the
+// ActionsDispatcher entirely, so the upstream #24673 dispatcher bug (which drops
+// notationactioncontroller actions while the extension has focus) does not apply
+// — they are safe to call unconditionally.
+//
+// Unlike addTimeSignature, these are raw undo primitives, NOT self-transactional:
+// each must be wrapped in s.startCmd()/s.endCmd() or the undo stack corrupts.
+//
+// Unknown-instrument detection is by READBACK, because the C++ layer signals a
+// bad id inconsistently (score.cpp): appendPart() silently substitutes the
+// default instrument; insertPart()/replaceInstrument() no-op. Neither throws nor
+// returns false. So after the call we compare the affected part's instrumentId
+// (and the part count) against the request and roll back on a mismatch.
+
+// Case-insensitive compare of a part's actual instrumentId against the requested
+// id. searchTemplate() resolves a valid request back to the same id, so a valid
+// add round-trips; an unknown id leaves a different (default / unchanged) id.
+function _instrIdMatches(actualId, requestedId) {
+    if (typeof actualId !== "string" || typeof requestedId !== "string") return false
+    return actualId.toLowerCase() === requestedId.toLowerCase()
+}
+
+// Add a new part. position null/undefined → append at end; integer → insert at
+// that 0-based index. Returns { ok, instrumentId, position } with position the
+// actual 0-based index, or an honest error on an unknown id.
+function addInstrument(instrumentId, position) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof instrumentId !== "string" || instrumentId.length === 0)
+        return { error: "instrumentId must be a non-empty string" }
+
+    var hasPos = (typeof position === "number")
+    var before = s.parts.length
+    if (hasPos && (position < 0 || position > before))
+        return { error: "Position " + position + " out of range. Score has " + before + " part(s); valid insert positions are 0.." + before + "." }
+
+    try {
+        s.startCmd("add instrument")
+        if (hasPos) s.insertPart(instrumentId, position)
+        else        s.appendPart(instrumentId)
+
+        // Unknown-id detection: insertPart() no-ops (count unchanged);
+        // appendPart() substitutes the default (count grows but id won't match).
+        var after = s.parts.length
+        if (after === before) {
+            s.endCmd(true)
+            return { error: "Unknown instrument ID: " + instrumentId + ". Use get_score_info to list valid IDs." }
+        }
+        var actualIndex = hasPos ? position : (after - 1)
+        var newPart = s.parts[actualIndex]
+        var newId = newPart ? newPart.instrumentId : null
+        if (!_instrIdMatches(newId, instrumentId)) {
+            s.endCmd(true)
+            return { error: "Unknown instrument ID: " + instrumentId + ". Use get_score_info to list valid IDs." }
+        }
+        s.endCmd()
+        return { ok: true, instrumentId: instrumentId, position: actualIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addInstrument failed: " + e }
+    }
+}
+
+// Remove a part by 0-based index. Refuses to remove the only part (that would
+// leave an invalid, partless score).
+function removeInstrument(partIndex) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof partIndex !== "number")
+        return { error: "partIndex must be a number" }
+    var n = s.parts.length
+    if (partIndex < 0 || partIndex >= n)
+        return { error: "Part index " + partIndex + " out of range. Score has " + n + " part(s)." }
+    if (n <= 1)
+        return { error: "Cannot remove the only part of the score. A score must have at least one part." }
+
+    try {
+        var part = s.parts[partIndex]
+        s.startCmd("remove instrument")
+        s.removeParts([part])           // QList<apiv1::Part*> ← JS array auto-converts
+        s.endCmd()
+        return { ok: true, partIndex: partIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "removeInstrument failed: " + e }
+    }
+}
+
+// Move a part from fromIndex to toIndex. moveParts() positions the source
+// relative to a destination part (insertMode 0=BEFORE, 1=AFTER); we pick the
+// destination/mode so the moved part lands exactly at toIndex:
+//   toIndex < fromIndex → BEFORE parts[toIndex]
+//   toIndex > fromIndex → AFTER  parts[toIndex]
+// (destination is read from the pre-move array; it is never the source itself
+// because from !== to here.)
+function reorderInstrument(fromIndex, toIndex) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof fromIndex !== "number" || typeof toIndex !== "number")
+        return { error: "fromIndex and toIndex must be numbers" }
+    var n = s.parts.length
+    if (fromIndex < 0 || fromIndex >= n)
+        return { error: "fromIndex " + fromIndex + " out of range. Score has " + n + " part(s)." }
+    if (toIndex < 0 || toIndex >= n)
+        return { error: "toIndex " + toIndex + " out of range. Score has " + n + " part(s)." }
+    if (fromIndex === toIndex)
+        return { ok: true, fromIndex: fromIndex, toIndex: toIndex, note: "no change" }
+
+    try {
+        var src  = s.parts[fromIndex]
+        var dest = s.parts[toIndex]
+        var insertMode = (toIndex < fromIndex) ? 0 : 1   // 0=BEFORE, 1=AFTER
+        s.startCmd("reorder instrument")
+        s.moveParts([src], dest, insertMode)
+        s.endCmd()
+        return { ok: true, fromIndex: fromIndex, toIndex: toIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "reorderInstrument failed: " + e }
+    }
+}
+
+// Replace the instrument of an existing part, keeping the part's notes
+// (s.replaceInstrument, not s.replacePart which destroys+reinserts). On an
+// unknown id replaceInstrument no-ops, detected by instrumentId readback.
+function replaceInstrument(partIndex, instrumentId) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof partIndex !== "number")
+        return { error: "partIndex must be a number" }
+    if (typeof instrumentId !== "string" || instrumentId.length === 0)
+        return { error: "instrumentId must be a non-empty string" }
+    var n = s.parts.length
+    if (partIndex < 0 || partIndex >= n)
+        return { error: "Part index " + partIndex + " out of range. Score has " + n + " part(s)." }
+
+    try {
+        var part = s.parts[partIndex]
+        s.startCmd("replace instrument")
+        s.replaceInstrument(part, instrumentId)
+        var newId = s.parts[partIndex] ? s.parts[partIndex].instrumentId : null
+        if (!_instrIdMatches(newId, instrumentId)) {
+            s.endCmd(true)
+            return { error: "Unknown instrument ID: " + instrumentId + ". Use get_score_info to list valid IDs." }
+        }
+        s.endCmd()
+        return { ok: true, partIndex: partIndex, instrumentId: instrumentId }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "replaceInstrument failed: " + e }
+    }
+}
+
+// Append an extra staff to a part (e.g. a bass-clef staff to make a piano grand
+// staff). appendStaff returns the new Staff* or null.
+function addStaff(partIndex) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof partIndex !== "number")
+        return { error: "partIndex must be a number" }
+    var n = s.parts.length
+    if (partIndex < 0 || partIndex >= n)
+        return { error: "Part index " + partIndex + " out of range. Score has " + n + " part(s)." }
+
+    try {
+        var part = s.parts[partIndex]
+        s.startCmd("add staff")
+        var staff = s.appendStaff(part)
+        if (!staff) {
+            s.endCmd(true)
+            return { error: "Failed to add staff to part " + partIndex }
+        }
+        s.endCmd()
+        return { ok: true, partIndex: partIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addStaff failed: " + e }
+    }
+}
+
+// Append a staff to destination part that is LINKED to a source staff (shared
+// content — edits propagate both ways). staffIndex is a global 0-based staff
+// index; partIndex is the destination part.
+function addLinkedStaff(staffIndex, partIndex) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof staffIndex !== "number" || typeof partIndex !== "number")
+        return { error: "staffIndex and partIndex must be numbers" }
+    var nStaves = s.staves.length
+    var nParts  = s.parts.length
+    if (staffIndex < 0 || staffIndex >= nStaves)
+        return { error: "Staff index " + staffIndex + " out of range. Score has " + nStaves + " staff/staves." }
+    if (partIndex < 0 || partIndex >= nParts)
+        return { error: "Part index " + partIndex + " out of range. Score has " + nParts + " part(s)." }
+
+    try {
+        var src  = s.staves[staffIndex]
+        var dest = s.parts[partIndex]
+        s.startCmd("add linked staff")
+        var staff = s.appendLinkedStaff(src, dest)
+        if (!staff) {
+            s.endCmd(true)
+            return { error: "Failed to add linked staff (source staff " + staffIndex + " -> part " + partIndex + ")" }
+        }
+        s.endCmd()
+        return { ok: true, staffIndex: staffIndex, partIndex: partIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "addLinkedStaff failed: " + e }
+    }
+}
+
+// Remove a staff by global 0-based index. Refuses to remove the last staff of a
+// part (would orphan the part — use remove_instrument for the whole part).
+function removeStaff(staffIndex) {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    if (typeof staffIndex !== "number")
+        return { error: "staffIndex must be a number" }
+    var n = s.staves.length
+    if (staffIndex < 0 || staffIndex >= n)
+        return { error: "Staff index " + staffIndex + " out of range. Score has " + n + " staff/staves." }
+
+    var staff = s.staves[staffIndex]
+    // Last-staff-of-part guard via the staff's part backref (elements.h Staff.part).
+    var partStaffCount = -1
+    try {
+        if (staff && staff.part && staff.part.staves) partStaffCount = staff.part.staves.length
+    } catch(e) {}
+    if (partStaffCount === 1)
+        return { error: "Cannot remove the last staff of a part. Use remove_instrument to remove the entire part." }
+
+    try {
+        s.startCmd("remove staff")
+        s.removeStaves([staff])         // QList<apiv1::Staff*> ← JS array auto-converts
+        s.endCmd()
+        return { ok: true, staffIndex: staffIndex }
+    } catch(e) {
+        try { s.endCmd(true) } catch(ee) {}
+        return { error: "removeStaff failed: " + e }
     }
 }
