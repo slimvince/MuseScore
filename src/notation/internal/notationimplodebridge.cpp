@@ -629,7 +629,8 @@ bool emitImplodedChordTrack(
         region.startTick = regionStart.ticks();
         region.endTick = regionEnd.ticks();
 
-        auto localTones = collectRegionTones(score, region.startTick, region.endTick, excludeStaves);
+        auto localTones = mu::notation::internal::collectRegionTones(
+            score, region.startTick, region.endTick, excludeStaves);
         if (!localTones.empty()) {
             region.tones = std::move(localTones);
         }

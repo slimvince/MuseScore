@@ -54,6 +54,7 @@
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/key/keyresolver.h"
+#include "composing/analysis/region/sparsechordrefinement.h"
 #include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
@@ -63,6 +64,7 @@ using mu::composing::analysis::isDiatonicStep;
 namespace shv = mu::composing::analysis::scoreharvest;
 namespace ebr = mu::composing::analysis::engravingbridge;
 namespace kr  = mu::composing::analysis::keyresolver;
+namespace cra = mu::composing::analysis::region;
 
 namespace mu::notation::internal {
 
@@ -86,67 +88,6 @@ mu::composing::analysis::ChordSymbolFormatter::NoteSpelling scoreNoteSpelling(
 
 namespace {
 
-using mu::composing::analysis::keyModeScaleIntervals;
-
-std::optional<std::tuple<mu::composing::analysis::ChordQuality, int, int>> diatonicTriadShapeForDegree(
-    int degree,
-    mu::composing::analysis::KeySigMode keyMode)
-{
-    using mu::composing::analysis::ChordQuality;
-
-    if (degree < 0 || degree > 6) {
-        return std::nullopt;
-    }
-
-    const auto& scale = keyModeScaleIntervals(keyMode);
-    const int rootInterval = scale[static_cast<size_t>(degree)];
-    const int thirdDegree = degree + 2;
-    const int fifthDegree = degree + 4;
-    const int thirdInterval = (scale[static_cast<size_t>(thirdDegree % 7)]
-                               + (thirdDegree >= 7 ? 12 : 0)
-                               - rootInterval) % 12;
-    const int fifthInterval = (scale[static_cast<size_t>(fifthDegree % 7)]
-                               + (fifthDegree >= 7 ? 12 : 0)
-                               - rootInterval) % 12;
-
-    if (thirdInterval == 4 && fifthInterval == 7) {
-        return std::make_tuple(ChordQuality::Major, thirdInterval, fifthInterval);
-    }
-    if (thirdInterval == 3 && fifthInterval == 7) {
-        return std::make_tuple(ChordQuality::Minor, thirdInterval, fifthInterval);
-    }
-    if (thirdInterval == 3 && fifthInterval == 6) {
-        return std::make_tuple(ChordQuality::Diminished, thirdInterval, fifthInterval);
-    }
-    if (thirdInterval == 4 && fifthInterval == 8) {
-        return std::make_tuple(ChordQuality::Augmented, thirdInterval, fifthInterval);
-    }
-
-    return std::nullopt;
-}
-
-bool tonesFitTriadShape(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones,
-                       int rootPc,
-                       int thirdInterval,
-                       int fifthInterval)
-{
-    bool seenPitchClasses[12] = {};
-    for (const auto& tone : tones) {
-        const int pitchClass = tone.pitch % 12;
-        if (seenPitchClasses[pitchClass]) {
-            continue;
-        }
-        seenPitchClasses[pitchClass] = true;
-
-        const int interval = (pitchClass - rootPc + 12) % 12;
-        if (interval != 0 && interval != thirdInterval && interval != fifthInterval) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones)
 {
     bool seenPitchClasses[12] = {};
@@ -164,17 +105,14 @@ int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnal
 
 } // anonymous namespace
 
+// diatonicDegreeForRootPc, refineSparseChordQualityFromKeyContext,
+// applyTonicPriorToSparseChord, and forceChordTrackQualityFromKeyContext
+// are thin pass-throughs to the shared composing/analysis/region/sparsechordrefinement
+// implementation (Phase 4 — docs/duplication_audit.md §5.4).
+
 int diatonicDegreeForRootPc(int rootPc, int keyFifths, mu::composing::analysis::KeySigMode keyMode)
 {
-    const int tonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
-                         + mu::composing::analysis::keyModeTonicOffset(keyMode)) % 12;
-    const auto& scale = mu::composing::analysis::keyModeScaleIntervals(keyMode);
-    for (size_t i = 0; i < scale.size(); ++i) {
-        if ((tonicPc + scale[i]) % 12 == rootPc) {
-            return static_cast<int>(i);
-        }
-    }
-    return -1;
+    return cra::diatonicDegreeForRootPc(rootPc, keyFifths, keyMode);
 }
 
 void refineSparseChordQualityFromKeyContext(
@@ -183,49 +121,7 @@ void refineSparseChordQualityFromKeyContext(
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode)
 {
-    using namespace mu::composing::analysis;
-
-    if (result.identity.quality != ChordQuality::Unknown) {
-        return;
-    }
-
-    const int uniquePitchClasses = distinctPitchClassCount(tones);
-
-    int degree = result.function.degree;
-    if (degree < 0 || degree > 6) {
-        degree = diatonicDegreeForRootPc(result.identity.rootPc, keyFifths, keyMode);
-        if (degree < 0) {
-            return;
-        }
-
-        result.function.degree = degree;
-        result.function.keyTonicPc = (mu::composing::analysis::ionianTonicPcFromFifths(keyFifths)
-                                      + keyModeTonicOffset(keyMode)) % 12;
-        result.function.keyMode = keyMode;
-    }
-
-    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
-    if (!triadShape) {
-        return;
-    }
-
-    const auto [quality, thirdInterval, fifthInterval] = *triadShape;
-
-    // In plain Aeolian, a lone tonic or dominant pitch is too ambiguous to
-    // harden into a minor triad. Leave it unqualified and let richer later
-    // evidence decide the quality.
-    if (uniquePitchClasses == 1
-        && quality == ChordQuality::Minor
-        && keyMode == KeySigMode::Aeolian
-        && (degree == 0 || degree == 4)) {
-        return;
-    }
-
-    if (!tonesFitTriadShape(tones, result.identity.rootPc, thirdInterval, fifthInterval)) {
-        return;
-    }
-
-    result.identity.quality = quality;
+    cra::refineSparseChordQualityFromKeyContext(result, tones, keyFifths, keyMode);
 }
 
 void applyTonicPriorToSparseChord(
@@ -234,54 +130,14 @@ void applyTonicPriorToSparseChord(
     int keyFifths,
     mu::composing::analysis::KeySigMode keyMode)
 {
-    using namespace mu::composing::analysis;
-
-    const auto q = result.identity.quality;
-    const bool isThin = (q == ChordQuality::Power
-                      || q == ChordQuality::Suspended2
-                      || q == ChordQuality::Suspended4);
-    if (!isThin) {
-        return;
-    }
-
-    // Dense regions (3+ PCs) carry their own quality evidence; overriding
-    // them with a diatonic assumption would suppress legitimate chord color.
-    if (distinctPitchClassCount(tones) > 2) {
-        return;
-    }
-
-    const int degree = diatonicDegreeForRootPc(
-        result.identity.rootPc, keyFifths, keyMode);
-    if (degree < 0) {
-        return;
-    }
-
-    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
-    if (!triadShape) {
-        return;
-    }
-    const auto diatonicQuality = std::get<0>(*triadShape);
-
-    result.identity.quality = diatonicQuality;
+    cra::applyTonicPriorToSparseChord(result, tones, keyFifths, keyMode);
 }
 
 void forceChordTrackQualityFromKeyContext(
     mu::composing::analysis::ChordAnalysisResult& result,
     mu::composing::analysis::KeySigMode keyMode)
 {
-    using namespace mu::composing::analysis;
-
-    if (result.identity.quality != ChordQuality::Unknown) {
-        return;
-    }
-
-    const int degree = result.function.degree;
-    const auto triadShape = diatonicTriadShapeForDegree(degree, keyMode);
-    if (!triadShape) {
-        return;
-    }
-
-    result.identity.quality = std::get<0>(*triadShape);
+    cra::forceChordTrackQualityFromKeyContext(result, keyMode);
 }
 
 namespace {

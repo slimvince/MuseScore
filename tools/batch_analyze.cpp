@@ -29,7 +29,6 @@
 #include <set>
 #include <sstream>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 // ── Qt ─────────────────────────────────────────────────────────────────────
@@ -87,28 +86,20 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 
 // ── Analysis ───────────────────────────────────────────────────────────────
 #include "composing/analysis/chord/chordanalyzer.h"
-#include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/key/modepriorpresets.h"
 #include "composing/analysis/chord/analysisutils.h"
-#include "composing/analysis/harmony/harmonicsegmenter.h"
-#include "composing/analysis/scoreharvest/metricweights.h"
+#include "composing/analysis/region/regionanalyzer.h"
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
-#include "notation/internal/notationcomposingbridgehelpers.h"
 
 // ── Namespace aliases ──────────────────────────────────────────────────────
 using namespace mu::engraving;
 namespace analysis = mu::composing::analysis;
-namespace shv = mu::composing::analysis::scoreharvest;
 using analysis::ChordAnalysisTone;
 using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
-using analysis::ChordTemporalContext;
-using analysis::isDiatonicStep;
-using analysis::inferNextRootPc;
-using analysis::advanceTemporalContext;
 using analysis::KeyModeAnalysisResult;
 // Note: analysis::KeySigMode and mu::engraving::KeyMode are both in scope;
 //       always qualify as analysis::KeySigMode to avoid ambiguity.
@@ -481,24 +472,11 @@ static const char* regionDumpModeName(RegionDumpMode mode)
     return "batch";
 }
 
-// ── Shared tone-collection functions ──────────────────────────────────────────
-// Canonical implementations live in composing/analysis/engravingbridge/.
-// Phase 2 of the duplication remediation (docs/duplication_audit.md §5.1)
-// moved the bodies out of notation/internal into the composing layer, so
-// batch_analyze now calls them directly without going through notation.
-
-using mu::composing::analysis::engravingbridge::SoundingNote;
-using mu::composing::analysis::engravingbridge::collectSoundingAt;
-using mu::composing::analysis::engravingbridge::buildTones;
-using mu::composing::analysis::engravingbridge::collectRegionTones;
-using mu::composing::analysis::engravingbridge::detectBassMovementSubBoundaries;
-using mu::composing::analysis::engravingbridge::findTemporalContext;
-
-
-using mu::composing::PlacedRegion;
-using mu::composing::HarmonicSegmenterCallbacks;
-using mu::composing::greedyExpandSegmentation;
-using mu::composing::placedRegionsToTicks;
+// ── Shared region orchestrator ────────────────────────────────────────────────
+// Phase 4 of the duplication remediation (docs/duplication_audit.md §§2.14, 5.4)
+// moved the per-region pipeline body into composing/analysis/region/
+// regionanalyzer.{h,cpp}. analyzeScore() below is now a thin adapter that calls
+// the shared orchestrator and post-processes its output into AnalyzedRegion.
 
 /// Forward declaration — defined later in this file.
 static const char* qualityToString(ChordQuality q);
@@ -509,6 +487,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
     const analysis::KeyModeAnalyzerPreferences& keyPrefs = analysis::KeyModeAnalyzerPreferences{},
     const analysis::ChordAnalyzerPreferences& chordPrefs = analysis::kDefaultChordAnalyzerPreferences)
 {
+    namespace cra = mu::composing::analysis::region;
+
     const Segment* firstSegment = score->tick2segment(Fraction(0, 1), true, SegmentType::ChordRest);
     if (!firstSegment) {
         return {};
@@ -516,337 +496,76 @@ static std::vector<AnalyzedRegion> analyzeScore(
 
     const Fraction startTick = firstSegment->tick();
     const Fraction endTick = score->endTick();
-    std::vector<AnalyzedRegion> result;
+
+    // Phase 4: delegate the regional pipeline to the shared orchestrator
+    // (composing/analysis/region/regionanalyzer). This wrapper retains the
+    // batch-specific tone-collection behaviour (excludeLookAheadOnDenseStart)
+    // and post-processes the resulting regions into the JSON-flavored
+    // AnalyzedRegion (with measureNumber/beat/pcMask/keyRanked).
+    cra::AnalyzeRegionsOptions opts;
+    opts.granularity                     = analysis::HarmonicRegionGranularity::Smoothed;
+    opts.onsetBoundaryThreshold          = 0.25;
+    opts.excludeLookAheadOnDenseStart    = true;
+    // pass1MinDistinctPcsForCandidate left at -1 → honor chordPrefs unchanged.
+
+    const auto regions = cra::analyzeRegions(
+        score, startTick, endTick, excludeStaves, chordPrefs, keyPrefs, opts);
+
+    if (regions.empty()) {
+        return {};
+    }
 
     const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
-    const auto initialKey = inferLocalKey(score, refStaff, excludeStaves, startTick, nullptr, keyPrefs)[0];
-    const auto chordAnalyzer = analysis::ChordAnalyzerFactory::create();
 
-    // Iter 54: greedy-expand segmentation (Task #62).
-    HarmonicSegmenterCallbacks segCallbacks;
-    segCallbacks.staffIsEligible = [score](size_t staffIdx) {
-        return staffIsEligible(score, staffIdx);
-    };
-    segCallbacks.collectRegionTones = [score, &excludeStaves](int s, int e) {
-        return collectRegionTones(score, s, e, excludeStaves, -1, true);
-    };
-    auto greedyRegions = greedyExpandSegmentation(
-        score, startTick, endTick, excludeStaves, chordPrefs,
-        chordAnalyzer.get(), initialKey.keySignatureFifths, initialKey.mode,
-        segCallbacks);
-    // Iter 83: port Iter 77 Fix B from notationharmonicrhythmbridge.cpp.
-    // placedRegionsToTicks() returns only START ticks; emitting each placed
-    // region's END tick as well keeps confident Round 1 anchors intact when
-    // followed by an unplaced gap (otherwise the bridge/batch builds one wide
-    // region spanning [anchorStart, gapEnd) and re-analysis can flip the
-    // reading).
-    std::vector<Fraction> boundaryTicks;
-    {
-        std::set<int> boundaryTickSet;
-        for (const auto& pr : greedyRegions) {
-            if (pr.round >= 1) {
-                boundaryTickSet.insert(pr.startTick);
-                boundaryTickSet.insert(pr.endTick);
-            }
-        }
-        for (int t : boundaryTickSet) {
-            if (t >= startTick.ticks() && t < endTick.ticks()) {
-                boundaryTicks.push_back(Fraction::fromTicks(t));
-            }
-        }
-        if (boundaryTicks.empty()) {
-            boundaryTicks.push_back(startTick);
-        }
-    }
+    std::vector<AnalyzedRegion> result;
+    result.reserve(regions.size());
 
-    // Iter 93: preserve pre-Pass-2b parent boundaries so the main analyzeChord
-    // loop can compute onsetAtRegionStart at full-region scope (against the
-    // parent's startTick, not the sub-region's). Indexed by tick value; the
-    // parent for a given sub-region is the largest entry ≤ sub-region start.
-    std::set<int> parentBoundaryTicks;
-    for (const Fraction& t : boundaryTicks) {
-        parentBoundaryTicks.insert(t.ticks());
-    }
-
-    // Iter 94 — pre-compute each parent region's bass PC (lowest qualifying
-    // tone over the whole parent span) so the main loop can supply parent-
-    // scope previousBassPc / nextBassPc to analyzeChord for w_stepIn /
-    // w_stepOut.  Without this override, sub-region calls would see adjacent
-    // sub-region neighbors' bass values — the scope mismatch behind the Iter
-    // 92 Step 3c +5 Baroque BIR=false regression.
-    std::unordered_map<int, int> parentBassPcMap;
-    {
-        std::vector<int> sortedParentTicks(parentBoundaryTicks.begin(),
-                                           parentBoundaryTicks.end());
-        for (size_t pi = 0; pi < sortedParentTicks.size(); ++pi) {
-            const int pStart = sortedParentTicks[pi];
-            const int pEnd = (pi + 1 < sortedParentTicks.size())
-                             ? sortedParentTicks[pi + 1] : endTick.ticks();
-            const auto pTones = collectRegionTones(
-                score, pStart, pEnd, excludeStaves, pStart, true);
-            int pBassPc = -1;
-            for (const auto& t : pTones) {
-                if (t.isBass) { pBassPc = ((t.pitch % 12) + 12) % 12; break; }
-            }
-            parentBassPcMap[pStart] = pBassPc;
-        }
-    }
-
-    // Pass 2b: expand coarse regions with bass-movement sub-boundaries.
-    // Detects regions where the pitch-class set is identical across the region but
-    // the bass note changes (e.g. Eye of the Hurricane m.1: F-bass → Bb-bass with
-    // the same {C,D,F,G,Bb} pitch-class set).  ANY bass PC change fires; downstream
-    // chord analysis (bassPassingToneMinWeightFraction) handles passing tones.
-    {
-        constexpr int kPass2bMinRegionTicks = shv::kPass2bMinRegionTicks;
-        std::vector<Fraction> expandedTicks;
-        expandedTicks.reserve(boundaryTicks.size() * 2);
-        for (size_t bi = 0; bi < boundaryTicks.size(); ++bi) {
-            expandedTicks.push_back(boundaryTicks[bi]);
-            const Fraction regionStart = boundaryTicks[bi];
-            const Fraction regionEnd = (bi + 1 < boundaryTicks.size())
-                                       ? boundaryTicks[bi + 1] : endTick;
-            if ((regionEnd - regionStart).ticks() >= kPass2bMinRegionTicks) {
-                const auto subs = detectBassMovementSubBoundaries(
-                    score, regionStart, regionEnd, excludeStaves);
-                for (const Fraction& t : subs) {
-                    expandedTicks.push_back(t);
-                }
-            }
-        }
-        boundaryTicks = std::move(expandedTicks);
-    }
-
-    result.reserve(boundaryTicks.size());
-
-    ChordTemporalContext ctx = findTemporalContext(
-        score, firstSegment, excludeStaves, initialKey.keySignatureFifths, initialKey.mode, -1);
-
-    // Temporal context accumulation state — carried across iterations.
-    int runningStepwiseCount = 0;                            // consecutive stepwise bass count
-    std::array<int, 3> recentRootsBuf = {-1, -1, -1};       // rolling 3-region root window
-
-    // Hysteresis: track the previous key result across regions.
-    std::optional<KeyModeAnalysisResult> prevKey;
-
-    for (size_t boundaryIndex = 0; boundaryIndex < boundaryTicks.size(); ++boundaryIndex) {
-        const Fraction regionStart = boundaryTicks[boundaryIndex];
-        const Fraction regionEnd = (boundaryIndex + 1 < boundaryTicks.size()) ? boundaryTicks[boundaryIndex + 1] : endTick;
-        // Iter 93: resolve parent-region startTick for onsetAtRegionStart.
-        // Largest pre-Pass-2b boundary ≤ regionStart.
-        int parentStartTick = regionStart.ticks();
-        {
-            auto it = parentBoundaryTicks.upper_bound(regionStart.ticks());
-            if (it != parentBoundaryTicks.begin()) {
-                --it;
-                parentStartTick = *it;
-            }
-        }
-        auto tones = collectRegionTones(score,
-                                        regionStart.ticks(),
-                                        regionEnd.ticks(),
-                                        excludeStaves,
-                                        parentStartTick,
-                                        true);
-        if (tones.empty()) {
-            continue;
-        }
-
+    // Per-region key ranking — batch's keyModeRunnerUp JSON field needs the
+    // top-2 results; the shared orchestrator only stores the winner. The
+    // resolver is windowed and cheap enough to call once per merged region.
+    std::optional<analysis::KeyModeAnalysisResult> prevKey;
+    for (const auto& hr : regions) {
+        const Fraction regionStart = Fraction::fromTicks(hr.startTick);
         const MeasureTickInfo regionMeasure = locateMeasureByTick(score, regionStart);
         const Measure* measure = regionMeasure.measure;
         if (!measure) {
             continue;
         }
 
-        int currentBassPc = -1;
-        for (const auto& tone : tones) {
-            if (tone.isBass) {
-                currentBassPc = tone.pitch % 12;
-                break;
-            }
-        }
-        ctx.bassIsStepwiseFromPrevious = (ctx.previousBassPc != -1 && currentBassPc != -1)
-            && isDiatonicStep(ctx.previousBassPc, currentBassPc);
-
-        // Infer key using the same windowed approach as the bridge.
-        // Pass the previous result for hysteresis (nullptr on the first region).
-        const std::vector<KeyModeAnalysisResult> keyRanked = inferLocalKey(
-            score, refStaff, excludeStaves, regionStart,
-            prevKey.has_value() ? &prevKey.value() : nullptr,
-            keyPrefs);
-        const KeyModeAnalysisResult& localKey = keyRanked[0];
-        prevKey = localKey;
-
-        // Look-ahead: collect next region's tones for nextBassPc and nextRootPc.
-        // nextRootPc uses the current region's key as a lightweight approximation.
-        int nextBassPc = -1;
-        ctx.nextRootPc = -1;
-        ctx.nextBassPc = -1;
-        if (boundaryIndex + 1 < boundaryTicks.size()) {
-            const Fraction nextRegionStart = boundaryTicks[boundaryIndex + 1];
-            const Fraction nextRegionEnd = (boundaryIndex + 2 < boundaryTicks.size())
-                                           ? boundaryTicks[boundaryIndex + 2]
-                                           : endTick;
-            int nextParentStartTick = nextRegionStart.ticks();
-            {
-                auto it = parentBoundaryTicks.upper_bound(nextRegionStart.ticks());
-                if (it != parentBoundaryTicks.begin()) {
-                    --it;
-                    nextParentStartTick = *it;
-                }
-            }
-            const auto nextTones = collectRegionTones(score,
-                                                      nextRegionStart.ticks(),
-                                                      nextRegionEnd.ticks(),
-                                                      excludeStaves,
-                                                      nextParentStartTick,
-                                                      true);
-            for (const auto& tone : nextTones) {
-                if (tone.isBass) {
-                    nextBassPc = tone.pitch % 12;
-                    break;
-                }
-            }
-            ctx.nextRootPc = inferNextRootPc(
-                chordAnalyzer.get(), nextTones,
-                localKey.keySignatureFifths, localKey.mode, chordPrefs);
-        }
-        ctx.bassIsStepwiseToNext = (currentBassPc != -1 && nextBassPc != -1)
-            && isDiatonicStep(currentBassPc, nextBassPc);
-        ctx.nextBassPc = nextBassPc;
-
-        // Iter 94 — override previousBassPc / nextBassPc to parent scope for
-        // w_stepIn / w_stepOut.  Computed AFTER the stepwise booleans (which
-        // intentionally use sub-region scope: passing-tone / inversion
-        // signals are local) and BEFORE analyzeChord.  The next iteration's
-        // ctx.previousBassPc is restored by advanceTemporalContext below.
-        int parentPredBassPc = -1;
-        int parentSuccBassPc = -1;
-        {
-            auto pIt = parentBoundaryTicks.lower_bound(parentStartTick);
-            if (pIt != parentBoundaryTicks.begin()) {
-                auto prevIt = pIt;
-                --prevIt;
-                auto m = parentBassPcMap.find(*prevIt);
-                if (m != parentBassPcMap.end()) parentPredBassPc = m->second;
-            }
-            auto nIt = parentBoundaryTicks.upper_bound(parentStartTick);
-            if (nIt != parentBoundaryTicks.end()) {
-                auto m = parentBassPcMap.find(*nIt);
-                if (m != parentBassPcMap.end()) parentSuccBassPc = m->second;
-            }
-        }
-        const int savedPrevBassPc = ctx.previousBassPc;
-        ctx.previousBassPc = parentPredBassPc;
-        ctx.nextBassPc     = parentSuccBassPc;
-
-        auto candidates = chordAnalyzer->analyzeChord(
-            tones, localKey.keySignatureFifths, localKey.mode, &ctx, chordPrefs);
-
-        // Restore sub-region-scope previousBassPc; advanceTemporalContext will
-        // overwrite it shortly anyway, but keep the invariant clean.
-        ctx.previousBassPc = savedPrevBassPc;
-
-        if (candidates.empty()) {
-            continue;
-        }
-
-        // Compute pitch-class metadata from tones.
-        const uint16_t pcMask = pitchClassMask(tones);
-        const int bassPc = currentBassPc;
-
-        advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf,
-                               candidates[0].identity);
-
-        if (!result.empty()
-            && result.back().chord.identity.rootPc == candidates[0].identity.rootPc
-            && result.back().chord.identity.quality == candidates[0].identity.quality) {
-            result.back().endTick = regionEnd.ticks();
-            analysis::mergeChordAnalysisTones(result.back().tones, tones);
-            result.back().pcMask |= pcMask;
-            if (const auto* bassTone = analysis::bassToneFromTones(result.back().tones)) {
-                result.back().bassPc = bassTone->pitch % 12;
-                result.back().chord.identity.bassPc = bassTone->pitch % 12;
-                result.back().chord.identity.bassTpc = bassTone->tpc;
-            }
-            continue;
-        }
+        const auto keyRanked = analysis::keyresolver::resolveKeyAndModeRanked(
+            score, regionStart, static_cast<staff_idx_t>(refStaff),
+            excludeStaves, keyPrefs,
+            prevKey.has_value() ? &prevKey.value() : nullptr);
+        prevKey = keyRanked.front();
 
         AnalyzedRegion ar;
-        ar.startTick     = regionStart.ticks();
-        ar.endTick       = regionEnd.ticks();
-        ar.measureNumber = regionMeasure.number;
-        const int tickInMeasure = regionStart.ticks() - measure->tick().ticks();
-        ar.beat          = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
-        ar.chord         = candidates[0];
-        ar.hasAnalyzedChord = true;
-        ar.tones         = std::move(tones);
-        ar.key           = localKey;
-        ar.keyRanked     = keyRanked;
-        ar.pcMask        = pcMask;
-        ar.bassPc        = bassPc;
+        ar.startTick        = hr.startTick;
+        ar.endTick          = hr.endTick;
+        ar.measureNumber    = regionMeasure.number;
+        const int tickInMeasure = hr.startTick - measure->tick().ticks();
+        ar.beat             = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
+        ar.chord            = hr.chordResult;
+        ar.hasAnalyzedChord = hr.hasAnalyzedChord;
+        ar.tones            = hr.tones;
+        ar.key              = hr.keyModeResult;
+        ar.keyRanked        = keyRanked;
+        ar.pcMask           = pitchClassMask(ar.tones);
+        ar.bassPc           = hr.chordResult.identity.bassPc;
+        if (ar.bassPc < 0) {
+            if (const auto* bassTone = analysis::bassToneFromTones(ar.tones)) {
+                ar.bassPc = bassTone->pitch % 12;
+            }
+        }
 
-        // Up to 3 alternatives (indices 1, 2, 3 from analyzeChord)
-        for (size_t candidateIndex = 1; candidateIndex < candidates.size() && candidateIndex <= 3; ++candidateIndex) {
-            ar.alternatives.push_back(candidates[candidateIndex]);
+        // Up to 3 alternatives (indices 1..3 from analyzeChord).
+        for (size_t altIdx = 0; altIdx < hr.alternatives.size() && altIdx < 3; ++altIdx) {
+            ar.alternatives.push_back(hr.alternatives[altIdx]);
         }
 
         result.push_back(std::move(ar));
     }
 
-    if (result.empty()) {
-        return {};
-    }
-
-    constexpr int minRegionTicks = shv::kMinRegionTicks;
-    std::vector<AnalyzedRegion> filtered;
-    filtered.reserve(result.size());
-    filtered.push_back(std::move(result[0]));
-    for (size_t regionIndex = 1; regionIndex < result.size(); ++regionIndex) {
-        const int duration = result[regionIndex].endTick - result[regionIndex].startTick;
-        if (duration < minRegionTicks) {
-            filtered.back().endTick = result[regionIndex].endTick;
-        } else {
-            filtered.push_back(std::move(result[regionIndex]));
-        }
-    }
-
-    // ── Iter 87 — post-merge bass-b7 promotion ───────────────────────────────
-    // The same-root same-quality merge above keeps result.back()'s chord
-    // identity but updates bassPc/bassTpc.  When a late-entering b7 in the bass
-    // promotes a later sub-region to MinorSeventh (Iter 86 stamp inside
-    // analyzeChord), the merge discards that candidate identity in favour of
-    // the earlier sub-region's plain triad reading.  Re-apply the b7 promotion
-    // on the merged region using the merged tones and final bass so the chord
-    // symbol (Am7/G, Em7/D) reflects the slash bass that the analyzer already
-    // emits via formatSymbol.
-    for (AnalyzedRegion& r : filtered) {
-        if (!r.hasAnalyzedChord) { continue; }
-        const int rPc = r.chord.identity.rootPc;
-        const int bPc = r.bassPc;
-        if (bPc < 0 || bPc == rPc) { continue; }
-        if (((bPc - rPc + 12) % 12) != 10) { continue; }
-        const ChordQuality q = r.chord.identity.quality;
-        if (q != ChordQuality::Major && q != ChordQuality::Minor) { continue; }
-        if (analysis::hasExtension(r.chord.identity.extensions,
-                                   analysis::Extension::MinorSeventh)) { continue; }
-        if (analysis::hasExtension(r.chord.identity.extensions,
-                                   analysis::Extension::MajorSeventh)) { continue; }
-
-        double bassPcWeight = 0.0;
-        for (const auto& t : r.tones) {
-            const int tonePc = ((t.pitch % 12) + 12) % 12;
-            if (tonePc == bPc) {
-                bassPcWeight += std::max(0.1, t.weight);
-            }
-        }
-        if (bassPcWeight > chordPrefs.extensionThreshold) {
-            analysis::setExtension(r.chord.identity.extensions,
-                                   analysis::Extension::MinorSeventh);
-        }
-    }
-
-    return filtered;
+    return result;
 }
 
 static AnalyzedRegion convertNotationRegion(

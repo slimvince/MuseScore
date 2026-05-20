@@ -34,8 +34,15 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
 
-    # region/ — harmonic region types
+    # region/ — harmonic region types and the shared analyzeRegions orchestrator.
+    # Phase 4 of the duplication remediation (docs/duplication_audit.md §§2.14, 5.4)
+    # moved the per-region pipeline body out of the notation bridge and
+    # tools/batch_analyze.cpp into this module.
     ${CMAKE_CURRENT_LIST_DIR}/region/harmonicrhythm.h
+    ${CMAKE_CURRENT_LIST_DIR}/region/regionanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/region/regionanalyzer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/region/sparsechordrefinement.h
+    ${CMAKE_CURRENT_LIST_DIR}/region/sparsechordrefinement.cpp
 
     # harmony/ — region-level harmonic segmentation (greedy-expand, Iter 67)
     ${CMAKE_CURRENT_LIST_DIR}/harmony/harmonicsegmenter.h

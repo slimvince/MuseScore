@@ -39,6 +39,7 @@
 #include "composing/analyzed_section.h"               // KeyArea
 #include "composing/analysis/chord/chordanalyzer.h"   // ChordAnalysisResult, KeyMode, ChordAnalysisTone
 #include "composing/analysis/region/harmonicrhythm.h"  // HarmonicRegion
+#include "composing/analysis/region/regionanalyzer.h"  // HarmonicRegionGranularity (Phase 4)
 
 namespace mu::engraving {
 class Note;
@@ -50,10 +51,10 @@ class Fraction;
 
 namespace mu::notation {
 
-enum class HarmonicRegionGranularity {
-    Smoothed,
-    PreserveAllChanges,
-};
+/// Phase 4 (docs/duplication_audit.md §5.4): the canonical definition now
+/// lives in composing/analysis/region/regionanalyzer.h.  The using-alias keeps
+/// existing notation-side callers source-compatible.
+using HarmonicRegionGranularity = mu::composing::analysis::HarmonicRegionGranularity;
 
 struct NoteHarmonicContext {
     std::vector<mu::composing::analysis::ChordAnalysisResult> chordResults;
