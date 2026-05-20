@@ -103,24 +103,31 @@ struct AnalyzeRegionsOptions {
     bool excludeLookAheadOnDenseStart = false;
 
     /// Pass 1 minimum distinct PC count for analyzeChord to emit a candidate.
-    /// Bridge uses 1 to admit sparse 1–2 PC slices (Iter 75); batch uses the
-    /// caller-supplied prefs.minDistinctPcsForCandidate.  When < 0 the
-    /// caller's prefs value is honoured unchanged.
+    /// When < 0 the caller's prefs.minDistinctPcsForCandidate is honoured
+    /// unchanged.
     ///
-    /// Future iteration candidate: setting batch to 1 (matching the bridge) was
-    /// tested and produced a net error reduction (Baroque total 59→52, Jazz
-    /// total 69→62), but it tripped the Jazz BIR=false hard stop by exactly +1
-    /// (13→14). The single failing case is NOT a direct ≤2-PC mis-inversion:
-    /// admitting 1–2 PC slices changes where greedy-expand draws boundaries on
-    /// the ADJACENT dense regions, and it is those re-segmented neighbours
-    /// (3–5 distinct PCs) that flip — a segmentation cascade, not a sparse-slice
-    /// scoring error. A ≤2-PC root-position entry guard therefore would not
-    /// touch the regression, since the regions that actually change are above
-    /// the 2-PC threshold. Revisit admitting sparse 1–2 PC regions on the batch
-    /// path only if the Jazz BIR=false hard stop is relaxed, or via a fix that
-    /// stabilises the dense-neighbour boundaries against sparse-slice admission
-    /// (e.g. anchoring greedy-expand boundaries before sparse candidates are
-    /// scored) while preserving the sparse-admission gains elsewhere.
+    /// D2 UNIFIED — both paths now pass 1 (admit sparse 1–2 PC slices, Iter 75):
+    /// the bridge sets it in notationharmonicrhythmbridge, the batch wrapper sets
+    /// it in tools/batch_analyze.cpp. This was the last batch/bridge parameter
+    /// divergence; it is resolved. Setting batch to 1 yields a net error reduction
+    /// on both corpora.
+    ///
+    /// Known residual (queued for Iter 98) — bwv320 m27 b1 sparse-admission
+    /// cascade. The earlier note here blamed greedy-expand boundary movement; the
+    /// actual mechanism is temporal-context contamination, not a boundary shift.
+    /// The coarse boundary that appears to "narrow" the C region (tick 37920) is a
+    /// note-change boundary present with OR without sparse admission. What changes
+    /// is the READ of the dense window [37440,37920): an admitted 2-PC Gm slice at
+    /// [36960,37440) overwrites previousRootPc=G, and rootContinuityBonus (+0.40,
+    /// no stepwise gate) tips that ~0.02-margin window from C to G6/E, which then
+    /// fails to merge with the following C region. A "context-transparent sparse
+    /// region" orchestrator change (skip advanceTemporalContext for ≤2-PC regions)
+    /// suppresses it on the batch path but was REJECTED: it regresses the bridge —
+    /// the sparse Corelli trio-sonata dominant entries genuinely need
+    /// context-advance, so it breaks 4 notation tests and over-merges sparse
+    /// classical music (mozart_k280 m9 IV absorbed into V65 per DCML). Iter 98
+    /// will instead tighten rootContinuityBonus in chordanalyzer so it does not
+    /// fire when the preceding region is itself a sparse/uncertain reading.
     int pass1MinDistinctPcsForCandidate = -1;
 
     /// Optional debug capture for pre-merge and post-merge region streams.

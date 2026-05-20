@@ -506,7 +506,14 @@ static std::vector<AnalyzedRegion> analyzeScore(
     opts.granularity                     = analysis::HarmonicRegionGranularity::Smoothed;
     opts.onsetBoundaryThreshold          = 0.25;
     opts.excludeLookAheadOnDenseStart    = true;
-    // pass1MinDistinctPcsForCandidate left at -1 → honor chordPrefs unchanged.
+    // D2 unification — batch now matches the bridge's sparse Pass-1 admission
+    // (Iter 75; both paths use minDistinctPcsForCandidate=1). Net error reduction
+    // on both corpora. Known residual: the sparse-admission segmentation cascade at
+    // bwv320 m27 b1 — an admitted 2-PC Gm slice makes previousRootPc=G for the next
+    // C window, and rootContinuityBonus tips that ~0.02-margin decision to G6/E.
+    // Queued for Iter 98 (gate rootContinuityBonus off a sparse/uncertain
+    // predecessor); see regionanalyzer.h AnalyzeRegionsOptions docs.
+    opts.pass1MinDistinctPcsForCandidate = 1;
 
     const auto regions = cra::analyzeRegions(
         score, startTick, endTick, excludeStaves, chordPrefs, keyPrefs, opts);
