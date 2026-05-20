@@ -61,30 +61,50 @@ The action code is `action://extensions/ai-assistant?action=open`, but that is
 only dispatchable from inside MuseScore — not reachable by external automation.
 
 MuseScore 4's menu bar is **Qt-Quick-rendered, not a native Win32 menu**, so
-`pywinauto` cannot enumerate or click menu items; it only sees the top-level
-window. The panel is therefore opened by simulated input. `test_runner.py`
-offers three strategies via `OPEN_PANEL_METHOD`:
+`pywinauto` cannot enumerate or click menu items, and the menu **ignores
+Alt-mnemonics**. So the panel is opened by clicking the menu bar at calibrated
+pixel coordinates. `test_runner.py` offers these strategies via
+`OPEN_PANEL_METHOD`:
 
-| value            | how it opens the panel                                            |
-|------------------|------------------------------------------------------------------|
-| `manual`         | pauses and asks the operator to open the panel + focus the input |
-| `menu_keyboard`  | `Alt+P` then first-letter select `AI Assistant`                  |
-| `coords`         | clicks fixed screen coordinates in `OPEN_PANEL_CLICKS`           |
+| value            | how it opens the panel                                                  |
+|------------------|------------------------------------------------------------------------|
+| `menu_click`     | **DEFAULT, hands-off.** Clicks Plugins `(290,16)` then AI Assistant `(288,117)` |
+| `manual`         | pauses and lets the operator open the panel (un-calibrated machines)    |
+| `coords`         | clicks `OPEN_PANEL_CLICKS`                                              |
+| `menu_keyboard`  | `Alt+P` — **does not work on MS4** (kept only for reference)            |
 
-Default is `manual` — the only strategy that is reliable on an un-calibrated
-machine. Once you know the menu/input coordinates for your display, switch to
-`coords` (or try `menu_keyboard`) for unattended runs.
+`menu_click` coordinates are calibrated for a **maximized window @ 2560×1440**.
+For another display, open Plugins → AI Assistant by hand, note the two pixel
+positions, and update `PLUGINS_MENU_XY` / `AI_ASSISTANT_ITEM_XY` (or use
+`manual`). `--open-method <x>` overrides the default per run.
+
+What had to be solved to make `menu_click` reliable and hands-off:
+
+- **Window found by process id, not title.** The main window's title is the
+  *score name* (e.g. `empty_4_4`), never "MuseScore", so title matching failed.
+  The runner finds the window by `proc.pid` and maximizes it for predictable
+  menu geometry.
+- **Direct clicks, no arrow keys.** Arrow-navigation between top menus is
+  state-dependent on MS4 (Right opens a submenu when the highlighted item has
+  one, otherwise moves sideways), so the runner clicks Plugins and the item
+  directly.
+- **The chat input auto-focuses; no click needed.** The panel opens as a
+  floating dialog whose `TextField` has `focus:true`, so it grabs keyboard focus
+  on open — verified by typing a prompt with no click and getting the tool call.
+  (The dialog is *not* a separate UIA window, so it can't be focused by handle;
+  the runner just relies on the auto-focus.)
+- **Settle before typing.** `session_start` fires when `Main.qml` loads, but the
+  input needs ~3 s more before it reliably accepts keystrokes — typing too early
+  drops the leading characters and truncates the prompt. See `PANEL_SETTLE_SEC`.
 
 **Readiness is detected from the log, not pywinauto.** After launch the runner
 waits for a new `{"session_start":...}` line — written by `Main.qml` when the
-panel loads — which is the panel's own "I'm up" signal. pywinauto UIA detection
-of the MuseScore window proved flaky/timing-dependent, so it is best-effort
-(used only to re-foreground the window before each send) and the run never
-depends on it.
+panel loads — which is the panel's own "I'm up" signal.
 
-**Verified end-to-end** on 2026-05-20: `test_add_note.json` passed both its
-write step (`add_note → {ok:true,...}`) and its verify step
-(`get_notes_in_range`, with `noteName:"A4"` found nested in `result.notes`).
+**Verified end-to-end** on 2026-05-20: with `menu_click`, fully hands-off,
+`test_add_note.json` passed both its write step (`add_note → {ok:true,...}`) and
+its verify step (`get_notes_in_range`, with `noteName:"A4"` found nested in
+`result.notes`). The harness types and sends with no human interaction.
 
 ## Debug-log format (verified against the live log, 2026-05-20)
 
@@ -170,12 +190,19 @@ guarded no-op, so re-pressing Enter is safe and never double-sends.
 
 ## Known fragilities
 
-- **The chat input must be MuseScore's focused control.** Keystrokes go to
-  whatever control has focus. The runner re-foregrounds the MuseScore window
-  before each send (Windows restores focus to the last-focused child), so in
-  `manual` mode you only need to **click the chat input once** at the start and
-  keep MuseScore the active app. Don't type into other windows mid-run. For
-  fully unattended runs, set `INPUT_FIELD_COORDS` to click the input directly.
+- **An LLM API error looks like "no tool call".** The extension shows backend
+  errors (e.g. `HTTP 500` / `OVERLOADED`, rate limits, bad key) in the chat UI
+  but does **not** write them to the debug log — so when the API fails, the
+  prompt sends fine yet no `call`/`result` ever appears and the step fails with
+  *"no tool call seen"*. On any such failure the runner saves a full-screen
+  **screenshot** (path printed in the failure detail) so you can see whether the
+  chat shows an API error vs. an unsent prompt. If many steps fail this way,
+  check the provider/key in Settings or switch provider; it is not a harness bug.
+- **The chat input must hold keyboard focus when typing.** Keystrokes go to
+  whatever control has focus. With `menu_click` the input auto-focuses on open
+  and nothing steals it during a hands-off run, so no click is needed — but
+  don't type into other windows mid-run. If focus is unreliable on your machine,
+  set `INPUT_FIELD_COORDS` so the runner clicks the input before each send.
 - **Single-instance MuseScore.** Specs run one launch each, fully killing
   MuseScore between files (`taskkill /F`). Don't run two harness processes at
   once.

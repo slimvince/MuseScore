@@ -69,6 +69,7 @@ import re
 import json
 import time
 import shutil
+import tempfile
 import argparse
 import subprocess
 from pathlib import Path
@@ -122,28 +123,40 @@ PANEL_READY_TIMEOUT_SEC = 90
 # so keystrokes land in it (not the score view). Only used in "manual" mode.
 INPUT_FOCUS_GRACE_SEC = 10
 
-# ---- Panel-open strategy --------------------------------------------------
-# "manual"        : pause and ask the operator to open Plugins -> AI Assistant
-#                   and click the chat input, then press Enter in the console.
-#                   Most robust for an un-calibrated machine / first run.
-# "menu_keyboard" : Alt+P to open the Plugins menu, then select "AI Assistant".
-#                   Works only if MS4's menu bar honours Alt mnemonics.
-# "coords"        : click fixed screen coordinates (calibrate OPEN_PANEL_CLICKS).
-OPEN_PANEL_METHOD = "manual"
+# Settle time after the panel is ready before the first send (non-manual modes).
+# session_start fires when Main.qml loads, but the input needs a moment more to
+# accept keystrokes; typing too early drops leading characters.
+PANEL_SETTLE_SEC = 3.0
 
-# For "menu_keyboard": the mnemonic letter of the Plugins menu ("&Plugins").
+# ---- Panel-open strategy --------------------------------------------------
+# "menu_click"    : fully hands-off. Click the menu bar to open
+#                   Plugins -> AI Assistant (see MENU_* coords below). DEFAULT.
+# "manual"        : pause and let the operator open Plugins -> AI Assistant.
+#                   Use on an un-calibrated machine (see MENU_* recalibration).
+# "menu_keyboard" : Alt+P then select "AI Assistant". DOES NOT WORK on MS4 --
+#                   its QML menu bar ignores Alt mnemonics (kept for reference).
+# "coords"        : click fixed screen coordinates in OPEN_PANEL_CLICKS.
+OPEN_PANEL_METHOD = "menu_click"
+
+# ---- "menu_click" calibration (CALIBRATED for a MAXIMIZED window @ 2560x1440)
+# MuseScore 4's menu bar is invisible to UIA and ignores Alt-mnemonics, so the
+# panel is opened by clicking the menu bar directly: click the Plugins menu,
+# then click the "AI Assistant" item in the dropdown. Recalibrate the XY values
+# for a different display resolution (open Plugins manually and note the pixels).
+PLUGINS_MENU_XY      = (290, 16)    # the Plugins menu in the menu bar
+AI_ASSISTANT_ITEM_XY = (288, 117)   # the "AI Assistant" item in the open Plugins menu
+
+# For "menu_keyboard" (non-functional on MS4; kept for reference).
 PLUGINS_MENU_MNEMONIC = "p"
-# After the Plugins menu opens, the key(s) that select the AI Assistant item.
-# The item label is "AI Assistant"; first-letter selection usually picks it.
 AI_ASSISTANT_MENU_KEY = "a"
 
-# For "coords": ordered list of (x, y) clicks that open the panel
-# (e.g. [(plugins_menu_x, plugins_menu_y), (ai_assistant_item_x, item_y)]).
+# For "coords": ordered list of (x, y) clicks that open the panel.
 OPEN_PANEL_CLICKS = []
 
-# Optional: screen coords of the chat input field. If None, send_prompt assumes
-# the input already has focus (true right after the panel opens, since the
-# TextField has focus:true). Set this if focus is unreliable on your machine.
+# Optional: screen coords of the chat input field. If None, the runner relies on
+# the input being auto-focused when the panel opens (verified: the TextField has
+# focus:true and grabs focus on open, so no click is needed). Set this only if
+# focus turns out to be unreliable on your machine.
 INPUT_FIELD_COORDS = None
 
 # ---------------------------------------------------------------------------
@@ -420,33 +433,88 @@ def launch_musescore(score_path: str) -> subprocess.Popen:
     return subprocess.Popen([MUSESCORE_EXE, score_path])
 
 
-def try_get_musescore_window(timeout: float):
+def try_get_musescore_window(proc, timeout: float):
     """
-    Best-effort: return a pywinauto window handle for the MuseScore main window
-    (used only to bring it to the foreground). Returns None on failure -- the
-    run does NOT depend on this; readiness comes from wait_for_session_start.
-    On failure, prints the visible top-level window titles for diagnosis.
+    Return a pywinauto handle for MuseScore's main window, found by PROCESS ID
+    (proc.pid) -- the window title is the score name (e.g. "empty_4_4"), not
+    "MuseScore", so title matching is unreliable. Picks the largest visible
+    top-level window owned by the process (ignores the splash). Returns None on
+    failure; on failure prints visible windows for diagnosis.
     """
     _, pywinauto = _gui()
     from pywinauto import Desktop
+    pid = getattr(proc, "pid", None)
     deadline = time.time() + timeout
     while time.time() < deadline:
+        best, best_area = None, -1
         try:
-            win = Desktop(backend="uia").window(title_re=f".*{WINDOW_TITLE_RE}.*")
-            if win.exists(timeout=0.5):
-                return win
+            for w in Desktop(backend="uia").windows():
+                try:
+                    if pid is not None and w.process_id() != pid:
+                        continue
+                    if not w.is_visible():
+                        continue
+                    r = w.rectangle()
+                    area = max(0, r.width()) * max(0, r.height())
+                    if area > best_area:
+                        best, best_area = w, area
+                except Exception:  # noqa: BLE001
+                    continue
         except Exception:  # noqa: BLE001
             pass
+        if best is not None and best_area > 100_000:  # skip tiny splash windows
+            return best
         time.sleep(0.5)
     # Diagnostics: what top-level windows CAN we see?
     for backend in ("uia", "win32"):
         try:
             titles = [w.window_text() for w in Desktop(backend=backend).windows()]
             titles = [t for t in titles if t]
-            print(f"  [warn] no '{WINDOW_TITLE_RE}' window via {backend}; visible: "
+            print(f"  [warn] no MuseScore window (pid {pid}) via {backend}; visible: "
                   + ", ".join(repr(t) for t in titles)[:600])
         except Exception as e:  # noqa: BLE001
             print(f"  [warn] window enumeration ({backend}) failed: {e}")
+    return None
+
+
+def find_panel_window(proc, main_win):
+    """
+    After the panel opens, find the AI Assistant dialog window: a visible
+    top-level window owned by the MuseScore process that is SMALLER than the
+    main (maximized) score window. The chat input lives in this dialog, so sends
+    must foreground IT, not the main window (foregrounding main steals focus
+    from the dialog input). Returns None if not found.
+    """
+    _, pywinauto = _gui()
+    from pywinauto import Desktop
+    pid = getattr(proc, "pid", None)
+    main_area = -1
+    if main_win is not None:
+        try:
+            r = main_win.rectangle()
+            main_area = max(0, r.width()) * max(0, r.height())
+        except Exception:  # noqa: BLE001
+            pass
+    cands = []
+    try:
+        for w in Desktop(backend="uia").windows():
+            try:
+                if pid is not None and w.process_id() != pid:
+                    continue
+                if not w.is_visible():
+                    continue
+                r = w.rectangle()
+                a = max(0, r.width()) * max(0, r.height())
+                cands.append((a, w))
+            except Exception:  # noqa: BLE001
+                continue
+    except Exception:  # noqa: BLE001
+        return None
+    cands.sort(key=lambda t: t[0], reverse=True)
+    for a, w in cands:
+        # smaller than the maximized main window, but a real panel (not a tooltip)
+        if (main_area <= 0 or a < main_area) and a > 50_000:
+            return w
     return None
 
 
@@ -477,6 +545,18 @@ def open_extension_panel(win):
               flush=True)
         return
 
+    if OPEN_PANEL_METHOD == "menu_click":
+        # Hands-off: click the Plugins menu, then the AI Assistant item.
+        # Two direct clicks -- no arrow keys (arrow-nav between top menus is
+        # state-dependent on MS4). See the calibration notes above.
+        pyautogui.press("escape")
+        time.sleep(0.3)
+        pyautogui.click(*PLUGINS_MENU_XY)
+        time.sleep(0.9)
+        pyautogui.click(*AI_ASSISTANT_ITEM_XY)
+        time.sleep(1.0)
+        return
+
     if OPEN_PANEL_METHOD == "menu_keyboard":
         # Alt + mnemonic opens the Plugins menu, first-letter picks the item.
         pyautogui.keyDown("alt")
@@ -505,22 +585,25 @@ def _focus_and_type(text: str):
     """Bring MuseScore forward, focus the chat input, clear it, and type `text`
     (without pressing Enter)."""
     pyautogui, _ = _gui()
-    # Re-foreground MuseScore so keystrokes don't leak into whatever window the
-    # operator clicked. Windows restores focus to the last-focused child, so if
-    # the chat input was clicked once, it regains focus here.
+    # Re-foreground the AI Assistant dialog (set as _ms_window after the panel
+    # opens) so keystrokes land in its input. _focus_window already pauses ~0.5s.
     if _ms_window is not None:
         _focus_window(_ms_window)
+        time.sleep(0.3)   # extra settle so leading keys aren't dropped
     if INPUT_FIELD_COORDS:
         pyautogui.click(*INPUT_FIELD_COORDS)
-        time.sleep(0.2)
-    # Clear any residual text: select-all then delete (both handled by the
-    # input's Keys.onPressed Ctrl+A / Delete interceptors).
+        time.sleep(0.3)
+    # Warm-up keystroke: the first key after (re)focus is sometimes swallowed.
+    # A throwaway space absorbs that, then select-all + delete clears it plus any
+    # residual text (Ctrl+A / Delete are handled by the input's Keys.onPressed).
+    pyautogui.press("space")
+    time.sleep(0.12)
     pyautogui.hotkey("ctrl", "a")
-    time.sleep(0.05)
+    time.sleep(0.12)
     pyautogui.press("delete")
-    time.sleep(0.05)
+    time.sleep(0.15)
     pyautogui.typewrite(text, interval=TYPE_INTERVAL)
-    time.sleep(0.1)
+    time.sleep(0.15)
 
 
 def send_and_wait(before_offset: int, prompt: str,
@@ -593,6 +676,24 @@ def close_musescore(proc: subprocess.Popen):
     clear_session_state()
 
 
+def save_failure_screenshot(tag: str) -> str:
+    """
+    Save a full-screen screenshot so a failure can be diagnosed by eye -- e.g.
+    distinguishing a harness problem (prompt not typed/sent) from a backend
+    problem (the chat shows an LLM API error like HTTP 500 / OVERLOADED, which
+    the extension does NOT write to the debug log). Returns the path or a note.
+    """
+    try:
+        pyautogui, _ = _gui()
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        path = os.path.join(tempfile.gettempdir(),
+                            f"aiastest_fail_{tag}_{ts}.png")
+        pyautogui.screenshot().save(path)
+        return path
+    except Exception as e:  # noqa: BLE001
+        return f"(screenshot failed: {e})"
+
+
 # ===========================================================================
 # Step / verify execution
 # ===========================================================================
@@ -616,6 +717,12 @@ def run_step(step: dict, index: int, spec_name: str, verbose: bool):
 
     calls = all_calls(events)
     if not calls:
+        shot = save_failure_screenshot(f"{spec_name}_step{index}")
+        detail = detail + [
+            f"       (no tool call -- check the panel for an LLM API error, "
+            f"e.g. HTTP 500/OVERLOADED, which is NOT logged)",
+            f"       screenshot: {shot}",
+        ]
         return False, f"[FAIL] {label}: no tool call seen within {LLM_TIMEOUT_SEC}s", detail
 
     # Resolve which call we assert against.
@@ -683,7 +790,10 @@ def run_verify(verify: dict, verbose: bool, detail: list):
 
     calls = all_calls(events)
     if not calls:
-        return False, f"verify produced no tool call within {LLM_TIMEOUT_SEC}s"
+        shot = save_failure_screenshot("verify")
+        detail.append(f"       verify screenshot: {shot}")
+        return False, (f"verify produced no tool call within {LLM_TIMEOUT_SEC}s "
+                       f"(possible LLM API error; screenshot: {shot})")
 
     if vtool:
         call = find_call(events, vtool)
@@ -741,8 +851,18 @@ def run_test_file(spec_path: str, verbose: bool, stop_on_fail: bool):
         proc = launch_musescore(tmp_score)
         # Best-effort foreground handle; the run does NOT depend on finding it,
         # but if found it is reused to re-foreground MuseScore before each send.
-        win = try_get_musescore_window(MS_LAUNCH_TIMEOUT_SEC)
+        win = try_get_musescore_window(proc, MS_LAUNCH_TIMEOUT_SEC)
         _ms_window = win
+        if win is not None:
+            try:
+                win.maximize()   # predictable geometry for menu navigation
+            except Exception:  # noqa: BLE001
+                pass
+            _focus_window(win)
+            print("  MuseScore window found and foregrounded")
+        else:
+            print("  [warn] MuseScore window handle not found; "
+                  "menu/coords open may not land in the right window")
         open_extension_panel(win)
 
         # Definitive readiness: the panel writes a session_start log line on load.
@@ -751,12 +871,31 @@ def run_test_file(spec_path: str, verbose: bool, stop_on_fail: bool):
         else:
             print(f"  [warn] no session_start within {PANEL_READY_TIMEOUT_SEC}s; "
                   "proceeding anyway")
+
+        # The chat input lives in a separate floating dialog. Target THAT window
+        # for foregrounding before sends -- foregrounding the main score window
+        # would steal focus from the input. If found, the input is its
+        # auto-focused child; if not, clear _ms_window so sends do NOT foreground
+        # (the dialog keeps focus right after opening).
+        panel = find_panel_window(proc, win)
+        if panel is not None:
+            _ms_window = panel
+            _focus_window(panel)
+            print("  AI Assistant dialog located")
+        else:
+            _ms_window = None
+            print("  [warn] AI Assistant dialog window not found; "
+                  "relying on auto-focus (no re-foreground)")
+
+        # session_start fires when Main.qml loads, but the input needs a moment
+        # more before it reliably accepts keystrokes -- typing too early drops
+        # the leading characters and truncates the prompt. Settle first.
         if OPEN_PANEL_METHOD == "manual":
             print(f"  grace: {INPUT_FOCUS_GRACE_SEC}s for you to click the chat input...",
                   flush=True)
             time.sleep(INPUT_FOCUS_GRACE_SEC)
         else:
-            time.sleep(1.5)
+            time.sleep(PANEL_SETTLE_SEC)
 
         for i, step in enumerate(spec.get("steps", []), start=1):
             ok, line, detail = run_step(step, i, spec_name, verbose)
@@ -871,10 +1010,18 @@ def main():
                     help="print full log entries for each step")
     ap.add_argument("--self-test", action="store_true",
                     help="validate pure logic + live-log parsing; no MuseScore/API")
+    ap.add_argument("--open-method",
+                    choices=["menu_click", "manual", "menu_keyboard", "coords"],
+                    help="override OPEN_PANEL_METHOD for this run")
     args = ap.parse_args()
 
     if args.self_test:
         sys.exit(0 if self_test() else 1)
+
+    global OPEN_PANEL_METHOD
+    if args.open_method:
+        OPEN_PANEL_METHOD = args.open_method
+        print(f"  open-panel method: {OPEN_PANEL_METHOD}")
 
     if not args.path:
         ap.error("a spec file/dir is required (or use --self-test)")
