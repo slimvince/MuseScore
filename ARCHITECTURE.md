@@ -230,13 +230,18 @@ or chord scoring logic:
   must be marked with a TODO comment referencing this rule and the technical debt
   note.
 
-The current state (two duplicate regional collectors in
-`notationcomposingbridgehelpers.cpp` and `batch_analyze.cpp`) violates this rule and
-is recorded as technical debt in §4.1c. Resolving it requires moving
-`collectRegionTones()`, `detectHarmonicBoundariesJaccard()`, and
-`resolveKeyAndMode()` into `src/composing/` with a generic note-provider interface
-that both the bridge (Score*-based) and `batch_analyze` (direct engraving access)
-can implement.
+**RESOLVED (Iter 97, commits `16b5bdfa57` Phases 2+3 / `045cb54e0d` Phase 4).** The two
+duplicate regional collectors that previously lived in `notationcomposingbridgehelpers.cpp`
+and `batch_analyze.cpp` have been unified into the `composing` module. `collectRegionTones()`
+and friends now live in `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}`,
+`resolveKeyAndModeRanked()` in `composing/analysis/key/keyresolver.{h,cpp}`, and the entire
+region-orchestration algorithm (segmentation → per-region scoring → absorb/merge → sparse
+refinement) in `composing/analysis/region/regionanalyzer.{h,cpp}` +
+`sparsechordrefinement.{h,cpp}`. Both consumers — the notation bridge
+(`analyzeHarmonicRhythm`) and `batch_analyze` (`analyzeScore`) — are now **thin wrappers**
+over `region::analyzeRegions()`; neither contains its own copy of the orchestration logic.
+`detectHarmonicBoundariesJaccard()` was deleted (dead since the Iter 77 greedy-expand switch,
+removed in Iter 81). See §3.3 "Region Analysis — Canonical Modules" for the full module map.
 
 ### 2.11 Score Inspection Before Diagnosis
 
@@ -497,6 +502,40 @@ A "bridge function" is a free function that:
 | `notationimplodebridge.h/.cpp` | `populateChordTrack()` — write harmonic reduction to chord staff | `notationinteraction.cpp` (via `implodeToChordTrack()`) |
 | `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's chord<br>`applyRegionTuning()` — tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`, `tuneSelection()`) |
 | `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`, `notationtuningbridge.cpp`, `notationimplodebridge.cpp` |
+
+#### Region Analysis — Canonical Modules (Iter 97, complete)
+
+The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in
+the notation bridge, one in `batch_analyze.cpp`). Iter 97's duplication-remediation work
+collapsed both into a single canonical implementation inside the `composing` module. Four
+new modules carry it, all with **zero engraving dependency** (they consume a tone/region
+abstraction the callers populate):
+
+| Module | Responsibility |
+|--------|----------------|
+| `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` | Canonical `collectSoundingAt`, `buildTones`, `collectRegionTones`, `detectBassMovementSubBoundaries`, `findTemporalContext` — tone gathering and sub-boundary detection. |
+| `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — single key/mode resolver, supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. |
+| `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |
+| `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |
+
+**Bridge and batch are thin wrappers.** `analyzeHarmonicRhythm()` (notation bridge) and
+`analyzeScore()` (`batch_analyze.cpp`) now contain only the engraving→tone adaptation and a
+single call to `region::analyzeRegions()`. The −968 / −399 line deletions in those two files
+(Phase 4) removed the duplicated orchestration. All orchestration logic — and therefore the
+behavior that BIR and the pipeline snapshots measure — lives in `regionanalyzer`.
+
+**Two configuration divergences between the two call paths were audited (`AnalyzeRegionsOptions`):**
+
+- **D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**
+  The 4 batch call sites pass `true`; the bridge defaults to `false`. This is not an oversight:
+  unifying it regresses the bridge/Corelli trio-sonata dominants. It stays divergent by design;
+  the flag's contract is documented in `regionanalyzer.h`.
+- **D2 — `pass1MinDistinctPcsForCandidate`** is **unified at `1`** on both paths
+  (commit `4d881e7418`). This was the last remaining batch/bridge parameter divergence; the
+  batch path now admits sparse 1–2 PC Pass-1 slices exactly as the bridge always did.
+
+With D1 confirmed intentional and D2 unified, the bridge and batch are fully unified thin
+wrappers — there are no remaining unexplained asymmetries between the two paths.
 
 #### The `IComposingConfiguration` Split
 
@@ -808,41 +847,20 @@ active for the whole region. In Romantic piano textures this can smear the evide
 later harmonies instead of letting stale pedal support decay, so the remaining gap is a
 pedal-role/decay model rather than missing note collection.
 
-#### Technical debt — duplicate note collection paths
+#### Duplicate note collection paths — RESOLVED (Iter 97)
 
-There are now two separate note-collection implementations feeding chord analysis:
-
-1. `src/notation/internal/notationcomposingbridgehelpers.cpp` — canonical
-  `collectRegionTones()` used by the live MuseScore notation bridge. This path has
-  duration×metric weighting, repetition boost, cross-voice boost, and sustain-pedal
-  tail weighting.
-2. `tools/batch_analyze.cpp` — duplicate `collectRegionTones()` used by the batch tool
-  for both chord-symbol (jazz) and non-jazz (classical) validation. The classical batch
-  path now also uses Jaccard boundary detection plus the same smoothed regional-analysis
-  flow instead of the former onset-only `collectOnsetTones()` prototype.
-
-This removes the largest product-vs-validation mismatch, but any note-collection
-improvement must still be applied in both locations. The first pedal-tail fix landed in
-the notation bridge and initially had zero effect on Chopin validation because the batch
-tool still used the onset-only prototype at that time.
-
-This violates Rule 10. The correct resolution is to move the shared logic into
-`src/composing/` so both consumers call one implementation. Until that refactor is
-complete, any change to note collection or boundary detection must be implemented in
-`src/composing/` if possible, or if not, applied to BOTH paths simultaneously with a
-TODO comment referencing Rule 10.
-
-**Resolution:** move regional note accumulation into a shared location accessible by both
-the notation bridge and `batch_analyze` without introducing a notation dependency.
-Candidates include:
-
-- a new `src/composing/analysis/region/` utility that works through an abstract note
-  provider interface rather than direct score traversal
-- or an extracted helper API shared by both callers without pulling notation-only bridge
-  dependencies into `composing`
-
-Until this is resolved, all note-collection changes must be ported explicitly to both
-active paths.
+This Rule 10 violation (two separate `collectRegionTones()` copies — one in
+`notationcomposingbridgehelpers.cpp`, one in `tools/batch_analyze.cpp`) has been resolved
+exactly as the original resolution note predicted. The shared logic now lives in
+`src/composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` (note collection /
+sub-boundary detection) and `src/composing/analysis/region/regionanalyzer.{h,cpp}` (the
+whole region-orchestration algorithm), both consumed through a tone abstraction with no
+notation dependency. The notation bridge and `batch_analyze` are now thin wrappers over
+`region::analyzeRegions()` — there is a single implementation, so note-collection or
+boundary-detection changes are made once and both paths pick them up automatically. (The
+former Jaccard boundary detector was replaced by greedy-expand in Iter 77 and deleted in
+Iter 81; greedy-expand is the single segmentation algorithm on both paths.) See §3.3
+"Region Analysis — Canonical Modules" for the module map and the D1/D2 divergence audit.
 
 #### Region identity modes (decided 2026-04-11)
 
@@ -952,6 +970,24 @@ contest rather than a rotation contest. A future variant may add a rotation-only
 condition (require the current winner to also be Dim/HalfDim) to recover
 improvements on the sparse-region tier (e.g. `schumann bvo7→viio7/V`,
 `chorale_003 Am→G#dim`) that the `distinctPcs >= 4` gate currently suppresses.
+
+**STEP 1 — dim7-completeness guard + Gate J (Iter 97, commit `3d80d0a91d`):**
+
+Two coupled changes to the diminished/dominant family in `chordanalyzer.cpp`:
+
+1. *dim7-completeness requirement.* The dim7 characteristic bonus now fires only when the
+   full diminished triad is present (root + ♭3 + ♭5). An incomplete diminished sonority no
+   longer earns the dim7 bonus, so it stops out-scoring the dominant-seventh reading that
+   the same pitch evidence actually supports. This is what fixes the incomplete-dim-vs-
+   dominant confusions (Jazz: bwv282, bwv60.5, bwv65.2; Baroque BIR=false 25→23).
+
+2. *Gate J — vii° → V7 completion.* A **root-position diminished triad whose dominant root
+   (a major third below the diminished root) is present** is treated as an **inverted V7**
+   rather than a root-position vii°. Canonical case: bwv110.7 m10 `C#dim7 → F#7` — the C#
+   diminished triad over a sounding F# is the leading-tone chord functioning as the dominant,
+   so the analyzer promotes it to the dominant-seventh reading. Gate J requires the **complete
+   diminished triad** to be present before the promotion fires, so it never triggers on a thin
+   2-PC dyad. 5 pipeline-snapshot goldens were refreshed and DCML-verified for this change.
 
 ---
 
@@ -2720,7 +2756,7 @@ no path-selection flag, and no symbol reading anywhere in the analysis pipeline.
 | `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeNoteHarmonicContextRegionallyInWindow()`. Uses a bounded expanding window around the note's tick. |
 | `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` | Same regional-window path as above; returns ranked candidates for context menu display. |
 | `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp` | `notationtuningbridge.cpp`, `notationimplodebridge.cpp` | Tick-level query without a note anchor. Used by intonation (§11) and chord-track writer to re-analyze individual regions. |
-| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Time-range scanner. Uses Jaccard boundary detection (§4.1c classical path) only — no Jazz path, no symbol reading. |
+| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Time-range scanner. Thin wrapper over `region::analyzeRegions()` (Iter 97); greedy-expand segmentation, no Jazz path, no symbol reading. |
 | `prepareUserFacingHarmonicRegions(score, start, end, …)` | `notationcomposingbridgehelpers.cpp` | `addHarmonicAnnotationsToSelection()`, `populateChordTrack()` (indirectly via `analyzeHarmonicRhythm`) | Thin wrapper: calls `analyzeHarmonicRhythm` then runs gap inference. |
 | `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp` | `notationinteraction.cpp` (menu action) | Annotation write path. Calls `analyzeHarmonicRhythm` via `prepareUserFacingHarmonicRegions`; no special flags needed — the classical path reads only notes. |
 | `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Chord track write path. Uses `analyzeHarmonicRhythm` for boundary detection, then re-analyzes each region fresh via `analyzeHarmonicContextAtTick`. |

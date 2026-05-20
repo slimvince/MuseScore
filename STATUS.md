@@ -71,6 +71,23 @@ off a sparse/uncertain predecessor in `chordanalyzer.cpp` (a context-transparent
 orchestrator change was rejected — it regresses the bridge / Corelli trio-sonata dominants).
 See `regionanalyzer.h` AnalyzeRegionsOptions docs for the full investigation.
 
+**Unification status (Iter 97 complete):** Phases 2+3+4 + D2 unification are all complete and
+committed. Both batch/bridge parameter divergences are resolved: **D1**
+(`excludeLookAheadOnDenseStart`) is confirmed **load-bearing and intentionally divergent**
+(batch passes `true`, bridge defaults `false`; unifying it regresses bridge/Corelli
+trio-sonata dominants), and **D2** (`pass1MinDistinctPcsForCandidate`) is **unified at 1** on
+both paths. The bridge (`analyzeHarmonicRhythm`) and batch (`analyzeScore`) are now fully
+unified thin wrappers over `region::analyzeRegions()`; all orchestration lives in
+`regionanalyzer`.
+
+**Known issues:**
+1. **bwv320 m27 b1** reads `G6/E` instead of `C` — Iter 98 backlog (detailed above). Root
+   cause: `rootContinuityBonus` (+0.40) firing off a sparse/uncertain predecessor; fix
+   direction documented in `regionanalyzer.h` `AnalyzeRegionsOptions` docs.
+2. **`tools/test_batch_analyze_regressions.py` BWV227.7 m9 pitch-class E** failure —
+   pre-existing, **NOT** caused by this cycle's work (STEP 1 / D2), and **not yet in any
+   tracked baseline**. Needs its own investigation.
+
 **Prior:** `3d80d0a91d` — chordanalyzer dim7-completeness guard (dim7 characteristic bonus
 requires the full diminished triad) + Gate J (root-position diminished triad whose dominant
 root is present → inverted V7). Fixes bwv110.7 m10 C#dim7→F#7 and the incomplete-dim-vs-
@@ -98,7 +115,7 @@ fallback (Phase-4 0-region rescue; zero BIR impact).
   MinorSeventh extension); companion Iter 86 stamp inside analyzeChord retained
 - `4da8252c9e` Iter 84 — R4 narrow G# leading-tone fix at keyFifths=1 (A melodic minor)
 
-**Test baseline (as of Iter 96 / `0de94516ff`):**
+**Test baseline (as of HEAD `a69a23e59b`, D2 unification — unchanged through Iter 97 + STEP 1 + D2):**
 - Composing tests: 407/407 passing
 - Notation tests: 50/52 passing (2 pre-existing Corelli implode failures remain —
   `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
@@ -144,14 +161,19 @@ motion, classic V→I). Baroque BIR=true ticked up 43 → 44 (+1 — bucket recl
 Jazz BIR=false 14 → 13 (−1). The `distinctPcs >= 4` gate was the critical addition —
 without it the initial variant produced 2 new Corelli notation failures and a Jazz
 BIR=false +2 regression (w_seq over-firing on 3-PC sparse regions).
-Cumulative since Iter 91: Baroque BIR=false 188 → 26 (−162, ~86% reduction); Jazz
-BIR=true 103 → 69 (−34, ~33% reduction). Iter 92 contributed −142 Baroque BIR=false
-(joint scoring + w_complete); Iter 94 contributed −13 (voice-leading bonuses +
-parent-scope plumbing); Iter 95 Step 1 contributes −6 Baroque BIR=false and −49 Jazz
-BIR=true (w_seq dense-region-only); Iter 95 Step 2 contributes the bridge-path
-plumbing so the live chord track and status bar receive the same signal; Iter 96
+Cumulative since Iter 91 (through D2 unification, HEAD `a69a23e59b`): Baroque BIR=false
+188 → 23 (−165, ~88% reduction); Jazz BIR=true 103 → 33 (−70, ~68% reduction). Iter 92
+contributed −142 Baroque BIR=false (joint scoring + w_complete); Iter 94 contributed −13
+(voice-leading bonuses + parent-scope plumbing); Iter 95 Step 1 contributes −6 Baroque
+BIR=false and −49 Jazz BIR=true (w_seq dense-region-only); Iter 95 Step 2 contributes the
+bridge-path plumbing so the live chord track and status bar receive the same signal; Iter 96
 contributes −3 Baroque BIR=true and −1 Baroque BIR=false (w_dim semitone-resolution
-tiebreaker on Dim/HalfDim candidates).
+tiebreaker on Dim/HalfDim candidates); Phase 4 (Iter 97, unconditional `absorbShortRegions`
++ `w_seq` on both paths) contributed Baroque BIR=true 41→34 / false 26→25 and Jazz BIR=true
+69→56; STEP 1 (`3d80d0a91d`, dim7-completeness + Gate J) contributes Jazz BIR=true 56→33
+(−23) and Baroque BIR=false 25→23 (−2); D2 unification (`4d881e7418`,
+`pass1MinDistinctPcsForCandidate=1` on batch) contributes Baroque BIR=true 34→27 and Jazz
+BIR=false 13→10.
 
 The prior figures (Baroque BIR=true=4 / BIR=false=118, Jazz BIR=false=7) were
 rendered stale by the lenient-OR `align_regions` change in `eefa412b6f` (DCML
@@ -176,52 +198,51 @@ happened to land near a DCML annotation boundary. Time-overlap scores ALL emitte
 against their overlapping DCML annotation span.
 
 Cross-corpus weighted root agreement (10 non-Bach corpora):
-  **46.8%** (15928/34022) — CONFIRMED POST-FIX BASELINE. Live regen at HEAD `53c4f2d50c`
-  on 2026-05-20, output in `tools/reports/live_post_fix/`. The Pass-1 sparse-admission
-  fallback fixed the Phase-4 0-region regression on K283-2/3, op04n08c and BWV814_03
-  (0 → 80/187/24/35 regions), restoring the cross-corpus movement count 516 → 520. This did
-  NOT lift the aggregate, and that is expected, not a bug: the restored movements agree at
-  ~44% (below the 46.8% mean, because the fallback yields bridge-like fine granularity that
-  the time-overlap comparator scores slightly lower than pre-Phase-4's coarser segmentation),
-  and the residual pre-Phase-4 (48.4%) → post-fix (46.8%) gap is GENUINE Phase-4 scoring
-  change (unconditional `absorbShortRegions` + `w_seq` active on both paths), NOT a residual
-  0-region defect. **46.8% is the correct post-fix baseline — do not treat it as a bug to
-  chase.**
+  **53.8%** (20256/37639) — CURRENT BASELINE. Live regen at HEAD `a69a23e59b` on
+  2026-05-20, output in `tools/reports/live_20260520_postd2/`. **Supersedes the prior
+  46.8% (15928/34022) measured at `53c4f2d50c`** — that figure predated STEP 1 (dim7/Gate-J,
+  `3d80d0a91d`) and D2 unification (`4d881e7418`), both of which meaningfully changed chord
+  output. The +7.0 pp gain is genuine: STEP 1 corrects the incomplete-dim-vs-dominant family
+  (large effect on Corelli trio-sonata dominants), and D2's sparse Pass-1 admission both lifts
+  root agreement and raises DCML coverage (denominator 34022 → 37639 as more annotations are
+  now covered by a region). **Every corpus improved** — no regressions. C.P.E. Bach remains 0
+  regions (separate deferred issue, excluded from the aggregate as before).
 
-  Three-point lineage (all measured 2026-05-20, identical comparator):
-    47.8% — frozen at Iter 89 (carried forward unchanged until this session's live regens).
-    48.4% (16560/34238) — pre-Phase-4 (Iter 96, `0de94516ff`), 520 mv.
-    46.8% (15802/33734) — HEAD pre-fix (`34800682f9`), 516 mv (4 movements zeroed).
-    46.8% (15928/34022) — HEAD post-fix (`53c4f2d50c`), 520 mv (4 movements restored).
-  Split: Iter 89 → pre-Phase-4 ≈ +0.6pp (Iters 90–96 scoring); pre-Phase-4 → HEAD −1.6pp
-  (Phase 4: ~0.0 from the now-fixed 0-region drop once movements are restored, the rest
-  genuine Phase-4 chord-output change). The 47.8% beat-snap-vs-time-overlap context below is
-  the historical record of the comparator change at `eefa412b6f`/`4cb1bfb274`:
-  **47.8%** (time-overlap, honest, frozen at Iter 89) — was 69.1% (beat-snap, biased)
+  Lineage (DCML-anchored, time-overlap, lenient-OR — identical comparator throughout):
+    47.8% — frozen at Iter 89.
+    48.4% (16560/34238) — pre-Phase-4 (Iter 96, `0de94516ff`).
+    46.8% (15802/33734) — Phase-4 HEAD pre-0-region-fix (`34800682f9`), 4 movements zeroed.
+    46.8% (15928/34022) — Phase-4 HEAD post-0-region-fix (`53c4f2d50c`), 4 movements restored.
+    **53.8% (20256/37639)** — HEAD post-STEP-1 + D2 (`a69a23e59b`). **Current.**
+  The 47.8% → 48.4% step is Iters 90–96 scoring; pre-Phase-4 → 53c4f2d50c is the −1.6pp
+  Phase-4 chord-output change (unconditional `absorbShortRegions` + `w_seq`); 53c4f2d50c →
+  a69a23e59b is the +7.0pp STEP 1 + D2 gain. (Historical comparator note: the Iter-89 47.8%
+  time-overlap figure replaced a biased 69.1% beat-snap number at `eefa412b6f`/`4cb1bfb274`.)
 
-Bach chorales (352 chorales, run via run_validation.py):
+Bach chorales (352 chorales, run via run_validation.py — NOT regenerated this cycle; figures
+carried from the prior `live_20260515_bach` run):
   **64.9%** overall root agreement
   **87.2%** chord-identity agreement on aligned regions
   **100%** region alignment (was 73% with old beat-snap; drop was a measurement artifact
   from sub-beat boundaries from Iters 72/73/83 not matching music21's beat-anchored positions)
 
-Per-corpus DCML-anchored (time-overlap):
-  Chopin       65.6%
-  Dvorak       57.5%
-  Grieg        53.0%
-  Beethoven    49.2%
-  Tchaikovsky  46.0%
-  Schumann     43.6%
-  Mozart       40.2%
-  Corelli      39.6%
-  Bach suites  37.7%
-  C.P.E. Bach  0 regions (pre-existing, SEPARATE issue — still 0 post-fix. Genuinely thin
-               single-voice texture: collectRegionTones yields too little even under the
+Per-corpus DCML-anchored (time-overlap), HEAD `a69a23e59b` (Δ vs `53c4f2d50c`):
+  Chopin       67.3%  (+1.7)
+  Dvorak       63.0%  (+5.5)
+  Grieg        56.0%  (+3.0)
+  Beethoven    54.2%  (+5.0)
+  Corelli      53.3%  (+13.7)
+  Schumann     52.0%  (+8.4)
+  Tchaikovsky  49.9%  (+3.9)
+  Mozart       49.6%  (+9.4)
+  Bach suites  43.7%  (+6.0)
+  C.P.E. Bach  0 regions (pre-existing, SEPARATE issue — still 0. Genuinely thin single-voice
+               texture: collectRegionTones yields too little even under the
                `minDistinctPcsForCandidate=1` fallback, so this is a different root cause from
                the K283-2/3 / op04n08c / BWV814_03 class that `53c4f2d50c` fixed. Deferred —
                needs melodic/single-line harmonic inference, not an admission-threshold tweak.)
 
-Reports at `tools/reports/` (most recent run: post-fix `53c4f2d50c`, `tools/reports/live_post_fix/`).
+Reports at `tools/reports/` (most recent run: `a69a23e59b`, `tools/reports/live_20260520_postd2/` — gitignored).
 
 **Queued / open:**
 - **Iter 95 (next, conditionally):** Duration-weighting on bass-candidate selection
