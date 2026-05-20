@@ -89,14 +89,31 @@ struct AnalyzeRegionsOptions {
 
     /// When true and ≥3 distinct pitch classes are already sounding at the
     /// region start tick, collectRegionTones skips notes whose onset is
-    /// strictly after startTick.  Bridge always leaves this false; batch sets
-    /// it true (legacy batch tone-collection behaviour).
+    /// strictly after startTick (excludes mid-region look-ahead onsets).
+    ///
+    /// Batch passes true and bridge passes false — both INTENTIONAL. This
+    /// divergence is confirmed correct; do not unify. On fully-notated scores
+    /// (the batch path) dense region starts routinely contain mid-region
+    /// passing tones, so suppressing strictly-later onsets keeps the chord
+    /// identity clean. The bridge leaving it false is appropriate for its use
+    /// case. A divergence investigation forced batch to false and measured a
+    /// severe regression (Baroque BIR=false 25→47, Jazz BIR=false 13→18),
+    /// confirming this flag is load-bearing on the batch path — NOT inherited
+    /// legacy behaviour.
     bool excludeLookAheadOnDenseStart = false;
 
     /// Pass 1 minimum distinct PC count for analyzeChord to emit a candidate.
     /// Bridge uses 1 to admit sparse 1–2 PC slices (Iter 75); batch uses the
     /// caller-supplied prefs.minDistinctPcsForCandidate.  When < 0 the
     /// caller's prefs value is honoured unchanged.
+    ///
+    /// Future iteration candidate: setting batch to 1 (matching the bridge) was
+    /// tested and produced a net error reduction (Baroque total 59→52, Jazz
+    /// total 69→62), but it tripped the Jazz BIR=false hard stop by exactly +1
+    /// (13→14). Revisit admitting sparse 1–2 PC regions on the batch path if the
+    /// Jazz BIR=false hard stop is relaxed, or if a structural entry guard can
+    /// recover the single failing case while preserving the sparse-admission
+    /// gains elsewhere.
     int pass1MinDistinctPcsForCandidate = -1;
 
     /// Optional debug capture for pre-merge and post-merge region streams.
