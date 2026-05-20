@@ -4411,3 +4411,25 @@ function pauseScore() {
         return { error: "pause failed: " + e }
     }
 }
+
+// ── File operations ───────────────────────────────────────────────────────
+//
+// Only save-to-existing-path is exposed. file-save-as
+// (saveProject(SaveMode::SaveAs) → askSaveLocation) and file-export
+// (interactive()->open("musescore://project/export")) both open native
+// dialogs that steal focus and block the extension, so they are intentionally
+// NOT implemented — see src/project/internal/projectactionscontroller.cpp
+// (saveProject line ~813, exportScore line ~1873).
+
+// Save the current score to its existing file path. No dialog: file-save
+// gates on a project being open (projectactionscontroller.cpp), not UI focus.
+function saveScore() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    try {
+        api.engraving.cmd("file-save")
+        return { ok: true, action: "file-save" }
+    } catch(e) {
+        return { error: "file-save failed: " + e }
+    }
+}

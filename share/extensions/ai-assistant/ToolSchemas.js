@@ -1249,6 +1249,12 @@ function getToolSchemas(providerFormat) {
             description:
                 "Pause playback (resume with play_score).",
             parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "save_score",
+            description:
+                "Save the current score to its existing file path. Does not open a dialog. To save to a new location, use the File menu manually.",
+            parameters: { type: "object", properties: {}, required: [] }
         }
     ]
 

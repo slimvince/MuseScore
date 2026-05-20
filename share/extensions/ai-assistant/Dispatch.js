@@ -121,6 +121,9 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "rewind_score")  return scoreAccess.rewindScore()
         if (name === "pause_score")   return scoreAccess.pauseScore()
 
+        // ── File operation tools ──
+        if (name === "save_score")    return scoreAccess.saveScore()
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }

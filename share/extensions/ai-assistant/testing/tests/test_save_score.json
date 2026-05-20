@@ -1,0 +1,12 @@
+{
+  "name": "save_score_basic",
+  "description": "LLM saves the current score",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Save the score.",
+      "expect_tool": "save_score",
+      "expect_result": { "ok": true }
+    }
+  ]
+}
