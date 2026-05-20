@@ -1225,6 +1225,30 @@ function getToolSchemas(providerFormat) {
                 },
                 required: ["staffIndex"]
             }
+        },
+        {
+            name: "play_score",
+            description:
+                "Start playback of the score from the current playback cursor position.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "stop_score",
+            description:
+                "Stop playback.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "rewind_score",
+            description:
+                "Rewind playback to the beginning of the score.",
+            parameters: { type: "object", properties: {}, required: [] }
+        },
+        {
+            name: "pause_score",
+            description:
+                "Pause playback (resume with play_score).",
+            parameters: { type: "object", properties: {}, required: [] }
         }
     ]
 

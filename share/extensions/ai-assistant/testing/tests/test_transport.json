@@ -1,0 +1,17 @@
+{
+  "name": "transport_basic",
+  "description": "LLM calls play and stop",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Start playback of the score.",
+      "expect_tool": "play_score",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Stop playback.",
+      "expect_tool": "stop_score",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

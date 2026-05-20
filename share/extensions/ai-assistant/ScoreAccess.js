@@ -4355,3 +4355,59 @@ function removeStaff(staffIndex) {
         return { error: "removeStaff failed: " + e }
     }
 }
+
+// ── Transport (playback) controls ─────────────────────────────────────────
+//
+// These dispatch the global playback actions registered in
+// src/playback/internal/playbackcontroller.cpp. Unlike the notation-editing
+// cmds (add-slur etc., bug #24673), these gate on data state only — not on UI
+// context — so they fire correctly from the form-extension's dialog focus.
+// No startCmd/endCmd: transport is not an undoable score mutation.
+
+// Start playback from the current playback cursor position.
+function playScore() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    try {
+        api.engraving.cmd("play")
+        return { ok: true, action: "play" }
+    } catch(e) {
+        return { error: "play failed: " + e }
+    }
+}
+
+// Stop playback.
+function stopScore() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    try {
+        api.engraving.cmd("stop")
+        return { ok: true, action: "stop" }
+    } catch(e) {
+        return { error: "stop failed: " + e }
+    }
+}
+
+// Rewind playback to the beginning of the score.
+function rewindScore() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    try {
+        api.engraving.cmd("rewind")
+        return { ok: true, action: "rewind" }
+    } catch(e) {
+        return { error: "rewind failed: " + e }
+    }
+}
+
+// Pause playback (resume with playScore).
+function pauseScore() {
+    var s = _score()
+    if (!s) return { error: "No score open" }
+    try {
+        api.engraving.cmd("pause")
+        return { ok: true, action: "pause" }
+    } catch(e) {
+        return { error: "pause failed: " + e }
+    }
+}

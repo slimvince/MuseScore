@@ -115,6 +115,12 @@ function dispatchTool(scoreAccess, name, args) {
         if (name === "add_linked_staff")   return scoreAccess.addLinkedStaff(a.staffIndex, a.partIndex)
         if (name === "remove_staff")       return scoreAccess.removeStaff(a.staffIndex)
 
+        // ── Transport (playback) tools ──
+        if (name === "play_score")    return scoreAccess.playScore()
+        if (name === "stop_score")    return scoreAccess.stopScore()
+        if (name === "rewind_score")  return scoreAccess.rewindScore()
+        if (name === "pause_score")   return scoreAccess.pauseScore()
+
         return { error: "Unknown tool: " + name }
     } catch(e) {
         return { error: "dispatchTool exception: " + e }
