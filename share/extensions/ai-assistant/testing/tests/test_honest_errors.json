@@ -1,6 +1,6 @@
 {
   "name": "honest_errors",
-  "description": "Broken tools return honest error messages citing #24673, not ok:true",
+  "description": "Broken tools (#24673) return honest error messages, not ok:true. NOTE: insert_measures is NOT broken — it returns ok:true (verified 2026-05-20), so it is asserted as a working tool here, unlike append_measures/delete_measure.",
   "score": "empty_4_4.mscz",
   "steps": [
     {
@@ -31,7 +31,7 @@
     {
       "prompt": "Insert 2 measures before measure 2.",
       "expect_tool": "insert_measures",
-      "expect_result": { "error": "24673" }
+      "expect_result": { "ok": true }
     }
   ]
 }

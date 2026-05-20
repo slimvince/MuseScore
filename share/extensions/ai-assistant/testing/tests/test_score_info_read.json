@@ -6,7 +6,7 @@
     {
       "prompt": "Get debug info about the current score state. Call get_debug_info.",
       "expect_tool": "get_debug_info",
-      "expect_result": { "ok": true }
+      "expect_result": { "score": { "nstaves": 1 } }
     }
   ]
 }

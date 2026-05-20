@@ -11,12 +11,12 @@
     {
       "prompt": "Get the structure of this score. Call get_structure.",
       "expect_tool": "get_structure",
-      "expect_result": { "ok": true }
+      "expect_result": [{ "number": 1 }]
     },
     {
       "prompt": "Get details about measure 1. Call get_measure for measure 1.",
       "expect_tool": "get_measure",
-      "expect_result": { "measure": 1 }
+      "expect_result": { "number": 1 }
     },
     {
       "prompt": "Get spanners in measure 1 staff 1. Call get_spanners_in_range.",

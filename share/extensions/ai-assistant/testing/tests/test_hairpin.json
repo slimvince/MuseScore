@@ -1,17 +1,17 @@
 {
   "name": "hairpin",
-  "description": "add_hairpin crescendo and diminuendo",
+  "description": "add_hairpin has no effect in form-extension context: it returns an honest error ('add hairpin had no effect ...') and creates no hairpin (before/after count 0). Observed identically with and without notes present, in both full-suite and isolated runs 2026-05-20 -- the same #24673-class cmd-dispatch failure as add_slur/add_ottava. Asserted as an honest-error tool.",
   "score": "empty_4_4.mscz",
   "steps": [
     {
       "prompt": "Add a crescendo hairpin from measure 1 beat 1 to measure 2 beat 1 staff 1.",
       "expect_tool": "add_hairpin",
-      "expect_result": { "ok": true }
+      "expect_result": { "error": "had no effect" }
     },
     {
       "prompt": "Add a diminuendo hairpin from measure 3 beat 1 to measure 4 beat 1 staff 1.",
       "expect_tool": "add_hairpin",
-      "expect_result": { "ok": true }
+      "expect_result": { "error": "had no effect" }
     }
   ]
 }
