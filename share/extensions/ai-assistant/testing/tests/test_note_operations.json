@@ -1,6 +1,6 @@
 {
   "name": "note_operations",
-  "description": "add_note_to_chord, add_rest, add_tie, delete_note",
+  "description": "add_note_to_chord, add_rest, delete_note all work. add_tie is #24673-broken: cmd('tie') is isNotationPage-gated and no-ops in form-extension context (even with a matching next note), so it returns an honest error.",
   "score": "empty_4_4.mscz",
   "steps": [
     {
@@ -21,7 +21,7 @@
     {
       "prompt": "Add a tie to the note at measure 1 beat 1 staff 1.",
       "expect_tool": "add_tie",
-      "expect_result": { "ok": true }
+      "expect_result": { "error": "had no effect" }
     },
     {
       "prompt": "Delete the note at measure 1 beat 1 staff 1 pitch C4.",
