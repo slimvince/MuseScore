@@ -146,6 +146,15 @@ OPEN_PANEL_METHOD = "menu_click"
 PLUGINS_MENU_XY      = (290, 16)    # the Plugins menu in the menu bar
 AI_ASSISTANT_ITEM_XY = (288, 117)   # the "AI Assistant" item in the open Plugins menu
 
+# Start a fresh conversation before each run so accumulated history (prior
+# "Add a quarter note..." turns, error blocks) can't lead the model to answer
+# conversationally instead of calling a tool. Clicks the "+" next to the
+# "Conversations" header. The AI Assistant panel is drawn INSIDE the main window
+# (not a separate OS window), so these are absolute screen coords for the
+# panel's persisted geometry -- recalibrate if you resize/move the panel.
+START_NEW_CONVERSATION = True
+NEW_CONVERSATION_XY  = (908, 381)   # the "+" (new conversation) button
+
 # For "menu_keyboard" (non-functional on MS4; kept for reference).
 PLUGINS_MENU_MNEMONIC = "p"
 AI_ASSISTANT_MENU_KEY = "a"
@@ -153,11 +162,12 @@ AI_ASSISTANT_MENU_KEY = "a"
 # For "coords": ordered list of (x, y) clicks that open the panel.
 OPEN_PANEL_CLICKS = []
 
-# Optional: screen coords of the chat input field. If None, the runner relies on
-# the input being auto-focused when the panel opens (verified: the TextField has
-# focus:true and grabs focus on open, so no click is needed). Set this only if
-# focus turns out to be unreliable on your machine.
-INPUT_FIELD_COORDS = None
+# Screen coords of the chat input field. The runner clicks here before typing
+# each prompt to guarantee focus -- needed because starting a new conversation
+# (clicking "+") moves focus off the input. Set to None to instead rely on the
+# input auto-focusing on panel open (only valid if START_NEW_CONVERSATION is
+# False). Calibrated for the panel's persisted geometry.
+INPUT_FIELD_COORDS = (1335, 1090)
 
 # ---------------------------------------------------------------------------
 # Dependency check (GUI deps imported lazily so --self-test needs neither)
@@ -606,6 +616,14 @@ def _focus_and_type(text: str):
     time.sleep(0.15)
 
 
+def start_new_conversation():
+    """Click the '+' next to 'Conversations' to start a fresh chat, so prior
+    history can't bias the model away from calling tools."""
+    pyautogui, _ = _gui()
+    pyautogui.click(*NEW_CONVERSATION_XY)
+    time.sleep(1.0)
+
+
 def send_and_wait(before_offset: int, prompt: str,
                   timeout: float = LLM_TIMEOUT_SEC, settle: float = SETTLE_SEC):
     """
@@ -886,6 +904,12 @@ def run_test_file(spec_path: str, verbose: bool, stop_on_fail: bool):
             _ms_window = None
             print("  [warn] AI Assistant dialog window not found; "
                   "relying on auto-focus (no re-foreground)")
+
+        # Start a fresh conversation so accumulated history doesn't bias the
+        # model into answering conversationally instead of calling tools.
+        if START_NEW_CONVERSATION and OPEN_PANEL_METHOD != "manual":
+            start_new_conversation()
+            print("  started a new conversation")
 
         # session_start fires when Main.qml loads, but the input needs a moment
         # more before it reliably accepts keystrokes -- typing too early drops
