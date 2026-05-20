@@ -183,8 +183,13 @@ guarded no-op, so re-pressing Enter is safe and never double-sends.
   why readiness uses the `session_start` log line and input uses simulated
   typing rather than control handles.
 - **Force-kill on close** skips the unsaved-changes dialog (the score is a
-  throwaway temp copy). MuseScore may offer session restore on the next launch;
-  handle/dismiss if it appears.
+  throwaway temp copy). Because a hard kill looks like a crash, MuseScore would
+  normally show *"The previous session quit unexpectedly. Restore?"* on the next
+  launch (and it defaults to **Yes**, which the nudge-Enter would accept). The
+  runner prevents this by clearing `session/session.json` (the open-scores list
+  MuseScore restores from) both before each launch and after closing, so neither
+  the next spec nor a later manual launch shows the dialog. Path is
+  `SESSION_STATE_FILE`.
 
 ## Baseline score note
 

@@ -84,6 +84,13 @@ DEBUG_LOG       = r"C:\Users\vince\AppData\Local\MuseScore\MuseScore4\logs\ai-as
 TEST_SCORES_DIR = str(SCRIPT_DIR / "test_scores")
 TESTS_DIR       = str(SCRIPT_DIR / "tests")
 
+# MuseScore lists open scores in session.json and clears it only on a CLEAN
+# exit. Our force-kill leaves the temp score in it, so the next launch shows
+# "The previous session quit unexpectedly. Restore?" (which defaults to Yes).
+# The runner clears this file before each launch and after closing. Derived from
+# the MuseScore4 data dir (parent of logs/).
+SESSION_STATE_FILE = str(Path(DEBUG_LOG).parent.parent / "session" / "session.json")
+
 # How long to wait for each LLM response (seconds). LLM calls typically 3-8s,
 # but a multi-tool turn (read then write) can chain, so allow headroom.
 LLM_TIMEOUT_SEC = 45
@@ -390,8 +397,25 @@ def _gui():
     return _pyautogui, _pywinauto
 
 
+def clear_session_state():
+    """
+    Empty MuseScore's open-scores list (session.json) so the next launch does
+    NOT show the 'previous session quit unexpectedly' recovery dialog -- a side
+    effect of force-killing MuseScore. Only the open-projects list is reset; no
+    user score is touched. Writing the empty-array form MuseScore itself uses
+    avoids any parse-error logging on its side.
+    """
+    try:
+        p = Path(SESSION_STATE_FILE)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text("[\n]\n", encoding="utf-8")
+    except Exception as e:  # noqa: BLE001
+        print(f"  [warn] could not clear session state ({SESSION_STATE_FILE}): {e}")
+
+
 def launch_musescore(score_path: str) -> subprocess.Popen:
     """Launch MuseScore4.exe with score_path. Return the Popen handle."""
+    clear_session_state()  # suppress the recovery dialog from a prior force-kill
     print(f"  launching MuseScore with {score_path}")
     return subprocess.Popen([MUSESCORE_EXE, score_path])
 
@@ -564,6 +588,9 @@ def close_musescore(proc: subprocess.Popen):
         pass
     # Give the OS a moment so the next launch starts a fresh single instance.
     time.sleep(3.0)
+    # Wipe the leftover open-scores list so neither the next spec nor a manual
+    # MuseScore launch shows the "previous session quit unexpectedly" dialog.
+    clear_session_state()
 
 
 # ===========================================================================
