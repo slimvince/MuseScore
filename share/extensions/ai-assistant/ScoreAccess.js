@@ -597,9 +597,12 @@ function getStructure(startMeasure, endMeasure) {
                 try {
                     if (st0 && m.tick) {
                         var ts = st0.timeSig(m.tick)
-                        if (ts && ts.timesigNominal) {
-                            var num = ts.timesigNominal.numerator
-                            var den = ts.timesigNominal.denominator
+                        // BUG-5: value is on the TimeSig element's .timesig (Fraction),
+                        // not .timesigNominal (a Measure property — silently undefined).
+                        var sig = ts ? ts.timesig : null
+                        if (sig && typeof sig.numerator === "number") {
+                            var num = sig.numerator
+                            var den = sig.denominator
                             if (num !== lastTsNum || den !== lastTsDen) {
                                 entry.timeSignature = { numerator: num, denominator: den }
                                 lastTsNum = num; lastTsDen = den
