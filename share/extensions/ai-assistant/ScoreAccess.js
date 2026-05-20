@@ -1167,16 +1167,25 @@ function addTempoMark(measureNo, bpm, unit, text) {
         _debug: { fn: "addTempoMark", measureNo: measureNo, tick: mTick }
     }
 
-    // Duplicate guard: a tempo mark already exists in this measure. Adding
-    // another stacks them at the same anchor, with the second silently
-    // overriding playback (v0.5.1 smoke test 20 observation). Return ok with
-    // a note rather than corrupting the score.
+    // Update-in-place: if a tempo mark already exists in this measure, write
+    // its properties rather than adding a second one. Stacking two marks at the
+    // same anchor lets the second silently override playback (v0.5.1 smoke test
+    // 20 observation). _firstTempoInMeasure returns the TempoText wrapper; its
+    // text/tempo/tempoFollowText are writable API_PROPERTY bindings, so writing
+    // them inside startCmd/endCmd is fully undo-tracked (matches addDynamic).
     var measure = _findMeasure(measureNo)
-    if (measure && _firstTempoInMeasure(measure)) {
-        return {
-            ok: true,
-            measure: measureNo,
-            note: "tempo mark already exists at measure " + measureNo + " — no change made"
+    var existingTempo = measure ? _firstTempoInMeasure(measure) : null
+    if (existingTempo) {
+        try {
+            s.startCmd("update tempo")
+            existingTempo.text = displayText
+            existingTempo.tempo = qps
+            existingTempo.tempoFollowText = true
+            s.endCmd()
+            return { ok: true, measure: measureNo, bpm: hasBpm ? bpm : null, tempo: qps, text: displayText, updated: "in-place" }
+        } catch(e) {
+            try { s.endCmd(true) } catch(ee) {}
+            return { error: "updateTempoMark failed: " + e }
         }
     }
 
