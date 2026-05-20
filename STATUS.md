@@ -3,10 +3,15 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-20 — Phase 4 committed; the Phase-4 0-region regression on Mozart
-K283-2/3, Corelli op04n08c and Bach BWV814_03 is FIXED via the Pass-1 sparse-admission
-fallback (`53c4f2d50c`). Post-fix cross-corpus DCML baseline confirmed at 46.8%
-(15928/34022). See the Phase 4 and post-fix blocks below.*
+*Last updated: 2026-05-20 — D2 unification + dim7/Gate-J chordanalyzer fix.
+`3d80d0a91d` adds the dim7-completeness guard (dim7 characteristic bonus requires the full
+diminished triad) + Gate J (root-position diminished triad whose dominant root is present →
+inverted V7). The D2 unification then sets `pass1MinDistinctPcsForCandidate=1` on the batch
+path (matching the bridge — the last batch/bridge parameter divergence, now resolved).
+Combined BIR (lenient-OR): Baroque BIR=true 34→27, BIR=false 25→23; Jazz BIR=true 56→33,
+BIR=false 13→10. One residual queued for Iter 98 — bwv320 m27 b1 sparse-admission cascade
+(admitted 2-PC Gm → rootContinuityBonus tips a 0.02-margin C window to G6/E). See the Phase 4
+and post-fix blocks below for prior context.*
 
 *Phases 2+3 pushed as `16b5bdfa57` (2026-05-19). Two new composing modules carry the canonical implementations: `src/composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` and `src/composing/analysis/key/keyresolver.{h,cpp}`. BIR baselines unchanged from Iter 96.*
 
@@ -51,17 +56,27 @@ goldens. Diagnostic scaffolding fully removed from all files.
 
 ## Current State (summary)
 
-**Last committed:** `53c4f2d50c` — regionanalyzer Pass-1 sparse-admission fallback. When
-Pass 1 yields zero regions (all-empty case: thin/homophonic textures where greedy emits a
-single whole-score boundary that, under `excludeLookAheadOnDenseStart=true`, collapses below
-`minDistinctPcsForCandidate=3`), Pass 1 is retried once with `minDistinctPcsForCandidate=1`
-(the value the bridge already uses) so the coarse region survives and Pass 2/2b subdivide it.
-Fixes the Phase-4 0-region regression: K283-2/3, op04n08c, BWV814_03 go 0 → 80/187/24/35
-regions (now matching the bridge path). Provably zero BIR impact — the fallback is
-unreachable for any score that already produces a region, so all BIR-measured corpora are
-untouched. Validated: composing 407/407, notation 50/52 (same 2 Corelli implodes), pipeline
-11/11, Baroque BIR=34/25, Jazz BIR=56/13 (both == baseline). Single-file change
-(`regionanalyzer.cpp`); no golden refresh.
+**Current BIR baselines (post-D2-unification):** Baroque BIR=true=27, BIR=false=23;
+Jazz BIR=true=33, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
+
+**Last committed:** `4d881e7418` — D2 unification: `pass1MinDistinctPcsForCandidate=1` on
+the batch path (matching the bridge — the last batch/bridge parameter divergence, resolved).
+Both paths now admit sparse 1–2 PC Pass-1 slices. Net error reduction on both corpora
+(Baroque BIR=true 34→27 / false 25→23; Jazz BIR=true 56→33 / false 13→10). `regionanalyzer.cpp`
+untouched (pure flag unification). Validated: composing 407/407, notation 50/52 (same 2
+Corelli implodes), pipeline 11/11 (no goldens changed). **Iter 98 residual:** bwv320 m27 b1
+reads G6/E (should be C) — an admitted 2-PC Gm slice overwrites `previousRootPc`, and
+`rootContinuityBonus` (+0.40) tips a 0.02-margin window. Fix queued: gate `rootContinuityBonus`
+off a sparse/uncertain predecessor in `chordanalyzer.cpp` (a context-transparent-sparse
+orchestrator change was rejected — it regresses the bridge / Corelli trio-sonata dominants).
+See `regionanalyzer.h` AnalyzeRegionsOptions docs for the full investigation.
+
+**Prior:** `3d80d0a91d` — chordanalyzer dim7-completeness guard (dim7 characteristic bonus
+requires the full diminished triad) + Gate J (root-position diminished triad whose dominant
+root is present → inverted V7). Fixes bwv110.7 m10 C#dim7→F#7 and the incomplete-dim-vs-
+dominant family (Jazz fixed bwv282/bwv60.5/bwv65.2; Baroque BIR=false 25→23). 5 snapshot
+goldens refreshed and DCML-verified. `53c4f2d50c` — regionanalyzer Pass-1 sparse-admission
+fallback (Phase-4 0-region rescue; zero BIR impact).
 
 **Prior commits on master:** `1384997fd6` (doc: sparse-admission note + live DCML baseline),
 `34800682f9`/`045cb54e0d` Phase 4, `16b5bdfa57` Phases 2+3, `79ad7e26e7` Steps 1-3+7,
