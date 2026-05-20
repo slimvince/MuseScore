@@ -2099,13 +2099,22 @@ function getTimeSigAt(measure) {
     if (!s) return { error: "No score open" }
     var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
     if (!st0) return { error: "No staves found" }
-    var tick = _posToTick(measure, 1, "0")
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    // BUG-3: st0.timeSig() requires the measure's native (Fraction) tick object —
+    // it rejects a plain integer tick with "incompatible arguments". Pass m.tick
+    // directly, mirroring the BUG-2 getKeyAt / getMeasure fix.
+    var m = _findMeasure(measure)
+    if (!m || !m.tick) return { error: "Measure " + measure + " not found" }
     try {
-        var ts = st0.timeSig(tick)
-        if (!ts || !ts.timesigNominal) return { error: "No time signature found at measure " + measure }
-        var num = ts.timesigNominal.numerator
-        var den = ts.timesigNominal.denominator
+        // st0.timeSig() returns a TimeSig element wrapper. Its numerator/
+        // denominator live on the element's .timesig property (an apiv1::Fraction).
+        // NOTE: .timesigNominal is a Measure property, NOT a TimeSig property — the
+        // previous code read it off the TimeSig element and silently got undefined.
+        var ts = st0.timeSig(m.tick)
+        var sig = ts ? ts.timesig : null
+        if (!sig || typeof sig.numerator !== "number" || typeof sig.denominator !== "number")
+            return { error: "No time signature found at measure " + measure }
+        var num = sig.numerator
+        var den = sig.denominator
         return {
             measure:     measure,
             numerator:   num,
