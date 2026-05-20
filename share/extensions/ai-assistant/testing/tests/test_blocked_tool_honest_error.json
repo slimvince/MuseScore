@@ -1,0 +1,12 @@
+{
+  "name": "honest_error_out_of_range",
+  "description": "Honest-error behaviour: an impossible request must return an 'error' key, not a silent ok. NOTE: the brief specified add_slur as a 'blocked' tool, but add_slur is in fact implemented (ScoreAccess.addSlur / Dispatch.js) and returns ok, so it does NOT exercise honest-error handling. Substituted a deterministic error case: querying a measure that does not exist. getKeyAt returns {error:'Measure N not found'} when the tick is out of range (ScoreAccess.js getKeyAt).",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "What key signature is in effect at measure 999? Use the get_key_at tool to check.",
+      "expect_tool": "get_key_at",
+      "expect_result_contains_keys": [ "error" ]
+    }
+  ]
+}

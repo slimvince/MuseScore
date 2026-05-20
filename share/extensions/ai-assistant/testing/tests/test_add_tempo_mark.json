@@ -1,0 +1,17 @@
+{
+  "name": "add_tempo_mark_update_in_place",
+  "description": "Add Allegro quarter=120 at m1, then change to Andante quarter=72 (update-in-place)",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a tempo marking 'Allegro' at quarter = 120 BPM at measure 1.",
+      "expect_tool": "add_tempo_mark",
+      "expect_result": { "ok": true, "measure": 1, "bpm": 120 }
+    },
+    {
+      "prompt": "Change the tempo at measure 1 to 'Andante' at quarter = 72 BPM.",
+      "expect_tool": "add_tempo_mark",
+      "expect_result": { "ok": true, "measure": 1, "bpm": 72, "updated": "in-place" }
+    }
+  ]
+}

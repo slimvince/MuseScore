@@ -1,0 +1,17 @@
+{
+  "name": "add_key_signature_g_major",
+  "description": "Add a G major key signature (1 sharp) at m1, then read it back with get_key_at",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a G major key signature (1 sharp) at measure 1.",
+      "expect_tool": "add_key_signature",
+      "expect_result": { "ok": true, "keySignature": "G major" },
+      "verify": {
+        "tool": "get_key_at",
+        "prompt": "What key signature is in effect at measure 1? Call get_key_at.",
+        "contains": [ { "keySignature": "G major", "fifths": 1 } ]
+      }
+    }
+  ]
+}

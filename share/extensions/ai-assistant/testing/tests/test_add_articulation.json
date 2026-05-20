@@ -1,0 +1,17 @@
+{
+  "name": "add_articulation_staccato",
+  "description": "Add a note first, then attach a staccato articulation to it",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note C4 at measure 1 beat 1 on staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true, "measure": 1 }
+    },
+    {
+      "prompt": "Add a staccato articulation to the note at measure 1 beat 1 on staff 1.",
+      "expect_tool": "add_articulation",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

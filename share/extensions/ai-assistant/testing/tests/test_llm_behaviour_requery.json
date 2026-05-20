@@ -1,0 +1,11 @@
+{
+  "name": "llm_requery_key",
+  "description": "LLM-1 rule: 'what key is this score in?' must trigger a fresh get_key_at, not a stale-context answer",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "What key is this score in?",
+      "expect_tool": "get_key_at"
+    }
+  ]
+}

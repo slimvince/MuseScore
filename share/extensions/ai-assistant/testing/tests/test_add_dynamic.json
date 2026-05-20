@@ -1,0 +1,17 @@
+{
+  "name": "add_dynamic_update_in_place",
+  "description": "Add forte at m2b1, then change it to piano at the same position (update-in-place)",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a forte dynamic at measure 2 beat 1 on staff 1.",
+      "expect_tool": "add_dynamic",
+      "expect_result": { "ok": true, "dynamic": "f" }
+    },
+    {
+      "prompt": "Change the dynamic at measure 2 beat 1 on staff 1 to piano.",
+      "expect_tool": "add_dynamic",
+      "expect_result": { "ok": true, "dynamic": "p", "updated": "in-place" }
+    }
+  ]
+}
