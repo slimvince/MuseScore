@@ -2075,10 +2075,13 @@ function getKeyAt(measure) {
     if (!s) return { error: "No score open" }
     var st0 = s.staves && s.staves.length > 0 ? s.staves[0] : null
     if (!st0) return { error: "No staves found" }
-    var tick = _posToTick(measure, 1, "0")
-    if (tick < 0) return { error: "Measure " + measure + " not found" }
+    // BUG-2: st0.key() requires the measure's native (Fraction) tick object —
+    // it rejects a plain integer tick with "incompatible arguments". Pass
+    // m.tick directly, mirroring the working getMeasure() path (st0.key(m.tick)).
+    var m = _findMeasure(measure)
+    if (!m || !m.tick) return { error: "Measure " + measure + " not found" }
     try {
-        var k = st0.key(tick)
+        var k = st0.key(m.tick)
         return {
             measure:       measure,
             keySignature:  _keysigToString(k),
