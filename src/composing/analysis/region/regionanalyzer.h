@@ -110,10 +110,17 @@ struct AnalyzeRegionsOptions {
     /// Future iteration candidate: setting batch to 1 (matching the bridge) was
     /// tested and produced a net error reduction (Baroque total 59→52, Jazz
     /// total 69→62), but it tripped the Jazz BIR=false hard stop by exactly +1
-    /// (13→14). Revisit admitting sparse 1–2 PC regions on the batch path if the
-    /// Jazz BIR=false hard stop is relaxed, or if a structural entry guard can
-    /// recover the single failing case while preserving the sparse-admission
-    /// gains elsewhere.
+    /// (13→14). The single failing case is NOT a direct ≤2-PC mis-inversion:
+    /// admitting 1–2 PC slices changes where greedy-expand draws boundaries on
+    /// the ADJACENT dense regions, and it is those re-segmented neighbours
+    /// (3–5 distinct PCs) that flip — a segmentation cascade, not a sparse-slice
+    /// scoring error. A ≤2-PC root-position entry guard therefore would not
+    /// touch the regression, since the regions that actually change are above
+    /// the 2-PC threshold. Revisit admitting sparse 1–2 PC regions on the batch
+    /// path only if the Jazz BIR=false hard stop is relaxed, or via a fix that
+    /// stabilises the dense-neighbour boundaries against sparse-slice admission
+    /// (e.g. anchoring greedy-expand boundaries before sparse candidates are
+    /// scored) while preserving the sparse-admission gains elsewhere.
     int pass1MinDistinctPcsForCandidate = -1;
 
     /// Optional debug capture for pre-merge and post-merge region streams.

@@ -136,7 +136,7 @@ Design note at `docs/iter90_bass_as_root_promotion_shelved.md`. Paths for future
 (a) bridge-level adjacent-context pass using nextRootPc/previousRootPc, or (b) temporal-context-
 gated promotion using existing ChordTemporalExtensions fields.
 
-**DCML ground-truth comparison — current figures (post-4cb1bfb274):**
+**DCML ground-truth comparison — current figures:**
 
 PRIMARY metric: DCML-anchored time-overlap comparator (lenient-OR-50% overlap threshold).
 Old beat-snap comparator was biased +21pp because it only scored the ~35% of regions that
@@ -144,7 +144,14 @@ happened to land near a DCML annotation boundary. Time-overlap scores ALL emitte
 against their overlapping DCML annotation span.
 
 Cross-corpus weighted root agreement (10 non-Bach corpora):
-  **47.8%** (time-overlap, honest) — was 69.1% (beat-snap, biased)
+  **46.8%** (15802/33734) — live regen at HEAD `34800682f9` on 2026-05-20, output in
+  `tools/reports/live_20260520/`. This SUPERSEDES the frozen Iter-89 figure of 47.8% and is
+  the first genuine live regeneration of the cross-corpus DCML baseline since Iter 89 — every
+  intervening figure was the frozen 47.8% carried forward. The 47.8% → 46.8% delta therefore
+  spans Iters 90–96 scoring changes plus Phase 4; see the dedicated Phase-4 isolation note
+  for the three-point breakdown. The 47.8% beat-snap-vs-time-overlap context below is retained
+  as the historical record of the comparator change at `eefa412b6f`/`4cb1bfb274`:
+  **47.8%** (time-overlap, honest, frozen at Iter 89) — was 69.1% (beat-snap, biased)
 
 Bach chorales (352 chorales, run via run_validation.py):
   **64.9%** overall root agreement
