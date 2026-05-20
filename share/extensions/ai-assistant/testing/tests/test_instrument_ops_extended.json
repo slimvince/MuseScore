@@ -1,0 +1,22 @@
+{
+  "name": "instrument_ops_extended",
+  "description": "reorder_instrument, replace_instrument",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a violin instrument to the score.",
+      "expect_tool": "add_instrument",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Reorder the instruments so the violin (index 1) comes before the first instrument (index 0).",
+      "expect_tool": "reorder_instrument",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Replace the instrument at part index 0 with a flute.",
+      "expect_tool": "replace_instrument",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

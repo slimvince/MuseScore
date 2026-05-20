@@ -1,0 +1,17 @@
+{
+  "name": "hairpin",
+  "description": "add_hairpin crescendo and diminuendo",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a crescendo hairpin from measure 1 beat 1 to measure 2 beat 1 staff 1.",
+      "expect_tool": "add_hairpin",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a diminuendo hairpin from measure 3 beat 1 to measure 4 beat 1 staff 1.",
+      "expect_tool": "add_hairpin",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

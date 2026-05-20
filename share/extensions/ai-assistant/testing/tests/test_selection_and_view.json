@@ -1,0 +1,32 @@
+{
+  "name": "selection_and_view",
+  "description": "get_selection, get_view_settings, set_view_settings, get_concert_pitch, get_chord_symbol_spelling",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Get the current selection. Call get_selection.",
+      "expect_tool": "get_selection",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Get the current view settings. Call get_view_settings.",
+      "expect_tool": "get_view_settings",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Show invisible elements. Call set_view_settings with showInvisible true.",
+      "expect_tool": "set_view_settings",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Is concert pitch on? Call get_concert_pitch.",
+      "expect_tool": "get_concert_pitch",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "What is the chord symbol spelling setting? Call get_chord_symbol_spelling.",
+      "expect_tool": "get_chord_symbol_spelling",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

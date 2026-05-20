@@ -1,0 +1,32 @@
+{
+  "name": "lyrics_harmony",
+  "description": "add_lyric, add_harmony, get_lyrics_in_range, get_harmony_in_range",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note C4 at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add the lyric 'hel' to measure 1 beat 1 staff 1 verse 1.",
+      "expect_tool": "add_lyric",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a chord symbol C major at measure 1 beat 1.",
+      "expect_tool": "add_harmony",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Get the chord symbols in measure 1 staff 1. Call get_harmony_in_range.",
+      "expect_tool": "get_harmony_in_range",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Get the lyrics in measure 1 staff 1. Call get_lyrics_in_range.",
+      "expect_tool": "get_lyrics_in_range",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

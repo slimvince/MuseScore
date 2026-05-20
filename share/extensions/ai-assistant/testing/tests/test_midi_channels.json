@@ -1,0 +1,17 @@
+{
+  "name": "midi_channels",
+  "description": "get_midi_channel_settings, set_midi_channel_settings",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Get the MIDI channel settings for part 0. Call get_midi_channel_settings.",
+      "expect_tool": "get_midi_channel_settings",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the MIDI volume of part 0 channel 0 to 100.",
+      "expect_tool": "set_midi_channel_settings",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

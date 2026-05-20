@@ -1,0 +1,17 @@
+{
+  "name": "staff_ops",
+  "description": "add_staff, remove_staff",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add an extra staff to part 0.",
+      "expect_tool": "add_staff",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Remove staff at index 1.",
+      "expect_tool": "remove_staff",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

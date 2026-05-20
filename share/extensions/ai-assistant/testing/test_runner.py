@@ -358,6 +358,12 @@ def _scalar_eq(expected, actual) -> bool:
         return expected is actual or expected == actual
     if isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
         return expected == actual or abs(float(expected) - float(actual)) < 1e-6
+    # String substring matching: if both sides are strings and the expected
+    # value is not the full actual, accept if it appears as a substring.
+    # This lets honest-error tests use {"error": "24673"} to match a long
+    # error message that contains the bug number.
+    if isinstance(expected, str) and isinstance(actual, str):
+        return expected == actual or expected in actual
     return expected == actual
 
 

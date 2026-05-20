@@ -1,0 +1,22 @@
+{
+  "name": "barline",
+  "description": "set_barline_type",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Set the barline at the end of measure 2 to a double barline.",
+      "expect_tool": "set_barline_type",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the barline at the end of measure 4 to a final barline.",
+      "expect_tool": "set_barline_type",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the barline at the start of measure 3 to a start repeat.",
+      "expect_tool": "set_barline_type",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

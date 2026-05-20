@@ -1,0 +1,32 @@
+{
+  "name": "text_annotations",
+  "description": "add_staff_text, add_system_text, add_rehearsal_mark, add_fermata",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add staff text 'dolce' at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_staff_text",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add system text 'Maestoso' at measure 2 beat 1.",
+      "expect_tool": "add_system_text",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add rehearsal mark 'A' at measure 3.",
+      "expect_tool": "add_rehearsal_mark",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a quarter note G4 at measure 4 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a fermata to measure 4 beat 1 staff 1.",
+      "expect_tool": "add_fermata",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

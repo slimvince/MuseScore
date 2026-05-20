@@ -1,0 +1,22 @@
+{
+  "name": "transport_complete",
+  "description": "rewind_score, pause_score",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Rewind the score to the beginning.",
+      "expect_tool": "rewind_score",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Start playback.",
+      "expect_tool": "play_score",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Pause playback.",
+      "expect_tool": "pause_score",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "score_metadata",
+  "description": "set_score_metadata, get_score_metadata",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Set the score title to 'Test Piece' and composer to 'Test Composer'.",
+      "expect_tool": "set_score_metadata",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Read the score metadata. Call get_score_metadata.",
+      "expect_tool": "get_score_metadata",
+      "expect_result": { "title": "Test Piece" }
+    }
+  ]
+}

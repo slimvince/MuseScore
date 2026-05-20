@@ -1,0 +1,22 @@
+{
+  "name": "breaks_spacers",
+  "description": "add_section_break, add_system_break, add_page_break",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a system break at measure 2.",
+      "expect_tool": "add_system_break",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a page break at measure 4.",
+      "expect_tool": "add_page_break",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a section break at measure 6.",
+      "expect_tool": "add_section_break",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

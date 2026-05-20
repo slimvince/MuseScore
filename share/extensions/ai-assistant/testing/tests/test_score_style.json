@@ -1,0 +1,17 @@
+{
+  "name": "score_style",
+  "description": "get_score_style, set_score_style",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Get the current score style settings. Call get_score_style.",
+      "expect_tool": "get_score_style",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the staff spacing to 1.5mm using set_score_style.",
+      "expect_tool": "set_score_style",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

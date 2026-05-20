@@ -1,0 +1,27 @@
+{
+  "name": "time_sig_clef",
+  "description": "add_time_signature, add_clef",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a 3/4 time signature at measure 3.",
+      "expect_tool": "add_time_signature",
+      "expect_result": { "ok": true },
+      "verify": {
+        "prompt": "What is the time signature at measure 3? Call get_time_sig_at.",
+        "expect_tool": "get_time_sig_at",
+        "contains": [{ "numerator": 3, "denominator": 4 }]
+      }
+    },
+    {
+      "prompt": "Add a bass clef at measure 5 staff 1.",
+      "expect_tool": "add_clef",
+      "expect_result": { "ok": true },
+      "verify": {
+        "prompt": "What clef is at measure 5 staff 1? Call get_clef_at.",
+        "expect_tool": "get_clef_at",
+        "contains": [{ "clefType": "bass" }]
+      }
+    }
+  ]
+}

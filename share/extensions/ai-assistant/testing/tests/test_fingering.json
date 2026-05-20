@@ -1,0 +1,22 @@
+{
+  "name": "fingering",
+  "description": "add_fingering, add_string_number",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note E4 at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add fingering 2 to the note at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_fingering",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add string number 3 to the note at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_string_number",
+      "expect_result": { "ok": true }
+    }
+  ]
+}
