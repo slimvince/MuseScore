@@ -137,9 +137,12 @@ Rectangle {
     property var appSettings: null
 
     // ── DEBUG LOGGING — remove before shipping ────────────────────────────────
-    // _writeLogViaProcess(line) appends one JSON line per call to the canonical
-    // log at AppData\Local\MuseScore\MuseScore4\logs\ai-assistant-debug.log.
+    // _writeLogViaProcess(line) queues a JSON line; logFlushTimer batches all
+    // pending lines into one PowerShell Add-Content call every 100ms.
+    // One process per flush (not per line) avoids the QProcess accumulation
+    // stall that silenced the log after ~2 tool calls.
     readonly property bool debugMode: true
+    property var _logQueue: []
 
     // Enter-to-send workaround for MS4 extensions.
     //
@@ -187,23 +190,40 @@ Rectangle {
     }
 
     // DEBUG LOGGING — remove before shipping.
-    // Shell out via apiv1 MsProcess (registered as QProcess by `import MuseScore 3.0`
-    // at qmlpluginapi.cpp:205). Fresh process per call: a persistent element
-    // silently no-op'd from the second call onward — MsProcess::startWithArgs
-    // requires NotRunning state, and back-to-back tool calls landed while the
-    // prior spawn was still in flight. Each call here gets its own instance.
+    // Queue-and-batch approach: _writeLogViaProcess pushes to _logQueue and
+    // arms logFlushTimer. When the timer fires, _flushLogQueue drains the
+    // queue and passes all pending lines to ONE PowerShell process as a
+    // chained Add-Content script. This reduces spawning from 2× per tool
+    // call to 1× per 100ms window, eliminating the QProcess accumulation
+    // stall that silenced the log after ~2 calls.
     //
-    // MsProcess (util.h:166-188) exposes start(QString) and startWithArgs(prog,
-    // args); the plain Qt5 QProcess::start(prog, args) is NOT exposed, so
-    // startWithArgs is the path. PowerShell single-quoted strings preserve
-    // literal content; only ' itself needs escaping (doubled '').
+    // MsProcess (util.h:166-188) exposes startWithArgs(prog, args).
+    // PowerShell single-quoted strings: only ' needs escaping (doubled '').
+    Timer {
+        id: logFlushTimer
+        interval: 100
+        repeat: false
+        onTriggered: root._flushLogQueue()
+    }
+
     function _writeLogViaProcess(line) {
         if (!debugMode) return
-        var proc = Qt.createQmlObject('import MuseScore 3.0; QProcess { }', root, "logProc")
-        if (!proc) { console.log("DEBUG: QProcess unavailable"); return }
+        _logQueue.push(line)
+        if (!logFlushTimer.running) logFlushTimer.start()
+    }
+
+    function _flushLogQueue() {
+        if (_logQueue.length === 0) return
+        var batch = _logQueue.slice()
+        _logQueue = []
         var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
-        var safe = line.replace(/'/g, "''")
-        var psCmd = "Add-Content -LiteralPath '" + logPath + "' -Value '" + safe + "' -Encoding UTF8"
+        // Build one PS command: each line becomes a separate Add-Content call,
+        // all chained with '; ' so a single PowerShell process handles them all.
+        var psCmd = batch.map(function(l) {
+            return "Add-Content -LiteralPath '" + logPath + "' -Value '" + l.replace(/'/g, "''") + "' -Encoding UTF8"
+        }).join("; ")
+        var proc = Qt.createQmlObject('import MuseScore 3.0; QProcess { }', root, "logFlushProc")
+        if (!proc) { console.log("DEBUG: QProcess unavailable"); return }
         proc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
     }
 
