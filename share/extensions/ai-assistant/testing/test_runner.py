@@ -90,16 +90,21 @@ for _stream in (sys.stdout, sys.stderr):
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 MUSESCORE_EXE   = r"C:\Program Files\MuseScore 4\bin\MuseScore4.exe"
-DEBUG_LOG       = r"C:\Users\vince\AppData\Local\MuseScore\MuseScore4\logs\ai-assistant-debug.log"
+# As of the process-free logger (Main.qml _flushLogQueue via FileIO), the
+# extension writes the debug log to the SYSTEM TEMP DIR — FileIO refuses to
+# write under userAppDataPath, so the old logs/ path is no longer used. QML uses
+# FileIO.tempPath(); Python's tempfile.gettempdir() resolves to the same dir.
+DEBUG_LOG       = os.path.join(tempfile.gettempdir(), "ai-assistant-debug.log")
 TEST_SCORES_DIR = str(SCRIPT_DIR / "test_scores")
 TESTS_DIR       = str(SCRIPT_DIR / "tests")
 
 # MuseScore lists open scores in session.json and clears it only on a CLEAN
 # exit. Our force-kill leaves the temp score in it, so the next launch shows
 # "The previous session quit unexpectedly. Restore?" (which defaults to Yes).
-# The runner clears this file before each launch and after closing. Derived from
-# the MuseScore4 data dir (parent of logs/).
-SESSION_STATE_FILE = str(Path(DEBUG_LOG).parent.parent / "session" / "session.json")
+# The runner clears this file before each launch and after closing. This is the
+# real MuseScore4 app-data location (no longer derivable from DEBUG_LOG, which
+# now points at the temp dir).
+SESSION_STATE_FILE = r"C:\Users\vince\AppData\Local\MuseScore\MuseScore4\session\session.json"
 
 # How long to wait for each LLM response (seconds). LLM calls typically 3-8s,
 # but a multi-tool turn (read then write) can chain and the model can be slow

@@ -1,4 +1,4 @@
-// AI Assistant v0.5.5 — Conversational Chat UI + LLM tool calling
+// AI Assistant v0.5.6 — Conversational Chat UI + LLM tool calling
 // MS4-safe: no FlatButton, no import Muse.*, no QtQuick.LocalStorage top-level import
 import QtQuick 2.15
 import QtQuick.Controls 2.15
@@ -19,7 +19,7 @@ Rectangle {
     SystemPalette { id: sysPalette; colorGroup: SystemPalette.Active }
 
     // ── Version ───────────────────────────────────────────────────────────────
-    readonly property string pluginVersion: "0.5.5"
+    readonly property string pluginVersion: "0.5.6"
 
     // ── Provider config ───────────────────────────────────────────────────────
     property string providerPreset:          "Anthropic"
@@ -141,8 +141,13 @@ Rectangle {
     // pending lines into one PowerShell Add-Content call every 100ms.
     // One process per flush (not per line) avoids the QProcess accumulation
     // stall that silenced the log after ~2 tool calls.
-    readonly property bool debugMode: true
+    readonly property bool debugMode: true   // TODO set false before shipping
     property var _logQueue: []
+    // Process-free logging state (FileIO). Replaces the per-flush PowerShell
+    // spawn that stalled the UI thread and dropped lines after ~5 calls.
+    property var    _logFileIO: null   // lazily-created apiv1 FileIO instance
+    property string _logBuffer: ""     // full session text (write() overwrites)
+    property bool   _logFileReady: false
 
     // Enter-to-send workaround for MS4 extensions.
     //
@@ -189,16 +194,24 @@ Rectangle {
         }
     }
 
-    // DEBUG LOGGING — remove before shipping.
-    // Queue-and-batch approach: _writeLogViaProcess pushes to _logQueue and
-    // arms logFlushTimer. When the timer fires, _flushLogQueue drains the
-    // queue and passes all pending lines to ONE PowerShell process as a
-    // chained Add-Content script. This reduces spawning from 2× per tool
-    // call to 1× per 100ms window, eliminating the QProcess accumulation
-    // stall that silenced the log after ~2 calls.
+    // DEBUG LOGGING (test instrumentation; gate with debugMode).
+    // PROCESS-FREE: _writeLogViaProcess queues lines and arms a 100ms timer;
+    // _flushLogQueue writes them via the apiv1 FileIO type — NO process spawn.
     //
-    // MsProcess (util.h:166-188) exposes startWithArgs(prog, args).
-    // PowerShell single-quoted strings: only ' needs escaping (doubled '').
+    // The old design spawned a PowerShell per flush (Qt.createQmlObject(QProcess)
+    // + Add-Content). Those QProcess wrappers accumulated on the UI thread and,
+    // after ~5 tool calls, stalled the whole tool loop and dropped log lines —
+    // the "cliff" we kept hitting. FileIO.write() does it in-process, zero spawns.
+    //
+    // Caveats handled below:
+    //  • FileIO.write() OVERWRITES, so we keep the full session in _logBuffer and
+    //    rewrite it each flush (seeded once from the existing file so it still
+    //    appends — the test runner reads the file by byte offset).
+    //  • FileIO refuses to write under userAppDataPath (util.cpp isPathWriteable),
+    //    so the log lives in the system temp dir (FileIO.tempPath(), inject-free
+    //    and always allowed). The runner reads tempfile.gettempdir()/<same name>.
+    //  • PowerShell is kept ONLY as a fallback if FileIO is unavailable in this
+    //    engine, writing to the SAME path so the runner still finds the log.
     Timer {
         id: logFlushTimer
         interval: 100
@@ -212,19 +225,52 @@ Rectangle {
         if (!logFlushTimer.running) logFlushTimer.start()
     }
 
+    // Lazily create the FileIO instance once, resolve the temp log path, and seed
+    // the in-memory buffer from any existing file (so we append, not truncate).
+    property string _logPath: ""
+    function _ensureLogFile() {
+        if (_logFileReady) return
+        _logFileReady = true   // attempt construction only once
+        try {
+            var f = Qt.createQmlObject('import MuseScore 3.0; FileIO { }', root, "logFileIO")
+            if (f) {
+                _logPath = f.tempPath() + "/ai-assistant-debug.log"
+                f.source = _logPath
+                var existing = f.read()
+                _logBuffer = existing ? existing.replace(/\n+$/, "\n") : ""
+                _logFileIO = f
+            }
+        } catch(e) {
+            console.log("DEBUG: FileIO unavailable, will fall back to PowerShell: " + e)
+        }
+        if (!_logPath) _logPath = "C:/Users/vince/AppData/Local/Temp/ai-assistant-debug.log"
+    }
+
     function _flushLogQueue() {
         if (_logQueue.length === 0) return
         var batch = _logQueue.slice()
         _logQueue = []
-        var logPath = "C:/Users/vince/AppData/Local/MuseScore/MuseScore4/logs/ai-assistant-debug.log"
-        // Build one PS command: each line becomes a separate Add-Content call,
-        // all chained with '; ' so a single PowerShell process handles them all.
+        var text = batch.join("\n") + "\n"
+
+        _ensureLogFile()
+
+        // Primary: process-free write via FileIO (no PowerShell spawn).
+        if (_logFileIO) {
+            _logBuffer += text
+            if (_logFileIO.write(_logBuffer)) return
+            _logBuffer = _logBuffer.substring(0, _logBuffer.length - text.length) // unwind
+            console.log("DEBUG: FileIO.write failed; falling back to PowerShell")
+        }
+
+        // Fallback only (FileIO unavailable/failed): legacy per-flush PowerShell,
+        // writing to the SAME path so the runner still finds the log.
         var psCmd = batch.map(function(l) {
-            return "Add-Content -LiteralPath '" + logPath + "' -Value '" + l.replace(/'/g, "''") + "' -Encoding UTF8"
+            return "Add-Content -LiteralPath '" + _logPath + "' -Value '" + l.replace(/'/g, "''") + "' -Encoding UTF8"
         }).join("; ")
         var proc = Qt.createQmlObject('import MuseScore 3.0; QProcess { }', root, "logFlushProc")
         if (!proc) { console.log("DEBUG: QProcess unavailable"); return }
         proc.startWithArgs("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", psCmd])
+        proc.destroy(5000)
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -902,6 +948,33 @@ Rectangle {
         activeXhr     = null
     }
 
+    // Return a copy of `msgs` with a single rolling cache_control breakpoint on
+    // the last content block of the last message, so each turn extends the
+    // cached conversation prefix. Clones only the last message (and, for block
+    // content, its last block) — every other entry is shared by reference and
+    // the persistent history is never mutated, so markers can't pile up.
+    // Note: a breakpoint walks back at most 20 content blocks to find a prior
+    // cache entry; a single assistant turn with very many tool_use/tool_result
+    // blocks could exceed that and miss — rare here (typically 1-3 tools/turn).
+    function _anthropicMsgsWithCache(msgs) {
+        if (!msgs || msgs.length === 0) return msgs
+        var out  = msgs.slice()
+        var last = out[out.length - 1]
+        var cc   = { type: "ephemeral" }
+        if (typeof last.content === "string") {
+            out[out.length - 1] = {
+                role: last.role,
+                content: [{ type: "text", text: last.content, cache_control: cc }]
+            }
+        } else if (Array.isArray(last.content) && last.content.length > 0) {
+            var blocks = last.content.slice()
+            blocks[blocks.length - 1] =
+                Object.assign({}, blocks[blocks.length - 1], { cache_control: cc })
+            out[out.length - 1] = { role: last.role, content: blocks }
+        }
+        return out
+    }
+
     // ── Anthropic — non-streaming + tool loop ─────────────────────────────
     function _anthropicStart() {
         // Anthropic messages: array of { role, content } where content is a
@@ -922,13 +995,43 @@ Rectangle {
         }
         var budget = providerThinkingBudget
         var maxTok = capThinking ? Math.max(providerMaxTokens, budget + 1024) : providerMaxTokens
+
+        // ── Prompt caching (Anthropic) ────────────────────────────────────
+        // Without this, every turn re-uploads and re-processes the full tool
+        // schema block (~73 tools), the system prompt, and the entire growing
+        // message history UNCACHED — so latency climbs with conversation size
+        // and falls off a cliff once read-tool results accumulate (~5-6 calls).
+        // Render order is tools -> system -> messages; a cache_control marker
+        // caches the whole prefix up to and including the marked block. We set
+        // three of the four allowed breakpoints:
+        //   1. last tool   -> caches the tool block alone. Tools never change,
+        //      so this still HITS even when the system prompt does (the user
+        //      toggling concert-pitch / chord-spelling rebuilds system L2).
+        //   2. system      -> caches tools + system together.
+        //   3. last message-> rolling breakpoint over the conversation. Each
+        //      turn extends the cached prefix; the next turn reads it back.
+        // Min cacheable prefix on Haiku 4.5 is 4096 tokens — the tool block
+        // clears that easily, so breakpoints 1/2 always cache; a tiny first
+        // user turn may not cache on its own but rides the rolling prefix as
+        // history grows. cache_control is applied to OUTBOUND CLONES only —
+        // never the persistent msgs/tool arrays — so markers can't accumulate
+        // past the 4-breakpoint limit across the tool loop.
+        var ephemeral = { type: "ephemeral" }
+        var tools = ToolSchemas.getToolSchemas("anthropic")
+        if (tools && tools.length > 0) {
+            tools = tools.slice()
+            tools[tools.length - 1] =
+                Object.assign({}, tools[tools.length - 1], { cache_control: ephemeral })
+        }
+
         var body = {
             model:      providerModel,
             max_tokens: maxTok,
-            messages:   msgs,
-            tools:      ToolSchemas.getToolSchemas("anthropic")
+            messages:   _anthropicMsgsWithCache(msgs),
+            tools:      tools
         }
-        if (systemPrompt && systemPrompt.length > 0) body.system = systemPrompt
+        if (systemPrompt && systemPrompt.length > 0)
+            body.system = [{ type: "text", text: systemPrompt, cache_control: ephemeral }]
         if (capThinking) body.thinking = { type: "enabled", budget_tokens: budget }
 
         var xhr = new XMLHttpRequest()
@@ -946,6 +1049,21 @@ Rectangle {
             var data
             try { data = JSON.parse(xhr.responseText) }
             catch(e) { _finishWithError("Parse error: " + e); return }
+
+            // DEBUG LOGGING — cache effectiveness. cache_read_input_tokens > 0
+            // confirms the prompt-cache prefix HIT; input_tokens is the uncached
+            // remainder only (total = input + cache_read + cache_creation).
+            if (debugMode && data.usage) {
+                _writeLogViaProcess(JSON.stringify({
+                    t: new Date().toISOString(),
+                    usage: {
+                        input:          data.usage.input_tokens,
+                        cache_read:     data.usage.cache_read_input_tokens,
+                        cache_creation: data.usage.cache_creation_input_tokens,
+                        output:         data.usage.output_tokens
+                    }
+                }))
+            }
 
             var content = data.content || []
             var textParts = []
