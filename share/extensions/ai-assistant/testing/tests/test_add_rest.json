@@ -1,0 +1,17 @@
+{
+  "name": "add_rest",
+  "description": "Short chat (2 steps): add_rest at low context.",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note C4 at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Add a quarter rest at measure 1 beat 2 staff 1.",
+      "expect_tool": "add_rest",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

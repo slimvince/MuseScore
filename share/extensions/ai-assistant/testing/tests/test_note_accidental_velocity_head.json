@@ -1,0 +1,22 @@
+{
+  "name": "note_accidental_velocity",
+  "description": "Short chat (3 steps): set_note_accidental + set_note_velocity at low context. (set_note_head is covered in test_set_note_head.json — add_note+accidental+velocity+head exceeds the 3-step cap.)",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note F4 at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the accidental of the note at measure 1 beat 1 staff 1 to sharp.",
+      "expect_tool": "set_note_accidental",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Set the velocity of the note at measure 1 beat 1 staff 1 to 80.",
+      "expect_tool": "set_note_velocity",
+      "expect_result": { "ok": true }
+    }
+  ]
+}

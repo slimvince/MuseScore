@@ -1,0 +1,17 @@
+{
+  "name": "delete_note",
+  "description": "Short chat (2 steps): delete_note at low context (hallucinated at step 5 of the old long spec).",
+  "score": "empty_4_4.mscz",
+  "steps": [
+    {
+      "prompt": "Add a quarter note C4 at measure 1 beat 1 staff 1.",
+      "expect_tool": "add_note",
+      "expect_result": { "ok": true }
+    },
+    {
+      "prompt": "Delete the note at measure 1 beat 1 staff 1 pitch C4.",
+      "expect_tool": "delete_note",
+      "expect_result": { "ok": true }
+    }
+  ]
+}
