@@ -109,7 +109,7 @@ SESSION_STATE_FILE = r"C:\Users\vince\AppData\Local\MuseScore\MuseScore4\session
 # How long to wait for each LLM response (seconds). LLM calls typically 3-8s,
 # but a multi-tool turn (read then write) can chain and the model can be slow
 # under load, so allow generous headroom.
-LLM_TIMEOUT_SEC = 90
+LLM_TIMEOUT_SEC = 30   # lowered from 90: no-tool steps fail fast (text is captured on attempt 1 regardless)
 
 # How long to wait for MuseScore to start and load a score (seconds).
 MS_LAUNCH_TIMEOUT_SEC = 30

@@ -370,6 +370,13 @@ Rectangle {
             "You can also modify the score using write tools. All changes land in MuseScore's " +
             "undo stack and can be reversed with Ctrl+Z. After a successful write, briefly " +
             "confirm what you did.\n\n" +
+            "CRITICAL for edit requests: when the user asks you to make an edit, you MUST call " +
+            "the appropriate write tool. Never describe, confirm, or claim that an edit is done " +
+            "in prose without actually calling the tool in the same turn. The user sees nothing " +
+            "you only state in text — a reply that says an edit is done but did not call a tool " +
+            "is always wrong. This holds no matter how many edits you have already made in this " +
+            "conversation; do not simply repeat the form of an earlier confirmation without " +
+            "performing the new tool call.\n\n" +
             "When a tool returns an error, report the exact error text verbatim. " +
             "Do not invent an explanation for why it failed — you do not have visibility into " +
             "MuseScore's internal state and guessing causes confusion.\n\n" +
@@ -1075,7 +1082,16 @@ Rectangle {
             }
 
             if (toolUses.length === 0) {
-                _finishWithText(textParts.join("").trim() || "(no response)")
+                var finalText = textParts.join("").trim() || "(no response)"
+                // DEBUG: capture the assistant's text on a no-tool turn, so we can
+                // see WHAT the model said when it should have called a tool.
+                if (debugMode) {
+                    _writeLogViaProcess(JSON.stringify({
+                        t: new Date().toISOString(),
+                        no_tool_text: finalText.substring(0, 800)
+                    }))
+                }
+                _finishWithText(finalText)
                 return
             }
 
