@@ -1138,7 +1138,12 @@ TEST_F(Notation_ImplodeTests, CorelliOp01n08dOpeningAndSparseLateBeatsDoNotSmear
         { 1, 960, "G", "Cm", true },
         { 6, 960, "G", "Fm", true },
         { 8, 0, "G", "Ddim/Ab", true },
-        { 10, 960, "G", "D", false },
+        // m10 b3 is the tonic of the tonicized dominant (DCML op01n08d:
+        // m10 onset 1/2 = i/v = G minor), not the C-minor V.  The lone-G beat
+        // correctly reads Gm here — matching the sibling i/v beat at m11 b3
+        // below.  (Was "G"; corrected to ground truth.)  The anti-smear guard
+        // still forbids carrying the m10 b1 D (V/v) into this beat.
+        { 10, 960, "Gm", "D", false },
         { 11, 960, "Gm", "D/A", true },
     };
 
