@@ -64,7 +64,8 @@ the batch path (matching the bridge — the last batch/bridge parameter divergen
 Both paths now admit sparse 1–2 PC Pass-1 slices. Net error reduction on both corpora
 (Baroque BIR=true 34→27 / false 25→23; Jazz BIR=true 56→33 / false 13→10). `regionanalyzer.cpp`
 untouched (pure flag unification). Validated: composing 407/407, notation 50/52 (same 2
-Corelli implodes), pipeline 11/11 (no goldens changed). **Iter 98 residual:** bwv320 m27 b1
+Corelli implodes; now 51/52 after test correction `5299f20964` — see Test baseline below),
+pipeline 11/11 (no goldens changed). **Iter 98 residual:** bwv320 m27 b1
 reads G6/E (should be C) — an admitted 2-PC Gm slice overwrites `previousRootPc`, and
 `rootContinuityBonus` (+0.40) tips a 0.02-margin window. Fix queued: gate `rootContinuityBonus`
 off a sparse/uncertain predecessor in `chordanalyzer.cpp` (a context-transparent-sparse
@@ -115,10 +116,14 @@ fallback (Phase-4 0-region rescue; zero BIR impact).
   MinorSeventh extension); companion Iter 86 stamp inside analyzeChord retained
 - `4da8252c9e` Iter 84 — R4 narrow G# leading-tone fix at keyFifths=1 (A melodic minor)
 
-**Test baseline (as of HEAD `a69a23e59b`, D2 unification — unchanged through Iter 97 + STEP 1 + D2):**
+**Test baseline (as of `5299f20964`; analyzer unchanged since D2 `4d881e7418`):**
 - Composing tests: 407/407 passing
-- Notation tests: 50/52 passing (2 pre-existing Corelli implode failures remain —
-  `CorelliOp01n08dOpeningAndSparseLateBeats`, `CorelliOp01n08dUserReportedChordTrackAudit`)
+- Notation tests: 51/52 passing. One pre-existing Corelli implode failure remains —
+  `CorelliOp01n08dUserReportedChordTrackAudit`. `CorelliOp01n08dOpeningAndSparseLateBeats`
+  now passes after a DCML-verified test correction (`5299f20964`: m10 b3 is i/v = Gm, not
+  the C-minor V; the old "G" expectation contradicted ground truth). The remaining failure
+  roots in key mis-detection — op01n08d is C minor written with a 2-flat Baroque (C-dorian)
+  signature, detected by the analyzer as G minor (conf 0.5). No analyzer code changed.
 - Pipeline snapshot tests: 11/11 passing (1 additional test skipped —
   `PipelineDivergenceCObservation.GenerateReport`, intentional opt-in) — Iter 96
   refreshed 2 alt-only goldens: `bach_bwv806_gigue` (D# sus4↔halfDim alt swap),
