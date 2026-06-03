@@ -72,12 +72,16 @@ def _aggregate_corpus(ours_dir: Path, tsv_dir: Path, label: str
 
     agg = {
         m: {"total": 0, "aligned": 0, "agree": 0, "disagree": 0,
-            "bir_in_disagree": 0, "movements": 0}
+            "bir_in_disagree": 0, "movements": 0,
+            "rn_scoreable": 0, "rn_agree": 0, "rn_disagree": 0,
+            "rn_agree_in_root_disagree": 0, "rn_disagree_in_root_agree": 0}
         for m in ("beat-snap", "time-overlap")
     }
     # DCML-anchored metric — denominator is DCML annotations, not our regions.
     anchored = {"total_dcml": 0, "scoreable": 0, "agree": 0, "disagree": 0,
-                "no_ours_coverage": 0, "bir_in_disagree": 0, "movements": 0}
+                "no_ours_coverage": 0, "bir_in_disagree": 0, "movements": 0,
+                "rn_scoreable": 0, "rn_agree": 0, "rn_disagree": 0,
+                "rn_agree_in_root_disagree": 0, "rn_disagree_in_root_agree": 0}
 
     for p in ours_files:
         stem = p.name.replace(".ours.json", "")
@@ -104,6 +108,11 @@ def _aggregate_corpus(ours_dir: Path, tsv_dir: Path, label: str
             agg[mode]["agree"]           += stats["agree"]
             agg[mode]["disagree"]        += stats["disagree"]
             agg[mode]["bir_in_disagree"] += stats["bass_is_root_in_disagree"]
+            agg[mode]["rn_scoreable"]    += stats["rn_scoreable"]
+            agg[mode]["rn_agree"]        += stats["rn_agree"]
+            agg[mode]["rn_disagree"]     += stats["rn_disagree"]
+            agg[mode]["rn_agree_in_root_disagree"] += stats["rn_agree_in_root_disagree"]
+            agg[mode]["rn_disagree_in_root_agree"] += stats["rn_disagree_in_root_agree"]
             agg[mode]["movements"]       += 1
 
         anch_rows = cmp.compare_dcml_anchored(ours_regions, dcml_regions)
@@ -114,6 +123,11 @@ def _aggregate_corpus(ours_dir: Path, tsv_dir: Path, label: str
         anchored["disagree"]         += anch_stats["disagree"]
         anchored["no_ours_coverage"] += anch_stats["no_ours_coverage"]
         anchored["bir_in_disagree"]  += anch_stats["bass_is_root_in_disagree"]
+        anchored["rn_scoreable"]     += anch_stats["rn_scoreable"]
+        anchored["rn_agree"]         += anch_stats["rn_agree"]
+        anchored["rn_disagree"]      += anch_stats["rn_disagree"]
+        anchored["rn_agree_in_root_disagree"] += anch_stats["rn_agree_in_root_disagree"]
+        anchored["rn_disagree_in_root_agree"] += anch_stats["rn_disagree_in_root_agree"]
         anchored["movements"]        += 1
 
     if agg["beat-snap"]["total"] == 0:
@@ -132,12 +146,18 @@ def _print_corpus_row(label: str, stats: dict) -> None:
     print(f"  {label:14s}  movements={bs['movements']:3d}  ours_total={bs['total']:5d}"
           f"  dcml_total={an['total_dcml']:5d}")
     print(f"    beat-snap          (per-ours) : aligned={bs['aligned']:5d} ({_pct(bs['aligned'], bs['total']):5.1f}%)"
-          f"  root_agree={bs['agree']:5d}/{bs['aligned']} ({_pct(bs['agree'], bs['aligned']):5.1f}%)")
+          f"  root_agree={bs['agree']:5d}/{bs['aligned']} ({_pct(bs['agree'], bs['aligned']):5.1f}%)"
+          f"  rn_agree={bs['rn_agree']:5d}/{bs['rn_scoreable']} ({_pct(bs['rn_agree'], bs['rn_scoreable']):5.1f}%)")
     print(f"    time-overlap raw   (per-ours) : aligned={to['aligned']:5d} ({_pct(to['aligned'], to['total']):5.1f}%)"
-          f"  root_agree={to['agree']:5d}/{to['aligned']} ({_pct(to['agree'], to['aligned']):5.1f}%)")
+          f"  root_agree={to['agree']:5d}/{to['aligned']} ({_pct(to['agree'], to['aligned']):5.1f}%)"
+          f"  rn_agree={to['rn_agree']:5d}/{to['rn_scoreable']} ({_pct(to['rn_agree'], to['rn_scoreable']):5.1f}%)")
     print(f"    DCML-anchored (per-DCML, PRIMARY): coverage={an['scoreable']:5d}/{an['total_dcml']} ({_pct(an['scoreable'], an['total_dcml']):5.1f}%)"
           f"  root_agree={an['agree']:5d}/{an['scoreable']} ({_pct(an['agree'], an['scoreable']):5.1f}%)"
+          f"  rn_agree={an['rn_agree']:5d}/{an['rn_scoreable']} ({_pct(an['rn_agree'], an['rn_scoreable']):5.1f}%)"
           f"  bir_err={an['bir_in_disagree']:4d}/{an['disagree']}")
+    if an['rn_scoreable'] > 0 or bs['rn_scoreable'] > 0:
+        print(f"      RN x root cross-tab (DCML-anchored): rn_agree_in_root_disagree={an['rn_agree_in_root_disagree']:4d}"
+              f"  rn_disagree_in_root_agree={an['rn_disagree_in_root_agree']:4d}")
 
 
 def run_cross_corpus(root: Path) -> dict:
@@ -169,11 +189,15 @@ def _weighted_summary(per_corpus: dict[str, dict]) -> dict:
     for the DCML-anchored metric."""
     totals = {
         m: {"total": 0, "aligned": 0, "agree": 0, "disagree": 0,
-            "bir_in_disagree": 0, "movements": 0}
+            "bir_in_disagree": 0, "movements": 0,
+            "rn_scoreable": 0, "rn_agree": 0, "rn_disagree": 0,
+            "rn_agree_in_root_disagree": 0, "rn_disagree_in_root_agree": 0}
         for m in ("beat-snap", "time-overlap")
     }
     anchored = {"total_dcml": 0, "scoreable": 0, "agree": 0, "disagree": 0,
-                "no_ours_coverage": 0, "bir_in_disagree": 0, "movements": 0}
+                "no_ours_coverage": 0, "bir_in_disagree": 0, "movements": 0,
+                "rn_scoreable": 0, "rn_agree": 0, "rn_disagree": 0,
+                "rn_agree_in_root_disagree": 0, "rn_disagree_in_root_agree": 0}
     for stats in per_corpus.values():
         for m in totals:
             for k in totals[m]:
@@ -213,6 +237,7 @@ def run_bach(corpus_dir: Path, dcml_dir: Path | None) -> dict | None:
     dcml_agg = {
         m: {"total": 0, "aligned_dcml": 0, "ours_dcml_agree": 0,
             "ours_dcml_disagree": 0, "dcml_with_root": 0,
+            "rn_scoreable": 0, "rn_agree": 0, "rn_disagree": 0,
             "movements": 0}
         for m in ("beat-snap", "time-overlap")
     }
@@ -256,6 +281,17 @@ def run_bach(corpus_dir: Path, dcml_dir: Path | None) -> dict | None:
                             if dr is None:
                                 continue
                             dcml_agg[mode]["aligned_dcml"] += 1
+                            # Roman numeral comparison (independent of root_pc
+                            # resolvability; counts whenever both sides have a
+                            # parseable degree base).
+                            d_rn = cmp._rn_base_cased(getattr(dr, 'roman_numeral', '') or '')
+                            o_rn = cmp._rn_base_cased(our.roman_numeral or '')
+                            if d_rn and o_rn:
+                                dcml_agg[mode]["rn_scoreable"] += 1
+                                if d_rn == o_rn:
+                                    dcml_agg[mode]["rn_agree"] += 1
+                                else:
+                                    dcml_agg[mode]["rn_disagree"] += 1
                             if dr.root_pc is None:
                                 continue
                             dcml_agg[mode]["dcml_with_root"] += 1
@@ -287,6 +323,7 @@ def run_bach(corpus_dir: Path, dcml_dir: Path | None) -> dict | None:
             print(f"    aligned to DCML     : {d['aligned_dcml']} ({_pct(d['aligned_dcml'], d['total']):.1f}%)")
             print(f"    DCML root resolved  : {d['dcml_with_root']}")
             print(f"    ours/DCML root_agree: {d['ours_dcml_agree']}/{d['dcml_with_root']} ({_pct(d['ours_dcml_agree'], d['dcml_with_root']):.1f}%)")
+            print(f"    ours/DCML rn_agree  : {d['rn_agree']}/{d['rn_scoreable']} ({_pct(d['rn_agree'], d['rn_scoreable']):.1f}%)  (case-sensitive degree base)")
     else:
         print("  DCML rntxt comparison: no rntxt annotations found (skipped)")
 
@@ -335,13 +372,17 @@ def main() -> None:
             print(f"  {mode:13s}  (per-ours): movements={t['movements']:4d}  total_ours={t['total']:6d}"
                   f"  aligned={t['aligned']:6d} ({align_pct:5.1f}%)"
                   f"  root_agree={t['agree']:6d}/{t['aligned']} ({agree_pct:5.1f}%)"
+                  f"  rn_agree={t['rn_agree']:6d}/{t['rn_scoreable']} ({_pct(t['rn_agree'], t['rn_scoreable']):5.1f}%)"
                   f"  bir_err={t['bir_in_disagree']:5d}/{t['disagree']}")
         an = totals["anchored"]
         print(f"  DCML-anchored (per-DCML, PRIMARY): movements={an['movements']:4d}"
               f"  dcml_total={an['total_dcml']:6d}"
               f"  coverage={an['scoreable']:6d} ({_pct(an['scoreable'], an['total_dcml']):5.1f}%)"
               f"  root_agree={an['agree']:6d}/{an['scoreable']} ({_pct(an['agree'], an['scoreable']):5.1f}%)"
+              f"  rn_agree={an['rn_agree']:6d}/{an['rn_scoreable']} ({_pct(an['rn_agree'], an['rn_scoreable']):5.1f}%)"
               f"  bir_err={an['bir_in_disagree']:5d}/{an['disagree']}")
+        print(f"    RN x root cross-tab (DCML-anchored): rn_agree_in_root_disagree={an['rn_agree_in_root_disagree']:5d}"
+              f"  rn_disagree_in_root_agree={an['rn_disagree_in_root_agree']:5d}")
 
 
 if __name__ == "__main__":

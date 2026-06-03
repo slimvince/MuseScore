@@ -159,6 +159,27 @@ def _rn_base(rn: str) -> str:
     return m.group(0).upper() if m else rn.upper()
 
 
+def _rn_base_cased(rn: str) -> str:
+    """Extract the diatonic degree part, PRESERVING case.
+
+    DCML and our analyzer both encode chord quality in the Roman-numeral
+    case (uppercase = major, lowercase = minor; e.g. DCML "v" = natural-minor
+    v, DCML "V" = common-practice raised V).  This sibling of `_rn_base`
+    preserves that distinction so a degree-with-quality comparison can be
+    made — without losing it to the case-collapsing `.upper()` that
+    `_rn_base` applies for music21 alignment.
+
+    Extensions and inversion figures (7, 65, 42, °7, ø7, add6, etc.) are
+    stripped — only the bare degree token is kept.  Empty input returns
+    an empty string; an unparseable input is passed through stripped.
+    """
+    s = rn.strip()
+    if not s:
+        return ""
+    m = _RN_BASE_PATTERN.match(s)
+    return m.group(0) if m else s
+
+
 # ══════════════════════════════════════════════════════════════════════════
 # Alignment
 # ══════════════════════════════════════════════════════════════════════════
@@ -537,6 +558,14 @@ class DcmlDirectResult:
     ours:       Region
     dcml:       Optional[object]   # DcmlRegion | None
     category:   str                # 'dcml_agree' | 'dcml_disagree' | 'unaligned'
+    # Case-sensitive Roman-numeral-degree agreement (e.g. DCML "V" vs ours
+    # "V"); None when there is no aligned DCML row or either side's RN is
+    # empty / unparseable.  Reported independently of `category` — a chord
+    # whose root_pc matches DCML may still have a different RN base (e.g.
+    # our key context differs from DCML's local key), and conversely the
+    # RN base may match while root_pc differs (uncommon, usually a fifths
+    # offset that the histogram-based root match happens to forgive).
+    rn_agree:   Optional[bool] = None
 
 
 def compare_ours_vs_dcml_direct(
@@ -552,16 +581,29 @@ def compare_ours_vs_dcml_direct(
       dcml_agree     — root pitch class matches
       dcml_disagree  — root pitch class differs (genuine analysis difference)
       unaligned      — no DCML region matched
+
+    `rn_agree` is populated alongside `category` whenever an aligned DCML
+    region with a non-empty Roman numeral is found; the comparison is on the
+    case-sensitive degree base (see `_rn_base_cased`).
     """
     matches = align_dcml_regions(ours_regions, dcml_regions, mode=mode)
     results: list[DcmlDirectResult] = []
     for ours, dr in zip(ours_regions, matches):
+        rn_agree: Optional[bool] = None
+        if dr is not None:
+            dcml_rn = _rn_base_cased(getattr(dr, 'roman_numeral', '') or '')
+            ours_rn = _rn_base_cased(ours.roman_numeral or '')
+            if dcml_rn and ours_rn:
+                rn_agree = (dcml_rn == ours_rn)
         if dr is None:
-            results.append(DcmlDirectResult(ours=ours, dcml=None, category='unaligned'))
+            results.append(DcmlDirectResult(ours=ours, dcml=None, category='unaligned',
+                                             rn_agree=rn_agree))
         elif dr.root_pc is not None and dr.root_pc == ours.root_pc:
-            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_agree'))
+            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_agree',
+                                             rn_agree=rn_agree))
         else:
-            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_disagree'))
+            results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_disagree',
+                                             rn_agree=rn_agree))
     return results
 
 
@@ -579,6 +621,11 @@ class DcmlAnchoredResult:
     dcml:       object                 # DcmlRegion
     ours:       Optional[Region]       # best-overlapping ours region (or None)
     category:   str                    # 'dcml_agree' | 'dcml_disagree' | 'no_ours_coverage'
+    # Case-sensitive Roman-numeral-degree agreement (e.g. DCML "V" vs ours
+    # "V").  None when either side's RN is empty / unparseable, or when no
+    # ours region overlaps this DCML annotation.  Reported independently of
+    # `category` so the two signals can be cross-tabulated.
+    rn_agree:   Optional[bool] = None
 
 
 def compare_dcml_anchored(
@@ -591,6 +638,10 @@ def compare_dcml_anchored(
     root pitch class.  No alignment threshold is applied — every DCML
     annotation is counted, and 'no_ours_coverage' is only emitted when
     literally zero overlap exists.
+
+    The `rn_agree` field on each row is populated with the case-sensitive
+    Roman-numeral-degree agreement (see `_rn_base_cased`) whenever there is
+    ours coverage and both sides have a parseable Roman numeral.
     """
     if not ours_regions or not dcml_regions:
         return [
@@ -614,19 +665,37 @@ def compare_dcml_anchored(
         if best is None or best_ov == 0:
             out.append(DcmlAnchoredResult(dcml=dr, ours=None,
                                            category='no_ours_coverage'))
-        elif dr.root_pc is not None and dr.root_pc == best.root_pc:
+            continue
+        rn_agree: Optional[bool] = None
+        dcml_rn = _rn_base_cased(getattr(dr, 'roman_numeral', '') or '')
+        ours_rn = _rn_base_cased(best.roman_numeral or '')
+        if dcml_rn and ours_rn:
+            rn_agree = (dcml_rn == ours_rn)
+        if dr.root_pc is not None and dr.root_pc == best.root_pc:
             out.append(DcmlAnchoredResult(dcml=dr, ours=best,
-                                           category='dcml_agree'))
+                                           category='dcml_agree',
+                                           rn_agree=rn_agree))
         else:
             out.append(DcmlAnchoredResult(dcml=dr, ours=best,
-                                           category='dcml_disagree'))
+                                           category='dcml_disagree',
+                                           rn_agree=rn_agree))
     return out
 
 
 def dcml_anchored_summarize(results: list[DcmlAnchoredResult]) -> dict:
     """Aggregate counts for a DCML-anchored comparison.  Denominator is the
     set of DCML annotations whose root pitch class could be resolved (some
-    DCML rows are e.g. @none / unparseable and have root_pc=None)."""
+    DCML rows are e.g. @none / unparseable and have root_pc=None).
+
+    Roman-numeral agreement is reported as a separate metric alongside
+    root-pc agreement.  The RN denominator (`rn_scoreable`) is the set of
+    DCML annotations that have ours coverage AND both sides resolve a
+    parseable degree base.  The two cross-tabulation buckets
+    `rn_agree_in_root_disagree` and `rn_disagree_in_root_agree` give a quick
+    read on whether the analyzer is naming the degree right while picking
+    the wrong root_pc (a key-context error rather than a chord-identity
+    error), or vice versa.
+    """
     total              = len(results)
     no_ours_coverage   = sum(1 for r in results if r.category == 'no_ours_coverage')
     with_ours_coverage = total - no_ours_coverage
@@ -642,6 +711,18 @@ def dcml_anchored_summarize(results: list[DcmlAnchoredResult]) -> dict:
         if r.category == 'dcml_disagree' and r.ours is not None
         and r.ours.bass_is_root
     )
+    # ── Roman numeral agreement ──────────────────────────────────────────
+    rn_scoreable = sum(1 for r in results if r.rn_agree is not None)
+    rn_agree     = sum(1 for r in results if r.rn_agree is True)
+    rn_disagree  = sum(1 for r in results if r.rn_agree is False)
+    rn_agree_in_root_disagree = sum(
+        1 for r in results
+        if r.rn_agree is True and r.category == 'dcml_disagree'
+    )
+    rn_disagree_in_root_agree = sum(
+        1 for r in results
+        if r.rn_agree is False and r.category == 'dcml_agree'
+    )
     return {
         'total_dcml':           total,
         'with_ours_coverage':   with_ours_coverage,
@@ -653,6 +734,12 @@ def dcml_anchored_summarize(results: list[DcmlAnchoredResult]) -> dict:
         'agree_pct':            100 * agree / scoreable if scoreable else 0.0,
         'bass_is_root_in_disagree':     bir_in_disagree,
         'bass_is_root_pct_of_disagree': 100 * bir_in_disagree / disagree if disagree else 0.0,
+        'rn_scoreable':                 rn_scoreable,
+        'rn_agree':                     rn_agree,
+        'rn_disagree':                  rn_disagree,
+        'rn_agree_pct':                 100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,
+        'rn_agree_in_root_disagree':    rn_agree_in_root_disagree,
+        'rn_disagree_in_root_agree':    rn_disagree_in_root_agree,
     }
 
 
@@ -662,6 +749,10 @@ def dcml_direct_summarize(results: list[DcmlDirectResult]) -> dict:
     Returns a dict with keys: total, aligned, agree, disagree, unaligned,
     agree_pct, disagree_pct, align_pct, bass_is_root_in_disagree,
     bass_is_root_pct_of_disagree.
+
+    Roman-numeral agreement is reported as a separate metric alongside
+    root-pc agreement (denominator = aligned rows with a parseable RN base
+    on both sides).
     """
     total     = len(results)
     aligned   = sum(1 for r in results if r.category != 'unaligned')
@@ -672,6 +763,18 @@ def dcml_direct_summarize(results: list[DcmlDirectResult]) -> dict:
     bir_in_disagree = sum(
         1 for r in results
         if r.category == 'dcml_disagree' and r.ours.bass_is_root
+    )
+
+    rn_scoreable = sum(1 for r in results if r.rn_agree is not None)
+    rn_agree     = sum(1 for r in results if r.rn_agree is True)
+    rn_disagree  = sum(1 for r in results if r.rn_agree is False)
+    rn_agree_in_root_disagree = sum(
+        1 for r in results
+        if r.rn_agree is True and r.category == 'dcml_disagree'
+    )
+    rn_disagree_in_root_agree = sum(
+        1 for r in results
+        if r.rn_agree is False and r.category == 'dcml_agree'
     )
 
     return {
@@ -685,6 +788,12 @@ def dcml_direct_summarize(results: list[DcmlDirectResult]) -> dict:
         'disagree_pct':    100 * disagree / aligned  if aligned  else 0.0,
         'bass_is_root_in_disagree':      bir_in_disagree,
         'bass_is_root_pct_of_disagree':  100 * bir_in_disagree / disagree if disagree else 0.0,
+        'rn_scoreable':                  rn_scoreable,
+        'rn_agree':                      rn_agree,
+        'rn_disagree':                   rn_disagree,
+        'rn_agree_pct':                  100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,
+        'rn_agree_in_root_disagree':     rn_agree_in_root_disagree,
+        'rn_disagree_in_root_agree':     rn_disagree_in_root_agree,
     }
 
 
