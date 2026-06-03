@@ -23,12 +23,19 @@
 #include "keyresolver.h"
 
 #include <algorithm>
+#include <array>
 #include <optional>
 
+#include "engraving/dom/chord.h"
+#include "engraving/dom/chordrest.h"
 #include "engraving/dom/key.h"
 #include "engraving/dom/keysig.h"
+#include "engraving/dom/measure.h"
+#include "engraving/dom/note.h"
 #include "engraving/dom/score.h"
+#include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
+#include "engraving/types/constants.h"
 #include "engraving/types/fraction.h"
 
 #include "composing/analysis/chord/analysisutils.h"
@@ -60,6 +67,128 @@ std::vector<KeyModeAnalysisResult> fallbackResult(int keyFifths,
     return { fallback };
 }
 
+/// Ionian (major-scale) pitch-class membership set for a key-signature value.
+std::array<bool, 12> ionianScaleSet(int fifths)
+{
+    std::array<bool, 12> s{};
+    const int tonic = ionianTonicPcFromFifths(fifths);
+    for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {
+        s[static_cast<size_t>((tonic + interval) % 12)] = true;
+    }
+    return s;
+}
+
+/// Baroque "partial-signature" (one-accidental-short) detector.
+///
+/// Late-17th/early-18th-century scores routinely notate a key with one fewer
+/// accidental than the modern convention — minor keys with a Dorian signature
+/// (the b6 supplied as an accidental) and major keys with a Mixolydian signature
+/// (the leading tone supplied as an accidental). See
+/// docs/key_detection_baroque_partial_signature.md. The resolver is otherwise
+/// locked to the notated signature, so the true tonic — a fifth/fourth away — is
+/// unreachable (e.g. Corelli op01n08d, C minor notated with 2 flats, resolves to
+/// G minor).
+///
+/// When the convention is detected this returns the corrected signature, one
+/// step toward the declared mode's missing accidental (major → +1 sharp;
+/// minor → -1 flat); otherwise it returns @p notatedFifths unchanged.
+///
+/// Only common-practice major (Ionian) / minor (Aeolian) class declarations are
+/// eligible — explicit modal declarations (Dorian, Mixolydian, …) are taken at
+/// face value. Moving the signature one step flips exactly one scale degree from
+/// natural to accidental ("flipsIn", e.g. A♮→A♭ = the true b6 of C minor) and
+/// one the other way ("flipsOut"). The convention is confirmed only when, across
+/// the span sharing this signature, the accidental form is genuinely pervasive
+/// AND clearly dominates its natural counterpart. Both guards matter: the floor
+/// rejects incidental chromaticism; the dominance ratio rejects correctly-notated
+/// keys, where the natural degree is guaranteed common (it is the 5th of the
+/// dominant / part of the subdominant) and the accidental is the rare Neapolitan
+/// or secondary leading tone.
+int partialSignatureCorrection(const mu::engraving::Score* sc,
+                               std::size_t clampedStaffIdx,
+                               const std::set<std::size_t>& excludeStaves,
+                               int notatedFifths,
+                               KeySigMode declaredClass)
+{
+    using namespace mu::engraving;
+
+    const bool isMajor = (declaredClass == KeySigMode::Ionian);
+    const bool isMinor = (declaredClass == KeySigMode::Aeolian);
+    if (!isMajor && !isMinor) {
+        return notatedFifths;
+    }
+
+    const int neighborFifths = isMajor ? notatedFifths + 1 : notatedFifths - 1;
+    if (neighborFifths < -7 || neighborFifths > 7) {
+        return notatedFifths;
+    }
+
+    const std::array<bool, 12> scaleS = ionianScaleSet(notatedFifths);
+    const std::array<bool, 12> scaleN = ionianScaleSet(neighborFifths);
+    int flipsIn  = -1;  // in neighbor scale, not notated scale (the accidental)
+    int flipsOut = -1;  // in notated scale, not neighbor scale (the natural)
+    for (int pc = 0; pc < 12; ++pc) {
+        if (scaleN[static_cast<size_t>(pc)] && !scaleS[static_cast<size_t>(pc)]) { flipsIn = pc; }
+        if (scaleS[static_cast<size_t>(pc)] && !scaleN[static_cast<size_t>(pc)]) { flipsOut = pc; }
+    }
+    if (flipsIn < 0 || flipsOut < 0) {
+        return notatedFifths;  // neighbors should differ by exactly one pc
+    }
+
+    // Duration-weighted pitch-class histogram over every ChordRest segment whose
+    // notated signature equals `notatedFifths` (so a modulating score's other-key
+    // spans do not pollute the evidence). No metric/decay bias — pervasiveness is
+    // a global property of the notation, not a local window feature.
+    const Measure* firstMeasure = sc->firstMeasure();
+    if (!firstMeasure) {
+        return notatedFifths;
+    }
+
+    std::array<double, 12> hist{};
+    double total = 0.0;
+    for (const Segment* s = firstMeasure->first(SegmentType::ChordRest);
+         s; s = s->next1(SegmentType::ChordRest)) {
+        const Fraction segTick = s->tick();
+        if (static_cast<int>(sc->staff(clampedStaffIdx)->keySigEvent(segTick).concertKey()) != notatedFifths) {
+            continue;
+        }
+        for (std::size_t si = 0; si < sc->nstaves(); ++si) {
+            if (excludeStaves.count(si) || !ebr::staffIsEligible(sc, si, segTick)) {
+                continue;
+            }
+            for (int v = 0; v < VOICES; ++v) {
+                const ChordRest* cr = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (!cr || !cr->isChord() || cr->isGrace()) {
+                    continue;
+                }
+                const double durQn = cr->actualTicks().ticks()
+                                     / static_cast<double>(Constants::DIVISION);
+                for (const Note* n : toChord(cr)->notes()) {
+                    if (!n->play() || !n->visible()) {
+                        continue;
+                    }
+                    const int pc = normalizePc(n->ppitch());
+                    hist[static_cast<size_t>(pc)] += durQn;
+                    total += durQn;
+                }
+            }
+        }
+    }
+
+    if (total <= 0.0) {
+        return notatedFifths;
+    }
+
+    constexpr double kPervasiveFraction = 0.03;  // accidental ≥ 3% of sounding weight
+    constexpr double kDominanceRatio    = 2.0;   // accidental ≥ 2× its natural form
+    const double wIn  = hist[static_cast<size_t>(flipsIn)];
+    const double wOut = hist[static_cast<size_t>(flipsOut)];
+    if (wIn > kPervasiveFraction * total && wIn >= kDominanceRatio * wOut) {
+        return neighborFifths;
+    }
+    return notatedFifths;
+}
+
 /// Reorder `results` so the candidate matching the `chosen` selector is at
 /// index 0; preserves the relative order of the remaining candidates.
 template<typename Pred>
@@ -87,7 +216,7 @@ resolveKeyAndModeRanked(
 
     const std::size_t clampedStaffIdx = std::min<std::size_t>(staffIdx, sc->nstaves() - 1);
     const KeySigEvent keySig = sc->staff(clampedStaffIdx)->keySigEvent(tick);
-    const int keyFifths = static_cast<int>(keySig.concertKey());
+    int keyFifths = static_cast<int>(keySig.concertKey());
 
     // ── Declared mode from key signature ─────────────────────────────────
     std::optional<KeySigMode> declaredMode;
@@ -105,6 +234,18 @@ resolveKeyAndModeRanked(
         case EMode::LOCRIAN:     declaredMode = KeySigMode::Locrian;    break;
         default:                 declaredMode = std::nullopt;           break;
         }
+    }
+
+    // ── Baroque partial-signature correction ─────────────────────────────
+    //
+    // Reinterpret the notated signature one step toward the declared mode's
+    // missing accidental when the "one accidental short" convention is detected
+    // (e.g. C minor notated with 2 flats → -3). All downstream steps (piece-start
+    // anchor, analyzeKeyMode, fallback) use the corrected value, which lets the
+    // proven machinery reach the true tonic without touching the signature lock.
+    if (declaredMode.has_value()) {
+        keyFifths = partialSignatureCorrection(sc, clampedStaffIdx, excludeStaves,
+                                               keyFifths, *declaredMode);
     }
 
     // ── Fixed lookback window ─────────────────────────────────────────────
