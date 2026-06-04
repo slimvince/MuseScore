@@ -3,7 +3,38 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-04 — B1 (MinorMajor7 template) attempt REJECTED, working tree
+*Last updated: 2026-06-04 — A4 Corelli op01n08d audit fixed (two sub-failures).
+**Fix 1 (m2 b3 G/B → G)**: sparse upper-register bass enumeration + structural-bass
+suppression in `chordanalyzer.cpp`. When the lowest sounding pitch is above middle C
+(MIDI 60) AND distinctPcs ≤ 2 AND there are multiple bass candidates within an
+octave, enumerate them through the joint scoring loop (previously only fired when
+`hasOnsetTrue && hasOnsetFalse`). Additionally, `bassDependentContextualBonuses`
+now accepts a `hasStructuralBass` flag — set false when `lowestPitch > 60 &&
+distinctPcs < 3` — which suppresses the stepwise / lookahead / same-root inversion
+context bonuses. Together these let root-position V (DCML's labeling) outscore
+V6 / G-with-B-in-bass when the bass continuo rests (Corelli op01n08d m2 b3:
+violin G5 + violin B4 only). **Fix 2 (m18 b1 missing Cm)**: `coalesceShortSameRootRuns`
+in `regionanalyzer.cpp` runs before `absorbShortRegions` and merges a run of
+≥ 3 consecutive contiguous short same-root sub-regions (totalling ≥ 1.5 beats /
+720 ticks) into a single region — preserving the harmonic event the post-Pass-2b
+bass-movement splitter had fragmented. Corelli op01n08d m18 b1's vi/III spans
+m18 b1 → m18 b3 = 960 ticks as four 240-tick Cm/Csus2/Cm/C7 sub-regions
+which previously got absorbed individually into the m17 Gm region; coalescing
+produces a single 960-tick Cm region that survives the absorb step. Guarded by
+predecessor-root check (skip when predecessor and run share a root — absorb
+handles that case identically). BIR (lenient-OR): Baroque BIR=true=28 (+1),
+BIR=false=22 (−1) — flat net at 50; Jazz BIR=true=35 (+2), BIR=false=10
+(unchanged). Hard stops respected. Tests: 407/407 composing, 52/52 notation
+(CorelliOp01n08dUserReportedChordTrackAudit now passes), 11/11 pipeline_snapshot
+(1 skipped) — 4 goldens refreshed: corelli_op01n08a (DCML-verified: m3 b1
+i = Cm now emitted correctly; previous "G/I" was an analyzer error),
+chopin_bi105_op30_1 (key now matches the score's 3-flat signature = C minor;
+previous "G" was inconsistent), mozart_k279_1 (key now matches DCML's
+globalkey=C; previous "A" was inconsistent), mozart_k280_1 (Bb/F vs former
+Cadd11/F — neither matches DCML V43 perfectly; accepted as a propagated
+side-effect of upstream Fix 1 changes).*
+
+*Previous: 2026-06-04 — B1 (MinorMajor7 template) attempt REJECTED, working tree
 restored to clean at HEAD `d21a5a87c1`. Added a bare 17th template
 `{ Minor, {0,3,7,11}, {0,-3,+1,+5} }` to the analyzer's templates array (Approach A —
 reuse `Minor` quality + `Extension::MajorSeventh`). Mechanical edit was clean
