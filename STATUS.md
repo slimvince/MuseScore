@@ -3,7 +3,22 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-05-20 — D2 unification + dim7/Gate-J chordanalyzer fix.
+*Last updated: 2026-06-04 — B1 (MinorMajor7 template) attempt REJECTED, working tree
+restored to clean at HEAD `d21a5a87c1`. Added a bare 17th template
+`{ Minor, {0,3,7,11}, {0,-3,+1,+5} }` to the analyzer's templates array (Approach A —
+reuse `Minor` quality + `Extension::MajorSeventh`). Mechanical edit was clean
+(both `array<TemplateDef,16>` sites grew to 17 plus the three companion 16-wide score
+matrices). Composing 407/407, notation 51/52, Jazz BIR 33/10 unchanged. But pipeline
+snapshots failed 10/11: two are real Baroque winner regressions that are DCML-INcorrect
+(so `--update-goldens` is not available) — `bach_chorale_003` V65 cadence `E7/G#` →
+`AmMaj9` (G# leading tone of V reread as M7 of i), and `bach_bwv806_prelude`
+`Bmadd9/C#` → `C#m` (loses inversion + add9). Baroque BIR 27/23 → 27/25 (+2 false,
+at hard-stop limit). Root cause: the bare template can't distinguish Baroque
+`tonic + leading-tone-of-V` from jazz `i(maj7)` without structural guards. Deferred
+to Phase E. See `backlog_b1_mmaj7_template.md`. The previous 2026-05-20 entry below
+remains the current baseline.*
+
+*Previous: 2026-05-20 — D2 unification + dim7/Gate-J chordanalyzer fix.
 `3d80d0a91d` adds the dim7-completeness guard (dim7 characteristic bonus requires the full
 diminished triad) + Gate J (root-position diminished triad whose dominant root is present →
 inverted V7). The D2 unification then sets `pass1MinDistinctPcsForCandidate=1` on the batch
