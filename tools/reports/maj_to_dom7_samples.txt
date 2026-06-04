@@ -1,0 +1,63 @@
+# Maj→Dom7 quality_disagree examples (5 per corpus)
+# Cross-corpus root: C:\s\MS\tools\reports\live_20260603
+
+### chopin
+  BI105-2op30-2  m39 b1.5 tick=55440-56640  ours=IV (Eaddb9)  dcml=V7/III
+      rootPc=4 7thPc=2  w(7th)=0.751  total_w=3.000  w(7th)/total=0.250  distinct_pcs=[2, 4, 5, 6, 8]  above_0.20=YES  present=yes
+  BI105-2op30-2  m47 b1.5 tick=66960-68160  ours=IV (Eaddb9)  dcml=V7/III
+      rootPc=4 7thPc=2  w(7th)=0.751  total_w=3.000  w(7th)/total=0.250  distinct_pcs=[2, 4, 5, 6, 8]  above_0.20=YES  present=yes
+  BI105-3op30-3  m27 b1 tick=37440-39120  ours=III (Gbadd9)  dcml=V7/bVII
+      rootPc=6 7thPc=4  w(7th)=0.496  total_w=3.000  w(7th)/total=0.165  distinct_pcs=[1, 4, 6, 8, 10]  above_0.20=YES  present=yes
+  BI105-3op30-3  m35 b1 tick=48960-50760  ours=VI (Gbadd9)  dcml=V7/bVII
+      rootPc=6 7thPc=4  w(7th)=0.496  total_w=3.000  w(7th)/total=0.165  distinct_pcs=[1, 4, 6, 8, 10]  above_0.20=YES  present=yes
+  BI105-3op30-3  m63 b2 tick=89760-91200  ours=III (F)  dcml=V7/vi
+      rootPc=5 7thPc=3  w(7th)=0.000  total_w=2.000  w(7th)/total=0.000  distinct_pcs=[0, 5, 9]  above_0.20=no  present=NO
+
+### corelli
+  op01n01b  m18 b4 tick=34080-34560  ours=IV (G)  dcml=V7
+      rootPc=7 7thPc=5  w(7th)=0.000  total_w=1.000  w(7th)/total=0.000  distinct_pcs=[2, 7, 11]  above_0.20=no  present=NO
+  op01n03b  m4 b4 tick=7200-8160  ours=II (E)  dcml=V7
+      rootPc=4 7thPc=2  w(7th)=0.250  total_w=2.000  w(7th)/total=0.125  distinct_pcs=[2, 4, 8, 11]  above_0.20=YES  present=yes
+  op01n03b  m31 b3.5 tick=58800-60000  ours=VI (B)  dcml=V7/V
+      rootPc=11 7thPc=9  w(7th)=0.200  total_w=2.000  w(7th)/total=0.100  distinct_pcs=[3, 4, 9, 11]  above_0.20=YES  present=yes
+  op01n03b  m46 b4 tick=87840-88800  ours=VI (B)  dcml=V7/V
+      rootPc=11 7thPc=9  w(7th)=0.250  total_w=2.000  w(7th)/total=0.125  distinct_pcs=[3, 6, 9, 11]  above_0.20=YES  present=yes
+  op01n03d  m59 b1.5 tick=83760-84960  ours=II (E5)  dcml=V7
+      rootPc=4 7thPc=2  w(7th)=0.000  total_w=1.000  w(7th)/total=0.000  distinct_pcs=[1, 4, 11]  above_0.20=no  present=NO
+
+### mozart
+  K279-1  m40 b3 tick=75840-76320  ours=II (A)  dcml=V2/ii
+      rootPc=9 7thPc=7  w(7th)=0.000  total_w=2.000  w(7th)/total=0.000  distinct_pcs=[1, 4, 9]  above_0.20=no  present=NO
+  K279-1  m73 b2 tick=138720-140160  ours=IV (G)  dcml=V7
+      rootPc=7 7thPc=5  w(7th)=0.500  total_w=4.000  w(7th)/total=0.125  distinct_pcs=[2, 5, 7, 11]  above_0.20=YES  present=yes
+  K279-1  m74 b1 tick=140160-141840  ours=IV (G)  dcml=V7
+      rootPc=7 7thPc=5  w(7th)=0.000  total_w=5.000  w(7th)/total=0.000  distinct_pcs=[0, 2, 7, 9, 11]  above_0.20=no  present=NO
+  K279-2  m11 b1 tick=14520-15000  ours=I64 (G/D)  dcml=V43
+      rootPc=7 7thPc=5  w(7th)=0.094  total_w=1.000  w(7th)/total=0.094  distinct_pcs=[2, 5, 7, 11]  above_0.20=no  present=yes
+  K280-1  m37 b1 tick=51840-53280  ours=VI6 (D/F#)  dcml=V65/V
+      rootPc=2 7thPc=0  w(7th)=0.286  total_w=3.000  w(7th)/total=0.095  distinct_pcs=[0, 2, 4, 6, 7, 9]  above_0.20=YES  present=yes
+
+### grieg
+  op38n08  m11 b2 tick=14880-15840  ours=III (F)  dcml=V7
+      rootPc=5 7thPc=3  w(7th)=0.102  total_w=1.000  w(7th)/total=0.102  distinct_pcs=[0, 3, 5, 6, 9]  above_0.20=no  present=yes
+  op38n08  m12 b1 tick=15840-16800  ours=III (F)  dcml=V7
+      rootPc=5 7thPc=3  w(7th)=0.073  total_w=1.000  w(7th)/total=0.073  distinct_pcs=[0, 1, 3, 5, 6, 9, 10]  above_0.20=no  present=yes
+  op38n08  m39 b3 tick=55680-56160  ours=II64 (C/G)  dcml=V43/V
+      rootPc=0 7thPc=10  w(7th)=0.109  total_w=1.000  w(7th)/total=0.109  distinct_pcs=[0, 4, 7, 10]  above_0.20=no  present=yes
+  op38n08  m48 b3 tick=68640-69120  ours=III64 (D/A)  dcml=V43/vi
+      rootPc=2 7thPc=0  w(7th)=0.109  total_w=1.000  w(7th)/total=0.109  distinct_pcs=[0, 2, 6, 9]  above_0.20=no  present=yes
+  op43n03  m4 b2 tick=6240-6720  ours=II11sus4 (G#7sus)  dcml=V7/V
+      rootPc=8 7thPc=6  w(7th)=0.200  total_w=1.000  w(7th)/total=0.200  distinct_pcs=[1, 6, 8]  above_0.20=YES  present=yes
+
+### beethoven
+  n01op18-1_01  m26 b2.5 tick=36720-37440  ours=I11sus4 (F7sus)  dcml=V7/IV
+      rootPc=5 7thPc=3  w(7th)=0.286  total_w=1.000  w(7th)/total=0.286  distinct_pcs=[2, 3, 5, 10]  above_0.20=YES  present=yes
+  n01op18-1_01  m37 b1 tick=51840-53280  ours=III6 (A/Db)  dcml=V65/vi
+      rootPc=9 7thPc=7  w(7th)=0.244  total_w=2.000  w(7th)/total=0.122  distinct_pcs=[1, 4, 7, 9]  above_0.20=YES  present=yes
+  n01op18-1_01  m196 b3 tick=281760-282960  ours=bVI6 (Db/F)  dcml=V7/IV
+      rootPc=1 7thPc=11  w(7th)=0.000  total_w=1.000  w(7th)/total=0.000  distinct_pcs=[1, 5, 8]  above_0.20=no  present=NO
+  n01op18-1_01  m284 b3.5 tick=408720-409800  ours=II6 (G/B)  dcml=V43/V
+      rootPc=7 7thPc=5  w(7th)=0.000  total_w=3.000  w(7th)/total=0.000  distinct_pcs=[2, 7, 11]  above_0.20=no  present=NO
+  n01op18-1_01  m285 b2.75 tick=409800-410400  ours=II (G)  dcml=V43/V
+      rootPc=7 7thPc=5  w(7th)=0.000  total_w=1.000  w(7th)/total=0.000  distinct_pcs=[2, 7, 11]  above_0.20=no  present=NO
+
