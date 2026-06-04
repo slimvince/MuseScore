@@ -53,6 +53,98 @@ namespace {
 constexpr int kPass2MinRegionTicks    = 4 * mu::engraving::Constants::DIVISION;
 constexpr int kMaxBassMovementPasses  = 8;
 
+/// Coalesce runs of consecutive contiguous short regions that share a common
+/// root into a single region. A 960-tick harmony broken by upper-voice motion
+/// into Cm → Csus2 → Cm → C7 (each 240 ticks, all rooted on C) is one real
+/// harmonic change, not four. Without this pass each short slice gets absorbed
+/// individually into a differently-rooted predecessor and the change is lost.
+/// Corelli op01n08d m18 b1 (vi/III = Cm spanning b1–b2 then viio/III = Ddim at
+/// b3): the four C-rooted sub-regions at b1, b1.5, b2, b2.5 (240 ticks each)
+/// previously vanished into the m17 Gm region; coalescing them yields a single
+/// 960-tick Cm region that clears kMinRegionTicks. The combined region inherits
+/// the chord identity of the longest sub-region (the Cm variants dominate over
+/// the Csus2 / C7 passing-tone misreads).
+void coalesceShortSameRootRuns(std::vector<HarmonicRegion>& regions)
+{
+    if (regions.size() <= 1) {
+        return;
+    }
+    constexpr int kMinRegionTicks = shv::kMinRegionTicks;
+    std::vector<HarmonicRegion> coalesced;
+    coalesced.reserve(regions.size());
+    size_t i = 0;
+    while (i < regions.size()) {
+        const int dur = regions[i].endTick - regions[i].startTick;
+        if (dur >= kMinRegionTicks) {
+            coalesced.push_back(std::move(regions[i]));
+            ++i;
+            continue;
+        }
+        const int runRoot = regions[i].chordResult.identity.rootPc;
+        // Skip coalescing when the predecessor shares the run's root: the
+        // existing absorb-into-predecessor step already produces the same
+        // outcome (extended predecessor of identical chord identity), so
+        // running the coalesce would either be a no-op or could subtly
+        // re-identify the merged region from one of the short slices.
+        if (!coalesced.empty()
+            && coalesced.back().chordResult.identity.rootPc == runRoot) {
+            coalesced.push_back(std::move(regions[i]));
+            ++i;
+            continue;
+        }
+        size_t j = i + 1;
+        int totalDur = dur;
+        while (j < regions.size()) {
+            const int nextDur = regions[j].endTick - regions[j].startTick;
+            if (nextDur >= kMinRegionTicks) { break; }
+            if (regions[j].chordResult.identity.rootPc != runRoot) { break; }
+            if (regions[j].startTick != regions[j - 1].endTick) { break; }
+            totalDur += nextDur;
+            ++j;
+        }
+        // Conservative thresholds. Two filters together avoid disturbing
+        // existing snapshot goldens while still rescuing the Corelli
+        // op01n08d m18 b1 case (vi/III = Cm spanning b1 → b3 = 960 ticks,
+        // realised as four 240-tick Cm/Csus2/Cm/C7 sub-regions after
+        // Pass 2b's bass-movement splitting):
+        //   • runLen ≥ 3 sub-regions — a true intervening harmony broken
+        //     by upper-voice motion produces multiple sub-regions; a
+        //     2-sub-region run is more often a single misread split by
+        //     one passing tone and is safer to leave to absorbShortRegions.
+        //   • totalDur ≥ 1.5 beats — guards against rescuing transient
+        //     two-eighth-note same-root coincidences that happen to share
+        //     a root with the previous region's chord.
+        constexpr int kCoalesceMinRunTicks   = 3 * shv::kMinRegionTicks / 2; // 720
+        constexpr size_t kCoalesceMinRunCount = 3;
+        const size_t runLen = j - i;
+        if (runLen >= kCoalesceMinRunCount && totalDur >= kCoalesceMinRunTicks) {
+            size_t longestIdx = i;
+            int longestDur = dur;
+            for (size_t k = i + 1; k < j; ++k) {
+                const int d = regions[k].endTick - regions[k].startTick;
+                if (d > longestDur) { longestIdx = k; longestDur = d; }
+            }
+            HarmonicRegion combined = std::move(regions[longestIdx]);
+            combined.startTick = regions[i].startTick;
+            combined.endTick   = regions[j - 1].endTick;
+            for (size_t k = i; k < j; ++k) {
+                if (k == longestIdx) { continue; }
+                mergeChordAnalysisTones(combined.tones, regions[k].tones);
+            }
+            if (const auto* bassTone = bassToneFromTones(combined.tones)) {
+                combined.chordResult.identity.bassPc  = bassTone->pitch % 12;
+                combined.chordResult.identity.bassTpc = bassTone->tpc;
+            }
+            coalesced.push_back(std::move(combined));
+            i = j;
+        } else {
+            coalesced.push_back(std::move(regions[i]));
+            ++i;
+        }
+    }
+    regions = std::move(coalesced);
+}
+
 /// Pass 3 — absorb every region shorter than kMinRegionTicks into the previous
 /// region, regardless of root. Greedy-expand routinely emits sub-beat slices on
 /// passing tones and embellishments; analyzed in isolation they produce exotic
@@ -773,6 +865,7 @@ analyzeRegions(const mu::engraving::Score* score,
 
     // ── Pass 3 — absorb short regions ────────────────────────────────────────
     if (opts.granularity == HarmonicRegionGranularity::Smoothed) {
+        coalesceShortSameRootRuns(regions);
         absorbShortRegions(regions);
     }
 

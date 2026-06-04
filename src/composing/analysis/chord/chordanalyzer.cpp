@@ -1687,11 +1687,12 @@ double bassDependentContextualBonuses(const TemplateDef& tpl, int rootPc, int ba
                                       int distinctPcs,
                                       const std::array<double, 12>& pcWeight,
                                       const ChordAnalyzerPreferences& prefs,
-                                      const ChordTemporalContext* context)
+                                      const ChordTemporalContext* context,
+                                      bool hasStructuralBass = true)
 {
     double score = appliedBassBonus;
 
-    if (context) {
+    if (context && hasStructuralBass) {
         const bool hasStepwiseBassEvidence =
             context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext;
         const bool isInvertedMajMin =
@@ -1838,7 +1839,24 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             if (rc.onsetAtRegionStart) { hasOnsetTrue = true; }
             else                       { hasOnsetFalse = true; }
         }
-        if (hasOnsetTrue && hasOnsetFalse) {
+        // Sparse upper-register fallback: when the bass continuo rests (no
+        // sounding note below middle C) and the region is reduced to two
+        // upper-voice pitches, the "lowest sounding pitch" picked by the
+        // legacy single-bass fallback is just the lower of two melodic notes,
+        // not a structural bass. Enumerate so the root-position reading can
+        // compete with the accidental inversion implied by literal-bass
+        // selection. Corelli op01n08d m2 b3: G5 + B4 should score as V (G
+        // root-position) per DCML, not V6/B. Gated on lowestPitch > 60 so
+        // genuine bass voicings (D3, E2, …) keep their single-bass path.
+        int distinctPcCount = 0;
+        for (double w : pcWeight) {
+            if (w > 0.05) { ++distinctPcCount; }
+        }
+        const bool sparseUpperRegisterAmbiguous =
+            distinctPcCount <= 2
+            && regionalCandidates.size() >= 2
+            && lowestPitch > 60;
+        if ((hasOnsetTrue && hasOnsetFalse) || sparseUpperRegisterAmbiguous) {
             bassCandidates = std::move(regionalCandidates);
             if (bassCandidates.size() > 4) {
                 bassCandidates.resize(4);
@@ -1901,6 +1919,20 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     if (distinctPcs < prefs.minDistinctPcsForCandidate) {
         return {};
     }
+
+    // Structural-bass heuristic: when the lowest sounding pitch sits above
+    // middle C (MIDI 60) and the region is sparse (≤ 2 distinct PCs), the
+    // "bass" picked from the literal lowest pitch is just the lower of two
+    // upper-voice notes — there is no continuo / bass-voice support behind
+    // it. Inversion contextual bonuses (stepwise / lookahead / same-root) assume
+    // a structural bass; firing them on accidental upper-voice "inversions"
+    // promotes spurious slash readings over root-position chords whose
+    // function is implied (Corelli op01n08d m2 b3: G + B with bass continuo
+    // resting should score as V root-position per DCML, not V6 / G/B).
+    // distinctPcs ≥ 3 retains the bonus because denser regions carry their
+    // own structural cues; dense static SATB textures with bass in tenor
+    // register remain unchanged.
+    const bool hasStructuralBass = (lowestPitch <= 60) || (distinctPcs >= 3);
 
     // Chord templates (quality, intervals-from-root, TPC-deltas-from-root).
     //
@@ -2278,7 +2310,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     const double basisDep =
                         nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
                         + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
-                                                         distinctPcs, pcWeight, prefs, context);
+                                                         distinctPcs, pcWeight, prefs, context,
+                                                         hasStructuralBass);
                     double scoreNoWDim = basisIndepMatrix[rootPc][tplIdx] + basisDep;
                     scoreNoWDim *= complexityFactorMatrix[rootPc][tplIdx];
                     scoreNoWDim *= augFactorMatrix[rootPc][tplIdx];
