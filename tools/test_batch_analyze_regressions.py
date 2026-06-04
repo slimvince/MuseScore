@@ -67,26 +67,39 @@ def assert_jazz_smoke_result(data: dict) -> None:
 
 
 def assert_bwv227_measure9_contains_e(data: dict) -> None:
-    # Pitch-class E (4) enters in measure 9 on beat 2 (the first E onset in the
-    # voice that carries the melodic line).  We check any region in measure 9
-    # rather than beat 1 specifically, because the region boundaries can shift
-    # as the analysis evolves while the musical content of measure 9 is fixed.
+    # Pitch-class E (4) enters in measure 9 on beat 2 (the alto voice). Region
+    # boundaries shift as the analysis evolves — and so do the measureNumber
+    # labels: a long region anchored to an earlier measure (e.g. a 5-beat
+    # m8-beat-3 → m9-beat-4 G region) carries measureNumber=8 even though it
+    # physically covers most of m9. Match by tick overlap with measure 9
+    # rather than by label so the check stays robust against label shifts.
+    #
+    # BWV 227.7 is in 4/4 and the analyzer normalizes to 480 ticks per quarter
+    # (MuseScore standard), so measure 9 spans ticks [15360, 17280).
+    M9_START_TICK = (9 - 1) * 4 * 480
+    M9_END_TICK = M9_START_TICK + 4 * 480
+
     measure9_pcs: set[int] = set()
-    found_measure9 = False
+    overlapping = False
     for region in data.get("regions", []):
-        if region.get("measureNumber") == 9:
-            found_measure9 = True
+        start = region.get("startTick")
+        end = region.get("endTick")
+        if start is None or end is None:
+            continue
+        if start < M9_END_TICK and end > M9_START_TICK:
+            overlapping = True
             for tone in region.get("tones", []):
                 pitch = tone.get("pitch")
                 if pitch is not None:
                     measure9_pcs.add(pitch % 12)
 
-    if not found_measure9:
-        raise AssertionError("Missing measure 9 region in BWV 227.7 output")
+    if not overlapping:
+        raise AssertionError("No region overlaps measure 9 in BWV 227.7 output")
 
     if 4 not in measure9_pcs:
         raise AssertionError(
-            "BWV 227.7 measure 9 is missing pitch-class E across all regions; "
+            f"BWV 227.7 measure 9 (ticks {M9_START_TICK}-{M9_END_TICK}) is "
+            "missing pitch-class E across all overlapping regions; "
             f"got pitch classes {sorted(measure9_pcs)}"
         )
 
