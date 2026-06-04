@@ -2633,6 +2633,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         // below) when you need the pre-swap state in gates that run after A–F.
         const ChordAnalysisResult& winner = results[0];
         const ChordQuality originalWinnerQuality = winner.identity.quality;
+        const int originalWinnerRootPc = winner.identity.rootPc;
         const bool originalWinnerHasAddedSixth =
             hasExtension(winner.identity.extensions, Extension::AddedSixth);
         const bool winnerBassIsRoot = (winner.identity.rootPc == winner.identity.bassPc);
@@ -2893,7 +2894,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         if (prefs.preferMinorOverMajorAdd6
             && originalWinnerQuality == ChordQuality::Minor
             && originalWinnerHasAddedSixth) {
-            const int gExpectedAltRoot = (winner.identity.rootPc + 9) % 12;
+            const int gExpectedAltRoot = (originalWinnerRootPc + 9) % 12;
             // Find the HalfDim7 alt in results[].
             size_t halfDimAltIdx = results.size();
             for (size_t i = 1; i < results.size(); ++i) {
