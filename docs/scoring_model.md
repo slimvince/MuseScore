@@ -540,5 +540,42 @@ Derived from the B1, B2, and B3 lessons.
 
 ---
 
-*Last updated: 2026-06-05 — created in conjunction with the post-B3
-chordanalyzer annotation pass.*
+## 10. Harmonic function layer
+
+**Module:** `src/composing/analysis/function/harmonicfunctionlayer.{h,cpp}`
+
+A post-analysis pass that sits between `analyzeChord()` output and the final
+chord label. Called from `regionanalyzer.cpp` after each non-exploratory
+`analyzeChord()` call — gated on `!prefs.explorationMode` — at three sites:
+Pass 1 (~L444+refinement), Pass 2 (~L637+refinement), Pass 2b (~L814+refinement).
+
+`HarmonicFunctionContext` carries: `keyFifths`, `keyMode`, `previousRootPc`,
+`nextRootPc`. Extended in E4 with phrase-boundary and cadence evidence.
+
+**E1 (current):** Pass-through. No changes to `ChordAnalysisResult`.
+
+**E2 (planned):** Progression signals migrate out of `chordanalyzer.cpp`:
+- `rootContinuityBonus` (currently in `bassIndependentContextualBonuses`)
+- `w_seq` (currently in main scoring loop)
+- `w_dim` (currently in main scoring loop)
+
+**E3 (planned):** Post-scoring gates migrate out of `analyzeChord()`:
+- Gate J (vii°→V7 completion)
+- Gates A–D (Minor-add6 ↔ HalfDim7 enharmonic)
+- `dim7CharacteristicBonus` rotation selection
+
+**E4 (planned):** Cadence detection, tonic confirmation, functional label
+completeness (secondary dominants, borrowed chords, augmented sixths).
+
+**Rationale.** The scoring model §4 documents that `rootContinuityBonus`,
+`w_seq`, and `w_dim` are progression signals (not pitch-evidence terms) and
+that Gates A–L are functional-reasoning corrections on top of a pitch scorer.
+Having them inside `analyzeChord()` couples functional reasoning to the
+pitch-evidence scorer, making each new template addition risk unexpected gate
+interactions (B1/B2/B3 history). The function layer provides the correct
+architectural home for these terms.
+
+---
+
+*Last updated: 2026-06-05 — E1 harmonic function layer shell added
+(pass-through, zero behavioral change); §10 added.*

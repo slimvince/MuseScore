@@ -37,6 +37,7 @@
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
+#include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/region/sparsechordrefinement.h"
@@ -454,6 +455,15 @@ analyzeRegions(const mu::engraving::Score* score,
             applyTonicPriorToSparseChord(
                 chosenResult, tones, localKeyFifths, localKeyMode);
 
+            if (!attemptPrefs.explorationMode) {
+                function::HarmonicFunctionContext fnCtx;
+                fnCtx.keyFifths      = localKeyFifths;
+                fnCtx.keyMode        = localKeyMode;
+                fnCtx.previousRootPc = temporalCtx.previousRootPc;
+                fnCtx.nextRootPc     = temporalCtx.nextRootPc;
+                function::applyHarmonicFunction(chosenResult, fnCtx);
+            }
+
             const ChordTemporalExtensions extensionsSnapshot = toExtensionsSnapshot(temporalCtx);
             std::vector<ChordAnalysisResult> alternativesSnapshot;
             if (results.size() > 1) {
@@ -654,6 +664,15 @@ analyzeRegions(const mu::engraving::Score* score,
                 refineSparseChordQualityFromKeyContext(
                     chosenSub, subTones, subKeyFifths, subKeyMode);
 
+                if (!prefs.explorationMode) {
+                    function::HarmonicFunctionContext fnCtx;
+                    fnCtx.keyFifths      = subKeyFifths;
+                    fnCtx.keyMode        = subKeyMode;
+                    fnCtx.previousRootPc = subCtx.previousRootPc;
+                    fnCtx.nextRootPc     = subCtx.nextRootPc;
+                    function::applyHarmonicFunction(chosenSub, fnCtx);
+                }
+
                 const ChordTemporalExtensions subExtSnap = toExtensionsSnapshot(subCtx);
                 std::vector<ChordAnalysisResult> subAltsSnap;
                 if (subResults.size() > 1) {
@@ -831,6 +850,15 @@ analyzeRegions(const mu::engraving::Score* score,
                     ChordAnalysisResult chosenSub = subResults.front();
                     refineSparseChordQualityFromKeyContext(
                         chosenSub, subTones, subKeyFifths, subKeyMode);
+
+                    if (!prefs.explorationMode) {
+                        function::HarmonicFunctionContext fnCtx;
+                        fnCtx.keyFifths      = subKeyFifths;
+                        fnCtx.keyMode        = subKeyMode;
+                        fnCtx.previousRootPc = subCtx.previousRootPc;
+                        fnCtx.nextRootPc     = subCtx.nextRootPc;
+                        function::applyHarmonicFunction(chosenSub, fnCtx);
+                    }
 
                     const ChordTemporalExtensions subExtSnap = toExtensionsSnapshot(subCtx);
                     std::vector<ChordAnalysisResult> subAltsSnap;

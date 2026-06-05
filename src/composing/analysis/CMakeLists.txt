@@ -26,6 +26,13 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.h
 
+    # function/ — Phase E harmonic function layer (post-analysis pass between
+    # analyzeChord() output and the final chord label). E1 is a pass-through
+    # shell; E2/E3/E4 migrate progression signals, post-scoring gates, and
+    # cadence detection out of chordanalyzer.cpp. See docs/scoring_model.md §10.
+    ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.cpp
+
     # key/ — key and mode analysis
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h
