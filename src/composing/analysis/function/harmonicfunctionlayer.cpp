@@ -38,4 +38,31 @@ void applyHarmonicFunction(analysis::ChordAnalysisResult& result,
     (void)ctx;
 }
 
+double rootContinuityBonus(int candidateRootPc, int previousRootPc,
+                           double bonusValue)
+{
+    return (candidateRootPc == previousRootPc) ? bonusValue : 0.0;
+}
+
+double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
+                 bool jointScoringEnabled, bool explorationMode)
+{
+    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (nextRootPc < 0 || distinctPcs < 4) return 0.0;
+    const int delta = ((nextRootPc - candRootPc) % 12 + 12) % 12;
+    return (delta == 5) ? kWSeq : 0.0;
+}
+
+double wDimBonus(int candRootPc, analysis::ChordQuality quality,
+                 int nextRootPc, int distinctPcs,
+                 bool jointScoringEnabled, bool explorationMode)
+{
+    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (nextRootPc < 0 || distinctPcs < 4) return 0.0;
+    using Q = analysis::ChordQuality;
+    if (quality != Q::Diminished && quality != Q::HalfDiminished) return 0.0;
+    const int delta = ((nextRootPc - candRootPc) % 12 + 12) % 12;
+    return (delta == 1) ? kWDim : 0.0;
+}
+
 } // namespace mu::composing::function

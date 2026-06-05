@@ -22,11 +22,14 @@
 
 #include "chordanalyzer.h"
 #include "analysisutils.h"
+#include "composing/analysis/function/harmonicfunctionlayer.h"
 
 #include <algorithm>
 #include <array>
 #include <cmath>
 #include <limits>
+
+namespace fn = mu::composing::function;
 
 namespace mu::composing::analysis {
 namespace {
@@ -1475,9 +1478,8 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
 
     if (context) {
         // Root-continuity: prefer keeping the same root across successive chords.
-        if (context->previousRootPc == rootPc) {
-            score += prefs.rootContinuityBonus;
-        }
+        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
+                                         prefs.rootContinuityBonus);
 
         // Contextual inversion bonuses — §4.1b
         // Accumulated into a local variable so the total can be capped before
@@ -1657,9 +1659,8 @@ double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
         // bass with held upper voices).  Do not attempt a density-based or
         // inversion-aware gate here without first reading the Iter 98 dead-end
         // section in COWORK_HANDOFF.md.  See docs/scoring_model.md §4.
-        if (context->previousRootPc == rootPc) {
-            score += prefs.rootContinuityBonus;
-        }
+        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
+                                         prefs.rootContinuityBonus);
 
         // Quality-guided resolution bias: reward candidates at the typical
         // resolution target of the previous chord's quality.
@@ -2231,13 +2232,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // !prefs.explorationMode keep the single-tick / segmentation-internal
     // paths untouched.  Requires context->nextRootPc >= 0 (populated by the
     // bridge / batch_analyze look-ahead).
-    static constexpr double kWSeq = 0.20;
     auto wSeqBonus = [&](int candRootPc) -> double {
-        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
-        if (context->nextRootPc < 0) return 0.0;
-        if (distinctPcs < 4) return 0.0;
-        const int delta = ((context->nextRootPc - candRootPc) % 12 + 12) % 12;
-        return (delta == 5) ? kWSeq : 0.0;
+        return fn::wSeqBonus(candRootPc,
+                             context ? context->nextRootPc : -1,
+                             distinctPcs,
+                             jointScoringEnabled,
+                             prefs.explorationMode);
     };
 
     // Iter 96 — w_dim: diminished/half-dim leading-tone resolution tiebreaker.
@@ -2250,19 +2250,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // canonical Western tonal signal that selects the correct spelling.
     // Same gating as w_seq.  Reuses context->nextRootPc plumbing (Iter 95
     // Steps 1 & 2 — populated on both batch and bridge paths).
-    static constexpr double kWDim = 0.15;
     auto wDimBonus = [&](int candRootPc, ChordQuality quality) -> double {
-        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
-        if (context->nextRootPc < 0) return 0.0;
-        if (quality != ChordQuality::Diminished && quality != ChordQuality::HalfDiminished) return 0.0;
-        // distinctPcs >= 4 is intentional: 3-PC sparse dim regions must not
-        // flip via this bonus.  The bonus is a rotation-correction signal
-        // (leading-tone dim7 should resolve upward), not a quality-flip signal.
-        // Removing this gate caused quality flips in 3-PC contexts during Iter 96
-        // testing.  See docs/scoring_model.md §4.
-        if (distinctPcs < 4) return 0.0;
-        const int delta = ((context->nextRootPc - candRootPc) % 12 + 12) % 12;
-        return (delta == 1) ? kWDim : 0.0;
+        return fn::wDimBonus(candRootPc, quality,
+                             context ? context->nextRootPc : -1,
+                             distinctPcs,
+                             jointScoringEnabled,
+                             prefs.explorationMode);
     };
 
     // Build per-bass-candidate rawCandidates; pick the global winner.

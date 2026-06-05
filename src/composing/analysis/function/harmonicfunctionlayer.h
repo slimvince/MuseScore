@@ -53,4 +53,34 @@ struct HarmonicFunctionContext {
 void applyHarmonicFunction(analysis::ChordAnalysisResult& result,
                            const HarmonicFunctionContext& ctx);
 
+// -----------------------------------------------------------------------
+// Progression-signal bonus functions (E2a: called from chordanalyzer.cpp
+// at their existing call sites; will become a post-analysis pass in E2c).
+// -----------------------------------------------------------------------
+
+/// Bonus magnitude constants — defined here because they are function-layer
+/// properties, not scoring-model constants.
+inline constexpr double kWSeq = 0.20;  ///< Sequential root-progression bonus (Iter 95)
+inline constexpr double kWDim = 0.15;  ///< Dim/HalfDim leading-tone bonus (Iter 96)
+
+/// Root-continuity bonus.
+/// Returns bonusValue when candidateRootPc == previousRootPc, else 0.
+/// Called from bassIndependentContextualBonuses (and diagnoseChord path).
+double rootContinuityBonus(int candidateRootPc, int previousRootPc,
+                           double bonusValue);
+
+/// Sequential root-motion bonus (+kWSeq).
+/// Rewards a candidate whose root sits a P4 below nextRootPc (classic V→I).
+/// Callers pass nextRootPc = context->nextRootPc, or -1 if context is null.
+double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
+                 bool jointScoringEnabled, bool explorationMode);
+
+/// Diminished/HalfDim leading-tone bonus (+kWDim).
+/// Rewards a Dim/HalfDim candidate whose root sits one semitone below
+/// nextRootPc (leading-tone-of-next). For the with-wDim path only.
+/// Callers pass nextRootPc = context->nextRootPc, or -1 if context is null.
+double wDimBonus(int candRootPc, analysis::ChordQuality quality,
+                 int nextRootPc, int distinctPcs,
+                 bool jointScoringEnabled, bool explorationMode);
+
 } // namespace mu::composing::function
