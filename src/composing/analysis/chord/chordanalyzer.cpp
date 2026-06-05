@@ -2405,6 +2405,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                         cell.rootPc           = rootPc;
                         cell.tiePriority      = static_cast<int>(tplIdx);
                         cell.quality          = tpl.quality;
+                        cell.intervalCount    = static_cast<int>(tpl.intervals.size());
                         cell.basisIndep       = basisIndepMatrix[rootPc][tplIdx];
                         cell.basisDep         = basisDep;
                         cell.complexityFactor = complexityFactorMatrix[rootPc][tplIdx];

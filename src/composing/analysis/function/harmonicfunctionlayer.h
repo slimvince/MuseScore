@@ -47,6 +47,10 @@ struct HarmonicFunctionContext {
     analysis::KeySigMode keyMode { analysis::KeySigMode::Ionian };
     int previousRootPc { -1 };   ///< Root PC of the preceding region (-1 = unknown)
     int nextRootPc { -1 };       ///< Root PC of the following region (-1 = unknown)
+    int previousBassPc { -1 };   ///< Bass PC of the preceding region (-1 = unknown).
+                                  ///< Required by E2d Pass B (wStepInBonus gate).
+    int nextBassPc     { -1 };   ///< Bass PC of the following region (-1 = unknown).
+                                  ///< Required by E2d Pass B (wStepOutBonus gate).
 };
 
 // Forward declaration — full definition further down in this header.
@@ -72,6 +76,9 @@ void applyHarmonicFunction(std::vector<analysis::ChordAnalysisResult>& candidate
 /// properties, not scoring-model constants.
 inline constexpr double kWSeq = 0.20;  ///< Sequential root-progression bonus (Iter 95)
 inline constexpr double kWDim = 0.15;  ///< Dim/HalfDim leading-tone bonus (Iter 96)
+inline constexpr double kWStepIn   = 0.10;  ///< Stepwise-bass step-in bonus (E2d Pass B)
+inline constexpr double kWStepOut  = 0.10;  ///< Stepwise-bass step-out bonus (E2d Pass B)
+inline constexpr double kStepBudget = kWStepIn + kWStepOut + 0.01;  ///< m7-family guard tolerance
 
 /// Root-continuity bonus.
 /// Returns bonusValue when candidateRootPc == previousRootPc, else 0.
@@ -112,6 +119,10 @@ struct ScoringCell {
     int                    tiePriority;        ///< Template index; needed by E2c for
                                                ///< the Pass B m7-family guard look-up.
     analysis::ChordQuality quality;
+    int                    intervalCount { 0 }; ///< Number of intervals in the template
+                                                ///< (templates[tiePriority].intervals.size()).
+                                                ///< Used by E2d Pass B m7-family guard:
+                                                ///< isMin7 ≡ quality==Minor && intervalCount==4.
 
     // Bass-independent pitch evidence (basisIndepMatrix[rootPc][tiePriority]).
     // INCLUDES the rootContinuityBonus contribution (if it fired for this rootPc).

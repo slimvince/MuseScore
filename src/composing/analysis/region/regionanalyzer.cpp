@@ -457,6 +457,8 @@ analyzeRegions(const mu::engraving::Score* score,
                 fnCtx.keyMode        = localKeyMode;
                 fnCtx.previousRootPc = temporalCtx.previousRootPc;
                 fnCtx.nextRootPc     = temporalCtx.nextRootPc;
+                fnCtx.previousBassPc = temporalCtx.previousBassPc;
+                fnCtx.nextBassPc     = temporalCtx.nextBassPc;
                 function::applyHarmonicFunction(results, chosenResult, fnCtx,
                                                 nullptr, nullptr);
             }
@@ -670,6 +672,8 @@ analyzeRegions(const mu::engraving::Score* score,
                     fnCtx.keyMode        = subKeyMode;
                     fnCtx.previousRootPc = subCtx.previousRootPc;
                     fnCtx.nextRootPc     = subCtx.nextRootPc;
+                    fnCtx.previousBassPc = subCtx.previousBassPc;
+                    fnCtx.nextBassPc     = subCtx.nextBassPc;
                     function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
                                                     nullptr, nullptr);
                 }
@@ -859,6 +863,8 @@ analyzeRegions(const mu::engraving::Score* score,
                         fnCtx.keyMode        = subKeyMode;
                         fnCtx.previousRootPc = subCtx.previousRootPc;
                         fnCtx.nextRootPc     = subCtx.nextRootPc;
+                        fnCtx.previousBassPc = subCtx.previousBassPc;
+                        fnCtx.nextBassPc     = subCtx.nextBassPc;
                         function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
                                                         nullptr, nullptr);
                     }
