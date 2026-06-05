@@ -49,11 +49,19 @@ struct HarmonicFunctionContext {
     int nextRootPc { -1 };       ///< Root PC of the following region (-1 = unknown)
 };
 
+// Forward declaration — full definition further down in this header.
+struct ScoringSnapshot;
+
 /// Apply harmonic function reasoning to the winning chord candidate.
-/// Modifies \p result in-place. Called after analyzeChord() + refinement,
-/// gated on !prefs.explorationMode. E1: no-op.
-void applyHarmonicFunction(analysis::ChordAnalysisResult& result,
-                           const HarmonicFunctionContext& ctx);
+/// When \p snapshot is non-null (E2c mode), re-scores the full candidate set
+/// using the snapshot and promotes the signal-inclusive winner into
+/// candidates[0]; \p chosenResult is updated to match. When \p snapshot is
+/// null (pre-E2c call sites), remains a no-op.
+void applyHarmonicFunction(std::vector<analysis::ChordAnalysisResult>& candidates,
+                           analysis::ChordAnalysisResult& chosenResult,
+                           const HarmonicFunctionContext& ctx,
+                           const ScoringSnapshot* snapshot,
+                           const analysis::ChordAnalyzerPreferences* prefs);
 
 // -----------------------------------------------------------------------
 // Progression-signal bonus functions (E2a: called from chordanalyzer.cpp
@@ -97,6 +105,9 @@ double wDimBonus(int candRootPc, analysis::ChordQuality quality,
 struct ScoringCell {
     // Identifiers — locate the cell in the (bass, root, template) cube.
     int                    bassPc;
+    int                    bassTpc;            ///< TPC of the bass candidate; needed by E2c
+                                               ///< to correct bassTpc when the re-scored winner
+                                               ///< uses a different bass than the suppressed-signal pass.
     int                    rootPc;
     int                    tiePriority;        ///< Template index; needed by E2c for
                                                ///< the Pass B m7-family guard look-up.
@@ -150,6 +161,10 @@ struct ScoringSnapshot {
 
     /// Needed by E2c for w_seq / w_dim gate conditions.
     int  distinctPcs         { 0 };
+
+    /// Mirrors analyzeChord()'s jointScoringEnabled flag; required by
+    /// fn::wSeqBonus / fn::wDimBonus. Not in prefs (computed inside analyzeChord()).
+    bool jointScoringEnabled { false };
 };
 
 } // namespace mu::composing::function

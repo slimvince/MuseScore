@@ -225,6 +225,8 @@ struct ChordIdentity {
     /// from German +6 (has P5). Both carry SharpThirteenth when TPC data is present.
     bool naturalFifthPresent = false;
     ChordQuality quality = ChordQuality::Unknown;
+    int tiePriority = -1;     ///< Template index (E2c: used by applyHarmonicFunction
+                              ///< to match snapshot cells back to result candidates).
     uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
 
     /// True when the bass note is a structural pedal point: it is not a chord
@@ -486,6 +488,12 @@ struct ChordAnalyzerPreferences {
     /// Set to a non-null pointer to receive a full scoring snapshot for E2c.
     /// When null (default), no snapshot is allocated and the hot path is unchanged.
     function::ScoringSnapshot* captureScoringSnapshot { nullptr };
+
+    /// When true, the three progression signals (rootContinuityBonus, w_seq, w_dim)
+    /// return 0 inside analyzeChord(). applyHarmonicFunction() re-applies them via
+    /// the ScoringSnapshot. captureScoringSnapshot must be set alongside this flag.
+    /// Default false — hot path unchanged.
+    bool suppressProgressionSignals { false };
 
     // ── Style prior (future — not yet implemented) ───────────────────────────
     // TODO: expose as a user preference.  Affects chord-frequency priors and

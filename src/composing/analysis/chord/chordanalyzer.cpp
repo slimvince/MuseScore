@@ -1478,8 +1478,10 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
 
     if (context) {
         // Root-continuity: prefer keeping the same root across successive chords.
-        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
-                                         prefs.rootContinuityBonus);
+        if (!prefs.suppressProgressionSignals) {
+            score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
+                                             prefs.rootContinuityBonus);
+        }
 
         // Contextual inversion bonuses — §4.1b
         // Accumulated into a local variable so the total can be capped before
@@ -1659,8 +1661,10 @@ double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
         // bass with held upper voices).  Do not attempt a density-based or
         // inversion-aware gate here without first reading the Iter 98 dead-end
         // section in COWORK_HANDOFF.md.  See docs/scoring_model.md §4.
-        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
-                                         prefs.rootContinuityBonus);
+        if (!prefs.suppressProgressionSignals) {
+            score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
+                                             prefs.rootContinuityBonus);
+        }
 
         // Quality-guided resolution bias: reward candidates at the typical
         // resolution target of the previous chord's quality.
@@ -1791,6 +1795,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             jointScoringEnabled = true;
             break;
         }
+    }
+    if (prefs.captureScoringSnapshot) {
+        prefs.captureScoringSnapshot->jointScoringEnabled = jointScoringEnabled;
     }
 
     struct BassCandidate {
@@ -2233,6 +2240,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // paths untouched.  Requires context->nextRootPc >= 0 (populated by the
     // bridge / batch_analyze look-ahead).
     auto wSeqBonus = [&](int candRootPc) -> double {
+        if (prefs.suppressProgressionSignals) return 0.0;
         return fn::wSeqBonus(candRootPc,
                              context ? context->nextRootPc : -1,
                              distinctPcs,
@@ -2251,6 +2259,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // Same gating as w_seq.  Reuses context->nextRootPc plumbing (Iter 95
     // Steps 1 & 2 — populated on both batch and bridge paths).
     auto wDimBonus = [&](int candRootPc, ChordQuality quality) -> double {
+        if (prefs.suppressProgressionSignals) return 0.0;
         return fn::wDimBonus(candRootPc, quality,
                              context ? context->nextRootPc : -1,
                              distinctPcs,
@@ -2392,6 +2401,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     if (prefs.captureScoringSnapshot) {
                         fn::ScoringCell cell;
                         cell.bassPc           = candBassPc;
+                        cell.bassTpc          = bassCandidates[bi].tpc;
                         cell.rootPc           = rootPc;
                         cell.tiePriority      = static_cast<int>(tplIdx);
                         cell.quality          = tpl.quality;
@@ -2640,6 +2650,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                           && (pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
                                               > prefs.extensionThreshold);
         r.identity.quality              = quality;
+        r.identity.tiePriority          = static_cast<int>(rc.tiePriority);
         if (ext.hasMinorSeventh)      setExtension(r.identity.extensions, Extension::MinorSeventh);
         if (ext.hasMajorSeventh)      setExtension(r.identity.extensions, Extension::MajorSeventh);
         if (ext.hasDiminishedSeventh) setExtension(r.identity.extensions, Extension::DiminishedSeventh);
@@ -2668,11 +2679,13 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     results.reserve(3);
 
     for (const RawCandidate& rc : rawCandidates) {
-        if (results.size() >= 3) {
-            break;
-        }
-        if (rc.score < threshold) {
-            break;
+        if (!prefs.suppressProgressionSignals) {
+            if (results.size() >= 3) {
+                break;
+            }
+            if (rc.score < threshold) {
+                break;
+            }
         }
         results.push_back(buildResult(rc));
     }
@@ -2694,7 +2707,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //   (a) the winner is a bass-root candidate (rootPc == bassPc), AND
     //   (b) no different-rootPc candidate already made it into results[].
     // It is a no-op for all other cases.
-    if (!results.empty()
+    if (!prefs.suppressProgressionSignals
+        && !results.empty()
         && bassPc >= 0
         && prefs.inversionSuspicionMargin > 0.0
         && results.front().identity.rootPc == static_cast<int>(bassPc))
