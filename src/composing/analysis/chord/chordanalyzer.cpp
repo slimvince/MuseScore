@@ -1649,6 +1649,14 @@ double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
 
     if (context) {
         // Root-continuity: prefer keeping the same root across successive chords.
+        //
+        // KNOWN DEAD END (Iter 98, 2026-05-23): suppressing this bonus when the
+        // predecessor region has distinctPcs <= 2 was tried in two variants and
+        // both regressed mozart_k280-1 IV→V65 in Alberti-bass contexts.  The
+        // signal is load-bearing for legitimate sparse continuity (broken-chord
+        // bass with held upper voices).  Do not attempt a density-based or
+        // inversion-aware gate here without first reading the Iter 98 dead-end
+        // section in COWORK_HANDOFF.md.  See docs/scoring_model.md §4.
         if (context->previousRootPc == rootPc) {
             score += prefs.rootContinuityBonus;
         }
@@ -1952,6 +1960,14 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //
     //   dom7b5 {root,M3,b5,m7} covers Lydian-dominant chords (C7#11 = C E F# Bb).
     //   TPC delta +6 = augmented 4th (F# from C, clockwise six steps on circle of fifths).
+    //
+    // 17 templates: see docs/scoring_model.md §2 for the full list.
+    // When adding a template: update BOTH TemplateDef arrays (this one AND
+    // kDiagTemplates in diagnoseChord ~L3381) AND all three score matrices
+    // (basisIndepMatrix, complexityFactorMatrix, augFactorMatrix — ~L2014–L2016)
+    // atomically.  Missing the score matrices causes a silent stack-buffer
+    // overrun (caught in B1 attempt 2026-06-04 — no compile error, just garbage
+    // cells).
     static const std::array<TemplateDef, 17> templates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },  // maj7
@@ -2011,6 +2027,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // global best (rootPc, templateIdx, bassPc) triple.  The winning bass
     // becomes the working bass for downstream result-building, post-ranking
     // inversion correction and pedal detection.
+    // The three score matrices below must stay in sync with the TemplateDef
+    // arrays above (same column count, currently 17).  Stack-buffer overrun
+    // if mismatched — silent at compile time.  See docs/scoring_model.md §3.
     std::array<std::array<double, 17>, 12> basisIndepMatrix{};
     std::array<std::array<double, 17>, 12> complexityFactorMatrix{};
     std::array<std::array<double, 17>, 12> augFactorMatrix{};
@@ -2020,9 +2039,16 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
             // B2 guard: the 4-tone Augmented (aug7) template requires BOTH the major
             // third (rootPc+4) AND the augmented fifth (rootPc+8) to be present above
-            // extensionThreshold. This prevents the template from out-scoring a
-            // complete major triad on partial matches where only root+M3+m7 are
-            // present (aug5 absent).
+            // extensionThreshold.  The `||` (skip if EITHER is absent) means BOTH
+            // must be present for the template to score.
+            //
+            // M3-only relaxation has been tried and reverted (2026-06-05).  Using
+            // `&&` instead of `||` lets the aug7 template over-fire on complete
+            // major triads containing a minor seventh: with only root+M3+m7 present,
+            // the large aug5 score offset (+8) still inflates the partial-match
+            // score above a complete major triad.  Schumann D-major and Corelli
+            // G-major snapshots flipped to aug7 under the relaxed guard.  The dual
+            // `||` is load-bearing — see docs/scoring_model.md §4.
             if (tpl.quality == ChordQuality::Augmented
                 && tpl.intervals.size() == 4
                 && (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] <= prefs.extensionThreshold
@@ -2030,6 +2056,16 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 continue;
             }
 
+            // dim7CharacteristicBonus is a ROTATION-SELECTION MECHANISM — not just a
+            // score offset.  All four enharmonic rotations of a dim7 chord share the
+            // same PC set (C°7 = Eb°7 = Gb°7 = A°7).  The non-diatonic check on the
+            // bb7 PC inside the helper asymmetrically rewards the correct enharmonic
+            // root: the bb7 of the "true" rotation is non-diatonic in the current key,
+            // while the bb7 of the three spurious rotations is diatonic (coincides
+            // with a scale tone) and gets no bonus.
+            // DO NOT suppress or bypass this bonus without replacing this rotation-
+            // selection function.  Suppressing it breaks 6 Jazz catalog dim7 entries
+            // (B3 attempt 2026-06-05).  See docs/scoring_model.md §4.
             basisIndepMatrix[rootPc][tplIdx] =
                 scoreTemplateTones(tpl, rootPc, pcWeight)
                 + scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc)
@@ -2154,6 +2190,15 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     auto isSemitoneOrToneStep = [](int interval) {
         return interval == 1 || interval == 2 || interval == 10 || interval == 11;
     };
+    // explorationMode is set true by greedyExpandSegmentation for internal
+    // boundary-exploration calls (Round 1 head/tail synthesis + Round 2 region
+    // scoring in harmonicsegmenter.cpp::fillGap).  Bonuses that depend on
+    // neighbouring context (step motion, sequence, leading-tone dim7) must be
+    // suppressed in these calls — otherwise they bias sub-region bass selection
+    // DURING segmentation, before the final per-region scoring pass runs.
+    // Iter 94 caught this as a regression while developing the step bonuses.
+    // The lambdas below (wStepInBonus, wStepOutBonus, wSeqBonus, wDimBonus)
+    // all share this gate.  See docs/scoring_model.md §4 — "explorationMode".
     auto wStepInBonus = [&](int candBassPc, int rootPc) -> double {
         if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
         if (candBassPc != rootPc) return 0.0;
@@ -2210,6 +2255,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
         if (context->nextRootPc < 0) return 0.0;
         if (quality != ChordQuality::Diminished && quality != ChordQuality::HalfDiminished) return 0.0;
+        // distinctPcs >= 4 is intentional: 3-PC sparse dim regions must not
+        // flip via this bonus.  The bonus is a rotation-correction signal
+        // (leading-tone dim7 should resolve upward), not a quality-flip signal.
+        // Removing this gate caused quality flips in 3-PC contexts during Iter 96
+        // testing.  See docs/scoring_model.md §4.
         if (distinctPcs < 4) return 0.0;
         const int delta = ((context->nextRootPc - candRootPc) % 12 + 12) % 12;
         return (delta == 1) ? kWDim : 0.0;
@@ -2641,9 +2691,20 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         && results.size() >= 2
         && distinctPcs >= 3)
     {
+        // CAPTURE BEFORE stable_sort — Sub-9a bug (fixed in Gate G-E by commit
+        // f3e0f5f72c).  winner is a live reference to results[0].  The
+        // stable_sort below may promote Am7b5/C (rootPc=9) to results[0], making
+        // winner.identity.rootPc=9.  Gate G-E uses originalWinnerRootPc to
+        // compute gExpectedAltRoot — if it read winner.identity.rootPc after the
+        // sort it would compute the wrong leading tone (e.g. (9+9)%12=6 instead
+        // of (0+9)%12=9) and pull in a spurious candidate (the dormant F#m7b5
+        // case).  Capture all three originalWinner* fields here for any gate
+        // that needs the pre-correction winner.  See docs/scoring_model.md §7.
+        //
         // Live reference — winner tracks results[0] through any swap or re-sort.
-        // Use originalWinnerQuality and originalWinnerHasAddedSixth (captured
-        // below) when you need the pre-swap state in gates that run after A–F.
+        // Use originalWinnerQuality, originalWinnerRootPc, and
+        // originalWinnerHasAddedSixth (captured below) when you need the
+        // pre-swap state in gates that run after A–F.
         const ChordAnalysisResult& winner = results[0];
         const ChordQuality originalWinnerQuality = winner.identity.quality;
         const int originalWinnerRootPc = winner.identity.rootPc;
@@ -3378,6 +3439,13 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     if (distinctPcs < 3) { return diag; }
 
     // ── Templates (same ordering as analyzeChord) ────────────────────────────
+    //
+    // 17 templates: must remain byte-identical to the analyzeChord array (~L1955).
+    // diagnoseChord intentionally omits the production guards (B2 aug7 dual
+    // guard, etc.) so every cell appears in the diagnostic breakdown — guards
+    // are production-only.  See docs/scoring_model.md §2.
+    // When adding a template: update both this array AND the analyzeChord
+    // array AND all three score matrices in analyzeChord atomically.
     static const std::array<TemplateDef, 17> kDiagTemplates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },
@@ -3423,6 +3491,10 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
             const double nonBassAdj = nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
             const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold);
             const double tpcBonus   = tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
+            // dim7CharacteristicBonus is a ROTATION-SELECTION MECHANISM — see the
+            // matching annotation at the analyzeChord call site (~L2036) and
+            // docs/scoring_model.md §4.  Mirrored here so diagnostic output reflects
+            // the same scoring component.
             const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
 
             double diatonicBonus = 0.0;
