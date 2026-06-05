@@ -605,13 +605,14 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
     // catalog annotation encodes information the analyzer cannot derive from pitches.
     //   m60  Cm9b5: analyzer returns Cm7b5 — 9th extension not tracked separately.
     //   m164 C7alt: informal alt label; analyzer returns the specific alteration spelling.
-    //   m285 CTristan: non-standard pitch set, no matching template.
+    //   m285 D7#5/C: removed from exceptions — B2 template gives a correct match.
+    //   m286 Tristan: rest measure used for chords.xml suffix coverage only; no analysis.
     //   m316 CMaj7#9: abstract detection correct; symbol formatter does not yet emit #9 suffix.
     //   m329 Cm7b9: abstract detection correct; symbol formatter does not yet emit b9 suffix.
     //   m333 CPhryg: modal label for Cm11 — Phrygian flat-2 is not a chord quality.
     //   m340 Csus#4: catalog Roman numeral is "I" (tonic, no quality suffix);
     //        analyzer correctly returns "Isus4" — annotation style difference.
-    static const std::set<int> kJazzSymbolExceptions = { 60, 164, 285, 316, 329, 333, 340 };
+    static const std::set<int> kJazzSymbolExceptions = { 60, 164, 316, 329, 333, 340 };
 
     // Helper: run one catalog through the abstract harmony detection checks.
     auto runCatalog = [&](const QString& fixturePath,

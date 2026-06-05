@@ -1952,7 +1952,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //
     //   dom7b5 {root,M3,b5,m7} covers Lydian-dominant chords (C7#11 = C E F# Bb).
     //   TPC delta +6 = augmented 4th (F# from C, clockwise six steps on circle of fifths).
-    static const std::array<TemplateDef, 16> templates = {{
+    static const std::array<TemplateDef, 17> templates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },  // maj7
         { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },  // dom7
@@ -1963,6 +1963,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         { ChordQuality::Suspended4,     { 0, 5, 6, 10 },    { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)
         { ChordQuality::HalfDiminished, { 0, 3, 6, 10 },    { 0, -3, -6, -2 }   },
         { ChordQuality::Augmented,      { 0, 4, 8 },        { 0, +4, +8 }       },
+        { ChordQuality::Augmented,      { 0, 4, 8, 10 },    { 0, +4, +8, -2 }   },  // aug7 (C7♯5)
         { ChordQuality::Suspended2,     { 0, 2, 7 },        { 0, +2, +1 }       },
         { ChordQuality::Suspended4,     { 0, 5, 7, 10 },    { 0, -1, +1, -2 }   },
         { ChordQuality::Suspended4,     { 0, 5, 7, 11 },    { 0, -1, +1, +5 }   },  // sus4+maj7
@@ -2010,12 +2011,24 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // global best (rootPc, templateIdx, bassPc) triple.  The winning bass
     // becomes the working bass for downstream result-building, post-ranking
     // inversion correction and pedal detection.
-    std::array<std::array<double, 16>, 12> basisIndepMatrix{};
-    std::array<std::array<double, 16>, 12> complexityFactorMatrix{};
-    std::array<std::array<double, 16>, 12> augFactorMatrix{};
+    std::array<std::array<double, 17>, 12> basisIndepMatrix{};
+    std::array<std::array<double, 17>, 12> complexityFactorMatrix{};
+    std::array<std::array<double, 17>, 12> augFactorMatrix{};
     for (int rootPc = 0; rootPc < 12; ++rootPc) {
         for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
             const TemplateDef& tpl = templates[tplIdx];
+
+            // B2 guard: the 4-tone Augmented (aug7) template requires BOTH the major
+            // third (rootPc+4) AND the augmented fifth (rootPc+8) to be present above
+            // extensionThreshold. This prevents the template from out-scoring a
+            // complete major triad on partial matches where only root+M3+m7 are
+            // present (aug5 absent).
+            if (tpl.quality == ChordQuality::Augmented
+                && tpl.intervals.size() == 4
+                && (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] <= prefs.extensionThreshold
+                    || pcWeight[static_cast<size_t>((rootPc + 8) % 12)] <= prefs.extensionThreshold)) {
+                continue;
+            }
 
             basisIndepMatrix[rootPc][tplIdx] =
                 scoreTemplateTones(tpl, rootPc, pcWeight)
@@ -3365,7 +3378,7 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     if (distinctPcs < 3) { return diag; }
 
     // ── Templates (same ordering as analyzeChord) ────────────────────────────
-    static const std::array<TemplateDef, 16> kDiagTemplates = {{
+    static const std::array<TemplateDef, 17> kDiagTemplates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },
         { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },
@@ -3376,6 +3389,7 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
         { ChordQuality::Suspended4,     { 0, 5, 6, 10 },    { 0, -1, -6, -2 }   },
         { ChordQuality::HalfDiminished, { 0, 3, 6, 10 },    { 0, -3, -6, -2 }   },
         { ChordQuality::Augmented,      { 0, 4, 8 },        { 0, +4, +8 }       },
+        { ChordQuality::Augmented,      { 0, 4, 8, 10 },    { 0, +4, +8, -2 }   },  // aug7 (C7♯5)
         { ChordQuality::Suspended2,     { 0, 2, 7 },        { 0, +2, +1 }       },
         { ChordQuality::Suspended4,     { 0, 5, 7, 10 },    { 0, -1, +1, -2 }   },
         { ChordQuality::Suspended4,     { 0, 5, 7, 11 },    { 0, -1, +1, +5 }   },
