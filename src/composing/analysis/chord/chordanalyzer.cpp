@@ -2275,6 +2275,16 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //            our bass.  Otherwise the step bonus would tip a fragile
     //            m6 root-position reading over an equally viable
     //            first-inversion m7-family reading on identical pitch evidence.
+
+    // E2b — pre-allocate snapshot cubes to avoid repeated reallocations.
+    if (prefs.captureScoringSnapshot) {
+        const int nCells = static_cast<int>(bassCandidates.size()) * 12 * static_cast<int>(templates.size());
+        prefs.captureScoringSnapshot->cellsWithWDim.clear();
+        prefs.captureScoringSnapshot->cellsWithoutWDim.clear();
+        prefs.captureScoringSnapshot->cellsWithWDim.reserve(nCells);
+        prefs.captureScoringSnapshot->cellsWithoutWDim.reserve(nCells);
+    }
+
     std::vector<RawCandidate> rawCandidates;
     rawCandidates.reserve(12 * templates.size());
     {
@@ -2371,11 +2381,36 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     double scoreNoWDim = basisIndepMatrix[rootPc][tplIdx] + basisDep;
                     scoreNoWDim *= complexityFactorMatrix[rootPc][tplIdx];
                     scoreNoWDim *= augFactorMatrix[rootPc][tplIdx];
-                    scoreNoWDim += wCompleteBonus(tpl, rootPc, candBassPc);
-                    scoreNoWDim += wSeqBonus(rootPc);
+                    const double wCompleteBonusVal = wCompleteBonus(tpl, rootPc, candBassPc);
+                    const double wSeqBonusVal      = wSeqBonus(rootPc);
+                    scoreNoWDim += wCompleteBonusVal;
+                    scoreNoWDim += wSeqBonusVal;
 
                     const double wDimDelta = wDimBonus(rootPc, tpl.quality);
                     const double scoreWith = scoreNoWDim + wDimDelta;
+
+                    if (prefs.captureScoringSnapshot) {
+                        fn::ScoringCell cell;
+                        cell.bassPc           = candBassPc;
+                        cell.rootPc           = rootPc;
+                        cell.tiePriority      = static_cast<int>(tplIdx);
+                        cell.quality          = tpl.quality;
+                        cell.basisIndep       = basisIndepMatrix[rootPc][tplIdx];
+                        cell.basisDep         = basisDep;
+                        cell.complexityFactor = complexityFactorMatrix[rootPc][tplIdx];
+                        cell.augFactor        = augFactorMatrix[rootPc][tplIdx];
+                        cell.wCompleteBonus   = wCompleteBonusVal;
+                        cell.wSeqBonus        = wSeqBonusVal;
+                        cell.appliedBassBonus = bassBonus;
+
+                        // Without-wDim cell: wDimDelta is always 0.
+                        cell.wDimDelta = 0.0;
+                        prefs.captureScoringSnapshot->cellsWithoutWDim.push_back(cell);
+
+                        // With-wDim cell: same except wDimDelta.
+                        cell.wDimDelta = wDimDelta;
+                        prefs.captureScoringSnapshot->cellsWithWDim.push_back(cell);
+                    }
 
                     perBassWith.push_back({ scoreWith, bassBonus, rootPc, tpl.quality,
                                             static_cast<int>(tplIdx), wDimDelta });
@@ -2443,6 +2478,17 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         if (!bassCandidates.empty()) {
             bassPc  = bassCandidates[winnerIdx].pc;
             bassTpc = bassCandidates[winnerIdx].tpc;
+        }
+
+        if (prefs.captureScoringSnapshot) {
+            prefs.captureScoringSnapshot->distinctPcs        = distinctPcs;
+            prefs.captureScoringSnapshot->acceptedWithWDim   = acceptPostBonus;
+            prefs.captureScoringSnapshot->chosenBassPc
+                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdx].pc;
+            prefs.captureScoringSnapshot->winnerBassPcWith
+                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdxWith].pc;
+            prefs.captureScoringSnapshot->winnerBassPcWithout
+                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdxWithout].pc;
         }
     }
 

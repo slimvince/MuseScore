@@ -33,6 +33,12 @@
 #include "analysisutils.h"
 #include "../key/keymodeanalyzer.h"
 
+// Forward declaration — avoids a circular include with harmonicfunctionlayer.h
+// (which itself includes this header). Full definition is in harmonicfunctionlayer.h.
+namespace mu::composing::function {
+struct ScoringSnapshot;
+} // namespace mu::composing::function
+
 namespace mu::composing::analysis {
 
 enum class ChordQuality {
@@ -474,6 +480,12 @@ struct ChordAnalyzerPreferences {
 
     /// Use Nashville-number annotations written in the score as prior context.
     bool useNashvilleAnnotations = false;       // TODO: implement
+
+    // ── Scoring snapshot (E2b) ───────────────────────────────────────────────
+
+    /// Set to a non-null pointer to receive a full scoring snapshot for E2c.
+    /// When null (default), no snapshot is allocated and the hot path is unchanged.
+    function::ScoringSnapshot* captureScoringSnapshot { nullptr };
 
     // ── Style prior (future — not yet implemented) ───────────────────────────
     // TODO: expose as a user preference.  Affects chord-frequency priors and

@@ -34,6 +34,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "composing/analysis/chord/chordanalyzer.h"
 
 namespace mu::composing::function {
@@ -82,5 +84,72 @@ double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
 double wDimBonus(int candRootPc, analysis::ChordQuality quality,
                  int nextRootPc, int distinctPcs,
                  bool jointScoringEnabled, bool explorationMode);
+
+// -----------------------------------------------------------------------
+// Scoring snapshot (E2b) — captured by analyzeChord() when
+// prefs.captureScoringSnapshot is non-null. Consumed by applyHarmonicFunction()
+// in E2c to redo joint scoring with progression signals suppressed.
+// -----------------------------------------------------------------------
+
+/// One (bass, root, template) scoring cell, pre-step-bonus.
+/// E2c uses the decomposed fields to rebuild the score with any subset of
+/// {rootContinuityBonus, w_seq, w_dim} suppressed and then re-runs Pass B.
+struct ScoringCell {
+    // Identifiers — locate the cell in the (bass, root, template) cube.
+    int                    bassPc;
+    int                    rootPc;
+    int                    tiePriority;        ///< Template index; needed by E2c for
+                                               ///< the Pass B m7-family guard look-up.
+    analysis::ChordQuality quality;
+
+    // Bass-independent pitch evidence (basisIndepMatrix[rootPc][tiePriority]).
+    // INCLUDES the rootContinuityBonus contribution (if it fired for this rootPc).
+    // E2c deducts:
+    //   fn::rootContinuityBonus(rootPc, ctx.previousRootPc, prefs.rootContinuityBonus)
+    // before re-multiplying, because that bonus is folded into basisIndep and
+    // thus scaled by complexityFactor × augFactor (simple score subtraction is wrong).
+    double basisIndep;
+
+    double basisDep;            ///< Bass-dependent delta.
+    double complexityFactor;    ///< complexityFactorMatrix[rootPc][tiePriority].
+    double augFactor;           ///< augFactorMatrix[rootPc][tiePriority].
+
+    // Additive terms (applied AFTER the cf × af multiplication).
+    // Simple addition/subtraction by E2c is correct for all of these.
+    double wCompleteBonus;      ///< 0 or kWComplete.
+    double wSeqBonus;           ///< Identical across both cubes (neutral w.r.t. wDim).
+    double wDimDelta;           ///< 0 in cellsWithoutWDim; >= 0 in cellsWithWDim.
+
+    // Bass bonus, used for threshold de-inflation: threshold = (bestScore -
+    // appliedBassBonus) * kScoreThresholdRatio. Must match what the scorer used.
+    double appliedBassBonus;
+};
+
+/// Full per-region scoring snapshot. Populated inside analyzeChord() when
+/// prefs.captureScoringSnapshot != nullptr. Contains nothing that is not
+/// already computable from the analyzeChord() inputs; it exists only so E2c
+/// does not have to re-run the full pitch scorer.
+struct ScoringSnapshot {
+    /// Scoring cubes for both the with-wDim and without-wDim variants.
+    /// Layout: cells are stored in (bass, root, template) order — bass is the
+    /// outer dimension (index bi), rootPc the middle (0..11), tiePriority the
+    /// inner (0..N_templates-1). Total cells per cube:
+    ///   bassCandidates.size() x 12 x N_templates  (typically <= 4 x 12 x 17 = 816).
+    /// The two cubes share all fields except wDimDelta; they also share wSeqBonus
+    /// (it is added before wDimDelta and is therefore identical in both variants).
+    /// Pass B (step bonuses) is NOT reflected here — cells hold pre-step scores.
+    /// E2c must re-run Pass B after re-scoring.
+    std::vector<ScoringCell> cellsWithWDim;
+    std::vector<ScoringCell> cellsWithoutWDim;
+
+    /// Scorer's actual decisions (useful for E2c cross-check and debugging).
+    int  chosenBassPc        { -1 };  ///< bassCandidates[winnerIdx].pc after quality guard
+    bool acceptedWithWDim    { false }; ///< true iff the with-wDim variant was accepted
+    int  winnerBassPcWith    { -1 };  ///< bass chosen by the with-wDim variant
+    int  winnerBassPcWithout { -1 };  ///< bass chosen by the without-wDim variant
+
+    /// Needed by E2c for w_seq / w_dim gate conditions.
+    int  distinctPcs         { 0 };
+};
 
 } // namespace mu::composing::function
