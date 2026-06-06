@@ -818,9 +818,20 @@ analyzeSection(const mu::engraving::Score* sc,
         inferredRegion.keyModeResult = contextRegion.keyModeResult;
         inferredRegion.tones = gapTones;
 
-        const auto results = chordAnalyzer->analyzeChord(gapTones,
-                                                         contextRegion.keyModeResult.keySignatureFifths,
-                                                         contextRegion.keyModeResult.mode);
+        mu::composing::analysis::PostScoringGateContext gapGateCtx;
+        auto results = chordAnalyzer->analyzeChord(gapTones,
+                                                   contextRegion.keyModeResult.keySignatureFifths,
+                                                   contextRegion.keyModeResult.mode,
+                                                   nullptr,
+                                                   mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                                                   &gapGateCtx);
+        if (!results.empty()) {
+            mu::composing::analysis::applyPostScoringGates(
+                results,
+                mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                nullptr,
+                gapGateCtx);
+        }
         if (!results.empty()) {
             inferredRegion.chordResult = results.front();
             if (results.size() > 1) {

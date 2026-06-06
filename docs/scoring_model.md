@@ -374,6 +374,18 @@ inversion-alternative is appended. They modify ranking via `std::swap` and
 `std::stable_sort` — they do not change the underlying scores in
 `rawCandidates`.
 
+**E3 (2026-06-06): execution location.** Gates A–L are implemented in
+`applyPostScoringGates()` (declared in `chordanalyzer.h`, defined in
+`chordanalyzer.cpp`). `analyzeChord()` no longer runs them internally; instead
+it publishes the inputs the gates need (`pcWeight`, `tpcForPc`, `scale`,
+`keyTonicPc`, `keyMode`, `bassPc`, `bassTpc`, `distinctPcs`, `threshold`,
+`rawCandidates`) via the optional `PostScoringGateContext* gateCtxOut`
+out-parameter. Production call sites in `regionanalyzer.cpp` (Pass 1, Pass 2,
+Pass 2b), `harmonicsegmenter.cpp`, the notation bridges, and `inferNextRootPc()`
+call `applyPostScoringGates()` *after* `applyHarmonicFunction()`. Tests use the
+`analyzeWithGates()` helper in `test_helpers.h`. The line numbers in the table
+below reference the corresponding code inside `applyPostScoringGates()`.
+
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | ~L2639 | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
@@ -559,10 +571,23 @@ Pass 1 (~L444+refinement), Pass 2 (~L637+refinement), Pass 2b (~L814+refinement)
 - `w_seq` (currently in main scoring loop)
 - `w_dim` (currently in main scoring loop)
 
-**E3 (planned):** Post-scoring gates migrate out of `analyzeChord()`:
-- Gate J (vii°→V7 completion)
-- Gates A–D (Minor-add6 ↔ HalfDim7 enharmonic)
-- `dim7CharacteristicBonus` rotation selection
+**E3 (done, 2026-06-06):** Post-scoring gates A–L extracted from `analyzeChord()`
+into `applyPostScoringGates()` (`chordanalyzer.cpp`). The new execution order at
+every production call site is:
+
+```
+analyzeChord()              → pre-gate raw scoring + PostScoringGateContext out-param
+applyHarmonicFunction()     → function-layer winner selection
+applyPostScoringGates()     → identity corrections on the function-layer winner
+[refinements]               → as moved in E2c
+```
+
+The function layer is still a no-op (E1), so the rearrangement is byte-identical
+to the prior behavior. Once E2d-enable lands, the function layer will supply the
+winner that the gates then correct — unblocking the gate-reversion failures
+identified in E2c (Pass B step bonus, cross-bass cell promotion). The
+bwv806_gigue Sus→Major case still needs verification during the E2d-enable v2
+attempt.
 
 **E4 (planned):** Cadence detection, tonic confirmation, functional label
 completeness (secondary dominants, borrowed chords, augmented sixths).
@@ -577,5 +602,5 @@ architectural home for these terms.
 
 ---
 
-*Last updated: 2026-06-05 — E1 harmonic function layer shell added
-(pass-through, zero behavioral change); §10 added.*
+*Last updated: 2026-06-06 — E3 extracted `applyPostScoringGates()` from
+`analyzeChord()`. §6 + §10 updated.*

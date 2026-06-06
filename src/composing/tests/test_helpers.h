@@ -102,6 +102,28 @@ inline ChordAnalysisResult makeRomanResult(int degree, ChordQuality quality,
     return r;
 }
 
+// ── analyzeChord + applyPostScoringGates convenience wrapper ──────────────────
+//
+// Tests assert on post-gate identity (rootPc, quality, extensions). After E3,
+// analyzeChord() returns pre-gate results; gates must be applied separately.
+// Call this everywhere a test used to call analyzer.analyzeChord(...).
+inline std::vector<ChordAnalysisResult> analyzeWithGates(
+    const IChordAnalyzer& analyzer,
+    const std::vector<ChordAnalysisTone>& tones,
+    int keySignatureFifths,
+    KeySigMode keyMode,
+    const ChordTemporalContext* context = nullptr,
+    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences)
+{
+    PostScoringGateContext gateCtx;
+    auto results = analyzer.analyzeChord(tones, keySignatureFifths, keyMode,
+                                         context, prefs, &gateCtx);
+    if (!results.empty()) {
+        applyPostScoringGates(results, prefs, context, gateCtx);
+    }
+    return results;
+}
+
 inline const ChordAnalysisResult* findCandidate(const std::vector<ChordAnalysisResult>& results,
                                                 int rootPc,
                                                 ChordQuality quality,

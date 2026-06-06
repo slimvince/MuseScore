@@ -52,7 +52,7 @@ ChordAnalysisResult best(const std::vector<ChordAnalysisTone>& t,
                          int keyFifths = 0,
                          KeySigMode mode = KeySigMode::Ionian)
 {
-    auto results = kAnalyzer.analyzeChord(t, keyFifths, mode);
+    auto results = analyzeWithGates(kAnalyzer, t, keyFifths, mode);
     EXPECT_FALSE(results.empty()) << "analyzeChord returned no candidates";
     if (results.empty()) {
         return {};
@@ -421,7 +421,7 @@ TEST_P(P6_RoundTrip, AnalysisAndFormatAreConsistent)
 {
     const auto& c = GetParam();
     const auto t = tonesFromRange(c.pitches);
-    const auto results = kAnalyzer.analyzeChord(t, c.keyFifths, c.keyMode);
+    const auto results = analyzeWithGates(kAnalyzer, t, c.keyFifths, c.keyMode);
 
     ASSERT_FALSE(results.empty()) << c.description << ": no candidates";
 
@@ -511,8 +511,8 @@ TEST(P6_FactoryRoundTrip, FactoryResultMatchesDirectAnalyzer)
             t.push_back(tone);
             first = false;
         }
-        const auto directResults  = kAnalyzer.analyzeChord(t, 0, KeySigMode::Ionian);
-        const auto factoryResults = factoryAnalyzer->analyzeChord(t, 0, KeySigMode::Ionian);
+        const auto directResults  = analyzeWithGates(kAnalyzer, t, 0, KeySigMode::Ionian);
+        const auto factoryResults = analyzeWithGates(*factoryAnalyzer, t, 0, KeySigMode::Ionian);
 
         ASSERT_EQ(directResults.size(), factoryResults.size())
             << "Candidate count mismatch for chord with root pc "
@@ -554,7 +554,7 @@ TEST(P6_RegionalAccumulation, AnalyzerToleratesZeroNewFields)
     g.pitch = 67; g.weight = 1.0; g.isBass = false;
     // durationInRegion, distinctMetricPositions, simultaneousVoiceCount all 0.
 
-    const auto results = kAnalyzer.analyzeChord({ c, e, g }, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, { c, e, g }, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 0);     // C
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -575,7 +575,7 @@ TEST(P6_RegionalAccumulation, WeightedTonesSteerRoot)
     // With the default bassNoteRootBonus=0.65, G root gets 0.65 bonus.
     // C major evidence: 0.35+0.35+0.25+0.25 = ~1.0 base (simplified).
     // This test just verifies the analyzer runs without crashing and returns results.
-    const auto results = kAnalyzer.analyzeChord({ g_bass, c, e, g }, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, { g_bass, c, e, g }, 0, KeySigMode::Ionian);
     EXPECT_FALSE(results.empty());
     // Top candidate is either C or G — don't assert which, just that it's valid.
     if (!results.empty()) {

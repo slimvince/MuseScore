@@ -89,7 +89,7 @@ std::vector<ChordAnalysisTone> weightedTones(std::initializer_list<std::pair<int
 
 TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
 {
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "C");
@@ -98,7 +98,7 @@ TEST(Composing_ChordAnalyzerTests, DetectsMajorTriadInCMajor)
 
 TEST(Composing_ChordAnalyzerTests, DetectsMinorTriadInCMinor)
 {
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 67 }), -3, KeySigMode::Aeolian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 63, 67 }), -3, KeySigMode::Aeolian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -3), "Cm");
@@ -107,7 +107,7 @@ TEST(Composing_ChordAnalyzerTests, DetectsMinorTriadInCMinor)
 
 TEST(Composing_ChordAnalyzerTests, DetectsMinorSeventhQuality)
 {
-    const auto results = kAnalyzer.analyzeChord(tones({ 64, 67, 71, 74 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 64, 67, 71, 74 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Em7");
@@ -118,7 +118,7 @@ TEST(Composing_ChordAnalyzerTests, DetectsMinorSeventhQuality)
 TEST(Composing_ChordAnalyzerTests, KeepsFlatBassSpellingInFlatKey)
 {
     // Eb major triad in first inversion: Bb(70) Eb(75) G(79)
-    const auto results = kAnalyzer.analyzeChord(tones({ 70, 75, 79 }), -3, KeySigMode::Aeolian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 70, 75, 79 }), -3, KeySigMode::Aeolian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -3), "Eb/Bb");
@@ -127,7 +127,7 @@ TEST(Composing_ChordAnalyzerTests, KeepsFlatBassSpellingInFlatKey)
 TEST(Composing_ChordAnalyzerTests, DetectsDiminishedSeventh)
 {
     // Fully diminished seventh: B D F Ab = {11, 2, 5, 8}
-    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished);
@@ -138,7 +138,7 @@ TEST(Composing_ChordAnalyzerTests, DetectsDiminishedSeventh)
 TEST(Composing_ChordAnalyzerTests, DetectsHalfDiminished)
 {
     // Half-diminished (m7b5): B D F A = {11, 2, 5, 9}
-    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished);
@@ -149,7 +149,7 @@ TEST(Composing_ChordAnalyzerTests, FullyDiminishedNotMisreadAsHalfDiminished)
 {
     // {B,D,F,Ab}: dim7 interval (9 semitones) distinguishes fully dim from half-dim.
     // Must be Diminished+DiminishedSeventh (B°7), never HalfDiminished (Bø7).
-    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 59, 62, 65, 68 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished)
         << "B,D,F,Ab must be Diminished, not HalfDiminished";
@@ -161,7 +161,7 @@ TEST(Composing_ChordAnalyzerTests, HalfDiminishedNotMisreadAsFullyDiminished)
 {
     // {B,D,F,A}: minor 7th (10 semitones) distinguishes half-dim from fully dim.
     // Must be HalfDiminished (Bø7), never Diminished+DiminishedSeventh (B°7).
-    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 59, 62, 65, 69 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished)
         << "B,D,F,A must be HalfDiminished, not Diminished";
@@ -172,7 +172,7 @@ TEST(Composing_ChordAnalyzerTests, HalfDiminishedNotMisreadAsFullyDiminished)
 TEST(Composing_ChordAnalyzerTests, ReturnsEmptyForFewerThanThreeDistinctPitchClasses)
 {
     // Two-note interval — insufficient for chord analysis.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64 }), 0, KeySigMode::Ionian);
     EXPECT_TRUE(results.empty());
 }
 
@@ -182,9 +182,9 @@ TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesFullTierWhenPerfectFifthPres
     ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
     noBassBonusPrefs.bassNoteRootBonus = 0.0;
 
-    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
+    const auto tiered = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
                                                nullptr, tieredPrefs);
-    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
+    const auto noBass = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian,
                                                nullptr, noBassBonusPrefs);
 
     ASSERT_FALSE(tiered.empty());
@@ -203,9 +203,9 @@ TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesFullTierWhenCandidateHasAlte
     ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
     noBassBonusPrefs.bassNoteRootBonus = 0.0;
 
-    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
+    const auto tiered = analyzeWithGates(kAnalyzer, tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, tieredPrefs);
-    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
+    const auto noBass = analyzeWithGates(kAnalyzer, tones({ 60, 64, 68, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, noBassBonusPrefs);
 
     ASSERT_FALSE(tiered.empty());
@@ -224,9 +224,9 @@ TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesThirdOnlyTierWithoutFifth)
     ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
     noBassBonusPrefs.bassNoteRootBonus = 0.0;
 
-    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
+    const auto tiered = analyzeWithGates(kAnalyzer, tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, tieredPrefs);
-    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
+    const auto noBass = analyzeWithGates(kAnalyzer, tones({ 60, 64, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, noBassBonusPrefs);
 
     ASSERT_FALSE(tiered.empty());
@@ -245,9 +245,9 @@ TEST(Composing_ChordAnalyzerTests, BassRootBonusUsesAloneTierWithoutThirdOrFifth
     ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
     noBassBonusPrefs.bassNoteRootBonus = 0.0;
 
-    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
+    const auto tiered = analyzeWithGates(kAnalyzer, tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, tieredPrefs);
-    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
+    const auto noBass = analyzeWithGates(kAnalyzer, tones({ 60, 65, 70 }), 0, KeySigMode::Ionian,
                                                nullptr, noBassBonusPrefs);
 
     ASSERT_FALSE(tiered.empty());
@@ -266,9 +266,9 @@ TEST(Composing_ChordAnalyzerTests, BareSuspensionTriadDoesNotUseFullBassRootTier
     ChordAnalyzerPreferences noBassBonusPrefs = tieredPrefs;
     noBassBonusPrefs.bassNoteRootBonus = 0.0;
 
-    const auto tiered = kAnalyzer.analyzeChord(tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
+    const auto tiered = analyzeWithGates(kAnalyzer, tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
                                                nullptr, tieredPrefs);
-    const auto noBass = kAnalyzer.analyzeChord(tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
+    const auto noBass = analyzeWithGates(kAnalyzer, tones({ 60, 62, 67 }), 0, KeySigMode::Ionian,
                                                nullptr, noBassBonusPrefs);
 
     ASSERT_FALSE(tiered.empty());
@@ -298,14 +298,14 @@ TEST(Composing_ChordAnalyzerTests, BoundsExposeBassRootSupportMultipliers)
 
 TEST(Composing_ChordAnalyzerTests, StepwiseBassEvidenceFavorsCompleteMajorFirstInversionTriad)
 {
-    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
+    const auto withoutCtx = analyzeWithGates(kAnalyzer, tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(withoutCtx.empty());
     const ChordAnalysisResult* withoutCtxCandidate = findCandidate(withoutCtx, 8, ChordQuality::Major);
     ASSERT_NE(withoutCtxCandidate, nullptr);
 
     ChordTemporalContext ctx;
     ctx.bassIsStepwiseFromPrevious = true;
-    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
     const ChordAnalysisResult* withCtxCandidate = findCandidate(withCtx, 8, ChordQuality::Major);
@@ -320,7 +320,7 @@ TEST(Composing_ChordAnalyzerTests, StepwiseBassEvidenceFavorsCompleteMinorFirstI
 {
     ChordTemporalContext ctx;
     ctx.bassIsStepwiseFromPrevious = true;
-    const auto results = kAnalyzer.analyzeChord(tones({ 56, 60, 65 }), 0, KeySigMode::Ionian, &ctx);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 56, 60, 65 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 5);
@@ -330,14 +330,14 @@ TEST(Composing_ChordAnalyzerTests, StepwiseBassEvidenceFavorsCompleteMinorFirstI
 
 TEST(Composing_ChordAnalyzerTests, StepwiseLookaheadFavorsCompleteMajorFirstInversionTriad)
 {
-    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
+    const auto withoutCtx = analyzeWithGates(kAnalyzer, tones({ 60, 63, 68 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(withoutCtx.empty());
     const ChordAnalysisResult* withoutCtxCandidate = findCandidate(withoutCtx, 8, ChordQuality::Major);
     ASSERT_NE(withoutCtxCandidate, nullptr);
 
     ChordTemporalContext ctx;
     ctx.bassIsStepwiseToNext = true;
-    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, tones({ 60, 63, 68 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
     const ChordAnalysisResult* withCtxCandidate = findCandidate(withCtx, 8, ChordQuality::Major);
@@ -363,7 +363,7 @@ TEST(Composing_ChordAnalyzerTests, CorelliWeightedPassingBassPrefersTonicFirstIn
         { 65, -1, 0.066, false },
     };
 
-    const auto results = kAnalyzer.analyzeChord(regionTones, -3, KeySigMode::Aeolian, &ctx);
+    const auto results = analyzeWithGates(kAnalyzer, regionTones, -3, KeySigMode::Aeolian, &ctx);
 
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 0);
@@ -381,7 +381,7 @@ TEST(Composing_ChordAnalyzerTests, CorelliWeightedPassingBassPrefersTonicFirstIn
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_TonicChord)
 {
     // D minor triad in D Dorian → degree 0 (i).
-    const auto results = kAnalyzer.analyzeChord(tones({ 62, 65, 69 }), 0, KeySigMode::Dorian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 62, 65, 69 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 2);    // D
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
@@ -393,7 +393,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_TonicChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_IVChord)
 {
     // G major triad in D Dorian → degree 3 (IV).
-    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Dorian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 67, 71, 74 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 7);    // G
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -404,7 +404,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_DDorian_IVChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_TonicChord)
 {
     // E minor triad in E Phrygian → degree 0 (i).
-    const auto results = kAnalyzer.analyzeChord(tones({ 64, 67, 71 }), 0, KeySigMode::Phrygian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 64, 67, 71 }), 0, KeySigMode::Phrygian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 4);    // E
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
@@ -416,7 +416,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_TonicChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_FlatIIChord)
 {
     // F major triad in E Phrygian → degree 1 (II, the Phrygian bII).
-    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Phrygian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 65, 69, 72 }), 0, KeySigMode::Phrygian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 5);    // F
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -427,7 +427,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_EPhrygian_FlatIIChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_TonicChord)
 {
     // F major triad in F Lydian → degree 0 (I).
-    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Lydian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 65, 69, 72 }), 0, KeySigMode::Lydian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 5);    // F
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -439,7 +439,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_TonicChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_IIChord)
 {
     // G major triad in F Lydian → degree 1 (II).
-    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Lydian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 67, 71, 74 }), 0, KeySigMode::Lydian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 7);    // G
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -450,7 +450,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_FLydian_IIChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_TonicChord)
 {
     // G major triad in G Mixolydian → degree 0 (I).
-    const auto results = kAnalyzer.analyzeChord(tones({ 67, 71, 74 }), 0, KeySigMode::Mixolydian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 67, 71, 74 }), 0, KeySigMode::Mixolydian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 7);    // G
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -462,7 +462,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_TonicChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_FlatVIIChord)
 {
     // F major triad in G Mixolydian → degree 6 (VII, the bVII).
-    const auto results = kAnalyzer.analyzeChord(tones({ 65, 69, 72 }), 0, KeySigMode::Mixolydian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 65, 69, 72 }), 0, KeySigMode::Mixolydian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 5);    // F
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -473,7 +473,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_GMixolydian_FlatVIIChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_TonicChord)
 {
     // B diminished triad in B Locrian → degree 0 (io).
-    const auto results = kAnalyzer.analyzeChord(tones({ 59, 62, 65 }), 0, KeySigMode::Locrian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 59, 62, 65 }), 0, KeySigMode::Locrian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);   // B
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished);
@@ -485,7 +485,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_TonicChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_IIChord)
 {
     // C major triad in B Locrian → degree 1 (II).
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Locrian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Locrian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 0);    // C
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
@@ -496,7 +496,7 @@ TEST(Composing_ChordAnalyzerTests, DegreeAssignment_BLocrian_IIChord)
 TEST(Composing_ChordAnalyzerTests, DegreeAssignment_Dorian_ChromaticChordIsNonDiatonic)
 {
     // F# major triad in D Dorian — F# is not in the D Dorian scale → degree = -1.
-    const auto results = kAnalyzer.analyzeChord(tones({ 66, 70, 73 }), 0, KeySigMode::Dorian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 66, 70, 73 }), 0, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().function.degree, -1);
     EXPECT_FALSE(results.front().function.diatonicToKey);
@@ -513,12 +513,12 @@ TEST(Composing_ChordAnalyzerTests, DimResolution_BoostsScoreOfLeadingToneTarget)
 {
     // viio → I: after B diminished the resolution target is C major (one semitone up).
     // Verify the C major score is higher with context than without.
-    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto withoutCtx = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 11;   // B
     ctx.previousQuality = ChordQuality::Diminished;
-    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
     EXPECT_EQ(withCtx.front().identity.rootPc, 0);
@@ -531,12 +531,12 @@ TEST(Composing_ChordAnalyzerTests, HalfDimResolution_BoostsScoreOfDominantTarget
 {
     // ii∅ → V: after Bm7b5 (root 11) the resolution target is E major (a perfect fourth up).
     // Key: A minor — E is the diatonic dominant.
-    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian);
+    const auto withoutCtx = analyzeWithGates(kAnalyzer, tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 11;   // B
     ctx.previousQuality = ChordQuality::HalfDiminished;
-    const auto withCtx = kAnalyzer.analyzeChord(tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, tones({ 64, 68, 71 }), 0, KeySigMode::Aeolian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
     EXPECT_EQ(withCtx.front().identity.rootPc, 4);   // E
@@ -547,12 +547,12 @@ TEST(Composing_ChordAnalyzerTests, HalfDimResolution_BoostsScoreOfDominantTarget
 TEST(Composing_ChordAnalyzerTests, AugResolution_BoostsScoreOfSameRootReturn)
 {
     // I+ → I: after C augmented the resolution target is C major at the same root.
-    const auto withoutCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto withoutCtx = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
 
     ChordTemporalContext ctx;
     ctx.previousRootPc  = 0;    // C
     ctx.previousQuality = ChordQuality::Augmented;
-    const auto withCtx = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian, &ctx);
 
     ASSERT_FALSE(withCtx.empty());
     EXPECT_EQ(withCtx.front().identity.rootPc, 0);
@@ -1311,7 +1311,7 @@ TEST(Composing_ChordSymbolFormatterTests, InvalidBassPcSuppressesSlashBass)
 TEST(Composing_ChordAnalyzerTests, CmajorTriadIsNeverDiminished)
 {
     // {C, E, G} — plain major triad; must not score as diminished.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
         << "C major triad must not be scored as diminished";
@@ -1321,7 +1321,7 @@ TEST(Composing_ChordAnalyzerTests, CmajorTriadIsNeverDiminished)
 TEST(Composing_ChordAnalyzerTests, CminorTriadIsNeverDiminished)
 {
     // {C, Eb, G} — plain minor triad; must not score as diminished.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 63, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
         << "C minor triad must not be scored as diminished";
@@ -1331,7 +1331,7 @@ TEST(Composing_ChordAnalyzerTests, CminorTriadIsNeverDiminished)
 TEST(Composing_ChordAnalyzerTests, CdiminishedTriadIsDiminished)
 {
     // {C, Eb, Gb} — only the chord with a ♭5 (no P5) should score as diminished.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 66 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 63, 66 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Diminished)
         << "C diminished triad must score as diminished";
@@ -1341,7 +1341,7 @@ TEST(Composing_ChordAnalyzerTests, MajorTriadWithPassingToneIsNeverDiminished)
 {
     // {C, Eb, E, G} — C major triad with chromatic passing tone Eb.
     // The perfect fifth G must veto the Diminished reading even though Eb is present.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 63, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 63, 64, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_NE(results.front().identity.quality, ChordQuality::Diminished)
         << "C major with passing Eb must not be scored as diminished";
@@ -1357,7 +1357,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_AbMajorTriad_RootIspc8)
 {
     // Ab major triad: Ab4(68), C5(72), Eb5(75).  TPC: Ab=11, C=15, Eb=12.
     // Root must be pc=8 (Ab), not pc=9 (A).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {68,11}, {72,15}, {75,12} }), -4, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 8)
@@ -1370,7 +1370,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_GbMajorTriad_RootIspc6)
 {
     // Gb major triad: Gb4(66), Bb4(70), Db5(73).  TPC: Gb=9, Bb=13, Db=10.
     // Root must be pc=6 (Gb), not pc=7 (G).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {66,9}, {70,13}, {73,10} }), -6, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 6)
@@ -1382,7 +1382,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_DbMajorTriad_RootIspc1)
 {
     // Db major triad: Db4(61), F4(65), Ab4(68).  TPC: Db=10, F=14, Ab=11.
     // Root must be pc=1 (Db), not pc=2 (D).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {61,10}, {65,14}, {68,11} }), -5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 1)
@@ -1394,7 +1394,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_EbMajorTriad_RootIspc3)
 {
     // Eb major triad: Eb4(63), G4(67), Bb4(70).  TPC: Eb=12, G=16, Bb=13.
     // Root must be pc=3 (Eb), not pc=4 (E).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {63,12}, {67,16}, {70,13} }), -3, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 3)
@@ -1406,7 +1406,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_BbMajorTriad_RootIspc10)
 {
     // Bb major triad: Bb3(58), D4(62), F4(65).  TPC: Bb=13, D=17, F=14.
     // Root must be pc=10 (Bb), not pc=11 (B).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10)
@@ -1418,7 +1418,7 @@ TEST(Composing_ChordAnalyzerTests, FlatRoot_AbMaj7_DisplaysAbInFlatKey)
 {
     // AbMaj7: Ab4(68), C5(72), Eb5(75), G5(79).  TPC: Ab=11, C=15, Eb=12, G=16.
     // Symbol must be "AbMaj7" in Ab major context, not "G#Maj7" or "AMaj7".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {68,11}, {72,15}, {75,12}, {79,16} }), -4, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 8)
@@ -1432,7 +1432,7 @@ TEST(Composing_ChordAnalyzerTests, FullyDiminishedSeventh_NashvilleHasExactlyOne
     // B fully diminished seventh: B3(47), D4(50), F4(53), Ab4(56).
     // TPC: B=20, D=17, F=14, Ab=11.  Key: C major (fifths=0).
     // Nashville symbol must be "vii°7", not "vii°°7" — exactly one ° before the 7.
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {47,20}, {50,17}, {53,14}, {56,11} }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     const std::string nashville = ChordSymbolFormatter::formatNashvilleNumber(results.front(), 0);
@@ -1460,7 +1460,7 @@ TEST(Composing_ChordAnalyzerTests, NonStdToken_Susb9_ProducesCorrectSymbol)
 {
     // Csusb9: C4(60), Db4(61), F4(65), G4(67) — sus4 with b9, no 7th.
     // Catalog: measure 323, xml='Csusb9'.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 61, 65, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 61, 65, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Csusb9");
 }
@@ -1469,7 +1469,7 @@ TEST(Composing_ChordAnalyzerTests, NonStdToken_SusSharp4_ProducesCorrectSymbol)
 {
     // Csus#4: C4(60), F#4(66), G4(67) — sus with augmented fourth.
     // Catalog: measure 340, xml='Csus#4'.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 66, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 66, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Csus#4");
 }
@@ -1479,7 +1479,7 @@ TEST(Composing_ChordAnalyzerTests, NonStdToken_5b_ProducesCorrectSymbol)
     // C5b: C4(60), E4(64), Gb4(66) — major triad with flat 5.
     // MuseScore convention: flat-5 major triad uses "5b" (not "b5" or "C(b5)").
     // Catalog: measure 4, xml='C5b'.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 66 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64, 66 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "C5b");
 }
@@ -1488,7 +1488,7 @@ TEST(Composing_ChordAnalyzerTests, NonStdToken_No3_ProducesCorrectSymbol)
 {
     // CMaj9(no 3): C4(60), G4(67), B4(71), D5(74) — major 9th with omitted third.
     // Catalog: measure 20, xml='CMaj9(no 3)'.
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 67, 71, 74 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 67, 71, 74 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "CMaj9(no 3)");
 }
@@ -1518,7 +1518,7 @@ TEST(Composing_ChordAnalyzerTests, PassingToneBassFilter_LowWeightBassNoteIgnore
     addTone(74, 1.0);   // D5
     ts.front().isBass = true;  // F#3 is the lowest note
 
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, prefs);
     ASSERT_FALSE(results.empty());
     // Root should be G (pc=7), bass should also be G (root position) — F# filtered out.
     EXPECT_EQ(results.front().identity.rootPc, 7)
@@ -1550,7 +1550,7 @@ TEST(Composing_ChordAnalyzerTests, PassingToneBassFilter_NormalBassNoteKept)
     addTone(74, 1.0);  // D5
     ts.front().isBass = true;
 
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, prefs);
     ASSERT_FALSE(results.empty());
     // Bass should remain F# (pc=6); root should be G (pc=7) → symbol "G/F#"
     EXPECT_EQ(results.front().identity.bassPc, 6)
@@ -1596,7 +1596,7 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_ChordTonesDominant_IsCm7WithoutCont
     addTone(55, 0.9);          // G4  — fifth
     addTone(58, 0.8);          // Bb4 — minor seventh
 
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr);
     ASSERT_FALSE(results.empty());
 
     const ChordAnalysisResult& top = results.front();
@@ -1636,7 +1636,7 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
 
     // Without context: Fsus(add9) wins.
     {
-        const auto noCtx = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr);
+        const auto noCtx = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr);
         ASSERT_FALSE(noCtx.empty());
         EXPECT_NE(noCtx.front().identity.rootPc, 0)
             << "Without context, F-rooted template should win (bass-root bonus)";
@@ -1656,7 +1656,7 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
     ctx.bassIsStepwiseFromPrevious = true;  // e.g. bass moved E → F
     ctx.bassIsStepwiseToNext      = false;
 
-    const auto withCtx = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, &ctx);
+    const auto withCtx = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, &ctx);
     ASSERT_FALSE(withCtx.empty());
 
     const ChordAnalysisResult& top = withCtx.front();
@@ -1684,7 +1684,7 @@ TEST(Composing_ChordAnalyzerTests, Cm7SlashF_StepwiseBassContext_IsCm7NotFsus)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_BNatural_IsB)
 {
     // B major triad in 5-sharp key. Standard spelling: root = "B".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);
@@ -1695,7 +1695,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_BNatural_IsB)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_Bb_IsBb)
 {
     // Bb major triad in 2-flat key. Standard spelling: root = "Bb".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);
@@ -1706,7 +1706,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_Standard_Bb_IsBb)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_BNatural_IsH)
 {
     // B major triad in 5-sharp key. German spelling: B natural → "H".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);
@@ -1717,7 +1717,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_BNatural_IsH)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Bb_IsB)
 {
     // Bb major triad in 2-flat key. German spelling: Bb → "B".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);
@@ -1728,7 +1728,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Bb_IsB)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_C_Unchanged)
 {
     // C major triad. German spelling: "C" is unchanged (not affected by B/H rule).
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {60,15}, {64,19}, {67,16} }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 0);
@@ -1739,7 +1739,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_C_Unchanged)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Ab_Unchanged)
 {
     // Ab major triad in 4-flat key. German spelling: "Ab" is unchanged.
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {68,11}, {72,15}, {75,12} }), -4, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 8);
@@ -1750,7 +1750,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_German_Ab_Unchanged)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_BNatural_IsH)
 {
     // B major triad in 5-sharp key. GermanPure spelling: B natural → "H".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {59,20}, {63,24}, {66,18} }), 5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);
@@ -1761,7 +1761,7 @@ TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_BNatural_IsH)
 TEST(Composing_ChordAnalyzerTests, NoteSpelling_GermanPure_Bb_IsB)
 {
     // Bb major triad in 2-flat key. GermanPure spelling: Bb → "B".
-    const auto results = kAnalyzer.analyzeChord(
+    const auto results = analyzeWithGates(kAnalyzer, 
         tonesWithTpc({ {58,13}, {62,17}, {65,14} }), -2, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);
@@ -1797,7 +1797,7 @@ TEST(Composing_ChordAnalyzerTests, ChordNameInBassField_Suppressed)
     addTone(69, 0.6);          // A4  — major seventh
     addTone(67, 0.5);          // G4  — major thirteenth
 
-    const auto results = kAnalyzer.analyzeChord(ts, -2, KeySigMode::Ionian, nullptr);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -2, KeySigMode::Ionian, nullptr);
     ASSERT_FALSE(results.empty());
 
     const ChordSymbolFormatter::Options opts{};
@@ -2117,7 +2117,7 @@ TEST(Composing_AugmentedSixthTests, MinorChordOnFlatSixth_NotAugSixth)
 // Bass IS the root of the winning chord — interval=0 → always a chord tone.
 TEST(Composing_PedalPointTests, BassIsChordTone_NoPedalDetected)
 {
-    const auto results = kAnalyzer.analyzeChord(tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 60, 64, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
@@ -2127,7 +2127,7 @@ TEST(Composing_PedalPointTests, BassIsChordTone_NoPedalDetected)
 TEST(Composing_PedalPointTests, F13overEb_BassIsChordTone_NoPedalDetected)
 {
     // Eb3=51, F4=65, A4=69, C5=72  →  Fdom7/Eb
-    const auto results = kAnalyzer.analyzeChord(tones({ 51, 65, 69, 72 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 51, 65, 69, 72 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
@@ -2137,7 +2137,7 @@ TEST(Composing_PedalPointTests, F13overEb_BassIsChordTone_NoPedalDetected)
 TEST(Composing_PedalPointTests, SustainedBassNotInUpperVoiceChord_PedalDetected)
 {
     const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_TRUE(results.front().identity.isPedalPoint);
     EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
@@ -2149,7 +2149,7 @@ TEST(Composing_PedalPointTests, SustainedBassNotInUpperVoiceChord_PedalDetected)
 TEST(Composing_PedalPointTests, DominantPedal_Detected)
 {
     const auto ts = weightedTones({ { 55, 0.2 }, { 62, 1.0 }, { 65, 1.0 }, { 69, 1.0 } });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_TRUE(results.front().identity.isPedalPoint);
     EXPECT_EQ(results.front().identity.pedalBassPc, 7);   // G pedal
@@ -2164,7 +2164,7 @@ TEST(Composing_PedalPointTests, TonicPedal_Detected)
 {
     // C3=48, A4=69, C#5=73, E5=76
     const auto ts = weightedTones({ { 48, 0.2 }, { 69, 1.0 }, { 73, 1.0 }, { 76, 1.0 } });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_TRUE(results.front().identity.isPedalPoint);
     EXPECT_EQ(results.front().identity.pedalBassPc, 0);   // C pedal
@@ -2178,7 +2178,7 @@ TEST(Composing_PedalPointTests, PedalDetection_DisabledByZeroThreshold)
     ChordAnalyzerPreferences prefs;
     prefs.pedalConfidenceThreshold = 0.0;
     const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, prefs);
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
@@ -2188,7 +2188,7 @@ TEST(Composing_PedalPointTests, PedalDetection_DisabledByZeroThreshold)
 TEST(Composing_PedalPointTests, SustainedInnerVoiceIsChordTone_NoPedalDetected)
 {
     // E3=52 (bass), C4=60, E4=64, G4=67
-    const auto results = kAnalyzer.analyzeChord(tones({ 52, 60, 64, 67 }), 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, tones({ 52, 60, 64, 67 }), 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
@@ -2200,7 +2200,7 @@ TEST(Composing_PedalPointTests, LowConfidenceUpperVoices_NoPedalDetected)
     ChordAnalyzerPreferences prefs;
     prefs.pedalConfidenceThreshold = 0.99;
     const auto ts = weightedTones({ { 48, 0.2 }, { 67, 1.0 }, { 71, 1.0 }, { 74, 1.0 } });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, prefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, prefs);
     ASSERT_FALSE(results.empty());
     EXPECT_FALSE(results.front().identity.isPedalPoint);
 }
@@ -2229,7 +2229,7 @@ TEST(Composing_ExtensionThresholdTests, JazzPreset_LightlyVoicedNinth_Detected)
     ChordAnalyzerPreferences jazzPrefs;
     jazzPrefs.extensionThreshold = 0.12;  // Jazz preset value
 
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 9);  // A
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
@@ -2252,7 +2252,7 @@ TEST(Composing_ExtensionThresholdTests, StandardPreset_LightlyVoicedNinth_NotDet
     // Standard preset uses default extensionThreshold = 0.20.
     ChordAnalyzerPreferences standardPrefs;  // extensionThreshold = 0.20 by default
 
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, standardPrefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, standardPrefs);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 9);  // A
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
@@ -2284,7 +2284,7 @@ TEST(Composing_EnharmonicSpellingTests, BbRootInCMajorSpellsAsBb)
         { 50, 17 },  // D3
         { 53, 14 },  // F3
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Bb")
@@ -2300,7 +2300,7 @@ TEST(Composing_EnharmonicSpellingTests, EbRootInCMajorSpellsAsEb)
         { 43, 16 },  // G2
         { 46, 13 },  // Bb2
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 3);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Eb")
@@ -2316,7 +2316,7 @@ TEST(Composing_EnharmonicSpellingTests, AbRootInCMajorSpellsAsAb)
         { 36, 15 },  // C2
         { 39, 12 },  // Eb2
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 8);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 0), "Ab")
@@ -2333,7 +2333,7 @@ TEST(Composing_EnharmonicSpellingTests, BbSus4InCMajorSpellsAsBbsus)
         { 51, 12 },  // Eb3 (sus4)
         { 53, 14 },  // F3 (fifth)
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);  // Bb
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
@@ -2352,7 +2352,7 @@ TEST(Composing_EnharmonicSpellingTests, GsharpRootInSharpKeyStaysGsharp)
         { 47, 20 },  // B2
         { 51, 24 },  // D#3
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 4, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 4, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 8);   // G#
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), 4), "G#m")
@@ -2371,7 +2371,7 @@ TEST(Composing_EnharmonicSpellingTests, NoTpcFallsBackToKeySignatureFlat)
         { 50, -1 },  // D3
         { 53, -1 },  // F3
     });
-    const auto results = kAnalyzer.analyzeChord(ts, -5, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 10);
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -5), "Bb")
@@ -2390,7 +2390,7 @@ TEST(Composing_EnharmonicSpellingTests, SharpTpcInFlatKeyUsesKeySignature)
         { 43, 16 },  // G2  (TPC=16, major 3rd from Eb)
         { 46, 13 },  // Bb2 (TPC=13, perfect 5th from Eb)
     });
-    const auto results = kAnalyzer.analyzeChord(ts, -2, KeySigMode::Dorian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -2, KeySigMode::Dorian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 3);   // pc=3 = D#/Eb
     EXPECT_EQ(ChordSymbolFormatter::formatSymbol(results.front(), -2), "Eb")
@@ -2421,7 +2421,7 @@ TEST(Composing_EnharmonicSpellingTests, BNaturalIn5FlatKeySpellsAsCb)
         { 50, 17 },  // D3 (TPC=17 = D)
         { 54, 21 },  // F#3 (TPC=21 = F#)
     });
-    const auto results = kAnalyzer.analyzeChord(ts, -5, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -5, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);  // pc=11 = B/Cb
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -5);
@@ -2439,7 +2439,7 @@ TEST(Composing_EnharmonicSpellingTests, ENaturalIn6FlatKeySpellsAsFb)
         { 44, 23 },  // G#2 (TPC=23 = G#)
         { 47, 20 },  // B2 (TPC=20 = B natural)
     });
-    const auto results = kAnalyzer.analyzeChord(ts, -6, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -6, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 4);   // pc=4 = E/Fb
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -6);
@@ -2458,7 +2458,7 @@ TEST(Composing_EnharmonicSpellingTests, BNaturalIn3FlatKeyStaysB)
         { 50, 17 },  // D3
         { 54, 21 },  // F#3
     });
-    const auto results = kAnalyzer.analyzeChord(ts, -3, KeySigMode::Aeolian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, -3, KeySigMode::Aeolian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 11);
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), -3);
@@ -2492,7 +2492,7 @@ TEST(Composing_EnharmonicSpellingTests, DSharpBassInNeutralKeyBecomesEb)
         { 62, 17 },  // D4
         { 65, 14 },  // F4
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
     EXPECT_EQ(sym.find("D#"), std::string::npos)
@@ -2511,7 +2511,7 @@ TEST(Composing_EnharmonicSpellingTests, DSharpRootInNeutralKeyBecomesEb)
         { 43, 16 },  // G2
         { 46, 13 },  // Bb2
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Aeolian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Aeolian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 3);
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 0);
@@ -2528,7 +2528,7 @@ TEST(Composing_EnharmonicSpellingTests, DSharpSurvivesInEMajorKey)
         { 42, 21 },  // F#2 (TPC=21)
         { 45, 25 },  // A#2 (TPC=25)
     });
-    const auto results = kAnalyzer.analyzeChord(ts, 4, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 4, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.rootPc, 3);
     const std::string sym = ChordSymbolFormatter::formatSymbol(results.front(), 4);
@@ -2562,7 +2562,7 @@ TEST(Composing_Sus4RequiresFourthTests, Sus4SharpFiveNonBassRoot_SubThresholdFou
         { 60, 1.00 },  // C4 — root
     });
     // Standard preset (extThreshold=0.20).  Root=C (pc=0), bass=E (pc=4) → no bass bonus for Sus4/C.
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian);
     ASSERT_FALSE(results.empty());
     EXPECT_NE(results.front().identity.quality, ChordQuality::Suspended4)
         << "P4 weight 0.04 sub-threshold + non-bass root: Sus4#5/C must not win";
@@ -2580,7 +2580,7 @@ TEST(Composing_Sus4RequiresFourthTests, FourthAboveJazzThreshold_JazzPreset_CanB
     });
     ChordAnalyzerPreferences jazzPrefs;
     jazzPrefs.extensionThreshold = 0.12;
-    const auto results = kAnalyzer.analyzeChord(ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
+    const auto results = analyzeWithGates(kAnalyzer, ts, 0, KeySigMode::Ionian, nullptr, jazzPrefs);
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Suspended4)
         << "P4 weight 0.13 ≥ Jazz threshold 0.12; Sus4 must not be penalised";

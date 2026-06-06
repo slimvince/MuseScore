@@ -442,8 +442,9 @@ analyzeRegions(const mu::engraving::Score* score,
             temporalCtx.regionMetricWeight = shv::regionMetricWeightForBeatType(
                 shv::safeBeatType(currentMeasure, regionStartSeg));
 
+            analysis::PostScoringGateContext gateCtx;
             auto results = chordAnalyzer->analyzeChord(
-                tones, localKeyFifths, localKeyMode, &temporalCtx, attemptPrefs);
+                tones, localKeyFifths, localKeyMode, &temporalCtx, attemptPrefs, &gateCtx);
 
             if (results.empty()) {
                 continue;
@@ -462,6 +463,9 @@ analyzeRegions(const mu::engraving::Score* score,
                 function::applyHarmonicFunction(results, chosenResult, fnCtx,
                                                 nullptr, nullptr);
             }
+
+            analysis::applyPostScoringGates(results, attemptPrefs, &temporalCtx, gateCtx);
+            chosenResult = results.empty() ? chosenResult : results.front();
 
             refineSparseChordQualityFromKeyContext(
                 chosenResult, tones, localKeyFifths, localKeyMode);
@@ -648,8 +652,9 @@ analyzeRegions(const mu::engraving::Score* score,
                     subCtx.nextRootPc = subNextRootPc;
                 }
 
+                analysis::PostScoringGateContext subGateCtx;
                 auto subResults = chordAnalyzer->analyzeChord(
-                    subTones, subKeyFifths, subKeyMode, &subCtx, prefs);
+                    subTones, subKeyFifths, subKeyMode, &subCtx, prefs, &subGateCtx);
 
                 if (subResults.empty()) {
                     HarmonicRegion fallback;
@@ -677,6 +682,9 @@ analyzeRegions(const mu::engraving::Score* score,
                     function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
                                                     nullptr, nullptr);
                 }
+
+                analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
+                chosenSub = subResults.empty() ? chosenSub : subResults.front();
 
                 refineSparseChordQualityFromKeyContext(
                     chosenSub, subTones, subKeyFifths, subKeyMode);
@@ -838,8 +846,9 @@ analyzeRegions(const mu::engraving::Score* score,
                         subCtx.nextRootPc = subNextRootPc;
                     }
 
+                    analysis::PostScoringGateContext subGateCtx;
                     auto subResults = chordAnalyzer->analyzeChord(
-                        subTones, subKeyFifths, subKeyMode, &subCtx, prefs);
+                        subTones, subKeyFifths, subKeyMode, &subCtx, prefs, &subGateCtx);
 
                     if (subResults.empty()) {
                         HarmonicRegion subRegion;
@@ -868,6 +877,9 @@ analyzeRegions(const mu::engraving::Score* score,
                         function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
                                                         nullptr, nullptr);
                     }
+
+                    analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
+                    chosenSub = subResults.empty() ? chosenSub : subResults.front();
 
                     refineSparseChordQualityFromKeyContext(
                         chosenSub, subTones, subKeyFifths, subKeyMode);

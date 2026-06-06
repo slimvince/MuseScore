@@ -376,14 +376,20 @@ void fillGap(std::vector<PlacedRegion>& regions,
 
         auto tones = callbacks.collectRegionTones(r.startTick, r.endTick);
         if (tones.empty()) continue;
-        const auto cands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, &initCtx, explorePrefs);
+        analysis::PostScoringGateContext gateCtxInit;
+        auto cands = chordAnalyzer->analyzeChord(
+            tones, globalKeyFifths, globalKeyMode, &initCtx, explorePrefs, &gateCtxInit);
         if (cands.empty()) continue;
+        analysis::applyPostScoringGates(cands, explorePrefs, &initCtx, gateCtxInit);
 
         // Iter 71 Fix A — second analyzeChord call with no bilateral
         // context. Same tones, no anchor influence.
-        const auto localCands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, nullptr, explorePrefs);
+        analysis::PostScoringGateContext gateCtxLocal;
+        auto localCands = chordAnalyzer->analyzeChord(
+            tones, globalKeyFifths, globalKeyMode, nullptr, explorePrefs, &gateCtxLocal);
+        if (!localCands.empty()) {
+            analysis::applyPostScoringGates(localCands, explorePrefs, nullptr, gateCtxLocal);
+        }
 
         Scored s;
         s.idx            = i;
@@ -520,9 +526,11 @@ void fillGap(std::vector<PlacedRegion>& regions,
 
         auto tones = callbacks.collectRegionTones(r.startTick, r.endTick);
         if (tones.empty()) continue;
-        const auto cands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, &ctx, explorePrefs);
+        analysis::PostScoringGateContext gateCtxReScore;
+        auto cands = chordAnalyzer->analyzeChord(
+            tones, globalKeyFifths, globalKeyMode, &ctx, explorePrefs, &gateCtxReScore);
         if (cands.empty()) continue;
+        analysis::applyPostScoringGates(cands, explorePrefs, &ctx, gateCtxReScore);
 
         const int newRootPc = cands[0].identity.rootPc;
         const bool reScoreFlipsIdentity = (newRootPc != r.rootPitchClass);
@@ -711,11 +719,13 @@ greedyExpandSegmentation(const Score* score,
         if (tones.empty()) {
             continue;
         }
-        const auto chordCands = chordAnalyzer->analyzeChord(
-            tones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
+        analysis::PostScoringGateContext gateCtxAnchor;
+        auto chordCands = chordAnalyzer->analyzeChord(
+            tones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs, &gateCtxAnchor);
         if (chordCands.empty()) {
             continue;
         }
+        analysis::applyPostScoringGates(chordCands, sparsePrefs, nullptr, gateCtxAnchor);
         const double winnerScore = chordCands[0].identity.score;
         if (winnerScore < effectiveAnchorMinScore) {
             continue;
@@ -787,8 +797,12 @@ greedyExpandSegmentation(const Score* score,
         const auto headTones = callbacks.collectRegionTones(
             startTick.ticks(), firstPlacedStart);
         if (!headTones.empty()) {
-            const auto headCands = chordAnalyzer->analyzeChord(
-                headTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
+            analysis::PostScoringGateContext gateCtxHead;
+            auto headCands = chordAnalyzer->analyzeChord(
+                headTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs, &gateCtxHead);
+            if (!headCands.empty()) {
+                analysis::applyPostScoringGates(headCands, sparsePrefs, nullptr, gateCtxHead);
+            }
             if (!headCands.empty() && headCands[0].identity.score > 0.0) {
                 PlacedRegion headRegion;
                 headRegion.startTick      = startTick.ticks();
@@ -874,8 +888,12 @@ greedyExpandSegmentation(const Score* score,
         const auto tailTones = callbacks.collectRegionTones(
             lastPlacedEnd, endTick.ticks());
         if (!tailTones.empty()) {
-            const auto tailCands = chordAnalyzer->analyzeChord(
-                tailTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs);
+            analysis::PostScoringGateContext gateCtxTail;
+            auto tailCands = chordAnalyzer->analyzeChord(
+                tailTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs, &gateCtxTail);
+            if (!tailCands.empty()) {
+                analysis::applyPostScoringGates(tailCands, sparsePrefs, nullptr, gateCtxTail);
+            }
             if (!tailCands.empty() && tailCands[0].identity.score > 0.0) {
                 PlacedRegion tailRegion;
                 tailRegion.startTick      = lastPlacedEnd;

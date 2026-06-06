@@ -423,10 +423,21 @@ NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
         = findTemporalContext(sc, seg, excludeStaves, context.keyFifths, context.keyMode, currentBassPc);
 
     const auto analysisTones = buildTones(sounding);
-    context.chordResults = mu::composing::analysis::ChordAnalyzerFactory::create()->analyzeChord(analysisTones,
-                                                                                                  context.keyFifths,
-                                                                                                  context.keyMode,
-                                                                                                  &temporalCtx);
+    auto bridgeAnalyzer = mu::composing::analysis::ChordAnalyzerFactory::create();
+    mu::composing::analysis::PostScoringGateContext bridgeGateCtx;
+    context.chordResults = bridgeAnalyzer->analyzeChord(analysisTones,
+                                                       context.keyFifths,
+                                                       context.keyMode,
+                                                       &temporalCtx,
+                                                       mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                                                       &bridgeGateCtx);
+    if (!context.chordResults.empty()) {
+        mu::composing::analysis::applyPostScoringGates(
+            context.chordResults,
+            mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+            &temporalCtx,
+            bridgeGateCtx);
+    }
     if (context.chordResults.empty()) {
         if (auto sparseResult = inferSparseChordResult(analysisTones,
                                                        context.keyFifths,

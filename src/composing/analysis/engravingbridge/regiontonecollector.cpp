@@ -785,9 +785,17 @@ findTemporalContext(const mu::engraving::Score* sc,
         collectSoundingAt(sc, s, excludeStaves, prevSounding);
         if (!prevSounding.empty()) {
             const auto prevTones = buildTones(prevSounding);
-            const auto prevResults =
-                chordAnalyzer->analyzeChord(prevTones, keyFifths, keyMode);
+            mu::composing::analysis::PostScoringGateContext prevGateCtx;
+            auto prevResults =
+                chordAnalyzer->analyzeChord(prevTones, keyFifths, keyMode, nullptr,
+                                            mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                                            &prevGateCtx);
             if (!prevResults.empty()) {
+                mu::composing::analysis::applyPostScoringGates(
+                    prevResults,
+                    mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                    nullptr,
+                    prevGateCtx);
                 temporalCtx.previousRootPc  = prevResults.front().identity.rootPc;
                 temporalCtx.previousQuality = prevResults.front().identity.quality;
                 temporalCtx.previousBassPc  = prevResults.front().identity.bassPc;

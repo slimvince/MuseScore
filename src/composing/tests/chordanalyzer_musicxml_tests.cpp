@@ -20,6 +20,7 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "engraving/dom/chordlist.h"
 #include "comparison_utils.h"
+#include "test_helpers.h"
 
 using namespace mu::composing::analysis;
 using namespace mu::composing::testing;
@@ -631,7 +632,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
         for (const FixtureEvent& event : events) {
             ChordTemporalContext temporalCtx;
             temporalCtx.previousRootPc = previousRootPc;
-            const auto results = kAnalyzer.analyzeChord(
+            const auto results = analyzeWithGates(kAnalyzer, 
                 toAnalysisTones(event.pitches, event.tpcs),
                 event.keyFifths,
                 event.keyMode,
@@ -842,7 +843,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, ReportsCatalogSymbolAndRomanMismatche
             // (e.g. a dyad or single note used as a section separator).
             ChordTemporalContext temporalCtx;
             temporalCtx.previousRootPc = previousRootPcReport;
-            const auto results = kAnalyzer.analyzeChord(
+            const auto results = analyzeWithGates(kAnalyzer, 
                 toAnalysisTones(event.pitches, event.tpcs),
                 event.keyFifths,
                 event.keyMode,
@@ -1121,7 +1122,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedHarmonyWithTemporalCon
         ctx.previousRootPc  = previousRootPc;
         ctx.previousQuality = previousQuality;
 
-        const auto results = kAnalyzer.analyzeChord(
+        const auto results = analyzeWithGates(kAnalyzer, 
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
             event.keyMode,
@@ -1181,7 +1182,7 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DumpAllCandidatesForContextFile)
     const char* pcNames[12] = { "C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B" };
 
     for (const FixtureEvent& event : events) {
-        const auto results = kAnalyzer.analyzeChord(
+        const auto results = analyzeWithGates(kAnalyzer, 
             toAnalysisTones(event.pitches, event.tpcs),
             event.keyFifths,
             event.keyMode);

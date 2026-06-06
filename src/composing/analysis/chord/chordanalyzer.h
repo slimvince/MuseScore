@@ -266,6 +266,24 @@ struct ChordAnalysisResult {
     ChordFunction function;
 };
 
+/// Raw per-cell scoring output from the joint-scoring loop, before
+/// buildChordResult() and gate post-processing. Used by applyPostScoringGates()
+/// fallback paths (Gates A-FM2 and G-E) that may need to promote a cell
+/// not in the top-N results.
+struct RawCandidate {
+    double score;
+    double appliedBassBonus;
+    int rootPc;
+    ChordQuality quality;
+    int tiePriority;  // template index; lower = preferred on equal score
+    double wDimDelta; // Iter 97a-v3 — w_dim bonus applied to score (for post-bonus quality guard)
+};
+
+/// Forward declaration — full definition appears after RuleBasedChordAnalyzer.
+/// Needed here so analyzeChord()'s `PostScoringGateContext* gateCtxOut` param
+/// is well-formed at the point the interface is declared.
+struct PostScoringGateContext;
+
 /// Tunable parameters for chord analysis.
 ///
 /// All values are compile-time defaults.  When MuseScore's user-preferences
@@ -654,24 +672,20 @@ public:
         int keySignatureFifths,
         KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
-        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const = 0;
+        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences,
+        PostScoringGateContext* gateCtxOut = nullptr) const = 0;
 };
 
-/// Lightweight root-PC inference for a neighbouring region.
-/// Calls analyzeChord with nullptr context (no temporal signals) to avoid recursion.
-/// Returns -1 if tones is empty or analyzeChord returns no candidates.
+/// Forward declaration — `inferNextRootPc` is defined further down the header,
+/// after `PostScoringGateContext` and `applyPostScoringGates()` are fully
+/// declared (its body references both). Declared here so callers that include
+/// chordanalyzer.h before the body can still see the symbol.
 inline int inferNextRootPc(
     const IChordAnalyzer* analyzer,
     const std::vector<ChordAnalysisTone>& tones,
     int keySignatureFifths,
     KeySigMode keyMode,
-    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences)
-{
-    if (tones.empty()) return -1;
-    const auto candidates = analyzer->analyzeChord(
-        tones, keySignatureFifths, keyMode, nullptr, prefs);
-    return candidates.empty() ? -1 : candidates[0].identity.rootPc;
-}
+    const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences);
 
 /// Advances the temporal context and rolling state after a region has been analyzed.
 /// Call once per region, after analyzeChord() has been called and the final result
@@ -719,6 +733,78 @@ inline void advanceTemporalContext(
                            chosen.rootPc, chosen.bassPc, chosen.quality);
 }
 
+/// Locally-computed inputs that applyPostScoringGates() needs from
+/// analyzeChord(). Populated when analyzeChord() is called with a
+/// non-null pointer to this struct.
+struct PostScoringGateContext {
+    std::array<double, 12>    pcWeight       {};
+    std::array<int, 12>       tpcForPc       {};
+    std::array<int, 7>        scale          {};
+    int                       keyTonicPc     { -1 };
+    KeySigMode                keyMode        {};
+    int                       bassPc         { -1 };
+    int                       bassTpc        { -1 };
+    int                       distinctPcs    { 0 };
+    double                    threshold      { 0.0 };
+    std::vector<RawCandidate> rawCandidates  {};
+};
+
+/// Locally-computed inputs that buildChordResult() needs from analyzeChord().
+struct BuildChordResultContext {
+    const std::array<double, 12>& pcWeight;
+    const std::array<int, 12>&    tpcForPc;
+    int                           bassPc;
+    int                           bassTpc;
+    int                           keyTonicPc;
+    KeySigMode                    keyMode;
+    const std::array<int, 7>&     scale;
+};
+
+/// Construct a fully-normalised ChordAnalysisResult from a raw scored cell.
+/// Applies augmented-root correction, Sus→Major(omitsThird), extension
+/// detection, degree labelling and diatonic check.
+/// Called from analyzeChord() (main result-building loop) and from
+/// applyPostScoringGates() (A-FM2 and G-E fallback cell promotion).
+ChordAnalysisResult buildChordResult(
+    const RawCandidate&             rc,
+    const BuildChordResultContext&  ctx,
+    const ChordAnalyzerPreferences& prefs);
+
+/// Apply post-scoring identity gates (A–L) to a result list.
+/// Must be called after applyHarmonicFunction() and before refinements.
+/// When callers need pre-gate inputs (rawCandidates, threshold, distinctPcs,
+/// pcWeight, …) they obtain them by passing a non-null PostScoringGateContext*
+/// to analyzeChord(); this function then operates on those captured values.
+///
+/// Mutates results[] in place (may swap, push, or reorder entries).
+/// Caller should reassign chosenResult = results.front() afterwards.
+void applyPostScoringGates(
+    std::vector<ChordAnalysisResult>& results,
+    const ChordAnalyzerPreferences&   prefs,
+    const ChordTemporalContext*       context,
+    const PostScoringGateContext&     gateCtx);
+
+/// Lightweight root-PC inference for a neighbouring region.
+/// Calls analyzeChord with nullptr context (no temporal signals) to avoid recursion.
+/// Returns -1 if tones is empty or analyzeChord returns no candidates.
+/// Defined inline here so it can be called from headers; uses
+/// PostScoringGateContext and applyPostScoringGates which are now declared above.
+inline int inferNextRootPc(
+    const IChordAnalyzer* analyzer,
+    const std::vector<ChordAnalysisTone>& tones,
+    int keySignatureFifths,
+    KeySigMode keyMode,
+    const ChordAnalyzerPreferences& prefs)
+{
+    if (tones.empty()) return -1;
+    PostScoringGateContext igCtx;
+    auto candidates = analyzer->analyzeChord(
+        tones, keySignatureFifths, keyMode, nullptr, prefs, &igCtx);
+    if (candidates.empty()) return -1;
+    applyPostScoringGates(candidates, prefs, nullptr, igCtx);
+    return candidates.empty() ? -1 : candidates[0].identity.rootPc;
+}
+
 /// Default chord analyzer: template-matching rule-based approach.
 class RuleBasedChordAnalyzer : public IChordAnalyzer
 {
@@ -728,7 +814,8 @@ public:
         int keySignatureFifths,
         KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
-        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences) const override;
+        const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences,
+        PostScoringGateContext* gateCtxOut = nullptr) const override;
 
     /// Run the full 12 × template scoring loop and return per-candidate breakdowns.
     /// Unlike analyzeChord(), post-scoring quality normalization is not applied, so
