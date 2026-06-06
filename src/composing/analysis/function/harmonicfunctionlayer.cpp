@@ -26,148 +26,12 @@
 
 #include <algorithm>
 #include <limits>
-#include <unordered_map>
 
 namespace mu::composing::function {
 
-void applyHarmonicFunction(std::vector<analysis::ChordAnalysisResult>& candidates,
-                           analysis::ChordAnalysisResult& chosenResult,
-                           const HarmonicFunctionContext& ctx,
-                           const ScoringSnapshot* snapshot,
-                           const analysis::ChordAnalyzerPreferences* prefs)
-{
-    // No snapshot → E1/E2a/E2b no-op.
-    if (!snapshot || !prefs) return;
-    if (!prefs->suppressProgressionSignals) return;
-    if (candidates.empty()) return;
+using analysis::ChordQuality;
 
-    // ── Re-score all snapshot cells with progression signals applied ────────
-    //
-    // When suppressProgressionSignals was true, the scorer stored CLEAN basisIndep
-    // values (no rootContinuityBonus), wSeqBonus=0, wDimDelta=0 in every cell.
-    // Re-apply the signals now. rootContinuityBonus is folded into basisIndep
-    // (which is then multiplied by cf × af), so it must be added BEFORE the
-    // multiply — not as a flat post-multiply additive.
-
-    auto rescore = [&](const ScoringCell& cell) -> std::pair<double, double> {
-        const double rcb = rootContinuityBonus(
-            cell.rootPc, ctx.previousRootPc, prefs->rootContinuityBonus);
-        const double newBasisIndep = cell.basisIndep + rcb;
-        const double scoreNoWDim =
-            (newBasisIndep + cell.basisDep)
-            * cell.complexityFactor * cell.augFactor
-            + cell.wCompleteBonus
-            + wSeqBonus(cell.rootPc, ctx.nextRootPc,
-                        snapshot->distinctPcs,
-                        snapshot->jointScoringEnabled, false);
-        const double newWDimDelta = wDimBonus(
-            cell.rootPc, cell.quality, ctx.nextRootPc,
-            snapshot->distinctPcs, snapshot->jointScoringEnabled, false);
-        return { scoreNoWDim, scoreNoWDim + newWDimDelta };
-    };
-
-    // Per-bass best scores for the quality guard.
-    std::unordered_map<int, double> bestWithPerBass;
-    std::unordered_map<int, double> bestWithoutPerBass;
-    std::unordered_map<int, analysis::ChordQuality> bestWithQualityPerBass;
-
-    for (const auto& cell : snapshot->cellsWithWDim) {
-        auto [snw, sw] = rescore(cell);
-        auto it = bestWithPerBass.find(cell.bassPc);
-        if (it == bestWithPerBass.end() || sw > it->second) {
-            bestWithPerBass[cell.bassPc]        = sw;
-            bestWithQualityPerBass[cell.bassPc] = cell.quality;
-        }
-        (void)snw;
-    }
-    for (const auto& cell : snapshot->cellsWithoutWDim) {
-        auto [snw, sw] = rescore(cell);
-        auto it = bestWithoutPerBass.find(cell.bassPc);
-        if (it == bestWithoutPerBass.end() || snw > it->second) {
-            bestWithoutPerBass[cell.bassPc] = snw;
-        }
-        (void)sw;
-    }
-
-    // ── Quality guard (replicates analyzeChord's post-bonus guard) ──────────
-    int    globalBestBassPcWith = -1;
-    double globalBestScoreWith  = -std::numeric_limits<double>::infinity();
-    for (const auto& [bp, sc] : bestWithPerBass) {
-        if (sc > globalBestScoreWith) {
-            globalBestScoreWith  = sc;
-            globalBestBassPcWith = bp;
-        }
-    }
-
-    // Accept with-wDim iff its winner quality is Dim or HalfDim.
-    const bool acceptWithWDim = (globalBestBassPcWith >= 0)
-        && (bestWithQualityPerBass[globalBestBassPcWith]
-                == analysis::ChordQuality::Diminished
-            || bestWithQualityPerBass[globalBestBassPcWith]
-                == analysis::ChordQuality::HalfDiminished);
-
-    // Select the winning variant's cells.
-    const auto& winningCells = acceptWithWDim
-        ? snapshot->cellsWithWDim
-        : snapshot->cellsWithoutWDim;
-
-    // ── Find the global winner cell ──────────────────────────────────────────
-    const ScoringCell* winnerCell = nullptr;
-    double             winnerScore = -std::numeric_limits<double>::infinity();
-
-    for (const auto& cell : winningCells) {
-        auto [snw, sw] = rescore(cell);
-        const double s = acceptWithWDim ? sw : snw;
-        if (s > winnerScore) {
-            winnerScore = s;
-            winnerCell  = &cell;
-        }
-    }
-
-    if (!winnerCell) return;   // Should not happen.
-
-    // ── Look up winner in candidates[] ──────────────────────────────────────
-    //
-    // Match on (tiePriority, rootPc). tiePriority uniquely identifies the
-    // template; rootPc disambiguates across templates with the same index
-    // (impossible by definition, but belt-and-suspenders).
-    int winnerIdx = -1;
-    for (int i = 0; i < static_cast<int>(candidates.size()); ++i) {
-        if (candidates[i].identity.tiePriority == winnerCell->tiePriority
-            && candidates[i].identity.rootPc    == winnerCell->rootPc) {
-            winnerIdx = i;
-            break;
-        }
-    }
-
-    if (winnerIdx < 0) {
-        // Edge case: winner was filtered out by the suppressed-signal threshold
-        // (this can happen if the true winner's suppressed score is below the
-        // suppressed-signal threshold, i.e. a different bass won the suppressed
-        // pass). Do NOT crash; keep the suppressed-signal winner as-is.
-        return;
-    }
-
-    // ── Promote winner to position 0 ─────────────────────────────────────────
-    if (winnerIdx != 0) {
-        std::rotate(candidates.begin(),
-                    candidates.begin() + winnerIdx,
-                    candidates.begin() + winnerIdx + 1);
-    }
-    chosenResult = candidates[0];
-
-    // ── Correct bassPc / bassTpc if re-scored winner used a different bass ──
-    if (candidates[0].identity.bassPc != winnerCell->bassPc) {
-        candidates[0].identity.bassPc  = winnerCell->bassPc;
-        candidates[0].identity.bassTpc = winnerCell->bassTpc;
-        chosenResult = candidates[0];
-    }
-
-    // ── Trim back to normal top-3 cap ────────────────────────────────────────
-    if (candidates.size() > 3) {
-        candidates.resize(3);
-    }
-}
+// ── Progression-signal bonus functions ──────────────────────────────────────
 
 double rootContinuityBonus(int candidateRootPc, int previousRootPc,
                            double bonusValue)
@@ -184,16 +48,308 @@ double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
     return (delta == 5) ? kWSeq : 0.0;
 }
 
-double wDimBonus(int candRootPc, analysis::ChordQuality quality,
+double wDimBonus(int candRootPc, ChordQuality quality,
                  int nextRootPc, int distinctPcs,
                  bool jointScoringEnabled, bool explorationMode)
 {
     if (!jointScoringEnabled || explorationMode) return 0.0;
     if (nextRootPc < 0 || distinctPcs < 4) return 0.0;
-    using Q = analysis::ChordQuality;
-    if (quality != Q::Diminished && quality != Q::HalfDiminished) return 0.0;
+    if (quality != ChordQuality::Diminished && quality != ChordQuality::HalfDiminished) return 0.0;
     const int delta = ((nextRootPc - candRootPc) % 12 + 12) % 12;
     return (delta == 1) ? kWDim : 0.0;
+}
+
+namespace {
+
+bool isSemitoneOrToneStep(int interval)
+{
+    return interval == 1 || interval == 2 || interval == 10 || interval == 11;
+}
+
+} // namespace
+
+double wStepInBonus(int candBassPc, int rootPc,
+                    bool jointScoringEnabled, bool explorationMode,
+                    int previousBassPc)
+{
+    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (candBassPc != rootPc) return 0.0;
+    const int prev = previousBassPc;
+    if (prev < 0 || prev == candBassPc) return 0.0;
+    const int delta = ((candBassPc - prev) % 12 + 12) % 12;
+    return isSemitoneOrToneStep(delta) ? kWStepIn : 0.0;
+}
+
+double wStepOutBonus(int candBassPc, int rootPc,
+                     bool jointScoringEnabled, bool explorationMode,
+                     int nextBassPc)
+{
+    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (candBassPc != rootPc) return 0.0;
+    const int next = nextBassPc;
+    if (next < 0 || next == candBassPc) return 0.0;
+    const int delta = ((next - candBassPc) % 12 + 12) % 12;
+    return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
+}
+
+// ── Competition pipeline ────────────────────────────────────────────────────
+
+namespace {
+
+/// One per-bass working candidate: a RawCandidate plus the intervalCount the
+/// Pass B m7-family guard needs (RawCandidate does not carry it).
+struct WorkCand {
+    double                 score;
+    double                 appliedBassBonus;
+    int                    rootPc;
+    analysis::ChordQuality quality;
+    int                    tiePriority;
+    double                 wDimDelta;
+    int                    intervalCount;
+};
+
+analysis::RawCandidate toRaw(const WorkCand& c)
+{
+    return analysis::RawCandidate{ c.score, c.appliedBassBonus, c.rootPc,
+                                   c.quality, c.tiePriority, c.wDimDelta };
+}
+
+/// Pass B — step bonus with surgical first-inversion-m7-family guard.
+/// Identical logic to the historical analyzeChord lambda: for each root-position
+/// non-Power candidate eligible for a step bonus, suppress both step bonuses when a
+/// competitor at (candBassPc-3) mod 12 of quality {HalfDiminished, Diminished,
+/// Min7} scores within kStepBudget of this candidate's unbonused score.
+void applyStepBonusGuard(std::vector<WorkCand>& perBass, int candBassPc,
+                         const ScoringSnapshot& snapshot,
+                         const HarmonicFunctionContext& ctx,
+                         const analysis::ChordAnalyzerPreferences& prefs)
+{
+    const int compRootPc = ((candBassPc - 3) % 12 + 12) % 12;
+    for (auto& cand : perBass) {
+        if (cand.rootPc != candBassPc) {
+            continue;  // step bonus is root-position-only (helpers also enforce)
+        }
+        if (cand.quality == ChordQuality::Power) {
+            continue;
+        }
+        const double stepIn  = wStepInBonus(candBassPc, cand.rootPc,
+                                            snapshot.jointScoringEnabled,
+                                            prefs.explorationMode, ctx.previousBassPc);
+        const double stepOut = wStepOutBonus(candBassPc, cand.rootPc,
+                                             snapshot.jointScoringEnabled,
+                                             prefs.explorationMode, ctx.nextBassPc);
+        if (stepIn == 0.0 && stepOut == 0.0) {
+            continue;
+        }
+
+        bool blocked = false;
+        for (const auto& other : perBass) {
+            if (other.rootPc != compRootPc) {
+                continue;
+            }
+            const bool isMin7 = (other.quality == ChordQuality::Minor)
+                                && (other.intervalCount == 4);
+            const bool relevantQuality = (other.quality == ChordQuality::HalfDiminished)
+                                         || (other.quality == ChordQuality::Diminished)
+                                         || isMin7;
+            if (!relevantQuality) {
+                continue;
+            }
+            if (other.score >= cand.score - kStepBudget) {
+                blocked = true;
+                break;
+            }
+        }
+        if (!blocked) {
+            cand.score += stepIn + stepOut;
+        }
+    }
+}
+
+} // namespace
+
+void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
+                           const HarmonicFunctionContext&              ctx,
+                           const analysis::ChordAnalyzerPreferences&   prefs,
+                           std::vector<analysis::ChordAnalysisResult>& results,
+                           analysis::ChordAnalysisResult&              chosenResult,
+                           analysis::PostScoringGateContext*           gateCtx)
+{
+    using analysis::RawCandidate;
+
+    results.clear();
+
+    // ── Re-score every cell with progression signals; run the competition ─────
+    //
+    // For each bass group, build the with-wDim and without-wDim variants (Pass A),
+    // run the step bonus + surgical guard (Pass B), take each variant's local best
+    // (Pass C), and track the global best per variant across all basses.
+    double globalBestScoreWith    = -std::numeric_limits<double>::infinity();
+    double globalBestScoreWithout = -std::numeric_limits<double>::infinity();
+    std::vector<WorkCand> bestPerBassWith;
+    std::vector<WorkCand> bestPerBassWithout;
+    int winBassPcWith     = -1, winBassTpcWith     = -1;
+    int winBassPcWithout  = -1, winBassTpcWithout  = -1;
+
+    size_t i = 0;
+    const size_t nCells = snapshot.cells.size();
+    while (i < nCells) {
+        const int groupBassPc  = snapshot.cells[i].bassPc;
+        const int groupBassTpc = snapshot.cells[i].bassTpc;
+
+        std::vector<WorkCand> perBassWith;
+        std::vector<WorkCand> perBassWithout;
+
+        // Pass A — vertical score + rootContinuity + w_complete + w_seq [+ w_dim].
+        while (i < nCells && snapshot.cells[i].bassPc == groupBassPc) {
+            const ScoringCell& cell = snapshot.cells[i];
+            const double rcb = rootContinuityBonus(cell.rootPc, ctx.previousRootPc,
+                                                   prefs.rootContinuityBonus);
+            const double newBasisIndep = cell.basisIndep + rcb;
+            double scoreNoWDim = (newBasisIndep + cell.basisDep)
+                                 * cell.complexityFactor * cell.augFactor;
+            scoreNoWDim += cell.wCompleteBonus;
+            scoreNoWDim += wSeqBonus(cell.rootPc, ctx.nextRootPc, snapshot.distinctPcs,
+                                     snapshot.jointScoringEnabled, prefs.explorationMode);
+            const double wDimDelta = wDimBonus(cell.rootPc, cell.quality, ctx.nextRootPc,
+                                               snapshot.distinctPcs,
+                                               snapshot.jointScoringEnabled,
+                                               prefs.explorationMode);
+
+            perBassWith.push_back({ scoreNoWDim + wDimDelta, cell.appliedBassBonus,
+                                    cell.rootPc, cell.quality, cell.tiePriority,
+                                    wDimDelta, cell.intervalCount });
+            perBassWithout.push_back({ scoreNoWDim, cell.appliedBassBonus,
+                                       cell.rootPc, cell.quality, cell.tiePriority,
+                                       0.0, cell.intervalCount });
+            ++i;
+        }
+
+        // Pass B — step bonus + surgical guard, independently per variant.
+        applyStepBonusGuard(perBassWith, groupBassPc, snapshot, ctx, prefs);
+        applyStepBonusGuard(perBassWithout, groupBassPc, snapshot, ctx, prefs);
+
+        // Pass C — local best per variant; promote the winning bass globally.
+        double localBestWith = -std::numeric_limits<double>::infinity();
+        for (const auto& c : perBassWith) {
+            if (c.score > localBestWith) { localBestWith = c.score; }
+        }
+        double localBestWithout = -std::numeric_limits<double>::infinity();
+        for (const auto& c : perBassWithout) {
+            if (c.score > localBestWithout) { localBestWithout = c.score; }
+        }
+        if (localBestWith > globalBestScoreWith) {
+            globalBestScoreWith = localBestWith;
+            bestPerBassWith     = std::move(perBassWith);
+            winBassPcWith       = groupBassPc;
+            winBassTpcWith      = groupBassTpc;
+        }
+        if (localBestWithout > globalBestScoreWithout) {
+            globalBestScoreWithout = localBestWithout;
+            bestPerBassWithout     = std::move(perBassWithout);
+            winBassPcWithout       = groupBassPc;
+            winBassTpcWithout      = groupBassTpc;
+        }
+    }
+
+    // ── Post-bonus quality guard (Iter 97a-v3) ───────────────────────────────
+    // Accept the with-wDim result only if its global winner is Dim/HalfDim;
+    // otherwise the bonus caused cross-bass contamination — use the without-wDim
+    // result.
+    ChordQuality postBonusWinnerQuality = ChordQuality::Unknown;
+    double postBonusBestScore = -std::numeric_limits<double>::infinity();
+    for (const auto& c : bestPerBassWith) {
+        if (c.score > postBonusBestScore) {
+            postBonusBestScore = c.score;
+            postBonusWinnerQuality = c.quality;
+        }
+    }
+    const bool acceptPostBonus = (postBonusWinnerQuality == ChordQuality::Diminished
+                                  || postBonusWinnerQuality == ChordQuality::HalfDiminished);
+
+    std::vector<WorkCand>& chosenPerBass = acceptPostBonus ? bestPerBassWith : bestPerBassWithout;
+    const int winBassPc  = acceptPostBonus ? winBassPcWith  : winBassPcWithout;
+    const int winBassTpc = acceptPostBonus ? winBassTpcWith : winBassTpcWithout;
+
+    // ── Sort the winning bass's candidates ───────────────────────────────────
+    std::sort(chosenPerBass.begin(), chosenPerBass.end(),
+              [](const WorkCand& a, const WorkCand& b) -> bool {
+                  if (a.score != b.score)             return a.score > b.score;
+                  if (a.tiePriority != b.tiePriority) return a.tiePriority < b.tiePriority;
+                  return a.rootPc < b.rootPc;
+              });
+
+    // ── Threshold ────────────────────────────────────────────────────────────
+    const double bestRawScore = chosenPerBass.empty() ? 0.0 : chosenPerBass.front().score;
+    const double winnerBassBonus = chosenPerBass.empty() ? 0.0
+                                                         : chosenPerBass.front().appliedBassBonus;
+    const double threshold = (bestRawScore - winnerBassBonus) * kScoreThresholdRatio;
+
+    // ── Build results[] ──────────────────────────────────────────────────────
+    const analysis::BuildChordResultContext buildCtx{
+        snapshot.pcWeight, snapshot.tpcForPc, winBassPc, winBassTpc,
+        snapshot.keyTonicPc, snapshot.keyMode, snapshot.scale };
+    const auto buildResult = [&](const WorkCand& rc) -> analysis::ChordAnalysisResult {
+        return analysis::buildChordResult(toRaw(rc), buildCtx, prefs);
+    };
+
+    for (const WorkCand& rc : chosenPerBass) {
+        if (results.size() >= 3) {
+            break;
+        }
+        if (rc.score < threshold) {
+            break;
+        }
+        results.push_back(buildResult(rc));
+    }
+
+    // ── Guaranteed inversion alternative (diff-root append) ───────────────────
+    if (!results.empty()
+        && winBassPc >= 0
+        && prefs.inversionSuspicionMargin > 0.0
+        && results.front().identity.rootPc == winBassPc)
+    {
+        const int winnerRootPc = results.front().identity.rootPc;
+        const bool hasDiffRoot = std::any_of(results.begin(), results.end(),
+            [winnerRootPc](const analysis::ChordAnalysisResult& r) {
+                return r.identity.rootPc != winnerRootPc;
+            });
+        if (!hasDiffRoot) {
+            for (const WorkCand& rc : chosenPerBass) {
+                if (rc.score < threshold)      { break; }
+                if (rc.rootPc == winnerRootPc) { continue; }
+                results.push_back(buildResult(rc));
+                break;
+            }
+        }
+    }
+
+    if (!results.empty()) {
+        chosenResult = results.front();
+    }
+
+    // ── Fill gateCtx ─────────────────────────────────────────────────────────
+    // Bass-independent metadata is copied from the snapshot; bass-dependent fields
+    // (bassPc, bassTpc, threshold, rawCandidates) come from the chosen winner.
+    // tones / keySigFifths are set by analyzeChord (not part of the snapshot).
+    if (gateCtx) {
+        gateCtx->pcWeight    = snapshot.pcWeight;
+        gateCtx->tpcForPc    = snapshot.tpcForPc;
+        gateCtx->scale       = snapshot.scale;
+        gateCtx->keyTonicPc  = snapshot.keyTonicPc;
+        gateCtx->keyMode     = snapshot.keyMode;
+        gateCtx->bassPc      = winBassPc;
+        gateCtx->bassTpc     = winBassTpc;
+        gateCtx->distinctPcs = snapshot.distinctPcs;
+        gateCtx->threshold   = threshold;
+
+        std::vector<RawCandidate> raw;
+        raw.reserve(chosenPerBass.size());
+        for (const WorkCand& c : chosenPerBass) {
+            raw.push_back(toRaw(c));
+        }
+        gateCtx->rawCandidates = std::move(raw);
+    }
 }
 
 } // namespace mu::composing::function

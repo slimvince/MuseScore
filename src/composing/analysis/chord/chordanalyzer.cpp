@@ -754,8 +754,9 @@ static constexpr double kSeventhThreshold        = 0.12;
 /// (passing tones, neighbor notes) do not trigger false extension labels.
 static constexpr double kExtensionThreshold      = 0.20;
 
-// Fraction of the best raw score below which candidates are discarded.  [empirical]
-static constexpr double kScoreThresholdRatio     = 0.75;
+// kScoreThresholdRatio moved to harmonicfunctionlayer.h (fn::kScoreThresholdRatio):
+// the result-admission threshold is a function of post-signal scores, so it is a
+// property of the competition pipeline, not the vertical scorer.
 
 /// Classify a non-template interval relative to a chord quality.
 ///
@@ -1478,10 +1479,8 @@ double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
 
     if (context) {
         // Root-continuity: prefer keeping the same root across successive chords.
-        if (!prefs.suppressProgressionSignals) {
-            score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
-                                             prefs.rootContinuityBonus);
-        }
+        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
+                                         prefs.rootContinuityBonus);
 
         // Contextual inversion bonuses — §4.1b
         // Accumulated into a local variable so the total can be capped before
@@ -1661,10 +1660,11 @@ double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
         // bass with held upper voices).  Do not attempt a density-based or
         // inversion-aware gate here without first reading the Iter 98 dead-end
         // section in COWORK_HANDOFF.md.  See docs/scoring_model.md §4.
-        if (!prefs.suppressProgressionSignals) {
-            score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
-                                             prefs.rootContinuityBonus);
-        }
+        // Root-continuity is a progression signal, not vertical pitch evidence:
+        // the scoring oracle no longer folds it into basisIndep. The competition
+        // pipeline (applyHarmonicFunction) adds it before the cf x af multiply.
+        // See docs/scoring_model.md section 11. (The Iter 98 sparse-predecessor
+        // dead end documented above still applies wherever it is reintroduced.)
 
         // Quality-guided resolution bias: reward candidates at the typical
         // resolution target of the previous chord's quality.
@@ -2516,9 +2516,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             break;
         }
     }
-    if (prefs.captureScoringSnapshot) {
-        prefs.captureScoringSnapshot->jointScoringEnabled = jointScoringEnabled;
-    }
+    // jointScoringEnabled is published to the ScoringSnapshot below; the snapshot
+    // is now always built internally (no external capture opt-in).
 
     struct BassCandidate {
         int pitch = std::numeric_limits<int>::max();
@@ -2622,12 +2621,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                    chosenTpc, chosenOnsetAtStart });
     }
 
-    // Working bass: defaults to the lowest candidate.  Re-assigned to the winning
-    // bass after joint enumeration runs (see scoring loop below).  Downstream
-    // result-building, post-ranking inversion correction and pedal detection all
-    // consume these as the chosen bass.
-    int bassPc  = bassCandidates.empty() ? 0  : bassCandidates.front().pc;
-    int bassTpc = bassCandidates.empty() ? -1 : bassCandidates.front().tpc;
+    // The working bass (winning bassPc / bassTpc) is now selected by the function
+    // layer (applyHarmonicFunction) from the full multi-bass snapshot built below.
 
     // TPC lookup: for each pitch class, store the TPC of the first sounding tone
     // that has TPC data.  -1 means no TPC data for that pitch class.
@@ -2872,480 +2867,75 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         return allTriadPresent ? kWComplete : 0.0;
     };
 
-    // Iter 92 Step 3b — w_onset / w_passing (NOT enabled in this iteration).
+    // -- Build the scoring snapshot (vertical-only scores, every bass) ---------
     //
-    // Design: bias bass-candidate selection toward tones that attack at the
-    // region's startTick (beat-onset bass: +0.15) and away from tones that
-    // attack mid-region (passing-tone bass: -0.10).  Closes Bug 1 conceptually.
-    //
-    // Disabled because applying the bonus at SUB-region scope (which is the
-    // only granularity batch_analyze currently calls analyzeChord at) produces
-    // BIR=false regressions in both Baroque (+6) and Jazz (+3): sub-regions
-    // boundaries align with note onsets, so every tone tends to be
-    // "onsetAtRegionStart=true" at some sub-region.  The post-merge
-    // analyzeChord re-invocation needed to apply this signal at full-region
-    // scope is out of scope for Iter 92 and is queued as Iter 93.
+    // The oracle computes only pitch/key-dependent quantities. Progression
+    // signals (rootContinuity, w_seq, w_dim, step bonuses), winner selection,
+    // threshold, result cap, diff-root append and gate-context construction are
+    // all owned by applyHarmonicFunction(). See docs/scoring_model.md section 11.
+    fn::ScoringSnapshot snapshot;
+    snapshot.distinctPcs         = distinctPcs;
+    snapshot.jointScoringEnabled = jointScoringEnabled;
+    snapshot.pcWeight            = pcWeight;
+    snapshot.tpcForPc            = tpcForPc;
+    snapshot.scale               = scale;
+    snapshot.keyTonicPc          = keyTonicPc;
+    snapshot.keyMode             = keyMode;
+    snapshot.cells.reserve(bassCandidates.size() * 12 * templates.size());
 
-    // Iter 94 — w_stepIn / w_stepOut.
-    //
-    // Reward bass candidates that participate in semitone / whole-tone motion
-    // from the previous region's bass (stepIn) and/or to the next region's
-    // bass (stepOut).  The previous/next bass PCs are supplied by the bridge
-    // and batch_analyze callers at FULL-REGION scope — for sub-region
-    // analyzeChord calls these are overridden to the parent's predecessor /
-    // successor bass PCs so the bonus reflects structural voice-leading rather
-    // than within-parent micromotion (which caused the Iter 92 Step 3c +5
-    // Baroque BIR=false regression).  Gated on jointScoringEnabled so the
-    // single-tick (status-bar / unit test) path is untouched, and on
-    // !prefs.explorationMode so greedyExpandSegmentation's internal boundary-
-    // search analyzeChord calls do not let the step bonus redirect segmentation
-    // before the final per-region scoring pass runs.
-    //
-    // Additionally restricted to root-position candidates (candBassPc ==
-    // rootPc): the bonus is meant to reward "this chord's root moves smoothly
-    // in the bass line," not "this slash-chord's bass happens to step
-    // smoothly."  Without this guard, a slash-chord bass (e.g. F# in G#m7/F#)
-    // that steps to a neighbouring bass gets credit even though its root (G#)
-    // is not the moving voice — caused the Iter 94 Jazz bwv430 regression
-    // (BIR=false 14→15).
-    static constexpr double kWStepIn  = 0.10;
-    static constexpr double kWStepOut = 0.10;
-    auto isSemitoneOrToneStep = [](int interval) {
-        return interval == 1 || interval == 2 || interval == 10 || interval == 11;
-    };
-    // explorationMode is set true by greedyExpandSegmentation for internal
-    // boundary-exploration calls (Round 1 head/tail synthesis + Round 2 region
-    // scoring in harmonicsegmenter.cpp::fillGap).  Bonuses that depend on
-    // neighbouring context (step motion, sequence, leading-tone dim7) must be
-    // suppressed in these calls — otherwise they bias sub-region bass selection
-    // DURING segmentation, before the final per-region scoring pass runs.
-    // Iter 94 caught this as a regression while developing the step bonuses.
-    // The lambdas below (wStepInBonus, wStepOutBonus, wSeqBonus, wDimBonus)
-    // all share this gate.  See docs/scoring_model.md §4 — "explorationMode".
-    auto wStepInBonus = [&](int candBassPc, int rootPc) -> double {
-        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
-        if (candBassPc != rootPc) return 0.0;
-        const int prev = context->previousBassPc;
-        if (prev < 0 || prev == candBassPc) return 0.0;
-        const int delta = ((candBassPc - prev) % 12 + 12) % 12;
-        return isSemitoneOrToneStep(delta) ? kWStepIn : 0.0;
-    };
-    auto wStepOutBonus = [&](int candBassPc, int rootPc) -> double {
-        if (!jointScoringEnabled || prefs.explorationMode || context == nullptr) return 0.0;
-        if (candBassPc != rootPc) return 0.0;
-        const int next = context->nextBassPc;
-        if (next < 0 || next == candBassPc) return 0.0;
-        const int delta = ((next - candBassPc) % 12 + 12) % 12;
-        return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
-    };
+    for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
+        const int candBassPc = bassCandidates[bi].pc;
+        for (int rootPc = 0; rootPc < 12; ++rootPc) {
+            for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
+                const TemplateDef& tpl = templates[tplIdx];
+                const double bassBonus =
+                    appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
+                const double basisDep =
+                    nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
+                    + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
+                                                     distinctPcs, pcWeight, prefs, context,
+                                                     hasStructuralBass);
 
-    // Iter 95 Step 1 — w_seq.
-    //
-    // Reward a candidate whose root is a perfect fourth below the next region's
-    // root (equivalently: descending-fifth root motion into the successor —
-    // ((nextRootPc - candRootPc) mod 12) == 5 means the successor sits a P4
-    // above us, i.e. classic V→I).  Unlike w_stepIn / w_stepOut this is a
-    // CHORD-LEVEL signal: any inversion of the candidate qualifies (the bonus
-    // does NOT require candBassPc == candRootPc), and it is NOT subject to the
-    // first-inversion-m7-family surgical guard — sequential root motion is
-    // about the root identity, not the bass.
-    //
-    // Same gating as the step bonuses: jointScoringEnabled and
-    // !prefs.explorationMode keep the single-tick / segmentation-internal
-    // paths untouched.  Requires context->nextRootPc >= 0 (populated by the
-    // bridge / batch_analyze look-ahead).
-    auto wSeqBonus = [&](int candRootPc) -> double {
-        if (prefs.suppressProgressionSignals) return 0.0;
-        return fn::wSeqBonus(candRootPc,
-                             context ? context->nextRootPc : -1,
-                             distinctPcs,
-                             jointScoringEnabled,
-                             prefs.explorationMode);
-    };
-
-    // Iter 96 — w_dim: diminished/half-dim leading-tone resolution tiebreaker.
-    // When a Diminished or HalfDiminished candidate's root sits one semitone
-    // below the next region's root (i.e. it IS the leading tone of the next
-    // chord, e.g. vii°7 → I), apply a small bonus.  Diminished sevenths are
-    // fully symmetric — all four rotations produce identical pc-sets — so
-    // without a context tiebreaker the analyzer's choice of rotation is
-    // essentially arbitrary; the leading-tone-of-next-root resolution is the
-    // canonical Western tonal signal that selects the correct spelling.
-    // Same gating as w_seq.  Reuses context->nextRootPc plumbing (Iter 95
-    // Steps 1 & 2 — populated on both batch and bridge paths).
-    auto wDimBonus = [&](int candRootPc, ChordQuality quality) -> double {
-        if (prefs.suppressProgressionSignals) return 0.0;
-        return fn::wDimBonus(candRootPc, quality,
-                             context ? context->nextRootPc : -1,
-                             distinctPcs,
-                             jointScoringEnabled,
-                             prefs.explorationMode);
-    };
-
-    // Build per-bass-candidate rawCandidates; pick the global winner.
-    //
-    // Two-pass per candBassPc:
-    //   Pass A — compute the unbonused score (template + bass-dependent deltas
-    //            + w_complete) for every (rootPc, tplIdx); push into perBass.
-    //   Pass B — for each root-position candidate eligible for w_stepIn/w_stepOut,
-    //            apply the SURGICAL GUARD: suppress both step bonuses if any
-    //            competitor in perBass with quality in {HalfDiminished,
-    //            Diminished, Minor7} sits a minor third below our bass
-    //            (competitor.rootPc == (candBassPc - 3) mod 12) AND scores
-    //            within (kWStepIn + kWStepOut + 0.01) of the candidate's
-    //            unbonused score.  The canonical case is Dm6 vs Bø7/D:
-    //            candBassPc=2 (D), competitor.rootPc=11 (B) — competitor's
-    //            root sits a minor third below our bass candidate, not at
-    //            our bass.  Otherwise the step bonus would tip a fragile
-    //            m6 root-position reading over an equally viable
-    //            first-inversion m7-family reading on identical pitch evidence.
-
-    // E2b — pre-allocate snapshot cubes to avoid repeated reallocations.
-    if (prefs.captureScoringSnapshot) {
-        const int nCells = static_cast<int>(bassCandidates.size()) * 12 * static_cast<int>(templates.size());
-        prefs.captureScoringSnapshot->cellsWithWDim.clear();
-        prefs.captureScoringSnapshot->cellsWithoutWDim.clear();
-        prefs.captureScoringSnapshot->cellsWithWDim.reserve(nCells);
-        prefs.captureScoringSnapshot->cellsWithoutWDim.reserve(nCells);
-    }
-
-    std::vector<RawCandidate> rawCandidates;
-    rawCandidates.reserve(12 * templates.size());
-    {
-        // Iter 97a-v3 — post-bonus quality guard for w_dim.
-        //
-        // Invariant: wDimBonus should only change which Dim chord wins, never
-        // change what quality the winner is.  If after applying the bonus the
-        // global winner is not Dim/HalfDim, the bonus has caused cross-bass
-        // contamination (a Dim triple under bass B1 boosted enough that B1
-        // wins the global bass, but B1's own best candidate is Minor) and must
-        // be suppressed.  Prior alpha attempts that guarded on the pre-bonus
-        // global leader missed this case because the contamination is observable
-        // only at the post-bonus winner level.
-        //
-        // Implementation: maintain TWO parallel global trackings across the bass
-        // loop — one with wDim included in cand.score, one without.  After the
-        // loop, inspect the with-wDim global winner's quality.  If it is Dim or
-        // HalfDim, accept the with-wDim result; otherwise fall back to the
-        // without-wDim result.  Pass B (step bonus + surgical m7-family guard)
-        // is applied independently to both score variants — wDim can lift a
-        // Dim/HalfDim competitor into the kStepBudget blocking band, so the
-        // without-wDim variant must run Pass B over its own scores to be a true
-        // reflection of "what we'd get if wDim never fired".
-        double globalBestScoreWith = -std::numeric_limits<double>::infinity();
-        double globalBestScoreWithout = -std::numeric_limits<double>::infinity();
-        std::vector<RawCandidate> bestPerBassWith;
-        std::vector<RawCandidate> bestPerBassWithout;
-        size_t winnerIdxWith = 0;
-        size_t winnerIdxWithout = 0;
-        constexpr double kStepBudget = kWStepIn + kWStepOut + 0.01;
-
-        // Pass B factored as a lambda so it can run independently against the
-        // with-wDim and without-wDim per-bass arrays.
-        auto applyStepBonusGuard = [&](std::vector<RawCandidate>& perBass, int candBassPc) {
-            const int compRootPc = ((candBassPc - 3) % 12 + 12) % 12;
-            for (auto& cand : perBass) {
-                if (cand.rootPc != candBassPc) {
-                    continue;  // step bonus is root-position-only (lambda also enforces)
-                }
-                if (cand.quality == ChordQuality::Power) {
-                    continue;
-                }
-                const double stepIn  = wStepInBonus(candBassPc, cand.rootPc);
-                const double stepOut = wStepOutBonus(candBassPc, cand.rootPc);
-                if (stepIn == 0.0 && stepOut == 0.0) {
-                    continue;
-                }
-
-                bool blocked = false;
-                for (const auto& other : perBass) {
-                    if (other.rootPc != compRootPc) {
-                        continue;
-                    }
-                    const TemplateDef& otherTpl = templates[static_cast<size_t>(other.tiePriority)];
-                    const bool isMin7 = (other.quality == ChordQuality::Minor)
-                                        && (otherTpl.intervals.size() == 4);
-                    const bool relevantQuality = (other.quality == ChordQuality::HalfDiminished)
-                                                 || (other.quality == ChordQuality::Diminished)
-                                                 || isMin7;
-                    if (!relevantQuality) {
-                        continue;
-                    }
-                    if (other.score >= cand.score - kStepBudget) {
-                        blocked = true;
-                        break;
-                    }
-                }
-                if (!blocked) {
-                    cand.score += stepIn + stepOut;
-                }
+                fn::ScoringCell cell;
+                cell.bassPc           = candBassPc;
+                cell.bassTpc          = bassCandidates[bi].tpc;
+                cell.rootPc           = rootPc;
+                cell.tiePriority      = static_cast<int>(tplIdx);
+                cell.quality          = tpl.quality;
+                cell.intervalCount    = static_cast<int>(tpl.intervals.size());
+                cell.basisIndep       = basisIndepMatrix[rootPc][tplIdx];
+                cell.basisDep         = basisDep;
+                cell.complexityFactor = complexityFactorMatrix[rootPc][tplIdx];
+                cell.augFactor        = augFactorMatrix[rootPc][tplIdx];
+                cell.wCompleteBonus   = wCompleteBonus(tpl, rootPc, candBassPc);
+                cell.appliedBassBonus = bassBonus;
+                snapshot.cells.push_back(cell);
             }
-        };
-
-        for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {
-            const int candBassPc = bassCandidates[bi].pc;
-            std::vector<RawCandidate> perBassWith;
-            std::vector<RawCandidate> perBassWithout;
-            perBassWith.reserve(12 * templates.size());
-            perBassWithout.reserve(12 * templates.size());
-
-            // Pass A — build two parallel score variants. The with-wDim variant
-            // is the iteration's candidate post-bonus reading; the without-wDim
-            // variant is the pre-bonus fallback the post-bonus quality guard
-            // restores to when the bonus's post-bonus winner is not Dim/HalfDim.
-            for (int rootPc = 0; rootPc < 12; ++rootPc) {
-                for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
-                    const TemplateDef& tpl = templates[tplIdx];
-                    const double bassBonus = appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
-                    const double basisDep =
-                        nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
-                        + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
-                                                         distinctPcs, pcWeight, prefs, context,
-                                                         hasStructuralBass);
-                    double scoreNoWDim = basisIndepMatrix[rootPc][tplIdx] + basisDep;
-                    scoreNoWDim *= complexityFactorMatrix[rootPc][tplIdx];
-                    scoreNoWDim *= augFactorMatrix[rootPc][tplIdx];
-                    const double wCompleteBonusVal = wCompleteBonus(tpl, rootPc, candBassPc);
-                    const double wSeqBonusVal      = wSeqBonus(rootPc);
-                    scoreNoWDim += wCompleteBonusVal;
-                    scoreNoWDim += wSeqBonusVal;
-
-                    const double wDimDelta = wDimBonus(rootPc, tpl.quality);
-                    const double scoreWith = scoreNoWDim + wDimDelta;
-
-                    if (prefs.captureScoringSnapshot) {
-                        fn::ScoringCell cell;
-                        cell.bassPc           = candBassPc;
-                        cell.bassTpc          = bassCandidates[bi].tpc;
-                        cell.rootPc           = rootPc;
-                        cell.tiePriority      = static_cast<int>(tplIdx);
-                        cell.quality          = tpl.quality;
-                        cell.intervalCount    = static_cast<int>(tpl.intervals.size());
-                        cell.basisIndep       = basisIndepMatrix[rootPc][tplIdx];
-                        cell.basisDep         = basisDep;
-                        cell.complexityFactor = complexityFactorMatrix[rootPc][tplIdx];
-                        cell.augFactor        = augFactorMatrix[rootPc][tplIdx];
-                        cell.wCompleteBonus   = wCompleteBonusVal;
-                        cell.wSeqBonus        = wSeqBonusVal;
-                        cell.appliedBassBonus = bassBonus;
-
-                        // Without-wDim cell: wDimDelta is always 0.
-                        cell.wDimDelta = 0.0;
-                        prefs.captureScoringSnapshot->cellsWithoutWDim.push_back(cell);
-
-                        // With-wDim cell: same except wDimDelta.
-                        cell.wDimDelta = wDimDelta;
-                        prefs.captureScoringSnapshot->cellsWithWDim.push_back(cell);
-                    }
-
-                    perBassWith.push_back({ scoreWith, bassBonus, rootPc, tpl.quality,
-                                            static_cast<int>(tplIdx), wDimDelta });
-                    perBassWithout.push_back({ scoreNoWDim, bassBonus, rootPc, tpl.quality,
-                                               static_cast<int>(tplIdx), 0.0 });
-                }
-            }
-
-            // Pass B — step bonus with surgical first-inversion-m7-family guard.
-            // Power-quality candidates are excluded outright: a root+fifth-only
-            // template gaining +0.20 from stepwise bass motion will tip past a
-            // viable triad reading in sparse Jazz tonic-on-strong-beat contexts
-            // (5 of the 6 corrected-guard Jazz BIR=true regressions were
-            // `[Tonic]5` Power reads vs WiR `I`/`i` triads — bwv20.7 m16b1,
-            // bwv227.1 m11b3, bwv245.40 m27b3, bwv384 m4b3, bwv422 m14b1).
-            applyStepBonusGuard(perBassWith, candBassPc);
-            applyStepBonusGuard(perBassWithout, candBassPc);
-
-            // Pass C — compute localBest from final scores for each variant.
-            double localBestWith = -std::numeric_limits<double>::infinity();
-            for (const auto& c : perBassWith) {
-                if (c.score > localBestWith) {
-                    localBestWith = c.score;
-                }
-            }
-            double localBestWithout = -std::numeric_limits<double>::infinity();
-            for (const auto& c : perBassWithout) {
-                if (c.score > localBestWithout) {
-                    localBestWithout = c.score;
-                }
-            }
-            if (localBestWith > globalBestScoreWith) {
-                globalBestScoreWith = localBestWith;
-                bestPerBassWith = std::move(perBassWith);
-                winnerIdxWith = bi;
-            }
-            if (localBestWithout > globalBestScoreWithout) {
-                globalBestScoreWithout = localBestWithout;
-                bestPerBassWithout = std::move(perBassWithout);
-                winnerIdxWithout = bi;
-            }
-        }
-
-        // Post-bonus quality guard: inspect the with-wDim global winner.  If it
-        // is Diminished or HalfDiminished, the bonus did its intended job
-        // (chose the correct rotation/spelling of a diminished chord); accept
-        // the with-wDim result.  Otherwise the bonus caused cross-bass
-        // contamination — discard the with-wDim result and fall back to the
-        // without-wDim result.
-        ChordQuality postBonusWinnerQuality = ChordQuality::Unknown;
-        double postBonusBestScore = -std::numeric_limits<double>::infinity();
-        for (const auto& c : bestPerBassWith) {
-            if (c.score > postBonusBestScore) {
-                postBonusBestScore = c.score;
-                postBonusWinnerQuality = c.quality;
-            }
-        }
-        const bool acceptPostBonus = (postBonusWinnerQuality == ChordQuality::Diminished
-                                      || postBonusWinnerQuality == ChordQuality::HalfDiminished);
-
-        const size_t winnerIdx = acceptPostBonus ? winnerIdxWith : winnerIdxWithout;
-        rawCandidates = acceptPostBonus
-                        ? std::move(bestPerBassWith)
-                        : std::move(bestPerBassWithout);
-        if (!bassCandidates.empty()) {
-            bassPc  = bassCandidates[winnerIdx].pc;
-            bassTpc = bassCandidates[winnerIdx].tpc;
-        }
-
-        if (prefs.captureScoringSnapshot) {
-            prefs.captureScoringSnapshot->distinctPcs        = distinctPcs;
-            prefs.captureScoringSnapshot->acceptedWithWDim   = acceptPostBonus;
-            prefs.captureScoringSnapshot->chosenBassPc
-                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdx].pc;
-            prefs.captureScoringSnapshot->winnerBassPcWith
-                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdxWith].pc;
-            prefs.captureScoringSnapshot->winnerBassPcWithout
-                = bassCandidates.empty() ? -1 : bassCandidates[winnerIdxWithout].pc;
         }
     }
 
-    // Sort by score descending.  When scores are exactly equal, prefer the template
-    // with the lower index (the ordering in the templates array above is intentional
-    // — see its comments).  rootPc is the final tiebreaker for full determinism.
-    std::sort(rawCandidates.begin(), rawCandidates.end(),
-              [](const RawCandidate& a, const RawCandidate& b) -> bool {
-                  if (a.score != b.score)             return a.score > b.score;
-                  if (a.tiePriority != b.tiePriority) return a.tiePriority < b.tiePriority;
-                  return a.rootPc < b.rootPc;
-              });
+    // -- Run the competition pipeline (winner selection lives here) ------------
+    fn::HarmonicFunctionContext fnCtx;
+    fnCtx.keyFifths      = keySignatureFifths;
+    fnCtx.keyMode        = keyMode;
+    fnCtx.previousRootPc = context ? context->previousRootPc : -1;
+    fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
+    fnCtx.previousBassPc = context ? context->previousBassPc : -1;
+    fnCtx.nextBassPc     = context ? context->nextBassPc     : -1;
 
-    const double bestRawScore = rawCandidates.empty() ? 0.0 : rawCandidates.front().score;
-
-    // De-inflate the threshold when the best-scoring candidate's lead comes from a
-    // bass-root bonus.  A bass-inflated winner sets an artificially high bar that
-    // can exclude its enharmonic non-bass alternative (e.g. Gm7 when Bb6 wins, or
-    // the correct non-sus chord when a sus template wins from the bass note).
-    // Using the de-bonused score as the threshold base ensures those alternatives
-    // survive into results[] where the post-ranking inversion correction can
-    // evaluate and flip them.
-    // When the winner carries no bass bonus (winnerBassBonus == 0) this is
-    // identical to the original formula.
-    const double winnerBassBonus = rawCandidates.empty()
-                                   ? 0.0
-                                   : rawCandidates.front().appliedBassBonus;
-    const double threshold = (bestRawScore - winnerBassBonus) * kScoreThresholdRatio;
-
-    // ── Result builder ───────────────────────────────────────────────────────
-    //
-    // Wraps buildChordResult() (defined above at namespace scope) so call sites
-    // inside analyzeChord can pass just the RawCandidate. The free function is
-    // also used from applyPostScoringGates() for FM2 and G-E fallback paths.
-    const auto buildResult = [&](const RawCandidate& rc) -> ChordAnalysisResult {
-        return buildChordResult(rc,
-            BuildChordResultContext{ pcWeight, tpcForPc, bassPc, bassTpc,
-                                     keyTonicPc, keyMode, scale },
-            prefs);
-    };
+    // Region data the gate context needs but the snapshot does not carry.
+    if (gateCtxOut) {
+        gateCtxOut->tones        = tones;
+        gateCtxOut->keySigFifths = keySignatureFifths;
+    }
 
     std::vector<ChordAnalysisResult> results;
-    results.reserve(3);
+    ChordAnalysisResult chosenResult;
+    fn::applyHarmonicFunction(snapshot, fnCtx, prefs, results, chosenResult, gateCtxOut);
 
-    for (const RawCandidate& rc : rawCandidates) {
-        if (!prefs.suppressProgressionSignals) {
-            if (results.size() >= 3) {
-                break;
-            }
-            if (rc.score < threshold) {
-                break;
-            }
-        }
-        results.push_back(buildResult(rc));
-    }
-
-    // ── Guaranteed inversion alternative ─────────────────────────────────────
-    //
-    // When the winner is a bass-root candidate (rootPc == bassPc), the results[]
-    // cap of 3 is routinely exhausted by same-rootPc extensions/variants (e.g.
-    // Bb, Bb7, BbMaj7) before the correct enharmonic alternative (e.g. Gm7) can
-    // enter.  The post-ranking inversion correction requires a different-rootPc
-    // Major/Minor candidate in results[] to function.
-    //
-    // If every entry in results[] shares the winner's rootPc, scan rawCandidates
-    // for the highest-scoring different-rootPc candidate that clears the threshold
-    // and append it.  The correction then has a target to evaluate and potentially
-    // promote.
-    //
-    // This append only fires when:
-    //   (a) the winner is a bass-root candidate (rootPc == bassPc), AND
-    //   (b) no different-rootPc candidate already made it into results[].
-    // It is a no-op for all other cases.
-    if (!prefs.suppressProgressionSignals
-        && !results.empty()
-        && bassPc >= 0
-        && prefs.inversionSuspicionMargin > 0.0
-        && results.front().identity.rootPc == static_cast<int>(bassPc))
-    {
-        const int winnerRootPc = results.front().identity.rootPc;
-        const bool hasDiffRoot = std::any_of(results.begin(), results.end(),
-            [winnerRootPc](const ChordAnalysisResult& r) {
-                return r.identity.rootPc != winnerRootPc;
-            });
-
-        if (!hasDiffRoot) {
-            for (const RawCandidate& rc : rawCandidates) {
-                if (rc.score < threshold)        { break; }
-                if (rc.rootPc == winnerRootPc)   { continue; }
-
-                results.push_back(buildResult(rc));
-                break;
-            }
-        }
-    }
-
-    // Publish pre-gate state to the caller-supplied PostScoringGateContext, so
-    // applyPostScoringGates() can run externally (in regionanalyzer.cpp and
-    // bridge callers) after applyHarmonicFunction() has had a chance to alter
-    // the winner.
-    if (gateCtxOut) {
-        gateCtxOut->pcWeight      = pcWeight;
-        gateCtxOut->tpcForPc      = tpcForPc;
-        gateCtxOut->scale         = scale;
-        gateCtxOut->keyTonicPc    = keyTonicPc;
-        gateCtxOut->keyMode       = keyMode;
-        gateCtxOut->bassPc        = bassPc;
-        gateCtxOut->bassTpc       = bassTpc;
-        gateCtxOut->distinctPcs   = distinctPcs;
-        gateCtxOut->threshold     = threshold;
-        gateCtxOut->rawCandidates = rawCandidates;  // copy
-        gateCtxOut->tones         = tones;          // for extracted pedal Pass-2
-        gateCtxOut->keySigFifths  = keySignatureFifths;
-    }
-
-    // Gates A–L now run externally via applyPostScoringGates().
-    // Production call sites (regionanalyzer.cpp, harmonicsegmenter.cpp, bridge
-    // callers) invoke it after applyHarmonicFunction(); inferNextRootPc() and
-    // the test helper analyzeWithGates() call it directly. Do NOT call it here —
-    // that would revert the E3 extraction.
-
-    // ── Iter 86 / Iter 91 / pedal tail — EXTRACTED (Phase 1, E2d-prereq) ──────
-    //
-    // The bass-b7 promotion (Iter 86), bass-as-root promotion (Iter 91) and
-    // two-pass pedal-point detection used to run here, on results.front().  They
-    // are now in the free function applyIter8691Pedal() (defined just below) and
-    // run AFTER applyHarmonicFunction() at every production call site.  This lets
-    // them stamp the function-layer-selected winner in suppression mode rather
-    // than the suppressed-signal winner (the "Mode C reversion" E3 fixed for the
-    // gates).  In non-suppression mode applyHarmonicFunction() is a no-op, so the
-    // relocation is byte-identical to the old inline tail.
+    // Gates A-L, the Iter 86/91 promotions and the two-pass pedal detection run
+    // externally (applyIter8691Pedal + applyPostScoringGates) at every production
+    // call site AFTER this function returns. Do NOT call them here.
 
     return results;
 }

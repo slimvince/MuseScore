@@ -3,7 +3,144 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-04 — A4 Corelli op01n08d audit fixed (two sub-failures).
+*Last updated: 2026-06-06 - E2d redesign: scoring-oracle / competition-pipeline
+split (instruction `cc_instruction_redesign_segregation.md`). `analyzeChord()` is
+now a vertical-only scoring ORACLE: it computes per-cell `basisIndep` (WITHOUT any
+progression signal), `basisDep`, complexity/aug factors, `w_complete`, and region
+metadata, packs a `fn::ScoringSnapshot`, and calls `applyHarmonicFunction()`. The
+function layer is now the SOLE owner of winner selection: it applies
+`rootContinuity`/`w_seq`/`w_dim`, Pass B step bonuses (`applyStepBonusGuard`), the
+wDim post-bonus quality guard, cross-bass winner selection, the de-inflated
+threshold, the result cap + diff-root append, and fills the
+`PostScoringGateContext`. This removes the suppress-then-recompute replica
+(architecture-review Q4/Q5 option 1). Deleted
+`ChordAnalyzerPreferences::suppressProgressionSignals` and `::captureScoringSnapshot`;
+deleted the 3 redundant `function::applyHarmonicFunction()` calls in
+`regionanalyzer.cpp`; moved `kScoreThresholdRatio` + `applyStepBonusGuard` +
+`w_stepIn`/`w_stepOut` to `harmonicfunctionlayer.{h,cpp}`. Behaviour-preserving:
+composing 408/408, notation 52/52, pipeline snapshots 11/11 (no goldens
+refreshed), equivalence harness 0 divergences (214/214). BIR re-measured (see
+Current State). `docs/scoring_model.md` section 11 added. Not committed.*
+
+*Previous: 2026-06-06 — E3: extract `applyPostScoringGates()` from
+`analyzeChord()`. `37e8a711fc` moves the ~554-line gate block (Gates A–L plus
+bias-correction sort, Sub-9a capture, Gate J) out of `analyzeChord()` into a new
+free function `applyPostScoringGates()`. New public types in `chordanalyzer.h`:
+`RawCandidate` (promoted from anonymous namespace), `BuildChordResultContext`,
+`PostScoringGateContext`. New free functions: `buildChordResult()`,
+`applyPostScoringGates()`. `analyzeChord()` gains optional out-param
+`PostScoringGateContext* gateCtxOut = nullptr`. New execution order at all 9
+production call sites: `analyzeChord()` → `applyHarmonicFunction()` → (no-op
+while `suppressProgressionSignals=false`) → `applyPostScoringGates()`. New test
+helper `analyzeWithGates()` replaces 106 direct `analyzeChord()` call sites in
+composing tests. Zero behavioral change: 407/407, 52/52, 11/11 — byte-identical
+to `de418dea5f`.*
+
+*Previous: 2026-06-05 — E2d-infra: `intervalCount`, bass-context extension,
+step-bonus constants. `de418dea5f` adds `ScoringCell::intervalCount` (from
+`templates[tplIdx].intervals.size()`) for the Pass B m7-family guard. Extends
+`HarmonicFunctionContext` with `previousBassPc` and `nextBassPc`; populated at
+all three regionanalyzer.cpp call sites. Adds `kWStepIn = 0.10`,
+`kWStepOut = 0.10`, `kStepBudget = 0.21` constants to `harmonicfunctionlayer.h`.
+`suppressProgressionSignals` still false everywhere — no-op. Zero behavioral
+change: 407/407, 52/52, 11/11 — byte-identical to `20f992a5e7`.*
+
+*Previous: 2026-06-05 — E2c-infra: function-layer plumbing (signal migration
+infrastructure). `20f992a5e7` adds `tiePriority` to `ChordIdentity`, `bassTpc` and
+`jointScoringEnabled` to `ScoringCell`/`ScoringSnapshot`, `suppressProgressionSignals`
+to `ChordAnalyzerPreferences`. Extends `applyHarmonicFunction()` signature. Reorders
+refinements to run AFTER the function layer at all three regionanalyzer.cpp call sites.
+`applyHarmonicFunction()` receives `snapshot=nullptr` → still a no-op. Zero behavioral
+change: 407/407, 52/52, 11/11 — byte-identical to `710d8dba12`.*
+
+*E2c Commit 2 (enable suppression) was attempted and REVERTED. Failure: Pass B
+(step bonus ±0.20–0.35) flips winners; function layer does not replicate it.
+Cross-bass issue: suppression-mode rawCandidates contains only one bass's cells;
+true with-signals winner may be on a different bass and is absent from candidates.
+Root-cause investigation (E2d-investigate2) confirmed: Gates A–L ran on the
+suppressed-signal winner inside analyzeChord() and the function layer silently
+reverted their effects (Mode C — gate reversion). E3 fixed this by extracting the
+gates to run after applyHarmonicFunction(). E2d-enable v2 re-enables suppression;
+instruction at `cc_instruction_e2d_enable_v2.md`.*
+
+*Previous: 2026-06-05 — E2a: move progression-signal lambdas to function layer (`80a7adf32e`).
+`dd29a04967` introduces `src/composing/analysis/function/harmonicfunctionlayer.{h,cpp}`:
+`HarmonicFunctionContext` (keyFifths, keyMode, previousRootPc, nextRootPc) +
+`applyHarmonicFunction()` — currently a no-op. Files added to `composing_analysis`
+`target_sources` (consistent with existing analysis-subdir pattern; no separate CMake
+module created). Wired into `regionanalyzer.cpp` at three call sites gated on
+`!prefs.explorationMode`: Pass 1 L457-464 (after both
+`refineSparseChordQualityFromKeyContext` AND `applyTonicPriorToSparseChord` — function
+layer always sees the fully refined winner); Pass 2 L658-665; Pass 2b L844-851.
+`docs/scoring_model.md` §10 added. Zero behavioral change: 407/407 composing, 52/52
+notation, 11/11 snapshot (1 skipped) — byte-identical to baseline.*
+
+*Previous: 2026-06-05 — Scoring model reference + chordanalyzer annotations.
+`3ac52e1198` adds `docs/scoring_model.md` (621 lines, 9 sections) and annotates 8
+key sites in `chordanalyzer.cpp`. No logic changes. Sections: §1 pipeline overview;
+§2 all 17 templates tabulated with guards; §3 score matrix structure + 4-site atomic
+update requirement; §4 all bonus/penalty terms with invariants (dim7 rotation-selector
+warning prominent); §5 joint scoring + hasStructuralBass gate; §6 gates A–L table;
+§7 inversion correction + Sub-9a pre-sort capture; §8 11 known constraints/dead ends;
+§9 8-step new-template checklist. CLAUDE.md updated with mandatory read rule + sync
+requirement. Five undocumented mechanics flagged by CC and captured in scoring_model.md:
+hasStructuralBass gate condition, wDim post-bonus quality guard (Iter 97a-v3),
+4-site template atomic update, maxTotalInversionContextBonus preset variance (Baroque
+2.5 / Jazz 0.6 / default 2.0), sparseUpperRegisterAmbiguous fallback gate.*
+
+*Previous: 2026-06-05 — B3 dim7 dedicated template `{0,3,6,9}` attempted and
+**DEFERRED**. No changes committed; HEAD remains `945a9e2f18`, working tree clean.
+Attempted adding a 4-tone Diminished template alongside the 3-tone entry. Investigation
+(Part A) revealed that `dim7CharacteristicBonus` (kDim7CharacteristicBonus = 0.75, fires
+at chordanalyzer.cpp:2036 and :3426) is NOT merely a scoring boost — it is a
+**rotation-selection mechanism** for enharmonic dim7 ambiguity. Its gate includes a
+non-diatonic check on the ♭♭7 PC that asymmetrically rewards the correct root over the
+three other enharmonic rotations. Suppressing the bonus (to avoid double-scoring with the
+new template) triggered 6 Jazz catalog RealDiff failures (Bdim7 → wrong D/F-rooted
+rotations at m370/372/374) and a `bach_chorale_003` pipeline snapshot regression at tick
+17280 (`Em7b5/C#` → `Dm/E`, an indirect segmentation side effect). Option (a) (add the
+diatonic non-diatonic check to the template guard without suppressing the bonus) was not
+attempted because the chorale_003 segmentation regression is independent of the diatonic
+check (C# is non-diatonic in that key, so the check wouldn't block the template). Deferred:
+the existing bonus approach is calibrated, load-bearing, and self-consistent; a clean
+replacement requires replicating its full diatonic-aware rotation logic in the template
+guard AND solving the segmentation side effect — too much complexity for "modest gain".
+Do not re-attempt B3 without (a) a template guard that includes the non-diatonic-♭♭7 check
+AND (b) a solution to the chorale_003 segmentation artifact.*
+
+*Previous: 2026-06-05 — B2 aug7 template `{0,4,8,10}` (C7♯5) added.
+`945a9e2f18` adds a dedicated Augmented dominant 7th template to `chordanalyzer.cpp`
+alongside the existing Augmented triad. Guard: skip the 4-tone Augmented template for
+any root where either M3 (rootPc+4) OR aug5 (rootPc+8) is below extensionThreshold
+— both tones must be present. Without the dual guard, the template over-fires on
+complete major triads containing a minor seventh (partial-match score inflated by the
+large aug5 offset +8). Took four attempts to get right: struct field is `intervals`
+not `tones`; Tristan m285 catalog needed slash bass `D7#5/C` not bare `D7#5`; m286
+rest used for Tristan suffix coverage; M3-only guard too loose (Schumann/Corelli
+snapshots). Four edit sites: two `array<TemplateDef, 16→17>` + three
+`array<array<double,16→17>,12>` score matrices. BIR: Baroque 28/16 (unchanged);
+Jazz BIR=true 35→36 (+1 correct aug7 now identified), BIR=false=10 (unchanged).
+Mismatch: Jazz 4→3 RealDiff (Tristan m285 resolved), 127 ConventionDiff (net flat).
+Tests: 407/407 composing, 52/52 notation, 11/11 snapshot (1 skipped), no goldens.*
+
+*Previous: 2026-06-04 — Sub-9a Gate G-E stale-winner-reference fix.
+`f3e0f5f72c` corrects Gate G-E in `chordanalyzer.cpp`, which computed
+`gExpectedAltRoot = (winner.identity.rootPc + 9) % 12` against a live
+reference to `results[0]` after the inversion-correction `stable_sort`
+(L2853–2877) had already promoted Am7b5/C (rootPc=9) to results[0]. Gate G-E
+then read rootPc=9 instead of the original winner's rootPc=0, computing
+gExpectedAltRoot=6 (F#/Gb) and pulling in a dormant F#m7b5 candidate. All 5
+Sub-9a cases share the same Cm6 → Am7b5/C → stale-root pattern. Fix: capture
+`originalWinnerRootPc = winner.identity.rootPc` at L2636 alongside the existing
+`originalWinnerQuality` / `originalWinnerHasAddedSixth` captures, and use
+`originalWinnerRootPc` in the Gate G-E `gExpectedAltRoot` computation at L2896.
+BIR (lenient-OR): Baroque BIR=true=28 (unchanged), BIR=false=22→16 (−6); Jazz
+BIR=true=35 (unchanged), BIR=false=10 (unchanged). Hard stops respected.
+Tests: 407/407 composing, 52/52 notation, 11/11 pipeline_snapshot (1 skipped) —
+no goldens refreshed. Affected scores: bwv245.17, bwv258 (×2), bwv309, bwv356
++ 1 borderline case.*
+
+*Previous: 2026-06-04 — A4 Corelli op01n08d audit fixed (two sub-failures).
 **Fix 1 (m2 b3 G/B → G)**: sparse upper-register bass enumeration + structural-bass
 suppression in `chordanalyzer.cpp`. When the lowest sounding pitch is above middle C
 (MIDI 60) AND distinctPcs ≤ 2 AND there are multiple bass candidates within an
@@ -102,8 +239,11 @@ goldens. Diagnostic scaffolding fully removed from all files.
 
 ## Current State (summary)
 
-**Current BIR baselines (post-D2-unification):** Baroque BIR=true=27, BIR=false=23;
-Jazz BIR=true=33, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
+**Current BIR baselines (re-measured at HEAD after the E2d redesign; corpus
+regenerated 353/353 each preset):** Baroque BIR=true=25, BIR=false=16;
+Jazz BIR=true=36, BIR=false=10 (the prior 27/23 & 33/10 predated the `81978321e3`
+keyresolver Corelli op01n08d re-key, which was never re-measured for BIR; the E2d
+redesign is byte-identical so these are HEAD's true numbers). Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
 
 **Last committed:** `81978321e3` — keyresolver Option B Baroque partial-signature correction.
 Detects the late-17th/early-18th-century convention of notating a minor key with one fewer

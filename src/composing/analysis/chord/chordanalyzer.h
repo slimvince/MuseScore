@@ -501,17 +501,13 @@ struct ChordAnalyzerPreferences {
     /// Use Nashville-number annotations written in the score as prior context.
     bool useNashvilleAnnotations = false;       // TODO: implement
 
-    // ── Scoring snapshot (E2b) ───────────────────────────────────────────────
-
-    /// Set to a non-null pointer to receive a full scoring snapshot for E2c.
-    /// When null (default), no snapshot is allocated and the hot path is unchanged.
-    function::ScoringSnapshot* captureScoringSnapshot { nullptr };
-
-    /// When true, the three progression signals (rootContinuityBonus, w_seq, w_dim)
-    /// return 0 inside analyzeChord(). applyHarmonicFunction() re-applies them via
-    /// the ScoringSnapshot. captureScoringSnapshot must be set alongside this flag.
-    /// Default false — hot path unchanged.
-    bool suppressProgressionSignals { false };
+    // ── Scoring snapshot ─────────────────────────────────────────────────────
+    //
+    // analyzeChord() now always builds a ScoringSnapshot internally and hands it
+    // to applyHarmonicFunction() (the competition pipeline). There is no external
+    // capture opt-in and no progression-signal suppression flag: the oracle never
+    // computes a progression signal, so there is nothing to suppress. See
+    // docs/scoring_model.md section 11.
 
     // ── Style prior (future — not yet implemented) ───────────────────────────
     // TODO: expose as a user preference.  Affects chord-frequency priors and

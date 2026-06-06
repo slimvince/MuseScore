@@ -26,6 +26,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/equivalence_harness_test.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp

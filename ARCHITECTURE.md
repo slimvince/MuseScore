@@ -1215,6 +1215,67 @@ lenient-OR-50% overlap threshold.
 
 ---
 
+#### §4.1i — Technical Debt and Refactor Backlog (reviewed 2026-05-22)
+
+An external code review of `src/composing/` was conducted and assessed against
+project context. Findings are categorised below by priority and actionability.
+
+**Act now — real risk or low-risk cleanup:**
+
+- **`pitchClassName()` / `pitchClassNameFromTpc()` duplication** — both functions
+  maintain nearly-identical static name arrays for Standard / German spelling.
+  This is the highest-priority item: Iters 84, 88, and 89 each touched
+  `pitchClassNameFromTpc()`'s TPC-disambiguation block and had to carefully *not*
+  touch `pitchClassName()`. One careless edit to either without mirroring the other
+  is a latent mis-spelling bug. **Fix:** extract shared `static const char*` arrays
+  into a small central helper used by both functions. Moderate effort, real risk.
+
+- **`ChordSymbolFormatter` in `chordanalyzer.h`** — a display-layer class declared
+  alongside analysis types. Violates the analysis-is-display-agnostic principle
+  (§2.3). **Fix:** move to its own `chordsymbolformatter.{h,cpp}` pair. Low risk,
+  low effort — a file move with no logic change.
+
+**Defer until scoring stabilises:**
+
+- **Split `ChordAnalyzerPreferences`** — the struct conflates chord-scoring weights,
+  inversion heuristics, harmonic-boundary thresholds, and pedal-tail weight.
+  Valid technical debt (several fields are self-described as such). However,
+  splitting the struct mid-iteration requires updating all callers twice. Revisit
+  after a scoring stabilisation phase, not during active iteration.
+
+- **`explorationMode` coupling** — `greedyExpandSegmentation` sets `explorationMode
+  = true` on every internal `analyzeChord` call, creating a dependency from the
+  segmentation algorithm into chord-scorer internals (introduced Iter 94, required
+  to prevent boundary-exploration bias). This is architecturally awkward; a clean
+  separation of segmentation vs. final-analysis concerns would remove it. Major
+  refactor — defer.
+
+- **Data-driven mode definition table** — `keyModeTonicName()` and
+  `keyModeTonicOffset()` use separate static arrays per mode family and share
+  comment patterns that repeat the same "mode family / parent key signature" logic.
+  Consolidating into a single mode-metadata table would improve maintainability.
+  Correct-as-is; defer.
+
+**Do not remove:**
+
+- **`useExistingChordSymbols`, `useRomanNumeralAnnotations`,
+  `useNashvilleAnnotations`** in `ChordAnalyzerPreferences` — these are placeholder
+  fields for planned features, not dead code. The LLM integration design
+  (`docs/llm_integration.md`) and the Authoritative Chord Symbol Mode (§4.1f)
+  depend on `useExistingChordSymbols`. Removing them would require an explicit
+  feature-abandonment decision.
+
+**Ongoing concern (no immediate fix):**
+
+- **Accumulating scoring heuristics in `chordanalyzer.cpp`** — each iteration adds
+  well-justified gates, bonuses, and lambdas (`wSeqBonus`, `wDimBonus`, `wComplete`,
+  `wStepIn/Out`, Gate J, Gate K/L, etc.). Individually each is correct; collectively
+  they are becoming harder to reason about holistically. No structural fix is obvious
+  without a broader redesign, but new bonuses should be scrutinised carefully for
+  interaction effects with existing ones before committing.
+
+---
+
 ### 4.2 KeyModeAnalyzer
 
 **File:** `src/composing/analysis/key/keymodeanalyzer.h` and `key/keymodeanalyzer.cpp`

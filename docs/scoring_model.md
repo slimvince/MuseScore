@@ -168,9 +168,13 @@ with an equivalent mechanism.
 
 ### `rootContinuityBonus` — `prefs.rootContinuityBonus = 0.40`
 
-Applied in `bassIndependentContextualBonuses` (chordanalyzer.cpp:~L1652) when
-`context->previousRootPc == rootPc`. Rewards continuing the same root across
-adjacent regions.
+Applied by the competition pipeline `applyHarmonicFunction()`
+(`harmonicfunctionlayer.cpp`) when `ctx.previousRootPc == rootPc`, added into
+`basisIndep` before the complexity x aug multiply. Rewards continuing the same
+root across adjacent regions. It is a **progression signal, not vertical pitch
+evidence**: as of the scoring-oracle / competition-pipeline split (see section 11)
+the scoring oracle `analyzeChord()` no longer folds it into `basisIndep`. (The
+`diagnoseChord` diagnostic path still adds it inline via `contextualBonuses`.)
 
 **Known dead end (Iter 98, 2026-05-23).** Gating this bonus off a sparse
 predecessor (e.g. `previousRegion.distinctPcs <= 2`) was tried in two variants
@@ -566,10 +570,9 @@ Pass 1 (~L444+refinement), Pass 2 (~L637+refinement), Pass 2b (~L814+refinement)
 
 **E1 (current):** Pass-through. No changes to `ChordAnalysisResult`.
 
-**E2 (planned):** Progression signals migrate out of `chordanalyzer.cpp`:
-- `rootContinuityBonus` (currently in `bassIndependentContextualBonuses`)
-- `w_seq` (currently in main scoring loop)
-- `w_dim` (currently in main scoring loop)
+**E2 (done):** The three progression signals (`rootContinuityBonus`, `w_seq`,
+`w_dim`) no longer live in `chordanalyzer.cpp`. They are applied by the
+competition pipeline `applyHarmonicFunction()`; see section 11.
 
 **E3 (done, 2026-06-06):** Post-scoring gates A–L extracted from `analyzeChord()`
 into `applyPostScoringGates()` (`chordanalyzer.cpp`). The new execution order at
@@ -602,5 +605,75 @@ architectural home for these terms.
 
 ---
 
-*Last updated: 2026-06-06 — E3 extracted `applyPostScoringGates()` from
-`analyzeChord()`. §6 + §10 updated.*
+---
+
+## 11. Scoring oracle vs competition pipeline (E2d redesign)
+
+Winner selection now has a single home. Two roles, two functions, one source of
+truth.
+
+**`analyzeChord()` — the scoring oracle.** Computes only what depends on the raw
+tones and key. For every `(bass, root, template)` cell it evaluates `basisIndep`
+(vertical pitch evidence, *without* any progression signal), `basisDep`
+(bass-dependent delta, including the section 4.1b inversion bonuses and
+`appliedBassBonus`), `complexityFactor`, `augFactor`, and `w_complete`. It also
+computes the region metadata (`pcWeight`, `tpcForPc`, `scale`, `keyTonicPc`,
+`keyMode`, `distinctPcs`, `jointScoringEnabled`). It packs all of this into a
+`fn::ScoringSnapshot`, builds a `fn::HarmonicFunctionContext` from the temporal
+context, and calls `applyHarmonicFunction()`. **It selects no winner and applies
+no progression signal.**
+
+**`applyHarmonicFunction()` — the competition pipeline**
+(`harmonicfunctionlayer.cpp`). The sole owner of winner selection. In order:
+
+1. Re-score every cell with `rootContinuityBonus` (added into `basisIndep` before
+   the complexity x aug multiply), `w_seq`, and `w_dim`.
+2. Pass B — `w_stepIn`/`w_stepOut` with the surgical first-inversion-m7-family
+   guard (`applyStepBonusGuard`), run independently on the with-wDim and
+   without-wDim variants.
+3. The wDim post-bonus quality guard (with-wDim accepted only if its global
+   winner is Diminished/HalfDiminished, else fall back to without-wDim).
+4. Cross-bass winner selection (the highest-scoring cell across all basses, no
+   field patching).
+5. The de-inflated threshold:
+   `(winnerScore - winnerBassBonus) * kScoreThresholdRatio`.
+6. Build `results[]` (cap 3 + diff-root append) via `buildChordResult()`.
+7. Fill the `PostScoringGateContext` (bass-independent metadata from the
+   snapshot; `bassPc`/`bassTpc`/`threshold`/`rawCandidates` from the winner).
+   `tones` and `keySigFifths` are set by the oracle, which has them directly.
+
+**Why.** Every prior attempt to enable a progression-signal layer failed because
+`applyHarmonicFunction` was a *replica* of the competition loop, recomputed from a
+snapshot, and the replica was always missing a piece (Pass B, the threshold, the
+cap, the cross-bass move, the gate context). Moving the competition itself into
+the function layer removes the replica: there is exactly one winner-selection
+pipeline, so nothing can drift. This is the section 4.1c separation
+(progression/contextual signals belong in a post-ranking layer, not in the
+vertical scorer) taken literally, and it is the architecture-review's preferred
+strategy (`cc_e2d_architecture_review_report.md`, Q4/Q5 option 1).
+
+**Removed.** `ChordAnalyzerPreferences::suppressProgressionSignals` and
+`::captureScoringSnapshot` are gone (no suppress-then-recompute mode; the snapshot
+is always built internally). The three explicit `applyHarmonicFunction()` calls in
+`regionanalyzer.cpp` are gone (the call is now internal to `analyzeChord()`).
+`kScoreThresholdRatio` moved to `harmonicfunctionlayer.h`
+(`fn::kScoreThresholdRatio`). `applyStepBonusGuard` and the `w_stepIn`/`w_stepOut`
+helpers are now free functions in the function layer.
+
+**Behaviour-preserving invariant.** `basisIndep` (clean) `+ rootContinuity`
+reconstructs the historical `basisIndepMatrix` value; every other term is computed
+identically and in the same order, so the selected winner is unchanged. Verified
+by the equivalence harness (0 divergences), the catalog assertions in
+`composing_tests`, the pipeline snapshot goldens, and the BIR corpus.
+
+The template count and the 4-site atomic-update checklist (section 9) are
+unchanged by this redesign (no templates added or removed).
+
+---
+
+*Last updated: 2026-06-06 — E2d redesign: scoring-oracle / competition-pipeline
+split. `analyzeChord()` is now a vertical-only oracle; `applyHarmonicFunction()`
+owns winner selection, threshold, result cap and gate-context construction.
+Removed `suppressProgressionSignals` / `captureScoringSnapshot`. New section 11;
+section 4 (`rootContinuityBonus`) + section 10 (E2) updated. Prior: E3 extracted
+`applyPostScoringGates()` from `analyzeChord()`.*

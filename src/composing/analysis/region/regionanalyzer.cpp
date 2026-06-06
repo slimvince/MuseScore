@@ -452,17 +452,8 @@ analyzeRegions(const mu::engraving::Score* score,
 
             ChordAnalysisResult chosenResult = results.front();
 
-            if (!attemptPrefs.explorationMode) {
-                function::HarmonicFunctionContext fnCtx;
-                fnCtx.keyFifths      = localKeyFifths;
-                fnCtx.keyMode        = localKeyMode;
-                fnCtx.previousRootPc = temporalCtx.previousRootPc;
-                fnCtx.nextRootPc     = temporalCtx.nextRootPc;
-                fnCtx.previousBassPc = temporalCtx.previousBassPc;
-                fnCtx.nextBassPc     = temporalCtx.nextBassPc;
-                function::applyHarmonicFunction(results, chosenResult, fnCtx,
-                                                nullptr, nullptr);
-            }
+            // Winner selection (applyHarmonicFunction, the competition pipeline)
+            // now runs inside analyzeChord(); no explicit call here.
 
             analysis::applyIter8691Pedal(results, gateCtx, &temporalCtx, attemptPrefs);
             analysis::applyPostScoringGates(results, attemptPrefs, &temporalCtx, gateCtx);
@@ -672,17 +663,8 @@ analyzeRegions(const mu::engraving::Score* score,
 
                 ChordAnalysisResult chosenSub = subResults.front();
 
-                if (!prefs.explorationMode) {
-                    function::HarmonicFunctionContext fnCtx;
-                    fnCtx.keyFifths      = subKeyFifths;
-                    fnCtx.keyMode        = subKeyMode;
-                    fnCtx.previousRootPc = subCtx.previousRootPc;
-                    fnCtx.nextRootPc     = subCtx.nextRootPc;
-                    fnCtx.previousBassPc = subCtx.previousBassPc;
-                    fnCtx.nextBassPc     = subCtx.nextBassPc;
-                    function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
-                                                    nullptr, nullptr);
-                }
+                // Winner selection (applyHarmonicFunction, the competition pipeline)
+                // now runs inside analyzeChord(); no explicit call here.
 
                 analysis::applyIter8691Pedal(subResults, subGateCtx, &subCtx, prefs);
                 analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
@@ -868,17 +850,8 @@ analyzeRegions(const mu::engraving::Score* score,
 
                     ChordAnalysisResult chosenSub = subResults.front();
 
-                    if (!prefs.explorationMode) {
-                        function::HarmonicFunctionContext fnCtx;
-                        fnCtx.keyFifths      = subKeyFifths;
-                        fnCtx.keyMode        = subKeyMode;
-                        fnCtx.previousRootPc = subCtx.previousRootPc;
-                        fnCtx.nextRootPc     = subCtx.nextRootPc;
-                        fnCtx.previousBassPc = subCtx.previousBassPc;
-                        fnCtx.nextBassPc     = subCtx.nextBassPc;
-                        function::applyHarmonicFunction(subResults, chosenSub, fnCtx,
-                                                        nullptr, nullptr);
-                    }
+                    // Winner selection (applyHarmonicFunction, the competition
+                    // pipeline) now runs inside analyzeChord(); no explicit call here.
 
                     analysis::applyIter8691Pedal(subResults, subGateCtx, &subCtx, prefs);
                     analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
