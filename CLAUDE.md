@@ -99,6 +99,46 @@ If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix 
 
 Never widen a Baroque-tuned threshold to cover a non-Baroque edge case.
 
+**Preset-specific scoring caps** — these values are load-bearing and must not be
+homogenised. `maxTotalInversionContextBonus`: Baroque=2.5, Jazz=0.6, default=2.0.
+Documented in `docs/scoring_model.md` §4.
+
+## Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)
+
+**Read `docs/scoring_model.md` at the start of any session that touches scoring
+logic in `chordanalyzer.cpp`** — this includes adding or modifying templates,
+bonuses, guards, gates, score matrices, or post-scoring passes.
+
+The document is the authoritative reference for how the scoring pipeline works,
+why each term exists, and what invariants must not be broken. Violating these
+invariants without reading the doc first has caused multiple failed attempts
+(B1 leading-tone ambiguity, B2 ×4, B3 rotation-selector bypass).
+
+**Sync rule — mandatory:** Any commit that adds or modifies a template, bonus,
+guard, gate, or other scoring term in `chordanalyzer.cpp` **must** include a
+corresponding update to `docs/scoring_model.md` in the same commit. The two
+must never drift apart. Specifically:
+
+- Adding a template: update the Templates section (§2), increment the template
+  count in the array-size comment, add the guard description if applicable
+- Adding or changing a bonus/gate: update the relevant §4 or §6 entry
+- Adding a new constraint or dead end: add it to §8
+
+**Staleness check:** The template count in `docs/scoring_model.md` §2 must
+always match the `array<TemplateDef, N>` declaration in `chordanalyzer.cpp`.
+If they differ, the doc is stale — update it before proceeding.
+
+**4-site atomic update — template additions only:** When adding a template,
+exactly four sites in `chordanalyzer.cpp` must be updated together. Missing
+any one causes a stack-buffer overrun (silent, caught in B1 attempt 2026-06-04):
+1. `analyzeChord` `array<TemplateDef, N>` declaration — size N→N+1
+2. `analyzeChord` template entry — the new TemplateDef line
+3. Three score matrices (`basisIndepMatrix`, `complexityFactorMatrix`,
+   `augFactorMatrix`) — inner array size N→N+1
+4. `kDiagTemplates` in `diagnoseChord` — size N→N+1 and the new entry
+
+The full checklist is in `docs/scoring_model.md` §9.
+
 ## Score corpora
 
 For any task involving scores (validation, snapshot tests, manual QA,
