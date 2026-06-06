@@ -3326,6 +3326,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         gateCtxOut->distinctPcs   = distinctPcs;
         gateCtxOut->threshold     = threshold;
         gateCtxOut->rawCandidates = rawCandidates;  // copy
+        gateCtxOut->tones         = tones;          // for extracted pedal Pass-2
+        gateCtxOut->keySigFifths  = keySignatureFifths;
     }
 
     // Gates A–L now run externally via applyPostScoringGates().
@@ -3333,6 +3335,47 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // callers) invoke it after applyHarmonicFunction(); inferNextRootPc() and
     // the test helper analyzeWithGates() call it directly. Do NOT call it here —
     // that would revert the E3 extraction.
+
+    // ── Iter 86 / Iter 91 / pedal tail — EXTRACTED (Phase 1, E2d-prereq) ──────
+    //
+    // The bass-b7 promotion (Iter 86), bass-as-root promotion (Iter 91) and
+    // two-pass pedal-point detection used to run here, on results.front().  They
+    // are now in the free function applyIter8691Pedal() (defined just below) and
+    // run AFTER applyHarmonicFunction() at every production call site.  This lets
+    // them stamp the function-layer-selected winner in suppression mode rather
+    // than the suppressed-signal winner (the "Mode C reversion" E3 fixed for the
+    // gates).  In non-suppression mode applyHarmonicFunction() is a no-op, so the
+    // relocation is byte-identical to the old inline tail.
+
+    return results;
+}
+
+// ── Iter 86 / Iter 91 / pedal-point tail (extracted from analyzeChord) ──────
+//
+// See the declaration in chordanalyzer.h for the rationale.  All inputs come from
+// the PostScoringGateContext captured by analyzeChord(); the temporal context (for
+// Iter 91's nextRootPc) is passed separately.  The pedal Pass-2 sub-analysis
+// re-invokes analyzeChord() and then re-applies this same tail to its result —
+// replicating the recursive behaviour the inline version had (the nested
+// analyzeChord() previously ran its own Iter 86/91/pedal tail).
+void applyIter8691Pedal(
+    std::vector<ChordAnalysisResult>&  results,
+    const PostScoringGateContext&      gateCtx,
+    const ChordTemporalContext*        context,
+    const ChordAnalyzerPreferences&    prefs)
+{
+    const int bassPc = gateCtx.bassPc;
+
+    // Build a ChordAnalysisResult from a RawCandidate using the captured context
+    // (mirrors the buildResult lambda in applyPostScoringGates / analyzeChord).
+    const auto buildResult = [&](const RawCandidate& rc) -> ChordAnalysisResult {
+        return buildChordResult(rc,
+            BuildChordResultContext{ gateCtx.pcWeight, gateCtx.tpcForPc,
+                                     gateCtx.bassPc, gateCtx.bassTpc,
+                                     gateCtx.keyTonicPc, gateCtx.keyMode,
+                                     gateCtx.scale },
+            prefs);
+    };
 
     // ── Iter 86 — bass-b7 promotion ──────────────────────────────────────────
     // If the winner is a Major or Minor triad whose bass is the b7 of the
@@ -3353,7 +3396,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                                   && !hasExtension(winner.identity.extensions, Extension::MajorSeventh);
         if (bassIsB7
             && isPlainTriad
-            && pcWeight[static_cast<size_t>(bassPc)] > prefs.extensionThreshold) {
+            && gateCtx.pcWeight[static_cast<size_t>(bassPc)] > prefs.extensionThreshold) {
             setExtension(winner.identity.extensions, Extension::MinorSeventh);
         }
     }
@@ -3387,7 +3430,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             // Find the bass-rooted candidate in rawCandidates (the top-3 results[]
             // cap is routinely exhausted by same-rootPc variants of the iii/III
             // reading; the bass-rooted target often lives only in rawCandidates).
-            for (const RawCandidate& rc : rawCandidates) {
+            for (const RawCandidate& rc : gateCtx.rawCandidates) {
                 if (rc.rootPc != bassPc) continue;
                 // Append a built result for the bass-rooted candidate and swap
                 // it into the winner slot (same swap pattern as the FM2 fallback
@@ -3427,8 +3470,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         if (!bassIsChordTone) {
             // Remove all tones with the pedal pitch class and re-analyze.
             std::vector<ChordAnalysisTone> upperTones;
-            upperTones.reserve(tones.size());
-            for (const ChordAnalysisTone& t : tones) {
+            upperTones.reserve(gateCtx.tones.size());
+            for (const ChordAnalysisTone& t : gateCtx.tones) {
                 if ((t.pitch % 12 + 12) % 12 != bassPc) {
                     upperTones.push_back(t);
                 }
@@ -3451,8 +3494,14 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 // gap used to confirm the pedal.
                 ChordAnalyzerPreferences pass2Prefs = prefs;
                 pass2Prefs.inversionSuspicionMargin = 0.0;
-                const auto pass2 = RuleBasedChordAnalyzer{}.analyzeChord(
-                    upperTones, keySignatureFifths, keyMode, nullptr, pass2Prefs);
+                // Capture a gate context for Pass 2 and re-apply this tail to it,
+                // matching the inline version where the nested analyzeChord() ran
+                // its own Iter 86/91/pedal tail (context = nullptr ⇒ Iter 91 skips).
+                PostScoringGateContext pass2GateCtx;
+                auto pass2 = RuleBasedChordAnalyzer{}.analyzeChord(
+                    upperTones, gateCtx.keySigFifths, gateCtx.keyMode, nullptr,
+                    pass2Prefs, &pass2GateCtx);
+                applyIter8691Pedal(pass2, pass2GateCtx, nullptr, pass2Prefs);
 
                 if (!pass2.empty()) {
                     // Confidence is measured against the first competitor with a
@@ -3485,8 +3534,6 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             }
         }
     }
-
-    return results;
 }
 
 ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(

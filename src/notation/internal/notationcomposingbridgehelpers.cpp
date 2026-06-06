@@ -826,6 +826,11 @@ analyzeSection(const mu::engraving::Score* sc,
                                                    mu::composing::analysis::kDefaultChordAnalyzerPreferences,
                                                    &gapGateCtx);
         if (!results.empty()) {
+            mu::composing::analysis::applyIter8691Pedal(
+                results,
+                gapGateCtx,
+                nullptr,
+                mu::composing::analysis::kDefaultChordAnalyzerPreferences);
             mu::composing::analysis::applyPostScoringGates(
                 results,
                 mu::composing::analysis::kDefaultChordAnalyzerPreferences,

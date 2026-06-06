@@ -380,6 +380,7 @@ void fillGap(std::vector<PlacedRegion>& regions,
         auto cands = chordAnalyzer->analyzeChord(
             tones, globalKeyFifths, globalKeyMode, &initCtx, explorePrefs, &gateCtxInit);
         if (cands.empty()) continue;
+        analysis::applyIter8691Pedal(cands, gateCtxInit, &initCtx, explorePrefs);
         analysis::applyPostScoringGates(cands, explorePrefs, &initCtx, gateCtxInit);
 
         // Iter 71 Fix A — second analyzeChord call with no bilateral
@@ -388,6 +389,7 @@ void fillGap(std::vector<PlacedRegion>& regions,
         auto localCands = chordAnalyzer->analyzeChord(
             tones, globalKeyFifths, globalKeyMode, nullptr, explorePrefs, &gateCtxLocal);
         if (!localCands.empty()) {
+            analysis::applyIter8691Pedal(localCands, gateCtxLocal, nullptr, explorePrefs);
             analysis::applyPostScoringGates(localCands, explorePrefs, nullptr, gateCtxLocal);
         }
 
@@ -530,6 +532,7 @@ void fillGap(std::vector<PlacedRegion>& regions,
         auto cands = chordAnalyzer->analyzeChord(
             tones, globalKeyFifths, globalKeyMode, &ctx, explorePrefs, &gateCtxReScore);
         if (cands.empty()) continue;
+        analysis::applyIter8691Pedal(cands, gateCtxReScore, &ctx, explorePrefs);
         analysis::applyPostScoringGates(cands, explorePrefs, &ctx, gateCtxReScore);
 
         const int newRootPc = cands[0].identity.rootPc;
@@ -725,6 +728,7 @@ greedyExpandSegmentation(const Score* score,
         if (chordCands.empty()) {
             continue;
         }
+        analysis::applyIter8691Pedal(chordCands, gateCtxAnchor, nullptr, sparsePrefs);
         analysis::applyPostScoringGates(chordCands, sparsePrefs, nullptr, gateCtxAnchor);
         const double winnerScore = chordCands[0].identity.score;
         if (winnerScore < effectiveAnchorMinScore) {
@@ -801,6 +805,7 @@ greedyExpandSegmentation(const Score* score,
             auto headCands = chordAnalyzer->analyzeChord(
                 headTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs, &gateCtxHead);
             if (!headCands.empty()) {
+                analysis::applyIter8691Pedal(headCands, gateCtxHead, nullptr, sparsePrefs);
                 analysis::applyPostScoringGates(headCands, sparsePrefs, nullptr, gateCtxHead);
             }
             if (!headCands.empty() && headCands[0].identity.score > 0.0) {
@@ -892,6 +897,7 @@ greedyExpandSegmentation(const Score* score,
             auto tailCands = chordAnalyzer->analyzeChord(
                 tailTones, globalKeyFifths, globalKeyMode, nullptr, sparsePrefs, &gateCtxTail);
             if (!tailCands.empty()) {
+                analysis::applyIter8691Pedal(tailCands, gateCtxTail, nullptr, sparsePrefs);
                 analysis::applyPostScoringGates(tailCands, sparsePrefs, nullptr, gateCtxTail);
             }
             if (!tailCands.empty() && tailCands[0].identity.score > 0.0) {

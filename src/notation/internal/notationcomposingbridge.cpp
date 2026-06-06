@@ -432,6 +432,11 @@ NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
                                                        mu::composing::analysis::kDefaultChordAnalyzerPreferences,
                                                        &bridgeGateCtx);
     if (!context.chordResults.empty()) {
+        mu::composing::analysis::applyIter8691Pedal(
+            context.chordResults,
+            bridgeGateCtx,
+            &temporalCtx,
+            mu::composing::analysis::kDefaultChordAnalyzerPreferences);
         mu::composing::analysis::applyPostScoringGates(
             context.chordResults,
             mu::composing::analysis::kDefaultChordAnalyzerPreferences,

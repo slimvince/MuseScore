@@ -464,6 +464,7 @@ analyzeRegions(const mu::engraving::Score* score,
                                                 nullptr, nullptr);
             }
 
+            analysis::applyIter8691Pedal(results, gateCtx, &temporalCtx, attemptPrefs);
             analysis::applyPostScoringGates(results, attemptPrefs, &temporalCtx, gateCtx);
             chosenResult = results.empty() ? chosenResult : results.front();
 
@@ -683,6 +684,7 @@ analyzeRegions(const mu::engraving::Score* score,
                                                     nullptr, nullptr);
                 }
 
+                analysis::applyIter8691Pedal(subResults, subGateCtx, &subCtx, prefs);
                 analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
                 chosenSub = subResults.empty() ? chosenSub : subResults.front();
 
@@ -878,6 +880,7 @@ analyzeRegions(const mu::engraving::Score* score,
                                                         nullptr, nullptr);
                     }
 
+                    analysis::applyIter8691Pedal(subResults, subGateCtx, &subCtx, prefs);
                     analysis::applyPostScoringGates(subResults, prefs, &subCtx, subGateCtx);
                     chosenSub = subResults.empty() ? chosenSub : subResults.front();
 

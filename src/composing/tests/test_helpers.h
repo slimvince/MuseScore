@@ -119,6 +119,7 @@ inline std::vector<ChordAnalysisResult> analyzeWithGates(
     auto results = analyzer.analyzeChord(tones, keySignatureFifths, keyMode,
                                          context, prefs, &gateCtx);
     if (!results.empty()) {
+        applyIter8691Pedal(results, gateCtx, context, prefs);
         applyPostScoringGates(results, prefs, context, gateCtx);
     }
     return results;

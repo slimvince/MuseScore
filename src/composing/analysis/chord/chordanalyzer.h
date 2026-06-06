@@ -747,6 +747,12 @@ struct PostScoringGateContext {
     int                       distinctPcs    { 0 };
     double                    threshold      { 0.0 };
     std::vector<RawCandidate> rawCandidates  {};
+
+    // Extracted Iter 86/91/pedal tail (Phase 1, E2d-prereq) — captured so
+    // applyIter8691Pedal() can run after applyHarmonicFunction() at the
+    // production call sites.
+    std::vector<ChordAnalysisTone> tones        {};   ///< Region tones (pedal Pass-2 re-analysis).
+    int                            keySigFifths { 0 }; ///< keySignatureFifths (pedal Pass-2 re-analysis).
 };
 
 /// Locally-computed inputs that buildChordResult() needs from analyzeChord().
@@ -784,6 +790,19 @@ void applyPostScoringGates(
     const ChordTemporalContext*       context,
     const PostScoringGateContext&     gateCtx);
 
+/// Apply the Iter 86 (bass-b7 promotion), Iter 91 (bass-as-root promotion) and
+/// two-pass pedal-point passes that previously ran at the tail of analyzeChord().
+/// Extracted (Phase 1, E2d-prereq) so they run AFTER applyHarmonicFunction() —
+/// in suppression mode they must stamp the function-layer-selected winner, not the
+/// suppressed-signal winner. In non-suppression mode applyHarmonicFunction() is a
+/// no-op, so this is byte-identical to the old inline tail. Must be called between
+/// applyHarmonicFunction() and applyPostScoringGates() at every production site.
+void applyIter8691Pedal(
+    std::vector<ChordAnalysisResult>& results,
+    const PostScoringGateContext&     gateCtx,
+    const ChordTemporalContext*       context,
+    const ChordAnalyzerPreferences&   prefs);
+
 /// Lightweight root-PC inference for a neighbouring region.
 /// Calls analyzeChord with nullptr context (no temporal signals) to avoid recursion.
 /// Returns -1 if tones is empty or analyzeChord returns no candidates.
@@ -801,6 +820,7 @@ inline int inferNextRootPc(
     auto candidates = analyzer->analyzeChord(
         tones, keySignatureFifths, keyMode, nullptr, prefs, &igCtx);
     if (candidates.empty()) return -1;
+    applyIter8691Pedal(candidates, igCtx, nullptr, prefs);
     applyPostScoringGates(candidates, prefs, nullptr, igCtx);
     return candidates.empty() ? -1 : candidates[0].identity.rootPc;
 }

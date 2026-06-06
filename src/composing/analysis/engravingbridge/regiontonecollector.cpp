@@ -791,6 +791,11 @@ findTemporalContext(const mu::engraving::Score* sc,
                                             mu::composing::analysis::kDefaultChordAnalyzerPreferences,
                                             &prevGateCtx);
             if (!prevResults.empty()) {
+                mu::composing::analysis::applyIter8691Pedal(
+                    prevResults,
+                    prevGateCtx,
+                    nullptr,
+                    mu::composing::analysis::kDefaultChordAnalyzerPreferences);
                 mu::composing::analysis::applyPostScoringGates(
                     prevResults,
                     mu::composing::analysis::kDefaultChordAnalyzerPreferences,
