@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""characterise_bir_false.py — C3/C4 characterisation of the 22 Baroque BIR=false residuals.
+
+Reuses pairing logic from compare_analyses.py (time-overlap alignment to
+music21 and to DCML/WiR). A case enters the BIR=false residual set iff:
+
+  - our region is chord_disagree vs music21
+  - the winner had bassIsRoot == False
+  - music21 AND WiR/DCML agree (three_way_classify == 'music21_dcml_agree')
+
+For each such case, compute delta = (our_root - dcml_root + 12) % 12 in the
+prompt's convention (our root MINUS dcml root). Then group by delta and dump
+the full case list for the β (delta=5, P4 above DCML) and γ (delta=2, M2 above)
+subgroups.
+
+Read-only. No source code or corpus mutations.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
+_ROOT       = Path(__file__).resolve().parent.parent
+_CORPUS_DIR = _ROOT / "tools" / "corpus"
+_WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
+
+sys.path.insert(0, str(_ROOT / "tools"))
+import compare_analyses as cmp
+import dcml_parser as dcml
+
+PC_NAMES = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
+
+INTERVAL_NAMES = {
+    0:  "unison           (quality-only diff)",
+    1:  "m2 above DCML    (semitone)",
+    2:  "M2 above DCML    γ (whole-tone)",
+    3:  "m3 above DCML",
+    4:  "M3 above DCML    (our root = M3 of DCML)",
+    5:  "P4 above DCML    β (our root = 4th of DCML)",
+    6:  "tritone above DCML",
+    7:  "P5 above DCML    (our root = 5th of DCML; classic V-instead-of-I)",
+    8:  "m6 above DCML",
+    9:  "M6 above DCML    (our root = 6th of DCML)",
+    10: "m7 above DCML    (our root = b7 of DCML)",
+    11: "M7 above DCML    (our root = lead-tone of DCML)",
+}
+
+def pc_name(pc):
+    return PC_NAMES[pc % 12] if pc is not None and pc >= 0 else "?"
+
+def parse_pc_set(bitmap):
+    if bitmap is None:
+        return set()
+    return {i for i in range(12) if bitmap & (1 << i)}
+
+def main():
+    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+    print(f"Loaded {len(ours_files)} corpus files")
+
+    cases = []
+    processed = 0
+    wir_coverage = 0
+
+    for ours_path in ours_files:
+        stem = ours_path.stem.replace(".ours", "")
+        m21_path = _CORPUS_DIR / f"{stem}.music21.json"
+        if not m21_path.exists():
+            continue
+        try:
+            _, ours_regions = cmp.load_analysis(ours_path)
+            _, m21_regions  = cmp.load_analysis(m21_path)
+        except Exception:
+            continue
+        if not ours_regions:
+            continue
+
+        wir_path = dcml.find_wir_file(str(_WIR_DIR), stem)
+        wir_regions = []
+        if wir_path:
+            try:
+                wir_regions = dcml.parse_rntxt_file(wir_path)
+                wir_coverage += 1
+            except Exception:
+                pass
+
+        aligned     = cmp.align_regions(ours_regions, m21_regions)
+        wir_aligned = cmp.align_dcml_regions(ours_regions, wir_regions) if wir_regions else [None]*len(ours_regions)
+        processed  += 1
+
+        for i, (our_r, their_r) in enumerate(aligned):
+            if cmp.classify(our_r, their_r).category != "chord_disagree":
+                continue
+            if our_r.bass_is_root:               # only BIR=false residuals
+                continue
+            if not wir_regions or i >= len(wir_aligned):
+                continue
+            wir_r  = wir_aligned[i]
+            wir_pc = wir_r.root_pc if wir_r is not None else None
+            cat    = cmp.three_way_classify(our_r.root_pc, their_r.root_pc if their_r else None, wir_pc)
+            if cat != "music21_dcml_agree":
+                continue
+
+            dcml_root = their_r.root_pc        # equals wir_pc (both agree)
+            our_root  = our_r.root_pc
+            our_bass  = our_r.bass_pc if our_r.bass_pc is not None else our_root
+
+            # Prompt's convention: delta = our - dcml (positive = above DCML)
+            delta = (our_root - dcml_root + 12) % 12
+
+            # DCML root presence in our pc-set / our alts
+            pcs_present = parse_pc_set(our_r.pitch_class_set)
+            dcml_in_pcs = (dcml_root in pcs_present)
+            dcml_in_alts = any(int(alt.get("rootPitchClass", -99)) == dcml_root
+                               for alt in (our_r.alternatives or []))
+
+            cases.append({
+                "stem":          stem,
+                "measure":       our_r.measure_number,
+                "beat":          our_r.beat,
+                "tick":          our_r.start_tick,
+                "our_root":      our_root,
+                "our_bass":      our_bass,
+                "our_quality":   our_r.quality,
+                "our_sym":       our_r.chord_symbol,
+                "dcml_root":     dcml_root,
+                "dcml_label":    their_r.chord_symbol,
+                "wir_label":     wir_r.chord_symbol if wir_r else "",
+                "delta":         delta,
+                "distinct_pcs": len(pcs_present),
+                "pcs_present":   sorted(pcs_present),
+                "dcml_in_pcs":   dcml_in_pcs,
+                "dcml_in_alts":  dcml_in_alts,
+                "key_tonic":     our_r.key,
+                "key_conf":      our_r.key_confidence or 0.0,
+                "note_count":    our_r.note_count or 0,
+                "margin":        our_r.chord_score_margin or 0.0,
+                "score":         our_r.chord_score or 0.0,
+                "alternatives":  [
+                    f"{a.get('chordSymbol','?')}[r={a.get('rootPitchClass','?')},q={a.get('quality','?')}]s={a.get('score',0):.2f}"
+                    for a in (our_r.alternatives or [])[:4]
+                ],
+            })
+
+    n = len(cases)
+    print(f"Processed {processed} scores ({wir_coverage} with WiR coverage) -> {n} genuine BIR=false cases")
+
+    # ── Delta-group summary ──────────────────────────────────────────────────
+    delta_counts = Counter(c["delta"] for c in cases)
+    print("\n══════════════════════════════════════════════════════════════════════")
+    print(" Delta = (our_root - dcml_root + 12) % 12  group counts")
+    print("══════════════════════════════════════════════════════════════════════")
+    print(f"  {'delta':>5}  {'count':>5}   {'interval'}")
+    for d in range(12):
+        c = delta_counts.get(d, 0)
+        if c == 0:
+            continue
+        bar = "█" * c
+        print(f"  +{d:3d}  {c:5d}   {bar} {INTERVAL_NAMES[d]}")
+
+    print(f"\nTOTAL genuine BIR=false: {n}")
+
+    # ── Per-group full case dump ────────────────────────────────────────────
+    def dump_group(d, label):
+        sub = sorted([c for c in cases if c["delta"] == d], key=lambda c: (c["stem"], c["tick"]))
+        print(f"\n══════════════════════════════════════════════════════════════════════")
+        print(f" Delta=+{d} subgroup — {label}  ({len(sub)} cases)")
+        print("══════════════════════════════════════════════════════════════════════")
+        for k, c in enumerate(sub, 1):
+            pcs_str = ",".join(pc_name(p) for p in c["pcs_present"])
+            alts = " | ".join(c["alternatives"])
+            print(f"\n  [{k}] {c['stem']}  m{c['measure']}.b{c['beat']}  tick={c['tick']}")
+            print(f"      our  = {c['our_sym']:<14} root={pc_name(c['our_root'])} bass={pc_name(c['our_bass'])} q={c['our_quality']}")
+            print(f"      DCML = {c['dcml_label']:<14} root={pc_name(c['dcml_root'])}    WiR={c['wir_label']}")
+            print(f"      key  = {c['key_tonic']} (kConf={c['key_conf']:.2f})   noteCount={c['note_count']}  distinctPcs={c['distinct_pcs']}")
+            print(f"      pcs  = {{{pcs_str}}}   DCML_root_present={c['dcml_in_pcs']}   DCML_root_in_alts={c['dcml_in_alts']}")
+            print(f"      score={c['score']:.2f} margin={c['margin']:.3f}")
+            print(f"      alts = {alts}")
+
+    # Order non-zero deltas by count desc
+    nonzero_sorted = [d for d, _ in sorted(delta_counts.items(), key=lambda kv: -kv[1]) if d != 0]
+    for d in nonzero_sorted[:2]:
+        dump_group(d, INTERVAL_NAMES[d])
+
+    # Always dump β and γ explicitly even if not top-2
+    for d, lbl in [(5, "β P4 above"), (2, "γ M2 above")]:
+        if d not in nonzero_sorted[:2] and delta_counts.get(d, 0) > 0:
+            dump_group(d, INTERVAL_NAMES[d])
+
+    # ── Mozart k280 cases ───────────────────────────────────────────────────
+    moz = [c for c in cases if "k280" in c["stem"].lower() or "k279" in c["stem"].lower() or "mozart" in c["stem"].lower()]
+    print(f"\n══════════════════════════════════════════════════════════════════════")
+    print(f" Mozart cases (k279/k280) in BIR=false set: {len(moz)}")
+    print("══════════════════════════════════════════════════════════════════════")
+    for c in moz:
+        print(f"  {c['stem']}  m{c['measure']}.b{c['beat']}  delta=+{c['delta']}  our={c['our_sym']} -> DCML={c['dcml_label']}")
+    if not moz:
+        print("  (none — Mozart sonatas are not in the Bach Baroque BIR corpus)")
+
+    # ── Compact full enumeration sorted by stem+tick ────────────────────────
+    print(f"\n══════════════════════════════════════════════════════════════════════")
+    print(f" Full BIR=false enumeration (all {n} cases) sorted by stem,tick")
+    print("══════════════════════════════════════════════════════════════════════")
+    print(f"  {'#':>3} {'stem':<14} {'m':>3} {'b':>5} {'tick':>6}  {'our':<14} {'DCML':<14} {'Δ':>2}  {'kConf':>5} {'mar':>6}")
+    for k, c in enumerate(sorted(cases, key=lambda c: (c["stem"], c["tick"])), 1):
+        print(f"  {k:3d} {c['stem']:<14} {c['measure']:3d} {c['beat']:5.2f} {c['tick']:6d}  "
+              f"{c['our_sym']:<14} {c['dcml_label']:<14} +{c['delta']:>1}  "
+              f"{c['key_conf']:5.2f} {c['margin']:6.3f}")
+
+
+if __name__ == "__main__":
+    main()
