@@ -1,6 +1,20 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14 to bootstrap a fresh Cowork session with zero context.*
+*Written 2026-05-14. Last updated 2026-06-06 (post-E2d housekeeping — `8f13aee8d3`. CLAUDE.md additions committed, equivalence harness removed, git status audited. 407/407, 52/52, 11/11.)*
+
+---
+
+## STANDING RULE FOR COWORK (read every session)
+
+**Cowork writes instruction files. CC executes them. Never the other way around.**
+
+- When the user says "go", "do E2b", "execute", or similar: the response is
+  "The instruction is ready at `cc_instruction_X.md` — give it to CC."
+- Cowork MAY: read source files (grep/cat/sed -n), write `.md` instruction files,
+  update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
+- Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
+  use Edit/Write tools on anything under `src/`; use bash redirects on source files.
+- Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.
 
 ---
 
@@ -26,32 +40,47 @@ All active development is on **master**. Always confirm which worktree CC is in 
 
 ---
 
-## Current state (as of 2026-05-20, post D2-unification — session close)
+## Current state (as of 2026-06-06, post E2d housekeeping)
 
-- **HEAD:** `a69a23e59b` on master, **pushed to origin** (range `16b5bdfa57..a69a23e59b`,
-  9 commits). **Working tree is clean.** Iter 97 (Phases 2+3+4 + D2 unification) and
-  STEP 1 (dim7/Gate-J) are all committed and pushed. **The unification is complete** — there
-  is no uncommitted Phase-4 working tree and no "under diagnostic" state. Any earlier
-  language describing Phase 4 as "ready to commit" / "diagnostic" is retired.
+- **HEAD:** `8f13aee8d3` on master. **Working tree has COWORK_HANDOFF.md modified (this file — commit pending in next housekeeping pass) and a batch of untracked docs/tools files (see housekeeping audit below).**
 
-  Recent master lineage: `a69a23e59b` (STATUS doc) ← `4d881e7418` (D2 unification) ←
-  `3d80d0a91d` (STEP 1 dim7/Gate-J) ← `0d6a78f53d` (gitattributes) ← `9ef6326261` (doc) ←
-  `53c4f2d50c` (Pass-1 sparse-admission fallback) ← `34800682f9` / `045cb54e0d` (Phase 4) ←
-  `16b5bdfa57` (Phases 2+3). The four canonical region modules are live:
-  `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}`,
-  `composing/analysis/key/keyresolver.{h,cpp}`,
-  `composing/analysis/region/regionanalyzer.{h,cpp}`,
-  `composing/analysis/region/sparsechordrefinement.{h,cpp}`.
+  Recent master lineage: `8f13aee8d3` (test: remove equivalence harness) ←
+  `469d7830f2` (docs: CLAUDE.md scoring-doc process rules) ←
+  `2917ec7571` (E2d redesign: scoring oracle / competition pipeline) ←
+  `0ab219d4c5` (E2d-prereq Phase 1: extract Iter 86/91/pedal) ←
+  `20f992a5e7` (E2c-infra: function-layer plumbing) ←
+  `710d8dba12` (E2b: scoring snapshot) ← `80a7adf32e` (E2a: progression-signal
+  lambdas) ← `dd29a04967` (E1: function layer shell) ← `3ac52e1198` (scoring_model.md
+  + annotations) ← `945a9e2f18` (B2 aug7 template) ← `f3e0f5f72c` (Sub-9a Gate G-E
+  fix) ← `81978321e3` (keyresolver partial-sig) ← `fe752fb6d9` (A4 Corelli) ←
+  `a69a23e59b` (D2 + docs).
 
-- **BIR baselines (lenient-OR `align_regions`):** Baroque BIR=true=27, BIR=false=23;
-  Jazz BIR=true=33, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
-  Cumulative since Iter 91: Baroque BIR=false 188 → 23 (−165, ~88% reduction);
-  Jazz BIR=true 103 → 33 (−70, ~68% reduction).
+- **BIR baselines (lenient-OR `align_regions`):** Baroque BIR=true=25, BIR=false=16;
+  Jazz BIR=true=36, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
+  *(Baseline corrected this session: STATUS.md had stale 27/23 and 33/10 figures from before
+  the `81978321e3` keyresolver commit re-keyed Corelli op01n08d without re-running BIR.
+  Actual HEAD measurements: Baroque 25/16, Jazz 36/10.)*
+  Cumulative since Iter 91: Baroque BIR=false 188 → 16 (−172, ~91% reduction).
 
-- **Tests:** 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do NOT
-  regress: `CorelliOp01n08dOpeningAndSparseLateBeats`,
-  `CorelliOp01n08dUserReportedChordTrackAudit`), 11/11 pipeline snapshot (1 intentional
-  skip = `PipelineDivergenceCObservation.GenerateReport`).
+- **Tests:** 407/407 composing (equivalence harness removed — tautological post-redesign),
+  **52/52 notation (fully green)**, 11/11 pipeline snapshot (1 intentional skip =
+  `PipelineDivergenceCObservation.GenerateReport`).
+  Mismatch report: Jazz 130 (131→130 post-E2d path unification).
+
+- **Git status audit (2026-06-06):**
+  - Stash: empty.
+  - COWORK_HANDOFF.md: tracked, modified (this file — commit pending).
+  - `compare_rn.py`: already committed (`f6630b29cd`) — old handoff "pending commit" note is stale.
+  - Untracked — pending cleanup instruction:
+    - `docs/prompts/iteration_66–78*.md` (~14 files) — commit
+    - `docs/key_detection_baroque_partial_signature.md` — commit
+    - `docs/iter90/92/97_*.md`, `docs/llm_integration.md` (~5 files) — commit
+    - `tools/*.py + *.txt` (17 files) — CC to review; commit useful scripts, discard dumps
+    - `cc_instruction_*.md` + `cc_e2d_*_report.md` (~37 files at root) — gitignore
+    - `ai-assistant/CC_INSTRUCTION_*.md` (~105 files) — gitignore
+    - `bwv*_dcml.xml` (5 files at root) — relocate to `tools/dcml/`
+    - `step3_build_and_test.ps1`, `run_e2b_tests.bat` (root) — CC to check contents
+    - `--measures` and `elines BIR=…` (2 files) — junk, delete immediately
 
 - **DCML cross-corpus baseline = 53.8%** (20256/37639, DCML-anchored, time-overlap,
   lenient-OR; 10 non-Bach corpora). Regenerated against the HEAD `a69a23e59b` binary
@@ -88,27 +117,653 @@ All active development is on **master**. Always confirm which worktree CC is in 
   (`pass1MinDistinctPcsForCandidate`)** is unified at `1` on both paths. The bridge and
   batch are fully unified thin wrappers over `regionanalyzer`.
 
-- **Iter 98 candidates:**
-  - **bwv320 m27 (primary residual):** reads `G6/E` instead of `C`. An admitted 2-PC `Gm`
-    Pass-1 slice overwrites `previousRootPc`, and `rootContinuityBonus` (+0.40) tips a
-    0.02-margin window to G. Fix: **gate `rootContinuityBonus` off a sparse/uncertain
-    predecessor** in `chordanalyzer.cpp`. (A context-transparent-sparse orchestrator change
-    was rejected — it regresses the bridge / Corelli trio-sonata dominants.) Full
-    investigation in `regionanalyzer.h` `AnalyzeRegionsOptions` docs.
-  - **α-variant: `w_dim` rotation-only guard** (from the Iter 96 deferral list) — add a
-    guard requiring the current winner to also be Dim/HalfDim before `wDimBonus` fires, so
-    only the enharmonic rotation is contested (may recover `schumann bvo7→viio7/V`,
-    `chorale_003 Am→G#dim` without the quality-flip misfires).
-  - **δ: sparse-minor diatonic quality prior** — when `distinctPcs ≤ 3` and the third is
-    absent/weak, prefer the quality the current key assigns to that scale degree. Directly
-    fixes the 2 pre-existing Corelli notation failures.
+- **Iter 98 — attempted and reverted (2026-05-23). Dead end documented — do not re-attempt.**
+  Both the sparse-continuity suppression approaches tried in Iter 98 produced the same
+  DCML-verified regression on mozart_k280-1 (m9/m12 IV→V65 over-merge), which means the
+  failure is **intrinsic to suppressing sparse-predecessor continuity** — Alberti-bass
+  textures genuinely need that continuity and neither a density gate nor an inversion-aware
+  gate can separate bwv320 from mozart. Full dead-end analysis recorded in CC's Iter 98
+  backlog memory. Baseline fully restored to HEAD `a69a23e59b`; nothing committed.
 
-- **Pre-existing issue to investigate:** `tools/test_batch_analyze_regressions.py` reports a
-  **BWV227.7 m9 pitch-class E** failure. This is present **before any of this session's
-  changes**, is **not yet in any tracked baseline**, and is not caused by STEP 1 / D2 — it
-  needs its own investigation.
+  Two approaches tried and rejected:
+  - **Predecessor-sparse gate** (`previousRegionDistinctPcs ≤ 2` → suppress
+    `rootContinuityBonus`): fixed bwv320, but hit mozart_k280 IV→V65 regression.
+  - **Inversion-aware refinement** (suppress only when candidate `bassPc ≠ rootPc`):
+    fixed bwv320 + Chopin test, improved BIR both corpora (Baroque 23→21, Jazz 10→9),
+    but still produced the same mozart_k280 IV→V65 pipeline-snapshot regression (DCML-verified
+    wrong). Same regression as the rejected orchestrator approach → intrinsic dead end.
+
+  **bwv320 m27 (accepted residual — needs a different mechanism):** reads `G6/E` instead
+  of `C`. An admitted 2-PC `Gm` Pass-1 slice overwrites `previousRootPc`, and
+  `rootContinuityBonus` (+0.40) tips a 0.02-margin window to G. Margin-based and
+  density-based discriminators **cannot** separate this from legitimate sparse-continuity
+  cases in Alberti-bass textures. If revisited, needs a **targeted segmentation or
+  merge-level fix** around tick 37440–38400 rather than a scoring gate.
+  - **α-variant: `w_dim` rotation-only guard** — **DEAD END, do not re-attempt.**
+    Tried 2026-05-23: requiring the pre-bonus winner to also be Dim/HalfDim regressed
+    Baroque (+4 BIR=true, +1 BIR=false) and broke 2 bwv806 pipeline snapshots without
+    fixing either target case. Root cause: wDim exists to elevate a non-dim winner to dim
+    — requiring the pre-bonus winner to already be dim defeats its purpose. The two
+    originally deferred target cases are not wDim problems at all (see below).
+    - **schumann tick 480 (viio7/V = C#°7):** the 240-tick C#°7 region is absorbed by
+      `absorbShortRegions` (Phase-4 removed Iter-77 Fix-A protection). P4 tickLocal has
+      the right quality (dim7) but wrong rotation (G°7 vs C#°7) because `nextRootPc` is
+      not plumbed into the per-tick path. Needs: (a) surgical absorption exception for
+      short leading-tone dim regions, and/or (b) `nextRootPc` plumbing into P4. Both are
+      upstream architectural issues, not scoring problems.
+    - **chorale_003 Am→G#dim:** no authoritative ground truth (DCML doesn't cover Bach
+      chorales). All Am regions are 3-PC triads — wDim is gated out by `distinctPcs>=4`
+      by design. Accepted residual; do not pursue via wDim.
+  - **δ: sparse-minor diatonic quality prior** — **DEAD END, do not re-attempt as a quality fix.**
+    Diagnosed 2026-05-23: the remaining Corelli failure (`CorelliOp01n08dUserReportedChordTrackAudit`)
+    is rooted in **key mis-detection**, not chord quality. The quality prior would read the
+    wrong detected key (G minor instead of C minor) and reinforce wrong answers. The three
+    remaining sub-failures are: m24 F→Fm (key symptom), m2 b3 G/B inversion (separate
+    inversion issue), m18 missing Cm region (segmentation). Do not revive δ until the key is
+    corrected.
+
+  - **Key/mode detection — Baroque partial-signature bug: FIXED (`81978321e3`).**
+    Option B landed: keyresolver now allows signature-flexible tonic candidates. Corelli
+    op01 scores now detect C minor correctly. Full write-up in
+    `docs/key_detection_baroque_partial_signature.md`.
+
+  - **Dominant-quality fix — deferred (1-PC segmentation cascade). distinctPcs gate is a dead end.**
+    Both the Corelli target (op01n08d m1 b3) and the Chopin regression source
+    (bi105_op30_2 tick 23040) are **1-PC** — a `distinctPcs >= 2` gate suppresses both.
+    Diagnosis from CC Step 2b investigation (2026-06-03):
+
+    | | Corelli m1 b3 | Chopin tick 23040 |
+    |---|---|---|
+    | distinctPcs | 1 | 1 |
+    | pitchClassSet | G only | F# only |
+    | quality (current) | Minor / Gm | Minor / F#m |
+    | key | C minor | B minor |
+    | keyConfidence | **0.9615** | **0.6273** |
+
+    The only signal that separates them is **`keyConfidence`**. A corpus-wide survey
+    of all 267 matching slices was run (2026-06-03). **There is no bimodal gap** —
+    the distribution is continuous from 0.00 to 1.00 with every 0.05-wide bucket
+    non-empty. The distribution summary:
+
+    ```
+    [0.95,1.00)  17   ← Corelli anchor (0.9615) here; 82% drop from next bucket
+    [0.90,0.95)   3
+    [0.85,0.90)   3
+    [0.80,0.85)   3
+    [0.75,0.80)   5
+    [0.70,0.75)   6
+    [0.65,0.70)   5
+    [0.60,0.65)   3   ← Chopin regression (0.6273) here
+    [0.55,0.60)   1
+    [0.50,0.55)  21   ← score-opening "no key evidence yet" sentinel values
+    ...below 0.50: 149 slices (bulk of the ambiguous-v mass)
+    ```
+
+    The only clean structural break is at **0.95**: 17 → 3 (82% drop). This is a
+    **tail effect, not a bimodal gap**. No contiguous near-zero band exists that
+    would justify a principled "real V vs ambiguous v" cut at any lower threshold.
+
+    **DEFINITIVE DEAD END — defer to Phase E. Do not re-attempt via keyConfidence alone.**
+
+    Pre-inspection of the 17 highest-confidence cases (kc ≥ 0.95, 2026-06-03) found
+    **5/17 clear false positives (29% FP rate)**:
+    - Mozart K457-1 m180.2 (kc=1.0): DCML = III6 — single G is the third of E♭ first
+      inversion, not a V root.
+    - Mozart K457-3 m181.2 (kc=1.0): DCML = It6 (Italian aug-6th) — pre-dominant, not V.
+    - Beethoven Op.130-ii m57.3 (kc=1.0): DCML = bVI in B♭ major; key disagreement
+      (analyzer: C Dorian vs DCML: B♭ major) plus PC mis-detection.
+    - Beethoven Op.130-ii m61.2 (kc=0.972): DCML = @none (silence/rest).
+    - Tchaikovsky op37a06 m1.2 (kc=0.962): DCML = tonic i — analyzer mistakes the
+      chord-tone 5th of a long G-minor tonic chord for a D-dominant root.
+
+    These false positives require knowledge of adjacent harmonic context (voice-leading
+    direction, resolution, cadence type) that `keyConfidence` does not encode. Even the
+    top tier (kc=1.0) contains III6 and It6 misreadings. A gate on keyConfidence alone
+    cannot separate them from genuine V chords at any threshold.
+
+    **The correct fix belongs in Phase E** (harmonic function layer): cadence confirmation
+    (detect a preceding leading-tone or V7→i resolution) distinguishes genuine dominant
+    preparation from single-PC chord-tone arpeggiation. Until Phase E, Corelli m1 b3 stays
+    at "Gm" (the notation test deferral comment remains in place).
+
+    Survey artifacts: `tools/survey_1pc_dominant_slices.py`,
+    `/tmp/dominant_survey_out.txt` (370 lines, full sorted table + histogram),
+    `C:\Temp\dominant_survey\<corpus>\*.json` (948 fresh Baroque dumps, cached).
+
+- ~~**Pre-existing issue to investigate:** BWV227.7 m9 pitch-class E~~ **RESOLVED** (`fc1206bd4e`) — test expectation fixed to use tick-overlap; no analyzer change.
+
+- **Mozart k280_1 cascade (introduced A4, queued):** `mozart_k280_1` pipeline-snapshot
+  golden was refreshed after the A4 hasStructuralBass gate caused a secondary change at
+  one tick (Bb/F replaced Cadd11/F). Both the old and new readings diverge from DCML V43
+  — neither is correct. Queued for C3/C4 characterisation.
 
 - **Chord mismatch report:** 4 RealDiff (pinned), 127 ConventionDiff (Jazz)
+
+---
+
+## Roadmap — phased by dependency then risk
+
+Phases are ordered: later phases depend on earlier ones, or carry higher architectural
+risk that earlier phases de-risk. Within a phase, items are ordered lowest-risk first.
+
+---
+
+### Phase A — Foundation (in progress / immediate next)
+
+These unblock everything below. Do not start B–F until A is stable.
+
+**A1. Key/mode detection — Baroque partial-signature fix** *(CC in progress)*
+Option B (`keyresolver.cpp`): allow signature-flexible tonic candidates. Full write-up in
+`docs/key_detection_baroque_partial_signature.md`. Validate against both BIR presets +
+notation + snapshots. Target: Corelli op01 scores detect correct key.
+
+**A2. Dominant-as-major quality in minor keys** *(deferred to Phase E — keyConfidence insufficient)*
+`sparsechordrefinement.cpp` — `applyTonicPriorToSparseChord` maps degree-5 in minor to
+natural-minor v (Minor) instead of major V. Full investigation completed (2026-06-03):
+both discriminators exhausted. `distinctPcs >= 2` cannot separate the cases (both 1-PC).
+`keyConfidence` has no bimodal gap (267 slices, continuous distribution), and the top
+kc ≥ 0.95 tier has a 5/17 (29%) DCML-verified FP rate (III6, It6, bVI, rest, tonic-5th
+misreadings). Fix requires Phase E cadence-confirmation signal. Corelli m1 b3 stays "Gm"
+with deferral comment in `CorelliOp01n08dOpeningAndSparseLateBeats`.
+
+**A3. Roman numeral ground-truth comparison tooling** ✅ *DONE — `tools/compare_rn.py` + baseline `tools/reports/rn_baseline_f3e0f5f72c.txt`*
+
+New script `tools/compare_rn.py` (single-piece / single-corpus / cross-corpus modes).
+Reuses `compare_analyses.align_dcml_regions` (time-overlap, lenient-OR ≥50%). Normalises
+key-prefix, modulation marker, figured-bass tokens; maps DCML `%` → our `ø`; case-sensitive
+(case encodes quality). cpe_bach skipped (stem mismatch, orthogonal issue).
+
+**Baseline — 9 non-Bach corpora, 520 movements, 61,233 matched regions (HEAD `f3e0f5f72c`):**
+
+| metric | value |
+|---|---|
+| rn_agree | **27.6%** (16,905/61,233) |
+| exact_match | 18.0% (11,027) |
+| partial_match | 9.6% (5,878) — root+quality correct, inversion/extension differs |
+| quality_err | **21.7%** (13,305) — root correct, quality wrong |
+| root_err | 50.7% (31,023) — root wrong (= BIR=false set) |
+| root_agree (parity) | 49.3% (30,210) |
+
+Top-5 disagreement patterns:
+
+| ours | → DCML | count |
+|---|---|---|
+| V | → I | 1,131 |
+| I | → V | 660 |
+| V | → V7 | 487 |
+| IV | → I | 448 |
+| III | → I | 438 |
+
+**Key observations (classifier corrected 2026-06-04):**
+- root_err (50.7%) dominates — consistent with BIR metric
+- quality_err (21.7%) was **misleadingly named**. `_same_quality()` was a pure string
+  comparison on the degree base (`"V" == "I"` → False), so V→I fired `quality_err`
+  even though both are major quality. **Classifier fixed 2026-06-04** — `quality_err`
+  replaced by two precise buckets:
+  - **key_disagree = 15.4% (9,440/61,233)**: root + coarse quality agree, scale degree
+    differs — key/mode detection error. E.g. V→I means "we say G is scale-degree 5 in
+    C major; DCML says the same G is scale-degree 1 in G major." Phase E only.
+  - **quality_disagree = 6.3% (3,865/61,233)**: root PC agrees, coarse quality genuinely
+    differs — true chord-quality error. Sum 21.7% preserved; split 71% key / 29% quality.
+- **Maj→Dom7 gap — INVESTIGATED AND CLOSED (2026-06-04):**
+  Maj→Dom7 is 948 cases (24.5% of quality_disagree; top corpora: Beethoven 32%, Chopin 17%,
+  Grieg 16%, Corelli 12%, Mozart 10%). Sampled 25 cases across 5 corpora with
+  `tools/find_maj_to_dom7.py` — checked 7th-PC pcWeight for each:
+  - 32% (8/25): 7th PC **entirely absent** from the sounding tones
+  - 48% (12/25): 7th PC present but raw weight **below extensionThreshold (0.20)**
+  - 20% (5/25): 7th PC present at ≥ 0.15 weight ratio (mostly Chopin add9 detections
+    where we already detect a 9th extension and the DCML disagrees about which extension
+    to model)
+  **Conclusion: not an actionable bug.** DCML systematically labels *implied* dominant
+  sevenths from harmonic-functional context even when the 7th doesn't sound. Our analyzer
+  correctly withholds the extension without sounding evidence above extensionThreshold.
+  Lowering the threshold to capture these would cause large-scale false-positive 7th chords.
+  Accepted as extension-threshold gap. Phase E (harmonic function layer) is the correct fix.
+- quality_disagree remaining after Maj→Dom7: ~2,917 regions — Min→Maj (714, 5.4%) and
+  Maj→Min (~465, 3.5%) are the next-largest buckets (parallel major/minor confusion).
+  Not yet investigated.
+- partial_match (9.6%): root+quality right, inversion/extension off
+
+**Corrected reports (2026-06-04):**
+- `tools/reports/rn_corrected_classifier_f3e0f5f72c.txt` — cross-corpus summary with
+  key_disagree / quality_disagree split
+- `tools/reports/rn_corrected_breakdown_f3e0f5f72c.txt` — quality_disagree breakdown
+- `tools/reports/maj_to_dom7_samples.txt` — 25-case 7th-pcWeight sample data
+- New helper: `tools/find_maj_to_dom7.py`
+
+**Pending commit:** `tools/compare_rn.py` (classifier fix) + the above new files.
+Working tree is dirty with these tooling changes. Commit when convenient.
+
+**Immediate actionable targets remaining from this analysis:**
+1. ~~Fix compare_rn.py classifier~~ ✅ Done
+2. ~~Maj→Dom7 gap~~ ✅ Investigated — closed as extension-threshold gap (not actionable)
+3. Key/mode detection errors (key_disagree 15.4%, ~9,440 cases) — Phase E only
+4. Parallel major/minor confusion (quality_disagree Min→Maj 714 + Maj→Min ~465) — not
+   yet investigated; could be Phase D (non-harmonic tones) or Phase E
+
+**Corpus note:** The snapshot `tools/reports/live_20260603/` predates HEAD by one day;
+<10 regions of 61k affected. The 49.3% root_agree here vs 53.8% at `a69a23e59b` is
+a corpus/denominator difference (different regeneration run), not a regression.
+
+**rn_agree=27.6% is now the secondary quality baseline** alongside root_agree=53.8%.
+Every future code change must not regress rn_agree below 27.6%.
+
+**A4. Remaining Corelli Test 2 sub-failures** ✅ *DONE — commit `fe752fb6d9`*
+Both sub-failures resolved; notation suite now **52/52** (fully green).
+
+- **m2 b3 G/B → G:** Score had only upper-register notes (violin G5+B4, bass staves
+  rest). Bass-candidate enumeration was disabled; legacy fallback picked B4; stepwise-
+  inversion bonus (+0.5 for C→B descending) tipped to V6. Fix: sparse-upper-register
+  trigger for bass-candidate enumeration (`distinctPcs ≤ 2 && lowestPitch > 60 &&
+  ≥2 regional candidates`); `hasStructuralBass` parameter gates inversion contextual
+  bonuses (set false when `lowestPitch > 60 && distinctPcs < 3`). File:
+  `chordanalyzer.cpp`.
+
+- **m18 b1 missing Cm:** Pass 2b split Cm into four 240-tick sub-regions; each was
+  individually absorbed by `absorbShortRegions` into the m17 Gm predecessor. Fix:
+  `coalesceShortSameRootRuns` pre-pass in `regionanalyzer.cpp` — coalesces runs of
+  ≥3 consecutive contiguous same-root sub-regions totalling ≥720 ticks before
+  `absorbShortRegions` runs. Guarded by predecessor-root check.
+
+BIR at time of A4: Baroque 27/23 → 28/22 (net flat, one case moved false→true). Jazz 33/10 → 35/10
+(+2 true, false unchanged). 4 pipeline-snapshot goldens refreshed (DCML-verified):
+`corelli_op01n08a`, `chopin_bi105_op30_1`, `mozart_k279_1`, `mozart_k280_1`.
+
+**Known follow-up — Mozart k280_1 cascade:** the A4 fix caused a secondary change at
+one k280_1 tick (Bb/F replaced former Cadd11/F). Both readings diverge from DCML V43
+— neither is correct. The snapshot was refreshed to the new (also-wrong) reading.
+Queued for C3/C4 characterisation or separate triage.
+
+**A5. BWV227.7 m9 pitch-class E regression** ✅ *DONE — commit `fc1206bd4e`*
+Test expectation error (Category 4). The analyzer correctly captured pc=E in the G
+region anchored at m8 b3 (ticks [14400,16800), pcs include E), which physically
+spans into m9. The test filtered by `measureNumber==9`, missing it; the only
+`measureNumber=9` region was a tail Gadd9/F# with no E. Fix: switched detection to
+tick-overlap against the m9 range [15360,17280). Test-only change; no analyzer code
+touched. BIR baselines at A5 unchanged (Baroque 28/22, Jazz 35/10). Pre-existing since
+before STEP 1/D2/A1–A4.
+
+---
+
+### Phase B — Template completeness (independent of A, but requires Phase E guard for any template whose PC set overlaps a common Baroque progression)
+
+**⚠ B1 lesson:** Before attempting any new template, check whether its PC set is a
+subset of a common Baroque progression in a minor or major key. If yes, the template
+will fire in those contexts and requires a Phase E functional guard before it is safe.
+B1 ({0,3,7,11}) overlaps {tonic+leading-tone-of-V}; a bare template cannot separate them.
+
+Can be done in parallel with A or after. Each template addition is atomic and
+independently verifiable against both BIR presets + snapshots.
+
+**B1. Add MinorMajor7 template {0,3,7,11}** *(deferred to Phase E — leading-tone ambiguity)*
+Attempted 2026-06-04. **REJECTED — do not re-attempt without Phase E guard.**
+Approach A works mechanically (no new enum needed: `ChordQuality::Minor` +
+`hasMajorSeventh` extension; `qualitySuffix` already emits `mMaj7` for that
+combination). Three array-size sites to update when retrying: `analyzeChord`
+`array<TemplateDef, 16>` at chordanalyzer.cpp:1923; `diagnoseChord` array at
+:3334; three `array<array<double,16>,12>` score matrices at :1982–1984 (missing
+those last three caused a stack-buffer overrun). Results: Baroque BIR=false 23→25
+(+2, hard-stop limit); 2 DCML-wrong pipeline-snapshot winners (bach_chorale_003
+V65 `E7/G#`→`AmMaj9`; bwv806_prelude tick 36720 `Bmadd9/C#`→`C#m`). Root cause:
+bare {0,3,7,11} cannot distinguish {tonic+leading-tone-of-V} from a genuine i(maj7)
+in Baroque minor-key contexts. A V→i suppression guard would defeat the jazz use
+case (ii–V–i resolution is V→i). **Needs Phase E cadence confirmation to identify
+whether the leading tone is resolving to i or is still the active dominant.**
+Full rationale in `docs/backlog_b1_mmaj7_template.md`.
+
+**B2. Add Augmented dominant 7th template {0,4,8,10}** (C7♯5) ✅ *DONE — commit `945a9e2f18`*
+Guard: skip the 4-tone Augmented template for any root where either M3 (rootPc+4) OR
+aug5 (rootPc+8) is absent below extensionThreshold (both required). Without both-tone
+guard the template over-fired on complete major triads containing a minor seventh.
+BIR: Baroque 28/16 (unchanged); Jazz BIR=true 35→36 (+1), BIR=false=10 (unchanged).
+Jazz catalog: m285 Tristan→D7#5/C (3rd inversion, C bass) resolves 1 RealDiff (4→3);
+m286 rest used for Tristan suffix coverage. Standard 0/1 unchanged.
+Three template-addition sites (both TemplateDef arrays + three score matrices).
+Iteration took 4 attempts: (1) first revert — struct field `tones` vs `intervals`;
+(2) second revert — Tristan catalog slash bass missing (`D7#5` vs `D7#5/C`) and
+Tristan suffix coverage broken; (3) third revert — M3-only guard too loose (Schumann
+D-major V, Corelli G-major I flipped to aug7); (4) M3+aug5 dual guard succeeded.
+
+**B3. Promote dim7 {0,3,6,9} to a dedicated template** *(DEFERRED — bonus is rotation-selector, not just scoring)*
+
+Attempted 2026-06-05. **Do not re-attempt without addressing both root causes below.**
+
+Investigation revealed that `dim7CharacteristicBonus` (kDim7CharacteristicBonus = 0.75,
+chordanalyzer.cpp:2036 + :3426) is NOT merely a scoring offset — it is a
+**rotation-selection mechanism** for the enharmonic dim7 ambiguity (C°7 = E♭°7 = G♭°7 = B♭♭°7).
+Its gate includes a **non-diatonic check on the ♭♭7 PC** that asymmetrically rewards the
+correct enharmonic root over the three spurious rotations. Without this check, all four
+rotations score identically, and 6 Jazz catalog entries distinguishing Bdim7 from its
+rotations (m370/372/374) break.
+
+Two failure modes encountered:
+1. **Bonus suppression → 6 Jazz RealDiff failures.** Rotation-selection mechanism lost;
+   Bdim7 chords flipped to wrong D/F-rooted rotations.
+2. **Template + bonus coexisting → `bach_chorale_003` snapshot regression.** At tick 17280,
+   `Em7b5/C#` flipped to `Dm/E` (indirect segmentation side effect: bass C# = ♭♭7 of E°7
+   activated the 4-tone template at root=E, though the chord is half-diminished not full dim7).
+
+Option (a) — add the non-diatonic ♭♭7 check to the template guard — not attempted: C# is
+non-diatonic in the key of chorale_003 at that point, so the check would not block the
+spurious fire; segmentation regression would persist.
+
+**Pre-conditions for future retry:**
+- Template guard must include the non-diatonic ♭♭7 check (mirrors the bonus gate)
+- Must resolve the chorale_003 segmentation artifact (why does `Em7b5/C#` shift when
+  the 4-tone template fires at root=E with C# as bass?)
+- Once both preconditions met: condition the bonus to not fire when the template passes
+
+**B4. Evaluate 6th chord templates {0,4,7,9} / {0,3,7,9}** *(needs analysis first)*
+C6 and Am7 share all four pitch classes — adding these templates creates new ambiguities
+that bass evidence alone may not resolve. Investigate whether the net BIR effect is
+positive before implementing.
+
+---
+
+### Phase C — Deferred residuals (depends on A being stable)
+
+**C1. Schumann tick 480 — viio7/V (C#°7)**
+Two independent fixes needed:
+(a) Surgical absorption exception: preserve short leading-tone dim regions that resolve
+    to the next root (re-introduce Iter-77 Fix-A intent without region-count explosion).
+    Plan before coding — absorption logic is sensitive.
+(b) `nextRootPc` plumbing into P4 tickLocal path so wDim picks correct dim7 rotation
+    in per-tick analysis. Investigate first — verify whether P4 currently receives
+    `nextRootPc` at all.
+
+**C2. bwv320 m27 — G/E instead of C** *(accepted residual — Iter 98 dead end confirmed)*
+rootContinuityBonus (+0.40) fires because the preceding sparse 2-PC Gm slice
+(tick 36960) set previousRootPc=7. G major (root=G, bass=E) is a legitimate
+template candidate scored 1.52; +0.40 context bonus → 1.92 beats Cmaj 1.90 by
+0.02. C3/C4 pre-fix audit (2026-06-04) confirmed the Iter 98 diagnosis is
+correct; an earlier "re-diagnosis" claiming a slash-synthesis path was WRONG
+(diagnoseChord dump omits temporal-context bonuses). All Iter 98 suppression
+approaches (sparse-predecessor gate, inversion-aware gate) regress mozart_k280-1
+IV→V65 Alberti-bass. Accepted residual pending Phase E (function layer).
+
+**C3/C4. β/γ mis-root characterisation** ✅ *COMPLETE — `tools/characterise_bir_false.py` added*
+
+The Iter-96 β/γ framing (Δ=+5 / Δ=+2) is now numerically obsolete. At HEAD
+`fc1206bd4e` the 22 Baroque BIR=false residuals consolidated into two dominant
+clusters — both are winner-selection bugs, not scoring gaps:
+
+**Δ=+9 Sub-9a: Gate G-E stale-reference bug** ✅ *FIXED — commit pending*
+**Baroque BIR=false 22 → 16 (−6). All tests green. No regressions. Not yet committed.**
+Scores affected: bwv245.17 m10, bwv258 m4+m10, bwv309 m5, bwv356 m19 + 1 borderline.
+Precise mechanism: `winner` in Gate G-E (~L2896) is a live reference to `results[0]`.
+The inversion-correction `stable_sort` had already moved Am7b5/C (rootPc=9) to
+results[0]. Gate G-E read rootPc=9 → `gExpectedAltRoot=(9+9)%12=6` (F#/Gb, the
+WRONG leading tone), pulled in dormant F#m7b5 from rawCandidates at score ~0.10.
+Fix: captured `const int originalWinnerRootPc = winner.identity.rootPc` at L2636
+(alongside existing `originalWinnerQuality`/`originalWinnerHasAddedSixth` at
+L2635-2637); changed L2896 to use `originalWinnerRootPc`. Gate J and all other gates
+unaffected. No goldens changed.
+
+**Δ=+7: rootContinuityBonus mis-fire on sparse-predecessor context (5 cases) — ITER 98 DEAD END**
+Scores: bwv102.7, bwv245.28, bwv261, bwv296, bwv320.
+These are the SAME mechanism as bwv320 m27 (Iter 98): a legitimate template
+candidate (e.g. G major with bass=E) receives rootContinuityBonus +0.40 because
+the preceding region was a sparse/uncertain slice with the same rootPc, tipping
+it over the correct DCML winner by a small margin. The "slash-synthesis" framing
+from the initial C3/C4 characterisation was based on a misleading diagnoseChord
+dump (no temporal-context bonuses, legacy single-bass path). The winner IS in the
+template loop. All 5 Δ=+7 cases hit the same Iter 98 brick wall: suppressing
+rootContinuityBonus on sparse predecessors regresses mozart_k280-1 IV→V65
+Alberti-bass contexts. **Accepted residual pending Phase E.**
+
+**⚠ bwv320 m27 RE-DIAGNOSIS RETRACTED (2026-06-04):**
+The "slash-synthesis" re-diagnosis above was WRONG. The diagnoseChord dump
+used in C3/C4 characterisation omits temporal-context bonuses (rootContinuityBonus,
+w_seq, w_dim) and uses legacy single-bass path — it falsely showed G/E as having
+no template support. In reality, G major (root=G, bass=E) IS in the template loop
+(rank 15 at score 1.52); rootContinuityBonus adds +0.40 because the preceding
+sparse 2-PC Gm slice (tick 36960) set previousRootPc=7. Final score 1.92 beats
+Cmaj 1.90 by exactly 0.02. This is the original Iter 98 diagnosis (fully correct,
+documented in regionanalyzer.h and the Iter 98 dead-end section above). The Δ=+7
+C2 entry below is also corrected.
+
+**Remaining 16 cases (BIR=false=16 after Sub-9a fix) — fully characterised 2026-06-04:**
+
+| Category | Count | Cases | Status |
+|---|---|---|---|
+| Δ=+7 rootContinuityBonus mis-fires | 5 | bwv102.7, bwv245.28, bwv261, bwv296, bwv320 | Iter 98 dead end — Phase E only |
+| Evidence-absent (DCML root not in pcs) | 5 | bwv17.7, bwv174.5, bwv245.17, bwv301, bwv381 | Phase D only |
+| Sus/quartal/whole-tone placeholder | 3 | bwv245.40, bwv422, bwv45.7 | Structural — no fix |
+| Segmentation (region too wide) | 2 | bwv269, bwv432 | Complex — low priority |
+| Sub-9b: post-scoring absent-root promotion | 1 | bwv14.5 | **Actionable — absent-root guard** |
+
+**Segmentation cases (bwv269, bwv432) — characterised 2026-06-04:**
+
+- **bwv269 m15** (t=20640–22080, 1440 ticks = full 3/4 measure): Analyzer emits D/F# Major.
+  DCML has 4 events in this measure: V6 + V6/5 + I + viio6 (D/F#, D7/F#, G, F#°/A). F# is
+  in the bass throughout, so the bass-run suppresses splits; Pass 2b doesn't find internal
+  boundaries. The merged pcs={C,D,F#,A} is the union of all 4 events; G (DCML's beat-2 I)
+  is entirely absent from it. Root cause: greedy-expand / Pass 2b doesn't split within a
+  same-bass run even when the harmonic content changes.
+
+- **bwv432 m3 b3.5** (t=5520–6480, 960 ticks = 2 beats, crosses barline): Analyzer emits
+  Am/E Minor. DCML has 3 events: viio7 + i + V2 (E°7, Em, D7). Em's chord tones G and B
+  fall out of the merged pcs; Am matches {A,C,E} with 2/3 present (C,E). Root cause: same
+  over-merging pattern; viio7 → i boundary not detected.
+
+**Sub-9b case (bwv14.5) — post-scoring absent-root promotion (2026-06-04):**
+
+⚠ **Initial "Δ=+7 rootContinuityBonus" re-classification was WRONG — retracted.**
+CC batch dump confirmed `previousRootPc = 10 (Bb)`, not 7 (G). rootContinuityBonus
+fires on Bb-rooted candidates only (+0.40 → Bb major ~3.185), not on Gm.
+
+**Actual mechanism (identified 2026-06-04):**
+Joint scoring winner = Bb major (score ~2.785 base, ~3.185 with rootContinuityBonus).
+All three emitted alternatives (Gm/Bb, Am/Bb, Gb+/Bb) have roots NOT in pcs
+and score **below the 75% diagnostic threshold (2.089)** — meaning they are not in
+the pre-context top 23 candidates at all. Some **post-joint-scoring pass** is
+replacing Bb major with Gm/Bb. Gm/Bb score=2.660, root G absent from pcs.
+
+The bass=Bb. All three alternatives share bass=Bb and have Bb as the 3rd of their root:
+Bb = m3 of Gm (rootPc=7), Bb = M3 of Gb+ (rootPc=6), Bb as NCT of Am (rootPc=9).
+This is an inversion-correction-style pass that asks "what chord could Bb be the third of?"
+— then promotes a root-absent result over the correct Bb-rooted winner.
+
+**Status: undiagnosed residual — investigation closed 2026-06-04.**
+
+CC ran three diagnostic rounds (batch JSON dump, gate code audit + guard attempt, debug
+print). Results:
+- All known post-joint-scoring gates (B/C/D/E/F/G-E/H/I/J/K/L, Iter 91) were ruled out
+  (all require quality conditions Bb major doesn't satisfy).
+- An absent-root guard on the inversion-deduction block (L2839–2880) was tried and
+  reverted: had no effect on bwv14.5 (the deduction block's `bestAltIdx` pointed at D
+  Dom7, not Gm) but caused 5 snapshot regressions on legitimate cases.
+- Debug print approach was issued but not yet reported; even so, the scope is clear:
+  the Gm/Bb result likely comes from a **Pass 2/2b sub-region call** with different
+  (smaller) pcs where G may actually be present, not from the parent-region gates.
+- Score image (user-annotated) confirms bwv14.5 has at least two additional issues
+  beyond m5 (opening-measure rootContinuityBonus stickiness). Even a correct m5 fix
+  would leave a significantly wrong analysis overall.
+
+**Root cause fully characterised (2026-06-04 debug print):**
+The Gm/Bb result comes from a **sub-region analyzeChord call** with pcs={C,D,Bb}
+(3 tones, distinctPcs=3, bass=Bb2 MIDI 46, context non-null). E from the parent
+region (pcs={C,D,E,Bb}) was dropped on entry to this sub-region. G is absent from
+the sub-region pcs as well — this is a genuine absent-root Minor-template win, not
+a region-alignment artifact. Gm/Bb beats Bb major because F (Bb's 5th) is also
+absent, and inversion-context bonuses tip the balance toward the first-inversion
+reading. A general absent-root winner guard is the correct conceptual fix but the
+one attempt (inversion-deduction-block guard, L2839–2880) caused 5 snapshot
+regressions without affecting this case. Targeted fix requires identifying the
+exact sub-region caller in regionanalyzer and scoping the guard narrowly.
+
+**Decision: accepted as characterised complex residual. Investigation closed.**
+Do not re-attempt without (a) identifying the call site in regionanalyzer that
+produces the {C,D,Bb} sub-region and why E drops out, AND (b) a guard scoped to
+that caller that does not regress the deduction-block snapshot cases. Phase E is
+the correct long-term fix for the opening-measure errors regardless.
+
+**Score image (user-annotated, 2026-06-04):** Additional errors visible in the opening
+measures (Gm read for Cm/Eb and G7/B at m1-2). This IS likely rootContinuityBonus from
+the Gm pickup (different region, different previousRootPc context than m5). Those errors
+are a separate Δ=+7 manifestation and accepted as Phase E residuals.
+Roman numeral labeling errors (G/D → "I⁶₄" should be "V⁶₄") are downstream artifacts.
+
+**Δ=+7 cluster (5 cases incl. bwv320) — NOT fixable with current tooling.**
+All are rootContinuityBonus mis-fires on sparse predecessors. Same Iter 98
+dead end. Do not attempt. Phase E only.
+
+**Do NOT add a negative-margin guard** — would break Gate J and all other
+intentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91).
+
+New tooling: `tools/characterise_bir_false.py` (reusable BIR=false delta-group
+analyser). Raw output: `/tmp/bir_false_char.txt` (uncommitted).
+Diagnose dumps: `/tmp/bwv356_diag.txt`, `/tmp/bwv320_diag.txt`.
+
+---
+
+### Phase D — Voice-leading / non-harmonic tone model (high impact, higher complexity)
+
+This is the deepest missing piece: without it the PC set fed to template matching is
+always "dirty" (passing tones, suspensions, ornaments all contaminate it). Every
+downstream layer currently compensates case-by-case rather than fixing the root input.
+
+**D1. Non-harmonic tone classification**
+Before tone collection feeds the scorer, classify tones as structural vs non-harmonic
+(passing, neighbor, suspension, appoggiatura) using duration, metric position, and
+voice-leading interval. Weight non-harmonic tones down or exclude them from PC set.
+This unblocks many gate/bonus simplifications downstream.
+
+**D2. Multi-voice / register awareness**
+Assign voice roles (bass, tenor, alto, soprano) and weight evidence accordingly. Bass
+voice carries harmonic root information; inner-voice passing motion should not dominate
+root inference. Also needed for correct figured-bass analysis.
+
+---
+
+### Phase E — Harmonic function layer (architectural, depends on D being stable)
+
+Introduce as a thin shell first (gates migrate in), then grow capabilities.
+
+**E1. Introduce harmonic function layer shell** ✅ *DONE — commit `dd29a04967`*
+`src/composing/analysis/function/harmonicfunctionlayer.{h,cpp}` — `HarmonicFunctionContext`
+(keyFifths, keyMode, previousRootPc, nextRootPc) + `applyHarmonicFunction()` no-op.
+Added to `composing_analysis` target_sources (consistent with analysis-subdir pattern;
+no separate CMake module). Three call sites in `regionanalyzer.cpp` gated on
+`!prefs.explorationMode`: Pass 1 L457-464 (after BOTH refinement passes — fully refined
+winner); Pass 2 L658-665; Pass 2b L844-851. `docs/scoring_model.md` §10 added.
+Zero behavioral change. 407/407, 52/52, 11/11 — byte-identical to baseline.
+
+**CMake note for E2/E3:** The function files are compiled into `composing_analysis`,
+not a separate library. E2/E3 should continue this pattern unless there is a specific
+build-isolation reason to extract a separate module.
+
+**E2a. Move progression-signal lambdas to function layer** ✅ *DONE — commit `80a7adf32e`*
+`rootContinuityBonus`, `wSeqBonus`, `wDimBonus` are now free functions in
+`harmonicfunctionlayer.{h,cpp}`. `chordanalyzer.cpp` calls them via thin lambda
+wrappers from their existing sites. `kWSeq` (0.20) and `kWDim` (0.15) constants
+moved to the function layer header. The `w_dim` dual-scoring structure (two parallel
+accumulators + post-bonus quality guard) is untouched. Code organisation only —
+execution order and call sites unchanged. 407/407, 52/52, 11/11 — byte-identical.
+
+**E2b. Expose scoring snapshot** ✅ *DONE — commit `710d8dba12`*
+`ScoringCell` / `ScoringSnapshot` structs added to `harmonicfunctionlayer.h`.
+`prefs.captureScoringSnapshot { nullptr }` added to `ChordAnalyzerPreferences`.
+When non-null, `analyzeChord()` populates pre-step-bonus scoring cubes for both
+the with-wDim and without-wDim variants (all bassCandidates × 12 rootPcs × N
+templates). Also records `distinctPcs`, `acceptedWithWDim`, `chosenBassPc`,
+`winnerBassPcWith/Without`. All existing callers pass nullptr — hot path unchanged.
+407/407, 52/52, 11/11 — byte-identical to `80a7adf32e`.
+
+**E2c. Function-layer plumbing** ✅ *DONE — commit `20f992a5e7`*
+Infrastructure for signal migration: `tiePriority` added to `ChordIdentity`;
+`bassTpc` and `jointScoringEnabled` added to `ScoringCell`/`ScoringSnapshot`;
+`suppressProgressionSignals { false }` added to `ChordAnalyzerPreferences`.
+`applyHarmonicFunction()` signature extended (candidates vector, chosenResult,
+snapshot*, prefs*). Refinements reordered to run AFTER function layer at all
+three regionanalyzer.cpp call sites. Function layer still receives nullptr →
+no-op. 407/407, 52/52, 11/11 — byte-identical to `710d8dba12`.
+
+Commit 2 (enable suppression) attempted and REVERTED. Two blockers found:
+(1) Pass B (step bonus ±0.20–0.35) flips winners; function layer must replicate
+it. (2) Cross-bass: suppressed-signal rawCandidates is one bass only; true
+with-signals winner may be absent. E2d investigation underway.
+
+**E2d. Scoring oracle / competition pipeline segregation** ✅ *DONE — commit `2917ec7571`*
+Three failed incremental attempts (v2, v3, v3b) revealed the root cause: `applyHarmonicFunction`
+was a hand-written replica of `analyzeChord`'s competition loop, and the replica was always
+incomplete. A fourth attempt would have found more missing pieces. CC's independent architectural
+review confirmed: the competition loop must live in exactly one place.
+
+Fix: move the competition loop entirely to the function layer.
+
+`analyzeChord` is now a **scoring oracle** — evaluates all (bass, root, template) cells,
+computes metadata, packs into `ScoringSnapshot`, then calls `applyHarmonicFunction` internally.
+`applyHarmonicFunction` is now the **competition pipeline** — owns all 7 steps: (1) rescore
+cells with progression signals (rcb, wSeq, wDim), (2) Pass B step bonuses, (3) per-bass
+quality guard, (4) cross-bass winner selection, (5) threshold, (6) build results[], (7) fill
+gateCtx completely from the winning bass.
+
+`suppressProgressionSignals` and `captureScoringSnapshot` fields deleted from
+`ChordAnalyzerPreferences`. Three explicit `applyHarmonicFunction` calls in
+`regionanalyzer.cpp` deleted (now called internally by `analyzeChord`).
+
+Equivalence harness: 0 divergences (214/214 match; was 13 at baseline).
+408/408, 52/52, 11/11 — byte-identical. BIR: Baroque 25/16, Jazz 36/10.
+Architecture documented in `docs/scoring_model.md` §10/§11.
+
+*Cleanup note:* Equivalence harness (`equivalence_harness_test.cpp`) is now tautological —
+both pipelines are the same path. Safe to remove in a cleanup pass; not urgent.
+
+**E3. Migrate post-scoring gates** *(next — E2d complete, function layer ready)*
+Gate J (vii°→V7 completion), Gates A–D (Minor-add6 ↔ HalfDim7 enharmonic),
+`dim7CharacteristicBonus` rotation selection — functional-reasoning rules that do
+not belong in the scorer. Move them here after E2 is stable.
+
+**E4. Cadence detection**
+Strongest harmonic punctuation in tonal music; most reliable signal for confirming key
+and functional labels. Feeds both key detection (a PAC confirms the key) and functional
+labeling (V→I resolution ground truth). Required before E5.
+
+**E5. Functional labeling completeness**
+Augmented sixth chords (It+6, Fr+6, Ger+6 — structurally distinct from dom7♭5 despite
+PC overlap), Neapolitan (♭II / N6), borrowed chords / modal mixture (♭VII in major, iv
+in major), extended tonicization chains beyond V/x and vii°/x.
+
+---
+
+### Phase F — Advanced / long-term
+
+**F1. Confidence / uncertainty quantification**
+Surface the score margin between top candidates as a meaningful signal. Flag ambiguous
+regions rather than silently committing to a potentially wrong answer.
+
+**F2. Harmonic rhythm modelling**
+A chord lasting a full measure is structurally different from one lasting an eighth note.
+Model harmonic rhythm as a structural parameter to improve segmentation decisions and
+absorption logic.
+
+**F3. Style / genre pattern recognition**
+ii-V-I cycles, Baroque descending-fifth sequences, Neapolitan approach patterns. A
+pattern layer above the function layer that uses known progressions to disambiguate
+locally ambiguous chords.
+
+**F4. Quartal / quintal templates**
+{0,5,10}, {0,5,10,3} etc. Low priority for current Baroque/Jazz corpus but needed for
+20th-century and contemporary repertoire.
+
+---
+
+### Architectural note — the long-term target stack
+
+```
+Tone collection
+      ↓
+Key / mode detection          (A1 — fix Baroque partial-signature; E4 cadence feeds back)
+      ↓
+Template scoring              (B — add mMaj7, aug7, dim7; D — clean PC set via NHT model)
+      ↓
+Harmonic function layer       (E — gates migrate here + cadence + functional labels)  [NEW]
+      ↓
+Segmentation / absorption     (C1 schumann fix; C2 bwv320 merge fix)
+      ↓
+Labels / output               (A3 roman-numeral validation; F1 confidence)
+```
 
 ---
 
@@ -386,19 +1041,21 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > **Read first (every session):** `C:\s\MS\CLAUDE.md`, `C:\s\MS\STATUS.md` (header only),
 > `C:\s\MS\build_and_test.md`
 >
-> **Current state:** Branch `master`, HEAD `a69a23e59b`, **pushed to origin**,
-> **working tree clean**. Iter 97 (Phases 2+3+4 + D2 unification) and STEP 1
-> (dim7/Gate-J) are all committed and pushed. The four canonical region modules are
-> live: `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}`,
-> `composing/analysis/key/keyresolver.{h,cpp}`,
-> `composing/analysis/region/regionanalyzer.{h,cpp}`,
-> `composing/analysis/region/sparsechordrefinement.{h,cpp}`. The bridge
-> (`analyzeHarmonicRhythm`) and batch (`analyzeScore`) are fully unified thin wrappers
-> over `region::analyzeRegions()`. BIR baselines (lenient-OR `align_regions`):
-> Baroque BIR=true=27, BIR=false=23; Jazz BIR=true=33, BIR=false=10. Tests:
-> 407/407 composing, 50/52 notation (2 pre-existing Corelli failures — do not regress:
-> `CorelliOp01n08dOpeningAndSparseLateBeats`,
-> `CorelliOp01n08dUserReportedChordTrackAudit`), pipeline_snapshot 11/11 (1 skipped).
+> **If this session touches scoring logic in `chordanalyzer.cpp`** (templates, bonuses,
+> guards, gates, score matrices): also read `C:\s\MS\docs\scoring_model.md` before
+> making any changes. The doc explains why each term exists and what invariants must
+> not be broken. Any commit that changes scoring logic must also update that doc.
+>
+> **Current state:** Branch `master`, HEAD `8f13aee8d3`, working tree clean after housekeeping pass (COWORK_HANDOFF.md commit pending).
+> BIR baselines (lenient-OR): Baroque BIR=true=25, BIR=false=16; Jazz BIR=true=36,
+> BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
+> Tests: 407/407 composing, **52/52 notation (fully green)**, pipeline_snapshot
+> 11/11 (1 skipped, no goldens touched).
+> Mismatch report: Jazz 130 items; see chord_mismatch_report.txt.
+> Roman numeral baseline (HEAD `f3e0f5f72c`, 9 non-Bach corpora, 61,233 regions):
+> rn_agree=27.6% (16,905/61,233); corrected classifier: key_disagree=15.4%,
+> quality_disagree=6.3%. Root_agree=49.3% parity check. Hard stop: rn_agree
+> must not drop below 27.6%.
 >
 > **Unification is complete.** Both parameter divergences are resolved: D1
 > (`excludeLookAheadOnDenseStart`) is intentionally divergent and load-bearing (batch
@@ -412,6 +1069,60 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > regression beyond the 2 known Corelli notation failures.
 
 This preamble goes before EVERY task description, no exceptions.
+
+---
+
+## Standing rule — Investigation-first before implementation (MANDATORY for Cowork)
+
+**Before writing any CC implementation instruction that touches existing scoring
+mechanics**, either:
+
+1. Read the relevant source code here in Cowork first (use the Read tool on
+   `chordanalyzer.cpp` at the specific section), **or**
+2. Write a pure read-and-report instruction first — CC reads and reports, no code
+   changes — then write the implementation instruction based on that report.
+
+"Touching existing mechanics" means: adding a template near an existing one,
+modifying a bonus/gate/guard, changing a threshold, or anything where an existing
+scoring term might interact with the proposed change.
+
+**Why:** B2 took 4 attempts and B3 was reverted because implementation instructions
+were written based on incomplete understanding of existing code. The `dim7CharacteristicBonus`
+rotation-selection role was only discovered mid-task. An investigation pass first
+would have caught this before a single line was written.
+
+**The C1 investigation instruction is the correct model.** Pure read-and-report,
+no edits, produces a design proposal. Only after the report comes back does the
+implementation instruction get written — based on actual findings, not assumptions.
+
+---
+
+## Standing rule — Visual inspection before debugging (MANDATORY for BIR=false cases)
+
+Before investing CC debugging effort on any BIR=false case, **look at the score with
+our annotations first.** A single image reveals whether the error is isolated or
+systemic; this determines whether a targeted fix is worthwhile or whether the case
+should be accepted as a Phase E residual.
+
+**How:** Ask the user for an annotated score image, or use
+`tools/inject_dcml_rn.py` to overlay DCML Roman numerals alongside ours, then open
+the resulting file in MuseScore. Even our annotations alone (without DCML ground truth)
+expose systemic patterns (rootContinuityBonus over-stickiness, inversion mis-labeling,
+Roman numeral errors) that the BIR metric cannot see.
+
+**Decision rule based on the image:**
+- **One wrong region, rest of score looks correct** → targeted fix is likely worth it.
+  Proceed to CC debugging.
+- **Multiple wrong regions sharing a mechanism (e.g. tonic stickiness throughout a phrase,
+  or consistent inversion errors)** → systemic; check whether it's a known dead end
+  (Iter 98 / Phase E). If yes, accept as residual. If not, characterise the scope before
+  committing to a fix.
+- **Widespread unrelated errors** → complex residual; accept, move on.
+
+**Introduced 2026-06-04** after bwv14.5 image review showed rootContinuityBonus
+stickiness in opening measures + an unrelated m5 post-scoring promotion + Roman numeral
+labeling errors — three distinct issues in one score. Score image identified all three
+faster than three rounds of CC programmatic debugging.
 
 ---
 
