@@ -111,3 +111,9 @@ compile_commands.json
 .claude/scheduled_tasks.lock
 .claude/settings.json
 .claude/settings.local.json
+
+# Working-process instruction and report files (CC / Cowork session artifacts)
+/cc_instruction_*.md
+/cc_e2d_*.md
+/cc_*.md
+ai-assistant/CC_INSTRUCTION_*.md
