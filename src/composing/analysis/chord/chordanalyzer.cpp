@@ -1900,6 +1900,12 @@ void applyPostScoringGates(
             prefs);
     };
 
+    // Gate margin guards (corpus-tuned).  All reachable corpus targets have
+    // margins well within these bounds.
+    static constexpr double kGateIMargin = 0.45;   // Gate I: first-inversion Min→Maj
+    static constexpr double kGateKMargin = 0.20;   // Gate K: first-inversion Aug
+    static constexpr double kGateLMargin = 0.35;   // Gate L: same-root Aug→Maj
+
     // ── Inversion / bass-root bias correction ────────────────────────────────
     //
     // If the winner's bass-root bonus is the sole reason it beat the best
@@ -2203,12 +2209,14 @@ void applyPostScoringGates(
             }
             // Gate G-E: if HalfDim not in results[], look in rawCandidates (temporal
             // context may have suppressed it via rootContinuityBonus)
+            bool halfDimPulledFromRaw = false;
             if (halfDimAltIdx >= results.size()) {
                 for (const auto& rc : gateCtx.rawCandidates) {
                     if (rc.quality == ChordQuality::HalfDiminished
                         && rc.rootPc == gExpectedAltRoot) {
                         results.push_back(buildResult(rc));
                         halfDimAltIdx = results.size() - 1;
+                        halfDimPulledFromRaw = true;
                         break;
                     }
                 }
@@ -2258,6 +2266,11 @@ void applyPostScoringGates(
                     && context->consecutiveBassStepwiseCount >= 2) {
                     std::swap(results[0], results[halfDimAltIdx]);
                     didGFlip = true;
+                }
+                if (halfDimPulledFromRaw && !didGFlip) {
+                    // No sub-gate fired — remove the phantom alternative that was
+                    // pulled from rawCandidates so it does not pollute results[].
+                    results.pop_back();
                 }
             }
         }
@@ -2345,7 +2358,7 @@ void applyPostScoringGates(
                 if (gateCtx.pcWeight[static_cast<size_t>(invRootPc)] <= prefs.extensionThreshold) {
                     continue;  // promoted root absent from the score — do not invent a rootless inversion
                 }
-                if (winner.identity.score - inv.identity.score > 0.45f)   continue;  // margin too wide
+                if (winner.identity.score - inv.identity.score > kGateIMargin)   continue;  // margin too wide
                 std::swap(results[0], results[iIdx]);
                 break;
             }
@@ -2381,7 +2394,7 @@ void applyPostScoringGates(
                     if (gateCtx.scale[d] == invInterval) { invRootIsDiatonic = true; break; }
                 }
                 if (!invRootIsDiatonic)                                              continue;  // not diatonic
-                if (winner.identity.score - inv.identity.score > 0.20f)             continue;  // margin too wide
+                if (winner.identity.score - inv.identity.score > kGateKMargin)             continue;  // margin too wide
                 std::swap(results[0], results[iIdx]);
                 break;
             }
@@ -2415,7 +2428,7 @@ void applyPostScoringGates(
                     if (gateCtx.scale[d] == invInterval) { invRootIsDiatonic = true; break; }
                 }
                 if (!invRootIsDiatonic)                                                 continue;  // not diatonic
-                if (winner.identity.score - inv.identity.score > 0.35f)                continue;  // margin too wide
+                if (winner.identity.score - inv.identity.score > kGateLMargin)                continue;  // margin too wide
                 std::swap(results[0], results[iIdx]);
                 break;
             }
