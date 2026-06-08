@@ -925,14 +925,25 @@ Forwarding the first four costs nothing (no new computation, just wiring).
 The last three require new fields in `ChordTemporalContext` populated in
 `advanceTemporalContext`.
 
-### Key layer gap
+### Key layer gap — status (2026-06-08)
 
 `resolveKeyAndModeRanked` produces a ranked distribution of key candidates.
 Both call sites in `regionanalyzer.cpp` (L305, L411) discard the list immediately
 with `.front()`. Every downstream term (template scoring, diatonic root bonus,
-scale construction) receives the key as a committed point estimate — no distribution,
-no confidence. A wrong key (Corelli op01n08d: G minor instead of C minor) poisons
-all scale-dependent terms for the entire piece.
+scale construction) receives the key as a committed point estimate.
+
+**The Corelli op01n08d "G minor instead of C minor" failure is already fixed** by
+commit `81978321e3` (Option B Baroque partial-signature correction, 2026-06-03).
+The resolver now returns C minor at rank 0 for every region.
+
+Additionally, `KeyModeAnalysisResult.normalizedConfidence` is unreliable as a
+scaling signal: `promoteWinnerInPlace` (keyresolver.cpp:311-321) re-ranks via
+hysteresis/declared-mode without recomputing confidence, producing 0.025–1.00 for
+the same correctly-keyed piece. Any future key-confidence design must define a new
+metric (e.g. raw score gap between rank-0 and rank-1, post-promotion).
+
+**Step 3 (key-as-distribution) is shelved** — no confirmed live target in the
+51-piece corpus. See `cc_step3_key_investigation_report.md`.
 
 ### Failure case analysis — what this fixes and what it doesn't
 
@@ -945,7 +956,7 @@ all scale-dependent terms for the entire piece.
 | bwv301 G-absent winner | Vertical scoring asymmetry (rootless triad over-rewarded) | Remains — absent-root guard addresses symptom |
 | B1 mMaj7 leading-tone | Needs voice-leading resolution signal | Partially moves — still needs Phase E |
 | B3 dim7 rotation | PC-identical rotations, no distribution helps | Unchanged |
-| Corelli op01n08d key | Key layer commits with no distribution | Dissolves with key-as-distribution |
+| Corelli op01n08d key | Key layer commits with no distribution | **Already fixed** by `81978321e3` — not a live BIR=false case |
 
 **The Δ=+7 cluster is correctly labelled Phase E.** The predecessor-confidence approach
 was falsified by the 2026-06-08 diagnostic: predecessors have pcWeight 0.60–0.82 (not
@@ -966,10 +977,9 @@ See `cc_deltaseven_predecessor_report.md` for full data.
    **Note:** Does NOT fix the Δ=+7 cluster (diagnostic falsified that premise). Useful
    as infrastructure for Phase E cadence/quality-aware bonus scaling.
 
-3. **Key-as-distribution.** Preserve top-2 ranked key candidates from
-   `resolveKeyAndModeRanked` instead of taking `.front()`. Pass key confidence ratio
-   to `applyHarmonicFunction` to reduce diatonic-root term weight when key is uncertain.
-   Target: Corelli op01n08d and related key-detection failures.
+3. **Key-as-distribution — ⛔ SHELVED.** Motivating case (Corelli op01n08d) already
+   fixed by `81978321e3`. No confirmed live target in corpus. `normalizedConfidence`
+   structurally unreliable as scaling signal. See `docs/redesign_plan.md` §Step 3.
 
 4. **Phase E proper.** Cadence evidence, phrase context, functional labeling. Unblocks
    B1 (mMaj7), A2 (dominant in minor), Δ=+7b (voice-leading resolution).
