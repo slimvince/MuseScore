@@ -2935,6 +2935,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
     fnCtx.previousBassPc = context ? context->previousBassPc : -1;
     fnCtx.nextBassPc     = context ? context->nextBassPc     : -1;
+    // Step 1 redesign: free wiring — forwarded from ChordTemporalContext, no scoring logic yet
+    fnCtx.previousQuality              = context ? context->previousQuality              : ChordQuality::Unknown;
+    fnCtx.consecutiveBassStepwiseCount = context ? context->consecutiveBassStepwiseCount : 0;
+    fnCtx.regionMetricWeight           = context ? context->regionMetricWeight           : 1.0;
+    fnCtx.recentRootPcs                = context ? context->recentRootPcs : std::array<int, 3>{ -1, -1, -1 };
 
     // Region data the gate context needs but the snapshot does not carry.
     if (gateCtxOut) {

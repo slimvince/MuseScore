@@ -48,6 +48,7 @@
 
 #pragma once
 
+#include <array>
 #include <vector>
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -65,6 +66,16 @@ struct HarmonicFunctionContext {
                                   ///< Required by the Pass B step-in bonus.
     int nextBassPc     { -1 };   ///< Bass PC of the following region (-1 = unknown).
                                   ///< Required by the Pass B step-out bonus.
+
+    // Step 1 redesign: free wiring — forwarded from ChordTemporalContext, no scoring logic yet
+    analysis::ChordQuality previousQuality { analysis::ChordQuality::Unknown };
+                                  ///< Quality of the preceding region's committed chord.
+    std::array<int, 3> recentRootPcs { -1, -1, -1 };
+                                  ///< Root PCs of the 3 most recent regions, most-recent first.
+    int consecutiveBassStepwiseCount { 0 };
+                                  ///< Consecutive regions (incl. this one) with stepwise bass.
+    double regionMetricWeight { 1.0 };
+                                  ///< Normalised metric strength of this region's onset.
 };
 
 // -----------------------------------------------------------------------
