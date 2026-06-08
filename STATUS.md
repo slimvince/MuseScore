@@ -290,12 +290,16 @@ Jazz BIR=true=36, BIR=false=10 (the prior 27/23 & 33/10 predated the `81978321e3
 keyresolver Corelli op01n08d re-key, which was never re-measured for BIR; the E2d
 redesign is byte-identical so these are HEAD's true numbers). Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
 
-**Last committed:** `be2f26971d` — Step 3 cleanup: shelve key-as-distribution
+**Last committed:** `68ec79c887` — Step 3 cleanup (part 2): adds the pre-investigation
+report `cc_step3_key_investigation_report.md` (force-added past the `/cc_*.md` ignore —
+first tracked `cc_*.md`) and the `COWORK_HANDOFF.md` key-layer-gap status update.
+Companion to `be2f26971d` — Step 3 cleanup (part 1): shelve key-as-distribution
 (motivating Corelli op01n08d case already fixed by `81978321e3`), document the dead
 `HarmonicFunctionContext::keyFifths`/`keyMode` write-only fields, mark
-`key_detection_baroque_partial_signature.md` resolved (comment/docs-only; byte-identical
-407/407 · 52/52 · 11/11, BIR unchanged Baroque 25/16, Jazz 36/10). Preceded by
-`c8afd0e23c` (Step 2 predecessor-confidence channel) and `a6d289c461` (Step 1 free wiring).
+`key_detection_baroque_partial_signature.md` resolved. All comment/docs-only;
+byte-identical 407/407 · 52/52 · 11/11, BIR unchanged Baroque 25/16, Jazz 36/10.
+Preceded by `c8afd0e23c` (Step 2 predecessor-confidence channel) and `a6d289c461`
+(Step 1 free wiring).
 
 **Prior keyresolver commit:** `81978321e3` — keyresolver Option B Baroque partial-signature correction.
 Detects the late-17th/early-18th-century convention of notating a minor key with one fewer
