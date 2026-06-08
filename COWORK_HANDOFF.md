@@ -1,6 +1,6 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-06-06 (post-E2d housekeeping — `8f13aee8d3`. CLAUDE.md additions committed, equivalence harness removed, git status audited. 407/407, 52/52, 11/11.)*
+*Written 2026-05-14. Last updated 2026-06-08 (E3 Tasks 2+3 committed — `f9ba22157d`; step-back: evidence-absent bucket reclassified (bwv174.5 + bwv301 are absent-OUR-root, actionable), Min→Maj/Maj→Min closed as convention gap, Jazz BIR=false=10 fully characterised. 407/407, 52/52, 11/11.)*
 
 ---
 
@@ -40,11 +40,15 @@ All active development is on **master**. Always confirm which worktree CC is in 
 
 ---
 
-## Current state (as of 2026-06-06, post E2d housekeeping)
+## Current state (as of 2026-06-08, post step-back assessment)
 
-- **HEAD:** `8f13aee8d3` on master. **Working tree has COWORK_HANDOFF.md modified (this file — commit pending in next housekeeping pass) and a batch of untracked docs/tools files (see housekeeping audit below).**
+- **HEAD:** `f9ba22157d` on master. **Working tree clean** (untracked non-code artifacts remain; COWORK_HANDOFF.md has local edits pending commit).
 
-  Recent master lineage: `8f13aee8d3` (test: remove equivalence harness) ←
+  Recent master lineage: `f9ba22157d` (fix: G-E phantom HalfDim + float literals to named constants — E3 Tasks 2+3) ← `a693b6ba82` (docs: COWORK_HANDOFF.md post-E2d housekeeping) ←
+  `22b89ae521` (tools: iter 90–97 analysis scripts) ←
+  `5b08465924` (docs: iteration logs, key detection, LLM integration) ←
+  `0ea52ced98` (chore: gitignore CC/Cowork working-process files) ←
+  `8f13aee8d3` (test: remove equivalence harness) ←
   `469d7830f2` (docs: CLAUDE.md scoring-doc process rules) ←
   `2917ec7571` (E2d redesign: scoring oracle / competition pipeline) ←
   `0ab219d4c5` (E2d-prereq Phase 1: extract Iter 86/91/pedal) ←
@@ -57,30 +61,30 @@ All active development is on **master**. Always confirm which worktree CC is in 
 
 - **BIR baselines (lenient-OR `align_regions`):** Baroque BIR=true=25, BIR=false=16;
   Jazz BIR=true=36, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
-  *(Baseline corrected this session: STATUS.md had stale 27/23 and 33/10 figures from before
-  the `81978321e3` keyresolver commit re-keyed Corelli op01n08d without re-running BIR.
-  Actual HEAD measurements: Baroque 25/16, Jazz 36/10.)*
+  Both presets re-confirmed fresh during step-back (2026-06-08).
   Cumulative since Iter 91: Baroque BIR=false 188 → 16 (−172, ~91% reduction).
+
+- **Jazz BIR=false=10 — fully characterised (2026-06-08):** 8 cases shared with Baroque
+  (Δ=+7 rootContinuity ×3, sus/quartal ×2, segmentation ×1, evidence-absent ×1,
+  dim→dom absent-root ×1); 2 Jazz-only (bwv244.15 key-conf-0 root mis-selection;
+  bwv74.8 added-tone tetrachord — Em7/D for Cadd9, the B4 6th/m7 ambiguity).
+  Lower `maxTotalInversionContextBonus` (0.6 vs 2.5) removes Baroque's absent-root
+  inversion cases (bwv14.5, bwv174.5, bwv301, bwv381) from Jazz — confirmed by
+  prior prediction. Nothing newly actionable beyond the absent-root guard (bwv45.7
+  dim→dom absent-root, partial). Full table in `cc_stepback_report.md`.
 
 - **Tests:** 407/407 composing (equivalence harness removed — tautological post-redesign),
   **52/52 notation (fully green)**, 11/11 pipeline snapshot (1 intentional skip =
   `PipelineDivergenceCObservation.GenerateReport`).
   Mismatch report: Jazz 130 (131→130 post-E2d path unification).
 
-- **Git status audit (2026-06-06):**
-  - Stash: empty.
-  - COWORK_HANDOFF.md: tracked, modified (this file — commit pending).
-  - `compare_rn.py`: already committed (`f6630b29cd`) — old handoff "pending commit" note is stale.
-  - Untracked — pending cleanup instruction:
-    - `docs/prompts/iteration_66–78*.md` (~14 files) — commit
-    - `docs/key_detection_baroque_partial_signature.md` — commit
-    - `docs/iter90/92/97_*.md`, `docs/llm_integration.md` (~5 files) — commit
-    - `tools/*.py + *.txt` (17 files) — CC to review; commit useful scripts, discard dumps
-    - `cc_instruction_*.md` + `cc_e2d_*_report.md` (~37 files at root) — gitignore
-    - `ai-assistant/CC_INSTRUCTION_*.md` (~105 files) — gitignore
-    - `bwv*_dcml.xml` (5 files at root) — relocate to `tools/dcml/`
-    - `step3_build_and_test.ps1`, `run_e2b_tests.bat` (root) — CC to check contents
-    - `--measures` and `elines BIR=…` (2 files) — junk, delete immediately
+- **Git status audit (2026-06-06, pass 2 complete):**
+  - Stash: empty. Working tree clean.
+  - `compare_rn.py`: already committed (`f6630b29cd`) — old handoff "pending commit" note was stale.
+  - `bwv*_dcml.xml` (5 files): moved to `tools/dcml/` (intentionally gitignored — reproducible QA artifacts). Not committed; correct.
+  - Root helper scripts deleted: `step3_build_and_test.ps1` (D2 experiment harness, superseded), `run_e2b_tests.bat` (E2b phase wrapper, superseded).
+  - 2 untracked files remain in `tools/` — `.txt` data dumps, skip (generated output).
+  - `ai-assistant/` is a separate project; ignore its untracked files here.
 
 - **DCML cross-corpus baseline = 53.8%** (20256/37639, DCML-anchored, time-overlap,
   lenient-OR; 10 non-Bach corpora). Regenerated against the HEAD `a69a23e59b` binary
@@ -338,8 +342,13 @@ Working tree is dirty with these tooling changes. Commit when convenient.
 1. ~~Fix compare_rn.py classifier~~ ✅ Done
 2. ~~Maj→Dom7 gap~~ ✅ Investigated — closed as extension-threshold gap (not actionable)
 3. Key/mode detection errors (key_disagree 15.4%, ~9,440 cases) — Phase E only
-4. Parallel major/minor confusion (quality_disagree Min→Maj 714 + Maj→Min ~465) — not
-   yet investigated; could be Phase D (non-harmonic tones) or Phase E
+4. ~~Parallel major/minor confusion (quality_disagree Min→Maj 714 + Maj→Min ~465)~~ ✅
+   Investigated (2026-06-08 step-back). **Closed as convention gap.** ~75% of 1,181 cases
+   are thirdless (neither third above extensionThreshold) — analyzer infers quality from
+   key/degree context; DCML labels functional role. Same conclusion as Maj→Dom7. Remaining
+   ~25% are DCML function-over-sonority (sounding third agrees with our read; DCML overrides
+   via modal mixture, raised thirds, Picardy, etc.). Not actionable via scoring/gate changes.
+   rn_agree secondary metric largely frozen without Phase E.
 
 **Corpus note:** The snapshot `tools/reports/live_20260603/` predates HEAD by one day;
 <10 regions of 61k affected. The 49.3% root_agree here vs 53.8% at `a69a23e59b` is
@@ -499,17 +508,41 @@ Fix: captured `const int originalWinnerRootPc = winner.identity.rootPc` at L2636
 L2635-2637); changed L2896 to use `originalWinnerRootPc`. Gate J and all other gates
 unaffected. No goldens changed.
 
-**Δ=+7: rootContinuityBonus mis-fire on sparse-predecessor context (5 cases) — ITER 98 DEAD END**
-Scores: bwv102.7, bwv245.28, bwv261, bwv296, bwv320.
-These are the SAME mechanism as bwv320 m27 (Iter 98): a legitimate template
-candidate (e.g. G major with bass=E) receives rootContinuityBonus +0.40 because
-the preceding region was a sparse/uncertain slice with the same rootPc, tipping
-it over the correct DCML winner by a small margin. The "slash-synthesis" framing
-from the initial C3/C4 characterisation was based on a misleading diagnoseChord
-dump (no temporal-context bonuses, legacy single-bass path). The winner IS in the
-template loop. All 5 Δ=+7 cases hit the same Iter 98 brick wall: suppressing
-rootContinuityBonus on sparse predecessors regresses mozart_k280-1 IV→V65
-Alberti-bass contexts. **Accepted residual pending Phase E.**
+**Δ=+7: rootContinuityBonus cluster — split into two sub-mechanisms (2026-06-08 diagnostic)**
+
+Predecessor-confidence diagnostic (`cc_deltaseven_predecessor_report.md`, 2026-06-08)
+falsified the "sparse predecessor" framing and revealed the cluster is not homogeneous:
+
+**Δ=+7a — wrong root wins vertically (`contFired=0`): bwv102.7, bwv261**
+The wrong root is already ahead on vertical evidence at the run's first sub-region
+(within-bass margins 0.33 and 0.36 respectively, `contFired=0`). rootContinuityBonus
+merely self-perpetuates the error into later sub-regions — it did not cause it.
+Gating the bonus cannot fix these. They need a separate vertical-oracle investigation:
+why does Eb beat Ab (bwv102.7), and C# HalfDim beat F# (bwv261), on vertical evidence?
+
+**Δ=+7b — correct predecessor, oracle tie broken by bonus (`contFired=1`): bwv245.28, bwv296, bwv320**
+The predecessors are **correct, confident** chords (Bm=ii, D=vi, Gm=ii) — not sparse
+or wrong. The bonus fires legitimately from a correct predecessor, then tips a
+near-vertical-tie in the NEXT region the wrong way. Failing region scores:
+bwv245.28/bwv296/bwv320 all show ~1.92 vs ~1.92 (exact or near tie in vertical oracle).
+The old root (B, D, G) is still a real chord tone in the new PC set — the oracle cannot
+distinguish "continued root" from "new V6 harmony" on vertical evidence alone. The bonus
+is the sole tiebreaker. The correct reading requires voice-leading resolution context
+(V6 resolving upward vs. ii lingering) — **Phase E territory.**
+
+**Predecessor-confidence scaling approach: falsified.** Predecessors have pcWeight
+0.60–0.82 (not 0.0); mozart_k280 control predecessor has pcWeight 1.00 (the highest
+of the set). No (pcWeight, margin, distinctPcs) threshold separates the wrong cases from
+the correct Alberti control. Full data in `cc_deltaseven_predecessor_report.md`.
+
+**CC's proposed bass-aware gate: Iter 98 echo — do not attempt without explicit mozart test.**
+CC proposed: withhold bonus when candidate is non-root-position (`bassPc ≠ rootPc`)
+AND bass has moved (`bassPc ≠ previousBassPc`). This adds one condition to Iter 98's
+rejected "inversion-aware refinement" (`bassPc ≠ rootPc` alone). The extra condition
+does not save it: in Alberti-bass textures the bass moves to a different chord position
+on every beat, so `bassPc ≠ previousBassPc` fires on both the wrong cases AND the
+correct mozart continuity. Same dead end. If this is ever re-investigated, the mozart_k280
+pipeline-snapshot test must be run before any commit.
 
 **⚠ bwv320 m27 RE-DIAGNOSIS RETRACTED (2026-06-04):**
 The "slash-synthesis" re-diagnosis above was WRONG. The diagnoseChord dump
@@ -522,15 +555,17 @@ Cmaj 1.90 by exactly 0.02. This is the original Iter 98 diagnosis (fully correct
 documented in regionanalyzer.h and the Iter 98 dead-end section above). The Δ=+7
 C2 entry below is also corrected.
 
-**Remaining 16 cases (BIR=false=16 after Sub-9a fix) — fully characterised 2026-06-04:**
+**Remaining 16 cases (BIR=false=16 after Sub-9a fix) — fully characterised 2026-06-08:**
 
 | Category | Count | Cases | Status |
 |---|---|---|---|
-| Δ=+7 rootContinuityBonus mis-fires | 5 | bwv102.7, bwv245.28, bwv261, bwv296, bwv320 | Iter 98 dead end — Phase E only |
-| Evidence-absent (DCML root not in pcs) | 5 | bwv17.7, bwv174.5, bwv245.17, bwv301, bwv381 | Phase D only |
+| Δ=+7a: wrong root wins vertically (`contFired=0`) | 2 | bwv102.7, bwv261 | Vertical oracle issue — separate investigation |
+| Δ=+7b: correct predecessor, oracle tie broken by bonus | 3 | bwv245.28, bwv296, bwv320 | Phase E only — voice-leading context needed |
+| Evidence-absent (DCML root not in pcs — genuine) | 2 | bwv17.7, bwv245.17 | Phase D only |
+| Absent-OUR-root (DCML root IS present — actionable) | 3 | bwv14.5, bwv174.5, bwv301 | **Dead end — absent-root guard tried (2026-06-08) and reverted (net regression: 2 fixed, 4 broken). See below.** |
+| B4 template tie (6th/m7 ambiguity) | 1 | bwv381 | Phase B4 (needs investigation) |
 | Sus/quartal/whole-tone placeholder | 3 | bwv245.40, bwv422, bwv45.7 | Structural — no fix |
 | Segmentation (region too wide) | 2 | bwv269, bwv432 | Complex — low priority |
-| Sub-9b: post-scoring absent-root promotion | 1 | bwv14.5 | **Actionable — absent-root guard** |
 
 **Segmentation cases (bwv269, bwv432) — characterised 2026-06-04:**
 
@@ -592,11 +627,54 @@ one attempt (inversion-deduction-block guard, L2839–2880) caused 5 snapshot
 regressions without affecting this case. Targeted fix requires identifying the
 exact sub-region caller in regionanalyzer and scoping the guard narrowly.
 
-**Decision: accepted as characterised complex residual. Investigation closed.**
-Do not re-attempt without (a) identifying the call site in regionanalyzer that
-produces the {C,D,Bb} sub-region and why E drops out, AND (b) a guard scoped to
-that caller that does not regress the deduction-block snapshot cases. Phase E is
-the correct long-term fix for the opening-measure errors regardless.
+**Decision: re-opened (2026-06-08 step-back). Previous closure was premature.**
+
+The previous attempt failed because the guard was placed in the inversion-deduction
+block (L2839–2880), which is the wrong location. The correct location is the
+**winner-selection pass in `applyHarmonicFunction`**: reject a winner whose root PC
+weight ≤ extensionThreshold when a within-margin present-root alternative exists.
+Gate J is not a conflict — Gate J only fires when the dominant root IS present above
+threshold (mutually exclusive conditions).
+
+**3 Baroque target cases for the absent-root guard (reclassified 2026-06-08):**
+- bwv14.5 Sub-9b (confirmed): root G absent from {C,D,Bb} sub-region. Already characterised above.
+- bwv174.5: pcWeights {B:.6, Gb:.2, Ab:.2} — our root E absent; DCML root G#=Ab IS present (it's the bass).
+- bwv301: pcWeights {B:1.25, D:1.25, A:1.05, C:.25, Ab:.2} — our root G absent; DCML root B strongly present (1.25).
+
+These three were previously conflated in the "Evidence-absent (DCML root not in pcs)"
+bucket. bwv174.5 and bwv301 are absent-OUR-root cases (DCML root IS in pcs; we emit a
+root that is absent). Reclassified 2026-06-08.
+
+1 Jazz target case: bwv45.7 (dim→dom absent-root, partial — Sus/quartal bucket by
+primary mechanism, but absent-root guard would partially address it).
+
+**Absent-root guard outcome (2026-06-08 — dead end, reverted):**
+
+Guard implemented in `applyHarmonicFunction` (after `chosenPerBass` sort). Condition:
+`pcWeight[winnerRootPc] == 0.0 AND distinctPcs >= 3 AND in-group alternative within
+kAbsentRootGuardMargin=0.35`. Result:
+
+| Case | Outcome |
+|---|---|
+| bwv301 (primary target) | ✅ Fixed |
+| bwv269 (bonus) | ✅ Fixed |
+| bwv174.5 | ⟲ Lateral — E/G# → B5, still wrong |
+| bwv14.5 | ❌ Not reached (sub-region caller not the guard location) |
+| bwv227.1 | ❌ New regression — DCML-correct absent-root reading (rootless E) |
+| bwv342 | ❌ New regression — DCML-correct absent-root reading (rootless E) |
+| bwv10.7 | ❌ Cascade regression (upstream root change → previousRootPc → rcb) |
+| bwv337 | ❌ Cascade regression (same mechanism) |
+
+Net: Baroque BIR=true +2, 6 snapshot goldens drifted. **Reverted entirely.**
+
+Root cause: the premise "absent root ⇒ wrong reading" is false corpus-wide. bwv227.1
+and bwv342 are DCML-correct absent-root readings. The cascade problem is structural —
+any guard that changes a committed root poisons `previousRootPc` for all downstream
+regions. These 3 cases (bwv14.5, bwv174.5, bwv301) remain open; bwv301 and bwv14.5
+may be addressable only at Phase E or with a much more targeted sub-region guard.
+
+CC note: `tools/dump_bir_cases.py` left as untracked helper (safe to keep or remove).
+CC memory: `project_absent_root_guard_rejected.md` records the dead end.
 
 **Score image (user-annotated, 2026-06-04):** Additional errors visible in the opening
 measures (Gm read for Cm/Eb and G7/B at m1-2). This IS likely rootContinuityBonus from
@@ -710,10 +788,38 @@ Architecture documented in `docs/scoring_model.md` §10/§11.
 *Cleanup note:* Equivalence harness (`equivalence_harness_test.cpp`) is now tautological —
 both pipelines are the same path. Safe to remove in a cleanup pass; not urgent.
 
-**E3. Migrate post-scoring gates** *(next — E2d complete, function layer ready)*
-Gate J (vii°→V7 completion), Gates A–D (Minor-add6 ↔ HalfDim7 enharmonic),
-`dim7CharacteristicBonus` rotation selection — functional-reasoning rules that do
-not belong in the scorer. Move them here after E2 is stable.
+**E3. Gate decoupling + G-E phantom fix** — Tasks 2+3 committed `f9ba22157d`; Task 1 deferred
+
+Original E3 goal ("move Gates A–D, Gate J, dim7CharacteristicBonus to function layer")
+was overtaken by E2d: all gates already live in the standalone `applyPostScoringGates`
+called after `analyzeChord`. Investigation (2026-06-07, `cc_e3_investigation_report.md`)
+found three real actionable items instead:
+
+1. **Q6 coupling defect — DEFERRED (Task 1):** Gates H, I, J, K, L are nested inside the
+   outer `inversionSuspicionMargin > 0 && inversionBonusReduction < 1.0 && results.size() >= 2 && distinctPcs >= 3`
+   guard, but are logically independent of the bias correction. Prefs-only decouple
+   (removing only the two prefs conditions while keeping `distinctPcs >= 3`) IS byte-
+   identical for all current corpus runs. Dropping `distinctPcs >= 3` is NOT byte-identical
+   — Schumann kinderszenen_n01 counterexample: 2-PC dyad slivers (distinctPcs=2) trigger
+   structural gates when that condition is absent. `distinctPcs >= 3` is load-bearing.
+   The latent bug has no urgency (all active presets have inversionSuspicionMargin=0.70);
+   deferred indefinitely. When revisited: prefs-only decouple only — keep `distinctPcs >= 3`.
+
+2. ✅ **G-E phantom HalfDim: COMMITTED (`f9ba22157d`):** Gate G-E appended a HalfDim from
+   `rawCandidates` even when none of its four sub-gates fired, leaving a phantom in the
+   alternatives list. Fix: `halfDimPulledFromRaw` flag + `results.pop_back()` if no sub-gate fires.
+
+3. ✅ **Float literals → named constants: COMMITTED (`f9ba22157d`):** `0.45f`/`0.20f`/`0.35f`
+   in Gates I/K/L are now `kGateIMargin`/`kGateKMargin`/`kGateLMargin`.
+
+Note: temporal gates (B, C, D, G-B/C/D, H-B/C/D) cannot move into `applyHarmonicFunction`
+byte-identically — they run after `applyIter8691Pedal` by design (pedal pass mutates
+results[] that these gates read). File relocation to `harmonicfunctionlayer.cpp` would
+require promoting `RawCandidate`/`buildChordResult`/`PostScoringGateContext` types.
+Neither option is the right E3 scope.
+
+`dim7CharacteristicBonus` is correctly placed in the scoring oracle's per-cell loop —
+no progression context, rotation-selection only. Moving it was a misclassification.
 
 **E4. Cadence detection**
 Strongest harmonic punctuation in tonal music; most reliable signal for confirming key
@@ -764,6 +870,109 @@ Segmentation / absorption     (C1 schumann fix; C2 bwv320 merge fix)
       ↓
 Labels / output               (A3 roman-numeral validation; F1 confidence)
 ```
+
+---
+
+## Architectural redesign — deferred commitment and inter-layer channel (2026-06-08)
+
+Full detail: `docs/redesign_plan.md`. Summary here for session context.
+
+**The principle:** each layer should pass its full evidence alongside its committed
+decision — not compress to the decision alone. Downstream layers must calibrate
+how much to trust the upstream commitment. A wrong upstream commitment received
+without confidence metadata is treated as ground truth: this is "passing a lie."
+
+### What E2d already achieves
+
+The oracle / pipeline split (E2d, `2917ec7571`) means **within-region deferred
+commitment is already implemented.** `analyzeChord()` is a pure scoring oracle;
+`applyHarmonicFunction()` applies all progression signals and selects the winner.
+Commitment happens after functional signals — not before. The architecture is more
+advanced than the Phase E description implies.
+
+### The gap: inter-region channel is thin
+
+After a winner is selected, `advanceTemporalContext` writes only
+`previousRootPc / previousBassPc / previousQuality` into `ChordTemporalContext`.
+Then `fnCtx` construction forwards even less to `HarmonicFunctionContext`:
+
+```
+fnCtx.previousRootPc = context ? context->previousRootPc : -1;
+fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
+fnCtx.previousBassPc = context ? context->previousBassPc : -1;
+fnCtx.nextBassPc     = context ? context->nextBassPc     : -1;
+```
+
+Winner score, winner margin, predecessor root pcWeight — none forwarded.
+`rootContinuityBonus` applies a flat +0.40 regardless of predecessor confidence.
+A wrong committed predecessor receives the same reward as a correct one.
+**This is the mechanism behind the entire Δ=+7 rootContinuityBonus cluster.**
+
+### Wiring gap — fields already computed, not forwarded
+
+`ChordTemporalContext` already has these fields; none reach `HarmonicFunctionContext`:
+
+| Field | ChordTemporalContext | HarmonicFunctionContext |
+|---|---|---|
+| `previousQuality` | ✅ | ❌ |
+| `recentRootPcs[3]` | ✅ | ❌ |
+| `consecutiveBassStepwiseCount` | ✅ | ❌ |
+| `regionMetricWeight` | ✅ | ❌ |
+| winner score / margin | ❌ | ❌ |
+| predecessor root pcWeight | ❌ | ❌ |
+
+Forwarding the first four costs nothing (no new computation, just wiring).
+The last three require new fields in `ChordTemporalContext` populated in
+`advanceTemporalContext`.
+
+### Key layer gap
+
+`resolveKeyAndModeRanked` produces a ranked distribution of key candidates.
+Both call sites in `regionanalyzer.cpp` (L305, L411) discard the list immediately
+with `.front()`. Every downstream term (template scoring, diatonic root bonus,
+scale construction) receives the key as a committed point estimate — no distribution,
+no confidence. A wrong key (Corelli op01n08d: G minor instead of C minor) poisons
+all scale-dependent terms for the entire piece.
+
+### Failure case analysis — what this fixes and what it doesn't
+
+*(Updated 2026-06-08 after predecessor-confidence diagnostic.)*
+
+| Case | Root cause | Redesign effect |
+|---|---|---|
+| Δ=+7a bwv102.7, bwv261 (vertical wins) | Wrong root beats correct root on oracle evidence alone | Unaffected — separate vertical investigation needed |
+| Δ=+7b bwv245.28, bwv296, bwv320 (correct predecessor, oracle tie) | Correct predecessor; near-tie in oracle broken by bonus toward old root | Phase E only — needs voice-leading resolution signal |
+| bwv301 G-absent winner | Vertical scoring asymmetry (rootless triad over-rewarded) | Remains — absent-root guard addresses symptom |
+| B1 mMaj7 leading-tone | Needs voice-leading resolution signal | Partially moves — still needs Phase E |
+| B3 dim7 rotation | PC-identical rotations, no distribution helps | Unchanged |
+| Corelli op01n08d key | Key layer commits with no distribution | Dissolves with key-as-distribution |
+
+**The Δ=+7 cluster is correctly labelled Phase E.** The predecessor-confidence approach
+was falsified by the 2026-06-08 diagnostic: predecessors have pcWeight 0.60–0.82 (not
+0.0), and the mozart control predecessor has pcWeight 1.00 — the highest of the set.
+No (pcWeight, margin, distinctPcs) threshold separates wrong cases from correct Alberti.
+See `cc_deltaseven_predecessor_report.md` for full data.
+
+### Redesign sequence
+
+1. **Forward free ChordTemporalContext fields to HarmonicFunctionContext** (no new
+   computation — just wiring `previousQuality`, `recentRootPcs`, etc. into `fnCtx`).
+   Files: `harmonicfunctionlayer.h` (struct), `chordanalyzer.cpp` (fnCtx construction).
+
+2. **Add predecessor confidence fields** (infrastructure for future Phase E signals).
+   New fields in `ChordTemporalContext`: `previousWinnerScore`, `previousWinnerMargin`,
+   `previousWinnerRootPcWeight`, `previousDistinctPcs`. Populated in
+   `advanceTemporalContext`, forwarded to `HarmonicFunctionContext`.
+   **Note:** Does NOT fix the Δ=+7 cluster (diagnostic falsified that premise). Useful
+   as infrastructure for Phase E cadence/quality-aware bonus scaling.
+
+3. **Key-as-distribution.** Preserve top-2 ranked key candidates from
+   `resolveKeyAndModeRanked` instead of taking `.front()`. Pass key confidence ratio
+   to `applyHarmonicFunction` to reduce diatonic-root term weight when key is uncertain.
+   Target: Corelli op01n08d and related key-detection failures.
+
+4. **Phase E proper.** Cadence evidence, phrase context, functional labeling. Unblocks
+   B1 (mMaj7), A2 (dominant in minor), Δ=+7b (voice-leading resolution).
 
 ---
 
@@ -1046,7 +1255,7 @@ CC starts with ZERO context every time. Every instruction to CC must open with:
 > making any changes. The doc explains why each term exists and what invariants must
 > not be broken. Any commit that changes scoring logic must also update that doc.
 >
-> **Current state:** Branch `master`, HEAD `8f13aee8d3`, working tree clean after housekeeping pass (COWORK_HANDOFF.md commit pending).
+> **Current state:** Branch `master`, HEAD `f9ba22157d`, working tree clean.
 > BIR baselines (lenient-OR): Baroque BIR=true=25, BIR=false=16; Jazz BIR=true=36,
 > BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
 > Tests: 407/407 composing, **52/52 notation (fully green)**, pipeline_snapshot
