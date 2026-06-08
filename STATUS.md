@@ -3,7 +3,23 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-08 — Step 1 redesign (free wiring). Commit `a6d289c461`
+*Last updated: 2026-06-08 — Step 2 redesign (predecessor confidence channel).
+Commit `c8afd0e23c` adds four fields to `ChordTemporalContext` —
+`previousWinnerScore`, `previousWinnerMargin`, `previousWinnerRootPcWeight`,
+`previousDistinctPcs` — and forwards them to `HarmonicFunctionContext` in the
+`fnCtx` construction block (`chordanalyzer.cpp`). Populated from the captured
+`PostScoringGateContext` (pcWeight / distinctPcs / pre-gate rawCandidates) at the
+main `advanceTemporalContext` call site (`regionanalyzer.cpp:475`) and at both
+sub-region commit sites — Pass 2 (`~L696`) and Pass 2b (`~L896`), each with a
+`subGateCtx` in scope. There is no sub-region `advanceTemporalContext` call; the
+sub-region commit is a manual 3-line identity assignment, and the block was added
+immediately after it. Pure infrastructure per `docs/redesign_plan.md` Step 2: no
+function-layer code reads the new fields yet (`harmonicfunctionlayer.cpp` untouched).
+Byte-identical — composing 407/407, notation 52/52, pipeline snapshots 11/11
+(0 goldens refreshed); BIR unchanged by construction (Baroque 25/16, Jazz 36/10),
+no scoring path consumes the fields.*
+
+*Previous: 2026-06-08 — Step 1 redesign (free wiring). Commit `a6d289c461`
 forwards four already-computed `ChordTemporalContext` fields — `previousQuality`,
 `recentRootPcs`, `consecutiveBassStepwiseCount`, `regionMetricWeight` — into
 `HarmonicFunctionContext` and wires them in the `fnCtx` construction block
