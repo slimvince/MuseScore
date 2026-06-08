@@ -3,7 +3,17 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-06 - E2d redesign: scoring-oracle / competition-pipeline
+*Last updated: 2026-06-08 — Step 1 redesign (free wiring). Commit `a6d289c461`
+forwards four already-computed `ChordTemporalContext` fields — `previousQuality`,
+`recentRootPcs`, `consecutiveBassStepwiseCount`, `regionMetricWeight` — into
+`HarmonicFunctionContext` and wires them in the `fnCtx` construction block
+(`chordanalyzer.cpp`). Pure infrastructure per `docs/redesign_plan.md` Step 1: no
+function-layer code reads the new fields yet (`harmonicfunctionlayer.cpp` untouched).
+Byte-identical — composing 407/407, notation 52/52, pipeline snapshots 11/11
+(0 goldens refreshed); BIR unchanged (Baroque 25/16, Jazz 36/10), no scoring path
+consumes the fields.*
+
+*Previous: 2026-06-06 - E2d redesign: scoring-oracle / competition-pipeline
 split (instruction `cc_instruction_redesign_segregation.md`). `analyzeChord()` is
 now a vertical-only scoring ORACLE: it computes per-cell `basisIndep` (WITHOUT any
 progression signal), `basisDep`, complexity/aug factors, `w_complete`, and region
@@ -245,7 +255,12 @@ Jazz BIR=true=36, BIR=false=10 (the prior 27/23 & 33/10 predated the `81978321e3
 keyresolver Corelli op01n08d re-key, which was never re-measured for BIR; the E2d
 redesign is byte-identical so these are HEAD's true numbers). Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
 
-**Last committed:** `81978321e3` — keyresolver Option B Baroque partial-signature correction.
+**Last committed:** `a6d289c461` — Step 1 redesign free wiring: forward `previousQuality`,
+`recentRootPcs`, `consecutiveBassStepwiseCount`, `regionMetricWeight` from
+`ChordTemporalContext` into `HarmonicFunctionContext` (no scoring change; byte-identical
+407/407 · 52/52 · 11/11, BIR unchanged).
+
+**Prior keyresolver commit:** `81978321e3` — keyresolver Option B Baroque partial-signature correction.
 Detects the late-17th/early-18th-century convention of notating a minor key with one fewer
 flat than modern usage (b6 supplied as an accidental, e.g. Corelli op01n08d C minor written
 with 2 flats, previously detected as G minor). Pervasiveness floor (3% of sounding weight)
