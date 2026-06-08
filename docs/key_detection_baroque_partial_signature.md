@@ -1,5 +1,18 @@
 # Key/Mode Detection — Baroque Partial-Signature Weakness
 
+> **RESOLVED 2026-06-03 by commit `81978321e3` (`fix(keyresolver): Option B
+> Baroque partial-signature correction`), in HEAD.** Option B from §4 below was
+> implemented: the resolver now detects the partial-signature convention (♭6
+> pervasive ≥3% of sounding weight AND dominating ♮6 by ≥2×) and reinterprets the
+> signature one step toward the missing accidental (minor −1 flat / major +1 sharp)
+> for the whole of `resolveKeyAndModeRanked`. Corelli `op01n08d` is now detected as
+> **C minor at rank 0 for every region** (verified live 2026-06-08,
+> `cc_step3_key_investigation_report.md` Part C); G minor no longer appears at any
+> rank. The body below documents the **pre-fix** state and is retained for history.
+> The residual `op01n08d` test symptoms (§"three remaining symptoms") are
+> quality / inversion / segmentation issues, **not** key detection — see the commit
+> message of `81978321e3` for the post-fix status of each.
+
 *Investigation, 2026-05-23 (read-only; no code changed). Anchor case: Corelli
 `op01n08d` (the `CorelliOp01n08dUserReportedChordTrackAudit` notation failure).*
 

@@ -2929,6 +2929,14 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
     // -- Run the competition pipeline (winner selection lives here) ------------
     fn::HarmonicFunctionContext fnCtx;
+    // NOTE: fnCtx.keyFifths / fnCtx.keyMode are DEAD (write-only) — the function
+    // layer never reads them. All key influence is already frozen into
+    // cell.basisIndep here, via the oracle's dim7CharacteristicBonus and
+    // bassIndependentContextualBonuses (which consume keyTonicPc/scale above) and is
+    // forwarded to the post-scoring gates through snapshot.{scale,keyTonicPc,keyMode}.
+    // Kept only to carry the notated key forward should the function layer ever need
+    // it; do NOT add key-confidence scaling here (it would be a no-op — scale the
+    // oracle terms instead). See cc_step3_key_investigation_report.md Part A.
     fnCtx.keyFifths      = keySignatureFifths;
     fnCtx.keyMode        = keyMode;
     fnCtx.previousRootPc = context ? context->previousRootPc : -1;

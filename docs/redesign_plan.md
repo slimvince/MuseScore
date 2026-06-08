@@ -125,8 +125,17 @@ selection. But the ranked list is discarded immediately in both call sites.
 
 Every downstream consumer of `localKeyFifths` and `localKeyMode` (template scoring,
 scale construction, diatonic root bonus, pitchClassName) receives a single committed
-key as if it were ground truth. A wrong key (e.g. Corelli op01n08d: G minor instead
-of C minor) poisons every scale-consuming term for the entire piece.
+key as if it were ground truth. A wrong key poisons every scale-consuming term for the
+entire piece.
+
+> **Caveat (2026-06-08):** the motivating example originally cited here — Corelli
+> op01n08d detected as G minor — is **no longer a live failure**. It was a
+> signature-lock bug fixed by `81978321e3` (Option B partial-signature correction),
+> not a distribution gap; the resolver now returns C minor confidently at rank 0
+> everywhere. The architectural observation (the ranked list is discarded) still
+> stands, but **no current failing case is known to exhibit "correct key sits at
+> rank 1/2"**, which is the pattern key-as-distribution would actually address. See
+> `cc_step3_key_investigation_report.md`.
 
 This is the **same early-commitment disease** as the inter-region channel, one layer up
 — and it is architecturally worse because there is no distribution being maintained at
@@ -147,7 +156,7 @@ all between the key detection layer and the chord analysis layer.
 | B3 dim7 rotation | Rotation-selection via non-diatonic ♭♭7 check | PC-identical rotations — no distribution helps | No — unchanged |
 | bwv14.5 sub-region | 240-tick bass-transition sub-region overrides parent | Segmentation / sub-region tick boundary | No — segmentation issue |
 | A2 dominant quality in minor | 1-PC slice gets wrong quality | Key commits before chord; no feedback | Partially (key distribution would help) |
-| Corelli op01n08d key | G minor instead of C minor throughout | Key layer commits with no distribution | **Yes — dissolves** with key-as-distribution |
+| Corelli op01n08d key | ~~G minor instead of C minor throughout~~ — **already fixed** by `81978321e3` (Option B partial-signature correction); resolver returns C minor at rank 0 everywhere (verified 2026-06-08) | ~~Key layer commits with no distribution~~ — was a signature-lock bug, not a distribution gap | **N/A — no longer a failure.** Key-as-distribution has no effect here |
 
 **The Δ=+7 cluster is Phase E territory.** The predecessor-confidence framing was wrong:
 the 3 genuine continuity cases (bwv245.28, bwv296, bwv320) have *correct, confident*
@@ -175,7 +184,9 @@ Byte-identical verified: 407/407, 52/52, 11/11 pipeline snapshots, 0 goldens cha
 this is the foundation for Phase E quality-aware signals.
 **Files:** `harmonicfunctionlayer.h` (struct), `chordanalyzer.cpp` (fnCtx construction)
 
-### Step 2 — Add predecessor confidence to the inter-region channel
+### Step 2 — Add predecessor confidence to the inter-region channel ✅ DONE
+
+**Commit:** `c8afd0e23c` (2026-06-08) — byte-identical, 407/407, 52/52, 11/11 snapshots.
 
 **Cost:** Medium. New fields in `ChordTemporalContext` populated during
 `advanceTemporalContext`; forwarded to `HarmonicFunctionContext`.
@@ -195,11 +206,13 @@ falsified by the predecessor-confidence diagnostic. The Δ=+7 cases split into:
   (pcWeight 0.60–0.82). The mozart_k280 control predecessor has pcWeight 1.00. No
   threshold can block the wrong cases without blocking the correct ones.
 
-**What Step 2 is now:** Infrastructure. Making predecessor confidence available to
-`applyHarmonicFunction` is still the right architectural direction — the fields will
-be needed for Phase E cadence detection and quality-aware bonus logic. But step 2
-should be implemented without a specific BIR target, verified as byte-identical (no
-new scoring logic using the fields), and left as a foundation for Phase E.
+**What Step 2 was:** Infrastructure. `previousWinnerScore`, `previousWinnerMargin`,
+`previousWinnerRootPcWeight`, `previousDistinctPcs` added to both `ChordTemporalContext`
+and `HarmonicFunctionContext`. Populated at the main call site and at two sub-region
+commit blocks (Pass-2 and Pass-2b in `regionanalyzer.cpp`), which use inline 3-line
+manual assignments rather than the `advanceTemporalContext` helper. Both had
+`PostScoringGateContext` in scope; scores are pre-gate (competition pipeline output).
+No scoring logic reads these fields yet — foundation for Phase E.
 
 **Do not implement rootContinuityBonus scaling in Step 2** until a specific mechanism
 survives a falsification test against mozart_k280. CC's proposed bass-aware gate
@@ -211,15 +224,37 @@ chord positions on every beat, so the condition fires correctly and incorrectly 
 **Files:** `chordanalyzer.h` (ChordTemporalContext), `harmonicfunctionlayer.h`
 (HarmonicFunctionContext), `chordanalyzer.cpp` (advanceTemporalContext + fnCtx)
 
-### Step 3 — Key-as-distribution
+### Step 3 — Key-as-distribution ⛔ SHELVED (premise obsolete)
 
-**Cost:** Large. `localKeyFifths` and `localKeyMode` are consumed in many places; each
-would need to handle uncertainty.
+**Investigation date:** 2026-06-08. Report: `cc_step3_key_investigation_report.md`.
 
-Minimum viable form: preserve the top-2 key candidates from `resolveKeyAndModeRanked`
-instead of taking `.front()`. Pass the second candidate's confidence ratio to
-`applyHarmonicFunction` so it can reduce the weight of diatonic-root and scale-degree
-terms when the key is uncertain.
+The motivating case (Corelli op01n08d: "G minor instead of C minor throughout") was
+**already fixed** by commit `81978321e3` (Option B Baroque partial-signature correction,
+2026-06-03). The key resolver now returns C minor at rank 0 for every region on both
+batch and notation paths. Step 3 has no confirmed live target in the corpus.
+
+Two additional findings from the investigation:
+
+- **`fnCtx.keyFifths` / `fnCtx.keyMode` are dead (write-only).** Set in
+  `chordanalyzer.cpp` L2932-2933, never read in `harmonicfunctionlayer.cpp`. The
+  key influence travels via `snapshot.{scale, keyTonicPc}` which is frozen into
+  `cell.basisIndep` before the function layer runs. These fields should be removed or
+  documented as dead.
+
+- **`normalizedConfidence` is unreliable as a scaling factor.** `promoteWinnerInPlace`
+  in `keyresolver.cpp` (L311-321) re-ranks candidates via hysteresis/declared-mode
+  without recomputing `normalizedConfidence`, producing a 0.025–1.00 range for the
+  same correctly-keyed piece. The "minimum viable form" (scale diatonic bonus by key
+  confidence) would have throttled the diatonic bonus to ~3% on correctly-keyed scores
+  — a regression, not an improvement.
+
+**Step 3 is shelved until a live case is confirmed** where the correct key genuinely
+appears as a runner-up in `resolveKeyAndModeRanked` output. No such case is known in
+the current 51-piece Baroque corpus.
+
+**Cleanup required (CC, follow-on to Option 2):**
+- Remove or document `fnCtx.keyFifths`/`fnCtx.keyMode` dead fields
+- Mark `key_detection_baroque_partial_signature.md` as resolved-by-`81978321e3`
 
 Full form: run the chord competition twice (once per top-2 key candidates), merge the
 result distributions. Only warranted if Step 2 proves insufficient for key-driven errors.
