@@ -3,7 +3,26 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-08 — Step 2 redesign (predecessor confidence channel).
+*Last updated: 2026-06-08 — Step 3 investigation: key-as-distribution **SHELVED**
+(premise obsolete). Commit `be2f26971d` — docs + dead-field documentation only,
+comment-only, byte-identical: composing 407/407, notation 52/52, pipeline snapshots
+11/11, BIR unchanged (Baroque 25/16, Jazz 36/10). The Step 3 pre-investigation
+(`cc_step3_key_investigation_report.md`) found the motivating case — Corelli
+op01n08d "G minor instead of C minor throughout" — was **already fixed** by
+`81978321e3` (Option B partial-signature correction). The resolver now returns C
+minor at rank 0 for every region on both batch and notation paths; G minor never
+appears at any rank. Step 3 has no live target and is shelved until a case is
+confirmed where the correct key sits at rank 1/2. Two findings (recorded in
+`docs/redesign_plan.md` Step 3): (1) `HarmonicFunctionContext::keyFifths`/`keyMode`
+are dead write-only fields — set in `chordanalyzer.cpp`, never read in
+`harmonicfunctionlayer.cpp`; key influence is frozen into `cell.basisIndep` by the
+oracle — now documented in code at both sites; (2) `normalizedConfidence` is
+unreliable as a confidence-scaling factor because `resolveKeyAndModeRanked` re-ranks
+via `promoteWinnerInPlace` without recomputing it (0.025–1.00 for the same correctly
+keyed piece). `docs/key_detection_baroque_partial_signature.md` marked
+RESOLVED-by-`81978321e3`.*
+
+*Previous: 2026-06-08 — Step 2 redesign (predecessor confidence channel).
 Commit `c8afd0e23c` adds four fields to `ChordTemporalContext` —
 `previousWinnerScore`, `previousWinnerMargin`, `previousWinnerRootPcWeight`,
 `previousDistinctPcs` — and forwards them to `HarmonicFunctionContext` in the
@@ -271,10 +290,12 @@ Jazz BIR=true=36, BIR=false=10 (the prior 27/23 & 33/10 predated the `81978321e3
 keyresolver Corelli op01n08d re-key, which was never re-measured for BIR; the E2d
 redesign is byte-identical so these are HEAD's true numbers). Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
 
-**Last committed:** `a6d289c461` — Step 1 redesign free wiring: forward `previousQuality`,
-`recentRootPcs`, `consecutiveBassStepwiseCount`, `regionMetricWeight` from
-`ChordTemporalContext` into `HarmonicFunctionContext` (no scoring change; byte-identical
-407/407 · 52/52 · 11/11, BIR unchanged).
+**Last committed:** `be2f26971d` — Step 3 cleanup: shelve key-as-distribution
+(motivating Corelli op01n08d case already fixed by `81978321e3`), document the dead
+`HarmonicFunctionContext::keyFifths`/`keyMode` write-only fields, mark
+`key_detection_baroque_partial_signature.md` resolved (comment/docs-only; byte-identical
+407/407 · 52/52 · 11/11, BIR unchanged Baroque 25/16, Jazz 36/10). Preceded by
+`c8afd0e23c` (Step 2 predecessor-confidence channel) and `a6d289c461` (Step 1 free wiring).
 
 **Prior keyresolver commit:** `81978321e3` — keyresolver Option B Baroque partial-signature correction.
 Detects the late-17th/early-18th-century convention of notating a minor key with one fewer
