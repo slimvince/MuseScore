@@ -475,6 +475,19 @@ analyzeRegions(const mu::engraving::Score* score,
             temporalCtx.nextRootPc = -1;
             temporalCtx.nextBassPc = -1;
 
+            // Step 2 redesign: populate predecessor confidence fields
+            {
+                const int winRoot = chosenResult.identity.rootPc;
+                temporalCtx.previousWinnerRootPcWeight = (winRoot >= 0)
+                    ? gateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+                temporalCtx.previousDistinctPcs = gateCtx.distinctPcs;
+                temporalCtx.previousWinnerScore = gateCtx.rawCandidates.empty()
+                    ? 0.0 : gateCtx.rawCandidates[0].score;
+                temporalCtx.previousWinnerMargin = (gateCtx.rawCandidates.size() >= 2)
+                    ? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+                    : -1.0;
+            }
+
             prevKeyResult = localKey;
 
             if (opts.hooks && opts.hooks->preMergeRegions) {
@@ -683,6 +696,19 @@ analyzeRegions(const mu::engraving::Score* score,
                 subCtx.previousQuality = chosenSub.identity.quality;
                 subCtx.previousBassPc  = chosenSub.identity.bassPc;
 
+                // Step 2 redesign: populate predecessor confidence fields (subGateCtx in scope)
+                {
+                    const int winRoot = chosenSub.identity.rootPc;
+                    subCtx.previousWinnerRootPcWeight = (winRoot >= 0)
+                        ? subGateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+                    subCtx.previousDistinctPcs = subGateCtx.distinctPcs;
+                    subCtx.previousWinnerScore = subGateCtx.rawCandidates.empty()
+                        ? 0.0 : subGateCtx.rawCandidates[0].score;
+                    subCtx.previousWinnerMargin = (subGateCtx.rawCandidates.size() >= 2)
+                        ? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
+                        : -1.0;
+                }
+
                 const bool isContiguous = !pass2Regions.empty()
                     && pass2Regions.back().endTick == subStart.ticks();
                 if (isContiguous
@@ -869,6 +895,19 @@ analyzeRegions(const mu::engraving::Score* score,
                     subCtx.previousRootPc  = chosenSub.identity.rootPc;
                     subCtx.previousQuality = chosenSub.identity.quality;
                     subCtx.previousBassPc  = chosenSub.identity.bassPc;
+
+                    // Step 2 redesign: populate predecessor confidence fields (subGateCtx in scope)
+                    {
+                        const int winRoot = chosenSub.identity.rootPc;
+                        subCtx.previousWinnerRootPcWeight = (winRoot >= 0)
+                            ? subGateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+                        subCtx.previousDistinctPcs = subGateCtx.distinctPcs;
+                        subCtx.previousWinnerScore = subGateCtx.rawCandidates.empty()
+                            ? 0.0 : subGateCtx.rawCandidates[0].score;
+                        subCtx.previousWinnerMargin = (subGateCtx.rawCandidates.size() >= 2)
+                            ? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
+                            : -1.0;
+                    }
 
                     HarmonicRegion subRegion;
                     subRegion.startTick        = subStart.ticks();

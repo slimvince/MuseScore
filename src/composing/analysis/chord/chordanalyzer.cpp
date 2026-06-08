@@ -2940,6 +2940,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     fnCtx.consecutiveBassStepwiseCount = context ? context->consecutiveBassStepwiseCount : 0;
     fnCtx.regionMetricWeight           = context ? context->regionMetricWeight           : 1.0;
     fnCtx.recentRootPcs                = context ? context->recentRootPcs : std::array<int, 3>{ -1, -1, -1 };
+    // Step 2 redesign: predecessor confidence channel
+    fnCtx.previousWinnerScore        = context ? context->previousWinnerScore        : 0.0;
+    fnCtx.previousWinnerMargin       = context ? context->previousWinnerMargin       : -1.0;
+    fnCtx.previousWinnerRootPcWeight = context ? context->previousWinnerRootPcWeight : 0.0;
+    fnCtx.previousDistinctPcs        = context ? context->previousDistinctPcs        : 0;
 
     // Region data the gate context needs but the snapshot does not carry.
     if (gateCtxOut) {

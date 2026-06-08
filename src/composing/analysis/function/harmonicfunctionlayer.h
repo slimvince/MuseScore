@@ -76,6 +76,12 @@ struct HarmonicFunctionContext {
                                   ///< Consecutive regions (incl. this one) with stepwise bass.
     double regionMetricWeight { 1.0 };
                                   ///< Normalised metric strength of this region's onset.
+
+    // Step 2 redesign: predecessor confidence channel — no scoring logic yet
+    double previousWinnerScore        { 0.0 };
+    double previousWinnerMargin       { -1.0 };
+    double previousWinnerRootPcWeight { 0.0 };
+    int    previousDistinctPcs        { 0 };
 };
 
 // -----------------------------------------------------------------------

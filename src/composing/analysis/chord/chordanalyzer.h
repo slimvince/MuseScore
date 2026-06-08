@@ -615,6 +615,25 @@ struct ChordTemporalContext {
     /// lower values for weaker beats, 0.5 for subbeatoffbeats.
     /// Root-position chords cluster on strong beats; inversions on weak beats.
     double regionMetricWeight = 1.0;
+
+    // Step 2 redesign: predecessor confidence channel — forwarded to HarmonicFunctionContext
+    // All values are pre-gate (from applyHarmonicFunction competition pipeline output).
+
+    /// Score of the preceding region's committed winner (post-competition-pipeline).
+    /// 0.0 if not available (piece start, sub-region without gateCtx).
+    double previousWinnerScore { 0.0 };
+
+    /// Score gap between winner and runner-up in the winning bass group.
+    /// -1.0 if only one candidate existed (no runner-up).
+    double previousWinnerMargin { -1.0 };
+
+    /// pcWeight of the preceding region's committed winner's root pitch class.
+    /// 0.0 means the root was entirely absent from the sounded tones.
+    double previousWinnerRootPcWeight { 0.0 };
+
+    /// Distinct pitch-class count in the preceding region.
+    /// 0 if not available.
+    int previousDistinctPcs { 0 };
 };
 
 /// Per-candidate diagnostic entry from the full 12 × template scoring loop.
