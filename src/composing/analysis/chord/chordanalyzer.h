@@ -708,6 +708,13 @@ inline int inferNextRootPc(
 /// fields. After returning, ctx is ready for the next region's analyzeChord() call
 /// (except for bassIsStepwiseFromPrevious / bassIsStepwiseToNext / nextRootPc which
 /// depend on the next region's tones and must be set separately).
+///
+/// A third overload taking a PostScoringGateContext& is declared further down
+/// (after PostScoringGateContext is fully defined); it does everything the
+/// ChordIdentity overload does AND populates the predecessor-confidence fields
+/// (previousWinnerScore / previousWinnerMargin / previousWinnerRootPcWeight /
+/// previousDistinctPcs). It is the canonical commit helper used at every
+/// chord-commit site in regionanalyzer.cpp.
 inline void advanceTemporalContext(
     ChordTemporalContext& ctx,
     int& runningStepwiseCount,
@@ -769,6 +776,35 @@ struct PostScoringGateContext {
     std::vector<ChordAnalysisTone> tones        {};   ///< Region tones (pedal Pass-2 re-analysis).
     int                            keySigFifths { 0 }; ///< keySignatureFifths (pedal Pass-2 re-analysis).
 };
+
+/// Canonical chord-commit helper. Delegates to the ChordIdentity overload above
+/// (rolling stepwise count, recent-roots window, previous-chord fields) and then
+/// populates the Step-2 predecessor-confidence fields from the captured
+/// PostScoringGateContext. Used at every commit site in regionanalyzer.cpp so the
+/// main loop, Pass 2 sub-regions and Pass 2b sub-regions all advance identically.
+/// Declared here (not next to the other overloads) because its body references
+/// PostScoringGateContext, which is only fully defined immediately above.
+inline void advanceTemporalContext(
+    ChordTemporalContext&         ctx,
+    int&                          runningStepwiseCount,
+    std::array<int, 3>&           recentRootsBuf,
+    const ChordIdentity&          chosen,
+    const PostScoringGateContext& gateCtx) noexcept
+{
+    // Delegate to the existing overload for rolling state + identity fields.
+    advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf, chosen);
+
+    // Predecessor confidence fields (Step 2 redesign).
+    const int winRoot = chosen.rootPc;
+    ctx.previousWinnerRootPcWeight = (winRoot >= 0)
+        ? gateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+    ctx.previousDistinctPcs  = gateCtx.distinctPcs;
+    ctx.previousWinnerScore  = gateCtx.rawCandidates.empty()
+        ? 0.0 : gateCtx.rawCandidates[0].score;
+    ctx.previousWinnerMargin = (gateCtx.rawCandidates.size() >= 2)
+        ? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+        : -1.0;
+}
 
 /// Locally-computed inputs that buildChordResult() needs from analyzeChord().
 struct BuildChordResultContext {
