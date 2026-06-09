@@ -1628,13 +1628,16 @@ static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32
 // the bass-INDEPENDENT contribution exactly once per cell and then evaluate
 // each bass-candidate by adding the bass-DEPENDENT delta only.
 //
-// Invariant:
-//   bassIndependentContextualBonuses(tpl, rootPc, ..., context)
-//   + bassDependentContextualBonuses(tpl, rootPc, bassPc, appliedBassBonus, ...)
-//   == contextualBonuses(tpl, rootPc, bassPc, appliedBassBonus, ..., context)
-//
-// for every (tpl, rootPc, bassPc, context).  This is asserted by Step 2's
-// byte-identical verification.
+// NOTE — the split helpers are NOT a faithful decomposition of contextualBonuses():
+// contextualBonuses() (used only by diagnoseChord, see L1456) intentionally still adds
+// rootContinuityBonus inline at L1482, whereas neither bassIndependentContextualBonuses
+// nor bassDependentContextualBonuses adds it.  Since the E2d redesign rootContinuity is
+// a progression signal owned by the competition pipeline (applyHarmonicFunction), not
+// the oracle (docs/scoring_model.md §11), so the production path deliberately omits it
+// here.  The divergence is intentional — diagnoseChord wants rcb folded in for its
+// diagnostic dump; the production scoring path applies rcb later (Gate R-aware).  Apart
+// from rootContinuityBonus the two helpers' sum equals contextualBonuses() for every
+// (tpl, rootPc, bassPc, context).
 double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
                                         int keyTonicPc, const std::array<int, 7>& scale,
                                         const ChordAnalyzerPreferences& prefs,

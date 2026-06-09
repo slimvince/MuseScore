@@ -122,6 +122,11 @@ executable from `notation_tests.exe`. Both are built by the standard build scrip
 It snapshots the output of all four analysis paths (P1 implode, P2 annotation,
 P3 tick-regional, P4 tick-local) against golden JSON files for a 10-score corpus.
 
+**Golden file location:** the snapshot goldens live at
+`src/notation/tests/pipeline_snapshot_tests/snapshots/` — NOT at
+`src/composing/tests/snapshots/`. (Corrects a path error in an earlier instruction;
+use the notation-tests path for any git-add of refreshed goldens.)
+
 ```
 ./pipeline_snapshot_tests.exe
 ```

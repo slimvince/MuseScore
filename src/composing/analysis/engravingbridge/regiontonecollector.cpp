@@ -761,6 +761,17 @@ findTemporalContext(const mu::engraving::Score* sc,
     const Fraction tick = seg->tick();
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
 
+    // IMPLEMENTATION GAP (not a design constraint): this bridge-path context builder
+    // looks BACKWARD only — via seg->prev1() it populates previousRootPc /
+    // previousQuality / previousBassPc / bassIsStepwiseFromPrevious. It does NOT set the
+    // forward-lookahead fields (nextRootPc, nextBassPc, bassIsStepwiseToNext) or the
+    // Step 1/2 progression fields (previousWinnerScore/Margin/RootPcWeight,
+    // previousDistinctPcs). Consequently stepwiseBassLookaheadBonus and wSeqBonus never
+    // fire on the bridge path, unlike the batch path which supplies nextRootPc. This is
+    // a gap, not a limitation: seg->next1(SegmentType::ChordRest) is available and used
+    // elsewhere in this file; a forward walk mirroring the backward one below would close
+    // it. Tracked in docs/layer_architecture_audit.md Finding 3.
+
     for (const Segment* s = seg->prev1(SegmentType::ChordRest);
          s != nullptr;
          s = s->prev1(SegmentType::ChordRest)) {

@@ -271,6 +271,15 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             // baseline region split into a spurious G/B sub-region). Gate R is a
             // final-scoring correction only; with this guard segmentation stays
             // byte-identical to baseline and the within-region fixes are preserved.
+            //
+            // CROSS-LAYER DEPENDENCY: `cell.basisDep <= 0` is used here as a proxy for
+            // "this continuation has NO sounding third", which works only because the
+            // sounding-third inversion bonus (sameRootInversionBonus) is computed in the
+            // ORACLE (chordanalyzer.cpp) and folded into basisDep — pre-existing oracle
+            // temporal debt, chordanalyzer.h:329. If that debt is ever resolved (the
+            // inversion bonuses migrate out of the oracle into this pipeline), basisDep
+            // would no longer carry the sounding-third signal and this condition MUST be
+            // revisited at the same time, or Gate R will misfire.
             if (rcb > 0.0 && !prefs.explorationMode && cell.basisDep <= 0.0
                 && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc)) {
                 rcb = 0.0;

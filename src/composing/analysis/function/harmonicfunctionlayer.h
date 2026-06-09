@@ -29,11 +29,16 @@
 //
 //   analyzeChord()           — scoring ORACLE. Computes only what depends on the
 //                              raw tones + key: per-(bass,root,template) vertical
-//                              scores (basisIndep WITHOUT any progression signal,
+//                              scores (basisIndep — vertical evidence plus the
+//                              diatonic/resolution bonuses that remain as pre-existing
+//                              oracle temporal debt, chordanalyzer.h:329; it does NOT
+//                              carry rootContinuityBonus, which the pipeline adds),
 //                              basisDep, complexity/aug factors, w_complete,
 //                              appliedBassBonus) plus region metadata. Packs them
 //                              into a ScoringSnapshot and calls applyHarmonicFunction.
-//                              It selects NO winner and applies NO progression signal.
+//                              It selects NO winner and adds none of the pipeline-owned
+//                              progression signals (rootContinuity / w_seq / w_dim /
+//                              step bonuses).
 //
 //   applyHarmonicFunction()  — competition PIPELINE. The sole place that applies
 //                              progression signals (rootContinuity, w_seq, w_dim,
@@ -162,11 +167,17 @@ struct ScoringCell {
                                                 ///< Pass B m7-family guard: isMin7 ≡
                                                 ///< quality==Minor && intervalCount==4.
 
-    // Vertical pitch evidence — does NOT include rootContinuityBonus (the pipeline
-    // adds it before the cf × af multiply, matching the historical folding into
-    // basisIndep).
+    // Vertical pitch evidence PLUS the bass-independent contextual bonuses from
+    // bassIndependentContextualBonuses (chordanalyzer.cpp): diatonicRootBonus and
+    // resolutionBonus. It is therefore NOT purely vertical — resolutionBonus is a
+    // progression signal keyed on the previous chord's quality, left here as
+    // pre-existing oracle temporal debt (see chordanalyzer.h:329). The ONE progression
+    // signal basisIndep does NOT carry is rootContinuityBonus: the pipeline adds that
+    // before the cf × af multiply (matching the historical folding into basisIndep).
+    // The bass-dependent inversion bonuses (stepwise / sameRoot / completeTriad) land
+    // in basisDep, not here.
     double basisIndep;
-    double basisDep;            ///< Bass-dependent delta (nonBass + §4.1b inversion bonuses).
+    double basisDep;            ///< Bass-dependent delta (appliedBassBonus + §4.1b inversion bonuses).
     double complexityFactor;    ///< complexityFactorMatrix[rootPc][tiePriority].
     double augFactor;           ///< augFactorMatrix[rootPc][tiePriority].
 
