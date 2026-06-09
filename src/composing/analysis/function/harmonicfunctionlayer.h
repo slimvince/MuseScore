@@ -210,6 +210,28 @@ struct ScoringSnapshot {
     analysis::KeySigMode   keyMode    {};
 };
 
+// -----------------------------------------------------------------------
+// Gate R — rcb bass-chord-tone guard. Declared here (exposed) so the kMasks
+// template table and the decision branches can be unit-tested directly. See
+// docs/scoring_model.md §4 "Gate R" / §9 (kMasks is the 5th atomic-update site).
+// -----------------------------------------------------------------------
+
+/// Returns true iff `bassPc` is a tone of the candidate's template
+/// (root / 3rd / 5th / 7th …) — i.e. `(bassPc - rootPc) mod 12` is in the template's
+/// interval set. Returns false when the bass is foreign to the chord ("nonsense slash").
+/// Conservative on unknown / out-of-range input: returns true (do not gate when unsure).
+bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept;
+
+/// Gate R decision predicate: returns true iff `rootContinuityBonus` must be withheld
+/// from this cell. The full Gate R condition — all four required:
+///   (1) `rcb > 0`            — root continuity holds for this candidate,
+///   (2) `!explorationMode`   — final-scoring correction only (segmentation untouched),
+///   (3) `cell.basisDep <= 0` — no bass-dependent credit (no sounding third → no
+///                              inversion bonus, and no bass-root bonus),
+///   (4) bass foreign to the candidate's template (bassIsTemplateChordTone == false).
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb,
+                               bool explorationMode) noexcept;
+
 /// Run the competition pipeline.
 ///
 /// Inputs:  \p snapshot (full vertical-only candidate space, all basses),

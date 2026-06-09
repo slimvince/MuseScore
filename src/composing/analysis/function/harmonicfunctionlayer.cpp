@@ -94,9 +94,7 @@ double wStepOutBonus(int candBassPc, int rootPc,
     return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
 }
 
-// ── Competition pipeline ────────────────────────────────────────────────────
-
-namespace {
+// ── Gate R — rcb bass-chord-tone guard (definitions; declared in the header) ──
 
 /// Gate R helper: returns true if bassPc is a tone of the candidate's template
 /// (root / 3rd / 5th / 7th …), false if the bass is foreign to the candidate's
@@ -141,6 +139,19 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
 
     return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
 }
+
+/// Gate R decision — see the header for the four-condition contract. Encodes the full
+/// guard so both the production call site and the unit tests share one definition.
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb,
+                               bool explorationMode) noexcept
+{
+    return rcb > 0.0 && !explorationMode && cell.basisDep <= 0.0
+           && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc);
+}
+
+// ── Competition pipeline ────────────────────────────────────────────────────
+
+namespace {
 
 /// One per-bass working candidate: a RawCandidate plus the intervalCount the
 /// Pass B m7-family guard needs (RawCandidate does not carry it).
@@ -280,8 +291,7 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             // inversion bonuses migrate out of the oracle into this pipeline), basisDep
             // would no longer carry the sounding-third signal and this condition MUST be
             // revisited at the same time, or Gate R will misfire.
-            if (rcb > 0.0 && !prefs.explorationMode && cell.basisDep <= 0.0
-                && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc)) {
+            if (gateRZeroesRootContinuity(cell, rcb, prefs.explorationMode)) {
                 rcb = 0.0;
             }
             const double newBasisIndep = cell.basisIndep + rcb;
