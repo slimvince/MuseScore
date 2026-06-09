@@ -402,6 +402,26 @@
         },
         {
             "key": "A",
+            "text": "E/G#",
+            "tick": 23280
+        },
+        {
+            "key": "A",
+            "text": "V6",
+            "tick": 23280
+        },
+        {
+            "key": "A",
+            "text": "E/G#",
+            "tick": 23280
+        },
+        {
+            "key": "A",
+            "text": "V6",
+            "tick": 23280
+        },
+        {
+            "key": "A",
             "text": "Esus2",
             "tick": 24240
         },
@@ -975,12 +995,20 @@
             "tick": 22320
         },
         {
-            "durationTicks": 1200,
+            "durationTicks": 240,
             "key": "A",
             "mode": "maj",
             "quality": "minor",
             "root": "F#",
             "tick": 23040
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "maj",
+            "quality": "major",
+            "root": "E",
+            "tick": 23280
         },
         {
             "durationTicks": 960,
@@ -1446,10 +1474,10 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "F#m/B",
+            "harmonyText": "E/G#",
             "pitches": [
-                69,
-                73
+                68,
+                71
             ],
             "tick": 23280
         },
@@ -2364,43 +2392,14 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "B",
-                    "score": 2.959
-                },
-                {
-                    "quality": "major",
-                    "root": "B",
-                    "score": 2.959
+                    "quality": "halfDiminished",
+                    "root": "G#",
+                    "score": 1.992
                 },
                 {
                     "quality": "minor",
-                    "root": "F#",
-                    "score": 2.103
-                }
-            ],
-            "bassIsStepwiseFromPrevious": false,
-            "bassIsStepwiseToNext": false,
-            "key": "A",
-            "previousBassPc": 8,
-            "previousQuality": "major",
-            "previousRootPc": 11,
-            "quality": "major",
-            "root": "B",
-            "tick": 23040,
-            "wasRegional": true
-        },
-        {
-            "alternatives": [
-                {
-                    "quality": "major",
-                    "root": "B",
-                    "score": 2.662
-                },
-                {
-                    "quality": "sus4",
-                    "root": "E",
-                    "score": 2.586
+                    "root": "G#",
+                    "score": 1.992
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2409,8 +2408,37 @@
             "previousBassPc": -1,
             "previousQuality": "major",
             "previousRootPc": 11,
+            "quality": "major",
+            "root": "E",
+            "tick": 23040,
+            "wasRegional": true
+        },
+        {
+            "alternatives": [
+                {
+                    "quality": "sus2",
+                    "root": "E",
+                    "score": 2.939
+                },
+                {
+                    "quality": "major",
+                    "root": "E",
+                    "score": 2.911
+                },
+                {
+                    "quality": "sus4",
+                    "root": "B",
+                    "score": 2.287
+                }
+            ],
+            "bassIsStepwiseFromPrevious": false,
+            "bassIsStepwiseToNext": false,
+            "key": "A",
+            "previousBassPc": -1,
+            "previousQuality": "major",
+            "previousRootPc": 4,
             "quality": "sus4",
-            "root": "B",
+            "root": "E",
             "tick": 24480,
             "wasRegional": true
         },
@@ -2735,9 +2763,9 @@
         {
             "alternatives": [
                 {
-                    "quality": "sus4",
-                    "root": "C#",
-                    "score": 2.494
+                    "quality": "minor",
+                    "root": "F#",
+                    "score": 2.261
                 },
                 {
                     "quality": "minor",

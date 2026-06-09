@@ -1263,8 +1263,8 @@
         },
         {
             "key": "E",
-            "quality": "sus4",
-            "root": "A",
+            "quality": "major",
+            "root": "D",
             "tick": 7680
         },
         {

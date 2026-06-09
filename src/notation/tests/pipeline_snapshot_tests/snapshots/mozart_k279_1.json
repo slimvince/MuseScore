@@ -1720,11 +1720,6 @@
                     "quality": "diminished",
                     "root": "E",
                     "score": 2.27
-                },
-                {
-                    "quality": "major",
-                    "root": "G",
-                    "score": 1.63
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

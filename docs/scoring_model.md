@@ -183,6 +183,79 @@ is load-bearing for legitimate sparse continuity (broken-chord bass with held
 upper voices). Do not attempt a density-based or inversion-aware gate here
 without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`.
 
+### Gate R — rcb bass-chord-tone guard
+
+**Where it fires.** Pass A of the competition pipeline `applyHarmonicFunction()`
+(`harmonicfunctionlayer.cpp`), immediately after `rootContinuityBonus` is computed
+and before it is folded into `basisIndep`.
+
+**Condition (all required).** Zero the bonus for a cell when:
+1. `rcb > 0` (root continuity holds for this candidate), AND
+2. `!prefs.explorationMode` — Gate R is a **final-scoring correction only**; it does
+   not fire during segmentation exploration (see "Why the `!explorationMode` guard"
+   below), AND
+3. `cell.basisDep <= 0` — the candidate earned **no** bass-dependent credit (no
+   inversion bonus fired and no bass-root bonus applies), AND
+4. `bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
+   foreign to the candidate's template. `bassIsTemplateChordTone` returns true iff
+   `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static
+   `kMasks[17]` interval-bitmask table mirroring the 17 TemplateDef interval sets).
+
+**Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**
+The bare bass-foreign test alone misfires on legitimate extended slash voicings.
+Counterexample: `Cm7add11/F` (test
+`Cm7SlashF_StepwiseBassContext_IsCm7NotFsus`). F is interval 5 (P4/11th) from C —
+foreign to the bare Min7 template `{0,3,7,10}` — yet F is sounding as the 11th and
+the reading is correct. The discriminator: a legitimate inverted/extended
+continuation has a **sounding third**, which makes it `isInvertedMajMin` and fires
+`sameRootInversionBonus` (and usually `stepwiseBassInversionBonus`), so its
+`basisDep > 0`. A Δ=+7b bare-root continuation has **no sounding third**, fires no
+inversion bonus, and (being a slash) gets no bass-root bonus, so `basisDep == 0`
+(confirmed for all three cases in the diagnostic report Table 1). Requiring
+`basisDep <= 0` therefore restricts Gate R to genuine bare-root nonsense
+continuations and spares real extended chords. (`basisDep` may be slightly negative
+when a `kNonBassPenalty` applies with no offsetting inversion credit — still a
+bare-root case, correctly gated.)
+
+**Why the `!explorationMode` guard.** `rootContinuityBonus` is deliberately **not**
+suppressed during `greedyExpandSegmentation` exploration (unlike `w_seq` / `w_dim` /
+step bonuses), so segmentation boundary selection already depends on rcb. If Gate R
+were allowed to perturb rcb during exploration it would shift region boundaries:
+this was caught at `bwv355` m15, where a baseline region (`Bm/D` at tick 26880,
+DCML-correct root B) was **split** into a spurious `G/B` sub-region at tick 27840 —
+a new BIR=false error invisible to the within-region diagnostic. Restricting Gate R
+to the final (non-exploratory) scoring pass keeps segmentation byte-identical to
+baseline while still correcting the final winner; the Δ=+7b fixes are all
+final-pass decisions and are unaffected by the guard.
+
+**Why it exists.** The vertical oracle already scores a non-chord-tone-bass
+("nonsense slash") candidate lower than the correct reading, but `rcb` (+0.40) is
+strong enough to overturn that verdict. In the Δ=+7b cluster the correct
+first-inversion complete triad leads the continued/predecessor root by only 0.38
+raw, so the +0.40 continuity bonus flips a clear vertical win into a 0.02 loss.
+Gate R restores the oracle's priority by denying continuity credit to a
+continuation that cannot harmonically hold its own bass.
+
+**The Δ=+7b mechanism it fixes.** Three Bach cases — bwv245.28 (B/G♯), bwv296
+(D/B), bwv320 (G/E) — all have `(bassPc - rootPc) mod 12 == 9` (a major sixth from
+the continued root), which appears in **none** of the 17 templates. The bass is in
+fact the major third of the DCML-correct root (G♯ of E, B of G, E of C), i.e. a
+first-inversion complete triad of the correct chord. Gate R fires on the wrong
+(continued-root) candidate, withholds its +0.40, and the correct triad wins on its
+clean 1.90 vs 1.52 raw lead.
+
+**Safety.**
+- *Alberti-bass safe.* In Alberti / broken-chord continuity the dominant pedal is
+  voiced over its own chord tones (C/E/G), so the bass is always a template tone and
+  Gate R never fires there. This sidesteps the Iter-98 and predecessor-bass dead
+  ends, which keyed on predecessor density / bass change and misfired on Alberti.
+- *mozart_k280-1 control passes unaffected.* The rcb-rewarded continued candidate
+  there always has a chord-tone bass (G = P5 of C, E♭ = m3 of Cm), so Gate R leaves
+  rcb intact and rcb still correctly reverses the raw winner.
+- *Forward-compatible.* `kMasks` is a sync site — when a template is added it must be
+  extended (see §9). A 0 entry is invalid: every template has at least interval 0.
+- *Conservative.* Out-of-range / unknown inputs return true (no gating).
+
 ### `w_complete` — `kWComplete = 0.50`
 
 Lambda at chordanalyzer.cpp:~L2084. Fires when:
@@ -531,11 +604,15 @@ Derived from the B1, B2, and B3 lessons.
    `prefs.extensionThreshold`. Enumerate the known failure cases explicitly
    (catalog chords, snapshot test fixtures, BIR corpus targets).
 
-5. **Update all 4 array sites atomically:**
+5. **Update all 5 sites atomically:**
    - `analyzeChord` template array (size N → N+1)
    - `kDiagTemplates` (size N → N+1)
    - `basisIndepMatrix`, `complexityFactorMatrix`, `augFactorMatrix` (column
      extent N → N+1, all three)
+   - `kMasks` in `bassIsTemplateChordTone` (`harmonicfunctionlayer.cpp`) — add the
+     new template's interval bitmask and bump the `std::array<uint16_t, 17>` size.
+     No entry may be `0` / `0u` (every template has at least interval 0, the root).
+     A missing/zero mask silently disables Gate R for that template.
 
 6. **Run all three test suites:**
    - `composing_tests.exe` (catalog: ground truth chord names)
@@ -671,9 +748,13 @@ unchanged by this redesign (no templates added or removed).
 
 ---
 
-*Last updated: 2026-06-06 — E2d redesign: scoring-oracle / competition-pipeline
-split. `analyzeChord()` is now a vertical-only oracle; `applyHarmonicFunction()`
-owns winner selection, threshold, result cap and gate-context construction.
-Removed `suppressProgressionSignals` / `captureScoringSnapshot`. New section 11;
-section 4 (`rootContinuityBonus`) + section 10 (E2) updated. Prior: E3 extracted
-`applyPostScoringGates()` from `analyzeChord()`.*
+*Last updated: 2026-06-08 — Gate R (rcb bass-chord-tone guard) added to §4 and §9
+(5th atomic-update site, `kMasks`). Withholds `rootContinuityBonus` from a candidate
+whose bass is foreign to its own template — fixes the Δ=+7b cluster (bwv245.28,
+bwv296, bwv320). Prior: 2026-06-06 — E2d redesign: scoring-oracle /
+competition-pipeline split. `analyzeChord()` is now a vertical-only oracle;
+`applyHarmonicFunction()` owns winner selection, threshold, result cap and
+gate-context construction. Removed `suppressProgressionSignals` /
+`captureScoringSnapshot`. New section 11; section 4 (`rootContinuityBonus`) +
+section 10 (E2) updated. Prior: E3 extracted `applyPostScoringGates()` from
+`analyzeChord()`.*

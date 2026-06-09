@@ -2175,13 +2175,13 @@
                 },
                 {
                     "quality": "major",
-                    "root": "C",
-                    "score": 1.975
+                    "root": "F",
+                    "score": 2.488
                 },
                 {
-                    "quality": "major",
-                    "root": "F",
-                    "score": 1.787
+                    "quality": "minor",
+                    "root": "A",
+                    "score": 1.75
                 }
             ],
             "bassIsStepwiseFromPrevious": false,

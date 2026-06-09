@@ -1475,12 +1475,12 @@
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.392
+                    "score": 2.38
                 },
                 {
-                    "quality": "major",
-                    "root": "D",
-                    "score": 2.389
+                    "quality": "minor",
+                    "root": "C#",
+                    "score": 2.374
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -1597,7 +1597,7 @@
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "A",
-            "previousBassPc": 4,
+            "previousBassPc": -1,
             "previousQuality": "halfDiminished",
             "previousRootPc": 8,
             "quality": "major",

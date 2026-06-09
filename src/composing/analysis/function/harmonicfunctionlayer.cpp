@@ -25,6 +25,8 @@
 #include "harmonicfunctionlayer.h"
 
 #include <algorithm>
+#include <array>
+#include <cstdint>
 #include <limits>
 
 namespace mu::composing::function {
@@ -95,6 +97,50 @@ double wStepOutBonus(int candBassPc, int rootPc,
 // ── Competition pipeline ────────────────────────────────────────────────────
 
 namespace {
+
+/// Gate R helper: returns true if bassPc is a tone of the candidate's template
+/// (root / 3rd / 5th / 7th …), false if the bass is foreign to the candidate's
+/// chord (a "nonsense slash" voicing). Used to withhold rootContinuityBonus from
+/// a candidate whose own bass cannot belong to it. See docs/scoring_model.md §4
+/// "Gate R" and §9 (5th atomic-update site).
+///
+/// Conservative on unknown / out-of-range inputs (returns true — do not gate if
+/// unsure).
+///
+/// kMasks MUST stay in sync with the TemplateDef array in analyzeChord()
+/// (chordanalyzer.cpp ~L2707) and kDiagTemplates (~L3218). When adding a template,
+/// add its interval bitmask here as a 5th mandatory site. Every template has at
+/// least interval 0 (the root), so no entry may be 0.
+bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
+{
+    if (rootPc < 0 || bassPc < 0 || tiePriority < 0 || tiePriority >= 17) {
+        return true;
+    }
+    const int interval = ((bassPc - rootPc) % 12 + 12) % 12;
+
+    // Bit i set ⇔ semitone interval i (from root) is a template tone.
+    static constexpr std::array<uint16_t, 17> kMasks = {
+        (1u << 0) | (1u << 4) | (1u << 7),                  // 0  Major triad   {0,4,7}
+        (1u << 0) | (1u << 4) | (1u << 7) | (1u << 11),     // 1  Maj7          {0,4,7,11}
+        (1u << 0) | (1u << 4) | (1u << 7) | (1u << 10),     // 2  Dom7          {0,4,7,10}
+        (1u << 0) | (1u << 4) | (1u << 6) | (1u << 10),     // 3  Dom7♭5        {0,4,6,10}
+        (1u << 0) | (1u << 3) | (1u << 7),                  // 4  Minor triad   {0,3,7}
+        (1u << 0) | (1u << 3) | (1u << 7) | (1u << 10),     // 5  Minor 7th     {0,3,7,10}
+        (1u << 0) | (1u << 3) | (1u << 6),                  // 6  Diminished    {0,3,6}
+        (1u << 0) | (1u << 5) | (1u << 6) | (1u << 10),     // 7  Sus4♭5        {0,5,6,10}
+        (1u << 0) | (1u << 3) | (1u << 6) | (1u << 10),     // 8  HalfDim       {0,3,6,10}
+        (1u << 0) | (1u << 4) | (1u << 8),                  // 9  Augmented     {0,4,8}
+        (1u << 0) | (1u << 4) | (1u << 8) | (1u << 10),     // 10 Aug dom7      {0,4,8,10}
+        (1u << 0) | (1u << 2) | (1u << 7),                  // 11 Sus2          {0,2,7}
+        (1u << 0) | (1u << 5) | (1u << 7) | (1u << 10),     // 12 Sus4+m7       {0,5,7,10}
+        (1u << 0) | (1u << 5) | (1u << 7) | (1u << 11),     // 13 Sus4+Maj7     {0,5,7,11}
+        (1u << 0) | (1u << 5) | (1u << 8) | (1u << 10),     // 14 Sus4♯5        {0,5,8,10}
+        (1u << 0) | (1u << 6) | (1u << 7),                  // 15 Sus♯4         {0,6,7}
+        (1u << 0) | (1u << 7),                              // 16 Power         {0,7}
+    };
+
+    return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
+}
 
 /// One per-bass working candidate: a RawCandidate plus the intervalCount the
 /// Pass B m7-family guard needs (RawCandidate does not carry it).
@@ -203,8 +249,32 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
         // Pass A — vertical score + rootContinuity + w_complete + w_seq [+ w_dim].
         while (i < nCells && snapshot.cells[i].bassPc == groupBassPc) {
             const ScoringCell& cell = snapshot.cells[i];
-            const double rcb = rootContinuityBonus(cell.rootPc, ctx.previousRootPc,
-                                                   prefs.rootContinuityBonus);
+            double rcb = rootContinuityBonus(cell.rootPc, ctx.previousRootPc,
+                                             prefs.rootContinuityBonus);
+            // Gate R: withhold rcb from a BARE-ROOT continuation whose bass is foreign
+            // to the candidate's own chord tones. Two conditions, both required:
+            //   (a) basisDep <= 0 — the candidate earned no bass-dependent credit, i.e.
+            //       no inversion bonus fired (its third is not sounding) and no bass-root
+            //       bonus applies. Given rcb>0 (root continuity), a legitimately
+            //       inverted/extended slash voicing has a sounding third, which fires
+            //       sameRootInversionBonus → basisDep>0; only a bare-root match scores 0.
+            //   (b) bass foreign to the template — the bass cannot belong to this chord.
+            // Together these isolate the "nonsense slash" continuation (Δ=+7b cluster:
+            // bwv245.28/296/320, bass = M6 of the continued root) and spare legitimate
+            // extended voicings such as Cm7add11/F (third sounding, basisDep>0). The
+            // bare bass-foreign test alone misfires on the latter. See
+            // docs/scoring_model.md §4 Gate R.
+            //
+            // !explorationMode: rcb is (by design) NOT suppressed during segmentation
+            // exploration, so segmentation already depends on it. Letting Gate R perturb
+            // rcb during exploration shifts region boundaries (caught at bwv355 m15: a
+            // baseline region split into a spurious G/B sub-region). Gate R is a
+            // final-scoring correction only; with this guard segmentation stays
+            // byte-identical to baseline and the within-region fixes are preserved.
+            if (rcb > 0.0 && !prefs.explorationMode && cell.basisDep <= 0.0
+                && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc)) {
+                rcb = 0.0;
+            }
             const double newBasisIndep = cell.basisIndep + rcb;
             double scoreNoWDim = (newBasisIndep + cell.basisDep)
                                  * cell.complexityFactor * cell.augFactor;
