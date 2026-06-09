@@ -3,7 +3,25 @@
 > **Living document.** Claude Code reads this at the start of every session. Update this as the
 > last act when anything changes. For stable architectural decisions, see ARCHITECTURE.md.
 
-*Last updated: 2026-06-08 — Step 3 investigation: key-as-distribution **SHELVED**
+*Last updated: 2026-06-09 — **Gate R committed** (`638ced1c12`): rcb
+bass-chord-tone guard in `applyHarmonicFunction()` Pass A
+(`harmonicfunctionlayer.cpp`). Withholds `rootContinuityBonus` from a bare-root
+continuation whose bass is foreign to its own template; guarded by `basisDep<=0`
+(spares legitimate extended slash voicings, e.g. Cm7add11/F) and
+`!explorationMode` (segmentation stays byte-identical to baseline). Fixes the
+Δ=+7b cluster (bwv245.28, bwv296, bwv320) plus a bonus BIR=true fix (bwv349 m13
+Am→F/A, root now = DCML F). **New BIR baselines (independently re-measured via
+clean PRE vs POST builds, both presets): Baroque 25/16 → 24/13, Jazz 36/10 →
+35/7** — zero regressions, zero BIR=true→false moves, zero new cases. Goldens
+refreshed for 6 bridge-path snapshots; the only two user-facing output changes
+(chorale_003 `Asus4`→`D/F#`, bwv806_prelude `F#m/B`→`E/G#`) are both
+DCML-verified improvements; the other four are alternatives-list-only (winners
+unchanged). composing 407/407, notation 52/52, pipeline snapshots 11/11.
+`docs/scoring_model.md` §4 (Gate R) + §9 (5th atomic-update site `kMasks`)
+updated in the same commit. Verification report: `cc_gate_r_verify_report.md`.
+Not pushed.*
+
+*Previous: 2026-06-08 — Step 3 investigation: key-as-distribution **SHELVED**
 (premise obsolete). Commit `be2f26971d` — docs + dead-field documentation only,
 comment-only, byte-identical: composing 407/407, notation 52/52, pipeline snapshots
 11/11, BIR unchanged (Baroque 25/16, Jazz 36/10). The Step 3 pre-investigation
