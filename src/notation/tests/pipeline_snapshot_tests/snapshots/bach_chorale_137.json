@@ -1473,8 +1473,8 @@
         },
         {
             "key": "D",
-            "quality": "minor",
-            "root": "D",
+            "quality": "halfDiminished",
+            "root": "B",
             "tick": 2880
         },
         {

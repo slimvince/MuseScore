@@ -1247,7 +1247,7 @@
         },
         {
             "key": "G",
-            "quality": "diminished",
+            "quality": "halfDiminished",
             "root": "F#",
             "tick": 11280
         },
@@ -1283,8 +1283,8 @@
         },
         {
             "key": "G",
-            "quality": "minor",
-            "root": "B",
+            "quality": "major",
+            "root": "G",
             "tick": 15600
         },
         {

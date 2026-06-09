@@ -761,16 +761,19 @@ findTemporalContext(const mu::engraving::Score* sc,
     const Fraction tick = seg->tick();
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
 
-    // IMPLEMENTATION GAP (not a design constraint): this bridge-path context builder
-    // looks BACKWARD only — via seg->prev1() it populates previousRootPc /
-    // previousQuality / previousBassPc / bassIsStepwiseFromPrevious. It does NOT set the
-    // forward-lookahead fields (nextRootPc, nextBassPc, bassIsStepwiseToNext) or the
-    // Step 1/2 progression fields (previousWinnerScore/Margin/RootPcWeight,
-    // previousDistinctPcs). Consequently stepwiseBassLookaheadBonus and wSeqBonus never
-    // fire on the bridge path, unlike the batch path which supplies nextRootPc. This is
-    // a gap, not a limitation: seg->next1(SegmentType::ChordRest) is available and used
-    // elsewhere in this file; a forward walk mirroring the backward one below would close
-    // it. Tracked in docs/layer_architecture_audit.md Finding 3.
+    // This bridge-path context builder walks BOTH directions, mirroring the batch path:
+    //   - BACKWARD (seg->prev1): populates previousRootPc / previousQuality /
+    //     previousBassPc / bassIsStepwiseFromPrevious.
+    //   - FORWARD (seg->next1): populates nextRootPc / nextBassPc / bassIsStepwiseToNext.
+    // The forward walk (added per docs/layer_architecture_audit.md Finding 3) lets
+    // stepwiseBassLookaheadBonus, Gates B/G-B/H-B/E/F and Iter 91 fire on the bridge path
+    // as they do on the batch path; previously these silently no-opped because nextRootPc
+    // was always -1. Both neighbours are cold-analyzed (nullptr context, no temporal
+    // chain) — a limitation shared with the backward walk and acceptable here: nextRootPc
+    // is what the downstream gates need, and a cold nextRootPc is far better than -1.
+    // Still NOT populated: the Step 1/2 progression fields (previousWinnerScore/Margin/
+    // RootPcWeight, previousDistinctPcs), which require the neighbour's committed
+    // competition result — unavailable without a full forward pre-pass over the score.
 
     for (const Segment* s = seg->prev1(SegmentType::ChordRest);
          s != nullptr;
@@ -823,6 +826,63 @@ findTemporalContext(const mu::engraving::Score* sc,
     if (currentBassPc != -1 && temporalCtx.previousBassPc != -1) {
         temporalCtx.bassIsStepwiseFromPrevious =
             isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
+    }
+
+    // Forward-lookahead walk — exact mirror of the backward walk above, via
+    // seg->next1() instead of seg->prev1(). Crosses measure boundaries just as the
+    // backward walk and the batch lookahead (collectRegionTones over the next region)
+    // do — cadential bass motion across a barline is exactly what the lookahead signals
+    // care about, so the next sounding chord is taken regardless of measure.
+    for (const Segment* s = seg->next1(SegmentType::ChordRest);
+         s != nullptr;
+         s = s->next1(SegmentType::ChordRest)) {
+        bool hasAttacks = false;
+        for (std::size_t si = 0; si < sc->nstaves() && !hasAttacks; ++si) {
+            if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {
+                continue;
+            }
+            for (int v = 0; v < VOICES && !hasAttacks; ++v) {
+                const ChordRest* cr
+                    = s->cr(static_cast<track_idx_t>(si) * VOICES + v);
+                if (cr && cr->isChord() && !cr->isGrace()) {
+                    hasAttacks = true;
+                }
+            }
+        }
+        if (!hasAttacks) {
+            continue;
+        }
+
+        std::vector<SoundingNote> nextSounding;
+        collectSoundingAt(sc, s, excludeStaves, nextSounding);
+        if (!nextSounding.empty()) {
+            const auto nextTones = buildTones(nextSounding);
+            mu::composing::analysis::PostScoringGateContext nextGateCtx;
+            auto nextResults =
+                chordAnalyzer->analyzeChord(nextTones, keyFifths, keyMode, nullptr,
+                                            mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                                            &nextGateCtx);
+            if (!nextResults.empty()) {
+                mu::composing::analysis::applyIter8691Pedal(
+                    nextResults,
+                    nextGateCtx,
+                    nullptr,
+                    mu::composing::analysis::kDefaultChordAnalyzerPreferences);
+                mu::composing::analysis::applyPostScoringGates(
+                    nextResults,
+                    mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                    nullptr,
+                    nextGateCtx);
+                temporalCtx.nextRootPc = nextResults.front().identity.rootPc;
+                temporalCtx.nextBassPc = nextResults.front().identity.bassPc;
+            }
+        }
+        break;
+    }
+
+    if (currentBassPc != -1 && temporalCtx.nextBassPc != -1) {
+        temporalCtx.bassIsStepwiseToNext =
+            isDiatonicStep(currentBassPc, temporalCtx.nextBassPc);
     }
 
     return temporalCtx;

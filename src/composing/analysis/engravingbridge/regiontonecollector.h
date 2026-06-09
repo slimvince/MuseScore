@@ -175,9 +175,13 @@ detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
 
 // ── Temporal context ─────────────────────────────────────────────────────────
 
-/// Find the previous chord's temporal context by walking backward from seg.
+/// Build the single-step temporal context around seg by walking backward AND
+/// forward. Backward (seg->prev1) sets previousRootPc / previousQuality /
+/// previousBassPc; forward (seg->next1) sets nextRootPc / nextBassPc. Both
+/// neighbours are cold-analyzed (no temporal chain).
 /// currentBassPc: bass pitch class of the chord about to be analysed (0-11),
-/// or -1 if not yet known. Used to compute bassIsStepwiseFromPrevious.
+/// or -1 if not yet known. Used to compute bassIsStepwiseFromPrevious /
+/// bassIsStepwiseToNext.
 mu::composing::analysis::ChordTemporalContext
 findTemporalContext(const mu::engraving::Score* sc,
                     const mu::engraving::Segment* seg,
