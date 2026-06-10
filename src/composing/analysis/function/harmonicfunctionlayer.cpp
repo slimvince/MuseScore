@@ -105,19 +105,21 @@ double wStepOutBonus(int candBassPc, int rootPc,
 /// Conservative on unknown / out-of-range inputs (returns true — do not gate if
 /// unsure).
 ///
-/// kMasks MUST stay in sync with the TemplateDef array in analyzeChord()
-/// (chordanalyzer.cpp ~L2707) and kDiagTemplates (~L3218). When adding a template,
-/// add its interval bitmask here as a 5th mandatory site. Every template has at
-/// least interval 0 (the root), so no entry may be 0.
+/// kMasks MUST stay in sync with the TemplateDef arrays in chordanalyzer.cpp
+/// (analyzeChord's `templates` and `kDiagTemplates`). It is sized from
+/// analysis::kTemplateCount; when adding a template, bump that constant and add the
+/// interval bitmask here as a mandatory site. Every template has at least interval 0
+/// (the root), so no entry may be 0.
 bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
 {
-    if (rootPc < 0 || bassPc < 0 || tiePriority < 0 || tiePriority >= 17) {
+    if (rootPc < 0 || bassPc < 0 || tiePriority < 0
+        || static_cast<std::size_t>(tiePriority) >= analysis::kTemplateCount) {
         return true;
     }
     const int interval = ((bassPc - rootPc) % 12 + 12) % 12;
 
     // Bit i set ⇔ semitone interval i (from root) is a template tone.
-    static constexpr std::array<uint16_t, 17> kMasks = {
+    static constexpr std::array<uint16_t, analysis::kTemplateCount> kMasks = {
         (1u << 0) | (1u << 4) | (1u << 7),                  // 0  Major triad   {0,4,7}
         (1u << 0) | (1u << 4) | (1u << 7) | (1u << 11),     // 1  Maj7          {0,4,7,11}
         (1u << 0) | (1u << 4) | (1u << 7) | (1u << 10),     // 2  Dom7          {0,4,7,10}
@@ -136,6 +138,8 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
         (1u << 0) | (1u << 6) | (1u << 7),                  // 15 Sus♯4         {0,6,7}
         (1u << 0) | (1u << 7),                              // 16 Power         {0,7}
     };
+    static_assert(kMasks.size() == analysis::kTemplateCount,
+                  "kMasks must mirror analysis::kTemplateCount templates");
 
     return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
 }

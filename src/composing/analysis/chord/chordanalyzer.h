@@ -57,6 +57,20 @@ enum class ScoringPhase : uint8_t {
 
 namespace mu::composing::analysis {
 
+/// Number of chord templates the scorer ranks against. SINGLE SOURCE OF TRUTH for every
+/// template-sized array, eliminating the silent stack-overrun class (B1, 2026-06-04):
+///   - the `templates` and `kDiagTemplates` TemplateDef arrays in chordanalyzer.cpp,
+///   - the three score matrices basisIndepMatrix / complexityFactorMatrix / augFactorMatrix
+///     (inner extent) in chordanalyzer.cpp,
+///   - the `kMasks` interval-bitmask table and its bounds check in
+///     harmonicfunctionlayer.cpp (referenced there as `analysis::kTemplateCount`).
+/// Placed in the `analysis` namespace because the template set is owned by the chord
+/// scorer; the function layer's kMasks mirror is a dependent — matching the include
+/// direction harmonicfunctionlayer.h → chordanalyzer.h. Adding a template = bump this
+/// constant and add the matching entries; the compiler then enforces every array's size.
+/// See docs/scoring_model.md §3 and §9.
+inline constexpr std::size_t kTemplateCount = 17;
+
 enum class ChordQuality {
     Unknown,
     Major,

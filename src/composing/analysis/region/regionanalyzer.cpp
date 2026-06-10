@@ -494,6 +494,12 @@ analyzeRegions(const mu::engraving::Score* score,
                                                     && regions.back().endTick == regionStart.ticks();
 
             // Collapse same-chord consecutive regions only when truly adjacent.
+            // DUPLICATED region-collapse logic — keep in sync with the Pass 2 site below
+            // (search `pass2Regions.back().chordResult.identity.rootPc`). Identical predicate
+            // (contiguous + same rootPc + same quality) → extend endTick, merge tones,
+            // recompute bass. Not extracted to a shared helper because the two else-branches
+            // build different HarmonicRegion shapes (Pass 2 also sets keyModeResult, etc.).
+            // See docs/implementation_roadmap.md 0.6.
             if (isContiguousWithPreviousRegion
                 && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
                 && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
@@ -691,6 +697,10 @@ analyzeRegions(const mu::engraving::Score* score,
 
                 const bool isContiguous = !pass2Regions.empty()
                     && pass2Regions.back().endTick == subStart.ticks();
+                // DUPLICATED region-collapse logic — keep in sync with the main-loop site
+                // above (search `regions.back().chordResult.identity.rootPc`). Same predicate
+                // and merge body; only the else-branch HarmonicRegion construction differs.
+                // See docs/implementation_roadmap.md 0.6.
                 if (isContiguous
                     && pass2Regions.back().chordResult.identity.rootPc == chosenSub.identity.rootPc
                     && pass2Regions.back().chordResult.identity.quality == chosenSub.identity.quality) {

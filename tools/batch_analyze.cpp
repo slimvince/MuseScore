@@ -504,6 +504,13 @@ static std::vector<AnalyzedRegion> analyzeScore(
     // AnalyzedRegion (with measureNumber/beat/pcMask/keyRanked).
     cra::AnalyzeRegionsOptions opts;
     opts.granularity                     = analysis::HarmonicRegionGranularity::Smoothed;
+    // DIVERGENCE (see docs/implementation_roadmap.md 0.6): batch hard-codes 0.25, whereas
+    // the user-facing bridge reads it from IComposingAnalysisConfiguration
+    // (notationharmonicrhythmbridge.cpp:85, falling back to 0.25 only when cfg is null).
+    // 0.25 is also the config default, so the two coincide today — but ALL batch corpus
+    // numbers (BIR, rn_agree) assume 0.25. If the config default ever changes, batch will
+    // no longer measure the user pipeline. Unifying the source is Stage 2 work; do not
+    // change behavior here.
     opts.onsetBoundaryThreshold          = 0.25;
     opts.excludeLookAheadOnDenseStart    = true;
     // D2 unification — batch now matches the bridge's sparse Pass-1 admission

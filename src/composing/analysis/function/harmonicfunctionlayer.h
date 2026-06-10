@@ -63,14 +63,11 @@ namespace mu::composing::function {
 /// Context passed to the function layer for each region.
 /// Extended in later phases (E4: phrase boundaries, cadence evidence).
 struct HarmonicFunctionContext {
-    // DEAD (write-only): keyFifths / keyMode are set in chordanalyzer.cpp but never
-    // read in harmonicfunctionlayer.cpp. Key influence reaches the pipeline frozen
-    // into ScoringCell::basisIndep (oracle) and the post-scoring gates via
-    // ScoringSnapshot::{scale,keyTonicPc,keyMode} — NOT through these fields. Do not
-    // build key-confidence scaling on them; it would be a no-op. Scale the oracle's
-    // key-dependent terms instead. See cc_step3_key_investigation_report.md Part A.
-    int keyFifths { 0 };
-    analysis::KeySigMode keyMode { analysis::KeySigMode::Ionian };
+    // NOTE: no keyFifths/keyMode here by design. Key influence reaches the pipeline
+    // frozen into ScoringCell::basisIndep (oracle) and the post-scoring gates via
+    // ScoringSnapshot::{scale,keyTonicPc,keyMode} — never through the function context.
+    // Do not add key fields here to build key-confidence scaling; it would be a no-op.
+    // Scale the oracle's key-dependent terms instead. See cc_step3_key_investigation_report.md Part A.
     int previousRootPc { -1 };   ///< Root PC of the preceding region (-1 = unknown)
     int nextRootPc { -1 };       ///< Root PC of the following region (-1 = unknown)
     int previousBassPc { -1 };   ///< Bass PC of the preceding region (-1 = unknown).

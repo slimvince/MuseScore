@@ -2700,14 +2700,15 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //   dom7b5 {root,M3,b5,m7} covers Lydian-dominant chords (C7#11 = C E F# Bb).
     //   TPC delta +6 = augmented 4th (F# from C, clockwise six steps on circle of fifths).
     //
-    // 17 templates: see docs/scoring_model.md §2 for the full list.
-    // When adding a template: update BOTH TemplateDef arrays (this one AND
-    // kDiagTemplates in diagnoseChord ~L3381) AND all three score matrices
-    // (basisIndepMatrix, complexityFactorMatrix, augFactorMatrix — ~L2014–L2016)
-    // atomically.  Missing the score matrices causes a silent stack-buffer
-    // overrun (caught in B1 attempt 2026-06-04 — no compile error, just garbage
-    // cells).
-    static const std::array<TemplateDef, 17> templates = {{
+    // analysis::kTemplateCount templates: see docs/scoring_model.md §2 for the full list.
+    // When adding a template: bump analysis::kTemplateCount (chordanalyzer.h), then add
+    // the matching entry here AND in kDiagTemplates (diagnoseChord) AND the kMasks bitmask
+    // (harmonicfunctionlayer.cpp). Every template-sized array — both TemplateDef arrays,
+    // the three score matrices below, and kMasks — derives its extent from kTemplateCount,
+    // so adding an entry without bumping the constant is now a COMPILE error (too many
+    // initializers) rather than the silent stack-buffer overrun caught in the B1 attempt
+    // 2026-06-04. See docs/scoring_model.md §3 and §9.
+    static const std::array<TemplateDef, kTemplateCount> templates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },  // maj7
         { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },  // dom7
@@ -2726,6 +2727,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         { ChordQuality::Suspended4,     { 0, 6, 7 },        { 0, +6, +1 }       },  // sus#4 (F# not Gb)
         { ChordQuality::Power,          { 0, 7 },           { 0, +1 }           }
     }};
+    static_assert(templates.size() == kTemplateCount,
+                  "templates array extent must equal analysis::kTemplateCount");
 
     // Key context — used for diatonic root bonus and degree assignment.
     // The tonic and scale are derived from the detected mode.
@@ -2761,12 +2764,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // global best (rootPc, templateIdx, bassPc) triple.  The winning bass
     // becomes the working bass for downstream result-building, post-ranking
     // inversion correction and pedal detection.
-    // The three score matrices below must stay in sync with the TemplateDef
-    // arrays above (same column count, currently 17).  Stack-buffer overrun
-    // if mismatched — silent at compile time.  See docs/scoring_model.md §3.
-    std::array<std::array<double, 17>, 12> basisIndepMatrix{};
-    std::array<std::array<double, 17>, 12> complexityFactorMatrix{};
-    std::array<std::array<double, 17>, 12> augFactorMatrix{};
+    // The three score matrices' column extent derives from analysis::kTemplateCount, so
+    // it stays in sync with the TemplateDef arrays above by construction (no more silent
+    // stack-buffer overrun on a mismatched literal).  See docs/scoring_model.md §3.
+    std::array<std::array<double, kTemplateCount>, 12> basisIndepMatrix{};
+    std::array<std::array<double, kTemplateCount>, 12> complexityFactorMatrix{};
+    std::array<std::array<double, kTemplateCount>, 12> augFactorMatrix{};
     for (int rootPc = 0; rootPc < 12; ++rootPc) {
         for (size_t tplIdx = 0; tplIdx < templates.size(); ++tplIdx) {
             const TemplateDef& tpl = templates[tplIdx];
@@ -2931,17 +2934,13 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     }
 
     // -- Run the competition pipeline (winner selection lives here) ------------
-    fn::HarmonicFunctionContext fnCtx;
-    // NOTE: fnCtx.keyFifths / fnCtx.keyMode are DEAD (write-only) — the function
-    // layer never reads them. All key influence is already frozen into
-    // cell.basisIndep here, via the oracle's dim7CharacteristicBonus and
-    // bassIndependentContextualBonuses (which consume keyTonicPc/scale above) and is
+    // Key influence does NOT flow through the function context: it is already frozen
+    // into cell.basisIndep here, via the oracle's dim7CharacteristicBonus and
+    // bassIndependentContextualBonuses (which consume keyTonicPc/scale above), and is
     // forwarded to the post-scoring gates through snapshot.{scale,keyTonicPc,keyMode}.
-    // Kept only to carry the notated key forward should the function layer ever need
-    // it; do NOT add key-confidence scaling here (it would be a no-op — scale the
-    // oracle terms instead). See cc_step3_key_investigation_report.md Part A.
-    fnCtx.keyFifths      = keySignatureFifths;
-    fnCtx.keyMode        = keyMode;
+    // Do NOT add key-confidence scaling on the function context (it would be a no-op —
+    // scale the oracle terms instead). See cc_step3_key_investigation_report.md Part A.
+    fn::HarmonicFunctionContext fnCtx;
     fnCtx.previousRootPc = context ? context->previousRootPc : -1;
     fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
     fnCtx.previousBassPc = context ? context->previousBassPc : -1;
@@ -3213,13 +3212,13 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
 
     // ── Templates (same ordering as analyzeChord) ────────────────────────────
     //
-    // 17 templates: must remain byte-identical to the analyzeChord array (~L1955).
+    // kTemplateCount templates: must remain byte-identical to the analyzeChord array.
     // diagnoseChord intentionally omits the production guards (B2 aug7 dual
     // guard, etc.) so every cell appears in the diagnostic breakdown — guards
     // are production-only.  See docs/scoring_model.md §2.
-    // When adding a template: update both this array AND the analyzeChord
-    // array AND all three score matrices in analyzeChord atomically.
-    static const std::array<TemplateDef, 17> kDiagTemplates = {{
+    // When adding a template: bump analysis::kTemplateCount, then update both this array
+    // AND the analyzeChord array AND the kMasks bitmask atomically.
+    static const std::array<TemplateDef, kTemplateCount> kDiagTemplates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },
         { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },
@@ -3238,6 +3237,8 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
         { ChordQuality::Suspended4,     { 0, 6, 7 },        { 0, +6, +1 }       },
         { ChordQuality::Power,          { 0, 7 },           { 0, +1 }           }
     }};
+    static_assert(kDiagTemplates.size() == kTemplateCount,
+                  "kDiagTemplates extent must equal analysis::kTemplateCount");
 
     // ── Key context ──────────────────────────────────────────────────────────
     const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);

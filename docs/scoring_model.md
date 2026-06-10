@@ -56,9 +56,9 @@ modulation, or progression context beyond a single chord's neighbours.
 
 ## 2. Templates
 
-The analyzer scores each candidate against a fixed array of 17 chord templates
-(`std::array<TemplateDef, 17>` in `analyzeChord` at ~L1955 and mirrored as
-`kDiagTemplates` at ~L3381). Each template carries an intervals list (semitone
+The analyzer scores each candidate against a fixed array of `analysis::kTemplateCount`
+(currently 17) chord templates (`std::array<TemplateDef, kTemplateCount>` in `analyzeChord`,
+mirrored as `kDiagTemplates`). Each template carries an intervals list (semitone
 offsets from root) and parallel TPC deltas (circle-of-fifths distance).
 
 | # | Quality          | Intervals      | Represents                          | Notes |
@@ -124,16 +124,55 @@ score = (basisIndep + bassDep) × complexityFactor × augFactor
       + wCompleteBonus + wSeqBonus [+ wDimBonus] [+ stepIn + stepOut after Pass B]
 ```
 
-**Atomic update requirement.** All three matrices have `17` as their column
-extent. When adding a template the array sizes change to 18 across:
-- `analyzeChord` template array,
+**Atomic update requirement.** Every template-sized array derives its extent from a single
+constant, `analysis::kTemplateCount` (`chordanalyzer.h`, `mu::composing::analysis`
+namespace, currently `17`):
+- the `analyzeChord` `templates` array,
 - `kDiagTemplates`,
-- all three score matrices.
+- all three score matrices (`basisIndepMatrix` / `complexityFactorMatrix` /
+  `augFactorMatrix` — inner extent),
+- `kMasks` in `harmonicfunctionlayer.cpp` (and its `tiePriority` bounds check), referenced
+  there as `analysis::kTemplateCount`.
 
-Missing the score matrices produces a silent stack-buffer overrun (B1 attempt
-2026-06-04). The compiler does not catch this — the matrices are sized by
-literal, so the array bound is loose and the cells just get garbage. Always
-update the four sites together.
+To add a template, bump `kTemplateCount` and add the matching entries (see §9). The
+compiler now enforces the sizes: adding an entry to a TemplateDef array **without** bumping
+the constant is a hard error (too many initializers), and the matrices / kMasks resize
+automatically. This closes the silent stack-buffer-overrun class from the B1 attempt
+(2026-06-04), where the matrices were sized by an independent literal and a mismatch
+produced garbage cells with no compile error. `static_assert`s on each array's `.size()`
+guard against a future hand-edit re-hardcoding a literal.
+
+### Floating-point tie policy
+
+Winner selection compares candidate scores with **exact `double` comparisons — there is no
+epsilon anywhere in the ranking.** The final per-bass comparator (`harmonicfunctionlayer.cpp`,
+`applyHarmonicFunction`) is, in order:
+
+1. `a.score != b.score` → higher `score` wins (exact inequality on the raw `double`);
+2. else lower `tiePriority` wins (`tiePriority` is the template index — see §2 ordering);
+3. else lower `rootPc` wins.
+
+This is fully deterministic **given identical floating-point evaluation**: the same inputs
+on the same build always produce the same winner. The `tiePriority`-then-`rootPc` keys
+resolve genuine exact score ties (identical PC sets across enharmonic templates, e.g.
+Sus4♭5 ordered before HalfDim). The omission of an epsilon is intentional — an epsilon
+would make the order depend on a threshold that is itself uncalibrated, and would mask
+rather than resolve near-ties.
+
+**Fragility caveat — near-ties are not protected.** Because nothing rounds before the
+comparison, two candidates separated by a hair (a near-tie, not an exact tie) are ordered
+purely by which `double` is fractionally larger. Documented near-tie classes:
+- the Δ=+7b ~0.02-margin class (the Gate R targets), and
+- bwv320 (≈ 1.92 vs 1.90 between the competing readings).
+
+These could **flip** under any change that re-associates the floating-point arithmetic:
+different compiler / optimization flags (`-ffast-math`, `/fp:fast`, FMA contraction),
+a different platform's libm, or a reordering of the summation in the score expression
+`(basisIndep + bassDep) × complexityFactor × augFactor + wComplete + wSeq [+ wDim] [+ step]`.
+Treat the exact evaluation order as load-bearing: **any change to optimization flags or to
+the order of the scoring arithmetic requires a full corpus A/B on both presets** before it
+is trusted byte-identical. (A regression test pinning these near-tie cases is Stage 1.7 of
+`docs/implementation_roadmap.md`; not yet added.)
 
 ---
 
@@ -628,15 +667,22 @@ Derived from the B1, B2, and B3 lessons.
    `prefs.extensionThreshold`. Enumerate the known failure cases explicitly
    (catalog chords, snapshot test fixtures, BIR corpus targets).
 
-5. **Update all 5 sites atomically:**
-   - `analyzeChord` template array (size N → N+1)
-   - `kDiagTemplates` (size N → N+1)
-   - `basisIndepMatrix`, `complexityFactorMatrix`, `augFactorMatrix` (column
-     extent N → N+1, all three)
-   - `kMasks` in `bassIsTemplateChordTone` (`harmonicfunctionlayer.cpp`) — add the
-     new template's interval bitmask and bump the `std::array<uint16_t, 17>` size.
-     No entry may be `0` / `0u` (every template has at least interval 0, the root).
-     A missing/zero mask silently disables Gate R for that template.
+5. **Bump `analysis::kTemplateCount` and add the matching entries.** All array sizes
+   derive from the constant, so the compiler enforces them — there is no longer a
+   loose literal to forget:
+   - bump `analysis::kTemplateCount` (`chordanalyzer.h`) N → N+1. This automatically
+     resizes the three score matrices and `kMasks`; no per-array size edit is needed.
+   - add the new entry to the `analyzeChord` `templates` array;
+   - add the byte-identical entry to `kDiagTemplates`;
+   - add the new template's interval bitmask to `kMasks` in `bassIsTemplateChordTone`
+     (`harmonicfunctionlayer.cpp`). No entry may be `0` / `0u` (every template has at least
+     interval 0, the root). A missing/zero mask silently disables Gate R for that template.
+
+   Failure modes after this change: adding a TemplateDef entry **without** bumping the
+   constant is a compile error (too many initializers); bumping the constant **without**
+   adding the TemplateDef entry value-initializes a trailing all-zero template (silent —
+   so always add the entries in the same edit). The `static_assert`s catch a re-hardcoded
+   literal size.
 
 6. **Run all three test suites:**
    - `composing_tests.exe` (catalog: ground truth chord names)
@@ -669,8 +715,11 @@ separate caller-side gate — decides whether the progression signals apply
 `ScoringPhase::Final` otherwise). (Historical: in E1/E2 this was three explicit
 `!prefs.explorationMode`-gated calls in `regionanalyzer.cpp`; see §11.)
 
-`HarmonicFunctionContext` carries: `keyFifths`, `keyMode`, `previousRootPc`,
-`nextRootPc`. Extended in E4 with phrase-boundary and cadence evidence.
+`HarmonicFunctionContext` carries: `previousRootPc`, `nextRootPc` (plus the Step 1/2
+predecessor channels). It deliberately carries **no** key fields — key influence is
+already frozen into `ScoringCell::basisIndep` and reaches the gates via
+`ScoringSnapshot::{scale,keyTonicPc,keyMode}` (the former write-only `keyFifths`/`keyMode`
+fields were removed in Stage 0.2). Extended in E4 with phrase-boundary and cadence evidence.
 
 **E1 (current):** Pass-through. No changes to `ChordAnalysisResult`.
 
