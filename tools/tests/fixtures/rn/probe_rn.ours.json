@@ -1,0 +1,15 @@
+{
+  "source": "probe_rn",
+  "detectedKey": "C major",
+  "regions": [
+    { "measureNumber": 1, "beat": 1.0, "startTick": 0,    "endTick": 480,  "duration": 1.0, "rootPitchClass": 0, "quality": "Major", "chordSymbol": "C",  "romanNumeral": "I",     "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 2.0, "startTick": 480,  "endTick": 960,  "duration": 1.0, "rootPitchClass": 0, "quality": "Major", "chordSymbol": "C",  "romanNumeral": "I",     "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 3.0, "startTick": 960,  "endTick": 1440, "duration": 1.0, "rootPitchClass": 7, "quality": "Major", "chordSymbol": "G",  "romanNumeral": "V",     "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 4.0, "startTick": 1440, "endTick": 1920, "duration": 1.0, "rootPitchClass": 7, "quality": "Major", "chordSymbol": "G",  "romanNumeral": "V",     "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 5.0, "startTick": 1920, "endTick": 2400, "duration": 1.0, "rootPitchClass": 2, "quality": "Minor", "chordSymbol": "Dm", "romanNumeral": "ii",    "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 6.0, "startTick": 2400, "endTick": 2880, "duration": 1.0, "rootPitchClass": 2, "quality": "HalfDiminished", "chordSymbol": "Dm7b5", "romanNumeral": "iiø65", "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 7.0, "startTick": 2880, "endTick": 3360, "duration": 1.0, "rootPitchClass": 7, "quality": "Major", "chordSymbol": "G",  "romanNumeral": "V",     "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 8.0, "startTick": 3360, "endTick": 3840, "duration": 1.0, "rootPitchClass": 0, "quality": "Major", "chordSymbol": "C",  "romanNumeral": "[C:]I",  "key": "C major", "keyConfidence": 0.9 },
+    { "measureNumber": 1, "beat": 9.0, "startTick": 3840, "endTick": 4320, "duration": 1.0, "rootPitchClass": 7, "quality": "Major", "chordSymbol": "G",  "romanNumeral": "→V", "key": "C major", "keyConfidence": 0.9 }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "source": "probe01",
+  "detectedKey": "C major",
+  "regions": [
+    {
+      "measureNumber": 1, "beat": 1.0,
+      "startTick": 0, "endTick": 480, "duration": 1.0,
+      "rootPitchClass": 7, "quality": "Major",
+      "chordSymbol": "G/B", "romanNumeral": "V",
+      "key": "C major", "keyConfidence": 0.9, "diatonicToKey": true,
+      "bassPitchClass": 11, "bassIsRoot": false,
+      "noteCount": 3, "pitchClassSet": 2192,
+      "chordScore": 2.50, "chordScoreMargin": 0.10,
+      "alternatives": []
+    },
+    {
+      "measureNumber": 1, "beat": 2.0,
+      "startTick": 480, "endTick": 960, "duration": 1.0,
+      "rootPitchClass": 2, "quality": "Major",
+      "chordSymbol": "D", "romanNumeral": "ii",
+      "key": "C major", "keyConfidence": 0.9, "diatonicToKey": true,
+      "bassPitchClass": 2, "bassIsRoot": true,
+      "noteCount": 3, "pitchClassSet": 0,
+      "chordScore": 2.50, "chordScoreMargin": 0.10,
+      "alternatives": []
+    },
+    {
+      "measureNumber": 1, "beat": 3.0,
+      "startTick": 960, "endTick": 1440, "duration": 1.0,
+      "rootPitchClass": 5, "quality": "Major",
+      "chordSymbol": "F/Ab", "romanNumeral": "IV",
+      "key": "C major", "keyConfidence": 0.9, "diatonicToKey": true,
+      "bassPitchClass": 8, "bassIsRoot": false,
+      "noteCount": 3, "pitchClassSet": 0,
+      "chordScore": 2.50, "chordScoreMargin": 0.10,
+      "alternatives": []
+    },
+    {
+      "measureNumber": 1, "beat": 4.0,
+      "startTick": 1440, "endTick": 1920, "duration": 1.0,
+      "rootPitchClass": 1, "quality": "Major",
+      "chordSymbol": "Db", "romanNumeral": "bII",
+      "key": "C major", "keyConfidence": 0.9, "diatonicToKey": true,
+      "bassPitchClass": 1, "bassIsRoot": true,
+      "noteCount": 3, "pitchClassSet": 0,
+      "chordScore": 2.50, "chordScoreMargin": 0.10,
+      "alternatives": []
+    }
+  ]
+}

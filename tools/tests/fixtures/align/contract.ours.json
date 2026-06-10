@@ -1,0 +1,20 @@
+{
+  "source": "contract",
+  "detectedKey": "C major",
+  "regions": [
+    {
+      "measureNumber": 3, "beat": 2.5,
+      "startTick": 1200, "endTick": 1680, "duration": 0.5,
+      "rootPitchClass": 9, "quality": "Minor",
+      "chordSymbol": "Am/C", "romanNumeral": "vi6",
+      "key": "C major", "keyConfidence": 0.83, "diatonicToKey": true,
+      "bassPitchClass": 0, "bassIsRoot": false,
+      "noteCount": 3, "pitchClassSet": 529,
+      "chordScore": 3.17, "chordScoreMargin": 0.42,
+      "keyModeRunnerUp": {"key": "A minor", "confidence": 0.40},
+      "alternatives": [
+        {"rootPitchClass": 0, "quality": "Major", "chordSymbol": "C", "score": 2.90}
+      ]
+    }
+  ]
+}

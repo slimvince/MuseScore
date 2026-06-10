@@ -1,0 +1,34 @@
+{
+  "source": "probe01",
+  "detectedKey": "C major",
+  "regions": [
+    {
+      "measureNumber": 1, "beat": 1.0,
+      "startTick": 0, "endTick": 480, "duration": 1.0,
+      "rootPitchClass": 0, "quality": "Major",
+      "chordSymbol": "C", "romanNumeral": "I",
+      "key": "C major", "keyConfidence": 1.0, "diatonicToKey": true
+    },
+    {
+      "measureNumber": 1, "beat": 2.0,
+      "startTick": 480, "endTick": 960, "duration": 1.0,
+      "rootPitchClass": 7, "quality": "Major",
+      "chordSymbol": "G", "romanNumeral": "V",
+      "key": "C major", "keyConfidence": 1.0, "diatonicToKey": true
+    },
+    {
+      "measureNumber": 1, "beat": 3.0,
+      "startTick": 960, "endTick": 1440, "duration": 1.0,
+      "rootPitchClass": 9, "quality": "Minor",
+      "chordSymbol": "Am", "romanNumeral": "vi",
+      "key": "C major", "keyConfidence": 1.0, "diatonicToKey": true
+    },
+    {
+      "measureNumber": 1, "beat": 4.0,
+      "startTick": 1440, "endTick": 1920, "duration": 1.0,
+      "rootPitchClass": 1, "quality": "Major",
+      "chordSymbol": "Db", "romanNumeral": "bII",
+      "key": "C major", "keyConfidence": 1.0, "diatonicToKey": true
+    }
+  ]
+}
