@@ -58,6 +58,7 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/section/sectionanalyzer.h"
 #include "composing/icomposingchordstaffconfiguration.h"
 #include "modularity/ioc.h"
 
@@ -68,8 +69,8 @@
 
 using namespace mu::engraving;
 using mu::notation::internal::scoreNoteSpelling;
-using mu::notation::internal::hasAssertiveKeyConfidence;
-using mu::notation::internal::detectCadences;
+using mu::composing::analysis::hasAssertiveKeyConfidence;
+using mu::composing::analysis::detectCadences;
 
 namespace {
 
@@ -1370,10 +1371,14 @@ bool populateChordTrack(
         static_cast<size_t>(bassStaffIdx)
     };
 
-    auto section = mu::notation::internal::analyzeSection(score,
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        score, startTick, endTick, excludeStaves,
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    auto section = mu::composing::analysis::analyzeSection(score,
                                                           startTick,
                                                           endTick,
-                                                          excludeStaves);
+                                                          excludeStaves,
+                                                          rawRegions);
     return emitImplodedChordTrack(score, section, startTick, endTick,
                                    trebleStaffIdx, useCollectedTones);
 }

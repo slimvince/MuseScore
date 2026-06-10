@@ -97,6 +97,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/section/sectionanalyzer.h"
 #include "composing/analyzed_section.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "composing/icomposingchordstaffconfiguration.h"
@@ -317,8 +318,11 @@ const AnalyzedRegion* regionContaining(const std::vector<AnalyzedRegion>& region
 
 QJsonArray buildImplodeArray(MasterScore* score, const Fraction& endTick)
 {
-    const auto section = mu::notation::internal::analyzeSection(
-        score, Fraction(0, 1), endTick, /*excludeStaves=*/{});
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        score, Fraction(0, 1), endTick, /*excludeStaves=*/{},
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    const auto section = mu::composing::analysis::analyzeSection(
+        score, Fraction(0, 1), endTick, /*excludeStaves=*/{}, rawRegions);
     QJsonArray arr;
     for (const auto& r : section.regions) {
         arr.append(regionToImplodeEntry(r));
@@ -713,8 +717,11 @@ QJsonObject buildSnapshot(const CorpusEntry& entry, MasterScore* score)
     const Fraction cappedEnd = endTickForMeasureCap(score, kMaxAnalysisMeasures);
     const auto samples = collectSampleTicks(score, kMaxAnalysisMeasures);
 
-    const auto section = mu::notation::internal::analyzeSection(
-        score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{});
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{},
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    const auto section = mu::composing::analysis::analyzeSection(
+        score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{}, rawRegions);
 
     QJsonObject snap;
     snap[QStringLiteral("score")] = QString::fromLatin1(entry.relativePath);
@@ -1056,8 +1063,11 @@ TEST(PipelineDivergenceCObservation, GenerateReport)
 
         const Fraction cappedEnd = endTickForMeasureCap(score, kMaxAnalysisMeasures);
 
-        const auto section = mu::notation::internal::analyzeSection(
-            score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{});
+        const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+            score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{},
+            mu::notation::HarmonicRegionGranularity::Smoothed);
+        const auto section = mu::composing::analysis::analyzeSection(
+            score, Fraction(0, 1), cappedEnd, /*excludeStaves=*/{}, rawRegions);
 
         PerScore p;
         p.entry         = &entry;

@@ -41,7 +41,7 @@ namespace mu::notation {
 /// detects harmonic rhythm, and writes notes, chord symbols, and Roman numerals.
 ///
 /// Phase 3a wrapper: internally calls
-/// `mu::notation::internal::analyzeSection(...)` and forwards to
+/// `mu::composing::analysis::analyzeSection(...)` and forwards to
 /// `emitImplodedChordTrack` below. Kept at this signature so existing call
 /// sites stay untouched.
 ///

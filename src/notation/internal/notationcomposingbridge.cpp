@@ -52,6 +52,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/section/sectionanalyzer.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
@@ -65,8 +66,8 @@ using mu::notation::internal::buildTones;
 using mu::notation::internal::resolveKeyAndMode;
 using mu::notation::internal::findTemporalContext;
 using mu::notation::internal::scoreNoteSpelling;
-using mu::notation::internal::detectCadences;
-using mu::notation::internal::detectPivotChords;
+using mu::composing::analysis::detectCadences;
+using mu::composing::analysis::detectPivotChords;
 
 namespace {
 
@@ -241,10 +242,14 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
     // archaeology.  chordResults[0] now comes from the per-region winner,
     // chordResults[1..] from the canonical alternatives the per-region
     // analyzeChord produced (and previously discarded).
-    const auto section = mu::notation::internal::analyzeSection(sc,
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        sc, windowStartTick, windowEndTick, excludeStaves,
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    const auto section = mu::composing::analysis::analyzeSection(sc,
                                                                 windowStartTick,
                                                                 windowEndTick,
-                                                                excludeStaves);
+                                                                excludeStaves,
+                                                                rawRegions);
     if (section.regions.empty()) {
         return snapshot;
     }
@@ -745,7 +750,7 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
     using mu::composing::analysis::keyModeTonicOffset;
     using mu::composing::analysis::keyModeTonicName;
     using mu::composing::analysis::keyModeSuffix;
-    using mu::notation::internal::PivotLabel;
+    using mu::composing::analysis::PivotLabel;
 
     if (!score || section.regions.empty() || options.writeStaves.empty()) {
         return;
@@ -1110,12 +1115,15 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     // and pivot detection but never annotated.
     const Fraction lookaheadEndTick = writeRomanNumerals
         ? Fraction::fromTicks(endTick.ticks()
-            + mu::notation::internal::kMaxPivotLookaheadRegions
+            + mu::composing::analysis::kMaxPivotLookaheadRegions
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
 
-    const auto section = mu::notation::internal::analyzeSection(
-        score, startTick, lookaheadEndTick, excludeStaves);
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        score, startTick, lookaheadEndTick, excludeStaves,
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    const auto section = mu::composing::analysis::analyzeSection(
+        score, startTick, lookaheadEndTick, excludeStaves, rawRegions);
 
     if (section.regions.empty()) {
         return;

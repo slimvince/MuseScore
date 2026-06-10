@@ -41,6 +41,13 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
 
+    # section/ — unified section-level analysis: the analyzeSection() entry
+    # point, key/mode stabilization, and cadence / pivot detection. Moved here
+    # from notation/internal/notationcomposingbridgehelpers.cpp in Stage 2.1
+    # (Phase 4c — Dependency Rule §3.3; docs/implementation_roadmap.md Stage 2.1).
+    ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.h
+    ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.cpp
+
     # region/ — harmonic region types and the shared analyzeRegions orchestrator.
     # Phase 4 of the duplication remediation (docs/duplication_audit.md §§2.14, 5.4)
     # moved the per-region pipeline body out of the notation bridge and

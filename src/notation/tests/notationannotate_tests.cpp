@@ -23,7 +23,8 @@
 // ── Unit tests for cadence and pivot detection helpers ────────────────────────
 //
 // Tests for detectCadences() and detectPivotChords() in
-// notationcomposingbridgehelpers.h/cpp.  These functions take
+// composing/analysis/section/sectionanalyzer.h/cpp (moved there from
+// notationcomposingbridgehelpers in Stage 2.1).  These functions take
 // AnalyzedRegion vectors; no Score object is required.
 
 #include <gtest/gtest.h>
@@ -35,6 +36,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/section/sectionanalyzer.h"
 #include "composing/analyzed_section.h"
 
 #include "notation/internal/notationcomposingbridgehelpers.h"

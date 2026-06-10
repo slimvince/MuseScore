@@ -37,8 +37,9 @@ target_sources(composing PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/icomposingconfiguration.h
 
     # Phase 2 — shared unified-pipeline output types.  See
-    # docs/unified_analysis_pipeline.md.  Phase 4 will retire the bridge-side
-    # analyzeSection() delegate and move the entry point into composing/.
+    # docs/unified_analysis_pipeline.md.  Stage 2.1 (Phase 4c) retired the
+    # bridge-side analyzeSection() delegate; the entry point now lives in
+    # composing/analysis/section/sectionanalyzer.{h,cpp}.
     ${CMAKE_CURRENT_LIST_DIR}/analyzed_section.h
 )
 
