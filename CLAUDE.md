@@ -99,9 +99,13 @@ If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix 
 
 Never widen a Baroque-tuned threshold to cover a non-Baroque edge case.
 
-**Preset-specific scoring caps** — these values are load-bearing and must not be
-homogenised. `maxTotalInversionContextBonus`: Baroque=2.5, Jazz=0.6, default=2.0.
-Documented in `docs/scoring_model.md` §4.
+**Preset scoring caps — corrected 2026-06-10:** `maxTotalInversionContextBonus` is
+**never set on any code path** — both presets inherit the 2.0 default, and the cap is
+currently non-binding (the four inversion bonuses sum to 1.85 Baroque/default, 0.75
+Jazz). The formerly documented "Baroque=2.5 / Jazz=0.6" values were aspirational and
+never implemented. Jazz's inversion behavior comes from its **reduced individual
+inversion bonuses** (0.20/0.20/0.15/0.20 in `batch_analyze.cpp`), not the cap. Full
+story in `docs/scoring_model.md` §4 (note below the "Other terms" table).
 
 ## Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)
 
@@ -128,16 +132,20 @@ must never drift apart. Specifically:
 always match the `array<TemplateDef, N>` declaration in `chordanalyzer.cpp`.
 If they differ, the doc is stale — update it before proceeding.
 
-**4-site atomic update — template additions only:** When adding a template,
-exactly four sites in `chordanalyzer.cpp` must be updated together. Missing
-any one causes a stack-buffer overrun (silent, caught in B1 attempt 2026-06-04):
-1. `analyzeChord` `array<TemplateDef, N>` declaration — size N→N+1
-2. `analyzeChord` template entry — the new TemplateDef line
-3. Three score matrices (`basisIndepMatrix`, `complexityFactorMatrix`,
-   `augFactorMatrix`) — inner array size N→N+1
-4. `kDiagTemplates` in `diagnoseChord` — size N→N+1 and the new entry
+**Template additions — the `kTemplateCount` model (since `a236a0ff21`):** All
+template-related array extents (the `analyzeChord` template array, `kDiagTemplates`,
+the three score matrices, `kMasks` in `harmonicfunctionlayer.cpp`) are derived from
+`analysis::kTemplateCount` in `chordanalyzer.h`, so the compiler enforces size
+consistency — the old silent stack-buffer-overrun failure mode (a missed matrix
+resize, caught in the B1 attempt 2026-06-04) is closed. Adding a template means:
+1. Bump `analysis::kTemplateCount` N→N+1 (auto-resizes the matrices and `kMasks`)
+2. Add the new `TemplateDef` entry in `analyzeChord` AND the byte-identical entry
+   in `kDiagTemplates`
+3. Add the interval bitmask to `kMasks` (a zero mask silently disables Gate R)
 
-The full checklist is in `docs/scoring_model.md` §9.
+Remaining trap: bumping the constant **without** adding the entries
+value-initializes a trailing all-zero template (silent) — always do both in the
+same edit. The authoritative checklist is `docs/scoring_model.md` §9.
 
 ## Score corpora
 

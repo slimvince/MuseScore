@@ -16,6 +16,14 @@ throughout Stages 0–2; Stage 3+ re-baselines deliberately and explicitly.
 
 ## Stage 0 — Hygiene and honest ground truth *(zero behavior change, cheap)*
 
+**✅ STAGE 0 COMPLETE (2026-06-10).** Commits: `7bc1609159` (0.1 docs), `a236a0ff21`
+(0.2/0.3/0.5/0.6 — kTemplateCount across SIX sites incl. the bassIsTemplateChordTone
+bounds check, dead fnCtx fields removed, FP tie policy, divergence docs), `70fd8a686b`
+(0.4 — junk files were tracked, swept into an old feature commit; removed + gitignored by
+glob, U+F03A names; no generator exists, post-build proof clean). Gate 0→1 passed:
+416/416 · 52/52 · 11/11, zero diffs, BIR 13/7 both presets. Deferred follow-up: reconcile
+CLAUDE.md "4-site atomic update" section with the compiler-enforced kTemplateCount model.
+
 Make every instrument we will rely on later trustworthy. All items byte-identical.
 
 | # | Item | Source | Verify |
@@ -39,13 +47,13 @@ each gate's pinned behavior is the proof obligation when the decoder later subsu
 
 | # | Item | Source | Verify |
 |---|------|--------|--------|
-| 1.1 | Unit tests for post-scoring gates A–L: per gate, one fires-case + one margin-boundary case + one must-not-fire case (kGateIMargin 0.45, K 0.20, L 0.35, inversionSuspicionMargin 0.70) | Part 2 Q5.1 | each gate individually toggleable in test; count documented |
-| 1.2 | Unit tests for function-layer bonuses: wSeq, wDim (incl. post-bonus quality guard), wStepIn/Out (all four load-bearing guards of `applyStepBonusGuard`), rootContinuityBonus | Part 2 Q5.2 | scoring_model §8 constraints each have a pinning test |
+| 1.1 | ✅ DONE `6101a9b2c5` — 48 tests in `postscoringgates_tests.cpp` (composing 487/487). Survey produced the definitive gate inventory (`cc_stage1b_report.md` §1, verified by Cowork on F1 + preset caps). Findings F1–F8: **B/C/D are dead code** (A's fast path always wins — verified in code by Cowork); shared outer guard (suspicionMargin=0 / distinctPcs<3 kills ALL gates); Gate J runs LAST; mixed live/captured winner reads in H/I/K/L; Gate F missing quality/pcWeight guards; G-E threshold-free pull + duplicate push; post-gate unsorted results[]. All → Stage-3 obligations + doc pass | Part 2 Q5.1 | each gate individually toggleable in test; count documented |
+| 1.2 | ✅ DONE `757efa5dbf` — 23 tests in `functionlayer_tests.cpp` (composing 439/439). Findings F1–F5 in `cc_stage1a_report.md` §3: F1 §2 Sus4♭5/HalfDim "identical PC sets" wording → doc pass; F2 post-bonus guard first-wins tie scan + F5 threshold-gated diff-root append → Stage 3 obligation list; F3/F4 pinned | Part 2 Q5.2 | scoring_model §8 constraints each have a pinning test |
 | 1.3 | Unit tests for segmentation passes: absorbShortRegions, coalesceShortSameRootRuns, inline same-root merge, Pass 2/2b boundary detection | Part 2 Q5.3 | synthetic region fixtures |
 | 1.4 | Unit tests for `harmonicsegmenter` (fillGap rounds, Segmentation-phase scoring) and `keyresolver` (ranked output, promoteWinnerInPlace hysteresis, partial-signature fix `81978321e3`) | Part 2 Q5.4 | |
-| 1.5 | Pin fixed bugs as unit/musicxml tests: Gate J (bwv110.7), Iter 92 joint-bass (bwv103.6, bwv310), Sub-9a `originalWinnerRootPc` capture, Δ=+7b trio (bwv245.28/296/320 — Gate R) | Part 2 Q5.5; audit doc rec. | removing the fix fails the test |
+| 1.5 | ✅ DONE `6101a9b2c5` — all four pinned: Gate J bwv110.7 end-to-end, Sub-9a ordering test (decoy proves historical-bug visibility; arithmetic verified by Cowork), Δ=+7b end-to-end shape (bwv320 mapping), Iter 92 both bugs. Pedal already pinned by 8 existing tests (cross-referenced) | Part 2 Q5.5; audit doc rec. | removing the fix fails the test |
 | 1.6 | Tests for the Python metric scripts (`compare_analyses` alignment, `characterise_bir_false`, `compare_rn` classifier) — the de-facto metric definitions; one classifier bug already cost weeks | Part 2 Q6 | known-input/known-output fixtures in tools/tests |
-| 1.7 | Tie-stability test: documented near-tie cases (0.02-margin class) pinned so an FP-reordering flip is caught | Part 2 Q6 | |
+| 1.7 | ✅ DONE `757efa5dbf` — exact-tie (tiePriority, rootPc fallback) + 0.02 near-tie FP canary, in `functionlayer_tests.cpp` | Part 2 Q6 | |
 
 **Gate 1 → 2:** every §8 load-bearing constraint and every gate has at least one pinning
 test; metric scripts tested. Test counts recorded in STATUS.md as the new baseline.
@@ -80,7 +88,8 @@ byte-identity bridge so there is a no-surprise verification gate at every step.
 | 3.1 | **Decoder skeleton, beam = 1**: per-region candidate lattice from the existing oracle output; transitions = existing progression signals (rcb, resolution, wSeq, wDim, steps). **Hard gate: beam-1 must reproduce the current pipeline byte-identically** (it is the same greedy argmax, restructured) | Part 1 rec. 1 | 0/353 corpus diff, all snapshots, BIR unchanged |
 | 3.2 | Widen beam / exact DP behind the quality-level setting (ARCHITECTURE.md §2.14: level↔beam width). A/B vs beam-1 on both presets + DCML cross-corpus; expected wins: Δ=+7a (bwv102.7, bwv261), Δ=+7b class, rcb cascades | Part 1 | per-case table; no hard-stop regressions at level 0 |
 | 3.3 | Migrate oracle temporal signals (resolutionBonus + 4 inversion bonuses, chordanalyzer.h:329 debt) into transition scores; **revisit Gate R's `basisDep ≤ 0` proxy in the same change** (documented coupling) | Part 2 Q2.2; audit F1/F6 | Stage-1 pinning tests green or consciously re-baselined |
-| 3.4 | Retire gates A–L one at a time: a gate is removed only when the decoder reproduces its pinned fixes (Stage 1.1 tests are the proof obligations). Gates J and R expected to survive longest (structural, healthy) | Part 1; audit F7 | per-gate differential report |
+| 3.4 | Retire gates A–L one at a time: a gate is removed only when the decoder reproduces its pinned fixes (Stage 1.1 tests are the proof obligations). Gates J and R expected to survive longest (structural, healthy). **Stage-1a obligations:** the post-bonus quality-guard winner scan is first-wins on exact ties (ordering sensitivity), and the diff-root append never appends sub-threshold candidates — the decoder must either reproduce or consciously re-decide both (`cc_stage1a_report.md` F2/F5) | Part 1; audit F7 | per-gate differential report |
+| 3.4b | Remove dead Gates B/C/D (provably unreachable — stage1b F1) as part of the gate-retirement work, NOT before (their removal is byte-identical but belongs to the deliberate per-gate retirement audit) | stage1b F1 | byte-identical removal commit |
 | 3.5 | Split `chordanalyzer.cpp` along the now-real layer seams; rename iteration-vocabulary APIs (`applyIter8691Pedal` → descriptive names) — the split is motivated here, not before | Part 2 Q3.1/3.2 | file map in ARCHITECTURE.md |
 
 **Gate 3 → 4:** decoder is the production path at all quality levels; gate count reduced;

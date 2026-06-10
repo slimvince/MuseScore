@@ -129,7 +129,47 @@ before any code direction is imposed.
   353 scores" is an inference, not a measurement). Report:
   `cc_phase_e_exploration_mode_report.md`.
 
-- **Next CC task — Stage 0 hygiene (instruction ready):**
+- **✅ Stage 0 COMPLETE (2026-06-10).** Commits `7bc1609159` (docs) ← `a236a0ff21`
+  (hygiene: kTemplateCount six sites, dead fnCtx fields, tie-policy docs) ← `70fd8a686b`
+  (tracked junk removed + gitignored; no generator — one-time redirect accidents swept
+  into an old feature commit). All verified by Cowork (commit contents host-side).
+  Gate 0→1 passed: 416/416 · 52/52 · 11/11, BIR 13/7 both presets. Deferred: CLAUDE.md
+  "4-site atomic update" reconciliation with kTemplateCount (fold into a later doc pass).
+
+- **✅ Stage 1a COMPLETE — `757efa5dbf`** (23 tests, composing 416→439/439; tests-only,
+  production untouched; report `cc_stage1a_report.md`, verified by Cowork incl. full
+  test-file read + fixture arithmetic). Findings: F1 (§2 Sus4♭5/HalfDim wording → doc
+  pass list), F2+F5 (→ Stage 3 obligation list in roadmap 3.4), F3/F4 (pinned).
+  Doc-pass backlog now: CLAUDE.md 4-site→kTemplateCount reconciliation + scoring_model §2
+  F1 wording.
+
+- **✅ Stage 1b COMPLETE — `6101a9b2c5`** (48 tests, composing 439→487/487; tests-only).
+  Report `cc_stage1b_report.md` — definitive gate inventory + findings F1–F8. Cowork
+  verified F1 (B/C/D dead code) in the production source and escalated the preset-cap
+  finding: `maxTotalInversionContextBonus` has NO setter on any path and is non-binding
+  at current sums (1.85 default / 0.75 Jazz) — the documented 2.5/0.6 "load-bearing"
+  values exist nowhere.
+
+- **Next CC task — doc pass (instruction ready):** `cc_instruction_doc_pass_caps_and_gates.md`
+  — Task 1 is a BLOCKING archaeology (`git log -S maxTotalInversionContextBonus`): if
+  Jazz=0.6 was ever active and later removed, STOP (it would have been binding — Jazz
+  baselines suspect). Otherwise: scoring_model §2/§4/§6/§8 reconciliation, CLAUDE.md
+  (4-site→kTemplateCount + cap fiction), handoff Jazz-characterisation re-attribution,
+  roadmap 3.4b row (deferred B/C/D removal). Doc-only commit, direct.
+  Then Stage 1c (segmentation passes, harmonicsegmenter, keyresolver) → 1d (Python
+  metric-script tests).
+
+- **⚠ Cowork sandbox caveat (learned 2026-06-10):** Cowork's Linux-sandbox view of the
+  repo can serve STALE git/file state (symptoms: spurious ` M` entries, index.lock unlink
+  warnings, files appearing present after deletion). Host-side Read tool is authoritative
+  for file contents; CC's native git is authoritative for git state. Do not overrule CC's
+  git evidence from the sandbox view without a host-side Read cross-check.
+  **Additionally:** Cowork's sandbox `git status` can LEAVE a stale `.git/index.lock`
+  behind (it cannot unlink the lock it creates — blocked CC's `git add` once, 2026-06-10).
+  Cowork should prefer `git --no-optional-locks status` / log/show in the sandbox; CC may
+  safely remove a zero-byte stale index.lock after confirming no git process is running.
+
+- **Previous CC task — Stage 0 hygiene (done, partially committed):**
   Instruction file: `cc_instruction_stage0_hygiene.md` (implements
   `docs/implementation_roadmap.md` Stage 0, items 0.1–0.6).
   Tasks: doc pass + doc commit (incl. committing untracked `layer_architecture_audit.md`
@@ -216,7 +256,9 @@ before any code direction is imposed.
   (Δ=+7 rootContinuity ×3, sus/quartal ×2, segmentation ×1, evidence-absent ×1,
   dim→dom absent-root ×1); 2 Jazz-only (bwv244.15 key-conf-0 root mis-selection;
   bwv74.8 added-tone tetrachord — Em7/D for Cadd9, the B4 6th/m7 ambiguity).
-  Lower `maxTotalInversionContextBonus` (0.6 vs 2.5) removes Baroque's absent-root
+  Jazz's reduced individual inversion bonuses (0.20/0.20/0.15/0.20 vs Baroque
+  defaults; NOT the cap — `maxTotalInversionContextBonus` is never set and
+  non-binding, see 2026-06-10 doc-pass Task-1 finding) remove Baroque's absent-root
   inversion cases (bwv14.5, bwv174.5, bwv301, bwv381) from Jazz — confirmed by
   prior prediction. Nothing newly actionable beyond the absent-root guard (bwv45.7
   dim→dom absent-root, partial). Full table in `cc_stepback_report.md`.

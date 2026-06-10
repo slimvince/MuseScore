@@ -70,8 +70,8 @@ offsets from root) and parallel TPC deltas (circle-of-fifths distance).
 | 4 | Minor            | `{0,3,7}`      | Minor triad (Cm)                    | |
 | 5 | Minor            | `{0,3,7,10}`   | Minor 7th (Cm7)                     | Non-bass penalty `-kNonBassPenalty` (0.35) when root ≠ bass (waivable by full TPC match). |
 | 6 | Diminished       | `{0,3,6}`      | Diminished triad (C°)               | `dim7CharacteristicBonus` (+0.75) fires on the dim7 PC, gated on full triad evidence + non-diatonic ♭♭7. **Rotation-selection mechanism** — see §4. |
-| 7 | Suspended4       | `{0,5,6,10}`   | Sus4♭5 (Csus4♭5)                    | Precedes HalfDim (tie-break): same PC set, sus4 reading is preferred when the ♭5 is enharmonically ambiguous. Excluded from sus4-missing-P4 penalty (the tritone is the identifying interval). |
-| 8 | HalfDiminished   | `{0,3,6,10}`   | Half-diminished 7th (Cø7)           | Non-bass penalty (waivable by TPC); shares PC set with Sus4♭5. |
+| 7 | Suspended4       | `{0,5,6,10}`   | Sus4♭5 (Csus4♭5)                    | Precedes HalfDim (tie-break): ties arise on their shared `{0,6,10}` subset when only those tones sound; the sus4 reading is preferred when the ♭5 is enharmonically ambiguous. Excluded from sus4-missing-P4 penalty (the tritone is the identifying interval). |
+| 8 | HalfDiminished   | `{0,3,6,10}`   | Half-diminished 7th (Cø7)           | Non-bass penalty (waivable by TPC); ties with Sus4♭5 on the shared `{0,6,10}` subset. |
 | 9 | Augmented        | `{0,4,8}`      | Augmented triad (C+)                | Symmetric (3 enharmonic rotations); thin-evidence `augFactor` halves the score for sparse / bare-root cases. |
 | 10| Augmented        | `{0,4,8,10}`   | Augmented dom7 (C7♯5)               | **B2 dual guard:** BOTH M3 (rootPc+4) AND aug5 (rootPc+8) must be present above `extensionThreshold`. Added 2026-06-05. |
 | 11| Suspended2       | `{0,2,7}`      | Sus2 (Csus2)                        | Upgraded to Sus4 in post-scoring when P4 is sounding. |
@@ -86,7 +86,11 @@ template with the lower index wins (`RawCandidate::tiePriority` is the
 template index; the comparator at ~L2412 prefers lower values). Key
 intentional placements:
 
-- Sus4♭5 (7) precedes HalfDim (8): identical PC sets, Sus4♭5 wins ties.
+- Sus4♭5 (7) precedes HalfDim (8): the full interval sets differ (`{0,5,6,10}` vs
+  `{0,3,6,10}`), but both score identically when only their shared subset
+  `{0,6,10}` is sounding — the m3-vs-P4 discriminator is absent. Sus4♭5 wins the
+  exact tie (Stage-1a finding F1, pinned in
+  `TiePolicy_ExactTie_LowerTiePriorityWins`).
 - Min7 (5) follows Minor triad (4) and precedes Sus4 templates.
 - Plain triads precede their 4-note extensions.
 
@@ -450,7 +454,7 @@ bonus functions and the single control point.
 | `stepwiseBassLookaheadBonus`         | 0.50          | Inverted Maj/Min with bass stepwise to next region's bass. |
 | `completeTriadInversionBonus`        | 0.45          | All three triad tones present in a 3-PC texture; inverted reading. |
 | `sameRootInversionBonus`             | 0.40          | Inverted candidate whose root matches the previous region's root. |
-| `maxTotalInversionContextBonus`      | 2.0 (B 2.5 / J 0.6) | Cap on the sum of the four inversion bonuses above. |
+| `maxTotalInversionContextBonus`      | 2.0 (no preset override — see note below) | Cap on the sum of the four inversion bonuses above; currently non-binding. |
 | `kNonBassPenalty`                    | 0.35          | Min7 / Sus4 / HalfDim with root ≠ bass; waived when every non-root TPC matches. |
 | `kSus4MissingFourth`                 | 0.70          | Sus4 (excluding Sus4♭5) without P4 above 0.50. |
 | `kSus4VariantMissing7th`             | 0.70          | Sus4♭5 / Sus4♯5 without m7. |
@@ -462,6 +466,22 @@ bonus functions and the single control point.
 | `kExtensionFactor7th / Flat13 / Default` | 0.45 / 0.20 / 0.35 | Per-rel-interval extension weights in `scoreExtraNotes`. |
 | `kContradictionPenalty`              | 0.75          | Non-template pc that contradicts the template quality. |
 | `kForeignPenalty`                    | 0.45          | Non-template pc that is neither extension nor contradiction. |
+
+**`maxTotalInversionContextBonus` is currently inert (verified 2026-06-10).** No code
+path sets a non-default value: both presets inherit the 2.0 default — the
+`batch_analyze.cpp` preset builder sets neither, and the only other appearances are
+the `ChordAnalyzerPreferences` declaration (`chordanalyzer.h:411`), the optimizer
+range entry, and the two `std::min` clamp sites. The previously documented
+"Baroque=2.5 / Jazz=0.6" values were aspirational: they entered the field's
+doc-comment at its introduction (`46c76ad67f`, 2026-05-05) as planned "Iteration 4"
+tuning that never happened, and a full-history pickaxe shows no commit ever assigned
+them (cap archaeology, 2026-06-10 doc pass; inventory in `cc_stage1b_report.md`
+§1.6). The cap cannot bind at current values: the four inversion bonuses sum to 1.85
+(Baroque/default prefs) and 0.75 (Jazz), both below 2.0. Jazz's different inversion
+behavior comes from its **reduced individual bonuses** (0.20/0.20/0.15/0.20, set in
+`batch_analyze.cpp`), not from this cap. The field stays documented because it exists
+in prefs and the optimizer range table — treat it as an untuned safety net, not a
+load-bearing per-preset value.
 
 ---
 
@@ -501,7 +521,9 @@ voices and must not trigger inversion bonuses (Corelli op01n08d m2 b3).
 `bassDependentContextualBonuses(tpl, rootPc, bassPc, appliedBassBonus,
 distinctPcs, pcWeight, prefs, context, hasStructuralBass)` returns
 `appliedBassBonus + min(stepwise+lookahead+sameRoot+completeTriad,
-maxTotalInversionContextBonus)`. The cap prevents runaway stacking.
+maxTotalInversionContextBonus)`. The cap is a safety net against runaway stacking;
+it is non-binding at current values (bonus sums 1.85 / 0.75 Jazz vs the 2.0 default
+— see the §4 note).
 
 ---
 
@@ -524,18 +546,49 @@ call `applyPostScoringGates()` *after* `applyHarmonicFunction()`. Tests use the
 `analyzeWithGates()` helper in `test_helpers.h`. The line numbers in the table
 below reference the corresponding code inside `applyPostScoringGates()`.
 
+**Outer guard — covers ALL of A–L, including the bias correction.** Everything in
+`applyPostScoringGates` runs inside one block gated on
+`prefs.inversionSuspicionMargin > 0`, `prefs.inversionBonusReduction < 1`,
+`results.size() >= 2`, and `gateCtx.distinctPcs >= 3`. Consequences: setting
+`inversionSuspicionMargin = 0` to "disable the inversion correction" disables every
+gate — including the identity gates A and J — and sparse 2-PC regions get no gate
+corrections at all (Stage-1b findings F2/F3, pinned in the `OuterGuard_*` tests in
+`postscoringgates_tests.cpp`).
+
+**Execution order:** bias-capture → [A → FM2 → B → C → D → E → F →
+bias-deduction+sort] → G → H → I → K → L → **J**. Despite its letter, Gate J
+executes LAST, after K and L. The table below follows execution order.
+
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | ~L2639 | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
-| **A–D (Minor-add6 ↔ HalfDim7 enharmonic flip)** | ~L2733 | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. Temporal gates B/C/D check for forward / stepwise / consecutive evidence. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
+| **A–D (Minor-add6 ↔ HalfDim7 enharmonic flip)** | ~L2733 | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **B/C/D are UNREACHABLE (dead code):** Gate A has exactly these conditions with no temporal requirement, and B/C/D repeat them *plus* temporal evidence behind `!didEnharmonicFlip` — A always fires first (Stage-1b F1). Removal is deliberately deferred to the Stage-3 gate-retirement audit (roadmap 3.4b), not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
 | **E (first-inversion Minor → Major)** | ~L2820 | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
 | **F (second-inversion → root-position Major)** | ~L2842 | Alt Major at `(rootPc+5)%12`, stepwise bass. | Swap. | Bass = P5 of actual root; B winning when E/B is correct. |
 | **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | ~L2907 | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-B/C/D on temporal context. | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
 | **H (augmented rotation)** | ~L2992 | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |
 | **I (first-inversion Major over root-position Minor)** | ~L3044 | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |
-| **J (vii° → V7 completion)** | ~L3151 | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
 | **K (first-inversion Augmented)** | ~L3080 | Winner Augmented bass-root, alt at I4 interval, alt root diatonic, margin ≤ 0.20. | Swap. | bwv40.6 m=6: A+ → F♯5/A. |
 | **L (Major over Augmented same-root)** | ~L3117 | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
+| **J (vii° → V7 completion) — runs LAST** | ~L3151 | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
+
+**Known asymmetries (pinned as-is in `postscoringgates_tests.cpp`, Stage-1b F4–F8):**
+
+- **Mixed live/captured winner reads in H/I/K/L** — the Sub-9a fix migrated only
+  G-E to the captured `originalWinner*` snapshot. Gate H requires live
+  `winner.quality == Augmented` but captured `winnerBassIsRoot`; Gates I/K/L compare
+  margins against the live (possibly bias-deducted) `winner.identity.score` while
+  keying entry on `originalWinnerQuality`. After a bias re-sort these can refer to
+  *different candidates*.
+- **Gate F has no winner-quality and no pcWeight guard** (unlike Gate E): a Minor
+  winner flips on a stepwise signal alone, and the promoted root does not need to
+  be sounding.
+- **G-E's `rawCandidates` pull has no threshold check** (FM2's loop breaks at
+  `gateCtx.threshold`; G-E scans everything), and it can push a duplicate of a
+  candidate already promoted to `results[0]` (its scan starts at i = 1).
+- **Gate swaps can leave `results[]` unsorted** — after a G-E pull the alternatives
+  list shown to users is not score-ordered. The winner is correct; the tail order
+  is an artifact.
 
 ---
 
@@ -605,9 +658,18 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   Adding a new context bonus without gating it on `applyProgressionSignals` /
   `ScoringPhase::Final` will cause segmentation regressions.
 
-- **Template arrays and score matrices update atomically.** 4 sites:
-  `analyzeChord` template array, `kDiagTemplates`, three score matrices.
-  Missing the matrices → silent stack-buffer overrun (no compile error).
+- **Template arrays update atomically under `analysis::kTemplateCount`.** All
+  array extents (template array, `kDiagTemplates`, three score matrices, `kMasks`)
+  derive from the constant since `a236a0ff21`, so the compiler enforces sizes.
+  Adding a template = bump the constant + add the template/mask/diag entries in
+  the same edit (§9 step 5). The historical silent stack-buffer overrun from a
+  missed matrix size is closed.
+
+- **Gate A subsumes Gates B/C/D.** Gate A's entry conditions are a strict subset
+  of B/C/D's, so B/C/D are unreachable dead code (Stage-1b F1). Do not add
+  temporal conditions to Gate A without realizing B/C/D would become reachable —
+  and untested. Their removal belongs to the Stage-3 per-gate retirement audit
+  (roadmap 3.4b), not to a hygiene pass.
 
 - **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was
   tried and reverted (Schumann D-major, Corelli G-major snapshot flips).
