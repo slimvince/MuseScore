@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="3.01">
+  <Score>
+    <Division>480</Division>
+    <Style>
+      <Spatium>1.76389</Spatium>
+    </Style>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <metaTag name="workTitle">S1c G minor under 2 flats (no partial-sig correction)</metaTag>
+    <Part>
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+        </StaffType>
+      </Staff>
+      <trackName>Piano</trackName>
+      <Instrument>
+        <trackName>Piano</trackName>
+        <minPitchP>21</minPitchP>
+        <maxPitchP>108</maxPitchP>
+        <minPitchA>21</minPitchA>
+        <maxPitchA>108</maxPitchA>
+        <Channel/>
+      </Instrument>
+    </Part>
+    <Staff id="1">
+      <Measure>
+        <voice>
+          <!-- Notated 2-flat signature, declared minor: true key really IS G minor
+               (the Aeolian home of -2). No Ab (pc 8) sounds, A-natural (pc 9) does,
+               so the partial-signature detector must NOT fire — signature proximity
+               correctly dominates and the resolver stays at -2 / G. -->
+          <KeySig>
+            <accidental>-2</accidental>
+            <mode>minor</mode>
+          </KeySig>
+          <TimeSig>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+          </TimeSig>
+          <!-- M1: Gm  G3(55) Bb3(58) D4(62) — PCs {7,10,2} -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>55</pitch><tpc>15</tpc></Note>
+            <Note><pitch>58</pitch><tpc>12</tpc></Note>
+            <Note><pitch>62</pitch><tpc>16</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M2: Cm  C4(60) Eb4(63) G4(67) — PCs {0,3,7} (iv) -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+            <Note><pitch>63</pitch><tpc>11</tpc></Note>
+            <Note><pitch>67</pitch><tpc>15</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M3: D major (V of G minor)  D3(50) F#3(54) A3(57) — PCs {2,6,9}, A-natural present -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>50</pitch><tpc>16</tpc></Note>
+            <Note><pitch>54</pitch><tpc>20</tpc></Note>
+            <Note><pitch>57</pitch><tpc>17</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M4: Gm  G3(55) Bb3(58) D4(62) -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>55</pitch><tpc>15</tpc></Note>
+            <Note><pitch>58</pitch><tpc>12</tpc></Note>
+            <Note><pitch>62</pitch><tpc>16</tpc></Note>
+          </Chord>
+          <BarLine>
+            <subtype>end</subtype>
+          </BarLine>
+        </voice>
+      </Measure>
+    </Staff>
+  </Score>
+</museScore>

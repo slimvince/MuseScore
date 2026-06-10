@@ -21,6 +21,15 @@
 set(MODULE_TEST composing_tests)
 
 set(MODULE_TEST_SRC
+    # Stage 1c — score-driven tests (regionanalysis_tests.cpp) need the engraving +
+    # draw modules initialised and a key/instrument/config environment, so the
+    # composing test binary supplies its own SuiteEnvironment (environment.cpp)
+    # plus the engraving ScoreRW utility and config mock. Mirrors engraving_tests.
+    ${CMAKE_CURRENT_LIST_DIR}/environment.cpp
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.cpp
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/utils/scorerw.h
+    ${PROJECT_SOURCE_DIR}/src/engraving/tests/mocks/engravingconfigurationmock.h
+
     ${CMAKE_CURRENT_LIST_DIR}/test_helpers.h
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils.h
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
@@ -30,6 +39,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/postscoringgates_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp
 )

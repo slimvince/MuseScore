@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="3.01">
+  <Score>
+    <Division>480</Division>
+    <Style>
+      <Spatium>1.76389</Spatium>
+    </Style>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <metaTag name="workTitle">S1c segmentation — four half-note chord changes</metaTag>
+    <Part>
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+        </StaffType>
+      </Staff>
+      <trackName>Piano</trackName>
+      <Instrument>
+        <trackName>Piano</trackName>
+        <minPitchP>21</minPitchP>
+        <maxPitchP>108</maxPitchP>
+        <minPitchA>21</minPitchA>
+        <maxPitchA>108</maxPitchA>
+        <Channel/>
+      </Instrument>
+    </Part>
+    <Staff id="1">
+      <Measure>
+        <voice>
+          <KeySig>
+            <accidental>0</accidental>
+            <mode>major</mode>
+          </KeySig>
+          <TimeSig>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+          </TimeSig>
+          <!-- beat 1: C major  C4(60) E4(64) G4(67) -->
+          <Chord>
+            <durationType>half</durationType>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+            <Note><pitch>64</pitch><tpc>18</tpc></Note>
+            <Note><pitch>67</pitch><tpc>15</tpc></Note>
+          </Chord>
+          <!-- beat 3: G major  G3(55) B3(59) D4(62) -->
+          <Chord>
+            <durationType>half</durationType>
+            <Note><pitch>55</pitch><tpc>15</tpc></Note>
+            <Note><pitch>59</pitch><tpc>19</tpc></Note>
+            <Note><pitch>62</pitch><tpc>16</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- beat 1: A minor  A3(57) C4(60) E4(64) -->
+          <Chord>
+            <durationType>half</durationType>
+            <Note><pitch>57</pitch><tpc>17</tpc></Note>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+            <Note><pitch>64</pitch><tpc>18</tpc></Note>
+          </Chord>
+          <!-- beat 3: F major  F3(53) A3(57) C4(60) -->
+          <Chord>
+            <durationType>half</durationType>
+            <Note><pitch>53</pitch><tpc>13</tpc></Note>
+            <Note><pitch>57</pitch><tpc>17</tpc></Note>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+          </Chord>
+          <BarLine>
+            <subtype>end</subtype>
+          </BarLine>
+        </voice>
+      </Measure>
+    </Staff>
+  </Score>
+</museScore>

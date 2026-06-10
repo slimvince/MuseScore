@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="3.01">
+  <Score>
+    <Division>480</Division>
+    <Style>
+      <Spatium>1.76389</Spatium>
+    </Style>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <metaTag name="workTitle">S1c C minor piece-start fixture</metaTag>
+    <Part>
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+        </StaffType>
+      </Staff>
+      <trackName>Piano</trackName>
+      <Instrument>
+        <trackName>Piano</trackName>
+        <minPitchP>21</minPitchP>
+        <maxPitchP>108</maxPitchP>
+        <minPitchA>21</minPitchA>
+        <maxPitchA>108</maxPitchA>
+        <Channel/>
+      </Instrument>
+    </Part>
+    <Staff id="1">
+      <Measure>
+        <voice>
+          <KeySig>
+            <accidental>-3</accidental>
+            <mode>minor</mode>
+          </KeySig>
+          <TimeSig>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+          </TimeSig>
+          <!-- M1: Cm triad C4(60) Eb4(63) G4(67) — PCs {0,3,7}, bass=C -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+            </Note>
+            <Note>
+              <pitch>63</pitch>
+              <tpc>11</tpc>
+            </Note>
+            <Note>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M2: Cm triad again — PCs {0,3,7}, bass=C -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+            </Note>
+            <Note>
+              <pitch>63</pitch>
+              <tpc>11</tpc>
+            </Note>
+            <Note>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+            </Note>
+          </Chord>
+          <BarLine>
+            <subtype>end</subtype>
+          </BarLine>
+        </voice>
+      </Measure>
+    </Staff>
+  </Score>
+</museScore>

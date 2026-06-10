@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="3.01">
+  <Score>
+    <Division>480</Division>
+    <Style>
+      <Spatium>1.76389</Spatium>
+    </Style>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <metaTag name="workTitle">S1c A-minor / C-major relative-pair (promote-wart fixture)</metaTag>
+    <Part>
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+        </StaffType>
+      </Staff>
+      <trackName>Piano</trackName>
+      <Instrument>
+        <trackName>Piano</trackName>
+        <minPitchP>21</minPitchP>
+        <maxPitchP>108</maxPitchP>
+        <minPitchA>21</minPitchA>
+        <maxPitchA>108</maxPitchA>
+        <Channel/>
+      </Instrument>
+    </Part>
+    <Staff id="1">
+      <Measure>
+        <voice>
+          <!-- No key signature (declaredMode = none) so the resolver runs pure
+               pitch inference; content is the C-major/A-minor diatonic pool with
+               A emphasised as tonic (complete A-minor triad, A in bass). The
+               natural winner is a minor mode; C major is the relative-pair
+               runner-up that the hysteresis promotion targets. -->
+          <TimeSig>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+          </TimeSig>
+          <!-- M1: Am  A2(45) A3(57) C4(60) E4(64) — PCs {9,0,4}, bass=A -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>45</pitch><tpc>17</tpc></Note>
+            <Note><pitch>57</pitch><tpc>17</tpc></Note>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+            <Note><pitch>64</pitch><tpc>18</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M2: Em (v of A minor)  E3(52) G3(55) B3(59) — PCs {4,7,11}, bass=E -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>52</pitch><tpc>18</tpc></Note>
+            <Note><pitch>55</pitch><tpc>15</tpc></Note>
+            <Note><pitch>59</pitch><tpc>19</tpc></Note>
+          </Chord>
+        </voice>
+      </Measure>
+      <Measure>
+        <voice>
+          <!-- M3: Am  A2(45) A3(57) C4(60) E4(64) — bass=A -->
+          <Chord>
+            <durationType>whole</durationType>
+            <Note><pitch>45</pitch><tpc>17</tpc></Note>
+            <Note><pitch>57</pitch><tpc>17</tpc></Note>
+            <Note><pitch>60</pitch><tpc>14</tpc></Note>
+            <Note><pitch>64</pitch><tpc>18</tpc></Note>
+          </Chord>
+          <BarLine>
+            <subtype>end</subtype>
+          </BarLine>
+        </voice>
+      </Measure>
+    </Staff>
+  </Score>
+</museScore>
