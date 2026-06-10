@@ -354,6 +354,89 @@ must be clearly documented, and must be abstracted so that the rest of the modul
 remains platform-agnostic. All build scripts, dependencies, and runtime logic must
 be verified on all supported platforms before merging.
 
+### 2.14 Layered AND Iterative Inference
+
+Clean layer separation (§2.3, §4.1 design boundary) is necessary but not sufficient.
+The inference problem has intrinsic circular dependencies that a purely feedforward
+pipeline cannot resolve correctly:
+
+- **Key ↔ chord**: the key affects how each chord is scored; the chords confirm or
+  refute the key. Committing the key before chord analysis means the chord scorer
+  operates under a hypothesis, not a fact.
+- **Segmentation ↔ chord**: where a region boundary falls affects which pitch classes
+  land in each region's oracle input; chord identity is a signal for where boundaries
+  should be. `greedyExpandSegmentation` already acknowledges this by running its
+  exploratory passes in `ScoringPhase::Segmentation` (progression signals withheld).
+- **Non-harmonic tone classification ↔ chord**: whether a sounding pitch is structural
+  or ornamental depends on knowing the chord; knowing the chord depends on which pitches
+  are structural.
+- **Functional role ↔ chord identity**: resolving B1 (mMaj7 leading-tone ambiguity),
+  A2 (dominant in minor), and the Δ=+7b voice-leading cluster requires knowing functional
+  role (is the leading tone resolving?), which requires knowing chord identities, which
+  requires knowing functional role.
+
+**The correct architecture is layers WITH iteration between them.** Layers define what
+each component is *responsible for*; iteration defines how information flows *between*
+them over multiple passes. These are complementary, not in tension.
+
+**Accumulating gates are a warning sign.** When a feedforward layer acquires many gates
+and guards to compensate for missing upstream feedback, that is a symptom of missing
+iteration — not a sign that the layer needs more gates. Each gate is a heuristic patch
+on a structural limitation. When the gate count becomes hard to reason about holistically
+(see §4.1i), add iteration rather than more gates.
+
+**Quality/ambition setting governs iteration depth.** Iteration is not unconditionally
+expensive — for well-tonal music most loops converge in 1–2 passes. Computational cost
+is managed by an explicit user-facing quality setting:
+
+| Level | Name | Iteration | Use case |
+|---|---|---|---|
+| 0 | Fast / Real-time | None (single forward pass) | Cursor annotation, playback display |
+| 1 | Normal | Key ↔ chord (1–2 passes); segmentation revision | Background analysis, default export |
+| 2 | Deep / Publication | Full convergence; all feedback loops active | LLM-assisted annotation, academic output |
+
+At Level 0 the system promises a fast plausible reading. At Level 2 it promises the most
+self-consistent reading achievable. The quality setting makes this tradeoff explicit and
+honest rather than silently failing on hard cases.
+
+**Design implication for data structures:** Each layer's output must carry a confidence
+estimate (winner margin, key confidence gap, segmentation stability) so downstream layers
+know whether to treat a result as a solid commitment or a tentative hypothesis worth
+revisiting. Irrevocable point estimates block iteration. Provisional results with
+confidence metadata enable it. Infrastructure already started: winner margin
+(`previousWinnerMargin`), key ranked list (`resolveKeyAndModeRanked`).
+
+**Phase D resolves the NHT/arpeggio circularity before Phase E iterates.** The current
+system infers a chord at every tick boundary and then tries to filter out "passing-note
+anomalies" retroactively. This is circular: identifying a note as passing requires knowing
+the chord; knowing the chord requires knowing which notes are structural. The correct
+resolution is duration-weighted aggregation: collect all tones within a rhythmic window
+(beat-level or bass-motion boundary) weighted by duration, then run a single chord
+inference on the aggregate. A brief passing tone contributes low weight; a sustained
+structural tone (or an arpeggiated root that sounds across the beat) contributes high
+weight. This is a prerequisite for Phase E — the feedback loop requires stable,
+arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`
+Step 4 (Phase D).
+
+**Phase E is the first iteration loop**, not just a new layer. Cadence detection creates
+a feedback signal from functional labels back into chord identities (a confirmed V→I
+cadence revises the chord identities participating in it and confirms the key). Design
+Phase E as a bidirectional interface, not a unidirectional gate addition.
+
+**Reconciliation (2026-06-10) — the canonical form of "layers with iteration."** This
+section and `docs/redesign_plan.md` ("single comprehensive pass; iteration is not a design
+premise") name the same target imprecisely. The standard resolution of the circular
+dependencies listed above is **joint inference over a hypothesis lattice**: each layer emits
+ranked candidates with scores (chord cells per region, key candidates per window,
+segmentation hypotheses), and a global decode (Viterbi / beam search) selects the jointly
+best path. This *is* the single comprehensive pass, and it equals the fixpoint that
+iteration between layers would converge to — computed exactly, with "revise an earlier
+commitment on later evidence" arising automatically from backtracking rather than from
+bespoke revision machinery. The quality levels above map onto beam width (Level 0 = beam 1
+≈ current greedy behavior; Level 2 = exact DP). Full rationale and literature comparison:
+`cowork_target_architecture_review.md`; adopted Phase E direction:
+`docs/redesign_plan.md` "Architecture review addendum (2026-06-10)".
+
 ---
 
 ## 3. Directory Structure
@@ -916,8 +999,9 @@ The core scoring loop in `RuleBasedChordAnalyzer::analyzeChord` enumerates
 `(bass candidate, root, template)` triples and applies a set of contextual
 bonuses layered on top of the base template score. All bonuses share three
 common gates: `jointScoringEnabled` (false on single-tick / unit-test path),
-`!prefs.explorationMode` (false during `greedyExpandSegmentation`'s internal
-boundary-exploration calls — prevents the bonus from biasing segmentation
+`prefs.scoringPhase == ScoringPhase::Final` (the progression signals are withheld
+during `greedyExpandSegmentation`'s internal boundary-exploration calls, which run in
+`ScoringPhase::Segmentation` — prevents the bonus from biasing segmentation
 before the final per-region pass), and a populated `context` pointer.
 
 | Bonus | Lambda | Value | Quality gate | Extra gates | Iter |
@@ -955,12 +1039,13 @@ for each sub-region call. The override happens AFTER the stepwise booleans
 `analyzeChord` call; a post-call restore keeps the next iteration's stepwise
 boolean correct. The same pattern was applied to `nextRootPc` in Iter 95 Step 2.
 
-**`explorationMode` flag (Iter 94):**
+**`ScoringPhase` (Iter 94 as `explorationMode`; reworked to the enum in `e7d4ba2b1a`):**
 
-`ChordAnalyzerPreferences::explorationMode` (default `false`) is set to `true`
-by `greedyExpandSegmentation` on every internal boundary-exploration call. This
-prevents the contextual bonuses from biasing sub-region bass selection during
-segmentation, before the final per-region scoring pass.
+`ChordAnalyzerPreferences::scoringPhase` (default `ScoringPhase::Final`) is set to
+`ScoringPhase::Segmentation` by `greedyExpandSegmentation` on every internal
+boundary-exploration call. This prevents the contextual bonuses from biasing sub-region
+bass selection during segmentation, before the final per-region scoring pass. (Replaced
+the former `bool explorationMode` flag — see `docs/scoring_model.md` §"ScoringPhase".)
 
 **`w_dim` gate note (Iter 96):**
 
@@ -1243,12 +1328,14 @@ project context. Findings are categorised below by priority and actionability.
   splitting the struct mid-iteration requires updating all callers twice. Revisit
   after a scoring stabilisation phase, not during active iteration.
 
-- **`explorationMode` coupling** — `greedyExpandSegmentation` sets `explorationMode
-  = true` on every internal `analyzeChord` call, creating a dependency from the
-  segmentation algorithm into chord-scorer internals (introduced Iter 94, required
-  to prevent boundary-exploration bias). This is architecturally awkward; a clean
-  separation of segmentation vs. final-analysis concerns would remove it. Major
-  refactor — defer.
+- **Segmentation ↔ scorer phase coupling** — `greedyExpandSegmentation` sets
+  `scoringPhase = ScoringPhase::Segmentation` on every internal `analyzeChord` call,
+  creating a dependency from the segmentation algorithm into chord-scorer internals
+  (introduced Iter 94 as the `explorationMode` flag; reworked into the `ScoringPhase`
+  enum in `e7d4ba2b1a`, which removed the per-function dual-path and left a single
+  control point in `applyHarmonicFunction`). The residual coupling — segmentation telling
+  the scorer which phase it is in — remains; a clean separation of segmentation vs.
+  final-analysis concerns would remove it entirely. Major refactor — defer.
 
 - **Data-driven mode definition table** — `keyModeTonicName()` and
   `keyModeTonicOffset()` use separate static arrays per mode family and share

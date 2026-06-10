@@ -205,3 +205,4 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
 - American English throughout — "analyzer" not "analyser"
 - No confirmation prompts between analyse → implement → build → test steps
 - Commit only when explicitly asked
+- never hallucinate or guess, verified facts only - better ask first if unsure.

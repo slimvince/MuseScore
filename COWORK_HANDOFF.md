@@ -1,6 +1,6 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-06-08 (E3 Tasks 2+3 committed — `f9ba22157d`; step-back: evidence-absent bucket reclassified (bwv174.5 + bwv301 are absent-OUR-root, actionable), Min→Maj/Maj→Min closed as convention gap, Jazz BIR=false=10 fully characterised. 407/407, 52/52, 11/11.)*
+*Written 2026-05-14. Last updated 2026-06-10 session 5 (explorationMode dual-path eliminated; HEAD `e7d4ba2b1a`).*
 
 ---
 
@@ -25,9 +25,15 @@ harmonic analysis (chord detection, inversion scoring, key inference). The main 
 is `src/composing/analysis/chord/chordanalyzer.cpp`. The bridge between the composing
 module and the notation layer is `src/notation/internal/notationharmonicrhythmbridge.cpp`.
 
-Two mandatory reads at the start of every session:
-- `C:\s\MS\build_and_test.md` — all build/test/tool commands
+Mandatory reads at the start of every session:
 - `C:\s\MS\STATUS.md` (header only, first ~10 lines) — current baselines and HEAD commit
+- `C:\s\MS\build_and_test.md` — all build/test/tool commands
+
+**When CC returns a report**, always do this before evaluating it:
+1. Re-read the instruction file that CC was given (listed in "Next CC task" in Current state below)
+2. Then read CC's report
+
+CC's report references task numbers, design decisions, and deviations that only make sense against the original instruction. Evaluating the report without re-reading the instruction means accepting CC's framing uncritically — which is exactly the failure mode we guard against.
 
 ---
 
@@ -40,9 +46,146 @@ All active development is on **master**. Always confirm which worktree CC is in 
 
 ---
 
-## Current state (as of 2026-06-08, post step-back assessment)
+## Architecture direction (decided 2026-06-09, session 4) — READ BEFORE ANY PHASE E WORK
 
-- **HEAD:** `f9ba22157d` on master. **Working tree clean** (untracked non-code artifacts remain; COWORK_HANDOFF.md has local edits pending commit).
+**Single-pass, unified, no parallel paths.**
+
+The redesign goal is a single comprehensive pass through properly layered components
+where each layer passes its full evidence forward — not a multi-pass iterative loop.
+The full design is in `docs/redesign_plan.md`.
+
+Three non-negotiable principles for all Phase E work:
+
+1. **Single commit path.** Pass 1, Pass 2 sub-region, Pass 2b sub-region, and the
+   notation bridge must all flow through the same Layer 3 → Layer 4 → Layer 5 stack.
+   `advanceTemporalContext` is called once, uniformly, at every commit site. The current
+   manual inline assignments in Pass 2 and Pass 2b that bypass it are bugs to eliminate,
+   not patterns to follow.
+
+2. **No parallel paths, no code duplication.** Logic that exists in both the batch path
+   and the notation path must be unified. `diagnoseChord` must be a view into the
+   production pipeline, not a separate scorer. No new bypass paths.
+
+3. **Resolve the `explorationMode` dual-path.** ✅ **RESOLVED — committed `e7d4ba2b1a`
+   (2026-06-10).** `ChordAnalyzerPreferences` now carries `fn::ScoringPhase scoringPhase`
+   (enum lives in `chordanalyzer.h`, `function` namespace — the include direction
+   harmonicfunctionlayer.h → chordanalyzer.h forbids the originally planned placement);
+   the 5 bonus/gate functions are stateless; the single check is `applyProgressionSignals`
+   at the top of `applyHarmonicFunction`. Do not reintroduce per-function phase flags.
+
+**What this means in practice:** do not add new gates, compensating fixes, or new
+parallel scoring paths to the current feedforward pipeline. Phase E completes the
+evidence picture (symmetric forward context alongside backward) and unifies the commit
+paths. BIR re-calibration happens after the architecture is stable.
+
+**MASTER PLAN (2026-06-10): `docs/implementation_roadmap.md` is the single consolidated
+tracker.** Both reviews' conclusions (part 1 `cowork_target_architecture_review.md`, part 2
+`cowork_implementation_review.md`) are mapped to ordered Stages 0–7 with per-stage
+verification gates ("no surprises": pin/verify each layer before building on it —
+Stage 0 hygiene → Stage 1 pin current behavior with tests → Stage 2 one-pipeline/one-truth
+(Phase 4c move, batch parity, diagnoseChord fix) → Stage 3 decoder → Stage 4 key path →
+Stage 5 weight fitting → Stage 6 functional layer). Check the traceability table there
+before planning any new CC task; new work must slot into a stage.
+
+**Architecture review (2026-06-10, session 5) — Phase E target renamed.** Full review in
+`cowork_target_architecture_review.md`; adopted direction in `docs/redesign_plan.md`
+"Architecture review addendum (2026-06-10)"; §2.14 reconciliation note added to
+ARCHITECTURE.md. Core finding: the documented failure classes (Δ=+7a/b, gate cascades,
+rcb dead ends) are all symptoms of greedy left-to-right commitment; the correct Phase E
+target is **joint global decoding over a hypothesis lattice** (oracle = emissions,
+progression signals = transitions, Viterbi/beam decode; key as an HMM path; weights
+fitted against DCML corpora; functional labels as sequence labeling over the decoded
+path). Phase E must NOT be designed as a pack of new locally-applied signals feeding the
+greedy pipeline. Pending: part-2 session validating this against the as-built system
+before any code direction is imposed.
+
+---
+
+## Current state (as of 2026-06-10, session 5)
+
+- **HEAD:** `e7d4ba2b1a` on master (refactor: replace explorationMode flag with ScoringPhase
+  enum — Phase E Step 5). Several commits ahead of origin, not pushed. Working tree dirty
+  only with pre-existing uncommitted doc edits (ARCHITECTURE.md, CLAUDE.md,
+  docs/redesign_plan.md + this file + STATUS.md) and the perpetually-dirty `muse` submodule
+  (intentional Snap fix — never commit it).
+
+  `e7d4ba2b1a` — explorationMode dual-path eliminated. `bool explorationMode` removed from
+  `ChordAnalyzerPreferences` and from all 5 bonus/gate signatures (`wSeqBonus`, `wDimBonus`,
+  `wStepInBonus`, `wStepOutBonus`, `gateRZeroesRootContinuity`) — now stateless and pure.
+  Single control point: `applyProgressionSignals = (phase == ScoringPhase::Final)` at the
+  top of `applyHarmonicFunction`; gates the 4 progression bonuses, Gate R, and the Pass B
+  `applyStepBonusGuard` calls (Pass B needed explicit gating — pre-change it was suppressed
+  only indirectly via the helpers returning 0; the guard's sole side effect is
+  `cand.score += stepIn + stepOut`, so skipping the call is provably equivalent — verified
+  in code by Cowork). `ScoringPhase` enum defined in `chordanalyzer.h` (`function` namespace,
+  alongside the `ScoringSnapshot` forward-decl) — the instruction's `harmonicfunctionlayer.h`
+  placement was backwards; CC's deviation verified correct. Two `harmonicsegmenter.cpp`
+  sites (L348, L706) set `Segmentation`; sole production call site `chordanalyzer.cpp:2969`
+  passes `prefs.scoringPhase`. `gater_tests.cpp` Branch 4 → end-to-end phase-gating test
+  (`GateR_PhaseGated_FinalFiresSegmentationSkips`). `docs/scoring_model.md` synced in the
+  same commit. 7 files, 416/416 · 52/52 · 11/11, zero snapshot diffs, no goldens refreshed;
+  BIR 24/13 / 35/7 unchanged. **Verification basis: static code equivalence + zero snapshot
+  diffs + BIR consistency — NOT a corpus A/B byte-diff** (report §5's "byte-identity on all
+  353 scores" is an inference, not a measurement). Report:
+  `cc_phase_e_exploration_mode_report.md`.
+
+- **Next CC task — Stage 0 hygiene (instruction ready):**
+  Instruction file: `cc_instruction_stage0_hygiene.md` (implements
+  `docs/implementation_roadmap.md` Stage 0, items 0.1–0.6).
+  Tasks: doc pass + doc commit (incl. committing untracked `layer_architecture_audit.md`
+  and `implementation_roadmap.md`); delete repo junk; remove dead fnCtx keyFifths/keyMode
+  fields; `kTemplateCount` shared constant across the 5 sync sites; FP tie-policy section
+  in scoring_model.md; document onsetBoundaryThreshold + region-collapse divergences.
+  Two commits: docs (commit immediately), code hygiene (propose, await Cowork).
+  Hard constraint: byte-identical — 416/416 · 52/52 · 11/11, BIR 13/7 unchanged, both
+  presets regenerated, tools/corpus restored to Baroque. Report: `cc_stage0_report.md`.
+
+- **Previous HEAD:** `1bfc64d18c` (refactor: unify chord-commit path — Phase E Step 5).
+
+  `1bfc64d18c` — adds `advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf, chosen, gateCtx)`
+  overload in `chordanalyzer.h`; replaces three separate manual commit patterns in
+  `regionanalyzer.cpp` (Pass 1, Pass 2, Pass 2b) with the unified call. Sub-region passes gain
+  per-parent rolling-state variables (`subRunningStepwiseCount`, `subRecentRootsBuf`). Byte-identical
+  (A/B verified, 0/353 diffs both corpora). 416/416 · 52/52 · 11/11. BIR 24/13 / 35/7 unchanged.
+
+- **Prior lineage:** `90a52b5fee` (fix: bridge forward-lookahead in findTemporalContext).
+
+  Recent master lineage: `90a52b5fee` (fix: bridge forward-lookahead in findTemporalContext) ←
+  `bffb6c4e3d` (test: Gate R unit tests) ←
+  `927e8b579d` (docs/chore: comment fixes — E1–E5) ←
+  `0b51395527` (docs: STATUS.md Gate R baselines) ←
+  `638ced1c12` (feat: Gate R — harmonicfunctionlayer.cpp + scoring_model.md + 6 goldens) ←
+  `f9ba22157d` (fix: G-E phantom HalfDim + float literals — E3 Tasks 2+3) ← ...
+
+- **Gate R — committed `638ced1c12` (2026-06-09):**
+  - Fixes all three Δ=+7b targets: bwv245.28 (E), bwv296 (G), bwv320 (C) ✓
+  - Bonus: bwv349 m13 fixed (Am → F/A = DCML root F, BIR=true error removed)
+  - No regressions in either preset; full 353-score corpus rebuild verified
+  - Two required refinements: `basisDep ≤ 0` condition + `!explorationMode` guard
+  - 6 bridge-path snapshot goldens refreshed; all DCML-verified:
+    - bach_chorale_003 tick 7680: Asus4→D major = DCML V6 (D/F#) **Improvement**
+    - bwv806_prelude: E/G# = DCML I6 of local key E **Improvement**
+    - bach_chorale_137: winner unchanged, rcb-inflated C-major alternative dropped **Neutral**
+    - chopin_bi105_op30_2: alternatives-only, winner B minor unchanged **Neutral** *(CC's §8 correction: reported as winner change, was not)*
+    - mozart_k279_1: spurious G/E alternative dropped, winner unchanged **Improvement**
+    - bach_bwv806_gigue: runner-up alt change only **Neutral**
+  - Golden path correction: goldens live at `src/notation/tests/pipeline_snapshot_tests/snapshots/`
+    NOT `src/composing/tests/snapshots/` — update future git-add instructions accordingly
+  - `tools/corpus/` holds stale PRE-Jazz regeneration; needs fresh regeneration before trusting numbers
+
+- **Layer architecture audit complete (2026-06-09):** Full findings in
+  `docs/layer_architecture_audit.md`. Key conclusions:
+  - E2d split is sound; oracle/pipeline boundary is real
+  - Five temporal signals remain in oracle as documented pre-existing debt
+    (`chordanalyzer.h:329`) — do not move until Phase E
+  - `harmonicfunctionlayer.h` basisIndep comment is inaccurate (claims "no progression signal")
+  - `contextualBonuses` invariant at `chordanalyzer.cpp:1634` is stale
+  - ~~Bridge path missing forward lookahead~~ — **FIXED `90a52b5fee`**: forward walk added to `findTemporalContext` mirroring backward walk; `nextRootPc`/`nextBassPc`/`bassIsStepwiseToNext` now populated via `seg->next1(ChordRest)` + cold analysis through full gate pipeline
+  - Sub-regions always have `bassIsStepwiseToNext = false` (consistent, undocumented)
+  - Gate R's `basisDep ≤ 0` depends on `sameRootInversionBonus` staying in oracle
+  - **Recommended next CC tasks:** unit tests for `bassIsTemplateChordTone` + Gate R branches;
+    comment fixes for 2a/2b/3/6; ChordSymbolFormatter extraction (low priority)
+  - **Do NOT split `chordanalyzer.cpp` now** — wait for Phase E to motivate it
 
   Recent master lineage: `f9ba22157d` (fix: G-E phantom HalfDim + float literals to named constants — E3 Tasks 2+3) ← `a693b6ba82` (docs: COWORK_HANDOFF.md post-E2d housekeeping) ←
   `22b89ae521` (tools: iter 90–97 analysis scripts) ←
@@ -59,10 +202,15 @@ All active development is on **master**. Always confirm which worktree CC is in 
   fix) ← `81978321e3` (keyresolver partial-sig) ← `fe752fb6d9` (A4 Corelli) ←
   `a69a23e59b` (D2 + docs).
 
-- **BIR baselines (lenient-OR `align_regions`):** Baroque BIR=true=25, BIR=false=16;
-  Jazz BIR=true=36, BIR=false=10. Hard stops: Baroque BIR=false ≤ 25, Jazz BIR=false ≤ 13.
-  Both presets re-confirmed fresh during step-back (2026-06-08).
-  Cumulative since Iter 91: Baroque BIR=false 188 → 16 (−172, ~91% reduction).
+- **BIR baselines (lenient-OR `align_regions`, `tools/characterise_bir_false.py`):**
+  Baroque BIR=true=24, BIR=false=13; Jazz BIR=true=35, BIR=false=7.
+  Hard stops: Baroque BIR=false must not increase above 13; Jazz BIR=false must not increase above 7.
+  Cumulative since Iter 91: Baroque BIR=false 188 → 13 (−175, ~93% reduction).
+  **IMPORTANT — BIR script note:** The 24/13 figure comes from `tools/characterise_bir_false.py`
+  (lenient-OR align_regions comparator). `tools/analyze_inversion_errors.py` reports a DIFFERENT
+  metric (music21∩DCML bassIsRoot three-way split: 27/22) — these are NOT the same number and
+  should not be used interchangeably in instructions.
+  `tools/corpus/` = POST-Gate-R Baroque state (regenerated 2026-06-09, 353 scores).
 
 - **Jazz BIR=false=10 — fully characterised (2026-06-08):** 8 cases shared with Baroque
   (Δ=+7 rootContinuity ×3, sus/quartal ×2, segmentation ×1, evidence-absent ×1,
@@ -73,10 +221,31 @@ All active development is on **master**. Always confirm which worktree CC is in 
   prior prediction. Nothing newly actionable beyond the absent-root guard (bwv45.7
   dim→dom absent-root, partial). Full table in `cc_stepback_report.md`.
 
-- **Tests:** 407/407 composing (equivalence harness removed — tautological post-redesign),
-  **52/52 notation (fully green)**, 11/11 pipeline snapshot (1 intentional skip =
-  `PipelineDivergenceCObservation.GenerateReport`).
+- **Tests:** **416/416 composing** (+9 Gate R unit tests in `gater_tests.cpp`; equivalence
+  harness removed — tautological post-redesign), **52/52 notation (fully green)**, 11/11
+  pipeline snapshot (1 intentional skip = `PipelineDivergenceCObservation.GenerateReport`).
   Mismatch report: Jazz 130 (131→130 post-E2d path unification).
+
+- **Part G commit (2026-06-09, session 3):**
+  - `90a52b5fee` — bridge forward-lookahead fix. `findTemporalContext` in
+    `regiontonecollector.cpp` now calls `seg->next1(ChordRest)`, cold-analyzes successor
+    through full `applyIter8691Pedal` + `applyPostScoringGates` pipeline, sets
+    `nextRootPc`/`nextBassPc`/`bassIsStepwiseToNext`. Only `regiontonecollector.cpp/.h`
+    touched. 3 snapshot drifts — all P4 tickLocal, all improvements or neutral:
+    - chorale_137 t2880: Dm → Bø7 — **Improvement** (G-B gate fires; matches batch)
+    - chorale_001 t15600: Bm → G — **Improvement** (onset {G,B,D} = G major; old Bm impossible)
+    - chorale_001 t11280: F#dim → F#ø7 — **Neutral** (root unchanged; quality refinement)
+    Goldens refreshed. 416/416 · 52/52 · 11/11. BIR unchanged 24/13 / 35/7.
+    Full report: `cc_bridge_lookahead_report.md`.
+
+- **Part E + Part F commits (2026-06-09, follow-on to Gate R):**
+  - `927e8b579d` — comment-only: (E1) `harmonicfunctionlayer.h` basisIndep accuracy; (E2)
+    stale invariant clarified at `chordanalyzer.cpp ~L1634`; (E3) Gate R cross-layer
+    dependency documented; (E4) bridge lookahead gap noted in `findTemporalContext`; (E5)
+    golden path corrected in `BUILD_AND_TEST.md`. Byte-identical.
+  - `bffb6c4e3d` — `bassIsTemplateChordTone` + `gateRZeroesRootContinuity` promoted to `fn`
+    namespace (behavior-preserving); new `gater_tests.cpp` (9 Gate R unit tests). Composing
+    416/416 (+9). Byte-identical (no BIR change).
 
 - **Git status audit (2026-06-06, pass 2 complete):**
   - Stash: empty. Working tree clean.
@@ -513,12 +682,57 @@ unaffected. No goldens changed.
 Predecessor-confidence diagnostic (`cc_deltaseven_predecessor_report.md`, 2026-06-08)
 falsified the "sparse predecessor" framing and revealed the cluster is not homogeneous:
 
-**Δ=+7a — wrong root wins vertically (`contFired=0`): bwv102.7, bwv261**
-The wrong root is already ahead on vertical evidence at the run's first sub-region
-(within-bass margins 0.33 and 0.36 respectively, `contFired=0`). rootContinuityBonus
-merely self-perpetuates the error into later sub-regions — it did not cause it.
-Gating the bonus cannot fix these. They need a separate vertical-oracle investigation:
-why does Eb beat Ab (bwv102.7), and C# HalfDim beat F# (bwv261), on vertical evidence?
+**Δ=+7a — arpeggiation segmentation + rcb cascade (NOT a vertical-oracle bug): bwv102.7, bwv261**
+*(Reframed 2026-06-09 after full per-cell oracle dump — prior "wrong root wins vertically"
+characterisation was incorrect.)*
+
+In the **committed/run-opening regions** the DCML root is absent because the arpeggio places
+it one step in the FUTURE — not as a sustaining note from the past. Exact tick data
+(`cc_phase_d_investigation_report.md` 2026-06-09):
+- bwv102.7: failing region starts t17520; Ab (DCML root) attacks at t17760 (+240 ticks)
+- bwv261: failing region starts t33840; F# (DCML root) attacks at t34080 (+240 ticks)
+
+The 240-tick micro-regions are produced by the **initial greedy-expand** (Pass 2), which
+creates a new region boundary every time the set of simultaneously sounding notes changes.
+An arpeggio moving through C→Eb→Ab creates one 240-tick region per step. Pass 2b's
+`detectBassMovementSubBoundaries` is not involved — it has `minGapTicks = 960` (2 beats)
+specifically to avoid micro-splits. `coalesceShortSameRootRuns` cannot rescue these because
+the oracle-identified roots differ across the micro-regions (different incomplete tone sets).
+
+**Dead end recorded:** changing `collectRegionTones`'s `noteEnd <= startTickInt` to `< startTickInt`
+does not help — the boundary-touching predecessors are other chord tones (C, Eb; G, B), not
+the root. The root hasn't attacked yet. Do not retry this fix.
+
+In the **sibling regions where the DCML root sounds**, the oracle actually PREFERS the DCML
+root (AbMaj7 raw 2.55 > Eb/Ab 2.33; F#7 raw 2.85 > C#m/F# 2.83). The wrong root prevails
+ONLY because `rootContinuityBonus` +0.40 (fed by the wrong-root micro-region) tips it.
+
+Gate R is structurally inapplicable: both present-root wrong readings carry inversion bonuses
+(`basisDep > 0`: Eb/Ab = 0.90, C#m/F# = 1.40), so Gate R's `basisDep ≤ 0` guard correctly
+spares them.
+
+**Fix path: Phase E only. All gate approaches exhausted.**
+
+Phase D dead ends (all 2026-06-09, documented in `docs/redesign_plan.md` Step 4):
+1. `noteEnd <= startTickInt` → `< startTickInt` backward-walk fix: adds C/Eb not Ab; falsified.
+2. External short-region merger: 0 qualifying runs (inline merge already fuses arpeggio slices).
+3. Re-analysis of inline-merged aggregate with run-opening context: tried, reverted, corpus regressions.
+   Full report: `cc_phase_d_merger_report.md`.
+
+Phase E predecessor-confidence gate dead end (2026-06-09, `cc_phase_e_predecessor_survey_report.md`):
+No threshold on `previousWinnerScore`, `previousWinnerMargin`, `previousDistinctPcs`, or
+`previousWinnerRootPcWeight` separates the Δ=+7a arpeggio predecessors from legitimate
+continuations. The rcb source is correctly confident about a transient (rootW 0.25–0.50,
+score 3.05–3.30); Mozart Alberti control sits at rootW 0.00, below both Δ=+7a predecessors —
+any gate that catches Δ=+7a also fires on correct continuations. Reconfirms Iter-98.
+
+**What this means:** confidence can't encode "right now, wrong in 240 ticks." The fix requires
+inter-region revision (Phase E): when the next region's evidence contradicts the committed
+predecessor identity, revise the predecessor. This is architectural, not a gate.
+
+Do NOT attempt further rcb gates. Full findings in `cc_deltaseven_7a_diagnostic_report.md`,
+`cc_phase_d_investigation_report.md`, `cc_phase_d_merger_report.md`, and
+`cc_phase_e_predecessor_survey_report.md`.
 
 **Δ=+7b — correct predecessor, oracle tie broken by bonus (`contFired=1`): bwv245.28, bwv296, bwv320**
 The predecessors are **correct, confident** chords (Bm=ii, D=vi, Gm=ii) — not sparse
@@ -559,8 +773,8 @@ C2 entry below is also corrected.
 
 | Category | Count | Cases | Status |
 |---|---|---|---|
-| Δ=+7a: wrong root wins vertically (`contFired=0`) | 2 | bwv102.7, bwv261 | Vertical oracle issue — separate investigation |
-| Δ=+7b: correct predecessor, oracle tie broken by bonus | 3 | bwv245.28, bwv296, bwv320 | Phase E only — voice-leading context needed |
+| Δ=+7a: arpeggiation segmentation + rcb cascade | 2 | bwv102.7, bwv261 | **Phase E only** — Phase D fully exhausted (3 dead ends); oracle correct in present-root slice without rcb; rcb from wrong-root arpeggiated predecessor is the sole blocker |
+| Δ=+7b: correct predecessor, oracle tie broken by bonus | 3 | bwv245.28, bwv296, bwv320 | ✅ **FIXED by Gate R** (`638ced1c12`) |
 | Evidence-absent (DCML root not in pcs — genuine) | 2 | bwv17.7, bwv245.17 | Phase D only |
 | Absent-OUR-root (DCML root IS present — actionable) | 3 | bwv14.5, bwv174.5, bwv301 | **Dead end — absent-root guard tried (2026-06-08) and reverted (net regression: 2 fixed, 4 broken). See below.** |
 | B4 template tie (6th/m7 ambiguity) | 1 | bwv381 | Phase B4 (needs investigation) |
@@ -873,9 +1087,23 @@ Labels / output               (A3 roman-numeral validation; F1 confidence)
 
 ---
 
-## Architectural redesign — deferred commitment and inter-layer channel (2026-06-08)
+## Architectural redesign — layered comprehensive evidence flow (updated 2026-06-10)
 
-Full detail: `docs/redesign_plan.md`. Summary here for session context.
+Full detail: `docs/redesign_plan.md` and `ARCHITECTURE.md §2.14`. Summary here.
+
+**Architecture decision (2026-06-09, updated 2026-06-10):** Single comprehensive pass
+through properly layered components. All evidence is present at analysis time;
+a single pass with symmetric backward/forward context is sufficient. Iteration is not a
+design premise. Accumulating gates to compensate for missing context is the wrong
+response — build the evidence picture (symmetric forward context alongside backward)
+and unify the commit paths. Phase E completes that evidence picture and removes
+all internal dual-paths. BIR re-calibration happens after the architecture is stable.
+
+**Key implication:** the current 13 BIR=false residuals require richer evidence, not
+more gates. The Δ=+7a cases require Phase D (arpeggio-aware segmentation) + Phase E
+(inter-region revision when successor evidence contradicts the committed predecessor).
+B1 mMaj7, A2 dominant-in-minor require Phase E cadence confirmation. Segmentation cases
+require targeted structural fixes. Do not add compensating gates — add the missing evidence.
 
 **The principle:** each layer should pass its full evidence alongside its committed
 decision — not compress to the decision alone. Downstream layers must calibrate
@@ -951,7 +1179,7 @@ metric (e.g. raw score gap between rank-0 and rank-1, post-promotion).
 
 | Case | Root cause | Redesign effect |
 |---|---|---|
-| Δ=+7a bwv102.7, bwv261 (vertical wins) | Wrong root beats correct root on oracle evidence alone | Unaffected — separate vertical investigation needed |
+| Δ=+7a bwv102.7, bwv261 (arpeggiation + rcb cascade) | Oracle correct in present-root slice without rcb (2.55 > 2.33); sole blocker is rcb +0.40 from wrong-root arpeggiated predecessor; Phase D exhausted (3 dead ends — aggregate weights still prefer Eb) | **Phase E only** — detect arpeggiated predecessor, suppress/reduce rcb |
 | Δ=+7b bwv245.28, bwv296, bwv320 (correct predecessor, oracle tie) | Correct predecessor; near-tie in oracle broken by bonus toward old root | Phase E only — needs voice-leading resolution signal |
 | bwv301 G-absent winner | Vertical scoring asymmetry (rootless triad over-rewarded) | Remains — absent-root guard addresses symptom |
 | B1 mMaj7 leading-tone | Needs voice-leading resolution signal | Partially moves — still needs Phase E |
