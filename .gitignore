@@ -117,3 +117,9 @@ compile_commands.json
 /cc_e2d_*.md
 /cc_*.md
 ai-assistant/CC_INSTRUCTION_*.md
+
+# Build/shell-redirect accidents that got committed once (Stage 0.4). No script
+# regenerates them; these globs are insurance so a recurrence stays untracked.
+# (The actual filenames contain U+F03A, the NTFS-safe substitute for ':'.)
+*tmpbuild_out.txt
+*ExecutionPolicy RemoteSigned*
