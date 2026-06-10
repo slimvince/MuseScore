@@ -123,25 +123,29 @@ double rootContinuityBonus(int candidateRootPc, int previousRootPc,
 
 /// Sequential root-motion bonus (+kWSeq).
 /// Rewards a candidate whose root sits a P4 below nextRootPc (classic V→I).
+/// Stateless: the caller decides (via ScoringPhase) whether to apply it.
 double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
-                 bool jointScoringEnabled, bool explorationMode);
+                 bool jointScoringEnabled);
 
 /// Diminished/HalfDim leading-tone bonus (+kWDim).
 /// Rewards a Dim/HalfDim candidate whose root sits one semitone below nextRootPc.
+/// Stateless: the caller decides (via ScoringPhase) whether to apply it.
 double wDimBonus(int candRootPc, analysis::ChordQuality quality,
                  int nextRootPc, int distinctPcs,
-                 bool jointScoringEnabled, bool explorationMode);
+                 bool jointScoringEnabled);
 
 /// Stepwise-bass step-in bonus (+kWStepIn).
 /// Root-position candidate whose bass moves by semitone/whole-tone FROM previousBassPc.
+/// Stateless: the caller decides (via ScoringPhase) whether to apply it.
 double wStepInBonus(int candBassPc, int rootPc,
-                    bool jointScoringEnabled, bool explorationMode,
+                    bool jointScoringEnabled,
                     int previousBassPc);
 
 /// Stepwise-bass step-out bonus (+kWStepOut).
 /// Root-position candidate whose bass moves by semitone/whole-tone TO nextBassPc.
+/// Stateless: the caller decides (via ScoringPhase) whether to apply it.
 double wStepOutBonus(int candBassPc, int rootPc,
-                     bool jointScoringEnabled, bool explorationMode,
+                     bool jointScoringEnabled,
                      int nextBassPc);
 
 // -----------------------------------------------------------------------
@@ -223,14 +227,15 @@ struct ScoringSnapshot {
 bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept;
 
 /// Gate R decision predicate: returns true iff `rootContinuityBonus` must be withheld
-/// from this cell. The full Gate R condition — all four required:
+/// from this cell on STRUCTURAL grounds. The three structural conditions — all required:
 ///   (1) `rcb > 0`            — root continuity holds for this candidate,
-///   (2) `!explorationMode`   — final-scoring correction only (segmentation untouched),
-///   (3) `cell.basisDep <= 0` — no bass-dependent credit (no sounding third → no
+///   (2) `cell.basisDep <= 0` — no bass-dependent credit (no sounding third → no
 ///                              inversion bonus, and no bass-root bonus),
-///   (4) bass foreign to the candidate's template (bassIsTemplateChordTone == false).
-bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb,
-                               bool explorationMode) noexcept;
+///   (3) bass foreign to the candidate's template (bassIsTemplateChordTone == false).
+/// The phase guard ("final-scoring correction only; never during segmentation") is NOT
+/// part of this predicate — applyHarmonicFunction() gates the rcb-zeroing on
+/// ScoringPhase::Final at the call site (see harmonicfunctionlayer.cpp Pass A).
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept;
 
 /// Run the competition pipeline.
 ///
@@ -245,6 +250,7 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
                            const analysis::ChordAnalyzerPreferences&   prefs,
                            std::vector<analysis::ChordAnalysisResult>& results,
                            analysis::ChordAnalysisResult&              chosenResult,
-                           analysis::PostScoringGateContext*           gateCtx);
+                           analysis::PostScoringGateContext*           gateCtx,
+                           ScoringPhase                                phase = ScoringPhase::Final);
 
 } // namespace mu::composing::function

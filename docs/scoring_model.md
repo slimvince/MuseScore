@@ -189,17 +189,22 @@ without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`.
 (`harmonicfunctionlayer.cpp`), immediately after `rootContinuityBonus` is computed
 and before it is folded into `basisIndep`.
 
-**Condition (all required).** Zero the bonus for a cell when:
+**Condition.** The predicate `gateRZeroesRootContinuity()` encodes three **structural**
+conditions (all required); the **phase** guard is applied separately at the call site
+(see below). Zero the bonus for a cell when all of these hold:
 1. `rcb > 0` (root continuity holds for this candidate), AND
-2. `!prefs.explorationMode` — Gate R is a **final-scoring correction only**; it does
-   not fire during segmentation exploration (see "Why the `!explorationMode` guard"
-   below), AND
-3. `cell.basisDep <= 0` — the candidate earned **no** bass-dependent credit (no
+2. `cell.basisDep <= 0` — the candidate earned **no** bass-dependent credit (no
    inversion bonus fired and no bass-root bonus applies), AND
-4. `bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
+3. `bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
    foreign to the candidate's template. `bassIsTemplateChordTone` returns true iff
    `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static
    `kMasks[17]` interval-bitmask table mirroring the 17 TemplateDef interval sets).
+
+**Phase guard (separate from the predicate).** `applyHarmonicFunction()` zeroes rcb only
+when `gateRZeroesRootContinuity(...) && phase == ScoringPhase::Final`. Gate R is a
+**final-scoring correction only**; it never fires during segmentation exploration
+(`ScoringPhase::Segmentation`) — see "Why the phase guard" below. The predicate itself is
+stateless (no phase parameter): the phase is consulted once at the Pass A call site.
 
 **Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**
 The bare bass-foreign test alone misfires on legitimate extended slash voicings.
@@ -217,7 +222,7 @@ continuations and spares real extended chords. (`basisDep` may be slightly negat
 when a `kNonBassPenalty` applies with no offsetting inversion credit — still a
 bare-root case, correctly gated.)
 
-**Why the `!explorationMode` guard.** `rootContinuityBonus` is deliberately **not**
+**Why the phase guard.** `rootContinuityBonus` is deliberately **not**
 suppressed during `greedyExpandSegmentation` exploration (unlike `w_seq` / `w_dim` /
 step bonuses), so segmentation boundary selection already depends on rcb. If Gate R
 were allowed to perturb rcb during exploration it would shift region boundaries:
@@ -279,10 +284,12 @@ the previous region (`stepIn`) and/or to the next region (`stepOut`).
 
 **Four gates (each load-bearing):**
 
-1. **`!prefs.explorationMode`** — suppresses the bonus inside
-   `greedyExpandSegmentation` boundary exploration. Without this, segmentation
-   biases sub-region bass selection toward stepwise candidates and redirects
-   segmentation before the final per-region scoring pass runs.
+1. **`phase == ScoringPhase::Final`** (call-site gate) — suppresses the bonus inside
+   `greedyExpandSegmentation` boundary exploration, which runs in
+   `ScoringPhase::Segmentation`. Without this, segmentation biases sub-region bass
+   selection toward stepwise candidates and redirects segmentation before the final
+   per-region scoring pass runs. The `wStep*` helpers are stateless; the suppression
+   lives at the Pass B call site (`if (applyProgressionSignals) { applyStepBonusGuard… }`).
 
 2. **`candBassPc == rootPc`** (root-position only) — the bonus rewards "this
    chord's root moves smoothly in the bass line," not "this slash-chord's bass
@@ -309,7 +316,9 @@ simplify without understanding the specific failure each one prevents.
 
 Lambda at chordanalyzer.cpp:~L2190 (Iter 95). Fires when:
 
-- `jointScoringEnabled`, `!explorationMode`, `context` available,
+- `jointScoringEnabled`, `context` available,
+- the call site is in `ScoringPhase::Final` (the stateless `wSeqBonus` is simply not
+  called in `ScoringPhase::Segmentation`),
 - `context->nextRootPc >= 0`,
 - `distinctPcs >= 4`,
 - the next region's root sits a perfect fourth above the candidate root
@@ -324,7 +333,9 @@ signal: any inversion of the candidate qualifies (the bonus does NOT require
 
 Lambda at chordanalyzer.cpp:~L2209 (Iter 96). Fires when:
 
-- `jointScoringEnabled`, `!explorationMode`, `context` available,
+- `jointScoringEnabled`, `context` available,
+- the call site is in `ScoringPhase::Final` (the stateless `wDimBonus` is simply not
+  called in `ScoringPhase::Segmentation`),
 - `context->nextRootPc >= 0`,
 - quality is `Diminished` or `HalfDiminished`,
 - `distinctPcs >= 4`,
@@ -361,21 +372,32 @@ partial-match score above a complete major triad. Schumann D-major and
 Corelli G-major snapshots flipped to aug7 under the relaxed guard. The dual
 `||` is correct and load-bearing.
 
-### `explorationMode` flag (ChordAnalyzerPreferences)
+### `ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)
 
-`bool explorationMode = false` (chordanalyzer.h:~L451). Set `true` by
-`greedyExpandSegmentation` for internal boundary-exploration `analyzeChord`
-calls (Round 1 head/tail synthesis + Round 2 region scoring in
-`harmonicsegmenter.cpp::fillGap`).
+`function::ScoringPhase scoringPhase = function::ScoringPhase::Final`
+(`ChordAnalyzerPreferences`, `chordanalyzer.h`). The enum is defined in
+`chordanalyzer.h` (in the `mu::composing::function` namespace, alongside the
+`ScoringSnapshot` forward declaration) rather than in `harmonicfunctionlayer.h`, because
+the include chain runs `harmonicfunctionlayer.h → chordanalyzer.h` and the
+`= ScoringPhase::Final` default member initializer needs the complete enum.
 
-Suppresses all context-dependent bonuses that would otherwise bias sub-region
-bass selection during segmentation, before the final per-region scoring pass
-runs: `w_stepIn`, `w_stepOut`, `w_seq`, `w_dim`. Final per-region calls
-(bridge / batch_analyze callers, after segmentation returns boundaries)
-leave the flag at `false`.
+Set to `ScoringPhase::Segmentation` by `greedyExpandSegmentation` for internal
+boundary-exploration `analyzeChord` calls (Round 1 head/tail synthesis + Round 2 region
+scoring in `harmonicsegmenter.cpp::fillGap`). Forwarded by `analyzeChord` to
+`applyHarmonicFunction(..., prefs.scoringPhase)`.
 
-Do not remove this flag without designing a different way to keep
-segmentation-internal scoring stable.
+`ScoringPhase::Segmentation` suppresses the progression signals that would otherwise bias
+sub-region bass selection during segmentation, before the final per-region scoring pass
+runs: `w_stepIn`, `w_stepOut`, `w_seq`, `w_dim`, **and Gate R**. `rootContinuityBonus`
+stays active in both phases (segmentation depends on it). This replaced the former
+per-function `explorationMode` flag: the bonus functions and Gate R predicate are now
+stateless, and the phase is consulted once inside `applyHarmonicFunction()`
+(`const bool applyProgressionSignals = (phase == ScoringPhase::Final)`). Final per-region
+calls (bridge / batch_analyze callers, after segmentation returns boundaries) leave the
+default `ScoringPhase::Final`.
+
+Do not collapse this into a single inline flag again without preserving the stateless
+bonus functions and the single control point.
 
 ### Other terms (briefly)
 
@@ -533,14 +555,16 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   Both density-based and inversion-aware variants tried; both regress
   mozart_k280-1 IV→V65 Alberti bass.
 
-- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** —
-  `explorationMode`, root-position guard, first-inversion-m7-family surgical
-  guard, power-quality exclusion. Each prevents a specific documented
-  regression.
+- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the
+  `ScoringPhase::Final` call-site gate, root-position guard,
+  first-inversion-m7-family surgical guard, power-quality exclusion. Each prevents
+  a specific documented regression.
 
-- **`explorationMode` must suppress all context-dependent bonuses.** Step,
-  seq, and dim bonuses all check this flag. Adding a new context bonus
-  without checking `explorationMode` will cause segmentation regressions.
+- **`ScoringPhase::Segmentation` must suppress all context-dependent bonuses.** Step,
+  seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at
+  the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions).
+  Adding a new context bonus without gating it on `applyProgressionSignals` /
+  `ScoringPhase::Final` will cause segmentation regressions.
 
 - **Template arrays and score matrices update atomically.** 4 sites:
   `analyzeChord` template array, `kDiagTemplates`, three score matrices.
@@ -638,9 +662,12 @@ Derived from the B1, B2, and B3 lessons.
 **Module:** `src/composing/analysis/function/harmonicfunctionlayer.{h,cpp}`
 
 A post-analysis pass that sits between `analyzeChord()` output and the final
-chord label. Called from `regionanalyzer.cpp` after each non-exploratory
-`analyzeChord()` call — gated on `!prefs.explorationMode` — at three sites:
-Pass 1 (~L444+refinement), Pass 2 (~L637+refinement), Pass 2b (~L814+refinement).
+chord label. Since E2d it is called from inside `analyzeChord()` itself as
+`applyHarmonicFunction(..., prefs.scoringPhase)`; the phase parameter — not a
+separate caller-side gate — decides whether the progression signals apply
+(`ScoringPhase::Segmentation` for `greedyExpandSegmentation`'s exploratory calls,
+`ScoringPhase::Final` otherwise). (Historical: in E1/E2 this was three explicit
+`!prefs.explorationMode`-gated calls in `regionanalyzer.cpp`; see §11.)
 
 `HarmonicFunctionContext` carries: `keyFifths`, `keyMode`, `previousRootPc`,
 `nextRootPc`. Extended in E4 with phrase-boundary and cadence evidence.

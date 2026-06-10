@@ -25,6 +25,7 @@
 #pragma once
 #include <algorithm>
 #include <array>
+#include <cstdint>
 #include <cstdlib>
 #include <memory>
 #include <string>
@@ -34,9 +35,24 @@
 #include "../key/keymodeanalyzer.h"
 
 // Forward declaration — avoids a circular include with harmonicfunctionlayer.h
-// (which itself includes this header). Full definition is in harmonicfunctionlayer.h.
+// (which itself includes this header). Full definition of ScoringSnapshot is in
+// harmonicfunctionlayer.h.
 namespace mu::composing::function {
 struct ScoringSnapshot;
+
+/// Scoring phase for applyHarmonicFunction(). Selects whether the competition
+/// pipeline applies the progression signals (w_seq / w_dim / step bonuses) and Gate R.
+///
+/// Defined HERE rather than in harmonicfunctionlayer.h on purpose: ChordAnalyzerPreferences
+/// carries a ScoringPhase, and chordanalyzer.h cannot include harmonicfunctionlayer.h —
+/// the include runs the other way (see the forward declaration above). A forward-declared
+/// enum would not satisfy the `= ScoringPhase::Final` default member initializer either.
+/// harmonicfunctionlayer.h sees the full definition through its include of this header.
+enum class ScoringPhase : uint8_t {
+    Segmentation, ///< Boundary exploration — progression signals suppressed and Gate R
+                  ///< skipped; rootContinuityBonus stays active (segmentation depends on it).
+    Final         ///< Per-region final scoring — all signals active.
+};
 } // namespace mu::composing::function
 
 namespace mu::composing::analysis {
@@ -467,14 +483,17 @@ struct ChordAnalyzerPreferences {
     /// Range: 1–3.  Default: 3.
     int minDistinctPcsForCandidate = 3;
 
-    /// When true, suppress voice-leading step bonuses (w_stepIn / w_stepOut) inside
-    /// analyzeChord().  greedyExpandSegmentation() sets this on every internal
-    /// analyzeChord call it makes during boundary exploration: the step bonus would
-    /// otherwise bias sub-region bass selection toward stepwise candidates and
-    /// redirect segmentation before the final per-region scoring pass runs.  The
-    /// final per-region pass (bridge / batch_analyze callers, after segmentation
-    /// returns boundaries) leaves this at the default false so the bonus applies.
-    bool explorationMode = false;
+    /// Scoring phase forwarded to applyHarmonicFunction().  Set to
+    /// `function::ScoringPhase::Segmentation` for boundary-exploration calls
+    /// (greedyExpandSegmentation's internal analyzeChord calls): this suppresses the
+    /// progression signals (w_seq / w_dim / step bonuses) and skips Gate R, which would
+    /// otherwise bias sub-region bass selection and shift region boundaries before the
+    /// final per-region scoring pass runs.  rootContinuityBonus stays active in both
+    /// phases — segmentation depends on it.  The default
+    /// `function::ScoringPhase::Final` is used by all per-region analysis calls
+    /// (bridge / batch_analyze, after segmentation returns boundaries) so every signal
+    /// applies.
+    function::ScoringPhase scoringPhase = function::ScoringPhase::Final;
 
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 

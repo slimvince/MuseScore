@@ -42,9 +42,9 @@ double rootContinuityBonus(int candidateRootPc, int previousRootPc,
 }
 
 double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
-                 bool jointScoringEnabled, bool explorationMode)
+                 bool jointScoringEnabled)
 {
-    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (!jointScoringEnabled) return 0.0;
     if (nextRootPc < 0 || distinctPcs < 4) return 0.0;
     const int delta = ((nextRootPc - candRootPc) % 12 + 12) % 12;
     return (delta == 5) ? kWSeq : 0.0;
@@ -52,9 +52,9 @@ double wSeqBonus(int candRootPc, int nextRootPc, int distinctPcs,
 
 double wDimBonus(int candRootPc, ChordQuality quality,
                  int nextRootPc, int distinctPcs,
-                 bool jointScoringEnabled, bool explorationMode)
+                 bool jointScoringEnabled)
 {
-    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (!jointScoringEnabled) return 0.0;
     if (nextRootPc < 0 || distinctPcs < 4) return 0.0;
     if (quality != ChordQuality::Diminished && quality != ChordQuality::HalfDiminished) return 0.0;
     const int delta = ((nextRootPc - candRootPc) % 12 + 12) % 12;
@@ -71,10 +71,10 @@ bool isSemitoneOrToneStep(int interval)
 } // namespace
 
 double wStepInBonus(int candBassPc, int rootPc,
-                    bool jointScoringEnabled, bool explorationMode,
+                    bool jointScoringEnabled,
                     int previousBassPc)
 {
-    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (!jointScoringEnabled) return 0.0;
     if (candBassPc != rootPc) return 0.0;
     const int prev = previousBassPc;
     if (prev < 0 || prev == candBassPc) return 0.0;
@@ -83,10 +83,10 @@ double wStepInBonus(int candBassPc, int rootPc,
 }
 
 double wStepOutBonus(int candBassPc, int rootPc,
-                     bool jointScoringEnabled, bool explorationMode,
+                     bool jointScoringEnabled,
                      int nextBassPc)
 {
-    if (!jointScoringEnabled || explorationMode) return 0.0;
+    if (!jointScoringEnabled) return 0.0;
     if (candBassPc != rootPc) return 0.0;
     const int next = nextBassPc;
     if (next < 0 || next == candBassPc) return 0.0;
@@ -140,12 +140,13 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
     return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
 }
 
-/// Gate R decision — see the header for the four-condition contract. Encodes the full
-/// guard so both the production call site and the unit tests share one definition.
-bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb,
-                               bool explorationMode) noexcept
+/// Gate R decision — see the header for the three-condition structural contract. The
+/// phase guard ("final-scoring only") lives at the call site, not here. Encodes the
+/// structural guard so both the production call site and the unit tests share one
+/// definition.
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept
 {
-    return rcb > 0.0 && !explorationMode && cell.basisDep <= 0.0
+    return rcb > 0.0 && cell.basisDep <= 0.0
            && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc);
 }
 
@@ -178,8 +179,7 @@ analysis::RawCandidate toRaw(const WorkCand& c)
 /// Min7} scores within kStepBudget of this candidate's unbonused score.
 void applyStepBonusGuard(std::vector<WorkCand>& perBass, int candBassPc,
                          const ScoringSnapshot& snapshot,
-                         const HarmonicFunctionContext& ctx,
-                         const analysis::ChordAnalyzerPreferences& prefs)
+                         const HarmonicFunctionContext& ctx)
 {
     const int compRootPc = ((candBassPc - 3) % 12 + 12) % 12;
     for (auto& cand : perBass) {
@@ -191,10 +191,10 @@ void applyStepBonusGuard(std::vector<WorkCand>& perBass, int candBassPc,
         }
         const double stepIn  = wStepInBonus(candBassPc, cand.rootPc,
                                             snapshot.jointScoringEnabled,
-                                            prefs.explorationMode, ctx.previousBassPc);
+                                            ctx.previousBassPc);
         const double stepOut = wStepOutBonus(candBassPc, cand.rootPc,
                                              snapshot.jointScoringEnabled,
-                                             prefs.explorationMode, ctx.nextBassPc);
+                                             ctx.nextBassPc);
         if (stepIn == 0.0 && stepOut == 0.0) {
             continue;
         }
@@ -230,11 +230,19 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
                            const analysis::ChordAnalyzerPreferences&   prefs,
                            std::vector<analysis::ChordAnalysisResult>& results,
                            analysis::ChordAnalysisResult&              chosenResult,
-                           analysis::PostScoringGateContext*           gateCtx)
+                           analysis::PostScoringGateContext*           gateCtx,
+                           ScoringPhase                                phase)
 {
     using analysis::RawCandidate;
 
     results.clear();
+
+    // Single control point for the former explorationMode dual-path. In the
+    // Segmentation phase the progression signals (w_seq / w_dim / step bonuses) are not
+    // applied and Gate R is skipped; rootContinuityBonus stays active (segmentation
+    // depends on it). In the Final phase every signal is active. The bonus functions and
+    // Gate R are now stateless — the phase is consulted only here.
+    const bool applyProgressionSignals = (phase == ScoringPhase::Final);
 
     // ── Re-score every cell with progression signals; run the competition ─────
     //
@@ -276,12 +284,13 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             // bare bass-foreign test alone misfires on the latter. See
             // docs/scoring_model.md §4 Gate R.
             //
-            // !explorationMode: rcb is (by design) NOT suppressed during segmentation
-            // exploration, so segmentation already depends on it. Letting Gate R perturb
-            // rcb during exploration shifts region boundaries (caught at bwv355 m15: a
-            // baseline region split into a spurious G/B sub-region). Gate R is a
-            // final-scoring correction only; with this guard segmentation stays
-            // byte-identical to baseline and the within-region fixes are preserved.
+            // Phase gate (applyProgressionSignals): rcb is (by design) NOT suppressed
+            // during segmentation exploration, so segmentation already depends on it.
+            // Letting Gate R perturb rcb during exploration shifts region boundaries
+            // (caught at bwv355 m15: a baseline region split into a spurious G/B
+            // sub-region). Gate R is a final-scoring correction only; gating it on
+            // ScoringPhase::Final keeps segmentation byte-identical to baseline and the
+            // within-region fixes are preserved.
             //
             // CROSS-LAYER DEPENDENCY: `cell.basisDep <= 0` is used here as a proxy for
             // "this continuation has NO sounding third", which works only because the
@@ -291,19 +300,21 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             // inversion bonuses migrate out of the oracle into this pipeline), basisDep
             // would no longer carry the sounding-third signal and this condition MUST be
             // revisited at the same time, or Gate R will misfire.
-            if (gateRZeroesRootContinuity(cell, rcb, prefs.explorationMode)) {
+            if (gateRZeroesRootContinuity(cell, rcb) && applyProgressionSignals) {
                 rcb = 0.0;
             }
             const double newBasisIndep = cell.basisIndep + rcb;
             double scoreNoWDim = (newBasisIndep + cell.basisDep)
                                  * cell.complexityFactor * cell.augFactor;
             scoreNoWDim += cell.wCompleteBonus;
-            scoreNoWDim += wSeqBonus(cell.rootPc, ctx.nextRootPc, snapshot.distinctPcs,
-                                     snapshot.jointScoringEnabled, prefs.explorationMode);
-            const double wDimDelta = wDimBonus(cell.rootPc, cell.quality, ctx.nextRootPc,
-                                               snapshot.distinctPcs,
-                                               snapshot.jointScoringEnabled,
-                                               prefs.explorationMode);
+            scoreNoWDim += applyProgressionSignals
+                ? wSeqBonus(cell.rootPc, ctx.nextRootPc, snapshot.distinctPcs,
+                            snapshot.jointScoringEnabled)
+                : 0.0;
+            const double wDimDelta = applyProgressionSignals
+                ? wDimBonus(cell.rootPc, cell.quality, ctx.nextRootPc,
+                            snapshot.distinctPcs, snapshot.jointScoringEnabled)
+                : 0.0;
 
             perBassWith.push_back({ scoreNoWDim + wDimDelta, cell.appliedBassBonus,
                                     cell.rootPc, cell.quality, cell.tiePriority,
@@ -314,9 +325,14 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             ++i;
         }
 
-        // Pass B — step bonus + surgical guard, independently per variant.
-        applyStepBonusGuard(perBassWith, groupBassPc, snapshot, ctx, prefs);
-        applyStepBonusGuard(perBassWithout, groupBassPc, snapshot, ctx, prefs);
+        // Pass B — step bonus + surgical guard, independently per variant. Suppressed in
+        // the Segmentation phase: this is the former explorationMode behaviour, now
+        // explicit. The wStep* helpers are stateless, so the phase suppression lives here
+        // rather than inside them.
+        if (applyProgressionSignals) {
+            applyStepBonusGuard(perBassWith, groupBassPc, snapshot, ctx);
+            applyStepBonusGuard(perBassWithout, groupBassPc, snapshot, ctx);
+        }
 
         // Pass C — local best per variant; promote the winning bass globally.
         double localBestWith = -std::numeric_limits<double>::infinity();

@@ -340,11 +340,12 @@ void fillGap(std::vector<PlacedRegion>& regions,
         return;
     }
 
-    // Iter 94 — suppress voice-leading step bonuses for all internal greedy-expand
-    // boundary-exploration analyzeChord calls.  The bonus is only applied in the
-    // final per-region pass after segmentation has produced boundaries.
+    // Iter 94 — run all internal greedy-expand boundary-exploration analyzeChord calls
+    // in the Segmentation phase: the progression signals (voice-leading step bonuses,
+    // w_seq / w_dim, Gate R) only apply in the final per-region pass after segmentation
+    // has produced boundaries.
     analysis::ChordAnalyzerPreferences explorePrefs = prefs;
-    explorePrefs.explorationMode = true;
+    explorePrefs.scoringPhase = function::ScoringPhase::Segmentation;
 
     struct Scored {
         size_t                  idx = 0;
@@ -699,9 +700,10 @@ greedyExpandSegmentation(const Score* score,
     // only; every other caller in the system keeps the default behaviour.
     analysis::ChordAnalyzerPreferences sparsePrefs = prefs;
     sparsePrefs.minDistinctPcsForCandidate = 1;
-    // Iter 94 — internal greedy-expand analyzeChord calls suppress voice-leading
-    // step bonuses; the bonus only applies in the final per-region pass.
-    sparsePrefs.explorationMode = true;
+    // Iter 94 — internal greedy-expand analyzeChord calls run in the Segmentation phase:
+    // the progression signals (voice-leading step bonuses etc.) only apply in the final
+    // per-region pass.
+    sparsePrefs.scoringPhase = function::ScoringPhase::Segmentation;
 
     for (PlacedRegion& region : candidates) {
         const Fraction regionStart = Fraction::fromTicks(region.startTick);

@@ -2965,7 +2965,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 
     std::vector<ChordAnalysisResult> results;
     ChordAnalysisResult chosenResult;
-    fn::applyHarmonicFunction(snapshot, fnCtx, prefs, results, chosenResult, gateCtxOut);
+    fn::applyHarmonicFunction(snapshot, fnCtx, prefs, results, chosenResult, gateCtxOut,
+                              prefs.scoringPhase);
 
     // Gates A-L, the Iter 86/91 promotions and the two-pass pedal detection run
     // externally (applyIter8691Pedal + applyPostScoringGates) at every production
