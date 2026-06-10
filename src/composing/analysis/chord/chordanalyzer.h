@@ -400,13 +400,17 @@ struct ChordAnalyzerPreferences {
     double sameRootInversionBonus = 0.4;
 
     /// Maximum total context bonus that can be applied to any single inversion
-    /// candidate across ALL temporal signals combined (stepwise, lookahead,
-    /// sameRoot, completeTriad, nextRoot, consecutive, recentRoot, weakBeat).
+    /// candidate across the inversion temporal signals combined — the four that
+    /// actually feed the sum in bassDependentContextualBonuses(): stepwise
+    /// (bassIsStepwiseFromPrevious), lookahead (bassIsStepwiseToNext), sameRoot
+    /// (previousRootPc == rootPc), and completeTriad.  The formerly-listed
+    /// nextRoot / consecutive / recentRoot / weakBeat signals were never wired
+    /// into this sum.
     /// Prevents runaway stacking when multiple signals fire simultaneously.
-    /// Default 2.0 — slightly above the old implicit ceiling of 1.85 so new
-    /// signals can contribute marginally at default prefs without large risk.
-    /// Baroque: 2.5 — ~0.65 headroom above old max for amplified signals.
-    /// Jazz: 0.6 — inversion bonuses heavily suppressed.
+    /// Currently INERT on every code path: the cap is never overridden (both
+    /// presets inherit this 2.0 default) and the four bonuses sum to at most
+    /// 1.85 (Baroque/default) or 0.75 (Jazz), so std::min() never clamps.  See
+    /// docs/scoring_model.md §4 ("currently inert" paragraph) for the full story.
     /// Range: 0.0–10.0.  Default: 2.0.
     double maxTotalInversionContextBonus = 2.0;
 
