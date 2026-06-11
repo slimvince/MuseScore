@@ -91,6 +91,8 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/key/modepriorpresets.h"
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/region/regionanalyzer.h"
+#include "composing/analysis/section/sectionanalyzer.h"   // Stage 2.2-i prototype: --section-level
+#include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
 
@@ -485,7 +487,8 @@ static std::vector<AnalyzedRegion> analyzeScore(
     Score* score,
     const std::set<size_t>& excludeStaves,
     const analysis::KeyModeAnalyzerPreferences& keyPrefs = analysis::KeyModeAnalyzerPreferences{},
-    const analysis::ChordAnalyzerPreferences& chordPrefs = analysis::kDefaultChordAnalyzerPreferences)
+    const analysis::ChordAnalyzerPreferences& chordPrefs = analysis::kDefaultChordAnalyzerPreferences,
+    bool sectionLevel = false)
 {
     namespace cra = mu::composing::analysis::region;
 
@@ -527,6 +530,62 @@ static std::vector<AnalyzedRegion> analyzeScore(
 
     if (regions.empty()) {
         return {};
+    }
+
+    // ── Stage 2.2-i prototype: section-level pass ───────────────────────────
+    // When --section-level is on, feed the (preset-specific) analyzeRegions
+    // HarmonicRegion stream into the user-facing section pipeline
+    // (composing/analysis/section/analyzeSection): Pass-1 measure layout +
+    // gap-tone insertion, Pass-4 key/mode stabilization + sparse-quality
+    // refinement, and confidence-gated key-area grouping. The .ours.json schema
+    // is unchanged; fields are populated from the post-section regions.
+    // Additive annotations (cadence markers, pivot labels, key areas) are NOT
+    // emitted this run (schema decision deferred to the dossier). The Pass-0
+    // stream remains batch's preset path so the A/B isolates the section-pass
+    // delta (NOT the notation-bridge default-chordPrefs divergence).
+    if (sectionLevel) {
+        const analysis::AnalyzedSection section = analysis::analyzeSection(
+            score, startTick, endTick, excludeStaves, regions);
+
+        std::vector<AnalyzedRegion> sectionResult;
+        sectionResult.reserve(section.regions.size());
+        for (const auto& sr : section.regions) {
+            const Fraction regionStart = Fraction::fromTicks(sr.startTick);
+            const MeasureTickInfo regionMeasure = locateMeasureByTick(score, regionStart);
+            const Measure* measure = regionMeasure.measure;
+
+            AnalyzedRegion ar;
+            ar.startTick        = sr.startTick;
+            ar.endTick          = sr.endTick;
+            ar.measureNumber    = measure ? regionMeasure.number : 0;
+            if (measure) {
+                const int tickInMeasure = sr.startTick - measure->tick().ticks();
+                ar.beat = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
+            } else {
+                ar.beat = 1.0;
+            }
+            ar.chord            = sr.chordResult;
+            ar.hasAnalyzedChord = sr.hasAnalyzedChord;
+            ar.tones            = sr.tones;
+            ar.key              = sr.keyModeResult;
+            // Runner-up key is not produced by the section pass (stabilization
+            // overwrites the per-region winner); emit a single-element ranking
+            // so keyModeRunnerUp serializes as null. Core BIR/rn metrics read
+            // root/quality/bass/ticks/key only — not the runner-up field.
+            ar.keyRanked        = { sr.keyModeResult };
+            ar.pcMask           = pitchClassMask(ar.tones);
+            ar.bassPc           = sr.chordResult.identity.bassPc;
+            if (ar.bassPc < 0) {
+                if (const auto* bassTone = analysis::bassToneFromTones(ar.tones)) {
+                    ar.bassPc = bassTone->pitch % 12;
+                }
+            }
+            for (size_t altIdx = 0; altIdx < sr.alternatives.size() && altIdx < 3; ++altIdx) {
+                ar.alternatives.push_back(sr.alternatives[altIdx]);
+            }
+            sectionResult.push_back(std::move(ar));
+        }
+        return sectionResult;
     }
 
     const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
@@ -1040,6 +1099,7 @@ static void printHelp(const std::string& prog)
         << "  " << prog << " <input.[xml|musicxml|mxl|mscz|mscx]> [output.json]"
                            " [--preset Standard|Jazz|Modal|Baroque|Contemporary]"
                            " [--dump-regions batch|notation|notation-premerge]"
+                           " [--section-level]"
                            " [--diagnose-measures N[,N...]]\n"
         << "\n"
         << "  Loads a score, runs harmonic analysis (ChordAnalyzer + KeyModeAnalyzer)\n"
@@ -1053,6 +1113,11 @@ static void printHelp(const std::string& prog)
         << "            tool's current batch path, 'notation' writes the live notation\n"
         << "            bridge result, 'notation-premerge' writes the notation\n"
         << "            bridge regions before same-chord merge/absorption.\n"
+        << "  --section-level\n"
+        << "            (Stage 2.2 prototype) Run the user-facing section pipeline\n"
+        << "            (analyzeSection: measure layout, gap-tone insertion, key/mode\n"
+        << "            stabilization, sparse-quality refinement) on top of the batch\n"
+        << "            region stream. Default OFF. Only affects --dump-regions batch.\n"
         << "  --diagnose-measures N[,N,...]\n"
         << "            Per-measure diagnostic mode. For each listed measure number,\n"
         << "            emits a JSON block with collected notes, per-PC weights, and\n"
@@ -1093,6 +1158,7 @@ int main(int argc, char* argv[])
     std::string presetName = "Standard";
     RegionDumpMode dumpMode = RegionDumpMode::Batch;
     std::set<int> diagnoseMeasures;
+    bool sectionLevel = false;   // Stage 2.2-i prototype (default OFF)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -1121,6 +1187,8 @@ int main(int argc, char* argv[])
                           << "'. Valid values: batch, notation, notation-premerge\n";
                 return 1;
             }
+        } else if (a == "--section-level") {
+            sectionLevel = true;
         } else if (a == "--diagnose-measures") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --diagnose-measures requires a comma-separated list of measure numbers\n";
@@ -1216,7 +1284,7 @@ int main(int argc, char* argv[])
     // ── Analyze harmonic regions (key inferred locally per region) ────────
     std::vector<AnalyzedRegion> regions;
     if (dumpMode == RegionDumpMode::Batch) {
-        regions = analyzeScore(score, excludeStaves, keyPrefs, chordPrefs);
+        regions = analyzeScore(score, excludeStaves, keyPrefs, chordPrefs, sectionLevel);
     } else {
         RegionDumpBundle notationDump = analyzeScoreNotation(score, excludeStaves);
         if (dumpMode == RegionDumpMode::NotationPreMerge) {
