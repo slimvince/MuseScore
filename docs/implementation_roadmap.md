@@ -21,8 +21,15 @@ throughout Stages 0–2; Stage 3+ re-baselines deliberately and explicitly.
 bounds check, dead fnCtx fields removed, FP tie policy, divergence docs), `70fd8a686b`
 (0.4 — junk files were tracked, swept into an old feature commit; removed + gitignored by
 glob, U+F03A names; no generator exists, post-build proof clean). Gate 0→1 passed:
-416/416 · 52/52 · 11/11, zero diffs, BIR 13/7 both presets. Deferred follow-up: reconcile
-CLAUDE.md "4-site atomic update" section with the compiler-enforced kTemplateCount model.
+416/416 · 52/52 · 11/11, zero diffs, BIR 13/7 both presets.
+**Doc pass complete `af39f28179` (2026-06-10):** CLAUDE.md kTemplateCount + cap truth;
+scoring_model §2/§4/§5/§6/§8 reconciled with the Stage-1b verified inventory; handoff
+Jazz re-attribution; cap archaeology verdict = **2.5/0.6 never set in committed code**
+(aspirational since field introduction `46c76ad67f`; only an uncommitted Baroque
+cap=1.0 experiment ever existed). **Residual:** `chordanalyzer.h:402–409` field
+doc-comment still claims "Baroque: 2.5 / Jazz: 0.6" and lists removed signals
+(nextRoot/consecutive/recentRoot/weakBeat) — 2-line comment fix to ride with the next
+code-touching commit.
 
 Make every instrument we will rely on later trustworthy. All items byte-identical.
 
@@ -49,14 +56,17 @@ each gate's pinned behavior is the proof obligation when the decoder later subsu
 |---|------|--------|--------|
 | 1.1 | ✅ DONE `6101a9b2c5` — 48 tests in `postscoringgates_tests.cpp` (composing 487/487). Survey produced the definitive gate inventory (`cc_stage1b_report.md` §1, verified by Cowork on F1 + preset caps). Findings F1–F8: **B/C/D are dead code** (A's fast path always wins — verified in code by Cowork); shared outer guard (suspicionMargin=0 / distinctPcs<3 kills ALL gates); Gate J runs LAST; mixed live/captured winner reads in H/I/K/L; Gate F missing quality/pcWeight guards; G-E threshold-free pull + duplicate push; post-gate unsorted results[]. All → Stage-3 obligations + doc pass | Part 2 Q5.1 | each gate individually toggleable in test; count documented |
 | 1.2 | ✅ DONE `757efa5dbf` — 23 tests in `functionlayer_tests.cpp` (composing 439/439). Findings F1–F5 in `cc_stage1a_report.md` §3: F1 §2 Sus4♭5/HalfDim "identical PC sets" wording → doc pass; F2 post-bonus guard first-wins tie scan + F5 threshold-gated diff-root append → Stage 3 obligation list; F3/F4 pinned | Part 2 Q5.2 | scoring_model §8 constraints each have a pinning test |
-| 1.3 | Unit tests for segmentation passes: absorbShortRegions, coalesceShortSameRootRuns, inline same-root merge, Pass 2/2b boundary detection | Part 2 Q5.3 | synthetic region fixtures |
-| 1.4 | Unit tests for `harmonicsegmenter` (fillGap rounds, Segmentation-phase scoring) and `keyresolver` (ranked output, promoteWinnerInPlace hysteresis, partial-signature fix `81978321e3`) | Part 2 Q5.4 | |
+| 1.3 | ✅ PARTIAL `4656f43258` — pinned: absorbShortRegions root-agnostic (G2: order-coupled with coalesce), inline same-root merge fire/block, clean-changes preservation. **Gate 1→2 exceptions (NOT-PINNED, become HARD obligations when Stage 3 touches these passes):** coalesceShortSameRootRuns, Pass 2/2b boundaries + minGapTicks floor, sub-region bassIsStepwiseToNext (verified-by-inspection only) — emergent triggers, indirect corpus coverage; reasons in `cc_stage1c_report.md` §3 | Part 2 Q5.3 | synthetic region fixtures |
+| 1.4 | ✅ DONE `4656f43258` — keyresolver: ranked output, piece-start shortcut (G3: size-1 list!), insufficient-data fallback, partial-signature fix both directions, **promoteWinnerInPlace confidence wart pinned with real numbers (G1: promoted winner carries ≈0.07 — THE Stage-4 rebaseline anchor)**; harmonicsegmenter Round-1 anchors (Round-2/fillGap NOT-PINNED, code-verified). Findings G1–G5 → Stage-4 list (G1/G4/G5), Stage-3 list (G2). Infra: composing tests now load .mscx (engraving env copy in tests/environment.cpp) | Part 2 Q5.4 | |
 | 1.5 | ✅ DONE `6101a9b2c5` — all four pinned: Gate J bwv110.7 end-to-end, Sub-9a ordering test (decoy proves historical-bug visibility; arithmetic verified by Cowork), Δ=+7b end-to-end shape (bwv320 mapping), Iter 92 both bugs. Pedal already pinned by 8 existing tests (cross-referenced) | Part 2 Q5.5; audit doc rec. | removing the fix fails the test |
-| 1.6 | Tests for the Python metric scripts (`compare_analyses` alignment, `characterise_bir_false`, `compare_rn` classifier) — the de-facto metric definitions; one classifier bug already cost weeks | Part 2 Q6 | known-input/known-output fixtures in tools/tests |
+| 1.6 | ✅ DONE `bb48394b52` — 54 unittest tests in `tools/tests/test_metric_scripts.py` + hand-derived fixtures (README with derivations). All claims [code]/[probe]-tagged; non-vacuousness mutation check. Findings F-1 (`extract_quality` misses letter-`o` dim), F-2 (Ger65/N6/It6 mis-parses), F-3 (the "24" is NOT produced by characterise_bir_false.py — provenance untraced) → bundled into Stage 2.2's single re-baseline event | Part 2 Q6 | known-input/known-output fixtures in tools/tests |
 | 1.7 | ✅ DONE `757efa5dbf` — exact-tie (tiePriority, rootPc fallback) + 0.02 near-tie FP canary, in `functionlayer_tests.cpp` | Part 2 Q6 | |
 
-**Gate 1 → 2:** every §8 load-bearing constraint and every gate has at least one pinning
-test; metric scripts tested. Test counts recorded in STATUS.md as the new baseline.
+**Gate 1 → 2: ✅ PASSED 2026-06-10** (commits `757efa5dbf`, `6101a9b2c5`, `4656f43258`,
+`bb48394b52`). Composing 416→498 + 54 Python metric tests. Documented exceptions
+(1.3 NOT-PINNED: coalesceShortSameRootRuns, Pass 2/2b boundaries, sub-region
+bassIsStepwiseToNext) become hard obligations when Stage 3 touches those passes.
+Metric-bug decisions (1.6 F-1/F-2/F-3) deferred into Stage 2.2's re-baseline.
 
 ---
 
@@ -67,8 +77,9 @@ production scorer. Without this, Stage 3 results can't be trusted ("no surprises
 
 | # | Item | Source | Verify |
 |---|------|--------|--------|
-| 2.1 | **Phase 4c move**: relocate `analyzeSection` + cadence detection + pivot detection + `stabilizeHarmonicRegionsForDisplay` + degree computation from `notationcomposingbridgehelpers.cpp` into composing/ (notation keeps thin emitters only). Tests (notationannotate cadence/pivot) move/point accordingly | Part 2 Q1.1, Q2.1 | byte-identical on snapshots + corpus; Dependency Rule restored |
-| 2.2 | **Batch parity**: `batch_analyze` gains the section-level pass (flag or default) so BIR/rn metrics measure the user-facing pipeline. Regenerate baselines; record old-vs-new BIR deltas explicitly (expected to shift — this is a *measured re-baseline, not a regression*) | Part 2 Q1.1 | new baselines in STATUS.md with old↔new mapping table |
+| 2.1 | ✅ DONE `eeca0dea30` (rider) + `8598cbd245` (move) — `analysis/section/sectionanalyzer.{h,cpp}` (Option D: Pass-0 regions injected, composing stays config/notation-agnostic — chosen for the layer shape Stage 3/E needs and so 2.2's batch can pass its own regions). Byte-identical: snapshots 11/11 zero diffs, Baroque 13. Cadence/pivot tests stayed in notation tests (include updates; allowed alternative). Dead weight/pitch-context shims found (no live caller) — Stage-2 cleanup list. **Jazz "nondeterminism" investigated en route: M3 = shared `tools/corpus` contamination (FAILED-worker stale files + skip_cpp reuse + no preset guard), NOT C++/Python — both proven deterministic (Jazz 7, Baroque 13; 0/353 double-regen, retroactively validating all historical A/B checks).** `cc_jazz_nondeterminism_report.md` | Part 2 Q1.1, Q2.1 | byte-identical on snapshots + corpus; Dependency Rule restored |
+| 2.2a | **Corpus-measurement hardening** (from the M3 finding; do BEFORE 2.2): per-preset corpus dirs + preset/completeness stamp validation, fail-loud on FAILED workers and `compared_n < total`, `--corpus-dir` for characterise; CLAUDE.md/build_and_test.md command sync; extend tools/tests to pin the new validation. Tooling-only, metric definitions unchanged | M3 fix design (#1+#3) | both presets regenerate side-by-side: Baroque 13 + Jazz 7 with known identity sets; contamination scenario now fails loudly |
+| 2.2 | **Batch parity**: `batch_analyze` gains the section-level pass (flag or default) so BIR/rn metrics measure the user-facing pipeline. Regenerate baselines; record old-vs-new BIR deltas explicitly (expected to shift — this is a *measured re-baseline, not a regression*). **Bundle the Stage-1d metric-bug decisions into this same re-baseline event:** F-1 `extract_quality` recognizes only `°` not `o` (dim→Min misclassification, both sides), F-2 Ger65/N6→`?`, It6→Maj (`cc_stage1d_report.md` §4) — fix or consciously keep, ONE re-baseline. Also trace the provenance of the BIR=true "24" (Stage-1d F-3: not produced by characterise_bir_false.py) | Part 2 Q1.1; Stage-1d F1–F3 | new baselines in STATUS.md with old↔new mapping table |
 | 2.3 | **diagnoseChord becomes a view into production**: replay `applyHarmonicFunction` on the real snapshot (with a context dump), or stamp every dump "oracle-only — excludes progression signals" at minimum. Preferred: full replay | Part 2 Q1.4; principle #2 | a Δ=+7b-style case diagnosed via diagnoseChord shows the same winner as production |
 | 2.4 | Document/decide P4 divergence: either feed P4 the accumulated context (pre-pass) or document cold-context as the contract; same decision for bridge cold-predecessor (`findTemporalContext` nullptr context). A full forward pre-pass is its own design — decide, don't drift | Part 2 Q1.2/1.3 | written decision in ARCHITECTURE.md |
 | 2.5 | Profile P3 status-bar path (re-analysis per query, no caching) — capture numbers before decoder cost is added | Part 2 Q6 | profile note committed |

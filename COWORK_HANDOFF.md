@@ -35,6 +35,25 @@ Mandatory reads at the start of every session:
 
 CC's report references task numbers, design decisions, and deviations that only make sense against the original instruction. Evaluating the report without re-reading the instruction means accepting CC's framing uncritically — which is exactly the failure mode we guard against.
 
+**STANDING RULE — CC trust model (made permanent 2026-06-10, user mandate):**
+1. **Never fully trust CC.** CC can hallucinate, guess, and present guesses as findings.
+   Every consequential CC claim gets independent verification before acceptance:
+   commit contents via `git show --stat`, code claims via host-side Read/Grep of the
+   actual source, numeric claims against recorded baselines. Track record this session:
+   CC has been right where verifiable most of the time, but produced at least one
+   guessed mechanism stated as fact ("parallel batch path resolves ties
+   nondeterministically" — wrong, batch_analyze has no threading) and one
+   imprecise-memory claim (junk files "M/regenerated" — that one was Cowork's own
+   stale-sandbox error; verification cuts both ways).
+2. **CC does not hold the bigger picture — Cowork does.** CC optimizes the task in
+   front of it. Cross-cutting consequences (gate semantics, baseline integrity, layer
+   architecture, re-baseline bundling, what a finding means for Stages 2–6) are
+   Cowork's to evaluate. When CC proposes a disposition for a finding ("log it for
+   later", "not a blocker"), treat that as input, not a decision.
+3. Both rules also bind Cowork's instructions to CC: the never-guess /
+   investigate-or-state-unknown rule (introduced Stage 1d) is standing for ALL future
+   instructions, not per-instruction boilerplate.
+
 ---
 
 ## Two worktrees
@@ -150,14 +169,63 @@ before any code direction is imposed.
   at current sums (1.85 default / 0.75 Jazz) — the documented 2.5/0.6 "load-bearing"
   values exist nowhere.
 
-- **Next CC task — doc pass (instruction ready):** `cc_instruction_doc_pass_caps_and_gates.md`
-  — Task 1 is a BLOCKING archaeology (`git log -S maxTotalInversionContextBonus`): if
-  Jazz=0.6 was ever active and later removed, STOP (it would have been binding — Jazz
-  baselines suspect). Otherwise: scoring_model §2/§4/§6/§8 reconciliation, CLAUDE.md
-  (4-site→kTemplateCount + cap fiction), handoff Jazz-characterisation re-attribution,
-  roadmap 3.4b row (deferred B/C/D removal). Doc-only commit, direct.
-  Then Stage 1c (segmentation passes, harmonicsegmenter, keyresolver) → 1d (Python
-  metric-script tests).
+- **✅ Doc pass COMPLETE — `af39f28179`** (4 files, verified by Cowork incl. CLAUDE.md
+  via session context). Cap archaeology: ⛔ did NOT fire — **2.5/0.6 never set in any
+  committed code** (aspirational doc-comment since `46c76ad67f`; zero `-G` assignment
+  hits; the iteration plan itself prescribed the non-binding 2.0 default). Jazz
+  baselines unaffected. Residual for next code-touching commit:
+  `chordanalyzer.h:402–409` doc-comment still carries the 2.5/0.6 fiction + a stale
+  signal list (nextRoot/consecutive/recentRoot/weakBeat).
+
+- **✅ Stage 1c COMPLETE — `4656f43258`** (11 tests, composing 487→498/498; 9 minimal
+  .mscx fixtures; composing tests can now load Scores via the engraving test env).
+  Verified by Cowork (report + key tests + env file host-side). NOT-PINNED under scope
+  valve (recorded as Gate 1→2 exceptions in roadmap 1.3): coalesceShortSameRootRuns,
+  Pass 2/2b boundaries, sub-region bassIsStepwiseToNext. Findings G1–G5: G1 confidence
+  wart pinned with real numbers (Stage-4 anchor), G2 root-agnostic absorb order-coupled
+  with coalesce (Stage 3), G3 piece-start returns size-1 list, G4 sentinel confidences
+  (0.0/0.5 hard-coded), G5 partial-sig correction is whole-score (Stage 4).
+
+- **✅ Stage 1d COMPLETE — `bb48394b52` — GATE 1→2 PASSED.** 54 metric-script tests +
+  hand-derived fixtures; scripts untouched; [code]/[probe] epistemic tagging honored;
+  non-vacuousness mutation check. Findings F-1/F-2 (extract_quality dim-`o` miss,
+  Ger65/N6/It6 mis-parses) + F-3 ("24" provenance untraced) → Stage 2.2 single
+  re-baseline event. F-3 handoff wording already corrected by Cowork (BIR script note
+  above).
+
+- **✅ RESOLVED (2026-06-10): the Jazz "nondeterminism" was M3 — corpus-state
+  contamination, not analysis nondeterminism.** Proven by probe (`cc_jazz_nondeterminism_report.md`):
+  Jazz is deterministic 7, Baroque deterministic 13; 2 full regens, 0/353 JSON diffs —
+  **C++ batch determinism proven, retroactively validating all historical A/B checks.**
+  Mechanism: shared `tools/corpus` + FAILED-worker stale files (`run_bach_preset.py:113–122`)
+  + `skip_cpp` reuse + no preset guard in characterise. Canonical Jazz 7-case identity
+  set: {bwv244.15, 245.17, 245.40, 422, 432, 45.7, 74.8}.
+  **INTERIM GATE (until 2.2a lands):** "Jazz ≤ 7" means a clean 353/353 regen yielding
+  that identity set, with Baroque=13 + snapshots as co-gates — not the raw integer.
+
+- **✅ Stage 2.1 COMPLETE — `eeca0dea30` (rider) + `8598cbd245` (Phase 4c move,
+  Option D).** Snapshots 11/11 zero diffs (decisive). `analysis/section/sectionanalyzer.{h,cpp}`;
+  notation helpers shrank ~900 lines to adapter surface; cadence/pivot tests stayed in
+  notation tests (include updates). Dead weight/pitch-context shims (no live caller) →
+  Stage-2 cleanup list.
+
+- **Next CC task — Stage 2.2a (instruction ready):** `cc_instruction_stage2_2a_corpus_hardening.md`
+  — per-preset corpus dirs (`tools/corpus/{baroque,jazz}/`) + manifest/completeness
+  validation + fail-loud + `--corpus-dir`; CLAUDE.md/build_and_test.md command sync;
+  new validation pinned in tools/tests; contamination probe must ERROR. Tooling-only,
+  metric definitions untouched. Also carries the bookkeeping docs commit. After 2.2a:
+  the interim gate wording retires; then 2.2 batch parity + single re-baseline
+  (incl. metric decisions F-1/F-2, "24" provenance), 2.3 diagnoseChord, 2.4, 2.5.
+  — Phase 4c move: `analyzeSection` + section-level analysis (cadences, pivots,
+  stabilization, degree, key-resolution wrappers) from `notationcomposingbridgehelpers.cpp`
+  into composing (suggested `analysis/section/`). Mechanical relocation, byte-identical;
+  **zero snapshot diffs is the decisive proof** (snapshot tests call analyzeSection
+  directly). Explicit file authorization includes the notation bridge/implode files
+  (caller updates + code removal only). Test-ledger requirement (coverage provably not
+  dropped). Rider: `chordanalyzer.h:402–409` doc-comment fix. TWO commits proposed
+  (rider + move), both await Cowork. First production-code instruction since the
+  reviews. Then 2.2 batch parity + single re-baseline (metric-bug decisions F-1/F-2,
+  "24" provenance trace), 2.3 diagnoseChord, 2.4 P4/bridge decision, 2.5 P3 profile.
 
 - **⚠ Cowork sandbox caveat (learned 2026-06-10):** Cowork's Linux-sandbox view of the
   repo can serve STALE git/file state (symptoms: spurious ` M` entries, index.lock unlink
@@ -246,10 +314,14 @@ before any code direction is imposed.
   Baroque BIR=true=24, BIR=false=13; Jazz BIR=true=35, BIR=false=7.
   Hard stops: Baroque BIR=false must not increase above 13; Jazz BIR=false must not increase above 7.
   Cumulative since Iter 91: Baroque BIR=false 188 → 13 (−175, ~93% reduction).
-  **IMPORTANT — BIR script note:** The 24/13 figure comes from `tools/characterise_bir_false.py`
-  (lenient-OR align_regions comparator). `tools/analyze_inversion_errors.py` reports a DIFFERENT
-  metric (music21∩DCML bassIsRoot three-way split: 27/22) — these are NOT the same number and
-  should not be used interchangeably in instructions.
+  **IMPORTANT — BIR script note (corrected 2026-06-10, Stage 1d F-3):** the **13**
+  (BIR=false residual count) comes from `tools/characterise_bir_false.py` (lenient-OR
+  align_regions comparator). That script does NOT compute the **24** (BIR=true) — the
+  24's producing script was not established in the Stage-1d survey; treat it as a
+  corpus-characterisation figure of unverified provenance until traced.
+  `tools/analyze_inversion_errors.py` reports a DIFFERENT metric (music21∩DCML
+  bassIsRoot three-way split) — these are NOT the same numbers and must not be used
+  interchangeably in instructions.
   `tools/corpus/` = POST-Gate-R Baroque state (regenerated 2026-06-09, 353 scores).
 
 - **Jazz BIR=false=10 — fully characterised (2026-06-08):** 8 cases shared with Baroque
