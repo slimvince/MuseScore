@@ -17,9 +17,11 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import datetime
+import hashlib
 import io
 import json
 import multiprocessing
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -29,6 +31,66 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import compare_analyses as cmp
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Stage 2.2a — every corpus output dir carries a manifest stamping the preset and
+# a per-score fingerprint, so a metric script can refuse to measure a contaminated
+# or incomplete corpus. Kept in sync with characterise_bir_false.MANIFEST_NAME.
+MANIFEST_NAME = "corpus_manifest.json"
+
+
+def _file_fingerprint(path: Path) -> dict:
+    """Size + sha256 of a file's bytes — the per-score identity recorded in the
+    manifest and re-checked by characterise_bir_false at measurement time."""
+    data = path.read_bytes()
+    return {"size": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+
+
+def _write_manifest(out_dir: Path, preset: str, score_status: dict,
+                    expected_count: int, git_hash: str, timestamp: str,
+                    exe: Path | None) -> dict:
+    """Write corpus_manifest.json into out_dir and return it.
+
+    score_status maps stem -> status string ('OK', 'FAILED', ...). For every 'OK'
+    score the matching {stem}.ours.json must exist in out_dir; its fingerprint is
+    recorded. The corpus is 'complete' iff every expected score is 'OK' and the OK
+    count equals expected_count.
+    """
+    scores = {}
+    ok_count = 0
+    for stem, status in sorted(score_status.items()):
+        entry = {"status": status}
+        if status == "OK":
+            ours = out_dir / f"{stem}.ours.json"
+            if ours.exists():
+                entry.update(_file_fingerprint(ours))
+                ok_count += 1
+            else:
+                entry["status"] = "MISSING_OURS"
+        scores[stem] = entry
+
+    complete = (ok_count == expected_count
+                and all(e["status"] == "OK" for e in scores.values()))
+
+    exe_id = None
+    if exe is not None and Path(exe).exists():
+        st = Path(exe).stat()
+        exe_id = {"path": str(exe), "size": st.st_size, "mtime": int(st.st_mtime)}
+
+    manifest = {
+        "schema": 1,
+        "corpus": "Bach chorales",
+        "preset": preset,
+        "timestamp": timestamp,
+        "git_hash": git_hash,
+        "expected_count": expected_count,
+        "ours_count": ok_count,
+        "complete": complete,
+        "batch_analyze": exe_id,
+        "scores": scores,
+    }
+    (out_dir / MANIFEST_NAME).write_text(
+        json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
+    return manifest
 
 
 def _find_batch_analyze(hint):
@@ -150,6 +212,9 @@ def main():
     parser.add_argument("--corpus-dir", metavar="DIR", default="tools/corpus")
     parser.add_argument("--output-dir", metavar="DIR")
     parser.add_argument("--skip-cpp", action="store_true")
+    parser.add_argument("--resume", action="store_true",
+                        help="Keep existing .ours.json (skip the clean-slate); "
+                             "regenerate only missing files.")
     parser.add_argument("--diag-out", metavar="FILE",
                         help="Append batch_analyze stderr to this file (for diagnostics)")
     args = parser.parse_args()
@@ -160,6 +225,16 @@ def main():
     else:
         out_dir = _REPO_ROOT / "tools" / f"corpus_{args.preset.lower()}"
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Per-preset isolation (Stage 2.2a): when writing into a dedicated output dir,
+    # clean-slate the .ours.json + manifest first so a FAILED worker can never leave
+    # a previous-preset file countable (the M3 contamination mechanism). --resume or
+    # --skip-cpp keep the existing files (re-aggregation / fill-missing).
+    out_is_separate = out_dir.resolve() != corpus_dir.resolve()
+    if out_is_separate and not args.resume and not args.skip_cpp:
+        for stale in list(out_dir.glob("*.ours.json")) + [out_dir / MANIFEST_NAME]:
+            if stale.exists():
+                stale.unlink()
 
     exe = _find_batch_analyze(args.batch_analyze)
     if exe is None and not args.skip_cpp:
@@ -180,11 +255,21 @@ def main():
 
     print(f"\nBach chorales — preset={args.preset}  ({total} files)\n")
 
+    # Make the per-preset dir self-contained: characterise_bir_false reads
+    # {stem}.music21.json alongside {stem}.ours.json from a single --corpus-dir.
+    # The ground-truth music21 files are preset-independent, so copy (not regen).
+    if out_is_separate:
+        for xml_path in xml_files:
+            m21_src = corpus_dir / f"{xml_path.stem}.music21.json"
+            if m21_src.exists():
+                shutil.copy2(m21_src, out_dir / m21_src.name)
+
     agree_sum = 0.0
     compared_n = 0
     total_regions = 0
     total_agree = 0
     total_chord = 0
+    score_status: dict[str, str] = {}
 
     work_items = [
         (idx, exe, xml_path,
@@ -209,6 +294,8 @@ def main():
             if diag_text and diag_fh is not None:
                 diag_fh.write(diag_text)
                 diag_fh.flush()
+
+            score_status[stem] = status
 
             if status == 'SKIP_NO_M21':
                 print(f"  [{idx:>3}/{total}] {stem:<30}  SKIP (no music21.json)")
@@ -271,6 +358,30 @@ def main():
     if diag_fh is not None:
         diag_fh.close()
         print(f"Diagnostic stderr written to {args.diag_out}")
+
+    # ── Manifest stamp + fail-loud completeness check (Stage 2.2a) ────────────
+    manifest = _write_manifest(out_dir, args.preset, score_status,
+                               expected_count=total, git_hash=_get_git_hash(),
+                               timestamp=timestamp, exe=exe)
+    print(f"Manifest written to {out_dir / MANIFEST_NAME}  "
+          f"(preset={args.preset}, complete={manifest['complete']}, "
+          f"{manifest['ours_count']}/{total})")
+
+    if not manifest['complete']:
+        bad = sorted(s for s, st in score_status.items() if st != 'OK')
+        missing = sorted(x.stem for x in xml_files if x.stem not in score_status)
+        print("\n" + "!" * 65, file=sys.stderr)
+        print(f"!! CORPUS INCOMPLETE — preset={args.preset}: "
+              f"{manifest['ours_count']}/{total} OK", file=sys.stderr)
+        if bad:
+            print(f"!!   non-OK scores ({len(bad)}): {', '.join(bad)}", file=sys.stderr)
+        if missing:
+            print(f"!!   never reported ({len(missing)}): {', '.join(missing)}",
+                  file=sys.stderr)
+        print("!!   This corpus is NOT safe to measure — re-run before reading a "
+              "BIR count.", file=sys.stderr)
+        print("!" * 65, file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

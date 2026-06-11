@@ -82,14 +82,27 @@ for BOTH Baroque and Jazz presets. Any BIR=false increase in either preset is a
 hard stop:
 
 ```
-# Baroque
-cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
-cd C:\s\MS && python tools/analyze_inversion_errors.py
+# Baroque (per-preset dir — clean-slated and manifest-stamped each regen)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus/baroque
+cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/baroque
 
-# Jazz  (run immediately after — reuses same output dir)
-cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus
-cd C:\s\MS && python tools/analyze_inversion_errors.py
+# Jazz (independent dir — no contamination; order no longer matters)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus/jazz
+cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/jazz
 ```
+
+Since Stage 2.2a (M3 fix) each preset writes to its **own** dir under `tools/corpus/`
+and stamps a `corpus_manifest.json`. `run_bach_preset.py` clean-slates the dir at the
+start of a regen and **exits nonzero** if the corpus is not 353/353 complete;
+`characterise_bir_false.py` **refuses** to measure a dir whose manifest is missing,
+incomplete, or whose `.ours.json` fingerprints do not match (preset contamination —
+the old shared-`tools/corpus` failure mode). The gate is the **case-identity** set,
+not a bare integer: Baroque = 13, Jazz = 7 with identities
+`{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
+
+(`tools/analyze_inversion_errors.py` is a *separate* secondary metric — `bassIsRoot`
+27/22, not the 13/7 characterise gate — and still reads the legacy flat `tools/corpus`;
+its `--corpus-dir`-ification is a deferred follow-up, out of Stage 2.2a scope.)
 
 If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix is:
 1. A tighter **structural entry condition** that excludes the problematic chord type

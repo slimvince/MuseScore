@@ -17,6 +17,8 @@ Read-only. No source code or corpus mutations.
 """
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
 import sys
 from collections import Counter, defaultdict
@@ -25,12 +27,75 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 _ROOT       = Path(__file__).resolve().parent.parent
-_CORPUS_DIR = _ROOT / "tools" / "corpus"
+# Default to the Baroque per-preset corpus (Stage 2.2a). Pass --corpus-dir to
+# measure a different preset's dir (e.g. tools/corpus/jazz).
+_CORPUS_DIR = _ROOT / "tools" / "corpus" / "baroque"
 _WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
+
+# Kept in sync with run_bach_preset.MANIFEST_NAME.
+MANIFEST_NAME = "corpus_manifest.json"
 
 sys.path.insert(0, str(_ROOT / "tools"))
 import compare_analyses as cmp
 import dcml_parser as dcml
+
+
+class CorpusValidationError(Exception):
+    """Raised when a corpus dir is missing its manifest, is incomplete, or holds a
+    file whose fingerprint does not match the manifest (preset contamination — the
+    M3 mechanism). The measurement must then refuse to run rather than emit a number
+    off a mixed/partial corpus."""
+
+
+def validate_corpus_dir(corpus_dir: Path) -> dict:
+    """Validate that corpus_dir is a single-preset, complete, uncontaminated corpus.
+
+    Returns the parsed manifest on success. Raises CorpusValidationError otherwise.
+    Checks, in order: manifest present & parseable; corpus marked complete with
+    ours_count == expected_count; every OK score's {stem}.ours.json present and
+    sha256-matching the manifest; no extra *.ours.json beyond the OK set.
+    """
+    manifest_path = corpus_dir / MANIFEST_NAME
+    if not manifest_path.exists():
+        raise CorpusValidationError(
+            f"no {MANIFEST_NAME} in {corpus_dir} — regenerate with "
+            f"run_bach_preset.py --preset <P> --output-dir {corpus_dir}")
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise CorpusValidationError(f"{manifest_path} is not valid JSON: {exc}")
+
+    preset = manifest.get("preset", "?")
+    expected = manifest.get("expected_count")
+    ours_count = manifest.get("ours_count")
+    if not manifest.get("complete", False) or ours_count != expected:
+        raise CorpusValidationError(
+            f"corpus is INCOMPLETE (preset={preset}, {ours_count}/{expected} OK) — "
+            f"a partial corpus cannot be measured; re-run run_bach_preset.py")
+
+    scores = manifest.get("scores", {})
+    ok_stems = {s for s, e in scores.items() if e.get("status") == "OK"}
+    present = {p.stem.replace(".ours", "") for p in corpus_dir.glob("*.ours.json")}
+
+    extra = present - ok_stems
+    if extra:
+        raise CorpusValidationError(
+            f"CONTAMINATION: {len(extra)} .ours.json file(s) not in the "
+            f"{preset} manifest: {', '.join(sorted(extra))}")
+    missing = ok_stems - present
+    if missing:
+        raise CorpusValidationError(
+            f"{len(missing)} manifest score(s) have no .ours.json: "
+            f"{', '.join(sorted(missing))}")
+
+    for stem in sorted(ok_stems):
+        path = corpus_dir / f"{stem}.ours.json"
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest != scores[stem].get("sha256"):
+            raise CorpusValidationError(
+                f"CONTAMINATION: {stem}.ours.json fingerprint differs from the "
+                f"{preset} manifest (foreign-preset / stale file)")
+    return manifest
 
 PC_NAMES = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
 
@@ -57,8 +122,8 @@ def parse_pc_set(bitmap):
         return set()
     return {i for i in range(12) if bitmap & (1 << i)}
 
-def main():
-    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+def run(corpus_dir: Path, wir_dir: Path):
+    ours_files = sorted(corpus_dir.glob("*.ours.json"))
     print(f"Loaded {len(ours_files)} corpus files")
 
     cases = []
@@ -67,7 +132,7 @@ def main():
 
     for ours_path in ours_files:
         stem = ours_path.stem.replace(".ours", "")
-        m21_path = _CORPUS_DIR / f"{stem}.music21.json"
+        m21_path = corpus_dir / f"{stem}.music21.json"
         if not m21_path.exists():
             continue
         try:
@@ -78,7 +143,7 @@ def main():
         if not ours_regions:
             continue
 
-        wir_path = dcml.find_wir_file(str(_WIR_DIR), stem)
+        wir_path = dcml.find_wir_file(str(wir_dir), stem)
         wir_regions = []
         if wir_path:
             try:
@@ -209,6 +274,29 @@ def main():
         print(f"  {k:3d} {c['stem']:<14} {c['measure']:3d} {c['beat']:5.2f} {c['tick']:6d}  "
               f"{c['our_sym']:<14} {c['dcml_label']:<14} +{c['delta']:>1}  "
               f"{c['key_conf']:5.2f} {c['margin']:6.3f}")
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Characterise the genuine BIR=false residuals of a single-preset "
+                    "corpus dir (validates the corpus manifest before measuring).")
+    parser.add_argument("--corpus-dir", metavar="DIR", default=str(_CORPUS_DIR),
+                        help=f"Per-preset corpus dir to measure (default: {_CORPUS_DIR}).")
+    parser.add_argument("--wir-dir", metavar="DIR", default=str(_WIR_DIR),
+                        help="When-in-Rome (DCML) annotation dir.")
+    args = parser.parse_args(argv)
+
+    corpus_dir = Path(args.corpus_dir)
+    try:
+        manifest = validate_corpus_dir(corpus_dir)
+    except CorpusValidationError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(2)
+    print(f"Corpus OK: preset={manifest['preset']}  "
+          f"{manifest['ours_count']}/{manifest['expected_count']} scores  "
+          f"(git {manifest.get('git_hash', '?')})")
+
+    run(corpus_dir, Path(args.wir_dir))
 
 
 if __name__ == "__main__":

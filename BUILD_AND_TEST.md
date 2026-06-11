@@ -158,14 +158,24 @@ For any gate addition or modification, run BOTH presets and confirm zero BIR=fal
 regression in each before committing:
 
 ```
-# Baroque (primary — regenerate corpus first)
-cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus
-cd C:\s\MS && python tools/analyze_inversion_errors.py
+# Baroque (primary — per-preset dir, regenerated + manifest-stamped)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus/baroque
+cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/baroque
 
-# Jazz (run immediately after)
-cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus
-cd C:\s\MS && python tools/analyze_inversion_errors.py
+# Jazz (independent dir — no shared state, run in any order)
+cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus/jazz
+cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/jazz
 ```
+
+**Stage 2.2a (M3 fix):** each preset now has its own dir under `tools/corpus/` and a
+`corpus_manifest.json`. `run_bach_preset.py` clean-slates the dir before a regen and
+**exits nonzero** unless the corpus is 353/353 complete; `characterise_bir_false.py`
+**refuses** to measure a dir whose manifest is missing/incomplete or whose `.ours.json`
+fingerprints don't match the manifest (the old shared-`tools/corpus` contamination is
+now structurally impossible and loudly detected). Gate on **case identity**: Baroque 13,
+Jazz 7 = `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
+(`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric on the
+legacy flat dir — not the 13/7 gate.)
 
 **Threshold policy**: gate thresholds are calibrated against the Baroque corpus and
 must not be adjusted to accommodate other styles. If a gate causes BIR=false

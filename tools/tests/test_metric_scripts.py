@@ -32,6 +32,9 @@ or:
 from __future__ import annotations
 
 import io
+import json
+import shutil
+import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
@@ -48,6 +51,7 @@ import compare_analyses as cmp        # noqa: E402
 import compare_rn as crn              # noqa: E402
 import dcml_parser as dcml            # noqa: E402
 import characterise_bir_false as cbf  # noqa: E402
+import run_bach_preset as rbp         # noqa: E402
 
 
 # ── small builders ──────────────────────────────────────────────────────────
@@ -463,12 +467,12 @@ class TestCharacteriseBirFalse(unittest.TestCase):
         def fake_find_wir(base, stem):
             return wir_txt if stem == "probe01" else None
 
+        # Exercise run() directly (the classification logic); manifest validation
+        # is covered separately in TestCorpusManifestValidation.
         buf = io.StringIO()
-        with mock.patch.object(cbf, "_CORPUS_DIR", corpus), \
-             mock.patch.object(cbf, "_WIR_DIR", corpus), \
-             mock.patch("dcml_parser.find_wir_file", side_effect=fake_find_wir), \
+        with mock.patch("dcml_parser.find_wir_file", side_effect=fake_find_wir), \
              redirect_stdout(buf):
-            cbf.main()
+            cbf.run(corpus, corpus)
         return buf.getvalue()
 
     def test_total_bir_false_is_one(self):
@@ -485,6 +489,112 @@ class TestCharacteriseBirFalse(unittest.TestCase):
     def test_processed_one_score_with_wir(self):
         out = self._run_main()
         self.assertIn("Processed 1 scores (1 with WiR coverage) -> 1", out)
+
+    def test_main_validates_manifest_then_runs(self):
+        # End-to-end via main(): the fixture dir carries a valid corpus_manifest.json,
+        # so validation passes and the same BIR=false=1 result is produced.
+        corpus = _FIX / "bir_corpus"
+        wir_txt = str(corpus / "probe01.wir.txt")
+        buf = io.StringIO()
+        with mock.patch("dcml_parser.find_wir_file",
+                        side_effect=lambda b, s: wir_txt if s == "probe01" else None), \
+             redirect_stdout(buf):
+            cbf.main(["--corpus-dir", str(corpus), "--wir-dir", str(corpus)])
+        out = buf.getvalue()
+        self.assertIn("Corpus OK: preset=Baroque", out)
+        self.assertIn("TOTAL genuine BIR=false: 1", out)
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# 10.  Stage 2.2a — corpus manifest write (run_bach_preset) + validate
+#      (characterise_bir_false). The M3 contamination scenario must now ERROR
+#      rather than silently mis-count.
+# ════════════════════════════════════════════════════════════════════════════
+
+class TestCorpusManifestValidation(unittest.TestCase):
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self._tmp.name)
+        self.addCleanup(self._tmp.cleanup)
+
+    def _write_ours(self, stem, body='{"meta":{},"regions":[]}'):
+        p = self.dir / f"{stem}.ours.json"
+        p.write_text(body, encoding="utf-8")
+        return p
+
+    def _build_manifest(self, preset, stems, expected_count=None):
+        for s in stems:
+            self._write_ours(s)
+        status = {s: "OK" for s in stems}
+        return rbp._write_manifest(
+            self.dir, preset, status,
+            expected_count=expected_count if expected_count is not None else len(stems),
+            git_hash="t", timestamp="t", exe=None)
+
+    # ── manifest writer ──────────────────────────────────────────────────────
+
+    def test_write_manifest_records_fingerprints_and_complete(self):
+        m = self._build_manifest("Baroque", ["bwv1", "bwv2"])
+        self.assertTrue(m["complete"])
+        self.assertEqual(m["ours_count"], 2)
+        self.assertIn("sha256", m["scores"]["bwv1"])
+        self.assertEqual(m["preset"], "Baroque")
+
+    def test_write_manifest_incomplete_when_status_failed(self):
+        # one OK file present, one FAILED -> not complete (the fail-loud trigger)
+        self._write_ours("bwv1")
+        m = rbp._write_manifest(self.dir, "Jazz",
+                                {"bwv1": "OK", "bwv2": "FAILED"},
+                                expected_count=2, git_hash="t", timestamp="t", exe=None)
+        self.assertFalse(m["complete"])
+        self.assertEqual(m["ours_count"], 1)
+
+    # ── validator: happy path ────────────────────────────────────────────────
+
+    def test_validate_accepts_complete_clean_corpus(self):
+        self._build_manifest("Baroque", ["bwv1", "bwv2"])
+        m = cbf.validate_corpus_dir(self.dir)
+        self.assertEqual(m["preset"], "Baroque")
+
+    # ── validator: failure modes ─────────────────────────────────────────────
+
+    def test_validate_rejects_missing_manifest(self):
+        self._write_ours("bwv1")
+        with self.assertRaises(cbf.CorpusValidationError):
+            cbf.validate_corpus_dir(self.dir)
+
+    def test_validate_rejects_incomplete_corpus(self):
+        # manifest declares 3 expected but only 2 OK -> incomplete
+        self._build_manifest("Baroque", ["bwv1", "bwv2"], expected_count=3)
+        with self.assertRaises(cbf.CorpusValidationError) as ctx:
+            cbf.validate_corpus_dir(self.dir)
+        self.assertIn("INCOMPLETE", str(ctx.exception))
+
+    def test_validate_rejects_contamination_by_overwrite(self):
+        # The exact M3 scenario: a foreign-preset file overwrites a listed score,
+        # so its fingerprint no longer matches the manifest.
+        self._build_manifest("Jazz", ["bwv1", "bwv2"])
+        (self.dir / "bwv1.ours.json").write_text(
+            '{"meta":{},"regions":[{"x":1}]}', encoding="utf-8")  # different bytes
+        with self.assertRaises(cbf.CorpusValidationError) as ctx:
+            cbf.validate_corpus_dir(self.dir)
+        self.assertIn("CONTAMINATION", str(ctx.exception))
+
+    def test_validate_rejects_extra_unlisted_file(self):
+        # A foreign .ours.json with a stem absent from the manifest.
+        self._build_manifest("Jazz", ["bwv1", "bwv2"])
+        self._write_ours("bwv_intruder")
+        with self.assertRaises(cbf.CorpusValidationError) as ctx:
+            cbf.validate_corpus_dir(self.dir)
+        self.assertIn("CONTAMINATION", str(ctx.exception))
+
+    def test_validate_rejects_missing_ours_file(self):
+        # manifest lists a score whose .ours.json was deleted post-write
+        self._build_manifest("Baroque", ["bwv1", "bwv2"])
+        (self.dir / "bwv2.ours.json").unlink()
+        with self.assertRaises(cbf.CorpusValidationError):
+            cbf.validate_corpus_dir(self.dir)
 
 
 if __name__ == "__main__":

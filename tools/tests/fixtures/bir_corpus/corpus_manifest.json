@@ -1,0 +1,18 @@
+{
+  "batch_analyze": null,
+  "complete": true,
+  "corpus": "Bach chorales",
+  "expected_count": 1,
+  "git_hash": "fixture",
+  "ours_count": 1,
+  "preset": "Baroque",
+  "schema": 1,
+  "scores": {
+    "probe01": {
+      "sha256": "4be9d358fe1e516172c468efa9addd0a7ab755b4c619252689542bce04ff9a48",
+      "size": 1842,
+      "status": "OK"
+    }
+  },
+  "timestamp": "fixture"
+}
