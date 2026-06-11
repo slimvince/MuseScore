@@ -165,6 +165,24 @@ external BWV↔Riemenschneider concordance — the two are independent selection
 super/subset. Corpus-expansion / cross-validation is a Stage-5 decision; do not
 silently treat one as a superset of the other.
 
+### WiR human-annotation coverage — the gate's denominator (Stage 2.3 Rider 2)
+
+**Only 326 of the 353 chorales resolve to a When-in-Rome human annotation** (324
+distinct analysis files; some chorales share an analysis). **The other 27 scores can
+never produce a "genuine" gate error** — with no human-adjudicated Roman numeral there
+is nothing for `music21_dcml_agree` to agree *with*, so they are silently outside the
+denominator the BIR=false count (Baroque 13 / Jazz 7) is measured over. The headline gate
+therefore carries **three stacked qualifiers**, all narrowing what it sees:
+1. **human-adjudicated** — only the 326 WiR-covered chorales count;
+2. **music21-filtered** — a region is "genuine" only where music21 *and* WiR agree
+   against us (the three-way `music21_dcml_agree` split);
+3. **batch granularity** — measured at cross-barline batch regions, which undercounts
+   the user-visible per-beat error rate ~7× (CLAUDE.md gate-granularity caveat).
+
+A granularity-robust metric over the full annotated set is **roadmap 5.2** — until then,
+read "Baroque 13 / Jazz 7" as *13/7 genuine errors among the 326 human-covered chorales at
+batch granularity*, not an absolute quality figure.
+
 ---
 
 ## Jazz / non-classical corpora

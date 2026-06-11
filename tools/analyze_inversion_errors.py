@@ -10,7 +10,7 @@ music21 and WiR DCML agree against us) and analyzes:
   - beat position distribution
 
 Usage:
-    python tools/analyze_inversion_errors.py                          # legacy flat tools/corpus
+    python tools/analyze_inversion_errors.py                          # default: tools/corpus/baroque (validated)
     python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque
     python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz
 """
@@ -26,7 +26,9 @@ from collections import Counter
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 _ROOT       = Path(__file__).resolve().parent.parent
-_CORPUS_DIR = _ROOT / "tools" / "corpus"
+# No-arg default: the validated per-preset Baroque dir (matches characterise_bir_false;
+# the old flat tools/corpus has no manifest and now errors). Stage 2.3 Rider 1.
+_CORPUS_DIR = _ROOT / "tools" / "corpus" / "baroque"
 _WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
 
 
@@ -73,11 +75,16 @@ def main():
         print("ERROR: pass only one of --corpus-dir / --ours-dir.", file=sys.stderr)
         sys.exit(2)
 
-    # Both .ours.json and .music21.json are read from the SAME dir (Rider 1 fixes
-    # the former hardcoded _CORPUS_DIR music21 read).  The legacy flat default
-    # (tools/corpus) carries no manifest and is read without validation.
-    if args.corpus_dir:
-        corpus_dir = Path(args.corpus_dir).resolve()
+    # Both .ours.json and .music21.json are read from the SAME dir (Rider 1, Stage 2.2-ii,
+    # fixes the former hardcoded _CORPUS_DIR music21 read). The no-arg default is now the
+    # validated per-preset Baroque dir; only the deprecated --ours-dir skips validation.
+    if args.ours_dir:
+        print("WARNING: --ours-dir is deprecated; use --corpus-dir "
+              "(reads music21 from the same dir + validates the manifest).",
+              file=sys.stderr)
+        corpus_dir = Path(args.ours_dir).resolve()
+    else:
+        corpus_dir = Path(args.corpus_dir).resolve() if args.corpus_dir else _CORPUS_DIR
         try:
             manifest = cbf.validate_corpus_dir(corpus_dir)
         except cbf.CorpusValidationError as exc:
@@ -86,13 +93,6 @@ def main():
         print(f"Corpus OK: preset={manifest['preset']}  "
               f"{manifest['ours_count']}/{manifest['expected_count']} scores  "
               f"(git {manifest.get('git_hash', '?')})")
-    elif args.ours_dir:
-        print("WARNING: --ours-dir is deprecated; use --corpus-dir "
-              "(reads music21 from the same dir + validates the manifest).",
-              file=sys.stderr)
-        corpus_dir = Path(args.ours_dir).resolve()
-    else:
-        corpus_dir = _CORPUS_DIR
 
     ours_dir = corpus_dir
     music21_dir = corpus_dir

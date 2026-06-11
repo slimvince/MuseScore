@@ -292,8 +292,8 @@ independently reproduces). `--ours-dir` is kept as a deprecated, unvalidated ali
 # per-preset (validates manifest):
 python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque   # 24/13
 python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz      # 35/7
-# legacy flat dir (no manifest, no validation):
-python tools/analyze_inversion_errors.py
+# no-arg default is now the validated tools/corpus/baroque (Stage 2.3 Rider 1):
+python tools/analyze_inversion_errors.py                                     # == --corpus-dir tools/corpus/baroque → 24/13
 ```
 
 Run after any change that could affect chord identification quality. If the numbers
