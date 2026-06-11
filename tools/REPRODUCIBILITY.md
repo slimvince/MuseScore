@@ -16,28 +16,43 @@ tracked vs. ignored under `tools/` is `.gitignore`.
 - **Content:** Harmonic annotation corpora in DCML TSV format plus MS3
   (MuseScore 3 `.mscx`) score files. Used for automated validation by
   `run_*_validation.py` and `run_validation.py`.
-- **Retrieval:** Clone each sub-repository individually:
+- **Retrieval:** Clone each sub-repository AND check out its pinned commit. These
+  are living research repos at floating upstream HEAD; the pipeline-snapshot
+  goldens and the BIR baselines are byte-meaningful only against the exact
+  commits below (corpus audit C1). Commits recorded 2026-06-11 from the working
+  clones; the seven gate-relevant repos are also hash-pinned per-file in
+  `tools/snapshot_sources_manifest.json` (the source of truth — bump there too).
 
 ```bash
 cd tools/dcml
 
-git clone https://github.com/DCMLab/ABC
-git clone https://github.com/DCMLab/bach_chorales
-git clone https://github.com/DCMLab/bach_en_fr_suites
-git clone https://github.com/DCMLab/chopin_mazurkas
-git clone https://github.com/DCMLab/corelli
-git clone https://github.com/DCMLab/cpe_bach_keyboard
-git clone https://github.com/DCMLab/dvorak_silhouettes
-git clone https://github.com/DCMLab/grieg_lyric_pieces
-git clone https://github.com/DCMLab/mozart_piano_sonatas
-git clone https://github.com/DCMLab/schumann_kinderszenen
-git clone https://github.com/DCMLab/tchaikovsky_seasons
-git clone https://github.com/MarkGotham/When-in-Rome when_in_rome
+# ── Gate-load-bearing repos (snapshot sources + BIR WiR annotations) ──
+git clone https://github.com/DCMLab/bach_chorales        && git -C bach_chorales        checkout b8169ca06d9e183c59f317cce3b3b1e369f70d78
+git clone https://github.com/DCMLab/bach_en_fr_suites    && git -C bach_en_fr_suites    checkout 9cd6d362ed8246ed8edfc425944862ed88ddf1a5
+git clone https://github.com/DCMLab/mozart_piano_sonatas && git -C mozart_piano_sonatas checkout 5337257a5318711e6302cfe85c3f1a6ade3c6271
+git clone https://github.com/DCMLab/chopin_mazurkas      && git -C chopin_mazurkas      checkout 5931135e614985023b96de2a291c74b7ef90b287
+git clone https://github.com/DCMLab/corelli              && git -C corelli              checkout 65608a1a193bb2375a018060b266645ba05a0bc4
+git clone https://github.com/DCMLab/schumann_kinderszenen && git -C schumann_kinderszenen checkout ee929c1556bc937fe1ea7303cac4476e37caa4d1
+git clone https://github.com/MarkGotham/When-in-Rome when_in_rome && git -C when_in_rome checkout aa7539f1cf480997a68998405c0783ebf6339c16
+
+# ── Other annotated corpora (not gate-load-bearing; pinned for reproducibility) ──
+git clone https://github.com/DCMLab/ABC                 && git -C ABC                 checkout b6b7d38500bacb30c81db7e09d8790df1a2edd46   # NOTE: working clone was DIRTY at pin time (2026-06-11)
+git clone https://github.com/DCMLab/cpe_bach_keyboard   && git -C cpe_bach_keyboard   checkout 4b3511eab12b5fbfc7aa5c75819ee02225430da8
+git clone https://github.com/DCMLab/dvorak_silhouettes  && git -C dvorak_silhouettes  checkout f228006fcd8696c809cfc8e701ed215cec3d07f1
+git clone https://github.com/DCMLab/grieg_lyric_pieces  && git -C grieg_lyric_pieces  checkout 91a304563521f3f273b8c0aadec1ce2ede2d1384
+git clone https://github.com/DCMLab/tchaikovsky_seasons && git -C tchaikovsky_seasons checkout 5af15033c5f9c282f38fcf71234b86349e61e8c3
 ```
 
   After cloning, each sub-repo's `MS3/` subdir holds the score files and
   `harmonies/` (or equivalent) holds the annotation TSVs expected by the
   validation runners.
+
+  **Bumping a pin is a deliberate re-baseline event.** Moving any gate-relevant
+  repo (the first block) to a newer commit can change the snapshot goldens and the
+  BIR case-identity sets. Update `tools/snapshot_sources_manifest.json` first,
+  then regenerate the affected goldens (`pipeline_snapshot_tests --update-goldens`)
+  and re-measure the BIR gate — never silently. `tools/tests/test_snapshot_sources.py`
+  fails if disk drifts from the manifest without the manifest being updated.
 
 ---
 
@@ -61,6 +76,16 @@ python tools/music21_batch.py --composer bach --output tools/corpus
 ```
 
   Requires music21 to be installed (`pip install music21`).
+
+  **music21 version pin (audit C2):** the committed `tools/corpus/*.xml` were
+  exported by **music21 v.9.9.1** (recorded in each file's
+  `<software>music21 v.9.9.1</software>` / `<encoding-date>2026-04-05</encoding-date>`
+  tag), and the paired `*.music21.json` ground truth is from the same generator.
+  Regenerating with a different music21 is a **deliberate re-baseline** of the
+  BIR denominators, not a refresh. See `tools/corpus/README.md` for the full
+  provenance record and the freeze anchor. `run_bach_preset.py` now copies the
+  detected music21 version into each `corpus_manifest.json` (`music21_version`,
+  informational — not validated).
 
 ---
 
