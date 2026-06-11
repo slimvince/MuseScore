@@ -287,28 +287,48 @@ class TestExtractQuality(unittest.TestCase):
     def test_augmented_plus_recognised(self):
         self.assertEqual(crn.extract_quality("IV+6"), "Aug")
 
-    def test_letter_o_diminished_is_NOT_recognised(self):
-        # pins current (suspect) behavior: extract_quality keys diminished off
-        # the degree-sign '°' (U+00B0), NOT the letter 'o' that BOTH DCML and
-        # our analyzer actually emit (viio6 / iio7).  So 'o'-diminished chords
-        # are coarse-classified Min / Min7.  Symmetric (both sides 'o'), but it
-        # means dim-vs-min distinctions are lost in the disagreement bucket.
-        self.assertEqual(crn.extract_quality("viio6"), "Min")     # NOT "Dim"
-        self.assertEqual(crn.extract_quality("viio7"), "Min7")    # NOT "Dim7"
-        self.assertEqual(crn.extract_quality("iio65"), "Min7")
+    def test_letter_o_diminished_is_recognised(self):
+        # re-pinned 2026-06-10: intentional metric correction (Stage 2.2-ii;
+        # dossier §4).  F-1: extract_quality now keys diminished off BOTH the
+        # degree-sign '°' (U+00B0) AND the letter 'o' that DCML and our analyzer
+        # actually emit (viio6 / iio65).  Previously 'o'-diminished chords were
+        # mis-coarse-classified Min / Min7, collapsing the dim-vs-min distinction
+        # in the disagreement bucket.  Both the viio6 (triad) and iio65 (seventh)
+        # shapes are now correct.
+        self.assertEqual(crn.extract_quality("viio6"), "Dim")     # was "Min"
+        self.assertEqual(crn.extract_quality("viio7"), "Dim7")    # was "Min7"
+        self.assertEqual(crn.extract_quality("iio65"), "Dim7")    # was "Min7"
 
-    def test_degree_sign_diminished_would_be_recognised(self):
-        # the branch is live for the '°' form (not emitted by the corpus).
+    def test_degree_sign_diminished_still_recognised(self):
+        # The '°' branch is unchanged by the F-1 fix (kept alongside the new 'o'
+        # branch).  Pinned so the letter-'o' addition does not regress it.
         self.assertEqual(crn.extract_quality("vii°7"), "Dim7")
         self.assertEqual(crn.extract_quality("vii°"), "Dim")
 
     def test_augmented_sixth_and_neapolitan_unparseable(self):
-        # pins current (suspect) behavior: 'Ger65'/'N6' have no Roman-degree
-        # token the regex accepts -> '?'.  'It6' DOES match degree 'I' and is
-        # mis-read as a major tonic.
+        # re-pinned 2026-06-10: intentional metric correction (Stage 2.2-ii;
+        # dossier §4).  F-2: 'Ger65'/'N6' still have no Roman-degree token the
+        # regex accepts -> '?'.  'It6' (Italian augmented sixth) used to match
+        # degree 'I' and mis-read as a major tonic; it is now routed to the same
+        # unparseable -> root-only fallback (split_rn returns None), so its coarse
+        # quality is '?'.
         self.assertEqual(crn.extract_quality("Ger65"), "?")
         self.assertEqual(crn.extract_quality("N6"), "?")
-        self.assertEqual(crn.extract_quality("It6"), "Maj")  # mis-parsed as 'I'
+        self.assertEqual(crn.extract_quality("It6"), "?")    # was "Maj" (mis-parsed as 'I')
+        self.assertEqual(crn.extract_quality("It"), "?")     # bare Italian-sixth token
+        self.assertEqual(crn.extract_quality("It6/ii"), "?") # tonicised variant
+
+    def test_split_rn_routes_it6_to_unparseable(self):
+        # re-pinned 2026-06-10: intentional metric correction (Stage 2.2-ii;
+        # dossier §4).  split_rn now returns None for the Italian augmented-sixth
+        # token so It6 takes the unparseable branch in classify_pair, exactly
+        # like Ger/Fr/N.  Genuine tonic degrees ('I', 'I6', 'i') are unaffected.
+        self.assertIsNone(crn.split_rn("It6"))
+        self.assertIsNone(crn.split_rn("It"))
+        self.assertIsNone(crn.split_rn("It6/ii"))
+        self.assertEqual(crn.split_rn("I"),  ("", "I", ""))
+        self.assertEqual(crn.split_rn("I6"), ("", "I", "6"))
+        self.assertEqual(crn.split_rn("i"),  ("", "i", ""))
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -350,6 +370,17 @@ class TestClassifyPair(unittest.TestCase):
         self.assertEqual(crn.classify_pair(R(7, "V"), D(7, "Ger65")).category,
                          "partial")
         self.assertEqual(crn.classify_pair(R(2, "V"), D(7, "Ger65")).category,
+                         "root_err")
+
+    def test_it6_routes_to_root_only_fallback(self):
+        # re-pinned 2026-06-10: intentional metric correction (Stage 2.2-ii;
+        # dossier §4).  It6 now follows the SAME unparseable -> root-only path as
+        # Ger/Fr/N rather than being scored as a fabricated 'Maj' tonic.  The
+        # DCML-side root_pc is whatever dcml_parser resolves (supplied here);
+        # same root -> partial, different root -> root_err.
+        self.assertEqual(crn.classify_pair(R(7, "V"), D(7, "It6")).category,
+                         "partial")
+        self.assertEqual(crn.classify_pair(R(2, "V"), D(7, "It6")).category,
                          "root_err")
 
     def test_none_dcml_returns_none(self):

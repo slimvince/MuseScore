@@ -10,7 +10,9 @@ music21 and WiR DCML agree against us) and analyzes:
   - beat position distribution
 
 Usage:
-    python tools/analyze_inversion_errors.py
+    python tools/analyze_inversion_errors.py                          # legacy flat tools/corpus
+    python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque
+    python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz
 """
 from __future__ import annotations
 
@@ -54,15 +56,46 @@ def _infer_quality(sym: str) -> str:
 sys.path.insert(0, str(_ROOT / "tools"))
 import compare_analyses as cmp
 import dcml_parser as dcml
+import characterise_bir_false as cbf
 
 
 def main():
     parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--corpus-dir", default=None,
+                        help="Per-preset corpus dir holding BOTH *.ours.json and "
+                             "*.music21.json; its corpus_manifest.json is validated "
+                             "before measuring (Stage 2.2-ii Rider 1).")
     parser.add_argument("--ours-dir", default=None,
-                        help="Directory containing *.ours.json files (default: tools/corpus)")
+                        help="DEPRECATED alias for --corpus-dir (no manifest validation).")
     args, _ = parser.parse_known_args()
 
-    ours_dir = Path(args.ours_dir).resolve() if args.ours_dir else _CORPUS_DIR
+    if args.corpus_dir and args.ours_dir:
+        print("ERROR: pass only one of --corpus-dir / --ours-dir.", file=sys.stderr)
+        sys.exit(2)
+
+    # Both .ours.json and .music21.json are read from the SAME dir (Rider 1 fixes
+    # the former hardcoded _CORPUS_DIR music21 read).  The legacy flat default
+    # (tools/corpus) carries no manifest and is read without validation.
+    if args.corpus_dir:
+        corpus_dir = Path(args.corpus_dir).resolve()
+        try:
+            manifest = cbf.validate_corpus_dir(corpus_dir)
+        except cbf.CorpusValidationError as exc:
+            print(f"ERROR: {exc}", file=sys.stderr)
+            sys.exit(2)
+        print(f"Corpus OK: preset={manifest['preset']}  "
+              f"{manifest['ours_count']}/{manifest['expected_count']} scores  "
+              f"(git {manifest.get('git_hash', '?')})")
+    elif args.ours_dir:
+        print("WARNING: --ours-dir is deprecated; use --corpus-dir "
+              "(reads music21 from the same dir + validates the manifest).",
+              file=sys.stderr)
+        corpus_dir = Path(args.ours_dir).resolve()
+    else:
+        corpus_dir = _CORPUS_DIR
+
+    ours_dir = corpus_dir
+    music21_dir = corpus_dir
 
     # ── Find enriched JSON files ──────────────────────────────────────────
     ours_files = sorted(ours_dir.glob("*.ours.json"))
@@ -90,7 +123,7 @@ def main():
 
     for ours_path in ours_files:
         stem = ours_path.stem.replace(".ours", "")
-        music21_path = _CORPUS_DIR / f"{stem}.music21.json"
+        music21_path = music21_dir / f"{stem}.music21.json"
         if not music21_path.exists():
             skipped_no_m21 += 1
             continue

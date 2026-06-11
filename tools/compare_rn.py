@@ -107,6 +107,10 @@ _DEGREE_RE = re.compile(
     r'(?P<deg>VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)'
 )
 
+# Italian augmented-sixth token ("It", "It6", "It6/ii").  Its leading 'I' would
+# otherwise be captured by _DEGREE_RE as the tonic degree (Stage 2.2-ii F-2).
+_IT6_RE = re.compile(r'^It(?:\d|/|$)')
+
 
 def normalise_rn(rn: str) -> str:
     """Strip noise that would block string equality without losing the
@@ -128,6 +132,14 @@ def split_rn(rn: str) -> Optional[tuple[str, str, str]]:
     expected to be already normalised via ``normalise_rn``.
     """
     if not rn:
+        return None
+    # Augmented-sixth Italian token ("It6", "It", "It6/ii") begins with the
+    # letter 'I' that the degree regex would otherwise mis-read as a major
+    # tonic.  Route it to the unparseable -> root-only fallback, matching how
+    # Ger / Fr / N (which the degree regex already rejects) are handled.  We do
+    # NOT invent a root mapping; the DCML-side root_pc is owned by dcml_parser.
+    # (Stage 2.2-ii F-2; dossier §4.)
+    if _IT6_RE.match(rn):
         return None
     m = _DEGREE_RE.match(rn)
     if not m:
@@ -161,7 +173,12 @@ def extract_quality(rn_norm: str) -> str:
     # Drop secondary-degree marker; quality lives on the primary numeral.
     s = suffix.split('/', 1)[0]
 
-    has_dim    = '°' in s
+    # Diminished is keyed off BOTH the degree-sign '°' (U+00B0) and the letter
+    # 'o' that DCML and our analyzer actually emit (viio6 / iio65).  Before
+    # Stage 2.2-ii only '°' was recognized, so 'o'-diminished chords were
+    # mis-coarse-classified as Min / Min7 (F-1; dossier §4).  The 'ø' half-dim
+    # check runs first below, so a half-dim 'ø' token is not swallowed here.
+    has_dim    = ('°' in s) or ('o' in s)
     has_hdim   = 'ø' in s
     has_aug    = '+' in s
     has_majm7  = bool(re.search(r'(M7|maj7|M9|maj9)', s))
