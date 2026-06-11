@@ -943,6 +943,33 @@ static const char* diagTemplateName(int tplIdx)
     return NAMES[static_cast<size_t>(tplIdx)];
 }
 
+// Context banner for each diagnosed region (Stage 2.3 addendum). diagnoseChord() replays
+// the production pipeline with whatever temporal context it is handed. The batch dump
+// passes NULL (region-in-isolation — correct per the 2.3 scoping decision; threading the
+// real inter-region context is roadmap 2.3b). The banner makes that explicit so an
+// rcb-class investigation can never mistake an isolated dump for an in-context verdict.
+// Conditional by design: a future 2.3b caller that threads a real context gets an accurate
+// summary instead of a misleading NONE. Never returns empty.
+static std::string diagContextBanner(const analysis::ChordTemporalContext* ctx, int keyFifths)
+{
+    if (!ctx) {
+        return "NONE (isolated region — progression signals computed with null temporal "
+               "context; inter-region effects such as rootContinuityBonus feed are NOT "
+               "represented. For in-context diagnosis see roadmap 2.3b.)";
+    }
+    std::ostringstream os;
+    os << "PRESENT (previousRootPc=" << ctx->previousRootPc;
+    if (ctx->previousRootPc >= 0) {
+        os << " [" << diagPcName(ctx->previousRootPc, keyFifths) << "]";
+    }
+    os << ", previousBassPc=" << ctx->previousBassPc
+       << ", nextRootPc=" << ctx->nextRootPc
+       << ", consecutiveBassStepwiseCount=" << ctx->consecutiveBassStepwiseCount
+       << ", regionMetricWeight=" << fmtDouble(ctx->regionMetricWeight, 3)
+       << "). Inter-region progression signals ARE represented.";
+    return os.str();
+}
+
 static void writeDiagnosticJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::set<int>& diagnoseMeasures,
@@ -982,11 +1009,14 @@ static void writeDiagnosticJson(
         // diag.finalWinner is the production winner for this region in isolation.
         // (No inter-region temporal context is threaded here: the dump shows the
         // region's own vertical/competition evidence, not its neighbours' signals.)
+        // NULL temporal context — region-in-isolation (roadmap 2.3b threads the real
+        // context). Named so the banner below reflects whatever is actually passed.
+        const analysis::ChordTemporalContext* diagContext = nullptr;
         const auto diag = diagAnalyzer.diagnoseChord(
             region->tones,
             region->key.keySignatureFifths,
             region->key.mode,
-            /*context*/ nullptr,
+            diagContext,
             chordPrefs);
 
         const int keyFifths = region->key.keySignatureFifths;
@@ -995,6 +1025,9 @@ static void writeDiagnosticJson(
         firstBlock = false;
 
         out << "    {\n";
+        // Banner FIRST — every diagnosed region states its temporal context explicitly so
+        // an isolated dump can never be mistaken for an in-context verdict (Stage 2.3).
+        out << "      \"context\": \"" << jsonEscape(diagContextBanner(diagContext, keyFifths)) << "\",\n";
         out << "      \"measure\": " << region->measureNumber << ",\n";
         out << "      \"beat\": " << fmtDouble(region->beat, 4) << ",\n";
         out << "      \"key\": \"" << jsonEscape(keyName(region->key.keySignatureFifths, region->key.mode)) << "\",\n";

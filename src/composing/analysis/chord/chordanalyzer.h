@@ -59,7 +59,9 @@ namespace mu::composing::analysis {
 
 /// Number of chord templates the scorer ranks against. SINGLE SOURCE OF TRUTH for every
 /// template-sized array, eliminating the silent stack-overrun class (B1, 2026-06-04):
-///   - the `templates` and `kDiagTemplates` TemplateDef arrays in chordanalyzer.cpp,
+///   - the `templates` TemplateDef array in chordanalyzer.cpp (the former byte-identical
+///     `kDiagTemplates` mirror was removed in Stage 2.3 — `diagnoseChord` now replays the
+///     production pipeline instead of re-scoring against a second array),
 ///   - the three score matrices basisIndepMatrix / complexityFactorMatrix / augFactorMatrix
 ///     (inner extent) in chordanalyzer.cpp,
 ///   - the `kMasks` interval-bitmask table and its bounds check in

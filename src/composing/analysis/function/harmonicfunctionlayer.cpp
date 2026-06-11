@@ -105,8 +105,9 @@ double wStepOutBonus(int candBassPc, int rootPc,
 /// Conservative on unknown / out-of-range inputs (returns true — do not gate if
 /// unsure).
 ///
-/// kMasks MUST stay in sync with the TemplateDef arrays in chordanalyzer.cpp
-/// (analyzeChord's `templates` and `kDiagTemplates`). It is sized from
+/// kMasks MUST stay in sync with the TemplateDef array in chordanalyzer.cpp
+/// (analyzeChord's `templates`; the byte-identical `kDiagTemplates` mirror was removed
+/// in Stage 2.3). It is sized from
 /// analysis::kTemplateCount; when adding a template, bump that constant and add the
 /// interval bitmask here as a mandatory site. Every template has at least interval 0
 /// (the root), so no entry may be 0.
