@@ -45,9 +45,27 @@ def _file_fingerprint(path: Path) -> dict:
     return {"size": len(data), "sha256": hashlib.sha256(data).hexdigest()}
 
 
+def _detect_music21_version(corpus_dir: Path) -> str | None:
+    """Best-effort provenance copy-through (corpus audit C2): the *.xml inputs are
+    music21 exports and embed `<software>music21 v.X.Y.Z</software>`. Read it from
+    the first source score so the manifest records which music21 produced the
+    ground-truth `.music21.json`. Purely informational — validate_corpus_dir does
+    NOT enforce it; a None just means the version could not be read."""
+    import re
+    for xml in sorted(corpus_dir.glob("*.xml")):
+        try:
+            head = xml.read_text(encoding="utf-8", errors="replace")[:4000]
+        except Exception:
+            continue
+        m = re.search(r"<software>\s*music21\s*v\.?\s*([0-9][0-9.a-zA-Z]*)\s*</software>", head)
+        if m:
+            return m.group(1)
+    return None
+
+
 def _write_manifest(out_dir: Path, preset: str, score_status: dict,
                     expected_count: int, git_hash: str, timestamp: str,
-                    exe: Path | None) -> dict:
+                    exe: Path | None, music21_version: str | None = None) -> dict:
     """Write corpus_manifest.json into out_dir and return it.
 
     score_status maps stem -> status string ('OK', 'FAILED', ...). For every 'OK'
@@ -85,6 +103,9 @@ def _write_manifest(out_dir: Path, preset: str, score_status: dict,
         "expected_count": expected_count,
         "ours_count": ok_count,
         "complete": complete,
+        # Informational provenance copy-through (audit C2): which music21 produced
+        # the ground-truth .music21.json. NOT enforced by validate_corpus_dir.
+        "music21_version": music21_version,
         "batch_analyze": exe_id,
         "scores": scores,
     }
@@ -362,7 +383,8 @@ def main():
     # ── Manifest stamp + fail-loud completeness check (Stage 2.2a) ────────────
     manifest = _write_manifest(out_dir, args.preset, score_status,
                                expected_count=total, git_hash=_get_git_hash(),
-                               timestamp=timestamp, exe=exe)
+                               timestamp=timestamp, exe=exe,
+                               music21_version=_detect_music21_version(corpus_dir))
     print(f"Manifest written to {out_dir / MANIFEST_NAME}  "
           f"(preset={args.preset}, complete={manifest['complete']}, "
           f"{manifest['ours_count']}/{total})")
