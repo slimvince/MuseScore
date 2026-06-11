@@ -53,6 +53,12 @@ CC's report references task numbers, design decisions, and deviations that only 
 3. Both rules also bind Cowork's instructions to CC: the never-guess /
    investigate-or-state-unknown rule (introduced Stage 1d) is standing for ALL future
    instructions, not per-instruction boilerplate.
+4. **All Cowork adjustments/approval-conditions go in INSTRUCTION FILES, never only in
+   chat replies.** Chat-relayed adjustments were lost twice (2026-06-10: the H2
+   extension + 326-fact rider after the hygiene pass; the chordanalyzer.h:62 comment +
+   diagnose context banner after 2.3). Instruction files have a 100% delivery record.
+   "Approved with additions" means: write the additions as an addendum instruction
+   file, then approve.
 
 ---
 
@@ -209,13 +215,97 @@ before any code direction is imposed.
   notation tests (include updates). Dead weight/pitch-context shims (no live caller) →
   Stage-2 cleanup list.
 
-- **Next CC task — Stage 2.2a (instruction ready):** `cc_instruction_stage2_2a_corpus_hardening.md`
-  — per-preset corpus dirs (`tools/corpus/{baroque,jazz}/`) + manifest/completeness
-  validation + fail-loud + `--corpus-dir`; CLAUDE.md/build_and_test.md command sync;
-  new validation pinned in tools/tests; contamination probe must ERROR. Tooling-only,
-  metric definitions untouched. Also carries the bookkeeping docs commit. After 2.2a:
-  the interim gate wording retires; then 2.2 batch parity + single re-baseline
-  (incl. metric decisions F-1/F-2, "24" provenance), 2.3 diagnoseChord, 2.4, 2.5.
+- **✅ Stage 2.2a COMPLETE — `e20894c75b`** (tooling; verified by Cowork: exactly 6
+  files) + bookkeeping docs `6f1e3dc807`. Per-preset dirs + sha256-fingerprinted manifest validation;
+  63 Python tests; Baroque 13 + Jazz 7 exact identity sets verified; contamination
+  probe errors. **Interim gate RETIRED** — "Baroque ≤ 13 / Jazz ≤ 7" plain meaning
+  restored (clean manifest-validated regen). Deferred: analyze_inversion_errors.py
+  --corpus-dir (rides with 2.2).
+
+- **✅ Stage 2.2-i COMPLETE — `cc_stage2_2_ab_dossier.md` (no commits, by design).**
+  Headline: section-level barely changes analysis (4 genuine root changes corpus-wide,
+  net-negative, all on thin gap/split slices) but surfaces ~250 per-beat disagreements
+  the coarse batch regions masked — **the 13/7 gate undercounts user-visible per-beat
+  root errors ~7×** (rn corroborates independently: root_agree flat, all delta in
+  root_err). F-3 closed (24/13 & 35/7 = analyze_inversion_errors three-way split).
+  **DECISION (Cowork+user): gate stays batch-granularity**; granularity-robust metric
+  now MANDATORY at Stage 5; 2.4 scope grew (Pass-0 prefs divergence + section-layer
+  `inferGapRegion` default-prefs preset leak = likely cause of the 3 regressions).
+
+- **⚠ CORPUS AUDIT (Cowork, 2026-06-10): `cowork_corpus_audit.md`.** Highest findings:
+  **C1 — the snapshot gate's 11 source scores live in gitignored, revision-UNPINNED
+  external clones** (`tools/dcml/*/MS3`; REPRODUCIBILITY clones at floating HEAD) — the
+  byte-identity gate rests on files with no recorded identity; **C2 — the music21
+  version that generated the 353 gate-corpus `.music21.json` is recorded nowhere**;
+  C3 — 353-vs-361-vs-410 chorale filter provenance undocumented; C4 — stale flat
+  `.ours.json` + empty accident dirs + `src/composing/tests/scores/` (7 files incl.
+  `xxxxx.mxl`) referenced by NOTHING + `score_inventory.md` badly stale; C5 — ~850
+  human-annotated scores unused (Stage-5 opportunity, noted in roadmap 5.2).
+  Ground-truth verdict (sharpened by user mandate 2026-06-10): **the ONLY ground truth
+  is the human annotation (WiR/DCML); music21 is NOT ground truth** — it is an
+  algorithmic noise filter, and the 13/7 "genuine" counts are a music21-filtered LOWER
+  BOUND on human-adjudicated errors (cases where music21 sides with us against DCML are
+  excluded by an algorithm's opinion). Never describe the gate as "ground-truth
+  agreement." Stage 5 must evaluate a DCML-only gate variant (roadmap 5.2). No
+  self-annotations in any gate; catalog/goldens correctly used as regression pins only.
+  Remediation = one hygiene instruction after 2.2-ii (see audit Disposition table).
+
+- **✅ Stage 2.2-ii SHIPPED — `75a5815960`/`c7aeb24ae1`/`465450bf49`/`9e52147b04`**
+  (verified by Cowork: cumulative diff exactly 8 files; F-1 at compare_rn.py:181,
+  It6 routing in split_rn, shims gone; gate-neutral: 13&24/13, 7&35/7 exact identity
+  sets, 65/65 Python). **Stage 2.2 COMPLETE** (2.2a + 2.2-i + 2.2-ii).
+
+- **✅ Corpus hygiene COMPLETE — `a934574820`/`dd8a898015`/`3d8981bb57`/`0520a2dda2`**
+  (verified by Cowork). Sources pinned (manifest + drift test + REPRODUCIBILITY commits;
+  ABC clone DIRTY recorded verbatim; licenses: CC BY-NC-SA or no-LICENSE → in-tree
+  copies NOT GPL-compatible, hash-pin is the mechanism). music21 ESTABLISHED v.9.9.1
+  (embedded `<software>` tags; export chain incl. MuseScore 2.1.0). 410→353 filter
+  recovered (`_is_bach_chorale`); 361↔353 diff non-computable (Riemenschneider vs BWV,
+  evidenced); 352→353 +1 unknown (logged). Flat .ours.json + accident dirs deleted
+  (disk-only); dead test scores removed (`3d8981bb57`). **KEY FACT: only 326/353 gate
+  chorales have WiR human annotations — gate = human-adjudicated 326, music21-filtered,
+  batch granularity (all three qualifiers in roadmap 5.2).**
+  **Two approved adjustments MISSED the commit set (relay gap) — ride with the next
+  instruction:** (a) `analyze_inversion_errors.py` no-arg default → `tools/corpus/baroque`
+  + BUILD_AND_TEST §4 legacy line repoint (the no-arg path now errors); (b) the 326/353
+  WiR-coverage fact into `score_inventory.md`.
+
+- **✅ Stage 2.3 COMPLETE — `18dc9e1829` (diagnose replays production; kDiagTemplates +
+  contextualBonuses removed; agreement invariant + Δ=+7b Gate-R dump tests; composing
+  501/501) + `001b15df2d` (hygiene riders).** Verified by Cowork. Two approved
+  additions missed the commits (relay gap #2 — see trust-model rule 4):
+  addendum SHIPPED `fb8b980948` (comment fixes + conditional JSON "context"
+  banner — NONE on the batch path, real context summary when threaded; verified).
+
+- **Doc-staleness riders for the NEXT instruction (CC flagged, out of its scope;
+  confirmed by Cowork):** CLAUDE.md:159/166 still lists kDiagTemplates as a template
+  sync site (stale post-2.3); ARCHITECTURE.md:861 references the removed
+  `contextualBonuses()`; layer_architecture_audit.md:84–92 carries a now-moot
+  "Action for CC" item. Historical iteration records stay untouched (revisionism).
+  Also: accumulated uncommitted bookkeeping (STATUS/handoff/roadmap) needs its
+  periodic docs commit.
+
+- **Next CC task — Stage 2.4 (instruction ready):** `cc_instruction_stage2_4_divergence_decisions.md`
+  — investigate → draft decisions → at most one surgical fix. HEADLINE INVESTIGATION:
+  does the user's style/preset EVER reach the notation analysis path, or is the whole
+  preset system batch-tools-only? (Gates the D-PASS0 decision; "presets never shipped
+  to users" would be a product-level finding.) Decision drafts for D-P4/D-BRIDGE
+  (lean: document cold-context contract, defer to Stage 3 decoder), D-PASS0
+  (investigation-dependent), D-GAP (fix only if probe proves user+gate-neutral;
+  3 regression cases re-run as causal validation). Commits V1/V2 are
+  RATIFICATION-GATED (Cowork must approve the decision drafts first — rule 4 honored:
+  ratification will arrive as an addendum instruction file); V3 bookkeeping direct.
+  Carries the doc riders (CLAUDE.md kDiagTemplates checklist, ARCHITECTURE.md:861,
+  audit moot item). Then 2.5 (P3 profile) closes Stage 2; Stage 3 (decoder) begins.
+  — implements `cowork_corpus_audit.md` C1–C4: snapshot/gate source manifests with
+  sha256 + clone commits + drift test + REPRODUCIBILITY pinning (license facts
+  recorded, no in-tree copies), music21 provenance (establish or freeze-by-fiat),
+  353/361/410 trace + diff lists, stale deletions (flat .ours.json, accident dirs,
+  unreferenced src/composing/tests/scores after final sweep), score_inventory.md
+  refresh. 5 proposed commits (H1–H5), await Cowork as a set. KEY stop condition:
+  snapshot-source hashes not matching what goldens were generated from = gate-integrity
+  question, report immediately. After this: Stage 2.3 (diagnoseChord production view),
+  2.4 (divergence decisions incl. inferGapRegion preset leak), 2.5 (P3 profile).
   — Phase 4c move: `analyzeSection` + section-level analysis (cadences, pivots,
   stabilization, degree, key-resolution wrappers) from `notationcomposingbridgehelpers.cpp`
   into composing (suggested `analysis/section/`). Mechanical relocation, byte-identical;
