@@ -364,7 +364,8 @@ analyzeSection(const mu::engraving::Score* sc,
                const mu::engraving::Fraction& from,
                const mu::engraving::Fraction& to,
                const std::set<size_t>& excludeStaves,
-               const std::vector<mu::composing::analysis::HarmonicRegion>& rawRegions)
+               const std::vector<mu::composing::analysis::HarmonicRegion>& rawRegions,
+               const mu::composing::analysis::ChordAnalyzerPreferences& chordPrefs)
 {
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
@@ -604,17 +605,17 @@ analyzeSection(const mu::engraving::Score* sc,
                                                    contextRegion.keyModeResult.keySignatureFifths,
                                                    contextRegion.keyModeResult.mode,
                                                    nullptr,
-                                                   mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                                                   chordPrefs,
                                                    &gapGateCtx);
         if (!results.empty()) {
             mu::composing::analysis::applyIter8691Pedal(
                 results,
                 gapGateCtx,
                 nullptr,
-                mu::composing::analysis::kDefaultChordAnalyzerPreferences);
+                chordPrefs);
             mu::composing::analysis::applyPostScoringGates(
                 results,
-                mu::composing::analysis::kDefaultChordAnalyzerPreferences,
+                chordPrefs,
                 nullptr,
                 gapGateCtx);
         }

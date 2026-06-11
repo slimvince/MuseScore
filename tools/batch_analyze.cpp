@@ -541,11 +541,13 @@ static std::vector<AnalyzedRegion> analyzeScore(
     // is unchanged; fields are populated from the post-section regions.
     // Additive annotations (cadence markers, pivot labels, key areas) are NOT
     // emitted this run (schema decision deferred to the dossier). The Pass-0
-    // stream remains batch's preset path so the A/B isolates the section-pass
-    // delta (NOT the notation-bridge default-chordPrefs divergence).
+    // stream is batch's preset path AND the preset chordPrefs are now threaded
+    // into section gap inference (Stage 2.4, D-GAP) — so the diagnostic measures
+    // a consistent preset pipeline end-to-end rather than preset Pass-0 + default
+    // gap analysis.
     if (sectionLevel) {
         const analysis::AnalyzedSection section = analysis::analyzeSection(
-            score, startTick, endTick, excludeStaves, regions);
+            score, startTick, endTick, excludeStaves, regions, chordPrefs);
 
         std::vector<AnalyzedRegion> sectionResult;
         sectionResult.reserve(section.regions.size());

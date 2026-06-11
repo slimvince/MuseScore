@@ -63,12 +63,21 @@ namespace mu::composing::analysis {
 /// obtains it from notation::analyzeHarmonicRhythm (Smoothed granularity) and
 /// injects it here so this module stays free of the notation / configuration
 /// layers.
+///
+/// `chordPrefs` is the chord-analyzer preference set applied to gap-region
+/// inference (Pass 1).  The notation/implode/snapshot callers leave it at the
+/// default, matching the Pass-0 prefs the live bridge already uses
+/// (kDefaultChordAnalyzerPreferences) — so threading it is byte-identical on
+/// every live path.  Only the batch `--section-level` diagnostic supplies a
+/// preset here, so its gap analysis matches its (preset) Pass-0 stream instead
+/// of silently falling back to defaults (Stage 2.4, D-GAP).
 AnalyzedSection
 analyzeSection(const mu::engraving::Score* sc,
                const mu::engraving::Fraction& from,
                const mu::engraving::Fraction& to,
                const std::set<size_t>& excludeStaves,
-               const std::vector<HarmonicRegion>& rawRegions);
+               const std::vector<HarmonicRegion>& rawRegions,
+               const ChordAnalyzerPreferences& chordPrefs = kDefaultChordAnalyzerPreferences);
 
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 
