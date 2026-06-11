@@ -916,8 +916,9 @@ static const char* diagQualityName(ChordQuality q)
 
 static const char* diagTemplateName(int tplIdx)
 {
-    // Must match the kDiagTemplates array order in RuleBasedChordAnalyzer::diagnoseChord.
-    static constexpr const char* NAMES[16] = {
+    // Must match the `templates` array order in RuleBasedChordAnalyzer::analyzeChord
+    // (and the kMasks table in harmonicfunctionlayer.cpp) — all 17 of analysis::kTemplateCount.
+    static constexpr const char* NAMES[] = {
         "Major triad {0,4,7}",
         "Maj7 {0,4,7,11}",
         "Dom7 {0,4,7,10}",
@@ -928,6 +929,7 @@ static const char* diagTemplateName(int tplIdx)
         "Sus4b5 {0,5,6,10}",
         "HalfDim {0,3,6,10}",
         "Augmented {0,4,8}",
+        "Aug dom7 {0,4,8,10}",
         "Sus2 {0,2,7}",
         "Sus4 {0,5,7,10}",
         "Sus4+Maj7 {0,5,7,11}",
@@ -935,7 +937,9 @@ static const char* diagTemplateName(int tplIdx)
         "Sus#4 {0,6,7}",
         "Power {0,7}",
     };
-    if (tplIdx < 0 || tplIdx >= 16) { return "Unknown"; }
+    static_assert(sizeof(NAMES) / sizeof(NAMES[0]) == analysis::kTemplateCount,
+                  "diagTemplateName must list all analysis::kTemplateCount templates");
+    if (tplIdx < 0 || tplIdx >= static_cast<int>(analysis::kTemplateCount)) { return "Unknown"; }
     return NAMES[static_cast<size_t>(tplIdx)];
 }
 
@@ -943,6 +947,7 @@ static void writeDiagnosticJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::set<int>& diagnoseMeasures,
     const std::string& sourceName,
+    const analysis::ChordAnalyzerPreferences& chordPrefs,
     std::ostream& out)
 {
     const analysis::RuleBasedChordAnalyzer diagAnalyzer;
@@ -971,11 +976,18 @@ static void writeDiagnosticJson(
             continue;
         }
 
-        // Run diagnostic on this region's tones.
+        // Run the diagnostic — a VIEW into the production pipeline (Stage 2.3).
+        // diagnoseChord() replays analyzeChord + applyIter8691Pedal +
+        // applyPostScoringGates with the SAME preset prefs the batch run used, so
+        // diag.finalWinner is the production winner for this region in isolation.
+        // (No inter-region temporal context is threaded here: the dump shows the
+        // region's own vertical/competition evidence, not its neighbours' signals.)
         const auto diag = diagAnalyzer.diagnoseChord(
             region->tones,
             region->key.keySignatureFifths,
-            region->key.mode);
+            region->key.mode,
+            /*context*/ nullptr,
+            chordPrefs);
 
         const int keyFifths = region->key.keySignatureFifths;
 
@@ -1024,38 +1036,100 @@ static void writeDiagnosticJson(
         }
         out << "},\n";
 
-        // ── Top candidates (above 75 % of winner's score) ───────────────
-        const double threshold = diag.candidates.empty()
-                                 ? 0.0
-                                 : diag.candidates.front().totalScore * 0.75;
-        out << "      \"top_candidates\": [\n";
-        bool firstCand = true;
-        int rank = 0;
-        for (const auto& c : diag.candidates) {
-            if (c.totalScore < threshold) { break; }
-            if (!firstCand) { out << ",\n"; }
-            firstCand = false;
-            ++rank;
-            out << "        {\n";
-            out << "          \"rank\": " << rank << ",\n";
-            out << "          \"root_pc\": " << c.rootPc << ",\n";
-            out << "          \"root_name\": \"" << diagPcName(c.rootPc, keyFifths) << "\",\n";
-            out << "          \"template_idx\": " << c.templateIdx << ",\n";
-            out << "          \"template_name\": \"" << diagTemplateName(c.templateIdx) << "\",\n";
-            out << "          \"quality\": \"" << diagQualityName(c.quality) << "\",\n";
-            out << "          \"total_score\": " << fmtDouble(c.totalScore, 5) << ",\n";
-            out << "          \"template_tones\": " << fmtDouble(c.templateTonesScore, 5) << ",\n";
-            out << "          \"extra_notes\": " << fmtDouble(c.extraNotesScore, 5) << ",\n";
-            out << "          \"bass_bonus\": " << fmtDouble(c.bassBonus, 5) << ",\n";
-            out << "          \"diatonic_bonus\": " << fmtDouble(c.diatonicBonus, 5) << ",\n";
-            out << "          \"non_bass_adj\": " << fmtDouble(c.nonBassAdjust, 5) << ",\n";
-            out << "          \"structural_penalty\": " << fmtDouble(c.structuralPenalty, 5) << ",\n";
-            out << "          \"tpc_bonus\": " << fmtDouble(c.tpcBonus, 5) << ",\n";
-            out << "          \"context_bonus\": " << fmtDouble(c.contextBonus, 5) << ",\n";
-            out << "          \"dim7_bonus\": " << fmtDouble(c.dim7Bonus, 5) << "\n";
-            out << "        }";
+        // ── FINAL winner — the production winner BY CONSTRUCTION ────────
+        // (diagnoseChord replays analyzeChord + applyIter8691Pedal +
+        // applyPostScoringGates; diag.finalWinner == analyzeWithGates().front()).
+        out << "      \"final_winner\": ";
+        if (diag.hasWinner) {
+            const auto& w = diag.finalWinner.identity;
+            out << "{"
+                << "\"root_pc\": " << w.rootPc << ", "
+                << "\"root_name\": \"" << diagPcName(w.rootPc, keyFifths) << "\", "
+                << "\"bass_pc\": " << w.bassPc << ", "
+                << "\"quality\": \"" << diagQualityName(w.quality) << "\", "
+                << "\"score\": " << fmtDouble(w.score, 5) << ", "
+                << "\"symbol\": \"" << jsonEscape(
+                       analysis::ChordSymbolFormatter::formatSymbol(diag.finalWinner, keyFifths))
+                << "\"}";
+        } else {
+            out << "null";
+        }
+        out << ",\n";
+
+        // ── ORACLE — vertical-only per-cell breakdown (≥ 75 % of top cell) ──
+        // No progression signal; the values the scoring oracle handed to the
+        // competition pipeline. Labeled ORACLE: these are pre-competition.
+        const double oracleThreshold = diag.oracleCells.empty()
+                                     ? 0.0
+                                     : diag.oracleCells.front().verticalScore * 0.75;
+        out << "      \"oracle_top\": [\n";
+        bool firstOracle = true;
+        for (const auto& c : diag.oracleCells) {
+            if (c.verticalScore < oracleThreshold) { break; }
+            if (!firstOracle) { out << ",\n"; }
+            firstOracle = false;
+            out << "        {"
+                << "\"bass_pc\": " << c.bassPc << ", "
+                << "\"root_pc\": " << c.rootPc << ", "
+                << "\"root_name\": \"" << diagPcName(c.rootPc, keyFifths) << "\", "
+                << "\"template_idx\": " << c.templateIdx << ", "
+                << "\"template_name\": \"" << diagTemplateName(c.templateIdx) << "\", "
+                << "\"quality\": \"" << diagQualityName(c.quality) << "\", "
+                << "\"vertical_score\": " << fmtDouble(c.verticalScore, 5) << ", "
+                << "\"basis_indep\": " << fmtDouble(c.basisIndep, 5) << ", "
+                << "\"basis_dep\": " << fmtDouble(c.basisDep, 5) << ", "
+                << "\"complexity_factor\": " << fmtDouble(c.complexityFactor, 5) << ", "
+                << "\"aug_factor\": " << fmtDouble(c.augFactor, 5) << ", "
+                << "\"w_complete\": " << fmtDouble(c.wCompleteBonus, 5) << ", "
+                << "\"applied_bass_bonus\": " << fmtDouble(c.appliedBassBonus, 5)
+                << "}";
         }
         out << "\n      ],\n";
+
+        // ── COMPETITION — winning bass group, progression signals applied ──
+        // Scores are authoritative (the pipeline's rawCandidates); rcb shows the
+        // Gate R outcome. Labeled COMPETITION: these are post-oracle.
+        out << "      \"competition\": [\n";
+        bool firstComp = true;
+        for (const auto& c : diag.competition) {
+            if (!firstComp) { out << ",\n"; }
+            firstComp = false;
+            out << "        {"
+                << "\"bass_pc\": " << c.bassPc << ", "
+                << "\"root_pc\": " << c.rootPc << ", "
+                << "\"root_name\": \"" << diagPcName(c.rootPc, keyFifths) << "\", "
+                << "\"template_idx\": " << c.templateIdx << ", "
+                << "\"quality\": \"" << diagQualityName(c.quality) << "\", "
+                << "\"competition_score\": " << fmtDouble(c.competitionScore, 5) << ", "
+                << "\"rcb\": " << fmtDouble(c.rootContinuityBonus, 5) << ", "
+                << "\"rcb_raw\": " << fmtDouble(c.rootContinuityBonusRaw, 5) << ", "
+                << "\"rcb_withheld_by_gate_r\": "
+                << (c.rootContinuityWithheldByGateR ? "true" : "false") << ", "
+                << "\"w_seq\": " << fmtDouble(c.wSeqBonus, 5) << ", "
+                << "\"w_dim\": " << fmtDouble(c.wDimBonus, 5) << ", "
+                << "\"step_in\": " << fmtDouble(c.stepInBonus, 5) << ", "
+                << "\"step_out\": " << fmtDouble(c.stepOutBonus, 5)
+                << "}";
+        }
+        out << "\n      ],\n";
+
+        // ── POST-GATES — which stage moved the winner ───────────────────
+        out << "      \"post_gates\": {";
+        if (diag.postGates.hasCompetitionWinner) {
+            const auto& pg = diag.postGates;
+            out << "\"competition_winner\": {"
+                << "\"root_pc\": " << pg.competitionWinnerRootPc << ", "
+                << "\"bass_pc\": " << pg.competitionWinnerBassPc << ", "
+                << "\"quality\": \"" << diagQualityName(pg.competitionWinnerQuality) << "\", "
+                << "\"score\": " << fmtDouble(pg.competitionWinnerScore, 5) << "}, "
+                << "\"iter8691_changed_winner\": "
+                << (pg.iter8691ChangedWinner ? "true" : "false") << ", "
+                << "\"gates_changed_winner\": "
+                << (pg.gatesChangedWinner ? "true" : "false");
+        } else {
+            out << "\"competition_winner\": null";
+        }
+        out << "},\n";
 
         // ── Extension flags of the winning result ───────────────────────
         out << "      \"extension_flags\": {\n";
@@ -1307,7 +1381,7 @@ int main(int argc, char* argv[])
     // ── Write JSON ────────────────────────────────────────────────────────
     if (outputPath.empty()) {
         if (!diagnoseMeasures.empty()) {
-            writeDiagnosticJson(regions, diagnoseMeasures, sourceName, std::cout);
+            writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, std::cout);
         } else {
             writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout);
         }
@@ -1323,7 +1397,7 @@ int main(int argc, char* argv[])
         }
         std::ostringstream out;
         if (!diagnoseMeasures.empty()) {
-            writeDiagnosticJson(regions, diagnoseMeasures, sourceName, out);
+            writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, out);
         } else {
             writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out);
         }

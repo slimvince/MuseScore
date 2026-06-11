@@ -735,6 +735,67 @@ TEST(Composing_ChordAnalyzerMusicXmlTests, DetectsExpectedAbstractHarmonyFromCat
         {});
 }
 
+// ── Stage 2.3 agreement invariant ─────────────────────────────────────────────
+//
+// The point of Stage 2.3: diagnoseChord() is a VIEW into the production pipeline,
+// not a second scorer. For every catalog fixture (with temporal context threaded
+// exactly as production does), diagnoseChord().finalWinner must equal
+// analyzeWithGates().front() — identity AND score. This pins "diagnose can never
+// drift from production again": both run analyzeChord + applyIter8691Pedal +
+// applyPostScoringGates over the same inputs, so they agree by construction. If this
+// ever fails, the replay is not faithful — investigate, do not relax the assertion.
+TEST(Composing_ChordAnalyzerMusicXmlTests, DiagnoseMatchesProductionPipeline)
+{
+    auto runCatalog = [&](const QString& fixturePath, const ChordAnalyzerPreferences& prefs) {
+        const std::vector<FixtureEvent> events = loadCatalogFixtureEvents(fixturePath);
+        ASSERT_FALSE(events.empty()) << "Catalog is empty: " << fixturePath.toStdString();
+
+        int previousRootPc = -1;
+        for (const FixtureEvent& event : events) {
+            ChordTemporalContext temporalCtx;
+            temporalCtx.previousRootPc = previousRootPc;
+
+            const std::vector<ChordAnalysisTone> tns =
+                toAnalysisTones(event.pitches, event.tpcs);
+
+            const auto production = analyzeWithGates(kAnalyzer, tns, event.keyFifths,
+                                                     event.keyMode, &temporalCtx, prefs);
+            const ChordAnalysisDiagnosticResult diag = kAnalyzer.diagnoseChord(
+                tns, event.keyFifths, event.keyMode, &temporalCtx, prefs);
+
+            if (production.empty()) {
+                EXPECT_FALSE(diag.hasWinner)
+                    << "measure " << event.measureNumber
+                    << ": production gave no winner but diagnose reports one";
+                previousRootPc = -1;
+                continue;
+            }
+
+            ASSERT_TRUE(diag.hasWinner)
+                << "measure " << event.measureNumber
+                << ": production has a winner but diagnose reports none";
+
+            const ChordIdentity& p = production.front().identity;
+            const ChordIdentity& d = diag.finalWinner.identity;
+            const std::string where = fixturePath.toStdString() + " measure "
+                                    + std::to_string(event.measureNumber);
+            EXPECT_EQ(d.rootPc, p.rootPc)         << where << " (rootPc)";
+            EXPECT_EQ(d.bassPc, p.bassPc)         << where << " (bassPc)";
+            EXPECT_EQ(static_cast<int>(d.quality),
+                      static_cast<int>(p.quality)) << where << " (quality)";
+            EXPECT_EQ(d.extensions, p.extensions) << where << " (extensions)";
+            EXPECT_DOUBLE_EQ(d.score, p.score)    << where << " (score)";
+
+            previousRootPc = production.front().identity.rootPc;
+        }
+    };
+
+    runCatalog(QString::fromUtf8(composing_tests_DATA_ROOT)
+               + "/data/chordanalyzer_catalog_jazz.musicxml", kJazzPrefs);
+    runCatalog(QString::fromUtf8(composing_tests_DATA_ROOT)
+               + "/data/chordanalyzer_catalog_standard.musicxml", kStandardPrefs);
+}
+
 // Writes a debug context block (pitches, pitch classes, TPCs, key) to a stream.
 static void writeMismatchDebugContext(std::ostringstream& oss,
                                       const std::vector<int>& pitches,

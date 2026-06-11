@@ -673,32 +673,87 @@ struct ChordTemporalContext {
     int previousDistinctPcs { 0 };
 };
 
-/// Per-candidate diagnostic entry from the full 12 × template scoring loop.
-/// Component scores sum (approximately) to totalScore.
-struct ChordCandidateDiagnostic {
-    int rootPc = 0;
-    int templateIdx = 0;                   ///< 0-based index into the 16-template array
-    ChordQuality quality = ChordQuality::Unknown;
-    double totalScore = 0.0;
-    // ── Additive scoring components ────────────────────────────────────────
-    double templateTonesScore = 0.0; ///< scoreTemplateTones() — template tone hits
-    double extraNotesScore    = 0.0; ///< scoreExtraNotes()    — extensions (+) / contradictions (−)
-    double dim7Bonus          = 0.0; ///< dim7CharacteristicBonus()
-    double nonBassAdjust      = 0.0; ///< nonBassAdjustment() — ≤ 0 for non-bass Min7/HalfDim/Sus4
-    double structuralPenalty  = 0.0; ///< structuralPenalties() — ≤ 0
-    double tpcBonus           = 0.0; ///< tpcConsistencyBonus()
-    double bassBonus          = 0.0; ///< appliedBassRootBonus() (0 when root ≠ bass)
-    double diatonicBonus      = 0.0; ///< diatonicRootBonus (0 when root is non-diatonic)
-    double contextBonus       = 0.0; ///< continuity + resolution + inversion bonuses
+// ── diagnoseChord() introspection result (Stage 2.3) ──────────────────────────
+//
+// diagnoseChord() REPLAYS the production pipeline (analyzeChord + applyIter8691Pedal
+// + applyPostScoringGates) and decorates its intermediate state. The result is split
+// into three clearly-labeled layers plus the production winner:
+//   ORACLE      — the vertical-only per-cell scores the scoring oracle produced,
+//                 copied straight from the fn::ScoringSnapshot (no progression signal).
+//   COMPETITION — the winning bass group's candidates with their progression-signal
+//                 components (rcb incl. Gate R outcome, w_seq, w_dim, step bonuses);
+//                 the SCORES are taken verbatim from the real pipeline
+//                 (PostScoringGateContext::rawCandidates), the component values are
+//                 recomputed from the snapshot cell + context via the SAME public
+//                 fn:: bonus functions applyHarmonicFunction() calls.
+//   POST-GATES  — which stage (Iter 86/91/pedal, gates A–L) moved the winner.
+// finalWinner is the production winner BY CONSTRUCTION (== analyzeWithGates().front()).
+
+/// ORACLE layer: one snapshot cell — the vertical-only scoring terms for a
+/// (bass, root, template) candidate. Mirrors fn::ScoringCell.
+struct DiagnosticOracleCell {
+    int          bassPc           = -1;
+    int          rootPc           = 0;
+    int          templateIdx      = 0;   ///< tiePriority (index into the template array)
+    ChordQuality quality          = ChordQuality::Unknown;
+    double       basisIndep       = 0.0; ///< vertical pitch evidence (no rootContinuity folded in)
+    double       basisDep         = 0.0; ///< bass-dependent delta (incl. §4.1b inversion bonuses)
+    double       complexityFactor = 0.0;
+    double       augFactor        = 0.0;
+    double       wCompleteBonus   = 0.0;
+    double       appliedBassBonus = 0.0;
+    /// Vertical-only score handed to the competition pipeline, BEFORE any progression
+    /// signal: (basisIndep + basisDep) * complexityFactor * augFactor + wCompleteBonus.
+    double       verticalScore    = 0.0;
 };
 
-/// Full diagnostic output from a single chord analysis run.
+/// COMPETITION layer: one candidate of the WINNING bass group. The competitionScore is
+/// authoritative (from the pipeline's rawCandidates); the component fields are a faithful
+/// view of the progression signals the pipeline applied to this cell.
+struct DiagnosticCompetitionCandidate {
+    int          bassPc       = -1;
+    int          rootPc       = 0;
+    int          templateIdx  = 0;
+    ChordQuality quality      = ChordQuality::Unknown;
+    /// rootContinuityBonus actually in effect (0 when withheld by Gate R or no continuity).
+    double       rootContinuityBonus           = 0.0;
+    /// Pre-Gate-R rootContinuityBonus — the value Gate R may have withheld.
+    double       rootContinuityBonusRaw        = 0.0;
+    bool         rootContinuityWithheldByGateR = false;
+    double       wSeqBonus     = 0.0;
+    double       wDimBonus     = 0.0;   ///< exact value the pipeline applied (RawCandidate::wDimDelta)
+    double       stepInBonus   = 0.0;   ///< potential w_stepIn (the surgical guard may suppress it)
+    double       stepOutBonus  = 0.0;   ///< potential w_stepOut (the surgical guard may suppress it)
+    /// Final competition score for this candidate — authoritative, from the pipeline.
+    double       competitionScore = 0.0;
+};
+
+/// POST-GATES layer: the winner identity + score after each production stage, so the
+/// dump shows which stage (if any) changed the winner.
+struct DiagnosticPostGateTrail {
+    bool         hasCompetitionWinner    = false;
+    int          competitionWinnerRootPc  = -1;
+    int          competitionWinnerBassPc  = -1;
+    ChordQuality competitionWinnerQuality = ChordQuality::Unknown;
+    double       competitionWinnerScore   = 0.0;
+    bool         iter8691ChangedWinner    = false;  ///< applyIter8691Pedal moved results.front()
+    bool         gatesChangedWinner       = false;  ///< applyPostScoringGates moved results.front()
+};
+
+/// Full diagnostic output — a VIEW into the production pipeline's intermediate state
+/// (Stage 2.3), not a separate scorer.
 struct ChordAnalysisDiagnosticResult {
-    int bassPc = -1;                        ///< Bass PC chosen by the analyzer
-    std::array<double, 12> pcWeights{};    ///< Per-PC accumulated weights (pre-normalization)
-    int distinctPcs = 0;                    ///< Distinct PCs with weight > 0.05
-    /// All 12 × 16 = 192 candidates, sorted descending by totalScore.
-    std::vector<ChordCandidateDiagnostic> candidates;
+    int                    bassPc      = -1;       ///< winner bass PC (production); -1 if no winner
+    std::array<double, 12> pcWeights{};            ///< per-PC accumulated weights (from the snapshot)
+    int                    distinctPcs = 0;        ///< distinct PCs with weight > 0.05
+    int                    keyTonicPc  = -1;
+    KeySigMode             keyMode{};
+
+    std::vector<DiagnosticOracleCell>           oracleCells;  ///< ORACLE (all cells, score-sorted)
+    std::vector<DiagnosticCompetitionCandidate> competition;  ///< COMPETITION (winning bass group)
+    DiagnosticPostGateTrail                     postGates;     ///< POST-GATES trail
+    ChordAnalysisResult                         finalWinner;   ///< production winner by construction
+    bool                                        hasWinner = false;
 };
 
 /// Interface for chord analysis strategies.
@@ -719,13 +774,20 @@ public:
     ///
     /// Returns up to 3 candidates sorted by score descending. An empty result
     /// means fewer than 3 distinct pitch classes are sounding (insufficient data).
+    ///
+    /// snapshotOut: when non-null, the internally-built fn::ScoringSnapshot (the
+    /// vertical-only candidate cube the competition pipeline consumed) is copied out
+    /// after applyHarmonicFunction() ran. Mirrors the gateCtxOut pattern: byte-identical
+    /// behavior when null, a single branch + one copy when set. Used by diagnoseChord()
+    /// to introspect the production pipeline without re-scoring.
     virtual std::vector<ChordAnalysisResult> analyzeChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,
         KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences,
-        PostScoringGateContext* gateCtxOut = nullptr) const = 0;
+        PostScoringGateContext* gateCtxOut = nullptr,
+        function::ScoringSnapshot* snapshotOut = nullptr) const = 0;
 };
 
 /// Forward declaration — `inferNextRootPc` is defined further down the header,
@@ -923,11 +985,15 @@ public:
         KeySigMode keyMode,
         const ChordTemporalContext* context = nullptr,
         const ChordAnalyzerPreferences& prefs = kDefaultChordAnalyzerPreferences,
-        PostScoringGateContext* gateCtxOut = nullptr) const override;
+        PostScoringGateContext* gateCtxOut = nullptr,
+        function::ScoringSnapshot* snapshotOut = nullptr) const override;
 
-    /// Run the full 12 × template scoring loop and return per-candidate breakdowns.
-    /// Unlike analyzeChord(), post-scoring quality normalization is not applied, so
-    /// quality reflects the raw template that produced the score.
+    /// Diagnostic VIEW into the production pipeline (Stage 2.3). Replays the exact
+    /// production sequence — analyzeChord() (capturing the snapshot + gate context),
+    /// then applyIter8691Pedal() and applyPostScoringGates() — and decorates the result
+    /// with the ORACLE per-cell breakdown, the COMPETITION progression-signal terms of
+    /// the winning bass group, and the POST-GATES winner trail. finalWinner is the
+    /// production winner BY CONSTRUCTION (identical to analyzeWithGates().front()).
     ChordAnalysisDiagnosticResult diagnoseChord(
         const std::vector<ChordAnalysisTone>& tones,
         int keySignatureFifths,

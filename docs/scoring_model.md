@@ -57,9 +57,11 @@ modulation, or progression context beyond a single chord's neighbours.
 ## 2. Templates
 
 The analyzer scores each candidate against a fixed array of `analysis::kTemplateCount`
-(currently 17) chord templates (`std::array<TemplateDef, kTemplateCount>` in `analyzeChord`,
-mirrored as `kDiagTemplates`). Each template carries an intervals list (semitone
-offsets from root) and parallel TPC deltas (circle-of-fifths distance).
+(currently 17) chord templates (`std::array<TemplateDef, kTemplateCount>` in `analyzeChord`).
+Each template carries an intervals list (semitone offsets from root) and parallel TPC
+deltas (circle-of-fifths distance). (Until Stage 2.3 a byte-identical `kDiagTemplates`
+mirror existed for the legacy `diagnoseChord` scorer; `diagnoseChord` now replays the
+production pipeline, so the mirror is gone — there is one template array.)
 
 | # | Quality          | Intervals      | Represents                          | Notes |
 |---|------------------|----------------|-------------------------------------|-------|
@@ -94,10 +96,10 @@ intentional placements:
 - Min7 (5) follows Minor triad (4) and precedes Sus4 templates.
 - Plain triads precede their 4-note extensions.
 
-`kDiagTemplates` in `diagnoseChord` (~L3381) must remain byte-identical to the
-`analyzeChord` template array. `diagnoseChord` intentionally **omits the
-production guards** (B2 dual guard etc.) so every cell appears in the
-diagnostic breakdown — guards are production-only.
+`diagnoseChord()` no longer keeps its own template array (Stage 2.3): it calls the
+real `analyzeChord` and decorates the production snapshot, so it sees exactly the
+templates and guards production uses. (The legacy diagnose scorer deliberately omitted
+the production guards — that divergence, which mis-led two investigations, is gone.)
 
 ---
 
@@ -130,13 +132,16 @@ score = (basisIndep + bassDep) × complexityFactor × augFactor
 
 **Atomic update requirement.** Every template-sized array derives its extent from a single
 constant, `analysis::kTemplateCount` (`chordanalyzer.h`, `mu::composing::analysis`
-namespace, currently `17`):
+namespace, currently `17`). The three sync sites (since Stage 2.3 removed `kDiagTemplates`):
 - the `analyzeChord` `templates` array,
-- `kDiagTemplates`,
 - all three score matrices (`basisIndepMatrix` / `complexityFactorMatrix` /
   `augFactorMatrix` — inner extent),
 - `kMasks` in `harmonicfunctionlayer.cpp` (and its `tiePriority` bounds check), referenced
   there as `analysis::kTemplateCount`.
+
+(`diagTemplateName` in `tools/batch_analyze.cpp` carries the human-readable names for the
+diagnostic dump; it `static_assert`s its length against `analysis::kTemplateCount` but is
+display-only, not a scoring site.)
 
 To add a template, bump `kTemplateCount` and add the matching entries (see §9). The
 compiler now enforces the sizes: adding an entry to a TemplateDef array **without** bumping
@@ -216,8 +221,9 @@ Applied by the competition pipeline `applyHarmonicFunction()`
 `basisIndep` before the complexity x aug multiply. Rewards continuing the same
 root across adjacent regions. It is a **progression signal, not vertical pitch
 evidence**: as of the scoring-oracle / competition-pipeline split (see section 11)
-the scoring oracle `analyzeChord()` no longer folds it into `basisIndep`. (The
-`diagnoseChord` diagnostic path still adds it inline via `contextualBonuses`.)
+the scoring oracle `analyzeChord()` no longer folds it into `basisIndep`. (Since
+Stage 2.3 `diagnoseChord` replays the production pipeline, so its dump shows the
+pipeline's own rcb — including the Gate R outcome — not a re-derived value.)
 
 **Known dead end (Iter 98, 2026-05-23).** Gating this bonus off a sparse
 predecessor (e.g. `previousRegion.distinctPcs <= 2`) was tried in two variants
@@ -659,11 +665,11 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   `ScoringPhase::Final` will cause segmentation regressions.
 
 - **Template arrays update atomically under `analysis::kTemplateCount`.** All
-  array extents (template array, `kDiagTemplates`, three score matrices, `kMasks`)
-  derive from the constant since `a236a0ff21`, so the compiler enforces sizes.
-  Adding a template = bump the constant + add the template/mask/diag entries in
-  the same edit (§9 step 5). The historical silent stack-buffer overrun from a
-  missed matrix size is closed.
+  array extents (template array, three score matrices, `kMasks`) derive from the
+  constant since `a236a0ff21`, so the compiler enforces sizes. Adding a template =
+  bump the constant + add the template/mask entries in the same edit (§9 step 5).
+  The historical silent stack-buffer overrun from a missed matrix size is closed.
+  (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)
 
 - **Gate A subsumes Gates B/C/D.** Gate A's entry conditions are a strict subset
   of B/C/D's, so B/C/D are unreachable dead code (Stage-1b F1). Do not add
@@ -735,10 +741,15 @@ Derived from the B1, B2, and B3 lessons.
    - bump `analysis::kTemplateCount` (`chordanalyzer.h`) N → N+1. This automatically
      resizes the three score matrices and `kMasks`; no per-array size edit is needed.
    - add the new entry to the `analyzeChord` `templates` array;
-   - add the byte-identical entry to `kDiagTemplates`;
    - add the new template's interval bitmask to `kMasks` in `bassIsTemplateChordTone`
      (`harmonicfunctionlayer.cpp`). No entry may be `0` / `0u` (every template has at least
      interval 0, the root). A missing/zero mask silently disables Gate R for that template.
+   - add the human-readable name to `diagTemplateName` in `tools/batch_analyze.cpp` (its
+     `static_assert` against `analysis::kTemplateCount` fails the build otherwise) — a
+     display-only diagnostic site, not a scoring site.
+
+   (Stage 2.3 removed the `kDiagTemplates` mirror: `diagnoseChord` now replays the
+   production pipeline, so there is no second template array to keep byte-identical.)
 
    Failure modes after this change: adding a TemplateDef entry **without** bumping the
    constant is a compile error (too many initializers); bumping the constant **without**
@@ -881,12 +892,27 @@ identically and in the same order, so the selected winner is unchanged. Verified
 by the equivalence harness (0 divergences), the catalog assertions in
 `composing_tests`, the pipeline snapshot goldens, and the BIR corpus.
 
-The template count and the 4-site atomic-update checklist (section 9) are
-unchanged by this redesign (no templates added or removed).
+The atomic-update checklist (section 9) is unchanged by this redesign (no templates
+added or removed). Stage 2.3 later shrank it from four scoring sites to three by removing
+the `kDiagTemplates` mirror.
+
+**Diagnostic view (Stage 2.3).** `diagnoseChord()` is a VIEW into this pipeline, not a
+parallel scorer. It calls the real `analyzeChord` (capturing the `ScoringSnapshot` via the
+new `snapshotOut` param, mirroring `gateCtxOut`) then the real `applyIter8691Pedal` +
+`applyPostScoringGates`, and decorates the result with three labeled layers — ORACLE
+(snapshot cells), COMPETITION (winning bass group's progression-signal terms incl. the
+Gate R outcome, scores from the pipeline's `rawCandidates`), and POST-GATES (which stage
+moved the winner). Its `finalWinner` is the production winner by construction; the
+catalog-wide agreement invariant is pinned in
+`chordanalyzer_musicxml_tests.cpp::DiagnoseMatchesProductionPipeline`. The old diagnose
+scorer (its own `kDiagTemplates` array + the rcb-folding `contextualBonuses` helper, both
+removed) had no Gate R / w_seq / w_dim / threshold and mis-led two investigations.
 
 ---
 
-*Last updated: 2026-06-08 — Gate R (rcb bass-chord-tone guard) added to §4 and §9
+*Last updated: 2026-06-11 — Stage 2.3: `diagnoseChord` replays the production pipeline
+(`analyzeChord` gains `snapshotOut`; `kDiagTemplates` + `contextualBonuses` removed; the
+atomic-update site list drops from 4 to 3). Prior: 2026-06-08 — Gate R (rcb bass-chord-tone guard) added to §4 and §9
 (5th atomic-update site, `kMasks`). Withholds `rootContinuityBonus` from a candidate
 whose bass is foreign to its own template — fixes the Δ=+7b cluster (bwv245.28,
 bwv296, bwv320). Prior: 2026-06-06 — E2d redesign: scoring-oracle /

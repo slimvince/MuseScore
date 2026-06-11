@@ -28,6 +28,7 @@
 #include <array>
 #include <cmath>
 #include <limits>
+#include <utility>
 
 namespace fn = mu::composing::function;
 
@@ -1451,102 +1452,6 @@ double appliedBassRootBonus(const TemplateDef& tpl,
     return prefs.bassNoteRootBonus * bassRootBonusMultiplier(tpl, rootPc, pcWeight, prefs);
 }
 
-/// Score bonuses derived from musical context: bass note, key membership, and temporal
-/// information from the preceding chord.
-double contextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
-                         double appliedBassBonus,
-                         int distinctPcs,
-                         const std::array<double, 12>& pcWeight,
-                         int keyTonicPc, const std::array<int, 7>& scale,
-                         const ChordAnalyzerPreferences& prefs,
-                         const ChordTemporalContext* context)
-{
-    double score = 0.0;
-    const bool hasStepwiseBassEvidence = context
-                                         && (context->bassIsStepwiseFromPrevious
-                                             || context->bassIsStepwiseToNext);
-
-    // Only award the full bass-root bonus when the accumulated tones support root position.
-    score += appliedBassBonus;
-
-    // Prefer roots that belong to the current key scale.
-    for (int interval : scale) {
-        if ((keyTonicPc + interval) % 12 == rootPc) {
-            score += prefs.diatonicRootBonus;
-            break;
-        }
-    }
-
-    if (context) {
-        // Root-continuity: prefer keeping the same root across successive chords.
-        score += fn::rootContinuityBonus(rootPc, context->previousRootPc,
-                                         prefs.rootContinuityBonus);
-
-        // Contextual inversion bonuses — §4.1b
-        // Accumulated into a local variable so the total can be capped before
-        // application (prevents runaway stacking when multiple signals fire).
-        // Only for inverted Major/Minor candidates (lesson from three-attempt
-        // inversion fix history: never apply to Diminished/HalfDiminished/Augmented).
-        const bool isInvertedMajMin = supportsContextualInversionBonuses(tpl, rootPc, bassPc, pcWeight);
-        double inversionContextBonus = 0.0;
-
-        // completeTriadInversionBonus gates on stepwise evidence (checked here
-        // rather than in the isInvertedMajMin block because it guards a structural
-        // condition independent of Major/Minor quality).
-        if (hasStepwiseBassEvidence
-                && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
-            inversionContextBonus += prefs.completeTriadInversionBonus;
-        }
-
-        if (isInvertedMajMin) {
-            if (context->bassIsStepwiseFromPrevious) {
-                inversionContextBonus += prefs.stepwiseBassInversionBonus;
-            }
-            if (context->bassIsStepwiseToNext) {
-                inversionContextBonus += prefs.stepwiseBassLookaheadBonus;
-            }
-            if (context->previousRootPc != -1
-                    && context->previousRootPc == rootPc) {
-                inversionContextBonus += prefs.sameRootInversionBonus;
-            }
-        }
-
-        // Apply the cap — prevents multi-signal stacking from overwhelming the
-        // bass-root bonus on genuinely root-position chords.
-        score += std::min(inversionContextBonus, prefs.maxTotalInversionContextBonus);
-
-        // Quality-guided resolution bias: reward candidates at the typical
-        // resolution target of the previous chord's quality.
-        if (context->previousQuality != ChordQuality::Unknown
-                && context->previousRootPc >= 0) {
-            const int prevRoot = context->previousRootPc;
-            const ChordQuality prevQ = context->previousQuality;
-            const double rb = prefs.resolutionBonus;
-
-            // viio(7) → I: diminished resolves up by a semitone.
-            if (prevQ == ChordQuality::Diminished
-                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
-                    && rootPc == (prevRoot + 1) % 12) {
-                score += rb;
-            }
-            // ii∅7 → V: half-diminished resolves up by a perfect fourth.
-            if (prevQ == ChordQuality::HalfDiminished
-                    && tpl.quality == ChordQuality::Major
-                    && rootPc == (prevRoot + 5) % 12) {
-                score += rb;
-            }
-            // I+ → I (return): augmented resolves back to the same root.
-            if (prevQ == ChordQuality::Augmented
-                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
-                    && rootPc == prevRoot) {
-                score += rb;
-            }
-        }
-    }
-
-    return score;
-}
-
 /// Returns true if bassPc is a chord tone of the chord identified by (rootPc, quality,
 /// extensions).  Used by the two-pass pedal detection to decide whether the bass note
 /// belongs to the upper-voice chord or is a structural pedal point.
@@ -1623,21 +1528,17 @@ static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32
 
 // Iter 92 — bass-split contextual bonuses.
 //
-// contextualBonuses() above is a monolithic helper.  The two helpers below
-// split its body so that the (rootPc, templateIdx) scoring loop can compute
-// the bass-INDEPENDENT contribution exactly once per cell and then evaluate
-// each bass-candidate by adding the bass-DEPENDENT delta only.
+// These two helpers split the contextual-bonus computation so the (rootPc, templateIdx)
+// scoring loop computes the bass-INDEPENDENT contribution exactly once per cell and then
+// evaluates each bass-candidate by adding the bass-DEPENDENT delta only. Together they
+// supply basisIndep / basisDep for every ScoringSnapshot cell.
 //
-// NOTE — the split helpers are NOT a faithful decomposition of contextualBonuses():
-// contextualBonuses() (used only by diagnoseChord, see L1456) intentionally still adds
-// rootContinuityBonus inline at L1482, whereas neither bassIndependentContextualBonuses
-// nor bassDependentContextualBonuses adds it.  Since the E2d redesign rootContinuity is
-// a progression signal owned by the competition pipeline (applyHarmonicFunction), not
-// the oracle (docs/scoring_model.md §11), so the production path deliberately omits it
-// here.  The divergence is intentional — diagnoseChord wants rcb folded in for its
-// diagnostic dump; the production scoring path applies rcb later (Gate R-aware).  Apart
-// from rootContinuityBonus the two helpers' sum equals contextualBonuses() for every
-// (tpl, rootPc, bassPc, context).
+// NOTE — neither helper adds rootContinuityBonus. Since the E2d redesign rootContinuity
+// is a progression signal owned by the competition pipeline (applyHarmonicFunction), not
+// the oracle (docs/scoring_model.md §11): it is added there, before the cf × af multiply
+// and Gate-R-aware. (The former monolithic `contextualBonuses()` helper, which folded rcb
+// in for the legacy diagnoseChord scorer, was removed in Stage 2.3 — diagnoseChord now
+// replays the production pipeline instead of re-scoring.)
 double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
                                         int keyTonicPc, const std::array<int, 7>& scale,
                                         const ChordAnalyzerPreferences& prefs,
@@ -2479,7 +2380,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     KeySigMode keyMode,
     const ChordTemporalContext* context,
     const ChordAnalyzerPreferences& prefs,
-    PostScoringGateContext* gateCtxOut) const
+    PostScoringGateContext* gateCtxOut,
+    fn::ScoringSnapshot* snapshotOut) const
 {
     if (tones.empty()) {
         return {};
@@ -2702,12 +2604,13 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //
     // analysis::kTemplateCount templates: see docs/scoring_model.md §2 for the full list.
     // When adding a template: bump analysis::kTemplateCount (chordanalyzer.h), then add
-    // the matching entry here AND in kDiagTemplates (diagnoseChord) AND the kMasks bitmask
-    // (harmonicfunctionlayer.cpp). Every template-sized array — both TemplateDef arrays,
-    // the three score matrices below, and kMasks — derives its extent from kTemplateCount,
-    // so adding an entry without bumping the constant is now a COMPILE error (too many
-    // initializers) rather than the silent stack-buffer overrun caught in the B1 attempt
-    // 2026-06-04. See docs/scoring_model.md §3 and §9.
+    // the matching entry here AND the kMasks bitmask (harmonicfunctionlayer.cpp). Every
+    // template-sized array — this TemplateDef array, the three score matrices below, and
+    // kMasks — derives its extent from kTemplateCount, so adding an entry without bumping
+    // the constant is now a COMPILE error (too many initializers) rather than the silent
+    // stack-buffer overrun caught in the B1 attempt 2026-06-04. (The former kDiagTemplates
+    // mirror was removed in Stage 2.3 — diagnoseChord no longer keeps its own template
+    // array.) See docs/scoring_model.md §3 and §9.
     static const std::array<TemplateDef, kTemplateCount> templates = {{
         { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
         { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },  // maj7
@@ -2971,6 +2874,14 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // externally (applyIter8691Pedal + applyPostScoringGates) at every production
     // call site AFTER this function returns. Do NOT call them here.
 
+    // Hand the internally-built snapshot to an introspecting caller (diagnoseChord).
+    // Mirrors the gateCtxOut pattern: a single branch + one move when requested, and
+    // byte-identical behavior (zero cost) when null. applyHarmonicFunction() consumed
+    // `snapshot` by const-ref and does not mutate it, so moving it out here is safe.
+    if (snapshotOut) {
+        *snapshotOut = std::move(snapshot);
+    }
+
     return results;
 }
 
@@ -3170,145 +3081,133 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     ChordAnalysisDiagnosticResult diag;
     if (tones.empty()) { return diag; }
 
-    // ── Build pcWeight histogram and find bass (mirrors analyzeChord) ────────
-    std::array<double, 12> pcWeight{};
-    int lowestPitch = std::numeric_limits<int>::max();
-    double totalRawWeight = 0.0;
-    for (const ChordAnalysisTone& t : tones) {
-        const int pc = normalizePc(t.pitch);
-        pcWeight[static_cast<size_t>(pc)] += std::max(0.1, t.weight);
-        totalRawWeight += std::max(0.0, t.weight);
-        if (t.pitch < lowestPitch) { lowestPitch = t.pitch; }
+    // ── Replay the EXACT production pipeline ──────────────────────────────────
+    // Byte-identical to test_helpers.h analyzeWithGates() and to every commit site in
+    // regionanalyzer.cpp: analyzeChord → applyIter8691Pedal → applyPostScoringGates,
+    // with the SAME tones / key / context / prefs the caller supplied. The snapshot and
+    // gate context are captured purely for the introspection decoration below; passing
+    // them out does not alter the result. diag.finalWinner is therefore the production
+    // winner BY CONSTRUCTION — that identity (the whole point of Stage 2.3) is pinned by
+    // Composing_DiagnoseTests.DiagnoseMatchesProductionPipeline.
+    fn::ScoringSnapshot     snapshot;
+    PostScoringGateContext  gateCtx;
+    std::vector<ChordAnalysisResult> results =
+        analyzeChord(tones, keySignatureFifths, keyMode, context, prefs, &gateCtx, &snapshot);
+
+    // Region facts — straight from the snapshot the oracle actually built.
+    diag.pcWeights   = snapshot.pcWeight;
+    diag.distinctPcs = snapshot.distinctPcs;
+    diag.keyTonicPc  = snapshot.keyTonicPc;
+    diag.keyMode     = snapshot.keyMode;
+
+    // ── ORACLE — per-cell vertical breakdown, copied from the snapshot ────────
+    // These are the vertical-only terms the scoring oracle produced (no progression
+    // signal); the competition adds rcb / w_seq / w_dim / steps on top. Kept (it is
+    // the tool's value) but now sourced from the production snapshot, not re-scored.
+    diag.oracleCells.reserve(snapshot.cells.size());
+    for (const fn::ScoringCell& cell : snapshot.cells) {
+        DiagnosticOracleCell oc;
+        oc.bassPc           = cell.bassPc;
+        oc.rootPc           = cell.rootPc;
+        oc.templateIdx      = cell.tiePriority;
+        oc.quality          = cell.quality;
+        oc.basisIndep       = cell.basisIndep;
+        oc.basisDep         = cell.basisDep;
+        oc.complexityFactor = cell.complexityFactor;
+        oc.augFactor        = cell.augFactor;
+        oc.wCompleteBonus   = cell.wCompleteBonus;
+        oc.appliedBassBonus = cell.appliedBassBonus;
+        oc.verticalScore    = (cell.basisIndep + cell.basisDep)
+                              * cell.complexityFactor * cell.augFactor
+                              + cell.wCompleteBonus;
+        diag.oracleCells.push_back(oc);
     }
-    diag.pcWeights = pcWeight;
-
-    const double bassMinWeight = prefs.bassPassingToneMinWeightFraction * totalRawWeight;
-    int lowestQualifyingPitch = std::numeric_limits<int>::max();
-    for (const ChordAnalysisTone& t : tones) {
-        if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
-            lowestQualifyingPitch = t.pitch;
-        }
-    }
-    const int lowestPitchForBass = (lowestQualifyingPitch < std::numeric_limits<int>::max())
-                                   ? lowestQualifyingPitch : lowestPitch;
-    const int bassPc = normalizePc(lowestPitchForBass);
-    diag.bassPc = bassPc;
-
-    std::array<int, 12> tpcForPc;
-    tpcForPc.fill(-1);
-    for (const ChordAnalysisTone& t : tones) {
-        if (t.tpc >= 0) {
-            const int pc = normalizePc(t.pitch);
-            if (tpcForPc[static_cast<size_t>(pc)] == -1) {
-                tpcForPc[static_cast<size_t>(pc)] = t.tpc;
-            }
-        }
-    }
-
-    int distinctPcs = 0;
-    for (double w : pcWeight) { if (w > 0.05) { ++distinctPcs; } }
-    diag.distinctPcs = distinctPcs;
-    if (distinctPcs < 3) { return diag; }
-
-    // ── Templates (same ordering as analyzeChord) ────────────────────────────
-    //
-    // kTemplateCount templates: must remain byte-identical to the analyzeChord array.
-    // diagnoseChord intentionally omits the production guards (B2 aug7 dual
-    // guard, etc.) so every cell appears in the diagnostic breakdown — guards
-    // are production-only.  See docs/scoring_model.md §2.
-    // When adding a template: bump analysis::kTemplateCount, then update both this array
-    // AND the analyzeChord array AND the kMasks bitmask atomically.
-    static const std::array<TemplateDef, kTemplateCount> kDiagTemplates = {{
-        { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
-        { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },
-        { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },
-        { ChordQuality::Major,          { 0, 4, 6, 10 },    { 0, +4, -6, -2 }   },
-        { ChordQuality::Minor,          { 0, 3, 7 },        { 0, -3, +1 }       },
-        { ChordQuality::Minor,          { 0, 3, 7, 10 },    { 0, -3, +1, -2 }   },
-        { ChordQuality::Diminished,     { 0, 3, 6 },        { 0, -3, -6 }       },
-        { ChordQuality::Suspended4,     { 0, 5, 6, 10 },    { 0, -1, -6, -2 }   },
-        { ChordQuality::HalfDiminished, { 0, 3, 6, 10 },    { 0, -3, -6, -2 }   },
-        { ChordQuality::Augmented,      { 0, 4, 8 },        { 0, +4, +8 }       },
-        { ChordQuality::Augmented,      { 0, 4, 8, 10 },    { 0, +4, +8, -2 }   },  // aug7 (C7♯5)
-        { ChordQuality::Suspended2,     { 0, 2, 7 },        { 0, +2, +1 }       },
-        { ChordQuality::Suspended4,     { 0, 5, 7, 10 },    { 0, -1, +1, -2 }   },
-        { ChordQuality::Suspended4,     { 0, 5, 7, 11 },    { 0, -1, +1, +5 }   },
-        { ChordQuality::Suspended4,     { 0, 5, 8, 10 },    { 0, -1, +8, -2 }   },
-        { ChordQuality::Suspended4,     { 0, 6, 7 },        { 0, +6, +1 }       },
-        { ChordQuality::Power,          { 0, 7 },           { 0, +1 }           }
-    }};
-    static_assert(kDiagTemplates.size() == kTemplateCount,
-                  "kDiagTemplates extent must equal analysis::kTemplateCount");
-
-    // ── Key context ──────────────────────────────────────────────────────────
-    const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
-    const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
-
-    static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
-        0, 1, 2, 3, 4, 5, 6,
-        1, 2, 3, 4, 5, 6, 0,
-        5, 6, 0, 1, 2, 3, 4
-    };
-    const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
-    const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));
-
-    // ── Score every root × template combination ──────────────────────────────
-    diag.candidates.reserve(12 * kDiagTemplates.size());
-
-    for (int rootPc = 0; rootPc < 12; ++rootPc) {
-        for (size_t tplIdx = 0; tplIdx < kDiagTemplates.size(); ++tplIdx) {
-            const TemplateDef& tpl = kDiagTemplates[tplIdx];
-
-            const double tplScore   = scoreTemplateTones(tpl, rootPc, pcWeight);
-            const double extraScore = scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc);
-            const double bbonus     = appliedBassRootBonus(tpl, rootPc, bassPc, pcWeight, prefs);
-            const double nonBassAdj = nonBassAdjustment(tpl, rootPc, bassPc, tpcForPc);
-            const double structural = structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold);
-            const double tpcBonus   = tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs);
-            // dim7CharacteristicBonus is a ROTATION-SELECTION MECHANISM — see the
-            // matching annotation at the analyzeChord call site (~L2036) and
-            // docs/scoring_model.md §4.  Mirrored here so diagnostic output reflects
-            // the same scoring component.
-            const double dim7       = dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold);
-
-            double diatonicBonus = 0.0;
-            for (int interval : scale) {
-                if ((keyTonicPc + interval) % 12 == rootPc) {
-                    diatonicBonus = prefs.diatonicRootBonus;
-                    break;
-                }
-            }
-
-            // contextualBonuses() includes bassBonus + diatonicBonus; subtract them
-            // to isolate the remaining contextual contributions.
-            const double totalContext = contextualBonuses(
-                tpl, rootPc, bassPc, bbonus, distinctPcs, pcWeight,
-                keyTonicPc, scale, prefs, context);
-            const double contextBonus = totalContext - bbonus - diatonicBonus;
-
-            ChordCandidateDiagnostic entry;
-            entry.rootPc             = rootPc;
-            entry.templateIdx        = static_cast<int>(tplIdx);
-            entry.quality            = tpl.quality;
-            entry.templateTonesScore = tplScore;
-            entry.extraNotesScore    = extraScore;
-            entry.dim7Bonus          = dim7;
-            entry.nonBassAdjust      = nonBassAdj;
-            entry.structuralPenalty  = structural;
-            entry.tpcBonus           = tpcBonus;
-            entry.bassBonus          = bbonus;
-            entry.diatonicBonus      = diatonicBonus;
-            entry.contextBonus       = contextBonus;
-            entry.totalScore         = tplScore + extraScore + dim7 + nonBassAdj
-                                       + structural + tpcBonus + bbonus + diatonicBonus + contextBonus;
-            diag.candidates.push_back(entry);
-        }
-    }
-
-    std::sort(diag.candidates.begin(), diag.candidates.end(),
-              [](const ChordCandidateDiagnostic& a, const ChordCandidateDiagnostic& b) {
-                  return a.totalScore > b.totalScore;
+    std::sort(diag.oracleCells.begin(), diag.oracleCells.end(),
+              [](const DiagnosticOracleCell& a, const DiagnosticOracleCell& b) {
+                  return a.verticalScore > b.verticalScore;
               });
+
+    // ── COMPETITION — winning bass group, with the progression signals ───────
+    // Scores are authoritative: gateCtx.rawCandidates is exactly the chosen bass group
+    // the competition pipeline produced (post w_seq/w_dim/steps, post Gate R). For each
+    // we recompute the additive signal components from the matching snapshot cell + ctx
+    // via the SAME public fn:: functions applyHarmonicFunction() calls — a view of the
+    // pipeline's inputs, NOT a second scorer. Gate R fires only in the Final phase, as
+    // at the production call site.
+    const bool finalPhase = (prefs.scoringPhase == fn::ScoringPhase::Final);
+    const int  winBassPc  = gateCtx.bassPc;
+    const int  prevRootPc = context ? context->previousRootPc : -1;
+    const int  nextRootPc = context ? context->nextRootPc     : -1;
+    const int  prevBassPc = context ? context->previousBassPc : -1;
+    const int  nextBassPc = context ? context->nextBassPc     : -1;
+    diag.competition.reserve(gateCtx.rawCandidates.size());
+    for (const RawCandidate& rc : gateCtx.rawCandidates) {
+        DiagnosticCompetitionCandidate cc;
+        cc.bassPc           = winBassPc;
+        cc.rootPc           = rc.rootPc;
+        cc.templateIdx      = rc.tiePriority;
+        cc.quality          = rc.quality;
+        cc.competitionScore = rc.score;
+        cc.wDimBonus        = rc.wDimDelta;   // exact value the pipeline applied
+
+        // Locate the matching snapshot cell (same winning bass, root, template).
+        const fn::ScoringCell* cell = nullptr;
+        for (const fn::ScoringCell& sc : snapshot.cells) {
+            if (sc.bassPc == winBassPc && sc.rootPc == rc.rootPc
+                && sc.tiePriority == rc.tiePriority) {
+                cell = &sc;
+                break;
+            }
+        }
+        if (cell) {
+            const double rcbRaw = fn::rootContinuityBonus(cell->rootPc, prevRootPc,
+                                                          prefs.rootContinuityBonus);
+            const bool withheld = finalPhase && fn::gateRZeroesRootContinuity(*cell, rcbRaw);
+            cc.rootContinuityBonusRaw        = rcbRaw;
+            cc.rootContinuityWithheldByGateR = withheld;
+            cc.rootContinuityBonus           = withheld ? 0.0 : rcbRaw;
+            if (finalPhase) {
+                cc.wSeqBonus    = fn::wSeqBonus(cell->rootPc, nextRootPc,
+                                               snapshot.distinctPcs, snapshot.jointScoringEnabled);
+                cc.stepInBonus  = fn::wStepInBonus(winBassPc, cell->rootPc,
+                                                  snapshot.jointScoringEnabled, prevBassPc);
+                cc.stepOutBonus = fn::wStepOutBonus(winBassPc, cell->rootPc,
+                                                   snapshot.jointScoringEnabled, nextBassPc);
+            }
+        }
+        diag.competition.push_back(cc);
+    }
+
+    // ── POST-GATES — run the production tail, recording which stage moves it ──
+    // Mirrors analyzeWithGates(): the post passes run only when analyzeChord returned a
+    // non-empty result. The winner identity is compared after each stage so the dump can
+    // attribute a winner change to Iter 86/91/pedal vs gates A–L.
+    const auto sameIdentity = [](const ChordAnalysisResult& a, const ChordAnalysisResult& b) {
+        return a.identity.rootPc == b.identity.rootPc
+            && a.identity.bassPc == b.identity.bassPc
+            && a.identity.quality == b.identity.quality
+            && a.identity.extensions == b.identity.extensions;
+    };
+    if (!results.empty()) {
+        const ChordAnalysisResult competitionWinner = results.front();
+        diag.postGates.hasCompetitionWinner    = true;
+        diag.postGates.competitionWinnerRootPc  = competitionWinner.identity.rootPc;
+        diag.postGates.competitionWinnerBassPc  = competitionWinner.identity.bassPc;
+        diag.postGates.competitionWinnerQuality = competitionWinner.identity.quality;
+        diag.postGates.competitionWinnerScore   = competitionWinner.identity.score;
+
+        applyIter8691Pedal(results, gateCtx, context, prefs);
+        const ChordAnalysisResult afterIter = results.front();
+        diag.postGates.iter8691ChangedWinner = !sameIdentity(afterIter, competitionWinner);
+
+        applyPostScoringGates(results, prefs, context, gateCtx);
+        const ChordAnalysisResult finalWinner = results.front();
+        diag.postGates.gatesChangedWinner = !sameIdentity(finalWinner, afterIter);
+
+        diag.finalWinner = finalWinner;
+        diag.hasWinner   = true;
+        diag.bassPc      = finalWinner.identity.bassPc;
+    }
 
     return diag;
 }
