@@ -681,7 +681,13 @@ chord-scoring prefs [code]. The BIR Jazz/Baroque gate therefore measures a chord
 configuration **no user can produce in the app**. Sharper still: the struct default
 (`preferMinorOverMajorAdd6=false`) matches NO batch preset — even "Standard" sets it true — so
 the configuration the live product actually runs has, as of Stage 2.4, never been corpus-measured.
-The `--preset Default` measurement (below) closes that.
+The `--preset Default` measurement (below) closes that. **Measured (Stage 2.4 V4,
+`tools/corpus/default`, informational — no gate):** the user-default config yields **30/14**
+three-way genuine errors (`bassIsRoot` true/false) — its BIR=false set is the canonical
+Baroque-13 set **in full plus `bwv187.7`** (every gate case is experienced by users; one extra),
+and it shares 5 of the canonical Jazz-7 (`bwv245.17/245.40/422/432/45.7`), while Jazz's
+`bwv244.15/74.8` are preset-specific. So the live-product configuration is closest to Baroque
+(a 13-of-13 superset, +1), not to batch "Standard".
 
 **Decision (Half A).** Record this as a **product-level finding**, not a code change. The
 chord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do

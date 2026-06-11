@@ -37,6 +37,16 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 # or incomplete corpus. Kept in sync with characterise_bir_false.MANIFEST_NAME.
 MANIFEST_NAME = "corpus_manifest.json"
 
+# Accepted --preset names. The first five are the batch tuning presets
+# (mode priors + ChordAnalyzerPreferences). "Default" (Stage 2.4 V4) is NOT a
+# tuning preset: it reproduces the live product's out-of-box configuration —
+# the app's registered mode-prior settings defaults (composingconfiguration.cpp,
+# which differ from the "Standard" preset on 11 of 21 modes) plus untouched
+# ChordAnalyzerPreferences struct defaults. It exists so the configuration users
+# actually run can be corpus-measured (informational; no gate). Kept in sync with
+# batch_analyze.cpp applyPreset()/chordPrefs handling.
+PRESET_CHOICES = ["Standard", "Baroque", "Modal", "Jazz", "Contemporary", "Default"]
+
 
 def _file_fingerprint(path: Path) -> dict:
     """Size + sha256 of a file's bytes — the per-score identity recorded in the
@@ -228,7 +238,7 @@ def _process_one(args_tuple):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--preset", default="Baroque",
-                        choices=["Standard", "Baroque", "Modal", "Jazz", "Contemporary"])
+                        choices=PRESET_CHOICES)
     parser.add_argument("--batch-analyze", metavar="PATH")
     parser.add_argument("--corpus-dir", metavar="DIR", default="tools/corpus")
     parser.add_argument("--output-dir", metavar="DIR")

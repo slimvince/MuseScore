@@ -12,7 +12,7 @@
 //
 // Usage:
 //   batch_analyze <input.[xml|musicxml|mxl|mscz|mscx]> [output.json]
-//                [--preset Standard|Jazz|Modal|Baroque|Contemporary]
+//                [--preset Standard|Jazz|Modal|Baroque|Contemporary|Default]
 //                [--dump-regions batch|notation|notation-premerge]
 //   batch_analyze --help
 
@@ -152,10 +152,44 @@ static std::string fmtDouble(double v, int precision = 6)
 
 /// Apply a named mode prior preset to @p prefs.
 /// Returns true on success; false if @p name is not a known preset.
-/// Valid names: "Standard", "Jazz", "Modal", "Baroque", "Contemporary".
+/// Valid names: "Standard", "Jazz", "Modal", "Baroque", "Contemporary", "Default".
+/// ("Default" = live product out-of-box config, not a tuning preset — Stage 2.4 V4.)
 static bool applyPreset(const std::string& name,
                         analysis::KeyModeAnalyzerPreferences& prefs)
 {
+    // "Default" (Stage 2.4 V4) is NOT a named tuning preset — it reproduces the
+    // live product's out-of-box mode priors so the configuration users actually
+    // run can be corpus-measured (informational; no gate). These 21 values are the
+    // app's registered settings defaults in composingconfiguration.cpp (init(),
+    // MODE_PRIOR_* setDefaultValue calls). They are NOT the KeyModeAnalyzerPreferences
+    // struct defaults and NOT the "Standard" preset: the app defaults diverge from
+    // both on 11 of 21 modes (Lydian, Mixolydian, Locrian, LydianAugmented,
+    // LydianDominant, MixolydianB6, AeolianB5, LocrianSharp6, IonianSharp5,
+    // DorianSharp4, LydianSharp2). KEEP IN SYNC with composingconfiguration.cpp.
+    if (name == "Default") {
+        prefs.modePriorIonian           =  1.20;
+        prefs.modePriorDorian           = -0.50;
+        prefs.modePriorPhrygian         = -1.50;
+        prefs.modePriorLydian           =  0.00;
+        prefs.modePriorMixolydian       = -0.20;
+        prefs.modePriorAeolian          =  1.00;
+        prefs.modePriorLocrian          = -3.50;
+        prefs.modePriorMelodicMinor     = -0.50;
+        prefs.modePriorDorianB2         = -1.50;
+        prefs.modePriorLydianAugmented  = -1.00;
+        prefs.modePriorLydianDominant   = -0.30;
+        prefs.modePriorMixolydianB6     = -1.00;
+        prefs.modePriorAeolianB5        = -2.00;
+        prefs.modePriorAltered          = -3.50;
+        prefs.modePriorHarmonicMinor    = -0.30;
+        prefs.modePriorLocrianSharp6    = -2.00;
+        prefs.modePriorIonianSharp5     = -1.50;
+        prefs.modePriorDorianSharp4     = -1.50;
+        prefs.modePriorPhrygianDominant = -0.80;
+        prefs.modePriorLydianSharp2     = -2.00;
+        prefs.modePriorAlteredDomBB7    = -3.50;
+        return true;
+    }
     for (const auto& p : mu::composing::modePriorPresets()) {
         if (p.name != name) continue;
         prefs.modePriorIonian           = p.ionian;
@@ -1206,7 +1240,7 @@ static void printHelp(const std::string& prog)
     std::cerr
         << "Usage:\n"
         << "  " << prog << " <input.[xml|musicxml|mxl|mscz|mscx]> [output.json]"
-                           " [--preset Standard|Jazz|Modal|Baroque|Contemporary]"
+                           " [--preset Standard|Jazz|Modal|Baroque|Contemporary|Default]"
                            " [--dump-regions batch|notation|notation-premerge]"
                            " [--section-level]"
                            " [--diagnose-measures N[,N...]]\n"
@@ -1217,6 +1251,9 @@ static void printHelp(const std::string& prog)
         << "  --preset  Apply a named mode prior preset (default: Standard).\n"
         << "            Run the same corpus under different presets and diff the\n"
         << "            results to identify mode-inference improvements.\n"
+        << "            'Default' is not a tuning preset: it reproduces the live\n"
+        << "            product's out-of-box config (app mode-prior settings defaults\n"
+        << "            + untouched chord prefs) for measurement (Stage 2.4 V4).\n"
         << "  --dump-regions <mode>\n"
         << "            Select which analysis path to serialize. 'batch' writes the\n"
         << "            tool's current batch path, 'notation' writes the live notation\n"
@@ -1331,7 +1368,7 @@ int main(int argc, char* argv[])
     analysis::KeyModeAnalyzerPreferences keyPrefs;
     if (!applyPreset(presetName, keyPrefs)) {
         std::cerr << "ERROR: unknown preset '" << presetName
-                  << "'.  Valid names: Standard, Jazz, Modal, Baroque, Contemporary\n";
+                  << "'.  Valid names: Standard, Jazz, Modal, Baroque, Contemporary, Default\n";
         return 1;
     }
 
@@ -1364,6 +1401,15 @@ int main(int argc, char* argv[])
 
     } else if (presetName == "Baroque") {
         chordPrefs.preferMinorOverMajorAdd6              = true;
+
+    } else if (presetName == "Default") {
+        // Live product out-of-box (Stage 2.4 V4): the app never mutates a single
+        // ChordAnalyzerPreferences field (every live chord-scoring site uses
+        // kDefaultChordAnalyzerPreferences — see ARCHITECTURE.md D-PASS0 Half A), so
+        // leave chordPrefs at struct defaults. In particular preferMinorOverMajorAdd6
+        // stays FALSE here — unlike Standard/Modal/Contemporary, which set it true —
+        // so this measures the configuration users actually run, not even batch
+        // "Standard".
 
     } else {
         // Standard, Modal, Contemporary: defaults + prefer Minor over Major add6

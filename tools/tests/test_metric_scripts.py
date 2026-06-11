@@ -628,5 +628,22 @@ class TestCorpusManifestValidation(unittest.TestCase):
             cbf.validate_corpus_dir(self.dir)
 
 
+# ════════════════════════════════════════════════════════════════════════════
+# 11.  Stage 2.4 V4 — --preset Default (live product out-of-box config).
+#      Pins the accepted preset list so the new "Default" contract can't silently
+#      regress; the C++ side (batch_analyze.cpp applyPreset) must stay in sync.
+# ════════════════════════════════════════════════════════════════════════════
+
+class TestPresetChoices(unittest.TestCase):
+
+    def test_canonical_five_presets_present(self):
+        for name in ["Standard", "Baroque", "Modal", "Jazz", "Contemporary"]:
+            self.assertIn(name, rbp.PRESET_CHOICES)
+
+    def test_default_preset_is_accepted(self):
+        # Stage 2.4 V4: the live product's out-of-box config is a measurable preset.
+        self.assertIn("Default", rbp.PRESET_CHOICES)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
