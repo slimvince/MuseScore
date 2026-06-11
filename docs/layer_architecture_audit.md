@@ -89,9 +89,10 @@ directly at L1482. Neither `bassIndependentContextualBonuses` nor
 competition pipeline via Gate R-aware processing). But the comment implies the invariant
 holds everywhere, which will mislead any future reader trying to verify the split.
 
-**Action for CC:** Update the comment at ~L1634 to note that `contextualBonuses` is
-used by `diagnoseChord` only and intentionally includes `rootContinuityBonus`, while
-`bassIndependentContextualBonuses + bassDependentContextualBonuses` do not.
+**Action for CC:** ✅ **DONE (Stage 2.3, `18dc9e1829`).** Superseded: `contextualBonuses`
+was removed entirely when `diagnoseChord` was rewritten to replay the production pipeline,
+so the stale invariant comment at ~L1634 went with it — there is no comment left to fix
+(the helper no longer exists).
 
 ---
 

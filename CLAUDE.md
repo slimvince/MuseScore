@@ -156,17 +156,19 @@ always match the `array<TemplateDef, N>` declaration in `chordanalyzer.cpp`.
 If they differ, the doc is stale — update it before proceeding.
 
 **Template additions — the `kTemplateCount` model (since `a236a0ff21`):** All
-template-related array extents (the `analyzeChord` template array, `kDiagTemplates`,
-the three score matrices, `kMasks` in `harmonicfunctionlayer.cpp`) are derived from
+template-related array extents (the `analyzeChord` template array, the three score
+matrices, `kMasks` in `harmonicfunctionlayer.cpp`) are derived from
 `analysis::kTemplateCount` in `chordanalyzer.h`, so the compiler enforces size
 consistency — the old silent stack-buffer-overrun failure mode (a missed matrix
-resize, caught in the B1 attempt 2026-06-04) is closed. Adding a template means:
+resize, caught in the B1 attempt 2026-06-04) is closed. (Since Stage 2.3
+`18dc9e1829` the duplicate `kDiagTemplates` array is gone — `diagnoseChord` replays
+the production pipeline, so there is **one** template array, not two.) Adding a
+template means:
 1. Bump `analysis::kTemplateCount` N→N+1 (auto-resizes the matrices and `kMasks`)
-2. Add the new `TemplateDef` entry in `analyzeChord` AND the byte-identical entry
-   in `kDiagTemplates`
+2. Add the new `TemplateDef` entry in `analyzeChord`
 3. Add the interval bitmask to `kMasks` (a zero mask silently disables Gate R)
 
-Remaining trap: bumping the constant **without** adding the entries
+Remaining trap: bumping the constant **without** adding the `TemplateDef` entry
 value-initializes a trailing all-zero template (silent) — always do both in the
 same edit. The authoritative checklist is `docs/scoring_model.md` §9.
 

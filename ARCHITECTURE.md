@@ -620,6 +620,107 @@ behavior that BIR and the pipeline snapshots measure — lives in `regionanalyze
 With D1 confirmed intentional and D2 unified, the bridge and batch are fully unified thin
 wrappers — there are no remaining unexplained asymmetries between the two paths.
 
+### Path divergence decisions (Stage 2.4)
+
+Four analysis-path divergences accumulated across the part-2 implementation review, the corpus
+audit (Findings 3/4), and the 2.2-i section-level dossier (§2/§7). They are decided here so they
+are not rediscovered. The unifying theme: the **batch BIR-measurement path** and the **live
+notation path** are not the same configuration, and the **greedy feed-forward pipeline** builds
+temporal context per-commit rather than from a global decode. Stage 3 (the lattice decoder) is
+where accumulated context becomes a decode product; decisions that would be torn up by Stage 3
+are deferred to it rather than pre-built now.
+
+#### D-P4 — tick-local path builds temporal context cold
+
+**Facts.** The P4 tick-local fallback (`analyzeHarmonicContextLocallyAtTick`) builds its
+`ChordTemporalContext` via `findTemporalContext`, which cold-analyzes the backward and forward
+neighbours with `nullptr` context and no accumulated rolling state [code]. It fires only when
+the P3 regional path returns no region for the surrounding window — structurally rare; exact
+live frequency unmeasured [code]. The same chord can therefore in principle answer differently
+on P4 vs P3.
+
+**Decision.** Cold context on P4 is the **current contract**, documented and accepted (the same
+precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less
+context, provided that is stated, not silent). No pre-pass is built now: Stage 3's lattice makes
+accumulated context a decode product, and any context pre-pass built against the greedy pipeline
+would be discarded at Stage 3.
+
+**Revisit trigger.** Stage 3 design **must** state explicitly what P4 (and the bridge) consume
+from the decode. If P4's empty-window fallback rate is ever shown to be non-trivial (requires
+instrumenting the per-tick API), revisit earlier.
+
+#### D-BRIDGE — bridge predecessor analyzed with null context; Step-1/2 fields inert
+
+**Facts.** `findTemporalContext` analyzes the backward predecessor (and forward successor) with
+`nullptr` context [code]. The Step-1/2 confidence fields
+(`previousWinnerScore/Margin/RootPcWeight`, `previousDistinctPcs`) are default-initialized
+(`-1.0`/`0.0`/`0`) and never written on the bridge path — only `advanceTemporalContext` (region
+commit sites) writes them [code]. So predecessor-confidence progression signals are inert on the
+bridge path; the bridge populates only the root/quality/bass neighbour fields the downstream
+gates need.
+
+**Decision.** Same as D-P4: this is the **current contract**, documented. The forward-lookahead
+gap that previously left `nextRootPc=-1` was already closed (`90a52b5fee`); the residual
+(Step-1/2 confidence fields) genuinely requires a committed competition result from the
+neighbour, i.e. a forward pre-pass over the score — exactly the global-decode product Stage 3
+provides. Do not build a bespoke pre-pass now.
+
+**Revisit trigger.** Stage 3 design must state what the bridge consumes. The decoder's path
+state supersedes `findTemporalContext`'s cold walk.
+
+#### D-PASS0 — notation Pass-0 uses default prefs + `excludeLookAheadOnDenseStart=false`; batch uses preset prefs + `true`
+
+This divergence has **two independent halves**; Stage 2.4 investigation (§1.1) decides them
+separately.
+
+**Half A — chord-scoring preferences (the headline). Facts.** The Jazz/Baroque
+`ChordAnalyzerPreferences` are constructed only in `tools/batch_analyze.cpp` and never reach the
+product; every live chord-scoring site uses `kDefaultChordAnalyzerPreferences` [code]. The
+app's "Jazz/Baroque/…" Preferences buttons set only the 21 mode priors (key detection), not
+chord-scoring prefs [code]. The BIR Jazz/Baroque gate therefore measures a chord-scoring
+configuration **no user can produce in the app**. Sharper still: the struct default
+(`preferMinorOverMajorAdd6=false`) matches NO batch preset — even "Standard" sets it true — so
+the configuration the live product actually runs has, as of Stage 2.4, never been corpus-measured.
+The `--preset Default` measurement (below) closes that.
+
+**Decision (Half A).** Record this as a **product-level finding**, not a code change. The
+chord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do
+**not** silently flip the live product onto preset chordPrefs — whether the product should expose
+a chord-scoring style is a deliberate **product decision**, deferred. Until then, all docs that
+imply Jazz/Baroque chord tuning ships to users must be corrected to "batch-measurement only."
+The live product analyzes chords with struct defaults (not even batch "Standard").
+
+**Decision (Half B — `excludeLookAheadOnDenseStart`).** Unchanged and intentional. Batch passes
+`true`, the bridge defaults `false`; this is the **D1 / Iter-97 load-bearing divergence**
+(unifying it regresses the Corelli trio-sonata dominants on the bridge). Keep diverged;
+keep documented.
+
+**Revisit trigger (Half A).** Any product initiative to expose a chord-scoring "style" to users;
+any Stage-5 metric work that wants the gate to measure the *user* configuration (note: that would
+mean re-tuning against `kDefaultChordAnalyzerPreferences`, not the batch preset). Until one of
+those, the gate stays as-is and is **described accurately** (batch-measurement configuration).
+
+#### D-GAP — `inferGapRegion` analyzed gap slices with default prefs regardless of caller
+
+**Facts.** `analyzeSection`'s gap inference hardcoded `kDefaultChordAnalyzerPreferences`
+(`sectionanalyzer.cpp:607/614/617`) [code]. Under a preset, the section diagnostic mixed
+**preset Pass-0 + default gap analysis** — internally inconsistent. The 2.2-i dossier (§7.2)
+hypothesized this leak as the likely cause of all 3 genuine Baroque A/B regressions.
+
+**Decision.** **Fixed now** (Stage 2.4 surgical fix — §3): the caller's `ChordAnalyzerPreferences`
+are threaded through `analyzeSection → inferGapRegion`. Proven user-neutral + gate-neutral
+(snapshots 11/11 zero diffs; flag-off BIR path byte-identical) — the live path passes default and
+is unaffected; only the batch `--section-level` diagnostic now measures a consistent preset
+pipeline. **Causal note:** the fix does **not** heal the 3 Baroque regressions — under
+Baroque the chordPrefs delta from default is only `preferMinorOverMajorAdd6`, so the leak was
+nearly inert there; the 3 regressions are structural (measure-split / gap-insertion), not
+gap-pref-caused. So the dossier's §7.2 hypothesis is **not supported** for the Baroque cases.
+The fix is justified on consistency + user/gate-neutrality, which was the stated bar (healing was
+"expected, not required").
+
+**Revisit trigger.** None for the fix itself. The 3 structural regressions and the section-vs-batch
+granularity question fold into the Stage-5 granularity-robust metric (already mandated).
+
 #### The `IComposingConfiguration` Split
 
 Configuration is exposed through **two narrow interfaces**, both IoC-registered:
@@ -858,7 +959,10 @@ produces correct bass-root readings that disagree with music21's functional nota
 inversions consistently regress (see three-attempt history in Section 6).
 
 **Solution:** Contextual bonuses applied only to non-bass-root Major/Minor candidates,
-using information from neighbouring chords. Three bonuses added to `contextualBonuses()`:
+using information from neighbouring chords. Three bonuses were added (historically via a
+`contextualBonuses()` helper — removed in Stage 2.3 `18dc9e1829` when `diagnoseChord`
+became a view into the production pipeline; the bonuses now live in the competition
+pipeline / function layer):
 
 | Bonus | Condition | Default |
 |-------|-----------|---------|
