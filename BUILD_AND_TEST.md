@@ -174,8 +174,9 @@ cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/j
 fingerprints don't match the manifest (the old shared-`tools/corpus` contamination is
 now structurally impossible and loudly detected). Gate on **case identity**: Baroque 13,
 Jazz 7 = `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
-(`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric on the
-legacy flat dir — not the 13/7 gate.)
+(`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric; its
+three-way genuine split is Baroque 24/13, Jazz 35/7, of which the 13/7 BIR=false half
+is the characterise gate. Since Stage 2.2-ii it also takes `--corpus-dir` — see §4.)
 
 **Threshold policy**: gate thresholds are calibrated against the Baroque corpus and
 must not be adjusted to accommodate other styles. If a gate causes BIR=false
@@ -274,10 +275,26 @@ is ≤ 0.20, swap to the first-inversion reading.
 1 BIR=true fix (bwv40.6 m=6: A+ → F#5/A); BIR=false unchanged.
 
 **IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
-`analyze_inversion_errors.py` reads existing `.ours.json` files from `tools/corpus/` and
-will silently report stale numbers if those files are not current. Whenever you update
-the BIR baselines here, you must first regenerate the corpus with the Baroque preset
-(as above), then run `python tools/analyze_inversion_errors.py` and record the new figures.
+`analyze_inversion_errors.py` reads existing `.ours.json` files and will silently
+report stale numbers if those files are not current. Whenever you update the BIR
+baselines here, you must first regenerate the corpus (as above), then run the script
+against the per-preset dir and record the new figures.
+
+**`--corpus-dir` (Stage 2.2-ii Rider 1).** The script now reads BOTH `.ours.json` and
+`.music21.json` from one per-preset dir and validates that dir's
+`corpus_manifest.json` (via `characterise_bir_false.validate_corpus_dir`) before
+measuring — closing the former hardcoded-flat-`tools/corpus` music21 read. The
+"Three-way music21_dcml_agree genuine errors" split is the headline BIR=true/BIR=false
+pair (Baroque 24/13, Jazz 35/7; the 13/7 half is what `characterise_bir_false.py`
+independently reproduces). `--ours-dir` is kept as a deprecated, unvalidated alias.
+
+```
+# per-preset (validates manifest):
+python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque   # 24/13
+python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz      # 35/7
+# legacy flat dir (no manifest, no validation):
+python tools/analyze_inversion_errors.py
+```
 
 Run after any change that could affect chord identification quality. If the numbers
 change unexpectedly (i.e. not due to an intentional scoring or gate change), stop and
@@ -301,6 +318,18 @@ cd C:\s\MS\ninja_build_rel
 ```
 cd C:\s\MS\ninja_build_rel
 ./batch_analyze.exe --help
+```
+
+**`--section-level` (Stage 2.2-ii diagnostic flag, default OFF).** Runs the
+user-facing section pipeline (`analyzeSection`: measure layout, gap-tone
+insertion, key/mode stabilization, sparse-quality refinement) on top of the batch
+region stream, giving the measure-aligned (per-beat) view instead of the coarse
+cross-barline regions. It only affects `--dump-regions batch` and does **not**
+change the committed BIR gate (which stays at batch granularity). Flag-off output
+is byte-identical to HEAD. Background and A/B in `cc_stage2_2_ab_dossier.md`.
+
+```
+./batch_analyze.exe "<score>" --section-level > /tmp/sec.json; echo "exit:$?"
 ```
 
 ### Python Score Tools

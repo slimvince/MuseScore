@@ -100,9 +100,19 @@ the old shared-`tools/corpus` failure mode). The gate is the **case-identity** s
 not a bare integer: Baroque = 13, Jazz = 7 with identities
 `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
 
-(`tools/analyze_inversion_errors.py` is a *separate* secondary metric — `bassIsRoot`
-27/22, not the 13/7 characterise gate — and still reads the legacy flat `tools/corpus`;
-its `--corpus-dir`-ification is a deferred follow-up, out of Stage 2.2a scope.)
+**Granularity caveat (Stage 2.2-i):** the 13/7 gate is measured at **batch
+(cross-barline) region** granularity; the user-visible **per-beat** root-error rate
+is ~7× higher when the same scores are scored at measure-aligned (section)
+granularity. Inspect that view with `batch_analyze --section-level` (diagnostic flag,
+default OFF — it does not change the gate). See `cc_stage2_2_ab_dossier.md` for the
+A/B that quantified this; a granularity-robust metric is mandatory at Stage 5.
+
+(`tools/analyze_inversion_errors.py` is a *separate* secondary metric: its three-way
+`music21_dcml_agree` genuine split is `bassIsRoot` true/false = **Baroque 24/13, Jazz
+35/7**; `characterise_bir_false.py` independently reproduces the 13/7 BIR=false half.
+Since Stage 2.2-ii (Rider 1) it takes `--corpus-dir` and reads BOTH `.ours.json` and
+`.music21.json` from the validated per-preset dir — `--ours-dir` is a deprecated,
+unvalidated alias.)
 
 If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix is:
 1. A tighter **structural entry condition** that excludes the problematic chord type
