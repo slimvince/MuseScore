@@ -63,13 +63,11 @@
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/region/sparsechordrefinement.h"
-#include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
 using mu::composing::analysis::isDiatonicStep;
 
-namespace shv = mu::composing::analysis::scoreharvest;
 namespace ebr = mu::composing::analysis::engravingbridge;
 namespace kr  = mu::composing::analysis::keyresolver;
 namespace cra = mu::composing::analysis::region;
@@ -134,54 +132,10 @@ void forceChordTrackQualityFromKeyContext(
 // the only definitions, so there is no separate notation::internal overload
 // to confuse argument-dependent lookup.
 //
-// collectPitchContext, collectRegionTones, detectOnsetSubBoundaries,
-// detectBassMovementSubBoundaries, and findTemporalContext have separate
-// notation::internal entry points so existing notation TUs keep their
-// using-declarations; each is a thin pass-through to engravingbridge.
-// See docs/duplication_audit.md §§2.1-2.13.
-
-// beatTypeToWeight, safeBeatType, regionMetricWeightForBeatType, timeDecay,
-// distinctPitchClasses are now thin pass-throughs to the shared
-// composing/analysis/scoreharvest/ implementation.  See docs/duplication_audit.md §5.8.
-
-double beatTypeToWeight(mu::engraving::BeatType bt,
-                        const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs)
-{
-    return shv::beatTypeToWeight(bt, prefs);
-}
-
-mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
-                                     const mu::engraving::Segment* segment)
-{
-    return shv::safeBeatType(measure, segment);
-}
-
-double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
-{
-    return shv::regionMetricWeightForBeatType(bt);
-}
-
-double timeDecay(double beatsAgo, double decayRate)
-{
-    return shv::timeDecay(beatsAgo, decayRate);
-}
-
-int distinctPitchClasses(
-    const std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx)
-{
-    return shv::distinctPitchClasses(ctx);
-}
-
-void collectPitchContext(const mu::engraving::Score* sc,
-                         const mu::engraving::Fraction& tick,
-                         const mu::engraving::Fraction& windowStart,
-                         const mu::engraving::Fraction& windowEnd,
-                         const std::set<size_t>& excludeStaves,
-                         const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
-                         std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx)
-{
-    ebr::collectPitchContext(sc, tick, windowStart, windowEnd, excludeStaves, prefs, ctx);
-}
+// collectRegionTones, detectOnsetSubBoundaries, detectBassMovementSubBoundaries,
+// and findTemporalContext have separate notation::internal entry points so
+// existing notation TUs keep their using-declarations; each is a thin
+// pass-through to engravingbridge.  See docs/duplication_audit.md §§2.1-2.13.
 
 void resolveKeyAndMode(const mu::engraving::Score* sc,
                        const mu::engraving::Fraction& tick,
