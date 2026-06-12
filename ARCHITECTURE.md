@@ -600,6 +600,14 @@ abstraction the callers populate):
 | `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — single key/mode resolver, supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. |
 | `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |
 | `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |
+| `composing/analysis/section/sectionanalyzer.{h,cpp}` | Section-level unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection (`detectCadences`, `detectPivotChords`). Moved here in Stage 2.1 (Phase 4c). |
+
+**Section-level analysis and the Pass-0 injection contract (Stage 2.1).** Section-level
+unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection —
+lives in `composing/analysis/section/`. Pass-0 boundary detection (`analyzeHarmonicRhythm`)
+remains the notation-side configuration adapter and **injects** its `HarmonicRegion` stream
+into `analyzeSection` as a parameter, keeping `composing_analysis` independent of the
+notation and configuration layers.
 
 **Bridge and batch are thin wrappers.** `analyzeHarmonicRhythm()` (notation bridge) and
 `analyzeScore()` (`batch_analyze.cpp`) now contain only the engraving→tone adaptation and a

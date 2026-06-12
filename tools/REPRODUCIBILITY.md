@@ -82,10 +82,15 @@ python tools/music21_batch.py --composer bach --output tools/corpus
   `<software>music21 v.9.9.1</software>` / `<encoding-date>2026-04-05</encoding-date>`
   tag), and the paired `*.music21.json` ground truth is from the same generator.
   Regenerating with a different music21 is a **deliberate re-baseline** of the
-  BIR denominators, not a refresh. See `tools/corpus/README.md` for the full
-  provenance record and the freeze anchor. `run_bach_preset.py` now copies the
+  BIR denominators, not a refresh. `run_bach_preset.py` now copies the
   detected music21 version into each `corpus_manifest.json` (`music21_version`,
   informational — not validated).
+
+  **Freeze anchor (replicated here from the gitignored `tools/corpus/README.md`
+  so the committed record is self-contained):** the committed `*.music21.json`
+  are **canonical as-committed**. Regenerating them with *any* music21 version is
+  a **deliberate re-baseline event** (it shifts the BIR denominators), not a
+  refresh — coordinate it like a golden update.
 
 ---
 

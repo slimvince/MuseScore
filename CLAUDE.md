@@ -97,8 +97,15 @@ start of a regen and **exits nonzero** if the corpus is not 353/353 complete;
 `characterise_bir_false.py` **refuses** to measure a dir whose manifest is missing,
 incomplete, or whose `.ours.json` fingerprints do not match (preset contamination —
 the old shared-`tools/corpus` failure mode). The gate is the **case-identity** set,
-not a bare integer: Baroque = 13, Jazz = 7 with identities
-`{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
+not a bare integer:
+- **Baroque = 13** with identities (stem@tick):
+  `{bwv102.7@17520, bwv14.5@8160, bwv17.7@46080, bwv174.5@6240, bwv245.17@4800,
+  bwv245.40@51360, bwv261@33840, bwv269@20640, bwv301@960, bwv381@4800, bwv422@23040,
+  bwv432@5520, bwv45.7@20160}` (confirmed by `characterise_bir_false.py --corpus-dir
+  tools/corpus/baroque`).
+- **Jazz = 7** with identities
+  `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
+- **Default (the user-run config) = 14 = Baroque-13 ∪ {bwv187.7 @ m14.b2}**.
 
 **Granularity caveat (Stage 2.2-i):** the 13/7 gate is measured at **batch
 (cross-barline) region** granularity; the user-visible **per-beat** root-error rate
