@@ -285,7 +285,24 @@ before any code direction is imposed.
   Also: accumulated uncommitted bookkeeping (STATUS/handoff/roadmap) needs its
   periodic docs commit.
 
-- **Next CC task — Stage 2.4 (instruction ready):** `cc_instruction_stage2_4_divergence_decisions.md`
+- **✅ Stage 2.4 COMPLETE — V1 `140ceb1a9e` / V2 `1a08e96d8a` / V4 `6be2b30a96`**
+  (+ bookkeeping `4e91e3aa4c`). Decisions in ARCHITECTURE.md; D-PASS0 headline:
+  chord-scoring presets are batch-only, live product = struct defaults matching NO
+  preset; V4 measured the user config: **BIR=false 14 = Baroque-13 ∪ {bwv187.7}** —
+  Baroque gate ≈ user reality (slightly conservative); Jazz-7 contains 2 preset-only
+  artifacts (bwv244.15, bwv74.8); bwv187.7 = first user-experienced error outside all
+  gates (mode-prior-surfaced; candidate Stage-3 acceptance case). App mode priors =
+  bespoke set (11/21 diverge from all presets). D-GAP causal hypothesis falsified
+  (structural); leak fixed anyway (live under Jazz). OPEN: Python-count reconciliation
+  (68 → "67+2"), rides with 2.5.
+
+- **Next CC task — Stage 2.5 (instruction ready):** `cc_instruction_stage2_5_p3_profile.md`
+  — P3 per-query latency baseline (median/p95/max across size classes, scaling shape,
+  P4-fallback counts, coarse attribution if egregious) → committed
+  `docs/perf_p3_baseline.md` incl. an explicit Stage-3 beam-1 budget recommendation.
+  Riders: the Python-count reconciliation (evidence required; lost pinned tests = bug)
+  + bookkeeping docs flush. Measurement-only. **Closes Stage 2 → Stage 3 (decoder)
+  design begins.**
   — investigate → draft decisions → at most one surgical fix. HEADLINE INVESTIGATION:
   does the user's style/preset EVER reach the notation analysis path, or is the whole
   preset system batch-tools-only? (Gates the D-PASS0 decision; "presets never shipped
