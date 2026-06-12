@@ -57,8 +57,10 @@
 // environment variable.  The flag is a developer-local tool — CI never sets it.
 
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <fstream>
+#include <numeric>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -938,6 +940,276 @@ INSTANTIATE_TEST_SUITE_P(Corpus,
                          PipelineSnapshotTests,
                          ::testing::ValuesIn(kCorpus),
                          corpusIdForTestName);
+
+// ── P3 status-bar performance baseline (Stage 2.5) ───────────────────────────
+//
+// Roadmap item 2.5 — capture the cost of the P3 status-bar query path
+// (analyzeHarmonicContextAtTick) NOW, before Stage 3's decoder adds decode
+// cost.  Purpose: an honest pre-decoder baseline + the budget envelope for the
+// decoder's quality-level-0 (beam-1 must stay status-bar viable).
+//
+// This is a DISABLED gtest: timing is noisy and slow, so it must NOT run in the
+// default CI sweep.  Re-run it (here at Stage 2.5, and again at Stage 3) with:
+//
+//   ./pipeline_snapshot_tests.exe \
+//       --gtest_also_run_disabled_tests \
+//       --gtest_filter='*P3Perf*'
+//
+// It loads each perf-corpus score (full, uncapped — unlike the snapshot corpus,
+// which caps at kMaxAnalysisMeasures), enumerates EVERY chord-bearing
+// ChordRest tick, and wall-times one analyzeHarmonicContextAtTick query per
+// tick across several runs.  Output is a human-readable table on stdout plus a
+// machine-readable block the docs/perf_p3_baseline.md table is lifted from.
+//
+// Measurement-only: it calls the same public entry points the production
+// status bar and the snapshot harness use (analyzeHarmonicContextAtTick, and —
+// for the coarse Pass-0-vs-analyzeSection attribution — analyzeHarmonicRhythm +
+// analyzeSection).  No production code is instrumented or modified.
+
+struct PerfScore {
+    const char* id;
+    const char* relativePath;   // under PIPELINE_SNAPSHOT_CORPUS_ROOT (= repo root)
+    const char* sizeClass;
+};
+
+// Three size classes drawn from the snapshot corpus + one contrapuntal keyboard
+// piece, smallest → largest by file size (chorale 58 kB, mazurka 202 kB, prelude
+// 287 kB, sonata 638 kB).
+constexpr PerfScore kPerfCorpus[] = {
+    { "bach_chorale_001",
+      "tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx",
+      "small SATB chorale" },
+    { "chopin_bi105_op30_1",
+      "tools/dcml/chopin_mazurkas/MS3/BI105-1op30-1.mscx",
+      "mid-size piano (mazurka)" },
+    { "bach_bwv806_prelude",
+      "tools/dcml/bach_en_fr_suites/MS3/BWV806_01_Prelude.mscx",
+      "contrapuntal keyboard prelude" },
+    { "mozart_k279_1",
+      "tools/dcml/mozart_piano_sonatas/MS3/K279-1.mscx",
+      "largest convenient (sonata mvt)" },
+};
+
+constexpr int kPerfRuns = 5;            // full sweeps per score; report median-of-runs
+constexpr double kEgregiousMs = 100.0;  // attribution threshold
+
+QString perfCorpusPath(const PerfScore& s)
+{
+    return QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+           + QLatin1Char('/') + QString::fromUtf8(s.relativePath);
+}
+
+// Every distinct ChordRest tick that has at least one sounding note in any
+// voice — these are the ticks a user can click to trigger a status-bar query.
+std::vector<int> collectChordBearingTicks(MasterScore* score)
+{
+    std::vector<int> ticks;
+    int lastTick = -1;
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest);
+         seg;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        bool hasChord = false;
+        for (track_idx_t tr = 0; tr < score->ntracks(); ++tr) {
+            mu::engraving::EngravingItem* e = seg->element(tr);
+            if (e && e->isChord()) {
+                hasChord = true;
+                break;
+            }
+        }
+        if (!hasChord) {
+            continue;
+        }
+        const int t = seg->tick().ticks();
+        if (t != lastTick) {     // dedupe identical ticks across staves/voices
+            ticks.push_back(t);
+            lastTick = t;
+        }
+    }
+    return ticks;
+}
+
+double percentileNearestRank(std::vector<double> v, double pct)
+{
+    if (v.empty()) {
+        return 0.0;
+    }
+    std::sort(v.begin(), v.end());
+    // Nearest-rank: ceil(pct/100 * N), 1-based → clamp into [1, N].
+    int rank = static_cast<int>(std::ceil(pct / 100.0 * static_cast<double>(v.size())));
+    rank = std::max(1, std::min<int>(rank, static_cast<int>(v.size())));
+    return v[static_cast<size_t>(rank - 1)];
+}
+
+double medianSorted(std::vector<double> v)
+{
+    if (v.empty()) {
+        return 0.0;
+    }
+    std::sort(v.begin(), v.end());
+    const size_t n = v.size();
+    return (n % 2 == 1) ? v[n / 2] : 0.5 * (v[n / 2 - 1] + v[n / 2]);
+}
+
+struct PerfRunStats {
+    double medianMs = 0.0;
+    double p95Ms = 0.0;
+    double maxMs = 0.0;
+    double totalMs = 0.0;
+};
+
+TEST(P3PerfBaseline, DISABLED_Sweep)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+    }
+
+    std::ostringstream report;
+    report << "\n==== P3PERF BEGIN ====\n";
+    report << "runs_per_score=" << kPerfRuns << "\n";
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        const QString scorePath = perfCorpusPath(ps);
+        ASSERT_TRUE(QFileInfo::exists(scorePath))
+            << "Perf corpus score missing: " << scorePath.toStdString();
+
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "Failed to load perf score: " << scorePath.toStdString();
+
+        // Count measures for the scaling table.
+        int measureCount = 0;
+        for (Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+            ++measureCount;
+        }
+
+        const std::vector<int> ticks = collectChordBearingTicks(score);
+
+        // P4-fallback frequency is deterministic across runs (no timing
+        // dependence) — measure once, on a clean pass.
+        int p4Fallbacks = 0;
+        for (int t : ticks) {
+            NoteHarmonicContext ctx =
+                mu::notation::analyzeHarmonicContextAtTick(score, Fraction::fromTicks(t));
+            if (!ctx.wasRegional) {
+                ++p4Fallbacks;
+            }
+        }
+
+        std::vector<PerfRunStats> runStats;
+        runStats.reserve(kPerfRuns);
+        std::vector<double> slowestLatencies;    // from the run with the largest max
+        std::vector<int>    slowestTicks;
+        double globalMax = -1.0;
+
+        for (int run = 0; run < kPerfRuns; ++run) {
+            std::vector<double> latencies;
+            latencies.reserve(ticks.size());
+            for (int t : ticks) {
+                const auto t0 = std::chrono::steady_clock::now();
+                NoteHarmonicContext ctx =
+                    mu::notation::analyzeHarmonicContextAtTick(score, Fraction::fromTicks(t));
+                const auto t1 = std::chrono::steady_clock::now();
+                const double ms =
+                    std::chrono::duration<double, std::milli>(t1 - t0).count();
+                latencies.push_back(ms);
+                (void)ctx;
+            }
+            PerfRunStats st;
+            st.medianMs = medianSorted(latencies);
+            st.p95Ms    = percentileNearestRank(latencies, 95.0);
+            st.maxMs    = *std::max_element(latencies.begin(), latencies.end());
+            st.totalMs  = std::accumulate(latencies.begin(), latencies.end(), 0.0);
+            runStats.push_back(st);
+
+            if (st.maxMs > globalMax) {
+                globalMax = st.maxMs;
+                slowestLatencies = latencies;
+                slowestTicks = ticks;
+            }
+        }
+
+        // Median-of-runs for each aggregate.
+        std::vector<double> medianVals, p95Vals, maxVals, totalVals;
+        for (const auto& st : runStats) {
+            medianVals.push_back(st.medianMs);
+            p95Vals.push_back(st.p95Ms);
+            maxVals.push_back(st.maxMs);
+            totalVals.push_back(st.totalMs);
+        }
+
+        // Top-3 slowest ticks (window-expansion outliers) from the slowest run.
+        std::vector<size_t> idx(slowestLatencies.size());
+        std::iota(idx.begin(), idx.end(), 0);
+        std::sort(idx.begin(), idx.end(),
+                  [&](size_t a, size_t b) { return slowestLatencies[a] > slowestLatencies[b]; });
+
+        report << "score=" << ps.id
+               << " sizeClass=\"" << ps.sizeClass << "\""
+               << " measures=" << measureCount
+               << " queries=" << ticks.size()
+               << " medianMs=" << medianSorted(medianVals)
+               << " p95Ms=" << medianSorted(p95Vals)
+               << " maxMs=" << medianSorted(maxVals)
+               << " sweepTotalMs=" << medianSorted(totalVals)
+               << " p4Fallbacks=" << p4Fallbacks
+               << "\n";
+        report << "  outliers(top3 of slowest run):";
+        for (int k = 0; k < 3 && k < static_cast<int>(idx.size()); ++k) {
+            const size_t i = idx[k];
+            Measure* m = score->tick2measure(Fraction::fromTicks(slowestTicks[i]));
+            const int mn = m ? (m->measureNumber() + 1) : -1;
+            report << " [tick=" << slowestTicks[i]
+                   << " m=" << mn
+                   << " " << slowestLatencies[i] << "ms]";
+        }
+        report << "\n";
+
+        // Coarse attribution for the single slowest tick IF it is egregious
+        // (>100 ms).  We cannot instrument inside
+        // analyzeNoteHarmonicContextRegionallyInWindow without touching
+        // production, so we reconstruct one expansion iteration: the cost of a
+        // single (analyzeHarmonicRhythm, analyzeSection) pair over the initial
+        // ±1-measure window.  The real query runs up to 9 such iterations with
+        // a growing window; this gives the Pass-0-vs-analyzeSection ratio of
+        // one representative iteration, not the full multiplier.
+        if (!idx.empty() && slowestLatencies[idx[0]] > kEgregiousMs) {
+            const int slowTick = slowestTicks[idx[0]];
+            Measure* cur = score->tick2measure(Fraction::fromTicks(slowTick));
+            if (cur) {
+                Measure* startM = cur->prevMeasure() ? cur->prevMeasure() : cur;
+                Measure* endM   = cur->nextMeasure() ? cur->nextMeasure() : cur;
+                const Fraction ws = startM->tick();
+                const Fraction we = endM->endTick();
+                const auto a0 = std::chrono::steady_clock::now();
+                const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+                    score, ws, we, /*excludeStaves=*/{},
+                    mu::notation::HarmonicRegionGranularity::Smoothed);
+                const auto a1 = std::chrono::steady_clock::now();
+                const auto section = mu::composing::analysis::analyzeSection(
+                    score, ws, we, /*excludeStaves=*/{}, rawRegions);
+                const auto a2 = std::chrono::steady_clock::now();
+                (void)section;
+                report << "  attribution(slowest tick, single ±1-measure iter): pass0Ms="
+                       << std::chrono::duration<double, std::milli>(a1 - a0).count()
+                       << " analyzeSectionMs="
+                       << std::chrono::duration<double, std::milli>(a2 - a1).count()
+                       << "\n";
+            }
+        } else {
+            report << "  attribution: no egregious (>100ms) query — skipped\n";
+        }
+
+        delete score;
+    }
+
+    report << "==== P3PERF END ====\n";
+    // Single emission to stdout (captured by the runner).  The machine-readable
+    // block between the BEGIN/END markers is what docs/perf_p3_baseline.md is
+    // lifted from.
+    std::cout << report.str() << std::endl;
+}
 
 // ── Divergence-C observation report (Phase 3b) ───────────────────────────────
 //
