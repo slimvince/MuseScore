@@ -229,16 +229,47 @@ bool gateRZeroesRootContinuity(const ScoringCell& cell, double basisDepValue,
            && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc);
 }
 
-/// 2-arg overload: reads cell.basisDep directly. Used by the unit tests, which construct
-/// cells whose basisDep already holds the value to test against.
-bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept
-{
-    return gateRZeroesRootContinuity(cell, cell.basisDep, rcb);
-}
-
 // ── Competition pipeline ────────────────────────────────────────────────────
 
 namespace {
+
+/// rcb back-edge — the rootContinuity transition edge from the committed predecessor
+/// to this candidate, with the Gate R structural guard absorbed (Stage 3.4). Returns
+/// the rcb value that enters `basisIndep`.
+///
+/// Gate R withholds rcb from a BARE-ROOT continuation whose bass is foreign to the
+/// candidate's own chord tones. Two conditions, both required:
+///   (a) fullBasisDep <= 0 — the candidate earned NO inversion credit: no inversion
+///       bonus fired (its third is not sounding, or the temporal edge is absent) and no
+///       bass-root bonus applies. Given rcb>0 (root continuity), a legitimately
+///       inverted/extended slash voicing has a sounding third, which fires
+///       sameRootInversionBonus (cappedInv>0) → fullBasisDep>0; only a bare-root match
+///       scores 0. (Stage 3.3 reconstructed-credit: fullBasisDep = cell.basisDep +
+///       cappedInv, computed by Pass A; the discriminator is provably `cappedInv == 0`,
+///       since the minimum inversion bonus 0.40 > maximum penalty 0.35 — intra-layer,
+///       byte-identical to the historical oracle-basisDep proxy.)
+///   (b) bass foreign to the template — the bass cannot belong to this chord.
+/// Together these isolate the "nonsense slash" continuation (Δ=+7b cluster:
+/// bwv245.28/296/320, bass = M6 of the continued root) and spare legitimate extended
+/// voicings such as Cm7add11/F (third sounding, cappedInv>0). See docs/scoring_model.md
+/// §4 Gate R.
+///
+/// Phase gate (applyProgressionSignals): rcb is NOT suppressed during segmentation
+/// exploration — segmentation already depends on it, and letting Gate R perturb rcb
+/// there shifts region boundaries (caught at bwv355 m15). Gate R is a final-scoring
+/// correction only; the `&& applyProgressionSignals` order matches the historical call
+/// site exactly (both operands are side-effect-free, so the result is invariant).
+double rcbEdge(const ScoringCell& cell, double fullBasisDep, int previousRootPc,
+               const analysis::ChordAnalyzerPreferences& prefs,
+               bool applyProgressionSignals) noexcept
+{
+    double rcb = rootContinuityBonus(cell.rootPc, previousRootPc,
+                                     prefs.rootContinuityBonus);
+    if (gateRZeroesRootContinuity(cell, fullBasisDep, rcb) && applyProgressionSignals) {
+        rcb = 0.0;
+    }
+    return rcb;
+}
 
 /// One per-bass working candidate: a RawCandidate plus the intervalCount the
 /// Pass B m7-family guard needs (RawCandidate does not carry it).
@@ -373,40 +404,12 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             const double fullBasisIndep = cell.basisIndep + resolution;
             const double fullBasisDep   = cell.basisDep + cappedInv;
 
-            double rcb = rootContinuityBonus(cell.rootPc, ctx.previousRootPc,
-                                             prefs.rootContinuityBonus);
-            // Gate R: withhold rcb from a BARE-ROOT continuation whose bass is foreign
-            // to the candidate's own chord tones. Two conditions, both required:
-            //   (a) fullBasisDep <= 0 — the candidate earned NO inversion credit: no
-            //       inversion bonus fired (its third is not sounding, or the temporal
-            //       edge is absent) and no bass-root bonus applies. Given rcb>0 (root
-            //       continuity), a legitimately inverted/extended slash voicing has a
-            //       sounding third, which fires sameRootInversionBonus (cappedInv>0) →
-            //       fullBasisDep>0; only a bare-root match scores 0.
-            //   (b) bass foreign to the template — the bass cannot belong to this chord.
-            // Together these isolate the "nonsense slash" continuation (Δ=+7b cluster:
-            // bwv245.28/296/320, bass = M6 of the continued root) and spare legitimate
-            // extended voicings such as Cm7add11/F (third sounding, cappedInv>0). The
-            // bare bass-foreign test alone misfires on the latter. See
-            // docs/scoring_model.md §4 Gate R.
-            //
-            // Phase gate (applyProgressionSignals): rcb is (by design) NOT suppressed
-            // during segmentation exploration, so segmentation already depends on it.
-            // Letting Gate R perturb rcb during exploration shifts region boundaries
-            // (caught at bwv355 m15: a baseline region split into a spurious G/B
-            // sub-region). Gate R is a final-scoring correction only; gating it on
-            // ScoringPhase::Final keeps segmentation byte-identical to baseline and the
-            // within-region fixes are preserved.
-            //
-            // Stage 3.3 reconstructed-credit: the inversion bonuses now live in THIS
-            // layer (cappedInv above), so Gate R reads the pipeline-reconstructed
-            // fullBasisDep — intra-layer, no oracle dependency (audit Finding 6 closed).
-            // This is byte-identical to the old oracle-basisDep proxy: fullBasisDep equals
-            // the value the oracle used to fold in, and the discriminator is provably
-            // `cappedInv == 0` (min inversion bonus 0.40 > max penalty 0.35).
-            if (gateRZeroesRootContinuity(cell, fullBasisDep, rcb) && applyProgressionSignals) {
-                rcb = 0.0;
-            }
+            // rcb back-edge (root continuity from the committed predecessor), with the
+            // Gate R structural guard absorbed inside rcbEdge() — see its definition for
+            // the reconstructed-credit rationale and the Δ=+7b discriminator. The phase
+            // condition is folded in unchanged (rcb is NOT suppressed during segmentation).
+            const double rcb = rcbEdge(cell, fullBasisDep, ctx.previousRootPc, prefs,
+                                       applyProgressionSignals);
             const double newBasisIndep = fullBasisIndep + rcb;
             double scoreNoWDim = (newBasisIndep + fullBasisDep)
                                  * cell.complexityFactor * cell.augFactor;

@@ -285,14 +285,14 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept;
 /// sounding-third pcWeight test diverged on Diminished completeTriad continuations — see
 /// docs/decoder_design.md §6 amendment / docs/scoring_model.md §4 Gate R).
 ///
-/// The 2-arg overload reads `cell.basisDep` directly (used by the unit tests, which
-/// construct cells whose basisDep already holds the full value); the 3-arg overload takes
-/// the basisDep value explicitly so the production call site can pass the reconstruction.
+/// The 3-arg overload takes the basisDep value explicitly so the caller passes the
+/// pipeline-reconstructed full basisDep. (Stage 3.4 removed the former 2-arg test-compat
+/// overload that read `cell.basisDep` implicitly; tests now pass `cell.basisDep`
+/// explicitly to the 3-arg form — the production entry point.)
 ///
 /// The phase guard ("final-scoring correction only; never during segmentation") is NOT
-/// part of this predicate — applyHarmonicFunction() gates the rcb-zeroing on
-/// ScoringPhase::Final at the call site (see harmonicfunctionlayer.cpp Pass A).
-bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept;
+/// part of this predicate — the rcbEdge() helper in harmonicfunctionlayer.cpp Pass A
+/// gates the rcb-zeroing on ScoringPhase::Final.
 bool gateRZeroesRootContinuity(const ScoringCell& cell, double basisDepValue,
                                double rcb) noexcept;
 

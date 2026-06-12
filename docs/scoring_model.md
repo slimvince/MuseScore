@@ -235,11 +235,16 @@ without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`.
 ### Gate R — rcb bass-chord-tone guard
 
 **Where it fires.** Pass A of the competition pipeline `applyHarmonicFunction()`
-(`harmonicfunctionlayer.cpp`), immediately after `rootContinuityBonus` is computed
-and before it is folded into `basisIndep`.
+(`harmonicfunctionlayer.cpp`). **Since Stage 3.4** the rcb computation and the Gate R
+zeroing are encapsulated in the file-local `rcbEdge(cell, fullBasisDep, previousRootPc,
+prefs, applyProgressionSignals)` helper — the rcb back-edge with its structural guard
+absorbed. Pass A calls `rcbEdge(...)` once per cell and folds the returned rcb into
+`basisIndep`. The arithmetic and short-circuit order are byte-identical to the prior
+inline form. (Stage 3.4 also removed the redundant 2-arg `gateRZeroesRootContinuity`
+test-compat overload; the 3-arg predicate is the sole entry point.)
 
 **Condition.** The predicate `gateRZeroesRootContinuity()` encodes three **structural**
-conditions (all required); the **phase** guard is applied separately at the call site
+conditions (all required); the **phase** guard is applied separately inside `rcbEdge`
 (see below). Zero the bonus for a cell when all of these hold:
 1. `rcb > 0` (root continuity holds for this candidate), AND
 2. `basisDep <= 0` — the candidate earned **no inversion credit** (no inversion bonus
@@ -254,11 +259,12 @@ conditions (all required); the **phase** guard is applied separately at the call
    `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static
    `kMasks[17]` interval-bitmask table mirroring the 17 TemplateDef interval sets).
 
-**Phase guard (separate from the predicate).** `applyHarmonicFunction()` zeroes rcb only
-when `gateRZeroesRootContinuity(...) && phase == ScoringPhase::Final`. Gate R is a
-**final-scoring correction only**; it never fires during segmentation exploration
-(`ScoringPhase::Segmentation`) — see "Why the phase guard" below. The predicate itself is
-stateless (no phase parameter): the phase is consulted once at the Pass A call site.
+**Phase guard (separate from the predicate).** `rcbEdge()` zeroes rcb only when
+`gateRZeroesRootContinuity(...) && applyProgressionSignals` (where `applyProgressionSignals
+== (phase == ScoringPhase::Final)`). Gate R is a **final-scoring correction only**; it never
+fires during segmentation exploration (`ScoringPhase::Segmentation`) — see "Why the phase
+guard" below. The predicate itself is stateless (no phase parameter): the phase is consulted
+once, inside `rcbEdge` at the Pass A call site.
 
 **Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**
 The bare bass-foreign test alone misfires on legitimate extended slash voicings.

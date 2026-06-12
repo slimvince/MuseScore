@@ -138,19 +138,25 @@ TEST(Composing_GateRTests, BassIsTemplateChordTone_ConservativeOnOutOfRange)
 }
 
 // ── F2: Gate R decision branches ──────────────────────────────────────────────
+//
+// Stage 3.4 re-pin (CALL SHAPE only): the former 2-arg overload
+// gateRZeroesRootContinuity(cell, rcb) was removed when Gate R was absorbed into the
+// rcbEdge() helper. These tests now call the 3-arg production entry, passing
+// cell.basisDep explicitly — exactly what the 2-arg overload forwarded. The decision
+// outcomes (and the Δ=+7b end-to-end pins below) are unchanged.
 
 // Branch 1 — bass is a template chord tone, basisDep==0: Gate R does NOT zero rcb.
 TEST(Composing_GateRTests, GateR_DoesNotFire_WhenBassIsChordTone)
 {
     const ScoringCell cell = makeCell(/*root*/ 0, /*Major*/ 0, /*bass=M3*/ 4, /*basisDep*/ 0.0);
-    EXPECT_FALSE(gateRZeroesRootContinuity(cell, /*rcb*/ 0.40));
+    EXPECT_FALSE(gateRZeroesRootContinuity(cell, cell.basisDep, /*rcb*/ 0.40));
 }
 
 // Branch 2 — bass NOT a template chord tone, basisDep==0: Gate R ZEROES rcb.
 TEST(Composing_GateRTests, GateR_Fires_WhenBassForeignAndBasisDepZero)
 {
     const ScoringCell cell = makeCell(0, /*Major*/ 0, /*foreign interval 9*/ 9, /*basisDep*/ 0.0);
-    EXPECT_TRUE(gateRZeroesRootContinuity(cell, 0.40));
+    EXPECT_TRUE(gateRZeroesRootContinuity(cell, cell.basisDep, 0.40));
 }
 
 // Branch 3 — bass foreign but basisDep>0 (legitimate extended slash, e.g. Cm7add11/F):
@@ -158,14 +164,14 @@ TEST(Composing_GateRTests, GateR_Fires_WhenBassForeignAndBasisDepZero)
 TEST(Composing_GateRTests, GateR_DoesNotFire_WhenBasisDepPositive)
 {
     const ScoringCell cell = makeCell(0, /*Major*/ 0, 9, /*basisDep*/ 0.5);
-    EXPECT_FALSE(gateRZeroesRootContinuity(cell, 0.40));
+    EXPECT_FALSE(gateRZeroesRootContinuity(cell, cell.basisDep, 0.40));
 }
 
 // rcb==0 (no root continuity for this candidate): Gate R is a no-op regardless of bass.
 TEST(Composing_GateRTests, GateR_DoesNotFire_WhenNoRootContinuity)
 {
     const ScoringCell cell = makeCell(0, /*Major*/ 0, 9, 0.0);
-    EXPECT_FALSE(gateRZeroesRootContinuity(cell, /*rcb*/ 0.0));
+    EXPECT_FALSE(gateRZeroesRootContinuity(cell, cell.basisDep, /*rcb*/ 0.0));
 }
 
 // ── F3: phase gating (the former Branch 4, lifted to the call site) ─────────────
