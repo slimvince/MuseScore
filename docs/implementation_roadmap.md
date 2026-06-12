@@ -92,17 +92,28 @@ explained; diagnoseChord output verified against production on ≥3 historical c
 
 ## Stage 3 — Phase E as a decoder *(the part-1 core recommendation, made incremental)*
 
+> **Design ratified (Cowork, 2026-06-12), base commit `3aa9db7676`.** `docs/decoder_design.md` is the
+> ratified Stage-3 design (one mandatory correction applied: `completeTriadInversionBonus` is
+> a temporally-gated emission, not pure emission — §3/§6; all seven Open Questions DECIDED).
+
 Replace greedy left-to-right commitment with lattice + global decode. Incremental, with a
 byte-identity bridge so there is a no-surprise verification gate at every step.
 
 | # | Item | Source | Verify |
 |---|------|--------|--------|
-| 3.1 | **Decoder skeleton, beam = 1**: per-region candidate lattice from the existing oracle output; transitions = existing progression signals (rcb, resolution, wSeq, wDim, steps). **Hard gate: beam-1 must reproduce the current pipeline byte-identically** (it is the same greedy argmax, restructured) | Part 1 rec. 1 | 0/353 corpus diff, all snapshots, BIR unchanged |
+| 3.1 | **Decoder skeleton, beam = 1**: per-region candidate lattice from the existing oracle output; transitions = existing progression signals (rcb, resolution, wSeq, wDim, steps). **Hard gate: beam-1 must reproduce the current pipeline byte-identically** (it is the same greedy argmax, restructured). **Design opportunity from the 2.5 baseline (`docs/perf_p3_baseline.md`): "decode once, query many."** P3 currently re-runs full Pass-0 per status-bar query (≈99% of a 33–215 ms median / up-to-7 s tail cost); a per-score lattice computed once and queried per tick would make P3 dramatically FASTER post-decoder while simultaneously resolving the D-P4/D-BRIDGE cold-context contract (the per-tick path reads the decoded path state). Stage 3 design must evaluate this — it converts the decoder from a cost into the P3 performance fix | Part 1 rec. 1; 2.5 baseline | 0/353 corpus diff, all snapshots, BIR unchanged |
 | 3.2 | Widen beam / exact DP behind the quality-level setting (ARCHITECTURE.md §2.14: level↔beam width). A/B vs beam-1 on both presets + DCML cross-corpus; expected wins: Δ=+7a (bwv102.7, bwv261), Δ=+7b class, rcb cascades | Part 1 | per-case table; no hard-stop regressions at level 0 |
 | 3.3 | Migrate oracle temporal signals (resolutionBonus + 4 inversion bonuses, chordanalyzer.h:329 debt) into transition scores; **revisit Gate R's `basisDep ≤ 0` proxy in the same change** (documented coupling) | Part 2 Q2.2; audit F1/F6 | Stage-1 pinning tests green or consciously re-baselined |
 | 3.4 | Retire gates A–L one at a time: a gate is removed only when the decoder reproduces its pinned fixes (Stage 1.1 tests are the proof obligations). Gates J and R expected to survive longest (structural, healthy). **Stage-1a obligations:** the post-bonus quality-guard winner scan is first-wins on exact ties (ordering sensitivity), and the diff-root append never appends sub-threshold candidates — the decoder must either reproduce or consciously re-decide both (`cc_stage1a_report.md` F2/F5) | Part 1; audit F7 | per-gate differential report |
 | 3.4b | Remove dead Gates B/C/D (provably unreachable — stage1b F1) as part of the gate-retirement work, NOT before (their removal is byte-identical but belongs to the deliberate per-gate retirement audit) | stage1b F1 | byte-identical removal commit |
 | 3.5 | Split `chordanalyzer.cpp` along the now-real layer seams; rename iteration-vocabulary APIs (`applyIter8691Pedal` → descriptive names) — the split is motivated here, not before | Part 2 Q3.1/3.2 | file map in ARCHITECTURE.md |
+
+**3.2 ↔ 3.4 ordering (Q3 DECIDED, Cowork ratification 2026-06-12).** For any gate that mutates
+root/quality/bass identity, **3.4 retirement of that gate leads 3.2 beam-widening past it** —
+the identity entering the lattice must already be gate-corrected before the beam widens, since
+the gate's mutation feeds backward edges. The table's numeric order is the default track; this
+is a per-gate exception (structural gates that never mutate a committed identity, e.g. J, do not
+force the re-order). See `docs/decoder_design.md` §12 sequencing note.
 
 **Gate 3 → 4:** decoder is the production path at all quality levels; gate count reduced;
 corpus metrics ≥ Stage-2 baselines on both presets.
