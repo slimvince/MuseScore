@@ -1872,47 +1872,13 @@ void applyPostScoringGates(
                             }
                         }
                     }
-                    // Gate B: the next region's inferred root matches the alternative (Minor) root.
-                    // Strong forward evidence that this harmony persists — the bass is passing through
-                    // a chord tone, not establishing a new root.
-                    if (!didEnharmonicFlip
-                        && context != nullptr
-                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
-                        && context->nextRootPc != -1
-                        && context->nextRootPc == results[bestAltIdx].identity.rootPc
-                        && context->bassIsStepwiseToNext) {
-                        std::swap(results[0], results[bestAltIdx]);
-                        didEnharmonicFlip = true;
-                    }
-                    // Gate C: the alternative root appears in the 3-region window AND the bass is
-                    // moving stepwise from the previous region.  The root has been recently active
-                    // and the bass is passing through it — strong evidence of an inversion.
-                    if (!didEnharmonicFlip
-                        && context != nullptr
-                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
-                        && context->bassIsStepwiseFromPrevious) {
-                        const auto& rpc = context->recentRootPcs;
-                        const bool altRootIsRecent = (rpc[0] == results[bestAltIdx].identity.rootPc
-                                                      || rpc[1] == results[bestAltIdx].identity.rootPc
-                                                      || rpc[2] == results[bestAltIdx].identity.rootPc);
-                        if (altRootIsRecent) {
-                            std::swap(results[0], results[bestAltIdx]);
-                            didEnharmonicFlip = true;
-                        }
-                    }
-                    // Gate D: two or more consecutive stepwise bass moves ending here.
-                    // A scalar bass line is strong evidence of a passing inversion, not a new root.
-                    if (!didEnharmonicFlip
-                        && context != nullptr
-                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && results[bestAltIdx].identity.rootPc == expectedAltRoot
-                        && context->consecutiveBassStepwiseCount >= 2) {
-                        std::swap(results[0], results[bestAltIdx]);
-                        didEnharmonicFlip = true;
-                    }
-
+                    // Gates B/C/D (forward / 3-region-window / consecutive-stepwise temporal
+                    // confirmations of the Major-add6 ↔ Minor flip) were removed in Stage 3.4b
+                    // as provably unreachable (Stage-1b finding F1): each repeated Gate A's exact
+                    // entry conditions plus extra temporal evidence behind `!didEnharmonicFlip`,
+                    // but Gate A — which has those same conditions with no temporal requirement —
+                    // always fires first and sets the flag. Removal is byte-identical (0/353 × 3
+                    // configs, snapshots zero-diff). See docs/scoring_model.md §6/§8.
                 }
 
                 // ── Gate E: first-inversion detection ─────────────────────────────────────

@@ -602,7 +602,7 @@ executes LAST, after K and L. The table below follows execution order.
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | ~L2639 | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
-| **A–D (Minor-add6 ↔ HalfDim7 enharmonic flip)** | ~L2733 | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **B/C/D are UNREACHABLE (dead code):** Gate A has exactly these conditions with no temporal requirement, and B/C/D repeat them *plus* temporal evidence behind `!didEnharmonicFlip` — A always fires first (Stage-1b F1). Removal is deliberately deferred to the Stage-3 gate-retirement audit (roadmap 3.4b), not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
+| **A (Minor-add6 ↔ HalfDim7 enharmonic flip)** | ~L2733 | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **Gates B/C/D removed (Stage 3.4b):** they were provably unreachable dead code — Gate A has exactly these conditions with no temporal requirement, and B/C/D repeated them *plus* temporal evidence behind `!didEnharmonicFlip`, so A always fired first (Stage-1b F1). Removal was byte-identical (0/353 × 3 configs, snapshots zero-diff) — the deliberate gate-retirement audit, not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
 | **E (first-inversion Minor → Major)** | ~L2820 | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
 | **F (second-inversion → root-position Major)** | ~L2842 | Alt Major at `(rootPc+5)%12`, stepwise bass. | Swap. | Bass = P5 of actual root; B winning when E/B is correct. |
 | **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | ~L2907 | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-B/C/D on temporal context. | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
@@ -705,11 +705,13 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   The historical silent stack-buffer overrun from a missed matrix size is closed.
   (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)
 
-- **Gate A subsumes Gates B/C/D.** Gate A's entry conditions are a strict subset
-  of B/C/D's, so B/C/D are unreachable dead code (Stage-1b F1). Do not add
-  temporal conditions to Gate A without realizing B/C/D would become reachable —
-  and untested. Their removal belongs to the Stage-3 per-gate retirement audit
-  (roadmap 3.4b), not to a hygiene pass.
+- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical).** Gate A's
+  entry conditions were a strict subset of B/C/D's, so B/C/D were unreachable dead
+  code (Stage-1b F1). They were removed in the Stage-3 per-gate retirement audit
+  (roadmap 3.4b) as a byte-identical change (0/353 × 3 configs, snapshots zero-diff).
+  Constraint going forward: do not add temporal conditions to Gate A — there is no
+  longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the
+  Major-add6 ↔ Minor flip must be reintroduced explicitly and tested.
 
 - **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was
   tried and reverted (Schumann D-major, Corelli G-major snapshot flips).
