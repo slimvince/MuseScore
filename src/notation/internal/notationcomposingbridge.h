@@ -118,6 +118,35 @@ NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
     size_t refStaff,
     const std::set<size_t>& excludeStaves = {});
 
+/// Flush the bounded-window decode cache. Called by Notation::setScore() on every
+/// score install to close the pointer-reuse hazard: the cache keys on a raw Score*
+/// (no per-lifetime id exists in engraving), so a freed-then-reallocated score at the
+/// same address could otherwise false-hit. Every score the cache is queried with is
+/// installed via setScore first, so flushing there drops any stale entry before a
+/// reused-address score can be queried.
+void clearHarmonicDecodeCache();
+
+// ── Stage 3.1b bounded-window cache byte-identity A/B + instrumentation ───────
+//
+// NOT the production status-bar path (that is analyzeHarmonicContextAtTick above,
+// which now memoizes its per-window section build). These exist for the byte-identity
+// A/B and the decode-cache tests.
+
+/// The IDENTICAL expanding-window orchestrator with the window cache BYPASSED
+/// (every window section rebuilt fresh) — the "uncached" reference for the
+/// byte-identity A/B, which must show ZERO differing ticks vs the cached path.
+NoteHarmonicContext analyzeHarmonicContextAtTickUncachedForTesting(const mu::engraving::Score* score,
+                                                                   const mu::engraving::Fraction& tick,
+                                                                   size_t preferredStaffIdx = 0,
+                                                                   const std::set<size_t>& excludeStaves = {});
+
+/// Drop the bounded-window decode cache (MRU of per-window sections).  Test-only.
+void clearHarmonicDecodeCacheForTesting();
+
+/// Number of cold window-section builds in the decode cache this process.
+/// Test-only — lets cache tests assert hit/miss behaviour.
+size_t harmonicDecodeCacheBuildCountForTesting();
+
 /// Extract pitch context from a note and run harmonic analysis.
 /// Returns up to 3 ranked ChordAnalysisResult candidates (empty = insufficient data).
 /// Populates outKeyFifths and outKeyMode for use with ChordSymbolFormatter.

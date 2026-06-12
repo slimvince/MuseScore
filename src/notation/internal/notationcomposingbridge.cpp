@@ -48,6 +48,7 @@
 #include "engraving/dom/segment.h"
 #include "engraving/dom/staff.h"
 #include "engraving/dom/stafftext.h"
+#include "engraving/editing/undo.h"          // UndoStack::currentIndex (decode-cache invalidation token)
 #include "engraving/types/constants.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
@@ -224,34 +225,29 @@ struct RegionalContextSnapshot {
     bool valid = false;
 };
 
-RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
-    const mu::engraving::Score* sc,
+// Locate the region containing `tick` in an already-computed AnalyzedSection and
+// populate a NoteHarmonicContext from it.  Returns false (leaving outContext
+// untouched) when the section is empty or no region matches.
+//
+// Stage 3.1b: factored out of analyzeNoteHarmonicContextRegionallyInWindow so the
+// SAME construction serves both the expanding-window path (per-iteration section)
+// and the decode-once whole-score cache path (one cached section).  This isolates
+// the answer-delta to exactly one variable — which section is passed — and
+// guarantees that when the window section and the whole-score section agree on the
+// matched region, the produced context is byte-identical.
+bool buildRegionalContextFromSection(
     const mu::engraving::Fraction& tick,
-    const mu::engraving::Segment* /*seg — unused after Phase 3c*/,
-    const std::set<size_t>& excludeStaves,
-    const mu::engraving::Fraction& windowStartTick,
-    const mu::engraving::Fraction& windowEndTick)
+    const mu::composing::analysis::AnalyzedSection& section,
+    mu::notation::NoteHarmonicContext& outContext)
 {
-    using namespace mu::engraving;
-
-    RegionalContextSnapshot snapshot;
-
     // Phase 3c: consume AnalyzedSection.  The cruft path (display-context
     // collectRegionTones + findTemporalContext + second analyzeChord +
     // tie-break prepend) is gone — see docs/divergence_d_recon.md for the
     // archaeology.  chordResults[0] now comes from the per-region winner,
     // chordResults[1..] from the canonical alternatives the per-region
     // analyzeChord produced (and previously discarded).
-    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
-        sc, windowStartTick, windowEndTick, excludeStaves,
-        mu::notation::HarmonicRegionGranularity::Smoothed);
-    const auto section = mu::composing::analysis::analyzeSection(sc,
-                                                                windowStartTick,
-                                                                windowEndTick,
-                                                                excludeStaves,
-                                                                rawRegions);
     if (section.regions.empty()) {
-        return snapshot;
+        return false;
     }
 
     const int noteTick = tick.ticks();
@@ -276,35 +272,217 @@ RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
         }
     }
     if (it == regions.end()) {
-        return snapshot;
+        return false;
     }
 
-    snapshot.context.keyFifths = it->keyModeResult.keySignatureFifths;
-    snapshot.context.keyMode = it->keyModeResult.mode;
-    snapshot.context.keyConfidence = it->keyModeResult.normalizedConfidence;
-    snapshot.context.temporalExtensions = it->temporalExtensions;
+    outContext.keyFifths = it->keyModeResult.keySignatureFifths;
+    outContext.keyMode = it->keyModeResult.mode;
+    outContext.keyConfidence = it->keyModeResult.normalizedConfidence;
+    outContext.temporalExtensions = it->temporalExtensions;
 
     // Populate enclosingKeyArea from the matched region's keyAreaId.
     // P4 fallback leaves this nullopt — graceful degradation per recon Q3.
     const int kaId = it->keyAreaId;
     if (kaId >= 0 && kaId < static_cast<int>(section.keyAreas.size())) {
-        snapshot.context.enclosingKeyArea = section.keyAreas[kaId];
+        outContext.enclosingKeyArea = section.keyAreas[kaId];
     }
 
-    const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(snapshot.context.keyFifths);
-    const int tonicPc = (ionianPc + mu::composing::analysis::keyModeTonicOffset(snapshot.context.keyMode)) % 12;
-    auto applyRegionalKeyContext = [tonicPc, &snapshot](mu::composing::analysis::ChordAnalysisResult& result) {
+    const int ionianPc = mu::composing::analysis::ionianTonicPcFromFifths(outContext.keyFifths);
+    const int tonicPc = (ionianPc + mu::composing::analysis::keyModeTonicOffset(outContext.keyMode)) % 12;
+    auto applyRegionalKeyContext = [tonicPc, &outContext](mu::composing::analysis::ChordAnalysisResult& result) {
         result.function.keyTonicPc = tonicPc;
-        result.function.keyMode = snapshot.context.keyMode;
+        result.function.keyMode = outContext.keyMode;
     };
 
-    snapshot.context.chordResults.reserve(1 + it->alternatives.size());
-    snapshot.context.chordResults.push_back(it->chordResult);
+    outContext.chordResults.reserve(1 + it->alternatives.size());
+    outContext.chordResults.push_back(it->chordResult);
     for (const auto& alt : it->alternatives) {
-        snapshot.context.chordResults.push_back(alt);
+        outContext.chordResults.push_back(alt);
     }
-    for (auto& result : snapshot.context.chordResults) {
+    for (auto& result : outContext.chordResults) {
         applyRegionalKeyContext(result);
+    }
+
+    return true;
+}
+
+// Build the AnalyzedSection for one window [windowStartTick, windowEndTick).
+// This is the expensive unit — Pass-0 (analyzeHarmonicRhythm) + analyzeSection —
+// that the bounded-window cache memoizes.  It is a PURE function of (score content,
+// window bounds, excludeStaves), which is exactly why memoizing it cannot change any
+// answer (§ below).
+mu::composing::analysis::AnalyzedSection buildWindowSection(
+    const mu::engraving::Score* sc,
+    const std::set<size_t>& excludeStaves,
+    const mu::engraving::Fraction& windowStartTick,
+    const mu::engraving::Fraction& windowEndTick)
+{
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        sc, windowStartTick, windowEndTick, excludeStaves,
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    return mu::composing::analysis::analyzeSection(sc, windowStartTick, windowEndTick,
+                                                   excludeStaves, rawRegions);
+}
+
+// ── Bounded-window decode cache (Stage 3.1b, Q1 re-decided 2026-06-12) ────────
+//
+// Q1 RE-DECIDED on evidence: the originally-ratified whole-score decode was SHELVED
+// because its premise (whole-score context is better) was falsified by the 3.1b
+// answer-delta (32–40% tick delta on contrapuntal scores; combined DCML verdict
+// 59/41 in the WINDOW path's favour; Mozart 35/65 against whole-score —
+// docs/p3_granularity_ab_3_1b.md). This cache instead MEMOIZES the expensive
+// per-window section build, leaving the P3 expanding-window algorithm — and every
+// per-tick answer — BYTE-IDENTICAL to today.
+//
+// Byte-identity argument: P3 (analyzeHarmonicContextRegionallyAtTick) is unchanged.
+// Its only expensive step, buildWindowSection(score, ws, we, exclude), is a pure
+// function of its inputs under a fixed score; memoizing a pure function returns the
+// same value it would have computed. The convergence loop, region matching, symbol
+// formatting, and P4 fallback are untouched. Hence: zero answer-delta, snapshots
+// 11/11 with NO golden refresh.
+//
+// Key: (windowStartTick, windowEndTick) under a (score, change-token, excludeStaves)
+// guard. The change token is the engraving undo-stack currentIndex() — a
+// const-reachable size_t that advances on every undoable edit (undo.h:289).
+//
+// MRU size = kMaxWindowEntries (16). Justification: a status-bar query for a click
+// in measure m expands through windows [m−1,m+1], [m−2,m+2], … (usually converging in
+// 1–2 steps). Clicks cluster on a few adjacent measures; 16 window-sections cover the
+// hot set of ~8–16 recently-touched windows. Each section is a few-measure slice
+// (KB–tens of KB); 16 is well under a megabyte. The cross-measure warm win the
+// whole-score variant offered is deliberately forfeited — that is the accepted cost
+// of byte-identity (the warm win is now LOCAL re-clicks, not a full re-sweep).
+//
+// Conservative invalidation (MVP, as for the whole-score variant): ANY change to the
+// (score, token, excludeStaves) guard flushes the WHOLE window cache. Cheap because
+// the token compare is O(1); bounded incremental re-decode remains a documented
+// follow-up. Single-threaded (no mutex — UI thread only).
+//
+// Pointer-reuse safety (the §R4 hazard, CLOSED): the guard keys on a raw `Score*`,
+// which the allocator can reuse for a DIFFERENT score after the cached one is freed
+// (same address + same fresh undo-token = a potential silent false-hit). There is no
+// per-lifetime Score id and no Score-destruction channel in engraving, so this is
+// closed by a LIFECYCLE FLUSH: `Notation::setScore()` calls clearHarmonicDecodeCache()
+// on every score install. The cache only ever holds the score of a clicked note —
+// always a score currently installed in a Notation — and that install necessarily
+// precedes any query of it, so the stale entry is dropped before a reused-address
+// score can be queried. (Test/batch paths use ScoreRW without a Notation; they
+// clear the cache explicitly. See notationdecodecache_tests.)
+struct WindowDecodeCache {
+    struct Entry {
+        int windowStartTick = 0;
+        int windowEndTick = 0;
+        mu::composing::analysis::AnalyzedSection section;
+    };
+
+    const mu::engraving::Score* score = nullptr;
+    size_t changeToken = 0;
+    std::set<size_t> excludeStaves;
+    std::vector<Entry> entries;   // MRU: entries.back() == most recently used
+    bool valid = false;
+    size_t buildCount = 0;        // diagnostics: number of cold window builds this process
+
+    static constexpr size_t kMaxWindowEntries = 16;
+};
+
+WindowDecodeCache g_windowCache;
+
+// Returns the change-detection token for `sc`, or std::nullopt when the score has
+// no reachable undo stack (in which case the cache must NOT be trusted — we rebuild
+// every query rather than risk a stale label; no caching, no regression).
+std::optional<size_t> scoreChangeToken(const mu::engraving::Score* sc)
+{
+    if (const mu::engraving::UndoStack* stack = sc->undoStack()) {
+        return stack->currentIndex();
+    }
+    return std::nullopt;
+}
+
+// Memoized buildWindowSection: returns the section for (sc, exclude, ws, we), serving
+// from the MRU cache on a hit. When the score has no undo token the cache is left
+// invalid and every call rebuilds fresh (no caching, no staleness risk).
+const mu::composing::analysis::AnalyzedSection& cachedWindowSection(
+    const mu::engraving::Score* sc,
+    const std::set<size_t>& excludeStaves,
+    const mu::engraving::Fraction& windowStartTick,
+    const mu::engraving::Fraction& windowEndTick)
+{
+    const std::optional<size_t> token = scoreChangeToken(sc);
+
+    // Guard mismatch (different score / edited / different exclude set) → flush.
+    if (!g_windowCache.valid
+        || !token.has_value()
+        || g_windowCache.score != sc
+        || g_windowCache.changeToken != *token
+        || g_windowCache.excludeStaves != excludeStaves) {
+        g_windowCache.entries.clear();
+        g_windowCache.score = sc;
+        g_windowCache.changeToken = token.value_or(0);
+        g_windowCache.excludeStaves = excludeStaves;
+        g_windowCache.valid = token.has_value();
+    }
+
+    const int ws = windowStartTick.ticks();
+    const int we = windowEndTick.ticks();
+
+    if (g_windowCache.valid) {
+        for (size_t i = 0; i < g_windowCache.entries.size(); ++i) {
+            if (g_windowCache.entries[i].windowStartTick == ws
+                && g_windowCache.entries[i].windowEndTick == we) {
+                // Promote to MRU back, return.
+                if (i != g_windowCache.entries.size() - 1) {
+                    std::rotate(g_windowCache.entries.begin() + i,
+                                g_windowCache.entries.begin() + i + 1,
+                                g_windowCache.entries.end());
+                }
+                return g_windowCache.entries.back().section;
+            }
+        }
+    }
+
+    // Miss: build (the expensive step), cache (when the token is meaningful).
+    WindowDecodeCache::Entry entry;
+    entry.windowStartTick = ws;
+    entry.windowEndTick = we;
+    entry.section = buildWindowSection(sc, excludeStaves, windowStartTick, windowEndTick);
+    ++g_windowCache.buildCount;
+
+    if (!g_windowCache.valid) {
+        // No usable token: hold a single scratch entry but never trust it for a hit.
+        g_windowCache.entries.clear();
+        g_windowCache.entries.push_back(std::move(entry));
+        return g_windowCache.entries.back().section;
+    }
+
+    if (g_windowCache.entries.size() >= WindowDecodeCache::kMaxWindowEntries) {
+        g_windowCache.entries.erase(g_windowCache.entries.begin());   // evict LRU (front)
+    }
+    g_windowCache.entries.push_back(std::move(entry));
+    return g_windowCache.entries.back().section;
+}
+
+// Per-window P3 step. `useCache=false` bypasses the memoization entirely (always a
+// fresh build) — the uncached reference for the byte-identity A/B (report §R2).
+RegionalContextSnapshot analyzeNoteHarmonicContextRegionallyInWindow(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    const mu::engraving::Segment* /*seg — unused after Phase 3c*/,
+    const std::set<size_t>& excludeStaves,
+    const mu::engraving::Fraction& windowStartTick,
+    const mu::engraving::Fraction& windowEndTick,
+    bool useCache)
+{
+    RegionalContextSnapshot snapshot;
+
+    const mu::composing::analysis::AnalyzedSection localSection =
+        useCache ? mu::composing::analysis::AnalyzedSection{}
+                 : buildWindowSection(sc, excludeStaves, windowStartTick, windowEndTick);
+    const mu::composing::analysis::AnalyzedSection& section =
+        useCache ? cachedWindowSection(sc, excludeStaves, windowStartTick, windowEndTick)
+                 : localSection;
+
+    if (!buildRegionalContextFromSection(tick, section, snapshot.context)) {
+        return snapshot;
     }
 
     const mu::composing::analysis::ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(sc) };
@@ -335,7 +513,8 @@ mu::notation::NoteHarmonicContext analyzeHarmonicContextRegionallyAtTick(
     const mu::engraving::Score* sc,
     const mu::engraving::Fraction& tick,
     const mu::engraving::Segment* seg,
-    const std::set<size_t>& excludeStaves)
+    const std::set<size_t>& excludeStaves,
+    bool useCache)
 {
     using namespace mu::engraving;
 
@@ -367,7 +546,8 @@ mu::notation::NoteHarmonicContext analyzeHarmonicContextRegionallyAtTick(
                                                                        seg,
                                                                        excludeStaves,
                                                                        windowStartMeasure->tick(),
-                                                                       windowEndMeasure->endTick());
+                                                                       windowEndMeasure->endTick(),
+                                                                       useCache);
         if (currentSnapshot.valid && regionalSnapshotsMatch(previousSnapshot, currentSnapshot)) {
             return currentSnapshot.context;
         }
@@ -470,6 +650,13 @@ NoteHarmonicContext analyzeHarmonicContextLocallyAtTick(
 
 namespace mu::notation {
 
+// Stage 3.1b — the production status-bar P3 path, UNCHANGED in behaviour from
+// pre-3.1b: an expanding ±measure window that converges to a stable reading. The
+// only change is that its single expensive step (buildWindowSection = Pass-0 +
+// analyzeSection over the window) is now MEMOIZED by the bounded-window cache
+// (cachedWindowSection), so the answer at every tick is byte-identical while warm
+// re-queries on already-seen windows skip the re-analysis. (Q1 re-decided 2026-06-12:
+// the whole-score variant was shelved — docs/p3_granularity_ab_3_1b.md.)
 NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* score,
                                                  const mu::engraving::Fraction& tick,
                                                  size_t preferredStaffIdx,
@@ -488,7 +675,47 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
 
     const staff_idx_t refStaff = resolveAnalysisReferenceStaff(score, tick, preferredStaffIdx, excludeStaves);
 
-    NoteHarmonicContext regional = analyzeHarmonicContextRegionallyAtTick(score, tick, seg, excludeStaves);
+    NoteHarmonicContext regional = analyzeHarmonicContextRegionallyAtTick(score, tick, seg, excludeStaves,
+                                                                          /*useCache=*/true);
+    if (!regional.chordResults.empty()) {
+        regional.wasRegional = true;
+        return regional;
+    }
+
+    // P4 fallback (cold findTemporalContext, unchanged). Fires 0/2231 on the perf
+    // corpus; the D-P4 "consume decoded path state" closure is rolled back to the
+    // 2.4 documented-contract state (it depended on the shelved whole-score decode).
+    NoteHarmonicContext local = analyzeHarmonicContextLocallyAtTick(score, tick, seg, refStaff, excludeStaves);
+    local.wasRegional = false;
+    return local;
+}
+
+// ── Stage 3.1b byte-identity A/B + cache instrumentation ─────────────────────
+//
+// NOT the production path. analyzeHarmonicContextAtTickUncachedForTesting runs the
+// IDENTICAL expanding-window orchestrator with the window cache BYPASSED (every
+// window section rebuilt fresh) — the "old/uncached" reference for the byte-identity
+// A/B, which must show ZERO differing ticks vs the cached production path.
+NoteHarmonicContext analyzeHarmonicContextAtTickUncachedForTesting(const mu::engraving::Score* score,
+                                                                   const mu::engraving::Fraction& tick,
+                                                                   size_t preferredStaffIdx,
+                                                                   const std::set<size_t>& excludeStaves)
+{
+    using namespace mu::engraving;
+
+    if (!score) {
+        return {};
+    }
+
+    const Segment* seg = score->tick2segment(tick, true, SegmentType::ChordRest);
+    if (!seg) {
+        return {};
+    }
+
+    const staff_idx_t refStaff = resolveAnalysisReferenceStaff(score, tick, preferredStaffIdx, excludeStaves);
+
+    NoteHarmonicContext regional = analyzeHarmonicContextRegionallyAtTick(score, tick, seg, excludeStaves,
+                                                                          /*useCache=*/false);
     if (!regional.chordResults.empty()) {
         regional.wasRegional = true;
         return regional;
@@ -497,6 +724,29 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
     NoteHarmonicContext local = analyzeHarmonicContextLocallyAtTick(score, tick, seg, refStaff, excludeStaves);
     local.wasRegional = false;
     return local;
+}
+
+// Production lifecycle flush — called by Notation::setScore() on every score install
+// to close the pointer-reuse hazard (see the cache comment above). Drops the whole
+// cache but preserves the diagnostic buildCount (so tests can observe a rebuild).
+void clearHarmonicDecodeCache()
+{
+    g_windowCache.score = nullptr;
+    g_windowCache.changeToken = 0;
+    g_windowCache.excludeStaves.clear();
+    g_windowCache.entries.clear();
+    g_windowCache.valid = false;
+    // buildCount intentionally retained (diagnostic / test observability).
+}
+
+void clearHarmonicDecodeCacheForTesting()
+{
+    g_windowCache = WindowDecodeCache{};
+}
+
+size_t harmonicDecodeCacheBuildCountForTesting()
+{
+    return g_windowCache.buildCount;
 }
 
 std::string harmonicAnnotation(const Note* note)

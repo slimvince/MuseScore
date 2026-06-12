@@ -1211,6 +1211,220 @@ TEST(P3PerfBaseline, DISABLED_Sweep)
     std::cout << report.str() << std::endl;
 }
 
+// ── Stage 3.1b byte-identity A/B (uncached window vs cached window) ───────────
+//
+// After Q1 was re-decided to the bounded-window cache (it memoizes the per-window
+// section build inside the unchanged expanding-window path), this harness PROVES
+// byte-identity: for every chord-bearing tick it compares
+//   • UNCACHED = analyzeHarmonicContextAtTickUncachedForTesting (cache bypassed)
+//   • CACHED   = analyzeHarmonicContextAtTick                   (production, memoized)
+// and asserts ZERO differing ticks (root/quality/bass/key). Any diff is a hard
+// failure — the memoization is not pure. (The pre-revision whole-score answer-delta
+// — the large diff this used to measure — is preserved in
+// docs/p3_granularity_ab_3_1b.md.)
+std::string formatDouble(double v, int decimals);   // defined below (DivergenceC section)
+
+struct DisplayedIdentity {
+    bool empty = true;
+    int rootPc = -1;
+    int quality = -1;
+    int bassPc = -1;
+    int extensions = 0;
+    int keyFifths = 0;
+    int keyMode = -1;
+    bool wasRegional = true;
+};
+
+DisplayedIdentity displayedOf(const NoteHarmonicContext& ctx)
+{
+    DisplayedIdentity d;
+    d.keyFifths = ctx.keyFifths;
+    d.keyMode = static_cast<int>(ctx.keyMode);
+    d.wasRegional = ctx.wasRegional;
+    if (ctx.chordResults.empty()) {
+        return d;
+    }
+    const auto& id = ctx.chordResults.front().identity;
+    d.empty = false;
+    d.rootPc = id.rootPc;
+    d.quality = static_cast<int>(id.quality);
+    d.bassPc = id.bassPc;
+    d.extensions = id.extensions;
+    return d;
+}
+
+std::string symbolOf(const mu::engraving::Score* score, const NoteHarmonicContext& ctx)
+{
+    if (ctx.chordResults.empty()) {
+        return "<none>";
+    }
+    return mu::notation::formatChordResultForStatusBar(score, ctx.chordResults.front(), ctx.keyFifths).symbol;
+}
+
+TEST(Stage31bAnswerDelta, DISABLED_Sweep)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+    }
+
+    std::ostringstream report;
+    report << "\n==== ANSWERDELTA BEGIN ====\n";
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        const QString scorePath = perfCorpusPath(ps);
+        ASSERT_TRUE(QFileInfo::exists(scorePath))
+            << "Perf corpus score missing: " << scorePath.toStdString();
+
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "Failed to load: " << scorePath.toStdString();
+
+        const std::vector<int> ticks = collectChordBearingTicks(score);
+
+        int rootDiff = 0, qualDiff = 0, bassDiff = 0, keyDiff = 0;
+        int oldEmpty = 0, newEmpty = 0;
+        int oldP4 = 0, newP4 = 0;
+        std::ostringstream rows;
+
+        mu::notation::clearHarmonicDecodeCacheForTesting();
+        for (int t : ticks) {
+            const Fraction frac = Fraction::fromTicks(t);
+            // UNCACHED reference (cache bypassed) vs CACHED production path.
+            const NoteHarmonicContext oldCtx = mu::notation::analyzeHarmonicContextAtTickUncachedForTesting(score, frac);
+            const NoteHarmonicContext newCtx = mu::notation::analyzeHarmonicContextAtTick(score, frac);
+
+            const DisplayedIdentity o = displayedOf(oldCtx);
+            const DisplayedIdentity n = displayedOf(newCtx);
+            if (o.empty) ++oldEmpty;
+            if (n.empty) ++newEmpty;
+            if (!o.wasRegional) ++oldP4;
+            if (!n.wasRegional) ++newP4;
+
+            const bool rDiff = (o.empty != n.empty) || (o.rootPc != n.rootPc);
+            const bool qDiff = (o.empty != n.empty) || (o.quality != n.quality) || (o.extensions != n.extensions);
+            const bool bDiff = (o.empty != n.empty) || (o.bassPc != n.bassPc);
+            const bool kDiff = (o.keyFifths != n.keyFifths) || (o.keyMode != n.keyMode);
+            if (rDiff) ++rootDiff;
+            if (qDiff) ++qualDiff;
+            if (bDiff) ++bassDiff;
+            if (kDiff) ++keyDiff;
+
+            if (rDiff) {
+                Measure* m = score->tick2measure(frac);
+                const int mn = m ? (m->measureNumber() + 1) : -1;
+                const int beatTicks = m ? (t - m->tick().ticks()) : 0;
+                const double beat = 1.0 + static_cast<double>(beatTicks) / static_cast<double>(Constants::DIVISION);
+                rows << "  ROOTDIFF tick=" << t << " m=" << mn << " beat=" << formatDouble(beat, 2)
+                     << " | old=\"" << symbolOf(score, oldCtx) << "\" (regional=" << (o.wasRegional ? 1 : 0) << ")"
+                     << " | new=\"" << symbolOf(score, newCtx) << "\" (regional=" << (n.wasRegional ? 1 : 0) << ")"
+                     << " | oldKeyF=" << o.keyFifths << " newKeyF=" << n.keyFifths
+                     << "\n";
+            }
+        }
+
+        report << "score=" << ps.id
+               << " ticks=" << ticks.size()
+               << " rootDiff=" << rootDiff
+               << " qualDiff=" << qualDiff
+               << " bassDiff=" << bassDiff
+               << " keyDiff=" << keyDiff
+               << " oldEmpty=" << oldEmpty
+               << " newEmpty=" << newEmpty
+               << " oldP4=" << oldP4
+               << " newP4=" << newP4
+               << "\n";
+        report << rows.str();
+
+        // Byte-identity gate: the memoization must change nothing.
+        EXPECT_EQ(rootDiff, 0) << ps.id << " root drift (cache not pure)";
+        EXPECT_EQ(qualDiff, 0) << ps.id << " quality drift";
+        EXPECT_EQ(bassDiff, 0) << ps.id << " bass drift";
+        EXPECT_EQ(keyDiff, 0)  << ps.id << " key drift";
+
+        delete score;
+    }
+
+    report << "==== ANSWERDELTA END ====\n";
+    std::cout << report.str() << std::endl;
+}
+
+// ── Stage 3.1b cold-vs-warm perf (bounded-window decode-once payoff) ──────────
+//
+// The bounded-window cache memoizes the per-window section build. Its warm win is
+// LOCAL: re-clicking a tick (or clicking within an already-touched measure) hits the
+// cached window sections; the cross-measure warm win of the shelved whole-score
+// variant is deliberately forfeited (the cost of byte-identity). This harness
+// reports, per score:
+//   • COLD per-click: clear cache, time a single first query (≈ today's baseline,
+//     no regression) — median over a spread of sample ticks.
+//   • WARM re-click: each tick queried once to populate, then immediately re-queried
+//     and timed — the realistic "click the same note again" / "click a neighbour"
+//     latency, served from the cache.
+TEST(Stage31bPerf, DISABLED_ColdWarm)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+    }
+
+    std::ostringstream report;
+    report << "\n==== COLDWARM BEGIN ====\n";
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        const QString scorePath = perfCorpusPath(ps);
+        ASSERT_TRUE(QFileInfo::exists(scorePath));
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score);
+
+        const std::vector<int> ticks = collectChordBearingTicks(score);
+        ASSERT_FALSE(ticks.empty());
+
+        // COLD per-click: clear the cache before each sample query so every timed
+        // click pays a fresh window build (≈ today's uncached cost). Sample ~30
+        // ticks spread across the score.
+        std::vector<double> coldLat;
+        const int stride = std::max<int>(1, static_cast<int>(ticks.size()) / 30);
+        for (size_t i = 0; i < ticks.size(); i += static_cast<size_t>(stride)) {
+            mu::notation::clearHarmonicDecodeCacheForTesting();
+            const auto c0 = std::chrono::steady_clock::now();
+            mu::notation::analyzeHarmonicContextAtTick(score, Fraction::fromTicks(ticks[i]));
+            const auto c1 = std::chrono::steady_clock::now();
+            coldLat.push_back(std::chrono::duration<double, std::milli>(c1 - c0).count());
+        }
+
+        // WARM re-click: populate then immediately re-query the SAME tick (its
+        // windows are at the MRU front → all hits).
+        std::vector<double> warmLat;
+        warmLat.reserve(ticks.size());
+        mu::notation::clearHarmonicDecodeCacheForTesting();
+        for (int t : ticks) {
+            mu::notation::analyzeHarmonicContextAtTick(score, Fraction::fromTicks(t)); // populate
+            const auto t0 = std::chrono::steady_clock::now();
+            mu::notation::analyzeHarmonicContextAtTick(score, Fraction::fromTicks(t)); // warm re-click
+            const auto t1 = std::chrono::steady_clock::now();
+            warmLat.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+        }
+
+        report << "score=" << ps.id
+               << " queries=" << ticks.size()
+               << " coldMedianMs=" << formatDouble(medianSorted(coldLat), 3)
+               << " coldP95Ms=" << formatDouble(percentileNearestRank(coldLat, 95.0), 3)
+               << " warmMedianMs=" << formatDouble(medianSorted(warmLat), 5)
+               << " warmP95Ms=" << formatDouble(percentileNearestRank(warmLat, 95.0), 5)
+               << " warmMaxMs=" << formatDouble(*std::max_element(warmLat.begin(), warmLat.end()), 5)
+               << "\n";
+
+        delete score;
+    }
+
+    report << "==== COLDWARM END ====\n";
+    std::cout << report.str() << std::endl;
+}
+
 // ── Divergence-C observation report (Phase 3b) ───────────────────────────────
 //
 // One-shot diagnostic gated by the env var PIPELINE_OBSERVE_DIVERGENCE_C=1.

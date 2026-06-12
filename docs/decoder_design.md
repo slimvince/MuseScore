@@ -655,3 +655,52 @@ recommendation text retained for the record; the `DECIDED` line is the binding v
 ---
 
 *End of draft. Awaiting ratification addendum before commit (roadmap rule 4).*
+
+---
+
+## §8 amendment — 3.1b outcome (2026-06-12): Q1 re-decided, whole-score shelved
+
+> Dated amendment recording the Stage-3.1b implementation outcome. The §8 "decode-once,
+> query-many" design and Q1 (whole-score decode cached in the bridge) were implemented,
+> **measured**, and **revised on the evidence**. This supersedes the relevant Q1/§8 text.
+
+**Q1 RE-DECIDED → bounded-window cache.** Q1's ratified answer (whole-score decode) was
+implemented and shipped behind the orchestrator, then **shelved** when the answer-delta
+A/B (`docs/p3_granularity_ab_3_1b.md`) falsified its premise that whole-score context is
+better:
+- whole-score changed the displayed P3 chord on **32–40% of ticks** on contrapuntal/large
+  scores (0% on small/homophonic);
+- the change is **coarser** (batch/section granularity), and **not more DCML-correct** —
+  combined root verdict **59/41 in the WINDOW path's favour**, **Mozart 35/65 against
+  whole-score**.
+
+3.1b instead ships a **bounded-window cache**: it memoizes the per-window section build
+(`buildWindowSection` = Pass-0 + `analyzeSection`) inside the **unchanged** expanding-window
+P3 path. Because that build is a pure function of (score, window bounds, excludeStaves) under
+a fixed score, memoizing it is **byte-identical** — zero answer-delta, snapshots 11/11 with
+**no golden refresh**. The warm win is now **local** (re-click / same-measure neighbour
+hits cached window sections); the whole-score variant's cross-measure warm win is forfeited
+as the accepted cost of byte-identity. Key: `(windowStart, windowEnd)` under a
+`(score, undo-token, excludeStaves)` guard; conservative whole-cache flush on token change.
+
+**D-P4 / D-BRIDGE closure ROLLED BACK.** §8's claim that decode-once closes D-P4/D-BRIDGE
+("P4/bridge consume the decoded path state") **depended on the whole-score decode** and is
+**rolled back to the 2.4 documented-contract state**. P4 stays on its cold
+`findTemporalContext` path (it fires 0/2231 on the perf corpus). Closing D-P4/D-BRIDGE now
+depends on the **granularity decision**, not on this cache — deferred with that decision.
+
+**§1.4 erratum (instruction premise).** The Stage-3.1b instruction (and the §8 framing)
+assumed the pipeline-snapshot harness "calls the raw functions and stays byte-identical."
+The **P3 snapshot (`buildTickRegionalArray`) calls the orchestrator
+`analyzeHarmonicContextAtTick`**, so it flows through whatever the orchestrator does. Under
+the shelved whole-score variant this made all 11 snapshots drift; under the shipped
+bounded-window cache it is byte-identical (the whole point). Recorded so the premise is not
+repeated.
+
+**Granularity is a recurring Stage-5 question, not a cache choice.** The window-vs-whole-score
+A/B is the 2.2-i granularity finding recurring: the fine per-tick view is more DCML-accurate
+per tick; the coarse section view is self-consistent with the chord track. **Whether the
+status bar should match the chord track (whole-score) or resolve the chord at the clicked
+note (window) is a product/Stage-5 decision** — it needs the granularity-robust metric the
+2.2-i dossier mandated, not a cache architecture. Parked accordingly; evidence preserved in
+`docs/p3_granularity_ab_3_1b.md`. Do not re-attempt whole-score P3 before that decision.

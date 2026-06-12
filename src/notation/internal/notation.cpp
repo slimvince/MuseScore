@@ -37,6 +37,7 @@
 #include "notationstyle.h"
 #include "notationelements.h"
 #include "notationaccessibility.h"
+#include "notationcomposingbridge.h"   // clearHarmonicDecodeCache (decode-cache lifecycle flush)
 #include "notationmidiinput.h"
 #include "notationparts.h"
 #include "notationtypes.h"
@@ -133,6 +134,14 @@ IMasterNotationPtr Notation::masterNotation() const
 
 void Notation::setScore(Score* score)
 {
+    // Stage 3.1b: flush the bounded-window decode cache on every score install.
+    // This closes the pointer-reuse hazard (a freed-then-reallocated Score* at the
+    // same address could otherwise false-hit the cache). Placed BEFORE the early
+    // return so it fires even when a new score is installed at a reused address that
+    // compares equal to the (now-dangling) previous pointer. setScore is rare
+    // (load/replace), so this does not affect warm-cache perf during interaction.
+    clearHarmonicDecodeCache();
+
     if (m_score == score) {
         return;
     }
