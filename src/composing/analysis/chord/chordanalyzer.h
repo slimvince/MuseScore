@@ -377,12 +377,14 @@ struct ChordAnalyzerPreferences {
     ///   - Augmented → Major/Minor at the same root  (I+ → I returning, e.g. C+ → C)
     double resolutionBonus = 0.35;
 
-    // TODO (ARCHITECTURE.md §4.1c): These four score-addition signals belong in the
-    // post-ranking correction layer, not in the vertical sonority scorer. They are
-    // left here as pre-existing technical debt; do not add further contextual signals
-    // to this section.
+    // The four score-addition signals below + resolutionBonus above used to be folded
+    // into the vertical sonority scorer (basisIndep / basisDep) as documented temporal
+    // debt (ARCHITECTURE.md §4.1c, audit Finding 1). Stage 3.3 MIGRATED all five into the
+    // competition pipeline (fn::resolutionEdgeBonus / fn::inversionContextBonus); these
+    // members are now read THERE, not in analyzeChord(). The values/conditions are
+    // unchanged. Do not re-fold a progression signal into the oracle.
 
-    // ── Contextual inversion bonuses (§4.1b) ───────────────────────────────
+    // ── Contextual inversion bonuses (§4.1b — applied by the competition pipeline) ──
 
     /// Bonus applied to a non-bass-root candidate when the current
     /// bass note moves by diatonic step FROM the previous region's
@@ -422,9 +424,10 @@ struct ChordAnalyzerPreferences {
 
     /// Maximum total context bonus that can be applied to any single inversion
     /// candidate across the inversion temporal signals combined — the four that
-    /// actually feed the sum in bassDependentContextualBonuses(): stepwise
-    /// (bassIsStepwiseFromPrevious), lookahead (bassIsStepwiseToNext), sameRoot
-    /// (previousRootPc == rootPc), and completeTriad.  The formerly-listed
+    /// actually feed the sum in fn::inversionContextBonus() (the competition pipeline,
+    /// since Stage 3.3): stepwise (bassIsStepwiseFromPrevious), lookahead
+    /// (bassIsStepwiseToNext), sameRoot (previousRootPc == rootPc), and completeTriad.
+    /// The formerly-listed
     /// nextRoot / consecutive / recentRoot / weakBeat signals were never wired
     /// into this sum.
     /// Prevents runaway stacking when multiple signals fire simultaneously.
@@ -725,8 +728,9 @@ struct DiagnosticOracleCell {
     int          rootPc           = 0;
     int          templateIdx      = 0;   ///< tiePriority (index into the template array)
     ChordQuality quality          = ChordQuality::Unknown;
-    double       basisIndep       = 0.0; ///< vertical pitch evidence (no rootContinuity folded in)
-    double       basisDep         = 0.0; ///< bass-dependent delta (incl. §4.1b inversion bonuses)
+    double       basisIndep       = 0.0; ///< vertical pitch evidence (no progression signal; Stage 3.3)
+    double       basisDep         = 0.0; ///< bass-dependent delta: nonBassAdjustment + appliedBassBonus
+                                          ///< (inversion bonuses migrated to the pipeline, Stage 3.3)
     double       complexityFactor = 0.0;
     double       augFactor        = 0.0;
     double       wCompleteBonus   = 0.0;
@@ -749,6 +753,12 @@ struct DiagnosticCompetitionCandidate {
     /// Pre-Gate-R rootContinuityBonus — the value Gate R may have withheld.
     double       rootContinuityBonusRaw        = 0.0;
     bool         rootContinuityWithheldByGateR = false;
+    /// Migrated oracle temporal signals (Stage 3.3), folded into basisIndep / basisDep
+    /// before the cf × af multiply. resolutionBonus = the back-edge resolution bias;
+    /// inversionContextBonus = the capped sum of the four §4.1b inversion bonuses (also the
+    /// "inversion credit" Gate R's reconstructed fullBasisDep reads).
+    double       resolutionBonus      = 0.0;
+    double       inversionContextBonus = 0.0;
     double       wSeqBonus     = 0.0;
     double       wDimBonus     = 0.0;   ///< exact value the pipeline applied (RawCandidate::wDimDelta)
     double       stepInBonus   = 0.0;   ///< potential w_stepIn (the surgical guard may suppress it)

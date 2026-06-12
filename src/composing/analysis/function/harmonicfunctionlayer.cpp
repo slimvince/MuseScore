@@ -94,6 +94,74 @@ double wStepOutBonus(int candBassPc, int rootPc,
     return isSemitoneOrToneStep(delta) ? kWStepOut : 0.0;
 }
 
+// ── Migrated oracle temporal signals (Stage 3.3) ─────────────────────────────
+// resolutionEdgeBonus + inversionContextBonus reproduce, term-for-term and in the same
+// arithmetic, what bassIndependentContextualBonuses (resolution) and
+// bassDependentContextualBonuses (the four inversion bonuses) used to compute oracle-side.
+// They are folded into basisIndep / basisDep INSIDE the cf × af multiply (their historical
+// homes), so they are multiplicatively scaled exactly as before — see Pass A.
+
+double resolutionEdgeBonus(int candRootPc, ChordQuality candQuality,
+                           int previousRootPc, ChordQuality previousQuality,
+                           double bonusValue)
+{
+    if (previousQuality == ChordQuality::Unknown || previousRootPc < 0) {
+        return 0.0;
+    }
+    // Mutually exclusive on previousQuality, so at most one branch contributes — exactly
+    // the three `score += rb` cases of the old bassIndependentContextualBonuses helper.
+    double score = 0.0;
+    if (previousQuality == ChordQuality::Diminished
+            && (candQuality == ChordQuality::Major || candQuality == ChordQuality::Minor)
+            && candRootPc == (previousRootPc + 1) % 12) {
+        score += bonusValue;
+    }
+    if (previousQuality == ChordQuality::HalfDiminished
+            && candQuality == ChordQuality::Major
+            && candRootPc == (previousRootPc + 5) % 12) {
+        score += bonusValue;
+    }
+    if (previousQuality == ChordQuality::Augmented
+            && (candQuality == ChordQuality::Major || candQuality == ChordQuality::Minor)
+            && candRootPc == previousRootPc) {
+        score += bonusValue;
+    }
+    return score;
+}
+
+double inversionContextBonus(const ScoringCell& cell,
+                             int previousRootPc,
+                             bool bassIsStepwiseFromPrevious,
+                             bool bassIsStepwiseToNext,
+                             const analysis::ChordAnalyzerPreferences& prefs)
+{
+    // The vertical eligibility (isInvertedMajMin / qualifiesCompleteTriad, both ANDed
+    // with hasStructuralBass) is precomputed by the oracle into the cell flags; the
+    // `context &&` guard of the old helper is reproduced by the null-context path leaving
+    // every edge below false / previousRootPc == -1, which zeroes the sum.
+    const bool hasStepwiseBassEvidence =
+        bassIsStepwiseFromPrevious || bassIsStepwiseToNext;
+    double sum = 0.0;
+
+    if (hasStepwiseBassEvidence && cell.qualifiesCompleteTriad) {
+        sum += prefs.completeTriadInversionBonus;
+    }
+
+    if (cell.supportsInversionBonuses) {
+        if (bassIsStepwiseFromPrevious) {
+            sum += prefs.stepwiseBassInversionBonus;
+        }
+        if (bassIsStepwiseToNext) {
+            sum += prefs.stepwiseBassLookaheadBonus;
+        }
+        if (previousRootPc != -1 && previousRootPc == cell.rootPc) {
+            sum += prefs.sameRootInversionBonus;
+        }
+    }
+
+    return std::min(sum, prefs.maxTotalInversionContextBonus);
+}
+
 // ── Gate R — rcb bass-chord-tone guard (definitions; declared in the header) ──
 
 /// Gate R helper: returns true if bassPc is a tone of the candidate's template
@@ -145,14 +213,27 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
     return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
 }
 
-/// Gate R decision — see the header for the three-condition structural contract. The
-/// phase guard ("final-scoring only") lives at the call site, not here. Encodes the
-/// structural guard so both the production call site and the unit tests share one
-/// definition.
+/// Gate R decision — see the header for the three-condition structural contract and the
+/// Stage 3.3 reconstructed-credit redesign. The phase guard ("final-scoring only") lives
+/// at the call site, not here. Encodes the structural guard so the production call site
+/// and the unit tests share one definition.
+///
+/// 3-arg overload: the production pipeline passes the RECONSTRUCTED full basisDep
+/// (cell.basisDep + inversionContextBonus) for condition (2), so Gate R reads the cell's
+/// total inversion credit without any cross-layer dependency on the oracle. Byte-identical
+/// to the historical proxy (which read the oracle's then-inversion-bearing basisDep).
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double basisDepValue,
+                               double rcb) noexcept
+{
+    return rcb > 0.0 && basisDepValue <= 0.0
+           && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc);
+}
+
+/// 2-arg overload: reads cell.basisDep directly. Used by the unit tests, which construct
+/// cells whose basisDep already holds the value to test against.
 bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept
 {
-    return rcb > 0.0 && cell.basisDep <= 0.0
-           && !bassIsTemplateChordTone(cell.rootPc, cell.tiePriority, cell.bassPc);
+    return gateRZeroesRootContinuity(cell, cell.basisDep, rcb);
 }
 
 // ── Competition pipeline ────────────────────────────────────────────────────
@@ -270,22 +351,42 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
         std::vector<WorkCand> perBassWith;
         std::vector<WorkCand> perBassWithout;
 
-        // Pass A — vertical score + rootContinuity + w_complete + w_seq [+ w_dim].
+        // Pass A — vertical score + migrated temporal signals + rootContinuity
+        //          + w_complete + w_seq [+ w_dim].
         while (i < nCells && snapshot.cells[i].bassPc == groupBassPc) {
             const ScoringCell& cell = snapshot.cells[i];
+
+            // ── Migrated oracle temporal signals (Stage 3.3) ──────────────────────
+            // resolution + the four inversion bonuses moved out of the oracle into the
+            // pipeline. They are folded back into basisIndep / basisDep BEFORE the
+            // cf × af multiply — their historical positions — so the score arithmetic is
+            // unchanged. fullBasisDep is byte-identical to the oracle's pre-3.3 basisDep
+            // (bb and the inversion sum are mutually exclusive, so the reassociation is
+            // exact); resolution into fullBasisIndep is a ≤1-ULP reassociation confined to
+            // non-tie Maj/Min cells (corpus A/B is the proof obligation; see report §1).
+            const double resolution = resolutionEdgeBonus(
+                cell.rootPc, cell.quality, ctx.previousRootPc, ctx.previousQuality,
+                prefs.resolutionBonus);
+            const double cappedInv = inversionContextBonus(
+                cell, ctx.previousRootPc, ctx.bassIsStepwiseFromPrevious,
+                ctx.bassIsStepwiseToNext, prefs);
+            const double fullBasisIndep = cell.basisIndep + resolution;
+            const double fullBasisDep   = cell.basisDep + cappedInv;
+
             double rcb = rootContinuityBonus(cell.rootPc, ctx.previousRootPc,
                                              prefs.rootContinuityBonus);
             // Gate R: withhold rcb from a BARE-ROOT continuation whose bass is foreign
             // to the candidate's own chord tones. Two conditions, both required:
-            //   (a) basisDep <= 0 — the candidate earned no bass-dependent credit, i.e.
-            //       no inversion bonus fired (its third is not sounding) and no bass-root
-            //       bonus applies. Given rcb>0 (root continuity), a legitimately
-            //       inverted/extended slash voicing has a sounding third, which fires
-            //       sameRootInversionBonus → basisDep>0; only a bare-root match scores 0.
+            //   (a) fullBasisDep <= 0 — the candidate earned NO inversion credit: no
+            //       inversion bonus fired (its third is not sounding, or the temporal
+            //       edge is absent) and no bass-root bonus applies. Given rcb>0 (root
+            //       continuity), a legitimately inverted/extended slash voicing has a
+            //       sounding third, which fires sameRootInversionBonus (cappedInv>0) →
+            //       fullBasisDep>0; only a bare-root match scores 0.
             //   (b) bass foreign to the template — the bass cannot belong to this chord.
             // Together these isolate the "nonsense slash" continuation (Δ=+7b cluster:
             // bwv245.28/296/320, bass = M6 of the continued root) and spare legitimate
-            // extended voicings such as Cm7add11/F (third sounding, basisDep>0). The
+            // extended voicings such as Cm7add11/F (third sounding, cappedInv>0). The
             // bare bass-foreign test alone misfires on the latter. See
             // docs/scoring_model.md §4 Gate R.
             //
@@ -297,19 +398,17 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             // ScoringPhase::Final keeps segmentation byte-identical to baseline and the
             // within-region fixes are preserved.
             //
-            // CROSS-LAYER DEPENDENCY: `cell.basisDep <= 0` is used here as a proxy for
-            // "this continuation has NO sounding third", which works only because the
-            // sounding-third inversion bonus (sameRootInversionBonus) is computed in the
-            // ORACLE (chordanalyzer.cpp) and folded into basisDep — pre-existing oracle
-            // temporal debt, chordanalyzer.h:329. If that debt is ever resolved (the
-            // inversion bonuses migrate out of the oracle into this pipeline), basisDep
-            // would no longer carry the sounding-third signal and this condition MUST be
-            // revisited at the same time, or Gate R will misfire.
-            if (gateRZeroesRootContinuity(cell, rcb) && applyProgressionSignals) {
+            // Stage 3.3 reconstructed-credit: the inversion bonuses now live in THIS
+            // layer (cappedInv above), so Gate R reads the pipeline-reconstructed
+            // fullBasisDep — intra-layer, no oracle dependency (audit Finding 6 closed).
+            // This is byte-identical to the old oracle-basisDep proxy: fullBasisDep equals
+            // the value the oracle used to fold in, and the discriminator is provably
+            // `cappedInv == 0` (min inversion bonus 0.40 > max penalty 0.35).
+            if (gateRZeroesRootContinuity(cell, fullBasisDep, rcb) && applyProgressionSignals) {
                 rcb = 0.0;
             }
-            const double newBasisIndep = cell.basisIndep + rcb;
-            double scoreNoWDim = (newBasisIndep + cell.basisDep)
+            const double newBasisIndep = fullBasisIndep + rcb;
+            double scoreNoWDim = (newBasisIndep + fullBasisDep)
                                  * cell.complexityFactor * cell.augFactor;
             scoreNoWDim += cell.wCompleteBonus;
             scoreNoWDim += applyProgressionSignals

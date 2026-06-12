@@ -1526,118 +1526,32 @@ static bool isBassChordTone(int bassPc, int rootPc, ChordQuality quality, uint32
     return false;
 }
 
-// Iter 92 — bass-split contextual bonuses.
+// Diatonic-root preference — the one bass-independent KEY fact the oracle folds into
+// basisIndep. Genuinely vertical/key as of Stage 3.3.
 //
-// These two helpers split the contextual-bonus computation so the (rootPc, templateIdx)
-// scoring loop computes the bass-INDEPENDENT contribution exactly once per cell and then
-// evaluates each bass-candidate by adding the bass-DEPENDENT delta only. Together they
-// supply basisIndep / basisDep for every ScoringSnapshot cell.
-//
-// NOTE — neither helper adds rootContinuityBonus. Since the E2d redesign rootContinuity
-// is a progression signal owned by the competition pipeline (applyHarmonicFunction), not
-// the oracle (docs/scoring_model.md §11): it is added there, before the cf × af multiply
-// and Gate-R-aware. (The former monolithic `contextualBonuses()` helper, which folded rcb
-// in for the legacy diagnoseChord scorer, was removed in Stage 2.3 — diagnoseChord now
-// replays the production pipeline instead of re-scoring.)
-double bassIndependentContextualBonuses(const TemplateDef& tpl, int rootPc,
-                                        int keyTonicPc, const std::array<int, 7>& scale,
-                                        const ChordAnalyzerPreferences& prefs,
-                                        const ChordTemporalContext* context)
+// HISTORY — until Stage 3.3 two helpers (bassIndependentContextualBonuses /
+// bassDependentContextualBonuses) folded FIVE progression signals into basisIndep /
+// basisDep as documented oracle temporal debt (chordanalyzer.h TODO, audit Finding 1):
+// resolutionBonus + the four §4.1b inversion bonuses (stepwise-from-prev, lookahead,
+// sameRoot, completeTriad). Stage 3.3 migrated all five into the competition pipeline
+// (fn::resolutionEdgeBonus + fn::inversionContextBonus, folded into basisIndep / basisDep
+// there, before the cf × af multiply — same arithmetic positions). rootContinuityBonus had
+// already moved in the E2d redesign. The oracle is now genuinely vertical: it adds NO
+// progression signal. The vertical inversion-eligibility predicates
+// (supportsContextualInversionBonuses / qualifiesForCompleteTriadInversionBonus) stay here
+// (they are pitch facts) and are published as per-cell flags on the ScoringSnapshot so the
+// pipeline can gate the migrated bonuses. See docs/scoring_model.md §4 / §11.
+double diatonicRootContribution(int rootPc, int keyTonicPc,
+                                const std::array<int, 7>& scale,
+                                const ChordAnalyzerPreferences& prefs)
 {
-    double score = 0.0;
-
     // Prefer roots that belong to the current key scale.
     for (int interval : scale) {
         if ((keyTonicPc + interval) % 12 == rootPc) {
-            score += prefs.diatonicRootBonus;
-            break;
+            return prefs.diatonicRootBonus;
         }
     }
-
-    if (context) {
-        // Root-continuity: prefer keeping the same root across successive chords.
-        //
-        // KNOWN DEAD END (Iter 98, 2026-05-23): suppressing this bonus when the
-        // predecessor region has distinctPcs <= 2 was tried in two variants and
-        // both regressed mozart_k280-1 IV→V65 in Alberti-bass contexts.  The
-        // signal is load-bearing for legitimate sparse continuity (broken-chord
-        // bass with held upper voices).  Do not attempt a density-based or
-        // inversion-aware gate here without first reading the Iter 98 dead-end
-        // section in COWORK_HANDOFF.md.  See docs/scoring_model.md §4.
-        // Root-continuity is a progression signal, not vertical pitch evidence:
-        // the scoring oracle no longer folds it into basisIndep. The competition
-        // pipeline (applyHarmonicFunction) adds it before the cf x af multiply.
-        // See docs/scoring_model.md section 11. (The Iter 98 sparse-predecessor
-        // dead end documented above still applies wherever it is reintroduced.)
-
-        // Quality-guided resolution bias: reward candidates at the typical
-        // resolution target of the previous chord's quality.
-        if (context->previousQuality != ChordQuality::Unknown
-                && context->previousRootPc >= 0) {
-            const int prevRoot = context->previousRootPc;
-            const ChordQuality prevQ = context->previousQuality;
-            const double rb = prefs.resolutionBonus;
-
-            if (prevQ == ChordQuality::Diminished
-                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
-                    && rootPc == (prevRoot + 1) % 12) {
-                score += rb;
-            }
-            if (prevQ == ChordQuality::HalfDiminished
-                    && tpl.quality == ChordQuality::Major
-                    && rootPc == (prevRoot + 5) % 12) {
-                score += rb;
-            }
-            if (prevQ == ChordQuality::Augmented
-                    && (tpl.quality == ChordQuality::Major || tpl.quality == ChordQuality::Minor)
-                    && rootPc == prevRoot) {
-                score += rb;
-            }
-        }
-    }
-
-    return score;
-}
-
-double bassDependentContextualBonuses(const TemplateDef& tpl, int rootPc, int bassPc,
-                                      double appliedBassBonus,
-                                      int distinctPcs,
-                                      const std::array<double, 12>& pcWeight,
-                                      const ChordAnalyzerPreferences& prefs,
-                                      const ChordTemporalContext* context,
-                                      bool hasStructuralBass = true)
-{
-    double score = appliedBassBonus;
-
-    if (context && hasStructuralBass) {
-        const bool hasStepwiseBassEvidence =
-            context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext;
-        const bool isInvertedMajMin =
-            supportsContextualInversionBonuses(tpl, rootPc, bassPc, pcWeight);
-        double inversionContextBonus = 0.0;
-
-        if (hasStepwiseBassEvidence
-                && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, bassPc, pcWeight, distinctPcs)) {
-            inversionContextBonus += prefs.completeTriadInversionBonus;
-        }
-
-        if (isInvertedMajMin) {
-            if (context->bassIsStepwiseFromPrevious) {
-                inversionContextBonus += prefs.stepwiseBassInversionBonus;
-            }
-            if (context->bassIsStepwiseToNext) {
-                inversionContextBonus += prefs.stepwiseBassLookaheadBonus;
-            }
-            if (context->previousRootPc != -1
-                    && context->previousRootPc == rootPc) {
-                inversionContextBonus += prefs.sameRootInversionBonus;
-            }
-        }
-
-        score += std::min(inversionContextBonus, prefs.maxTotalInversionContextBonus);
-    }
-
-    return score;
+    return 0.0;
 }
 
 } // namespace
@@ -2712,7 +2626,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 + dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold)
                 + structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold)
                 + tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs)
-                + bassIndependentContextualBonuses(tpl, rootPc, keyTonicPc, scale, prefs, context);
+                + diatonicRootContribution(rootPc, keyTonicPc, scale, prefs);
 
             // Iter 74 Fix A — template complexity preference (bass-independent).
             const int templateDefinedTones = static_cast<int>(tpl.intervals.size());
@@ -2812,11 +2726,12 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 const TemplateDef& tpl = templates[tplIdx];
                 const double bassBonus =
                     appliedBassRootBonus(tpl, rootPc, candBassPc, pcWeight, prefs);
+                // basisDep is now genuinely vertical (Stage 3.3): nonBassAdjustment +
+                // appliedBassBonus. The four §4.1b inversion bonuses migrated to the
+                // competition pipeline (fn::inversionContextBonus), gated by the per-cell
+                // vertical-eligibility flags published below.
                 const double basisDep =
-                    nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc)
-                    + bassDependentContextualBonuses(tpl, rootPc, candBassPc, bassBonus,
-                                                     distinctPcs, pcWeight, prefs, context,
-                                                     hasStructuralBass);
+                    nonBassAdjustment(tpl, rootPc, candBassPc, tpcForPc) + bassBonus;
 
                 fn::ScoringCell cell;
                 cell.bassPc           = candBassPc;
@@ -2831,6 +2746,16 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 cell.augFactor        = augFactorMatrix[rootPc][tplIdx];
                 cell.wCompleteBonus   = wCompleteBonus(tpl, rootPc, candBassPc);
                 cell.appliedBassBonus = bassBonus;
+                // Vertical inversion-eligibility flags (oracle pitch facts), ANDed with
+                // hasStructuralBass so sparse upper-register "basses" never trigger the
+                // migrated inversion bonuses (the old `if (context && hasStructuralBass)`
+                // guard). The pipeline gates fn::inversionContextBonus on these.
+                cell.supportsInversionBonuses =
+                    hasStructuralBass
+                    && supportsContextualInversionBonuses(tpl, rootPc, candBassPc, pcWeight);
+                cell.qualifiesCompleteTriad =
+                    hasStructuralBass
+                    && qualifiesForCompleteTriadInversionBonus(tpl, rootPc, candBassPc, pcWeight, distinctPcs);
                 snapshot.cells.push_back(cell);
             }
         }
@@ -2839,7 +2764,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // -- Run the competition pipeline (winner selection lives here) ------------
     // Key influence does NOT flow through the function context: it is already frozen
     // into cell.basisIndep here, via the oracle's dim7CharacteristicBonus and
-    // bassIndependentContextualBonuses (which consume keyTonicPc/scale above), and is
+    // diatonicRootContribution (which consume keyTonicPc/scale above), and is
     // forwarded to the post-scoring gates through snapshot.{scale,keyTonicPc,keyMode}.
     // Do NOT add key-confidence scaling on the function context (it would be a no-op —
     // scale the oracle terms instead). See cc_step3_key_investigation_report.md Part A.
@@ -2848,6 +2773,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
     fnCtx.previousBassPc = context ? context->previousBassPc : -1;
     fnCtx.nextBassPc     = context ? context->nextBassPc     : -1;
+    // Stage 3.3 — bass-stepwise edges the migrated inversion bonuses read (the old
+    // bassDependentContextualBonuses' `context->bassIsStepwise*`). Null-context path keeps
+    // them false, which zeroes fn::inversionContextBonus (matches the old `if (context...)`).
+    fnCtx.bassIsStepwiseFromPrevious = context ? context->bassIsStepwiseFromPrevious : false;
+    fnCtx.bassIsStepwiseToNext       = context ? context->bassIsStepwiseToNext       : false;
     // Step 1 redesign: free wiring — forwarded from ChordTemporalContext, no scoring logic yet
     fnCtx.previousQuality              = context ? context->previousQuality              : ChordQuality::Unknown;
     fnCtx.consecutiveBassStepwiseCount = context ? context->consecutiveBassStepwiseCount : 0;
@@ -3140,6 +3070,9 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
     const int  nextRootPc = context ? context->nextRootPc     : -1;
     const int  prevBassPc = context ? context->previousBassPc : -1;
     const int  nextBassPc = context ? context->nextBassPc     : -1;
+    const ChordQuality prevQuality = context ? context->previousQuality : ChordQuality::Unknown;
+    const bool stepFromPrev = context ? context->bassIsStepwiseFromPrevious : false;
+    const bool stepToNext   = context ? context->bassIsStepwiseToNext       : false;
     diag.competition.reserve(gateCtx.rawCandidates.size());
     for (const RawCandidate& rc : gateCtx.rawCandidates) {
         DiagnosticCompetitionCandidate cc;
@@ -3160,9 +3093,20 @@ ChordAnalysisDiagnosticResult RuleBasedChordAnalyzer::diagnoseChord(
             }
         }
         if (cell) {
+            // Migrated temporal signals (Stage 3.3), recomputed via the same public fn::
+            // functions the pipeline uses. Gate R now reads the reconstructed full basisDep
+            // (cell.basisDep + inversionContextBonus) — the candidate's total inversion
+            // credit — exactly as Pass A does.
+            cc.resolutionBonus       = fn::resolutionEdgeBonus(cell->rootPc, cell->quality,
+                                                               prevRootPc, prevQuality,
+                                                               prefs.resolutionBonus);
+            cc.inversionContextBonus = fn::inversionContextBonus(*cell, prevRootPc,
+                                                                 stepFromPrev, stepToNext, prefs);
+            const double fullBasisDep = cell->basisDep + cc.inversionContextBonus;
             const double rcbRaw = fn::rootContinuityBonus(cell->rootPc, prevRootPc,
                                                           prefs.rootContinuityBonus);
-            const bool withheld = finalPhase && fn::gateRZeroesRootContinuity(*cell, rcbRaw);
+            const bool withheld = finalPhase
+                && fn::gateRZeroesRootContinuity(*cell, fullBasisDep, rcbRaw);
             cc.rootContinuityBonusRaw        = rcbRaw;
             cc.rootContinuityWithheldByGateR = withheld;
             cc.rootContinuityBonus           = withheld ? 0.0 : rcbRaw;

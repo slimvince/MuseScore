@@ -30,15 +30,16 @@
 //   analyzeChord()           — scoring ORACLE. Computes only what depends on the
 //                              raw tones + key: per-(bass,root,template) vertical
 //                              scores (basisIndep — vertical evidence plus the
-//                              diatonic/resolution bonuses that remain as pre-existing
-//                              oracle temporal debt, chordanalyzer.h:329; it does NOT
-//                              carry rootContinuityBonus, which the pipeline adds),
-//                              basisDep, complexity/aug factors, w_complete,
-//                              appliedBassBonus) plus region metadata. Packs them
-//                              into a ScoringSnapshot and calls applyHarmonicFunction.
-//                              It selects NO winner and adds none of the pipeline-owned
-//                              progression signals (rootContinuity / w_seq / w_dim /
-//                              step bonuses).
+//                              node-local diatonicRootBonus; basisDep — nonBassAdjustment
+//                              + appliedBassBonus), complexity/aug factors, w_complete,
+//                              plus the vertical inversion-eligibility flags, plus region
+//                              metadata. Packs them into a ScoringSnapshot and calls
+//                              applyHarmonicFunction. As of Stage 3.3 the oracle is
+//                              GENUINELY vertical: it selects NO winner and applies NONE
+//                              of the progression signals — rootContinuity, resolution,
+//                              the four inversion bonuses, w_seq / w_dim / step bonuses
+//                              are ALL owned by the pipeline (the chordanalyzer.h temporal
+//                              debt is cleared).
 //
 //   applyHarmonicFunction()  — competition PIPELINE. The sole place that applies
 //                              progression signals (rootContinuity, w_seq, w_dim,
@@ -74,6 +75,14 @@ struct HarmonicFunctionContext {
                                   ///< Required by the Pass B step-in bonus.
     int nextBassPc     { -1 };   ///< Bass PC of the following region (-1 = unknown).
                                   ///< Required by the Pass B step-out bonus.
+
+    // Stage 3.3 — temporal edges migrated from the oracle into the competition pipeline.
+    // Forwarded verbatim from ChordTemporalContext so the pipeline can recompute the
+    // bass-stepwise inversion bonuses (stepwiseBassInversion back-edge,
+    // stepwiseBassLookahead forward/cold-lookahead edge) and the completeTriad edge gate
+    // (OR-of-edges) that bassDependentContextualBonuses used to evaluate oracle-side.
+    bool bassIsStepwiseFromPrevious { false };  ///< Bass steps from the predecessor region's bass.
+    bool bassIsStepwiseToNext       { false };  ///< Bass steps to the successor region's bass (cold lookahead).
 
     // Step 1 redesign: free wiring — forwarded from ChordTemporalContext, no scoring logic yet
     analysis::ChordQuality previousQuality { analysis::ChordQuality::Unknown };
@@ -145,6 +154,18 @@ double wStepOutBonus(int candBassPc, int rootPc,
                      bool jointScoringEnabled,
                      int nextBassPc);
 
+/// Resolution-bias edge (+resolutionBonus), migrated from the oracle in Stage 3.3.
+/// Rewards a candidate sitting at the typical resolution target of the previous
+/// chord's quality: prevDim→Maj/min a semitone up, prevHalfDim→Maj a P4 up,
+/// prevAug→Maj/min at the same root. Folded into basisIndep before the cf × af multiply
+/// (its historical home), so it is multiplied by complexityFactor × augFactor.
+/// Returns 0 when no resolution relation holds (or the predecessor is unknown).
+double resolutionEdgeBonus(int candRootPc, analysis::ChordQuality candQuality,
+                           int previousRootPc, analysis::ChordQuality previousQuality,
+                           double bonusValue);
+
+// (inversionContextBonus is declared below ScoringCell — it takes a ScoringCell.)
+
 // -----------------------------------------------------------------------
 // Scoring snapshot — produced by analyzeChord() (the oracle) and consumed by
 // applyHarmonicFunction() (the pipeline). It carries everything the pipeline
@@ -153,9 +174,13 @@ double wStepOutBonus(int candBassPc, int rootPc,
 // -----------------------------------------------------------------------
 
 /// One (bass, root, template) scoring cell, vertical-only.
-/// The pipeline reconstructs the signal-inclusive score from the decomposed
-/// fields:
-///   score = (basisIndep + rootContinuity + basisDep) * complexityFactor * augFactor
+/// Since Stage 3.3 the cell carries ONLY vertical/key pitch facts — every
+/// progression signal (rootContinuity, resolution, the four inversion bonuses,
+/// w_seq / w_dim / step bonuses) is recomposed by the pipeline. The pipeline
+/// reconstructs the signal-inclusive score from the decomposed fields:
+///   fullBasisIndep = basisIndep + resolutionEdgeBonus
+///   fullBasisDep   = basisDep   + inversionContextBonus   (the capped 4-bonus sum)
+///   score = (fullBasisIndep + rootContinuity + fullBasisDep) * complexityFactor * augFactor
 ///         + wCompleteBonus + w_seq [+ w_dim] [+ step bonuses (Pass B)]
 struct ScoringCell {
     // Identifiers — locate the cell in the (bass, root, template) cube.
@@ -168,17 +193,16 @@ struct ScoringCell {
                                                 ///< Pass B m7-family guard: isMin7 ≡
                                                 ///< quality==Minor && intervalCount==4.
 
-    // Vertical pitch evidence PLUS the bass-independent contextual bonuses from
-    // bassIndependentContextualBonuses (chordanalyzer.cpp): diatonicRootBonus and
-    // resolutionBonus. It is therefore NOT purely vertical — resolutionBonus is a
-    // progression signal keyed on the previous chord's quality, left here as
-    // pre-existing oracle temporal debt (see chordanalyzer.h:329). The ONE progression
-    // signal basisIndep does NOT carry is rootContinuityBonus: the pipeline adds that
-    // before the cf × af multiply (matching the historical folding into basisIndep).
-    // The bass-dependent inversion bonuses (stepwise / sameRoot / completeTriad) land
-    // in basisDep, not here.
+    // Vertical pitch evidence PLUS the bass-INDEPENDENT diatonicRootBonus (a node-local
+    // key fact). As of Stage 3.3 this is genuinely vertical: resolutionBonus — the one
+    // progression signal it used to carry as oracle temporal debt — has migrated to the
+    // pipeline (resolutionEdgeBonus), as has rootContinuityBonus before it. The pipeline
+    // adds both before the cf × af multiply (matching the historical folding into basisIndep).
     double basisIndep;
-    double basisDep;            ///< Bass-dependent delta (appliedBassBonus + §4.1b inversion bonuses).
+    double basisDep;            ///< Bass-dependent delta: nonBassAdjustment + appliedBassBonus.
+                                ///< Vertical as of Stage 3.3 — the §4.1b inversion bonuses
+                                ///< have migrated to the pipeline (inversionContextBonus,
+                                ///< gated by the two flags below + the temporal edges).
     double complexityFactor;    ///< complexityFactorMatrix[rootPc][tiePriority].
     double augFactor;           ///< augFactorMatrix[rootPc][tiePriority].
 
@@ -187,6 +211,13 @@ struct ScoringCell {
     /// Bass bonus, used for threshold de-inflation:
     ///   threshold = (bestScore - appliedBassBonus) * kScoreThresholdRatio.
     double appliedBassBonus;
+
+    // Vertical inversion-eligibility flags (Stage 3.3). Pure pitch facts computed by the
+    // oracle (supportsContextualInversionBonuses / qualifiesForCompleteTriadInversionBonus,
+    // both ANDed with hasStructuralBass), so the pipeline can gate the migrated inversion
+    // bonuses on the temporal edges. False on the single-tick / null-context path.
+    bool supportsInversionBonuses { false };  ///< isInvertedMajMin: inverted Maj/Min/Aug/HalfDim, third sounding.
+    bool qualifiesCompleteTriad   { false };  ///< complete inverted triad in a 3-PC texture (Maj/Min/Dim/Aug/HalfDim).
 };
 
 /// Full per-region scoring snapshot. Always produced internally by analyzeChord();
@@ -211,6 +242,19 @@ struct ScoringSnapshot {
     analysis::KeySigMode   keyMode    {};
 };
 
+/// Capped inversion-context bonus (the four §4.1b bonuses), migrated from the oracle in
+/// Stage 3.3. Folded into basisDep before the cf × af multiply (its historical home).
+/// Reproduces bassDependentContextualBonuses' accumulation EXACTLY — same term order
+/// (completeTriad, stepwiseInversion, stepwiseLookahead, sameRoot) then the
+/// maxTotalInversionContextBonus clamp — keyed on the cell's vertical eligibility flags
+/// (cell.supportsInversionBonuses / cell.qualifiesCompleteTriad) and the temporal edges.
+/// Returns 0 on the null-context path (all edges false, previousRootPc == -1).
+double inversionContextBonus(const ScoringCell& cell,
+                             int previousRootPc,
+                             bool bassIsStepwiseFromPrevious,
+                             bool bassIsStepwiseToNext,
+                             const analysis::ChordAnalyzerPreferences& prefs);
+
 // -----------------------------------------------------------------------
 // Gate R — rcb bass-chord-tone guard. Declared here (exposed) so the kMasks
 // template table and the decision branches can be unit-tested directly. See
@@ -225,14 +269,32 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept;
 
 /// Gate R decision predicate: returns true iff `rootContinuityBonus` must be withheld
 /// from this cell on STRUCTURAL grounds. The three structural conditions — all required:
-///   (1) `rcb > 0`            — root continuity holds for this candidate,
-///   (2) `cell.basisDep <= 0` — no bass-dependent credit (no sounding third → no
-///                              inversion bonus, and no bass-root bonus),
+///   (1) `rcb > 0`        — root continuity holds for this candidate,
+///   (2) `basisDep <= 0`  — the candidate earned NO inversion credit (no inversion bonus
+///                          fired, and no bass-root bonus applies),
 ///   (3) bass foreign to the candidate's template (bassIsTemplateChordTone == false).
+///
+/// Stage 3.3 redesign (reconstructed-credit, Cowork-ratified): condition (2) is the
+/// "no inversion credit" discriminator. Before 3.3 it read the ORACLE's basisDep, which
+/// carried the inversion bonuses (a cross-layer dependency, audit Finding 6). Now the
+/// inversion bonuses are computed in the pipeline, so the pipeline passes the
+/// RECONSTRUCTED full basisDep (cell.basisDep + inversionContextBonus) to the 3-arg
+/// overload below — intra-layer, no oracle dependency. Byte-identical to the old proxy on
+/// every quality (the discriminator was derivably `cappedInv == 0`, since the minimum
+/// inversion bonus 0.40 strictly exceeds the maximum penalty 0.35; the literal
+/// sounding-third pcWeight test diverged on Diminished completeTriad continuations — see
+/// docs/decoder_design.md §6 amendment / docs/scoring_model.md §4 Gate R).
+///
+/// The 2-arg overload reads `cell.basisDep` directly (used by the unit tests, which
+/// construct cells whose basisDep already holds the full value); the 3-arg overload takes
+/// the basisDep value explicitly so the production call site can pass the reconstruction.
+///
 /// The phase guard ("final-scoring correction only; never during segmentation") is NOT
 /// part of this predicate — applyHarmonicFunction() gates the rcb-zeroing on
 /// ScoringPhase::Final at the call site (see harmonicfunctionlayer.cpp Pass A).
 bool gateRZeroesRootContinuity(const ScoringCell& cell, double rcb) noexcept;
+bool gateRZeroesRootContinuity(const ScoringCell& cell, double basisDepValue,
+                               double rcb) noexcept;
 
 /// Run the competition pipeline.
 ///

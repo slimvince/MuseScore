@@ -242,8 +242,13 @@ and before it is folded into `basisIndep`.
 conditions (all required); the **phase** guard is applied separately at the call site
 (see below). Zero the bonus for a cell when all of these hold:
 1. `rcb > 0` (root continuity holds for this candidate), AND
-2. `cell.basisDep <= 0` — the candidate earned **no** bass-dependent credit (no
-   inversion bonus fired and no bass-root bonus applies), AND
+2. `basisDep <= 0` — the candidate earned **no inversion credit** (no inversion bonus
+   fired and no bass-root bonus applies). **Since Stage 3.3** the pipeline passes the
+   *reconstructed* full basisDep (`cell.basisDep + fn::inversionContextBonus(...)`) to the
+   3-arg overload, because the inversion bonuses now live in the pipeline; pre-3.3 this
+   read the oracle's then-inversion-bearing `cell.basisDep` (a cross-layer dependency,
+   audit Finding 6, now closed — the read is intra-layer). The two are byte-identical
+   (see the Stage 3.3 note below), AND
 3. `bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
    foreign to the candidate's template. `bassIsTemplateChordTone` returns true iff
    `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static
@@ -270,6 +275,28 @@ inversion bonus, and (being a slash) gets no bass-root bonus, so `basisDep == 0`
 continuations and spares real extended chords. (`basisDep` may be slightly negative
 when a `kNonBassPenalty` applies with no offsetting inversion credit — still a
 bare-root case, correctly gated.)
+
+**Stage 3.3 redesign — reconstructed-credit (byte-identical).** When the four inversion
+bonuses migrated from the oracle into the competition pipeline (§11), the oracle's
+`cell.basisDep` stopped carrying the sounding-third signal. Cowork ratified the
+**reconstructed-credit** form: the pipeline reconstructs the full basisDep
+(`cell.basisDep + fn::inversionContextBonus(...)`) for the score anyway, and Gate R reads
+*that* value (`fullBasisDep <= 0`) — identical to the historical proxy on every input, with
+no cross-layer dependency. The derivation behind the equivalence (and why the originally
+designed literal "sounding-third pcWeight test" was *not* adopted): under Gate R's only
+firing context (`rcb > 0` ∧ bass foreign), `bb`=0 (bass-root bonus needs `rootPc==bassPc`),
+so `basisDep_old = nonBassAdjustment + cappedInv`, and because the **minimum inversion bonus
+(`sameRoot` 0.40) strictly exceeds the maximum penalty (`kNonBassPenalty` 0.35)** the old
+gate fires **⟺ `cappedInv == 0`** (no inversion bonus earned). The literal
+`pcWeight[third] ≤ 0.05` test matches this for Maj/Min/Aug/HalfDim (all in the
+`isInvertedMajMin` set → a sounding third fires `sameRoot`) and for the no-third qualities
+(Sus/Power, always gated), but **diverges for Diminished**: Dim is excluded from
+`isInvertedMajMin`, so its only credit is `completeTriadInversionBonus`, which *additionally*
+requires stepwise-bass evidence — a temporal condition no vertical pcWeight test can capture.
+A Dim continuation with foreign bass + sounding third but no stepwise bass earns no credit
+(old gate fires) yet has a sounding third (literal test would spare it) — a 0.40×cf×af output
+swing. Reading the reconstructed credit avoids this gap entirely. See
+`docs/decoder_design.md` §6 amendment and `cc_stage3_3_report.md` §1.
 
 **Why the phase guard.** `rootContinuityBonus` is deliberately **not**
 suppressed during `greedyExpandSegmentation` exploration (unlike `w_seq` / `w_dim` /
@@ -520,16 +547,23 @@ bass voice moves within the region:
 Otherwise the analyzer falls back to legacy single-bass selection.
 
 **`hasStructuralBass`** (~L1935). True when `lowestPitch <= 60` (middle C) OR
-`distinctPcs >= 3`. Passed into `bassDependentContextualBonuses` to gate the
-inversion bonuses — sparse upper-register "bass" notes are not real bass
-voices and must not trigger inversion bonuses (Corelli op01n08d m2 b3).
+`distinctPcs >= 3`. Since Stage 3.3 the oracle ANDs it into the per-cell
+`supportsInversionBonuses` / `qualifiesCompleteTriad` flags it publishes on each
+`ScoringCell`, so the migrated inversion bonuses still respect it — sparse
+upper-register "bass" notes are not real bass voices and must not trigger inversion
+bonuses (Corelli op01n08d m2 b3).
 
-`bassDependentContextualBonuses(tpl, rootPc, bassPc, appliedBassBonus,
-distinctPcs, pcWeight, prefs, context, hasStructuralBass)` returns
-`appliedBassBonus + min(stepwise+lookahead+sameRoot+completeTriad,
-maxTotalInversionContextBonus)`. The cap is a safety net against runaway stacking;
-it is non-binding at current values (bonus sums 1.85 / 0.75 Jazz vs the 2.0 default
-— see the §4 note).
+**Inversion-bonus computation (since Stage 3.3 — competition pipeline).** The four
+§4.1b inversion bonuses are computed by `fn::inversionContextBonus(cell, previousRootPc,
+bassIsStepwiseFromPrevious, bassIsStepwiseToNext, prefs)` in `harmonicfunctionlayer.cpp`,
+which returns `min(completeTriad + stepwiseInversion + stepwiseLookahead + sameRoot,
+maxTotalInversionContextBonus)` — the same term order and clamp the old oracle helper
+`bassDependentContextualBonuses` used. The pipeline folds it into the cell's basisDep
+(`fullBasisDep = cell.basisDep + inversionContextBonus`) before the cf × af multiply.
+The oracle now sets `cell.basisDep = nonBassAdjustment + appliedBassBonus` (genuinely
+vertical) plus the two eligibility flags. The cap is a safety net against runaway
+stacking; it is non-binding at current values (bonus sums 1.85 / 0.75 Jazz vs the 2.0
+default — see the §4 note).
 
 ---
 
@@ -926,6 +960,26 @@ query-many is 3.1b. Levels > 0 (Normal / Deep, wider beam) are **not yet active*
 as `FastBeam1` until Stage 3.2. **`docs/decoder_design.md` is the authoritative structure
 reference** (lattice shape §2, emission/transition factorization §3, beam-1 byte-identity
 argument §4, path-state ↔ `advanceTemporalContext` mapping §5).
+
+**Oracle temporal-signal migration (Stage 3.3).** The last five oracle-side progression
+signals — `resolutionBonus` and the four §4.1b inversion bonuses (`stepwiseBassInversion`,
+`stepwiseBassLookahead`, `sameRootInversion`, `completeTriadInversion`) — have **migrated
+out of `analyzeChord` into the competition pipeline** (`fn::resolutionEdgeBonus` +
+`fn::inversionContextBonus`), joining `rootContinuityBonus` (moved at E2d) and `w_seq` /
+`w_dim` / step bonuses. The oracle is now **genuinely vertical**: it applies NO progression
+signal (the chordanalyzer.h temporal debt / audit Finding 1 is cleared). The oracle's
+`bassIndependentContextualBonuses` / `bassDependentContextualBonuses` helpers are gone;
+`bassIndep` carries only vertical + `diatonicRootBonus` (via `diatonicRootContribution`),
+`basisDep` carries only `nonBassAdjustment + appliedBassBonus`, and the vertical
+inversion-eligibility predicates ride along as two per-cell flags
+(`supportsInversionBonuses` / `qualifiesCompleteTriad`). The pipeline reconstructs the
+score in the SAME arithmetic positions (`fullBasisIndep = basisIndep + resolution`,
+`fullBasisDep = basisDep + inversionContextBonus`, both inside the `(… + rcb + …) × cf × af`
+group). **Byte-identical**: the basisDep reconstruction is bit-exact (the bass-root bonus
+and the inversion sum are mutually exclusive, so the reassociation has an always-zero
+middle term); the resolution reconstruction is a ≤1-ULP reassociation confined to non-tie
+Maj/Min cells. **Gate R** was redesigned in the same commit to read the reconstructed full
+basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer dependency.
 
 ---
 

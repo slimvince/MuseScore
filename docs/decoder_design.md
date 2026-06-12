@@ -376,6 +376,39 @@ consciously re-baselined with a documented reason.
 is in the same commit as the Gate R redesign. Splitting them across commits leaves a
 window where Gate R reads a `basisDep` that has lost its signal — a silent regression.
 
+### §6 amendment — Gate R reconstructed-credit (2026-06-12, Stage 3.3 implementation)
+
+> Dated amendment recording the Stage-3.3 implementation outcome. The "Replacement
+> condition" above (the literal `pcWeight[third] ≤ presenceThreshold` sounding-third test)
+> was **superseded by derivation** during implementation and Cowork-ratified to the
+> **reconstructed-credit** form. This supersedes the §6 "Replacement condition" block.
+
+The survey (`cc_stage3_3_report.md` §1) derived the old proxy's exact meaning. Under Gate
+R's only firing context (`rcb > 0` ∧ bass foreign), the bass-root bonus is necessarily 0
+(it needs `rootPc == bassPc`), so `basisDep_old = nonBassAdjustment + cappedInv`; because
+the **minimum inversion bonus (`sameRoot` 0.40) strictly exceeds the maximum penalty
+(`kNonBassPenalty` 0.35)**, the old gate fires **⟺ `cappedInv == 0`** (the candidate earned
+no inversion credit).
+
+The literal sounding-third pcWeight test matches this for Maj/Min/Aug/HalfDim (all in the
+`isInvertedMajMin` set → a sounding third fires `sameRoot`) and for the no-third qualities
+(Sus/Power, always gated), but **diverges on Diminished**: Dim is excluded from
+`isInvertedMajMin`, so its only credit is `completeTriadInversionBonus`, which additionally
+requires a *stepwise-bass* edge — a temporal condition no vertical pcWeight test can
+capture. A Dim continuation with foreign bass + sounding third but no stepwise bass earns
+no credit (old gate fires) yet shows a sounding third (literal test would spare it): a 0.40
+× cf × af, output-visible swing — not byte-identical.
+
+**Ratified form (Cowork, 2026-06-12).** Gate R reads the **pipeline-reconstructed full
+basisDep** (`cell.basisDep + fn::inversionContextBonus(...)`, which Pass A computes for the
+score anyway) via the 3-arg `gateRZeroesRootContinuity` overload. This is byte-identical to
+the old proxy on every quality (it reads the same total credit), is fully intra-layer
+(closes the cross-layer dependency the redesign set out to remove — audit Finding 6), and
+has no Dim gap. The "direct pcWeight third" mechanism was an approximation of the proxy's
+true semantics (`cappedInv == 0`); reading the true semantics is the faithful execution of
+the redesign's *intent*. The originally designed mechanism text is retained above for the
+record but is not what shipped.
+
 ---
 
 ## 7. Gate-retirement plan (roadmap 3.4 / 3.4b)

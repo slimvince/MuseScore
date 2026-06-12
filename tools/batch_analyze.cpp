@@ -1174,6 +1174,8 @@ static void writeDiagnosticJson(
                 << "\"rcb_raw\": " << fmtDouble(c.rootContinuityBonusRaw, 5) << ", "
                 << "\"rcb_withheld_by_gate_r\": "
                 << (c.rootContinuityWithheldByGateR ? "true" : "false") << ", "
+                << "\"resolution\": " << fmtDouble(c.resolutionBonus, 5) << ", "
+                << "\"inversion_ctx\": " << fmtDouble(c.inversionContextBonus, 5) << ", "
                 << "\"w_seq\": " << fmtDouble(c.wSeqBonus, 5) << ", "
                 << "\"w_dim\": " << fmtDouble(c.wDimBonus, 5) << ", "
                 << "\"step_in\": " << fmtDouble(c.stepInBonus, 5) << ", "
