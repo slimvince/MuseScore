@@ -36,6 +36,7 @@
 
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/decode/chordpathdecoder.h"
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
@@ -373,12 +374,18 @@ analyzeRegions(const mu::engraving::Score* score,
         ChordAnalyzerPreferences attemptPrefs = pass1Prefs;
         attemptPrefs.minDistinctPcsForCandidate = minDistinctOverride;
 
-        ChordTemporalContext temporalCtx = ebr::findTemporalContext(
-            score, seg, excludeStaves, keyFifths, keyMode, -1);
+        // Beam-1 chord-path decoder (Stage 3.1). It owns the path state the greedy
+        // commit chain threaded by hand — the ChordTemporalContext, the rolling
+        // stepwise counter and the recent-roots window — and replaces the
+        // advanceTemporalContext() commit below with decoder.commit(). `temporalCtx`
+        // is a live reference to that state, so every per-region input write below is
+        // unchanged. Byte-identical: the decoder computes no score (analyzeChord +
+        // applyHarmonicFunction run upstream of commit). See docs/decoder_design.md §§4–5.
+        decode::ChordPathDecoder decoder(
+            ebr::findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1),
+            attemptPrefs.decodeQualityLevel);
+        ChordTemporalContext& temporalCtx = decoder.context();
         std::optional<KeyModeAnalysisResult> prevKeyResult;
-
-        int runningStepwiseCount = 0;
-        std::array<int, 3> recentRootsBuf = { -1, -1, -1 };
 
         if (opts.hooks && opts.hooks->preMergeRegions) {
             preMergeRegions.clear();
@@ -470,10 +477,24 @@ analyzeRegions(const mu::engraving::Score* score,
                 alternativesSnapshot.assign(results.begin() + 1, results.end());
             }
 
-            advanceTemporalContext(temporalCtx, runningStepwiseCount, recentRootsBuf,
-                                   chosenResult.identity, gateCtx);
+            decoder.commit(chosenResult.identity, gateCtx);
             temporalCtx.nextRootPc = -1;
             temporalCtx.nextBassPc = -1;
+
+            // Cache-ready path accumulation (Stage 3.1; inert — nothing reads
+            // decoder.path() yet). winnerScore / margin mirror the predecessor-
+            // confidence fields advanceTemporalContext() captures from gateCtx.
+            {
+                decode::ChordPathNode node;
+                node.committed    = chosenResult;
+                node.alternatives = alternativesSnapshot;
+                node.winnerScore  = gateCtx.rawCandidates.empty()
+                                    ? 0.0 : gateCtx.rawCandidates[0].score;
+                node.winnerMargin = (gateCtx.rawCandidates.size() >= 2)
+                                    ? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+                                    : -1.0;
+                decoder.recordNode(std::move(node));
+            }
 
             prevKeyResult = localKey;
 
@@ -570,7 +591,16 @@ analyzeRegions(const mu::engraving::Score* score,
             const int parentSuccBassPc = (parentIdx + 1 < regions.size())
                 ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
 
-            ChordTemporalContext subCtx;
+            // Per-parent beam-1 decoder (Stage 3.1). Owns this parent's sub-region
+            // path state (sub temporal context + rolling stepwise counter + recent-
+            // roots window) and replaces the advanceTemporalContext() sub-commit with
+            // subDecoder.commit(). `subCtx` is a live reference; the seeding below and
+            // every per-sub input write are unchanged. The rolling counter / recent-
+            // roots window start fresh per parent (the old subRunningStepwiseCount = 0
+            // / subRecentRootsBuf = {-1,-1,-1}); the first sub still sees the parent-
+            // seeded consecutiveBassStepwiseCount / recentRootPcs set below.
+            decode::ChordPathDecoder subDecoder(ChordTemporalContext{}, prefs.decodeQualityLevel);
+            ChordTemporalContext& subCtx = subDecoder.context();
             if (!pass2Regions.empty()
                 && pass2Regions.back().endTick == parentRegion.startTick) {
                 subCtx.previousRootPc  = pass2Regions.back().chordResult.identity.rootPc;
@@ -580,13 +610,6 @@ analyzeRegions(const mu::engraving::Score* score,
             subCtx.consecutiveBassStepwiseCount
                 = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
             subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
-
-            // Option A — per-parent rolling state for the unified commit helper.
-            // Resets for each parent region; accumulates within this parent's
-            // sub-region sequence (the first sub still sees the parent-seeded
-            // consecutiveBassStepwiseCount / recentRootPcs above).
-            int subRunningStepwiseCount = 0;
-            std::array<int, 3> subRecentRootsBuf = {-1, -1, -1};
 
             for (size_t si = 0; si + 1 < subBounds.size(); ++si) {
                 const Fraction subStart = subBounds[si];
@@ -692,8 +715,18 @@ analyzeRegions(const mu::engraving::Score* score,
                     subAltsSnap.assign(subResults.begin() + 1, subResults.end());
                 }
 
-                advanceTemporalContext(subCtx, subRunningStepwiseCount, subRecentRootsBuf,
-                                       chosenSub.identity, subGateCtx);
+                subDecoder.commit(chosenSub.identity, subGateCtx);
+                {
+                    decode::ChordPathNode node;
+                    node.committed    = chosenSub;
+                    node.alternatives = subAltsSnap;
+                    node.winnerScore  = subGateCtx.rawCandidates.empty()
+                                        ? 0.0 : subGateCtx.rawCandidates[0].score;
+                    node.winnerMargin = (subGateCtx.rawCandidates.size() >= 2)
+                                        ? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
+                                        : -1.0;
+                    subDecoder.recordNode(std::move(node));
+                }
 
                 const bool isContiguous = !pass2Regions.empty()
                     && pass2Regions.back().endTick == subStart.ticks();
@@ -776,7 +809,14 @@ analyzeRegions(const mu::engraving::Score* score,
                 const int parentSuccBassPc = (parentIdx + 1 < regions.size())
                     ? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
 
-                ChordTemporalContext subCtx;
+                // Per-parent beam-1 decoder (Stage 3.1) — see the Pass 2 site above.
+                // Owns this parent's sub-region path state and replaces the
+                // advanceTemporalContext() sub-commit with subDecoder.commit().
+                // Rolling counter / recent-roots window start fresh per parent; the
+                // first sub still sees the parent-seeded consecutiveBassStepwiseCount /
+                // recentRootPcs set below.
+                decode::ChordPathDecoder subDecoder(ChordTemporalContext{}, prefs.decodeQualityLevel);
+                ChordTemporalContext& subCtx = subDecoder.context();
                 if (!pass2bRegions.empty()
                     && pass2bRegions.back().endTick == parentRegion.startTick) {
                     subCtx.previousRootPc  = pass2bRegions.back().chordResult.identity.rootPc;
@@ -786,13 +826,6 @@ analyzeRegions(const mu::engraving::Score* score,
                 subCtx.consecutiveBassStepwiseCount
                     = parentRegion.temporalExtensions.consecutiveBassStepwiseCount;
                 subCtx.recentRootPcs = parentRegion.temporalExtensions.recentRootPcs;
-
-                // Option A — per-parent rolling state for the unified commit helper.
-                // Resets for each parent region; accumulates within this parent's
-                // sub-region sequence (the first sub still sees the parent-seeded
-                // consecutiveBassStepwiseCount / recentRootPcs above).
-                int subRunningStepwiseCount = 0;
-                std::array<int, 3> subRecentRootsBuf = {-1, -1, -1};
 
                 for (size_t bi = 0; bi + 1 < bounds.size(); ++bi) {
                     const Fraction subStart = bounds[bi];
@@ -889,8 +922,18 @@ analyzeRegions(const mu::engraving::Score* score,
                         subAltsSnap.assign(subResults.begin() + 1, subResults.end());
                     }
 
-                    advanceTemporalContext(subCtx, subRunningStepwiseCount, subRecentRootsBuf,
-                                           chosenSub.identity, subGateCtx);
+                    subDecoder.commit(chosenSub.identity, subGateCtx);
+                    {
+                        decode::ChordPathNode node;
+                        node.committed    = chosenSub;
+                        node.alternatives = subAltsSnap;
+                        node.winnerScore  = subGateCtx.rawCandidates.empty()
+                                            ? 0.0 : subGateCtx.rawCandidates[0].score;
+                        node.winnerMargin = (subGateCtx.rawCandidates.size() >= 2)
+                                            ? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
+                                            : -1.0;
+                        subDecoder.recordNode(std::move(node));
+                    }
 
                     HarmonicRegion subRegion;
                     subRegion.startTick        = subStart.ticks();

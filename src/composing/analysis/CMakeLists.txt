@@ -33,6 +33,12 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.h
     ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.cpp
 
+    # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
+    # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
+    # the quality-level knob with beam-1 (level 0) as the byte-identical default.
+    # Header-only at 3.1. See docs/decoder_design.md and docs/scoring_model.md §11.
+    ${CMAKE_CURRENT_LIST_DIR}/decode/chordpathdecoder.h
+
     # key/ — key and mode analysis
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h

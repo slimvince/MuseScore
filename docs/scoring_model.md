@@ -908,9 +908,32 @@ catalog-wide agreement invariant is pinned in
 scorer (its own `kDiagTemplates` array + the rcb-folding `contextualBonuses` helper, both
 removed) had no Gate R / w_seq / w_dim / threshold and mis-led two investigations.
 
+**Beam-1 decoder (Stage 3.1).** Winner selection and the left-to-right commit chain now flow
+through the **beam-1 chord-path decoder** (`analysis/decode/chordpathdecoder.h`), behind the
+`ChordAnalyzerPreferences::decodeQualityLevel` knob (default `DecodeQualityLevel::FastBeam1` =
+level 0). This is a **byte-identical re-expression** of the greedy commit chain, not a behavior
+change: the decoder encapsulates the path state the region loop (`regionanalyzer.cpp` Pass 1 /
+Pass 2 / Pass 2b) threaded by hand — the `ChordTemporalContext`, the rolling stepwise counter,
+and the recent-roots window — and replaces `advanceTemporalContext()` at all three commit sites
+with `decoder.commit()`. Crucially, **the decoder computes no score**: emission (`analyzeChord`
+→ `ScoringSnapshot`) and the per-bass / cross-bass competition that selects the winner
+(`applyHarmonicFunction`, this §11 pipeline) run upstream of `commit()` and are untouched, so
+the FP-sensitive score expression
+`(basisIndep + rcb + basisDep) × cf × af + wComplete + wSeq [+ wDim] [+ steps]` is not
+re-associated and the near-tie tripwires (Δ=+7b, bwv320) cannot flip. The decoder is
+cache-READY (it accumulates a returnable decoded path) but **not cached** at 3.1; decode-once /
+query-many is 3.1b. Levels > 0 (Normal / Deep, wider beam) are **not yet active** — they behave
+as `FastBeam1` until Stage 3.2. **`docs/decoder_design.md` is the authoritative structure
+reference** (lattice shape §2, emission/transition factorization §3, beam-1 byte-identity
+argument §4, path-state ↔ `advanceTemporalContext` mapping §5).
+
 ---
 
-*Last updated: 2026-06-11 — Stage 2.3: `diagnoseChord` replays the production pipeline
+*Last updated: 2026-06-12 — Stage 3.1: winner selection + commit chain now flow through the
+beam-1 chord-path decoder (`analysis/decode/chordpathdecoder.h`) behind the
+`decodeQualityLevel` knob (default `FastBeam1`); byte-identical re-expression of the greedy
+commit chain (no score computed in the decoder), cache-ready but not cached, levels > 0 not yet
+active. `docs/decoder_design.md` is the authoritative structure reference. Prior: 2026-06-11 — Stage 2.3: `diagnoseChord` replays the production pipeline
 (`analyzeChord` gains `snapshotOut`; `kDiagTemplates` + `contextualBonuses` removed; the
 atomic-update site list drops from 4 to 3). Prior: 2026-06-08 — Gate R (rcb bass-chord-tone guard) added to §4 and §9
 (5th atomic-update site, `kMasks`). Withholds `rootContinuityBonus` from a candidate

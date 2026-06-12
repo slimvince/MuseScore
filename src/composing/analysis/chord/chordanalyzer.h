@@ -316,6 +316,25 @@ struct RawCandidate {
 /// is well-formed at the point the interface is declared.
 struct PostScoringGateContext;
 
+/// Chord-path decoder quality level (Stage 3.1; docs/decoder_design.md §9).
+/// Selects the beam width of the chord-path decoder (analysis/decode/).
+///
+/// Defined HERE (fully, not forward-declared) for the same reason as ScoringPhase
+/// above: ChordAnalyzerPreferences carries a DecodeQualityLevel with a default
+/// member initializer (`= DecodeQualityLevel::FastBeam1`), which needs the
+/// complete enum, and chordanalyzer.h cannot include the decode header — the
+/// include runs the other way (chordpathdecoder.h → chordanalyzer.h).
+///
+/// Level 0 (FastBeam1) is the only level implemented at Stage 3.1 and is the
+/// byte-identical default: a re-expression of the greedy left-to-right commit
+/// chain. Higher levels are reserved for Stage 3.2 (wider beam, forward signals
+/// promoted to decoded-successor edges) and currently behave as FastBeam1 (no-op).
+enum class DecodeQualityLevel : uint8_t {
+    FastBeam1 = 0,  ///< beam 1 — byte-identical greedy commit; forward signals = cold lookahead
+    Normal    = 1,  ///< reserved (Stage 3.2) — small beam; NOT yet active (behaves as FastBeam1)
+    Deep      = 2,  ///< reserved (Stage 3.2+) — wide / exact DP; NOT yet active (behaves as FastBeam1)
+};
+
 /// Tunable parameters for chord analysis.
 ///
 /// All values are compile-time defaults.  When MuseScore's user-preferences
@@ -514,6 +533,14 @@ struct ChordAnalyzerPreferences {
     /// (bridge / batch_analyze, after segmentation returns boundaries) so every signal
     /// applies.
     function::ScoringPhase scoringPhase = function::ScoringPhase::Final;
+
+    /// Chord-path decoder quality level (Stage 3.1; docs/decoder_design.md §9).
+    /// Selects the decoder beam width (analysis/decode/chordpathdecoder.h). The
+    /// default FastBeam1 (level 0) is a byte-identical re-expression of the greedy
+    /// left-to-right commit chain; higher levels are reserved for Stage 3.2 and
+    /// currently behave identically (no-op). No preset branches on this — it is a
+    /// per-query quality knob, not a style preference (design §10).
+    DecodeQualityLevel decodeQualityLevel = DecodeQualityLevel::FastBeam1;
 
     // ── Pedal point detection (§5.12) ───────────────────────────────────────
 
