@@ -520,8 +520,12 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const std::vector<PitchContext>& pitches,
     int keySignatureFifths,
     const KeyModeAnalyzerPreferences& prefs,
-    std::optional<KeySigMode> declaredMode)
+    std::optional<KeySigMode> declaredMode,
+    std::vector<KeyCandidateScore>* dumpOut)
 {
+    if (dumpOut) {
+        dumpOut->clear();
+    }
     if (pitches.empty()) {
         return {};
     }
@@ -745,6 +749,59 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
                                                                          * (iGap - prefs.confidenceSigmoidMidpoint)));
             }
         }
+    }
+
+    // ── Diagnostic dump (Stage-4 emission instrument) ─────────────────────
+    //
+    // Byte-identical no-op when dumpOut == nullptr (no production path supplies
+    // one). Serializes the per-candidate component breakdown already computed in
+    // `evaluations`; the three tonic/mode-local terms (characteristic pitch, true
+    // leading tone, mode prior) are recomputed deterministically (they are not
+    // stored on CandidateEvaluation). The disambiguation delta is recovered from
+    // the post-mutation finalScore minus the recomputed sum of components.
+    if (dumpOut) {
+        dumpOut->reserve(12 * numModeSlots);
+        for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+            const double ltScore = scoreTrueLeadingTone(tonicPc, pitches, prefs);
+            for (size_t modeSlot = 0; modeSlot < numModeSlots; ++modeSlot) {
+                const size_t modeIndex = ACTIVE_MODE_INDICES[modeSlot];
+                const CandidateEvaluation& eval =
+                    evaluations[static_cast<size_t>(tonicPc) * numModeSlots + modeSlot];
+                const double charScore  = scoreCharacteristicPitch(tonicPc, modeIndex, pitches, prefs);
+                const double priorScore = scoreModePrior(modeIndex, prefs);
+                bool declaredApplied = false;
+                if (declaredMode.has_value()) {
+                    declaredApplied = !modeIsCompatibleWithDeclared(
+                        keyModeFromIndex(modeIndex), *declaredMode);
+                }
+                const double declaredPenalty = declaredApplied ? prefs.declaredModePenalty : 0.0;
+                const double sum6 = eval.scaleScore + eval.triadScore + eval.keySignatureScore
+                                    + charScore + ltScore + priorScore;
+                KeyCandidateScore e;
+                e.tonicPc               = tonicPc;
+                e.modeIndex             = modeIndex;
+                e.scaleMembership       = eval.scaleScore;
+                e.triadEvidence         = eval.triadScore;
+                e.characteristicPitch   = charScore;
+                e.trueLeadingTone       = ltScore;
+                e.keySignatureProximity = eval.keySignatureScore;
+                e.modePrior             = priorScore;
+                e.declaredPenalty       = declaredPenalty;
+                e.finalScore            = eval.score;
+                e.disambiguationDelta   = eval.score - (sum6 - declaredPenalty);
+                e.tonalCenterScore      = tonalCenterScore(eval, prefs);
+                e.tonicWeight           = eval.evidence.tonicWeight;
+                e.thirdWeight           = eval.evidence.thirdWeight;
+                e.fifthWeight           = eval.evidence.fifthWeight;
+                e.leadingToneWeight     = eval.evidence.leadingToneWeight;
+                e.hasCompleteTriad      = eval.evidence.hasCompleteTriad;
+                dumpOut->push_back(e);
+            }
+        }
+        std::sort(dumpOut->begin(), dumpOut->end(),
+                  [](const KeyCandidateScore& a, const KeyCandidateScore& b) {
+                      return a.finalScore > b.finalScore;
+                  });
     }
 
     return results;

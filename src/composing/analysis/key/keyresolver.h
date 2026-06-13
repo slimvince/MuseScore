@@ -57,11 +57,30 @@ using staff_idx_t = std::size_t;
 
 namespace mu::composing::analysis::keyresolver {
 
+/// Diagnostic-only resolver trace (Stage-4 emission instrument). Filled ONLY when
+/// a non-null pointer is supplied to resolveKeyAndModeRanked; production passes
+/// nullptr and is byte-identical. Records which resolver path was taken and the
+/// per-candidate emission breakdown from the final analyzeKeyMode call.
+struct KeyResolveDump {
+    int notatedFifths   = 0;          ///< key signature fifths read at the tick (pre-correction)
+    int correctedFifths = 0;          ///< after partialSignatureCorrection
+    int declaredModeOrdinal = -1;     ///< KeySigMode ordinal of the declared mode, or -1 if none
+    const char* pathTaken = "normal"; ///< "anchor" | "fallback" | "normal"
+    int lookaheadBeatsUsed = 0;       ///< window beats at the final analyzeKeyMode call
+    bool hysteresisPromoted   = false; ///< the hysteresis block reordered the winner
+    bool strongPriorPromoted  = false; ///< the strong declared-mode prior reordered the winner
+    std::vector<mu::composing::analysis::KeyCandidateScore> candidates; ///< emission breakdown (empty on anchor/fallback)
+};
+
 /// Resolve key/mode at `tick` returning ranked candidates.
 ///
 /// `staffIdx` selects which staff supplies the key signature.
 /// `prevResult` is the previous region's chosen result for hysteresis, or
 /// nullptr at the first region (piece-start shortcut may apply).
+///
+/// `dumpOut` is diagnostic-only: when non-null it is filled with the resolver
+/// trace and the final analyzeKeyMode per-candidate breakdown. Pass nullptr (the
+/// default) on every production path — output is byte-identical either way.
 ///
 /// Returned vector always has size ≥ 1. The chosen winner — after hysteresis
 /// and the strong declared-mode prior — is at index 0.
@@ -72,6 +91,7 @@ resolveKeyAndModeRanked(
     mu::engraving::staff_idx_t staffIdx,
     const std::set<std::size_t>& excludeStaves,
     const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
-    const mu::composing::analysis::KeyModeAnalysisResult* prevResult = nullptr);
+    const mu::composing::analysis::KeyModeAnalysisResult* prevResult = nullptr,
+    KeyResolveDump* dumpOut = nullptr);
 
 } // namespace mu::composing::analysis::keyresolver

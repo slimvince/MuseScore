@@ -789,6 +789,100 @@ static std::string keyName(int fifths, analysis::KeySigMode mode)
          + analysis::keyModeSuffix(mode);
 }
 
+// ── Stage-4 emission instrument: read-only key-candidate dump ────────────────
+//
+// Re-runs the per-region key resolution loop (threading prevKey exactly as
+// regionanalyzer's loop does, but over the produced regions), with the resolver
+// diagnostic dump enabled, and emits the per-candidate emission breakdown for
+// any region whose [startTick,endTick) contains a requested tick (or whose
+// startTick is requested). This is read-only: it does not touch the production
+// regions vector or the standard JSON. analyzeKeyMode's emission scores are
+// prevResult-independent, so the six-term breakdown is exact regardless of the
+// prev chain; the resolver context records which path/promotions fired.
+static void writeKeyCandidateDump(
+    Score* score,
+    const std::vector<AnalyzedRegion>& regions,
+    size_t refStaff,
+    const std::set<size_t>& excludeStaves,
+    const analysis::KeyModeAnalyzerPreferences& keyPrefs,
+    const std::set<int>& targetTicks,
+    const std::string& sourceName,
+    std::ostream& out)
+{
+    static const char* PCNAME[12] = { "C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B" };
+
+    out << "{\n";
+    out << "  \"source\": \"" << sourceName << "\",\n";
+    out << "  \"key_candidate_dump\": [\n";
+
+    std::optional<analysis::KeyModeAnalysisResult> prevKey;
+    bool firstEmitted = true;
+    for (const AnalyzedRegion& r : regions) {
+        analysis::keyresolver::KeyResolveDump dump;
+        const Fraction regionStart = Fraction::fromTicks(r.startTick);
+        const auto ranked = analysis::keyresolver::resolveKeyAndModeRanked(
+            score, regionStart, static_cast<mu::engraving::staff_idx_t>(refStaff),
+            excludeStaves, keyPrefs,
+            prevKey.has_value() ? &prevKey.value() : nullptr, &dump);
+
+        bool match = targetTicks.count(r.startTick) > 0;
+        if (!match) {
+            for (int t : targetTicks) {
+                if (t >= r.startTick && t < r.endTick) { match = true; break; }
+            }
+        }
+
+        if (match) {
+            if (!firstEmitted) { out << ",\n"; }
+            firstEmitted = false;
+            out << "    {\n";
+            out << "      \"startTick\": " << r.startTick << ",\n";
+            out << "      \"endTick\": " << r.endTick << ",\n";
+            out << "      \"measure\": " << r.measureNumber << ",\n";
+            out << "      \"beat\": " << fmtDouble(r.beat) << ",\n";
+            out << "      \"notatedFifths\": " << dump.notatedFifths << ",\n";
+            out << "      \"correctedFifths\": " << dump.correctedFifths << ",\n";
+            out << "      \"declaredModeOrdinal\": " << dump.declaredModeOrdinal << ",\n";
+            out << "      \"path\": \"" << dump.pathTaken << "\",\n";
+            out << "      \"lookaheadBeats\": " << dump.lookaheadBeatsUsed << ",\n";
+            out << "      \"hysteresisPromoted\": " << (dump.hysteresisPromoted ? "true" : "false") << ",\n";
+            out << "      \"strongPriorPromoted\": " << (dump.strongPriorPromoted ? "true" : "false") << ",\n";
+            out << "      \"productionKey\": \"" << keyName(r.key.keySignatureFifths, r.key.mode) << "\",\n";
+            out << "      \"resolvedWinner\": \"" << keyName(ranked.front().keySignatureFifths, ranked.front().mode) << "\",\n";
+            out << "      \"candidates\": [\n";
+            for (size_t ci = 0; ci < dump.candidates.size(); ++ci) {
+                const analysis::KeyCandidateScore& c = dump.candidates[ci];
+                const analysis::KeySigMode m = analysis::keyModeFromIndex(c.modeIndex);
+                out << "        {"
+                    << "\"tonicPc\": " << c.tonicPc
+                    << ", \"label\": \"" << PCNAME[(c.tonicPc % 12 + 12) % 12] << analysis::keyModeSuffix(m) << "\""
+                    << ", \"isMajor\": " << (analysis::keyModeIsMajor(m) ? "true" : "false")
+                    << ", \"finalScore\": " << fmtDouble(c.finalScore)
+                    << ", \"scale\": " << fmtDouble(c.scaleMembership)
+                    << ", \"triad\": " << fmtDouble(c.triadEvidence)
+                    << ", \"char\": " << fmtDouble(c.characteristicPitch)
+                    << ", \"lt\": " << fmtDouble(c.trueLeadingTone)
+                    << ", \"keySigProx\": " << fmtDouble(c.keySignatureProximity)
+                    << ", \"prior\": " << fmtDouble(c.modePrior)
+                    << ", \"declaredPenalty\": " << fmtDouble(c.declaredPenalty)
+                    << ", \"disambig\": " << fmtDouble(c.disambiguationDelta)
+                    << ", \"tonalCenter\": " << fmtDouble(c.tonalCenterScore)
+                    << ", \"tonicW\": " << fmtDouble(c.tonicWeight)
+                    << ", \"thirdW\": " << fmtDouble(c.thirdWeight)
+                    << ", \"fifthW\": " << fmtDouble(c.fifthWeight)
+                    << ", \"completeTriad\": " << (c.hasCompleteTriad ? "true" : "false")
+                    << "}";
+                out << (ci + 1 < dump.candidates.size() ? ",\n" : "\n");
+            }
+            out << "      ]\n";
+            out << "    }";
+        }
+
+        prevKey = ranked.front();
+    }
+    out << "\n  ]\n}\n";
+}
+
 // ══════════════════════════════════════════════════════════════════════════
 // JSON output
 // ══════════════════════════════════════════════════════════════════════════
@@ -1245,7 +1339,8 @@ static void printHelp(const std::string& prog)
                            " [--preset Standard|Jazz|Modal|Baroque|Contemporary|Default]"
                            " [--dump-regions batch|notation|notation-premerge]"
                            " [--section-level]"
-                           " [--diagnose-measures N[,N...]]\n"
+                           " [--diagnose-measures N[,N...]]"
+                           " [--dump-key-candidates TICK[,TICK...]]\n"
         << "\n"
         << "  Loads a score, runs harmonic analysis (ChordAnalyzer + KeyModeAnalyzer)\n"
         << "  and writes JSON to output.json, or to stdout if no output file given.\n"
@@ -1271,6 +1366,14 @@ static void printHelp(const std::string& prog)
         << "            emits a JSON block with collected notes, per-PC weights, and\n"
         << "            the full root × template scoring breakdown. Output replaces the\n"
         << "            standard regions JSON. Example: --diagnose-measures 1,2,3,5,7\n"
+        << "  --dump-key-candidates TICK[,TICK,...]\n"
+        << "            (Stage-4 emission instrument, read-only) For each region whose\n"
+        << "            [startTick,endTick) contains a listed tick, emits the per-region\n"
+        << "            key-resolution trace and the full per-candidate emission score\n"
+        << "            breakdown (the six KeyModeAnalyzer terms + declared penalty +\n"
+        << "            disambiguation). Production analysis is byte-identical; the dump\n"
+        << "            only serializes scores already computed. Output replaces the\n"
+        << "            standard regions JSON. Example: --dump-key-candidates 0,4800,9600\n"
         << "\n"
         << "  Returns 0 on success, non-zero on failure.\n";
 }
@@ -1306,6 +1409,7 @@ int main(int argc, char* argv[])
     std::string presetName = "Standard";
     RegionDumpMode dumpMode = RegionDumpMode::Batch;
     std::set<int> diagnoseMeasures;
+    std::set<int> dumpKeyTicks;  // Stage-4 emission instrument (read-only key-candidate dump)
     bool sectionLevel = false;   // Stage 2.2-i prototype (default OFF)
 
     for (int i = 1; i < args.size(); ++i) {
@@ -1350,6 +1454,23 @@ int main(int argc, char* argv[])
                     diagnoseMeasures.insert(std::stoi(token));
                 } catch (...) {
                     std::cerr << "ERROR: invalid measure number in --diagnose-measures: '"
+                              << token << "'\n";
+                    return 1;
+                }
+            }
+        } else if (a == "--dump-key-candidates") {
+            if (i + 1 >= args.size()) {
+                std::cerr << "ERROR: --dump-key-candidates requires a comma-separated list of ticks\n";
+                return 1;
+            }
+            const std::string tickList = args.at(++i).toUtf8().toStdString();
+            std::istringstream iss(tickList);
+            std::string token;
+            while (std::getline(iss, token, ',')) {
+                try {
+                    dumpKeyTicks.insert(std::stoi(token));
+                } catch (...) {
+                    std::cerr << "ERROR: invalid tick in --dump-key-candidates: '"
                               << token << "'\n";
                     return 1;
                 }
@@ -1463,7 +1584,10 @@ int main(int argc, char* argv[])
 
     // ── Write JSON ────────────────────────────────────────────────────────
     if (outputPath.empty()) {
-        if (!diagnoseMeasures.empty()) {
+        if (!dumpKeyTicks.empty()) {
+            writeKeyCandidateDump(score, regions, refStaff, excludeStaves, keyPrefs,
+                                  dumpKeyTicks, sourceName, std::cout);
+        } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, std::cout);
         } else {
             writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout);
@@ -1479,7 +1603,10 @@ int main(int argc, char* argv[])
             return 1;
         }
         std::ostringstream out;
-        if (!diagnoseMeasures.empty()) {
+        if (!dumpKeyTicks.empty()) {
+            writeKeyCandidateDump(score, regions, refStaff, excludeStaves, keyPrefs,
+                                  dumpKeyTicks, sourceName, out);
+        } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, out);
         } else {
             writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out);

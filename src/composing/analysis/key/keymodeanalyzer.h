@@ -133,6 +133,38 @@ struct KeyModeAnalysisResult {
     bool isMajor() const { return keyModeIsMajor(mode); }
 };
 
+/// Diagnostic-only per-candidate score breakdown (Stage-4 emission instrument).
+///
+/// Filled by analyzeKeyMode ONLY when a non-null dump pointer is supplied. Every
+/// production call passes nullptr and is byte-identical (the gateCtxOut/snapshotOut
+/// precedent — the dump only serializes scores already computed; the selected
+/// winner is unchanged). One entry per (tonicPc, modeIndex) candidate (252 total).
+///
+/// The six orthogonal scoring terms (ARCHITECTURE §4.2) plus the declared-mode
+/// penalty and the post-hoc pairwise disambiguation delta. By construction:
+///   finalScore == scaleMembership + triadEvidence + characteristicPitch
+///                 + trueLeadingTone + keySignatureProximity + modePrior
+///                 - declaredPenalty + disambiguationDelta
+struct KeyCandidateScore {
+    int tonicPc = 0;
+    std::size_t modeIndex = 0;
+    double scaleMembership       = 0.0;  ///< scoreScaleMembership
+    double triadEvidence         = 0.0;  ///< scoreTriadEvidence (triad + complete-triad/missing-tonic + extra-scale)
+    double characteristicPitch   = 0.0;  ///< scoreCharacteristicPitch
+    double trueLeadingTone       = 0.0;  ///< scoreTrueLeadingTone
+    double keySignatureProximity = 0.0;  ///< scoreKeySignatureProximity
+    double modePrior             = 0.0;  ///< scoreModePrior
+    double declaredPenalty       = 0.0;  ///< prefs.declaredModePenalty when mode incompatible with declared, else 0 (SUBTRACTED)
+    double disambiguationDelta   = 0.0;  ///< post-hoc pairwise mutation applied to this candidate (signed)
+    double finalScore            = 0.0;  ///< eval.score after all adjustments (the ranking score)
+    double tonalCenterScore      = 0.0;  ///< family-selection tonal-centre comparison score
+    double tonicWeight           = 0.0;
+    double thirdWeight           = 0.0;
+    double fifthWeight           = 0.0;
+    double leadingToneWeight     = 0.0;
+    bool   hasCompleteTriad      = false;
+};
+
 /// Tunable scoring weights for KeyModeAnalyzer.
 ///
 /// All values are compile-time defaults.  Replace each initialiser with a lookup
@@ -464,11 +496,16 @@ public:
     ///                      a penalty (prefs.declaredModePenalty).  Pass
     ///                      std::nullopt (the default) to use pure pitch
     ///                      analysis with no constraint.
+    /// @param dumpOut  Diagnostic-only. When non-null, cleared and filled with one
+    ///                 KeyCandidateScore per (tonicPc, modeIndex) candidate (the
+    ///                 emission instrument). Pass nullptr (the default) on every
+    ///                 production path — output is byte-identical either way.
     static std::vector<KeyModeAnalysisResult> analyzeKeyMode(
         const std::vector<PitchContext>& pitches,
         int keySignatureFifths,
         const KeyModeAnalyzerPreferences& prefs = kDefaultKeyModeAnalyzerPreferences,
-        std::optional<KeySigMode> declaredMode = std::nullopt);
+        std::optional<KeySigMode> declaredMode = std::nullopt,
+        std::vector<KeyCandidateScore>* dumpOut = nullptr);
 };
 
 /// Scale degrees (semitone offsets from tonic) for every mode defined

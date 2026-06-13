@@ -210,13 +210,15 @@ resolveKeyAndModeRanked(
     mu::engraving::staff_idx_t staffIdx,
     const std::set<std::size_t>& excludeStaves,
     const KeyModeAnalyzerPreferences& prefs,
-    const KeyModeAnalysisResult* prevResult)
+    const KeyModeAnalysisResult* prevResult,
+    KeyResolveDump* dumpOut)
 {
     using namespace mu::engraving;
 
     const std::size_t clampedStaffIdx = std::min<std::size_t>(staffIdx, sc->nstaves() - 1);
     const KeySigEvent keySig = sc->staff(clampedStaffIdx)->keySigEvent(tick);
     int keyFifths = static_cast<int>(keySig.concertKey());
+    const int notatedFifths = keyFifths;
 
     // ── Declared mode from key signature ─────────────────────────────────
     std::optional<KeySigMode> declaredMode;
@@ -248,6 +250,15 @@ resolveKeyAndModeRanked(
                                                keyFifths, *declaredMode);
     }
 
+    if (dumpOut) {
+        dumpOut->notatedFifths   = notatedFifths;
+        dumpOut->correctedFifths = keyFifths;
+        dumpOut->declaredModeOrdinal = declaredMode.has_value()
+            ? static_cast<int>(keyModeIndex(*declaredMode)) : -1;
+        dumpOut->pathTaken = "normal";
+        dumpOut->candidates.clear();
+    }
+
     // ── Fixed lookback window ─────────────────────────────────────────────
     const Fraction lookbackDuration = Fraction(shv::LOOKBACK_BEATS, 4);
     const Fraction windowStart = (tick > lookbackDuration)
@@ -271,6 +282,7 @@ resolveKeyAndModeRanked(
         // any analysis window must beat it to override the declared key.
         decl.score                = prefs.relativeKeyHysteresisMargin;
         decl.normalizedConfidence = 0.5;
+        if (dumpOut) { dumpOut->pathTaken = "anchor"; }
         return { decl };
     }
 
@@ -285,7 +297,9 @@ resolveKeyAndModeRanked(
         ebr::collectPitchContext(sc, tick, windowStart, windowEnd,
                                  excludeStaves, prefs, ctx);
 
-        results = KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths, prefs, declaredMode);
+        results = KeyModeAnalyzer::analyzeKeyMode(ctx, keyFifths, prefs, declaredMode,
+                                                  dumpOut ? &dumpOut->candidates : nullptr);
+        if (dumpOut) { dumpOut->lookaheadBeatsUsed = lookaheadBeats; }
 
         const bool confident = !results.empty()
             && results.front().normalizedConfidence
@@ -299,6 +313,7 @@ resolveKeyAndModeRanked(
 
     // ── Empty / insufficient PCs fallback ─────────────────────────────────
     if (results.empty() || shv::distinctPitchClasses(ctx) < 3) {
+        if (dumpOut) { dumpOut->pathTaken = "fallback"; }
         return fallbackResult(keyFifths, declaredMode, 0.0, 0.0);
     }
 
@@ -313,10 +328,16 @@ resolveKeyAndModeRanked(
                                   ? prefs.relativeKeyHysteresisMargin
                                   : prefs.hysteresisMargin;
         if (results.front().score < prevResult->score + hysteresis) {
+            const KeySigMode beforeMode = results.front().mode;
+            const int beforeFifths = results.front().keySignatureFifths;
             promoteWinnerInPlace(results, [&](const KeyModeAnalysisResult& r) {
                 return r.mode == prevResult->mode
                     && r.keySignatureFifths == prevResult->keySignatureFifths;
             });
+            if (dumpOut && (results.front().mode != beforeMode
+                            || results.front().keySignatureFifths != beforeFifths)) {
+                dumpOut->hysteresisPromoted = true;
+            }
         }
     }
 
@@ -341,6 +362,7 @@ resolveKeyAndModeRanked(
                       ? !keyModeIsMajor(r.mode)
                       : (r.mode == *declaredMode);
             });
+            if (dumpOut) { dumpOut->strongPriorPromoted = true; }
         }
     }
 
