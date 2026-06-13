@@ -544,6 +544,28 @@ does not re-tune them (that is Stage 5).
 
 ## 11. Acceptance-case roster — classified by what unlocks each
 
+> **⚠ ERRATUM (2026-06-13, applied — was the standing queued rider in COWORK_HANDOFF;
+> re-confirmed by the foundations-verification run `cc_foundations_verification_report.md`).**
+> The **Δ=+7a** and **C2 / bwv320-class** rows below carry a FALSIFIED verdict. The 3.2
+> design (`docs/beam_widening_design.md` §3, Cowork-verified ×3 incl. the independent
+> June-9 redesign_plan numbers) proved a wider/global beam does **NOT** fix Δ=+7a: the
+> wrong-root micro-region is the **HIGHEST-scoring node** (locally correct — the DCML root
+> is absent from its tones), so the continued-root path is the **genuine global optimum** a
+> decode finds *exactly as greedy does* (greedy 5.775 > correct 5.600 on bwv102.7; gap =
+> rcb 0.40 − margin 0.225). The "rcb edge **from a low-scoring transient** does not survive
+> against the path through the correct root" premise is therefore **wrong** — the transient
+> is not low-scoring. Re-ranking cannot fix Δ=+7a; only **re-weighting** (Stage-5 rcb
+> reweight + forward-completion edge) or **joint segmentation** can. Δ=+7a is **removed from
+> the 3.2 beam-win column and routed to Stage 5** (see `implementation_roadmap.md` row 3.2;
+> META-PRINCIPLE block; `docs/back_half_design.md` §1). The **C2 / bwv320-class** row's cited
+> example is dead (bwv320 m27 = the Gate-R-fixed Δ=+7b instance at the same tick; reconciled
+> 2026-06-12) — no known live instance; do not promise it. This also voids the §12 Q2
+> ratification's rationale clause "*the Δ=+7a inter-region revision depends on [forward
+> decoded-successor edges]*" — the forward-edge promotion may remain desirable on its own
+> merits, but Δ=+7a is **no longer its justification**. The **Δ=+7b trio** (next-but-one row)
+> is unaffected and remains must-not-break. Rows are retained verbatim below as the
+> historical record; this erratum supersedes their Δ=+7a / C2 verdict cells.
+
 | Case | What it is | Verdict | Evidence |
 |---|---|---|---|
 | **Δ=+7a** bwv102.7, bwv261 | wrong-root **micro-region** (240-tick arpeggio step, root attacks +240t in the future) feeds rcb +0.40 into the *sibling* region, tipping it; the oracle *prefers* the DCML root in the present-root slice (AbMaj7 2.55 > Eb/Ab 2.33) | **Stage 3 (wider beam) should fix** — this is the canonical inter-region revision: a global decode does not irrevocably commit the transient wrong root, so the rcb edge from a low-scoring transient does not survive against the path through the correct root. Gate R is inapplicable (`basisDep > 0`); only the decode fixes it | COWORK_HANDOFF Δ=+7a; redesign_plan Step 4 (Phase D fully exhausted, 3 dead ends) |
