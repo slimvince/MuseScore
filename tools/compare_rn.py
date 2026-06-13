@@ -80,6 +80,11 @@ import dcml_parser as dcml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# Default When-in-Rome (Bach chorale rntxt) annotation root, resolved via
+# dcml_parser.find_wir_file.  Used by the --wir-bach mode (BUILD 1).  Same path
+# characterise_bir_false.py uses for its WiR reference.
+WIR_BASE_DEFAULT = REPO_ROOT / "tools" / "dcml" / "when_in_rome"
+
 
 # ── Per-corpus configuration (same shape as rerun_dcml_comparison.CROSS_CORPORA)
 CROSS_CORPORA = OrderedDict([
@@ -206,6 +211,68 @@ def extract_quality(rn_norm: str) -> str:
         return "Min"
 
 
+# ── Key-context tonic parsing (BUILD 3, --key-breakdown) ──────────────────
+# Ported verbatim from the ratified key_confound.py driver (dossier §1.5).  These
+# resolve a (tonic_pc, is_major) pair for our key string and for a DCML key
+# string so key_disagree can be split into the S1 (tonicization label-gap,
+# =global ≠local) and S2 (genuine key error, ≠global) sub-tags.  No metric bucket
+# is redefined — this is a sub-classification *within* the existing key_disagree
+# bucket (cc_stage1d "orchestration is not a metric definition" basis).
+
+_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}
+_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
+
+_KB_DCML_KEY_RE = re.compile(r'^([a-gA-G])([#b]*)$')
+_KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([a-z]+)$')
+
+
+def _dcml_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
+    """DCML key string ('c', 'C', 'f#', 'bb', 'Ab') -> (tonic_pc, is_major).
+    Uppercase letter = major, lowercase = minor.  (None, None) if unparseable."""
+    if not k:
+        return (None, None)
+    m = _KB_DCML_KEY_RE.match(k.strip())
+    if not m:
+        return (None, None)
+    letter, acc = m.group(1), m.group(2)
+    pc = _KB_NOTE_DCML[letter.lower()] + acc.count('#') - acc.count('b')
+    return (pc % 12, letter.isupper())
+
+
+def _our_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
+    """Our key string ('Cmin', 'Cmaj', 'C#min', 'Bbmaj', 'Gdor') -> (tonic_pc,
+    is_major).  Major-ish modes (maj/ion/lyd/mix) are major; the rest minor.
+    (None, None) if unparseable (the 2.4% caveat the dossier flags)."""
+    if not k:
+        return (None, None)
+    m = _KB_OURS_KEY_RE.match(k.strip())
+    if not m:
+        return (None, None)
+    letter, acc, mode = m.group(1), m.group(2), m.group(3)
+    pc = _KB_NOTE_OURS[letter] + (1 if acc == '#' else -1 if acc == 'b' else 0)
+    return (pc % 12, mode[:3] in ('maj', 'ion', 'lyd', 'mix'))
+
+
+def key_disagree_subtag(ours_region, dcml_region) -> str:
+    """Sub-classify a key_disagree pair (BUILD 3).  Returns:
+      'eq_global' — our tonic+mode == DCML *global* key (S1: tonicization
+                    label-gap; the degree differs only because DCML reads a
+                    local tonic).  Unblocked by Stage 6.
+      'ne_global' — our tonic+mode != DCML global key (S2: genuine key error).
+                    Unblocked by Stage 4.
+      'keyfail'   — our key string did not parse (the 2.4% caveat).  Counts as
+                    ne_global for the S1/S2 split (the dossier "lumps into the
+                    tonic✗ column"), but is reported separately so it is not
+                    silently hidden in S2."""
+    otc, omaj = _our_key_tonic(getattr(ours_region, 'key', None))
+    if otc is None:
+        return 'keyfail'
+    gtc, gmaj = _dcml_key_tonic(getattr(dcml_region, 'global_key', None))
+    if gtc is not None and (otc, omaj) == (gtc, gmaj):
+        return 'eq_global'
+    return 'ne_global'
+
+
 # ── Per-pair classification ───────────────────────────────────────────────
 
 # Reported in this fixed order.
@@ -314,6 +381,16 @@ class PieceStats:
     # root_agree only) and aligned RN-scoreable ones.
     root_aligned:     int = 0           # aligned with DCML root_pc resolved
     root_agree:       int = 0
+    # ── Key-context sub-tag of the key_disagree bucket (BUILD 3). Populated
+    # unconditionally; only consumed when --key-breakdown is requested. The
+    # split is *within* key_disagree (kd_eq_global + kd_ne_global == key_disagree);
+    # kd_keyfail is a sub-count of kd_ne_global, reported separately as the caveat.
+    kd_eq_global:     int = 0           # S1: our key == DCML global (≠local)
+    kd_ne_global:     int = 0           # S2: our key  != DCML global
+    kd_keyfail:       int = 0           # subset of S2: our key did not parse
+    # Corpus-wide our-key parse-failure count over ALL matched pairs (the
+    # dossier's 2.4% = 239/10108 caveat); independent of the bucket.
+    keyparse_fail:    int = 0
 
     def __post_init__(self):
         if self.patterns is None:
@@ -333,24 +410,21 @@ class PieceStats:
         self.root_err         += other.root_err
         self.root_aligned += other.root_aligned
         self.root_agree   += other.root_agree
+        self.kd_eq_global  += other.kd_eq_global
+        self.kd_ne_global  += other.kd_ne_global
+        self.kd_keyfail    += other.kd_keyfail
+        self.keyparse_fail += other.keyparse_fail
         self.patterns.update(other.patterns)
         self.qe_quality_pairs.update(other.qe_quality_pairs)
         self.qe_rn_pairs.update(other.qe_rn_pairs)
 
 
-def score_piece(ours_path: Path, tsv_path: Path) -> Optional[PieceStats]:
-    """Score one ours.json vs one DCML harmonies.tsv pair."""
-    try:
-        _, ours_regions = cmp.load_analysis(ours_path)
-    except Exception:
-        return None
-    try:
-        dcml_regions = dcml.parse_abc_harmonies_file(str(tsv_path))
-    except Exception:
-        return None
-    if not ours_regions or not dcml_regions:
-        return None
-
+def score_regions(ours_regions: list, dcml_regions: list) -> PieceStats:
+    """Score one already-loaded (ours_regions, dcml_regions) pair into a
+    PieceStats.  Shared body for both the TSV path (score_piece) and the WiR
+    path (score_corpus_wir) — the *only* difference between corpora is how the
+    DCML/WiR reference is loaded; the metric is byte-identical (reuse, not a new
+    definition)."""
     matches = cmp.align_dcml_regions(ours_regions, dcml_regions,
                                      mode=cmp.DEFAULT_DCML_MATCH_MODE)
 
@@ -367,12 +441,23 @@ def score_piece(ours_path: Path, tsv_path: Path) -> Optional[PieceStats]:
         if pair is None:
             continue
         stats.matched += 1
+        # Corpus-wide our-key parse-failure caveat (independent of bucket).
+        if _our_key_tonic(getattr(ours_r, 'key', None))[0] is None:
+            stats.keyparse_fail += 1
         if pair.category == "exact":
             stats.exact += 1
         elif pair.category == "partial":
             stats.partial += 1
         elif pair.category == "key_disagree":
             stats.key_disagree += 1
+            tag = key_disagree_subtag(ours_r, dr)
+            if tag == "eq_global":
+                stats.kd_eq_global += 1
+            elif tag == "keyfail":
+                stats.kd_ne_global += 1
+                stats.kd_keyfail += 1
+            else:
+                stats.kd_ne_global += 1
         elif pair.category == "quality_disagree":
             stats.quality_disagree += 1
             o_q = extract_quality(pair.ours_rn)
@@ -387,6 +472,21 @@ def score_piece(ours_path: Path, tsv_path: Path) -> Optional[PieceStats]:
             key = (pair.ours_rn or "<empty>", pair.dcml_rn or "<empty>")
             stats.patterns[key] += 1
     return stats
+
+
+def score_piece(ours_path: Path, tsv_path: Path) -> Optional[PieceStats]:
+    """Score one ours.json vs one DCML harmonies.tsv pair."""
+    try:
+        _, ours_regions = cmp.load_analysis(ours_path)
+    except Exception:
+        return None
+    try:
+        dcml_regions = dcml.parse_abc_harmonies_file(str(tsv_path))
+    except Exception:
+        return None
+    if not ours_regions or not dcml_regions:
+        return None
+    return score_regions(ours_regions, dcml_regions)
 
 
 # ── Per-corpus aggregation ────────────────────────────────────────────────
@@ -429,6 +529,168 @@ def discover_corpora(root: Path) -> "OrderedDict[str, Path]":
         if ours_dir is not None:
             out[label] = ours_dir
     return out
+
+
+# ── Granularity-robust duration-weighted unit (BUILD 2) ────────────────────
+# design §2: a scoring unit that is segmentation-invariant.  The grid is the
+# union of region boundaries from both sides; over each half-open cell
+# [t_i, t_{i+1}) BOTH sides are piecewise-constant by construction, so
+# point-sampling at t_i and weighting by (t_{i+1} - t_i) is exact.  The reported
+# number is the fraction of *musical time* in each bucket, which does not change
+# when either side's segmentation is refined (a split cell carries the same two
+# labels).  This is added ALONGSIDE the region-count metric — it does not
+# redefine the existing buckets.
+
+@dataclass
+class GridStats:
+    pieces:       int = 0
+    scored_dur:   int = 0           # Σ duration of cells that yielded a scoreable pair
+    unscored_dur: int = 0           # Σ duration of cells with no scoreable pair (gap/unaligned)
+    bucket_dur:   Counter = None    # type: ignore[assignment]  bucket -> Σ duration
+
+    def __post_init__(self):
+        if self.bucket_dur is None:
+            self.bucket_dur = Counter()
+
+    def add(self, other: "GridStats") -> None:
+        self.pieces       += other.pieces
+        self.scored_dur   += other.scored_dur
+        self.unscored_dur += other.unscored_dur
+        self.bucket_dur.update(other.bucket_dur)
+
+
+def _active_index_at(spans: list, tick: int) -> Optional[int]:
+    """Index of the half-open span [s, e) containing `tick`, or None.  Spans are
+    non-overlapping by construction (region streams / DCML row spans); the first
+    containing span is returned."""
+    for i, (s, e) in enumerate(spans):
+        if e > s and s <= tick < e:
+            return i
+    return None
+
+
+def grid_score_regions(ours_regions: list, dcml_regions: list) -> GridStats:
+    """Duration-weighted, segmentation-invariant scoring of one already-loaded
+    (ours_regions, dcml_regions) pair (design §2).  Reuses
+    ``compare_analyses._dcml_time_spans`` for the DCML-side tick spans (the same
+    span arithmetic ``align_dcml_regions`` uses) and the reused ``classify_pair``
+    for the per-cell verdict."""
+    gs = GridStats()
+    if not ours_regions or not dcml_regions:
+        return gs
+    ours_spans = [(r.start_tick, r.end_tick) for r in ours_regions]
+    dcml_spans = cmp._dcml_time_spans(ours_regions, dcml_regions)
+
+    bounds: set[int] = set()
+    for (s, e) in ours_spans:
+        if e > s:
+            bounds.add(s)
+            bounds.add(e)
+    for (s, e) in dcml_spans:
+        if s >= 0 and e > s:
+            bounds.add(s)
+            bounds.add(e)
+    if len(bounds) < 2:
+        return gs
+
+    gs.pieces = 1
+    grid = sorted(bounds)
+    for i in range(len(grid) - 1):
+        t0, t1 = grid[i], grid[i + 1]
+        w = t1 - t0
+        if w <= 0:                       # coincident boundaries -> zero-width cell
+            continue
+        oi = _active_index_at(ours_spans, t0)
+        di = _active_index_at(dcml_spans, t0)
+        if oi is None or di is None:
+            gs.unscored_dur += w
+            continue
+        pair = classify_pair(ours_regions[oi], dcml_regions[di])
+        if pair is None:
+            gs.unscored_dur += w
+            continue
+        gs.bucket_dur[pair.category] += w
+        gs.scored_dur += w
+    return gs
+
+
+def grid_score_piece_tsv(ours_path: Path, tsv_path: Path) -> Optional[GridStats]:
+    """Grid-score one ours.json vs one DCML harmonies.tsv pair."""
+    try:
+        _, ours_regions = cmp.load_analysis(ours_path)
+        dcml_regions = dcml.parse_abc_harmonies_file(str(tsv_path))
+    except Exception:
+        return None
+    if not ours_regions or not dcml_regions:
+        return None
+    return grid_score_regions(ours_regions, dcml_regions)
+
+
+def grid_score_corpus_tsv(ours_dir: Path, tsv_dir: Path) -> Optional[GridStats]:
+    if not ours_dir.is_dir() or not tsv_dir.is_dir():
+        return None
+    agg = GridStats()
+    for p in sorted(ours_dir.glob("*.ours.json")):
+        stem = p.name.replace(".ours.json", "")
+        tsv = _find_tsv(tsv_dir, stem)
+        if tsv is None:
+            continue
+        g = grid_score_piece_tsv(p, tsv)
+        if g is not None:
+            agg.add(g)
+    return agg if agg.pieces > 0 else None
+
+
+# ── Bach When-in-Rome corpus mode (BUILD 1) ────────────────────────────────
+# Promote the headroom dossier's Bach-WiR wiring to a committed mode, parallel to
+# --corpus / --cross-corpus.  ORCHESTRATION ONLY over already-pinned functions:
+# dcml_parser.find_wir_file (resolve the analysis.txt for a stem), parse_rntxt_file
+# (parse to DcmlRegions), align_dcml_regions (align), classify_pair (classify).
+# Zero change to any metric definition.  Bach chorales have no harmonies.tsv —
+# their human annotation is When-in-Rome rntxt — so --cross-corpus structurally
+# excludes them; this mode closes that 326-chorale coverage hole.
+
+@dataclass
+class WirCoverage:
+    total:   int = 0   # all *.ours.json in the dir
+    covered: int = 0   # those with a resolvable WiR analysis.txt that parsed
+
+
+def score_corpus_wir(ours_dir: Path, wir_base: Path,
+                     ) -> Optional[tuple[PieceStats, GridStats, WirCoverage]]:
+    """Score a directory of *.ours.json against When-in-Rome Bach rntxt.
+
+    Returns (region_count_stats, grid_stats, coverage) or None if the dir has no
+    usable ours files.  The coverage denominator (covered/total) is reported
+    explicitly — only ~326/353 gate chorales have a WiR annotation at all; the
+    27 without can never be scored against human ground truth and must never be
+    silently folded into a /353 division (design §1.2 coverage fact)."""
+    if not ours_dir.is_dir():
+        return None
+    ours_files = sorted(ours_dir.glob("*.ours.json"))
+    if not ours_files:
+        return None
+    cov = WirCoverage(total=len(ours_files))
+    agg = PieceStats()
+    grid_agg = GridStats()
+    for p in ours_files:
+        stem = p.name.replace(".ours.json", "")
+        wir_path = dcml.find_wir_file(str(wir_base), stem)
+        if not wir_path:
+            continue
+        try:
+            _, ours_regions = cmp.load_analysis(p)
+            wir_regions = dcml.parse_rntxt_file(wir_path)
+        except Exception:
+            continue
+        if not ours_regions or not wir_regions:
+            continue
+        cov.covered += 1
+        agg.add(score_regions(ours_regions, wir_regions))
+        grid_agg.add(grid_score_regions(ours_regions, wir_regions))
+    if agg.movements == 0:
+        return None
+    return agg, grid_agg, cov
 
 
 # ── Reporting ─────────────────────────────────────────────────────────────
@@ -499,6 +761,51 @@ def _format_quality_breakdown(
     return lines
 
 
+def format_grid_report(label: str, gs: GridStats) -> str:
+    """Render the granularity-robust duration-weighted block (BUILD 2)."""
+    tot = gs.scored_dur
+    lines: list[str] = []
+    lines.append(f"=== {label} — granularity-robust (duration-weighted, "
+                 f"union-of-boundaries grid) ===")
+    lines.append(f"  pieces:            {gs.pieces}")
+    lines.append(f"  scored duration:   {tot} ticks")
+    lines.append(f"  unscored duration: {gs.unscored_dur} ticks"
+                 f"   (cells with no scoreable pair)")
+    rn_agree = gs.bucket_dur['exact'] + gs.bucket_dur['partial']
+    lines.append(f"  rn_agree:          {_pct(rn_agree, tot):5.1f}%"
+                 f"  ({rn_agree}/{tot} ticks)")
+    for k in RN_CATEGORIES:
+        lines.append(f"    {k:<16}: {_pct(gs.bucket_dur[k], tot):5.1f}%"
+                     f"  ({gs.bucket_dur[k]}/{tot})")
+    return "\n".join(lines)
+
+
+def format_key_breakdown(label: str, stats: PieceStats) -> str:
+    """Render the key-context sub-tag of key_disagree (BUILD 3, L1 instrument).
+
+    Splits key_disagree into S1 (=global ≠local, tonicization label-gap — the
+    Stage-6 axis) and S2 (≠global, genuine key error — the Stage-4 axis).  The
+    our-key parse-failure caveat is reported, never hidden in a bucket."""
+    kd = stats.key_disagree
+    s1 = stats.kd_eq_global
+    s2 = stats.kd_ne_global
+    kf = stats.kd_keyfail
+    lines: list[str] = []
+    lines.append(f"=== {label} — KEY-CONTEXT BREAKDOWN of key_disagree "
+                 f"(Stage-4 L1 instrument) ===")
+    lines.append(f"  key_disagree total: {kd}")
+    lines.append(f"  S1  =global ≠local  (tonicization label-gap — Stage 6): "
+                 f"{s1:>6}  ({_pct(s1, kd):5.1f}% of key_disagree)")
+    lines.append(f"  S2  ≠global         (genuine key error      — Stage 4): "
+                 f"{s2:>6}  ({_pct(s2, kd):5.1f}% of key_disagree)")
+    lines.append(f"  [caveat] our-key parse failures: "
+                 f"{stats.keyparse_fail}/{stats.matched} "
+                 f"({_pct(stats.keyparse_fail, stats.matched):.1f}% of matched); "
+                 f"the {kf} within key_disagree fall into S2 (the dossier's "
+                 f"\"tonic✗ column\").")
+    return "\n".join(lines)
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────
 
 def main() -> int:
@@ -512,19 +819,56 @@ def main() -> int:
                     help="Directory of *.harmonies.tsv files (used with --corpus)")
     ap.add_argument("--cross-corpus",
                     help="Score all configured corpora rooted at this live_<ts> dir")
+    ap.add_argument("--wir-bach", metavar="DIR",
+                    help="Score a directory of *.ours.json against When-in-Rome "
+                         "Bach rntxt (the 326-chorale gate set that --cross-corpus "
+                         "excludes because chorales have no harmonies.tsv).  "
+                         "Reports the covered/total coverage denominator explicitly.")
+    ap.add_argument("--wir-base", metavar="DIR", default=str(WIR_BASE_DEFAULT),
+                    help=f"When-in-Rome annotation root (default: {WIR_BASE_DEFAULT}).")
     ap.add_argument("--top-patterns", type=int, default=10,
                     help="Number of disagreement patterns to show per block")
     ap.add_argument("--quality-breakdown", action="store_true",
                     help="After the summary, print breakdown tables of the "
                          "quality_disagree bucket: ours_quality→dcml_quality pairs, "
                          "top ours_rn→dcml_rn pairs, and per-corpus shares.")
+    ap.add_argument("--granularity-robust", action="store_true",
+                    help="After the region-count summary, print the duration-weighted "
+                         "union-of-boundaries unit (segmentation-invariant; design §2).  "
+                         "Added alongside — the region-count buckets are unchanged.")
+    ap.add_argument("--key-breakdown", action="store_true",
+                    help="After the summary, split key_disagree into S1 (=global "
+                         "≠local, tonicization label-gap — Stage 6) and S2 (≠global, "
+                         "genuine key error — Stage 4); reports the our-key parse-fail caveat.")
     ap.add_argument("--output",
                     help="Also write the full report text to this file")
     args = ap.parse_args()
 
     out_lines: list[str] = []
 
-    if args.cross_corpus:
+    if args.wir_bach:
+        ours_dir = Path(args.wir_bach)
+        result = score_corpus_wir(ours_dir, Path(args.wir_base))
+        if result is None:
+            print(f"No usable *.ours.json with WiR coverage in {ours_dir}",
+                  file=sys.stderr)
+            return 1
+        stats, grid, cov = result
+        label = f"WiR-Bach {ours_dir.name}"
+        out_lines.append(f"=== {label} : When-in-Rome (DCML-only, region-centric) ===")
+        out_lines.append(f"  WiR coverage: {cov.covered}/{cov.total} ours files "
+                         f"({_pct(cov.covered, cov.total):.1f}%)  "
+                         f"— {cov.total - cov.covered} have no WiR annotation")
+        out_lines.append("")
+        out_lines.append(format_report(label, stats, args.top_patterns))
+        if args.granularity_robust:
+            out_lines.append("")
+            out_lines.append(format_grid_report(label, grid))
+        if args.key_breakdown:
+            out_lines.append("")
+            out_lines.append(format_key_breakdown(label, stats))
+
+    elif args.cross_corpus:
         root = Path(args.cross_corpus).resolve()
         if not root.is_dir():
             print(f"ERROR: {root} is not a directory", file=sys.stderr)
@@ -554,6 +898,19 @@ def main() -> int:
         if args.quality_breakdown and agg.matched > 0:
             out_lines.append("")
             out_lines.extend(_format_quality_breakdown(agg, per_corpus))
+        if args.key_breakdown and agg.matched > 0:
+            out_lines.append("")
+            out_lines.append(format_key_breakdown("CROSS-CORPUS AGGREGATE", agg))
+        if args.granularity_robust:
+            grid_agg = GridStats()
+            for label, ours_dir in corpora.items():
+                tsv_dir = REPO_ROOT / CROSS_CORPORA[label]["tsv_dir"]
+                g = grid_score_corpus_tsv(ours_dir, tsv_dir)
+                if g is not None:
+                    grid_agg.add(g)
+            if grid_agg.pieces > 0:
+                out_lines.append("")
+                out_lines.append(format_grid_report("CROSS-CORPUS AGGREGATE", grid_agg))
 
     elif args.corpus:
         if not args.tsv_dir:
@@ -563,16 +920,32 @@ def main() -> int:
         if stats is None:
             print("No usable pairs.", file=sys.stderr)
             return 1
-        out_lines.append(format_report(Path(args.corpus).name, stats,
-                                        args.top_patterns))
+        label = Path(args.corpus).name
+        out_lines.append(format_report(label, stats, args.top_patterns))
+        if args.granularity_robust:
+            grid = grid_score_corpus_tsv(Path(args.corpus), Path(args.tsv_dir))
+            if grid is not None:
+                out_lines.append("")
+                out_lines.append(format_grid_report(label, grid))
+        if args.key_breakdown:
+            out_lines.append("")
+            out_lines.append(format_key_breakdown(label, stats))
 
     elif args.ours and args.tsv:
         stats = score_piece(Path(args.ours), Path(args.tsv))
         if stats is None:
             print("Could not score the pair.", file=sys.stderr)
             return 1
-        out_lines.append(format_report(Path(args.ours).name, stats,
-                                        args.top_patterns))
+        label = Path(args.ours).name
+        out_lines.append(format_report(label, stats, args.top_patterns))
+        if args.granularity_robust:
+            grid = grid_score_piece_tsv(Path(args.ours), Path(args.tsv))
+            if grid is not None:
+                out_lines.append("")
+                out_lines.append(format_grid_report(label, grid))
+        if args.key_breakdown:
+            out_lines.append("")
+            out_lines.append(format_key_breakdown(label, stats))
 
     else:
         ap.print_help()
