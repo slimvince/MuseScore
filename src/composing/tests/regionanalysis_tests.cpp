@@ -110,10 +110,15 @@ placedAnchors(const std::vector<mu::composing::PlacedRegion>& all)
 //  covered by keymodeanalyzer_tests.cpp (985 lines, PitchContext-driven).
 // ═════════════════════════════════════════════════════════════════════════════
 
-// 4.4 — Piece-start shortcut: tick<16 beats + no prior + declared MINOR mode →
-// declared-mode anchor at confidence 0.5, score = relativeKeyHysteresisMargin,
-// single-element list (ARCHITECTURE.md §5.2).
-TEST(Composing_KeyresolverTests, PieceStartShortcut_DeclaredMinor)
+// 4.4 — Piece-start opening is NOTE-BASED (Stage 4b-i re-pin). The former
+// declared-mode piece-start short-circuit (which returned a single-element
+// declared anchor at confidence 0.5, score = relativeKeyHysteresisMargin) was
+// REMOVED in 4b-i; the normal dynamic-lookahead path now runs from piece start.
+// For this C-minor fixture (declared MINOR, −3 effective signature) the
+// note-based path still resolves C minor (Aeolian) at rank 0 — the demotion of
+// the declared wall to a small hint preserves the correct opening here — but now
+// returns the full ranked candidate list (size 3) rather than the size-1 anchor.
+TEST(Composing_KeyresolverTests, PieceStartOpening_NoteBased_DeclaredMinor)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_c_minor.mscx");
     ASSERT_TRUE(score);
@@ -121,18 +126,21 @@ TEST(Composing_KeyresolverTests, PieceStartShortcut_DeclaredMinor)
     const auto ranked = kr::resolveKeyAndModeRanked(
         score, Fraction(0, 1), 0, kNoExclude, kKeyPrefs, nullptr);
 
-    ASSERT_EQ(ranked.size(), 1u);
-    EXPECT_EQ(ranked.front().mode, KeySigMode::Aeolian);
+    // Note-based path: full ranked list, not the removed size-1 declared anchor.
+    EXPECT_EQ(ranked.size(), 3u);
+    ASSERT_FALSE(ranked.empty());
+    EXPECT_EQ(ranked.front().mode, KeySigMode::Aeolian);  // note-based still C minor
     EXPECT_EQ(ranked.front().tonicPc, 0);                 // C
     EXPECT_EQ(ranked.front().keySignatureFifths, -3);
-    EXPECT_DOUBLE_EQ(ranked.front().normalizedConfidence, 0.5);
-    EXPECT_DOUBLE_EQ(ranked.front().score, kKeyPrefs.relativeKeyHysteresisMargin);
+    // No anchor confidence/score pin: those were anchor-specific (removed in 4b-i).
 
     delete score;
 }
 
-// 4.4 — Piece-start shortcut with declared MAJOR mode → Ionian anchor.
-TEST(Composing_KeyresolverTests, PieceStartShortcut_DeclaredMajor)
+// 4.4 — Piece-start opening, declared MAJOR (Stage 4b-i re-pin). Note-based path
+// runs from piece start; the C-major fixture still resolves C major (Ionian) at
+// rank 0, now with the full ranked list (size 3) instead of the removed anchor.
+TEST(Composing_KeyresolverTests, PieceStartOpening_NoteBased_DeclaredMajor)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_c_major.mscx");
     ASSERT_TRUE(score);
@@ -140,11 +148,11 @@ TEST(Composing_KeyresolverTests, PieceStartShortcut_DeclaredMajor)
     const auto ranked = kr::resolveKeyAndModeRanked(
         score, Fraction(0, 1), 0, kNoExclude, kKeyPrefs, nullptr);
 
-    ASSERT_EQ(ranked.size(), 1u);
+    EXPECT_EQ(ranked.size(), 3u);
+    ASSERT_FALSE(ranked.empty());
     EXPECT_EQ(ranked.front().mode, KeySigMode::Ionian);
     EXPECT_EQ(ranked.front().tonicPc, 0);                 // C
     EXPECT_EQ(ranked.front().keySignatureFifths, 0);
-    EXPECT_DOUBLE_EQ(ranked.front().normalizedConfidence, 0.5);
 
     delete score;
 }
@@ -195,7 +203,10 @@ TEST(Composing_KeyresolverTests, RankedOutput_FrontIsRankZeroAndScoreOrdered)
 
 // 4.3 — Partial-signature fix (81978321e3): C-minor music under a 2-flat
 // (Dorian) signature with pervasive A-flat is reinterpreted -2 → -3, so the
-// piece-start anchor resolves C minor (tonic 0) instead of G minor (tonic 7).
+// note-based path resolves C minor (tonic 0) instead of G minor (tonic 7).
+// (Stage 4b-i: the partial-sig correction is unchanged and still declared-gated;
+// the former piece-start anchor is gone, but the corrected −3 / C-Aeolian winner
+// is preserved by the note-based path here.)
 TEST(Composing_KeyresolverTests, PartialSignature_CMinorUnderTwoFlats_Corrected)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_partial_cm.mscx");
@@ -214,7 +225,13 @@ TEST(Composing_KeyresolverTests, PartialSignature_CMinorUnderTwoFlats_Corrected)
 
 // 4.3 — Counter-case: a genuinely G-minor piece under the same 2-flat signature
 // (no pervasive A-flat) must NOT be corrected — signature proximity dominates
-// and the resolver stays at -2 / G minor.
+// and the resolver stays at -2 / G minor. This test GUARDS the partial-signature
+// non-correction (the −2 / tonic-G outcome), which is unaffected by Stage 4b-i.
+// Stage 4b-i re-pin: with the declared-mode wall demoted to a small hint, the
+// note-based winner for this fixture is now G HARMONIC minor (raised 7th present)
+// rather than G Aeolian — a different minor *flavor* on the same tonic. The pin
+// therefore asserts a minor mode on G at −2 (the load-bearing claim), not the
+// specific church-mode label.
 TEST(Composing_KeyresolverTests, PartialSignature_GMinorUnderTwoFlats_NotCorrected)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_g_minor.mscx");
@@ -224,9 +241,10 @@ TEST(Composing_KeyresolverTests, PartialSignature_GMinorUnderTwoFlats_NotCorrect
         score, Fraction(0, 1), 0, kNoExclude, kKeyPrefs, nullptr);
 
     ASSERT_FALSE(ranked.empty());
-    EXPECT_EQ(ranked.front().keySignatureFifths, -2);     // unchanged
+    EXPECT_EQ(ranked.front().keySignatureFifths, -2);     // NOT corrected
     EXPECT_EQ(ranked.front().tonicPc, 7);                 // G
-    EXPECT_EQ(ranked.front().mode, KeySigMode::Aeolian);
+    EXPECT_FALSE(keyModeIsMajor(ranked.front().mode));    // a minor mode (now HarmonicMinor)
+    EXPECT_EQ(ranked.front().mode, KeySigMode::HarmonicMinor);  // note-based flavor (was Aeolian under the removed wall)
 
     delete score;
 }

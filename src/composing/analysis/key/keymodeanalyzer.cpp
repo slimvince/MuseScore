@@ -568,7 +568,10 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
             eval.score           = eval.scaleScore + eval.triadScore + eval.keySignatureScore
                                  + charScore + ltScore + priorScore;
 
-            // Declared-mode penalty: modes outside the declared class are penalised.
+            // Declared-mode hint (Stage 4b-i): modes outside the declared class
+            // receive a SMALL penalty (prefs.declaredModePenalty, 1.0 by default)
+            // — a tiebreaker, not a wall. Applied only when a declared mode is
+            // supplied; mode-absent (--ignore-declared-mode) it is dropped.
             if (declaredMode.has_value()) {
                 const KeySigMode candidate = keyModeFromIndex(modeIndex);
                 if (!modeIsCompatibleWithDeclared(candidate, *declaredMode)) {

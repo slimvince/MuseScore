@@ -923,7 +923,14 @@ TEST_F(Notation_ImplodeTests, CorelliOp01n08dOpeningNoteContextMatchesPopulateIn
 
     const auto context = mu::notation::analyzeNoteHarmonicContextDetails(note);
     ASSERT_FALSE(context.chordResults.empty());
-    EXPECT_GE(context.keyConfidence, 0.5);
+    // Stage 4b-i re-pin: the former piece-start declared anchor reported a
+    // hardcoded keyConfidence of 0.5; the anchor was removed and the opening is
+    // now note-based, so keyConfidence is the honest note-evidence gap value
+    // (~0.22 here), below the old anchor floor. The chord/key IDENTITY (C minor,
+    // "Cm" / "i") is unchanged and DCML-correct — only the confidence number
+    // dropped. Pin a positive sub-0.5 band rather than the removed 0.5 floor.
+    EXPECT_GT(context.keyConfidence, 0.0);
+    EXPECT_LT(context.keyConfidence, 0.5);
     EXPECT_EQ(mu::composing::analysis::ChordSymbolFormatter::formatSymbol(context.chordResults.front(),
                                                                           context.keyFifths),
               "Cm");

@@ -238,6 +238,18 @@ resolveKeyAndModeRanked(
         }
     }
 
+    // ── Mode-absent measurement floor (Stage 4b-i) ───────────────────────
+    //
+    // When the caller sets prefs.ignoreDeclaredMode (batch_analyze
+    // --ignore-declared-mode), drop the declared mode entirely. This disables
+    // every remaining declared-mode influence at once — the small hint in
+    // analyzeKeyMode, the partial-signature correction below (declared-gated),
+    // and the piece-start opening — so key resolution is purely note-based. It
+    // is the "no-crutch floor" condition; default false = no-op (byte-identical).
+    if (prefs.ignoreDeclaredMode) {
+        declaredMode = std::nullopt;
+    }
+
     // ── Baroque partial-signature correction ─────────────────────────────
     //
     // Reinterpret the notated signature one step toward the declared mode's
@@ -265,26 +277,17 @@ resolveKeyAndModeRanked(
                                  ? tick - lookbackDuration
                                  : Fraction(0, 1);
 
-    // ── Piece-start shortcut ──────────────────────────────────────────────
+    // ── Piece-start opening: note-based (Stage 4b-i) ──────────────────────
     //
-    // No previous region + declared mode + we're inside the lookback window
-    // means we have insufficient pitch history to override the composer's
-    // declaration. Return a low-confidence anchor so the next region must
-    // beat `relativeKeyHysteresisMargin` to switch away from the declared key.
-    if (prevResult == nullptr && declaredMode.has_value()
-        && windowStart == Fraction(0, 1) && tick < lookbackDuration) {
-        KeyModeAnalysisResult decl;
-        decl.keySignatureFifths   = keyFifths;
-        decl.mode                 = *declaredMode;
-        decl.tonicPc              = (ionianTonicPcFromFifths(keyFifths)
-                                     + keyModeTonicOffset(*declaredMode)) % 12;
-        // The relative-key hysteresis margin is the piece-start anchor score:
-        // any analysis window must beat it to override the declared key.
-        decl.score                = prefs.relativeKeyHysteresisMargin;
-        decl.normalizedConfidence = 0.5;
-        if (dumpOut) { dumpOut->pathTaken = "anchor"; }
-        return { decl };
-    }
+    // The former declared-mode piece-start short-circuit was removed in 4b-i:
+    // it returned a declared anchor at piece start regardless of the opening
+    // note evidence (a wall). The normal dynamic-lookahead path below already
+    // handles the opening window (windowStart clamps to 0 when tick is inside
+    // the lookback span), and gracefully handles prevResult == nullptr — the
+    // hysteresis block guards on `prevResult != nullptr`. The opening is now
+    // note-based; the only residual declared influence is the small hint inside
+    // analyzeKeyMode. The insufficient-PCs fallback below still covers a
+    // degenerate opening with < 3 distinct pitch classes.
 
     // ── Dynamic lookahead loop ────────────────────────────────────────────
     std::vector<KeyModeAnalyzer::PitchContext> ctx;
@@ -341,30 +344,16 @@ resolveKeyAndModeRanked(
         }
     }
 
-    // ── Strong declared-mode prior ────────────────────────────────────────
+    // ── Strong declared-mode prior — REMOVED (Stage 4b-i) ─────────────────
     //
-    // When the key signature carries an explicit Mode property, the composer's
-    // intent overrides note-content inference. If the chosen winner is
-    // incompatible with the declared class (e.g. G# Dorian vs declared
-    // F# Major), promote the highest-ranked compatible result.
-    if (declaredMode.has_value()) {
-        const KeyModeAnalysisResult& top = results.front();
-        const bool topIsCompatible = (*declaredMode == KeySigMode::Ionian)
-            ? keyModeIsMajor(top.mode)
-            : (*declaredMode == KeySigMode::Aeolian)
-              ? !keyModeIsMajor(top.mode)
-              : (top.mode == *declaredMode);
-        if (!topIsCompatible) {
-            promoteWinnerInPlace(results, [&](const KeyModeAnalysisResult& r) {
-                return (*declaredMode == KeySigMode::Ionian)
-                    ? keyModeIsMajor(r.mode)
-                    : (*declaredMode == KeySigMode::Aeolian)
-                      ? !keyModeIsMajor(r.mode)
-                      : (r.mode == *declaredMode);
-            });
-            if (dumpOut) { dumpOut->strongPriorPromoted = true; }
-        }
-    }
+    // The former "Strong declared-mode prior" block promoted the highest-ranked
+    // declared-compatible result to the front REGARDLESS of score gap — a hard
+    // veto ("composer's intent overrides note-content inference"). It was removed
+    // in 4b-i because it is incompatible with note-based-primary inference:
+    // leaving it would make the §1 hint demotion a no-op wherever note inference
+    // already out-scored the declared mode but got vetoed here. The residual
+    // declared influence is now only the small hint inside analyzeKeyMode. The
+    // note-based hysteresis block above (prevResult-mode) is unrelated and stays.
 
     return results;
 }

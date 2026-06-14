@@ -1,83 +1,83 @@
 {
     "annotation": [
         {
-            "key": "G",
+            "key": "C",
             "text": "Cm",
             "tick": 0
         },
         {
-            "key": "G",
-            "text": "iv",
+            "key": "C",
+            "text": "i",
             "tick": 0
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "Cm",
             "tick": 0
         },
         {
-            "key": "G",
-            "text": "iv",
+            "key": "C",
+            "text": "i",
             "tick": 0
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "Cm",
             "tick": 0
         },
         {
-            "key": "G",
-            "text": "iv",
+            "key": "C",
+            "text": "i",
             "tick": 0
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "Cm",
             "tick": 0
         },
         {
-            "key": "G",
-            "text": "iv",
+            "key": "C",
+            "text": "i",
             "tick": 0
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "C+/Ab",
             "tick": 480
         },
         {
-            "key": "G",
-            "text": "IV+64",
+            "key": "C",
+            "text": "I+64",
             "tick": 480
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "C+/Ab",
             "tick": 480
         },
         {
-            "key": "G",
-            "text": "IV+64",
+            "key": "C",
+            "text": "I+64",
             "tick": 480
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "C+/Ab",
             "tick": 480
         },
         {
-            "key": "G",
-            "text": "IV+64",
+            "key": "C",
+            "text": "I+64",
             "tick": 480
         },
         {
-            "key": "G",
+            "key": "C",
             "text": "C+/Ab",
             "tick": 480
         },
         {
-            "key": "G",
-            "text": "IV+64",
+            "key": "C",
+            "text": "I+64",
             "tick": 480
         },
         {
@@ -87,7 +87,7 @@
         },
         {
             "key": "G",
-            "text": "Isus4",
+            "text": "Vsus4",
             "tick": 960
         },
         {
@@ -97,7 +97,7 @@
         },
         {
             "key": "G",
-            "text": "Isus4",
+            "text": "Vsus4",
             "tick": 960
         },
         {
@@ -107,7 +107,7 @@
         },
         {
             "key": "G",
-            "text": "Isus4",
+            "text": "Vsus4",
             "tick": 960
         },
         {
@@ -117,8 +117,13 @@
         },
         {
             "key": "G",
-            "text": "Isus4",
+            "text": "Vsus4",
             "tick": 960
+        },
+        {
+            "key": "G",
+            "text": "[g:]",
+            "tick": 1440
         },
         {
             "key": "G",
@@ -1724,16 +1729,16 @@
     "implode": [
         {
             "durationTicks": 480,
-            "key": "G",
-            "mode": "min",
+            "key": "C",
+            "mode": "Dor",
             "quality": "minor",
             "root": "C",
             "tick": 0
         },
         {
             "durationTicks": 480,
-            "key": "G",
-            "mode": "min",
+            "key": "C",
+            "mode": "Dor",
             "quality": "augmented",
             "root": "C",
             "tick": 480
@@ -2483,18 +2488,25 @@
     ],
     "keyAreas": [
         {
+            "confidence": 0.013,
+            "endTick": 1440,
+            "keyFifths": -2,
+            "mode": "Dor",
+            "startTick": 0
+        },
+        {
             "confidence": 1,
             "endTick": 30720,
             "keyFifths": -2,
             "mode": "min",
-            "startTick": 0
+            "startTick": 1440
         }
     ],
     "schemaVersion": 3,
     "score": "tools/dcml/corelli/MS3/op01n08a.mscx",
     "tickLocal": [
         {
-            "key": "G",
+            "key": "C",
             "quality": "minor",
             "root": "C",
             "tick": 0
@@ -2506,31 +2518,31 @@
             "tick": 960
         },
         {
-            "key": "G",
+            "key": "C",
             "quality": "minor",
             "root": "C",
             "tick": 1920
         },
         {
-            "key": "G",
+            "key": "C",
             "quality": "sus4",
             "root": "G",
             "tick": 2880
         },
         {
-            "key": "G",
+            "key": "C",
             "quality": "minor",
             "root": "C",
             "tick": 3840
         },
         {
-            "key": "G",
+            "key": "C",
             "quality": "major",
             "root": "Ab",
             "tick": 4800
         },
         {
-            "key": "G",
+            "key": "C",
             "quality": "major",
             "root": "G",
             "tick": 5760
@@ -2702,7 +2714,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "G",
+            "key": "C",
             "previousBassPc": -1,
             "previousQuality": "unknown",
             "previousRootPc": -1,

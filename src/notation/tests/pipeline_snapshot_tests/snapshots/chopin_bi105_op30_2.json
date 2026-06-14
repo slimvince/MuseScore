@@ -993,7 +993,7 @@
     ],
     "keyAreas": [
         {
-            "confidence": 0.975,
+            "confidence": 0.393,
             "endTick": 22080,
             "keyFifths": 2,
             "mode": "min",

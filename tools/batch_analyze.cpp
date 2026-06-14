@@ -1339,6 +1339,7 @@ static void printHelp(const std::string& prog)
                            " [--preset Standard|Jazz|Modal|Baroque|Contemporary|Default]"
                            " [--dump-regions batch|notation|notation-premerge]"
                            " [--section-level]"
+                           " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
                            " [--dump-key-candidates TICK[,TICK...]]\n"
         << "\n"
@@ -1361,6 +1362,12 @@ static void printHelp(const std::string& prog)
         << "            (analyzeSection: measure layout, gap-tone insertion, key/mode\n"
         << "            stabilization, sparse-quality refinement) on top of the batch\n"
         << "            region stream. Default OFF. Only affects --dump-regions batch.\n"
+        << "  --ignore-declared-mode\n"
+        << "            (Stage 4b-i measurement floor) Force the key resolver to drop\n"
+        << "            the score's declared key-signature mode (declaredMode = nullopt),\n"
+        << "            so key inference is purely note-based: no declared-mode hint, no\n"
+        << "            partial-signature correction, note-based opening. Default OFF =\n"
+        << "            byte-identical to mode-present. The 'no-crutch floor' condition.\n"
         << "  --diagnose-measures N[,N,...]\n"
         << "            Per-measure diagnostic mode. For each listed measure number,\n"
         << "            emits a JSON block with collected notes, per-PC weights, and\n"
@@ -1411,6 +1418,7 @@ int main(int argc, char* argv[])
     std::set<int> diagnoseMeasures;
     std::set<int> dumpKeyTicks;  // Stage-4 emission instrument (read-only key-candidate dump)
     bool sectionLevel = false;   // Stage 2.2-i prototype (default OFF)
+    bool ignoreDeclaredMode = false;  // Stage 4b-i mode-absent floor (default OFF = no-op)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -1441,6 +1449,8 @@ int main(int argc, char* argv[])
             }
         } else if (a == "--section-level") {
             sectionLevel = true;
+        } else if (a == "--ignore-declared-mode") {
+            ignoreDeclaredMode = true;
         } else if (a == "--diagnose-measures") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --diagnose-measures requires a comma-separated list of measure numbers\n";
@@ -1494,6 +1504,10 @@ int main(int argc, char* argv[])
                   << "'.  Valid names: Standard, Jazz, Modal, Baroque, Contemporary, Default\n";
         return 1;
     }
+    // Stage 4b-i: mode-absent measurement floor. Forces declaredMode = nullopt
+    // in the resolver (drops the declared-mode hint, partial-sig correction, and
+    // declared opening influence). Default OFF = byte-identical to mode-present.
+    keyPrefs.ignoreDeclaredMode = ignoreDeclaredMode;
 
     // ── Build chord analyzer preferences from preset ────────────────────────
     // Preset-specific chord analysis tuning.

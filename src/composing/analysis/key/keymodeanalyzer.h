@@ -306,17 +306,30 @@ struct KeyModeAnalyzerPreferences {
     double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
     double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
 
-    // ── Declared-mode penalty ────────────────────────────────────────────────
+    // ── Declared-mode hint (Stage 4b-i: demoted from a wall to a tiebreaker) ──
     //
     // When the caller provides a declared mode (e.g. from the score's key
     // signature), any candidate mode outside the declared mode class receives
-    // this additive penalty.  The value is chosen to be decisive for common
-    // relative-major/minor ambiguities (larger than disambiguationTriadBonus)
-    // while still theoretically overridable by very strong opposing pitch
-    // evidence.  A higher value reflecting full trust in the composer's
-    // declaration is tracked as a backlog item.
+    // this small additive penalty.  Since Stage 4b-i the magnitude is *small*
+    // (1.0 by default, was 7.0): the demoted role is a genuine TIEBREAKER, not a
+    // wall.  It can only flip the winner when the raw note-based score gap is
+    // already within ~1.0 (i.e. when the note evidence is genuinely unsure); it
+    // can no longer override clear note evidence (triad 2.50, disambiguation
+    // 4.50).  Note-based major/minor inference is now PRIMARY; the declared mode
+    // is a low-weight, droppable hint.  Droppable by construction: not applied
+    // when the caller passes no declared mode (declaredMode == nullopt, e.g. the
+    // --ignore-declared-mode measurement floor).  The final magnitude is Stage 5's
+    // fit; 1.0 is the provisional measurement value.
 
-    double declaredModePenalty = 7.0;  ///< Penalty for modes outside the declared class [empirical]
+    double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates [empirical — Stage-5 fits]
+
+    /// Measurement-only toggle (Stage 4b-i): when true, the resolver forces
+    /// declaredMode = nullopt, so NO declared-mode influence is applied (the hint
+    /// above is not subtracted, the partial-signature correction is skipped, and
+    /// the piece-start opening is purely note-based).  This is the "no-crutch
+    /// floor" condition wired to batch_analyze --ignore-declared-mode. Default
+    /// false = no-op (every production / mode-present path is byte-identical).
+    bool ignoreDeclaredMode = false;  ///< Force mode-absent resolution (measurement floor)
 
     // ── Beat-type weights for temporal window collection ─────────────────
     //
@@ -450,8 +463,10 @@ struct KeyModeAnalyzerPreferences {
             { "disambiguationTriadBonus",          { 1.0,  8.0 } },
             { "disambiguationTriadCost",           { 0.0,  4.0 } },
             { "disambiguationTonicBonus",          { 0.0,  3.0 } },
-            // Declared-mode penalty — isManual: user may override
-            { "declaredModePenalty",               { 3.0, 15.0, true } },
+            // Declared-mode hint — isManual: user may override. Lower bound 0.0
+            // (Stage 4b-i) so the demoted small-hint / fully-dropped exploration
+            // is expressible (was {3.0,15.0} when it was a wall).
+            { "declaredModePenalty",               { 0.0, 15.0, true } },
             // Confidence sigmoid
             { "confidenceSigmoidMidpoint",         { 0.5,  5.0 } },
             { "confidenceSigmoidSteepness",        { 0.5,  5.0 } },

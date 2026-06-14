@@ -148,14 +148,18 @@ def _find_git_bash():
     ] if p.exists()), None)
 
 
-def _run_batch_analyze(exe, xml_path, out_path, preset, diag_fh=None):
+def _run_batch_analyze(exe, xml_path, out_path, preset, diag_fh=None, extra_args=""):
+    # extra_args: extra batch_analyze flags appended verbatim (Stage 4b-i:
+    # "--ignore-declared-mode" for the mode-absent measurement floor). Empty by
+    # default → byte-identical to the historical invocation.
+    extra = f" {extra_args}" if extra_args else ""
     try:
         import platform
         if platform.system() == 'Windows':
             bash = _find_git_bash()
             if bash:
                 cmd = (f'{_to_unix_path(exe)} "{_to_unix_path(xml_path)}"'
-                       f' "{_to_unix_path(out_path)}" --preset {preset}')
+                       f' "{_to_unix_path(out_path)}" --preset {preset}{extra}')
                 r = subprocess.run([str(bash), '-c', cmd],
                                    stdout=subprocess.DEVNULL,
                                    stderr=subprocess.PIPE, timeout=120)
@@ -167,7 +171,10 @@ def _run_batch_analyze(exe, xml_path, out_path, preset, diag_fh=None):
                           file=sys.stderr)
                     return False
                 return True
-        r = subprocess.run([str(exe), str(xml_path), str(out_path), '--preset', preset],
+        native_cmd = [str(exe), str(xml_path), str(out_path), '--preset', preset]
+        if extra_args:
+            native_cmd += extra_args.split()
+        r = subprocess.run(native_cmd,
                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=120)
         if diag_fh is not None and r.stderr:
             diag_fh.write(r.stderr.decode('utf-8', 'replace'))
@@ -195,7 +202,7 @@ def _process_one(args_tuple):
     status is one of 'OK', 'SKIP_NO_M21', 'SKIP_NO_EXE', 'FAILED',
     'SKIP_NO_OURS', 'ERROR'.
     """
-    idx, exe, xml_path, ours_path, m21_path, preset, skip_cpp = args_tuple
+    idx, exe, xml_path, ours_path, m21_path, preset, skip_cpp, extra_args = args_tuple
     stem = xml_path.stem
 
     if not m21_path.exists():
@@ -207,7 +214,7 @@ def _process_one(args_tuple):
         if exe is None:
             return (idx, stem, 'SKIP_NO_EXE', None, '', None)
         diag_buf.write(f"[PROCESSING] {stem}\n")
-        ok = _run_batch_analyze(exe, xml_path, ours_path, preset, diag_buf)
+        ok = _run_batch_analyze(exe, xml_path, ours_path, preset, diag_buf, extra_args)
         if not ok:
             return (idx, stem, 'FAILED', None, diag_buf.getvalue(), None)
 
@@ -243,6 +250,9 @@ def main():
     parser.add_argument("--corpus-dir", metavar="DIR", default="tools/corpus")
     parser.add_argument("--output-dir", metavar="DIR")
     parser.add_argument("--skip-cpp", action="store_true")
+    parser.add_argument("--ignore-declared-mode", action="store_true",
+                        help="Stage 4b-i: pass --ignore-declared-mode to batch_analyze "
+                             "(mode-absent measurement floor). Default off.")
     parser.add_argument("--resume", action="store_true",
                         help="Keep existing .ours.json (skip the clean-slate); "
                              "regenerate only missing files.")
@@ -302,11 +312,12 @@ def main():
     total_chord = 0
     score_status: dict[str, str] = {}
 
+    extra_args = "--ignore-declared-mode" if args.ignore_declared_mode else ""
     work_items = [
         (idx, exe, xml_path,
          out_dir / f"{xml_path.stem}.ours.json",
          corpus_dir / f"{xml_path.stem}.music21.json",
-         args.preset, args.skip_cpp)
+         args.preset, args.skip_cpp, extra_args)
         for idx, xml_path in enumerate(xml_files, 1)
     ]
 

@@ -28,16 +28,21 @@
 // `resolveKeyAndMode` (notationcomposingbridgehelpers.cpp). See
 // docs/duplication_audit.md §2.11 and §5.3.
 //
-// The resolver:
+// The resolver (Stage 4b-i: note-based inference PRIMARY, declared mode demoted
+// to a small droppable hint):
 //   • reads the score's key signature event at the analysis tick
-//   • detects a declared mode from the key signature's KeyMode enum
-//   • applies the piece-start shortcut (no lookback + declared mode wins)
-//   • runs the dynamic-lookahead loop, growing the window until the top
-//     result clears `dynamicLookaheadConfidenceThreshold` or `dynamicLookaheadMaxBeats`
+//   • detects a declared mode from the key signature's KeyMode enum (dropped
+//     entirely when prefs.ignoreDeclaredMode — the mode-absent measurement floor)
+//   • runs the dynamic-lookahead loop FROM PIECE START (the former declared-mode
+//     piece-start short-circuit was removed in 4b-i — the opening is note-based),
+//     growing the window until the top result clears
+//     `dynamicLookaheadConfidenceThreshold` or `dynamicLookaheadMaxBeats`
 //   • falls back to the notated key signature when pitch evidence is sparse
-//   • applies hysteresis vs the previous region's result
-//   • applies the bridge's strong declared-mode prior so the winner stays
-//     compatible with an explicit MAJOR/MINOR/specific-mode declaration
+//   • applies hysteresis vs the previous region's result (note-based)
+//
+// The declared mode now influences the result ONLY via the small additive hint
+// inside analyzeKeyMode (prefs.declaredModePenalty, 1.0). The former hard
+// "strong declared-mode prior" promotion was removed in 4b-i.
 //
 // Returns the ranked top-N candidates with the chosen winner at index 0.
 // Callers that only need the winner take [0]; batch additionally takes [1]
@@ -65,10 +70,10 @@ struct KeyResolveDump {
     int notatedFifths   = 0;          ///< key signature fifths read at the tick (pre-correction)
     int correctedFifths = 0;          ///< after partialSignatureCorrection
     int declaredModeOrdinal = -1;     ///< KeySigMode ordinal of the declared mode, or -1 if none
-    const char* pathTaken = "normal"; ///< "anchor" | "fallback" | "normal"
+    const char* pathTaken = "normal"; ///< "fallback" | "normal" ("anchor" removed in 4b-i)
     int lookaheadBeatsUsed = 0;       ///< window beats at the final analyzeKeyMode call
     bool hysteresisPromoted   = false; ///< the hysteresis block reordered the winner
-    bool strongPriorPromoted  = false; ///< the strong declared-mode prior reordered the winner
+    bool strongPriorPromoted  = false; ///< always false since 4b-i (strong declared-mode prior removed; field kept for dump-format stability)
     std::vector<mu::composing::analysis::KeyCandidateScore> candidates; ///< emission breakdown (empty on anchor/fallback)
 };
 
@@ -82,8 +87,8 @@ struct KeyResolveDump {
 /// trace and the final analyzeKeyMode per-candidate breakdown. Pass nullptr (the
 /// default) on every production path — output is byte-identical either way.
 ///
-/// Returned vector always has size ≥ 1. The chosen winner — after hysteresis
-/// and the strong declared-mode prior — is at index 0.
+/// Returned vector always has size ≥ 1. The chosen winner — after note-based
+/// hysteresis — is at index 0.
 std::vector<mu::composing::analysis::KeyModeAnalysisResult>
 resolveKeyAndModeRanked(
     const mu::engraving::Score* sc,
