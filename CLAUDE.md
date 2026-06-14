@@ -97,17 +97,48 @@ start of a regen and **exits nonzero** if the corpus is not 353/353 complete;
 `characterise_bir_false.py` **refuses** to measure a dir whose manifest is missing,
 incomplete, or whose `.ours.json` fingerprints do not match (preset contamination —
 the old shared-`tools/corpus` failure mode). The gate is the **case-identity** set,
-not a bare integer:
-- **Baroque = 13** with identities (stem@tick):
-  `{bwv102.7@17520, bwv14.5@8160, bwv17.7@46080, bwv174.5@6240, bwv245.17@4800,
-  bwv245.40@51360, bwv261@33840, bwv269@20640, bwv301@960, bwv381@4800, bwv422@23040,
-  bwv432@5520, bwv45.7@20160}` (confirmed by `characterise_bir_false.py --corpus-dir
-  tools/corpus/baroque`).
-- **Jazz = 7** with identities
-  `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
-- **Default (the user-run config) = 14 = Baroque-13 ∪ {bwv187.7 @ m14.b2}**.
+not a bare integer.
 
-**Granularity caveat (Stage 2.2-i):** the 13/7 gate is measured at **batch
+**Re-baselined 2026-06-13 (corrected GT parser).** The prior **13/7/14** gate was an
+**undercount**: GT-parser bugs (applied-chord `/X` rooting + minor-key
+leading-tone/submediant rooting, fixed in `tools/dcml_parser.py`) corrupted the WiR roots
+of applied and `viio`/`vio` chords, pushing genuine candidate cases into the discarded
+`all_differ` bucket. With the roots now oracle-correct (music21 `RomanNumeral`, **100% on
+all gate cases**), those cases surface. The new gate is a **strict superset** of the old
+(every old case preserved, **0 lost** — verified through the canonical tool with an A/B
+parser revert). **~95% of the added mass is legitimate ambiguity** — chiefly **symmetric
+fully-diminished-7th** sonorities (root pitch-class-undefined by construction; ≈53% of
+Baroque) and **viio↔V7 share-tone** readings; the genuinely-new *actionable* error count
+is only ~1–3 per preset (net ≈9–10 Baroque / ~4 Jazz). The symmetric-dim7 members are
+structurally unresolvable by pitch class and are the seed of a future **two-tier /
+spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
+`cc_metric_rebaseline_report.md` + `cc_gate_rebaseline_verify_report.md`.
+
+- **Baroque = 57** with identities (stem@tick):
+  `{bwv10.7@36000, bwv102.7@17520, bwv122.6@6720, bwv14.5@8160, bwv144.6@15360,
+  bwv144.6@16320, bwv151.5@13440, bwv153.1@18240, bwv16.6@16800, bwv169.7@24960,
+  bwv17.7@46080, bwv174.5@6240, bwv20.11@13440, bwv227.7@18120, bwv244.32@5760,
+  bwv244.46@960, bwv245.15@13920, bwv245.17@4800, bwv245.37@13920, bwv245.3@12480,
+  bwv245.40@51360, bwv258@10560, bwv261@33840, bwv269@20640, bwv272@4800, bwv272@8160,
+  bwv282@9120, bwv289@21600, bwv300@13440, bwv301@960, bwv309@8640, bwv320@31680,
+  bwv334@5280, bwv334@6720, bwv336@8640, bwv342@25440, bwv352@1440, bwv358@6000,
+  bwv364@2880, bwv381@4800, bwv392@14400, bwv40.3@2400, bwv402@22080, bwv416@10080,
+  bwv421@2880, bwv422@23040, bwv423@28320, bwv429@24240, bwv432@5520, bwv45.7@20160,
+  bwv48.3@2880, bwv57.8@15360, bwv60.5@30960, bwv64.8@5280, bwv77.6@22080, bwv94.8@24960,
+  bwv96.6@13440}` (= old Baroque-13 ∪ 44 oracle-verified additions; confirmed by
+  `characterise_bir_false.py --corpus-dir tools/corpus/baroque`).
+- **Jazz = 23** with identities (stem@tick):
+  `{bwv144.6@15360, bwv144.6@16320, bwv244.15@10080, bwv245.15@13920, bwv245.17@4800,
+  bwv245.37@13920, bwv245.40@51360, bwv272@8160, bwv280@17280, bwv282@9120, bwv301@1440,
+  bwv313@14880, bwv334@5280, bwv342@25440, bwv392@14400, bwv422@23040, bwv429@24240,
+  bwv432@5520, bwv45.7@20160, bwv48.3@2880, bwv64.8@5280, bwv74.8@13440, bwv74.8@13920}`
+  (= old Jazz-7 ∪ 16 additions).
+- **Default (the user-run config) = 57** = Baroque-57 with `{bwv227.7@18120, bwv60.5@30960}`
+  replaced by `{bwv187.7@19200, bwv227.7@18000}`. The lone Default-specific delta is a
+  segmentation-tick variant of the same `bwv227.7` over-grab case (oracle-correct GT root
+  C♯); the old Default-14 = Baroque-13 ∪ {bwv187.7@19200}, all 14 preserved.
+
+**Granularity caveat (Stage 2.2-i):** the 57/23 gate is measured at **batch
 (cross-barline) region** granularity; the user-visible **per-beat** root-error rate
 is ~7× higher when the same scores are scored at measure-aligned (section)
 granularity. Inspect that view with `batch_analyze --section-level` (diagnostic flag,
@@ -115,8 +146,10 @@ default OFF — it does not change the gate). See `cc_stage2_2_ab_dossier.md` fo
 A/B that quantified this; a granularity-robust metric is mandatory at Stage 5.
 
 (`tools/analyze_inversion_errors.py` is a *separate* secondary metric: its three-way
-`music21_dcml_agree` genuine split is `bassIsRoot` true/false = **Baroque 24/13, Jazz
-35/7**; `characterise_bir_false.py` independently reproduces the 13/7 BIR=false half.
+`music21_dcml_agree` genuine split is `bassIsRoot` true/false (was **Baroque 24/13, Jazz
+35/7** under the OLD parser — **NOT yet re-measured under the corrected parser; treat as
+stale/pending re-baseline**); `characterise_bir_false.py` independently reproduces the
+BIR=false half (now **57/23**, Default 57).
 Since Stage 2.2-ii (Rider 1) it takes `--corpus-dir` and reads BOTH `.ours.json` and
 `.music21.json` from the validated per-preset dir — `--ours-dir` is a deprecated,
 unvalidated alias.)

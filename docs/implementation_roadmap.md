@@ -11,6 +11,9 @@ verification gate that must pass before the next stage starts.*
 in its "verify" column. Stages are sequential; items within a stage can run in any order
 unless noted. Baselines (BIR 24/13 Baroque, 35/7 Jazz; 416/52/11 tests) are hard gates
 throughout Stages 0–2; Stage 3+ re-baselines deliberately and explicitly.
+**(Re-baselined 2026-06-13: the corrected GT parser → gate Baroque 57 / Jazz 23 / Default 57,
+a strict superset of the old 13/7/14; the `analyze_inversion_errors` 24/13·35/7 secondary
+split is stale pending re-measurement. Authoritative identity sets: CLAUDE.md gate section.)**
 
 ---
 
@@ -70,6 +73,61 @@ Metric-bug decisions (1.6 F-1/F-2/F-3) deferred into Stage 2.2's re-baseline.
 
 ---
 
+## ⚠⚠ META-PRINCIPLE (2026-06-13, two converging verified findings) — PRECISION LIVES IN EMISSION, NOT SEARCH
+
+Two consecutive design investigations falsified an "elegant structural fix," for the SAME
+reason:
+- **Beam-widening (3.2 design):** a wider/global chord decode does NOT fix Δ=+7a — the
+  transient wrong root is the genuine global optimum; search optimizes the objective the
+  emission defines.
+- **Key-as-path (Stage 4 design):** an HMM key path does NOT fix the S2 bulk — ~85% are
+  Class-B "emission consistently prefers the wrong key, correct key never rank-2"
+  (bwv244.54: D-minor ×29, F-major never rank-2; 51.6% of S2 has the right key outside
+  rank-2). A modulation penalty only adds stickiness; it cannot recover an absent candidate.
+
+**The principle:** inference STRUCTURE (search / path / global decode / beam) cannot move
+an error the EMISSION model consistently prefers. Combined with the headroom dossier (95%
+of root errors are functional, not vertical), the conclusion is firm: **precision lives in
+(a) the emission model — the per-region/window scorer: chord templates, key profiles,
+features — and (b) the functional-labeling layer (Stage 6). It does NOT live in the
+decode/search machinery.** The part-1 lattice-decoder vision was right as *consolidation*
+(the oracle/competition factorization is clean) but its *precision promise* (global decode
+fixes hard cases via inter-region revision) is falsified. **Future stages must not reach
+for a search/decode fix where the emission is the cause** — verify which it is first
+(Method: derive against real candidate margins, as 3.2/Stage-4 did).
+
+---
+
+## ⚠ PRECISION-HEADROOM RE-GROUNDING (2026-06-13, Cowork-verified) — reshapes Stages 4–6
+
+`cc_precision_headroom_dossier.md` measured the REAL (DCML-only, Default config, unfiltered)
+error structure. Verified findings (Cowork: the load-bearing identity is structurally exact;
+the tooling reproduced the documented A3 27.6%/15.4%/6.3% baseline):
+
+- **95.2% of root errors are functional, not vertical.** `root_err 2706 = all_differ 2576
+  (neither we nor music21 reach DCML) + music21_dcml_agree 130 (vertically fixable)`. The
+  music21-filtered "13 BIR=false" gate measures only the **4.8% vertical slice** — it has
+  optimized a tiny reachable corner while 95% of the root-error mass (cadential 6-4,
+  suspensions, applied roots — functional readings) was invisible to it.
+- **key_disagree (27.9%, largest axis) splits 63% tonicization-label gap** (root+global-key
+  already correct — Stage 6 secondary/tonicization labels, the single biggest slice S1=17.7%,
+  LOW regression risk = pure-add labels on correct readings) **/ 37% genuine key error**
+  (Stage 4).
+- **Headroom by layer:** Stage 6 functional ~35–42% · Stage 4 key path ~20–24% · Stage 5
+  emission-reweight 1.3% batch / ~6–7% section (Stage 5 is the *fitter/enabler*, small direct
+  yield) · beam/search ≈ 0 (confirmed not where precision lives).
+
+**Re-grounded ordering (recommended, pending ratification):** finish 3.4/3.5 consolidation
+(beam-1) → **the DCML-only + granularity-robust METRIC is the immediate next instrument**
+(Cowork refinement: it gates Stage 4's AND Stage 6's measurability, not just Stage 5's fit —
+"instruments first," Method A) → **Stage 4 (key path + KeyArea) leads the back half** (unlocks
+the largest functional slice) → **Stage 6 co-developed** on KeyArea output (S1 is the
+low-risk/high-yield first target) → **Stage 5 fitter last**. Beam shelved with a concrete
+revisit trigger (dossier §3.3: a non-monotone forward edge where global-best ≠ greedy AND
+global-best matches DCML). Joint segmentation deferred past Stage 5.
+
+---
+
 ## Stage 2 — One pipeline, one truth *(close the measurement blind spot and path divergences before any redesign)*
 
 After this stage, the measured pipeline IS the user pipeline and the diagnostic tool IS the
@@ -102,7 +160,7 @@ byte-identity bridge so there is a no-surprise verification gate at every step.
 | # | Item | Source | Verify |
 |---|------|--------|--------|
 | 3.1 | **Decoder skeleton, beam = 1**: per-region candidate lattice from the existing oracle output; transitions = existing progression signals (rcb, resolution, wSeq, wDim, steps). **Hard gate: beam-1 must reproduce the current pipeline byte-identically** (it is the same greedy argmax, restructured). **Design opportunity from the 2.5 baseline (`docs/perf_p3_baseline.md`): "decode once, query many."** P3 currently re-runs full Pass-0 per status-bar query (≈99% of a 33–215 ms median / up-to-7 s tail cost); a per-score lattice computed once and queried per tick would make P3 dramatically FASTER post-decoder while simultaneously resolving the D-P4/D-BRIDGE cold-context contract (the per-tick path reads the decoded path state). Stage 3 design must evaluate this — it converts the decoder from a cost into the P3 performance fix | Part 1 rec. 1; 2.5 baseline | 0/353 corpus diff, all snapshots, BIR unchanged |
-| 3.2 | Widen beam / exact DP behind the quality-level setting (ARCHITECTURE.md §2.14: level↔beam width). A/B vs beam-1 on both presets + DCML cross-corpus; **expected wins: Δ=+7a (bwv102.7, bwv261) primarily — the "C2/bwv320-class rcb near-tie" row in decoder_design.md §11 cites a DEAD example (bwv320 m27 = the Gate-R-fixed Δ=+7b instance, same tick; reconciled 2026-06-12); that class has no known live instance, so do not promise it.** Δ=+7b trio = must-not-break | Part 1; 2026-06-12 reconciliation | per-case table; no hard-stop regressions at level 0 |
+| 3.2 | ⚠ **THESIS FALSIFIED (3.2 design, 2026-06-13, Cowork-verified against the independent June-9 redesign_plan numbers): a wider beam does NOT fix Δ=+7a.** The transient micro-region is the HIGHEST-scoring node (locally correct — DCML root absent from its tones); the continued-root wrong path is the genuine global optimum (greedy 5.775 > correct 5.600 on bwv102.7; gap = rcb 0.40 − margin 0.225), so a global decode finds the same path greedy does. Re-ranking can't fix it — only re-weighting (Stage-5 rcb reweight + forward-completion edge) or joint segmentation can. Δ=+7a REMOVED from the 3.2 win column → Stage 5. decoder_design §11's "low-scoring transient" premise was wrong (Cowork ratification miss). **Strategic consequence under review: beam-widening's marquee justification is gone; gate-folding + edge-reweighting are beam-1 operations — see handoff.** Original (now void) text: ~~Widen beam… expected wins Δ=+7a (bwv102.7, bwv261) — the "C2/bwv320-class rcb near-tie" row in decoder_design.md §11 cites a DEAD example (bwv320 m27 = the Gate-R-fixed Δ=+7b instance, same tick; reconciled 2026-06-12); that class has no known live instance, so do not promise it.** Δ=+7b trio = must-not-break | Part 1; 2026-06-12 reconciliation | per-case table; no hard-stop regressions at level 0 |
 | 3.3 | Migrate oracle temporal signals (resolutionBonus + 4 inversion bonuses, chordanalyzer.h:329 debt) into transition scores; **revisit Gate R's `basisDep ≤ 0` proxy in the same change** (documented coupling) | Part 2 Q2.2; audit F1/F6 | Stage-1 pinning tests green or consciously re-baselined |
 | 3.4 | Retire gates A–L one at a time: a gate is removed only when the decoder reproduces its pinned fixes (Stage 1.1 tests are the proof obligations). Gates J and R expected to survive longest (structural, healthy). **Stage-1a obligations:** the post-bonus quality-guard winner scan is first-wins on exact ties (ordering sensitivity), and the diff-root append never appends sub-threshold candidates — the decoder must either reproduce or consciously re-decide both (`cc_stage1a_report.md` F2/F5) | Part 1; audit F7 | per-gate differential report |
 | 3.4b | Remove dead Gates B/C/D (provably unreachable — stage1b F1) as part of the gate-retirement work, NOT before (their removal is byte-identical but belongs to the deliberate per-gate retirement audit) | stage1b F1 | byte-identical removal commit |

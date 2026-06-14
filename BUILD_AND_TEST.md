@@ -174,13 +174,15 @@ cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/j
 fingerprints don't match the manifest (the old shared-`tools/corpus` contamination is
 now structurally impossible and loudly detected). Gate on **case identity** (not the
 bare integer):
-- **Baroque 13** = `{bwv102.7@17520, bwv14.5@8160, bwv17.7@46080, bwv174.5@6240,
-  bwv245.17@4800, bwv245.40@51360, bwv261@33840, bwv269@20640, bwv301@960, bwv381@4800,
-  bwv422@23040, bwv432@5520, bwv45.7@20160}` (stem@tick).
-- **Jazz 7** = `{bwv244.15, bwv245.17, bwv245.40, bwv422, bwv432, bwv45.7, bwv74.8}`.
-(`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric; its
-three-way genuine split is Baroque 24/13, Jazz 35/7, of which the 13/7 BIR=false half
-is the characterise gate. Since Stage 2.2-ii it also takes `--corpus-dir` — see §4.)
+**Re-baselined 2026-06-13 (corrected GT parser): Baroque 57 / Jazz 23 / Default 57** — a
+strict superset of the old 13/7/14 (0 lost, oracle-verified). The authoritative `stem@tick`
+identity sets live in **CLAUDE.md** (gate section); see `cc_metric_rebaseline_report.md` +
+`cc_gate_rebaseline_verify_report.md` for provenance. ~95% of the added mass is legitimate
+ambiguity (symmetric-dim7 ≈53% Baroque + viio↔V7 share-tone).
+(`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric; its three-way
+genuine split was Baroque 24/13, Jazz 35/7 under the OLD parser — **NOT yet re-measured under
+the corrected parser; treat as stale/pending**. Since Stage 2.2-ii it also takes
+`--corpus-dir` — see §4.)
 
 **Threshold policy**: gate thresholds are calibrated against the Baroque corpus and
 must not be adjusted to accommodate other styles. If a gate causes BIR=false
@@ -289,15 +291,17 @@ against the per-preset dir and record the new figures.
 `corpus_manifest.json` (via `characterise_bir_false.validate_corpus_dir`) before
 measuring — closing the former hardcoded-flat-`tools/corpus` music21 read. The
 "Three-way music21_dcml_agree genuine errors" split is the headline BIR=true/BIR=false
-pair (Baroque 24/13, Jazz 35/7; the 13/7 half is what `characterise_bir_false.py`
-independently reproduces). `--ours-dir` is kept as a deprecated, unvalidated alias.
+pair (was Baroque 24/13, Jazz 35/7 under the OLD parser — **stale/pending re-measurement
+under the corrected parser**; the BIR=false half is what `characterise_bir_false.py`
+independently reproduces, now **57/23**, Default 57). `--ours-dir` is kept as a deprecated,
+unvalidated alias.
 
 ```
 # per-preset (validates manifest):
-python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque   # 24/13
-python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz      # 35/7
+python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/baroque   # OLD 24/13 — re-measure under corrected parser
+python tools/analyze_inversion_errors.py --corpus-dir tools/corpus/jazz      # OLD 35/7 — re-measure under corrected parser
 # no-arg default is now the validated tools/corpus/baroque (Stage 2.3 Rider 1):
-python tools/analyze_inversion_errors.py                                     # == --corpus-dir tools/corpus/baroque → 24/13
+python tools/analyze_inversion_errors.py                                     # == --corpus-dir tools/corpus/baroque
 ```
 
 Run after any change that could affect chord identification quality. If the numbers

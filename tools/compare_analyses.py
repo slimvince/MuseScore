@@ -467,8 +467,14 @@ def _dcml_time_spans(ours_regions: list[Region],
     tpb = _infer_ticks_per_beat(ours_regions)
     measure_starts = _build_measure_anchors(ours_regions, tpb)
     piece_end = max(r.end_tick for r in ours_regions) if ours_regions else 0
+    # Prefer the exact absolute tick the TSV parser derived from the
+    # `quarterbeats` column (audit P0/L4.1) — it is pickup-aware and needs no
+    # measure-anchor reconstruction.  Fall back to the measure-anchor rebuild
+    # for sources without abs_tick (the rntxt / When-in-Rome path, which has no
+    # absolute-quarter column).
     starts: list[Optional[int]] = [
-        _dcml_tick_for(dr.measure_number, dr.beat, measure_starts, tpb)
+        dr.abs_tick if getattr(dr, 'abs_tick', None) is not None
+        else _dcml_tick_for(dr.measure_number, dr.beat, measure_starts, tpb)
         for dr in dcml_regions
     ]
     spans: list[tuple[int, int]] = []

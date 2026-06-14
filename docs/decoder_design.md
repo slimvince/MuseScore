@@ -255,6 +255,11 @@ alternatives at every node are unchanged.
   can leave `results[]` unsorted (1b-F6). Beam-1 must reproduce these as-is, not
   "fix" them (fixing is a conscious 3.4 decision, §7).
 
+> **Gate re-baselined 2026-06-13 (corrected GT parser):** the BIR identity sets below
+> (13/7/14) are the Stage-3 historical values; the gate is now **Baroque 57 / Jazz 23 /
+> Default 57** (strict superset, see CLAUDE.md). Any NEW byte-identity gate must hold against
+> 57/23/57, not 13/7/14. The `24/13` `analyze_inversion_errors` figure is stale/pending.
+
 **Verification plan (the Stage-3.1 gate).** Identical to every prior byte-identity gate:
 1. **0/353 corpus A/B** on **Baroque + Jazz + Default** (`run_bach_preset.py` per-preset
    dirs + manifest; `.ours.json` diff must be empty on all three).
@@ -536,7 +541,7 @@ the `prefs` values the oracle consumes.
 
 **Evaluation column.** The user-relevant configuration is **`--preset Default`** (struct
 chord defaults + the app's bespoke mode priors): BIR=false 14 = Baroque-13 ∪ {bwv187.7}
-(D-PASS0 V4). The Baroque gate stays the primary calibration gate per CLAUDE.md; Jazz is
+(D-PASS0 V4; **re-baselined 2026-06-13 → Default 57, see CLAUDE.md**). The Baroque gate stays the primary calibration gate per CLAUDE.md; Jazz is
 the non-Baroque hard-stop. Gate thresholds stay Baroque/Jazz-calibrated — the decoder
 does not re-tune them (that is Stage 5).
 
@@ -580,8 +585,8 @@ does not re-tune them (that is Stage 5).
 
 | Quantity | Beam-1 (Stage 3.1) | Wider beam (Stage 3.2) |
 |---|---|---|
-| Default BIR=false (14) | **14 (unchanged, byte-identical)** | ≤ 14 expected; targets Δ=+7a-class — *measure, do not promise a number* |
-| Baroque 13 / Jazz 7 identity sets | **unchanged** | hard-stop: no identity-set regression on any config |
+| Default BIR=false (Stage-3: 14) | **unchanged, byte-identical** | re-baselined 2026-06-13 → **57**; targets Δ=+7a-class — *measure, do not promise a number* |
+| Gate identity sets (Stage-3: Baroque 13 / Jazz 7 / Default 14) | **unchanged** | re-baselined 2026-06-13 → **57 / 23 / 57** (CLAUDE.md); hard-stop: no identity-set regression on any config |
 | Pipeline snapshots | **11/11 zero diffs** | refresh only verified-correct output changes |
 | Gates fired | **identical** | progressively retired (§7) with per-gate differential |
 

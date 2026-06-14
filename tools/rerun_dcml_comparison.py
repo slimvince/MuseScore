@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from collections import OrderedDict
 from pathlib import Path
@@ -32,6 +33,67 @@ import dcml_parser as dcml
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+# ── P5 reporting hygiene (audit L1.1/L1.2/L6.1) ─────────────────────────────
+# The default cross-corpus root was a stale, pre-Stage-1/2/3 dir (live_20260515,
+# ~5pp low); a no-arg invocation silently re-aggregated it (the accidental
+# stale-measurement trap).  Default now points at the HEAD-stamped verify dir,
+# and `_check_corpus_freshness` reads each corpus's recorded git_hash and warns
+# LOUDLY (or hard-fails under --strict-hash) when it does not match HEAD, so a
+# reader can never mistake a 24-day-old number for a current one.
+
+def _git_head_short() -> str | None:
+    try:
+        out = subprocess.run(["git", "rev-parse", "--short=10", "HEAD"],
+                             cwd=str(REPO_ROOT), capture_output=True,
+                             text=True, timeout=10)
+        return out.stdout.strip() or None
+    except Exception:
+        return None
+
+
+def _check_corpus_freshness(root: Path, strict: bool) -> None:
+    """Read the git_hash stamp of each corpus report under <root>/reports/ and
+    compare to HEAD.  Prints a prominent warning on any mismatch; raises
+    SystemExit under --strict-hash.  This closes the audit L1.2 trap (a no-arg
+    re-aggregation of a stale corpus reads as a current measurement)."""
+    head = _git_head_short()
+    reports_dir = root / "reports"
+    stamps: dict[str, str] = {}
+    if reports_dir.is_dir():
+        for jf in sorted(reports_dir.glob("*.json")):
+            try:
+                stamps[jf.name] = json.loads(jf.read_text(encoding="utf-8")).get("git_hash", "?")
+            except Exception:
+                stamps[jf.name] = "?"
+    distinct = sorted(set(stamps.values()))
+    if head is None:
+        print("  [freshness] WARNING: could not resolve git HEAD — corpus "
+              "git_hash not checked.", file=sys.stderr)
+        return
+    if not stamps:
+        print(f"  [freshness] WARNING: no corpus report stamps found under "
+              f"{reports_dir} — cannot verify the .ours.json are at HEAD.",
+              file=sys.stderr)
+        return
+    mismatched = [h for h in distinct if h != head and h != "?"]
+    if mismatched or "?" in distinct:
+        banner = (
+            "  " + "=" * 64 + "\n"
+            "  == STALE-MEASUREMENT WARNING (audit L1.2)\n"
+            f"  ==   HEAD            : {head}\n"
+            f"  ==   corpus git_hash : {', '.join(distinct)}\n"
+            "  ==   The .ours.json under this root were NOT produced at HEAD.\n"
+            "  ==   The precision numbers below may be stale -- regenerate the\n"
+            "  ==   corpus at HEAD, or pass --allow-stale-hash to suppress this.\n"
+            "  " + "=" * 64
+        )
+        print(banner, file=sys.stderr)
+        if strict:
+            raise SystemExit("  [freshness] --strict-hash: corpus git_hash != HEAD; aborting.")
+    else:
+        print(f"  [freshness] OK: corpus git_hash == HEAD ({head}).")
 
 
 # Per-corpus configuration for the 10-corpus cross-corpus run.
@@ -342,7 +404,7 @@ def run_bach(corpus_dir: Path, dcml_dir: Path | None) -> dict | None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--bach-corpus",
-                    default="tools/reports/live_20260515_bach/corpus",
+                    default="tools/reports/live_head_verify/corpus",
                     help="Bach chorales corpus directory containing paired"
                          " .ours.json + .music21.json files")
     ap.add_argument("--bach-dcml",
@@ -350,14 +412,30 @@ def main() -> None:
                     help="Optional directory of DCML rntxt files for the"
                          " three-way Bach comparison")
     ap.add_argument("--cross-corpus-root",
-                    default="tools/reports/live_20260515",
+                    default="tools/reports/live_head_verify",
                     help="Root directory of cross-corpus .ours.json output"
-                         " subdirectories")
+                         " subdirectories (default: the HEAD-stamped verify dir,"
+                         " not the old live_20260515 — audit L1.2).")
+    ap.add_argument("--allow-stale-hash", action="store_true",
+                    help="Suppress the stale-measurement warning when the corpus"
+                         " git_hash differs from HEAD (the numbers may be stale).")
+    ap.add_argument("--strict-hash", action="store_true",
+                    help="Hard-fail (exit nonzero) if the corpus git_hash differs"
+                         " from HEAD, for CI/automated measurement.")
     args = ap.parse_args()
 
     bach_corpus = (REPO_ROOT / args.bach_corpus).resolve()
     cross_root = (REPO_ROOT / args.cross_corpus_root).resolve()
     bach_dcml = (REPO_ROOT / args.bach_dcml).resolve() if args.bach_dcml else None
+
+    # P5: surface corpus freshness before any number is printed.
+    if not args.allow_stale_hash:
+        _check_corpus_freshness(cross_root, strict=args.strict_hash)
+
+    print("\n[coverage] DCML-anchored denominators below are the FULL annotation"
+          "\n           set (every harmonized onset), NOT the downbeat-only subset"
+          "\n           the pre-P0 parser scored -- post-fix GT volume is ~2.4x the"
+          "\n           old count (audit P0/L6.1).")
 
     bach = run_bach(bach_corpus, bach_dcml)
     cross = run_cross_corpus(cross_root)

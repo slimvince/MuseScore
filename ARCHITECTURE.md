@@ -697,6 +697,16 @@ and it shares 5 of the canonical Jazz-7 (`bwv245.17/245.40/422/432/45.7`), while
 `bwv244.15/74.8` are preset-specific. So the live-product configuration is closest to Baroque
 (a 13-of-13 superset, +1), not to batch "Standard".
 
+> **Re-baselined 2026-06-13 (corrected GT parser).** The figures in this paragraph are the
+> pre-re-baseline Stage-2.4 values. The corrected `tools/dcml_parser.py` (applied-`/X` +
+> minor-key leading-tone rooting) moves the gate to **Baroque 57 / Jazz 23 / Default 57** — a
+> **strict superset** of the old 13/7/14 (0 lost, 100% oracle-correct roots; ~95% of the
+> additions are legitimate ambiguity). The `30/14` `analyze_inversion_errors` three-way figure
+> is **stale pending re-measurement**. The qualitative finding is unchanged: the live config is
+> closest to Baroque (Default-57 = Baroque-57 with `{bwv227.7@18120, bwv60.5@30960}` ↔
+> `{bwv187.7@19200, bwv227.7@18000}`), the preset chord-scoring system is measurement-only. See
+> the CLAUDE.md gate section for the authoritative identity sets.
+
 **Decision (Half A).** Record this as a **product-level finding**, not a code change. The
 chord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do
 **not** silently flip the live product onto preset chordPrefs — whether the product should expose

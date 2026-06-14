@@ -18,8 +18,16 @@ Usage:
 import csv
 import os
 import re
+import sys
 from dataclasses import dataclass, field
+from fractions import Fraction
 from typing import List, Optional
+
+
+# Ticks per quarter note.  batch_analyze defines region durations as ticks/480,
+# so the GT absolute tick from a quarter-position is quarterbeats * 480 (audit
+# L4.1: exact, pickup-aware, verified tick-for-tick on 18 pieces / 3 corpora).
+TICKS_PER_QUARTER = 480
 
 
 @dataclass
@@ -31,6 +39,13 @@ class DcmlRegion:
     chord_symbol: str       # raw DCML chord string (e.g. "V65")
     roman_numeral: str      # extracted numeral (e.g. "V")
     root_pc: Optional[int]  # computed from numeral + local key, or None
+    # Absolute tick of the annotation onset, derived from the DCML
+    # `quarterbeats` column (round(Fraction(quarterbeats) * 480)).  Present on
+    # the TSV path (parse_abc_harmonies_file); None on the rntxt path (When in
+    # Rome has no absolute-quarter column — it stays on measure-anchored
+    # reconstruction).  When present, the comparator aligns by this exact tick
+    # instead of rebuilding ticks from measure_number+beat (audit P0/L4.1).
+    abs_tick: Optional[int] = None
 
 
 def parse_dcml_file(path: str) -> List[DcmlRegion]:
@@ -121,8 +136,25 @@ def _compute_root_pc(numeral: str, key: str) -> Optional[int]:
         if not degree_str:
             return None
 
-        degree_idx = _DEGREE_MAP[degree_str.group(1)]
+        degree_token = degree_str.group(1)
+        degree_idx = _DEGREE_MAP[degree_token]
         root_pc = (tonic_pc + semitones[degree_idx]) % 12
+
+        # Minor-key raised submediant / leading tone (audit P2).  DCML and
+        # music21 root a lowercase vi / vii in a minor key a semitone ABOVE the
+        # natural-minor scale degree: vi -> raised submediant (+9 over tonic),
+        # vii -> leading tone (+11), matching harmonic-minor practice.  An
+        # uppercase VI / VII is the natural submediant (bVI, +8) / subtonic
+        # (bVII, +10).  Case is the disambiguator (verified against music21
+        # roman.RomanNumeral, 0/CC oracle).  Degrees I..V are unaffected by case
+        # (v and V both root at +7).  The explicit b/# prefix is then applied on
+        # top of the cased value (so #vio -> +10, #viio -> +0, matching music21).
+        if is_minor and degree_idx in (5, 6):
+            # n has had its b/# prefix stripped above; check the degree's case
+            # in the original (un-uppercased) token.
+            if n[:len(degree_token)].islower():
+                root_pc = (root_pc + 1) % 12
+
         if prefix == 'b':
             root_pc = (root_pc - 1) % 12
         elif prefix == '#':
@@ -133,37 +165,90 @@ def _compute_root_pc(numeral: str, key: str) -> Optional[int]:
         return None
 
 
-def parse_abc_harmonies_file(path: str) -> List[DcmlRegion]:
+def _parse_fraction(value: str, default: Fraction = Fraction(0)) -> Fraction:
+    """Parse a DCML numeric cell as an exact Fraction.
+
+    DCML TSV numeric columns (mn_onset, quarterbeats, duration_qb, …) hold
+    *whole-note-fraction strings* like "1/2", "3/8", "7/16", "9/2", "0".
+    ``float("1/2")`` raises ValueError — the bug (audit P0) that silently
+    dropped 58.9% of all annotations via a bare ``except: continue``.
+    ``Fraction("1/2")`` parses them exactly; ``Fraction("0")`` and integer
+    strings parse too.  Empty cells return the default.
     """
-    Parse an ABC Beethoven corpus .harmonies.tsv file.
+    s = (value or '').strip()
+    if not s:
+        return default
+    return Fraction(s)
 
-    The ABC TSV uses column 'mn' (measure number) and 'mn_onset' (quarter-beat
-    offset within the measure, 0-indexed) rather than the 'beat' column used by
-    some other DCML variants.  beat = mn_onset + 1.0 (1-indexed quarter beats).
 
-    The 'numeral' column contains the Roman numeral (e.g. 'I', 'V', 'IV').
-    The 'localkey' column contains the local key (e.g. 'I' = same as global, or
-    'vi' = relative minor).  'globalkey' gives the piece key (e.g. 'F', 'g').
+def parse_abc_harmonies_file(
+        path: str,
+        abs_onset_col: str = 'quarterbeats_all_endings',
+        skipped: Optional[list] = None,
+) -> List[DcmlRegion]:
+    """
+    Parse an ABC / DCML .harmonies.tsv file (used by ALL TSV corpora — corelli,
+    mozart, chopin, beethoven, grieg, schumann, dvorak, tchaikovsky, cpe_bach,
+    bach_suites).
 
-    DCML localkey is relative when it looks like a Roman numeral (e.g. 'I', 'IV').
-    We resolve it to an absolute key before computing root_pc.
+    The TSV uses column 'mn' (measure number) and 'mn_onset' (quarter-beat
+    offset within the measure, 0-indexed) — both stored as *whole-note-fraction
+    strings* (e.g. "1/4").  ``beat = float(mn_onset) + 1.0`` (1-indexed quarter
+    beats).  Per audit P0, these are parsed with :class:`fractions.Fraction`,
+    NOT ``float`` — ``float("1/4")`` raised ``ValueError`` and a bare
+    ``except: continue`` discarded every off-downbeat annotation (58.9% of GT).
+
+    Absolute alignment (audit L4.1): each region carries ``abs_tick =
+    round(Fraction(<abs_onset_col>) * 480)`` so the comparator aligns by exact
+    tick instead of the measure-anchor reconstruction (which only ever saw the
+    surviving downbeats and ballooned each span to a whole measure).
+
+    ``abs_onset_col`` defaults to ``'quarterbeats_all_endings'`` — the absolute
+    quarter position counting EVERY written ending once, which matches our
+    repeat-unexpanded reading (no ``expandRepeats`` anywhere in the pipeline).
+    This resolves audit P4 universally and as a real fix, not a quarantine: on
+    repeat-bearing movements plain ``quarterbeats`` runs ~bars ahead (it elides
+    first-ending material), and using it made Beethoven align ~12pp worse; the
+    all-endings column recovers every one of the 29 repeat-bearing Beethoven
+    movements (and chopin/mozart/schumann/grieg/bach_suites repeats) while being
+    BYTE-IDENTICAL on movements without repeats (where the two columns are
+    equal).  If the chosen column is empty for a row, the other quarterbeats
+    column is used as a fallback so a sparsely-populated column never silently
+    drops abs_tick.
+
+    The 'numeral' column contains the Roman numeral (e.g. 'I', 'V', 'IV'); the
+    'localkey' column contains the local key (absolute, or a Roman numeral
+    relative to globalkey, resolved before computing root_pc).
+
+    ``skipped``: if a list is supplied, each unparseable/empty-numeral row that
+    is NOT a deliberate rest is appended as ``(row_index, reason)`` so no row is
+    silently discarded (audit P0: narrow the bare except).  Rows that are
+    legitimate rests ('.', '~', '@none', empty numeral) are NOT recorded as
+    skips — they carry no harmony to score.
     """
     regions = []
+    local_skips: list = []
+    other_col = ('quarterbeats_all_endings'
+                 if abs_onset_col == 'quarterbeats' else 'quarterbeats')
     with open(path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
+        for idx, row in enumerate(reader):
+            numeral = row.get('numeral', '')
+            if not numeral or numeral in ('.', '~', '@none'):
+                continue  # deliberate rest / unannotated — not a drop
             try:
-                mn       = int(row.get('mn', row.get('mc', 0)))
-                mn_onset = float(row.get('mn_onset', 0.0))
-                beat     = mn_onset + 1.0  # convert to 1-indexed beat
+                mn = int(row.get('mn', row.get('mc', 0)))
+                mn_onset = _parse_fraction(row.get('mn_onset', '0'))
+                beat = float(mn_onset) + 1.0  # 1-indexed quarter beat
                 globalkey = row.get('globalkey', '')
-                localkey  = row.get('localkey', '')
+                localkey = row.get('localkey', '')
                 relativeroot = row.get('relativeroot', '')
-                chord     = row.get('chord', '')
-                numeral   = row.get('numeral', '')
+                chord = row.get('chord', '')
 
-                if not numeral or numeral in ('.', '~', '@none'):
-                    continue
+                qb_raw = row.get(abs_onset_col, '') or row.get(other_col, '')
+                abs_tick: Optional[int] = None
+                if (qb_raw or '').strip():
+                    abs_tick = round(_parse_fraction(qb_raw) * TICKS_PER_QUARTER)
 
                 effective_key = _resolve_effective_dcml_key(localkey, globalkey, relativeroot)
                 regions.append(DcmlRegion(
@@ -174,9 +259,22 @@ def parse_abc_harmonies_file(path: str) -> List[DcmlRegion]:
                     chord_symbol=chord,
                     roman_numeral=numeral,
                     root_pc=_compute_root_pc(numeral, effective_key),
+                    abs_tick=abs_tick,
                 ))
-            except (ValueError, KeyError):
+            except (ValueError, KeyError, ZeroDivisionError) as exc:
+                # A genuinely malformed harmony row.  Record it — do NOT let it
+                # vanish into a bare `continue` (the P0 failure mode).
+                local_skips.append((idx, f"{type(exc).__name__}: {exc}"))
                 continue
+
+    if skipped is not None:
+        skipped.extend(local_skips)
+    elif local_skips:
+        # No collector supplied — surface the count so a silent drop can't recur.
+        print(f"[dcml_parser] {os.path.basename(path)}: skipped "
+              f"{len(local_skips)} malformed harmony row(s): "
+              f"{local_skips[:3]}{' …' if len(local_skips) > 3 else ''}",
+              file=sys.stderr)
 
     regions.sort(key=lambda r: (r.measure_number, r.beat))
     return regions
@@ -221,8 +319,17 @@ def _resolve_dcml_key(localkey: str, globalkey: str) -> str:
         if not degree_match:
             return globalkey
 
-        degree_idx = _DEGREE_MAP[degree_match.group(1)]
+        degree_token = degree_match.group(1)
+        degree_idx = _DEGREE_MAP[degree_token]
         local_tonic_pc = (global_tonic + semitones[degree_idx]) % 12
+        # Minor-key raised submediant / leading tone (audit P2, tonicized path):
+        # a lowercase vi / vii tonicization target in a minor global key roots a
+        # semitone above the natural-minor degree (vi->+9, vii->+11), matching
+        # _compute_root_pc and music21.  Without this, an applied chord like
+        # 'V7/vi' or 'V/vii' in a minor key tonicizes a key a semitone flat.
+        if global_minor and degree_idx in (5, 6):
+            if n[:len(degree_token)].islower():
+                local_tonic_pc = (local_tonic_pc + 1) % 12
         if prefix == 'b':
             local_tonic_pc = (local_tonic_pc - 1) % 12
         elif prefix == '#':
@@ -312,6 +419,33 @@ _NUMERAL_TOKEN = re.compile(
 # Tokens to silently skip
 _SKIP_TOKENS = {'||', ':||', '|', '|:', '||:', 'Cad.', 'Cad'}
 
+# A tonicization target is a bare Roman-numeral degree (optionally accidental).
+# Used to disambiguate the OVERLOADED slash in WiR rntxt: a '/' precedes a
+# tonicization ('V/vi') but ALSO appears inside figured-bass inversions
+# ('V6/5', '4/3') and the half-diminished sigil ('vii/o7').  Only a trailing
+# slash-segment that is a pure degree token is a tonicization.
+_RNTXT_TARGET_RE = re.compile(
+    r'^[#b]?(?:VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)$')
+
+
+def _split_rntxt_applied(numeral: str) -> tuple[str, str]:
+    """Split a WiR rntxt numeral into (primary_chord, tonicization_target).
+
+    The trailing '/'-segment is treated as a tonicization target ONLY when it is
+    a bare Roman-numeral degree; otherwise the slash belongs to a figured-bass
+    inversion ('V6/5' -> ('V6/5', '')) or the half-dim sigil ('vii/o7' ->
+    ('vii/o7', '')).  'V/vi' -> ('V', 'vi'); 'V6/5/iv' -> ('V6/5', 'iv');
+    'vii/o7/V' -> ('vii/o7', 'V').  Multi-level tonicization ('V/V/V') resolves
+    only the last level ('V/V', 'V'), matching the TSV single-level relativeroot
+    behavior.
+    """
+    if '/' not in numeral:
+        return numeral, ''
+    head, _, tail = numeral.rpartition('/')
+    if _RNTXT_TARGET_RE.match(tail):
+        return head, tail
+    return numeral, ''
+
 
 def parse_rntxt_file(path: str) -> List[DcmlRegion]:
     """
@@ -382,9 +516,15 @@ def parse_rntxt_file(path: str) -> List[DcmlRegion]:
                 continue
 
         for beat, (key, numeral) in sorted(beat_chords.items()):
-            # For secondary dominants (V/V, vii/o7/V), use the primary numeral only.
-            primary = numeral.split('/')[0] if '/' in numeral else numeral
-            root_pc = _compute_root_pc(primary, key)
+            # Applied / secondary chords (V/V, viio7/V, V65/IV): resolve the
+            # tonicized target to its absolute key BEFORE rooting the primary
+            # numeral, exactly as the TSV path does via relativeroot (audit P1).
+            # The previous code rooted the primary in the LOCAL key — e.g.
+            # 'V/vi' in B-flat was rooted F instead of the true D (877/880
+            # applied rntxt rows mis-rooted, 0.3% oracle agreement).
+            primary, target = _split_rntxt_applied(numeral)
+            effective_key = _resolve_dcml_key(target, key) if target else key
+            root_pc = _compute_root_pc(primary, effective_key)
             regions.append(DcmlRegion(
                 measure_number=measure_number,
                 beat=beat,

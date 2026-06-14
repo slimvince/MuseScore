@@ -35,6 +35,33 @@ Mandatory reads at the start of every session:
 
 CC's report references task numbers, design decisions, and deviations that only make sense against the original instruction. Evaluating the report without re-reading the instruction means accepting CC's framing uncritically — which is exactly the failure mode we guard against.
 
+**THE WORKING METHOD (canonized 2026-06-12, user mandate — these principles produced
+Stages 0–3.1b without a single unplanned regression; they are not optional):**
+
+A. **Pin before you change.** No layer/gate/method is built upon until its current
+   behavior is pinned (tests) and its instruments verified (metrics, corpora, source
+   identity). Instruments first, measurements second, changes third.
+B. **Byte-identity bridges for every restructure.** A refactor earns zero improvements;
+   its gate is 0-diff across corpora (all relevant configs), snapshots, and suites,
+   with FP near-tie canaries unmodified. Golden refreshes as a reflex are FORBIDDEN —
+   a diff is a stop, not a chore.
+C. **Behavior changes are deliberate, measured, ratified.** Never shipped as a side
+   effect (the 3.1b lesson). The answer-delta is measured BEFORE the commit is
+   proposed; ratification decides on data.
+D. **Never guess — investigate or state the unknown** ([probe]/[code] tags, explicit
+   Unknowns sections). Binds CC and Cowork equally. Read the call site, not just the
+   qualifier (the completeTriad lesson).
+E. **Stop conditions are designed in advance and honored.** The system's best moments
+   were stops (snapshots 0/11; DCML-worse; tracked-junk deviation). A tripped stop is
+   the process succeeding.
+F. **Falsified decisions get re-decided, and their evidence gets committed** (Q1 →
+   `p3_granularity_ab_3_1b.md`; the cap archaeology; the M3 reconstruction). Dead ends
+   are documented so they are never re-walked.
+G. **One change-class per commit, explicit staging, every commit independently
+   verified** (`git show --stat` + host-side reads against the claims).
+H. **Errors are owned by name** — Cowork's included (the snapshot-harness premise, the
+   whole-score prior, the relay gaps). Ownership is what keeps the ledger honest.
+
 **STANDING RULE — CC trust model (made permanent 2026-06-10, user mandate):**
 1. **Never fully trust CC.** CC can hallucinate, guess, and present guesses as findings.
    Every consequential CC claim gets independent verification before acceptance:
@@ -59,6 +86,16 @@ CC's report references task numbers, design decisions, and deviations that only 
    diagnose context banner after 2.3). Instruction files have a 100% delivery record.
    "Approved with additions" means: write the additions as an addendum instruction
    file, then approve.
+   **"HELD" is now unambiguous (2 slips: 3.3, metric-L0L1): "held for Cowork" =
+   `git add` is OK, `git commit` is NOT, until a ratification/approval file says so.
+   A pre-authorized ship that may commit-on-green-proof will say exactly that.**
+5. **Cowork reads every CC report IN FULL before ratifying or approving its commits.**
+   Verification-against-primary-sources does not substitute for the report's Findings/
+   Unknowns/caveat sections — CC under-weights its own findings in chat summaries
+   (precedent: the 326/353 fact, the preset headline), and an unread caveat went
+   unanswered at the Stage-3 design ratification (the bwv320 dual-classification
+   question, caught only in the 2026-06-12 retrospective sweep). Chat summaries are
+   navigation aids, not the artifact.
 
 ---
 
@@ -296,13 +333,632 @@ before any code direction is imposed.
   (structural); leak fixed anyway (live under Jazz). OPEN: Python-count reconciliation
   (68 → "67+2"), rides with 2.5.
 
-- **Next CC task — Stage 2.5 (instruction ready):** `cc_instruction_stage2_5_p3_profile.md`
-  — P3 per-query latency baseline (median/p95/max across size classes, scaling shape,
-  P4-fallback counts, coarse attribution if egregious) → committed
-  `docs/perf_p3_baseline.md` incl. an explicit Stage-3 beam-1 budget recommendation.
-  Riders: the Python-count reconciliation (evidence required; lost pinned tests = bug)
-  + bookkeeping docs flush. Measurement-only. **Closes Stage 2 → Stage 3 (decoder)
-  design begins.**
+- **✅ Stage 2.5 COMPLETE — P1 `3aa9db7676` (harness as DISABLED_ test in
+  pipeline_snapshot_tests + `docs/perf_p3_baseline.md`) / P2 `c37b98321b`.** Numbers:
+  P3 per-query median 33–215 ms, p95 up to 2.75 s, max 7 s (Mozart-scale); Pass-0 ≈
+  99% of cost; P4 fallback 0/2231 (closes the 2.4 §1.3 unknown for loadable scores);
+  budget: beam-1 p95 ≤ observed ×1.10. Python-count reconciled: 70 total = 67 metric
+  + 3 snapshot-source tests; no bug, reporting-scope artifact (quote the two-file
+  total henceforth). **KEY STAGE-3 INPUT: "decode once, query many" — the lattice
+  makes P3 a lookup, fixing its tail AND the D-P4/D-BRIDGE cold-context contracts
+  (roadmap 3.1 updated).**
+
+- **🏁 STAGE 2 COMPLETE (2026-06-12).** All items: 2.1 Phase 4c move · 2.2a corpus
+  hardening · 2.2-i A/B dossier · 2.2-ii package · corpus hygiene (audit C1–C4) ·
+  2.3 diagnose production view + addendum · 2.3b queued · 2.4 divergence decisions +
+  V4 user-config measurement · 2.5 perf baseline. One pipeline, one truth: gates
+  pinned to identified bytes, metrics tested, user config measured
+  (Default-14 = Baroque-13 ∪ {bwv187.7}), divergences decided in ARCHITECTURE.md,
+  diagnostics trustworthy, perf envelope stated.
+
+- **Stage 3 design draft REVIEWED (2026-06-12).** Verdict: ratified subject to ONE
+  mandatory correction — the draft's `completeTriadInversionBonus` "region-local,
+  pull from 3.3 bundle" claim is WRONG (Cowork verified `chordanalyzer.cpp:1613–1622`:
+  the call-site gate is `bassIsStepwiseFromPrevious || bassIsStepwiseToNext` — the
+  audit's "temporal" classification stands; CC read the qualifier and missed the
+  call-site guard). All seven §13 Open Questions decided per recommendations
+  (Q3 notably: identity-mutating gates retire BEFORE beam widens past them; Q7:
+  decode-once = 3.1b after the byte-identity gate). Ratification addendum:
+  `cc_instruction_stage3_design_ratification.md` (incl. a §correction-4 sweep:
+  re-verify the other four signals' call-site guards for the same error class).
+
+- **✅ Stage 3 design RATIFIED + COMMITTED `e2bdef7e13`** (correction applied:
+  completeTriad = edge-gated emission, all FIVE signals migrate at 3.3; sweep clean —
+  no second qualifier-vs-guard error; Q1–Q7 decided; hash-stamping deviation accepted).
+
+- **📋 Full-report retrospective sweep (2026-06-12, trust-model rule 5 backfill) —
+  doc-rider queue for the next docs-touching instruction:**
+  1. **The Baroque-13 identity set is pinned in NO committed doc** (only Jazz-7 is; the
+     full set with ticks exists only in gitignored cc_ reports — 2.2-ii §4:
+     bwv102.7@17520, bwv14.5@8160, bwv17.7@46080, bwv174.5@6240, bwv245.17@4800,
+     bwv245.40@51360, bwv261@33840, bwv269@20640, bwv301@960, bwv381@4800,
+     bwv422@23040, bwv432@5520, bwv45.7@20160). Commit it next to the Jazz set.
+  2. The music21 **freeze anchor** prose lives only in gitignored
+     `tools/corpus/README.md` (hygiene §3); replicate into committed REPRODUCIBILITY.md.
+  3. 2.1's proposed ARCHITECTURE.md file-map sentence (sectionanalyzer location +
+     Pass-0 injection contract) was never applied — verify and add.
+  4. Frozen iterNN diagnostics lost their flat `.ours.json` inputs in the hygiene
+     deletion (2.2a kept them partly FOR those scripts; the hygiene reader survey
+     omitted them). Fail-loud if re-run — acceptable; recorded, no action.
+  Parked: 2.1 §5.6 unused includes in trimmed helpers; Stage-1d NOT-PINNED WiR
+  discovery plumbing (partially compensated by the snapshot-sources manifest).
+
+- **✅ Stage 3.1 COMPLETE — `8e4bb4902d`** (7 files, +506/−28; report read in full by
+  Cowork per rule 5; commit verified). The beam-1 decoder owns the commit chain at all
+  three sites behind `decodeQualityLevel` (default FastBeam1). Byte-identity: 0/353 ×
+  3 configs + empty `git diff tools/corpus` (manifest fingerprints = second proof);
+  snapshots 11/11; composing 505; BIR sets exact ×3; perf within ×1.10; zero design
+  deviations. Key structural fact: the decoder computes no score — FP-sensitive
+  arithmetic untouched in `applyHarmonicFunction`.
+
+- **⚠ 3.1b STOPPED CORRECTLY by CC (2026-06-12), Q1 RE-DECIDED.** The whole-score cache
+  worked (warm ~0.0006 ms) but: (1) Cowork's instruction premise was wrong — the
+  snapshot harness flows through the orchestrator, so snapshots went 0/11 (CC did NOT
+  refresh — correct); (2) the answer-delta A/B FALSIFIED the design's whole-score
+  prior: 32–40% tick changes on contrapuntal scores, DCML 59/41 in the WINDOW path's
+  favor (Mozart 35/65 against whole-score). **This is the 2.2-i granularity finding
+  recurring** — fine windows are more per-tick DCML-accurate; coarse whole-score is
+  self-consistent. **Decision (Cowork): bounded-window cache (CC's recommendation);
+  whole-score SHELVED with evidence; P3↔P1 consistency PARKED as a product/Stage-5
+  question; D-P4/D-BRIDGE closure rolled back to the 2.4 contract; the A/B data
+  promoted to committed Stage-5 evidence.** Revision instruction:
+  `cc_instruction_stage3_1b_revision.md`.
+
+- **✅ Stage 3.1b COMPLETE — B1′ `947519b2b6` + B2 `4f1754c26c`** (both verified).
+  Bounded-window cache (memoized pure per-window section build; byte-identical by
+  construction: snapshots 11/11 no-refresh, always-on equality test, AnswerDelta=0);
+  warm re-click ~0.003 ms; pointer-reuse hazard closed pre-commit via
+  `Notation::setScore()` lifecycle flush (no per-lifetime Score id exists —
+  investigated; flush-before-install = no false-hit window). Whole-score variant
+  SHELVED with evidence (`docs/p3_granularity_ab_3_1b.md`, Stage-5 input);
+  Q1 re-decided; D-P4/D-BRIDGE rolled back to 2.4 contract (design §8 amendment).
+  Full record: `cc_stage3_1b_report.md` §1–§6 (whole-score measurement) + §R
+  (binding outcome) — read in full by Cowork.
+
+- **3.3 Task-1 STOP resolved (2026-06-12): Gate R = reconstructed-credit
+  (`fullBasisDep = cell.basisDep + cappedInv ≤ 0`).** CC's derivation proved the
+  ratified pcWeight mechanism text WRONG (old Gate R fires ⟺ `cappedInv==0`; Dim's
+  inversion credit includes a temporal gate no pure-vertical rule reproduces) —
+  mechanism superseded as falsified-by-derivation (Method F); the reconstructed-credit
+  form is the faithful execution of the ratified INTENT and closes Finding 6 fully
+  intra-layer. The basisIndep ≤1-ULP reassociation: primary approach accepted; ANY
+  A/B diff ⇒ switch to the pre-approved bit-identical fallback (expose `d`), no
+  case-by-case reconciliation. Decision file: `cc_instruction_stage3_3_gater_decision.md`.
+
+- **✅ Stage 3.3 COMPLETE — `548adb7b2e` (RATIFIED POST-HOC).** All five signals
+  migrated (oracle now genuinely vertical — audit Finding 1 CLEARED); Gate R =
+  reconstructed-credit (`fullBasisDep ≤ 0`, intra-layer — Finding 6 CLEARED); byte-
+  identity 0/353×3 + snapshots 11/11 + all suites + identity sets ×3 + canaries
+  unmodified; **re-pin ledger EMPTY** (defaulted cell flags — strongest outcome).
+  basisIndep ≤1-ULP primary shipped, fallback unneeded (A/B zero diffs).
+  ⚠ Process note: the commit was made BEFORE ratification despite "held" — content
+  fully verified and ratified post-hoc, but "held" means held (do not repeat).
+  Cleanup queued for 3.4: the retained 2-arg `gateRZeroesRootContinuity` test-compat
+  overload (semantics subtly non-production) dies when Gate R is absorbed into the
+  rcb edge.
+
+- **✅ Stage 3.4-i COMPLETE — Ship #1 `da1b440845` (B/C/D removed) + Ship #2
+  `a652dc1ba7` (Gate R → `rcbEdge()`, overload dropped); both 0/353×3 byte-identical.**
+  Dossier `cc_stage3_4i_dossier.md` read in full (rule 5). **Reframing facts: gate
+  retirement is BIR-free on Default (user config); ALL BIR movement is Jazz-only;
+  A/E/F/G-family/H run only under Baroque. 3.2 risk concentrates in Gate I (5 Jazz fixes
+  + Δ=+7b coupling).** Classes: C1 retire-now (E/F/K/Iter86) · C2 3.2-acceptance
+  (I/bias/L/H/Iter91) · C4 defer (A/G-family) · C5 keeper (J, BIR-blind, fires huge).
+  F4/F6/F8 re-decide inventory done (paper) — fixes carried by the owning gate's
+  retirement, never silent.
+
+- **✅ Stage 3.4-ii COMPLETE — ZERO gates retired (no commit; tree clean at `a652dc1ba7`).**
+  The non-chorale spot-check + byte-level proof gate FALSIFIED all four C1 "dead"
+  verdicts: K + Iter-86 change winners on non-chorale repertoire (Chopin op24-4,
+  Mozart K310-1 — never truly C1 → C2 acceptance); E + F change only alternatives
+  lists, winner-neutral, so NOT byte-identical to remove → C2′ alternatives-hygiene
+  (the decoder's Q5 output-assembly subsumes them for free). CC implemented E-removal,
+  hit the 2-Baroque-chorale sha256 diff (bwv245.3, bwv336), and reverted per the stop
+  condition — exemplary. **Methodology correction (my instrument, not CC): 3.4-i §3's
+  winner-region metric is BLIND to winner-neutral alternatives-list changes; the
+  `.ours.json` sha256 is the authoritative deadness test.** DCML 3.2 inputs: Iter-86's
+  fire is DCML-CORRECT (reproduce), K's is root-worse on chromatic-romantic
+  (mis-fire — do NOT import). The C1 retire-now menu is empty; no identity-mutating
+  gate was removed from the beam path. **Decision: E/F NOT retired now** — they fold
+  into the decoder's alternatives-ordering at 3.5/output-assembly, not a standalone
+  non-byte-identical re-decide.
+
+- **⚠ STRATEGIC PIVOT (2026-06-13, Cowork-verified + user-directed): beam-widening
+  SHELVED; the back half of the roadmap is being re-grounded on measured precision
+  headroom.** The 3.2 design's §3 derivation (Cowork-verified against the independent
+  June-9 redesign_plan numbers — AbMaj7 2.55>2.33, F#7 2.85>2.825, the rcb>margin
+  arithmetic) proved **a wider beam does NOT fix Δ=+7a**: the transient is the
+  HIGHEST-scoring node (locally correct, DCML root absent from its tones), so the
+  continued-root wrong path is the genuine global optimum a decode finds exactly as
+  greedy does. Re-ranking can't fix it; only re-weighting (Stage 5) or joint
+  segmentation can. **Deeper consequence (Cowork): beam>1 is beam-1-substitutable for
+  ALL currently-motivated work** — gate-folding and edge-reweighting are beam-1 ops, and
+  beam>1 is BIR-free on Default — so its only justification was Δ=+7a, now void.
+  decoder_design §11's "low-scoring transient" was a ratification miss (mine). User
+  directive: *investigations first; long-term; major redesign OK; minimum surprises;
+  maximum precision.* → **don't build beam speculatively; investigate where precision
+  actually lives first.** `docs/beam_widening_design.md` SHELVED (retained for its §3
+  derivation). decoder_design §11 Δ=+7a row needs erratum (next doc pass).
+  **[UPDATE 2026-06-13 — APPLIED.** The decoder_design §11 erratum is now in the file
+  (ERRATUM block at the top of §11), applied during the foundations-verification run
+  (`cc_foundations_verification_report.md`, Task 6). The trailing "still queued" mentions
+  in older dated entries below are historical; this ledger item is CLOSED.**]**
+
+- **✅ Precision-headroom investigation COMPLETE — `cc_precision_headroom_dossier.md`
+  (Cowork-verified).** Re-grounding facts: 95.2% of root errors are functional not
+  vertical (`root_err 2706 = all_differ 2576 + m21-fixable 130` — structurally exact;
+  the music21 gate sees only the 4.8%); key_disagree (27.9%, largest) = 63% tonicization
+  label-gap (Stage 6, S1=17.7%, low-risk pure-add on correct readings) / 37% key error
+  (Stage 4); headroom ≈ Stage 6 35–42% · Stage 4 20–24% · Stage 5 1.3%-batch (the
+  fitter) · search ≈ 0. Verified: the identity is structural; the tooling reproduced the
+  documented A3 27.6%/15.4%/6.3% baseline (proves it's real machinery). Recorded in
+  roadmap (PRECISION-HEADROOM RE-GROUNDING block).
+
+- **✅ Metric-design investigation COMPLETE + RATIFIED — `docs/precision_metric_design.md`
+  (DRAFT; read in full + load-bearing probe verified against source by Cowork).** Key
+  findings: `compare_rn` IS the DCML-only metric (reuse, not rebuild); `classify_pair`
+  ALREADY credits a correctly-emitted secondary as `exact` — so the functional-axis gap
+  is EMISSION (Stage 6), not the comparator; the granularity-robust unit = union-of-
+  boundaries duration-weighted grid (segmentation-invariant by construction, kills the
+  2.2-i ~7× artifact AND dissolves the deferred Default-section regen); the chicken-and-
+  egg resolves via the L0–L4 ladder + a label-vocabulary contract that is a Stage-6
+  output-spec co-ratified with the metric. Ratified: OQ-G1 → union-of-boundaries.
+  Deferred to Stage-4/6 co-design: OQ-L1 (cadence token — genuine Stage-6 fork),
+  OQ-L2 (secondary normalization), OQ-C1 (held-out split). OQ-V1 already on C2 list.
+
+- **✅ L0–L1 metric primitives BUILT — `f8c6b3932a`** (tools-only; verified by Cowork:
+  2 files, no C++, invariance test present + passes, dossier numbers reproduced via
+  committed modes). `--wir-bach` (326/353), `--granularity-robust` (segmentation-
+  invariant; swing 6.8pp→0.8pp), `--key-breakdown` (S1/S2 63/37). 70 metric tests
+  unchanged + 21 new. The back half is now measurable.
+
+- **✅ Stage 4 design investigation COMPLETE — `docs/key_path_design.md` (HELD, staged
+  not committed — convention honored).** §3 finding (Cowork-verified: S2=1032 reproduces;
+  bwv244.54 anchor rests on serialized runnerUp; logic airtight): **the key path fixes
+  only ~10% of S2** (Class A spurious-flip); ~85% is Class B (emission prefers wrong key,
+  correct key never rank-2 in 51.6% of S2) — unrecoverable by any path. **SECOND
+  falsified structural fix → META-PRINCIPLE recorded in roadmap: precision lives in
+  emission + functional labeling, NOT search/path.** The HMM path is the least valuable
+  part of Stage 4 (~10%); KeyArea spans + the key-EMISSION fix are what deliver.
+  **Decision (user): investigate the key-emission headroom before shaping Stage 4.**
+  HMM path deferred under the beam-style "revisit when search genuinely matters" trigger.
+
+- **✅ Key-emission headroom dossier COMPLETE — `cc_key_emission_headroom_dossier.md`;
+  instrument committed `a4ae4a9203` (read-only key-candidate dump, byte-identity 0/353,
+  verified by Cowork: 5 files, dump struct present).** **Result that INFORMS A-vs-B
+  (verified — term-level dump evidence):** the Class-B key bulk is NOT a scorer ceiling.
+  It splits at the declared-mode fault line: 349 restorable (mode DROPPED at MuseScore
+  import for empty key signatures → `declaredModeOrdinal=-1`; xml carries `<mode>`), +
+  a partial-sig subset (≈34–44% of S2 STRUCTURAL, one import fix); small FITTED
+  (Stage-5 prior balance); ~127 CEILING = notation-vs-analyst CONVENTION disagreement
+  (resolver faithfully follows the notated key; WiR picked the relative — arguably
+  correct-behavior-penalized). **The biggest lever is a dropped-XML-tag plumbing bug,
+  not a limit of hand-built analysis → strong evidence the hand-built emission has large
+  concrete headroom (A), Level-2/learned NOT triggered on the key axis.** Stage-4 shape
+  (scoped, not built): declared-mode import fix + GRADED declared prior (not the −7 wall)
+  + KeyArea + hysteresis→path; HMM/search deferred. Caveat (§5.1): import root-site not
+  read; fix robust either way.
+
+- **✅ BACK-HALF RE-GROUNDING drafted — `docs/back_half_design.md` (DRAFT, NOT YET
+  RATIFIABLE).** Resolves A-vs-B → A (hand-built) confirmed, B (learned) kept as
+  triggered-fallback, on the key-emission evidence (faults are specific structural
+  causes, not ceilings). Re-grounded order: metric(done) → Stage 4 (key import fix +
+  graded prior + KeyArea) → Stage 6 (functional layer, largest lever; scope-cause first
+  = the B-fallback check) → Stage 5 (fit last). Search deferred.
+
+- **⚠ RATIFICATION GATED ON FOUNDATIONS VERIFICATION (user mandate 2026-06-13: facts
+  first, never assume, old truths may be stale).** The re-grounding's KEYSTONE — the
+  declared-mode-drop root cause — was unverified at source (CC's own §5.1), and it
+  carries stale (non-Bach cross-corpus, June-3 pre-F1) + unrecorded (music21 version)
+  facts. Ratifying now would violate the double-check mandate.
+
+- **✅ Foundations verification COMPLETE — `cc_foundations_verification_report.md`; GATE
+  GREEN.** Keystone CONFIRMED at source (Cowork independently re-read `addKey:5978`); 79/80
+  zero-sig stems recoverable → 349 lever stands; bwv62.6 = same mechanism. Byte-identity
+  re-confirmed (0/353). key→basisIndep current. music21 v9.9.1 already recorded. Cross-corpus
+  "~2× harder" CONFIRMED by HEAD regen (50.7%/27.4%, 62110 regions). Four corrections folded
+  into `docs/back_half_design.md` (keystone precision = default-key-match not 0-fifths;
+  cross-corpus binary-stale not metric-stale; composing engraving-coupled / fix reaches both
+  callers / favor option-b engraving-retains-mode; §11 erratum). §11 Δ=+7a erratum staged in
+  `decoder_design.md` — **Cowork authorized committing it alone** (hash pending CC).
+  Remaining qualifier (Stage-4-build confirm, not a blocker): native `.mscz` vs MusicXML-import
+  mode-drop → "user-facing" vs "corpus-measurement" framing of the 349.
+  **`docs/back_half_design.md` is now FOUNDATIONS-VERIFIED & RATIFIABLE** (status header
+  lifted). §11 erratum committed `bcd4319aa7`. OQ-2/3/4 settled; **OQ-1 (A-vs-B) HELD
+  pending the functional-residual investigation** (user 2026-06-13: settle the biggest
+  call on evidence, not inference — "A confirmed" is proven on the key axis but only
+  inferred on the largest slice).
+
+- **🛑 GROUND-TRUTH PARSER BUG (2026-06-13, CC-spotted mid-investigation,
+  Cowork-verified at source `dcml_parser.py:386`): the WiR/rntxt parser computes inline
+  applied-chord (`V/V`, `viio6/V`, `V/III`…) root_pc from the PRIMARY numeral against the
+  LOCAL key, discarding the applied target — wrong DCML root for every secondary on the
+  ENTIRE Bach gate set (326/353).** Our analyzer/music21 resolve applied roots correctly →
+  falsely flagged root_err. CONTAMINATES the DCML-only headroom (the 2576 "neither" /
+  95%-functional), likely the metric-design "secondaries credited" finding (synthetic-probe
+  artifact — real data: our correct root ≠ parser's wrong root), and the paused
+  functional-residual classification. **Irony: the music21 filter we dropped was shielding
+  the BIR 13/7 gate from this (filter excludes parser-wrong/we-right cases) — so the gate
+  is probably clean, the UNFILTERED numbers are polluted.** TSV/non-Bach path is correct
+  (uses `relativeroot`). **FUNCTIONAL-RESIDUAL INVESTIGATION + OQ-1 RATIFICATION HALTED
+  until the parser is fixed and the numbers re-measured.** This is the user's
+  "can-we-trust-the-corpora" risk, realized — the investigation-first/sample-real-cases
+  discipline surfaced it before it was built on.
+
+- **⏸ HELD (do NOT dispatch yet) — DCML applied-root fix:**
+  `cc_instruction_dcml_parser_applied_root_fix.md`. Superseded as the immediate next step
+  by the full pipeline audit below (user 2026-06-13: don't fix the one bug CC tripped
+  over — find ALL measurement-error sources first, fix as ONE coordinated re-baseline).
+  This fix becomes one line item in the audit's elimination plan.
+
+- **✅ Functional-residual dossier COMPLETE — `cc_functional_residual_dossier.md` (read in
+  full by Cowork; both parser bugs re-verified at source).** It primarily produced MORE
+  measurement-bug evidence (vindicating the audit): a SECOND confirmed parser bug
+  (minor-leading-tone `viio`, `_DEGREE_SEMITONES_MINOR:77` VII=+10 vs true +11, hits BOTH
+  rntxt AND TSV paths), a Bach artifact rate (366/2576=14.2% ours-correct/parser-wrong;
+  557=21.6% parser≠true), and the music21 `RomanNumeral` true-root oracle. Provisional
+  OQ-1 read (A confirmed / B not triggered / <5% needs-richer; 92.1% ours==m21) **— but
+  computed on CONTAMINATED ground truth, so the SIZES will shift after fixes. OQ-1 STAYS
+  FROZEN; its qualitative direction is likely robust but unconfirmed on clean data.**
+  Findings MERGED into the audit instruction (PRIOR EVIDENCE block).
+
+- **✅ MEASUREMENT-PIPELINE AUDIT COMPLETE — `cc_measurement_pipeline_audit.md`
+  (read in full; P0 verified at source by Cowork `:157`/`:178`).** FIVE defects:
+  **P0 (headline, Cowork-verified)** — `float("1/2")`→ValueError→bare `except: continue`
+  drops **58.9% of ALL TSV ground truth** (downbeat-only, easiest-biased) → the entire
+  cross-corpus metric wrong ~8–10pp; **P1** rntxt applied-`/X`; **P2** minor-LT/vio table
+  (both paths); **P3** mode-drop (S2 import, KEY axis only — does NOT corrupt root gate);
+  **P4** (NEW) ABC/Beethoven repeat/numbering offset (naive qb-fix makes beethoven worse).
+  **The BIR 13/7 gate is STRUCTURALLY CLEAN** (music21∩DCML double-filter excludes the
+  corrupted cases — 0/13, 0/7 artifacts) → Stages 0–3 sound. ~46% of the gate is
+  legitimate ambiguity; genuine actionable residual ~7 Baroque/~3 Jazz. CLEAN-confirmed:
+  music21=filter-only, jazz=qualitative-only, snapshots=pins, quarterbeats origin exact,
+  TSV relativeroot works, It6 refuted, repeats fine (except P4), tpb=480 stable.
+  **Cowork humility note: the foundations pass "confirmed" the cross-corpus number while
+  sitting on P0 — targeted verification ≠ holistic; the audit caught what the foundations
+  check missed.** §4 = a coordinated one-batch re-baseline (P0→P1+P2→P3→P4→reporting).
+
+- **EVERYTHING precision-derived FROZEN until the fix batch + re-measure:** cross-corpus
+  numbers, the headroom "95% functional," the functional-residual sizes, OQ-1, the
+  back-half ratification. ~~The BIR gate is the only precision-ish number that holds.~~
+  **SUPERSEDED 2026-06-13 — the BIR gate moved too (see below); NOTHING precision-derived
+  survives the fix batch unchanged.**
+
+- **★ 2026-06-13 — INSULATION HYPOTHESIS FALSIFIED. The BIR gate is NOT insulated.**
+  CC ran the metric re-baseline batch; the oracle-verified P1/P2 GT-parser fixes grow the
+  gate **Baroque 13→57, Jazz 7→23** — STRICT SUPERSET (all 13/7 preserved, 0 lost; +44/+16
+  added). Mechanism: the parser bug corrupted these chords' GT roots into the discarded
+  `all_differ` (parser≠music21) bucket, hiding them from the gate as FALSE NEGATIVES. With
+  correct roots they surface as genuine candidate cases. The +44 are exactly the P1/P2
+  categories (viio7/V ×19, other viio*, half-dim, applied). The audit §3.A "0 parser
+  artifacts" was right about the 13 PRESENT but missed the ~44+16 HIDDEN. **Cowork verified
+  the fix at source** (dcml_parser.py `_compute_root_pc`:143-156 + `_resolve_dcml_key`:325 —
+  case-disambiguated lowercase vi/vii→+9/+11, oracle-cited; P0 `_parse_fraction`:168 present;
+  diff tools-only). Re-baseline: GT volume 37,886→90,851 (×2.40, P0 confirmed); per-ours
+  root_agree 49.3%→64.2%; per-DCML 54.4%→50.3% (P4 recovers beethoven 48.2%→60.3% so the
+  drop is −4.1pp not the audit's −7.7pp).
+
+- **Caveats CC flagged (both real):** (1) like the original 13 (~46% judged legitimate
+  ambiguity), some fraction of the +44/+16 will be ambiguity too — 57/23 is the GATE
+  (candidate) count, not 57 genuine errors; the genuine subset needs characterization.
+  (2) P2 is shared TSV+rntxt code, so the rntxt gate effect can't be separated from the
+  TSV minor-LT correction the cross-corpus re-baseline needs (→ Option 3 "revert rntxt
+  only" is not cleanly separable AND would discard a correct fix — REJECTED).
+
+- **DECISION (Cowork, 2026-06-13): Option 2 — report only, no re-pin, no commit.** Told CC:
+  reject Option 3 (revert = preserving a known-artifact number over the truth, the exact
+  trap the audit exists to kill); don't take Option 1 yet (re-pinning tests + rewriting the
+  CLAUDE.md 13/7 identity sets + the "hard-stop" policy is a FOUNDATIONAL ratification = the
+  user's explicit call, not a tools-batch side effect). CC to: finish P5, write the full
+  `cc_metric_rebaseline_report.md` incl. the gate finding, ENUMERATE the +44/+16 with
+  stem@tick identities + category, give a first-pass genuine-vs-ambiguity triage; keep
+  ALL staged + HELD; touch NEITHER the metric tests NOR CLAUDE.md/STATUS.md gate identities.
+
+- **Cowork verification done (2026-06-13, Windows-side + git objects):** P2 fix CONFIRMED
+  correct at source (dcml_parser `_compute_root_pc`:152-156 case-disambiguated +9/+11, both
+  paths). Corpus HEAD-stable: only docs + byte-identical key-diagnostic `a4ea` + tools-metric
+  `f8c6` between the stamp `a652dc1ba7` and HEAD → `.ours.json` valid at HEAD. Re-baseline
+  coherent. **Substantive caveat that stands:** the triage's "~10 actionable" leans on the
+  SOFT viio↔V7 share-tone bucket (~29 Baroque); the dim7-rotation bucket (Δ∈{3,6,9}) is solid
+  (symmetric dim7 = genuinely root-ambiguous), but the share-tone bucket needs a hand-trace
+  before the actionable count is trustworthy. CC itself flagged this.
+
+- **⚠ SANDBOX NOTE (this session only):** Cowork's Linux bash mount was DEGRADED — it served
+  NUL-padded copies of src files + a truncated `characterise_bir_false.py` that are
+  DEMONSTRABLY FINE on the real disk (Windows-side Read showed chordanalyzer.cpp clean;
+  CC's "tools-only, 3 files" is accurate). Lesson: this session's bash cannot be trusted for
+  working-tree-file verification — use the Windows-side file tools / committed git objects, or
+  have CC verify. The false-alarm was caught before surfacing. (NOT a real repo problem.)
+
+- **DECISION (user, 2026-06-13): "Verify, then ratify."** Instruction DISPATCHED:
+  `cc_instruction_gate_rebaseline_verify.md`. CC to (1) reproduce 57/23 via the CANONICAL
+  `characterise_bir_false.py` at HEAD (regenerate both corpora; confirm strict-superset, 0
+  lost) — because CC's original 57/23 came from a throwaway `/tmp/gate_ids.py` driver against
+  the 3-commits-behind corpus; (2) hand-trace the soft viio↔V7 bucket (oracle-checked) to firm
+  the actionable count. READ-ONLY + corpus regen; metric fixes stay STAGED/HELD, no commit,
+  CLAUDE.md/STATUS.md UNTOUCHED.
+
+- **VERIFY REPORT LANDED + Cowork-reviewed in full (2026-06-13):**
+  `cc_gate_rebaseline_verify_report.md`. Verdict: **57/23 verified + ratifiable.** (1)
+  Canonical `characterise_bir_false.py` reproduces 57/23 at HEAD (corpus regen 353/353,
+  manifest `bcd4319aa7`) — no driver-vs-canonical gap. (2) Strict-superset PROVEN through the
+  canonical tool: reverted parser to HEAD blobs → exactly 13/7 (the CLAUDE.md sets), restored
+  (byte-identical), `comm -23` empty → 0 lost both presets. (3) 80/80 contested roots
+  oracle-correct (100%). (4) My soft-bucket caveat RESOLVED FAVORABLY: ~18 of the report's
+  "soft viio↔V7" are actually symmetric-dim7 (rootless-V7♭9 label, but {r,r+3,r+6,r+9} sounds
+  → pitch-class unresolvable); only 11 genuinely soft, ALL traced to legitimate ambiguity
+  (oracle, GT root present, ≥3 shared). Sonority-based unresolvable = 30/57 Baroque (53%), not
+  the report's 12. (5) Actionable held/nudged DOWN: bwv227.7 reclassified genuine→segmentation;
+  net ~9–10 Baroque / ~4 Jazz. No stop-condition triggered.
+
+- **★ GATE-SECTION GAP I caught before rewriting:** CLAUDE.md line 108 has a THIRD config —
+  **Default (user-run) = 14 = Baroque-13 ∪ {bwv187.7}** — which CC did NOT re-measure and is
+  stale under the corrected parser. Rather than enshrine 57/23 next to a known-wrong Default-14
+  (internally inconsistent doc → would mislead CC), DISPATCHED `cc_instruction_gate_default_measure.md`:
+  measure NEW Default via canonical tool (OLD-14 reproduce + strict-superset + oracle-check the
+  additions). Same READ-ONLY+regen / HELD / no-doc-edit regime.
+
+- **✅ DEFAULT MEASURED + GATE RATIFIED (2026-06-13).** CC measured Default 14→57 (canonical
+  tool, OLD-14 reproduced via A/B, strict superset 0 lost, 42/43 additions = the vetted
+  Baroque set, 1 Default-specific = bwv227.7@18000 segmentation variant, oracle-correct).
+  Verify report §5 has the full Default-57 set. **Cowork did the coherent gate-section rewrite:**
+  - **CLAUDE.md** gate-identity block rewritten to the full **Baroque 57 / Jazz 23 / Default 57**
+    `stem@tick` sets + the re-baseline provenance note (undercount cause, strict superset,
+    100% oracle, ~95% ambiguity, symmetric-dim7 two-tier seed); the two stale "13/7" refs
+    (granularity caveat + analyze_inversion note) updated; `analyze_inversion_errors` 24/13,
+    35/7 explicitly marked stale/pending (NOT re-measured under the corrected parser).
+  - **STATUS.md** new top entry documents the metric re-baseline + 57/23/57 gate, STAGED/HELD.
+  - **Cowork cross-validated all three sets**: Baroque-57 derived two independent ways
+    (Default-57 minus CC's delta; and old-13 ∪ +44 enumeration) — agree exactly. Jazz 7+16=23.
+  - Sets are **staged for the USER to commit + push** (user: "i can push myself"). Nothing committed.
+
+- **✅ DOC-RIDER DONE — living-doc gate-number sweep (2026-06-13).** All LIVING docs updated to
+  57/23/57 (current-state claims fixed; historical "✅ DONE @commit — Baroque 13" / "Stage-3
+  gate" records left intact + annotated with a re-baseline pointer so they're not falsified):
+  **CLAUDE.md** (gate section, full sets), **STATUS.md** (new top entry), **ARCHITECTURE.md**
+  (Stage-2.4 V4 finding + re-baseline note), **build_and_test.md** (gate identities + the
+  analyze_inversion `# 24/13` command annotations → stale/pending), **docs/implementation_roadmap.md**
+  (baseline-regime line), **docs/back_half_design.md** (Stage-4 verification gate → 57/23/57),
+  **docs/score_inventory.md** (4 refs + the "not an absolute quality figure" framing extended
+  with the ~95%-ambiguity + 4th pitch-class-resolvable qualifier), **docs/decoder_design.md**
+  (banner + eval + targets table), **docs/beam_widening_design.md** (banner; also notes beam
+  shelved). `docs/scoring_model.md` / `redesign_plan.md` / `layer_architecture_audit.md` have NO
+  gate-count refs (verified). The ~50 historical cc_*.md / cowork_*.md reports left as-is (record).
+  The `analyze_inversion_errors` 24/13·35/7 secondary split is consistently marked stale/pending
+  everywhere. All staged for the USER's commit.
+
+- **Next CC instruction READY (updated 2026-06-13): `cc_instruction_functional_residual_investigation.md`.**
+  Was BLOCKED pending the parser fix; now UNBLOCKED + rewritten for the corrected metric. Key
+  update: its old numbers (root_err 2706 / all_differ 2576 / 95.2% functional / S1 1791 / the
+  headroom dossier) were computed on the BUGGY parser and are INVALID, so a **new Task 0**
+  re-derives the headroom decomposition on the corrected metric FIRST (NEW-vs-OLD root_err
+  split + corrected functional-vs-vertical % + S1 recount + a rider re-measuring
+  `analyze_inversion_errors` 24/13·35/7 → corrected), and Tasks 1–4 retarget to the corrected
+  residual; gate refs → 57/23/57; mandatory reads point to the rebaseline+verify reports
+  (old dossier = METHOD-only, numbers stale); deliverable OVERWRITES the stale
+  `cc_functional_residual_dossier.md` (its provisional "OQ-1=A" was on the buggy metric). This
+  single instruction now folds in handoff-TODO items (2) analyze_inversion re-measure +
+  (3) the frozen precision re-derivations, and gates OQ-1. READ-ONLY, no commit.
+
+- **✅ DOSSIER LANDED + OQ-1 RATIFIED (2026-06-14).** `cc_functional_residual_dossier.md`
+  re-derived on the corrected metric (Cowork read in full + verified: arithmetic consistent,
+  OLD-repro validates the instrument, analyze_inversion BIR=false 57/23 independently matches
+  the gate). Verdict: **A confirmed, B2=0/44, B not triggered.** Cowork caught the scope limit
+  CC understated — **Bach-rntxt-ONLY**; B's literature edge is exactly the undecomposed non-Bach
+  chromatic repertoire. **User ratified A, SCOPED TO BACH.** `back_half_design` §3/§5 + STATUS
+  updated to RATIFIED with the Stage-5/6 re-open gate (non-Bach decomposition + ~100 sample +
+  DROOT_ABSENT alignment-noise audit). Stage 4 proceeds (hand-built either fork).
+
+- **⚠ COMMIT PREREQUISITE (CC-flagged, Cowork-endorsed):** the corrected metric (the staged
+  tools fixes) MUST be committed before any Stage-5 weight fitting — else the fitter optimizes
+  against 365 phantom + 75 mislabeled cases. User commits (the whole staged set: tools fixes +
+  CLAUDE.md/STATUS.md/ARCHITECTURE.md/build_and_test.md + the docs/ sweep).
+
+- **Cowork TODO next — Stage 4:** prepare the Stage-4 build instruction (declared-mode import
+  fix at `importmusicxmlpass2.cpp:5978` = P3 + graded declared prior, not the −7 wall + KeyArea
+  spans + hysteresis→path). **NEEDS ENGRAVING FILE-SET AUTHORIZATION** — touches
+  `src/importexport/musicxml/` + `src/notation/`, OUTSIDE the composing autonomous zone
+  (CLAUDE.md). Surface the file-set to the user for approval BEFORE dispatching. Scoping dossier:
+  `cc_key_emission_headroom_dossier.md`. Stage-5/6 OQ-1 re-open gate is a parked follow-on.
+- **Still pending the user:** commit + push the staged metric fixes + the doc updates (user:
+  "i can push myself"). Nothing committed this arc.
+
+- **Next CC task — DISPATCHED 2026-06-13: the tools-only metric re-baseline batch.**
+  Decision taken (user 2026-06-13): "Tools-only metric batch now; P3 with Stage 4."
+  Instruction: `cc_instruction_metric_rebaseline_batch.md`. Fixes P0 (fractional-onset
+  via `Fraction` + `quarterbeats×480` alignment, keep the ~58.9% dropped annotations),
+  P1 (rntxt applied `/X` resolution), P2 (minor-LT/vio degree table → viio +11), P4 (ABC
+  downbeat-anchoring; QUARANTINE any movement that won't anchor cleanly rather than ship
+  the naive +3.6pp-worse beethoven correction), P5 (coverage-denominator honesty +
+  HEAD-aware `rerun_dcml_comparison`). ONE deliberate re-baseline + metric re-pin; HELD
+  for Cowork commit (it moves every headline number). Built-in checks: BIR 13/7 UNCHANGED
+  (insulation regression — moving = STOP/finding), corrected roots verified against the
+  music21 `RomanNumeral` oracle, before/after re-baseline table + corrected headroom
+  headline reported. **P3 mode-drop explicitly OUT — rides with the held Stage-4 engraving
+  work** (ENGRAVING import change, outside the composing autonomous zone, KEY-axis only).
+  The full functional-residual RE-decomposition + OQ-1 re-derivation are the SEPARATE
+  follow-on on the corrected metric, not this run.
+  *(Audit context, retained:)* the holistic, unprejudiced audit of ALL
+  corpora, source → verdict, every stage (S1 source · S2 ours-ingestion [mode-drop lives
+  here; pickup/repeats/ties HIGHEST-risk + LEAST-audited] · S3 GT-parsing [applied-root +
+  the rest of dcml_parser] · S4 alignment [tick/pickup/measure-numbering — the classic
+  corpus killer] · S5 comparison · S6 aggregation) × every corpus (Bach-rntxt, the 9 TSV,
+  music21, jazz-no-GT, snapshot). Method: trace ≥20 flagged errors/corpus end-to-end,
+  classify PIPELINE-ARTIFACT / GT-LIMITATION / GENUINE-ERROR / AMBIGUITY → the artifact
+  rate per corpus = how inflated every headline number is. Output: the complete
+  error-source ledger + a prioritized ONE-batch elimination plan. READ-ONLY, no fixes
+  this run. **Everything downstream (functional-residual investigation, OQ-1, the
+  back-half ratification, the headroom/95%-functional numbers) is FROZEN until the
+  measurement chain is audited and the artifact rate is known.**
+
+- **(BLOCKED — resumes after the parser fix) functional-residual investigation (GATES
+  OQ-1):** `cc_instruction_functional_residual_investigation.md` — READ-ONLY decomposition of the
+  **2576 "neither" root-err functional residual** (cadential-6-4/suspension/applied/pedal
+  — where both we AND music21 miss DCML's functional root) three ways:
+  RULE-REACHABLE (hand-built functional layer reaches it = A) / NEEDS-RICHER-MODEL
+  (the B-trigger) / GENUINE-AMBIGUITY-or-CONVENTION (a ceiling for EVERYONE incl. B —
+  sizing it bounds what any approach achieves). S1 tonicization (1791) confirmed-reachable
+  separately (mechanical). Calibrated against the literature ceiling (rule-based
+  Temperley/HarmAn vs neural AugmentedNet/RNBert) + an optional music21-RN probe.
+  Output decides OQ-1: bucket-1+3 dominate → A confirmed; bucket-2 large → B strengthened.
+  No build/commit. Then OQ-1 ratifies on evidence → the back half is locked → Stage-4 build.
+
+- **(history) Foundations verification IN PROGRESS (Task 2 cross-corpus regen running):**
+  Verdicts so far — **Task 1 KEYSTONE CONFIRMED at source + Cowork-re-verified
+  independently** (`importmusicxmlpass2.cpp:5978` `addKey` fifths-only dedup
+  `oldkey != key.key()` suppresses the piece-initial empty-sig KeySig → mode discarded →
+  resolver sees `m_mode=UNKNOWN`; mode IS read at 6074–6096; census 79/80 zero-sig stems
+  carry `<mode>` → **349 lever stands**). PRECISION CORRECTION: it's a *default-key-match*
+  dedup, not "literally 0 fifths" — fix targets line 5978 (fixes notation-bridge AND
+  batch_analyze callers at once). Task 0 byte-identity RE-CONFIRMED green (vs genuine
+  pre-instrument baseline). Task 4 key→basisIndep CONFIRMED current post-3.3. Task 3
+  music21 v9.9.1 already in REPRODUCIBILITY.md (the "unrecorded" note was stale — my
+  error). Task 5 layer: composing PUBLIC-links engraving (importexport/notation-agnostic);
+  fix as data to the resolver, no new dep. Task 6 doc-currency staged (§11 erratum applied,
+  ledger closed, riders confirmed landed). **Task 2 = the QUARANTINE: cross-corpus
+  50.7%/27.6% is BINARY-stale `.ours.json` (June-3 outputs; 5/6 spot scores flip at HEAD),
+  NOT pre-F1-metric-stale (my framing was wrong — current metric reproduces it on June-3
+  data). HEAD regen running for the definitive number; until then DO NOT quote
+  50.7%/27.6% as current.**
+  **⚠ OPEN NUANCE for the final report / Stage-4 (Cowork-flagged): the dedup is in the
+  MusicXML import path — confirm whether the live product's NATIVE `.mscz` load has the
+  same mode-drop or only MusicXML import does. Bears on "user-facing" vs "test-corpus"
+  framing of the 349 lever (corpus is all `.xml` → fully exhibits it; .mscz users may
+  not). Does not change the metric lever; sharpens its interpretation.** — recheck the facts before ratifying:
+  (1) KEYSTONE — verify the mode-drop at the actual import site + `<mode>` presence
+  across all 73 zero-sig stems + explain bwv62.6 (confirms/corrects the 349 lever &
+  A-vs-B); (2) re-measure or quarantine the stale cross-corpus numbers at HEAD;
+  (3) pin the music21 version; (4) confirm "key feeds basisIndep" is current post-3.3;
+  (5) layer-check the proposed import fix (bridge vs engraving, Dependency Rule); (6)
+  doc-currency sweep (the §11 erratum + contradicted "current" claims + rider-ledger
+  close) so future sessions aren't misled. Verify/correct only — no fix built. Output
+  gates the re-grounding ratification.
+
+- **(superseded) QUEUED note: a deliberate BACK-HALF RE-GROUNDING design** — Cowork to write, user to ratify. Trigger: the architecture step-back
+  (2026-06-13). The investigation phase produced ONE converging finding three ways
+  (beam, key-path, music21-gate): **precision lives in the emission model + functional
+  labeling, NOT in search/decode** (roadmap META-PRINCIPLE). The decode-centric part-1
+  roadmap's consolidation is delivered, but its precision thesis is falsified; the
+  back half is currently being patched fork-by-fork (an accumulating-amendment smell,
+  ARCH §2.14). The re-grounding will (Level 1) re-derive the back half emission-centric
+  — precision levers = emission quality + functional layer (the 17.7% tonicization
+  pure-add label is the best risk/reward), search deferred until something needs it; and
+  (Level 2) lay out the genuine design-GOALS fork the evidence raises: keep improving the
+  HAND-BUILT emission (explainable, no-training-data, incremental, current path) vs plan
+  toward a LEARNED emission (AugmentedNet/RNBert class, part-1 rec.5, higher ceiling
+  ~45–50%+ full-RN vs our 27.6%, decoded by the lattice already built — costs
+  explainability + DCML-training dependency). **The key-emission dossier's
+  structural/fitted-vs-ceiling result is the deciding evidence for Level 2** (structural/
+  fitted → hand-built has headroom, Level-1 suffices; ceiling → emission model is the
+  limit, Level-2 serious). DO NOT write the re-grounding before the dossier lands (would
+  pre-guess its result). Per user 2026-06-13.
+
+- **Next CC task — key-emission headroom investigation (instruction ready):**
+  `cc_instruction_key_emission_headroom.md` — measure what a key-EMISSION fix
+  (partial-signature broadening / key-profile scoring) recovers of the ~85% Class-B S2
+  bulk; the causal question (WHICH scoring term locks the relative-minor) needs the
+  252-candidate breakdown → may build a read-only key-candidate dump as a byte-identity-
+  gated diagnostic instrument (Stage 4 needs it regardless; diagnose-chord precedent).
+  Output: scopes the emission fix (structural vs Stage-5-fitted vs ceiling), confirms the
+  path-defer, recommends Stage 4's final shape.
+  — key as an HMM path (states = tonic×mode, emissions = the existing 252-candidate
+  KeyModeAnalyzer scores REUSED, transitions = circle-of-fifths modulation penalty,
+  Viterbi decode → a key PATH). Targets S2 (1032 measured relative/partial-signature
+  errors); PRODUCES KeyArea spans (Stage 6's tonicization labeler consumes them — the
+  S1 unlock). Design-only, ratification-gated. **Load-bearing: §3 must DERIVE (real
+  probe margins) that the path actually fixes S2 — if the local evidence favors the
+  wrong key, that's a finding (S2 needs richer emission, not just a path), like the
+  Δ=+7a finding.** Reconciles the redesign_plan "key-as-distribution SHELVED" (now has
+  1032 live cases). Note: Stage 4 is the **2nd intentional behavior change** — key feeds
+  chord emission (`basisIndep`), so byte-identity ends here; gated like 3.2 (measured/
+  DCML-adjudicated/ratified, chord-axis side effects measured too). Measured on the L1
+  `--key-breakdown` rung. Then Stage 6 (co-developed on KeyArea) → Stage 5 (fits last).
+  Beam shelved; decoder_design §11 Δ=+7a erratum still queued. — tools-only, DCML-only, reuse-based, NO
+  production/C++ change, NO Stage-6 vocabulary. Three primitives: (1) `compare_rn
+  --wir-bach` (commit the Bach-WiR mode, 326/353 denominator explicit); (2) the
+  duration-weighted union-of-boundaries unit (THE new primitive — load-bearing test =
+  segmentation-invariance: same analysis at two segmentations → same score); (3)
+  `--key-breakdown` (the S1/S2 = tonicization-gap/key-error split that makes Stage 4
+  measurable). 70 existing metric tests stay unchanged; reproduce the dossier numbers
+  via the committed modes. One commit, held. **This is the instrument the back half is
+  aimed with; then Stage 4 (key path) leads, measured on L1.** Beam shelved;
+  decoder_design §11 Δ=+7a erratum still queued for the next doc pass. — **user decision: design the metric
+  BEFORE committing the Stage-4/5/6 order**, because the instrument that measures Stage
+  4/6 success doesn't fully exist and a functional-precision metric needs a label
+  vocabulary that is itself Stage-6 output (the chicken-and-egg). Design-only,
+  ratification-gated. Establishes: compare_rn IS the DCML-only metric (reuse, don't
+  rebuild; formalize its Bach-WiR mode); designs the granularity-robust unit (the 2.2-i
+  ~7× gap); pins the functional-label vocabulary contract (Stage-6 output spec =
+  metric input spec, co-designed once) + the incremental measurability ladder (Stage 4
+  measurable now via key/degree; Stage 6 scored class-by-class as it ships) + the
+  Stage-5 objective. Output: `docs/precision_metric_design.md` (DRAFT). Feeds a ratified
+  back-half order. **Beam shelved; decoder_design §11 Δ=+7a erratum still queued.** — READ-ONLY measurement + map,
+  no build. Decompose the total human-adjudicated (DCML-only, Default config, BOTH
+  granularities) disagreement mass into mode/key vs functional-chord vs actual-root vs
+  the ~40% "neither" residual; map each slice → unlocking mechanism (emission/transition
+  reweight = Stage 5 incl. the relocated Δ=+7a fix / key path = Stage 4 / functional
+  layer = Stage 6 / segmentation / structural ceiling); recommend the re-grounded
+  Stage-4/5/6 ordering + the beam-revisit trigger. Output: `cc_precision_headroom_dossier.md`,
+  feeds a ratified roadmap-reshape decision.
+  — design-only, ratification-gated (like the decoder design): produces
+  `docs/beam_widening_design.md`, 10 sections. The FIRST intentional behavior change —
+  beam>1 behind the quality knob (Level-0 stays byte-identical default). Core: derive
+  (not assert) HOW the wider decode fixes Δ=+7a (lattice walk of bwv102.7/bwv261, real
+  probe if needed — if K=8 doesn't fix it, that's a finding); forward-edge promotion
+  per Q2; K=8 per Q6; gate-folding sequence per Q3 (every gate mutates identity →
+  retire/fold before widening past it). Must-not-break: Δ=+7b trio (Gate I + R coupled —
+  the headline risk), identity sets ×3, snapshots. New gate: BIR/snapshot changes now
+  ALLOWED but only on pre-ratified, DCML-adjudicated cases. K caution: reproduce
+  Baroque target, NOT the chromatic-romantic mis-fire (3.4-ii). Design doc held for
+  ratification; implementation is a separate later instruction.
+  — **Cowork decision: spot-check non-chorale scores BEFORE retiring C1 gates** (the
+  353-chorale "0 fires" doesn't prove E/F/K dead — they target classical/romantic
+  inversion/augmented shapes; DCML mozart/chopin/corelli/beethoven MS3 already cloned).
+  Per gate: fires on the non-chorale spread → KEEP as C2; fires nowhere → retire (own
+  commit, 0/353×3 proof gate, held). The spot-check is the gating measurement; no
+  removal pre-judged from chorale 0s. Then 3.2 (beam widening; Δ=+7a + the C2 set).
+  — **with a Cowork correction to design §7: "decoder-subsumed after 3.3" is an
+  UNPROVEN hypothesis** (beam-1 is numerically the old pipeline; gates exist because
+  the bonuses didn't suffice) — so 3.4 ships in two phases. This run: two pre-authorized
+  byte-identical ships (B/C/D dead removal with proof gate; Gate R absorbed into the
+  rcb edge + 2-arg overload cleanup) + the per-gate differential dry-run (disable one
+  gate at a time → pins-failing list, corpus×3 identity deltas, snapshot drift,
+  classification C1 dead-in-practice / C2 beam-replaceable / C3 emission-fold /
+  C4 functional-layer / C5 structural-keeper, + the Q3 beam-cap consequence per gate).
+  NO behavior commits; the dossier's decision menu feeds 3.4-ii and 3.2's design.
+  "Held means HELD" restated in the instruction (3.3 slip on record).
+  — the hardest byte-identity gate yet: five signals MOVE between layers, so the FP
+  composition must be replicated to the addition (Task 1 = a written FP-preservation
+  plan BEFORE code: exact current composition quoted, capped-sum order, insertion
+  points; vertical predicates become ScoringCell flags, temporal gating moves).
+  Gate R's replacement condition must be DERIVED equal to the old proxy on every
+  reachable input (incl. no-third qualities), then proven by 0/353×3. Deliberate
+  re-pin ledger for unit tests encoding old slot semantics; end-to-end pins are NOT
+  re-pinnable. One atomic commit, ratification-gated. Stop conditions include
+  "FP composition unreplicable → options to Cowork" and "old/new Gate R disagree on a
+  reachable input → design question". Then 3.4 → 3.2 (Δ=+7a).
+  — decode-once cache for P3/P4 per design §8 + Q1/Q7. **Cowork sharpened the design's
+  under-confronted point: whole-score-cached answers CAN differ from today's
+  window-based P3 answers (window-edge segmentation) — this is the first live-product
+  behavior change since the reviews, so the answer-delta is MEASURED (Task-3 A/B with
+  DCML verdicts + P3-vs-P1 consistency quantification) and RATIFIED before any commit.**
+  Conservative MVP: whole-cache invalidation on any edit (bounded re-decode = documented
+  follow-up); no-reliable-change-signal = stop; snapshots stay on the raw cold functions
+  (11/11 zero diffs hard gate); warm-perf must be materially better or it's a no-op stop.
+  Carries the rule-5 doc riders (B2). Then 3.3 (signal migration + Gate R, atomic) →
+  3.4 (gate retirement, leads 3.2) → 3.2 (beam widening; Δ=+7a target).
+  — produces `docs/decoder_design.md`, 13 mandated sections: scope (chord path over
+  EXISTING segmentation — joint seg+labeling explicitly out), lattice shape + memory
+  envelope, term-by-term emission/transition factorization (with explicit treatment
+  of the awkward non-pairwise terms: wDim post-bonus guard, Pass-B m7-budget,
+  threshold/cap, Iter 86/91/pedal, gates A–L), beam-1 byte-identity argument + FP
+  tripwires, path state vs advanceTemporalContext, oracle-signal migration + Gate R
+  coupling redesign, per-gate retirement plan with Stage-1 pins as proof obligations,
+  decode-once-query-many (closes D-P4/D-BRIDGE), quality↔beam mapping + perf budget,
+  config-agnosticism, honestly-classified acceptance roster (what Stage 3 fixes vs
+  must-not-break vs needs Stage 4/6), migration sequencing + rollback per step,
+  §Open Questions for Cowork/user. Design-only; probes allowed (uncommitted);
+  doc commit ratification-gated (rule 4 — ratification arrives as addendum file).
   — investigate → draft decisions → at most one surgical fix. HEADLINE INVESTIGATION:
   does the user's style/preset EVER reach the notation analysis path, or is the whole
   preset system batch-tools-only? (Gates the D-PASS0 decision; "presets never shipped
@@ -870,7 +1526,12 @@ Two independent fixes needed:
     in per-tick analysis. Investigate first — verify whether P4 currently receives
     `nextRootPc` at all.
 
-**C2. bwv320 m27 — G/E instead of C** *(accepted residual — Iter 98 dead end confirmed)*
+**C2. bwv320 m27 — G/E instead of C** *(⚠ STALE SECTION — resolved by Gate R `638ced1c12`.
+This is the SAME case as the Δ=+7b bwv320 instance; bwv320 is absent from the current
+Baroque-13 identity set. Kept for the Iter-98 dead-end history only. Reconciled
+2026-06-12 after the stage3-design report's dual-classification question — the
+"C2 rcb-near-tie residual class" has NO known live instance; decoder_design.md §11's
+C2 row cites this dead example, so Stage 3.2's expected wins = Δ=+7a primarily.)*
 rootContinuityBonus (+0.40) fires because the preceding sparse 2-PC Gm slice
 (tick 36960) set previousRootPc=7. G major (root=G, bass=E) is a legitimate
 template candidate scored 1.52; +0.40 context bonus → 1.92 beats Cmaj 1.90 by
