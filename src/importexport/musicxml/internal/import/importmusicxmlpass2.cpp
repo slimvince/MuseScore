@@ -5973,9 +5973,17 @@ static void addSymToSig(KeySigEvent& sig, const String& step, const String& alte
 static void addKey(const KeySigEvent key, const Color keyColor, const bool printObj, Score* score,
                    Measure* measure, const staff_idx_t staffIdx, const Fraction& tick)
 {
-    Key oldkey = score->staff(staffIdx)->key(tick);
+    const KeySigEvent oldKeySig = score->staff(staffIdx)->keySigEvent(tick);
+    const Key oldkey = oldKeySig.key();
     // TODO only if different custom key ?
-    if (oldkey != key.key() || key.custom() || key.isAtonal()) {
+    // Also retain the key signature when only the <mode> differs at matching fifths.
+    // A 0-fifths key bearing an explicit mode (e.g. C major / A minor / a modal mode)
+    // matches the prevailing default fifths and would otherwise be dropped, taking the
+    // declared mode with it (KeyMode::UNKNOWN downstream) and breaking export/import
+    // round-trip of <mode>. See musescore/MuseScore#9444. A key that matches the
+    // prevailing one in BOTH fifths AND mode (and is not custom/atonal) still produces
+    // no key signature, so plain mode-less C-major scores are unaffected.
+    if (oldkey != key.key() || oldKeySig.mode() != key.mode() || key.custom() || key.isAtonal()) {
         // new key differs from key in effect at this tick
         Segment* s = measure->getSegment(SegmentType::KeySig, tick);
         KeySig* keysig = Factory::createKeySig(s);

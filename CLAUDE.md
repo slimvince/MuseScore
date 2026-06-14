@@ -245,6 +245,38 @@ Upstream issue: musescore/MuseScore#25823 (related cousins: #21344, #16794).
 Introduced by upstream commit `4ad218709` (5 Aug 2025).  
 **Do not restore the `ptMinTrackSize` lines.**
 
+### MusicXML declared-mode import fix (Stage 4a, applied 2026-06-14)
+
+**File:** `src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp`  
+**Function:** `addKey()` (the `KeySig`-dedup guard, ~line 5976)
+
+The dedup guarded the `KeySig` creation on **fifths only**:
+`if (oldkey != key.key() || key.custom() || key.isAtonal())`. At score start the
+prevailing key defaults to `{C, KeyMode::UNKNOWN}` (`KeyList::key()` →
+`setConcertKey(Key::C)`), so a **0-fifths** key signature carrying an explicit
+`<mode>` (e.g. `<fifths>0</fifths><mode>minor</mode>`) matched the prevailing fifths,
+the whole `KeySig` was dropped, and the declared `<mode>` went with it →
+`KeyMode::UNKNOWN` downstream. Export *does* write `<mode>`
+(`exportmusicxml.cpp:2473`), so this broke export/import round-trip of `<mode>` and,
+in our pipeline, dropped the declared-mode anchor on ~79 zero-signature Bach stems
+(`cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'
+own `// TODO only if different custom key ?` flags the dedup as known-incomplete.
+
+The fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an
+`oldKeySig.mode() != key.mode()` term to the guard, so a mode-bearing key at matching
+fifths is retained. A key matching the prevailing one in **both** fifths and mode (and
+not custom/atonal) still produces **no** `KeySig`, so plain mode-less C-major scores are
+unaffected. Verified isolated to empty-signature scores (exactly 79 zero-sig `.ours.json`
+changed, 0 non-empty-signature stems); BIR gate byte-identical on all three presets
+(Baroque 57 / Jazz 23 / Default 57); key-inference S2 −378 (Default). Round-trip of
+`bwv254` (0-fifths `<mode>minor</mode>`) now preserves `<mode>`.
+
+Upstream issue: musescore/MuseScore#9444. The buggy fifths-only dedup is upstream-unchanged
+code (the `// TODO only if different custom key ?` line). Stage-4a discrete step; the
+graded-prior / KeyArea work that softens the resolver's −7 declared-mode wall is a later
+Stage-4 step (see `cc_stage4a_mode_import_report.md`).
+**Do not revert; do not let dependency updates overwrite without approval.**
+
 ## VS Code extension — bash command rules (MANDATORY, every session)
 
 The Claude Code VS Code extension (v2.1.141+) has a 15-second stall detector. If the
