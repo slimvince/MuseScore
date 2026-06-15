@@ -70,6 +70,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "engraving/dom/part.h"
 #include "engraving/dom/instrument.h"
 #include "engraving/dom/keysig.h"
+#include "engraving/dom/fermata.h"   // Stage 4c-iii: phrase-boundary (fermata) detection
 #include "engraving/dom/layoutbreak.h"
 #include "engraving/dom/mscore.h"
 #include "engraving/dom/pedal.h"
@@ -92,6 +93,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/region/regionanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"   // Stage 2.2-i prototype: --section-level
+#include "composing/analysis/section/cadencekeyanchor.h"   // Stage 4c-i: --dump-cadence-anchor
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
@@ -365,6 +367,28 @@ static bool staffIsEligible(const Score* score, size_t staffIdx)
     const Instrument* instr = part->instrument();
     if (instr && instr->useDrumset()) return false;
     return !isChordTrackStaff(st);
+}
+
+// ── Stage 4c-iii: phrase boundaries from fermatas (key-agnostic notation) ─────
+// Collect the ticks of every chord-rest segment carrying a fermata.  In a Bach
+// chorale these mark phrase endings; a cadence resolving INTO a fermata-bearing
+// region is a STRUCTURAL cadence (weighted above interior tonicizations).  This
+// reads notation only — no key/function — so the detector stays key-agnostic.
+static std::set<int> collectPhraseBoundaryTicks(const Score* score)
+{
+    std::set<int> ticks;
+    for (const Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+        for (const Segment* s = m->first(SegmentType::ChordRest); s;
+             s = s->next(SegmentType::ChordRest)) {
+            for (const EngravingItem* e : s->annotations()) {
+                if (e && e->isFermata()) {
+                    ticks.insert(s->tick().ticks());
+                    break;
+                }
+            }
+        }
+    }
+    return ticks;
 }
 
 static size_t referenceStaffForAnalysis(const Score* score,
@@ -887,13 +911,79 @@ static void writeKeyCandidateDump(
 // JSON output
 // ══════════════════════════════════════════════════════════════════════════
 
+// ── Stage 4c-i: key-agnostic cadence anchor (read-only diagnostic) ───────────
+// Invokes the new authentic-cadence detector (composing/analysis/section/
+// cadencekeyanchor) on the analyzed regions and emits its global tonic anchor +
+// the detected cadences as an extra top-level "cadenceAnchor" key. Default OFF
+// (dumpCadenceAnchor=false) so the standard .ours.json is byte-identical; the
+// detector NEVER feeds the resolver/winner — it is measured, not wired (4c-ii).
+static void writeCadenceAnchorJson(const std::vector<AnalyzedRegion>& regions,
+                                   const std::set<int>& phraseBoundaryTicks,
+                                   int keySignatureFifths,
+                                   std::ostream& out)
+{
+    std::vector<analysis::CadenceRegionInput> input;
+    input.reserve(regions.size());
+    for (size_t ri = 0; ri < regions.size(); ++ri) {
+        const auto& r = regions[ri];
+        analysis::CadenceRegionInput ci;
+        ci.startTick = r.startTick;
+        ci.endTick = r.endTick;
+        ci.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        ci.quality = r.chord.identity.quality;
+        ci.pitchClassMask = r.pcMask;
+        // Stage 4c-iii: a region ENDS A PHRASE when a fermata sounds within
+        // [startTick, endTick) — a structural (phrase-final) boundary — or it is
+        // the final region of the piece (the piece-final cadence target).  This
+        // is notation (key-agnostic), read from the engraving Score in main().
+        bool endsPhrase = (ri + 1 == regions.size());
+        if (!endsPhrase) {
+            auto it = phraseBoundaryTicks.lower_bound(r.startTick);
+            if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+                endsPhrase = true;
+            }
+        }
+        ci.endsPhrase = endsPhrase;
+        input.push_back(ci);
+    }
+
+    const std::vector<analysis::AuthenticCadence> cadences =
+        analysis::detectAuthenticCadences(input, keySignatureFifths);
+    const analysis::CadenceKeyAnchor anchor =
+        analysis::aggregateGlobalAnchor(cadences);
+
+    out << "  \"cadenceAnchor\": {\n";
+    out << "    \"keySignatureFifths\": " << keySignatureFifths            << ",\n";
+    out << "    \"detected\": "    << (anchor.detected ? "true" : "false") << ",\n";
+    out << "    \"tonicPc\": "     << anchor.tonicPc                       << ",\n";
+    out << "    \"minorMode\": "   << (anchor.minorMode ? "true" : "false") << ",\n";
+    out << "    \"confidence\": "  << fmtDouble(anchor.confidence, 5)      << ",\n";
+    out << "    \"cadenceCount\": " << anchor.cadenceCount                 << ",\n";
+    out << "    \"cadences\": [";
+    for (size_t i = 0; i < cadences.size(); ++i) {
+        const auto& c = cadences[i];
+        out << (i == 0 ? "\n" : ",\n");
+        out << "      {\"dominantTick\": " << c.dominantTick
+            << ", \"tonicTick\": " << c.tonicTick
+            << ", \"tonicPc\": " << c.tonicPc
+            << ", \"minorMode\": " << (c.minorMode ? "true" : "false")
+            << ", \"endsPhrase\": " << (c.endsPhrase ? "true" : "false")
+            << ", \"chromaticLeadingTone\": " << (c.chromaticLeadingTone ? "true" : "false") << "}";
+    }
+    out << (cadences.empty() ? "" : "\n    ") << "]\n";
+    out << "  }";
+}
+
 static void writeJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::string& sourceName,
     const std::string& presetName,
     const KeyModeAnalysisResult& globalKey,
     const char* analysisPath,
-    std::ostream& out)
+    std::ostream& out,
+    bool dumpCadenceAnchor = false,
+    const std::set<int>& phraseBoundaryTicks = {},
+    int notatedSignatureFifths = 0)
 {
     out << "{\n";
     out << "  \"source\": \""      << jsonEscape(sourceName)                                            << "\",\n";
@@ -1009,8 +1099,14 @@ static void writeJson(
         out << "\n";
     }
 
-    out << "  ]\n";
-    out << "}\n";
+    if (dumpCadenceAnchor) {
+        out << "  ],\n";
+        writeCadenceAnchorJson(regions, phraseBoundaryTicks, notatedSignatureFifths, out);
+        out << "\n}\n";
+    } else {
+        out << "  ]\n";
+        out << "}\n";
+    }
 }
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -1341,7 +1437,8 @@ static void printHelp(const std::string& prog)
                            " [--section-level]"
                            " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
-                           " [--dump-key-candidates TICK[,TICK...]]\n"
+                           " [--dump-key-candidates TICK[,TICK...]]"
+                           " [--dump-cadence-anchor]\n"
         << "\n"
         << "  Loads a score, runs harmonic analysis (ChordAnalyzer + KeyModeAnalyzer)\n"
         << "  and writes JSON to output.json, or to stdout if no output file given.\n"
@@ -1381,6 +1478,13 @@ static void printHelp(const std::string& prog)
         << "            disambiguation). Production analysis is byte-identical; the dump\n"
         << "            only serializes scores already computed. Output replaces the\n"
         << "            standard regions JSON. Example: --dump-key-candidates 0,4800,9600\n"
+        << "  --dump-cadence-anchor\n"
+        << "            (Stage 4c-i, read-only) Append a top-level \"cadenceAnchor\" key\n"
+        << "            to the standard regions JSON: the key-agnostic authentic-cadence\n"
+        << "            detector's global (tonicPc, mode, confidence) anchor plus the\n"
+        << "            detected cadences. The detector reads only chord root/quality +\n"
+        << "            pitch content (never the resolved key) and NEVER feeds scoring;\n"
+        << "            production analysis is byte-identical. Default OFF.\n"
         << "\n"
         << "  Returns 0 on success, non-zero on failure.\n";
 }
@@ -1419,6 +1523,7 @@ int main(int argc, char* argv[])
     std::set<int> dumpKeyTicks;  // Stage-4 emission instrument (read-only key-candidate dump)
     bool sectionLevel = false;   // Stage 2.2-i prototype (default OFF)
     bool ignoreDeclaredMode = false;  // Stage 4b-i mode-absent floor (default OFF = no-op)
+    bool dumpCadenceAnchor = false;   // Stage 4c-i cadence anchor (default OFF = byte-identical)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -1451,6 +1556,8 @@ int main(int argc, char* argv[])
             sectionLevel = true;
         } else if (a == "--ignore-declared-mode") {
             ignoreDeclaredMode = true;
+        } else if (a == "--dump-cadence-anchor") {
+            dumpCadenceAnchor = true;
         } else if (a == "--diagnose-measures") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --diagnose-measures requires a comma-separated list of measure numbers\n";
@@ -1593,6 +1700,21 @@ int main(int argc, char* argv[])
     const KeyModeAnalysisResult openingKey = inferLocalKey(
         score, refStaff, excludeStaves, Fraction(0, 1), nullptr, keyPrefs)[0];
 
+    // ── Stage 4c-iii: phrase boundaries + NOTATED signature (key-agnostic) ─
+    // Only needed for the --dump-cadence-anchor diagnostic; read here where the
+    // engraving Score is in scope.  The signature is the notated concertKey at
+    // tick 0 (NOT a resolved key) — the key-agnostic input the raised-LT salience
+    // requires.  When the flag is off these are unused (byte-identical output).
+    std::set<int> phraseBoundaryTicks;
+    int notatedSignatureFifths = 0;
+    if (dumpCadenceAnchor) {
+        phraseBoundaryTicks = collectPhraseBoundaryTicks(score);
+        if (refStaff < score->nstaves() && score->staff(refStaff)) {
+            notatedSignatureFifths = static_cast<int>(
+                score->staff(refStaff)->keySigEvent(Fraction(0, 1)).concertKey());
+        }
+    }
+
     // ── Extract source basename ───────────────────────────────────────────
     const std::string sourceName = QFileInfo(inputPath.toQString()).fileName().toUtf8().toStdString();
 
@@ -1604,7 +1726,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, std::cout);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths);
         }
         std::cout.flush();
         std::fflush(stdout);
@@ -1623,7 +1745,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, out);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths);
         }
         const std::string json = out.str();
         outFile.write(json.data(), static_cast<qint64>(json.size()));
