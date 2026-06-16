@@ -32,6 +32,7 @@ set(MODULE_TEST_SRC
 
     ${CMAKE_CURRENT_LIST_DIR}/test_helpers.h
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils.h
+    ${CMAKE_CURRENT_LIST_DIR}/cadencekeyanchor_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils_tests.cpp
@@ -39,10 +40,13 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/diagnose_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionlayer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/jointkeydecision_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/localmodulationdetector_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/postscoringgates_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tonicizationlabeler_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp
 )
 

@@ -28,6 +28,8 @@
 #include <utility>
 
 #include "engraving/dom/chord.h"
+#include "engraving/dom/engravingitem.h"
+#include "engraving/dom/key.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/segment.h"
@@ -40,9 +42,11 @@
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
+#include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/region/sparsechordrefinement.h"
 #include "composing/analysis/scoreharvest/metricweights.h"
+#include "composing/analysis/section/jointkeydecision.h"   // J-key-iii production wiring
 
 namespace ebr = mu::composing::analysis::engravingbridge;
 namespace kr  = mu::composing::analysis::keyresolver;
@@ -267,6 +271,176 @@ std::vector<mu::engraving::Fraction> denseBoundaryTicks(
     }
 
     return boundaries;
+}
+
+// ── J-key-iii — phrase boundaries from fermatas (key-agnostic notation) ──────────
+// Mirrors tools/batch_analyze.cpp collectPhraseBoundaryTicks EXACTLY so the wired
+// joint decision sees the SAME `endsPhrase` inputs the --dump-joint-key diagnostic
+// measured (the §5 invariant: wired key == measured softTonicPc/softIsMajor).
+std::set<int> jkdPhraseBoundaryTicks(const mu::engraving::Score* score)
+{
+    std::set<int> ticks;
+    for (const mu::engraving::Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+        for (const mu::engraving::Segment* s = m->first(mu::engraving::SegmentType::ChordRest);
+             s; s = s->next(mu::engraving::SegmentType::ChordRest)) {
+            for (const mu::engraving::EngravingItem* e : s->annotations()) {
+                if (e && e->isFermata()) {
+                    ticks.insert(s->tick().ticks());
+                    break;
+                }
+            }
+        }
+    }
+    return ticks;
+}
+
+// ── J-key-iii — the joint re-key pass (the FIRST intentional production behavior
+// change on the key axis; gated on jointKeyWiringEnabled(), default OFF) ─────────
+//
+// KEY-ONLY (J-key-iii §6/§7 decision). Pass-1 (the forward loop above) produced the
+// FINAL regions with the production key K0 + chord R0.  This pass:
+//   (a) re-resolves the local key candidates per FINAL region (threading prevKey —
+//       IDENTICAL to the batch_analyze --dump-joint-key construction, so the soft
+//       decision reproduces the measured diagnostic byte-for-byte), builds the
+//       JointKeyRegionInput stream, and calls decideJointKey ONCE (frozen — no
+//       fixpoint; dossier §4);
+//   (b) maps the SOFT (config-A) per-region decision (tonicPc,isMajor) to a
+//       KeyModeAnalysisResult and overrides region.keyModeResult.
+// The CHORD is left as the production chord R0 (NOT re-emitted): a faithful per-region
+// chord re-emission under the joint key cannot reproduce the multi-pass pipeline chord
+// (the production chord is emitted mid-pipeline, before Pass-3 tone merging; J-key-iii
+// §6/§7 measured ~6% same-key root-flip noise, i.e. the re-emission injected more
+// artifact than genuine key-driven movement), so the chord-axis side-effect (the
+// diatonic-root re-rank, dossier §6) is DEFERRED to a faithful mechanism.  The key axis
+// alone therefore moves; BIR/chord output is byte-identical to production.  Caller
+// re-runs backfillNextRootPc afterwards so V/x tonicization labels reflect the new key.
+void applyJointKeyWiring(const mu::engraving::Score* score,
+                         std::vector<HarmonicRegion>& regions,
+                         mu::engraving::staff_idx_t refStaff,
+                         const std::set<size_t>& excludeStaves,
+                         const KeyModeAnalyzerPreferences& keyPrefs)
+{
+    using namespace mu::engraving;
+    if (regions.empty() || !score) {
+        return;
+    }
+
+    // Documented constant: confidence for a joint pick that is NOT among the region's
+    // local candidates (a modulation-span state the Viterbi committed).  Conservative
+    // and SUB-threshold (< kAnnotateKeyConfidenceThreshold 0.8) so such a region does
+    // NOT spuriously open a KeyArea / fire a cadence; the matched-candidate path
+    // (the common case) carries the real calibrated normalizedConfidence.  [empirical]
+    constexpr double kJointModulationFallbackConfidence = 0.5;
+
+    // (a) notation-derived inputs — IDENTICAL to the diagnostic (batch_analyze main()).
+    int notatedFifths = 0;
+    int declaredModeOrdinal = -1;   // -1 unknown, 0 major, 1 minor
+    if (refStaff < score->nstaves() && score->staff(refStaff)) {
+        const KeySigEvent kse = score->staff(refStaff)->keySigEvent(Fraction(0, 1));
+        notatedFifths = static_cast<int>(kse.concertKey());
+        const KeyMode km = kse.mode();
+        if (km == KeyMode::MAJOR || km == KeyMode::IONIAN) {
+            declaredModeOrdinal = 0;
+        } else if (km == KeyMode::MINOR || km == KeyMode::AEOLIAN) {
+            declaredModeOrdinal = 1;
+        }
+    }
+    const std::set<int> phraseBoundaryTicks = jkdPhraseBoundaryTicks(score);
+
+    // (b) re-resolve local candidates per FINAL region + build the joint input stream.
+    std::vector<analysis::JointKeyRegionInput> input;
+    std::vector<std::vector<KeyModeAnalysisResult>> perRegionRanked;
+    input.reserve(regions.size());
+    perRegionRanked.reserve(regions.size());
+    std::optional<KeyModeAnalysisResult> prevKey;
+    for (const HarmonicRegion& hr : regions) {
+        const Fraction regionStart = Fraction::fromTicks(hr.startTick);
+        const auto keyRanked = kr::resolveKeyAndModeRanked(
+            score, regionStart, refStaff, excludeStaves, keyPrefs,
+            prevKey.has_value() ? &prevKey.value() : nullptr);
+        prevKey = keyRanked.empty() ? prevKey : std::optional<KeyModeAnalysisResult>(keyRanked.front());
+
+        analysis::JointKeyRegionInput ji;
+        ji.startTick = hr.startTick;
+        ji.endTick   = hr.endTick;
+        ji.rootPc    = hr.hasAnalyzedChord ? hr.chordResult.identity.rootPc : -1;
+        ji.quality   = hr.chordResult.identity.quality;
+        uint16_t mask = 0;
+        for (const auto& t : hr.tones) {
+            mask |= static_cast<uint16_t>(1u << (t.pitch % 12));
+        }
+        ji.pitchClassMask = mask;
+        bool endsPhrase = (&hr == &regions.back());
+        if (!endsPhrase) {
+            auto it = phraseBoundaryTicks.lower_bound(hr.startTick);
+            if (it != phraseBoundaryTicks.end() && *it < hr.endTick) {
+                endsPhrase = true;
+            }
+        }
+        ji.endsPhrase = endsPhrase;
+        int bassPc = hr.chordResult.identity.bassPc;
+        if (bassPc < 0) {
+            if (const auto* bt = bassToneFromTones(hr.tones)) {
+                bassPc = bt->pitch % 12;
+            }
+        }
+        ji.bassPc = bassPc;
+        for (const auto& kc : keyRanked) {
+            analysis::JointKeyLocalCandidate lc;
+            lc.tonicPc    = kc.tonicPc;
+            lc.isMajor    = kc.isMajor();
+            lc.confidence = kc.normalizedConfidence;
+            ji.localCandidates.push_back(lc);
+        }
+        if (hr.hasAnalyzedChord) {
+            ji.chordAlts.push_back({ hr.chordResult.identity.rootPc, hr.chordResult.identity.quality });
+        }
+        for (const auto& alt : hr.alternatives) {
+            ji.chordAlts.push_back({ alt.identity.rootPc, alt.identity.quality });
+        }
+        ji.prodTonicPc      = hr.keyModeResult.tonicPc;   // ECHO only (never read by the decision)
+        ji.prodIsMajor      = hr.keyModeResult.isMajor();
+        ji.declaredModeKnown = (declaredModeOrdinal == 0 || declaredModeOrdinal == 1);
+        ji.declaredModeMinor = (declaredModeOrdinal == 1);
+        input.push_back(std::move(ji));
+        perRegionRanked.push_back(keyRanked);
+    }
+
+    // (c) decide ONCE (frozen) over all regions.
+    const analysis::JointKeyResult jk = analysis::decideJointKey(input, notatedFifths);
+    if (jk.decisions.size() != regions.size()) {
+        return;   // defensive — shapes must match; leave production untouched
+    }
+
+    // (d) per-region: map the SOFT decision → keyModeResult (KEY-ONLY; chord untouched).
+    for (size_t i = 0; i < regions.size(); ++i) {
+        HarmonicRegion& region = regions[i];
+        const analysis::JointKeyDecision& d = jk.decisions[i];
+        const int  jt = d.softTonicPc;     // §5: the SOFT (config-A) decision is wired
+        const bool jm = d.softIsMajor;
+        if (jt < 0) {
+            continue;
+        }
+
+        // §3 representation mapping (tonicPc,isMajor) → KeyModeAnalysisResult.
+        KeyModeAnalysisResult km;
+        km.tonicPc            = jt;
+        km.mode               = jm ? KeySigMode::Ionian : KeySigMode::Aeolian;   // binary collapse (measured, §6)
+        km.keySignatureFifths = keySignatureFifthsForKey(jt, jm, notatedFifths);  // home pair → notated fifths
+        double conf = kJointModulationFallbackConfidence;
+        double raw  = 0.0;
+        for (const KeyModeAnalysisResult& lc : perRegionRanked[i]) {
+            if ((((lc.tonicPc % 12) + 12) % 12) == jt && lc.isMajor() == jm) {
+                conf = lc.normalizedConfidence;   // option (b): carry the matching local candidate
+                raw  = lc.score;
+                break;
+            }
+        }
+        km.normalizedConfidence = conf;
+        km.score                = raw;
+        region.keyModeResult    = km;
+        // CHORD intentionally left as the production R0 (key-only; J-key-iii §6/§7).
+    }
 }
 
 } // anonymous namespace
@@ -967,6 +1141,16 @@ analyzeRegions(const mu::engraving::Score* score,
 
     // V/x and vii°/x tonicization labels.
     backfillNextRootPc(regions);
+
+    // ── J-key-iii — joint re-key 2-pass (the FIRST intentional production behavior
+    // change on the key axis).  Gated on jointKeyWiringEnabled(), default OFF ⇒ the
+    // committed baseline is byte-identical; ON ⇒ override the per-region key with
+    // decideJointKey's SOFT decision + re-emit the chord under it, then re-run the
+    // tonicization backfill so V/x labels reflect the joint key. ─────────────────────
+    if (analysis::jointKeyWiringEnabled()) {
+        applyJointKeyWiring(score, regions, refStaff, excludeStaves, keyPrefs);
+        backfillNextRootPc(regions);
+    }
 
     if (opts.hooks) {
         if (opts.hooks->preMergeRegions) {

@@ -94,6 +94,9 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/region/regionanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"   // Stage 2.2-i prototype: --section-level
 #include "composing/analysis/section/cadencekeyanchor.h"   // Stage 4c-i: --dump-cadence-anchor
+#include "composing/analysis/section/localmodulationdetector.h" // Stage 4d-i: --dump-modulation
+#include "composing/analysis/section/jointkeydecision.h"    // J-key-i: --dump-joint-key
+#include "composing/analysis/function/tonicizationlabeler.h"  // Stage 6-tonic-i: --dump-tonicization
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
@@ -974,6 +977,243 @@ static void writeCadenceAnchorJson(const std::vector<AnalyzedRegion>& regions,
     out << "  }";
 }
 
+// ── Stage 4d-i: key-agnostic local-modulation detector (read-only diagnostic) ─
+// Invokes the new local-modulation detector (composing/analysis/section/
+// localmodulationdetector) on the analyzed regions and emits its candidate
+// local-key spans + the key-agnostic global anchor as an extra top-level
+// "modulation" key.  Default OFF (dumpModulation=false) so the standard .ours.json
+// is byte-identical.  The detector reads ONLY chord root/quality + pitch content +
+// the per-cadence list (NEVER the resolved key / KeyArea — the no-circularity rule,
+// design §3) and NEVER feeds the resolver/winner — it is measured, not wired (4d-ii).
+// The CadenceRegionInput stream here is constructed IDENTICALLY to
+// writeCadenceAnchorJson (same key-agnostic fields), so the detector and the
+// cadence diagnostic see the same inputs.
+static void writeModulationJson(const std::vector<AnalyzedRegion>& regions,
+                                const std::set<int>& phraseBoundaryTicks,
+                                int keySignatureFifths,
+                                std::ostream& out)
+{
+    std::vector<analysis::CadenceRegionInput> input;
+    input.reserve(regions.size());
+    for (size_t ri = 0; ri < regions.size(); ++ri) {
+        const auto& r = regions[ri];
+        analysis::CadenceRegionInput ci;
+        ci.startTick = r.startTick;
+        ci.endTick = r.endTick;
+        ci.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        ci.quality = r.chord.identity.quality;
+        ci.pitchClassMask = r.pcMask;
+        bool endsPhrase = (ri + 1 == regions.size());
+        if (!endsPhrase) {
+            auto it = phraseBoundaryTicks.lower_bound(r.startTick);
+            if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+                endsPhrase = true;
+            }
+        }
+        ci.endsPhrase = endsPhrase;
+        input.push_back(ci);
+    }
+
+    const analysis::ModulationDetectionResult mod =
+        analysis::detectLocalModulations(input, keySignatureFifths);
+
+    out << "  \"modulation\": {\n";
+    out << "    \"keySignatureFifths\": " << keySignatureFifths << ",\n";
+    out << "    \"anchorDetected\": " << (mod.anchor.detected ? "true" : "false") << ",\n";
+    out << "    \"anchorTonicPc\": " << mod.anchor.tonicPc << ",\n";
+    out << "    \"anchorMinorMode\": " << (mod.anchor.minorMode ? "true" : "false") << ",\n";
+    out << "    \"spanCount\": " << mod.spans.size() << ",\n";
+    out << "    \"spans\": [";
+    for (size_t i = 0; i < mod.spans.size(); ++i) {
+        const auto& s = mod.spans[i];
+        out << (i == 0 ? "\n" : ",\n");
+        out << "      {\"startTick\": " << s.startTick
+            << ", \"endTick\": " << s.endTick
+            << ", \"tonicPc\": " << s.tonicPc
+            << ", \"minorMode\": " << (s.minorMode ? "true" : "false")
+            << ", \"establishmentChords\": " << s.establishmentChords
+            << ", \"confirmingCadenceCount\": " << s.confirmingCadenceCount
+            << ", \"firstCadenceTonicTick\": " << s.firstCadenceTonicTick
+            << ", \"agreesWithAnchor\": " << (s.agreesWithAnchor ? "true" : "false") << "}";
+    }
+    out << (mod.spans.empty() ? "" : "\n    ") << "]\n";
+    out << "  }";
+}
+
+// ── J-key-i: scoped constrained-joint KEY decision (read-only diagnostic) ──────
+// Invokes the new scoped-joint key-decision producer (composing/analysis/section/
+// jointkeydecision) on the analyzed regions and emits, per region, BOTH the
+// soft-only (config A) and the soft+scoped-joint (config B) key decision plus the
+// structural flags, as an extra top-level "jointKey" object.  Default OFF
+// (dumpJointKey=false) so the standard .ours.json is byte-identical.
+//
+// The producer integrates ONLY key-agnostic + local-candidate evidence (the
+// committed cadence anchor + modulation detector, the analyzeKeyMode local
+// candidates, the notated signature, the declared-mode notation fact) and the
+// chord alternatives for the scoped-joint coupling.  The PRODUCTION resolved key
+// is carried through as an ECHOED reference ONLY (prodTonicPc/prodIsMajor) — the
+// decision never reads it (no-circularity; design §10).  It NEVER feeds the
+// production resolver/winner/RN — it is measured, not wired (wiring is J-key-iii).
+// The CadenceRegionInput-equivalent fields are built IDENTICALLY to
+// writeCadenceAnchorJson / writeModulationJson (same key-agnostic inputs).
+//
+// @p declaredModeOrdinal is the NOTATED <mode> at tick 0 read from the engraving
+// KeySigEvent in main(): -1 unknown, 0 major, 1 minor (the declared-mode hint, a
+// notation fact — NOT a resolved key).
+static void writeJointKeyJson(const std::vector<AnalyzedRegion>& regions,
+                              const std::set<int>& phraseBoundaryTicks,
+                              int keySignatureFifths,
+                              int declaredModeOrdinal,
+                              std::ostream& out)
+{
+    std::vector<analysis::JointKeyRegionInput> input;
+    input.reserve(regions.size());
+    for (size_t ri = 0; ri < regions.size(); ++ri) {
+        const auto& r = regions[ri];
+        analysis::JointKeyRegionInput ji;
+        ji.startTick = r.startTick;
+        ji.endTick = r.endTick;
+        ji.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        ji.quality = r.chord.identity.quality;
+        ji.pitchClassMask = r.pcMask;
+        bool endsPhrase = (ri + 1 == regions.size());
+        if (!endsPhrase) {
+            auto it = phraseBoundaryTicks.lower_bound(r.startTick);
+            if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+                endsPhrase = true;
+            }
+        }
+        ji.endsPhrase = endsPhrase;
+        ji.bassPc = r.bassPc;
+
+        // existing analyzeKeyMode local candidates (SOFT prior)
+        for (const auto& kc : r.keyRanked) {
+            analysis::JointKeyLocalCandidate lc;
+            lc.tonicPc = kc.tonicPc;
+            lc.isMajor = kc.isMajor();
+            lc.confidence = kc.normalizedConfidence;
+            ji.localCandidates.push_back(lc);
+        }
+        // chord winner + alternatives (scoped-joint coupling)
+        if (r.hasAnalyzedChord) {
+            ji.chordAlts.push_back({ r.chord.identity.rootPc, r.chord.identity.quality });
+        }
+        for (const auto& alt : r.alternatives) {
+            ji.chordAlts.push_back({ alt.identity.rootPc, alt.identity.quality });
+        }
+        // production resolved key — ECHOED reference only (never read by the decision)
+        ji.prodTonicPc = r.key.tonicPc;
+        ji.prodIsMajor = r.key.isMajor();
+        // declared-mode hint (notation fact)
+        ji.declaredModeKnown = (declaredModeOrdinal == 0 || declaredModeOrdinal == 1);
+        ji.declaredModeMinor = (declaredModeOrdinal == 1);
+        input.push_back(ji);
+    }
+
+    const analysis::JointKeyResult jk =
+        analysis::decideJointKey(input, keySignatureFifths);
+
+    out << "  \"jointKey\": {\n";
+    out << "    \"keySignatureFifths\": " << keySignatureFifths << ",\n";
+    out << "    \"declaredModeOrdinal\": " << declaredModeOrdinal << ",\n";
+    out << "    \"anchorDetected\": " << (jk.anchor.detected ? "true" : "false") << ",\n";
+    out << "    \"anchorTonicPc\": " << jk.anchor.tonicPc << ",\n";
+    out << "    \"anchorMinorMode\": " << (jk.anchor.minorMode ? "true" : "false") << ",\n";
+    // J-key-ii-redux Step 1: the anchor's own confidence + cadence count, so the
+    // separability instrument can test whether anchor STRENGTH discriminates a true
+    // global tonic from an internal tonicization the anchor over-detects (the
+    // ~44%-pin-wrong precision trap). Additive; production stays byte-identical.
+    out << "    \"anchorConfidence\": " << fmtDouble(jk.anchor.confidence, 5) << ",\n";
+    out << "    \"anchorCadenceCount\": " << jk.anchor.cadenceCount << ",\n";
+    out << "    \"modulationSpanCount\": " << jk.modulationSpanCount << ",\n";
+    out << "    \"coupledCount\": " << jk.coupledCount << ",\n";
+    out << "    \"hardPinnedCount\": " << jk.hardPinnedCount << ",\n";
+    // J-key-ii: the full scoped key lattice (note-inferred home candidates ∪ spans)
+    // — lets the safety instrument test DCML-key representability (the successor to
+    // the J-key-i home-fifths exclusion rate).
+    out << "    \"latticeStates\": [";
+    for (size_t i = 0; i < jk.latticeStates.size(); ++i) {
+        const auto& st = jk.latticeStates[i];
+        out << (i == 0 ? "" : ", ")
+            << "{\"tonicPc\": " << st.tonicPc
+            << ", \"isMajor\": " << (st.isMajor ? "true" : "false") << "}";
+    }
+    out << "],\n";
+    out << "    \"decisions\": [";
+    for (size_t i = 0; i < jk.decisions.size(); ++i) {
+        const auto& d = jk.decisions[i];
+        out << (i == 0 ? "\n" : ",\n");
+        out << "      {\"startTick\": " << d.startTick
+            << ", \"endTick\": " << d.endTick
+            << ", \"softTonicPc\": " << d.softTonicPc
+            << ", \"softIsMajor\": " << (d.softIsMajor ? "true" : "false")
+            << ", \"jointTonicPc\": " << d.jointTonicPc
+            << ", \"jointIsMajor\": " << (d.jointIsMajor ? "true" : "false")
+            << ", \"prodTonicPc\": " << d.prodTonicPc
+            << ", \"prodIsMajor\": " << (d.prodIsMajor ? "true" : "false")
+            << ", \"keyHardPinned\": " << (d.keyHardPinned ? "true" : "false")
+            << ", \"chordPinned\": " << (d.chordPinned ? "true" : "false")
+            << ", \"keyAmbiguous\": " << (d.keyAmbiguous ? "true" : "false")
+            << ", \"coupled\": " << (d.coupled ? "true" : "false")
+            << ", \"jointChanged\": " << (d.jointChanged ? "true" : "false")
+            << ", \"anchorContributed\": " << (d.anchorContributed ? "true" : "false")
+            << ", \"modulationContributed\": " << (d.modulationContributed ? "true" : "false")
+            << ", \"homeMajorTonicPc\": " << d.homeMajorTonicPc
+            << ", \"homeMinorTonicPc\": " << d.homeMinorTonicPc << "}";
+    }
+    out << (jk.decisions.empty() ? "" : "\n    ") << "]\n";
+    out << "  }";
+}
+
+// ── Stage 6-tonic-i: tonicization (applied-chord) labeler (read-only diagnostic) ─
+// Invokes the new functional-labeling pass (composing/analysis/function/
+// tonicizationlabeler) on the analyzed regions and emits, per region, the
+// candidate tonicization label (V/x, V7/x, viio/x, viiø7/x) or null, as an extra
+// top-level "tonicizations" array. Default OFF (dumpTonicization=false) so the
+// standard .ours.json is byte-identical; the labeler NEVER feeds the resolver/
+// formatter — it PRODUCES a label and is measured, not wired (wiring is 6-tonic-ii).
+// The labeler legitimately consumes the RESOLVED key per region (Stage 6 runs
+// after key resolution).
+static void writeTonicizationJson(const std::vector<AnalyzedRegion>& regions,
+                                  std::ostream& out)
+{
+    std::vector<analysis::TonicizationRegionInput> input;
+    input.reserve(regions.size());
+    for (const auto& r : regions) {
+        analysis::TonicizationRegionInput ti;
+        ti.startTick = r.startTick;
+        ti.endTick = r.endTick;
+        ti.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        ti.quality = r.chord.identity.quality;
+        const uint32_t ext = r.chord.identity.extensions;
+        ti.hasMinorSeventh = analysis::hasExtension(ext, analysis::Extension::MinorSeventh);
+        ti.hasDiminishedSeventh = analysis::hasExtension(ext, analysis::Extension::DiminishedSeventh);
+        ti.pitchClassMask = r.pcMask;
+        // Prevailing RESOLVED key for this region (Stage 4 output).
+        ti.keyTonicPc = r.key.tonicPc;
+        ti.keyIsMajor = r.key.isMajor();
+        ti.keySignatureFifths = r.key.keySignatureFifths;
+        input.push_back(ti);
+    }
+
+    const std::vector<analysis::TonicizationLabel> labels =
+        analysis::labelTonicizations(input);
+
+    out << "  \"tonicizations\": [";
+    for (size_t i = 0; i < labels.size(); ++i) {
+        const auto& l = labels[i];
+        out << (i == 0 ? "\n" : ",\n");
+        out << "      {\"startTick\": " << regions[i].startTick
+            << ", \"isApplied\": " << (l.isApplied ? "true" : "false")
+            << ", \"label\": \"" << jsonEscape(l.label) << "\""
+            << ", \"targetPc\": " << l.targetPc
+            << ", \"targetDegree\": " << l.targetDegree
+            << ", \"hasSeventh\": " << (l.hasSeventh ? "true" : "false")
+            << ", \"leadingTonePc\": " << l.leadingTonePc << "}";
+    }
+    out << (labels.empty() ? "" : "\n    ") << "]";
+}
+
 static void writeJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::string& sourceName,
@@ -983,7 +1223,11 @@ static void writeJson(
     std::ostream& out,
     bool dumpCadenceAnchor = false,
     const std::set<int>& phraseBoundaryTicks = {},
-    int notatedSignatureFifths = 0)
+    int notatedSignatureFifths = 0,
+    bool dumpTonicization = false,
+    bool dumpModulation = false,
+    bool dumpJointKey = false,
+    int declaredModeOrdinal = -1)
 {
     out << "{\n";
     out << "  \"source\": \""      << jsonEscape(sourceName)                                            << "\",\n";
@@ -1099,9 +1343,35 @@ static void writeJson(
         out << "\n";
     }
 
-    if (dumpCadenceAnchor) {
+    if (dumpCadenceAnchor || dumpTonicization || dumpModulation || dumpJointKey) {
         out << "  ],\n";
-        writeCadenceAnchorJson(regions, phraseBoundaryTicks, notatedSignatureFifths, out);
+        bool wroteExtra = false;
+        if (dumpCadenceAnchor) {
+            writeCadenceAnchorJson(regions, phraseBoundaryTicks, notatedSignatureFifths, out);
+            wroteExtra = true;
+        }
+        if (dumpModulation) {
+            if (wroteExtra) {
+                out << ",\n";
+            }
+            writeModulationJson(regions, phraseBoundaryTicks, notatedSignatureFifths, out);
+            wroteExtra = true;
+        }
+        if (dumpJointKey) {
+            if (wroteExtra) {
+                out << ",\n";
+            }
+            writeJointKeyJson(regions, phraseBoundaryTicks, notatedSignatureFifths,
+                              declaredModeOrdinal, out);
+            wroteExtra = true;
+        }
+        if (dumpTonicization) {
+            if (wroteExtra) {
+                out << ",\n";
+            }
+            writeTonicizationJson(regions, out);
+            wroteExtra = true;
+        }
         out << "\n}\n";
     } else {
         out << "  ]\n";
@@ -1438,7 +1708,9 @@ static void printHelp(const std::string& prog)
                            " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
                            " [--dump-key-candidates TICK[,TICK...]]"
-                           " [--dump-cadence-anchor]\n"
+                           " [--dump-cadence-anchor]"
+                           " [--dump-modulation]"
+                           " [--dump-tonicization]\n"
         << "\n"
         << "  Loads a score, runs harmonic analysis (ChordAnalyzer + KeyModeAnalyzer)\n"
         << "  and writes JSON to output.json, or to stdout if no output file given.\n"
@@ -1485,6 +1757,37 @@ static void printHelp(const std::string& prog)
         << "            detected cadences. The detector reads only chord root/quality +\n"
         << "            pitch content (never the resolved key) and NEVER feeds scoring;\n"
         << "            production analysis is byte-identical. Default OFF.\n"
+        << "  --dump-tonicization\n"
+        << "            (Stage 6-tonic-i, read-only) Append a top-level \"tonicizations\"\n"
+        << "            array to the standard regions JSON: per region, the candidate\n"
+        << "            secondary-dominant / applied-leading-tone label (V/x, V7/x,\n"
+        << "            viio/x, viiø7/x) or none. The labeler consumes the resolved key\n"
+        << "            but only PRODUCES a label — it NEVER feeds scoring or the emitted\n"
+        << "            Roman numeral; production analysis is byte-identical. Default OFF.\n"
+        << "  --dump-modulation\n"
+        << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
+        << "            the standard regions JSON: the key-agnostic local-modulation\n"
+        << "            detector's committed candidate local-key spans (each established\n"
+        << "            by a sustained consistent run AND confirmed by a V->I cadence) plus\n"
+        << "            the key-agnostic global anchor. The detector reads only chord\n"
+        << "            root/quality + pitch content + the per-cadence list (NEVER the\n"
+        << "            resolved key/KeyArea) and NEVER feeds scoring; production analysis\n"
+        << "            is byte-identical. Default OFF.\n"
+        << "  --dump-joint-key\n"
+        << "            (J-key-i, read-only) Append a top-level \"jointKey\" object to the\n"
+        << "            standard regions JSON: the scoped constrained-joint KEY decision\n"
+        << "            per region, in BOTH configs (soft-only and soft+scoped-joint), plus\n"
+        << "            the structural flags (hard-pinned / chord-pinned / coupled). The\n"
+        << "            producer integrates only key-agnostic + local-candidate evidence\n"
+        << "            (the production resolved key is an ECHOED reference, never read) and\n"
+        << "            NEVER feeds the resolver/winner/RN; production analysis is\n"
+        << "            byte-identical. Default OFF.\n"
+        << "  --joint-key-wiring\n"
+        << "            (J-key-iii, INTENTIONAL behavior change) WIRE the scoped\n"
+        << "            constrained-joint KEY decision into production: analyzeRegions\n"
+        << "            overrides each region's resolved key with decideJointKey's SOFT\n"
+        << "            decision and re-emits the chord under it (key-changed regions).\n"
+        << "            Off ⇒ byte-identical baseline. Default OFF (HELD until ratified).\n"
         << "\n"
         << "  Returns 0 on success, non-zero on failure.\n";
 }
@@ -1524,6 +1827,10 @@ int main(int argc, char* argv[])
     bool sectionLevel = false;   // Stage 2.2-i prototype (default OFF)
     bool ignoreDeclaredMode = false;  // Stage 4b-i mode-absent floor (default OFF = no-op)
     bool dumpCadenceAnchor = false;   // Stage 4c-i cadence anchor (default OFF = byte-identical)
+    bool dumpTonicization = false;    // Stage 6-tonic-i tonicization labels (default OFF = byte-identical)
+    bool dumpModulation = false;      // Stage 4d-i local-modulation spans (default OFF = byte-identical)
+    bool dumpJointKey = false;        // J-key-i scoped-joint key decision (default OFF = byte-identical)
+    bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -1558,6 +1865,14 @@ int main(int argc, char* argv[])
             ignoreDeclaredMode = true;
         } else if (a == "--dump-cadence-anchor") {
             dumpCadenceAnchor = true;
+        } else if (a == "--dump-modulation") {
+            dumpModulation = true;
+        } else if (a == "--dump-joint-key") {
+            dumpJointKey = true;
+        } else if (a == "--joint-key-wiring") {
+            jointKeyWiring = true;
+        } else if (a == "--dump-tonicization") {
+            dumpTonicization = true;
         } else if (a == "--diagnose-measures") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --diagnose-measures requires a comma-separated list of measure numbers\n";
@@ -1680,6 +1995,10 @@ int main(int argc, char* argv[])
         }
     }
 
+    // J-key-iii: enable the production joint re-key wiring for this process (global,
+    // default OFF ⇒ byte-identical baseline).  Set BEFORE analyzeScore → analyzeRegions.
+    analysis::setJointKeyWiringEnabled(jointKeyWiring);
+
     // ── Analyze harmonic regions (key inferred locally per region) ────────
     std::vector<AnalyzedRegion> regions;
     if (dumpMode == RegionDumpMode::Batch) {
@@ -1707,11 +2026,21 @@ int main(int argc, char* argv[])
     // requires.  When the flag is off these are unused (byte-identical output).
     std::set<int> phraseBoundaryTicks;
     int notatedSignatureFifths = 0;
-    if (dumpCadenceAnchor) {
+    // Declared <mode> at tick 0 (J-key-i declared-mode hint): -1 unknown, 0 major,
+    // 1 minor.  A notation fact read from the engraving KeySigEvent — NOT a resolved
+    // key.  Only used by --dump-joint-key; off ⇒ unused (byte-identical output).
+    int declaredModeOrdinal = -1;
+    if (dumpCadenceAnchor || dumpModulation || dumpJointKey) {
         phraseBoundaryTicks = collectPhraseBoundaryTicks(score);
         if (refStaff < score->nstaves() && score->staff(refStaff)) {
-            notatedSignatureFifths = static_cast<int>(
-                score->staff(refStaff)->keySigEvent(Fraction(0, 1)).concertKey());
+            const auto kse = score->staff(refStaff)->keySigEvent(Fraction(0, 1));
+            notatedSignatureFifths = static_cast<int>(kse.concertKey());
+            const mu::engraving::KeyMode km = kse.mode();
+            if (km == mu::engraving::KeyMode::MAJOR || km == mu::engraving::KeyMode::IONIAN) {
+                declaredModeOrdinal = 0;
+            } else if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+                declaredModeOrdinal = 1;
+            }
         }
     }
 
@@ -1726,7 +2055,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, std::cout);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal);
         }
         std::cout.flush();
         std::fflush(stdout);
@@ -1745,7 +2074,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, out);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal);
         }
         const std::string json = out.str();
         outFile.write(json.data(), static_cast<qint64>(json.size()));

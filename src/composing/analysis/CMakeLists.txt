@@ -33,6 +33,15 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.h
     ${CMAKE_CURRENT_LIST_DIR}/function/harmonicfunctionlayer.cpp
 
+    # tonicizationlabeler — the functional layer's narrow first slice (Stage
+    # 6-tonic-i; docs/stage6_functional_layer_design.md §3): a secondary-dominant
+    # / applied-leading-tone labeling pass over the decoded chord+key path,
+    # distinct from harmonicfunctionlayer (the chord-competition layer). Built +
+    # MEASURED only; it PRODUCES a label and does NOT mutate chord/key or feed the
+    # production RN output (wiring is 6-tonic-ii).
+    ${CMAKE_CURRENT_LIST_DIR}/function/tonicizationlabeler.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/tonicizationlabeler.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
@@ -53,6 +62,30 @@ target_sources(composing_analysis PRIVATE
     # (Phase 4c — Dependency Rule §3.3; docs/implementation_roadmap.md Stage 2.1).
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.h
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.cpp
+    # cadencekeyanchor — key-agnostic authentic-cadence → global tonic anchor
+    # (Stage 4c-i; docs/stage4c_cadence_key_design.md §2). Built + measured only;
+    # not yet wired into key scoring (that is 4c-ii).
+    ${CMAKE_CURRENT_LIST_DIR}/section/cadencekeyanchor.h
+    ${CMAKE_CURRENT_LIST_DIR}/section/cadencekeyanchor.cpp
+    # localmodulationdetector — key-agnostic local-modulation detector (Stage
+    # 4d-i; docs/stage4d_local_modulation_design.md §2): commits a candidate
+    # local-key span when it is ESTABLISHED (sustained consistent run) AND
+    # CONFIRMED (a V→I cadence inside it), consuming ONLY the key-agnostic cadence
+    # instrument + raw region structure (no resolved key / KeyArea — the
+    # no-circularity rule, design §3). Built + MEASURED only; not wired (4d-ii).
+    ${CMAKE_CURRENT_LIST_DIR}/section/localmodulationdetector.h
+    ${CMAKE_CURRENT_LIST_DIR}/section/localmodulationdetector.cpp
+    # jointkeydecision — the scoped constrained-joint KEY decision (J-key-i;
+    # docs/scoped_joint_design.md §6, the key-axis-first build): hard-fifths prune +
+    # soft re-rank (cadence anchor / modulation / bass-is-root / declared-mode hint
+    # / global key-path, all SOFT) + a scoped joint on the coupled core. Emits a
+    # soft-only AND a soft+joint decision per region (the attribution toggle).
+    # Consumes ONLY key-agnostic + local-candidate evidence (the production resolved
+    # key is an echoed reference, never read). Built + MEASURED only; invoked solely
+    # from tools/batch_analyze --dump-joint-key, never the production resolver
+    # (wiring is J-key-ii).
+    ${CMAKE_CURRENT_LIST_DIR}/section/jointkeydecision.h
+    ${CMAKE_CURRENT_LIST_DIR}/section/jointkeydecision.cpp
 
     # region/ — harmonic region types and the shared analyzeRegions orchestrator.
     # Phase 4 of the duplication remediation (docs/duplication_audit.md §§2.14, 5.4)

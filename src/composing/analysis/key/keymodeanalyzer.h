@@ -536,6 +536,14 @@ const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode);
 /// without depending on the full analyzeKeyMode implementation.
 int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
 
+/// Maps a binary (tonicPc, isMajor) key to its notated key-signature fifths value
+/// (-7..+7), choosing the enharmonic spelling nearest @p referenceFifths (the
+/// notated signature).  Major → Ionian circle position; minor → relative-major
+/// fifths.  Used by the J-key-iii joint-key override, whose decision is only
+/// (tonicPc, isMajor); passing the notated signature as the reference pins a home
+/// (signature-pair) key back to the notated fifths automatically.
+int keySignatureFifthsForKey(int tonicPc, bool isMajor, int referenceFifths);
+
 /// Human-readable tonic name for a (key-signature, mode) pair.
 /// E.g. keyModeTonicName(0, KeySigMode::Ionian) → "C",
 ///      keyModeTonicName(0, KeySigMode::Dorian) → "D",

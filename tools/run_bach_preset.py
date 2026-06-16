@@ -256,6 +256,27 @@ def main():
     parser.add_argument("--resume", action="store_true",
                         help="Keep existing .ours.json (skip the clean-slate); "
                              "regenerate only missing files.")
+    parser.add_argument("--dump-cadence-anchor", action="store_true",
+                        help="Stage 4c-i: pass --dump-cadence-anchor to batch_analyze "
+                             "(appends the read-only cadence anchor to each .ours.json; "
+                             "scoring byte-identical). Default off.")
+    parser.add_argument("--dump-tonicization", action="store_true",
+                        help="Stage 6-tonic-i: pass --dump-tonicization to batch_analyze "
+                             "(appends the read-only tonicization labels to each "
+                             ".ours.json; scoring byte-identical). Default off.")
+    parser.add_argument("--dump-modulation", action="store_true",
+                        help="Stage 4d-i: pass --dump-modulation to batch_analyze "
+                             "(appends the read-only local-modulation spans to each "
+                             ".ours.json; scoring byte-identical). Default off.")
+    parser.add_argument("--dump-joint-key", action="store_true",
+                        help="J-key-i: pass --dump-joint-key to batch_analyze "
+                             "(appends the read-only scoped-joint key decision to each "
+                             ".ours.json; scoring byte-identical). Default off.")
+    parser.add_argument("--joint-key-wiring", action="store_true",
+                        help="J-key-iii: pass --joint-key-wiring to batch_analyze "
+                             "(WIRES the scoped-joint key decision into production: "
+                             "overrides each region's key + re-emits the chord under it). "
+                             "INTENTIONAL behavior change; not byte-identical. Default off.")
     parser.add_argument("--diag-out", metavar="FILE",
                         help="Append batch_analyze stderr to this file (for diagnostics)")
     args = parser.parse_args()
@@ -312,7 +333,20 @@ def main():
     total_chord = 0
     score_status: dict[str, str] = {}
 
-    extra_args = "--ignore-declared-mode" if args.ignore_declared_mode else ""
+    extra_flags = []
+    if args.ignore_declared_mode:
+        extra_flags.append("--ignore-declared-mode")
+    if args.dump_cadence_anchor:
+        extra_flags.append("--dump-cadence-anchor")
+    if args.dump_tonicization:
+        extra_flags.append("--dump-tonicization")
+    if args.dump_modulation:
+        extra_flags.append("--dump-modulation")
+    if args.dump_joint_key:
+        extra_flags.append("--dump-joint-key")
+    if args.joint_key_wiring:
+        extra_flags.append("--joint-key-wiring")
+    extra_args = " ".join(extra_flags)
     work_items = [
         (idx, exe, xml_path,
          out_dir / f"{xml_path.stem}.ours.json",

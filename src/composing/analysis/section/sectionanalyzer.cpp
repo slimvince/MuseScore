@@ -53,6 +53,7 @@
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/region/sparsechordrefinement.h"
+#include "composing/analysis/section/jointkeydecision.h"   // J-key-iii wiring flag
 
 namespace ebr = mu::composing::analysis::engravingbridge;
 namespace cra = mu::composing::analysis::region;
@@ -84,26 +85,34 @@ void stabilizeHarmonicRegionsForDisplay(std::vector<mu::composing::analysis::Ana
         return;
     }
 
-    int stableKeyFifths = regions.front().keyModeResult.keySignatureFifths;
-    KeySigMode stableMode = regions.front().keyModeResult.mode;
+    // Layer B — 1-region-island key stabilization.  J-key-iii: when the joint
+    // re-key wiring is ENABLED, the per-region key is already the global key-path
+    // Viterbi decision (decideJointKey IS the smoothing layer), so this island
+    // stabilization is made INERT (skipped) — otherwise it would re-smooth the joint
+    // keys and break the §5 invariant (wired key == measured softTonicPc/softIsMajor;
+    // dossier §5, the "override after Layer B" disposition).  Default OFF ⇒ unchanged.
+    if (!jointKeyWiringEnabled()) {
+        int stableKeyFifths = regions.front().keyModeResult.keySignatureFifths;
+        KeySigMode stableMode = regions.front().keyModeResult.mode;
 
-    for (size_t i = 1; i < regions.size(); ++i) {
-        const int regionKeyFifths = regions[i].keyModeResult.keySignatureFifths;
-        const KeySigMode regionMode = regions[i].keyModeResult.mode;
-        if (regionKeyFifths != stableKeyFifths || regionMode != stableMode) {
-            bool persistent = (i + 1 >= regions.size());
-            if (!persistent) {
-                const int nextKeyFifths = regions[i + 1].keyModeResult.keySignatureFifths;
-                const KeySigMode nextMode = regions[i + 1].keyModeResult.mode;
-                persistent = (nextKeyFifths == regionKeyFifths && nextMode == regionMode);
+        for (size_t i = 1; i < regions.size(); ++i) {
+            const int regionKeyFifths = regions[i].keyModeResult.keySignatureFifths;
+            const KeySigMode regionMode = regions[i].keyModeResult.mode;
+            if (regionKeyFifths != stableKeyFifths || regionMode != stableMode) {
+                bool persistent = (i + 1 >= regions.size());
+                if (!persistent) {
+                    const int nextKeyFifths = regions[i + 1].keyModeResult.keySignatureFifths;
+                    const KeySigMode nextMode = regions[i + 1].keyModeResult.mode;
+                    persistent = (nextKeyFifths == regionKeyFifths && nextMode == regionMode);
+                }
+                if (persistent) {
+                    stableKeyFifths = regionKeyFifths;
+                    stableMode = regionMode;
+                }
             }
-            if (persistent) {
-                stableKeyFifths = regionKeyFifths;
-                stableMode = regionMode;
-            }
+            regions[i].keyModeResult.keySignatureFifths = stableKeyFifths;
+            regions[i].keyModeResult.mode = stableMode;
         }
-        regions[i].keyModeResult.keySignatureFifths = stableKeyFifths;
-        regions[i].keyModeResult.mode = stableMode;
     }
 
     for (auto& region : regions) {

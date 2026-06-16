@@ -516,6 +516,17 @@ bool modeIsCompatibleWithDeclared(KeySigMode candidate, KeySigMode declared)
 
 // ── Public API ───────────────────────────────────────────────────────────────
 
+int keySignatureFifthsForKey(int tonicPc, bool isMajor, int referenceFifths)
+{
+    // Map a binary (tonic, major/minor) key to its notated key-signature fifths,
+    // choosing the enharmonic spelling closest to the reference (the notated
+    // signature).  Major → Ionian, minor → Aeolian.  Used by the J-key-iii joint
+    // override (jointkeydecision emits only (tonicPc,isMajor)); the reference pins
+    // the home pair back to the notated signature automatically.
+    const size_t modeIndex = keyModeIndex(isMajor ? KeySigMode::Ionian : KeySigMode::Aeolian);
+    return resolveToFifths(((tonicPc % 12) + 12) % 12, modeIndex, referenceFifths);
+}
+
 std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const std::vector<PitchContext>& pitches,
     int keySignatureFifths,
