@@ -119,4 +119,11 @@ target_sources(composing_analysis PRIVATE
     # docs/duplication_audit.md §§2.1-2.13 and §5.1.
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontonecollector.h
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontonecollector.cpp
+    # Refactor — tone/context primitives split out of regiontonecollector.cpp
+    # (byte-identical pure code movement): collectSoundingAt, buildTones,
+    # collectPitchContext, the two sub-boundary detectors, and findTemporalContext.
+    # Residual regiontonecollector.cpp holds the collectRegionTones orchestrator.
+    # Declarations stay in the unchanged regiontonecollector.h. See
+    # cc_module_layering_assessment_dossier.md §5.
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontoneprimitives.cpp
 )
