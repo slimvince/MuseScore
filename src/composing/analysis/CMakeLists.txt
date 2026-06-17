@@ -25,6 +25,13 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/chord/analysisutils.h
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.h
+    # Refactor #1 — single-responsibility layer TUs split out of chordanalyzer.cpp
+    # (byte-identical pure code movement). See cc_refactor1_split_design_dossier.md.
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordsymbolformatter.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordvoicing.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chorddiagnose.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordpostpasses.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/postscoringgates.cpp
 
     # function/ — Phase E harmonic function layer (post-analysis pass between
     # analyzeChord() output and the final chord label). E1 is a pass-through

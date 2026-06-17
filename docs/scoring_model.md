@@ -12,6 +12,19 @@ pipeline. It covers the templates, every additive bonus / penalty term, the
 post-scoring gates, the inversion-correction pass, and the load-bearing
 invariants that future changes must respect.
 
+> **File layout after refactor #1 (byte-identical layer split).** `chordanalyzer.cpp`
+> retains the vertical **oracle** (scoring constants/helpers, `TemplateDef`, the
+> `kTemplateCount`-derived `templates` array + score matrices, `detectExtensions`,
+> `buildChordResult`, `analyzeChord`, the factory). Five single-responsibility sibling
+> TUs were split out (pure code movement; no scoring/inference change):
+> `postscoringgates.cpp` (the post-scoring gate layer A–L, `applyPostScoringGates`),
+> `chordpostpasses.cpp` (the Iter-86/91/pedal tail, `applyIter8691Pedal`),
+> `chordsymbolformatter.cpp` (`formatSymbol`/`formatRomanNumeral`/`formatNashvilleNumber`
+> + their helpers), `chorddiagnose.cpp` (`diagnoseChord`), and `chordvoicing.cpp`
+> (`chordTonePitchClasses`/`closePositionVoicing`). `chordanalyzer.h` is unchanged — the
+> stable integration boundary. The competition / function layer was already external
+> (`function/harmonicfunctionlayer.cpp`). See `cc_refactor1_split_design_dossier.md`.
+
 ---
 
 ## 1. Overview
@@ -582,7 +595,8 @@ inversion-alternative is appended. They modify ranking via `std::swap` and
 
 **E3 (2026-06-06): execution location.** Gates A–L are implemented in
 `applyPostScoringGates()` (declared in `chordanalyzer.h`, defined in
-`chordanalyzer.cpp`). `analyzeChord()` no longer runs them internally; instead
+`postscoringgates.cpp` since refactor #1; formerly `chordanalyzer.cpp`).
+`analyzeChord()` no longer runs them internally; instead
 it publishes the inputs the gates need (`pcWeight`, `tpcForPc`, `scale`,
 `keyTonicPc`, `keyMode`, `bassPc`, `bassTpc`, `distinctPcs`, `threshold`,
 `rawCandidates`) via the optional `PostScoringGateContext* gateCtxOut`
@@ -843,8 +857,8 @@ fields were removed in Stage 0.2). Extended in E4 with phrase-boundary and caden
 competition pipeline `applyHarmonicFunction()`; see section 11.
 
 **E3 (done, 2026-06-06):** Post-scoring gates A–L extracted from `analyzeChord()`
-into `applyPostScoringGates()` (`chordanalyzer.cpp`). The new execution order at
-every production call site is:
+into `applyPostScoringGates()` (in `postscoringgates.cpp` since refactor #1; originally
+`chordanalyzer.cpp`). The new execution order at every production call site is:
 
 ```
 analyzeChord()              → pre-gate raw scoring + PostScoringGateContext out-param
