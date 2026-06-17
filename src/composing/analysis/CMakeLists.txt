@@ -69,6 +69,11 @@ target_sources(composing_analysis PRIVATE
     # (Phase 4c — Dependency Rule §3.3; docs/implementation_roadmap.md Stage 2.1).
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.h
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionanalyzer.cpp
+    # Refactor — cadence/pivot detection lifted out of sectionanalyzer.cpp
+    # (byte-identical pure code movement): detectCadences / detectPivotChords /
+    # hasAssertiveKeyConfidence — independent of analyzeSection, driven by the
+    # notation bridge. Declarations stay in the unchanged sectionanalyzer.h.
+    ${CMAKE_CURRENT_LIST_DIR}/section/sectioncadencedetection.cpp
     # cadencekeyanchor — key-agnostic authentic-cadence → global tonic anchor
     # (Stage 4c-i; docs/stage4c_cadence_key_design.md §2). Built + measured only;
     # not yet wired into key scoring (that is 4c-ii).
