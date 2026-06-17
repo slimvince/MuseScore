@@ -58,6 +58,13 @@ target_sources(composing_analysis PRIVATE
     # key/ — key and mode analysis
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodeanalyzer.h
+    # Refactor — display formatters lifted out of keymodeanalyzer.cpp
+    # (byte-identical pure code movement): keyModeTonicName / keyModeSuffix.
+    # Both are header-declared (external linkage) and depend only on the
+    # KeySigMode enum — no coupling to the anon-ns MODES/scorer cluster, which
+    # stays in keymodeanalyzer.cpp. Declarations stay in the unchanged
+    # keymodeanalyzer.h. See cc_refactor_keymodeanalyzer_report.md.
+    ${CMAKE_CURRENT_LIST_DIR}/key/keymodeformatting.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keyresolver.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/keyresolver.h
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
