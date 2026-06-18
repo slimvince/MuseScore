@@ -22,41 +22,16 @@
 
 #include "composing/analysis/section/cadencekeyanchor.h"
 
+#include "composing/analysis/chord/analysisutils.h"
+
 #include <algorithm>
 #include <map>
 #include <utility>
 
 namespace mu::composing::analysis {
 
-namespace {
-
-/// Reduce x to the [0, 12) pitch-class residue.
-inline int pcMod12(int x) noexcept
-{
-    return ((x % 12) + 12) % 12;
-}
-
-/// True if pitch class `pc` (0–11) is set in the 12-bit mask.
-inline bool pcInMask(uint16_t mask, int pc) noexcept
-{
-    return (mask >> pcMod12(pc)) & 1u;
-}
-
-/// 12-bit mask of the diatonic pitch classes of a key SIGNATURE (Ionian).
-/// Signature `fifths` selects the seven consecutive circle-of-fifths positions
-/// [fifths-1, fifths+5]; position i has pitch class (7·i) mod 12.  For fifths=0
-/// this is {0,2,4,5,7,9,11} (C-major / A-minor natural collection).
-/// Key-agnostic: depends ONLY on the notated signature, never a resolved mode.
-inline uint16_t diatonicMaskFromFifths(int fifths) noexcept
-{
-    uint16_t m = 0;
-    for (int i = fifths - 1; i <= fifths + 5; ++i) {
-        m |= static_cast<uint16_t>(1u << pcMod12(7 * i));
-    }
-    return m;
-}
-
-} // namespace
+// Pitch-class / signature-collection primitives (normalizePc, pcInMask,
+// diatonicMaskFromFifths) are shared from analysisutils.h.
 
 std::vector<AuthenticCadence>
 detectAuthenticCadences(const std::vector<CadenceRegionInput>& regions,
@@ -92,7 +67,7 @@ detectAuthenticCadences(const std::vector<CadenceRegionInput>& regions,
         }
 
         // Descending perfect fifth: root(b) ≡ (root(a) − 7) mod 12.
-        if (pcMod12(a.rootPc - 7) != b.rootPc) {
+        if (normalizePc(a.rootPc - 7) != b.rootPc) {
             continue;
         }
 
@@ -100,7 +75,7 @@ detectAuthenticCadences(const std::vector<CadenceRegionInput>& regions,
         // which is by construction one semitone below root(b).  Require it to be
         // physically present in the dominant's pitch content (not merely implied
         // by the Major quality label).
-        const int leadingTone = pcMod12(a.rootPc + 4);
+        const int leadingTone = normalizePc(a.rootPc + 4);
         if (!pcInMask(a.pitchClassMask, leadingTone)) {
             continue;
         }

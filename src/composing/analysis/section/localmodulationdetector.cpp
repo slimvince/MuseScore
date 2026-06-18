@@ -22,6 +22,8 @@
 
 #include "composing/analysis/section/localmodulationdetector.h"
 
+#include "composing/analysis/chord/analysisutils.h"
+
 #include <algorithm>
 #include <climits>
 
@@ -45,48 +47,24 @@ namespace {
 constexpr int kEstablishmentMinChords = 5;
 constexpr int kPitchTolerance = 2;
 
-// File-local helpers carry an lmd* prefix: the Unity/jumbo build concatenates
-// every composing/analysis TU into one translation unit, so an unprefixed
-// anonymous-namespace name (e.g. pcMod12) would ODR-clash with the same name in a
-// sibling file (cadencekeyanchor.cpp).
-inline int lmdPcMod12(int x) noexcept
-{
-    return ((x % 12) + 12) % 12;
-}
-
-/// 12-bit mask of the diatonic collection of a LOCAL key (hypothesized tonic +
-/// mode) — key-agnostic: built from the tonic pc and mode alone, never a resolved
-/// key.  Major: the major scale.  Minor: natural minor PLUS the raised leading
-/// tone (harmonic minor), so a genuine minor V→i's raised LT does not count as a
-/// chromatic intrusion.
-inline uint16_t lmdCollectionMask(int tonicPc, bool minorMode) noexcept
-{
-    static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };
-    static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7
-    uint16_t m = 0;
-    if (minorMode) {
-        for (int d : kMinorHarm) {
-            m |= static_cast<uint16_t>(1u << lmdPcMod12(tonicPc + d));
-        }
-    } else {
-        for (int d : kMajor) {
-            m |= static_cast<uint16_t>(1u << lmdPcMod12(tonicPc + d));
-        }
-    }
-    return m;
-}
+// The pitch-class / collection primitives (normalizePc, collectionMask) are shared
+// from analysisutils.h. The collection mask there uses the `isMajor` convention, so
+// the call sites below pass `!minorMode`. The remaining helpers keep their lmd*
+// prefix: the Unity/jumbo build concatenates every composing/analysis TU into one
+// translation unit, so an unprefixed anonymous-namespace name would ODR-clash with
+// a same-named helper in a sibling file.
 
 /// Is `pc` a diatonic root degree of the local key?  Equal to membership in the
 /// collection mask (major scale, or natural-minor + raised LT).
 inline bool lmdRootIsDiatonic(int pc, int tonicPc, bool minorMode) noexcept
 {
-    return (lmdCollectionMask(tonicPc, minorMode) >> lmdPcMod12(pc)) & 1u;
+    return (collectionMask(tonicPc, !minorMode) >> normalizePc(pc)) & 1u;
 }
 
 /// Count of pitch classes set in `mask` that lie OUTSIDE the local collection.
 inline int lmdOutOfCollectionCount(uint16_t mask, int tonicPc, bool minorMode) noexcept
 {
-    const uint16_t outside = static_cast<uint16_t>(mask & ~lmdCollectionMask(tonicPc, minorMode));
+    const uint16_t outside = static_cast<uint16_t>(mask & ~collectionMask(tonicPc, !minorMode));
     int n = 0;
     for (int p = 0; p < 12; ++p) {
         if ((outside >> p) & 1u) {

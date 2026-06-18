@@ -22,42 +22,18 @@
 
 #include "composing/analysis/function/tonicizationlabeler.h"
 
+#include "composing/analysis/chord/analysisutils.h"
+
 #include <array>
 
 namespace mu::composing::analysis {
 
-// A NAMED detail namespace (not anonymous): the unity build concatenates this TU
-// with cadencekeyanchor.cpp, which defines identically-named pc helpers in its own
-// anonymous namespace — two anonymous namespaces in one unity TU are the SAME
-// unnamed namespace and would collide. The named namespace keeps these distinct.
+// The pitch-class / signature-collection primitives (normalizePc, pcInMask,
+// diatonicMaskFromFifths) are shared from analysisutils.h. The remaining
+// tonicization-specific helpers (keyScale + the numeral tables) stay in a NAMED
+// detail namespace: the unity build concatenates this TU with sibling files, and a
+// named namespace keeps these private symbols distinct from theirs.
 namespace tonicization_detail {
-
-/// Reduce x to the [0, 12) pitch-class residue.
-inline int pcMod12(int x) noexcept
-{
-    return ((x % 12) + 12) % 12;
-}
-
-/// True if pitch class `pc` (0–11) is set in the 12-bit mask.
-inline bool pcInMask(uint16_t mask, int pc) noexcept
-{
-    return (mask >> pcMod12(pc)) & 1u;
-}
-
-/// 12-bit mask of the diatonic pitch classes of a key SIGNATURE (Ionian).
-/// Identical to cadencekeyanchor's helper: signature `fifths` selects the seven
-/// consecutive circle-of-fifths positions [fifths-1, fifths+5]; position i has
-/// pitch class (7·i) mod 12. For fifths=0 this is {0,2,4,5,7,9,11} (C-major /
-/// A-minor natural collection). Used both for the chromatic-vs-key test and to
-/// enumerate the key's diatonic degrees.
-inline uint16_t diatonicMaskFromFifths(int fifths) noexcept
-{
-    uint16_t m = 0;
-    for (int i = fifths - 1; i <= fifths + 5; ++i) {
-        m |= static_cast<uint16_t>(1u << pcMod12(7 * i));
-    }
-    return m;
-}
 
 /// Build the ordered diatonic scale of the prevailing key: the seven collection
 /// members in ascending pitch order starting from the tonic. scale[0] == tonicPc.
@@ -72,7 +48,7 @@ inline bool keyScale(int tonicPc, uint16_t collMask, std::array<int, 7>& out) no
     }
     int idx = 0;
     for (int step = 0; step < 12 && idx < 7; ++step) {
-        const int pc = pcMod12(tonicPc + step);
+        const int pc = normalizePc(tonicPc + step);
         if (pcInMask(collMask, pc)) {
             out[idx++] = pc;
         }
@@ -133,7 +109,7 @@ labelTonicizations(const std::vector<TonicizationRegionInput>& regions)
         // of d must be an ACCIDENTAL relative to the key signature. A diatonic
         // leading tone means ordinary diatonic motion, not a tonicization (e.g.
         // VII→III in a minor key — DCML agrees this is not applied).
-        const int lt = pcMod12(d + 11);
+        const int lt = normalizePc(d + 11);
         if (pcInMask(collMask, lt)) {
             continue;
         }
@@ -144,7 +120,7 @@ labelTonicizations(const std::vector<TonicizationRegionInput>& regions)
         if (a.quality == ChordQuality::Major) {
             // APPLIED DOMINANT (V/d, V7/d): root a perfect fifth above d, with
             // the leading tone of d (= a's major third) physically present.
-            if (a.rootPc == pcMod12(d + 7) && pcInMask(a.pitchClassMask, lt)) {
+            if (a.rootPc == normalizePc(d + 7) && pcInMask(a.pitchClassMask, lt)) {
                 kind = AppliedKind::AppliedDominant;
                 hasSeventh = a.hasMinorSeventh;
             }
@@ -166,7 +142,7 @@ labelTonicizations(const std::vector<TonicizationRegionInput>& regions)
         // uppercase. third = the scale member two steps above d. Matches the
         // existing formatRomanNumeral() secondary casing (isDegreeMajorThird).
         const int thirdPc = scale[(degree + 2) % 7];
-        const bool degMajorThird = (pcMod12(thirdPc - d) == 4);
+        const bool degMajorThird = (normalizePc(thirdPc - d) == 4);
 
         std::string label;
         if (kind == AppliedKind::AppliedDominant) {

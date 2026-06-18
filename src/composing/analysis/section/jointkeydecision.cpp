@@ -22,6 +22,8 @@
 
 #include "composing/analysis/section/jointkeydecision.h"
 
+#include "composing/analysis/chord/analysisutils.h"
+
 #include <algorithm>
 #include <array>
 #include <cstdlib>
@@ -31,42 +33,17 @@ namespace mu::composing::analysis {
 
 namespace {
 
-// File-local helpers carry a jkd* prefix: the Unity/jumbo build concatenates every
-// composing/analysis TU into one translation unit, so an unprefixed
-// anonymous-namespace name (e.g. pcMod12) would ODR-clash with the same name in a
-// sibling file (cadencekeyanchor.cpp / localmodulationdetector.cpp).
-inline int jkdPcMod12(int x) noexcept
-{
-    return ((x % 12) + 12) % 12;
-}
-
-/// 12-bit diatonic-collection mask of a key (tonic + major/minor).  Major: the
-/// major scale.  Minor: natural minor PLUS the raised leading tone (harmonic
-/// minor), so a genuine minor V→i's raised LT is in-collection — identical to the
-/// modulation detector's lmdCollectionMask, kept local for the same key-agnostic
-/// reason.  Built from (tonic, mode) alone, never a resolved key.
-inline uint16_t jkdCollectionMask(int tonicPc, bool isMajor) noexcept
-{
-    static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };
-    static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7
-    uint16_t m = 0;
-    if (isMajor) {
-        for (int d : kMajor) {
-            m |= static_cast<uint16_t>(1u << jkdPcMod12(tonicPc + d));
-        }
-    } else {
-        for (int d : kMinorHarm) {
-            m |= static_cast<uint16_t>(1u << jkdPcMod12(tonicPc + d));
-        }
-    }
-    return m;
-}
+// The pitch-class / collection primitives (normalizePc, collectionMask) are shared
+// from analysisutils.h. The remaining file-local helpers keep their jkd* prefix:
+// the Unity/jumbo build concatenates every composing/analysis TU into one
+// translation unit, so an unprefixed anonymous-namespace name would ODR-clash with
+// a same-named helper in a sibling file.
 
 /// Fraction of the sounding pitch classes in `mask` that lie INSIDE the key's
 /// collection (0..1).  Empty mask ⇒ 0.  The scale/collection prior (design §3.3).
 inline double jkdInCollectionFraction(uint16_t mask, int tonicPc, bool isMajor) noexcept
 {
-    const uint16_t coll = jkdCollectionMask(tonicPc, isMajor);
+    const uint16_t coll = collectionMask(tonicPc, isMajor);
     int total = 0, inside = 0;
     for (int p = 0; p < 12; ++p) {
         if ((mask >> p) & 1u) {
@@ -85,7 +62,7 @@ inline bool jkdRootDiatonic(int pc, int tonicPc, bool isMajor) noexcept
     if (pc < 0) {
         return false;
     }
-    return (jkdCollectionMask(tonicPc, isMajor) >> jkdPcMod12(pc)) & 1u;
+    return (collectionMask(tonicPc, isMajor) >> normalizePc(pc)) & 1u;
 }
 
 // The standard tertian chord vocabulary, root-relative interval sets — IDENTICAL to
@@ -130,7 +107,7 @@ bool jkdChordPinned(uint16_t mask) noexcept
         for (int root = 0; root < 12; ++root) {
             uint16_t tm = 0;
             for (int k = 0; k < t.n; ++k) {
-                tm |= static_cast<uint16_t>(1u << jkdPcMod12(root + t.iv[static_cast<size_t>(k)]));
+                tm |= static_cast<uint16_t>(1u << normalizePc(root + t.iv[static_cast<size_t>(k)]));
             }
             if (tm == mask) {
                 if (++matches > 1) {
@@ -209,8 +186,8 @@ decideJointKey(const std::vector<JointKeyRegionInput>& regions,
     // candidates ∪ a 0.30 signature prior — is SUPERSEDED: it shrank the soft win
     // and regressed Default/Baroque S2; restoring this strong backbone is what
     // reproduces the ratified +3.80/+3.50/+12.24 pp profile.) ─────────────────────
-    const int homeMajorTonic = jkdPcMod12(keySignatureFifths * 7);
-    const int homeMinorTonic = jkdPcMod12(homeMajorTonic + 9);
+    const int homeMajorTonic = normalizePc(keySignatureFifths * 7);
+    const int homeMinorTonic = normalizePc(homeMajorTonic + 9);
 
     // ── Key-state lattice: the signature home pair ∪ committed modulation-span
     // states (the few keys the piece actually visits — NOT all 24).  The home pair is
@@ -220,7 +197,7 @@ decideJointKey(const std::vector<JointKeyRegionInput>& regions,
     // subdominant key; J-key-i §10.5). ────────────────────────────────────────────
     std::vector<KeyState> states;
     auto addState = [&](const KeyState& ks) {
-        KeyState n{ jkdPcMod12(ks.tonicPc), ks.isMajor };
+        KeyState n{ normalizePc(ks.tonicPc), ks.isMajor };
         if (std::find(states.begin(), states.end(), n) == states.end()) {
             states.push_back(n);
         }
@@ -228,7 +205,7 @@ decideJointKey(const std::vector<JointKeyRegionInput>& regions,
     addState({ homeMajorTonic, true });    // index 0 — preferred on exact ties
     addState({ homeMinorTonic, false });   // index 1
     for (const LocalKeySpan& s : mod.spans) {
-        addState({ jkdPcMod12(s.tonicPc), !s.minorMode });
+        addState({ normalizePc(s.tonicPc), !s.minorMode });
     }
     const int S = static_cast<int>(states.size());
 
@@ -262,27 +239,27 @@ decideJointKey(const std::vector<JointKeyRegionInput>& regions,
         s += w.scalePrior * jkdInCollectionFraction(r.pitchClassMask, k.tonicPc, k.isMajor);
         // existing analyzeKeyMode local candidate (SOFT prior)
         for (const JointKeyLocalCandidate& lc : r.localCandidates) {
-            if (jkdPcMod12(lc.tonicPc) == k.tonicPc && lc.isMajor == k.isMajor) {
+            if (normalizePc(lc.tonicPc) == k.tonicPc && lc.isMajor == k.isMajor) {
                 s += w.localPrior * lc.confidence;
                 break;
             }
         }
         // cadence anchor (SOFT)
         if (mod.anchor.detected
-            && jkdPcMod12(mod.anchor.tonicPc) == k.tonicPc
+            && normalizePc(mod.anchor.tonicPc) == k.tonicPc
             && (!mod.anchor.minorMode) == k.isMajor) {
             s += w.cadenceAnchor;
         }
         // local-modulation hypothesis (SOFT) — a committed span covering region i
         for (const LocalKeySpan& sp : mod.spans) {
             if (sp.startTick <= r.startTick && r.startTick < sp.endTick
-                && jkdPcMod12(sp.tonicPc) == k.tonicPc && (!sp.minorMode) == k.isMajor) {
+                && normalizePc(sp.tonicPc) == k.tonicPc && (!sp.minorMode) == k.isMajor) {
                 s += w.modulation;
                 break;
             }
         }
         // bass-is-root tonic cue (SOFT)
-        if (r.bassPc >= 0 && jkdPcMod12(r.bassPc) == k.tonicPc) {
+        if (r.bassPc >= 0 && normalizePc(r.bassPc) == k.tonicPc) {
             s += w.bassIsRootTonic;
         }
         // declared-mode hint (SOFT) — applies to the signature relative pair only
@@ -398,11 +375,11 @@ decideJointKey(const std::vector<JointKeyRegionInput>& regions,
         // provenance: did the config-A winner draw the anchor / modulation bonus?
         const KeyState& kw = softPath[i];
         d.anchorContributed = mod.anchor.detected
-                              && jkdPcMod12(mod.anchor.tonicPc) == kw.tonicPc
+                              && normalizePc(mod.anchor.tonicPc) == kw.tonicPc
                               && (!mod.anchor.minorMode) == kw.isMajor;
         for (const LocalKeySpan& sp : mod.spans) {
             if (sp.startTick <= regions[i].startTick && regions[i].startTick < sp.endTick
-                && jkdPcMod12(sp.tonicPc) == kw.tonicPc && (!sp.minorMode) == kw.isMajor) {
+                && normalizePc(sp.tonicPc) == kw.tonicPc && (!sp.minorMode) == kw.isMajor) {
                 d.modulationContributed = true;
                 break;
             }
