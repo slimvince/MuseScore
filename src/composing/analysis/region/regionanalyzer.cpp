@@ -151,6 +151,40 @@ void coalesceShortSameRootRuns(std::vector<HarmonicRegion>& regions)
     regions = std::move(coalesced);
 }
 
+/// Collapse a candidate chord into the previous region when the two are truly
+/// adjacent and carry the same root pitch-class and quality (same predicate +
+/// merge body formerly inlined at the Pass-1 main-loop and Pass-2 sites). On a
+/// merge the previous region's endTick is extended, its tones are merged, and
+/// its bass is recomputed from the merged tones; returns true and the caller
+/// skips constructing a new region. Returns false (no mutation) when the vector
+/// is empty, the candidate is not contiguous with the back region, or root/
+/// quality differ — the caller then builds its own region (the two call-sites
+/// construct different HarmonicRegion shapes, so that else-branch stays at the
+/// call-site). Takes the vector (not back()) so the original `!empty() && ...`
+/// short-circuit is preserved: back() is never evaluated on an empty vector.
+/// See docs/implementation_roadmap.md 0.6.
+bool tryCollapseSameChordRegion(std::vector<HarmonicRegion>& regions,
+                                const ChordAnalysisResult& candidate,
+                                int newStartTick,
+                                int newEndTick,
+                                const std::vector<ChordAnalysisTone>& newTones)
+{
+    const bool isContiguousWithPreviousRegion = !regions.empty()
+                                            && regions.back().endTick == newStartTick;
+    if (!(isContiguousWithPreviousRegion
+          && regions.back().chordResult.identity.rootPc == candidate.identity.rootPc
+          && regions.back().chordResult.identity.quality == candidate.identity.quality)) {
+        return false;
+    }
+    regions.back().endTick = newEndTick;
+    mergeChordAnalysisTones(regions.back().tones, newTones);
+    if (const auto* bassTone = bassToneFromTones(regions.back().tones)) {
+        regions.back().chordResult.identity.bassPc  = bassTone->pitch % 12;
+        regions.back().chordResult.identity.bassTpc = bassTone->tpc;
+    }
+    return true;
+}
+
 /// Pass 3 — absorb every region shorter than kMinRegionTicks into the previous
 /// region, regardless of root. Greedy-expand routinely emits sub-beat slices on
 /// passing tones and embellishments; analyzed in isolation they produce exotic
@@ -685,26 +719,11 @@ analyzeRegions(const mu::engraving::Score* score,
                 preMergeRegions.push_back(std::move(preMergeRegion));
             }
 
-            const bool isContiguousWithPreviousRegion = !regions.empty()
-                                                    && regions.back().endTick == regionStart.ticks();
-
             // Collapse same-chord consecutive regions only when truly adjacent.
-            // DUPLICATED region-collapse logic — keep in sync with the Pass 2 site below
-            // (search `pass2Regions.back().chordResult.identity.rootPc`). Identical predicate
-            // (contiguous + same rootPc + same quality) → extend endTick, merge tones,
-            // recompute bass. Not extracted to a shared helper because the two else-branches
-            // build different HarmonicRegion shapes (Pass 2 also sets keyModeResult, etc.).
-            // See docs/implementation_roadmap.md 0.6.
-            if (isContiguousWithPreviousRegion
-                && regions.back().chordResult.identity.rootPc == chosenResult.identity.rootPc
-                && regions.back().chordResult.identity.quality == chosenResult.identity.quality) {
-                regions.back().endTick = regionEnd.ticks();
-                mergeChordAnalysisTones(regions.back().tones, tones);
-                if (const auto* bassTone = bassToneFromTones(regions.back().tones)) {
-                    regions.back().chordResult.identity.bassPc = bassTone->pitch % 12;
-                    regions.back().chordResult.identity.bassTpc = bassTone->tpc;
-                }
-            } else {
+            // Shared with the Pass 2 site via tryCollapseSameChordRegion(); only this
+            // else-branch (region construction) differs. See docs/implementation_roadmap.md 0.6.
+            if (!tryCollapseSameChordRegion(regions, chosenResult,
+                                            regionStart.ticks(), regionEnd.ticks(), tones)) {
                 HarmonicRegion region;
                 region.startTick     = regionStart.ticks();
                 region.endTick       = regionEnd.ticks();
@@ -902,22 +921,12 @@ analyzeRegions(const mu::engraving::Score* score,
                     subDecoder.recordNode(std::move(node));
                 }
 
-                const bool isContiguous = !pass2Regions.empty()
-                    && pass2Regions.back().endTick == subStart.ticks();
-                // DUPLICATED region-collapse logic — keep in sync with the main-loop site
-                // above (search `regions.back().chordResult.identity.rootPc`). Same predicate
-                // and merge body; only the else-branch HarmonicRegion construction differs.
-                // See docs/implementation_roadmap.md 0.6.
-                if (isContiguous
-                    && pass2Regions.back().chordResult.identity.rootPc == chosenSub.identity.rootPc
-                    && pass2Regions.back().chordResult.identity.quality == chosenSub.identity.quality) {
-                    pass2Regions.back().endTick = subEnd.ticks();
-                    mergeChordAnalysisTones(pass2Regions.back().tones, subTones);
-                    if (const auto* bt = bassToneFromTones(pass2Regions.back().tones)) {
-                        pass2Regions.back().chordResult.identity.bassPc  = bt->pitch % 12;
-                        pass2Regions.back().chordResult.identity.bassTpc = bt->tpc;
-                    }
-                } else {
+                // Collapse same-chord consecutive regions only when truly adjacent.
+                // Shared with the Pass-1 main-loop site via tryCollapseSameChordRegion();
+                // only this else-branch (region construction) differs. See
+                // docs/implementation_roadmap.md 0.6.
+                if (!tryCollapseSameChordRegion(pass2Regions, chosenSub,
+                                                subStart.ticks(), subEnd.ticks(), subTones)) {
                     HarmonicRegion subRegion;
                     subRegion.startTick        = subStart.ticks();
                     subRegion.endTick          = subEnd.ticks();
