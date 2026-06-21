@@ -13,26 +13,40 @@ unless noted. Baselines (BIR 24/13 Baroque, 35/7 Jazz; 416/52/11 tests) are hard
 throughout Stages 0–2; Stage 3+ re-baselines deliberately and explicitly.
 **(Re-baselined 2026-06-13: the corrected GT parser → gate Baroque 57 / Jazz 23 / Default 57,
 a strict superset of the old 13/7/14; the `analyze_inversion_errors` 24/13·35/7 secondary
-split is stale pending re-measurement. Authoritative identity sets: CLAUDE.md gate section.)**
+split was re-measured under the corrected parser → **47/57 Baroque / 81/23 Jazz** (false-halves
+= the 57/23 gate). Authoritative identity sets: CLAUDE.md gate section.)**
+
+**⛔ TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14):** (1) **Stage 3.5**
+the physical split of `chordanalyzer.cpp` along the layer seams + iteration-API renames — DEFERRED until
+the layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc gate-correction layer
+(Gates A–L) into fitted weights — the gates are still load-bearing (3.4 retired none). Neither blocks the
+current Stage-4 key work, but both are OWED and must be surfaced at every planning checkpoint until done.
+Mirrored in `cowork_handoff.md` (top standing block).
+
+**★ BACK-HALF VERIFICATION METHOD (user, 2026-06-14): LAYER-BY-LAYER AUDIT.** Once every piece is in its
+correct layer, audit each layer in isolation — state its single responsibility, check correct + complete
+against THAT responsibility only (inputs assumed correct, consumers ignored), pin gaps as that layer's
+obligations. This is the payoff of Stages 0–3 (the seams are now real) and the reason the two deferred
+refactors above matter (a layer can't be cleanly audited while physically tangled in `chordanalyzer.cpp`
+or smeared across the post-hoc gate layer). Applied per layer as Stages 4–6 land each piece.
 
 ---
 
 **★★ UPSTREAM-FIRST LAYER REBUILD (2026-06-21) — the per-layer execution of the ratified target.**
 The 4-layer target (`cowork_target_architecture.md`) is being built upstream-first, one layer at a
 time, each with its own design → audit → build → coverage cycle:
-**note model (L1) → change-point slicing (L2) → per-slice analysis with context (L3) → grouping (LN).**
+**note model (L1) → change-point slicing (L2, BUILT — isolated) → per-slice analysis with context (L3) → grouping (LN).**
 
 | Layer | Status | Evidence (verify) |
 |---|---|---|
-| **L1 — lossless tie-resolved NOTE MODEL** (`composing/analysis/notemodel/note_model.{h,cpp}`; derived views `weightedPcView`/`soundingAt` in `engravingbridge`) | **✅ DONE + RATIFIED + PUSHED (2026-06-21)** | `edd33901ed` standing oracle-root metric tool (+15 tests) · `e30bb45a4f` note model + views · `4055f89082` branch-coverage close (test-only). `origin/master` = `4055f89082`. Gate: T1–T8 functional + T9–T14 view-branch tests; composing 559 / notation 57 / snapshots 11/11; new-code branch coverage 100% (note_model.cpp + weightedPcView). **Behavior change (not byte-identical):** tie de-inflation + uncapped overlap moved the oracle-root metric **+3/+1/+1 charged** (KEY tier flat, FLOOR byte-flat, BIR −2/+1/−2), ratified as a correct-upstream/frozen-downstream wobble that re-tunes at L3 — proven 100% tie/cap-attributable via a legacy reproduction mode. Reports `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD). |
-| **L2 — change-point slicing** (the segmentation/sub-boundary detectors, now derivable over the note model) | **NEXT** | per-layer design → audit → build → coverage, same as L1. |
-| **L3 — per-slice analysis with context** (scoring) | pending | this is where the L1 +3/+1/+1 oracle wobble re-tunes. |
+| **L1 — lossless tie-resolved NOTE MODEL** (`composing/analysis/notemodel/note_model.{h,cpp}`; derived views `weightedPcView`/`soundingAt` in `engravingbridge`) | **✅ DONE + RATIFIED + PUSHED (2026-06-21)** | `edd33901ed` standing oracle-root metric tool (+15 tests) · `e30bb45a4f` note model + views · `4055f89082` branch-coverage close (test-only). `origin/master` = `e470e2667e`. Gate: T1–T8 functional + T9–T14 view-branch tests; composing 559 / notation 57 / snapshots 11/11; new-code branch coverage 100% (note_model.cpp + weightedPcView). **Behavior change (not byte-identical):** tie de-inflation + uncapped overlap moved the oracle-root metric **+3/+1/+1 charged** (KEY tier flat, FLOOR byte-flat, BIR −2/+1/−2), ratified as a correct-upstream/frozen-downstream wobble that re-tunes at L3 — proven 100% tie/cap-attributable via a legacy reproduction mode. Reports `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD). |
+| **L2 — change-point slicing** (`composing/analysis/slicing/slicer.{h,cpp}` — the deterministic constant-tonal-sonority slicer over the note model) | **✅ DONE + RATIFIED + PUSHED (2026-06-21)** | `changePointSlices(noteModel)` = covering/lossless `[start,end)` partition; boundaries at every eligible onset AND release (eligibility = L1's `plays && visible && staffEligible`, read not re-decided); slice identity = eligible note set; all-rest interior = explicit empty slice; **zero interpretation, no grace/tuplet special case** (verified at source). **Not wired in** (segment-first spine still drives analysis until L3). Gate: `slicer_tests.cpp` 13 tests (audit §3 functional set + edge/eligibility) — composing 572 / notation 57 / snapshots 11/11 (no golden refresh) / BIR-oracle byte-identical by construction (only production touch is a 6-line doc comment; module unreferenced by production); **100% measured line+branch coverage of `slicer.cpp`** (no unreachable branches). `origin/master` = `e470e2667e`. Report `cc_layer2_impl_report.md` (HELD); design `cowork_layer2_slicing_design.md` + audit `cc_layer2_audit_dossier.md`. |
+| **L3 — per-slice analysis with context** (scoring) | **NEXT** | this is where the L1 +3/+1/+1 oracle wobble re-tunes; L3 wires in the L2 slicer (over-grab dissolution) and analyzes each slice with look-around context. |
 | **LN — grouping for display** | pending | — |
 
 The segment-first spine (`greedyExpandSegmentation` + Pass-1/2/2b) **still runs and drives analysis**,
 now consuming `weightedPcView` (it is **transitional**, retiring when L2/L3 land). This upstream-first
-arc interleaves with — does not replace — the Stage 0–7 plan below; the constrained-joint target above
-is the L3 shape.
+arc interleaves with — does not replace — the Stage 0–7 plan below.
 
 ---
 
