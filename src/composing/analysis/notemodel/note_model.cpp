@@ -23,6 +23,7 @@
 #include "note_model.h"
 
 #include <algorithm>
+#include <climits>
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/chordrest.h"
@@ -135,25 +136,94 @@ NoteModel NoteModel::build(const mu::engraving::Score* sc)
         }
     }
 
+    model.m_index.build(model.m_notes);
     return model;
+}
+
+// ── NoteQueryIndex ───────────────────────────────────────────────────────────
+
+void NoteQueryIndex::build(const std::vector<NoteEvent>& notes)
+{
+    m_n = static_cast<int>(notes.size());
+    m_onsets.clear();
+    m_onsets.reserve(notes.size());
+    for (const NoteEvent& e : notes) {
+        m_onsets.push_back(e.onset);  // notes are onset-sorted ⇒ m_onsets ascending.
+    }
+
+    if (m_n == 0) {
+        m_segSize = 0;
+        m_segMaxRel.clear();
+        return;
+    }
+
+    // Perfect binary tree over the smallest power-of-two leaf count >= N. Real
+    // leaves carry the note's release; padded leaves carry INT_MIN so they are
+    // always pruned (no release > t0 for any t0). Internal node = max of children.
+    m_segSize = 1;
+    while (m_segSize < m_n) {
+        m_segSize <<= 1;
+    }
+    m_segMaxRel.assign(static_cast<std::size_t>(2) * m_segSize, INT_MIN);
+    for (int i = 0; i < m_n; ++i) {
+        m_segMaxRel[m_segSize + i] = notes[i].release;
+    }
+    for (int v = m_segSize - 1; v >= 1; --v) {
+        m_segMaxRel[v] = std::max(m_segMaxRel[2 * v], m_segMaxRel[2 * v + 1]);
+    }
+}
+
+int NoteQueryIndex::onsetLowerBound(int t) const
+{
+    return static_cast<int>(
+        std::lower_bound(m_onsets.begin(), m_onsets.end(), t) - m_onsets.begin());
+}
+
+void NoteQueryIndex::overlapIndices(int qHi, int t0, std::vector<int>& out) const
+{
+    if (qHi <= 0 || m_segSize == 0) {
+        return;
+    }
+    collect(1, 0, m_segSize, qHi, t0, out);
+}
+
+void NoteQueryIndex::collect(int node, int nodeLo, int nodeHi, int qHi, int t0,
+                             std::vector<int>& out) const
+{
+    if (nodeLo >= qHi) {
+        return;  // node's whole range is beyond the onset prefix [0, qHi).
+    }
+    if (m_segMaxRel[node] <= t0) {
+        return;  // no leaf in this subtree has release > t0 ⇒ none overlaps.
+    }
+    if (nodeHi - nodeLo == 1) {
+        // Reaching a leaf means nodeLo < qHi (first guard) AND its release > t0
+        // (second guard) — so it qualifies unconditionally. Padded leaves carry
+        // INT_MIN and are pruned above, so nodeLo is always a real index here.
+        out.push_back(nodeLo);
+        return;
+    }
+    const int mid = (nodeLo + nodeHi) / 2;
+    collect(2 * node, nodeLo, mid, qHi, t0, out);          // left first ⇒ ascending order.
+    collect(2 * node + 1, mid, nodeHi, qHi, t0, out);
 }
 
 std::vector<const NoteEvent*> NoteModel::overlapping(int t0, int t1) const
 {
     std::vector<const NoteEvent*> out;
-    if (t1 <= t0) {
+    if (t1 <= t0 || m_notes.empty()) {
         return out;
     }
-    // m_notes is sorted by onset ascending. A note overlaps [t0, t1) iff
-    // onset < t1 && release > t0. Only notes with onset < t1 can qualify, so
-    // scan the onset-sorted prefix up to the first onset >= t1.
-    for (const NoteEvent& e : m_notes) {
-        if (e.onset >= t1) {
-            break;
-        }
-        if (e.release > t0) {
-            out.push_back(&e);
-        }
+    // A note overlaps [t0, t1) iff onset < t1 && release > t0. The onset bound is
+    // the prefix [0, qHi) (qHi = first onset >= t1); within it the release filter
+    // is answered by the max-release segment tree. Indices come back ascending,
+    // so the result preserves build order — byte-identical to the old head scan.
+    const int qHi = m_index.onsetLowerBound(t1);
+    std::vector<int> idx;
+    m_index.overlapIndices(qHi, t0, idx);
+    out.reserve(idx.size());
+    for (int i : idx) {
+        out.push_back(&m_notes[i]);
     }
     return out;
 }
@@ -161,16 +231,16 @@ std::vector<const NoteEvent*> NoteModel::overlapping(int t0, int t1) const
 std::vector<const NoteEvent*> NoteModel::onsetIn(int t0, int t1) const
 {
     std::vector<const NoteEvent*> out;
-    if (t1 <= t0) {
+    if (t1 <= t0 || m_notes.empty()) {
         return out;
     }
-    for (const NoteEvent& e : m_notes) {
-        if (e.onset >= t1) {
-            break;
-        }
-        if (e.onset >= t0) {
-            out.push_back(&e);
-        }
+    // Onsets are sorted ascending: the notes whose onset lies in [t0, t1) form the
+    // contiguous block [lower_bound(t0), lower_bound(t1)) — preserving build order.
+    const int lo = m_index.onsetLowerBound(t0);
+    const int hi = m_index.onsetLowerBound(t1);
+    out.reserve(static_cast<std::size_t>(hi - lo));
+    for (int i = lo; i < hi; ++i) {
+        out.push_back(&m_notes[i]);
     }
     return out;
 }

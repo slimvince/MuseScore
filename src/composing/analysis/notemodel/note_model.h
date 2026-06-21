@@ -91,6 +91,49 @@ struct NoteEvent {
     bool staffEligible = true;  ///< staffIsEligible() at this note's onset (hidden/drumset/chord-track => false).
 };
 
+// Static query index over an onset-sorted note set.
+//
+// Built once from a NoteModel's notes (O(N log N)); answers the two range
+// queries in O(log N + result) instead of the old O(N) head scan — the fix that
+// turns the per-slice query path from O(N²) into O(N log N) at full-act scale.
+//
+//   * onsetLowerBound(t)  — first index i with onset[i] >= t (binary search over
+//     the onset-sorted keys). onsetIn([t0,t1)) is the contiguous block
+//     [onsetLowerBound(t0), onsetLowerBound(t1)).
+//   * overlapIndices(qHi,t0) — every index i in [0, qHi) with release[i] > t0,
+//     emitted in ASCENDING index order. The hard query: a note with onset < t0
+//     can still overlap, so the onset bound alone is not enough. Backed by a
+//     max-release segment tree over the onset-sorted array — a subtree whose
+//     maximum release is <= t0 contains no overlapper and is pruned whole.
+//
+// The index stores only the onset keys and the release tree (ints) — it does NOT
+// alias the NoteEvent storage, so it copies/moves with the model. It assumes the
+// notes are onset-sorted ascending (the NoteModel build-order invariant); it does
+// not re-sort.
+class NoteQueryIndex
+{
+public:
+    /// Build the index from the onset-sorted note set. O(N log N). Safe for N==0.
+    void build(const std::vector<NoteEvent>& notes);
+
+    /// First index i with onset[i] >= t (== std::lower_bound on the onset keys).
+    int onsetLowerBound(int t) const;
+
+    /// Append, in ascending index order, every i in [0, qHi) with release[i] > t0.
+    /// qHi is typically onsetLowerBound(t1). Appends to `out` (does not clear it).
+    void overlapIndices(int qHi, int t0, std::vector<int>& out) const;
+
+private:
+    /// Segment-tree descent: collect leaves in [0, qHi) whose release > t0.
+    void collect(int node, int nodeLo, int nodeHi, int qHi, int t0,
+                 std::vector<int>& out) const;
+
+    std::vector<int> m_onsets;     ///< onset keys, ascending (parallel to the notes).
+    std::vector<int> m_segMaxRel;  ///< max-release perfect-binary-tree (1-based; leaves at [m_segSize, 2*m_segSize)).
+    int m_segSize = 0;             ///< leaf count (power of two), 0 iff empty.
+    int m_n = 0;                   ///< number of notes.
+};
+
 // The lossless note model for a whole score.
 //
 // Construct once with build(); query by tick range. Notes are stored in build
@@ -121,6 +164,7 @@ public:
 private:
     const mu::engraving::Score* m_score = nullptr;
     std::vector<NoteEvent> m_notes;  ///< Sorted by onset (ascending, stable build order).
+    NoteQueryIndex m_index;          ///< Onset/overlap query index over m_notes (built in build()).
 };
 
 } // namespace mu::composing::analysis::notemodel

@@ -30,7 +30,11 @@
 
 #include <gtest/gtest.h>
 
+#include <chrono>
+#include <climits>
+#include <cstdint>
 #include <functional>
+#include <random>
 #include <vector>
 
 #include "engraving/dom/chord.h"
@@ -52,6 +56,7 @@ using mu::engraving::ScoreRW;
 // pulled in via the DOM headers) inside `using namespace mu::engraving` scopes.
 using NEvent = mu::composing::analysis::notemodel::NoteEvent;
 using mu::composing::analysis::notemodel::NoteModel;
+using mu::composing::analysis::notemodel::NoteQueryIndex;
 namespace ebr = mu::composing::analysis::engravingbridge;
 
 namespace {
@@ -437,4 +442,291 @@ TEST(Composing_NoteModelTests, T14_WeightedPcView_BassFloorFallback)
     EXPECT_EQ(bassPitch, 60);
 
     delete score;
+}
+
+// ── Layer-3/A — indexed query == linear scan (the load-bearing correctness proof)
+//
+// Increment A replaced the O(N) head-scan implementation of overlapping()/onsetIn()
+// with an indexed O(log N + result) one. These tests assert the indexed result is
+// element-for-element IDENTICAL (including order) to the original linear scan, on
+// every nm_* fixture, over a battery of random and edge ranges. The reference
+// oracles below are byte-copies of the pre-A linear implementations.
+
+namespace {
+
+// The pre-A overlapping(): linear head scan, onset-sorted, break at onset >= t1.
+std::vector<const NEvent*> linearOverlapping(const NoteModel& m, int t0, int t1)
+{
+    std::vector<const NEvent*> out;
+    if (t1 <= t0) {
+        return out;
+    }
+    for (const NEvent& e : m.notes()) {
+        if (e.onset >= t1) {
+            break;
+        }
+        if (e.release > t0) {
+            out.push_back(&e);
+        }
+    }
+    return out;
+}
+
+// The pre-A onsetIn(): linear head scan, onset-sorted, break at onset >= t1.
+std::vector<const NEvent*> linearOnsetIn(const NoteModel& m, int t0, int t1)
+{
+    std::vector<const NEvent*> out;
+    if (t1 <= t0) {
+        return out;
+    }
+    for (const NEvent& e : m.notes()) {
+        if (e.onset >= t1) {
+            break;
+        }
+        if (e.onset >= t0) {
+            out.push_back(&e);
+        }
+    }
+    return out;
+}
+
+// Assert indexed == linear (identical pointers, identical order) for one range.
+void expectQueriesMatch(const NoteModel& m, int t0, int t1)
+{
+    EXPECT_EQ(m.overlapping(t0, t1), linearOverlapping(m, t0, t1))
+        << "overlapping(" << t0 << "," << t1 << ") diverged from the linear oracle";
+    EXPECT_EQ(m.onsetIn(t0, t1), linearOnsetIn(m, t0, t1))
+        << "onsetIn(" << t0 << "," << t1 << ") diverged from the linear oracle";
+}
+
+// Every nm_* fixture (build-from-Score path). Each exercises a distinct shape:
+// ties, long sustains, grace, multi-staff/voice, flags, eligibility, dense onsets.
+const char16_t* const kAllNmFixtures[] = {
+    u"data/nm_tie_chain.mscx",        u"data/nm_long_sustain.mscx",
+    u"data/nm_grace.mscx",            u"data/nm_unison.mscx",
+    u"data/nm_flags.mscx",            u"data/nm_two_staff.mscx",
+    u"data/nm_staff_eligibility.mscx", u"data/nm_solid_theory.mscx",
+    u"data/nm_dense_start.mscx",      u"data/nm_slice_passing.mscx",
+    u"data/nm_slice_held_melody.mscx", u"data/nm_slice_release.mscx",
+    u"data/nm_slice_rest.mscx",       u"data/nm_slice_ineligible.mscx",
+};
+
+} // namespace
+
+// IDX1 — random + edge ranges on every fixture: indexed == linear, order-exact.
+TEST(Composing_NoteModelTests, IDX1_IndexedEqualsLinear_AllFixtures)
+{
+    std::mt19937 rng(0xC0FFEEu);  // fixed seed ⇒ deterministic
+
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+        const NoteModel model = NoteModel::build(score);
+
+        // Tick domain: from before the first onset to past the last release.
+        int minOnset = INT_MAX, maxRelease = INT_MIN;
+        std::vector<int> boundaries;
+        for (const NEvent& e : model.notes()) {
+            minOnset = std::min(minOnset, e.onset);
+            maxRelease = std::max(maxRelease, e.release);
+            boundaries.push_back(e.onset);
+            boundaries.push_back(e.release);
+        }
+        ASSERT_FALSE(model.notes().empty()) << "fixture has no notes";
+        const int lo = minOnset - 480;
+        const int hi = maxRelease + 480;
+
+        // (a) Exhaustive boundary pairs (exact onsets/releases — the edge ticks).
+        for (int a : boundaries) {
+            for (int b : boundaries) {
+                expectQueriesMatch(model, a, b);          // includes a>=b (empty) cases
+            }
+        }
+        // (b) Targeted edges: empty, full span, before-first, after-last, zero-width.
+        expectQueriesMatch(model, 100, 100);              // t1 == t0  (empty)
+        expectQueriesMatch(model, 200, 100);              // t1 <  t0  (empty)
+        expectQueriesMatch(model, lo, hi);                // full span
+        expectQueriesMatch(model, lo, minOnset);          // entirely before first onset
+        expectQueriesMatch(model, maxRelease, hi);        // entirely after last release
+        expectQueriesMatch(model, minOnset, minOnset + 1);// just the first tick
+
+        // (c) Many random ranges across the domain (incl. mid-note boundaries).
+        std::uniform_int_distribution<int> dist(lo, hi);
+        for (int k = 0; k < 400; ++k) {
+            int a = dist(rng), b = dist(rng);
+            expectQueriesMatch(model, a, b);              // both orders of a,b
+            expectQueriesMatch(model, b, a);
+        }
+
+        delete score;
+    }
+}
+
+// IDX2 — NoteQueryIndex direct unit tests (covers the index in isolation,
+// including the N==0 build path the NoteModel guards never reach).
+TEST(Composing_NoteModelTests, IDX2_NoteQueryIndex_EmptyAndSingleton)
+{
+    // Empty: build({}) — onsetLowerBound clamps to 0, overlapIndices yields nothing.
+    {
+        NoteQueryIndex idx;
+        idx.build({});
+        EXPECT_EQ(idx.onsetLowerBound(0), 0);
+        EXPECT_EQ(idx.onsetLowerBound(100), 0);
+        std::vector<int> out;
+        idx.overlapIndices(/*qHi=*/0, /*t0=*/0, out);     // qHi<=0 guard
+        EXPECT_TRUE(out.empty());
+        idx.overlapIndices(/*qHi=*/5, /*t0=*/0, out);     // m_segSize==0 guard
+        EXPECT_TRUE(out.empty());
+    }
+    // Singleton: one note [onset=10, release=20]. segSize==1 ⇒ root is a leaf.
+    {
+        std::vector<NEvent> notes(1);
+        notes[0].onset = 10;
+        notes[0].release = 20;
+        NoteQueryIndex idx;
+        idx.build(notes);
+        EXPECT_EQ(idx.onsetLowerBound(10), 0);
+        EXPECT_EQ(idx.onsetLowerBound(11), 1);
+        std::vector<int> out;
+        idx.overlapIndices(idx.onsetLowerBound(100), /*t0=*/15, out);  // release 20 > 15
+        ASSERT_EQ(out.size(), 1u);
+        EXPECT_EQ(out[0], 0);
+        out.clear();
+        idx.overlapIndices(idx.onsetLowerBound(100), /*t0=*/20, out);  // release 20 !> 20: pruned
+        EXPECT_TRUE(out.empty());
+    }
+}
+
+// IDX3 — NoteQueryIndex on a synthetic multi-level tree: exercises the internal-node
+// recursion, the max-release subtree prune, and the prefix (qHi) prune, with the
+// result checked against a brute-force oracle over random ranges.
+TEST(Composing_NoteModelTests, IDX3_NoteQueryIndex_SyntheticOverlapMatchesBruteForce)
+{
+    // 13 notes (non-power-of-two ⇒ padded leaves exist). Onsets ascending; mixed
+    // short and long (sustaining) releases so overlap pruning genuinely fires.
+    std::vector<NEvent> notes;
+    const int onsets[]   = { 0, 0, 100, 200, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+    const int releases[] = { 9600, 150, 250, 250, 2000, 350, 1500, 550, 650, 720, 850, 950, 1100 };
+    for (int i = 0; i < 13; ++i) {
+        NEvent e;
+        e.onset = onsets[i];
+        e.release = releases[i];
+        notes.push_back(e);
+    }
+    NoteQueryIndex idx;
+    idx.build(notes);
+
+    auto brute = [&](int t0, int t1) {
+        std::vector<int> out;
+        if (t1 <= t0) {
+            return out;
+        }
+        for (int i = 0; i < static_cast<int>(notes.size()); ++i) {
+            if (notes[i].onset >= t1) {
+                break;
+            }
+            if (notes[i].release > t0) {
+                out.push_back(i);
+            }
+        }
+        return out;
+    };
+
+    std::mt19937 rng(0x1234u);
+    std::uniform_int_distribution<int> dist(-200, 9800);
+    for (int k = 0; k < 5000; ++k) {
+        const int a = dist(rng), b = dist(rng);
+        const int t0 = std::min(a, b), t1 = std::max(a, b);
+        std::vector<int> got;
+        if (t1 > t0) {
+            idx.overlapIndices(idx.onsetLowerBound(t1), t0, got);
+        }
+        EXPECT_EQ(got, brute(t0, t1)) << "[" << t0 << "," << t1 << ")";
+    }
+}
+
+// IDX4 — empty NoteModel: the m_notes.empty() guard in both queries. build(nullptr)
+// yields a model with no notes (and a default, unbuilt index); the queries must
+// short-circuit to {} rather than touch the index.
+TEST(Composing_NoteModelTests, IDX4_EmptyModel_QueriesReturnEmpty)
+{
+    const NoteModel model = NoteModel::build(nullptr);
+    ASSERT_TRUE(model.notes().empty());
+    EXPECT_TRUE(model.overlapping(0, 100).empty());   // t1 > t0, but m_notes empty
+    EXPECT_TRUE(model.onsetIn(0, 100).empty());
+    EXPECT_TRUE(model.overlapping(100, 0).empty());   // t1 <= t0
+    EXPECT_TRUE(model.onsetIn(100, 0).empty());
+}
+
+// IDX_PERF — DISABLED by default (run with --gtest_also_run_disabled_tests). Times
+// the REAL indexed query vs the linear reference across a per-slice workload at
+// growing N, demonstrating the O(N²)→O(N log N) transition. Diagnostic only.
+TEST(Composing_NoteModelTests, DISABLED_IDX_PERF_ScalingIndexedVsLinear)
+{
+    auto makeNotes = [](int n) {
+        std::vector<NEvent> v;
+        v.reserve(n);
+        std::mt19937 rng(42u);
+        std::uniform_int_distribution<int> durDist(240, 1920);
+        // A few long sustains so the overlap prefix is genuinely populated.
+        std::uniform_int_distribution<int> longDist(0, 49);
+        int t = 0;
+        for (int i = 0; i < n; ++i) {
+            NEvent e;
+            e.onset = t;
+            int dur = durDist(rng);
+            if (longDist(rng) == 0) {
+                dur *= 20;  // long sustain spanning many later slices
+            }
+            e.release = t + dur;
+            v.push_back(e);
+            t += 60;  // dense onset grid
+        }
+        return v;
+    };
+
+    // The linear pre-A overlapping over a raw notes vector (the O(N) per-query cost).
+    auto linearCount = [](const std::vector<NEvent>& v, int t0, int t1) {
+        int c = 0;
+        for (const NEvent& e : v) {
+            if (e.onset >= t1) {
+                break;
+            }
+            if (e.release > t0) {
+                ++c;
+            }
+        }
+        return c;
+    };
+
+    printf("\n  N      linear(ms)   indexed(ms)   ratio   (per-slice overlapping workload)\n");
+    for (int n : { 1000, 4000, 16000, 64000 }) {
+        const std::vector<NEvent> notes = makeNotes(n);
+        NoteQueryIndex idx;
+        idx.build(notes);
+
+        // Workload: one overlapping query per "slice" = each [onset_i, onset_{i+1}).
+        long long linSum = 0, idxSum = 0;
+
+        auto tl0 = std::chrono::steady_clock::now();
+        for (int i = 0; i + 1 < n; ++i) {
+            linSum += linearCount(notes, notes[i].onset, notes[i + 1].onset);
+        }
+        auto tl1 = std::chrono::steady_clock::now();
+
+        std::vector<int> out;
+        auto ti0 = std::chrono::steady_clock::now();
+        for (int i = 0; i + 1 < n; ++i) {
+            out.clear();
+            idx.overlapIndices(idx.onsetLowerBound(notes[i + 1].onset), notes[i].onset, out);
+            idxSum += static_cast<long long>(out.size());
+        }
+        auto ti1 = std::chrono::steady_clock::now();
+
+        const double linMs = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(tl1 - tl0).count();
+        const double idxMs = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(ti1 - ti0).count();
+        ASSERT_EQ(linSum, idxSum) << "indexed and linear disagree on total hits at N=" << n;
+        printf("  %-6d %10.2f   %10.2f   %6.1f\n", n, linMs, idxMs, idxMs > 0 ? linMs / idxMs : 0.0);
+    }
+    printf("\n");
 }
