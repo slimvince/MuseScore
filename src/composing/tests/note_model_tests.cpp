@@ -44,6 +44,7 @@
 #include "engraving/tests/utils/scorerw.h"
 
 #include "composing/analysis/notemodel/note_model.h"
+#include "composing/analysis/engravingbridge/regiontonecollector.h"
 
 using mu::engraving::MasterScore;
 using mu::engraving::ScoreRW;
@@ -51,6 +52,7 @@ using mu::engraving::ScoreRW;
 // pulled in via the DOM headers) inside `using namespace mu::engraving` scopes.
 using NEvent = mu::composing::analysis::notemodel::NoteEvent;
 using mu::composing::analysis::notemodel::NoteModel;
+namespace ebr = mu::composing::analysis::engravingbridge;
 
 namespace {
 
@@ -304,6 +306,135 @@ TEST(Composing_NoteModelTests, T8_StaffIneligible_KeptAndFlagged)
 
     EXPECT_TRUE(normal->staffEligible) << "normal staff is eligible";
     EXPECT_FALSE(chordTrack->staffEligible) << "Chord Track staff must be flagged ineligible";
+
+    delete score;
+}
+
+// ── View branch-coverage tests (T9–T12) ──────────────────────────────────────
+// Cover the derived-view branches not reached by T1–T8 (which only build the
+// model). Test-only; no production change.
+
+// T9 — weightedPcView empty/invalid region: end <= start returns {} (the early
+// guard). Also exercises onsetIn=[) edge implicitly.
+TEST(Composing_NoteModelTests, T9_WeightedPcView_EmptyRegionReturnsEmpty)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_tie_chain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+
+    EXPECT_TRUE(ebr::weightedPcView(model, 480, 480, {}).empty());   // end == start
+    EXPECT_TRUE(ebr::weightedPcView(model, 960, 480, {}).empty());   // end <  start
+
+    delete score;
+}
+
+// T10 — weightedPcView dense-start look-ahead branch: with
+// excludeLookAheadOnDenseStart=true and >=3 PCs sounding at the region start, the
+// post-start onsets are dropped; with it false they are included.
+TEST(Composing_NoteModelTests, T10_WeightedPcView_DenseStartLookAheadExclusion)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_dense_start.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+
+    // Region [0,1920): C-E-G chord at 0 (3 PCs), then D(480) F(960) A(1440).
+    const auto full = ebr::weightedPcView(model, 0, 1920, {}, -1, /*excludeLookAhead=*/false);
+    const auto dense = ebr::weightedPcView(model, 0, 1920, {}, -1, /*excludeLookAhead=*/true);
+
+    // Without exclusion: all six pitch classes (C E G D F A).
+    EXPECT_EQ(static_cast<int>(full.size()), 6);
+    // With exclusion (>=3 PCs at start): only the start chord's C, E, G.
+    EXPECT_EQ(static_cast<int>(dense.size()), 3);
+    for (const auto& t : dense) {
+        const int pc = t.pitch % 12;
+        EXPECT_TRUE(pc == 0 || pc == 4 || pc == 7) << "unexpected pc " << pc << " survived exclusion";
+    }
+
+    delete score;
+}
+
+// T11 — the Score-based collectSoundingAt convenience wrapper (builds a model and
+// delegates to soundingAt).
+TEST(Composing_NoteModelTests, T11_CollectSoundingAt_ScoreWrapper)
+{
+    using namespace mu::engraving;
+    MasterScore* score = ScoreRW::readScore(u"data/nm_dense_start.mscx");
+    ASSERT_TRUE(score);
+
+    const Segment* seg = score->firstMeasure()->first(SegmentType::ChordRest);
+    ASSERT_TRUE(seg);
+
+    std::vector<ebr::SoundingNote> out;
+    ebr::collectSoundingAt(score, seg, {}, out);
+
+    // The start chord C-E-G sounds at the first segment.
+    ASSERT_EQ(static_cast<int>(out.size()), 3);
+    EXPECT_EQ(out.front().ppitch, 60) << "lowest collected note is C4 (anchor order)";
+
+    delete score;
+}
+
+// T12 — soundingAt at a tick INSIDE a long sustain: the note (onset < tick) is
+// returned via the sustained partition (exercises the descending-onset ordering
+// path), with no horizon.
+TEST(Composing_NoteModelTests, T12_SoundingAt_SustainedNoteMidSpan)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+
+    std::vector<ebr::SoundingNote> out;
+    ebr::soundingAt(model, 4800, {}, out);   // mid the [0,9600) C4 sustain
+
+    ASSERT_EQ(static_cast<int>(out.size()), 1);
+    EXPECT_EQ(out.front().ppitch, 60);
+
+    delete score;
+}
+
+// T13 — dense-start look-ahead, SUSTAIN-into-start path: a region whose start has
+// a note sustaining in (onset < start). Exercises the first (sustain-counting)
+// loop body of the excludeLookAhead block. (Here only one PC sustains, so the
+// >=3 decision is false — but the loop body still runs.)
+TEST(Composing_NoteModelTests, T13_WeightedPcView_DenseStartSustainCount)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+
+    // Region begins mid the [0,9600) C4 sustain, with look-ahead exclusion on.
+    const auto tones = ebr::weightedPcView(model, 1920, 3840, {}, -1, /*excludeLookAhead=*/true);
+    ASSERT_EQ(static_cast<int>(tones.size()), 1);
+    EXPECT_EQ(tones.front().pitch % 12, 0);   // C4 sustained into the region
+
+    delete score;
+}
+
+// T14 — bass-floor fallback: when no pitch class reaches
+// bassPassingToneMinWeightFraction of the total (here forced via a high fraction
+// so every PC is below it), the bass falls back to the lowest pitch among any
+// weighted PC. Reachable only with prefs whose fraction exceeds 1/(#distinct PCs)
+// — the production default (0.05) never triggers it; covered with a test pref.
+TEST(Composing_NoteModelTests, T14_WeightedPcView_BassFloorFallback)
+{
+    using mu::composing::analysis::ChordAnalyzerPreferences;
+    using mu::composing::analysis::kDefaultChordAnalyzerPreferences;
+    MasterScore* score = ScoreRW::readScore(u"data/nm_dense_start.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+
+    ChordAnalyzerPreferences prefs = kDefaultChordAnalyzerPreferences;
+    prefs.bassPassingToneMinWeightFraction = 0.9;  // no single PC reaches 90% of total
+
+    const auto tones = ebr::weightedPcView(model, 0, 1920, {}, -1, /*excludeLookAhead=*/false, prefs);
+    ASSERT_FALSE(tones.empty());
+    int bassCount = 0, bassPitch = 1 << 30;
+    for (const auto& t : tones) {
+        if (t.isBass) { ++bassCount; bassPitch = t.pitch; }
+    }
+    EXPECT_EQ(bassCount, 1) << "fallback still designates exactly one bass";
+    // Fallback picks the lowest pitch among weighted PCs (C4 = 60 here).
+    EXPECT_EQ(bassPitch, 60);
 
     delete score;
 }
