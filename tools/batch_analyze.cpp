@@ -17,6 +17,7 @@
 //   batch_analyze --help
 
 #include <algorithm>
+#include <chrono>
 #include <cstdint>
 #include <cstdio>
 #include <optional>
@@ -97,6 +98,8 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/section/localmodulationdetector.h" // Stage 4d-i: --dump-modulation
 #include "composing/analysis/section/jointkeydecision.h"    // J-key-i: --dump-joint-key
 #include "composing/analysis/function/tonicizationlabeler.h"  // Stage 6-tonic-i: --dump-tonicization
+#include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
+#include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
@@ -1705,6 +1708,7 @@ static void printHelp(const std::string& prog)
                            " [--preset Standard|Jazz|Modal|Baroque|Contemporary|Default]"
                            " [--dump-regions batch|notation|notation-premerge]"
                            " [--section-level]"
+                           " [--validate-slices]"
                            " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
                            " [--dump-key-candidates TICK[,TICK...]]"
@@ -1731,6 +1735,15 @@ static void printHelp(const std::string& prog)
         << "            (analyzeSection: measure layout, gap-tone insertion, key/mode\n"
         << "            stabilization, sparse-quality refinement) on top of the batch\n"
         << "            region stream. Default OFF. Only affects --dump-regions batch.\n"
+        << "  --validate-slices\n"
+        << "            (Layer-2 diagnostic) Build the layer-1 note model, run the REAL\n"
+        << "            changePointSlices, and check the slice invariants (boundary-set\n"
+        << "            match, covering/no-gaps, positive width, constant sonority, tie\n"
+        << "            spans, determinism) against an INDEPENDENT oracle recomputed from\n"
+        << "            the note model. Emits one per-stem JSON object and RETURNS before\n"
+        << "            any analysis runs (the analysis pipeline is never invoked, so its\n"
+        << "            output is unchanged). Exit 0 if all invariants held, 2 if any\n"
+        << "            failed. Default OFF.\n"
         << "  --ignore-declared-mode\n"
         << "            (Stage 4b-i measurement floor) Force the key resolver to drop\n"
         << "            the score's declared key-signature mode (declaredMode = nullopt),\n"
@@ -1792,6 +1805,293 @@ static void printHelp(const std::string& prog)
         << "  Returns 0 on success, non-zero on failure.\n";
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// Layer 2 — corpus property-validation of the REAL slicer (--validate-slices)
+//
+// DIAGNOSTIC ONLY. This path does NOT invoke or alter the analysis pipeline:
+// main() returns immediately after this runs, so analyzeScore / analyzeRegions
+// are never reached. It builds the layer-1 note model, runs the REAL C++
+// changePointSlices, and checks the §2 invariants against an INDEPENDENT oracle
+// recomputed from model.notes() — NOT the slicer's own internal boundary vector.
+// Emits one JSON object (the per-stem result); a Python driver iterates the 353
+// canonical stems and aggregates. Off by default ⇒ analysis output unchanged.
+// ══════════════════════════════════════════════════════════════════════════
+
+namespace {
+
+using mu::composing::analysis::notemodel::NoteEvent;
+using mu::composing::analysis::notemodel::NoteModel;
+using mu::composing::analysis::slicing::Slice;
+
+// A single invariant violation (the §2 stop condition payload).
+struct SliceViolation {
+    std::string invariant;   ///< which §2 check failed (e.g. "boundary-set-match")
+    std::string detail;      ///< human-readable description
+    long long   tickA = 0;   ///< the offending tick (or slice start)
+    long long   tickB = 0;   ///< second tick where a pair/span is involved
+};
+
+// Run the §2 invariant suite + §3 stats for one score. Returns the per-stem
+// JSON object as a string. `ok` is set false iff any invariant failed.
+static std::string runSliceValidation(const Score* score, const std::string& stem, bool& ok)
+{
+    ok = true;
+    std::vector<SliceViolation> violations;
+
+    // ── Build the layer-1 note model (the slicer's only input). ─────────────
+    const NoteModel model = NoteModel::build(score);
+
+    // ── INDEPENDENT ORACLE: recompute the expected boundary set from
+    //    model.notes(), applying the SAME eligibility predicate the slicer reads
+    //    (plays && visible && staffEligible). This is built here in the harness —
+    //    it does NOT touch the slicer's internal boundary vector. ──────────────
+    std::set<int> bexp;                       // expected boundary ticks
+    std::set<int> eligibleOnsets;
+    std::set<int> eligibleReleases;
+    std::vector<const NoteEvent*> eligible;   // eligible notes, for the overlap recompute
+    eligible.reserve(model.notes().size());
+    for (const NoteEvent& e : model.notes()) {
+        if (!(e.plays && e.visible && e.staffEligible)) {
+            continue;
+        }
+        eligible.push_back(&e);
+        bexp.insert(e.onset);
+        bexp.insert(e.release);
+        eligibleOnsets.insert(e.onset);
+        eligibleReleases.insert(e.release);
+    }
+
+    // ── Run the REAL slicer (timed for the §3 performance stat — only the
+    //    slicer call, not the checks). Call twice for determinism (#6). ────────
+    const auto t0 = std::chrono::steady_clock::now();
+    const std::vector<Slice> slices = mu::composing::analysis::slicing::changePointSlices(model);
+    const auto t1 = std::chrono::steady_clock::now();
+    const std::vector<Slice> slices2 = mu::composing::analysis::slicing::changePointSlices(model);
+    const double sliceMs =
+        std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t1 - t0).count();
+
+    // #6 — determinism: identical output across two calls. ────────────────────
+    bool deterministic = (slices.size() == slices2.size());
+    if (deterministic) {
+        for (std::size_t i = 0; i < slices.size(); ++i) {
+            if (slices[i].start != slices2[i].start || slices[i].end != slices2[i].end) {
+                deterministic = false;
+                violations.push_back({ "determinism",
+                    "two changePointSlices calls disagree at index " + std::to_string(i),
+                    slices[i].start, slices2[i].start });
+                break;
+            }
+        }
+    } else {
+        violations.push_back({ "determinism",
+            "two changePointSlices calls returned different slice counts",
+            static_cast<long long>(slices.size()),
+            static_cast<long long>(slices2.size()) });
+    }
+
+    // ── Empty-domain case: < 2 distinct boundaries ⇒ expect an empty slice
+    //    list. (No eligible notes, or a single zero-width boundary.) ───────────
+    if (bexp.size() < 2) {
+        if (!slices.empty()) {
+            violations.push_back({ "empty-domain",
+                "expected empty slice list (< 2 distinct eligible boundaries) but got "
+                + std::to_string(slices.size()) + " slices",
+                static_cast<long long>(bexp.size()),
+                static_cast<long long>(slices.size()) });
+        }
+    } else {
+        // #1 — boundary-set match: the set of all slice start/end ticks equals
+        //      the independent oracle's boundary set (completeness + no-spurious
+        //      + no-missed, in one equality). ────────────────────────────────
+        std::set<int> sliceBoundaries;
+        for (const Slice& s : slices) {
+            sliceBoundaries.insert(s.start);
+            sliceBoundaries.insert(s.end);
+        }
+        if (sliceBoundaries != bexp) {
+            // Report the first divergence in each direction.
+            for (int b : bexp) {
+                if (!sliceBoundaries.count(b)) {
+                    violations.push_back({ "boundary-set-match",
+                        "expected boundary missing from slicer output", b, 0 });
+                    break;
+                }
+            }
+            for (int b : sliceBoundaries) {
+                if (!bexp.count(b)) {
+                    violations.push_back({ "boundary-set-match",
+                        "spurious boundary in slicer output (not in oracle)", b, 0 });
+                    break;
+                }
+            }
+        }
+
+        // #2 — covering, no gaps/overlaps; endpoints anchored to the domain. ──
+        if (slices.front().start != *bexp.begin()) {
+            violations.push_back({ "covering-front",
+                "first slice start != domain start", slices.front().start, *bexp.begin() });
+        }
+        if (slices.back().end != *bexp.rbegin()) {
+            violations.push_back({ "covering-back",
+                "last slice end != domain end", slices.back().end, *bexp.rbegin() });
+        }
+        for (std::size_t i = 0; i + 1 < slices.size(); ++i) {
+            if (slices[i].end != slices[i + 1].start) {
+                violations.push_back({ "covering-contiguous",
+                    "gap/overlap between consecutive slices at index " + std::to_string(i),
+                    slices[i].end, slices[i + 1].start });
+                break;
+            }
+        }
+    }
+
+    // #3 — positive width: every emitted slice has start < end. ───────────────
+    for (std::size_t i = 0; i < slices.size(); ++i) {
+        if (!(slices[i].start < slices[i].end)) {
+            violations.push_back({ "positive-width",
+                "non-positive-width slice at index " + std::to_string(i),
+                slices[i].start, slices[i].end });
+            break;
+        }
+    }
+
+    // #4 — constant tonal sonority (INDEPENDENT recompute): within each slice
+    //      (s,e) no eligible note onset or release lies strictly inside. The
+    //      eligible overlap set is therefore constant across the slice. ────────
+    for (const Slice& sl : slices) {
+        bool bad = false;
+        for (const NoteEvent* e : eligible) {
+            if (sl.start < e->onset && e->onset < sl.end) {
+                violations.push_back({ "constant-sonority",
+                    "eligible onset strictly inside slice [" + std::to_string(sl.start)
+                    + "," + std::to_string(sl.end) + ")", sl.start, e->onset });
+                bad = true;
+                break;
+            }
+            if (sl.start < e->release && e->release < sl.end) {
+                violations.push_back({ "constant-sonority",
+                    "eligible release strictly inside slice [" + std::to_string(sl.start)
+                    + "," + std::to_string(sl.end) + ")", sl.start, e->release });
+                bad = true;
+                break;
+            }
+        }
+        if (bad) {
+            break;
+        }
+    }
+
+    // #5 — ties don't split (cross-layer spot check): every eligible note's
+    //      tie-resolved endpoints appear as slicer boundaries, with onset<=release.
+    //      Structurally subsumed by #1 if L1 is correct; asserted independently
+    //      against the SLICER's output (the genuine tie verification is L1's unit
+    //      tests — see report). ────────────────────────────────────────────────
+    {
+        std::set<int> sliceBoundaries;
+        for (const Slice& s : slices) {
+            sliceBoundaries.insert(s.start);
+            sliceBoundaries.insert(s.end);
+        }
+        for (const NoteEvent* e : eligible) {
+            if (e->onset > e->release) {
+                violations.push_back({ "tie-span",
+                    "eligible note onset > release (inverted span)", e->onset, e->release });
+                break;
+            }
+            // A zero-width eligible note contributes a single deduped tick that
+            // opens no slice (a fact) — its endpoint need not be a slice boundary
+            // when it is the lone boundary; only check when the domain is sliced.
+            if (slices.empty()) {
+                continue;
+            }
+            if (!sliceBoundaries.count(e->onset) || !sliceBoundaries.count(e->release)) {
+                violations.push_back({ "tie-span",
+                    "eligible note endpoint absent from slicer boundaries",
+                    e->onset, e->release });
+                break;
+            }
+        }
+    }
+
+    // ── §3 STATS (computed independently; not gating). ───────────────────────
+    int measures = 0;
+    for (const Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+        ++measures;
+    }
+
+    // Non-empty slices = those with >=1 eligible note overlapping (the proxy's
+    // notion of a slice; it excluded all-rest spans). Recomputed independently.
+    long long nonEmpty = 0;
+    long long emptySlices = 0;
+    long long releaseOpenedNonEmpty = 0;
+    // Release-only boundaries: interior ticks that are an eligible release and
+    // NOT an eligible onset.
+    long long releaseOnlyBoundaries = 0;
+    const int domainStart = bexp.empty() ? 0 : *bexp.begin();
+    const int domainEnd   = bexp.empty() ? 0 : *bexp.rbegin();
+    for (int t : bexp) {
+        if (t > domainStart && t < domainEnd
+            && eligibleReleases.count(t) && !eligibleOnsets.count(t)) {
+            ++releaseOnlyBoundaries;
+        }
+    }
+    for (const Slice& sl : slices) {
+        bool hasEligible = false;
+        for (const NoteEvent* e : eligible) {
+            if (e->onset < sl.end && e->release > sl.start) {
+                hasEligible = true;
+                break;
+            }
+        }
+        if (hasEligible) {
+            ++nonEmpty;
+            const bool releaseOpened = (sl.start > domainStart)
+                && eligibleReleases.count(sl.start) && !eligibleOnsets.count(sl.start);
+            if (releaseOpened) {
+                ++releaseOpenedNonEmpty;
+            }
+        } else {
+            ++emptySlices;
+        }
+    }
+
+    if (!violations.empty()) {
+        ok = false;
+    }
+
+    // ── Emit the per-stem JSON object. ───────────────────────────────────────
+    std::ostringstream os;
+    os << "{\n";
+    os << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    os << "  \"ok\": " << (ok ? "true" : "false") << ",\n";
+    os << "  \"measures\": " << measures << ",\n";
+    os << "  \"eligibleNotes\": " << eligible.size() << ",\n";
+    os << "  \"boundaries\": " << bexp.size() << ",\n";
+    os << "  \"domainStart\": " << domainStart << ",\n";
+    os << "  \"domainEnd\": " << domainEnd << ",\n";
+    os << "  \"slicesTotal\": " << slices.size() << ",\n";
+    os << "  \"slicesNonEmpty\": " << nonEmpty << ",\n";
+    os << "  \"slicesEmpty\": " << emptySlices << ",\n";
+    os << "  \"releaseOnlyBoundaries\": " << releaseOnlyBoundaries << ",\n";
+    os << "  \"releaseOpenedNonEmptySlices\": " << releaseOpenedNonEmpty << ",\n";
+    os << "  \"deterministic\": " << (deterministic ? "true" : "false") << ",\n";
+    os << "  \"sliceMs\": " << fmtDouble(sliceMs, 6) << ",\n";
+    os << "  \"violations\": [";
+    for (std::size_t i = 0; i < violations.size(); ++i) {
+        const SliceViolation& v = violations[i];
+        os << (i ? ",\n    " : "\n    ");
+        os << "{ \"invariant\": \"" << jsonEscape(v.invariant) << "\""
+           << ", \"detail\": \"" << jsonEscape(v.detail) << "\""
+           << ", \"tickA\": " << v.tickA
+           << ", \"tickB\": " << v.tickB << " }";
+    }
+    os << (violations.empty() ? "]\n" : "\n  ]\n");
+    os << "}\n";
+    return os.str();
+}
+
+} // namespace
+
 int main(int argc, char* argv[])
 {
     QCoreApplication::setOrganizationName("MuseScore");
@@ -1831,6 +2131,7 @@ int main(int argc, char* argv[])
     bool dumpModulation = false;      // Stage 4d-i local-modulation spans (default OFF = byte-identical)
     bool dumpJointKey = false;        // J-key-i scoped-joint key decision (default OFF = byte-identical)
     bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
+    bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -1861,6 +2162,8 @@ int main(int argc, char* argv[])
             }
         } else if (a == "--section-level") {
             sectionLevel = true;
+        } else if (a == "--validate-slices") {
+            validateSlices = true;
         } else if (a == "--ignore-declared-mode") {
             ignoreDeclaredMode = true;
         } else if (a == "--dump-cadence-anchor") {
@@ -1985,6 +2288,26 @@ int main(int argc, char* argv[])
         std::cerr << "ERROR: failed to load score: "
                   << inputPath.toQString().toUtf8().toStdString() << "\n";
         return 1;
+    }
+
+    // ── Layer-2 slice validation (diagnostic; returns BEFORE any analysis) ──
+    // This path never reaches analyzeScore/analyzeRegions, so the analysis
+    // pipeline is not invoked and its output cannot change. Emits one per-stem
+    // JSON object (to outputPath if given, else stdout); exit 0 if every §2
+    // invariant held, 2 if any failed (the §5 stop signal for the driver).
+    if (validateSlices) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        bool ok = false;
+        const std::string report = runSliceValidation(score, stem, ok);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return ok ? 0 : 2;
     }
 
     // ── Build exclude-staves set ───────────────────────────────────────────
