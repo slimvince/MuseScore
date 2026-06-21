@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- Layer-2 slicer fixture (case 1): a held chord C4-E4-G4 (dotted half, the full
+     3/4 bar [0,1440)) in voice 2, and one passing tone D4 (quarter, [480,960))
+     in voice 1 flanked by quarter rests. The eligible boundaries are {0,480,960,
+     1440}, so the slicer must produce exactly three slices:
+       [0,480){C,E,G}, [480,960){C,E,G,D}, [960,1440){C,E,G}.
+     The passing tone opens and closes one slice; the chord is unchanged. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>1</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>3</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <rest/><duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <pitch><step>D</step><octave>4</octave></pitch>
+        <duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <backup><duration>3</duration></backup>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>3</duration><voice>2</voice><type>half</type><dot/>
+      </note>
+      <note><chord/>
+        <pitch><step>E</step><octave>4</octave></pitch>
+        <duration>3</duration><voice>2</voice><type>half</type><dot/>
+      </note>
+      <note><chord/>
+        <pitch><step>G</step><octave>4</octave></pitch>
+        <duration>3</duration><voice>2</voice><type>half</type><dot/>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- Layer-2 slicer fixture (case 6): C4 quarter [0,480), a quarter REST
+     [480,960), then E4 quarter [960,1440), single voice. The eligible boundaries
+     are {0,480,960,1440}, so the slicer must produce three slices:
+       [0,480){C}, [480,960){} (the all-rest interior span is an explicit EMPTY
+       slice, covering — not omitted), [960,1440){E}.
+     This pins the covering/lossless partition (the rest gap is NOT a hole). -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>1</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>3</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <pitch><step>E</step><octave>4</octave></pitch>
+        <duration>1</duration><voice>1</voice><type>quarter</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

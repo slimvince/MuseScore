@@ -146,4 +146,13 @@ target_sources(composing_analysis PRIVATE
     # Declarations stay in the unchanged regiontonecollector.h. See
     # cc_module_layering_assessment_dossier.md §5.
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontoneprimitives.cpp
+
+    # slicing/ — LAYER 2: the deterministic CHANGE-POINT SLICER. Enumerates the
+    # constant-tonal-sonority slices over the layer-1 note model as a covering,
+    # lossless, zero-interpretation FACT (boundaries at every eligible onset AND
+    # release; all-rest interior spans are explicit empty slices). It is ISOLATED
+    # — NOT wired into the live analysis pipeline; consumed at layer 3. See
+    # cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
+    ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.h
+    ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.cpp
 )

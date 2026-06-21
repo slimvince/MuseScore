@@ -148,6 +148,12 @@ int countParticipatingStaves(const Score* score,
 /// may occur at note-on OR note-off; music21's chordify implements the same
 /// salami-slicing principle. The result is sorted and deduplicated. Always
 /// includes startTick.
+///
+/// NOTE: the LAYER-2 successor of this onset+release change-point grid is
+/// `composing/analysis/slicing/slicer.h` (changePointSlices), which re-derives
+/// the same fact over the layer-1 note model (no Score walk, no grace-skip
+/// special case, no mid-tuplet snapping). It is isolated/not wired in; this
+/// Score-based collector keeps running until layer 3 consumes the slicer.
 std::vector<Fraction>
 collectNoteChangeTicks(const Score* score,
                        const Fraction& startTick,

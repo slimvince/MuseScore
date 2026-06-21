@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- Layer-2 slicer fixture (eligibility / pass-through): an eligible C4 whole note
+     [0,1920) in voice 1, and an INVISIBLE G4 (print-object="no") quarter
+     [480,960) MID-SLICE in voice 2. If the invisible note opened a boundary the
+     bar would split at 480/960; because layer 1 flagged it visible=false the
+     slicer honors that annotation and produces ONE slice [0,1920). The invisible
+     note must still appear in overlapping(0,1920) (passed-through, not dropped). -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>1</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>whole</type>
+      </note>
+      <backup><duration>4</duration></backup>
+      <note>
+        <rest/><duration>1</duration><voice>2</voice><type>quarter</type>
+      </note>
+      <note print-object="no">
+        <pitch><step>G</step><octave>4</octave></pitch>
+        <duration>1</duration><voice>2</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>2</duration><voice>2</voice><type>half</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

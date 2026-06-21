@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- Layer-2 slicer fixture (case 4): C4 and E4 sound together as a half-note
+     dyad [0,960) (voice 1); G4 is a quarter [0,480) (voice 2) that RELEASES at
+     480 while C and E hold. The eligible boundaries are {0,480,960}, so the
+     slicer must produce two slices: [0,480){C,E,G}, [480,960){C,E}. The boundary
+     at 480 comes from the RELEASE of G (the offset-boundary core case), not an
+     onset. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>1</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>2</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>half</type>
+      </note>
+      <note><chord/>
+        <pitch><step>E</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>half</type>
+      </note>
+      <backup><duration>2</duration></backup>
+      <note>
+        <pitch><step>G</step><octave>4</octave></pitch>
+        <duration>1</duration><voice>2</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>1</duration><voice>2</voice><type>quarter</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

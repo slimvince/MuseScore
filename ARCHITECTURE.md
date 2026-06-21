@@ -589,10 +589,11 @@ A "bridge function" is a free function that:
 #### Layer 1 — the lossless note model (note-model rebuild, 2026-06-21, as-built)
 
 The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
-(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2) →
-per-slice analysis with context (L3) → grouping for display (LN).** Layer 1 is built and
-ratified (commits `edd33901ed` standing oracle-root metric tool, `e30bb45a4f` the note model,
-`4055f89082` its coverage; pushed to the fork).
+(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT —
+isolated) → per-slice analysis with context (L3) → grouping for display (LN).** Layer 1 is built
+and ratified (commits `edd33901ed` standing oracle-root metric tool, `e30bb45a4f` the note model,
+`4055f89082` its coverage; pushed to the fork). Layer 2 is built as an isolated, fully-covered
+module (below), local commit pending Cowork verify + user ratify.
 
 | Module | Responsibility |
 |--------|----------------|
@@ -620,8 +621,48 @@ faithful tie de-inflation moved the per-event oracle-root metric **+3/+1/+1 char
 improved). This is a correct-**upstream** / frozen-**downstream** wobble (the old
 repetition-inflation happened to nudge a few borderline chords toward the oracle); it re-tunes at
 layer 3 and is **not** an unexplained regression (proven: a legacy reproduction mode reproduced
-the prior oracle set byte-exactly). **Next: layer 2 (change-point slicing).** See
+the prior oracle set byte-exactly). **Next: layer 3 (per-slice analysis).** See
 `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
+
+#### Layer 2 — the deterministic change-point slicer (2026-06-21, as-built, isolated)
+
+The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild. A pure, deterministic FACT
+read off the layer-1 note model, **not** a judgment and **not** wired into the live analysis
+pipeline (the segment-first spine keeps driving analysis until layer 3 consumes the slicer).
+
+| Module | Responsibility |
+|--------|----------------|
+| `composing/analysis/slicing/slicer.{h,cpp}` | **Enumerate the change-point slices of a score from the note model.** `changePointSlices(noteModel)` returns an ordered, **covering, lossless** list of half-open `[start,end)` spans that **tile the domain with no gaps and no overlaps**. Boundaries = the sorted-unique union of every **onset AND every release** of the **eligible** notes; consecutive boundaries form the slices. O(n log n). |
+
+**Boundaries over layer-1's eligibility annotation — never re-decided.** A note participates in
+boundary generation iff layer 1 flagged it `plays && visible && staffEligible`. The slicer
+**reads** those flags; it does not re-filter. A muted / invisible / non-tonal-staff note opens
+**no** boundary, yet still rides along in each slice's `overlapping()` set (passed through, not
+dropped). A slice is therefore "constant **tonal** sonority"; non-eligible notes are passenger
+metadata. **Slice identity is the eligible sounding-NOTE set** (not the octave-folded PC set — a
+unison/octave shrink is a real boundary though the PC set is unchanged).
+
+**Covering / empty slices.** Every tick in `[firstEligibleOnset, lastEligibleRelease)` lands in
+exactly one slice. An interior span where all eligible voices rest is an **explicit EMPTY slice**
+(empty eligible overlap set), not a gap — it falls out of the consecutive-boundary construction
+for free. Leading/trailing silence outside the domain is not invented.
+
+**Zero interpretation.** No thresholds, min-gap, merge, or snapping; no notion of
+"ornamental/passing/structural". **No special-casing of any note kind** — grace and tuplet
+outcomes fall out of the note-model spans as facts (verified at source: a grace event carries
+onset = parent-chord tick and duration = `playTicksFraction()` = its nominal written value, so a
+grace genuinely opens/closes a boundary by its span; tuplet ticks are the model's real, un-snapped
+ticks). The slicer needs no grace/tuplet code. Boundaries are **necessary but not sufficient** for
+a chord change (the exhaustive candidate grid): a real chord change can never be missed
+(over-grab is structurally impossible), and the slicer never asserts a change — layer 3 decides
+which boundaries are real, layer N groups equal analyses.
+
+**Isolated + fully covered.** Built standalone with `slicer_tests.cpp` (13 tests: the audit §3
+functional set + edge/eligibility cases); **100% measured line and branch coverage** of
+`slicer.cpp` (no unreachable branches). Not referenced by any production code — composing /
+notation / pipeline-snapshot / BIR / oracle are byte-identical (snapshots 11/11 with no golden
+refresh). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
+`cc_layer2_audit_dossier.md`.
 
 #### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1)
 
