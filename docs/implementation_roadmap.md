@@ -17,6 +17,25 @@ split is stale pending re-measurement. Authoritative identity sets: CLAUDE.md ga
 
 ---
 
+**★★ UPSTREAM-FIRST LAYER REBUILD (2026-06-21) — the per-layer execution of the ratified target.**
+The 4-layer target (`cowork_target_architecture.md`) is being built upstream-first, one layer at a
+time, each with its own design → audit → build → coverage cycle:
+**note model (L1) → change-point slicing (L2) → per-slice analysis with context (L3) → grouping (LN).**
+
+| Layer | Status | Evidence (verify) |
+|---|---|---|
+| **L1 — lossless tie-resolved NOTE MODEL** (`composing/analysis/notemodel/note_model.{h,cpp}`; derived views `weightedPcView`/`soundingAt` in `engravingbridge`) | **✅ DONE + RATIFIED + PUSHED (2026-06-21)** | `edd33901ed` standing oracle-root metric tool (+15 tests) · `e30bb45a4f` note model + views · `4055f89082` branch-coverage close (test-only). `origin/master` = `4055f89082`. Gate: T1–T8 functional + T9–T14 view-branch tests; composing 559 / notation 57 / snapshots 11/11; new-code branch coverage 100% (note_model.cpp + weightedPcView). **Behavior change (not byte-identical):** tie de-inflation + uncapped overlap moved the oracle-root metric **+3/+1/+1 charged** (KEY tier flat, FLOOR byte-flat, BIR −2/+1/−2), ratified as a correct-upstream/frozen-downstream wobble that re-tunes at L3 — proven 100% tie/cap-attributable via a legacy reproduction mode. Reports `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD). |
+| **L2 — change-point slicing** (the segmentation/sub-boundary detectors, now derivable over the note model) | **NEXT** | per-layer design → audit → build → coverage, same as L1. |
+| **L3 — per-slice analysis with context** (scoring) | pending | this is where the L1 +3/+1/+1 oracle wobble re-tunes. |
+| **LN — grouping for display** | pending | — |
+
+The segment-first spine (`greedyExpandSegmentation` + Pass-1/2/2b) **still runs and drives analysis**,
+now consuming `weightedPcView` (it is **transitional**, retiring when L2/L3 land). This upstream-first
+arc interleaves with — does not replace — the Stage 0–7 plan below; the constrained-joint target above
+is the L3 shape.
+
+---
+
 ## Stage 0 — Hygiene and honest ground truth *(zero behavior change, cheap)*
 
 **✅ STAGE 0 COMPLETE (2026-06-10).** Commits: `7bc1609159` (0.1 docs), `a236a0ff21`

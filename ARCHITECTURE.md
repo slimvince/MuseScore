@@ -586,7 +586,44 @@ A "bridge function" is a free function that:
 | `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's chord<br>`applyRegionTuning()` — tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`, `tuneSelection()`) |
 | `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`, `notationtuningbridge.cpp`, `notationimplodebridge.cpp` |
 
-#### Region Analysis — Canonical Modules (Iter 97, complete)
+#### Layer 1 — the lossless note model (note-model rebuild, 2026-06-21, as-built)
+
+The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
+(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2) →
+per-slice analysis with context (L3) → grouping for display (LN).** Layer 1 is built and
+ratified (commits `edd33901ed` standing oracle-root metric tool, `e30bb45a4f` the note model,
+`4055f89082` its coverage; pushed to the fork).
+
+| Module | Responsibility |
+|--------|----------------|
+| `composing/analysis/notemodel/note_model.{h,cpp}` | **The lossless, tie-resolved NOTE MODEL — the single source of truth for "what sounds."** `NoteModel::build(score)` reads the score **once** into an annotated, tick-range-queryable set of sounding notes. Each `NoteEvent` carries 11 fields: `pitch, tpc, staff, voice, onset, release, duration, isGrace, plays, visible, staffEligible`. Tied groups are merged into **one** span/onset (via the DOM `firstTiedNote`/`lastTiedNote`/`playTicksFraction`); spans are true `[onset,release)` answered by **overlap with no horizon** (the old 4-whole-note backward cap is gone). Grace / non-playing / invisible / staff-ineligible notes are **kept and flagged, never dropped**. |
+
+**Derived views over the model (in `engravingbridge`).** The old note-reading is replaced by
+the model; the old *weighting* survives as a derived view:
+- `weightedPcView(noteModel, range, …)` — the recomputed `collectRegionTones` weighting
+  (duration×beat, repetition, cross-voice, pedal, PC aggregation, bass pick), now counting
+  **one onset per tied group** (tie **de-inflation**) and finding sustains by overlap.
+  `collectRegionTones`/`collectSoundingAt` are retained as thin **build-once Score wrappers**.
+- `soundingAt(noteModel, tick, …)` — the point-in-time per-note view (replaces `collectSoundingAt`'s
+  reading half); `buildTones` is now a trivial adapter; `findTemporalContext` takes the model.
+
+**Transitional, by design.** The segment-first analysis spine described below
+(`greedyExpandSegmentation`, the Pass-1/2/2b sub/merge machinery, `analyzeHarmonicRhythm`)
+**still runs and still drives all analysis** — it now consumes `weightedPcView` (unchanged
+weighting) instead of reading notes directly. It retires only when **layer 2** (change-point
+slicing) and **layer 3** (per-slice analysis) are built. The note-reading *ownership* has moved
+to the note model; the slicing/scoring *logic* is frozen until its layers.
+
+**Ratified trade-off on record.** Layer 1 is a **behavior change**, not byte-identical: the
+faithful tie de-inflation moved the per-event oracle-root metric **+3/+1/+1 charged**
+(Baroque/Jazz/Default), with the KEY tier flat, FLOOR byte-flat, and BIR **−2/+1/−2** (mostly
+improved). This is a correct-**upstream** / frozen-**downstream** wobble (the old
+repetition-inflation happened to nudge a few borderline chords toward the oracle); it re-tunes at
+layer 3 and is **not** an unexplained regression (proven: a legacy reproduction mode reproduced
+the prior oracle set byte-exactly). **Next: layer 2 (change-point slicing).** See
+`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
+
+#### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1)
 
 The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in
 the notation bridge, one in `batch_analyze.cpp`). Iter 97's duplication-remediation work
@@ -596,7 +633,7 @@ abstraction the callers populate):
 
 | Module | Responsibility |
 |--------|----------------|
-| `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` | Canonical `collectSoundingAt`, `buildTones`, `collectRegionTones`, `detectBassMovementSubBoundaries`, `findTemporalContext` — tone gathering and sub-boundary detection. |
+| `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` (+ `regiontoneprimitives.cpp`) | The derived tone **views over the Layer-1 note model** — `weightedPcView` (recomputed `collectRegionTones` weighting, tie-de-inflated), `soundingAt`, `buildTones`, plus the retained build-once `collectRegionTones`/`collectSoundingAt` Score wrappers, `findTemporalContext`, and the still-live `detectOnsetSubBoundaries`/`detectBassMovementSubBoundaries`/`collectPitchContext` (slated for Layer 2/3). Note **reading** moved to `notemodel/` (above); this layer now derives over it. |
 | `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — single key/mode resolver, supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. |
 | `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |
 | `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |

@@ -1,6 +1,14 @@
 # Layer Architecture Audit — composing module
 *Written 2026-06-09. Cowork read-only code audit, post-Gate-R.*
 
+> **★ Superseded for Layer 1 by the note-model rebuild (2026-06-21).** This is a historical audit
+> of the pre-rebuild structure. Layer 1 has since been rebuilt as the lossless, tie-resolved **note
+> model** (`composing/analysis/notemodel/note_model.{h,cpp}`, `e30bb45a4f`) — the single source of
+> truth that the tone reading (`collectRegionTones`/`collectSoundingAt`) now derives over as views
+> (`weightedPcView`/`soundingAt`). The "intended layer structure vs. actual" discussion below
+> predates that. See `ARCHITECTURE.md` (Layer 1 — the lossless note model) and
+> `cowork_target_architecture.md` (the 4-layer target) for the current as-built / planned structure.
+
 ---
 
 ## What was read
