@@ -47,6 +47,7 @@
 
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/notemodel/note_model.h"
 #include "engraving/dom/part.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/staff.h"
@@ -106,8 +107,19 @@ inline bool staffIsEligible(const mu::engraving::Score* sc, std::size_t si,
 /// A raw sounding note: playback pitch + TPC spelling.
 struct SoundingNote { int ppitch; int tpc; };
 
+/// Point-in-time per-note view over the note model: every note sounding AT
+/// `tick` (onset <= tick < release), across eligible, non-excluded, playing,
+/// visible, non-grace notes. Result order reproduces the legacy collectSoundingAt
+/// order (notes onsetting exactly at `tick` first in staff/voice order, then
+/// sustained notes in descending-onset order). True-span overlap — no horizon.
+void soundingAt(const mu::composing::analysis::notemodel::NoteModel& noteModel,
+                int tick,
+                const std::set<std::size_t>& excludeStaves,
+                std::vector<SoundingNote>& out);
+
 /// Collect all notes sounding at anchorSeg's tick across eligible staves.
-/// Walks backward up to 4 quarter notes to catch sustained notes.
+/// Score-based convenience wrapper: builds a note model and delegates to
+/// soundingAt(). Prefer the model-taking overload on hot paths (build once).
 void collectSoundingAt(const mu::engraving::Score* sc,
                        const mu::engraving::Segment* anchorSeg,
                        const std::set<std::size_t>& excludeStaves,
@@ -138,6 +150,24 @@ buildTones(const std::vector<SoundingNote>& sounding);
 ///   already sounding at the region start tick, notes whose onset is strictly
 ///   after startTick are excluded from chord inference. This was the batch
 ///   pipeline's legacy behavior; the bridge always leaves this false (default).
+///
+/// `weightedPcView` is the real implementation, derived over the note model:
+/// it reproduces collectRegionTones exactly EXCEPT for the two intended layer-1
+/// corrections — tied groups count as one onset (no repetition-boost inflation)
+/// and sustains of any length are found by true-span overlap (no 4-whole-note
+/// backward cap).
+std::vector<mu::composing::analysis::ChordAnalysisTone>
+weightedPcView(const mu::composing::analysis::notemodel::NoteModel& noteModel,
+               int startTick,
+               int endTick,
+               const std::set<std::size_t>& excludeStaves,
+               int parentStartTick = -1,
+               bool excludeLookAheadOnDenseStart = false,
+               const mu::composing::analysis::ChordAnalyzerPreferences& prefs
+                   = mu::composing::analysis::kDefaultChordAnalyzerPreferences);
+
+/// Score-based convenience wrapper: builds a note model and delegates to
+/// weightedPcView(). Prefer the model-taking view on hot paths (build once).
 std::vector<mu::composing::analysis::ChordAnalysisTone>
 collectRegionTones(const mu::engraving::Score* sc,
                    int startTick,
@@ -183,7 +213,7 @@ detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
 /// or -1 if not yet known. Used to compute bassIsStepwiseFromPrevious /
 /// bassIsStepwiseToNext.
 mu::composing::analysis::ChordTemporalContext
-findTemporalContext(const mu::engraving::Score* sc,
+findTemporalContext(const mu::composing::analysis::notemodel::NoteModel& noteModel,
                     const mu::engraving::Segment* seg,
                     const std::set<std::size_t>& excludeStaves,
                     int keyFifths,

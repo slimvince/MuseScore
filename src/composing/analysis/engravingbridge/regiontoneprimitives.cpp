@@ -43,56 +43,58 @@ namespace mu::composing::analysis::engravingbridge {
 
 using mu::composing::analysis::isDiatonicStep;
 
+void soundingAt(const notemodel::NoteModel& noteModel,
+                int tick,
+                const std::set<std::size_t>& excludeStaves,
+                std::vector<SoundingNote>& out)
+{
+    using notemodel::NoteEvent;
+
+    auto passes = [&](const NoteEvent& e) -> bool {
+        return e.staffEligible && !excludeStaves.count(static_cast<std::size_t>(e.staff))
+               && e.plays && e.visible && !e.isGrace;
+    };
+
+    // Notes sounding AT `tick`: onset <= tick < release. overlapping[tick,tick+1)
+    // is exactly that set, in model order (onset asc, then staff/voice/note).
+    std::vector<const NoteEvent*> anchor;    // onset == tick
+    std::vector<const NoteEvent*> sustained; // onset <  tick
+    for (const NoteEvent* ne : noteModel.overlapping(tick, tick + 1)) {
+        if (!passes(*ne)) {
+            continue;
+        }
+        if (ne->onset == tick) {
+            anchor.push_back(ne);
+        } else {
+            sustained.push_back(ne);
+        }
+    }
+
+    // Legacy ordering fidelity: collectSoundingAt emitted the anchor-tick notes
+    // first (staff/voice order), then walked backward emitting sustained notes in
+    // descending onset order (staff/voice order within each prior segment). The
+    // stable sort by descending onset reproduces that exactly (model order — the
+    // staff/voice tiebreak — is preserved within each onset group).
+    std::stable_sort(sustained.begin(), sustained.end(),
+                     [](const NoteEvent* a, const NoteEvent* b) { return a->onset > b->onset; });
+
+    out.reserve(out.size() + anchor.size() + sustained.size());
+    for (const NoteEvent* ne : anchor) {
+        out.push_back({ ne->pitch, ne->tpc });
+    }
+    for (const NoteEvent* ne : sustained) {
+        out.push_back({ ne->pitch, ne->tpc });
+    }
+}
+
 void collectSoundingAt(const mu::engraving::Score* sc,
                        const mu::engraving::Segment* anchorSeg,
                        const std::set<std::size_t>& excludeStaves,
                        std::vector<SoundingNote>& out)
 {
-    using namespace mu::engraving;
-
-    const Fraction anchorTick = anchorSeg->tick();
-
-    auto collectCr = [&](const Segment* s, const ChordRest* cr) {
-        if (!cr || !cr->isChord() || cr->isGrace()) {
-            return;
-        }
-        if (s->tick() < anchorTick) {
-            const Fraction noteEnd = s->tick() + toChord(cr)->actualTicks();
-            if (noteEnd <= anchorTick) {
-                return;
-            }
-        }
-        for (const Note* n : toChord(cr)->notes()) {
-            if (!n->play() || !n->visible()) {
-                continue;  // skip silent notes and invisible tuning artifacts
-            }
-            out.push_back({ n->ppitch(), n->tpc() });
-        }
-    };
-
-    for (std::size_t si = 0; si < sc->nstaves(); ++si) {
-        if (excludeStaves.count(si) || !staffIsEligible(sc, si, anchorTick)) {
-            continue;
-        }
-        for (int v = 0; v < VOICES; ++v) {
-            collectCr(anchorSeg,
-                      anchorSeg->cr(static_cast<track_idx_t>(si) * VOICES + v));
-        }
-    }
-
-    const Fraction backLimit = anchorTick - Fraction(4, 1);
-    for (const Segment* s = anchorSeg->prev1(SegmentType::ChordRest);
-         s && s->tick() >= backLimit;
-         s = s->prev1(SegmentType::ChordRest)) {
-        for (std::size_t si = 0; si < sc->nstaves(); ++si) {
-            if (excludeStaves.count(si) || !staffIsEligible(sc, si, anchorTick)) {
-                continue;
-            }
-            for (int v = 0; v < VOICES; ++v) {
-                collectCr(s, s->cr(static_cast<track_idx_t>(si) * VOICES + v));
-            }
-        }
-    }
+    // Score-based convenience wrapper: build the note model and delegate to the
+    // point-in-time view. Hot paths build the model once and call soundingAt.
+    soundingAt(notemodel::NoteModel::build(sc), anchorSeg->tick().ticks(), excludeStaves, out);
 }
 
 std::vector<mu::composing::analysis::ChordAnalysisTone>
@@ -370,7 +372,7 @@ detectBassMovementSubBoundaries(const mu::engraving::Score* sc,
 }
 
 mu::composing::analysis::ChordTemporalContext
-findTemporalContext(const mu::engraving::Score* sc,
+findTemporalContext(const notemodel::NoteModel& noteModel,
                     const mu::engraving::Segment* seg,
                     const std::set<std::size_t>& excludeStaves,
                     int keyFifths,
@@ -380,6 +382,7 @@ findTemporalContext(const mu::engraving::Score* sc,
     using namespace mu::engraving;
     using namespace mu::composing::analysis;
 
+    const Score* sc = noteModel.score();
     ChordTemporalContext temporalCtx;
     const Fraction tick = seg->tick();
     const auto chordAnalyzer = ChordAnalyzerFactory::create();
@@ -419,7 +422,7 @@ findTemporalContext(const mu::engraving::Score* sc,
         }
 
         std::vector<SoundingNote> prevSounding;
-        collectSoundingAt(sc, s, excludeStaves, prevSounding);
+        soundingAt(noteModel, s->tick().ticks(), excludeStaves, prevSounding);
         if (!prevSounding.empty()) {
             const auto prevTones = buildTones(prevSounding);
             mu::composing::analysis::PostScoringGateContext prevGateCtx;
@@ -477,7 +480,7 @@ findTemporalContext(const mu::engraving::Score* sc,
         }
 
         std::vector<SoundingNote> nextSounding;
-        collectSoundingAt(sc, s, excludeStaves, nextSounding);
+        soundingAt(noteModel, s->tick().ticks(), excludeStaves, nextSounding);
         if (!nextSounding.empty()) {
             const auto nextTones = buildTones(nextSounding);
             mu::composing::analysis::PostScoringGateContext nextGateCtx;

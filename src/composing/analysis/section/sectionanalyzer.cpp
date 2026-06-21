@@ -179,6 +179,11 @@ analyzeSection(const mu::engraving::Score* sc,
         return out;
     }
 
+    // LAYER 1 — build the lossless, tie-resolved note model ONCE for this
+    // section's score; the weighted-PC views below derive over it.
+    const mu::composing::analysis::notemodel::NoteModel noteModel
+        = mu::composing::analysis::notemodel::NoteModel::build(sc);
+
     // Pass 0: boundary detection supplied by the caller (notation-side
     // analyzeHarmonicRhythm, Smoothed granularity) and injected as `rawRegions`
     // — keeps this module free of the notation / configuration layers (Stage 2.1).
@@ -446,7 +451,7 @@ analyzeSection(const mu::engraving::Score* sc,
             return std::nullopt;
         }
 
-        const auto gapTones = ebr::collectRegionTones(sc,
+        const auto gapTones = ebr::weightedPcView(noteModel,
                                                  gapStartTick,
                                                  gapEndTick,
                                                  excludeStaves);
@@ -645,7 +650,7 @@ analyzeSection(const mu::engraving::Score* sc,
                     AnalyzedRegion openingRegion = sourceRegion;
                     openingRegion.startTick = cursor;
                     openingRegion.endTick = sourceStartTick;
-                    openingRegion.tones = ebr::collectRegionTones(sc,
+                    openingRegion.tones = ebr::weightedPcView(noteModel,
                                                              openingRegion.startTick,
                                                              openingRegion.endTick,
                                                              excludeStaves);
@@ -670,7 +675,7 @@ analyzeSection(const mu::engraving::Score* sc,
             AnalyzedRegion displayRegion = sourceRegion;
             displayRegion.startTick = sourceStartTick;
             displayRegion.endTick = sourceEndTick;
-            displayRegion.tones = ebr::collectRegionTones(sc,
+            displayRegion.tones = ebr::weightedPcView(noteModel,
                                                      displayRegion.startTick,
                                                      displayRegion.endTick,
                                                      excludeStaves);
@@ -695,7 +700,7 @@ analyzeSection(const mu::engraving::Score* sc,
             && measureRegions[1].startTick - measureStartTick <= Constants::DIVISION) {
             AnalyzedRegion carriedMeasureOpening = measureRegions[1];
             carriedMeasureOpening.startTick = measureStartTick;
-            carriedMeasureOpening.tones = ebr::collectRegionTones(sc,
+            carriedMeasureOpening.tones = ebr::weightedPcView(noteModel,
                                                              carriedMeasureOpening.startTick,
                                                              carriedMeasureOpening.endTick,
                                                              excludeStaves);

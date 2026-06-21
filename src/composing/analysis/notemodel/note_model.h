@@ -1,0 +1,126 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-only
+ * MuseScore-Studio-CLA-applies
+ *
+ * MuseScore Studio
+ * Music Composition & Notation
+ *
+ * Copyright (C) 2026 MuseScore Limited
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+#pragma once
+
+// ── composing/analysis/notemodel ─────────────────────────────────────────────
+//
+// LAYER 1 — the lossless, annotated NOTE MODEL: the single source of truth for
+// "what sounds" in a score.
+//
+// This module reads the score ONCE and produces, for the whole piece, the set
+// of sounding notes — every note annotated with its true (tie-resolved) sounding
+// span and the facts downstream layers need, queryable by tick range.
+//
+// It is deliberately NARROW. It does NOT weight, aggregate to pitch classes,
+// pick a bass, slice, or make any key/chord decision. Those are downstream
+// layers that derive VIEWS over this model (see engravingbridge/weightedPcView
+// and soundingAt). Every later layer annotates or derives over the note model;
+// none replaces it.
+//
+// The two correctness duties that distinguish this from the old tie-blind,
+// capped collectors:
+//   * TIE RESOLUTION — a tied group is ONE note, onset of the first → release of
+//     the last (via the DOM's firstTiedNote/lastTiedNote/playTicksFraction).
+//     Exactly one onset per group (kills the old repetition-boost inflation and
+//     false onset/attack flags).
+//   * TRUE SPANS + OVERLAP QUERY — each note carries its real [onset, release);
+//     "what sounds in [t0, t1)" is an overlap query with NO horizon (kills the
+//     old 4-whole-note backward cap that dropped long sustains).
+//
+// COLLECT-AND-ANNOTATE, NEVER DROP: grace, non-playing, invisible, and
+// staff-ineligible notes are KEPT and FLAGGED, not discarded. The keep/drop
+// decision is an explicit, reversible, downstream step (the views apply the old
+// analysis filter; the lossless model retains everything).
+
+#include <cstddef>
+#include <vector>
+
+#include "engraving/types/fraction.h"
+
+namespace mu::engraving {
+class Score;
+}
+
+namespace mu::composing::analysis::notemodel {
+
+// A single sounding note, tie-resolved, with its true span and annotations.
+//
+// Ticks are absolute (engraving Fraction::ticks()). The span is half-open
+// [onset, release); `duration == release - onset` is the tie-resolved sounding
+// length (== Note::playTicksFraction()).
+//
+// NOTE on a deliberately-absent field: the signed design listed an `isCue` flag,
+// but cue-ness is NOT recoverable from the DOM post-import — MusicXML import
+// collapses it via `note->setPlay(!cue)`, so a cue note and a user-muted note
+// are byte-identical at the DOM level (both `play()==false`, no other
+// distinguishing property; the only `cue` concept in the engraving DOM is
+// Ornament::cueNoteChord, unrelated). The field is therefore omitted rather than
+// fabricated (user decision 2026-06-21; see cc_layer1_impl_report.md). Cue notes
+// still behave correctly downstream: `plays==false` already excludes them from
+// every analysis view.
+struct NoteEvent {
+    int  pitch  = 0;     ///< ppitch — MIDI playback pitch (honours ottavas/transpositions).
+    int  tpc    = -1;    ///< TPC (0-34, circle-of-fifths spelling). -1 = not provided.
+    int  staff  = 0;     ///< Owning staff index (the note's actual track staff, not visual placement).
+    int  voice  = 0;     ///< Voice 0..VOICES-1.
+    int  onset  = 0;     ///< Tie-resolved onset tick (onset of the first tied note).
+    int  release = 0;    ///< Tie-resolved release tick (release of the last tied note).
+    int  duration = 0;   ///< release - onset (== Note::playTicksFraction()).
+    bool isGrace = false;       ///< Grace note (kept + flagged; attaches to its parent chord's tick).
+    bool plays   = true;        ///< Note::play() (false for user-muted AND imported cue notes).
+    bool visible = true;        ///< Note::visible().
+    bool staffEligible = true;  ///< staffIsEligible() at this note's onset (hidden/drumset/chord-track => false).
+};
+
+// The lossless note model for a whole score.
+//
+// Construct once with build(); query by tick range. Notes are stored in build
+// order: ascending onset tick, then staff, then voice, then chord-note order.
+// The model retains a borrowed pointer to its source Score (the derived views
+// need it for beat weights / pedal windows / measure lookups); the Score must
+// outlive the model.
+class NoteModel
+{
+public:
+    /// Read the score ONCE into the lossless note model. Walks every staff,
+    /// voice, and segment (and grace notes), resolving tied groups into single
+    /// spans and annotating each note. Nothing is dropped.
+    static NoteModel build(const mu::engraving::Score* sc);
+
+    const mu::engraving::Score* score() const { return m_score; }
+    const std::vector<NoteEvent>& notes() const { return m_notes; }
+
+    /// All notes whose span overlaps the half-open range [t0, t1):
+    /// `onset < t1 && release > t0`. No horizon. Result preserves build order
+    /// (ascending onset, then staff/voice/note).
+    std::vector<const NoteEvent*> overlapping(int t0, int t1) const;
+
+    /// All notes whose ONSET lies in the half-open range [t0, t1).
+    /// Result preserves build order.
+    std::vector<const NoteEvent*> onsetIn(int t0, int t1) const;
+
+private:
+    const mu::engraving::Score* m_score = nullptr;
+    std::vector<NoteEvent> m_notes;  ///< Sorted by onset (ascending, stable build order).
+};
+
+} // namespace mu::composing::analysis::notemodel

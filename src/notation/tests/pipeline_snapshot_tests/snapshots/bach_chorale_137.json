@@ -442,22 +442,22 @@
         },
         {
             "key": "D",
-            "text": "Gmadd9",
+            "text": "Gm7/Bb",
             "tick": 17280
         },
         {
             "key": "D",
-            "text": "iv(add9)",
+            "text": "iv65",
             "tick": 17280
         },
         {
             "key": "D",
-            "text": "Gmadd9",
+            "text": "Gm7/Bb",
             "tick": 17280
         },
         {
             "key": "D",
-            "text": "iv(add9)",
+            "text": "iv65",
             "tick": 17280
         },
         {
@@ -1282,11 +1282,11 @@
         },
         {
             "durationTicks": 480,
-            "harmonyText": "Gmadd9",
+            "harmonyText": "Gm7/Bb",
             "pitches": [
-                69,
                 70,
-                74
+                74,
+                77
             ],
             "tick": 17280
         },
@@ -2063,22 +2063,27 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "Bb",
-                    "score": 2.287
-                },
-                {
                     "quality": "minor",
                     "root": "G",
-                    "score": 1.888
+                    "score": 2.613
+                },
+                {
+                    "quality": "halfDiminished",
+                    "root": "G",
+                    "score": 1.898
+                },
+                {
+                    "quality": "sus4",
+                    "root": "F",
+                    "score": 1.825
                 }
             ],
-            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
             "key": "D",
-            "previousBassPc": 6,
+            "previousBassPc": 5,
             "previousQuality": "major",
-            "previousRootPc": 2,
+            "previousRootPc": 5,
             "quality": "minor",
             "root": "G",
             "tick": 17280,
@@ -2105,7 +2110,7 @@
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
             "key": "D",
-            "previousBassPc": 10,
+            "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
             "quality": "major",
@@ -2134,7 +2139,7 @@
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
             "key": "D",
-            "previousBassPc": 10,
+            "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
             "quality": "major",

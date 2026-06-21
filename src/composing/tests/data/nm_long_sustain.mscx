@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="5.00">
+  <programVersion>5.0.0</programVersion>
+  <programRevision></programRevision>
+  <Score>
+    <eid>LTK1GVCGNjO_Zb43cRcXuyM</eid>
+    <Division>480</Division>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <open>1</open>
+    <metaTag name="arranger"></metaTag>
+    <metaTag name="composer"></metaTag>
+    <metaTag name="copyright"></metaTag>
+    <metaTag name="creationDate">2026-06-21</metaTag>
+    <metaTag name="lyricist"></metaTag>
+    <metaTag name="movementNumber"></metaTag>
+    <metaTag name="movementTitle"></metaTag>
+    <metaTag name="originalFormat">musicxml</metaTag>
+    <metaTag name="platform">Microsoft Windows</metaTag>
+    <metaTag name="source"></metaTag>
+    <metaTag name="translator"></metaTag>
+    <metaTag name="workNumber"></metaTag>
+    <metaTag name="workTitle"></metaTag>
+    <Part id="1">
+      <eid>Me8HzAKWmU_BHQtb27w40G</eid>
+      <Staff>
+        <eid>B3vQVlrKucG_FcNqsSpILnL</eid>
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        </Staff>
+      <Instrument id="grand-piano">
+        <InstrumentLabel>
+          <longName>Lead</longName>
+          </InstrumentLabel>
+        <trackName></trackName>
+        <instrumentId>keyboard.piano.grand</instrumentId>
+        <Articulation>
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="staccatissimo">
+          <velocity>100</velocity>
+          <gateTime>33</gateTime>
+          </Articulation>
+        <Articulation name="staccato">
+          <velocity>100</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="portato">
+          <velocity>100</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="tenuto">
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="marcato">
+          <velocity>120</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="sforzato">
+          <velocity>150</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="sforzatoStaccato">
+          <velocity>150</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="marcatoStaccato">
+          <velocity>120</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="marcatoTenuto">
+          <velocity>120</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Channel>
+          <program value="0"/>
+          <controller ctrl="10" value="63"/>
+          <synti>Fluid</synti>
+          </Channel>
+        </Instrument>
+      </Part>
+    <Staff id="1">
+      <VBox>
+        <height>10</height>
+        <eid>7MWwQXXlQ7C_FPR+i8JSVoK</eid>
+        </VBox>
+      <Measure>
+        <eid>jgvzTTw1YdP_a+GJPHSvuh</eid>
+        <voice>
+          <Clef>
+            <concertClefType>G</concertClefType>
+            <transposingClefType>G</transposingClefType>
+            <isHeader>1</isHeader>
+            <eid>QaY7Sp9VbYH_N/3rD4Po1RJ</eid>
+            </Clef>
+          <TimeSig>
+            <eid>NbpcIeg40OI_kzCXLA1ArwK</eid>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Chord>
+            <eid>iIJADX/4+JL_Iw00vVI+DwH</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <eid>GwZDeOZ+rwB_oh5R71zaEdE</eid>
+              <Spanner type="Tie">
+                <Tie>
+                  <eid>CDUvgXuQPXE_+4hm8ym8qRL</eid>
+                  </Tie>
+                <next>
+                  <location>
+                    <measures>1</measures>
+                    </location>
+                  </next>
+                </Spanner>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <eid>SbniRGX1F6D_+8CpBAgOhJP</eid>
+        <voice>
+          <Chord>
+            <eid>sMUq35DUZHI_lcq15spu2RD</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <eid>gzaiiG5Jr8E_7h8tEx9PK3I</eid>
+              <Spanner type="Tie">
+                <Tie>
+                  <eid>IzURfAZ20qC_0xGPgJv7gtB</eid>
+                  </Tie>
+                <next>
+                  <location>
+                    <measures>1</measures>
+                    </location>
+                  </next>
+                </Spanner>
+              <Spanner type="Tie">
+                <prev>
+                  <location>
+                    <measures>-1</measures>
+                    </location>
+                  </prev>
+                </Spanner>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <eid>y4SoO1EZt2G_7OaMsUbAtoD</eid>
+        <voice>
+          <Chord>
+            <eid>EBvd252bn9F_B3TvVcF1jJM</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <eid>15yEPh62SXH_uoq1xjmHE2B</eid>
+              <Spanner type="Tie">
+                <Tie>
+                  <eid>Kf/XWweUXUP_Zv1y9XXSITF</eid>
+                  </Tie>
+                <next>
+                  <location>
+                    <measures>1</measures>
+                    </location>
+                  </next>
+                </Spanner>
+              <Spanner type="Tie">
+                <prev>
+                  <location>
+                    <measures>-1</measures>
+                    </location>
+                  </prev>
+                </Spanner>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <eid>Z/HJle/E46G_cu/5Q7QaL+P</eid>
+        <voice>
+          <Chord>
+            <eid>vzjiDnDoDXD_TPmiiZGJw/D</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <eid>naE3JI5nKqC_dqQCVRfb2lL</eid>
+              <Spanner type="Tie">
+                <Tie>
+                  <eid>Iv/5+qUmzyL_vi99BwDZ4XC</eid>
+                  </Tie>
+                <next>
+                  <location>
+                    <measures>1</measures>
+                    </location>
+                  </next>
+                </Spanner>
+              <Spanner type="Tie">
+                <prev>
+                  <location>
+                    <measures>-1</measures>
+                    </location>
+                  </prev>
+                </Spanner>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <eid>Mjr7g7g4GrJ_52C+k8FqchL</eid>
+        <voice>
+          <Chord>
+            <eid>MysAl/2a2mO_Ht2Cm8fN6UB</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <eid>Xzjf5pUD7vM_WhG5uXaxO1B</eid>
+              <Spanner type="Tie">
+                <prev>
+                  <location>
+                    <measures>-1</measures>
+                    </location>
+                  </prev>
+                </Spanner>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <BarLine>
+            <eid>HIYGhRhtmMM_3uIA9WZ4sjG</eid>
+            </BarLine>
+          </voice>
+        </Measure>
+      </Staff>
+    </Score>
+  </museScore>

@@ -235,7 +235,11 @@ findTemporalContext(const mu::engraving::Score* sc,
                     mu::composing::analysis::KeySigMode keyMode,
                     int currentBassPc)
 {
-    return ebr::findTemporalContext(sc, seg, excludeStaves, keyFifths, keyMode, currentBassPc);
+    // Score-based pass-through: build the note model and delegate to the
+    // model-taking layer-1 view. (Bridge/status-bar path — single tick, rare.)
+    return ebr::findTemporalContext(
+        mu::composing::analysis::notemodel::NoteModel::build(sc),
+        seg, excludeStaves, keyFifths, keyMode, currentBassPc);
 }
 
 } // namespace mu::notation::internal

@@ -125,6 +125,14 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.h
     ${CMAKE_CURRENT_LIST_DIR}/scoreharvest/metricweights.cpp
 
+    # notemodel/ — LAYER 1: the lossless, annotated, tie-resolved note model
+    # (the single source of truth for "what sounds"). Read once per score,
+    # queryable by tick range via true-span overlap (no horizon). The
+    # engravingbridge tone views derive over it. See
+    # cowork_layer1_note_model_design.md + cc_layer1_audit_dossier.md.
+    ${CMAKE_CURRENT_LIST_DIR}/notemodel/note_model.h
+    ${CMAKE_CURRENT_LIST_DIR}/notemodel/note_model.cpp
+
     # engravingbridge/ — single source of truth for the score-walking helpers
     # shared by the notation bridge and tools/batch_analyze.cpp. Replaces the
     # Step-3 using-declaration plumbing in batch_analyze.cpp. See

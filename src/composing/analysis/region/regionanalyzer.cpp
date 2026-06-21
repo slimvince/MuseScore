@@ -48,9 +48,10 @@
 #include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/analysis/section/jointkeydecision.h"   // J-key-iii production wiring
 
-namespace ebr = mu::composing::analysis::engravingbridge;
-namespace kr  = mu::composing::analysis::keyresolver;
-namespace shv = mu::composing::analysis::scoreharvest;
+namespace ebr  = mu::composing::analysis::engravingbridge;
+namespace kr   = mu::composing::analysis::keyresolver;
+namespace shv  = mu::composing::analysis::scoreharvest;
+namespace nmdl = mu::composing::analysis::notemodel;
 
 namespace mu::composing::analysis::region {
 
@@ -268,7 +269,7 @@ void restampBassMinorSeventhAfterMerge(
 /// boundary every time the pitch-class set changes between adjacent ChordRest
 /// segments.
 std::vector<mu::engraving::Fraction> denseBoundaryTicks(
-    const mu::engraving::Score* score,
+    const nmdl::NoteModel& noteModel,
     const mu::engraving::Segment* firstSeg,
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
@@ -284,7 +285,7 @@ std::vector<mu::engraving::Fraction> denseBoundaryTicks(
     for (const Segment* s = firstSeg; s && s->tick() < endTick;
          s = s->next1(SegmentType::ChordRest)) {
         std::vector<ebr::SoundingNote> sounding;
-        ebr::collectSoundingAt(score, s, excludeStaves, sounding);
+        ebr::soundingAt(noteModel, s->tick().ticks(), excludeStaves, sounding);
         if (sounding.empty()) {
             continue;
         }
@@ -500,6 +501,12 @@ analyzeRegions(const mu::engraving::Score* score,
         return {};
     }
 
+    // LAYER 1 — build the lossless, tie-resolved note model ONCE for this score.
+    // Every tone read below derives a view over it (weightedPcView / soundingAt /
+    // findTemporalContext), so the tie de-inflation and uncapped-overlap fixes
+    // apply uniformly and the score is read only once per analysis.
+    const nmdl::NoteModel noteModel = nmdl::NoteModel::build(score);
+
     // Resolve key/mode at the start of the range. Use staff 0 as the reference
     // for the key signature (all concert-pitch staves share the same key sig).
     // If staff 0 is excluded or ineligible, find the first eligible one.
@@ -531,15 +538,15 @@ analyzeRegions(const mu::engraving::Score* score,
     // ── Pass 1 — coarse boundary detection ───────────────────────────────────
     std::vector<Fraction> boundaryTicks;
     if (opts.granularity == HarmonicRegionGranularity::PreserveAllChanges) {
-        boundaryTicks = denseBoundaryTicks(score, seg, startTick, endTick, excludeStaves);
+        boundaryTicks = denseBoundaryTicks(noteModel, seg, startTick, endTick, excludeStaves);
     } else {
         mu::composing::HarmonicSegmenterCallbacks segCallbacks;
         segCallbacks.staffIsEligible = [&](size_t s) {
             return ebr::staffIsEligible(score, s, startTick);
         };
         const bool excludeLookAhead = opts.excludeLookAheadOnDenseStart;
-        segCallbacks.collectRegionTones = [score, &excludeStaves, excludeLookAhead](int s, int e) {
-            return ebr::collectRegionTones(score, s, e, excludeStaves, -1, excludeLookAhead);
+        segCallbacks.collectRegionTones = [&noteModel, &excludeStaves, excludeLookAhead](int s, int e) {
+            return ebr::weightedPcView(noteModel, s, e, excludeStaves, -1, excludeLookAhead);
         };
         const auto placedRegions = mu::composing::greedyExpandSegmentation(
             score, startTick, endTick, excludeStaves,
@@ -590,7 +597,7 @@ analyzeRegions(const mu::engraving::Score* score,
         // unchanged. Byte-identical: the decoder computes no score (analyzeChord +
         // applyHarmonicFunction run upstream of commit). See docs/decoder_design.md §§4–5.
         decode::ChordPathDecoder decoder(
-            ebr::findTemporalContext(score, seg, excludeStaves, keyFifths, keyMode, -1),
+            ebr::findTemporalContext(noteModel, seg, excludeStaves, keyFifths, keyMode, -1),
             attemptPrefs.decodeQualityLevel);
         ChordTemporalContext& temporalCtx = decoder.context();
         std::optional<KeyModeAnalysisResult> prevKeyResult;
@@ -607,8 +614,8 @@ analyzeRegions(const mu::engraving::Score* score,
             const Fraction regionEnd   = (i + 1 < boundaryTicks.size())
                                          ? boundaryTicks[i + 1] : endTick;
 
-            auto tones = ebr::collectRegionTones(
-                score, regionStart.ticks(), regionEnd.ticks(), excludeStaves, -1,
+            auto tones = ebr::weightedPcView(
+                noteModel, regionStart.ticks(), regionEnd.ticks(), excludeStaves, -1,
                 opts.excludeLookAheadOnDenseStart);
             if (tones.empty()) {
                 continue;
@@ -637,8 +644,8 @@ analyzeRegions(const mu::engraving::Score* score,
                 const Fraction nextRegionStart = boundaryTicks[i + 1];
                 const Fraction nextRegionEnd = (i + 2 < boundaryTicks.size())
                                                ? boundaryTicks[i + 2] : endTick;
-                const auto nextTones = ebr::collectRegionTones(
-                    score, nextRegionStart.ticks(), nextRegionEnd.ticks(), excludeStaves, -1,
+                const auto nextTones = ebr::weightedPcView(
+                    noteModel, nextRegionStart.ticks(), nextRegionEnd.ticks(), excludeStaves, -1,
                     opts.excludeLookAheadOnDenseStart);
                 for (const auto& nextTone : nextTones) {
                     if (nextTone.isBass) { nextBassPc = nextTone.pitch % 12; break; }
@@ -810,8 +817,8 @@ analyzeRegions(const mu::engraving::Score* score,
 
                 // Iter 93 — pass parent.startTick so onsetAtRegionStart is
                 // computed at full-region scope.
-                auto subTones = ebr::collectRegionTones(
-                    score, subStart.ticks(), subEnd.ticks(), excludeStaves,
+                auto subTones = ebr::weightedPcView(
+                    noteModel, subStart.ticks(), subEnd.ticks(), excludeStaves,
                     parentRegion.startTick, opts.excludeLookAheadOnDenseStart);
 
                 if (subTones.empty()) {
@@ -864,8 +871,8 @@ analyzeRegions(const mu::engraving::Score* score,
                     }
                     int subNextRootPc = -1;
                     if (nextStartT >= 0 && nextEndT > nextStartT) {
-                        const auto nextTones = ebr::collectRegionTones(
-                            score, nextStartT, nextEndT, excludeStaves, -1,
+                        const auto nextTones = ebr::weightedPcView(
+                            noteModel, nextStartT, nextEndT, excludeStaves, -1,
                             opts.excludeLookAheadOnDenseStart);
                         subNextRootPc = inferNextRootPc(
                             chordAnalyzer.get(), nextTones, subKeyFifths, subKeyMode);
@@ -1014,8 +1021,8 @@ analyzeRegions(const mu::engraving::Score* score,
                     const Fraction subStart = bounds[bi];
                     const Fraction subEnd   = bounds[bi + 1];
 
-                    auto subTones = ebr::collectRegionTones(
-                        score, subStart.ticks(), subEnd.ticks(), excludeStaves,
+                    auto subTones = ebr::weightedPcView(
+                        noteModel, subStart.ticks(), subEnd.ticks(), excludeStaves,
                         parentRegion.startTick, opts.excludeLookAheadOnDenseStart);
 
                     if (subTones.empty()) {
@@ -1060,8 +1067,8 @@ analyzeRegions(const mu::engraving::Score* score,
                         }
                         int subNextRootPc = -1;
                         if (nextStartT >= 0 && nextEndT > nextStartT) {
-                            const auto nextTones = ebr::collectRegionTones(
-                                score, nextStartT, nextEndT, excludeStaves, -1,
+                            const auto nextTones = ebr::weightedPcView(
+                                noteModel, nextStartT, nextEndT, excludeStaves, -1,
                                 opts.excludeLookAheadOnDenseStart);
                             subNextRootPc = inferNextRootPc(
                                 chordAnalyzer.get(), nextTones, subKeyFifths, subKeyMode);

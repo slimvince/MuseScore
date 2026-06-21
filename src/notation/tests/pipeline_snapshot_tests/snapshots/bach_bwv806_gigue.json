@@ -142,42 +142,42 @@
         },
         {
             "key": "A",
-            "text": "DMaj7",
+            "text": "D",
             "tick": 3840
         },
         {
             "key": "A",
-            "text": "IVM7",
+            "text": "IV",
             "tick": 3840
         },
         {
             "key": "A",
-            "text": "DMaj7",
+            "text": "D",
             "tick": 3840
         },
         {
             "key": "A",
-            "text": "IVM7",
+            "text": "IV",
             "tick": 3840
         },
         {
             "key": "A",
-            "text": "DMaj7",
+            "text": "D",
             "tick": 4560
         },
         {
             "key": "A",
-            "text": "IVM7",
+            "text": "IV",
             "tick": 4560
         },
         {
             "key": "A",
-            "text": "DMaj7",
+            "text": "D",
             "tick": 4560
         },
         {
             "key": "A",
-            "text": "IVM7",
+            "text": "IV",
             "tick": 4560
         },
         {
@@ -811,11 +811,10 @@
         },
         {
             "durationTicks": 720,
-            "harmonyText": "DMaj7",
+            "harmonyText": "D",
             "pitches": [
                 66,
-                69,
-                73
+                69
             ],
             "tick": 3840
         },
@@ -824,8 +823,7 @@
             "harmonyText": "",
             "pitches": [
                 66,
-                69,
-                73
+                69
             ],
             "tick": 4560
         },
@@ -1523,17 +1521,17 @@
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.576
-                },
-                {
-                    "quality": "major",
-                    "root": "D",
-                    "score": 2.576
+                    "score": 2.611
                 },
                 {
                     "quality": "major",
                     "root": "A",
-                    "score": 2.512
+                    "score": 2.453
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.171
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1552,17 +1550,17 @@
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.576
-                },
-                {
-                    "quality": "major",
-                    "root": "D",
-                    "score": 2.576
+                    "score": 2.611
                 },
                 {
                     "quality": "major",
                     "root": "A",
-                    "score": 2.512
+                    "score": 2.453
+                },
+                {
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.171
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
