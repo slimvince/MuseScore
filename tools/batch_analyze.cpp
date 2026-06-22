@@ -2159,6 +2159,17 @@ static std::string runKeyModeDecode(const Score* score, const std::string& stem,
            << ", \"duration\": " << fmtDouble(duration, 4)
            << ", \"key\": \"" << jsonEscape(key) << "\""
            << ", \"keyConfidence\": " << fmtDouble(sk.confidence, 6)
+           // Additive (error-decomposition increment): the CHOSEN candidate's
+           // per-slice EMISSION score (sk.chosen.score = emissions[t][winner],
+           // the local-fit, NOT the sequence margin keyConfidence above). The
+           // carried alternatives already serialize their emission as their
+           // "confidence" (alt.score), but the winner's emission was absent —
+           // it is exactly what the Q1 branch of the causal decomposition needs
+           // (emission[picked] vs emission[correct], to tell a TRANSITION
+           // override from an EMISSION failure). Diagnostic-only: the
+           // --decode-keymode path returns before analyzeScore, so production
+           // analysis output stays byte-identical.
+           << ", \"keyEmission\": " << fmtDouble(sk.chosen.score, 6)
            << ", \"uncertain\": " << (sk.uncertain ? "true" : "false");
         if (!sk.alternatives.empty()) {
             const std::string ruKey =

@@ -1102,6 +1102,467 @@ def characterize_main(args):
         print(f"[wrote] {args.json}")
 
 
+# ════════════════════════════════════════════════════════════════════════════
+# CAUSAL DECOMPOSITION (the error-decomposition increment) — read-only.
+#
+# The characterization (cc_layer3_characterization_report.md §1a) found ~72–77%
+# of WRONG slices CARRY the true key/mode in the alternatives but don't pick it
+# (selection, not coverage). This mode answers WHY each carried-but-not-picked
+# error is not picked, partitioning the carried error mass into:
+#   A — L3 emission-recoverable   (Q3: distinguishing pc present, underweighted)
+#   B — L3 cost-recoverable       (Q2: sustained modulation over-smoothed)
+#   C — L5 cadence-required       (Q2 brief tonicization ∪ Q3 absent relative-pair)
+#   D — L5 chord/spelling-required(Q3 absent ∧ symmetric sonority in window)
+#   F — L5 cause-indeterminate-from-notes (Q3 absent, non-relative, non-symmetric;
+#                                     a modal rotation / collection-share — §7 honest
+#                                     "needs chord/function evidence" residual)
+# plus the COVERAGE pile:
+#   E — not-carried (true key never in the emitted alternatives), sub-split:
+#         E-pruning  : loc appears elsewhere in the piece's decode (a viable state,
+#                      locally outranked / pruned from this slice's top-alts) → L3
+#         E-emission : loc never appears anywhere for the piece (emission never
+#                      surfaces it) → structural / emission limit
+#
+# The decision tree (per CC instruction §1):
+#   Q1  emission[correct] vs emission[picked]  (per-slice local-fit, NOT the margin)
+#        correct > picked → TRANSITION (the sequence/cost overrode a locally-right
+#                           emission) → Q2
+#        correct ≤ picked → EMISSION (the emission itself preferred wrong) → Q3
+#   Q2  GT-correct local key contiguous persistence around the slice (beats)
+#        ≥ cutoff → B (sustained, over-smoothed real modulation)
+#        < cutoff → C (brief tonicization the cost should suppress — L5 call)
+#   Q3  distinguishing pc(s) present in the emission window (corpus xml)?
+#        present (weight ≥ cutoff) → A (emission underweighted)
+#        absent → relative-pair → C ; symmetric sonority → D ; else → F
+#
+# ONE grading path: reuses our_key_tonic_fixed / C._dcml_key_tonic /
+# cmp.align_dcml_regions / split_of / _pcs_in_window / _is_relative_pair —
+# the same extractors/aligner/split as Increment B and the characterization.
+# NO decoder setting is read or changed; NOTHING is wired; read-only.
+# ════════════════════════════════════════════════════════════════════════════
+
+# Mode-tonic offset above the parent Ionian tonic (for the pitch-class COLLECTION
+# of any key/mode label).  A church mode's collection IS a parent major scale; a
+# plain minor's collection is its relative major.  This lets the "distinguishing
+# diatonic pc" be computed as a true collection difference (so a modal ROTATION /
+# relative pair correctly yields an EMPTY diatonic distinguisher — note-undecidable).
+_MODE_TONIC_OFFSET = {
+    'maj': 0, 'ion': 0, 'lyd': 5, 'mix': 7, 'dor': 2, 'phryg': 4, 'phr': 4,
+    'aeol': 9, 'min': 9, 'loc': 11, 'locr': 11, 'harm': 9, 'mel': 9,
+}
+_IONIAN_DEGREES = (0, 2, 4, 5, 7, 9, 11)
+
+
+def _mode_offset(mode_token):
+    ml = (mode_token or '').lower()
+    for pref, off in _MODE_TONIC_OFFSET.items():
+        if ml.startswith(pref):
+            return off
+    return 0  # unknown -> treat as ionian
+
+
+def _collection_of_keystr(keystr):
+    """Pitch-class collection (parent major scale) of one of our key strings."""
+    m = _OURS_KEY_RE_FIXED.match((keystr or '').strip())
+    if not m:
+        return None
+    pc = (_NOTE_OURS[m.group(1)] + (1 if m.group(2) == '#' else -1 if m.group(2) == 'b' else 0)) % 12
+    parent = (pc - _mode_offset(m.group(3))) % 12
+    return frozenset((parent + d) % 12 for d in _IONIAN_DEGREES)
+
+
+def _collection_of_pair(pair):
+    """Collection of a plain (tonic_pc, is_major) GT key (minor -> relative major)."""
+    if pair is None or pair[0] is None:
+        return None
+    parent = pair[0] % 12 if pair[1] else (pair[0] - 9) % 12
+    return frozenset((parent + d) % 12 for d in _IONIAN_DEGREES)
+
+
+def _distinguishing(correct, picked, picked_keystr):
+    """(set_of_distinguishing_pcs, kind) separating CORRECT (plain maj/min GT) from
+    PICKED (our reading, possibly church-modal).  Empty set = note-undecidable
+    (relative pair without a sounded raised LT, or a same-collection modal rotation)."""
+    coll_c = _collection_of_pair(correct)
+    coll_p = _collection_of_keystr(picked_keystr) or _collection_of_pair(picked)
+    if coll_c is None or coll_p is None:
+        return (set(), 'unknown')
+    if coll_c != coll_p:
+        diff = set(coll_c) - set(coll_p)
+        kind = 'parallel-third' if correct[0] == picked[0] else 'diatonic-diff'
+        return (diff, kind)
+    # same collection: relative pair (chromatic raised LT distinguishes) or rotation
+    if _is_relative_pair(correct, picked):
+        minor = correct if not correct[1] else picked
+        return ({(minor[0] + 11) % 12}, 'relative-lt')
+    return (set(), 'rotation')
+
+
+def _symmetric_sonority(pcs):
+    """'dim7' / 'aug' / 'whole-tone' / None for a pitch-class set (window content)."""
+    s = set(pcs)
+    if not s:
+        return None
+    for p in s:
+        if {p, (p + 3) % 12, (p + 6) % 12, (p + 9) % 12} <= s:
+            return 'dim7'
+    for p in s:
+        if {p, (p + 4) % 12, (p + 8) % 12} <= s:
+            return 'aug'
+    for wt in (frozenset({0, 2, 4, 6, 8, 10}), frozenset({1, 3, 5, 7, 9, 11})):
+        if len(s & wt) >= 5 and s <= wt:
+            return 'whole-tone'
+    return None
+
+
+def _pc_weights_in_window(xml_path, start_tick, end_tick, division=480):
+    """{pitch_class: total quarter-length sounding} over [start,end) of the score.
+    Reuses the _M21_SCORE_CACHE the §1c modal audit populates."""
+    try:
+        from music21 import converter  # noqa: F401
+    except Exception:
+        return None
+    key = str(xml_path)
+    sc = _M21_SCORE_CACHE.get(key)
+    if sc is None:
+        try:
+            from music21 import converter
+            sc = converter.parse(str(xml_path)).flatten().notes.stream()
+        except Exception:
+            _M21_SCORE_CACHE[key] = False
+            return None
+        _M21_SCORE_CACHE[key] = sc
+    if sc is False:
+        return None
+    o_lo = start_tick / division
+    o_hi = end_tick / division
+    w = {}
+    for n in sc:
+        try:
+            off = float(n.offset)
+        except Exception:
+            continue
+        dur = float(getattr(n, 'quarterLength', 0.0) or 0.0)
+        if off < o_hi and (off + dur) > o_lo:
+            ov = min(off + dur, o_hi) - max(off, o_lo)
+            if ov <= 0:
+                continue
+            for pp in (n.pitches if hasattr(n, 'pitches') else [n.pitch]):
+                w[pp.pitchClass] = w.get(pp.pitchClass, 0.0) + ov
+    return w
+
+
+def _gt_timeline(ours_regions, wir_regions):
+    """Merged contiguous (start_tick, end_tick, (tonic,major)) GT-local-key runs,
+    and the inferred ticks-per-beat — for Q2 persistence."""
+    spans = cmp._dcml_time_spans(ours_regions, wir_regions)
+    tpb = cmp._infer_ticks_per_beat(ours_regions) or 480.0
+    raw = []
+    for (s, e), wr in zip(spans, wir_regions):
+        if s < 0 or e <= s:
+            continue
+        k = C._dcml_key_tonic(getattr(wr, 'local_key', None))
+        if k[0] is None:
+            continue
+        raw.append((s, e, (k[0], k[1])))
+    raw.sort()
+    merged = []
+    for s, e, k in raw:
+        if merged and merged[-1][2] == k and s <= merged[-1][1] + 1:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], e), k)
+        else:
+            merged.append([s, e, k])
+    return merged, tpb
+
+
+def _persistence_beats(merged, tpb, tick, loc):
+    """Contiguous beat-length of the GT-correct (loc) key run covering `tick`."""
+    for s, e, k in merged:
+        if k == loc and s <= tick < e:
+            return (e - s) / tpb
+    # fall back: nearest loc run by midpoint (alignment slack)
+    best = 0.0
+    for s, e, k in merged:
+        if k == loc:
+            best = max(best, (e - s) / tpb)
+    return best
+
+
+def _decompose_signals(decode_dir, wir_base, corpus_xml_dir, preset, test_pct,
+                       window_beats=4.0):
+    """Single read-only pass: for every scorable MISS on the TEST split, compute the
+    fixed (cutoff-independent) signals the Q1/Q2/Q3 tree needs.  Returns the list of
+    per-miss signal dicts (cheap to re-bin under different cutoffs)."""
+    d = Path(decode_dir) / preset
+    sigs = []
+    if not d.is_dir():
+        return sigs
+    corpus_xml = Path(corpus_xml_dir)
+    for p in sorted(d.glob("*.decode.json")):
+        stem = p.name[:-len(".decode.json")]
+        if split_of(stem, test_pct) != 'test':
+            continue
+        wir_path = dcml.find_wir_file(str(wir_base), stem)
+        if not wir_path:
+            continue
+        try:
+            data, ours_regions = cmp.load_analysis(p)
+            wir_regions = dcml.parse_rntxt_file(wir_path)
+        except Exception:
+            continue
+        if not ours_regions or not wir_regions:
+            continue
+        raw = data.get("regions", [])
+        # piece-wide set of every (tonic,major) the decoder ever names (chosen ∪ alts)
+        # over ALL slices — for the E coverage sub-split.
+        piece_states = set()
+        for rr in raw:
+            pk = our_key_tonic_fixed(rr.get('key'))
+            if pk[0] is not None:
+                piece_states.add(pk)
+            for a in rr.get('alternatives', []) or []:
+                ak = our_key_tonic_fixed(a.get('key'))
+                if ak[0] is not None:
+                    piece_states.add(ak)
+        merged, tpb = _gt_timeline(ours_regions, wir_regions)
+        win = window_beats * tpb
+        matches = cmp.align_dcml_regions(ours_regions, wir_regions,
+                                         mode=cmp.DEFAULT_DCML_MATCH_MODE)
+        for idx, (ours_r, dr) in enumerate(zip(ours_regions, matches)):
+            if dr is None:
+                continue
+            otc, omaj = our_key_tonic_fixed(getattr(ours_r, 'key', None))
+            ltc, lmaj = C._dcml_key_tonic(getattr(dr, 'local_key', None))
+            gtc, gmaj = C._dcml_key_tonic(getattr(dr, 'global_key', None))
+            if otc is None or ltc is None:
+                continue
+            our = (otc, omaj)
+            loc = (ltc, lmaj)
+            if our == loc:
+                continue  # correct — not a miss
+            # modulation = GT local key differs from the piece's global key (the
+            # tonicization-boundary axis §1b uses).  Lets the report cross-tab the
+            # L3 piles by stable-vs-modulation, so the A pile's tonicization overlap
+            # (a present distinguishing pc that is really an applied tone, not key
+            # evidence) is surfaced rather than silently counted as clean L3.
+            modulation = (gtc is not None and loc != (gtc, gmaj))
+            rawreg = raw[idx] if idx < len(raw) else {}
+            our_key = getattr(ours_r, 'key', '') or ''
+            start_t = int(getattr(ours_r, 'start_tick', 0))
+            end_t = int(getattr(ours_r, 'end_tick', 0))
+            # carried alternatives, each with its EMISSION (alt 'confidence' = .score)
+            alts_emis = []
+            for a in (getattr(ours_r, 'alternatives', []) or []):
+                if isinstance(a, dict):
+                    at, am = our_key_tonic_fixed(a.get('key'))
+                    if at is not None:
+                        alts_emis.append(((at, am), float(a.get('confidence', 0.0) or 0.0)))
+            carried = any(k == loc for k, _ in alts_emis)
+            emission_picked = rawreg.get('keyEmission', None)
+            emission_picked = float(emission_picked) if emission_picked is not None else None
+            emission_correct = max((e for k, e in alts_emis if k == loc), default=None)
+
+            sig = {
+                'stem': stem, 'start_tick': start_t, 'end_tick': end_t,
+                'measure': int(getattr(ours_r, 'measure_number', 0) or 0),
+                'our': our, 'loc': loc, 'our_key': our_key,
+                'carried': carried,
+                'modulation': modulation,
+                'emission_picked': emission_picked,
+                'emission_correct': emission_correct,
+                'uncertain': bool(rawreg.get('uncertain', False)),
+                'relative_pair': _is_relative_pair(our, loc),
+                'loc_in_piece': loc in piece_states,
+                'persistence_beats': _persistence_beats(merged, tpb, start_t, loc),
+                'distinguish_pcs': None, 'distinguish_kind': None,
+                'distinguish_weight': None, 'symmetric': None,
+                'branch': None,
+            }
+            # branch (cutoff-independent) — needs both emissions
+            if carried and emission_picked is not None and emission_correct is not None:
+                sig['branch'] = 'TRANSITION' if emission_correct > emission_picked else 'EMISSION'
+            # Q3 pitch evidence — only the EMISSION branch needs it (compute once)
+            if sig['branch'] == 'EMISSION':
+                dpcs, kind = _distinguishing(loc, our, our_key)
+                sig['distinguish_pcs'] = sorted(dpcs)
+                sig['distinguish_kind'] = kind
+                xmlp = corpus_xml / f"{stem}.xml"
+                wmap = _pc_weights_in_window(xmlp, int(start_t - win), int(end_t + win)) \
+                    if xmlp.exists() else None
+                if wmap is None:
+                    sig['distinguish_weight'] = -1.0  # no-pitch sentinel
+                else:
+                    sig['distinguish_weight'] = max((wmap.get(pc, 0.0) for pc in dpcs),
+                                                    default=0.0)
+                    # Symmetry is a VERTICAL property of the chord AT the slice, not
+                    # of the ±window (a wide window accumulates enough pcs to make a
+                    # dim7/aug subset appear by chance).  Detect on the slice span only.
+                    slice_pcs = _pcs_in_window(xmlp, start_t, end_t)
+                    sig['symmetric'] = _symmetric_sonority(slice_pcs) if slice_pcs else None
+            sigs.append(sig)
+    return sigs
+
+
+def _classify(sig, q2_cut, q3_cut):
+    """Assign one miss to a pile under the given Q2 (sustained beats) and Q3
+    (present-weight) cutoffs.  Cutoff-dependent only at the B/C and A/absent splits."""
+    if not sig['carried']:
+        return 'E-pruning' if sig['loc_in_piece'] else 'E-emission'
+    if sig['branch'] is None:
+        return 'UNSCORED'           # missing emission (should be ~0)
+    if sig['branch'] == 'TRANSITION':
+        return 'B' if sig['persistence_beats'] >= q2_cut else 'C'
+    # EMISSION
+    dw = sig['distinguish_weight']
+    if dw is None:
+        return 'F'
+    if dw < 0:                       # no-pitch (xml unreadable) — cannot place in A
+        return 'F-nopitch'
+    present = (dw > 0.0) and (dw >= q3_cut)
+    if present:
+        return 'A'
+    if sig['relative_pair'] or sig['distinguish_kind'] in ('relative-lt', 'rotation'):
+        # note-undecidable relative / collection-share → cadence/function (L5)
+        return 'C' if sig['relative_pair'] or sig['distinguish_kind'] == 'relative-lt' else 'F'
+    if sig['symmetric']:
+        return 'D'
+    return 'F'
+
+
+_PILES = ['A', 'B', 'C', 'D', 'F', 'F-nopitch', 'E-pruning', 'E-emission', 'UNSCORED']
+_PILE_DESC = {
+    'A': 'L3 emission-recoverable (Q3 present-underweighted)',
+    'B': 'L3 cost-recoverable    (Q2 sustained over-smoothed modulation)',
+    'C': 'L5 cadence-required    (Q2 brief tonicization ∪ Q3 absent relative-pair)',
+    'D': 'L5 chord/spelling-req.  (Q3 absent ∧ symmetric dim7/aug/whole-tone)',
+    'F': 'L5 cause-indeterminate  (Q3 absent, non-relative, non-symmetric / rotation)',
+    'F-nopitch': '   (Q3 absent — xml pitch unreadable; cannot confirm A)',
+    'E-pruning': 'COVERAGE: not-carried, loc IS a piece state (locally outranked) → L3',
+    'E-emission': 'COVERAGE: not-carried, loc never named for piece (emission limit)',
+    'UNSCORED': '(carried but an emission was missing — should be ~0)',
+}
+
+
+def _partition(sigs, q2_cut, q3_cut):
+    c = Counter()
+    for s in sigs:
+        c[_classify(s, q2_cut, q3_cut)] += 1
+    return c
+
+
+def decompose_main(args):
+    decode_dir = Path(args.decode_dir) if args.decode_dir else None
+    if decode_dir is None:
+        print("ERROR: --decompose requires --decode-dir.")
+        return
+    wir = Path(args.wir_base)
+    corpus_xml = Path(args.corpus_xml_dir)
+    test_pct = args.test_pct
+    # central cutoffs + the §3 sensitivity grids
+    q2_central, q3_central = 4.0, 0.0
+    q2_grid = [2.0, 4.0, 8.0]      # sustained-persistence cutoff (beats)
+    q3_grid = [0.0, 0.5, 1.0]      # distinguishing-pc present weight (quarter-lengths)
+    out = {}
+    for preset in args.presets:
+        sigs = _decompose_signals(decode_dir, wir, corpus_xml, preset, test_pct)
+        n_miss = len(sigs)
+        n_carried = sum(1 for s in sigs if s['carried'])
+        n_trans = sum(1 for s in sigs if s['branch'] == 'TRANSITION')
+        n_emis = sum(1 for s in sigs if s['branch'] == 'EMISSION')
+        part = _partition(sigs, q2_central, q3_central)
+
+        print("=" * 88)
+        print(f"DECOMPOSITION — {preset.upper()} — held-out TEST split "
+              f"(md5(stem)%100<{test_pct})")
+        print("=" * 88)
+        print(f"  scorable misses (test): {n_miss}")
+        print(f"    carried (true key in emitted alts): {n_carried}  "
+              f"({_bpct(n_carried, n_miss):.1f}%)   "
+              f"not-carried: {n_miss - n_carried}  ({_bpct(n_miss - n_carried, n_miss):.1f}%)")
+        print(f"    Q1 branch of carried: TRANSITION (emission was right) {n_trans}  | "
+              f"EMISSION (emission wrong) {n_emis}")
+        print()
+        print(f"  PARTITION at central cutoffs (Q2 sustained ≥ {q2_central:.0f} beats, "
+              f"Q3 present weight > {q3_central:.1f}):")
+        for k in _PILES:
+            if part.get(k, 0) == 0 and k in ('UNSCORED', 'F-nopitch'):
+                continue
+            print(f"     {k:<11} {part.get(k,0):4d}  ({_bpct(part.get(k,0), n_miss):4.1f}% of miss)  "
+                  f"{_PILE_DESC[k]}")
+        l3_head = part.get('A', 0) + part.get('B', 0)
+        l5_spec = part.get('C', 0) + part.get('D', 0) + part.get('F', 0) + part.get('F-nopitch', 0)
+        print(f"     ── A+B (L3 headroom, UPPER BOUND): {l3_head}  ({_bpct(l3_head, n_miss):.1f}% of miss)")
+        print(f"     ── C+D+F (L5 spec)       : {l5_spec}  ({_bpct(l5_spec, n_miss):.1f}% of miss)")
+        print(f"     ── E (coverage)          : {part.get('E-pruning',0)+part.get('E-emission',0)}"
+              f"  (pruning {part.get('E-pruning',0)} / emission {part.get('E-emission',0)})")
+        print()
+        # ── Reconciliation cross-tab: the L3 piles split by stable vs modulation.
+        # A present distinguishing-pc in a MODULATION (tonicization) region cannot
+        # be told from an applied tone by the notes alone — so A∩modulation overlaps
+        # the §1b tonicization-boundary L5 mass and is NOT safely clean L3.  Only
+        # A∩stable is unambiguously emission-reweighting headroom.  Same logic for B.
+        def _xt(pile_keys):
+            st = sum(1 for s in sigs if _classify(s, q2_central, q3_central) in pile_keys
+                     and not s['modulation'])
+            mo = sum(1 for s in sigs if _classify(s, q2_central, q3_central) in pile_keys
+                     and s['modulation'])
+            return st, mo
+        a_st, a_mo = _xt({'A'})
+        b_st, b_mo = _xt({'B'})
+        print(f"  RECONCILIATION — L3 piles by stable / modulation (the §1b tonicization axis):")
+        print(f"     A  stable {a_st:4d}  | modulation {a_mo:4d}  "
+              f"(A∩stable = clean L3; A∩modulation overlaps L5 tonicization)")
+        print(f"     B  stable {b_st:4d}  | modulation {b_mo:4d}")
+        clean_l3 = a_st + b_st
+        print(f"     ── CLEAN L3 (A∩stable + B∩stable): {clean_l3}  ({_bpct(clean_l3, n_miss):.1f}% of miss)")
+        print()
+        print(f"  §3 THRESHOLD SENSITIVITY:")
+        print(f"    Q2 sustained cutoff (beats) → B (L3) / C (L5) split of the {n_trans} TRANSITION:")
+        for q2 in q2_grid:
+            pc = _partition(sigs, q2, q3_central)
+            print(f"       ≥{q2:>4.0f} beats : B={pc.get('B',0):4d}  C(from-trans)={n_trans-pc.get('B',0):4d}")
+        print(f"    Q3 present-weight cutoff → A (L3) / absent (L5) split of the {n_emis} EMISSION:")
+        for q3 in q3_grid:
+            pc = _partition(sigs, q2_central, q3)
+            absent = n_emis - pc.get('A', 0)
+            print(f"       >{q3:>4.1f} qL    : A={pc.get('A',0):4d}  absent(→C/D/F)={absent:4d}")
+        print()
+        # spot-check sample (the §3 manual verification dump)
+        print(f"  §3 SPOT-CHECK SAMPLE (≤4 per pile; verify cause vs the score):")
+        bypile = {}
+        for s in sigs:
+            bypile.setdefault(_classify(s, q2_central, q3_central), []).append(s)
+        for k in ('A', 'B', 'C', 'D', 'F', 'E-pruning', 'E-emission'):
+            for s in bypile.get(k, [])[:4]:
+                ep = s['emission_picked']; ec = s['emission_correct']
+                ep_s = f"{ep:.2f}" if ep is not None else "—"
+                ec_s = f"{ec:.2f}" if ec is not None else "—"
+                dw = s['distinguish_weight']
+                dw_s = (f"{dw:.2f}" if (dw is not None and dw >= 0) else
+                        ("nopitch" if dw == -1.0 else "—"))
+                mflag = 'mod' if s['modulation'] else 'stab'
+                print(f"     [{k:<10}] {s['stem']:<11} m{s['measure']:<3} {mflag} "
+                      f"{s['our_key']:<9}->{_km_name(s['loc']):<8} "
+                      f"emis pick={ep_s} corr={ec_s} | persist={s['persistence_beats']:.1f}b "
+                      f"| dpc={s['distinguish_pcs']} kind={s['distinguish_kind']} w={dw_s} "
+                      f"sym={s['symmetric']}")
+        print()
+        out[preset] = {
+            'n_miss': n_miss, 'n_carried': n_carried,
+            'n_transition': n_trans, 'n_emission': n_emis,
+            'partition_central': dict(part),
+            'A_plus_B_upperbound': l3_head, 'C_plus_D_plus_F': l5_spec,
+            'A_stable': a_st, 'A_modulation': a_mo, 'B_stable': b_st, 'B_modulation': b_mo,
+            'clean_L3_Astable_Bstable': clean_l3,
+            'E_pruning': part.get('E-pruning', 0), 'E_emission': part.get('E-emission', 0),
+            'sensitivity_q2': {f"{q2}": dict(_partition(sigs, q2, q3_central)) for q2 in q2_grid},
+            'sensitivity_q3': {f"{q3}": dict(_partition(sigs, q2_central, q3)) for q3 in q3_grid},
+        }
+    if args.json:
+        Path(args.json).write_text(json.dumps(out, indent=2))
+        print(f"[wrote] {args.json}")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Layer-3 key/mode ground-truth harness "
                                              "(Increment B held-out, default).")
@@ -1124,9 +1585,16 @@ def main():
     ap.add_argument("--corpus-xml-dir", default=str(REPO_ROOT / "tools" / "corpus"),
                     help="dir of the corpus *.xml scores (for the §1c pitch-content "
                          "modal-defensibility check); default tools/corpus")
+    ap.add_argument("--decompose", action="store_true",
+                    help="run the CAUSAL DECOMPOSITION of the carried-but-not-picked "
+                         "errors (Q1 emission / Q2 transition / Q3 emission tree → the "
+                         "A/B/C/D/F + E coverage partition, with §3 sensitivity + "
+                         "spot-check); requires --decode-dir (regenerated with keyEmission)")
     ap.add_argument("--json", default=None)
     args = ap.parse_args()
-    if args.characterize:
+    if args.decompose:
+        decompose_main(args)
+    elif args.characterize:
         characterize_main(args)
     elif args.legacy_audit:
         legacy_main(args)
