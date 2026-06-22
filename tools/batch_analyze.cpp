@@ -100,6 +100,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/function/tonicizationlabeler.h"  // Stage 6-tonic-i: --dump-tonicization
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
+#include "composing/analysis/key/keymodesequence.h"         // Layer 3 decoder: --decode-keymode
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
@@ -1709,6 +1710,7 @@ static void printHelp(const std::string& prog)
                            " [--dump-regions batch|notation|notation-premerge]"
                            " [--section-level]"
                            " [--validate-slices]"
+                           " [--decode-keymode]"
                            " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
                            " [--dump-key-candidates TICK[,TICK...]]"
@@ -1744,6 +1746,13 @@ static void printHelp(const std::string& prog)
         << "            any analysis runs (the analysis pipeline is never invoked, so its\n"
         << "            output is unchanged). Exit 0 if all invariants held, 2 if any\n"
         << "            failed. Default OFF.\n"
+        << "  --decode-keymode\n"
+        << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
+        << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
+        << "            (keymodesequence) over the slices, and emit its chosen key/mode per\n"
+        << "            slice in the same region shape the held-out GT harness reads. The\n"
+        << "            decoder is NOT wired into the live analyzer; this RETURNS before any\n"
+        << "            analysis runs, so production output is unchanged. Default OFF.\n"
         << "  --ignore-declared-mode\n"
         << "            (Stage 4b-i measurement floor) Force the key resolver to drop\n"
         << "            the score's declared key-signature mode (declaredMode = nullopt),\n"
@@ -2090,6 +2099,82 @@ static std::string runSliceValidation(const Score* score, const std::string& ste
     return os.str();
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// Layer 3 — the KEY/MODE SEQUENCE DECODER diagnostic (--decode-keymode)
+//
+// DIAGNOSTIC ONLY (mirrors --validate-slices). This path does NOT invoke or
+// alter the analysis pipeline: main() returns immediately after this runs, so
+// analyzeScore / analyzeRegions are never reached. It builds the Layer-1 note
+// model, runs the REAL Layer-2 slicer, runs the isolated Layer-3 key/mode
+// sequence DECODER (keymodesequence — emission through the indexed NoteModel),
+// and emits the decoder's chosen key/mode per slice in the SAME region shape the
+// held-out harness reads from *.ours.json (so cmp.load_analysis +
+// align_dcml_regions grade it unchanged). Off by default ⇒ production output
+// unchanged. The decoder is NOT wired into the live analyzer (this increment is
+// isolated; wiring is the next, separately-ratified increment).
+// ══════════════════════════════════════════════════════════════════════════
+static std::string runKeyModeDecode(const Score* score, const std::string& stem,
+                                    const analysis::KeyModeAnalyzerPreferences& keyPrefs,
+                                    int keySigFifths,
+                                    std::optional<analysis::KeySigMode> declaredMode)
+{
+    namespace kms = mu::composing::analysis::keymodeseq;
+
+    const NoteModel model = NoteModel::build(score);
+    const std::vector<Slice> slices = mu::composing::analysis::slicing::changePointSlices(model);
+    const std::vector<kms::SliceKeyMode> decoded =
+        kms::KeyModeSequenceDecoder::decode(slices, model, keySigFifths, declaredMode, keyPrefs);
+
+    long long uncertainCount = 0;
+    for (const kms::SliceKeyMode& sk : decoded) {
+        if (sk.uncertain) {
+            ++uncertainCount;
+        }
+    }
+
+    std::ostringstream os;
+    os << "{\n";
+    os << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    os << "  \"keySigFifths\": " << keySigFifths << ",\n";
+    os << "  \"slicesTotal\": " << slices.size() << ",\n";
+    os << "  \"uncertainSlices\": " << uncertainCount << ",\n";
+    os << "  \"regions\": [";
+    for (size_t i = 0; i < decoded.size(); ++i) {
+        const kms::SliceKeyMode& sk = decoded[i];
+        const int s = slices[sk.sliceIndex].start;
+        const int e = slices[sk.sliceIndex].end;
+        const MeasureTickInfo mi = locateMeasureByTick(score, Fraction::fromTicks(s));
+        const int measureNumber = mi.measure ? mi.number : 0;
+        const double beat = mi.measure
+            ? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+            : 1.0;
+        const double duration = static_cast<double>(e - s) / Constants::DIVISION;
+        const std::string key = keyName(sk.chosen.keySignatureFifths, sk.chosen.mode);
+
+        os << (i ? ",\n    " : "\n    ");
+        os << "{ \"measureNumber\": " << measureNumber
+           << ", \"beat\": " << fmtDouble(beat, 4)
+           << ", \"startTick\": " << s
+           << ", \"endTick\": " << e
+           << ", \"duration\": " << fmtDouble(duration, 4)
+           << ", \"key\": \"" << jsonEscape(key) << "\""
+           << ", \"keyConfidence\": " << fmtDouble(sk.confidence, 6)
+           << ", \"uncertain\": " << (sk.uncertain ? "true" : "false");
+        if (!sk.alternatives.empty()) {
+            const std::string ruKey =
+                keyName(sk.alternatives[0].keySignatureFifths, sk.alternatives[0].mode);
+            os << ", \"keyModeRunnerUp\": { \"key\": \"" << jsonEscape(ruKey)
+               << "\", \"confidence\": " << fmtDouble(sk.alternatives[0].score, 6) << " }";
+        } else {
+            os << ", \"keyModeRunnerUp\": null";
+        }
+        os << " }";
+    }
+    os << (decoded.empty() ? "]\n" : "\n  ]\n");
+    os << "}\n";
+    return os.str();
+}
+
 } // namespace
 
 int main(int argc, char* argv[])
@@ -2132,6 +2217,7 @@ int main(int argc, char* argv[])
     bool dumpJointKey = false;        // J-key-i scoped-joint key decision (default OFF = byte-identical)
     bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
     bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
+    bool decodeKeyMode = false;       // Layer-3 key/mode sequence decoder (default OFF = no analysis touched)
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -2164,6 +2250,8 @@ int main(int argc, char* argv[])
             sectionLevel = true;
         } else if (a == "--validate-slices") {
             validateSlices = true;
+        } else if (a == "--decode-keymode") {
+            decodeKeyMode = true;
         } else if (a == "--ignore-declared-mode") {
             ignoreDeclaredMode = true;
         } else if (a == "--dump-cadence-anchor") {
@@ -2316,6 +2404,37 @@ int main(int argc, char* argv[])
         if (!staffIsEligible(score, si)) {
             excludeStaves.insert(si);
         }
+    }
+
+    // ── Layer-3 key/mode decode (diagnostic; returns BEFORE any analysis) ───
+    // Like --validate-slices, this never reaches analyzeScore/analyzeRegions, so
+    // the analysis pipeline is not invoked and its output cannot change. The
+    // notated key signature (a weak hint to the decoder) is read at tick 0.
+    if (decodeKeyMode) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
+        int keySigFifths = 0;
+        std::optional<analysis::KeySigMode> declaredMode;   // the notated <mode>, a weak hint
+        if (refStaff < score->nstaves() && score->staff(refStaff)) {
+            const auto kse = score->staff(refStaff)->keySigEvent(Fraction(0, 1));
+            keySigFifths = static_cast<int>(kse.concertKey());
+            const mu::engraving::KeyMode km = kse.mode();
+            if (km == mu::engraving::KeyMode::MAJOR || km == mu::engraving::KeyMode::IONIAN) {
+                declaredMode = analysis::KeySigMode::Ionian;
+            } else if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+                declaredMode = analysis::KeySigMode::Aeolian;
+            }
+        }
+        const std::string report = runKeyModeDecode(score, stem, keyPrefs, keySigFifths, declaredMode);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return 0;
     }
 
     // J-key-iii: enable the production joint re-key wiring for this process (global,

@@ -69,6 +69,15 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/key/keyresolver.h
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.cpp
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
+    # LAYER 3 — the key/mode SEQUENCE decoder (dedicated key-path Viterbi over the
+    # Layer-2 slices; emission = KeyModeAnalyzer through the Layer-1 indexed query).
+    # ISOLATED this increment: built + unit-tested + graded against the held-out GT
+    # harness, NOT wired into the live pipeline — production output byte-identical;
+    # it runs only under batch_analyze --decode-keymode. Wiring (replacing the
+    # per-region key argmax) is the next, separate increment. See
+    # cowork_layer3_keymode_design.md + cc_layer3_decoder_audit_dossier.md.
+    ${CMAKE_CURRENT_LIST_DIR}/key/keymodesequence.h
+    ${CMAKE_CURRENT_LIST_DIR}/key/keymodesequence.cpp
 
     # section/ — unified section-level analysis: the analyzeSection() entry
     # point, key/mode stabilization, and cadence / pivot detection. Moved here

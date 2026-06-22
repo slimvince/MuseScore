@@ -83,7 +83,11 @@ mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
 double regionMetricWeightForBeatType(mu::engraving::BeatType bt);
 
 /// Exponential time decay: notes further from the analysis tick carry less weight.
-double timeDecay(double beatsAgo, double decayRate = DECAY_RATE);
+/// `beatsPerUnit` is the length-scale (beats per decay step; one 4/4 measure by
+/// default). The default keeps every existing caller byte-identical; the windowed
+/// pitch-context view passes it explicitly so the length-scale is a setting, not a
+/// magic number.
+double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPerUnit = 4.0);
 
 /// Count distinct pitch classes in a PitchContext vector.
 int distinctPitchClasses(const std::vector<KeyModeAnalyzer::PitchContext>& ctx);

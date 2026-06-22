@@ -527,6 +527,18 @@ int keySignatureFifthsForKey(int tonicPc, bool isMajor, int referenceFifths)
     return resolveToFifths(((tonicPc % 12) + 12) % 12, modeIndex, referenceFifths);
 }
 
+int keyModeSignatureFifths(int tonicPc, KeySigMode mode, int referenceFifths)
+{
+    // Resolve a full (tonic, mode) — any of the 21 modes — to its notated
+    // key-signature fifths, choosing the enharmonic spelling closest to the
+    // reference (the notated signature).  Public wrapper over the internal
+    // resolveToFifths; used by the Layer-3 key/mode sequence decoder
+    // (keymodesequence) to label each lattice state's key signature. A pure
+    // additive accessor — no production scoring path calls it, so every existing
+    // path is byte-identical.
+    return resolveToFifths(((tonicPc % 12) + 12) % 12, keyModeIndex(mode), referenceFifths);
+}
+
 std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
     const std::vector<PitchContext>& pitches,
     int keySignatureFifths,

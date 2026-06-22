@@ -503,17 +503,23 @@ def b_legacy_stable_full(ours_regions, wir_regions):
     return stable, stable_full
 
 
-def b_score_corpus(ours_dir: Path, wir_base: Path, test_pct: int):
-    """Returns dict: split -> BTally ('train','test','all'); plus coverage + m21 status."""
+def b_score_corpus(ours_dir: Path, wir_base: Path, test_pct: int, suffix: str = ".ours.json"):
+    """Returns dict: split -> BTally ('train','test','all'); plus coverage + m21 status.
+
+    `suffix` selects the source files: ".ours.json" (the per-region resolver
+    baseline, default) or ".decode.json" (the Layer-3 decoder, via
+    decode_keymode_corpus.py). Both are loaded by the SAME cmp.load_analysis +
+    aligned by the SAME align_dcml_regions, so the only difference is whose
+    key/mode is graded — the direct metric is identical."""
     splits = {'train': BTally(), 'test': BTally(), 'all': BTally()}
     legacy = {'stable': 0, 'stable_full': 0}      # audit-config sanity (full corpus)
     total = 0
     covered = 0
     m21_ok = 0
     m21_fail = []
-    for p in sorted(ours_dir.glob("*.ours.json")):
+    for p in sorted(ours_dir.glob("*" + suffix)):
         total += 1
-        stem = p.name.replace(".ours.json", "")
+        stem = p.name[:-len(suffix)]
         wir_path = dcml.find_wir_file(str(wir_base), stem)
         if not wir_path:
             continue
@@ -595,10 +601,37 @@ def b_report(preset: str, splits, meta, test_pct: int) -> str:
     return "\n".join(L)
 
 
+def _directional(preset, base_splits, dec_splits):
+    """Print the held-out DIRECTIONAL comparison (decoder vs per-region baseline),
+    on the TEST split — the §4 grading signal. Granularity differs (the decoder is
+    per-slice, the baseline per-region), so the duration-weighted full-match is the
+    most comparable line."""
+    bt, dt = base_splits['test'], dec_splits['test']
+    L = []
+    L.append("=" * 84)
+    L.append(f"DIRECTIONAL — {preset} — decoder vs per-region baseline (TEST split, out-of-sample)")
+    L.append("=" * 84)
+    L.append(f"  unambiguous full (tonic+mode) match:")
+    L.append(f"     per-region baseline : {_bpct(bt.unamb_full, bt.unamb):5.1f}%  "
+             f"({bt.unamb_full}/{bt.unamb})   [dur-wt {_bpct(bt.dur_unamb_full, bt.dur_unamb):.1f}%]")
+    L.append(f"     decoder (Layer 3)   : {_bpct(dt.unamb_full, dt.unamb):5.1f}%  "
+             f"({dt.unamb_full}/{dt.unamb})   [dur-wt {_bpct(dt.dur_unamb_full, dt.dur_unamb):.1f}%]")
+    L.append(f"  Δ full-match (decoder − baseline) : "
+             f"{_bpct(dt.unamb_full, dt.unamb) - _bpct(bt.unamb_full, bt.unamb):+.1f} pts  "
+             f"(dur-wt {_bpct(dt.dur_unamb_full, dt.dur_unamb) - _bpct(bt.dur_unamb_full, bt.dur_unamb):+.1f})")
+    L.append(f"  tonic-only / mode-only on unambiguous misses (the rotation/relative defects):")
+    L.append(f"     baseline top misses : "
+             + ", ".join(f"{o}->{d}:{n}" for (o, d), n in bt.unamb_miss.most_common(5)))
+    L.append(f"     decoder  top misses : "
+             + ", ".join(f"{o}->{d}:{n}" for (o, d), n in dt.unamb_miss.most_common(5)))
+    return "\n".join(L)
+
+
 def increment_b_main(args):
     root = Path(args.corpus_root)
     wir = Path(args.wir_base)
     test_pct = args.test_pct
+    decode_root = Path(args.decode_dir) if args.decode_dir else None
     out = {}
     for preset in args.presets:
         d = root / preset
@@ -608,6 +641,17 @@ def increment_b_main(args):
         splits, meta = b_score_corpus(d, wir, test_pct)
         print(b_report(preset, splits, meta, test_pct))
         print()
+        if decode_root is not None:
+            dd = decode_root / preset
+            if dd.is_dir():
+                dsplits, dmeta = b_score_corpus(dd, wir, test_pct, suffix=".decode.json")
+                print(b_report(preset + " [DECODER]", dsplits, dmeta, test_pct))
+                print()
+                print(_directional(preset, splits, dsplits))
+                print()
+            else:
+                print(f"[skip decoder] {dd} not found (run decode_keymode_corpus.py first)")
+                print()
         def _jsonable(v):
             if isinstance(v, Counter):
                 # tuple keys (ours,gt) -> "ours->gt" so json can serialize
@@ -634,6 +678,10 @@ def main():
     ap.add_argument("--presets", nargs="+", default=["baroque", "jazz"])
     ap.add_argument("--test-pct", type=int, default=TEST_PCT_DEFAULT,
                     help="held-out test fraction (md5(stem)%%100 < this); default 20")
+    ap.add_argument("--decode-dir", default=None,
+                    help="root of the Layer-3 DECODER corpus (<dir>/<preset>/*.decode.json, "
+                         "produced by decode_keymode_corpus.py); when given, also grades the "
+                         "decoder and prints the directional decoder-vs-baseline comparison")
     ap.add_argument("--legacy-audit", action="store_true",
                     help="run the original audit baseline (single-source proxy, OLD "
                          "extractor) instead of the Increment-B harness")

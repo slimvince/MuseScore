@@ -199,6 +199,95 @@ void collectPitchContext(const mu::engraving::Score* sc,
     }
 }
 
+namespace {
+
+// Tick-based beat-type weight: reproduces scoreharvest::safeBeatType(measure,
+// segment) using only an INDEXED measure lookup (Score::tick2measure) + the
+// onset's rtick — no segment walk. The index-friendly form pitchContextOverSpan
+// needs (distinct from the segment-taking safeBeatType, a different input domain).
+double beatWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick,
+                              const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs)
+{
+    using namespace mu::engraving;
+    if (!sc) {
+        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
+    }
+    const Measure* m = sc->tick2measure(Fraction::fromTicks(onsetTick));
+    if (!m) {
+        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
+    }
+    const int num = m->timesig().numerator();
+    const int den = m->timesig().denominator();
+    if (num <= 0 || den <= 0) {
+        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
+    }
+    const int rtick = onsetTick - m->tick().ticks();
+    return shv::beatTypeToWeight(TimeSigFrac(num, den).rtick2beatType(rtick), prefs);
+}
+
+} // namespace
+
+void pitchContextOverSpan(
+    const notemodel::NoteModel& model,
+    int windowStart, int windowEnd, int anchorStart, int anchorEnd,
+    const std::set<std::size_t>& excludeStaves,
+    const mu::composing::analysis::KeyModeAnalyzerPreferences& beatPrefs,
+    const SpanWindowWeights& weights,
+    std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& out)
+{
+    using mu::composing::analysis::KeyModeAnalyzer;
+    using notemodel::NoteEvent;
+
+    const int div = mu::engraving::Constants::DIVISION;
+    const std::vector<const NoteEvent*> notes = model.overlapping(windowStart, windowEnd);
+
+    auto eligible = [&](const NoteEvent& e) -> bool {
+        return e.plays && e.visible && e.staffEligible && !e.isGrace
+               && !excludeStaves.count(static_cast<std::size_t>(e.staff));
+    };
+
+    // Lowest eligible pitch per onset tick (the per-onset bass).
+    std::map<int, int> lowestByOnset;
+    for (const NoteEvent* ne : notes) {
+        if (!eligible(*ne)) {
+            continue;
+        }
+        auto it = lowestByOnset.find(ne->onset);
+        if (it == lowestByOnset.end() || ne->pitch < it->second) {
+            lowestByOnset[ne->onset] = ne->pitch;
+        }
+    }
+
+    const mu::engraving::Score* sc = model.score();
+    out.reserve(out.size() + notes.size());
+    for (const NoteEvent* ne : notes) {
+        if (!eligible(*ne)) {
+            continue;
+        }
+        const double durQn = ne->duration / static_cast<double>(div);
+
+        // Distance (in beats) from the anchor span [anchorStart, anchorEnd): notes
+        // inside it are full-weight; look-back decays; look-ahead decays + halves.
+        double distBeats = 0.0;
+        bool lookahead = false;
+        if (ne->onset < anchorStart) {
+            distBeats = (anchorStart - ne->onset) / static_cast<double>(div);
+        } else if (ne->onset >= anchorEnd) {
+            distBeats = (ne->onset - anchorEnd) / static_cast<double>(div);
+            lookahead = true;
+        }
+        const double decay = shv::timeDecay(distBeats, weights.decayRate, weights.beatsPerDecayUnit);
+        const double laMul = lookahead ? weights.lookaheadWeight : 1.0;
+
+        KeyModeAnalyzer::PitchContext p;
+        p.pitch          = ne->pitch;
+        p.durationWeight = durQn * decay * laMul;
+        p.beatWeight     = beatWeightForOnsetTick(sc, ne->onset, beatPrefs);
+        p.isBass         = (ne->pitch == lowestByOnset[ne->onset]);
+        out.push_back(p);
+    }
+}
+
 std::vector<mu::engraving::Fraction>
 detectOnsetSubBoundaries(const mu::engraving::Score* sc,
                          const mu::engraving::Fraction& startTick,

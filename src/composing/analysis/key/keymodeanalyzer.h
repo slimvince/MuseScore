@@ -544,6 +544,13 @@ int ionianTonicPcForMode(int tonicPc, size_t modeIndex);
 /// (signature-pair) key back to the notated fifths automatically.
 int keySignatureFifthsForKey(int tonicPc, bool isMajor, int referenceFifths);
 
+/// Resolve a full (tonicPc, mode) — any of the 21 modes — to its notated
+/// key-signature fifths (-7..+7), choosing the enharmonic spelling nearest
+/// @p referenceFifths (the notated signature).  A pure additive accessor over the
+/// internal resolveToFifths; used by the Layer-3 key/mode sequence decoder to
+/// label each lattice state's key signature.  No production scoring path calls it.
+int keyModeSignatureFifths(int tonicPc, KeySigMode mode, int referenceFifths);
+
 /// Human-readable tonic name for a (key-signature, mode) pair.
 /// E.g. keyModeTonicName(0, KeySigMode::Ionian) → "C",
 ///      keyModeTonicName(0, KeySigMode::Dorian) → "D",

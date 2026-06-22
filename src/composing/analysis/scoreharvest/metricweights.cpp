@@ -83,9 +83,9 @@ double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
     }
 }
 
-double timeDecay(double beatsAgo, double decayRate)
+double timeDecay(double beatsAgo, double decayRate, double beatsPerUnit)
 {
-    return std::pow(decayRate, beatsAgo / 4.0);
+    return std::pow(decayRate, beatsAgo / beatsPerUnit);
 }
 
 int distinctPitchClasses(const std::vector<KeyModeAnalyzer::PitchContext>& ctx)

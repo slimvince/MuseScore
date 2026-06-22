@@ -223,6 +223,14 @@ findTemporalContext(const mu::composing::analysis::notemodel::NoteModel& noteMod
 // ── Pitch context for key/mode resolution ────────────────────────────────────
 
 /// Collect pitch context for the window [windowStart, windowEnd], appending to ctx.
+///
+/// LEGACY (DOM-walk, point-anchored). Walks ChordRest segments from the window-
+/// start measure and weights each onsetting note by distance from the single
+/// anchor `tick`. It does NOT use the Layer-1 index. The indexed, span-anchored
+/// successor is `pitchContextOverSpan` (below), which the Layer-3 key/mode
+/// sequence decoder consumes; this builder is retired once the decoder is the live
+/// key path (the Layer-3 wiring increment). Until then both exist — collectPitchContext
+/// stays the live resolver's builder (byte-identical), pitchContextOverSpan the L3 one.
 void collectPitchContext(const mu::engraving::Score* sc,
                          const mu::engraving::Fraction& tick,
                          const mu::engraving::Fraction& windowStart,
@@ -230,5 +238,38 @@ void collectPitchContext(const mu::engraving::Score* sc,
                          const std::set<std::size_t>& excludeStaves,
                          const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
                          std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx);
+
+/// Weighting knobs for the windowed pitch-context view (pitchContextOverSpan).
+/// All three are length-scales / multipliers seeded with the metricweights values;
+/// the caller (the L3 decoder) passes its own settings so nothing is hardcoded.
+struct SpanWindowWeights {
+    double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE
+    double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT
+    double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure)
+};
+
+/// Windowed pitch context over a SPAN, derived from the note model's INDEXED
+/// overlap query (NoteModel::overlapping, O(log N + result)) — NOT a DOM walk. The
+/// reusable note-model-derived view the Layer-3 key/mode decoder consumes (beside
+/// weightedPcView / soundingAt); the indexed, span-anchored successor to
+/// collectPitchContext.
+///
+/// Every eligible note — `plays && visible && staffEligible && !grace`, staff not
+/// in @p excludeStaves — overlapping [windowStart, windowEnd) is APPENDED to @p out
+/// weighted by
+///   durationQn × timeDecay(beatsFromAnchorSpan, decayRate, beatsPerDecayUnit)
+///   × (lookaheadWeight if it onsets at/after anchorEnd, else 1.0),
+/// with the beat-type weight at its onset and isBass = the lowest pitch sharing
+/// that onset. The anchor span [anchorStart, anchorEnd) is the focal region (a
+/// slice): notes inside it carry full time-weight; look-back and look-ahead decay
+/// with distance from the span's edges. The beat weight is read from the score's
+/// time signature via an INDEXED measure lookup (tick2measure) — no segment walk.
+void pitchContextOverSpan(
+    const mu::composing::analysis::notemodel::NoteModel& model,
+    int windowStart, int windowEnd, int anchorStart, int anchorEnd,
+    const std::set<std::size_t>& excludeStaves,
+    const mu::composing::analysis::KeyModeAnalyzerPreferences& beatPrefs,
+    const SpanWindowWeights& weights,
+    std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& out);
 
 } // namespace mu::composing::analysis::engravingbridge
