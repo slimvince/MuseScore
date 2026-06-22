@@ -58,25 +58,29 @@ def _to_unix_path(p):
     return s.replace('\\', '/')
 
 
-def _run_one(exe, xml_path, preset):
-    """Run batch_analyze --decode-keymode on one stem; return (rc, parsed_json_or_None, err)."""
+def _run_one(exe, xml_path, preset, extra_args=""):
+    """Run batch_analyze --decode-keymode on one stem; return (rc, parsed_json_or_None, err).
+
+    extra_args (BOUNDED L3 SWEEP): an optional string of decode-only
+    KeyModeSequencePreferences overrides (e.g. "--seq-change-base 1.5"). Read only on
+    the --decode-keymode path, so production stays byte-identical."""
     try:
         if platform.system() == 'Windows':
             bash = _find_git_bash()
             if bash:
                 cmd = (f'{_to_unix_path(exe)} "{_to_unix_path(xml_path)}" '
-                       f'--decode-keymode --preset {preset}')
+                       f'--decode-keymode --preset {preset} {extra_args}'.rstrip())
                 r = subprocess.run([str(bash), '-c', cmd],
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                    timeout=300)
             else:
                 r = subprocess.run([str(exe), str(xml_path), '--decode-keymode',
-                                    '--preset', preset],
+                                    '--preset', preset] + extra_args.split(),
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                    timeout=300)
         else:
             r = subprocess.run([str(exe), str(xml_path), '--decode-keymode',
-                                '--preset', preset],
+                                '--preset', preset] + extra_args.split(),
                                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                timeout=300)
         out = r.stdout.decode('utf-8', 'replace').strip()
@@ -103,6 +107,9 @@ def main():
     ap.add_argument("--out", default=str(_REPO_ROOT / "tools" / "corpus_decode"),
                     help="output root; per-stem JSON goes to <out>/<preset>/<stem>.decode.json")
     ap.add_argument("--jobs", type=int, default=8)
+    ap.add_argument("--extra-args", default="",
+                    help="BOUNDED L3 SWEEP: extra decode-only flags passed verbatim to "
+                         "batch_analyze (e.g. '--seq-change-base 1.5'). Decode-path only.")
     args = ap.parse_args()
 
     try:
@@ -130,8 +137,11 @@ def main():
     written = 0
     failures = []
 
+    if args.extra_args:
+        print(f"Decode overrides (decode-path only): {args.extra_args}")
+
     def work(xml):
-        rc, parsed, err = _run_one(exe, xml, args.preset)
+        rc, parsed, err = _run_one(exe, xml, args.preset, args.extra_args)
         return (xml.stem, rc, parsed, err)
 
     with ThreadPoolExecutor(max_workers=args.jobs) as ex:

@@ -1753,6 +1753,12 @@ static void printHelp(const std::string& prog)
         << "            slice in the same region shape the held-out GT harness reads. The\n"
         << "            decoder is NOT wired into the live analyzer; this RETURNS before any\n"
         << "            analysis runs, so production output is unchanged. Default OFF.\n"
+        << "  --seq-change-base N | --seq-relative-extra N | --seq-per-fifth N |\n"
+        << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N\n"
+        << "            (Layer-3 BOUNDED SWEEP) Override the decoder-private\n"
+        << "            KeyModeSequencePreferences for the --decode-keymode path only\n"
+        << "            (read nowhere else; production stays byte-identical). Default =\n"
+        << "            the committed decoder defaults.\n"
         << "  --ignore-declared-mode\n"
         << "            (Stage 4b-i measurement floor) Force the key resolver to drop\n"
         << "            the score's declared key-signature mode (declaredMode = nullopt),\n"
@@ -2116,14 +2122,15 @@ static std::string runSliceValidation(const Score* score, const std::string& ste
 static std::string runKeyModeDecode(const Score* score, const std::string& stem,
                                     const analysis::KeyModeAnalyzerPreferences& keyPrefs,
                                     int keySigFifths,
-                                    std::optional<analysis::KeySigMode> declaredMode)
+                                    std::optional<analysis::KeySigMode> declaredMode,
+                                    const mu::composing::analysis::keymodeseq::KeyModeSequencePreferences& seqPrefs)
 {
     namespace kms = mu::composing::analysis::keymodeseq;
 
     const NoteModel model = NoteModel::build(score);
     const std::vector<Slice> slices = mu::composing::analysis::slicing::changePointSlices(model);
     const std::vector<kms::SliceKeyMode> decoded =
-        kms::KeyModeSequenceDecoder::decode(slices, model, keySigFifths, declaredMode, keyPrefs);
+        kms::KeyModeSequenceDecoder::decode(slices, model, keySigFifths, declaredMode, keyPrefs, seqPrefs);
 
     long long uncertainCount = 0;
     for (const kms::SliceKeyMode& sk : decoded) {
@@ -2244,6 +2251,20 @@ int main(int argc, char* argv[])
     bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
     bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
     bool decodeKeyMode = false;       // Layer-3 key/mode sequence decoder (default OFF = no analysis touched)
+    // Decode-only sweep overrides for the decoder-private KeyModeSequencePreferences
+    // (the BOUNDED L3 SWEEP). These are read ONLY on the --decode-keymode diagnostic
+    // path (which returns before analyzeScore), so production analysis stays
+    // byte-identical and the shared KeyModeAnalyzer(Preferences) is untouched. Default
+    // = kDefaultKeyModeSequencePreferences (the decoder's committed defaults).
+    mu::composing::analysis::keymodeseq::KeyModeSequencePreferences seqPrefs;
+    // Decode-only EMISSION-WEIGHT overrides for the §3 A∩stable reweight MEASUREMENT
+    // (the bounded sweep's emission-reweight spec validation). Applied to a COPY of
+    // keyPrefs INSIDE the --decode-keymode block only, so the production keyPrefs used
+    // by analyzeScore is untouched and production stays byte-identical. nullopt = use
+    // the preset value. These let the sweep test whether sharpening the per-slice
+    // scale-membership contrast recovers A∩stable WITHOUT the windowBeats modulation
+    // penalty — the crux of the wiring-increment spec.
+    std::optional<double> ovInNeither, ovInKeySigOnly, ovInCandidateOnly, ovInBoth, ovLeadingTone;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -2278,6 +2299,58 @@ int main(int argc, char* argv[])
             validateSlices = true;
         } else if (a == "--decode-keymode") {
             decodeKeyMode = true;
+        } else if (a == "--seq-change-base" || a == "--seq-relative-extra"
+                   || a == "--seq-per-fifth" || a == "--seq-window-beats"
+                   || a == "--seq-uncertain" || a == "--seq-topk"
+                   || a == "--seq-max-alts") {
+            // Decode-only KeyModeSequencePreferences sweep overrides (see decl above).
+            if (i + 1 >= args.size()) {
+                std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
+                return 1;
+            }
+            const QString val = args.at(++i);
+            bool ok = false;
+            if (a == "--seq-change-base") {
+                seqPrefs.changeBaseCost = val.toDouble(&ok);
+            } else if (a == "--seq-relative-extra") {
+                seqPrefs.relativePairExtraCost = val.toDouble(&ok);
+            } else if (a == "--seq-per-fifth") {
+                seqPrefs.changePerFifthStep = val.toDouble(&ok);
+            } else if (a == "--seq-window-beats") {
+                seqPrefs.windowBeats = val.toDouble(&ok);
+            } else if (a == "--seq-uncertain") {
+                seqPrefs.uncertainThreshold = val.toDouble(&ok);
+            } else if (a == "--seq-topk") {
+                seqPrefs.topK = val.toInt(&ok);
+            } else if (a == "--seq-max-alts") {
+                seqPrefs.maxAlternatives = val.toInt(&ok);
+            }
+            if (!ok) {
+                std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
+                          << ": '" << val.toStdString() << "'\n";
+                return 1;
+            }
+        } else if (a == "--key-in-neither" || a == "--key-in-keysig-only"
+                   || a == "--key-in-candidate-only" || a == "--key-in-both"
+                   || a == "--key-leading-tone") {
+            // Decode-only emission-weight overrides (§3 reweight measurement; see decl).
+            if (i + 1 >= args.size()) {
+                std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
+                return 1;
+            }
+            const QString val = args.at(++i);
+            bool ok = false;
+            const double dv = val.toDouble(&ok);
+            if (!ok) {
+                std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
+                          << ": '" << val.toStdString() << "'\n";
+                return 1;
+            }
+            if (a == "--key-in-neither") { ovInNeither = dv; }
+            else if (a == "--key-in-keysig-only") { ovInKeySigOnly = dv; }
+            else if (a == "--key-in-candidate-only") { ovInCandidateOnly = dv; }
+            else if (a == "--key-in-both") { ovInBoth = dv; }
+            else if (a == "--key-leading-tone") { ovLeadingTone = dv; }
         } else if (a == "--ignore-declared-mode") {
             ignoreDeclaredMode = true;
         } else if (a == "--dump-cadence-anchor") {
@@ -2452,7 +2525,15 @@ int main(int argc, char* argv[])
                 declaredMode = analysis::KeySigMode::Aeolian;
             }
         }
-        const std::string report = runKeyModeDecode(score, stem, keyPrefs, keySigFifths, declaredMode);
+        // Decode-only emission-weight overrides (§3 reweight measurement). A LOCAL COPY
+        // — the production keyPrefs above is untouched, so analyzeScore stays byte-identical.
+        analysis::KeyModeAnalyzerPreferences decodeKeyPrefs = keyPrefs;
+        if (ovInNeither) { decodeKeyPrefs.scaleScoreInNeither = *ovInNeither; }
+        if (ovInKeySigOnly) { decodeKeyPrefs.scaleScoreInKeySigOnly = *ovInKeySigOnly; }
+        if (ovInCandidateOnly) { decodeKeyPrefs.scaleScoreInCandidateOnly = *ovInCandidateOnly; }
+        if (ovInBoth) { decodeKeyPrefs.scaleScoreInBoth = *ovInBoth; }
+        if (ovLeadingTone) { decodeKeyPrefs.leadingToneWeight = *ovLeadingTone; }
+        const std::string report = runKeyModeDecode(score, stem, decodeKeyPrefs, keySigFifths, declaredMode, seqPrefs);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
