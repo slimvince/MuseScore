@@ -670,6 +670,438 @@ def increment_b_main(args):
         print(f"[wrote] {args.json}")
 
 
+# ════════════════════════════════════════════════════════════════════════════
+# CHARACTERIZATION SCAFFOLD (§1a–d) — read-only measurement of the EXISTING
+# decoder output vs the held-out WiR local-key GT.  Reuses the Increment-B
+# extractors / aligner / split (ONE grading path; no second metric forked).
+#
+#   §1a  Calibration   — reliability curve + uncertainty precision/recall +
+#                        alternative-recall (does confidence track correctness?)
+#   §1b  Residual buckets — relative-pair / tonicization-boundary / modal-GT /
+#                        structurally-undecidable / genuinely-wrong / other
+#   §1c  Modal-bucket audit — confirmed-defensible vs actually-wrong, by the
+#                        slice's actual pitch content (from the corpus xml)
+#   §1d  Per-beat granularity — re-grade at the quarter-note grid, not per-slice
+#
+# NOTHING here changes a decoder setting (no uncertainThreshold/topK/window
+# move — that is the later, separately-ratified sweep).  It only measures.
+# ════════════════════════════════════════════════════════════════════════════
+
+# A genuine church-mode label (not plain major/minor/ionian/aeolian).  These are
+# the readings a major/minor GT cannot represent — the "modal-GT-representational"
+# excuse §1c guards against.
+_CHURCH_MODE_PREFIXES = ('dor', 'phryg', 'phr', 'lyd', 'mixolyd', 'mix', 'locr',
+                         'loc', 'aeol')  # aeol kept here only to EXCLUDE below
+
+
+def _mode_token(keystr):
+    """The mode-label portion of one of our key strings ('DDor' -> 'Dor')."""
+    if not keystr:
+        return ""
+    m = _OURS_KEY_RE_FIXED.match(keystr.strip())
+    return m.group(3) if m else ""
+
+
+def _is_church_modal(keystr):
+    """True iff the label names a church mode other than ionian/aeolian (= the
+    plain major/minor the GT can encode).  'DDor','GMixolyd','Cphryg' -> True;
+    'Gmaj','Amin','CIon','Aaeol' -> False."""
+    tok = _mode_token(keystr).lower()
+    if not tok:
+        return False
+    if tok.startswith(('maj', 'min', 'ion', 'aeol', 'harm', 'mel')):
+        return False
+    return tok.startswith(('dor', 'phryg', 'phr', 'lyd', 'mix', 'locr', 'loc'))
+
+
+def _is_relative_pair(our, gt):
+    """our,gt = (tonic_pc, is_major).  True iff they are the relative major/minor
+    of each other (same key signature, opposite mode): major tonic = minor tonic
+    + 3 semitones."""
+    if not our or not gt or our[0] is None or gt[0] is None:
+        return False
+    if our[1] == gt[1]:
+        return False
+    maj, mino = (our, gt) if our[1] else (gt, our)
+    return maj[0] == (mino[0] + 3) % 12
+
+
+# Characteristic vs contradicting scale degrees (semitones above the modal tonic)
+# for the modal-defensibility check (§1c).  char present + contra absent ⇒ the
+# notes genuinely support the mode; contra present + char absent ⇒ the mode is an
+# excuse for a plain major/minor reading.
+_MODE_DEGREES = {
+    'dor':     (9, 8),    # raised 6th vs natural-minor b6
+    'mix':     (10, 11),  # b7 vs major 7th
+    'mixolyd': (10, 11),
+    'lyd':     (6, 5),    # #4 vs perfect 4th
+    'phryg':   (1, 2),    # b2 vs major 2nd
+    'phr':     (1, 2),
+    'locr':    (1, 2),    # b2 (the b5 is shared with several modes)
+    'loc':     (1, 2),
+}
+
+
+def _mode_degree_pair(keystr):
+    """(char_semitone, contra_semitone) for the modal label, or None."""
+    tok = _mode_token(keystr).lower()
+    for pref, pair in _MODE_DEGREES.items():
+        if tok.startswith(pref):
+            return pair
+    return None
+
+
+def _region_records(decode_dir: Path, wir_base: Path, preset: str, test_pct: int):
+    """Yield per-region characterization records for a preset's decoder corpus,
+    on the held-out TEST split.  Each record carries everything §1a/b/c/d need:
+    our (tonic,major)+raw key string, GT local+global, confidence, uncertain flag,
+    the carried alternatives, whether stable/modulation, and the stem + slice tick
+    span (for the §1c pitch lookup).  Reuses cmp.align_dcml_regions + the fixed
+    extractors verbatim (one grading path)."""
+    d = decode_dir / preset
+    recs = []
+    if not d.is_dir():
+        return recs
+    for p in sorted(d.glob("*.decode.json")):
+        stem = p.name[:-len(".decode.json")]
+        if split_of(stem, test_pct) != 'test':
+            continue
+        wir_path = dcml.find_wir_file(str(wir_base), stem)
+        if not wir_path:
+            continue
+        try:
+            data, ours_regions = cmp.load_analysis(p)
+            wir_regions = dcml.parse_rntxt_file(wir_path)
+        except Exception:
+            continue
+        if not ours_regions or not wir_regions:
+            continue
+        raw = data.get("regions", [])
+        matches = cmp.align_dcml_regions(ours_regions, wir_regions,
+                                         mode=cmp.DEFAULT_DCML_MATCH_MODE)
+        for idx, (ours_r, dr) in enumerate(zip(ours_regions, matches)):
+            if dr is None:
+                continue
+            otc, omaj = our_key_tonic_fixed(getattr(ours_r, 'key', None))
+            ltc, lmaj = C._dcml_key_tonic(getattr(dr, 'local_key', None))
+            gtc, gmaj = C._dcml_key_tonic(getattr(dr, 'global_key', None))
+            if otc is None or ltc is None:
+                continue
+            rawreg = raw[idx] if idx < len(raw) else {}
+            alts = []
+            for a in (getattr(ours_r, 'alternatives', []) or []):
+                if isinstance(a, dict):
+                    at, am = our_key_tonic_fixed(a.get('key'))
+                    if at is not None:
+                        alts.append((at, am))
+            recs.append({
+                'stem': stem,
+                'our': (otc, omaj),
+                'our_key': getattr(ours_r, 'key', ''),
+                'loc': (ltc, lmaj),
+                'glob': (gtc, gmaj) if gtc is not None else None,
+                'conf': float(getattr(ours_r, 'key_confidence', 0.0) or 0.0),
+                'uncertain': bool(rawreg.get('uncertain', False)),
+                'alts': alts,
+                'start_tick': int(getattr(ours_r, 'start_tick', 0)),
+                'end_tick': int(getattr(ours_r, 'end_tick', 0)),
+                'dur': max(0, int(getattr(ours_r, 'end_tick', 0)) - int(getattr(ours_r, 'start_tick', 0))),
+                'correct': (otc, omaj) == (ltc, lmaj),
+                'modulation': (gtc is not None and (ltc, lmaj) != (gtc, gmaj)),
+            })
+    return recs
+
+
+# ── §1a  Calibration ─────────────────────────────────────────────────────────
+_CONF_BINS = [0.0, 0.5, 1.0, 1.5, 2.0, 3.0, 5.0, float('inf')]
+
+
+def calibration(recs):
+    bins = []
+    for lo, hi in zip(_CONF_BINS[:-1], _CONF_BINS[1:]):
+        sub = [r for r in recs if lo <= r['conf'] < hi]
+        n = len(sub)
+        acc = (sum(1 for r in sub if r['correct']) / n) if n else 0.0
+        bins.append({'lo': lo, 'hi': hi, 'n': n, 'acc': acc})
+    wrong = [r for r in recs if not r['correct']]
+    uncert = [r for r in recs if r['uncertain']]
+    # recall: of wrong, fraction flagged uncertain
+    u_recall = (sum(1 for r in wrong if r['uncertain']) / len(wrong)) if wrong else 0.0
+    # precision (strict): of uncertain, fraction wrong
+    u_prec_strict = (sum(1 for r in uncert if not r['correct']) / len(uncert)) if uncert else 0.0
+    # precision (inclusive): of uncertain, fraction wrong OR structurally ambiguous
+    #   structural ambiguity = a modulation/tonicization region (GT local != global)
+    #   OR our reading is the relative major/minor of GT (same notes, undecidable
+    #   from one region) — both computable from the KEY GT alone (no chord evidence).
+    def _amb(r):
+        return (not r['correct']) or r['modulation'] or _is_relative_pair(r['our'], r['loc'])
+    u_prec_incl = (sum(1 for r in uncert if _amb(r)) / len(uncert)) if uncert else 0.0
+    # alternative-recall: of wrong, fraction where GT local is in carried alternatives
+    alt_recall = (sum(1 for r in wrong if r['loc'] in r['alts']) / len(wrong)) if wrong else 0.0
+    return {
+        'n': len(recs), 'wrong': len(wrong), 'uncertain': len(uncert),
+        'bins': bins,
+        'uncert_recall': u_recall, 'uncert_prec_strict': u_prec_strict,
+        'uncert_prec_incl': u_prec_incl, 'alt_recall': alt_recall,
+    }
+
+
+# ── §1b  Residual buckets ────────────────────────────────────────────────────
+def bucket_misses(recs):
+    """Bucket every scorable miss (our != GT local).  structurally-undecidable
+    (symmetric dim7 / whole-tone / augmented) is NOT separable from KEY GT alone —
+    it needs the slice pitch/chord content (out of L3-key scope, §5 stop) — so it
+    is reported as a residual sub-count (uncertain-flagged share of 'other') and
+    NOT fabricated as a hard bucket."""
+    misses = [r for r in recs if not r['correct']]
+    b = Counter()
+    examples = {}
+    for r in misses:
+        if _is_relative_pair(r['our'], r['loc']):
+            k = 'relative-pair'
+        elif r['modulation']:
+            k = 'tonicization-boundary'
+        elif _is_church_modal(r['our_key']) and r['our'][0] == r['loc'][0]:
+            k = 'modal-GT-representational'
+        elif (not r['modulation']) and (not _is_church_modal(r['our_key'])):
+            k = 'genuinely-wrong-resolvable'
+        else:
+            k = 'other'
+        b[k] += 1
+        examples.setdefault(k, []).append(r)
+    # structurally-undecidable proxy: of the genuinely-wrong+other set, how many
+    # are uncertain-flagged (a hint they may be the symmetric/ambiguous floor).
+    resolvable_set = examples.get('genuinely-wrong-resolvable', []) + examples.get('other', [])
+    undecidable_hint = sum(1 for r in resolvable_set if r['uncertain'])
+    return {'n_miss': len(misses), 'buckets': dict(b),
+            'undecidable_uncertain_hint': undecidable_hint,
+            'examples': examples}
+
+
+# ── §1c  Modal-bucket audit (pitch-content defensibility) ────────────────────
+_M21_SCORE_CACHE = {}
+
+
+def _pcs_in_window(xml_path, start_tick, end_tick, division=480):
+    """Pitch-class set sounding in [start_tick, end_tick) of the corpus score,
+    via music21 (offset in quarter notes = tick/division).  Cached per file."""
+    try:
+        from music21 import converter
+    except Exception:
+        return None
+    key = str(xml_path)
+    sc = _M21_SCORE_CACHE.get(key)
+    if sc is None:
+        try:
+            sc = converter.parse(str(xml_path)).flatten().notes.stream()
+        except Exception:
+            _M21_SCORE_CACHE[key] = False
+            return None
+        _M21_SCORE_CACHE[key] = sc
+    if sc is False:
+        return None
+    o_lo = start_tick / division
+    o_hi = end_tick / division
+    pcs = set()
+    for n in sc:
+        try:
+            off = float(n.offset)
+        except Exception:
+            continue
+        dur = float(getattr(n, 'quarterLength', 0.0) or 0.0)
+        # a note sounds in the window if its span overlaps it
+        if off < o_hi and (off + dur) > o_lo:
+            for pp in (n.pitches if hasattr(n, 'pitches') else [n.pitch]):
+                pcs.add(pp.pitchClass)
+    return pcs
+
+
+def modal_audit(modal_misses, corpus_xml_dir: Path, sample_cap=40):
+    """For each modal-GT-representational miss, classify confirmed-defensible vs
+    actually-wrong by the slice's actual pitch content."""
+    defensible = wrong = inconclusive = no_pitch = 0
+    details = []
+    for r in modal_misses[:sample_cap]:
+        pair = _mode_degree_pair(r['our_key'])
+        if pair is None:
+            inconclusive += 1
+            continue
+        char_deg, contra_deg = pair
+        xmlp = corpus_xml_dir / f"{r['stem']}.xml"
+        pcs = _pcs_in_window(xmlp, r['start_tick'], r['end_tick']) if xmlp.exists() else None
+        if pcs is None:
+            no_pitch += 1
+            continue
+        tonic = r['our'][0]
+        char_present = ((tonic + char_deg) % 12) in pcs
+        contra_present = ((tonic + contra_deg) % 12) in pcs
+        if char_present and not contra_present:
+            verdict = 'defensible'; defensible += 1
+        elif contra_present and not char_present:
+            verdict = 'actually-wrong'; wrong += 1
+        else:
+            verdict = 'inconclusive'; inconclusive += 1
+        details.append((r['stem'], r['our_key'], _km_name(r['loc']), verdict))
+    return {'defensible': defensible, 'actually_wrong': wrong,
+            'inconclusive': inconclusive, 'no_pitch': no_pitch,
+            'sampled': min(len(modal_misses), sample_cap),
+            'total': len(modal_misses), 'details': details}
+
+
+# ── §1d  Per-beat granularity ────────────────────────────────────────────────
+def per_beat_grade(decode_dir: Path, wir_base: Path, preset: str, test_pct: int):
+    """Re-grade the decoder at the quarter-note grid (per-beat) rather than per
+    slice, alongside the region-level full-match, on the TEST split.  Reuses
+    cmp._dcml_time_spans / cmp._infer_ticks_per_beat for the GT spans."""
+    d = decode_dir / preset
+    beats = scor = full = 0
+    reg_scor = reg_full = 0
+    if not d.is_dir():
+        return None
+    for p in sorted(d.glob("*.decode.json")):
+        stem = p.name[:-len(".decode.json")]
+        if split_of(stem, test_pct) != 'test':
+            continue
+        wir_path = dcml.find_wir_file(str(wir_base), stem)
+        if not wir_path:
+            continue
+        try:
+            _, ours_regions = cmp.load_analysis(p)
+            wir_regions = dcml.parse_rntxt_file(wir_path)
+        except Exception:
+            continue
+        if not ours_regions or not wir_regions:
+            continue
+        # region-level (equal-weight per slice) full-match
+        matches = cmp.align_dcml_regions(ours_regions, wir_regions,
+                                         mode=cmp.DEFAULT_DCML_MATCH_MODE)
+        for ours_r, dr in zip(ours_regions, matches):
+            if dr is None:
+                continue
+            otc, omaj = our_key_tonic_fixed(getattr(ours_r, 'key', None))
+            ltc, lmaj = C._dcml_key_tonic(getattr(dr, 'local_key', None))
+            if otc is None or ltc is None:
+                continue
+            reg_scor += 1
+            if (otc, omaj) == (ltc, lmaj):
+                reg_full += 1
+        # per-beat
+        spans = cmp._dcml_time_spans(ours_regions, wir_regions)
+        tpb = cmp._infer_ticks_per_beat(ours_regions)
+        step = int(round(tpb)) or 480
+        gt = [(s, e, dr) for (s, e), dr in zip(spans, wir_regions) if s >= 0 and e > s]
+        slices = sorted(ours_regions, key=lambda r: r.start_tick)
+        if not slices:
+            continue
+        piece_start = min(r.start_tick for r in slices)
+        piece_end = max(r.end_tick for r in slices)
+        tick = piece_start
+        while tick < piece_end:
+            ourk = next((r.key for r in slices if r.start_tick <= tick < r.end_tick), None)
+            gk = next((dr.local_key for (s, e, dr) in gt if s <= tick < e), None)
+            if ourk is not None and gk is not None:
+                otc, omaj = our_key_tonic_fixed(ourk)
+                ltc, lmaj = C._dcml_key_tonic(gk)
+                if otc is not None and ltc is not None:
+                    scor += 1
+                    if (otc, omaj) == (ltc, lmaj):
+                        full += 1
+            beats += 1
+            tick += step
+    return {
+        'region_scorable': reg_scor, 'region_full': reg_full,
+        'region_pct': _bpct(reg_full, reg_scor),
+        'beat_scorable': scor, 'beat_full': full,
+        'beat_pct': _bpct(full, scor),
+        'delta': _bpct(full, scor) - _bpct(reg_full, reg_scor),
+    }
+
+
+def characterize_main(args):
+    decode_dir = Path(args.decode_dir) if args.decode_dir else None
+    if decode_dir is None:
+        print("ERROR: --characterize requires --decode-dir "
+              "(run decode_keymode_corpus.py first).")
+        return
+    wir = Path(args.wir_base)
+    corpus_xml = Path(args.corpus_xml_dir)
+    test_pct = args.test_pct
+    out = {}
+    for preset in args.presets:
+        recs = _region_records(decode_dir, wir, preset, test_pct)
+        cal = calibration(recs)
+        buc = bucket_misses(recs)
+        # §1c audits EVERY miss where the decoder emitted a genuine church-mode
+        # label (Dor/Mix/Lyd/Phryg/Loc...), not only the narrow §1b
+        # modal-GT-representational bucket (tonic-match ∧ stable ∧ non-relative):
+        # most modal misses are same-collection rotations that land in the
+        # relative-pair / tonicization buckets, yet the "is this a defensible modal
+        # reading or an excuse?" question applies to ALL of them.  The narrow §1b
+        # bucket count is reported separately above.
+        modal_misses = [r for r in recs
+                        if not r['correct'] and _is_church_modal(r['our_key'])]
+        audit = modal_audit(modal_misses, corpus_xml, sample_cap=80)
+        pb = per_beat_grade(decode_dir, wir, preset, test_pct)
+
+        print("=" * 84)
+        print(f"CHARACTERIZATION — {preset.upper()} — held-out TEST split "
+              f"(md5(stem)%100<{test_pct})")
+        print("=" * 84)
+        print(f"  scorable regions (test): {cal['n']}   wrong: {cal['wrong']}   "
+              f"uncertain-flagged: {cal['uncertain']}")
+        print()
+        print("  §1a CALIBRATION — reliability curve (confidence bin -> agreement):")
+        for bn in cal['bins']:
+            hi = "inf" if bn['hi'] == float('inf') else f"{bn['hi']:.1f}"
+            bar = "#" * int(round(bn['acc'] * 30))
+            print(f"     conf [{bn['lo']:.1f},{hi:>4}): n={bn['n']:4d}  "
+                  f"acc={bn['acc']*100:5.1f}%  {bar}")
+        print(f"     uncertainty RECALL  (wrong that were flagged) : {cal['uncert_recall']*100:5.1f}%")
+        print(f"     uncertainty PRECISION (flagged that were wrong, strict) : "
+              f"{cal['uncert_prec_strict']*100:5.1f}%")
+        print(f"     uncertainty PRECISION (wrong OR struct-ambiguous, inclusive) : "
+              f"{cal['uncert_prec_incl']*100:5.1f}%")
+        print(f"     ALTERNATIVE-RECALL (true key in carried alternatives | wrong) : "
+              f"{cal['alt_recall']*100:5.1f}%")
+        print()
+        print(f"  §1b RESIDUAL BUCKETS — {buc['n_miss']} scorable misses:")
+        for k in ('relative-pair', 'tonicization-boundary', 'modal-GT-representational',
+                  'genuinely-wrong-resolvable', 'other'):
+            n = buc['buckets'].get(k, 0)
+            print(f"     {k:<28} {n:4d}  ({_bpct(n, buc['n_miss']):4.1f}%)")
+        print(f"     [structurally-undecidable (symmetric dim7/whole-tone/aug) is NOT")
+        print(f"      separable from key GT alone — needs pitch/chord evidence (§5 stop);")
+        print(f"      uncertain-flagged share of genuinely-wrong+other = "
+              f"{buc['undecidable_uncertain_hint']} (ambiguity hint)]")
+        print()
+        print(f"  §1c MODAL-BUCKET AUDIT — {audit['total']} church-modal misses "
+              f"(all modal readings; sampled {audit['sampled']}, pitch from corpus xml):")
+        print(f"     confirmed-defensible : {audit['defensible']}")
+        print(f"     actually-wrong       : {audit['actually_wrong']}")
+        print(f"     inconclusive         : {audit['inconclusive']}   "
+              f"(no-pitch {audit['no_pitch']})")
+        for stem, ok, gt_, verdict in audit['details'][:12]:
+            print(f"        {stem:<12} ours={ok:<10} gt={gt_:<8} -> {verdict}")
+        print()
+        if pb:
+            print(f"  §1d GRANULARITY — region-level vs per-beat full (tonic+mode) match:")
+            print(f"     region-level : {pb['region_pct']:5.1f}%  "
+                  f"({pb['region_full']}/{pb['region_scorable']})")
+            print(f"     per-beat     : {pb['beat_pct']:5.1f}%  "
+                  f"({pb['beat_full']}/{pb['beat_scorable']})")
+            print(f"     delta (beat - region) : {pb['delta']:+.1f} pts")
+        print()
+        out[preset] = {'calibration': {k: v for k, v in cal.items() if k != 'bins'},
+                       'reliability_bins': cal['bins'],
+                       'buckets': buc['buckets'],
+                       'undecidable_uncertain_hint': buc['undecidable_uncertain_hint'],
+                       'modal_audit': {k: v for k, v in audit.items() if k != 'details'},
+                       'per_beat': pb}
+    if args.json:
+        Path(args.json).write_text(json.dumps(out, indent=2))
+        print(f"[wrote] {args.json}")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Layer-3 key/mode ground-truth harness "
                                              "(Increment B held-out, default).")
@@ -685,9 +1117,18 @@ def main():
     ap.add_argument("--legacy-audit", action="store_true",
                     help="run the original audit baseline (single-source proxy, OLD "
                          "extractor) instead of the Increment-B harness")
+    ap.add_argument("--characterize", action="store_true",
+                    help="run the §1a–d characterization scaffold (calibration / "
+                         "residual buckets / modal-bucket audit / per-beat granularity) "
+                         "on the decoder corpus; requires --decode-dir")
+    ap.add_argument("--corpus-xml-dir", default=str(REPO_ROOT / "tools" / "corpus"),
+                    help="dir of the corpus *.xml scores (for the §1c pitch-content "
+                         "modal-defensibility check); default tools/corpus")
     ap.add_argument("--json", default=None)
     args = ap.parse_args()
-    if args.legacy_audit:
+    if args.characterize:
+        characterize_main(args)
+    elif args.legacy_audit:
         legacy_main(args)
     else:
         increment_b_main(args)

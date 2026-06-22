@@ -2168,6 +2168,21 @@ static std::string runKeyModeDecode(const Score* score, const std::string& stem,
         } else {
             os << ", \"keyModeRunnerUp\": null";
         }
+        // Additive (characterization scaffold): the FULL ranked alternatives the
+        // decoder already carries in SliceKeyMode::alternatives (tonic+mode key
+        // string + emission score), so the held-out harness can measure
+        // alternative-recall ("the true key/mode was carried even when not picked").
+        // confidence (keyConfidence) and the uncertain flag are emitted above. This
+        // is diagnostic-only — the --decode-keymode path returns before analyzeScore,
+        // so production analysis output stays byte-identical.
+        os << ", \"alternatives\": [";
+        for (size_t a = 0; a < sk.alternatives.size(); ++a) {
+            const analysis::KeyModeAnalysisResult& alt = sk.alternatives[a];
+            const std::string altKey = keyName(alt.keySignatureFifths, alt.mode);
+            os << (a ? ", " : "") << "{ \"key\": \"" << jsonEscape(altKey)
+               << "\", \"confidence\": " << fmtDouble(alt.score, 6) << " }";
+        }
+        os << "]";
         os << " }";
     }
     os << (decoded.empty() ? "]\n" : "\n  ]\n");
