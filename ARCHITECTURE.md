@@ -5,6 +5,14 @@
 > implementation status and immediate next steps. Update STATUS.md as your last act when
 > anything changes. Update ARCHITECTURE.md only when architectural decisions change.
 
+> **★★ FORWARD POINTER (2026-06-15, investigation-gated — NOT yet a ratified stable decision):**
+> the back-half target architecture is being re-grounded onto **CONSTRAINED JOINT INFERENCE** —
+> one joint decision over all evidence (chord + key/mode co-determined), with HARD constraints
+> (decisive facts) pinning + SOFT scores ranking, replacing the current local feed-forward
+> key/chord pipeline. Rationale + the synthesis: `docs/architecture_joint_inference.md`. It is
+> being SIZED by a read-only investigation before any build; this section will be promoted into
+> a full stable §2.x architectural decision once the sizing lands and the user ratifies.
+
 ---
 
 ## Table of Contents
@@ -664,7 +672,60 @@ notation / pipeline-snapshot / BIR / oracle are byte-identical (snapshots 11/11 
 refresh). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
 `cc_layer2_audit_dossier.md`.
 
-#### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1)
+#### Layer 3 — key/mode is now the sequence decoder (2026-06-22, as-built, Step 1 — commit `a6b08af3fe`)
+
+**The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
+replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
+`KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the SIGNED Layer-3
+key/mode design). This is the first layer of the rebuild to go **live** in the analysis pipeline
+(Layers 1–2 are built but isolated; Layer 3 here is wired).
+
+**As-wired data flow (the seam in `regionanalyzer::analyzeRegions`).** Reusing the whole-score
+`noteModel`, the path computes the signature context **once**
+(`keySigCtx = resolveKeySignatureContext(...)`), runs `decode(changePointSlices(noteModel), …,
+keySigCtx.correctedFifths, keySigCtx.declaredMode, …, excludeStaves)` **once** before Pass-1, and
+then serves each region via `localKeyForRegion(rs, re)`:
+- **Intra-region rule (b) — duration-majority** over the region's overlapping slice run (ties →
+  lower representative slice index, deterministic), returning the representative slice's `chosen`
+  key/mode (carrying its C1 `normalizedConfidence`).
+- **Seed S2** — a region overlapping no decoded slice falls back to the segmentation seed (@521,
+  unchanged). The coarse grid (`greedyExpandSegmentation` boundaries) is therefore **byte-stable**;
+  the only new sub-region ticks are Pass-2/2b sub-boundaries that ride on the (legitimately changed)
+  chord analysis, not a coarse-grid change.
+
+**Three fidelity fixes, no duplication.** (1) `excludeStaves` is threaded
+`decode()/redecodeRange() → buildLattice → buildSliceContext → pitchContextOverSpan` (was hardcoded
+`{}`); the default keeps every existing caller byte-identical. (2) The signature read + declared-mode
+mapping + declared-gated Baroque `partialSignatureCorrection` was lifted verbatim into a shared
+public `resolveKeySignatureContext`, **called by both** the resolver and the wiring — so no
+signature/partial-correction logic is duplicated. (3) C1 emission confidence
+(`populateEmissionConfidence`) stamps each `SliceKeyMode.chosen.normalizedConfidence` with the
+`analyzeKeyMode` winner sigmoid re-expressed over the lattice's per-slice emission scores (≈0 when
+sequence smoothing overrode the local argmax — the safe direction).
+
+**Retired from the production region path:** the per-region `resolveKeyAndModeRanked` call at the
+seam, its hysteresis, and the `prevKeyResult` threading (declaration + per-region update);
+`collectPitchContext` as the region builder. The end-state on the production region path is **one
+key path (the decoder) + one builder (`pitchContextOverSpan`)**.
+
+**Surfaced residuals (pre-existing, not introduced; named follow-ups):**
+- **P4 tick-local still uses `resolveKeyAndModeRanked` + `collectPitchContext`** (the ratified
+  P4-defer). Verified **byte-identical** this increment (the `tickLocal` snapshot section is
+  unchanged in all 11 goldens) — no leak. The named follow-up is **P4-redecode**.
+- The resolver and `collectPitchContext` remain compiled **only** as the segmentation seed (@521,
+  S2) and the diagnostic/grading baseline (e.g. `batch_analyze --decode-keymode`); they no longer
+  drive the production region key/mode.
+
+**Gate trade-off on record.** BIR (case-identity): Baroque **53** (net −4), Jazz **24** (net +1),
+Default **53** (net −4); zero new class-(b) (functional) regressions — every new case is a
+class-(a) symmetric-dim7 / share-tone **rotation** ambiguity (root pitch-class-undecidable by
+construction). The Jazz +1 is accepted under the two-tier BIR-gate amendment (CLAUDE.md, "Gate
+threshold and preset policy"); it retires when Layer 4 (function/cadence) pins the rotation.
+`composing_tests` 596/596; the P1/P2/P3/keyAreas snapshot goldens were refreshed for the ratified
+key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
+`cowork_layer3_keymode_design.md`.
+
+#### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1; region key/mode path superseded by Layer 3)
 
 The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in
 the notation bridge, one in `batch_analyze.cpp`). Iter 97's duplication-remediation work
@@ -675,7 +736,7 @@ abstraction the callers populate):
 | Module | Responsibility |
 |--------|----------------|
 | `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` (+ `regiontoneprimitives.cpp`) | The derived tone **views over the Layer-1 note model** — `weightedPcView` (recomputed `collectRegionTones` weighting, tie-de-inflated), `soundingAt`, `buildTones`, plus the retained build-once `collectRegionTones`/`collectSoundingAt` Score wrappers, `findTemporalContext`, and the still-live `detectOnsetSubBoundaries`/`detectBassMovementSubBoundaries`/`collectPitchContext` (slated for Layer 2/3). Note **reading** moved to `notemodel/` (above); this layer now derives over it. |
-| `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — single key/mode resolver, supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. |
+| `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. **No longer the production region key/mode path** (replaced by the Layer-3 decoder, above); it now serves only the segmentation seed (S2), P4 tick-local (P4-defer), and the diagnostic/grading baseline. The shared `resolveKeySignatureContext` (signature read + declared-mode + Baroque `partialSignatureCorrection`) is called by both it and the wiring. |
 | `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |
 | `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |
 | `composing/analysis/section/sectionanalyzer.{h,cpp}` | Section-level unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection (`detectCadences`, `detectPivotChords`). Moved here in Stage 2.1 (Phase 4c). |

@@ -99,6 +99,40 @@ incomplete, or whose `.ours.json` fingerprints do not match (preset contaminatio
 the old shared-`tools/corpus` failure mode). The gate is the **case-identity** set,
 not a bare integer.
 
+**Two-tier refinement (user-ratified 2026-06-22) — class-(b) functional regression vs class-(a)
+symmetric-rotation churn.** A *new* BIR=false case is one of two classes:
+- **Class (b) — functional/key regression: UNCHANGED HARD STOP.** A new BIR=false case at a sonority
+  whose root is *pitch-class-decidable* (any non-symmetric chord — triads, dominant sevenths, etc.)
+  where the analysis now gets the root or key wrong. **Zero** new class-(b) cases on any preset, ever.
+  This is the gate's real intent and does not move.
+- **Class (a) — symmetric-rotation churn: TRACKED, CONDITIONAL (not an automatic hard stop).** A new
+  BIR=false case at a sonority whose root is *pitch-class-undecidable by construction* — symmetric
+  diminished-seventh, augmented, whole-tone, or a share-tone tetrad (half-dim↔m6; dim7-subset-of-V7♭9;
+  Maj7↔relative-minor triad). The pitch-class analyzer is spelling-blind and cannot pick the
+  spelling-correct rotation; no rotation is more correct by pitch class. Acceptable **only when ALL** of:
+  (1) **verified at the score per case** against the actual notes (e.g. the music21 GT region) —
+  assertion is not enough; (2) **default to class (b) on any doubt** — if not *proven* class-(a), it
+  IS class-(b); (3) **the class-(b) (pitch-class-decidable-root) BIR=false count is non-increasing** on every preset —
+  the *meaningful* errors never grow; the class-(a) total may wobble by a **small, every-case-verified**
+  amount (the rotation count is a coin-flip, not a quality measure), but a **large class-(a) net
+  increase trips mandatory investigation** (a change destabilizing many symmetric sonorities is a
+  signal even when each case is individually class-(a)); (4) **case identities recorded** (stem@tick +
+  sonority); (5) **interim only** — a
+  bridge pending the Stage-5/6 spelling-aware (two-tier) gate, which retires this exception. Applies
+  **only** to the symmetric/share-tone structural class; no other source of a new BIR=false case
+  qualifies. Root cause: the rotation churn is a **chord-layer (Layer-4) root ambiguity** *surfaced,
+  not caused,* by a key change; the proper fix is spelling/voice-leading-aware chord-root selection
+  (Layer 4 / Stage 5–6). Founding evidence (Cowork-verified at the score, music21 GT, 2026-06-22):
+  `bwv272@4320` (G♯dim7), `bwv289@20160` (A♯dim7), `bwv291@17760` (Eø7↔Gm6), `bwv387@10560`
+  (G♯dim7/E7♭9) — all symmetric/share-tone, zero functional regressions; the Layer-3 decoder-wiring
+  increment. Full provenance: `cowork_gate_policy_amendment.md`.
+- **First accepted class-(a) interim case (Layer-3 wiring, 2026-06-22):** Baroque/Default net **−4** (all new
+  cases class-(a)); **Jazz net +1** — accepted under guardrail (3): new `bwv272@4320` (G♯dim7 coin-flip) +
+  `bwv291@17760` (Eø7↔Gm6 same-collection center), `bwv244.15@10080` fixed; both new verified class-(a) at the
+  score, zero new class-(b), and the L3 reduction-rule lever measured byte-identically inert (a≡b on all presets) —
+  so the +1 is irreducible at Layer 3. **Retires when Layer 4 (function/cadence) pins the rotation/center** —
+  rotation-pinning is a named early Layer-4 job. Investigation: `cc_layer3_jazz_churn_investigation.md`.
+
 **Re-baselined 2026-06-13 (corrected GT parser).** The prior **13/7/14** gate was an
 **undercount**: GT-parser bugs (applied-chord `/X` rooting + minor-key
 leading-tone/submediant rooting, fixed in `tools/dcml_parser.py`) corrupted the WiR roots
@@ -146,10 +180,10 @@ default OFF — it does not change the gate). See `cc_stage2_2_ab_dossier.md` fo
 A/B that quantified this; a granularity-robust metric is mandatory at Stage 5.
 
 (`tools/analyze_inversion_errors.py` is a *separate* secondary metric: its three-way
-`music21_dcml_agree` genuine split is `bassIsRoot` true/false (was **Baroque 24/13, Jazz
-35/7** under the OLD parser — **NOT yet re-measured under the corrected parser; treat as
-stale/pending re-baseline**); `characterise_bir_false.py` independently reproduces the
-BIR=false half (now **57/23**, Default 57).
+`music21_dcml_agree` genuine split is `bassIsRoot` true/false. **Re-measured under the
+corrected parser** (`cc_functional_residual_dossier.md`, 2026-06-14): **Baroque 24/13→47/57,
+Jazz 35/7→81/23** — the `bassIsRoot`=false halves (**57 / 23**) independently match the
+re-baselined gate. `characterise_bir_false.py` reproduces that BIR=false half (57/23, Default 57).
 Since Stage 2.2-ii (Rider 1) it takes `--corpus-dir` and reads BOTH `.ours.json` and
 `.music21.json` from the validated per-preset dir — `--ours-dir` is a deprecated,
 unvalidated alias.)
@@ -276,6 +310,14 @@ code (the `// TODO only if different custom key ?` line). Stage-4a discrete step
 graded-prior / KeyArea work that softens the resolver's −7 declared-mode wall is a later
 Stage-4 step (see `cc_stage4a_mode_import_report.md`).
 **Do not revert; do not let dependency updates overwrite without approval.**
+
+**★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the
+MuseScore community.** This patch (`cfc7eb5e39`) is fine to have in the **central repo = the user's
+fork** (`origin` = `slimvince/MuseScore`) and may be pushed there, but it must **NEVER** be pushed or
+merged to `upstream` (`musescore/MuseScore`) or otherwise contributed to the MuseScore community.
+`upstream` push is disabled in this repo; keep it so. Any future push/PR/merge that would carry
+`cfc7eb5e39` (or its content) toward `musescore/MuseScore` is a HARD STOP — surface, do not proceed.
+(The #9444 reference above is the upstream *bug report*; it does NOT authorize contributing THIS patch.)
 
 ## VS Code extension — bash command rules (MANDATORY, every session)
 
