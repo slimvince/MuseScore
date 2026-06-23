@@ -79,7 +79,9 @@
 //
 // See cowork_layer3_keymode_design.md (signed) + cc_layer3_decoder_audit_dossier.md.
 
+#include <cstddef>
 #include <optional>
+#include <set>
 #include <vector>
 
 #include "keymodeanalyzer.h"
@@ -173,13 +175,28 @@ public:
     /// @param keyPrefs      the emission scorer's preferences — the user STYLE
     ///                      PRESET enters here (weak mode prior), unchanged.
     /// @param seqPrefs      the decoder's own tunable settings.
+    /// @param excludeStaves staves whose pitches are excluded from every slice's
+    ///                      emission context (threaded to pitchContextOverSpan).
+    ///                      Production analysis excludes staves (e.g. a chord
+    ///                      track), so the decode must too — without this the
+    ///                      decoded key would include excluded-staff pitches.
+    ///                      Empty (the default) = score every staff (the as-graded
+    ///                      held-out condition; the batch --decode-keymode path).
+    ///
+    /// SIDE-EFFECT (since the Layer-3 wiring): each returned SliceKeyMode's
+    /// `chosen.normalizedConfidence` is the EMISSION-scale confidence for the
+    /// chosen state at that slice — the analyzeKeyMode winner sigmoid
+    /// (keymodeanalyzer.cpp) computed over keyPrefs, so it is on the scale the 0.8
+    /// downstream key-confidence gates are calibrated for (C1). The sequence-margin
+    /// confidence remains on `SliceKeyMode.confidence`.
     static std::vector<SliceKeyMode> decode(
         const std::vector<slicing::Slice>& slices,
         const notemodel::NoteModel& noteModel,
         int keySigFifths,
         std::optional<KeySigMode> declaredMode = std::nullopt,
         const KeyModeAnalyzerPreferences& keyPrefs = kDefaultKeyModeAnalyzerPreferences,
-        const KeyModeSequencePreferences& seqPrefs = kDefaultKeyModeSequencePreferences);
+        const KeyModeSequencePreferences& seqPrefs = kDefaultKeyModeSequencePreferences,
+        const std::set<std::size_t>& excludeStaves = {});
 
     /// Re-decide the sub-range [first, last] (inclusive) holding the key/mode at
     /// the two ends fixed to @p leftPin / @p rightPin (design §3 "re-decide a
@@ -198,7 +215,8 @@ public:
         const KeyModeAnalysisResult& leftPin,
         const KeyModeAnalysisResult& rightPin,
         const KeyModeAnalyzerPreferences& keyPrefs = kDefaultKeyModeAnalyzerPreferences,
-        const KeyModeSequencePreferences& seqPrefs = kDefaultKeyModeSequencePreferences);
+        const KeyModeSequencePreferences& seqPrefs = kDefaultKeyModeSequencePreferences,
+        const std::set<std::size_t>& excludeStaves = {});
 
     // ── Scorer-independent core (for behaviour/branch tests) ──────────────────
     //

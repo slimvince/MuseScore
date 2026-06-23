@@ -1212,7 +1212,7 @@
     ],
     "keyAreas": [
         {
-            "confidence": 0.915,
+            "confidence": 0.999,
             "endTick": 23040,
             "keyFifths": -1,
             "mode": "maj",

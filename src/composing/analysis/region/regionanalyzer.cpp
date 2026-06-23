@@ -43,15 +43,19 @@
 #include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/key/keymodesequence.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/region/sparsechordrefinement.h"
 #include "composing/analysis/scoreharvest/metricweights.h"
 #include "composing/analysis/section/jointkeydecision.h"   // J-key-iii production wiring
+#include "composing/analysis/slicing/slicer.h"
 
 namespace ebr  = mu::composing::analysis::engravingbridge;
 namespace kr   = mu::composing::analysis::keyresolver;
+namespace kms  = mu::composing::analysis::keymodeseq;
 namespace shv  = mu::composing::analysis::scoreharvest;
 namespace nmdl = mu::composing::analysis::notemodel;
+namespace slc  = mu::composing::analysis::slicing;
 
 namespace mu::composing::analysis::region {
 
@@ -523,6 +527,98 @@ analyzeRegions(const mu::engraving::Score* score,
     int keyFifths = initialRanked.front().keySignatureFifths;
     KeySigMode keyMode = initialRanked.front().mode;
 
+    // ── LAYER 3 — whole-score key/mode SEQUENCE DECODE (replaces the per-region
+    // key resolver at the Pass-1 seam) ───────────────────────────────────────
+    //
+    // One Viterbi decode over the Layer-2 change-point slice grid decides the
+    // key/mode as a SINGLE time-consistent sequence; each Pass-1 coarse region
+    // then takes its duration-majority decoder key over the slice run it spans
+    // (the whole-sequence change cost replaces the resolver's per-region
+    // hysteresis). The seed above (resolver @startTick) is kept ONLY to keep the
+    // segmentation grid byte-stable (S2) — greedyExpandSegmentation/findTemporalContext
+    // still consume keyFifths/keyMode; only the per-region key path is replaced.
+    //
+    // Three fidelity ties to the resolver-as-graded decoder:
+    //  (1) the decode excludes the SAME staves production excludes (excludeStaves),
+    //  (2) it anchors on the SAME Baroque partial-signature-corrected fifths +
+    //      declared mode the resolver computes (resolveKeySignatureContext),
+    //  (3) per-region confidence is the emission-scale C1 sigmoid the 0.8
+    //      downstream key-confidence gates expect (set inside decode()).
+    // Single-signature anchor (read at startTick) is the accepted baseline; a
+    // notated mid-piece key-signature change is tracked from the notes by the
+    // change cost rather than re-anchored (a deferred refinement).
+    const KeyModeAnalysisResult seedKey = initialRanked.front();
+    const kr::KeySignatureContext keySigCtx =
+        kr::resolveKeySignatureContext(score, startTick, refStaff, excludeStaves, keyPrefs);
+    const std::vector<slc::Slice> slices = slc::changePointSlices(noteModel);
+    const std::vector<kms::SliceKeyMode> sliceKeys =
+        kms::KeyModeSequenceDecoder::decode(
+            slices, noteModel, keySigCtx.correctedFifths, keySigCtx.declaredMode,
+            keyPrefs, kms::kDefaultKeyModeSequencePreferences, excludeStaves);
+
+    // Per-slice end ticks (slices are ordered, contiguous and covering) for an
+    // O(log N) region→slice-run lookup.
+    std::vector<int> sliceEnds;
+    sliceEnds.reserve(slices.size());
+    for (const slc::Slice& s : slices) {
+        sliceEnds.push_back(s.end);
+    }
+
+    // Duration-majority decoder key for a coarse region [rs, re): the (tonic, mode)
+    // holding the most ticks across the region's slice run; the representative slice
+    // (the longest run-member carrying that key) supplies the labelled result and
+    // its emission-scale confidence. Ties (equal total duration) resolve to the key
+    // whose representative slice has the lower index — deterministic. Falls back to
+    // the segmentation seed when the region overlaps no decoded slice (e.g. a region
+    // outside the eligible-note span, or a degenerate all-rest model).
+    auto localKeyForRegion = [&](int rs, int re) -> KeyModeAnalysisResult {
+        if (sliceKeys.empty() || re <= rs) {
+            return seedKey;
+        }
+        // First slice whose end > rs (covers or follows rs).
+        const auto it = std::upper_bound(sliceEnds.begin(), sliceEnds.end(), rs);
+        size_t i = static_cast<size_t>(it - sliceEnds.begin());
+
+        struct Vote { long long total = 0; int repSlice = -1; int repDur = 0; };
+        std::vector<std::pair<std::pair<int, int>, Vote>> votes;   // ((tonicPc,modeIdx), Vote)
+        auto voteFor = [&](int tonicPc, int modeIdx, int dur, int sliceIdx) {
+            const std::pair<int, int> key{ tonicPc, modeIdx };
+            for (auto& v : votes) {
+                if (v.first == key) {
+                    v.second.total += dur;
+                    if (dur > v.second.repDur) { v.second.repDur = dur; v.second.repSlice = sliceIdx; }
+                    return;
+                }
+            }
+            votes.push_back({ key, Vote{ dur, sliceIdx, dur } });
+        };
+
+        for (; i < slices.size() && slices[i].start < re; ++i) {
+            if (i >= sliceKeys.size()) {
+                break;
+            }
+            const int ov = std::min(slices[i].end, re) - std::max(slices[i].start, rs);
+            if (ov <= 0) {
+                continue;
+            }
+            const KeyModeAnalysisResult& ck = sliceKeys[i].chosen;
+            voteFor(ck.tonicPc, static_cast<int>(keyModeIndex(ck.mode)), ov, static_cast<int>(i));
+        }
+
+        if (votes.empty()) {
+            return seedKey;
+        }
+        const Vote* best = nullptr;
+        for (const auto& v : votes) {
+            if (!best
+                || v.second.total > best->total
+                || (v.second.total == best->total && v.second.repSlice < best->repSlice)) {
+                best = &v.second;
+            }
+        }
+        return sliceKeys[static_cast<size_t>(best->repSlice)].chosen;
+    };
+
     // Pass 1 chord-analyzer preferences. Bridge supplies pass1MinDistinctPcsForCandidate=1
     // (Iter 75 sparse-texture admission); batch leaves it at -1 (use the
     // caller's prefs.minDistinctPcsForCandidate unchanged).
@@ -600,7 +696,6 @@ analyzeRegions(const mu::engraving::Score* score,
             ebr::findTemporalContext(noteModel, seg, excludeStaves, keyFifths, keyMode, -1),
             attemptPrefs.decodeQualityLevel);
         ChordTemporalContext& temporalCtx = decoder.context();
-        std::optional<KeyModeAnalysisResult> prevKeyResult;
 
         if (opts.hooks && opts.hooks->preMergeRegions) {
             preMergeRegions.clear();
@@ -629,11 +724,11 @@ analyzeRegions(const mu::engraving::Score* score,
                 (temporalCtx.previousBassPc != -1 && currentBassPc != -1)
                 && isDiatonicStep(temporalCtx.previousBassPc, currentBassPc);
 
-            // Per-region key resolution with hysteresis.
-            const auto ranked = kr::resolveKeyAndModeRanked(
-                score, regionStart, refStaff, excludeStaves, keyPrefs,
-                prevKeyResult.has_value() ? &prevKeyResult.value() : nullptr);
-            const KeyModeAnalysisResult localKey = ranked.front();
+            // Per-region key = the Layer-3 decoder's duration-majority key over the
+            // region's slice run (replaces the per-region resolver + its hysteresis;
+            // the whole-sequence change cost is the smoothing). See the decode above.
+            const KeyModeAnalysisResult localKey =
+                localKeyForRegion(regionStart.ticks(), regionEnd.ticks());
             const int localKeyFifths = localKey.keySignatureFifths;
             const KeySigMode localKeyMode = localKey.mode;
 
@@ -710,8 +805,6 @@ analyzeRegions(const mu::engraving::Score* score,
                                     : -1.0;
                 decoder.recordNode(std::move(node));
             }
-
-            prevKeyResult = localKey;
 
             if (opts.hooks && opts.hooks->preMergeRegions) {
                 HarmonicRegion preMergeRegion;

@@ -49,6 +49,7 @@
 // for its `keyModeRunnerUp` JSON field.
 
 #include <cstddef>
+#include <optional>
 #include <set>
 #include <vector>
 
@@ -76,6 +77,37 @@ struct KeyResolveDump {
     bool strongPriorPromoted  = false; ///< always false since 4b-i (strong declared-mode prior removed; field kept for dump-format stability)
     std::vector<mu::composing::analysis::KeyCandidateScore> candidates; ///< emission breakdown (empty on anchor/fallback)
 };
+
+/// The signature-derived inputs the resolver computes before scoring, exposed so
+/// other consumers anchor on the SAME values (one source of truth — no duplicated
+/// signature-read / declared-mode / partial-correction logic):
+///   • `notatedFifths`   — the key signature's concert-key fifths read at `tick`
+///   • `declaredMode`    — the declared mode mapped from the KeySigEvent's KeyMode
+///                         (nullopt for an undeclared / atonal signature, or when
+///                         prefs.ignoreDeclaredMode forces the measurement floor)
+///   • `correctedFifths` — `notatedFifths` after the declared-gated Baroque
+///                         partial-signature correction (== notatedFifths when no
+///                         declared mode or the convention is not detected)
+///
+/// The Layer-3 key/mode sequence decoder wiring uses {correctedFifths, declaredMode}
+/// to anchor its whole-score decode exactly as the resolver anchors its per-window
+/// emission. resolveKeyAndModeRanked itself is implemented in terms of this.
+struct KeySignatureContext {
+    int notatedFifths   = 0;
+    int correctedFifths = 0;
+    std::optional<mu::composing::analysis::KeySigMode> declaredMode;
+};
+
+/// Compute the KeySignatureContext at `tick` for the given staff (clamped to the
+/// score's staff count). `excludeStaves` scopes the partial-signature evidence
+/// histogram. Honors prefs.ignoreDeclaredMode (drops the declared mode and skips
+/// the correction). Pure signature read — no pitch-context scoring.
+KeySignatureContext resolveKeySignatureContext(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    mu::engraving::staff_idx_t staffIdx,
+    const std::set<std::size_t>& excludeStaves,
+    const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs);
 
 /// Resolve key/mode at `tick` returning ranked candidates.
 ///

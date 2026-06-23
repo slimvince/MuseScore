@@ -78,7 +78,8 @@ int cofDistance(int ionianPcA, int ionianPcB)
 std::vector<KeyModeAnalyzer::PitchContext> buildSliceContext(
     const notemodel::NoteModel& model, int start, int end,
     const KeyModeSequencePreferences& seqPrefs,
-    const KeyModeAnalyzerPreferences& keyPrefs)
+    const KeyModeAnalyzerPreferences& keyPrefs,
+    const std::set<std::size_t>& excludeStaves)
 {
     const int div = mu::engraving::Constants::DIVISION;
     const int win = static_cast<int>(std::lround(seqPrefs.windowBeats * div));
@@ -86,7 +87,7 @@ std::vector<KeyModeAnalyzer::PitchContext> buildSliceContext(
         seqPrefs.decayRate, seqPrefs.lookaheadWeight, seqPrefs.beatsPerDecayUnit };
     std::vector<KeyModeAnalyzer::PitchContext> ctx;
     engravingbridge::pitchContextOverSpan(model, start - win, end + win, start, end,
-                                          /*excludeStaves=*/ {}, keyPrefs, weights, ctx);
+                                          excludeStaves, keyPrefs, weights, ctx);
     return ctx;
 }
 
@@ -129,6 +130,7 @@ Lattice buildLattice(const std::vector<slicing::Slice>& slices,
                      std::optional<KeySigMode> declaredMode,
                      const KeyModeAnalyzerPreferences& keyPrefs,
                      const KeyModeSequencePreferences& seqPrefs,
+                     const std::set<std::size_t>& excludeStaves,
                      const std::vector<int>& forceCands)
 {
     const int T = static_cast<int>(slices.size());
@@ -139,7 +141,7 @@ Lattice buildLattice(const std::vector<slicing::Slice>& slices,
     std::vector<KeyCandidateScore> dump;
     for (int t = 0; t < T; ++t) {
         const std::vector<KeyModeAnalyzer::PitchContext> ctx =
-            buildSliceContext(model, slices[t].start, slices[t].end, seqPrefs, keyPrefs);
+            buildSliceContext(model, slices[t].start, slices[t].end, seqPrefs, keyPrefs, excludeStaves);
         dump.clear();
         if (!ctx.empty()) {
             KeyModeAnalyzer::analyzeKeyMode(ctx, keySigFifths, keyPrefs, declaredMode, &dump);
@@ -180,6 +182,49 @@ int stateIndexForResult(const std::vector<State>& states, const KeyModeAnalysisR
         }
     }
     return -1;
+}
+
+/// Stamp each decoded slice's chosen result with the EMISSION-scale confidence the
+/// downstream key-confidence gates expect (C1, instruction §1.4). This is the
+/// analyzeKeyMode winner sigmoid (keymodeanalyzer.cpp:762-767) re-expressed over the
+/// lattice's per-slice emission scores: the gap between the chosen state's emission
+/// and its strongest competitor at that slice, mapped through the SAME sigmoid
+/// (keyPrefs.confidenceSigmoid{Midpoint,Steepness}). When the decoder's chosen state
+/// IS the local emission argmax — the common case where decode agrees with the
+/// per-slice winner — this is byte-for-byte the emission's winner normalizedConfidence
+/// (chosen == winner, strongest competitor == runner-up). When the whole-sequence
+/// smoothing overrode the local argmax, the gap is ≤ 0 → confidence ≈ 0: a region
+/// whose key rests on sequence context rather than local evidence does not clear the
+/// 0.8 gate, which is the conservative/safe direction for this baseline wiring.
+/// `decodeLattice` leaves normalizedConfidence at 0.0 (scorer-independent); the
+/// keyPrefs-dependent mapping lives here, called from decode()/redecodeRange().
+void populateEmissionConfidence(std::vector<SliceKeyMode>& out, const Lattice& lat,
+                                const KeyModeAnalyzerPreferences& keyPrefs)
+{
+    for (SliceKeyMode& sk : out) {
+        const int t = sk.sliceIndex;                       // global slice index
+        if (t < 0 || t >= static_cast<int>(lat.emissions.size())) {
+            continue;
+        }
+        const int ci = stateIndexForResult(lat.states, sk.chosen);
+        if (ci < 0) {
+            continue;
+        }
+        const std::vector<double>& em = lat.emissions[static_cast<std::size_t>(t)];
+        const double chosenScore = em[static_cast<std::size_t>(ci)];
+        double bestOther = NEG_INF;
+        for (std::size_t s = 0; s < em.size(); ++s) {
+            if (static_cast<int>(s) == ci) {
+                continue;
+            }
+            bestOther = std::max(bestOther, em[s]);
+        }
+        const double runnerUp = (bestOther == NEG_INF) ? 0.0 : bestOther;   // single-state → vs 0
+        const double gap = chosenScore - runnerUp;
+        sk.chosen.normalizedConfidence =
+            1.0 / (1.0 + std::exp(-keyPrefs.confidenceSigmoidSteepness
+                                  * (gap - keyPrefs.confidenceSigmoidMidpoint)));
+    }
 }
 
 } // namespace
@@ -359,11 +404,14 @@ std::vector<SliceKeyMode> KeyModeSequenceDecoder::decode(
     int keySigFifths,
     std::optional<KeySigMode> declaredMode,
     const KeyModeAnalyzerPreferences& keyPrefs,
-    const KeyModeSequencePreferences& seqPrefs)
+    const KeyModeSequencePreferences& seqPrefs,
+    const std::set<std::size_t>& excludeStaves)
 {
     const Lattice lat = buildLattice(slices, noteModel, keySigFifths, declaredMode,
-                                     keyPrefs, seqPrefs, {});
-    return decodeLattice(lat.states, lat.emissions, seqPrefs, -1, -1);
+                                     keyPrefs, seqPrefs, excludeStaves, {});
+    std::vector<SliceKeyMode> out = decodeLattice(lat.states, lat.emissions, seqPrefs, -1, -1);
+    populateEmissionConfidence(out, lat, keyPrefs);
+    return out;
 }
 
 std::vector<SliceKeyMode> KeyModeSequenceDecoder::redecodeRange(
@@ -375,7 +423,8 @@ std::vector<SliceKeyMode> KeyModeSequenceDecoder::redecodeRange(
     const KeyModeAnalysisResult& leftPin,
     const KeyModeAnalysisResult& rightPin,
     const KeyModeAnalyzerPreferences& keyPrefs,
-    const KeyModeSequencePreferences& seqPrefs)
+    const KeyModeSequencePreferences& seqPrefs,
+    const std::set<std::size_t>& excludeStaves)
 {
     const int T = static_cast<int>(slices.size());
     if (first < 0 || last >= T || first > last) {
@@ -391,7 +440,7 @@ std::vector<SliceKeyMode> KeyModeSequenceDecoder::redecodeRange(
         candidateIndex(rightPin.tonicPc, keyModeIndex(rightPin.mode)),
     };
     const Lattice lat = buildLattice(slices, noteModel, keySigFifths, declaredMode,
-                                     keyPrefs, seqPrefs, forceCands);
+                                     keyPrefs, seqPrefs, excludeStaves, forceCands);
 
     const int pinFirst = stateIndexForResult(lat.states, leftPin);
     const int pinLast  = stateIndexForResult(lat.states, rightPin);
@@ -402,6 +451,7 @@ std::vector<SliceKeyMode> KeyModeSequenceDecoder::redecodeRange(
     for (SliceKeyMode& sk : out) {
         sk.sliceIndex += first;
     }
+    populateEmissionConfidence(out, lat, keyPrefs);   // sliceIndex now global → indexes lat.emissions
     return out;
 }
 

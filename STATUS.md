@@ -3545,3 +3545,39 @@ regressions. Both are fixed in this session.
 - **`isChordTrackStaff()` → Part-level flag** — replace name-based chord track detection
   with a Part-level flag (see backlog_chord_track_flag.md)
 - **Rename "chord track" → "chord staff"** — ~31 occurrences in ~11 files (backlog)
+
+---
+
+## Layer-3 key/mode wiring — post-wiring BIR baseline (2026-06-23)
+
+**Production-moving commit** (first key-path landing): the Layer-3 key/mode **sequence decoder** replaces the
+**per-region key resolver** on the production region path (`regionanalyzer.cpp` @633 seam). One whole-score Viterbi
+`decode()` over the Layer-2 change-point slices, reduced per Pass-1 coarse region by **duration-majority** (rule (b));
+S2 segmentation seed kept (`resolveKeyAndModeRanked` @521 unchanged ⇒ coarse grid byte-stable); **Step-2
+`scaleMembership` reweight NOT applied** (shared scorer at baseline −0.20/−0.05; deferred to a KEY-metric-gated
+increment). Three fidelity ties to the as-graded decoder: `excludeStaves` threaded; Baroque partial-signature-corrected
+fifths + declared mode via the shared `resolveKeySignatureContext`; C1 emission-scale confidence. **P4 tick-local stays
+on the resolver (P4-defer)** — P4 snapshot goldens byte-identical (verified); resolver + `collectPitchContext` remain
+the diagnostic/grading baseline. End-state on the production region path: **one key path (decoder) + one builder
+(`pitchContextOverSpan`)**; no new parallel path / logic duplication.
+
+**BIR gate under the two-tier (B)-amended rule — passes** (canonical tools, all presets; corpora regen 353/353):
+
+| preset | post-wiring BIR=false | net vs gate | new cases (all class-(a), score-verified) | cases fixed |
+|---|---|---|---|---|
+| Baroque | **53** | −4 | bwv272@4320, bwv289@20160 | bwv102.7@17520, bwv122.6@6720, bwv227.7@18120, bwv301@960, bwv336@8640, bwv381@4800 |
+| Jazz | **24** | +1 (accepted interim) | bwv272@4320, bwv291@17760 | bwv244.15@10080 |
+| Default | **53** | −4 | bwv272@4320, bwv289@20160, bwv387@10560 | bwv102.7@17520, bwv122.6@6720, bwv187.7@19200, bwv301@960, bwv336@8640, bwv352@1440, bwv381@4800 |
+
+- **class-(b) (pitch-class-decidable-root) count: NON-INCREASING on every preset** — **zero new class-(b)** (only
+  class-(a) added; cases removed). Guardrail (1)+(3) satisfied.
+- **All new cases verified class-(a) at the score** (independent music21, GT region): bwv272@4320 `{D,F,Ab,B}` sym dim7;
+  bwv289@20160 `{C#,E,G,Bb}` sym dim7; bwv291@17760 `{D,E,G,Bb}` Eø7≡Gm6 share-tone; bwv387@10560 `{D,F,Ab,B}` dim7 read
+  as E7♭9 upper structure. Magnitude ≤3/preset (within the watch). The Jazz +1 is irreducible at Layer 3 (reduction
+  rule (a)≡(b) byte-identical; retires at Layer-4 rotation-pinning).
+- Suites: composing **596/596**; notation **52/57** (5 expected production moves: MozartK279 opening, Corelli ×2,
+  RN + Nashville behavior snapshots — the −3 Baroque-stable / modulation re-spell, faithfully wired); pipeline_snapshot
+  **11/11** after the ratified P1/P2/P3 golden refresh (P4 untouched).
+- CLAUDE.md canonical class-(b) identity sets **not edited here** (a deliberate re-baseline is a separate Cowork
+  doc-sync; the CLAUDE.md two-tier amendment already records the Jazz interim case). Provenance:
+  `cc_layer3_wiring_report.md`, `cc_layer3_jazz_churn_investigation.md`.

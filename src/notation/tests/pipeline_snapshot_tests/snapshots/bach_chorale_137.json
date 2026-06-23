@@ -1,143 +1,123 @@
 {
     "annotation": [
         {
-            "key": "D",
+            "key": "A",
             "text": "Dm",
             "tick": 0
         },
         {
-            "key": "D",
-            "text": "i",
+            "key": "A",
+            "text": "iv",
             "tick": 0
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "Dm",
             "tick": 0
         },
         {
-            "key": "D",
-            "text": "i",
+            "key": "A",
+            "text": "iv",
             "tick": 0
         },
         {
-            "key": "D",
-            "text": "G/A",
-            "tick": 960
-        },
-        {
-            "key": "D",
-            "text": "IV",
-            "tick": 960
-        },
-        {
-            "key": "D",
-            "text": "G/A",
-            "tick": 960
-        },
-        {
-            "key": "D",
-            "text": "IV",
-            "tick": 960
-        },
-        {
-            "key": "D",
+            "key": "A",
             "text": "E/Ab",
             "tick": 1920
         },
         {
-            "key": "D",
-            "text": "II6",
+            "key": "A",
+            "text": "V6",
             "tick": 1920
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "E/Ab",
             "tick": 1920
         },
         {
-            "key": "D",
-            "text": "II6",
+            "key": "A",
+            "text": "V6",
             "tick": 1920
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "Amadd9",
             "tick": 2400
         },
         {
-            "key": "D",
-            "text": "v(add9)",
+            "key": "A",
+            "text": "i(add9)",
             "tick": 2400
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "Amadd9",
             "tick": 2400
         },
         {
-            "key": "D",
-            "text": "v(add9)",
+            "key": "A",
+            "text": "i(add9)",
             "tick": 2400
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "Bm7b5/D",
             "tick": 2880
         },
         {
-            "key": "D",
-            "text": "bviiø65",
+            "key": "A",
+            "text": "iiø65",
             "tick": 2880
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "Bm7b5/D",
             "tick": 2880
         },
         {
-            "key": "D",
-            "text": "bviiø65",
+            "key": "A",
+            "text": "iiø65",
             "tick": 2880
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "E",
             "tick": 3360
         },
         {
-            "key": "D",
-            "text": "II",
+            "key": "A",
+            "text": "V",
             "tick": 3360
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "E",
             "tick": 3360
         },
         {
-            "key": "D",
-            "text": "II",
+            "key": "A",
+            "text": "V",
             "tick": 3360
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "A",
             "tick": 3840
         },
         {
-            "key": "D",
-            "text": "V",
+            "key": "A",
+            "text": "I",
             "tick": 3840
         },
         {
-            "key": "D",
+            "key": "A",
             "text": "A",
             "tick": 3840
         },
         {
-            "key": "D",
-            "text": "V",
+            "key": "A",
+            "text": "I",
             "tick": 3840
         },
         {
@@ -147,7 +127,7 @@
         },
         {
             "key": "D",
-            "text": "i",
+            "text": "iv",
             "tick": 4800
         },
         {
@@ -157,7 +137,7 @@
         },
         {
             "key": "D",
-            "text": "i",
+            "text": "iv",
             "tick": 4800
         },
         {
@@ -167,7 +147,7 @@
         },
         {
             "key": "D",
-            "text": "i",
+            "text": "iv",
             "tick": 5760
         },
         {
@@ -177,7 +157,7 @@
         },
         {
             "key": "D",
-            "text": "i",
+            "text": "iv",
             "tick": 5760
         },
         {
@@ -187,7 +167,7 @@
         },
         {
             "key": "D",
-            "text": "iiø65",
+            "text": "vø65",
             "tick": 6720
         },
         {
@@ -197,7 +177,7 @@
         },
         {
             "key": "D",
-            "text": "iiø65",
+            "text": "vø65",
             "tick": 6720
         },
         {
@@ -207,7 +187,7 @@
         },
         {
             "key": "D",
-            "text": "V",
+            "text": "I",
             "tick": 7200
         },
         {
@@ -217,47 +197,47 @@
         },
         {
             "key": "D",
-            "text": "V",
+            "text": "I",
             "tick": 7200
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 7680
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 7680
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 7680
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 7680
         },
         {
-            "key": "F",
-            "text": "Dm",
-            "tick": 9600
-        },
-        {
-            "key": "F",
-            "text": "i",
-            "tick": 9600
-        },
-        {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 9600
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
+            "tick": 9600
+        },
+        {
+            "key": "D",
+            "text": "Dm",
+            "tick": 9600
+        },
+        {
+            "key": "D",
+            "text": "iv",
             "tick": 9600
         },
         {
@@ -267,7 +247,7 @@
         },
         {
             "key": "F",
-            "text": "V7/III",
+            "text": "V7/VI",
             "tick": 10080
         },
         {
@@ -277,7 +257,7 @@
         },
         {
             "key": "F",
-            "text": "V7/III",
+            "text": "V7/VI",
             "tick": 10080
         },
         {
@@ -287,7 +267,7 @@
         },
         {
             "key": "F",
-            "text": "III",
+            "text": "VI",
             "tick": 10560
         },
         {
@@ -297,7 +277,7 @@
         },
         {
             "key": "F",
-            "text": "III",
+            "text": "VI",
             "tick": 10560
         },
         {
@@ -307,7 +287,7 @@
         },
         {
             "key": "F",
-            "text": "III",
+            "text": "VI",
             "tick": 11520
         },
         {
@@ -317,470 +297,462 @@
         },
         {
             "key": "F",
-            "text": "III",
+            "text": "VI",
             "tick": 11520
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C",
             "tick": 12960
         },
         {
-            "key": "D",
-            "text": "VII",
+            "key": "F",
+            "text": "III",
             "tick": 12960
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C",
             "tick": 12960
         },
         {
-            "key": "D",
-            "text": "VII",
+            "key": "F",
+            "text": "III",
             "tick": 12960
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F",
             "tick": 13440
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 13440
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F",
             "tick": 13440
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 13440
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Dm",
             "tick": 14400
         },
         {
-            "key": "D",
-            "text": "i",
+            "key": "F",
+            "text": "iv",
             "tick": 14400
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Dm",
             "tick": 14400
         },
         {
-            "key": "D",
-            "text": "i",
+            "key": "F",
+            "text": "iv",
             "tick": 14400
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F",
             "tick": 15360
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 15360
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F",
             "tick": 15360
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 15360
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "D/F#",
             "tick": 15840
         },
         {
-            "key": "D",
-            "text": "I6",
+            "key": "F",
+            "text": "IV6",
             "tick": 15840
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "D/F#",
             "tick": 15840
         },
         {
-            "key": "D",
-            "text": "I6",
+            "key": "F",
+            "text": "IV6",
             "tick": 15840
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Gmadd9",
             "tick": 16320
         },
         {
-            "key": "D",
-            "text": "iv(add9)",
+            "key": "F",
+            "text": "vii(add9)",
             "tick": 16320
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Gmadd9",
             "tick": 16320
         },
         {
-            "key": "D",
-            "text": "iv(add9)",
+            "key": "F",
+            "text": "vii(add9)",
             "tick": 16320
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Gm7/Bb",
             "tick": 17280
         },
         {
-            "key": "D",
-            "text": "iv65",
+            "key": "F",
+            "text": "vii65",
             "tick": 17280
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Gm7/Bb",
             "tick": 17280
         },
         {
-            "key": "D",
-            "text": "iv65",
+            "key": "F",
+            "text": "vii65",
             "tick": 17280
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C7/Bb",
             "tick": 17760
         },
         {
-            "key": "D",
-            "text": "V7/III",
+            "key": "F",
+            "text": "V7/VI",
             "tick": 17760
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C7/Bb",
             "tick": 17760
         },
         {
-            "key": "D",
-            "text": "V7/III",
+            "key": "F",
+            "text": "V7/VI",
             "tick": 17760
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F/E",
             "tick": 18240
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 18240
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F/E",
             "tick": 18240
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 18240
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F/E",
             "tick": 19200
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 19200
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "F/E",
             "tick": 19200
         },
         {
-            "key": "D",
-            "text": "III",
+            "key": "F",
+            "text": "VI",
             "tick": 19200
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Bm7b5/D",
             "tick": 19680
         },
         {
-            "key": "D",
-            "text": "viiø7/VII",
+            "key": "F",
+            "text": "viiø7/III",
             "tick": 19680
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Bm7b5/D",
             "tick": 19680
         },
         {
-            "key": "D",
-            "text": "viiø7/VII",
+            "key": "F",
+            "text": "viiø7/III",
             "tick": 19680
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C",
             "tick": 20160
         },
         {
-            "key": "D",
-            "text": "VII",
+            "key": "F",
+            "text": "III",
             "tick": 20160
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "C",
             "tick": 20160
         },
         {
-            "key": "D",
-            "text": "VII",
+            "key": "F",
+            "text": "III",
             "tick": 20160
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Fadd9",
             "tick": 20640
         },
         {
-            "key": "D",
-            "text": "III(add9)",
+            "key": "F",
+            "text": "VI(add9)",
             "tick": 20640
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Fadd9",
             "tick": 20640
         },
         {
-            "key": "D",
-            "text": "III(add9)",
+            "key": "F",
+            "text": "VI(add9)",
             "tick": 20640
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Fadd9",
             "tick": 21120
         },
         {
-            "key": "D",
-            "text": "III(add9)",
+            "key": "F",
+            "text": "VI(add9)",
             "tick": 21120
         },
         {
-            "key": "D",
+            "key": "F",
             "text": "Fadd9",
             "tick": 21120
         },
         {
-            "key": "D",
-            "text": "III(add9)",
+            "key": "F",
+            "text": "VI(add9)",
             "tick": 21120
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 22080
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 22080
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 22080
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 22080
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 23040
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 23040
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 23040
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 23040
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 23520
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 23520
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 23520
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 23520
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Em7b5/Db",
             "tick": 24000
         },
         {
-            "key": "F",
-            "text": "iiø7",
+            "key": "D",
+            "text": "vø7",
             "tick": 24000
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Em7b5/Db",
             "tick": 24000
         },
         {
-            "key": "F",
-            "text": "iiø7",
+            "key": "D",
+            "text": "vø7",
             "tick": 24000
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 24480
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 24480
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 24480
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 24480
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 24960
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 24960
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "Dm",
             "tick": 24960
         },
         {
-            "key": "F",
-            "text": "i",
+            "key": "D",
+            "text": "iv",
             "tick": 24960
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 25440
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 25440
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "A",
             "tick": 25440
         },
         {
-            "key": "F",
-            "text": "V",
+            "key": "D",
+            "text": "I",
             "tick": 25440
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "D",
             "tick": 25920
         },
         {
-            "key": "F",
-            "text": "I",
+            "key": "D",
+            "text": "IV",
             "tick": 25920
         },
         {
-            "key": "F",
+            "key": "D",
             "text": "D",
             "tick": 25920
         },
         {
-            "key": "F",
-            "text": "I",
+            "key": "D",
+            "text": "IV",
             "tick": 25920
         }
     ],
     "implode": [
         {
-            "durationTicks": 960,
-            "key": "D",
+            "durationTicks": 1920,
+            "key": "A",
             "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 0
         },
         {
-            "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
-            "quality": "major",
-            "root": "G",
-            "tick": 960
-        },
-        {
             "durationTicks": 480,
-            "key": "D",
+            "key": "A",
             "mode": "min",
             "quality": "major",
             "root": "E",
@@ -788,7 +760,7 @@
         },
         {
             "durationTicks": 480,
-            "key": "D",
+            "key": "A",
             "mode": "min",
             "quality": "minor",
             "root": "A",
@@ -796,7 +768,7 @@
         },
         {
             "durationTicks": 480,
-            "key": "D",
+            "key": "A",
             "mode": "min",
             "quality": "halfDiminished",
             "root": "B",
@@ -804,7 +776,7 @@
         },
         {
             "durationTicks": 480,
-            "key": "D",
+            "key": "A",
             "mode": "min",
             "quality": "major",
             "root": "E",
@@ -812,8 +784,8 @@
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "harm",
+            "key": "A",
+            "mode": "min",
             "quality": "major",
             "root": "A",
             "tick": 3840
@@ -821,7 +793,7 @@
         {
             "durationTicks": 960,
             "key": "D",
-            "mode": "harm",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 4800
@@ -829,7 +801,7 @@
         {
             "durationTicks": 960,
             "key": "D",
-            "mode": "harm",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 5760
@@ -852,16 +824,16 @@
         },
         {
             "durationTicks": 1920,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 7680
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 9600
@@ -892,176 +864,176 @@
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "C",
             "tick": 12960
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 13440
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "minor",
             "root": "D",
             "tick": 14400
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 15360
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "D",
             "tick": 15840
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "minor",
             "root": "G",
             "tick": 16320
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "minor",
             "root": "G",
             "tick": 17280
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "C",
             "tick": 17760
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 18240
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 19200
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "halfDiminished",
             "root": "B",
             "tick": 19680
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "C",
             "tick": 20160
         },
         {
             "durationTicks": 480,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 20640
         },
         {
             "durationTicks": 960,
-            "key": "D",
-            "mode": "min",
+            "key": "F",
+            "mode": "maj",
             "quality": "major",
             "root": "F",
             "tick": 21120
         },
         {
             "durationTicks": 960,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "major",
             "root": "A",
             "tick": 22080
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "major",
             "root": "A",
             "tick": 23040
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 23520
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "halfDiminished",
             "root": "E",
             "tick": 24000
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 24480
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "minor",
             "root": "D",
             "tick": 24960
         },
         {
             "durationTicks": 480,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "major",
             "root": "A",
             "tick": 25440
         },
         {
             "durationTicks": 960,
-            "key": "F",
-            "mode": "maj",
+            "key": "D",
+            "mode": "min",
             "quality": "major",
             "root": "D",
             "tick": 25920
@@ -1079,10 +1051,10 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "G/A",
+            "harmonyText": "Dm",
             "pitches": [
-                71,
-                74
+                65,
+                69
             ],
             "tick": 960
         },
@@ -1443,9 +1415,9 @@
     ],
     "keyAreas": [
         {
-            "confidence": 0.67,
+            "confidence": 0.535,
             "endTick": 26880,
-            "keyFifths": -1,
+            "keyFifths": 0,
             "mode": "min",
             "startTick": 0
         }
@@ -1638,7 +1610,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "A",
             "previousBassPc": -1,
             "previousQuality": "unknown",
             "previousRootPc": -1,
@@ -1650,24 +1622,24 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "G",
-                    "score": 2.16
+                    "quality": "minor",
+                    "root": "D",
+                    "score": 3.42
                 },
                 {
-                    "quality": "major",
-                    "root": "G",
-                    "score": 2.16
+                    "quality": "power",
+                    "root": "D",
+                    "score": 2.29
                 }
             ],
-            "bassIsStepwiseFromPrevious": true,
+            "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
-            "previousBassPc": 0,
-            "previousQuality": "minor",
-            "previousRootPc": 9,
-            "quality": "major",
-            "root": "G",
+            "key": "A",
+            "previousBassPc": -1,
+            "previousQuality": "unknown",
+            "previousRootPc": -1,
+            "quality": "minor",
+            "root": "D",
             "tick": 960,
             "wasRegional": true
         },
@@ -1686,10 +1658,10 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "A",
             "previousBassPc": 9,
-            "previousQuality": "major",
-            "previousRootPc": 7,
+            "previousQuality": "minor",
+            "previousRootPc": 11,
             "quality": "major",
             "root": "E",
             "tick": 1920,
@@ -1710,7 +1682,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
-            "key": "D",
+            "key": "A",
             "previousBassPc": 9,
             "previousQuality": "minor",
             "previousRootPc": 9,
@@ -1739,7 +1711,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "A",
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -1835,7 +1807,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 7,
             "previousQuality": "major",
             "previousRootPc": 9,
@@ -1873,7 +1845,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 7,
             "previousQuality": "major",
             "previousRootPc": 9,
@@ -1974,7 +1946,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
@@ -1998,7 +1970,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 5,
             "previousQuality": "major",
             "previousRootPc": 5,
@@ -2027,7 +1999,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
@@ -2051,7 +2023,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 6,
             "previousQuality": "major",
             "previousRootPc": 2,
@@ -2080,7 +2052,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 5,
             "previousQuality": "major",
             "previousRootPc": 5,
@@ -2109,7 +2081,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
@@ -2138,7 +2110,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
@@ -2162,7 +2134,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 2,
             "previousQuality": "halfDiminished",
             "previousRootPc": 11,
@@ -2191,7 +2163,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "D",
+            "key": "F",
             "previousBassPc": 0,
             "previousQuality": "major",
             "previousRootPc": 0,
@@ -2220,7 +2192,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2249,7 +2221,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2273,7 +2245,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": true,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 2,
             "previousQuality": "minor",
             "previousRootPc": 2,
@@ -2297,7 +2269,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 1,
             "previousQuality": "halfDiminished",
             "previousRootPc": 4,
@@ -2326,7 +2298,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "F",
+            "key": "D",
             "previousBassPc": 9,
             "previousQuality": "major",
             "previousRootPc": 9,

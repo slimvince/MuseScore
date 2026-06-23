@@ -1674,7 +1674,7 @@
     ],
     "keyAreas": [
         {
-            "confidence": 0.851,
+            "confidence": 0.968,
             "endTick": 46080,
             "keyFifths": 3,
             "mode": "maj",
@@ -2194,24 +2194,24 @@
         {
             "alternatives": [
                 {
-                    "quality": "major",
-                    "root": "B",
-                    "score": 2.523
+                    "quality": "halfDiminished",
+                    "root": "D#",
+                    "score": 2.912
                 },
                 {
                     "quality": "major",
                     "root": "B",
-                    "score": 2.523
+                    "score": 2.778
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": -1,
             "previousQuality": "major",
             "previousRootPc": 2,
-            "quality": "major",
-            "root": "B",
+            "quality": "diminished",
+            "root": "D#",
             "tick": 17280,
             "wasRegional": true
         },
@@ -2220,20 +2220,20 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.248
+                    "score": 2.598
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 2.248
+                    "score": 2.598
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 3,
-            "previousQuality": "major",
-            "previousRootPc": 11,
+            "previousQuality": "diminished",
+            "previousRootPc": 3,
             "quality": "major",
             "root": "E",
             "tick": 18720,
@@ -2254,7 +2254,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 3,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2278,7 +2278,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 8,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2302,7 +2302,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": -1,
             "previousQuality": "major",
             "previousRootPc": 11,
@@ -2331,7 +2331,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": -1,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2355,7 +2355,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2379,7 +2379,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2403,7 +2403,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": 3,
             "previousQuality": "major",
             "previousRootPc": 4,
@@ -2427,7 +2427,7 @@
             ],
             "bassIsStepwiseFromPrevious": false,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": -1,
             "previousQuality": "major",
             "previousRootPc": 9,
@@ -2451,7 +2451,7 @@
             ],
             "bassIsStepwiseFromPrevious": true,
             "bassIsStepwiseToNext": false,
-            "key": "A",
+            "key": "E",
             "previousBassPc": -1,
             "previousQuality": "halfDiminished",
             "previousRootPc": 8,

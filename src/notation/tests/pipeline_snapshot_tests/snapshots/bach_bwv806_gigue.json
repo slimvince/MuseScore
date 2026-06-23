@@ -1144,7 +1144,7 @@
     ],
     "keyAreas": [
         {
-            "confidence": 0.6,
+            "confidence": 0.381,
             "endTick": 21840,
             "keyFifths": 3,
             "mode": "maj",

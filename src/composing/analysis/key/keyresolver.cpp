@@ -203,6 +203,54 @@ void promoteWinnerInPlace(std::vector<KeyModeAnalysisResult>& results, Pred chos
 
 } // namespace
 
+KeySignatureContext resolveKeySignatureContext(
+    const mu::engraving::Score* sc,
+    const mu::engraving::Fraction& tick,
+    mu::engraving::staff_idx_t staffIdx,
+    const std::set<std::size_t>& excludeStaves,
+    const KeyModeAnalyzerPreferences& prefs)
+{
+    using namespace mu::engraving;
+
+    KeySignatureContext out;
+
+    const std::size_t clampedStaffIdx = std::min<std::size_t>(staffIdx, sc->nstaves() - 1);
+    const KeySigEvent keySig = sc->staff(clampedStaffIdx)->keySigEvent(tick);
+    out.notatedFifths   = static_cast<int>(keySig.concertKey());
+    out.correctedFifths = out.notatedFifths;
+
+    // ── Declared mode from key signature ─────────────────────────────────
+    {
+        using EMode = mu::engraving::KeyMode;
+        switch (keySig.mode()) {
+        case EMode::MAJOR:
+        case EMode::IONIAN:      out.declaredMode = KeySigMode::Ionian;     break;
+        case EMode::MINOR:
+        case EMode::AEOLIAN:     out.declaredMode = KeySigMode::Aeolian;    break;
+        case EMode::DORIAN:      out.declaredMode = KeySigMode::Dorian;     break;
+        case EMode::PHRYGIAN:    out.declaredMode = KeySigMode::Phrygian;   break;
+        case EMode::LYDIAN:      out.declaredMode = KeySigMode::Lydian;     break;
+        case EMode::MIXOLYDIAN:  out.declaredMode = KeySigMode::Mixolydian; break;
+        case EMode::LOCRIAN:     out.declaredMode = KeySigMode::Locrian;    break;
+        default:                 out.declaredMode = std::nullopt;           break;
+        }
+    }
+
+    // ── Mode-absent measurement floor (Stage 4b-i) ───────────────────────
+    // prefs.ignoreDeclaredMode drops the declared mode entirely, which also skips
+    // the declared-gated partial-signature correction below (the no-crutch floor).
+    if (prefs.ignoreDeclaredMode) {
+        out.declaredMode = std::nullopt;
+    }
+
+    // ── Baroque partial-signature correction (declared-gated, one step) ──
+    if (out.declaredMode.has_value()) {
+        out.correctedFifths = partialSignatureCorrection(
+            sc, clampedStaffIdx, excludeStaves, out.notatedFifths, *out.declaredMode);
+    }
+    return out;
+}
+
 std::vector<KeyModeAnalysisResult>
 resolveKeyAndModeRanked(
     const mu::engraving::Score* sc,
@@ -215,52 +263,15 @@ resolveKeyAndModeRanked(
 {
     using namespace mu::engraving;
 
-    const std::size_t clampedStaffIdx = std::min<std::size_t>(staffIdx, sc->nstaves() - 1);
-    const KeySigEvent keySig = sc->staff(clampedStaffIdx)->keySigEvent(tick);
-    int keyFifths = static_cast<int>(keySig.concertKey());
-    const int notatedFifths = keyFifths;
-
-    // ── Declared mode from key signature ─────────────────────────────────
-    std::optional<KeySigMode> declaredMode;
-    {
-        using EMode = mu::engraving::KeyMode;
-        switch (keySig.mode()) {
-        case EMode::MAJOR:
-        case EMode::IONIAN:      declaredMode = KeySigMode::Ionian;     break;
-        case EMode::MINOR:
-        case EMode::AEOLIAN:     declaredMode = KeySigMode::Aeolian;    break;
-        case EMode::DORIAN:      declaredMode = KeySigMode::Dorian;     break;
-        case EMode::PHRYGIAN:    declaredMode = KeySigMode::Phrygian;   break;
-        case EMode::LYDIAN:      declaredMode = KeySigMode::Lydian;     break;
-        case EMode::MIXOLYDIAN:  declaredMode = KeySigMode::Mixolydian; break;
-        case EMode::LOCRIAN:     declaredMode = KeySigMode::Locrian;    break;
-        default:                 declaredMode = std::nullopt;           break;
-        }
-    }
-
-    // ── Mode-absent measurement floor (Stage 4b-i) ───────────────────────
-    //
-    // When the caller sets prefs.ignoreDeclaredMode (batch_analyze
-    // --ignore-declared-mode), drop the declared mode entirely. This disables
-    // every remaining declared-mode influence at once — the small hint in
-    // analyzeKeyMode, the partial-signature correction below (declared-gated),
-    // and the piece-start opening — so key resolution is purely note-based. It
-    // is the "no-crutch floor" condition; default false = no-op (byte-identical).
-    if (prefs.ignoreDeclaredMode) {
-        declaredMode = std::nullopt;
-    }
-
-    // ── Baroque partial-signature correction ─────────────────────────────
-    //
-    // Reinterpret the notated signature one step toward the declared mode's
-    // missing accidental when the "one accidental short" convention is detected
-    // (e.g. C minor notated with 2 flats → -3). All downstream steps (piece-start
-    // anchor, analyzeKeyMode, fallback) use the corrected value, which lets the
-    // proven machinery reach the true tonic without touching the signature lock.
-    if (declaredMode.has_value()) {
-        keyFifths = partialSignatureCorrection(sc, clampedStaffIdx, excludeStaves,
-                                               keyFifths, *declaredMode);
-    }
+    // Signature read + declared mode + Baroque partial-signature correction, in one
+    // place (resolveKeySignatureContext) so the Layer-3 decoder wiring shares the
+    // exact same inputs (no duplicated logic). Behaviour is unchanged: keyFifths is
+    // the corrected value; notatedFifths is the pre-correction value for the dump.
+    const KeySignatureContext ksc =
+        resolveKeySignatureContext(sc, tick, staffIdx, excludeStaves, prefs);
+    int keyFifths = ksc.correctedFifths;
+    const int notatedFifths = ksc.notatedFifths;
+    std::optional<KeySigMode> declaredMode = ksc.declaredMode;
 
     if (dumpOut) {
         dumpOut->notatedFifths   = notatedFifths;
