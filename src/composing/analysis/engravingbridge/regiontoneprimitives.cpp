@@ -201,28 +201,15 @@ void collectPitchContext(const mu::engraving::Score* sc,
 
 namespace {
 
-// Tick-based beat-type weight: reproduces scoreharvest::safeBeatType(measure,
-// segment) using only an INDEXED measure lookup (Score::tick2measure) + the
-// onset's rtick — no segment walk. The index-friendly form pitchContextOverSpan
-// needs (distinct from the segment-taking safeBeatType, a different input domain).
+// Prefs-weighted beat weight at an onset tick. Thin wrapper over the shared
+// indexed beat-type lookup scoreharvest::beatTypeForOnsetTick (tick2measure +
+// rtick2beatType, no segment walk) — the single source for tick→beat-type, also
+// read by the Layer-4 membership decision. This applies the KEY path's
+// prefs-weighted scale; membership uses the prefs-free regionMetricWeightForOnsetTick.
 double beatWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick,
                               const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs)
 {
-    using namespace mu::engraving;
-    if (!sc) {
-        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
-    }
-    const Measure* m = sc->tick2measure(Fraction::fromTicks(onsetTick));
-    if (!m) {
-        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
-    }
-    const int num = m->timesig().numerator();
-    const int den = m->timesig().denominator();
-    if (num <= 0 || den <= 0) {
-        return shv::beatTypeToWeight(BeatType::SUBBEAT, prefs);
-    }
-    const int rtick = onsetTick - m->tick().ticks();
-    return shv::beatTypeToWeight(TimeSigFrac(num, den).rtick2beatType(rtick), prefs);
+    return shv::beatTypeToWeight(shv::beatTypeForOnsetTick(sc, onsetTick), prefs);
 }
 
 } // namespace

@@ -57,6 +57,8 @@ using CSD = cs::ChordSliceDecoder;
 using cs::ChordSliceCandidate;
 using cs::ChordSliceDecoderPreferences;
 using cs::SliceChord;
+using cs::FocalNote;
+using cs::MembershipResult;
 
 namespace {
 
@@ -71,6 +73,34 @@ ChordSliceCandidate cand(int rootPc, ChordQuality quality, int bassPc, double sc
     c.tiePriority = tie;
     c.score = score;
     return c;
+}
+
+// kMasks template indices used by the membership tests (mirrors harmonicfunctionlayer
+// kMasks): 0 = major triad {0,4,7}, 4 = minor triad {0,3,7}, 2 = dom7 {0,4,7,10}.
+constexpr int kTieMajor = 0;
+constexpr int kTieMinor = 4;
+
+ChordSliceCandidate triad(int rootPc, ChordQuality q, int tie)
+{
+    return cand(rootPc, q, rootPc, 0.0, tie);
+}
+
+// A focal note: pitch + onset/release (ticks) + voice + the salience inputs.
+FocalNote note(int pitch, int onset, int release, int voice, double metricWeight, double durationQn)
+{
+    FocalNote f;
+    f.pitch = pitch;
+    f.onset = onset;
+    f.release = release;
+    f.voice = voice;
+    f.metricWeight = metricWeight;
+    f.durationQn = durationQn;
+    return f;
+}
+
+bool hasPc(const std::vector<int>& v, int pc)
+{
+    return std::find(v.begin(), v.end(), pc) != v.end();
 }
 
 } // namespace
@@ -205,12 +235,130 @@ TEST(Composing_DecodeChord, Decide_EmptyCandidatesIsNoChord)
     EXPECT_EQ(sc.sliceIndex, 3);
 }
 
-TEST(Composing_DecodeChord, Decide_MembershipSetsAreEmptyThisIncrement)
+TEST(Composing_DecodeChord, Decide_DoesNotClassifyMembershipItself)
 {
+    // decideSlice is the scorer-independent SELECTION core; membership is a separate
+    // step (classifyMembership, applied in decode's pass 2). decideSlice leaves the
+    // sets empty — the membership tests below exercise classifyMembership directly.
     const std::vector<ChordSliceCandidate> cands = { cand(0, ChordQuality::Major, 0, 3.0) };
     const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);
-    EXPECT_TRUE(sc.chordTonePcs.empty()) << "membership is Increment B";
-    EXPECT_TRUE(sc.nonChordTonePcs.empty()) << "no NCT called this increment";
+    EXPECT_TRUE(sc.chordTonePcs.empty());
+    EXPECT_TRUE(sc.nonChordTonePcs.empty());
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// Membership (Increment B) — per-note chord-tone vs non-chord-tone, scorer-free.
+// classifyMembership(chord, focal, window, prevChord, nextChord) injected by hand.
+// ════════════════════════════════════════════════════════════════════════════
+
+// A clean triad: every focal note is a template tone → all chord tones, no NCT.
+TEST(Composing_DecodeChord, Memb_CleanTriadAllChordTones)
+{
+    const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G
+    };
+    const MembershipResult m = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.chordTonePcs, 0));
+    EXPECT_TRUE(hasPc(m.chordTonePcs, 4));
+    EXPECT_TRUE(hasPc(m.chordTonePcs, 7));
+    EXPECT_TRUE(m.nonChordTonePcs.empty());
+    EXPECT_DOUBLE_EQ(m.implausibilityPenalty, 0.0);
+}
+
+// A weak, short, off-beat extra note (the D in {C,E,G,D}) is a non-chord tone —
+// the over-read the membership decision recovers; the chord stays C major.
+TEST(Composing_DecodeChord, Memb_WeakExtraIsNonChordTone)
+{
+    const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);   // C major
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C  (chord tone)
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G
+        note(62, 960, 1200, 0, 0.5, 0.25),// D — weak (subbeat) + short → embellishment
+    };
+    const MembershipResult m = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.nonChordTonePcs, 2)) << "the weak short D is a non-chord tone";
+    EXPECT_FALSE(hasPc(m.chordTonePcs, 2));
+    EXPECT_DOUBLE_EQ(m.implausibilityPenalty, 0.0) << "an embellishment costs the chord nothing";
+}
+
+// A sustained, strong extra note (a 6th) is a chord-tone extension — it "falls out"
+// of membership (design §5), and the basic triad is charged for needing it.
+TEST(Composing_DecodeChord, Memb_StrongSustainedExtraIsChordToneExtension)
+{
+    const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);   // C major
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G
+        note(69, 0, 1920, 0, 1.0, 4.0),   // A — strong + full length, extra → the 6th
+    };
+    const MembershipResult m = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.chordTonePcs, 9)) << "a sustained strong 6th is a chord tone (C6)";
+    EXPECT_FALSE(hasPc(m.nonChordTonePcs, 9));
+    EXPECT_GT(m.implausibilityPenalty, 0.0) << "the basic triad is charged for the extra it needs";
+}
+
+// A suspension: a tone held from the previous chord that resolves DOWN by step to a
+// chord tone is a non-chord tone, even on a strong beat (design §6).
+TEST(Composing_DecodeChord, Memb_SuspensionIsNonChordTone)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const ChordSliceCandidate dMin = triad(2, ChordQuality::Minor, kTieMinor);   // Dm {2,5,9}
+    // Focal slice [0,480): C/E/G + a suspended D (pc 2, held from Dm), strong beat.
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 480, 3, 1.0, 1.0),    // C
+        note(64, 0, 480, 2, 1.0, 1.0),    // E
+        note(67, 0, 480, 1, 1.0, 1.0),    // G
+        note(62, 0, 480, 0, 1.0, 1.0),    // D — strong, but suspends from Dm
+    };
+    // Window adds the resolution note: D (62) → C (60), a whole step down, in voice 0.
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(60, 480, 960, 0, 1.0, 1.0));   // C — the resolution (next slice)
+
+    const MembershipResult m = CSD::classifyMembership(cMaj, focal, window,
+                                                       std::optional<ChordSliceCandidate>(dMin),
+                                                       std::nullopt);
+    EXPECT_TRUE(hasPc(m.nonChordTonePcs, 2)) << "the suspended D resolving down to C is a non-chord tone";
+    EXPECT_FALSE(hasPc(m.chordTonePcs, 2));
+}
+
+// A passing tone: stepwise in from a chord tone and stepwise out to a chord tone is a
+// non-chord tone purely on its stepwise treatment (even if not metrically weak).
+TEST(Composing_DecodeChord, Memb_PassingToneByStepwiseTreatment)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major
+    // Voice 0 line C(60) → D(62) → E(64); the D is the focal passing tone, strong beat.
+    const std::vector<FocalNote> focal = {
+        note(62, 480, 960, 0, 1.0, 1.0),  // D — focal, between C and E by step
+        note(67, 480, 960, 1, 1.0, 1.0),  // G — chord tone sounding with it
+    };
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before (chord tone)
+    window.push_back(note(64, 960, 1440, 0, 1.0, 1.0));  // E after (chord tone)
+
+    const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.nonChordTonePcs, 2)) << "D approached and left by step between chord tones is passing";
+}
+
+// Determinism: classifyMembership is a pure function of its inputs.
+TEST(Composing_DecodeChord, Memb_Deterministic)
+{
+    const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),
+        note(64, 0, 1920, 2, 1.0, 4.0),
+        note(67, 0, 1920, 1, 1.0, 4.0),
+        note(62, 960, 1200, 0, 0.5, 0.25),
+    };
+    const MembershipResult a = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
+    const MembershipResult b = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
+    EXPECT_EQ(a.chordTonePcs, b.chordTonePcs);
+    EXPECT_EQ(a.nonChordTonePcs, b.nonChordTonePcs);
+    EXPECT_DOUBLE_EQ(a.implausibilityPenalty, b.implausibilityPenalty);
 }
 
 // ════════════════════════════════════════════════════════════════════════════

@@ -82,6 +82,20 @@ mu::engraving::BeatType safeBeatType(const mu::engraving::Measure* measure,
 ///   1.0 = downbeat, 0.85 = stressed, 0.75 = unstressed, 0.5 = subbeat.
 double regionMetricWeightForBeatType(mu::engraving::BeatType bt);
 
+/// BeatType at an absolute onset tick, via an INDEXED measure lookup
+/// (Score::tick2measure) + the onset's rtick — no segment walk. The index-friendly
+/// form (distinct input domain from the segment-taking safeBeatType): the single
+/// source for "what beat does this tick fall on" used by both pitchContextOverSpan
+/// (key path) and the Layer-4 membership decision (chord path). Falls back to
+/// SUBBEAT for null score / no measure / invalid time signature.
+mu::engraving::BeatType beatTypeForOnsetTick(const mu::engraving::Score* sc, int onsetTick);
+
+/// Normalised metric weight [0.5,1.0] at an absolute onset tick (indexed) —
+/// regionMetricWeightForBeatType(beatTypeForOnsetTick(sc, onsetTick)). The
+/// prefs-free per-note metric weight the Layer-4 membership decision reads off the
+/// Layer-1 NoteEvent stream (a weak/off-beat note is embellishment-like).
+double regionMetricWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick);
+
 /// Exponential time decay: notes further from the analysis tick carry less weight.
 /// `beatsPerUnit` is the length-scale (beats per decay step; one 4/4 measure by
 /// default). The default keeps every existing caller byte-identical; the windowed

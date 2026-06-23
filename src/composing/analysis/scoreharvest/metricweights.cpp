@@ -83,6 +83,30 @@ double regionMetricWeightForBeatType(mu::engraving::BeatType bt)
     }
 }
 
+mu::engraving::BeatType beatTypeForOnsetTick(const mu::engraving::Score* sc, int onsetTick)
+{
+    using namespace mu::engraving;
+    if (!sc) {
+        return BeatType::SUBBEAT;
+    }
+    const Measure* m = sc->tick2measure(Fraction::fromTicks(onsetTick));
+    if (!m) {
+        return BeatType::SUBBEAT;
+    }
+    const int num = m->timesig().numerator();
+    const int den = m->timesig().denominator();
+    if (num <= 0 || den <= 0) {
+        return BeatType::SUBBEAT;
+    }
+    const int rtick = onsetTick - m->tick().ticks();
+    return TimeSigFrac(num, den).rtick2beatType(rtick);
+}
+
+double regionMetricWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick)
+{
+    return regionMetricWeightForBeatType(beatTypeForOnsetTick(sc, onsetTick));
+}
+
 double timeDecay(double beatsAgo, double decayRate, double beatsPerUnit)
 {
     return std::pow(decayRate, beatsAgo / beatsPerUnit);

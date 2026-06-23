@@ -299,7 +299,7 @@ def root_directional(preset, base_splits, dec_splits, base_meta, dec_meta, test_
     L.append(f"     per-slice  decoder  : {_pct(dt.dur_root_match, dt.dur_scorable):5.1f}%")
     L.append(f"  Δ dur-weighted (decoder − baseline): "
              f"{_pct(dt.dur_root_match, dt.dur_scorable) - _pct(bt.dur_root_match, bt.dur_scorable):+.1f} pts "
-             f"(expect the decoder ROUGHER — no membership yet → embellishment over-read)")
+             f"(Increment B: does per-slice + membership now MEET/BEAT the per-region baseline?)")
     L.append(f"  decoder top root misses (our->gt): "
              + ", ".join(f"{o}->{d}:{n}" for (o, d), n in dt.miss.most_common(6)))
     return "\n".join(L)
@@ -309,20 +309,18 @@ def membership_report(preset, memb_splits, test_pct):
     t = memb_splits['test']
     L = []
     L.append("=" * 84)
-    L.append(f"NCT MEMBERSHIP (held-out, TEST split) — {preset}   [Increment A: TRIVIAL baseline]")
+    L.append(f"NCT MEMBERSHIP (held-out, TEST split) — {preset}   [Increment B: per-note CT/NCT]")
     L.append("=" * 84)
-    L.append(f"  scored: {t.notes} sounding notes over {t.slices} slices "
+    L.append(f"  scored: {t.notes} sounding (slice,pc) over {t.slices} slices "
              f"(GT chord-tones {t.gt_ct}, GT non-chord-tones {t.gt_nct})")
-    L.append(f"  the decoder calls NO note an NCT this increment (membership = Increment B),")
-    L.append(f"  so every sounding note is implicitly a chord tone:")
     L.append(f"     NCT  precision : {_fmtpct(_prec(t.nct_tp, t.nct_fp))}  "
-             f"(tp {t.nct_tp}, fp {t.nct_fp})")
+             f"(tp {t.nct_tp}, fp {t.nct_fp})   ◀ of the notes we CALL non-chord, how many are")
     L.append(f"     NCT  recall    : {_fmtpct(_rec(t.nct_tp, t.nct_fn))}  "
-             f"(tp {t.nct_tp}, fn {t.nct_fn})   ◀ 0% by construction — every true NCT missed")
+             f"(tp {t.nct_tp}, fn {t.nct_fn})   ◀ of the true non-chord tones, how many we catch")
     L.append(f"     CT   precision : {_fmtpct(_prec(t.ct_tp, t.ct_fp))}  "
-             f"(tp {t.ct_tp}, fp {t.ct_fp})   ◀ < 100% = the over-read; Increment-B headroom")
+             f"(tp {t.ct_tp}, fp {t.ct_fp})   ◀ 1 − (residual over-read)")
     L.append(f"     CT   recall    : {_fmtpct(_rec(t.ct_tp, t.ct_fn))}  "
-             f"(tp {t.ct_tp}, fn {t.ct_fn})")
+             f"(tp {t.ct_tp}, fn {t.ct_fn})   ◀ true chord tones we did NOT wrongly drop")
     L.append(f"  over-read rate (sounding notes that are GT non-chord-tones): "
              f"{_pct(t.gt_nct, t.notes):.1f}%  ({t.gt_nct}/{t.notes})")
     return "\n".join(L)

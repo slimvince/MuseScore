@@ -121,6 +121,63 @@ struct ChordSliceDecoderPreferences {
     /// Applied to a COPY of the chord prefs inside decode(); production is
     /// untouched.
     int minDistinctPcs = 1;
+
+    // ── Increment B: adaptive lazy-extend window (design §2/§3) ──────────────
+    //
+    // The window starts at the narrow base (±contextSlices) and lazy-extends one
+    // slice each side at a time, stopping as soon as it holds >= minHarmonyPcs
+    // distinct pitch classes (the prevailing harmony is "in view") OR reaches
+    // ±maxContextSlices (bounded by one harmony's worth of figuration — never a
+    // phrase; that wide context belongs to Layer 3). A dense (triad) slice already
+    // meets minHarmonyPcs so it keeps the base window; only thin (arpeggio / dyad)
+    // slices extend. With maxContextSlices == contextSlices the window is fixed
+    // (the Increment-A behaviour).
+
+    /// Upper bound on the window half-width (neighbour slices each side).
+    int maxContextSlices = 3;
+
+    /// Distinct-PC target that stops the lazy extension (a triad = 3).
+    int minHarmonyPcs = 3;
+
+    // ── Increment B: per-note membership (CT vs NCT) + its score feedback ────
+    //
+    // The lever (design §5/§11). For the chosen chord, each FOCAL sounding note is
+    // classified chord-tone vs non-chord-tone from its metric salience and its
+    // local stepwise treatment (passing/neighbour/suspension) — read off the
+    // INDEXED Layer-1 NoteEvent stream, never the aggregated pc view. The
+    // classification feeds back into candidate selection: a candidate is penalised
+    // for every STRUCTURAL (non-embellishment) focal note it leaves out of its
+    // chord, so the chosen chord best explains the slice as "a chord plus its
+    // non-chord tones".
+
+    /// Master switch. OFF reproduces Increment-A behaviour EXACTLY (no NCT called,
+    /// no re-rank; only the adaptive window above differs, and that too collapses to
+    /// the fixed window when maxContextSlices == contextSlices).
+    bool enableMembership = true;
+
+    /// Run the neighbour-aware second pass (design §4 two-pass). OFF = membership
+    /// from the slice's own notes + key prior alone (no neighbour-chord context).
+    bool twoPass = true;
+
+    /// A focal "extra" note (pitch class not in the chord's basic template) is
+    /// called a non-chord tone when its metric salience is below this threshold OR
+    /// it is stepwise-treated. salience = metricWeight[0.5,1] × min(1, durationQn /
+    /// membershipReferenceDurationQn). Seed; swept later.
+    double membershipSalienceThreshold = 0.55;
+
+    /// Duration (quarter notes) at/above which a note is full-length for salience.
+    double membershipReferenceDurationQn = 1.0;
+
+    /// Strength of the membership feedback into candidate selection (design §5
+    /// step 3): a candidate's score is reduced by membershipPenaltyWeight × salience
+    /// for every STRUCTURAL focal note (an extra note that is NOT embellishment-like)
+    /// it cannot explain as a chord tone. 0 = label notes but do not re-rank
+    /// (isolates the membership-metric effect from the chord-root effect). Seed.
+    double membershipPenaltyWeight = 0.6;
+
+    /// Tick tolerance for "immediately adjacent" in the stepwise test (0 = strictly
+    /// contiguous onset/release).
+    int stepwiseGapToleranceTicks = 0;
 };
 
 /// Global default decoder settings.
@@ -155,13 +212,43 @@ struct SliceChord {
     double confidence = 0.0;                       ///< margin to the best DIFFERENT (root,quality) chord
     bool uncertain = false;                        ///< confidence < uncertaintyMargin
 
-    // ── Membership (Increment B) — STUBBED EMPTY this increment ──────────────
-    // Binary chord-tone vs non-chord-tone membership is the real lever (design
-    // §11) and the per-note decision is built next. Here every sounding note is
-    // implicitly a chord tone (no NCT called); these stay empty so the §10
-    // membership metric reports the trivial baseline.
-    std::vector<int> chordTonePcs;                 ///< empty (Increment B)
-    std::vector<int> nonChordTonePcs;              ///< empty (Increment B)
+    // ── Membership (Increment B) — the per-note CT vs NCT decision ───────────
+    // Binary chord-tone vs non-chord-tone membership, the real lever (design §11),
+    // over the FOCAL slice's sounding pitch classes. A pc is a non-chord tone when
+    // ALL of its focal notes were classified embellishment-like (weak metric
+    // salience or stepwise-treated) and the pc is not a template tone of the chosen
+    // chord; otherwise it is a chord tone (including the added 6th/9th that "falls
+    // out" as a sustained strong extra — design §5). Empty only when the slice has
+    // no chord / no sounding notes, or membership is disabled.
+    std::vector<int> chordTonePcs;                 ///< focal pcs the chosen chord explains
+    std::vector<int> nonChordTonePcs;              ///< focal pcs called non-chord tones
+};
+
+// ── A focal sounding note, projected from the Layer-1 NoteEvent stream ────────
+//
+// The per-note view the membership decision reads (NOT the aggregated pc view): one
+// entry per eligible note sounding in the focal slice, with the metric salience
+// inputs (beat-weight at onset + sounding duration) and the voice/onset/release the
+// stepwise (passing/neighbour/suspension) test needs. Built in decode() through the
+// INDEXED NoteModel::overlapping; injected by hand in the behaviour tests.
+struct FocalNote {
+    int pitch = 0;             ///< ppitch
+    int onset = 0;             ///< tie-resolved onset tick
+    int release = 0;           ///< tie-resolved release tick
+    int voice = 0;             ///< voice (the stepwise test is per-voice / melodic)
+    double metricWeight = 1.0; ///< normalised beat weight at onset [0.5,1.0]
+    double durationQn = 0.0;   ///< sounding duration in quarter notes
+
+    int pc() const { return ((pitch % 12) + 12) % 12; }
+};
+
+// ── The result of classifying one slice's focal notes against a chord ─────────
+struct MembershipResult {
+    std::vector<int> chordTonePcs;
+    std::vector<int> nonChordTonePcs;
+    /// Σ salience of the STRUCTURAL focal notes (non-embellishment extras) the chord
+    /// leaves out — the implausibility the score feedback (design §5 step 3) charges.
+    double implausibilityPenalty = 0.0;
 };
 
 // ── The decoder ──────────────────────────────────────────────────────────────
@@ -227,6 +314,22 @@ public:
         int sliceIndex,
         const std::vector<ChordSliceCandidate>& candidates,
         const std::optional<ChordSliceCandidate>& prevailing,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
+
+    /// Classify a slice's FOCAL notes as chord-tone vs non-chord-tone for @p chord,
+    /// given the provisional neighbour chords (design §5 step 3). Pure — no scorer /
+    /// note-model dependency — so the behaviour tests inject FocalNotes + neighbour
+    /// chords by hand. @p window is the broader (adaptive-window) note stream the
+    /// per-voice stepwise test reads its melodic neighbours from; it must contain the
+    /// focal notes (focal ⊆ window). prevChord / nextChord absent ⇒ no neighbour
+    /// context (the two-pass-off / boundary case). Returns the chord-tone and
+    /// non-chord-tone pc sets plus the implausibility penalty the feedback charges.
+    static MembershipResult classifyMembership(
+        const ChordSliceCandidate& chord,
+        const std::vector<FocalNote>& focal,
+        const std::vector<FocalNote>& window,
+        const std::optional<ChordSliceCandidate>& prevChord,
+        const std::optional<ChordSliceCandidate>& nextChord,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 

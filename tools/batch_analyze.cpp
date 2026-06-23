@@ -1757,21 +1757,26 @@ static void printHelp(const std::string& prog)
         << "            decoder is NOT wired into the live analyzer; this RETURNS before any\n"
         << "            analysis runs, so production output is unchanged. Default OFF.\n"
         << "  --seq-change-base N | --seq-relative-extra N | --seq-per-fifth N |\n"
-        << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N\n"
+        << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N |\n"
+        << "  --seq-tpc-weight N\n"
         << "            (Layer-3 BOUNDED SWEEP) Override the decoder-private\n"
         << "            KeyModeSequencePreferences for the --decode-keymode path only\n"
         << "            (read nowhere else; production stays byte-identical). Default =\n"
-        << "            the committed decoder defaults.\n"
+        << "            the committed decoder defaults. --seq-tpc-weight is the decode-only\n"
+        << "            tpc-aware key-fit weight (0 = committed pitch-class emission).\n"
         << "  --decode-chords\n"
         << "            (Layer-4 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-4 per-slice CHORD decoder\n"
         << "            (chordslicedecoder) over the slices, and emit its chosen chord\n"
         << "            (root + quality + inversion + confidence + uncertain), the focal-\n"
-        << "            slice sounding pitch classes, and the (empty) membership split per\n"
-        << "            slice. NOT wired into the live analyzer; this RETURNS before any\n"
-        << "            analysis runs, so production output is unchanged. Default OFF.\n"
+        << "            slice sounding pitch classes, and the per-note chord-tone / non-\n"
+        << "            chord-tone MEMBERSHIP split (Increment B). NOT wired into the live\n"
+        << "            analyzer; this RETURNS before any analysis runs, so production\n"
+        << "            output is unchanged. Default OFF.\n"
         << "  --chord-context-slices N | --chord-topk N | --chord-uncertain-margin N |\n"
-        << "  --chord-min-pcs N\n"
+        << "  --chord-min-pcs N | --chord-max-context-slices N | --chord-min-harmony-pcs N |\n"
+        << "  --chord-memb-salience N | --chord-memb-penalty N | --chord-memb-ref-dur N |\n"
+        << "  --chord-stepwise-tol N | --chord-no-membership | --chord-no-two-pass\n"
         << "            (Layer-4 sweep) Override the decoder-private\n"
         << "            ChordSliceDecoderPreferences for the --decode-chords path only\n"
         << "            (read nowhere else; production stays byte-identical). Default =\n"
@@ -2342,8 +2347,8 @@ static std::string runChordDecode(const Score* score, const std::string& stem,
         { bool f = true; for (int pc : soundingPcs) { os << (f ? "" : ", ") << pc; f = false; } }
         os << "]";
 
-        // Membership split (Increment A: NCT empty ⇒ every sounding note is
-        // implicitly a chord tone; the §10 metric reports the trivial baseline).
+        // Membership split (Increment B): the per-note chord-tone / non-chord-tone
+        // decision over the focal slice's sounding pitch classes (the §10 metric).
         os << ", \"noteClassifications\": { \"chordTones\": [";
         { bool f = true; for (int pc : sc.chordTonePcs) { os << (f ? "" : ", ") << pc; f = false; } }
         os << "], \"nonChordTones\": [";
@@ -2468,8 +2473,18 @@ int main(int argc, char* argv[])
             decodeKeyMode = true;
         } else if (a == "--decode-chords") {
             decodeChords = true;
+        } else if (a == "--chord-no-membership") {
+            // Decode-only: disable the Increment-B membership decision + feedback +
+            // two-pass (reproduces the Increment-A behaviour, modulo the adaptive window).
+            chordDecoderPrefs.enableMembership = false;
+        } else if (a == "--chord-no-two-pass") {
+            // Decode-only: membership from the slice's own notes + key prior alone.
+            chordDecoderPrefs.twoPass = false;
         } else if (a == "--chord-context-slices" || a == "--chord-topk"
-                   || a == "--chord-uncertain-margin" || a == "--chord-min-pcs") {
+                   || a == "--chord-uncertain-margin" || a == "--chord-min-pcs"
+                   || a == "--chord-max-context-slices" || a == "--chord-min-harmony-pcs"
+                   || a == "--chord-memb-salience" || a == "--chord-memb-penalty"
+                   || a == "--chord-memb-ref-dur" || a == "--chord-stepwise-tol") {
             // Decode-only ChordSliceDecoderPreferences sweep overrides (see decl above).
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
@@ -2485,6 +2500,18 @@ int main(int argc, char* argv[])
                 chordDecoderPrefs.uncertaintyMargin = val.toDouble(&ok);
             } else if (a == "--chord-min-pcs") {
                 chordDecoderPrefs.minDistinctPcs = val.toInt(&ok);
+            } else if (a == "--chord-max-context-slices") {
+                chordDecoderPrefs.maxContextSlices = val.toInt(&ok);
+            } else if (a == "--chord-min-harmony-pcs") {
+                chordDecoderPrefs.minHarmonyPcs = val.toInt(&ok);
+            } else if (a == "--chord-memb-salience") {
+                chordDecoderPrefs.membershipSalienceThreshold = val.toDouble(&ok);
+            } else if (a == "--chord-memb-penalty") {
+                chordDecoderPrefs.membershipPenaltyWeight = val.toDouble(&ok);
+            } else if (a == "--chord-memb-ref-dur") {
+                chordDecoderPrefs.membershipReferenceDurationQn = val.toDouble(&ok);
+            } else if (a == "--chord-stepwise-tol") {
+                chordDecoderPrefs.stepwiseGapToleranceTicks = val.toInt(&ok);
             }
             if (!ok) {
                 std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
@@ -2494,7 +2521,7 @@ int main(int argc, char* argv[])
         } else if (a == "--seq-change-base" || a == "--seq-relative-extra"
                    || a == "--seq-per-fifth" || a == "--seq-window-beats"
                    || a == "--seq-uncertain" || a == "--seq-topk"
-                   || a == "--seq-max-alts") {
+                   || a == "--seq-max-alts" || a == "--seq-tpc-weight") {
             // Decode-only KeyModeSequencePreferences sweep overrides (see decl above).
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
@@ -2516,6 +2543,10 @@ int main(int argc, char* argv[])
                 seqPrefs.topK = val.toInt(&ok);
             } else if (a == "--seq-max-alts") {
                 seqPrefs.maxAlternatives = val.toInt(&ok);
+            } else if (a == "--seq-tpc-weight") {
+                // DECODE-ONLY tpc-aware key-fit weight (cc_layer3_tpc_keymeasure).
+                // 0 (default) = committed pitch-class emission, byte-identical.
+                seqPrefs.tpcKeyFitWeight = val.toDouble(&ok);
             }
             if (!ok) {
                 std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
