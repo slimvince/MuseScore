@@ -117,6 +117,10 @@ compile_commands.json
 /cc_e2d_*.md
 /cc_*.md
 ai-assistant/CC_INSTRUCTION_*.md
+# Transient tools/cc_* scratch (consistent with root /cc_*): cc_*.py / cc_*.json /
+# cc_*.err / dumps. Load-bearing harnesses already tracked (cc_layer3_*) are
+# unaffected — gitignore does not untrack committed files.
+tools/cc_*
 
 # Build/shell-redirect accidents that got committed once (Stage 0.4). No script
 # regenerates them; these globs are insurance so a recurrence stays untracked.
