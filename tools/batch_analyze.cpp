@@ -101,6 +101,8 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
 #include "composing/analysis/key/keymodesequence.h"         // Layer 3 decoder: --decode-keymode
+#include "composing/analysis/chord/chordslicedecoder.h"     // Layer 4 decoder: --decode-chords
+#include "composing/analysis/engravingbridge/regiontonecollector.h" // weightedPcView (focal-slice sounding pcs)
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
@@ -1711,6 +1713,7 @@ static void printHelp(const std::string& prog)
                            " [--section-level]"
                            " [--validate-slices]"
                            " [--decode-keymode]"
+                           " [--decode-chords]"
                            " [--ignore-declared-mode]"
                            " [--diagnose-measures N[,N...]]"
                            " [--dump-key-candidates TICK[,TICK...]]"
@@ -1757,6 +1760,20 @@ static void printHelp(const std::string& prog)
         << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N\n"
         << "            (Layer-3 BOUNDED SWEEP) Override the decoder-private\n"
         << "            KeyModeSequencePreferences for the --decode-keymode path only\n"
+        << "            (read nowhere else; production stays byte-identical). Default =\n"
+        << "            the committed decoder defaults.\n"
+        << "  --decode-chords\n"
+        << "            (Layer-4 diagnostic) Build the layer-1 note model, run the REAL\n"
+        << "            layer-2 slicer, run the isolated layer-4 per-slice CHORD decoder\n"
+        << "            (chordslicedecoder) over the slices, and emit its chosen chord\n"
+        << "            (root + quality + inversion + confidence + uncertain), the focal-\n"
+        << "            slice sounding pitch classes, and the (empty) membership split per\n"
+        << "            slice. NOT wired into the live analyzer; this RETURNS before any\n"
+        << "            analysis runs, so production output is unchanged. Default OFF.\n"
+        << "  --chord-context-slices N | --chord-topk N | --chord-uncertain-margin N |\n"
+        << "  --chord-min-pcs N\n"
+        << "            (Layer-4 sweep) Override the decoder-private\n"
+        << "            ChordSliceDecoderPreferences for the --decode-chords path only\n"
         << "            (read nowhere else; production stays byte-identical). Default =\n"
         << "            the committed decoder defaults.\n"
         << "  --ignore-declared-mode\n"
@@ -2208,6 +2225,150 @@ static std::string runKeyModeDecode(const Score* score, const std::string& stem,
     return os.str();
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// Layer 4 (Increment A) — the per-slice CHORD-SYMBOL DECODER diagnostic
+// (--decode-chords)
+//
+// DIAGNOSTIC ONLY (mirrors --decode-keymode / --validate-slices). This path does
+// NOT invoke or alter the analysis pipeline: main() returns immediately after it
+// runs, so analyzeScore / analyzeRegions are never reached. It builds the Layer-1
+// note model, runs the REAL Layer-2 slicer, runs the isolated Layer-4 per-slice
+// chord decoder (chordslicedecoder — windowed weightedPcView → analyzeChord → the
+// surfaced candidate cube), and emits the decoder's chosen chord per slice in a
+// region shape compatible with the chord-root graders (compare_analyses /
+// oracle_root_metric read rootPitchClass / quality / bassIsRoot etc.), PLUS the
+// focal-slice sounding pitch classes and the (empty) membership split the new
+// NCT-membership metric scores. Off by default ⇒ production output unchanged. The
+// decoder is NOT wired into the live analyzer; wiring is a later increment.
+// ══════════════════════════════════════════════════════════════════════════
+static std::string runChordDecode(const Score* score, const std::string& stem,
+                                  const analysis::ChordAnalyzerPreferences& chordPrefs,
+                                  int keySigFifths, analysis::KeySigMode keyMode,
+                                  const mu::composing::analysis::chordslice::ChordSliceDecoderPreferences& decoderPrefs,
+                                  const std::set<size_t>& excludeStaves)
+{
+    namespace cs = mu::composing::analysis::chordslice;
+    namespace eb = mu::composing::analysis::engravingbridge;
+
+    const NoteModel model = NoteModel::build(score);
+    const std::vector<Slice> slices = mu::composing::analysis::slicing::changePointSlices(model);
+    const std::vector<cs::SliceChord> decoded = cs::ChordSliceDecoder::decode(
+        slices, model, keySigFifths, keyMode, chordPrefs, decoderPrefs, excludeStaves);
+
+    long long namedCount = 0, uncertainCount = 0;
+    for (const cs::SliceChord& sc : decoded) {
+        if (sc.hasChord) { ++namedCount; }
+        if (sc.uncertain) { ++uncertainCount; }
+    }
+
+    const std::string keyStr = keyName(keySigFifths, keyMode);
+
+    // Build a display chord symbol from a candidate (reuses the production formatter
+    // on a minimal identity — no function/extension state; this increment names the
+    // basic chord only).
+    auto symbolFor = [&](const cs::ChordSliceCandidate& c) -> std::string {
+        analysis::ChordAnalysisResult res;
+        res.identity.rootPc     = c.rootPc;
+        res.identity.rootTpc    = c.rootTpc;
+        res.identity.bassPc     = c.bassPc;
+        res.identity.bassTpc    = c.bassTpc;
+        res.identity.quality    = c.quality;
+        res.identity.tiePriority = c.tiePriority;
+        return analysis::ChordSymbolFormatter::formatSymbol(res, keySigFifths);
+    };
+
+    std::ostringstream os;
+    os << "{\n";
+    os << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    os << "  \"keySigFifths\": " << keySigFifths << ",\n";
+    os << "  \"key\": \"" << jsonEscape(keyStr) << "\",\n";
+    os << "  \"slicesTotal\": " << slices.size() << ",\n";
+    os << "  \"namedSlices\": " << namedCount << ",\n";
+    os << "  \"uncertainSlices\": " << uncertainCount << ",\n";
+    os << "  \"regions\": [";
+    for (size_t i = 0; i < decoded.size(); ++i) {
+        const cs::SliceChord& sc = decoded[i];
+        const int s = slices[sc.sliceIndex].start;
+        const int e = slices[sc.sliceIndex].end;
+        const MeasureTickInfo mi = locateMeasureByTick(score, Fraction::fromTicks(s));
+        const int measureNumber = mi.measure ? mi.number : 0;
+        const double beat = mi.measure
+            ? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+            : 1.0;
+        const double duration = static_cast<double>(e - s) / Constants::DIVISION;
+
+        // Focal-slice sounding pitch classes (NOT the windowed context): the notes
+        // the per-note membership metric scores. Same indexed view the decoder
+        // window uses, over JUST [s, e).
+        const std::vector<analysis::ChordAnalysisTone> focal =
+            eb::weightedPcView(model, s, e, excludeStaves);
+        std::set<int> soundingPcs;
+        int pcMask = 0;
+        for (const analysis::ChordAnalysisTone& t : focal) {
+            const int pc = ((t.pitch % 12) + 12) % 12;
+            soundingPcs.insert(pc);
+            pcMask |= (1 << pc);
+        }
+
+        const int rootPc = sc.hasChord ? sc.chosen.rootPc : -1;
+        const int bassPc = sc.hasChord ? sc.chosen.bassPc : -1;
+        const bool bassIsRoot = sc.hasChord && sc.chosen.bassIsRoot();
+        const char* quality = sc.hasChord ? qualityToString(sc.chosen.quality) : "Unknown";
+        const std::string chordSym = sc.hasChord ? symbolFor(sc.chosen) : std::string();
+
+        os << (i ? ",\n    " : "\n    ");
+        os << "{ \"measureNumber\": " << measureNumber
+           << ", \"beat\": " << fmtDouble(beat, 4)
+           << ", \"startTick\": " << s
+           << ", \"endTick\": " << e
+           << ", \"duration\": " << fmtDouble(duration, 4)
+           << ", \"rootPitchClass\": " << rootPc
+           << ", \"bassPitchClass\": " << bassPc
+           << ", \"bassIsRoot\": " << (bassIsRoot ? "true" : "false")
+           << ", \"quality\": \"" << quality << "\""
+           << ", \"chordSymbol\": \"" << jsonEscape(chordSym) << "\""
+           << ", \"romanNumeral\": \"\""
+           << ", \"key\": \"" << jsonEscape(keyStr) << "\""
+           << ", \"keyConfidence\": 0"
+           << ", \"chordScore\": " << fmtDouble(sc.hasChord ? sc.chosen.score : 0.0, 5)
+           << ", \"chordScoreMargin\": " << fmtDouble(sc.confidence, 5)
+           << ", \"confidence\": " << fmtDouble(sc.confidence, 5)
+           << ", \"uncertain\": " << (sc.uncertain ? "true" : "false")
+           << ", \"hasChord\": " << (sc.hasChord ? "true" : "false")
+           << ", \"pitchClassSet\": " << pcMask
+           << ", \"noteCount\": " << soundingPcs.size();
+
+        os << ", \"soundingPitchClasses\": [";
+        { bool f = true; for (int pc : soundingPcs) { os << (f ? "" : ", ") << pc; f = false; } }
+        os << "]";
+
+        // Membership split (Increment A: NCT empty ⇒ every sounding note is
+        // implicitly a chord tone; the §10 metric reports the trivial baseline).
+        os << ", \"noteClassifications\": { \"chordTones\": [";
+        { bool f = true; for (int pc : sc.chordTonePcs) { os << (f ? "" : ", ") << pc; f = false; } }
+        os << "], \"nonChordTones\": [";
+        { bool f = true; for (int pc : sc.nonChordTonePcs) { os << (f ? "" : ", ") << pc; f = false; } }
+        os << "] }";
+
+        os << ", \"alternatives\": [";
+        for (size_t a = 0; a < sc.alternatives.size(); ++a) {
+            const cs::ChordSliceCandidate& alt = sc.alternatives[a];
+            os << (a ? ", " : "")
+               << "{ \"rootPitchClass\": " << alt.rootPc
+               << ", \"bassPitchClass\": " << alt.bassPc
+               << ", \"quality\": \"" << qualityToString(alt.quality) << "\""
+               << ", \"bassIsRoot\": " << (alt.bassIsRoot() ? "true" : "false")
+               << ", \"chordSymbol\": \"" << jsonEscape(symbolFor(alt)) << "\""
+               << ", \"score\": " << fmtDouble(alt.score, 5) << " }";
+        }
+        os << "]";
+        os << " }";
+    }
+    os << (decoded.empty() ? "]\n" : "\n  ]\n");
+    os << "}\n";
+    return os.str();
+}
+
 } // namespace
 
 int main(int argc, char* argv[])
@@ -2251,6 +2412,12 @@ int main(int argc, char* argv[])
     bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
     bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
     bool decodeKeyMode = false;       // Layer-3 key/mode sequence decoder (default OFF = no analysis touched)
+    bool decodeChords = false;        // Layer-4 per-slice chord decoder (default OFF = no analysis touched)
+    // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
+    // Read ONLY on the --decode-chords diagnostic path (which returns before
+    // analyzeScore), so production analysis stays byte-identical. Default = the
+    // committed decoder defaults.
+    mu::composing::analysis::chordslice::ChordSliceDecoderPreferences chordDecoderPrefs;
     // Decode-only sweep overrides for the decoder-private KeyModeSequencePreferences
     // (the BOUNDED L3 SWEEP). These are read ONLY on the --decode-keymode diagnostic
     // path (which returns before analyzeScore), so production analysis stays
@@ -2299,6 +2466,31 @@ int main(int argc, char* argv[])
             validateSlices = true;
         } else if (a == "--decode-keymode") {
             decodeKeyMode = true;
+        } else if (a == "--decode-chords") {
+            decodeChords = true;
+        } else if (a == "--chord-context-slices" || a == "--chord-topk"
+                   || a == "--chord-uncertain-margin" || a == "--chord-min-pcs") {
+            // Decode-only ChordSliceDecoderPreferences sweep overrides (see decl above).
+            if (i + 1 >= args.size()) {
+                std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
+                return 1;
+            }
+            const QString val = args.at(++i);
+            bool ok = false;
+            if (a == "--chord-context-slices") {
+                chordDecoderPrefs.contextSlices = val.toInt(&ok);
+            } else if (a == "--chord-topk") {
+                chordDecoderPrefs.topK = val.toInt(&ok);
+            } else if (a == "--chord-uncertain-margin") {
+                chordDecoderPrefs.uncertaintyMargin = val.toDouble(&ok);
+            } else if (a == "--chord-min-pcs") {
+                chordDecoderPrefs.minDistinctPcs = val.toInt(&ok);
+            }
+            if (!ok) {
+                std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
+                          << ": '" << val.toStdString() << "'\n";
+                return 1;
+            }
         } else if (a == "--seq-change-base" || a == "--seq-relative-extra"
                    || a == "--seq-per-fifth" || a == "--seq-window-beats"
                    || a == "--seq-uncertain" || a == "--seq-topk"
@@ -2534,6 +2726,37 @@ int main(int argc, char* argv[])
         if (ovInBoth) { decodeKeyPrefs.scaleScoreInBoth = *ovInBoth; }
         if (ovLeadingTone) { decodeKeyPrefs.leadingToneWeight = *ovLeadingTone; }
         const std::string report = runKeyModeDecode(score, stem, decodeKeyPrefs, keySigFifths, declaredMode, seqPrefs);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── Layer-4 chord decode (diagnostic; returns BEFORE any analysis) ──────
+    // Like --decode-keymode, this never reaches analyzeScore/analyzeRegions, so
+    // the analysis pipeline is not invoked and its output cannot change. The
+    // notated key signature (the diatonic prior to the chord scorer) is read at
+    // tick 0; per-slice Layer-3 key feed-forward is a later (wiring) refinement.
+    if (decodeChords) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
+        int keySigFifths = 0;
+        analysis::KeySigMode keyMode = analysis::KeySigMode::Ionian;   // the diatonic prior
+        if (refStaff < score->nstaves() && score->staff(refStaff)) {
+            const auto kse = score->staff(refStaff)->keySigEvent(Fraction(0, 1));
+            keySigFifths = static_cast<int>(kse.concertKey());
+            const mu::engraving::KeyMode km = kse.mode();
+            if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+                keyMode = analysis::KeySigMode::Aeolian;
+            }
+        }
+        const std::string report = runChordDecode(score, stem, chordPrefs, keySigFifths, keyMode,
+                                                   chordDecoderPrefs, excludeStaves);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;

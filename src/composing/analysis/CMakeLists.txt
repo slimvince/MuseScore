@@ -32,6 +32,16 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/chord/chorddiagnose.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordpostpasses.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chord/postscoringgates.cpp
+    # LAYER 4 (Increment A) — the per-slice CHORD-SYMBOL decoder: runs the existing
+    # chord scorer over each Layer-2 slice's window and reads the complete candidate
+    # cube it surfaces (the L3 pattern), producing one chord + ranked alternatives +
+    # confidence + uncertain per slice. ISOLATED this increment: built + unit-tested
+    # + graded against the held-out chord GT, NOT wired into the live pipeline —
+    # production output byte-identical; it runs only under batch_analyze
+    # --decode-chords. Membership / spelling-pin / new types are later increments.
+    # See cowork_layer4_chordsymbol_design.md + cc_layer4_audit_dossier.md.
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordslicedecoder.h
+    ${CMAKE_CURRENT_LIST_DIR}/chord/chordslicedecoder.cpp
 
     # function/ — Phase E harmonic function layer (post-analysis pass between
     # analyzeChord() output and the final chord label). E1 is a pass-through
