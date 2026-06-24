@@ -24,6 +24,7 @@
 
 #include <algorithm>
 #include <climits>
+#include <utility>
 
 #include "engraving/dom/chord.h"
 #include "engraving/dom/chordrest.h"
@@ -67,26 +68,89 @@ NoteEvent makeEvent(const mu::engraving::Note* n, int onsetTick, int staff, int 
 
 } // namespace
 
+// Structural score bounds (the hard clamps for extend, and the full-score span
+// the degenerate build delegates over). [firstMeasure tick, score endTick).
+// Returns [0, 0) when there is no score / no measures.
+namespace {
+std::pair<int, int> scoreSpan(const mu::engraving::Score* sc)
+{
+    using namespace mu::engraving;
+    if (!sc) {
+        return { 0, 0 };
+    }
+    const Measure* firstMeasure = sc->firstMeasure();
+    if (!firstMeasure) {
+        return { 0, 0 };
+    }
+    return { firstMeasure->tick().ticks(), sc->endTick().ticks() };
+}
+} // namespace
+
 NoteModel NoteModel::build(const mu::engraving::Score* sc)
+{
+    // Degenerate selection = whole score. Delegate to the span overload over the
+    // full structural span (ONE walk path). Every note's onset lies in
+    // [scoreStart, scoreEnd) and its release exceeds scoreStart, so the overlap
+    // filter retains everything → byte-identical to the pre-selection-API build.
+    const auto [scoreStart, scoreEnd] = scoreSpan(sc);
+    return build(sc, scoreStart, scoreEnd);
+}
+
+NoteModel NoteModel::build(const mu::engraving::Score* sc, int loadedStart, int loadedEnd)
+{
+    NoteModel model;
+    model.m_score = sc;
+
+    const auto [scoreStart, scoreEnd] = scoreSpan(sc);
+    model.m_scoreStart = scoreStart;
+    model.m_scoreEnd   = scoreEnd;
+
+    model.m_loadedStart    = loadedStart;
+    model.m_loadedEnd      = loadedEnd;
+    model.m_selectionStart = loadedStart;  // selection == the build-time loaded span
+    model.m_selectionEnd   = loadedEnd;
+    model.m_boundaryReached = false;
+
+    model.rebuildForLoadedSpan();
+    return model;
+}
+
+void NoteModel::rebuildForLoadedSpan()
 {
     using namespace mu::engraving;
     namespace ebr = mu::composing::analysis::engravingbridge;
 
-    NoteModel model;
-    model.m_score = sc;
-    if (!sc) {
-        return model;
-    }
+    // Interim Phase-1a: re-walk the whole score and retain the notes whose span
+    // overlaps the current loaded span. (Phase 1b replaces this with a span-scoped
+    // walk + an incremental index, byte-identical to here.)
+    m_notes.clear();
 
+    const Score* sc = m_score;
+    if (!sc) {
+        m_index.build(m_notes);
+        return;
+    }
     const Measure* firstMeasure = sc->firstMeasure();
     if (!firstMeasure) {
-        return model;
+        m_index.build(m_notes);
+        return;
     }
 
+    const int t0 = m_loadedStart;
+    const int t1 = m_loadedEnd;
+
+    // Retain a note iff its span overlaps [t0, t1): onset < t1 && release > t0.
+    // This keeps sustained-in notes (onset < t0, release > t0) for free. The walk
+    // order is unchanged, so the retained subsequence preserves build order
+    // (ascending onset, staff, voice, chord-note) and stays onset-sorted.
+    const auto consider = [&](NoteEvent e) {
+        if (e.onset < t1 && e.release > t0) {
+            m_notes.push_back(e);
+        }
+    };
+
     // Walk every ChordRest segment across the whole score (next1 crosses
-    // barlines). For each, walk every staff and voice. Notes are appended in
-    // (ascending onset, staff, voice, chord-note) order, so m_notes is sorted by
-    // onset by construction.
+    // barlines). For each, walk every staff and voice.
     for (const Segment* s = firstMeasure->first(SegmentType::ChordRest);
          s != nullptr;
          s = s->next1(SegmentType::ChordRest)) {
@@ -117,8 +181,7 @@ NoteModel NoteModel::build(const mu::engraving::Score* sc)
                         if (gn->tieBack()) {
                             continue;  // continuation — subsumed into its tie-start
                         }
-                        model.m_notes.push_back(
-                            makeEvent(gn, segTick, static_cast<int>(si), v, true, eligible));
+                        consider(makeEvent(gn, segTick, static_cast<int>(si), v, true, eligible));
                     }
                 }
 
@@ -129,15 +192,48 @@ NoteModel NoteModel::build(const mu::engraving::Score* sc)
                         // note's resolved span. Exactly one onset per tied group.
                         continue;
                     }
-                    model.m_notes.push_back(
-                        makeEvent(n, segTick, static_cast<int>(si), v, false, eligible));
+                    consider(makeEvent(n, segTick, static_cast<int>(si), v, false, eligible));
                 }
             }
         }
     }
 
-    model.m_index.build(model.m_notes);
-    return model;
+    m_index.build(m_notes);
+}
+
+void NoteModel::extend(Direction dir, int amountTicks)
+{
+    if (amountTicks <= 0) {
+        return;  // nothing requested — pure no-op (state untouched).
+    }
+
+    if (dir == Direction::Earlier) {
+        int target = m_loadedStart - amountTicks;
+        if (target <= m_scoreStart) {
+            target = m_scoreStart;
+            m_boundaryReached = true;
+        } else {
+            m_boundaryReached = false;
+        }
+        if (target == m_loadedStart) {
+            return;  // already at the start / nothing new to load — idempotent no-op.
+        }
+        m_loadedStart = target;
+    } else {
+        int target = m_loadedEnd + amountTicks;
+        if (target >= m_scoreEnd) {
+            target = m_scoreEnd;
+            m_boundaryReached = true;
+        } else {
+            m_boundaryReached = false;
+        }
+        if (target == m_loadedEnd) {
+            return;  // already at the end / nothing new to load — idempotent no-op.
+        }
+        m_loadedEnd = target;
+    }
+
+    rebuildForLoadedSpan();
 }
 
 // ── NoteQueryIndex ───────────────────────────────────────────────────────────

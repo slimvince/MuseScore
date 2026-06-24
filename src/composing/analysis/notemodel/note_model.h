@@ -134,23 +134,74 @@ private:
     int m_n = 0;                   ///< number of notes.
 };
 
-// The lossless note model for a whole score.
+// The lossless note model for a SELECTION of a score (the whole score is the
+// degenerate "selection = score" case).
 //
-// Construct once with build(); query by tick range. Notes are stored in build
-// order: ascending onset tick, then staff, then voice, then chord-note order.
-// The model retains a borrowed pointer to its source Score (the derived views
-// need it for beat weights / pedal windows / measure lookups); the Score must
-// outlive the model.
+// Construct with build(): either over the whole score (the degenerate, batch
+// path — byte-identical to before this API existed) or over a SELECTION span,
+// which retains only the notes that sound within the loaded span. The loaded
+// span can then be grown by extend() (the bounded-context supplier API — see
+// cowork_bounded_context_design.md / cowork_layer1_extend_design.md).
+//
+// Three spans (cowork_bounded_context_design.md §2):
+//   * selection span  — what was asked for; the OUTPUT span (fixed at build).
+//   * loaded span      — what is currently held; starts == selection, GROWS by
+//     extend() (append-only). selection ⊆ loaded ⊆ score.
+//   * score            — the whole piece; the hard outer bound extend() clamps at.
+//
+// Notes are stored in build order: ascending onset tick, then staff, then voice,
+// then chord-note order. The model retains a borrowed pointer to its source Score
+// (the derived views need it for beat weights / pedal windows / measure lookups,
+// and the interim extend() re-walks it); the Score must outlive the model.
+//
+// PHASE 1a (interim) — extend() re-walks the whole score and re-filters to the
+// new loaded span, then rebuilds the static index. Correct and byte-identical to
+// a fresh build over the enlarged span; a span-scoped walk + an incremental index
+// are Phase 1b (deferred behind this byte-identity gate). The live analysis path
+// (region analyzer, batch_analyze) uses the whole-score build(sc) only; extend()
+// is the L1 capability the layers above are written against (no layer calls it
+// yet — that is Phase 3 reach-back).
 class NoteModel
 {
 public:
-    /// Read the score ONCE into the lossless note model. Walks every staff,
-    /// voice, and segment (and grace notes), resolving tied groups into single
-    /// spans and annotating each note. Nothing is dropped.
+    /// Direction of an extend() — earlier (toward the score start) or later
+    /// (toward the score end) in time.
+    enum class Direction { Earlier, Later };
+
+    /// Read the WHOLE score ONCE into the lossless note model (the degenerate
+    /// selection = score). Walks every staff, voice, and segment (and grace
+    /// notes), resolving tied groups into single spans and annotating each note.
+    /// Nothing is dropped. Byte-identical to the pre-selection-API behaviour.
+    /// Implemented as a thin delegate to the span overload over the full score
+    /// span (one walk path).
     static NoteModel build(const mu::engraving::Score* sc);
+
+    /// Build over a SELECTION span [loadedStart, loadedEnd): walks the score and
+    /// retains the notes whose span OVERLAPS the loaded span
+    /// (`onset < loadedEnd && release > loadedStart` — this captures notes that
+    /// started before loadedStart and sustain into the span). Records the loaded
+    /// span and the selection span (== the same range at build time). Ticks.
+    static NoteModel build(const mu::engraving::Score* sc, int loadedStart, int loadedEnd);
+
+    /// Grow the LOADED span by `amountTicks` in direction `dir`, clamped at the
+    /// score start/end, then re-derive the retained notes (interim: re-walk +
+    /// re-filter) and rebuild the index. Exactly ONE step — does not loop and
+    /// never evaluates any stop/convergence condition (the caller's job).
+    /// Append-only (never shrinks the loaded span or drops a retained note).
+    /// A non-positive amount, or a request for an already-covered span, is a
+    /// no-op. Sets boundaryReached() to whether the clamp at the score boundary
+    /// was hit this step. Ticks (Architectural Layer 1 is unit-blind).
+    void extend(Direction dir, int amountTicks);
 
     const mu::engraving::Score* score() const { return m_score; }
     const std::vector<NoteEvent>& notes() const { return m_notes; }
+
+    int  loadedStart() const { return m_loadedStart; }
+    int  loadedEnd() const { return m_loadedEnd; }
+    int  selectionStart() const { return m_selectionStart; }
+    int  selectionEnd() const { return m_selectionEnd; }
+    /// Whether the most recent extend() clamped at the score start/end.
+    bool boundaryReached() const { return m_boundaryReached; }
 
     /// All notes whose span overlaps the half-open range [t0, t1):
     /// `onset < t1 && release > t0`. No horizon. Result preserves build order
@@ -162,9 +213,23 @@ public:
     std::vector<const NoteEvent*> onsetIn(int t0, int t1) const;
 
 private:
+    /// Interim Phase-1a worker: (re-)walk the whole score, retain the notes whose
+    /// span overlaps the current loaded span [m_loadedStart, m_loadedEnd), and
+    /// (re-)build the index. Used by both build(sc,lo,hi) and extend() — one walk
+    /// path, no duplication.
+    void rebuildForLoadedSpan();
+
     const mu::engraving::Score* m_score = nullptr;
     std::vector<NoteEvent> m_notes;  ///< Sorted by onset (ascending, stable build order).
     NoteQueryIndex m_index;          ///< Onset/overlap query index over m_notes (built in build()).
+
+    int  m_loadedStart = 0;          ///< Current loaded-span start tick (grows down via extend Earlier).
+    int  m_loadedEnd = 0;            ///< Current loaded-span end tick (grows up via extend Later).
+    int  m_selectionStart = 0;       ///< Selection-span start tick (the OUTPUT span; fixed at build).
+    int  m_selectionEnd = 0;         ///< Selection-span end tick (fixed at build).
+    int  m_scoreStart = 0;           ///< Score start tick — the hard lower clamp for extend().
+    int  m_scoreEnd = 0;             ///< Score end tick — the hard upper clamp for extend().
+    bool m_boundaryReached = false;  ///< Whether the most recent extend() hit a score boundary.
 };
 
 } // namespace mu::composing::analysis::notemodel

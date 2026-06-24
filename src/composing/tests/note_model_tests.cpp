@@ -658,6 +658,353 @@ TEST(Composing_NoteModelTests, IDX4_EmptyModel_QueriesReturnEmpty)
     EXPECT_TRUE(model.onsetIn(100, 0).empty());
 }
 
+// ── Layer-1 / Phase 1a — build-over-a-selection + extend (the bounded-context
+// supplier API). Designs: cowork_layer1_extend_design.md /
+// cowork_bounded_context_design.md. These guard the §3 invariants: degenerate
+// byte-identity, build-then-extend equivalence, append-only, onset-sort,
+// idempotent extend, boundary clamp + report, sustained-in capture, index≡scan.
+
+namespace {
+
+bool eventsEqual(const NEvent& a, const NEvent& b)
+{
+    return a.pitch == b.pitch && a.tpc == b.tpc && a.staff == b.staff
+           && a.voice == b.voice && a.onset == b.onset && a.release == b.release
+           && a.duration == b.duration && a.isGrace == b.isGrace
+           && a.plays == b.plays && a.visible == b.visible
+           && a.staffEligible == b.staffEligible;
+}
+
+// Two models hold the SAME notes (count, order, every field). Selection span is
+// deliberately NOT compared — by design it is fixed at build and differs between
+// "build(X)" and "build(A) then extend to X" (§2 selection ⊆ loaded).
+void expectSameNotes(const NoteModel& a, const NoteModel& b)
+{
+    ASSERT_EQ(a.notes().size(), b.notes().size()) << "note count differs";
+    for (std::size_t i = 0; i < a.notes().size(); ++i) {
+        EXPECT_TRUE(eventsEqual(a.notes()[i], b.notes()[i])) << "note " << i << " differs";
+    }
+}
+
+// Query answers identical (by value — pointers are model-local) on one range.
+void expectSameQueries(const NoteModel& a, const NoteModel& b, int t0, int t1)
+{
+    const auto oa = a.overlapping(t0, t1);
+    const auto ob = b.overlapping(t0, t1);
+    ASSERT_EQ(oa.size(), ob.size()) << "overlapping(" << t0 << "," << t1 << ") size differs";
+    for (std::size_t i = 0; i < oa.size(); ++i) {
+        EXPECT_TRUE(eventsEqual(*oa[i], *ob[i])) << "overlapping[" << i << "] differs";
+    }
+    const auto na = a.onsetIn(t0, t1);
+    const auto nb = b.onsetIn(t0, t1);
+    ASSERT_EQ(na.size(), nb.size()) << "onsetIn(" << t0 << "," << t1 << ") size differs";
+    for (std::size_t i = 0; i < na.size(); ++i) {
+        EXPECT_TRUE(eventsEqual(*na[i], *nb[i])) << "onsetIn[" << i << "] differs";
+    }
+}
+
+// Onset-sorted ascending (the build-order invariant; must survive every extend).
+bool onsetSorted(const NoteModel& m)
+{
+    for (std::size_t i = 1; i < m.notes().size(); ++i) {
+        if (m.notes()[i].onset < m.notes()[i - 1].onset) {
+            return false;
+        }
+    }
+    return true;
+}
+
+} // namespace
+
+// EXT1 — degenerate byte-identity (in-process half of the corpus gate). For every
+// fixture, build(sc) (full-score span) retains EXACTLY the notes a truly-unbounded
+// span retains — i.e. the [scoreStart, scoreEnd) filter drops nothing — and the
+// loaded span equals the score span. (The whole-corpus .ours.json byte diff is the
+// other half of the gate, run outside the test binary.)
+TEST(Composing_NoteModelTests, EXT1_DegenerateBuild_RetainsAllNotes)
+{
+    std::mt19937 rng(0xE17A1u);
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        // An explicitly-everything span: nothing can fall outside it.
+        const NoteModel everything = NoteModel::build(score, INT_MIN / 2, INT_MAX / 2);
+
+        expectSameNotes(full, everything);
+        EXPECT_FALSE(full.notes().empty()) << "fixture has no notes";
+        EXPECT_TRUE(onsetSorted(full));
+        // Loaded span == selection span == the structural score span.
+        EXPECT_EQ(full.loadedStart(), full.selectionStart());
+        EXPECT_EQ(full.loadedEnd(), full.selectionEnd());
+        EXPECT_LE(full.loadedStart(), full.notes().front().onset);
+        EXPECT_GT(full.loadedEnd(), full.notes().back().onset);
+
+        // Query answers identical between the two whole-score builds.
+        int maxRelease = INT_MIN;
+        for (const NEvent& e : full.notes()) {
+            maxRelease = std::max(maxRelease, e.release);
+        }
+        std::uniform_int_distribution<int> dist(full.loadedStart() - 480, maxRelease + 480);
+        for (int k = 0; k < 100; ++k) {
+            const int a = dist(rng), b = dist(rng);
+            expectSameQueries(full, everything, std::min(a, b), std::max(a, b));
+        }
+        delete score;
+    }
+}
+
+// EXT2 — build-then-extend equivalence to the whole score + determinism in the
+// step granularity. A sub-selection extended (both directions) until it reaches
+// the score boundary yields a model IDENTICAL (notes, order, loaded span, query
+// answers) to the whole-score build — and reaching it in one big step or many
+// small steps gives the same model (§3 invariant 2; §8 determinism).
+TEST(Composing_NoteModelTests, EXT2_BuildThenExtendToFull_EqualsWholeScore)
+{
+    std::mt19937 rng(0xB10C5u);
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        const int s = full.loadedStart();
+        const int e = full.loadedEnd();
+        const int span = e - s;
+        ASSERT_GT(span, 0);
+        if (span < 8) { delete score; continue; }  // too short to sub-select; not seen in practice
+        // An interior sub-selection (well inside the score).
+        const int a0 = s + span / 4;
+        const int a1 = e - span / 4;
+        ASSERT_LT(a0, a1) << "fixture too short to sub-select";
+
+        // (a) one big step each direction → clamps at both boundaries.
+        {
+            NoteModel sel = NoteModel::build(score, a0, a1);
+            sel.extend(NoteModel::Direction::Earlier, span * 4);
+            EXPECT_TRUE(sel.boundaryReached());
+            sel.extend(NoteModel::Direction::Later, span * 4);
+            EXPECT_TRUE(sel.boundaryReached());
+            EXPECT_EQ(sel.loadedStart(), s);
+            EXPECT_EQ(sel.loadedEnd(), e);
+            EXPECT_TRUE(onsetSorted(sel));
+            expectSameNotes(sel, full);
+            // selection span is the original (a0,a1) — evidence vs output (§2).
+            EXPECT_EQ(sel.selectionStart(), a0);
+            EXPECT_EQ(sel.selectionEnd(), a1);
+
+            int maxRel = INT_MIN;
+            for (const NEvent& ev : full.notes()) {
+                maxRel = std::max(maxRel, ev.release);
+            }
+            std::uniform_int_distribution<int> dist(s - 480, maxRel + 480);
+            for (int k = 0; k < 100; ++k) {
+                const int x = dist(rng), y = dist(rng);
+                expectSameQueries(sel, full, std::min(x, y), std::max(x, y));
+            }
+        }
+        // (b) many small steps each direction → identical final model.
+        {
+            NoteModel sel = NoteModel::build(score, a0, a1);
+            const int step = std::max(1, span / 7);
+            std::size_t prevCount = sel.notes().size();
+            for (int guard = 0; guard < 10000 && !sel.boundaryReached(); ++guard) {
+                sel.extend(NoteModel::Direction::Earlier, step);
+                EXPECT_GE(sel.notes().size(), prevCount) << "append-only violated (earlier)";
+                prevCount = sel.notes().size();
+            }
+            for (int guard = 0; guard < 10000; ++guard) {
+                const bool wasAtEnd = (sel.loadedEnd() == e);
+                sel.extend(NoteModel::Direction::Later, step);
+                EXPECT_GE(sel.notes().size(), prevCount) << "append-only violated (later)";
+                prevCount = sel.notes().size();
+                if (wasAtEnd || sel.loadedEnd() == e) {
+                    break;
+                }
+            }
+            EXPECT_EQ(sel.loadedStart(), s);
+            EXPECT_EQ(sel.loadedEnd(), e);
+            EXPECT_TRUE(onsetSorted(sel));
+            expectSameNotes(sel, full);
+        }
+        delete score;
+    }
+}
+
+// EXT3 — interior build-then-extend equivalence. build(A0,A1) extended to an
+// INTERIOR span [X0,X1) (X0<A0, X1>A1, both inside the score) equals build(X0,X1)
+// directly — notes, order, loaded span, query answers. (Selection span differs by
+// design and is not compared.)
+TEST(Composing_NoteModelTests, EXT3_BuildThenExtendInterior_EqualsDirectBuild)
+{
+    std::mt19937 rng(0x1273A7u);
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        const int s = full.loadedStart();
+        const int e = full.loadedEnd();
+        const int span = e - s;
+        ASSERT_GT(span, 0);
+        if (span <= 8) { delete score; continue; }  // too short for interior nesting; not seen in practice
+
+        const int x0 = s + span / 8;
+        const int a0 = s + span * 3 / 8;
+        const int a1 = e - span * 3 / 8;
+        const int x1 = e - span / 8;
+        ASSERT_LT(a0, a1);
+        ASSERT_LT(x0, a0);
+        ASSERT_LT(a1, x1);
+
+        const NoteModel direct = NoteModel::build(score, x0, x1);
+
+        NoteModel sel = NoteModel::build(score, a0, a1);
+        sel.extend(NoteModel::Direction::Earlier, a0 - x0);
+        EXPECT_FALSE(sel.boundaryReached()) << "interior earlier target must not clamp";
+        sel.extend(NoteModel::Direction::Later, x1 - a1);
+        EXPECT_FALSE(sel.boundaryReached()) << "interior later target must not clamp";
+
+        EXPECT_EQ(sel.loadedStart(), x0);
+        EXPECT_EQ(sel.loadedEnd(), x1);
+        EXPECT_TRUE(onsetSorted(sel));
+        expectSameNotes(sel, direct);
+
+        std::uniform_int_distribution<int> dist(s - 480, e + 480);
+        for (int k = 0; k < 200; ++k) {
+            const int p = dist(rng), q = dist(rng);
+            expectSameQueries(sel, direct, std::min(p, q), std::max(p, q));
+        }
+        delete score;
+    }
+}
+
+// EXT4 — extend unit semantics: append-only, idempotent re-request, boundary
+// clamp + boundaryReached, on a fixture with a known long span.
+TEST(Composing_NoteModelTests, EXT4_Extend_AppendOnlyIdempotentClamp)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");  // C4 [0,9600)
+    ASSERT_TRUE(score);
+    const NoteModel full = NoteModel::build(score);
+    const int scoreStart = full.loadedStart();   // 0
+    const int scoreEnd   = full.loadedEnd();      // == score endTick
+
+    NoteModel m = NoteModel::build(score, 4000, 5000);
+    EXPECT_EQ(m.loadedStart(), 4000);
+    EXPECT_EQ(m.loadedEnd(), 5000);
+    EXPECT_EQ(m.selectionStart(), 4000);
+    EXPECT_EQ(m.selectionEnd(), 5000);
+    EXPECT_FALSE(m.boundaryReached());
+
+    // Non-positive amount is a pure no-op (state untouched).
+    const int beforeStart = m.loadedStart();
+    m.extend(NoteModel::Direction::Earlier, 0);
+    EXPECT_EQ(m.loadedStart(), beforeStart);
+    m.extend(NoteModel::Direction::Earlier, -100);
+    EXPECT_EQ(m.loadedStart(), beforeStart);
+
+    // Earlier within bounds: grows down, no clamp.
+    m.extend(NoteModel::Direction::Earlier, 1000);
+    EXPECT_EQ(m.loadedStart(), 3000);
+    EXPECT_FALSE(m.boundaryReached());
+
+    // Earlier past the start: clamps to scoreStart, boundaryReached.
+    m.extend(NoteModel::Direction::Earlier, 100000);
+    EXPECT_EQ(m.loadedStart(), scoreStart);
+    EXPECT_TRUE(m.boundaryReached());
+    const std::size_t countAtStart = m.notes().size();
+
+    // Re-request at the boundary: idempotent no-op, still flagged boundaryReached.
+    m.extend(NoteModel::Direction::Earlier, 5000);
+    EXPECT_EQ(m.loadedStart(), scoreStart);
+    EXPECT_TRUE(m.boundaryReached());
+    EXPECT_EQ(m.notes().size(), countAtStart) << "no-op extend must not change notes";
+
+    // Later past the end: clamps to scoreEnd, boundaryReached; append-only.
+    m.extend(NoteModel::Direction::Later, 100000);
+    EXPECT_EQ(m.loadedEnd(), scoreEnd);
+    EXPECT_TRUE(m.boundaryReached());
+    EXPECT_GE(m.notes().size(), countAtStart) << "append-only (later) violated";
+
+    // Now fully spans the score → identical notes to the whole-score build.
+    EXPECT_EQ(m.loadedStart(), scoreStart);
+    EXPECT_EQ(m.loadedEnd(), scoreEnd);
+    expectSameNotes(m, full);
+
+    delete score;
+}
+
+// EXT5 — sustained-in capture: a note that ONSETS before the loaded span but
+// SUSTAINS into it is retained (it really sounds during the selection). The C4
+// [0,9600) sustain, selected at [4800,5000), must be present with onset 0.
+TEST(Composing_NoteModelTests, EXT5_SustainedInNoteRetained)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+
+    const NoteModel m = NoteModel::build(score, 4800, 5000);
+    const NEvent* c4 = findNote(m, [](const NEvent& e) {
+        return e.pitch == 60 && e.onset == 0 && e.release == 9600;
+    });
+    ASSERT_TRUE(c4) << "C4 sustaining into [4800,5000) must be retained (onset < loadedStart)";
+    // It is found by an overlap query inside the selection too.
+    const auto ov = m.overlapping(4800, 5000);
+    ASSERT_EQ(static_cast<int>(ov.size()), 1);
+    EXPECT_EQ(ov.front()->pitch, 60);
+
+    delete score;
+}
+
+// EXT6 — index ≡ linear scan over a post-EXTENSION model: the existing IDX linear
+// oracle must still match after the loaded span has grown (the index is rebuilt
+// on each extend). Extends the IDX1 property to the extended model.
+TEST(Composing_NoteModelTests, EXT6_IndexedEqualsLinear_AfterExtend)
+{
+    std::mt19937 rng(0xF00D5u);
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        const int s = full.loadedStart();
+        const int e = full.loadedEnd();
+        const int span = e - s;
+        ASSERT_GT(span, 0);
+
+        NoteModel m = NoteModel::build(score, s + span / 3, e - span / 3);
+        m.extend(NoteModel::Direction::Earlier, span / 6);
+        m.extend(NoteModel::Direction::Later, span / 6);
+
+        int maxRelease = INT_MIN, minOnset = INT_MAX;
+        for (const NEvent& ev : m.notes()) {
+            maxRelease = std::max(maxRelease, ev.release);
+            minOnset = std::min(minOnset, ev.onset);
+        }
+        if (m.notes().empty()) {
+            delete score;
+            continue;
+        }
+        std::uniform_int_distribution<int> dist(minOnset - 480, maxRelease + 480);
+        for (int k = 0; k < 300; ++k) {
+            const int a = dist(rng), b = dist(rng);
+            expectQueriesMatch(m, a, b);
+            expectQueriesMatch(m, b, a);
+        }
+        delete score;
+    }
+}
+
+// EXT7 — extend on a no-score / empty model is a safe no-op (the scoreSpan guard).
+TEST(Composing_NoteModelTests, EXT7_ExtendOnEmptyModelIsNoOp)
+{
+    NoteModel m = NoteModel::build(nullptr);
+    ASSERT_TRUE(m.notes().empty());
+    m.extend(NoteModel::Direction::Earlier, 1000);  // scoreStart==scoreEnd==0 → clamp no-op
+    m.extend(NoteModel::Direction::Later, 1000);
+    EXPECT_TRUE(m.notes().empty());
+    EXPECT_TRUE(m.overlapping(0, 100).empty());
+}
+
 // IDX_PERF — DISABLED by default (run with --gtest_also_run_disabled_tests). Times
 // the REAL indexed query vs the linear reference across a per-slice workload at
 // growing N, demonstrating the O(N²)→O(N log N) transition. Diagnostic only.
