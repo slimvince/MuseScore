@@ -60,6 +60,42 @@ std::vector<Slice> changePointSlices(const notemodel::NoteModel& model)
         return slices;
     }
 
+    // CLIP TO THE LOADED SPAN (bounded context — cowork_layer2_reslice_design.md §2).
+    // Layer 1 retains notes that OVERLAP the loaded span, so a sustained-in note
+    // contributes an onset boundary < loadedStart, and a sustained-out note a
+    // release boundary > loadedEnd. Tiling those would slice music OUTSIDE the
+    // loaded span — a scope leak under bounded context. So slice the INTERSECTION
+    // [max(loadedStart, front), min(loadedEnd, back)): clip the whole multiset, not
+    // just the ends — drop every boundary out of [clipStart, clipEnd], then inject
+    // the two clip endpoints and re-establish sorted-unique. (Retention guarantees
+    // the only out-of-range boundaries are sustained-in onsets < clipStart and
+    // sustained-out releases > clipEnd, so clipStart <= clipEnd always holds.)
+    //
+    // INERT ON WHOLE-SCORE (the degenerate live path): loadedStart == scoreStart
+    // <= front and loadedEnd == scoreEnd >= back, so clipStart == front and
+    // clipEnd == back; nothing is out of range and the injected endpoints are
+    // already present — the clipped set is IDENTICAL to the unclipped one. Every
+    // production/tooling caller builds a whole-score model, so this is byte-for-byte
+    // unchanged on the live path; partial spans (Phase 1a build(sc,start,end)) are
+    // the only callers the clip changes.
+    const int clipStart = std::max(model.loadedStart(), boundaries.front());
+    const int clipEnd   = std::min(model.loadedEnd(),   boundaries.back());
+    boundaries.erase(
+        std::remove_if(boundaries.begin(), boundaries.end(),
+                       [clipStart, clipEnd](int b) { return b < clipStart || b > clipEnd; }),
+        boundaries.end());
+    boundaries.push_back(clipStart);
+    boundaries.push_back(clipEnd);
+    std::sort(boundaries.begin(), boundaries.end());
+    boundaries.erase(std::unique(boundaries.begin(), boundaries.end()), boundaries.end());
+
+    // A degenerate single-tick loaded span can collapse the clipped set to one
+    // boundary (clipStart == clipEnd): the tiling loop then runs zero times and
+    // returns the empty partition — no span to slice. (Cannot happen on whole-score.)
+    if (boundaries.size() < 2) {
+        return slices;
+    }
+
     // Consecutive boundaries tile the domain [boundaries.front(), boundaries.back())
     // with no gaps and no overlaps. An interior pair with no overlapping eligible
     // note is an explicit EMPTY slice (all eligible voices rest) — kept, not omitted.

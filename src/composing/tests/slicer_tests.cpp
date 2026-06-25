@@ -34,6 +34,7 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
+#include <climits>
 #include <utility>
 #include <vector>
 
@@ -406,4 +407,297 @@ TEST(Composing_SlicerTests, S8c_StaffIneligible_NoBoundary)
         << "chord-track E4 (64) passes through but opens no boundary";
 
     delete score;
+}
+
+// ── Phase 2 — slicing under bounded context: clip the slicing span to the LOADED
+// span, and re-slice on extend. Design: cowork_layer2_reslice_design.md (§2 clip,
+// §3 seam-aware stability, §6 invariants). These assert the REAL invariants per §3
+// of the impl instruction — NOT the naive "all old slices byte-identical."
+
+namespace {
+
+// Every nm_* fixture (whole-score build path) — the same set the note-model tests
+// sweep. Each fixture is a whole-score model, so the §2 clip is INERT on all of
+// them; that inertness is itself the degenerate byte-identity gate (CP1).
+const char16_t* const kSlicerFixtures[] = {
+    u"data/nm_tie_chain.mscx",        u"data/nm_long_sustain.mscx",
+    u"data/nm_grace.mscx",            u"data/nm_unison.mscx",
+    u"data/nm_flags.mscx",            u"data/nm_two_staff.mscx",
+    u"data/nm_staff_eligibility.mscx", u"data/nm_solid_theory.mscx",
+    u"data/nm_dense_start.mscx",      u"data/nm_slice_passing.mscx",
+    u"data/nm_slice_held_melody.mscx", u"data/nm_slice_release.mscx",
+    u"data/nm_slice_rest.mscx",       u"data/nm_slice_ineligible.mscx",
+};
+
+// The min eligible onset / max eligible release over a model's notes — the span
+// the UNCLIPPED tiling would cover (`[firstEligibleOnset, lastEligibleRelease)`).
+std::pair<int, int> eligibleSpan(const NoteModel& m)
+{
+    int lo = INT_MAX, hi = INT_MIN;
+    for (const NEvent& e : m.notes()) {
+        if (e.plays && e.visible && e.staffEligible) {
+            lo = std::min(lo, e.onset);
+            hi = std::max(hi, e.release);
+        }
+    }
+    return { lo, hi };
+}
+
+// The [start,end) slice that covers `tick` (start <= tick < end), or {-1,-1}.
+std::pair<int, int> sliceCovering(const std::vector<Slice>& slices, int tick)
+{
+    for (const Slice& s : slices) {
+        if (s.start <= tick && tick < s.end) {
+            return { s.start, s.end };
+        }
+    }
+    return { -1, -1 };
+}
+
+// Whether `tick` is a slice boundary (a slice start, or the final slice end).
+bool isBoundary(const std::vector<Slice>& slices, int tick)
+{
+    if (slices.empty()) {
+        return false;
+    }
+    if (slices.back().end == tick) {
+        return true;
+    }
+    for (const Slice& s : slices) {
+        if (s.start == tick) {
+            return true;
+        }
+    }
+    return false;
+}
+
+} // namespace
+
+// ── CP1 (degenerate byte-identity) — the §2 clip is INERT on every whole-score
+// model. For each fixture, the slices from build(score) equal the slices from an
+// explicitly-everything span build, AND the tiling still spans exactly
+// [firstEligibleOnset, lastEligibleRelease) — the clip moved no endpoint inward.
+// (The exact whole-score span lists are pinned by S1–S8c; this proves the clip
+// itself changes nothing, i.e. loadedStart <= front and loadedEnd >= back hold.)
+TEST(Composing_SlicerTests, CP1_Clip_InertOnWholeScore)
+{
+    for (const char16_t* path : kSlicerFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel whole = NoteModel::build(score);
+        // A span that cannot clip anything: it strictly contains every note.
+        const NoteModel everything = NoteModel::build(score, INT_MIN / 2, INT_MAX / 2);
+
+        const auto sWhole = changePointSlices(whole);
+        const auto sEvery = changePointSlices(everything);
+        EXPECT_EQ(spans(sWhole), spans(sEvery))
+            << "clip not inert: whole-score slices differ from an everything-span build";
+        ASSERT_FALSE(sWhole.empty()) << "fixture has eligible notes ⇒ ≥1 slice";
+
+        const auto [lo, hi] = eligibleSpan(whole);
+        EXPECT_EQ(sWhole.front().start, lo)
+            << "clip moved the leading endpoint inward on a whole-score model";
+        EXPECT_EQ(sWhole.back().end, hi)
+            << "clip moved the trailing endpoint inward on a whole-score model";
+        expectCoveringPartition(sWhole);
+
+        delete score;
+    }
+}
+
+// ── CP2 (clip correctness — sustained-IN) — a note onsetting BEFORE loadedStart
+// but sustaining into the loaded span: the first slice starts at loadedStart, the
+// note is IN it, and NO slice exists before loadedStart. (C4 [0,9600); select
+// [4800, scoreEnd) so C4 sustains in.)
+TEST(Composing_SlicerTests, CP2_SustainedIn_FirstSliceStartsAtLoadedStart)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const int e = NoteModel::build(score).loadedEnd();  // scoreEnd (>= 9600)
+
+    const NoteModel model = NoteModel::build(score, 4800, e);
+    ASSERT_EQ(model.loadedStart(), 4800);
+
+    const auto slices = changePointSlices(model);
+    ASSERT_FALSE(slices.empty());
+    expectCoveringPartition(slices);
+    EXPECT_EQ(slices.front().start, 4800)
+        << "the first slice must start at loadedStart, not at the sustained-in onset (0)";
+    for (const Slice& s : slices) {
+        EXPECT_GE(s.start, 4800) << "no slice may exist before loadedStart";
+    }
+    // The sustained-in C4 is present in the first (edge) slice.
+    EXPECT_EQ(eligiblePitches(model, slices.front().start, slices.front().end),
+              (std::vector<int>{ 60 }));
+
+    delete score;
+}
+
+// ── CP3 (clip correctness — sustained-OUT) — a note releasing AFTER loadedEnd:
+// the last slice ENDS at loadedEnd, the note is IN it, and NO slice exists after
+// loadedEnd. (C4 [0,9600); select [0,4800) so C4 sustains out past 4800.)
+TEST(Composing_SlicerTests, CP3_SustainedOut_LastSliceEndsAtLoadedEnd)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+
+    const NoteModel model = NoteModel::build(score, 0, 4800);
+    ASSERT_EQ(model.loadedEnd(), 4800);
+
+    const auto slices = changePointSlices(model);
+    ASSERT_FALSE(slices.empty());
+    expectCoveringPartition(slices);
+    EXPECT_EQ(slices.back().end, 4800)
+        << "the last slice must end at loadedEnd, not at the sustained-out release (9600)";
+    for (const Slice& s : slices) {
+        EXPECT_LE(s.end, 4800) << "no slice may exist after loadedEnd";
+    }
+    EXPECT_EQ(eligiblePitches(model, slices.back().start, slices.back().end),
+              (std::vector<int>{ 60 }));
+
+    delete score;
+}
+
+// ── CP4 (clip + interior preservation) — a richer partial span. nm_slice_passing:
+// C-E-G held [0,1440), passing D [480,960). Select [600,1440): D sustains in
+// (onset 480 < 600). The clip drops the pre-600 boundaries (0, the D-onset 480)
+// and starts the edge slice at loadedStart=600, while the INTERIOR real change-
+// point at 960 (D releases) is preserved.
+TEST(Composing_SlicerTests, CP4_PartialSpan_ClipsEdge_PreservesInterior)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_slice_passing.mscx");
+    ASSERT_TRUE(score);
+
+    const NoteModel model = NoteModel::build(score, 600, 1440);
+    const auto slices = changePointSlices(model);
+    EXPECT_EQ(spans(slices),
+              (std::vector<std::pair<int, int>>{ { 600, 960 }, { 960, 1440 } }));
+    expectCoveringPartition(slices);
+    EXPECT_TRUE(isBoundary(slices, 960)) << "interior real change-point at 960 preserved";
+
+    // Edge slice [600,960): C-E-G + the sustained-in D. Interior [960,1440): C-E-G.
+    EXPECT_EQ(eligiblePitches(model, 600, 960), (std::vector<int>{ 60, 62, 64, 67 }));
+    EXPECT_EQ(eligiblePitches(model, 960, 1440), (std::vector<int>{ 60, 64, 67 }));
+
+    delete score;
+}
+
+// ── CP5 (seam-aware stability on extend — ARTIFICIAL seam grows) — the §3
+// property. The clip boundary at loadedStart=600 is ARTIFICIAL (D sounds on both
+// sides of it). Extending earlier dissolves it: the edge slice GROWS outward
+// (it is NOT byte-identical — the naive "all old slices identical" assertion is
+// wrong, §3), while the interior real change-point (960) and the content over the
+// original span are unchanged.
+TEST(Composing_SlicerTests, CP5_Extend_ArtificialSeam_EdgeSliceGrows)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_slice_passing.mscx");
+    ASSERT_TRUE(score);
+
+    NoteModel model = NoteModel::build(score, 600, 1440);
+    const auto before = changePointSlices(model);
+    EXPECT_EQ(spans(before),
+              (std::vector<std::pair<int, int>>{ { 600, 960 }, { 960, 1440 } }));
+    // Capture the content over the original span BEFORE extending.
+    const auto edgeBefore   = eligiblePitches(model, 600, 960);
+    const auto interiorBefore = eligiblePitches(model, 960, 1440);
+    const auto coverBefore  = sliceCovering(before, 600);  // {600,960}
+
+    // Extend earlier to the score start (loadedStart 600 -> 0) and re-slice.
+    model.extend(NoteModel::Direction::Earlier, 600);
+    ASSERT_EQ(model.loadedStart(), 0);
+    const auto after = changePointSlices(model);
+    EXPECT_EQ(spans(after),
+              (std::vector<std::pair<int, int>>{ { 0, 480 }, { 480, 960 }, { 960, 1440 } }));
+
+    // (a) The edge slice GREW: the slice covering tick 600 now starts EARLIER than
+    //     it did (480 < 600) — it is NOT byte-identical (the seam-aware property).
+    const auto coverAfter = sliceCovering(after, 600);  // {480,960}
+    EXPECT_LT(coverAfter.first, coverBefore.first)
+        << "the artificial-seam edge slice must extend outward, not stay byte-identical";
+    EXPECT_EQ(coverAfter.second, coverBefore.second) << "the edge slice's far end is unchanged";
+
+    // (b) Interior real change-point at 960 identical before/after.
+    EXPECT_TRUE(isBoundary(before, 960));
+    EXPECT_TRUE(isBoundary(after, 960));
+
+    // (c) Content over the ORIGINAL span [600,1440) unchanged (re-inference sees the
+    //     same notes there; extend only adds context to the leading edge).
+    EXPECT_EQ(eligiblePitches(model, 600, 960), edgeBefore);
+    EXPECT_EQ(eligiblePitches(model, 960, 1440), interiorBefore);
+
+    delete score;
+}
+
+// ── CP6 (extend — REAL seam is additive) — the complementary case. nm_dense_start:
+// C-E-G [0,480), D [480,960), F [960,1440), A [1440,1920). Select [960,1920): the
+// clip boundary at 960 coincides with a REAL change-point (F's onset / the prior
+// release), so it is NOT artificial. Extending earlier PREPENDS a new slice and
+// leaves the old slices byte-identical — additive, not edge-growth. (This is the
+// special case where old slices ARE preserved; CP5 is the general one where they
+// are not — do not conflate them.)
+TEST(Composing_SlicerTests, CP6_Extend_RealSeam_AdditivePrepend)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_dense_start.mscx");
+    ASSERT_TRUE(score);
+
+    NoteModel model = NoteModel::build(score, 960, 1920);
+    const auto before = changePointSlices(model);
+    EXPECT_EQ(spans(before),
+              (std::vector<std::pair<int, int>>{ { 960, 1440 }, { 1440, 1920 } }));
+
+    model.extend(NoteModel::Direction::Earlier, 480);  // loadedStart 960 -> 480
+    ASSERT_EQ(model.loadedStart(), 480);
+    const auto after = changePointSlices(model);
+    EXPECT_EQ(spans(after),
+              (std::vector<std::pair<int, int>>{ { 480, 960 }, { 960, 1440 }, { 1440, 1920 } }));
+
+    // The two old slices survive byte-identically (real seam ⇒ additive prepend).
+    EXPECT_EQ(after[1].start, before[0].start);
+    EXPECT_EQ(after[1].end, before[0].end);
+    EXPECT_EQ(after[2].start, before[1].start);
+    EXPECT_EQ(after[2].end, before[1].end);
+
+    delete score;
+}
+
+// ── CP7 (re-slice equivalence — the correctness-critical invariant, §3/§6.3) —
+// re-slicing after an extend equals slicing a model built directly over the
+// enlarged span. For each fixture, an interior selection extended to [x0,x1) gives
+// the SAME slices as build(score, x0, x1). Holds by construction (the slicer is a
+// pure function of (notes, loaded span), and EXT3 proves both agree on those), so
+// this is a genuine regression guard on that purity, swept over every shape.
+TEST(Composing_SlicerTests, CP7_ReSliceEquivalence_ExtendEqualsDirectBuild)
+{
+    for (const char16_t* path : kSlicerFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        const int s = full.loadedStart();
+        const int e = full.loadedEnd();
+        const int span = e - s;
+        if (span <= 8) { delete score; continue; }  // too short to nest an interior span
+
+        const int x0 = s + span / 8;
+        const int a0 = s + span * 3 / 8;
+        const int a1 = e - span * 3 / 8;
+        const int x1 = e - span / 8;
+        ASSERT_LT(a0, a1);
+        ASSERT_LT(x0, a0);
+        ASSERT_LT(a1, x1);
+
+        const NoteModel direct = NoteModel::build(score, x0, x1);
+
+        NoteModel sel = NoteModel::build(score, a0, a1);
+        sel.extend(NoteModel::Direction::Earlier, a0 - x0);
+        sel.extend(NoteModel::Direction::Later, x1 - a1);
+        ASSERT_EQ(sel.loadedStart(), x0);
+        ASSERT_EQ(sel.loadedEnd(), x1);
+
+        EXPECT_EQ(spans(changePointSlices(sel)), spans(changePointSlices(direct)))
+            << "re-slice after extend != slice over the directly-built enlarged span: " << path;
+
+        delete score;
+    }
 }

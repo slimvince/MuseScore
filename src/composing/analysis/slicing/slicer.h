@@ -52,11 +52,16 @@
 //     non-eligible passengers) — nothing is dropped. Slice IDENTITY (for
 //     "constant sonority") is the eligible sounding-NOTE set, not the octave-
 //     folded pitch-class set, and not the non-eligible passengers.
-//   * COVERING, LOSSLESS PARTITION. Consecutive boundary ticks form the slices;
-//     they tile the domain with no gaps and no overlaps. An interior span where
-//     all eligible voices rest is an explicit EMPTY slice (its eligible overlap
-//     set is empty) — NOT omitted. Leading/trailing silence outside the domain is
-//     not invented (no eligible note bounds it).
+//   * COVERING, LOSSLESS PARTITION over the LOADED SPAN. Consecutive boundary
+//     ticks form the slices; they tile the domain with no gaps and no overlaps.
+//     The domain is the intersection of the eligible-notes span with the model's
+//     loaded span (the bounded-context clip — see changePointSlices below): a
+//     sustained-in / sustained-out note is clipped to the loaded boundary, never
+//     dragging slicing outside the loaded span. On a whole-score model the loaded
+//     span covers the notes, so the clip is inert. An interior span where all
+//     eligible voices rest is an explicit EMPTY slice (its eligible overlap set is
+//     empty) — NOT omitted. Leading/trailing silence outside the domain is not
+//     invented (no eligible note bounds it).
 //   * DETERMINISTIC + O(n log n). Same input model -> same slices, every run.
 //
 // It is NOT wired into the live analysis pipeline (the old segment-first
@@ -83,11 +88,18 @@ struct Slice {
 // change-point grid.
 //
 // Boundaries = the sorted-unique union of every ONSET and every RELEASE tick
-// among the ELIGIBLE notes (`plays && visible && staffEligible`). Consecutive
-// boundaries form the slices, tiling `[firstEligibleOnset, lastEligibleRelease)`
+// among the ELIGIBLE notes (`plays && visible && staffEligible`), CLIPPED to the
+// model's loaded span. Consecutive boundaries form the slices, tiling
+// `[max(loadedStart, firstEligibleOnset), min(loadedEnd, lastEligibleRelease))`
 // with no gaps and no overlaps (an all-rest interior span is an explicit empty
-// slice). Returns empty if there are fewer than two distinct boundaries (no
-// eligible notes, or a single zero-width boundary — nothing to slice).
+// slice). The clip keeps slicing inside the loaded span: a sustained-in note
+// (onset < loadedStart) is present from loadedStart, a sustained-out note ends at
+// loadedEnd (bounded context — cowork_layer2_reslice_design.md §2). On a whole-
+// score model loadedStart <= firstEligibleOnset and loadedEnd >=
+// lastEligibleRelease, so the clip is inert and the tiling is exactly
+// `[firstEligibleOnset, lastEligibleRelease)` — byte-identical to before the clip.
+// Returns empty if there are fewer than two distinct boundaries (no eligible
+// notes, or a single zero-width / single-tick span — nothing to slice).
 std::vector<Slice> changePointSlices(const notemodel::NoteModel& model);
 
 } // namespace mu::composing::analysis::slicing

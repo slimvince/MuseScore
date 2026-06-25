@@ -650,10 +650,22 @@ dropped). A slice is therefore "constant **tonal** sonority"; non-eligible notes
 metadata. **Slice identity is the eligible sounding-NOTE set** (not the octave-folded PC set — a
 unison/octave shrink is a real boundary though the PC set is unchanged).
 
-**Covering / empty slices.** Every tick in `[firstEligibleOnset, lastEligibleRelease)` lands in
-exactly one slice. An interior span where all eligible voices rest is an **explicit EMPTY slice**
-(empty eligible overlap set), not a gap — it falls out of the consecutive-boundary construction
-for free. Leading/trailing silence outside the domain is not invented.
+**Covering / empty slices, clipped to the loaded span (bounded context).** The tiled domain is the
+intersection of the eligible-notes span with the model's **loaded span**:
+`[max(loadedStart, firstEligibleOnset), min(loadedEnd, lastEligibleRelease))`. Every tick in that
+domain lands in exactly one slice. A **sustained-in** note (onset `< loadedStart`) is clipped to
+start at `loadedStart`, a **sustained-out** note (release `> loadedEnd`) to end at `loadedEnd` —
+slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a
+**whole-score** model `loadedStart ≤ firstEligibleOnset` and `loadedEnd ≥ lastEligibleRelease`, so
+the clip is **inert** and the domain is exactly `[firstEligibleOnset, lastEligibleRelease)` —
+byte-identical to before the clip. An interior span where all eligible voices rest is an **explicit
+EMPTY slice** (empty eligible overlap set), not a gap — it falls out of the consecutive-boundary
+construction for free. Leading/trailing silence within the loaded span is not sliced; silence
+outside the domain is not invented. **Re-slice on extend** = re-call `changePointSlices` on the
+enlarged model (the slicer is a pure function of (notes, loaded span)): interior real change-points
+are stable, the edge slice abutting an *artificial* clip boundary extends into the new context, and
+the result equals a fresh slice over the enlarged span (re-slice equivalence). Incremental
+re-slice is Phase 2b (deferred, byte-identical).
 
 **Zero interpretation.** No thresholds, min-gap, merge, or snapping; no notion of
 "ornamental/passing/structural". **No special-casing of any note kind** — grace and tuplet
@@ -665,11 +677,14 @@ a chord change (the exhaustive candidate grid): a real chord change can never be
 (over-grab is structurally impossible), and the slicer never asserts a change — layer 3 decides
 which boundaries are real, layer N groups equal analyses.
 
-**Isolated + fully covered.** Built standalone with `slicer_tests.cpp` (13 tests: the audit §3
-functional set + edge/eligibility cases); **100% measured line and branch coverage** of
-`slicer.cpp` (no unreachable branches). Not referenced by any production code — composing /
-notation / pipeline-snapshot / BIR / oracle are byte-identical (snapshots 11/11 with no golden
-refresh). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
+**Fully covered + byte-identical on the live path.** Built with `slicer_tests.cpp` (20 tests: the
+audit §3 functional set + edge/eligibility cases + the Phase-2 bounded-context set CP1–CP7 —
+degenerate clip-inertness, sustained-in/out clip correctness, seam-aware stability on extend,
+re-slice equivalence). `changePointSlices` is consumed by L3 on a **whole-score** model
+(`regionanalyzer.cpp` → `KeyModeSequenceDecoder`; `batch_analyze` key/chord decode), where the
+Phase-2 clip is inert — so composing / notation / pipeline-snapshot / BIR / oracle are
+byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golden refresh; corpus
+0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
 `cc_layer2_audit_dossier.md`.
 
 #### Layer 3 — key/mode is now the sequence decoder (2026-06-22, as-built, Step 1 — commit `a6b08af3fe`)
