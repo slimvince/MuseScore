@@ -89,8 +89,12 @@ score" is simply the special case "selection = score." This is what keeps the ba
   and **whether the score boundary was hit**. Re-requesting an already-loaded span is a **no-op** (idempotent).
 - **Bounded recompute — a fresh forward re-inference, not a patch.** "Re-run" means each affected layer **re-infers as
   if running for the first time** over the enlarged loaded span — never a local patch of its previous output.
-  Architectural Layer 2 slices the newly loaded region (additive — the existing region's slices are a local fact and do
-  not change). The requesting layer then **re-infers** with the new context in view; and because more context can
+  Architectural Layer 2 re-slices over the enlarged span: its **interior** real change-points are stable, but the
+  **edge slice abutting the old loaded boundary extends** into the newly-loaded context (the old clip boundary was
+  artificial, not a real change-point — see `cowork_layer2_reslice_design.md` §3). This is benign: what guarantees
+  correctness is **re-slice equivalence** (the result equals a fresh slice over the enlarged span), and the edge
+  extension is exactly the "more context at the leading edge" convergence (§3.6) absorbs. The requesting layer then
+  **re-infers** with the new context in view; and because more context can
   change *what it decides*, **its changed inference propagates forward** — every inferring layer **after** it re-infers
   in turn (a different leading-edge key changes the chord there, which changes the function, and so on). The requesting
   layer re-tests its stop condition; if still unmet and neither the hard bound nor the score boundary is reached, it may
