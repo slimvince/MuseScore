@@ -148,29 +148,35 @@ structurally unresolvable by pitch class and are the seed of a future **two-tier
 spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
 `cc_metric_rebaseline_report.md` + `cc_gate_rebaseline_verify_report.md`.
 
-- **Baroque = 57** with identities (stem@tick):
-  `{bwv10.7@36000, bwv102.7@17520, bwv122.6@6720, bwv14.5@8160, bwv144.6@15360,
-  bwv144.6@16320, bwv151.5@13440, bwv153.1@18240, bwv16.6@16800, bwv169.7@24960,
-  bwv17.7@46080, bwv174.5@6240, bwv20.11@13440, bwv227.7@18120, bwv244.32@5760,
-  bwv244.46@960, bwv245.15@13920, bwv245.17@4800, bwv245.37@13920, bwv245.3@12480,
-  bwv245.40@51360, bwv258@10560, bwv261@33840, bwv269@20640, bwv272@4800, bwv272@8160,
-  bwv282@9120, bwv289@21600, bwv300@13440, bwv301@960, bwv309@8640, bwv320@31680,
-  bwv334@5280, bwv334@6720, bwv336@8640, bwv342@25440, bwv352@1440, bwv358@6000,
-  bwv364@2880, bwv381@4800, bwv392@14400, bwv40.3@2400, bwv402@22080, bwv416@10080,
-  bwv421@2880, bwv422@23040, bwv423@28320, bwv429@24240, bwv432@5520, bwv45.7@20160,
-  bwv48.3@2880, bwv57.8@15360, bwv60.5@30960, bwv64.8@5280, bwv77.6@22080, bwv94.8@24960,
-  bwv96.6@13440}` (= old Baroque-13 ∪ 44 oracle-verified additions; confirmed by
-  `characterise_bir_false.py --corpus-dir tools/corpus/baroque`).
-- **Jazz = 23** with identities (stem@tick):
-  `{bwv144.6@15360, bwv144.6@16320, bwv244.15@10080, bwv245.15@13920, bwv245.17@4800,
-  bwv245.37@13920, bwv245.40@51360, bwv272@8160, bwv280@17280, bwv282@9120, bwv301@1440,
-  bwv313@14880, bwv334@5280, bwv342@25440, bwv392@14400, bwv422@23040, bwv429@24240,
-  bwv432@5520, bwv45.7@20160, bwv48.3@2880, bwv64.8@5280, bwv74.8@13440, bwv74.8@13920}`
-  (= old Jazz-7 ∪ 16 additions).
-- **Default (the user-run config) = 57** = Baroque-57 with `{bwv227.7@18120, bwv60.5@30960}`
-  replaced by `{bwv187.7@19200, bwv227.7@18000}`. The lone Default-specific delta is a
-  segmentation-tick variant of the same `bwv227.7` over-grab case (oracle-correct GT root
-  C♯); the old Default-14 = Baroque-13 ∪ {bwv187.7@19200}, all 14 preserved.
+**★ Corrected to the ratified post-L3-wiring state `53 / 24 / 53` (Stage-0 measurement, commit `b57dbfa7a8`,
+2026-06-25).** The `57/23/57` sets previously listed here predated the **already-ratified L3-wiring delta**
+(`−4 / +1 / −4`) — the two-tier-gate prose above describes that delta, but these integer tables were never updated.
+They are now. The delta, verified by diffing the measured sets against the prior `57/23/57` sets: **Baroque**
+`− {bwv102.7@17520, bwv122.6@6720, bwv227.7@18120, bwv301@960, bwv336@8640, bwv381@4800}` (six fixed)
+`+ {bwv272@4320, bwv289@20160}` (two class-(a) symmetric dim7) = net **−4**; **Jazz** `− {bwv244.15@10080}`
+`+ {bwv272@4320, bwv291@17760}` = net **+1**. (Baroque and Jazz deltas Cowork-verified against the prior sets;
+Default measured at `53`.) The **case-identity set, not the integer, is the gate** — re-measure with
+`characterise_bir_false.py` after any change.
+
+- **Baroque = 53** with identities (stem@tick):
+  `{bwv10.7@36000, bwv14.5@8160, bwv144.6@15360, bwv144.6@16320, bwv151.5@13440, bwv153.1@18240, bwv16.6@16800,
+  bwv169.7@24960, bwv17.7@46080, bwv174.5@6240, bwv20.11@13440, bwv244.32@5760, bwv244.46@960, bwv245.15@13920,
+  bwv245.17@4800, bwv245.37@13920, bwv245.3@12480, bwv245.40@51360, bwv258@10560, bwv261@33840, bwv269@20640,
+  bwv272@4320, bwv272@4800, bwv272@8160, bwv282@9120, bwv289@20160, bwv289@21600, bwv300@13440, bwv309@8640,
+  bwv320@31680, bwv334@5280, bwv334@6720, bwv342@25440, bwv352@1440, bwv358@6000, bwv364@2880, bwv392@14400,
+  bwv40.3@2400, bwv402@22080, bwv416@10080, bwv421@2880, bwv422@23040, bwv423@28320, bwv429@24240, bwv432@5520,
+  bwv45.7@20160, bwv48.3@2880, bwv57.8@15360, bwv60.5@30960, bwv64.8@5280, bwv77.6@22080, bwv94.8@24960,
+  bwv96.6@13440}` (= prior Baroque-57 − six fixed + two class-(a); `characterise_bir_false.py --corpus-dir tools/corpus/baroque`).
+- **Jazz = 24** with identities (stem@tick):
+  `{bwv144.6@15360, bwv144.6@16320, bwv245.15@13920, bwv245.17@4800, bwv245.37@13920, bwv245.40@51360, bwv272@4320,
+  bwv272@8160, bwv280@17280, bwv282@9120, bwv291@17760, bwv301@1440, bwv313@14880, bwv334@5280, bwv342@25440,
+  bwv392@14400, bwv422@23040, bwv429@24240, bwv432@5520, bwv45.7@20160, bwv48.3@2880, bwv64.8@5280, bwv74.8@13440,
+  bwv74.8@13920}` (= prior Jazz-23 − {bwv244.15@10080} + {bwv272@4320, bwv291@17760}).
+- **Default (the user-run config) = 53.** Per the Stage-0 `characterise_bir_false.py --corpus-dir tools/corpus/default`
+  measurement, Default = Baroque-53 with `{bwv352@1440, bwv60.5@30960}` replaced by `{bwv227.7@18000, bwv387@10560}`
+  (the rest identical to Baroque-53). *(⚠ The Stage-0 report's one-line Default-delta prose was internally inconsistent;
+  this set is taken from the measured Default list, not that summary. Re-confirm the exact Default set at the next
+  corpus regen before relying on individual identities.)*
 
 **Cross-layer-budget caveat (2026-06-24, O1 measurement):** the BIR=false set is **not** the Layer-5 resolver
 residual — it is a **work budget distributed across Layers 1–5**, and it overstates the function-only remainder
@@ -184,7 +190,7 @@ scale `C-D-E♭-F-G` over-grabbed across two GT chords `i43`/`iv532`, Cowork-ver
 (relative major/minor, tonicization-vs-modulation) on the key side. So a BIR=false count is read as cross-layer work,
 not as any one layer's accuracy. (O1 resolved: the resolver of "uncertain" is Layer 5 itself, no separate box.)
 
-**Granularity caveat (Stage 2.2-i):** the 57/23 gate is measured at **batch
+**Granularity caveat (Stage 2.2-i):** the 53/24 gate is measured at **batch
 (cross-barline) region** granularity; the user-visible **per-beat** root-error rate
 is ~7× higher when the same scores are scored at measure-aligned (section)
 granularity. Inspect that view with `batch_analyze --section-level` (diagnostic flag,
