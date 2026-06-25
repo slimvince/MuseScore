@@ -69,7 +69,15 @@ key metric.
   **gating/calibrating** the term, not deferring the code; the plumbing lands now so it is never retrofitted, and the
   full precision gain realises when Layer 5 arrives. **Gate:** BIR no-regression + key metric + the byte-identity
   discipline where applicable.
-- **4c — remaining deferred L3 follow-ups**, each measured/gated as warranted: the Step-2 scaleMembership reweight,
+- **4c — leading-tone presence-gate de-brittling (the diagnosed non-Bach key regression).** Weight-scale the
+  characteristic-pitch / true-leading-tone terms instead of the brittle `>0.1` binary gate
+  (`keymodeanalyzer.cpp:344,374`), so a weak-but-present leading tone (the Mozart B♮ at 0.093) is not treated as
+  absent. **Gate:** the three xfail'd notation tests (`MozartK279…`, `HarmonyPinning RN`/`Nashville`) flip back to C,
+  the two-tier **BIR gate holds on both presets**, the key metric does not regress, snapshots refreshed only if
+  confirmed correct. Diagnosis (the scale lever is *not* the fix): L3 spec §11 + `cc_keyregression_diagnosis_report.md`.
+  Needs a small read-only design (the right replacement for the binary gate) before the build. The principled
+  spelling/function-aware leading tone is a later enhancement (folds in with 4b tpc / future L5), not required here.
+- **4d — remaining deferred L3 follow-ups**, each measured/gated as warranted: the Step-2 scaleMembership reweight,
   the P4 tick-local path, the S1 seed-retire, the sequence-margin confidence redesign, and raising the "uncertain"
   recall (currently high-precision/low-recall). Take only the ones that measure net-positive under the gate; drop the
   rest.

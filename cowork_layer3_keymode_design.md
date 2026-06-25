@@ -310,6 +310,18 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   decided with high confidence). Raising the recall is a later tuning of the "uncertain" confidence level, weighed
   against keeping its precision. The correct key is, however, carried among the alternatives on roughly three-quarters
   of the misses, so the dominant remaining error is selection, not coverage.
+- **★ Brittle leading-tone presence-gate — a non-Bach key regression (diagnosed 2026-06-25; verified at source).** The
+  characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a `>0.1` window weight
+  (`keymodeanalyzer.cpp:344,374`): a key's leading tone that is *present but weak* (below the gate) is treated as
+  **absent**, so the key is denied its anchors *and* penalized. On the Mozart K279 opening the C-major leading tone
+  (B♮) carries weight **0.093** — a hair under the gate — so C major is flipped to **F major** (whose leading tone E
+  is C's ever-present third). The old 24-beat resolver cleared the gate; the wired 4-beat window does not, and the
+  window-width relation is **non-monotonic**, so simply widening it is not a clean fix. This is a **general
+  non-Bach-opening fragility**, structurally **invisible to the Bach-only BIR gate** (the notation tests are the guard
+  that caught it). The **scale-membership lever does NOT fix it** (measured: 15× the scale penalty never flips F→C —
+  the char/lt terms are *presence-gated*, not weight-scaled). **Fix = de-brittle the gate (weight-scale the char/lt
+  terms); a Layer-3 emission increment scheduled in Phase 4 of the stabilization plan — not a foundation patch.** Full
+  diagnosis: `cc_keyregression_diagnosis_report.md`.
 - **One key/mode fix is deferred to wiring.** The fix for the stable-region under-weighting is a change to the shared
   per-window scorer; because that scorer is also used by the current per-region resolver, changing it now would move
   production output, so it is specified and deferred to the wiring increment — when the decoder replaces the resolver
