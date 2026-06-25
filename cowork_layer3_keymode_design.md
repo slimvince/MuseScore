@@ -31,13 +31,16 @@ every case).** Architectural Layer 3 owns two things outright: the **candidate s
 infers key/mode from the notes, and no other architectural layer generates or re-scores key/mode candidates. What
 Architectural Layer 3 does **not** own is the *final arbitration of the cases the notes alone cannot decide* (relative
 major versus minor; a modulation/tonicization seam): that residual — handed forward as the ranked alternatives plus the
-"uncertain" mark — is settled by the later, gated key-and-chord step using **functional evidence** (chord, cadence,
+"uncertain" mark — is settled by Architectural Layer 5 using **functional evidence** (chord, cadence,
 function) that Architectural Layer 3 structurally cannot have. So key/mode inference is split along an **evidence
 boundary**: Architectural Layer 3 contributes the note evidence and resolves everything the notes can resolve; the
 gated step contributes the functional evidence and resolves only the flagged residual — by **selecting among
 Architectural Layer 3's carried alternatives**, never by inventing a candidate or re-scoring from the notes (that
 note-evidence model has exactly one home). Knowing *where the note evidence runs out* is itself part of Architectural
-Layer 3's job; the "uncertain" mark is the explicit hand-off token.
+Layer 3's job; the "uncertain" mark is the explicit hand-off token. *(Open item O1, resolved and user-ratified
+2026-06-24: that resolver is Architectural Layer 5 (function) itself, performed at its gated entry — not a distinct
+box between the note-layers and Layer 5. Same name used in the Layer-4 spec. Evidence:
+`cowork_uncertain_resolver_investigation.md`.)*
 
 **What music Architectural Layer 3 operates on.** The slices from Architectural Layer 2, over the notes from
 Architectural Layer 1, for the user-selected part of the score.
@@ -60,7 +63,7 @@ key/modes, a confidence, and an "uncertain" mark where the evidence is genuinely
 - It does **not** group equal slices for display (Architectural Layer 6), and does **not** read or change the notes
   or slices (Architectural Layers 1 and 2).
 - It does **not** force a single answer on the genuinely ambiguous cases — it marks them "uncertain" and leaves them
-  for the later, gated key-and-chord step.
+  for Architectural Layer 5.
 - It does **not** treat the written key signature as the truth (only as a weak hint), and does **not** read back any
   chord, function, or already-decided key.
 
@@ -90,7 +93,7 @@ Section 11.)
 - **Its output states its own certainty.** It commits to a key/mode where the note evidence is decisive, and where
   the evidence is genuinely ambiguous it instead records ranked alternatives and marks the slice "uncertain" rather
   than forcing a single answer. The genuinely ambiguous cases (relative major/minor, and modulation boundaries) are
-  exactly the cases that need chord evidence to settle, which happens in a later, separately-gated step — so forcing
+  exactly the cases that need chord evidence to settle, which happens in Architectural Layer 5 — so forcing
   an answer here would be both premature and would block that later step.
 - **It changes analysis output** (unlike Architectural Layers 1 and 2, which do not), so it is judged by accuracy
   measurements, not by producing byte-for-byte identical output; the pinned analysis snapshots are refreshed only
@@ -107,7 +110,14 @@ Section 11.)
 - **It may need more music than the user selected.** To judge the opening of a selection, it sometimes needs to see
   the key the music was in **earlier in time than the point where the selection begins**. When it does, it asks
   **Architectural Layer 1 to widen the analysed span earlier in time** and supply those earlier notes. Architectural
-  Layer 3 is the *requester* of more music; Architectural Layer 1 is the *supplier*.
+  Layer 3 is the *requester* of more music; Architectural Layer 1 is the *supplier*. This reach-back **is an extension
+  request** in the bounded-context contract (`cowork_bounded_context_design.md`): direction = earlier in time, stop
+  condition = *"the prevailing key before the selection is in view,"* hard bound = a maximum reach, terminating at the
+  score start. **(Designed, not yet built — verified 2026-06-24: no reach-back/extend code exists at either layer. It
+  is a genuine requirement of the selection-based product — without it, the key at the leading edge of a selection is
+  inferred with no earlier context — currently only *masked* because the note model still loads the whole score
+  (Architectural Layer 1 §11). It must land together with selection-based loading. The scenarios and glossary below
+  describe the designed behaviour, not present code.)**
 - **It is not responsible for noticing when the score has been edited.** Deciding that the analysis is out of date
   and must be re-run is the caller's responsibility, not Architectural Layer 3's.
 - **The score's written key signature is treated as a weak hint only, not as the truth** — the key/mode is inferred
@@ -125,7 +135,7 @@ per-window key/mode scorer (reused unchanged); and Architectural Layer 3's own t
   the whole piece.
 **Who uses Architectural Layer 3 (its consumers):** the region analyzer (the code that asks for the key/mode of each
 region); Architectural Layer 4 (it reads each slice's chosen key/mode as a starting assumption for the chord
-symbol); and the later, separately-gated step that settles the cases Architectural Layer 3 marked "uncertain."
+symbol); and Architectural Layer 5 (function), which settles the cases Architectural Layer 3 marked "uncertain."
 **What Architectural Layer 3 deliberately does not read:** chord symbols, function, cadences, or any already-decided
 key fed back to it.
 
@@ -141,12 +151,17 @@ key signature. The read-only grading diagnostic is `batch_analyze --decode-keymo
 Place the slices left-to-right in time. For each slice, the existing scorer rates every candidate key/mode by how
 well it fits the notes in and just around that slice (a **local-fit score**). Picking one key/mode per slice and
 reading them left-to-right gives a **sequence**. Architectural Layer 3 chooses the single best sequence: the one
-with the highest total local-fit, minus the cost of every key/mode change along the way. The change cost makes
-keeping the current key/mode cheap and changing it expensive — more expensive the further the new key is from the
-current one, and most expensive of all between relative major and relative minor (the hardest pair). The effect:
-a brief excursion is not worth the change cost over so few slices, so it stays in the original key; a sustained
-modulation is worth it, so the key changes; and the relative-major-versus-minor choice is settled by which reading
-fits the whole run of music, not one ambiguous slice. The best sequence is found with the standard, fast
+with the highest total local-fit, minus the cost of every key/mode change along the way — **both measured on one
+common scale** (the change cost is expressed in the same units as the local-fit score, so the single sum is
+meaningful). The change cost makes keeping the current key/mode cheap and changing it expensive — more expensive the
+further the new key is from the current one, **measured as circle-of-fifths (key-signature) distance** (the number of
+signature steps between the two keys' parent tonics; `C`→`F♯` and `C`→`G♭` both = 6 — not semitone distance and not a
+count of differing scale tones), and most expensive of all between relative major and relative minor (the hardest
+pair). The effect: a brief excursion is not worth the change cost over so few slices, so it stays in the original key;
+a sustained modulation is worth it, so the key changes; and the relative-major-versus-minor choice is settled by which
+reading fits the whole run of music, not one ambiguous slice. **There is no "how many slices" threshold for
+brief-versus-sustained — it is purely this fit-versus-cost arithmetic** (a duration threshold a reader might expect
+does not exist). The best sequence is found with the standard, fast
 best-sequence algorithm (described in Section 5). This is the well-established way key-finding handles local keys and
 modulation, applied here on Architectural Layer 2's slices and reusing our existing scorer.
 
@@ -197,7 +212,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
 
 ## 8. Crosscutting concepts
 - **Certainty is part of the output** — every slice carries ranked alternatives, a confidence, and an "uncertain"
-  mark; ambiguity is recorded, never hidden, and it is what the later gated step and Architectural Layer 4 use.
+  mark; ambiguity is recorded, never hidden, and it is what Architectural Layer 5 and Architectural Layer 4 use.
 - **It annotates, it does not transform** — the slices and notes are unchanged; the chosen key/modes are added as an
   annotation; the alternatives are kept so the decision can be revisited later.
 - **Speed and incremental editing** — the decision grows only with the number of slices; the Architectural Layer 1
@@ -220,7 +235,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
 - **Decide the whole sequence at once, not one region at a time.** Reason: deciding regions in isolation is the
   measured ceiling on relative-pair and modulation accuracy.
 - **Commit where sure, mark "uncertain" where not — do not force an answer.** Reason: the ambiguous cases genuinely
-  need chord evidence, which arrives in a later, gated step; forcing an answer now would block that step.
+  need chord evidence, which arrives at Architectural Layer 5; forcing an answer now would block that step.
 - **Reuse the existing key/mode scorer** (which scores all 252 combinations of the 12 tonics and 21 modes).
   Alternative considered: a simpler standard key profile. Chosen: ours, because it covers all modes and so works in
   any musical style.
@@ -271,7 +286,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   analysis cannot represent it; those are not errors to optimise away.
 - **Several values are left to be tuned:** how many candidates to keep, the change-cost amounts, the per-slice
   scoring-window size, and the "uncertain" confidence level.
-- **The hardest cases are deliberately left marked "uncertain"** for the later, gated key-and-chord step — they are
+- **The hardest cases are deliberately left marked "uncertain"** for Architectural Layer 5 — they are
   not solved in Architectural Layer 3.
 - **The key/mode-recoverable headroom is small and bounded (measured, 2026-06-22).** A causal decomposition of the
   decoder's errors found that only about 7–12% of its misses (roughly 11.5% Baroque, 7.4% Jazz) are genuinely fixable
@@ -280,7 +295,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   modulation regions, where a present pitch cannot be told from a tonicization tone; that distinction is a
   function-level call and belongs to a later architectural layer, not here.
 - **The residual is handed on, with a concrete specification.** What Architectural Layer 3 cannot decide from the
-  notes, and hands to the function layer (Architectural Layer 5), is: (i) **tonicization-versus-modulation
+  notes, and hands to Architectural Layer 5 (function), is: (i) **tonicization-versus-modulation
   arbitration** — the largest share, needing cadence/function to decide whether a sounded accidental opens a key area
   or merely tonicizes; (ii) **same-collection tonal-centre selection** — the relative major/minor and the modal
   rotations that share one pitch collection, needing a cadential cue to pick the tonic; and (iii) a small
@@ -289,7 +304,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
 - **The change-cost tuning is partly entangled with the later layer.** Whether a one-to-two-measure passage is an
   extended tonicization or a short modulation is itself a function-level judgment, so lowering the change cost to
   recover real modulations also un-suppresses tonicizations; the cost can only be set to a defensible trade-off point,
-  not cleanly optimised, until the function layer can arbitrate that boundary.
+  not cleanly optimised, until Architectural Layer 5 (function) can arbitrate that boundary.
 - **Uncertainty is currently under-claimed.** As built, the "uncertain" mark is high-precision but low-recall — when
   it fires it is usually justified, but it catches only a small share of the actual errors (most wrong slices are
   decided with high confidence). Raising the recall is a later tuning of the "uncertain" confidence level, weighed
@@ -318,7 +333,9 @@ confidence level below which a slice is marked "uncertain" — are tunable value
 constant sounding-tonal notes (from Architectural Layer 2). **Local-fit score** — for one slice, a score for each
 candidate key/mode saying how well it fits the notes in and around that slice. **Sequence** — the chosen key/mode
 for each slice, read left-to-right in time, chosen as one whole. **Change cost** — the penalty for changing the
-key/mode from one slice to the next. **Best-sequence algorithm** — the standard one-pass method for finding the
+key/mode from one slice to the next; sized by **circle-of-fifths (key-signature) distance** between the two keys (plus
+a large extra penalty for the relative-major/minor switch), and expressed in the **same units as the local-fit score**
+so the two combine on one scale. **Best-sequence algorithm** — the standard one-pass method for finding the
 single highest-scoring sequence given per-slice scores and change costs. **Confidence (sequence margin)** — how much
 better the winning sequence is than the best sequence forced to pick a different key/mode at that slice. **"Uncertain"
 mark** — set on a slice whose confidence is low (a near-tie). **Reach-back** — asking Architectural Layer 1 to widen
@@ -335,7 +352,7 @@ the analysed span earlier in time to gain context.
   notes.
 - **Correction — a later draft put cadence detection inside this layer.** That was also wrong: a cadence is a
   function-level event (a V→I), so it belongs after key and chord; brief-versus-real modulation is handled here by
-  the change cost, and cadence-confirmed key refinement is the later, gated key-and-chord step.
+  the change cost, and cadence-confirmed key refinement is Architectural Layer 5.
 - **On naming:** "Increment C" was a label for a unit of *delivery*, not an architectural layer; the build sequence
   is in the delivery plan, not in this architecture document.
 
@@ -358,9 +375,37 @@ say plainly which we rejected and why.*
   key-boundary alternative if needed.
 - **Considered and discarded / deferred:** **joint or multitask neural models** that predict key and chord together
   (AugmentedNet — Nápoles López, ISMIR 2021; Chen & Su, ISMIR 2018; AnalysisGNN/ChordGNN) — the highest-accuracy
-  approach, but it co-predicts key and chord in one opaque step; we **defer** it to the later, gated key-and-chord
-  step rather than use it in this decomposed layer. A **bare Krumhansl profile** — rejected in favour of our richer
+  approach, but it co-predicts key and chord in one opaque step; we **defer** it to Architectural Layer 5 (function)
+  rather than use it in this decomposed layer. A **bare Krumhansl profile** — rejected in favour of our richer
   mode-complete scorer. **Chord-first ordering** and **cadence detection inside this layer** — rejected (Section 13).
 - **Corpora / datasets used:** for the direct key/mode-versus-human-analysis metric, the **Roman-numeral analysis
   corpora** — When-in-Rome and the DCML corpora — read for their stated local key/mode at each position; a
   fixed **held-out split** so the metric is out-of-sample; and the project's **Bach** and **Jazz** tuning presets.
+
+## 15. To do — deferred enhancements (this layer is built; these are revisions on record)
+- **★ Use the notated spelling (tonal pitch class) as key evidence.** As built, Architectural Layer 3 works in **pitch
+  class** — it is spelling-blind. The **maximal-information** principle (target architecture, 2026-06-22) says it must
+  also use the notated tpc that Architectural Layer 1 carries: the spelling of an accidental (`G♯` vs `A♭`) is a
+  **modulation-direction** clue (sharp-side vs flat-side) the pitch-class emission currently discards, so reading it
+  should sharpen the key/mode inference (not the dim7 rotation churn — that is a chord-root/Architectural-Layer-4
+  concern, resolved there by spelling). **Shape of the retrofit:** the per-slice emission reads tpc-aware evidence
+  alongside pitch class; the decoder structure is unchanged; gated on the BIR + key-inference metrics and the
+  byte-identity discipline, applied where the scorer is tuned (the wiring/scorer path). **Status:** deferred — the
+  layer is wired and live (`a6b08af3fe`); recorded here so the now-governing principle and the as-built do not
+  silently disagree. (Recorded per user, 2026-06-22.)
+  **Cross-layer when built:** (i) **shared primitive** — Architectural Layer 4 also reads the notated tpc (for the
+  chord root); the spelling-reading/interpretation must be **one shared derived view** used by both, not duplicated
+  per layer (the unification rule). (ii) **downstream re-validation** — a sharper key prior shifts Architectural
+  Layer 4's output (for the better), so re-run Architectural Layer 4's snapshots + metrics after this retrofit; the
+  forward-only layering keeps that a bounded re-check, not a redesign. (iii) The chord layer needs **no change** to
+  benefit — it improves automatically through the diatonic prior; this retrofit is decoupled from building Layer 4.
+  **MEASURED (read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
+  **genuine spelling signal** (its modulation-gain/stable-loss frontier beats a change-cost control on both presets)
+  and helps modulation regions cleanly (+2–8 pts), **but** as a *standalone Layer-3* term it is only **marginal
+  overall** (best net +0.5 Baroque / +0.6 Jazz at a low weight) because it **hurts stable regions** — it over-switches
+  on tonicizations. That stable cost is exactly the **tonicization-vs-modulation discriminator that function (Layer 5)
+  supplies**, and the term is structurally **blind to same-signature ambiguity** (relative-pair / modal rotation). So
+  the right home for this retrofit is **Architectural Layer 5 (function)**, where function gates the
+  spelling signal — admitting the clean modulation gain without the stable cost — **not** a standalone Layer-3 emission
+  patch. This is why L4-first is the disciplined order (no clean standalone L3 win is being skipped). (Upper-bound
+  caveat: engraved corpus; MIDI spelling would see less.)

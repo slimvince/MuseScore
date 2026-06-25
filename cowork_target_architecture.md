@@ -56,6 +56,27 @@ layer.** Each does ONE thing and annotates the slice; the order is fixed by depe
 precisely is the *(evidence-source × question)* invariant in the control-flow contract below: a layer owns one
 evidence source's contribution to one question — not necessarily the final answer to that question.**
 
+**★ Minimality / maximal separation (user-ratified 2026-06-22).** Each layer does **as little as possible**: whatever
+*can* be a separate concern in a later layer **must** be. A layer settles only the part of its question that **its own
+evidence** decides, and **defers** everything that needs evidence a later layer owns — handed forward as carried
+alternatives + an "uncertain" mark, never guessed. It never reaches for a separable sub-problem. *Worked example:*
+resolving a symmetric chord's spelled root (diminished-seventh / augmented) needs spelling + function — a later layer —
+so the chord layer names the *quality and bass* and **defers the root**, rather than pinning it by voice-leading or
+spelling cleverness it shouldn't own. Likewise it decides *binary* chord-membership (needed to name the chord) but not
+the *non-chord-tone type* (passing/neighbour/suspension — separable, so deferred). This is the rule that keeps every
+layer thin and is the test applied when drawing a new layer's boundary: if a sub-task can stand alone with its own
+evidence, it is its own concern.
+
+**★ Maximal information (the complement to minimality, user-ratified 2026-06-22).** Within its one question, a layer
+uses **all** the information available to it — never a reduced projection when a richer one is on hand. In particular
+it uses the **notated spelling** (the tonal pitch class — `G♯` vs `A♭`), metric weight, articulation, and voice/staff
+assignment that Layer 1 carries losslessly, rather than collapsing to bare pitch class. This composes *with*
+minimality, not against it: **minimal scope, maximal evidence within that scope.** *Worked example:* a
+diminished-seventh's spelled root is undecidable in *pitch class*, but the **notated** spelling usually names it — so
+the chord layer reads the spelling and pins the root where the notation gives one, deferring only where the spelling
+is absent or unreliable (a MIDI import, an expedient enharmonic). We do not discard information the score already
+provides; the spelling is a strong-but-fallible prior, weighed against the other evidence, not trusted blindly.
+
 | Layer | Name | Contract | Fact or Judgment? |
 |---|---|---|---|
 | **1** | **Note model** | Read the score once → the lossless, annotated set of sounding notes (pitch, tpc, staff, voice, onset, offset, duration, ties, `isGrace`, `plays`, `visible`, staff-eligibility). Preserved end-to-end. **No** weighting, filtering, or aggregation. ONE representation, ONE path. | Fact |
@@ -132,6 +153,19 @@ owns the rest) stated explicitly.**
 > (like the joint step) so it does not fire on the clean majority; **convergence-bounded** if iterative (a fixed
 > iteration cap, no oscillation); and **recorded as an architecture decision**. The bar is high precisely because a
 > backward edge trades away the acyclic guarantee — but it is on the table if the evidence demands it.
+
+**★ Bounded context — the analysis works on the user's selection, and a layer asks for more (user-ratified
+2026-06-24).** A governing cross-cutting contract, applying to **every** layer L1–L(n) (full design:
+`cowork_bounded_context_design.md`). The product analyses the **user's selection**, never the whole score
+(whole-score is offline batch testing only). A selection is a temporal subset, so a layer that needs evidence beyond
+it **requests an extension** from Architectural Layer 1 (the supplier), which loads more notes in the asked direction,
+append-only, clamping at — and reporting — the score boundary; the requesting layer carries the **stop condition** and
+a **hard bound**, so extension terminates. **No layer may assume infinite context** ("the whole score is always
+loaded") — that assumption is the expensive-to-retrofit error this contract exists to forbid; it must be designed into
+each layer *before* the next is built on top. Output covers only the selection; extended music is **evidence**.
+Requesting notes from a lower layer is a **data-supply call down the stack, not an analysis back-edge**, so it is
+consistent with the forward-only contract above. The whole-score load is the **degenerate case** (selection = score,
+no extension fires) — which is what keeps the batch-testing path unchanged.
 
 ## 3. Why this is the target (the evidence)
 - **Dissolves over-grab (~45%, the biggest lever)** by construction — no coarse unit spans two chords.

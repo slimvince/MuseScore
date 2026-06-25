@@ -18,6 +18,186 @@
 
 ---
 
+## ⛔ STANDING RULE: COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE (user mandate 2026-06-21)
+
+**The same rule Cowork imposes on CC applies to Cowork itself.** Verified facts only.
+
+- **Never assert a fact, number, file path, line, key/tonic, or claim from memory or plausibility.** If it is
+  not verified this session at the committed object (`git show <hash>:path`) or a fresh read, it is NOT a fact —
+  say "I need to verify" and verify, or label it explicitly as unverified.
+- **Numbers and identifiers re-state, they don't persist.** Re-confirm baselines, hashes, tiers, corpus
+  identities each time; do not carry a remembered figure forward (the `kma_abs`/`Gmin` slip — Cowork wrote
+  "stable Gmin" for bwv40.8 from the screenshot label without verifying; the real key was F minor; CC caught it).
+- **When instructing CC, only put facts Cowork has verified into the instruction** — an unverified detail in an
+  instruction can trigger a false stop or mislead. Mark anything provisional as `[prov]`.
+- **Distinguish "CC measured it" from "Cowork verified it."** Relay CC's measurements as CC's; verify the
+  load-bearing ones at source before building on them. Flag what could not be verified (e.g. shell congested).
+- This mirrors CLAUDE.md's "never hallucinate or guess, verified facts only — better ask first if unsure."
+
+---
+
+## ⛔ STANDING: TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14)
+
+The foundation (Stages 0–2 hygiene/tests/unification/reliable-data + the Stage-3 oneshot decoder) was
+completed byte-identically BEFORE any inference improvement. **TWO structural refactors were deliberately
+deferred (not skipped) and must NOT be forgotten** — the user explicitly asked that these stay tracked:
+
+1. **Physical file-split (Stage 3.5)** — split `chordanalyzer.cpp` (~3679 lines) into files along the
+   now-real layer seams + rename the iteration-vocabulary APIs (`applyIter8691Pedal` → descriptive). The
+   layers are LOGICALLY clean but not PHYSICALLY split. Deferred until the layer boundaries stabilize so
+   we split once. *Status: PENDING — re-evaluate when Stage-4/6 layer touches settle.*
+2. **Dissolve the post-hoc gate-correction layer (Gates A–L) — Stage 5.** The gates are still
+   load-bearing (3.4 found none cleanly retirable; beam-1 is numerically the old pipeline). They are
+   scheduled to dissolve into fitted weights at **Stage 5 (weight fitting)**, which the roadmap places
+   AFTER Stage 4 (key). *Status: PENDING Stage 5 — the gates remain a known structural debt until then.*
+
+Neither is a prerequisite for the current Stage-4 key-inference work (key axis is separate from the
+chord-axis gates; every Stage-4 step holds the gate byte-identical 57/23/57). But they are **owed** —
+surface them at every Stage-4/5/6 planning checkpoint until done. Both are also in
+`docs/implementation_roadmap.md` (3.5, Stage 5).
+
+---
+
+## ⛔ STANDING OBJECTIVE: FULL TEST COVERAGE — every code path regression-tested (user mandate 2026-06-21)
+
+A near-term, owed objective: **every path/branch in the code should be exercised by a regression test.** Tracked,
+not yet a standalone task. How it is discharged:
+1. **Per-layer, inside the upstream-first sweep (the primary mechanism):** every rebuilt layer ships with **full
+   coverage of its new paths** as part of its implementation gate — not just the correctness cases (e.g. layer-1
+   T1–T8) but every branch of the new code. Don't ship a layer with uncovered paths. This accretes coverage
+   layer-by-layer as we rebuild, avoiding a giant retroactive effort.
+2. **Regression safety net during transition:** the snapshot tests + the per-event oracle-root metric + the
+   existing unit suites are the net that catches unintended changes while a layer is being replaced. Do NOT
+   exhaustively cover code that is about to be deleted/replaced — cover the *stable* code and each *new* layer.
+3. **A coverage MEASUREMENT pass (the concrete near-term step):** instrument line/branch coverage on
+   `composing_tests` + `notation_tests`, baseline where we are, and rank the untested paths — so we know the gaps
+   rather than guessing. Prioritise stable code + each rebuilt layer; deprioritise soon-to-be-replaced code.
+
+Surface this at each layer's sign-off and at sweep checkpoints until full coverage is reached.
+
+---
+
+## ⛔ STANDING RULE: ALL DOCUMENTATION ALWAYS IN SYNC — treat doc drift like a failing test (user mandate 2026-06-21)
+
+**Documentation is a first-class artifact, kept in lockstep with the code — exactly like regression tests and
+code comments.** No ratified change is "done" until *every* affected doc reflects the new reality, in the same
+increment. Doc drift is a defect, not a backlog item.
+
+Scope of "documentation" (all of it):
+- **Canonical tracked docs (CC's domain, committed WITH the code):** `ARCHITECTURE.md`, `docs/implementation_roadmap.md`
+  (the single stage tracker), `docs/layer_architecture_audit.md`, `docs/scoring_model.md` (already sync-mandated
+  by CLAUDE.md — this rule generalizes that discipline to *all* docs), and any other `docs/*.md` the change touches.
+- **Code comments / remarks:** stale header/inline comments are doc drift too (e.g. the verified-wrong
+  `regiontoneprimitives` "4 quarter notes" header — actually `Fraction(4,1)` = 4 whole notes).
+- **Cowork design docs (Cowork's domain):** the `cowork_*` layer-design + target-architecture docs must be moved
+  to an **as-built** status once a layer lands (the signed design becomes the as-built record, not a stale target).
+
+**Per-layer step (added to the sweep discipline):** after a layer is ratified — *before moving to the next layer* —
+sync ALL affected documentation: the canonical tracked docs (CC, committed alongside), the code comments, and the
+Cowork design docs (to as-built). This is the architecture analog of the `scoring_model.md` sync rule and rides in
+the same checkpoint as the coverage gate. A layer is not closed until it is correct, covered, **and documented**.
+
+**Caught 2026-06-21:** layer 1 (note model, `e30bb45a4f`) shipped with **zero** canonical-doc updates — verified:
+0 mentions of the note model across the entire `docs/` tree or `ARCHITECTURE.md`, which still describe the old
+segment-first pipeline. This rule exists so that gap is closed now and never recurs.
+
+---
+
+## ⛔ STANDING RULE: TOTAL UNIFICATION — every build increment reports reuse-vs-new + what retires (user mandate 2026-06-22)
+
+The project objective is **one path per concern — no permanent duplicate/redundant implementations.** A *temporary*
+coexistence during a transition (a new isolated module running beside the old path until it is wired in) is fine; a
+*permanent* second path for the same job is not.
+
+**Every CC implementation/build instruction Cowork writes MUST require, and every CC build report MUST contain:**
+1. **Reuse-vs-new** — exactly which existing code the increment reuses, and which pieces are newly written (and why
+   a new piece was needed rather than reusing/extending an existing one).
+2. **What retires** — which existing path this work makes redundant, and when it is removed (now, or named as the
+   retirement step — e.g. "the old resolver retires at the wiring increment"). Nothing is left as a permanent
+   duplicate by silence.
+3. **Shared primitives, not bespoke copies** — a capability several layers need (a pitch-context builder, a
+   best-sequence/Viterbi routine, a key-distance helper) is built once and reused, not re-implemented per layer.
+
+**Cowork verifies this at source** on every increment (does the new code duplicate an existing path? is the
+retirement real or deferred-forever?). A permanent duplicate path is a defect, like doc drift or a coverage gap.
+
+---
+
+## ⛔ STANDING RULE: KNOWLEDGE-BASED CODING ONLY — no assumption-based production code; exploratory measurement is the path (user mandate 2026-06-23)
+
+**Production code is written only on MEASURED knowledge, never on an assumption or an untested attribution.** When the
+evidence a build decision needs is not in hand, the mandatory move is **exploratory** — a read-only diagnostic /
+measurement that *earns* the knowledge — BEFORE any production logic is written on the belief. Building production code
+on "we think X will work / we think the residual is Y" and hoping is forbidden; gathering the cheap evidence that turns
+the belief into a fact is required. **Exploratory / diagnostic code is explicitly encouraged** (decode-only flags,
+graded measurements, decompositions) — it is how the knowledge is obtained, and it is read-only / production-byte-identical.
+
+This is the build-time companion to "verify at source" and "investigate by default": those govern *claims*; this governs
+*code*. A measurement that **disproves** an assumption is a success, not wasted work — it stops a wrong build (e.g. the
+fair-key test that showed wiring the key would NOT close the L4 chord-root gap, *before* any C/wiring spend). Every
+layer increment is therefore **measure → decide → build**, the measurement gating the build, never the reverse.
+
+---
+
+## ⛔ STANDING RULE: INVESTIGATE BY DEFAULT — NEVER ASK "investigate vs proceed" (user mandate 2026-06-14)
+
+**Whenever a step could be investigated/measured BEFORE committing, ALWAYS investigate first — and do NOT
+present it to the user as a choice.** The user's standing answer to "investigate or go in some direction"
+is *always investigate*, so asking wastes a turn. This is the never-guess principle's logical end: gather
+the cheap evidence before any commitment, by default. When Cowork hits such a fork, it writes the
+investigation/measurement instruction directly (read-only / byte-identical where possible).
+
+**What Cowork MAY still bring to the user (the only legitimate questions):** (1) ratification of a
+*measured* result (accept/proceed once the evidence is in — the user's deliberate-behavior-change call);
+(2) a pure VALUE / PRIORITY / RISK-APPETITE / PRODUCT-PHILOSOPHY call that **no investigation can settle
+AND that has no investigate option**. Never a "should we investigate first?" question — the answer is yes.
+
+---
+
+## ⛔ STANDING RULE: PREDICATES MUST BE QUALIFIED IN SPECS (user mandate 2026-06-24)
+
+**When writing or reviewing any spec, every predicate/pointer word names its argument.** Many words are *two-place*
+("uncertain" → about *what*; "defers" → *what* to *where*; "fits" → by *what measure*; "close"/"enough"/"in view" → by
+*what test*; "prevailing"/"plausible"/"spurious" → by *what rule*) and are easy to write with the second place left
+implied — which is exactly where specs hide holes. The mechanical check: force each such word to be followed by the
+thing it points at; if that forces a phrase the prose does not supply, the predicate is **unqualified** — fix it.
+Deferring a *numeric value* to tuning is allowed; leaving the *argument or its decision structure* unnamed is not. Home
+of the rule: `cowork_design_doc_template.md` (writing standard). Method + worked examples: `cowork_spec_language_sweep.md`,
+`cowork_layer3_spec_language_sweep.md`.
+
+---
+
+## ★ STANDING METHOD: LAYER-BY-LAYER AUDIT ONCE PIECES ARE IN PLACE (user, 2026-06-14)
+
+**The architectural payoff and the back-half verification model:** *as soon as every piece of the puzzle
+is in its CORRECT layer, we go layer by layer and ask whether that layer is correct AND complete —
+focusing on each layer's single responsibility and ignoring the other layers.* This is only possible
+because the layering work (Stages 0–3) made the seams real (oracle = vertical, competition/function
+layer, post-scoring gates, key resolution, section/KeyArea, functional labeling). It is the goal the
+whole refactor served, and it directly motivates finishing the TWO deferred refactors above (a layer
+can't be cleanly audited while it's physically tangled in `chordanalyzer.cpp` or while its responsibility
+is smeared across a post-hoc gate layer). **Method, when invoked:** pick a layer, state its single
+responsibility, audit correctness + completeness against THAT responsibility only (its inputs assumed
+correct, its consumers ignored), pin gaps as that layer's obligations. Apply per layer as the back half
+(Stages 4–6) lands each piece in place.
+
+**★ SHARPENED (user, 2026-06-15):** this comprehensive per-layer audit ("does this layer serve its purpose
+**fully, correctly, comprehensively**?") is the back-half **ACCEPTANCE** review and is **GATED on the
+layers actually existing as single-responsibility units** — i.e. it waits until the TWO deferred refactors
+(chordanalyzer.cpp file-split + gate-layer A–L dissolution) have made the seams physical. Auditing now would
+be auditing a moving, tangled target (e.g. chord analysis is still entangled with a stateful temporal
+context, as the J-key-iii re-emission bug showed — `analyzeChord` is not yet a pure function of its layer's
+inputs). **Distinct from the ongoing per-change BUILD-TIME verification** (every CC report verified at
+source + measure-first checkpoints), which CONTINUES the whole way and is what catches regressions during
+construction (it caught the re-emission artifact before commit). Acceptance audit = deferred to clean
+layers; build-time verification = always on. They are complementary, not redundant. **Build-time
+verification lesson folded in (2026-06-15):** when a change adds a NEW consumer of an existing data
+structure, assert **same-input → same-output** as an explicit invariant (the missing mirror of the
+J-key-iii §5 key invariant — a chord-axis "key-unchanged region ⇒ byte-identical chord" check would have
+caught the re-emission bug one checkpoint earlier).
+
+---
+
 ## What this project is
 
 MuseScore Studio. The active development area is `src/composing/`, which implements
@@ -670,6 +850,63 @@ before any code direction is imposed.
   working-tree-file verification — use the Windows-side file tools / committed git objects, or
   have CC verify. The false-alarm was caught before surfacing. (NOT a real repo problem.)
 
+- **⚠ STANDING — the sandbox mount's GIT INDEX can be STALE/divergent from CC's live worktree (2026-06-15):**
+  during the J-key-iii dormant-commit staging, Cowork's sandbox `git diff --cached` showed **33 files incl.
+  16 phantom `vtest/` deletions** while CC's worktree showed the clean **17-file closure**. Root cause:
+  the sandbox mount's `.git` carried a **stale `index.lock` (dated the PRIOR session)** + a divergent index;
+  the mount's `write-tree` FAILED on the lock while CC's `write-tree` SUCCEEDED — proving they were NOT the
+  same live index. The phantom `vtest/` "deletions" were of files **present on disk AND in HEAD's tree**
+  (`git ls-tree HEAD -- vtest/`), i.e. never-real staged entries from the stale copy. **Lesson: for GIT-STATE
+  verification (staged set, index, diff --cached), the sandbox git is NOT authoritative — CC's live worktree
+  is.** Trust CC's robust multi-method check (`write-tree` + `diff-tree HEAD <tree>` materializes the actual
+  index tree — the gold standard) over the sandbox's `diff --cached`. Backstop a commit with a post-commit
+  `git show --stat HEAD` IN THE WORKTREE (local/unpushed ⇒ `git reset --soft HEAD~1` if wrong). This is
+  broader than the file-content staleness above: the **index itself** can be a stale snapshot. Cowork raised
+  a vtest-contamination flag; CC correctly pushed back (couldn't reproduce, didn't act); re-investigation
+  proved the sandbox stale — verification cut both ways, as it should.
+
+- **⚠ STANDING PRACTICE — PROBE sandbox freshness BEFORE relying on it (user, 2026-06-17).** Before using
+  sandbox git/file access for verification, run a quick freshness/integrity probe and act on the result:
+  (1) **refs synced?** `git rev-parse HEAD` == the expected commit; (2) **file-content spot-check?** e.g.
+  `wc -l` a file you know the current size of; (3) **index health?** `git write-tree` (FAILS ⇒ stale/locked
+  index) + look for a leftover `.git/index.lock`. **The reliable/unreliable split (confirmed repeatedly, REFINED 2026-06-17):**
+  **FULLY RELIABLE** = committed objects & refs ONLY (`git show <hash>:path`, `cat-file`, `log`, `rev-parse
+  HEAD`, `ls-tree`). **PARTIALLY RELIABLE = file-content reads (Read/Grep/`cat`/`wc`) — can be PER-FILE
+  STALE** (the mount cache is inconsistent: e.g. `chordanalyzer.cpp` read fresh at 1501 while
+  `regionanalyzer.cpp` read stale at 986 vs the true committed 1167 — and wrong-subdir guesses look like
+  "No such file"). Spot-check a file read against `git show <hash>:path` before trusting it; locate files via
+  `git ls-tree -r <hash>`, not a guessed path. **UNRELIABLE** = the working-tree git INDEX (`git diff`, `diff
+  --cached`, `status`, `numstat` on uncommitted changes) — it goes stale (leftover `index.lock`, "cache entry
+  out of order", CRLF full-rewrite numstat, phantom deletions, inconsistent `ls`). **Always verify a
+  commit/diff via the COMMITTED OBJECT (`git show <hash> --numstat`) + file-content reads, never the
+  working-tree index.** Do NOT remove a stale `index.lock` (it's a mount-cache artifact, not CC's live
+  `.git`, which commits fine — removing it risks interfering); route around it. This is how the
+  `41f7c65f63` refactor-#1 verification held (committed-object numstat = clean 0/2178) while the working-tree
+  numstat lied (CRLF 1502/3679).
+
+- **★ BINDING RULE (user, 2026-06-17): NEVER use stale-risk file access for verification — NEVER.** For
+  judging CC's work Cowork reads **ONLY committed objects** (`git show <hash>:path` content, `git show <hash>
+  --stat/--numstat` diffs, `git ls-tree`/`log`/`rev-parse`). **Forbidden for verification:** the Read/Grep
+  tools + `cat`/`wc` on the mount (per-file stale), and ALL working-tree git (`diff`/`status`/`numstat`).
+  CC's reports are read from the **user's pasted message**, not the mount file. **Consequence — the workflow
+  flips to COMMIT-LOCALLY-THEN-VERIFY:** CC does the work + self-checks in its FRESH worktree (CC's git is
+  authoritative — it commits cleanly), commits **locally + UNPUSHED**, reports the hash; Cowork verifies the
+  **committed object**; if wrong, CC reverts (`git reset --soft HEAD~1` — safe, nothing pushed until the user
+  says). Read-only investigations (no commit) → verify cited claims against `git show HEAD:path`. The
+  behavior gate (corpus regen / BIR / suites) stays CC's measurement. (Cowork's own working docs — STATUS /
+  handoff / instructions — are Write/Edit'd on the mount; low staleness risk since Cowork owns them and Edit
+  errors on a stale mismatch rather than silently corrupting.)
+
+- **★ CARVE-OUT (user, 2026-06-17): CC's separate REPORT files (`cc_*.md`) — Cowork MUST read them.** They
+  are uncommitted + gitignored, so there is no committed-object version → the mount is the only access.
+  Handle it safely: (1) **freshness-check the read** — confirm it is COMPLETE (CC reports have clear
+  `§`-structure + a final section; a lagging mount shows as truncation/partial) and CONSISTENT with the
+  user's pasted summary; if truncated/partial/inconsistent → treat as stale, re-read or flag, do not act on
+  it. (2) **The report only conveys CC's CLAIMS; verify every substantive claim against the COMMITTED OBJECT**
+  (`git show <hash>`) — the report informs, the committed source proves, so a slightly-stale report read
+  cannot corrupt a verdict. Optional hardening: ask CC to end each report with its line count / a fixed
+  end-marker so a complete read is confirmable.
+
 - **DECISION (user, 2026-06-13): "Verify, then ratify."** Instruction DISPATCHED:
   `cc_instruction_gate_rebaseline_verify.md`. CC to (1) reproduce 57/23 via the CANONICAL
   `characterise_bir_false.py` at HEAD (regenerate both corpora; confirm strict-superset, 0
@@ -754,14 +991,576 @@ before any code direction is imposed.
   against 365 phantom + 75 mislabeled cases. User commits (the whole staged set: tools fixes +
   CLAUDE.md/STATUS.md/ARCHITECTURE.md/build_and_test.md + the docs/ sweep).
 
-- **Cowork TODO next — Stage 4:** prepare the Stage-4 build instruction (declared-mode import
-  fix at `importmusicxmlpass2.cpp:5978` = P3 + graded declared prior, not the −7 wall + KeyArea
-  spans + hysteresis→path). **NEEDS ENGRAVING FILE-SET AUTHORIZATION** — touches
-  `src/importexport/musicxml/` + `src/notation/`, OUTSIDE the composing autonomous zone
-  (CLAUDE.md). Surface the file-set to the user for approval BEFORE dispatching. Scoping dossier:
-  `cc_key_emission_headroom_dossier.md`. Stage-5/6 OQ-1 re-open gate is a parked follow-on.
-- **Still pending the user:** commit + push the staged metric fixes + the doc updates (user:
-  "i can push myself"). Nothing committed this arc.
+- **P3 = CONFIRMED GENUINE BUG (Cowork-investigated 2026-06-14).** Import parses `<mode>`
+  (`importmusicxmlpass2.cpp:6074-6099 setMode`) then `addKey`'s fifths-only dedup (:5978) drops
+  the KeySig+mode for 0-fifths keys; export DOES write mode (`exportmusicxml.cpp:2473-2497`) → a
+  round-trip fidelity bug, not just our-fork. BUT it's in a deprecated area: upstream #9444
+  ("Mode dropdown non-functional… for a long time", maintainers leaned toward HIDING the mode UI)
+  → upstream report is low-yield. **Correction surfaced to user:** an "outside off-limits" fix
+  only patches the corpus tools (batch_analyze + product BOTH use the same importer) → would make
+  metric overstate product → rejected.
+- **USER DECISIONS (2026-06-14):** (a) **local engraving patch** (the :5978 dedup fix, documented
+  never-pushed like the Snap fix); (b) **comment on #9444 AFTER the local fix is proven to work.**
+- **DISPATCHED: `cc_instruction_stage4a_declared_mode_import_fix.md`** — Stage 4a, the import fix
+  as a DISCRETE measured step (not full Stage 4). Authorized off-limits file = `importmusicxmlpass2.cpp`
+  ONLY (STOP+surface if any other engraving file needed). It's a deliberate behavior change → ends
+  byte-identity for affected scores → CC must: prove isolation to empty-sig scores (the 127
+  anchored bucket must not move), confirm the 73 zero-sig stems regain declaredMode + report the
+  REAL key-inference win vs the projected ~349, re-measure the gate (BIR increase = hard stop;
+  the 57/23/57 baseline was on mode-dropped scores so it may move — ratify deliberately),
+  DCML-adjudicate, refresh only verified-correct snapshot goldens. HELD, no commit. Report carries
+  the #9444 repro for Cowork to draft the comment after verification.
+- **★ SCOPE CORRECTION (user, 2026-06-14) — the import fix is a DEV/TEST/MEASUREMENT fix, NOT a
+  shipped-product fix.** XML-import is NOT in the shipped analysis loop: shipped users analyze
+  native in-memory Scores (.mscz / app-created), whose mode comes from MuseScore's own keysig (and
+  the #9444-broken mode UI), not from our MusicXML importer. So the :5978 patch's value is: it
+  makes OUR corpus/metric carry the true declared mode (the 73 zero-sig stems stop showing phantom
+  UNKNOWN) → we develop/test/tune the inferrer against reality. My earlier "fixes the product too"
+  framing was wrong. The engraving patch is STILL the right mechanism over a corpus-only tools hack
+  — but for single-source-of-truth (batch_analyze + composing tests + snapshot tests ALL load via
+  the one importer; fix once vs replicate a Score-injection hack in each), NOT a product benefit.
+- **★ CONSEQUENCE for Stage 4b (load-bearing):** because the SHIPPED product frequently has NO
+  reliable declared mode (native scores, broken UI), the shipped inferrer must NOT lean on declared
+  mode — the **graded prior + note-based inference must carry the mode-ABSENT case**. The import fix
+  lets us develop the mode-PRESENT path on a clean corpus, but Stage 4b must be **measured under BOTH
+  conditions (mode-present AND mode-absent)** or we overfit to a corpus input the product won't have.
+  Interpret CC's 4a "~349 reach" as the dev/corpus measurement gain, NOT a shipped win. (The 4a
+  instruction's stop-condition "win fails to materialize → needs the graded prior" already aligns.)
+
+- **★★ STAGE-4 REDIRECT (user, 2026-06-14) — "infer mode/key from the MUSIC; keysig mode = hint, not
+  proof."** The keysig tonal mode is being de-supported (#9444) + sparse in shipped scores → NEVER
+  depend on it. PRIMARY Stage-4 work = **strong note-based major/minor inference** (tonal-centre +
+  cadences + scale-degree salience, constrained by the *reliable fifths*). Declared mode used ONLY as
+  a **low-weight tiebreaker when genuinely unsure** → the **−7 declared-mode wall is REMOVED, not
+  graded**. The dossier's ~349 (restore+use declared mode) = the CRUTCH upper bound / the gap the
+  note-based inference must close, NOT a shippable win. Measure note-based-only (no crutch) so the
+  metric reflects what ships. `back_half_design` §4 updated. (This refines the earlier "graded prior"
+  plan toward "note-based primary + droppable hint".)
+- **4a disposition: CONTINUE + keep the patch** (CC working). Reframed: the import fix makes the mode
+  *available* as the last-resort hint + corpus correctness + the #9444 repro — it is NOT the inference
+  mechanism. CC's 4a "~349 / does-it-work" measures the current (−7-wall) analyzer = the crutch upper
+  bound; Stage 4b re-measures with the wall removed + note-based inference. Don't bank 4a's number.
+- **Cowork TODO after 4a verifies — draft the #9444 comment.** **FRAMING (user, 2026-06-14): the
+  comment is ADVOCACY to get the mode property PROPERLY SUPPORTED (so users set + maintain it), NOT
+  a vote to hide it.** Rationale: a well-maintained mode property becomes a reliable last-resort hint
+  for mode/key inference (our use), on top of its existing engraving roles. Argue constructively
+  *against* hiding the UI and *for* making mode functional. Points to make (all Cowork-verified
+  at source 2026-06-14), assemble from CC's 4a round-trip repro:
+  1. **Distinct from #9444's UI focus:** a concrete IMPORT-side mechanism — `addKey`'s fifths-only
+     dedup (`importmusicxmlpass2.cpp:5978`) drops the `KeySig` (and its parsed `<mode>`) whenever
+     0-fifths matches the prevailing key. `<mode>` IS parsed (`setMode`, :6074-6099) then discarded.
+  2. **It breaks round-trip:** export DOES write `<mode>` (`exportmusicxml.cpp:2473-2497`), so a
+     `<fifths>0</fifths><mode>minor</mode>` file → import → mode lost → re-export can't recover it.
+     Include CC's verified minimal repro.
+  3. **The clean framing / parity point:** the dedup ALREADY preserves mode when it's `NONE` (the
+     `|| key.isAtonal()` term, and `isAtonal()==(mode==NONE)`, key.h:81) — the fix just extends that
+     existing mode-awareness to the tonal modes. Same correctness class as the atonal handling MS
+     already does.
+  4. **Mode is not XML-only / not cosmetic:** it's persisted natively (`rw/write`+`rw/read*`),
+     exposed in the Inspector (`Pid::KEYSIG_MODE`) + plugin API, and `isAtonal()`(==NONE) already
+     gates transposition (`transpose.cpp:138/239`, `edit.cpp:3542/5725`); the tonal modes are the
+     only carrier of the relative major/minor (same-signature) distinction.
+  5. **Verify against current upstream `master` before posting** (our fork's importer may lag; CC to
+     note in the 4a report whether the dedup still reproduces upstream).
+  Keep it complementary to #9444 (a specific import facet), not a duplicate. Then prepare Stage 4b (graded declared
+  prior, not the −7 wall — measured mode-present AND mode-absent) + 4c (KeyArea spans +
+  hysteresis→path) — may need `src/notation/` authorization (surface the file-set). Then Stage 5
+  (fitting; committed corrected metric is its prerequisite) + the Stage-5/6 OQ-1 non-Bach re-open gate.
+- **✅ METRIC COMMITTED + PUSHED (user, 2026-06-14): `a96f179f40`** "metric: commit corrected GT
+  parser + 57/23/57 gate re-baseline (OQ-1=A ratified)" → `origin/master` (`bcd4319aa7..a96f179f40`).
+  The whole staged set (tools fixes + CLAUDE.md/STATUS.md/ARCHITECTURE.md/build_and_test.md + docs/
+  sweep) is committed and pushed. The Stage-5 commit-prerequisite is satisfied. HEAD = `a96f179f40`.
+  (Supersedes the prior "Still pending the user / nothing committed this arc" note.)
+
+- **✅ STAGE 4a COMPLETE + COWORK-VERIFIED — RATIFICATION-READY, HELD (no commit).** Report
+  `cc_stage4a_mode_import_report.md`; instruction `cc_instruction_stage4a_declared_mode_import_fix.md`.
+  The local engraving patch adds one `oldKeySig.mode() != key.mode()` term to `addKey()`'s fifths-only
+  dedup (`importmusicxmlpass2.cpp:5986`; fetches the full `KeySigEvent` at the call site). **Cowork
+  verified at source (host-side Read + git):** patch correct + minimal; ONLY the authorized
+  `importmusicxmlpass2.cpp` touched (the "needs another engraving file" stop did NOT fire); the CLAUDE.md
+  "Local patches" entry is staged + accurate; staged set = exactly {`importmusicxmlpass2.cpp`, `CLAUDE.md`};
+  HEAD unchanged at `a96f179f40` (HELD, no 4a commit). **All 5 instruction items pass, no stop-condition:**
+  (1) suites green — composing 505 / notation 57 / snapshots 11/11 zero-diff; (2) isolation = exactly 79
+  zero-sig `.ours.json` changed, **0 non-empty-sig** (the 127 anchored bucket did NOT move); (3) key win
+  **materialized ≥ projected** — Default S2 1063→685 = **−378** (dossier projected ~349; dump-confirmed on
+  bwv153.9 → Cmaj anchor, bwv254 S2 17→0); (4) **gate BYTE-IDENTICAL all 3 presets — Baroque 57 / Jazz 23
+  / Default 57, 0 added / 0 removed** → the BIR=false-increase ratification stop did NOT fire; (5) snapshots
+  unchanged (snapshot corpus loads `.mscx` via `ScoreRW::readScore`, bypasses the MusicXML importer — an
+  independent corroboration of the isolation). Corpora regenerated but NOT staged (left to user).
+- **The 7-stem S2 over-lock caveat (CC-flagged, real):** of the 73 WiR-covered affected stems, 47 improved /
+  19 neutral / **7 regressed on S2 only** (net still −378). Every one is a notation-disagrees-DCML
+  over-commitment of the **existing −7 declared-mode wall** (6 are +2/+3 relative-pair / partial-sig metric
+  artifacts; bwv64.2 +19 is the lone outlier — reads Emin, the relative of DCML's Gmaj). **Bigger-context
+  point CC lacks:** this is EXACTLY what the user's Stage-4 redirect dissolves — remove the −7 wall,
+  note-based inference primary, declared mode = droppable hint. So 4a's **+378 is the crutch upper bound**
+  (mode-present, wall-in-place), NOT a shippable win; Stage 4b must re-measure **wall-removed AND mode-absent**.
+  The 7 over-locks + the 242 S2→S1 cases are Stage-4b's concrete targets.
+- **Minor verification note:** the `iex_musicxml_tests` gtest target is not configured in this build tree, so
+  round-trip was verified via the rebuilt `MuseScore5.exe` CLI (bwv254 before/after + testKeysig1 control) +
+  keysig-fixture inspection, not the gtest harness. Acceptable; a proper gtest round-trip case could be added
+  when that target is configured.
+- **#9444 repro is in hand** (report §2: bwv254 0-fifths+`<mode>minor</mode>` → import drops mode pre-fix,
+  preserves post-fix; control gains no spurious keysig). CC did NOT separately rebuild upstream `master` (the
+  buggy dedup is upstream-unchanged by inspection). **Cowork TODO: draft the #9444 advocacy comment now that
+  4a verifies** (the 5 points already staged in this handoff; re-check current upstream `master` before posting).
+
+- **Open user decisions (surfaced 2026-06-14):** (a) **ratify + commit the 4a local patch**, and decide how to
+  carry it — committed-to-local-master (risk: an accidental `git push` sends a local-only patch to origin) vs
+  kept-staged/dirty like the Snap fix (safe but must re-stage each session). The patch must NOT reach `origin`
+  until/unless the #9444 path says so. (b) Cowork drafts the #9444 comment. (c) **Stage 4b design** —
+  note-based major/minor inference primary, −7 wall removed, declared mode droppable hint; will need
+  `src/notation/` (KeyArea/bridge) file-set authorization, OUTSIDE the composing autonomous zone; measured
+  BOTH mode-present and mode-absent.
+
+- **DISPATCHED 2026-06-14: `cc_instruction_stage4a_commit_and_stage4b_scoping.md`** (two tasks).
+  **Task 1 = commit Stage 4a (RATIFIED).** This instruction releases the HELD hold; CC commits exactly
+  the two staged files (`importmusicxmlpass2.cpp` + `CLAUDE.md`) with a specified message, confirms
+  `git diff --cached` lists only those two (report + gitignored `tools/corpus/**` NOT added — `tools/corpus`
+  is gitignored, verified), and **does NOT push** (user pushes — it's a local engraving patch they may keep
+  off origin). **Task 2 = READ-ONLY Stage 4b scoping** → `cc_stage4b_scoping_dossier.md`: locate + characterize
+  the −7 declared-mode wall [code]; inventory the note-based inference machinery; produce the precise
+  off-limits `src/notation/`/`src/engraving/` **file-set table** (the authorization request — minimal set,
+  KeyArea-in-composing if possible); the measurement plan **mode-present AND mode-absent** (targets = the 7
+  over-lock stems + 242 S2→S1; the −378 must largely survive WITHOUT the crutch); the 2nd-behavior-change
+  surface (key→basisIndep, chord axis byte-identity ends); open questions. No edits, no build, no commit
+  beyond Task 1. The Stage-4b *implementation* is a later instruction, gated on the user authorizing the file-set.
+  **#9444 comment: user takes it themselves** (draft ready at `cowork_github_9444_comment_draft.md`).
+
+- **✅ STAGE 4a COMMITTED `faa1ee5388` (local, UNPUSHED) + STAGE 4b SCOPED (2026-06-14).** CC committed 4a
+  (2 files, message as specified); **origin/master still `a96f179f40` → NOT pushed** (user pushes if/when).
+  Cowork-verified at source: HEAD/commit-contents/unpushed/clean-tree. Dossier `cc_stage4b_scoping_dossier.md`
+  (read-only) headline: **Stage 4b = ZERO off-limits production-file edits; all composing autonomous-zone.**
+  **Cowork independently verified the crux claims at source** (the three-mechanism wall: penalty
+  `keymodeanalyzer.cpp:571` + hard promotion `keyresolver.cpp:350-367` + anchor `:274-287` + partial-sig gate
+  `:248`; KeyArea in `analyzed_section.h:118`/`sectionanalyzer.cpp:920`; bridge does NO inference — confirmed at
+  BOTH pref sites, incl. `notationharmonicrhythmbridge.cpp:90` that CC missed). Only off-limits-zone touch =
+  snapshot-golden refresh (test data). **Authorization blocker REMOVED** — no `src/notation`/`src/engraving`
+  edit; the user authorizes a golden refresh (standard ratified-change workflow), not a production edit.
+- **Cowork reframe for Stage-4b design:** part of 4a's +378 is crutch-dependent (`partialSignatureCorrection`
+  is declared-mode-gated → off mode-absent → 4 partial-sig stems unrecoverable by wall-removal alone). The
+  **mode-absent floor is < +378**; OQ6's pass-bar = the real "how much is note-recoverable" question.
+- **6 open design questions (dossier §6) gate the 4b implementation instruction.** Cowork's proposed
+  dispositions (grounded in the ratified redirect — to confirm/adjust with user): OQ1 convert penalty+hard-promotion
+  into ONE small additive declared hint firing only when note-based top-2 gap small (Stage-5 fits the weight;
+  provisional to measure); OQ2 note-based opening anchor, weak declared seed only when opening evidence sparse;
+  OQ3 defer note-triggered partial-sig (accept the 4 stems mode-present-only for first 4b, flag follow-up); OQ4
+  defer cadence→key wiring (strengthen existing triad/LT/disambiguation first); OQ5 defer KeyArea area-confidence
+  to Stage 6; OQ6 mode-absent pass-bar = USER call (dossier suggests ≥70%; recommend setting it AFTER the
+  demote-only measurement so it's data-grounded). **Next: Cowork writes the Stage-4b design (staged:
+  4b-i demote-wall + measure mode-present/absent honestly → 4b-ii strengthen note-based inference), ratified
+  before implementation. Pending user steer: 4b scope ambition (staged-minimal vs all-in-one).**
+
+- **USER CHOSE staged demote-first (2026-06-14).** **Stage 4b design DRAFT written: `docs/stage4b_design.md`**
+  (ratification-gated). 4b-i = demote the four declared-mode mechanisms — penalty 7.0→small additive hint
+  (provisional 1.0, Stage-5-fit); **remove the hard promotion `keyresolver.cpp:350-367` outright**; opening
+  becomes note-based (remove the declared short-circuit `:274-287`); partial-sig left declared-gated (mode-present
+  only, note-triggered detector deferred) — + build the `--ignore-declared-mode` toggle (tools+composing, in-zone)
+  + measure mode-present AND mode-absent on L1 key-breakdown (the mode-absent run = the no-crutch floor). No hard
+  4b-i key-axis pass-bar (it's the floor measurement); chord-axis gate WILL move (DCML-adjudicate each; un-adjudicated
+  BIR=false increase = stop); snapshots WILL move (refresh only verified-correct). OQ dispositions in §3; 4b-ii
+  (strengthen triad/LT/disambiguation) + deferred (cadence, note-triggered partial-sig, KeyArea→Stage 6) in §5.
+  **Awaiting user ratification of §6 (the staged plan + OQ dispositions + remove-hard-promotion + the deferred
+  OQ6 pass-bar timing + provisional hint weight 1.0). On ratification → Cowork writes the 4b-i CC instruction.**
+
+- **✅ USER RATIFIED ("go", 2026-06-14) + 4b-i INSTRUCTION DISPATCHED: `cc_instruction_stage4b_i_demote_and_measure.md`.**
+  Design `docs/stage4b_design.md` ratified as written (all §6 defaults). The instruction: demote the four
+  declared-mode mechanisms — (1) `declaredModePenalty` 7.0→1.0 small hint + **fix the .h:454 bounds `{3.0,15.0}`→`{0.0,15.0}`**
+  (1.0 is below the current lower bound — flagged); (2) **remove the hard promotion `keyresolver.cpp:344-367`
+  outright** with an explicit ⚠ DO-NOT-touch the note-based hysteresis `promoteWinnerInPlace` at `:320-342`
+  (both use the same call — the trap); (3) remove the piece-start declared short-circuit `:274-287` → note-based
+  opening (verify normal path handles piece-start); (4) partial-sig `:248` UNCHANGED (declared-gated, deferred
+  detector); (5) build `--ignore-declared-mode` toggle (tools+composing, flag-off byte-identical 0/353×3). Measure
+  mode-present AND mode-absent on L1 key-breakdown, 3 presets: S2 floor (the headline), 7 over-lock stems, 242
+  S2→S1 hold-without-crutch, **chord-axis gate delta DCML-adjudicated (un-adjudicated BIR=false increase either
+  condition = HARD STOP)**, snapshot diffs (refresh only verified-correct). No hard 4b-i key pass-bar (floor
+  measurement; OQ6 pass-bar set by user after). HELD, no commit; report `cc_stage4b_i_report.md`; toggle separable
+  as its own byte-identical infra commit. Doc-sync scoring_model.md + stage4b_design/back_half_design.
+  **On CC's report: re-read this instruction first, then the report in full, verify the demotion sites + the
+  hysteresis-untouched claim + the gate adjudication at source before ratifying any commit.**
+
+- **✅ DOC-CURRENCY TIDY (2026-06-14):** the `analyze_inversion_errors` secondary `bassIsRoot` split was
+  re-measured under the corrected parser in `cc_functional_residual_dossier.md` (Baroque 24/13→**47/57**,
+  Jazz 35/7→**81/23**; false-halves = the 57/23 gate) but the living docs still annotated it "stale/pending."
+  Reconciled across CLAUDE.md, build_and_test.md (note + headline-pair + the two command annotations),
+  docs/implementation_roadmap.md, docs/decoder_design.md. **Still genuinely pending (NOT a drift — leave
+  marked):** ARCHITECTURE.md's **Default** analyze_inversion three-way `30/14` (Stage-2.4 V4) was not
+  re-measured — only its false-half (= gate Default 57) is known; the true-half awaits a Default re-run.
+  All other measurement-pipeline residuals (DROOT_ABSENT alignment-noise audit, non-Bach functional
+  decomposition, aug6/multi-level-applied GT-parser residuals, symmetric-dim7 two-tier gate, granularity-robust
+  gate adoption) remain Stage-5/6-deferred by design.
+
+- **✅ STAGE 4b-i COMPLETE + COWORK-VERIFIED — HELD (no commit), RATIFIABLE + COMMITTABLE.** Report
+  `cc_stage4b_i_report.md`. Four demotions verified at source (penalty 7.0→1.0 + bounds→{0.0,15.0}; hard
+  promotion removed `keyresolver.cpp:347`; hysteresis `:323-345` intact — the trap, confirmed untouched;
+  anchor→note-based opening; `ignoreDeclaredMode` toggle inert default-off). HEAD `faa1ee5388` unchanged; 13
+  staged files; no off-limits PRODUCTION edit. Mode-present nearly free (Default S2 +2, Baroque 0) + **gate
+  byte-identical 57/23/57 all 3 presets** (ratification hard-stop does NOT fire); mode-absent **floor ~3×**
+  (Default 2070, Baroque 2099). Snapshots 2 refreshed DCML-verified (corelli G/iv→C/i = real win). 505/57/11.
+- **★ COWORK REFRAME (CC lacks this): the floor is NOT a 4b-i regression.** All four mechanisms are gated on
+  `declaredMode.has_value()` → mode-absent scores were ALREADY crutchless pre-4b-i; the 2070 floor = today's
+  product behavior for mode-unreliable native scores, now measured. The demotion is mode-present-neutral +
+  mode-absent-unchanged → **safe to commit.** No shipping regression. The floor sizes how weak note-based
+  relative-pair inference is today (the real "what ships" problem) — 4b-ii must close it.
+- **Verdict + recommendation:** ratify + commit 4b-i (one coherent commit recommended; CC's §8 A/B split shares
+  `keymodeanalyzer.h`+`keyresolver.cpp` so a clean file-level split isn't possible — note it). Then **4b-ii =
+  strengthen tonic-triad salience + `applyPairwiseDisambiguation` + true-LT** to close the ~1383-region
+  relative-pair gap. **4b-ii is a genuine A-vs-B test on the hardest mode sub-problem:** bwv365/33.6 recover
+  mode-absent (relatives ARE note-distinguishable — the bias merely overrode them; encouraging for A), but
+  bwv64.2/83.5 read a wholly different key (harder class → Stage-5/6 / possible B evidence on the key axis).
+- **Boundary/doc notes:** CC edited a notation TEST file (`notationimplode_tests.cpp` — necessary re-pin of the
+  removed anchor's hardcoded 0.5 confidence; a test, not production, but slightly wider than the scoping's
+  "goldens only" prediction — flagged, not a problem). Doc-sync: `declaredModePenalty` is a KeyModeAnalyzer term,
+  so it went to the key-path docs (`scoring_model.md` is chord-analyzer-only, correctly) — no canonical
+  "key-model" reference doc exists (minor future-doc gap, not blocking).
+- **✅ DISPATCHED (user "go", 2026-06-14) — TWO instructions:**
+  **`cc_instruction_stage4b_i_commit.md`** (Task: commit 4b-i — the 13 staged files as ONE coherent commit,
+  message specified, confirm report+corpora NOT staged, **do NOT push**). ⚠ **Chain note:** 4b-i sits on top
+  of the local-only 4a `faa1ee5388`; a future push carries BOTH 4a+4b-i unless the user rebases 4a out —
+  user's call at push time. **`cc_instruction_stage4b_ii_strengthen.md`** (Stage 4b-ii — strengthen the
+  relative-pair discriminators: `applyPairwiseDisambiguation` [the strongest lever] + tonic/triad salience +
+  true-LT, with **principled provisional bumps, NOT corpus-fitted** [Stage 5 fits]; measure mode-present AND
+  mode-absent; HELD). **The load-bearing question 4b-ii answers: can the EXISTING hand-built structure carry
+  the relative-major/minor decision, or is a new/learned mechanism needed?** → feeds OQ6 pass-bar + the A-vs-B
+  re-evaluation on the key axis. Targets bwv365/33.6 (should recover); bwv64.2/83.5 = hard class (report as
+  Stage-5/6 / B-evidence, do NOT build a new term). Stop conditions: closing the floor but wrecking mode-present
+  = structure-insufficient finding; un-adjudicated BIR=false increase = hard stop; overfitting = stop+report.
+  **On CC's reports: re-read each instruction first, verify the commit hash + (for 4b-ii) the weight changes +
+  gate adjudication + the sufficiency verdict at source before ratifying.**
+
+- **★ GIT TOPOLOGY + PUSH POLICY (clarified + verified at source 2026-06-14) — supersedes the earlier
+  "keep off origin / local-unpushed" framing, which was imprecise:**
+  - `origin` = `github.com/slimvince/MuseScore` (the user's FORK; fetch+push). `upstream` =
+    `musescore/MuseScore` with **push DISABLED** in config (`git push upstream` fails by design).
+  - `push.recurseSubmodules` is unset → default **no**: a superproject push does NOT push the `muse`
+    submodule. So **`git push origin` ("push everything" on the main repo) goes ONLY to the user's fork —
+    it cannot reach MuseScore core** (core merges require a maintainer-accepted PR; a push is not a merge).
+  - **The 4a engraving patch + 4b-i CAN be pushed to `origin` freely.** The guardrail against MuseScore
+    CORE is (a) the disabled upstream push and (b) upstreaming being a deliberate cherry-pick-onto-a-clean-
+    upstream-branch act — NOT keeping commits off the user's own fork. The CLAUDE.md "Local patches" entry +
+    the commit-message "do NOT push upstream" markers keep 4a out of any future upstream PR.
+  - A local **pre-push hook** exists but blocks only `src/engraving/data/chords/chords.xml` (a separate
+    licensing/data concern) — it does NOT touch importmusicxmlpass2.cpp / 4a, and 4a needs no fork-side block.
+  - **Two honest caveats:** (1) the `muse` submodule's remote points at `musescore/muse_framework` with push
+    ENABLED in config — only GitHub access-control (no write rights) stops an accidental `cd muse && git push`;
+    optional belt-and-suspenders: `git -C muse remote set-url --push origin disabled`. (Superproject pushes
+    don't touch it anyway.) (2) A GitHub fork of a public repo is itself **public** — "merge into core" is
+    fully prevented regardless, but if the user wants the work PRIVATE, a fork doesn't provide that (a separate
+    private duplicate would). Surface this only if privacy (not just core-isolation) is a goal.
+
+- **✅ 4b-i COMMITTED `ef30cc70f3` + history REORDERED (intact) + 4b-ii STRUCTURAL-INSUFFICIENCY VERDICT (2026-06-14).**
+  Chain: `a96f179f40` (origin) → `ef30cc70f3` (4b-i) → `cfc7eb5e39` (4a, HEAD). An external interactive rebase put
+  4a ON TOP of 4b-i (separable → push-4b-i-keep-4a-local; likely intentional user action post git-topology talk).
+  **Cowork-verified HOST-SIDE: both commits intact, cumulative content complete, probes reverted to baseline.**
+  ⚠ Bash sandbox degraded AGAIN (CRLF + spurious "62-deletion" whole-file diffs + timeouts) — false alarm, host-side
+  authoritative + clean (same pattern as the prior-session NUL scare). Neither commit pushed.
+- **4b-ii VERDICT (`cc_stage4b_ii_report.md`, HELD, no commit, probes reverted):** reweighting the three named
+  relative-pair discriminators **CANNOT** carry the relative-major/minor decision. Pairwise disambiguation INERT
+  on the floor (clauses need a tonic-absent relative; floor is tonic-present-both); tonic salience = strict
+  monotone present↔absent trade-off when uncapped (A2 floor −504 / present +435); true-LT wrong direction. **§4
+  structural-coupling proof: floor regions ARE the sub-1.0-hint near-ties → any term strong enough to win them
+  mode-absent overrides the correct hint mode-present; independent of term.** Gate 57/57/23 mode-present every probe.
+- **★ COWORK READ:** this does NOT falsify A. The missing piece is a **global/cadential key-identity signal** (the
+  declared mode was its proxy) that local window terms don't encode. Next structural step = **OQ4 cadence→key**
+  (still hand-built, composing-zone; the Stage-2.1 cadence detector exists). **B only if cadence also fails.**
+  **Stage 5 won't fix it (structural coupling). OQ6 pass-bar moot for reweighting (≈0) → re-scope to cadence/Stage-6.**
+  bwv365/33.6 already recovered in 4b-i; bwv64.2/83.5 = hard class. Harness `tools/b2_measure.sh` (keep/drop).
+- **AWAITING USER DIRECTION (strategic fork):** (a) investigate cadence→key now (targeted key-floor step;
+  investigate-before-build, derive it actually closes the floor — like the beam/key-path investigations); (b) fold
+  cadence→key into Stage 6 (largest-headroom functional layer; cadence detection lives there); (c) step back +
+  re-ground the back-half sequencing given 4b's null result. Cowork recommendation: lean (a)/(b) (the finding
+  points squarely at the cadence/global-context signal); confirm direction before any next instruction.
+
+- **✅ USER CHOSE "investigate cadence→key now" (2026-06-14) → DISPATCHED `cc_instruction_cadence_key_investigation.md`.**
+  Investigation (NOT build), modeled on the beam/key-path investigations — DERIVE whether a cadence→key signal
+  actually closes the relative-pair floor BEFORE building. **The make-or-break = Q-CENTRAL: does cadence ESCAPE the
+  4b-ii §4 coupling?** (cadence is global/phrase-level, not window-local, so it CAN point differently from local
+  salience — but must be derived on real floor cases: does it win the mode-absent floor WITHOUT flipping the correct
+  mode-present hint cases?). Tasks: locate+characterize the Stage-2.1 cadence detector (does it produce a key/degree
+  resolution or only a cadence flag?); characterize the floor population; derive Q-CENTRAL on a real sample (incl.
+  bwv365/33.6/64.2/83.5); size recoverable-fraction + residual (the A-vs-B input — large residual ⇒ B); recommend the
+  Stage-4 shape (build cadence→key / fold into Stage 6 / key-axis is B). READ-ONLY + optional byte-identity diagnostic;
+  HELD, no commit. **Falsifiable by design** — cadence failing the coupling-escape test is a valid finding (→ Stage 6/B).
+  **On CC's dossier: re-read this instruction first, verify the Q-CENTRAL derivation + the cadence-detector capability
+  claims at source before ratifying the Stage-4-shape recommendation.**
+
+- **✅ CADENCE→KEY INVESTIGATION LANDED = GREEN LIGHT (A), QUALIFIED (2026-06-14).** `cc_cadence_key_investigation_dossier.md`
+  (READ-ONLY, HELD, source byte-clean; + `tools/cc_floor_classify.py`). **Cowork-verified finding #1 at source:** the
+  existing `detectCadences` (`sectionanalyzer.cpp:156`) is circular (uses post-resolution `function.degree`),
+  confidence-gated (silent on the floor), type-only (no key/degree), unreferenced by `key/` → **new key-agnostic
+  detection needed (a build, not a wiring).** Q-CENTRAL: floor is **91% relative-pair** (193→1452; "other" mode-invariant
+  411→454) and cadence DECOUPLES structurally (piece/section-scoped note-derived proxy for the global-key signal the
+  declared mode provided → agrees with the hint, supplies mode-absent). Sizing ≈1259 addressable (91%) but that is a
+  **perfect-detection CEILING** — realized fraction is **detection-reliability-bounded (unproven)**. Residual ~454 "other"
+  + 164 keyfail → Stage 6/B. **★ Cowork qualifier: do NOT bank the 91%; the next build must measure realized fraction
+  early.** Honesty flag: bwv64.2 reclassified G-major→C-major (relative-pair, addressable) — a small GT discrepancy to
+  resolve. OQ6 re-scoped onto the cadence lever (set against realized detection, not the ceiling).
+- **NEXT (proposed, pending user confirm):** Cowork writes the **cadence→key DESIGN** — the key-agnostic cadence/global-anchor
+  signal (what it detects: final/structural cadence, dominant→tonic & leading-tone-to-true-tonic resolution, at section/piece
+  scope), how it feeds key scoring **without re-entering the §4 coupling** (section/piece scope, not window-local), and a
+  **STAGED build where a first version's realized fraction is measured early** (the reality check on the 91% ceiling).
+  Composing autonomous-zone. Ratification-gated (like stage4b_design). Then build first version + measure → ratify.
+  **Open: confirm direction (design the cadence→key build now) vs steer scope first.**
+
+- **✅ STAGE 4c DESIGN WRITTEN (user "yes", 2026-06-14): `docs/stage4c_cadence_key_design.md` (DRAFT, ratification-gated).**
+  Cadence→key = a **key-agnostic global tonic anchor**: detect authentic cadences from **absolute root motion + chord
+  quality + leading-tone** (NEVER `function.degree`/resolved key → that was the circular trap), aggregate to a
+  piece/section (tonicPc, mode) anchor, and break the relative-pair tie at **section/piece scope** (the scope the declared
+  mode used) — NOT as a local `analyzeKeyMode` window term (else it re-enters the 4b-ii §4 coupling). **Staged so the
+  detection-reliability risk is measured FIRST:** 4c-i = build a simple authentic-cadence detector + READ-ONLY measure the
+  **realized** anchor-vs-DCML fraction of the ~1259 relative-pair floor regions (scoring untouched → byte-identical; the
+  reality check on the 91% perfect-detection ceiling) → 4c-ii = wire at section/piece scope + measure floor lift +
+  mode-present non-regression (the empirical decoupling proof; gate 57/57/23 byte-identical) → 4c-iii = refine. Targets
+  bwv365/33.6 (stay recovered), bwv64.2 (now relative-pair; resolve the G-vs-C GT discrepancy in 4c-i); residual ~454
+  "other"+164 keyfail → Stage 6/B (large residual = key-axis A-vs-B evidence). §6 OQs: authentic-only first (rec),
+  piece/section anchor (rec), trust-gating provisional. **Awaiting user ratification of §7 → then Cowork writes the 4c-i
+  instruction.**
+
+- **✅ STAGE 4c DESIGN RATIFIED (user "go", 2026-06-14) → 4c-i INSTRUCTION DISPATCHED: `cc_instruction_stage4c_i_cadence_detector_measure.md`.**
+  4c-i = **build the key-agnostic authentic-cadence detector + MEASURE realized detection, NO wiring** (the reality check
+  on the 91% perfect-detection ceiling). Detector uses absolute root motion (root_b ≡ root_a−7) + dominant quality +
+  leading-tone presence + stable resolution triad → cadential (tonicPc, mode); aggregate to a piece/section anchor;
+  **NEVER `function.degree`/resolved key** (the circular trap). Measure via read-only diagnostic (reuse `cc_floor_classify.py`):
+  **realized fraction (precision/recall) on the ~1259 relative-pair floor vs the 91% ceiling**, per-target (bwv365/33.6/64.2
+  + resolve the bwv64.2 G-vs-C GT discrepancy; bwv83.5 must NOT be spuriously claimed), decoupling preview (anchor agrees
+  with the cases the hint gets right?), coverage gaps (what plagal/half/deceptive would add). **Byte-identity GATE: production
+  scoring untouched → 57/57/23 + snapshots 11/11 zero-diff + suites green** (detector called only by the diagnostic; any
+  movement = leak = STOP). HELD, no commit. Branch on the realized number: worthwhile → 4c-ii (wire at section/piece scope +
+  prove decoupling); marginal → 4c-iii; far-below → detection-reliability / key-axis A-vs-B finding. **On CC's report:
+  re-read this instruction, verify the detector's key-agnostic inputs + the byte-identity proof + the realized fraction at
+  source before ratifying any move to 4c-ii.**
+
+- **✅ STAGE 4c-i COMPLETE + COWORK-VERIFIED — HELD; realized detection 55.7% << ceiling → §8 stop FIRED, do NOT wire (2026-06-14).**
+  New `src/composing/analysis/section/cadencekeyanchor.{h,cpp}`. **Verified at source:** key-agnostic by construction
+  (`CadenceRegionInput` key-blind); production UNTOUCHED (`keyresolver.cpp` 0 cadence refs; detector called only by
+  `batch_analyze` + tests). Byte-identity: 57/23/57, snapshots 11/11, composing 516, notation 57. **Realized: fires 100%,
+  correct only 55.7% (809/1452).** Dominant failure (308/21%): naive count/finality vote reproduces the relative-major
+  error (diatonic V→III tonicizations G→C outvote raised-LT V→i). No coverage gaps → discrimination/salience deficit, not
+  missing modalities. Decoupling structurally real but **34% of clean stems contradict** → wiring would regress mode-present.
+  bwv64.2 GT settled = **C major**. **Staging worked — caught the weak detector cheaply, no regression.**
+- **★ Cowork meta-read:** 3rd informed hand-built round on the key-axis relative decision (4b-i→4b-ii→4c-i); each failure
+  diagnosed a concrete next lever, not a wall; **B not yet implicated** (signal real, aggregation under-built). 4c-iii
+  (structural-vs-interior cadence discrimination + raised-LT salience + Picardy) is well-motivated, cheap (byte-identical
+  measure, no wiring), and **also feeds Stage 6** (KeyArea/tonicization) so not wasted. Budget-aware: if 4c-iii also misses
+  the wiring bar, reassess key-axis-vs-Stage-6 / B.
+- **⚠ 4c-iii design question (flag before writing the instruction):** "structural cadence" discrimination likely wants a
+  **fermata/phrase-boundary** signal — but composing is engraving-agnostic, so fermatas may need notation→composing plumbing
+  (a bridge/off-limits question). Confirm what structural signal is available IN-ZONE (metric position, finality, region
+  spacing) vs needing plumbing, as part of the 4c-iii design.
+- **★ FERMATA/OFF-LIMITS CLARIFICATION (user, 2026-06-14) — corrects a Cowork over-statement:** *reading/calling*
+  engraving is ALLOWED from any code we may edit; only *editing* `src/notation`/`src/engraving` CODE is off-limits.
+  The cadence diagnostic runs in `tools/batch_analyze` (writable, already loads the Score) → **fermatas are read
+  there directly and passed into the composing detector via a new IN-ZONE `CadenceRegionInput` field — ZERO off-limits
+  edit for the measurement.** (The notation-bridge change to feed fermatas to the LIVE resolver is only needed at 4c-ii
+  WIRING time — separately authorized; a normal "bridge reads engraving" op.) Standing lesson: don't conflate
+  "read engraving" with "edit the bridge."
+- **✅ DISPATCHED `cc_instruction_stage4c_iii_refine_detection.md` (user "go" via the fermata correction, 2026-06-14).**
+  4c-iii = refine the detector (still NO wiring, same byte-identity gate) + re-measure. Three refinements, each targeting
+  a diagnosed 4c-i failure: (1) **structural-vs-interior, fermata-gated** — weight phrase-final/piece-final cadences over
+  interior V→III tonicizations (the 308-region primary fix; fermatas read in batch_analyze, new in-zone input field);
+  (2) **raised-LT salience** — weight cadences whose LT is CHROMATIC vs the key-signature fifths (E→Am needs G♯ outside
+  0-sharp; G→C is diatonic) — KEY-AGNOSTIC via signature fifths + pitch content, **NEVER the resolved mode**; (3) **Picardy
+  handling** (91 parallel-major misreads). Re-measure realized fraction + **clean-stem contradiction rate (must drop well
+  below the 34% that blocked wiring — the binding mode-present-regression proxy)** vs 4c-i's 55.7%/34%; per-target
+  (bwv365/33.6/64.2 recover? bwv83.5 stay correct); residual. Byte-identity 57/23/57 + snapshots 11/11 + suites. HELD.
+  Branch: contradiction low + accuracy worthwhile ⇒ proceed to 4c-ii wiring; still short ⇒ key-axis A-vs-B / Stage-6
+  reassessment. **On CC's report: re-read this instruction, verify the three refinements stay key-agnostic (signature
+  fifths only, no resolved mode) + the byte-identity proof + the re-measured contradiction rate at source before ratifying 4c-ii.**
+
+- **✅ STAGE 4c-iii COMPLETE + COWORK-VERIFIED — HELD; 75.2% detection / 25.3% contradiction; gated 4c-ii feasible; BUDGET CHECKPOINT (2026-06-14).**
+  Cowork-verified at source: key-agnostic (`endsPhrase` from fermatas/final, `chromaticLeadingTone` from notated `concertKey(0)`
+  NOT resolved key — `batch_analyze:1704-1715`; resolver has 0 detector refs). Byte-identical (0/353, BIR Default 57, snapshots
+  11/11, composing 522). 55.7→**75.2%** detection, 34→**25.3%** contradiction; relative-major-wrong 308→123, Picardy 91→13.
+  **Honest finding: chromatic raised-LT is PRIMARY (+7.4); structural/fermata-gating is NEGATIVE in isolation** (phrase-final ≠
+  tonic in minor chorales) — refutes the design's "structural is primary" hypothesis (data corrected us). bwv365 miss = a
+  SEGMENTATION artifact (regions end on C; WiR=a-min) not cadence-detection. Residual now = dominant/subdominant tonicizations
+  (4th mode, "other" 47/63 contradictions). Don't wire ungated; **conf≥0.6 gate → ~10% contradiction @ ~15% floor coverage →
+  gated 4c-ii feasible (partial recovery, ~15% of floor — the first WIREABLE key-axis win).**
+- **★ COWORK BUDGET READ (the checkpoint the user flagged):** 4 informed hand-built rounds in; cadence approach works but
+  incrementally; remaining residual (dominant/subdominant tonicizations + segmentation artifacts) is increasingly Stage-6-flavored
+  (functional context / KeyArea — where cadence work also lives). B still not forced. The gated partial win is bankable now.
+- **✅ DECISION (user, 2026-06-14): OPTION C.** The cadence residual = the missing **tonicization understanding** (a Stage-6
+  capability, NOT built — the cadence detector reads tonicizations as cadences). Both user axes (min-surprise + max-precision)
+  → Stage 6: a "#4 guard" would band-aid a Stage-6 capability (highest surprise risk, lower ceiling); Stage 6 is the larger
+  lever (~35-42%) + the proper tonicization home + the biggest single slice (S1 labeling ~17.7%, low-risk pure-add, largely
+  independent of the stuck key floor). **Cadence detector COMMITTED as a byte-identical INSTRUMENT** (`cc_instruction_commit_cadence_instrument.md`
+  — cadencekeyanchor.{h,cpp} + tests + the batch_analyze diagnostic ONLY; resolver untouched; NOT pushed). **4c-ii wiring
+  DEFERRED to a Stage-6-informed integration** (better gating + key-floor feedback). **PIVOT TO STAGE 6.**
+- **★ NEW STANDING METHOD recorded (user): layer-by-layer audit once pieces are in place** (handoff top standing block +
+  roadmap). The back-half verification model.
+- **NEXT: Stage 6 design/scoping (Cowork) — the functional layer.** Responsibility: sequence-label T/S/D over the decoded
+  chord+key paths; cadences (consume the Stage-2.1 detector + the new cadence INSTRUMENT); secondary dominants; tonicization-
+  vs-modulation from KeyArea spans; aug6/Neapolitan; + 6.2 consolidate the 3 scattered quality-from-key sites; 6.3 revisit the
+  convention-gap buckets. **Entry per the layer-by-layer method = the highest-value low-risk slice: S1 tonicization LABELING on
+  already-correct-key readings** (pure-add, ~17.7%, independent of the key floor). Design → ratify → build. Roadmap Stage 6.
+  **Confirm the Stage-6 entry/scope with the user before writing the full design.**
+
+- **✅ STAGE 6 ENTRY = NARROW (user "go", 2026-06-14) → DESIGN WRITTEN: `docs/stage6_functional_layer_design.md` (DRAFT, ratification-gated).**
+  Functional layer responsibility (audited in isolation): sequence-label FUNCTION over the decoded chord+key path
+  (T/S/D, tonicization/applied, cadence, aug6/Neapolitan) — distinct from the chord-competition `harmonicfunctionlayer`.
+  **Narrow first slice = tonicization (applied-dominant) labeling:** emit `V/X` etc. where a chord is the dominant/LT of a
+  non-tonic degree resolving to it (the functional generalization of the cadence V→I logic, now WITH a known key so not
+  circular). Why first: S1 ~17.7% (biggest single slice), **pure-add on already-correct-key readings** (chord/key axes
+  can't regress → BIR 57/23/57 byte-identical), **independent of the stuck relative-pair floor**. The gap is EMISSION not
+  comparator (metric-design: `classify_pair` already credits emitted secondaries — confirm at source, don't re-invent).
+  Pins the label-vocab contract (resolves metric-design OQ-L2). Behavior change = functional axis (RN labels) → snapshots
+  move (DCML-adjudicate); **binding metric = S1 recovery vs a LOW false-label rate** (the cadence-contradiction analogue).
+  Staged: 6-tonic-i (labeler + measure, HELD) → AUDIT the sub-responsibility → 6-ii+ (cadence-token labeling consuming the
+  cadence instrument, T/S/D, tonicization-vs-modulation from KeyArea, aug6/Nea). **RATIFIED (user "ratified, go", 2026-06-14).**
+- **✅ STAGE 6 6-tonic-i INSTRUCTION DISPATCHED: `cc_instruction_stage6_tonic_i_labeler_measure.md`.** **Refinement flagged
+  (safer direction):** 6-tonic-i is **measure-before-wire** (build the tonicization labeler + measure realized quality
+  DIAGNOSTICALLY, production RN UNCHANGED → byte-identical) — per the discipline that caught the weak cadence detector; the RN
+  wiring is **6-tonic-ii** (separately ratified). Labeler = a NEW composing functional-labeling pass (distinct from
+  `harmonicfunctionlayer`); applied-dominant/LT predicate (root=dominant/LT of degree d, raised-LT chromatic vs key, next chord
+  resolves to d → `V/d` etc.); CONSUMES the resolved key (legit Stage-6 input; not circular). Confirm label-vocab vs
+  `compare_rn`/`classify_pair` at source (already credits emitted secondaries — match, don't re-invent). Measure: **false-label
+  rate (BINDING constraint, the tonicization analogue of the cadence contradiction)** + **S1 recall on correct-key readings**
+  (~17.7% slice). Byte-identity gate: BIR 57/23/57 + snapshots 11/11 + suites (diagnostic-only; movement = leak = STOP). Branch:
+  low false-label + worthwhile recall → 6-tonic-ii wire; high false-label → refine guards. **On CC's report: verify the labeler
+  doesn't mutate root/key + byte-identity + false-label rate + the compare_rn match at source before ratifying 6-tonic-ii.**
+- **✅ STAGE 6-tonic-i COMPLETE + COWORK-VERIFIED — HELD; predicate SOUND, blocked by the tonicization-vs-modulation boundary (2026-06-14).**
+  New `tonicizationlabeler.{h,cpp}` (diagnostic-only — Cowork-verified absent from the production path → byte-identical: BIR
+  57/23/57, snapshots 11/11, composing 531). **An existing production labeler already emits V/x+vii°/x** (`regionanalyzer.cpp:178/969`
+  `backfillNextRootPc`+`formatRomanNumeral`, verified; 29.2% of S1). Raw FP 78% BUT **91.8% = the tonicization-vs-MODULATION notation
+  boundary** (409/427 our target degree == DCML's local tonic — same event, two notations); **genuine plain-diatonic FP = 6.4% → predicate sound.**
+  S1 recall 41.2% (+~12-17% new; misses = inversions V6/5/V etc.). Label-vocab matched to `compare_rn` (OQ-L2 resolved).
+- **★ LAYER-AUDIT VERDICT:** tonicization predicate CORRECT but INCOMPLETE → needs the **tonicization-vs-modulation discriminator**
+  (deferred OQ5; consumes KeyArea/local-key spans + the committed CADENCE INSTRUMENT: cadentially-confirmed local key = modulation,
+  unconfirmed applied chord = tonicization). **The pieces are converging** (cadence + KeyArea → discriminator → clean tonicization) —
+  the layering payoff. Secondary angle: the metric may over-penalize the tonicization↔modulation equivalence (a metric-design refinement).
+- **AWAITING USER:** (a) design the tonicization-vs-modulation discriminator (the "complete" functional layer — RECOMMENDED per the
+  layer-correct-AND-complete principle; uses cadence+KeyArea) vs (b) treat tonicization↔modulation as metric-equivalent + wire 6-tonic-i
+  as-is (pragmatic; lower-quality output that conflates tonicization & modulation). 6-tonic-i stands as a byte-identical instrument feeding (a).
+- **✅ USER CHOSE (b)-quick-metric-check (2026-06-14) → DISPATCHED `cc_instruction_tonicization_modulation_metric_check.md`.**
+  READ-ONLY metric-design investigation (no production/metric change, no commit). **Quantify: of the ~409 tonicization-vs-modulation
+  cases, how many are BRIEF/either-valid (metric artifact — credit the equivalence, no discriminator needed) vs SUSTAINED/established
+  (DCML's modulation correct, our V/d-everywhere wrong → the discriminator's REAL value).** Tasks: how `compare_rn` scores these now
+  [code]; classify the 409 by local-key span DURATION + cadential confirmation (using DCML spans + the committed cadence instrument);
+  size metric-artifact vs real-output-gap buckets; sketch a fair crediting rule IF warranted (design-only). Deliverable
+  `cc_tonicization_modulation_metric_dossier.md` → recommends: mostly-artifact ⇒ credit equivalence + wire the sound predicate;
+  substantial-gap ⇒ build the discriminator sized to that bucket. **On CC's dossier: verify the brief-vs-sustained split method +
+  the comparator-behavior claim at source before deciding build-vs-credit.**
+- **★★ METRIC-CHECK RESULT (2026-06-14) — OVER-PENALIZATION FALSIFIED + THE BIGGEST SLICE REFRAMED. `cc_tonicization_modulation_metric_dossier.md`.**
+  **Cowork-verified at source:** `classify_pair` (`compare_rn.py:334-348`) scores by **root_pc+quality, NOT the RN reference key** →
+  `V/d`(home) ≡ DCML local `V` (same root) → **partial, already credited.** So the comparator does NOT over-penalize — it
+  **UNDER-penalizes / MASKS** (crediting the label hides that the KEY is wrong). 92.7% of the 409 are DCML-cadence-confirmed local
+  keys (79.2% ≥5 chords); only 2.7% brief → **DCML's modulation is correct for ~97%.** **★ 95.6% of the WHOLE S1 slice (2001/2093) is
+  a LOCAL-MODULATION case → S1 (~17.7%, the biggest precision slice) is a Stage-4 KEY/modulation gap, NOT the Stage-6 tonicization-label
+  gap the precision-headroom dossier + compare_rn's own `:786-797` comment assumed.** Crediting rule NOT warranted (harmful — masks the
+  95% real error); only a DIAGNOSTIC partial-sub-split (expose the masking) is defensible.
+- **★ HEADROOM CORRECTION (load-bearing — propagate to docs):** the biggest precision slice relocates **Stage 6 → Stage 4** (local-modulation
+  detection). **Do NOT wire 6-tonic-i** (games rn_agree, degrades correctness). Real lever = a **LOCAL-MODULATION / KeyArea detector
+  (Stage 4)**, ~95% of S1, signal = sustained span + local cadence (consumes the committed CADENCE INSTRUMENT + KeyArea); 6-tonic-i's
+  sound predicate → the BRIEF-ONLY branch (~4% home-key residue). The key axis holds BOTH the relative-pair floor AND the S1 modulation gap.
+  **Docs to correct (S1 attribution Stage6→Stage4):** `cc_precision_headroom_dossier`/`back_half_design`/`implementation_roadmap` (Stage 6.1 framing)
+  + `compare_rn.py:786-797` comment (a code-comment, defer to the diagnostic-sub-split change).
+- **★ INVESTIGATE-FIRST PAYOFF (record):** this is the new standing rule's clearest win — measuring before building caught that naively
+  wiring the tonicization labeler would GAME the metric (rn_agree up) while making the OUTPUT worse. Without the metric-check we'd have shipped it.
+- **NEXT (Cowork, PROCEEDING per investigate-by-default — not asking):** investigate the current key-path modulation behavior at source
+  (how/whether the resolver+KeyArea modulate; the gap vs DCML) → design the **local-modulation detector** (Stage-4 key behavior change,
+  measure-first) + the diagnostic partial-sub-split. Ratifiable design to follow.
+- **✅ DISPATCHED `cc_instruction_modulation_keypath_scoping.md` (user "go", 2026-06-14) — READ-ONLY scoping (no commit, no production change).**
+  Task A: build the **de-masking diagnostic** in compare_rn — sub-split `partial` by reference-key (correctly-keyed vs home-label-credited-against-
+  DCML-local = the masked modulation error); **reporting-only, metric numbers byte-identical** (crediting-harder was rejected as harmful). This is
+  the instrument to measure the modulation detector by CORRECTNESS not gameable rn_agree. Task B: characterize the current key-path modulation
+  mechanism at source (keyresolver/sectionanalyzer/KeyArea/hysteresis) — **why do we STAY HOME where DCML modulates** (the core diagnosis). Task C:
+  size the gap + realistic ceiling of "sustained span + local cadence → modulate" (+ the de-masked REAL key correctness on S1). Task D: available
+  signals (cadence instrument + KeyArea + hysteresis) + the integration LAYER (audit-method: which layer owns the modulation decision). Task E:
+  behavior-change blast radius (key→basisIndep→gate). Deliverable `cc_modulation_keypath_scoping_dossier.md` → feeds the local-modulation detector
+  design (Cowork next, ratification-gated). **On CC's dossier: verify the de-masking diagnostic is truly metric-neutral + the stay-home diagnosis
+  at source before designing.**
+- **✅ MODULATION SCOPING COMPLETE + COWORK-VERIFIED (2026-06-14).** `cc_modulation_keypath_scoping_dossier.md`. **Verified at source:**
+  de-masking `--partial-key-breakdown` is an additive store_true flag (metric-neutral, `compare_rn.py:937`); **stay-home diagnosis correct** —
+  `scoreKeySignatureProximity` (`keymodeanalyzer.cpp:409-420`) anchors every estimate to the NOTATED signature → with the lookback + hysteresis +
+  NO local-key state, the modulation gap is a **STRUCTURAL ABSENCE** (we track DCML modulations 9.7% vs DCML's 39.9%; stay home 74.5%). Gap ~3006
+  regions (29.7%); ceiling ~1800-2500 (capped by the cadence detector's ~75%); de-masking found ~20% (237) of the partial bucket is masked
+  modulation error. Integration = Stage-4 key layer (section/piece pass), consuming the key-agnostic cadence instrument; all composing-zone.
+  ⚠ CC Task-C "honest 54.4% vs rn_agree 45.7%" is muddled — direction solid (metric masks/overstates), the specific number needs clarification, don't quote.
+- **★ ARCHITECTURE TEST PASSED (the soundness question):** the modulation detector resolves FEED-FORWARD — local-key hypothesis from the
+  key-agnostic cadence instrument (per-cadence local tonics) + raw structure → re-key → KeyArea rebuilt downstream. No circular feedback. The
+  cadence detector built in its own layer is exactly the input. (Landmine guarded: must NOT use the current key-DEPENDENT KeyArea as input = circular.)
+- **✅ STAGE 4d DESIGN WRITTEN: `docs/stage4d_local_modulation_design.md` (DRAFT, ratification-gated).** Responsibility: the key layer commits
+  cadence-confirmed SUSTAINED local-key spans (override the home-pull only within a confirmed span). §3 NO-CIRCULARITY rule (key-agnostic hypothesis,
+  never the key-dependent KeyArea) = the load-bearing soundness property. Integration = section/piece-scoped key-layer pass. Staged measure-first:
+  4d-i build+measure byte-identical (binding metric = modulation CORRECTNESS via the de-masking diagnostic + track-rate, NOT gameable rn_agree) →
+  4d-ii wire+re-gate (medium BIR risk, DCML-adjudicate, 3 presets). 6-tonic-i becomes the brief-only branch downstream. **Awaiting user ratification
+  of §7 → then Cowork writes the 4d-i instruction.**
+- **✅ STAGE 4d DESIGN RATIFIED (user agreed §7 items 1-3, 2026-06-14; #4 procedural) → 4d-i INSTRUCTION DISPATCHED: `cc_instruction_stage4d_i_modulation_detector_measure.md`.**
+  4d-i = build the modulation detector + MEASURE diagnostically, **production key UNTOUCHED → byte-identical** (re-keying = 4d-ii, gated on this).
+  Detector = section/piece-scoped pass; candidates from `detectAuthenticCadences` (per-cadence local tonics, key-agnostic) + establishment (sustained
+  ≥5-chord run consistent w/ the hypothesized local collection) + confirmation (cadence in span) → conservative commit (precision-lean). **⛔ HARD
+  no-circularity rule:** inputs key-agnostic ONLY — NO resolved key / `KeyModeAnalysisResult` / current `KeyArea` (=circular). Measure candidate spans
+  vs DCML modulations: **precision (BINDING — don't over-modulate) + recall/track-rate (9.7%→? toward ~1800-2500 ceiling)**, + the de-masking baseline.
+  Byte-identity gate BIR 57/23/57 + snapshots 11/11 + suites (diagnostic-only; movement = leak = STOP). Branch: high precision + worthwhile recall →
+  4d-ii wire+re-gate; over-modulating → refine gates. **On CC's report: verify the detector's key-agnostic inputs (no resolved-key/KeyArea) + the
+  byte-identity + the precision/recall at source before ratifying 4d-ii.**
+- **✅ STAGE 4d-i COMPLETE + COWORK-VERIFIED — HELD; recall works (9.7%→33.4%), precision POOR (47%), bottleneck = UPSTREAM cadence instrument (2026-06-15, session 8).**
+  CC's STATUS session-8 entry is accurate (reconciled — no conflict). **★ ARCHITECTURE TEST PASSED (verified at source):** `localmodulationdetector.h`
+  includes ONLY `cadencekeyanchor.h` (key-agnostic), references no `KeyModeAnalysisResult`/`keyresolver`/`KeyArea`; `keySignatureFifths` param =
+  NOTATED signature (reliable), not resolved key; not in the production key path (grep) → diagnostic-only, byte-identical (BIR 57/23/57, snapshots 11/11,
+  0/353 .ours.json diff). **The capability we worried might need circular feedback built cleanly FEED-FORWARD.** CC caught + fixed a design flaw mid-build
+  (maximal-run engulfed modulations → nearest-cadence partition). FP breakdown: 43.3% dom/subdom (the #4 guard) + 27.5% relative-pair (anchor right 72.4%)
+  + 23.4% foreign; span-gate caps ~61% (noise is upstream).
+- **★ CONVERGENCE: the cadence instrument's precision is the SHARED bottleneck** (feeds modulation detection + tonicization-vs-modulation labeling + the
+  relative-pair floor). The "#4 guard" — DEFERRED at option-C as a Stage-6 band-aid — is now well-motivated as the upstream unblock (the metric-check reframe
+  voided the deferral reasoning). Fixing the cadence precision once unblocks all three.
+- **✅ DISPATCHED `cc_instruction_cadence_precision_investigation.md` (proceeding per investigate-by-default — not asking).** READ-ONLY: derive whether a
+  KEY-AGNOSTIC discriminator can separate the two false-cadence classes — (1) dom/subdom via a **chromatic-LT per-cadence gate** (works for V-direction,
+  but SUBDOMINANT-direction modulations carry no chromatic signal = honest asymmetry to quantify), (2) relative-pair anchor (same structural relative
+  problem — be honest if it's the floor). Measure cadence-precision lift + **★ the simulated DOWNSTREAM modulation-precision lift (the 4d-ii unblock test)**
+  + the irreducible residual (subdominant + relative-pair = next-layer/learned evidence). Branch: clear unblock → build the discriminator (measure-first);
+  ceiling too low → finding (key-agnostic cadence is precision-limited → residual needs a different layer/richer model). **On CC's dossier: verify the
+  discriminator is key-agnostic + the simulated modulation-precision lift at source before recommending the build.**
+- **★★ CADENCE-PRECISION INVESTIGATION: NEGATIVE — the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING (2026-06-15).**
+  `cc_cadence_precision_investigation_dossier.md`. Method rigorous: CC re-implemented `detectLocalModulations`+`aggregateGlobalAnchor` in Python,
+  **byte-matched the committed C++ dump 0/326** → trustworthy simulation. **Class 1 (chromatic-LT gate, the dom/subdom hypothesis): FALSIFIED** —
+  the LT signal is ORTHOGONAL to correctness (~45% of TRUE modulations + ~50% of FALSE ones carry a diatonic LT; subdominant modulations + home
+  cadences are diatonic-LT by construction). Best variant 47%→50% precision for −11pp recall; chromaticity adds nothing over the existing ≥2-cadence
+  lever (58.4% @ 18.1% recall). **Class 2 (relative-pair anchor 72.4%): signals already SPENT** — Cowork-verified at source `aggregateGlobalAnchor`
+  (`cadencekeyanchor.cpp:148+`) already uses minorMode + chromaticLeadingTone (line 178) + Picardy + finality → it's the **4b-ii structural relative-pair
+  floor**, not a missing signal. **Ceiling ≈ 50-58% precision @ ~18-22% recall — below the 4d-ii wireable bar.** Irreducible residual = subdominant-direction
+  diatonic-LT modulations + the relative-pair structural floor + sustained-tonicization analyst ambiguity → **needs a DIFFERENT LAYER (global/long-range
+  key decode, or a learned model), NOT a key-agnostic local cadence gate.** 4d-ii stays HELD. Scope: Bach/Default WiR (326), non-Bach unmeasured.
+- **★ ARCHITECTURAL INFLECTION (the moment the user has watched for):** the architecture is SOUND (feed-forward, validated) but the hand-built
+  **key-agnostic LOCAL** approach is **precision-ceilinged** on the key axis. The residual splits: (a) modulation FALSE-POSITIVES = a global-consistency
+  problem a **key DECODE** (Viterbi/HMM over key states + modulation transition cost) could suppress — DISTINCT from the relative-pair EMISSION gap the HMM
+  was shelved for (META-PRINCIPLE: search≈0 was about absent-candidate recall, not false-positive suppression — so the decode is an under-explored, legit
+  lever here, but must be tested skeptically); (b) the relative-pair structural floor = emission-limited → **learned (B)** evidence (the OQ-1 re-open gate
+  is effectively triggering on the key axis). **Surfaced to USER as the A-vs-B / META-PRINCIPLE / back-half-re-ground strategic call (not investigate-vs-proceed).
+  Cowork lean: investigate the global key decode first (de-risks A-vs-B — does global consistency lift modulation precision before any learned commitment).**
+- **★★ BACK-HALF ARCHITECTURE RE-GROUNDED (user + Cowork, 2026-06-15) → CONSTRAINED JOINT INFERENCE. Full synthesis: `docs/architecture_joint_inference.md`.**
+  A multi-turn first-principles dialogue (the user drove it) converged on the target architecture, derived from + pinned to the measured key-axis arc:
+  - **Model:** harmonic analysis = ONE joint decision over ALL evidence (chord + key/mode co-determined; function downstream), globally coherent. The
+    local feed-forward pipeline structurally CANNOT do this — the relative-pair floor + modulation gap are the proof.
+  - **Structure:** CONSTRAINED joint inference — HARD constraints (decisive raw facts + unambiguous analyses) disqualify/pin; SOFT scores (priors, weak
+    hints, global key path) rank survivors; optimize soft subject to hard. Hard facts are IMMOVABLE → the −7-wall override failure class is structurally
+    impossible (not "hopefully calibrated"). Joint/soft work scopes to the ambiguous residual.
+  - **META-PRINCIPLE reconciled:** the joint decode's value is BROAD-evidence integration (broader emission), NOT search (search≈0 was over a fixed NARROW
+    emission). Precision still lives in evidence breadth+quality+CALIBRATION.
+  - **Calibration precondition:** a sounding note ≠ a chord tone (suspensions/pedals) → hard constraints over raw facts + unambiguous analyses only;
+    over-claiming hard = override-in-reverse. **Ceiling** = genuine score-underdetermination (analyst ambiguity).
+  - **A-vs-B lives in the EMISSION (soft scoring + constraint defs), NOT the structure** — hand-built now, learned later, SAME decode machinery.
+  - **Integration not teardown:** chord decoder (Stage 3) = seed; oracle/cadence/modulation/tonicization = evidence producers it integrates; REPLACES the
+    local resolver + hysteresis + post-hoc gate layer (note: the gate-layer dissolution is one of the TWO DEFERRED REFACTORS — this subsumes it).
+- **✅ DISPATCHED `cc_instruction_joint_architecture_investigation.md` (READ-ONLY sizing, per never-guess).** Tasks: hard/soft characterization; **measure the
+  RESIDUAL (pinned-to-unique vs ambiguous after hard constraints) = true scope → full-joint vs scoped-joint vs two-pass**; hard-constraint SAFETY (any pin a
+  wrong DCML answer? = the calibration gate); soft-resolvable vs irreducible-floor split (A-vs-B input). Deliverable `cc_joint_architecture_dossier.md`.
+  **On the dossier: verify the residual sizing + hard-constraint safety at source before the architecture-design step.** Then: ratify the shape → design the
+  joint inference → build (measure-first). The 4d-i modulation detector + the cadence instrument stand as committed/HELD evidence producers feeding this.
+- **✅ JOINT-ARCHITECTURE SIZING LANDED + COWORK-VERIFIED (read-only): the shape is CONFIRMED SOUND + RIGHT-SIZED (2026-06-15).** `cc_joint_architecture_dossier.md`.
+  HEAD unchanged `2245aedf82`; only the 2 probes + dossier written; **instrument confirmed** (probe reproduces corrected `root_err=2365` to the unit);
+  cross-checks hold (key-mod 39.8% ≈ modulation prevalence 39.9%; oracle cross-check concurs). **Residual: 41.0% pinned / 19.2% chord-amb / 26.3% key-amb /
+  13.5% jointly-coupled → SCOPED-joint/two-pass, NOT a full lattice** (genuinely-coupled ~1-in-7). **Hard-constraint SAFETY PASSES** (complete-clear-vertical
+  chord ~0% vertical error; its disagreement = segmentation + functional re-rooting, not wrong chords). **Reading-shaped producers correctly SOFT (pin wrong:
+  cadence 44%, modulation 53%, bass-is-root 17-23%).** **A confirmed, B reserved for the tiny pc-irreducible dim7/aug floor (~111).** Floor = convention
+  boundaries (tonic↔mod ~409, notated-vs-analyst ~127). Recommendation: scoped constrained-joint, hand-built soft emission, KEY-AXIS FIRST, keep
+  cadence/modulation/bass-is-root soft. Scope: WiR-Bach; non-Bach unmeasured. ⚠ Working tree has accumulated HELD diagnostics + sandbox-noise ` M` on the
+  committed 4b-i files — host-side reconcile before any commit (NOT from this read-only run). `docs/architecture_joint_inference.md` promoted to CONFIRMED/ratifiable.
+- **AWAITING USER: ratify the SCOPED constrained-joint shape (per the measured sizing) → Cowork designs the scoped constrained-joint inference (key-axis first,
+  measure-first). This is a "ratification of a measured result" — the user's call. The two deferred refactors (file-split, gate-layer dissolution) fold into this design.**
+- **✅ CADENCE INSTRUMENT COMMITTED `2245aedf82` (Cowork-verified: exactly the 4 files +823/−6, byte-identical, resolver clean, NOT pushed).**
+  **★ Push topology update:** `origin/master` is now **`ef30cc70f3` (4b-i)** — the user pushed up through 4b-i to the fork, keeping
+  4a (`cfc7eb5e39`, engraving) LOCAL. Chain: a96f179f40 → ef30cc70f3 (4b-i, ORIGIN) → cfc7eb5e39 (4a, local) → 2245aedf82 (cadence, local).
+  **Wrinkle:** the cadence instrument now sits ABOVE 4a → pushing it would carry 4a unless the user reorders 4a back to the tip. User's call.
 
 - **Next CC task — DISPATCHED 2026-06-13: the tools-only metric re-baseline batch.**
   Decision taken (user 2026-06-13): "Tools-only metric batch now; P3 with Stage 4."

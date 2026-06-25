@@ -8,6 +8,16 @@
 >
 > Sources: arc42.org/overview · IEEE 1016 (standards.ieee.org/ieee/1016) · ISO/IEC/IEEE 42010.
 
+## Writing standard — predicates must be qualified (user, 2026-06-24)
+Every predicate or pointer word names its argument. Many words are *two-place*: they point at something but are easy
+to write with only one place filled — "uncertain" means uncertain *about what*; "defers" means defers *what* to
+*where*; "fits" means fits *by what measure*; "close" / "enough" / "in view" mean *by what test*; "prevailing" /
+"plausible" / "spurious" mean *by what rule*. A spec must write the second place, not leave it implied. The mechanical
+check: read each such word and force it to be followed by the thing it points at; if that forces a phrase the prose
+does not actually supply, the predicate is **unqualified** and there is a hole there. Deferring a *numeric value* to
+tuning is allowed; leaving the *argument, or the decision structure it stands for,* unnamed is not. (Method and worked
+examples: `cowork_spec_language_sweep.md`, `cowork_layer3_spec_language_sweep.md`.)
+
 ## The sections (in order)
 1. **Introduction & purpose** — what this component is, *why* it exists (the problem it solves), scope (in/out),
    and **status** (design / signed / as-built + commits).
@@ -47,10 +57,15 @@ Each doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)*
 **SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision
 changes, the doc moves with it.
 
-## Implementation & test references (once the source code is stable)
-Once a layer's source code has stabilized, the doc names both:
-- its **implementation files (headers and `.cpp`)** — in Section 3 (Context & scope), and
-- its **regression tests** (the unit-test file(s) and any corpus/property validation tool) — in Section 10
-  (Quality & testing),
-so a reader can go straight from the architecture to the code *and* to the tests that protect it. (Deferred for
-layers not yet built; added when they are. User mandate 2026-06-22.)
+## Implementation & test references (a *locator*, which stays — distinct from code-in-prose, which does not)
+A spec carries a **locator**: which files hold the implementation and which hold the tests, so a reader can go
+straight from the architecture to the code and to the tests that protect it. The locator **stays** (user, 2026-06-24).
+What is *not* allowed is code **mechanics** doing explanatory work in the prose — function/type/variable names used to
+*explain the algorithm*, code formulas, or commit hashes woven into the reasoning. The line: the algorithm is
+described in plain architect/music-theory language; the *pointer to where it lives* is a short, clearly-marked
+reference, not prose.
+- **Implementation locator** — the headers and `.cpp` files — in Section 3 (Context & scope), as a labelled pointer.
+- **Test locator** — the unit-test file(s) and any corpus/property validation tool — in Section 10 (Quality &
+  testing).
+(Deferred for layers not yet built; added when they are. A layer mid-rebuild names its current location, marked as
+such. User mandate 2026-06-22, refined 2026-06-24.)

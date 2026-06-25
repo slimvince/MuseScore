@@ -172,6 +172,18 @@ spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
   segmentation-tick variant of the same `bwv227.7` over-grab case (oracle-correct GT root
   C♯); the old Default-14 = Baroque-13 ∪ {bwv187.7@19200}, all 14 preserved.
 
+**Cross-layer-budget caveat (2026-06-24, O1 measurement):** the BIR=false set is **not** the Layer-5 resolver
+residual — it is a **work budget distributed across Layers 1–5**, and it overstates the function-only remainder
+several-fold. Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md` +
+`cc_uncertain_resolver_measurement_report.md`): ≈60% Baroque / ≈42% Jazz are **spelling-resolvable** (the Layer-4
+notated-spelling root pin), and most of the rest is **bass/inversion**, **local voice-leading**, or plain
+**segmentation over-grab** the change-point slicer (Layer 2) removes by construction (e.g. `bwv10.7@36000` — a 5-note
+scale `C-D-E♭-F-G` over-grabbed across two GT chords `i43`/`iv532`, Cowork-verified at the score). The genuinely
+**function-only** remainder reaching Architectural Layer 5 is small: pitch-class-identical share-tone chords
+(`bwv352` Am6↔F♯ø7; Jazz `bwv291` Eø7↔Gm6) on the chord side, and the **note-identical** key-disagreement class
+(relative major/minor, tonicization-vs-modulation) on the key side. So a BIR=false count is read as cross-layer work,
+not as any one layer's accuracy. (O1 resolved: the resolver of "uncertain" is Layer 5 itself, no separate box.)
+
 **Granularity caveat (Stage 2.2-i):** the 57/23 gate is measured at **batch
 (cross-barline) region** granularity; the user-visible **per-beat** root-error rate
 is ~7× higher when the same scores are scored at measure-aligned (section)

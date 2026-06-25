@@ -107,6 +107,24 @@ an ordered list of slices that covers the analysed span from its first boundary 
   be missed. The only cost is harmless extra slices that look identical and are merged later.
 - **Deterministic; work proportional to the number of notes; careful edge handling** (an empty range, a single
   note, a moment that is both a stop and a start, a fully silent range).
+- **A slice is a unit of constant *content*, not of constant musical *time*.** Two slices are both "one slice" whether
+  one is a ten-measure held chord and the other a passing sixteenth — but they carry very different inferential weight,
+  so the layers above must **never treat slices as equal-weight units**. A slice's **metric extent** — its **duration**
+  (`end − start`, directly on the slice) and its **metric position/weight** (the metric-weight derived view over
+  Architectural Layer 1's score, from the time signature) — is **evidence**, and it is weighted by metric structure,
+  **not by tempo**: the harmonic reading (and the human ground truth) keys off beat strength and notated duration in
+  beats/measures, not absolute clock time. Architectural Layer 2 keeps the slice **minimal** (`[start, end)` only); the
+  duration and metric weight are **derived on demand** by the consuming layers (Architectural Layer 3 emission,
+  Architectural Layer 4 membership), not stored here. *(How well the inference weights the extremes — a very long held
+  chord, a very short embellishment slice — is an Architectural Layer 3 / 4 weighting concern; the metadata to do it
+  is available here.)*
+- **Bounded context (`cowork_bounded_context_design.md`).** Architectural Layer 2 slices whatever span the note model
+  currently holds. When a higher layer **extends** the loaded span (to reach context outside the user's selection),
+  Architectural Layer 2 produces the change-point slices for the **newly loaded region**, preserving complete coverage
+  and slice identity over the enlarged span. Slices that fall in the **context span** (loaded but outside the
+  selection) are usable as evidence by the layers above but are **not** part of the analysis output. Architectural
+  Layer 2 itself makes no selection-versus-context distinction — it just slices the loaded span; the output-versus-
+  evidence boundary is the consuming layer's concern.
 
 ## 9. Architecture decisions (with the alternatives we weighed)
 - **A boundary at every note start AND every note stop** (not only at note starts). Alternative considered: cut only
