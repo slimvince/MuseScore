@@ -1757,13 +1757,11 @@ static void printHelp(const std::string& prog)
         << "            decoder is NOT wired into the live analyzer; this RETURNS before any\n"
         << "            analysis runs, so production output is unchanged. Default OFF.\n"
         << "  --seq-change-base N | --seq-relative-extra N | --seq-per-fifth N |\n"
-        << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N |\n"
-        << "  --seq-tpc-weight N\n"
+        << "  --seq-window-beats N | --seq-uncertain N | --seq-topk N | --seq-max-alts N\n"
         << "            (Layer-3 BOUNDED SWEEP) Override the decoder-private\n"
         << "            KeyModeSequencePreferences for the --decode-keymode path only\n"
         << "            (read nowhere else; production stays byte-identical). Default =\n"
-        << "            the committed decoder defaults. --seq-tpc-weight is the decode-only\n"
-        << "            tpc-aware key-fit weight (0 = committed pitch-class emission).\n"
+        << "            the committed decoder defaults.\n"
         << "  --decode-chords\n"
         << "            (Layer-4 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-4 per-slice CHORD decoder\n"
@@ -2521,7 +2519,7 @@ int main(int argc, char* argv[])
         } else if (a == "--seq-change-base" || a == "--seq-relative-extra"
                    || a == "--seq-per-fifth" || a == "--seq-window-beats"
                    || a == "--seq-uncertain" || a == "--seq-topk"
-                   || a == "--seq-max-alts" || a == "--seq-tpc-weight") {
+                   || a == "--seq-max-alts") {
             // Decode-only KeyModeSequencePreferences sweep overrides (see decl above).
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: " << a.toStdString() << " requires a numeric argument\n";
@@ -2543,10 +2541,6 @@ int main(int argc, char* argv[])
                 seqPrefs.topK = val.toInt(&ok);
             } else if (a == "--seq-max-alts") {
                 seqPrefs.maxAlternatives = val.toInt(&ok);
-            } else if (a == "--seq-tpc-weight") {
-                // DECODE-ONLY tpc-aware key-fit weight (cc_layer3_tpc_keymeasure).
-                // 0 (default) = committed pitch-class emission, byte-identical.
-                seqPrefs.tpcKeyFitWeight = val.toDouble(&ok);
             }
             if (!ok) {
                 std::cerr << "ERROR: invalid numeric argument for " << a.toStdString()
