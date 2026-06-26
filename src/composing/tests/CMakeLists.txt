@@ -47,6 +47,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/localmodulationdetector_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/note_model_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/postscoringgates_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/reachback_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/slicer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp

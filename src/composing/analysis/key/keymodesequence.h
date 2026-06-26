@@ -71,11 +71,23 @@
 // genuinely ambiguous residual (relative pair, modulation seam) is flagged
 // "uncertain" and left for the later, gated key-and-chord step — never forced.
 //
-// ISOLATION (this increment): the decoder is BUILT, unit-tested, and GRADED
-// against the held-out ground-truth harness, but NOT wired into the live analysis
-// pipeline. Production analysis output is byte-identical; the decoder runs only
-// under the read-only batch_analyze --decode-keymode diagnostic. Wiring (replacing
-// the per-region key argmax at regionanalyzer.cpp) is the next, separate increment.
+// WIRING (as-built): this decoder IS the live key path. The region analyzer
+// (regionanalyzer.cpp, analyzeRegions) runs ONE whole-score decode() over the
+// Layer-2 change-point slice grid and each Pass-1 coarse region takes its
+// duration-majority decoder key over the slice run it spans — replacing the old
+// per-region key argmax (resolveKeyAndModeRanked) at the Pass-1 seam. The
+// whole-sequence change cost supplies the smoothing the per-region hysteresis used
+// to. Three fidelity ties keep it faithful to the resolver-as-graded: the same
+// excluded staves, the same Baroque partial-signature-corrected fifths + declared
+// mode, and the emission-scale C1 confidence the downstream 0.8 key-confidence
+// gates expect. The committed BIR delta of this wiring is the ratified
+// −4 / +1 / −4 (Baroque / Jazz / Default), all class-(a) symmetric-rotation churn
+// (see CLAUDE.md gate section). The decoder remains pure/static; the read-only
+// batch_analyze --decode-keymode diagnostic still exercises it directly.
+//
+// Selection-aware reach-back (cowork_layer3_reachback_design.md, Phase 3) wraps the
+// SAME decode() in an extend → re-slice → re-decode loop in the orchestrator; the
+// decoder itself is untouched (a pure function of the slices it is given).
 //
 // See cowork_layer3_keymode_design.md (signed) + cc_layer3_decoder_audit_dossier.md.
 

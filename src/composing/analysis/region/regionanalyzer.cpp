@@ -64,6 +64,24 @@ namespace {
 constexpr int kPass2MinRegionTicks    = 4 * mu::engraving::Constants::DIVISION;
 constexpr int kMaxBassMovementPasses  = 8;
 
+/// One reach-back increment in ticks: the duration of the measure ending at `tick`
+/// (the measure just before the loaded-span edge), read from the score's time
+/// signature — Architectural Layer 3's natural unit (design §2). Falls back to a 4/4
+/// measure when no measure precedes `tick` (e.g. tick at/below the score start); the
+/// extend() that consumes it clamps at the score boundary regardless.
+int measureTicksBefore(const mu::engraving::Score* score, int tick)
+{
+    using namespace mu::engraving;
+    const Measure* m = score->tick2measure(Fraction::fromTicks(tick > 0 ? tick - 1 : 0));
+    if (m) {
+        const int t = m->ticks().ticks();
+        if (t > 0) {
+            return t;
+        }
+    }
+    return 4 * Constants::DIVISION;
+}
+
 /// Coalesce runs of consecutive contiguous short regions that share a common
 /// root into a single region. A 960-tick harmony broken by upper-voice motion
 /// into Cm → Csus2 → Cm → C7 (each 240 ticks, all rooted on C) is one real
@@ -509,7 +527,15 @@ analyzeRegions(const mu::engraving::Score* score,
     // Every tone read below derives a view over it (weightedPcView / soundingAt /
     // findTemporalContext), so the tie de-inflation and uncapped-overlap fixes
     // apply uniformly and the score is read only once per analysis.
-    const nmdl::NoteModel noteModel = nmdl::NoteModel::build(score);
+    //
+    // Production (opts.reachBack.enabled == false) builds the WHOLE score — the
+    // degenerate "selection = score" — so the live path is byte-identical to before
+    // the bounded-context API existed. The selection-aware reach-back capability
+    // (default OFF) instead builds over the selection [startTick, endTick); the loop
+    // after the decode below may then grow it earlier (cowork_layer3_reachback_design.md).
+    nmdl::NoteModel noteModel = opts.reachBack.enabled
+        ? nmdl::NoteModel::build(score, startTick.ticks(), endTick.ticks())
+        : nmdl::NoteModel::build(score);
 
     // Resolve key/mode at the start of the range. Use staff 0 as the reference
     // for the key signature (all concert-pitch staves share the same key sig).
@@ -550,11 +576,95 @@ analyzeRegions(const mu::engraving::Score* score,
     const KeyModeAnalysisResult seedKey = initialRanked.front();
     const kr::KeySignatureContext keySigCtx =
         kr::resolveKeySignatureContext(score, startTick, refStaff, excludeStaves, keyPrefs);
-    const std::vector<slc::Slice> slices = slc::changePointSlices(noteModel);
-    const std::vector<kms::SliceKeyMode> sliceKeys =
+    std::vector<slc::Slice> slices = slc::changePointSlices(noteModel);
+    std::vector<kms::SliceKeyMode> sliceKeys =
         kms::KeyModeSequenceDecoder::decode(
             slices, noteModel, keySigCtx.correctedFifths, keySigCtx.declaredMode,
             keyPrefs, kms::kDefaultKeyModeSequencePreferences, excludeStaves);
+
+    // ── Architectural Layer 3 reach-back (selection-aware capability; default OFF) ──
+    // Production builds the whole score (opts.reachBack.enabled == false), so this
+    // loop never runs on the live path and the corpus stays byte-identical. On a
+    // partial selection whose opening has no settled key, ask Architectural Layer 1
+    // to extend EARLIER one increment at a time, re-slice (Layer 2) and re-decode
+    // (Layer 3) the enlarged span, until the leading-edge key stops changing (the
+    // principled convergence criterion — design §3), the hard bound is hit, or the
+    // score start is reached (extend reports boundaryReached). The decoder stays a
+    // pure function of the slices it is given; the loop lives here, never inside
+    // decode(). A whole-score model has nothing earlier to reach, so extend() clamps
+    // on the first request and the loop exits with no extension — reach-back cannot
+    // fire on the corpus (design §4).
+    //
+    // Convergence note (measured, cc_layer3_phase3_report.md): the design's cheaper
+    // proxy "a settled key is in view in the reached-back context" was found to stop
+    // PREMATURELY — a single settled context measure does not anchor the leading edge
+    // (the leading-edge key flips only once a confident earlier key is established
+    // over a run, e.g. a V–I). So the headline criterion is implemented directly:
+    // track the leading-edge SETTLED key across iterations and stop when it repeats —
+    // more earlier context then cannot move it.
+    if (opts.reachBack.enabled) {
+        const int selStartTick = startTick.ticks();
+        const double minConf = opts.reachBack.minOpeningConfidence;
+
+        // Leading-edge slice = the first slice whose end exceeds the selection start
+        // (the same upper_bound idiom as the region→slice lookup below).
+        auto leadIndex = [&]() -> int {
+            for (size_t i = 0; i < slices.size() && i < sliceKeys.size(); ++i) {
+                if (slices[i].end > selStartTick) {
+                    return static_cast<int>(i);
+                }
+            }
+            return -1;
+        };
+        // The leading edge's key + whether the decoder is SETTLED on it: not marked
+        // uncertain AND (when a low-confidence trigger is configured) its sequence-
+        // margin confidence is at or above it.
+        struct LeadKey {
+            int tonic = -1; int mode = -1; bool settled = false; bool valid = false;
+            bool sameKey(const LeadKey& o) const { return tonic == o.tonic && mode == o.mode; }
+        };
+        auto leadKey = [&]() -> LeadKey {
+            const int i = leadIndex();
+            if (i < 0) {
+                return {};
+            }
+            const kms::SliceKeyMode& sk = sliceKeys[static_cast<size_t>(i)];
+            return { sk.chosen.tonicPc, static_cast<int>(sk.chosen.mode),
+                     !sk.uncertain && sk.confidence >= minConf, true };
+        };
+
+        // Trigger: enter the loop only when the selection's opening is UNSETTLED.
+        const LeadKey opening = leadKey();
+        if (opening.valid && !opening.settled) {
+            LeadKey lastSettled {};   // the last settled leading-edge key seen
+            int reachedSteps = 0;
+            while (!noteModel.boundaryReached()
+                   && reachedSteps < opts.reachBack.maxReachSteps) {
+                const int incTicks = opts.reachBack.incrementTicks > 0
+                    ? opts.reachBack.incrementTicks
+                    : measureTicksBefore(score, noteModel.loadedStart());
+                if (incTicks <= 0) {
+                    break;
+                }
+                noteModel.extend(nmdl::NoteModel::Direction::Earlier, incTicks);
+                ++reachedSteps;
+                slices = slc::changePointSlices(noteModel);
+                sliceKeys = kms::KeyModeSequenceDecoder::decode(
+                    slices, noteModel, keySigCtx.correctedFifths, keySigCtx.declaredMode,
+                    keyPrefs, kms::kDefaultKeyModeSequencePreferences, excludeStaves);
+
+                // Converged once the leading edge is SETTLED on a key that the prior
+                // settled iteration already had — more earlier context cannot move it.
+                const LeadKey cur = leadKey();
+                if (cur.valid && cur.settled) {
+                    if (lastSettled.valid && cur.sameKey(lastSettled)) {
+                        break;
+                    }
+                    lastSettled = cur;
+                }
+            }
+        }
+    }
 
     // Per-slice end ticks (slices are ordered, contiguous and covering) for an
     // O(log N) region→slice-run lookup.
@@ -1259,6 +1369,22 @@ analyzeRegions(const mu::engraving::Score* score,
     if (analysis::jointKeyWiringEnabled()) {
         applyJointKeyWiring(score, regions, refStaff, excludeStaves, keyPrefs);
         backfillNextRootPc(regions);
+    }
+
+    // ── Output-filter (design §2 step 7): emit results only for the selection ────
+    // Under reach-back the reached-back context slices anchor the carried-in key but
+    // are evidence, never output. The Pass loops already scope every region to
+    // [startTick, endTick), so this drops nothing in practice; it makes the
+    // selection-only contract explicit and robust against any future context-span
+    // leakage. Inert on the production path (reach-back disabled).
+    if (opts.reachBack.enabled) {
+        const int selStartTick = startTick.ticks();
+        regions.erase(
+            std::remove_if(regions.begin(), regions.end(),
+                           [selStartTick](const HarmonicRegion& r) {
+                               return r.endTick <= selStartTick;
+                           }),
+            regions.end());
     }
 
     if (opts.hooks) {

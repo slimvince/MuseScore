@@ -77,6 +77,47 @@ struct RegionAnalysisHooks {
     std::vector<HarmonicRegion>* postMergeRegions = nullptr;
 };
 
+/// Architectural Layer 3 reach-back — a SELECTION-AWARE capability, default OFF.
+///
+/// When disabled (the production default) analyzeRegions builds Layer 1 over the
+/// WHOLE score and never reaches back, so the live path is byte-identical to before
+/// this option existed. When enabled, analyzeRegions builds Layer 1 over the
+/// SELECTION [startTick, endTick) only; if the selection's opening carries no
+/// settled key (the leading-edge slice is "uncertain"), it asks Layer 1 to extend
+/// EARLIER one increment at a time, re-slices (Layer 2) and re-decodes (Layer 3) the
+/// enlarged span, until a settled prevailing key is in view in the reached-back
+/// context (the convergence proxy), the hard bound is hit, or the score start is
+/// reached. Output stays the selection only (the reached-back context is evidence,
+/// never emitted). The decoder remains a pure function of the slices it is given;
+/// the extend → re-slice → re-decode loop lives in the orchestrator.
+/// See cowork_layer3_reachback_design.md.
+struct ReachBackOptions {
+    /// OFF ⇒ whole-score build, no reach-back (the production path; byte-identical).
+    /// ON  ⇒ build over the selection and reach back when the opening is unsettled.
+    bool enabled = false;
+
+    /// Hard bound: the maximum number of reach-back increments ("never settles" cap;
+    /// design §3). The loop also terminates at convergence or the score start.
+    int maxReachSteps = 8;
+
+    /// Reach-back increment size in ticks. 0 ⇒ one measure, derived from the score's
+    /// time signature at the loaded-span edge (Layer 3's natural unit; design §2).
+    /// A fixed positive value overrides it — the increment is an efficiency knob, not
+    /// a guessed amount, so convergence is independent of it (design §5.3 / tests).
+    int incrementTicks = 0;
+
+    /// Trigger sensitivity: the selection's opening is treated as "unsettled" (so
+    /// reach-back fires) when its leading-edge slice is "uncertain" OR its sequence-
+    /// margin confidence is below this. Symmetrically, a reached-back context slice
+    /// counts as a "settled key in view" (the convergence stop) only when it is NOT
+    /// uncertain AND its confidence is at or above this. Default 0.0 ⇒ the decoder's
+    /// own "uncertain" flag is the sole signal (design §3 primary criterion); a
+    /// positive value broadens the trigger to low-margin openings (design §3 "or low
+    /// sequence-margin"). The exact magnitude is a Phase-B calibration item, not set
+    /// on the production path (which never enables reach-back at all).
+    double minOpeningConfidence = 0.0;
+};
+
 /// Tunable parameters that differ between bridge and batch callers but do
 /// not influence the structural orchestration.  Defaults match the bridge.
 struct AnalyzeRegionsOptions {
@@ -132,6 +173,10 @@ struct AnalyzeRegionsOptions {
 
     /// Optional debug capture for pre-merge and post-merge region streams.
     RegionAnalysisHooks* hooks = nullptr;
+
+    /// Architectural Layer 3 reach-back (selection-aware capability; default OFF ⇒
+    /// production whole-score build, byte-identical). See ReachBackOptions.
+    ReachBackOptions reachBack {};
 };
 
 /// Run the shared regional-analysis orchestrator over [startTick, endTick) and
