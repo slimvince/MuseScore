@@ -35,6 +35,7 @@
 #include "engraving/dom/sig.h"
 
 #include "composing/analysis/chord/analysisutils.h"
+#include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/scoreharvest/metricweights.h"
 
 namespace shv = mu::composing::analysis::scoreharvest;

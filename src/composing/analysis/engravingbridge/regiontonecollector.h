@@ -37,16 +37,19 @@
 // module directly.
 //
 // The module depends only on the engraving layer (Score, Segment, Measure,
-// Fraction), the composing analysis types (ChordAnalysisTone, ChordTemporalContext,
-// KeyModeAnalyzer::PitchContext) and the scoreharvest helpers — never on
-// notation/internal.
+// Fraction), the composing analysis value types (ChordAnalysisTone,
+// ChordTemporalContext, ChordAnalyzerPreferences, KeySigMode,
+// KeyModeAnalyzerPreferences, PitchContext) and the scoreharvest helpers — never on
+// notation/internal. The value types come from the leaf types header
+// analysis/types/analysistypes.h; this header no longer includes the chord (L4) or
+// key (L3) analyzer headers — killing the L1.5 → L4/L3 type-only back-edge (audit Q2).
+// See cowork_types_header_design.md.
 
 #include <cstddef>
 #include <set>
 #include <vector>
 
-#include "composing/analysis/chord/chordanalyzer.h"
-#include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/types/analysistypes.h"
 #include "composing/analysis/notemodel/note_model.h"
 #include "engraving/dom/part.h"
 #include "engraving/dom/score.h"
@@ -237,7 +240,7 @@ void collectPitchContext(const mu::engraving::Score* sc,
                          const mu::engraving::Fraction& windowEnd,
                          const std::set<std::size_t>& excludeStaves,
                          const mu::composing::analysis::KeyModeAnalyzerPreferences& prefs,
-                         std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& ctx);
+                         std::vector<mu::composing::analysis::PitchContext>& ctx);
 
 /// Weighting knobs for the windowed pitch-context view (pitchContextOverSpan).
 /// All three are length-scales / multipliers seeded with the metricweights values;
@@ -270,6 +273,6 @@ void pitchContextOverSpan(
     const std::set<std::size_t>& excludeStaves,
     const mu::composing::analysis::KeyModeAnalyzerPreferences& beatPrefs,
     const SpanWindowWeights& weights,
-    std::vector<mu::composing::analysis::KeyModeAnalyzer::PitchContext>& out);
+    std::vector<mu::composing::analysis::PitchContext>& out);
 
 } // namespace mu::composing::analysis::engravingbridge

@@ -21,6 +21,12 @@
 muse_create_module(composing_analysis NO_QT)
 
 target_sources(composing_analysis PRIVATE
+    # types/ — LEAF cross-layer value types (Phase-5 audit-Q2 refactor). Depends on
+    # nothing from chord/ or key/ (STL only), so the L1.5 engravingbridge and L3 key
+    # headers compile without the L4 chord headers — killing the two type-only header
+    # back-edges. Pure relocation, byte-identical. See cowork_types_header_design.md.
+    ${CMAKE_CURRENT_LIST_DIR}/types/analysistypes.h
+
     # chord/ — chord analysis, formatting, voicing
     ${CMAKE_CURRENT_LIST_DIR}/chord/analysisutils.h
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp

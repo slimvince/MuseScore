@@ -29,23 +29,10 @@
 
 namespace mu::composing::analysis {
 
-/// Describes the valid range for a single numeric scoring parameter.
-///
-/// Used by ChordAnalyzerPreferences::bounds() and KeyModeAnalyzerPreferences::bounds()
-/// to expose all tunable parameters to automated optimizers or UI sliders.
-///
-/// isManual: when true, the parameter should be held fixed during automated
-/// optimization (it is wired to a user-visible preference or has a narrow
-/// hand-tuned sweet-spot).  When false, it is fair game for gradient-based
-/// or grid search optimizers.
-struct ParameterBound {
-    double min;
-    double max;
-    bool   isManual = false;
-};
-
-/// Convenience alias for the map returned by bounds().
-using ParameterBoundsMap = std::map<std::string, ParameterBound>;
+// ParameterBound / ParameterBoundsMap (the bounds() return types) were relocated to
+// the leaf types header analysis/types/analysistypes.h (Phase-5 audit-Q2 refactor) so
+// the key layer can obtain them without back-edging into chord/. This header keeps the
+// pitch/key free functions below. Pure relocation. See cowork_types_header_design.md.
 
 /// Returns true when \p value ends with the string literal \p suffix.
 inline bool endsWith(const std::string& value, const char* suffix)
