@@ -32,9 +32,11 @@ set(MODULE_TEST_SRC
 
     ${CMAKE_CURRENT_LIST_DIR}/test_helpers.h
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils.h
+    ${CMAKE_CURRENT_LIST_DIR}/analyzechord_robustness_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/cadencekeyanchor_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chordvoicing_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/decode_chord_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/decode_tests.cpp
@@ -44,7 +46,10 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/jointkeydecision_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/l3_coverage_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/localmodulationdetector_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/modepriorpresets_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/nashville_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/note_model_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/postscoringgates_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/reachback_tests.cpp
