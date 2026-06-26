@@ -64,23 +64,31 @@ oracle) and "assign function" (L5). Not urgent — but if any layer is a candida
 `analyzeChord` + `ChordPathDecoder` in `regionanalyzer.cpp`. So "L4 = the clean new chord/ path" is **aspirational on
 the live path today.** *(Cowork-verified: `ChordSliceDecoder` appears in no `regionanalyzer` line.)*
 
-## Q3 — 100% regression coverage? — **NO. Broad unit + golden coverage, with named gaps.**
+## Q3 — 100% regression coverage? — **NO, but SUPERSEDED by CC's MEASURED audit (see banner).**
+
+> **★ CORRECTION 2026-06-26 — the coverage claims below were partly WRONG (compromised reads).** The follow-on
+> four-criteria test-adequacy audit (Cowork's parallel agents) and parts of this Q3 list were produced by reading the
+> working tree through a **flaky Linux mount that served truncated file content** — the same fault that made
+> `note_model.h`/`slicer.{h,cpp}` *appear* truncated to the sandbox while they are byte-identical to HEAD on Windows
+> (CC-verified; green build is impossible with a truncated `note_model.h`). The agents therefore "saw" missing tests
+> that **do exist**. **CC's on-Windows MEASURED audit (`cc_tree_repair_and_coverage_report.md`) is authoritative.**
+> Specifically REFUTED at source: the **L2 clip is well-tested** (`slicer_tests.cpp` CP1–CP7, incl. the
+> re-slice-equivalence invariant; slicing 100% line); **`chordpostpasses` IS directly tested** (`applyIter8691Pedal`,
+> 6 tests); **L3 emission robustness IS tested** (empty/single/chromatic/out-of-range — only *unison* missing);
+> `sectioncadencedetection`/`metricweights` are better-covered than stated. Measured union line%: L1 97.7 · L1.5 98.2 ·
+> L2 slicing 100 · L2 harmony 98.6 · L3 key 83.3 · L4 chord 93.6 · L4 function 96.2 · region 85.8 · section 89.4.
+> **GENUINELY confirmed gaps (the real backfill list):** `chordvoicing` 0% direct; `modepriorpresets` 0%;
+> `ChordSymbolFormatter::formatNashvilleNumber` (1 test); L4 `analyzeChord` robustness (only the <3-PC gate); the L3
+> option threads (`excludeStaves`, `ignoreDeclaredMode`, lookahead loop, `populateEmissionConfidence`) are
+> *line-executed but branch/assertion-untested* — line coverage cannot see which branch ran or whether output was
+> asserted; the production L4 has no abstain/uncertain/inherit (spec outcome untestable; the spec-conformant
+> `chordslicedecoder` is production-dead, spelling-pin unbuilt). **Branch coverage (criterion 4) could not be measured —
+> no coverage toolchain on the machine** (`OpenCppCoverage`/`gcov`/`llvm-cov` absent); only block/line was available.
 
 Three test binaries: **composing_tests** (22 unit/component files), **notation_tests** (the bridge path),
 **pipeline_snapshot_tests** (end-to-end P1–P4 goldens over a 12-score DCML corpus, capped at 16 measures, six pinned
-arrays). Most L1–L4 modules have dedicated or direct unit tests; L1/L1.5/L2/L3-emission/L3-sequence/L4-oracle/L4-gates
-are well covered. **Real gaps (do not claim 100%):**
-
-- **chordvoicing** (`closePositionVoicing`) — no composing unit test; only integration via `notationimplode_tests`.
-- **chordpostpasses** — no test calls it by name; only reached transitively inside `analyzeChord`.
-- **sectionanalyzer / `analyzeSection`** — no composing-side unit test; validated only by snapshots + notation. (A
-  regression here surfaces as snapshot drift, not a targeted failure.)
-- **No direct coverage:** `modepriorpresets`, `sectioncadencedetection`, `sparsechordrefinement`, `metricweights`
-  (constants only), `keymodeformatting` (indirect); **`ChordSymbolFormatter::formatNashvilleNumber`** is never asserted.
-
-Net: coverage is **broad but concentrated on the oracle and the end-to-end goldens**; the section/aggregation layer and
-post-scoring shaping lean on integration tests. *(Some gaps INFERRED from negative grep — "no *named* test," high but
-not certain.)*
+arrays). *(The original bullet list that stood here is retracted — see the correction banner; trust the measured
+numbers, not the negative-grep gaps.)*
 
 ## Q4 — Stale code / docs / comments / tests / tools? — **YES, several; one high-impact.**
 
@@ -91,8 +99,13 @@ not certain.)*
 - **Stale "NOT wired" comments.** `CMakeLists.txt` still calls `keymodesequence`, the `slicer`, and `jointkeydecision`
   "NOT wired" — all three are now wired (`regionanalyzer.cpp:475/579/581`). The headers are correct; the CMake comments
   predate the L3 wiring.
-- **Orphaned test fixtures (zero live references):** `chord_analysis_test.{musicxml,json,py}` (literal "content moved"
-  stubs), `mono_smoke_test.musicxml`, `data/solid theory.musicxml` (space-named; tests load `nm_solid_theory.mscx`).
+- **Orphaned test fixtures — CORRECTED 2026-06-26 (the original list was partly wrong; CC re-verified whole-repo).**
+  Confirmed orphan, zero references: **only** `chord_analysis_test.{musicxml,_expected.json,py}` (literal "content
+  moved" stubs). **NOT orphans:** `mono_smoke_test.musicxml` is loaded and asserted by
+  `tools/test_batch_analyze_regressions.py:117,137` *(Cowork-verified)* — the original audit used a negative-grep
+  scoped to `src/composing/tests/` and missed the `tools/` caller; `data/solid theory.musicxml` is provenance-
+  referenced in `note_model_tests.cpp` comments (not a clean orphan). Lesson: orphan claims need a **whole-repo** grep,
+  not a per-dir one.
 - **Stale tool defaults:** several `tools/` diagnostic scripts still default to the deprecated shared `tools/corpus`
   dir (pre per-preset layout); `analyze_inversion_errors.py` keeps a self-labeled deprecated `--ours-dir` alias.
 - **Doc casing:** CLAUDE.md references `build_and_test.md`; the file on disk is `BUILD_AND_TEST.md` (same file on this
