@@ -10,8 +10,8 @@
 
 - When the user says "go", "do E2b", "execute", or similar: the response is
   "The instruction is ready at `cc_instruction_X.md` — give it to CC."
-- Cowork MAY: read source files (grep/cat/sed -n), write `.md` instruction files,
-  update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
+- Cowork MAY: read source files **via the file tools (Read / Grep / Glob) — NOT bash** (see the NEVER-BASH
+  standing rule below), write `.md` instruction files, update `COWORK_HANDOFF.md` / `STATUS.md` summaries after CC reports.
 - Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
   use Edit/Write tools on anything under `src/`; use bash redirects on source files.
 - Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.
@@ -33,6 +33,32 @@
 - **Distinguish "CC measured it" from "Cowork verified it."** Relay CC's measurements as CC's; verify the
   load-bearing ones at source before building on them. Flag what could not be verified (e.g. shell congested).
 - This mirrors CLAUDE.md's "never hallucinate or guess, verified facts only — better ask first if unsure."
+
+---
+
+## ⛔ STANDING RULE: NEVER BASH FOR LOCAL FILES — FILE TOOLS ONLY (user mandate 2026-06-26)
+
+**The Cowork shell (`bash`) reads the working tree through a virtiofs+FUSE mount that can serve a STALE cached copy.**
+Verified 2026-06-26: `bash`/`wc` showed `note_model.h` truncated to 158 lines (a June-21 snapshot, 8445 bytes) while
+the real file on disk was 235 lines (12686 bytes); the Read tool showed it correctly. This silently corrupted a
+test-adequacy audit (the audit agents "found" missing tests — e.g. the L2 clip CP1–CP7 suite — that actually exist),
+and triggered a false "the tree is corrupted" alarm. **The file tools (Read / Grep / Glob) read the LIVE disk via a
+different path and are correct.**
+
+- **Local file CONTENT, existence, line counts, searches → ALWAYS the file tools (Read / Grep / Glob).** NEVER `bash`
+  `cat` / `wc` / `grep` / `sed` / `head` / `tail` / `git status` / `git diff` on working-tree files. *(Supersedes the
+  older "read source via grep/cat/sed -n" line in the first standing rule above — that path is the stale one.)*
+- **`bash` is permitted ONLY for read-only git OBJECT queries, BY EXPLICIT SHA from CC's commit report** (option B,
+  user-ratified): `git show <sha>:path`, `git show --stat <sha>`, `git cat-file`, `git diff <shaA> <shaB>`. These are
+  content-addressed and **self-verifying** — a stale/unsynced object errors loudly (`bad object`), never returns
+  silently-wrong content.
+- **NEVER trust `git rev-parse HEAD` / `git status` / `git log`(branch tip) for "what is current"** — those read
+  mutable refs/index that can be stale. Take the SHA from CC's report, read by that SHA, corroborate with a fresh
+  file-tool read.
+- A `bad object` / missing-object error = a **staleness signal → surface it, do not guess.** Mount refresh is
+  host-side only (CC `touch`es the file on Windows, or restart the session).
+- Root cause is method, not a product bug to wait on: the bash sandbox is a Linux VM sharing the folder via
+  virtiofs+FUSE; the file tools take a separate, live path.
 
 ---
 
