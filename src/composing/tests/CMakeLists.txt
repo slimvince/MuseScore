@@ -34,6 +34,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils.h
     ${CMAKE_CURRENT_LIST_DIR}/analyzechord_robustness_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/cadencekeyanchor_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord_branch_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordvoicing_tests.cpp

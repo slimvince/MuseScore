@@ -47,6 +47,7 @@
 
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <initializer_list>
 #include <utility>
 #include <vector>
@@ -1042,4 +1043,668 @@ TEST(Composing_PostScoringGateTests, E2E_Iter92_WComplete_RootPositionTriadWins)
     EXPECT_EQ(results.front().identity.rootPc, 0);
     EXPECT_EQ(results.front().identity.bassPc, 0);
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Phase-5 branch backfill (round 2, cluster 2) — additional gate branch directions.
+// Each test asserts the documented gate rule (docs/scoring_model.md §6/§7), targeting
+// fire/no-fire arms the Stage-1b suite left unhit (cc_union_branch_coverage_report.md).
+// ═════════════════════════════════════════════════════════════════════════════
+
+// Outer guard: inversionBonusReduction = 1.0 (no reduction) disables the whole gate
+// family — even Gate A's unconditional fast path.
+TEST(Composing_PostScoringGateTests, OuterGuard_BonusReductionOne_DisablesAllGates)
+{
+    ChordAnalyzerPreferences prefs = baroquePrefs();
+    prefs.inversionBonusReduction = 1.0;
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(7, 10, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5);
+    applyPostScoringGates(results, prefs, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);   // no flip
+}
+
+// ── Bias correction HalfDim first-inversion exception (bwv187.7 shape) ───────────
+// A Minor winner whose bass is the b5 of a fully-present half-diminished seventh, at a
+// close margin, is corrected to that first-inversion HalfDim reading.
+TEST(Composing_PostScoringGateTests, BiasHalfDimInversion_BassIsFlatFifth_Accepted)
+{
+    // Cm (root 0, bass 0). F#ø7 = {6,9,0,4}; bass C (0) is its b5 ((6+6)%12 = 0).
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.0),
+        makeResult(6, 0, ChordQuality::HalfDiminished, 1.8, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 6, 0.5 }, { 9, 0.5 }, { 0, 0.6 }, { 4, 0.5 } }, 4, 0);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 6);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished);
+}
+
+// The HalfDim exception requires ALL FOUR chord tones present: a missing b5 disqualifies
+// the inversion reading, so the Minor winner stands.
+TEST(Composing_PostScoringGateTests, BiasHalfDimInversion_MissingFifth_NotAccepted)
+{
+    // Aø7 = {9,0,3,7}; its b5 is pc 3 (deliberately absent from pcWeight).
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.0),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.8, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.5 }, { 0, 0.6 }, { 7, 0.5 } }, 4, 0);  // pc 3 absent
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);   // Cm stands
+}
+
+// Likewise a missing m7 disqualifies the HalfDim inversion reading.
+TEST(Composing_PostScoringGateTests, BiasHalfDimInversion_MissingSeventh_NotAccepted)
+{
+    // Aø7 = {9,0,3,7}; its m7 is pc 7 (deliberately absent).
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.0),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.8, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.5 }, { 0, 0.6 }, { 3, 0.5 } }, 4, 0);  // pc 7 absent
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate A direct fast path: when the winner is Major-add6 but the best clean alt is itself
+// MAJOR (not the relative minor), the enharmonic minor flip does not fire.
+TEST(Composing_PostScoringGateTests, GateA_BestAltMajor_NoEnharmonicFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(2, 2, ChordQuality::Major, 1.5),   // clean alt, but MAJOR
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 } }, 4, 10, 5);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    EXPECT_TRUE(hasExtension(results.front().identity.extensions, Extension::AddedSixth));
+}
+
+// Gate A FM2 raw scan that runs to completion without a match (above-threshold raw
+// candidates exist, but none is the expected minor at (root+9)).
+TEST(Composing_PostScoringGateTests, GateA_FM2_NoMatchingRawCandidate_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(2, 2, ChordQuality::Major, 1.5),   // bestAlt is Major (no direct flip)
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 } }, 4, 10, 5,
+                           /*threshold*/ 1.0);
+    // Above threshold but neither matches root 7 Minor: wrong root, and right-ish quality
+    // wrong root again.
+    ctx.rawCandidates = { rawCand(1.6, 3, ChordQuality::Minor, 4),
+                          rawCand(1.5, 7, ChordQuality::Major, 0) };
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+}
+
+// Gate E reached (winner Minor, alt Major) but the alt root is NOT a minor-6th above the
+// winner root (not the +8 first-inversion relationship) → no flip.
+TEST(Composing_PostScoringGateTests, GateE_AltMajorNotAtPlus8_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(4, 4, ChordQuality::Minor, 2.5),
+        makeResult(3, 3, ChordQuality::Major, 1.5),   // root 3 != (4+8)%12 = 0, and != +5
+    };
+    auto ctx = makeGateCtx({ { 4, 0.6 }, { 7, 0.5 }, { 3, 0.5 } }, 3, 4, /*tonic*/ 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// Gate E fires on the forward (to-next) stepwise signal, not just the from-previous one.
+TEST(Composing_PostScoringGateTests, GateE_StepwiseToNext_Flips)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(6, 6, ChordQuality::Minor, 2.5),
+        makeResult(2, 6, ChordQuality::Major, 1.5),   // D/F# : root 2 = (6+8)%12
+    };
+    auto ctx = makeGateCtx({ { 6, 0.6 }, { 9, 0.5 }, { 2, 0.5 } }, 3, 6, /*tonic D*/ 2);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseToNext = true;     // forward signal only
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 2);
+}
+
+// Gate F fires on the from-previous stepwise signal (mirror of the existing to-next test).
+TEST(Composing_PostScoringGateTests, GateF_StepwiseFromPrevious_Flips)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(11, 11, ChordQuality::Major, 2.5),
+        makeResult(4, 11, ChordQuality::Major, 1.5),   // E/B : root 4 = (11+5)%12
+    };
+    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, /*tonic E*/ 4);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// Gate G-E mediant arm (iiiø7): the half-diminished seventh rooted on the mediant
+// (tonic+4) is a functional reading and flips with no temporal context.
+TEST(Composing_PostScoringGateTests, GateGE_MediantFunctionFlip)
+{
+    // Gm6 (root 7) in C major; Eø7 (root 4) = mediant iiiø7; gExpectedAltRoot=(7+9)%12=4.
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(7, 7, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(4, 7, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 7, 0.6 }, { 10, 0.5 }, { 2, 0.5 }, { 4, 0.4 } }, 4, 7,
+                           /*tonic C*/ 0);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::HalfDiminished);
+}
+
+// Gate G with no half-diminished partner anywhere (not in results[], not above threshold
+// in rawCandidates) leaves the Minor-add6 winner untouched.
+TEST(Composing_PostScoringGateTests, GateG_NoHalfDimAnywhere_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(3, 3, ChordQuality::Major, 1.2),   // clean filler, wrong root
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0, /*tonic C*/ 0,
+                           /*threshold*/ 1.0);
+    // Raw candidates scanned but never matched: a NON-half-diminished one (wrong quality)
+    // and a half-diminished one at the WRONG root (5, not gExpected 9). Loop completes.
+    ctx.rawCandidates = { rawCand(1.6, 9, ChordQuality::Major, 0),
+                          rawCand(1.6, 5, ChordQuality::HalfDiminished, 8) };
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+    EXPECT_EQ(results.size(), 2u);   // nothing pulled
+}
+
+// Gate G with the HalfDim alt present in results[] at the functional root but NO temporal
+// signal that confirms it (forward root mismatched, not in the recent window, only one
+// stepwise move): G-E (non-functional root), G-B, G-C and G-D all stay silent.
+TEST(Composing_PostScoringGateTests, GateG_HalfDimPresentNoTemporalSignal_NoFlip)
+{
+    // Cm6 vs Aø7/C in C major: root 9 = vi, not viiø7/iiø7/iiiø7 ({11,2,4}).
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0, /*tonic C*/ 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc                 = 5;   // forward root, but != 9
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, -1, -1 };  // 9 not in the window
+    temporal.consecutiveBassStepwiseCount = 1;             // < 2
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate G-C fires when the HalfDim root appears in the OLDEST recent-roots slot (slot 0).
+TEST(Composing_PostScoringGateTests, GateGC_RecentRootSlot0_Flips)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { 9, -1, -1 };   // slot 0
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 9);
+}
+
+// Gate G-C fires when the HalfDim root appears in the NEWEST recent-roots slot (slot 2).
+TEST(Composing_PostScoringGateTests, GateGC_RecentRootSlot2_Flips)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, -1, 9 };   // slot 2
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 9);
+}
+
+// Gate H-B no-fire arms: the augmented alt exists, but the forward root does not match it
+// (and no other signal fires), so the winner does not rotate.
+TEST(Composing_PostScoringGateTests, GateHB_ForwardRootMismatch_NoRotation)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),   // a +4 alt only
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc           = 5;     // != 4 (the alt root) and != 8
+    temporal.bassIsStepwiseToNext = true;
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate H-B with a matching forward root but NO stepwise-to-next signal does not rotate.
+TEST(Composing_PostScoringGateTests, GateHB_ForwardRootNoStepwise_NoRotation)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc           = 4;       // matches the alt root
+    temporal.bassIsStepwiseToNext = false;   // but no stepwise motion
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate H-C fires when the augmented alt root appears in recent-roots slot 0.
+TEST(Composing_PostScoringGateTests, GateHC_RecentRootSlot0_RotatesPlus4)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { 4, -1, -1 };   // slot 0
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// Gate H-C fires when the augmented alt root appears in recent-roots slot 2.
+TEST(Composing_PostScoringGateTests, GateHC_RecentRootSlot2_RotatesPlus4)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, -1, 4 };   // slot 2
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// Gate G scan skips a half-diminished candidate at the WRONG root (not gExpected): the
+// results[] scan evaluates a HalfDim entry whose root != (winnerRoot+9), finds no match.
+TEST(Composing_PostScoringGateTests, GateG_HalfDimWrongRootInResults_NoFlip)
+{
+    // Cm6 (gExpected = 9); the HalfDim alt sits at root 5, not 9.
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(5, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 5, 0.4 }, { 0, 0.6 }, { 7, 0.5 } }, 4, 0, /*tonic C*/ 0);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate G-B with a matching forward root but NO stepwise-to-next motion does not flip.
+TEST(Composing_PostScoringGateTests, GateGB_MatchingForwardNoStepwise_NoFlip)
+{
+    // Cm6 vs Aø7/C in C major (root 9 = vi, non-functional).
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0, /*tonic C*/ 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc           = 9;       // matches gExpected
+    temporal.bassIsStepwiseToNext = false;   // but no stepwise motion → no forward fire
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// Gate H with a stepwise-from-previous bass but the alt root NOT in the recent-roots
+// window (all three slots mismatch) and no forward root: no rotation.
+TEST(Composing_PostScoringGateTests, GateH_RecentRootsAllMismatch_NoRotation)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),   // a +4 alt only
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, -1, -1 };   // 4 not in any slot
+    temporal.consecutiveBassStepwiseCount = 1;             // < 2
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
+
+// No resolved key (keyTonicPc = -1, the "no key" sentinel / struct default): Gate I's
+// diatonic first-inversion correction is disabled, so the Minor winner stands even though
+// a diatonic-looking C/E inversion alt is present.
+TEST(Composing_PostScoringGateTests, GateI_NoKeyResolved_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(4, 4, ChordQuality::Minor, 2.0, { Extension::MinorSeventh }),
+        makeResult(0, 4, ChordQuality::Major, 1.6),   // C/E, would be I4 under a key
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.6 }, { 7, 0.5 } }, 4, 4, /*keyTonic*/ -1);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// No resolved key disables the augmented inversion (Gate K) and same-root demotion
+// (Gate L) gates too: the Augmented winner is preserved.
+TEST(Composing_PostScoringGateTests, GateKL_NoKeyResolved_NoChange)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(0, 0, ChordQuality::Major, 1.8),   // same-root Major (Gate L target under a key)
+    };
+    auto ctx = makeGateCtx({ { 0, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0, /*keyTonic*/ -1);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+}
+
+// Gate H scan steps past a non-augmented runner-up to reach the augmented alt deeper in
+// the list, then rotates on the recent-roots signal.
+TEST(Composing_PostScoringGateTests, GateH_NonAugmentedInScanPath_RotatesPlus4)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(2, 2, ChordQuality::Minor, 1.9),       // non-augmented runner-up
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),   // the +4 augmented alt
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 }, { 2, 0.4 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { 4, -1, -1 };
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+}
+
+// Gate J: a Diminished winner that is NOT in root position (rootPc != bassPc) is not a
+// candidate for V7 completion → no swap.
+TEST(Composing_PostScoringGateTests, GateJ_DiminishedNotRootPosition_NoSwap)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 1, ChordQuality::Diminished, 2.5),                       // inverted dim
+        makeResult(6, 10, ChordQuality::Major, 1.2, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 10, 0.5 }, { 1, 0.5 }, { 4, 0.5 }, { 6, 0.4 } }, 4, 1);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+}
+
+// Gate H-C: an augmented alt that appeared in the recent-roots window AND a stepwise bass
+// from the previous region rotates the augmented winner.
+TEST(Composing_PostScoringGateTests, GateHC_RecentRootStepwise_RotatesPlus4)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(4, 4, ChordQuality::Augmented, 1.8),
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, 4, -1 };
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 4);
+}
+
+// Gate H-D: two consecutive stepwise bass moves rotate to the +8 augmented alt (and the
+// +4 search is skipped because no augmented alt sits there).
+TEST(Composing_PostScoringGateTests, GateHD_ConsecutiveStepwise_RotatesPlus8)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Augmented, 2.0),
+        makeResult(8, 8, ChordQuality::Augmented, 1.8),   // only a +8 alt exists
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.consecutiveBassStepwiseCount = 2;
+    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 8);
+}
+
+// Gate K accepts only an augmented COLLECTION at the I4 inversion root: a same-bass alt
+// that is plain Major (no #5) or Minor is rejected, so the augmented winner stands.
+TEST(Composing_PostScoringGateTests, GateK_NonAugmentedCollectionAlt_NoFlip)
+{
+    // Plain Major alt (no SharpFifth) at the I4 root.
+    {
+        std::vector<ChordAnalysisResult> results = {
+            makeResult(9, 9, ChordQuality::Augmented, 2.0),
+            makeResult(5, 9, ChordQuality::Major, 1.9),   // F/A, no #5
+        };
+        auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
+        applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+        EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+        EXPECT_EQ(results.front().identity.rootPc, 9);
+    }
+    // Minor alt at the I4 root.
+    {
+        std::vector<ChordAnalysisResult> results = {
+            makeResult(9, 9, ChordQuality::Augmented, 2.0),
+            makeResult(5, 9, ChordQuality::Minor, 1.9),
+        };
+        auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
+        applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+        EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+    }
+}
+
+// Gate L requires the SAME bass (root position): a same-root Major alt with a different
+// bass is not a root-position re-reading, so the augmented winner stands.
+TEST(Composing_PostScoringGateTests, GateL_SameRootDifferentBass_NoDemotion)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(11, 11, ChordQuality::Augmented, 2.0),
+        makeResult(11, 3, ChordQuality::Major, 1.8),   // same root, DIFFERENT bass
+    };
+    auto ctx = makeGateCtx({ { 11, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 3, 11);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+}
+
+// Gate L diatonic guard: a non-diatonic augmented root is not demoted to Major
+// (the diatonic scan finds no match and the gate skips).
+TEST(Composing_PostScoringGateTests, GateL_NonDiatonicRoot_NoDemotion)
+{
+    // C#+ (root 1) in C major — pc 1 is not diatonic.
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(1, 1, ChordQuality::Augmented, 2.0),
+        makeResult(1, 1, ChordQuality::Major, 1.8),
+    };
+    auto ctx = makeGateCtx({ { 1, 0.6 }, { 5, 0.5 }, { 9, 0.5 } }, 3, 1, /*tonic C*/ 0);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
+}
+
+// Gate J present-root guard variant: the candidate sitting at the would-be dominant root
+// is NOT Major (e.g. it is Minor) → no V7 completion.
+TEST(Composing_PostScoringGateTests, GateJ_DominantCandidateNotMajor_NoSwap)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Diminished, 2.5),
+        makeResult(6, 10, ChordQuality::Minor, 1.2, { Extension::MinorSeventh }),  // not Major
+    };
+    auto ctx = makeGateCtx({ { 10, 0.5 }, { 1, 0.5 }, { 4, 0.5 }, { 6, 0.4 } }, 4, 10);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// chordpostpasses.cpp — cptIsBassChordTone per-quality / per-extension classification,
+// exercised through the two-pass pedal detection (applyIter8691Pedal). When the bass IS
+// a chord tone the pedal pass is skipped; when it is foreign the upper voices are
+// re-analysed and the chord is reclassified as a pedal point.
+// ═════════════════════════════════════════════════════════════════════════════
+
+namespace {
+// gateCtx for a pedal-pass test: bass at bassPc, the region tones available for Pass-2
+// re-analysis, default extension/pedal thresholds.
+PostScoringGateContext pedalGateCtx(int bassPc,
+                                    std::initializer_list<std::pair<int, double>> tones)
+{
+    PostScoringGateContext ctx;
+    ctx.tpcForPc.fill(-1);
+    ctx.scale        = { 0, 2, 4, 5, 7, 9, 11 };
+    ctx.keyTonicPc   = 0;
+    ctx.keyMode      = KeySigMode::Ionian;
+    ctx.bassPc       = bassPc;
+    ctx.bassTpc      = -1;
+    ctx.keySigFifths = 0;
+    bool first = true;
+    for (const auto& pw : tones) {
+        ChordAnalysisTone t;
+        t.pitch  = pw.first;
+        t.weight = pw.second;
+        t.isBass = first;
+        ctx.tones.push_back(t);
+        ctx.pcWeight[static_cast<size_t>(((pw.first % 12) + 12) % 12)] += std::max(0.1, pw.second);
+        first = false;
+    }
+    return ctx;
+}
+} // namespace
+
+// Bass = perfect 5th of a Suspended4 chord → chord tone → NO pedal reclassification.
+TEST(Composing_PostScoringGateTests, CptBassChordTone_Sus4PerfectFifth_NoPedal)
+{
+    std::vector<ChordAnalysisResult> results = { makeResult(0, 7, ChordQuality::Suspended4, 2.0) };
+    auto ctx = pedalGateCtx(/*bass G*/ 7, { { 43, 1.0 }, { 60, 1.0 }, { 65, 1.0 } });
+    applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Bass = #9 (interval 3) with the SharpNinth extension set → chord tone → no pedal.
+TEST(Composing_PostScoringGateTests, CptBassChordTone_SharpNinth_NoPedal)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 3, ChordQuality::Major, 2.0, { Extension::SharpNinth })
+    };
+    auto ctx = pedalGateCtx(/*bass D#*/ 3, { { 51, 1.0 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+    applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Bass = #11 (interval 6) with SharpEleventh → chord tone → no pedal.
+TEST(Composing_PostScoringGateTests, CptBassChordTone_SharpEleventh_NoPedal)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 6, ChordQuality::Major, 2.0, { Extension::SharpEleventh })
+    };
+    auto ctx = pedalGateCtx(/*bass F#*/ 6, { { 54, 1.0 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+    applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Bass = b13 (interval 8) with FlatThirteenth → chord tone → no pedal.
+TEST(Composing_PostScoringGateTests, CptBassChordTone_FlatThirteenth_NoPedal)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 8, ChordQuality::Major, 2.0, { Extension::FlatThirteenth })
+    };
+    auto ctx = pedalGateCtx(/*bass Ab*/ 8, { { 56, 1.0 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+    applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Bass = the perfect 4th (interval 5) over a chord carrying a (diminished) seventh →
+// chord tone (11th of a 7th chord), not a pedal.
+TEST(Composing_PostScoringGateTests, CptBassChordTone_FourthOverSeventh_NoPedal)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 5, ChordQuality::Diminished, 2.0, { Extension::DiminishedSeventh })
+    };
+    auto ctx = pedalGateCtx(/*bass F*/ 5, { { 53, 1.0 }, { 60, 1.0 }, { 63, 1.0 }, { 66, 1.0 } });
+    applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Foreign-bass FALSE arms: a bass that is NOT a chord tone of the labelled winner triggers
+// the two-pass pedal reclassification (low-weight bass + a confident upper triad — the
+// classic pedal shape, mirroring Composing_PedalPointTests).
+TEST(Composing_PostScoringGateTests, CptBassChordTone_ForeignBass_PedalDetected)
+{
+    // Bass at the major-7th of a plain Major triad (no Maj7 ext) — foreign.
+    {
+        std::vector<ChordAnalysisResult> results = { makeResult(0, 11, ChordQuality::Major, 2.0) };
+        auto ctx = pedalGateCtx(/*bass B*/ 11, { { 47, 0.2 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+        applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+        EXPECT_TRUE(results.front().identity.isPedalPoint);
+        EXPECT_EQ(results.front().identity.pedalBassPc, 11);
+    }
+    // Bass at the natural 9th (interval 2) of a plain Major triad (no nat-9 ext) — foreign.
+    {
+        std::vector<ChordAnalysisResult> results = { makeResult(0, 2, ChordQuality::Major, 2.0) };
+        auto ctx = pedalGateCtx(/*bass D*/ 2, { { 50, 0.2 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+        applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+        EXPECT_TRUE(results.front().identity.isPedalPoint);
+        EXPECT_EQ(results.front().identity.pedalBassPc, 2);
+    }
+    // Bass foreign to a Power chord (not the perfect 5th).
+    {
+        std::vector<ChordAnalysisResult> results = { makeResult(0, 3, ChordQuality::Power, 2.0) };
+        auto ctx = pedalGateCtx(/*bass D#*/ 3, { { 51, 0.2 }, { 60, 1.0 }, { 64, 1.0 }, { 67, 1.0 } });
+        applyIter8691Pedal(results, ctx, nullptr, kDefaultChordAnalyzerPreferences);
+        EXPECT_TRUE(results.front().identity.isPedalPoint);
+        EXPECT_EQ(results.front().identity.pedalBassPc, 3);
+    }
+}
+
+// bassPc < 0 (sparse region, no valid bass): Iter 86, Iter 91 and the pedal pass all skip.
+TEST(Composing_PostScoringGateTests, Iter8691Pedal_NegativeBassPc_AllPassesSkip)
+{
+    std::vector<ChordAnalysisResult> results = { makeResult(9, 7, ChordQuality::Minor, 2.0) };
+    PostScoringGateContext ctx;
+    ctx.tpcForPc.fill(-1);
+    ctx.scale  = { 0, 2, 4, 5, 7, 9, 11 };
+    ctx.bassPc = -1;   // no valid bass
+    ChordTemporalContext temporal;
+    temporal.nextRootPc = 7;   // would otherwise drive Iter 91
+    applyIter8691Pedal(results, ctx, &temporal, kDefaultChordAnalyzerPreferences);
+    EXPECT_EQ(results.front().identity.rootPc, 9);                      // untouched
+    EXPECT_FALSE(hasExtension(results.front().identity.extensions, Extension::MinorSeventh));
+    EXPECT_FALSE(results.front().identity.isPedalPoint);
+}
+
+// Iter 91 promotes only plain triads of the right delta/quality. A MAJOR winner at delta 8
+// (the Pattern-A delta, which requires Minor) does not promote.
+TEST(Composing_PostScoringGateTests, Iter91_Delta8MajorWinner_NoPromotion)
+{
+    std::vector<ChordAnalysisResult> results = { makeResult(0, 8, ChordQuality::Major, 2.0) };
+    auto ctx = makeGateCtx({ { 8, 0.5 }, { 0, 0.6 }, { 4, 0.5 } }, 3, 8);
+    ctx.rawCandidates = { rawCand(2.2, 8, ChordQuality::Minor, 4) };
+    ChordTemporalContext temporal;
+    temporal.nextRootPc = 8;
+    applyIter8691Pedal(results, ctx, &temporal, kDefaultChordAnalyzerPreferences);
+    EXPECT_EQ(results.front().identity.rootPc, 0);   // not promoted (Major at delta 8)
+}
+
+// Iter 91 leaves a SEVENTH chord alone even at a promotable delta/quality (plain-triad guard).
+TEST(Composing_PostScoringGateTests, Iter91_SeventhWinner_NoPromotion)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(4, 0, ChordQuality::Minor, 2.0, { Extension::MinorSeventh })   // Em7/C, delta 8
+    };
+    auto ctx = makeGateCtx({ { 0, 0.6 }, { 4, 0.5 }, { 7, 0.5 } }, 3, 0);
+    ctx.rawCandidates = { rawCand(2.2, 0, ChordQuality::Major, 0) };
+    ChordTemporalContext temporal;
+    temporal.nextRootPc = 0;
+    applyIter8691Pedal(results, ctx, &temporal, kDefaultChordAnalyzerPreferences);
+    EXPECT_EQ(results.front().identity.rootPc, 4);   // seventh chord not promoted
+}
+
+// Iter 91 fires (Pattern A, plain triad, forward-confirmed) but no rawCandidate is rooted
+// at the bass → the scan completes without a promotion.
+TEST(Composing_PostScoringGateTests, Iter91_NoBassRootedRawCandidate_NoPromotion)
+{
+    std::vector<ChordAnalysisResult> results = { makeResult(4, 0, ChordQuality::Minor, 2.0) };  // Em/C
+    auto ctx = makeGateCtx({ { 0, 0.6 }, { 4, 0.5 }, { 7, 0.5 } }, 3, 0);
+    ctx.rawCandidates = { rawCand(2.2, 5, ChordQuality::Major, 0) };   // rooted at 5, not bass 0
+    ChordTemporalContext temporal;
+    temporal.nextRootPc = 0;
+    applyIter8691Pedal(results, ctx, &temporal, kDefaultChordAnalyzerPreferences);
+    EXPECT_EQ(results.front().identity.rootPc, 4);   // no bass-rooted candidate to promote to
 }
