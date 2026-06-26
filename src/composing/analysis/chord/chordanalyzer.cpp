@@ -343,6 +343,25 @@ struct TemplateDef {
     std::vector<int> tpcDeltas;  // parallel to intervals; tpcDeltas[0] is always 0 (root)
 };
 
+/// Build a TemplateDef's runtime `intervals` vector from the canonical
+/// kTemplateIntervals table (chordanalyzer.h), dropping the trailing -1 unused
+/// slots. This makes kTemplateIntervals the SINGLE source of per-template interval
+/// data — both the `templates` array below and Gate R's kMasks (harmonicfunctionlayer.cpp,
+/// `= makeTemplateMasks()`) now consume it, so the two can no longer drift (audit Q1.3).
+/// Each `templates` row keeps its `quality` and `tpcDeltas` inline (template-scoring data,
+/// not the shared interval set). Row order is load-bearing: index == template index.
+std::vector<int> templateIntervalsVec(std::size_t t)
+{
+    std::vector<int> intervals;
+    intervals.reserve(kMaxTemplateTones);
+    for (int interval : kTemplateIntervals[t]) {
+        if (interval >= 0) {
+            intervals.push_back(interval);
+        }
+    }
+    return intervals;
+}
+
 // ── Per-candidate scoring helpers ──────────────────────────────────────────
 //
 // The analyzeChord scoring loop calls one function per concern.  Each helper
@@ -1187,32 +1206,39 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     //   TPC delta +6 = augmented 4th (F# from C, clockwise six steps on circle of fifths).
     //
     // analysis::kTemplateCount templates: see docs/scoring_model.md §2 for the full list.
-    // When adding a template: bump analysis::kTemplateCount (chordanalyzer.h), then add
-    // the matching entry here AND the kMasks bitmask (harmonicfunctionlayer.cpp). Every
+    // When adding a template: bump analysis::kTemplateCount (chordanalyzer.h), add the
+    // interval row to kTemplateIntervals (chordanalyzer.h — the single interval source, from
+    // which both this array's intervals AND the kMasks bitmask are now DERIVED), then add the
+    // matching entry here (quality + tpcDeltas; intervals via templateIntervalsVec(i)). Every
     // template-sized array — this TemplateDef array, the three score matrices below, and
     // kMasks — derives its extent from kTemplateCount, so adding an entry without bumping
     // the constant is now a COMPILE error (too many initializers) rather than the silent
     // stack-buffer overrun caught in the B1 attempt 2026-06-04. (The former kDiagTemplates
     // mirror was removed in Stage 2.3 — diagnoseChord no longer keeps its own template
     // array.) See docs/scoring_model.md §3 and §9.
+    // The `intervals` field of every row is DERIVED from the canonical kTemplateIntervals
+    // table (chordanalyzer.h) via templateIntervalsVec(i) — kTemplateIntervals is the sole
+    // interval source, shared with Gate R's kMasks. The index i == the row's template index
+    // (Row order is load-bearing; see kTemplateIntervals). `quality` and `tpcDeltas` stay
+    // inline (template-scoring data, not the shared interval set).
     static const std::array<TemplateDef, kTemplateCount> templates = {{
-        { ChordQuality::Major,          { 0, 4, 7 },        { 0, +4, +1 }       },
-        { ChordQuality::Major,          { 0, 4, 7, 11 },    { 0, +4, +1, +5 }   },  // maj7
-        { ChordQuality::Major,          { 0, 4, 7, 10 },    { 0, +4, +1, -2 }   },  // dom7
-        { ChordQuality::Major,          { 0, 4, 6, 10 },    { 0, +4, -6, -2 }   },  // dom7b5
-        { ChordQuality::Minor,          { 0, 3, 7 },        { 0, -3, +1 }       },
-        { ChordQuality::Minor,          { 0, 3, 7, 10 },    { 0, -3, +1, -2 }   },  // min7
-        { ChordQuality::Diminished,     { 0, 3, 6 },        { 0, -3, -6 }       },
-        { ChordQuality::Suspended4,     { 0, 5, 6, 10 },    { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)
-        { ChordQuality::HalfDiminished, { 0, 3, 6, 10 },    { 0, -3, -6, -2 }   },
-        { ChordQuality::Augmented,      { 0, 4, 8 },        { 0, +4, +8 }       },
-        { ChordQuality::Augmented,      { 0, 4, 8, 10 },    { 0, +4, +8, -2 }   },  // aug7 (C7♯5)
-        { ChordQuality::Suspended2,     { 0, 2, 7 },        { 0, +2, +1 }       },
-        { ChordQuality::Suspended4,     { 0, 5, 7, 10 },    { 0, -1, +1, -2 }   },
-        { ChordQuality::Suspended4,     { 0, 5, 7, 11 },    { 0, -1, +1, +5 }   },  // sus4+maj7
-        { ChordQuality::Suspended4,     { 0, 5, 8, 10 },    { 0, -1, +8, -2 }   },  // sus4#5
-        { ChordQuality::Suspended4,     { 0, 6, 7 },        { 0, +6, +1 }       },  // sus#4 (F# not Gb)
-        { ChordQuality::Power,          { 0, 7 },           { 0, +1 }           }
+        { ChordQuality::Major,          templateIntervalsVec(0),  { 0, +4, +1 }       },
+        { ChordQuality::Major,          templateIntervalsVec(1),  { 0, +4, +1, +5 }   },  // maj7
+        { ChordQuality::Major,          templateIntervalsVec(2),  { 0, +4, +1, -2 }   },  // dom7
+        { ChordQuality::Major,          templateIntervalsVec(3),  { 0, +4, -6, -2 }   },  // dom7b5
+        { ChordQuality::Minor,          templateIntervalsVec(4),  { 0, -3, +1 }       },
+        { ChordQuality::Minor,          templateIntervalsVec(5),  { 0, -3, +1, -2 }   },  // min7
+        { ChordQuality::Diminished,     templateIntervalsVec(6),  { 0, -3, -6 }       },
+        { ChordQuality::Suspended4,     templateIntervalsVec(7),  { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)
+        { ChordQuality::HalfDiminished, templateIntervalsVec(8),  { 0, -3, -6, -2 }   },
+        { ChordQuality::Augmented,      templateIntervalsVec(9),  { 0, +4, +8 }       },
+        { ChordQuality::Augmented,      templateIntervalsVec(10), { 0, +4, +8, -2 }   },  // aug7 (C7♯5)
+        { ChordQuality::Suspended2,     templateIntervalsVec(11), { 0, +2, +1 }       },
+        { ChordQuality::Suspended4,     templateIntervalsVec(12), { 0, -1, +1, -2 }   },
+        { ChordQuality::Suspended4,     templateIntervalsVec(13), { 0, -1, +1, +5 }   },  // sus4+maj7
+        { ChordQuality::Suspended4,     templateIntervalsVec(14), { 0, -1, +8, -2 }   },  // sus4#5
+        { ChordQuality::Suspended4,     templateIntervalsVec(15), { 0, +6, +1 }       },  // sus#4 (F# not Gb)
+        { ChordQuality::Power,          templateIntervalsVec(16), { 0, +1 }           }
     }};
     static_assert(templates.size() == kTemplateCount,
                   "templates array extent must equal analysis::kTemplateCount");
