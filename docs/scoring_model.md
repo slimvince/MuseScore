@@ -145,12 +145,22 @@ score = (basisIndep + bassDep) × complexityFactor × augFactor
 
 **Atomic update requirement.** Every template-sized array derives its extent from a single
 constant, `analysis::kTemplateCount` (`chordanalyzer.h`, `mu::composing::analysis`
-namespace, currently `17`). The three sync sites (since Stage 2.3 removed `kDiagTemplates`):
+namespace, currently `17`). The size-sync sites (since Stage 2.3 removed `kDiagTemplates`):
 - the `analyzeChord` `templates` array,
 - all three score matrices (`basisIndepMatrix` / `complexityFactorMatrix` /
   `augFactorMatrix` — inner extent),
-- `kMasks` in `harmonicfunctionlayer.cpp` (and its `tiePriority` bounds check), referenced
-  there as `analysis::kTemplateCount`.
+- the derived `kMasks` table in `harmonicfunctionlayer.cpp` (and the `tiePriority` bounds
+  check), referenced there as `analysis::kTemplateCount`.
+
+The per-template **interval data** now lives in ONE place — `analysis::kTemplateIntervals`
+(`chordanalyzer.h`). Gate R's `kMasks` is **derived** from it at compile time via
+`analysis::makeTemplateMasks()` (each mask = OR of `1u << interval` over the template's
+tones), so `kMasks` is no longer a hand-typed mirror that can silently drift from the
+templates — the audit-Q1.3 hazard (a wrong/zero mask silently disabling Gate R) is closed.
+A `static_assert` in `bassIsTemplateChordTone` pins the derived masks byte-for-byte to the
+original hand-typed values. (`templates` still carries its own interval literals next to the
+parallel `tpcDeltas`; keeping the two interval sources in agreement is the one residual
+hand-sync, guarded by the independent table test in `gater_tests.cpp` — see §9.)
 
 (`diagTemplateName` in `tools/batch_analyze.cpp` carries the human-readable names for the
 diagnostic dump; it `static_assert`s its length against `analysis::kTemplateCount` but is
@@ -269,8 +279,9 @@ conditions (all required); the **phase** guard is applied separately inside `rcb
    (see the Stage 3.3 note below), AND
 3. `bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
    foreign to the candidate's template. `bassIsTemplateChordTone` returns true iff
-   `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static
-   `kMasks[17]` interval-bitmask table mirroring the 17 TemplateDef interval sets).
+   `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static `kMasks`
+   interval-bitmask table **derived** from `analysis::kTemplateIntervals` — the same
+   interval data the 17 TemplateDef entries are built from).
 
 **Phase guard (separate from the predicate).** `rcbEdge()` zeroes rcb only when
 `gateRZeroesRootContinuity(...) && applyProgressionSignals` (where `applyProgressionSignals
@@ -352,8 +363,10 @@ clean 1.90 vs 1.52 raw lead.
 - *mozart_k280-1 control passes unaffected.* The rcb-rewarded continued candidate
   there always has a chord-tone bass (G = P5 of C, E♭ = m3 of Cm), so Gate R leaves
   rcb intact and rcb still correctly reverses the raw winner.
-- *Forward-compatible.* `kMasks` is a sync site — when a template is added it must be
-  extended (see §9). A 0 entry is invalid: every template has at least interval 0.
+- *Forward-compatible.* `kMasks` is **derived** from `analysis::kTemplateIntervals`
+  (`chordanalyzer.h`) — adding a template means adding its interval row there and the masks
+  update automatically (see §9). A 0 mask is impossible by construction: every template
+  includes interval 0 (the root).
 - *Conservative.* Out-of-range / unknown inputs return true (no gating).
 
 ### `w_complete` — `kWComplete = 0.50`
@@ -795,11 +808,19 @@ Derived from the B1, B2, and B3 lessons.
    derive from the constant, so the compiler enforces them — there is no longer a
    loose literal to forget:
    - bump `analysis::kTemplateCount` (`chordanalyzer.h`) N → N+1. This automatically
-     resizes the three score matrices and `kMasks`; no per-array size edit is needed.
-   - add the new entry to the `analyzeChord` `templates` array;
-   - add the new template's interval bitmask to `kMasks` in `bassIsTemplateChordTone`
-     (`harmonicfunctionlayer.cpp`). No entry may be `0` / `0u` (every template has at least
-     interval 0, the root). A missing/zero mask silently disables Gate R for that template.
+     resizes the three score matrices and the derived `kMasks`; no per-array size edit is
+     needed.
+   - add the new template's interval row to `analysis::kTemplateIntervals` (`chordanalyzer.h`),
+     pad with trailing `-1` to `kMaxTemplateTones`. **This is the single interval source** —
+     Gate R's `kMasks` is derived from it via `makeTemplateMasks()`, so there is no separate
+     bitmask to hand-write (the former silent-disable hazard is closed). Every row includes
+     interval 0 (the root); the `bassIsTemplateChordTone` byte-identity `static_assert` lists
+     the frozen mask values — extend it with the new template's mask.
+   - add the new entry to the `analyzeChord` `templates` array (quality + intervals +
+     `tpcDeltas`). Its intervals **must match** the `kTemplateIntervals` row you just added;
+     the independent table test in `gater_tests.cpp`
+     (`BassIsTemplateChordTone_TableMatchesEveryTemplate`) cross-checks the derived masks
+     against an independently-encoded interval list and fails if they disagree.
    - add the human-readable name to `diagTemplateName` in `tools/batch_analyze.cpp` (its
      `static_assert` against `analysis::kTemplateCount` fails the build otherwise) — a
      display-only diagnostic site, not a scoring site.

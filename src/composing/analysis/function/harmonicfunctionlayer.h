@@ -256,9 +256,11 @@ double inversionContextBonus(const ScoringCell& cell,
                              const analysis::ChordAnalyzerPreferences& prefs);
 
 // -----------------------------------------------------------------------
-// Gate R — rcb bass-chord-tone guard. Declared here (exposed) so the kMasks
-// template table and the decision branches can be unit-tested directly. See
-// docs/scoring_model.md §4 "Gate R" / §9 (kMasks is the 5th atomic-update site).
+// Gate R — rcb bass-chord-tone guard. Declared here (exposed) so the decision
+// branches and the (now DERIVED) template-membership masks can be unit-tested
+// directly. The masks are derived at compile time from analysis::kTemplateIntervals
+// (chordanalyzer.h) via makeTemplateMasks(), so kMasks is no longer a hand-sync site.
+// See docs/scoring_model.md §4 "Gate R" / §9.
 // -----------------------------------------------------------------------
 
 /// Returns true iff `bassPc` is a tone of the candidate's template

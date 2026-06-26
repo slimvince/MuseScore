@@ -73,6 +73,66 @@ namespace mu::composing::analysis {
 /// See docs/scoring_model.md §3 and §9.
 inline constexpr std::size_t kTemplateCount = 17;
 
+/// Maximum number of chord tones in any single template (the 7th chords — Maj7/Dom7/… —
+/// have 4; triads have 3; Power has 2).
+inline constexpr std::size_t kMaxTemplateTones = 4;
+
+/// Canonical chord-template interval sets — semitones above the root. THE SINGLE SOURCE of
+/// the per-template interval data, shared by:
+///   - the chord scorer's `templates` TemplateDef array (chordanalyzer.cpp), and
+///   - Gate R's interval-membership masks (harmonicfunctionlayer.cpp), which are now
+///     DERIVED from this table via templateIntervalMask() rather than hand-typed.
+/// Deriving the masks closes the audit-Q1.3 hazard: a hand-typed mask could silently drift
+/// from the templates (a wrong/zero mask disables Gate R for that template with no compile
+/// error). Row order is load-bearing — index == template index == tiePriority, matching
+/// `templates` and kTemplateCount. Trailing -1 = unused slot (triads/Power have fewer than
+/// kMaxTemplateTones tones). Every template includes interval 0 (the root).
+inline constexpr std::array<std::array<int, kMaxTemplateTones>, kTemplateCount>
+kTemplateIntervals = { {
+    { { 0, 4, 7, -1 } },   // 0  Major triad   {0,4,7}
+    { { 0, 4, 7, 11 } },   // 1  Maj7          {0,4,7,11}
+    { { 0, 4, 7, 10 } },   // 2  Dom7          {0,4,7,10}
+    { { 0, 4, 6, 10 } },   // 3  Dom7b5        {0,4,6,10}
+    { { 0, 3, 7, -1 } },   // 4  Minor triad   {0,3,7}
+    { { 0, 3, 7, 10 } },   // 5  Minor 7th     {0,3,7,10}
+    { { 0, 3, 6, -1 } },   // 6  Diminished    {0,3,6}
+    { { 0, 5, 6, 10 } },   // 7  Sus4b5        {0,5,6,10}
+    { { 0, 3, 6, 10 } },   // 8  HalfDim       {0,3,6,10}
+    { { 0, 4, 8, -1 } },   // 9  Augmented     {0,4,8}
+    { { 0, 4, 8, 10 } },   // 10 Aug dom7      {0,4,8,10}
+    { { 0, 2, 7, -1 } },   // 11 Sus2          {0,2,7}
+    { { 0, 5, 7, 10 } },   // 12 Sus4+m7       {0,5,7,10}
+    { { 0, 5, 7, 11 } },   // 13 Sus4+Maj7     {0,5,7,11}
+    { { 0, 5, 8, 10 } },   // 14 Sus4#5        {0,5,8,10}
+    { { 0, 6, 7, -1 } },   // 15 Sus#4         {0,6,7}
+    { { 0, 7, -1, -1 } },  // 16 Power         {0,7}
+} };
+
+/// Gate R interval-membership bitmask for template `t`: bit i set ⇔ semitone interval i
+/// (from the root) is one of the template's tones. Derived purely from kTemplateIntervals,
+/// so the function layer's mask table cannot drift from the scorer's templates.
+constexpr std::uint16_t templateIntervalMask(std::size_t t)
+{
+    std::uint16_t mask = 0;
+    for (int interval : kTemplateIntervals[t]) {
+        if (interval >= 0) {
+            mask |= static_cast<std::uint16_t>(1u << interval);
+        }
+    }
+    return mask;
+}
+
+/// The full derived Gate R mask table — one entry per template. Replaces the former
+/// hand-typed kMasks literal array in harmonicfunctionlayer.cpp (now `= makeTemplateMasks()`).
+constexpr std::array<std::uint16_t, kTemplateCount> makeTemplateMasks()
+{
+    std::array<std::uint16_t, kTemplateCount> masks{};
+    for (std::size_t t = 0; t < kTemplateCount; ++t) {
+        masks[t] = templateIntervalMask(t);
+    }
+    return masks;
+}
+
 enum class ChordQuality {
     Unknown,
     Major,

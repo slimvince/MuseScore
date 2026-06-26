@@ -173,12 +173,13 @@ double inversionContextBonus(const ScoringCell& cell,
 /// Conservative on unknown / out-of-range inputs (returns true — do not gate if
 /// unsure).
 ///
-/// kMasks MUST stay in sync with the TemplateDef array in chordanalyzer.cpp
-/// (analyzeChord's `templates`; the byte-identical `kDiagTemplates` mirror was removed
-/// in Stage 2.3). It is sized from
-/// analysis::kTemplateCount; when adding a template, bump that constant and add the
-/// interval bitmask here as a mandatory site. Every template has at least interval 0
-/// (the root), so no entry may be 0.
+/// kMasks is DERIVED at compile time from the single canonical interval source
+/// analysis::kTemplateIntervals (chordanalyzer.h) via analysis::makeTemplateMasks() — the
+/// SAME interval data the scorer's `templates` TemplateDef array is built from. It can no
+/// longer be hand-typed wrong or drift from the templates (the audit-Q1.3 hazard: a
+/// wrong/zero mask silently disables Gate R for that template, with no compile error).
+/// Adding a template therefore means editing ONE interval source (kTemplateIntervals) —
+/// there is no separate mask to keep in sync. Every template includes interval 0 (the root).
 bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
 {
     if (rootPc < 0 || bassPc < 0 || tiePriority < 0
@@ -187,28 +188,23 @@ bool bassIsTemplateChordTone(int rootPc, int tiePriority, int bassPc) noexcept
     }
     const int interval = ((bassPc - rootPc) % 12 + 12) % 12;
 
-    // Bit i set ⇔ semitone interval i (from root) is a template tone.
-    static constexpr std::array<uint16_t, analysis::kTemplateCount> kMasks = {
-        (1u << 0) | (1u << 4) | (1u << 7),                  // 0  Major triad   {0,4,7}
-        (1u << 0) | (1u << 4) | (1u << 7) | (1u << 11),     // 1  Maj7          {0,4,7,11}
-        (1u << 0) | (1u << 4) | (1u << 7) | (1u << 10),     // 2  Dom7          {0,4,7,10}
-        (1u << 0) | (1u << 4) | (1u << 6) | (1u << 10),     // 3  Dom7♭5        {0,4,6,10}
-        (1u << 0) | (1u << 3) | (1u << 7),                  // 4  Minor triad   {0,3,7}
-        (1u << 0) | (1u << 3) | (1u << 7) | (1u << 10),     // 5  Minor 7th     {0,3,7,10}
-        (1u << 0) | (1u << 3) | (1u << 6),                  // 6  Diminished    {0,3,6}
-        (1u << 0) | (1u << 5) | (1u << 6) | (1u << 10),     // 7  Sus4♭5        {0,5,6,10}
-        (1u << 0) | (1u << 3) | (1u << 6) | (1u << 10),     // 8  HalfDim       {0,3,6,10}
-        (1u << 0) | (1u << 4) | (1u << 8),                  // 9  Augmented     {0,4,8}
-        (1u << 0) | (1u << 4) | (1u << 8) | (1u << 10),     // 10 Aug dom7      {0,4,8,10}
-        (1u << 0) | (1u << 2) | (1u << 7),                  // 11 Sus2          {0,2,7}
-        (1u << 0) | (1u << 5) | (1u << 7) | (1u << 10),     // 12 Sus4+m7       {0,5,7,10}
-        (1u << 0) | (1u << 5) | (1u << 7) | (1u << 11),     // 13 Sus4+Maj7     {0,5,7,11}
-        (1u << 0) | (1u << 5) | (1u << 8) | (1u << 10),     // 14 Sus4♯5        {0,5,8,10}
-        (1u << 0) | (1u << 6) | (1u << 7),                  // 15 Sus♯4         {0,6,7}
-        (1u << 0) | (1u << 7),                              // 16 Power         {0,7}
-    };
+    // Bit i set ⇔ semitone interval i (from root) is a template tone — derived from
+    // analysis::kTemplateIntervals (chordanalyzer.h), not hand-typed.
+    static constexpr std::array<uint16_t, analysis::kTemplateCount> kMasks =
+        analysis::makeTemplateMasks();
     static_assert(kMasks.size() == analysis::kTemplateCount,
                   "kMasks must mirror analysis::kTemplateCount templates");
+
+    // Compile-time byte-identity proof against the original hand-typed Gate R masks
+    // (kMasks-derive refactor §3). If an edit to kTemplateIntervals changes any mask, THIS
+    // fails to compile — the derivation can never silently alter Gate R behaviour.
+    static_assert(kMasks[0]  == 0x0091 && kMasks[1]  == 0x0891 && kMasks[2]  == 0x0491
+               && kMasks[3]  == 0x0451 && kMasks[4]  == 0x0089 && kMasks[5]  == 0x0489
+               && kMasks[6]  == 0x0049 && kMasks[7]  == 0x0461 && kMasks[8]  == 0x0449
+               && kMasks[9]  == 0x0111 && kMasks[10] == 0x0511 && kMasks[11] == 0x0085
+               && kMasks[12] == 0x04A1 && kMasks[13] == 0x08A1 && kMasks[14] == 0x0521
+               && kMasks[15] == 0x00C1 && kMasks[16] == 0x0081,
+                  "derived kMasks must be byte-identical to the original hand-typed values");
 
     return (kMasks[static_cast<size_t>(tiePriority)] & (1u << interval)) != 0;
 }
