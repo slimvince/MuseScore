@@ -11,13 +11,22 @@
 > step below becomes its **own** gated Claude-Code instruction when we reach it — this document is the **sequence and
 > the gates**, not the build instructions.
 
-## Ordering principle
-Strict bottom-up. The **bounded-context foundation** (Phase 1–3) comes first, because it is the assumption everything
-above inherits and the expensive thing to retrofit. The **L3 key-quality levers** (Phase 4) come after the foundation,
-since they are L3-internal and ride on top of it. The foundation phases are **byte-identical on the corpus** (the
-whole-score run is the degenerate "selection = score" case, where no extension fires) — so they move no metric and are
-gated on byte-identity + new partial-selection behaviour tests. Only Phase 4 moves the key numbers, gated on BIR + the
-key metric.
+## Ordering principle — build-it-right BEFORE tune-precision (user-ratified 2026-06-25)
+Two phases, strictly in order:
+- **Build-it-right** — refactoring + architectural design + algorithmic completion, building each layer to use **all
+  available evidence** (the **maximal-information** principle — *including the notated spelling / tpc capability*). This
+  plan's Phases 1–4, then the L4/L5/L6 algorithmic builds. **No reactive precision-chasing here.**
+- **Tune-precision (Phase B — LAST, after the whole L1–L6 stack is built)** — the reactive *"actively understand why
+  inference isn't as good as we hoped"* work: the measured key-quality levers (scale-membership), the leading-tone
+  de-brittling, the L3 tpc-weight calibration. **No inference-problem-fixing happens until all refactoring,
+  architectural design, and algorithmic completion is done.**
+
+Within build-it-right, strict bottom-up: the **bounded-context foundation** (Phases 1–3) first; then the **tpc spelling
+capability** (Phase 4 — a *maximal-information foundation*, built early so L4 is spelling-aware from the start; **this
+is capability, not precision tuning**). The foundation phases (1–3) are **byte-identical on the corpus** (degenerate
+"selection = score", no extension fires); the tpc capability (4) is built with its term safely defaulted so it stays
+**BIR-flat** — its precision *realisation* is a Phase-B tuning item. **No phase here is allowed to chase the key
+numbers.**
 
 ---
 
@@ -57,40 +66,42 @@ key metric.
 
 *End of Phase 3: the bounded-context foundation is built, the assumption is correct, and the corpus is byte-identical.*
 
-## Phase 4 — Architectural Layer 3 key-quality (the measured levers; these move the numbers, gated)
-- **4a — the scale-membership scorer lever.** Apply the measured sharpening of the out-of-candidate-scale penalty to
-  the shared per-window scorer (direction validated: ~+57…+73 Baroque / +38…+68 Jazz key-inference, decode-only). It
-  is now applicable (the wiring it waited for has landed). **Gate:** **no BIR-false regression on either preset**
-  (two-tier gate), pinned snapshots refreshed only if the change is confirmed correct, both test suites green; report
-  the key-metric gain.
-- **4b — tpc spelling plumbing (do not hold — user-ratified).** Build the **one shared spelling-derived view** (used
-  by L3 now and L4 later — unification, never duplicated) and read tpc-aware evidence in the L3 emission. Handle the
-  measured wrinkle — tpc as a standalone L3 term costs stable regions until function (Layer 5) can gate it — by
-  **gating/calibrating** the term, not deferring the code; the plumbing lands now so it is never retrofitted, and the
-  full precision gain realises when Layer 5 arrives. **Gate:** BIR no-regression + key metric + the byte-identity
-  discipline where applicable.
-- **4c — leading-tone presence-gate de-brittling (the diagnosed non-Bach key regression).** Weight-scale the
-  characteristic-pitch / true-leading-tone terms instead of the brittle `>0.1` binary gate
-  (`keymodeanalyzer.cpp:344,374`), so a weak-but-present leading tone (the Mozart B♮ at 0.093) is not treated as
-  absent. **Gate:** the three xfail'd notation tests (`MozartK279…`, `HarmonyPinning RN`/`Nashville`) flip back to C,
-  the two-tier **BIR gate holds on both presets**, the key metric does not regress, snapshots refreshed only if
-  confirmed correct. Diagnosis (the scale lever is *not* the fix): L3 spec §11 + `cc_keyregression_diagnosis_report.md`.
-  Needs a small read-only design (the right replacement for the binary gate) before the build. The principled
-  spelling/function-aware leading tone is a later enhancement (folds in with 4b tpc / future L5), not required here.
-- **4d — remaining deferred L3 follow-ups**, each measured/gated as warranted: the Step-2 scaleMembership reweight,
-  the P4 tick-local path, the S1 seed-retire, the sequence-margin confidence redesign, and raising the "uncertain"
-  recall (currently high-precision/low-recall). Take only the ones that measure net-positive under the gate; drop the
-  rest.
+## Phase 4 — the tpc spelling **capability** (the maximal-information foundation; build-it-right, BIR-flat)
+Build the **one shared spelling-derived view** (Architectural Layer 1 already carries the notated tpc) — used by
+Architectural Layer 3 (key) **and** Architectural Layer 4 (chord) — so the algorithm uses **all** the evidence the
+score provides, never spelling-blind. **This is capability, not precision tuning:**
+- **The shared spelling view + Architectural Layer 4's deterministic spelling-pin** (the symmetric-root pin: the
+  notated spelling *names* the root — no degradation) are the capability. Build them here, **before L4**, so L4 is
+  spelling-aware from the start and never retrofitted. Unification: **one** spelling view, used by both layers, never
+  duplicated.
+- **The L3 key emission reads tpc-aware evidence**, but with its term **safely defaulted / gated** so the build is
+  **BIR-flat** — the *weight* that realises the precision gain (and that costs stable regions without Layer-5 function
+  gating) is a **Phase-B tuning item**, not turned on here.
+- **Gate:** BIR-flat on both presets (the capability lands without moving the numbers); both suites green. A small
+  read-only design precedes the build.
 
-## Phase 5 — re-verify, sync specs to as-built, sign off L1–L3
-- Re-run the spec↔implementation delta-check (`cc_instruction_spec_impl_delta_L1L4.md`) over L1–L3 — confirm zero
-  DIVERGENCE, the operations all present, predicates qualified from the now-built values.
-- **Sync the L1–L3 specs to as-built:** the bounded-context contract (built, not "designed-but-unbuilt"), the scorer
-  lever, the tpc plumbing, the resolved follow-ups; move build state to the delivery notes, keep the architecture
-  prose code-free per the standard.
-- Confirm the standing net: both test suites pass, BIR gate holds both presets, snapshots refreshed only on
-  confirmed-correct changes.
-- **Then L4 is cleared to build** — on a stable, correctly-bounded, production-quality L1–L3.
+## Phase 5 — re-verify, sync specs to as-built, sign off L1–L3 (build-it-right complete for L1–L3)
+- Re-run the spec↔implementation delta-check over L1–L3 — zero DIVERGENCE, operations present, predicates qualified.
+- **Sync the L1–L3 specs to as-built:** the bounded-context contract (built), reach-back, the tpc capability; move
+  build state to the delivery notes, keep the architecture prose code-free.
+- Confirm the standing net: both suites pass, **BIR gate byte-flat** through Phases 1–4, snapshots untouched.
+- **Then L4 is cleared to build** — on a stable, correctly-bounded, spelling-aware L1–L3.
+
+---
+
+## Phase B — tune-precision (DEFERRED to LAST; only after the full L1–L6 algorithmic build)
+**Not done in this plan.** The reactive *"why isn't inference as good as we hoped"* work runs **only after**
+refactoring + architectural design + algorithmic completion (L4/L5/L6) are done — per the ordering principle. Recorded
+here so the items are not lost:
+- **B1 — scale-membership scorer lever** (measured ~+57…+73 / +38…+68 decode-only; apply + calibrate the production
+  magnitude; two-tier BIR gate).
+- **B2 — leading-tone presence-gate de-brittling** (the diagnosed non-Bach C→F key regression; weight-scale the char/lt
+  `>0.1` gate; gate = the three xfail'd notation tests flip to C + BIR holds; diagnosis: L3 §11 +
+  `cc_keyregression_diagnosis_report.md`).
+- **B3 — L3 tpc-weight calibration** (turn up the Phase-4 spelling term once Layer-5 function can gate the
+  tonicization-vs-modulation cost — the precision *realisation* of the capability).
+- **B4 — remaining L3 follow-ups**: Step-2 scaleMembership reweight, P4 tick-local path, S1 seed-retire, sequence-margin
+  confidence redesign, "uncertain"-recall raise. Each measured/gated; take only net-positive.
 
 ---
 
@@ -98,10 +109,12 @@ key metric.
 ```
 Phase 0 (baseline)
    └─> Phase 1  L1 build-selection + extend   [byte-identical corpus]   ──(1b index: deferrable)
-          └─> Phase 2  L2 re-slice on extend  [byte-identical corpus]
+          └─> Phase 2  L2 re-slice on extend  [byte-identical corpus]   ✓ DONE
                  └─> Phase 3  L3 reach-back    [byte-identical corpus + partial-selection tests]
-                        └─> Phase 4  L3 key-quality (4a scorer → 4b tpc → 4c follow-ups)  [moves numbers, BIR-gated]
+                        └─> Phase 4  tpc spelling CAPABILITY  [BIR-flat; term defaulted]
                                └─> Phase 5  re-verify + spec sync + sign-off  ─> L4 cleared
+                                      └─> … L4/L5/L6 algorithmic build …
+                                             └─> Phase B  tune-precision (scale lever, de-brittling, tpc-weight) — LAST
 ```
 
 ## Notes
@@ -109,7 +122,9 @@ Phase 0 (baseline)
   especially) get a **read-only design** first.
 - **Phases 1–3 should not move a single corpus number.** If they do, the degenerate-case byte-identity is broken —
   STOP and investigate, do not refresh snapshots to "fix" it.
-- **Phase 4 is the only place key numbers change**, and only under the BIR two-tier gate.
+- **No phase in this plan moves the key numbers** — Phases 1–3 are byte-identical, and Phase 4 lands the tpc
+  capability BIR-flat (term defaulted). The numbers move only in **Phase B (tune-precision), which is deferred to last**
+  (after the L4/L5/L6 build), under the two-tier BIR gate.
 - **`upstream` untouched throughout** (fork-local; the cfc7eb5e39 distribution constraint stands); push to `origin`
   only, when each gated step is ratified.
 - The L4 build backlog (`cowork_delta_check_dispositions.md`) is **not** part of this plan — it runs after Phase 5.
