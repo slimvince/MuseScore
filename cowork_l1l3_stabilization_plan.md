@@ -98,15 +98,23 @@ score provides, never spelling-blind. **This is capability, not precision tuning
 ## Phase 5 — pre-L4 house-cleaning: byte-identical refactors, coverage backfill, spec sync, sign-off
 *Clear the structural + coverage debt the audit found BEFORE building L4 on top — all build-it-right, all byte-identical
 or test-only (no behaviour change, no number movement).*
-- **Byte-identical layering refactors (audit Q2):** extract a leaf `analysis/types/` header to kill the cross-layer
-  *header* back-edges (L1.5/L3 including `chordanalyzer.h`/`keymodeanalyzer.h` only for value types); split `function/`
-  so the L5/L6 `tonicizationlabeler` leaves the L4 dir; **derive `kMasks` from the template interval table** (audit
-  Q1.3 — stop hand-mirroring; the compiler then enforces contents, not just count). Each is its own gated step, **gate =
-  byte-identical corpus + both suites + snapshots**. *(Defer the open design question — whether winner-selection becomes
-  its own unit — to the L5 design; do not pre-decide it here.)*
-- **Coverage backfill (audit Q3):** add direct unit tests for the named gaps — `chordvoicing` (`closePositionVoicing`),
-  `chordpostpasses`, `sectionanalyzer`/`analyzeSection`, `ChordSymbolFormatter::formatNashvilleNumber`. Tests-only;
-  no production change.
+- **Byte-identical layering refactors (audit Q1/Q2)** — each its own gated step, **gate = byte-identical corpus + both
+  suites + snapshots** (corpus by-construction acceptable for a provably value-preserving refactor when the suites
+  exercise the affected logic; see the `batch_analyze` prerequisite note below):
+  - **kMasks single-source (audit Q1.3) — kMasks DERIVE done `a0b983839a`; COMPLETION pending.** `kMasks` is now derived
+    from a new canonical `kTemplateIntervals` (hand-typed bitmasks gone, Gate R snapshot-pinned). **Remaining:** make
+    `chordanalyzer.cpp`'s `templates[]` *consume* `kTemplateIntervals` (a §5-constraint blocked it the first pass) so
+    there is **one** interval source feeding both — true single-source, byte-identical.
+  - **Types-only header (audit Q2) — LAST, with its own read-only investigation.** The *most* involved refactor:
+    `KeyModeAnalyzer::PitchContext` is **nested**, so extracting it (plus `ChordAnalysisTone`/`ChordTemporalContext`/
+    `ChordAnalyzerPreferences`) to a leaf `analysis/types/` header needs un-nesting + a full reference-graph chase.
+    Grounded, then designed, then built.
+  - *(The `function/` split — moving the L5/L6 `tonicizationlabeler` out of the L4 dir — is **DEFERRED to Phase 7**:
+    its L5/L6 home does not exist yet, so doing it now is premature structure. It moves with the L5 build.)*
+  - *(Open design question — whether winner-selection becomes its own unit — deferred to the L5 design.)*
+- **Coverage backfill (audit Q3 + the stable-half branch triage) — round 1 DONE `d042a03a03`; round 2 is the ~321
+  stable-branch ADD-TEST gaps** in `cowork_phase5_branch_backfill_spec.md` (oracle-asserted; the ~62 defensive branches
+  annotated-excluded; the ~16 deferred). Tests-only, no production change; the moving ~600 branches triage at Phase 6.
 - Re-run the spec↔implementation delta-check over L1–L3 — zero DIVERGENCE, operations present, predicates qualified.
 - **Sync the L1–L3 specs to as-built:** the bounded-context contract (built), reach-back, the tpc capability; move
   build state to the delivery notes, keep the architecture prose code-free.
@@ -119,6 +127,12 @@ or test-only (no behaviour change, no number movement).*
 *L4 today is only a written spec; production chord identity still flows through the legacy `analyzeChord` +
 `ChordPathDecoder` path. This phase BUILDS L4 proper and ENGAGES it — the prerequisite for retiring the legacy in
 Phase 6.*
+
+> **★ HARD PREREQUISITE for Phases 5b / 6 / B (the behaviour-changing phases): restore `batch_analyze`.** As of
+> 2026-06-26 `batch_analyze` cannot load any score this session (missing Qt `platforms/` plugins beside the binary;
+> Qt PATH/plugin-path did not fix it) — so the **empirical corpus two-tier BIR gate cannot be measured.** Byte-identical
+> refactors (Phase 5) are fine on the gtest suites + snapshots + by-construction, but **no behaviour-changing step may
+> proceed without the corpus gate.** Diagnose/restore the Qt plugin environment FIRST.
 - **Build L4** per `cowork_layer4_chordsymbol_design.md`: the per-slice chord namer (`chordslicedecoder`) with
   commit / inherit / **abstain (declare uncertainty, not guess)**, the symmetric-root **spelling-pin** (consuming the
   Phase-4 spelling primitive), and the membership / NCT backlog in `cowork_delta_check_dispositions.md`.
