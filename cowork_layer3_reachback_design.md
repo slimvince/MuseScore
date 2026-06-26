@@ -63,9 +63,13 @@ output converges**.
 - **Convergence stop (the principled criterion):** extend until the **key assigned to the selection's leading-edge
   slices stops changing** as more earlier context is added. That is self-validating — once a confident earlier key is
   established, the change-cost/decay means reaching further back will not move the leading-edge key.
-- **Domain proxy (cheaper than re-checking the whole opening each step):** *a settled, stable prevailing key is in view
-  in the reached-back region* (a committed, non-"uncertain" key for a run of context slices). Validated **once, in
-  design**, to imply leading-edge convergence; the loop uses the proxy, the equivalence test (Section 5) confirms it.
+- **Proxy REJECTED by measurement (as-built uses the headline criterion directly).** The earlier draft proposed a
+  cheaper proxy — *"a settled, stable prevailing key is in view in the reached-back region"* — "validated once in
+  design." Phase-3 measurement **disproved** it: one settled *context* measure does **not** anchor the leading edge;
+  the leading-edge key flips only once a confident earlier key is established over a **run** (e.g. a V–I two measures
+  back). So the as-built tracks the **leading-edge key across iterations and stops when *it* stops changing** — the
+  headline criterion itself, no proxy. (Knowledge-based: the proxy was an assumption, measured false, and dropped; the
+  increment-independent determinism test, §5.3, validates the real criterion.)
 - **Hard bound + score start:** a maximum reach (a small number of measures — a setting) and the score's first tick
   both terminate the loop. These are **safety caps for "never settles," not the needed amount.**
 
