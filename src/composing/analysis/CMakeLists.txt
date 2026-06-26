@@ -165,6 +165,16 @@ target_sources(composing_analysis PRIVATE
     # Declarations stay in the unchanged regiontonecollector.h. See
     # cc_module_layering_assessment_dossier.md §5.
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/regiontoneprimitives.cpp
+    # spellingview — the single shared tpc → line-of-fifths/sharp-flat spelling
+    # primitive (Phase 4, the maximal-information capability). Interprets the
+    # notated spelling Layer 1 carries (NoteEvent.tpc) into per-note line-of-fifths
+    # + sharp/flat sense (the Layer-4 spelling-pin's input) and a signature-agnostic
+    # span centroid/distribution (the Layer-3 key-spelling term's input, Phase B).
+    # CAPABILITY ONLY — no production consumer yet, so output is byte-identical;
+    # unit-tested as a pure function (spellingview_tests.cpp). See
+    # cowork_tpc_capability_design.md + cc_tpc_capability_build_report.md.
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/spellingview.h
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/spellingview.cpp
 
     # slicing/ — LAYER 2: the deterministic CHANGE-POINT SLICER. Enumerates the
     # constant-tonal-sonority slices over the layer-1 note model as a covering,

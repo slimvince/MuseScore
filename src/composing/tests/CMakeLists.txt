@@ -50,6 +50,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/reachback_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/slicer_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/spellingview_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tonicizationlabeler_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp
