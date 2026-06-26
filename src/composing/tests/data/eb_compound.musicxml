@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- engravingbridge branch fixture: a 12/8 (compound QUADRUPLE) measure with a
+     note onsetting on the down-beat (rtick 0 -> DOWNBEAT) and a note onsetting on
+     the third compound beat (rtick 1440 -> COMPOUND_STRESSED). 6/8 has only two
+     beats so its second beat is COMPOUND_UNSTRESSED; only a compound meter with a
+     stressed mid-bar beat (12/8 beat 3) reaches the COMPOUND_STRESSED arm of the
+     weightedPcView beatWeight lambda. divisions=2 -> 1 division = 240 ticks, a
+     dotted half = 6 divisions = 1440 ticks. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>12</beats><beat-type>8</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>6</duration><voice>1</voice><type>half</type><dot/>
+      </note>
+      <note>
+        <pitch><step>F</step><octave>4</octave></pitch>
+        <duration>6</duration><voice>1</voice><type>half</type><dot/>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

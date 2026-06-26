@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- engravingbridge branch fixture for weightedPcView dense-start look-ahead
+     tally. divisions=2 -> 1 division = 240 ticks (quarter = 2, half = 4).
+     Staff 0 (P1) sounds a half-note chord {C5,C6,E5,G5(invisible)} over [0,960):
+        - C5 and C6 are BOTH pitch-class 0 sustaining into the region start (480)
+          -> exercises the distinct-pc dedup (the second pc-0 is not re-counted).
+        - G5 is invisible -> fails the view filter inside the sustain-in tally.
+     A second half-note {A5} onsets at 960 (strictly after the region start) ->
+     dropped by the dense-start exclusion.
+     Staff 1 (P2) sounds C3 over [0,480) (releases AT 480, not sustaining in),
+     then a quarter chord {G3,C4,Eb4(invisible)} onsetting exactly at 480:
+        - C4 is pitch-class 0, already sustaining in -> not re-counted at onset.
+        - Eb4 is invisible -> fails the filter inside the onset-at-start tally.
+        - G3 is pitch-class 7 (new) -> the third distinct pc -> dense start fires.
+     Region [480,1920) with excludeLookAhead on therefore keeps pcs {0,4,7} and
+     drops the post-start A5 (pc 9). -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Treble</part-name>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Bass</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>5</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+      <note>
+        <chord/><pitch><step>C</step><octave>6</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+      <note>
+        <chord/><pitch><step>E</step><octave>5</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+      <note print-object="no">
+        <chord/><pitch><step>G</step><octave>5</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+      <note>
+        <pitch><step>A</step><octave>5</octave></pitch>
+        <duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+    </measure>
+  </part>
+  <part id="P2">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>F</sign><line>4</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <pitch><step>G</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <chord/><pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note print-object="no">
+        <chord/><pitch><step>E</step><alter>-1</alter><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- engravingbridge branch fixture for the sustain-pedal paths
+     (scoreharvest::buildPedalWindowIndex and weightedPcView's Pass-4 pedal tail).
+     One Piano staff, 3 measures of 4/4 (divisions=2 -> quarter = 480 ticks):
+       m1: a {C4,E4,G4} quarter that releases at tick 480 (then a D4 quarter
+           onsetting at 480 — a strictly-post-start onset for the pedal pass's
+           dense-start look-ahead arm), under a sustain pedal spanning the whole
+           measure [0,1920) -> a pedal tail [480,1920).
+       m2: a whole-note C4 under a second sustain pedal [1920,3840).
+       m3: a whole rest, hosting the second pedal's stop.
+     Both pedals are ordinary (damper) pedals, so they are indexed; the tests
+     synthesise the sostenuto / soft / degenerate / same-start variants by
+     mutating these two pedals in-place (setBeginText / setTicks / setTick). -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <direction placement="below">
+        <direction-type><pedal type="start" line="no"/></direction-type>
+      </direction>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <chord/><pitch><step>E</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <chord/><pitch><step>G</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <pitch><step>D</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type>
+      </note>
+      <note>
+        <rest/><duration>4</duration><voice>1</voice><type>half</type>
+      </note>
+    </measure>
+    <measure number="2">
+      <direction placement="below">
+        <direction-type><pedal type="stop" line="no"/></direction-type>
+      </direction>
+      <direction placement="below">
+        <direction-type><pedal type="start" line="no"/></direction-type>
+      </direction>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>8</duration><voice>1</voice><type>whole</type>
+      </note>
+    </measure>
+    <measure number="3">
+      <direction placement="below">
+        <direction-type><pedal type="stop" line="no"/></direction-type>
+      </direction>
+      <note>
+        <rest/><duration>8</duration><voice>1</voice><type>whole</type>
+      </note>
+      <barline location="right">
+        <bar-style>light-heavy</bar-style>
+      </barline>
+    </measure>
+  </part>
+</score-partwise>

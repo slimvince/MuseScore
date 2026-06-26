@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd">
+<!-- engravingbridge branch fixture for findTemporalContext. Two parts:
+       Staff 0 = "Chord Track" (ineligible: isChordTrackStaff -> staffIsEligible
+                 false). It is listed FIRST so the backward/forward hasAttacks
+                 scan visits the ineligible staff before the eligible one, hitting
+                 the !staffIsEligible continue arm.
+       Staff 1 = "Piano": four root-position triads whose basses move stepwise
+                 C3 -> D3 -> E3 -> F3 (pitch classes 0,2,4,5). Consecutive basses
+                 are a diatonic step apart, so bassIsStepwiseFromPrevious / ToNext
+                 evaluate true at the interior segment, and the final segment has
+                 no forward ChordRest (end-of-score, no forward context).
+     divisions=2 -> quarter = 480 ticks; segments at ticks 0,480,960,1440. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Chord Track</part-name>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note><pitch><step>C</step><octave>5</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>D</step><octave>5</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>E</step><octave>5</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>F</step><octave>5</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+    </measure>
+  </part>
+  <part id="P2">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <clef><sign>F</sign><line>4</line></clef>
+      </attributes>
+      <note><pitch><step>C</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>E</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>D</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>F</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>A</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>E</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>G</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>B</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><pitch><step>F</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>A</step><octave>3</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+      <note><chord/><pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration><voice>1</voice><type>quarter</type></note>
+    </measure>
+  </part>
+</score-partwise>
