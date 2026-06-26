@@ -28,11 +28,26 @@ is capability, not precision tuning**). The foundation phases (1–3) are **byte
 **BIR-flat** — its precision *realisation* is a Phase-B tuning item. **No phase here is allowed to chase the key
 numbers.**
 
+## Audit-derived items (folded in 2026-06-26 — `cowork_l1l4_architecture_audit.md`)
+The L1–L4 audit found the *target* architecture sound; the debt is **unretired legacy on the orchestrator** plus
+housekeeping. Each item is **build-it-right** (refactoring / unification / coverage / docs — none is precision work),
+slotted into the existing order, NOT acted on out of sequence:
+- **Immediate, ungated — doc-truth (do now; it actively misleads every session start):** `STATUS.md` and ~8 docs still
+  present the stale **57/23/57** gate while CLAUDE.md is on the ratified **53/24/53** — the two session-start docs
+  contradict each other. Also the stale CMake "NOT wired" comments (slicer / `keymodesequence` / `jointkeydecision`
+  ARE wired), orphaned test fixtures, and stale tool corpus-dir defaults. Doc-only, no code, no gate risk → its own CC
+  instruction, not blocked by any phase. (This is the deferred doc-hygiene refresh, **promoted** because of the gate
+  contradiction.)
+- **Phase 5 (pre-L4 house-cleaning) gains** the byte-identical structural refactors + coverage backfill.
+- **New Phase 6 (legacy retirement / unification) gains** the live-duplication fixes — they can only land once the new
+  paths are load-bearing (after the L4/L5/L6 build), so they sit between the build and Phase B.
+
 ---
 
 ## Phase 0 — baseline & guards (no code change)
-- Re-confirm, freshly run, the current BIR identity sets (Baroque 57 / Jazz 23 / Default 57) and the pinned snapshot
-  state — the gate references every later phase is measured against.
+- Re-confirm, freshly run, the current BIR identity sets (**Baroque 53 / Jazz 24 / Default 53** — the ratified set; the
+  prior 57/23/57 here was stale, corrected 2026-06-26) and the pinned snapshot state — the gate references every later
+  phase is measured against.
 - Establish the **byte-identity guard** for Phases 1–3: the whole-score corpus run must stay byte-identical through
   them (the degenerate case). Any corpus movement in Phases 1–3 is a STOP — it means the degenerate case is not
   byte-identical, i.e. a real bug.
@@ -80,12 +95,43 @@ score provides, never spelling-blind. **This is capability, not precision tuning
 - **Gate:** BIR-flat on both presets (the capability lands without moving the numbers); both suites green. A small
   read-only design precedes the build.
 
-## Phase 5 — re-verify, sync specs to as-built, sign off L1–L3 (build-it-right complete for L1–L3)
+## Phase 5 — pre-L4 house-cleaning: byte-identical refactors, coverage backfill, spec sync, sign-off
+*Clear the structural + coverage debt the audit found BEFORE building L4 on top — all build-it-right, all byte-identical
+or test-only (no behaviour change, no number movement).*
+- **Byte-identical layering refactors (audit Q2):** extract a leaf `analysis/types/` header to kill the cross-layer
+  *header* back-edges (L1.5/L3 including `chordanalyzer.h`/`keymodeanalyzer.h` only for value types); split `function/`
+  so the L5/L6 `tonicizationlabeler` leaves the L4 dir; **derive `kMasks` from the template interval table** (audit
+  Q1.3 — stop hand-mirroring; the compiler then enforces contents, not just count). Each is its own gated step, **gate =
+  byte-identical corpus + both suites + snapshots**. *(Defer the open design question — whether winner-selection becomes
+  its own unit — to the L5 design; do not pre-decide it here.)*
+- **Coverage backfill (audit Q3):** add direct unit tests for the named gaps — `chordvoicing` (`closePositionVoicing`),
+  `chordpostpasses`, `sectionanalyzer`/`analyzeSection`, `ChordSymbolFormatter::formatNashvilleNumber`. Tests-only;
+  no production change.
 - Re-run the spec↔implementation delta-check over L1–L3 — zero DIVERGENCE, operations present, predicates qualified.
 - **Sync the L1–L3 specs to as-built:** the bounded-context contract (built), reach-back, the tpc capability; move
   build state to the delivery notes, keep the architecture prose code-free.
 - Confirm the standing net: both suites pass, **BIR gate byte-flat** through Phases 1–4, snapshots untouched.
-- **Then L4 is cleared to build** — on a stable, correctly-bounded, spelling-aware L1–L3.
+- **Then L4 is cleared to build** — on a stable, correctly-bounded, spelling-aware, structurally-clean L1–L3.
+
+---
+
+## Phase 6 — legacy retirement / unification (after the L4/L5/L6 build; the last build-it-right step)
+*The audit's live duplications (Q1) are migration debt: the new pure path exists but the legacy path still runs on
+`region/regionanalyzer.cpp`. These can only be retired once the new paths are **load-bearing** — i.e. after L4/L5/L6 are
+built and the engagement (production switched to the new spine) is ratified. So they sit here, between the algorithmic
+build and Phase B. Still build-it-right (unification), still no precision-chasing.*
+- **One segmenter (Q1.1):** retire legacy `harmony/greedyExpandSegmentation` (`regionanalyzer.cpp:757`) onto
+  `slicing/changePointSlices` — collapse the two live change-point grids to one. (This is the L2-engagement the
+  bounded-context plan deferred, now with the chord axis also on the slicer.)
+- **One pitch-context builder (Q1.2):** collapse `collectPitchContext` (legacy, via `keyresolver`) and
+  `pitchContextOverSpan` (new, via `keymodesequence`) to a single builder, once the legacy key-resolution path is
+  retired.
+- **Wire or remove the staged scaffolding (audit Q5 — the engagement ledger):** `chordslicedecoder` (intended L4),
+  `redecodeRange` (incremental seam), `tonicizationlabeler` (L5/L6) are built-ahead-of-wiring — each must reach a
+  decision (wired or removed), not be left to rot; track the inert `DecodeQualityLevel::Normal/Deep` enumerators.
+- **Gate:** each retirement is a behaviour-changing step under the **two-tier BIR gate + snapshots + both suites**, its
+  own ratified CC instruction. Unification must not move the *meaningful* numbers (class-(b)); any movement is examined,
+  not refreshed away.
 
 ---
 
@@ -107,14 +153,17 @@ here so the items are not lost:
 
 ## Dependency summary
 ```
+(ungated, do now) Doc-truth: STATUS.md + ~8 docs → 53/24/53; stale CMake/fixtures/tool-defaults   [doc-only]
+
 Phase 0 (baseline)
    └─> Phase 1  L1 build-selection + extend   [byte-identical corpus]   ──(1b index: deferrable)
           └─> Phase 2  L2 re-slice on extend  [byte-identical corpus]   ✓ DONE
                  └─> Phase 3  L3 reach-back    [byte-identical corpus + partial-selection tests]
                         └─> Phase 4  tpc spelling CAPABILITY  [BIR-flat; term defaulted]
-                               └─> Phase 5  re-verify + spec sync + sign-off  ─> L4 cleared
-                                      └─> … L4/L5/L6 algorithmic build …
-                                             └─> Phase B  tune-precision (scale lever, de-brittling, tpc-weight) — LAST
+                               └─> Phase 5  pre-L4 house-cleaning: byte-id refactors + coverage + spec sync  ─> L4 cleared
+                                      └─> … L4/L5/L6 algorithmic build + engagement …
+                                             └─> Phase 6  legacy retirement / unification  [two-tier BIR gate]
+                                                    └─> Phase B  tune-precision (scale lever, de-brittling, tpc-weight) — LAST
 ```
 
 ## Notes

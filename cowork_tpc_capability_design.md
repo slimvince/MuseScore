@@ -23,7 +23,11 @@ A single derived primitive — living beside the other Architectural Layer 1 der
 - **Aggregated over a span:** the **line-of-fifths centroid / sharp-flat distribution** of a window's spellings — the
   **modulation-direction** signal Architectural Layer 3's key emission wants (sharp-side motion ⇒ dominant direction,
   flat-side ⇒ subdominant). The prior decode-only measurement (`cc_layer3_tpc_keymeasure_report.md`) established this
-  is genuine spelling signal; its *shape* is known.
+  is genuine spelling signal; its *shape* is known. **This span shape is signature-AGNOSTIC** — it takes no
+  key-signature `fifths` input. A *signature-relative* key-fit (note-in/out of the diatonic window, i.e.
+  `diatonicMaskFromFifths`) is the **L3 key term itself, which is Phase B** (§2) — it is **recorded** as the Phase-B
+  reuse target, **not built or invoked in Phase 4**. (Ratified 2026-06-26, option A on the span-aggregate scope: build
+  only the signature-agnostic shape now; the key-fit lands with its weight in Phase B.)
 
 Both are the **same interpretation** of the same `tpc` — one primitive, two read shapes (per-note for L4, aggregate
 for L3). That is exactly why it is shared, not duplicated.
