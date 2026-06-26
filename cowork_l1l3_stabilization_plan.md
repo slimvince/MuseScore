@@ -115,23 +115,44 @@ or test-only (no behaviour change, no number movement).*
 
 ---
 
-## Phase 6 — legacy retirement / unification (after the L4/L5/L6 build; the last build-it-right step)
-*The audit's live duplications (Q1) are migration debt: the new pure path exists but the legacy path still runs on
-`region/regionanalyzer.cpp`. These can only be retired once the new paths are **load-bearing** — i.e. after L4/L5/L6 are
-built and the engagement (production switched to the new spine) is ratified. So they sit here, between the algorithmic
-build and Phase B. Still build-it-right (unification), still no precision-chasing.*
+## Phase 5b — L4 algorithmic build + engagement (make the new spine load-bearing)
+*L4 today is only a written spec; production chord identity still flows through the legacy `analyzeChord` +
+`ChordPathDecoder` path. This phase BUILDS L4 proper and ENGAGES it — the prerequisite for retiring the legacy in
+Phase 6.*
+- **Build L4** per `cowork_layer4_chordsymbol_design.md`: the per-slice chord namer (`chordslicedecoder`) with
+  commit / inherit / **abstain (declare uncertainty, not guess)**, the symmetric-root **spelling-pin** (consuming the
+  Phase-4 spelling primitive), and the membership / NCT backlog in `cowork_delta_check_dispositions.md`.
+- **Engage:** switch production (`region/regionanalyzer.cpp`) onto the new L1→L4 spine (the bounded-context engagement
+  + the new chord path). This is the behaviour-changing step the foundation phases deferred.
+- **Gate:** two-tier BIR + both suites + snapshots; any *meaningful* (class-b) movement examined, not refreshed.
+
+## Phase 6 — L1–L4 SEAL: legacy retirement + dead-branch resolution + criterion-4 completion (BEFORE L5)
+*Now that the new paths are load-bearing (Phase 5b), retire the legacy and finish the test seal. This is the step that
+makes **"nothing left on L1–L4."** It sits **before L5** — there is no legacy L5/L6 to retire, so this is purely L1–L4's
+sealing. Still build-it-right (unification), still no precision-chasing.*
 - **One segmenter (Q1.1):** retire legacy `harmony/greedyExpandSegmentation` (`regionanalyzer.cpp:757`) onto
-  `slicing/changePointSlices` — collapse the two live change-point grids to one. (This is the L2-engagement the
-  bounded-context plan deferred, now with the chord axis also on the slicer.)
+  `slicing/changePointSlices` — collapse the two live change-point grids to one.
 - **One pitch-context builder (Q1.2):** collapse `collectPitchContext` (legacy, via `keyresolver`) and
-  `pitchContextOverSpan` (new, via `keymodesequence`) to a single builder, once the legacy key-resolution path is
-  retired.
-- **Wire or remove the staged scaffolding (audit Q5 — the engagement ledger):** `chordslicedecoder` (intended L4),
-  `redecodeRange` (incremental seam), `tonicizationlabeler` (L5/L6) are built-ahead-of-wiring — each must reach a
-  decision (wired or removed), not be left to rot; track the inert `DecodeQualityLevel::Normal/Deep` enumerators.
-- **Gate:** each retirement is a behaviour-changing step under the **two-tier BIR gate + snapshots + both suites**, its
-  own ratified CC instruction. Unification must not move the *meaningful* numbers (class-(b)); any movement is examined,
-  not refreshed away.
+  `pitchContextOverSpan` (new, via `keymodesequence`) to a single builder.
+- **Resolve the staged scaffolding + dead branches (audit Q5 + the branch-coverage triage):** `chordslicedecoder`,
+  `redecodeRange`, `tonicizationlabeler`, and the inert `DecodeQualityLevel::Normal/Deep` each reach a **wired-or-removed**
+  verdict (decided by the Phase-5b build). The branch-coverage map's unhit directions are routed **three ways**: *add a
+  test* → fold back to the coverage backfill; *wire-or-remove* → here; *exclude as intentional-unreachable* → defensive
+  "can't-happen" code is **annotated, never deleted** (removing safety code to lift a coverage number is forbidden).
+- **Criterion-4 seal:** with dead code resolved and defensive branches excluded, **union** branch coverage
+  (`composing_tests` ∪ `notation_tests`) over the truly-reachable L1–L4 set reaches the ratified adequacy bar — every
+  *reachable* branch covered.
+- **Gate:** each retirement is its own ratified CC instruction under the **two-tier BIR gate + snapshots + both suites**;
+  meaningful (class-b) movement is examined, not refreshed.
+
+### ✅ L1–L4 COMPLETE — the *nothing-left* gate (the precondition for L5)
+Restructured, built, **engaged**, legacy-free, dead-branch-resolved, specs synced to as-built, and regression +
+*reachable-branch* tested to adequacy. **L5 does not begin until this gate is green.**
+
+## Phase 7 (L5 function) · Phase 8 (L6 grouping) — on the sealed foundation
+Each layer **designed → built → tested** in order, on the sealed L1–L4 (and L5 for L6): its own read-only design first,
+its own four-criteria adequacy + branch tests. They are *new* — no legacy to retire — so each ends at its own
+"complete" gate. The whole L1–L6 stack must be built and tested before Phase B.
 
 ---
 
@@ -161,9 +182,11 @@ Phase 0 (baseline)
                  └─> Phase 3  L3 reach-back    [byte-identical corpus + partial-selection tests]
                         └─> Phase 4  tpc spelling CAPABILITY  [BIR-flat; term defaulted]
                                └─> Phase 5  pre-L4 house-cleaning: byte-id refactors + coverage + spec sync  ─> L4 cleared
-                                      └─> … L4/L5/L6 algorithmic build + engagement …
-                                             └─> Phase 6  legacy retirement / unification  [two-tier BIR gate]
-                                                    └─> Phase B  tune-precision (scale lever, de-brittling, tpc-weight) — LAST
+                                      └─> Phase 5b  L4 build + engagement (new spine load-bearing)  [two-tier BIR gate]
+                                             └─> Phase 6  L1–L4 SEAL: retire legacy + dead-branch + criterion-4 (union)
+                                                    └─> ✅ L1–L4 COMPLETE (nothing left) ── precondition for L5
+                                                           └─> Phase 7 (L5 fn) ─> Phase 8 (L6 grouping)  [each built+tested]
+                                                                  └─> Phase B  tune-precision (LAST, whole stack sealed)
 ```
 
 ## Notes
@@ -171,9 +194,16 @@ Phase 0 (baseline)
   especially) get a **read-only design** first.
 - **Phases 1–3 should not move a single corpus number.** If they do, the degenerate-case byte-identity is broken —
   STOP and investigate, do not refresh snapshots to "fix" it.
-- **No phase in this plan moves the key numbers** — Phases 1–3 are byte-identical, and Phase 4 lands the tpc
-  capability BIR-flat (term defaulted). The numbers move only in **Phase B (tune-precision), which is deferred to last**
-  (after the L4/L5/L6 build), under the two-tier BIR gate.
+- **Three movement classes, by phase:** **Phases 1–4 do not move the numbers** (1–3 byte-identical; 4 BIR-flat, term
+  defaulted) — any movement there is a bug, STOP. **Phases 5b–8 are behaviour-changing build-it-right** (engagement,
+  legacy retirement, the L4/L5/L6 builds): they run under the **two-tier BIR gate** — **zero** class-(b)
+  (pitch-class-decidable) regressions ever; only small, every-case-verified class-(a) symmetric churn is tolerated.
+  This is *correctness/architecture* movement, **not** precision-chasing. **Phase B is the only precision-tuning** — the
+  reactive "better the inference" work, last, over the whole sealed stack.
+- **The build-it-right → tune-precision firewall:** no inference-problem-fixing anywhere in Phases 0–8. Phase B does not
+  start until the **L1–L6 stack is built and tested** (and L1–L4 specifically is at its "✅ COMPLETE — nothing-left"
+  gate before L5 even begins).
 - **`upstream` untouched throughout** (fork-local; the cfc7eb5e39 distribution constraint stands); push to `origin`
   only, when each gated step is ratified.
-- The L4 build backlog (`cowork_delta_check_dispositions.md`) is **not** part of this plan — it runs after Phase 5.
+- The L4 build backlog (`cowork_delta_check_dispositions.md`) feeds **Phase 5b** (the L4 algorithmic build), not the
+  earlier phases.
