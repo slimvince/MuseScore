@@ -86,7 +86,7 @@ symmetric **dim7/augmented floor (~111)**. **Do not build the learned model now*
 ## §8 — Measure-first staging (the discipline, non-negotiable)
 
 Each step builds **diagnostically first** (produce the decision, measure vs DCML, production UNCHANGED →
-byte-identical: BIR 57/23/57, snapshots 11/11), then **wire + re-gate** only on a clean measurement:
+byte-identical: BIR 57/23/57 *(superseded 2026-06-26: live gate now 53/24/53 — L3-wiring delta; CLAUDE.md authoritative)*, snapshots 11/11), then **wire + re-gate** only on a clean measurement:
 - **J-key-i (first):** the scoped-joint KEY decision, diagnostic. Binding metrics: the **de-masking
   `--partial-key-breakdown`** (modulation correctness, not gameable rn_agree), the relative-pair recovery,
   and — critically — that **no hard constraint is violated** and the soft producers stay soft.

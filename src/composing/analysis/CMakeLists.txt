@@ -81,10 +81,9 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/key/modepriorpresets.h
     # LAYER 3 — the key/mode SEQUENCE decoder (dedicated key-path Viterbi over the
     # Layer-2 slices; emission = KeyModeAnalyzer through the Layer-1 indexed query).
-    # ISOLATED this increment: built + unit-tested + graded against the held-out GT
-    # harness, NOT wired into the live pipeline — production output byte-identical;
-    # it runs only under batch_analyze --decode-keymode. Wiring (replacing the
-    # per-region key argmax) is the next, separate increment. See
+    # WIRED into the live pipeline (regionanalyzer.cpp:581): the whole-score decode
+    # replaces the per-region key argmax at the Pass-1 seam. Still also runs as a
+    # graded diagnostic under batch_analyze --decode-keymode. See
     # cowork_layer3_keymode_design.md + cc_layer3_decoder_audit_dossier.md.
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodesequence.h
     ${CMAKE_CURRENT_LIST_DIR}/key/keymodesequence.cpp
@@ -119,9 +118,10 @@ target_sources(composing_analysis PRIVATE
     # / global key-path, all SOFT) + a scoped joint on the coupled core. Emits a
     # soft-only AND a soft+joint decision per region (the attribution toggle).
     # Consumes ONLY key-agnostic + local-candidate evidence (the production resolved
-    # key is an echoed reference, never read). Built + MEASURED only; invoked solely
-    # from tools/batch_analyze --dump-joint-key, never the production resolver
-    # (wiring is J-key-ii).
+    # key is an echoed reference, never read). WIRED into the production resolver via
+    # applyJointKeyWiring (J-key-iii, regionanalyzer.cpp:1369) but gated on
+    # jointKeyWiringEnabled() (default OFF) — so production output is byte-identical by
+    # default; also invoked from tools/batch_analyze --dump-joint-key.
     ${CMAKE_CURRENT_LIST_DIR}/section/jointkeydecision.h
     ${CMAKE_CURRENT_LIST_DIR}/section/jointkeydecision.cpp
 
@@ -179,8 +179,9 @@ target_sources(composing_analysis PRIVATE
     # slicing/ — LAYER 2: the deterministic CHANGE-POINT SLICER. Enumerates the
     # constant-tonal-sonority slices over the layer-1 note model as a covering,
     # lossless, zero-interpretation FACT (boundaries at every eligible onset AND
-    # release; all-rest interior spans are explicit empty slices). It is ISOLATED
-    # — NOT wired into the live analysis pipeline; consumed at layer 3. See
+    # release; all-rest interior spans are explicit empty slices). WIRED into the live
+    # analysis pipeline (changePointSlices @ regionanalyzer.cpp:579), consumed at
+    # layer 3 by the key/mode sequence decoder. See
     # cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
     ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.h
     ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.cpp

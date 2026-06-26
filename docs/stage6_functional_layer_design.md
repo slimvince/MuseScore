@@ -85,7 +85,7 @@ metric-design finding) rather than changing the comparator.
 ## §5 — Behavior-change surface + the audit gate
 
 This is the **functional axis's first intentional change**. It changes the RN OUTPUT (labels), so:
-- **Chord axis MUST hold:** root/quality/key unchanged → **BIR gate 57/23/57 byte-identical** (tonicization
+- **Chord axis MUST hold:** root/quality/key unchanged → **BIR gate 57/23/57 byte-identical** *(superseded 2026-06-26: live gate now 53/24/53 — L3-wiring delta; CLAUDE.md authoritative)* (tonicization
   is a label refinement, not a root/key change). An un-adjudicated BIR move is a hard stop.
 - **Snapshots WILL move** (RN strings gain `/X`): DCML-adjudicate each, refresh only verified-correct.
 - **Measure on `compare_rn`** (mode-present; the corpus has key): the **S1 recovery** (how many

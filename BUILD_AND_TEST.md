@@ -174,8 +174,10 @@ cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/j
 fingerprints don't match the manifest (the old shared-`tools/corpus` contamination is
 now structurally impossible and loudly detected). Gate on **case identity** (not the
 bare integer):
-**Re-baselined 2026-06-13 (corrected GT parser): Baroque 57 / Jazz 23 / Default 57** — a
-strict superset of the old 13/7/14 (0 lost, oracle-verified). The authoritative `stem@tick`
+**Re-baselined 2026-06-13 (corrected GT parser): Baroque 53 / Jazz 24 / Default 53** — a
+strict superset of the old 13/7/14 (0 lost, oracle-verified); the L3-wiring delta (−4 / +1 / −4,
+2026-06-26) later moved the prior 57/23/57 → 53/24/53 (the SET, not the integer, is the gate).
+The authoritative `stem@tick`
 identity sets live in **CLAUDE.md** (gate section); see `cc_metric_rebaseline_report.md` +
 `cc_gate_rebaseline_verify_report.md` for provenance. ~95% of the added mass is legitimate
 ambiguity (symmetric-dim7 ≈53% Baroque + viio↔V7 share-tone).
@@ -293,7 +295,7 @@ measuring — closing the former hardcoded-flat-`tools/corpus` music21 read. The
 "Three-way music21_dcml_agree genuine errors" split is the headline BIR=true/BIR=false
 pair (was Baroque 24/13, Jazz 35/7 under the OLD parser — **stale/pending re-measurement
 under the corrected parser**; the BIR=false half is what `characterise_bir_false.py`
-independently reproduces, now **57/23**, Default 57). `--ours-dir` is kept as a deprecated,
+independently reproduces, now **53/24**, Default 53). `--ours-dir` is kept as a deprecated,
 unvalidated alias.
 
 ```

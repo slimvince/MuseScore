@@ -38,7 +38,7 @@ Only stop and ask if:
 ## Build and test commands
 
 **Always read these two files at the start of every session:**
-- `C:\s\MS\build_and_test.md` — authoritative commands for all build variants, both test suites, and all Python tools
+- `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
 - `C:\s\MS\STATUS.md` — current BIR baselines, HEAD commit, active iteration, and known regressions
 
 Do not rely on memory of previous sessions for BIR numbers or iteration state — read STATUS.md.

@@ -93,7 +93,7 @@ the corrected DCML-only granularity-robust **L1 `--key-breakdown`** (committed `
 - **Key axis:** S2 delta vs the 4a baseline (mode-present) and the **mode-absent floor**; whether the
   **7 over-lock stems** recover (bwv64.2 the stress case); whether the **242 S2→S1** cases hold in S1
   *without the crutch* (note-based inference keeps the global key correct).
-- **Chord axis:** the 57/23/57 BIR gate **will** move — DCML-adjudicate **every** changed case; an
+- **Chord axis:** the 57/23/57 BIR gate **will** move *(superseded 2026-06-26: live gate now 53/24/53 — L3-wiring delta; CLAUDE.md authoritative)* — DCML-adjudicate **every** changed case; an
   **un-adjudicated BIR=false increase on any preset is a hard stop** (CLAUDE.md gate policy).
 - **Snapshots:** `pipeline_snapshot_tests` goldens **will** move (4b changes the resolver, which is on
   the `.mscx`→resolve→sectionanalyzer→keyAreas→bridge-RN path — unlike 4a). Refresh **only**

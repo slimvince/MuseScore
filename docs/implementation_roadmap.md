@@ -11,10 +11,11 @@ verification gate that must pass before the next stage starts.*
 in its "verify" column. Stages are sequential; items within a stage can run in any order
 unless noted. Baselines (BIR 24/13 Baroque, 35/7 Jazz; 416/52/11 tests) are hard gates
 throughout Stages 0–2; Stage 3+ re-baselines deliberately and explicitly.
-**(Re-baselined 2026-06-13: the corrected GT parser → gate Baroque 57 / Jazz 23 / Default 57,
+**(Re-baselined 2026-06-13: the corrected GT parser → gate Baroque 53 / Jazz 24 / Default 53,
 a strict superset of the old 13/7/14; the `analyze_inversion_errors` 24/13·35/7 secondary
 split was re-measured under the corrected parser → **47/57 Baroque / 81/23 Jazz** (false-halves
-= the 57/23 gate). Authoritative identity sets: CLAUDE.md gate section.)**
+= the then-57/23 gate; the L3-wiring delta later moved it → 53/24/53). Authoritative identity
+sets: CLAUDE.md gate section.)**
 
 **⛔ TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14):** (1) **Stage 3.5**
 the physical split of `chordanalyzer.cpp` along the layer seams + iteration-API renames — DEFERRED until

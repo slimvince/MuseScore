@@ -84,7 +84,7 @@ gets right) while lifting the mode-absent floor — the measured confirmation of
   force the wiring.
 - **4c-ii — wire the anchor into key scoring at section/piece scope (§3) + measure the floor improvement.**
   The behavior change: mode-absent S2 should drop toward the mode-present level on the relative-pair class;
-  **mode-present must NOT regress** (gate 57/57/23 byte-identical, the §3 decoupling proof). DCML-adjudicate
+  **mode-present must NOT regress** (gate 57/57/23 byte-identical *(superseded 2026-06-26: live gate now 53/24/53 — L3-wiring delta; CLAUDE.md authoritative)*, the §3 decoupling proof). DCML-adjudicate
   every moved gate case + snapshot. HELD, ratified. The OQ6 pass-bar is set here against the **4c-i realized
   fraction**, not the ceiling.
 - **4c-iii — refine detection** (plagal/half/deceptive, modulation/section handling, voting) only against the

@@ -19,7 +19,7 @@ is the structural capability to add. It is the **biggest precision lever** (~95%
 29.7%; realistic ceiling ~1800–2500, capped by the cadence detector's ~75% realized fraction).
 
 This is a deliberate **behavior change on the key axis** — the resolved key feeds chord emission
-(`basisIndep`) and the RN labels, so the BIR gate (57/23/57) is **medium-risk** (chord roots can move on
+(`basisIndep`) and the RN labels, so the BIR gate (57/23/57 — *superseded 2026-06-26: live gate now 53/24/53, L3-wiring delta; CLAUDE.md authoritative*) is **medium-risk** (chord roots can move on
 the diatonic-sensitive subset), snapshots move, and it must be DCML-adjudicated and re-gated on all three
 presets. Staged measure-first (below).
 

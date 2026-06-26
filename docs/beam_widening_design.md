@@ -334,6 +334,8 @@ tie-break only once both are demonstrated. If I proves un-foldable without losin
 > gate is now **Baroque 57 / Jazz 23 / Default 57** (strict superset, CLAUDE.md is authoritative).
 > Every "Baroque 13 held / Jazz ≤ 7 / Default 14 held" constraint downstream should be read
 > against the 57/23/57 sets if this work is ever revived.
+> **(Superseded 2026-06-26: the live gate is now 53/24/53 — the L3-wiring delta moved 57/23/57 →
+> 53/24/53; CLAUDE.md authoritative. The 57/23/57 figures in this parked doc are the pre-delta record.)**
 
 - **Baroque-13** (`{bwv102.7@17520, bwv14.5@8160, bwv17.7@46080, bwv174.5@6240, bwv245.17@4800,
   bwv245.40@51360, bwv261@33840, bwv269@20640, bwv301@960, bwv381@4800, bwv422@23040,

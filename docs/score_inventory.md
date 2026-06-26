@@ -24,7 +24,7 @@ If you only have a minute, read the **quick-pick table** and the **Hard rules**.
 |---|---|---|---|
 | Run unit tests / mismatch report | In-tree fixtures | `src/composing/tests/data/` | Wired into `composing_tests` (498/498). The synthetic catalog drives the mismatch report; **do not edit without explicit approval** (Hard rules) |
 | Run pipeline snapshot tests | 11 DCML `.mscx`, loaded from `tools/dcml/*/MS3/` | `src/notation/tests/pipeline_snapshot_tests/` (test + goldens) | Snapshot diffs gate refactors. Sources are pinned in `tools/snapshot_sources_manifest.json` |
-| Measure the BIR gate | `tools/corpus/baroque/` or `…/jazz/` | per-preset `.ours.json` + `.music21.json` + manifest | `characterise_bir_false.py --corpus-dir …` (Baroque 57, Jazz 23, Default 57 — re-baselined 2026-06-13; see CLAUDE.md) |
+| Measure the BIR gate | `tools/corpus/baroque/` or `…/jazz/` | per-preset `.ours.json` + `.music21.json` + manifest | `characterise_bir_false.py --corpus-dir …` (Baroque 53, Jazz 24, Default 53 — re-baselined 2026-06-13 + L3-wiring delta 2026-06-26; see CLAUDE.md) |
 | Validate analyzer against Roman-numeral annotations | DCML annotated corpora | `tools/dcml/<repo>/MS3/` + `harmonies/` | ~1,700 scores; `run_*_validation.py`, `compare_when_in_rome.py` |
 | Validate jazz analysis (single-line / Real Book) | Effendi, Omnibook | `tools/corpus_effendi_src/`, `tools/corpus_omnibook_src/omnibook_xml/` | No RNA ground truth — `compare_omnibook.py` heuristics |
 | Validate jazz analysis (big-band / multi-horn) | Rampageswing | `tools/corpus_rampageswing_full/` | 36 MXL; no ground truth |
@@ -141,8 +141,8 @@ annotation ground truth (consumed via `dcml_parser.find_wir_file`).
   `*.ours.json`, a copy of every `*.music21.json`, and a `corpus_manifest.json`
   (preset stamp + per-score sha256 + informational `music21_version`).
   `characterise_bir_false.py --corpus-dir tools/corpus/<preset>` validates the
-  manifest and refuses an incomplete/contaminated dir (Baroque 57, Jazz 23, Default 57 —
-  re-baselined 2026-06-13).
+  manifest and refuses an incomplete/contaminated dir (Baroque 53, Jazz 24, Default 53 —
+  re-baselined 2026-06-13 + L3-wiring delta 2026-06-26).
 
 ### music21 provenance (audit C2)
 
@@ -172,7 +172,7 @@ silently treat one as a superset of the other.
 distinct analysis files; some chorales share an analysis). **The other 27 scores can
 never produce a "genuine" gate error** — with no human-adjudicated Roman numeral there
 is nothing for `music21_dcml_agree` to agree *with*, so they are silently outside the
-denominator the BIR=false count (Baroque 57 / Jazz 23 / Default 57, re-baselined 2026-06-13)
+denominator the BIR=false count (Baroque 53 / Jazz 24 / Default 53, re-baselined 2026-06-13)
 is measured over. The headline gate
 therefore carries **three stacked qualifiers**, all narrowing what it sees:
 1. **human-adjudicated** — only the 326 WiR-covered chorales count;
@@ -182,7 +182,7 @@ therefore carries **three stacked qualifiers**, all narrowing what it sees:
    the user-visible per-beat error rate ~7× (CLAUDE.md gate-granularity caveat).
 
 A granularity-robust metric over the full annotated set is **roadmap 5.2** — until then,
-read "Baroque 57 / Jazz 23 / Default 57" as *candidate cases among the 326 human-covered
+read "Baroque 53 / Jazz 24 / Default 53" as *candidate cases among the 326 human-covered
 chorales at batch granularity*, not an absolute quality figure — and note (re-baseline
 2026-06-13) that ~95% of these are **legitimate ambiguity** (symmetric fully-diminished-7th,
 viio↔V7 share-tones; the genuinely-actionable subset is only ~9–10 Baroque / ~4 Jazz), so the

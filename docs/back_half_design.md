@@ -182,7 +182,7 @@ ceiling to accepted-ambiguity or flag it as a possible B-trigger. Derive, don't 
    **KeyArea spans** (the scaffold Stage 6 consumes) +
    hysteresis→path supersession. Gated as a behavior change (this ends the byte-identity
    era — resolved key feeds `analyzeChord`): the **57/23/57** gate identity sets (re-baselined
-   2026-06-13; Baroque 57 / Jazz 23 / Default 57, see CLAUDE.md) + snapshots +
+   2026-06-13; Baroque 57 / Jazz 23 / Default 57, see CLAUDE.md — *superseded 2026-06-26: live gate now 53/24/53, L3-wiring delta*) + snapshots +
    DCML-adjudicate every movement, on the L1 rung. The HMM path stays deferred; the 127
    convention cases route to accepted ambiguity (revisited under the Stage-6 KeyArea label
    contract). **Layer note (foundations Task 5):** composing PUBLIC-links engraving

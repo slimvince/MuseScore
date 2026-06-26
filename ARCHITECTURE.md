@@ -853,7 +853,10 @@ and it shares 5 of the canonical Jazz-7 (`bwv245.17/245.40/422/432/45.7`), while
 
 > **Re-baselined 2026-06-13 (corrected GT parser).** The figures in this paragraph are the
 > pre-re-baseline Stage-2.4 values. The corrected `tools/dcml_parser.py` (applied-`/X` +
-> minor-key leading-tone rooting) moves the gate to **Baroque 57 / Jazz 23 / Default 57** — a
+> minor-key leading-tone rooting) moves the gate to **Baroque 57 / Jazz 23 / Default 57**
+> *(Superseded 2026-06-26: the live gate is now **53 / 24 / 53** — the L3-wiring delta moved
+> 57/23/57 → 53/24/53; CLAUDE.md is authoritative for the current integers and `stem@tick`
+> identity sets, which this paragraph's pre-delta figures and Default-swap detail do not reflect)* — a
 > **strict superset** of the old 13/7/14 (0 lost, 100% oracle-correct roots; ~95% of the
 > additions are legitimate ambiguity). The `30/14` `analyze_inversion_errors` three-way figure
 > is **stale pending re-measurement**. The qualitative finding is unchanged: the live config is
