@@ -598,10 +598,10 @@ A "bridge function" is a free function that:
 
 The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
 (`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT —
-isolated) → per-slice analysis with context (L3) → grouping for display (LN).** Layer 1 is built
+wired, consumed by L3) → per-slice analysis with context (L3) → grouping for display (LN).** Layer 1 is built
 and ratified (commits `edd33901ed` standing oracle-root metric tool, `e30bb45a4f` the note model,
-`4055f89082` its coverage; pushed to the fork). Layer 2 is built as an isolated, fully-covered
-module (below), local commit pending Cowork verify + user ratify.
+`4055f89082` its coverage; pushed to the fork). Layer 2 is built as a fully-covered
+module (below) and is now **wired — L3 consumes the slicer** (`regionanalyzer.cpp:579`).
 
 | Module | Responsibility |
 |--------|----------------|
@@ -632,11 +632,13 @@ layer 3 and is **not** an unexplained regression (proven: a legacy reproduction 
 the prior oracle set byte-exactly). **Next: layer 3 (per-slice analysis).** See
 `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
 
-#### Layer 2 — the deterministic change-point slicer (2026-06-21, as-built, isolated)
+#### Layer 2 — the deterministic change-point slicer (2026-06-21, as-built; wired — consumed by L3)
 
 The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild. A pure, deterministic FACT
-read off the layer-1 note model, **not** a judgment and **not** wired into the live analysis
-pipeline (the segment-first spine keeps driving analysis until layer 3 consumes the slicer).
+read off the layer-1 note model, **not** a judgment. It **is** now wired into the live analysis
+pipeline: layer 3 consumes the slicer (`regionanalyzer.cpp:579` → `KeyModeSequenceDecoder`). The
+slicer's own output stays **byte-identical** on the whole-score live path (the clip is inert there);
+the analysis movement came from **L3's consumption** of the slices, not from the slicer.
 
 | Module | Responsibility |
 |--------|----------------|
@@ -692,8 +694,9 @@ byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golde
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
 `KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the SIGNED Layer-3
-key/mode design). This is the first layer of the rebuild to go **live** in the analysis pipeline
-(Layers 1–2 are built but isolated; Layer 3 here is wired).
+key/mode design). This is the first rebuilt analysis **decision** layer to go **live** in the
+pipeline — and this wiring is what connected Layer 2: it consumes Layer 1's note model and Layer 2's
+slicer (`changePointSlices(noteModel)`), so neither is isolated any longer.
 
 **As-wired data flow (the seam in `regionanalyzer::analyzeRegions`).** Reusing the whole-score
 `noteModel`, the path computes the signature context **once**
@@ -755,6 +758,15 @@ abstraction the callers populate):
 | `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |
 | `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |
 | `composing/analysis/section/sectionanalyzer.{h,cpp}` | Section-level unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection (`detectCadences`, `detectPivotChords`). Moved here in Stage 2.1 (Phase 4c). |
+| `composing/analysis/types/analysistypes.h` | **The cross-layer value-types LEAF** — a dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that cross the L1.5 / L3 / L4 boundaries: `ChordQuality`, `ChordAnalysisTone`, `ChordAnalyzerPreferences` (+ `kDefault`), `ChordTemporalContext`, `DecodeQualityLevel`, `function::ScoringPhase`, `ParameterBound`/`ParameterBoundsMap`, `KeySigMode`, `KeyModeAnalyzerPreferences` (+ `kDefault`), and the un-nested `PitchContext`. Each is a **pure relocation** from its former home (same name/namespace/layout). `chord/chordanalyzer.h` and `key/keymodeanalyzer.h` now `#include` this leaf, so every existing includer gets the types transitively, unchanged. |
+
+**Cross-layer types leaf removed two header back-edges (layering audit Q2).** Introducing
+`analysis/types/analysistypes.h` lets the L1.5 (`engravingbridge`) and L3 (`key`) headers compile
+**without** including the L4 (`chord`) headers, killing the two type-only header back-edges the
+audit found: `regiontonecollector.h → {chordanalyzer.h, keymodeanalyzer.h}` (now includes only the
+leaf) and `keymodeanalyzer.h → chord/analysisutils.h` (now includes only the leaf). `PitchContext`
+was **un-nested** out of `class KeyModeAnalyzer` into the leaf; that class keeps a member alias
+`using PitchContext = analysis::PitchContext;` so all call sites are unchanged.
 
 **Section-level analysis and the Pass-0 injection contract (Stage 2.1).** Section-level
 unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection —
@@ -1694,6 +1706,13 @@ struct PitchContext {
     bool isBass = false;         // Bass notes weighted 2× in analysis
 };
 ```
+
+**Relocation (types-leaf, as-built).** `PitchContext` was **un-nested** out of `class KeyModeAnalyzer`
+and now lives in the cross-layer value-types leaf header `composing/analysis/types/analysistypes.h`
+(pure relocation — same name, namespace `mu::composing::analysis`, layout, and definition).
+`KeyModeAnalyzer` keeps a member alias `using PitchContext = analysis::PitchContext;`, so existing
+call sites (`KeyModeAnalyzer::PitchContext`) are unchanged. See the types-leaf note under
+"Region Analysis — Canonical Modules" above.
 
 **Important:** In the current calling code, `durationWeight`, `beatWeight`, and
 `isBass` are populated from the score. The bridge collects a 16-beat lookback +

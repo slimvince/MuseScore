@@ -1,6 +1,11 @@
 # Architectural Layer 3 — reach-back (request extension for opening context) — detail design (Phase 3)
 
-> **Status: DRAFT for sign-off. Read-only design — no code.** Phase 3 of the L1–L3 stabilization plan, completing the
+> **Status: BUILT (capability, gated OFF by default — production stays whole-score).** The reach-back loop is built in
+> the orchestrator (`regionanalyzer.cpp:585–666`), riding on the Architectural Layer 1 `extend` (now built). The open
+> build-decision (§0 / §2) was resolved to the **parameter** form: `AnalyzeRegionsOptions::reachBack` on the existing
+> `analyzeRegions` (`opts.reachBack.enabled`, default false) — *not* a sibling orchestrator, so unification is
+> preserved (one build/slice/decode path). The §2/§3 algorithm and the measurement-corrected convergence below match
+> the as-built; only this status header lagged. Phase 3 of the L1–L3 stabilization plan, completing the
 > bounded-context model: when the **opening of the user's selection has no settled key**, Architectural Layer 3 asks
 > Architectural Layer 1 to **extend earlier** until the prevailing key is in view, then re-slices and re-decodes over
 > the enlarged span. This is **algorithmic completion of the designed bounded-context contract**
@@ -10,11 +15,16 @@
 
 ## 0. CORRECTION after §7 verification (production is whole-score today — read this first)
 The §7 read-only verification (CC, cited in `cc_layer3_reachback_verify_report.md`) found that the production
-orchestrator `analyzeRegions` (`regionanalyzer.cpp:488`) **builds whole-score on every path** (`build(score)`,
-1-arg) **regardless of the `[startTick, endTick)` range** — the range only drives which regions are *emitted*, not
-what is analysed. So **none of the bounded-context model is engaged in production**; the decode is always whole-score.
-This corrects two things below: §2 step 1's "as today" is wrong (there is no selection-scoped decode today), and
-reach-back can only fire once *something* builds over the selection.
+orchestrator `analyzeRegions` (now at `regionanalyzer.cpp:506`; the cited `:488` has drifted) **builds whole-score on
+the production/default path** (`build(score)`, 1-arg) **regardless of the `[startTick, endTick)` range** — the range
+only drives which regions are *emitted*, not what is analysed. **As-built update:** the build is now **conditional**
+(`regionanalyzer.cpp:536–538`): `opts.reachBack.enabled ? build(score, start, end) : build(score)` — whole-score on
+the production/default path (reach-back default false), selection-scoped only when reach-back is enabled. So the
+*spirit* of this correction still holds — **none of the bounded-context model is engaged in production; the production
+decode is always whole-score, and reach-back never fires there** — but the literal "builds whole-score on *every*
+path" is superseded by the conditional build. This corrects two things below: §2 step 1's "as today" is wrong (there
+is no selection-scoped decode on the production path), and reach-back can only fire once *something* (the reach-back
+parameter) builds over the selection.
 
 **Phase-3 scope (user-ratified, option A):** build reach-back **as a tested capability** — a **selection-aware
 orchestration path** (build over the selection → slice → decode → reach-back loop → output-filter) — with the

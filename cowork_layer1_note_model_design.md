@@ -95,11 +95,12 @@ notation system's tie information (which written notes are tied to which).
   range first built, and take in the additional notes, for a later architectural layer that needs more musical
   context than the user's selection provided. This is the **extend** operation of the bounded-context contract —
   designed in full in `cowork_bounded_context_design.md` (build over a selection, then extend on request; append-only;
-  clamp at the score boundary and report it). **(Designed, not yet built — verified 2026-06-24: no extend operation
-  exists in the note model. It is a genuine requirement of the selection-based product, not optional: Architectural
-  Layer 3's reach-back depends on it. It is currently only *masked* — the build still reads the whole score (§11), so
-  pre-selection context happens to be in memory and no extension is yet requested. When §11 is fixed to load the
-  selection, this operation must land with it.)**
+  clamp at the score boundary and report it). **(Built — Phase-1a: `extend(Direction, int)`, `boundaryReached()`, and
+  the loaded/selection-span accessors exist in `note_model.h` and behave to the contract — append-only, exactly one
+  step, no convergence loop, clamp at the score boundary and report it. It was built *decoupled* from the §11
+  whole-score-load fix: the interim implementation itself re-walks the whole score and re-filters to the enlarged
+  loaded span (byte-identical to a fresh build over that span); the span-scoped walk is the deferred Phase-1b.
+  Architectural Layer 3's reach-back is written against it.)**
 **Who uses Architectural Layer 1 (its consumers):** the derived summary views that condense notes into pitch
 evidence for scoring (`weightedPcView`, `soundingAt`); the Architectural Layer 2 slicer; the Architectural Layer 3
 key/mode code. **What Architectural Layer 1 deliberately knows nothing about:** keys, chords, and function — it sits
@@ -201,9 +202,12 @@ outlive the note model), and the numeric look-up index.
 - **The build currently reads the whole score even when only part of it is queried** — an **interim** behaviour, not
   the target. The product is selection-based (`cowork_bounded_context_design.md`): the target is *build over the
   selection, then extend on request*. Loading the whole score is the degenerate case (selection = score) and is what
-  keeps the batch-testing path unchanged, but it currently **masks** the missing *extend* operation (§3). Fixing this
-  and building *extend* are one coupled change; the build-selection + extend **contract** is what every layer above is
-  written against, so the interim is invisible to them.
+  keeps the batch-testing path unchanged. The *extend* operation (§3) is **now built** (Phase-1a), so the whole-score
+  build no longer masks a missing capability — it only means *extend*'s interim implementation re-walks the whole score
+  rather than a span-scoped slice. The earlier framing that "fixing the whole-score build and building *extend* are one
+  coupled change" is **superseded**: *extend* was built **decoupled** (Phase-1a, whole-score re-walk, byte-identical),
+  with the span-scoped walk deferred to Phase-1b. The build-selection + extend **contract** is what every layer above
+  is written against, so the interim is invisible to them.
 
 ## 12. Glossary
 *(Only terms we coined or use in a specific way — standard musical terms are assumed known.)*

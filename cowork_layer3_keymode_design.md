@@ -113,11 +113,13 @@ Section 11.)
   Layer 3 is the *requester* of more music; Architectural Layer 1 is the *supplier*. This reach-back **is an extension
   request** in the bounded-context contract (`cowork_bounded_context_design.md`): direction = earlier in time, stop
   condition = *"the prevailing key before the selection is in view,"* hard bound = a maximum reach, terminating at the
-  score start. **(Designed, not yet built — verified 2026-06-24: no reach-back/extend code exists at either layer. It
-  is a genuine requirement of the selection-based product — without it, the key at the leading edge of a selection is
-  inferred with no earlier context — currently only *masked* because the note model still loads the whole score
-  (Architectural Layer 1 §11). It must land together with selection-based loading. The scenarios and glossary below
-  describe the designed behaviour, not present code.)**
+  score start. **(Built — gated OFF by default. The reach-back loop is built in the orchestrator
+  (`regionanalyzer.cpp:585–666`): trigger = the selection's leading-edge slice is unsettled, action = ask
+  Architectural Layer 1 to `extend(Earlier)` → re-slice (Layer 2) → re-decode (Layer 3), repeated until the
+  leading-edge key stops changing, the hard bound (max reach) is hit, or the score start is reached; output = the
+  selection only. It rides on Architectural Layer 1's `extend` (now built). It is a **parameter** on `analyzeRegions`
+  (`opts.reachBack.enabled`, default false), so the production path stays whole-score and reach-back never fires
+  there. The scenarios and glossary below describe the as-built behaviour.)**
 - **It is not responsible for noticing when the score has been edited.** Deciding that the analysis is out of date
   and must be re-run is the caller's responsibility, not Architectural Layer 3's.
 - **The score's written key signature is treated as a weak hint only, not as the truth** — the key/mode is inferred
@@ -320,8 +322,9 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   non-Bach-opening fragility**, structurally **invisible to the Bach-only BIR gate** (the notation tests are the guard
   that caught it). The **scale-membership lever does NOT fix it** (measured: 15× the scale penalty never flips F→C —
   the char/lt terms are *presence-gated*, not weight-scaled). **Fix = de-brittle the gate (weight-scale the char/lt
-  terms); a Layer-3 emission increment scheduled in Phase 4 of the stabilization plan — not a foundation patch.** Full
-  diagnosis: `cc_keyregression_diagnosis_report.md`.
+  terms); a Layer-3 emission increment scheduled for **Phase B (B2)** of the stabilization plan — leading-tone
+  de-brittling is inference-quality, behind the inference firewall, *not* the Phase-4 tpc-capability foundation —
+  not a foundation patch.** Full diagnosis: `cc_keyregression_diagnosis_report.md`.
 - **One key/mode fix is deferred to wiring.** The fix for the stable-region under-weighting is a change to the shared
   per-window scorer; because that scorer is also used by the current per-region resolver, changing it now would move
   production output, so it is specified and deferred to the wiring increment — when the decoder replaces the resolver

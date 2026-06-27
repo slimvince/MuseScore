@@ -42,8 +42,10 @@ covers the analysed span.
 - **It uses Architectural Layer 1's "counts toward tonal analysis" markings; it does not re-decide them.** Whether a
   note sounds, is visible, and is on a tonal staff was already decided and marked by Architectural Layer 1;
   Architectural Layer 2 reads those marks and does not second-guess them.
-- **Not yet connected into the live analysis pipeline:** Architectural Layer 2 is built and tested on its own; it
-  does not yet change any analysis output. It will be connected when Architectural Layer 3 is rebuilt to read slices.
+- **Connected into the live analysis pipeline:** Architectural Layer 3 now reads the slices —
+  `regionanalyzer.cpp:579` calls `changePointSlices(noteModel)` and feeds the result to the key-mode sequence decoder.
+  The slicer itself still produces byte-identical slices on the whole-score live path (the clip is inert there); the
+  analysis movement came from **Architectural Layer 3's consumption** of the slices, not from the slicer.
 - **Works on the user's selected music, at any size and in any musical style;** the work it does grows only in
   proportion to the number of notes.
 
@@ -148,8 +150,9 @@ an ordered list of slices that covers the analysed span from its first boundary 
   with no gaps or overlaps; a genuinely constant tonal-note set inside each slice; no missing or invented
   boundaries; and identical output on a second run. All 353 passed.
 - **Every branch of Architectural Layer 2's code is exercised by a test.**
-- **Isolation check:** because Architectural Layer 2 is not yet connected to the live analyzer, both automated test
-  suites and the pinned analysis outputs are unchanged by its existence.
+- **Isolation check (at build time, before wiring):** the slicer was confirmed to leave both automated test suites and
+  the pinned analysis outputs unchanged by its existence. It is now connected (Architectural Layer 3 reads the slices,
+  `regionanalyzer.cpp:579`); the slicer's own output stays byte-identical on the whole-score live path.
 - **Regression tests (source):** `src/composing/tests/slicer_tests.cpp` (the behaviour + edge tests); the
   whole-corpus check is `tools/batch_analyze --validate-slices` driven by `tools/validate_slices_corpus.py`.
 
@@ -159,8 +162,9 @@ an ordered list of slices that covers the analysed span from its first boundary 
   job — not solved here.
 - **How often slices are redundant depends on the music** — on the chorale test pieces almost no slice is redundant;
   denser textures (sustained pedals, broken chords) would produce more, which the grouping layer merges regardless.
-- **Not yet connected into the live analysis pipeline** — Architectural Layer 2 is isolated until Architectural
-  Layer 3 reads slices; its coexistence with the old machinery during that transition is described in Section 13.
+- **Connected into the live analysis pipeline** — Architectural Layer 3 now reads the slices
+  (`regionanalyzer.cpp:579`), the retirement trigger this risk anticipated; its coexistence with the old machinery
+  during that transition is described in Section 13.
 
 ## 12. Glossary
 *(Only terms we coined or use in a specific way — standard musical terms are assumed known.)*

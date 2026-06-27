@@ -1,6 +1,10 @@
 # tpc spelling capability — the shared spelling primitive (Phase 4, the maximal-information foundation) — detail design
 
-> **Status: DRAFT for sign-off. Read-only design — no code.** Phase 4 of the L1–L3 stabilization plan, the **last
+> **Status: BUILT (capability-only, no production consumer).** The shared spelling primitive is built and unit-tested
+> — `src/composing/analysis/engravingbridge/spellingview.{h,cpp}` (+ `tests/spellingview_tests.cpp`). It lives in the
+> engravingbridge derived-view seam beside `weightedPcView`/`soundingAt`; nothing in production reads it yet (grep
+> confirms only the build, the test, and the primitive itself reference it). The design body below is otherwise
+> accurate as-built. Phase 4 of the L1–L3 stabilization plan, the **last
 > build-it-right step before L4**. It builds the **maximal-information capability**: the algorithm should use the
 > *notated spelling* the score gives us, not bare pitch class. Architectural Layer 1 already carries the tonal pitch
 > class per note (`NoteEvent.tpc`, a line-of-fifths spelling, real range `−8 … 40`; verified at source). Phase 4 builds the **one

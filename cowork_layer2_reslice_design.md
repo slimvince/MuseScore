@@ -1,6 +1,10 @@
 # Architectural Layer 2 — slicing under bounded context (re-slice on extend) — detail design (Phase 2)
 
-> **Status: DRAFT for sign-off. Read-only design — no code.** Phase 2 of the L1–L3 stabilization plan: make
+> **Status: BUILT.** The loaded-span clip is built — `slicer.cpp:63–97` (clip the multiset to
+> `[max(loadedStart, front), min(loadedEnd, back))`, inject the two endpoints, re-establish sorted-unique; inert and
+> byte-identical on the whole-score live path). The §5 "decision to confirm at build" was taken: the `Slice` is kept
+> **minimal** (`struct Slice { int start; int end; }`, no selection-vs-context annotation) — the consuming layer
+> computes in-selection/context from the model's selection span. Phase 2 of the L1–L3 stabilization plan: make
 > Architectural Layer 2 produce slices for whatever span Architectural Layer 1 currently holds, and behave correctly
 > when that span is **extended** (the bounded-context contract, `cowork_bounded_context_design.md`). The good news,
 > established below, is that slicing is a **pure, stateless function** of (the loaded notes, the loaded span), so the
@@ -81,7 +85,9 @@ L2 produces slices for the **loaded** span; the **output** is only the **selecti
 no analysis judgement — it just slices — so the selection-vs-context distinction is a **thin annotation**: either tag
 each slice in-selection/context from the model's selection span, or leave it to the consumer to compute from
 `selectionStart/End`. Recommended: compute it at the consuming layer (keep the `Slice` minimal — `[start,end)` only,
-per the L2 spec), since L2 owns no selection semantics. **Decision to confirm at build.**
+per the L2 spec), since L2 owns no selection semantics. **Decision taken at build: the `Slice` is minimal
+(`struct Slice { int start; int end; }`) — no in-selection/context tag; the consumer derives it from the model's
+selection span.**
 
 ## 6. Invariants & tests (the gate)
 1. **Degenerate byte-identity:** for the whole-score loaded span, the slices are **byte-identical** to today — the

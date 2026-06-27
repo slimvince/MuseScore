@@ -64,9 +64,11 @@
 //     invented (no eligible note bounds it).
 //   * DETERMINISTIC + O(n log n). Same input model -> same slices, every run.
 //
-// It is NOT wired into the live analysis pipeline (the old segment-first
-// machinery keeps running until layer 3 consumes the slicer). It changes no
-// analysis behavior. See cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
+// It IS wired into the live analysis pipeline: layer 3 consumes the slices
+// (regionanalyzer.cpp:579 -> KeyModeSequenceDecoder::decode). The slicer's own
+// output stays byte-identical on the whole-score live path (the clip is inert
+// there) — the analysis movement came from layer 3's CONSUMPTION of the slices,
+// not from the slicer. See cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
 
 #include <vector>
 
