@@ -168,26 +168,6 @@ bool isChordToneOfAny(const std::vector<const ChordSliceCandidate*>& chords, int
     return false;
 }
 
-/// Inherit-consistency (design §5 step 4, the "inherit on insufficiency" fallback):
-/// are ALL of the slice's focal notes consistent with the prevailing chord? For
-/// Step-1 (G1) this is the conservative TEMPLATE-ONLY reading — every focal pitch
-/// class is a template tone of the prevailing chord (covers the spec's documented
-/// inherit cases: the single C#-over-A-major thin slice whose C# is the chord's
-/// third, and the dyad that is a subset of the prevailing chord). The looser
-/// "... or a stepwise embellishment of it" relaxation depends on the membership
-/// stepwise machinery and is deferred to the G2 membership refinement (Step 2), so
-/// G1 stays decoupled from the still-flat membership ladder.
-bool notesConsistentWithPrevailing(const ChordSliceCandidate& prevailing,
-                                   const std::vector<FocalNote>& focal)
-{
-    for (const FocalNote& f : focal) {
-        if (!function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {
-            return false;
-        }
-    }
-    return true;
-}
-
 /// Metric salience of a focal note: beat-weight [0.5,1] scaled by how close it is to
 /// full length. A weak / short note is embellishment-like (design §1).
 double noteSalience(const FocalNote& f, const ChordSliceDecoderPreferences& dp)
@@ -203,18 +183,32 @@ inline bool isSemitoneStep(int p1, int p2)
     return d == 1 || d == 2;   // chromatic step (minor/major 2nd) — melodic passing/neighbour
 }
 
-/// Local stepwise treatment of a focal note within the window (design §1): a
-/// passing/neighbour tone (approached AND left by step, between chord tones) or a
-/// suspension (a tone held from the previous chord that resolves DOWN by step to a
-/// chord tone). Per-voice / melodic; uses the neighbour chords as context only — never
-/// a chord-to-chord transition cost (that is Layer 5). prevChord / nextChord may be
-/// absent (boundary / two-pass-off) — then only the cues that do not need them fire.
-bool isStepwiseTreated(const FocalNote& note,
-                       const std::vector<FocalNote>& window,
-                       const ChordSliceCandidate& chord,
-                       const ChordSliceCandidate* prevChord,
-                       const ChordSliceCandidate* nextChord,
-                       const ChordSliceDecoderPreferences& dp)
+// ── The three-tier membership ladder (design §5 step 3) ──────────────────────
+//
+// Stepwise STRUCTURE is the decisive signal; metric weight enters ONLY at the third
+// tier. The per-side step signals (from/to a chord tone) are computed once and the
+// ladder + the plausibility check (G3) read them.
+
+/// Per-side stepwise structure of a focal note within its window (design §5 step 3 /
+/// §1): approached AND adjacent by step from a chord tone (stepIn), left by step to a
+/// chord tone (stepOut), or held from the previous chord and resolving DOWN by step to
+/// a chord tone (suspension). Per-voice / melodic; the neighbour chords are context only
+/// (never a chord-to-chord transition cost — that is Layer 5). prevChord / nextChord may
+/// be absent (boundary / two-pass-off) — then only the cues that do not need them fire.
+struct StepwiseSignals {
+    bool stepIn = false;      ///< approached by step from a chord tone
+    bool stepOut = false;     ///< left by step to a chord tone
+    bool leapIn = false;      ///< a melodic predecessor exists and is reached by leap (not a step)
+    bool leapOut = false;     ///< a melodic successor exists and is left by leap (not a step)
+    bool suspension = false;  ///< held from the previous chord, resolves down by step to a CT
+};
+
+StepwiseSignals stepwiseSignals(const FocalNote& note,
+                                const std::vector<FocalNote>& window,
+                                const ChordSliceCandidate& chord,
+                                const ChordSliceCandidate* prevChord,
+                                const ChordSliceCandidate* nextChord,
+                                const ChordSliceDecoderPreferences& dp)
 {
     const int tol = std::max(0, dp.stepwiseGapToleranceTicks);
 
@@ -240,15 +234,16 @@ bool isStepwiseTreated(const FocalNote& note,
     const std::vector<const ChordSliceCandidate*> prevOrThis = { prevChord, &chord };
     const std::vector<const ChordSliceCandidate*> thisOrNext = { &chord, nextChord };
 
-    const bool leftToCT = succ && isSemitoneStep(note.pitch, succ->pitch)
-                          && isChordToneOfAny(thisOrNext, succ->pc());
-    const bool approachedFromCT = pred && isSemitoneStep(pred->pitch, note.pitch)
-                                  && isChordToneOfAny(prevOrThis, pred->pc());
-
-    // Passing / neighbour: stepwise in and stepwise out, between chord tones.
-    if (approachedFromCT && leftToCT) {
-        return true;
-    }
+    StepwiseSignals s;
+    s.stepIn  = pred && isSemitoneStep(pred->pitch, note.pitch)
+                && isChordToneOfAny(prevOrThis, pred->pc());
+    s.stepOut = succ && isSemitoneStep(note.pitch, succ->pitch)
+                && isChordToneOfAny(thisOrNext, succ->pc());
+    // A leap = a melodic neighbour exists but is NOT a step (interval ≥ a minor third).
+    // "Reached/left by leap" needs a neighbour: an ISOLATED note (no neighbour) is neither
+    // a step nor a leap on that side — it is open, and the ladder leaves it to metric weight.
+    s.leapIn  = pred && !isSemitoneStep(pred->pitch, note.pitch);
+    s.leapOut = succ && !isSemitoneStep(note.pitch, succ->pitch);
 
     // Suspension: belongs to the previous chord, resolves DOWN by step to a chord tone.
     const bool heldFromPrev = prevChord
@@ -256,10 +251,97 @@ bool isStepwiseTreated(const FocalNote& note,
                                                                    prevChord->tiePriority, note.pc());
     const bool resolvesDown = succ && (note.pitch - succ->pitch) >= 1 && (note.pitch - succ->pitch) <= 2
                               && isChordToneOfAny({ &chord }, succ->pc());
-    if (heldFromPrev && resolvesDown) {
-        return true;
+    s.suspension = heldFromPrev && resolvesDown;
+    return s;
+}
+
+/// The outcome of running ONE focal note through the three-tier ladder against a chord.
+struct ToneOutcome {
+    bool chordTone = false;          ///< structural — a chord-tone (extension) of the chord
+    bool tier1Embellishing = false;  ///< Tier 1 (passing/neighbour/suspension) — the plausibility trigger
+};
+
+/// Classify a focal note against @p chord by the three-tier structure-first ladder
+/// (design §5 step 3):
+///   * Tier 1 — stepwise-embellishing (a passing/neighbour tone between chord tones, or
+///     a suspension) → NON-CHORD TONE, regardless of metric weight (the accented passing
+///     tone metric weight alone would misclassify).
+///   * Tier 2 — no stepwise connection: reached AND left by LEAP (both melodic neighbours
+///     present, both leaps) → CHORD-TONE EXTENSION, regardless of metric weight (the weak
+///     leap / arpeggiated tone metric weight alone would wrongly call an embellishment).
+///   * Tier 3 — stepwise on ONE side only (appoggiatura / escape / incomplete neighbour)
+///     → metric weight adjudicates: a note that resolves by step into a chord tone is a
+///     non-chord tone (appoggiatura); an escape tone is decided by weight.
+/// So both-sides-stepwise and both-sides-leap are settled by structure alone; metric
+/// weight adjudicates the one-sided case AND any note the three tiers do not cover — an
+/// ISOLATED note (no melodic neighbour) or a single-sided open/leap note — which is
+/// neither a clean embellishment nor a clean arpeggiation and is left to its salience.
+ToneOutcome classifyTone(const FocalNote& note,
+                         const std::vector<FocalNote>& window,
+                         const ChordSliceCandidate& chord,
+                         const ChordSliceCandidate* prevChord,
+                         const ChordSliceCandidate* nextChord,
+                         const ChordSliceDecoderPreferences& dp)
+{
+    const StepwiseSignals s = stepwiseSignals(note, window, chord, prevChord, nextChord, dp);
+    ToneOutcome o;
+
+    // Tier 1 — stepwise-embellishing → non-chord tone, regardless of metric weight.
+    if (s.suspension || (s.stepIn && s.stepOut)) {
+        o.chordTone = false;
+        o.tier1Embellishing = true;
+        return o;
     }
-    return false;
+    // Tier 3 — stepwise on ONE side only.
+    if (s.stepIn || s.stepOut) {
+        // An appoggiatura resolves by step INTO a chord tone (stepOut) → non-chord tone;
+        // an escape tone (stepIn only, leaps away) is decided by metric weight.
+        o.chordTone = s.stepOut ? false
+                                : (noteSalience(note, dp) >= dp.membershipSalienceThreshold);
+        return o;
+    }
+    // Tier 2 — reached AND left by leap (both neighbours present, both leaps) → structural
+    // chord-tone extension, regardless of metric weight (the arpeggiated weak leap).
+    if (s.leapIn && s.leapOut) {
+        o.chordTone = true;
+        return o;
+    }
+    // Fallthrough — an isolated note, or a single open/leap side: not a clean embellishment
+    // nor a clean arpeggiation. Metric weight is the only signal left.
+    o.chordTone = noteSalience(note, dp) >= dp.membershipSalienceThreshold;
+    return o;
+}
+
+/// Inherit-consistency (design §5 step 4, the "inherit on insufficiency" fallback —
+/// the G2 RELAXATION): are ALL of the slice's focal notes consistent with the prevailing
+/// chord, each being a template tone of it OR a STEPWISE EMBELLISHMENT (a non-chord tone)
+/// of it? A focal note that is a STRUCTURAL extension of the prevailing chord (a real
+/// foreign chord tone — Tier 2, or a metrically-asserted Tier 3) is NOT an embellishment:
+/// the slice is a new chord, not a continuation, so it does not inherit. (Step-1/G1
+/// tested template tones ONLY — the conservative reading deferred to here; the membership
+/// ladder now supplies the "... or a stepwise embellishment of it" relaxation, converting
+/// abstains on thin embellishment slices into correct inherits.) @p window is the broader
+/// note stream the per-voice stepwise test reads (focal ⊆ window); an EMPTY window
+/// degrades to the conservative template-only reading (a non-template note has no melodic
+/// neighbours → Tier 2 → structural → inconsistent).
+bool notesConsistentWithPrevailing(const ChordSliceCandidate& prevailing,
+                                   const std::vector<FocalNote>& focal,
+                                   const std::vector<FocalNote>& window,
+                                   const ChordSliceCandidate* prevChord,
+                                   const ChordSliceCandidate* nextChord,
+                                   const ChordSliceDecoderPreferences& dp)
+{
+    for (const FocalNote& f : focal) {
+        if (function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {
+            continue;   // a chord tone of the prevailing chord — consistent
+        }
+        const ToneOutcome o = classifyTone(f, window, prevailing, prevChord, nextChord, dp);
+        if (o.chordTone) {
+            return false;   // a structural foreign note → not an embellishment of prevailing
+        }
+        // else: a stepwise embellishment (non-chord tone) of the prevailing chord — consistent.
+    }
+    return true;
 }
 
 /// Run the existing scorer over a slice's window and project the surfaced
@@ -398,9 +480,9 @@ MembershipResult ChordSliceDecoder::classifyMembership(
     const ChordSliceCandidate* prevC = prevChord.has_value() ? &*prevChord : nullptr;
     const ChordSliceCandidate* nextC = nextChord.has_value() ? &*nextChord : nullptr;
 
-    // Aggregate per pc: a pc is a chord tone if it is a template tone OR at least one
-    // of its focal notes is a chord-tone extension; a non-chord tone only when EVERY
-    // focal note of that pc is embellishment-like.
+    // Aggregate per pc: a pc is a chord tone if it is a template tone OR at least one of
+    // its focal notes classifies as a structural chord-tone extension; a non-chord tone
+    // only when EVERY focal note of that pc is embellishment-like (design §5 step 3).
     bool present[12] = {};
     bool anyChordTone[12] = {};
 
@@ -408,23 +490,32 @@ MembershipResult ChordSliceDecoder::classifyMembership(
         const int pc = f.pc();
         present[pc] = true;
 
-        if (function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, pc)) {
-            anyChordTone[pc] = true;   // a basic template tone — always a chord tone
-            continue;
+        const bool isTemplate = function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, pc);
+        const ToneOutcome o = classifyTone(f, window, chord, prevC, nextC, dp);
+
+        if (isTemplate) {
+            // A required (template) tone is a chord tone of THIS chord. But it is NOT
+            // exempt from the behaviour test — running it through the SAME ladder IS the
+            // plausibility check (design §5 step 3, G3, the Step-2 ADDITION): a template
+            // tone that behaves as a Tier-1 stepwise embellishment makes the candidate
+            // IMPLAUSIBLE — it forces a passing tone to be a required chord member (the
+            // spurious seventh of a triad, or the passing D heard as Cadd9's ninth). This
+            // is the direction the OLD extra-note-only penalty could NOT catch (Step-0 G3).
+            anyChordTone[pc] = true;
+            if (o.tier1Embellishing) {
+                r.implausibilityPenalty += noteSalience(f, dp);
+            }
+        } else if (o.chordTone) {
+            // An "extra" note (pc not in the basic template) the chord can only absorb as an
+            // added 6th/9th/… — the membership→selection feedback (design §4 step 2, the cue
+            // Step-0 G3 noted the old penalty "catches one way"): a chord that leaves a
+            // STRUCTURAL focal note outside its basic template is a worse explanation of the
+            // FOCAL slice than one whose template already includes it (the richer-chord
+            // direction — it gives the focal-fitting chord its selection margin). Charged.
+            anyChordTone[pc] = true;
+            r.implausibilityPenalty += noteSalience(f, dp);
         }
-        // An "extra" note (pc not in the chord's basic template). Embellishment-like —
-        // weak metric salience OR locally stepwise — ⇒ non-chord tone; otherwise a
-        // chord-tone extension (the sustained strong 6th/9th that "falls out", design §5)
-        // and the candidate is charged its salience as an implausible chord tone it needs.
-        const double sal = noteSalience(f, dp);
-        const bool weak = sal < dp.membershipSalienceThreshold;
-        const bool stepwise = isStepwiseTreated(f, window, chord, prevC, nextC, dp);
-        if (weak || stepwise) {
-            // non-chord tone — no penalty (the chord explains it as an embellishment).
-        } else {
-            anyChordTone[pc] = true;            // chord-tone extension
-            r.implausibilityPenalty += sal;     // a structural note outside the basic template
-        }
+        // else: an extra, embellishment-like note — a non-chord tone, no penalty.
     }
 
     for (int pc = 0; pc < 12; ++pc) {
@@ -458,7 +549,10 @@ int ChordSliceDecoder::templateTonePresenceCount(const ChordSliceCandidate& chor
 void ChordSliceDecoder::applyCommitDecision(
     SliceChord& sc,
     const std::vector<FocalNote>& focal,
+    const std::vector<FocalNote>& window,
     const std::optional<ChordSliceCandidate>& prevailing,
+    const std::optional<ChordSliceCandidate>& prevChord,
+    const std::optional<ChordSliceCandidate>& nextChord,
     const ChordSliceDecoderPreferences& dp)
 {
     if (!dp.enableCommitDecision) {
@@ -487,10 +581,14 @@ void ChordSliceDecoder::applyCommitDecision(
     }
 
     // Inherit: a thin (insufficient) slice whose notes are all consistent with the
-    // prevailing chord carries it forward, rather than naming a phantom. (A slice that
-    // is sufficient but merely loses on margin is NOT inherited — it abstains.)
+    // prevailing chord — each a template tone of it OR a stepwise embellishment of it
+    // (the G2 membership-ladder relaxation) — carries it forward, rather than naming a
+    // phantom. (A slice that is sufficient but merely loses on margin is NOT inherited —
+    // it abstains.)
     if (!sufficient && prevailing.has_value()
-        && notesConsistentWithPrevailing(*prevailing, focal)) {
+        && notesConsistentWithPrevailing(*prevailing, focal, window,
+                                         prevChord.has_value() ? &*prevChord : nullptr,
+                                         nextChord.has_value() ? &*nextChord : nullptr, dp)) {
         sc.chosen = *prevailing;
         sc.decision = SliceDecision::Inherit;
         sc.uncertain = false;   // an inherited prevailing chord is a committed answer
@@ -561,8 +659,9 @@ SliceChord finalizeSlice(int t, const SliceWork& w,
     SliceChord sc = ChordSliceDecoder::decideSlice(t, adj, prevailing, dp);
     // G1 — commit / inherit / abstain (design §4 step 3, §5 step 4). Decided BEFORE
     // membership so the per-note classification reflects the FINAL chord (the inherited
-    // prevailing chord on Inherit; nothing on Abstain).
-    ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);
+    // prevailing chord on Inherit; nothing on Abstain). The window + provisional neighbour
+    // chords feed the G2 stepwise-embellishment inherit relaxation.
+    ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing, prevC, nextC, dp);
     if (sc.hasChord) {
         const MembershipResult mc =
             ChordSliceDecoder::classifyMembership(sc.chosen, w.focal, w.window, prevC, nextC, dp);
@@ -605,7 +704,10 @@ std::vector<SliceChord> decodeWindowed(
             const SliceWork w = buildSliceWork(analyzer, slices, model, t, keyFifths, keyMode,
                                                prefs, dp, excludeStaves);
             SliceChord sc = ChordSliceDecoder::decideSlice(t, w.cands, prevailing, dp);
-            ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);   // G1
+            // Membership disabled → no provisional neighbour chords for the stepwise
+            // relaxation; inherit degrades to the template-only consistency reading.
+            ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing,
+                                                   std::nullopt, std::nullopt, dp);   // G1
             if (sc.hasChord) { prevailing = sc.chosen; }
             if (t >= outFirst) { out.push_back(std::move(sc)); }
         }

@@ -76,8 +76,10 @@ ChordSliceCandidate cand(int rootPc, ChordQuality quality, int bassPc, double sc
 }
 
 // kMasks template indices used by the membership tests (mirrors harmonicfunctionlayer
-// kMasks): 0 = major triad {0,4,7}, 4 = minor triad {0,3,7}, 2 = dom7 {0,4,7,10}.
+// kMasks / chordanalyzer kTemplateIntervals): 0 = major triad {0,4,7}, 1 = Maj7
+// {0,4,7,11}, 4 = minor triad {0,3,7}, 2 = dom7 {0,4,7,10}.
 constexpr int kTieMajor = 0;
+constexpr int kTieMaj7  = 1;
 constexpr int kTieMinor = 4;
 
 ChordSliceCandidate triad(int rootPc, ChordQuality q, int tie)
@@ -285,8 +287,9 @@ TEST(Composing_DecodeChord, Memb_WeakExtraIsNonChordTone)
     EXPECT_DOUBLE_EQ(m.implausibilityPenalty, 0.0) << "an embellishment costs the chord nothing";
 }
 
-// A sustained, strong extra note (a 6th) is a chord-tone extension — it "falls out"
-// of membership (design §5), and the basic triad is charged for needing it.
+// A sustained, strong extra note (a 6th) is a chord-tone extension — it "falls out" of
+// membership (design §5) and the basic triad is charged for absorbing it (the richer-chord
+// selection feedback: a chord whose template already had it would not need to).
 TEST(Composing_DecodeChord, Memb_StrongSustainedExtraIsChordToneExtension)
 {
     const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);   // C major
@@ -294,12 +297,12 @@ TEST(Composing_DecodeChord, Memb_StrongSustainedExtraIsChordToneExtension)
         note(60, 0, 1920, 3, 1.0, 4.0),   // C
         note(64, 0, 1920, 2, 1.0, 4.0),   // E
         note(67, 0, 1920, 1, 1.0, 4.0),   // G
-        note(69, 0, 1920, 0, 1.0, 4.0),   // A — strong + full length, extra → the 6th
+        note(69, 0, 1920, 0, 1.0, 4.0),   // A — strong + full length, no step → the 6th (Tier 2)
     };
     const MembershipResult m = CSD::classifyMembership(c, focal, focal, std::nullopt, std::nullopt);
     EXPECT_TRUE(hasPc(m.chordTonePcs, 9)) << "a sustained strong 6th is a chord tone (C6)";
     EXPECT_FALSE(hasPc(m.nonChordTonePcs, 9));
-    EXPECT_GT(m.implausibilityPenalty, 0.0) << "the basic triad is charged for the extra it needs";
+    EXPECT_GT(m.implausibilityPenalty, 0.0) << "the basic triad is charged for the strong extra it absorbs";
 }
 
 // A suspension: a tone held from the previous chord that resolves DOWN by step to a
@@ -405,7 +408,7 @@ TEST(Composing_DecodeChord, G1_CleanTriadCommits)
         note(64, 0, 1920, 2, 1.0, 4.0),   // E
         note(67, 0, 1920, 1, 1.0, 4.0),   // G
     };
-    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Commit);
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 0);
@@ -423,7 +426,7 @@ TEST(Composing_DecodeChord, G1_PhantomRootAbstains)
     };
     SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // margin 2.5, not uncertain
     const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
-    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "a new symbol is never committed from too few notes (the phantom-root rule)";
     EXPECT_FALSE(sc.hasChord);
@@ -444,7 +447,7 @@ TEST(Composing_DecodeChord, G1_ThinSliceInheritsPrevailing)
     };
     SliceChord sc = CSD::decideSlice(0, cands, prevailing);
     const std::vector<FocalNote> focal = { note(61, 0, 480, 0, 1.0, 1.0) };   // C# only (pc 1)
-    CSD::applyCommitDecision(sc, focal, prevailing);
+    CSD::applyCommitDecision(sc, focal, focal, prevailing, std::nullopt, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Inherit);
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 9) << "inherits the prevailing A major";
@@ -463,7 +466,7 @@ TEST(Composing_DecodeChord, G1_ThinSliceForeignToPrevailingAbstains)
     };
     SliceChord sc = CSD::decideSlice(0, cands, prevailing);
     const std::vector<FocalNote> focal = { note(65, 0, 480, 0, 1.0, 1.0) };   // F only (pc 5)
-    CSD::applyCommitDecision(sc, focal, prevailing);
+    CSD::applyCommitDecision(sc, focal, focal, prevailing, std::nullopt, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "a note foreign to the prevailing chord is not a consistent inherit";
     EXPECT_FALSE(sc.hasChord);
@@ -483,7 +486,7 @@ TEST(Composing_DecodeChord, G1_SufficientButLowMarginAbstains)
         note(64, 0, 1920, 2, 1.0, 4.0),   // E
         note(67, 0, 1920, 1, 1.0, 4.0),   // G  (a full triad → sufficient)
     };
-    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "passing sufficiency but failing margin → abstain, never a forced commit";
     EXPECT_FALSE(sc.hasChord);
@@ -498,10 +501,210 @@ TEST(Composing_DecodeChord, G1_DisabledReproducesAlwaysCommit)
     std::vector<ChordSliceCandidate> cands = { cand(5, ChordQuality::Major, 5, 3.0, kTieMajor) };
     SliceChord sc = CSD::decideSlice(0, cands, std::nullopt, p);
     const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
-    CSD::applyCommitDecision(sc, focal, std::nullopt, p);
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt, p);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Commit) << "G1 off → always commit the top candidate";
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 5);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// G2/G3 — the three-tier structure-first membership ladder + the plausibility check
+// (design §5 step 3). Scorer-free: classifyMembership injected by hand, asserting each
+// tier, the C-vs-Cadd9 / spurious-seventh discriminator, and the inherit-via-stepwise-NCT
+// relaxation that G1 (template-only) abstained on.
+// ════════════════════════════════════════════════════════════════════════════
+
+// Tier 1 — an ACCENTED passing tone (stepwise in AND out, between chord tones, on a
+// STRONG full beat) is a non-chord tone REGARDLESS of metric weight (metric weight alone
+// would wrongly call the accented note a chord tone).
+TEST(Composing_DecodeChord, Memb_Tier1_AccentedPassingToneIsNonChordTone)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const std::vector<FocalNote> focal = {
+        note(62, 480, 960, 0, 1.0, 1.0),   // D — focal, STRONG + full length
+        note(67, 480, 960, 1, 1.0, 1.0),   // G — chord tone sounding under it
+    };
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before (step in, chord tone)
+    window.push_back(note(64, 960, 1440, 0, 1.0, 1.0));  // E after  (step out, chord tone)
+    const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.nonChordTonePcs, 2)) << "an accented passing tone is a non-chord tone (Tier 1)";
+    EXPECT_FALSE(hasPc(m.chordTonePcs, 2));
+}
+
+// Tier 2 — a WEAK leap (reached AND left by leap: an arpeggiated tone) is a chord-tone
+// extension REGARDLESS of metric weight (metric weight alone would wrongly call the weak
+// note an embellishment). This is the headline Tier-2 fix vs the old flat weak-OR-stepwise
+// rule, which classified this weak note as a non-chord tone.
+TEST(Composing_DecodeChord, Memb_Tier2_WeakLeapIsChordToneExtension)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const std::vector<FocalNote> focal = {
+        note(69, 480, 720, 0, 0.5, 0.25),   // A — focal (the 6th), WEAK + short
+        note(60, 480, 720, 1, 0.5, 0.25),   // C — chord tone under it
+    };
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(64, 0, 480, 0, 1.0, 1.0));     // E before (leap up to A — a fourth)
+    window.push_back(note(72, 720, 1200, 0, 1.0, 1.0));  // C after  (leap down from A — a third)
+    const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.chordTonePcs, 9)) << "a weak arpeggiated leap is a chord-tone extension (Tier 2)";
+    EXPECT_FALSE(hasPc(m.nonChordTonePcs, 9));
+    EXPECT_GT(m.implausibilityPenalty, 0.0)
+        << "the triad is charged for absorbing the leap as an extension (richer-chord feedback)";
+}
+
+// Tier 3 — a STRONG appoggiatura (leapt to, resolved by step into a chord tone) is a
+// non-chord tone even on a strong beat (the stepwise resolution overrides the weight).
+TEST(Composing_DecodeChord, Memb_Tier3_StrongAppoggiaturaIsNonChordTone)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const std::vector<FocalNote> focal = {
+        note(65, 480, 960, 0, 1.0, 1.0),   // F — focal appoggiatura (pc 5), STRONG
+        note(60, 480, 960, 1, 1.0, 1.0),   // C — chord tone under it
+    };
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before (leap up to F — a fourth)
+    window.push_back(note(64, 960, 1440, 0, 1.0, 1.0));  // E after  (step down — the resolution)
+    const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(m.nonChordTonePcs, 5)) << "a strong appoggiatura resolving by step is a non-chord tone (Tier 3)";
+    EXPECT_FALSE(hasPc(m.chordTonePcs, 5));
+}
+
+// Tier 3 — an ESCAPE tone (approached by step from a chord tone, left by leap) is the
+// genuinely-ambiguous one-sided case: metric weight adjudicates. Weak → non-chord tone;
+// metrically asserted → chord-tone extension.
+TEST(Composing_DecodeChord, Memb_Tier3_EscapeToneDecidedByWeight)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+
+    // weak escape → non-chord tone
+    {
+        const std::vector<FocalNote> focal = {
+            note(62, 480, 960, 0, 0.5, 0.25),   // D — focal, WEAK + short
+            note(67, 480, 960, 1, 1.0, 1.0),    // G — chord tone under it
+        };
+        std::vector<FocalNote> window = focal;
+        window.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before (step in, chord tone)
+        window.push_back(note(69, 960, 1440, 0, 1.0, 1.0));  // A after  (leap out)
+        const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+        EXPECT_TRUE(hasPc(m.nonChordTonePcs, 2)) << "a weak escape tone is a non-chord tone (Tier 3, by weight)";
+    }
+    // metrically asserted escape → chord-tone extension
+    {
+        const std::vector<FocalNote> focal = {
+            note(62, 480, 960, 0, 1.0, 1.0),    // D — focal, STRONG + full length
+            note(67, 480, 960, 1, 1.0, 1.0),    // G — chord tone under it
+        };
+        std::vector<FocalNote> window = focal;
+        window.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before (step in, chord tone)
+        window.push_back(note(69, 960, 1440, 0, 1.0, 1.0));  // A after  (leap out)
+        const MembershipResult m = CSD::classifyMembership(cMaj, focal, window, std::nullopt, std::nullopt);
+        EXPECT_TRUE(hasPc(m.chordTonePcs, 2)) << "a metrically asserted escape tone is a chord-tone extension (Tier 3, by weight)";
+    }
+}
+
+// G3 plausibility — the REQUIRED (template) tones are run through the SAME ladder. A
+// required 7th that behaves as a Tier-1 embellishment (a lower NEIGHBOUR of the root)
+// makes the candidate IMPLAUSIBLE — a spurious seventh — so the candidate is charged. A
+// genuine sustained 7th is not. (This is what the old penalty, which tested EXTRA notes,
+// could not catch — Step-0 G3 "tests the wrong tones".)
+TEST(Composing_DecodeChord, Memb_G3_PlausibilityChargesImplausibleRequiredTone)
+{
+    // Cmaj7 {0,4,7,11} — quality is the coarse Major category; tie kTieMaj7 carries the
+    // four-note template (membership keys off rootPc + tiePriority, not the quality field).
+    const ChordSliceCandidate cMaj7 = cand(0, ChordQuality::Major, 0, 0.0, kTieMaj7);
+
+    // (a) the required B (pc 11) is a lower NEIGHBOUR of the root: C(72) → B(71) → C(72).
+    const std::vector<FocalNote> nbrFocal = {
+        note(71, 480, 960, 0, 1.0, 1.0),   // B — focal (the would-be 7th), strong
+        note(60, 480, 960, 1, 1.0, 1.0),   // C — root under it
+        note(67, 480, 960, 2, 1.0, 1.0),   // G — fifth
+    };
+    std::vector<FocalNote> nbrWindow = nbrFocal;
+    nbrWindow.push_back(note(72, 0, 480, 0, 1.0, 1.0));     // C before (step down to B)
+    nbrWindow.push_back(note(72, 960, 1440, 0, 1.0, 1.0));  // C after  (step up — neighbour return)
+    const MembershipResult mn = CSD::classifyMembership(cMaj7, nbrFocal, nbrWindow, std::nullopt, std::nullopt);
+    EXPECT_GT(mn.implausibilityPenalty, 0.0)
+        << "a required 7th behaving as a neighbour tone makes the candidate implausible (G3)";
+    EXPECT_TRUE(hasPc(mn.chordTonePcs, 11)) << "the required tone is still a chord tone of the chosen chord";
+
+    // (b) a genuine sustained 7th (no stepwise embellishment) is plausible — not charged.
+    const std::vector<FocalNote> genuine = {
+        note(71, 0, 1920, 0, 1.0, 4.0),   // B — sustained, isolated
+        note(60, 0, 1920, 1, 1.0, 4.0),   // C
+        note(67, 0, 1920, 2, 1.0, 4.0),   // G
+    };
+    const MembershipResult mg = CSD::classifyMembership(cMaj7, genuine, genuine, std::nullopt, std::nullopt);
+    EXPECT_DOUBLE_EQ(mg.implausibilityPenalty, 0.0) << "a genuine (non-embellishing) 7th is plausible — no charge";
+}
+
+// G2 discriminator — C vs Cadd9: whether the extra D of {C,E,G,D} is a chord tone (Cadd9)
+// or a passing tone (plain C) is the membership decision. A passing D → non-chord tone; a
+// sustained structural D → chord-tone extension (the added 9th).
+TEST(Composing_DecodeChord, Memb_G2_CVsCadd9Discriminator)
+{
+    const ChordSliceCandidate cMaj = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+
+    // passing D → non-chord tone (plain C)
+    const std::vector<FocalNote> passFocal = {
+        note(62, 480, 960, 0, 1.0, 1.0),   // D — focal, between C and E by step
+        note(67, 480, 960, 1, 1.0, 1.0),   // G
+    };
+    std::vector<FocalNote> passWindow = passFocal;
+    passWindow.push_back(note(60, 0, 480, 0, 1.0, 1.0));     // C before
+    passWindow.push_back(note(64, 960, 1440, 0, 1.0, 1.0));  // E after
+    const MembershipResult mp = CSD::classifyMembership(cMaj, passFocal, passWindow, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(mp.nonChordTonePcs, 2)) << "a passing D is a non-chord tone → plain C";
+    EXPECT_FALSE(hasPc(mp.chordTonePcs, 2));
+
+    // structural D (sustained, no step) → chord-tone extension (Cadd9)
+    const std::vector<FocalNote> structFocal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G
+        note(62, 0, 1920, 0, 1.0, 4.0),   // D — strong, sustained, no step → the added 9th
+    };
+    const MembershipResult ms = CSD::classifyMembership(cMaj, structFocal, structFocal, std::nullopt, std::nullopt);
+    EXPECT_TRUE(hasPc(ms.chordTonePcs, 2)) << "a sustained structural D is a chord-tone extension → Cadd9";
+    EXPECT_FALSE(hasPc(ms.nonChordTonePcs, 2));
+}
+
+// Inherit-via-stepwise-NCT (the G2 relaxation of the G1 inherit). A thin slice whose extra
+// note is a stepwise embellishment (non-chord tone) of the prevailing chord now INHERITS it
+// — where G1's template-only consistency ABSTAINED. Demonstrated by the same slice inheriting
+// with the window (G2 ladder) but abstaining with an empty window (the old template-only read).
+TEST(Composing_DecodeChord, G2_InheritsThroughStepwiseNct)
+{
+    const std::optional<ChordSliceCandidate> prevailing =
+        cand(0, ChordQuality::Major, 0, 0.0, kTieMajor);   // prevailing C major {0,4,7}
+    // The slice's own best reading is insufficient (F major — only its root F present).
+    std::vector<ChordSliceCandidate> cands = { cand(5, ChordQuality::Major, 5, 3.0, kTieMajor) };
+    SliceChord ranked = CSD::decideSlice(0, cands, prevailing);
+
+    // Slice = E (a chord tone of C) + a passing F (voice-0 E→F→G, stepwise between the C
+    // chord tones E and G). F is NOT a template tone of C, so G1 (template-only) abstained.
+    const std::vector<FocalNote> focal = {
+        note(65, 480, 960, 0, 1.0, 1.0),   // F — focal passing tone (pc 5)
+        note(64, 480, 960, 1, 1.0, 1.0),   // E — chord tone of C (pc 4)
+    };
+    std::vector<FocalNote> window = focal;
+    window.push_back(note(64, 0, 480, 0, 1.0, 1.0));     // E before (step to F)
+    window.push_back(note(67, 960, 1440, 0, 1.0, 1.0));  // G after  (step from F)
+
+    // With the window (the G2 ladder): F is a passing NCT of C → all notes consistent → INHERIT.
+    SliceChord scInherit = ranked;
+    CSD::applyCommitDecision(scInherit, focal, window, prevailing, std::nullopt, std::nullopt);
+    EXPECT_EQ(scInherit.decision, cs::SliceDecision::Inherit)
+        << "a thin slice + a stepwise NCT of the prevailing chord inherits it (G2 relaxation)";
+    EXPECT_EQ(scInherit.chosen.rootPc, 0);
+    EXPECT_EQ(scInherit.chosen.quality, ChordQuality::Major);
+
+    // Empty window (the Step-1 template-only reading): F has no melodic neighbours → it
+    // classifies structural → inconsistent → ABSTAIN (the G1 behaviour the relaxation supersedes).
+    SliceChord scAbstain = ranked;
+    CSD::applyCommitDecision(scAbstain, focal, {}, prevailing, std::nullopt, std::nullopt);
+    EXPECT_EQ(scAbstain.decision, cs::SliceDecision::Abstain)
+        << "without the window, F reads structural → abstain (the superseded template-only G1 inherit)";
 }
 
 // ════════════════════════════════════════════════════════════════════════════

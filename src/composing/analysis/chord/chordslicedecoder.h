@@ -23,7 +23,7 @@
 
 // ── composing/analysis/chord/chordslicedecoder ──────────────────────────────
 //
-// LAYER 4 — the CHORD-SYMBOL per-slice path (Increment A + B + G1).
+// LAYER 4 — the CHORD-SYMBOL per-slice path (Increment A + B + G1 + G2/G3).
 //
 // For each Layer-2 slice this names a chord (root + quality + bass/inversion)
 // by running the EXISTING chord scorer (analyzeChord) over the slice's note
@@ -38,16 +38,25 @@
 //     and its cube; do NOT fork a second scorer.
 //   * Increment B — per-note chord-tone-vs-NCT MEMBERSHIP (the two-pass,
 //     neighbour-aware decision) + the adaptive lazy-extend window. The membership
-//     sets on SliceChord are populated (design §5; the three-tier refinement
-//     G2/G3 is still a later increment).
+//     sets on SliceChord are populated (design §5).
 //   * G1 — commit / inherit / abstain + the >=3-template-tone SUFFICIENCY gate
 //     (design §4 step 3, §5 step 4): a new chord symbol is committed only from
 //     enough notes; a thin slice consistent with the prevailing chord INHERITS it;
 //     otherwise the slice ABSTAINS (no committed chord, the competing readings
 //     carried). This is the phantom-root guard — see applyCommitDecision.
+//   * G2/G3 — the three-tier structure-first membership LADDER + the plausibility
+//     check (design §5 step 3). Membership now classifies each focal note by
+//     stepwise structure in three tiers (stepwise-embellishing → NCT regardless of
+//     weight; no-stepwise-connection → chord-tone extension regardless of weight;
+//     one-sided → metric weight decides), and tests the candidate's REQUIRED
+//     (template) tones through the SAME ladder — a template tone behaving as a
+//     Tier-1 embellishment makes the candidate implausible (the spurious-seventh /
+//     Cadd9 discriminator). The G1 inherit is relaxed to the ladder: a thin slice
+//     whose extra notes are stepwise NCTs of the prevailing chord now INHERITS it
+//     (Step-1 inherited on template tones only). See classifyMembership /
+//     notesConsistentWithPrevailing.
 //
 // WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
-//   * the three-tier membership LADDER + the spec plausibility check (G2/G3).
 //   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, the new
 //     diminished-seventh / minor-major TYPES, and the confidence composite +
 //     open-question label (Increment C / G4 / G5 / G6).
@@ -73,11 +82,12 @@
 //   4. Confidence. confidence = the chosen cell's vertical score minus the best
 //      vertical score over any DIFFERENT (root, quality) cell; a slice is
 //      "uncertain" when that margin is below uncertaintyMargin.
-//   5. Commit / inherit / abstain (G1). After membership, the chosen chord is
+//   5. Commit / inherit / abstain (G1, inherit relaxed by G2). The chosen chord is
 //      committed only if >= sufficiencyChordTones of its own template tones are
-//      present in the slice AND the margin clears; a thin (insufficient) slice
-//      whose notes are all template tones of the prevailing chord inherits it;
-//      any other slice abstains (hasChord=false, competing readings carried).
+//      present in the slice AND the margin clears; a thin (insufficient) slice whose
+//      notes are all consistent with the prevailing chord — each a template tone of
+//      it OR a stepwise embellishment (non-chord tone) of it — inherits it; any other
+//      slice abstains (hasChord=false, competing readings carried).
 //
 // KEY is a feed-forward PRIOR (design §2/§9): the slice is scored under a given
 // key/mode (the notated signature in the --decode-chords diagnostic), which
@@ -170,19 +180,22 @@ struct ChordSliceDecoderPreferences {
     /// from the slice's own notes + key prior alone (no neighbour-chord context).
     bool twoPass = true;
 
-    /// A focal "extra" note (pitch class not in the chord's basic template) is
-    /// called a non-chord tone when its metric salience is below this threshold OR
-    /// it is stepwise-treated. salience = metricWeight[0.5,1] × min(1, durationQn /
-    /// membershipReferenceDurationQn). Seed; swept later.
+    /// Metric-weight threshold the three-tier ladder (design §5 step 3) consults ONLY at
+    /// its third tier — the one-sided (appoggiatura / escape / incomplete neighbour) case:
+    /// a metrically-asserted note at/above this salience is a chord-tone extension, below
+    /// it a non-chord tone. (Tiers 1 and 2 — both-sides-stepwise and no-side-stepwise —
+    /// are settled by structure alone, regardless of weight.) salience = metricWeight
+    /// [0.5,1] × min(1, durationQn / membershipReferenceDurationQn). Seed; swept later.
     double membershipSalienceThreshold = 0.55;
 
     /// Duration (quarter notes) at/above which a note is full-length for salience.
     double membershipReferenceDurationQn = 1.0;
 
-    /// Strength of the membership feedback into candidate selection (design §5
-    /// step 3): a candidate's score is reduced by membershipPenaltyWeight × salience
-    /// for every STRUCTURAL focal note (an extra note that is NOT embellishment-like)
-    /// it cannot explain as a chord tone. 0 = label notes but do not re-rank
+    /// Strength of the membership feedback into candidate selection (design §5 step 3,
+    /// the plausibility penalty G3): a candidate's score is reduced by membershipPenaltyWeight
+    /// × salience for every REQUIRED (template) tone that behaves as a Tier-1 stepwise
+    /// embellishment — an "implausible chord tone" (a passing tone forced to be a chord
+    /// member: the spurious seventh / Cadd9 reading). 0 = label notes but do not re-rank
     /// (isolates the membership-metric effect from the chord-root effect). Seed.
     double membershipPenaltyWeight = 0.6;
 
@@ -258,14 +271,15 @@ struct SliceChord {
     bool uncertain = false;                        ///< confidence < uncertaintyMargin (the margin cue feeding the decision)
     SliceDecision decision = SliceDecision::Commit; ///< G1: commit / inherit / abstain (see applyCommitDecision)
 
-    // ── Membership (Increment B) — the per-note CT vs NCT decision ───────────
+    // ── Membership (Increment B + G2/G3) — the per-note CT vs NCT decision ────
     // Binary chord-tone vs non-chord-tone membership, the real lever (design §11),
-    // over the FOCAL slice's sounding pitch classes. A pc is a non-chord tone when
-    // ALL of its focal notes were classified embellishment-like (weak metric
-    // salience or stepwise-treated) and the pc is not a template tone of the chosen
-    // chord; otherwise it is a chord tone (including the added 6th/9th that "falls
-    // out" as a sustained strong extra — design §5). Empty only when the slice has
-    // no chord / no sounding notes, or membership is disabled.
+    // over the FOCAL slice's sounding pitch classes, by the three-tier structure-first
+    // ladder (design §5 step 3). A pc is a non-chord tone when ALL of its focal notes
+    // classify embellishment-like (Tier 1 stepwise-embellishing, or a weak Tier-3
+    // one-sided tone) and the pc is not a template tone of the chosen chord; otherwise
+    // it is a chord tone (including the added 6th/9th that "falls out" as a structural
+    // extension — Tier 2, or a metrically-asserted Tier 3 — design §5). Empty only when
+    // the slice has no chord / no sounding notes, or membership is disabled.
     std::vector<int> chordTonePcs;                 ///< focal pcs the chosen chord explains
     std::vector<int> nonChordTonePcs;              ///< focal pcs called non-chord tones
 };
@@ -292,8 +306,19 @@ struct FocalNote {
 struct MembershipResult {
     std::vector<int> chordTonePcs;
     std::vector<int> nonChordTonePcs;
-    /// Σ salience of the STRUCTURAL focal notes (non-embellishment extras) the chord
-    /// leaves out — the implausibility the score feedback (design §5 step 3) charges.
+    /// The membership feedback into candidate selection (design §4 step 2). Two additive
+    /// contributions, in the two directions the chord-vs-membership decision must separate:
+    ///   * a chord's REQUIRED (template) tone that behaves as a Tier-1 stepwise embellishment
+    ///     — the "implausible chord tones" penalty (design §5 step 3, the Step-2 G3 addition):
+    ///     the candidate forces a passing tone to be a chord member (the spurious seventh /
+    ///     Cadd9 reading) → pull back the over-rich chord; AND
+    ///   * an EXTRA (non-template) focal note the chord can only absorb as an added 6th/9th
+    ///     — the richer-chord direction the old penalty already caught: a chord that leaves a
+    ///     STRUCTURAL focal note outside its basic template is a worse explanation of the
+    ///     slice → prefer the chord whose template includes it (this is what gives the
+    ///     focal-fitting chord its selection margin).
+    /// An extra EMBELLISHMENT note (a non-chord tone) is charged nothing (the chord explains
+    /// it as a passing/neighbour tone — design §5 step 1).
     double implausibilityPenalty = 0.0;
 };
 
@@ -396,21 +421,30 @@ public:
     /// — the phantom-root guard, independent of membership). Sets @p sc.decision and:
     ///   * Commit  — sufficiency AND margin both pass: @p sc is left committed (hasChord
     ///               stays true, chosen unchanged).
-    ///   * Inherit — sufficiency fails but @p sc's focal notes are all template tones of
-    ///               @p prevailing: chosen is replaced by the prevailing chord (carried
-    ///               forward); hasChord stays true; uncertain cleared.
+    ///   * Inherit — sufficiency fails but @p sc's focal notes are all consistent with
+    ///               @p prevailing — each a template tone of it OR a stepwise embellishment
+    ///               (non-chord tone) of it, judged by the G2 membership ladder over @p
+    ///               window + @p prevChord / @p nextChord: chosen is replaced by the
+    ///               prevailing chord (carried forward); hasChord stays true; uncertain
+    ///               cleared.
     ///   * Abstain — any other slice (insufficient with no consistent prevailing, OR
     ///               sufficient but low margin, OR no scorable candidate): hasChord is
     ///               cleared (the no-chord / open marker) and uncertain set; the ranked
     ///               competing readings (alternatives) are kept.
-    /// Pure — no scorer / note-model dependency — so the behaviour tests inject the ranked
-    /// SliceChord + focal notes + prevailing chord by hand. With decoderPrefs
-    /// .enableCommitDecision == false this is a no-op (decision left Commit): the pre-G1
-    /// always-commit behaviour.
+    /// @p window is the broader (adaptive-window) note stream the stepwise inherit test
+    /// reads (focal ⊆ window); an empty window degrades to the conservative template-only
+    /// inherit. @p prevChord / @p nextChord are the provisional neighbour chords (absent on
+    /// the membership-off path). Pure — no scorer / note-model dependency — so the
+    /// behaviour tests inject the ranked SliceChord + focal/window notes + prevailing/
+    /// neighbour chords by hand. With decoderPrefs.enableCommitDecision == false this is a
+    /// no-op (decision left Commit): the pre-G1 always-commit behaviour.
     static void applyCommitDecision(
         SliceChord& sc,
         const std::vector<FocalNote>& focal,
+        const std::vector<FocalNote>& window,
         const std::optional<ChordSliceCandidate>& prevailing,
+        const std::optional<ChordSliceCandidate>& prevChord,
+        const std::optional<ChordSliceCandidate>& nextChord,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 
