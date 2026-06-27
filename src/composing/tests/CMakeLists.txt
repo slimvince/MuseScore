@@ -49,6 +49,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/jointkeydecision_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/keymode_branch_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/l3_coverage_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/localmodulationdetector_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/modepriorpresets_tests.cpp
