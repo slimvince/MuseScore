@@ -65,8 +65,11 @@
     (suites/snapshots green) confirmed.
 
 ## F — Test-path: `batch_analyze` (step 2) — [restore + unification audit]
-16. **Restore** `batch_analyze` — the Qt `platforms/`-plugin blocker (it loads no score this session). Unblocks all
-    [BA-GATED] items.
+16. **Restore** `batch_analyze` — **✅ DONE `5357f5a7ed`** (tools-only). **The Qt framing was WRONG** (red herring): the
+    exe was never broken; the runner passed unix-form paths (`/c/s/MS/…`) that fail under `MSYS_NO_PATHCONV=1` (the
+    session's Git Bash default). Fixed in `run_bach_preset.py` (Windows-forward-slash paths + `QT_QPA_PLATFORM=offscreen`
+    hardening). Gate verified: reproduces **53/24/53** exact identity sets, **analysis-neutral** (0/353 differing
+    `.ours.json`). **All [BA-GATED] items are now unblocked.**
 17. **[NOW]** **Unification audit of the test-path** — confirm `batch_analyze`'s analysis path **IS** the production
     path (`regionanalyzer`/the live entry), **not** a duplicate/parallel analyzer. If it has its own analysis logic,
     the corpus gate would be testing a *different* path than ships (an invalid gate) **and** violate "one path per
