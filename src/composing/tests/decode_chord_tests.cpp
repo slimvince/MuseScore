@@ -408,7 +408,7 @@ TEST(Composing_DecodeChord, G1_CleanTriadCommits)
         note(64, 0, 1920, 2, 1.0, 4.0),   // E
         note(67, 0, 1920, 1, 1.0, 4.0),   // G
     };
-    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Commit);
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 0);
@@ -426,7 +426,7 @@ TEST(Composing_DecodeChord, G1_PhantomRootAbstains)
     };
     SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // margin 2.5, not uncertain
     const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
-    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "a new symbol is never committed from too few notes (the phantom-root rule)";
     EXPECT_FALSE(sc.hasChord);
@@ -447,7 +447,7 @@ TEST(Composing_DecodeChord, G1_ThinSliceInheritsPrevailing)
     };
     SliceChord sc = CSD::decideSlice(0, cands, prevailing);
     const std::vector<FocalNote> focal = { note(61, 0, 480, 0, 1.0, 1.0) };   // C# only (pc 1)
-    CSD::applyCommitDecision(sc, focal, focal, prevailing, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, prevailing);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Inherit);
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 9) << "inherits the prevailing A major";
@@ -466,7 +466,7 @@ TEST(Composing_DecodeChord, G1_ThinSliceForeignToPrevailingAbstains)
     };
     SliceChord sc = CSD::decideSlice(0, cands, prevailing);
     const std::vector<FocalNote> focal = { note(65, 0, 480, 0, 1.0, 1.0) };   // F only (pc 5)
-    CSD::applyCommitDecision(sc, focal, focal, prevailing, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, prevailing);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "a note foreign to the prevailing chord is not a consistent inherit";
     EXPECT_FALSE(sc.hasChord);
@@ -486,7 +486,7 @@ TEST(Composing_DecodeChord, G1_SufficientButLowMarginAbstains)
         note(64, 0, 1920, 2, 1.0, 4.0),   // E
         note(67, 0, 1920, 1, 1.0, 4.0),   // G  (a full triad → sufficient)
     };
-    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
         << "passing sufficiency but failing margin → abstain, never a forced commit";
     EXPECT_FALSE(sc.hasChord);
@@ -501,7 +501,7 @@ TEST(Composing_DecodeChord, G1_DisabledReproducesAlwaysCommit)
     std::vector<ChordSliceCandidate> cands = { cand(5, ChordQuality::Major, 5, 3.0, kTieMajor) };
     SliceChord sc = CSD::decideSlice(0, cands, std::nullopt, p);
     const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
-    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt, p);
+    CSD::applyCommitDecision(sc, focal, std::nullopt, p);
     EXPECT_EQ(sc.decision, cs::SliceDecision::Commit) << "G1 off → always commit the top candidate";
     EXPECT_TRUE(sc.hasChord);
     EXPECT_EQ(sc.chosen.rootPc, 5);
@@ -510,8 +510,9 @@ TEST(Composing_DecodeChord, G1_DisabledReproducesAlwaysCommit)
 // ════════════════════════════════════════════════════════════════════════════
 // G2/G3 — the three-tier structure-first membership ladder + the plausibility check
 // (design §5 step 3). Scorer-free: classifyMembership injected by hand, asserting each
-// tier, the C-vs-Cadd9 / spurious-seventh discriminator, and the inherit-via-stepwise-NCT
-// relaxation that G1 (template-only) abstained on.
+// tier and the C-vs-Cadd9 / spurious-seventh discriminator. (The inherit relaxation that
+// builds on this ladder is gated on the next provisional chord — the §4 two-reading
+// inherit — built alongside this conservative template-only base.)
 // ════════════════════════════════════════════════════════════════════════════
 
 // Tier 1 — an ACCENTED passing tone (stepwise in AND out, between chord tones, on a
@@ -667,44 +668,6 @@ TEST(Composing_DecodeChord, Memb_G2_CVsCadd9Discriminator)
     const MembershipResult ms = CSD::classifyMembership(cMaj, structFocal, structFocal, std::nullopt, std::nullopt);
     EXPECT_TRUE(hasPc(ms.chordTonePcs, 2)) << "a sustained structural D is a chord-tone extension → Cadd9";
     EXPECT_FALSE(hasPc(ms.nonChordTonePcs, 2));
-}
-
-// Inherit-via-stepwise-NCT (the G2 relaxation of the G1 inherit). A thin slice whose extra
-// note is a stepwise embellishment (non-chord tone) of the prevailing chord now INHERITS it
-// — where G1's template-only consistency ABSTAINED. Demonstrated by the same slice inheriting
-// with the window (G2 ladder) but abstaining with an empty window (the old template-only read).
-TEST(Composing_DecodeChord, G2_InheritsThroughStepwiseNct)
-{
-    const std::optional<ChordSliceCandidate> prevailing =
-        cand(0, ChordQuality::Major, 0, 0.0, kTieMajor);   // prevailing C major {0,4,7}
-    // The slice's own best reading is insufficient (F major — only its root F present).
-    std::vector<ChordSliceCandidate> cands = { cand(5, ChordQuality::Major, 5, 3.0, kTieMajor) };
-    SliceChord ranked = CSD::decideSlice(0, cands, prevailing);
-
-    // Slice = E (a chord tone of C) + a passing F (voice-0 E→F→G, stepwise between the C
-    // chord tones E and G). F is NOT a template tone of C, so G1 (template-only) abstained.
-    const std::vector<FocalNote> focal = {
-        note(65, 480, 960, 0, 1.0, 1.0),   // F — focal passing tone (pc 5)
-        note(64, 480, 960, 1, 1.0, 1.0),   // E — chord tone of C (pc 4)
-    };
-    std::vector<FocalNote> window = focal;
-    window.push_back(note(64, 0, 480, 0, 1.0, 1.0));     // E before (step to F)
-    window.push_back(note(67, 960, 1440, 0, 1.0, 1.0));  // G after  (step from F)
-
-    // With the window (the G2 ladder): F is a passing NCT of C → all notes consistent → INHERIT.
-    SliceChord scInherit = ranked;
-    CSD::applyCommitDecision(scInherit, focal, window, prevailing, std::nullopt, std::nullopt);
-    EXPECT_EQ(scInherit.decision, cs::SliceDecision::Inherit)
-        << "a thin slice + a stepwise NCT of the prevailing chord inherits it (G2 relaxation)";
-    EXPECT_EQ(scInherit.chosen.rootPc, 0);
-    EXPECT_EQ(scInherit.chosen.quality, ChordQuality::Major);
-
-    // Empty window (the Step-1 template-only reading): F has no melodic neighbours → it
-    // classifies structural → inconsistent → ABSTAIN (the G1 behaviour the relaxation supersedes).
-    SliceChord scAbstain = ranked;
-    CSD::applyCommitDecision(scAbstain, focal, {}, prevailing, std::nullopt, std::nullopt);
-    EXPECT_EQ(scAbstain.decision, cs::SliceDecision::Abstain)
-        << "without the window, F reads structural → abstain (the superseded template-only G1 inherit)";
 }
 
 // ════════════════════════════════════════════════════════════════════════════

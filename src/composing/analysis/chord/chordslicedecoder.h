@@ -51,10 +51,13 @@
 //     one-sided → metric weight decides), and tests the candidate's REQUIRED
 //     (template) tones through the SAME ladder — a template tone behaving as a
 //     Tier-1 embellishment makes the candidate implausible (the spurious-seventh /
-//     Cadd9 discriminator). The G1 inherit is relaxed to the ladder: a thin slice
-//     whose extra notes are stepwise NCTs of the prevailing chord now INHERITS it
-//     (Step-1 inherited on template tones only). See classifyMembership /
-//     notesConsistentWithPrevailing.
+//     Cadd9 discriminator). See classifyMembership. The G1 inherit stays the
+//     conservative TEMPLATE-ONLY consistency (notesConsistentWithPrevailing): the
+//     "... or a stepwise embellishment of it" relaxation (design §5 step 4) needs
+//     both-side neighbour context to tell a CONTINUATION of the prevailing chord
+//     from a TRANSITION to the next one — folded in note-only it OVER-inherits on
+//     transition slices, so it is the §4 two-reading inherit (the next increment),
+//     not part of this membership ladder.
 //
 // WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
 //   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, the new
@@ -421,30 +424,24 @@ public:
     /// — the phantom-root guard, independent of membership). Sets @p sc.decision and:
     ///   * Commit  — sufficiency AND margin both pass: @p sc is left committed (hasChord
     ///               stays true, chosen unchanged).
-    ///   * Inherit — sufficiency fails but @p sc's focal notes are all consistent with
-    ///               @p prevailing — each a template tone of it OR a stepwise embellishment
-    ///               (non-chord tone) of it, judged by the G2 membership ladder over @p
-    ///               window + @p prevChord / @p nextChord: chosen is replaced by the
-    ///               prevailing chord (carried forward); hasChord stays true; uncertain
-    ///               cleared.
+    ///   * Inherit — sufficiency fails but @p sc's focal notes are all template tones of
+    ///               @p prevailing (the conservative template-only consistency): chosen is
+    ///               replaced by the prevailing chord (carried forward); hasChord stays
+    ///               true; uncertain cleared.
     ///   * Abstain — any other slice (insufficient with no consistent prevailing, OR
     ///               sufficient but low margin, OR no scorable candidate): hasChord is
     ///               cleared (the no-chord / open marker) and uncertain set; the ranked
     ///               competing readings (alternatives) are kept.
-    /// @p window is the broader (adaptive-window) note stream the stepwise inherit test
-    /// reads (focal ⊆ window); an empty window degrades to the conservative template-only
-    /// inherit. @p prevChord / @p nextChord are the provisional neighbour chords (absent on
-    /// the membership-off path). Pure — no scorer / note-model dependency — so the
-    /// behaviour tests inject the ranked SliceChord + focal/window notes + prevailing/
-    /// neighbour chords by hand. With decoderPrefs.enableCommitDecision == false this is a
-    /// no-op (decision left Commit): the pre-G1 always-commit behaviour.
+    /// Pure — no scorer / note-model dependency — so the behaviour tests inject the ranked
+    /// SliceChord + focal notes + prevailing chord by hand. With
+    /// decoderPrefs.enableCommitDecision == false this is a no-op (decision left Commit):
+    /// the pre-G1 always-commit behaviour. (The "... or a stepwise embellishment of it"
+    /// inherit relaxation, gated on the next provisional chord to tell continuation from
+    /// transition, is the §4 two-reading inherit built alongside this base.)
     static void applyCommitDecision(
         SliceChord& sc,
         const std::vector<FocalNote>& focal,
-        const std::vector<FocalNote>& window,
         const std::optional<ChordSliceCandidate>& prevailing,
-        const std::optional<ChordSliceCandidate>& prevChord,
-        const std::optional<ChordSliceCandidate>& nextChord,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 
