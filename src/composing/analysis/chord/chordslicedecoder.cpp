@@ -168,6 +168,26 @@ bool isChordToneOfAny(const std::vector<const ChordSliceCandidate*>& chords, int
     return false;
 }
 
+/// Inherit-consistency (design §5 step 4, the "inherit on insufficiency" fallback):
+/// are ALL of the slice's focal notes consistent with the prevailing chord? For
+/// Step-1 (G1) this is the conservative TEMPLATE-ONLY reading — every focal pitch
+/// class is a template tone of the prevailing chord (covers the spec's documented
+/// inherit cases: the single C#-over-A-major thin slice whose C# is the chord's
+/// third, and the dyad that is a subset of the prevailing chord). The looser
+/// "... or a stepwise embellishment of it" relaxation depends on the membership
+/// stepwise machinery and is deferred to the G2 membership refinement (Step 2), so
+/// G1 stays decoupled from the still-flat membership ladder.
+bool notesConsistentWithPrevailing(const ChordSliceCandidate& prevailing,
+                                   const std::vector<FocalNote>& focal)
+{
+    for (const FocalNote& f : focal) {
+        if (!function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {
+            return false;
+        }
+    }
+    return true;
+}
+
 /// Metric salience of a focal note: beat-weight [0.5,1] scaled by how close it is to
 /// full length. A weak / short note is embellishment-like (design §1).
 double noteSalience(const FocalNote& f, const ChordSliceDecoderPreferences& dp)
@@ -295,7 +315,8 @@ SliceChord ChordSliceDecoder::decideSlice(
     sc.sliceIndex = sliceIndex;
     if (candidates.empty()) {
         sc.hasChord = false;
-        sc.uncertain = true;   // no scorable candidate → treated as uncertain
+        sc.uncertain = true;            // no scorable candidate → treated as uncertain
+        sc.decision = SliceDecision::Abstain;   // ... and an abstain (no chord to commit)
         return sc;
     }
 
@@ -419,6 +440,71 @@ MembershipResult ChordSliceDecoder::classifyMembership(
     return r;
 }
 
+int ChordSliceDecoder::templateTonePresenceCount(const ChordSliceCandidate& chord,
+                                                 const std::vector<FocalNote>& focal)
+{
+    bool counted[12] = {};
+    int n = 0;
+    for (const FocalNote& f : focal) {
+        const int pc = f.pc();
+        if (!counted[pc] && function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, pc)) {
+            counted[pc] = true;
+            ++n;
+        }
+    }
+    return n;
+}
+
+void ChordSliceDecoder::applyCommitDecision(
+    SliceChord& sc,
+    const std::vector<FocalNote>& focal,
+    const std::optional<ChordSliceCandidate>& prevailing,
+    const ChordSliceDecoderPreferences& dp)
+{
+    if (!dp.enableCommitDecision) {
+        // Pre-G1 always-commit behaviour: leave the slice exactly as decideSlice left
+        // it (the empty-slice abstain set in decideSlice is preserved).
+        return;
+    }
+
+    // No scorable candidate → abstain (decideSlice already cleared hasChord).
+    if (!sc.hasChord) {
+        sc.decision = SliceDecision::Abstain;
+        return;
+    }
+
+    // Sufficiency — does the slice contain enough of the chosen chord's OWN template
+    // tones (a complete triad's worth) to fix it? The phantom-root guard: a candidate
+    // whose root/3rd/5th are not actually present cannot reach the count.
+    const int present = templateTonePresenceCount(sc.chosen, focal);
+    const bool sufficient = present >= std::max(1, dp.sufficiencyChordTones);
+    const bool marginOk = !sc.uncertain;   // confidence >= uncertaintyMargin
+
+    // Commit: enough independent chord tones AND a clear-enough winner.
+    if (sufficient && marginOk) {
+        sc.decision = SliceDecision::Commit;
+        return;
+    }
+
+    // Inherit: a thin (insufficient) slice whose notes are all consistent with the
+    // prevailing chord carries it forward, rather than naming a phantom. (A slice that
+    // is sufficient but merely loses on margin is NOT inherited — it abstains.)
+    if (!sufficient && prevailing.has_value()
+        && notesConsistentWithPrevailing(*prevailing, focal)) {
+        sc.chosen = *prevailing;
+        sc.decision = SliceDecision::Inherit;
+        sc.uncertain = false;   // an inherited prevailing chord is a committed answer
+        return;
+    }
+
+    // Abstain: insufficient with no consistent prevailing, or sufficient but low margin.
+    // No new symbol is committed (the no-chord / open marker); the competing readings
+    // (alternatives) are kept for Architectural Layer 5.
+    sc.decision = SliceDecision::Abstain;
+    sc.hasChord = false;
+    sc.uncertain = true;
+}
+
 namespace {
 
 // Per-slice work cached across the two passes (the candidate cube + the focal and
@@ -473,6 +559,10 @@ SliceChord finalizeSlice(int t, const SliceWork& w,
         }
     }
     SliceChord sc = ChordSliceDecoder::decideSlice(t, adj, prevailing, dp);
+    // G1 — commit / inherit / abstain (design §4 step 3, §5 step 4). Decided BEFORE
+    // membership so the per-note classification reflects the FINAL chord (the inherited
+    // prevailing chord on Inherit; nothing on Abstain).
+    ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);
     if (sc.hasChord) {
         const MembershipResult mc =
             ChordSliceDecoder::classifyMembership(sc.chosen, w.focal, w.window, prevC, nextC, dp);
@@ -515,6 +605,7 @@ std::vector<SliceChord> decodeWindowed(
             const SliceWork w = buildSliceWork(analyzer, slices, model, t, keyFifths, keyMode,
                                                prefs, dp, excludeStaves);
             SliceChord sc = ChordSliceDecoder::decideSlice(t, w.cands, prevailing, dp);
+            ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);   // G1
             if (sc.hasChord) { prevailing = sc.chosen; }
             if (t >= outFirst) { out.push_back(std::move(sc)); }
         }

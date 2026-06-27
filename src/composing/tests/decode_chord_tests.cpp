@@ -362,6 +362,149 @@ TEST(Composing_DecodeChord, Memb_Deterministic)
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// G1 — commit / inherit / abstain + sufficiency gate (design §4 step 3, §5 step 4).
+// Scorer-free: a ranked SliceChord (from decideSlice) + injected focal notes +
+// prevailing chord by hand, asserting the trichotomy. applyCommitDecision + the
+// templateTonePresenceCount sufficiency source.
+// ════════════════════════════════════════════════════════════════════════════
+
+// The sufficiency source: count the chord's OWN template tones present, ignoring
+// extras and duplicates — independent of the (extra-note) membership rule.
+TEST(Composing_DecodeChord, G1_TemplateTonePresenceCount)
+{
+    const ChordSliceCandidate c = triad(0, ChordQuality::Major, kTieMajor);   // C major {0,4,7}
+    const std::vector<FocalNote> full = {
+        note(60, 0, 480, 0, 1.0, 1.0), note(64, 0, 480, 1, 1.0, 1.0), note(67, 0, 480, 2, 1.0, 1.0),
+    };
+    EXPECT_EQ(CSD::templateTonePresenceCount(c, full), 3) << "a complete triad present → 3";
+
+    // C, E (template tones) + D (pc 2, an extra) → only 2 template tones count.
+    const std::vector<FocalNote> dyadPlusExtra = {
+        note(60, 0, 480, 0, 1.0, 1.0), note(64, 0, 480, 1, 1.0, 1.0), note(62, 0, 480, 2, 1.0, 1.0),
+    };
+    EXPECT_EQ(CSD::templateTonePresenceCount(c, dyadPlusExtra), 2)
+        << "an extra (non-template) note does not count toward sufficiency";
+
+    // C and its octave C → one distinct template pc.
+    const std::vector<FocalNote> dupes = {
+        note(60, 0, 480, 0, 1.0, 1.0), note(72, 0, 480, 1, 1.0, 1.0),
+    };
+    EXPECT_EQ(CSD::templateTonePresenceCount(c, dupes), 1) << "duplicate pcs counted once";
+}
+
+// A clear triad with a clear margin → COMMIT.
+TEST(Composing_DecodeChord, G1_CleanTriadCommits)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(0, ChordQuality::Major, 0, 3.0, kTieMajor),   // C major — chosen
+        cand(9, ChordQuality::Minor, 9, 1.0, kTieMinor),   // a clearly-worse different chord
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // chosen C, margin 2.0, not uncertain
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G
+    };
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Commit);
+    EXPECT_TRUE(sc.hasChord);
+    EXPECT_EQ(sc.chosen.rootPc, 0);
+}
+
+// A phantom-root slice (the chosen chord has < 3 of its template tones present) with
+// no consistent prevailing chord → ABSTAIN (no committed symbol).
+TEST(Composing_DecodeChord, G1_PhantomRootAbstains)
+{
+    // Chosen F major {5,9,0}, but the slice sounds only C (pc 0 — F major's fifth):
+    // a single template tone present, far short of a triad.
+    std::vector<ChordSliceCandidate> cands = {
+        cand(5, ChordQuality::Major, 5, 3.0, kTieMajor),   // F major — chosen
+        cand(2, ChordQuality::Minor, 2, 0.5, kTieMinor),   // a far-below different reading
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // margin 2.5, not uncertain
+    const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
+        << "a new symbol is never committed from too few notes (the phantom-root rule)";
+    EXPECT_FALSE(sc.hasChord);
+    EXPECT_TRUE(sc.uncertain);
+    EXPECT_FALSE(sc.alternatives.empty()) << "the competing readings are still carried";
+}
+
+// A thin slice that cannot fix its own chord, but whose notes are all template tones
+// of the prevailing chord → INHERIT it (NOT a phantom new symbol).
+TEST(Composing_DecodeChord, G1_ThinSliceInheritsPrevailing)
+{
+    // Prevailing A major {9,1,4}; the slice sounds a lone C# (pc 1) — A major's third
+    // (the spec's phantom-root scenario). Its own top reading (some F#m) is insufficient.
+    const std::optional<ChordSliceCandidate> prevailing =
+        cand(9, ChordQuality::Major, 9, 0.0, kTieMajor);
+    std::vector<ChordSliceCandidate> cands = {
+        cand(6, ChordQuality::Minor, 6, 3.0, kTieMinor),   // an F#m reading on the thin slice
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, prevailing);
+    const std::vector<FocalNote> focal = { note(61, 0, 480, 0, 1.0, 1.0) };   // C# only (pc 1)
+    CSD::applyCommitDecision(sc, focal, prevailing);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Inherit);
+    EXPECT_TRUE(sc.hasChord);
+    EXPECT_EQ(sc.chosen.rootPc, 9) << "inherits the prevailing A major";
+    EXPECT_EQ(sc.chosen.quality, ChordQuality::Major);
+    EXPECT_FALSE(sc.uncertain);
+}
+
+// A thin slice with a note FOREIGN to the prevailing chord cannot inherit → ABSTAIN.
+TEST(Composing_DecodeChord, G1_ThinSliceForeignToPrevailingAbstains)
+{
+    // Prevailing A major {9,1,4}; the slice sounds a lone F (pc 5), foreign to A major.
+    const std::optional<ChordSliceCandidate> prevailing =
+        cand(9, ChordQuality::Major, 9, 0.0, kTieMajor);
+    std::vector<ChordSliceCandidate> cands = {
+        cand(5, ChordQuality::Major, 5, 3.0, kTieMajor),   // some F reading
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, prevailing);
+    const std::vector<FocalNote> focal = { note(65, 0, 480, 0, 1.0, 1.0) };   // F only (pc 5)
+    CSD::applyCommitDecision(sc, focal, prevailing);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
+        << "a note foreign to the prevailing chord is not a consistent inherit";
+    EXPECT_FALSE(sc.hasChord);
+}
+
+// A sufficient slice that nonetheless loses on margin → ABSTAIN (not commit, not inherit).
+TEST(Composing_DecodeChord, G1_SufficientButLowMarginAbstains)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(0, ChordQuality::Major, 0, 3.0, kTieMajor),
+        cand(9, ChordQuality::Minor, 9, 2.9, kTieMinor),   // a near-tie different chord
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // margin 0.1 → uncertain
+    ASSERT_TRUE(sc.uncertain);
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0),   // C
+        note(64, 0, 1920, 2, 1.0, 4.0),   // E
+        note(67, 0, 1920, 1, 1.0, 4.0),   // G  (a full triad → sufficient)
+    };
+    CSD::applyCommitDecision(sc, focal, std::nullopt);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Abstain)
+        << "passing sufficiency but failing margin → abstain, never a forced commit";
+    EXPECT_FALSE(sc.hasChord);
+}
+
+// The master switch OFF reproduces the pre-G1 always-commit behaviour exactly.
+TEST(Composing_DecodeChord, G1_DisabledReproducesAlwaysCommit)
+{
+    ChordSliceDecoderPreferences p;
+    p.enableCommitDecision = false;
+    // A slice that WOULD abstain under G1 (F major chosen, only its fifth C present).
+    std::vector<ChordSliceCandidate> cands = { cand(5, ChordQuality::Major, 5, 3.0, kTieMajor) };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt, p);
+    const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only
+    CSD::applyCommitDecision(sc, focal, std::nullopt, p);
+    EXPECT_EQ(sc.decision, cs::SliceDecision::Commit) << "G1 off → always commit the top candidate";
+    EXPECT_TRUE(sc.hasChord);
+    EXPECT_EQ(sc.chosen.rootPc, 5);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // NOTE-MODEL (end-to-end) — real decode() over Layer-1 models from .mscx fixtures.
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -416,11 +559,15 @@ TEST(Composing_DecodeChord, Fixture_CompleteCandidateListSurfacedAndRanked)
             continue;
         }
         ++named;
-        // The chosen is at least as good as the best carried alternative (ranked).
-        for (const ChordSliceCandidate& a : sc.alternatives) {
-            EXPECT_LE(a.score, sc.chosen.score) << "alternatives never outrank the chosen";
+        // The chosen is at least as good as the best carried alternative (ranked) —
+        // but only for a COMMITTED slice: an Inherit replaces the chosen with the
+        // prevailing chord, which may score below a carried alternative here.
+        if (sc.decision == cs::SliceDecision::Commit) {
+            for (const ChordSliceCandidate& a : sc.alternatives) {
+                EXPECT_LE(a.score, sc.chosen.score) << "alternatives never outrank a committed chosen";
+            }
         }
-        // Alternatives are in non-increasing score order.
+        // Alternatives are in non-increasing score order (the ranking, independent of G1).
         for (size_t i = 1; i < sc.alternatives.size(); ++i) {
             EXPECT_LE(sc.alternatives[i].score, sc.alternatives[i - 1].score);
         }
@@ -478,6 +625,27 @@ TEST(Composing_DecodeChord, Fixture_RedecodeRange_MatchesFullDecode)
         EXPECT_DOUBLE_EQ(sub[i].confidence, full[first + i].confidence) << "slice " << (first + i);
     }
 
+    delete score;
+}
+
+// End-to-end G1 invariant: in a real decode (G1 on by default), every slice's
+// commit/inherit/abstain decision is consistent with hasChord — Abstain ⟺ no
+// committed chord; Commit/Inherit ⟺ a committed chord.
+TEST(Composing_DecodeChord, G1_DecodeDecisionConsistentWithHasChord)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+    const auto slices = changePointSlices(model);
+    const auto d = CSD::decode(slices, model, 0, KeySigMode::Ionian);   // default prefs: G1 on
+    ASSERT_EQ(d.size(), slices.size());
+    for (const SliceChord& sc : d) {
+        if (sc.decision == cs::SliceDecision::Abstain) {
+            EXPECT_FALSE(sc.hasChord) << "an abstain commits no chord (slice " << sc.sliceIndex << ")";
+        } else {
+            EXPECT_TRUE(sc.hasChord) << "a commit/inherit carries a chord (slice " << sc.sliceIndex << ")";
+        }
+    }
     delete score;
 }
 

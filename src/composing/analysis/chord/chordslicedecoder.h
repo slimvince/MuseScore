@@ -23,7 +23,7 @@
 
 // ── composing/analysis/chord/chordslicedecoder ──────────────────────────────
 //
-// LAYER 4 — the CHORD-SYMBOL per-slice path (INCREMENT A only).
+// LAYER 4 — the CHORD-SYMBOL per-slice path (Increment A + B + G1).
 //
 // For each Layer-2 slice this names a chord (root + quality + bass/inversion)
 // by running the EXISTING chord scorer (analyzeChord) over the slice's note
@@ -32,21 +32,28 @@
 // per-slice result carries the chosen chord, the ranked alternatives, a
 // confidence (the margin to the best DIFFERENT chord) and an "uncertain" mark.
 //
-// WHAT INCREMENT A IS (signed design cowork_layer4_chordsymbol_design.md;
-// pre-build audit cc_layer4_audit_dossier.md): it stands up the per-slice path
-// and the grading harness so the genuinely-new parts land on a measured
-// baseline. It reuses the scorer and its cube; it does NOT fork a second scorer.
+// WHAT IS BUILT (signed design cowork_layer4_chordsymbol_design.md; pre-build
+// audit cc_layer4_audit_dossier.md):
+//   * Increment A — the per-slice path + grading harness: reuse the one scorer
+//     and its cube; do NOT fork a second scorer.
+//   * Increment B — per-note chord-tone-vs-NCT MEMBERSHIP (the two-pass,
+//     neighbour-aware decision) + the adaptive lazy-extend window. The membership
+//     sets on SliceChord are populated (design §5; the three-tier refinement
+//     G2/G3 is still a later increment).
+//   * G1 — commit / inherit / abstain + the >=3-template-tone SUFFICIENCY gate
+//     (design §4 step 3, §5 step 4): a new chord symbol is committed only from
+//     enough notes; a thin slice consistent with the prevailing chord INHERITS it;
+//     otherwise the slice ABSTAINS (no committed chord, the competing readings
+//     carried). This is the phantom-root guard — see applyCommitDecision.
 //
-// WHAT INCREMENT A IS NOT (deferred — STOP if you start building these here):
-//   * per-note chord-tone-vs-NCT MEMBERSHIP (the two-pass, neighbour-aware
-//     decision + the adaptive lazy-extend window) — Increment B. The membership
-//     sets on SliceChord are STUBBED EMPTY here.
+// WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
+//   * the three-tier membership LADDER + the spec plausibility check (G2/G3).
 //   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, the new
-//     diminished-seventh / minor-major TYPES, and extensions read from
-//     membership — Increment C.
-// So the chosen chord here is the existing scorer's per-window winner; the
-// "complete candidate list" is the surfaced cube ranked and pruned to top-K. No
-// new chord type, no spelling pin, no membership — those land on this baseline.
+//     diminished-seventh / minor-major TYPES, and the confidence composite +
+//     open-question label (Increment C / G4 / G5 / G6).
+// So the chosen chord is the existing scorer's per-window winner; the "complete
+// candidate list" is the surfaced cube ranked and pruned to top-K; no new chord
+// type and no spelling pin land here.
 //
 // HOW IT WORKS (this increment):
 //   1. Window. For each slice, build a ChordAnalysisTone window over the slice
@@ -65,8 +72,12 @@
 //      (analyzeChord's top result), located back in the cube by template index.
 //   4. Confidence. confidence = the chosen cell's vertical score minus the best
 //      vertical score over any DIFFERENT (root, quality) cell; a slice is
-//      "uncertain" when that margin is below uncertaintyMargin. Membership sets
-//      are left EMPTY (Increment B).
+//      "uncertain" when that margin is below uncertaintyMargin.
+//   5. Commit / inherit / abstain (G1). After membership, the chosen chord is
+//      committed only if >= sufficiencyChordTones of its own template tones are
+//      present in the slice AND the margin clears; a thin (insufficient) slice
+//      whose notes are all template tones of the prevailing chord inherits it;
+//      any other slice abstains (hasChord=false, competing readings carried).
 //
 // KEY is a feed-forward PRIOR (design §2/§9): the slice is scored under a given
 // key/mode (the notated signature in the --decode-chords diagnostic), which
@@ -178,6 +189,27 @@ struct ChordSliceDecoderPreferences {
     /// Tick tolerance for "immediately adjacent" in the stepwise test (0 = strictly
     /// contiguous onset/release).
     int stepwiseGapToleranceTicks = 0;
+
+    // ── G1: commit / inherit / abstain + sufficiency gate (design §4 step 3, §5 step 4) ──
+    //
+    // The phantom-root guard (the headline Step-0 lever). After ranking + membership,
+    // the top candidate is COMMITTED only when it is sufficiently evidenced (>=
+    // sufficiencyChordTones of its own template tones present) AND clearly ahead (the
+    // margin clears uncertaintyMargin); a thin slice that cannot fix its own chord
+    // INHERITS the prevailing chord when its notes are consistent with it; otherwise
+    // the slice ABSTAINS (no committed chord — the competing readings are still
+    // carried). See ChordSliceDecoder::applyCommitDecision.
+
+    /// Master switch. OFF reproduces the pre-G1 always-commit behaviour EXACTLY
+    /// (every scorable slice commits its top candidate; no inherit, no abstain).
+    bool enableCommitDecision = true;
+
+    /// Sufficiency gate: the minimum number of the chosen candidate's OWN template
+    /// tones (root/3rd/5th/7th) that must be PRESENT in the slice for a new chord
+    /// symbol to be committed — a complete triad's worth (design §5 step 4). This
+    /// count is the candidate's template-tone presence, independent of the
+    /// (extra-note) membership rule. A slice with fewer either inherits or abstains.
+    int sufficiencyChordTones = 3;
 };
 
 /// Global default decoder settings.
@@ -203,14 +235,28 @@ struct ChordSliceCandidate {
     bool bassIsRoot() const { return bassPc == rootPc; }
 };
 
+// ── The commit / inherit / abstain trichotomy (design §4 step 3, §5 step 4) ───
+//
+// The G1 decision over a ranked slice, distinct from the margin-only `uncertain`
+// flag: Commit names a new chord symbol (sufficient + clear margin); Inherit carries
+// the prevailing chord forward across a thin, consistent slice; Abstain declines to
+// commit (no chord, the open question — carried readings — handed to Architectural
+// Layer 5).
+enum class SliceDecision {
+    Commit,     ///< a new chord symbol committed from enough notes
+    Inherit,    ///< thin slice consistent with the prevailing chord — carry it forward
+    Abstain     ///< no commit (insufficient + no consistent prevailing, or low margin)
+};
+
 // ── Per-slice chord decision (signed design §7) ──────────────────────────────
 struct SliceChord {
     int sliceIndex = 0;                            ///< index into the slice vector
-    bool hasChord = false;                         ///< false = no scorable candidate (empty / sub-gate slice)
-    ChordSliceCandidate chosen;                    ///< the decided chord (root + quality + bass/inversion)
+    bool hasChord = false;                         ///< false = no committed chord (empty/sub-gate slice OR an abstain)
+    ChordSliceCandidate chosen;                    ///< the decided chord (root + quality + bass/inversion); on Inherit = the prevailing chord
     std::vector<ChordSliceCandidate> alternatives; ///< other distinct chords, ranked (∪ prevailing)
     double confidence = 0.0;                       ///< margin to the best DIFFERENT (root,quality) chord
-    bool uncertain = false;                        ///< confidence < uncertaintyMargin
+    bool uncertain = false;                        ///< confidence < uncertaintyMargin (the margin cue feeding the decision)
+    SliceDecision decision = SliceDecision::Commit; ///< G1: commit / inherit / abstain (see applyCommitDecision)
 
     // ── Membership (Increment B) — the per-note CT vs NCT decision ───────────
     // Binary chord-tone vs non-chord-tone membership, the real lever (design §11),
@@ -281,11 +327,14 @@ public:
         const std::set<std::size_t>& excludeStaves = {});
 
     /// Re-name a sub-range [first, last] (inclusive), consistent with the
-    /// incremental contract of the layers below. Because the per-slice decision
-    /// is context-free (the chosen chord + confidence depend only on the slice's
-    /// own window, not on any prior decision), a sub-range re-decode reproduces
-    /// the matching slice of a full decode EXACTLY — including the prevailing
-    /// alternative of the first slice (one slice of look-back is recomputed).
+    /// incremental contract of the layers below. The per-slice RANKING is context-free
+    /// (the chosen candidate + confidence depend only on the slice's own window), so a
+    /// sub-range re-decode reproduces the matching slice of a full decode EXACTLY when
+    /// the prevailing chain across the range boundary is recovered by the one slice of
+    /// look-back (true when `first <= 1`, or when slice `first-1` committed/abstained —
+    /// a context-free decision). With G1, an INHERIT makes the chosen chord depend on
+    /// the carried prevailing chain, so a deep `first` landing mid-inherit-run is only
+    /// reproduced up to that bounded look-back (the chain can span more than one slice).
     /// Returns SliceChord entries with global sliceIndex (first..last).
     static std::vector<SliceChord> redecodeRange(
         const std::vector<slicing::Slice>& slices,
@@ -330,6 +379,38 @@ public:
         const std::vector<FocalNote>& window,
         const std::optional<ChordSliceCandidate>& prevChord,
         const std::optional<ChordSliceCandidate>& nextChord,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
+
+    /// Count the DISTINCT focal pitch classes that are TEMPLATE tones (root/3rd/5th/
+    /// 7th…) of @p chord — the sufficiency gate's chord-tone source (design §5 step 4).
+    /// Pure; reuses the one chord-tone oracle function::bassIsTemplateChordTone, so the
+    /// count is the candidate's own structural presence, INDEPENDENT of the (extra-note)
+    /// membership rule. A complete triad present returns 3.
+    static int templateTonePresenceCount(
+        const ChordSliceCandidate& chord,
+        const std::vector<FocalNote>& focal);
+
+    /// Apply the commit / inherit / abstain decision (design §4 step 3, §5 step 4) on
+    /// top of a ranked slice @p sc (from decideSlice). The sufficiency gate counts the
+    /// CHOSEN candidate's own template tones present in @p focal (templateTonePresenceCount
+    /// — the phantom-root guard, independent of membership). Sets @p sc.decision and:
+    ///   * Commit  — sufficiency AND margin both pass: @p sc is left committed (hasChord
+    ///               stays true, chosen unchanged).
+    ///   * Inherit — sufficiency fails but @p sc's focal notes are all template tones of
+    ///               @p prevailing: chosen is replaced by the prevailing chord (carried
+    ///               forward); hasChord stays true; uncertain cleared.
+    ///   * Abstain — any other slice (insufficient with no consistent prevailing, OR
+    ///               sufficient but low margin, OR no scorable candidate): hasChord is
+    ///               cleared (the no-chord / open marker) and uncertain set; the ranked
+    ///               competing readings (alternatives) are kept.
+    /// Pure — no scorer / note-model dependency — so the behaviour tests inject the ranked
+    /// SliceChord + focal notes + prevailing chord by hand. With decoderPrefs
+    /// .enableCommitDecision == false this is a no-op (decision left Commit): the pre-G1
+    /// always-commit behaviour.
+    static void applyCommitDecision(
+        SliceChord& sc,
+        const std::vector<FocalNote>& focal,
+        const std::optional<ChordSliceCandidate>& prevailing,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 
