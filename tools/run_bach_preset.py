@@ -21,6 +21,7 @@ import hashlib
 import io
 import json
 import multiprocessing
+import os
 import shutil
 import subprocess
 import sys
@@ -141,6 +142,24 @@ def _to_unix_path(p):
     return s.replace('\\', '/')
 
 
+def _to_win_path(p):
+    """Resolved Windows path with forward slashes (e.g. 'C:/s/MS/foo.xml').
+
+    Used for the input/output ARGUMENTS handed to the native batch_analyze.exe.
+    The historical code passed unix-form args ('/c/s/MS/...') and relied on
+    MSYS2's automatic POSIX→Windows argument conversion to make them openable by
+    the native exe. That conversion is DISABLED whenever MSYS_NO_PATHCONV=1 (the
+    default in the Claude Code / VS Code Git Bash integration), so the unix-form
+    args reached the exe verbatim and every score failed with
+    "failed to load score: /c/s/MS/...". A drive-letter forward-slash path is a
+    valid Windows path the exe opens directly, is left untouched by MSYS whether
+    or not conversion is on, and needs no backslash escaping inside a bash -c
+    string — so it loads regardless of the shell's path-conversion state. The exe
+    records only the score basename in its output, so the arg form is
+    analysis-neutral (byte-identical JSON)."""
+    return str(Path(p).resolve()).replace('\\', '/')
+
+
 def _find_git_bash():
     return next((p for p in [
         Path("C:/Program Files/Git/usr/bin/bash.exe"),
@@ -148,21 +167,43 @@ def _find_git_bash():
     ] if p.exists()), None)
 
 
+def _qt_subprocess_env():
+    """Environment for the batch_analyze subprocess, hardened for headless runs (F16).
+
+    batch_analyze constructs a QGuiApplication, which must load a Qt platform
+    plugin (platforms/qwindows.dll). In a headless/cron context — or any session
+    whose Qt platform discovery differs from a normal desktop shell — that init
+    fails ("could not load the Qt platform plugin 'windows'") and the entire
+    corpus gate goes dark, even though batch_analyze is a headless CLI that needs
+    no window. We select the 'offscreen' platform so no windowing display is ever
+    required. This is analysis-neutral: batch_analyze reads the score model, not
+    any display, so chord/key output is byte-identical to the 'windows' platform
+    (verified). A caller that has explicitly set QT_QPA_PLATFORM is respected
+    (no override), so this is a strict no-op-or-improvement.
+
+    Returns a full env dict (os.environ + the override) for subprocess.run.
+    """
+    env = dict(os.environ)
+    env.setdefault("QT_QPA_PLATFORM", "offscreen")
+    return env
+
+
 def _run_batch_analyze(exe, xml_path, out_path, preset, diag_fh=None, extra_args=""):
     # extra_args: extra batch_analyze flags appended verbatim (Stage 4b-i:
     # "--ignore-declared-mode" for the mode-absent measurement floor). Empty by
     # default → byte-identical to the historical invocation.
     extra = f" {extra_args}" if extra_args else ""
+    run_env = _qt_subprocess_env()
     try:
         import platform
         if platform.system() == 'Windows':
             bash = _find_git_bash()
             if bash:
-                cmd = (f'{_to_unix_path(exe)} "{_to_unix_path(xml_path)}"'
-                       f' "{_to_unix_path(out_path)}" --preset {preset}{extra}')
+                cmd = (f'{_to_unix_path(exe)} "{_to_win_path(xml_path)}"'
+                       f' "{_to_win_path(out_path)}" --preset {preset}{extra}')
                 r = subprocess.run([str(bash), '-c', cmd],
                                    stdout=subprocess.DEVNULL,
-                                   stderr=subprocess.PIPE, timeout=120)
+                                   stderr=subprocess.PIPE, timeout=120, env=run_env)
                 if diag_fh is not None and r.stderr:
                     diag_fh.write(r.stderr.decode('utf-8', 'replace'))
                     diag_fh.flush()
@@ -175,7 +216,8 @@ def _run_batch_analyze(exe, xml_path, out_path, preset, diag_fh=None, extra_args
         if extra_args:
             native_cmd += extra_args.split()
         r = subprocess.run(native_cmd,
-                           stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=120)
+                           stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+                           timeout=120, env=run_env)
         if diag_fh is not None and r.stderr:
             diag_fh.write(r.stderr.decode('utf-8', 'replace'))
             diag_fh.flush()
