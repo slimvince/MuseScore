@@ -312,25 +312,50 @@ ToneOutcome classifyTone(const FocalNote& note,
     return o;
 }
 
-/// Inherit-consistency (design §5 step 4, the "inherit on insufficiency" fallback): are
-/// ALL of the slice's focal notes consistent with the prevailing chord? This is the
-/// conservative TEMPLATE-ONLY reading — every focal pitch class is a template tone of the
-/// prevailing chord (covers the spec's documented inherit cases: the single C♯-over-A-major
-/// thin slice whose C♯ is the chord's third, and the dyad that is a subset of the prevailing
-/// chord). The looser "... or a stepwise embellishment of it" relaxation (design §5 step 4)
-/// needs both-side neighbour context to tell a CONTINUATION of the prevailing chord from a
-/// TRANSITION to the next one — a note that is a stepwise embellishment of the prevailing
-/// chord is just as often heading INTO the next chord. That is the §4 two-reading inherit
-/// (committed alongside this conservative base); applied note-only it OVER-inherits on
-/// transition slices (measured −4.3 % among-committed). So the relaxation is gated on the
-/// next provisional chord in applyCommitDecision, not folded in here.
-bool notesConsistentWithPrevailing(const ChordSliceCandidate& prevailing,
-                                   const std::vector<FocalNote>& focal)
+/// Template-only inherit consistency (the conservative G1 base): are ALL of the slice's
+/// focal notes template tones of @p chord? Covers the spec's documented inherit cases (the
+/// single C♯-over-A-major thin slice whose C♯ is the chord's third; the dyad that is a subset
+/// of the prevailing chord). Used as the inherit test where no second-reading next provisional
+/// chord is available to confirm a CONTINUATION (the right boundary, or the membership /
+/// two-pass-off path) — there the conservative base is the only safe inherit.
+bool allFocalAreTemplateTonesOf(const ChordSliceCandidate& chord,
+                                const std::vector<FocalNote>& focal)
 {
     for (const FocalNote& f : focal) {
-        if (!function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {
+        if (!function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, f.pc())) {
             return false;
         }
+    }
+    return true;
+}
+
+/// Ladder inherit consistency (design §5 step 4): are ALL of the slice's focal notes
+/// consistent with the prevailing chord, each being a template tone of it OR a STEPWISE
+/// EMBELLISHMENT (a non-chord tone) of it? A focal note that is a STRUCTURAL extension of the
+/// prevailing chord (a real foreign chord tone — Tier 2, or a metrically-asserted Tier 3) is
+/// NOT an embellishment: the slice is a new chord, not a continuation, so it is inconsistent.
+/// This is the "... or a stepwise embellishment of it" relaxation; applied note-only it
+/// OVER-inherits (a passing tone of the prevailing chord is just as often a passing tone INTO
+/// the next chord), so applyCommitDecision GATES it on the next provisional chord being the
+/// prevailing chord (a CONTINUATION) — it relaxes continuations only, never transitions.
+/// @p window is the broader note stream the per-voice stepwise test reads (focal ⊆ window);
+/// @p prevChord / @p nextChord are the provisional neighbour chords.
+bool focalConsistentAsEmbellishmentsOf(const ChordSliceCandidate& prevailing,
+                                       const std::vector<FocalNote>& focal,
+                                       const std::vector<FocalNote>& window,
+                                       const ChordSliceCandidate* prevChord,
+                                       const ChordSliceCandidate* nextChord,
+                                       const ChordSliceDecoderPreferences& dp)
+{
+    for (const FocalNote& f : focal) {
+        if (function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {
+            continue;   // a chord tone of the prevailing chord — consistent
+        }
+        const ToneOutcome o = classifyTone(f, window, prevailing, prevChord, nextChord, dp);
+        if (o.chordTone) {
+            return false;   // a structural foreign note → not an embellishment of prevailing
+        }
+        // else: a stepwise embellishment (non-chord tone) of the prevailing chord — consistent.
     }
     return true;
 }
@@ -540,7 +565,10 @@ int ChordSliceDecoder::templateTonePresenceCount(const ChordSliceCandidate& chor
 void ChordSliceDecoder::applyCommitDecision(
     SliceChord& sc,
     const std::vector<FocalNote>& focal,
+    const std::vector<FocalNote>& window,
     const std::optional<ChordSliceCandidate>& prevailing,
+    const std::optional<ChordSliceCandidate>& prevChord,
+    const std::optional<ChordSliceCandidate>& nextChord,
     const ChordSliceDecoderPreferences& dp)
 {
     if (!dp.enableCommitDecision) {
@@ -568,18 +596,41 @@ void ChordSliceDecoder::applyCommitDecision(
         return;
     }
 
-    // Inherit: a thin (insufficient) slice whose notes are all template tones of the
-    // prevailing chord (the conservative template-only consistency) carries it forward,
-    // rather than naming a phantom. (A slice that is sufficient but merely loses on margin
-    // is NOT inherited — it abstains.) The "... or a stepwise embellishment of it"
-    // relaxation, gated on the next provisional chord (continuation vs transition), is the
-    // §4 two-reading inherit built alongside this base.
-    if (!sufficient && prevailing.has_value()
-        && notesConsistentWithPrevailing(*prevailing, focal)) {
-        sc.chosen = *prevailing;
-        sc.decision = SliceDecision::Inherit;
-        sc.uncertain = false;   // an inherited prevailing chord is a committed answer
-        return;
+    // Inherit — the §4 two-reading BOTH-SIDES test (design §4 step 3 / §5 step 4). A thin
+    // (insufficient) slice carries the prevailing chord forward only when it CONTINUES it,
+    // not when it TRANSITIONS to a new chord. The left side is the prevailing chord by
+    // construction (the carried committed/inherited chain); the right side is the next
+    // provisional chord @p nextChord (the second-reading pass-1 neighbour):
+    //   * next provisional == prevailing (a CONTINUATION): inherit iff the slice's notes are
+    //     all consistent with the prevailing chord by the G2 ladder (each a template tone OR
+    //     a stepwise embellishment of it). This is the spec's "... or a stepwise embellishment
+    //     of it" relaxation, now SAFELY gated — it relaxes continuations only.
+    //   * next provisional differs (a TRANSITION): do NOT inherit — the thin slice is heading
+    //     into a new chord, so it abstains on its own (insufficient) evidence. THIS is the
+    //     over-inherit fix: a note-only inherit cannot tell a continuation of the prevailing
+    //     chord from a transition to the next; the next provisional chord is what separates
+    //     them. A genuinely function-dependent residual (which the chord neighbours cannot
+    //     resolve) abstains → Architectural Layer 5.
+    //   * no next provisional in view (the right boundary, or the membership / two-pass-off
+    //     path): fall back to the conservative TEMPLATE-ONLY inherit — no CONTINUATION can be
+    //     confirmed, so the G1 base is the only safe inherit.
+    // (A slice that is sufficient but merely loses on margin is NOT inherited — it abstains.)
+    if (!sufficient && prevailing.has_value()) {
+        bool inherit = false;
+        if (nextChord.has_value()) {
+            inherit = sameChordSymbol(*nextChord, *prevailing)
+                      && focalConsistentAsEmbellishmentsOf(
+                             *prevailing, focal, window,
+                             prevChord.has_value() ? &*prevChord : nullptr, &*nextChord, dp);
+        } else {
+            inherit = allFocalAreTemplateTonesOf(*prevailing, focal);
+        }
+        if (inherit) {
+            sc.chosen = *prevailing;
+            sc.decision = SliceDecision::Inherit;
+            sc.uncertain = false;   // an inherited prevailing chord is a committed answer
+            return;
+        }
     }
 
     // Abstain: insufficient with no consistent prevailing, or sufficient but low margin.
@@ -644,10 +695,13 @@ SliceChord finalizeSlice(int t, const SliceWork& w,
         }
     }
     SliceChord sc = ChordSliceDecoder::decideSlice(t, adj, prevailing, dp);
-    // G1 — commit / inherit / abstain (design §4 step 3, §5 step 4). Decided BEFORE
-    // membership so the per-note classification reflects the FINAL chord (the inherited
-    // prevailing chord on Inherit; nothing on Abstain).
-    ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);
+    // G1 + the §4 two-reading inherit — commit / inherit / abstain (design §4 step 3, §5
+    // step 4). Decided BEFORE membership so the per-note classification reflects the FINAL
+    // chord (the inherited prevailing chord on Inherit; nothing on Abstain). The window +
+    // both-side provisional neighbour chords (prevC/nextC) feed the continuation-gated
+    // stepwise-embellishment inherit (nextC is the right-side provisional that tells a
+    // CONTINUATION of the prevailing chord from a TRANSITION to the next).
+    ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing, prevC, nextC, dp);
     if (sc.hasChord) {
         const MembershipResult mc =
             ChordSliceDecoder::classifyMembership(sc.chosen, w.focal, w.window, prevC, nextC, dp);
@@ -690,7 +744,11 @@ std::vector<SliceChord> decodeWindowed(
             const SliceWork w = buildSliceWork(analyzer, slices, model, t, keyFifths, keyMode,
                                                prefs, dp, excludeStaves);
             SliceChord sc = ChordSliceDecoder::decideSlice(t, w.cands, prevailing, dp);
-            ChordSliceDecoder::applyCommitDecision(sc, w.focal, prevailing, dp);   // G1
+            // Membership/two-pass disabled → no provisional neighbour chords; the §4
+            // two-reading continuation gate cannot fire, so inherit falls back to the
+            // conservative template-only G1 base (no CONTINUATION can be confirmed).
+            ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing,
+                                                   std::nullopt, std::nullopt, dp);   // G1
             if (sc.hasChord) { prevailing = sc.chosen; }
             if (t >= outFirst) { out.push_back(std::move(sc)); }
         }

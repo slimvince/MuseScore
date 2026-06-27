@@ -51,13 +51,20 @@
 //     one-sided → metric weight decides), and tests the candidate's REQUIRED
 //     (template) tones through the SAME ladder — a template tone behaving as a
 //     Tier-1 embellishment makes the candidate implausible (the spurious-seventh /
-//     Cadd9 discriminator). See classifyMembership. The G1 inherit stays the
-//     conservative TEMPLATE-ONLY consistency (notesConsistentWithPrevailing): the
-//     "... or a stepwise embellishment of it" relaxation (design §5 step 4) needs
-//     both-side neighbour context to tell a CONTINUATION of the prevailing chord
-//     from a TRANSITION to the next one — folded in note-only it OVER-inherits on
-//     transition slices, so it is the §4 two-reading inherit (the next increment),
-//     not part of this membership ladder.
+//     Cadd9 discriminator). See classifyMembership.
+//   * The §4 two-reading BOTH-SIDES inherit (design §4 / §5 step 4). The inherit
+//     fallback uses the second reading's provisional neighbours on BOTH sides: a
+//     thin (insufficient) slice carries the prevailing chord forward only when it
+//     CONTINUES it — the next provisional chord IS the prevailing chord (the left
+//     side is the prevailing chord by construction) — and its notes are all a
+//     template tone OR a stepwise embellishment of it (the G2 ladder). A TRANSITION
+//     (the next provisional chord differs) does NOT inherit — the thin slice is
+//     heading into a new chord, so it abstains (→ Architectural Layer 5). This is
+//     the over-inherit fix: a note-only inherit cannot tell continuation from
+//     transition; the next provisional chord is what separates them. Where no next
+//     provisional is in view (the right boundary / membership / two-pass off) the
+//     inherit falls back to the conservative TEMPLATE-ONLY G1 base. See
+//     applyCommitDecision.
 //
 // WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
 //   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, the new
@@ -424,24 +431,34 @@ public:
     /// — the phantom-root guard, independent of membership). Sets @p sc.decision and:
     ///   * Commit  — sufficiency AND margin both pass: @p sc is left committed (hasChord
     ///               stays true, chosen unchanged).
-    ///   * Inherit — sufficiency fails but @p sc's focal notes are all template tones of
-    ///               @p prevailing (the conservative template-only consistency): chosen is
-    ///               replaced by the prevailing chord (carried forward); hasChord stays
-    ///               true; uncertain cleared.
-    ///   * Abstain — any other slice (insufficient with no consistent prevailing, OR
+    ///   * Inherit — sufficiency fails but @p sc CONTINUES the prevailing chord (the §4
+    ///               two-reading both-sides test): the next provisional chord @p nextChord
+    ///               IS @p prevailing (the left side is the prevailing chord by construction)
+    ///               AND @p sc's focal notes are all consistent with it via the G2 ladder
+    ///               over @p window + @p prevChord / @p nextChord (each a template tone OR a
+    ///               stepwise embellishment of it). A TRANSITION (@p nextChord differs) does
+    ///               NOT inherit. With no @p nextChord in view (right boundary / two-pass off)
+    ///               the inherit falls back to the conservative TEMPLATE-ONLY G1 base. On an
+    ///               inherit, chosen is replaced by the prevailing chord (carried forward);
+    ///               hasChord stays true; uncertain cleared.
+    ///   * Abstain — any other slice (insufficient with no continuing prevailing, OR
     ///               sufficient but low margin, OR no scorable candidate): hasChord is
     ///               cleared (the no-chord / open marker) and uncertain set; the ranked
-    ///               competing readings (alternatives) are kept.
-    /// Pure — no scorer / note-model dependency — so the behaviour tests inject the ranked
-    /// SliceChord + focal notes + prevailing chord by hand. With
-    /// decoderPrefs.enableCommitDecision == false this is a no-op (decision left Commit):
-    /// the pre-G1 always-commit behaviour. (The "... or a stepwise embellishment of it"
-    /// inherit relaxation, gated on the next provisional chord to tell continuation from
-    /// transition, is the §4 two-reading inherit built alongside this base.)
+    ///               competing readings (alternatives) are kept for Architectural Layer 5.
+    /// @p window is the broader (adaptive-window) note stream the stepwise inherit test reads
+    /// (focal ⊆ window); an empty window degrades the ladder toward the template-only reading.
+    /// @p prevChord / @p nextChord are the second-reading provisional neighbour chords (absent
+    /// on the right boundary / membership-off path). Pure — no scorer / note-model dependency
+    /// — so the behaviour tests inject the ranked SliceChord + focal/window notes + prevailing
+    /// / neighbour chords by hand. With decoderPrefs.enableCommitDecision == false this is a
+    /// no-op (decision left Commit): the pre-G1 always-commit behaviour.
     static void applyCommitDecision(
         SliceChord& sc,
         const std::vector<FocalNote>& focal,
+        const std::vector<FocalNote>& window,
         const std::optional<ChordSliceCandidate>& prevailing,
+        const std::optional<ChordSliceCandidate>& prevChord,
+        const std::optional<ChordSliceCandidate>& nextChord,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 
