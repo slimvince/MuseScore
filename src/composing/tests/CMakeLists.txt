@@ -37,6 +37,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/chord_branch_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordanalyzer_musicxml_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chordsymbolformatter_branch_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chordvoicing_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/comparison_utils_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/decode_chord_tests.cpp
