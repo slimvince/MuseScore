@@ -1,6 +1,6 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-06-10 session 5 (explorationMode dual-path eliminated; HEAD `e7d4ba2b1a`).*
+*Written 2026-05-14. Last updated 2026-06-26 (L4 build complete + dormant; engage-with-L5 ratified; L1–L4 review in progress).*
 
 ---
 
@@ -78,7 +78,8 @@ deferred (not skipped) and must NOT be forgotten** — the user explicitly asked
    AFTER Stage 4 (key). *Status: PENDING Stage 5 — the gates remain a known structural debt until then.*
 
 Neither is a prerequisite for the current Stage-4 key-inference work (key axis is separate from the
-chord-axis gates; every Stage-4 step holds the gate byte-identical 57/23/57). But they are **owed** —
+chord-axis gates; every Stage-4 step holds the gate byte-identical 53/24/53 — the ratified current gate; the older
+57/23/57 was a stale presentation corrected in the 2026-06-26 doc-truth pass). But they are **owed** —
 surface them at every Stage-4/5/6 planning checkpoint until done. Both are also in
 `docs/implementation_roadmap.md` (3.5, Stage 5).
 

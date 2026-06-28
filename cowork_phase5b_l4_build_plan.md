@@ -38,20 +38,20 @@ Step 0 measured the new path **−15 vs legacy** (58 vs 74% chord-root), and **a
 commit/inherit/abstain mechanism (G1)** — architecture sound (per-slice fits the slicer + L3 spine, no amendment). So
 the order is **re-ordered to attack the lever first.** Each increment is **byte-identical** (decoder production-dead,
 dormant — corpus 53/24/53 unchanged), and each ends with a **re-measure** of the new-vs-legacy delta:
-- **Step 1 — commit / inherit / abstain + the ≥3-chord-tone sufficiency gate (G1 — THE LEVER).** The −15 lives here
-  (41% phantom roots + 42% thin slices = over-commit to noise — no abstain, no sufficiency gate today). Build per the
-  spec; **re-measure** — this should close most of the deficit and tells us if the sequence holds.
+- **Step 1 — commit / inherit / abstain + the ≥3-chord-tone sufficiency gate (G1 — THE LEVER) — ✅ DONE.** The −15 lived
+  here (41% phantom roots + 42% thin slices = over-commit to noise — no abstain, no sufficiency gate). Built per the
+  spec (`enableCommitDecision`/`applyCommitDecision`); closed most of the deficit and confirmed the sequence holds.
 - **Step 2 — membership three-tier ladder (G2/G3) + the §4 two-reading both-sides inherit — ✅ DONE & ACCEPTED**
   (`d52cfd0847` + `4aa88452cd`). G2/G3 accuracy-neutral/correct; the two-reading inherit is the **best variant**
   (coverage-matched 68.0%, fewest misses 573, thin-slice misses 300→61). Its abstain is *higher* (58.2%) **by design** —
   it correctly declines TRANSITION slices → L5 (spec-faithful). **§15-O2 (bounded-window joint) is now UNLOCKED but
   DEFERRED to Step M** (adopt only if the engage coverage-matched assessment shows the two-reading falls short; its
   window bound is delicate — must not cross into L5 progression grammar).
-- **Step 3 — confidence model + open-question label (G6).** Beyond margin-only; name the open question on abstain +
-  carry competing readings for L5 (the *representation*, not threshold-tuning — that's Phase B).
-- **Step 4 — spelling-pin (G4 — small, ~3.1%, last).** Symmetric-root via `spellingview`. **Split Increment-C: C1
-  spelling-pin (dormant, byte-identical) + C2 new four-note dim7/mMaj7 types (G5, gated → engage)** so new types don't
-  move legacy output (Step-0 F-4).
+- **Step 3 — confidence model + open-question label (G6) — ✅ DONE.** Beyond margin-only; names the open question on
+  abstain + carries competing readings for L5 (the *representation*, not threshold-tuning — Phase B). The L4→L5 contract.
+- **Step 4 — spelling-pin (G4 — small, ~3.1%, last) — ✅ DONE.** Symmetric-root via `spellingview`. **Split Increment-C:
+  C1 spelling-pin (dormant, byte-identical) built + C2 new four-note dim7/mMaj7 types (G5, gated → engage) deferred** so
+  new types don't move legacy output (Step-0 F-4).
 - New types (G5) / bounded-context (G7) / **section-grouping integration (F-3)** + the **§15-O2 decision** → the
   **engage** step (Step M).
 - **★ Per-step gate (CORRECTED — the §F mis-framing fix):** re-measure new-vs-legacy and judge by **coverage-matched

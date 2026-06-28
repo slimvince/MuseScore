@@ -1,6 +1,10 @@
 # Types-only header extraction — design (Phase 5 refactor 2 of 2)
 
-> **Status: DRAFT for ratification.** Grounded in `cc_types_header_investigation_report.md` (CC read-only, no source
+> **Status: BUILT / AS-BUILT (2026-06-26).** Realised as `analysis/types/analysistypes.h` (commit `11f26864f9`): the
+> value-type closure lives in the leaf, both header back-edges are killed (`regiontonecollector.h` + `keymodeanalyzer.h`
+> include only the leaf), and `PitchContext` is un-nested with the compatibility alias — all D1/D2/leaf-location
+> decisions below match the built artifact. (Outstanding follow-up D1: the `analysisutils.h` relocation, tracked in the
+> completion ledger A4.) Grounded in `cc_types_header_investigation_report.md` (CC read-only, no source
 > touched). The last Phase-5 structural refactor (audit Q2): relocate the cross-layer value types to a **leaf** header so
 > the L1.5/L3 headers compile **without** the L4 headers — killing the two type-only header back-edges and making the
 > include graph forward-only. **Byte-identical: a pure relocation** (every type keeps its name, namespace, and

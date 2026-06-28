@@ -1,5 +1,13 @@
 # L1–L4 architecture audit — unification, layering, coverage, staleness, dead code, principles
 
+> **★ RESOLUTION UPDATE (2026-06-26, post-L4-build + L1–L4 review).** Several findings here are now CLOSED: the Q4
+> STATUS.md gate contradiction is RESOLVED (STATUS synced to 53/24/53); the Q4 stale CMake "NOT wired" comments are
+> corrected; the Q1.3 "kMasks re-typed by hand" is closed (kMasks AND `templates[]` now derive from canonical
+> `kTemplateIntervals`); and the Q2/Q5 framing of `chordslicedecoder` as "aspirational / not-the-real-path" is superseded
+> — the new L4 path is now BUILT (complete) and intentionally **DORMANT** (deferred-engagement, joint with L5), NOT
+> dead-code-to-delete. Still-open items (the two segmenters, two pitch-context builders, `analysisutils.h` relocation)
+> remain migration debt scheduled for the joint-L5 engagement. Read the findings below with this banner.
+>
 > **Status: findings, read-only (2026-06-26).** Answers the six standing-quality questions over `src/composing/analysis/`
 > (L1 notemodel, L1.5 engravingbridge, L2 slicing, L3 key, L4 chord + the function/decode/harmony/section/scoreharvest
 > dirs) and `src/composing/tests/`. Built from three parallel source audits, with every load-bearing claim re-verified

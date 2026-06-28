@@ -101,10 +101,9 @@ or test-only (no behaviour change, no number movement).*
 - **Byte-identical layering refactors (audit Q1/Q2)** — each its own gated step, **gate = byte-identical corpus + both
   suites + snapshots** (corpus by-construction acceptable for a provably value-preserving refactor when the suites
   exercise the affected logic; see the `batch_analyze` prerequisite note below):
-  - **kMasks single-source (audit Q1.3) — kMasks DERIVE done `a0b983839a`; COMPLETION pending.** `kMasks` is now derived
-    from a new canonical `kTemplateIntervals` (hand-typed bitmasks gone, Gate R snapshot-pinned). **Remaining:** make
-    `chordanalyzer.cpp`'s `templates[]` *consume* `kTemplateIntervals` (a §5-constraint blocked it the first pass) so
-    there is **one** interval source feeding both — true single-source, byte-identical.
+  - **kMasks single-source (audit Q1.3) — ✅ COMPLETE (`a0b983839a` + `e391f381e6`).** `kMasks` derives from the
+    canonical `kTemplateIntervals`, AND `chordanalyzer.cpp`'s `templates[]` now consumes `kTemplateIntervals` too
+    (`templateIntervalsVec()`, line ~1219) — one interval source feeds both, byte-identical. (Audit Q1.3 closed.)
   - **Types-only header (audit Q2) — LAST, with its own read-only investigation.** The *most* involved refactor:
     `KeyModeAnalyzer::PitchContext` is **nested**, so extracting it (plus `ChordAnalysisTone`/`ChordTemporalContext`/
     `ChordAnalyzerPreferences`) to a leaf `analysis/types/` header needs un-nesting + a full reference-graph chase.
@@ -124,15 +123,15 @@ or test-only (no behaviour change, no number movement).*
 ---
 
 ## Phase 5b — L4 algorithmic build + engagement (make the new spine load-bearing)
-*L4 today is only a written spec; production chord identity still flows through the legacy `analyzeChord` +
-`ChordPathDecoder` path. This phase BUILDS L4 proper and ENGAGES it — the prerequisite for retiring the legacy in
-Phase 6.*
+*★ AS-BUILT (2026-06-26): the L4 BUILD is **complete + proven, but DORMANT** — `chordslicedecoder` (G1–G6, two-reading,
+spelling-pin) is built and measured (better where it commits; ~85% of abstention genuinely function-dependent → L5).
+Per the ratified **engage-with-L5** strategy, ENGAGEMENT (the production switch off legacy `analyzeChord`/`ChordPathDecoder`)
++ the Phase-6 legacy retirement are **joint with L5**, not done here. Build state below; the engage decision lives in
+`cowork_phase5b_l4_build_plan.md` Step M.*
 
-> **★ HARD PREREQUISITE for Phases 5b / 6 / B (the behaviour-changing phases): restore `batch_analyze`.** As of
-> 2026-06-26 `batch_analyze` cannot load any score this session (missing Qt `platforms/` plugins beside the binary;
-> Qt PATH/plugin-path did not fix it) — so the **empirical corpus two-tier BIR gate cannot be measured.** Byte-identical
-> refactors (Phase 5) are fine on the gtest suites + snapshots + by-construction, but **no behaviour-changing step may
-> proceed without the corpus gate.** Diagnose/restore the Qt plugin environment FIRST.
+> **HARD PREREQUISITE (RESOLVED `5357f5a7ed`).** `batch_analyze` was down earlier this session (the runner passed unix
+> paths under `MSYS_NO_PATHCONV=1` — the Qt-plugins framing was a red herring); it is **restored** (Windows-forward-slash
+> paths + `QT_QPA_PLATFORM=offscreen`), so the empirical corpus two-tier BIR gate is measurable again (and was, for Step M).
 - **Build L4** per `cowork_layer4_chordsymbol_design.md`: the per-slice chord namer (`chordslicedecoder`) with
   commit / inherit / **abstain (declare uncertainty, not guess)**, the symmetric-root **spelling-pin** (consuming the
   Phase-4 spelling primitive), and the membership / NCT backlog in `cowork_delta_check_dispositions.md`.

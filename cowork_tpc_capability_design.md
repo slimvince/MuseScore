@@ -76,6 +76,14 @@ consistency scorer (≈55 sites). So the "one shared interpreter, never duplicat
 them.** That fold also **corrects** the inline `>= 0` guards noted in §1 (they currently mis-reject flat-side
 spellings). This is a forward note for the L4 build, **not** Phase-4 work.
 
+> **★ AS-BUILT STATUS (2026-06-26) — the spelling-pin is built, the FOLD is NOT yet confirmed (flagged for engagement).**
+> The L4 symmetric-root spelling-pin is built (Step 4 / G4-C1, dormant) and consumes `engravingbridge::spellingview`'s
+> `lineOfFifths`. But whether it **folded** the ≈55 inline `tpcForPc`/`tpcConsistencyBonus`/sense-boolean reads in
+> `chordanalyzer.cpp` into the primitive (true single-interpreter), or a **second tpc reader now coexists** (the pin
+> reads `lineOfFifths` while the legacy inline cluster still interprets tpc independently), is an open **unification
+> question**. It is being resolved at source by the L1–L4 review (`cc_instruction_l1l4_review_tidy.md` §1, ★) — report
+> only; the actual fold, if owed, is a gated engagement-step refactor (the legacy scorer is live until engage-with-L5).
+
 ## 4. Byte-identity (the gate)
 - **BIR-flat on both presets — trivially:** the primitive has **no production consumer** in Phase 4 (L4 unbuilt, the
   L3 term deferred to Phase B). Nothing on the live path calls it, so the corpus, both suites, and snapshots are

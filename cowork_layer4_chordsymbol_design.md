@@ -5,8 +5,15 @@
 > `cowork_layer3_spec_language_sweep.md`). It corrects three faults: the thin-evidence path was specified only by
 > preference, not by rule (the hole the phantom-root defect fell through); the prose reached into the source; and it
 > carried invented vocabulary. The build state and the mapping onto existing source live in the delivery plan, not
-> here — this document reads the same whether or not anything has been built. Not yet rebuilt against this revision;
-> the implementation-versus-spec investigation runs next.
+> here — this document reads the same whether or not anything has been built.
+> **★ AS-BUILT (2026-06-26): this spec is now realised** — `chord/chordslicedecoder.{h,cpp}` implements G1
+> (commit/inherit/abstain + ≥3-template-tone sufficiency), G2/G3 three-tier membership + plausibility, the §4 two-reading
+> both-sides inherit, G6 (confidence + the open-question L4→L5 contract), and the G4/C1 symmetric-root spelling-pin
+> (consuming `engravingbridge::spellingview`). It is **built but DORMANT** — production still runs legacy
+> `analyzeChord`/`ChordPathDecoder`; the **engage-with-L5** strategy defers the production switch + legacy retirement to
+> the joint L4+L5 step (measured: better where it commits; ~85% of its abstention genuinely function-dependent → L5).
+> §15-O2 (bounded-window joint) + C2 (new four-note types) are deferred to the engage step. Build state:
+> `cowork_phase5b_l4_build_plan.md`.
 >
 > **Open item O1 is resolved (user-ratified 2026-06-24, see §15):** the step that resolves a slice marked "uncertain"
 > is **Architectural Layer 5 (function) itself** — there is no distinct box between the note-layers and Layer 5. Layer
