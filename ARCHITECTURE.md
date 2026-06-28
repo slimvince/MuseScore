@@ -743,6 +743,52 @@ threshold and preset policy"); it retires when Layer 4 (function/cadence) pins t
 key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
 `cowork_layer3_keymode_design.md`.
 
+#### Layer 4 — the per-slice chord-symbol decoder (2026-06-28, as-built, **DORMANT** — engages with L5; final commit `1e74f21ea4`)
+
+**Built, unit-tested, and graded — but NOT wired into the live pipeline.** Layer 4 of the rebuild is
+`ChordSliceDecoder` (`composing/analysis/chord/chordslicedecoder.{h,cpp}`): a per-slice chord-symbol
+decoder over the Layer-2 slices, mirroring the Layer-3 key/mode decoder's shape. Production chord
+analysis still runs the **legacy** `analyzeChord` + post-scoring gates (§4.1); the decoder runs only
+under the read-only `batch_analyze --decode-chords` diagnostic (which returns before `analyzeScore`),
+so production output is **byte-identical**. The production switch, legacy retirement, and coverage
+seal are **joint with Layer 5** (engage-with-L5, ratified 2026-06-26).
+
+| Module | Responsibility |
+|--------|----------------|
+| `composing/analysis/chord/chordslicedecoder.{h,cpp}` | **Decode a chord symbol per Layer-2 slice.** `decideSlice` (scorer-independent) selects from a candidate cube, computes the confidence margin to the best DIFFERENT chord, ranks/caps the alternatives, carries the prevailing (∪) union, and marks "uncertain". `decode` runs the full pipeline over a Layer-1 note model + `changePointSlices`; `redecodeRange` re-decodes a sub-range under the same incremental contract. |
+
+**The decision ladder (G1–G6 + spelling-pin), built incrementally, all dormant:**
+- **G1 — commit / inherit / abstain + sufficiency gate** (`f21273ce3b`): per slice, commit a chord,
+  inherit the prevailing chain, or abstain when the slice is insufficient.
+- **G2/G3 — three-tier membership ladder + plausibility check** (`1b7fee1cd5`; the ladder is kept by
+  the Step-2 correction `d52cfd0847`).
+- **Two-reading both-sides inherit — continuation vs transition** (`4aa88452cd`): a slice's look-ahead
+  consumes `nextChord` (a Layer-4 result) but explicitly disclaims any transition *cost* ("that is
+  Layer 5") — the forward-only contract holds, no back-edge.
+- **G6 — confidence model + open-question label (the L4→L5 abstain contract)** (`c74fe98ff5`):
+  `OpenQuestionLabel` *declares* the open question + the competing readings; Layer 4 does **not**
+  resolve it (representational only — the `SliceDecision` is unchanged by G6).
+- **G4/C1 — symmetric-root spelling-pin** (`1e74f21ea4`): for a pitch-class-undecidable symmetric root
+  (dim7 / augmented / share-tone), pins the spelling-correct rotation from each focal note's notated
+  `tpc`, read through the **shared** `engravingbridge::lineOfFifths` primitive (the Layer-1.5 spelling
+  view) — one interpreter, not a per-layer tpc copy.
+
+**Proven where it commits; abstains where function decides.** Per the L4-build grading reported in the
+engage-with-L5 ratification (`cowork_l1l4_review_charter.md`): the decoder is materially better than
+legacy where it commits (+5.5 / +5.8 in the graded measure), and ≈**85%** of its abstention is
+genuinely function-dependent → resolvable only by Layer 5 (function/cadence). That is the evidence for
+opening L5 on a clean L1–L4 foundation.
+
+**Unification residual (scheduled for engage-with-L5).** The spelling-pin reads the shared spelling
+primitive, but the live legacy scorer (`chordanalyzer.cpp`) still interprets `tpc` through its own
+inline cluster (`tpcForPc` / `tpcConsistencyBonus` / `tpcSpellsAsSharp` / `countTpcMatches`), so a
+**second tpc reader coexists** until the legacy path retires (the tpc-fold the tpc-capability spec §3
+owes — deferred, not done). Likewise `redecodeRange`, `tonicizationlabeler`, and
+`DecodeQualityLevel::Normal/Deep` are built-but-inert staging, each comment-accurate about its
+dormancy. Built with `decode_chord_tests.cpp` (scorer-independent + note-model tiers). Full provenance:
+`cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits
+`f21273ce3b`..`1e74f21ea4`.
+
 #### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1; region key/mode path superseded by Layer 3)
 
 The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in
