@@ -161,14 +161,19 @@ These five concepts are used throughout §5 and are defined here once so no rule
   refinement deferred to the build (§15-3); everywhere else "region" means the phrase-bounded span just defined.
 - **Prevailing harmony (of a slice).** The committed chord (from Layer 4) of the nearest **metrically-strong** slice at or
   before the slice in question, within the same region — the harmony a passing/neighbour figure is heard against.
+  ("Metrically strong" is realised **parameter-free** as a **local maximum of the metric weight** — no threshold — per the
+  Step-1 build.)
 - **The progression.** The ordered sequence of committed chord identities (and, once assigned, their Roman-numeral
   functions) across a region — the chord stream Layer 4 committed, read in order. "The next function" / "the established
   next function" is the function of the next committed (non-abstained) chord, or, where the next chord is itself open, the
   next **cadence-anchored** function (a chord whose function a cadence has fixed, §5.2).
-- **A licensed (real) progression.** A root motion between two functions is **licensed** when it is one of the standard
+- **A licensed (real) progression.** A **root motion** between two functions is **licensed** when it is one of the standard
   functional successions: a descending-fifth (dominant) motion, a descending-third or ascending-second functional step,
   the resolution of an applied or leading-tone chord to its tonicized target, or a cadential motion (§5.2). A reading
   "participates in a real progression" when its function forms a licensed motion **into** the established next function.
+  (Because the test is on *root motion*, a **same-root quality resolution** — e.g. an augmented chord resolving to a chord
+  on the same root — is **not** a progression and is outside this test; such voice-leading events are a chord-layer /
+  embellishment matter, not function progression. Step-1 build decision.)
   This is a stated, enumerable test — not a preference. (The numeric preference *among* several licensed readings is a
   precision-phase weight; the licensing itself is the rule here.)
 - **A resolution (as a detected event).** A **leading-tone resolution** is detected when the leading-tone pitch sounding
