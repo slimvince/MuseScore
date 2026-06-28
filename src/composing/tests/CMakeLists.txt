@@ -45,6 +45,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/decode_keymode_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/diagnose_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge_branch_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/functioncadence_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionlayer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionprogression_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionromannumeral_tests.cpp

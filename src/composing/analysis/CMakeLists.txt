@@ -78,6 +78,18 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functionromannumeral.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functionromannumeral.cpp
 
+    # functioncadence — Architectural Layer 5 (FUNCTION), Phase 5c Step 2: the
+    # KEY-AGNOSTIC, EVENT-PAIR, feature-scored cadence detector (§5.2). Rebuilt on the
+    # cadencekeyanchor key-agnostic frame + the Step-1 progression predicates, but with
+    # the CORRECTED leading-tone RESOLUTION event (replacing the broken LT-presence
+    # test that false-positives on I→IV) + the genuine-dominant gate + the inversion-
+    # anchored typology + the cadential-6/4 collapse + the chorale phrase gate. DORMANT
+    # — no production consumer (exercised only by its unit tests); the circular
+    # production detectCadences() (section/sectioncadencedetection.cpp) is untouched
+    # (its retirement is Phase 5d). Spec: cowork_layer5_function_design.md §5.2.
+    ${CMAKE_CURRENT_LIST_DIR}/function/functioncadence.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functioncadence.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
