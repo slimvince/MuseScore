@@ -815,6 +815,193 @@ TEST(Composing_DecodeChord, TwoReading_NoNextProvisionalFallsBackToTemplateOnly)
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// G6 — the confidence MODEL + the open-question label (the L4→L5 abstain contract,
+// design §7/§12). Scorer-free: computeConfidence (pure arithmetic) + nameOpenQuestion
+// via applyCommitDecision injected by hand. REPRESENTATIONAL — the commit/inherit/
+// abstain decision is unchanged; these assert the richer VALUE + the named question.
+// ════════════════════════════════════════════════════════════════════════════
+
+using cs::AmbiguityKind;
+using cs::OpenQuestion;
+using cs::SliceConfidence;
+
+// The composite confidence on a CLEAR slice (wide margin, full template, clean
+// membership) is high (≈1) — every component at its ceiling.
+TEST(Composing_DecodeChord, G6_Confidence_ClearSliceIsHigh)
+{
+    // margin 2.0 (≥ 2×uncertaintyMargin → certainty 1.0), 3/3 template tones, 3/3 focal
+    // pcs are chord tones.
+    const SliceConfidence c = CSD::computeConfidence(2.0, 3, 3, 3, 3);
+    EXPECT_DOUBLE_EQ(c.margin, 2.0);
+    EXPECT_DOUBLE_EQ(c.sufficiency, 1.0);
+    EXPECT_DOUBLE_EQ(c.membershipCleanliness, 1.0);
+    EXPECT_DOUBLE_EQ(c.composite, 1.0) << "a clear slice is fully confident";
+}
+
+// A low MARGIN drags the composite down even with a full, clean chord — the
+// ambiguity reason.
+TEST(Composing_DecodeChord, G6_Confidence_LowMarginIsLow)
+{
+    const SliceConfidence c = CSD::computeConfidence(0.1, 3, 3, 3, 3);   // margin 0.1, default uncertaintyMargin 0.5
+    EXPECT_DOUBLE_EQ(c.sufficiency, 1.0);
+    EXPECT_NEAR(c.composite, 0.1, 1e-9) << "marginCertainty = 0.1/(2×0.5) = 0.1 floors the composite";
+    EXPECT_LT(c.composite, c.sufficiency);
+}
+
+// THE spec invariant (design §7): a wide margin does NOT rescue an insufficient slice —
+// the composite tracks the LOW sufficiency, not the high margin (the MIN, not a sum).
+TEST(Composing_DecodeChord, G6_Confidence_WideMarginDoesNotRescueInsufficiency)
+{
+    // wide margin (2.0 → certainty 1.0), but only 1 of 3 template tones present, 1 focal pc.
+    const SliceConfidence c = CSD::computeConfidence(2.0, 1, 3, 1, 1);
+    EXPECT_NEAR(c.sufficiency, 1.0 / 3.0, 1e-9);
+    EXPECT_NEAR(c.composite, 1.0 / 3.0, 1e-9)
+        << "the composite is the MIN — a wide margin cannot rescue low sufficiency";
+}
+
+// A low membership CLEANLINESS (many contested notes) also floors the composite — the
+// third independent reason.
+TEST(Composing_DecodeChord, G6_Confidence_ContestedMembershipLowersComposite)
+{
+    // wide margin, full triad present, but only 2 of 5 focal pcs are chord tones (3 NCTs).
+    const SliceConfidence c = CSD::computeConfidence(2.0, 3, 3, 2, 5);
+    EXPECT_DOUBLE_EQ(c.sufficiency, 1.0);
+    EXPECT_NEAR(c.membershipCleanliness, 0.4, 1e-9);
+    EXPECT_NEAR(c.composite, 0.4, 1e-9) << "few-vs-many contested notes floors the composite";
+}
+
+// A COMMITTED slice has no open question and a high composite confidence (via the real
+// applyCommitDecision path — the forward contract is populated AFTER the decision).
+TEST(Composing_DecodeChord, G6_CommitHasNoOpenQuestionAndHighComposite)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(0, ChordQuality::Major, 0, 3.0, kTieMajor),   // C major — chosen, clear margin
+        cand(9, ChordQuality::Minor, 9, 1.0, kTieMinor),
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);
+    const std::vector<FocalNote> focal = {
+        note(60, 0, 1920, 3, 1.0, 4.0), note(64, 0, 1920, 2, 1.0, 4.0), note(67, 0, 1920, 1, 1.0, 4.0),
+    };
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    ASSERT_EQ(sc.decision, cs::SliceDecision::Commit);
+    EXPECT_EQ(sc.openQuestion.question, OpenQuestion::None) << "a committed slice has nothing open";
+    EXPECT_EQ(sc.openQuestion.ambiguity, AmbiguityKind::None);
+    EXPECT_FALSE(sc.openQuestion.hasReadingB);
+    EXPECT_DOUBLE_EQ(sc.confidenceModel.sufficiency, 1.0) << "a full triad present";
+    EXPECT_GT(sc.confidenceModel.composite, 0.5) << "a clear commit is confident";
+}
+
+// THE §4 spot-check — a SHARE-TONE abstain (Am6 ↔ F♯ø7, the same four pitch classes)
+// names BOTH competing readings AND the ambiguity kind (ShareTone), carried to Layer 5.
+TEST(Composing_DecodeChord, G6_ShareToneAbstain_NamesBothReadingsAndAmbiguity)
+{
+    constexpr int kTieHalfDim = 8;   // HalfDim {0,3,6,10} (kTemplateIntervals index 8)
+    // F♯ø7 {F#,A,C,E} = {6,9,0,4} vs Am {A,C,E} = {9,0,4} — Am6 and F♯ø7 are one collection.
+    std::vector<ChordSliceCandidate> cands = {
+        cand(6, ChordQuality::HalfDiminished, 6, 3.0, kTieHalfDim),   // F♯ø7 — chosen
+        cand(9, ChordQuality::Minor, 9, 2.9, kTieMinor),             // Am — the share-tone competitor
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);   // margin 0.1 → uncertain
+    ASSERT_TRUE(sc.uncertain);
+    // A full {F#,A,C,E} sounding → all four are F♯ø7 template tones → sufficient (so the
+    // margin gate decides the abstain, the same-collection share-tone residual → L5).
+    const std::vector<FocalNote> focal = {
+        note(66, 0, 1920, 3, 1.0, 4.0),   // F#
+        note(69, 0, 1920, 2, 1.0, 4.0),   // A
+        note(60, 0, 1920, 1, 1.0, 4.0),   // C
+        note(64, 0, 1920, 0, 1.0, 4.0),   // E
+    };
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    ASSERT_EQ(sc.decision, cs::SliceDecision::Abstain) << "a share-tone low-margin residual abstains → L5";
+
+    // The open question NAMES the ambiguity AND carries both competing readings.
+    EXPECT_EQ(sc.openQuestion.ambiguity, AmbiguityKind::ShareTone)
+        << "F♯ø7 and Am explain the same four pitch classes — a share-tone open question";
+    EXPECT_EQ(sc.openQuestion.question, OpenQuestion::Root) << "the readings disagree on the root";
+    EXPECT_EQ(sc.openQuestion.readingA.rootPc, 6) << "reading A = the chosen F♯ø7";
+    ASSERT_TRUE(sc.openQuestion.hasReadingB) << "the competing reading is named, not just listed";
+    EXPECT_EQ(sc.openQuestion.readingB.rootPc, 9) << "reading B = the competing Am";
+    EXPECT_EQ(sc.openQuestion.readingB.quality, ChordQuality::Minor);
+    // The composite confidence is low (the low margin) — honest about the unresolved residual.
+    EXPECT_LT(sc.confidenceModel.composite, sc.confidenceModel.sufficiency)
+        << "the low-margin share-tone abstain is not confident";
+}
+
+// A RELATIVE-PAIR abstain (C major ↔ A minor, roots a minor third apart) names the
+// RelativePair ambiguity (distinct from a same-collection share-tone).
+TEST(Composing_DecodeChord, G6_RelativePairAbstain_NamesRelativePair)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(0, ChordQuality::Major, 0, 3.0, kTieMajor),   // C major — chosen
+        cand(9, ChordQuality::Minor, 9, 2.9, kTieMinor),   // A minor — the relative competitor
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);
+    const std::vector<FocalNote> focal = {   // a full C-major triad {0,4,7} → sufficient
+        note(60, 0, 1920, 3, 1.0, 4.0), note(64, 0, 1920, 2, 1.0, 4.0), note(67, 0, 1920, 1, 1.0, 4.0),
+    };
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    ASSERT_EQ(sc.decision, cs::SliceDecision::Abstain);
+    EXPECT_EQ(sc.openQuestion.ambiguity, AmbiguityKind::RelativePair)
+        << "C major and A minor (roots a third apart) are a relative pair, not a same-collection share-tone";
+    EXPECT_EQ(sc.openQuestion.question, OpenQuestion::Root);
+}
+
+// A TRANSITION thin slice abstains and names TransitionVsContinuation (the open question
+// is the root — which chord the thin slice is heading into).
+TEST(Composing_DecodeChord, G6_TransitionThinSliceAbstain_NamesTransition)
+{
+    const std::optional<ChordSliceCandidate> prevailing = cand(0, ChordQuality::Major, 0, 0.0, kTieMajor);
+    SliceChord sc; std::vector<FocalNote> focal, window;
+    thinEmbellishmentOfC(sc, focal, window, prevailing);   // a thin (insufficient) slice
+    // next provisional F major DIFFERS from prevailing C → a TRANSITION → abstain.
+    const std::optional<ChordSliceCandidate> nbrC = cand(0, ChordQuality::Major, 0, 0.0, kTieMajor);
+    const std::optional<ChordSliceCandidate> nbrF = cand(5, ChordQuality::Major, 5, 0.0, kTieMajor);
+    CSD::applyCommitDecision(sc, focal, window, prevailing, nbrC, nbrF);
+    ASSERT_EQ(sc.decision, cs::SliceDecision::Abstain);
+    EXPECT_EQ(sc.openQuestion.ambiguity, AmbiguityKind::TransitionVsContinuation)
+        << "a thin slice heading into a different next chord is a transition";
+    EXPECT_EQ(sc.openQuestion.question, OpenQuestion::Root);
+}
+
+// A phantom-root thin slice with no consistent prevailing names InsufficientEvidence.
+TEST(Composing_DecodeChord, G6_InsufficientAbstain_NamesInsufficientEvidence)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(5, ChordQuality::Major, 5, 3.0, kTieMajor),   // F major — chosen, but only its 5th present
+        cand(2, ChordQuality::Minor, 2, 0.5, kTieMinor),
+    };
+    SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);
+    const std::vector<FocalNote> focal = { note(60, 0, 480, 0, 1.0, 1.0) };   // C only (F major's 5th)
+    CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    ASSERT_EQ(sc.decision, cs::SliceDecision::Abstain);
+    EXPECT_EQ(sc.openQuestion.ambiguity, AmbiguityKind::InsufficientEvidence)
+        << "a thin slice with no consistent prevailing chord is insufficient evidence";
+    EXPECT_EQ(sc.openQuestion.question, OpenQuestion::Root) << "too few notes to fix a root";
+    EXPECT_LT(sc.confidenceModel.sufficiency, 1.0) << "only one of three template tones present";
+}
+
+// Determinism: the confidence model + open-question are a pure function of the inputs.
+TEST(Composing_DecodeChord, G6_ForwardContractDeterministic)
+{
+    constexpr int kTieHalfDim = 8;
+    std::vector<ChordSliceCandidate> cands = {
+        cand(6, ChordQuality::HalfDiminished, 6, 3.0, kTieHalfDim),
+        cand(9, ChordQuality::Minor, 9, 2.9, kTieMinor),
+    };
+    const std::vector<FocalNote> focal = {
+        note(66, 0, 1920, 3, 1.0, 4.0), note(69, 0, 1920, 2, 1.0, 4.0),
+        note(60, 0, 1920, 1, 1.0, 4.0), note(64, 0, 1920, 0, 1.0, 4.0),
+    };
+    SliceChord a = CSD::decideSlice(0, cands, std::nullopt);
+    SliceChord b = CSD::decideSlice(0, cands, std::nullopt);
+    CSD::applyCommitDecision(a, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    CSD::applyCommitDecision(b, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+    EXPECT_EQ(a.openQuestion.ambiguity, b.openQuestion.ambiguity);
+    EXPECT_EQ(a.openQuestion.question, b.openQuestion.question);
+    EXPECT_DOUBLE_EQ(a.confidenceModel.composite, b.confidenceModel.composite);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // NOTE-MODEL (end-to-end) — real decode() over Layer-1 models from .mscx fixtures.
 // ════════════════════════════════════════════════════════════════════════════
 

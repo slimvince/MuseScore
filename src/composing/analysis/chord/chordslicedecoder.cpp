@@ -79,6 +79,58 @@ bool sameChordSymbol(const ChordSliceCandidate& a, const ChordSliceCandidate& b)
     return a.rootPc == b.rootPc && a.quality == b.quality;   // ignores bass/inversion
 }
 
+/// Number of template tones (root/3rd/5th/7th…) a template carries — the sufficiency
+/// DENOMINATOR (design §7: "a full seventh present versus a dyad"). Read off the one
+/// source kTemplateIntervals (count of non-(-1) intervals): triads → 3, sevenths → 4,
+/// Power → 2. -1 / out-of-range → 0.
+int templateToneCount(int tiePriority)
+{
+    if (tiePriority < 0 || tiePriority >= static_cast<int>(kTemplateCount)) {
+        return 0;
+    }
+    int n = 0;
+    for (int interval : kTemplateIntervals[static_cast<std::size_t>(tiePriority)]) {
+        if (interval >= 0) { ++n; }
+    }
+    return n;
+}
+
+/// G6 ambiguity cue — do the two readings explain the SAME focal pitch classes? Every
+/// focal pc is a template tone of @p a OR @p b, and each of a, b covers at least a triad's
+/// worth (>=3) of them. This is the same-collection / share-tone signal (Am6↔F♯ø7,
+/// dim7-subset cases): the readings are two namings of one pitch set, separable only by
+/// function (design §15-O1). A genuinely-different close reading shares few focal tones
+/// and fails this test (→ RelativePair or CloseReading).
+bool sameCollectionOverFocal(const ChordSliceCandidate& a, const ChordSliceCandidate& b,
+                             const std::vector<FocalNote>& focal)
+{
+    bool present[12] = {};
+    for (const FocalNote& f : focal) { present[f.pc()] = true; }
+    int aCov = 0, bCov = 0;
+    for (int pc = 0; pc < 12; ++pc) {
+        if (!present[pc]) { continue; }
+        const bool inA = function::bassIsTemplateChordTone(a.rootPc, a.tiePriority, pc);
+        const bool inB = function::bassIsTemplateChordTone(b.rootPc, b.tiePriority, pc);
+        if (!inA && !inB) { return false; }   // a focal pc neither reading explains → not one collection
+        if (inA) { ++aCov; }
+        if (inB) { ++bCov; }
+    }
+    return aCov >= 3 && bCov >= 3;
+}
+
+/// G6 ambiguity cue — are the two readings a relative major/minor pair? Roots a minor
+/// third apart (Δ ∈ {3,9}) with one major-quality and one minor-quality (C↔Am, the
+/// relative reading the key axis leaves open, design §15-O1). Quality is the coarse
+/// ChordQuality category here (the relative relation is a triad-quality fact).
+bool relativePair(const ChordSliceCandidate& a, const ChordSliceCandidate& b)
+{
+    const int d = (((a.rootPc - b.rootPc) % 12) + 12) % 12;
+    const bool thirdApart = (d == 3 || d == 9);
+    const bool majMin = (a.quality == ChordQuality::Major && b.quality == ChordQuality::Minor)
+                        || (a.quality == ChordQuality::Minor && b.quality == ChordQuality::Major);
+    return thirdApart && majMin;
+}
+
 /// Eligible sounding notes in [startTick, endTick), projected to FocalNote — the
 /// INDEXED per-note view membership reads (NoteModel::overlapping, NOT the aggregated
 /// pc view; design §1). Same eligibility filter as weightedPcView / soundingAt
@@ -401,6 +453,36 @@ std::vector<ChordSliceCandidate> candidatesForWindow(
     return out;
 }
 
+/// G6 — populate the L4→L5 forward contract on @p sc AFTER the G1 decision is settled
+/// (design §7/§8): the composite confidence (every slice) and the named open question
+/// (abstain only). Representational — reads the FINAL chosen chord; changes no decision
+/// field. The membership cleanliness is read off the chosen chord's focal classification
+/// (the same classifyMembership the §10 metric scores); on an abstain sc.chosen still
+/// holds the top reading. @p sufficient / @p wasTransition carry the abstain sub-reason.
+void populateForwardContract(SliceChord& sc,
+                             const std::vector<FocalNote>& focal,
+                             const std::vector<FocalNote>& window,
+                             const std::optional<ChordSliceCandidate>& prevChord,
+                             const std::optional<ChordSliceCandidate>& nextChord,
+                             bool sufficient, bool wasTransition,
+                             const ChordSliceDecoderPreferences& dp)
+{
+    int present = 0, required = 0, chordTonePcs = 0, focalPcs = 0;
+    if (sc.chosen.rootPc >= 0) {
+        required = templateToneCount(sc.chosen.tiePriority);
+        present  = ChordSliceDecoder::templateTonePresenceCount(sc.chosen, focal);
+        if (!focal.empty()) {
+            const MembershipResult m = ChordSliceDecoder::classifyMembership(
+                sc.chosen, focal, window, prevChord, nextChord, dp);
+            chordTonePcs = static_cast<int>(m.chordTonePcs.size());
+            focalPcs     = static_cast<int>(m.chordTonePcs.size() + m.nonChordTonePcs.size());
+        }
+    }
+    sc.confidenceModel = ChordSliceDecoder::computeConfidence(
+        sc.confidence, present, required, chordTonePcs, focalPcs, dp);
+    sc.openQuestion = ChordSliceDecoder::nameOpenQuestion(sc, sufficient, wasTransition, focal, dp);
+}
+
 } // namespace
 
 SliceChord ChordSliceDecoder::decideSlice(
@@ -562,6 +644,112 @@ int ChordSliceDecoder::templateTonePresenceCount(const ChordSliceCandidate& chor
     return n;
 }
 
+SliceConfidence ChordSliceDecoder::computeConfidence(
+    double margin,
+    int templateTonesPresent, int templateTonesRequired,
+    int focalChordTonePcs, int focalPcs,
+    const ChordSliceDecoderPreferences& dp)
+{
+    SliceConfidence c;
+    c.margin = margin;
+
+    // Sufficiency — present / required template tones of the chosen chord, clamped [0,1]
+    // (a full seventh present → 1.0; a dyad of a triad → 0.67; a lone tone → 0.33). The
+    // "how complete the committed chord is" axis (design §7).
+    c.sufficiency = (templateTonesRequired > 0)
+        ? std::min(1.0, std::max(0.0, static_cast<double>(templateTonesPresent)
+                                      / static_cast<double>(templateTonesRequired)))
+        : 0.0;
+
+    // Membership cleanliness — the chord-tone fraction of the focal pitch classes (few
+    // contested notes vs many, design §7). No focal notes → clean (1.0) by convention.
+    c.membershipCleanliness = (focalPcs > 0)
+        ? std::min(1.0, std::max(0.0, static_cast<double>(focalChordTonePcs)
+                                      / static_cast<double>(focalPcs)))
+        : 1.0;
+
+    // Margin → certainty in [0,1], scaled by the EXISTING uncertainty threshold: at the
+    // decision boundary (margin == uncertaintyMargin) → 0.5; at 2× → 1.0; the no-competitor
+    // sentinel → 1.0. Reuses uncertaintyMargin — no NEW accuracy parameter (representational).
+    const double ref = 2.0 * std::max(1e-9, dp.uncertaintyMargin);
+    const double marginCertainty = std::min(1.0, std::max(0.0, margin / ref));
+
+    // Composite = MIN (the "uncertain when low for EITHER reason" property, design §7): a
+    // wide margin does NOT rescue an insufficient slice, nor a clean membership a low margin.
+    c.composite = std::min(marginCertainty, std::min(c.sufficiency, c.membershipCleanliness));
+    return c;
+}
+
+OpenQuestionLabel ChordSliceDecoder::nameOpenQuestion(
+    const SliceChord& sc, bool sufficient, bool wasTransition,
+    const std::vector<FocalNote>& focal,
+    const ChordSliceDecoderPreferences& /*dp*/)
+{
+    OpenQuestionLabel q;
+    if (sc.decision != SliceDecision::Abstain) {
+        return q;   // Commit / Inherit → nothing open (None / None)
+    }
+
+    // An abstain with no scorable reading at all (an empty slice — decideSlice found no cell).
+    if (sc.chosen.rootPc < 0) {
+        q.question = OpenQuestion::Root;
+        q.ambiguity = AmbiguityKind::InsufficientEvidence;
+        return q;
+    }
+
+    q.readingA = sc.chosen;   // the chosen / top reading — one side of the open question
+
+    // The best DIFFERENT (root,quality) reading carried among the alternatives (an inversion
+    // of the chosen is NOT a different reading).
+    const ChordSliceCandidate* other = nullptr;
+    for (const ChordSliceCandidate& a : sc.alternatives) {
+        if (!sameChordSymbol(a, sc.chosen)) { other = &a; break; }
+    }
+    if (other) {
+        q.readingB = *other;
+        q.hasReadingB = true;
+    }
+
+    if (!sufficient) {
+        // Thin slice — too few notes to fix a chord (the phantom-root guard). The open
+        // question is the ROOT; the kind is whether it is heading into a DIFFERENT next chord
+        // (a transition) or simply has no consistent prevailing chord (insufficient evidence).
+        q.question = OpenQuestion::Root;
+        q.ambiguity = wasTransition ? AmbiguityKind::TransitionVsContinuation
+                                    : AmbiguityKind::InsufficientEvidence;
+        return q;
+    }
+
+    // Sufficient but low margin — two close readings. Name the axis they disagree on and the
+    // kind of ambiguity from the chosen vs the best different reading.
+    if (!other) {
+        q.question = OpenQuestion::Quality;          // a margin abstain with only same-symbol inversions (rare)
+        q.ambiguity = AmbiguityKind::CloseReading;
+        return q;
+    }
+
+    if (sc.chosen.rootPc == other->rootPc) {
+        // Same root, competing qualities/functions (C vs C7; passing-dim vs applied chord).
+        q.question = OpenQuestion::Quality;
+        q.ambiguity = sameCollectionOverFocal(sc.chosen, *other, focal)
+                      ? AmbiguityKind::ShareTone : AmbiguityKind::CloseReading;
+        return q;
+    }
+
+    // Different roots — the ROOT (chord identity) is the open question; L5 selects the reading.
+    q.question = OpenQuestion::Root;
+    if (sc.chosen.quality == ChordQuality::Augmented && other->quality == ChordQuality::Augmented) {
+        q.ambiguity = AmbiguityKind::SymmetricRotation;   // augmented rotations (dim7 once G5 lands)
+    } else if (sameCollectionOverFocal(sc.chosen, *other, focal)) {
+        q.ambiguity = AmbiguityKind::ShareTone;           // same collection, different naming (Am6↔F♯ø7)
+    } else if (relativePair(sc.chosen, *other)) {
+        q.ambiguity = AmbiguityKind::RelativePair;        // relative major/minor (C↔Am)
+    } else {
+        q.ambiguity = AmbiguityKind::CloseReading;
+    }
+    return q;
+}
+
 void ChordSliceDecoder::applyCommitDecision(
     SliceChord& sc,
     const std::vector<FocalNote>& focal,
@@ -572,14 +760,19 @@ void ChordSliceDecoder::applyCommitDecision(
     const ChordSliceDecoderPreferences& dp)
 {
     if (!dp.enableCommitDecision) {
-        // Pre-G1 always-commit behaviour: leave the slice exactly as decideSlice left
-        // it (the empty-slice abstain set in decideSlice is preserved).
+        // Pre-G1 always-commit behaviour: leave the DECISION exactly as decideSlice left
+        // it (the empty-slice abstain set in decideSlice is preserved). The G6 forward
+        // contract is additive — it changes no decision field.
+        populateForwardContract(sc, focal, window, prevChord, nextChord,
+                                /*sufficient=*/false, /*wasTransition=*/false, dp);
         return;
     }
 
     // No scorable candidate → abstain (decideSlice already cleared hasChord).
     if (!sc.hasChord) {
         sc.decision = SliceDecision::Abstain;
+        populateForwardContract(sc, focal, window, prevChord, nextChord,
+                                /*sufficient=*/false, /*wasTransition=*/false, dp);
         return;
     }
 
@@ -593,6 +786,8 @@ void ChordSliceDecoder::applyCommitDecision(
     // Commit: enough independent chord tones AND a clear-enough winner.
     if (sufficient && marginOk) {
         sc.decision = SliceDecision::Commit;
+        populateForwardContract(sc, focal, window, prevChord, nextChord,
+                                sufficient, /*wasTransition=*/false, dp);
         return;
     }
 
@@ -629,16 +824,24 @@ void ChordSliceDecoder::applyCommitDecision(
             sc.chosen = *prevailing;
             sc.decision = SliceDecision::Inherit;
             sc.uncertain = false;   // an inherited prevailing chord is a committed answer
+            populateForwardContract(sc, focal, window, prevChord, nextChord,
+                                    sufficient, /*wasTransition=*/false, dp);
             return;
         }
     }
 
     // Abstain: insufficient with no consistent prevailing, or sufficient but low margin.
     // No new symbol is committed (the no-chord / open marker); the competing readings
-    // (alternatives) are kept for Architectural Layer 5.
+    // (alternatives) are kept for Architectural Layer 5, NAMED by the open-question label.
     sc.decision = SliceDecision::Abstain;
     sc.hasChord = false;
     sc.uncertain = true;
+    // The abstain sub-reason for the open question: a thin (insufficient) slice heading into
+    // a DIFFERENT next chord is a transition; otherwise insufficient / low-margin (named inside).
+    const bool wasTransition = !sufficient && prevailing.has_value() && nextChord.has_value()
+                               && !sameChordSymbol(*nextChord, *prevailing);
+    populateForwardContract(sc, focal, window, prevChord, nextChord,
+                            sufficient, wasTransition, dp);
 }
 
 namespace {

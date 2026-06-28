@@ -65,11 +65,25 @@
 //     provisional is in view (the right boundary / membership / two-pass off) the
 //     inherit falls back to the conservative TEMPLATE-ONLY G1 base. See
 //     applyCommitDecision.
+//   * G6 — the confidence MODEL + the open-question label (the L4→L5 abstain
+//     contract; design §7/§8/§12). Beyond the margin-only `uncertain` flag, each
+//     slice carries a COMPOSITE confidence (margin × sufficiency × membership
+//     cleanliness — low for EITHER reason → low composite, so a wide margin does
+//     not rescue an insufficient slice) and, on an ABSTAIN, a structured
+//     open-question label that NAMES which question is open (root / quality / a
+//     note's membership) and the kind of ambiguity (share-tone / relative-pair /
+//     symmetric-rotation / transition-vs-continuation / insufficient evidence),
+//     carrying the two competing readings forward. This is REPRESENTATIONAL: the
+//     commit/inherit/abstain DECISION is unchanged — G1 already gates on
+//     sufficiency AND margin as separate conditions, which IS the spec's
+//     "uncertain when low margin OR low sufficiency" boundary — G6 only adds the
+//     richer value + the named question L5 reads. See computeConfidence /
+//     nameOpenQuestion (populated by applyCommitDecision). L4 only DECLARES the
+//     open question; L5 (function) RESOLVES it — never this layer.
 //
 // WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
-//   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, the new
-//     diminished-seventh / minor-major TYPES, and the confidence composite +
-//     open-question label (Increment C / G4 / G5 / G6).
+//   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, and the new
+//     diminished-seventh / minor-major TYPES (Increment C / G4 / G5).
 // So the chosen chord is the existing scorer's per-window winner; the "complete
 // candidate list" is the surfaced cube ranked and pruned to top-K; no new chord
 // type and no spelling pin land here.
@@ -271,6 +285,63 @@ enum class SliceDecision {
     Abstain     ///< no commit (insufficient + no consistent prevailing, or low margin)
 };
 
+// ── G6: the named open question (the L4→L5 abstain contract) ──────────────────
+//
+// On an ABSTAIN the layer NAMES which question is open so Architectural Layer 5
+// knows WHAT to resolve, not merely that something is open (design §7/§12). The
+// question is the chord-identity axis the carried readings disagree on.
+enum class OpenQuestion {
+    None,           ///< committed or inherited — nothing open
+    Root,           ///< which root (thin slice; symmetric rotation; share-tone; two different roots)
+    Quality,        ///< which quality/function at a shared root (passing-dim vs applied; C vs C7)
+    NoteMembership  ///< a specific note's chord-tone-vs-NCT call (reserved; not populated this increment)
+};
+
+// ── G6: the kind of ambiguity behind an open question (design §15-O1) ─────────
+//
+// Context for Architectural Layer 5: WHY the readings could not be separated by
+// note evidence. Derived locally from the two competing readings + the abstain
+// reason — never from progression grammar (that is Layer 5).
+enum class AmbiguityKind {
+    None,                     ///< committed / inherited
+    InsufficientEvidence,     ///< too few chord tones to fix a chord (thin slice, no consistent prevailing)
+    TransitionVsContinuation, ///< thin slice heading into a DIFFERENT next chord (not a continuation of prevailing)
+    SymmetricRotation,        ///< competing readings are rotations of a symmetric sonority (aug; dim7 once G5 lands)
+    ShareTone,                ///< competing readings explain the SAME focal pitch classes (e.g. Am6↔F♯ø7)
+    RelativePair,             ///< competing roots a minor third apart, major↔minor (the relative reading, e.g. C↔Am)
+    CloseReading              ///< two close but otherwise-unrelated readings (general low margin)
+};
+
+// ── G6: the composite confidence MODEL (design §7/§12) ───────────────────────
+//
+// Beyond the margin-only `uncertain` flag: a richer certainty VALUE for L5,
+// combining the three independent reasons a reading can be uncertain. Built as a
+// MIN (the "low for EITHER reason" property): a wide margin does NOT rescue an
+// insufficient slice, and a clean membership does not rescue a low margin. Purely
+// REPRESENTATIONAL — it does not drive the commit/inherit/abstain decision (G1
+// already gates on sufficiency AND margin separately).
+struct SliceConfidence {
+    double margin = 0.0;                ///< raw margin to the best DIFFERENT reading (== SliceChord.confidence)
+    double sufficiency = 0.0;           ///< present / required template tones of the chosen chord, [0,1]
+    double membershipCleanliness = 1.0; ///< chord-tone fraction of the focal pitch classes, [0,1]
+    double composite = 0.0;             ///< combined certainty [0,1] = min(marginCertainty, sufficiency, cleanliness)
+};
+
+// ── G6: the structured open-question marker carried to L5 on an abstain ───────
+//
+// Distinct from the bare `uncertain` flag: it names the open question AND the two
+// competing readings in tension (readingA = the chosen/top reading, readingB =
+// the best DIFFERENT reading), so L5 selects among them. The full ranked list is
+// still on SliceChord.alternatives; this names the pair that drove the abstain.
+struct OpenQuestionLabel {
+    OpenQuestion question = OpenQuestion::None;
+    AmbiguityKind ambiguity = AmbiguityKind::None;
+    ChordSliceCandidate readingA;     ///< the chosen / top reading (valid when question != None)
+    ChordSliceCandidate readingB;     ///< the best DIFFERENT competing reading (valid when hasReadingB)
+    bool hasReadingB = false;         ///< false when no different reading exists (e.g. an empty/insufficient slice)
+    int contestedPc = -1;             ///< NoteMembership: the contested pc (else -1; reserved this increment)
+};
+
 // ── Per-slice chord decision (signed design §7) ──────────────────────────────
 struct SliceChord {
     int sliceIndex = 0;                            ///< index into the slice vector
@@ -280,6 +351,13 @@ struct SliceChord {
     double confidence = 0.0;                       ///< margin to the best DIFFERENT (root,quality) chord
     bool uncertain = false;                        ///< confidence < uncertaintyMargin (the margin cue feeding the decision)
     SliceDecision decision = SliceDecision::Commit; ///< G1: commit / inherit / abstain (see applyCommitDecision)
+
+    // ── G6: the L4→L5 forward contract (the confidence model + open question) ──
+    // Representational — populated by applyCommitDecision AFTER the decision; the
+    // commit/inherit/abstain trichotomy above is unchanged. composite confidence
+    // for every slice; a named open question only on an ABSTAIN (else None).
+    SliceConfidence confidenceModel;               ///< G6 composite confidence (margin + sufficiency + cleanliness)
+    OpenQuestionLabel openQuestion;                ///< G6 named open question + the two competing readings (on abstain)
 
     // ── Membership (Increment B + G2/G3) — the per-note CT vs NCT decision ────
     // Binary chord-tone vs non-chord-tone membership, the real lever (design §11),
@@ -459,6 +537,36 @@ public:
         const std::optional<ChordSliceCandidate>& prevailing,
         const std::optional<ChordSliceCandidate>& prevChord,
         const std::optional<ChordSliceCandidate>& nextChord,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
+
+    // ── G6: the confidence MODEL + the open-question label (design §7/§12) ────
+
+    /// Compute the COMPOSITE confidence (design §7): the three independent reasons a
+    /// reading can be uncertain, combined as a MIN so the composite is low when ANY
+    /// is low (a wide margin does not rescue an insufficient slice). Pure arithmetic
+    /// — the behaviour tests inject the counts by hand. @p margin is the raw margin to
+    /// the best different reading (SliceChord.confidence); @p templateTonesPresent /
+    /// @p templateTonesRequired give the sufficiency (a full seventh present vs a dyad);
+    /// @p focalChordTonePcs / @p focalPcs give the membership cleanliness (few contested
+    /// notes vs many). REPRESENTATIONAL — it does not change the commit/abstain decision.
+    static SliceConfidence computeConfidence(
+        double margin,
+        int templateTonesPresent, int templateTonesRequired,
+        int focalChordTonePcs, int focalPcs,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
+
+    /// Name the open question on an abstained slice @p sc (design §7/§12): WHICH axis
+    /// the carried readings disagree on (root / quality) and the KIND of ambiguity
+    /// (symmetric rotation / share-tone / relative pair / transition / insufficient),
+    /// with the two competing readings (chosen = readingA, best different = readingB).
+    /// On a Commit / Inherit it returns None (nothing open). @p sufficient and
+    /// @p wasTransition come from the G1 decision (the abstain sub-reason); @p focal is
+    /// the slice's notes (the share-tone / same-collection test reads template tones over
+    /// them). Pure — no scorer / note-model dependency. L4 DECLARES the question; L5
+    /// RESOLVES it (never this layer).
+    static OpenQuestionLabel nameOpenQuestion(
+        const SliceChord& sc, bool sufficient, bool wasTransition,
+        const std::vector<FocalNote>& focal,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 };
 
