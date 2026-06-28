@@ -71,7 +71,6 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "engraving/dom/part.h"
 #include "engraving/dom/instrument.h"
 #include "engraving/dom/keysig.h"
-#include "engraving/dom/fermata.h"   // Stage 4c-iii: phrase-boundary (fermata) detection
 #include "engraving/dom/layoutbreak.h"
 #include "engraving/dom/mscore.h"
 #include "engraving/dom/pedal.h"
@@ -102,6 +101,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
 #include "composing/analysis/key/keymodesequence.h"         // Layer 3 decoder: --decode-keymode
 #include "composing/analysis/chord/chordslicedecoder.h"     // Layer 4 decoder: --decode-chords
+#include "composing/analysis/engravingbridge/phraseboundaryview.h"  // owned Layer-1.5 phrase-boundary primitive
 #include "composing/analysis/engravingbridge/regiontonecollector.h" // weightedPcView (focal-slice sounding pcs)
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "notation/internal/notationanalysisinternal.h"
@@ -379,26 +379,12 @@ static bool staffIsEligible(const Score* score, size_t staffIdx)
 }
 
 // ── Stage 4c-iii: phrase boundaries from fermatas (key-agnostic notation) ─────
-// Collect the ticks of every chord-rest segment carrying a fermata.  In a Bach
-// chorale these mark phrase endings; a cadence resolving INTO a fermata-bearing
-// region is a STRUCTURAL cadence (weighted above interior tonicizations).  This
-// reads notation only — no key/function — so the detector stays key-agnostic.
-static std::set<int> collectPhraseBoundaryTicks(const Score* score)
-{
-    std::set<int> ticks;
-    for (const Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
-        for (const Segment* s = m->first(SegmentType::ChordRest); s;
-             s = s->next(SegmentType::ChordRest)) {
-            for (const EngravingItem* e : s->annotations()) {
-                if (e && e->isFermata()) {
-                    ticks.insert(s->tick().ticks());
-                    break;
-                }
-            }
-        }
-    }
-    return ticks;
-}
+// The fermata scan is now the single owned Layer-1.5 primitive
+// (analysis::engravingbridge::phraseBoundaryTicks); the former local
+// collectPhraseBoundaryTicks was retired into it (byte-identical de-dup). In a
+// Bach chorale these mark phrase endings; a cadence resolving INTO a
+// fermata-bearing region is a STRUCTURAL cadence (weighted above interior
+// tonicizations). Notation only — no key/function.
 
 static size_t referenceStaffForAnalysis(const Score* score,
                                         const std::set<size_t>& excludeStaves)
@@ -2828,7 +2814,7 @@ int main(int argc, char* argv[])
     // key.  Only used by --dump-joint-key; off ⇒ unused (byte-identical output).
     int declaredModeOrdinal = -1;
     if (dumpCadenceAnchor || dumpModulation || dumpJointKey) {
-        phraseBoundaryTicks = collectPhraseBoundaryTicks(score);
+        phraseBoundaryTicks = analysis::engravingbridge::phraseBoundaryTicks(score);
         if (refStaff < score->nstaves() && score->staff(refStaff)) {
             const auto kse = score->staff(refStaff)->keySigEvent(Fraction(0, 1));
             notatedSignatureFifths = static_cast<int>(kse.concertKey());

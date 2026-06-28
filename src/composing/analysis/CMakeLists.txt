@@ -181,6 +181,15 @@ target_sources(composing_analysis PRIVATE
     # cowork_tpc_capability_design.md + cc_tpc_capability_build_report.md.
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/spellingview.h
     ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/spellingview.cpp
+    # phraseboundaryview — the single owned phrase-boundary primitive (Layer 1.5).
+    # Reads, from the notated surface alone (key-/chord-/function-agnostic), where a
+    # phrase ends. STEP A: the de-duplication of the two hand-synced fermata scans
+    # (regionanalyzer jkdPhraseBoundaryTicks + batch_analyze collectPhraseBoundaryTicks)
+    # into one owner — fermata-only, byte-identical. STEP B replaces the definition
+    # with the graded surface-cue + marker model (design §4) without moving the
+    # signature or its (dormant/gated) consumers. See cowork_phrase_boundary_design.md.
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/phraseboundaryview.h
+    ${CMAKE_CURRENT_LIST_DIR}/engravingbridge/phraseboundaryview.cpp
 
     # slicing/ — LAYER 2: the deterministic CHANGE-POINT SLICER. Enumerates the
     # constant-tonal-sonority slices over the layer-1 note model as a covering,

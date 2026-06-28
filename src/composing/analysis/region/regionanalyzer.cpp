@@ -39,6 +39,7 @@
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/decode/chordpathdecoder.h"
+#include "composing/analysis/engravingbridge/phraseboundaryview.h"
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
 #include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
@@ -351,27 +352,6 @@ std::vector<mu::engraving::Fraction> denseBoundaryTicks(
     return boundaries;
 }
 
-// ── J-key-iii — phrase boundaries from fermatas (key-agnostic notation) ──────────
-// Mirrors tools/batch_analyze.cpp collectPhraseBoundaryTicks EXACTLY so the wired
-// joint decision sees the SAME `endsPhrase` inputs the --dump-joint-key diagnostic
-// measured (the §5 invariant: wired key == measured softTonicPc/softIsMajor).
-std::set<int> jkdPhraseBoundaryTicks(const mu::engraving::Score* score)
-{
-    std::set<int> ticks;
-    for (const mu::engraving::Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
-        for (const mu::engraving::Segment* s = m->first(mu::engraving::SegmentType::ChordRest);
-             s; s = s->next(mu::engraving::SegmentType::ChordRest)) {
-            for (const mu::engraving::EngravingItem* e : s->annotations()) {
-                if (e && e->isFermata()) {
-                    ticks.insert(s->tick().ticks());
-                    break;
-                }
-            }
-        }
-    }
-    return ticks;
-}
-
 // ── J-key-iii — the joint re-key pass (the FIRST intentional production behavior
 // change on the key axis; gated on jointKeyWiringEnabled(), default OFF) ─────────
 //
@@ -423,7 +403,9 @@ void applyJointKeyWiring(const mu::engraving::Score* score,
             declaredModeOrdinal = 1;
         }
     }
-    const std::set<int> phraseBoundaryTicks = jkdPhraseBoundaryTicks(score);
+    // Phrase boundaries from the single owned Layer-1.5 primitive (de-dup of the
+    // former jkdPhraseBoundaryTicks; same fermata-only definition at Step A).
+    const std::set<int> phraseBoundaryTicks = ebr::phraseBoundaryTicks(score);
 
     // (b) re-resolve local candidates per FINAL region + build the joint input stream.
     std::vector<analysis::JointKeyRegionInput> input;
