@@ -33,16 +33,31 @@ Before any build, CC establishes, at source + by measurement:
   the new path is plausibly equivalent-or-better, or whether the architecture needs a rethink. *(This step can rewrite
   Steps 1–n.)*
 
-## Steps 1..n — BUILD the new-path increments (each dormant / byte-identical, each investigated)
-Provisional (Step 0 finalises the list/order). Each its own investigate→build→verify→assess loop; each **byte-identical**
-(new path has no production consumer yet — corpus 53/24/53 unchanged):
-- **Spelling-pin (Increment-C):** symmetric-root resolution consuming the Phase-4 `spellingview` primitive (the clean
-  deterministic tpc use). Unit-tested against the symmetric-root cases (`bwv272@4320` G♯dim7, etc.).
-- **Abstain / inherit:** the "declare uncertainty, not guess" path per spec — completed + tested.
-- **Membership (three-tier rule):** the spec's stepwise-embellishing / chord-tone-extension / metric-weight decider,
-  per the delta-check dispositions backlog.
-- After each: re-run the new-path-vs-legacy diagnostic comparison → does this increment move the new path *toward* the
-  GT? Assess; amend the next increment if not.
+## Steps 1..n — BUILD the new-path increments — GROUNDED ORDER (Step-0 `9ef7ff312a`: the −15 maps to G1)
+Step 0 measured the new path **−15 vs legacy** (58 vs 74% chord-root), and **all of it is the unbuilt
+commit/inherit/abstain mechanism (G1)** — architecture sound (per-slice fits the slicer + L3 spine, no amendment). So
+the order is **re-ordered to attack the lever first.** Each increment is **byte-identical** (decoder production-dead,
+dormant — corpus 53/24/53 unchanged), and each ends with a **re-measure** of the new-vs-legacy delta:
+- **Step 1 — commit / inherit / abstain + the ≥3-chord-tone sufficiency gate (G1 — THE LEVER).** The −15 lives here
+  (41% phantom roots + 42% thin slices = over-commit to noise — no abstain, no sufficiency gate today). Build per the
+  spec; **re-measure** — this should close most of the deficit and tells us if the sequence holds.
+- **Step 2 — membership three-tier ladder (G2/G3) + the §4 two-reading both-sides inherit — ✅ DONE & ACCEPTED**
+  (`d52cfd0847` + `4aa88452cd`). G2/G3 accuracy-neutral/correct; the two-reading inherit is the **best variant**
+  (coverage-matched 68.0%, fewest misses 573, thin-slice misses 300→61). Its abstain is *higher* (58.2%) **by design** —
+  it correctly declines TRANSITION slices → L5 (spec-faithful). **§15-O2 (bounded-window joint) is now UNLOCKED but
+  DEFERRED to Step M** (adopt only if the engage coverage-matched assessment shows the two-reading falls short; its
+  window bound is delicate — must not cross into L5 progression grammar).
+- **Step 3 — confidence model + open-question label (G6).** Beyond margin-only; name the open question on abstain +
+  carry competing readings for L5 (the *representation*, not threshold-tuning — that's Phase B).
+- **Step 4 — spelling-pin (G4 — small, ~3.1%, last).** Symmetric-root via `spellingview`. **Split Increment-C: C1
+  spelling-pin (dormant, byte-identical) + C2 new four-note dim7/mMaj7 types (G5, gated → engage)** so new types don't
+  move legacy output (Step-0 F-4).
+- New types (G5) / bounded-context (G7) / **section-grouping integration (F-3)** + the **§15-O2 decision** → the
+  **engage** step (Step M).
+- **★ Per-step gate (CORRECTED — the §F mis-framing fix):** re-measure new-vs-legacy and judge by **coverage-matched
+  accuracy + *correct* abstention** (declining genuinely-ambiguous slices → L5 is RIGHT), **NOT raw coverage**. An
+  increment that improves coverage-matched accuracy while abstaining correctly is a GO even if raw committed-fraction
+  drops. STOP/amend only if coverage-matched accuracy regresses or a *class-(b)* error appears.
 
 ## Step M — MEASURE: new path vs legacy, the engagement GO/NO-GO (read-only)
 With the new path complete, the full diagnostic comparison on the corpus (both presets): the new per-slice path's BIR
