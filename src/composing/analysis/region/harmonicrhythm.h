@@ -84,6 +84,26 @@ struct HarmonicRegion {
     KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
     std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
     ChordTemporalExtensions temporalExtensions;     ///< Snapshot of the temporal context used to analyze this region (Phase 3c)
+
+    // ── Layer-5 override-readiness forward-carry (IN-MEMORY ONLY, no consumer yet) ──
+    // The ranked alternative KEYS the Layer-3 slice decoder already computed for the
+    // representative slice that decided keyModeResult, plus that slice's sequence-margin
+    // confidence. Filled at the slice→region key reduction (regionanalyzer.cpp
+    // localKeyForRegion) so the Layer-5 confidence-weighted forward override can SELECT
+    // among the keys the key layer carried forward — never re-derive
+    // (cowork_layer5_function_design.md §8 / §9-D7). The chosen key (keyModeResult) and
+    // everything consumed today are unchanged; this is additive plumbing of already-
+    // computed data.
+    //
+    // ★ DELIBERATELY NOT SERIALIZED into ANY production output (.ours.json, the pipeline
+    // snapshot goldens, notation annotations): every region serializer reads only named
+    // sub-fields (keyModeResult.*, tones, chordResult, …) and none touches these — so
+    // adding them is byte-identical. Empty / 0.0 until the Layer-3 decode runs (the live
+    // analyzeRegions key path); has NO consumer — it exists for Layer 5. The v1 reduction
+    // (the representative slice's alternatives + confidence) is a tracked placeholder,
+    // pinned precisely as the first L5-modulation task (§15-3).
+    std::vector<KeyModeAnalysisResult> keyAlternatives; ///< repSlice's ranked alt keys (excl. the chosen)
+    double keyConfidence = 0.0;                          ///< repSlice sequence-margin confidence (≠ keyModeResult.normalizedConfidence)
 };
 
 } // namespace mu::composing::analysis

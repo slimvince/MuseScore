@@ -235,6 +235,27 @@ void absorbShortRegions(std::vector<HarmonicRegion>& regions)
     regions = std::move(filtered);
 }
 
+/// The slice→region key reduction result (the Layer-5 override-readiness forward-carry):
+/// the chosen key PLUS the representative slice's already-computed ranked alternative keys
+/// and sequence-margin confidence. One clearly-named reduction so the later precise pin
+/// (the L5-modulation step, cowork_layer5_function_design.md §15-3) is a single-site change.
+struct RegionKeyReduction {
+    KeyModeAnalysisResult chosen;                       ///< the region's chosen key (== old localKeyForRegion return)
+    std::vector<KeyModeAnalysisResult> alternatives;    ///< the repSlice's ranked alt keys (excl. chosen)
+    double confidence = 0.0;                            ///< the repSlice's sequence-margin confidence
+};
+
+/// Propagate the region key CONTEXT — the chosen key AND its override-readiness
+/// forward-carry (alt keys + confidence) — from a parent region to a sub-region, so the
+/// carried key menu travels with keyModeResult and stays consistent with it. Used at every
+/// Pass-2 / Pass-2b sub-region that inherits its parent's key.
+inline void inheritRegionKeyContext(HarmonicRegion& child, const HarmonicRegion& parent)
+{
+    child.keyModeResult   = parent.keyModeResult;
+    child.keyAlternatives = parent.keyAlternatives;
+    child.keyConfidence   = parent.keyConfidence;
+}
+
 /// Populate nextRootPc in each region's ChordFunction so that
 /// ChordSymbolFormatter::formatRomanNumeral() can emit V/x and vii°/x labels.
 /// Called after all merge/absorb passes, before returning the regions vector.
@@ -681,9 +702,9 @@ analyzeRegions(const mu::engraving::Score* score,
     // whose representative slice has the lower index — deterministic. Falls back to
     // the segmentation seed when the region overlaps no decoded slice (e.g. a region
     // outside the eligible-note span, or a degenerate all-rest model).
-    auto localKeyForRegion = [&](int rs, int re) -> KeyModeAnalysisResult {
+    auto localKeyForRegion = [&](int rs, int re) -> RegionKeyReduction {
         if (sliceKeys.empty() || re <= rs) {
-            return seedKey;
+            return { seedKey, {}, 0.0 };
         }
         // First slice whose end > rs (covers or follows rs).
         const auto it = std::upper_bound(sliceEnds.begin(), sliceEnds.end(), rs);
@@ -716,7 +737,7 @@ analyzeRegions(const mu::engraving::Score* score,
         }
 
         if (votes.empty()) {
-            return seedKey;
+            return { seedKey, {}, 0.0 };
         }
         const Vote* best = nullptr;
         for (const auto& v : votes) {
@@ -726,7 +747,10 @@ analyzeRegions(const mu::engraving::Score* score,
                 best = &v.second;
             }
         }
-        return sliceKeys[static_cast<size_t>(best->repSlice)].chosen;
+        // v1 reduction (§15-3): carry the representative slice's already-computed ranked
+        // alternative keys + sequence-margin confidence alongside the chosen key.
+        const kms::SliceKeyMode& rep = sliceKeys[static_cast<size_t>(best->repSlice)];
+        return { rep.chosen, rep.alternatives, rep.confidence };
     };
 
     // Pass 1 chord-analyzer preferences. Bridge supplies pass1MinDistinctPcsForCandidate=1
@@ -837,8 +861,9 @@ analyzeRegions(const mu::engraving::Score* score,
             // Per-region key = the Layer-3 decoder's duration-majority key over the
             // region's slice run (replaces the per-region resolver + its hysteresis;
             // the whole-sequence change cost is the smoothing). See the decode above.
-            const KeyModeAnalysisResult localKey =
+            const RegionKeyReduction localKeyRed =
                 localKeyForRegion(regionStart.ticks(), regionEnd.ticks());
+            const KeyModeAnalysisResult localKey = localKeyRed.chosen;
             const int localKeyFifths = localKey.keySignatureFifths;
             const KeySigMode localKeyMode = localKey.mode;
 
@@ -924,6 +949,8 @@ analyzeRegions(const mu::engraving::Score* score,
                 preMergeRegion.alternatives = alternativesSnapshot;
                 preMergeRegion.hasAnalyzedChord = true;
                 preMergeRegion.keyModeResult = localKey;
+                preMergeRegion.keyAlternatives = localKeyRed.alternatives;
+                preMergeRegion.keyConfidence = localKeyRed.confidence;
                 preMergeRegion.tones = tones;
                 preMergeRegion.temporalExtensions = extensionsSnapshot;
                 preMergeRegions.push_back(std::move(preMergeRegion));
@@ -941,6 +968,8 @@ analyzeRegions(const mu::engraving::Score* score,
                 region.alternatives  = std::move(alternativesSnapshot);
                 region.hasAnalyzedChord = true;
                 region.keyModeResult = localKey;
+                region.keyAlternatives = localKeyRed.alternatives;
+                region.keyConfidence = localKeyRed.confidence;
                 region.tones         = std::move(tones);
                 region.temporalExtensions = extensionsSnapshot;
                 regions.push_back(std::move(region));
@@ -1031,7 +1060,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     gap.chordResult      = parentRegion.chordResult;
                     gap.alternatives     = parentRegion.alternatives;
                     gap.hasAnalyzedChord = true;
-                    gap.keyModeResult    = parentRegion.keyModeResult;
+                    inheritRegionKeyContext(gap, parentRegion);
                     gap.temporalExtensions = parentRegion.temporalExtensions;
                     pass2Regions.push_back(std::move(gap));
                     continue;
@@ -1093,7 +1122,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     fallback.endTick          = subEnd.ticks();
                     fallback.chordResult      = parentRegion.chordResult;
                     fallback.hasAnalyzedChord = true;
-                    fallback.keyModeResult    = parentRegion.keyModeResult;
+                    inheritRegionKeyContext(fallback, parentRegion);
                     fallback.tones            = std::move(subTones);
                     fallback.temporalExtensions = toExtensionsSnapshot(subCtx);
                     pass2Regions.push_back(std::move(fallback));
@@ -1143,7 +1172,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     subRegion.chordResult      = chosenSub;
                     subRegion.alternatives     = std::move(subAltsSnap);
                     subRegion.hasAnalyzedChord = true;
-                    subRegion.keyModeResult    = parentRegion.keyModeResult;
+                    inheritRegionKeyContext(subRegion, parentRegion);
                     subRegion.tones            = std::move(subTones);
                     subRegion.temporalExtensions = subExtSnap;
                     pass2Regions.push_back(std::move(subRegion));
@@ -1234,7 +1263,7 @@ analyzeRegions(const mu::engraving::Score* score,
                         subRegion.endTick          = subEnd.ticks();
                         subRegion.chordResult      = parentRegion.chordResult;
                         subRegion.hasAnalyzedChord = parentRegion.hasAnalyzedChord;
-                        subRegion.keyModeResult    = parentRegion.keyModeResult;
+                        inheritRegionKeyContext(subRegion, parentRegion);
                         pass2bRegions.push_back(std::move(subRegion));
                         continue;
                     }
@@ -1290,7 +1319,7 @@ analyzeRegions(const mu::engraving::Score* score,
                         subRegion.chordResult      = parentRegion.chordResult;
                         subRegion.alternatives     = parentRegion.alternatives;
                         subRegion.hasAnalyzedChord = parentRegion.hasAnalyzedChord;
-                        subRegion.keyModeResult    = parentRegion.keyModeResult;
+                        inheritRegionKeyContext(subRegion, parentRegion);
                         subRegion.tones            = std::move(subTones);
                         subRegion.temporalExtensions = toExtensionsSnapshot(subCtx);
                         pass2bRegions.push_back(std::move(subRegion));
@@ -1334,7 +1363,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     subRegion.chordResult      = chosenSub;
                     subRegion.alternatives     = std::move(subAltsSnap);
                     subRegion.hasAnalyzedChord = true;
-                    subRegion.keyModeResult    = parentRegion.keyModeResult;
+                    inheritRegionKeyContext(subRegion, parentRegion);
                     subRegion.tones            = std::move(subTones);
                     subRegion.temporalExtensions = subExtSnap;
                     pass2bRegions.push_back(std::move(subRegion));

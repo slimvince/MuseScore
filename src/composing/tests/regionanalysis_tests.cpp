@@ -52,6 +52,7 @@
 
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/key/keymodesequence.h"
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/harmony/harmonicsegmenter.h"
 #include "composing/analysis/region/regionanalyzer.h"
@@ -462,6 +463,59 @@ TEST(Composing_RegionAnalysisTests, CleanChordChanges_NoSpuriousMerge)
     }
     // No merge pass altered the stream.
     EXPECT_EQ(preMerge.size(), postMerge.size());
+
+    delete score;
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+//  §3 OVERRIDE-READINESS LOCK-IN — the Layer-3 → region key forward-carry.
+// ═════════════════════════════════════════════════════════════════════════════
+
+// The Layer-3 slice decoder computes ranked alternative keys + a sequence-margin
+// confidence per slice; the slice→region reduction (regionanalyzer localKeyForRegion)
+// carries the REPRESENTATIVE slice's alternatives + confidence onto the region so the
+// Layer-5 confidence-weighted forward override can SELECT among the keys the key layer
+// carried forward — never re-derive (cowork_layer5_function_design.md §8 / §9-D7). This
+// pins that forward-carry so a future change cannot silently drop it again at the
+// reduction: a CONFIDENT region (carried key confidence at/above the decoder's
+// uncertainThreshold — i.e. NOT an uncertain seam) must carry a NON-EMPTY ranked
+// keyAlternatives list AND a key confidence. Asserts the CONTRACT (presence + shape),
+// not analyzer-echoed key values.
+TEST(Composing_RegionAnalysisTests, OverrideReadiness_ConfidentRegionCarriesKeyAltsAndConfidence)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");   // C major I–V–vi–IV
+    ASSERT_TRUE(score);
+    const Fraction endTick = score->lastMeasure()->endTick();
+
+    const auto regions = region::analyzeRegions(
+        score, Fraction(0, 1), endTick, kNoExclude,
+        kDefaultChordAnalyzerPreferences, kDefaultKeyModeAnalyzerPreferences, {});
+    ASSERT_FALSE(regions.empty());
+
+    // "Confident" = the carried sequence-margin confidence is at/above the decoder's
+    // uncertainThreshold (the same boundary SliceKeyMode.uncertain uses). The `!empty`
+    // guard skips the (vanishingly rare) single-lattice-state sentinel, which is
+    // confident-by-construction but has no other key to list.
+    const double kUncertainThreshold =
+        mu::composing::analysis::keymodeseq::kDefaultKeyModeSequencePreferences.uncertainThreshold;
+
+    bool foundConfidentCarry = false;
+    for (const auto& r : regions) {
+        if (r.keyAlternatives.empty() || r.keyConfidence < kUncertainThreshold) {
+            continue;
+        }
+        foundConfidentCarry = true;
+        EXPECT_GT(r.keyConfidence, 0.0) << "a confident region carries a positive key confidence";
+        // Shape: every carried alternative is a key OTHER than the chosen.
+        for (const auto& alt : r.keyAlternatives) {
+            const bool differsFromChosen = alt.tonicPc != r.keyModeResult.tonicPc
+                                           || alt.mode != r.keyModeResult.mode;
+            EXPECT_TRUE(differsFromChosen)
+                << "keyAlternatives are keys OTHER than the chosen keyModeResult";
+        }
+    }
+    ASSERT_TRUE(foundConfidentCarry)
+        << "the forward-carry was dropped: no confident region carried its ranked alternative keys";
 
     delete score;
 }

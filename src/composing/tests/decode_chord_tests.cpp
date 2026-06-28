@@ -1342,6 +1342,56 @@ TEST(Composing_DecodeChord, G1_DecodeDecisionConsistentWithHasChord)
     delete score;
 }
 
+// ════════════════════════════════════════════════════════════════════════════
+// §3 OVERRIDE-READINESS LOCK-IN — the chord-layer override material on Commit/Inherit.
+// decideSlice fills `alternatives`, and applyCommitDecision fills `confidenceModel`,
+// BEFORE the commit/inherit/abstain split — and the split never PRUNES them. This locks
+// that a COMMIT and an INHERIT slice each still carry a NON-EMPTY alternatives list AND a
+// computed confidenceModel (the override material Architectural Layer 5 selects among),
+// not only an Abstain. Asserts the CONTRACT (presence + shape), not analyzer-echoed values.
+// ════════════════════════════════════════════════════════════════════════════
+TEST(Composing_DecodeChord, OverrideReadiness_CommitAndInheritCarryAlternativesAndConfidence)
+{
+    // (a) COMMIT — a clear C-major triad with a distinct competitor surfaced as an
+    // alternative; the commit must keep BOTH the carried alternative AND the model.
+    {
+        std::vector<ChordSliceCandidate> cands = {
+            cand(0, ChordQuality::Major, 0, 3.0, kTieMajor),   // C major — chosen, clear margin
+            cand(9, ChordQuality::Minor, 9, 1.0, kTieMinor),   // A minor — a distinct alternative
+        };
+        SliceChord sc = CSD::decideSlice(0, cands, std::nullopt);
+        ASSERT_FALSE(sc.alternatives.empty()) << "decideSlice surfaced the competing reading";
+        const std::vector<FocalNote> focal = {
+            note(60, 0, 1920, 3, 1.0, 4.0), note(64, 0, 1920, 2, 1.0, 4.0), note(67, 0, 1920, 1, 1.0, 4.0),
+        };
+        CSD::applyCommitDecision(sc, focal, focal, std::nullopt, std::nullopt, std::nullopt);
+        ASSERT_EQ(sc.decision, cs::SliceDecision::Commit);
+        EXPECT_FALSE(sc.alternatives.empty()) << "a COMMIT must NOT prune its carried alternatives";
+        EXPECT_DOUBLE_EQ(sc.confidenceModel.margin, sc.confidence)
+            << "the confidence model is computed for the committed slice";
+        EXPECT_GT(sc.confidenceModel.composite, 0.0) << "a clear commit has a positive composite confidence";
+    }
+
+    // (b) INHERIT — a thin slice (a lone C#, A major's third) inherits the prevailing
+    // A major; the distinct reading decideSlice surfaced is still carried, not pruned.
+    {
+        const std::optional<ChordSliceCandidate> prevailing = cand(9, ChordQuality::Major, 9, 0.0, kTieMajor);
+        std::vector<ChordSliceCandidate> cands = {
+            cand(6, ChordQuality::Minor, 6, 3.0, kTieMinor),    // F#m — the thin slice's own best
+            cand(2, ChordQuality::Diminished, 2, 2.0, kTieDim), // Ddim — a distinct carried alternative
+        };
+        SliceChord sc = CSD::decideSlice(0, cands, prevailing);
+        ASSERT_FALSE(sc.alternatives.empty()) << "decideSlice surfaced a distinct alternative";
+        const std::vector<FocalNote> focal = { note(61, 0, 480, 0, 1.0, 1.0) };   // C# only (pc 1)
+        CSD::applyCommitDecision(sc, focal, focal, prevailing, std::nullopt, std::nullopt);
+        ASSERT_EQ(sc.decision, cs::SliceDecision::Inherit);
+        EXPECT_EQ(sc.chosen.rootPc, 9) << "inherits the prevailing A major";
+        EXPECT_FALSE(sc.alternatives.empty()) << "an INHERIT must NOT prune its carried alternatives";
+        EXPECT_DOUBLE_EQ(sc.confidenceModel.margin, sc.confidence)
+            << "the confidence model is computed for the inherited slice";
+    }
+}
+
 TEST(Composing_DecodeChord, EmptyModel_NoSlices)
 {
     const std::vector<mu::composing::analysis::slicing::Slice> noSlices;
