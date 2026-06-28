@@ -65,6 +65,19 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/tonicizationlabeler.h
     ${CMAKE_CURRENT_LIST_DIR}/function/tonicizationlabeler.cpp
 
+    # functionprogression + functionromannumeral — Architectural Layer 5 (FUNCTION),
+    # Phase 5c Step 1: the progression model (the licensed-progression test +
+    # prevailing-harmony / established-next-function queries over a region's
+    # committed-chord stream, §5.0) and the base Roman-numeral derivation (wraps
+    # diatonicDegreeForRootPc + ChordSymbolFormatter::formatRomanNumeral, §5.1).
+    # DORMANT — no production consumer (exercised only by their unit tests), so
+    # byte-identical on production by construction. Distinct from harmonicfunctionlayer
+    # (the misnamed chord-COMPETITION pipeline). Spec: cowork_layer5_function_design.md.
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionprogression.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionprogression.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionromannumeral.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionromannumeral.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
