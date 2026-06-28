@@ -99,8 +99,9 @@ the three local-change profiles) is fixed here.
 ### 4.2 The deterministic notated-marker spikes
 The following are **deterministic, high-precision notated boundary signals**; each contributes — **after** the surface-cue
 core (§4.1) is combined and normalised — a **fixed additive spike to the combined profile at its tick, of a magnitude set
-at or above the maximum possible surface-cue strength** (a precision-phase constant), so the marker **exceeds any
-surface-cue peak** and dominates wherever it occurs:
+above the maximum possible surface-cue strength** (the theoretical max is `#voices · Σ(cue weights)`; the spike default is
+**1.5× that**, a precision-phase constant — strictly above, so a *coincident* surface peak that reaches the max does not
+merely tie it), so the marker **exceeds any surface-cue peak** and dominates wherever it occurs:
 - a **fermata** on an eligible voice;
 - a **breath mark** (the comma phrasing symbol) or a **caesura** (the "grand pause" / railroad-tracks symbol) on an
   eligible voice — explicit composer-notated phrase / break signals, the same kind of high-precision channel as the
@@ -141,13 +142,18 @@ boundary strength** (the aggregate). The peak-picking (§4.4) that feeds the fun
 markers of §4.2 spike the **texture** profile.)
 
 ### 4.4 Peak-picking
-Peak-picking runs on the **texture combined strength profile** (§4.3). A tick is a **picked boundary** when its texture
-combined strength is **both** a **local maximum** (greater than its two immediate onset-neighbours on that profile)
-**and** above an **adaptive threshold** — the **mean of the whole score's texture combined strength profile plus `k`
-standard deviations** (the standard "Simple Picker"; the mean and
-standard deviation are taken over the whole profile, not a sliding window; `k` is a precision-phase constant). (A
-notated-marker spike, being large, clears the threshold by construction; the surface-cue peaks clear it only when locally
-strong.) The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends: the fermata or
+The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are
+**deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not
+subjected to the threshold; only the **surface-cue** strength is peak-picked. *(As-built realisation, ratified 2026-06-26:
+the earlier wording "peak-pick the combined profile" put the markers through the local-maximum test, which a strict
+greater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline.
+Emitting markers directly is the faithful reading of their "deterministic / dominate wherever they occur" status.)*
+**Surface peak-picking:** a surface tick is picked when its texture combined strength (§4.3) is **both** a **local
+maximum** (greater than its two immediate onset-neighbours) **and** above an **adaptive threshold** — the **mean of the
+whole score's texture combined strength profile plus `k` standard deviations** (the standard "Simple Picker"; whole
+profile, not a sliding window; `k` precision-phase). (The marker spikes still sit at/above any surface peak in the
+exposed strength profile, so a downstream consumer reading the strength sees them dominate; the *picking* just no longer
+gates them.) The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends: the fermata or
 last-sounding note's tick, the structural-barline tick, or the onset of the all-voice-rest span. A region **ends a
 phrase** when a picked boundary tick falls within its half-open tick span. (Because the final tick of the score carries an end-of-piece
 boundary — the score's last barline — the last region ends a phrase automatically; no separate last-region rule is
@@ -295,9 +301,16 @@ the concrete file map and the cue formulas are in the build instruction and the 
 1. The **precision-phase constants** — the three cue weights, the peak threshold `k`, the minimum-silence duration, the
    voice-coincidence window `τ` (§4.3), and the notated-marker spike magnitude (§4.2) — left at stated defaults by the
    build, tuned in the precision phase.
-2. **Confirm the live consumers** of "ends a phrase" at build — **blocking for the graded step**: it may not land until the
-   live-consumer set is enumerated and the byte-identical-today-versus-output-moving branch is decided (and, if
-   output-moving, cleared against the corpus two-tier gate on both presets).
+2. **Confirm the live consumers** of "ends a phrase" at build — ✅ **DONE 2026-06-26:** the only consumer is the
+   default-off joint-key re-key pass (`applyJointKeyWiring`, gated on `jointKeyWiringEnabled()`), so the primitive is
+   **unreachable in production** — byte-identical, built-dormant (verified at source). It becomes load-bearing when the
+   function layer engages it.
+2b. **As-built marker refinements deferred (build, 2026-06-26) — pin when the function layer engages + non-chorale test
+   cases land.** (a) The **eligible-voice qualifier** on the fermata/breath markers is not yet applied — they fire at *any*
+   fermata/breath (matching the retired byte-identical scan; harmless on chorales where all voices are eligible). (b) The
+   **tempo marker** fires at any *discrete* tempo-text tick (incl. the opening tempo); it should fire on a genuine tempo
+   **change** only, the way the key-signature marker already tracks change-only. Both are proportionate first-cut
+   simplifications, inert while dormant; pin them with non-chorale (orchestral / non-SATB) test cases.
 3. **Deferred cues** — the global regularisers (phrase-length prior, metric parallelism) and the information-content /
    surprisal cue — named in the methods catalog, built only if the corpus shows a need (each adds a corpus-specific
    constant or a trained model).

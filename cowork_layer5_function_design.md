@@ -280,8 +280,8 @@ recursion is in §8.
 
 ### 5.5 Resolving the carried uncertain readings
 For each slice Layer 4 abstained on, the layer selects among the **carried readings** by the **named ambiguity kind**
-(the kinds — transition, share-tone, relative pair, close, insufficient — are exactly the ambiguity kinds Layer 4 carries
-forward; this layer adds no new kind):
+(the kinds — transition, share-tone, relative pair, close, insufficient, **symmetric-rotation** — are exactly the six
+ambiguity kinds Layer 4 carries forward; this layer adds no new kind):
 
 - **Transition** (a thin slice heading into a different next chord): decide, by **the progression (§5.0)**, whether the
   slice's notes reduce to a passing/neighbour figure within the **prevailing harmony (§5.0)** or belong to the arriving
@@ -302,6 +302,13 @@ forward; this layer adds no new kind):
   precision-phase constants.
 - **Insufficient** (a genuinely too-thin slice): break it by the **same functional-plausibility score** as *close* above;
   where even that does not separate the readings, **carry the uncertainty honestly** to display rather than guess.
+- **Symmetric-rotation** (competing rotations of a symmetric sonority — a diminished-seventh or augmented chord whose
+  spelling Layer 4's pin could not fix): select the rotation that **resolves as a licensed leading-tone or applied chord
+  to its target** (the resolution context — §5.0 — names which root the symmetric sonority is functioning as), or that the
+  cadence pins. Where no rotation forms such a resolution, the case is genuinely undecidable (the gate-policy class-(a):
+  pitch-class-undecidable, and function finds no resolution either) → **carry the honest open mark** (§7); do not guess a
+  rotation. *(This is rare in practice — the measured symmetric-rotation share reaching this layer is ≈0%, the dim7 churn
+  having dissolved by abstention earlier; the rule exists for completeness.)*
 
 Where the function evidence does not decide a case either, the layer does not invent a decision: it records the residual
 as an honest open mark (carried to display), consistent with the principle that an unverifiable judgment is not made.
@@ -552,10 +559,11 @@ catalog §Sources.
    defines none of its own inputs. **Two** it consumes gate the build: (i) the **metric weight** of a slice — **✅ RESOLVED
    2026-06-26**: the contract is documented in the Layer-2 slicing design (slice metric weight = beat-strength at the
    slice's start tick, owned by `scoreharvest/metricweights`, already consumed by Layer 4 — no code); (ii) the **phrase
-   boundary + phrase segmentation** — **IN BUILD 2026-06-26** (`cowork_phrase_boundary_design.md` SIGNED;
-   `cc_instruction_phrase_boundary_build.md`): the most load-bearing — the cadence phrase-gate and salience cues rest on
-   it; no earlier spec produced it. The phrase boundary must
-   be defined **generally** (the tool analyzes any instrumentation): the fermata is only the *chorale-specific* marker, so
+   boundary + phrase segmentation** — **✅ BUILT (dormant) + Cowork-verified 2026-06-26**: the graded per-voice model lives
+   in `engravingbridge/phraseboundaryview.{h,cpp}` (commits `0d10b37a87` de-dup + `5c5d992356` graded model), reachable
+   only behind the default-off joint-key gate → **byte-identical on production** (verified at source), with the full marker
+   set. **Both gating prerequisites are now closed → the function-layer build is unblocked.** The phrase boundary is
+   defined **generally** (the tool analyzes any instrumentation): the fermata is only the *chorale-specific* marker, so
    the owning layer needs a phrase-boundary notion covering non-chorale textures too (rests, structural score boundaries —
    **but not cadential closure**, which is *this* layer's and would be circular). Each is a *proper-layer* amendment (like
    the override-readiness forward-carry), surfaced by this layer's design and closed in its own layer first.
