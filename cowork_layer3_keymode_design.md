@@ -42,6 +42,19 @@ Layer 3's job; the "uncertain" mark is the explicit hand-off token. *(Open item 
 box between the note-layers and Layer 5. Same name used in the Layer-4 spec. Evidence:
 `cowork_uncertain_resolver_investigation.md`.)*
 
+**A *confident* key is also overturnable (the confidence-weighted override; user-ratified 2026-06-26).** The hand-off
+above covers the *flagged* residual. The ratified architecture-wide principle goes further: a key this layer committed
+**confidently** can still be overturned by Architectural Layer 5 when a cadence in a candidate key is decisive (the
+cadence-confirmed modulation — Layer 5 has cadential evidence this layer structurally cannot). As everywhere, Layer 5
+resolves it by **selecting among this layer's carried alternative keys**, never by re-deriving; where the confirming key
+was never carried, that is a *coverage* miss widened inside this layer. **Requirement this places on Layer 3 (being
+closed byte-identically, 2026-06-26):** the layer already *computes* ranked alternative keys + a confidence on every
+slice, but the slice→region reduction currently **drops them** (the region carries only the single chosen key). The
+region must **carry the ranked alternative keys + confidence forward** so the override has a menu to select among; this
+is an additive forward-carry of already-computed data (no production consumer yet → byte-identical), with a lock-in test.
+Full mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract;
+close-out: `cc_instruction_l3_keyalt_forwardcarry.md`.
+
 **What music Architectural Layer 3 operates on.** The slices from Architectural Layer 2, over the notes from
 Architectural Layer 1, for the user-selected part of the score.
 

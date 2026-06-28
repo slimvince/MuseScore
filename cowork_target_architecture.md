@@ -120,6 +120,20 @@ dependency**; ambiguity is **never** resolved by re-entering an earlier layer. C
   tentative pick, only the layers that **depend on** that decision (chord, then function) are recomputed **for the
   affected region** — a bounded, region-scoped forward pass. The earlier layer's algorithm is **not** re-run; its
   output for that region is simply *replaced* by a selection from its own alternative list.
+- **A *confident* earlier inference is also overturnable — the general confidence-weighted override (user-ratified
+  2026-06-26).** The menu-selection above covers a layer that *flagged* uncertainty. The contract generalizes to every
+  earlier inference, confident or not: each later layer brings its independent evidence to bear on all of them.
+  **Agreement reinforces** (raises joint confidence); a **confident** commit is **overturned only when the contradicting
+  later evidence crosses a threshold scaled to the earlier layer's confidence** — a well-founded commit demands decisively
+  stronger evidence than a borderline one, so confidence sets the *bar to overturn*, not an absolute veto. When the bar is
+  crossed, the **same localized forward recompute** fires (the overturned decision is **closed for that pass** — the
+  recompute does not re-open it, preserving the acyclic guarantee). This keeps a *confidently-wrong* commit recoverable
+  instead of locked in — the lever the precision phase tunes (the per-channel thresholds are precision-phase constants;
+  the mechanism and direction are fixed here). The function layer's two instances are the **cadence-confirmed modulation**
+  (a cadence overturning a confident key) and the **fine-grain chord override**. *Rejected:* a hard confidence-gate
+  (locks confident-but-wrong commits); bespoke per-channel one-offs (hide that they are one mechanism); and a backward
+  re-derivation / full joint search (measured inert — the gain is soft-evidence quality carried forward). Full treatment:
+  `cowork_layer5_function_design.md` §8 / §9-D7.
 - **Coverage failures stay in their layer.** If the true reading was never even among the carried alternatives
   (a coverage miss, not a selection miss), the fix is to **widen that layer's candidate set inside that layer** — not
   to add a backward edge.

@@ -1,5 +1,34 @@
 # L1–L4 completion ledger — the "no-residue" map to FINISHED (2026-06-26)
 
+> **★ L1–L4 COMPLETE — SIGN-OFF (2026-06-26).** The comprehensive step-3 QA review (Cowork docs+architecture-coherence
+> + CC code/tests/data) is **done, and the verdict is CLEAN**: the forward-only layered architecture is VERIFIED intact
+> (no new back-edges from the L4 build; the L4→L5 abstain contract is a clean forward interface), code/tests/data carry
+> no defect, the docs are tidied + accurate, and the suites are green (composing 862/862, notation 53/53, snapshot
+> 11/11, no golden refresh; gate 53/24/53). All five tidy commits (`ed1fb2df6f`, `2243e39243`, `c7aa8a21bc`,
+> `88acb4c9bc`, `e89e04042f` on `6732e77c9a`) were **Cowork-verified at the committed objects by SHA** — docs/comments/
+> orphan-data only, production scorer untouched (empty diff), byte-identical.
+> **What "COMPLETE" means here:** the L1–L4 **BUILD is finished + proven** and the *engage-with-L5* strategy is ratified.
+> The remaining residuals are all **tracked + correctly deferred to the joint L4+L5 engagement** (NOT blockers): the
+> **tpc-fold** (CC confirmed a *second tpc reader coexists* — the dormant pin reads `lineOfFifths`, the live legacy
+> scorer keeps its `tpcForPc` cluster at `chordanalyzer.cpp:1150`, 42 sites; folds when the legacy scorer retires), the
+> **two live segmenters / two pitch-context builders**, the **`analysisutils.h` relocation** (A4), and the coverage
+> seal. Flagged-not-fixed (correctly): the **German-bass slash** (gated correctness fix → a ratified gated step), the
+> **`applyIter8691Pedal` rename** (~70-site coordinated step), the Nashville `?` placeholder, the `solid theory.musicxml`
+> space-name + stale catalog ref. **Next: step 4 — the L5 (function) spec.**
+
+> **↩ REOPENED on one contract point (2026-06-26) — the confidence-weighted forward override.** Designing L5 ratified an
+> architecture-wide principle (any *confident* earlier inference is overturnable by decisive later evidence, by selecting
+> among the readings that layer carried). A read-only source check sized its impact on the earlier judgment layers:
+> **chord layer (L4) — already satisfies it** (alternatives + `confidenceModel` filled before the commit/inherit/abstain
+> split, never pruned — VERIFIED; no code change, only a lock-in test + a spec honesty note); **slicing layer (L2) — not
+> impacted** (deterministic fact-grid, no alternatives); **key layer (L3) — one real gap:** it computes ranked alternative
+> keys per slice but **drops them at the slice→region reduction**, so the region carries only the single chosen key. The
+> close-out (`cc_instruction_l3_keyalt_forwardcarry.md`): a **byte-identical** additive forward-carry of the
+> already-computed region key alternatives (zero production consumers; must not enter any serializer) + two lock-in tests
+> (L3 region carries alternatives; L4 carries alternatives+confidence on confident commits) + honesty notes in the L3/L4
+> specs. **L1–L4 COMPLETE is restored once this byte-identical close-out lands (gate 53/24/53 unchanged) and is
+> sha-verified.** This is build-it-right structural completeness (carry already-computed data), not inference tuning.
+
 > **Purpose.** Enumerate **everything** still outstanding on L1–L4 so "finished" is well-defined and nothing falls
 > through — the precondition for the **L1–L4 COMPLETE (nothing-left)** gate before L5. "Finished" (the user's standing
 > bar) = each layer **restructured + built + dead-code resolved + legacy retired + regression/reachable-branch tested**,

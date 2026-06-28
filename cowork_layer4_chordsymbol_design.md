@@ -501,6 +501,19 @@ Architectural Layer 5 knows what to resolve.
   it: function-only on the chord side (pc-identical share-tone chords such as Am6↔F♯ø7) and structural on the key side
   (the relative-major/minor and tonicization-vs-modulation classes are note-identical, so only the surrounding
   progression separates them). Full evidence: `cowork_uncertain_resolver_investigation.md`.
+- **O1b — a *confident* commit is also overturnable (the confidence-weighted override; user-ratified 2026-06-26).** O1
+  covers the slices this layer *abstained* on. The ratified architecture-wide principle goes further: a slice this layer
+  **confidently committed** can still be overturned by Layer 5 when its functional/cadential evidence is decisive (the
+  fine-grain chord override — the class-(b) transients). So a commit is the best reading on the notes-and-key evidence
+  this layer had, **not a final word**. Two facts make this safe and already-supported (VERIFIED at source): the layer
+  carries its ranked `alternatives` (∪ the prevailing chord) and its `confidenceModel` on **every** decision — Commit and
+  Inherit included, filled before the trichotomy and never pruned — so Layer 5 overrides **by selecting among the readings
+  this layer carried** (never by re-deriving), and the carried confidence is the quantity its override threshold scales
+  against. Where the correct reading was never carried at all, that is a *coverage* miss fixed inside this layer, not by
+  Layer 5. A lock-in test pins the carry. Note: this layer's confidence is **vertical-fit only** by construction (no
+  progression signal folded in — that is Layer 5's to supply), and `alternatives` is capped (`topK`) and excludes
+  spelling-pinned symmetric siblings — calibration facts the Layer-5 override design accounts for, not defects here. Full
+  mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract.
 - **O2 — a bounded-window joint resolution for the neighbour dependency (deferred).** The baseline resolves the
   membership↔neighbour chicken-and-egg with the two-reading scheme (§4). A bounded joint choice — picking the chords
   and membership that best explain a few-slice window *together* — is potentially more precise but is deferred, because
