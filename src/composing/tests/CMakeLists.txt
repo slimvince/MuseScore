@@ -55,6 +55,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/modepriorpresets_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/nashville_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/note_model_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/phraseboundaryview_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/postscoringgates_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/reachback_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
