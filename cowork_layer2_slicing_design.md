@@ -120,6 +120,13 @@ an ordered list of slices that covers the analysed span from its first boundary 
   Architectural Layer 4 membership), not stored here. *(How well the inference weights the extremes — a very long held
   chord, a very short embellishment slice — is an Architectural Layer 3 / 4 weighting concern; the metadata to do it
   is available here.)*
+  - **★ Metric-weight contract (resolved 2026-06-26; the function layer's prerequisite (i)).** "Derived on demand by the
+    consuming layers" is made concrete: the **metric weight of a slice = the beat-strength at the slice's start tick**,
+    computed by the **`scoreharvest/metricweights` primitive** (`regionMetricWeightForOnsetTick(score, slice.start)`) — a
+    prefs-free, key-/chord-agnostic notation-derived value in `[0.5, 1.0]` (downbeat 1.0 → subbeat 0.5), already consumed
+    by Architectural Layer 4. It is owned there (a Layer-1.5 notation view, beside the bass/spelling/phrase-boundary
+    views), **not** re-defined by any consuming layer. The function layer (Architectural Layer 5) reads it through this
+    same accessor; this contract sentence is the whole of that prerequisite — no new code.
 - **Bounded context (`cowork_bounded_context_design.md`).** Architectural Layer 2 slices whatever span the note model
   currently holds. When a higher layer **extends** the loaded span (to reach context outside the user's selection),
   Architectural Layer 2 produces the change-point slices for the **newly loaded region**, preserving complete coverage

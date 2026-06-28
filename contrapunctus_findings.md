@@ -426,6 +426,32 @@ guard (candidate C) proves insufficient.
 
 ---
 
+## Addendum (2026-06-26) — Contrapunctus does NO explicit phrase segmentation or cadence detection
+
+Verified at the benchmark README (re-fetched 2026-06-26, github.com/Tomczik76/contrapunctus-bench). Relevant because we
+are designing an explicit **phrase-boundary primitive** + **cadence detector**.
+
+- **Contrapunctus's whole task is per-beat RN labeling** — "given a raw MusicXML score and nothing else, label *every
+  beat* with a Roman numeral." Architecture: rule-based key detection + a learned chord-label re-ranker. **Phrase
+  boundaries and cadences are not an input, a component, or an output.** ("Cad⁶₄" appears only as a chord-*label*
+  convention in its scoring tiers — not a detected cadence event.)
+- **Phrase structure matters to it, but only IMPLICITLY, via stable key runs.** Its headline negative result: learned
+  per-beat key detectors *beat* the rule-based one on per-beat key accuracy yet **regressed chord-ID 5–9 pp**, because
+  chord-ID depends on "the *structure* of the keychain — long, **phrase-aligned key runs** — more than on per-beat
+  correctness." So phrases fall out of *stable key spans* (rule-based smoothing), never from a phrase detector.
+- **It is SOTA-competitive with none of this** — 52.25% genre-balanced / 68.33% Bach-chorale exact, beating AugmentedNet
+  out-of-sample, **without** any explicit phrase or cadence machinery.
+
+**★ Proportionality discipline (user-ratified 2026-06-26) — carry into the phrase-boundary build.** The leading system
+needs no explicit phrase/cadence layer for competitive RN, so our **phrase-boundary → cadence-gate → key/function** path
+is a *deliberate architectural bet* (chosen for explainability and the tonicization-vs-modulation distinction L5 needs),
+**not an accuracy requirement**. Therefore: **keep the phrase-boundary primitive proportionate** — it is load-bearing for
+*our* cadence mechanism (a means to key/function), not for RN accuracy per se. Do not let it balloon. If the explicit
+phrase/cadence path proves hard, there is a **proven fallback**: get phrase-alignment implicitly, via stable key runs, the
+way Contrapunctus does. (Recorded also in `cowork_phrase_boundary_methods.md` and the design's scope note.)
+
+---
+
 **Sources:** contrapunctus.app/landing · /engine (benchmark, updated 2026-06-13, commit a896b554) · /help
 (analyzer docs) · /community (logged-in feed) · github.com/Tomczik76/contrapunctus-bench (README,
 methodology/{protocol,match-tiers,corpus}.md, engine/README.md, harness/{score,rn_normalize}.py, engine/run.mjs,

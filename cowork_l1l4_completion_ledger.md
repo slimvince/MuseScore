@@ -28,6 +28,22 @@
 > (L3 region carries alternatives; L4 carries alternatives+confidence on confident commits) + honesty notes in the L3/L4
 > specs. **L1–L4 COMPLETE is restored once this byte-identical close-out lands (gate 53/24/53 unchanged) and is
 > sha-verified.** This is build-it-right structural completeness (carry already-computed data), not inference tuning.
+>
+> **✅ CLOSED + Cowork-verified (2026-06-26) — L1–L4 COMPLETE restored.** CC landed it (code `001199ac33`, docs
+> `08d1b541c1`, both local/unpushed). Verified at source via the **file tools on the live tree** (no bash, per the
+> standing rule): the L3 region reduction (`RegionKeyReduction` + one `inheritRegionKeyContext` helper) carries
+> `HarmonicRegion.keyAlternatives` + `keyConfidence` as **additive siblings**; the **chosen key is byte-identical**
+> (`rep.chosen` == the old return; seed/empty fallbacks unchanged); the new fields are **read by no serializer** (the
+> `.ours.json` emitter reads only `keyModeResult` / chord-`alternatives` / `keySignatureFifths`; the notation-bridge
+> `keyConfidence` is a pre-existing *separate* field) → **byte-identical by construction**, corroborated by CC's gate
+> (composing 864/864 incl. +2 lock-in tests, notation 53/53, snapshots 11/11 no-refresh, corpus **53/24/53**,
+> `.ours.json` **0/353** changed all presets). The two lock-in tests assert the *invariant* (presence + shape), not echoed
+> values. *(Verification was end-state via file tools, not a git-object/commit-boundary diff — per the no-bash-for-local-
+> files rule; byte-identity rests on the serializer check + CC's empirical regen.)* **One deferred item, bound to the
+> L5-consume pin so it cannot slip:** the **J-key-iii re-key pass** (`jointKeyWiringEnabled()`, **default-OFF**) overrides
+> the chosen key **without re-deriving** the new carry — inert today (gated off, no consumer), but when L5 consumes the
+> carry the J-key-iii path **must** re-derive `keyAlternatives`/`keyConfidence` alongside the override (recorded in
+> `cowork_layer5_function_design.md` §15-3 with the reduction pin).
 
 > **Purpose.** Enumerate **everything** still outstanding on L1–L4 so "finished" is well-defined and nothing falls
 > through — the precondition for the **L1–L4 COMPLETE (nothing-left)** gate before L5. "Finished" (the user's standing

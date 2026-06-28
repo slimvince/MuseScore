@@ -69,10 +69,14 @@ major triad). The literature (Caplin; Bigo et al. ISMIR 2018; Karystinaios & Wid
 gives the corrected design:
 - **Detect on an EVENT PAIR (penult → arrival), scored by a feature vector — never a single chord's interval content.**
   The mandatory **sequence** (predominant → dominant → tonic) is what kills the I→IV/I→V false positive.
-- **Required features:** bass-degree pair (**5̂→1̂** authentic; →5̂ half), **root-position flags** for both chords,
-  **soprano arrival degree** (1̂ = PAC / 3̂ = IAC — the discriminator our detector lacks), **leading-tone RESOLUTION**
-  (7̂→1̂ across the boundary — *resolution*, not LT *presence*), predominant on the preceding beat, and **metric / phrase
-  salience**.
+- **Required features:** bass-degree pair (**5̂→1̂** authentic; →5̂ half), **root-position flags** for both chords (these
+  are **bass-derived and robust**), **leading-tone RESOLUTION** (7̂→1̂ across the boundary — *resolution*, not LT
+  *presence*), predominant on the preceding beat, and **metric / phrase salience**.
+- **★ The "soprano arrival degree" (1̂=PAC vs 3̂=IAC) is theory-standard but implementation-fragile, so DEMOTED in the
+  spec (user, 2026-06-26).** It needs the *structural melody*, and the **highest sounding voice is not reliably that line**
+  (orchestral doubling; barbershop lead *below* the top). So the spec makes the perfect/imperfect call on the
+  **bass-derived inversion** criterion and uses the top-voice arrival only as a *soft, optional* confidence nudge in
+  homophonic textures — never the hard test. The tool does not attempt melody identification. (See L5 spec §5.2 / §15-0.)
 - **Apply the cadential-6/4 collapse FIRST** — a 2nd-inversion tonic-spelled sonority over a held 5̂ bass proceeding to a
   root-position dominant is **dominant function (V6/4–5/3)**, not a tonic arrival; collapse the pair so the cadential
   bass reads 5̂→1̂. (Do not let the 6/4's tonic spelling register as tonic.)

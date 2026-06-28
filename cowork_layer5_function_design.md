@@ -1,12 +1,22 @@
 # Architectural Layer 5 — FUNCTION (Roman numeral, cadence, tonicization) — Architecture & Design
 
-> **Status: DRAFT for review (2026-06-26).** First spec of the function layer, grounded in `cowork_layer5_function_methods.md`
+> **Status: SIGNED (user, 2026-06-26); amended post-sign-off 2026-06-26.** **Amendment (user-surfaced):** the
+> perfect/imperfect cadence distinction (§5.2) no longer rests on the **top voice** — the highest sounding voice is not
+> reliably the structural melody (orchestral doubling; barbershop lead below the top), so the call is made on the
+> **bass-derived inversion** criterion and the top-voice arrival is only a soft optional nudge. Consequently the top-voice
+> primitive is **demoted from a gating build prerequisite to an optional cue** (§15-0); the gating prerequisites are now
+> the metric-weight contract and the phrase boundary. Reviewed in two passes before sign-off. Audited against the three design-doc standards
+> (specify-by-rule, code-free body, standard vocabulary) + internal consistency (7 fixes + a tie-direction rule), then a
+> **language-mechanical pass** (every predicate given a subject; every statement resolved under recursive why/how; every
+> concept defined) closing **12 resolution gaps** — independently re-audited as **fully resolved, no fresh holes**. Record:
+> `cowork_layer5_spec_review.md`. First spec of the function layer, grounded in `cowork_layer5_function_methods.md`
 > (research-first synthesis: three internal source surveys + two primary-sourced external literature passes) and the
 > ratified architecture (`cowork_target_architecture.md`, the L4 spec §15-O1). It is written to the design-doc standard:
-> every decision path is specified by a **rule** (no preference-shaped holes), the prose is **code-free** (mechanisms are
-> named by their role; the as-built mapping lives in §13), and it uses only **standard music-theory vocabulary**. This
-> document reads the same whether or not anything is built. Nothing is built yet — the incremental build (investigate-each-
-> step, as for L4) follows ratification.
+> every decision path is specified by a **rule** (no preference-shaped holes), the **architecture body (§1–§12) is
+> code-free** (mechanisms named by their role), and it uses only **standard music-theory vocabulary**. The as-built
+> mapping lives in §13; the **background, related-work, and open-items sections (§13–§15) may name as-built identifiers
+> and doc cross-references** where the build hand-off needs them. The body (§1–§12) reads the same whether or not anything
+> is built. Nothing is built yet — the incremental build (investigate-each-step, as for L4) follows ratification.
 >
 > **Scope decision on record (user, 2026-06-26):** the layer's output is the **Roman numeral** — the most precise, complete
 > analysis. The three-role summary (tonic / subdominant / dominant) is a **lossy, deterministically-derivable read-out**,
@@ -29,7 +39,7 @@ evidence that only appears once chords are read in sequence within a key:
 2. **Tonicization-versus-modulation arbitration** — decide whether a passage that leans toward a non-tonic degree merely
    *tonicizes* it (the music stays in the home key) or *modulates* to it (the home key changes). This is the single
    largest share of the residual the lower layers hand forward, and it is a function-level judgment by definition.
-3. **Resolution of the carried "uncertain" readings (the ratified O1 role)** — Layer 4 commits the chords it can decide
+3. **Resolution of the carried "uncertain" readings** — Layer 4 commits the chords it can decide
    on the notes and key alone, and for the rest it **abstains**, handing forward the competing readings it carried plus a
    named open question. The function layer resolves each such slice **by selecting among the readings Layer 4 carried**,
    using cadential and progression evidence — never by re-deriving a chord from the raw notes and never by inventing one.
@@ -45,7 +55,7 @@ anchored by cadences — and that evidence is exactly what distinguishes the rea
   becoming a back-edge is in §8.
 - **Selection, not re-derivation.** For every uncertain slice, the layer's candidate set is **closed by Layer 4** (the
   carried readings). It selects among them; it never re-scores from the notes nor introduces a chord Layer 4 did not
-  carry. This is the structural content of the O1 resolution.
+  carry. This is the structural content of resolving "uncertain" by selection rather than re-derivation.
 - **Spelling-aware where, and only where, the distinction is a spelling distinction.** Two function labels are
   pitch-class-identical and separable only by notated spelling and resolution (the German augmented sixth versus the
   dominant seventh; an applied leading-tone's secondary leading tone). For these the layer reads the notated spelling
@@ -60,24 +70,53 @@ anchored by cadences — and that evidence is exactly what distinguishes the rea
 - **Output is the Roman numeral.** The three-role summary is a derived read-out only (§9-D1).
 
 ## 3. Context & scope (external view)
-**Consumes:**
-- From Layer 4, per slice: the committed chord where Layer 4 committed; and where it abstained, the **carried readings**
-  (the chosen reading, the best competing reading, and the ranked alternatives), the **named open question** (which axis
-  is in dispute — root or quality — and the kind of ambiguity), and the **confidence** components.
-- From Layer 3: the prevailing **local key and mode** over the region, carried with its own alternatives and uncertainty.
-- From Layers 1–1.5: the per-note **notated spelling**, the **bass** of each slice, the **soprano** (outermost) voice,
-  the **metric weight** of each slice, and the **phrase boundaries** (notably the fermata, the reliable phrase-end marker
-  in chorales).
-- The section/phrase segmentation already available to the pipeline.
+**Consumes.** Each input is owned and defined by an earlier layer — this layer defines none of its own inputs. The ones
+marked **[earlier-layer prerequisite]** are *not yet* defined in their owning spec and must be (in that spec, before this
+layer builds — see §15-0); the rest are already defined where cited.
+- From Layer 4, per slice (defined in the Layer-4 spec): the committed chord where Layer 4 committed; and where it
+  abstained, the **carried readings** (the chosen reading, the best competing reading, and the ranked alternatives), the
+  **named open question** (which axis is in dispute — root or quality — and the kind of ambiguity), and the **confidence**
+  components.
+- From Layer 3 (defined in the Layer-3 spec): the prevailing **local key and mode** over the region, carried with its own
+  ranked alternatives and uncertainty (the override-readiness forward-carry).
+- From Layer 1 (defined in the Layer-1 note-model spec): the per-note **notated spelling** (also the shared Layer-1.5
+  spelling view), each note's **voice**, and the **bass** of each slice (the lowest sounding note).
+- **[earlier-layer prerequisite] The metric weight of each slice.** The Layer-2 spec defers it ("derived on demand by the
+  consuming layers"); it needs a defined owner and contract before this layer consumes it.
+- **(Optional, NOT a prerequisite) The top voice — the highest sounding voice of a slice.** Used only as a *soft,
+  optional* confidence nudge in the perfect/imperfect cadence distinction, and only in homophonic textures — the highest
+  voice is **not** reliably the structural melody (§5.2), so the distinction rests on the bass-derived inversion criterion
+  instead. A top-voice primitive is therefore optional, not a build gate (§15-0).
+- **[earlier-layer prerequisite] The phrase boundary (the fermata-marked phrase end in chorales) and, with it, the phrase
+  segmentation** that bounds a region (§5.0). No earlier spec detects or defines this, yet the cadence phrase-gate and the
+  salience cues (§5.2) rest on it — the most load-bearing of the three prerequisites. (A "section end" is a phrase boundary
+  that **also coincides with a structural score boundary** — a double bar, a repeat mark, or the end of the piece — used
+  only as the section-end salience cue in §5.2.)
 
-**Produces:**
-- The **Roman numeral** per analysis unit (the chord read in its key: degree, quality, inversion, chromatic alteration,
-  and the relational label — applied/secondary, Neapolitan, augmented sixth, mixture).
-- **Cadence markers** (type and location) at the points of closure.
-- The **tonicization-versus-modulation** decision, expressed as the existing notation distinguishes them: a tonicization
-  stays in the prevailing key and is written as an applied chord; a confirmed modulation changes the local key.
+**Produces.** The output conforms to a **named standard at full completeness — the DCML harmony-annotation standard (and
+its RomanText interchange form), the convention our ground-truth corpora use — with no simplification.** "No
+simplification" is a rule, not an aspiration: wherever the standard defines a fuller label, the layer emits the fuller
+label and never a reduced stand-in. Where the standard admits variants (e.g. the Neapolitan as `bII6`; the cadential
+six-four), the layer follows the **DCML convention** so its output is directly comparable to the ground truth.
+- The **Roman numeral** per analysis unit, carrying **every** component the standard defines, each at full specificity:
+  - the **scale-degree** with case marking quality (upper/lower), and the **chromatic alteration** as the exact
+    accidental prefix where the degree is non-diatonic (`bII`, `#iv`, `bVI`, …);
+  - the **precise chord quality** including the seventh type (major, minor, dominant, half-diminished, fully-diminished);
+  - the **exact inversion** as the figured-bass figure (`6`, `64`; `7`, `65`, `43`, `42`) — never a bare numeral where
+    an inversion figure is due;
+  - the **relational label** at full specificity: an **applied/secondary** chord with its **explicit target degree**
+    (`V/V`, `V7/IV`, `viio7/ii`, …, relative to the local key); the **augmented sixth with its nationality** (`It`, `Fr`,
+    `Ger`) and inversion figure, never a generic `+6`; the **Neapolitan** (`bII6`); and **modal mixture** as the precise
+    borrowed/altered degree.
+  The completeness bar is the §10 metric's target: a label is correct only when **every** component matches the standard
+  ground truth, so emitting a simplified label is by construction a miss.
+- **Cadence markers** at each point of closure: the cadence **type from the full typology** (perfect authentic, imperfect
+  authentic, half — including Phrygian — deceptive, plagal, evaded; §5.2), its **location**, and its **confidence** —
+  never a reduced set (not merely "authentic versus half").
+- The **tonicization-versus-modulation** decision, expressed as the standard distinguishes them: a tonicization stays in
+  the prevailing key and is written as an applied chord (`/x`); a confirmed modulation changes the local key.
 - The **resolved reading** for each formerly-uncertain slice (a selection among the carried readings, with a function-
-  level confidence and, where it remains genuinely undecidable, an honest residual mark carried to display).
+  level confidence and, where it remains genuinely undecidable, an honest **open mark** (§7) carried to display).
 
 **Does not do (out of scope):**
 - **Prolongation or reduction** (phrase-level reduction of a passage to one underlying harmony; Schenkerian or
@@ -112,6 +151,34 @@ precede resolution.
 
 ## 5. Building-block view (the internal rules)
 
+### 5.0 Shared definitions (the terms the rules below stand on)
+These five concepts are used throughout §5 and are defined here once so no rule rests on an undefined word.
+
+- **Region.** The bounded span the pipeline already segments — a maximal run of slices between two adjacent **phrase
+  boundaries** (§3: in the chorale corpus, fermata-marked), carrying one prevailing key. It is the unit a cadence votes
+  for (§5.2), the unit a confirmed modulation re-reads (§5.4), and the bound on a slice's resolution look-ahead (§5.5). The
+  *exact* recompute bound for §5.4 (whether it is the single region or the region plus its immediate neighbour) is the one
+  refinement deferred to the build (§15-3); everywhere else "region" means the phrase-bounded span just defined.
+- **Prevailing harmony (of a slice).** The committed chord (from Layer 4) of the nearest **metrically-strong** slice at or
+  before the slice in question, within the same region — the harmony a passing/neighbour figure is heard against.
+- **The progression.** The ordered sequence of committed chord identities (and, once assigned, their Roman-numeral
+  functions) across a region — the chord stream Layer 4 committed, read in order. "The next function" / "the established
+  next function" is the function of the next committed (non-abstained) chord, or, where the next chord is itself open, the
+  next **cadence-anchored** function (a chord whose function a cadence has fixed, §5.2).
+- **A licensed (real) progression.** A root motion between two functions is **licensed** when it is one of the standard
+  functional successions: a descending-fifth (dominant) motion, a descending-third or ascending-second functional step,
+  the resolution of an applied or leading-tone chord to its tonicized target, or a cadential motion (§5.2). A reading
+  "participates in a real progression" when its function forms a licensed motion **into** the established next function.
+  This is a stated, enumerable test — not a preference. (The numeric preference *among* several licensed readings is a
+  precision-phase weight; the licensing itself is the rule here.)
+- **A resolution (as a detected event).** A **leading-tone resolution** is detected when the leading-tone pitch sounding
+  in a voice of the approach chord moves to the tonic in **that same voice** at the arrival; a **tritone resolution** is
+  detected when the dominant's tritone (the fourth and seventh degrees) contracts or expands by step to the tonic's third
+  and root across the boundary. "Resolution" everywhere in §5 means such a detected voice-motion event — never the mere
+  presence of the leading tone or tritone (the false-positive trap). The German augmented sixth versus the dominant
+  seventh is separated by **which** resolution the notated spelling implies (the augmented sixth expands outward to the
+  dominant; the seventh resolves down to the tonic).
+
 ### 5.1 Base Roman-numeral derivation
 For each analysis unit with a committed root, quality, inversion, and a prevailing key: the **degree** is the root's
 position relative to the tonic; where the root is diatonic the degree is the plain scale-degree, where it is chromatic
@@ -123,34 +190,58 @@ key and chord it is given.
 A cadence is tested on an **event pair** — the approach chord and the arrival chord — never on a single chord's interval
 content. The rules:
 
-- **Cadential six-four collapse first.** When the approach is a second-inversion tonic-spelled sonority over a bass
-  scale-degree five that proceeds to a root-position dominant over the same bass, it is the dominant's accented
+- **Cadential six-four collapse first.** When the approach is a second-inversion tonic-spelled sonority (so identified
+  from Layer 4's committed chord, not re-read from the notes) over a bass scale-degree five that proceeds to a
+  root-position dominant over the same bass, it is the dominant's accented
   suspension, not a tonic arrival: collapse the pair into a single **dominant approach** so the cadential bass reads
   five-to-one. A second-inversion tonic spelling never registers as a tonic arrival.
 - **Authentic cadence** requires the *sequence* (a pre-dominant, then a dominant, then the tonic arrival), and at the
   pair: the **bass moves scale-degree five to one**, the **leading tone resolves to the tonic** across the boundary (the
   resolution, present as an event — not merely the leading tone being sounded, which is the third of every major triad
   and is the false-positive trap the prior detectors fell into), and the dominant is a genuine dominant (a seventh or its
-  tritone resolving). Within the authentic family:
-  - **Perfect** when both the dominant and the tonic are in **root position** and the **soprano arrives on the tonic**.
-  - **Imperfect** when the motion is dominant-to-tonic but at least one of those fails — an inverted chord, a soprano on
-    the third (or fifth), or a leading-tone-chord substitute for the dominant.
-- **Half cadence** is a phrase ending **on the dominant** that does not proceed to the tonic; the dominant is preferentially
-  a root-position triad (a seventh implies onward motion and weakens the reading). The **Phrygian** half cadence (minor
+  tritone resolving). Within the authentic family the perfect/imperfect distinction is made on the **robust,
+  bass-derived inversion criterion** — the **outermost-voice criterion is not used as a hard test** (see the note below):
+  - **Perfect** when both the dominant and the tonic are in **root position** (the bass — reliably the lowest sounding
+    voice — carries the cadential five-to-one) **and** no other perfect-condition fails.
+  - **Imperfect** is the **complement**: any authentic dominant-to-tonic motion (bass five-to-one, leading tone resolving)
+    that is **not** perfect — chiefly an **inverted** dominant or tonic, or a leading-tone chord standing in for the
+    dominant (a seventh-degree diminished triad or seventh that resolves to the tonic, which counts as an authentic-family
+    dominant). The branch is **total**: every admitted authentic motion is perfect or imperfect, with no third outcome.
+  - **The melodic-arrival criterion is a soft, optional nudge, never a hard test.** Classical theory's further requirement
+    — the *melody* arriving on the tonic — needs identifying the structural melodic line, and **the highest sounding voice
+    is not reliably that line** (in much orchestral writing the melody sits in an inner or doubled register; in
+    close-harmony idioms such as barbershop the lead is *below* the top voice). So the spec does **not** rest the
+    perfect/imperfect call on the top voice. Where a trustworthy melodic top line exists (a homophonic texture), a top
+    voice arriving on the tonic may *raise* the confidence of a "perfect" reading, and one not on the tonic may *lower*
+    it — but it never forces the call, and the distinction is made on inversion. The tool does **not** attempt melody
+    identification (a hard, partly-perceptual problem deliberately out of scope).
+- **Half cadence** is a phrase ending **on the dominant** that does not proceed to the tonic (the dominant is the
+  phrase-final arrival — nothing follows it within the phrase). The dominant is a **root-position triad in the strong
+  case; an inverted or seventh dominant is admitted but at lower weight** (a seventh implies onward motion and weakens the
+  reading — it is down-weighted, not excluded). The **Phrygian** half cadence (minor
   mode) is the special case of a first-inversion pre-dominant moving to the dominant with the **bass descending a
   semitone** into it. Half-cadence identity depends on the phrase boundary, and is the weakest reading — held at lower
   confidence by rule.
-- **Deceptive cadence** is a dominant set up to cadence that arrives instead on the submediant (the lowered submediant in
-  minor).
-- **Plagal and evaded** cadences are recognized but, by rule, carried at **lower confidence**: the plagal as a possible
-  post-cadential tonic prolongation rather than a structural close, the evaded as an arrival abandoned and re-launched.
+- **Deceptive cadence** is a **dominant *set up to cadence*** — a phrase-boundary dominant carrying the authentic
+  approach features (the pre-dominant→dominant sequence with the leading tone present) — that arrives instead on the
+  submediant (the lowered submediant in minor). ("Set up to cadence" carries this same meaning wherever it is used below.)
+- **Plagal cadence** — admitted when a **subdominant-family chord** (a pre-dominant: the fourth-degree triad or seventh,
+  the second-degree triad or seventh, or the lowered-sixth submediant) **moves to the tonic at a phrase boundary with no
+  intervening dominant**; carried at **lower confidence** by rule (a possible post-cadential tonic prolongation rather
+  than a structural close).
+- **Evaded cadence** — admitted when a **dominant set up to cadence has its expected tonic arrival replaced** by a
+  non-tonic continuation or a re-launched phrase (distinct from the deceptive cadence, where the dominant *resolves* to
+  the submediant — here the arrival itself is abandoned); carried at **lower confidence** by rule.
 - **Chorale phrase gate.** A cadence candidate is admitted only at a **phrase boundary** — in the chorale corpus the
   fermata is the reliable marker. This removes the mid-phrase passing motions that otherwise masquerade as cadences.
 
-Each admitted cadence then casts a **weighted vote for the tonic** of its region (§5.3). The weight rises with the
-strength of the evidence (the bass five-to-one, the leading-tone resolution, the dominant seventh) and with the
-**salience** of the arrival (a strong metric position, a fermata, a section end, the final bar). The detector reads no
-already-resolved key; the key is the thing the vote informs.
+Each admitted cadence then casts a **weighted vote for the tonic** of its region (§5.0, §5.3). The weight is a
+**monotone-increasing combination — a weighted sum, its weights precision-phase constants —** of the **evidence-strength
+cues** (the bass five-to-one, the leading-tone resolution, the dominant seventh) and the **salience cues** (a strong
+metric position — the metric weight of §3; a fermata; a section end; the final bar), minus the per-type lower-confidence
+discount for half/plagal/evaded cadences. The **direction is fixed here** (more evidence and more salience never lower
+the weight; only the relative weights are deferred). The detector reads no already-resolved key; the key is the thing
+the vote informs.
 
 ### 5.3 Tonicization versus modulation
 The default is **tonicization**: the home key holds and a chord leaning toward a non-tonic degree is written as an
@@ -158,13 +249,22 @@ The default is **tonicization**: the home key holds and a chord leaning toward a
 - a **cadence in the candidate key confirms it** (an authentic or half cadence whose tonic is the candidate degree), and
 - the music **persists** in the candidate key rather than immediately leaving it.
 
-Persistence is expressed as a **change-cost (hysteresis)** on the local-key decision, not as a fixed number of beats:
-the longer and more cadentially-confirmed the candidate area, the lower the cost of committing the key change; a brief
-lean that lacks a confirming cadence pays a cost it cannot overcome and stays a tonicization. The boundary is a genuine
-continuum; on fast-harmonic-rhythm chorales a defensible tonicization-versus-short-modulation disagreement is **not**
-counted as an error. This is also the layer at which the **notated-spelling key signal** is consumed: spelling that
-indicates a key change is admitted here, where function gates it, rather than in the key layer where (as measured) it
-helps modulation regions but harms stable ones.
+The two conditions play different roles. **Condition (a), cadence confirmation, is a necessary gate**: with no cadence in
+the candidate key, the lean stays a tonicization no matter how long it lasts (this is what "a brief lean that lacks a
+confirming cadence cannot become a modulation" means — it is the gate failing, not a cost being outweighed). **Condition
+(b), persistence, applies only among cadence-confirmed candidates**, and is expressed as a **change-cost (hysteresis)** on
+the local-key decision: the cost of committing the key change **falls as the cadence-confirmed candidate area grows in
+duration and in accumulated cadential weight** (the §5.2 vote weights of the cadences inside it) — measured in those two
+quantities, never a fixed beat count. **At the exact break-even** (the change-cost neither clearly met nor clearly unmet)
+the rule **defaults to tonicization** — the home key holds — consistent with tonicization being the default; only the
+*magnitude* of the cost is a precision-phase constant, the tie-direction is fixed here. The boundary is a genuine
+continuum; a tonicization-versus-short-modulation **disagreement that falls within this break-even band** is, as an
+**evaluation policy** (not a machine rule), not counted against the analyzer — there is no single correct answer in the
+band. This is also the layer at which the **notated-spelling key signal** is consumed: spelling **indicates a key change**
+when the slice's notated accidentals are **sustained and consistent with the candidate key's diatonic set (its key
+signature)** rather than passing chromatic inflections of the home key — and even then it is admitted only **as one input
+to condition (a)/(b) above, gated by function**, rather than in the key layer where (as measured) the same signal helps
+modulation regions but harms stable ones.
 
 ### 5.4 The cadence-confirmed modulation recompute (an instance of the §8 general mechanism)
 This is the first concrete instance of the confidence-weighted forward override (§8, case 4): a cadence is later evidence
@@ -179,38 +279,64 @@ is the cadence-strength-versus-key-confidence bar of §8 (its constant is precis
 recursion is in §8.
 
 ### 5.5 Resolving the carried uncertain readings
-For each slice Layer 4 abstained on, the layer selects among the **carried readings** by the **named ambiguity kind**:
+For each slice Layer 4 abstained on, the layer selects among the **carried readings** by the **named ambiguity kind**
+(the kinds — transition, share-tone, relative pair, close, insufficient — are exactly the ambiguity kinds Layer 4 carries
+forward; this layer adds no new kind):
 
-- **Transition** (a thin slice heading into a different next chord): decide, by the **progression**, whether the slice's
-  notes belong to the prevailing harmony (a passing/neighbour figure within it) or to the arriving function — and select
-  the reading consistent with that continuation.
+- **Transition** (a thin slice heading into a different next chord): decide, by **the progression (§5.0)**, whether the
+  slice's notes reduce to a passing/neighbour figure within the **prevailing harmony (§5.0)** or belong to the arriving
+  function — and select the reading consistent with that continuation (the one forming a licensed progression, §5.0).
 - **Share-tone** (two readings explaining the same pitch classes — for instance a minor triad with an added sixth versus
-  a half-diminished seventh a third below): select the reading that **participates in a real progression** toward the
-  established next function (the cadential/voice-leading context decides what the lower layers could not).
+  a half-diminished seventh a third below): select the reading that **participates in a licensed progression (§5.0)**
+  into the **established next function (§5.0)** — the progression-and-cadence context decides what the note evidence alone
+  could not. (No voice-leading test is invoked; this layer defines none — see §11.)
 - **Relative pair** (two roots a third apart, major versus minor — the relative reading): this is a **key/tonic**
-  question; resolve it by the **cadence tonic-vote** (§5.2) and the same-collection tonal-centre evidence.
-- **Close** (a general low-margin tie between otherwise-unrelated readings): break it by **functional and cadential
-  plausibility**, with the soft bass-scale-degree prior (§5.7) as a tie-breaker.
-- **Insufficient** (a genuinely too-thin slice): select from the carried readings on the progression where one is clearly
-  favoured; where none is, **carry the uncertainty honestly** to display rather than guess.
+  question; resolve it by the **cadence tonic-vote** (§5.2) and the **same-collection tonal-centre cues** — the cues that
+  separate two keys sharing one scale collection (a relative major/minor pair): which of the two candidate tonics
+  **receives the cadential arrival**, **carries the raised leading tone** (the accidental that marks the minor tonic), and
+  **sits at the phrase-final or sectional point of emphasis**.
+- **Close** (a general low-margin tie between otherwise-unrelated readings): break it by **functional plausibility** —
+  a score over fixed features: whether each reading's function forms a licensed progression (§5.0) **out of** the
+  prevailing harmony and **into** the established next function, plus its cadential fit — with the soft bass-scale-degree
+  prior (§5.7) as the tie-breaker. The features are fixed here; their combination weights and the deciding margin are
+  precision-phase constants.
+- **Insufficient** (a genuinely too-thin slice): break it by the **same functional-plausibility score** as *close* above;
+  where even that does not separate the readings, **carry the uncertainty honestly** to display rather than guess.
 
 Where the function evidence does not decide a case either, the layer does not invent a decision: it records the residual
 as an honest open mark (carried to display), consistent with the principle that an unverifiable judgment is not made.
 
+**The same selection machinery serves the override of a *confident* commit (the §8 case-4 channel).** When Layer 4
+**confidently committed** a fine-grain reading that the established function and cadence contradict (the class-(b)
+override duty, §10), the layer does not abstain-resolve it — it **overrides** it, but by the same constraint: it
+**selects the corrected reading from the carried alternatives or the prevailing harmony (§5.0) of the adjacent committed
+slices within the region** (the "neighbouring committed harmony"), never re-deriving, the override firing per the
+confidence-weighted threshold of §8. So this section is the home of selection-among-carried-
+readings for **both** the abstained slices (the §8 case-2 menu resolution) and the confident-commit override (case 4).
+
 ### 5.6 Relational labels (each on its defining trigger; spelling-aware where needed)
+The four labels can co-trigger on one altered chord, so they are tested in a fixed **precedence**, first match wins:
+**augmented sixth → Neapolitan → applied/secondary → modal mixture**. The augmented sixth and the Neapolitan are the most
+specific (a named chromatic-predominant shape); the applied label fires next (a chord manufacturing dominant function
+toward a non-tonic degree); modal mixture is the **residual** — a borrowed degree that is none of the above. So "modal
+mixture" is decided not by a positive test for "borrowed" but by being a quality-altering borrowed degree that did **not**
+match any earlier label.
 - **Applied/secondary chord** (a dominant or leading-tone chord of a non-tonic degree): triggered by a **raised secondary
-  leading tone** manufacturing dominant function toward that degree; written as the applied chord of the degree, relative
-  to the **local** key. (In the major mode the secondary leading tone of the dominant is the diatonic seventh degree, not
-  a raised one — the alteration is in the spelling, the degree is unaltered; the rule reads the spelling, not a presumed
+  leading tone** — the chord supplies the leading tone (a semitone below) of a non-tonic diatonic degree, and that degree
+  is the **target** the applied chord is written against; written as the applied chord of that target degree, relative to
+  the **local** key. (In the major mode the secondary leading tone of the dominant is the diatonic seventh degree, not a
+  raised one — the alteration is in the spelling, the degree is unaltered; the rule reads the spelling, not a presumed
   accidental.)
 - **Neapolitan**: a major triad on the **lowered second degree**, conventionally in first inversion; a chromatic
   pre-dominant, written as the lowered-second-degree chord (the local key is unchanged).
 - **Augmented sixth** (Italian, French, German): triggered by the **augmented sixth between the lowered sixth and raised
   fourth degrees**, with the added degree selecting the type (Italian adds the tonic, French the second degree, German
   the lowered third). The German form is **pitch-class-identical to a dominant seventh** and is separated from it **only
-  by notated spelling and resolution** — the one place the layer must read spelling to choose the label.
-- **Modal mixture**: a borrowed lowered or raised degree that changes the chord's quality but **not** the key; written
-  with the altered-degree prefix, no key change.
+  by notated spelling and the resolution it implies (§5.0** — the augmented sixth expands outward to the dominant, the
+  seventh resolves down to the tonic) — the one place the layer must read spelling to choose the label.
+- **Modal mixture** (the residual label, per the precedence above): a borrowed lowered or raised degree that changes the
+  chord's quality but **not** the key, and which matched none of the earlier labels; written with the altered-degree
+  prefix, no key change.
 
 ### 5.7 The soft bass-scale-degree prior
 The bass scale-degree carries a weak functional bias (degrees five and seven lean dominant; degrees four and two lean
@@ -220,8 +346,8 @@ and overridden by the sequence, the cadence, and any applied-chord context.
 
 ## 6. Runtime view (scenarios)
 - **A perfect authentic cadence confirming the home key.** Pre-dominant, then root-position dominant with its seventh,
-  then root-position tonic at a fermata, soprano on the tonic; the pair passes §5.2; a strong tonic vote confirms the key
-  and the final Roman numerals read in it.
+  then root-position tonic at a fermata; both chords root position (the bass-derived inversion criterion) make it perfect;
+  the pair passes §5.2; a strong tonic vote confirms the key and the final Roman numerals read in it.
 - **A tonicization that stays home.** A dominant-of-the-dominant leans toward the dominant degree but no cadence confirms
   that degree as a key and the lean does not persist; §5.3 keeps the home key and writes the chord as an applied chord.
 - **A modulation.** The same lean is followed by an authentic cadence in the new key and the music persists; §5.3 commits
@@ -231,16 +357,21 @@ and overridden by the sequence, the cadence, and any applied-chord context.
 - **Resolving a relative-pair abstention.** Two roots a third apart, major versus minor; the cadence tonic-vote decides
   which is the centre (§5.5), and the slice takes the consistent reading.
 - **Overriding a fine-grain wrong commit.** A transient sub-slice that the note-layer committed to a pitch-class-decidable
-  but contextually-wrong root is overridden when the surrounding cadential/functional context contradicts it (the
-  class-(b) override duty, §10), in concert with section grouping.
+  but contextually-wrong root is overridden **by this layer** when the surrounding cadential/functional context
+  contradicts it (the class-(b) override duty, §10). Section grouping is **downstream** of this — once this layer has
+  corrected the label, the grouping layer merges the now-consistent slices; grouping does **not** feed back into the
+  override (consistent with §3's no-feedback rule). The exact division between this layer's override and the grouping
+  layer's merge is the joint item §15-6.
 
 ## 7. Data design
 Per analysis unit the layer carries: the **Roman numeral** (degree with any alteration, quality, inversion, and the
-relational label); a **function confidence**; and, where a slice was uncertain and remains so, an **open mark** naming
-what is unresolved (carried to display, not a guess). Per region it carries the **local key** (possibly changed by a
+relational label); a **function confidence** — derived from the evidence that fixed the reading (the §5.2 cadence-vote
+weight where a cadence anchored it, the §5.0 licensed-progression fit where the progression decided it, and the margin to
+the next-best reading; the components are these, the combining weights are precision-phase); and, where a slice was
+uncertain and remains so, an **open mark** naming what is unresolved (carried to display, not a guess). Per region it carries the **local key** (possibly changed by a
 confirmed modulation) and the **cadence markers** (type, location, salience). The structure is additive over the Layer-4
 result: it annotates and resolves; it does not replace the chord identity Layer 4 committed. The contract to the layer
-above (grouping/display) is the Roman numeral plus the cadence and key markers plus any honest residual mark.
+above (grouping/display) is the Roman numeral plus the cadence and key markers plus any honest **open mark** (§7).
 
 ## 8. Crosscutting concepts
 - **The confidence-weighted forward override (the general arbitration mechanism).** Every layer's inference carries a
@@ -259,8 +390,10 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
      veto.
   Cases 2 and 4, when they fire, are realized by **one mechanism**: a **localized, forward, convergence-bounded
   recompute** — the dependent reading is re-run over the **affected region only**, with the corrected fact, and the
-  overturned decision is **closed for that pass** (the recompute does not re-open the very decision that triggered it, so
-  it cannot recurse). It is never a backward request and never a loop; it is a forward consumer acting on a decided fact.
+  overturned decision is **closed for that pass**: it is **marked final for the remainder of this analysis pass** (a
+  one-pass closure flag on the decision), so the recompute it triggers — and any later override in the same pass — cannot
+  re-target it. The recompute therefore terminates after one localized forward re-run; it is never a backward request and
+  never a loop; it is a forward consumer acting on a decided fact.
   The two channels this layer needs — the fine-grain chord override (§5.5/§10) and the cadence-confirmed modulation
   recompute (§5.4) — are **instances** of this single mechanism, not one-offs; further channels (future layers) are added
   as further instances. *Rationale (user, 2026-06-26): a confidently-wrong commit must be recoverable by later evidence
@@ -294,8 +427,9 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
   distinction in the key layer (it needs function). The hysteresis over the local-key decision matches the ground-truth
   convention.
 - **D4 — The layer selects among Layer 4's carried readings; it never re-derives.** *Rejected:* re-scoring the slice from
-  the notes (that is Layer 4's job and would duplicate it) — the structural content of the ratified O1 resolution: a case
-  separable by a note cue is a lower-layer case, a case separable only by function is this layer's, leaving no third box.
+  the notes (that is Layer 4's job and would duplicate it) — the structural content of the ratified resolution-by-
+  selection: a case separable by a note cue is a lower-layer case, a case separable only by function is this layer's,
+  leaving no third box.
 - **D5 — The bass-scale-degree prior is soft, never a gate.** It is many-to-one and context-overridden; used as a
   tie-breaker only.
 - **D6 — Placement and the misnamed predecessor.** The existing layer named for "function" performs chord-identity
@@ -324,7 +458,8 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
   literature — that the **half cadence is the weakest** and is held to a correspondingly modest bar.
 - **The class-(b) override duty:** the fine-grain wrong commits projected at engagement must be driven to zero (by this
   layer together with section grouping) before any production switch; this is the engagement hard-stop.
-- **Tests are oracle-asserted** against known theory (a perfect versus imperfect cadence by inversion and soprano; a
+- **Tests are oracle-asserted** against known theory (a perfect versus imperfect cadence by **inversion** — the top-voice
+  criterion an optional soft cue, not the test; a
   German sixth versus a dominant seventh by spelling; an applied chord versus a confirmed modulation by cadence) — not
   echoes of the analyzer's own output.
 - **The corpus gate** (the two-tier root-error gate) governs as for the lower layers; a function change that moves a
@@ -340,12 +475,16 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
   the duplicate; until then they are migration debt.
 - **The predecessor layer is misnamed** — a naming/structural correction owed, coordinated with engagement.
 - **The forward-recompute bound** must be held exactly (region-local, key-closed) or it risks becoming a back-edge.
+- **No voice-leading-based resolution is built.** The layer resolves share-tone and close ties by the progression and the
+  cadence (§5.0/§5.5), not by a voice-leading test — the literature finds voice-leading schemata hard to detect from the
+  surface, so building one is not justified here. A case only a voice-leading test could decide stays an open mark.
 
 ## 12. Glossary
 - **Roman numeral** — the chord named by its scale-degree within the key, with quality, inversion, chromatic alteration,
   and relational label (applied, Neapolitan, augmented sixth, mixture).
 - **Cadence** — a point of harmonic closure; authentic (dominant to tonic), half (ending on the dominant), deceptive,
-  plagal, evaded; the authentic split into perfect and imperfect by inversion and soprano.
+  plagal, evaded; the authentic split into perfect and imperfect by **inversion** (the melodic/top-voice arrival a soft
+  optional cue only, since the highest voice is not reliably the melody for general instrumentation).
 - **Tonicization** — a brief lean toward a non-tonic degree without leaving the key (written as an applied chord).
 - **Modulation** — a change of the prevailing key, confirmed by a cadence in the new key and by persistence.
 - **Applied (secondary) chord** — a dominant or leading-tone chord of a degree other than the tonic.
@@ -353,6 +492,34 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
   tonic arrival.
 - **The three-role summary** — the coarse tonic/subdominant/dominant classification, derivable from the Roman numeral; a
   read-out, not a stored output.
+- **Class-(b) error** — a root or key error at a sonority whose root is *pitch-class-decidable* (a non-symmetric chord) —
+  the meaningful-error class the corpus gate treats as a hard stop, as distinct from the symmetric-rotation churn
+  (class-(a)). A project gate term (see the gate policy); used in §10 as this layer's override duty.
+- **Ambiguity kind** — the named reason Layer 4 could not separate two readings (transition, share-tone, relative pair,
+  close, insufficient), carried forward on an abstain; this layer resolves each by its §5.5 rule and adds no new kind.
+- **Region** — the phrase-bounded span the pipeline segments (one prevailing key); the unit of the cadence vote, the
+  modulation recompute, and the resolution look-ahead. Full definition: §5.0.
+- **Prevailing harmony** — the committed chord of the nearest metrically-strong slice at or before a given slice, within
+  its region; the harmony a passing/neighbour figure is heard against (§5.0).
+- **The progression** — the ordered committed-chord stream across a region; a **licensed (real) progression** is a root
+  motion forming a standard functional succession (§5.0); the **established next function** is the next committed or
+  cadence-anchored function (§5.0).
+- **Resolution (as an event)** — a detected voice-motion (leading tone → tonic; tritone contracting/expanding to the
+  tonic third and root), not the mere presence of those tones (§5.0).
+- **Salience** — the weight a cadence arrival carries by its metric position, fermata, section end, or final-bar status;
+  combined into the tonic-vote weight as a weighted sum (§5.2).
+- **Metric weight** — the metric-position strength of a slice (a downbeat is stronger than an offbeat), supplied by the
+  pipeline (§3) and consumed as a salience cue.
+- **Persistence / change-cost** — the hysteresis governing how long and how cadentially-weighted a cadence-confirmed
+  candidate key area must be before the key is changed; measured in duration and accumulated cadential weight, not beats
+  (§5.3).
+- **Functional plausibility** — the score breaking a low-margin tie: whether a reading's function forms a licensed
+  progression out of the prevailing harmony and into the established next function, plus cadential fit, with the
+  bass-degree prior as tie-breaker (§5.5).
+- **Function confidence** — the per-unit confidence this layer emits, from the cadence-vote weight / licensed-progression
+  fit / margin that fixed the reading (§7).
+- **Open mark** — the single carried marker (also the only name for it) naming what remains unresolved on a slice the
+  evidence could not decide; emitted to display, never a guess (§7).
 
 ## 13. Background: what this layer replaces, and the as-built mapping (not needed to understand the layer)
 The layer named for "function" in the current code is the **chord-identity competition pipeline** (a vertical scoring
@@ -381,6 +548,24 @@ grouping, metre, and whole-piece parsing, below human accuracy computationally �
 catalog §Sources.
 
 ## 15. Open items & deferred refinements
+0. **★ Earlier-layer input prerequisites — close in the proper layer BEFORE this layer builds (§3).** The function layer
+   defines none of its own inputs. **Two** it consumes gate the build: (i) the **metric weight** of a slice — **✅ RESOLVED
+   2026-06-26**: the contract is documented in the Layer-2 slicing design (slice metric weight = beat-strength at the
+   slice's start tick, owned by `scoreharvest/metricweights`, already consumed by Layer 4 — no code); (ii) the **phrase
+   boundary + phrase segmentation** — **IN BUILD 2026-06-26** (`cowork_phrase_boundary_design.md` SIGNED;
+   `cc_instruction_phrase_boundary_build.md`): the most load-bearing — the cadence phrase-gate and salience cues rest on
+   it; no earlier spec produced it. The phrase boundary must
+   be defined **generally** (the tool analyzes any instrumentation): the fermata is only the *chorale-specific* marker, so
+   the owning layer needs a phrase-boundary notion covering non-chorale textures too (rests, structural score boundaries —
+   **but not cadential closure**, which is *this* layer's and would be circular). Each is a *proper-layer* amendment (like
+   the override-readiness forward-carry), surfaced by this layer's design and closed in its own layer first.
+   - **(Demoted — NOT a gating prerequisite) The top voice / highest sounding voice.** Earlier drafts made this a hard
+     prerequisite for the perfect-vs-imperfect cadence distinction. It is demoted: **the highest sounding voice is not
+     reliably the structural melody** (§5.2 — orchestral doubling, barbershop lead below the top), so the perfect/imperfect
+     call is made on the **bass-derived inversion** criterion, and the top voice is at most a **soft, optional confidence
+     nudge** in homophonic textures. So a top-voice primitive is *optional* (built only if that soft nudge is wanted), not a
+     build gate, and may land alongside the function-layer build rather than before it. The tool does not attempt melody
+     identification.
 1. **Promote the confidence-weighted forward-override mechanism (§8 / §9-D7) into the target-architecture doc.** It is
    architecture-wide — it generalizes the forward-only control-flow contract for *every* layer (any confident inference
    overturnable by decisive later evidence via a localized forward recompute), with the modulation recompute (§5.4) and
@@ -408,6 +593,11 @@ catalog §Sources.
      update the key-layer carry + its lock-in test. Do not carry the v1 placeholder past this step. (Why deferred, not
      pinned up front: it would design the reduction against an unspecified consumer — see the completion-ledger reopen
      note and `cc_instruction_l3_keyalt_forwardcarry.md` §1.3.)
+   - **★ Also at this step: re-derive the carry in the J-key-iii re-key path.** The key layer's joint re-key pass
+     (`jointKeyWiringEnabled()`, default-OFF today) overrides the chosen key **without** updating the forward-carry
+     (`keyAlternatives`/`keyConfidence`) — inert now (gated off, no consumer), but the moment L5 consumes the carry that
+     path must re-derive the carry alongside its override, or the carried menu goes stale against the overridden key.
+     Bound to this pin so it cannot slip.
 4. **Cadence as its own internal sub-unit** consumed by both the modulation arbiter and the resolver (likely, since it is
    shared evidence) — to confirm at build.
 5. **The two-tonicization-path unification** and the **predecessor renaming/placement** — structural steps coordinated
