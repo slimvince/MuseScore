@@ -152,8 +152,12 @@ int countParticipatingStaves(const Score* score,
 /// NOTE: the LAYER-2 successor of this onset+release change-point grid is
 /// `composing/analysis/slicing/slicer.h` (changePointSlices), which re-derives
 /// the same fact over the layer-1 note model (no Score walk, no grace-skip
-/// special case, no mid-tuplet snapping). It is isolated/not wired in; this
-/// Score-based collector keeps running until layer 3 consumes the slicer.
+/// special case, no mid-tuplet snapping). The slicer is now WIRED: layer 3
+/// consumes changePointSlices (regionanalyzer.cpp:579/651). This Score-based
+/// collector ALSO still runs for the legacy chord/harmonic-rhythm segmentation
+/// path (regionanalyzer.cpp:749 -> segment()); the two live segmenters coexist
+/// by design — unifying both onto the slicer is deferred to the joint Layer-5
+/// engagement (the legacy-path retirement).
 std::vector<Fraction>
 collectNoteChangeTicks(const Score* score,
                        const Fraction& startTick,

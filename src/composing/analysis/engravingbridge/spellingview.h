@@ -37,11 +37,16 @@
 //                   centroid + sharp/flat distribution (modulation-direction
 //                   signal) the Layer-3 key-spelling term consumes.
 //
-// Capability only (Phase 4): nothing in production consumes this yet — the
-// Layer-4 spelling-pin (which folds the chordanalyzer.cpp inline tpc cluster —
-// tpcForPc / tpcSpellsAsSharp / tpcConsistencyBonus / countTpcMatches — into
-// this primitive) is the next build; the Layer-3 key-spelling *term* + its
-// weight are Phase B. See cowork_tpc_capability_design.md.
+// Capability (Phase 4): no PRODUCTION (live) path consumes this yet — its only
+// consumer is the DORMANT Layer-4 spelling-pin (chordslicedecoder.cpp:553,
+// engravingbridge::lineOfFifths). That pin is BUILT (commit 1e74f21ea4), not
+// "the next build". FOLDING the chordanalyzer.cpp inline tpc cluster — tpcForPc /
+// tpcSpellsAsSharp / tpcConsistencyBonus / countTpcMatches — into this primitive
+// has NOT happened: the live legacy scorer still interprets tpc independently, so
+// a second tpc reader coexists today. The fold lands when the decoder goes live
+// and the legacy scorer retires (engage-with-L5). The Layer-3 key-spelling *term*
+// + its weight (spanSpelling / sharpFlatSense — currently zero consumers) are
+// Phase B. See cowork_tpc_capability_design.md.
 //
 // SCOPE — signature-agnostic by ratified design (option A): the span aggregate
 // is the centroid / sharp-flat distribution only; it takes NO key signature.
