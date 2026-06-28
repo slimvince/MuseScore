@@ -80,13 +80,27 @@
 //     richer value + the named question L5 reads. See computeConfidence /
 //     nameOpenQuestion (populated by applyCommitDecision). L4 only DECLARES the
 //     open question; L5 (function) RESOLVES it — never this layer.
+//   * G4 / C1 — the symmetric-root SPELLING-PIN (design §5/§9, Increment-C1). For a
+//     symmetric (pitch-class-ambiguous) sonority — a fully-diminished seventh or an
+//     augmented triad — the rotation chosen by the scorer is KEY-dependent
+//     (chordanalyzer's dim7CharacteristicBonus + the diatonic-root term). The NOTATED
+//     SPELLING names the root deterministically (G♯–B–D–F is G♯, A♭–C♭–E𝄫–G𝄫 is A♭),
+//     so where the slice's spelling is present and internally consistent the pin
+//     OVERRIDES the scorer's rotation with the spelled root and drops the sibling
+//     rotations as spelling-resolved (no longer competing readings). It consumes the
+//     per-note spelling through the SHARED engravingbridge::lineOfFifths primitive — a
+//     DETERMINISTIC selection from the score, NOT a tuned bonus (no score is changed).
+//     See spellingPinnedRoot (applied inside decideSlice). The deferral when the
+//     spelling is absent / contradicted is the existing behaviour (the scorer's choice
+//     stands).
 //
 // WHAT IS NOT YET BUILT (deferred — STOP if you start building these here):
-//   * the deterministic spelling-PIN for the symmetric (dim7/aug) root, and the new
-//     diminished-seventh / minor-major TYPES (Increment C / G4 / G5).
-// So the chosen chord is the existing scorer's per-window winner; the "complete
-// candidate list" is the surfaced cube ranked and pruned to top-K; no new chord
-// type and no spelling pin land here.
+//   * the new four-note diminished-seventh / minor-major TYPES (Increment C2 / G5) —
+//     they extend the SHARED production template catalogue, so they would move the
+//     legacy path's output; gated and decided at the engage step (Step-0 F-4).
+// So the chosen chord is the existing scorer's per-window winner (its symmetric-root
+// ROTATION re-selected by the spelling-pin, G4/C1); the "complete candidate list" is
+// the surfaced cube ranked and pruned to top-K; no new chord TYPE lands here.
 //
 // HOW IT WORKS (this increment):
 //   1. Window. For each slice, build a ChordAnalysisTone window over the slice
@@ -247,6 +261,26 @@ struct ChordSliceDecoderPreferences {
     /// count is the candidate's template-tone presence, independent of the
     /// (extra-note) membership rule. A slice with fewer either inherits or abstains.
     int sufficiencyChordTones = 3;
+
+    // ── G4 / C1: the symmetric-root SPELLING-PIN (design §5/§9, Increment-C1) ──
+    //
+    // A symmetric (pitch-class-ambiguous) sonority — a fully-diminished seventh or an
+    // augmented triad — has no pitch-class-defined root: every rotation is equally spaced.
+    // The scorer picks the rotation KEY-dependently (chordanalyzer's dim7CharacteristicBonus
+    // + the diatonic-root term, frozen into each cube cell's score). But the NOTATED SPELLING
+    // names the root deterministically (G♯–B–D–F is G♯, not its key-preferred rotation). Where
+    // the slice's spelling is present and internally consistent (a clean stack of thirds), the
+    // pin OVERRIDES the scorer's rotation choice with the spelled root and treats the sibling
+    // rotations as the SAME (spelling-resolved) reading — they are no longer competing readings.
+    // Where the spelling is absent or contradicts (no clean stack), the pin does nothing and the
+    // scorer's key-dependent choice stands (the existing behaviour — the deferral is §5). This is
+    // a DETERMINISTIC pin, NOT a tuned bonus: no score is changed, the rotation is SELECTED from
+    // the spelling. No new chord type is added (the four-note dim7/mMaj7 TYPES, G5/C2, are
+    // deferred to the engage step so they do not move legacy output).
+
+    /// Master switch. OFF reproduces the pre-G4 behaviour EXACTLY (the scorer's key-dependent
+    /// rotation choice stands; no spelling override, siblings counted as competing readings).
+    bool enableSpellingPin = true;
 };
 
 /// Global default decoder settings.
@@ -381,6 +415,9 @@ struct SliceChord {
 // INDEXED NoteModel::overlapping; injected by hand in the behaviour tests.
 struct FocalNote {
     int pitch = 0;             ///< ppitch
+    int tpc = -1;              ///< notated spelling (line-of-fifths tpc; -1 = not provided) — the
+                               ///< per-note signal the G4/C1 symmetric-root spelling-pin consumes
+                               ///< (engravingbridge::lineOfFifths). Copied from the Layer-1 NoteEvent.
     int onset = 0;             ///< tie-resolved onset tick
     int release = 0;           ///< tie-resolved release tick
     int voice = 0;             ///< voice (the stepwise test is per-voice / melodic)
@@ -472,10 +509,35 @@ public:
     /// highest-vertical-score candidate; confidence is its margin to the best
     /// DIFFERENT (root, quality) candidate; the prevailing chord (if given and
     /// expressible among the candidates) is kept among the alternatives.
+    ///
+    /// @p focal carries the slice's per-note spelling (FocalNote::tpc) for the G4/C1
+    /// symmetric-root SPELLING-PIN: when the chosen chord is a symmetric sonority
+    /// (dim7 / augmented) whose notated spelling is present and internally consistent,
+    /// the chosen ROTATION is re-selected to the spelled root and the sibling rotations
+    /// are dropped as spelling-resolved (not competing readings). Empty @p focal (the
+    /// hand-injected ranking tests) disables the pin — the pre-G4 scorer choice stands.
     static SliceChord decideSlice(
         int sliceIndex,
         const std::vector<ChordSliceCandidate>& candidates,
         const std::optional<ChordSliceCandidate>& prevailing,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences,
+        const std::vector<FocalNote>& focal = {});
+
+    /// G4 / C1 — the symmetric-root SPELLING-PIN (design §5/§9). For a symmetric
+    /// (pitch-class-ambiguous) sonority — a fully-diminished seventh (the four chord-tone
+    /// pcs all present, a stack of minor thirds → root = the sharpest-spelled note) or an
+    /// augmented triad (a stack of major thirds → root = the flattest-spelled note) — the
+    /// notated spelling NAMES the root deterministically (G♯–B–D–F is G♯, not its
+    /// key-preferred rotation). Returns the spelling-determined root pc when @p chosen is
+    /// such a sonority over @p focal AND the focal spellings are present and internally
+    /// consistent (a clean stack of thirds, no enharmonic contradiction); else -1 (not a
+    /// symmetric sonority, the spelling is absent, or it contradicts — defer to the scorer's
+    /// key-dependent choice, the existing behaviour). Pure — reads only @p chosen + the
+    /// focal notes' per-note tpc (engravingbridge::lineOfFifths); no scorer / note-model
+    /// dependency, so the behaviour tests inject the chosen chord + spelled focal by hand.
+    static int spellingPinnedRoot(
+        const ChordSliceCandidate& chosen,
+        const std::vector<FocalNote>& focal,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences);
 
     /// Classify a slice's FOCAL notes as chord-tone vs non-chord-tone for @p chord,

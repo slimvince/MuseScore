@@ -100,6 +100,17 @@ FocalNote note(int pitch, int onset, int release, int voice, double metricWeight
     return f;
 }
 
+// A SPELLED focal note (pitch + notated tpc) for the G4/C1 spelling-pin tests. The
+// engraving line-of-fifths convention: TPC_C = 14, +1 tpc = +1 fifth, so C=14, G=15,
+// D=16, A=17, E=18, B=19, F♯=20, C♯=21, G♯=22, D♯=23, A♯=24, B♯=26; F=13, B♭=12, E♭=11,
+// A♭=10, C♭=7, G♭=8, E𝄫=4, B𝄫=5, G𝄫=1. Strong, full-length (membership-agnostic).
+FocalNote spelled(int pitch, int tpc, int voice = 0)
+{
+    FocalNote f = note(pitch, 0, 1920, voice, 1.0, 4.0);
+    f.tpc = tpc;
+    return f;
+}
+
 bool hasPc(const std::vector<int>& v, int pc)
 {
     return std::find(v.begin(), v.end(), pc) != v.end();
@@ -999,6 +1010,191 @@ TEST(Composing_DecodeChord, G6_ForwardContractDeterministic)
     EXPECT_EQ(a.openQuestion.ambiguity, b.openQuestion.ambiguity);
     EXPECT_EQ(a.openQuestion.question, b.openQuestion.question);
     EXPECT_DOUBLE_EQ(a.confidenceModel.composite, b.confidenceModel.composite);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// G4 / C1 — the symmetric-root SPELLING-PIN (design §5/§9). Scorer-free: the pure
+// spellingPinnedRoot helper (chosen + spelled focal injected by hand) AND the
+// decideSlice re-selection (the rotation is overridden, the spelling-resolved
+// siblings dropped from the carried alternatives). dim triad = tie 6, augmented = tie 9.
+// ════════════════════════════════════════════════════════════════════════════
+
+namespace {
+constexpr int kTieDim = 6;   // Diminished triad {0,3,6} (kTemplateIntervals index 6)
+constexpr int kTieAug = 9;   // Augmented   triad {0,4,8} (kTemplateIntervals index 9)
+
+// engraving tpcs for the spelled chord tones used below.
+constexpr int kTpcGsharp = 22, kTpcB = 19, kTpcD = 16, kTpcF = 13;   // G♯ B D F (sharp dim7)
+constexpr int kTpcAflat = 10, kTpcCflat = 7, kTpcEdflat = 4;         // A♭ C♭ E𝄫 (flat dim7)
+constexpr int kTpcC = 14, kTpcE = 18, kTpcBsharp = 26;               // C E B♯ (augmented)
+} // namespace
+
+// THE pure helper — a fully-diminished seventh's root is the SHARPEST-spelled note (the
+// bottom of the stack of minor thirds). Same four pitch classes {D,F,G♯,B}, OPPOSITE
+// notated spelling → OPPOSITE root: spelled G♯–B–D–F it is G♯ (pc 8); spelled F–A♭–C♭–E𝄫
+// it is F (pc 5). The spelling, not the key, names the symmetric root.
+TEST(Composing_DecodeChord, SpellingPin_Dim7_OppositeSpellingOppositeRoot)
+{
+    // chosen is any rotation (here Ddim) — the pin re-derives the root from the focal spelling.
+    const ChordSliceCandidate chosen = cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim);
+
+    const std::vector<FocalNote> sharp = {
+        spelled(68, kTpcGsharp), spelled(71, kTpcB), spelled(62, kTpcD), spelled(65, kTpcF),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(chosen, sharp), 8) << "G♯–B–D–F → G♯ (the sharpest note)";
+
+    const std::vector<FocalNote> flat = {
+        spelled(65, kTpcF), spelled(68, kTpcAflat), spelled(71, kTpcCflat), spelled(62, kTpcEdflat),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(chosen, flat), 5) << "F–A♭–C♭–E𝄫 → F (same pcs, opposite root)";
+}
+
+// THE spot-check (instruction §3) — a notated G♯dim7 is pinned G♯ even when the scorer's
+// KEY-dependent rotation (dim7CharacteristicBonus) picked a different root. Four dim-triad
+// rotations, Ddim given the top score (the key bias); the spelling overrides to G♯ (pc 8).
+TEST(Composing_DecodeChord, SpellingPin_Dim7_OverridesKeyBiasedRotation)
+{
+    std::vector<ChordSliceCandidate> cands = {
+        cand(2, ChordQuality::Diminished, 2, 5.0, kTieDim),    // Ddim — the key-biased top score
+        cand(5, ChordQuality::Diminished, 5, 4.0, kTieDim),    // Fdim
+        cand(8, ChordQuality::Diminished, 8, 4.0, kTieDim),    // G♯dim — the SPELLED root
+        cand(11, ChordQuality::Diminished, 11, 4.0, kTieDim),  // Bdim
+    };
+    const std::vector<FocalNote> sharp = {
+        spelled(68, kTpcGsharp), spelled(71, kTpcB), spelled(62, kTpcD), spelled(65, kTpcF),
+    };
+    const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt,
+                                           cs::kDefaultChordSliceDecoderPreferences, sharp);
+    EXPECT_EQ(sc.chosen.rootPc, 8)
+        << "the notated G♯dim7 is pinned G♯, overriding the key-biased Ddim winner";
+    EXPECT_EQ(sc.chosen.quality, ChordQuality::Diminished);
+    // The spelling-resolved sibling rotations are no longer competing readings — not carried.
+    for (const ChordSliceCandidate& a : sc.alternatives) {
+        EXPECT_FALSE(a.quality == ChordQuality::Diminished
+                     && (a.rootPc == 2 || a.rootPc == 5 || a.rootPc == 11))
+            << "a spelling-resolved sibling rotation is dropped from the alternatives";
+    }
+}
+
+// An AUGMENTED triad is symmetric (a stack of major thirds); its root is the FLATTEST-spelled
+// note. Same pcs {C,E,G♯}, opposite spelling → opposite root: C–E–G♯ → C (pc 0); E–G♯–B♯ → E (pc 4).
+TEST(Composing_DecodeChord, SpellingPin_Augmented_RootFromSpelling)
+{
+    const ChordSliceCandidate chosen = cand(8, ChordQuality::Augmented, 8, 0.0, kTieAug);
+
+    const std::vector<FocalNote> cRooted = {
+        spelled(60, kTpcC), spelled(64, kTpcE), spelled(68, kTpcGsharp),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(chosen, cRooted), 0) << "C–E–G♯ → C (the flattest note)";
+
+    const std::vector<FocalNote> eRooted = {
+        spelled(64, kTpcE), spelled(68, kTpcGsharp), spelled(60, kTpcBsharp),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(chosen, eRooted), 4) << "E–G♯–B♯ → E (same pcs, opposite root)";
+
+    // And through decideSlice the chosen rotation is re-selected to the spelled root.
+    std::vector<ChordSliceCandidate> cands = {
+        cand(8, ChordQuality::Augmented, 8, 5.0, kTieAug),   // G♯+ — top score
+        cand(0, ChordQuality::Augmented, 0, 4.0, kTieAug),   // C+  — the spelled root
+        cand(4, ChordQuality::Augmented, 4, 4.0, kTieAug),   // E+
+    };
+    const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt,
+                                           cs::kDefaultChordSliceDecoderPreferences, cRooted);
+    EXPECT_EQ(sc.chosen.rootPc, 0) << "C–E–G♯ pins the augmented root to C";
+}
+
+// A NON-SYMMETRIC root is untouched by the pin (the gate is symmetric quality only): a major
+// triad and a dominant seventh are returned -1 and their chosen rotation is unchanged.
+TEST(Composing_DecodeChord, SpellingPin_NonSymmetricUntouched)
+{
+    const std::vector<FocalNote> cMajor = { spelled(60, kTpcC), spelled(64, kTpcE), spelled(67, 15) };  // C E G
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(0, ChordQuality::Major, 0, 0.0, kTieMajor), cMajor), -1)
+        << "a major triad is not symmetric — no pin";
+
+    // decideSlice keeps the score-chosen C major (no re-root, alternatives intact).
+    std::vector<ChordSliceCandidate> cands = {
+        cand(0, ChordQuality::Major, 0, 5.0, kTieMajor),
+        cand(7, ChordQuality::Major, 7, 3.0, kTieMajor),
+    };
+    const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt,
+                                           cs::kDefaultChordSliceDecoderPreferences, cMajor);
+    EXPECT_EQ(sc.chosen.rootPc, 0) << "a non-symmetric winner is untouched";
+    EXPECT_DOUBLE_EQ(sc.confidence, 2.0) << "siblings are not excluded for a non-symmetric chord";
+}
+
+// A plain DIMINISHED TRIAD (only three notes — no diminished seventh) is NOT symmetric: its
+// root is pitch-class-defined, so the pin leaves it alone.
+TEST(Composing_DecodeChord, SpellingPin_PlainDimTriadIsNotSymmetric)
+{
+    // D–F–A♭ (pcs 2,5,8) — a Ddim TRIAD, no B (pc 11) → not a full dim7.
+    const std::vector<FocalNote> triadOnly = {
+        spelled(62, kTpcD), spelled(65, kTpcF), spelled(68, kTpcAflat),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim), triadOnly), -1)
+        << "a 3-note dim triad has a defined root — not a symmetric rotation";
+}
+
+// ABSENT spelling (no tpc on the focal notes) → the pin defers (-1); the scorer's
+// key-dependent rotation choice stands (the design's "absent or contradicted" branch).
+TEST(Composing_DecodeChord, SpellingPin_AbsentSpellingDefers)
+{
+    // A full dim7 collection {D,F,G♯,B} but with NO spelling (tpc == -1, the note() default).
+    const std::vector<FocalNote> noTpc = {
+        note(62, 0, 1920, 0, 1.0, 4.0), note(65, 0, 1920, 1, 1.0, 4.0),
+        note(68, 0, 1920, 2, 1.0, 4.0), note(71, 0, 1920, 3, 1.0, 4.0),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim), noTpc), -1)
+        << "no notated spelling → defer to the scorer's choice";
+
+    std::vector<ChordSliceCandidate> cands = {
+        cand(2, ChordQuality::Diminished, 2, 5.0, kTieDim),   // Ddim — top score
+        cand(8, ChordQuality::Diminished, 8, 4.0, kTieDim),   // G♯dim
+    };
+    const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt,
+                                           cs::kDefaultChordSliceDecoderPreferences, noTpc);
+    EXPECT_EQ(sc.chosen.rootPc, 2) << "absent spelling → the scorer's top rotation (Ddim) stands";
+}
+
+// CONTRADICTED spelling (not a clean stack of thirds) → the pin defers (-1). Here pc 11 is
+// spelled C♭ (flat side) while the rest are sharp/natural, so the line-of-fifths positions
+// do not form the consecutive minor-third chain.
+TEST(Composing_DecodeChord, SpellingPin_ContradictedSpellingDefers)
+{
+    const std::vector<FocalNote> mixed = {
+        spelled(68, kTpcGsharp),   // G♯ (+8)
+        spelled(71, kTpcCflat),    // pc 11 spelled C♭ (−7) — breaks the chain
+        spelled(62, kTpcD),        // D  (+2)
+        spelled(65, kTpcF),        // F  (−1)
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim), mixed), -1)
+        << "a spelling that is not a clean stack of thirds → defer";
+
+    // Same pc spelled two ways simultaneously (G♯ AND A♭ both sounding) is also a contradiction.
+    const std::vector<FocalNote> enharmClash = {
+        spelled(68, kTpcGsharp), spelled(68, kTpcAflat, 1),   // pc 8 as G♯ and A♭
+        spelled(71, kTpcB), spelled(62, kTpcD), spelled(65, kTpcF),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim), enharmClash), -1)
+        << "one pitch class spelled two ways → contradiction → defer";
+}
+
+// The master switch OFF reproduces the pre-G4 behaviour exactly (the scorer's choice stands).
+TEST(Composing_DecodeChord, SpellingPin_DisabledIsNoOp)
+{
+    ChordSliceDecoderPreferences p;
+    p.enableSpellingPin = false;
+    const std::vector<FocalNote> sharp = {
+        spelled(68, kTpcGsharp), spelled(71, kTpcB), spelled(62, kTpcD), spelled(65, kTpcF),
+    };
+    EXPECT_EQ(CSD::spellingPinnedRoot(cand(2, ChordQuality::Diminished, 2, 0.0, kTieDim), sharp, p), -1)
+        << "pin disabled → no spelling override";
+
+    std::vector<ChordSliceCandidate> cands = {
+        cand(2, ChordQuality::Diminished, 2, 5.0, kTieDim),
+        cand(8, ChordQuality::Diminished, 8, 4.0, kTieDim),
+    };
+    const SliceChord sc = CSD::decideSlice(0, cands, std::nullopt, p, sharp);
+    EXPECT_EQ(sc.chosen.rootPc, 2) << "pin off → the scorer's Ddim winner stands";
 }
 
 // ════════════════════════════════════════════════════════════════════════════

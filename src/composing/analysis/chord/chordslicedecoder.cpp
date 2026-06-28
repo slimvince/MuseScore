@@ -28,6 +28,7 @@
 
 #include "function/harmonicfunctionlayer.h"            // ScoringSnapshot/ScoringCell (cube) + bassIsTemplateChordTone
 #include "composing/analysis/engravingbridge/regiontonecollector.h"   // weightedPcView (indexed window)
+#include "composing/analysis/engravingbridge/spellingview.h"          // lineOfFifths (the shared per-note spelling primitive, G4/C1)
 #include "composing/analysis/scoreharvest/metricweights.h"            // regionMetricWeightForOnsetTick (indexed per-note beat weight)
 
 namespace mu::composing::analysis::chordslice {
@@ -151,6 +152,7 @@ std::vector<FocalNote> eligibleNotesInSpan(const notemodel::NoteModel& model,
         }
         FocalNote f;
         f.pitch        = ne->pitch;
+        f.tpc          = ne->tpc;   // notated spelling for the G4/C1 spelling-pin
         f.onset        = ne->onset;
         f.release      = ne->release;
         f.voice        = ne->voice;
@@ -483,13 +485,147 @@ void populateForwardContract(SliceChord& sc,
     sc.openQuestion = ChordSliceDecoder::nameOpenQuestion(sc, sufficient, wasTransition, focal, dp);
 }
 
+// ── G4 / C1: the symmetric-root SPELLING-PIN (design §5/§9) ───────────────────
+//
+// A symmetric (pitch-class-ambiguous) sonority and its rotation set, detected from the
+// CHOSEN chord's quality + the focal pitch classes present. On the EXISTING catalogue
+// (no four-note dim7 type — C2/G5 deferred) the two symmetric cases are:
+//   * a fully-diminished SEVENTH — the chosen is a Diminished TRIAD (root r) and all four
+//     of {r, r+3, r+6, r+9} sound: the four dim-triad rotations are the dim7Characteristic
+//     coin-flip. step = 3 (minor thirds), root = the SHARPEST-spelled note (max LOF).
+//   * an AUGMENTED triad — symmetric by construction: {r, r+4, r+8} all sound. step = 4
+//     (major thirds), root = the FLATTEST-spelled note (min LOF).
+// A plain dim TRIAD (no r+9 present) is NOT symmetric — it has a pitch-class-defined root —
+// so the pin never touches it.
+struct SymRotationSet {
+    bool valid = false;
+    bool dimSeventh = false;            ///< true: dim7 (root = max LOF); false: aug (root = min LOF)
+    ChordQuality quality = ChordQuality::Unknown;
+    int stepFifths = 0;                 ///< adjacent line-of-fifths step in the sorted stack (3 or 4)
+    bool isRotationPc[12] = {};         ///< the symmetric collection's pitch classes
+    std::vector<int> rotationPcs;       ///< the rotation root pcs (3 aug / 4 dim7)
+};
+
+SymRotationSet symmetricRotationSet(const ChordSliceCandidate& chosen,
+                                    const std::vector<FocalNote>& focal)
+{
+    SymRotationSet s;
+    if (chosen.rootPc < 0 || chosen.rootPc >= 12) {
+        return s;
+    }
+    bool present[12] = {};
+    for (const FocalNote& f : focal) { present[f.pc()] = true; }
+
+    auto rot = [&](int base, int step, int n) -> bool {
+        std::vector<int> pcs;
+        for (int k = 0; k < n; ++k) {
+            const int pc = (base + step * k) % 12;
+            if (!present[pc]) { return false; }   // a collection tone is not sounding → not this sonority
+            pcs.push_back(pc);
+        }
+        for (int pc : pcs) { s.isRotationPc[pc] = true; }
+        s.rotationPcs = pcs;
+        return true;
+    };
+
+    if (chosen.quality == ChordQuality::Augmented) {
+        if (rot(chosen.rootPc, 4, 3)) {
+            s.valid = true; s.dimSeventh = false; s.quality = ChordQuality::Augmented; s.stepFifths = 4;
+        }
+    } else if (chosen.quality == ChordQuality::Diminished) {
+        if (rot(chosen.rootPc, 3, 4)) {   // a FULL dim7 (root+9 present), not a plain dim triad
+            s.valid = true; s.dimSeventh = true; s.quality = ChordQuality::Diminished; s.stepFifths = 3;
+        }
+    }
+    return s;
+}
+
+// The line-of-fifths position the focal notes assign to @p pc, or kNoLineOfFifths when no
+// focal note of that pc carries a (valid) spelling, or kContradictedLof when two focal notes
+// of the same pc are spelled differently (e.g. G♯ and A♭ both sounding) — the spelling is not
+// internally consistent there, so the pin must defer.
+constexpr int kContradictedLof = -1000000;
+int focalLineOfFifths(int pc, const std::vector<FocalNote>& focal)
+{
+    int lof = engravingbridge::kNoLineOfFifths;
+    for (const FocalNote& f : focal) {
+        if (f.pc() != pc) { continue; }
+        const int l = engravingbridge::lineOfFifths(f.tpc);
+        if (l == engravingbridge::kNoLineOfFifths) { continue; }
+        if (lof == engravingbridge::kNoLineOfFifths) {
+            lof = l;
+        } else if (lof != l) {
+            return kContradictedLof;   // same pc spelled two ways → contradiction
+        }
+    }
+    return lof;
+}
+
+// The spelling-determined root pc for a symmetric rotation set, or -1 when the spelling is
+// absent (a collection tone has no tpc) or internally inconsistent (a contradiction, or the
+// spellings do not form a clean stack of thirds). The stack is verified directly: sorted by
+// line-of-fifths the positions must rise by exactly @p stepFifths each (3 for the minor-third
+// dim7 stack, 4 for the major-third augmented stack); the root is the sharpest (dim7) or
+// flattest (aug) end — the bottom of the stack of thirds.
+int spellingRootOf(const SymRotationSet& sym, const std::vector<FocalNote>& focal)
+{
+    if (!sym.valid) { return -1; }
+    std::vector<std::pair<int, int>> lofPc;   // (lineOfFifths, pc)
+    for (int pc : sym.rotationPcs) {
+        const int lof = focalLineOfFifths(pc, focal);
+        if (lof == engravingbridge::kNoLineOfFifths || lof == kContradictedLof) {
+            return -1;   // absent or contradicted spelling → defer to the scorer's choice
+        }
+        lofPc.emplace_back(lof, pc);
+    }
+    std::sort(lofPc.begin(), lofPc.end(),
+              [](const std::pair<int, int>& a, const std::pair<int, int>& b) { return a.first < b.first; });
+    for (std::size_t i = 1; i < lofPc.size(); ++i) {
+        if (lofPc[i].first - lofPc[i - 1].first != sym.stepFifths) {
+            return -1;   // not a clean stack of thirds → the spelling contradicts → defer
+        }
+    }
+    // dim7 root = the sharpest (max LOF, back); aug root = the flattest (min LOF, front).
+    return sym.dimSeventh ? lofPc.back().second : lofPc.front().second;
+}
+
+// The cube candidate that re-roots the chosen symmetric chord to @p root: same quality,
+// preferring the chosen's actual bass (the bass note does not move when the rotation is
+// re-named), else any voicing at that root+quality. nullptr when the rotation is not in the
+// surfaced cube (defensive — every dim7 rotation is normally scored).
+const ChordSliceCandidate* bestRotationCandidate(const std::vector<ChordSliceCandidate>& ranked,
+                                                 int root, const ChordSliceCandidate& chosen)
+{
+    const ChordSliceCandidate* exact = nullptr;
+    const ChordSliceCandidate* symbol = nullptr;
+    for (const ChordSliceCandidate& c : ranked) {
+        if (c.rootPc == root && c.quality == chosen.quality) {
+            if (c.bassPc == chosen.bassPc) { exact = &c; break; }
+            if (!symbol) { symbol = &c; }
+        }
+    }
+    return exact ? exact : symbol;
+}
+
 } // namespace
+
+int ChordSliceDecoder::spellingPinnedRoot(
+    const ChordSliceCandidate& chosen,
+    const std::vector<FocalNote>& focal,
+    const ChordSliceDecoderPreferences& decoderPrefs)
+{
+    if (!decoderPrefs.enableSpellingPin) {
+        return -1;
+    }
+    return spellingRootOf(symmetricRotationSet(chosen, focal), focal);
+}
 
 SliceChord ChordSliceDecoder::decideSlice(
     int sliceIndex,
     const std::vector<ChordSliceCandidate>& candidates,
     const std::optional<ChordSliceCandidate>& prevailing,
-    const ChordSliceDecoderPreferences& decoderPrefs)
+    const ChordSliceDecoderPreferences& decoderPrefs,
+    const std::vector<FocalNote>& focal)
 {
     SliceChord sc;
     sc.sliceIndex = sliceIndex;
@@ -507,13 +643,44 @@ SliceChord ChordSliceDecoder::decideSlice(
     sc.hasChord = true;
     sc.chosen = ranked.front();
 
+    // ── G4 / C1: the symmetric-root SPELLING-PIN (design §5/§9) ───────────────
+    // For a symmetric (dim7 / augmented) sonority the scorer's chosen ROTATION came
+    // from the KEY-dependent dim7CharacteristicBonus + diatonic-root term. Where the
+    // notated spelling is present and internally consistent it NAMES the root
+    // deterministically (G♯–B–D–F is G♯) — override the rotation to the spelled root
+    // and treat the sibling rotations as the SAME, spelling-resolved reading (not
+    // competing): they are dropped from the margin and the carried alternatives.
+    // Where the spelling is absent / contradicted (spelledRoot < 0) the scorer's
+    // choice stands and siblings count normally (the existing behaviour).
+    const SymRotationSet sym = decoderPrefs.enableSpellingPin
+        ? symmetricRotationSet(sc.chosen, focal) : SymRotationSet{};
+    bool pinned = false;
+    if (sym.valid) {
+        const int spelledRoot = spellingRootOf(sym, focal);
+        if (spelledRoot >= 0) {
+            pinned = true;
+            if (spelledRoot != sc.chosen.rootPc) {
+                const ChordSliceCandidate* repl = bestRotationCandidate(ranked, spelledRoot, sc.chosen);
+                if (repl) { sc.chosen = *repl; }
+            }
+        }
+    }
+    // A sibling rotation of the pinned symmetric collection: same quality and a root in
+    // the collection. Spelling resolved among these, so they are not competing readings.
+    const auto isResolvedSibling = [&](const ChordSliceCandidate& c) {
+        return pinned && c.quality == sym.quality
+               && c.rootPc >= 0 && c.rootPc < 12 && sym.isRotationPc[c.rootPc];
+    };
+
     // Confidence = chosen vertical score − best score over any DIFFERENT (root,
-    // quality) chord. An inversion of the SAME chord is not a different chord.
+    // quality) chord. An inversion of the SAME chord is not a different chord; nor is
+    // a spelling-resolved sibling rotation (the spelling, not the score, settled it).
     double bestOther = NEG_INF;
     for (const ChordSliceCandidate& c : ranked) {
-        if (!sameChordSymbol(c, sc.chosen)) {
-            bestOther = std::max(bestOther, c.score);
+        if (sameChordSymbol(c, sc.chosen) || isResolvedSibling(c)) {
+            continue;
         }
+        bestOther = std::max(bestOther, c.score);
     }
     sc.confidence = (bestOther == NEG_INF) ? kNoCompetitorConfidence
                                            : (sc.chosen.score - bestOther);
@@ -522,9 +689,10 @@ SliceChord ChordSliceDecoder::decideSlice(
     // Ranked alternatives: the distinct chord voicings after the chosen, capped at
     // topK, then ∪ the prevailing chord (the L3 incumbent pattern — kept alive as a
     // carried alternative even when it falls below topK, so the membership two-pass
-    // in Increment B always has it).
+    // in Increment B always has it). A spelling-resolved sibling rotation is NOT a
+    // competing reading (G4/C1) — it is not carried.
     for (const ChordSliceCandidate& c : ranked) {
-        if (sameChordVoicing(c, sc.chosen)) {
+        if (sameChordVoicing(c, sc.chosen) || isResolvedSibling(c)) {
             continue;
         }
         const bool dup = std::any_of(sc.alternatives.begin(), sc.alternatives.end(),
@@ -875,7 +1043,10 @@ SliceWork buildSliceWork(const RuleBasedChordAnalyzer& analyzer,
     w.window = eligibleNotesInSpan(model, ws, we, excludeStaves);
     w.focal  = eligibleNotesInSpan(model, slices[static_cast<std::size_t>(t)].start,
                                    slices[static_cast<std::size_t>(t)].end, excludeStaves);
-    w.pass1  = ChordSliceDecoder::decideSlice(t, w.cands, std::nullopt, dp);
+    // Provisional pass-1 chord (own notes + key prior). The focal notes carry the
+    // per-note spelling so the G4/C1 pin re-roots a symmetric provisional too — the
+    // pass-1 chosen feeds the pass-2 neighbour (prevC/nextC) context.
+    w.pass1  = ChordSliceDecoder::decideSlice(t, w.cands, std::nullopt, dp, w.focal);
     w.built  = true;
     return w;
 }
@@ -897,7 +1068,7 @@ SliceChord finalizeSlice(int t, const SliceWork& w,
             c.score -= dp.membershipPenaltyWeight * m.implausibilityPenalty;
         }
     }
-    SliceChord sc = ChordSliceDecoder::decideSlice(t, adj, prevailing, dp);
+    SliceChord sc = ChordSliceDecoder::decideSlice(t, adj, prevailing, dp, w.focal);
     // G1 + the §4 two-reading inherit — commit / inherit / abstain (design §4 step 3, §5
     // step 4). Decided BEFORE membership so the per-note classification reflects the FINAL
     // chord (the inherited prevailing chord on Inherit; nothing on Abstain). The window +
@@ -946,7 +1117,7 @@ std::vector<SliceChord> decodeWindowed(
         for (int t = lo; t <= outLast; ++t) {
             const SliceWork w = buildSliceWork(analyzer, slices, model, t, keyFifths, keyMode,
                                                prefs, dp, excludeStaves);
-            SliceChord sc = ChordSliceDecoder::decideSlice(t, w.cands, prevailing, dp);
+            SliceChord sc = ChordSliceDecoder::decideSlice(t, w.cands, prevailing, dp, w.focal);
             // Membership/two-pass disabled → no provisional neighbour chords; the §4
             // two-reading continuation gate cannot fire, so inherit falls back to the
             // conservative template-only G1 base (no CONTINUATION can be confirmed).
