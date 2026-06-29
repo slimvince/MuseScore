@@ -104,6 +104,18 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functionresolver.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functionresolver.cpp
 
+    # functionmodulation — Architectural Layer 5 (FUNCTION), Phase 5c Step 4: the
+    # §5.3 TONICIZATION vs MODULATION arbiter (default-tonicize + the cadence-
+    # confirmation gate + the persistence change-cost / hysteresis over duration +
+    # accumulated cadential weight + the function-gated notated-spelling signal) and
+    # the §5.4 CADENCE-CONFIRMED MODULATION RECOMPUTE (the §8 case-4 channel #1).
+    # REUSES localmodulationdetector (the established + cadence-confirmed span
+    # substrate), functioncadence (the §5.2 votes), and forwardoverride (the §8
+    # mechanism — second instance). DORMANT — no production consumer (exercised only
+    # by its unit tests). Spec: cowork_layer5_function_design.md §5.3/§5.4/§8.
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionmodulation.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionmodulation.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.

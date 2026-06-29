@@ -237,13 +237,15 @@ void absorbShortRegions(std::vector<HarmonicRegion>& regions)
 }
 
 /// The slice→region key reduction result (the Layer-5 override-readiness forward-carry):
-/// the chosen key PLUS the representative slice's already-computed ranked alternative keys
-/// and sequence-margin confidence. One clearly-named reduction so the later precise pin
-/// (the L5-modulation step, cowork_layer5_function_design.md §15-3) is a single-site change.
+/// the chosen key PLUS the PINNED region-level candidate-key menu (§15-3) and the chosen
+/// key's sequence-margin confidence. One clearly-named reduction; the §15-3 precise pin
+/// (the L5-modulation step, cowork_layer5_function_design.md) landed here at Phase-5c
+/// Step-4 — `alternatives` is now the region-level reduction the modulation recompute
+/// selects among, not the v1 representative-slice placeholder.
 struct RegionKeyReduction {
     KeyModeAnalysisResult chosen;                       ///< the region's chosen key (== old localKeyForRegion return)
-    std::vector<KeyModeAnalysisResult> alternatives;    ///< the repSlice's ranked alt keys (excl. chosen)
-    double confidence = 0.0;                            ///< the repSlice's sequence-margin confidence
+    std::vector<KeyModeAnalysisResult> alternatives;    ///< PINNED: region-level ranked candidate keys (excl. chosen)
+    double confidence = 0.0;                            ///< the chosen key's sequence-margin confidence
 };
 
 /// Propagate the region key CONTEXT — the chosen key AND its override-readiness
@@ -499,6 +501,27 @@ void applyJointKeyWiring(const mu::engraving::Score* score,
         km.normalizedConfidence = conf;
         km.score                = raw;
         region.keyModeResult    = km;
+
+        // PIN #2 (§15-3, Phase-5c Step-4): re-derive the override-readiness forward-carry
+        // ALONGSIDE the key override, so the carried key menu cannot go STALE against the
+        // overridden key (the pin's whole point). The carry's alternatives become this
+        // region's ranked candidate keys MINUS the now-chosen (jt,jm); the carried
+        // confidence becomes the overridden key's confidence (this re-key path has no L3
+        // sequence-margin, so the joint emission confidence stands in — the same [0,1]
+        // override-bar scale). Byte-identical on production: this path is gated OFF by
+        // default (jointKeyWiringEnabled()) AND the carry has no production consumer
+        // (cowork_phase5c_step4_report.md §6 byte-identity proof).
+        std::vector<KeyModeAnalysisResult> rekeyedAlts;
+        rekeyedAlts.reserve(perRegionRanked[i].size());
+        for (const KeyModeAnalysisResult& lc : perRegionRanked[i]) {
+            const int lcTonic = (((lc.tonicPc % 12) + 12) % 12);
+            if (lcTonic == jt && lc.isMajor() == jm) {
+                continue;   // drop the now-chosen key from the carried menu
+            }
+            rekeyedAlts.push_back(lc);
+        }
+        region.keyAlternatives = std::move(rekeyedAlts);
+        region.keyConfidence   = conf;
         // CHORD intentionally left as the production R0 (key-only; J-key-iii §6/§7).
     }
 }
@@ -706,6 +729,26 @@ analyzeRegions(const mu::engraving::Score* score,
             votes.push_back({ key, Vote{ dur, sliceIdx, dur } });
         };
 
+        // The PINNED region-level candidate-key MENU (§15-3): every key the region's
+        // slices ranked — each slice's CHOSEN key AND its ranked ALTERNATIVE keys —
+        // bucketed by (tonic,mode), weighted by overlap duration. These are the keys the
+        // Layer-5 modulation recompute selects among (a later cadence may pick a runner-up
+        // the key layer ranked but did not choose). Kept separate from `votes` (chosen-only)
+        // so the chosen region key — `best` below — is byte-identical.
+        struct MenuBucket { long long weight = 0; KeyModeAnalysisResult rep; };
+        std::vector<std::pair<std::pair<int, int>, MenuBucket>> menu;
+        auto addMenu = [&](const KeyModeAnalysisResult& k, long long w) {
+            const std::pair<int, int> key{ (((k.tonicPc % 12) + 12) % 12),
+                                           static_cast<int>(keyModeIndex(k.mode)) };
+            for (auto& m : menu) {
+                if (m.first == key) {
+                    m.second.weight += w;
+                    return;
+                }
+            }
+            menu.push_back({ key, MenuBucket{ w, k } });
+        };
+
         for (; i < slices.size() && slices[i].start < re; ++i) {
             if (i >= sliceKeys.size()) {
                 break;
@@ -716,6 +759,10 @@ analyzeRegions(const mu::engraving::Score* score,
             }
             const KeyModeAnalysisResult& ck = sliceKeys[i].chosen;
             voteFor(ck.tonicPc, static_cast<int>(keyModeIndex(ck.mode)), ov, static_cast<int>(i));
+            addMenu(ck, ov);                                  // menu: the slice's chosen key
+            for (const KeyModeAnalysisResult& alt : sliceKeys[i].alternatives) {
+                addMenu(alt, ov);                             // menu: the slice's ranked alternative keys
+            }
         }
 
         if (votes.empty()) {
@@ -729,10 +776,43 @@ analyzeRegions(const mu::engraving::Score* score,
                 best = &v.second;
             }
         }
-        // v1 reduction (§15-3): carry the representative slice's already-computed ranked
-        // alternative keys + sequence-margin confidence alongside the chosen key.
         const kms::SliceKeyMode& rep = sliceKeys[static_cast<size_t>(best->repSlice)];
-        return { rep.chosen, rep.alternatives, rep.confidence };
+
+        // PINNED reduction (§15-3, Phase-5c Step-4): replace the byte-identical v1 (the
+        // representative slice's own ranked alternatives) with the reduction the Layer-5
+        // modulation recompute actually SELECTS AMONG — the REGION-LEVEL candidate-key
+        // menu (built above): every key the region's slices ranked, EXCLUDING the chosen
+        // region key, ranked by accumulated support. The chosen key + the chosen key's
+        // sequence-margin confidence (the override-bar input) are unchanged. This carry
+        // has NO production consumer (dormant L5), so the change is byte-identical on
+        // production (cowork_phase5c_step4_report.md §6 byte-identity proof).
+        const std::pair<int, int> bestMenuKey{ (((rep.chosen.tonicPc % 12) + 12) % 12),
+                                               static_cast<int>(keyModeIndex(rep.chosen.mode)) };
+        struct AltRank { long long weight; int tonic; int mode; int menuIdx; };
+        std::vector<AltRank> order;
+        order.reserve(menu.size());
+        for (size_t mi = 0; mi < menu.size(); ++mi) {
+            if (menu[mi].first == bestMenuKey) {
+                continue;                   // the chosen region key is not its own alternative
+            }
+            order.push_back({ menu[mi].second.weight, menu[mi].first.first,
+                              menu[mi].first.second, static_cast<int>(mi) });
+        }
+        std::sort(order.begin(), order.end(), [](const AltRank& a, const AltRank& b) {
+            if (a.weight != b.weight) {
+                return a.weight > b.weight;  // higher accumulated support ranks first
+            }
+            if (a.tonic != b.tonic) {
+                return a.tonic < b.tonic;    // deterministic tie-break: lower tonic pc
+            }
+            return a.mode < b.mode;          // then mode
+        });
+        std::vector<KeyModeAnalysisResult> regionAlts;
+        regionAlts.reserve(order.size());
+        for (const AltRank& r : order) {
+            regionAlts.push_back(menu[static_cast<size_t>(r.menuIdx)].second.rep);
+        }
+        return { rep.chosen, std::move(regionAlts), rep.confidence };
     };
 
     // Pass 1 chord-analyzer preferences. Bridge supplies pass1MinDistinctPcsForCandidate=1

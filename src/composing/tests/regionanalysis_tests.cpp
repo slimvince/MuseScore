@@ -471,16 +471,22 @@ TEST(Composing_RegionAnalysisTests, CleanChordChanges_NoSpuriousMerge)
 //  §3 OVERRIDE-READINESS LOCK-IN — the Layer-3 → region key forward-carry.
 // ═════════════════════════════════════════════════════════════════════════════
 
-// The Layer-3 slice decoder computes ranked alternative keys + a sequence-margin
-// confidence per slice; the slice→region reduction (regionanalyzer localKeyForRegion)
-// carries the REPRESENTATIVE slice's alternatives + confidence onto the region so the
-// Layer-5 confidence-weighted forward override can SELECT among the keys the key layer
-// carried forward — never re-derive (cowork_layer5_function_design.md §8 / §9-D7). This
-// pins that forward-carry so a future change cannot silently drop it again at the
-// reduction: a CONFIDENT region (carried key confidence at/above the decoder's
-// uncertainThreshold — i.e. NOT an uncertain seam) must carry a NON-EMPTY ranked
-// keyAlternatives list AND a key confidence. Asserts the CONTRACT (presence + shape),
-// not analyzer-echoed key values.
+// The Layer-3 slice decoder computes a ranked key menu + a sequence-margin confidence
+// per slice; the slice→region reduction (regionanalyzer localKeyForRegion) carries the
+// chosen key's confidence PLUS the PINNED region-level candidate-key menu onto the
+// region so the Layer-5 confidence-weighted forward override can SELECT among the keys
+// the key layer carried forward — never re-derive (cowork_layer5_function_design.md §8 /
+// §9-D7). This pins that forward-carry so a future change cannot silently drop it again
+// at the reduction.
+//
+// ★ Phase-5c Step-4 (§15-3): the carried alternatives are now the PINNED region-level
+// reduction — every OTHER (tonic,mode) some slice of the region committed to, ranked by
+// accumulated duration (the keys the modulation recompute chooses between) — NOT the v1
+// representative-slice placeholder. A CONFIDENT region (carried confidence at/above the
+// decoder's uncertainThreshold — NOT an uncertain seam) must carry a NON-EMPTY ranked
+// keyAlternatives list AND a key confidence; each carried alternative is a DISTINCT key
+// OTHER than the chosen (the region-level bucket property). Asserts the CONTRACT
+// (presence + region-level shape), not analyzer-echoed key values.
 TEST(Composing_RegionAnalysisTests, OverrideReadiness_ConfidentRegionCarriesKeyAltsAndConfidence)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");   // C major I–V–vi–IV
@@ -506,12 +512,21 @@ TEST(Composing_RegionAnalysisTests, OverrideReadiness_ConfidentRegionCarriesKeyA
         }
         foundConfidentCarry = true;
         EXPECT_GT(r.keyConfidence, 0.0) << "a confident region carries a positive key confidence";
-        // Shape: every carried alternative is a key OTHER than the chosen.
-        for (const auto& alt : r.keyAlternatives) {
+        // Shape: every carried alternative is a key OTHER than the chosen, AND the carried
+        // menu has no duplicate (tonic,mode) — the PINNED region-level reduction is a menu
+        // of distinct candidate keys (one entry per region-level vote bucket).
+        for (size_t a = 0; a < r.keyAlternatives.size(); ++a) {
+            const auto& alt = r.keyAlternatives[a];
             const bool differsFromChosen = alt.tonicPc != r.keyModeResult.tonicPc
                                            || alt.mode != r.keyModeResult.mode;
             EXPECT_TRUE(differsFromChosen)
                 << "keyAlternatives are keys OTHER than the chosen keyModeResult";
+            for (size_t b = a + 1; b < r.keyAlternatives.size(); ++b) {
+                const auto& other = r.keyAlternatives[b];
+                const bool distinct = alt.tonicPc != other.tonicPc || alt.mode != other.mode;
+                EXPECT_TRUE(distinct)
+                    << "the pinned region-level menu carries DISTINCT candidate keys (no duplicate (tonic,mode))";
+            }
         }
     }
     ASSERT_TRUE(foundConfidentCarry)
