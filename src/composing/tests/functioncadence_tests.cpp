@@ -320,6 +320,30 @@ TEST(FunctionCadence, SubdominantToTonicIsPlagal)
     EXPECT_EQ(cs[0].tonicPc, C);
 }
 
+// ── Evaded — a genuine dominant whose tonic arrival is abandoned (lowest by rule) ─
+
+TEST(FunctionCadence, GenuineDominantToAbandonedArrivalIsEvaded)
+{
+    // ii → V7 (a genuine dominant set up to cadence) → iii (Em) at a phrase boundary. The
+    // expected C tonic is ABANDONED: the phrase-final arrival is the mediant — none of the
+    // tonic (authentic) / submediant (deceptive) / dominant (half). The §5.2 residual,
+    // lowest-confidence type; it still votes for the implied tonic C and is discounted
+    // below a PAC at the same salience (the per-type lower-confidence discount).
+    CadenceEvent iii = ev(E, ChordQuality::Minor, E, { n(0, E), n(1, G), n(2, B) }, true, 960);
+    auto cs = detectFunctionalCadences({ iiDm(0), G7(480), iii });
+    ASSERT_EQ(cs.size(), 1u);
+    EXPECT_EQ(cs[0].type, FunctionalCadenceType::Evaded);
+    EXPECT_EQ(cs[0].tonicPc, C);
+    EXPECT_TRUE(cs[0].genuineDominant);          // the V7 was set up to cadence
+    EXPECT_FALSE(cs[0].leadingToneResolves);     // the resolution was abandoned, not made
+    EXPECT_GT(cs[0].tonicVote, 0.0);
+
+    // Lower-confidence by rule: the evaded reading scores below a PAC at the same salience.
+    auto pac = detectFunctionalCadences({ iiDm(0), G7(480), CmajRoot(960, true) });
+    ASSERT_EQ(pac.size(), 1u);
+    EXPECT_LT(cs[0].tonicVote, pac[0].tonicVote);
+}
+
 // ── The §5.2 weighted tonic vote ──────────────────────────────────────────────
 
 TEST(FunctionCadence, TonicVoteDirectionAndPerTypeDiscount)

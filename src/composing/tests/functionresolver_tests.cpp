@@ -277,6 +277,31 @@ TEST(FunctionResolver, SymmetricRotation_NoResolution_CarriesOpenMark)
     EXPECT_TRUE(rr.openMark);
 }
 
+TEST(FunctionResolver, SymmetricRotation_ResolvedByCadencePin)
+{
+    // The same diminished-seventh rotations as the LAST slice (no committed successor, so
+    // the applied-resolution path has no target). A cadence on A pins the rotation whose
+    // root is a semitone BELOW A — G#dim7, the viio7 of A — as the reading. This exercises
+    // the §5.5 cadence-pin branch (distinct from the applied-resolution branch above).
+    std::vector<FunctionSlice> region{
+        abstainSlice(AmbiguityKind::SymmetricRotation,
+                     cand(B, ChordQuality::Diminished, B),    // readingA = Bdim7 (the scorer's pick)
+                     cand(Gs, ChordQuality::Diminished, B),   // readingB = G#dim7
+                     /*hasB*/ true, 0,
+                     { cand(D, ChordQuality::Diminished, B),  // alternatives: the other rotations
+                       cand(F, ChordQuality::Diminished, B) }),
+    };
+    const std::vector<FunctionalCadence> cadences{
+        cadence(/*tonic*/ A, /*vote*/ 3.0, FunctionalCadenceType::PerfectAuthentic),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, cadences, cMajor());
+    const ResolvedReading& rr = r.readings[0];
+    EXPECT_TRUE(rr.resolved);
+    EXPECT_FALSE(rr.openMark);
+    EXPECT_EQ(rr.reading.rootPc, Gs);                         // the cadence-pinned rotation (A's viio)
+    EXPECT_EQ(rr.basis, ResolutionBasis::CadenceVote);
+}
+
 TEST(FunctionResolver, BassDegreePrior_BreaksAnOtherwiseExactTie)
 {
     // A lone slice with no progression/cadence context ⇒ functional plausibility ties at
