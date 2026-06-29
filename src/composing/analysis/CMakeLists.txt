@@ -116,6 +116,20 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functionmodulation.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functionmodulation.cpp
 
+    # functionrelationallabel — Architectural Layer 5 (FUNCTION), Phase 5c Step 5: the
+    # §5.6 RELATIONAL LABELS (applied/secondary, Neapolitan, augmented sixth, modal
+    # mixture) in the fixed precedence (aug6 → Neapolitan → applied → mixture, first
+    # match wins; mixture is the residual), spelling-aware ONLY for the Ger6↔V7
+    # distinction (engravingbridge::lineOfFifths), + the §3 UNIFIED tonicization emitter
+    # (emitAppliedLabel — the ONE owned applied path subsuming the dormant
+    # tonicizationlabeler [its chromatic-LT guard kept] and the inline formatRomanNumeral
+    # applied path). REUSES formatRomanNumeral for the RN string (no second formatter).
+    # DORMANT — no production consumer (exercised only by its unit tests); the existing
+    # two paths are untouched until the joint engage (Phase 5d). Spec:
+    # cowork_layer5_function_design.md §5.6/§8.
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionrelationallabel.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionrelationallabel.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.

@@ -50,6 +50,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/functionlayer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionmodulation_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionprogression_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/functionrelationallabel_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionresolver_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionromannumeral_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
