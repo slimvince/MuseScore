@@ -100,7 +100,7 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 407/407** passing (verify with CC — count changes as tests are added).
+**Current baseline: 974/974** passing, 2 disabled (verify with CC — count changes as tests are added).
 
 Tests `analyzeChord()` directly in the composing module. Run after any change to `src/composing/`.
 After each run, read `src/composing/tests/chord_mismatch_report.txt`.
