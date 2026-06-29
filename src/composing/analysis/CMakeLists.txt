@@ -130,6 +130,19 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functionrelationallabel.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functionrelationallabel.cpp
 
+    # functionoutput — Architectural Layer 5 (FUNCTION), Phase 5c Step 6: the §7 OUTPUT
+    # ASSEMBLY. Marshals the per-unit Step-1..5 products into the L5->L6 contract: the
+    # full DCML Roman numeral (base RN + relational label, no simplification) + the
+    # function confidence (its three fixed components — §5.2 cadence-vote weight / §5.0
+    # licensed-progression fit / §5.5 margin — combined at default weights, the firewall)
+    # + the open mark where unresolved; per region the local key (possibly modulated) +
+    # the §5.2 cadence markers. ADDITIVE over Layer 4 (carries the committed identity, does
+    # not replace it). The T/S/D read-out is NOT built (§9-D1, deferred). DORMANT — no
+    # production consumer (exercised only by its unit tests). Spec:
+    # cowork_layer5_function_design.md §7/§3/§9-D1.
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionoutput.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionoutput.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
