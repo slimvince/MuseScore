@@ -339,6 +339,11 @@ override duty, §10), the layer does not abstain-resolve it — it **overrides**
 slices within the region** (the "neighbouring committed harmony"), never re-deriving, the override firing per the
 confidence-weighted threshold of §8. So this section is the home of selection-among-carried-
 readings for **both** the abstained slices (the §8 case-2 menu resolution) and the confident-commit override (case 4).
+*(Step-3 build + Step-M check, 2026-06-26: the override is scoped to Layer-4 **`Commit`** decisions ("confidently
+committed"). The §10 class-(b) duty was measured as **61 Commit / 25 Inherit**; whether the 25 **Inherit** class-(b) cases
+are driven to zero by the Commit-override **plus cascade** (an Inherit that borrows a now-corrected commit), or whether
+the override must **extend to Inherit**, is a **Step-M measurement** — not extended speculatively here. If Step M shows an
+Inherit class-(b) residual, broaden the override to confidently-decided = {Commit, Inherit}.)*
 
 ### 5.6 Relational labels (each on its defining trigger; spelling-aware where needed)
 The four labels can co-trigger on one altered chord, so they are tested in a fixed **precedence**, first match wins:
