@@ -285,6 +285,16 @@ signature)** rather than passing chromatic inflections of the home key — and e
 to condition (a)/(b) above, gated by function**, rather than in the key layer where (as measured) the same signal helps
 modulation regions but harms stable ones.
 
+*(Step-4 build, 2026-06-26 — reuse + one Step-M check.) §5.3/§5.4 are built by **reusing** the dormant
+`localmodulationdetector` (the established + cadence-confirmed span substrate) and Step-3's `forwardoverride` (the §8
+recompute), not a re-implementation. Two realisations on record: the **persistence hysteresis is layered on the
+detector's committed spans**, keeping the detector's `kEstablishmentMinChords` establishment floor as a **candidate
+pre-filter** — so the §5.3 "not a fixed count" rule is honoured at the **decision** level (the hysteresis decides among
+candidates), with the fixed floor a conservative pre-filter only; **Step-M check:** measure whether that floor ever
+rejects a real short modulation the hysteresis would have admitted. And the **§8 contradiction strength for the
+modulation override is the cadential weight** (cadence-vs-key-confidence), with §5.3 owning the persistence/duration —
+the clean split.*
+
 ### 5.4 The cadence-confirmed modulation recompute (an instance of the §8 general mechanism)
 This is the first concrete instance of the confidence-weighted forward override (§8, case 4): a cadence is later evidence
 that contradicts a *confident* earlier key inference (the key layer chose its key before any cadence was known), and when
