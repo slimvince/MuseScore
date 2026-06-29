@@ -380,6 +380,18 @@ match any earlier label.
     home key is never applied (the natural-minor `bVII7→III`, all-diatonic, stays the diatonic numeral — it is **not**
     `V7/III`). (In the major mode the secondary leading tone of the *dominant* is the diatonic seventh degree, not a raised
     one — the rule reads the spelling, not a presumed accidental.)
+  - **The pitch-class-identical major-tonic / `V/iv` case is a function-level decision, NOT a guard matter (deferred to
+    §5.3–§5.5).** `V/iv` is rooted on the **home tonic** (the dominant of the subdominant is the tonic itself, tonic+5+7),
+    so it is **pitch-class-identical to the major tonic** — `I`, a Picardy- or mixture-coloured tonic in a minor key, whose
+    raised third is the chromatic leading tone of `iv`. The foreign-tone test therefore **cannot** separate them (both
+    carry that raised third), and a *root-equals-tonic* test would wrongly suppress the **genuine** `V/IV`/`V/iv`
+    tonicizations the ground truth labels. The correct reading depends on whether the subdominant is genuinely
+    **tonicized** (a cadence or prolongation in it) versus merely the next diatonic chord — the §5.3/§5.4 tonicization-vs-
+    tonic arbitration plus the §5.5 resolver. This is an **inference-layer** resolution, deferred with those layers; the
+    structural applied trigger emits the applied reading for a tonic-rooted dominant of a diatonic degree, and §5.3–§5.5
+    correct it in context. (Step-M finding, 2026-06-29: the reused `tonicizationlabeler` emits `V/iv` for the major tonic
+    before `iv` in 62/29/56 units — a known over-trigger whose resolution is the function context, not the guard. An
+    earlier framing of this as a "fully-diatonic guard gap" was a **corrected error** — the chord is not diatonic.)
   - **Divergence from the legacy inline path is a Phase-5d / Step-M reconciliation, not a pre-judgment.** The production
     `formatRomanNumeral` inline path emits applied labels **without** this chromatic guard, so it over-emits on the
     genuinely-diatonic case (it would write `V7/III` for the diatonic `bVII7→III`). The unified dormant emitter is *more*
