@@ -452,6 +452,64 @@ way Contrapunctus does. (Recorded also in `cowork_phrase_boundary_methods.md` an
 
 ---
 
+## Addendum (2026-06-29) — L6 (grouping) research scan: the ground-truth target + the SOTA approach
+
+Scanning public algorithms / corpora / software for what is useful to the **next layer (L6, grouping)**, while L5 closes.
+
+**The DCML ground truth annotates exactly four layers — keys, chords, PHRASES, CADENCES** (the When-in-Rome / DCML
+standard our corpus follows). For grouping this is decisive:
+
+- **Phrases are FLAT (explicitly non-hierarchical)** — `{ }` brackets, no tree. The DCML guidelines state it directly:
+  *"a rudimentary (because non-hierarchical) form of phrase annotations"*, *"not used in the Schenkerian sense — think
+  'grouping structure' … the punctuation musicians use to know where to breathe or where to begin during a rehearsal."*
+  → **flat phrases + key-areas + cadences are the directly DCML-validatable target** — the low-risk, dormant-validatable
+  **core** of L6.
+  - **★ Caveat (user, 2026-06-29) — DCML-absence is NOT proof a construct is wrong or useless.** The above establishes
+    only what is *directly validatable against our corpus*; it does **not** rule out hierarchical/GTTM grouping or
+    Caplinian periods/sentences. Those are theoretically well-founded; they merely lack an oracle **in our chorale
+    corpus**. Other oracles exist (the Annotated Mozart Sonatas annotate cadences; form-annotated corpora exist;
+    music-theory rules can themselves serve as an oracle), and chorales are anyway phrase-based rather than
+    sentence/period-based — the wrong idiom to validate Classical form against. So hierarchy/periods/sentences are a
+    **separately-weighed option requiring a chosen verification strategy** (a different corpus, theory-rules-as-oracle, or
+    an explicit "theoretically-grounded, empirically-unvalidated" mark) — **not** ruled out by DCML-absence. Verifiability
+    is a **risk/confidence posture** (it is how we catch our own theory errors — cf. the over-trigger), **not a permission
+    gate** on building sound theory.
+  - Reduction stays out (architecture already defers it — on computational-tractability grounds, independent of any oracle).
+- **Cadence ⊄ phrase-end and phrase-end ⊄ cadence — they are distinct, overlapping layers.** DCML: *"cadences rarely
+  occur without a phrase ending, but many phrases end without a cadence."* → **L6 phrases are NOT merely
+  cadence-delimited.** They are delimited by the *structural ending* (breath/punctuation = our already-built
+  phrase-boundary primitive: fermata/breath/rest/structural markers); cadences are a **related overlay** that usually,
+  not always, lands on a phrase end. So the phrase-boundary primitive is the correct basis for L6 phrases, and L6's job is
+  to assemble phrases from those boundaries + group key-areas + align the L5 cadences to phrase ends (not to invent
+  phrases from cadences).
+- **DCML cadence taxonomy = 6 types (PAC/IAC/HC/DC/EC/PC), marked on the ultima.** These align almost 1:1 with our L5
+  §5.2 set. **One nuance to record:** DCML's PAC-vs-IAC test is *"bass AND **upper voice** closing on ^1"* — i.e. the
+  ground-truth criterion **uses the soprano**, the cue we deliberately demoted for general instrumentation. On the
+  4-part chorale corpus the top voice *is* the melody, so the GT's own PAC/IAC criterion is soprano-on-^1 — a
+  **calibration** note for cadence-type validation (inference-phase), not a structural change. Also: DCML cadence
+  labels are **schema-theoretically liberal** (a repeated cadence is re-labelled even when a form analyst would mark one)
+  — so cadence precision/recall against this GT must expect more labels than "formal" cadences.
+
+**SOTA does grouping as flat note-level boundary classification, not parsing.** AnalysisGNN (Karystinaios et al., arXiv
+2509.06654, Sep 2025) — the current unified system — solves 20 note-level tasks **including phrase-boundary and
+section-boundary identification and cadence (presence + type)** as classification, plus a Non-Chord-Tone module that
+excludes passing notes. AugmentedNet (ISMIR 2021) emits an RN-onset/"harmony starts here" segmentation task and key as
+multitask outputs, but **no explicit phrase grouping**. Neither parses a hierarchy. → confirms L6 = **flat
+boundary-identification** (phrases, key-areas, section boundaries), consistent with the DCML target.
+
+**Contrapunctus reminder (already on file):** grouping falls out **implicitly** from stable key runs; it is
+SOTA-competitive with **no** explicit phrase/cadence/grouping layer. → L6, like the phrase primitive, is a **deliberate
+explainability bet, not an RN-accuracy requirement** — keep it proportional; the implicit-via-key-runs fallback exists.
+
+**Net for L6 scope (ground-truth-anchored):** flat **phrases** (from the built boundary primitive) + **key-areas**
+(localkey spans) + alignment of the **L5 cadences** to phrase ends — exactly the DCML-annotated, dormant-validatable set.
+**Discard:** hierarchy/GTTM, periods/sentences (no oracle), reduction (deferred). **To verify before the L6 design:**
+whether **our specific chorale ground-truth files carry the `{ }` phrase marks + `|`-cadence labels** (then L6 phrase/
+cadence output is fully validatable) **or only RN + localkey** (then only the key-area grouping has a local oracle, and
+phrases would validate against the **fermata** markers instead). CC's close-review corpus section can confirm this.
+
+---
+
 **Sources:** contrapunctus.app/landing · /engine (benchmark, updated 2026-06-13, commit a896b554) · /help
 (analyzer docs) · /community (logged-in feed) · github.com/Tomczik76/contrapunctus-bench (README,
 methodology/{protocol,match-tiers,corpus}.md, engine/README.md, harness/{score,rn_normalize}.py, engine/run.mjs,
@@ -459,3 +517,7 @@ results/2026-06-11/{scores.json,PROVENANCE.md}, corpus/manifest.json, harness/en
 release 2026-06-11) · AugmentedNet (Nápoles López et al., ISMIR 2021) · AnalysisGNN/ChordGNN (Karystinaios et
 al., arXiv 2307.03544 / 2509.06654) · When-in-Rome (github.com/MarkGotham/When-in-Rome) · Detecting chord tone
 alterations and suspensions, JNMR 52(5) 2024 (tandfonline 10.1080/09298215.2024.2412595). Accessed 2026-06-20.
+L6 addendum sources: DCML Harmonic Annotation Guidelines 2.3.0 (dcmlab.github.io/standards — tutorial/first_phrase
+[phrase `{}` + cadence-label semantics], reference) · When in Rome: A Meta-corpus of Functional Harmony, TISMIR
+(transactions.ismir.net/articles/10.5334/tismir.165) · The Annotated Mozart Sonatas: Score, Harmony, and Cadence,
+TISMIR (10.5334/tismir.63) · AnalysisGNN, arXiv 2509.06654 (Sep 2025). Accessed 2026-06-29.

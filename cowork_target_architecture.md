@@ -181,6 +181,20 @@ Requesting notes from a lower layer is a **data-supply call down the stack, not 
 consistent with the forward-only contract above. The whole-score load is the **degenerate case** (selection = score,
 no extension fires) — which is what keeps the batch-testing path unchanged.
 
+**★ Verifiability is a risk posture, not a permission gate — build sound theory with an explicit confidence path
+(user-ratified 2026-06-29).** A construct's **absence from the validation corpus is not evidence it is wrong or
+useless** — only that *that* corpus cannot check it. The discipline is therefore: **prefer what we can verify** — a
+ground-truth oracle is how we catch our *own* theory errors (the `V/iv` over-trigger was caught only by measuring
+against DCML); **but** for **theoretically sound** logic we cannot verify against the current corpus, **do not refuse it
+outright.** Require, *before* building it, (a) an **explicit alternative-confidence path** — a different corpus,
+theory-rules-as-oracle, or expert spot-check — and (b) an explicit **"empirically-unvalidated" mark** on the output, so
+its status is never silently conflated with verified output. This **supersedes the stricter "build-only-what-we-can-
+verify" phrasing** (e.g. `cowork_layer5_function_design.md` §9-D1, where unverifiability was one of several rejection
+grounds): unverifiability **alone** is a *flag plus a confidence-path requirement*, not a veto. It governs L6 onward —
+in particular, the grouping layer's reach **beyond** the DCML-annotated flat phrases / key-areas / cadences (hierarchy,
+periods/sentences) is **permitted under this contract with a chosen verification strategy**, not foreclosed by
+corpus-absence.
+
 ## 3. Why this is the target (the evidence)
 - **Dissolves over-grab (~45%, the biggest lever)** by construction — no coarse unit spans two chords.
 - **Matches the metric we already built.** The standing oracle-root metric scores per oracle-event (per-slice);

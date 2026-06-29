@@ -315,6 +315,9 @@ ambiguity kinds Layer 4 carries forward; this layer adds no new kind):
 - **Transition** (a thin slice heading into a different next chord): decide, by **the progression (§5.0)**, whether the
   slice's notes reduce to a passing/neighbour figure within the **prevailing harmony (§5.0)** or belong to the arriving
   function — and select the reading consistent with that continuation (the one forming a licensed progression, §5.0).
+  (The "reduces to a passing/neighbour figure" judgment is made by **the progression test** — whether the slice forms a
+  licensed function of its own — **not** by a voice-leading/melodic-reduction test, which this layer does not build, §11;
+  where the progression cannot decide, the case is an open mark.)
 - **Share-tone** (two readings explaining the same pitch classes — for instance a minor triad with an added sixth versus
   a half-diminished seventh a third below): select the reading that **participates in a licensed progression (§5.0)**
   into the **established next function (§5.0)** — the progression-and-cadence context decides what the note evidence alone
@@ -392,6 +395,15 @@ match any earlier label.
     correct it in context. (Step-M finding, 2026-06-29: the reused `tonicizationlabeler` emits `V/iv` for the major tonic
     before `iv` in 62/29/56 units — a known over-trigger whose resolution is the function context, not the guard. An
     earlier framing of this as a "fully-diatonic guard gap" was a **corrected error** — the chord is not diatonic.)
+    - **Source-level proof the guard cannot fix it (L5-close review D1, 2026-06-29).** A labeler-fired applied chord
+      *always* carries a tone foreign to the home-key collection — over the **same** collection mask the foreign-tone
+      guard uses — so hoisting the guard ahead of the labeler's early-return would reject **nothing**: the placement is
+      provably **inert**. This converts the deferral from a judgment call into a proof — the correction is genuinely an
+      inference (§5.3–§5.5) job, with no structural guard available.
+    - **The over-trigger is a class, not just `V/iv` (L5-close review D2).** The same tonic-rooted-applied over-trigger
+      appears at other targets (e.g. `V/VII` versus an inline `IV6` at `bwv272@9120`). All are the same inference class
+      (a structural applied emission the function context must correct); enumerating the full class is a measurement-
+      completeness task for the inference phase, not a new structural defect.
   - **Divergence from the legacy inline path is a Phase-5d / Step-M reconciliation, not a pre-judgment.** The production
     `formatRomanNumeral` inline path emits applied labels **without** this chromatic guard, so it over-emits on the
     genuinely-diatonic case (it would write `V7/III` for the diatonic `bVII7→III`). The unified dormant emitter is *more*
@@ -549,6 +561,17 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
 - **No voice-leading-based resolution is built.** The layer resolves share-tone and close ties by the progression and the
   cadence (§5.0/§5.5), not by a voice-leading test — the literature finds voice-leading schemata hard to detect from the
   surface, so building one is not justified here. A case only a voice-leading test could decide stays an open mark.
+- **Two confidence scales coexist (L5-close review D3, low severity).** The §7 function confidence is an unbounded
+  non-negative weighted sum; the §8 override threshold is `[0,1]`-clamped. They are **currently disjoint** (the §7 value
+  is not fed to the §8 comparison), so this is not a bug — but their scale/naming should be reconciled at the precision
+  phase before any channel couples them. Recorded, not changed (firewall).
+- **The phrase-boundary primitive's non-chorale markers are unvalidated.** The graded model carries rest- and
+  structural-boundary cues for general (non-chorale) textures, but the corpus is entirely fermata-marked chorales, so
+  those markers have **no ground-truth oracle here** — a validation-coverage gap to close against a non-chorale corpus
+  when one is available (cf. the verifiability-vs-correctness note: unvalidated ≠ wrong, but flagged).
+- **Engagement framing.** References to an "engagement hard-stop" / "before any production switch" (§5/§10) remain true
+  *conditionally* — engagement (Phase 5d) is **deferred indefinitely** (production out of scope; the posture is dormant
+  build + ground-truth validation). The hard-stops apply *if* a switch is ever made; they are not pending work.
 
 ## 12. Glossary
 - **Roman numeral** — the chord named by its scale-degree within the key, with quality, inversion, chromatic alteration,
@@ -658,7 +681,9 @@ catalog §Sources.
    step is built. This is the single place the layer touches upstream; getting the bound exactly right is what keeps the
    general mechanism (§8) from becoming a back-edge.
    - **★ Pin the region key-alternatives reduction here — first task of this step, no later (standing obligation, user
-     2026-06-26).** The key layer's region-level alternative-keys carry was shipped at a deliberate **byte-identical v1**
+     2026-06-26). ✅ DONE (Step-4 build; lock-in test `regionanalysis_tests.cpp:484` — a confident region carries a
+     non-empty ranked alternatives list of distinct keys, the reduction the modulation recompute selects among, not the
+     v1 placeholder; L5-close-verified 2026-06-29).** The key layer's region-level alternative-keys carry was shipped at a deliberate **byte-identical v1**
      (the representative slice's alternatives) *only because* the consumer was not yet designed. Designing this modulation
      step is the **earliest point we CAN** pin the reduction precisely (it is what the override selects among), so we
      **must** then — replace the v1 with the correct reduction, derived from this override's real selection needs, and
