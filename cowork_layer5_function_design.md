@@ -200,18 +200,32 @@ content. The rules:
   root-position dominant over the same bass, it is the dominant's accented
   suspension, not a tonic arrival: collapse the pair into a single **dominant approach** so the cadential bass reads
   five-to-one. A second-inversion tonic spelling never registers as a tonic arrival.
-- **Authentic cadence** requires the *sequence* (a pre-dominant, then a dominant, then the tonic arrival), and at the
-  pair: the **bass moves scale-degree five to one**, the **leading tone resolves to the tonic** across the boundary (the
-  resolution, present as an event — not merely the leading tone being sounded, which is the third of every major triad
-  and is the false-positive trap the prior detectors fell into), and the dominant is a genuine dominant (a seventh or its
-  tritone resolving). Within the authentic family the perfect/imperfect distinction is made on the **robust,
-  bass-derived inversion criterion** — the **outermost-voice criterion is not used as a hard test** (see the note below):
+- **Authentic cadence — the family gate** (corrected at the Step-2 build, 2026-06-26): the *sequence* (a pre-dominant,
+  then a dominant, then the tonic arrival), **a dominant-function approach** (a chord on scale-degree five, **or** a
+  leading-tone chord — a seventh-degree diminished triad/seventh — standing in for it) **resolving to the tonic**, and the
+  **leading tone resolves to the tonic** across the boundary (the resolution, present as an **event** — not merely the
+  leading tone being sounded). **The dominant seventh / tritone resolution is a vote *strengthener*, not a family gate** —
+  a *plain* triad V→I with the leading-tone resolution **is** an authentic cadence (Caplin's V(7)→I, the seventh
+  parenthetical; and the common chorale phrase-end), the seventh merely raising its vote weight (§5.2 vote).
+  - **★ The key-agnostic limit (Step-2 build finding, 2026-06-26 — a corrected premise).** A *plain* triad V→I and a plain
+    I→IV are **exact transpositions**: a key-agnostic event-pair test, hypothesising the arrival is the tonic, reads both
+    as "V→I" (for a I→IV in C it makes E the "leading tone" of F and E→F a resolution). So the leading-tone-resolution
+    event **does NOT by itself discriminate authentic from tonic-to-subdominant** — that needs the key, which this detector
+    is *informing*. By design this is **resolved downstream, not here:** (i) the **seventh/tritone**, when present, is a
+    position-independent dominant signature (admits robustly); (ii) the **phrase gate** removes the *common* false positive
+    (a passing I→IV is mid-phrase, not at a phrase boundary); (iii) the **residual** — a plain I→IV that happens to fall at
+    a phrase boundary (rare) — casts only a **weak soft tonic-vote the key layer's aggregation absorbs** against the
+    home-signature pull and the genuine cadences. The cadence detector casts soft evidence; the authentic-vs-passing
+    disambiguation is a **key-layer** judgement (the cadence-anchored-key model). The **bass scale-degree five-to-one is the
+  *perfect* criterion, not the family gate** (an inverted authentic cadence does not have it). Within the family the
+  perfect/imperfect distinction is the **bass-derived inversion criterion**; the **outermost-voice criterion is not a hard
+  test** (the §5.2 amendment, note below):
   - **Perfect** when both the dominant and the tonic are in **root position** (the bass — reliably the lowest sounding
     voice — carries the cadential five-to-one) **and** no other perfect-condition fails.
-  - **Imperfect** is the **complement**: any authentic dominant-to-tonic motion (bass five-to-one, leading tone resolving)
-    that is **not** perfect — chiefly an **inverted** dominant or tonic, or a leading-tone chord standing in for the
-    dominant (a seventh-degree diminished triad or seventh that resolves to the tonic, which counts as an authentic-family
-    dominant). The branch is **total**: every admitted authentic motion is perfect or imperfect, with no third outcome.
+  - **Imperfect** is the **complement**: any authentic dominant-to-tonic motion (leading tone resolving) that is **not**
+    perfect — chiefly an **inverted** dominant or tonic (so the bass is not five-to-one), a non-tonic outer-voice arrival,
+    or the leading-tone-chord substitution. The branch is **total**: every admitted authentic motion is perfect or
+    imperfect, with no third outcome.
   - **The melodic-arrival criterion is a soft, optional nudge, never a hard test.** Classical theory's further requirement
     — the *melody* arriving on the tonic — needs identifying the structural melodic line, and **the highest sounding voice
     is not reliably that line** (in much orchestral writing the melody sits in an inner or doubled register; in
