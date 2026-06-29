@@ -42,7 +42,8 @@
 // iv, …), the figured-bass inversion, and the inline applied/secondary label. This
 // module adds NO second RN formatter: it CLASSIFIES the relational role in precedence
 // and delegates the string to that emitter. The applied/secondary case reuses the
-// dormant tonicizationlabeler (with its chromatic-leading-tone false-positive guard).
+// dormant tonicizationlabeler for the raised-LT applied chords, then broadens the trigger
+// by the general foreign-tone test (§5.6) for the chords that guard drops (V7/IV, viio/IV).
 //
 // SPELLING IS READ ONLY WHERE THE DISTINCTION IS A SPELLING DISTINCTION (§5.6 / §8).
 // The ONE place this layer reads notated spelling is the GERMAN SIXTH vs the DOMINANT
@@ -62,12 +63,17 @@
 // paths; the RETIREMENT of those paths and the production switch are the joint engage
 // (Phase 5d), so this step is byte-identical by construction (§6). The unification keeps
 // the guarded labeler for the raised-secondary-leading-tone applied chords AND broadens
-// the trigger to the ♭7̂-CHROMATIC applied dominant the labeler dropped — V7/IV, whose
-// chromaticism is the ♭7̂ (IV's leading tone is the diatonic third degree), emitted via
-// the production formatRomanNumeral inline path (Cowork ruling, §5.6 corrected 2026-06-26:
-// V7/IV IS a genuine applied dominant and production correctly emits it). The false-
-// positive guard for a genuinely diatonic chord (no chromaticism at all — e.g. the
-// natural-minor VII7→III) is kept: the ♭7̂ broadening fires only on a chromatic seventh.
+// the trigger by the GENERAL chromaticism test §5.6 always implied (amended 2026-06-29):
+// an applied dominant- OR leading-tone-function chord of a non-tonic diatonic degree that
+// contains AT LEAST ONE TONE FOREIGN to the home-key collection. The raised secondary LT
+// (V/V — the labeler), the ♭7̂ (V7/IV), and the secondary-diminished's own foreign tone
+// (viio/IV, viio7/ii) are all INSTANCES of the one test — not a closed enumeration — so the
+// labeler's raised-leading-tone-only guard, which wrongly dropped both V7/IV (Step-5,
+// 2026-06-26) and viio/IV (Step-5 follow-up, A-D2, 2026-06-29), is generalized rather than
+// patched case-by-case. The broadened chords are emitted via the production formatRomanNumeral
+// inline path (REUSE, no second formatter — §3). The false-positive guard is the SAME test
+// inverted: a chord fully diatonic to the home key is never applied (the natural-minor
+// VII7→III stays the diatonic numeral, and the diatonic ii°→III in minor stays ii°).
 //
 // NO CONSTANTS (build §4): the relational labels are deterministic structural triggers
 // — degree relations + a spelling sign — with no weight, threshold, or margin to tune.

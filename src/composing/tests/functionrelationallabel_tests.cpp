@@ -192,6 +192,64 @@ TEST(FunctionRelationalLabel, AppliedFlatSevenTriadOfSubdominantIsNotApplied)
     EXPECT_EQ(emitAppliedLabel(in).role, R::None);
 }
 
+// ── §5.6 the GENERALIZED trigger: the secondary leading-tone chord (A-D2 ruling) ───
+//
+// The trigger's chromaticism test is GENERAL — at least one tone foreign to the home-key
+// collection — so a secondary LEADING-TONE chord whose foreign tone is the diminished's
+// own chromatic tone (not the target's leading tone) is admitted as the one test's third
+// named instance, alongside the raised secondary LT (V/V) and the ♭7̂ (V7/IV). The
+// labeler's raised-leading-tone-only guard drops these (the target IV's leading tone — the
+// third degree — is diatonic); the generalized foreign-tone trigger keeps them.
+
+TEST(FunctionRelationalLabel, AppliedLeadingToneTriadOfSubdominantViaGeneralizedTrigger)
+{
+    // E diminished triad resolving to F in C major = viio/IV. E°'s diminished fifth (Bb) is
+    // chromatic to C major, so the GENERAL foreign-tone test fires even though IV's leading
+    // tone (E) is diatonic. The labeler drops it (raised-LT-only guard); the broadening keeps
+    // it, emitted via the production formatRomanNumeral inline path.
+    RelationalLabelInput in = cMajor();
+    setChord(in, 4 /*E*/, 18 /*TPC_E*/, /*bass=*/4, Q::Diminished);  // E-G-Bb (Bb = the foreign tone)
+    in.nextRootPc = F;
+    in.pitchClassMask = pcMask({ 4 /*E*/, G, 10 /*Bb*/ });
+    const RelationalLabel out = classifyRelationalLabel(in);
+    EXPECT_EQ(out.role, R::AppliedSecondary);
+    EXPECT_EQ(out.label, "viio/IV");
+    EXPECT_EQ(out.targetDegree, 3);   // the subdominant degree (0-indexed)
+    EXPECT_EQ(out.targetPc, F);
+}
+
+TEST(FunctionRelationalLabel, AppliedLeadingToneSeventhOfSubdominantViaGeneralizedTrigger)
+{
+    // E°7 resolving to F in C major = viio7/IV — the seventh variant of the same generalized
+    // case (E-G-Bb-Db, foreign Bb AND Db). Confirms a viio7/x is emitted via the trigger.
+    RelationalLabelInput in = cMajor();
+    setChord(in, 4 /*E*/, 18 /*TPC_E*/, /*bass=*/4, Q::Diminished, { E::DiminishedSeventh });
+    in.nextRootPc = F;
+    in.pitchClassMask = pcMask({ 4 /*E*/, G, 10 /*Bb*/, Db });
+    const RelationalLabel out = classifyRelationalLabel(in);
+    EXPECT_EQ(out.role, R::AppliedSecondary);
+    EXPECT_EQ(out.label, "viio7/IV");
+    EXPECT_EQ(out.targetDegree, 3);
+}
+
+TEST(FunctionRelationalLabel, AppliedGeneralGuardRejectsDiatonicLeadingToneChord)
+{
+    // The kept false-positive guard, leading-tone analogue of the bVII7→III case: a FULLY
+    // DIATONIC diminished triad a semitone below a non-tonic degree is NOT applied. B°→C in
+    // A MINOR is the diatonic ii°→III (B-D-F all diatonic, no foreign tone) — the unguarded
+    // production inline path would over-emit "viio/III", but the generalized foreign-tone
+    // guard correctly rejects it. DCML agrees it is not applied.
+    RelationalLabelInput in;
+    in.keyFifths = 0;                    // A minor = the relative-major (C) signature
+    in.keyMode = KeySigMode::Aeolian;
+    in.keyTonicPc = 9;                   // A
+    setChord(in, B, 19 /*TPC_B*/, /*bass=*/B, Q::Diminished);  // B-D-F, all diatonic in Am
+    in.nextRootPc = C;
+    in.pitchClassMask = pcMask({ B, D, F });
+    EXPECT_EQ(emitAppliedLabel(in).role, R::None);
+    EXPECT_NE(classifyRelationalLabel(in).role, R::AppliedSecondary);
+}
+
 // ── §5.6 Neapolitan: a lowered-second first-inversion major triad → bII6 ───────
 
 TEST(FunctionRelationalLabel, NeapolitanFirstInversion)

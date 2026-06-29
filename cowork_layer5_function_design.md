@@ -363,15 +363,29 @@ toward a non-tonic degree); modal mixture is the **residual** — a borrowed deg
 mixture" is decided not by a positive test for "borrowed" but by being a quality-altering borrowed degree that did **not**
 match any earlier label.
 - **Applied/secondary chord** (a dominant or leading-tone chord of a non-tonic degree): triggered by **a dominant-function
-  chord (a major triad / dominant seventh, or a leading-tone chord) of a non-tonic diatonic degree that is *chromatic*
-  relative to the home key** — its root a fifth above (or its leading tone a semitone below) the **target** degree it is
-  written against, relative to the **local** key. The chromaticism may be **either** a **raised secondary leading tone**
-  (e.g. `V/V`, whose target's leading tone is chromatic) **or** a **lowered seventh** of an otherwise-diatonic dominant
-  (e.g. `V7/IV`, whose target IV has a *diatonic* leading tone — the third degree — so the chromatic tone is the ♭7̂, not a
-  raised leading tone). **The false-positive guard rejects only a genuinely diatonic chord (no chromaticism at all), not a
-  ♭7̂-chromatic applied dominant** (the prior chromatic-leading-tone-only guard wrongly dropped `V7/IV` — Step-5 build
-  finding, 2026-06-26). (In the major mode the secondary leading tone of the *dominant* is the diatonic seventh degree, not
-  a raised one — the rule reads the spelling, not a presumed accidental.)
+  chord (a major triad / dominant seventh, or a leading-tone chord — a diminished triad or seventh) of a non-tonic diatonic
+  degree that is *chromatic* relative to the home key** — its root a fifth above (or its leading tone a semitone below) the
+  **target** degree it is written against, relative to the **local** key.
+  - **The chromaticism test is general: the chord contains at least one tone foreign to the home-key collection.** This one
+    test is the trigger's necessary condition *and* its false-positive guard; the specific identity of the foreign tone
+    varies with the chord type and is **not** a closed enumeration. The named instances (non-exhaustive):
+    - a **raised secondary leading tone** — the applied dominant whose target's leading tone is itself chromatic (`V/V`);
+    - a **lowered seventh** of an otherwise-diatonic dominant — `V7/IV`, whose target IV has a *diatonic* leading tone (the
+      third degree), so the chromatic tone is the ♭7̂, not a raised leading tone;
+    - the **foreign tone of a secondary leading-tone chord** — `viio/IV`, `viio7/ii`, etc., whose diminished quality
+      contributes the chromatic tone(s) even where the target's own leading tone is diatonic.
+  - **The false-positive guard rejects only a genuinely diatonic chord (no foreign tone at all).** It must *not* be a
+    raised-leading-tone-only guard: that form wrongly dropped both `V7/IV` (the ♭7̂ case — Step-5 build finding, 2026-06-26)
+    and `viio/IV` (the secondary-diminished case — Step-5 follow-up ruling, 2026-06-29, A-D2). A chord fully diatonic to the
+    home key is never applied (the natural-minor `bVII7→III`, all-diatonic, stays the diatonic numeral — it is **not**
+    `V7/III`). (In the major mode the secondary leading tone of the *dominant* is the diatonic seventh degree, not a raised
+    one — the rule reads the spelling, not a presumed accidental.)
+  - **Divergence from the legacy inline path is a Phase-5d / Step-M reconciliation, not a pre-judgment.** The production
+    `formatRomanNumeral` inline path emits applied labels **without** this chromatic guard, so it over-emits on the
+    genuinely-diatonic case (it would write `V7/III` for the diatonic `bVII7→III`). The unified dormant emitter is *more*
+    correct there (the guard rejects it), so the two paths diverge on that case. Because the unified emitter is dormant (no
+    production consumer), this is **byte-identical now**; whether each divergence is the right call is **measured at engage
+    against the DCML ground truth** (Step M / Phase 5d), never decided by either path's say-so.
 - **Neapolitan**: a major triad on the **lowered second degree**, conventionally in first inversion; a chromatic
   pre-dominant, written as the lowered-second-degree chord (the local key is unchanged).
 - **Augmented sixth** (Italian, French, German): triggered by the **augmented sixth between the lowered sixth and raised

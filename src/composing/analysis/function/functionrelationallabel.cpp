@@ -22,7 +22,7 @@
 
 #include "composing/analysis/function/functionrelationallabel.h"
 
-#include "composing/analysis/chord/analysisutils.h"            // normalizePc, pcInMask, diatonicMaskFromFifths
+#include "composing/analysis/chord/analysisutils.h"            // normalizePc, diatonicMaskFromFifths
 #include "composing/analysis/engravingbridge/spellingview.h"   // lineOfFifths (the ONE spelling read)
 #include "composing/analysis/function/tonicizationlabeler.h"   // labelTonicizations (the applied path reuse)
 #include "composing/analysis/region/sparsechordrefinement.h"   // diatonicDegreeForRootPc
@@ -249,40 +249,66 @@ RelationalLabel emitAppliedLabel(const RelationalLabelInput& in)
         return out;
     }
 
-    // BROADEN the applied trigger to the ♭7̂-CHROMATIC applied dominant the labeler's
-    // raised-secondary-leading-tone guard drops — the V7/IV case (§5.6, corrected
-    // 2026-06-26). V7/IV is a GENUINE applied dominant: its chromaticism is the ♭7̂ (the
-    // target IV's leading tone — the third degree — is DIATONIC, so the raised-LT-only
-    // guard wrongly rejects it). The production formatRomanNumeral inline applied path
-    // emits it; REUSE that emitter (no second formatter — §3). The false-positive guard
-    // for a GENUINELY DIATONIC chord is KEPT: this fires only when the chord's own minor
-    // seventh (♭7̂) is itself CHROMATIC to the key — so a fully-diatonic dominant seventh
-    // of a non-tonic degree (e.g. the natural-minor VII7→III, no accidental) stays NOT
-    // applied (§5.6: "rejects only a genuinely diatonic chord, no chromaticism at all").
+    // BROADEN the applied trigger to the chords the labeler's raised-secondary-leading-
+    // tone guard drops, by the GENERAL chromaticism test §5.6 always implied: an applied
+    // dominant- OR leading-tone-function chord of a non-tonic diatonic degree that
+    // contains AT LEAST ONE TONE FOREIGN to the home-key collection (§5.6 amended
+    // 2026-06-29). The raised secondary LT (V/V — the labeler), the ♭7̂ (V7/IV), and the
+    // secondary-diminished's foreign tone (viio/IV, viio7/ii) are all INSTANCES of the one
+    // test — NOT a closed enumeration; this generalizes the prior two named ♭7̂/raised-LT
+    // forms so applied cases are not discovered one at a time. REUSE the production
+    // formatRomanNumeral inline applied path for the string (it already emits V7/x and
+    // viio/x) — no second formatter (§3); we broaden WHICH chords reach the emitter, gated
+    // by the foreign-tone test.
     const ChordIdentity& id = in.identity;
-    const bool isDominantSeventh = (id.quality == ChordQuality::Major)
-                                   && hasExtension(id.extensions, Extension::MinorSeventh);
-    if (!isDominantSeventh) {
-        return out;  // role None — not a dominant seventh (the labeler covered the rest)
+
+    // The chord's FUNCTION class + the relation to its target degree (§5.6):
+    //   • DOMINANT-function (major triad / dominant seventh): root a perfect fifth ABOVE
+    //     the target — rootPc == target + 7;
+    //   • LEADING-TONE-function (diminished / half-diminished, with or without a seventh):
+    //     root a semitone BELOW the target — rootPc == target + 11 (target a semitone above).
+    const bool isDominantFn = (id.quality == ChordQuality::Major);
+    const bool isLeadingToneFn = (id.quality == ChordQuality::Diminished
+                                  || id.quality == ChordQuality::HalfDiminished);
+    const bool dominantRel = isDominantFn && id.rootPc == normalizePc(in.nextRootPc + 7);
+    const bool leadingToneRel = isLeadingToneFn && id.rootPc == normalizePc(in.nextRootPc + 11);
+    if (!dominantRel && !leadingToneRel) {
+        return out;  // role None — neither an applied dominant nor an applied leading-tone chord
     }
-    if (id.rootPc != normalizePc(in.nextRootPc + 7)) {
-        return out;  // root is not a perfect fifth above the target — not an applied dominant
-    }
+
+    // The target degree must be a non-tonic DIATONIC degree of the home key (so it can be
+    // named as a plain numeral; a tonic target is V7→I / viio→I, not applied).
     const int targetDegree = region::diatonicDegreeForRootPc(in.nextRootPc, in.keyFifths, in.keyMode);
     if (targetDegree <= 0) {
-        return out;  // tonic target (V7→I, not applied) or a chromatic target (out of slice)
+        return out;  // tonic target (not applied) or a chromatic target (out of slice)
     }
+
+    // THE GENERAL CHROMATICISM TEST (§5.6) — the trigger's necessary condition AND its
+    // false-positive guard, in one: the chord must contain at least one tone foreign to the
+    // home-key collection. A chord FULLY DIATONIC to the home key is never applied — so the
+    // natural-minor VII7→III (its ♭7̂ diatonic) stays the diatonic numeral, NOT V7/III, and
+    // the diatonic ii°→III in minor stays ii°, NOT viio/III. (This is what the prior raised-
+    // leading-tone-only guard wrongly enforced, dropping the chromatic ♭7̂ V7/IV and the
+    // secondary-diminished viio/IV whose own foreign tone — not the target's leading tone —
+    // carries the chromaticism.)
     const uint16_t collMask = diatonicMaskFromFifths(in.keyFifths);
-    const int flatSeven = normalizePc(id.rootPc + 10);
-    if (pcInMask(collMask, flatSeven)) {
-        return out;  // the seventh is DIATONIC — a genuinely diatonic chord, not applied
+    const bool hasForeignTone = (in.pitchClassMask & static_cast<uint16_t>(~collMask)) != 0;
+    if (!hasForeignTone) {
+        return out;  // fully diatonic — a genuinely diatonic chord, not applied
     }
+
     ChordAnalysisResult r = makeResult(in, /*nextRootPc=*/in.nextRootPc);
-    out.label = ChordSymbolFormatter::formatRomanNumeral(r);
-    if (out.label.empty()) {
-        return out;  // the formatter declined — carry role None
+    const std::string label = ChordSymbolFormatter::formatRomanNumeral(r);
+    // The reused emitter produces an applied label (containing the "/<degree>" separator)
+    // for a dominant SEVENTH (V7/x) or a diminished/half-diminished chord (viio/x); a plain
+    // dominant TRIAD falls through to its base numeral. Confirm an applied label was
+    // produced before committing the role — defensive (a non-applied label is carried as
+    // role None, never re-derived here).
+    if (label.find('/') == std::string::npos) {
+        return out;
     }
     out.role = RelationalRole::AppliedSecondary;
+    out.label = label;
     out.targetDegree = targetDegree;
     out.targetPc = in.nextRootPc;
     return out;
