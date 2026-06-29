@@ -97,6 +97,9 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/section/localmodulationdetector.h" // Stage 4d-i: --dump-modulation
 #include "composing/analysis/section/jointkeydecision.h"    // J-key-i: --dump-joint-key
 #include "composing/analysis/function/tonicizationlabeler.h"  // Stage 6-tonic-i: --dump-tonicization
+#include "composing/analysis/function/functionrelationallabel.h"  // Phase 5c Step M: --dump-l5 (dormant L5 RN)
+#include "composing/analysis/function/functionoutput.h"           // Phase 5c Step M: --dump-l5 (§7 assembly)
+#include "composing/analysis/region/sparsechordrefinement.h"      // diatonicDegreeForRootPc (the inline-RN baseline)
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
 #include "composing/analysis/key/keymodesequence.h"         // Layer 3 decoder: --decode-keymode
@@ -1206,6 +1209,123 @@ static void writeTonicizationJson(const std::vector<AnalyzedRegion>& regions,
     out << (labels.empty() ? "" : "\n    ") << "]";
 }
 
+// ── Phase 5c Step M: the dormant Layer-5 (FUNCTION) would-be labels (read-only) ──
+// Drives the dormant L5 over the analyzed regions — the SAME legacy region substrate as
+// the 53/24/53 BIR gate baseline (r.chord.identity + r.key + tones + pcMask are exactly
+// classifyRelationalLabel / assembleFunctionOutput's inputs) — and emits, per region, the
+// would-be L5 Roman numeral (classifyRelationalLabel.label, carried verbatim through the §7
+// assembleFunctionOutput) + its relational role + the open mark, ALONGSIDE the UNGUARDED
+// inline formatRomanNumeral baseline (the §5.6 applied-divergence comparator). Read-only /
+// measurement-only: the dormant L5 NEVER feeds a production output (default OFF ⇒ the
+// standard .ours.json is byte-identical). L5 is ADDITIVE over L4 (§7) — the committed root
+// (committedIdentity.rootPc, echoed for the class-(b) check) is UNCHANGED here; the
+// relational label only changes the RN STRING. Spec: cowork_layer5_function_design.md
+// §5.6/§7; cc_instruction Phase-5c Step M.
+static const char* relationalRoleName(analysis::RelationalRole role)
+{
+    switch (role) {
+    case analysis::RelationalRole::None:             return "None";
+    case analysis::RelationalRole::AugmentedSixth:   return "AugmentedSixth";
+    case analysis::RelationalRole::Neapolitan:       return "Neapolitan";
+    case analysis::RelationalRole::AppliedSecondary: return "AppliedSecondary";
+    case analysis::RelationalRole::ModalMixture:     return "ModalMixture";
+    }
+    return "None";
+}
+
+static void writeL5Json(const std::vector<AnalyzedRegion>& regions,
+                        const KeyModeAnalysisResult& globalKey,
+                        std::ostream& out)
+{
+    // The next committed root per region (the applied resolution target — §5.6).
+    auto nextRootOf = [&](size_t i) -> int {
+        for (size_t j = i + 1; j < regions.size(); ++j) {
+            if (regions[j].hasAnalyzedChord && regions[j].chord.identity.rootPc >= 0) {
+                return regions[j].chord.identity.rootPc;
+            }
+        }
+        return -1;
+    };
+
+    std::vector<analysis::FunctionUnitAssembly> units;
+    units.reserve(regions.size());
+    std::vector<std::string> inlineRoman;   // the UNGUARDED inline formatRomanNumeral baseline (§5.6)
+    std::vector<int> nextRoots;
+    for (size_t i = 0; i < regions.size(); ++i) {
+        const auto& r = regions[i];
+        const int nextRoot = nextRootOf(i);
+        nextRoots.push_back(nextRoot);
+
+        // The Step-5 relational classifier input — mapped from the legacy region (§5.6).
+        analysis::RelationalLabelInput in;
+        in.identity = r.chord.identity;
+        in.keyFifths = r.key.keySignatureFifths;
+        in.keyMode = r.key.mode;
+        in.keyTonicPc = r.key.tonicPc;
+        in.nextRootPc = nextRoot;
+        in.pitchClassMask = r.pcMask;
+        for (const auto& t : r.tones) {
+            if (t.tpc >= 0) { in.noteTpcs.push_back(t.tpc); }
+        }
+        const analysis::RelationalLabel rel = r.hasAnalyzedChord
+            ? analysis::classifyRelationalLabel(in)
+            : analysis::RelationalLabel{};
+
+        analysis::FunctionUnitAssembly u;
+        u.startTick = r.startTick;
+        u.endTick = r.endTick;
+        u.committedIdentity = r.chord.identity;
+        u.chord.rootPc = r.chord.identity.rootPc;
+        u.chord.quality = r.chord.identity.quality;
+        u.committed = r.hasAnalyzedChord;
+        u.relational = rel;
+        u.openMark = false;          // the legacy region substrate carries no L4 abstain → no open mark
+        u.resolverConfidence = 0.0;  // no resolver here (the override needs the L4-decoder carried contract)
+        units.push_back(u);
+
+        // The UNGUARDED inline path baseline (§5.6): what formatRomanNumeral emits given the
+        // next root WITHOUT the foreign-tone guard — the comparator the §5.6 divergence names
+        // (it "would write V7/III"). Built with the PUBLIC formatter on a hand-set function
+        // context (the same fields the L5 module's makeResult sets), so it faithfully mirrors
+        // the production inline path; not a re-implementation.
+        std::string inl;
+        if (r.hasAnalyzedChord) {
+            ChordAnalysisResult cr;
+            cr.identity = r.chord.identity;
+            cr.function.degree = analysis::region::diatonicDegreeForRootPc(
+                r.chord.identity.rootPc, r.key.keySignatureFifths, r.key.mode);
+            cr.function.diatonicToKey = (cr.function.degree >= 0);
+            cr.function.keyTonicPc = r.key.tonicPc;
+            cr.function.keyMode = r.key.mode;
+            cr.function.nextRootPc = nextRoot;
+            inl = analysis::ChordSymbolFormatter::formatRomanNumeral(cr);
+        }
+        inlineRoman.push_back(inl);
+    }
+
+    // §7: invoke the dormant assembleFunctionOutput over the score's units (empty cadences /
+    // modulations on this measurement substrate) — exercising the §7 assembly over real
+    // scores; it carries each unit's relational.label as romanNumeral verbatim.
+    const analysis::FunctionLayerOutput out5 = analysis::assembleFunctionOutput(
+        units, /*cadences=*/{}, /*modulations=*/{},
+        globalKey.tonicPc, /*homeMinor=*/!globalKey.isMajor());
+
+    out << "  \"l5\": [";
+    for (size_t i = 0; i < out5.units.size(); ++i) {
+        const auto& u = out5.units[i];
+        out << (i == 0 ? "\n" : ",\n");
+        out << "      {\"startTick\": " << u.startTick
+            << ", \"endTick\": " << u.endTick
+            << ", \"rootPitchClass\": " << u.committedIdentity.rootPc
+            << ", \"l5RomanNumeral\": \"" << jsonEscape(u.romanNumeral) << "\""
+            << ", \"role\": \"" << relationalRoleName(u.relationalRole) << "\""
+            << ", \"openMark\": " << (u.openMark ? "true" : "false")
+            << ", \"inlineRomanNumeral\": \"" << jsonEscape(inlineRoman[i]) << "\""
+            << ", \"nextRootPc\": " << nextRoots[i] << "}";
+    }
+    out << (out5.units.empty() ? "" : "\n    ") << "]";
+}
+
 static void writeJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::string& sourceName,
@@ -1219,7 +1339,8 @@ static void writeJson(
     bool dumpTonicization = false,
     bool dumpModulation = false,
     bool dumpJointKey = false,
-    int declaredModeOrdinal = -1)
+    int declaredModeOrdinal = -1,
+    bool dumpL5 = false)
 {
     out << "{\n";
     out << "  \"source\": \""      << jsonEscape(sourceName)                                            << "\",\n";
@@ -1335,7 +1456,7 @@ static void writeJson(
         out << "\n";
     }
 
-    if (dumpCadenceAnchor || dumpTonicization || dumpModulation || dumpJointKey) {
+    if (dumpCadenceAnchor || dumpTonicization || dumpModulation || dumpJointKey || dumpL5) {
         out << "  ],\n";
         bool wroteExtra = false;
         if (dumpCadenceAnchor) {
@@ -1362,6 +1483,13 @@ static void writeJson(
                 out << ",\n";
             }
             writeTonicizationJson(regions, out);
+            wroteExtra = true;
+        }
+        if (dumpL5) {
+            if (wroteExtra) {
+                out << ",\n";
+            }
+            writeL5Json(regions, globalKey, out);
             wroteExtra = true;
         }
         out << "\n}\n";
@@ -1798,6 +1926,14 @@ static void printHelp(const std::string& prog)
         << "            viio/x, viiø7/x) or none. The labeler consumes the resolved key\n"
         << "            but only PRODUCES a label — it NEVER feeds scoring or the emitted\n"
         << "            Roman numeral; production analysis is byte-identical. Default OFF.\n"
+        << "  --dump-l5\n"
+        << "            (Phase 5c Step M, read-only) Append a top-level \"l5\" array to the\n"
+        << "            standard regions JSON: per region, the dormant Layer-5 (FUNCTION)\n"
+        << "            would-be Roman numeral (classifyRelationalLabel, carried through the\n"
+        << "            §7 assembleFunctionOutput) + role + open mark, plus the unguarded\n"
+        << "            inline formatRomanNumeral baseline (the §5.6 applied-divergence\n"
+        << "            comparator). The dormant L5 NEVER feeds production; the committed\n"
+        << "            root is unchanged (L5 is additive over L4). Byte-identical. Default OFF.\n"
         << "  --dump-modulation\n"
         << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
         << "            the standard regions JSON: the key-agnostic local-modulation\n"
@@ -2396,6 +2532,7 @@ int main(int argc, char* argv[])
     bool ignoreDeclaredMode = false;  // Stage 4b-i mode-absent floor (default OFF = no-op)
     bool dumpCadenceAnchor = false;   // Stage 4c-i cadence anchor (default OFF = byte-identical)
     bool dumpTonicization = false;    // Stage 6-tonic-i tonicization labels (default OFF = byte-identical)
+    bool dumpL5 = false;              // Phase 5c Step M: dormant L5 would-be labels (default OFF = byte-identical)
     bool dumpModulation = false;      // Stage 4d-i local-modulation spans (default OFF = byte-identical)
     bool dumpJointKey = false;        // J-key-i scoped-joint key decision (default OFF = byte-identical)
     bool jointKeyWiring = false;      // J-key-iii PRODUCTION wiring (default OFF = byte-identical baseline)
@@ -2566,6 +2703,8 @@ int main(int argc, char* argv[])
             jointKeyWiring = true;
         } else if (a == "--dump-tonicization") {
             dumpTonicization = true;
+        } else if (a == "--dump-l5") {
+            dumpL5 = true;
         } else if (a == "--diagnose-measures") {
             if (i + 1 >= args.size()) {
                 std::cerr << "ERROR: --diagnose-measures requires a comma-separated list of measure numbers\n";
@@ -2838,7 +2977,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, std::cout);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), std::cout, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal, dumpL5);
         }
         std::cout.flush();
         std::fflush(stdout);
@@ -2857,7 +2996,7 @@ int main(int argc, char* argv[])
         } else if (!diagnoseMeasures.empty()) {
             writeDiagnosticJson(regions, diagnoseMeasures, sourceName, chordPrefs, out);
         } else {
-            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal);
+            writeJson(regions, sourceName, presetName, openingKey, regionDumpModeName(dumpMode), out, dumpCadenceAnchor, phraseBoundaryTicks, notatedSignatureFifths, dumpTonicization, dumpModulation, dumpJointKey, declaredModeOrdinal, dumpL5);
         }
         const std::string json = out.str();
         outFile.write(json.data(), static_cast<qint64>(json.size()));

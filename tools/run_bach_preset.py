@@ -306,6 +306,11 @@ def main():
                         help="Stage 6-tonic-i: pass --dump-tonicization to batch_analyze "
                              "(appends the read-only tonicization labels to each "
                              ".ours.json; scoring byte-identical). Default off.")
+    parser.add_argument("--dump-l5", action="store_true",
+                        help="Phase 5c Step M: pass --dump-l5 to batch_analyze "
+                             "(appends the read-only dormant Layer-5 would-be Roman "
+                             "numerals to each .ours.json; scoring byte-identical). "
+                             "Default off.")
     parser.add_argument("--dump-modulation", action="store_true",
                         help="Stage 4d-i: pass --dump-modulation to batch_analyze "
                              "(appends the read-only local-modulation spans to each "
@@ -382,6 +387,8 @@ def main():
         extra_flags.append("--dump-cadence-anchor")
     if args.dump_tonicization:
         extra_flags.append("--dump-tonicization")
+    if args.dump_l5:
+        extra_flags.append("--dump-l5")
     if args.dump_modulation:
         extra_flags.append("--dump-modulation")
     if args.dump_joint_key:
