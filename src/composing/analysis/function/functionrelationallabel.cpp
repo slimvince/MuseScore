@@ -22,7 +22,7 @@
 
 #include "composing/analysis/function/functionrelationallabel.h"
 
-#include "composing/analysis/chord/analysisutils.h"            // normalizePc
+#include "composing/analysis/chord/analysisutils.h"            // normalizePc, pcInMask, diatonicMaskFromFifths
 #include "composing/analysis/engravingbridge/spellingview.h"   // lineOfFifths (the ONE spelling read)
 #include "composing/analysis/function/tonicizationlabeler.h"   // labelTonicizations (the applied path reuse)
 #include "composing/analysis/region/sparsechordrefinement.h"   // diatonicDegreeForRootPc
@@ -219,13 +219,14 @@ RelationalLabel emitAppliedLabel(const RelationalLabelInput& in)
         return out;  // no chord / no resolution target — the applied label cannot fire
     }
 
+    using namespace relational_detail;
+
     // SUBSUME the dormant tonicizationlabeler (its chromatic-leading-tone guard kept):
     // run its per-pair classification over [this chord → the next chord's root]. This is
     // REUSE, not a re-implementation — the one owned L5 applied emitter delegates to the
-    // existing guarded labeler; at Phase 5d the labeler retires INTO this emitter. The
-    // inline formatRomanNumeral applied path (unguarded, no plain-triad V/x) is the other
-    // path this unification subsumes — its lowered-7th applied-dominant-of-IV divergence
-    // is declared to Cowork, not resolved here.
+    // existing guarded labeler; at Phase 5d the labeler retires INTO this emitter. It
+    // handles the raised-secondary-leading-tone applied chords (V/V, V7/V, viiø7/V, …,
+    // and the plain-triad V/x the inline formatRomanNumeral path drops).
     std::vector<TonicizationRegionInput> pair(2);
     TonicizationRegionInput& a = pair[0];
     a.rootPc = in.identity.rootPc;
@@ -240,13 +241,50 @@ RelationalLabel emitAppliedLabel(const RelationalLabelInput& in)
 
     const std::vector<TonicizationLabel> labels = labelTonicizations(pair);
     const TonicizationLabel& tl = labels[0];
-    if (!tl.isApplied) {
-        return out;  // not an applied chord of a non-tonic degree — role None
+    if (tl.isApplied) {
+        out.role = RelationalRole::AppliedSecondary;
+        out.label = tl.label;
+        out.targetDegree = tl.targetDegree;
+        out.targetPc = tl.targetPc;
+        return out;
+    }
+
+    // BROADEN the applied trigger to the ♭7̂-CHROMATIC applied dominant the labeler's
+    // raised-secondary-leading-tone guard drops — the V7/IV case (§5.6, corrected
+    // 2026-06-26). V7/IV is a GENUINE applied dominant: its chromaticism is the ♭7̂ (the
+    // target IV's leading tone — the third degree — is DIATONIC, so the raised-LT-only
+    // guard wrongly rejects it). The production formatRomanNumeral inline applied path
+    // emits it; REUSE that emitter (no second formatter — §3). The false-positive guard
+    // for a GENUINELY DIATONIC chord is KEPT: this fires only when the chord's own minor
+    // seventh (♭7̂) is itself CHROMATIC to the key — so a fully-diatonic dominant seventh
+    // of a non-tonic degree (e.g. the natural-minor VII7→III, no accidental) stays NOT
+    // applied (§5.6: "rejects only a genuinely diatonic chord, no chromaticism at all").
+    const ChordIdentity& id = in.identity;
+    const bool isDominantSeventh = (id.quality == ChordQuality::Major)
+                                   && hasExtension(id.extensions, Extension::MinorSeventh);
+    if (!isDominantSeventh) {
+        return out;  // role None — not a dominant seventh (the labeler covered the rest)
+    }
+    if (id.rootPc != normalizePc(in.nextRootPc + 7)) {
+        return out;  // root is not a perfect fifth above the target — not an applied dominant
+    }
+    const int targetDegree = region::diatonicDegreeForRootPc(in.nextRootPc, in.keyFifths, in.keyMode);
+    if (targetDegree <= 0) {
+        return out;  // tonic target (V7→I, not applied) or a chromatic target (out of slice)
+    }
+    const uint16_t collMask = diatonicMaskFromFifths(in.keyFifths);
+    const int flatSeven = normalizePc(id.rootPc + 10);
+    if (pcInMask(collMask, flatSeven)) {
+        return out;  // the seventh is DIATONIC — a genuinely diatonic chord, not applied
+    }
+    ChordAnalysisResult r = makeResult(in, /*nextRootPc=*/in.nextRootPc);
+    out.label = ChordSymbolFormatter::formatRomanNumeral(r);
+    if (out.label.empty()) {
+        return out;  // the formatter declined — carry role None
     }
     out.role = RelationalRole::AppliedSecondary;
-    out.label = tl.label;
-    out.targetDegree = tl.targetDegree;
-    out.targetPc = tl.targetPc;
+    out.targetDegree = targetDegree;
+    out.targetPc = in.nextRootPc;
     return out;
 }
 

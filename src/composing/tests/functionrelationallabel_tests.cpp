@@ -146,6 +146,52 @@ TEST(FunctionRelationalLabel, AppliedRequiresChromaticLeadingToneGuard)
     EXPECT_NE(out.role, R::AppliedSecondary);  // V7 → I is not applied
 }
 
+TEST(FunctionRelationalLabel, AppliedDominantSeventhOfSubdominantFlatSeven)
+{
+    // C7 resolving to F in C major = V7/IV (§5.6, corrected 2026-06-26). A GENUINE applied
+    // dominant whose chromaticism is the ♭7̂ (Bb), NOT a raised leading tone — IV's leading
+    // tone (E, the third degree) is diatonic, so the raised-LT-only guard wrongly DROPS it.
+    // The broadened ♭7̂ trigger emits it, matching the production formatRomanNumeral path.
+    RelationalLabelInput in = cMajor();
+    setChord(in, C, TPC_C, C, Q::Major, { E::MinorSeventh });  // C-E-G-Bb (Bb = the chromatic ♭7̂)
+    in.nextRootPc = F;
+    in.pitchClassMask = pcMask({ C, 4 /*E*/, G, 10 /*Bb*/ });
+    const RelationalLabel out = classifyRelationalLabel(in);
+    EXPECT_EQ(out.role, R::AppliedSecondary);
+    EXPECT_EQ(out.label, "V7/IV");
+    EXPECT_EQ(out.targetDegree, 3);   // the subdominant degree (0-indexed)
+    EXPECT_EQ(out.targetPc, F);
+}
+
+TEST(FunctionRelationalLabel, AppliedFlatSevenGuardRejectsDiatonicSeventh)
+{
+    // The kept false-positive guard: a FULLY DIATONIC dominant seventh of a non-tonic
+    // degree is NOT applied (no chromaticism at all). G7→C in A MINOR (the natural-minor
+    // VII7→III) has a diatonic raised LT (B) AND a diatonic ♭7̂ (F) — no accidental — so
+    // neither the raised-LT path nor the ♭7̂ broadening fires. DCML agrees it is not applied.
+    RelationalLabelInput in;
+    in.keyFifths = 0;                    // A minor = the relative-major (C) signature
+    in.keyMode = KeySigMode::Aeolian;
+    in.keyTonicPc = 9;                   // A
+    setChord(in, G, 15 /*TPC_G*/, G, Q::Major, { E::MinorSeventh });  // G-B-D-F, all diatonic in Am
+    in.nextRootPc = C;
+    in.pitchClassMask = pcMask({ G, B, D, F });
+    EXPECT_EQ(emitAppliedLabel(in).role, R::None);
+    EXPECT_NE(classifyRelationalLabel(in).role, R::AppliedSecondary);
+}
+
+TEST(FunctionRelationalLabel, AppliedFlatSevenTriadOfSubdominantIsNotApplied)
+{
+    // The SAME root motion as V7/IV but WITHOUT the chromatic seventh: a plain C major
+    // triad → F is just I → IV (no chromaticism), NOT an applied dominant. The ♭7̂
+    // broadening requires the chromatic seventh to be present — a triad does not qualify.
+    RelationalLabelInput in = cMajor();
+    setChord(in, C, TPC_C, C, Q::Major);  // C-E-G, no seventh
+    in.nextRootPc = F;
+    in.pitchClassMask = pcMask({ C, 4 /*E*/, G });
+    EXPECT_EQ(emitAppliedLabel(in).role, R::None);
+}
+
 // ── §5.6 Neapolitan: a lowered-second first-inversion major triad → bII6 ───────
 
 TEST(FunctionRelationalLabel, NeapolitanFirstInversion)

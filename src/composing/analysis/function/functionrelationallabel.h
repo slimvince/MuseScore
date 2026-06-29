@@ -60,10 +60,14 @@
 // — the dormant tonicizationlabeler (the chromatic-LT guard kept) and the inline
 // formatRomanNumeral applied path. It is DORMANT: production stays on the existing two
 // paths; the RETIREMENT of those paths and the production switch are the joint engage
-// (Phase 5d), so this step is byte-identical by construction (§6). The unification
-// resolves the two paths' difference in favour of the GUARDED labeler (the inline
-// path's unguarded lowered-7th applied-dominant-of-IV emission is the divergence the
-// unification surfaces — declared to Cowork, not resolved here).
+// (Phase 5d), so this step is byte-identical by construction (§6). The unification keeps
+// the guarded labeler for the raised-secondary-leading-tone applied chords AND broadens
+// the trigger to the ♭7̂-CHROMATIC applied dominant the labeler dropped — V7/IV, whose
+// chromaticism is the ♭7̂ (IV's leading tone is the diatonic third degree), emitted via
+// the production formatRomanNumeral inline path (Cowork ruling, §5.6 corrected 2026-06-26:
+// V7/IV IS a genuine applied dominant and production correctly emits it). The false-
+// positive guard for a genuinely diatonic chord (no chromaticism at all — e.g. the
+// natural-minor VII7→III) is kept: the ♭7̂ broadening fires only on a chromatic seventh.
 //
 // NO CONSTANTS (build §4): the relational labels are deterministic structural triggers
 // — degree relations + a spelling sign — with no weight, threshold, or margin to tune.
