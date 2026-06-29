@@ -362,12 +362,16 @@ specific (a named chromatic-predominant shape); the applied label fires next (a 
 toward a non-tonic degree); modal mixture is the **residual** — a borrowed degree that is none of the above. So "modal
 mixture" is decided not by a positive test for "borrowed" but by being a quality-altering borrowed degree that did **not**
 match any earlier label.
-- **Applied/secondary chord** (a dominant or leading-tone chord of a non-tonic degree): triggered by a **raised secondary
-  leading tone** — the chord supplies the leading tone (a semitone below) of a non-tonic diatonic degree, and that degree
-  is the **target** the applied chord is written against; written as the applied chord of that target degree, relative to
-  the **local** key. (In the major mode the secondary leading tone of the dominant is the diatonic seventh degree, not a
-  raised one — the alteration is in the spelling, the degree is unaltered; the rule reads the spelling, not a presumed
-  accidental.)
+- **Applied/secondary chord** (a dominant or leading-tone chord of a non-tonic degree): triggered by **a dominant-function
+  chord (a major triad / dominant seventh, or a leading-tone chord) of a non-tonic diatonic degree that is *chromatic*
+  relative to the home key** — its root a fifth above (or its leading tone a semitone below) the **target** degree it is
+  written against, relative to the **local** key. The chromaticism may be **either** a **raised secondary leading tone**
+  (e.g. `V/V`, whose target's leading tone is chromatic) **or** a **lowered seventh** of an otherwise-diatonic dominant
+  (e.g. `V7/IV`, whose target IV has a *diatonic* leading tone — the third degree — so the chromatic tone is the ♭7̂, not a
+  raised leading tone). **The false-positive guard rejects only a genuinely diatonic chord (no chromaticism at all), not a
+  ♭7̂-chromatic applied dominant** (the prior chromatic-leading-tone-only guard wrongly dropped `V7/IV` — Step-5 build
+  finding, 2026-06-26). (In the major mode the secondary leading tone of the *dominant* is the diatonic seventh degree, not
+  a raised one — the rule reads the spelling, not a presumed accidental.)
 - **Neapolitan**: a major triad on the **lowered second degree**, conventionally in first inversion; a chromatic
   pre-dominant, written as the lowered-second-degree chord (the local key is unchanged).
 - **Augmented sixth** (Italian, French, German): triggered by the **augmented sixth between the lowered sixth and raised
