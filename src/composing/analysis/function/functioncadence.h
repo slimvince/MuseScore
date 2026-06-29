@@ -45,10 +45,33 @@
 //     (pcInMask(a.pitchClassMask, leadingTone)) — the major third is present in
 //     EVERY major triad, so it false-positives on I→IV / I→V. This unit does NOT
 //     reuse that logic; it builds the leading-tone RESOLUTION event (the 7̂→1̂
-//     same-voice motion ACROSS the boundary — a detected event, never mere
-//     presence) plus the genuine-dominant (seventh / resolving tritone) gate, which
-//     together kill the I→IV false positive (a plain tonic triad has no seventh and
-//     no resolving tritone).
+//     same-voice motion ACROSS the boundary — a detected event, never mere presence)
+//     as the authentic-family gate, plus the genuine-dominant (seventh / resolving
+//     tritone) test, now a vote STRENGTHENER (§5.2 amendment 2026-06-26: a plain
+//     triad V→I with the leading-tone resolution IS authentic — the common chorale
+//     phrase-end — so the seventh is not an admission requirement).
+//
+//   ★★ THE KEY-AGNOSTIC LIMIT — BY DESIGN, RESOLVED DOWNSTREAM (§5.2 "the key-agnostic
+//     limit"; resolution ratified cc_phase5c_step2_amendment.md §7). Dropping the
+//     seventh GATE removes the only event-pair separator between a plain V→I and a plain
+//     I→IV: the two are EXACT TRANSPOSITIONS (Major triad → triad, root up a fourth, the
+//     third of the approach resolving up a semitone to the arrival root); the key-agnostic
+//     detector hypothesizes the ARRIVAL is the tonic, so for the I→IV pair the third of I
+//     IS the "leading tone" and the smooth common-tone voicing (E→F in C→F) FIRES
+//     leadingToneResolves. This is NOT a defect to gate here — a key-agnostic event-pair
+//     test CANNOT separate the two (that needs the key, which this detector is INFORMING,
+//     not reading). The disambiguation is resolved DOWNSTREAM, not in this unit:
+//       (i)   the seventh / resolving tritone, when present, is a position-independent
+//             dominant signature (the +wSeventh strengthener) that admits a genuine
+//             dominant robustly;
+//       (ii)  the PHRASE GATE (arr.endsPhrase, applied at candidate admission in every
+//             cadence type) removes the COMMON false positive — a passing I→IV is
+//             mid-phrase, never admitted as a candidate;
+//       (iii) the rare I→IV that falls AT a phrase boundary casts only a weak SOFT
+//             tonic-vote the key-layer aggregation absorbs against the home-signature
+//             pull and the genuine cadences.
+//     The detector casts soft evidence; it is NOT a key-aware classifier. The seventh
+//     gate is NOT re-added.
 //   • The circular production detector (section/sectioncadencedetection.cpp
 //     detectCadences(), key-dependent on the resolved function.degree) is NOT
 //     touched here — its retirement is Phase 5d.

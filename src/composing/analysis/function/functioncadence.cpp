@@ -217,8 +217,8 @@ FunctionalCadence tryAuthentic(const std::vector<CadenceEvent>& events, size_t i
     const CadenceEvent& dom = events[i];
     const CadenceEvent& arr = events[i + 1];
 
-    if (!arr.endsPhrase) {                         // phrase gate
-        return makeNone();
+    if (!arr.endsPhrase) {                         // phrase gate — §5.2 candidate admission:
+        return makeNone();                          // the common passing I→IV is mid-phrase, rejected here
     }
     if (isSecondInversionTonicTriad(arr)) {        // a 6/4 never registers as a tonic arrival
         return makeNone();
@@ -239,14 +239,16 @@ FunctionalCadence tryAuthentic(const std::vector<CadenceEvent>& events, size_t i
     if (!formV && !formViio) {
         return makeNone();
     }
-    // The leading tone RESOLVES (event) and the dominant is genuine — both required.
+    // The leading tone RESOLVES (event) — the authentic-family gate (§5.2 amendment,
+    // 2026-06-26). A *plain* triad V→I with the leading-tone resolution IS authentic
+    // (Caplin's V(7)→I — the seventh is parenthetical), and it is the common Bach-
+    // chorale phrase-end; the genuine dominant (seventh / resolving tritone) is now a
+    // vote STRENGTHENER (the +wSeventh term, below), NOT an admission requirement.
     const bool ltResolves = leadingToneResolves(dom, arr, tonicPc);
     if (!ltResolves) {
         return makeNone();
     }
-    if (!isGenuineDominant(dom, arr, tonicPc)) {
-        return makeNone();
-    }
+    const bool genuineDom = isGenuineDominant(dom, arr, tonicPc);
 
     // Sequence: a pre-dominant before the dominant (collapsing a cadential 6/4).
     bool sixFour = false;
@@ -277,7 +279,7 @@ FunctionalCadence tryAuthentic(const std::vector<CadenceEvent>& events, size_t i
     c.minorMode = (arr.quality == ChordQuality::Minor);
     c.bassFiveToOne = bassFiveToOne;
     c.leadingToneResolves = true;
-    c.genuineDominant = true;
+    c.genuineDominant = genuineDom;     // the strengthener flag (V7 outvotes a plain V), not a gate
     c.sixFourCollapsed = sixFour;
     c.tonicVote = cadenceTonicVote(c, arr, params);
     return c;

@@ -85,6 +85,13 @@ CadenceEvent CmajRoot(int tick, bool endsPhrase)
     // C–E–G, soprano C in voice 3 (the B→C resolution target).
     return ev(C, ChordQuality::Major, C, { n(0, C), n(1, E), n(2, G), n(3, C) }, endsPhrase, tick, 1.0);
 }
+CadenceEvent GmajTriad(int tick, bool endsPhrase = false)
+{
+    // A PLAIN G major triad (no seventh): G–B–D, B (leading tone) in voice 3, root
+    // doubled in voice 2. NOT a genuine dominant (no seventh, no resolving tritone) —
+    // the §5.2-amendment plain V whose B→C resolution still makes an authentic cadence.
+    return ev(G, ChordQuality::Major, G, { n(0, G), n(1, D), n(2, G), n(3, B) }, endsPhrase, tick, 1.0);
+}
 
 } // namespace
 
@@ -116,6 +123,39 @@ TEST(FunctionCadence, InvertedTonicIsImperfectAuthenticByInversionNotTopVoice)
     EXPECT_EQ(cs[0].tonicPc, C);
     EXPECT_FALSE(cs[0].bassFiveToOne);          // inverted tonic — bass does not read 5̂→1̂
     EXPECT_TRUE(cs[0].leadingToneResolves);
+}
+
+// ── §5.2 amendment (2026-06-26): a plain triad V→I IS authentic ───────────────
+
+TEST(FunctionCadence, PlainTriadVToIIsPerfectAuthentic)
+{
+    // ii → V (PLAIN G triad, no seventh) → I, all root position. Caplin's V(7)→I: the
+    // seventh is parenthetical, so this plain V→I with the leading-tone resolution
+    // (B→C, voice 3) IS a PAC — the common Bach-chorale phrase-end. It was EXCLUDED by
+    // the pre-amendment genuine-dominant gate; the amendment admits it.
+    auto cs = detectFunctionalCadences({ iiDm(0), GmajTriad(480), CmajRoot(960, true) });
+    ASSERT_EQ(cs.size(), 1u);
+    EXPECT_EQ(cs[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_EQ(cs[0].tonicPc, C);
+    EXPECT_TRUE(cs[0].bassFiveToOne);
+    EXPECT_TRUE(cs[0].leadingToneResolves);
+    EXPECT_FALSE(cs[0].genuineDominant);        // a plain triad V — no seventh, no resolving tritone
+    EXPECT_EQ(cs[0].arrivalTick, 960);
+}
+
+TEST(FunctionCadence, SeventhStrengthensTheVoteOverAPlainTriadV)
+{
+    // The genuine dominant is now a vote STRENGTHENER, not a gate: a V7→I outscores a
+    // plain V→I at the SAME salience (the +wSeventh term). Both are authentic.
+    auto plain   = detectFunctionalCadences({ iiDm(0), GmajTriad(480), CmajRoot(960, true) });
+    auto seventh = detectFunctionalCadences({ iiDm(0), G7(480),        CmajRoot(960, true) });
+    ASSERT_EQ(plain.size(), 1u);
+    ASSERT_EQ(seventh.size(), 1u);
+    EXPECT_EQ(plain[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_EQ(seventh[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_FALSE(plain[0].genuineDominant);
+    EXPECT_TRUE(seventh[0].genuineDominant);
+    EXPECT_GT(seventh[0].tonicVote, plain[0].tonicVote);   // the seventh strengthener
 }
 
 TEST(FunctionCadence, ViioSubstitutionIsImperfectAuthentic)
@@ -196,9 +236,11 @@ TEST(FunctionCadence, CadentialVToViIsDeceptive)
 
 TEST(FunctionCadence, PassingIToIVIsNotACadence)
 {
-    // I → IV → V7 → I, a single phrase. The mid-phrase I→IV (the very motion the old
-    // leading-tone-PRESENCE test false-flagged) produces no cadence; only the
-    // phrase-final V7→I PAC is found.
+    // I → IV → V7 → I, a single phrase. The mid-phrase I→IV produces no cadence; only
+    // the phrase-final V7→I PAC is found. NOTE — the mid-phrase I→IV is rejected here
+    // by the PHRASE GATE (the IV does not end a phrase), NOT by the discriminator: see
+    // PlainAuthenticAndItsTranspositionAreIndistinguishable_STOP for the case where the
+    // discriminator alone must (and, post-amendment, does NOT) reject I→IV.
     CadenceEvent I = ev(C, ChordQuality::Major, C, { n(0, C), n(1, E), n(2, G) }, false, 0);
     CadenceEvent IVmid = ev(F, ChordQuality::Major, F, { n(0, F), n(1, A), n(2, C) }, false, 480, 0.7);
     auto cs = detectFunctionalCadences({ I, IVmid, G7(720), CmajRoot(960, true) });
@@ -215,7 +257,9 @@ TEST(FunctionCadence, PassingIToIVIsNotACadence)
 TEST(FunctionCadence, GenuineDominantNeedsSeventhOrResolvingTritone)
 {
     // A plain major triad (a tonic, or a bare V) is NOT a genuine dominant — no
-    // seventh, no resolving tritone. This is what rejects I→IV even at a boundary.
+    // seventh, no resolving tritone. POST-AMENDMENT this predicate is a vote
+    // STRENGTHENER, no longer the I→IV admission gate (it false-rejected the plain
+    // chorale V→I); the predicate behaviour itself is unchanged.
     CadenceEvent Ctriad = ev(C, ChordQuality::Major, C, { n(0, C), n(1, E), n(2, G) }, false, 0);
     CadenceEvent Ftriad = ev(F, ChordQuality::Major, F, { n(0, F), n(1, A), n(2, C) }, true, 480);
     EXPECT_FALSE(isGenuineDominant(Ctriad, Ftriad, /*tonicPc=*/F));
@@ -297,4 +341,79 @@ TEST(FunctionCadence, TonicVoteDirectionAndPerTypeDiscount)
 
     // An admitted cadence votes for the right tonic; the half's dominant G implies C.
     EXPECT_EQ(half[0].tonicPc, C);
+}
+
+// ── §5.2 "the key-agnostic limit" — documented BY DESIGN, resolved downstream ──
+//
+// A key-agnostic event-pair test CANNOT separate a plain V→I from a plain I→IV: the two
+// are EXACT TRANSPOSITIONS (a Major triad up a fourth to a triad, the third of the
+// approach resolving up a semitone to the arrival's root). The detector hypothesizes the
+// ARRIVAL is the tonic, so for the I→IV pair (C→F) the third of I (E) IS the "leading
+// tone" of F and the smooth common-tone voicing E→F FIRES leadingToneResolves. This is
+// BY DESIGN, not a blocker (cowork_layer5_function_design.md §5.2 "the key-agnostic
+// limit"; resolution cc_phase5c_step2_amendment.md §7): the event-pair test alone returns
+// the SAME verdict for both, because separating them needs the KEY — which this detector
+// is INFORMING, not reading. The disambiguation lives DOWNSTREAM: (i) the seventh/tritone
+// strengthener when present; (ii) the PHRASE GATE for the common passing I→IV (see
+// PlainIToIVRejectedMidPhraseAdmittedAtBoundary_PhraseGate); (iii) the key-layer
+// aggregation, which absorbs the rare at-boundary I→IV's soft vote. This test PINS the
+// documented limit: the relaxed detector returns the SAME PerfectAuthentic verdict for a
+// genuine V→I (PAC on C) and its exact +5 transposition (a plain I→IV in C, "PAC on F").
+// It asserts the by-design behaviour so the suite stays green and the limit stays visible.
+// (If a future downstream-aware fix changes this verdict, the test is revised in lock-step.)
+TEST(FunctionCadence, PlainAuthenticAndItsTranspositionAreIndistinguishable_KeyAgnosticLimit_ResolvedDownstream)
+{
+    // Genuine plain V→I in C: Dm → G(triad, B in v3) → C(triad, C in v3). LT B→C.
+    auto vToI = detectFunctionalCadences({ iiDm(0), GmajTriad(480), CmajRoot(960, true) });
+    ASSERT_EQ(vToI.size(), 1u);
+    EXPECT_EQ(vToI[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_EQ(vToI[0].tonicPc, C);
+
+    // The EXACT +5 transposition (= a plain I→IV in C, i.e. C→F as pitch classes):
+    // Gm → C(triad, E in v3) → F(triad, F in v3). The "leading tone" of the hypothesized
+    // tonic F is E (the third of the C triad), and E→F resolves in voice 3 — the same
+    // event shape as B→C above.
+    CadenceEvent gm   = ev(G, ChordQuality::Minor, G, { n(0, G), n(1, Bb), n(2, D) }, false, 0, 0.7);
+    CadenceEvent cAsV = ev(C, ChordQuality::Major, C, { n(0, C), n(1, G), n(2, C), n(3, E) }, false, 480);
+    CadenceEvent fAsI = ev(F, ChordQuality::Major, F, { n(0, F), n(1, A), n(2, C), n(3, F) }, true, 960);
+    auto iToIV = detectFunctionalCadences({ gm, cAsV, fAsI });
+
+    // ★ The key-agnostic limit: the plain I→IV is read as a PerfectAuthentic on F — the
+    // SAME verdict + structure as the genuine V→I. The event pair alone cannot tell them
+    // apart (no seventh gate, identical leading-tone resolution event) — by design; the
+    // separation is downstream (phrase gate + key-layer aggregation), not in this unit.
+    ASSERT_EQ(iToIV.size(), 1u);
+    EXPECT_EQ(iToIV[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_EQ(iToIV[0].tonicPc, F);             // a key-agnostic "tonic" the event pair cannot reject alone
+    EXPECT_EQ(iToIV[0].type, vToI[0].type);     // identical verdict for a transposed progression
+    EXPECT_TRUE(iToIV[0].leadingToneResolves);  // E→F fired — event-pair-indistinguishable from V→I
+}
+
+// ── The phrase gate — the COMMON-CASE discriminator that DOES hold here (§5.2) ──
+//
+// The key-agnostic event pair cannot separate I→IV from V→I (the limit above), but the
+// §5.2 PHRASE GATE removes the COMMON false positive at candidate admission: a passing
+// I→IV is mid-phrase, so its arrival does not end a phrase and NO cadence is admitted —
+// in any cadence type. Only the RARE I→IV that happens to fall AT a phrase boundary slips
+// through, and it casts only a weak SOFT tonic-vote the key layer absorbs (the documented
+// residual). This pins both halves and confirms the phrase gate is applied at candidate
+// admission.
+TEST(FunctionCadence, PlainIToIVRejectedMidPhraseAdmittedAtBoundary_PhraseGate)
+{
+    // The plain I→IV in C (= Gm → C(as "V") → F(as "I"), the transposition above).
+    CadenceEvent gm   = ev(G, ChordQuality::Minor, G, { n(0, G), n(1, Bb), n(2, D) }, false, 0, 0.7);
+    CadenceEvent cAsV = ev(C, ChordQuality::Major, C, { n(0, C), n(1, G), n(2, C), n(3, E) }, false, 480);
+
+    // Mid-phrase: the IV arrival does NOT end a phrase → NO cadence. The phrase gate
+    // rejects the common passing I→IV at candidate admission (every type checks it first).
+    CadenceEvent fMid = ev(F, ChordQuality::Major, F, { n(0, F), n(1, A), n(2, C), n(3, F) }, false, 960);
+    EXPECT_TRUE(detectFunctionalCadences({ gm, cAsV, fMid }).empty());
+
+    // At a phrase boundary: the SAME pair IS admitted — the rare residual that casts a
+    // soft tonic-vote for the key layer to weigh (soft evidence, not a verdict).
+    CadenceEvent fEnd = ev(F, ChordQuality::Major, F, { n(0, F), n(1, A), n(2, C), n(3, F) }, true, 960);
+    auto admitted = detectFunctionalCadences({ gm, cAsV, fEnd });
+    ASSERT_EQ(admitted.size(), 1u);
+    EXPECT_EQ(admitted[0].type, FunctionalCadenceType::PerfectAuthentic);
+    EXPECT_GT(admitted[0].tonicVote, 0.0);   // a soft vote, weighed downstream — not a verdict
 }
