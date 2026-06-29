@@ -90,6 +90,20 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functioncadence.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functioncadence.cpp
 
+    # forwardoverride + functionresolver — Architectural Layer 5 (FUNCTION), Phase 5c
+    # Step 3: the §8 confidence-weighted forward-override MECHANISM (the threshold +
+    # the one-pass closure + the localized forward recompute — reusable; Step-4's
+    # modulation recompute is its other instance) and the §5.5 RESOLVER (selects among
+    # the L4-carried readings per ambiguity kind + the §5.7 bass-degree prior) + the
+    # §5.5 case-4 FINE-GRAIN OVERRIDE (corrects a contradicted confident commit by
+    # SELECTION, firing through forwardoverride). DORMANT — no production consumer
+    # (exercised only by their unit tests). Spec: cowork_layer5_function_design.md
+    # §5.5/§5.7/§8.
+    ${CMAKE_CURRENT_LIST_DIR}/function/forwardoverride.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/forwardoverride.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionresolver.h
+    ${CMAKE_CURRENT_LIST_DIR}/function/functionresolver.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
