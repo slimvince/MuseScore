@@ -5,13 +5,27 @@
 > implementation status and immediate next steps. Update STATUS.md as your last act when
 > anything changes. Update ARCHITECTURE.md only when architectural decisions change.
 
-> **★★ FORWARD POINTER (2026-06-15, investigation-gated — NOT yet a ratified stable decision):**
-> the back-half target architecture is being re-grounded onto **CONSTRAINED JOINT INFERENCE** —
-> one joint decision over all evidence (chord + key/mode co-determined), with HARD constraints
-> (decisive facts) pinning + SOFT scores ranking, replacing the current local feed-forward
-> key/chord pipeline. Rationale + the synthesis: `docs/architecture_joint_inference.md`. It is
-> being SIZED by a read-only investigation before any build; this section will be promoted into
-> a full stable §2.x architectural decision once the sizing lands and the user ratifies.
+> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer /
+> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,
+> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own
+> scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from here. They
+> are **not** rival architecture docs: a **cross-cutting contract is stated once, here (§2.15), and never redefined in a
+> layer doc** (a layer doc may *use* the span typology or the verifiability contract, not *redefine* it).
+> `cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the historical
+> north-star, the full statements, the supporting evidence) — not a second canonical doc. **When any doc disagrees with
+> this one, this one wins, and a new ratified decision lands here first.**
+
+> **★★ ARCHITECTURE NOTE (updated 2026-06-29 — the 2026-06-15 joint-inference investigation has LANDED).**
+> The "constrained joint inference" investigation concluded: a **full joint cross-layer decode was measured
+> INERT** — the realisable gain is soft-evidence *quality* carried forward (calibrated confidence + ranked
+> alternatives), not global cycling. The ratified back-half architecture is therefore **forward-only**: a
+> feed-forward stack of single-responsibility layers (**L1** notes → **L2** slicing → **L3** key/mode → **L4**
+> chord → **L5** function → **L6** grouping), each carrying **ranked alternatives + a confidence**, with two
+> scoped escapes from pure feed-forward — a **gated, constrained joint step (Stage 5)** for the residual
+> key↔chord coupling only, and the **confidence-weighted forward-override mechanism** (a confident inference
+> overturned by decisive later evidence via a *localized forward recompute* — no back-edge, no global decode).
+> See §2.14 (the superseding reconciliation) and §2.15 (the cross-cutting contracts); full ratified statements:
+> `cowork_target_architecture.md` §2.
 
 ---
 
@@ -87,7 +101,8 @@ pull requests are submitted.
   rather than returning empty
 - **HarmonicRhythm** — detects harmonic boundaries across a score range, drives chord
   staff population
-- **Chord staff** — a grand-staff part added by the user that is populated on demand
+- **Chord staff** (also called the **chord track** elsewhere in this doc — the same object) — a grand-staff part added by
+  the user that is populated on demand (an action called **implode**: write the harmonic reduction to the chord staff)
   with a harmonic reduction: chord symbols, Roman numerals, canonical or collected
   voicings, key/mode annotations, borrowed chord labels, pivot detection, and cadence
   markers. Notes on the chord staff have `play = false` (annotation-only; they do not
@@ -283,6 +298,10 @@ statistical inference for visual score inspection.
 
 ### 2.12 Benchmark Score Set
 
+> *The "Rule N" labels in §2.11–§2.12 are a legacy flat numbering of the coding/process rules and do not align with the
+> §-numbers (and appear out of order); the **§-numbers are authoritative**. Read each "Rule N" as a local name for the
+> rule stated beside it, not a cross-reference to a numbered list.*
+
 **Rule 12 — Benchmark score set**
 
 Any change to the analyzer, bridge, or chord-track output must be evaluated visually against
@@ -408,7 +427,8 @@ self-consistent reading achievable. The quality setting makes this tradeoff expl
 honest rather than silently failing on hard cases.
 
 **Design implication for data structures:** Each layer's output must carry a confidence
-estimate (winner margin, key confidence gap, segmentation stability) so downstream layers
+estimate (the **winner margin** — the rank-1 minus rank-2 score gap, §5.7; the key confidence gap; segmentation
+stability) so downstream layers
 know whether to treat a result as a solid commitment or a tentative hypothesis worth
 revisiting. Irrevocable point estimates block iteration. Provisional results with
 confidence metadata enable it. Infrastructure already started: winner margin
@@ -431,7 +451,12 @@ a feedback signal from functional labels back into chord identities (a confirmed
 cadence revises the chord identities participating in it and confirms the key). Design
 Phase E as a bidirectional interface, not a unidirectional gate addition.
 
-**Reconciliation (2026-06-10) — the canonical form of "layers with iteration."** This
+> **⚠ SUPERSEDED 2026-06-29 — read the next block first.** The 2026-06-10 reconciliation immediately below proposed a
+> *global joint-lattice decode*; that mechanism was later measured **inert** and the ratified architecture is
+> **forward-only** (the 2026-06-29 reconciliation that follows). The 2026-06-10 block is **retained only as history** — do
+> not build to it.
+
+**Reconciliation (2026-06-10) — SUPERSEDED; see the 2026-06-29 reconciliation below.** This
 section and `docs/redesign_plan.md` ("single comprehensive pass; iteration is not a design
 premise") name the same target imprecisely. The standard resolution of the circular
 dependencies listed above is **joint inference over a hypothesis lattice**: each layer emits
@@ -444,6 +469,70 @@ bespoke revision machinery. The quality levels above map onto beam width (Level 
 ≈ current greedy behavior; Level 2 = exact DP). Full rationale and literature comparison:
 `cowork_target_architecture_review.md`; adopted Phase E direction:
 `docs/redesign_plan.md` "Architecture review addendum (2026-06-10)".
+
+**★ Reconciliation (2026-06-29) — SUPERSEDED: the joint-lattice decode gave way to forward-only + a gated step.**
+The 2026-06-10 "joint inference over a hypothesis lattice / global Viterbi–beam decode" above named the right
+*goal* (revise an earlier commitment on later evidence) but the wrong *mechanism*. The subsequent investigation
+**measured the full joint cross-layer search INERT** — the realisable gain is soft-evidence *quality* carried
+forward (calibrated confidence + ranked alternatives), not the global cycling — so the architecture spends its
+effort on good forward evidence, not on a beam search. The **ratified** architecture (user-ratified;
+`cowork_target_architecture.md` §2) is **forward-only**:
+- each layer is feed-forward and emits **ranked candidates + a confidence**, never a forced point estimate;
+- "revise on later evidence" is the **confidence-weighted forward-override** — a confident commit is overturned
+  only when contradicting later evidence crosses a threshold scaled to its confidence, firing a **localized
+  forward recompute** (one pass, region-scoped, no back-edge), *not* a global backtrack;
+- the one residual genuinely-coupled decision (key↔chord on the relative-pair / short-modulation cases) is a
+  **gated, constrained joint step (Stage 5)** that fires only on the flagged minority, leaving the clean majority
+  feed-forward.
+So the circular dependencies listed above are real, but resolved **forward** (the slicer owns segmentation; L4
+owns chord + non-chord-tone together; the cadence-confirmed key override and the function→chord override are
+forward recomputes), not by a joint decode. The quality-levels table still holds as the *cost* dial but no longer
+maps to beam width — it is the **effort preset** (quick / normal / ambitious), a *calibration* knob (not a structural
+one), added after profiling. Its two standing design rules hold from the start: **(a)** every cost-driving choice is an
+explicit *setting*, never a hardcoded constant; **(b)** every optional expensive refinement is a cleanly separable on/off
+stage. The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded** by this, retained only as
+history.
+
+### 2.15 The core principle and the cross-cutting analysis contracts (ratified; full statements in `cowork_target_architecture.md`)
+
+**The founding principle: analyze at the finest grain where harmony is well-defined, and make everything coarser a
+*derived view*.** The atomic analysis unit is the **constant-sonority slice** (L2), never the metric beat; phrases,
+key-areas, and sections are *groupings* derived from the per-slice analysis, not primary objects. This is what makes
+segmentation a fact rather than a judgment (over-grab becomes structurally impossible, §3.3 L2), aligns the architecture
+with the per-slice oracle metric we already built, and matches the SOTA shape (Contrapunctus labels every event). The
+contracts below all serve this principle. Their detailed statements live in the target-architecture doc.
+
+- **Universality in the fact layers; style only in calibration.** L1 (notes) and L2 (slicing) are **style-agnostic and
+  lossless** — they carry facts, never style. Style-specificity lives **only** in the *calibration* of the judgment
+  layers (their priors/weights), **never in structure**. (This sharpens §2.1: not merely *data-driven* style, but style
+  confined to the layers that may carry it at all.)
+- **The confidence-weighted forward-override** (§2.14) — any layer's confident inference is overturnable by decisive
+  later evidence via a localized forward recompute; its instances are the cadence-confirmed key modulation and the
+  fine-grain chord override. **Forward-only is a strong *default*, not dogma:** a sanctioned backward edge is admissible
+  only as a deliberate, surfaced, measured, documented exception (justified by a plateau, scoped, gated,
+  convergence-bounded, recorded).
+- **The span typology** — a "region" is a *family* of spans, each named by its bounding criterion: the **harmonic
+  region** (chord-rhythm, the atomic unit) · the **key-span** · the **phrase** · the **decision-context span** (the
+  bounded look-ahead a deferred decision integrates over — bounded by the deferring layer's stop condition and hard bound,
+  per the Bounded-context contract below) · the **cadential scope** (the span a cadence closes *and*
+  confirms — where a phrase and a key-span are *jointly* articulated, which is why one cadence detector feeds both
+  grouping and key) · the latent **sequence / section / pedal / voice-leading** spans. They relate by **nesting**
+  (harmonic regions ⊂ key-spans; harmonic regions ⊂ phrases; phrases ⊂ sections) **or cross-cutting** (key-spans and
+  phrases cross-cut — a key change may fall mid-phrase). "Region" unqualified is **banned** as ambiguous; every layer
+  names the span it operates on. (After the GTTM premise of independent structures.)
+- **The verifiability contract** — prefer what we can verify against ground truth (it is how we catch our own theory
+  errors); for sound theory we cannot verify against the current corpus, build it with an explicit
+  **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it (this governs the
+  jazz/pop reach, where we have theory but no corpus).
+- **Bounded context** — analysis runs on the user's *selection*; a layer needing more requests an **append-only**
+  extension from L1 (a data-supply call down the stack, not an analysis back-edge), carrying a stop condition and a hard
+  bound. The binding scale requirements: **(R1)** cost scales with the working span, not the whole score; **(R2)**
+  re-analysis is incremental over the dirty span plus a bounded margin; **(R3)** the working span is **extensible** (a
+  fixed margin plus lazy extension). Whole-score analysis is the degenerate case (selection = score).
+- **Single-responsibility / minimality + maximal information** — each layer owns one *(evidence-source × question)*
+  contribution — stated as "owns the *[named evidence]* contribution to *X*", with what it does **not** own made
+  explicit — defers what needs later evidence (carried as ranked alternatives + an uncertain mark), and within its scope
+  uses *all* the information L1 carries losslessly (notated spelling, metric weight, voice).
 
 ---
 
@@ -594,7 +683,18 @@ A "bridge function" is a free function that:
 | `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's chord<br>`applyRegionTuning()` — tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`, `tuneSelection()`) |
 | `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`, `notationtuningbridge.cpp`, `notationimplodebridge.cpp` |
 
-#### Layer 1 — the lossless note model (note-model rebuild, 2026-06-21, as-built)
+**Layer status legend.** Each layer below is tagged with exactly one build state: **Built+Live** (wired into the
+production pipeline), **Built+Dormant** (built and tested but not wired — reachable only via diagnostics, byte-identical on
+production), or **Design-only** (specified, not yet built). Per-date and per-commit provenance lives in STATUS.md and the
+`cc_*` reports, not here.
+
+**Two terms used throughout these layer docs.** **L1.5** is the thin *derived-view* layer over the L1 note model — the
+spelling / `engravingbridge` views (the shared `lineOfFifths` spelling interpreter, the phrase-boundary primitive); it is
+a view, not a judgment layer, which is why it is numbered 1.5. **BIR** (bass-is-root) is the corpus gate metric: a
+BIR=false case is a *pitch-class-decidable* root the analysis got wrong, and the gate is quoted as `Baroque/Jazz/Default`
+case counts (e.g. `53/24/53`); the "class-(a)/(b)" split and the full definition live in the gate policy (CLAUDE.md).
+
+#### Layer 1 — the lossless note model (Built+Live)
 
 The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
 (`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT —
@@ -632,7 +732,7 @@ layer 3 and is **not** an unexplained regression (proven: a legacy reproduction 
 the prior oracle set byte-exactly). **Next: layer 3 (per-slice analysis).** See
 `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
 
-#### Layer 2 — the deterministic change-point slicer (2026-06-21, as-built; wired — consumed by L3)
+#### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)
 
 The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild. A pure, deterministic FACT
 read off the layer-1 note model, **not** a judgment. It **is** now wired into the live analysis
@@ -689,12 +789,12 @@ byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golde
 0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
 `cc_layer2_audit_dossier.md`.
 
-#### Layer 3 — key/mode is now the sequence decoder (2026-06-22, as-built, Step 1 — commit `a6b08af3fe`)
+#### Layer 3 — key/mode is the sequence decoder (Built+Live)
 
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
-`KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the SIGNED Layer-3
-key/mode design). This is the first rebuilt analysis **decision** layer to go **live** in the
+`KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the Layer-3
+key/mode design — `cowork_layer3_keymode_design.md`). This is the first rebuilt analysis **decision** layer to go **live** in the
 pipeline — and this wiring is what connected Layer 2: it consumes Layer 1's note model and Layer 2's
 slicer (`changePointSlices(noteModel)`), so neither is isolated any longer.
 
@@ -743,7 +843,7 @@ threshold and preset policy"); it retires when Layer 4 (function/cadence) pins t
 key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
 `cowork_layer3_keymode_design.md`.
 
-#### Layer 4 — the per-slice chord-symbol decoder (2026-06-28, as-built, **DORMANT** — engages with L5; final commit `1e74f21ea4`)
+#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired; engages with L5)
 
 **Built, unit-tested, and graded — but NOT wired into the live pipeline.** Layer 4 of the rebuild is
 `ChordSliceDecoder` (`composing/analysis/chord/chordslicedecoder.{h,cpp}`): a per-slice chord-symbol
@@ -788,6 +888,37 @@ owes — deferred, not done). Likewise `redecodeRange`, `tonicizationlabeler`, a
 dormancy. Built with `decode_chord_tests.cpp` (scorer-independent + note-model tiers). Full provenance:
 `cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits
 `f21273ce3b`..`1e74f21ea4`.
+
+#### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)
+
+The function layer reads the L4 chord **in** the L3 key and produces the **Roman numeral** (the precise superset of a
+T/S/D summary) plus **cadence** and **local-key** markers — additive over L4 (it annotates and resolves; it never
+rewrites the committed chord identity). Built dormant + byte-identical (Phase 5c, Steps 0–6 + the A-D2 follow-up,
+2026-06-29); the joint L4+L5 production switch is deferred. L5 is where the **confidence-weighted forward-override**
+(§2.14) fires its two instances — the cadence-confirmed modulation recompute and the fine-grain chord override — and
+where the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived). The cadence
+detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:
+`cowork_layer5_function_design.md`.
+
+#### Layer 6 — the grouping layer (Design-only — v1 spec)
+
+The grouping layer assembles the L5-labelled stream into the **flat** structure the ground truth annotates: **phrases**
+(from the L1.5 phrase-boundary primitive), **key-areas** (grouping the local-key track, which **cross-cuts** phrases —
+§2.15 span typology), and the **alignment of cadences to phrase ends** — additive, read-only, no feedback into L5. It is
+the forward-only rebuild of the scattered live `detectCadences`/`detectPivotChords`/`KeyArea` machinery. Hierarchy,
+periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15). Full spec:
+`cowork_layer6_grouping_design.md`.
+
+#### Planned analysis consumers beyond the layer stack
+
+- **The progression-schema recognizer** — an L5 *consumer* (a prior + an annotation), not a new layer: it recognises
+  multi-chord patterns and substitutions from the **Harmonic Vocabulary** (§7) over the committed progression,
+  disambiguates via the §2.14 forward-override, and annotates the recognised schema as an **L6 sequence-span**.
+  Scaffolding-first, deferred. Spec: `cowork_progression_schema_design.md`.
+- **The future voice-leading layer** — the *horizontal* dimension (linear progressions, suspension chains, the
+  voice-leading skeletons that complete the galant schemata), **not built**; named so the dependency is explicit (the
+  functional-harmonic schemas are L5-reachable without it; the voice-leading-complete ones require it). It would read the
+  per-voice motion the L1 note model already carries losslessly.
 
 #### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1; region key/mode path superseded by Layer 3)
 
@@ -2667,6 +2798,10 @@ are shown but key/mode is on: `key: C major` (no "in" prefix).
 
 ## 5. Planned Analysis Extensions
 
+> *The per-feature "Implemented / Pending / Planned" tags in the §5 sub-headings are **status**, not design, and are
+> kept here only for orientation; the **authoritative, current** implemented/planned state lives in STATUS.md. Where a
+> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*
+
 ### 5.1 Weight Population — Implemented for KeyModeAnalyzer, Pending for ChordAnalyzer
 
 **KeyModeAnalyzer calling code** (in `NotationComposingBridge`) fully populates all
@@ -2688,7 +2823,8 @@ The key/mode inferrer always runs. The notated key signature's `KeyMode` enum
 skip the inferrer.
 
 The only exception is a **piece-start shortcut** in `resolveKeyAndMode()`: when the
-analysis tick is within the first 16 beats, no prior result exists (`prevResult == nullptr`),
+analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below —
+they coincide in value, not by design), no prior result exists (`prevResult == nullptr`),
 and the key signature carries an explicit mode, the function returns the declared mode
 immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.
 This is a deliberate pragmatic choice for the score opening, not a general bypass.
@@ -2743,6 +2879,9 @@ gap between rank-1 and rank-2 candidates. The chord staff uses this to add "?" o
 "(?)" to key/mode labels when confidence is below 0.8 or 0.5 respectively.
 
 ### 5.3 TemporalContext — Full Specification
+
+> *Naming: this spec's `TemporalContext` is realised in the as-built as **`ChordTemporalContext`** (the `analysistypes.h`
+> cross-layer leaf, §3.3) — the same struct under its current name. Read `TemporalContext` below as `ChordTemporalContext`.*
 
 `TemporalContext` is an optional parameter that will be added to `analyzeChord()`.
 The analyzer functions correctly without it (current behavior). When provided,
@@ -2957,7 +3096,6 @@ between beat 1 `{bass pc}` and beats 2–3 `{chord pcs}` because these are compl
 different pitch-class sets. Under a pedal marking, all three beats should accumulate to
 one pitch-class set. Fix required: include pedal-sustained notes when computing per-beat
 pitch-class sets for Jaccard boundary detection. Confirmed on Chopin BI16-1 measure 1.
-Next session priority.
 
 **bassNoteRootBonus miscalibration — confirmed by score inspection (2026-04-09):**
 
@@ -3040,10 +3178,14 @@ original unconditional bass-root promotion bug:
   where the original voicing should be preserved. Fixing this requires a separate
   implode-bridge mode flag to distinguish harmonic summary from as-written output.
 
-#### Active follow-up plan (2026-04-10)
+#### Background — resolved-issue history (not needed to understand the current design)
 
-The post-fix score-review roadmap now runs under a gated Milestone A before any
-later score-review work is allowed to proceed:
+> *The following is a dated record of fixes and a 2026-04 follow-up roadmap, retained for provenance. It is **history**,
+> not current status: the current open limitations are the named items above, and live status / next steps live in
+> STATUS.md.*
+
+The post-fix score-review roadmap (2026-04-10) ran under a gated Milestone A before any
+later score-review work was allowed to proceed:
 
 - **A1 — shared same-chord merge semantics.** Batch and notation now collapse
   adjacent same-root/same-quality slices by unioning tone sets and recomputing
@@ -3644,6 +3786,9 @@ private:
 
 ### 6.5 Initial Styles
 
+*Terminology: these are **style instances** (individual JSON style files), distinct from the **style families** of the
+§6.7 taxonomy (Baroque, swing, bebop, …). A style file is a leaf; a family is a taxonomy node a preset selects on.*
+
 The five initial styles are chosen for maximum architectural diversity — they stress-test
 the schema by requiring different parameter sets:
 
@@ -3657,10 +3802,22 @@ the schema by requiring different parameter sets:
 
 ### 6.6 Connection to ChordAnalyzerPreferences
 
-The `StylePrior` enum commented out in `ChordAnalyzerPreferences` is the planned
-connection point. When the style system is active, the current style populates
+A `StylePrior` connection point is planned in `ChordAnalyzerPreferences`
+(today a commented-out enum stub). When the style system is active, the current style populates
 the analyzer's preferences — affecting which chord types are considered idiomatic,
 what extensions are expected, and how scoring weights are adjusted.
+
+### 6.7 The canonical style taxonomy (shared with the Harmonic Vocabulary)
+
+The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular
+families — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime,
+gospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two
+parallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free
+jazz / atonal excluded). It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the
+per-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`): the clusters and
+their feature distributions are one data-derived object, reachable for jazz/pop from **lead-sheet** corpora even where
+note-level analysis ground truth is scarce. Full proposal + the surveyed corpora:
+`cowork_progression_schema_dictionary.md` §6/§12, `cowork_style_clustering_plan.md`.
 
 ---
 
@@ -3668,6 +3825,22 @@ what extensions are expected, and how scoring weights are adjusted.
 
 The knowledge base contains musical theory encoded as structured data. It is shared
 across all styles — styles reference knowledge base entries rather than duplicating them.
+
+**The Harmonic Vocabulary — the queried progression & substitution component.** The Substitution Network (§7.3) and the
+recurring progressions are formalised as an **independent knowledge-base component** with its own spec
+(`cowork_progression_schema_dictionary.md`): a static, curated, **style-tagged** catalog of progressions, schemas, and
+substitutions, with a **read-only query interface** (recognise = match a written progression to a pattern; suggest = propose a
+continuation, approach, or substitution; expand = instantiate the per-degree generative slots) returning **ranked**
+candidates, and
+**bidirectional** by design — read forward it serves analysis (the L5 progression-schema recognizer above), read
+predictively it serves a future chord-suggestion tool (§8). It is reference knowledge **queried** by the layers and by
+future tools, **not a pipeline layer**. Entries carry **provenance** (established theory), not a ground-truth-validation
+status — validation is the *consumer's* concern (verifiability contract, §2.15). The **voice-leading** dimension of
+voice-leading-defined schemata is **out of this component** (the separate future voice-leading layer). Substitution is
+not dominant-only — it operates on every functional family (tonic, pre-dominant, dominant); only the tritone substitution
+is dominant-specific. **Relationship to §7.1–§7.3:** those dictionaries are the static *data*; the Harmonic Vocabulary is
+the *queried component* over the progression-and-substitution part of it — it subsumes §7.3's Substitution Network as the
+query surface, drawing on it as the underlying dictionary.
 
 ### 7.1 Chord Dictionary
 

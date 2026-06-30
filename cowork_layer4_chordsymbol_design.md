@@ -161,9 +161,9 @@ function step that resolves the slices marked "uncertain."
 
 **What it deliberately does not read:** function, cadences, or any already-decided downstream result fed back to it.
 
-**Implementation locator** *(current location, under revision against this spec — the layer is mid-rebuild).* The
-chord scorer and the per-slice chord decoder live under `src/composing/analysis/chord/`
-(`chordanalyzer.{h,cpp}`, `chordslicedecoder.{h,cpp}`).
+**Implementation locator** *(as-built; the decoder realising this spec is `chord/chordslicedecoder.{h,cpp}`, built
+dormant per the AS-BUILT header).* The legacy chord scorer and the per-slice chord decoder live under
+`src/composing/analysis/chord/` (`chordanalyzer.{h,cpp}`, `chordslicedecoder.{h,cpp}`).
 
 ## 4. Solution strategy
 
@@ -407,7 +407,7 @@ count, and the certainty margin below which a slice is "uncertain" — are tunab
   function-dependent reading is "uncertain."
 - **Safety net (a hard stop):** the standing safety test above holds on both tuning presets; both automated test
   suites pass; pinned snapshots are refreshed only after a change is confirmed correct.
-- **Test locator** *(current location, fixed once the rebuild against this spec lands).* The behaviour and decode
+- **Test locator** *(as-built; `decode_chord_tests.cpp` realises the decode tests).* The behaviour and decode
   tests live in the composing test suite; the held-out chord-root and membership grading runs through the read-only
   chord-decode diagnostic (`--decode-chords`).
 

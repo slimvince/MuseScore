@@ -388,7 +388,9 @@ the analysed span earlier in time to gain context.
 *The project's aim is to be the best key/mode inferrer it can be, so we survey the field, adopt the best ideas, and
 say plainly which we rejected and why.*
 - **Built on — the deciding method:** the standard **hidden-Markov / Viterbi key path with a high
-  self-transition** (keep the current key unless the evidence to change is strong and sustained). Sources:
+  self-transition** (keep the current key unless the evidence to change is strong and sustained). *(This is the
+  **per-layer** key-path decode — internal to Layer 3 — not the rejected **global cross-layer** joint Viterbi/beam
+  decode; cf. ARCHITECTURE.md §2.14.)* Sources:
   HMM key-finding with key profiles (Nápoles López, *Key-Finding Based on a Hidden Markov Model and Key Profiles*,
   DLfM 2019; the `justkeydding` implementation); and *A regularization algorithm for local key detection*
   (Gedizlioğlu & Erol, 2024).

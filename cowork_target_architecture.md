@@ -1,9 +1,16 @@
-# Target Architecture — North Star (user-ratified 2026-06-21)
+# Target Architecture — detailed design & rationale (referenced by the canonical `ARCHITECTURE.md`)
 
-> **Status: RATIFIED by the user.** This is the target the per-layer design docs implement and the upstream-first
-> sweep builds toward. It supersedes the loose "tone collection = layer 1 / segment-first" framing. Existing-code
-> descriptions here are verified at source (HEAD `edd33901ed`); the target is design. The mapping of current
-> components → target layers is Cowork synthesis, to be refined per-layer.
+> **★ Governance (2026-06-29): `ARCHITECTURE.md` is THE canonical architecture doc.** Its **§2.14** (the forward-only
+> supersession of the joint-lattice decode), **§2.15** (the core finest-grain principle + the cross-cutting contracts),
+> the **L1–L6 layer documentation** (§3.3), **§6.7** (the style taxonomy), and **§7** (the Harmonic Vocabulary) now carry
+> the **ratified decisions** from this doc. This doc is **demoted to a detailed design & rationale reference** — it holds
+> the *full* statements of the contracts, the supporting evidence, the gap-to-close/migration notes, and the per-layer
+> open questions, which `ARCHITECTURE.md` summarises and points to. **Do not treat this as a second canonical
+> architecture**: when the two disagree, `ARCHITECTURE.md` wins, and any new ratified decision lands there first.
+>
+> **Status (historical): user-ratified 2026-06-21.** This was the north-star the per-layer design docs implement and the
+> upstream-first sweep builds toward; it superseded the loose "tone collection = layer 1 / segment-first" framing.
+> Existing-code descriptions here are verified at source (HEAD `edd33901ed`); the target is design.
 
 ---
 
@@ -85,6 +92,27 @@ provides; the spelling is a strong-but-fallible prior, weighed against the other
 | **4** | **Chord symbol (+ non-chord tones)** | For each slice, the key-independent **chord symbol** (`Bm7`, `Gdim`) AND which notes are **non-chord tones** (one job — you cannot name the symbol without deciding membership). Uses the notes + the layer-3 key/mode as a diatonic prior + context (the prevailing chord, so embellishment slices don't spawn spurious symbols). | Judgment |
 | **5** | **Function** | For each chord, the **function** (`V/V`, `IV7`, Roman or Nashville) = the chord symbol read **in** the key/mode. Mostly a derivation once 3 + 4 are known. | Judgment (thin) |
 | **6** | **Grouping / display** | Merge adjacent slices carrying the same analysis into human-readable regions. Cosmetic, reversible, downstream. | View |
+
+**★ A future voice-leading layer (named, not built — recorded 2026-06-29).** Layers 1–6 analyse the **vertical/harmonic**
+dimension (notes → key → chord → function → grouping). The **horizontal/linear** dimension — voice-leading: linear
+progressions (Zugs), suspension/resolution chains, and the **voice-leading skeletons** that complete galant-schema
+recognition (Gjerdingen) and voice-leading-based slice resolution (L5 §11, currently disclaimed) require — is **not**
+built. It would read the per-voice motion the Layer-1 note model already carries losslessly, so it is a future layer over
+Layer 1, **parallel** to the harmonic stack, feeding Layer 5 (function/schema) and Layer 6 (grouping). Named here so the
+dependency is explicit: the **functional/harmonic-skeleton** progression-schemas (ii–V–I, turnarounds, the harmonic
+reduction of the galant schemata, the substitution map) are **L5-reachable without it**, but the **voice-leading-complete**
+schemata and any voice-leading-based resolution **require** it. Out of current scope; the trigger to build it is a need
+for complete-schema recognition or voice-leading resolution *with* a verification path (verifiability contract).
+
+**★ The Harmonic Vocabulary — an independent knowledge-base component, not a layer (user-ratified 2026-06-29).** The
+curated catalog of progressions, schemas, and substitutions (`cowork_progression_schema_dictionary.md`, its own component
+spec) is a **cross-cutting resource**, a *sibling* to the L1–L6 pipeline, not a member of it: it has **no *(evidence-source
+× question)* contract** because it is **reference knowledge with a read-only query interface**, not a processing layer. It
+is **consumed** by Layer 5 (the progression prior / substitution-inversion) and Layer 6 (the sequence-span annotation), and
+is built **shareable** for a future chord-suggestion tool. The pattern generalises: durable curated knowledge (this
+vocabulary; the chord templates; the key profiles) is a **component queried by the layers**, distinct from the layers'
+per-piece inference — and the genre *labels* live in the component while genre-aware *behavior* (selection, weights,
+detection) lives at the consumer.
 
 Sub-points:
 - **The dependency order is the spine: key/mode → chord symbol → function → grouping.** Established by dependency
@@ -194,6 +222,50 @@ grounds): unverifiability **alone** is a *flag plus a confidence-path requiremen
 in particular, the grouping layer's reach **beyond** the DCML-annotated flat phrases / key-areas / cadences (hierarchy,
 periods/sentences) is **permitted under this contract with a chosen verification strategy**, not foreclosed by
 corpus-absence.
+
+**★ Spans are a typed family, not one "region" — name each by its bounding criterion (user-ratified 2026-06-29).** A tonal
+stream is segmented **many ways at once**, not one. Each segmentation is a distinct **span type**, defined by **what event
+bounds it** and serving **one analytical need**; the bare word "region" must name exactly one of them, never several. This
+is theory-grounded — tonal structure carries *independent* segmentations (the GTTM premise: grouping, metrical, time-span,
+and prolongational structures are separate), not a single hierarchy. The named family:
+- **Harmonic region** — bounded by **harmony change** (the chord-rhythm slicer, Layer 2). The **atomic** unit: one
+  committed chord + one assigned local key. (The as-built `HarmonicRegion`; Layer 5 calls it a *slice*.)
+- **Key-span** — bounded by **key change** (establishment + cadence confirmation). The local key area; the modulation
+  re-read unit. (The as-built `LocalKeySpan`; Layer 6's key-area.)
+- **Phrase** — bounded by **phrase markers** (fermata/breath/rest/structural barline — the Layer-1.5 primitive). The
+  grouping/punctuation unit. (Layer 6's phrase.)
+- **Decision-context span** — bounded by a **look-ahead window** (≈ the phrase). The reach within which a deferred local
+  decision may find disambiguating evidence (a later cadence). A computational/perceptual bound, not a structural object.
+- **Cadential scope** — the span a cadence **closes and confirms**: where a phrase span and a key-span are *jointly*
+  articulated (a cadence marks both a phrase ending and a key confirmation — the reason one detector feeds both).
+- **Latent extension spans, theory-grounded, named when needed:** pedal-point span, sequence span, section /
+  formal-function span, hypermeasure, prolongation span (reduction), linear-progression/Zug (voice-leading); plus the
+  gradients — tonicization (a proto-key-span that did not establish), the pivot (a modulatory overlap), the cadential
+  approach (the pre-dominant→dominant→tonic formula).
+  - *(Forward note — the progression-schema layer, 2026-06-29.)* The **sequence span** and **cadential-approach span** are
+    the home of multi-chord **progression-schema** knowledge (ii–V–I, turnarounds, circle-of-fifths sequences; the Baroque
+    galant schemata — Prinner, Romanesca, Monte/Fonte/Ponte; pop loops). The catalog is **finite and idiom-specific** (the
+    preset selects it); full progressions are *composed* from it by the pairwise functional grammar. It belongs in **Layer
+    5 (function)**, additive over the committed progression — a **clean structural retrofit** (the progression is already
+    there), with the **hard part being fuzzy prototype-matching**: schemas are prototypes with **substitutions** (a ii–V–I
+    with a tritone-subbed V is still a ii–V–I) and variants, so robust matching *requires* the functional-substitution
+    overlay (see below). Deferred for the analysis mission (proportionality + firewall + the missing schema oracle, the
+    verifiability contract) — but it is the one piece of knowledge that would be **core, not merely helpful, to a future
+    chord-suggestion tool** (generation must predict *unseen* chords, where multi-chord knowledge is load-bearing and the
+    idiom *is* the schema vocabulary). The same L5 catalog would be a **shared analyzer↔suggester asset** — read forward to
+    recognize, read predictively to suggest.
+
+**The relation between two span types is either NESTING or CROSS-CUTTING, and which it is must be stated.**
+- **Nesting (containment):** harmonic regions ⊂ key-spans; harmonic regions ⊂ phrases; phrases ⊂ sections — the finer
+  tiles the coarser.
+- **Cross-cutting (independent):** **key-spans and phrases cross-cut** — a key change may fall mid-phrase and a phrase end
+  need not change key, so they are **two independent segmentations of one stream, not a hierarchy**. Asserting containment
+  where the truth is cross-cutting (e.g. nesting key-areas inside phrases) is a modelling error.
+
+**Naming discipline (the contract):** every layer names the span it operates on by its type — "harmonic region",
+"key-span", "phrase", "decision-context span" — and, for any two it relates, states whether they **nest** or
+**cross-cut**. "Region" unqualified is banned as ambiguous. *(Surfaced by the Layer-6 review, which found L5 §5.0
+collapsing the harmonic region, the key-span, and the decision-context span under one "region".)*
 
 ## 3. Why this is the target (the evidence)
 - **Dissolves over-grab (~45%, the biggest lever)** by construction — no coarse unit spans two chords.

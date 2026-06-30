@@ -154,11 +154,26 @@ precede resolution.
 ### 5.0 Shared definitions (the terms the rules below stand on)
 These five concepts are used throughout §5 and are defined here once so no rule rests on an undefined word.
 
-- **Region.** The bounded span the pipeline already segments — a maximal run of slices between two adjacent **phrase
-  boundaries** (§3: in the chorale corpus, fermata-marked), carrying one prevailing key. It is the unit a cadence votes
-  for (§5.2), the unit a confirmed modulation re-reads (§5.4), and the bound on a slice's resolution look-ahead (§5.5). The
-  *exact* recompute bound for §5.4 (whether it is the single region or the region plus its immediate neighbour) is the one
-  refinement deferred to the build (§15-3); everywhere else "region" means the phrase-bounded span just defined.
+- **The span family (per the architecture span-typology contract, target-architecture §2).** Layer 5 works over the
+  **slice** — the atomic chord-rhythm unit (one committed chord + one assigned local key, the *harmonic region*) — and
+  groups slices in **distinct** ways that must not be conflated under one word "region":
+  - **Key-span** — a maximal run of slices in **one local key**, bounded by a key change (establishment + cadence
+    confirmation). It is the unit a **confirmed modulation re-reads (§5.4)** — the as-built `LocalKeySpan` (a cadence
+    confirms it iff the cadence's arrival falls inside it). A key-span **cross-cuts** phrases (a key change may fall
+    mid-phrase); it is **not** phrase-bounded.
+  - **Decision-context span** — the bounded run of slices Layer 5 analyses together: the scope of the **cadence tonic-vote
+    (§5.2)**, the reach of a **slice's resolution look-ahead (§5.5)**, and the span across which **the progression** and a
+    slice's **prevailing harmony** are read. It is bounded by a **look-ahead window** (≈ the phrase — far enough to reach
+    the cadence a few slices later); it carries **no single-key assumption**. Its exact extent is an **engagement-time
+    pin** (the resolver is dormant; the extent is caller-defined and not yet fixed — the §5.4 recompute-bound refinement,
+    §15-3). **Where this document later writes "region" unqualified, it means this decision-context span.**
+  - **Phrase** — a run of slices delimited by the phrase-boundary primitive (the `endsPhrase` overlay); the grouping unit
+    **Layer 6** owns. It **cross-cuts** the key-span. Layer 5 reads it only as the **cadence phrase-gate (§5.2)**, never as
+    a key or analysis unit.
+  *(Correction, 2026-06-29, Layer-6 review: the prior wording defined a single phrase-bounded "region carrying one
+  prevailing key", which collapsed these three spans and wrongly forbade a mid-phrase key change. Verified at the
+  as-built: §5.4 operates on the key-span (`LocalKeySpan`), §5.2/§5.5 on the decision-context span, and the slice carries
+  the key at chord-rhythm granularity.)*
 - **Prevailing harmony (of a slice).** The committed chord (from Layer 4) of the nearest **metrically-strong** slice at or
   before the slice in question, within the same region — the harmony a passing/neighbour figure is heard against.
   ("Metrically strong" is realised **parameter-free** as a **local maximum of the metric weight** — no threshold — per the
@@ -299,9 +314,9 @@ the clean split.*
 This is the first concrete instance of the confidence-weighted forward override (§8, case 4): a cadence is later evidence
 that contradicts a *confident* earlier key inference (the key layer chose its key before any cadence was known), and when
 the cadence evidence is decisive it overturns the key. When §5.3 confirms a **modulation**, the layer commits the new
-local key for the region and triggers a **bounded re-run** of the dependent reading over **that region only**, with the
-new key: the chords of the region are re-read in the new key (their degrees change), and any uncertain slices in the
-region are re-resolved against it. The recompute is **localized** (the affected region, not the piece), **forward** (it
+local key for the **key-span** and triggers a **bounded re-run** of the dependent reading over **that key-span only**, with
+the new key: the chords of the key-span are re-read in the new key (their degrees change), and any uncertain slices in it
+are re-resolved against it. The recompute is **localized** (the affected key-span, not the piece), **forward** (it
 re-runs the lower reading with a decided fact; it sends no request upstream), and **convergence-bounded** (a key change
 decided once; the recompute does not re-open the key decision that triggered it). The threshold that decides "decisive"
 is the cadence-strength-versus-key-confidence bar of §8 (its constant is precision-phase). The rule that prevents
@@ -591,8 +606,11 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
   (class-(a)). A project gate term (see the gate policy); used in §10 as this layer's override duty.
 - **Ambiguity kind** — the named reason Layer 4 could not separate two readings (transition, share-tone, relative pair,
   close, insufficient), carried forward on an abstain; this layer resolves each by its §5.5 rule and adds no new kind.
-- **Region** — the phrase-bounded span the pipeline segments (one prevailing key); the unit of the cadence vote, the
-  modulation recompute, and the resolution look-ahead. Full definition: §5.0.
+- **Region** — *(disambiguated, §5.0, per the architecture span-typology contract)* unqualified, the **decision-context
+  span**: the bounded slice-run Layer 5 analyses together — the cadence-vote scope (§5.2) and the resolution look-ahead
+  (§5.5), bounded by a look-ahead window (≈ phrase), no single-key assumption. Distinct from the **key-span** (the
+  modulation re-read unit, §5.4 — the `LocalKeySpan`, one local key, cross-cuts phrases) and the **slice** (the atomic
+  chord-rhythm *harmonic region*, one chord + one key). Full definition: §5.0.
 - **Prevailing harmony** — the committed chord of the nearest metrically-strong slice at or before a given slice, within
   its region; the harmony a passing/neighbour figure is heard against (§5.0).
 - **The progression** — the ordered committed-chord stream across a region; a **licensed (real) progression** is a root
@@ -702,5 +720,25 @@ catalog §Sources.
 6. **The interaction with section grouping** for the class-(b) override duty (§10) — to specify jointly.
 7. **The three-role read-out** (§9-D1) — deferred until an accessibility/teaching display needs it.
 8. **Pull the two project-memory backlog notes** on extended harmonic functions and cadence internationalization before
-   the function vocabulary and any cadence-label localization are finalized.
+   the function vocabulary and any cadence-label localization are finalized. **✅ RESOLVED at L5 close (2026-06-29),
+   verified against the DCML Annotation Reference 2.3.0 (`dcmlab.github.io/standards`).**
+   - **(i) Extended harmonic functions — vocabulary is DCML-complete; no labels to add.** The DCML standard's full
+     relational inventory is: applied/secondary chords (`/X`), the three augmented sixths (`It6`/`Ger6`/`Fr6`), the
+     Neapolitan (written plainly as `bII6`, no special symbol), and otherwise **chromatic-degree Roman numerals**
+     (`bVI`, `#iv`, `bVII7`, a chromatic-root `o7`, …) — all of which §5.1/§5.6 already produce. The constructs CC's
+     backlog check flagged as "not covered" are **not** DCML labels we lack: **common-tone diminished seventh**,
+     **chromatic mediants**, and the **backdoor `bVII7`** are all written by DCML via the **chromatic-degree numeral**
+     our base-RN path emits (DCML defines no distinct "common-tone"/"chromatic-mediant"/"backdoor" label — those are
+     analytical *relationships*, not labels); **tritone substitution** and **jazz chord-scale associations** are
+     jazz-idiom constructs **outside the DCML/common-practice standard** entirely (a future jazz-target extension would
+     add them under the verifiability contract, with a jazz oracle — not a Baroque-target gap).
+   - **One residual, recorded as inference (not vocabulary):** a common-tone `o7` (and the DCML "`IV7`/`IV65` in minor is
+     *not* a dominant" exception) is a place the §5.6 applied trigger can *structurally* over-emit `viio/x` where the
+     correct DCML reading is the plain chromatic-degree chord — the **same class as the `V/iv` over-trigger** (structural
+     emission, inference correction). Folded into the over-trigger family for the §5.3–§5.5 inference phase; not a label.
+   - **(ii) Cadence internationalization — vocabulary complete; the i18n itself is a display-layer task.** The §5.2
+     cadence typology (PAC, IAC, Half incl. Phrygian, Deceptive, Plagal, Evaded) is a **superset of** DCML's six labels
+     (`PAC/IAC/HC/DC/EC/PC`). The note's actual construct — translating the label *strings* — is a display/formatting
+     task on the structured cadence-type identifiers §7 carries (L5 is display-agnostic), **not** a function-vocabulary
+     addition. No gap. (This matches §15-8's own "function vocabulary" vs "cadence-label localization" split.)
 9. **Prolongation/reduction** — explicitly a later layer, not this one.

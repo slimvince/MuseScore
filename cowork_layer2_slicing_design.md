@@ -192,9 +192,9 @@ error Architectural Layer 2 removes by construction).
   note-start/note-stop boundary moments, but the old pipeline then **discarded** most of them by selecting a subset
   using chord-score thresholds (and it also skipped grace notes and snapped mid-tuplet moments). Architectural Layer
   2 keeps the boundary-moment fact and drops the selection and those two special-case heuristics.
-- **Still transitional:** the old segment-first pipeline still runs and still drives analysis until Architectural
-  Layer 3 is rebuilt to read slices; deciding what of the old machinery moves to the grouping layer versus is
-  deleted is scoped when Architectural Layers 3 and 6 are built.
+- **Transitional coexistence:** Architectural Layer 3 **has been rebuilt to read the slices** (`regionanalyzer.cpp:579`;
+  it is the production region key/mode path); the **old segment-first machinery (Pass-2/2b) still coexists** during the
+  transition, and deciding what of it moves to the grouping layer (L6) versus is deleted is scoped as L6 is built.
 
 ## 14. Related work & external sources (what we borrowed, discarded, and why)
 *The project's aim is to be the best harmonic inferrer it can be, so we take the best ideas from the field and say
