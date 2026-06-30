@@ -143,6 +143,20 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/function/functionoutput.h
     ${CMAKE_CURRENT_LIST_DIR}/function/functionoutput.cpp
 
+    # vocabulary/ — THE HARMONIC VOCABULARY (v1): the curated reference catalog of harmonic
+    # conventions (named chord PROGRESSIONS + chord SUBSTITUTIONS), queried by the analysis
+    # tool (recognise/disambiguate) and a future composition tool (suggest). Holds the §5
+    # in-code catalog and answers the four §4 queries — browse / recognise / suggest /
+    # expand — each a ranked list of candidates carrying a structural match score; it
+    # DECIDES nothing (the firewall — threshold/weighting/decision are the consumer's).
+    # REUSES ChordQuality + Extension (no second quality vocabulary) and the licensed-
+    # progression content (the multi-chord extension of functionprogression). DORMANT — no
+    # production consumer (exercised only by its unit tests); the recognition consumer (the
+    # L5 prior + L6 annotation) is a LATER step. Byte-identical on production by construction.
+    # Spec: cowork_progression_schema_dictionary.md; design: cowork_progression_schema_design.md.
+    ${CMAKE_CURRENT_LIST_DIR}/vocabulary/harmonicvocabulary.h
+    ${CMAKE_CURRENT_LIST_DIR}/vocabulary/harmonicvocabulary.cpp
+
     # decode/ — chord-path decoder (Stage 3.1). Beam-1 re-expression of the greedy
     # left-to-right commit chain that analyzeRegions() threads by hand; lands behind
     # the quality-level knob with beam-1 (level 0) as the byte-identical default.
