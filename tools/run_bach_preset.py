@@ -306,6 +306,10 @@ def main():
                         help="Stage 6-tonic-i: pass --dump-tonicization to batch_analyze "
                              "(appends the read-only tonicization labels to each "
                              ".ours.json; scoring byte-identical). Default off.")
+    parser.add_argument("--dump-fullspine", action="store_true",
+                        help="E0: pass --dump-fullspine to batch_analyze (write the "
+                             "full-spine L1->L5 per-stem side file; diagnostic, returns "
+                             "before analyzeScore, byte-identical). Default off.")
     parser.add_argument("--dump-l5", action="store_true",
                         help="Phase 5c Step M: pass --dump-l5 to batch_analyze "
                              "(appends the read-only dormant Layer-5 would-be Roman "
@@ -389,6 +393,8 @@ def main():
         extra_flags.append("--dump-tonicization")
     if args.dump_l5:
         extra_flags.append("--dump-l5")
+    if args.dump_fullspine:
+        extra_flags.append("--dump-fullspine")
     if args.dump_modulation:
         extra_flags.append("--dump-modulation")
     if args.dump_joint_key:

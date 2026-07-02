@@ -99,6 +99,12 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/function/tonicizationlabeler.h"  // Stage 6-tonic-i: --dump-tonicization
 #include "composing/analysis/function/functionrelationallabel.h"  // Phase 5c Step M: --dump-l5 (dormant L5 RN)
 #include "composing/analysis/function/functionoutput.h"           // Phase 5c Step M: --dump-l5 (§7 assembly)
+#include "composing/analysis/function/functionprogression.h"      // E0 --dump-fullspine (L5 Step-1 progression)
+#include "composing/analysis/function/functioncadence.h"          // E0 --dump-fullspine (L5 Step-2 cadence)
+#include "composing/analysis/function/functionresolver.h"         // E0 --dump-fullspine (L5 Step-3 resolver + §5.5 override)
+#include "composing/analysis/function/functionmodulation.h"       // E0 --dump-fullspine (L5 Step-4 tonicization/modulation + recompute)
+#include "composing/analysis/function/functionromannumeral.h"     // E0 --dump-fullspine (L5 Step-1 base RN)
+#include "composing/analysis/scoreharvest/metricweights.h"        // E0 --dump-fullspine (per-slice metric weight)
 #include "composing/analysis/region/sparsechordrefinement.h"      // diatonicDegreeForRootPc (the inline-RN baseline)
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
@@ -1934,6 +1940,16 @@ static void printHelp(const std::string& prog)
         << "            inline formatRomanNumeral baseline (the §5.6 applied-divergence\n"
         << "            comparator). The dormant L5 NEVER feeds production; the committed\n"
         << "            root is unchanged (L5 is additive over L4). Byte-identical. Default OFF.\n"
+        << "  --dump-fullspine\n"
+        << "            (E0, read-only DIAGNOSTIC — returns before analyzeScore) Chain the\n"
+        << "            complete dormant spine L1→L2→L3(live key)→L4-decoder→L5 (all six\n"
+        << "            function units incl. the §5.5 case-4 fine-grain override live on the\n"
+        << "            decoder substrate) and write a per-stem JSON side file: the standard\n"
+        << "            regions[] shape (graded by compare_rn/compare_analyses) enriched with\n"
+        << "            the per-slice L4 decision/confidence/open-question + L5 role/open-mark/\n"
+        << "            confidence + per-region cadences/modulations + wall-time. Base RNs are\n"
+        << "            TRIAD-LEVEL (the L4→L5 carry drops the seventh/extensions — faithful,\n"
+        << "            not synthesized). NO production consumer; byte-identical. Default OFF.\n"
         << "  --dump-modulation\n"
         << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
         << "            the standard regions JSON: the key-agnostic local-modulation\n"
@@ -2494,6 +2510,534 @@ static std::string runChordDecode(const Score* score, const std::string& stem,
     return os.str();
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// E0 — the dormant FULL-SPINE measurement harness (--dump-fullspine)
+//
+// DIAGNOSTIC ONLY (mirrors --decode-chords / --dump-l5). This path chains the
+// complete dormant analysis spine END-TO-END and writes a per-stem JSON side
+// file; main() returns immediately after it, so analyzeScore / analyzeRegions
+// are NEVER reached (default OFF ⇒ production output byte-identical). The new
+// code has NO production consumer.
+//
+//   L1  NoteModel::build              — the lossless note model
+//   L2  changePointSlices             — the constant-sonority slice grid
+//   L3  inferLocalKey (LIVE, reused)  — the production key path's global/home
+//                                       key (NO second decoder instantiated);
+//                                       the L4 decoder takes ONE key (its own
+//                                       design: per-slice key feed-forward is a
+//                                       later wiring refinement). L5 owns local
+//                                       key (§5.3/§5.4).
+//   L4  ChordSliceDecoder::decode     — the dormant per-slice chord decoder →
+//                                       the SliceChord stream (chosen + carried
+//                                       alternatives + SliceConfidence +
+//                                       OpenQuestionLabel + decision).
+//   L5  the six dormant units, in build-plan order:
+//        Step 1  functionprogression / functionromannumeral (base RN)
+//        Step 2  functioncadence      (detectFunctionalCadences)
+//        Step 4  functionmodulation   (detectAndDecideModulations + §5.4 §8 recompute)
+//        Step 3  functionresolver     (resolveCarriedReadings — §5.5 + the §5.5
+//                                       case-4 fine-grain override, LIVE on THIS
+//                                       substrate — the E0 headline)
+//        Step 5  functionrelationallabel (classifyRelationalLabel)
+//        Step 6  functionoutput       (assembleFunctionOutput — the §7 contract)
+//
+// REUSE, NOT RE-IMPLEMENTATION: every producer/primitive is the existing one —
+// NoteModel::overlapping + scoreharvest::regionMetricWeightForOnsetTick (the same
+// the decoder builds its FocalNotes from), eb::weightedPcView / phraseBoundaryTicks,
+// the L5 units verbatim, ChordSymbolFormatter for symbols. The grading is the
+// existing compare_rn / compare_analyses / dcml_parser (the .ours.json emitted here
+// carries the STANDARD regions[] shape so those graders read it unchanged) — no new
+// comparator; the E0-specific fields are extra keys the loaders ignore.
+//
+// ★ CARRY-CONTRACT NOTE (E0 finding, Cowork-ratified 2026-07-02): the L4→L5 carry
+//   (SliceChord.chosen = ChordSliceCandidate) drops ChordIdentity.extensions and
+//   naturalFifthPresent (projection at chordslicedecoder.cpp candidatesForWindow).
+//   The base-RN / relational units read the seventh / figured-bass / V7-x / Ger+6
+//   from `extensions` (chordsymbolformatter.cpp formatRomanNumeral). We build the
+//   ChordIdentity from EXACTLY what SliceChord carries — extensions = 0,
+//   naturalFifthPresent = false — the FAITHFUL representation of L4's committed
+//   sonority (we do NOT synthesize/reconstruct the seventh from the template). So
+//   base RNs are TRIAD-LEVEL and the seventh-dependent labels cannot fire; this is
+//   MEASURED and named, not worked around (report §4).
+// ══════════════════════════════════════════════════════════════════════════
+static const char* fsCadenceTypeName(analysis::FunctionalCadenceType t)
+{
+    switch (t) {
+    case analysis::FunctionalCadenceType::None:               return "None";
+    case analysis::FunctionalCadenceType::PerfectAuthentic:   return "PerfectAuthentic";
+    case analysis::FunctionalCadenceType::ImperfectAuthentic: return "ImperfectAuthentic";
+    case analysis::FunctionalCadenceType::Half:               return "Half";
+    case analysis::FunctionalCadenceType::PhrygianHalf:       return "PhrygianHalf";
+    case analysis::FunctionalCadenceType::Deceptive:          return "Deceptive";
+    case analysis::FunctionalCadenceType::Plagal:             return "Plagal";
+    case analysis::FunctionalCadenceType::Evaded:             return "Evaded";
+    }
+    return "None";
+}
+
+static const char* fsResolutionBasisName(analysis::ResolutionBasis b)
+{
+    switch (b) {
+    case analysis::ResolutionBasis::None:             return "None";
+    case analysis::ResolutionBasis::Progression:      return "Progression";
+    case analysis::ResolutionBasis::CadenceVote:      return "CadenceVote";
+    case analysis::ResolutionBasis::NeighbourHarmony: return "NeighbourHarmony";
+    case analysis::ResolutionBasis::BassDegreePrior:  return "BassDegreePrior";
+    case analysis::ResolutionBasis::FineGrainOverride:return "FineGrainOverride";
+    }
+    return "None";
+}
+
+static const char* fsSliceDecisionName(analysis::chordslice::SliceDecision d)
+{
+    switch (d) {
+    case analysis::chordslice::SliceDecision::Commit:  return "Commit";
+    case analysis::chordslice::SliceDecision::Inherit: return "Inherit";
+    case analysis::chordslice::SliceDecision::Abstain: return "Abstain";
+    }
+    return "Commit";
+}
+
+static const char* fsOpenQuestionName(analysis::chordslice::OpenQuestion q)
+{
+    switch (q) {
+    case analysis::chordslice::OpenQuestion::None:           return "None";
+    case analysis::chordslice::OpenQuestion::Root:           return "Root";
+    case analysis::chordslice::OpenQuestion::Quality:        return "Quality";
+    case analysis::chordslice::OpenQuestion::NoteMembership: return "NoteMembership";
+    }
+    return "None";
+}
+
+static const char* fsAmbiguityKindName(analysis::chordslice::AmbiguityKind k)
+{
+    using AK = analysis::chordslice::AmbiguityKind;
+    switch (k) {
+    case AK::None:                     return "None";
+    case AK::InsufficientEvidence:     return "InsufficientEvidence";
+    case AK::TransitionVsContinuation: return "TransitionVsContinuation";
+    case AK::SymmetricRotation:        return "SymmetricRotation";
+    case AK::ShareTone:                return "ShareTone";
+    case AK::RelativePair:             return "RelativePair";
+    case AK::CloseReading:             return "CloseReading";
+    }
+    return "None";
+}
+
+// Ionian-convention key-signature fifths for a (tonicPc, minor) local key — the
+// inverse of "tonic = (fifths·7) mod 12", with the minor key stamped at its
+// RELATIVE-MAJOR signature (Aeolian convention). Used ONLY to keep the base-RN
+// key triple (fifths, mode, tonic) internally consistent when the §5.4 recompute
+// commits a modulation to a local tonic (diatonicDegreeForRootPc derives the tonic
+// from the fifths, so a stale fifths would mis-degree a modulated slice).
+static int fsFifthsForTonic(int tonicPc, bool minor)
+{
+    const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+    int f = (7 * t) % 12;
+    if (f > 6) { f -= 12; }
+    return f;
+}
+
+static std::string runFullSpine(Score* score, const std::string& stem,
+                                const std::string& presetName,
+                                const analysis::KeyModeAnalyzerPreferences& keyPrefs,
+                                const analysis::ChordAnalyzerPreferences& chordPrefs,
+                                const analysis::chordslice::ChordSliceDecoderPreferences& decoderPrefs,
+                                const std::set<size_t>& excludeStaves,
+                                bool sectionLevel)
+{
+    namespace cs = mu::composing::analysis::chordslice;
+    namespace eb = mu::composing::analysis::engravingbridge;
+    namespace sh = mu::composing::analysis::scoreharvest;
+    using Clock = std::chrono::steady_clock;
+    auto ms = [](Clock::time_point a, Clock::time_point b) {
+        return std::chrono::duration<double, std::milli>(b - a).count();
+    };
+
+    // ── L1 + L2 + L3(live) + L4 — timed as the "engage-path proxy" (G3) ──
+    // Done FIRST so the measured decode is byte-identical to standalone
+    // --decode-chords (no prior analyzeScore can perturb the score model).
+    const auto tDec0 = Clock::now();
+    const NoteModel model = NoteModel::build(score);
+    const std::vector<Slice> slices = analysis::slicing::changePointSlices(model);
+
+    const size_t refStaff = referenceStaffForAnalysis(score, excludeStaves);
+    // L3 LIVE: reuse the production key path (inferLocalKey → resolveKeyAndModeRanked),
+    // NOT a second decoder, NOT the raw notated signature. The decoder + L5 home key.
+    const KeyModeAnalysisResult homeKey =
+        inferLocalKey(score, refStaff, excludeStaves, Fraction(0, 1), nullptr, keyPrefs)[0];
+    const int   homeFifths = homeKey.keySignatureFifths;
+    const auto  homeMode   = homeKey.mode;
+    const int   homeTonicPc = homeKey.tonicPc;
+    const bool  homeMinor  = !homeKey.isMajor();
+    const double homeConf  = homeKey.normalizedConfidence;
+
+    const std::set<int> phraseTicks = eb::phraseBoundaryTicks(score);
+
+    // L4: the dormant per-slice decoder over the LIVE home key.
+    const std::vector<cs::SliceChord> decoded = cs::ChordSliceDecoder::decode(
+        slices, model, homeFifths, homeMode, chordPrefs, decoderPrefs, excludeStaves);
+    const double decodeMs = ms(tDec0, Clock::now());
+
+    const int lastTick = slices.empty() ? 0 : slices.back().end;
+
+    // ── Per-slice context gathered ONCE from L1 (per-voice notes, tpcs, mask,
+    //    metric weight, phrase flag) — the inputs L5 units need that the L4 carry
+    //    does not hold (by design; the cadence detector's per-voice-note channel). ─
+    struct SliceCtx {
+        std::vector<analysis::CadenceVoiceNote> notes;  // per-voice sounding notes
+        std::vector<int> noteTpcs;                       // notated spellings (Ger6↔V7)
+        uint16_t pcMask = 0;                             // sounding pitch classes
+        double metricWeight = 1.0;
+        bool endsPhrase = false;
+        bool isFinalBar = false;
+    };
+    std::vector<SliceCtx> ctx(slices.size());
+    for (size_t i = 0; i < slices.size(); ++i) {
+        const int s = slices[i].start, e = slices[i].end;
+        SliceCtx& c = ctx[i];
+        c.metricWeight = sh::regionMetricWeightForOnsetTick(score, s);
+        auto pb = phraseTicks.lower_bound(s);
+        c.endsPhrase = (pb != phraseTicks.end() && *pb < e);
+        c.isFinalBar = (e >= lastTick && lastTick > 0);
+        for (const NoteEvent* ne : model.overlapping(s, e)) {
+            if (!ne->plays || !ne->visible || !ne->staffEligible) { continue; }
+            if (excludeStaves.count(static_cast<size_t>(ne->staff))) { continue; }
+            analysis::CadenceVoiceNote vn; vn.voice = ne->voice; vn.pitch = ne->pitch;
+            c.notes.push_back(vn);
+            if (ne->tpc >= 0) { c.noteTpcs.push_back(ne->tpc); }
+            c.pcMask |= static_cast<uint16_t>(1u << (((ne->pitch % 12) + 12) % 12));
+        }
+    }
+
+    auto candQuality = [](const cs::ChordSliceCandidate& c) { return c.quality; };
+    auto isCommitted = [&](size_t i) {
+        return decoded[i].hasChord
+            && decoded[i].decision != cs::SliceDecision::Abstain;
+    };
+
+    // ── L5 Step 2 — the cadence stream (key-agnostic; reads the seventh from the
+    //    per-voice notes, so cadence/modulation are FULLY faithful to the pitch). ─
+    // The detector pairs ADJACENT events (events[i]→events[i+1]) — it expects "the
+    // committed-chord stream of a region" (§5.0). On the per-slice substrate the
+    // committed chords are separated by thin/abstain slices, so we feed the COMMITTED
+    // subsequence (Commit/Inherit), matching the legacy region substrate's chord
+    // stream; the returned cadences carry TICKS, mapped back to slices below.
+    std::vector<analysis::CadenceEvent> events;
+    events.reserve(slices.size());
+    for (size_t i = 0; i < slices.size(); ++i) {
+        if (!isCommitted(i)) { continue; }
+        analysis::CadenceEvent ev;
+        ev.rootPc  = decoded[i].chosen.rootPc;
+        ev.quality = decoded[i].chosen.quality;
+        ev.bassPc  = decoded[i].chosen.bassPc;
+        ev.notes = ctx[i].notes;
+        ev.metricWeight = ctx[i].metricWeight;
+        ev.startTick = slices[i].start;
+        ev.endTick = slices[i].end;
+        ev.endsPhrase = ctx[i].endsPhrase;
+        ev.isFinalBar = ctx[i].isFinalBar;
+        events.push_back(ev);
+    }
+    const std::vector<analysis::FunctionalCadence> cadences =
+        analysis::detectFunctionalCadences(events);
+
+    // ── L5 Step 4 — tonicization vs modulation + the §5.4 §8 recompute ──
+    // Build the key-agnostic region stream (one CadenceRegionInput per slice) and
+    // run the established substrate; then FIRE the §5.4 confidence-weighted forward
+    // recompute (the §8 mechanism) per confirmed modulation, recording the committed
+    // local key per slice via the injected reread callback.
+    // Committed subsequence (same rationale as the cadence stream: the local-key
+    // detector grows contiguous runs of committed chords; thin/abstain slices would
+    // break the runs). Spans carry ticks; the recompute maps them back to slices.
+    std::vector<analysis::CadenceRegionInput> cadRegions;
+    cadRegions.reserve(slices.size());
+    for (size_t i = 0; i < slices.size(); ++i) {
+        if (!isCommitted(i)) { continue; }
+        analysis::CadenceRegionInput cr;
+        cr.startTick = slices[i].start;
+        cr.endTick = slices[i].end;
+        cr.rootPc = decoded[i].chosen.rootPc;
+        cr.quality = candQuality(decoded[i].chosen);
+        cr.pitchClassMask = ctx[i].pcMask;
+        cr.endsPhrase = ctx[i].endsPhrase;
+        cadRegions.push_back(cr);
+    }
+    const std::vector<analysis::ModulationDecision> mods =
+        analysis::detectAndDecideModulations(cadRegions, cadences, homeFifths);
+
+    // Per-slice local key (default = home); the §5.4 recompute commits the confirmed
+    // modulations onto the affected slice range.
+    std::vector<int>  localTonic(slices.size(), homeTonicPc);
+    std::vector<bool> localMinor(slices.size(), homeMinor);
+    analysis::OnePassClosure closure;
+    int recomputeFired = 0, recomputeSlices = 0, keyDecisionId = 1;
+    for (const analysis::ModulationDecision& md : mods) {
+        if (!md.isModulation) { continue; }
+        int first = -1, last = -1;
+        for (size_t i = 0; i < slices.size(); ++i) {
+            if (slices[i].start < md.endTick && slices[i].end > md.startTick) {
+                if (first < 0) { first = static_cast<int>(i); }
+                last = static_cast<int>(i);
+            }
+        }
+        if (first < 0) { continue; }
+        auto reread = [&](int sliceId, int newTonic, bool newMinor) {
+            if (sliceId >= 0 && sliceId < static_cast<int>(slices.size())) {
+                localTonic[static_cast<size_t>(sliceId)] = newTonic;
+                localMinor[static_cast<size_t>(sliceId)] = newMinor;
+            }
+        };
+        const analysis::ModulationRecomputeResult rr = analysis::modulationRecompute(
+            md, homeConf, first, last, reread, closure, keyDecisionId++);
+        if (rr.fired) { ++recomputeFired; recomputeSlices += (rr.slicesReread > 0 ? rr.slicesReread : 0); }
+    }
+
+    // ── L5 Step 3 — the RESOLVER + the §5.5 case-4 fine-grain OVERRIDE (headline) ─
+    std::vector<analysis::FunctionSlice> funcSlices(slices.size());
+    for (size_t i = 0; i < slices.size(); ++i) {
+        analysis::FunctionSlice& fs = funcSlices[i];
+        fs.chord.rootPc = decoded[i].hasChord ? decoded[i].chosen.rootPc : -1;
+        fs.chord.quality = decoded[i].hasChord ? decoded[i].chosen.quality : ChordQuality::Unknown;
+        fs.committed = isCommitted(i);
+        fs.metricWeight = ctx[i].metricWeight;
+        fs.startTick = slices[i].start;
+        fs.endTick = slices[i].end;
+        fs.decision = decoded[i].decision;
+        fs.openQuestion = decoded[i].openQuestion;
+        fs.alternatives = decoded[i].alternatives;
+        fs.confidence = decoded[i].confidenceModel;
+    }
+    analysis::ResolverKey rkey;
+    rkey.keyFifths = homeFifths; rkey.keyMode = homeMode; rkey.tonicPc = homeTonicPc;
+    const analysis::ResolverResult res =
+        analysis::resolveCarriedReadings(funcSlices, cadences, rkey);
+
+    // The FINAL per-unit chord identity (post-resolver): the resolver's reading is
+    // the committed chord for an unchanged commit, the corrected reading on an
+    // override, or the selected reading on a resolved abstain.
+    auto finalReadingOf = [&](size_t i) -> cs::ChordSliceCandidate {
+        if (i < res.readings.size()) {
+            const analysis::ResolvedReading& rr = res.readings[i];
+            if (rr.reading.rootPc >= 0) { return rr.reading; }
+        }
+        return decoded[i].chosen;
+    };
+    auto unitHasChord = [&](size_t i) -> bool {
+        // A committed/inherited slice, or an abstain the resolver resolved.
+        if (isCommitted(i)) { return true; }
+        if (i < res.readings.size() && res.readings[i].resolved && !res.readings[i].openMark) {
+            return res.readings[i].reading.rootPc >= 0;
+        }
+        return false;
+    };
+    auto unitOpenMark = [&](size_t i) -> bool {
+        return i < res.readings.size() && res.readings[i].openMark;
+    };
+    // The internally-consistent local-key triple for slice i (preserving the EXACT
+    // home key — incl. a non-Aeolian home mode — where unmodulated).
+    auto localKeyFifths = [&](size_t i) -> int {
+        return (localTonic[i] == homeTonicPc && localMinor[i] == homeMinor)
+             ? homeFifths : fsFifthsForTonic(localTonic[i], localMinor[i]);
+    };
+    auto localKeyMode = [&](size_t i) -> analysis::KeySigMode {
+        return (localTonic[i] == homeTonicPc && localMinor[i] == homeMinor)
+             ? homeMode
+             : (localMinor[i] ? analysis::KeySigMode::Aeolian : analysis::KeySigMode::Ionian);
+    };
+
+    // The next committed/resolved root (the applied-resolution target — §5.6).
+    auto nextRootOf = [&](size_t i) -> int {
+        for (size_t j = i + 1; j < slices.size(); ++j) {
+            if (unitHasChord(j)) { return finalReadingOf(j).rootPc; }
+        }
+        return -1;
+    };
+
+    // ── L5 Step 5 (relational) + Step 6 (§7 output assembly) ──
+    std::vector<analysis::FunctionUnitAssembly> units(slices.size());
+    std::vector<analysis::RelationalLabel> relLabels(slices.size());
+    for (size_t i = 0; i < slices.size(); ++i) {
+        analysis::FunctionUnitAssembly& u = units[i];
+        u.startTick = slices[i].start;
+        u.endTick = slices[i].end;
+        u.committed = unitHasChord(i);
+        u.openMark = unitOpenMark(i);
+        u.resolverConfidence = (i < res.readings.size()) ? res.readings[i].functionConfidence : 0.0;
+
+        if (unitHasChord(i)) {
+            const cs::ChordSliceCandidate fr = finalReadingOf(i);
+            // The FAITHFUL basic identity (extensions = 0, naturalFifthPresent = false) —
+            // exactly what the L4→L5 carry holds (report §4 carry-contract finding).
+            analysis::ChordIdentity id;
+            id.rootPc = fr.rootPc; id.rootTpc = fr.rootTpc;
+            id.bassPc = fr.bassPc; id.bassTpc = fr.bassTpc;
+            id.quality = fr.quality; id.tiePriority = fr.tiePriority;
+            id.extensions = 0; id.naturalFifthPresent = false;
+            u.committedIdentity = id;
+            u.chord.rootPc = fr.rootPc; u.chord.quality = fr.quality;
+
+            analysis::RelationalLabelInput in;
+            in.identity = id;
+            in.keyFifths = localKeyFifths(i);   // consistent with keyTonicPc/keyMode below
+            in.keyMode = localKeyMode(i);
+            in.keyTonicPc = localTonic[i];
+            in.nextRootPc = nextRootOf(i);
+            in.pitchClassMask = ctx[i].pcMask;
+            in.noteTpcs = ctx[i].noteTpcs;
+            relLabels[i] = analysis::classifyRelationalLabel(in);
+        }
+        u.relational = relLabels[i];
+    }
+    const analysis::FunctionLayerOutput out5 = analysis::assembleFunctionOutput(
+        units, cadences, mods, homeTonicPc, homeMinor);
+
+    // ── Wall-time B: the LEGACY production spine (the G3 envelope baseline) ──
+    // Timed LAST so it cannot perturb the decode measured above.
+    const auto tLeg0 = Clock::now();
+    const std::vector<AnalyzedRegion> legacyRegions =
+        analyzeScore(score, excludeStaves, keyPrefs, chordPrefs, sectionLevel);
+    const double legacyMs = ms(tLeg0, Clock::now());
+    (void)legacyRegions;   // graded from the flag-OFF corpus; timed here only
+
+    // ── Emit the .ours.json (STANDARD regions[] shape + E0 fields) ──
+    long long committedCount = 0, abstainCount = 0, openMarkCount = 0, overrodeCount = 0;
+    for (size_t i = 0; i < decoded.size(); ++i) {
+        if (isCommitted(i)) { ++committedCount; }
+        else { ++abstainCount; }
+        if (unitOpenMark(i)) { ++openMarkCount; }
+        if (i < res.readings.size() && res.readings[i].overrodeCommit) { ++overrodeCount; }
+    }
+
+    auto symbolFor = [&](const cs::ChordSliceCandidate& c) -> std::string {
+        ChordAnalysisResult r;
+        r.identity.rootPc = c.rootPc; r.identity.rootTpc = c.rootTpc;
+        r.identity.bassPc = c.bassPc; r.identity.bassTpc = c.bassTpc;
+        r.identity.quality = c.quality; r.identity.tiePriority = c.tiePriority;
+        return analysis::ChordSymbolFormatter::formatSymbol(r, homeFifths);
+    };
+
+    std::ostringstream os;
+    os << "{\n";
+    os << "  \"source\": \"" << jsonEscape(stem) << "\",\n";
+    os << "  \"preset\": \"" << jsonEscape(presetName) << "\",\n";
+    os << "  \"analysisPath\": \"fullspine\",\n";
+    os << "  \"detectedKey\": \"" << jsonEscape(keyName(homeFifths, homeMode)) << "\",\n";
+    os << "  \"keyConfidence\": " << fmtDouble(homeConf) << ",\n";
+    os << "  \"homeTonicPc\": " << homeTonicPc << ",\n";
+    os << "  \"homeMinor\": " << (homeMinor ? "true" : "false") << ",\n";
+    os << "  \"slicesTotal\": " << slices.size() << ",\n";
+    os << "  \"committedUnits\": " << committedCount << ",\n";
+    os << "  \"abstainUnits\": " << abstainCount << ",\n";
+    os << "  \"openMarkUnits\": " << openMarkCount << ",\n";
+    os << "  \"overrodeCommits\": " << overrodeCount << ",\n";
+    os << "  \"modulationsConfirmed\": " << recomputeFired << ",\n";
+    os << "  \"modulationSlicesReread\": " << recomputeSlices << ",\n";
+    os << "  \"wallTimeLegacyMs\": " << fmtDouble(legacyMs, 3) << ",\n";
+    os << "  \"wallTimeDecodeMs\": " << fmtDouble(decodeMs, 3) << ",\n";
+
+    os << "  \"cadences\": [";
+    for (size_t i = 0; i < cadences.size(); ++i) {
+        const analysis::FunctionalCadence& c = cadences[i];
+        os << (i ? ", " : "")
+           << "{ \"type\": \"" << fsCadenceTypeName(c.type) << "\""
+           << ", \"approachTick\": " << c.approachTick
+           << ", \"arrivalTick\": " << c.arrivalTick
+           << ", \"tonicPc\": " << c.tonicPc
+           << ", \"minorMode\": " << (c.minorMode ? "true" : "false")
+           << ", \"tonicVote\": " << fmtDouble(c.tonicVote, 4) << " }";
+    }
+    os << "],\n";
+
+    os << "  \"modulations\": [";
+    for (size_t i = 0; i < mods.size(); ++i) {
+        const analysis::ModulationDecision& m = mods[i];
+        os << (i ? ", " : "")
+           << "{ \"startTick\": " << m.startTick << ", \"endTick\": " << m.endTick
+           << ", \"tonicPc\": " << m.tonicPc << ", \"minorMode\": " << (m.minorMode ? "true" : "false")
+           << ", \"isHomeKey\": " << (m.isHomeKey ? "true" : "false")
+           << ", \"cadenceConfirmed\": " << (m.cadenceConfirmed ? "true" : "false")
+           << ", \"isModulation\": " << (m.isModulation ? "true" : "false") << " }";
+    }
+    os << "],\n";
+
+    os << "  \"regions\": [";
+    bool firstReg = true;
+    for (size_t i = 0; i < decoded.size(); ++i) {
+        const int s = slices[i].start, e = slices[i].end;
+        const bool hasChord = unitHasChord(i);
+        const cs::ChordSliceCandidate fr = finalReadingOf(i);
+        const int rootPc = hasChord ? fr.rootPc : -1;
+        const int bassPc = hasChord ? fr.bassPc : -1;
+        const bool bassIsRoot = hasChord && fr.bassIsRoot();
+        const std::string rn = (i < out5.units.size()) ? out5.units[i].romanNumeral : std::string();
+        const std::string chordSym = hasChord ? symbolFor(fr) : std::string();
+
+        const MeasureTickInfo mi = locateMeasureByTick(score, Fraction::fromTicks(s));
+        const int measureNumber = mi.measure ? mi.number : 0;
+        const double beat = mi.measure
+            ? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION : 1.0;
+        const double duration = static_cast<double>(e - s) / Constants::DIVISION;
+
+        const analysis::ResolvedReading rr =
+            (i < res.readings.size()) ? res.readings[i] : analysis::ResolvedReading{};
+        const analysis::FunctionConfidence fc =
+            (i < out5.units.size()) ? out5.units[i].confidence : analysis::FunctionConfidence{};
+
+        os << (firstReg ? "\n    " : ",\n    ");
+        firstReg = false;
+        os << "{ \"measureNumber\": " << measureNumber
+           << ", \"beat\": " << fmtDouble(beat, 4)
+           << ", \"startTick\": " << s << ", \"endTick\": " << e
+           << ", \"duration\": " << fmtDouble(duration, 4)
+           << ", \"rootPitchClass\": " << rootPc
+           << ", \"bassPitchClass\": " << bassPc
+           << ", \"bassIsRoot\": " << (bassIsRoot ? "true" : "false")
+           << ", \"quality\": \"" << (hasChord ? qualityToString(fr.quality) : "Unknown") << "\""
+           << ", \"chordSymbol\": \"" << jsonEscape(chordSym) << "\""
+           << ", \"romanNumeral\": \"" << jsonEscape(rn) << "\""
+           << ", \"key\": \"" << jsonEscape(keyName(localKeyFifths(i), localKeyMode(i))) << "\""
+           << ", \"keyConfidence\": " << fmtDouble(homeConf)
+           << ", \"localTonicPc\": " << localTonic[i]
+           << ", \"localMinor\": " << (localMinor[i] ? "true" : "false")
+           // ── E0 fields (extra keys the standard loaders ignore) ──
+           << ", \"l4Decision\": \"" << fsSliceDecisionName(decoded[i].decision) << "\""
+           << ", \"l4RootPc\": " << (decoded[i].hasChord ? decoded[i].chosen.rootPc : -1)
+           << ", \"l4Uncertain\": " << (decoded[i].uncertain ? "true" : "false")
+           << ", \"l4Composite\": " << fmtDouble(decoded[i].confidenceModel.composite, 4)
+           << ", \"l4Margin\": " << fmtDouble(decoded[i].confidenceModel.margin, 4)
+           << ", \"l4Sufficiency\": " << fmtDouble(decoded[i].confidenceModel.sufficiency, 4)
+           << ", \"l4Cleanliness\": " << fmtDouble(decoded[i].confidenceModel.membershipCleanliness, 4)
+           << ", \"openQuestion\": \"" << fsOpenQuestionName(decoded[i].openQuestion.question) << "\""
+           << ", \"ambiguityKind\": \"" << fsAmbiguityKindName(decoded[i].openQuestion.ambiguity) << "\""
+           << ", \"l5Resolved\": " << (rr.resolved ? "true" : "false")
+           << ", \"l5OverrodeCommit\": " << (rr.overrodeCommit ? "true" : "false")
+           << ", \"l5OpenMark\": " << (rr.openMark ? "true" : "false")
+           << ", \"l5Basis\": \"" << fsResolutionBasisName(rr.basis) << "\""
+           << ", \"l5Role\": \"" << ((i < out5.units.size()) ? relationalRoleName(out5.units[i].relationalRole) : "None") << "\""
+           << ", \"l5CadenceVoteWeight\": " << fmtDouble(fc.cadenceVoteWeight, 4)
+           << ", \"l5LicensedFit\": " << fmtDouble(fc.licensedProgressionFit, 4)
+           << ", \"l5NextBestMargin\": " << fmtDouble(fc.nextBestMargin, 4)
+           << ", \"l5Combined\": " << fmtDouble(fc.combined, 4)
+           << ", \"openMark\": " << (unitOpenMark(i) ? "true" : "false");
+
+        os << ", \"alternatives\": [";
+        for (size_t a = 0; a < decoded[i].alternatives.size(); ++a) {
+            const cs::ChordSliceCandidate& alt = decoded[i].alternatives[a];
+            os << (a ? ", " : "")
+               << "{ \"rootPitchClass\": " << alt.rootPc
+               << ", \"bassPitchClass\": " << alt.bassPc
+               << ", \"quality\": \"" << qualityToString(alt.quality) << "\""
+               << ", \"bassIsRoot\": " << (alt.bassIsRoot() ? "true" : "false")
+               << ", \"score\": " << fmtDouble(alt.score, 5) << " }";
+        }
+        os << "] }";
+    }
+    os << (decoded.empty() ? "]\n" : "\n  ]\n");
+    os << "}\n";
+    return os.str();
+}
+
 } // namespace
 
 int main(int argc, char* argv[])
@@ -2539,6 +3083,7 @@ int main(int argc, char* argv[])
     bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
     bool decodeKeyMode = false;       // Layer-3 key/mode sequence decoder (default OFF = no analysis touched)
     bool decodeChords = false;        // Layer-4 per-slice chord decoder (default OFF = no analysis touched)
+    bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
     // analyzeScore), so production analysis stays byte-identical. Default = the
@@ -2594,6 +3139,8 @@ int main(int argc, char* argv[])
             decodeKeyMode = true;
         } else if (a == "--decode-chords") {
             decodeChords = true;
+        } else if (a == "--dump-fullspine") {
+            dumpFullSpine = true;
         } else if (a == "--chord-no-membership") {
             // Decode-only: disable the Increment-B membership decision + feedback +
             // two-pass (reproduces the Increment-A behaviour, modulo the adaptive window).
@@ -2907,6 +3454,27 @@ int main(int argc, char* argv[])
         }
         const std::string report = runChordDecode(score, stem, chordPrefs, keySigFifths, keyMode,
                                                    chordDecoderPrefs, excludeStaves);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── E0 — the dormant FULL-SPINE measurement (--dump-fullspine) ──
+    // DIAGNOSTIC ONLY: chains L1→L2→L3(live)→L4-decoder→L5 and writes a per-stem
+    // JSON side file, then returns — analyzeScore / analyzeRegions are never
+    // reached, so production output is byte-identical (default OFF). See
+    // runFullSpine(). The live L3 key is the production key path (inferLocalKey),
+    // reused inside runFullSpine, NOT a second decoder.
+    if (dumpFullSpine) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::string report = runFullSpine(score, stem, presetName, keyPrefs, chordPrefs,
+                                                 chordDecoderPrefs, excludeStaves, sectionLevel);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
