@@ -292,4 +292,17 @@ target_sources(composing_analysis PRIVATE
     # cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
     ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.h
     ${CMAKE_CURRENT_LIST_DIR}/slicing/slicer.cpp
+
+    # grouping/ — ARCHITECTURAL LAYER 6 (GROUPING). The forward-only rebuild that
+    # ASSEMBLES the upstream products (L1.5 boundaries, L5 cadences/RNs, L3 local
+    # keys) into the flat grouping structure the ground truth annotates —
+    # punctuation-spans, key-areas, cadence-to-span alignment (§5.1–§5.5). Detects
+    # nothing (§6 proportionality bound). DORMANT: no production consumer; exercised
+    # only by grouping_tests.cpp, byte-identical on production by construction. The
+    # scattered live grouping paths it retires at engagement (detectCadences/
+    # detectPivotChords in section/sectioncadencedetection.cpp, the KeyArea grouping
+    # in analyzeSection/analyzed_section.h) are NAMED, touched nowhere. See
+    # cowork_layer6_grouping_design.md (SIGNED) + cc_l6_build_report.md.
+    ${CMAKE_CURRENT_LIST_DIR}/grouping/groupinglayer.h
+    ${CMAKE_CURRENT_LIST_DIR}/grouping/groupinglayer.cpp
 )
