@@ -37,6 +37,7 @@
 
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <vector>
 
 #include "composing/analysis/function/functionresolver.h"
@@ -477,6 +478,224 @@ TEST(FunctionResolver, Override_HonestCarryAlternative_StaysTriadLevel)
     EXPECT_EQ(rr.reading.rootPc, G);            // the SELECTED corrected reading
     EXPECT_FALSE(rr.reading.extensionsKnown);   // honest-carry state preserved (unknown, not guessed)
     EXPECT_EQ(rr.reading.extensions, 0u);       // no fabricated extension
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// Bounded context — the pinned decision-context extent + forward requester loop
+// (resolveCarriedReadingsExtending; design §5; cowork_bounded_context_design.md §3/§4/§5).
+// DORMANT: enableForwardExtension defaults OFF; no production consumer. The supplier is the
+// L1-extend → L2 → L3/L4 forward re-run, injected by hand here.
+// ════════════════════════════════════════════════════════════════════════════
+
+namespace {
+
+// A one-shot forward supplier: appends @p batch on the FIRST request, then reports @p after
+// (ScoreBoundary by default) on every subsequent request. Deterministic (a shared counter).
+ForwardExtensionProvider oneShot(std::vector<FunctionSlice> batch,
+                                 ForwardSupply after = ForwardSupply::ScoreBoundary)
+{
+    auto calls = std::make_shared<int>(0);
+    ForwardExtensionProvider p;
+    p.supply = [batch, after, calls](int, std::vector<FunctionSlice>& more,
+                                      std::vector<FunctionalCadence>&) -> ForwardSupply {
+        if ((*calls)++ == 0) {
+            more = batch;
+            return ForwardSupply::Supplied;
+        }
+        return after;
+    };
+    return p;
+}
+
+// A supplier that always reports the given terminal status (never supplies).
+ForwardExtensionProvider terminal(ForwardSupply status)
+{
+    ForwardExtensionProvider p;
+    p.supply = [status](int, std::vector<FunctionSlice>&, std::vector<FunctionalCadence>&) {
+        return status;
+    };
+    return p;
+}
+
+L5ForwardExtensionParams extOn(int k = 8)
+{
+    L5ForwardExtensionParams e;
+    e.enableForwardExtension = true;
+    e.maxForwardExtendSlices = k;
+    return e;
+}
+
+// A region ending in a cut ShareTone abstain: ii(Dm) → {Am6 ↔ F#ø7}, no forward function.
+std::vector<FunctionSlice> cutTailRegion()
+{
+    return {
+        committedSlice(D, ChordQuality::Minor, 0),
+        abstainSlice(AmbiguityKind::ShareTone,
+                     cand(A, ChordQuality::Minor, A),             // readingA = Am6
+                     cand(Fs, ChordQuality::HalfDiminished, Fs),  // readingB = F#ø7
+                     /*hasB*/ true, 480),
+    };
+}
+
+} // namespace
+
+// L5EXT1 — DORMANT: enableForwardExtension OFF ⇒ byte-identical to resolveCarriedReadings, no
+// provenance (cowork_bounded_context_design.md §8).
+TEST(FunctionResolver, L5EXT1_DisabledEqualsBaseResolver_NoProvenance)
+{
+    const std::vector<FunctionSlice> region = cutTailRegion();
+    const ResolverResult base = resolveCarriedReadings(region, {}, cMajor());
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), oneShot({ committedSlice(G, ChordQuality::Major, 960) }),
+        kDefaultFunctionResolverParams, /*ext*/ L5ForwardExtensionParams{});   // enable OFF
+
+    ASSERT_EQ(ext.readings.size(), base.readings.size());
+    for (size_t i = 0; i < ext.readings.size(); ++i) {
+        EXPECT_EQ(ext.readings[i].resolved, base.readings[i].resolved);
+        EXPECT_EQ(ext.readings[i].openMark, base.readings[i].openMark);
+        EXPECT_EQ(ext.readings[i].reading.rootPc, base.readings[i].reading.rootPc);
+        EXPECT_FALSE(ext.readings[i].clippedBySelectionEdge) << "OFF sets no provenance";
+        EXPECT_FALSE(ext.readings[i].cueDenied);
+    }
+}
+
+// L5EXT2 — must-FIRE + resolve: the edge abstain is cut (no forward function), so the base pass
+// leaves it an OPEN MARK; supplying the forward V(G) establishes the next function, and the
+// forward re-run RESOLVES the ShareTone by the licensed progression into G (→ F#ø7). Output is
+// the selection only (the reached-forward G is evidence, not emitted); the resolved slice is no
+// longer cut, so it carries NO clip.
+TEST(FunctionResolver, L5EXT2_CutAbstain_RequestFiresAndResolves)
+{
+    const std::vector<FunctionSlice> region = cutTailRegion();
+
+    // Base (no forward context): the edge ShareTone can't see its next function → open mark.
+    const ResolverResult base = resolveCarriedReadings(region, {}, cMajor());
+    ASSERT_EQ(base.readings.size(), 2u);
+    EXPECT_TRUE(base.readings[1].openMark) << "with no forward context the edge abstain is open";
+
+    // Extend: supply the forward V(G). The re-run resolves the abstain to F#ø7.
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), oneShot({ committedSlice(G, ChordQuality::Major, 960) }),
+        kDefaultFunctionResolverParams, extOn());
+
+    ASSERT_EQ(ext.readings.size(), 2u) << "output covers the selection only (forward G is evidence)";
+    EXPECT_TRUE(ext.readings[1].resolved) << "the extension resolved the previously-open abstain";
+    EXPECT_EQ(ext.readings[1].reading.rootPc, Fs) << "resolved by licensed progression into V";
+    EXPECT_FALSE(ext.readings[1].clippedBySelectionEdge) << "resolved ⇒ no longer cut";
+    EXPECT_FALSE(ext.readings[1].cueDenied);
+}
+
+// L5EXT3 — denial provenance: the supplier REFUSES the request (a driver safety cap), so the
+// edge abstain resolves on its truncated evidence (open mark) and carries BOTH clip + cueDenied.
+TEST(FunctionResolver, L5EXT3_RefusedRequest_OpenMarkPlusDenialProvenance)
+{
+    const std::vector<FunctionSlice> region = cutTailRegion();
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), terminal(ForwardSupply::Refused), kDefaultFunctionResolverParams, extOn());
+
+    ASSERT_EQ(ext.readings.size(), 2u);
+    EXPECT_TRUE(ext.readings[1].openMark) << "a refused request proceeds on truncated evidence";
+    EXPECT_TRUE(ext.readings[1].clippedBySelectionEdge) << "the decision-context span was cut";
+    EXPECT_TRUE(ext.readings[1].cueDenied) << "a refusal is a denial (item 10)";
+}
+
+// L5EXT4 — score boundary: the supplier reports the score end (nothing more exists). The edge
+// abstain proceeds truncated (open mark) and carries the clip provenance but NOT cueDenied — a
+// score-boundary truncation is honest, not a denial (design §3 item 3 / item 10).
+TEST(FunctionResolver, L5EXT4_ScoreBoundary_ClipButNotDenied)
+{
+    const std::vector<FunctionSlice> region = cutTailRegion();
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), terminal(ForwardSupply::ScoreBoundary), kDefaultFunctionResolverParams, extOn());
+
+    ASSERT_EQ(ext.readings.size(), 2u);
+    EXPECT_TRUE(ext.readings[1].openMark);
+    EXPECT_TRUE(ext.readings[1].clippedBySelectionEdge) << "cut by the score boundary — truncated evidence";
+    EXPECT_FALSE(ext.readings[1].cueDenied) << "a score-boundary stop is not a denial";
+}
+
+// L5EXT5 — §8 one-pass closure (NO RE-OPEN): a decision the base pass CLOSED (an interior abstain
+// resolved because its forward function is already in view) keeps its reading after a forward
+// extension finalizes a LATER edge-cut decision — forward data supply, never a back-edge.
+TEST(FunctionResolver, L5EXT5_ForwardExtension_DoesNotReopenClosedDecision)
+{
+    // [ I(C) , abstain#1 (interior, resolvable → F#ø7) , V(G) , abstain#2 (edge, cut) ]
+    std::vector<FunctionSlice> region{
+        committedSlice(C, ChordQuality::Major, 0),
+        abstainSlice(AmbiguityKind::ShareTone,
+                     cand(A, ChordQuality::Minor, A), cand(Fs, ChordQuality::HalfDiminished, Fs),
+                     /*hasB*/ true, 480),
+        committedSlice(G, ChordQuality::Major, 960),
+        abstainSlice(AmbiguityKind::ShareTone,
+                     cand(A, ChordQuality::Minor, A), cand(Fs, ChordQuality::HalfDiminished, Fs),
+                     /*hasB*/ true, 1440),
+    };
+
+    // Base: abstain#1 (index 1) resolves (G in view forward); abstain#2 (index 3) is cut → open.
+    const ResolverResult base = resolveCarriedReadings(region, {}, cMajor());
+    ASSERT_EQ(base.readings.size(), 4u);
+    ASSERT_TRUE(base.readings[1].resolved);
+    const int closedRoot = base.readings[1].reading.rootPc;   // the closed decision's reading
+    ASSERT_TRUE(base.readings[3].openMark);
+
+    // Extend: supply a forward V(G) so abstain#2 (F#ø7 → G is licensed) can resolve. abstain#1
+    // is untouched (its forward function was already in view — a closed decision).
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), oneShot({ committedSlice(G, ChordQuality::Major, 1920) }),
+        kDefaultFunctionResolverParams, extOn());
+
+    ASSERT_EQ(ext.readings.size(), 4u) << "output covers the original selection only";
+    // The base-closed interior decision is UNCHANGED (never re-opened).
+    EXPECT_TRUE(ext.readings[1].resolved);
+    EXPECT_EQ(ext.readings[1].reading.rootPc, closedRoot) << "a closed decision must not be re-opened";
+    EXPECT_FALSE(ext.readings[1].clippedBySelectionEdge);
+    // The edge decision was finalized by the extension.
+    EXPECT_TRUE(ext.readings[3].resolved) << "the forward extension finalized the open edge decision";
+    EXPECT_FALSE(ext.readings[3].clippedBySelectionEdge) << "resolved ⇒ no longer cut";
+}
+
+// L5EXT6 — determinism: identical inputs ⇒ identical readings + provenance.
+TEST(FunctionResolver, L5EXT6_Deterministic)
+{
+    const std::vector<FunctionSlice> region = cutTailRegion();
+    const ResolverResult a = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), terminal(ForwardSupply::Refused), kDefaultFunctionResolverParams, extOn());
+    const ResolverResult b = resolveCarriedReadingsExtending(
+        region, {}, cMajor(), terminal(ForwardSupply::Refused), kDefaultFunctionResolverParams, extOn());
+    ASSERT_EQ(a.readings.size(), b.readings.size());
+    for (size_t i = 0; i < a.readings.size(); ++i) {
+        EXPECT_EQ(a.readings[i].reading.rootPc, b.readings[i].reading.rootPc);
+        EXPECT_EQ(a.readings[i].openMark, b.readings[i].openMark);
+        EXPECT_EQ(a.readings[i].clippedBySelectionEdge, b.readings[i].clippedBySelectionEdge);
+        EXPECT_EQ(a.readings[i].cueDenied, b.readings[i].cueDenied);
+    }
+}
+
+// L5EXT7 — the §4 equivalence invariant: the result after the extension equals a SINGLE fresh
+// resolve over the final (enlarged) region, restricted to the selection slices. Extension is
+// "supply more forward data, then infer forward again" — never a different computation.
+TEST(FunctionResolver, L5EXT7_ExtensionEqualsFreshRunOverFinalRegion)
+{
+    const std::vector<FunctionSlice> selection = cutTailRegion();          // 2 selection slices
+    const std::vector<FunctionSlice> batch{ committedSlice(G, ChordQuality::Major, 960) };
+
+    // The extended run (supply the forward G once, then converge).
+    const ResolverResult ext = resolveCarriedReadingsExtending(
+        selection, {}, cMajor(), oneShot(batch), kDefaultFunctionResolverParams, extOn());
+
+    // The fresh run over the final region = selection ++ batch, restricted to the selection.
+    std::vector<FunctionSlice> finalRegion = selection;
+    finalRegion.insert(finalRegion.end(), batch.begin(), batch.end());
+    const ResolverResult fresh = resolveCarriedReadings(finalRegion, {}, cMajor());
+
+    ASSERT_EQ(ext.readings.size(), selection.size());
+    ASSERT_GE(fresh.readings.size(), selection.size());
+    for (size_t i = 0; i < selection.size(); ++i) {
+        EXPECT_EQ(ext.readings[i].resolved, fresh.readings[i].resolved) << "slice " << i;
+        EXPECT_EQ(ext.readings[i].openMark, fresh.readings[i].openMark) << "slice " << i;
+        EXPECT_EQ(ext.readings[i].reading.rootPc, fresh.readings[i].reading.rootPc) << "slice " << i;
+        EXPECT_EQ(ext.readings[i].basis, fresh.readings[i].basis) << "slice " << i;
+    }
 }
 
 } // namespace

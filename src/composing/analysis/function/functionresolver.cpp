@@ -531,4 +531,143 @@ resolveCarriedReadings(const std::vector<FunctionSlice>& region,
     return result;
 }
 
+// ── Bounded context: the pinned decision-context extent + the forward requester loop (§5) ──
+
+namespace {
+
+/// (i) A cadence-anchored function forward of slice @p i: a cadence whose ARRIVAL lands at or
+/// after the end of slice i (a function fixed later in the loaded region) — one of the stops
+/// that closes the decision-context span (design §5 (i)).
+bool hasForwardCadenceAnchor(int i, const std::vector<FunctionSlice>& region,
+                             const std::vector<FunctionalCadence>& cadences)
+{
+    const int fromTick = region[static_cast<size_t>(i)].endTick;
+    for (const FunctionalCadence& c : cadences) {
+        if (c.arrivalTick >= fromTick) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/// Is the decision-context span of SELECTION slice @p i cut by the (current) region edge before
+/// ANY of the §5 stops (i)/(ii)/(iii) holds? True ⇒ the §5.5 resolution was made on truncated
+/// forward evidence and a forward extension is warranted. Only a §5.5 ABSTAIN resolution consults
+/// the forward decision-context here (a Commit/Inherit carry-through needs none). (ii) the
+/// punctuation boundary is subsumed by (i) for the dormant resolver — a cadence arrival IS the
+/// functional punctuation the span stops at; a standalone L1.5 boundary tick is an engage input.
+bool isCutDecision(int i, const std::vector<FunctionSlice>& region,
+                   const std::vector<FunctionalCadence>& cadences,
+                   const Progression& prog,
+                   const L5ForwardExtensionParams& ext)
+{
+    const int n = static_cast<int>(region.size());
+    if (i < 0 || i >= n) {
+        return false;
+    }
+    if (region[static_cast<size_t>(i)].decision != SliceDecision::Abstain) {
+        return false;                                   // no forward decision-context to cut
+    }
+    if (hasForwardCadenceAnchor(i, region, cadences)) {
+        return false;                                   // (i) held
+    }
+    if (establishedNextFunctionIndex(prog, i) >= 0) {
+        return false;                                   // an established next function is in view
+    }
+    const int slicesPast = n - 1 - i;
+    if (slicesPast >= std::max(1, ext.maxForwardExtendSlices)) {
+        return false;                                   // (iii) the K-slice bound is realized
+    }
+    if (ext.maxForwardExtendBeats > 0
+        && (region[static_cast<size_t>(n - 1)].endTick - region[static_cast<size_t>(i)].endTick)
+           >= ext.maxForwardExtendBeats) {
+        return false;                                   // (iii) the B bound is realized
+    }
+    return true;                                        // cut: abstain, no (i)/(ii)/(iii) yet
+}
+
+/// The first SELECTION slice (index < @p selectionCount) whose decision-context span is cut.
+int firstCutSelectionSlice(const std::vector<FunctionSlice>& region,
+                           const std::vector<FunctionalCadence>& cadences,
+                           int selectionCount, const L5ForwardExtensionParams& ext)
+{
+    const Progression prog = buildProgression(region);
+    const int lim = std::min(selectionCount, static_cast<int>(region.size()));
+    for (int i = 0; i < lim; ++i) {
+        if (isCutDecision(i, region, cadences, prog, ext)) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+} // namespace
+
+ResolverResult
+resolveCarriedReadingsExtending(std::vector<FunctionSlice> region,
+                                std::vector<FunctionalCadence> cadences,
+                                const ResolverKey& key,
+                                const ForwardExtensionProvider& provider,
+                                const FunctionResolverParams& params,
+                                const L5ForwardExtensionParams& ext)
+{
+    const int selectionCount = static_cast<int>(region.size());
+
+    // DORMANT default: no extension requested ⇒ byte-identical to the base resolver, no
+    // provenance (cowork_bounded_context_design.md §8 — the degenerate case).
+    if (!ext.enableForwardExtension || !provider.supply) {
+        return resolveCarriedReadings(region, cadences, key, params);
+    }
+
+    // The forward requester loop: while a selection slice's decision-context span is cut, ask the
+    // supplier for more forward slices and re-check. Append-only (forward); terminates at a stop
+    // condition (cut resolves), the K/B bound, the score boundary, or a refusal.
+    bool denied = false;
+    const int roundCap = std::max(1, ext.maxForwardExtendSlices) + 4;   // never-terminates backstop
+    for (int round = 0; round < roundCap; ++round) {
+        if (firstCutSelectionSlice(region, cadences, selectionCount, ext) < 0) {
+            break;                                       // no cut remains → done
+        }
+        std::vector<FunctionSlice> more;
+        std::vector<FunctionalCadence> moreCad;
+        const int fromTick = region.empty() ? 0 : region.back().endTick;
+        const ForwardSupply st = provider.supply(fromTick, more, moreCad);
+        if (st == ForwardSupply::Supplied && !more.empty()) {
+            region.insert(region.end(), more.begin(), more.end());              // append-only, forward
+            cadences.insert(cadences.end(), moreCad.begin(), moreCad.end());
+            continue;                                    // forward re-run over the enlarged region
+        }
+        if (st == ForwardSupply::Refused) {
+            denied = true;                               // a driver refusal is a DENIAL (item 10)
+        }
+        break;                                           // score boundary (clean) or refusal
+    }
+
+    // The final forward pass over the (possibly enlarged) region — a fresh forward inference, not a
+    // patch (§4). Appending forward slices affects only the edge-cut decisions; a decision the base
+    // pass closed (its forward context already satisfied within the region) re-resolves identically,
+    // so this finalizes the open edge decisions and NEVER re-opens a closed one (§8; proven by test).
+    ResolverResult result = resolveCarriedReadings(region, cadences, key, params);
+
+    // Output covers the ORIGINAL selection only — the reached-forward slices are evidence (§2).
+    if (static_cast<int>(result.readings.size()) > selectionCount) {
+        result.readings.resize(static_cast<size_t>(selectionCount));
+    }
+
+    // Provenance (item 10): a selection slice whose decision-context span is STILL cut on the final
+    // region resolved on truncated forward evidence. cueDenied only where the supplier REFUSED (a
+    // score-boundary stop is a clean truncation — nothing more existed to request).
+    const Progression finalProg = buildProgression(region);
+    const int lim = std::min(selectionCount, static_cast<int>(region.size()));
+    for (int i = 0; i < lim; ++i) {
+        if (isCutDecision(i, region, cadences, finalProg, ext)) {
+            result.readings[static_cast<size_t>(i)].clippedBySelectionEdge = true;
+            if (denied) {
+                result.readings[static_cast<size_t>(i)].cueDenied = true;
+            }
+        }
+    }
+    return result;
+}
+
 } // namespace mu::composing::analysis

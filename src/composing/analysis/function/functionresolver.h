@@ -78,6 +78,7 @@
 // by its unit tests. Byte-identical on production by construction; load-bearing when the
 // function layer engages (Phase 5d).
 
+#include <functional>
 #include <vector>
 
 #include "composing/analysis/chord/chordslicedecoder.h"  // the L4→L5 carried-reading contract
@@ -173,6 +174,13 @@ struct ResolvedReading {
     AmbiguityKind kind = AmbiguityKind::None;    ///< the L4 kind, echoed for transparency
     ResolutionBasis basis = ResolutionBasis::None;
     double functionConfidence = 0.0;             ///< §7 confidence from the deciding evidence (seed; firewall)
+
+    // ── Bounded-context denial/truncation provenance (design §3 item 10 / §5) ─────
+    // Set only by resolveCarriedReadingsExtending() on the selection slices whose
+    // decision-context span was cut by the selection edge; resolveCarriedReadings()
+    // never touches them (they stay false — the base resolver is byte-identical).
+    bool clippedBySelectionEdge = false;   ///< the decision-context span was cut by the selection edge
+    bool cueDenied = false;                ///< a forward-extension request was REFUSED (proceeds on truncated evidence)
 };
 
 // ── The resolver result (the readings + the §8 closure, for transparency/tests) ─
@@ -227,5 +235,62 @@ resolveCarriedReadings(const std::vector<FunctionSlice>& region,
                        const std::vector<FunctionalCadence>& cadences,
                        const ResolverKey& key,
                        const FunctionResolverParams& params = kDefaultFunctionResolverParams);
+
+// ── Bounded context: the pinned decision-context extent + the forward requester loop
+//    (design §5 / L5 §5.0; cowork_bounded_context_design.md §3/§4/§5). DORMANT ────────
+//
+// A slice's DECISION-CONTEXT SPAN extends forward until the FIRST of: (i) a cadence-anchored
+// function, (ii) a punctuation boundary, (iii) a hard bound of K slices / B beats (the §3.7
+// safety cap). A §5.5 resolution whose span is CUT by the selection edge before any of (i)–(iii)
+// holds REQUESTS a forward extension (the L1 extend → L2 re-slice → L3/L4 re-decode forward
+// re-run — abstracted here as a supplier so the dormant resolver stays hand-injectable). The
+// extension re-runs obey the §8 one-pass closure: appending forward slices may FINALIZE an open
+// (edge-cut) decision, but never re-opens a decision the base pass already closed — forward data
+// supply, not a back-edge. Denied (score boundary / driver refusal) ⇒ the decision resolves on
+// what it saw (its honest open mark) + the item-10 provenance. DORMANT: default OFF ⇒
+// resolveCarriedReadingsExtending == resolveCarriedReadings (no request, no provenance); no
+// production consumer.
+
+/// The forward-extension bound (§5 (iii)) + the dormant master switch (firewall — the exact K/B
+/// are precision-phase settings, only the existence of a cap is fixed).
+struct L5ForwardExtensionParams {
+    bool enableForwardExtension = false;   ///< OFF ⇒ no request, byte-identical to resolveCarriedReadings
+    int  maxForwardExtendSlices = 8;       ///< K — the decision-context span's hard bound in slices
+    int  maxForwardExtendBeats  = 0;       ///< B — the bound in beats (0 ⇒ slice bound only)
+};
+
+/// The outcome of one forward-extension request to the supplier.
+enum class ForwardSupply {
+    Supplied,       ///< more forward slices (+ cadences) were appended — re-run forward
+    ScoreBoundary,  ///< the score end was reached — nothing more exists (proceed truncated, NOT a denial)
+    Refused         ///< a driver-level safety cap refused the request (proceed truncated, a DENIAL)
+};
+
+/// The forward supplier (the L1-extend → L2 → L3/L4 forward re-run, abstracted). At engage this
+/// is wired to actually extend Layer 1 and re-decode; in tests it is injected by hand. Given the
+/// current forward edge tick, it appends the next batch of FunctionSlices (+ their cadences) and
+/// returns Supplied, or reports the score boundary / a refusal.
+struct ForwardExtensionProvider {
+    std::function<ForwardSupply(int fromTick,
+                                std::vector<FunctionSlice>& moreSlices,
+                                std::vector<FunctionalCadence>& moreCadences)> supply;
+};
+
+/// Resolve a SELECTION region's carried readings WITH the forward requester loop (§5). Identical
+/// to resolveCarriedReadings when @p ext.enableForwardExtension is OFF (or no supplier) — same
+/// readings, no provenance. When ON, a selection slice whose decision-context span is cut by the
+/// selection edge before (i)–(iii) drives a forward extension via @p provider; the region grows
+/// (append-only) and the resolution re-runs forward until a stop condition holds, the K/B bound is
+/// reached, or the supplier reports the score boundary / refuses. Output covers the ORIGINAL
+/// selection slices only (the extended context is evidence, never emitted); the edge-cut slices
+/// carry the item-10 provenance (clippedBySelectionEdge / cueDenied). @p region and @p cadences
+/// are taken BY VALUE so the loop appends to private copies.
+ResolverResult
+resolveCarriedReadingsExtending(std::vector<FunctionSlice> region,
+                                std::vector<FunctionalCadence> cadences,
+                                const ResolverKey& key,
+                                const ForwardExtensionProvider& provider,
+                                const FunctionResolverParams& params = kDefaultFunctionResolverParams,
+                                const L5ForwardExtensionParams& ext = {});
 
 } // namespace mu::composing::analysis
