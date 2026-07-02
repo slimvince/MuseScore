@@ -2367,6 +2367,104 @@ static std::string runKeyModeDecode(const Score* score, const std::string& stem,
 }
 
 // ══════════════════════════════════════════════════════════════════════════
+// Layer 3 REACH-BACK A/B — the flag-ON vs flag-OFF range-query measurement
+// (--reachback-ab). HELD: for Cowork/user ratification of L3 reach-back ACTIVATION.
+//
+// DIAGNOSTIC ONLY: builds a set of P3-style interior RANGE selections (single-measure,
+// skipping the opening measure so reach-back has earlier context to reach) and runs the
+// SHARED region analyzer over each range twice — reachBack OFF (production) and reachBack
+// ON (the gated capability) — reporting, per range, whether the emitted analysis DIFFERS
+// and the wall-time of each. It never reaches analyzeScore's corpus path, so production /
+// the corpus gate are byte-identical. Activation of reach-back on the live range-query path
+// is a SEPARATE ratification (this only measures it). See cowork_layer3_reachback_design.md.
+// ══════════════════════════════════════════════════════════════════════════
+static std::string runReachBackAB(Score* score, const std::string& stem,
+                                  const analysis::ChordAnalyzerPreferences& chordPrefs,
+                                  const analysis::KeyModeAnalyzerPreferences& keyPrefs,
+                                  const std::set<size_t>& excludeStaves)
+{
+    namespace cra = mu::composing::analysis::region;
+    using mu::composing::analysis::HarmonicRegion;
+
+    auto baseOpts = [&]() {
+        cra::AnalyzeRegionsOptions o;
+        o.granularity = analysis::HarmonicRegionGranularity::Smoothed;
+        o.onsetBoundaryThreshold = 0.25;
+        o.excludeLookAheadOnDenseStart = true;
+        o.pass1MinDistinctPcsForCandidate = 1;
+        return o;
+    };
+
+    // P3-style range set: interior single-measure selections (skip measure 1 — its opening IS
+    // the score start, so reach-back has nowhere to go there). Bounded for a quick diagnostic.
+    std::vector<std::pair<int, int>> ranges;
+    int mIdx = 0;
+    for (const Measure* m = score->firstMeasure(); m && ranges.size() < 24;
+         m = m->nextMeasure(), ++mIdx) {
+        if (mIdx == 0) { continue; }
+        const int a = m->tick().ticks();
+        const int b = a + m->ticks().ticks();
+        if (b > a) { ranges.emplace_back(a, b); }
+    }
+
+    auto sameAnalysis = [](const std::vector<HarmonicRegion>& x,
+                           const std::vector<HarmonicRegion>& y) {
+        if (x.size() != y.size()) { return false; }
+        for (size_t i = 0; i < x.size(); ++i) {
+            if (x[i].startTick != y[i].startTick || x[i].endTick != y[i].endTick) { return false; }
+            if (x[i].keyModeResult.tonicPc != y[i].keyModeResult.tonicPc) { return false; }
+            if (x[i].keyModeResult.isMajor() != y[i].keyModeResult.isMajor()) { return false; }
+            if (x[i].chordResult.identity.rootPc != y[i].chordResult.identity.rootPc) { return false; }
+            if (x[i].chordResult.identity.quality != y[i].chordResult.identity.quality) { return false; }
+        }
+        return true;
+    };
+
+    std::ostringstream os;
+    os << "{\n  \"stem\": \"" << jsonEscape(stem) << "\",\n  \"ranges\": [";
+    int changed = 0, leadKeyChanged = 0;
+    double offMsTotal = 0.0, onMsTotal = 0.0;
+    for (size_t r = 0; r < ranges.size(); ++r) {
+        const Fraction a = Fraction::fromTicks(ranges[r].first);
+        const Fraction b = Fraction::fromTicks(ranges[r].second);
+        cra::AnalyzeRegionsOptions off = baseOpts();
+        cra::AnalyzeRegionsOptions on = baseOpts();
+        on.reachBack.enabled = true;
+        on.reachBack.maxReachSteps = 8;             // hard bound
+        on.reachBack.incrementTicks = 0;            // one measure (L3's natural unit)
+        on.reachBack.minOpeningConfidence = 0.0;    // the primary "uncertain" trigger only
+
+        const auto t0 = std::chrono::steady_clock::now();
+        const auto offR = cra::analyzeRegions(score, a, b, excludeStaves, chordPrefs, keyPrefs, off);
+        const auto t1 = std::chrono::steady_clock::now();
+        const auto onR = cra::analyzeRegions(score, a, b, excludeStaves, chordPrefs, keyPrefs, on);
+        const auto t2 = std::chrono::steady_clock::now();
+
+        const double offMs = std::chrono::duration<double, std::milli>(t1 - t0).count();
+        const double onMs = std::chrono::duration<double, std::milli>(t2 - t1).count();
+        offMsTotal += offMs;
+        onMsTotal += onMs;
+        const bool diff = !sameAnalysis(offR, onR);
+        if (diff) { ++changed; }
+        if (!offR.empty() && !onR.empty()
+            && offR.front().keyModeResult.tonicPc != onR.front().keyModeResult.tonicPc) {
+            ++leadKeyChanged;
+        }
+        if (r) { os << ","; }
+        os << "\n    {\"start\": " << ranges[r].first << ", \"end\": " << ranges[r].second
+           << ", \"changed\": " << (diff ? "true" : "false")
+           << ", \"offMs\": " << offMs << ", \"onMs\": " << onMs << "}";
+    }
+    os << (ranges.empty() ? "]" : "\n  ]") << ",\n";
+    os << "  \"rangeCount\": " << ranges.size() << ",\n";
+    os << "  \"changedCount\": " << changed << ",\n";
+    os << "  \"leadKeyChangedCount\": " << leadKeyChanged << ",\n";
+    os << "  \"offMsTotal\": " << offMsTotal << ",\n";
+    os << "  \"onMsTotal\": " << onMsTotal << "\n}\n";
+    return os.str();
+}
+
+// ══════════════════════════════════════════════════════════════════════════
 // Layer 4 (Increment A) — the per-slice CHORD-SYMBOL DECODER diagnostic
 // (--decode-chords)
 //
@@ -3112,6 +3210,7 @@ int main(int argc, char* argv[])
     bool validateSlices = false;      // Layer-2 corpus slice validation (default OFF = no analysis touched)
     bool decodeKeyMode = false;       // Layer-3 key/mode sequence decoder (default OFF = no analysis touched)
     bool decodeChords = false;        // Layer-4 per-slice chord decoder (default OFF = no analysis touched)
+    bool reachBackAB = false;         // Layer-3 reach-back flag-ON/OFF range-query A/B (default OFF; HELD)
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
@@ -3168,6 +3267,8 @@ int main(int argc, char* argv[])
             decodeKeyMode = true;
         } else if (a == "--decode-chords") {
             decodeChords = true;
+        } else if (a == "--reachback-ab") {
+            reachBackAB = true;
         } else if (a == "--dump-fullspine") {
             dumpFullSpine = true;
         } else if (a == "--chord-no-membership") {
@@ -3483,6 +3584,24 @@ int main(int argc, char* argv[])
         }
         const std::string report = runChordDecode(score, stem, chordPrefs, keySigFifths, keyMode,
                                                    chordDecoderPrefs, excludeStaves);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── Layer-3 reach-back A/B (diagnostic; returns BEFORE the corpus path) ──
+    // Runs the SHARED region analyzer over interior P3-style ranges with reach-back OFF
+    // vs ON and reports per-range deltas + wall-time. HELD for activation ratification;
+    // never reaches analyzeScore, so production / the corpus gate are byte-identical.
+    if (reachBackAB) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::string report = runReachBackAB(score, stem, chordPrefs, keyPrefs, excludeStaves);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
