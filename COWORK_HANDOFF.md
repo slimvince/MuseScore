@@ -1,6 +1,118 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-06-26 (L4 build complete + dormant; engage-with-L5 ratified; L1–L4 review in progress).*
+*Written 2026-05-14. Last updated 2026-07-02 (Cowork docs-only: **the external architecture review is DELIVERED and its amendments RATIFIED** — see the note at the top of the block immediately below).*
+
+---
+
+## ★★★ REVIEW HANDOVER — for a full external review by another Claude (Cowork), prepared 2026-07-01
+
+**★ REVIEW DELIVERED + AMENDMENTS RATIFIED (2026-07-02).** The review this block prepared for is done:
+`cowork_architecture_review_2026_07.md` (18 findings F-1…F-18; verdict: sound, no redesign; two HIGH coherence gaps —
+F-1 no cross-layer confidence/calibration contract, F-2 "engage deferred indefinitely" unqualified; a Tristan
+worst-case simulation grounding a capability track). **User ratified all ten amendments A-1…A-10** plus **corpus
+expansion** (gate-grade jazz GT + DCML `wagner_overtures`/Wagner-class + more non-Bach/non-Baroque in general). The
+amendments are slotted into `docs/implementation_roadmap.md` (the "AMENDMENTS RATIFIED" block) and the affected layer
+specs' §15 sections. **Sequencing:** A-1 (confidence contract) + A-2 (engage criteria + retirement map) come BEFORE
+the CC implementation↔spec gap-analysis (they change what "spec" means for it); the gap-analysis instruction carries
+the review's five source-verification riders (§9 closing paragraph). The block below is retained as the review's
+original map.
+
+**Why this block exists.** A fresh Cowork session (a stronger model) will **review the whole architecture and its
+documentation**. This block is the reviewer's map: what to read, in what order, the current state, what changed most
+recently, and the known-pending items — so nothing reads as a surprise or as silent drift.
+
+**Scope of the review.** The **architecture + its documentation** — coherence, completeness, one-responsibility-per-layer
+(separation of concerns), cross-document consistency, and whether the design decisions hold up. It is **NOT** an
+implementation/code audit — that is CC's job and is **deliberately deferred** (the per-layer *acceptance* audit is gated
+on the two OWED refactors below). It is **not** inference/accuracy tuning (standing rule: no inference problem-fixing
+until refactoring/architecture/algorithm are complete).
+
+**Reading order (the map).**
+1. **`ARCHITECTURE.md` — canonical.** Especially §2 (principles); §2.14 (layered+iterative, with its superseded/reconciled
+   block); **§2.15** (the core finest-grain principle + the cross-cutting contracts + the **span typology** + the **new
+   layer-taxonomy bullet**: representation / inference / assembly, "six is the current spine, *not a cap*," the three
+   co-equal admission gates); §3.3 (per-layer module map + build status).
+2. **`docs/implementation_roadmap.md`** — the single stage tracker; the **★★★ CURRENT STATE + FORWARD INCREMENT PLAN**
+   table + the 6-step forward sequence.
+3. **`STATUS.md`** (top entries) — latest session state + the gate baseline (BIR **53/24/53**).
+4. **This `COWORK_HANDOFF.md`** — the STANDING RULES + THE WORKING METHOD (below).
+5. **Per-layer / component design docs:** L1 `cowork_layer1_note_model_design.md` · L2 `cowork_layer2_slicing_design.md` ·
+   L3 `cowork_layer3_keymode_design.md` · L4 `cowork_layer4_chordsymbol_design.md` · L5 `cowork_layer5_function_design.md`
+   · L6 `cowork_layer6_grouping_design.md` · L1.5 `cowork_phrase_boundary_design.md`. Harmonic Vocabulary:
+   `cowork_progression_schema_dictionary.md` (the built component) + `cowork_progression_schema_design.md` (the recognition
+   consumer — designed, not built). Idioms/taxonomy: `cowork_idiom_discovery_findings.md`,
+   `cowork_style_taxonomy_proposal.md`, `cowork_idiom_entry_mapping.md`. Polyphony/counterpoint research:
+   `cowork_polyphony_phrase_harmony_research.md`. `cowork_target_architecture.md` is **demoted** to a rationale reference
+   (ARCHITECTURE.md wins on any disagreement).
+
+**Current state (design-level snapshot).**
+- **Forward-only harmonic spine:** L1 notes → L2 slicing → L3 key/mode → L4 chord → L5 function → L6 grouping, plus the
+  **L1.5** derived-view primitives. **Live:** L1, L2, L3. **Built + dormant:** L4, L5. **Design-only:** L6.
+- **Harmonic Vocabulary** (encyclopedia): built + dormant, a separate *queried knowledge* component. **Recognition
+  consumer** (wires it into the L5 prior + L6 annotation): designed, not built.
+- **Idiom taxonomy:** 5 empirical idioms + **voice-leading confirmed as a 2nd orthogonal axis** (its own future layers —
+  the home of melodic MT phrases and chord voicing/arrangement).
+- **Layer taxonomy (new this session — ARCHITECTURE §2.15):** the layers span three kinds of work — **representation**
+  (L1/L1.5/L2), **inference** (L3/L4/L5), **assembly** (L6). "Six" is the *current* harmonic spine, **not a cap**; growth
+  is by axis and by component. A new layer/axis is admitted only on three **co-equal** gates: **(1) separation of
+  concerns** (a structural mandate, sufficient on its own), **(2) verifiability**, **(3) proportionality**.
+- **Two OWED structural refactors** (deferred, tracked — see the standing block below): (Stage 3.5) split
+  `chordanalyzer.cpp` along the layer seams; (Stage 5) dissolve the post-hoc Gates A–L into fitted weights. The
+  **per-layer acceptance audit is gated on both.**
+- **Gate baseline:** BIR **53/24/53** (Baroque/Jazz/Default), held byte-identical; the frozen reference corpus is the
+  regression material (the new idiom corpora are research-only).
+
+**This session's doc deltas (2026-07-01, Cowork, docs-only — no `src/`/build/test).**
+- **L6 spec:** grouping unit renamed **phrase → punctuation-span** (the DCML `{}` surface-punctuation-delimited grouping
+  span); "phrase" is now reserved for the accepted **melodic phrase [MT]**, deferred to the voice-leading/melody axis.
+  Folded the polyphony deep-search grounding (§2/§14); added the §3 boundary **provenance/scope** output requirement.
+- **New:** `cowork_polyphony_phrase_harmony_research.md` (cited) — the field analyses harmony at the onset/verticality
+  level, models phrase/cadence as *one texture-wide layer* (not per-voice), treats voice separation as a *separate* task,
+  and absorbs counterpoint via an explicit **non-chord-tone filter** (recorded as a future **L4** lever).
+- **L1.5 primitive (§11-5):** marker **scope** refinement — global (barline / key-sig / tempo / all-voice-rest) vs
+  per-part (breath / caesura / fermata); per-part markers should reach the texture boundary via *voice-coincidence*, not
+  an unconditional spike; carry cue+scope **provenance**.
+- **L4 (§2):** the boundary as a **window-truncation** prior (interior analogue of the score-boundary truncation).
+- **L5 (§11):** the boundary-prior is already the cadence phrase-gate — cross-referenced.
+- **Roadmap (step 4):** the voice-leading-axis research foundation + the non-chord-tone L4 lever.
+- **ARCHITECTURE §2.15:** the layer-taxonomy bullet + span-typology reconciled (phrase → punctuation-span).
+
+**Known-pending doc items (flagged so the reviewer does not read them as drift).**
+- **Span-name propagation (phrase → punctuation-span):** DONE in L6 (throughout), ARCHITECTURE §2.15 (span typology), and
+  L5 §5.0 (the span *definition*). **PENDING:** the diffuse *boundary-sense* "phrase" usages elsewhere. The distinction is
+  deliberate: the grouping **span** = punctuation-span; the **boundary / tick / gate** legitimately keeps the
+  **phrase-boundary primitive** name (a Layer-1.5 code identifier). Mapping is 1:1. Tracked in `cowork_layer6_grouping_design.md` §15-7.
+- **Optional sibling rename:** `sequence-span → schema-span` (kills the "sequence"-device ambiguity; makes the span family
+  fully criterion-named: key / punctuation / schema). **Held** — it also touches `cowork_progression_schema_design.md`;
+  user had no preference. Reviewer may decide.
+- **The two OWED refactors + the per-layer acceptance audit** — implementation-side, not this review's job.
+- **Doc-consistency caveat:** this pass reconciled the docs *changed this session* and the canonical span vocabulary; it
+  was **not** an exhaustive 60-document cross-check. The reviewer should treat any other "phrase"/span wording it meets
+  against the mapping above.
+
+**Standing constraints the reviewer must respect** (full statements in the blocks below): **fork-only** (push
+`origin` = `slimvince/MuseScore`, **never** `upstream` = `musescore/MuseScore`); **forward-only** (a backward edge only as
+a surfaced/measured/gated exception); **verify-at-source** (no fact from memory); **never bash for local files** (file
+tools only); **no inference problem-fixing** until refactoring/architecture/algorithm are complete; **all documentation in
+sync**.
+
+---
+
+## ⛔ STANDING RULE: INSTRUCTIONS ARE WRITTEN JUST-IN-TIME — ONE DISPATCHED AT A TIME (user mandate 2026-07-02)
+
+**Do NOT write CC instructions ahead of need.** Pre-written instructions go stale (their premises change under
+them), risk being skipped, and risk out-of-order execution. The rules:
+1. **At most ONE instruction is dispatched/being-executed at a time** (single CC, single worktree unless the user
+   explicitly sets up a second).
+2. **The NEXT instruction is written only when its predecessor's report is ratified** and it is actually the next
+   dispatch — never speculatively.
+3. **The dispatch QUEUE is a plan, not files:** upcoming work is recorded as plan lines (roadmap / STATUS "next"),
+   not as pre-written instruction files.
+4. **Any instruction file that exists but is not the active dispatch carries a `⏸ PARKED` banner** and MUST be
+   revalidated by Cowork against the then-current STATUS/HEAD immediately before dispatch, receiving a dated
+   DISPATCH note. CC must not execute a parked instruction without that note.
+   *(Parked as of 2026-07-02: `cc_instruction_gap_analysis_spec_vs_impl.md`,
+   `cc_instruction_corpus_wave1_dlc_onboarding.md`. Active: the E0 instruction + its carry-cap addendum.)*
 
 ---
 

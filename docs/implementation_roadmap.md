@@ -33,6 +33,186 @@ or smeared across the post-hoc gate layer). Applied per layer as Stages 4–6 la
 
 ---
 
+**★★★ CURRENT STATE + FORWARD INCREMENT PLAN (updated 2026-06-30).** The architecture is the **forward-only six-layer**
+target (canonical: `ARCHITECTURE.md`): L1 notes → L2 slicing → L3 key/mode → L4 chord → L5 function → L6 grouping, plus
+the **Harmonic Vocabulary** (encyclopedia — an independent queried component) and a **recognition consumer** that wires
+it into L5/L6. Every analysis layer is **built dormant and validated byte-identically against the frozen references**
+(the legacy path + DCML ground truth); the production switch ("engage") is **deferred indefinitely**.
+
+| Layer / component | Status | Note |
+|---|---|---|
+| **L1 — note model** | ✅ Built + **LIVE** | lossless tie-resolved note model + derived views |
+| **L2 — change-point slicing** | ✅ Built + **LIVE** | consumed by L3 (`regionanalyzer.cpp:579`) |
+| **L3 — key/mode** | ✅ Built + **LIVE** | `KeyModeSequenceDecoder` — first rebuilt decision layer to go live |
+| **L4 — chord (per-slice decoder)** | ✅ Built + **DORMANT** | not wired; engages with L5 |
+| **L5 — function** | ✅ Built + **DORMANT** | Phase 5c complete; uses its own **§5.0 pairwise** licensed-progression grammar — **NOT** the encyclopedia |
+| **L6 — grouping** | ◻ **DESIGN v1** (`cowork_layer6_grouping_design.md`) | the next structural build |
+| **Harmonic Vocabulary** (encyclopedia) | ✅ Built + **DORMANT** | separate queried component: multi-chord progressions + substitutions |
+| **Recognition consumer** (encyclopedia → L5 prior + L6 annotation) | ◻ **DESIGNED, not built** (`cowork_progression_schema_design.md`) | the step that makes L5 actually *use* the encyclopedia |
+| **Idiom taxonomy + voice-leading axis** | ✅ **EMPIRICAL STUDY COMPLETE** | 5 idioms (`cowork_style_taxonomy_proposal.md`); voice-leading confirmed a 2nd orthogonal axis (`cowork_idiom_discovery_findings.md`) |
+
+**Forward increment sequence** (ratified order: encyclopedia → L6 → wire consumer; the idiom + voice-leading work folds in):
+1. **StyleTag swap** — re-tag the encyclopedia entries with the five idioms (`cowork_idiom_entry_mapping.md`) and swap the
+   placeholder `{Baroque, Jazz, Default}` enum. *Mechanical; the per-entry mapping is written; CC handoff ready.*
+2. **L6 (grouping)** — ratify the v1 design → build dormant, byte-identical.
+3. **Recognition consumer** — build + wire: the encyclopedia becomes L5's multi-chord disambiguation prior (the §5.5
+   resolver + the §8 forward-override) and L6's sequence-span annotation. **This is the step where L5 takes advantage of
+   the encyclopedia AND the five idioms** (the active idiom-mixture weights the matches). Until this exists, L5 does not
+   touch the encyclopedia.
+4. **Voice-leading layer (axis 2)** — the fuller voice-leading-idiom discovery (the pilot confirmed the axis, ARI 0.68) →
+   the spec's voice-leading layer; it claims the voice-leading-defined catalog entries (galant schemata, line cliché).
+   **This is also the home of the accepted (melodic, broadly monophonic) music-theory phrase** — the linear,
+   text-coinciding-when-sung unit, and the **concurrent, overlapping, out-of-phase per-voice phrases** of contrapuntal
+   textures (fugues) — which are a *melodic/voice-leading* construct, **not** L6's flat harmonic-grouping span (the L6 §0
+   terminology correction). **Research foundation to lean on** (`cowork_polyphony_phrase_harmony_research.md`, deep search
+   2026-07-01): voice recovery from implied polyphony (Chew & Wu contig-mapping, VISA, Temperley "Voice and Stream", the
+   IJCAI-2023 link-prediction GNN, `partitura`/`music21` voice tools) + per-line melodic phrase segmentation (the DNN
+   segmenter, GTTM grouping rules). No published system models overlapping per-voice phrases for *harmonic* analysis, so
+   this axis is genuinely separate from the harmonic pipeline.
+   - **★ Downstream L4 lever recorded here (proper layer = L4 emission), not built now (standing rule).** The field
+     absorbs the counterpoint / implied-harmony difficulty via an explicit **non-chord-tone filter** that excludes
+     passing/non-functional notes before harmonic labelling (AnalysisGNN's non-chord-tone module; Contrapunctus's
+     passing/neighbour/suspension/embellishment classifier). This is an **emission-level (L4)** lever informed by the
+     voice-leading axis — consistent with the meta-principle that precision lives in emission + the functional layer, not
+     in search — and a natural candidate for the ratified **gated joint step**. Logged as a future L4/joint-step item;
+     **no inference problem-fixing until refactoring / architectural design / algorithmic completion is done.**
+5. **Idiom auto-detection + instrumentation prior** — read the idiom-mixture off a score's *committed* progressions
+   (+ instrumentation as a context prior) to replace/augment the manual preset. **An inference feature → deferred until
+   the refactoring / architectural / algorithmic build is complete (standing rule).**
+6. **Engage** — wire the dormant layers (L4/L5/L6 + consumer) into production, retire the legacy spine, seal coverage.
+   **Deferred indefinitely** — the mission is build + validate every layer dormant against the frozen references first.
+
+**Standing constraints (carried):** no inference problem-fixing until all refactoring / architectural design /
+algorithmic completion is done; all amendments in their proper layer; the two OWED structural refactors (Stage 3.5 split
++ Stage 5 gate-dissolution, below) surfaced at every checkpoint; fork-only distribution (never `upstream`).
+
+**★ THE TEMPORAL-EXTENSION COMPLETION CLUSTER (named 2026-07-02, user question at L6 sign-off).** The §2.15
+bounded-context machinery ("we are at the edge of what we've read → request more score") is specified across the spine
+but **exercised nowhere**; it activates as ONE cluster at engage. Per-layer status: **L1** `extend()` specified+coded,
+zero callers · **L2** re-slice-on-extend specified+coded (CP1–CP7); incremental form deferred · **L3** reach-back
+trigger specified+coded, gated OFF · **L4** trigger specified, NOT coded — silently truncates (gap-analysis #5, owed
+at engage) · **L5** the need is named but the recognition rule (when/how much look-ahead) is the §15-3 engagement pin —
+un-pinned, hence un-coded · **L6** edge-truncation provenance + `extension-cue` surfacing (post-sign-off amendment,
+2026-07-02). **The system-level gap:** the cues are per-layer; the receiving POLICY (who widens the selection, loop
+bound, convergence) exists only for L3's reach-back loop — a unified extension-orchestration contract is owed with this
+cluster (it is what makes R1–R3 real product properties). ~~No item here blocks the dormant builds; the cluster rides
+G1/E-steps.~~ **★ SUPERSEDED SAME DAY (user directive, 2026-07-02): the cluster is now THE next structural work and a
+HARD GATE — L6 (incl. its TSV-oracle infrastructure; that instruction is WITHDRAWN/PARKED) is PROHIBITED until the
+extension behavior is specified → CODED → REGRESSION-TESTED for L1–L5. ★ CONSOLIDATION (same day, user directive
+against doc sprawl): the pre-existing `cowork_bounded_context_design.md` (DRAFT, never signed — found to already
+specify the request→supply→bounded-recompute protocol, superiorly: "the amount is discovered, not chosen",
+requester-owned convergence loops) is THE one cross-layer extension spec; the day's duplicate
+`cowork_temporal_extension_contract.md` is KILLED into it (merged: L5 discovery rule + PINNED decision-context
+extent [also folded into L5 spec §5.0], L4 decision-relevance sharpening, denial provenance, gate-proof framing,
+the §11 acceptance list = the L6 gate). Sequence: SIGN `cowork_bounded_context_design.md` → coding+test instruction
+(just-in-time) → verify → resume L6.**
+
+**★★ ENGAGE CRITERIA + RETIREMENT MAP (RATIFIED user 2026-07-02; FOLDED here from `cowork_engage_criteria.md`
+2026-07-02 — that file is now a tombstone; this roadmap is the single home).** Replaces "engage deferred
+indefinitely" with "deferred until these CRITERIA (date open)"; E3 is its own user-ratification event.
+- **Gates (all must hold):** **G1** spine complete: L4+L5 dormant-validated (✅) + **L6 built dormant** + the A-1
+  contract as-built deltas closed (D-L3a remains). **G2** (measured by the E0 instrument): zero new class-(b) on the
+  case-identity gate; class-(a) per the two-tier policy; **RN vs DCML ≥ legacy on the granularity-robust unit**, all
+  presets; correct-abstention scored separately from wrong commits. **G3** perf: p95 ≤ legacy×1.10 (✅ measured
+  ~3.7× faster). **G4** coverage sealed + snapshot-strategy declared in advance. **G5** docs synced same increment.
+  **G6** user ratifies E3.
+- **Staged plan:** **E0** dormant full-spine measurement — ✅ DONE 2026-07-02 (E0/E0′/E0″ arc; G2 NOT met today;
+  residuals named: L4 NCT ≈45% of the EXACT cap, bass/inversion ≈42%, θ-calibration [D-FS], per-slice key
+  feed-forward, L6). **E1** wire default-OFF (byte-identical proof) → **E2** measured A/B + the **broad-corpus
+  pre-engage reference frozen at the engage-candidate HEAD** (generalization test on the expanded library;
+  dev/held-out discipline: held-out never tuned against, demotion only by recorded decision — the OQ-C1 split,
+  registry `split` field) → **E3** default-ON (user event, one revertible commit) → **E4** retirements (below) →
+  **E5** coverage seal + doc flip + deliberate gate re-baseline.
+- **Retirement map (nothing retires by silence):** R1 legacy chord competition + Gates A–L (E4, or Stage 5 if
+  first — the OWED refactor #2); R2 legacy circular cadence detector (needs the two notation-bridge call-site
+  migrations first — gap-analysis Rider 4); R3 `cadencekeyanchor` kept-as-diagnostic through E4, retire post-E5
+  review; R4 dual tpc reader → the shared spelling view (rides R1); R5 `resolveKeyAndModeRanked`+`collectPitchContext`
+  shrink (P4-redecode; seed S2 at E4; grading baseline may persist as diagnostic); R6 segment-first spine (E4);
+  R7 `harmonicfunctionlayer` rename (rides R1); R8 legacy confidence sentinels (rides R1/R5); R9 `chordanalyzer.cpp`
+  file-split (OWED refactor #1) AFTER E4 removals — split once; R10 batch-region gate superseded by the robust unit
+  as primary (with G2/Stage 5), case-identity + two-tier policy carry over.
+- **Wording sweep** ("indefinitely" → "until the criteria above, date open") rides the next docs commit.
+
+**★★ EXTERNAL ARCHITECTURE REVIEW — AMENDMENTS RATIFIED (user, 2026-07-02).** The full external review
+(`cowork_architecture_review_2026_07.md` — 18 findings F-1…F-18, no structural fault, no redesign) is delivered and its
+ten amendments **A-1…A-10 are ratified**. How they slot into this plan (design/plan-level; none is code; every build
+step stays measure-first + ratification-gated):
+
+- **Before the CC implementation↔spec gap-analysis (the next CC task):** **A-1** — the **cross-layer confidence &
+  calibration contract** — **✅ WRITTEN (DRAFT, ratification-gated): `cowork_confidence_contract.md`** (the two-class
+  model M/P, boundary-normalization rules, the §4 comparison frames stating the §8 override arithmetic once, the C3
+  joint-step trigger definition, the D-L5a/D-L3a/D-LEG/D-INV as-built close-outs — F-1/F-16); **A-2** — **engage
+  CRITERIA + the retirement map** — **✅ WRITTEN (DRAFT, ratification-gated): `cowork_engage_criteria.md`** (gates
+  G1–G6, staged plan E1–E5 with E3 the user event, retirement map R1–R10, the "indefinitely" wording sweep — F-2/F-5).
+  Both change what "spec" means for the gap-analysis, hence they precede it. The gap-analysis instruction is
+  **✅ READY: `cc_instruction_gap_analysis_spec_vs_impl.md`** (read-only; per-layer gap tables + the five review
+  riders + the Rider-6 confidence inventory) — **dispatch after A-1/A-2 ratification**.
+  **★ A-1 + A-2 RATIFIED (user, 2026-07-02) → the gap-analysis instruction is DISPATCHABLE.** At ratification the
+  user added **E0 — the dormant full-spine pre-engage measurement** (`cowork_engage_criteria.md` §3): measure the
+  complete dormant chain L1→L2→L3→**L4-decoder**→L5 end-to-end vs legacy AND vs DCML (Step M covered only the legacy
+  substrate; the Phase-5b 86-class-(b) decoder override-duty question is answered here), read-only/byte-identical,
+  better/worse reported per respect (root/RN, key S1/S2, modulation, abstention + correct-abstention, class-(b)/(a)
+  identity deltas, over-trigger families, wall-time). Needs a small chaining harness — **its own CC instruction,
+  after the gap-analysis**; the E0 instrument then serves E2.
+  **★ E0 instruction WRITTEN + READY: `cc_instruction_e0_fullspine_measure.md`** (Task A: the default-OFF
+  `--dump-fullspine` chaining harness, byte-identity-gated, one local unpushed commit; Task B: the nine-measure
+  read-only grading incl. the Phase-5b 86-case override-duty answer and the contract D-INV confidence readout).
+  Intended dispatch order: gap-analysis first, then E0.
+- **★ THE SCORE/CORPUS CENSUS (2026-07-02): `cowork_score_census.md`** — the once-and-for-all, enumerated-to-closure
+  census (two evidence appendices: `cowork_score_census_gt_draft.md` ≈85 distinct GT corpora,
+  `cowork_score_census_plain_draft.md` ≈52 score collections). Headlines: **~30 unused DCML DLC sub-corpora are
+  format-identical to our parser** (beethoven_sonatas, wagner_overtures, liszt, rachmaninoff, monteverdi,
+  bartok, schulhoff-jazz …, style span 1600–1930, zero new tooling); cadence GT exists (algomus ×2, Sears, + cadence
+  labels ALREADY in our cloned DCML Mozart TSVs); TAVERN's dual-annotator data = A-1 Class-P calibration material;
+  KMT targets the key/modulation residual; HookTheory/CoCoPops/OpenEWLD = the score-aligned jazz/pop GT path.
+  **Standing process rule instituted:** "a new corpus was discovered" is a **census defect** — add its CONTAINER and
+  re-enumerate to closure; yearly re-sweep (mirdata loaders + ismir/mir-datasets + new ISMIR). Decision tiers G/J/C/S/X
+  proposed in census §5 (user disposes); CC riders in census §6 (registry schema + the clone/pin instruction).
+  **★ Standing trigger (user, 2026-07-02): idiom re-discovery rides each corpus wave.** After each material corpus
+  change (each wave; the yearly census re-sweep), re-run the `idiom_discovery/` pipeline under the v1 protocol
+  (multi-seed stability, cap-robustness, source-leakage/ARI confound test) on the **dev set + external research
+  corpora only** (held-out material excluded — discovery outputs become shipped parameters). Primary question:
+  do the five ratified idioms **reproduce**? Falsifiable v2 edges: does #5 Chromatic-coloristic split (the K=6
+  candidate) under the new chromatic mass; where do Wagner/Liszt land (#2 vs #5 — the era≠axis re-test); does
+  early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified
+  taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a
+  migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave.
+  **★ Wave-1 instruction WRITTEN + QUEUED (2026-07-02): `cc_instruction_corpus_wave1_dlc_onboarding.md`** — complete
+  the DLC container (onboard the ~30 missing sub-corpora, hash-pinned, research-tier, per-style baselines, Tristan
+  presence check), registry v2 schema, and the Mozart-TSV cadence-label inventory (Task C). **Single-CC sequencing
+  (user, 2026-07-02): one CC does both tracks — dispatch Wave 1 AFTER the E0 report lands** (same worktree, no
+  parallel instructions). Gate untouched by construction (no `src/`, frozen gate corpus byte-untouched,
+  end-of-run 53/24/53 reproduction as the no-contamination proof).
+- **Corpus expansion (user-ratified 2026-07-02 — jazz + Wagner-class + more non-Bach/non-Baroque in general):**
+  onboard **DCML `wagner_overtures`** (v2.1, Distant Listening Corpus — exists [verified]; Tristan-Prelude presence to
+  confirm at the repo) as **research-tier** stress material via the existing sub-repo pipeline (clone + pin +
+  validation script per `tools/REPRODUCIBILITY.md`); inventory the rest of the Distant Listening Corpus for further
+  late-romantic/chromatic sub-repos; identify **gate-grade jazz GT** (candidates from the idiom study: JHT, ChoCo,
+  McGill Billboard — currently research-only) and name its validation path (**A-7**: apply the "empirically-unvalidated"
+  mark to the Jazz preset + idioms 3–5 until then). New corpora are research/measurement material first — the frozen
+  Bach gate corpus stays the regression gate until a re-baseline is deliberately ratified.
+- **Metric:** **A-8** — move the gate to the **granularity-robust union-of-boundaries unit** (already built, L0–L1
+  primitives), keeping the case-identity + two-tier class-(a)/(b) policy. Sequenced with Stage 5 (it is that stage's
+  mandated metric), may be pulled earlier as a deliberate re-baseline event.
+- **Capability track (Tristan-derived; design-first, measure-first; after or interleaved with L6 + the recognition
+  consumer):** **A-3** dominant-implication key evidence in the L3 emission (L3 §15); **A-4** cadence-less
+  key-confirmation channels + enharmonic key-span identity in L5 §5.3 (L5 §15); **A-5** the phrase-gate fallback for
+  flat boundary profiles (L5 §15). The **NCT-filter L4 lever** (step 4 above) and the **voice-leading axis** are
+  confirmed by the review as the known path to the romantic repertoire — priority upgraded, sequencing unchanged.
+- **At the recognition-consumer build:** **A-6** — decide the progression-knowledge store question (fold the §5.0
+  pairwise motions into the Vocabulary, or two stores by declared design) — recorded in
+  `cowork_progression_schema_design.md`.
+- **Riders (fold into the next natural doc/product passes):** **A-9** product stance for dense-abstention output +
+  out-of-tonal-domain input; **A-10** L1.5 consolidated ownership page, the L4 membership tie-breaker recorded as an
+  idiom-calibrated constant, **B-swap readiness pinned as a design property**, optional STATUS entry header schema.
+
+---
+
+*(The "upstream-first" snapshot below is the 2026-06-21 state — now **superseded** by the current-state table above
+(L3–L6 are built; the encyclopedia, idioms, and voice-leading axis are new). Kept for the L1/L2 build evidence; the
+Stage 0–7 plan further below is the original 2026-06-10 decoder-era roadmap, Stages 0–2 done and Stages 3–7
+reorganized into the per-layer rebuild — preserved for traceability and the still-OWED items.)*
+
 **★★ UPSTREAM-FIRST LAYER REBUILD (2026-06-21) — the per-layer execution of the ratified target.**
 The 4-layer target (`cowork_target_architecture.md`) is being built upstream-first, one layer at a
 time, each with its own design → audit → build → coverage cycle:

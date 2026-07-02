@@ -133,6 +133,17 @@ tertian chord, or marked "uncertain," never as the unrecognized construction.
   slice at the very start or end of the piece simply has one fewer neighbour; a slice at the edge of a *selection* (not
   of the score) reaches for the missing context rather than guessing without it. This contract is fixed now so the
   layer is built to bounded context, never to "the whole score is always loaded."
+- **A strong texture boundary truncates the window — an interior analogue of the score-boundary case (architectural
+  note, recorded 2026-07-01; not built now).** The stop condition above is *harmonic* (the first slice inconsistent with
+  the reading). A *notated* structural/phrase boundary — a double bar, a fermata, an all-voice rest — read from the
+  **Layer-1.5 phrase-boundary primitive** (its texture strength profile; never Layer 6's assembled punctuation-span, which
+  is downstream) is a second, **surface** reason the embellishment/neighbour window should not read across: a neighbour
+  slice *after* a phrase end is not context for the chord *before* it. This mirrors the existing score-boundary truncation
+  (the score edge is just the limiting case of a structural boundary). It would enter as a **window-truncation prior**, not
+  as wide phrase-length context (which stays in Architectural Layer 3 and feeds forward as a preference, §8). Only strong,
+  **texture-level** boundaries qualify (a lone per-part breath does not — see the primitive's marker-scope refinement,
+  `cowork_phrase_boundary_design.md` §11-5). Recorded as a proper-layer consideration; per the standing rule, not built
+  until the inference phase opens.
 - **It changes analysis output** (unlike Architectural Layers 1 and 2), so it is judged by accuracy measurement, not by
   identical output; the pinned analysis snapshots are refreshed only after a change is confirmed correct.
 - **Works on the user's selected music, at any size and in any style** (its *structure* assumes no style). The style
@@ -539,3 +550,11 @@ Architectural Layer 5 knows what to resolve.
   and its evidence must stay note + membership, never progression grammar. Once the two-reading baseline is built and
   measured, test whether its per-slice precision falls short of the joint optimum; adopt the joint version only with a
   strictly note-bounded window.
+- **O3 — the one-sided membership tie-breaker is an idiom-calibrated constant (review finding F-12, recorded
+  2026-07-02).** The §5 membership rule's third tier (stepwise on one side only) is decided by metric weight and the
+  prevailing chord. That tie-direction encodes a **style convention**: in chorale-era textures a metrically asserted
+  foreign note is usually a chord-tone extension, but in appoggiatura-normative styles (late-romantic — the review's
+  Tristan simulation) **long accented appoggiaturas are the norm**, and the same weight evidence should lean
+  *non-chord-tone*. The three-tier **structure is fixed** (universality); only the tier-3 weighting is
+  **idiom-calibrated** (style-only-in-calibration contract) — record the threshold as a preset/idiom constant at the
+  precision phase, never a structural branch. Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10).

@@ -510,16 +510,24 @@ contracts below all serve this principle. Their detailed statements live in the 
   later evidence via a localized forward recompute; its instances are the cadence-confirmed key modulation and the
   fine-grain chord override. **Forward-only is a strong *default*, not dogma:** a sanctioned backward edge is admissible
   only as a deliberate, surfaced, measured, documented exception (justified by a plateau, scoped, gated,
-  convergence-bounded, recorded).
+  convergence-bounded, recorded). *The quantities this mechanism compares are governed by the **cross-layer confidence
+  & calibration contract** (`cowork_confidence_contract.md`, review amendment A-1, 2026-07-02, ratification-gated):
+  every boundary confidence is [0,1], class-declared (margin vs calibrated probability), and cross-layer comparisons
+  happen only in the contract's declared frames.*
 - **The span typology** — a "region" is a *family* of spans, each named by its bounding criterion: the **harmonic
-  region** (chord-rhythm, the atomic unit) · the **key-span** · the **phrase** · the **decision-context span** (the
+  region** (chord-rhythm, the atomic unit) · the **key-span** · the **punctuation-span** (the flat,
+  surface-punctuation-delimited grouping span — the DCML `{}` unit Layer 6 owns; **renamed from "phrase" 2026-07-01** so
+  that "phrase [MT]" denotes *only* the accepted **melodic** phrase, which is a voice-leading-axis object, not this one —
+  see `cowork_layer6_grouping_design.md` §0) · the **decision-context span** (the
   bounded look-ahead a deferred decision integrates over — bounded by the deferring layer's stop condition and hard bound,
   per the Bounded-context contract below) · the **cadential scope** (the span a cadence closes *and*
-  confirms — where a phrase and a key-span are *jointly* articulated, which is why one cadence detector feeds both
+  confirms — where a punctuation-span and a key-span are *jointly* articulated, which is why one cadence detector feeds both
   grouping and key) · the latent **sequence / section / pedal / voice-leading** spans. They relate by **nesting**
-  (harmonic regions ⊂ key-spans; harmonic regions ⊂ phrases; phrases ⊂ sections) **or cross-cutting** (key-spans and
-  phrases cross-cut — a key change may fall mid-phrase). "Region" unqualified is **banned** as ambiguous; every layer
-  names the span it operates on. (After the GTTM premise of independent structures.)
+  (harmonic regions ⊂ key-spans; harmonic regions ⊂ punctuation-spans; punctuation-spans ⊂ sections) **or cross-cutting**
+  (key-spans and punctuation-spans cross-cut — a key change may fall mid-span). "Region" unqualified is **banned** as
+  ambiguous; every layer names the span it operates on. (After the GTTM premise of independent structures.) *(The **cue
+  that delimits** a punctuation-span is still supplied by the Layer-1.5 **phrase-boundary primitive** — that upstream
+  primitive keeps its code name; only the grouping-**span** term changed.)*
 - **The verifiability contract** — prefer what we can verify against ground truth (it is how we catch our own theory
   errors); for sound theory we cannot verify against the current corpus, build it with an explicit
   **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it (this governs the
@@ -528,11 +536,32 @@ contracts below all serve this principle. Their detailed statements live in the 
   extension from L1 (a data-supply call down the stack, not an analysis back-edge), carrying a stop condition and a hard
   bound. The binding scale requirements: **(R1)** cost scales with the working span, not the whole score; **(R2)**
   re-analysis is incremental over the dirty span plus a bounded margin; **(R3)** the working span is **extensible** (a
-  fixed margin plus lazy extension). Whole-score analysis is the degenerate case (selection = score).
+  fixed margin plus lazy extension). Whole-score analysis is the degenerate case (selection = score). *(The ONE
+  detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-
+  recompute protocol, the per-layer discovery rules incl. the pinned L5 decision-context extent, denial provenance,
+  and the §11 acceptance list. Per the 2026-07-02 user directive it is the **hard gate before L6**: ratify → code →
+  regression-test L1–L5, then L6 resumes. A short-lived duplicate contract doc was killed into it same day.)*
 - **Single-responsibility / minimality + maximal information** — each layer owns one *(evidence-source × question)*
   contribution — stated as "owns the *[named evidence]* contribution to *X*", with what it does **not** own made
   explicit — defers what needs later evidence (carried as ranked alternatives + an uncertain mark), and within its scope
   uses *all* the information L1 carries losslessly (notated spelling, metric weight, voice).
+- **Layers are not one homogeneous stack, and the count is not a cap.** The numbered layers span **three kinds of
+  work**: **representation** (L1 lossless notes, L1.5 derived views, L2 mechanical slicing — facts and segmentation, *no*
+  harmonic decision), **inference** (L3 key, L4 chord, L5 function — the only *decision* layers), and **assembly** (L6
+  grouping — organizes the finished decisions into a view; decides nothing new, read-only, downstream). "Six" is the
+  *current* decomposition of the **harmonic spine**, not a ceiling: the architecture already carries more than six named
+  elements — the **L1.5** half-tier, the **Harmonic Vocabulary** (a separate queried component, off the spine), the
+  **recognition consumer**, and the **orthogonal voice-leading axis** with its own layers (where melodic phrases [MT] and
+  chord **voicing / arrangement** are analysed) — and higher grouping structure (sections / periods / form) is explicitly
+  anticipated *above* L6 (`cowork_layer6_grouping_design.md` §9-D3), deferred, not forbidden. Growth is **by axis and by
+  component**, not by climbing a fixed tower. **A new layer or axis is admitted only when it clears three co-equal gates,
+  all required:** **(1) separation of concerns** — it carries *one* responsibility that must not sit mixed into another;
+  this is a **structural mandate, sufficient on its own** to justify a split even at *zero* immediate accuracy gain, and
+  the primary reason the stack is decomposed at all. **(2) verifiability** — there is a way to validate it (or an explicit
+  alternative-confidence path + "empirically-unvalidated" mark). **(3) proportionality** — it buys explainability or
+  accuracy we can *actually check*, never a slot filled for symmetry (the Contrapunctus reminder: SOTA-competitive with
+  **no** explicit grouping layer — do not multiply layers for their own sake). Gate (1) is **not** subordinate to (2)–(3):
+  a genuine second concern earns its own component regardless of the immediate metric.
 
 ---
 

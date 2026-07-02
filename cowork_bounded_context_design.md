@@ -1,6 +1,14 @@
 # Bounded context & selection-extension — cross-layer architecture & design
 
-> **Status: DRAFT for sign-off.** A cross-cutting design (it spans Architectural Layers 1–6, not one layer). It
+> **Status: SIGNED (user, 2026-07-02) — THE GATE (user directive, same day): L6 is prohibited until this design is
+> CODED and REGRESSION-TESTED for L1–L5 (the §11 acceptance list).** The coding+test instruction is written
+> just-in-time AFTER the gap-analysis v2 report lands (its Dimension-A completeness matrix may surface additional
+> per-layer obligations to fold into the build). Consolidation note (2026-07-02): the
+> short-lived duplicate `cowork_temporal_extension_contract.md` is KILLED and its novel content merged here — the
+> **L5 discovery rule + pinned decision-context extent** (§5), the **L4 decision-relevance sharpening** (§5), the
+> **denial provenance** (§3 item 10), and the **gate-proof framing** of the degenerate case (§8). This document is
+> the ONE cross-layer extension spec; ARCHITECTURE §2.15's bounded-context bullet points here.
+> A cross-cutting design (it spans Architectural Layers 1–6, not one layer). It
 > replaces the assumption silently baked into the current code — *"the whole score is always loaded, so every layer
 > can see any context it wants and never has to ask for more"* — with the model the shipped product actually needs:
 > the analysis works on the **user's selection**, and a layer that needs evidence beyond the selection **asks for it**.
@@ -71,6 +79,11 @@ score" is simply the special case "selection = score." This is what keeps the ba
    re-check* loop, and Architectural Layer 1's *extend* executes **exactly the one requested step and never evaluates
    convergence** (that would be inference, which it does not do), so the increment can only be a per-call parameter
    from the requester.
+10. **Denial/truncation is honest, never silent (merged 2026-07-02).** When an extension is refused (hard bound,
+   score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the layer
+   proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`** provenance
+   (+ `cue-denied` where a request was actually refused) — a truncated result is never presented as a complete one.
+   Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag (its §5.1 amendment); it never acts on them.
 9. **Units.** The request to Architectural Layer 1 is in **ticks** — it is unit-blind (it loads a time range, it knows
    nothing of slices or measures). The **fundamental quantum of meaning is the slice (change-point)**: the sounding
    set is constant within a slice, so no analysis can change at finer granularity — a **beat or sub-change-point step
@@ -130,10 +143,21 @@ score" is simply the special case "selection = score." This is what keeps the ba
   (the slice ± a few neighbour slices, and the rewritten *"extend until the chord is in view, stop at the first
   inconsistent slice"* rule) must, at a **selection edge**, **request extension or recognise the score boundary** —
   never assume the neighbour slice exists. Designing this now is the whole point: Architectural Layer 4 is built to the
-  bounded contract, not to "neighbours are always there."
-- **Architectural Layers 5–6 — forward note.** Any later layer that reaches outside the selection obeys the same
-  contract. The likely future need is **functional/cadential context** at the selection edge (Layer 5); it requests
-  extension the same way.
+  bounded contract, not to "neighbours are always there." **Discovery sharpening (merged 2026-07-02):** the request
+  fires only when the truncation is **decision-relevant** — the decision under the truncated window is not already a
+  full-margin `Commit` (a truncated window whose evidence sufficed requests nothing). *(As-built status: this
+  request path is UNCODED — the window silently truncates; gap-analysis item #5. The build item of this design.)*
+- **Architectural Layer 5 — discovery rule + the pinned decision-context extent (merged 2026-07-02; pins the L5
+  spec's §15-3, which deferred the extent to "engagement time").** A slice's **decision-context span** extends
+  forward until the FIRST of: **(i)** a cadence-anchored function (a chord whose function a §5.2 cadence fixed),
+  **(ii)** a punctuation boundary (the L1.5 primitive's picked tick), **(iii)** a hard bound of `K` slices / `B`
+  beats (settings — the §3.7 safety cap). **Discovery:** a §5.5 resolution, §5.2 vote aggregation, or §5.3
+  persistence decision whose span was cut by the **selection edge before any of (i)–(iii) held** requests a forward
+  extension (stop = any of (i)–(iii); increment = its natural unit, slices). Extension re-runs flow forward under the
+  §8 one-pass closure (an extension may finalize an open decision, never re-open a closed one — data supply, not a
+  back-edge). Denied → the decision resolves on what it saw (or its honest open mark) + the item-10 provenance.
+- **Architectural Layer 6 — consumer only (forward note).** L6 requests nothing (assembly); it surfaces the item-10
+  provenance and the `extension-cue` tag (L6 §5.1 amendment, 2026-07-02).
 
 ## 6. Runtime view (scenarios)
 
@@ -182,7 +206,21 @@ score" is simply the special case "selection = score." This is what keeps the ba
   Extension (grow the loaded span) and re-analysis (re-run part of it) must compose cleanly — an edit *inside* the
   selection and an extension *outside* it are different operations on the same model.
 - **Batch-path preservation.** The degenerate case (selection = score) must stay **byte-identical** to today, or the
-  corpus metrics move for the wrong reason. This is the regression guard for the whole change.
+  corpus metrics move for the wrong reason. This is the regression guard for the whole change. **(Gate-proof framing,
+  merged 2026-07-02:** with selection = score no request ever fires, so the corpus gate 53/24/53 is byte-identical
+  **by construction** — the standing proof obligation of the build.)
+
+## §11 Acceptance (the L6 gate — user directive 2026-07-02)
+
+1. This design **ratified** (it was never signed; sign-off is now the first step).
+2. **Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done);
+   L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today,
+   gap-analysis #5) + item-10 denial provenance; L5's pinned extent + discovery rule.
+3. **Regression-tested, per layer + system:** must-fire / must-not-fire fixtures per discovery rule; the §4
+   **equivalence invariant** (any extension sequence ≡ one fresh run over the final loaded span); step-size
+   independence (§8); denial provenance; hard-bound/no-oscillation termination; determinism; and the degenerate-case
+   **byte-identity with the corpus gate 53/24/53**.
+4. Then the L6 track resumes (its TSV-oracle instruction un-parks, then the L6 dormant build).
 
 ## 9. Glossary
 

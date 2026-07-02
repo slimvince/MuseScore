@@ -439,3 +439,17 @@ say plainly which we rejected and why.*
   spelling signal — admitting the clean modulation gain without the stable cost — **not** a standalone Layer-3 emission
   patch. This is why L4-first is the disciplined order (no clean standalone L3 win is being skipped). (Upper-bound
   caveat: engraved corpus; MIDI spelling would see less.)
+- **★ Dominant-implication key evidence in the emission (review amendment A-3, ratified 2026-07-02).** As built, the
+  per-slice emission is **collection-fit only**: it scores how well a slice's pitch content matches each candidate
+  key/mode's scale, and carries no evidence from the *shape* of the sounding sonority. But a sonority shaped like a
+  dominant seventh or leading-tone seventh is strong **note-level** evidence for the key it implies (its tritone
+  resolves into exactly one major and one minor tonic pair) — evidence readable from the notes alone, **before and
+  without any chord decision**, so it belongs in this layer's emission without breaking the evidence split (Layer 5
+  still owns *resolution-confirmed* evidence — the cadence votes). The gap is what the external review's Tristan
+  simulation exposed (F-10: keys established by **dominant implication**, tonic arrivals denied → collection-fit is
+  near-flat and the decoder rides on inertia → systematic under-modulation), and it also bears on the measured
+  relative-pair floor (the implied tonic disambiguates the shared collection). **Shape:** a sonority-shape term in the
+  per-slice emission (pitch-set → implied-tonic fit contribution); decoder structure unchanged; weight
+  precision-phase. **Status:** deferred — design-first, measured before wiring like every increment (the tpc-term
+  lesson above applies: measure the stable-region cost, not just the modulation gain). Source:
+  `cowork_architecture_review_2026_07.md` §7/§9 (F-10, A-3).

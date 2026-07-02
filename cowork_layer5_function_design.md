@@ -159,17 +159,23 @@ These five concepts are used throughout §5 and are defined here once so no rule
   groups slices in **distinct** ways that must not be conflated under one word "region":
   - **Key-span** — a maximal run of slices in **one local key**, bounded by a key change (establishment + cadence
     confirmation). It is the unit a **confirmed modulation re-reads (§5.4)** — the as-built `LocalKeySpan` (a cadence
-    confirms it iff the cadence's arrival falls inside it). A key-span **cross-cuts** phrases (a key change may fall
-    mid-phrase); it is **not** phrase-bounded.
+    confirms it iff the cadence's arrival falls inside it). A key-span **cross-cuts** punctuation-spans (a key change may
+    fall mid-span); it is **not** punctuation-span-bounded.
   - **Decision-context span** — the bounded run of slices Layer 5 analyses together: the scope of the **cadence tonic-vote
     (§5.2)**, the reach of a **slice's resolution look-ahead (§5.5)**, and the span across which **the progression** and a
     slice's **prevailing harmony** are read. It is bounded by a **look-ahead window** (≈ the phrase — far enough to reach
-    the cadence a few slices later); it carries **no single-key assumption**. Its exact extent is an **engagement-time
-    pin** (the resolver is dormant; the extent is caller-defined and not yet fixed — the §5.4 recompute-bound refinement,
-    §15-3). **Where this document later writes "region" unqualified, it means this decision-context span.**
-  - **Phrase** — a run of slices delimited by the phrase-boundary primitive (the `endsPhrase` overlay); the grouping unit
-    **Layer 6** owns. It **cross-cuts** the key-span. Layer 5 reads it only as the **cadence phrase-gate (§5.2)**, never as
-    a key or analysis unit.
+    the cadence a few slices later); it carries **no single-key assumption**. **Its extent is PINNED (2026-07-02,
+    superseding the former engagement-time pin of §15-3):** the span extends forward until the FIRST of **(i)** a
+    cadence-anchored function, **(ii)** a punctuation boundary (the L1.5 picked tick), **(iii)** the hard bound of `K`
+    slices / `B` beats (settings, the safety cap). A decision whose span is cut by the **selection edge** before any of
+    (i)–(iii) holds fires this layer's **extension request** per the one cross-layer extension spec
+    (`cowork_bounded_context_design.md` §5 — discovery rule, denial provenance, §8-no-reopen under extension re-runs).
+    **Where this document later writes "region" unqualified, it means this decision-context span.**
+  - **Punctuation-span** — a run of slices delimited by the phrase-boundary primitive (the `endsPhrase` overlay); the
+    grouping unit **Layer 6** owns (**renamed from "phrase" 2026-07-01**; the melodic phrase [MT] is a voice-leading-axis
+    object, not this — `cowork_layer6_grouping_design.md` §0). It **cross-cuts** the key-span. Layer 5 reads it only as the
+    **cadence phrase-gate (§5.2)** — the *gate* keeps the upstream primitive's "phrase-boundary" name — never as a key or
+    analysis unit.
   *(Correction, 2026-06-29, Layer-6 review: the prior wording defined a single phrase-bounded "region carrying one
   prevailing key", which collapsed these three spans and wrongly forbade a mid-phrase key change. Verified at the
   as-built: §5.4 operates on the key-span (`LocalKeySpan`), §5.2/§5.5 on the decision-context span, and the slice carries
@@ -617,6 +623,12 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
   structural-boundary cues for general (non-chorale) textures, but the corpus is entirely fermata-marked chorales, so
   those markers have **no ground-truth oracle here** — a validation-coverage gap to close against a non-chorale corpus
   when one is available (cf. the verifiability-vs-correctness note: unvalidated ≠ wrong, but flagged).
+- **This layer's boundary-as-prior consumption is already the cadence phrase-gate (§5.2)** — a cadence candidate is
+  admitted only at a texture phrase boundary. (Cross-layer, recorded 2026-07-01: Architectural Layer 4 additionally
+  considers the *same* primitive as a **window-truncation** prior — `cowork_layer4_chordsymbol_design.md` §2 — and the
+  primitive itself carries a **marker-scope + provenance** refinement, distinguishing global markers from per-part
+  breaths/fermatas so a local event is not promoted to a global boundary — `cowork_phrase_boundary_design.md` §11-5. All
+  proper-layer notes; not built until the inference phase.)
 - **Engagement framing.** References to an "engagement hard-stop" / "before any production switch" (§5/§10) remain true
   *conditionally* — engagement (Phase 5d) is **deferred indefinitely** (production out of scope; the posture is dormant
   build + ground-truth validation). The hard-stops apply *if* a switch is ever made; they are not pending work.
@@ -775,3 +787,26 @@ catalog §Sources.
      task on the structured cadence-type identifiers §7 carries (L5 is display-agnostic), **not** a function-vocabulary
      addition. No gap. (This matches §15-8's own "function vocabulary" vs "cadence-label localization" split.)
 9. **Prolongation/reduction** — explicitly a later layer, not this one.
+10. **★ Cadence-less key-confirmation channels for §5.3 (review amendment A-4, ratified 2026-07-02).** §5.3's condition
+    (a) makes a confirming **cadence** the *necessary* gate for a modulation. The external review's Tristan simulation
+    (F-10) showed the gate structurally under-modulates on **resolution-denying** music, where local keys are
+    established without cadential arrival — by **dominant prolongation** (a sustained, emphasized dominant whose tonic
+    never arrives), by **transposition sequences** (a recognized schema transposing stepwise implies the key motion —
+    a natural input from the recognition consumer, `cowork_progression_schema_design.md`), and by **sustained
+    consistent respelling** (the §5.3 spelling signal, today only a soft (a)/(b) input). Amendment: **specify additional
+    confirmation channels** for condition (a) — each a rule with its own (lower) vote weight, admitted only where the
+    authentic-cadence channel is absent — rather than weakening the cadence gate where cadences exist. Also part of
+    A-4: an **enharmonic key-span identity rule** (F-14) — when two candidate keys are enharmonically equivalent
+    (`G♭`↔`F♯`), the key-span carries one identity with a spelling frame chosen from the notated evidence, and a
+    mid-span enharmonic respelling is a *frame flip*, not a modulation. Design-first, measured on the ratified
+    chromatic stress material (`wagner_overtures`, roadmap corpus-expansion block) before any wiring. Source:
+    `cowork_architecture_review_2026_07.md` §7/§9 (F-10, F-14, A-4).
+11. **★ Phrase-gate fallback for punctuation-poor textures (review amendment A-5, ratified 2026-07-02).** The §5.2
+    phrase gate admits cadence candidates only at phrase boundaries; in textures with deliberately suppressed surface
+    punctuation (the review's F-11 — "unendliche Melodie": no fermatas, elided phrase ends, flat graded
+    boundary-strength profile) the gate **starves** the detector and everything downstream of its votes. Amendment:
+    specify the gate's behaviour when the L1.5 profile is flat — **relax admission with vote-weight scaling by
+    boundary strength** (a weak boundary admits a candidate at proportionally reduced weight) instead of a hard gate,
+    preserving the chorale behaviour where boundaries are strong. The graded profile already carries the needed
+    signal; this is a consumption rule, not a new primitive. Source: `cowork_architecture_review_2026_07.md` §7/§9
+    (F-11, A-5).

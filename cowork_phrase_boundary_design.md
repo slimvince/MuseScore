@@ -19,6 +19,14 @@
 > standard music / music-cognition vocabulary (glossed in §9). Scope: this one primitive — *not* the cadence or function
 > logic that consumes it.
 
+> **Bounded-context stance (added 2026-07-02, closing gap-analysis-v2 A-2 — ruled by Cowork):** this primitive is a
+> **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its
+> own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded
+> span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the
+> standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M
+> boundary confidence** under the cross-layer confidence contract ([0,1] per-profile max-normalised salience,
+> comparable within one score's profile only; it participates in no override frame) — closing v2 gap A-3 for this spec.
+
 ## 1. Purpose
 A **phrase boundary** is a tick where a musical phrase **ends** (the next phrase begins at the following sounding onset,
 which this primitive does not separately mark). This primitive computes, from the notated surface alone, a **graded
@@ -316,3 +324,28 @@ the concrete file map and the cue formulas are in the build instruction and the 
    constant or a trained model).
 4. **Articulation and dynamics cues** (slur ends, abrupt dynamic changes) — weak/auxiliary in the literature; admissible
    as additional low-weight surface profiles if measured to help, deferred from the first build.
+5. **★ Marker scope — global vs per-part — and boundary provenance (recorded 2026-07-01, user-raised).** The §4.2
+   deterministic markers mix two **scopes**, and the current model spikes all of them onto the **texture** profile and
+   emits them unconditionally (§4.4) — which can promote a *local* event to a *global* boundary and lose the fact that it
+   was local:
+   - **Globally-scoped (system-wide by notation):** the **structural barline**, the **mid-score key-signature change**,
+     the **subito tempo change**, and the **all-voice-rest onset** — these apply to the whole texture and legitimately
+     spike the texture profile.
+   - **Per-part-scoped (notated on one voice/staff):** the **breath mark**, the **caesura**, and — strictly — the
+     **fermata**. A breath in one instrument does **not** mean the whole texture phrases there; spiking it unconditionally
+     onto the texture profile discards that locality and over-segments non-chorale textures. The principled form is for a
+     per-part marker to enter as a **per-voice** marker event and reach a **texture** boundary only through the same
+     **voice-coincidence aggregation** as the graded cues (§4.3) — a lone breath then yields a **per-voice** boundary
+     (already exposed by this primitive, and the raw material for the future voice-leading / melody-line axis,
+     `cowork_idiom_discovery_findings.md`), not a forced global one. (The fermata is the borderline case: *conventionally*
+     an ensemble hold, but *notated* per staff — treating it as per-part-then-coincidence is inert on chorales, where all
+     voices hold together, and more correct on orchestral scores.)
+   - **Chorale-inert.** In the chorale convention all voices fermata/breathe together, so the texture boundary is
+     unchanged; the refinement matters only for orchestral / contrapuntal (non-SATB) textures — consistent with the
+     byte-identical-on-chorales discipline and adjacent to the §11-2b(a) eligible-voice qualifier (a related, narrower
+     item).
+   - **Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which
+     cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream
+     consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global
+     barline*. The picked set is scope-blind today. Recorded as a proper-layer refinement; per the standing rule, not
+     built until the inference phase opens; validate on a non-chorale corpus (§8).

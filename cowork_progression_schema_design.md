@@ -123,5 +123,17 @@ families, hierarchical), the same set the presets select on.
 1. **The conservative recogniser + the additive annotation** — the dormant scaffolding build (this design's first step).
 2. **The fuzzy / substitution-tolerant matcher and the per-style weights** — the precision-phase build (deferred).
 3. **A jazz/pop ground truth** — the named want that would let this consumer measure its use of the jazz/pop patterns.
+   *(2026-07-02: user-ratified as part of the corpus-expansion decision — see the roadmap's AMENDMENTS RATIFIED block.)*
 4. **The future voice-leading layer** — the prerequisite for combining voice-leading into complete-schema recognition.
 5. **The suggestion consumer** — a future, separate tool that reads the same Vocabulary predictively (out of scope here).
+6. **★ Decide the progression-knowledge store question AT THIS BUILD (review amendment A-6, ratified 2026-07-02).**
+   Layer 5's §5.0 pairwise licensed-progression grammar and the Harmonic Vocabulary are currently **two**
+   progression-knowledge stores; this design says the Vocabulary "extends" the pairwise grammar, but whether the
+   pairwise motions ultimately **live in the Vocabulary** (single store — L5 queries it for the pairwise licensing
+   too) or remain a **separate primitive by declared design** (two stores, the split documented as intentional with
+   the duplication bounded) is undecided. Decide it explicitly at this consumer's build — the total-unification rule
+   forbids leaving it a permanent *undeclared* duplicate. Source: `cowork_architecture_review_2026_07.md` §3 (F-6).
+7. **★ Additional consumer identified: §5.3 key-confirmation (review amendment A-4, ratified 2026-07-02).** A
+   recognized **transposition sequence** implies local key motion — a natural cadence-less confirmation channel for
+   Layer 5's tonicization-vs-modulation arbitration on resolution-denying (Tristan-class) music. Recorded in the L5
+   spec §15-10; when this consumer is built, its recognised sequence-spans should be exposed so §5.3 can consume them.
