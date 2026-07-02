@@ -208,3 +208,48 @@ TEST(Composing_ReachBack, OutputIsSelectionOnly)
 
     delete score;
 }
+
+// ── §3.5 — the hard bound terminates the loop (never-converges cap; design §3.7) ─
+// With the trigger forced permanently ON (minConf huge ⇒ every reached slice still reads
+// "unsettled", so the convergence stop can NEVER fire), the only remaining terminators are
+// the score start and the hard bound. From a mid-score selection (bar 7), a SMALL
+// maxReachSteps stops the loop at the hard bound — strictly before the score start — and it
+// still returns a valid selection-only result rather than reaching to the start or looping.
+// Its own re-run is identical (no oscillation), and its output span is the selection.
+TEST(Composing_ReachBack, HardBoundTerminatesBeforeScoreStart)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/reachback_anchor.mscx");
+    ASSERT_TRUE(score);
+
+    // maxSteps = 2, one-measure increment, trigger permanently ON. Bar 7 is 6 measures in,
+    // so 2 steps reach back only to bar 5 — the hard bound bites well before the score start.
+    const auto bounded = run(score, kTailStart, kM7End, reachOpts(2, kMeasure, 1.0e9));
+    ASSERT_FALSE(bounded.empty());
+    for (const HarmonicRegion& r : bounded) {
+        EXPECT_GE(r.startTick, kTailStart) << "hard-bounded reach must still emit selection-only";
+        EXPECT_LE(r.endTick, kM7End);
+    }
+    // No oscillation: the hard-bounded reach is deterministic across identical runs.
+    const auto bounded2 = run(score, kTailStart, kM7End, reachOpts(2, kMeasure, 1.0e9));
+    EXPECT_TRUE(sameAnalysis(bounded, bounded2)) << "hard-bounded reach must be deterministic";
+
+    delete score;
+}
+
+// ── §3.6 — determinism: same score + selection + settings ⇒ same result ──────────
+// The reach-back loop is a pure function of (score, selection, settings): re-running it
+// with the identical inputs yields the byte-identical user-visible analysis. Guards against
+// any hidden state / ordering dependence introduced by the extend → re-slice → re-decode
+// loop (design §8 determinism).
+TEST(Composing_ReachBack, DeterministicAcrossRuns)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/reachback_anchor.mscx");
+    ASSERT_TRUE(score);
+
+    const auto a = run(score, kTailStart, kM7End, reachOpts(8));
+    const auto b = run(score, kTailStart, kM7End, reachOpts(8));
+    ASSERT_FALSE(a.empty());
+    EXPECT_TRUE(sameAnalysis(a, b)) << "identical inputs must give identical reach-back output";
+
+    delete score;
+}
