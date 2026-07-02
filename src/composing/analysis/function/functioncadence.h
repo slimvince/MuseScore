@@ -86,13 +86,15 @@
 // reads a producer type, so this module compiles free of the decoder / region /
 // engraving headers.
 //
-//   ★ Why per-voice notes, not the chord-identity projection (declared §1): the L4
-//   ChordSliceCandidate carries root + quality + bass only — quality collapses V
-//   and V7 both to Major, so the seventh is NOT on the projection. §5.2's genuine
-//   dominant ("a seventh or its tritone resolving") and its leading-tone
-//   RESOLUTION are pitch-content / voice-motion events by definition, so this unit
-//   reads them from the per-voice notes (which the resolution event needs anyway) —
-//   the faithful route, no structural change required.
+//   ★ Why per-voice notes, not the chord-identity projection (declared §1): §5.2's
+//   genuine dominant ("a seventh or its tritone resolving") and its leading-tone
+//   RESOLUTION are pitch-content / VOICE-MOTION events by definition (a seventh
+//   RESOLVING is a melodic fact, not a vertical identity), so this unit reads them
+//   from the per-voice notes — the faithful route, no structural change required.
+//   (Note: since the L4->L5 carry-fix the ChordSliceCandidate DOES carry
+//   ChordIdentity.extensions — the vertical seventh is now on the projection — but
+//   that names the chord's colour, not the voice-leading resolution this detector
+//   needs; the per-voice channel is intrinsic here, not a carry workaround.)
 //
 // DORMANT (build §5): this module has NO production consumer — nothing in src/
 // calls it; it is exercised only by its unit tests. So adding it is byte-identical

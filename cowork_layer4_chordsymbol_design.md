@@ -310,6 +310,17 @@ set** (chord-tone-versus-not only; the type is a later annotation); the **compet
 the **"uncertain" mark with its open-question label** (root / quality / a named note's membership — so a downstream
 selector knows *what* to resolve, not merely that something is open).
 
+The chord symbol also carries the chord's **extension identity** — the seventh (Minor / Major / Diminished), the upper
+9/11/13 extensions, and the aug6 spelling markers (♯13/♯11) — plus **`naturalFifthPresent`**, so Architectural Layer 5
+reads the figured-bass seventh (V7, 65/43/42), the V7/x applied gate, and the Ger+6-vs-It+6 nationality **from the
+carried symbol, not by re-reading the notes** (the L4→L5 carry-fix, 2026-07-02). The carry is **honest**: the committed
+(chosen) chord's extensions are a full extraction of its own tones (guaranteed present — a per-candidate
+`extensionsKnown` = true); a carried *alternative*'s extensions are copied from the scorer's own ranked result where
+that cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the seventh is
+*unknown*, never asserted absent, and never synthesized). A Layer-5 consumer reads the extensions only when
+`extensionsKnown`; on an honest-carried reading it stays triad-level. (`isPedalPoint`/`pedalBassPc` are **not** carried
+— no Layer-5 §5 rule consumes them.)
+
 The **confidence** is composite, combining: the **margin** to the best different reading; the **sufficiency** (how
 complete the committed chord is — a full seventh present versus a dyad completed by preference); and the **membership
 cleanliness** (few contested notes versus many). A slice is "uncertain" when confidence is low for **either** reason —
@@ -514,6 +525,13 @@ Architectural Layer 5 knows what to resolve.
   progression signal folded in — that is Layer 5's to supply), and `alternatives` is capped (`topK`) and excludes
   spelling-pinned symmetric siblings — calibration facts the Layer-5 override design accounts for, not defects here. Full
   mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract.
+  **Carry limits (updated 2026-07-02, the carry-fix).** The carried reading now includes the **extension identity**
+  (§7) — the committed chord's seventh/9-11-13/aug6 markers + `naturalFifthPresent` are a full extraction of its own
+  tones (`extensionsKnown` = true), and a carried *alternative* carries real extensions only where the scorer's ranked
+  result already produced that cell, else **honest-carry** (`extensionsKnown` = false; extensions unknown, not asserted
+  absent). So a Layer-5 override that *selects a carried alternative* reads that alternative's seventh only when it was
+  obtainable without re-derivation; otherwise the selected reading is triad-level (an honest coverage limit, not a
+  guess). A lock-in test pins the extension carry alongside the alternatives/confidence carry.
 - **O2 — a bounded-window joint resolution for the neighbour dependency (deferred).** The baseline resolves the
   membership↔neighbour chicken-and-egg with the two-reading scheme (§4). A bounded joint choice — picking the chords
   and membership that best explain a few-slice window *together* — is potentially more precise but is deferred, because

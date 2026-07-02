@@ -42,6 +42,7 @@
 #include "engraving/tests/utils/scorerw.h"
 
 #include "composing/analysis/chord/chordslicedecoder.h"
+#include "composing/analysis/function/functionrelationallabel.h"   // L4->L5 carry consumer (V7/x)
 #include "composing/analysis/notemodel/note_model.h"
 #include "composing/analysis/slicing/slicer.h"
 
@@ -1223,6 +1224,12 @@ TEST(Composing_DecodeChord, Fixture_CleanTriads_NameThatChord)
     EXPECT_EQ(d[0].chosen.rootPc, 0) << "slice 0 is C major";
     EXPECT_EQ(d[0].chosen.quality, ChordQuality::Major);
     EXPECT_TRUE(d[0].chosen.bassIsRoot());
+    // L4->L5 carry: the chosen chord's extension identity is always extracted, and a plain
+    // triad carries NO seventh (the field is populated and correct, not left at a guess).
+    EXPECT_TRUE(d[0].chosen.extensionsKnown) << "the committed chord's extensions were extracted";
+    EXPECT_FALSE(mu::composing::analysis::hasExtension(
+        d[0].chosen.extensions, mu::composing::analysis::Extension::MinorSeventh))
+        << "a plain C major triad carries no minor seventh";
 
     EXPECT_TRUE(d[1].hasChord);
     EXPECT_EQ(d[1].chosen.rootPc, 7) << "slice 1 is G major";
@@ -1390,6 +1397,90 @@ TEST(Composing_DecodeChord, OverrideReadiness_CommitAndInheritCarryAlternativesA
         EXPECT_DOUBLE_EQ(sc.confidenceModel.margin, sc.confidence)
             << "the confidence model is computed for the inherited slice";
     }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// L4->L5 CARRY-FIX — the committed chord's extension identity survives the projection,
+// and the carried seventh drives the Layer-5 consumer (base RN figured-bass + V7/x).
+// ════════════════════════════════════════════════════════════════════════════
+
+// A real decode of a G dominant seventh (G-B-D-F) commits G major with the MINOR SEVENTH
+// carried on chosen.extensions (extensionsKnown) — the carry-fix: the seventh is no longer
+// dropped at the ScoringCell projection.
+TEST(Composing_DecodeChord, CarryFix_Dom7ChosenCarriesMinorSeventh)
+{
+    namespace an = mu::composing::analysis;
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_g_dom7.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score);
+    const auto slices = changePointSlices(model);
+    ASSERT_GE(slices.size(), 1u);
+
+    ChordSliceDecoderPreferences p;
+    p.contextSlices = 0;   // isolate the V7 slice (no pooling with the resolution)
+    const auto d = CSD::decode(slices, model, /*keySigFifths=*/0, KeySigMode::Ionian,
+                               an::kDefaultChordAnalyzerPreferences, p);
+    ASSERT_GE(d.size(), 1u);
+    ASSERT_TRUE(d[0].hasChord);
+    EXPECT_EQ(d[0].chosen.rootPc, 7) << "G dominant seventh roots on G";
+    EXPECT_EQ(d[0].chosen.quality, ChordQuality::Major);
+    EXPECT_TRUE(d[0].chosen.extensionsKnown) << "the chosen chord's identity was extracted";
+    EXPECT_TRUE(an::hasExtension(d[0].chosen.extensions, an::Extension::MinorSeventh))
+        << "the V7 carries its seventh through the L4->L5 projection (the carry-fix)";
+    EXPECT_TRUE(d[0].chosen.naturalFifthPresent) << "the P5 (D) is sounding";
+
+    delete score;
+}
+
+// The Layer-5 consumer (the runFullSpine mapping ChordSliceCandidate -> ChordIdentity ->
+// classifyRelationalLabel) reads the carried seventh: a carried D7 resolving to G in C
+// major emits the applied dominant with its figured seventh (V7/V); WITHOUT the carried
+// seventh (honest-carry / triad) the same motion emits the plain applied triad (V/V). This
+// locks that the carry — not a re-derivation — is what enables the seventh-dependent label.
+TEST(Composing_DecodeChord, CarryFix_CarriedSeventhDrivesAppliedV7Label)
+{
+    namespace an = mu::composing::analysis;
+    using an::Extension;
+
+    // Build the ChordIdentity EXACTLY as runFullSpine does from a committed ChordSliceCandidate.
+    auto identityFromCarry = [](const ChordSliceCandidate& fr) {
+        an::ChordIdentity id;
+        id.rootPc = fr.rootPc; id.rootTpc = fr.rootTpc;
+        id.bassPc = fr.bassPc; id.bassTpc = fr.bassTpc;
+        id.quality = fr.quality; id.tiePriority = fr.tiePriority;
+        id.extensions = fr.extensions; id.naturalFifthPresent = fr.naturalFifthPresent;
+        return id;
+    };
+    // The pitch-class mask (D-F#-A-C: the raised LT F# is what the applied guard needs) is
+    // supplied from the notes and held FIXED across both cases — only the CARRIED extension
+    // varies, so the "7" in the figure is attributable to the carry, not the note content.
+    const uint16_t dMask = static_cast<uint16_t>((1u << 2) | (1u << 6) | (1u << 9) | (1u << 0));
+    auto labelFor = [&](const ChordSliceCandidate& fr) {
+        an::RelationalLabelInput in;
+        in.identity = identityFromCarry(fr);
+        in.keyFifths = 0; in.keyMode = KeySigMode::Ionian; in.keyTonicPc = 0;  // C major
+        in.nextRootPc = 7;   // resolves to G (degree V) → applied dominant of V
+        in.pitchClassMask = dMask;
+        return an::classifyRelationalLabel(in);
+    };
+
+    // D7 (D-F#-A-C) with the seventh carried — the applied dominant of V.
+    ChordSliceCandidate withSeventh = cand(2, ChordQuality::Major, 2, 3.0, kTieMajor);
+    withSeventh.rootTpc = 16;   // TPC_D
+    withSeventh.naturalFifthPresent = true;
+    withSeventh.extensionsKnown = true;
+    an::setExtension(withSeventh.extensions, Extension::MinorSeventh);
+    const an::RelationalLabel v7 = labelFor(withSeventh);
+    EXPECT_EQ(v7.role, an::RelationalRole::AppliedSecondary);
+    EXPECT_EQ(v7.label, "V7/V") << "the carried seventh emits the figured applied dominant";
+
+    // The SAME motion with NO carried seventh (honest-carry triad) drops to the plain V/V.
+    ChordSliceCandidate noSeventh = cand(2, ChordQuality::Major, 2, 3.0, kTieMajor);
+    noSeventh.rootTpc = 16;   // TPC_D
+    // extensions = 0, extensionsKnown left as the honest-carry default (false)
+    const an::RelationalLabel v = labelFor(noSeventh);
+    EXPECT_EQ(v.role, an::RelationalRole::AppliedSecondary);
+    EXPECT_EQ(v.label, "V/V") << "without the carried seventh the label is the plain applied triad";
 }
 
 TEST(Composing_DecodeChord, EmptyModel_NoSlices)

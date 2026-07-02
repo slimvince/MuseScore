@@ -592,6 +592,30 @@ ChordAnalysisResult buildChordResult(
     const BuildChordResultContext&  ctx,
     const ChordAnalyzerPreferences& prefs);
 
+/// The vertical extension/alteration identity of a chord (the ChordIdentity fields
+/// that describe its colour, not its root/quality/bass).
+struct ChordExtensionInfo {
+    uint32_t extensions = 0;          ///< Extension/alteration bitmask (see Extension enum)
+    bool     naturalFifthPresent = false;  ///< P5 above root sounding (It+6 vs Ger+6 discriminator)
+};
+
+/// Extract the vertical extension/alteration identity for a FIXED (root, quality) from
+/// the weighted pc view — the SAME primitive analyzeChord()/buildChordResult() use
+/// (detectExtensions + the exact flag mapping + the naturalFifthPresent rule), factored
+/// out and exposed so a downstream consumer can COMPLETE a chord's identity without
+/// re-running the analysis (the Layer-4 slice decoder's L4->L5 carry,
+/// cowork_layer4_chordsymbol_design.md §7). Pure: reads only @p pcWeight + @p tpcForPc
+/// (both already produced by analyzeChord's snapshot); performs NO scoring and NO quality
+/// mutation — the committed @p quality is authoritative, so the Sus->Major(omitsThird) and
+/// Sus2->Sus4 upgrades that buildChordResult applies only when it CHANGES the quality are
+/// intentionally NOT applied here (a fixed-quality extraction never mutates its quality).
+/// @p rootTpc names the root enharmonically for the #13-vs-b7 spelling disambiguation.
+ChordExtensionInfo deriveChordExtensions(
+    const std::array<double, 12>& pcWeight,
+    int rootPc, ChordQuality quality,
+    const std::array<int, 12>& tpcForPc,
+    int rootTpc, double extThreshold);
+
 /// Apply post-scoring identity gates (A–L) to a result list.
 /// Must be called after applyHarmonicFunction() and before refinements.
 /// When callers need pre-gate inputs (rawCandidates, threshold, distinctPcs,

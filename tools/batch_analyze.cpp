@@ -2549,16 +2549,16 @@ static std::string runChordDecode(const Score* score, const std::string& stem,
 // carries the STANDARD regions[] shape so those graders read it unchanged) — no new
 // comparator; the E0-specific fields are extra keys the loaders ignore.
 //
-// ★ CARRY-CONTRACT NOTE (E0 finding, Cowork-ratified 2026-07-02): the L4→L5 carry
-//   (SliceChord.chosen = ChordSliceCandidate) drops ChordIdentity.extensions and
-//   naturalFifthPresent (projection at chordslicedecoder.cpp candidatesForWindow).
-//   The base-RN / relational units read the seventh / figured-bass / V7-x / Ger+6
-//   from `extensions` (chordsymbolformatter.cpp formatRomanNumeral). We build the
-//   ChordIdentity from EXACTLY what SliceChord carries — extensions = 0,
-//   naturalFifthPresent = false — the FAITHFUL representation of L4's committed
-//   sonority (we do NOT synthesize/reconstruct the seventh from the template). So
-//   base RNs are TRIAD-LEVEL and the seventh-dependent labels cannot fire; this is
-//   MEASURED and named, not worked around (report §4).
+// ★ CARRY-CONTRACT NOTE (E0 finding, Cowork-ratified 2026-07-02; CARRY-FIX applied
+//   2026-07-02): the L4→L5 carry (SliceChord.chosen = ChordSliceCandidate) now CARRIES
+//   ChordIdentity.extensions + naturalFifthPresent (chordslicedecoder.cpp — the chosen is
+//   a full deriveChordExtensions extraction, extensionsKnown = true guaranteed; carried
+//   alternatives match analyzeChord's result cells or honest-carry extensions = 0 with
+//   extensionsKnown = false). The base-RN / relational units read the seventh / figured-
+//   bass / V7-x / Ger+6 from `extensions` (chordsymbolformatter.cpp formatRomanNumeral).
+//   We build the ChordIdentity from EXACTLY what SliceChord carries — real extensions on
+//   the committed chord, honest 0 where unknown — so base RNs now emit the seventh (V7,
+//   65/43/42) and the seventh-dependent labels (V7/x, Ger+6) can fire (report §4-A; E0′).
 // ══════════════════════════════════════════════════════════════════════════
 static const char* fsCadenceTypeName(analysis::FunctionalCadenceType t)
 {
@@ -2867,13 +2867,15 @@ static std::string runFullSpine(Score* score, const std::string& stem,
 
         if (unitHasChord(i)) {
             const cs::ChordSliceCandidate fr = finalReadingOf(i);
-            // The FAITHFUL basic identity (extensions = 0, naturalFifthPresent = false) —
-            // exactly what the L4→L5 carry holds (report §4 carry-contract finding).
+            // The FAITHFUL identity — root/quality/bass PLUS the L4→L5 carried extension
+            // identity (the carry-fix): real extensions on the committed chord (fr is a
+            // committed/inherited chosen → extensionsKnown), honest 0 where a resolver-
+            // selected alternative was honest-carried. We carry EXACTLY what SliceChord holds.
             analysis::ChordIdentity id;
             id.rootPc = fr.rootPc; id.rootTpc = fr.rootTpc;
             id.bassPc = fr.bassPc; id.bassTpc = fr.bassTpc;
             id.quality = fr.quality; id.tiePriority = fr.tiePriority;
-            id.extensions = 0; id.naturalFifthPresent = false;
+            id.extensions = fr.extensions; id.naturalFifthPresent = fr.naturalFifthPresent;
             u.committedIdentity = id;
             u.chord.rootPc = fr.rootPc; u.chord.quality = fr.quality;
 
@@ -2901,12 +2903,22 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     (void)legacyRegions;   // graded from the flag-OFF corpus; timed here only
 
     // ── Emit the .ours.json (STANDARD regions[] shape + E0 fields) ──
+    // Carry-fix telemetry (report §4-A / E0′): the chosen committed chord is ALWAYS a full
+    // extraction (extensionsKnown), so committedExtUnknown should be 0; alternatives split
+    // known (matched an analyzeChord result cell) vs honest-carry (not obtainable → 0/false).
     long long committedCount = 0, abstainCount = 0, openMarkCount = 0, overrodeCount = 0;
+    long long committedExtKnown = 0, committedExtUnknown = 0, altExtKnown = 0, altExtUnknown = 0;
     for (size_t i = 0; i < decoded.size(); ++i) {
         if (isCommitted(i)) { ++committedCount; }
         else { ++abstainCount; }
         if (unitOpenMark(i)) { ++openMarkCount; }
         if (i < res.readings.size() && res.readings[i].overrodeCommit) { ++overrodeCount; }
+        if (unitHasChord(i)) {
+            if (finalReadingOf(i).extensionsKnown) { ++committedExtKnown; } else { ++committedExtUnknown; }
+        }
+        for (const cs::ChordSliceCandidate& alt : decoded[i].alternatives) {
+            if (alt.extensionsKnown) { ++altExtKnown; } else { ++altExtUnknown; }
+        }
     }
 
     auto symbolFor = [&](const cs::ChordSliceCandidate& c) -> std::string {
@@ -2931,6 +2943,10 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     os << "  \"abstainUnits\": " << abstainCount << ",\n";
     os << "  \"openMarkUnits\": " << openMarkCount << ",\n";
     os << "  \"overrodeCommits\": " << overrodeCount << ",\n";
+    os << "  \"committedExtKnown\": " << committedExtKnown << ",\n";
+    os << "  \"committedExtUnknown\": " << committedExtUnknown << ",\n";
+    os << "  \"altExtKnown\": " << altExtKnown << ",\n";
+    os << "  \"altExtUnknown\": " << altExtUnknown << ",\n";
     os << "  \"modulationsConfirmed\": " << recomputeFired << ",\n";
     os << "  \"modulationSlicesReread\": " << recomputeSlices << ",\n";
     os << "  \"wallTimeLegacyMs\": " << fmtDouble(legacyMs, 3) << ",\n";
@@ -3019,6 +3035,8 @@ static std::string runFullSpine(Score* score, const std::string& stem,
            << ", \"l5LicensedFit\": " << fmtDouble(fc.licensedProgressionFit, 4)
            << ", \"l5NextBestMargin\": " << fmtDouble(fc.nextBestMargin, 4)
            << ", \"l5Combined\": " << fmtDouble(fc.combined, 4)
+           << ", \"l4ChosenExtensions\": " << (hasChord ? static_cast<long long>(fr.extensions) : 0)
+           << ", \"l4ChosenExtKnown\": " << (hasChord && fr.extensionsKnown ? "true" : "false")
            << ", \"openMark\": " << (unitOpenMark(i) ? "true" : "false");
 
         os << ", \"alternatives\": [";
@@ -3029,6 +3047,8 @@ static std::string runFullSpine(Score* score, const std::string& stem,
                << ", \"bassPitchClass\": " << alt.bassPc
                << ", \"quality\": \"" << qualityToString(alt.quality) << "\""
                << ", \"bassIsRoot\": " << (alt.bassIsRoot() ? "true" : "false")
+               << ", \"extensions\": " << static_cast<long long>(alt.extensions)
+               << ", \"extKnown\": " << (alt.extensionsKnown ? "true" : "false")
                << ", \"score\": " << fmtDouble(alt.score, 5) << " }";
         }
         os << "] }";

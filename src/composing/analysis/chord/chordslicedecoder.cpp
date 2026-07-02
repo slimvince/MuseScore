@@ -23,6 +23,7 @@
 #include "chordslicedecoder.h"
 
 #include <algorithm>
+#include <array>
 #include <limits>
 #include <optional>
 
@@ -427,7 +428,9 @@ std::vector<ChordSliceCandidate> candidatesForWindow(
     int winStart, int winEnd,
     int keySignatureFifths, KeySigMode keyMode,
     const ChordAnalyzerPreferences& prefs,
-    const std::set<std::size_t>& excludeStaves)
+    const std::set<std::size_t>& excludeStaves,
+    std::array<double, 12>* pcWeightOut = nullptr,
+    std::array<int, 12>* tpcForPcOut = nullptr)
 {
     const std::vector<ChordAnalysisTone> tones =
         engravingbridge::weightedPcView(model, winStart, winEnd, excludeStaves,
@@ -435,8 +438,16 @@ std::vector<ChordSliceCandidate> candidatesForWindow(
                                         /*excludeLookAheadOnDenseStart=*/false, prefs);
 
     function::ScoringSnapshot snapshot;
-    analyzer.analyzeChord(tones, keySignatureFifths, keyMode,
-                          /*context=*/nullptr, prefs, /*gateCtxOut=*/nullptr, &snapshot);
+    // analyzeChord's RANKED results (top-<=4 from the winning bass) already carry the FULL
+    // ChordIdentity — extensions + naturalFifthPresent. They are the L4->L5 carry source for
+    // any projected cell that matches one (obtainable without re-derivation); the chosen and
+    // the remaining alternatives are completed / honest-carried downstream.
+    const std::vector<ChordAnalysisResult> results =
+        analyzer.analyzeChord(tones, keySignatureFifths, keyMode,
+                              /*context=*/nullptr, prefs, /*gateCtxOut=*/nullptr, &snapshot);
+
+    if (pcWeightOut) { *pcWeightOut = snapshot.pcWeight; }
+    if (tpcForPcOut) { *tpcForPcOut = snapshot.tpcForPc; }
 
     std::vector<ChordSliceCandidate> out;
     out.reserve(snapshot.cells.size());
@@ -450,9 +461,48 @@ std::vector<ChordSliceCandidate> candidatesForWindow(
         c.quality     = cell.quality;
         c.tiePriority = cell.tiePriority;
         c.score       = verticalScore(cell);
+        // L4->L5 carry (honest): copy the extension identity from analyzeChord's own result
+        // for this exact cell (root + bass + template) where it produced one; otherwise leave
+        // the honest-carry default (extensions = 0, extensionsKnown = false) — never a guess.
+        // The chosen cell, if not among the <=4 results, is completed later by a full
+        // extraction (completeChosenExtensions); alternatives keep the honest-carry.
+        for (const ChordAnalysisResult& r : results) {
+            if (r.identity.rootPc == cell.rootPc
+                && r.identity.bassPc == cell.bassPc
+                && r.identity.tiePriority == cell.tiePriority) {
+                c.extensions          = r.identity.extensions;
+                c.naturalFifthPresent = r.identity.naturalFifthPresent;
+                c.extensionsKnown     = true;
+                break;
+            }
+        }
         out.push_back(c);
     }
     return out;
+}
+
+/// Complete the committed (chosen) chord's extension identity — the L4->L5 carry for the
+/// CHOSEN. Its alternatives were populated at projection from analyzeChord's <=4 results,
+/// but the chosen (the top vertical-score cell across ALL basses) is frequently NOT among
+/// those results, so run the full extraction on its own tones (deriveChordExtensions — the
+/// same primitive buildChordResult uses, over the window's pcWeight/tpcForPc). No-op when
+/// the chosen is already known (a results-matched chosen, or an INHERIT carrying the
+/// prevailing chord's already-completed extensions forward). Pure w.r.t. the note model:
+/// reads only the captured window pcWeight/tpcForPc + the chosen's own root/quality.
+void completeChosenExtensions(SliceChord& sc,
+                              const std::array<double, 12>& pcWeight,
+                              const std::array<int, 12>& tpcForPc,
+                              double extThreshold)
+{
+    if (!sc.hasChord || sc.chosen.rootPc < 0 || sc.chosen.extensionsKnown) {
+        return;
+    }
+    const ChordExtensionInfo info = deriveChordExtensions(
+        pcWeight, sc.chosen.rootPc, sc.chosen.quality, tpcForPc,
+        sc.chosen.rootTpc, extThreshold);
+    sc.chosen.extensions          = info.extensions;
+    sc.chosen.naturalFifthPresent = info.naturalFifthPresent;
+    sc.chosen.extensionsKnown     = true;
 }
 
 /// G6 — populate the L4→L5 forward contract on @p sc AFTER the G1 decision is settled
@@ -1023,6 +1073,11 @@ struct SliceWork {
     std::vector<FocalNote> focal;     ///< notes in [slice.start, slice.end)
     std::vector<FocalNote> window;    ///< notes in the adaptive window (focal ⊆ window)
     SliceChord pass1;                 ///< provisional chord (own notes + key prior)
+    // Window vertical facts captured from the analyzeChord snapshot (the L4->L5 carry:
+    // completeChosenExtensions extracts the chosen chord's extensions from these).
+    std::array<double, 12> pcWeight{};
+    std::array<int, 12>    tpcForPc{};
+    double extThreshold = 0.0;
     bool built = false;
 };
 
@@ -1039,7 +1094,9 @@ SliceWork buildSliceWork(const RuleBasedChordAnalyzer& analyzer,
     SliceWork w;
     int ws = 0, we = 0;
     adaptiveWindow(slices, model, t, dp, excludeStaves, ws, we);
-    w.cands  = candidatesForWindow(analyzer, model, ws, we, keyFifths, keyMode, prefs, excludeStaves);
+    w.cands  = candidatesForWindow(analyzer, model, ws, we, keyFifths, keyMode, prefs,
+                                   excludeStaves, &w.pcWeight, &w.tpcForPc);
+    w.extThreshold = prefs.extensionThreshold;
     w.window = eligibleNotesInSpan(model, ws, we, excludeStaves);
     w.focal  = eligibleNotesInSpan(model, slices[static_cast<std::size_t>(t)].start,
                                    slices[static_cast<std::size_t>(t)].end, excludeStaves);
@@ -1076,6 +1133,10 @@ SliceChord finalizeSlice(int t, const SliceWork& w,
     // stepwise-embellishment inherit (nextC is the right-side provisional that tells a
     // CONTINUATION of the prevailing chord from a TRANSITION to the next).
     ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing, prevC, nextC, dp);
+    // L4->L5 carry: complete the committed (chosen) chord's extension identity from this
+    // slice's window facts. On an Inherit the chosen already carries the prevailing chord's
+    // completed extensions (no-op); on a Commit not among the <=4 results it extracts them.
+    completeChosenExtensions(sc, w.pcWeight, w.tpcForPc, w.extThreshold);
     if (sc.hasChord) {
         const MembershipResult mc =
             ChordSliceDecoder::classifyMembership(sc.chosen, w.focal, w.window, prevC, nextC, dp);
@@ -1123,6 +1184,7 @@ std::vector<SliceChord> decodeWindowed(
             // conservative template-only G1 base (no CONTINUATION can be confirmed).
             ChordSliceDecoder::applyCommitDecision(sc, w.focal, w.window, prevailing,
                                                    std::nullopt, std::nullopt, dp);   // G1
+            completeChosenExtensions(sc, w.pcWeight, w.tpcForPc, w.extThreshold);   // L4->L5 carry
             if (sc.hasChord) { prevailing = sc.chosen; }
             if (t >= outFirst) { out.push_back(std::move(sc)); }
         }

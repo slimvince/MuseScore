@@ -22,6 +22,8 @@
 
 #include <gtest/gtest.h>
 
+#include <array>
+
 #include "composing/analysis/chord/chordanalyzer.h"
 
 #include "test_helpers.h"
@@ -2584,4 +2586,46 @@ TEST(Composing_Sus4RequiresFourthTests, FourthAboveJazzThreshold_JazzPreset_CanB
     ASSERT_FALSE(results.empty());
     EXPECT_EQ(results.front().identity.quality, ChordQuality::Suspended4)
         << "P4 weight 0.13 ≥ Jazz threshold 0.12; Sus4 must not be penalised";
+}
+
+// ── deriveChordExtensions — the exposed fixed-quality extension extraction ─────
+//
+// The primitive the Layer-4 slice decoder uses to COMPLETE the committed chord's
+// identity for the L4->L5 carry (cowork_layer4_chordsymbol_design.md §7). Same
+// detectExtensions + flag-mapping + naturalFifthPresent rule as buildChordResult,
+// but for a FIXED quality (no re-scoring, no Sus->Major quality mutation). Pure over
+// the weighted pc view.
+TEST(Composing_DeriveChordExtensions, Dom7YieldsMinorSeventhAndFifth)
+{
+    std::array<double, 12> pcWeight{};
+    pcWeight[7] = 1.0;   // G (root)
+    pcWeight[11] = 1.0;  // B (M3)
+    pcWeight[2] = 1.0;   // D (P5)
+    pcWeight[5] = 1.0;   // F (m7)
+    std::array<int, 12> tpcForPc;
+    tpcForPc.fill(-1);
+    tpcForPc[7] = 15; tpcForPc[11] = 19; tpcForPc[2] = 16; tpcForPc[5] = 13;
+
+    const ChordExtensionInfo info = deriveChordExtensions(
+        pcWeight, /*rootPc=*/7, ChordQuality::Major, tpcForPc, /*rootTpc=*/15,
+        /*extThreshold=*/0.20);
+    EXPECT_TRUE(hasExtension(info.extensions, Extension::MinorSeventh))
+        << "G-B-D-F carries the minor seventh (F)";
+    EXPECT_FALSE(hasExtension(info.extensions, Extension::MajorSeventh));
+    EXPECT_TRUE(info.naturalFifthPresent) << "the P5 (D) is sounding";
+}
+
+TEST(Composing_DeriveChordExtensions, PlainMajorTriadHasNoSeventh)
+{
+    std::array<double, 12> pcWeight{};
+    pcWeight[0] = 1.0; pcWeight[4] = 1.0; pcWeight[7] = 1.0;   // C major triad
+    std::array<int, 12> tpcForPc;
+    tpcForPc.fill(-1);
+    tpcForPc[0] = 14; tpcForPc[4] = 18; tpcForPc[7] = 15;
+
+    const ChordExtensionInfo info = deriveChordExtensions(
+        pcWeight, /*rootPc=*/0, ChordQuality::Major, tpcForPc, /*rootTpc=*/14,
+        /*extThreshold=*/0.20);
+    EXPECT_EQ(info.extensions, 0u) << "a clean triad carries no extensions";
+    EXPECT_TRUE(info.naturalFifthPresent);
 }

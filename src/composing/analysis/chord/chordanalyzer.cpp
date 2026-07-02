@@ -329,6 +329,31 @@ ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,
     return f;
 }
 
+/// Map detected ExtensionFlags (+ the omitsThird flag buildChordResult derives on the
+/// Sus->Major upgrade) to the ChordIdentity.extensions bitmask. The single source of the
+/// flag->bit mapping, shared by buildChordResult and the exposed deriveChordExtensions.
+uint32_t extensionBits(const ExtensionFlags& ext, bool omitsThird)
+{
+    uint32_t e = 0;
+    if (ext.hasMinorSeventh)      setExtension(e, Extension::MinorSeventh);
+    if (ext.hasMajorSeventh)      setExtension(e, Extension::MajorSeventh);
+    if (ext.hasDiminishedSeventh) setExtension(e, Extension::DiminishedSeventh);
+    if (ext.hasAddedSixth)        setExtension(e, Extension::AddedSixth);
+    if (ext.hasNinthNatural)      setExtension(e, Extension::NaturalNinth);
+    if (ext.hasNinthFlat)         setExtension(e, Extension::FlatNinth);
+    if (ext.hasNinthSharp)        setExtension(e, Extension::SharpNinth);
+    if (ext.hasEleventh)          setExtension(e, Extension::NaturalEleventh);
+    if (ext.hasEleventhSharp)     setExtension(e, Extension::SharpEleventh);
+    if (ext.hasThirteenth)        setExtension(e, Extension::NaturalThirteenth);
+    if (ext.hasThirteenthFlat)    setExtension(e, Extension::FlatThirteenth);
+    if (ext.hasThirteenthSharp)   setExtension(e, Extension::SharpThirteenth);
+    if (ext.hasSharpFifth)        setExtension(e, Extension::SharpFifth);
+    if (ext.hasFlatFifth)         setExtension(e, Extension::FlatFifth);
+    if (ext.isSixNine)            setExtension(e, Extension::SixNine);
+    if (omitsThird)               setExtension(e, Extension::OmitsThird);
+    return e;
+}
+
 // ── Chord template definition ──────────────────────────────────────────────
 
 /// A chord template: quality, intervals from root (semitones), and expected
@@ -952,28 +977,33 @@ ChordAnalysisResult buildChordResult(
                                           > prefs.extensionThreshold);
     r.identity.quality              = quality;
     r.identity.tiePriority          = static_cast<int>(rc.tiePriority);
-    if (ext.hasMinorSeventh)      setExtension(r.identity.extensions, Extension::MinorSeventh);
-    if (ext.hasMajorSeventh)      setExtension(r.identity.extensions, Extension::MajorSeventh);
-    if (ext.hasDiminishedSeventh) setExtension(r.identity.extensions, Extension::DiminishedSeventh);
-    if (ext.hasAddedSixth)        setExtension(r.identity.extensions, Extension::AddedSixth);
-    if (ext.hasNinthNatural)      setExtension(r.identity.extensions, Extension::NaturalNinth);
-    if (ext.hasNinthFlat)         setExtension(r.identity.extensions, Extension::FlatNinth);
-    if (ext.hasNinthSharp)        setExtension(r.identity.extensions, Extension::SharpNinth);
-    if (ext.hasEleventh)          setExtension(r.identity.extensions, Extension::NaturalEleventh);
-    if (ext.hasEleventhSharp)     setExtension(r.identity.extensions, Extension::SharpEleventh);
-    if (ext.hasThirteenth)        setExtension(r.identity.extensions, Extension::NaturalThirteenth);
-    if (ext.hasThirteenthFlat)    setExtension(r.identity.extensions, Extension::FlatThirteenth);
-    if (ext.hasThirteenthSharp)   setExtension(r.identity.extensions, Extension::SharpThirteenth);
-    if (ext.hasSharpFifth)        setExtension(r.identity.extensions, Extension::SharpFifth);
-    if (ext.hasFlatFifth)         setExtension(r.identity.extensions, Extension::FlatFifth);
-    if (ext.isSixNine)            setExtension(r.identity.extensions, Extension::SixNine);
-    if (omitsThird)               setExtension(r.identity.extensions, Extension::OmitsThird);
+    r.identity.extensions           = extensionBits(ext, omitsThird);
     r.function.degree               = degree;
     r.function.diatonicToKey        = diatonic;
     r.function.keyTonicPc           = ctx.keyTonicPc;
     r.function.keyMode              = ctx.keyMode;
 
     return r;
+}
+
+ChordExtensionInfo deriveChordExtensions(
+    const std::array<double, 12>& pcWeight,
+    int rootPc, ChordQuality quality,
+    const std::array<int, 12>& tpcForPc,
+    int rootTpc, double extThreshold)
+{
+    ChordExtensionInfo info;
+    if (rootPc < 0 || rootPc >= 12) {
+        return info;   // no root → no colour (defensive; the caller gates on rootPc >= 0)
+    }
+    const ExtensionFlags ext =
+        detectExtensions(pcWeight, rootPc, quality, tpcForPc, rootTpc, extThreshold);
+    // Fixed-quality extraction: NO Sus->Major(omitsThird) mutation (that only fires when
+    // buildChordResult CHANGES the quality; the committed quality is authoritative here).
+    info.extensions = extensionBits(ext, /*omitsThird=*/false);
+    info.naturalFifthPresent = (quality != ChordQuality::Augmented)
+                               && (pcWeight[static_cast<size_t>((rootPc + 7) % 12)] > extThreshold);
+    return info;
 }
 
 

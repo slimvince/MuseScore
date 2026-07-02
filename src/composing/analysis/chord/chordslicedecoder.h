@@ -303,6 +303,22 @@ struct ChordSliceCandidate {
     int tiePriority = -1;
     double score = 0.0;
 
+    // ── L4->L5 carry: the committed chord's vertical extension identity ──────────
+    // The colour fields ChordIdentity carries beyond root/quality/bass — the seventh
+    // (Minor/Major/Diminished), the 9/11/13 upper extensions, and the aug6 markers
+    // (Sharp13/Sharp11) — that the Layer-5 base Roman numeral (figured-bass 7/65/43/42),
+    // the V7/x applied gate, and the Ger+6-vs-It+6 nationality read. Populated by the
+    // projection (chordslicedecoder.cpp): the CHOSEN committed chord is a full extraction
+    // (deriveChordExtensions on its own tones — extensionsKnown = true, guaranteed); a
+    // carried alternative is populated from analyzeChord's already-computed result cells
+    // where it matches one (extensionsKnown = true), else HONEST-CARRY (extensions = 0,
+    // naturalFifthPresent = false, extensionsKnown = false) — never a guess. A consumer
+    // reads extensions ONLY when extensionsKnown; on !extensionsKnown the reading is
+    // triad-level (the seventh is unknown, not asserted absent).
+    uint32_t extensions = 0;          ///< ChordIdentity.extensions bitmask (see chord Extension enum)
+    bool naturalFifthPresent = false; ///< P5 above root sounding (It+6 vs Ger+6)
+    bool extensionsKnown = false;     ///< true = extensions/naturalFifthPresent are a real extraction
+
     bool bassIsRoot() const { return bassPc == rootPc; }
 };
 
