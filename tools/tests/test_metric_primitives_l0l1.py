@@ -354,6 +354,16 @@ class TestKeyTonicHelpers(unittest.TestCase):
         self.assertEqual(crn._our_key_tonic("Bbmaj"), (10, True))
         self.assertEqual(crn._our_key_tonic("C#min"), (1, False))
 
+    def test_our_key_tonic_mode_qualified_normalization(self):
+        # carry-fix 2 Task 2: mode-qualified local-key names (correct tonic, uppercase
+        # in the mode) normalize to (tonic, minor) instead of counting as a parse failure.
+        self.assertEqual(crn._our_key_tonic("DDor"), (2, False))       # Dorian -> minor tonic
+        self.assertEqual(crn._our_key_tonic("EPhrygDom"), (4, False))  # Phrygian-dom -> minor tonic
+        self.assertEqual(crn._our_key_tonic("Gharm"), (7, False))      # harmonic minor
+        self.assertEqual(crn._our_key_tonic("Dmel"), (2, False))       # melodic minor
+        self.assertEqual(crn._our_key_tonic("F#harm"), (6, False))     # with accidental
+        self.assertEqual(crn._our_key_tonic("Clyd"), (0, True))        # lydian = major-ish
+
     def test_our_key_tonic_parse_failures(self):
         self.assertEqual(crn._our_key_tonic(""), (None, None))
         self.assertEqual(crn._our_key_tonic(None), (None, None))

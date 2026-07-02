@@ -223,7 +223,38 @@ _KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}
 _KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
 
 _KB_DCML_KEY_RE = re.compile(r'^([a-gA-G])([#b]*)$')
-_KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([a-z]+)$')
+# The mode suffix may contain uppercase letters (e.g. 'Dor', 'PhrygDom'), so the
+# mode group is [A-Za-z]+ (was [a-z]+, which rejected those and mis-counted them as
+# key-parse failures — carry-fix 2 Task 2, measurement fairness).
+_KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([A-Za-z]+)$')
+
+# ── Grader-side mode-qualified local-key normalization (carry-fix 2 Task 2) ──
+# The chain's local-key path emits mode-qualified names (Xharm/Xmel harmonic/melodic
+# minor, XDor Dorian, XPhrygDom Phrygian-dominant) whose TONIC is correct but whose
+# STRING the maj/min-only DCML key parser rejected → they were counted keyparse_fail,
+# conflating key-inference quality with mode-label string parseability. This grader-only
+# normalization maps a mode suffix to a major/minor identity so the key comparison scores
+# key IDENTITY, not parseability. PRODUCTION EMITS THESE UNCHANGED.
+#
+# Mapping (mode-prefix, lower-cased → is_major):
+#   • major-third modes maj / ion(ian) / lyd(ian) / mix(olydian)     → MAJOR
+#   • every other (minor-third) mode → MINOR, i.e.:
+#       - Xharm / Xmel  → X minor      (harmonic / melodic minor variants of the tonic)
+#       - XPhrygDom      → X minor      (Phrygian-dominant is a minor-tonic dominant scale)
+#       - XDor           → X minor      — the PARENT-SIGNATURE CLASSIFICATION (declared choice):
+#            Dorian is a minor-third mode; its natural-scale parent at the SAME tonic is the
+#            minor key, and the key comparison uses only (tonic_pc, is_major). Classifying
+#            D-Dorian as (D, minor) PRESERVES the correct tonic (the property the E0′ spot-
+#            check verified) and keeps the whole minor-mode family on one side. The rejected
+#            alternative — the RELATIVE-major signature (D-Dorian → F major) — was declined
+#            because it MOVES the tonic and would break the tonic-correct property.
+_KB_MAJOR_MODE_PREFIXES = ('maj', 'ion', 'lyd', 'mix')
+
+
+def _mode_is_major(mode: str) -> bool:
+    """Classify a local-key mode suffix as major (True) or minor (False), case-
+    insensitively, per the carry-fix-2 Task-2 mapping documented above."""
+    return mode.lower()[:3] in _KB_MAJOR_MODE_PREFIXES
 
 
 def _dcml_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
@@ -240,9 +271,11 @@ def _dcml_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
 
 
 def _our_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
-    """Our key string ('Cmin', 'Cmaj', 'C#min', 'Bbmaj', 'Gdor') -> (tonic_pc,
-    is_major).  Major-ish modes (maj/ion/lyd/mix) are major; the rest minor.
-    (None, None) if unparseable (the 2.4% caveat the dossier flags)."""
+    """Our key string ('Cmin', 'Cmaj', 'C#min', 'Bbmaj', 'Gdor', 'DDor', 'EPhrygDom')
+    -> (tonic_pc, is_major).  The mode suffix is normalized to a major/minor identity
+    by _mode_is_major (carry-fix 2 Task 2) so a mode-qualified name with a correct tonic
+    is not counted a parse failure.  (None, None) only if the string is genuinely
+    unparseable (empty / not <letter><acc?><mode>)."""
     if not k:
         return (None, None)
     m = _KB_OURS_KEY_RE.match(k.strip())
@@ -250,7 +283,7 @@ def _our_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
         return (None, None)
     letter, acc, mode = m.group(1), m.group(2), m.group(3)
     pc = _KB_NOTE_OURS[letter] + (1 if acc == '#' else -1 if acc == 'b' else 0)
-    return (pc % 12, mode[:3] in ('maj', 'ion', 'lyd', 'mix'))
+    return (pc % 12, _mode_is_major(mode))
 
 
 def key_disagree_subtag(ours_region, dcml_region) -> str:
