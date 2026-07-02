@@ -1,0 +1,1494 @@
+{
+ "_schema": "score_census_registry v2 (census §3 + CC corpus-wave1 dispatch 2026-07-02)",
+ "_generated_by": "tools/build_score_census_registry.py (deterministic; re-run after any clone/pin change)",
+ "_fields": [
+  "name",
+  "container",
+  "content",
+  "pieces",
+  "annotated_pieces",
+  "gt_type",
+  "gt_layers",
+  "annotation_standard",
+  "score_format",
+  "alignment",
+  "license_class",
+  "distribution",
+  "tier",
+  "status",
+  "split",
+  "provenance_url",
+  "pinned_commit",
+  "notes"
+ ],
+ "_notes": [
+  "gt_type enum: rn|chords|key|cadence|phrase|none. tier: G|J|C|S|X. distribution: committable|hash-pin-only. license_class: PD|CC0|CC-BY|CC-BY-NC|unclear. split: dev|held-out (held-out never tuned against; demotion to dev only by explicit recorded decision).",
+  "All DLC members are distribution=hash-pin-only (gitignored under tools/dcml/; C1-audit mechanism) regardless of license_class. 28 of 40 DLC repos have NO in-repo LICENSE (license_class=unclear).",
+  "DLC 'pieces'=MS3 .mscx movement count; 'annotated_pieces'=harmonies TSV count. Every DLC harmonies TSV also carries cadence/form/phraseend columns (layer_label_counts) that dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4.",
+  "Container = distant_listening_corpus has 40 submodules (census '41' was an overcount; verified from .gitmodules 2026-07-02)."
+ ],
+ "distant_listening_corpus": {
+  "submodule_count": 40,
+  "onboarded": 40,
+  "members": [
+   {
+    "name": "ABC",
+    "container": "distant_listening_corpus",
+    "content": "Beethoven, all 16 string quartets",
+    "pieces": 70,
+    "annotated_pieces": 70,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 964
+    },
+    "annotation_standard": "DCML harmony 1.0.0(70)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/ABC",
+    "pinned_commit": "b6b7d38500bacb30c81db7e09d8790df1a2edd46",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "bach_en_fr_suites",
+    "container": "distant_listening_corpus",
+    "content": "J.S. Bach English & French Suites",
+    "pieces": 89,
+    "annotated_pieces": 89,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 584,
+     "phraseend": 1106
+    },
+    "annotation_standard": "DCML harmony 2.3.0(89)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/bach_en_fr_suites.git",
+    "pinned_commit": "9cd6d362ed8246ed8edfc425944862ed88ddf1a5",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded pre-wave1"
+   },
+   {
+    "name": "bach_solo",
+    "container": "distant_listening_corpus",
+    "content": "J.S. Bach solo works (cello/violin/flute)",
+    "pieces": 68,
+    "annotated_pieces": 68,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 192,
+     "phraseend": 739
+    },
+    "annotation_standard": "DCML harmony 2.3.0(68)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/bach_solo",
+    "pinned_commit": "dce67f753ced46b43dbfb16779fe3a19233893da",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "bartok_bagatelles",
+    "container": "distant_listening_corpus",
+    "content": "Bartok, 14 Bagatelles op. 6",
+    "pieces": 14,
+    "annotated_pieces": 14,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 35,
+     "phraseend": 110
+    },
+    "annotation_standard": "DCML harmony 2.3.0(14)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/bartok_bagatelles",
+    "pinned_commit": "c6221f6ecb4dbcd476e827f6bf8705bdcb15c8a9",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "beethoven_piano_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "Beethoven, piano sonatas",
+    "pieces": 91,
+    "annotated_pieces": 64,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 1370,
+     "phraseend": 2339
+    },
+    "annotation_standard": "DCML harmony 2.3.0(64)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/beethoven_piano_sonatas",
+    "pinned_commit": "ea7181bff88abc8713257234f7ec4033178c57a9",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "c_schumann_lieder",
+    "container": "distant_listening_corpus",
+    "content": "Clara Schumann, Lieder",
+    "pieces": 12,
+    "annotated_pieces": 12,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 64,
+     "phraseend": 148
+    },
+    "annotation_standard": "DCML harmony 2.3.0(12)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/c_schumann_lieder",
+    "pinned_commit": "9ed9255559c670a79a76bc1b21a911b16efe492d",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "chopin_mazurkas",
+    "container": "distant_listening_corpus",
+    "content": "Chopin, mazurkas",
+    "pieces": 56,
+    "annotated_pieces": 55,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 344,
+     "phraseend": 1139
+    },
+    "annotation_standard": "DCML harmony 2.2.0(1), 2.3.0(54)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/chopin_mazurkas.git",
+    "pinned_commit": "5931135e614985023b96de2a291c74b7ef90b287",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "corelli",
+    "container": "distant_listening_corpus",
+    "content": "Corelli, trio sonatas",
+    "pieces": 149,
+    "annotated_pieces": 149,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 1061,
+     "phraseend": 1794
+    },
+    "annotation_standard": "DCML harmony 2.3.0(149)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/corelli.git",
+    "pinned_commit": "65608a1a193bb2375a018060b266645ba05a0bc4",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "couperin_clavecin",
+    "container": "distant_listening_corpus",
+    "content": "Couperin, L'art de toucher le clavecin",
+    "pieces": 9,
+    "annotated_pieces": 9,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 57,
+     "phraseend": 103
+    },
+    "annotation_standard": "DCML harmony 2.3.0(9)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/couperin_clavecin",
+    "pinned_commit": "3bd00fc56d3473b26f1bea5fe50d1a1f2458c462",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "couperin_concerts",
+    "container": "distant_listening_corpus",
+    "content": "Couperin, Concerts Royaux",
+    "pieces": 91,
+    "annotated_pieces": 84,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 744,
+     "phraseend": 1513
+    },
+    "annotation_standard": "DCML harmony 2.3.0(84)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/couperin_concerts",
+    "pinned_commit": "49efcdd24c39d48bf009d60f8aa3bbc1a1d9713a",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "cpe_bach_keyboard",
+    "container": "distant_listening_corpus",
+    "content": "C.P.E. Bach, keyboard works",
+    "pieces": 66,
+    "annotated_pieces": 66,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 796,
+     "phraseend": 1762
+    },
+    "annotation_standard": "DCML harmony 2.3.0(66)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/cpe_bach_keyboard.git",
+    "pinned_commit": "4b3511eab12b5fbfc7aa5c75819ee02225430da8",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded pre-wave1"
+   },
+   {
+    "name": "debussy_suite_bergamasque",
+    "container": "distant_listening_corpus",
+    "content": "Debussy, Suite bergamasque",
+    "pieces": 4,
+    "annotated_pieces": 4,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 29,
+     "phraseend": 40
+    },
+    "annotation_standard": "DCML harmony 2.3.0(4)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/debussy_suite_bergamasque",
+    "pinned_commit": "322ece590e536924308a551a69d9c1520248d3d5",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "dvorak_silhouettes",
+    "container": "distant_listening_corpus",
+    "content": "Dvorak, Silhouettes op. 8",
+    "pieces": 12,
+    "annotated_pieces": 12,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 139,
+     "phraseend": 262
+    },
+    "annotation_standard": "DCML harmony 2.3.0(12)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/dvorak_silhouettes.git",
+    "pinned_commit": "f228006fcd8696c809cfc8e701ed215cec3d07f1",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "frescobaldi_fiori_musicali",
+    "container": "distant_listening_corpus",
+    "content": "Frescobaldi, Fiori Musicali (1635) — modal",
+    "pieces": 47,
+    "annotated_pieces": 48,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 426
+    },
+    "annotation_standard": "DCML harmony (version unstamped in metadata)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/frescobaldi_fiori_musicali",
+    "pinned_commit": "e17de917111e900929db785bfa2d0313968ca5d4",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "grieg_lyric_pieces",
+    "container": "distant_listening_corpus",
+    "content": "Grieg, Lyric Pieces",
+    "pieces": 66,
+    "annotated_pieces": 66,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 433,
+     "phraseend": 1081
+    },
+    "annotation_standard": "DCML harmony 2.3.0(66)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/grieg_lyric_pieces.git",
+    "pinned_commit": "91a304563521f3f273b8c0aadec1ce2ede2d1384",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "handel_keyboard",
+    "container": "distant_listening_corpus",
+    "content": "Handel, Grobschmied Variations HWV 430",
+    "pieces": 6,
+    "annotated_pieces": 6,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 28,
+     "phraseend": 54
+    },
+    "annotation_standard": "DCML harmony 2.3.0(6)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/handel_keyboard",
+    "pinned_commit": "d3b42765e0d2457b6abb1bdb3e8dd622db61b084",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "jc_bach_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "J.C. Bach, keyboard sonatas",
+    "pieces": 29,
+    "annotated_pieces": 29,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 406,
+     "phraseend": 742
+    },
+    "annotation_standard": "DCML harmony 2.3.0(29)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/jc_bach_sonatas",
+    "pinned_commit": "ac9fd07905eb62c3d8cfbd96811491170a216232",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "kleine_geistliche_konzerte",
+    "container": "distant_listening_corpus",
+    "content": "Schuetz, Kleine Geistliche Konzerte (17th-c. sacred)",
+    "pieces": 56,
+    "annotated_pieces": 55,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 1093
+    },
+    "annotation_standard": "DCML harmony 2.1.1(56)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/kleine_geistliche_konzerte",
+    "pinned_commit": "b3cc43d4ffc9a141b85400ab460aaeb95c29ea4a",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "kozeluh_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "Kozeluch, piano sonatas",
+    "pieces": 49,
+    "annotated_pieces": 49,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 1068
+    },
+    "annotation_standard": "DCML harmony 2.1.0(49)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/kozeluh_sonatas",
+    "pinned_commit": "23c1983a48809647af1a08d54b1fade39ec93995",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "liszt_pelerinage",
+    "container": "distant_listening_corpus",
+    "content": "Liszt, Annees de Pelerinage",
+    "pieces": 19,
+    "annotated_pieces": 19,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 272,
+     "phraseend": 485
+    },
+    "annotation_standard": "DCML harmony 2.1.1(6), 2.3.0(13)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/liszt_pelerinage",
+    "pinned_commit": "f1cfd308adba5763aad3a18885eac48d42449fc4",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "mahler_kindertotenlieder",
+    "container": "distant_listening_corpus",
+    "content": "Mahler, Kindertotenlieder (orchestral song)",
+    "pieces": 5,
+    "annotated_pieces": 5,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 30,
+     "phraseend": 49
+    },
+    "annotation_standard": "DCML harmony 2.3.0(5)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/mahler_kindertotenlieder",
+    "pinned_commit": "9122b6d313b94185ad6a42710ad09b7c59d31af5",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "medtner_tales",
+    "container": "distant_listening_corpus",
+    "content": "Medtner, Tales (Skazki)",
+    "pieces": 19,
+    "annotated_pieces": 19,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 233,
+     "phraseend": 492
+    },
+    "annotation_standard": "DCML harmony 2.3.0(19)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/medtner_tales",
+    "pinned_commit": "1d2e58ba8d329463829e45e75900af43be4256bf",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "mendelssohn_quartets",
+    "container": "distant_listening_corpus",
+    "content": "Mendelssohn, string quartets",
+    "pieces": 24,
+    "annotated_pieces": 24,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 451
+    },
+    "annotation_standard": "DCML harmony 2.1.0(24)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/mendelssohn_quartets",
+    "pinned_commit": "b92a90c5ce2423a3f0d32536dc5c1304fe6d0369",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "monteverdi_madrigals",
+    "container": "distant_listening_corpus",
+    "content": "Monteverdi, madrigals",
+    "pieces": 19,
+    "annotated_pieces": 19,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 301
+    },
+    "annotation_standard": "DCML harmony 2.1.0(19)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/monteverdi_madrigals",
+    "pinned_commit": "6e1adc73a865b50fb8b8f38661f06c4fad8c2b53",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "mozart_piano_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "Mozart, complete piano sonatas",
+    "pieces": 54,
+    "annotated_pieces": 54,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 1115,
+     "phraseend": 1893
+    },
+    "annotation_standard": "DCML harmony (version unstamped in metadata)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/mozart_piano_sonatas.git",
+    "pinned_commit": "5337257a5318711e6302cfe85c3f1a6ade3c6271",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "pergolesi_stabat_mater",
+    "container": "distant_listening_corpus",
+    "content": "Pergolesi, Stabat Mater",
+    "pieces": 12,
+    "annotated_pieces": 7,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 170
+    },
+    "annotation_standard": "DCML harmony 2.2.0(7)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/pergolesi_stabat_mater",
+    "pinned_commit": "b24d5432884d641ba98cf49b107c47d199d38100",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "peri_euridice",
+    "container": "distant_listening_corpus",
+    "content": "Peri, Euridice (1600) — earliest surviving opera, modal",
+    "pieces": 6,
+    "annotated_pieces": 6,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 342,
+     "phraseend": 714
+    },
+    "annotation_standard": "DCML harmony 2.3.0(6)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/peri_euridice",
+    "pinned_commit": "f02fc6643ac489776aaed5418c1109e88381648f",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "pleyel_quartets",
+    "container": "distant_listening_corpus",
+    "content": "Pleyel, string quartets",
+    "pieces": 6,
+    "annotated_pieces": 6,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 115,
+     "phraseend": 214
+    },
+    "annotation_standard": "DCML harmony 2.3.0(6)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/pleyel_quartets",
+    "pinned_commit": "8b3d7f5e966290631571274067de6d3a9206a737",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "poulenc_mouvements_perpetuels",
+    "container": "distant_listening_corpus",
+    "content": "Poulenc, Mouvements perpetuels",
+    "pieces": 3,
+    "annotated_pieces": 3,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 6,
+     "phraseend": 40
+    },
+    "annotation_standard": "DCML harmony 2.3.0(3)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/poulenc_mouvements_perpetuels",
+    "pinned_commit": "7793981bf4bc9dbcc1d14de4c17abb4cb412ce4b",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "rachmaninoff_piano",
+    "container": "distant_listening_corpus",
+    "content": "Rachmaninoff, piano pieces",
+    "pieces": 22,
+    "annotated_pieces": 22,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 49,
+     "phraseend": 130
+    },
+    "annotation_standard": "DCML harmony 2.3.0(22)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/rachmaninoff_piano",
+    "pinned_commit": "a73f3246a764215863000357c81309b210a43f15",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "ravel_piano",
+    "container": "distant_listening_corpus",
+    "content": "Ravel, piano pieces",
+    "pieces": 5,
+    "annotated_pieces": 3,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 39
+    },
+    "annotation_standard": "DCML harmony 2.1.0(3)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/ravel_piano",
+    "pinned_commit": "5a97ccee5383a87dc38688733a59dba499ef44d9",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "scarlatti_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "D. Scarlatti, keyboard sonatas",
+    "pieces": 69,
+    "annotated_pieces": 69,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 809,
+     "phraseend": 1576
+    },
+    "annotation_standard": "DCML harmony 2.3.0(69)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/scarlatti_sonatas",
+    "pinned_commit": "7750a6086db69c48e5e65f71565d24bd0f68513a",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "schubert_winterreise",
+    "container": "distant_listening_corpus",
+    "content": "Schubert, Winterreise",
+    "pieces": 24,
+    "annotated_pieces": 24,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 207
+    },
+    "annotation_standard": "DCML harmony 2.1.0(24)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/schubert_winterreise",
+    "pinned_commit": "da2e281eec9bbcf8ae1e981f63f913a1a99b5edb",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "schulhoff_suite_dansante_en_jazz",
+    "container": "distant_listening_corpus",
+    "content": "Schulhoff, Suite dansante en jazz (jazz-idiom art music)",
+    "pieces": 6,
+    "annotated_pieces": 6,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 36,
+     "phraseend": 76
+    },
+    "annotation_standard": "DCML harmony 2.3.0(6)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/schulhoff_suite_dansante_en_jazz",
+    "pinned_commit": "e558f2d2505dcdf827b4212e87fda875e0440908",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "schumann_kinderszenen",
+    "container": "distant_listening_corpus",
+    "content": "R. Schumann, Kinderszenen",
+    "pieces": 13,
+    "annotated_pieces": 13,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 79,
+     "phraseend": 171
+    },
+    "annotation_standard": "DCML harmony 2.3.0(13)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/schumann_kinderszenen.git",
+    "pinned_commit": "ee929c1556bc937fe1ea7303cac4476e37caa4d1",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "schumann_liederkreis",
+    "container": "distant_listening_corpus",
+    "content": "R. Schumann, Liederkreis op. 39",
+    "pieces": 12,
+    "annotated_pieces": 12,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 86
+    },
+    "annotation_standard": "DCML harmony 2.1.0(12)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/schumann_liederkreis",
+    "pinned_commit": "226b788546e0b5c4907b996cb35f94bb4a38e980",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "sweelinck_keyboard",
+    "container": "distant_listening_corpus",
+    "content": "Sweelinck, organ/keyboard (Renaissance/early Baroque)",
+    "pieces": 1,
+    "annotated_pieces": 1,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 2
+    },
+    "annotation_standard": "DCML harmony 2.1.0(1)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/sweelinck_keyboard",
+    "pinned_commit": "0c2a4f5b613e44b6ab06e876d1f0d9afb9f1d445",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "tchaikovsky_seasons",
+    "container": "distant_listening_corpus",
+    "content": "Tchaikovsky, The Seasons",
+    "pieces": 12,
+    "annotated_pieces": 12,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 185,
+     "phraseend": 586
+    },
+    "annotation_standard": "DCML harmony 2.3.0(12)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "CC-BY-NC",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/tchaikovsky_seasons.git",
+    "pinned_commit": "5af15033c5f9c282f38fcf71234b86349e61e8c3",
+    "notes": "explicit CC BY-NC-SA 4.0 LICENSE in repo; onboarded pre-wave1"
+   },
+   {
+    "name": "wagner_overtures",
+    "container": "distant_listening_corpus",
+    "content": "Wagner, Tristan + Meistersinger preludes (orchestral, chromatic)",
+    "pieces": 2,
+    "annotated_pieces": 2,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 0,
+     "phraseend": 13
+    },
+    "annotation_standard": "DCML harmony 2.1.0(2)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "dev",
+    "provenance_url": "https://github.com/DCMLab/wagner_overtures",
+    "pinned_commit": "fe316b6ce8ba1e5f5ee01a01b323f3d13a876382",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   },
+   {
+    "name": "wf_bach_sonatas",
+    "container": "distant_listening_corpus",
+    "content": "W.F. Bach, keyboard sonatas",
+    "pieces": 9,
+    "annotated_pieces": 9,
+    "gt_type": "rn",
+    "gt_layers": [
+     "rn",
+     "cadence",
+     "phrase"
+    ],
+    "layer_label_counts": {
+     "cadence": 109,
+     "phraseend": 258
+    },
+    "annotation_standard": "DCML harmony 2.3.0(9)",
+    "score_format": "MuseScore .mscx (ms3 TSV extracts)",
+    "alignment": "score-aligned",
+    "license_class": "unclear",
+    "distribution": "hash-pin-only",
+    "tier": "G",
+    "status": "onboarded",
+    "split": "held-out",
+    "provenance_url": "https://github.com/DCMLab/wf_bach_sonatas",
+    "pinned_commit": "379e50dd389dbdbcf77f5eb88ecac7841c7ed0e4",
+    "notes": "no in-repo LICENSE; org states CC BY-NC-SA [reported]; onboarded corpus-wave1 2026-07-02"
+   }
+  ]
+ },
+ "other_sources": [
+  {
+   "name": "when_in_rome",
+   "container": "MarkGotham/When-in-Rome",
+   "content": "RN meta-corpus (~1,500 works incl. TAVERN, HaydnSun, KMT, BPS-FH, Tymoczko TAOM Bach-371, WTC-I preludes, OpenScore Lieder RN)",
+   "pieces": 762,
+   "annotated_pieces": 762,
+   "gt_type": "rn",
+   "gt_layers": [
+    "rn",
+    "key"
+   ],
+   "annotation_standard": "RomanText (analysis.txt) / remote.json",
+   "score_format": "score.mxl / remote.json (music21-parsable)",
+   "alignment": "score-aligned",
+   "license_class": "CC-BY",
+   "distribution": "hash-pin-only",
+   "tier": "G",
+   "status": "onboarded",
+   "split": "dev",
+   "provenance_url": "https://github.com/MarkGotham/When-in-Rome",
+   "pinned_commit": "aa7539f1cf480997a68998405c0783ebf6339c16",
+   "notes": "Bach-chorale slice is the BIR gate human-annotation GT (dcml_parser.find_wir_file). CC BY-SA analyses, mixed/CC0 scores [verified]."
+  },
+  {
+   "name": "bach_chorales_dcml",
+   "container": "DCMLab/bach_chorales",
+   "content": "J.S. Bach chorales (Kaiser edition) — SCORES ONLY, no harmony labels",
+   "pieces": 361,
+   "annotated_pieces": 0,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (labels column empty for every file [verified])",
+   "score_format": "MuseScore .mscx",
+   "alignment": "none",
+   "license_class": "CC0",
+   "distribution": "hash-pin-only",
+   "tier": "S",
+   "status": "onboarded",
+   "split": "dev",
+   "provenance_url": "https://github.com/DCMLab/bach_chorales",
+   "pinned_commit": "b8169ca06d9e183c59f317cce3b3b1e369f70d78",
+   "notes": "Source of 11-score pipeline-snapshot suite (MS3). NOT a DLC submodule. Bach-chorale RN GT is music21/WiR, not this repo."
+  },
+  {
+   "name": "music21_bach_chorales",
+   "container": "music21 built-in corpus",
+   "content": "Bach chorales exported via music21 -> the BIR gate input + GT (tools/corpus)",
+   "pieces": 353,
+   "annotated_pieces": 326,
+   "gt_type": "rn",
+   "gt_layers": [
+    "rn"
+   ],
+   "annotation_standard": "music21 v.9.9.1 (RN via WiR overlay)",
+   "score_format": "MusicXML (music21 export)",
+   "alignment": "score-aligned",
+   "license_class": "PD",
+   "distribution": "hash-pin-only",
+   "tier": "G",
+   "status": "onboarded",
+   "split": "dev",
+   "provenance_url": "https://github.com/cuthbertLab/music21",
+   "pinned_commit": null,
+   "notes": "THE gate corpus. Version-pinned (music21 v9.9.1), not commit-pinned; gitignored/regenerable. Frozen — do not touch (CLAUDE.md gate policy)."
+  },
+  {
+   "name": "choco",
+   "container": "smashub/choco",
+   "content": "ChoCo 18-partition chord-corpus aggregator (20,080 JAMS)",
+   "pieces": 20080,
+   "annotated_pieces": 20080,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords",
+    "key"
+   ],
+   "annotation_standard": "JAMS / Harte-normalized",
+   "score_format": "JAMS (mostly audio-aligned; symbolic subset)",
+   "alignment": "chords-only",
+   "license_class": "CC-BY",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/smashub/choco",
+   "pinned_commit": "5fe168fd55be5c84512abcfbc4e6f1b1f8f0092a",
+   "notes": "Research-tier (idiom study). Chordify/Mozart/JAAH partitions CC BY-NC-SA."
+  },
+  {
+   "name": "nottingham",
+   "container": "jukedeck/nottingham-dataset",
+   "content": "British/Irish folk tunes, ABC + chord symbols",
+   "pieces": 1000,
+   "annotated_pieces": 1000,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords"
+   ],
+   "annotation_standard": "ABC chord symbols",
+   "score_format": "ABC (symbolic)",
+   "alignment": "score-aligned",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/jukedeck/nottingham-dataset",
+   "pinned_commit": "0992bb6cd864f6d4b90d6663e08c0ef53ffaa08f",
+   "notes": "Research-tier."
+  },
+  {
+   "name": "mcgill_billboard",
+   "container": "McGill Billboard (DDMAL)",
+   "content": "US pop charts 1958-91, expert Harte chords",
+   "pieces": 890,
+   "annotated_pieces": 890,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords"
+   ],
+   "annotation_standard": "Harte / SALAMI",
+   "score_format": "salami_chords text",
+   "alignment": "chords-only",
+   "license_class": "CC0",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://ddmal.music.mcgill.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/",
+   "pinned_commit": null,
+   "notes": "Research-tier; local dir not a git repo (downloaded archive)."
+  },
+  {
+   "name": "irb",
+   "container": "iRb (Shanahan/Broze, DCMLab lda_tpcs reference)",
+   "content": "iRealPro jazz standards in Humdrum",
+   "pieces": 1200,
+   "annotated_pieces": 1200,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords"
+   ],
+   "annotation_standard": "Humdrum **harm/jazz",
+   "score_format": "Humdrum (chart, no notation)",
+   "alignment": "chords-only",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/DCMLab/lda_tpcs",
+   "pinned_commit": null,
+   "notes": "Research-tier; local dir not a git repo."
+  },
+  {
+   "name": "jazz_harmony_treebank",
+   "container": "DCMLab/JazzHarmonyTreebank",
+   "content": "150 jazz standards, hierarchical harmonic syntax trees",
+   "pieces": 150,
+   "annotated_pieces": 150,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords",
+    "syntax-tree"
+   ],
+   "annotation_standard": "JHT JSON",
+   "score_format": "chords-only JSON",
+   "alignment": "chords-only",
+   "license_class": "CC-BY",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/DCMLab/JazzHarmonyTreebank",
+   "pinned_commit": "26ec6170939054f08ba1b63db44712636d0d1db3",
+   "notes": "Research-tier."
+  },
+  {
+   "name": "hooktheory_hlsd",
+   "container": "wayne391/lead-sheet-dataset (HLSD sample)",
+   "content": "Hooktheory/TheoryTab crowd lead sheets (melody+chords+key, RN-convertible)",
+   "pieces": null,
+   "annotated_pieces": null,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords",
+    "key",
+    "melody"
+   ],
+   "annotation_standard": "TheoryTab XML/JSON",
+   "score_format": "symbolic (proprietary)",
+   "alignment": "score-aligned",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "recorded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/wayne391/lead-sheet-dataset",
+   "pinned_commit": "f6b72f9cf17d8010d5e55506d800e05f1790e2d6",
+   "notes": "Research-tier sample; full HLSD pending HF m-a-p/HookTheory access."
+  },
+  {
+   "name": "pop909",
+   "container": "music-x-lab/POP909-Dataset",
+   "content": "Chinese pop piano arrangements; chords/keys/beats/phrases",
+   "pieces": 909,
+   "annotated_pieces": 909,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords",
+    "key",
+    "phrase"
+   ],
+   "annotation_standard": "MIR-algorithm + human-corrected",
+   "score_format": "MIDI (aligned)",
+   "alignment": "score-aligned",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/music-x-lab/POP909-Dataset",
+   "pinned_commit": "d83e6edba6872a704f5d3b8b32f5cb540088dae6",
+   "notes": "Research-tier; chord labels semi-automatic."
+  },
+  {
+   "name": "chordonomicon",
+   "container": "ailsntua/Chordonomicon (HF)",
+   "content": "Ultimate-Guitar scrape, 666k chord progressions + section structure",
+   "pieces": 666000,
+   "annotated_pieces": 666000,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords",
+    "structure"
+   ],
+   "annotation_standard": "chord symbols",
+   "score_format": "chords-only (no scores)",
+   "alignment": "none",
+   "license_class": "CC-BY-NC",
+   "distribution": "hash-pin-only",
+   "tier": "X",
+   "status": "recorded",
+   "split": "held-out",
+   "provenance_url": "https://huggingface.co/datasets/ailsntua/Chordonomicon",
+   "pinned_commit": null,
+   "notes": "Research-tier; no score alignment. Local dir not a git repo (HF download)."
+  },
+  {
+   "name": "lda_tpcs",
+   "container": "DCMLab/lda_tpcs",
+   "content": "Moss et al. tonal pitch-class LDA method reference data",
+   "pieces": null,
+   "annotated_pieces": null,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (method reference)",
+   "score_format": "derived data",
+   "alignment": "none",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "X",
+   "status": "recorded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/DCMLab/lda_tpcs",
+   "pinned_commit": "7ed2381aeda671e127e65127cd6174e46d3d26ba",
+   "notes": "Research-tier reference, not GT."
+  },
+  {
+   "name": "omnibook",
+   "container": "Charlie Parker Omnibook (loria)",
+   "content": "Charlie Parker Omnibook (loria)",
+   "pieces": 50,
+   "annotated_pieces": 0,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (no RN/harmony GT)",
+   "score_format": "MusicXML/MXL",
+   "alignment": "none",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "S",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://homepages.loria.fr/evincent/omnibook/",
+   "pinned_commit": null,
+   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md)."
+  },
+  {
+   "name": "effendi",
+   "container": "Effendi jazz Real Book leadsheets",
+   "content": "Effendi jazz Real Book leadsheets",
+   "pieces": 292,
+   "annotated_pieces": 0,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (no RN/harmony GT)",
+   "score_format": "MusicXML/MXL",
+   "alignment": "none",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "S",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://effendi.me/jazz/repo/",
+   "pinned_commit": null,
+   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md)."
+  },
+  {
+   "name": "rampageswing",
+   "container": "Rampage Swing big-band charts",
+   "content": "Rampage Swing big-band charts",
+   "pieces": 36,
+   "annotated_pieces": 0,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (no RN/harmony GT)",
+   "score_format": "MusicXML/MXL",
+   "alignment": "none",
+   "license_class": "unclear",
+   "distribution": "hash-pin-only",
+   "tier": "S",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://www.rampageswing.com/",
+   "pinned_commit": null,
+   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md)."
+  },
+  {
+   "name": "pdmx",
+   "container": "PDMX public-domain MusicXML (scale/soak)",
+   "content": "PDMX public-domain MusicXML (scale/soak)",
+   "pieces": 250000,
+   "annotated_pieces": 0,
+   "gt_type": "none",
+   "gt_layers": [],
+   "annotation_standard": "n/a (no RN/harmony GT)",
+   "score_format": "MusicXML/MXL",
+   "alignment": "none",
+   "license_class": "PD",
+   "distribution": "hash-pin-only",
+   "tier": "S",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://zenodo.org/records/15571083",
+   "pinned_commit": null,
+   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md)."
+  }
+ ]
+}

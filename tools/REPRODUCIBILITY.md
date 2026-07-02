@@ -54,6 +54,65 @@ git clone https://github.com/DCMLab/tchaikovsky_seasons && git -C tchaikovsky_se
   and re-measure the BIR gate — never silently. `tools/tests/test_snapshot_sources.py`
   fails if disk drifts from the manifest without the manifest being updated.
 
+### tools/dcml/ — corpus wave 1 (DLC container completed, 2026-07-02)
+
+The Distant Listening Corpus (`github.com/DCMLab/distant_listening_corpus`) has
+**40 submodules** (verified from its `.gitmodules`; the census's "41" was an
+overcount). The project used 10 of them (the gate-relevant repos above, minus
+`bach_chorales`/`when_in_rome` which are not DLC submodules); corpus wave 1
+onboarded the **other 30** as **research-tier** clones under `tools/dcml/`. These
+are **NOT gate-load-bearing** — cloning/removing them does not touch the BIR gate
+or the 11-score snapshot suite. Each is `--depth 1` cloned; the pinned commit is
+clone-time HEAD of the default branch (the exact shas are the source of truth in
+`tools/score_census_registry.json → distant_listening_corpus.members[].pinned_commit`;
+regenerate that file with `python tools/build_score_census_registry.py`).
+
+**License:** only 12 of the 40 DLC repos carry an explicit `LICENSE`
+(CC BY-NC-SA 4.0); the other 28 have **no in-repo LICENSE** (org statement is
+CC BY-NC-SA [reported]). All 40 are gitignored under `tools/dcml/` and therefore
+**hash-pin-only, never committed in-tree** (the C1 mechanism) regardless of
+license — so the missing-LICENSE repos raise no distribution risk.
+
+```bash
+cd tools/dcml
+# 30 corpus-wave-1 clones (research-tier; pins as of 2026-07-02).
+git clone https://github.com/DCMLab/bach_solo && git -C bach_solo checkout dce67f753ced46b43dbfb16779fe3a19233893da
+git clone https://github.com/DCMLab/bartok_bagatelles && git -C bartok_bagatelles checkout c6221f6ecb4dbcd476e827f6bf8705bdcb15c8a9
+git clone https://github.com/DCMLab/beethoven_piano_sonatas && git -C beethoven_piano_sonatas checkout ea7181bff88abc8713257234f7ec4033178c57a9
+git clone https://github.com/DCMLab/c_schumann_lieder && git -C c_schumann_lieder checkout 9ed9255559c670a79a76bc1b21a911b16efe492d
+git clone https://github.com/DCMLab/couperin_clavecin && git -C couperin_clavecin checkout 3bd00fc56d3473b26f1bea5fe50d1a1f2458c462
+git clone https://github.com/DCMLab/couperin_concerts && git -C couperin_concerts checkout 49efcdd24c39d48bf009d60f8aa3bbc1a1d9713a
+git clone https://github.com/DCMLab/debussy_suite_bergamasque && git -C debussy_suite_bergamasque checkout 322ece590e536924308a551a69d9c1520248d3d5
+git clone https://github.com/DCMLab/frescobaldi_fiori_musicali && git -C frescobaldi_fiori_musicali checkout e17de917111e900929db785bfa2d0313968ca5d4
+git clone https://github.com/DCMLab/handel_keyboard && git -C handel_keyboard checkout d3b42765e0d2457b6abb1bdb3e8dd622db61b084
+git clone https://github.com/DCMLab/jc_bach_sonatas && git -C jc_bach_sonatas checkout ac9fd07905eb62c3d8cfbd96811491170a216232
+git clone https://github.com/DCMLab/kleine_geistliche_konzerte && git -C kleine_geistliche_konzerte checkout b3cc43d4ffc9a141b85400ab460aaeb95c29ea4a
+git clone https://github.com/DCMLab/kozeluh_sonatas && git -C kozeluh_sonatas checkout 23c1983a48809647af1a08d54b1fade39ec93995
+git clone https://github.com/DCMLab/liszt_pelerinage && git -C liszt_pelerinage checkout f1cfd308adba5763aad3a18885eac48d42449fc4
+git clone https://github.com/DCMLab/mahler_kindertotenlieder && git -C mahler_kindertotenlieder checkout 9122b6d313b94185ad6a42710ad09b7c59d31af5
+git clone https://github.com/DCMLab/medtner_tales && git -C medtner_tales checkout 1d2e58ba8d329463829e45e75900af43be4256bf
+git clone https://github.com/DCMLab/mendelssohn_quartets && git -C mendelssohn_quartets checkout b92a90c5ce2423a3f0d32536dc5c1304fe6d0369
+git clone https://github.com/DCMLab/monteverdi_madrigals && git -C monteverdi_madrigals checkout 6e1adc73a865b50fb8b8f38661f06c4fad8c2b53
+git clone https://github.com/DCMLab/pergolesi_stabat_mater && git -C pergolesi_stabat_mater checkout b24d5432884d641ba98cf49b107c47d199d38100
+git clone https://github.com/DCMLab/peri_euridice && git -C peri_euridice checkout f02fc6643ac489776aaed5418c1109e88381648f
+git clone https://github.com/DCMLab/pleyel_quartets && git -C pleyel_quartets checkout 8b3d7f5e966290631571274067de6d3a9206a737
+git clone https://github.com/DCMLab/poulenc_mouvements_perpetuels && git -C poulenc_mouvements_perpetuels checkout 7793981bf4bc9dbcc1d14de4c17abb4cb412ce4b
+git clone https://github.com/DCMLab/rachmaninoff_piano && git -C rachmaninoff_piano checkout a73f3246a764215863000357c81309b210a43f15
+git clone https://github.com/DCMLab/ravel_piano && git -C ravel_piano checkout 5a97ccee5383a87dc38688733a59dba499ef44d9
+git clone https://github.com/DCMLab/scarlatti_sonatas && git -C scarlatti_sonatas checkout 7750a6086db69c48e5e65f71565d24bd0f68513a
+git clone https://github.com/DCMLab/schubert_winterreise && git -C schubert_winterreise checkout da2e281eec9bbcf8ae1e981f63f913a1a99b5edb
+git clone https://github.com/DCMLab/schulhoff_suite_dansante_en_jazz && git -C schulhoff_suite_dansante_en_jazz checkout e558f2d2505dcdf827b4212e87fda875e0440908
+git clone https://github.com/DCMLab/schumann_liederkreis && git -C schumann_liederkreis checkout 226b788546e0b5c4907b996cb35f94bb4a38e980
+git clone https://github.com/DCMLab/sweelinck_keyboard && git -C sweelinck_keyboard checkout 0c2a4f5b613e44b6ab06e876d1f0d9afb9f1d445
+git clone https://github.com/DCMLab/wagner_overtures && git -C wagner_overtures checkout fe316b6ce8ba1e5f5ee01a01b323f3d13a876382
+git clone https://github.com/DCMLab/wf_bach_sonatas && git -C wf_bach_sonatas checkout 379e50dd389dbdbcf77f5eb88ecac7841c7ed0e4
+```
+
+  Each has the same `MS3/` (`.mscx`) + `harmonies/` (`.harmonies.tsv`) layout as
+  the pre-wave-1 members, so `tools/run_dlc_baseline.py` and `dcml_parser.py`
+  consume them unchanged. Descriptive baselines: `python tools/run_dlc_baseline.py
+  --all-new --grid` (outputs to gitignored `tools/corpus_dlc_wave1/`).
+
 ---
 
 ## tools/corpus/
