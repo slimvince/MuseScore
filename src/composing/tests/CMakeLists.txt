@@ -55,6 +55,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/functionresolver_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/functionromannumeral_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/grouping_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/harmonicvocabulary_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/jointkeydecision_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
