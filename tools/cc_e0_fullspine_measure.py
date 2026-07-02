@@ -122,9 +122,10 @@ def measure_preset(preset, fs_dir: Path, legacy_dir: Path, wir_base: Path):
     by_decision_corrected = Counter()  # l4Decision -> count corrected by override
     by_decision_residual = Counter()   # l4Decision -> count NOT corrected (the extend-to-Inherit question)
 
-    classb_moves = []            # chain moves root vs legacy: NEW class-(b) (chain worse)
+    classb_moves = []            # chain COMMITTED a wrong root where legacy was right (true class-(b))
     classb_fixes = []            # chain fixes a legacy root error (decidable)
     classa_moves = []            # symmetric root churn (either direction)
+    coverage_loss = []           # chain ABSTAINED (root=-1) where legacy committed correctly (NOT class-(b))
 
     abst_total = 0
     abst_defensible = []         # openMark where the best-guess root != DCML (abstain avoided a wrong commit)
@@ -244,14 +245,19 @@ def measure_preset(preset, fs_dir: Path, legacy_dir: Path, wir_base: Path):
             if overrode:
                 override_fired += 1
 
-            # ── #4 abstention ──
+            # ── #4 abstention: was abstaining defensible? use the top carried
+            #    alternative (what L4 would have committed if forced) as the
+            #    would-be-commit root; abstaining is defensible when that root
+            #    would have been WRONG, costly when it would have been RIGHT ──
             if openmark:
                 abst_total += 1
-                guess = l4root if l4root >= 0 else cr.root_pc
-                if guess >= 0 and guess != dr.root_pc:
-                    abst_defensible.append((stem, cr.start_tick, guess, dr.root_pc))
-                elif guess == dr.root_pc:
-                    abst_costly.append((stem, cr.start_tick, guess, dr.root_pc))
+                alts = raw.get("alternatives", [])
+                guess = int(alts[0].get("rootPitchClass", -1)) if alts else (l4root if l4root >= 0 else -1)
+                if guess >= 0:
+                    if guess != dr.root_pc:
+                        abst_defensible.append((stem, cr.start_tick, guess, dr.root_pc))
+                    else:
+                        abst_costly.append((stem, cr.start_tick, guess, dr.root_pc))
 
             # ── #7 relational: over-trigger (chain applied where DCML diatonic) ──
             if role == "AppliedSecondary":
@@ -295,10 +301,15 @@ def measure_preset(preset, fs_dir: Path, legacy_dir: Path, wir_base: Path):
                 chain_ok = (croot == dr.root_pc)
                 leg_ok = (lroot == dr.root_pc)
                 rec = (stem, cr.start_tick, lroot, croot, dr.root_pc, qual, ambig)
-                if symmetric:
+                if croot < 0:
+                    # chain ABSTAINED — a coverage loss when legacy was right, NOT a
+                    # wrong commit (the two-tier class-(b) is a wrong COMMIT).
+                    if leg_ok:
+                        coverage_loss.append(rec)
+                elif symmetric:
                     classa_moves.append(rec)
                 elif leg_ok and not chain_ok:
-                    classb_moves.append(rec)       # NEW class-(b): chain worse than legacy
+                    classb_moves.append(rec)       # true class-(b): chain COMMITTED worse than legacy
                 elif chain_ok and not leg_ok:
                     classb_fixes.append(rec)       # chain fixes a legacy decidable error
 
@@ -311,6 +322,7 @@ def measure_preset(preset, fs_dir: Path, legacy_dir: Path, wir_base: Path):
         by_decision_wrong=by_decision_wrong, by_decision_corrected=by_decision_corrected,
         by_decision_residual=by_decision_residual,
         classb_moves=classb_moves, classb_fixes=classb_fixes, classa_moves=classa_moves,
+        coverage_loss=coverage_loss,
         abst_total=abst_total, abst_defensible=abst_defensible, abst_costly=abst_costly,
         role_counts=role_counts, firable_by_dcml=firable_by_dcml,
         dcml_v7_applied=dcml_v7_applied, dcml_ger6=dcml_ger6,
@@ -333,21 +345,24 @@ def report(R):
     def rn_line(tag, key):
         s = R["acc"][key]; g = R["grid"][key]
         m = s.matched; sd = g.scored_dur
-        return (f"    {tag:14s} region rn_agree {_pct(_rn_agree(s), m):5.1f}% ({_rn_agree(s)}/{m})"
+        return (f"    {tag:7s} rn_agree(ex+pt) {_pct(_rn_agree(s), m):5.1f}%   exact {_pct(s.exact, m):5.1f}%"
                 f"   robust(dur) {_pct(_grid_agree(g), sd):5.1f}%   root_agree {_pct(s.root_agree, s.root_aligned):5.1f}%")
 
-    L.append("  #1 RN ACCURACY (rider 1 — three levels):")
-    L.append("   ROOT-LEVEL (uncapped, verdict):")
+    L.append("  #1 RN ACCURACY (rider 1 — three levels; rn_agree=exact+partial):")
+    L.append("   ROOT-LEVEL (uncapped, verdict — root_agree is the number):")
     L.append(rn_line("chain", "chain_raw"))
     L.append(rn_line("legacy", "leg_raw"))
-    L.append("   TRIAD-NORMALIZED RN (fair capped, verdict):")
+    L.append("   TRIAD-NORMALIZED RN (fair capped, verdict — sevenths stripped both sides + DCML):")
     L.append(rn_line("chain", "chain_triad"))
     L.append(rn_line("legacy", "leg_triad"))
-    L.append("   RAW FULL-RN (carry-capped DIAGNOSTIC — artifact: seventh/extension drop; NOT a verdict):")
+    L.append("   RAW FULL-RN (carry-capped DIAGNOSTIC — seventh/extension drop; NOT a verdict):")
     L.append(rn_line("chain", "chain_raw"))
-    cap_region = _pct(_rn_agree(R["acc"]["chain_triad"]), R["acc"]["chain_triad"].matched) \
-               - _pct(_rn_agree(R["acc"]["chain_raw"]), R["acc"]["chain_raw"].matched)
-    L.append(f"     → cap size (triad − raw, chain, region): {cap_region:+.1f} pts")
+    # The cap lives in EXACT (rn_agree absorbs V-vs-V7 as `partial`): the seventh
+    # drop stops the chain reaching EXACT on seventh-bearing DCML chords.
+    cap_exact = _pct(R["acc"]["chain_triad"].exact, R["acc"]["chain_triad"].matched) \
+              - _pct(R["acc"]["chain_raw"].exact, R["acc"]["chain_raw"].matched)
+    L.append(f"     → cap size in EXACT (chain triad − chain raw): {cap_exact:+.1f} pts"
+             f"   (rn_agree cap is ~0 — partial absorbs V-vs-V7)")
     L.append("")
 
     L.append("  #2 KEY (S1/S2 split — within key_disagree):")
@@ -377,9 +392,12 @@ def report(R):
     L.append("")
 
     L.append("  #5 TWO-TIER CASE DELTAS (chain root vs legacy root vs DCML; identity sets):")
-    L.append(f"    NEW class-(b)  (legacy right → chain wrong, decidable): {len(R['classb_moves'])}")
-    for c in R["classb_moves"]:
+    L.append(f"    NEW class-(b)  (chain COMMITTED wrong where legacy right): {len(R['classb_moves'])}")
+    for c in R["classb_moves"][:30]:
         L.append(f"        !! classb {c[0]}@{c[1]}: leg={c[2]} chain={c[3]} DCML={c[4]} q={c[5]}")
+    if len(R["classb_moves"]) > 30:
+        L.append(f"        ... +{len(R['classb_moves'])-30} more")
+    L.append(f"    coverage-loss (chain ABSTAINED where legacy right; NOT class-b): {len(R['coverage_loss'])}")
     L.append(f"    class-(b) FIXES (chain right → legacy wrong, decidable): {len(R['classb_fixes'])}")
     for c in R["classb_fixes"][:20]:
         L.append(f"        fix {c[0]}@{c[1]}: leg={c[2]} chain={c[3]} DCML={c[4]} q={c[5]}")
