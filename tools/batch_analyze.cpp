@@ -2807,6 +2807,10 @@ static std::string runFullSpine(Score* score, const std::string& stem,
         fs.openQuestion = decoded[i].openQuestion;
         fs.alternatives = decoded[i].alternatives;
         fs.confidence = decoded[i].confidenceModel;
+        // The committed slice's FULL identity — the resolver emits this VERBATIM on the
+        // pass-through path (carry-fix 2), so the committed bass/inversion + the carried
+        // extensions survive to finalReadingOf/the formatter instead of a bare re-derivation.
+        fs.chosen = decoded[i].chosen;
     }
     analysis::ResolverKey rkey;
     rkey.keyFifths = homeFifths; rkey.keyMode = homeMode; rkey.tonicPc = homeTonicPc;

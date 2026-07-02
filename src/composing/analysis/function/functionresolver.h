@@ -130,6 +130,20 @@ struct FunctionSlice {
     OpenQuestionLabel openQuestion;                  ///< named question + readingA / readingB (on abstain)
     std::vector<ChordSliceCandidate> alternatives;   ///< the ranked carried alternatives
     SliceConfidence confidence;                      ///< composite confidence (the §8 earlier-layer confidence)
+
+    // — the committed chord's FULL identity (the §5.5/§7 verbatim-carry source) —
+    //
+    // The L4-decoded `SliceChord.chosen` for this slice: root + quality + committed
+    // bass/inversion + the L4→L5 carried extension identity (extensions/naturalFifthPresent/
+    // extensionsKnown). `chord` above is its §5.0 progression PROJECTION (root+quality only)
+    // — the licensing queries read that; the resolver EMITS `chosen` VERBATIM on the
+    // pass-through path (§7 "does not replace the chord identity Layer 4 committed") so the
+    // committed bass and seventh survive to the formatter, never a re-derived bare reading.
+    // For an Inherit slice this is L4's inherited (prevailing) identity; for an Abstain slice
+    // it is not read (the abstain path selects among openQuestion/alternatives instead).
+    // Valid ⇔ committed; `toPC(chosen)` equals `chord`. Populated at engage from the decoder;
+    // injected by hand in the tests.
+    ChordSliceCandidate chosen;
 };
 
 // ── Why a slice resolved the way it did (transparency; oracle-tested) ──────────

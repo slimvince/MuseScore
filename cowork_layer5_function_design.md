@@ -373,6 +373,16 @@ are driven to zero by the Commit-override **plus cascade** (an Inherit that borr
 the override must **extend to Inherit**, is a **Step-M measurement** — not extended speculatively here. If Step M shows an
 Inherit class-(b) residual, broaden the override to confidently-decided = {Commit, Inherit}.)*
 
+*(Carry-fix 2, 2026-07-02 — **the emitted reading IS the selected source's committed identity, VERBATIM**. Selection
+"never re-derives" (D4) applies to the emitted STRUCT too, not only to the choice: the resolver must not rebuild a
+reading field-by-field from the §5.0 progression projection (root+quality), which would flatten the committed
+bass/inversion and the carried seventh/extensions. So — pass-through (a standing Commit/Inherit) emits the slice's own
+`chosen` verbatim; a neighbour-selected override emits that NEIGHBOUR's committed identity as-is (its own bass — a
+neighbour-root/this-slice-bass hybrid is not a carried candidate, so it is not synthesized); an abstain resolution emits
+the selected carried reading (readingA/readingB/alternative) verbatim, honest-carry `extensionsKnown=false` states
+included. The `Progression`/`ProgressionChord` substrate stays minimal `{root, quality}` — the widening is at the emitted
+READING, carried alongside on the slice, not in the licensing grammar.)*
+
 ### 5.6 Relational labels (each on its defining trigger; spelling-aware where needed)
 The four labels can co-trigger on one altered chord, so they are tested in a fixed **precedence**, first match wins:
 **augmented sixth → Neapolitan → applied/secondary → modal mixture**. The augmented sixth and the Neapolitan are the most
@@ -470,6 +480,15 @@ uncertain and remains so, an **open mark** naming what is unresolved (carried to
 confirmed modulation) and the **cadence markers** (type, location, salience). The structure is additive over the Layer-4
 result: it annotates and resolves; it does not replace the chord identity Layer 4 committed. The contract to the layer
 above (grouping/display) is the Roman numeral plus the cadence and key markers plus any honest **open mark** (§7).
+
+**The carried chord identity is emitted VERBATIM (carry-fix 2, 2026-07-02).** "Additive, does not replace" is literal at
+the struct level: the reading this layer emits for a slice is the *selected source's committed identity carried whole*
+(root + quality + committed **bass/inversion** + the L4→L5 carried **extensions**/`naturalFifthPresent`/`extensionsKnown`),
+never a reconstruction from the §5.0 `{root, quality}` progression projection. A standing commit emits its own `chosen`;
+a neighbour-selected override emits that neighbour's identity as-is; an abstain resolution emits the selected carried
+reading — honest-carry `extensionsKnown=false` (unknown, not asserted-absent) states included. This is what lets the
+downstream base Roman numeral render the figured-bass inversion (65/43/42) and the applied-seventh (`V7/x`) from the
+identity Layer 4 actually committed. See §5.5.
 
 **D-L5a — the function confidence is published in a boundary form (confidence-contract close-out, 2026-07-02).** The
 function confidence's internal `combined` is an **unbounded** additive of its three components (observed to ~25 on the

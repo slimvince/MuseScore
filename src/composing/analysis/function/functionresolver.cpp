@@ -44,18 +44,6 @@ ProgressionChord toPC(const ChordSliceCandidate& c) noexcept
     return ProgressionChord{ c.rootPc, c.quality };
 }
 
-/// A neighbouring committed chord expressed as a selectable candidate (root position,
-/// best-effort) — so the fine-grain override can SELECT the neighbouring harmony as the
-/// corrected reading without re-deriving anything from notes.
-ChordSliceCandidate candidateFromProg(const ProgressionChord& pc) noexcept
-{
-    ChordSliceCandidate c;
-    c.rootPc = pc.rootPc;
-    c.quality = pc.quality;
-    c.bassPc = pc.rootPc;     // root position (the neighbour's own committed identity)
-    return c;
-}
-
 bool sameRootQuality(const ChordSliceCandidate& c, const ProgressionChord& p) noexcept
 {
     return c.rootPc == p.rootPc && c.quality == p.quality;
@@ -357,7 +345,13 @@ ResolvedReading resolveAbstained(int i, const Progression& prog,
     }
 }
 
-/// A committed slice that L5 leaves unchanged (L4's commit stands).
+/// A committed slice that L5 leaves unchanged (L4's commit stands). The emitted reading
+/// IS the slice's own committed identity, carried VERBATIM (root + quality + committed
+/// bass/inversion + the carried extensions) — never a reconstruction from the §5.0
+/// projection. This is the §7 additive contract: L5 annotates, it does not replace the
+/// chord identity Layer 4 committed. For an Inherit slice `s.chosen` is already L4's
+/// inherited (prevailing) identity, so the same verbatim carry serves both Commit and
+/// Inherit.
 ResolvedReading carryThrough(int i, const FunctionSlice& s)
 {
     ResolvedReading r;
@@ -366,7 +360,7 @@ ResolvedReading carryThrough(int i, const FunctionSlice& s)
     r.resolved = false;
     r.openMark = false;
     r.overrodeCommit = false;
-    r.reading = candidateFromProg(s.chord);
+    r.reading = s.chosen;                 // the committed identity, verbatim (§5.5/§7)
     r.kind = AmbiguityKind::None;
     r.basis = ResolutionBasis::None;
     r.functionConfidence = 0.0;
@@ -420,14 +414,17 @@ void attemptFineGrainOverride(int i, Progression& prog,
         plausibility(committed, prevChord, hasPrev, nextChord, hasNext, cadences, params);
 
     // The candidate pool: the carried alternatives ∪ the neighbouring committed harmony
-    // (prevailing + established-next) — never the notes. Pick the most plausible that is
-    // NOT the committed reading.
+    // (prevailing + established-next) — never the notes. The neighbour enters as its OWN
+    // committed identity (region[idx].chosen, carried VERBATIM), not a bare reconstruction:
+    // a neighbour SELECTED as the correction is emitted with its own bass/inversion +
+    // extensions intact (the source-identity-as-is choice — see the emission note below).
+    // Pick the most plausible that is NOT the committed reading.
     std::vector<ChordSliceCandidate> pool = s.alternatives;
     if (hasPrev) {
-        pool.push_back(candidateFromProg(prevChord));
+        pool.push_back(region[static_cast<size_t>(prevIdx)].chosen);
     }
     if (hasNext) {
-        pool.push_back(candidateFromProg(nextChord));
+        pool.push_back(region[static_cast<size_t>(nextIdx)].chosen);
     }
 
     bool haveBest = false;
@@ -476,7 +473,13 @@ void attemptFineGrainOverride(int i, Progression& prog,
     r.resolved = false;
     r.openMark = false;
     r.overrodeCommit = true;
-    r.reading = bestAlt;                         // the SELECTED corrected reading (not re-derived)
+    // The SELECTED corrected reading, carried VERBATIM (§5.5/§7) — not re-derived. When
+    // bestAlt is a carried alternative it already holds THIS slice's own sounding bass;
+    // when it is a neighbouring committed harmony it is that source's identity AS-IS
+    // (its own bass/inversion). We do NOT pair a neighbour's root/quality with this slice's
+    // bass: that hybrid is not itself a carried candidate, so synthesizing it is forbidden
+    // (§2/D4). Source-identity-as-is is the safe verbatim choice.
+    r.reading = bestAlt;
     r.kind = AmbiguityKind::None;
     r.basis = ResolutionBasis::FineGrainOverride;
     r.functionConfidence = contradictionStrength;

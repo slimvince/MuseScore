@@ -57,6 +57,16 @@ ChordSliceCandidate cand(int rootPc, ChordQuality q, int bassPc)
     return c;
 }
 
+// A candidate carrying a full committed identity — a real seventh/extension extraction
+// (extensionsKnown = true) with an explicit bass/inversion — for the verbatim-carry tests.
+ChordSliceCandidate candFull(int rootPc, ChordQuality q, int bassPc, uint32_t extensions)
+{
+    ChordSliceCandidate c = cand(rootPc, q, bassPc);
+    c.extensions = extensions;
+    c.extensionsKnown = true;
+    return c;
+}
+
 FunctionSlice committedSlice(int rootPc, ChordQuality q, int startTick)
 {
     FunctionSlice s;
@@ -66,6 +76,9 @@ FunctionSlice committedSlice(int rootPc, ChordQuality q, int startTick)
     s.metricWeight = 1.0;
     s.startTick = startTick;
     s.endTick = startTick + 480;
+    // The committed FULL identity the resolver carries verbatim (root-position triad by
+    // default; toPC(chosen) == chord). Tests needing a seventh/inversion set s.chosen after.
+    s.chosen = candFull(rootPc, q, rootPc, /*extensions*/ 0u);
     return s;
 }
 
@@ -390,6 +403,80 @@ TEST(FunctionResolver, PlainCommitsCarryThroughUnchanged)
         EXPECT_FALSE(rr.resolved);
     }
     EXPECT_EQ(r.closure.closedCount(), 0);
+}
+
+// ── Verbatim identity carry (carry-fix 2, §5.5/§7) ────────────────────────────
+
+TEST(FunctionResolver, PassThrough_PreservesCommittedBassAndExtensions)
+{
+    // A committed dominant seventh in first inversion (G7/B — bass B ≠ root G, a MinorSeventh
+    // extension): the resolver leaves the commit standing and must emit its identity VERBATIM,
+    // NOT a bare root-position reconstruction. The committed bass and the seventh survive.
+    const uint32_t b7 = static_cast<uint32_t>(Extension::MinorSeventh);
+    FunctionSlice v65 = committedSlice(G, ChordQuality::Major, 480);
+    v65.chosen = candFull(G, ChordQuality::Major, /*bass*/ B, b7);   // G7/B (a "65" figure)
+
+    std::vector<FunctionSlice> region{
+        committedSlice(C, ChordQuality::Major, 0),
+        v65,
+        committedSlice(C, ChordQuality::Major, 960),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
+    const ResolvedReading& rr = r.readings[1];
+    EXPECT_FALSE(rr.overrodeCommit);
+    EXPECT_FALSE(rr.openMark);
+    EXPECT_EQ(rr.reading.rootPc, G);
+    EXPECT_EQ(rr.reading.bassPc, B);            // the committed inversion survives (not flattened to root)
+    EXPECT_FALSE(rr.reading.bassIsRoot());
+    EXPECT_TRUE(rr.reading.extensionsKnown);    // a real extraction, carried
+    EXPECT_EQ(rr.reading.extensions & b7, b7);  // the seventh survives to the formatter
+}
+
+TEST(FunctionResolver, Inherit_CarriesPrevailingSeventh)
+{
+    // An Inherit slice whose L4 `chosen` is the prevailing dominant-seventh identity: the
+    // resolver carries THAT identity forward verbatim (the seventh is not dropped on inherit).
+    const uint32_t b7 = static_cast<uint32_t>(Extension::MinorSeventh);
+    FunctionSlice inherited = committedSlice(G, ChordQuality::Major, 480);
+    inherited.decision = SliceDecision::Inherit;
+    inherited.chosen = candFull(G, ChordQuality::Major, /*bass*/ G, b7);   // inherited G7
+
+    std::vector<FunctionSlice> region{
+        committedSlice(G, ChordQuality::Major, 0),
+        inherited,
+        committedSlice(C, ChordQuality::Major, 960),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
+    const ResolvedReading& rr = r.readings[1];
+    EXPECT_FALSE(rr.overrodeCommit);
+    EXPECT_FALSE(rr.openMark);
+    EXPECT_EQ(rr.reading.rootPc, G);
+    EXPECT_TRUE(rr.reading.extensionsKnown);
+    EXPECT_EQ(rr.reading.extensions & b7, b7);  // the inherited seventh is carried
+}
+
+TEST(FunctionResolver, Override_HonestCarryAlternative_StaysTriadLevel)
+{
+    // The fine-grain override selects a carried alternative that is HONEST-CARRY
+    // (extensionsKnown = false — its seventh was unobtainable at the L4→L5 boundary). The
+    // selected reading is emitted VERBATIM, so it stays honestly triad-level: the resolver
+    // does not fabricate an extension, and does not assert the seventh absent — it carries
+    // the unknown state through.
+    FunctionSlice wrongCommit = committedSlice(Gs, ChordQuality::Major, 480);  // committed Ab
+    wrongCommit.alternatives = { cand(G, ChordQuality::Major, G) };            // honest-carry (extKnown=false)
+    wrongCommit.confidence.composite = 0.5;
+
+    std::vector<FunctionSlice> region{
+        committedSlice(D, ChordQuality::Minor, 0),
+        wrongCommit,
+        committedSlice(C, ChordQuality::Major, 960),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
+    const ResolvedReading& rr = r.readings[1];
+    EXPECT_TRUE(rr.overrodeCommit);
+    EXPECT_EQ(rr.reading.rootPc, G);            // the SELECTED corrected reading
+    EXPECT_FALSE(rr.reading.extensionsKnown);   // honest-carry state preserved (unknown, not guessed)
+    EXPECT_EQ(rr.reading.extensions, 0u);       // no fabricated extension
 }
 
 } // namespace
