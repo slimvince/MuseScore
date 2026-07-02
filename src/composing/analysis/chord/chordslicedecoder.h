@@ -281,6 +281,37 @@ struct ChordSliceDecoderPreferences {
     /// Master switch. OFF reproduces the pre-G4 behaviour EXACTLY (the scorer's key-dependent
     /// rotation choice stands; no spelling override, siblings counted as competing readings).
     bool enableSpellingPin = true;
+
+    // ── Bounded context: the STARVED-WINDOW edge-extension requester loop (design §5;
+    //    gap-analysis #5; cowork_bounded_context_design.md §3/§4/§5). DORMANT ─────────
+    //
+    // At a SELECTION edge the adaptive window can want a neighbour slice that is not loaded
+    // (a figure straddling the edge). The bounded-context contract says the layer must
+    // REQUEST an extension (L1 extend → L2 re-slice → L4 re-decode) rather than silently
+    // truncate — UNLESS the truncation is not decision-relevant (the decision under the
+    // truncated window is already a full-margin Commit) or the loaded edge is the SCORE
+    // boundary (nothing more exists → proceed truncated). This is exercised ONLY through
+    // decodeSelection() (the per-slice decode() path never requests). Default OFF ⇒ the
+    // window clamps at the slice-vector edge exactly as before (byte-identical); with
+    // selection == whole score the loaded edge IS the score boundary, so no request ever
+    // fires (I2 whole-score inertness — cowork_bounded_context_design.md §8).
+
+    /// Master switch. OFF ⇒ decodeSelection() clamps the edge window and emits truncation
+    /// provenance only (no L1 request); the per-slice results are byte-identical to a decode
+    /// over the same loaded span. ON ⇒ a decision-relevant edge truncation drives the
+    /// requester loop below.
+    bool enableEdgeExtension = false;
+
+    /// Hard bound: the maximum number of edge-extension increments (the "never converges"
+    /// safety cap; design §3.7). The loop also terminates at convergence (the truncation is
+    /// resolved / no longer decision-relevant) or the score boundary.
+    int maxEdgeExtendSteps = 4;
+
+    /// Edge-extension increment, in the decoder's natural unit: neighbour SLICES
+    /// (cowork_bounded_context_design.md §9 — L4 steps in slices). Converted to a tick
+    /// target from the current edge slice's span. An efficiency knob only — convergence
+    /// (the truncation resolving) fixes the result independent of it.
+    int edgeExtendIncrementSlices = 1;
 };
 
 /// Global default decoder settings.
@@ -420,6 +451,13 @@ struct SliceChord {
     // the slice has no chord / no sounding notes, or membership is disabled.
     std::vector<int> chordTonePcs;                 ///< focal pcs the chosen chord explains
     std::vector<int> nonChordTonePcs;              ///< focal pcs called non-chord tones
+
+    // ── Bounded-context denial/truncation provenance (design §3 item 10) ──────────
+    // Set ONLY by decodeSelection() on the selection-edge slices; the per-slice decode()/
+    // decodeWindowed() core never touches them (they stay false — every existing path is
+    // byte-identical). A truncated reading is never presented as a complete one.
+    bool clippedBySelectionEdge = false;   ///< the focal window truncated at the LOADED (non-score) edge
+    bool cueDenied = false;                ///< a decision-relevant edge-extension request was REFUSED (hard bound)
 };
 
 // ── A focal sounding note, projected from the Layer-1 NoteEvent stream ────────
@@ -508,6 +546,32 @@ public:
         int keySignatureFifths,
         KeySigMode keyMode,
         int first, int last,
+        const ChordAnalyzerPreferences& chordPrefs = kDefaultChordAnalyzerPreferences,
+        const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences,
+        const std::set<std::size_t>& excludeStaves = {});
+
+    /// Bounded-context SELECTION decode with the starved-window edge-extension requester
+    /// loop (design §5; cowork_bounded_context_design.md §4/§5; gap-analysis #5). Slices
+    /// @p model's CURRENT loaded span (L2), decodes the slices that cover the SELECTION
+    /// [selectionStart, selectionEnd), and — when decoderPrefs.enableEdgeExtension is ON —
+    /// grows the loaded span through L1 extend() whenever a selection-edge slice's window is
+    /// truncated at the loaded (non-score) edge AND its decision is not already a full-margin
+    /// Commit (decision-relevant), re-slicing and re-decoding after each step, bounded by
+    /// maxEdgeExtendSteps and the score boundary. Output covers the selection slices only
+    /// (extended context is evidence, never emitted — §2 invariant); each carries the
+    /// truncation provenance (clippedBySelectionEdge / cueDenied, §3 item 10). @p model is
+    /// taken BY VALUE so the loop extends a private copy (the caller's model is untouched).
+    ///
+    /// EQUIVALENCE (design §4): the selection output equals a fresh decode over the FINAL
+    /// loaded span (restricted to the selection slices) — extension is "load more, then run
+    /// from scratch". With enableEdgeExtension OFF, or selection == whole score (the loaded
+    /// edge IS the score boundary), NO extension fires and the result is the plain decode of
+    /// the selection slices (I2 whole-score inertness). DORMANT: no production consumer.
+    static std::vector<SliceChord> decodeSelection(
+        notemodel::NoteModel model,
+        int selectionStart, int selectionEnd,
+        int keySignatureFifths,
+        KeySigMode keyMode,
         const ChordAnalyzerPreferences& chordPrefs = kDefaultChordAnalyzerPreferences,
         const ChordSliceDecoderPreferences& decoderPrefs = kDefaultChordSliceDecoderPreferences,
         const std::set<std::size_t>& excludeStaves = {});

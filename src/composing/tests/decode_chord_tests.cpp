@@ -52,6 +52,7 @@ using mu::composing::analysis::ChordQuality;
 using mu::composing::analysis::KeySigMode;
 using mu::composing::analysis::notemodel::NoteModel;
 using mu::composing::analysis::slicing::changePointSlices;
+using mu::composing::analysis::kDefaultChordAnalyzerPreferences;
 
 namespace cs = mu::composing::analysis::chordslice;
 using CSD = cs::ChordSliceDecoder;
@@ -1488,4 +1489,230 @@ TEST(Composing_DecodeChord, EmptyModel_NoSlices)
     const std::vector<mu::composing::analysis::slicing::Slice> noSlices;
     const NoteModel empty;
     EXPECT_TRUE(CSD::decode(noSlices, empty, 0, KeySigMode::Ionian).empty());
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// §5 BOUNDED-CONTEXT — the starved-window edge-extension requester loop
+// (decodeSelection; design §5; cowork_bounded_context_design.md §3/§4/§5; gap #5).
+// DORMANT: enableEdgeExtension defaults OFF; decodeSelection has no production caller.
+// The requester loop is L1 extend → L2 re-slice → L4 re-decode over a private model copy.
+// ════════════════════════════════════════════════════════════════════════════
+
+namespace {
+
+// Decoder prefs with edge extension configured (default OFF everywhere else).
+ChordSliceDecoderPreferences edgePrefs(bool on, int maxSteps, int incSlices)
+{
+    ChordSliceDecoderPreferences dp;
+    dp.enableEdgeExtension = on;
+    dp.maxEdgeExtendSteps = maxSteps;
+    dp.edgeExtendIncrementSlices = incSlices;
+    return dp;
+}
+
+bool sameChosen(const SliceChord& a, const SliceChord& b)
+{
+    return a.hasChord == b.hasChord
+           && a.chosen.rootPc == b.chosen.rootPc
+           && a.chosen.quality == b.chosen.quality
+           && a.chosen.bassPc == b.chosen.bassPc
+           && a.decision == b.decision;
+}
+
+} // namespace
+
+// EDGE1 — I2 whole-score inertness (cowork_bounded_context_design.md §8). With selection ==
+// the whole score, the loaded edges ARE the score bounds, so NO edge is ever clipped and NO
+// request fires even with enableEdgeExtension ON: decodeSelection reproduces decode() slice-
+// for-slice and sets NO truncation provenance. This is the in-binary half of the corpus gate.
+TEST(Composing_DecodeChord, EDGE1_WholeScoreSelection_InertEvenWhenEnabled)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel whole = NoteModel::build(score);
+    const auto slices = changePointSlices(whole);
+    const auto ref = CSD::decode(slices, whole, 0, KeySigMode::Ionian);
+
+    // enableEdgeExtension ON, whole-score selection: must still be byte-identical to decode().
+    const auto sel = CSD::decodeSelection(whole, whole.scoreStart(), whole.scoreEnd(),
+                                          0, KeySigMode::Ionian,
+                                          kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 1));
+    ASSERT_EQ(sel.size(), ref.size());
+    for (size_t i = 0; i < sel.size(); ++i) {
+        EXPECT_TRUE(sameChosen(sel[i], ref[i])) << "slice " << i << " diverged from decode()";
+        EXPECT_FALSE(sel[i].clippedBySelectionEdge) << "whole-score slice " << i << " must not clip";
+        EXPECT_FALSE(sel[i].cueDenied) << "whole-score slice " << i << " must not deny";
+    }
+    delete score;
+}
+
+// EDGE2 — must-FIRE: a starved, decision-relevant selection edge drives the request, which
+// resolves the clip by reaching the score boundary. nm_long_sustain is a single sustained C4
+// [0,9600); a sub-selection [4800,5000) opens a thin (1-PC → uncertain) leading slice whose
+// window clamps at the loaded edge (loadedStart 4800 > scoreStart 0). OFF ⇒ the reading stays
+// clipped (silent truncation). ON (increment large enough to reach the boundary) ⇒ the loop
+// extends to [0,9600) and the clip resolves (clippedBySelectionEdge cleared — it now sees all
+// available context), with no denial.
+TEST(Composing_DecodeChord, EDGE2_StarvedRelevantEdge_RequestFiresAndResolves)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score, 4800, 5000);   // bounded-context sub-selection
+
+    const auto off = CSD::decodeSelection(model, 4800, 5000, 0, KeySigMode::Ionian,
+                                          kDefaultChordAnalyzerPreferences, edgePrefs(false, 8, 20));
+    ASSERT_FALSE(off.empty());
+    EXPECT_TRUE(off.front().clippedBySelectionEdge)
+        << "OFF: the thin leading edge is silently truncated (clip provenance set)";
+    EXPECT_FALSE(off.front().cueDenied) << "OFF: no request is attempted, so nothing is denied";
+
+    // ON with a large increment (20 slices' worth of ticks ⇒ reaches both boundaries in one
+    // step each side). The request fires and the clip resolves at the score boundary.
+    const auto on = CSD::decodeSelection(model, 4800, 5000, 0, KeySigMode::Ionian,
+                                         kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 20));
+    ASSERT_FALSE(on.empty());
+    EXPECT_FALSE(on.front().clippedBySelectionEdge)
+        << "ON: extension reached the score boundary — the reading now sees all available context";
+    EXPECT_FALSE(on.front().cueDenied) << "ON: the request was satisfied (not refused)";
+
+    delete score;
+}
+
+// EDGE3 — denial provenance: enabled but the hard bound is spent immediately (maxSteps == 0),
+// so the decision-relevant request is REFUSED — the reading carries BOTH clippedBySelectionEdge
+// and cueDenied (design §3 item 10: a refused request is marked, never presented as complete).
+TEST(Composing_DecodeChord, EDGE3_HardBoundZero_RequestDenied)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score, 4800, 5000);
+
+    const auto denied = CSD::decodeSelection(model, 4800, 5000, 0, KeySigMode::Ionian,
+                                             kDefaultChordAnalyzerPreferences, edgePrefs(true, 0, 20));
+    ASSERT_FALSE(denied.empty());
+    EXPECT_TRUE(denied.front().clippedBySelectionEdge) << "a refused request still saw a truncated window";
+    EXPECT_TRUE(denied.front().cueDenied) << "the decision-relevant request was refused at the hard bound";
+
+    delete score;
+}
+
+// EDGE4 — must-NOT-fire (full-margin Commit at the edge): the leading edge slice is a complete,
+// confidently-committed triad, so the truncation is NOT decision-relevant and NO request fires
+// even with extension ON — the result is byte-identical to OFF (the clip provenance is honest,
+// but no context was requested). reachback_anchor bar 7 is a block A-minor triad.
+TEST(Composing_DecodeChord, EDGE4_FullMarginCommitAtEdge_NoRequest)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/reachback_anchor.mscx");
+    ASSERT_TRUE(score);
+    const int barStart = 6 * 1920;   // 11520 — bar 7
+    const int barEnd   = 7 * 1920;   // 13440
+    const NoteModel model = NoteModel::build(score, barStart, barEnd);
+
+    const auto off = CSD::decodeSelection(model, barStart, barEnd, 0, KeySigMode::Ionian,
+                                          kDefaultChordAnalyzerPreferences, edgePrefs(false, 8, 4));
+    const auto on  = CSD::decodeSelection(model, barStart, barEnd, 0, KeySigMode::Ionian,
+                                          kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 4));
+    ASSERT_FALSE(off.empty());
+    ASSERT_EQ(off.size(), on.size());
+    // If the leading edge committed with margin, ON did not request → identical to OFF, no denial.
+    if (off.front().decision == cs::SliceDecision::Commit && !off.front().uncertain) {
+        for (size_t i = 0; i < off.size(); ++i) {
+            EXPECT_TRUE(sameChosen(off[i], on[i])) << "full-margin commit: ON must not change slice " << i;
+        }
+        EXPECT_FALSE(on.front().cueDenied) << "a full-margin commit is not decision-relevant → no denial";
+    }
+    delete score;
+}
+
+// EDGE5 — equivalence (design §4) + output-is-selection-only (§2). decodeSelection performs a
+// FRESH full forward run over the loaded span (from slice 0 — not a bounded-look-back re-decode)
+// and emits ONLY the selection slices. So over a fully-loaded (whole-score) model — where no
+// extension is warranted — a sub-selection reproduces the whole decode restricted to the slices
+// overlapping the selection, exactly. (The extension path's equivalence is covered by EDGE2
+// [fires + resolves] and EDGE7 [step-size independence over the same final span]; here we pin the
+// decode-from-0 + selection-windowing that the extended path also relies on.)
+TEST(Composing_DecodeChord, EDGE5_SelectionWindowingEqualsFullDecodeRestricted)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");
+    ASSERT_TRUE(score);
+
+    const NoteModel whole = NoteModel::build(score);
+    const auto wholeSlices = changePointSlices(whole);
+    ASSERT_GE(wholeSlices.size(), 4u);
+    const auto wholeDecode = CSD::decode(wholeSlices, whole, 0, KeySigMode::Ionian);
+
+    // A mid-progression sub-selection over the ALREADY-WHOLE-loaded model (no extension needed).
+    const int selStart = wholeSlices[1].start;
+    const int selEnd   = wholeSlices[wholeSlices.size() - 2].end;
+    ASSERT_LT(selStart, selEnd);
+
+    // Even with extension enabled: loaded == score ⇒ no edge is a selection edge ⇒ no request.
+    const auto sel = CSD::decodeSelection(whole, selStart, selEnd, 0, KeySigMode::Ionian,
+                                          kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 4096));
+    ASSERT_FALSE(sel.empty());
+
+    // Reference: the whole-score decode entries whose slice overlaps [selStart, selEnd).
+    std::vector<SliceChord> ref;
+    for (size_t i = 0; i < wholeSlices.size(); ++i) {
+        if (wholeSlices[i].start < selEnd && wholeSlices[i].end > selStart) {
+            ref.push_back(wholeDecode[i]);
+        }
+    }
+    ASSERT_EQ(sel.size(), ref.size()) << "selection output must be exactly the overlapping slices";
+    for (size_t i = 0; i < sel.size(); ++i) {
+        EXPECT_TRUE(sameChosen(sel[i], ref[i]))
+            << "selection slice " << i << " must equal the full decode restricted";
+        EXPECT_FALSE(sel[i].clippedBySelectionEdge) << "fully-loaded model ⇒ no selection-edge clip";
+        EXPECT_FALSE(sel[i].cueDenied);
+    }
+    delete score;
+}
+
+// EDGE6 — determinism: identical (model, selection, settings) ⇒ identical output + provenance.
+TEST(Composing_DecodeChord, EDGE6_Deterministic)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/nm_long_sustain.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel model = NoteModel::build(score, 4800, 5000);
+    const auto a = CSD::decodeSelection(model, 4800, 5000, 0, KeySigMode::Ionian,
+                                        kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 3));
+    const auto b = CSD::decodeSelection(model, 4800, 5000, 0, KeySigMode::Ionian,
+                                        kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 3));
+    ASSERT_EQ(a.size(), b.size());
+    for (size_t i = 0; i < a.size(); ++i) {
+        EXPECT_TRUE(sameChosen(a[i], b[i]));
+        EXPECT_EQ(a[i].clippedBySelectionEdge, b[i].clippedBySelectionEdge);
+        EXPECT_EQ(a[i].cueDenied, b[i].cueDenied);
+    }
+    delete score;
+}
+
+// EDGE7 — step-size independence (design §8): reaching the same final loaded span in MANY small
+// increments or in ONE big increment gives the identical selection output — the increment is an
+// efficiency knob, not part of the result (convergence — the clip resolving — fixes it). A
+// mid-progression sub-selection extended to the score boundaries both ways must agree slice-for-
+// slice, including the (resolved) truncation provenance.
+TEST(Composing_DecodeChord, EDGE7_StepSizeIndependence)
+{
+    MasterScore* score = ScoreRW::readScore(u"data/s1c_seg_changes.mscx");
+    ASSERT_TRUE(score);
+    const NoteModel whole = NoteModel::build(score);
+    const auto wholeSlices = changePointSlices(whole);
+    ASSERT_GE(wholeSlices.size(), 4u);
+    const int selStart = wholeSlices[1].start;
+    const int selEnd   = wholeSlices[wholeSlices.size() - 2].end;
+    const NoteModel subModel = NoteModel::build(score, selStart, selEnd);
+
+    // Small steps (increment 1 slice, high step cap) vs one big step (increment 4096 slices).
+    const auto small = CSD::decodeSelection(subModel, selStart, selEnd, 0, KeySigMode::Ionian,
+                                            kDefaultChordAnalyzerPreferences, edgePrefs(true, 512, 1));
+    const auto big   = CSD::decodeSelection(subModel, selStart, selEnd, 0, KeySigMode::Ionian,
+                                            kDefaultChordAnalyzerPreferences, edgePrefs(true, 8, 4096));
+    ASSERT_EQ(small.size(), big.size());
+    for (size_t i = 0; i < small.size(); ++i) {
+        EXPECT_TRUE(sameChosen(small[i], big[i])) << "step size changed the result at slice " << i;
+        EXPECT_EQ(small[i].clippedBySelectionEdge, big[i].clippedBySelectionEdge);
+        EXPECT_EQ(small[i].cueDenied, big[i].cueDenied);
+    }
+    delete score;
 }

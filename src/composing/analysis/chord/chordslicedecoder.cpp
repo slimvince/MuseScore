@@ -187,7 +187,8 @@ void adaptiveWindow(const std::vector<slicing::Slice>& slices,
                     const notemodel::NoteModel& model, int t,
                     const ChordSliceDecoderPreferences& dp,
                     const std::set<std::size_t>& excludeStaves,
-                    int& winStart, int& winEnd)
+                    int& winStart, int& winEnd,
+                    bool* clampedLoOut = nullptr, bool* clampedHiOut = nullptr)
 {
     const int n = static_cast<int>(slices.size());
     const int base = std::max(0, dp.contextSlices);
@@ -208,6 +209,12 @@ void adaptiveWindow(const std::vector<slicing::Slice>& slices,
         ++c;
         spanFor(c, winStart, winEnd);
     }
+    // Bounded-context edge report (design §3 item 10 / §5): at the final half-width the
+    // window WANTED a neighbour slice past the slice-vector edge (t - c < 0 earlier, or
+    // t + c > n-1 later). decodeSelection reads this to detect a starved selection-edge
+    // window. The defaulted-null out-params keep the production/diagnostic caller inert.
+    if (clampedLoOut) { *clampedLoOut = (t - c < 0); }
+    if (clampedHiOut) { *clampedHiOut = (t + c > n - 1); }
 }
 
 /// Is `pc` a template tone (root/3rd/5th/7th…) of any of the given (present) chords?
@@ -1255,6 +1262,157 @@ std::vector<SliceChord> ChordSliceDecoder::redecodeRange(
 {
     return decodeWindowed(slices, noteModel, keySignatureFifths, keyMode, chordPrefs,
                           decoderPrefs, excludeStaves, first, last);
+}
+
+// ── Bounded-context: the starved-window edge-extension requester loop (design §5) ──
+
+namespace {
+
+/// Decision-relevance (design §5, sharpened): a selection-edge truncation drives a request
+/// ONLY when the decision under the truncated window is NOT already a full-margin Commit
+/// (a truncated window whose evidence sufficed requests nothing).
+bool decisionIsRelevant(const SliceChord& sc)
+{
+    return !(sc.decision == SliceDecision::Commit && !sc.uncertain);
+}
+
+/// Does slice @p t's adaptive window clamp at the slice-vector edge (lo = wanted an earlier
+/// neighbour past slice 0; hi = wanted a later neighbour past slice n-1)? Reuses
+/// adaptiveWindow's clamp report; no scorer run beyond the distinct-pc probe.
+void edgeClampAtSlice(const std::vector<slicing::Slice>& slices,
+                      const notemodel::NoteModel& model, int t,
+                      const ChordSliceDecoderPreferences& dp,
+                      const std::set<std::size_t>& excludeStaves,
+                      bool& clampedLo, bool& clampedHi)
+{
+    int ws = 0, we = 0;
+    clampedLo = clampedHi = false;
+    adaptiveWindow(slices, model, t, dp, excludeStaves, ws, we, &clampedLo, &clampedHi);
+}
+
+/// The edge-extension increment in TICKS (design §9: the requester steps in its natural unit
+/// — neighbour SLICES — and converts to a tick target for the unit-blind L1). Sized off the
+/// edge slice's own span, floored at a beat so a very short (passing-tone) edge slice still
+/// makes real progress toward the score boundary. An efficiency knob only.
+int edgeIncrementTicks(const std::vector<slicing::Slice>& slices, int edgeSlice,
+                       const ChordSliceDecoderPreferences& dp)
+{
+    const slicing::Slice& s = slices[static_cast<std::size_t>(edgeSlice)];
+    const int width = std::max(1, s.end - s.start);
+    const int beat  = mu::engraving::Constants::DIVISION;
+    return std::max(1, dp.edgeExtendIncrementSlices) * std::max(width, beat);
+}
+
+} // namespace
+
+std::vector<SliceChord> ChordSliceDecoder::decodeSelection(
+    notemodel::NoteModel model,
+    int selectionStart, int selectionEnd,
+    int keySignatureFifths, KeySigMode keyMode,
+    const ChordAnalyzerPreferences& chordPrefs,
+    const ChordSliceDecoderPreferences& decoderPrefs,
+    const std::set<std::size_t>& excludeStaves)
+{
+    std::vector<SliceChord> out;
+    if (selectionEnd <= selectionStart) {
+        return out;
+    }
+    const int maxSteps = std::max(0, decoderPrefs.maxEdgeExtendSteps);
+
+    for (int attempt = 0; ; ++attempt) {
+        // (Re-)slice the CURRENT loaded span (L2). After an extend this is the forward
+        // re-run over the enlarged span — the edge slice extends, the interior is stable.
+        const std::vector<slicing::Slice> slices = slicing::changePointSlices(model);
+        const int T = static_cast<int>(slices.size());
+        if (T == 0) {
+            return out;   // nothing loaded overlaps the selection
+        }
+
+        // The slices that COVER the selection [selectionStart, selectionEnd) — a slice is in
+        // the selection iff it overlaps it. Only these are emitted (the reached-back / -forward
+        // context slices are evidence, never output — §2 invariant).
+        int selFirst = -1, selLast = -1;
+        for (int i = 0; i < T; ++i) {
+            if (slices[static_cast<std::size_t>(i)].start < selectionEnd
+                && slices[static_cast<std::size_t>(i)].end > selectionStart) {
+                if (selFirst < 0) { selFirst = i; }
+                selLast = i;
+            }
+        }
+        if (selFirst < 0) {
+            return out;   // the selection falls in an unloaded / empty gap
+        }
+
+        // A FRESH forward run over the whole loaded span (from slice 0), then EMIT only the
+        // selection slices. Decoding from slice 0 — not a bounded-look-back re-decode from
+        // selFirst — is what makes the result equal a single fresh run over the final loaded
+        // span (§4 equivalence): the context slices before selFirst inform the prevailing chain
+        // exactly as on a first run, and are then dropped (evidence, never output — §2).
+        const std::vector<SliceChord> full =
+            decodeWindowed(slices, model, keySignatureFifths, keyMode, chordPrefs,
+                           decoderPrefs, excludeStaves, 0, T - 1);
+        if (static_cast<int>(full.size()) != T) {
+            return out;   // defensive — decode covered fewer slices than the whole span
+        }
+        std::vector<SliceChord> decoded(full.begin() + selFirst, full.begin() + selLast + 1);
+        if (decoded.empty()) {
+            return out;
+        }
+
+        // Edge clips on the two boundary selection slices. A clamp at the slice-vector edge is
+        // a SELECTION-edge clip only when the loaded edge is NOT the score boundary (context
+        // exists but is not loaded — request); a clamp at the score boundary is not a clip
+        // (nothing more exists — proceed truncated). This is what makes the whole-score case
+        // inert: selection == score ⇒ loaded edges ARE the score bounds ⇒ no clip ⇒ no request.
+        bool loA = false, hiA = false, loB = false, hiB = false;
+        edgeClampAtSlice(slices, model, selFirst, decoderPrefs, excludeStaves, loA, hiA);
+        edgeClampAtSlice(slices, model, selLast,  decoderPrefs, excludeStaves, loB, hiB);
+        const bool earlierClip = loA && model.loadedStart() > model.scoreStart();
+        const bool laterClip   = hiB && model.loadedEnd()   < model.scoreEnd();
+
+        const bool earlierRelevant = decoderPrefs.enableEdgeExtension && earlierClip
+                                     && decisionIsRelevant(decoded.front());
+        const bool laterRelevant   = decoderPrefs.enableEdgeExtension && laterClip
+                                     && decisionIsRelevant(decoded.back());
+
+        // Request while a decision-relevant edge truncation remains and the hard bound is not
+        // spent. extend() (L1) clamps at the score boundary and reports it; a grow means the
+        // forward re-run continues over the enlarged span. (When relevant, loadedStart >
+        // scoreStart / loadedEnd < scoreEnd holds, so extend always grows — the no-grow branch
+        // is defensive.)
+        if ((earlierRelevant || laterRelevant) && attempt < maxSteps) {
+            bool grew = false;
+            if (earlierRelevant) {
+                const int before = model.loadedStart();
+                model.extend(notemodel::NoteModel::Direction::Earlier,
+                             edgeIncrementTicks(slices, selFirst, decoderPrefs));
+                grew = grew || (model.loadedStart() < before);
+            }
+            if (laterRelevant) {
+                const int before = model.loadedEnd();
+                model.extend(notemodel::NoteModel::Direction::Later,
+                             edgeIncrementTicks(slices, selLast, decoderPrefs));
+                grew = grew || (model.loadedEnd() > before);
+            }
+            if (grew) {
+                continue;   // forward re-run over the enlarged loaded span
+            }
+        }
+
+        // Finalize + attach truncation provenance (design §3 item 10). clippedBySelectionEdge:
+        // this reading saw a window truncated at a NON-score loaded edge (never a completed
+        // reading presented as if it saw all context). cueDenied: a decision-relevant request
+        // was REFUSED because the hard bound was spent (a score-boundary truncation is not a
+        // denial — nothing was requestable there).
+        if (earlierClip) { decoded.front().clippedBySelectionEdge = true; }
+        if (laterClip)   { decoded.back().clippedBySelectionEdge = true; }
+        const bool hardBoundSpent = attempt >= maxSteps;
+        if (earlierRelevant && hardBoundSpent) { decoded.front().cueDenied = true; }
+        if (laterRelevant && hardBoundSpent)   { decoded.back().cueDenied = true; }
+
+        out = std::move(decoded);
+        return out;
+    }
 }
 
 } // namespace mu::composing::analysis::chordslice
