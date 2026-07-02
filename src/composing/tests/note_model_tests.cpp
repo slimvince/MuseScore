@@ -1005,6 +1005,49 @@ TEST(Composing_NoteModelTests, EXT7_ExtendOnEmptyModelIsNoOp)
     EXPECT_TRUE(m.overlapping(0, 100).empty());
 }
 
+// EXT8 — the GENERAL per-step extend-equivalence invariant (design §4). EXT3 proves the
+// FINAL-state interior equivalence for one nesting; EXT8 proves the STRONGER form the
+// design states: after ANY extend step, in ANY direction, by ANY amount (including a
+// clamp), the model is byte-identical to a FRESH build over the CURRENT loaded span. This
+// is what "outlives the interim whole-score rebuild": the invariant is the design, not the
+// implementation. A randomized mixed-direction/amount sequence is checked after EACH step.
+TEST(Composing_NoteModelTests, EXT8_ExtendEquivalence_HoldsAfterEveryStep)
+{
+    std::mt19937 rng(0x5EA11u);
+    for (const char16_t* path : kAllNmFixtures) {
+        MasterScore* score = ScoreRW::readScore(path);
+        ASSERT_TRUE(score) << "missing fixture";
+
+        const NoteModel full = NoteModel::build(score);
+        const int s = full.loadedStart();
+        const int e = full.loadedEnd();
+        const int span = e - s;
+        ASSERT_GT(span, 0);
+        if (span < 8) { delete score; continue; }  // too short to sub-select; not seen in practice
+
+        // Start from an interior sub-selection, then extend in a random walk. Amounts are
+        // sized so some steps land interior (no clamp) and some overshoot (clamp at a
+        // boundary) — both must preserve the invariant.
+        NoteModel m = NoteModel::build(score, s + span / 3, e - span / 3);
+        std::uniform_int_distribution<int> dirDist(0, 1);
+        std::uniform_int_distribution<int> amtDist(1, std::max(2, span));  // 1 .. span ticks
+
+        for (int step = 0; step < 24; ++step) {
+            const NoteModel::Direction dir =
+                dirDist(rng) ? NoteModel::Direction::Earlier : NoteModel::Direction::Later;
+            m.extend(dir, amtDist(rng));
+
+            // The invariant: model ≡ a fresh build over the *current* loaded span.
+            const NoteModel fresh = NoteModel::build(score, m.loadedStart(), m.loadedEnd());
+            ASSERT_TRUE(onsetSorted(m)) << path << " step " << step;
+            expectSameNotes(m, fresh);
+            expectSameQueries(m, fresh, m.loadedStart(), m.loadedEnd());
+            expectSameQueries(m, fresh, s - 480, e + 480);   // a span straddling both boundaries
+        }
+        delete score;
+    }
+}
+
 // IDX_PERF — DISABLED by default (run with --gtest_also_run_disabled_tests). Times
 // the REAL indexed query vs the linear reference across a per-slice workload at
 // growing N, demonstrating the O(N²)→O(N log N) transition. Diagnostic only.

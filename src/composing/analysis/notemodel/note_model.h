@@ -200,6 +200,12 @@ public:
     int  loadedEnd() const { return m_loadedEnd; }
     int  selectionStart() const { return m_selectionStart; }
     int  selectionEnd() const { return m_selectionEnd; }
+    /// Structural score bounds — the hard clamps extend() can never pass. A loaded edge
+    /// equal to these IS the score boundary (nothing more to load in that direction); a
+    /// loaded edge strictly inside them is a selection edge with unloaded context beyond it
+    /// (cowork_bounded_context_design.md §2/§3 — "not loaded" vs "score starts/ends here").
+    int  scoreStart() const { return m_scoreStart; }
+    int  scoreEnd() const { return m_scoreEnd; }
     /// Whether the most recent extend() clamped at the score start/end.
     bool boundaryReached() const { return m_boundaryReached; }
 
