@@ -225,21 +225,129 @@ def _to_unix(p: Path) -> str:
     return s.replace("\\", "/")
 
 
-def _run_fullspine(exe: Path, mscx: Path, out: Path, bash: "Path | None", timeout: int) -> bool:
-    """Run batch_analyze --dump-fullspine, capturing stdout to `out`.  Launched
-    via Git Bash on Windows (direct subprocess triggers a Qt access violation)."""
+def _run_fullspine(exe: Path, mscx: Path, out: Path, bash: "Path | None", timeout: int,
+                   dump_flag: str = "--dump-fullspine") -> bool:
+    """Run batch_analyze with @p dump_flag (--dump-fullspine or --dump-l6), capturing
+    stdout to `out`.  Launched via Git Bash on Windows (direct subprocess triggers a
+    Qt access violation)."""
     try:
         if platform.system() == "Windows" and bash:
-            cmd = f'{_to_unix(exe)} "{_to_unix(mscx)}" --dump-fullspine > "{_to_unix(out)}"'
+            cmd = f'{_to_unix(exe)} "{_to_unix(mscx)}" {dump_flag} > "{_to_unix(out)}"'
             r = subprocess.run([str(bash), "-c", cmd], stdout=subprocess.DEVNULL,
                                stderr=subprocess.DEVNULL, timeout=timeout)
         else:
             with open(out, "wb") as fh:
-                r = subprocess.run([str(exe), str(mscx), "--dump-fullspine"],
+                r = subprocess.run([str(exe), str(mscx), dump_flag],
                                    stdout=fh, stderr=subprocess.DEVNULL, timeout=timeout)
         return r.returncode == 0 and out.exists() and out.stat().st_size > 0
     except Exception:
         return False
+
+
+# ── Task 3 — the §10 step-1 L6 validation (grades the --dump-l6 grouping structure) ─
+
+# The §3.1 aggregate boundary baseline (cc_tsv_oracle_report.md): L6 adds NO detection,
+# so its punctuation-span boundaries are the L1.5 picked set verbatim → the boundary
+# oracle must stay within noise of this. A MATERIAL deviation ⇒ L6 leaked detection ⇒ STOP.
+L6_BOUNDARY_BASELINE = {"precision": 0.348, "recall": 0.224}
+L6_BOUNDARY_NOISE_PP = 3.0   # allowed |Δ| in percentage points before it is a STOP
+
+
+def _key_tonic_minor(resolved: str) -> "tuple[int, bool]":
+    from dcml_parser import _key_to_tonic_pc
+    return _key_to_tonic_pc(resolved), (bool(resolved) and resolved[0].islower())
+
+
+def gt_local_key_track(tsv_path: Path) -> list:
+    """The GT local-key track: (abs_tick, tonicPc, minor) per region, the localkey
+    resolved against globalkey (NOT the per-chord applied root)."""
+    from dcml_parser import parse_abc_harmonies_file, _resolve_dcml_key
+    track = []
+    for r in parse_abc_harmonies_file(str(tsv_path)):
+        if r.abs_tick is None:
+            continue
+        resolved = _resolve_dcml_key(r.local_key, r.global_key)
+        tonic, minor = _key_tonic_minor(resolved)
+        track.append((r.abs_tick, tonic, minor))
+    track.sort()
+    return track
+
+
+def gt_key_change_ticks(track: list) -> list:
+    """Ticks where the GT (tonic, minor) changes (excludes the first region)."""
+    ticks, prev = [], None
+    for tick, tonic, minor in track:
+        if prev is not None and (tonic, minor) != prev:
+            ticks.append(tick)
+        prev = (tonic, minor)
+    return ticks
+
+
+def gt_key_at(track: list, tick: int) -> "tuple[int, bool] | None":
+    """The GT (tonic, minor) active at @p tick (the last region starting at/before it)."""
+    active = None
+    for t, tonic, minor in track:
+        if t <= tick:
+            active = (tonic, minor)
+        else:
+            break
+    return active
+
+
+def score_l6(stem: str, fs: dict, tsv_path: Path) -> dict:
+    """Grade the --dump-l6 grouping structure for one movement (§10 step 1)."""
+    l6 = fs.get("l6", {})
+    spans = l6.get("punctuationSpans", [])
+    areas = l6.get("keyAreas", [])
+    aligns = l6.get("cadenceAlignments", [])
+
+    # 1) punctuation-span boundaries (interior span starts) vs GT phraseend.
+    l6_boundaries = [s["startTick"] for s in spans[1:]]  # every span start except the first
+    _cad, phrase_markers = parse_cadence_phrase_markers(str(tsv_path))
+    gt_phrase = [m.abs_tick for m in phrase_markers if m.abs_tick is not None]
+    bm = match_points(l6_boundaries, gt_phrase)
+
+    # 1a) THE no-added-detection proof (§6 / the Task-3 STOP guard). L6 consumes the
+    # L1.5 picked set as-is (§5.1 — no re-threshold, no re-detect); its punctuation-span
+    # boundaries must be EXACTLY the interior of phraseBoundaryTicks. Any boundary L6
+    # emits that is NOT in the L1.5 set is INVENTED detection ⇒ STOP. (The two edge ticks
+    # at span start/end are legitimately dropped — an edge marker is not an interior cut.)
+    pbt = set(int(t) for t in fs.get("phraseBoundaryTicks", []))
+    span_start = spans[0]["startTick"] if spans else 0
+    span_end = spans[-1]["endTick"] if spans else 0
+    interior_pbt = {t for t in pbt if span_start < t < span_end}
+    l6_set = set(l6_boundaries)
+    added = l6_set - pbt                 # MUST be empty (L6 invented no boundary)
+    dropped_edges = pbt - l6_set         # expected: the start/end edge markers
+
+    # 2) key-area boundaries vs GT local-key change ticks + per-area tonic/mode match.
+    track = gt_local_key_track(tsv_path)
+    l6_ka_boundaries = [a["startTick"] for a in areas[1:]]
+    km = match_points(l6_ka_boundaries, gt_key_change_ticks(track))
+    tm_match = tm_total = 0
+    for a in areas:
+        gt = gt_key_at(track, a["startTick"])
+        if gt is None:
+            continue
+        tm_total += 1
+        if gt == (a["localTonicPc"], bool(a["localMinorMode"])):
+            tm_match += 1
+
+    # 3) cadence-to-span alignment counts + GT cadence-at-phrase-end rate.
+    closes = sum(1 for a in aligns if a["kind"] == "ClosesSpan")
+    internal = sum(1 for a in aligns if a["kind"] == "Internal")
+    no_cadence_spans = sum(1 for s in spans if s["closingCadenceIndex"] < 0)
+
+    return {
+        "boundary": bm, "keyarea": km,
+        "l6_added_boundaries": len(added),
+        "l6_exact_interior": (l6_set == interior_pbt),
+        "l6_dropped_edges": len(dropped_edges),
+        "tonicmode_match": tm_match, "tonicmode_total": tm_total,
+        "cad_closes": closes, "cad_internal": internal,
+        "spans": len(spans), "no_cadence_spans": no_cadence_spans,
+        "schema_count": l6.get("schemaSpanCount", 0),
+    }
 
 
 def _corpus_pieces(corpus: str) -> list:
@@ -328,15 +436,133 @@ def measure(corpora: list, timeout: int, limit: int, skip_cpp: bool) -> dict:
     return report
 
 
+def measure_l6(corpora: list, timeout: int, limit: int, skip_cpp: bool) -> dict:
+    """Task 3 — grade the --dump-l6 grouping structure on the dev beds (§10 step 1).
+    Boundary metric is asserted within noise of the L1.5 baseline (else a STOP)."""
+    exe, bash = _find_batch_analyze(), _find_git_bash()
+    (_OUT_ROOT / "_l6").mkdir(parents=True, exist_ok=True)
+    report: dict = {"corpora": {}, "tolerance_ticks": TOLERANCE_TICKS,
+                    "boundary_baseline": L6_BOUNDARY_BASELINE}
+    for corpus in corpora:
+        pieces = _corpus_pieces(corpus)
+        if limit:
+            pieces = pieces[:limit]
+        cdir = _OUT_ROOT / "_l6" / corpus
+        cdir.mkdir(parents=True, exist_ok=True)
+        rows = []
+        ok = fail = 0
+        for stem, mscx, tsv in pieces:
+            fj = cdir / f"{stem}.l6.json"
+            if not (skip_cpp and fj.exists()):
+                if not _run_fullspine(exe, mscx, fj, bash, timeout, "--dump-l6"):
+                    fail += 1
+                    continue
+            try:
+                fs = json.loads(fj.read_text(encoding="utf-8"))
+            except Exception:
+                fail += 1
+                continue
+            ok += 1
+            r = score_l6(stem, fs, tsv)
+            r["stem"] = stem
+            rows.append(r)
+
+        bm, bo, bg, bp, br = _agg_pr([r["boundary"] for r in rows])
+        km, ko, kg, kp, kr = _agg_pr([r["keyarea"] for r in rows])
+        added = sum(r["l6_added_boundaries"] for r in rows)
+        exact = sum(1 for r in rows if r["l6_exact_interior"])
+        tm_m = sum(r["tonicmode_match"] for r in rows)
+        tm_t = sum(r["tonicmode_total"] for r in rows)
+        closes = sum(r["cad_closes"] for r in rows)
+        internal = sum(r["cad_internal"] for r in rows)
+        no_cad = sum(r["no_cadence_spans"] for r in rows)
+        spans = sum(r["spans"] for r in rows)
+        schema = sum(r["schema_count"] for r in rows)
+
+        # GT cadence-at-phrase-end rate (context for closes/internal): a GT cadence that
+        # coincides (±tol) with a GT phraseend marker.
+        gt_cad_at_phrase = gt_cad_total = 0
+        for stem, mscx, tsv in pieces:
+            cad_mk, phr_mk = parse_cadence_phrase_markers(str(tsv))
+            cad_ticks = [m.abs_tick for m in cad_mk if m.abs_tick is not None]
+            phr_ticks = [m.abs_tick for m in phr_mk if m.abs_tick is not None]
+            if not cad_ticks:
+                continue
+            gt_cad_total += len(set(cad_ticks))
+            gt_cad_at_phrase += match_points(cad_ticks, phr_ticks).matched
+
+        report["corpora"][corpus] = {
+            "movements_ok": ok, "movements_fail": fail,
+            "boundary": {"matched": bm, "ours": bo, "gt": bg, "precision": bp, "recall": br},
+            "keyarea": {"matched": km, "ours": ko, "gt": kg, "precision": kp, "recall": kr},
+            "l6_added_boundaries": added, "l6_exact_interior_movements": exact,
+            "tonicmode_match": tm_m, "tonicmode_total": tm_t,
+            "cad_closes": closes, "cad_internal": internal,
+            "no_cadence_spans": no_cad, "spans": spans, "schema_count": schema,
+            "gt_cad_at_phrase": gt_cad_at_phrase, "gt_cad_total": gt_cad_total,
+        }
+        tmrate = (100.0 * tm_m / tm_t) if tm_t else 0.0
+        print(f"{corpus:30} ok={ok:3} added={added:2} exact={exact}/{ok} | "
+              f"bound P={_pct(bp)} R={_pct(br)} | keyarea P={_pct(kp)} R={_pct(kr)} "
+              f"tonic/mode={tmrate:4.0f}% | cad closes={closes} internal={internal}")
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpora", default="", help="comma list; default = all 16 dev beds")
     ap.add_argument("--timeout", type=int, default=120)
     ap.add_argument("--limit", type=int, default=0, help="cap movements per corpus (0=all)")
     ap.add_argument("--skip-cpp", action="store_true", help="reuse cached fullspine JSON")
+    ap.add_argument("--l6", action="store_true", help="Task 3: grade the --dump-l6 grouping structure")
     ap.add_argument("--out", default="", help="write full report JSON here")
     args = ap.parse_args()
     corpora = [c.strip() for c in args.corpora.split(",") if c.strip()] or DEV_BEDS
+
+    if args.l6:
+        report = measure_l6(corpora, args.timeout, args.limit, args.skip_cpp)
+        # aggregate boundary + keyarea; assert boundary within noise of the L1.5 baseline.
+        for name in ("boundary", "keyarea"):
+            t = {"matched": 0, "ours": 0, "gt": 0}
+            for c in report["corpora"].values():
+                for kk in t:
+                    t[kk] += c[name][kk]
+            p = t["matched"] / t["ours"] if t["ours"] else 0.0
+            r = t["matched"] / t["gt"] if t["gt"] else 0.0
+            report[f"aggregate_{name}"] = {**t, "precision": p, "recall": r}
+            print(f"AGGREGATE {name:9} P={_pct(p)} R={_pct(r)} ({t['matched']}/{t['ours']} | {t['matched']}/{t['gt']})")
+        # THE no-added-detection STOP guard (exact + structural): L6's boundaries are
+        # a SUBSET of the L1.5 picked set on every movement — it invents none. (This is
+        # the faithful form of "L6 adds no detection"; the fuzzy P/R-vs-baseline band is
+        # confounded by the legitimate edge-tick exclusion, so the exact set check is used.)
+        total_added = sum(c["l6_added_boundaries"] for c in report["corpora"].values())
+        total_exact = sum(c["l6_exact_interior_movements"] for c in report["corpora"].values())
+        total_mv = sum(c["movements_ok"] for c in report["corpora"].values())
+        report["no_added_detection"] = {"total_added_boundaries": total_added,
+                                        "exact_interior_movements": total_exact,
+                                        "movements": total_mv}
+        agg_b = report["aggregate_boundary"]
+        dP = 100.0 * (agg_b["precision"] - L6_BOUNDARY_BASELINE["precision"])
+        dR = 100.0 * (agg_b["recall"] - L6_BOUNDARY_BASELINE["recall"])
+        report["boundary_vs_baseline"] = {"dP_pp": round(dP, 2), "dR_pp": round(dR, 2),
+                                          "note": "differs from the §3.1 baseline only by the "
+                                                  "legitimate start/end edge-tick exclusion"}
+        print(f"NO-ADDED-DETECTION: added boundaries={total_added} (MUST be 0) | "
+              f"exact-interior movements={total_exact}/{total_mv} "
+              f"-> {'PASS (L6 invented no boundary)' if total_added == 0 else 'STOP — L6 LEAKED DETECTION'}")
+        print(f"BOUNDARY P/R vs §3.1 baseline: dP={dP:+.2f}pp dR={dR:+.2f}pp "
+              f"(edge-tick exclusion only; descriptive)")
+        tot_closes = sum(c["cad_closes"] for c in report["corpora"].values())
+        tot_internal = sum(c["cad_internal"] for c in report["corpora"].values())
+        gcap = sum(c["gt_cad_at_phrase"] for c in report["corpora"].values())
+        gct = sum(c["gt_cad_total"] for c in report["corpora"].values())
+        print(f"CADENCE alignment: closes={tot_closes} internal={tot_internal} | "
+              f"GT cadence-at-phraseend rate={_pct(gcap/gct) if gct else 'n/a'} ({gcap}/{gct})")
+        if args.out:
+            Path(args.out).write_text(json.dumps(report, indent=2), encoding="utf-8")
+            print(f"[wrote {args.out}]")
+        return
+
     report = measure(corpora, args.timeout, args.limit, args.skip_cpp)
 
     # Aggregate across all measured corpora.

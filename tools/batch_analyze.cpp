@@ -105,6 +105,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/function/functionmodulation.h"       // E0 --dump-fullspine (L5 Step-4 tonicization/modulation + recompute)
 #include "composing/analysis/function/functionromannumeral.h"     // E0 --dump-fullspine (L5 Step-1 base RN)
 #include "composing/analysis/scoreharvest/metricweights.h"        // E0 --dump-fullspine (per-slice metric weight)
+#include "composing/analysis/grouping/groupinglayer.h"            // L6 --dump-l6 (dormant grouping assembly)
 #include "composing/analysis/region/sparsechordrefinement.h"      // diatonicDegreeForRootPc (the inline-RN baseline)
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
@@ -1950,6 +1951,12 @@ static void printHelp(const std::string& prog)
         << "            confidence + per-region cadences/modulations + wall-time. Base RNs are\n"
         << "            TRIAD-LEVEL (the L4→L5 carry drops the seventh/extensions — faithful,\n"
         << "            not synthesized). NO production consumer; byte-identical. Default OFF.\n"
+        << "  --dump-l6\n"
+        << "            (L6, read-only DIAGNOSTIC) Run --dump-fullspine AND append an additive\n"
+        << "            \"l6\" object: the dormant Layer-6 grouping structure assembled from the\n"
+        << "            spine's L1.5 boundaries + L5 cadences + per-slice local-key track —\n"
+        << "            punctuation-spans, key-areas, cadence-to-span alignment (§5.1–§5.5). NO\n"
+        << "            production consumer; fullspine output byte-identical without it. Default OFF.\n"
         << "  --dump-modulation\n"
         << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
         << "            the standard regions JSON: the key-agnostic local-modulation\n"
@@ -2736,13 +2743,62 @@ static int fsFifthsForTonic(int tonicPc, bool minor)
     return f;
 }
 
+// ── L6 --dump-l6 renderer: the dormant grouping structure as an additive JSON
+//    "l6" object appended to the fullspine dump (byte-identical when emitL6=false). ─
+static std::string fsGroupingJson(const mu::composing::analysis::grouping::GroupingLayerOutput& l6)
+{
+    namespace g6 = mu::composing::analysis::grouping;
+    std::ostringstream os;
+    os << "  \"l6\": {\n";
+    os << "    \"punctuationSpans\": [";
+    for (size_t i = 0; i < l6.punctuationSpans.size(); ++i) {
+        const g6::PunctuationSpan& p = l6.punctuationSpans[i];
+        os << (i ? ", " : "")
+           << "{ \"startTick\": " << p.startTick
+           << ", \"endTick\": " << p.endTick
+           << ", \"structuralEndTick\": " << p.structuralEndTick
+           << ", \"codettaEndTick\": " << p.codettaEndTick
+           << ", \"closingCadenceIndex\": " << p.closingCadenceIndex
+           << ", \"carriesOpenMark\": " << (p.carriesOpenMark ? "true" : "false")
+           << ", \"clippedAtStart\": " << (p.clippedAtStart ? "true" : "false")
+           << ", \"clippedAtEnd\": " << (p.clippedAtEnd ? "true" : "false")
+           << ", \"extensionCue\": " << (p.extensionCue ? "true" : "false") << " }";
+    }
+    os << "],\n";
+    os << "    \"keyAreas\": [";
+    for (size_t i = 0; i < l6.keyAreas.size(); ++i) {
+        const g6::KeyAreaSpan& k = l6.keyAreas[i];
+        os << (i ? ", " : "")
+           << "{ \"startTick\": " << k.startTick
+           << ", \"endTick\": " << k.endTick
+           << ", \"localTonicPc\": " << k.localTonicPc
+           << ", \"localMinorMode\": " << (k.localMinorMode ? "true" : "false")
+           << ", \"confidence\": " << fmtDouble(k.confidence, 4)
+           << ", \"carriesOpenMark\": " << (k.carriesOpenMark ? "true" : "false") << " }";
+    }
+    os << "],\n";
+    os << "    \"cadenceAlignments\": [";
+    for (size_t i = 0; i < l6.cadenceAlignments.size(); ++i) {
+        const g6::CadenceAlignment& a = l6.cadenceAlignments[i];
+        os << (i ? ", " : "")
+           << "{ \"cadenceIndex\": " << a.cadenceIndex
+           << ", \"kind\": \"" << (a.kind == g6::CadenceAlignmentKind::ClosesSpan ? "ClosesSpan" : "Internal") << "\""
+           << ", \"punctuationSpanIndex\": " << a.punctuationSpanIndex << " }";
+    }
+    os << "],\n";
+    os << "    \"schemaSpanCount\": " << l6.schemaSpans.size() << "\n";
+    os << "  }";
+    return os.str();
+}
+
 static std::string runFullSpine(Score* score, const std::string& stem,
                                 const std::string& presetName,
                                 const analysis::KeyModeAnalyzerPreferences& keyPrefs,
                                 const analysis::ChordAnalyzerPreferences& chordPrefs,
                                 const analysis::chordslice::ChordSliceDecoderPreferences& decoderPrefs,
                                 const std::set<size_t>& excludeStaves,
-                                bool sectionLevel)
+                                bool sectionLevel,
+                                bool emitL6 = false)
 {
     namespace cs = mu::composing::analysis::chordslice;
     namespace eb = mu::composing::analysis::engravingbridge;
@@ -3169,8 +3225,39 @@ static std::string runFullSpine(Score* score, const std::string& stem,
         }
         os << "] }";
     }
-    os << (decoded.empty() ? "]\n" : "\n  ]\n");
-    os << "}\n";
+    os << (decoded.empty() ? "]" : "\n  ]");
+
+    // ── L6 GROUPING (dormant, --dump-l6) — additive block: the flat grouping
+    //    structure assembled from THIS spine's L1.5 boundaries + L5 cadences +
+    //    per-slice local-key track. Whole-score analysis → true score edges (no
+    //    selection clip). Byte-identical fullspine output when emitL6 == false. ──
+    if (emitL6) {
+        namespace g6 = mu::composing::analysis::grouping;
+        std::vector<g6::GroupingUnit> gunits;
+        gunits.reserve(slices.size());
+        for (size_t i = 0; i < slices.size(); ++i) {
+            g6::GroupingUnit gu;
+            gu.startTick = slices[i].start;
+            gu.endTick = slices[i].end;
+            gu.localTonicPc = localTonic[i];
+            gu.localMinorMode = localMinor[i];
+            gu.keyConfidence = homeConf;          // the declared L3/L5 home-key confidence [0,1]
+            gu.openMark = unitOpenMark(i);
+            gunits.push_back(gu);
+        }
+        std::vector<g6::BoundaryInput> gbounds;
+        gbounds.reserve(phraseTicks.size());
+        for (int t : phraseTicks) { g6::BoundaryInput b; b.tick = t; gbounds.push_back(b); }
+        g6::AnalyzedSpan gspan;
+        gspan.startTick = slices.empty() ? 0 : slices.front().start;
+        gspan.endTick = lastTick;
+        gspan.startIsSelectionEdge = false;
+        gspan.endIsSelectionEdge = false;
+        const g6::GroupingLayerOutput l6 =
+            g6::assembleGrouping(gunits, gbounds, cadences, gspan);
+        os << ",\n" << fsGroupingJson(l6);
+    }
+    os << "\n}\n";
     return os.str();
 }
 
@@ -3221,6 +3308,7 @@ int main(int argc, char* argv[])
     bool decodeChords = false;        // Layer-4 per-slice chord decoder (default OFF = no analysis touched)
     bool reachBackAB = false;         // Layer-3 reach-back flag-ON/OFF range-query A/B (default OFF; HELD)
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
+    bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
     // analyzeScore), so production analysis stays byte-identical. Default = the
@@ -3280,6 +3368,10 @@ int main(int argc, char* argv[])
             reachBackAB = true;
         } else if (a == "--dump-fullspine") {
             dumpFullSpine = true;
+        } else if (a == "--dump-l6") {
+            // L6 grouping: run the full spine and APPEND the dormant grouping structure.
+            dumpFullSpine = true;
+            dumpL6 = true;
         } else if (a == "--chord-no-membership") {
             // Decode-only: disable the Increment-B membership decision + feedback +
             // two-pass (reproduces the Increment-A behaviour, modulo the adaptive window).
@@ -3631,7 +3723,7 @@ int main(int argc, char* argv[])
         const std::string stem =
             QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
         const std::string report = runFullSpine(score, stem, presetName, keyPrefs, chordPrefs,
-                                                 chordDecoderPrefs, excludeStaves, sectionLevel);
+                                                 chordDecoderPrefs, excludeStaves, sectionLevel, dumpL6);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
