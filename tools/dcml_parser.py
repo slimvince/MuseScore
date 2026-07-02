@@ -46,6 +46,18 @@ class DcmlRegion:
     # reconstruction).  When present, the comparator aligns by this exact tick
     # instead of rebuilding ticks from measure_number+beat (audit P0/L4.1).
     abs_tick: Optional[int] = None
+    # ── L6 oracle columns (additive; TSV path only) ──────────────────────────
+    # The DCML `cadence` and `phraseend` GT columns, carried verbatim when the
+    # row bears one (else None).  These are the Layer-6 punctuation-span /
+    # cadence-location oracles (design §10); they do NOT participate in the RN /
+    # root / key read surface — purely additive, so the BIR gate is byte-identical.
+    # NOTE: a cadence/phraseend marker may sit on a REST row (empty numeral) that
+    # this region stream skips (10.7% of phraseend, 1.1% of cadence markers across
+    # the dev beds).  For a COMPLETE marker-tick set independent of the numeral,
+    # use parse_cadence_phrase_markers(); these region fields only carry the marker
+    # of a region that also bears a scoreable numeral.
+    cadence: Optional[str] = None
+    phraseend: Optional[str] = None
 
 
 def parse_dcml_file(path: str) -> List[DcmlRegion]:
@@ -250,6 +262,10 @@ def parse_abc_harmonies_file(
                 if (qb_raw or '').strip():
                     abs_tick = round(_parse_fraction(qb_raw) * TICKS_PER_QUARTER)
 
+                # L6 oracle columns (additive) — carried verbatim, None when empty.
+                cadence = (row.get('cadence') or '').strip() or None
+                phraseend = (row.get('phraseend') or '').strip() or None
+
                 effective_key = _resolve_effective_dcml_key(localkey, globalkey, relativeroot)
                 regions.append(DcmlRegion(
                     measure_number=mn,
@@ -260,6 +276,8 @@ def parse_abc_harmonies_file(
                     roman_numeral=numeral,
                     root_pc=_compute_root_pc(numeral, effective_key),
                     abs_tick=abs_tick,
+                    cadence=cadence,
+                    phraseend=phraseend,
                 ))
             except (ValueError, KeyError, ZeroDivisionError) as exc:
                 # A genuinely malformed harmony row.  Record it — do NOT let it
@@ -278,6 +296,76 @@ def parse_abc_harmonies_file(
 
     regions.sort(key=lambda r: (r.measure_number, r.beat))
     return regions
+
+
+@dataclass
+class DcmlMarker:
+    """A single L6-oracle marker (a `cadence` or `phraseend` cell) from a DCML
+    .harmonies.tsv row, carried with its absolute tick.  Unlike a DcmlRegion this
+    is emitted for EVERY row bearing the column — including rest rows (empty
+    numeral) that the region stream skips — so the marker-tick set is complete."""
+    abs_tick: Optional[int]   # round(Fraction(<quarterbeats col>) * 480), or None
+    label: str                # verbatim cell value (e.g. "PAC", "HC.SIM", "}{")
+    measure_number: int
+    beat: float
+    kind: str                 # 'cadence' or 'phraseend'
+
+
+def parse_cadence_phrase_markers(
+        path: str,
+        abs_onset_col: str = 'quarterbeats_all_endings',
+) -> "tuple[List[DcmlMarker], List[DcmlMarker]]":
+    """Extract the DCML `cadence` and `phraseend` GT markers from a
+    .harmonies.tsv, INDEPENDENT of the `numeral` column.
+
+    Returns ``(cadence_markers, phraseend_markers)``, each sorted by abs_tick.
+
+    Why a dedicated reader (not just the DcmlRegion fields): a marker may sit on a
+    REST row (deliberate rest / unannotated harmony — empty numeral) that
+    :func:`parse_abc_harmonies_file` skips.  Measured across the L6 dev beds, that
+    is **10.7% of phraseend markers** and **1.1% of cadence markers** — dropping
+    them would corrupt the punctuation-span-boundary GT set.  This reader visits
+    every row and keeps every non-empty cell, so the oracle tick set is complete.
+
+    Tick derivation reuses the EXACT arithmetic of the RN read surface
+    (``round(Fraction(<abs_onset_col>) * TICKS_PER_QUARTER)`` with the same
+    all-endings / plain-quarterbeats fallback), so marker ticks and region ticks
+    live on one tick basis.  ``abs_tick`` is None only when both quarterbeats
+    columns are empty for the row.
+    """
+    cadence_markers: List[DcmlMarker] = []
+    phrase_markers: List[DcmlMarker] = []
+    other_col = ('quarterbeats_all_endings'
+                 if abs_onset_col == 'quarterbeats' else 'quarterbeats')
+    with open(path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            cad = (row.get('cadence') or '').strip()
+            phr = (row.get('phraseend') or '').strip()
+            if not cad and not phr:
+                continue
+            try:
+                mn = int(row.get('mn', row.get('mc', 0)))
+            except (ValueError, TypeError):
+                mn = 0
+            mn_onset = _parse_fraction(row.get('mn_onset', '0'))
+            beat = float(mn_onset) + 1.0
+            qb_raw = row.get(abs_onset_col, '') or row.get(other_col, '')
+            abs_tick: Optional[int] = None
+            if (qb_raw or '').strip():
+                abs_tick = round(_parse_fraction(qb_raw) * TICKS_PER_QUARTER)
+            if cad:
+                cadence_markers.append(
+                    DcmlMarker(abs_tick, cad, mn, beat, 'cadence'))
+            if phr:
+                phrase_markers.append(
+                    DcmlMarker(abs_tick, phr, mn, beat, 'phraseend'))
+
+    _tick_key = lambda m: (m.abs_tick if m.abs_tick is not None else -1,
+                           m.measure_number, m.beat)
+    cadence_markers.sort(key=_tick_key)
+    phrase_markers.sort(key=_tick_key)
+    return cadence_markers, phrase_markers
 
 
 def _resolve_dcml_key(localkey: str, globalkey: str) -> str:
