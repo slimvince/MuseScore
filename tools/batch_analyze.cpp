@@ -3054,6 +3054,15 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     os << "  \"wallTimeLegacyMs\": " << fmtDouble(legacyMs, 3) << ",\n";
     os << "  \"wallTimeDecodeMs\": " << fmtDouble(decodeMs, 3) << ",\n";
 
+    // L6 punctuation-span oracle (metric 1): the L1.5 boundary-detector picked set
+    // (eb::phraseBoundaryTicks, computed above as `phraseTicks`) exposed verbatim
+    // as ticks — OUR boundary ticks for the punctuation-span-boundary P/R metric.
+    // Diagnostic-only, additive to the --dump-fullspine output; the standard
+    // .ours.json (writeJson) path is byte-identical, so the BIR gate is unaffected.
+    os << "  \"phraseBoundaryTicks\": [";
+    { bool f = true; for (int t : phraseTicks) { os << (f ? "" : ", ") << t; f = false; } }
+    os << "],\n";
+
     os << "  \"cadences\": [";
     for (size_t i = 0; i < cadences.size(); ++i) {
         const analysis::FunctionalCadence& c = cadences[i];
