@@ -4,7 +4,8 @@
 Grades the full-spine side files emitted by `batch_analyze --dump-fullspine` (the
 L1→L2→L3(live)→L4-decoder→L5 chain — see runFullSpine in tools/batch_analyze.cpp)
 against BOTH frozen references: the DCML/WiR ground truth AND the legacy spine (the
-flag-OFF corpus). Produces the nine E0 measures per cowork_engage_criteria.md §3, with
+flag-OFF corpus). Produces the nine E0 measures per the ENGAGE CRITERIA + RETIREMENT
+MAP block (E0 stage) in docs/implementation_roadmap.md, with
 the Cowork-ratified riders (2026-07-02): RN accuracy at THREE levels (root / triad-
 normalized / raw-full-diagnostic), and measure #7 split into the firable vs
 structurally-non-firable relational-label sets.
