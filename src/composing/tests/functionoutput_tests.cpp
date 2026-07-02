@@ -244,3 +244,40 @@ TEST(FunctionOutput, CadenceVoteAttributedToArrivalUnitOnly)
     EXPECT_DOUBLE_EQ(out.units[0].confidence.cadenceVoteWeight, 0.0);   // no arrival in [0,960)... arrival is AT 960
     EXPECT_DOUBLE_EQ(out.units[1].confidence.cadenceVoteWeight, 2.5);   // arrival 960 ∈ [960,1920)
 }
+
+// ── D-L5a: the boundary (published) form of `combined` ─────────────────────────
+//
+// combinedBoundary = combined / (combined + kBoundary) — the confidence-contract U2
+// squash (contract §5 R5 / §7 D-L5a). It must be ∈ [0,1) and MONOTONE in combined over
+// the E0-observed range (0 … ~25.25); `combined` itself is unchanged. Roots step by
+// ASCENDING fifth (+7) — an unlicensed motion (see LicensedFitZeroForUnlicensedMotion) —
+// and there are no cadences, so combined == resolverConfidence and we sweep it directly.
+TEST(FunctionOutput, CombinedBoundaryIsSquashedToUnitIntervalAndMonotone)
+{
+    const std::vector<double> confs = { 0.0, 0.5, 1.0, 5.0, 25.25 };
+    std::vector<FunctionUnitAssembly> units;
+    int root = C;
+    for (size_t i = 0; i < confs.size(); ++i) {
+        units.push_back(committedUnit(static_cast<int>(i) * 960, static_cast<int>(i + 1) * 960,
+                                      root, Q::Major, "x", R::None, confs[i]));
+        root = (root + 7) % 12;   // ascending fifth → unlicensed → licensed-fit 0
+    }
+
+    const FunctionLayerOutput out =
+        assembleFunctionOutput(units, /*cadences=*/{}, /*modulations=*/{}, C, false);
+    ASSERT_EQ(out.units.size(), confs.size());
+
+    double prevBoundary = -1.0;
+    for (size_t i = 0; i < out.units.size(); ++i) {
+        const FunctionConfidence& fc = out.units[i].confidence;
+        EXPECT_DOUBLE_EQ(fc.combined, confs[i]) << "combined == resolverConfidence (fit 0, no cadence)";
+        // The published boundary form is exactly the squash of the (unbounded) combined.
+        EXPECT_DOUBLE_EQ(fc.combinedBoundary, fc.combined / (fc.combined + 1.0));
+        EXPECT_GE(fc.combinedBoundary, 0.0);
+        EXPECT_LT(fc.combinedBoundary, 1.0) << "the boundary form is strictly < 1";
+        EXPECT_GT(fc.combinedBoundary, prevBoundary) << "monotone increasing in combined";
+        prevBoundary = fc.combinedBoundary;
+    }
+    // The E0 maximum (combined = 25.25) squashes to ~0.9619, safely inside [0,1).
+    EXPECT_NEAR(out.units.back().confidence.combinedBoundary, 25.25 / 26.25, 1e-9);
+}

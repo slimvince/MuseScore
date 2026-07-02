@@ -2973,6 +2973,7 @@ static std::string runFullSpine(Score* score, const std::string& stem,
            << ", \"tonicPc\": " << m.tonicPc << ", \"minorMode\": " << (m.minorMode ? "true" : "false")
            << ", \"isHomeKey\": " << (m.isHomeKey ? "true" : "false")
            << ", \"cadenceConfirmed\": " << (m.cadenceConfirmed ? "true" : "false")
+           << ", \"cadentialWeight\": " << fmtDouble(m.cadentialWeight, 4)   // D-FS §5.4 contradiction quantity
            << ", \"isModulation\": " << (m.isModulation ? "true" : "false") << " }";
     }
     os << "],\n";
@@ -3035,6 +3036,10 @@ static std::string runFullSpine(Score* score, const std::string& stem,
            << ", \"l5LicensedFit\": " << fmtDouble(fc.licensedProgressionFit, 4)
            << ", \"l5NextBestMargin\": " << fmtDouble(fc.nextBestMargin, 4)
            << ", \"l5Combined\": " << fmtDouble(fc.combined, 4)
+           << ", \"l5CombinedBoundary\": " << fmtDouble(fc.combinedBoundary, 6)   // D-L5a boundary form ∈ [0,1)
+           // D-FS frame-scale evidence (Stage-5): the §5.5 contradiction (bestPlaus-committedPlaus),
+           // carried on the resolver's functionConfidence when the fine-grain override fired.
+           << ", \"l5OverrideContradiction\": " << fmtDouble((rr.overrodeCommit ? rr.functionConfidence : 0.0), 4)
            << ", \"l4ChosenExtensions\": " << (hasChord ? static_cast<long long>(fr.extensions) : 0)
            << ", \"l4ChosenExtKnown\": " << (hasChord && fr.extensionsKnown ? "true" : "false")
            << ", \"openMark\": " << (unitOpenMark(i) ? "true" : "false");

@@ -455,6 +455,17 @@ void attemptFineGrainOverride(int i, Progression& prog,
 
     // §8 case-4: fire iff the contradiction crosses the confidence-scaled bar AND the
     // slice is not already closed. tryOverride marks it final on fire (the closure).
+    //
+    // ── Confidence-contract FRAME F-B (fine-grain chord override) ────────────────
+    // Incumbent (earlierConfidence): the L4 composite confidence of the Commit —
+    // `s.confidence.composite`, a Class-M value ALREADY in [0,1] (SliceConfidence, the
+    // decoder's own min-composite). It is VERTICAL-FIT-ONLY by construction (no progression
+    // term), which the frame's θ accounts for (L5 §15-2). Contradiction (contradictionStrength):
+    // the functional-plausibility MARGIN of the contradicting context, `bestPlaus - committedPlaus`
+    // (licensed-progression fit + cadential fit) — a separate L5 quantity, NOT FunctionConfidence.
+    // NOTE (D-L5a / D-FS): `FunctionConfidence.combined` is the OUTPUT confidence and is NOT read
+    // here; the two quantities compared are the ones above. Their scale-commensurability and the
+    // θ (baseBar/confidenceScale) are Stage-5 CALIBRATION items (contract §6 C1/C2), not set here.
     if (!result.closure.tryOverride(i, s.confidence.composite, contradictionStrength, params.override)) {
         return;
     }

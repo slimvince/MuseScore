@@ -125,6 +125,11 @@ assembleFunctionOutput(const std::vector<FunctionUnitAssembly>& units,
             params.wCadenceVote * u.confidence.cadenceVoteWeight
             + params.wLicensedFit * u.confidence.licensedProgressionFit
             + params.wNextBestMargin * u.confidence.nextBestMargin;
+        // D-L5a: publish the boundary (squashed) form of `combined` — the confidence
+        // contract's U2 layer-boundary requirement. combined >= 0 (all components
+        // non-negative), so combined/(combined + k) ∈ [0,1) and is monotone in combined.
+        u.confidence.combinedBoundary =
+            u.confidence.combined / (u.confidence.combined + params.kBoundary);
 
         out.units.push_back(std::move(u));
     }

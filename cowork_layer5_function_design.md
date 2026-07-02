@@ -471,6 +471,20 @@ confirmed modulation) and the **cadence markers** (type, location, salience). Th
 result: it annotates and resolves; it does not replace the chord identity Layer 4 committed. The contract to the layer
 above (grouping/display) is the Roman numeral plus the cadence and key markers plus any honest **open mark** (§7).
 
+**D-L5a — the function confidence is published in a boundary form (confidence-contract close-out, 2026-07-02).** The
+function confidence's internal `combined` is an **unbounded** additive of its three components (observed to ~25 on the
+E0 spine), but the cross-layer confidence contract (`cowork_confidence_contract.md` §5 R5 / U2) requires a
+layer-boundary confidence to be **[0,1]** so a downstream consumer that reads it as a *comparison input* operates on a
+commensurable quantity. So the unit additionally publishes **`combinedBoundary = combined / (combined + k)`** — a fixed
+**monotone** rational squash into **[0,1)**, `k` a precision-phase constant (default 1.0, **not** tuned). `combined`
+itself is unchanged (the internal working value); the boundary form is purely representational and changes **no**
+decision. As-built note: the current §8 override sites compare **L3 key** and **L4 composite** incumbents (contract
+§4 frames F-A / F-B) — both already bounded — against cadential-weight / plausibility-margin contradictions; **none**
+reads this L5 `combined`, so the boundary form has no §8 consumer *today*. It is published now so any **future** frame
+that reads the L5 function confidence (contract §4 requires such a frame to be declared before build) inherits a
+declared [0,1) quantity. The frame-scale commensurability and the override θ remain **Stage-5 calibration** items
+(contract §6).
+
 ## 8. Crosscutting concepts
 - **The confidence-weighted forward override (the general arbitration mechanism).** Every layer's inference carries a
   **calibrated confidence**, and every later layer runs its full analysis over the whole stream — bringing its

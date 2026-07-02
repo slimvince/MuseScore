@@ -125,6 +125,14 @@ modulationRecompute(const ModulationDecision& modulation,
     // confidence (a well-founded confident home key demands decisively stronger
     // contradiction). tryOverride couples the threshold to the one-pass closure, so the
     // key decision is overturned AT MOST ONCE and is then CLOSED for the pass.
+    //
+    // ── Confidence-contract FRAME F-A (cadence-confirmed modulation recompute) ───
+    // Incumbent (earlierConfidence): the L3 key-of-span confidence — `homeKeyConfidence`, a
+    // Class-M value (the squashed sequence margin). Contradiction (contradictionStrength): the
+    // accumulated cadential VOTE weight in the candidate key — `modulation.cadentialWeight`, a
+    // Class-M evidence weight. Both are L3/L5 cadence quantities; `FunctionConfidence.combined`
+    // (the L5 OUTPUT confidence, D-L5a) is NOT read here. Their common-scale conversion and the θ
+    // (baseBar/confidenceScale) are Stage-5 CALIBRATION items (contract §6 C1/C2), not set here.
     const bool fired = closure.tryOverride(keyDecisionId, homeKeyConfidence,
                                            modulation.cadentialWeight, params.override);
     if (!fired) {

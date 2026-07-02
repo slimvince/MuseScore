@@ -87,6 +87,15 @@ struct FunctionConfidence {
     double licensedProgressionFit = 0.0;  ///< §5.0: 1.0 when the motion INTO this unit is a licensed progression
     double nextBestMargin = 0.0;          ///< §5.5: the resolver's margin-to-next-best (its functionConfidence)
     double combined = 0.0;                ///< the default-weighted combination (firewall — weights precision-phase)
+    // ── D-L5a: the boundary (published) form of `combined` (confidence contract §5 R5 / §7) ──
+    // `combined` is an UNBOUNDED additive (contract §3 row L5; observed to ~25 on the E0 spine).
+    // The confidence contract's U2 requires a layer-boundary confidence to be [0,1], class-declared.
+    // combinedBoundary is that squash — a fixed MONOTONE rational map combined/(combined + k),
+    // k a precision-phase constant (default 1.0, NOT tuned) — so a downstream consumer that reads
+    // an L5 confidence as a *comparison input* reads a commensurable [0,1) quantity. `combined`
+    // itself is kept UNCHANGED for internal use (the additive is the internal working value; only
+    // the boundary form is squashed). This is representational: it changes NO decision.
+    double combinedBoundary = 0.0;        ///< combined / (combined + kBoundary) ∈ [0,1) — the U2 boundary form
 };
 
 // ── §7 combination weights (the firewall — default seeds, NOT tuned) ──────────────
@@ -94,6 +103,9 @@ struct FunctionOutputParams {
     double wCadenceVote    = 1.0;   ///< weight of the §5.2 cadence-vote component
     double wLicensedFit    = 1.0;   ///< weight of the §5.0 licensed-progression-fit component
     double wNextBestMargin = 1.0;   ///< weight of the §5.5 margin component
+    // D-L5a boundary-squash constant: combinedBoundary = combined / (combined + kBoundary). The
+    // MAP is structural (contract §5 R5); k is a precision-phase seed — default 1.0, NOT tuned.
+    double kBoundary       = 1.0;
 };
 
 /// Global default output-assembly parameters.
