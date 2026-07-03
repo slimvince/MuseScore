@@ -106,6 +106,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/function/functionromannumeral.h"     // E0 --dump-fullspine (L5 Step-1 base RN)
 #include "composing/analysis/scoreharvest/metricweights.h"        // E0 --dump-fullspine (per-slice metric weight)
 #include "composing/analysis/grouping/groupinglayer.h"            // L6 --dump-l6 (dormant grouping assembly)
+#include "composing/analysis/progression/progressionrecognizer.h" // consumer --dump-progressions (dormant recognition)
 #include "composing/analysis/region/sparsechordrefinement.h"      // diatonicDegreeForRootPc (the inline-RN baseline)
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
@@ -1957,6 +1958,13 @@ static void printHelp(const std::string& prog)
         << "            spine's L1.5 boundaries + L5 cadences + per-slice local-key track —\n"
         << "            punctuation-spans, key-areas, cadence-to-span alignment (§5.1–§5.5). NO\n"
         << "            production consumer; fullspine output byte-identical without it. Default OFF.\n"
+        << "  --dump-progressions\n"
+        << "            (recognition consumer, read-only DIAGNOSTIC) Run --dump-fullspine AND\n"
+        << "            append an additive \"progressions\" object: the dormant progression-\n"
+        << "            recognition output over the spine's committed progression — the\n"
+        << "            progression-schema-spans (§4.4), harmonic sequences (§4.6), the §4.5\n"
+        << "            idiom-mixture weights, and the §4.3 evidence-contribution counts. NO\n"
+        << "            production consumer; fullspine output byte-identical without it. Default OFF.\n"
         << "  --dump-modulation\n"
         << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
         << "            the standard regions JSON: the key-agnostic local-modulation\n"
@@ -2798,7 +2806,8 @@ static std::string runFullSpine(Score* score, const std::string& stem,
                                 const analysis::chordslice::ChordSliceDecoderPreferences& decoderPrefs,
                                 const std::set<size_t>& excludeStaves,
                                 bool sectionLevel,
-                                bool emitL6 = false)
+                                bool emitL6 = false,
+                                bool emitProgressions = false)
 {
     namespace cs = mu::composing::analysis::chordslice;
     namespace eb = mu::composing::analysis::engravingbridge;
@@ -3257,6 +3266,81 @@ static std::string runFullSpine(Score* score, const std::string& stem,
             g6::assembleGrouping(gunits, gbounds, cadences, gspan);
         os << ",\n" << fsGroupingJson(l6);
     }
+
+    // ── PROGRESSION RECOGNITION (dormant, --dump-progressions) — additive block:
+    //    the recognition consumer's output over THIS spine's committed progression
+    //    (the chord-bearing slices, each with its L4 committed reading + local key +
+    //    composite confidence + ranked alternatives). Runs recognizeProgressions with
+    //    the equal seed (no preset→idiom-weights map is wired) and the default params
+    //    (the firewall). Read-only; byte-identical fullspine output when
+    //    emitProgressions == false. ──
+    if (emitProgressions) {
+        namespace pr = mu::composing::analysis::progression;
+        pr::CommittedProgression cprog;
+        cprog.reserve(slices.size());
+        for (size_t i = 0; i < slices.size(); ++i) {
+            if (!unitHasChord(i)) {
+                continue;  // no committed chord at this slice — not a progression position
+            }
+            const cs::ChordSliceCandidate fr = finalReadingOf(i);
+            pr::CommittedChord cc;
+            cc.chord.rootPc = fr.rootPc;
+            cc.chord.bassPc = fr.bassPc;
+            cc.chord.quality = fr.quality;
+            cc.chord.extensions = fr.extensions;
+            cc.chord.localTonicPc = localTonic[i];
+            cc.chord.localMinorMode = localMinor[i];
+            cc.startTick = slices[i].start;
+            cc.endTick = slices[i].end;
+            cc.committed = !decoded[i].uncertain;   // §0: an L4 Commit/Inherit vs an abstain
+            cc.compositeConfidence = decoded[i].confidenceModel.composite;
+            for (const cs::ChordSliceCandidate& alt : decoded[i].alternatives) {
+                cc.rankedCandidates.push_back(
+                    pr::CandidateReading{ alt.rootPc, alt.quality, alt.extensions, alt.score });
+            }
+            cprog.push_back(std::move(cc));
+        }
+        const analysis::HarmonicVocabulary vocab;   // the in-code catalog (dormant, cheap)
+        const pr::ProgressionRecognitionOutput rec = pr::recognizeProgressions(cprog, vocab);
+
+        os << ",\n  \"progressions\": {\n";
+        os << "    \"positions\": " << cprog.size() << ",\n";
+        os << "    \"weights\": [";
+        for (size_t k = 0; k < rec.weights.size(); ++k) {
+            os << (k ? ", " : "") << fmtDouble(rec.weights[k], 4);
+        }
+        os << "],\n";
+        os << "    \"schemaSpans\": [";
+        for (size_t s = 0; s < rec.schemaSpans.size(); ++s) {
+            const pr::ProgressionSchemaSpan& sp = rec.schemaSpans[s];
+            os << (s ? ", " : "")
+               << "{ \"name\": \"" << jsonEscape(sp.name) << "\""
+               << ", \"idioms\": " << static_cast<int>(sp.idioms)
+               << ", \"startTick\": " << sp.startTick << ", \"endTick\": " << sp.endTick
+               << ", \"startIndex\": " << sp.startIndex << ", \"endIndex\": " << sp.endIndex
+               << ", \"matchScore\": " << fmtDouble(sp.matchScore, 3)
+               << ", \"priorStrength\": " << fmtDouble(sp.priorStrength, 4)
+               << ", \"chordsOnly\": " << (sp.chordsOnly ? "true" : "false")
+               << ", \"substitutedMembers\": " << sp.substitutedMembers.size() << " }";
+        }
+        os << "],\n";
+        os << "    \"sequences\": [";
+        for (size_t q = 0; q < rec.sequences.size(); ++q) {
+            const pr::HarmonicSequence& hs = rec.sequences[q];
+            os << (q ? ", " : "")
+               << "{ \"name\": \"" << jsonEscape(hs.name) << "\""
+               << ", \"transpositionStep\": " << hs.transpositionStep
+               << ", \"repetitions\": " << hs.repetitions
+               << ", \"startTick\": " << hs.startTick << ", \"endTick\": " << hs.endTick << " }";
+        }
+        os << "],\n";
+        os << "    \"schemaSpanCount\": " << rec.schemaSpans.size() << ",\n";
+        os << "    \"sequenceCount\": " << rec.sequences.size() << ",\n";
+        os << "    \"abstainedFeatureCount\": " << rec.abstainedFeatures.size() << ",\n";
+        os << "    \"overrideCount\": " << rec.overrides.size() << "\n";
+        os << "  }";
+    }
+
     os << "\n}\n";
     return os.str();
 }
@@ -3309,6 +3393,7 @@ int main(int argc, char* argv[])
     bool reachBackAB = false;         // Layer-3 reach-back flag-ON/OFF range-query A/B (default OFF; HELD)
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
+    bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
     // analyzeScore), so production analysis stays byte-identical. Default = the
@@ -3372,6 +3457,11 @@ int main(int argc, char* argv[])
             // L6 grouping: run the full spine and APPEND the dormant grouping structure.
             dumpFullSpine = true;
             dumpL6 = true;
+        } else if (a == "--dump-progressions") {
+            // Recognition consumer: run the full spine and APPEND the dormant
+            // progression-recognition output (schema-spans + sequences + counts).
+            dumpFullSpine = true;
+            dumpProgressions = true;
         } else if (a == "--chord-no-membership") {
             // Decode-only: disable the Increment-B membership decision + feedback +
             // two-pass (reproduces the Increment-A behaviour, modulo the adaptive window).
@@ -3723,7 +3813,8 @@ int main(int argc, char* argv[])
         const std::string stem =
             QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
         const std::string report = runFullSpine(score, stem, presetName, keyPrefs, chordPrefs,
-                                                 chordDecoderPrefs, excludeStaves, sectionLevel, dumpL6);
+                                                 chordDecoderPrefs, excludeStaves, sectionLevel, dumpL6,
+                                                 dumpProgressions);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
