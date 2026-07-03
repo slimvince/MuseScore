@@ -335,9 +335,121 @@ def nondlc_rows() -> list[dict]:
     return r
 
 
+def _annot_sha(name: str) -> str | None:
+    p = ROOT / "corpora" / "annot" / name
+    return _sha(p) if (p / ".git").exists() else None
+
+
+# Wave-2 annotation/validation beds (axis 2). These are NOT analysis/score corpora:
+# they are expert label layers laid over scores (schema / texture) or a standalone
+# phrase-marked melody bed, used to VALIDATE the just-built axis-2 (voice leading)
+# components. Distinguished by kind="annotation-bed". All are held-out validation
+# material (never tuned against) and hash-pin-only under gitignored corpora/annot/.
+# Per-bed extra fields beyond the base schema: kind, axis2_role, target_corpus,
+# label_count. gt_type carries the bed-native layer (phrase | schema | texture).
+def annotation_bed_rows() -> list[dict]:
+    return [
+        {
+            "name": "schema_annotation_data",
+            "container": "DCMLab/schema_annotation_data",
+            "kind": "annotation-bed",
+            "axis2_role": "VL-F footing (voice-leading schema recognition)",
+            "content": "Expert galant voice-leading-schema annotations over 18 Mozart "
+                       "piano sonatas / 54 mvts (Finkensiep, Deguernel, Neuwirth, "
+                       "Rohrmeier, ISMIR 2020)",
+            "target_corpus": "Mozart piano sonatas — self-contained repo bundle "
+                             "(mscore/musicxml/notelist); same K-id/movement set as "
+                             "DCML mozart_piano_sonatas",
+            "pieces": 54,
+            "annotated_pieces": 45,
+            "label_count": 273,
+            "gt_type": "schema",
+            "gt_layers": ["voice-leading-schema"],
+            "annotation_standard": "note-ID instance lists (repo-local IDs -> notelist/*.json); "
+                                   "lexicon.json interval templates",
+            "score_format": "MusicXML + JSON notelist (repo-bundled); MuseScore .mscx sources",
+            "alignment": "score-aligned (repo-local note IDs; movement-keyed to DCML mozart by K-id)",
+            "license_class": "unclear",
+            "distribution": "hash-pin-only",
+            "tier": "C",
+            "status": "onboarded",
+            "split": "held-out",
+            "provenance_url": "https://github.com/DCMLab/schema_annotation_data",
+            "pinned_commit": _annot_sha("schema_annotation_data"),
+            "notes": "Wave-2 annotation bed (cc_corpus_wave2_report.md). No in-repo LICENSE -> "
+                     "unclear (DCMLab org CC-BY-NC [reported]). Measured 273 true instances at pin "
+                     "(10 base types w/ >=1 instance / 20 non-empty subtype dirs / 45 of 54 mvts); "
+                     "paper reported 244 (living repo grown since 2020) — structure matches. Held-out.",
+        },
+        {
+            "name": "symbolic_texture_dataset",
+            "container": "algomus.fr/symbolic-texture-dataset (GitLab)",
+            "kind": "annotation-bed",
+            "axis2_role": "VL-C validation + spec 15-1 per-bar granularity reference",
+            "content": "Per-bar symbolic-texture annotations for 9 Mozart sonata movements "
+                       "(K279/K280/K283, all 3 mvts each) — Couturier, Bigo, Leve, ISMIR 2022 (v1.1)",
+            "target_corpus": "DCML mozart_piano_sonatas (bar-keyed by mn per Hentschel 2021; "
+                             "descriptors computed against DCML mozart v1.0 release)",
+            "pieces": 9,
+            "annotated_pieces": 9,
+            "label_count": 1164,
+            "gt_type": "texture",
+            "gt_layers": ["symbolic-texture"],
+            "annotation_standard": "texture syntax (M/H/S functions, density, diversity, 14 "
+                                   "elements h/p/o/...); txt/tsv/dez formats; 62 bundled descriptors",
+            "score_format": "TSV/TXT/Dezrann labels over DCML mozart_piano_sonatas .mscx",
+            "alignment": "score-aligned (bar mn per DCML Annotated Mozart Sonatas convention)",
+            "license_class": "ODbL-1.0 (data) + GPLv3 (code)",
+            "distribution": "hash-pin-only",
+            "tier": "C",
+            "status": "onboarded",
+            "split": "held-out",
+            "provenance_url": "https://gitlab.com/algomus.fr/symbolic-texture-dataset",
+            "pinned_commit": _annot_sha("symbolic-texture-dataset"),
+            "notes": "Wave-2 annotation bed (cc_corpus_wave2_report.md). 1,164 bar labels verified "
+                     "(= paper); 1,357 configurations via ',' sequential-separation. 62 descriptors "
+                     "+ generator bundled in-repo (no separate descriptor clone needed); related "
+                     "repos algomus.fr/texture, comparing-texture, pythouille/smc22-... recorded as "
+                     "tooling-reference, NOT cloned. Held-out.",
+        },
+        {
+            "name": "essen_folksong_collection",
+            "container": "ccarh/essen-folksong-collection (CCARH kern edition, D. Huron)",
+            "kind": "annotation-bed",
+            "axis2_role": "VL-E footing (melodic per-line phrase segmentation)",
+            "content": "Essen Folksong Collection in Humdrum **kern; expert phrase-boundary marks "
+                       "({ open / } close) on monophonic folk melodies",
+            "target_corpus": "self-contained (monophonic **kern melodies; no external score dependency)",
+            "pieces": 8473,
+            "annotated_pieces": 8473,
+            "label_count": 36094,
+            "gt_type": "phrase",
+            "gt_layers": ["phrase-boundary"],
+            "annotation_standard": "Humdrum kern phrase tokens { (open) / } (close)",
+            "score_format": "Humdrum **kern (monophonic, single spine)",
+            "alignment": "self-aligned (phrase marks inline in the melody line)",
+            "license_class": "CCARH-MuseData-NC",
+            "distribution": "hash-pin-only",
+            "tier": "C",
+            "status": "onboarded",
+            "split": "held-out",
+            "provenance_url": "https://github.com/ccarh/essen-folksong-collection",
+            "pinned_commit": _annot_sha("essen-folksong-collection"),
+            "notes": "Wave-2 annotation bed (cc_corpus_wave2_report.md). 8473 .krn total (europa "
+                     "6213 ~ lit. 6236; asia 2246, america 13, africa 1). label_count=36094 = europa "
+                     "phrase-open '{' tokens (europa 100% phrase-marked). CCARH MuseData license: "
+                     "non-commercial, no commercial/derivative distribution -> hash-pin-only, never "
+                     "redistributed. COVERAGE CAVEAT: monophonic folk melodies — a single-line vocal "
+                     "bed for the per-voice phrase task, not usable for motion profiles (no voice "
+                     "pairs) nor for the harmonic idiom pipeline (no chord symbols). Held-out.",
+        },
+    ]
+
+
 def main() -> None:
     dlc = dlc_rows()
     other = nondlc_rows()
+    beds = annotation_bed_rows()
     doc = {
         "_schema": "score_census_registry v2 (census §3 + CC corpus-wave1 dispatch 2026-07-02)",
         "_generated_by": "tools/build_score_census_registry.py (deterministic; re-run after any clone/pin change)",
@@ -346,8 +458,10 @@ def main() -> None:
                     "license_class", "distribution", "tier", "status", "split",
                     "provenance_url", "pinned_commit", "notes"],
         "_notes": [
-            "gt_type enum: rn|chords|key|cadence|phrase|none. tier: G|J|C|S|X. "
-            "distribution: committable|hash-pin-only. license_class: PD|CC0|CC-BY|CC-BY-NC|unclear. "
+            "gt_type enum: rn|chords|key|cadence|phrase|none (+ schema|texture for annotation_beds). "
+            "tier: G|J|C|S|X. distribution: committable|hash-pin-only. "
+            "license_class: PD|CC0|CC-BY|CC-BY-NC|unclear (annotation_beds may carry a precise license "
+            "token, e.g. ODbL/GPLv3 or CCARH-MuseData-NC). "
             "split: dev|held-out (held-out never tuned against; demotion to dev only by explicit recorded decision).",
             "All DLC members are distribution=hash-pin-only (gitignored under tools/dcml/; C1-audit mechanism) "
             "regardless of license_class. 28 of 40 DLC repos have NO in-repo LICENSE (license_class=unclear).",
@@ -356,6 +470,11 @@ def main() -> None:
             "dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4.",
             "Container = distant_listening_corpus has 40 submodules (census '41' was an overcount; verified from "
             ".gitmodules 2026-07-02).",
+            "annotation_beds (Wave-2, cc_corpus_wave2_report.md): expert LABEL layers over scores (schema/texture) "
+            "or a standalone phrase-marked melody bed, for validating axis-2 (voice leading). kind='annotation-bed'; "
+            "extra fields kind/axis2_role/target_corpus/label_count. All held-out (never tuned against), hash-pin-only "
+            "under gitignored corpora/annot/. They add labels over already-held scores (schema/texture over Mozart) or "
+            "material outside the discovery views (Essen monophonic, no chords) — NOT analysis/gate corpora.",
         ],
         "distant_listening_corpus": {
             "submodule_count": len(dlc),
@@ -363,9 +482,11 @@ def main() -> None:
             "members": dlc,
         },
         "other_sources": other,
+        "annotation_beds": beds,
     }
     OUT.write_text(json.dumps(doc, indent=1, ensure_ascii=False), encoding="utf-8")
-    print(f"wrote {OUT}  DLC={len(dlc)} other={len(other)} total={len(dlc)+len(other)}")
+    print(f"wrote {OUT}  DLC={len(dlc)} other={len(other)} beds={len(beds)} "
+          f"total={len(dlc)+len(other)+len(beds)}")
 
 
 if __name__ == "__main__":

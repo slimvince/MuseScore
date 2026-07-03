@@ -17,11 +17,12 @@ answered. That finds exemplars, never closure. This census instead **enumerates 
 
 | Container class | Closure state (v1) |
 |---|---|
-| DCMLab GitHub org — **127 repos**, incl. `distant_listening_corpus` (**40 submodules** — the census's original "41" was an overcount, corrected at Wave-1 onboarding from the live `.gitmodules`, 2026-07-02), `dcml_corpora` (12), `romantic_piano_corpus` (9) | **Fully enumerated** [verified; Wave-1 ONBOARDED — all 40 present, hash-pinned, registry v2 `tools/score_census_registry.json`] |
+| DCMLab GitHub org — **127 repos**, incl. `distant_listening_corpus` (**40 submodules** — the census's original "41" was an overcount, corrected at Wave-1 onboarding from the live `.gitmodules`, 2026-07-02), `dcml_corpora` (12), `romantic_piano_corpus` (9); also `schema_annotation_data` (voice-leading-schema GT over Mozart sonatas) | **Fully enumerated** [verified; Wave-1 ONBOARDED — all 40 present, hash-pinned, registry v2 `tools/score_census_registry.json`] · [Wave-2 ONBOARDED the DCMLab-org `schema_annotation_data` **annotation bed** — see `cc_corpus_wave2_report.md`] |
 | When-in-Rome meta-corpus — full component list | **Fully enumerated** |
 | ChoCo — all 18 partner datasets | **Fully enumerated** |
 | SOTA-paper dataset tables (AugmentedNet / RNBert / AnalysisGNN / ChordGNN — the field's de-facto RN-GT census; AnalysisGNN's list = 1,719 pieces) | **Fully harvested** (AugmentedNet exact manifest partial) |
-| OpenScore family, Mutopia, KernScores highlights, MuseData, early-music projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers (Essen, MTC, Nottingham) | **Fully enumerated** |
+| OpenScore family, Mutopia, KernScores highlights, MuseData, early-music projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers (Essen, MTC, Nottingham) | **Fully enumerated** [Wave-2 ONBOARDED the Essen `ccarh/essen-folksong-collection` **phrase-boundary bed** (Humdrum kern) — see `cc_corpus_wave2_report.md`] |
+| **algomus / Dezrann** (algomus.fr GitLab org + dezrann.net) — symbolic-music analysis annotation datasets (texture, cadence, form) | **Enumerated** [Wave-2 ONBOARDED `symbolic-texture-dataset` (Couturier et al. ISMIR 2022) as an **annotation bed**; moved here from §7 residual risk — see `cc_corpus_wave2_report.md`] |
 | Partial: per-repo DLC piece counts; MuseScore.com beyond PDMX (ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool exists: `humdrum-tools/humdrum-data`); abcnotation.com long tail | **Named, bounded** |
 
 **The standing process rule this census institutes:** from now on, *"a new corpus was discovered" is a census
@@ -98,7 +99,9 @@ generalized).
 
 ## 7. Residual risk (named, so it is bounded)
 
-Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material), figured-bass
+Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material — the algomus/Dezrann
+container is now an **enumerated §1 row**, with `symbolic-texture-dataset` onboarded at Wave 2; the remaining algomus
+cadence/form sets stay in this residual bucket), figured-bass
 corpora (DCMLab/figured-bass uninspected), scattered Humdrum `**harm` spines on kern.ccarh.org, national-library MEI
 editions, the ABC long tail, non-Western symbolic sets (SymbTr, jingju), and 2025–26 releases (POP909-CL surfaced
 mid-census). Each is a container-class now on the §1 list — the yearly re-sweep walks them; none is expected to hide
