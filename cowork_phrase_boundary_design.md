@@ -5,8 +5,9 @@
 > 2026-06-26) makes the cues run **per eligible voice, aggregated to the texture** (so the primitive yields *both*
 > per-voice and texture-level boundaries, and the pitch cue uses every voice, not just the top), and adds **breath marks
 > and caesuras** as deterministic markers; the rev-3 changes were independently re-reviewed (1 blocking + 1 cosmetic fix
-> applied — a leftover top-voice reference and a vocabulary slip). The prior rev. 2 was audited against the three design-doc
-> standards + the language-mechanical tests by an independent pass; 6 blocking + 4 cosmetic fixes applied (the local-change
+> applied — a leftover top-voice reference and a vocabulary slip). The prior rev. 2 was audited against the design-doc
+> standards of `cowork_design_doc_template.md` (the section structure and the two writing standards) plus the
+> language-mechanical sweeps (`cowork_spec_language_sweep.md`, `cowork_layer3_spec_language_sweep.md`) by an independent pass; 6 blocking + 4 cosmetic fixes applied (the local-change
 > strength formula made two-sided and complete; max-normalisation, the voice-coincidence window, and the whole-profile
 > peak threshold pinned; the silence/sustained-note cues separated; the marker-spike ordering made decidable). The
 > acyclicity argument (surface-only, no harmony) was verified airtight. A proper-layer design for the **phrase-boundary**
@@ -19,13 +20,30 @@
 > standard music / music-cognition vocabulary (glossed in §9). Scope: this one primitive — *not* the cadence or function
 > logic that consumes it.
 
-> **Bounded-context stance (added 2026-07-02, closing gap-analysis-v2 A-2 — ruled by Cowork):** this primitive is a
+> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` —
+> ruled by Cowork):** this primitive is a
 > **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its
 > own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded
 > span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the
 > standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M
-> boundary confidence** under the cross-layer confidence contract ([0,1] per-profile max-normalised salience,
-> comparable within one score's profile only; it participates in no override frame) — closing v2 gap A-3 for this spec.
+> boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile
+> max-normalised salience, comparable within one score's profile only; it participates in no override frame) —
+> closing gap A-3 of the same v2 report for this spec.
+
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §9 glossary carries the fuller
+definitions of this primitive's own vocabulary; this table is the entry point and the load-bearing rows.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Tick** | The absolute time-position in the score (the engraving time unit). The sibling layer docs say "time-position" — one thing, two project words; this document uses "tick" throughout. |
+| **Eligible voice** | A (staff, voice) line whose notes pass the eligibility test — verified at the as-built source: the note **sounds** (is not muted/silent), is **visible**, and lies on a **staff that takes part in tonal analysis** (Layer 1's staff-eligibility flag). Muted and invisible notes are **excluded** from every per-voice cue profile. "Eligible" everywhere below means exactly this three-flag test; Layer 1 defines the staff flag, this row states the voice-level combination Layer 1 does not. |
+| **Phrase boundary / boundary tick** | A tick where the surface marks a phrase end (§1). Under the span typology (ARCHITECTURE.md §2.15) this primitive's picked boundary is the **cue that delimits Layer 6's punctuation-span** — the primitive keeps its "phrase-boundary" code name; the grouping *span* it delimits is the punctuation-span, and "phrase [MT]" is reserved for the melodic voice-leading object this primitive does not model. |
+| **Boundary-strength profile** | The graded per-onset measure of §4 (per-voice, and aggregated to the texture). Its published form is a **Class-M boundary confidence** under `cowork_confidence_contract.md`. |
+| **The cadence gate** | The function layer's rule admitting a cadence candidate only at a phrase boundary (`cowork_layer5_function_design.md` §5.2/§11) — this primitive's main consumer. |
+| **Precision-phase constants ("the firewall")** | Numeric values deferred to the project's later tuning phase (Phase B of `cowork_l1l3_stabilization_plan.md`); the mechanism/constant split is the project's inference firewall. This document fixes mechanisms; the named constants are tuned there. |
+| **The corpus two-tier gate / both presets** | The project's two-tier **BIR (bass-is-root)** corpus regression gate, run on the Baroque and Jazz tuning presets (gate policy: CLAUDE.md). |
+| **Pinned** | Fixed by ratified decision and protected by a regression test (project usage); **pinned snapshots** are stored golden outputs compared exactly. |
 
 ## 1. Purpose
 A **phrase boundary** is a tick where a musical phrase **ends** (the next phrase begins at the following sounding onset,
@@ -38,7 +56,9 @@ layer must not define its own inputs. It emits a *graded strength*, not only a y
 confidence of a boundary, not just its presence. The strength is computed **per voice and aggregated to the whole
 texture** (§4.3), so the primitive yields **both** each voice's own phrasing and the texture-level phrase boundaries the
 cadence gate consumes. It replaces today's scattered, duplicated, fermata-only computation with
-one owned primitive that works for **any instrumentation**, not only chorales.
+one owned primitive that works for **any instrumentation**, not only chorales. *(Typology role, §0: the picked
+boundary is the delimiting cue of Layer 6's **punctuation-span**; "phrase [MT]" — the melodic phrase — is a
+voice-leading-axis object this primitive does not model. Stated here at the definition, not only in §11-5.)*
 
 ## 2. Constraints
 - **Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests,
@@ -50,7 +70,7 @@ one owned primitive that works for **any instrumentation**, not only chorales.
 - **General, not chorale-specific.** The tool analyses scores of any instrumentation. The fermata is the reliable phrase
   marker *in chorales* but is not universal; the surface-cue model and the other notated markers extend the primitive to
   any texture.
-- **Graded model with deferred constants (the firewall).** The primitive is a small notation-only inference, not a pure
+- **Graded model with deferred constants (the firewall, §0).** The primitive is a small notation-only inference, not a pure
   deterministic fact. Its two parts have different character, stated honestly: the **notated markers** (fermata, structural
   barline, all-voice rest) are **deterministic facts**; the **surface-cue boundary strength** is a **computed profile**
   whose combination weights and peak threshold are **precision-phase constants**. This document fixes the **mechanism**
@@ -59,7 +79,7 @@ one owned primitive that works for **any instrumentation**, not only chorales.
   hand-synced copies that exist today into it.
 - **The marker-only path is byte-identical; the graded model is gated.** Retiring the duplicated fermata scans into one
   primitive changes no output. Adding the surface-cue strength and the new notated markers *may* change which ticks are
-  boundaries; that change is measured against the corpus two-tier gate on both presets before it lands (§7).
+  boundaries; that change is measured against the corpus two-tier BIR gate on both presets (§0) before it lands (§7).
 
 ## 3. Context & scope (external view)
 **Consumes** (all notation, defined in earlier layers): from Layer 1, the note model — each note's **voice, pitch, onset,
@@ -69,7 +89,8 @@ and **barlines** as read from the engraved notation; the **breath marks** and **
 event*, not the inferred key). From Layer 2, the **empty slices** (maximal spans where every eligible voice rests) — the substrate of the all-voice-rest marker and the aggregation
 limiting case. *(The pitch-interval cue runs per voice on each voice's own line — §4.3 — so this primitive does not
 consume any top-voice primitive. The top voice is at most an *optional* soft cue for the function layer's cadence test —
-not a prerequisite (the highest voice is not reliably the melody) and not used here; see the L5 spec.)*
+not a prerequisite (the highest voice is not reliably the melody) and not used here; see the function-layer spec,
+`cowork_layer5_function_design.md`.)*
 
 **Produces:** the **per-voice boundary-strength profiles** (one per eligible voice); the **texture boundary-strength
 profile** (their per-onset aggregate); the **picked boundary ticks** (the peaks of the texture profile, selected per §4.4);
@@ -90,8 +111,9 @@ Three independent **cue profiles** are computed over the score, each yielding a 
 - the **pitch-interval profile** — the absolute interval (in semitones) between successive notes **of a single voice's
   line** (computed per voice — see §4.3).
 
-Each profile's per-onset strength is computed by the standard **local-change rule** (the established surface
-boundary-strength formula): for a value `x` at a point with left neighbour `x_prev` and right neighbour `x_next`, define
+Each profile's per-onset strength is computed by the standard **local-change rule** — the boundary-strength
+formulation of Cambouropoulos's **Local Boundary Detection Model (LBDM)** family, per the methods catalog
+(`cowork_phrase_boundary_methods.md`): for a value `x` at a point with left neighbour `x_prev` and right neighbour `x_next`, define
 the two **change-ratios** — left `= |x_prev − x| / (x_prev + x)` and right `= |x − x_next| / (x + x_next)` — and the
 per-point strength is `x · (left + right)`. So the strength rises with **both** (a) the **degree of local change** (the
 value differing from its neighbours, captured by the change-ratios) **and** (b) the **size** of the value itself (the
@@ -100,14 +122,15 @@ profiles is then **normalised by dividing by its own per-score maximum** (max-no
 common [0,1] scale so they are comparable.
 
 The **combined surface strength** at a point is the **weighted sum** of the three normalised profiles, with the **gap
-profile weighted highest** (the gap/rest is by far the most precise surface cue; the inter-onset next; the pitch-interval
-least). The three weights are **precision-phase constants**; the mechanism (a normalised, gap-dominant weighted sum of
+profile weighted highest** (the gap/rest is by far the most precise surface cue — the methods-catalog ranking,
+`cowork_phrase_boundary_methods.md`; the inter-onset next; the pitch-interval least). The three weights are **precision-phase constants**; the mechanism (a normalised, gap-dominant weighted sum of
 the three local-change profiles) is fixed here.
 
 ### 4.2 The deterministic notated-marker spikes
 The following are **deterministic, high-precision notated boundary signals**; each contributes — **after** the surface-cue
 core (§4.1) is combined and normalised — a **fixed additive spike to the combined profile at its tick, of a magnitude set
-above the maximum possible surface-cue strength** (the theoretical max is `#voices · Σ(cue weights)`; the spike default is
+above the maximum possible surface-cue strength** (the theoretical maximum — the number of eligible voices multiplied
+by the sum of the three cue weights, since every voice's every cue could peak at once; the spike default is
 **1.5× that**, a precision-phase constant — strictly above, so a *coincident* surface peak that reaches the max does not
 merely tie it), so the marker **exceeds any surface-cue peak** and dominates wherever it occurs:
 - a **fermata** on an eligible voice;
@@ -158,8 +181,8 @@ greater-than rule drops for two **adjacent equal-height markers** — e.g. a fin
 Emitting markers directly is the faithful reading of their "deterministic / dominate wherever they occur" status.)*
 **Surface peak-picking:** a surface tick is picked when its texture combined strength (§4.3) is **both** a **local
 maximum** (greater than its two immediate onset-neighbours) **and** above an **adaptive threshold** — the **mean of the
-whole score's texture combined strength profile plus `k` standard deviations** (the standard "Simple Picker"; whole
-profile, not a sliding window; `k` precision-phase). (The marker spikes still sit at/above any surface peak in the
+whole score's texture combined strength profile plus `k` standard deviations** (the "Simple Picker" of the methods
+catalog, `cowork_phrase_boundary_methods.md`; whole profile, not a sliding window; `k` precision-phase). (The marker spikes still sit at/above any surface peak in the
 exposed strength profile, so a downstream consumer reading the strength sees them dominate; the *picking* just no longer
 gates them.) The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends: the fermata or
 last-sounding note's tick, the structural-barline tick, or the onset of the all-voice-rest span. A region **ends a
@@ -228,8 +251,11 @@ but needs a trained statistical model). Both are §11 open items, not part of th
 - **Oracle tests** of the cues and the picking, on constructed cases: a rest yields a high-strength peak; a long note
   among short ones yields an inter-onset peak; a fermata and a double/final/repeat barline yield marker spikes; a single
   mid-phrase leap does **not** clear the threshold alone; a region containing a picked boundary reports "ends a phrase."
-- **Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked against
-  the known phrase structure of the corpus, since the literature's cues are validated only monophonically. A per-voice
+- **Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked
+  against the corpus's **analyst-annotated phrase markers** (the DCML corpora's `{}` / `phraseend` annotations, parsed
+  corpus-wide since the TSV-oracle infrastructure landed) — an **independent** ground truth: the markers are supplied
+  by the human analyst, not derived from fermatas, so validating the fermata marker against them is not circular. A
+  fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity. A per-voice
   case (one voice phrasing while others continue) is checked to score a per-voice boundary but a low *texture* strength.
 - **The de-duplication step is gated byte-identical** (corpus and suites unchanged — it only unifies existing logic).
 - **The graded-model step is measured against the corpus two-tier gate on both presets.** A caveat to verify at build: the
@@ -247,8 +273,8 @@ but needs a trained statistical model). Both are §11 open items, not part of th
 - **The primitive is a small inference, not a pure fact** — a deliberate character change (§2); the notated markers stay
   deterministic, the surface strength does not.
 - **Output movement at the graded step** must clear the gate (or be shown byte-identical via dormant consumers, §11-2).
-- **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The SOTA-competitive reference engine
-  (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral
+- **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The state-of-the-art-competitive reference
+  engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral
   analysis (it captures phrase structure implicitly via stable key runs). So this primitive is **not** an accuracy
   requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an
   explainable, decomposed pipeline. **Build the graded model right, but keep it proportionate — do not let it balloon.**
@@ -278,7 +304,8 @@ but needs a trained statistical model). Both are §11 open items, not part of th
 - **Gap (offset-to-onset)** — the time between one event ending and the next beginning (the silence/separation).
 - **Agogic lengthening** — a note long relative to its neighbours (a phrase-final cue; it appears as an inter-onset peak).
 - **Peak-picking** — selecting as boundaries the local maxima of the strength profile that exceed the adaptive threshold
-  (running mean + k·SD).
+  (the **whole-profile mean + k·SD** — the whole score's profile, **not** a sliding window; §4.4 pins this and this row
+  matches it).
 - **Notated-marker spike** — the large fixed strength added at a fermata, a breath mark/caesura, a structural barline, a
   mid-score key-signature change, a sudden tempo change or written ritardando, or an all-voice-rest onset (the
   deterministic, high-precision part).
@@ -293,14 +320,22 @@ but needs a trained statistical model). Both are §11 open items, not part of th
 - **Top voice** — the highest sounding voice of the texture (an *optional* Layer-1.5 cue for the function layer, not a
   prerequisite and not used by this primitive — the highest voice is not reliably the melody; what cadence theory calls
   the "soprano," named generally because the tool analyses any instrumentation).
-- **Eligible voice** — a voice on a staff that takes part in tonal analysis (defined in Layer 1).
+- **Eligible voice** — a (staff, voice) line whose notes **sound**, are **visible**, and lie on an
+  **analysis-eligible staff** (the exact three-flag test, §0; Layer 1 defines the staff flag, the voice-level
+  combination is stated in this document because Layer 1 does not define voice eligibility).
 - **Structural barline** — a double, final, or repeat barline (a notational division).
+- **The cadence gate** — the function layer's rule admitting a cadence candidate only at a phrase boundary (§0;
+  `cowork_layer5_function_design.md`); the consumer the texture profile and picked ticks feed.
+- **Tick** — the absolute time-position in the score (§0); "time-position" in the sibling layer docs names the same
+  thing.
 
 ## 10. Background: what this replaces, and the as-built map (not needed to understand the primitive)
 Today the fermata-boundary scan exists in **two byte-identical copies** kept in hand-sync (one on the production region
 path, one in the corpus diagnostic tool), and the per-region "ends a phrase" flag is re-derived inline at every consuming
-site (the exact set enumerated at build). Its known consumers are the dormant key-agnostic cadence anchor and the
-default-off joint-key re-key pass; whether the production cadence/marker path also consumes it is enumerated at build. The
+site (the exact set enumerated at build). Its known consumers are the dormant **key-agnostic cadence anchor** (a
+built-but-unengaged cadence detector that anchors on the boundary without a resolved key) and the default-off
+**joint-key re-key pass** (a gated re-keying refinement) — both function-layer components, named in
+`cowork_layer5_function_design.md`; whether the production cadence/marker path also consumes it is enumerated at build. The
 function layer's predecessor already names phrase boundaries as planned input. This primitive unifies the duplicated scan
 into one owned Layer-1.5 view and replaces the fermata-only definition with the graded surface-cue + marker model above;
 the concrete file map and the cue formulas are in the build instruction and the methods catalog (`cowork_phrase_boundary_methods.md`).

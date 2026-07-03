@@ -8,10 +8,12 @@
 > here — this document reads the same whether or not anything has been built.
 > **★ AS-BUILT (2026-06-26): this spec is now realised** — `chord/chordslicedecoder.{h,cpp}` implements G1
 > (commit/inherit/abstain + ≥3-template-tone sufficiency), G2/G3 three-tier membership + plausibility, the §4 two-reading
-> both-sides inherit, G6 (confidence + the open-question L4→L5 contract), and the G4/C1 symmetric-root spelling-pin
-> (consuming `engravingbridge::spellingview`). It is **built but DORMANT** — production still runs legacy
-> `analyzeChord`/`ChordPathDecoder`; the **engage-with-L5** strategy defers the production switch + legacy retirement to
-> the joint L4+L5 step (measured: better where it commits; ~85% of its abstention genuinely function-dependent → L5).
+> both-sides inherit, G6 (confidence + the open-question Layer-4-to-Layer-5 contract), and the G4/C1 symmetric-root spelling-pin
+> (consuming `engravingbridge::spellingview`). It is **built but DORMANT** (§0) — production still runs legacy
+> `analyzeChord`/`ChordPathDecoder`; the **engage-with-L5** strategy (§0) defers the production switch + legacy retirement to
+> the joint L4+L5 step (measured: better where it commits; ~85% of its abstention genuinely function-dependent —
+> handed to Architectural Layer 5). *(The increment IDs in this banner — G1–G6, C1/C2, §15-O2 — are the delivery
+> plan's labels, §0.)*
 > §15-O2 (bounded-window joint) + C2 (new four-note types) are deferred to the engage step. Build state:
 > `cowork_phase5b_l4_build_plan.md`.
 >
@@ -23,6 +25,23 @@
 >
 > *(Two template sections do not apply: "Deployment view" and "Human-interface design" — backend analysis code, no
 > separate deployment, no user interface.)*
+
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §12 glossary carries the fuller
+rows for this layer's own vocabulary; this table is the entry point.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Slice** | The **constant-sonority slice** from Architectural Layer 2 (`cowork_layer2_slicing_design.md`; the §2.15 span typology's atomic unit). This layer decides **per slice**; the typology's **chord-span** (the span one committed chord prevails over — the family member formerly named "harmonic region") is the maximal run of same-chord slices, assembled downstream, never decided here. |
+| **Prevailing chord / inherit / uncertain / carried (competing) readings** | This layer's own vocabulary — full rows in §12; used from §1 onward with those §12 meanings. |
+| **Dormant** | Built, compiled, and tested with **no production call site** — production output is unchanged by its existence. **Engage / the engage step** = the deliberate production switch that wires a dormant component in and retires the legacy path it replaces (criteria: the ENGAGE CRITERIA block in `docs/implementation_roadmap.md`). |
+| **Layer 1.5** | The shared notation-derived-view half-tier (bass, spelling, metric-weight, and phrase-boundary views) — ARCHITECTURE.md §2.15; the **texture strength profile** is the phrase-boundary primitive's aggregated boundary-strength output (`cowork_phrase_boundary_design.md` §4.3). |
+| **Punctuation-span** | Layer 6's surface-punctuation-delimited grouping span (`cowork_layer6_grouping_design.md` §0). |
+| **The home metric** | The held-out chord-root + bass agreement measure this layer is graded by (§10); "BIR" = **bass-is-root**, the project gate's per-event classification (gate policy: CLAUDE.md). |
+| **Class-(a) / class-(b)** | The gate policy's error classes (CLAUDE.md): **class-(a)** = a pitch-class-undecidable case (e.g. a symmetric rotation), where churn is tolerated; **class-(b)** = a root/key error at a pitch-class-**decidable** sonority — a meaningful error, never allowed to grow. The §15-O1b fine-grain override exists to fix class-(b) transients. |
+| **Pinned analysis snapshots / lock-in test** | Stored golden outputs a test compares exactly (refreshed only on verified change); a lock-in test is a unit test asserting carried fields exist and stay populated, so a carry cannot be silently dropped. |
+| **Precision phase** | The project's deferred numeric-calibration phase (Phase B of `cowork_l1l3_stabilization_plan.md`; the L5 spec calls the same split "the inference firewall"). |
+| **The build-plan IDs (G1–G6, C1–C2, §15-O2)** | Increment labels of the delivery plan `cowork_phase5b_l4_build_plan.md`, which defines them; used in the status banner only. |
 
 ## 1. Introduction & purpose
 
@@ -96,8 +115,9 @@ the added notes afterward** (§14) — which is exactly this layer's membership 
 clean; the recognized vocabulary is far larger.
 
 **Which chords it does NOT recognize.** Non-tertian sonorities — quartal/quintal chords, secundal clusters, anything
-not expressible as stacked thirds. A passage genuinely in one of these is reported as the **closest** recognized
-tertian chord, or marked "uncertain," never as the unrecognized construction.
+not expressible as stacked thirds. A passage genuinely in one of these is reported as the **best-fitting** recognized
+tertian chord — by the §5 fit score, not any separate distance measure — or marked "uncertain," never as the
+unrecognized construction.
 
 ## 2. Constraints
 
@@ -136,8 +156,8 @@ tertian chord, or marked "uncertain," never as the unrecognized construction.
 - **A strong texture boundary truncates the window — an interior analogue of the score-boundary case (architectural
   note, recorded 2026-07-01; not built now).** The stop condition above is *harmonic* (the first slice inconsistent with
   the reading). A *notated* structural/phrase boundary — a double bar, a fermata, an all-voice rest — read from the
-  **Layer-1.5 phrase-boundary primitive** (its texture strength profile; never Layer 6's assembled punctuation-span, which
-  is downstream) is a second, **surface** reason the embellishment/neighbour window should not read across: a neighbour
+  **Layer-1.5 phrase-boundary primitive** (§0; its texture strength profile — never Layer 6's assembled
+  punctuation-span (§0), which is downstream) is a second, **surface** reason the embellishment/neighbour window should not read across: a neighbour
   slice *after* a phrase end is not context for the chord *before* it. This mirrors the existing score-boundary truncation
   (the score edge is just the limiting case of a structural boundary). It would enter as a **window-truncation prior**, not
   as wide phrase-length context (which stays in Architectural Layer 3 and feeds forward as a preference, §8). Only strong,
@@ -148,7 +168,12 @@ tertian chord, or marked "uncertain," never as the unrecognized construction.
   identical output; the pinned analysis snapshots are refreshed only after a change is confirmed correct.
 - **Works on the user's selected music, at any size and in any style** (its *structure* assumes no style). The style
   preset enters as a **weak preference on the likely chord vocabulary** — Baroque expects triads and sevenths; Jazz
-  raises the extended and altered chords; "Standard" sits between — overridden by clear note evidence.
+  raises the extended and altered chords; "Standard" sits between. The hand-off between preset and notes has a stated
+  structure: the preference is a **bounded additive adjustment** to a candidate's §5 fit score (its magnitude a
+  precision-phase constant), so it can reorder only readings whose note-fit difference is **smaller than that bound**
+  — that is the operational meaning of "overridden by clear note evidence": wherever the note-fit difference exceeds
+  the preference's bounded weight, the notes decide and the preset cannot flip the reading (the same shape as the §5
+  key preference).
 - **It does not notice score edits** — deciding the analysis is stale is the caller's job.
 
 ## 3. Context & scope (external view)
@@ -257,9 +282,9 @@ The naming has four parts; the third and fourth carry the decision rules the rev
    plausibility penalty.)
 
 4. **Commit / inherit / abstain, and result assembly.** Apply the two certainty conditions:
-   - **Sufficiency** — does the slice contain enough independent chord tones to fix a chord, namely at least a complete
-     triad's worth (three distinct chord tones) after the window has gathered and membership has removed the non-chord
-     tones?
+   - **Sufficiency** — does the slice contain enough chord tones to fix a chord? The one test: at least **three
+     distinct pitch classes** that are chord tones of the candidate (doublings not counted), after the window has
+     gathered and membership has removed the non-chord tones.
    - **Margin** — does the chosen reading beat the best *different* (root, quality) reading by more than the certainty
      margin?
    A slice that passes **both** is **committed**. A slice that fails **sufficiency** but whose notes are all consistent
@@ -271,9 +296,17 @@ The naming has four parts; the third and fourth carry the decision rules the rev
 **Symmetric sonorities — pin the root from the notated spelling; defer only the unfixable remainder.** A symmetric
 diminished-seventh or augmented chord has no pitch-class-defined root — every rotation is equally spaced — but the
 **notated spelling** usually names it: spelled `G♯–B–D–F` it is `G♯` diminished-seventh, spelled `A♯–C♯–E–G` it is
-`A♯`. So the layer reads the spelling and **pins the root from it** where the spelling is present and internally
-consistent (the common case, and deterministic — the spelling does not move with the key, so no rotation churn
-arises). Only where the spelling is **absent or contradicts the other evidence** does it defer: name the quality and
+`A♯`. So the layer reads the spelling and **pins the root from it** where the spelling passes the stated test
+(verified at the as-built decoder), all three parts required:
+(1) **present** — every sounding tone of the rotation set carries a valid notated spelling;
+(2) **internally consistent** — no two sounding notes of the same pitch class are spelled differently (a slice
+sounding both `G♯` and `A♭` fails);
+(3) **a clean stack of thirds** — the spelled letters, sorted, form the stacked-thirds pattern on exactly one member,
+which is then the root.
+The pin is deterministic (the spelling does not move with the key, so no rotation churn arises). Failing **any** part
+of the test — a spelling absent, a same-pitch-class contradiction, or letters that do not stack in thirds on any
+member (that is what "contradicts the other evidence" means: the spelling contradicts *itself as a chord spelling*) —
+the layer defers: name the quality and
 bass, carry the rotations, mark "uncertain" (open question: the root), and leave the re-spelling judgment to the later
 function step.
 
@@ -316,25 +349,32 @@ this layer.
 ## 7. Data design
 
 Each slice's result holds: the chosen **chord symbol** (root + quality + bass/inversion — the bass-versus-root
-distinction is part of the symbol and is what the home metric scores); the **chord-tone set**; the **non-chord-tone
+distinction is part of the symbol and is what the home metric (§0 — the held-out chord-root + bass agreement of §10)
+scores); the **chord-tone set**; the **non-chord-tone
 set** (chord-tone-versus-not only; the type is a later annotation); the **competing readings**; a **confidence**; and
 the **"uncertain" mark with its open-question label** (root / quality / a named note's membership — so a downstream
 selector knows *what* to resolve, not merely that something is open).
 
-The chord symbol also carries the chord's **extension identity** — the seventh (Minor / Major / Diminished), the upper
-9/11/13 extensions, and the aug6 spelling markers (♯13/♯11) — plus **`naturalFifthPresent`**, so Architectural Layer 5
-reads the figured-bass seventh (V7, 65/43/42), the V7/x applied gate, and the Ger+6-vs-It+6 nationality **from the
-carried symbol, not by re-reading the notes** (the L4→L5 carry-fix, 2026-07-02). The carry is **honest**: the committed
+The chord symbol also carries the chord's **extension identity** — the seventh (minor / major / diminished), the upper
+9/11/13 extensions, and the **augmented-sixth spelling markers** (♯13/♯11) — plus a natural-fifth-present flag, so
+Architectural Layer 5
+reads the figured-bass seventh (V7, 65/43/42), the **applied-dominant trigger** (the `V7/x` rule of the function-layer
+spec §5.6), and the **German-versus-Italian augmented-sixth distinction** **from the
+carried symbol, not by re-reading the notes** (the Layer-4-to-Layer-5 carry correction, 2026-07-02). The carry is
+**honest**: the committed
 (chosen) chord's extensions are a full extraction of its own tones (guaranteed present — a per-candidate
 `extensionsKnown` = true); a carried *alternative*'s extensions are copied from the scorer's own ranked result where
 that cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the seventh is
 *unknown*, never asserted absent, and never synthesized). A Layer-5 consumer reads the extensions only when
-`extensionsKnown`; on an honest-carried reading it stays triad-level. (`isPedalPoint`/`pedalBassPc` are **not** carried
-— no Layer-5 §5 rule consumes them.)
+`extensionsKnown`; on an honest-carried reading it stays triad-level. (The pedal-point flags are **not** carried — no
+Layer-5 §5 rule consumes them; identifiers: `isPedalPoint`/`pedalBassPc`.)
 
 The **confidence** is composite, combining: the **margin** to the best different reading; the **sufficiency** (how
 complete the committed chord is — a full seventh present versus a dyad completed by preference); and the **membership
-cleanliness** (few contested notes versus many). A slice is "uncertain" when confidence is low for **either** reason —
+cleanliness** (few contested notes versus many). Under the cross-layer confidence contract
+(`cowork_confidence_contract.md`) this composite is declared **Class M (declared-composite)** — a margin-family
+quantity, not a calibrated probability, **vertical-fit only** by construction — and any cross-layer comparison of it
+happens only in the contract's declared frames (the §8 override rides frame F-B there). A slice is "uncertain" when confidence is low for **either** reason —
 low margin (ambiguity) **or** low sufficiency (insufficient evidence); these are independent, and a wide margin does
 not rescue an insufficient slice.
 
@@ -347,7 +387,8 @@ count, and the certainty margin below which a slice is "uncertain" — are tunab
 
 - **Certainty, and what is uncertain, are part of the output** — every slice carries the competing readings, a
   composite confidence, and (when uncertain) the named open question; ambiguity is recorded, never hidden, and it is
-  what Architectural Layer 5 uses when it resolves the carried readings at its gated entry.
+  what Architectural Layer 5 uses when it resolves the carried readings at its gated entry (the entry conditions of
+  the function-layer spec §5.5).
 - **It annotates, it does not transform** — the slices and notes are unchanged; the chord and membership are added as
   annotations; the competing readings are kept so the decision can be revisited.
 - **Never a pooled recompute** (the authoritative statement of this prohibition). Membership is judged per slice
@@ -408,10 +449,12 @@ count, and the certainty margin below which a slice is "uncertain" — are tunab
   decide it and defers the unfixable symmetric root, so the metric naturally divides into the decidable roots (held to
   no regression) and the deferred symmetric ones (resolved only once Architectural Layer 5 settles them).
 - **The standing root-error set is not the layer's residual — it overstates it several-fold (measured 2026-06-24).**
-  The project's standing root-error set (the BIR=false cases) is mostly **Layer-1–4 work**, not what reaches
+  The project's standing root-error set (the **bass-is-root = false** cases of the gate policy, §0) is mostly
+  **Layer-1–4 work**, not what reaches
   Architectural Layer 5: a large majority is settled by the notated spelling (≈60% Baroque / ≈42% Jazz), and most of
-  the rest by bass/inversion, local voice-leading, or is plain segmentation over-grab the change-point slicing removes
-  by construction. The genuinely function-only remainder is **small** — pitch-class-identical share-tone chords on the
+  the rest by bass/inversion, local voice-leading, or is plain **over-segmentation grab** (a span stretching across
+  two ground-truth chords — "over-grab", `cowork_layer2_slicing_design.md` §12) that the change-point slicing
+  (`cowork_layer2_slicing_design.md`) removes by construction. The genuinely function-only remainder is **small** — pitch-class-identical share-tone chords on the
   chord side (for example Am6↔F♯ø7), and the whole note-identical key-disagreement class on the key side. So this set
   is read as a *budget of work across Layers 1–5*, not as a measure of this layer's accuracy; the layer's own number
   is the decidable-root agreement above, with membership and uncertainty scored separately.
@@ -446,7 +489,7 @@ count, and the certainty margin below which a slice is "uncertain" — are tunab
 - **A learned re-scorer is deferred** — a small re-scorer over the complete list is a later, separately-gated
   refinement (§14), gated on the per-event metric with out-of-sample discipline.
 - **The accuracy numbers, and their definition, are provisional** until the full pipeline (through function and
-  grouping) is rebuilt; the layer is judged by whether the genuine errors drop versus the replaced per-region path on
+  grouping) is rebuilt; the layer is judged by whether the genuine errors drop versus the replaced coarse-region path (§13) on
   the held-out set, not by a fixed target.
 
 ## 12. Glossary
@@ -469,7 +512,8 @@ Architectural Layer 5 knows what to resolve.
 
 ## 13. Background: what this layer replaces, and corrections on record (not needed to understand the layer)
 
-- **What it replaces:** the per-region chord path — the template-based chord scorer run over coarse regions, followed
+- **What it replaces:** the coarse-region chord path (pre-typology; "per-region" elsewhere in this document means
+  this) — the template-based chord scorer run over coarse regions, followed
   by chord-dependent merge passes. It named a chord per coarse region rather than per constant-sonority slice, from a
   region-level aggregate of the tones.
 - **Correction — the pooled over-reading.** An earlier approach re-derived a chord from a pooled bag of a region's
@@ -492,7 +536,7 @@ Architectural Layer 5 knows what to resolve.
   neighbour context and finds that, given the right key, the chord task is largely solved — which is why this layer is
   per-slice and neighbour-aware and treats the chord axis as near-ceiling with the membership call as the lever.
 - **The catalogue holds types; the added notes are recovered, not stored** — template-based chord recognition
-  (Erlangen FMP; Oudre, Févotte & Grenier, 2011) uses a small dictionary of chord *types* matched at every (root,
+  (the Erlangen *Fundamentals of Music Processing* (FMP) treatment; Oudre, Févotte & Grenier, 2011) uses a small dictionary of chord *types* matched at every (root,
   type), inversion and order factored out. The explicit lesson (JNMR 2024, via Contrapunctus): added notes cannot be
   folded into the chord vocabulary without recognition degrading — so a small catalogue plus recovering the added
   notes afterward, which is this layer's membership decision.
@@ -526,14 +570,17 @@ Architectural Layer 5 knows what to resolve.
 - **O1b — a *confident* commit is also overturnable (the confidence-weighted override; user-ratified 2026-06-26).** O1
   covers the slices this layer *abstained* on. The ratified architecture-wide principle goes further: a slice this layer
   **confidently committed** can still be overturned by Layer 5 when its functional/cadential evidence is decisive (the
-  fine-grain chord override — the class-(b) transients). So a commit is the best reading on the notes-and-key evidence
+  fine-grain chord override — targeting **class-(b) transients**, §0: root errors at pitch-class-decidable sonorities,
+  the error class the gate never tolerates growing). So a commit is the best reading on the notes-and-key evidence
   this layer had, **not a final word**. Two facts make this safe and already-supported (VERIFIED at source): the layer
-  carries its ranked `alternatives` (∪ the prevailing chord) and its `confidenceModel` on **every** decision — Commit and
+  carries its ranked `alternatives` (together with the prevailing chord) and its `confidenceModel` on **every**
+  decision — Commit and
   Inherit included, filled before the trichotomy and never pruned — so Layer 5 overrides **by selecting among the readings
   this layer carried** (never by re-deriving), and the carried confidence is the quantity its override threshold scales
   against. Where the correct reading was never carried at all, that is a *coverage* miss fixed inside this layer, not by
   Layer 5. A lock-in test pins the carry. Note: this layer's confidence is **vertical-fit only** by construction (no
-  progression signal folded in — that is Layer 5's to supply), and `alternatives` is capped (`topK`) and excludes
+  progression signal folded in — that is Layer 5's to supply), and the carried alternatives are capped at a fixed
+  number of highest-ranked readings (a tunable; identifier `topK`) and exclude
   spelling-pinned symmetric siblings — calibration facts the Layer-5 override design accounts for, not defects here. Full
   mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract.
   **Carry limits (updated 2026-07-02, the carry-fix).** The carried reading now includes the **extension identity**
@@ -556,5 +603,5 @@ Architectural Layer 5 knows what to resolve.
   foreign note is usually a chord-tone extension, but in appoggiatura-normative styles (late-romantic — the review's
   Tristan simulation) **long accented appoggiaturas are the norm**, and the same weight evidence should lean
   *non-chord-tone*. The three-tier **structure is fixed** (universality); only the tier-3 weighting is
-  **idiom-calibrated** (style-only-in-calibration contract) — record the threshold as a preset/idiom constant at the
-  precision phase, never a structural branch. Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10).
+  **idiom-calibrated** (the style-only-in-calibration contract, ARCHITECTURE.md §2.15) — record the threshold as a
+  preset/idiom constant at the precision phase (§0), never a structural branch. Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10).

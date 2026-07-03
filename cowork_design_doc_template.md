@@ -18,6 +18,26 @@ does not actually supply, the predicate is **unqualified** and there is a hole t
 tuning is allowed; leaving the *argument, or the decision structure it stands for,* unnamed is not. (Method and worked
 examples: `cowork_spec_language_sweep.md`, `cowork_layer3_spec_language_sweep.md`.)
 
+## Writing standard — defined terms, plain vocabulary, no shorthand (user, 2026-07-02)
+A specification is read by someone who knows music theory and does NOT know this project's private vocabulary.
+Anything that can be misunderstood WILL be. Four rules, sharpened on the progression-recognition v2→v4 rewrites:
+1. **A §0 TERMS table** (the L6 §0 discipline): every term the document uses is either **standard music theory used
+   in its standard sense**, **defined in §0**, or **cited in §0 to the document that defines it** — and nothing is
+   used before its row. A named example (a "Prinner") is a term: define it or cite its catalog entry.
+2. **No invented synonyms for things that have names.** "Chord progressions including chord substitutions", never
+   "multi-chord functional knowledge"; "harmonic sequence", never "transposing schema chain". Project-coined terms
+   are allowed only where no standard term exists, and they live in §0 with their definition.
+3. **No shorthand or insider compression:** "iff" → "if and only if"; a jargon handle for a mechanism ("the carried
+   readings", "the bar") appears only after §0 states what it is and where it is defined — and prefer restating the
+   mechanism's full rule at first use over pointing at it.
+4. **Audit inherited prose as hard as new prose.** A QA pass binds the whole document regardless of which revision
+   wrote each sentence; the QA record states it was run on the full current text.
+5. **Multiple-meaning words: one sense per document, declared (user, 2026-07-02).** A word with more than one
+   plausible reading ("key" = tonality vs important; "sequence" = the harmonic device vs an ordered series; "bar" =
+   threshold vs measure; "measure" = bar vs metric) is used in exactly ONE sense throughout the document, and that
+   sense gets a §0/glossary row. Where the excluded sense would be needed, a different word is used. (The catch that
+   made the rule: a §-heading "…as key evidence" — meaning evidence of the key — read as "crucial evidence".)
+
 ## The sections (in order)
 1. **Introduction & purpose** — what this component is, *why* it exists (the problem it solves), scope (in/out),
    and **status** (design / signed / as-built + commits).

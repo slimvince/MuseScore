@@ -4,6 +4,20 @@
 > Specified by rule and content. Companion consumer design: `cowork_progression_schema_design.md`; architecture placement:
 > `cowork_target_architecture.md` §2.
 
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §10 glossary carries the fuller
+rows; this table is the entry point.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Entry / progression entry / substitution entry** | One catalog record — a named convention; the two kinds are defined in §3 and glossed in §10. |
+| **Functional skeleton** | A progression entry's key-relative, degree-parameterised (scale-degree, chord-quality) sequence (§3/§10). |
+| **Generative slot** | A secondary/substitute function defined per target degree `x` (`V7/x`, `subV7/x`, …), instantiated on demand (§5.1/§10). |
+| **Span** | A contiguous run of one or more committed chords, each with its decided function and key (§4/§10); the typology note: a recognised entry's emitted span is the **progression-schema-span** hosted by Layer 6 (ARCHITECTURE.md §2.15; renamed from "sequence-span", D6). |
+| **Match score / realises** | The recognition semantics — decision structure stated in §4. |
+| **Prinner** | A named galant schema (§5.2 row); named here so its §3 first mention is not undefined. |
+| **Licensed (root motion)** | A term OWNED by the function layer's grammar (`cowork_layer5_function_design.md` §5.0, `isLicensedProgression`) — this catalog never defines or re-implements it (the D5 dependency map, §1). |
+
 ## 1. What this component is
 The Harmonic Vocabulary is a **curated reference catalog of harmonic conventions** — the named chord **progressions** and
 the chord **substitutions** of tonal music. It is **knowledge, not a tool that acts**: it stores the conventions and
@@ -28,7 +42,8 @@ test**, and it runs **one way (catalog → grammar)**. Owner ruling: D5 (`cowork
 user-ratified 2026-07-02; the cross-referencing comment blocks live at `functionprogression.h` and `harmonicvocabulary.h`;
 the test is `progressionrecognizer_tests.cpp`. *(Ruled known grammar gaps found at the consumer build, 2026-07-02: 6
 entries / 11 motions — plagal/ascending-fifth, descending-second, the diatonic diminished-fifth — musically correct, so
-grammar gaps for the §5.0 grammar to complete later, L5 spec §15-12; not catalog errors.)*
+grammar gaps, not catalog errors. **The L5 §15-12 grammar-completion amendment closing them was RATIFIED 2026-07-03**;
+the `isLicensedProgression` code increment is pending, after which the consistency test's known-gap list empties.)*
 
 ## 2. What it does, and does not do
 **It does:** hold the catalog (§5) and answer the four queries of §4 — *browse*, *recognise*, *suggest*, *expand* — each
@@ -48,7 +63,8 @@ returning a **ranked list of candidate entries**.
 ## 3. The entries — what an entry is
 An **entry** is one record in the catalog: a single named harmonic convention. There are **two kinds**:
 - A **progression entry** — a named, recurring chord progression (a *schema*): for example `ii–V–I`, a turnaround, a
-  circle-of-fifths sequence, the harmonic pattern of a Prinner, or a single generative slot such as `V7/x → x`. It is
+  circle-of-fifths sequence, the harmonic pattern of a Prinner (a named galant schema, §0/§5.2), or a single
+  generative slot such as `V7/x → x`. It is
   represented by its **functional skeleton**.
 - A **substitution entry** — a named substitution *operation*: for example the tritone substitution, or modal interchange.
   It is represented by its **substitution mapping** — the rule by which a substituted chord stands for the function it
@@ -78,16 +94,30 @@ The four queries:
 - **Browse** — *input:* nothing beyond the style subset. *Output:* every entry in the active styles (used to load the
   active catalog).
 - **Recognise** *(the analysis direction)* — *input:* a span. *Output:* the **progression entries** whose functional
-  skeleton that span realises, each with the substitution mapping for any substituted member.
+  skeleton that span **realises**. "Realises" has a stated test: the span's committed chords match the skeleton's
+  members **in order and contiguously**, each chord matching its member's **scale degree and chord quality** (the
+  skeleton is key-relative, so degrees are read in the span's decided key; a degree-parameterised slot matches at its
+  instantiated target degree); a chord may instead match a member **through a substitution entry's mapping** (the
+  surface chord stands for the member's function — e.g. `♭II7` realising a `V7/x` member via the tritone
+  substitution), and the returned entry then carries that mapping for the substituted member. **As built (v1) the
+  realisation is exact and whole** — every member matched, full length, no partial spans; the declared Stage-5
+  **partial matcher** relaxes this by crediting matched members with penalties for gaps and substitutions (that
+  decision structure — credit per matched member, order preserved, length credited, substituted members admitted at a
+  penalty — is fixed here; its constants are the consumer's precision-phase weights).
 - **Suggest** *(the composition direction)* — *input:* a span from the score **and** a direction. *Output* by direction:
   - **follow** → **progression entries** that could continue *from* the span;
   - **precede** → **progression entries** that could lead *into* the span;
   - **replace** → **substitution entries** applicable to the span, plus same-function diatonic alternatives.
 - **Expand** — *input:* a scale degree `x`. *Output:* the generative slots for `x` (§5.1: `V7/x`, `viio7/x`, `IIm7/x`,
-  `subV7/x`, and the sub's related ii).
+  `subV7/x`, and the tritone substitute's related supertonic — the `IIm7` that precedes a `subV7/x`, §5.1).
 
 **Every returned entry carries a match score** — the component's structural measure of how well the input realises (or,
-for *suggest*, is realised by) the entry — and the list is **ranked** by it (secondarily by specificity, then length). The
+for *suggest*, is realised by) the entry, per the §4 *recognise* test above. **As built (v1) the score is 1.0 for an
+exact realisation** (there are no partial matches, so no intermediate values arise — verified at the as-built
+recogniser); under the Stage-5 partial matcher it becomes the graded credit of the stated structure (matched members,
+order, length, substitution penalties). The list is **ranked** by the score, tied entries ordered secondarily by
+**specificity** — how constrained the skeleton is (a fully-enumerated named pattern outranks a degree-parameterised
+generative slot; more constrained members outrank fewer) — then by **length** (the longer realisation first). The
 consumer applies its own style weighting and its own threshold; there is no binary match/no-match, only the score (as the
 inference layers carry ranked alternatives with confidence). **The list may be empty** — for *recognise* (nothing
 matches), for *suggest follow/precede* (no progression fits), and for *suggest replace* (no substitution applies) — and a
@@ -115,13 +145,17 @@ the diatonic and secondary functions underlie common-practice and jazz alike; on
 chiefly a jazz device. (Its systematic *presentation* follows Ramos's *Mapping Tonal Harmony*, a teaching tool; the
 *content* is the shared functional system, not a jazz-only set.)
 - **Diatonic functions** `[all styles]` — Tonic family `I, vi, iii`; pre-dominant family `IV, ii (+ vi)`; dominant family
-  `V, viio (+ iii)`. The functional flow is T → (T) → SD → D → T; the licensed pairwise root motions are the descending
-  fifth, the descending third, and the ascending second. **(D5 owner note.)** This descriptive list is NOT a second
+  `V, viio (+ iii)`. The functional flow, written out: **tonic → (optionally another tonic-family chord) →
+  pre-dominant → dominant → tonic** — the parenthesis permits a tonic-family interpolation (e.g. `I–vi` before the
+  pre-dominant) and nothing else; the primary functional root motions are the descending
+  fifth, the descending third, and the ascending second ("licensed" is the function layer's owned term, §0 — this
+  sentence describes, it does not define). **(D5 owner note.)** This descriptive list is NOT a second
   implementation of the licensing test — the **pairwise licensing GRAMMAR is owned by Layer 5's `functionprogression`
   (`isLicensedProgression`)**, evaluated on every chord transition; this catalog owns only the **named** progressions
   (§5.2). The two are coupled one-way by the consistency test (see §1). *(The §5.0 grammar as coded licenses exactly this
   descending-fifth / descending-third / ascending-second set; the plagal / ascending-fifth, descending-second, and
-  diatonic diminished-fifth motions that some §5.2 entries use are the ruled grammar gaps — §1 / L5 §15-12.)*
+  diatonic diminished-fifth motions that some §5.2 entries use were the ruled grammar gaps — closed at the spec level
+  by the ratified L5 §15-12 amendment (2026-07-03), code increment pending — §1.)*
 - **Secondary functions, per non-tonic diatonic `x`** `[common-practice + jazz]` — the secondary dominant `V7/x`; the
   secondary leading-tone `viio7/x` (or `viiø7/x`); the related ii `IIm7/x`, giving the applied ii–V `IIm7/x → V7/x → x`.
 - **Substitute dominants, per `x`** `[chiefly jazz; the common-practice cousin is the German sixth]` — the tritone
@@ -132,20 +166,32 @@ chiefly a jazz device. (Its systematic *presentation* follows Ramos's *Mapping T
   bVII, bIII, bII` Neapolitan, minor `v`, `viio7`); in minor, borrow from parallel major (Picardy `I`, raised `IV`).
 
 ### 5.2 Named progressions & schemas
-- **Cadential** `[common-practice + jazz]` — authentic `V(7)→I` (perfect/imperfect by inversion), half `…→V`, deceptive
-  `V→vi` (`→bVI` in minor), plagal `IV→I`, Phrygian half (minor, `iv6→V`). *(Already detected by L5 §5.2; listed for
+- **Cadential** `[common-practice + jazz]` — authentic `V(7)→I` (perfect/imperfect by inversion), half (a phrase
+  ending on `V`), deceptive
+  `V→vi` (`→bVI` in minor), plagal `IV→I`, Phrygian half (minor, `iv6→V`). *(Already detected by the function layer's
+  cadence detector, `cowork_layer5_function_design.md` §5.2; listed for
   completeness.)*
 - **The ii–V family** `[jazz + common-practice]` — `IIm7–V7–Imaj7`; minor `iiø7–V7–i`; the incomplete `ii–V` (no
   resolution) as its own unit.
-- **Turnarounds** `[jazz]` — `I–vi–ii–V` (and the secondary-dominant'd `I–VI7–ii–V`), `iii–vi–ii–V`, the rhythm-changes
-  A-section.
-- **Sequences** `[common-practice + jazz]` — circle-of-fifths (`…iii–vi–ii–V–I`; fully `I–IV–viio–iii–vi–ii–V–I`);
-  descending-thirds (`I–vi–IV–ii…`); the stepwise galant Monte/Fonte skeletons (below).
+- **Turnarounds** `[jazz]` — `I–vi–ii–V` (and the variant `I–VI7–ii–V`, with `VI7` as a secondary dominant of `ii`),
+  `iii–vi–ii–V`, and the **rhythm-changes A-section** (the "I Got Rhythm" A-section turnaround — the `I–vi–ii–V`
+  family cycled over the section, the jazz repertoire's most-reused frame).
+- **Sequences** `[common-practice + jazz]` — circle-of-fifths (the full cycle `I–IV–viio–iii–vi–ii–V–I`; the common
+  tail is its last members, `iii–vi–ii–V–I` — **entry-point rule:** the skeleton is the full cycle and a realisation
+  may enter at any member, running contiguously to the final `I`); descending-thirds (`I–vi–IV–ii`, extendable by
+  continuing the descending-third root pattern — the continuation rule, not an ellipsis); the stepwise galant
+  Monte/Fonte skeletons (below).
 - **Bass-line and pop loops** `[common-practice + pop]` — lament bass / descending tetrachord (minor `1̂–7̂–6̂–5̂`, chromatic
-  variant `1̂–♭7̂–♭6̂–5̂`); Andalusian cadence `i–bVII–bVI–V`; doo-wop `I–vi–IV–V`; Axis `I–V–vi–IV` (and rotations);
+  variant `1̂–♭7̂–♭6̂–5̂`); Andalusian cadence `i–bVII–bVI–V`; doo-wop `I–vi–IV–V`; Axis `I–V–vi–IV` — **rotation rule (as built, verified at the catalog):** ONE entry, encoded in the canonical
+  rotation `I–V–vi–IV` only; the v1 exact matcher therefore recognises only that order, and admitting the other three
+  rotations (as rotation-tolerant matching on this one entry, never as three more entries) is a declared decision for
+  the Stage-5 partial matcher;
   Pachelbel `I–V–vi–iii–IV–I–IV–V`.
 - **Galant schemata — harmonic pattern only** `[galant]` — Prinner (melody `6̂–5̂–4̂–3̂` over bass `4̂–3̂–2̂–1̂`); Romanesca
-  (descending bass, `I–V–vi–iii…`); Monte (ascending sequence); Fonte (descending sequence of applied-resolution pairs);
+  (descending bass, the skeleton `I–V–vi–iii` — a realisation may close there or continue the descending pattern;
+  the entry is the four-member core); Monte (the **ascending-by-step chain of applied-dominant resolution pairs** —
+  each pair a `V7/x → x` resolving a step higher than the last; the ascending counterpart of Fonte); Fonte
+  (descending sequence of applied-resolution pairs);
   Ponte (a dominant pedal); Do-Re-Mi (opening, melody `1̂–2̂–3̂`); Quiescenza (a tonic-pedal closing schema). *(Each is
   conventionally defined by voice-leading and metric placement; this component holds only the harmonic pattern — see §2.
   The complete schema is recognised by combining it with the voice-leading dimension held elsewhere.)*
@@ -180,8 +226,14 @@ it (proposes the substituted form):
   neither, and new entries are added with both readings in mind.
 - **One canonical style taxonomy, shared with the presets.** Entries tag from a **single style vocabulary** that the
   presets also select on — not a vocabulary private to this component (which would need a brittle preset→tag mapping). The
-  taxonomy is now the **ratified five-idiom set** (`cowork_style_taxonomy_proposal.md`, ratified 2026-06-30):
-  Diatonic-functional · Chromatic-functional · Seventh-functional · Triadic-modal · Chromatic-coloristic, with the two
+  taxonomy is now the **ratified five-idiom set** (`cowork_style_taxonomy_proposal.md`, ratified 2026-06-30), each
+  glossed once here with the proposal's own definitions: **Diatonic-functional** (simple cadential-functional,
+  diatonic — folk and simple common-practice) · **Chromatic-functional** (functional plus tonicization — applied and
+  secondary chords, the augmented sixth; classical common-practice) · **Seventh-functional** (functional harmony
+  realized in seventh chords — the jazz ii7–V7–Imaj7 world) · **Triadic-modal** (diatonic triads, modal moves —
+  pop/rock loops, planing, sus) ·
+  **Chromatic-coloristic** (non-functional chromatic and modal-static harmony — altered/backdoor dominants, planing
+  sevenths; cross-cutting, no genre), with the two
   orthogonal cross-attributes **mode** and **chromaticism**. Tags are **multi-valued** (an entry can carry several idioms).
   Presets are named **idiom-weightings** over this set (a consumer/preset joint decision, §12). The former placeholder
   `{Baroque, Jazz, Default}` StyleTag is **retired**.

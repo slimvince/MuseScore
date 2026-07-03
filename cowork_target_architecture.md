@@ -41,8 +41,9 @@ on its own, no unit ever spans two harmonies. Over-grab stops being a lever and 
 > is EXTENSIBLE** — a later layer pulls context beyond the selection on demand via a **hybrid** (small fixed margin
 > + lazy extend-until-stable/cap). The codebase already does this hybrid for key (`keyresolver.cpp`: fixed backward
 > lookback + dynamic forward lookahead); L3 unifies it (and makes backward lazy too). Bounded context is what makes
-> R2/R3 cheap, and it trades against the (gated) global-joint key direction. See `cowork_layer3_analysis_design.md`
-> §0.1.
+> R2/R3 cheap, and it trades against the (gated) global-joint key direction. See `cowork_bounded_context_design.md`
+> (the one cross-layer extension spec; re-pointed 2026-07-03 — the formerly-cited layer-3 analysis design is
+> superseded).
 
 > **★ "Effort" preset — a planned future calibration knob (user, 2026-06-22).** Alongside the *style* preset
 > (Standard / Baroque / Jazz …), a separate **effort** preset (quick / normal / ambitious) will trade analysis
@@ -108,7 +109,8 @@ for complete-schema recognition or voice-leading resolution *with* a verificatio
 curated catalog of progressions, schemas, and substitutions (`cowork_progression_schema_dictionary.md`, its own component
 spec) is a **cross-cutting resource**, a *sibling* to the L1–L6 pipeline, not a member of it: it has **no *(evidence-source
 × question)* contract** because it is **reference knowledge with a read-only query interface**, not a processing layer. It
-is **consumed** by Layer 5 (the progression prior / substitution-inversion) and Layer 6 (the sequence-span annotation), and
+is **consumed** by Layer 5 (the progression prior / substitution-inversion) and Layer 6 (the progression-schema-span
+annotation), and
 is built **shareable** for a future chord-suggestion tool. The pattern generalises: durable curated knowledge (this
 vocabulary; the chord templates; the key profiles) is a **component queried by the layers**, distinct from the layers'
 per-piece inference — and the genre *labels* live in the component while genre-aware *behavior* (selection, weights,
@@ -238,11 +240,14 @@ and prolongational structures are separate), not a single hierarchy. The named f
   decision may find disambiguating evidence (a later cadence). A computational/perceptual bound, not a structural object.
 - **Cadential scope** — the span a cadence **closes and confirms**: where a phrase span and a key-span are *jointly*
   articulated (a cadence marks both a phrase ending and a key confirmation — the reason one detector feeds both).
-- **Latent extension spans, theory-grounded, named when needed:** pedal-point span, sequence span, section /
-  formal-function span, hypermeasure, prolongation span (reduction), linear-progression/Zug (voice-leading); plus the
+- **Latent extension spans, theory-grounded, named when needed** *(names per the ratified 2026-07-02 family rename —
+  suffix-consistent, executed at the 2026-07-03 doc pass)*: **pedal-point-span**, the **progression-schema-span**
+  (formerly "sequence span" — instantiated by the recognition consumer, hosted by Layer 6), **section-span** /
+  formal-function span, hypermeasure, prolongation span (reduction), **voice-leading-span** (linear-progression/Zug);
+  plus the
   gradients — tonicization (a proto-key-span that did not establish), the pivot (a modulatory overlap), the cadential
   approach (the pre-dominant→dominant→tonic formula).
-  - *(Forward note — the progression-schema layer, 2026-06-29.)* The **sequence span** and **cadential-approach span** are
+  - *(Forward note — the progression-schema layer, 2026-06-29.)* The **progression-schema-span** and **cadential-approach span** are
     the home of multi-chord **progression-schema** knowledge (ii–V–I, turnarounds, circle-of-fifths sequences; the Baroque
     galant schemata — Prinner, Romanesca, Monte/Fonte/Ponte; pop loops). The catalog is **finite and idiom-specific** (the
     preset selects it); full progressions are *composed* from it by the pairwise functional grammar. It belongs in **Layer
@@ -256,16 +261,20 @@ and prolongational structures are separate), not a single hierarchy. The named f
     recognize, read predictively to suggest.
 
 **The relation between two span types is either NESTING or CROSS-CUTTING, and which it is must be stated.**
-- **Nesting (containment):** harmonic regions ⊂ key-spans; harmonic regions ⊂ phrases; phrases ⊂ sections — the finer
+- **Nesting (containment):** chord-spans ⊂ key-spans; chord-spans ⊂ punctuation-spans; punctuation-spans ⊂
+  section-spans — the finer
   tiles the coarser.
-- **Cross-cutting (independent):** **key-spans and phrases cross-cut** — a key change may fall mid-phrase and a phrase end
+- **Cross-cutting (independent):** **key-spans and punctuation-spans cross-cut** — a key change may fall mid-span and
+  a punctuation-span end
   need not change key, so they are **two independent segmentations of one stream, not a hierarchy**. Asserting containment
-  where the truth is cross-cutting (e.g. nesting key-areas inside phrases) is a modelling error.
+  where the truth is cross-cutting (e.g. nesting key-areas inside punctuation-spans) is a modelling error.
 
-**Naming discipline (the contract):** every layer names the span it operates on by its type — "harmonic region",
-"key-span", "phrase", "decision-context span" — and, for any two it relates, states whether they **nest** or
+**Naming discipline (the contract):** every layer names the span it operates on by its type — "chord-span",
+"key-span", "punctuation-span", "decision-context span" — and, for any two it relates, states whether they **nest** or
 **cross-cut**. "Region" unqualified is banned as ambiguous. *(Surfaced by the Layer-6 review, which found L5 §5.0
-collapsing the harmonic region, the key-span, and the decision-context span under one "region".)*
+collapsing the chord-rhythm span, the key-span, and the decision-context span under one "region". Names here follow
+the ratified 2026-07-02 family rename — chord-span was "harmonic region", punctuation-span was "phrase";
+ARCHITECTURE.md §2.15 is canonical.)*
 
 ## 3. Why this is the target (the evidence)
 - **Dissolves over-grab (~45%, the biggest lever)** by construction — no coarse unit spans two chords.

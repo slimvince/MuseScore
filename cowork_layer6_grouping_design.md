@@ -1,8 +1,22 @@
 # Layer 6 — Grouping (design)
 
-> **Status: SIGNED (user, 2026-07-02) — but the BUILD is PROHIBITED/DEFERRED (user directive, same day): L6 work
-> (including its TSV-oracle validation infrastructure) resumes only after the L1–L5 extension behavior
-> (`cowork_bounded_context_design.md`, SIGNED 2026-07-02 — its §11 acceptance list) is CODED and REGRESSION-TESTED.** Sign-off history: reviewed +
+> **Status: AS-BUILT (2026-07-02) — built dormant + oracle-validated after the extension gate passed.**
+> `analysis/grouping/groupinglayer.{h,cpp}` (commits `da06242dd2`/`73b2a5a791`/`b17abc9e71`; report
+> `cc_l6_build_report.md`, Cowork-ratified): §5.1–§5.5 exactly, over plain-data input structures a test can construct
+> by hand; 18 oracle-asserted
+> tests (bringing the composing suite to 1033 tests total); the §10 step-1 validation on the 16 **dev beds** (the
+> development-split sub-corpora of the corpus registry, used as test beds — held-out beds untouched) with the
+> **no-added-detection guard PASS**
+> (boundaries added by L6 = 0; interior span boundaries exactly matched, 718 of 718 — assembly proven, §6). Key-area recall (0.1%) is upstream-bound
+> (the dormant L5 §5.4 modulation substrate — surfaced, not L6's); cadence alignment 387 closes / 6 internal vs the
+> GT 91.5% cadence-at-phraseend rate. **§5.1-a codetta interpretation RULED (Cowork, at ratification):** the
+> as-built tiling reading (keep the strong-peak cut, drop the weak cut, record `codettaEndTick` as an annexe) is
+> canonical — it is the only reading preserving the §5.1 flat/total partition law; inert under default settings
+> (changes no output unless explicitly enabled). Provenance
+> cue/scope fields carried but `Unknown` until the engage-time L1.5 per-tick exposure. Dormancy proven by source
+> search (no production call site); the corpus gate unchanged on all three presets (Baroque 53 / Jazz 24 /
+> Default 53) exactly. *(Earlier gate history: build was prohibited pending the L1–L5 extension behavior —
+> `cowork_bounded_context_design.md` §11 — which passed 2026-07-02.)* Sign-off history: reviewed +
 > language-passed (Cowork, 2026-06-30); phrase-terminology correction + polyphony grounding folded
 > (2026-07-01); grouping unit renamed phrase → punctuation-span (2026-07-01); external-review amendments +
 > edge-provenance/extension-cue amendments folded at sign-off (2026-07-02). The
@@ -12,7 +26,8 @@
 > future voice-leading/melody-line layer. §2/§14 fold the polyphony deep search
 > (`cowork_polyphony_phrase_harmony_research.md`) — onset/verticality harmony, one flat texture-wide grouping, voice
 > separation as a separate task, and the non-chord-tone filter as a future **L4** lever. The v1 draft (2026-06-29) went
-> through the Cowork review + language-mechanical pass — findings folded: the **schema sequence-span** output
+> through the Cowork review + language-mechanical pass — findings folded: the **schema span** output (now the
+> progression-schema-span, §0)
 > (§2 / §3 / §5.5, the L6↔encyclopedia annotation home), the **§2.15 span-typology term scrub** (`region` unqualified →
 > slice / key-span), and the §15-6 / §15-1 status updates. Research foundation: `cowork_layer6_grouping_research.md`.
 > Specified by **rule and direction**; numeric calibration is the later precision phase (the firewall). Build **dormant +
@@ -52,19 +67,22 @@ confused with L6's operational **punctuation-span [L6]** grouping unit. Nothing 
   rests, double barlines, key-signature changes, …), **which is what it is named for**. Its boundaries are delimited by
   those **surface cues** via the phrase-boundary primitive (§5.1), **not** by requiring a cadence (defining a span by its
   cadence and then aligning cadences to it in §5.3 would be circular). The DCML standard happens to label this `{}` unit
-  "phrase," but it is a **harmonic / annotation grouping construct** — spelling-blind to melody and voice — and it
+  "phrase," but it is a **harmonic / annotation grouping construct** — blind to melody and voice — and it
   **diverges** from the accepted melodic phrase [MT]; this design therefore calls it the **punctuation-span** and never
   "phrase." **★ Naming convention: the word "phrase" appears in this document only as "phrase [MT]" (the accepted melodic
   unit, out of scope); the harmonic-grouping object L6 produces is always the "punctuation-span."** In chorales the two
   coincide (a fermata marks both a punctuation-span edge and a cadence); in general they need not. The cadence↔span
   relation is *checked* in §5.3, never assumed in the definition. *(Ref: the DCML annotation standard.)*
-- **Slice [L6].** The atomic analysis unit — one chord-rhythm segment from Layer 2 (the *harmonic region [chord-rhythm]* of
-  the §2.15 span typology). The finest unit L6 groups.
+- **Slice [L6].** The atomic analysis unit — one chord-rhythm segment from Layer 2 (the target-architecture §2.15
+  span typology's constant-sonority atom; maximal same-chord runs of slices form the typology's **chord-span**,
+  formerly "harmonic region"). The finest unit L6 groups.
 - **Boundary [L6].** A tick where the **phrase-boundary primitive** places a picked peak — a surface-cue location (fermata /
   breath / rest / structural barline / key-signature change / subito tempo). Our operational proxy for a punctuation-span
   edge; **choosing which ticks are boundaries is the primitive's job upstream, not L6's.**
 - **Key-span [L6].** The §2.15 span-typology name for a key-area (used interchangeably below).
-- **Sequence-span [L6].** A recognised-schema span emitted by the recognition consumer and *hosted* by L6 (§5.5).
+- **Progression-schema-span [L6].** A recognised-schema span emitted by the recognition consumer and *hosted* by L6
+  (§5.5). *(Renamed from "sequence-span" per the ratified span-family rename (D6, 2026-07-02) — "sequence" is reserved
+  for the harmonic device; the consumer doc carries the same rename.)*
 - **Open mark [L6].** Layer 5's carried honest residual — a slice whose reading L5 left unresolved; L6 surfaces it, never
   resolves it.
 
@@ -105,7 +123,7 @@ cosmetic-but-structural top of the pipeline: it does not change any Roman numera
 - **Carry the honest residual** — Layer-5 open marks pass through to the grouped output unchanged; L6 groups *around*
   uncertainty, it does not resolve it (§5.4).
 - **Host the recognised-schema annotations** — when the recognition consumer (the Harmonic Vocabulary's L5/L6
-  consumer, `cowork_progression_schema_design.md`) is present, its recognised-schema **sequence-spans** are carried as
+  consumer, `cowork_progression_schema_design.md`) is present, its recognised-schema **progression-schema-spans** are carried as
   read-only, additive, **cross-cutting** labels (§5.5). L6 is their annotation home; it does **not** recognise schemas
   itself (the consumer does).
 
@@ -139,7 +157,8 @@ cosmetic-but-structural top of the pipeline: it does not change any Roman numera
   Layer-5 cadence markers (type, location, salience).
 - **The phrase-boundary primitive** (`phraseBoundaryView` — `phraseBoundaryTicks()` and the graded
   `PhraseBoundaryProfile`): the boundary ticks and their strengths (fermata / breath / rest / barline / key-signature /
-  tempo cues, max-normalised, peak-picked).
+  tempo cues — strengths scaled to the strongest cue, local maxima selected as boundaries; the primitive's
+  max-normalisation and peak-picking, `cowork_phrase_boundary_design.md` §4).
 - **The Layer-3 local-key spans** (the per-region `keyModeResult`, surfaced through the Layer-5 per-region local key).
 
 **Produces** — the flat grouping structure, **additive over Layer 5** (it annotates and segments; it does not replace any
@@ -155,7 +174,7 @@ upstream decision):
 - **Cadence-to-punctuation-span alignments** — each Layer-5 cadence tagged with the punctuation-span it closes (or flagged
   *internal* if it falls mid-span — §5.3), carrying its Layer-5 type and salience.
 - **The carried open marks** — Layer-5's honest residuals, surfaced in the grouped view, never resolved here.
-- **Recognised-schema sequence-spans** (present only when the recognition consumer is) — each a `[startTick, endTick)`
+- **Recognised-schema progression-schema-spans** (present only when the recognition consumer is) — each a `[startTick, endTick)`
   span carrying the matched schema's name, its style/idiom tag, the match score, and the underlying-function read-out
   for any substituted member (e.g. "`♭II7` here = `subV7/I`"). **Cross-cutting** — a schema may straddle a punctuation-span
   boundary and a punctuation-span may hold several schemas. Read-only and additive; L6 is the annotation home, the consumer
@@ -179,7 +198,8 @@ exactly as Layer 5 unified the scattered function machinery. The old paths stay 
 
 ### 5.0 Definitions — see §0
 All terms (**cadence**, **key-area/key-span** [MT]; **punctuation-span**, **boundary**, **slice**, **open mark**,
-**sequence-span** [L6]; and the out-of-scope **phrase [MT]**) are defined once in **§0**; the rules below use them and add
+**progression-schema-span** [L6]; and the out-of-scope **phrase [MT]**) are defined once in **§0**; the rules below use
+them and add
 no new vocabulary. The one construction detail §0 leaves to here: a **punctuation-span** is the maximal
 `[startTick, endTick)` **flat** span between two adjacent boundaries (the first boundary at/after the span start opens it,
 the next closes it), tiling the analysed span with no gaps or overlap (§5.1). The cadence L6 reads is Layer-5's
@@ -197,7 +217,9 @@ distinction) — a truncated group is never presented as a complete one; the sam
 (§5.2). And an edge span that reaches the selection edge with **no closing boundary and no cadence** is surfaced with an
 `extension-cue` tag — the signal that widening the selection would complete it. Per the forward-only contract L6 only
 **surfaces** the cue (like the §5.3 internal-cadence tension tag); acting on it — invoking L1's `extend` and re-running —
-is the **orchestrator's** decision under the §2.15 bounded-context contract (stop condition + hard bound), never L6's. **L6 consumes the primitive's picked-peak set as-is — it does not re-threshold or re-detect boundaries**
+is the decision of the **orchestrator** (the pipeline driver that sequences the layers — the region analyzer of the
+bounded-context contract, `cowork_bounded_context_design.md` §6) under the §2.15 bounded-context contract (stop
+condition + hard bound), never L6's. **L6 consumes the primitive's picked-peak set as-is — it does not re-threshold or re-detect boundaries**
 (peak selection is the primitive's owned job, §5.1 of the phrase-boundary primitive design); choosing *which* ticks are
 boundaries is upstream, and how they *group into punctuation-spans* is the rule here.
 - **Span interlocking** (`}{`): where a boundary is simultaneously one punctuation-span's structural end and the next
@@ -221,9 +243,12 @@ segmentation, **not** nested in punctuation-spans (§3, §9-D5). Each key-area c
 duration-weighted mean — is precision-phase; this direction is fixed here). The rule that a key change starts a new area is
 fixed here. *(Contract compliance, added at sign-off review 2026-07-02: any confidence L6 publishes — the key-area
 confidence, a span-level aggregate — is a **boundary confidence under the cross-layer confidence contract**
-(`cowork_confidence_contract.md` U2): [0,1], Class-M-declared, with its combiner and inputs named; and its **input** is
-each unit's DECLARED boundary key confidence per that contract — i.e. once the D-L3a close-out lands, the one declared
-L3/L5 number, not the diagnostic sigmoid.)*
+(`cowork_confidence_contract.md` U2): [0,1], declared in the contract's **Class M** (a margin-family quantity, not a
+calibrated probability), with its combiner and inputs named; and its **input** is
+each unit's DECLARED boundary key confidence per that contract — i.e. once the **D-L3a close-out** (the Layer-3
+boundary-confidence declaration item of `cowork_confidence_contract.md` §3) lands, the one declared
+L3/L5 number, not the **diagnostic sigmoid** (the Layer-3 emission-scale confidence squash used by the grading
+diagnostics, named in the Layer-3 spec banner as the C1 fidelity fix).)*
 - **A confirmed Layer-5 modulation** (§5.4 of the L5 design) is already reflected in the local-key track it commits, so a
   key-area boundary falls exactly where the modulation recompute committed the new key — L6 reads that; it does not
   re-decide the modulation.
@@ -256,12 +281,13 @@ almost always coincides with a span ending; many punctuation-spans end with no c
 ### 5.4 Carrying the residual
 A Layer-5 open mark on a unit is surfaced on the punctuation-span and key-area that contain that unit (the group is
 reported as carrying an unresolved reading at that location). L6 **never** resolves an open mark — it has no evidence Layer
-5 lacked. A punctuation-span composed entirely of confidently-read units is reported as fully resolved; one containing an
+5 lacked. A punctuation-span composed entirely of units carrying **no open mark** (that is the whole test — no
+confidence threshold is involved) is reported as fully resolved; one containing an
 open mark is reported with the residual visible.
 
 ### 5.5 Hosting the recognised-schema annotations
 When the recognition consumer (`cowork_progression_schema_design.md`) is present, each recognised-schema
-**sequence-span** it emits is carried verbatim: L6 places the span in the grouped output and exposes it as a
+**progression-schema-span** it emits is carried verbatim: L6 places the span in the grouped output and exposes it as a
 cross-cutting label alongside the punctuation-spans and key-spans it overlaps. L6 **does not recognise schemas, score
 matches, or apply substitutions** — the consumer does; L6 only hosts the result, the same reuse-not-duplicate discipline
 as the punctuation-span / cadence / key carries. Absent the consumer (the current dormant state), this output is simply
@@ -338,7 +364,8 @@ L6's three outputs have three oracle situations (per the corpus-oracle check):
   tonic/mode match); the residual-honesty principle the lower layers established (a correctly carried open mark beats a
   guessed group).
 - **Two-step plan:** (1) now — the narrow TSV oracle for punctuation-span + cadence-location (and the chorale fermatas for
-  punctuation-spans); (2) later, at the pre-inference boundary — the wide full-pipeline generalisation baseline on the
+  punctuation-spans); (2) later, at the pre-inference boundary (just before the roadmap's inference-improvement phase
+  opens) — the wide full-pipeline generalisation baseline on the
   DCML-TSV corpora (`cowork_layer6_grouping_research.md` §6).
 - **Dormant + byte-identical** until engagement (deferred): the corpus gate stays 53/24/53 by construction; L6 has no
   production consumer.
@@ -350,13 +377,15 @@ L6's three outputs have three oracle situations (per the corpus-oracle check):
   verifiability contract with an explicit mark until a cleaner oracle exists.
 - **The non-chorale TSV repertoire is harder for the chorale-tuned lower layers** — confounds cadence/key measurement;
   mitigated by scoping step 1 to punctuation-span + cadence-**location**.
-- **`bwv112.5` has no fermata** — a 1-stem edge for the fermata punctuation-span oracle (handle in the metric, e.g. fall
+- **`bwv112.5` has no fermata** — a single-score edge case for the fermata punctuation-span oracle (handle in the
+  metric, e.g. fall
   back to its graded boundary, or exclude from the fermata-recall denominator — a §10 metric detail, not a layer rule).
 - **The scattered live paths** (`detectCadences`/`detectPivotChords`/`KeyArea`) are migration debt — owned and retired by
   L6 only at the deferred engagement.
 
 ## 12. Glossary — see §0
-The primary terms — **punctuation-span, cadence, key-area/key-span, boundary, slice, open mark, sequence-span** (and the
+The primary terms — **punctuation-span, cadence, key-area/key-span, boundary, slice, open mark,
+progression-schema-span** (and the
 out-of-scope **phrase [MT]**), and the jargon (**flat partition, hierarchical grouping, GTTM, Caplinian formal
 functions**) — are defined once in **§0**, the single source (to avoid the duplicate-definition drift). Two operational
 terms specific to §5.3:
@@ -395,7 +424,8 @@ located system models concurrent overlapping per-voice phrases for harmonic anal
    corpora" is **done**. The remaining **TSV-oracle infrastructure** is only: extend `dcml_parser` to read those two
    columns + build the punctuation-span/cadence-location metrics — a build prerequisite for L6 validation, to be specified
    after this design is signed.
-   **★ Update (2026-07-02, corpus Wave 1 — the oracle is now MEASURED, at scale):** the full DLC container (40/40) is
+   **★ Update (2026-07-02, corpus Wave 1 — the oracle is now MEASURED, at scale):** the full **DLC** container — the
+   DCML **Distant Listening Corpus**, all 40 of its 40 member corpora — is
    onboarded and inventoried (`cc_corpus_wave1_report.md` §4; registry `layer_label_counts`): **9,662 cadence labels in
    921 of 1,284 files** (PAC 4,667 / HC 2,614 / IAC 1,616 / EC 279 / DC 195 / PC 86 + HC sub-types) and **24,436
    `phraseend` markers** — and `dcml_parser.py` currently **drops all three columns**, so the §10 oracles are a purely
@@ -403,8 +433,9 @@ located system models concurrent overlapping per-voice phrases for harmonic anal
    cadence labels** (incl. `wagner_overtures`, `monteverdi_madrigals`, `schubert_winterreise` — cadence-location
    validation is unavailable there; punctuation-span validation via `phraseend` mostly remains); the richest cadence beds
    are beethoven / mozart / corelli / cpe_bach / scarlatti / couperin_concerts. The dev/held-out split (registry `split`
-   field) applies: the §10 step-1 validation runs on the dev beds; held-out stays untouched per the engage-criteria E2
-   discipline.
+   field) applies: the §10 step-1 validation runs on the dev beds; held-out stays untouched per the E2 discipline of
+   the engage criteria (the ENGAGE CRITERIA block in `docs/implementation_roadmap.md`: held-out data is not consulted
+   until engagement).
 2. **The §5.1-a codetta refinement** and the **§5.3 alignment window** — confirm the exact rule shapes at build (the
    constants are precision-phase regardless).
 3. **Sections / form** — the verifiability-gated extension (§9-D3); decide the verification strategy *if and when* a need
@@ -419,10 +450,10 @@ located system models concurrent overlapping per-voice phrases for harmonic anal
    family, with the nesting-vs-cross-cutting rule and "region" unqualified banned), and (b) the **L5 §5.0 disambiguation**
    into slice / key-span / decision-context span / punctuation-span. L6's key-areas group the **key-span**, which
    **cross-cuts** punctuation-spans — now grounded in the clarified L5. Prerequisite closed.
-7. **★ Span-name propagation (2026-07-01) — the grouping unit was renamed `phrase → punctuation-span` in THIS spec.** For
-   cross-document consistency the same rename must reach: the **architecture §2.15 span-typology contract**, the **L5 §5.0
-   disambiguation** (which names the grouping span — currently "phrase"), and, if the sibling rename is adopted, the
-   **sequence-span → schema-span** change in `cowork_progression_schema_design.md`. Until that coordinated docs pass lands,
-   those documents still say "phrase" / "sequence-span"; the mapping is 1:1 (`phrase → punctuation-span`). The upstream
+7. **★ Span-name propagation — ✅ RESOLVED (the merged Cowork doc pass, 2026-07-03).** The `phrase → punctuation-span`
+   rename reached the architecture §2.15 span-typology contract and the L5 §5.0 disambiguation, and the ratified
+   sibling rename (D6, 2026-07-02) — **sequence-span → progression-schema-span** — is executed in this spec (§0) and
+   propagated with the wider confirmed family rename (harmonic region → **chord-span**; pedal → **pedal-point-span**;
+   cadential scope kept as the stated exception). The upstream
    **phrase-boundary primitive** keeps its code name (`phraseBoundaryView` etc.) — a Layer-1.5 identifier, out of scope for
-   a Layer-6 vocabulary change. Pending.
+   a Layer-6 vocabulary change.

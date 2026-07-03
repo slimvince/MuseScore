@@ -5,9 +5,12 @@
 > read-only audit, the decoder build, the unification extraction (the shared `pitchContextOverSpan` view), the
 > characterization + causal-decomposition diagnostics, and the bounded sweep are committed and pushed
 > (`c453315faa`, `b368f3c631`, `1538193d4d`, `2203ad9fda`). The **Step-1 wiring** — the decoder replaces the
-> per-region resolver at the `regionanalyzer.cpp` seam (duration-majority per coarse region; S2 segmentation-stable
+> per-region resolver at the `regionanalyzer.cpp` seam (duration-majority per coarse region — each coarse region
+> takes the key/mode that holds the majority of its duration across the slices it spans; S2 segmentation-stable
 > seed; `excludeStaves` + `partialSignatureCorrection` + C1 emission-confidence fidelity fixes) — is committed
-> locally (`a6b08af3fe`) under the two-tier BIR gate (the Jazz +1 is an accepted interim class-(a) case, CLAUDE.md).
+> locally (`a6b08af3fe`) under the two-tier BIR (bass-is-root) corpus gate (the Jazz +1 is an accepted interim
+> class-(a) case, CLAUDE.md). *(The increment codenames in this banner — S1, S2, C1, P4, re-split (c) — are the
+> delivery plan's labels; the plan that defines them is `cowork_layer3_keymode_impl_design.md`.)*
 > **Deferred follow-ups (tracked):** the Step-2 scaleMembership reweight (KEY-metric-gated, chord/BIR-flat); the P4
 > tick-local path (still on the resolver → P4-redecode); re-split (c) for within-region modulation; S1 full
 > seed-retire; and the sequence-margin confidence redesign. The resolver + `collectPitchContext` remain only as the
@@ -17,6 +20,32 @@
 > lives in the delivery plan (`cowork_layer3_keymode_impl_design.md`), not in this architecture document. *(Two template sections do not apply:
 > "Deployment view" and "Human-interface design" — backend analysis code, no separate deployment, no user
 > interface.)*
+
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule): every term this document uses is
+standard music theory in its standard sense, defined here, or cited here to the document that defines it. Fuller
+prose definitions of this layer's own coinages are in the §12 glossary; this table is the entry point.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Key/mode** | The tonal centre together with its mode (C-major, F-mixolydian). This layer's output object. |
+| **Slice** | The **constant-sonority slice** from Architectural Layer 2 (`cowork_layer2_slicing_design.md`) — the span typology's atomic analysis unit (ARCHITECTURE.md §2.15). |
+| **Key-span** | The §2.15 span-typology name for what this layer produces: a **maximal run of consecutive slices carrying the same key/mode**. This layer owns the key-span; coarser groupings derive from it. |
+| **Local-fit score** | Per slice, per candidate key/mode: how well the candidate fits the notes in and around the slice (§5 step 1). |
+| **Sequence** | The chosen key/mode per slice, read left-to-right in time, decided as one whole (§4). |
+| **Change cost** | The penalty for changing key/mode between consecutive slices (§5 step 2); same units as the local-fit score. |
+| **Confidence (sequence margin)** | How much better the winning sequence is than the best sequence forced to a different key/mode at that slice (§5 step 4). Declared **Class M** (a margin, not a calibrated probability) under the cross-layer confidence contract (`cowork_confidence_contract.md`); its published boundary form is governed there (close-out D-L3a). |
+| **"Uncertain" mark** | Set on a slice whose sequence-margin confidence is below the tunable uncertainty level (§5 step 4). |
+| **Carried alternatives** | The ranked runner-up key/modes each slice keeps so a later layer can *select* among them without re-deriving (§1). |
+| **Reach-back** | This layer's bounded-context extension request: asking Architectural Layer 1 to widen the analysed span earlier in time (`cowork_bounded_context_design.md`; §2). |
+| **Selection / loaded span / context span** | The bounded-context contract's names for the user-selected music, the music currently supplied by Layer 1, and the extra span a layer integrates over (`cowork_bounded_context_design.md`). |
+| **Best-sequence (Viterbi) algorithm** | The standard one-pass dynamic-programming decode over per-slice scores plus change costs (§5 step 3; the literature's Viterbi decode, §14). |
+| **Duration-majority** | The slice→coarse-region reduction at the wiring seam: a region takes the key/mode holding the majority of its duration. |
+| **BIR gate** | The project's two-tier **bass-is-root** corpus regression gate (CLAUDE.md); "the project-wide accuracy metric" in this document means this gate's metric, run on the two tuning presets (Baroque, Jazz). |
+| **Pinned analysis snapshots** | Stored golden outputs the test suites compare exactly; refreshed only after a change is confirmed correct. **Byte-identical** = output identical byte-for-byte to the previous behaviour on those pinned outputs. |
+| **The clean set** | The measured subset of this layer's misses that is genuinely fixable within key/mode from the notes alone (A∩stable + B∩stable, ≈11.5% of Baroque / 7.4% of Jazz misses) — defined and measured in `cc_layer3_error_decomposition_report.md`; the §11 sweep grades against it (`cc_layer3_sweep_report.md`). |
+| **Tonal pitch class (tpc)** | The notated spelling of a pitch (G♯ distinct from A♭), as carried losslessly by Architectural Layer 1. |
+| **The inference firewall** | The project rule splitting mechanism/structure changes (allowed now) from inference-quality tuning (deferred to the precision phase, Phase B of `cowork_l1l3_stabilization_plan.md`). |
 
 ## 1. Introduction & purpose
 **What Architectural Layer 3 is.** It is the **sole owner of key/mode inference *from the notes***: for each slice
@@ -34,7 +63,9 @@ major versus minor; a modulation/tonicization seam): that residual — handed fo
 "uncertain" mark — is settled by Architectural Layer 5 using **functional evidence** (chord, cadence,
 function) that Architectural Layer 3 structurally cannot have. So key/mode inference is split along an **evidence
 boundary**: Architectural Layer 3 contributes the note evidence and resolves everything the notes can resolve; the
-gated step contributes the functional evidence and resolves only the flagged residual — by **selecting among
+gated step — Architectural Layer 5's carried-readings resolution, entered under the conditions its own spec states
+(`cowork_layer5_function_design.md` §5.5) — contributes the functional evidence and resolves only the flagged
+residual — by **selecting among
 Architectural Layer 3's carried alternatives**, never by inventing a candidate or re-scoring from the notes (that
 note-evidence model has exactly one home). Knowing *where the note evidence runs out* is itself part of Architectural
 Layer 3's job; the "uncertain" mark is the explicit hand-off token. *(Open item O1, resolved and user-ratified
@@ -51,7 +82,8 @@ was never carried, that is a *coverage* miss widened inside this layer. **Requir
 closed byte-identically, 2026-06-26):** the layer already *computes* ranked alternative keys + a confidence on every
 slice, but the slice→region reduction currently **drops them** (the region carries only the single chosen key). The
 region must **carry the ranked alternative keys + confidence forward** so the override has a menu to select among; this
-is an additive forward-carry of already-computed data (no production consumer yet → byte-identical), with a lock-in test.
+is an additive forward-carry of already-computed data (no production consumer yet, so production output is unchanged
+byte-for-byte), protected by a regression test that pins the carried fields so they cannot be silently dropped.
 Full mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract;
 close-out: `cc_instruction_l3_keyalt_forwardcarry.md`.
 
@@ -67,7 +99,9 @@ to the original key right afterward). Both can only be resolved by weighing the 
 what deciding the whole sequence at once does. (The per-region code this replaces is described in Section 13.)
 
 **Scope — what Architectural Layer 3 does:** assign each slice a key/mode, together with ranked alternative
-key/modes, a confidence, and an "uncertain" mark where the evidence is genuinely ambiguous.
+key/modes, a confidence, and an "uncertain" mark where the evidence is genuinely ambiguous. The maximal runs of
+consecutive slices carrying the same key/mode are the **key-spans** (§0) — the span-typology object this layer owns
+(ARCHITECTURE.md §2.15); every coarser key view is derived from them.
 
 **What Architectural Layer 3 explicitly does NOT do** (stated because each boundary matters):
 - It does **not** name chord symbols (Architectural Layer 4) or function / Roman numerals (Architectural Layer 5).
@@ -93,7 +127,8 @@ modes of three parent scales:
 **Which key/modes Architectural Layer 3 does NOT recognize.** Any scale that is **not** one of those 21 seven-note
 modes — in particular pentatonic and blues scales, the whole-tone scale, the octatonic (diminished) scale, and any
 non-Western or microtonal scale (maqam, raga, and so on). A passage genuinely in one of these is reported as the
-**closest** of the 21 recognized modes, not as the unrecognized scale. (Recognizing all 21 modes does not mean all
+**best-fitting** of the 21 recognized modes — the candidate with the highest local-fit score under the §5 sequence
+decision, not by any separate scale-distance measure — never as the unrecognized scale itself. (Recognizing all 21 modes does not mean all
 21 can be *measured*: the human Roman-numeral ground truth used to grade this layer, Section 10, is major/minor
 only, so modal readings beyond major/minor can be produced but cannot be checked against that ground truth — see
 Section 11.)
@@ -127,9 +162,13 @@ Section 11.)
   request** in the bounded-context contract (`cowork_bounded_context_design.md`): direction = earlier in time, stop
   condition = *"the prevailing key before the selection is in view,"* hard bound = a maximum reach, terminating at the
   score start. **(Built — gated OFF by default. The reach-back loop is built in the orchestrator
-  (`regionanalyzer.cpp:585–666`): trigger = the selection's leading-edge slice is unsettled, action = ask
+  (`regionanalyzer.cpp`, the reach-back block): trigger = the selection's **leading-edge slice** (the first slice
+  extending past the selection start) is **unsettled** — the operational test, verified at source: the slice is
+  marked "uncertain", **or** its sequence-margin confidence is below the configured minimum opening confidence (a
+  tunable on the reach-back options) — action = ask
   Architectural Layer 1 to `extend(Earlier)` → re-slice (Layer 2) → re-decode (Layer 3), repeated until the
-  leading-edge key stops changing, the hard bound (max reach) is hit, or the score start is reached; output = the
+  leading-edge **settled** key stops changing across iterations (settled = not "uncertain" and at-or-above that same
+  confidence minimum), the hard bound (max reach) is hit, or the score start is reached; output = the
   selection only. It rides on Architectural Layer 1's `extend` (now built). It is a **parameter** on `analyzeRegions`
   (`opts.reachBack.enabled`, default false), so the production path stays whole-score and reach-back never fires
   there. The scenarios and glossary below describe the as-built behaviour.)**
@@ -148,8 +187,8 @@ per-window key/mode scorer (reused unchanged); and Architectural Layer 3's own t
 - *Re-decide a sub-range* — re-run the decision over just part of the sequence, holding fixed the key/mode at the
   two ends of that part, so that after a small score edit only the edited neighbourhood is re-decided rather than
   the whole piece.
-**Who uses Architectural Layer 3 (its consumers):** the region analyzer (the code that asks for the key/mode of each
-region); Architectural Layer 4 (it reads each slice's chosen key/mode as a starting assumption for the chord
+**Who uses Architectural Layer 3 (its consumers):** the region analyzer (the orchestrator code that asks for the
+key/mode of each legacy **coarse region** at the wiring seam); Architectural Layer 4 (it reads each slice's chosen key/mode as a starting assumption for the chord
 symbol); and Architectural Layer 5 (function), which settles the cases Architectural Layer 3 marked "uncertain."
 **What Architectural Layer 3 deliberately does not read:** chord symbols, function, cadences, or any already-decided
 key fed back to it.
@@ -185,10 +224,17 @@ Deciding the sequence has four steps:
 1. **Local-fit scoring.** For each slice, score every candidate key/mode using the existing scorer, reading the
    notes in and just around that slice **through the Architectural Layer 1 note model's indexed query** ("which
    notes sound between A and B") — **not** through the older direct-score-walk pitch collector, which would scan the
-   notes from the start each time and bring back the O(N²) cost the indexing was added to remove. Keep only a short
-   list of the best-scoring candidates **plus the key/mode the sequence is currently in** — keeping the current
-   key/mode on the list even when a single slice scores something else higher is what stops a brief excursion from
-   throwing away the established key.
+   notes from the start each time and bring back the quadratic cost (work growing with the square of the number of
+   notes) the indexing was added to remove. **The candidate set for the sequence decision (the as-built rule,
+   verified at `keymodesequence.cpp` `buildLattice`):** take each slice's top-K best-scoring candidates, and form the
+   **union of those top-K sets across all slices** (plus any pinned candidates a sub-range re-decision must keep,
+   §5's last paragraph); every candidate in that union is then available **at every slice**. This is how the
+   established key survives a brief excursion: a key that made the top K anywhere in the run remains selectable at
+   the slices where it locally scored below the top K, so the change cost — not candidate elimination — decides
+   whether the excursion switches the key. *(A per-slice alternative — explicitly injecting only the incumbent
+   decoded key into each slice's list rather than the whole union — is not decidable by argument against the union;
+   ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be resolved by a decode-only A/B at the
+   next Layer-3-touching increment. The union is the as-built and the spec's normative rule until that measurement rules otherwise.)*
 2. **Change cost.** Define the cost of moving from one key/mode to another between consecutive slices: zero to stay;
    otherwise a base "change penalty" plus an amount that grows with how far apart the two keys are, plus an extra,
    large penalty for the relative-major/relative-minor switch specifically.
@@ -199,9 +245,10 @@ Deciding the sequence has four steps:
 4. **Per-slice results.** Read off, for each slice: its chosen key/mode; its ranked alternatives (the other surviving
    candidates); a **confidence** — how much better the winning sequence is than the best sequence that is forced to
    pick a *different* key/mode at that slice; and an **"uncertain" mark** when that confidence is low.
-**Reaching back for more music:** if the opening of the selection has no settled key, Architectural Layer 3 asks
-Architectural Layer 1 to widen the span **earlier in time** and re-decides, until the prevailing earlier key is in
-view or a set limit is reached. **Re-deciding part of the sequence:** the same sweep can be run over a sub-range with
+**Reaching back for more music:** if the opening of the selection is unsettled (the §2 test: the leading-edge slice
+is marked "uncertain" or its confidence is below the configured minimum), Architectural Layer 3 asks
+Architectural Layer 1 to widen the span **earlier in time** and re-decides, until the leading-edge settled key stops
+changing across iterations or a set limit is reached. **Re-deciding part of the sequence:** the same sweep can be run over a sub-range with
 the key/mode at its two ends held fixed, so a score edit re-decides only its neighbourhood.
 
 ## 6. Runtime view (scenarios)
@@ -213,8 +260,9 @@ the key/mode at its two ends held fixed, so a score edit re-decides only its nei
   few slices → the original key/mode is kept.
 - **A real modulation:** the new key persists, so the accumulated better fit repays the change cost → the key/mode
   changes.
-- **A selection that begins in the middle of a passage:** the opening has no settled key → Architectural Layer 3
-  asks Architectural Layer 1 to widen the span earlier in time until the prevailing earlier key is visible.
+- **A selection that begins in the middle of a passage:** the opening is unsettled (the §2 test) → Architectural
+  Layer 3 asks Architectural Layer 1 to widen the span earlier in time until the leading-edge settled key stops
+  changing across iterations.
 - **A small score edit:** only the edited neighbourhood is re-decided, with the key/mode at its two ends held fixed.
 
 ## 7. Data design
@@ -236,9 +284,9 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   architectural layer (Architectural Layer 1) for more music than the user selected; this is separate from the small
   fixed per-slice scoring window.
 - **Ready for a future "effort" preset (quick / normal / ambitious).** The cost-driving choices — the candidate
-  count kept per slice, the scoring- and reach-back-window sizes, and whether to run the optional keyscape
-  refinement — are all **settings**, not hardcoded constants, and the keyscape refinement is a **separable on/off
-  stage**. So a future effort preset can scale them without changing this layer's structure (it is added after the
+  count kept per slice, the scoring- and reach-back-window sizes, and whether to run the optional **keyscape**
+  refinement (a multi-timescale key picture — Sapp's keyscapes, cited in Section 14) — are all **settings**, not
+  hardcoded constants, and the keyscape refinement is a **separable on/off stage**. So a future effort preset can scale them without changing this layer's structure (it is added after the
   implementation can be profiled). Routing the per-slice scoring through Architectural Layer 1's indexed query is
   *not* an effort dimension — it is the correctness/performance floor; effort scales only the optional work above it.
 
@@ -268,17 +316,22 @@ confidence level below which a slice is marked "uncertain" — are tunable value
 - **Compared against human analyses (the main judge).** Architectural Layer 3 is the first architectural layer that
   can be compared against human ground truth, because published Roman-numeral analyses state a local key/mode for
   every position. We compare Architectural Layer 3's key/mode against those, on a **held-out set of pieces it was
-  not tuned on**. The bar: full agreement on the cases where the human analyses are unambiguous; on the genuinely
-  ambiguous cases, either Architectural Layer 3's answer is among the defensible readings or it marked the case
-  "uncertain."
+  not tuned on**. The bar, with its partition stated: a case counts as **unambiguous** when the ground-truth
+  annotation gives a single local key/mode there, records no alternative reading, and (where more than one published
+  analysis covers the piece) the analyses agree; every other case — a recorded alternative reading, disagreeing
+  published analyses, or a modal passage the major/minor-only ground truth cannot represent (§1) — counts as
+  **genuinely ambiguous**. On the unambiguous cases the bar is agreement with the single reading; on the ambiguous
+  cases the bar is met when the layer's answer equals **one of the recorded readings** (that is what "defensible"
+  means here) or the case is marked "uncertain."
 - **Behaviour tests** (independent of the scorer): a single-key passage stays one key; a relative-pair near-tie is
   resolved consistently; a brief excursion stays; a sustained excursion switches; a near modulation is preferred to
   a remote one when the note evidence is equal.
 - **Scenario, consistency, and determinism tests:** the Section 6 scenarios including reach-back; re-deciding a
   sub-range gives the same result as that part of a full decision; the same input always gives the same output.
   Every branch of the code is exercised.
-- **Safety net (a hard stop):** the project-wide accuracy metric must not get worse on either of the two tuning
-  presets; the pinned analysis snapshots are refreshed only after a change is confirmed correct.
+- **Safety net (a hard stop):** the project-wide accuracy metric (the two-tier bass-is-root corpus gate, §0) must
+  not get worse on either of the two tuning presets (Baroque, Jazz); the pinned analysis snapshots (§0) are refreshed
+  only after a change is confirmed correct.
 - **Two quality goals, measured separately.** (1) *Accuracy on the resolvable cases* — agreement with the human
   analyses where the notes decide; and (2) *calibration of uncertainty* — whether the "uncertain" mark and the
   confidence actually land on the genuinely ambiguous slices (a reliability curve over confidence; the precision and
@@ -327,7 +380,8 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   of the misses, so the dominant remaining error is selection, not coverage.
 - **★ Brittle leading-tone presence-gate — a non-Bach key regression (diagnosed 2026-06-25; verified at source).** The
   characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a `>0.1` window weight
-  (`keymodeanalyzer.cpp:344,374`): a key's leading tone that is *present but weak* (below the gate) is treated as
+  (`keymodeanalyzer.cpp`, the char/leading-tone term gates — cited by function per the no-raw-line-numbers policy): a
+  key's leading tone that is *present but weak* (below the gate) is treated as
   **absent**, so the key is denied its anchors *and* penalized. On the Mozart K279 opening the C-major leading tone
   (B♮) carries weight **0.093** — a hair under the gate — so C major is flipped to **F major** (whose leading tone E
   is C's ever-present third). The old 24-beat resolver cleared the gate; the wired 4-beat window does not, and the
@@ -335,22 +389,28 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   non-Bach-opening fragility**, structurally **invisible to the Bach-only BIR gate** (the notation tests are the guard
   that caught it). The **scale-membership lever does NOT fix it** (measured: 15× the scale penalty never flips F→C —
   the char/lt terms are *presence-gated*, not weight-scaled). **Fix = de-brittle the gate (weight-scale the char/lt
-  terms); a Layer-3 emission increment scheduled for **Phase B (B2)** of the stabilization plan — leading-tone
-  de-brittling is inference-quality, behind the inference firewall, *not* the Phase-4 tpc-capability foundation —
+  terms); a Layer-3 emission increment scheduled for **Phase B, item B2** of the stabilization plan
+  (`cowork_l1l3_stabilization_plan.md`) — leading-tone de-brittling is inference-quality, behind the inference
+  firewall (§0), *not* the Phase-4 tpc (tonal pitch class, §0) capability foundation —
   not a foundation patch.** Full diagnosis: `cc_keyregression_diagnosis_report.md`.
 - **One key/mode fix is deferred to wiring.** The fix for the stable-region under-weighting is a change to the shared
   per-window scorer; because that scorer is also used by the current per-region resolver, changing it now would move
   production output, so it is specified and deferred to the wiring increment — when the decoder replaces the resolver
   and the scorer can be tuned once for both.
 - **The decoder-private settings are exhausted (sweep, 2026-06-22).** A bounded sweep of every decoder-private
-  setting found none that moves the clean set net-positive: widening the per-slice window recovers stable regions but
-  destroys modulation tracking; lowering the change cost is net-negative on Baroque (a Jazz-only gain that would need
+  setting found none that moves the **clean set** (§0; the fixable-within-key/mode miss subset defined in
+  `cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `cc_layer3_sweep_report.md`. Widening the
+  per-slice window recovers the **stable measurement category** (the grading corpus's spans whose ground-truth key is
+  constant) but destroys tracking on the **modulation category** (spans containing a ground-truth key change);
+  lowering the change cost is net-negative on Baroque (a Jazz-only gain that would need
   preset-conditioning the decoder settings — deferred); the candidate count is already saturated; the
   alternatives-kept count is output-only. So the bounded-headroom fix is **not** a decoder knob — it is the one shared
   lever below.
-- **The identified shared-scorer lever, measured.** The stable-region under-weighting is carried by the scorer's
+- **The identified shared-scorer lever, measured.** The stable-category under-weighting is carried by the scorer's
   *scale-membership* term, not its (inert) leading-tone term. Sharpening the out-of-candidate-scale penalty lifts
-  *both* stable and modulation accuracy with no trade-off (measured decode-only, +57…+73 Baroque / +38…+68 Jazz);
+  *both* stable- and modulation-category accuracy with no trade-off (measured decode-only on the held-out test set at
+  coarse-region granularity: a net +57…+73 regions corrected on Baroque / +38…+68 on Jazz, depending on the sharpen
+  step — `cc_layer3_sweep_report.md` §3);
   raising the leading-tone weight instead collapses accuracy. This is the change handed to the wiring increment, where
   it is applied once to the shared scorer and must clear the project BIR gate and the snapshots (its production-side
   magnitude is a wiring-time calibration; only its direction is validated so far).
@@ -364,7 +424,9 @@ for each slice, read left-to-right in time, chosen as one whole. **Change cost**
 key/mode from one slice to the next; sized by **circle-of-fifths (key-signature) distance** between the two keys (plus
 a large extra penalty for the relative-major/minor switch), and expressed in the **same units as the local-fit score**
 so the two combine on one scale. **Best-sequence algorithm** — the standard one-pass method for finding the
-single highest-scoring sequence given per-slice scores and change costs. **Confidence (sequence margin)** — how much
+single highest-scoring sequence given per-slice scores and change costs; this is the literature's **Viterbi**
+dynamic-programming decode (Section 14), named plainly in the body. **Carried (alternatives)** — the ranked
+runner-up key/modes each slice keeps and hands forward so a later layer can select among them without re-deriving. **Confidence (sequence margin)** — how much
 better the winning sequence is than the best sequence forced to pick a different key/mode at that slice. **"Uncertain"
 mark** — set on a slice whose confidence is low (a near-tie). **Reach-back** — asking Architectural Layer 1 to widen
 the analysed span earlier in time to gain context.
@@ -374,7 +436,8 @@ the analysed span earlier in time to gain context.
 - **What it replaces:** the current per-region key/mode resolver — it picks the single best key/mode for one coarse
   region at a time, with a small "don't flip too easily" margin and a fixed look-back/look-ahead window. Deciding
   one region at a time is the measured ceiling on relative-pair and modulation accuracy (the held-out baseline it
-  must beat is roughly 87% on the Baroque test set and roughly 61% on the Jazz test set).
+  must beat — measured as key/mode agreement with the human Roman-numeral analyses on the held-out split, Section 10 —
+  is roughly 87% on the Baroque test set and roughly 61% on the Jazz test set).
 - **Correction — an early draft put chord symbols before key/mode.** That was wrong: it confused "key-finding
   benefits from harmonic evidence" with "key-finding needs the chord-symbol layer." Key/mode depends only on the
   notes.

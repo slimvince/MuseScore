@@ -1,6 +1,49 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-02 (Cowork docs-only: **the external architecture review is DELIVERED and its amendments RATIFIED** — see the note at the top of the block immediately below).*
+*Written 2026-05-14. Last updated 2026-07-03 (session 22b — **THE MERGED DOC PASS IS EXECUTED** ✅; §15-12 RATIFIED;
+CC's mid-increment STOP on the sibling-test ripple was RULED (see STATUS 22b — no resolver change; the
+preference-among-licensed lever deferred to Stage-5, recorded as L5 §15-13). The ACTIVE dispatch is
+`cc_instruction_grammar_completion.md` **+ its addendum `cc_instruction_grammar_completion_addendum.md`**, executed
+together. Next Cowork session: verify CC's completed report at objects — re-read BOTH instruction files first —
+then resume the ratified order: voice-leading-axis research / corpus Wave 2 / Stage-5 calibration prerequisites).*
+
+## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
+
+**All five items ran** (full record: STATUS.md session 22): the 154-finding polish (every HIGH source-verified; §0
+TERMS tables added to L1/L1.5/L2/L3/L4/dictionary), the span-family rename propagated everywhere incl. ARCH §2.15
+body + target_architecture (chord-span · pedal-point-span · progression-schema-span · section-/voice-leading-span ·
+cadential scope kept), A-1 typology adoption + A-3 confidence declarations + the target_architecture:44 re-point,
+**§15-12 RATIFIED (user)** with the spec flipped in-force and the small dormant CC increment **dispatched**
+(`cc_instruction_grammar_completion.md` — also carries the rider to fold this session's uncommitted doc edits into
+the `docs(cowork):` commit, discharging item 5). **Give CC that instruction; on its report, re-read the instruction
+first, verify at objects, then the queue resumes per the ratified order.**
+
+## ★★★ THE MERGED DOC PASS (user "go", 2026-07-02; full work list — ✅ EXECUTED 2026-07-03, kept as the record)
+
+**Read first:** STATUS.md sessions 21a–21q (the day's full arc), `cowork_design_doc_template.md` (BOTH writing-
+standard sections — the razor, sharpened ×3 by the user this day), the two inventories
+`cowork_spec_polish_findings_a.md` (L1/L1.5/L2/L3 — 67 rows, 15 HIGH) + `_b.md` (L4/L5/L6/dictionary — 87 rows,
+6 HIGH). The user's razor examples to internalize: "Prinner" undefined; "carried reading"; "iff"; "multi-chord
+functional knowledge"; "higher-order/skip-grams"; "key evidence" (key=tonality vs important); "confident slice".
+
+**The work list (ONE pass, all seven layer specs + dictionary + ARCHITECTURE):**
+1. **The 154-finding polish** per the inventories (HIGHs first: L3 "currently in" three-readings; the phrase-doc
+   §9-vs-§4.4 contradiction + dangling "eligible voice" cite; L4 pin-vs-defer predicates; the dictionary match
+   relation; L5 §12 five-vs-six kinds). Add a **§0 TERMS table to every spec lacking one** (all but L6/L5-partial);
+   apply the multiple-meaning-words rule (template standard 5) everywhere.
+2. **The confirmed span-family rename** (ARCH §2.15 carries the ✅ table): harmonic region→**chord-span** ·
+   pedal→**pedal-point-span** · section-/voice-leading-span · latent sequence-span→**progression-schema-span** (D6;
+   also the L6 `SchemaSpan` wording, consumer report U4) · cadential scope KEPT (stated exception). Propagate through
+   every spec + ARCH §2.15 body.
+3. **A-1 typology adoption** in the six older specs (each names its span in §2.15 terms) + the A-3 in-body
+   confidence class-declarations (L3/L4) + `cowork_target_architecture.md:44` re-point.
+4. **The L5 §15-12 / §5.0 grammar-completion amendment is DRAFTED in the L5 spec (ratification-gated)** — get the
+   user's ratification, then write the small dormant CC increment (extend `isLicensedProgression` + tests; the
+   consumer's D5 known-gap list empties + test tightens).
+5. Fold the accumulated uncommitted Cowork edits (STATUS 21j–21q, ARCH, template, design docs, findings files) into
+   the next CC docs commit when natural.
+**After the pass:** the ratified order resumes — voice-leading-axis research / corpus Wave 2 / Stage-5 calibration
+prerequisites (per the roadmap's ratified-amendments + engage blocks).
 
 ---
 

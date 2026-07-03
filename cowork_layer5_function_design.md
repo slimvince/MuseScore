@@ -59,7 +59,8 @@ anchored by cadences — and that evidence is exactly what distinguishes the rea
 - **Spelling-aware where, and only where, the distinction is a spelling distinction.** Two function labels are
   pitch-class-identical and separable only by notated spelling and resolution (the German augmented sixth versus the
   dominant seventh; an applied leading-tone's secondary leading tone). For these the layer reads the notated spelling
-  through the one shared spelling interpreter. Elsewhere it does not depend on spelling.
+  through the one shared spelling interpreter — the Layer-1.5 spelling view cited in §3, the same derived view every
+  layer reads spelling through. Elsewhere it does not depend on spelling.
 - **Build it right, do not tune it.** This document specifies the *mechanisms and their defining rules*. The numeric
   calibration of any threshold or weight on hard cases is deferred to the precision-tuning phase (the firewall). A rule
   here states *what* evidence decides a case and *in which direction*; it does not fix the exact constant.
@@ -78,7 +79,9 @@ layer builds — see §15-0); the rest are already defined where cited.
   **named open question** (which axis is in dispute — root or quality — and the kind of ambiguity), and the **confidence**
   components.
 - From Layer 3 (defined in the Layer-3 spec): the prevailing **local key and mode** over the region, carried with its own
-  ranked alternatives and uncertainty (the override-readiness forward-carry).
+  ranked alternatives and uncertainty — the carry that makes the §8 override possible, since an override *selects*
+  among carried alternatives and needs the incumbent's uncertainty to scale its bar (this document's name for that
+  carry: the override-readiness forward-carry).
 - From Layer 1 (defined in the Layer-1 note-model spec): the per-note **notated spelling** (also the shared Layer-1.5
   spelling view), each note's **voice**, and the **bass** of each slice (the lowest sounding note).
 - **[earlier-layer prerequisite] The metric weight of each slice.** The Layer-2 spec defers it ("derived on demand by the
@@ -93,7 +96,8 @@ layer builds — see §15-0); the rest are already defined where cited.
   that **also coincides with a structural score boundary** — a double bar, a repeat mark, or the end of the piece — used
   only as the section-end salience cue in §5.2.)
 
-**Produces.** The output conforms to a **named standard at full completeness — the DCML harmony-annotation standard (and
+**Produces.** The output conforms to a **named standard at full completeness — the DCML (Digital and Cognitive
+Musicology Lab) harmony-annotation standard (and
 its RomanText interchange form), the convention our ground-truth corpora use — with no simplification.** "No
 simplification" is a rule, not an aspiration: wherever the standard defines a fuller label, the layer emits the fuller
 label and never a reduced stand-in. Where the standard admits variants (e.g. the Neapolitan as `bII6`; the cadential
@@ -154,19 +158,24 @@ precede resolution.
 ### 5.0 Shared definitions (the terms the rules below stand on)
 These five concepts are used throughout §5 and are defined here once so no rule rests on an undefined word.
 
-- **The span family (per the architecture span-typology contract, target-architecture §2).** Layer 5 works over the
-  **slice** — the atomic chord-rhythm unit (one committed chord + one assigned local key, the *harmonic region*) — and
+- **The span family (per the architecture span-typology contract, ARCHITECTURE.md §2.15).** Layer 5 works over the
+  **slice** — the atomic chord-rhythm unit (one committed chord + one assigned local key; a maximal run of same-chord
+  slices is the typology's **chord-span**, the member formerly named *harmonic region*) — and
   groups slices in **distinct** ways that must not be conflated under one word "region":
   - **Key-span** — a maximal run of slices in **one local key**, bounded by a key change (establishment + cadence
-    confirmation). It is the unit a **confirmed modulation re-reads (§5.4)** — the as-built `LocalKeySpan` (a cadence
-    confirms it iff the cadence's arrival falls inside it). A key-span **cross-cuts** punctuation-spans (a key change may
+    confirmation). It is the unit a **confirmed modulation re-reads (§5.4)** — the key-span record of the as-built
+    (identifier in §13); a cadence
+    confirms a key-span **if and only if** the cadence's arrival falls inside it. A key-span **cross-cuts**
+    punctuation-spans (a key change may
     fall mid-span); it is **not** punctuation-span-bounded.
   - **Decision-context span** — the bounded run of slices Layer 5 analyses together: the scope of the **cadence tonic-vote
     (§5.2)**, the reach of a **slice's resolution look-ahead (§5.5)**, and the span across which **the progression** and a
-    slice's **prevailing harmony** are read. It is bounded by a **look-ahead window** (≈ the phrase — far enough to reach
+    slice's **prevailing harmony** are read. It is bounded by a **look-ahead window** (≈ one punctuation-span's extent
+    — far enough to reach
     the cadence a few slices later); it carries **no single-key assumption**. **Its extent is PINNED (2026-07-02,
     superseding the former engagement-time pin of §15-3):** the span extends forward until the FIRST of **(i)** a
-    cadence-anchored function, **(ii)** a punctuation boundary (the L1.5 picked tick), **(iii)** the hard bound of `K`
+    cadence-anchored function, **(ii)** a punctuation boundary (the boundary tick the Layer-1.5 phrase-boundary
+    primitive selects by peak-picking, `cowork_phrase_boundary_design.md` §4.4), **(iii)** the hard bound of `K`
     slices / `B` beats (settings, the safety cap). A decision whose span is cut by the **selection edge** before any of
     (i)–(iii) holds fires this layer's **extension request** per the one cross-layer extension spec
     (`cowork_bounded_context_design.md` §5 — discovery rule, denial provenance, §8-no-reopen under extension re-runs).
@@ -178,7 +187,7 @@ These five concepts are used throughout §5 and are defined here once so no rule
     analysis unit.
   *(Correction, 2026-06-29, Layer-6 review: the prior wording defined a single phrase-bounded "region carrying one
   prevailing key", which collapsed these three spans and wrongly forbade a mid-phrase key change. Verified at the
-  as-built: §5.4 operates on the key-span (`LocalKeySpan`), §5.2/§5.5 on the decision-context span, and the slice carries
+  as-built: §5.4 operates on the key-span record (§13), §5.2/§5.5 on the decision-context span, and the slice carries
   the key at chord-rhythm granularity.)*
 - **Prevailing harmony (of a slice).** The committed chord (from Layer 4) of the nearest **metrically-strong** slice at or
   before the slice in question, within the same region — the harmony a passing/neighbour figure is heard against.
@@ -190,7 +199,16 @@ These five concepts are used throughout §5 and are defined here once so no rule
   next **cadence-anchored** function (a chord whose function a cadence has fixed, §5.2).
 - **A licensed (real) progression.** A **root motion** between two functions is **licensed** when it is one of the standard
   functional successions: a descending-fifth (dominant) motion, a descending-third or ascending-second functional step,
-  the resolution of an applied or leading-tone chord to its tonicized target, or a cadential motion (§5.2). A reading
+  the resolution of an applied or leading-tone chord to its tonicized target, or a cadential motion (§5.2).
+  **(§15-12 AMENDMENT — RATIFIED (user, 2026-07-03); in force in this spec, not yet in code):** the pre-amendment
+  set descended from the old scoring-bonus signals and omitted three theory-licensed motions the catalog's
+  musically-correct
+  entries exercise; the licensed set now **also includes**: **the ascending fifth** (tonic→dominant and plagal
+  motion — I→V, IV→I), **the descending second** (the Phrygian/Andalusian step — i→♭VII, ♭VII→♭VI, ♭VI→V), and **the
+  diatonic diminished fifth** (the IV→viiᵒ link of the full circle of fifths). Implementation = its own small dormant
+  increment (`isLicensedProgression` + tests, instruction pending dispatch); the consumer's D5 consistency test then
+  empties its 11-motion known-gap list and tightens to the clean assert. Until that increment lands, the code
+  implements the pre-amendment set — a known, ruled spec-ahead-of-code state. A reading
   "participates in a real progression" when its function forms a licensed motion **into** the established next function.
   (Because the test is on *root motion*, a **same-root quality resolution** — e.g. an augmented chord resolving to a chord
   on the same root — is **not** a progression and is outside this test; such voice-leading events are a chord-layer /
@@ -242,11 +260,15 @@ content. The rules:
     as "V→I" (for a I→IV in C it makes E the "leading tone" of F and E→F a resolution). So the leading-tone-resolution
     event **does NOT by itself discriminate authentic from tonic-to-subdominant** — that needs the key, which this detector
     is *informing*. By design this is **resolved downstream, not here:** (i) the **seventh/tritone**, when present, is a
-    position-independent dominant signature (admits robustly); (ii) the **phrase gate** removes the *common* false positive
+    position-independent dominant signature (it admits the cadence regardless of inversion or voicing position);
+    (ii) the **phrase gate** removes the *common* false positive
     (a passing I→IV is mid-phrase, not at a phrase boundary); (iii) the **residual** — a plain I→IV that happens to fall at
     a phrase boundary (rare) — casts only a **weak soft tonic-vote the key layer's aggregation absorbs** against the
-    home-signature pull and the genuine cadences. The cadence detector casts soft evidence; the authentic-vs-passing
-    disambiguation is a **key-layer** judgement (the cadence-anchored-key model). The **bass scale-degree five-to-one is the
+    key layer's prior toward the notated key signature (the weak signature hint of the Layer-3 spec §2) and the
+    genuine cadences. The cadence detector casts soft evidence; the authentic-vs-passing
+    disambiguation is a **key-layer** judgement — the aggregation, in the key layer, of the §5.2 tonic-votes that
+    cadences cast (this document's name for that consumption: the cadence-anchored key model). The **bass scale-degree
+    five-to-one is the
   *perfect* criterion, not the family gate** (an inverted authentic cadence does not have it). Within the family the
   perfect/imperfect distinction is the **bass-derived inversion criterion**; the **outermost-voice criterion is not a hard
   test** (the §5.2 amendment, note below):
@@ -310,15 +332,20 @@ the rule **defaults to tonicization** — the home key holds — consistent with
 continuum; a tonicization-versus-short-modulation **disagreement that falls within this break-even band** is, as an
 **evaluation policy** (not a machine rule), not counted against the analyzer — there is no single correct answer in the
 band. This is also the layer at which the **notated-spelling key signal** is consumed: spelling **indicates a key change**
-when the slice's notated accidentals are **sustained and consistent with the candidate key's diatonic set (its key
+when the slice's notated accidentals are **sustained — persisting across successive slices (how many is a tunable
+constant; the structure, persistence-across-slices, is fixed here) — and consistent with the candidate key's diatonic
+set (its key
 signature)** rather than passing chromatic inflections of the home key — and even then it is admitted only **as one input
 to condition (a)/(b) above, gated by function**, rather than in the key layer where (as measured) the same signal helps
 modulation regions but harms stable ones.
 
-*(Step-4 build, 2026-06-26 — reuse + one Step-M check.) §5.3/§5.4 are built by **reusing** the dormant
-`localmodulationdetector` (the established + cadence-confirmed span substrate) and Step-3's `forwardoverride` (the §8
-recompute), not a re-implementation. Two realisations on record: the **persistence hysteresis is layered on the
-detector's committed spans**, keeping the detector's `kEstablishmentMinChords` establishment floor as a **candidate
+*(Step-4 build, 2026-06-26 — reuse + one Step-M check; the Step numbers are the build plan's increments,
+`cowork_phase5c_l5_build_plan.md`, Step M = its measurement step.) §5.3/§5.4 are built by **reusing** the dormant
+**modulation-span detector** (the established + cadence-confirmed span substrate) and Step-3's **forward-recompute
+unit** (the §8
+recompute), not a re-implementation (identifiers in §13). Two realisations on record: the **persistence hysteresis is
+layered on the
+detector's committed spans**, keeping the detector's **minimum-chords establishment floor** as a **candidate
 pre-filter** — so the §5.3 "not a fixed count" rule is honoured at the **decision** level (the hysteresis decides among
 candidates), with the fixed floor a conservative pre-filter only; **Step-M check:** measure whether that floor ever
 rejects a real short modulation the hysteresis would have admitted. And the **§8 contradiction strength for the
@@ -367,13 +394,25 @@ ambiguity kinds Layer 4 carries forward; this layer adds no new kind):
 - **Symmetric-rotation** (competing rotations of a symmetric sonority — a diminished-seventh or augmented chord whose
   spelling Layer 4's pin could not fix): select the rotation that **resolves as a licensed leading-tone or applied chord
   to its target** (the resolution context — §5.0 — names which root the symmetric sonority is functioning as), or that the
-  cadence pins. Where no rotation forms such a resolution, the case is genuinely undecidable (the gate-policy class-(a):
-  pitch-class-undecidable, and function finds no resolution either) → **carry the honest open mark** (§7); do not guess a
+  cadence pins. Where no rotation forms such a resolution, the case is genuinely undecidable (the gate policy's
+  **class-(a)** — pitch-class-undecidable, the tolerated-churn class paired with the §12 class-(b) row — and function
+  finds no resolution either) → **carry the honest open mark** (§7); do not guess a
   rotation. *(This is rare in practice — the measured symmetric-rotation share reaching this layer is ≈0%, the dim7 churn
   having dissolved by abstention earlier; the rule exists for completeness.)*
 
 Where the function evidence does not decide a case either, the layer does not invent a decision: it records the residual
 as an honest open mark (carried to display), consistent with the principle that an unverifiable judgment is not made.
+
+**The both-licensed case under the completed grammar (ruled 2026-07-03, at the §15-12 increment).** The share-tone
+and transition rules above select by the licensed-progression test **only where it separates the readings** — where,
+under the §15-12-completed grammar, **both** competing readings form licensed motions into the established next
+function, the progression rule deliberately does not select: the case falls to the stated structural steps (the
+transition rule's passing-within-the-prevailing-harmony arm, then the §5.7 soft prior) and, where those do not
+separate it either, to the honest open mark. This is not a defect but §5.0's own boundary — *"the numeric preference
+among licensed readings is a precision-phase weight; the licensing itself is the rule here"* — the preference order
+among licensed motions is the named precision-phase lever (§15-13), not a rule of this phase. Completing the grammar
+narrowed the binary test's separating power exactly as that sentence anticipates; the pre-amendment resolutions that
+rested on a motion being *missing from an incomplete grammar* were artifacts, not evidence.
 
 **The same selection machinery serves the override of a *confident* commit (the §8 case-4 channel).** When Layer 4
 **confidently committed** a fine-grain reading that the established function and cadence contradict (the class-(b)
@@ -381,20 +420,24 @@ override duty, §10), the layer does not abstain-resolve it — it **overrides**
 **selects the corrected reading from the carried alternatives or the prevailing harmony (§5.0) of the adjacent committed
 slices within the region** (the "neighbouring committed harmony"), never re-deriving, the override firing per the
 confidence-weighted threshold of §8. So this section is the home of selection-among-carried-
-readings for **both** the abstained slices (the §8 case-2 menu resolution) and the confident-commit override (case 4).
+readings for **both** the abstained slices (§8 case 2) and the confident-commit override (case 4).
 *(Step-3 build + Step-M check, 2026-06-26: the override is scoped to Layer-4 **`Commit`** decisions ("confidently
-committed"). The §10 class-(b) duty was measured as **61 Commit / 25 Inherit**; whether the 25 **Inherit** class-(b) cases
+committed"). The §10 class-(b) duty was measured as **61 cases where Layer 4 committed and 25 where it inherited**;
+whether the 25 **inherited** class-(b) cases
 are driven to zero by the Commit-override **plus cascade** (an Inherit that borrows a now-corrected commit), or whether
 the override must **extend to Inherit**, is a **Step-M measurement** — not extended speculatively here. If Step M shows an
 Inherit class-(b) residual, broaden the override to confidently-decided = {Commit, Inherit}.)*
 
 *(Carry-fix 2, 2026-07-02 — **the emitted reading IS the selected source's committed identity, VERBATIM**. Selection
-"never re-derives" (D4) applies to the emitted STRUCT too, not only to the choice: the resolver must not rebuild a
+"never re-derives" (D4) applies to the emitted reading **record** too, not only to the choice: the resolver must not
+rebuild a
 reading field-by-field from the §5.0 progression projection (root+quality), which would flatten the committed
-bass/inversion and the carried seventh/extensions. So — pass-through (a standing Commit/Inherit) emits the slice's own
-`chosen` verbatim; a neighbour-selected override emits that NEIGHBOUR's committed identity as-is (its own bass — a
+bass/inversion and the carried seventh/extensions. So — pass-through (a standing commit or inherit) emits the slice's
+own selected reading verbatim; a neighbour-selected override emits that NEIGHBOUR's committed identity as-is (its own
+bass — a
 neighbour-root/this-slice-bass hybrid is not a carried candidate, so it is not synthesized); an abstain resolution emits
-the selected carried reading (readingA/readingB/alternative) verbatim, honest-carry `extensionsKnown=false` states
+the selected carried reading verbatim — whichever of the two carried readings or ranked alternatives was selected —
+honest-carry "extensions unknown" states
 included. The `Progression`/`ProgressionChord` substrate stays minimal `{root, quality}` — the widening is at the emitted
 READING, carried alongside on the slice, not in the licensing grammar.)*
 
@@ -432,10 +475,12 @@ match any earlier label.
     **tonicized** (a cadence or prolongation in it) versus merely the next diatonic chord — the §5.3/§5.4 tonicization-vs-
     tonic arbitration plus the §5.5 resolver. This is an **inference-layer** resolution, deferred with those layers; the
     structural applied trigger emits the applied reading for a tonic-rooted dominant of a diatonic degree, and §5.3–§5.5
-    correct it in context. (Step-M finding, 2026-06-29: the reused `tonicizationlabeler` emits `V/iv` for the major tonic
-    before `iv` in 62/29/56 units — a known over-trigger whose resolution is the function context, not the guard. An
+    correct it in context. (Step-M finding, 2026-06-29: the reused applied-chord labeler (§13) emits `V/iv` for the
+    major tonic
+    before `iv` in 62 / 29 / 56 analysis units on the Baroque / Jazz / Default presets respectively — a known over-trigger whose resolution is the function context, not the guard. An
     earlier framing of this as a "fully-diatonic guard gap" was a **corrected error** — the chord is not diatonic.)
-    - **Source-level proof the guard cannot fix it (L5-close review D1, 2026-06-29).** A labeler-fired applied chord
+    - **Source-level proof the guard cannot fix it (the L5-close review, `cc_phase5c_L5_close_review.md`, decision D1,
+      2026-06-29; D2/D3 below are the same review's).** A labeler-fired applied chord
       *always* carries a tone foreign to the home-key collection — over the **same** collection mask the foreign-tone
       guard uses — so hoisting the guard ahead of the labeler's early-return would reject **nothing**: the placement is
       provably **inert**. This converts the deferral from a judgment call into a proof — the correction is genuinely an
@@ -444,11 +489,14 @@ match any earlier label.
       appears at other targets (e.g. `V/VII` versus an inline `IV6` at `bwv272@9120`). All are the same inference class
       (a structural applied emission the function context must correct); enumerating the full class is a measurement-
       completeness task for the inference phase, not a new structural defect.
-  - **Divergence from the legacy inline path is a Phase-5d / Step-M reconciliation, not a pre-judgment.** The production
-    `formatRomanNumeral` inline path emits applied labels **without** this chromatic guard, so it over-emits on the
+  - **Divergence from the legacy inline path is a Phase-5d / Step-M reconciliation, not a pre-judgment** (Phase 5d =
+    the build plan's deferred production-engagement phase, `cowork_phase5c_l5_build_plan.md`/the roadmap). The
+    production
+    inline Roman-numeral formatter path emits applied labels **without** this chromatic guard, so it over-emits on the
     genuinely-diatonic case (it would write `V7/III` for the diatonic `bVII7→III`). The unified dormant emitter is *more*
     correct there (the guard rejects it), so the two paths diverge on that case. Because the unified emitter is dormant (no
-    production consumer), this is **byte-identical now**; whether each divergence is the right call is **measured at engage
+    production consumer), this is **byte-identical now** — production output is unchanged byte-for-byte; whether each
+    divergence is the right call is **measured at engage
     against the DCML ground truth** (Step M / Phase 5d), never decided by either path's say-so.
 - **Neapolitan**: a major triad on the **lowered second degree**, conventionally in first inversion; a chromatic
   pre-dominant, written as the lowered-second-degree chord (the local key is unchanged).
@@ -498,7 +546,8 @@ above (grouping/display) is the Roman numeral plus the cadence and key markers p
 
 **The carried chord identity is emitted VERBATIM (carry-fix 2, 2026-07-02).** "Additive, does not replace" is literal at
 the struct level: the reading this layer emits for a slice is the *selected source's committed identity carried whole*
-(root + quality + committed **bass/inversion** + the L4→L5 carried **extensions**/`naturalFifthPresent`/`extensionsKnown`),
+(root + quality + committed **bass/inversion** + the Layer-4-carried **extensions** with their natural-fifth and
+extensions-known flags),
 never a reconstruction from the §5.0 `{root, quality}` progression projection. A standing commit emits its own `chosen`;
 a neighbour-selected override emits that neighbour's identity as-is; an abstain resolution emits the selected carried
 reading — honest-carry `extensionsKnown=false` (unknown, not asserted-absent) states included. This is what lets the
@@ -506,11 +555,13 @@ downstream base Roman numeral render the figured-bass inversion (65/43/42) and t
 identity Layer 4 actually committed. See §5.5.
 
 **D-L5a — the function confidence is published in a boundary form (confidence-contract close-out, 2026-07-02).** The
-function confidence's internal `combined` is an **unbounded** additive of its three components (observed to ~25 on the
-E0 spine), but the cross-layer confidence contract (`cowork_confidence_contract.md` §5 R5 / U2) requires a
+function confidence's internal `combined` is an **unbounded** additive of its three components (observed to ~25 on
+**E0** — the dormant full-spine pre-engage measurement run, `cc_e0_fullspine_report.md`), but the cross-layer
+confidence contract (`cowork_confidence_contract.md` §5 R5 / U2) requires a
 layer-boundary confidence to be **[0,1]** so a downstream consumer that reads it as a *comparison input* operates on a
-commensurable quantity. So the unit additionally publishes **`combinedBoundary = combined / (combined + k)`** — a fixed
-**monotone** rational squash into **[0,1)**, `k` a precision-phase constant (default 1.0, **not** tuned). `combined`
+commensurable quantity. So the unit additionally publishes a **boundary form** — a fixed **monotone** rational squash
+of the internal value into **[0,1)**, with one precision-phase constant (default 1.0, **not** tuned; the exact formula
+is recorded in the confidence contract and §13). `combined`
 itself is unchanged (the internal working value); the boundary form is purely representational and changes **no**
 decision. As-built note: the current §8 override sites compare **L3 key** and **L4 composite** incumbents (contract
 §4 frames F-A / F-B) — both already bounded — against cadential-weight / plausibility-margin contradictions; **none**
@@ -526,10 +577,11 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
   evidence are reconciled follows one four-case model:
   1. **Later evidence agrees with a confident earlier inference → reinforce** (the agreement raises the joint
      confidence; e.g. a cadence confirming the already-chosen key).
-  2. **Earlier layer was uncertain and said so → select** among the readings it carried forward (the menu resolution,
-     §5.5).
+  2. **Earlier layer was uncertain and said so → select** among the readings it carried forward (the
+     selection-among-carried-readings of §5.5).
   3. **Earlier layer was uncertain and the later evidence still cannot decide → carry** the residual honestly to display.
-  4. **Later evidence contradicts a *confident* earlier inference → override iff the contradiction is decisive.** The
+  4. **Later evidence contradicts a *confident* earlier inference → override if and only if the contradiction is
+     decisive.** The
      later evidence overturns the confident commit **only when its strength crosses a threshold that scales with the
      earlier layer's confidence** — a well-founded confident commit demands decisively stronger contradicting evidence
      than a borderline one. This is what makes confidence do real work: it sets the *bar to overturn*, not an absolute
@@ -550,7 +602,7 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
   spends its effort on good forward evidence (calibrated confidence + ranked alternatives), not on cycling.
 - **Spelling is read only where the distinction is a spelling distinction** (§5.6 German sixth; the applied secondary
   leading tone). Reading spelling everywhere would re-introduce a second spelling interpreter; the layer reads through the
-  one shared interpreter, and only for the labels that require it.
+  one shared interpreter (the Layer-1.5 spelling view, §2/§3), and only for the labels that require it.
 - **Uncertainty is carried, not erased.** Where neither the notes, the key, nor the function decide a case, the honest
   residual is preserved to display. The layer resolves what its evidence resolves and marks the rest.
 - **The firewall.** Mechanisms here are specified by rule and direction; their numeric calibration is the later precision
@@ -599,7 +651,9 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
 ## 10. Quality & testing
 - **The metric is combined Roman-numeral accuracy and correct resolution**, judged against the reference corpora, plus
   the **correct-abstention** principle the lower layers established (resolving what is resolvable and honestly marking the
-  rest beats guessing). Coverage is not the goal; coverage-matched accuracy and correct residual-marking are.
+  rest beats guessing). Coverage is not the goal; **coverage-matched accuracy** — accuracy compared at an equal
+  answered fraction, abstentions held equal, so a system cannot buy accuracy by refusing to answer — and correct
+  residual-marking are.
 - **Cadence detection is measured by precision and recall per type**, with the standing caveat — established across the
   literature — that the **half cadence is the weakest** and is held to a correspondingly modest bar.
 - **The class-(b) override duty:** the fine-grain wrong commits projected at engagement must be driven to zero (by this
@@ -608,7 +662,8 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
   criterion an optional soft cue, not the test; a
   German sixth versus a dominant seventh by spelling; an applied chord versus a confirmed modulation by cadence) — not
   echoes of the analyzer's own output.
-- **The corpus gate** (the two-tier root-error gate) governs as for the lower layers; a function change that moves a
+- **The corpus gate** (the two-tier bass-is-root root-error gate; gate policy: CLAUDE.md) governs as for the lower
+  layers; a function change that moves a
   pitch-class-decidable root the wrong way is the hard-stop class.
 
 ## 11. Risks & technical debt
@@ -658,13 +713,18 @@ declared [0,1) quantity. The frame-scale commensurability and the override θ re
 - **Class-(b) error** — a root or key error at a sonority whose root is *pitch-class-decidable* (a non-symmetric chord) —
   the meaningful-error class the corpus gate treats as a hard stop, as distinct from the symmetric-rotation churn
   (class-(a)). A project gate term (see the gate policy); used in §10 as this layer's override duty.
-- **Ambiguity kind** — the named reason Layer 4 could not separate two readings (transition, share-tone, relative pair,
-  close, insufficient), carried forward on an abstain; this layer resolves each by its §5.5 rule and adds no new kind.
+- **Ambiguity kind** — the named reason Layer 4 could not separate two readings — exactly the **six** kinds of §5.5:
+  **transition, share-tone, relative pair, close, insufficient, symmetric-rotation** — carried forward on an abstain;
+  this layer resolves each by its §5.5 rule and adds no new kind. (This row and §5.5 enumerate the same set; a
+  resolver may be implemented from either.)
 - **Region** — *(disambiguated, §5.0, per the architecture span-typology contract)* unqualified, the **decision-context
   span**: the bounded slice-run Layer 5 analyses together — the cadence-vote scope (§5.2) and the resolution look-ahead
-  (§5.5), bounded by a look-ahead window (≈ phrase), no single-key assumption. Distinct from the **key-span** (the
-  modulation re-read unit, §5.4 — the `LocalKeySpan`, one local key, cross-cuts phrases) and the **slice** (the atomic
-  chord-rhythm *harmonic region*, one chord + one key). Full definition: §5.0.
+  (§5.5), bounded by a look-ahead window (≈ one punctuation-span's extent), no single-key assumption. Distinct from the
+  **key-span** (the
+  modulation re-read unit, §5.4 — one local key, cross-cuts punctuation-spans; as-built record in §13) and the
+  **slice** (the atomic
+  chord-rhythm unit, one chord + one key; same-chord runs of slices form the typology's **chord-span**, formerly
+  "harmonic region"). Full definition: §5.0.
 - **Prevailing harmony** — the committed chord of the nearest metrically-strong slice at or before a given slice, within
   its region; the harmony a passing/neighbour figure is heard against (§5.0).
 - **The progression** — the ordered committed-chord stream across a region; a **licensed (real) progression** is a root
@@ -698,6 +758,12 @@ The Roman-numeral formatter already emits the diatonic numeral, chromatic numera
 applied-chord labels. The phrase-boundary and chromatic-leading-tone markers already exist as primitives. This layer
 unifies, corrects, and completes that scattered, partly-dormant machinery into the single function layer specified above;
 the concrete reuse-versus-build map is in the methods catalog §7.
+
+**As-built identifiers referenced by role in the body (the §1–§12 code-free rule keeps mechanics out of the prose;
+the locators live here):** the key-span record = `LocalKeySpan`; the modulation-span detector = the dormant
+`localmodulationdetector` (its minimum-chords establishment floor = `kEstablishmentMinChords`); the forward-recompute
+unit = `forwardoverride`; the applied-chord labeler = the dormant `tonicizationlabeler`; the §7 boundary confidence
+form = `combinedBoundary = combined / (combined + k)`.
 
 ## 14. Related work & external sources (what we borrowed, discarded, and why)
 **Borrowed:** the Roman-numeral component representation and the relational-label vocabulary as the output, from the
@@ -819,11 +885,26 @@ catalog §Sources.
     preserving the chorale behaviour where boundaries are strong. The graded profile already carries the needed
     signal; this is a consumption rule, not a new primitive. Source: `cowork_architecture_review_2026_07.md` §7/§9
     (F-11, A-5).
-12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ratification-gated).** The licensed
-    root-motion set descends from the old scoring-bonus signals and omits three theory-licensed motions the catalog's
+12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03;
+    the §5.0 enumeration is amended, the code increment is pending).** The licensed
+    root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the
+    catalog's
     own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!),
     **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of
-    the full circle). Amendment: extend `isLicensedProgression` (+ this §5.0's enumeration) accordingly — algorithmic
+    the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly
+    — algorithmic
     completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test
-    then tightens to the clean assert. Evidence: the 6-entry/12-motion failure table in the consumer build's
-    Task-2.1 STOP (2026-07-02).
+    then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and
+    pinned in the consumer's consistency test (`EXPECT_EQ(failing.size(), 11u)`) — the earlier "12" was a Cowork
+    arithmetic error, corrected 2026-07-02 (U2); the measured 11 is authoritative.
+13. **★ Resolver preference-among-licensed motions — the precision-phase lever the completed grammar exposes
+    (recorded 2026-07-03; found as the §15-12 increment's ripple).** The §5.5 share-tone/transition rules select by
+    licensed-progression **uniqueness**; completing the grammar (item 12) makes more motions licensed, so fewer cases
+    split on the binary test and more flow to the structural tie-breaks and the honest open mark (the §5.5
+    both-licensed note — the correct firewall-era behaviour, ruled 2026-07-03). The named remedy is §5.0's own
+    sentence: a **numeric preference order among licensed motions** (e.g. descending fifth ≻ descending second) as a
+    **precision-phase weight** — a Stage-5 calibration input, fitted with the other weights, never a hand-tuned rule
+    now. Until then the resolver stays binary-plus-structural-tie-breaks; the dormant test surface pins that
+    behaviour explicitly (both-licensed pins added at the §15-12 increment's addendum). No inference problem-fixing
+    before refactoring/architecture/algorithmic completion — this item is the record that keeps the lever from being
+    taken early or forgotten.

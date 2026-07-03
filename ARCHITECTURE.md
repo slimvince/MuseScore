@@ -514,17 +514,28 @@ contracts below all serve this principle. Their detailed statements live in the 
   & calibration contract** (`cowork_confidence_contract.md`, review amendment A-1, 2026-07-02, ratification-gated):
   every boundary confidence is [0,1], class-declared (margin vs calibrated probability), and cross-layer comparisons
   happen only in the contract's declared frames.*
-- **The span typology** — a "region" is a *family* of spans, each named by its bounding criterion: the **harmonic
-  region** (chord-rhythm, the atomic unit) · the **key-span** · the **punctuation-span** (the flat,
+- **The span typology** — a "region" is a *family* of spans, each named by its bounding criterion. *(★ FAMILY RENAME
+  ✅ CONFIRMED (user, 2026-07-02) — ✅ EXECUTED at the merged Cowork doc pass (2026-07-03), propagated through every
+  layer spec + the dictionary: **harmonic region → chord-span** (the typology bans "region" unqualified, yet its
+  own atomic member carried the banned word; "the span one committed chord prevails over" is the criterion) ·
+  latent **sequence-span → progression-schema-span** (D6, ratified) · latent **pedal span → pedal-point-span**
+  (pedal point ≠ the piano's pedal) · **section-span / voice-leading-span** (suffix-consistent) · key-span /
+  punctuation-span / decision-context span KEEP · **cadential scope** KEEP as the deliberate non-"span" exception —
+  it names a relation (the span a cadence closes AND confirms), not a segmentation.)* The current names: the
+  **chord-span** (chord-rhythm — the span one committed chord prevails over, a maximal run of same-chord
+  constant-sonority slices; the atomic member, formerly "harmonic region") · the **key-span** · the
+  **punctuation-span** (the flat,
   surface-punctuation-delimited grouping span — the DCML `{}` unit Layer 6 owns; **renamed from "phrase" 2026-07-01** so
   that "phrase [MT]" denotes *only* the accepted **melodic** phrase, which is a voice-leading-axis object, not this one —
   see `cowork_layer6_grouping_design.md` §0) · the **decision-context span** (the
   bounded look-ahead a deferred decision integrates over — bounded by the deferring layer's stop condition and hard bound,
   per the Bounded-context contract below) · the **cadential scope** (the span a cadence closes *and*
   confirms — where a punctuation-span and a key-span are *jointly* articulated, which is why one cadence detector feeds both
-  grouping and key) · the latent **sequence / section / pedal / voice-leading** spans. They relate by **nesting**
-  (harmonic regions ⊂ key-spans; harmonic regions ⊂ punctuation-spans; punctuation-spans ⊂ sections) **or cross-cutting**
-  (key-spans and punctuation-spans cross-cut — a key change may fall mid-span). "Region" unqualified is **banned** as
+  grouping and key) · the **progression-schema-span** (emitted by the recognition consumer, hosted by Layer 6) · the
+  latent **section-span / pedal-point-span / voice-leading-span**. They relate by **nesting**
+  (chord-spans ⊂ key-spans; chord-spans ⊂ punctuation-spans; punctuation-spans ⊂ section-spans) **or cross-cutting**
+  (key-spans and punctuation-spans cross-cut — a key change may fall mid-span; progression-schema-spans cross-cut
+  both). "Region" unqualified is **banned** as
   ambiguous; every layer names the span it operates on. (After the GTTM premise of independent structures.) *(The **cue
   that delimits** a punctuation-span is still supplied by the Layer-1.5 **phrase-boundary primitive** — that upstream
   primitive keeps its code name; only the grouping-**span** term changed.)*

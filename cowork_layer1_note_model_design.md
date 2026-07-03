@@ -8,9 +8,25 @@
 > and "Human-interface design" — Architectural Layer 1 is backend analysis code, with no separate hardware
 > deployment and no user interface.)*
 
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §12 glossary carries the fuller
+definitions; this table is the entry point and the rows the body leans on.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Selection / loaded span / context span** | The bounded-context contract's vocabulary (`cowork_bounded_context_design.md`): the **selection** is the music the user chose; the **loaded span** is the music this layer currently covers (selection plus any granted extensions); a requester's **context span** is the extra music it integrates over. This document's older phrases "the analysed span" and "widen the span" mean the **loaded span** and **extending the loaded span** — one thing, two vocabularies; the contract's names are canonical. |
+| **Staff-eligible** | The note's staff takes part in tonal analysis. Ineligible staves (verified at the shared predicate the build uses): **hidden** staves, **percussion (drumset)** staves, and the **chord-symbol track** (next row). |
+| **The chord-symbol track** | The project's dedicated chord staff — a staff marked as the chord track via its part/instrument long name or track name (the staff the tool's chord annotations are written to, not a sounding musical part). Detected by the shared staff-eligibility predicate; its notes are kept and marked ineligible. |
+| **Sounds / visible flags** | Per-note facts (§7): whether the note actually plays (false for muted notes and imported cue notes — §13 records why those two are one flag), and whether it is visible. Voice-level "eligibility" (the three-flag combination consumers use) is defined by the consuming spec (`cowork_phrase_boundary_design.md` §0); this layer defines the staff flag and the two per-note flags it is built from. |
+| **Tie-resolved / lossless** | §1's two founding ideas; fuller rows in §12. |
+| **Byte-identical** | Output identical byte-for-byte to the previous behaviour on the pinned outputs (the project's regression discipline). |
+| **Phase-1a / Phase-1b** | The extend operation's delivery increments, defined in `cowork_layer1_extend_design.md` (1a = contract + interim whole-score re-walk; 1b = the span-scoped walk, byte-identical efficiency). |
+| **The system check (§10)** | The project's per-event oracle-root corpus metric and the two automated suites `composing_tests` and `notation_tests` (runbook: `build_and_test.md`; gate policy: CLAUDE.md). |
+
 ## 1. Introduction & purpose
-**What Architectural Layer 1 is.** It produces a clean, complete list of the notes that actually sound in the music
-being analysed, together with the facts about each note that the later architectural layers need. It is built once
+**What Architectural Layer 1 is.** It produces the **complete** list of the notes that actually sound in the music
+being analysed — **tie-resolved and lossless** (the two §1 ideas below; "clean" means exactly those two defined
+properties, nothing more) — together with the facts about each note that the later architectural layers need. It is built once
 and is then read by every later architectural layer; no later architectural layer reads the raw MuseScore score
 again.
 
@@ -40,7 +56,7 @@ own. (What this improves on is in Section 13.)
 **What Architectural Layer 1 keeps but marks (not every note in a score should feed tonal analysis).** Three kinds
 of note should not contribute to key-and-chord reasoning: notes that are **muted** (set not to play), notes that
 are **invisible**, and every note that sits on a staff which is not tonal — drum/percussion staves, the chord-symbol
-track, and hidden staves. Architectural Layer 1 **keeps all of these notes and sets a flag on each one saying which
+track (§0), and hidden staves. Architectural Layer 1 **keeps all of these notes and sets a flag on each one saying which
 case it is; it never drops them.** Choosing to *ignore* such a note is a separate step done later (the summary views
 described below skip any note that is muted, invisible, or on a non-tonal staff). Keeping the notes means a later
 architectural layer can still see that they were present.
@@ -66,10 +82,15 @@ and answer the question "which notes are sounding during a given span of time?"
   the answer must include notes that started **earlier in time** than that span and are still sounding when it
   begins, no matter how much earlier they started.
 - **Operates on the user's selected part of the score, at any selection size and in any musical style** (it makes no
-  assumption about style); it must stay fast even when the selected music is the entire piece.
-- **The analysed span of music can be widened on request.** A later architectural layer — Architectural Layer 3
+  assumption about style); it must stay fast even when the selected music is the entire piece — "fast" by the stated
+  budget: a span-of-time query does work proportional to the **logarithm of the note count plus the notes returned**
+  (the §9 look-up index), never a whole-list scan; the §10 speed measurement checks that bound's effect (index versus
+  linear scan at scale), so the acceptance test has a criterion and cannot be written vacuously.
+- **The loaded span (§0 — this doc's older phrase: "the analysed span") can be widened on request.** A later
+  architectural layer — Architectural Layer 3
   (key/mode) in particular — sometimes needs more music than the user's selection, for example to see what key the
-  music was in just **earlier in time than the point where the selection begins**. Architectural Layer 1 can be
+  music was in just **earlier in time than the point where the selection begins** (Layer 3's stop condition for that
+  request is its own — the leading-edge settled key stops changing, `cowork_layer3_keymode_design.md` §2). Architectural Layer 1 can be
   asked to **widen the span of music it covers — earlier in time, later in time, or both — and to take in the extra
   notes.** Architectural Layer 1 is the *supplier* of the extra music; deciding that more music is needed is the
   requesting architectural layer's responsibility, not Architectural Layer 1's.
@@ -96,13 +117,15 @@ notation system's tie information (which written notes are tied to which).
   context than the user's selection provided. This is the **extend** operation of the bounded-context contract —
   designed in full in `cowork_bounded_context_design.md` (build over a selection, then extend on request; append-only;
   clamp at the score boundary and report it). **(Built — Phase-1a: `extend(Direction, int)`, `boundaryReached()`, and
-  the loaded/selection-span accessors exist in `note_model.h` and behave to the contract — append-only, exactly one
-  step, no convergence loop, clamp at the score boundary and report it. It was built *decoupled* from the §11
+  the loaded/selection-span accessors exist in `note_model.h` and behave to the contract — extensions only ever **add**
+  notes (nothing already loaded changes); each call widens by **one increment** and returns, the requesting layer,
+  not this one, deciding whether to ask again; a request past the score edge clamps at the boundary and reports it. It was built *decoupled* from the §11
   whole-score-load fix: the interim implementation itself re-walks the whole score and re-filters to the enlarged
   loaded span (byte-identical to a fresh build over that span); the span-scoped walk is the deferred Phase-1b.
   Architectural Layer 3's reach-back is written against it.)**
 **Who uses Architectural Layer 1 (its consumers):** the derived summary views that condense notes into pitch
-evidence for scoring (`weightedPcView`, `soundingAt`); the Architectural Layer 2 slicer; the Architectural Layer 3
+evidence for scoring (`weightedPcView` — the weighted **pitch-class** view — and `soundingAt`, the
+notes-sounding-at-an-instant view); the Architectural Layer 2 slicer; the Architectural Layer 3
 key/mode code. **What Architectural Layer 1 deliberately knows nothing about:** keys, chords, and function — it sits
 beneath all musical judgement.
 
@@ -143,17 +166,19 @@ are the same notes: a held sound is one note, a long note is never missed, and n
   one long held note and the following note — not four notes, and the held note is not counted three times.
 - **A note carried in from earlier in time:** a note that started **earlier in time** than the queried span but is
   still sounding inside it is included in the answer (there is no backward-in-time search limit).
-- **Widening the span:** Architectural Layer 3 (key/mode) asks Architectural Layer 1 to extend the covered music
-  **earlier in time** than the selection so the prevailing key before the selection can be seen; Architectural Layer
-  1 reads the extra earlier music and adds those notes.
+- **Widening the loaded span (§0):** Architectural Layer 3 (key/mode) asks Architectural Layer 1 to extend the
+  covered music **earlier in time** than the selection, iterating by its own stop condition (the leading-edge settled
+  key stops changing — Layer 3's operational test, `cowork_layer3_keymode_design.md` §2); Architectural Layer 1 reads
+  the extra earlier music and adds those notes.
 
 ## 7. Data design
 Each note record carries eleven facts: its **sounding pitch**; its **spelled pitch** (for example F♯ versus G♭);
 which **staff** and which **voice** it belongs to; its **start time-position**, its **end time-position**, and its
 **duration** (end time minus start time — the tie-resolved sounding length); and four yes/no facts — whether it is a
-**grace note**, whether it actually **sounds** (false for muted notes and for imported cue notes), whether it is
-**visible**, and whether its **staff takes part in tonal analysis** (false for drum/percussion staves, the
-chord-symbol track, and hidden staves). All times are absolute time-positions within the piece. The note model also
+**grace note**, whether it actually **sounds** (false for muted notes and for imported cue notes — an imported score
+carries no separate cue-note distinction, §13, so the one flag covers both), whether it is
+**visible**, and whether it is **staff-eligible** (§0/§12 — its staff takes part in tonal analysis; false for
+drum/percussion staves, the chord-symbol track (§0), and hidden staves). All times are absolute time-positions within the piece. The note model also
 holds the start-time-ordered list of note records, a borrowed pointer to the source MuseScore score (which must
 outlive the note model), and the numeric look-up index.
 
@@ -161,8 +186,8 @@ outlive the note model), and the numeric look-up index.
 - **Single source of truth** — the system-wide principle Architectural Layer 1 embodies: every architectural layer
   reads these notes; no architectural layer re-reads the raw MuseScore score.
 - **Deterministic** — the same selected music always produces exactly the same note model.
-- **Fast at any selection size** — the numeric look-up index keeps span-of-time queries quick even when the selected
-  music is the whole piece.
+- **Fast at any selection size** — the numeric look-up index keeps span-of-time queries within the §2 budget
+  (logarithmic in the note count, plus the notes returned) even when the selected music is the whole piece.
 - **Edge handling** — an empty or backwards span of time returns no notes; a silent span returns no notes; grace,
   muted, invisible, and non-tonal-staff notes are kept and marked, never dropped.
 
@@ -185,24 +210,27 @@ outlive the note model), and the numeric look-up index.
   facts are set correctly; edge cases (empty, backwards, and silent spans) behave correctly.
 - **Look-up-index tests:** the fast index returns **exactly** what a plain left-to-right scan returns — the same
   notes in the same order — across many random and deliberately awkward spans of time on every test piece; plus a
-  speed measurement confirming it stays fast when the selected music is large.
+  speed measurement confirming the §2 budget holds when the selected music is large (the indexed query beats the
+  linear scan at scale; a whole-list scan per query would fail it).
 - **Coverage:** every branch of Architectural Layer 1's code is exercised by a test.
-- **System check:** the project-wide per-event accuracy metric and both automated test suites stay green.
+- **System check:** the project's per-event oracle-root corpus metric and the two automated suites —
+  `composing_tests` and `notation_tests` (§0; runbook `build_and_test.md`) — stay green.
 - **Regression tests (source):** `src/composing/tests/note_model_tests.cpp` — the behaviour tests (T1–T8), the
   derived-view tests (T9–T14), and the look-up-index-vs-linear-scan tests (IDX1–IDX4).
 
 ## 11. Risks & technical debt
 - **An accepted, fully-explained shift in the accuracy metric, caused by building Architectural Layer 1 correctly** —
-  resolving ties and removing the backward-in-time search limit moved the project's accuracy metric by a small
-  amount; this was accepted deliberately and is expected to be re-tuned when Architectural Layer 3 (key/mode) is
-  rebuilt (detail in Section 13).
+  resolving ties and removing the backward-in-time search limit moved the project's accuracy metric by a small,
+  fully-attributed amount — the per-preset deltas and their attribution are recorded in the Layer-1 acceptance entry
+  of the project ledger (`STATUS.md`); this was accepted deliberately and is expected to be re-tuned when
+  Architectural Layer 3 (key/mode) is rebuilt (detail in Section 13).
 - **Grace-note timing** — exactly how a grace note's start time, end time, and duration are recorded should be
   confirmed when Architectural Layer 3 begins using grace notes (there is deliberately no special grace-note
   handling in Architectural Layer 1).
 - **The build currently reads the whole score even when only part of it is queried** — an **interim** behaviour, not
   the target. The product is selection-based (`cowork_bounded_context_design.md`): the target is *build over the
   selection, then extend on request*. Loading the whole score is the degenerate case (selection = score) and is what
-  keeps the batch-testing path unchanged. The *extend* operation (§3) is **now built** (Phase-1a), so the whole-score
+  keeps the batch-testing path (the offline corpus harness, `batch_analyze`) unchanged. The *extend* operation (§3) is **now built** (Phase-1a), so the whole-score
   build no longer masks a missing capability — it only means *extend*'s interim implementation re-walks the whole score
   rather than a span-scoped slice. The earlier framing that "fixing the whole-score build and building *extend* are one
   coupled change" is **superseded**: *extend* was built **decoupled** (Phase-1a, whole-score re-walk, byte-identical),

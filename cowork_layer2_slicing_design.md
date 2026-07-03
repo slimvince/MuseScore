@@ -6,11 +6,27 @@
 > sequencing and live in the delivery plan, not here. *(Two template sections do not apply: "Deployment view" and
 > "Human-interface design" — this is backend analysis code, no separate deployment, no user interface.)*
 
+## 0. Terms (read first — nothing below uses a term before its row)
+*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §12 glossary carries the fuller
+rows; this table is the entry point.*
+
+| Term | Meaning (or citation) |
+|---|---|
+| **Slice** | This layer's output unit — a span of time during which the set of sounding, tonal notes does not change (§1). Under the span typology (ARCHITECTURE.md §2.15) the slice **is** the **constant-sonority slice**, the atomic analysis unit the whole architecture is founded on; the **chord-spans** (chord-rhythm groupings — the typology member formerly named "harmonic region") are later, coarser groupings **of slices**, never produced here. |
+| **The loaded span / selection / context span** | The bounded-context contract's vocabulary (`cowork_bounded_context_design.md`): what the Layer-1 note model currently covers; the user's selection; the loaded-but-outside-selection music a layer uses as evidence. |
+| **The clip** | The slicer bounds its boundary set to the note model's **loaded span** — every boundary outside it is dropped and the loaded span's two endpoints are injected — so no slice extends past the loaded music (verified at `slicer.cpp`). On the whole-score path the loaded span equals the score, so the clipped boundary set is identical to the unclipped one — that is why the clip is **inert** there (§2). |
+| **Byte-identical / the whole-score live path** | Output identical byte-for-byte to previous behaviour on the pinned outputs; the production path where the selection is the whole score. |
+| **The two automated suites / pinned outputs** | `composing_tests` and `notation_tests` (runbook `build_and_test.md`); the pinned analysis snapshots are stored golden outputs, refreshed only on verified change. |
+| **The key-mode sequence decoder** | Architectural Layer 3's whole-sequence decoder (`cowork_layer3_keymode_design.md`). |
+| **Layer 1.5** | The shared notation-derived-view half-tier (metric weights, bass/spelling views, the phrase-boundary primitive) — introduced in ARCHITECTURE.md §2.15 / `cowork_phrase_boundary_design.md`. |
+| **Pass-2/2b** | The old segment-first pipeline's internal pass numbering (the greedy boundary-expander and its merge step, §13); named here only as history. |
+
 ## 1. Introduction & purpose
 **What Architectural Layer 2 is.** It cuts the analysed music into **slices** and hands the list of slices to the
 next architectural layer. A **slice** is a span of time during which the set of sounding, tonal notes does not
 change at all — so the set of notes is the same from the slice's start to its end, and it changes only when you
-cross into the next slice.
+cross into the next slice. The slice is the span typology's **constant-sonority slice** (§0) — the atomic unit
+everything coarser derives from.
 
 **What music Architectural Layer 2 operates on.** The notes provided by Architectural Layer 1 (the note model) for
 the user-selected part of the score. It reads no other source.
@@ -43,8 +59,9 @@ covers the analysed span.
   note sounds, is visible, and is on a tonal staff was already decided and marked by Architectural Layer 1;
   Architectural Layer 2 reads those marks and does not second-guess them.
 - **Connected into the live analysis pipeline:** Architectural Layer 3 now reads the slices —
-  `regionanalyzer.cpp:579` calls `changePointSlices(noteModel)` and feeds the result to the key-mode sequence decoder.
-  The slicer itself still produces byte-identical slices on the whole-score live path (the clip is inert there); the
+  the orchestrator's Layer-3 seam (`regionanalyzer.cpp`, the `changePointSlices(noteModel)` call) feeds the result to
+  the key-mode sequence decoder (§0). The slicer itself still produces byte-identical slices on the whole-score live
+  path (the clip — the loaded-span bounding of §0 — is inert there because the loaded span equals the score); the
   analysis movement came from **Architectural Layer 3's consumption** of the slices, not from the slicer.
 - **Works on the user's selected music, at any size and in any musical style;** the work it does grows only in
   proportion to the number of notes.
@@ -98,7 +115,7 @@ A slice is a pair of time-positions: a **start** and an **end** (the span is inc
 exclusive of the end moment). A slice stores no notes; its notes are fetched on demand from the Architectural Layer
 1 note model. **A slice's identity is the exact set of sounding, tonal notes inside it — not a folded-down summary
 of their pitches.** This matters: if two notes of the same pitch are sounding and one stops, the set of notes has
-genuinely changed (so a new slice begins) even though the collection of pitch-letters present has not. The output is
+genuinely changed (so a new slice begins) even though the collection of **pitch classes** present has not. The output is
 an ordered list of slices that covers the analysed span from its first boundary moment to its last.
 
 ## 8. Crosscutting concepts
@@ -123,13 +140,15 @@ an ordered list of slices that covers the analysed span from its first boundary 
   - **★ Metric-weight contract (resolved 2026-06-26; the function layer's prerequisite (i)).** "Derived on demand by the
     consuming layers" is made concrete: the **metric weight of a slice = the beat-strength at the slice's start tick**,
     computed by the **`scoreharvest/metricweights` primitive** (`regionMetricWeightForOnsetTick(score, slice.start)`) — a
-    prefs-free, key-/chord-agnostic notation-derived value in `[0.5, 1.0]` (downbeat 1.0 → subbeat 0.5), already consumed
-    by Architectural Layer 4. It is owned there (a Layer-1.5 notation view, beside the bass/spelling/phrase-boundary
-    views), **not** re-defined by any consuming layer. The function layer (Architectural Layer 5) reads it through this
-    same accessor; this contract sentence is the whole of that prerequisite — no new code.
+    **preference-free** (independent of any user setting), key-/chord-agnostic notation-derived value in `[0.5, 1.0]`
+    (downbeat 1.0 → subbeat 0.5), already consumed
+    by Architectural Layer 4. It is owned there (a **Layer-1.5** notation view, §0, beside the bass/spelling/phrase-
+    boundary views), **not** re-defined by any consuming layer. The function layer (Architectural Layer 5) reads it
+    through this same accessor; this contract sentence is the whole of that prerequisite — prerequisite (i) of the
+    function-layer spec's input list, `cowork_layer5_function_design.md` §15-0 — no new code.
 - **Bounded context (`cowork_bounded_context_design.md`).** Architectural Layer 2 slices whatever span the note model
   currently holds. When a higher layer **extends** the loaded span (to reach context outside the user's selection),
-  Architectural Layer 2 produces the change-point slices for the **newly loaded region**, preserving complete coverage
+  Architectural Layer 2 produces the change-point slices for the **newly loaded span**, preserving complete coverage
   and slice identity over the enlarged span. Slices that fall in the **context span** (loaded but outside the
   selection) are usable as evidence by the layers above but are **not** part of the analysis output. Architectural
   Layer 2 itself makes no selection-versus-context distinction — it just slices the loaded span; the output-versus-
@@ -147,7 +166,9 @@ an ordered list of slices that covers the analysed span from its first boundary 
   guessing built on top of it had to be removed (see Section 13).
 - **Build Architectural Layer 2 on its own, not yet connected into the live pipeline.** Alternative considered:
   connect it into the running analyzer immediately. Chosen: keep it separate — fine slices need Architectural Layer
-  3's reasoning, so connecting it (and dissolving over-grab) belongs to Architectural Layer 3.
+  3's reasoning, so connecting it (and dissolving over-grab) belongs to Architectural Layer 3. *(As-built note: that
+  connection has since happened — Layer 3 now consumes the slices, §2/§10 — so "keep it separate" records the
+  build-time decision, superseded by the Layer-3 wiring exactly as this decision anticipated.)*
 
 ## 10. Quality & testing
 - **Behaviour tests:** the scenarios in Section 6 plus edge cases, each asserting the exact start/end time-positions
@@ -157,9 +178,10 @@ an ordered list of slices that covers the analysed span from its first boundary 
   with no gaps or overlaps; a genuinely constant tonal-note set inside each slice; no missing or invented
   boundaries; and identical output on a second run. All 353 passed.
 - **Every branch of Architectural Layer 2's code is exercised by a test.**
-- **Isolation check (at build time, before wiring):** the slicer was confirmed to leave both automated test suites and
-  the pinned analysis outputs unchanged by its existence. It is now connected (Architectural Layer 3 reads the slices,
-  `regionanalyzer.cpp:579`); the slicer's own output stays byte-identical on the whole-score live path.
+- **Isolation check (at build time, before wiring):** the slicer was confirmed to leave the two automated test suites
+  and the pinned analysis outputs (§0) unchanged by its existence. It is now connected (Architectural Layer 3 reads
+  the slices at the orchestrator's `changePointSlices` call); the slicer's own output stays byte-identical on the
+  whole-score live path.
 - **Regression tests (source):** `src/composing/tests/slicer_tests.cpp` (the behaviour + edge tests); the
   whole-corpus check is `tools/batch_analyze --validate-slices` driven by `tools/validate_slices_corpus.py`.
 
@@ -170,8 +192,8 @@ an ordered list of slices that covers the analysed span from its first boundary 
 - **How often slices are redundant depends on the music** — on the chorale test pieces almost no slice is redundant;
   denser textures (sustained pedals, broken chords) would produce more, which the grouping layer merges regardless.
 - **Connected into the live analysis pipeline** — Architectural Layer 3 now reads the slices
-  (`regionanalyzer.cpp:579`), the retirement trigger this risk anticipated; its coexistence with the old machinery
-  during that transition is described in Section 13.
+  (the orchestrator's `changePointSlices` call), the retirement trigger this risk anticipated; its coexistence with
+  the old machinery during that transition is described in Section 13.
 
 ## 12. Glossary
 *(Only terms we coined or use in a specific way — standard musical terms are assumed known.)*
@@ -186,14 +208,16 @@ error Architectural Layer 2 removes by construction).
 *Kept separate so Sections 1–12 describe only Architectural Layer 2 itself.*
 - **What it replaces:** the earlier "segment-first" pipeline (a greedy boundary-expander, several sub-boundary
   detectors, and a chord-dependent merge step). It *guessed* span boundaries using tunable score thresholds before
-  any analysis, which let spans over-grab — about 45% of the measured error. Architectural Layer 2 removes that
-  guessing entirely.
+  any analysis, which let spans over-grab — about 45% of the measured error on the project's per-event oracle-root
+  corpus metric (the attribution record is the segmentation-error decomposition in the project ledger, `STATUS.md`).
+  Architectural Layer 2 removes that guessing entirely.
 - **The fact already existed but was thrown away:** older code (`collectNoteChangeTicks`) already computed the same
   note-start/note-stop boundary moments, but the old pipeline then **discarded** most of them by selecting a subset
   using chord-score thresholds (and it also skipped grace notes and snapped mid-tuplet moments). Architectural Layer
   2 keeps the boundary-moment fact and drops the selection and those two special-case heuristics.
-- **Transitional coexistence:** Architectural Layer 3 **has been rebuilt to read the slices** (`regionanalyzer.cpp:579`;
-  it is the production region key/mode path); the **old segment-first machinery (Pass-2/2b) still coexists** during the
+- **Transitional coexistence:** Architectural Layer 3 **has been rebuilt to read the slices** (the orchestrator's
+  `changePointSlices` call; it is the production region key/mode path); the **old segment-first machinery (its
+  internal passes 2/2b, §0) still coexists** during the
   transition, and deciding what of it moves to the grouping layer (L6) versus is deleted is scoped as L6 is built.
 
 ## 14. Related work & external sources (what we borrowed, discarded, and why)
@@ -206,8 +230,8 @@ plainly which we rejected.*
 - **Considered and discarded / not used:** **fixed metric-grid or beat-synchronous segmentation** (for example
   AugmentedNet's fixed note-value frames; Contrapunctus's per-beat unit) — rejected because a metric grid imposes a
   judgement: it over-slices a held chord on the clock and can miss a change that falls between grid points.
-  **Pitch-class-mask change detection** (folding the sounding notes down to which pitch-letters are present) —
-  rejected because a slice's identity is the exact set of notes, not the set of pitch-letters (a same-pitch
+  **Pitch-class-mask change detection** (folding the sounding notes down to which pitch classes are present) —
+  rejected because a slice's identity is the exact set of notes, not the set of pitch classes (a same-pitch
   doubling that drops is a real change the folded view misses). (Our own earlier threshold-based segmentation is in
   Section 13.)
 - **Corpora used:** the **353-piece Bach chorale set (plus a Corelli trio)** — used for the whole-corpus property
