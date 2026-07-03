@@ -539,6 +539,10 @@ contracts below all serve this principle. Their detailed statements live in the 
   ambiguous; every layer names the span it operates on. (After the GTTM premise of independent structures.) *(The **cue
   that delimits** a punctuation-span is still supplied by the Layer-1.5 **phrase-boundary primitive** — that upstream
   primitive keeps its code name; only the grouping-**span** term changed.)*
+  **★ voice-leading-span — criterion given (2026-07-03):** the span **one texture classification prevails over** — a
+  maximal run carrying one voice-leading idiom; owner = the axis-2 texture classifier **VL-C**; v1 = the whole selection
+  (one span) until the §15-1 per-span measurement refines it. Criterion + build home:
+  `cowork_voiceleading_axis_design.md` §0/§5.3 (AS-BUILT). *(section-span / pedal-point-span remain latent.)*
 - **The verifiability contract** — prefer what we can verify against ground truth (it is how we catch our own theory
   errors); for sound theory we cannot verify against the current corpus, build it with an explicit
   **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it (this governs the
@@ -563,7 +567,11 @@ contracts below all serve this principle. Their detailed statements live in the 
   *current* decomposition of the **harmonic spine**, not a ceiling: the architecture already carries more than six named
   elements — the **L1.5** half-tier, the **Harmonic Vocabulary** (a separate queried component, off the spine), the
   **recognition consumer**, and the **orthogonal voice-leading axis** with its own layers (where melodic phrases [MT] and
-  chord **voicing / arrangement** are analysed) — and higher grouping structure (sections / periods / form) is explicitly
+  chord **voicing / arrangement** are analysed) — **★ axis-2 status (2026-07-03): the foundation is BUILT (dormant) —
+  VL-A voice-linear view + VL-B motion/interval profiles (facts) + VL-C texture classification (the one v1 judgment:
+  texture-of-span, Class M) + its bounded-context requester; measured orthogonal to the harmonic spine (cross-ARI 0.030);
+  VL-D/E/F/G/H named + design-gated (`cowork_voiceleading_axis_design.md`)** — and higher grouping structure (sections /
+  periods / form) is explicitly
   anticipated *above* L6 (`cowork_layer6_grouping_design.md` §9-D3), deferred, not forbidden. Growth is **by axis and by
   component**, not by climbing a fixed tower. **A new layer or axis is admitted only when it clears three co-equal gates,
   all required:** **(1) separation of concerns** — it carries *one* responsibility that must not sit mixed into another;

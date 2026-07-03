@@ -64,8 +64,15 @@ it into L5/L6. Every analysis layer is **built dormant and validated byte-identi
    `cc_vl_idiom_discovery_report.md`; folded as findings v2.0):** VL organizes by **texture** (contrapuntal vs
    homophonic, motion-type-led; instrumentation/source confounds decisively absent), and **orthogonality is formally
    confirmed** (cross-ARI 0.030 vs the harmonic idioms on 1,283 dual-view pieces — the style structure is ≥ 2-D).
-   → REMAINING: the spec's voice-leading layer (Cowork design doc); it claims the voice-leading-defined catalog
-   entries (galant schemata, line cliché).
+   → SPEC ✅ **SIGNED (2026-07-03, `cowork_voiceleading_axis_design.md`)**; → FOUNDATION ✅ **BUILT + DORMANT
+   (2026-07-03, `cc_vl_foundation_build_report.md`):** VL-A voice-linear view + VL-B motion/interval profiles + the
+   per-sample motion-event series (facts, study-parity-verified) + VL-C texture classification (the one v1 judgment:
+   texture-of-span, Class M, whole-selection granularity, nearest-centroid in the measured winning feature space **ABz**,
+   ARI 0.791/acc 0.918 reproducing the ratified K=4 taxonomy) + its bounded-context extension requester; `--dump-vl`
+   diagnostic + `compare_vl_parity.py`. Suites green, gate 53/24/53 byte-identical, dormancy grep-proven.
+   → REMAINING: **VL-D/E/F/G/H** — named + **design-gated** (each its own design doc + footing before build); VL-F
+   claims the voice-leading-defined catalog entries (galant schemata, line cliché); the §15-1 per-span texture
+   measurement (refines the whole-selection span to plural voice-leading-spans).
    **This is also the home of the accepted (melodic, broadly monophonic) music-theory phrase** — the linear,
    text-coinciding-when-sung unit, and the **concurrent, overlapping, out-of-phase per-voice phrases** of contrapuntal
    textures (fugues) — which are a *melodic/voice-leading* construct, **not** L6's flat harmonic-grouping span (the L6 §0

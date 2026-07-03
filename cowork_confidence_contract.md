@@ -58,6 +58,7 @@ Every published confidence declares exactly one **class**:
 | L5 function | RN/function-of-unit; cadence; modulation | three fixed components (cadence-vote attribution, licensed-fit, resolver margin) combined at default weights — **must publish squashed [0,1]** | M (declared-composite) | **Delta D-L5a (= review F-1 / L5-close D3):** as built, `FunctionConfidence.combined` is an unbounded additive (observed up to ~5.0) while §8's `earlierConfidence` is [0,1] — the boundary squash required by U2 is missing. Fix at the D3 close-out: keep the additive internally, publish the squashed form. |
 | L5 cadence vote | tonic-of-span evidence | weighted vote (monotone sum of evidence + salience − type discount) | M (evidence weight) | Votes are **evidence**, not boundary confidences: they enter §4 frames as contradiction strengths. Their scale is fixed by the same squash discipline when compared against a key confidence (frame F-A below). |
 | Legacy path | region key/chord | `normalizedConfidence` sigmoid + known sentinels (0.0 / 0.5 hard-coded — Stage-1c G4) | nominally M, unreliable | Documented unreliable (post-promotion re-rank without recompute). **Retires at engage** (the ENGAGE CRITERIA + RETIREMENT MAP block in `docs/implementation_roadmap.md`, R8); the contract does not attempt to repair it. |
+| **VL-C texture (axis 2)** | **texture-of-span** | the best-vs-second-best **fit** margin, where fit = `exp(−distance/fitScale)` of the z-space (ABz) euclidean distance to a class centroid — already ∈ [0,1) | M | The **axis-2** first judgment component (`cowork_voiceleading_axis_design.md` §5.3; `textureclassifier.h`, DORMANT). The published confidence is the exp-fit margin; squash per **R5** below. The output also carries the **full ranked list of ALL class fits with weights** (zero information loss). Three declared floors — **evidential** (min motion samples), **margin**, **fit** — are precision-phase; abstention = margin < margin-floor OR best fit < fit-floor (contract U5), single-voice → *no-pair* abstention. No new §4 comparison frame (nothing compares a VL confidence against a harmonic one). |
 
 ## 4. The comparison frames (the §8 override arithmetic, stated once)
 
@@ -90,6 +91,10 @@ frame row to this section before build — an undeclared cross-layer comparison 
 - **R5 (squash maps).** Each layer declares one fixed monotone squash for its boundary confidence(s). The map's shape
   is structural (declared here); its constants are precision-phase. Until Stage 5 fits them, defaults hold — the
   point is *declared comparability*, not tuned optimality.
+  - **VL-C texture-of-span (axis 2).** Squash = the **difference of the two best exp-fits**, `exp(−d₁/fitScale) −
+    exp(−d₂/fitScale)`, where d₁ ≤ d₂ are the nearest and second-nearest z-space centroid distances. Monotone in the
+    distance margin and bounded in [0,1) by construction (the exp already squashes the unbounded distance); the single
+    constant `fitScale` is precision-phase (default = the median nearest-centroid distance over the study fit set).
 - **R6 (no cross-scorer margin mixing).** Two Class-M values from different scorers are comparable only through a
   declared frame (§4) — never ad hoc.
 
