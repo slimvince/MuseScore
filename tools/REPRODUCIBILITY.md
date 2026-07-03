@@ -271,3 +271,40 @@ They are all regenerable.
   against the current corpus and `batch_analyze` binary as needed. These
   directories document historical runs and are generally superseded by
   the `corpus_*/` + `reports/` pattern.
+
+---
+
+## corpora/annot/ — axis-2 annotation beds (corpus wave 2, 2026-07-03)
+
+- **Content:** Three **annotation/validation beds** for axis 2 (voice leading) —
+  expert label layers over scores, or a standalone phrase-marked melody bed. They
+  are **research-tier, hash-pin-only, held-out** (never tuned against) and
+  **NOT** analysis/gate corpora. The `corpora/` tree is gitignored via
+  `.git/info/exclude` (see `docs/score_inventory.md`); these live in a new
+  `corpora/annot/` subtree so they stay separate from the idiom-discovery inputs
+  in `corpora/ship|expl/`.
+- **Source of truth for the pins:** `tools/score_census_registry.json →
+  annotation_beds[].pinned_commit` (regenerate with
+  `python tools/build_score_census_registry.py`; shas read live from the clones).
+  Full inventory + paper-claim verification: `cc_corpus_wave2_report.md`.
+- **Licenses (recorded, all hash-pin-only regardless):** schema — no in-repo
+  LICENSE (DCMLab org CC BY-NC-SA [reported] → unclear); texture — GPLv3 (code) +
+  ODbL-1.0 (data); Essen — CCARH MuseData **non-commercial** (no commercial/
+  derivative distribution). None forbids a local gitignored research clone.
+
+```bash
+mkdir -p corpora/annot && cd corpora/annot
+# VL-F footing — galant voice-leading-schema annotations over 18 Mozart sonatas
+git clone https://github.com/DCMLab/schema_annotation_data \
+  && git -C schema_annotation_data checkout 76f810a1a5522fc599f389ffae0c6a0c5cf94b5c
+# VL-C validation — per-bar symbolic-texture annotations, 9 Mozart mvts (K279/280/283)
+git clone https://gitlab.com/algomus.fr/symbolic-texture-dataset \
+  && git -C symbolic-texture-dataset checkout 3dce4ab8cff8c50d540783ec435480551a1d71c6
+# VL-E footing — Essen Folksong Collection (Humdrum **kern, phrase-boundary marks)
+git clone https://github.com/ccarh/essen-folksong-collection \
+  && git -C essen-folksong-collection checkout 2d0ca75e87dc7a725556c8090e3681c1fa3a0452
+```
+
+  The schema and texture beds add **labels over Mozart piano sonatas already held**
+  (`tools/dcml/mozart_piano_sonatas`); Essen is a self-contained monophonic melody
+  bed (no chord symbols, no voice pairs). Alignment details in the wave-2 report.

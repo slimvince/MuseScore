@@ -256,6 +256,20 @@ analysis validation** is eventually tackled (deferred), the jazz/pop lead sheets
 GT-regression still needs the **jazz/pop analysis ground truth** (the standing want — none exists). The note-level
 curated/arrangement scores could extend the *qualitative-review* corpus (`tools/extra scores/`), not the gate.
 
+### `corpora/annot/` — axis-2 annotation/validation beds (corpus wave 2, 2026-07-03)
+
+A **separate subtree** under the same gitignored `corpora/` tree, holding three **annotation/validation beds** for
+axis 2 (voice leading) — expert **label layers over scores** or a standalone phrase-marked melody bed. **Research-tier,
+hash-pin-only, held-out (never tuned against), NOT gate/analysis corpora.** Kept apart from the idiom-discovery inputs
+in `corpora/ship|expl/` by design (they annotate scores already held, or fall outside the discovery views).
+
+- `schema_annotation_data` (DCMLab) — galant **voice-leading-schema** annotations over 18 Mozart sonatas (VL-F footing).
+- `symbolic-texture-dataset` (algomus, GitLab) — per-bar **symbolic-texture** labels, 9 Mozart mvts (VL-C validation).
+- `essen-folksong-collection` (CCARH kern) — **phrase-boundary** marks on ~6.2k European monophonic folksongs (VL-E).
+
+Pins + verification: `tools/score_census_registry.json → annotation_beds`; reproduction in `tools/REPRODUCIBILITY.md`;
+full inventory in `cc_corpus_wave2_report.md`.
+
 ---
 
 ## Hard rules
