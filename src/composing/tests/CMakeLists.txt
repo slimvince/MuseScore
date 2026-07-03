@@ -75,6 +75,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tonicizationlabeler_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tuning_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading_tests.cpp
 )
 
 set(MODULE_TEST_LINK
