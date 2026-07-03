@@ -323,4 +323,26 @@ target_sources(composing_analysis PRIVATE
     # component consumed: cowork_progression_schema_dictionary.md.
     ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.h
     ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.cpp
+
+    # voiceleading/ — AXIS 2 (VOICE LEADING), the dormant FOUNDATION build. The second,
+    # orthogonal analysis dimension (cross-ARI(VL, harmonic) = 0.030, findings v2.0): the
+    # linear reading of the same L1 notes. VL-A voicelinearview (the lossless per-voice
+    # view; FACT) -> VL-B voiceleadingprofiles (motion & interval profiles + the per-sample
+    # motion-event series; FACT, study-parity duty) -> VL-C textureclassifier (the ONE v1
+    # judgment: texture-of-span, Class M, whole-selection granularity, nearest-centroid in
+    # the measured winning feature space ABz) + its bounded-context extension requester.
+    # The reference set is GENERATED (textureclassifierreference.h, run_vl_feature_space.py).
+    # DORMANT: no production consumer — nothing in src/ calls any voiceleading symbol; it is
+    # exercised only by voiceleading_tests.cpp and the default-OFF diagnostic
+    # tools/batch_analyze --dump-vl. Byte-identical on production by construction; every
+    # numeric value is a declared precision-phase default (the firewall). Spec:
+    # cowork_voiceleading_axis_design.md (SIGNED) §5.1-§5.3, §7, §8; measurement +
+    # feature-space decision: cc_vl_foundation_build_report.md.
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/voicelinearview.h
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/voicelinearview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/voiceleadingprofiles.h
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/voiceleadingprofiles.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/textureclassifierreference.h
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/textureclassifier.h
+    ${CMAKE_CURRENT_LIST_DIR}/voiceleading/textureclassifier.cpp
 )
