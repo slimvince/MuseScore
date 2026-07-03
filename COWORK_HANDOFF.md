@@ -1,19 +1,24 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-03 (session 22c — **THE MERGED DOC PASS + THE §15-12 ARC ARE BOTH CLOSED**
-✅: the grammar completion landed (`2e9a22557e` code / `ce509b0961` docs), Cowork-verified at the objects and
-ratified; gate 53/24/53 set-identical, the CLAUDE.md Default-set caveat resolved by measurement; the
-preference-among-licensed lever parked at L5 §15-13 (Stage-5). **The axis-2 VL study is DELIVERED + VERIFIED +
-RATIFIED (session 22e; findings folded as v2.0; roadmap step 4's discovery half ✅).** **ACTIVE DISPATCH: the
-commit direction to CC** — (1) commit the VL pipeline code (`voiceleading.py` portability, `voiceleading2.py`,
-`run_vl_discovery.py`, `run_vl_orthogonality.py`) + the force-added report `cc_vl_idiom_discovery_report.md`
-(the `/cc_*.md` gitignore is bypassed by explicit add, the established convention; the raw `.txt` dumps stay
-untracked); (2) a `docs(cowork):` commit folding the session-22d/e Cowork edits — the findings v2.0 section,
-STATUS 22d/22e, this handoff, the roadmap step-4 status, and the untracked
-`cowork_spec_polish_findings_a/b.md` disposition banners (the standing loose end — clears with this). **NEXT after
-that lands: the voice-leading layer spec (a Cowork design task — full-budget session; footing = findings v2.0 +
-`cowork_polyphony_phrase_harmony_research.md`) → then corpus Wave 2 / Stage-5 calibration prerequisites per the
-ratified order.***
+*Written 2026-05-14. Last updated 2026-07-03 (session 22f). **Session 22c:** the merged doc pass + the §15-12 arc
+both CLOSED ✅ (grammar completion `2e9a22557e` code / `ce509b0961` docs, verified at objects, ratified; gate
+53/24/53 set-identical; the CLAUDE.md Default-set caveat resolved by measurement; the preference-among-licensed
+lever parked at L5 §15-13, Stage-5). **Session 22e:** the axis-2 VL study DELIVERED + VERIFIED + RATIFIED
+(findings folded as v2.0; roadmap step 4's discovery half ✅); **the commit direction LANDED + VERIFIED AT
+OBJECTS** — `95374ef16a` feat(idiom-discovery) (the 4 pipeline files + the force-added report) + `0dd64660f4`
+docs(cowork) (findings v2.0, STATUS 22d/22e, this handoff, roadmap, the findings_a/b banners — that loose end
+CLEARED — + the CLAUDE.md Default-caveat discharge). Tree clean; chain local/unpushed — user pushes at will.
+**Session 22f: the voice-leading axis spec is SIGNED — `cowork_voiceleading_axis_design.md` (A1–A8 ratified in
+full, user 2026-07-03; VL-A/B/C foundation build surface specced, VL-D/E/F/G/H named + design-gated; QA = self-QA
++ independent fresh-eyes audit, 24 findings folded; the targeted web sweep's census-grade finds recorded at
+research doc §6b; the zero-information-loss carried-alternatives clarification folded at ratification).**
+**Session 22g: the VL-A/B/C foundation LANDED + VERIFIED + RATIFIED (axis 2 BUILT, dormant)** — suites
+1083/53/11, gate 53/24/53 set-identical measured, dormancy grep-proven, parity 15/15, ABz feature space declared
+by measurement, spec AS-BUILT; the eligibility-filter reconciliation accepted (a Cowork instruction imprecision,
+owned; the 3-flag `plays && visible && staffEligible` filter is canonical). **ACTIVE DISPATCH: `cc_instruction_vl_docs_fold.md`** — the small `docs(cowork):` fold commit (STATUS 22f+22g,
+this handoff, research-doc §6b + the instruction/report records) AND the four build-commit SHAs stated in CC's
+confirmation (the report omitted them; object verification owed). **NEXT after the fold lands: corpus
+Wave 2 / Stage-5 calibration prerequisites per the ratified order.***
 
 ## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
 

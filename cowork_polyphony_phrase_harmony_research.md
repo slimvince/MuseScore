@@ -123,6 +123,65 @@ music-theory phrase** are identified — the methods above are the starting corp
 - **Cadence as a texture-wide signal** (arXiv 2208.14819) and the unified multi-task framing (AnalysisGNN, arXiv
   2509.06654) — for the eventual coupling of the two axes.
 
+## 6b. Targeted pre-ratification sweep for the axis-2 spec (Cowork, accessed 2026-07-03)
+
+A second, *specific* search run at the user's direction while `cowork_voiceleading_axis_design.md` awaited
+ratification — now that the spec's components name exactly what to look for. Same confidence marking as §0.
+**The two census-grade finds (each is a "discovered corpus" census event per the standing census rule — the
+CONTAINERS go to the census; nothing is onboarded here):**
+
+1. **★ An expert schema-annotation dataset EXISTS, on a corpus we already hold — direct VL-F footing.**
+   Finkensiep, Déguernel, Neuwirth & Rohrmeier, *Voice-Leading Schema Recognition Using Rhythm and Pitch
+   Features* (ISMIR 2020) — **[verified: full paper fetched]**. 244 expert-annotated true schema instances
+   across **all 18 Mozart piano sonatas** (the DCML `mozart_piano_sonatas` scores — already in our clones), 10
+   schema types / 20 subtypes with counts: Prinner 32, Fonte 49(+2+8 variants), **Quiescenza 46(+6)**, Do-Re-Mi
+   5, plus Fenaroli, Indugio, Lamento, Lully, Morte, Sol-Fa-Mi. Dataset public:
+   github.com/DCMLab/schema_annotation_data (with annotation guidelines). Method footing for VL-F: generalized
+   **skipgram candidate enumeration** (Finkensiep et al. 2018) + a binary classifier on rhythm/pitch/metric
+   features (regularity, complexity, salience, harmonic profile); F-score 0.894 balanced, BUT the operative
+   lessons are (a) extreme class imbalance is the real problem (191k auto-generated candidates vs 244 true), (b)
+   interval-pattern match alone is far from sufficient — structural-note status is relational, not local (their
+   duration/metric-weight features carried little weight), and (c) their stated main limitation: candidates are
+   judged in isolation, while human rejection usually means "a **better explanation** of the context exists" —
+   pointing at reduction-based/alternative-comparing recognition (Katsiavalos et al. 2019 cited as the
+   reduction-based line). Related: Sears & Widmer, skip-grams for voice-leading patterns (J. Math. & Music
+   2020); Symons (2017) on rhythmic regularity. **[verified]**
+2. **★ A per-bar symbolic-texture annotation dataset EXISTS, likewise on our corpus — direct VL-C
+   validation/granularity footing.** Couturier, Bigo & Levé, *A Dataset of Symbolic Texture Annotations in
+   Mozart Piano Sonatas* (ISMIR 2022) — **[verified: full paper fetched]**. Manual, reviewed, per-**bar** texture
+   labels for 9 movements (K.279/K.280/K.283, 1,164 bars → 1,357 configurations) in a formal syntax: layer
+   functions **M/H/S** (melodic/harmonic/static), per-layer density, diversity (layer count), and elements incl.
+   **homorhythmy / parallel motion / octave** — annotated on the DCML `mozart_piano_sonatas` TSVs we already
+   hold; data at algomus.fr/data (Dezrann). They also ship 62 bar-level texture descriptors (Python, music21- and
+   DCML-TSV-compatible) + logistic-regression baselines (melody-presence F1 0.912; harmonic/static harder).
+   Relevance: (a) **per-piece → per-bar texture ground truth for VL-C** — including exactly the within-piece
+   granularity the spec's §15-1 measurement needs; (b) their density×diversity texture space
+   (monophony/homophony/polyphony/antiphony after Huron 1989) is a finer, compositional-syntax view that
+   complements our motion-type idiom classes; (c) prior art that bar-level logistic regression on high-level
+   descriptors works for texture elements. Companion: the syntax paper (SMC 2022) and *Comparing Texture in
+   Piano Scores* (ISMIR 2023). **[verified]**
+
+**Smaller finds:**
+- **Voice separation, current SOTA + tooling:** the link-prediction GNN line is now complemented by *Cluster
+  and Separate: a GNN Approach to Voice and Staff Prediction for Score Engraving* (Foscarin et al., arXiv
+  2407.21030) **[reported]**; `partitura` ships voice-separation utilities **[reported]**; public evaluation
+  material: MCMA (474 contrapuntal pieces) + KernScores chorales/quartets (662) ≈ 1,136 pieces **[reported]**.
+- **Melodic-phrase ground truth (the VL-E census item has a standard answer):** the **Essen Folksong
+  Collection** — 6,236 folksongs with expert phrase-boundary marks (~12% of note events), THE standard
+  segmentation benchmark **[reported]**; also MTC-ANN (Meertens Tune Collections) **[reported]**; recent methods:
+  phrase segmentation via grammatical induction (arXiv 2405.18742) **[reported]**. Caveat for our use: monophonic
+  folk melodies — a coverage-limited (single-line, vocal) bed for the per-voice phrase task.
+- **Part-writing checking precedent (VL-H):** music21's theory-analysis routines detect parallel fifths/octaves
+  (ModalCounterpoint / theory analyzer) **[reported]**; the MuseScore plugin ecosystem already carries a
+  *Parallel Intervals Checker* for MuseScore Studio 4 — a product-precedent inside our own host application
+  **[reported]**.
+- **Per-piece texture tags at scale:** the Sheet Music Benchmark (SMB) labels each piece
+  Monophonic/Pianoform/PianoAndVoice/Quartet/Other **[reported]** — coarse, but a cheap cross-check bed.
+
+**What did NOT turn up:** any published system analysing overlapping per-voice phrases for harmonic purposes
+(§1's negative result stands); any motion-type-rate texture *idiom* taxonomy like ours (the Couturier syntax is
+bar-level and compositional, not a piece-level idiom clustering) — the axis-2 discovery result appears novel.
+
 ## 7. Sources
 
 - ChordGNN — *Roman Numeral Analysis with Graph Neural Networks: Onset-wise Predictions from Note-wise Features*,
@@ -139,3 +198,21 @@ music-theory phrase** are identified — the methods above are the starting corp
 - Chew & Wu, contig-mapping voice separation (2005); Karydis/Cambouropoulos VISA (ISMIR 2007); Temperley, "Voice
   and Stream" (Music Perception, 2008). **[reported]**
 - Contrapunctus (contrapunctus.app) — internal notes `contrapunctus_findings.md` (accessed 2026-06-20).
+
+**§6b sources (accessed 2026-07-03):**
+
+- Finkensiep, Déguernel, Neuwirth, Rohrmeier — *Voice-Leading Schema Recognition Using Rhythm and Pitch
+  Features*, ISMIR 2020. https://archives.ismir.net/ismir2020/paper/000124.pdf · dataset
+  https://github.com/DCMLab/schema_annotation_data **[verified]**
+- Couturier, Bigo, Levé — *A Dataset of Symbolic Texture Annotations in Mozart Piano Sonatas*, ISMIR 2022.
+  https://archives.ismir.net/ismir2022/paper/000061.pdf · data http://algomus.fr/data **[verified]** · syntax:
+  *Annotating Symbolic Texture in Piano Music: a Formal Syntax*, SMC 2022 (hal-03631151) **[reported]** ·
+  follow-up: *Comparing Texture in Piano Scores*, ISMIR 2023 (archives.ismir.net/ismir2023/paper/000060.pdf)
+  **[reported]**
+- Foscarin et al. — *Cluster and Separate: a GNN Approach to Voice and Staff Prediction*, arXiv 2407.21030
+  **[reported]** · Partitura (CPJKU) — https://github.com/CPJKU/partitura **[reported]**
+- Essen Folksong Collection (EsAC, phrase boundaries); MTC-ANN; *Musical Phrase Segmentation via Grammatical
+  Induction*, arXiv 2405.18742 **[reported]**
+- music21 theory-analysis / counterpoint tools (cuthbertLab); MuseScore *Parallel Intervals Checker* plugin
+  (musescore.org/en/project/parallel-intervals-checker-musescore-studio-4) **[reported]**
+- Sheet Music Benchmark (SMB), texture tags — arXiv 2506.10488 **[reported]**
