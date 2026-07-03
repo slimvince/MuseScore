@@ -305,4 +305,22 @@ target_sources(composing_analysis PRIVATE
     # cowork_layer6_grouping_design.md (SIGNED) + cc_l6_build_report.md.
     ${CMAKE_CURRENT_LIST_DIR}/grouping/groupinglayer.h
     ${CMAKE_CURRENT_LIST_DIR}/grouping/groupinglayer.cpp
+
+    # progression/ — THE PROGRESSION-RECOGNITION CONSUMER (the Layer-5/6 consumer of
+    # the Harmonic Vocabulary). Recognises NAMED progressions (incl. substitutions) in
+    # Layer 5's committed progression via HarmonicVocabulary::recognise (it owns no
+    # second matcher), running the §4.5 three-phase idiom-mixture weighting, and emits:
+    # the §4.4 progression-schema-spans (the L6 annotation), the §4.3 evidence
+    # contributions (the §5.5 abstained feature + the §8/frame-F-B committed-override
+    # contribution, both SELECTION-only), and the §4.6 harmonic sequences (always
+    # emitted; the §5.3 key-channel CONSUMPTION is F-C-gated, NOT wired). NOT the
+    # grammar owner (functionprogression, L5) nor the catalog owner (harmonicvocabulary)
+    # — the D5 dependency map is cross-commented at both. DORMANT: no production consumer
+    # (recognizeProgressions is called only by its tests + the default-OFF diagnostic
+    # tools/batch_analyze --dump-progressions), byte-identical on production by
+    # construction. Every numeric value is a declared precision-phase default (the
+    # firewall — no θ, no tuning). Spec: cowork_progression_schema_design.md §3/§4;
+    # component consumed: cowork_progression_schema_dictionary.md.
+    ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.h
+    ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.cpp
 )
