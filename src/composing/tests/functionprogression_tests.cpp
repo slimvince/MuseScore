@@ -62,7 +62,7 @@ ProgressionSlice abstainedSlice(double metricWeight)
 }
 
 // Pitch classes for readability.
-constexpr int C = 0, D = 2, E = 4, F = 5, Fs = 6, G = 7, A = 9, Bb = 10, B = 11;
+constexpr int C = 0, D = 2, E = 4, F = 5, Fs = 6, G = 7, Ab = 8, A = 9, Bb = 10, B = 11;
 
 } // namespace
 
@@ -121,6 +121,67 @@ TEST(FunctionProgression, DescendingThirdAndAscendingSecondAreLicensed)
                                       chord(G, ChordQuality::Major)));
     // vii→I (ascending minor second): B→C.
     EXPECT_TRUE(isAscendingSecond(B, C));
+}
+
+// ── §15-12 grammar completion (RATIFIED 2026-07-03): the three added motions ──────
+//
+// The pre-amendment grammar descended from the old scoring-bonus signals and omitted
+// three theory-licensed motions the catalog's musically-correct entries exercise. The
+// D5 consistency test proved the gap (6 entries / 11 motions); the amendment adds
+// exactly these three root-motion classes. (No existing must-NOT-license control in
+// this suite pinned any of the three as unlicensed — the tritone control below stays a
+// NON-diminished delta-6, still unlicensed — so nothing here flips; the deliberate
+// flips are the D5 test's 11 known-gap pins, emptied in progressionrecognizer_tests.)
+
+TEST(FunctionProgression, AscendingFifthIsLicensed)
+{
+    // Tonic→dominant (I→V) and plagal (IV→I) motion — pc delta +7, any quality.
+    EXPECT_TRUE(isAscendingFifth(C, G));   // I→V: C→G
+    EXPECT_TRUE(isLicensedProgression(chord(C, ChordQuality::Major),
+                                      chord(G, ChordQuality::Major)));
+    EXPECT_TRUE(isAscendingFifth(F, C));   // IV→I: F→C (plagal)
+    EXPECT_TRUE(isLicensedProgression(chord(F, ChordQuality::Major),
+                                      chord(C, ChordQuality::Major)));
+    // vi→iii (A→E) is also an ascending fifth (Pachelbel / Romanesca step).
+    EXPECT_TRUE(isAscendingFifth(A, E));
+    EXPECT_TRUE(isLicensedProgression(chord(A, ChordQuality::Minor),
+                                      chord(E, ChordQuality::Minor)));
+}
+
+TEST(FunctionProgression, DescendingSecondIsLicensed)
+{
+    // The Phrygian/Andalusian step — pc delta +10 (major 2nd down) / +11 (minor 2nd
+    // down), any quality. i→♭VII, ♭VII→♭VI, ♭VI→V in C minor.
+    EXPECT_TRUE(isDescendingSecond(C, Bb));    // i→♭VII: C→B♭ (delta 10)
+    EXPECT_TRUE(isLicensedProgression(chord(C, ChordQuality::Minor),
+                                      chord(Bb, ChordQuality::Major)));
+    EXPECT_TRUE(isDescendingSecond(Bb, Ab));   // ♭VII→♭VI: B♭→A♭ (delta 10)
+    EXPECT_TRUE(isLicensedProgression(chord(Bb, ChordQuality::Major),
+                                      chord(Ab, ChordQuality::Major)));
+    EXPECT_TRUE(isDescendingSecond(Ab, G));    // ♭VI→V: A♭→G (delta 11, semitone)
+    EXPECT_TRUE(isLicensedProgression(chord(Ab, ChordQuality::Major),
+                                      chord(G, ChordQuality::Major)));
+}
+
+TEST(FunctionProgression, DiatonicDiminishedFifthIsLicensedOnlyIntoADiminishedTriad)
+{
+    // The IV→viiᵒ link of the full circle of fifths — root falls a diminished fifth
+    // (delta 6) AND the arriving chord is a diminished triad. IV(F)→viiᵒ(B°).
+    EXPECT_TRUE(isDiatonicDiminishedFifth(chord(F, ChordQuality::Major),
+                                          chord(B, ChordQuality::Diminished)));
+    EXPECT_TRUE(isLicensedProgression(chord(F, ChordQuality::Major),
+                                      chord(B, ChordQuality::Diminished)));
+    // The quality condition, tested the OTHER way: the SAME delta-6 root motion into a
+    // NON-diminished arrival is NOT licensed — the "diatonic" qualifier; a bare tritone
+    // root motion is never licensed (and the amendment does not intend it).
+    EXPECT_FALSE(isDiatonicDiminishedFifth(chord(F, ChordQuality::Major),
+                                           chord(B, ChordQuality::Major)));
+    EXPECT_FALSE(isLicensedProgression(chord(F, ChordQuality::Major),
+                                       chord(B, ChordQuality::Major)));
+    // A half-diminished arrival is likewise NOT this link (viiø7 is a different beast;
+    // the amendment names the diminished triad specifically).
+    EXPECT_FALSE(isDiatonicDiminishedFifth(chord(F, ChordQuality::Major),
+                                           chord(B, ChordQuality::HalfDiminished)));
 }
 
 TEST(FunctionProgression, SameRootIsNotALicensedProgression)

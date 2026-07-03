@@ -40,7 +40,7 @@ namespace {
 using Q = ChordQuality;
 using R = RelationalRole;
 
-constexpr int C = 0, D = 2, G = 7;
+constexpr int C = 0, D = 2, E = 4, G = 7;
 
 // One committed analysis unit: an L4 committed chord + its Step-5 numeral + the Step-3
 // resolver verdict (resolved, with a confidence).
@@ -109,17 +109,19 @@ TEST(FunctionOutput, ResolvedUnitCarriesNumeralAndConfidence)
 
 TEST(FunctionOutput, LicensedFitZeroForUnlicensedMotion)
 {
-    // An ascending perfect fifth C→G (delta 7) is the retrograde of the descending-fifth
-    // and is NOT in §5.0's enumerated licensed set (descending fifth / descending third /
-    // ascending second / applied resolution), so the Step-1 predicate returns false and
+    // Re-pointed at the §15-12 completion (2026-07-03): the old example — an ascending perfect
+    // fifth C→G (Δ7) — is now LICENSED (tonic→dominant), so it no longer illustrates an
+    // unlicensed motion. An ascending major third I→iii (C→E, Δ4) is still outside §5.0's
+    // licensed set (descending fifth / third, ascending second / fifth, descending second,
+    // diatonic diminished fifth, applied resolution), so the Step-1 predicate returns false and
     // the assembly faithfully reports licensed-fit 0.0.
     std::vector<FunctionUnitAssembly> units = {
         committedUnit(0, 960, C, Q::Major, "I", R::None, 0.5),
-        committedUnit(960, 1920, G, Q::Major, "V", R::None, 0.5),
+        committedUnit(960, 1920, E, Q::Minor, "iii", R::None, 0.5),
     };
     const FunctionLayerOutput out =
         assembleFunctionOutput(units, /*cadences=*/{}, /*modulations=*/{}, C, false);
-    EXPECT_DOUBLE_EQ(out.units[1].confidence.licensedProgressionFit, 0.0);  // C→G is unlicensed
+    EXPECT_DOUBLE_EQ(out.units[1].confidence.licensedProgressionFit, 0.0);  // C→E (Δ4) is unlicensed
 }
 
 // ── §7: an undecided unit carries the honest open mark ────────────────────────────
@@ -250,8 +252,10 @@ TEST(FunctionOutput, CadenceVoteAttributedToArrivalUnitOnly)
 // combinedBoundary = combined / (combined + kBoundary) — the confidence-contract U2
 // squash (contract §5 R5 / §7 D-L5a). It must be ∈ [0,1) and MONOTONE in combined over
 // the E0-observed range (0 … ~25.25); `combined` itself is unchanged. Roots step by
-// ASCENDING fifth (+7) — an unlicensed motion (see LicensedFitZeroForUnlicensedMotion) —
-// and there are no cadences, so combined == resolverConfidence and we sweep it directly.
+// ASCENDING major third (+4) — still an unlicensed motion after the §15-12 completion
+// (see LicensedFitZeroForUnlicensedMotion; the +7 ascending fifth this sweep formerly used
+// is now licensed) — and there are no cadences, so combined == resolverConfidence and we
+// sweep it directly.
 TEST(FunctionOutput, CombinedBoundaryIsSquashedToUnitIntervalAndMonotone)
 {
     const std::vector<double> confs = { 0.0, 0.5, 1.0, 5.0, 25.25 };
@@ -260,7 +264,7 @@ TEST(FunctionOutput, CombinedBoundaryIsSquashedToUnitIntervalAndMonotone)
     for (size_t i = 0; i < confs.size(); ++i) {
         units.push_back(committedUnit(static_cast<int>(i) * 960, static_cast<int>(i + 1) * 960,
                                       root, Q::Major, "x", R::None, confs[i]));
-        root = (root + 7) % 12;   // ascending fifth → unlicensed → licensed-fit 0
+        root = (root + 4) % 12;   // ascending major third → unlicensed → licensed-fit 0
     }
 
     const FunctionLayerOutput out =

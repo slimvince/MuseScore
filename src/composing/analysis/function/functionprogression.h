@@ -45,13 +45,20 @@
 // misnamed predecessor `harmonicfunctionlayer` (the chord-identity COMPETITION
 // pipeline); that rename is an engage-step structural item, not this step.
 //
-// REUSE, NOT DUPLICATE (build §1): the licensing sub-tests reuse the SAME root-
-// motion arithmetic the competition pipeline already uses as scoring bonuses —
-// wSeqBonus (descending-fifth, delta == 5), wDimBonus (leading-tone, delta == 1),
+// REUSE, NOT DUPLICATE (build §1): the pre-amendment licensing sub-tests reuse the
+// SAME root-motion arithmetic the competition pipeline already uses as scoring bonuses
+// — wSeqBonus (descending-fifth, delta == 5), wDimBonus (leading-tone, delta == 1),
 // resolutionEdgeBonus (dim/half-dim resolution targets) in harmonicfunctionlayer.
 // Here that arithmetic is a LICENSING test (a boolean), not a score term: §5.0's
 // "the licensing itself is the rule here; the numeric preference among licensed
 // readings is a precision-phase weight" — so this step computes no weight.
+//   (The §15-12 amendment (RATIFIED 2026-07-03) added THREE motions with NO bonus
+//   analogue — the ascending fifth (delta 7), the descending second (delta 10/11),
+//   and the diatonic diminished fifth (delta 6 into a diminished triad). They exist
+//   precisely because the pre-amendment set descended from the bonus signals and
+//   omitted them; they are pure theory completions, still licensing booleans that
+//   compute no weight. See isAscendingFifth / isDescendingSecond /
+//   isDiatonicDiminishedFifth below.)
 //
 // PRODUCER-AGNOSTIC: the predicates read only the small view types below. At
 // engage they are mapped from the L4 decoder's committed chord
@@ -86,13 +93,25 @@
 //     ONLY coupling is the CONSISTENCY TEST, and it runs ONE WAY (catalog → grammar):
 //     tests/progressionrecognizer_tests.cpp asserts every adjacent chord pair of
 //     every catalog entry passes isLicensedProgression.
-//   • RULED KNOWN GAPS (2026-07-02): the consistency test found 6 catalog entries /
-//     11 motions the §5.0 grammar does NOT license (plagal / ascending-fifth = delta
-//     7; descending-second = delta 10/11; the diatonic diminished-fifth = delta 6) —
-//     each musically correct, so ruled GRAMMAR GAPS (not mis-encodings). The §5.0
-//     grammar-completion amendment is L5-owned future work (L5 spec §15-12); until it
-//     lands the test pins those as an explicit known-gap list (a tripwire — any 7th
-//     failure is red). Do NOT widen this grammar to clear them in a consumer build.
+//   • SCOPE of "the ONLY coupling" (grammar-completion ruling, 2026-07-03): that
+//     statement governs the CATALOG↔GRAMMAR relationship. The in-layer CONSUMERS of
+//     this grammar (function/functionresolver, function/functionoutput,
+//     function/functioncadence) are ordinary same-layer callers, expected to MOVE WITH
+//     the grammar — a grammar change may shift their behaviour and their tests (e.g. the
+//     §5.5 disambiguation that no longer separates two now-both-licensed readings falls
+//     to the structural tie-breaks / honest open mark; the numeric preference AMONG
+//     licensed readings is the deferred Stage-5 lever, L5 §15-13).
+//   • RULED KNOWN GAPS (2026-07-02) — ★ CLOSED by the §15-12 grammar completion
+//     (RATIFIED 2026-07-03). The consistency test had found 6 catalog entries / 11
+//     motions the pre-amendment §5.0 grammar did NOT license (plagal / ascending-fifth
+//     = delta 7; descending-second = delta 10/11; the diatonic diminished-fifth =
+//     delta 6 into a diminished triad) — each musically correct, so ruled GRAMMAR GAPS
+//     (not mis-encodings). The ratified §15-12 amendment (L5 spec) added exactly those
+//     three root-motion classes to THIS grammar (see isAscendingFifth /
+//     isDescendingSecond / isDiatonicDiminishedFifth below); the consumer's consistency
+//     test then EMPTIED its known-gap list and tightened to the clean invariant (every
+//     adjacent catalog pair licensed). No catalog edit was needed. Historical note
+//     retained.
 
 #include <vector>
 
@@ -142,6 +161,26 @@ bool isDescendingThird(int fromRootPc, int toRootPc) noexcept;
 /// above `fromRootPc` — (to - from) mod 12 ∈ {1, 2}. e.g. IV→V, vii→I.
 bool isAscendingSecond(int fromRootPc, int toRootPc) noexcept;
 
+// ── §15-12 amendment (RATIFIED 2026-07-03): the three theory-licensed motions the
+//    pre-amendment (bonus-derived) set omitted. Enumerated in L5 spec §5.0. ──────────
+
+/// Ascending-fifth (tonic→dominant / plagal) motion: the target root sits a perfect
+/// fifth ABOVE `fromRootPc` — (to - from) mod 12 == 7. I→V and IV→I. Unconditional on
+/// quality. Has NO scoring-bonus analogue — a §15-12 theory completion.
+bool isAscendingFifth(int fromRootPc, int toRootPc) noexcept;
+
+/// Descending-second (Phrygian/Andalusian) step: the target root sits a major or minor
+/// second BELOW `fromRootPc` — (to - from) mod 12 ∈ {10, 11}. i→♭VII, ♭VII→♭VI, ♭VI→V.
+/// Unconditional on quality. A §15-12 theory completion.
+bool isDescendingSecond(int fromRootPc, int toRootPc) noexcept;
+
+/// The diatonic diminished-fifth link (IV→viiᵒ of the full circle of fifths): the root
+/// falls a DIMINISHED fifth — (to - from) mod 12 == 6 — AND the arriving chord is a
+/// DIMINISHED triad. The quality condition operationalises §15-12's "diatonic"
+/// qualifier: a bare delta-6 license would admit generic tritone root motion, which the
+/// grammar has never licensed and the amendment does not intend. A §15-12 completion.
+bool isDiatonicDiminishedFifth(const ProgressionChord& from, const ProgressionChord& to) noexcept;
+
 /// The resolution of an applied or leading-tone chord to its tonicized target
 /// (§5.0). Quality-aware (the one root-motion clause that needs the chord quality):
 ///   • applied dominant  (V/x, V7/x → x): `from` is Major-quality (a dominant
@@ -159,8 +198,10 @@ bool isAppliedResolution(const ProgressionChord& from, const ProgressionChord& t
 
 /// §5.0 "a licensed (real) progression": the root motion between two functions is
 /// one of the enumerable standard functional successions — descending-fifth,
-/// descending-third or ascending-second functional step, or an applied/leading-tone
-/// resolution to its target. A stated, closed test (no preference).
+/// descending-third or ascending-second functional step, ascending fifth (I→V, IV→I),
+/// descending second (the Phrygian/Andalusian step), the diatonic diminished fifth
+/// (IV→viiᵒ), or an applied/leading-tone resolution to its target. A stated, closed
+/// test (no preference). The last three are the §15-12 amendment (RATIFIED 2026-07-03).
 ///
 /// The CADENTIAL-MOTION clause of §5.0 is added when the cadence detector lands
 /// (Step 2); its core motion (V→I, descending fifth) is already licensed here. The

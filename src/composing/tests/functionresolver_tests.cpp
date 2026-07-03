@@ -134,8 +134,37 @@ TEST(FunctionResolver, DegreeFunctionalBiasMapping)
 
 TEST(FunctionResolver, ShareTone_ResolvedByLicensedProgressionIntoNext)
 {
-    // ii → {Am6 ↔ F#ø7 (same pcs)} → V. Only F#ø7 forms a licensed progression INTO V
-    // (F#→G, an ascending semitone); Am6→G (a descending whole step) is not licensed.
+    // Re-pointed at the §15-12 completion (2026-07-03): the old vehicle (→ V) is now BOTH-
+    // licensed, because Am6→G (Δ10, descending second) is newly licensed — so it no longer
+    // demonstrates the unique-licensing arm (see ShareTone_BothLicensedCarriesOpenMark). Re-
+    // picked into E♭ so exactly ONE reading is licensed INTO the next: F#ø7→E♭ (Δ9, descending
+    // third) is licensed; Am6→E♭ (Δ6 into a NON-diminished arrival) is not. ii → {Am6 ↔ F#ø7} → E♭.
+    std::vector<FunctionSlice> region{
+        committedSlice(D, ChordQuality::Minor, 0),
+        abstainSlice(AmbiguityKind::ShareTone,
+                     cand(A, ChordQuality::Minor, A),            // readingA = Am6
+                     cand(Fs, ChordQuality::HalfDiminished, Fs), // readingB = F#ø7
+                     /*hasB*/ true, 480),
+        committedSlice(Eb, ChordQuality::Major, 960),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
+    ASSERT_EQ(r.readings.size(), 3u);
+    const ResolvedReading& rr = r.readings[1];
+    EXPECT_TRUE(rr.resolved);
+    EXPECT_FALSE(rr.openMark);
+    EXPECT_EQ(rr.reading.rootPc, Fs);                            // the uniquely-licensed reading selected
+    EXPECT_EQ(rr.basis, ResolutionBasis::Progression);
+}
+
+TEST(FunctionResolver, ShareTone_BothLicensedCarriesOpenMark)
+{
+    // The §15-12-completion "both-licensed case" (L5 §5.5 both-licensed note; §15-13, the
+    // deferred preference lever). ii → {Am6 ↔ F#ø7} → V: post-completion BOTH form a licensed
+    // motion into G — F#ø7→G (Δ1, ascending second) AND Am6→G (Δ10, descending second, newly
+    // licensed) — so the progression test no longer separates them. With no §5.7 bass-degree
+    // prior split (bass A = 6̂ → no functional lean), the honest open mark stands. These are the
+    // firewall-era semantics and are expected to be DELIBERATELY revisited when Stage-5 fits the
+    // licensed-motion preference weight (§15-13).
     std::vector<FunctionSlice> region{
         committedSlice(D, ChordQuality::Minor, 0),
         abstainSlice(AmbiguityKind::ShareTone,
@@ -145,24 +174,25 @@ TEST(FunctionResolver, ShareTone_ResolvedByLicensedProgressionIntoNext)
         committedSlice(G, ChordQuality::Major, 960),
     };
     const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
-    ASSERT_EQ(r.readings.size(), 3u);
     const ResolvedReading& rr = r.readings[1];
-    EXPECT_TRUE(rr.resolved);
-    EXPECT_FALSE(rr.openMark);
-    EXPECT_EQ(rr.reading.rootPc, Fs);                            // the licensed reading selected
-    EXPECT_EQ(rr.basis, ResolutionBasis::Progression);
+    EXPECT_FALSE(rr.resolved);
+    EXPECT_TRUE(rr.openMark);
+    EXPECT_EQ(rr.basis, ResolutionBasis::None);
 }
 
 TEST(FunctionResolver, Transition_ResolvedAsArrivingFunction)
 {
-    // I → {D7 (V/V, belongs to the arriving V) ↔ C (passing within I)} → V. D7 forms a
-    // licensed progression into V (descending fifth); the slice "belongs to the arriving
-    // function", so D7 is selected.
+    // Re-pointed at the §15-12 completion (2026-07-03): the old vehicle (I → {D7 ↔ C} → V) is
+    // now BOTH-licensed, because C→G (Δ7, ascending fifth) is newly licensed — so it no longer
+    // demonstrates the arriving-function arm (see Transition_BothLicensedResolvesAsNeighbour...).
+    // Re-picked over prevailing iii(Em) so exactly ONE reading is licensed INTO V: the arriving
+    // D→G (Δ5, descending fifth) is licensed; the continuation E→G (Δ3, ascending minor third)
+    // is not. iii → {D (arriving) ↔ E (continues iii)} → V.
     std::vector<FunctionSlice> region{
-        committedSlice(C, ChordQuality::Major, 0),
+        committedSlice(E, ChordQuality::Minor, 0),          // prevailing iii
         abstainSlice(AmbiguityKind::TransitionVsContinuation,
-                     cand(D, ChordQuality::Major, D),   // readingA = D7 (arriving)
-                     cand(C, ChordQuality::Major, C),   // readingB = C (passing)
+                     cand(D, ChordQuality::Major, D),        // readingA = D (arriving, resolves to V)
+                     cand(E, ChordQuality::Minor, E),        // readingB = E (continues prevailing iii)
                      /*hasB*/ true, 480),
         committedSlice(G, ChordQuality::Major, 960),
     };
@@ -171,6 +201,32 @@ TEST(FunctionResolver, Transition_ResolvedAsArrivingFunction)
     EXPECT_TRUE(rr.resolved);
     EXPECT_EQ(rr.reading.rootPc, D);
     EXPECT_EQ(rr.basis, ResolutionBasis::Progression);
+}
+
+TEST(FunctionResolver, Transition_BothLicensedResolvesAsNeighbourWithinPrevailing)
+{
+    // The §15-12-completion "both-licensed case" (L5 §5.5 both-licensed note; §15-13, the
+    // deferred preference lever). I → {D7 (arriving) ↔ C (continues I)} → V: post-completion
+    // BOTH form a licensed motion into G — D→G (Δ5, descending fifth) AND C→G (Δ7, ascending
+    // fifth, newly licensed) — so the arriving-function arm no longer separates them. The slice
+    // falls to the passing/neighbour arm: the reading matching the prevailing I (C) is selected
+    // via NeighbourHarmony at confidence 0.5. Firewall-era semantics; revisited at Stage-5's
+    // preference weight (§15-13).
+    std::vector<FunctionSlice> region{
+        committedSlice(C, ChordQuality::Major, 0),
+        abstainSlice(AmbiguityKind::TransitionVsContinuation,
+                     cand(D, ChordQuality::Major, D),   // readingA = D7 (arriving)
+                     cand(C, ChordQuality::Major, C),   // readingB = C (continues I)
+                     /*hasB*/ true, 480),
+        committedSlice(G, ChordQuality::Major, 960),
+    };
+    const ResolverResult r = resolveCarriedReadings(region, {}, cMajor());
+    const ResolvedReading& rr = r.readings[1];
+    EXPECT_TRUE(rr.resolved);
+    EXPECT_FALSE(rr.openMark);
+    EXPECT_EQ(rr.reading.rootPc, C);
+    EXPECT_EQ(rr.basis, ResolutionBasis::NeighbourHarmony);
+    EXPECT_DOUBLE_EQ(rr.functionConfidence, 0.5);
 }
 
 TEST(FunctionResolver, Transition_ResolvedAsNeighbourWithinPrevailing)
@@ -560,10 +616,15 @@ TEST(FunctionResolver, L5EXT1_DisabledEqualsBaseResolver_NoProvenance)
 }
 
 // L5EXT2 — must-FIRE + resolve: the edge abstain is cut (no forward function), so the base pass
-// leaves it an OPEN MARK; supplying the forward V(G) establishes the next function, and the
-// forward re-run RESOLVES the ShareTone by the licensed progression into G (→ F#ø7). Output is
-// the selection only (the reached-forward G is evidence, not emitted); the resolved slice is no
-// longer cut, so it carries NO clip.
+// leaves it an OPEN MARK; supplying the forward function establishes the next function, and the
+// forward re-run RESOLVES the ShareTone by the licensed progression into it (→ F#ø7). Output is
+// the selection only (the reached-forward chord is evidence, not emitted); the resolved slice is
+// no longer cut, so it carries NO clip.
+//   Vehicle re-pointed at the §15-12 completion (2026-07-03): the old forward function V(G) is
+//   now BOTH-licensed for the {Am6 ↔ F#ø7} share-tone (Am6→G Δ10 newly licensed), which would
+//   open the abstain, not resolve it. The subject here is the EXTENSION MECHANICS, not the
+//   disambiguation, so the vehicle is re-pointed to E♭ (F#ø7→E♭ Δ9 uniquely licensed; Am6→E♭ Δ6
+//   into a non-diminished arrival not) — the cut abstain still fires AND resolves.
 TEST(FunctionResolver, L5EXT2_CutAbstain_RequestFiresAndResolves)
 {
     const std::vector<FunctionSlice> region = cutTailRegion();
@@ -573,14 +634,14 @@ TEST(FunctionResolver, L5EXT2_CutAbstain_RequestFiresAndResolves)
     ASSERT_EQ(base.readings.size(), 2u);
     EXPECT_TRUE(base.readings[1].openMark) << "with no forward context the edge abstain is open";
 
-    // Extend: supply the forward V(G). The re-run resolves the abstain to F#ø7.
+    // Extend: supply the forward E♭. The re-run resolves the abstain to F#ø7 (Δ9, uniquely licensed).
     const ResolverResult ext = resolveCarriedReadingsExtending(
-        region, {}, cMajor(), oneShot({ committedSlice(G, ChordQuality::Major, 960) }),
+        region, {}, cMajor(), oneShot({ committedSlice(Eb, ChordQuality::Major, 960) }),
         kDefaultFunctionResolverParams, extOn());
 
-    ASSERT_EQ(ext.readings.size(), 2u) << "output covers the selection only (forward G is evidence)";
+    ASSERT_EQ(ext.readings.size(), 2u) << "output covers the selection only (forward E♭ is evidence)";
     EXPECT_TRUE(ext.readings[1].resolved) << "the extension resolved the previously-open abstain";
-    EXPECT_EQ(ext.readings[1].reading.rootPc, Fs) << "resolved by licensed progression into V";
+    EXPECT_EQ(ext.readings[1].reading.rootPc, Fs) << "resolved by licensed progression into the forward function";
     EXPECT_FALSE(ext.readings[1].clippedBySelectionEdge) << "resolved ⇒ no longer cut";
     EXPECT_FALSE(ext.readings[1].cueDenied);
 }
@@ -619,29 +680,34 @@ TEST(FunctionResolver, L5EXT4_ScoreBoundary_ClipButNotDenied)
 // extension finalizes a LATER edge-cut decision — forward data supply, never a back-edge.
 TEST(FunctionResolver, L5EXT5_ForwardExtension_DoesNotReopenClosedDecision)
 {
-    // [ I(C) , abstain#1 (interior, resolvable → F#ø7) , V(G) , abstain#2 (edge, cut) ]
+    // [ I(C) , abstain#1 (interior, resolvable → F#ø7) , E♭ , abstain#2 (edge, cut) ]
+    //   Vehicle re-pointed at the §15-12 completion (2026-07-03): the old forward function V(G)
+    //   is now BOTH-licensed for {Am6 ↔ F#ø7} (Am6→G Δ10 newly licensed) → would open, not
+    //   resolve. The subject is the one-pass closure/no-reopen mechanics, so the forward
+    //   function is re-pointed to E♭, into which F#ø7→E♭ (Δ9) is uniquely licensed (Am6→E♭ Δ6
+    //   into a non-diminished arrival is not) — both abstains still resolve as F#ø7.
     std::vector<FunctionSlice> region{
         committedSlice(C, ChordQuality::Major, 0),
         abstainSlice(AmbiguityKind::ShareTone,
                      cand(A, ChordQuality::Minor, A), cand(Fs, ChordQuality::HalfDiminished, Fs),
                      /*hasB*/ true, 480),
-        committedSlice(G, ChordQuality::Major, 960),
+        committedSlice(Eb, ChordQuality::Major, 960),
         abstainSlice(AmbiguityKind::ShareTone,
                      cand(A, ChordQuality::Minor, A), cand(Fs, ChordQuality::HalfDiminished, Fs),
                      /*hasB*/ true, 1440),
     };
 
-    // Base: abstain#1 (index 1) resolves (G in view forward); abstain#2 (index 3) is cut → open.
+    // Base: abstain#1 (index 1) resolves (E♭ in view forward); abstain#2 (index 3) is cut → open.
     const ResolverResult base = resolveCarriedReadings(region, {}, cMajor());
     ASSERT_EQ(base.readings.size(), 4u);
     ASSERT_TRUE(base.readings[1].resolved);
     const int closedRoot = base.readings[1].reading.rootPc;   // the closed decision's reading
     ASSERT_TRUE(base.readings[3].openMark);
 
-    // Extend: supply a forward V(G) so abstain#2 (F#ø7 → G is licensed) can resolve. abstain#1
-    // is untouched (its forward function was already in view — a closed decision).
+    // Extend: supply a forward E♭ so abstain#2 (F#ø7 → E♭ is uniquely licensed) can resolve.
+    // abstain#1 is untouched (its forward function was already in view — a closed decision).
     const ResolverResult ext = resolveCarriedReadingsExtending(
-        region, {}, cMajor(), oneShot({ committedSlice(G, ChordQuality::Major, 1920) }),
+        region, {}, cMajor(), oneShot({ committedSlice(Eb, ChordQuality::Major, 1920) }),
         kDefaultFunctionResolverParams, extOn());
 
     ASSERT_EQ(ext.readings.size(), 4u) << "output covers the original selection only";

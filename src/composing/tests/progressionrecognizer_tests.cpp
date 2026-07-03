@@ -29,9 +29,10 @@
 // over hand-built committed progressions + the real Harmonic Vocabulary catalog.
 //
 // PLUS the Task-2.1 D5 CONSISTENCY TEST (see the block above that test): every
-// adjacent chord pair of every catalog entry is EITHER licensed by
-// isLicensedProgression (the Layer-5 grammar) OR on the explicit ruled known-gap
-// list. A pin plus a tripwire — any 7th failure turns this suite red.
+// adjacent chord pair of every catalog entry is licensed by isLicensedProgression
+// (the Layer-5 grammar). Post the §15-12 grammar completion (RATIFIED 2026-07-03) the
+// invariant is CLEAN — no exceptions, no known-gap list — and any failure (a catalog
+// mis-encoding or a newly-found grammar gap) turns this suite red.
 
 #include <gtest/gtest.h>
 
@@ -381,45 +382,28 @@ TEST(ProgressionRecognizer, RecognisedEvidenceMovesTheMixtureWeights)
 // Task 2.1 — THE D5 CONSISTENCY TEST (the one-way catalog → grammar coupling).
 //
 // D5 (cowork_progression_schema_design.md §6, user-ratified 2026-07-02) asserts the
-// containment: every adjacent chord pair inside every catalog progression should
-// satisfy the Layer-5 licensing grammar (isLicensedProgression). This test enforces
-// it — a FAILURE names the entry and states BOTH possible readings:
+// containment: every adjacent chord pair inside every catalog progression satisfies
+// the Layer-5 licensing grammar (isLicensedProgression). This test enforces it — a
+// FAILURE names the entry and states BOTH possible readings:
 //   (a) the entry is MIS-ENCODED (a catalog typo — fix the Vocabulary), OR
-//   (b) a genuine GRAMMAR GAP was found (a motion §5.0 does not yet license — extend
-//       functionprogression, an L5-owned change; L5 spec §15-12).
+//   (b) a genuine GRAMMAR GAP was found (a motion §5.0 does not license — extend
+//       functionprogression, an L5-owned change; L5 spec §5.0).
 //
-// RULING (2026-07-02): the six entries / eleven motions below were found at this
-// build and ruled reading (b) — GRAMMAR GAPS, not mis-encodings (each entry is
-// musically correct; the §5.0 grammar descends from the old scoring-bonus signals
-// and omits plagal / ascending-fifth (delta 7), descending-second (delta 10/11), and
-// the diatonic diminished-fifth (delta 6)). They are pinned on the explicit known-gap
-// list below so the suite stays honest WITHOUT tagging around them: any SEVENTH
-// failure (a new entry, or a mis-encoding) is NOT on the list ⇒ the suite turns RED;
-// and if the §15-12 grammar completion later licenses one of these, its list entry no
-// longer fails ⇒ the suite turns RED, forcing the list to shrink and the test to
-// tighten. (Cowork's addendum cites "12 motions"; the measured count is 11 — the exact
-// pairs are enumerated below and reconciled in cc_consumer_build_report.md.)
+// HISTORY (2026-07-02 → 2026-07-03): this test first found six entries / eleven motions
+// the then-grammar did NOT license — plagal / ascending-fifth (delta 7), descending-
+// second (delta 10/11), the diatonic diminished-fifth (delta 6) — each musically
+// correct, so ruled reading (b) (GRAMMAR GAPS, not mis-encodings). They were held on an
+// explicit known-gap list (a designed tripwire: any change licensing one of them, or a
+// twelfth failure, turned the suite red). The §15-12 grammar completion (RATIFIED
+// 2026-07-03) then added exactly those three root-motion classes to isLicensedProgression;
+// the tripwire fired as designed, and this test was TIGHTENED to the clean invariant
+// below — the known-gap list is gone, and the containment now holds with no exceptions.
+// (The earlier "12 motions" in Cowork's addendum was an arithmetic error; the measured
+// count was 11 — the amendment closed all of them.)
 // ══════════════════════════════════════════════════════════════════════════════
 
-TEST(ProgressionRecognizerD5Consistency, EveryCatalogPairIsLicensedOrARuledGrammarGap)
+TEST(ProgressionRecognizerD5Consistency, EveryCatalogPairIsLicensed)
 {
-    // The ruled known-gap list: (entry name, adjacent-pair start index). Exactly the
-    // 6 entries / 11 motions found 2026-07-02, each verdict "musically correct; §5.0
-    // grammar gap (L5-owned, L5 §15-12)".
-    const std::set<std::pair<std::string, int>> knownGaps = {
-        { "Plagal cadence (IV–I)", 0 },                                   // IV→I  delta 7 (plagal / ascending 5th)
-        { "Axis (I–V–vi–IV)", 0 },                                        // I→V   delta 7
-        { "Pachelbel (I–V–vi–iii–IV–I–IV–V)", 0 },                        // I→V   delta 7
-        { "Pachelbel (I–V–vi–iii–IV–I–IV–V)", 2 },                        // vi→iii delta 7
-        { "Pachelbel (I–V–vi–iii–IV–I–IV–V)", 4 },                        // IV→I  delta 7
-        { "Romanesca (I–V–vi–iii)", 0 },                                  // I→V   delta 7
-        { "Romanesca (I–V–vi–iii)", 2 },                                  // vi→iii delta 7
-        { "Andalusian cadence (i–♭VII–♭VI–V)", 0 },                       // i→♭VII delta 10 (descending 2nd)
-        { "Andalusian cadence (i–♭VII–♭VI–V)", 1 },                       // ♭VII→♭VI delta 10
-        { "Andalusian cadence (i–♭VII–♭VI–V)", 2 },                       // ♭VI→V  delta 11 (descending semitone)
-        { "Circle-of-fifths (full, I–IV–viio–iii–vi–ii–V–I)", 1 },        // IV→viio delta 6 (diminished 5th)
-    };
-
     HarmonicVocabulary vocab;
 
     // Scan: every adjacent chord pair of every chord-degree PROGRESSION entry. (Bass-
@@ -434,7 +418,7 @@ TEST(ProgressionRecognizerD5Consistency, EveryCatalogPairIsLicensedOrARuledGramm
         const std::vector<ChordDegreeStep>& steps = e.skeleton.chordSteps;
         for (std::size_t i = 0; i + 1 < steps.size(); ++i) {
             // Realise the key-relative degrees at tonic = C (0); quality carried for the
-            // applied-resolution sub-predicate.
+            // applied-resolution and diatonic-diminished-fifth sub-predicates.
             ProgressionChord from{ steps[i].degreeOffset,     steps[i].triadQuality };
             ProgressionChord to{   steps[i + 1].degreeOffset, steps[i + 1].triadQuality };
             if (!isLicensedProgression(from, to)) {
@@ -443,24 +427,16 @@ TEST(ProgressionRecognizerD5Consistency, EveryCatalogPairIsLicensedOrARuledGramm
         }
     }
 
-    // (1) Every failure must be a RULED known gap. A failure that is NOT on the list is
-    //     a mis-encoded entry OR a new grammar gap — either way, investigate; do NOT
-    //     tag around it (D5 stop condition).
+    // The clean D5 invariant (post the §15-12 grammar completion, 2026-07-03): EVERY
+    // adjacent chord pair of every catalog progression is licensed by the grammar — the
+    // containment holds with no exceptions. A failure names the offending entry and is a
+    // STOP condition: the entry is MIS-ENCODED (fix the Vocabulary) OR a NEW grammar gap
+    // was found (extend functionprogression / L5 §5.0). Do NOT tag around it.
     for (const std::pair<std::string, int>& f : failing) {
-        EXPECT_TRUE(knownGaps.count(f) == 1)
-            << "UNEXPECTED consistency failure at entry \"" << f.first << "\" pair #" << f.second
+        ADD_FAILURE()
+            << "consistency failure at entry \"" << f.first << "\" pair #" << f.second
             << " — either the entry is MIS-ENCODED (fix the Vocabulary) OR a NEW grammar gap "
                "was found (extend functionprogression / L5 §5.0). Do not tag around it.";
     }
-    // (2) Every ruled known gap must still be a real failure. If the §15-12 grammar
-    //     completion licenses one, it stops failing ⇒ shrink this list + tighten.
-    for (const std::pair<std::string, int>& k : knownGaps) {
-        EXPECT_TRUE(failing.count(k) == 1)
-            << "STALE known-gap: entry \"" << k.first << "\" pair #" << k.second
-            << " now PASSES the grammar — remove it from the known-gap list (the §15-12 "
-               "grammar completion has landed) and tighten the test.";
-    }
-    // (3) The measured counts, pinned.
-    EXPECT_EQ(failing.size(), 11u);
-    EXPECT_EQ(knownGaps.size(), 11u);
+    EXPECT_TRUE(failing.empty());
 }

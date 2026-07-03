@@ -59,6 +59,35 @@ bool isAscendingSecond(int fromRootPc, int toRootPc) noexcept
     return delta == 1 || delta == 2;
 }
 
+bool isAscendingFifth(int fromRootPc, int toRootPc) noexcept
+{
+    // (to - from) mod 12 == 7  ⇔  the target sits a perfect fifth above `from`.
+    // §15-12 amendment (RATIFIED 2026-07-03): tonic→dominant (I→V) and plagal (IV→I)
+    // motion. No scoring-bonus analogue — a theory completion the bonus-derived set
+    // omitted; unconditional on quality.
+    return rootMotion(fromRootPc, toRootPc) == 7;
+}
+
+bool isDescendingSecond(int fromRootPc, int toRootPc) noexcept
+{
+    // Down a major second (-2 ≡ 10) or a minor second (-1 ≡ 11): the Phrygian/
+    // Andalusian step (i→♭VII, ♭VII→♭VI, ♭VI→V). §15-12 amendment (2026-07-03);
+    // unconditional on quality.
+    const int delta = rootMotion(fromRootPc, toRootPc);
+    return delta == 10 || delta == 11;
+}
+
+bool isDiatonicDiminishedFifth(const ProgressionChord& from, const ProgressionChord& to) noexcept
+{
+    // The IV→viiᵒ link of the full circle of fifths: the root falls a diminished fifth
+    // (delta 6, the tritone) AND the arriving chord is a diminished triad. §15-12
+    // amendment (2026-07-03). The quality condition IS the amendment's "diatonic"
+    // qualifier made operational — a bare delta-6 license would admit generic tritone
+    // root motion, which the grammar has never licensed and the amendment does not want.
+    return rootMotion(from.rootPc, to.rootPc) == 6
+           && to.quality == ChordQuality::Diminished;
+}
+
 bool isAppliedResolution(const ProgressionChord& from, const ProgressionChord& to) noexcept
 {
     const int delta = rootMotion(from.rootPc, to.rootPc);
@@ -98,13 +127,18 @@ bool isLicensedProgression(const ProgressionChord& from, const ProgressionChord&
     if (from.rootPc < 0 || to.rootPc < 0) {
         return false;
     }
-    // The four §5.0 successions, OR'd. The applied/leading-tone clause is (by
-    // theory) subsumed by the descending-fifth + ascending-second motions; it is
-    // listed explicitly to mirror §5.0's enumeration and expose the quality-aware
-    // sub-predicate the resolver (Step 3) reuses.
+    // The §5.0 successions, OR'd: the pre-amendment three root-motion steps + the three
+    // §15-12 amendment (2026-07-03) additions (ascending fifth, descending second,
+    // diatonic diminished fifth) + the applied/leading-tone clause. That clause is (by
+    // theory) subsumed by the descending-fifth + ascending-second motions; it is listed
+    // explicitly to mirror §5.0's enumeration and expose the quality-aware sub-predicate
+    // the resolver (Step 3) reuses.
     return isDescendingFifth(from.rootPc, to.rootPc)
            || isDescendingThird(from.rootPc, to.rootPc)
            || isAscendingSecond(from.rootPc, to.rootPc)
+           || isAscendingFifth(from.rootPc, to.rootPc)
+           || isDescendingSecond(from.rootPc, to.rootPc)
+           || isDiatonicDiminishedFifth(from, to)
            || isAppliedResolution(from, to);
 }
 

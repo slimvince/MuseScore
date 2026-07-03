@@ -89,13 +89,17 @@
 //     ONLY coupling is the CONSISTENCY TEST, and it runs ONE WAY (catalog → grammar):
 //     tests/progressionrecognizer_tests.cpp asserts every adjacent chord pair of
 //     every catalog entry passes isLicensedProgression.
-//   • RULED KNOWN GAPS (2026-07-02): the consistency test found 6 catalog entries /
-//     11 motions the §5.0 grammar does NOT license — Plagal (IV→I), Axis (I→V),
+//   • RULED KNOWN GAPS (2026-07-02) — ★ CLOSED by the §15-12 grammar completion
+//     (RATIFIED 2026-07-03). The consistency test had found 6 catalog entries / 11
+//     motions the pre-amendment grammar did NOT license — Plagal (IV→I), Axis (I→V),
 //     Pachelbel (I→V, vi→iii, IV→I), Romanesca (I→V, vi→iii), Andalusian (i→♭VII,
 //     ♭VII→♭VI, ♭VI→V), Circle-of-fifths-full (IV→viio). Each entry is musically
-//     correct, so ruled GRAMMAR GAPS (not mis-encodings — the data is NOT re-encoded
-//     to fit the code). The §5.0 grammar-completion amendment is L5-owned future work
-//     (L5 spec §15-12). Do NOT edit these entries to clear the consistency test.
+//     correct, so ruled GRAMMAR GAPS (not mis-encodings — the data was NOT re-encoded
+//     to fit the code). The ratified §15-12 amendment (L5 spec) extended
+//     functionprogression to license exactly those three root-motion classes
+//     (ascending fifth, descending second, diatonic diminished fifth); the consistency
+//     test then EMPTIED its known-gap list. No catalog edit was needed. Historical note
+//     retained.
 
 #include <cstdint>
 #include <string>
