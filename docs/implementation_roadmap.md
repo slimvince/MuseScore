@@ -60,8 +60,12 @@ it into L5/L6. Every analysis layer is **built dormant and validated byte-identi
    resolver + the §8 forward-override) and L6's sequence-span annotation. **This is the step where L5 takes advantage of
    the encyclopedia AND the five idioms** (the active idiom-mixture weights the matches). Until this exists, L5 does not
    touch the encyclopedia.
-4. **Voice-leading layer (axis 2)** — the fuller voice-leading-idiom discovery (the pilot confirmed the axis, ARI 0.68) →
-   the spec's voice-leading layer; it claims the voice-leading-defined catalog entries (galant schemata, line cliché).
+4. **Voice-leading layer (axis 2)** — ✅ **the fuller voice-leading-idiom discovery is DONE + RATIFIED (2026-07-03,
+   `cc_vl_idiom_discovery_report.md`; folded as findings v2.0):** VL organizes by **texture** (contrapuntal vs
+   homophonic, motion-type-led; instrumentation/source confounds decisively absent), and **orthogonality is formally
+   confirmed** (cross-ARI 0.030 vs the harmonic idioms on 1,283 dual-view pieces — the style structure is ≥ 2-D).
+   → REMAINING: the spec's voice-leading layer (Cowork design doc); it claims the voice-leading-defined catalog
+   entries (galant schemata, line cliché).
    **This is also the home of the accepted (melodic, broadly monophonic) music-theory phrase** — the linear,
    text-coinciding-when-sung unit, and the **concurrent, overlapping, out-of-phase per-voice phrases** of contrapuntal
    textures (fugues) — which are a *melodic/voice-leading* construct, **not** L6's flat harmonic-grouping span (the L6 §0

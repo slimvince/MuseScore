@@ -1,11 +1,19 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-03 (session 22b — **THE MERGED DOC PASS IS EXECUTED** ✅; §15-12 RATIFIED;
-CC's mid-increment STOP on the sibling-test ripple was RULED (see STATUS 22b — no resolver change; the
-preference-among-licensed lever deferred to Stage-5, recorded as L5 §15-13). The ACTIVE dispatch is
-`cc_instruction_grammar_completion.md` **+ its addendum `cc_instruction_grammar_completion_addendum.md`**, executed
-together. Next Cowork session: verify CC's completed report at objects — re-read BOTH instruction files first —
-then resume the ratified order: voice-leading-axis research / corpus Wave 2 / Stage-5 calibration prerequisites).*
+*Written 2026-05-14. Last updated 2026-07-03 (session 22c — **THE MERGED DOC PASS + THE §15-12 ARC ARE BOTH CLOSED**
+✅: the grammar completion landed (`2e9a22557e` code / `ce509b0961` docs), Cowork-verified at the objects and
+ratified; gate 53/24/53 set-identical, the CLAUDE.md Default-set caveat resolved by measurement; the
+preference-among-licensed lever parked at L5 §15-13 (Stage-5). **The axis-2 VL study is DELIVERED + VERIFIED +
+RATIFIED (session 22e; findings folded as v2.0; roadmap step 4's discovery half ✅).** **ACTIVE DISPATCH: the
+commit direction to CC** — (1) commit the VL pipeline code (`voiceleading.py` portability, `voiceleading2.py`,
+`run_vl_discovery.py`, `run_vl_orthogonality.py`) + the force-added report `cc_vl_idiom_discovery_report.md`
+(the `/cc_*.md` gitignore is bypassed by explicit add, the established convention; the raw `.txt` dumps stay
+untracked); (2) a `docs(cowork):` commit folding the session-22d/e Cowork edits — the findings v2.0 section,
+STATUS 22d/22e, this handoff, the roadmap step-4 status, and the untracked
+`cowork_spec_polish_findings_a/b.md` disposition banners (the standing loose end — clears with this). **NEXT after
+that lands: the voice-leading layer spec (a Cowork design task — full-budget session; footing = findings v2.0 +
+`cowork_polyphony_phrase_harmony_research.md`) → then corpus Wave 2 / Stage-5 calibration prerequisites per the
+ratified order.***
 
 ## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
 

@@ -174,9 +174,10 @@ Default measured at `53`.) The **case-identity set, not the integer, is the gate
   bwv74.8@13920}` (= prior Jazz-23 − {bwv244.15@10080} + {bwv272@4320, bwv291@17760}).
 - **Default (the user-run config) = 53.** Per the Stage-0 `characterise_bir_false.py --corpus-dir tools/corpus/default`
   measurement, Default = Baroque-53 with `{bwv352@1440, bwv60.5@30960}` replaced by `{bwv227.7@18000, bwv387@10560}`
-  (the rest identical to Baroque-53). *(⚠ The Stage-0 report's one-line Default-delta prose was internally inconsistent;
-  this set is taken from the measured Default list, not that summary. Re-confirm the exact Default set at the next
-  corpus regen before relying on individual identities.)*
+  (the rest identical to Baroque-53). *(✅ RE-CONFIRMED by measurement at the 2026-07-03 grammar-completion regen
+  (`cc_grammar_completion_report.md`, commit `ce509b0961`): all three presets' case-identity sets matched this
+  document exactly, set-diff empty both directions — the earlier Stage-0 prose-inconsistency caveat is discharged and
+  the Default identities above may be relied on.)*
 
 **Cross-layer-budget caveat (2026-06-24, O1 measurement):** the BIR=false set is **not** the Layer-5 resolver
 residual — it is a **work budget distributed across Layers 1–5**, and it overstates the function-only remainder

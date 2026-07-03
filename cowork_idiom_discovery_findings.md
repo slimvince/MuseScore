@@ -186,3 +186,43 @@ sources have no voices). Pilot: **60 Bach chorales** (music21, SATB) vs **193 DC
 **voice-leading layer is warranted.** The fuller follow-on (not the axis question, which is settled) would discover the
 voice-leading *idioms* (beyond chorale-vs-piano — contrapuntal/fugal, pianistic, jazz-comping…) and run a formal
 orthogonality test (cross-ARI of VL vs harmonic clusters on the same pieces).
+
+## v2.0 — the AXIS-2 STUDY: VL idioms discovered + orthogonality formally measured (CC, 2026-07-03; ratified)
+The fuller follow-on ran at full note-level coverage — **2,102 pieces / 45 sources** (41 DCML/DLC `notes/` corpora
+1,687 · full music21 4-part chorales 368 · the 47 curated arrangements at note level per notated (staff,voice), NOT
+chordify; `corpora/expl/dcml_*` dedup-verified as clones of `tools/dcml/` and excluded). Two low-level views:
+**View A** = the pilot's per-voice |interval| histogram (unchanged — pilot reproduces byte-for-byte, a strict
+subset) · **View B (new)** = **voice-pair motion-type rates** (parallel/similar/contrary/oblique — pure interval
+arithmetic). Full record: `cc_vl_idiom_discovery_report.md`; pipeline `idiom_discovery/parsers/voiceleading2.py` +
+`run_vl_discovery.py` / `run_vl_orthogonality.py`.
+- **★ VL organizes by TEXTURE, not corpus or instrumentation.** Confound gate: VL-cluster ARI vs voice-count
+  **0.034–0.046** (the instrumentation worry — decisively absent) and vs source **0.07–0.11** (not bookkeeping);
+  vs **texture 0.32** (View B's top covariate). The texture/era covariates are declared per-source interpretation
+  lenses, post-hoc only, never clustering input (spec §6 discipline — Cowork-verified at the lens maps).
+- **★ The discriminative feature is HOW VOICES MOVE TOGETHER, not interval size** — the VL analogue of the harmonic
+  study's root-motion-alone result. Ablation: View B alone recovers texture at **0.37–0.46** (self-stability
+  0.98–1.00); View A alone ≤0.20; raw A+B dilutes B (16 dims outvote 4); z-scoring partly recovers (0.33).
+- **★ The robust VL idioms:** **contrapuntal part-writing** (stepwise, contrary/similar motion — Bach chorales +
+  Renaissance sacred + Baroque trio-sonata, across era) **vs homophonic melody+accompaniment** (oblique-dominant),
+  natural K=2–3; the interpretable K=4 refines the homophonic mass along View A's era-correlated melodic-complexity
+  sub-axis into **classical-keyboard figuration** vs **romantic/virtuosic pianistic** (+ a moderate/mixed
+  early-music cluster). Caveat honored: View A's era signal is partly a chord-explosion artifact — the primary
+  finding rests on View B, which never explodes chords and still groups exploded chamber corpora (Corelli, Couperin)
+  WITH the chorales, ruling out an encoding artifact.
+- **★ ORTHOGONALITY FORMALLY CONFIRMED: cross-ARI(VL, harmonic) = 0.030** on the 1,283 pieces carrying both views —
+  statistical independence; the contingency table ≈ product of marginals. Harmonic clusters are ~texture-invariant
+  (0.024) while VL tracks texture — two independent partitions of the same music. **The full style structure is
+  ≥ 2-D: (harmonic idiom) ⟂ (voice-leading idiom) + mode + chromaticism.**
+- **★ Both predicted probes confirm:** the curated sophisticates (SD/Piazzolla/Hiromi — ONE harmonic idiom, v1.6)
+  **split by voice-leading** (Hiromi dense-pianistic, Piazzolla apart, SD spread; all oblique-dominant by the
+  declared top-note reduction, the split riding the melodic sub-axis); the Bach chorales (harmonically scattered,
+  v1/v1.1) are **98% VL-tight** — and the two independent chorale encodings (music21 vs DCML TSV) agreeing 98%/98%
+  is a bonus extraction-robustness cross-check.
+- **Footing for the voice-leading layer spec:** a **motion-type-led** feature set (parallel/similar/contrary/oblique)
+  as the primary discriminator, the interval profile as a secondary melodic-complexity descriptor, and a texture
+  taxonomy of **{contrapuntal, homophonic-classical, homophonic-pianistic, moderate/mixed}**; coverage is
+  notated-music only (lead sheets have no voices). Levers recorded for their proper layers (not coded): a
+  motion-type/static-harmony feature as the natural home of the deferred modal/static-jazz "wobbly sixth" (v1.6);
+  a uniform per-source note-reduction rule to retire View A's explosion asymmetry. (Pilot-number note: the 0.683
+  headline reads 0.595 under this machine's sklearn — feature matrix provably identical; KMeans-init drift only.
+  At full coverage the split strengthens to 0.821.)
