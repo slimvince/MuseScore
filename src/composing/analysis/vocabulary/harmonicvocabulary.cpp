@@ -27,31 +27,6 @@
 
 namespace mu::composing::analysis {
 
-// ── Style-family helpers (the §12.1 leaves; expand the §5 bracket labels) ─────
-
-// The §5 style bracket labels map COARSELY onto the small preset-aligned tag set
-// {Baroque, Jazz, Default}: common-practice (incl. galant/Romantic) → {Baroque, Default};
-// jazz → {Jazz}; vernacular/pop → {Default} (the general config).
-std::vector<StyleTag> commonPracticeStyles()
-{
-    return { StyleTag::Baroque, StyleTag::Default };
-}
-
-std::vector<StyleTag> jazzStyles()
-{
-    return { StyleTag::Jazz };
-}
-
-std::vector<StyleTag> vernacularStyles()
-{
-    return { StyleTag::Default };
-}
-
-std::vector<StyleTag> allStyleTags()
-{
-    return { StyleTag::Baroque, StyleTag::Jazz, StyleTag::Default };
-}
-
 // ── FunctionalSkeleton ────────────────────────────────────────────────────────
 
 int FunctionalSkeleton::length() const
@@ -81,15 +56,15 @@ namespace {
 
 // ── Authoring helpers (readability of the in-code catalog, build decision 1) ──
 
-// The §5 bracket labels, expanded to the §12.1 leaves. "[all styles]".
-std::vector<StyleTag> allStyles()        { return allStyleTags(); }
-// "[common-practice + jazz]".
-std::vector<StyleTag> commonAndJazz()
-{
-    std::vector<StyleTag> v = commonPracticeStyles();
-    for (StyleTag t : jazzStyles()) { v.push_back(t); }
-    return v;
-}
+// Idiom shorthands for the re-tag (verbatim from cowork_idiom_entry_mapping.md). Two-letter
+// names (not single letters) so they do not shadow globals in the Unity build (C4459):
+//   Df = Diatonic-functional (1)   Cf = Chromatic-functional (2)   Sf = Seventh-functional (3)
+//   Tm = Triadic-modal (4)         Cc = Chromatic-coloristic (5)
+constexpr Idiom Df = Idiom::DiatonicFunctional;
+constexpr Idiom Cf = Idiom::ChromaticFunctional;
+constexpr Idiom Sf = Idiom::SeventhFunctional;
+constexpr Idiom Tm = Idiom::TriadicModal;
+constexpr Idiom Cc = Idiom::ChromaticColoristic;
 
 ChordDegreeStep cd(int degreeOffset, ChordQuality q,
                    SeventhRequirement s = SeventhRequirement::Unspecified)
@@ -115,25 +90,31 @@ FunctionalSkeleton lineSkeleton(SkeletonKind kind, std::vector<LineDegreeStep> s
     return sk;
 }
 
-Entry progression(std::string name, std::vector<StyleTag> tags,
-                  FunctionalSkeleton sk, std::string provenance)
+Entry progression(std::string name, IdiomSet idioms, Mode mode, Chromaticism chrom,
+                  FunctionalSkeleton sk, std::string provenance, bool vlDefined = false)
 {
     Entry e;
     e.name = std::move(name);
-    e.styleTags = std::move(tags);
+    e.idioms = idioms;
+    e.mode = mode;
+    e.chromaticism = chrom;
+    e.voiceLeadingDefined = vlDefined;
     e.kind = EntryKind::Progression;
     e.skeleton = std::move(sk);
     e.provenance = std::move(provenance);
     return e;
 }
 
-Entry substitution(std::string name, std::vector<StyleTag> tags,
+Entry substitution(std::string name, IdiomSet idioms, Mode mode, Chromaticism chrom,
                     SubstitutionType type, std::string rule,
-                    std::string underlying, std::string provenance)
+                    std::string underlying, std::string provenance, bool vlDefined = false)
 {
     Entry e;
     e.name = std::move(name);
-    e.styleTags = std::move(tags);
+    e.idioms = idioms;
+    e.mode = mode;
+    e.chromaticism = chrom;
+    e.voiceLeadingDefined = vlDefined;
     e.kind = EntryKind::Substitution;
     e.substitution = SubstitutionMapping{ type, std::move(rule), std::move(underlying) };
     e.provenance = std::move(provenance);
@@ -244,123 +225,136 @@ HarmonicVocabulary::HarmonicVocabulary()
     const std::string gjerdingen = "Gjerdingen, Music in the Galant Style; Katsiavalos (ISMIR 2019)";
     const std::string popLoops = "Common-practice & pop bass-line / loop conventions";
 
-    // ── §5.2 Cadential [common-practice + jazz] (overlap L5 §5.2 — listed for completeness) ──
-    E.push_back(progression("Authentic cadence (V–I)", commonAndJazz(),
+    // ── §5.2 Cadential — mapping R6 authentic/plagal → {D}; R7 deceptive/Phrygian → {D,C} ──
+    E.push_back(progression("Authentic cadence (V–I)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(7, Maj), cd(0, Maj) }), caplin));
-    E.push_back(progression("Authentic cadence, minor (V–i)", commonAndJazz(),
+    E.push_back(progression("Authentic cadence, minor (V–i)", idiomSet(Df), Mode::Minor, Chromaticism::Diatonic,
         chordSkeleton({ cd(7, Maj), cd(0, Min) }), caplin));
-    E.push_back(progression("Deceptive cadence (V–vi)", commonAndJazz(),
+    E.push_back(progression("Deceptive cadence (V–vi)", idiomSet(Df, Cf), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(7, Maj), cd(9, Min) }), caplin));
-    E.push_back(progression("Deceptive cadence, minor (V–♭VI)", commonAndJazz(),
+    E.push_back(progression("Deceptive cadence, minor (V–♭VI)", idiomSet(Df, Cf), Mode::Minor, Chromaticism::Diatonic,
         chordSkeleton({ cd(7, Maj), cd(8, Maj) }), caplin));
-    E.push_back(progression("Plagal cadence (IV–I)", commonAndJazz(),
+    E.push_back(progression("Plagal cadence (IV–I)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(5, Maj), cd(0, Maj) }), caplin));
-    E.push_back(progression("Phrygian half cadence, minor (iv6–V)", commonPracticeStyles(),
+    E.push_back(progression("Phrygian half cadence, minor (iv6–V)", idiomSet(Df, Cf), Mode::Minor, Chromaticism::Diatonic,
         chordSkeleton({ cd(5, Min), cd(7, Maj) }), caplin));
 
-    // ── §5.2 The ii–V family [jazz + common-practice] ──
-    E.push_back(progression("ii–V–I (common-practice, triads)", commonAndJazz(),
+    // ── §5.2 The ii–V family — mapping header: PLAIN triadic ii–V–I → {D}; R8 seventh forms → {S} ──
+    E.push_back(progression("ii–V–I (common-practice, triads)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(2, Min), cd(7, Maj), cd(0, Maj) }), caplin));
-    E.push_back(progression("IIm7–V7–Imaj7 (major ii–V–I)", commonAndJazz(),
+    E.push_back(progression("IIm7–V7–Imaj7 (major ii–V–I)", idiomSet(Sf), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(2, Min, S7min), cd(7, Maj, S7min), cd(0, Maj, S7maj) }), ramos));
-    E.push_back(progression("iiø7–V7–i (minor ii–V–i)", commonAndJazz(),
+    E.push_back(progression("iiø7–V7–i (minor ii–V–i)", idiomSet(Sf), Mode::Minor, Chromaticism::Diatonic,
         chordSkeleton({ cd(2, HD), cd(7, Maj, S7min), cd(0, Min) }), ramos));
-    E.push_back(progression("Incomplete ii–V (no resolution)", jazzStyles(),
+    E.push_back(progression("Incomplete ii–V (no resolution)", idiomSet(Sf), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(2, Min, S7min), cd(7, Maj, S7min) }), jazzReharm));
 
-    // ── §5.2 Turnarounds [jazz] ──
-    E.push_back(progression("Turnaround I–vi–ii–V", jazzStyles(),
+    // ── §5.2 Turnarounds — mapping R9 → {S}; VI7 secondary member → also {C} ──
+    E.push_back(progression("Turnaround I–vi–ii–V", idiomSet(Sf), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(9, Min), cd(2, Min), cd(7, Maj) }), jazzReharm));
-    E.push_back(progression("Turnaround I–VI7–ii–V", jazzStyles(),
+    E.push_back(progression("Turnaround I–VI7–ii–V", idiomSet(Sf, Cf), Mode::Major, Chromaticism::Chromatic,
         chordSkeleton({ cd(0, Maj), cd(9, Maj, S7min), cd(2, Min), cd(7, Maj) }), jazzReharm));
-    E.push_back(progression("Turnaround iii–vi–ii–V", jazzStyles(),
+    // iii–vi–ii–V: a turnaround not itemised in R9's example list; tagged {S} by inheritance
+    // from R9's Turnarounds family row (its all-triadic sibling I–vi–ii–V is R9-tagged {S}). Declared.
+    E.push_back(progression("Turnaround iii–vi–ii–V", idiomSet(Sf), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(4, Min), cd(9, Min), cd(2, Min), cd(7, Maj) }), jazzReharm));
-    E.push_back(progression("Rhythm-changes A-section (I–VI7–IIm7–V7)", jazzStyles(),
+    E.push_back(progression("Rhythm-changes A-section (I–VI7–IIm7–V7)", idiomSet(Sf, Cf), Mode::Major, Chromaticism::Chromatic,
         chordSkeleton({ cd(0, Maj, S7maj), cd(9, Maj, S7min), cd(2, Min, S7min), cd(7, Maj, S7min) }),
         jazzReharm));
 
-    // ── §5.2 Sequences [common-practice + jazz] ──
-    E.push_back(progression("Circle-of-fifths (full, I–IV–viio–iii–vi–ii–V–I)", commonAndJazz(),
+    // ── §5.2 Sequences — mapping R10 circle-of-fifths → {D}/{S} by realisation (these entries
+    //    are TRIADIC → {D}); R11 descending-thirds → {D} ──
+    E.push_back(progression("Circle-of-fifths (full, I–IV–viio–iii–vi–ii–V–I)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(5, Maj), cd(11, Dim), cd(4, Min),
                         cd(9, Min), cd(2, Min), cd(7, Maj), cd(0, Maj) }), ramos));
-    E.push_back(progression("Circle-of-fifths (iii–vi–ii–V–I)", commonAndJazz(),
+    E.push_back(progression("Circle-of-fifths (iii–vi–ii–V–I)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(4, Min), cd(9, Min), cd(2, Min), cd(7, Maj), cd(0, Maj) }), ramos));
-    E.push_back(progression("Descending-thirds (I–vi–IV–ii)", commonAndJazz(),
+    E.push_back(progression("Descending-thirds (I–vi–IV–ii)", idiomSet(Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(9, Min), cd(5, Maj), cd(2, Min) }), ramos));
 
-    // ── §5.2 Bass-line and pop loops [common-practice + pop] ──
-    // Lament bass / descending tetrachord (minor): held as the BASS line 1̂–♭7̂–♭6̂–5̂.
-    // (The chromatic 5-note variant is a voice-leading elaboration — declared, not a
-    // distinct v1 skeleton.)
-    E.push_back(progression("Lament bass (descending tetrachord, minor)", commonPracticeStyles(),
+    // ── §5.2 Bass-line and pop loops — mapping R16 lament → {C,X}; R15 Andalusian → {T,X};
+    //    R13 doo-wop/Axis → {T}; R14 Pachelbel → {T,D} ──
+    // Lament bass / descending tetrachord (minor): held as the BASS line 1̂–♭7̂–♭6̂–5̂ (the diatonic
+    // 4-note form; the chromatic 5-note variant is a declared voice-leading elaboration, not a
+    // distinct v1 skeleton). chromaticism = Chromatic per mapping R16's explicit "chromatic" note
+    // (which names the chromatic tetrachord) — see the report STOP/declared note on this row.
+    E.push_back(progression("Lament bass (descending tetrachord, minor)", idiomSet(Cf, Cc), Mode::Minor, Chromaticism::Chromatic,
         lineSkeleton(SkeletonKind::BassLine, { ld(0), ld(10), ld(8), ld(7) }), popLoops));
-    E.push_back(progression("Andalusian cadence (i–♭VII–♭VI–V)", commonPracticeStyles(),
+    E.push_back(progression("Andalusian cadence (i–♭VII–♭VI–V)", idiomSet(Tm, Cc), Mode::Minor, Chromaticism::Chromatic,
         chordSkeleton({ cd(0, Min), cd(10, Maj), cd(8, Maj), cd(7, Maj) }), popLoops));
-    E.push_back(progression("Doo-wop (I–vi–IV–V)", vernacularStyles(),
+    E.push_back(progression("Doo-wop (I–vi–IV–V)", idiomSet(Tm), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(9, Min), cd(5, Maj), cd(7, Maj) }), popLoops));
-    E.push_back(progression("Axis (I–V–vi–IV)", vernacularStyles(),
+    E.push_back(progression("Axis (I–V–vi–IV)", idiomSet(Tm), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(7, Maj), cd(9, Min), cd(5, Maj) }), popLoops));
-    E.push_back(progression("Pachelbel (I–V–vi–iii–IV–I–IV–V)", commonPracticeStyles(),
+    E.push_back(progression("Pachelbel (I–V–vi–iii–IV–I–IV–V)", idiomSet(Tm, Df), Mode::Major, Chromaticism::Diatonic,
         chordSkeleton({ cd(0, Maj), cd(7, Maj), cd(9, Min), cd(4, Min),
                         cd(5, Maj), cd(0, Maj), cd(5, Maj), cd(7, Maj) }), popLoops));
 
-    // ── §5.2 Galant schemata — harmonic / bass pattern only [galant] ──
+    // ── §5.2 Galant schemata — mapping R17 (Prinner/Romanesca/Do-Re-Mi) & R12 (Monte/Fonte):
+    //    ★ VOICE-LEADING-DEFINED — idiom tag {C} is the provisional HARMONIC placeholder; the
+    //    primary identity belongs to the future voice-leading axis (flagged vlDefined = true). ──
     // Prinner: melody 6̂–5̂–4̂–3̂ OVER bass 4̂–3̂–2̂–1̂ — held by its BASS line (the melody is
     // voice-leading, held elsewhere; the bass is the matchable harmonic pattern, decision 3).
-    E.push_back(progression("Prinner (bass 4̂–3̂–2̂–1̂)", commonPracticeStyles(),
-        lineSkeleton(SkeletonKind::BassLine, { ld(5), ld(4), ld(2), ld(0) }), gjerdingen));
-    E.push_back(progression("Romanesca (I–V–vi–iii)", commonPracticeStyles(),
-        chordSkeleton({ cd(0, Maj), cd(7, Maj), cd(9, Min), cd(4, Min) }), gjerdingen));
+    E.push_back(progression("Prinner (bass 4̂–3̂–2̂–1̂)", idiomSet(Cf), Mode::Both, Chromaticism::Diatonic,
+        lineSkeleton(SkeletonKind::BassLine, { ld(5), ld(4), ld(2), ld(0) }), gjerdingen, /*vlDefined*/ true));
+    E.push_back(progression("Romanesca (I–V–vi–iii)", idiomSet(Cf), Mode::Major, Chromaticism::Diatonic,
+        chordSkeleton({ cd(0, Maj), cd(7, Maj), cd(9, Min), cd(4, Min) }), gjerdingen, /*vlDefined*/ true));
     // Do-Re-Mi: an OPENING defined by the melody 1̂–2̂–3̂ — held as a MELODY line (carried for
     // completeness; v1 cannot match a melody against a committed-chord span — declared).
-    E.push_back(progression("Do-Re-Mi (melody 1̂–2̂–3̂)", commonPracticeStyles(),
-        lineSkeleton(SkeletonKind::MelodyLine, { ld(0), ld(2), ld(4) }), gjerdingen));
+    E.push_back(progression("Do-Re-Mi (melody 1̂–2̂–3̂)", idiomSet(Cf), Mode::Major, Chromaticism::Diatonic,
+        lineSkeleton(SkeletonKind::MelodyLine, { ld(0), ld(2), ld(4) }), gjerdingen, /*vlDefined*/ true));
     // Monte (ascending) / Fonte (descending) — sequences of applied-resolution pairs; the
-    // harmonic pattern (an approximation of the voice-leading schema, spec §5.2).
-    E.push_back(progression("Monte (ascending, V7/IV–IV–V7/V–V)", commonPracticeStyles(),
-        chordSkeleton({ cd(0, Maj, S7min), cd(5, Maj), cd(2, Maj, S7min), cd(7, Maj) }), gjerdingen));
-    E.push_back(progression("Fonte (descending, V7/ii–ii–V7/I–I)", commonPracticeStyles(),
-        chordSkeleton({ cd(9, Maj, S7min), cd(2, Min), cd(7, Maj, S7min), cd(0, Maj) }), gjerdingen));
+    // harmonic pattern (an approximation of the voice-leading schema, spec §5.2). Chromatic
+    // (they carry secondary dominants V7/IV, V7/V, V7/ii).
+    E.push_back(progression("Monte (ascending, V7/IV–IV–V7/V–V)", idiomSet(Cf), Mode::Major, Chromaticism::Chromatic,
+        chordSkeleton({ cd(0, Maj, S7min), cd(5, Maj), cd(2, Maj, S7min), cd(7, Maj) }), gjerdingen, /*vlDefined*/ true));
+    E.push_back(progression("Fonte (descending, V7/ii–ii–V7/I–I)", idiomSet(Cf), Mode::Major, Chromaticism::Chromatic,
+        chordSkeleton({ cd(9, Maj, S7min), cd(2, Min), cd(7, Maj, S7min), cd(0, Maj) }), gjerdingen, /*vlDefined*/ true));
 
-    // ── §5.2 Advanced jazz cycles [jazz] ──
-    E.push_back(progression("Backdoor (♭VII7–I)", jazzStyles(),
+    // ── §5.2 Advanced jazz cycles — mapping R18 backdoor / Coltrane → {X} ──
+    E.push_back(progression("Backdoor (♭VII7–I)", idiomSet(Cc), Mode::Major, Chromaticism::Chromatic,
         chordSkeleton({ cd(10, Maj, S7min), cd(0, Maj, S7maj) }), jazzReharm));
     // Coltrane changes — a major-thirds KEY cycle; held as the three M3-related tonics
     // (I–♭VI–III as key centres). The full ii–V realisation spans modulations — encoded as
     // the defining tonic cycle (declared as a representative, modulation-spanning entry).
-    E.push_back(progression("Coltrane changes (major-thirds tonic cycle)", jazzStyles(),
+    E.push_back(progression("Coltrane changes (major-thirds tonic cycle)", idiomSet(Cc), Mode::Major, Chromaticism::Chromatic,
         chordSkeleton({ cd(0, Maj, S7maj), cd(8, Maj, S7maj), cd(4, Maj, S7maj) }), jazzReharm));
 
-    // ── §5.3 Substitution operations ──
-    E.push_back(substitution("Secondary dominant / tonicization", commonAndJazz(),
+    // ── §5.3 Substitution operations — mapping R19 secondary→{C}; R20 related ii–V→{S};
+    //    R21 tritone sub→{X}; R22 diatonic sub→{D}; R23 modal interchange→{C,T}; R24 dim
+    //    approach→{C}; R25 deceptive→{C}; R26 line cliché→{X} (voice-leading-defined). ──
+    E.push_back(substitution("Secondary dominant / tonicization", idiomSet(Cf), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::SecondaryDominant,
         "Tonicize any diatonic x with V7/x or viio7/x.", "V7/x or viio7/x of x", ramos));
-    E.push_back(substitution("Related ii–V", jazzStyles(),
+    E.push_back(substitution("Related ii–V", idiomSet(Sf), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::RelatedIiV,
         "Precede any V7/x (or subV7/x) with its IIm7.", "IIm7 of x's dominant", jazzReharm));
-    E.push_back(substitution("Tritone substitution (subV)", jazzStyles(),
+    // Dual-tag (mapping R4 parenthetical + task #3): the tritone sub is Chromatic-coloristic {X},
+    // and its enharmonic German-6th reading is Chromatic-functional {C} — the common-practice
+    // cousin the analysis tool separates by spelling (L5 §5.6).
+    E.push_back(substitution("Tritone substitution (subV)", idiomSet(Cc, Cf), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::TritoneSub,
         "Replace any dominant V7/x with subV7/x (a tritone away).",
         "subV7/x stands for V7/x", jazzReharm));
-    E.push_back(substitution("Diatonic (functional) substitution", commonAndJazz(),
+    E.push_back(substitution("Diatonic (functional) substitution", idiomSet(Df), Mode::Both, Chromaticism::Diatonic,
         SubstitutionType::DiatonicFunctional,
         "Replace a chord with a same-function diatonic chord sharing tones (I↔iii↔vi, IV↔ii, V↔viio).",
         "a same-function diatonic chord", ramos));
-    E.push_back(substitution("Modal interchange", allStyles(),
+    E.push_back(substitution("Modal interchange", idiomSet(Cf, Tm), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::ModalInterchange,
         "Substitute a parallel-mode chord (in major borrow iv, iiø7, ♭VI, ♭VII, ♭III, ♭II, v, viio7).",
         "the parallel-mode counterpart", ramos));
-    E.push_back(substitution("Diminished approach", commonAndJazz(),
+    E.push_back(substitution("Diminished approach", idiomSet(Cf), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::DiminishedApproach,
         "Insert a passing/auxiliary diminished seventh between diatonic chords (I–#io7–ii).",
         "a passing diminished seventh", jazzReharm));
-    E.push_back(substitution("Deceptive resolution", commonAndJazz(),
+    E.push_back(substitution("Deceptive resolution", idiomSet(Cf), Mode::Both, Chromaticism::Both,
         SubstitutionType::DeceptiveResolution,
         "Resolve a dominant to a non-tonic (V→vi, V→♭VI).", "a non-tonic resolution of V", caplin));
-    E.push_back(substitution("Line cliché", commonAndJazz(),
+    E.push_back(substitution("Line cliché", idiomSet(Cc), Mode::Both, Chromaticism::Chromatic,
         SubstitutionType::LineCliche,
         "A chromatic inner line over a held chord (i–i(maj7)–i7–i6); the line is voice-leading, held elsewhere.",
-        "a held chord with a chromatic inner line", jazzReharm));
+        "a held chord with a chromatic inner line", jazzReharm, /*vlDefined*/ true));
     // NOTE: upper-structure / voicing substitution is explicitly OUT (spec §5.3) — a
     // voicing, not a function — so it is intentionally NOT a catalog entry.
 }
@@ -369,14 +363,11 @@ HarmonicVocabulary::HarmonicVocabulary()
 
 namespace {
 
-bool inActiveStyles(const Entry& e, const std::vector<StyleTag>& subset)
+// An entry is admissible under a requested idiom subset iff its idiom set INTERSECTS it
+// (spec §4/§6: "admissible under any of the requested idioms" — a filter, never a weighting).
+bool inActiveIdioms(const Entry& e, IdiomSet subset)
 {
-    for (StyleTag tag : e.styleTags) {
-        if (std::find(subset.begin(), subset.end(), tag) != subset.end()) {
-            return true;
-        }
-    }
-    return false;
+    return idiomsIntersect(e.idioms, subset);
 }
 
 void rankCandidates(std::vector<VocabularyCandidate>& cands)
@@ -402,11 +393,11 @@ void rankCandidates(std::vector<VocabularyCandidate>& cands)
 // ── §4 browse ─────────────────────────────────────────────────────────────────
 
 std::vector<VocabularyCandidate>
-HarmonicVocabulary::browse(const std::vector<StyleTag>& styleSubset) const
+HarmonicVocabulary::browse(IdiomSet idiomSubset) const
 {
     std::vector<VocabularyCandidate> out;
     for (const Entry& e : m_entries) {
-        if (!inActiveStyles(e, styleSubset)) {
+        if (!inActiveIdioms(e, idiomSubset)) {
             continue;
         }
         VocabularyCandidate c;
@@ -468,13 +459,13 @@ bool matchBassWindow(const VocabularySpan& span, int start, const FunctionalSkel
 
 std::vector<VocabularyCandidate>
 HarmonicVocabulary::recognise(const VocabularySpan& span,
-                              const std::vector<StyleTag>& styleSubset) const
+                              IdiomSet idiomSubset) const
 {
     std::vector<VocabularyCandidate> out;
     const int spanLen = static_cast<int>(span.size());
 
     for (const Entry& e : m_entries) {
-        if (e.kind != EntryKind::Progression || !inActiveStyles(e, styleSubset)) {
+        if (e.kind != EntryKind::Progression || !inActiveIdioms(e, idiomSubset)) {
             continue;
         }
         const FunctionalSkeleton& sk = e.skeleton;
@@ -585,7 +576,7 @@ bool substitutionApplies(const Entry& e, const VocabularySpan& span)
 
 std::vector<VocabularyCandidate>
 HarmonicVocabulary::suggest(const VocabularySpan& span, SuggestDirection direction,
-                            const std::vector<StyleTag>& styleSubset) const
+                            IdiomSet idiomSubset) const
 {
     std::vector<VocabularyCandidate> out;
     if (span.empty()) {
@@ -593,7 +584,7 @@ HarmonicVocabulary::suggest(const VocabularySpan& span, SuggestDirection directi
     }
 
     for (const Entry& e : m_entries) {
-        if (!inActiveStyles(e, styleSubset)) {
+        if (!inActiveIdioms(e, idiomSubset)) {
             continue;
         }
         bool take = false;

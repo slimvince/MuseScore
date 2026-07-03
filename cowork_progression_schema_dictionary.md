@@ -93,7 +93,8 @@ substitution within a suggested progression — composed at the consumer, not he
 ## 5. The content — organisation and catalog
 The catalog is **generative where it can be** (a small set of slot-types instantiated per target degree) and **enumerated
 where it must be** (the named recurring patterns). **The lists below are a first pass, not exhaustive** — a registry to
-extend (§12). Style tags are placeholders pending the canonical taxonomy (§6).
+extend (§12). Style tags are now the **ratified five-idiom taxonomy** (§6/§12.1) — the `[…]` bracket labels below are
+the original genre glosses; the encoded per-entry idiom set is `cowork_idiom_entry_mapping.md` (THE re-tag spec).
 
 ### 5.1 The function map — the systematic spine
 The diatonic, secondary, and substitute functions form a **systematic, generative spine**: parameterised by a **target
@@ -162,8 +163,11 @@ it (proposes the substituted form):
   neither, and new entries are added with both readings in mind.
 - **One canonical style taxonomy, shared with the presets.** Entries tag from a **single style vocabulary** that the
   presets also select on — not a vocabulary private to this component (which would need a brittle preset→tag mapping). The
-  taxonomy's values, granularity, and any hierarchy (Baroque within common-practice; bop within jazz) are a **shared
-  decision with the preset system**; the §5 tags are **placeholders** until it is fixed (§12).
+  taxonomy is now the **ratified five-idiom set** (`cowork_style_taxonomy_proposal.md`, ratified 2026-06-30):
+  Diatonic-functional · Chromatic-functional · Seventh-functional · Triadic-modal · Chromatic-coloristic, with the two
+  orthogonal cross-attributes **mode** and **chromaticism**. Tags are **multi-valued** (an entry can carry several idioms).
+  Presets are named **idiom-weightings** over this set (a consumer/preset joint decision, §12). The former placeholder
+  `{Baroque, Jazz, Default}` StyleTag is **retired**.
 - **Style behavior is the consumer's.** The component carries the style **label**; the **preset selects** the active
   subset, the **style weighting** (a graded prior — not a hard filter, since styles blend) and the **threshold** are the
   consumer's, and **style detection** is a future classifier. One encyclopedia, not per-style silos — a shared convention
@@ -221,8 +225,9 @@ it (proposes the substituted form):
 - **Substitution mapping** — a substitution entry's rule mapping a substituted surface chord to the function it replaces.
 - **Span** — a contiguous run of one or more committed chords (each with its function and key); the input to *recognise*
   and *suggest*.
-- **Style tag** — the style label(s) on an entry, from the canonical style taxonomy (§6, shared with the presets),
-  multi-valued.
+- **Idiom tag** — the idiom set on an entry, from the ratified five-idiom taxonomy (§6/§12.1, shared with the presets),
+  **multi-valued**; plus the two orthogonal cross-attributes **mode** (major/minor/both) and **chromaticism**
+  (diatonic/chromatic/both). (Formerly the placeholder "style tag" — the retired `{Baroque, Jazz, Default}` StyleTag.)
 - **Generative slot** — a secondary/substitute function defined per target degree `x` (`V7/x`, `subV7/x`, …), instantiated
   on demand rather than enumerated.
 - **Match score** — the component's structural measure of how well a query input realises (or is realised by) an entry;
@@ -240,19 +245,20 @@ inference grounding the consumer relies on) — Korzeniowski & Widmer 2018; Sear
 target-architecture §2.
 
 ## 12. Open items
-1. **★ The canonical style taxonomy — proposed, pending joint ratification with the preset system.** One style vocabulary
-   tags the entries and the presets select on it, defined **once** in a shared home (not privately here). The **inclusion
-   rule** (the durable part): a style is listed iff it has a **distinct functional-harmonic vocabulary**; non-functional
-   idioms (free jazz, atonal) are excluded — they have no progression catalog. **Hierarchical** (family → style), so an
-   entry or preset tags at the granularity it needs and the graded prior can use the hierarchy. **Proposed list
-   (research-grounded 2026-06-29, extensible):**
-   - **Common-practice:** Baroque · Classical/galant · Romantic.
-   - **Jazz:** trad (New Orleans/Dixieland) · swing/songbook · bebop · hard-bop · cool · modal.
-   - **Vernacular/popular:** blues · ragtime · gospel/soul-R&B · rock · pop · folk · barbershop.
-   The §5 tags are placeholders until this is ratified and promoted to its shared home; the exact set is a **joint decision
-   with the presets**, not this component's call alone. The hand-made list is a **theory-based v1**; **empirical grounding**
-   — deriving the taxonomy *and* the per-style weights by clustering corpora — is committed future work
-   (`cowork_style_clustering_plan.md`), to refine or replace it when picked up.
+1. **✅ The canonical style taxonomy — RATIFIED (2026-06-30) and ENCODED (the StyleTag swap).** The taxonomy is the
+   empirically-discovered **five-idiom set** — Diatonic-functional · Chromatic-functional · Seventh-functional ·
+   Triadic-modal · Chromatic-coloristic — with the two orthogonal cross-attributes **mode** and **chromaticism**
+   (`cowork_style_taxonomy_proposal.md`). It **supersedes** the hand-made genre taxonomy below (kept only as historical
+   context). Tags are **multi-valued**; an entry can carry several idioms (a plain ii–V–I is Diatonic-functional; with
+   sevenths it is Seventh-functional). Presets become named **idiom-weightings** over this set — that weighting, and any
+   user-facing genre-named grouping, remain a **joint decision with the preset system** and the recognition consumer's job
+   (NOT the encyclopedia's). The per-entry re-tag is `cowork_idiom_entry_mapping.md`; the encoded set now lives in the
+   dormant `harmonicvocabulary` component (`enum class Idiom` + `IdiomSet`). **Empirical grounding** — deriving the
+   per-preset weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`).
+
+   *Superseded genre taxonomy (historical, theory-based v1):* Common-practice (Baroque · Classical/galant · Romantic);
+   Jazz (trad · swing/songbook · bebop · hard-bop · cool · modal); Vernacular/popular (blues · ragtime · gospel/soul-R&B ·
+   rock · pop · folk · barbershop). Retired in favour of the five idioms.
 2. **Fill the catalog** across styles (the ongoing registry work, especially the jazz set).
 3. **A jazz/pop ground truth** — the named consumer want: it would let a consumer measure its use of the jazz/pop entries.
 4. **A voice-leading vocabulary / the voice-leading layer** — the separate concern holding the voice-leading dimension of

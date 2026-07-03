@@ -76,30 +76,68 @@
 
 namespace mu::composing::analysis {
 
-// ── Style taxonomy — provisional placeholders (build decision 6) ──────────────
+// ── Idiom taxonomy — the ratified five harmonic idioms (the StyleTag swap) ─────
 //
-// A SMALL, REPLACEABLE preset-aligned tag set — the same {Baroque, Jazz, Default} the
-// preset system already selects on (Default = the user-run / general config). Entries tag
-// MULTI-VALUED (a convention can belong to several presets). The §5 style bracket labels
-// ("[all styles]", "[common-practice + jazz]", "[galant]", …) map COARSELY onto these
-// three via the family helpers below. The FORMAL hierarchical taxonomy (the §12.1 proposed
-// family→style leaves) is a SEPARATE joint decision with the preset system (spec §6/§12.1)
-// — this component only carries the labels and is deliberately kept small so the tag type
-// is trivially replaced when that taxonomy is ratified; style BEHAVIOR is the consumer's.
-enum class StyleTag : uint8_t {
-    Baroque,   ///< the common-practice / Baroque preset
-    Jazz,      ///< the jazz preset
-    Default,   ///< the user-run / general (Standard) config
+// Replaces the provisional preset-aligned {Baroque, Jazz, Default} placeholder with the
+// five empirically-discovered structural progression idioms (cowork_style_taxonomy_proposal.md,
+// ratified 2026-06-30). Naming logic (proposal §1): 1→2→3 is the functional family at
+// increasing chord-vocabulary richness (diatonic → chromatic tonicization → sevenths); 4 is
+// diatonic-but-non-functional (triadic/modal pop); 5 is beyond both (the chromatic/coloristic
+// idiom, cross-cutting genre).
+//
+// An entry is MULTI-VALUED — it can legitimately belong to several idioms (a plain ii–V–I is
+// Diatonic-functional; realized in sevenths it is Seventh-functional) — so the tag is a SET
+// (the IdiomSet bitmask below). Each per-entry assignment is verbatim from THE re-tag spec,
+// cowork_idiom_entry_mapping.md. STYLE BEHAVIOR is still the consumer's: these are structural
+// tags; the preset selects a subset and the idiom-mixture *weighting* is the recognition
+// consumer's job (a later step), NOT this component's — tags are tags.
+enum class Idiom : uint8_t {
+    DiatonicFunctional  = 1u << 0,  ///< 1 — simple V7-cadential; the diatonic functional backbone
+    ChromaticFunctional = 1u << 1,  ///< 2 — functional + tonicization (applied/secondary, mixture)
+    SeventhFunctional   = 1u << 2,  ///< 3 — functional realized in sevenths (the ii7–V7–Imaj7 core)
+    TriadicModal        = 1u << 3,  ///< 4 — diatonic triads, modal (pop loops, planing)
+    ChromaticColoristic = 1u << 4,  ///< 5 — non-functional chromatic + modal-static (subV, backdoor, Coltrane)
 };
 
-/// The common-practice bracket label, coarsely → {Baroque, Default}.
-std::vector<StyleTag> commonPracticeStyles();
-/// The jazz bracket label → {Jazz}.
-std::vector<StyleTag> jazzStyles();
-/// The vernacular/popular bracket label, coarsely → {Default}.
-std::vector<StyleTag> vernacularStyles();
-/// Every tag — the "[all styles]" bracket label and the default query subset.
-std::vector<StyleTag> allStyleTags();
+/// A set of idioms — the MULTI-VALUED per-entry tag, and the query subset. A plain bitmask of
+/// Idiom bits (5 bits used); a set/bitmask over a vector<enum> because the queries filter by
+/// SET INTERSECTION ("admissible under any of the requested idioms") which is one `&`.
+using IdiomSet = uint8_t;
+
+/// Compose Idiom bits into a set (C++17 fold — idiomSet() == 0, the empty set).
+template <typename ... Idioms>
+constexpr IdiomSet idiomSet(Idioms ... bits)
+{
+    return static_cast<IdiomSet>((0u | ... | static_cast<uint8_t>(bits)));
+}
+
+/// All five idioms — the "[any idiom]" bracket and the default query subset.
+constexpr IdiomSet kAllIdioms = idiomSet(Idiom::DiatonicFunctional, Idiom::ChromaticFunctional,
+                                         Idiom::SeventhFunctional, Idiom::TriadicModal,
+                                         Idiom::ChromaticColoristic);
+
+/// Do two idiom sets share any idiom? The query filter — an entry is admissible under a
+/// requested subset iff its idiom set intersects it (spec §6: the consumer, not this, weights).
+constexpr bool idiomsIntersect(IdiomSet a, IdiomSet b) { return (a & b) != 0; }
+
+// ── Cross-attributes — the two orthogonal axes the taxonomy ratifies ──────────
+//
+// Tagged INDEPENDENTLY of the idiom (proposal §4 decision 2 — mode and chromaticism are
+// orthogonal attributes, not folded into the idiom). cowork_idiom_entry_mapping.md gives no
+// explicit per-entry cross-attribute table, so each value is read MECHANICALLY off the
+// entry's own encoded skeleton (the mode it commits to; whether any element is non-diatonic /
+// applied / borrowed) — a structural read, not an idiom judgment — governed by a mapping
+// row-note where one states a value (e.g. lament "chromatic", Andalusian "chromatic-flavoured").
+enum class Mode : uint8_t {
+    Major,   ///< a major-key skeleton
+    Minor,   ///< a minor-key skeleton
+    Both,    ///< mode-agnostic (a substitution operation; a mode-neutral line schema)
+};
+enum class Chromaticism : uint8_t {
+    Diatonic,   ///< every element diatonic to the entry's mode
+    Chromatic,  ///< involves a chromatic degree / applied-secondary / borrowed chord / chromatic line
+    Both,       ///< spans both (an operation with diatonic and chromatic realisations)
+};
 
 // ── The functional skeleton — a tagged union (build decision 3) ───────────────
 //
@@ -183,7 +221,14 @@ enum class EntryKind : uint8_t { Progression, Substitution };
 
 struct Entry {
     std::string name;                  ///< the conventional name
-    std::vector<StyleTag> styleTags;   ///< one or more §12.1 leaves (multi-valued)
+    IdiomSet idioms = 0;               ///< the idiom set (multi-valued), verbatim from the entry-mapping
+    Mode mode = Mode::Both;                            ///< cross-attribute — the key mode (orthogonal to idiom)
+    Chromaticism chromaticism = Chromaticism::Both;    ///< cross-attribute — diatonic ↔ chromatic (orthogonal)
+    /// The mapping Notes flag the galant schemata (Prinner/Romanesca/Do-Re-Mi/Monte/Fonte) and
+    /// the line cliché as VOICE-LEADING-DEFINED: their harmonic-idiom tag is provisional and
+    /// their PRIMARY identity belongs to the future voice-leading axis. Flagged so that layer
+    /// can claim them; the idiom tag here is the harmonic-layer placeholder.
+    bool voiceLeadingDefined = false;
     EntryKind kind = EntryKind::Progression;
     std::string provenance;            ///< the established source (§11)
 
@@ -249,17 +294,18 @@ public:
     /// plain in-code catalog, no external data file).
     HarmonicVocabulary();
 
-    /// §4 browse — every enumerated entry in the active styles (used to load the active
-    /// catalog), ranked by specificity then length.
+    /// §4 browse — every enumerated entry in the active idioms (used to load the active
+    /// catalog), ranked by specificity then length. The subset filters by idiom-set
+    /// intersection (an entry admissible under ANY of the requested idioms).
     std::vector<VocabularyCandidate>
-    browse(const std::vector<StyleTag>& styleSubset = allStyleTags()) const;
+    browse(IdiomSet idiomSubset = kAllIdioms) const;
 
     /// §4 recognise (the analysis direction) — the progression entries whose functional
     /// skeleton `span` exactly realises (key-relative, substitution-aware), each with the
     /// substitution mapping for any substituted member; ranked. May be empty.
     std::vector<VocabularyCandidate>
     recognise(const VocabularySpan& span,
-              const std::vector<StyleTag>& styleSubset = allStyleTags()) const;
+              IdiomSet idiomSubset = kAllIdioms) const;
 
     /// §4 suggest (the composition direction) — by direction:
     ///   • Follow  → progression entries that could continue FROM the span (span = a prefix);
@@ -269,7 +315,7 @@ public:
     /// Ranked. May be empty.
     std::vector<VocabularyCandidate>
     suggest(const VocabularySpan& span, SuggestDirection direction,
-            const std::vector<StyleTag>& styleSubset = allStyleTags()) const;
+            IdiomSet idiomSubset = kAllIdioms) const;
 
     /// §4 expand — the generative slots for target degree `x` (a semitone offset [0,11]):
     /// V7/x, viio7/x, IIm7/x, subV7/x, and the sub's related ii (§5.1). The generative

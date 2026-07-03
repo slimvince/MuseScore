@@ -300,22 +300,80 @@ TEST(HarmonicVocabulary, SuggestReplaceIsEmptyWhenNoSubstitutionApplies)
 
 // ── §4 browse + ranking ───────────────────────────────────────────────────────
 
-TEST(HarmonicVocabulary, BrowseReturnsEntriesInActiveStylesOnly)
+TEST(HarmonicVocabulary, BrowseReturnsEntriesInActiveIdiomsOnly)
 {
     HarmonicVocabulary vocab;
-    // The jazz subset surfaces a jazz-only entry and excludes a galant-only one.
-    std::vector<VocabularyCandidate> jazz = vocab.browse(jazzStyles());
-    EXPECT_TRUE(hasEntryNamed(jazz, "Tritone substitution (subV)"));
-    EXPECT_FALSE(hasEntryNamed(jazz, "Prinner (bass 4̂–3̂–2̂–1̂)"));
+    // The Seventh-functional idiom (the jazz seventh core) surfaces IIm7–V7–Imaj7 and excludes
+    // a triadic-modal-only pop loop and a chromatic-functional-only galant schema.
+    std::vector<VocabularyCandidate> seventh = vocab.browse(idiomSet(Idiom::SeventhFunctional));
+    EXPECT_TRUE(hasEntryNamed(seventh, "IIm7–V7–Imaj7 (major ii–V–I)"));
+    EXPECT_FALSE(hasEntryNamed(seventh, "Doo-wop (I–vi–IV–V)"));        // triadic-modal only
+    EXPECT_FALSE(hasEntryNamed(seventh, "Prinner (bass 4̂–3̂–2̂–1̂)"));  // chromatic-functional only
 
-    // The Baroque (common-practice) subset surfaces the Prinner.
-    std::vector<VocabularyCandidate> galant = vocab.browse({ StyleTag::Baroque });
-    EXPECT_TRUE(hasEntryNamed(galant, "Prinner (bass 4̂–3̂–2̂–1̂)"));
+    // The Chromatic-coloristic idiom surfaces the tritone sub and Coltrane changes.
+    std::vector<VocabularyCandidate> colour = vocab.browse(idiomSet(Idiom::ChromaticColoristic));
+    EXPECT_TRUE(hasEntryNamed(colour, "Tritone substitution (subV)"));
+    EXPECT_TRUE(hasEntryNamed(colour, "Coltrane changes (major-thirds tonic cycle)"));
+    EXPECT_FALSE(hasEntryNamed(colour, "Doo-wop (I–vi–IV–V)"));
+
+    // The Triadic-modal idiom surfaces the pop loops and the Prinner is NOT among them.
+    std::vector<VocabularyCandidate> modal = vocab.browse(idiomSet(Idiom::TriadicModal));
+    EXPECT_TRUE(hasEntryNamed(modal, "Doo-wop (I–vi–IV–V)"));
+    EXPECT_TRUE(hasEntryNamed(modal, "Axis (I–V–vi–IV)"));
 
     // every browsed entry carries a match score.
-    for (const VocabularyCandidate& c : jazz) {
+    for (const VocabularyCandidate& c : seventh) {
         EXPECT_DOUBLE_EQ(c.matchScore, 1.0);
     }
+}
+
+// ── the multi-valued idiom tag — an entry is retrievable under EACH of its idioms ──────
+
+TEST(HarmonicVocabulary, MultiTagEntryRetrievableUnderEachOfItsIdioms)
+{
+    HarmonicVocabulary vocab;
+    // Pachelbel is tagged {Triadic-modal, Diatonic-functional} (mapping R14) — it must surface
+    // under EITHER idiom, and NOT under an idiom it does not carry.
+    const std::string pachelbel = "Pachelbel (I–V–vi–iii–IV–I–IV–V)";
+    EXPECT_TRUE(hasEntryNamed(vocab.browse(idiomSet(Idiom::TriadicModal)), pachelbel));
+    EXPECT_TRUE(hasEntryNamed(vocab.browse(idiomSet(Idiom::DiatonicFunctional)), pachelbel));
+    EXPECT_FALSE(hasEntryNamed(vocab.browse(idiomSet(Idiom::SeventhFunctional)), pachelbel));
+
+    // and it is admissible when BOTH of its idioms are requested together (one intersection).
+    EXPECT_TRUE(hasEntryNamed(
+        vocab.browse(idiomSet(Idiom::TriadicModal, Idiom::DiatonicFunctional)), pachelbel));
+}
+
+// ── the two cross-attributes — mode and chromaticism, orthogonal to the idiom ─────────
+
+TEST(HarmonicVocabulary, CrossAttributesTagModeAndChromaticismIndependently)
+{
+    HarmonicVocabulary vocab;
+    std::vector<VocabularyCandidate> all = vocab.browse();
+
+    // The minor ii–V–i is a minor-mode, diatonic entry.
+    const VocabularyCandidate* minorIiV = findEntry(all, "iiø7–V7–i (minor ii–V–i)");
+    ASSERT_NE(minorIiV, nullptr);
+    EXPECT_EQ(minorIiV->entry->mode, Mode::Minor);
+    EXPECT_EQ(minorIiV->entry->chromaticism, Chromaticism::Diatonic);
+
+    // A plain major authentic cadence is major + diatonic.
+    const VocabularyCandidate* auth = findEntry(all, "Authentic cadence (V–I)");
+    ASSERT_NE(auth, nullptr);
+    EXPECT_EQ(auth->entry->mode, Mode::Major);
+    EXPECT_EQ(auth->entry->chromaticism, Chromaticism::Diatonic);
+
+    // The secondary-dominant substitution is mode-agnostic (Both) and chromatic — showing the
+    // two axes vary independently of each other and of the idiom.
+    const VocabularyCandidate* secDom = findEntry(all, "Secondary dominant / tonicization");
+    ASSERT_NE(secDom, nullptr);
+    EXPECT_EQ(secDom->entry->mode, Mode::Both);
+    EXPECT_EQ(secDom->entry->chromaticism, Chromaticism::Chromatic);
+
+    // The galant schemata carry the voice-leading-defined flag (their idiom tag is provisional).
+    const VocabularyCandidate* prinner = findEntry(all, "Prinner (bass 4̂–3̂–2̂–1̂)");
+    ASSERT_NE(prinner, nullptr);
+    EXPECT_TRUE(prinner->entry->voiceLeadingDefined);
 }
 
 TEST(HarmonicVocabulary, BrowseRanksMoreSpecificAndLongerFirst)

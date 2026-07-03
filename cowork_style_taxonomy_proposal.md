@@ -1,6 +1,9 @@
 # Style taxonomy — empirical proposal (idioms as tags, presets as idiom-weightings)
 
-> **Status: proposal for ratification (2026-06-30).** Grounded in the validated idiom-discovery study
+> **Status: RATIFIED (2026-06-30) · EXECUTED (StyleTag swap, this commit — 2026-07-02).** The five-idiom set + the two
+> cross-attributes are now encoded in the dormant `harmonicvocabulary` component (`enum class Idiom` + `IdiomSet`,
+> replacing the `{Baroque, Jazz, Default}` placeholder); the per-entry re-tag is `cowork_idiom_entry_mapping.md`.
+> Grounded in the validated idiom-discovery study
 > (`cowork_idiom_discovery_findings.md`, v1.5: 5,243 pieces, cap-robust). Per the dictionary §12.1 and the spec, the
 > style taxonomy is a **joint decision with the preset system** — this is the proposal, not the ruling. If ratified,
 > it supersedes the §12.1 hand-made genre taxonomy and the placeholder `{Baroque, Jazz, Default}` StyleTag.

@@ -52,8 +52,9 @@ it into L5/L6. Every analysis layer is **built dormant and validated byte-identi
 | **Idiom taxonomy + voice-leading axis** | ✅ **EMPIRICAL STUDY COMPLETE** | 5 idioms (`cowork_style_taxonomy_proposal.md`); voice-leading confirmed a 2nd orthogonal axis (`cowork_idiom_discovery_findings.md`) |
 
 **Forward increment sequence** (ratified order: encyclopedia → L6 → wire consumer; the idiom + voice-leading work folds in):
-1. **StyleTag swap** — re-tag the encyclopedia entries with the five idioms (`cowork_idiom_entry_mapping.md`) and swap the
-   placeholder `{Baroque, Jazz, Default}` enum. *Mechanical; the per-entry mapping is written; CC handoff ready.*
+1. **StyleTag swap** — ✅ **EXECUTED (2026-07-02).** Re-tagged the encyclopedia entries with the five idioms
+   (`cowork_idiom_entry_mapping.md`) and replaced the placeholder `{Baroque, Jazz, Default}` enum with `enum class Idiom` +
+   the `IdiomSet` bitmask + the two cross-attributes (mode, chromaticism). Dormant, byte-identical; gate 53/24/53 exact.
 2. **L6 (grouping)** — ratify the v1 design → build dormant, byte-identical.
 3. **Recognition consumer** — build + wire: the encyclopedia becomes L5's multi-chord disambiguation prior (the §5.5
    resolver + the §8 forward-override) and L6's sequence-span annotation. **This is the step where L5 takes advantage of
