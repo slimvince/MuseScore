@@ -64,6 +64,35 @@
 // parameter-free as a local metric-weight maximum (the structural-peak convention
 // the sibling Layer-1.5 primitive phraseboundaryview §4.4 already uses), not a
 // tuned cutoff.
+//
+// ── D5 DEPENDENCY MAP — the GRAMMAR owner (mirror at harmonicvocabulary.h) ─────
+//
+// TWO places in the system know about chord successions, and they have ONE owner
+// each (the D5 one-owner ruling, cowork_progression_schema_design.md §6-D5, user-
+// ratified 2026-07-02 with the make-it-explicit rider). This module — the pairwise
+// LICENSING GRAMMAR (isLicensedProgression) — owns "which root motions are licensed
+// at all". The Harmonic Vocabulary (vocabulary/harmonicvocabulary) owns the NAMED
+// progressions and substitutions (the catalog).
+//   • Changing the GRAMMAR (the licensed root motions) → change THIS module ONLY.
+//     The catalog never needs an edit for a grammar change — but the consistency
+//     test re-runs, and a catalog entry that now fails it is flagged.
+//   • Changing the CATALOG (add/edit a named progression or substitution) → change
+//     the Vocabulary ONLY. The grammar never needs an edit — but a new entry must
+//     PASS the consistency test (every adjacent chord pair licensed); a failure
+//     means the entry is mis-encoded OR a genuine grammar gap was found (escalate,
+//     do NOT tag around it).
+//   • The two are NOT derived from each other (the grammar licenses MORE than
+//     convention names; the catalog is enumerative and grows from evidence). The
+//     ONLY coupling is the CONSISTENCY TEST, and it runs ONE WAY (catalog → grammar):
+//     tests/progressionrecognizer_tests.cpp asserts every adjacent chord pair of
+//     every catalog entry passes isLicensedProgression.
+//   • RULED KNOWN GAPS (2026-07-02): the consistency test found 6 catalog entries /
+//     11 motions the §5.0 grammar does NOT license (plagal / ascending-fifth = delta
+//     7; descending-second = delta 10/11; the diatonic diminished-fifth = delta 6) —
+//     each musically correct, so ruled GRAMMAR GAPS (not mis-encodings). The §5.0
+//     grammar-completion amendment is L5-owned future work (L5 spec §15-12); until it
+//     lands the test pins those as an explicit known-gap list (a tripwire — any 7th
+//     failure is red). Do NOT widen this grammar to clear them in a consumer build.
 
 #include <vector>
 

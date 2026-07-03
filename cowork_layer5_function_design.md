@@ -197,6 +197,15 @@ These five concepts are used throughout §5 and are defined here once so no rule
   embellishment matter, not function progression. Step-1 build decision.)
   This is a stated, enumerable test — not a preference. (The numeric preference *among* several licensed readings is a
   precision-phase weight; the licensing itself is the rule here.)
+  **(D5 dependency map — this is the GRAMMAR owner.)** This licensing test (`functionprogression::isLicensedProgression`)
+  is the ONE owner of "which root motions are licensed at all". The **named** progressions and substitutions live in the
+  **Harmonic Vocabulary** (the catalog); this layer never enumerates them, and the catalog never re-implements this test.
+  *Changing the grammar* → change this test only (the catalog needs no edit; the consumer's consistency test re-runs and
+  flags any catalog entry that now fails). *Changing the catalog* → change the Vocabulary only. The only coupling is the
+  consistency test (`progressionrecognizer_tests.cpp`), one-way (catalog → grammar). Owner ruling: D5
+  (`cowork_progression_schema_design.md` §6), user-ratified 2026-07-02; cross-commented at `functionprogression.h` and
+  `harmonicvocabulary.h`. *(The §5.0 grammar as coded omits three theory-licensed motions the catalog exercises — the
+  ruled grammar gaps of §15-12, to be completed there, not in a consumer build.)*
 - **A resolution (as a detected event).** A **leading-tone resolution** is detected when the leading-tone pitch sounding
   in a voice of the approach chord moves to the tonic in **that same voice** at the arrival; a **tritone resolution** is
   detected when the dominant's tritone (the fourth and seventh degrees) contracts or expands by step to the tonic's third
@@ -810,3 +819,11 @@ catalog §Sources.
     preserving the chorale behaviour where boundaries are strong. The graded profile already carries the needed
     signal; this is a consumption rule, not a new primitive. Source: `cowork_architecture_review_2026_07.md` §7/§9
     (F-11, A-5).
+12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ratification-gated).** The licensed
+    root-motion set descends from the old scoring-bonus signals and omits three theory-licensed motions the catalog's
+    own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!),
+    **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of
+    the full circle). Amendment: extend `isLicensedProgression` (+ this §5.0's enumeration) accordingly — algorithmic
+    completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test
+    then tightens to the clean assert. Evidence: the 6-entry/12-motion failure table in the consumer build's
+    Task-2.1 STOP (2026-07-02).

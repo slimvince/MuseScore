@@ -67,6 +67,35 @@
 // exact realisation; non-exact entries are EXCLUDED). The FUZZY / partial / metric-
 // sensitive scoring is precision-phase, DEFERRED to the consumer (spec §4 / design §4.1) —
 // it is NOT built here.
+//
+// ── D5 DEPENDENCY MAP — the CATALOG owner (mirror at functionprogression.h) ────
+//
+// TWO places in the system know about chord successions, and they have ONE owner
+// each (the D5 one-owner ruling, cowork_progression_schema_design.md §6-D5, user-
+// ratified 2026-07-02 with the make-it-explicit rider). THIS component — the Harmonic
+// Vocabulary — owns the NAMED progressions and substitutions (the catalog). The
+// pairwise LICENSING GRAMMAR (function/functionprogression isLicensedProgression) owns
+// "which root motions are licensed at all".
+//   • Changing the CATALOG (add/edit a named progression or substitution) → change
+//     THIS component ONLY. The grammar never needs an edit — but a new entry must
+//     PASS the consistency test (every adjacent chord pair licensed); a failure means
+//     the entry is mis-encoded OR a genuine grammar gap was found (escalate, do NOT
+//     tag around it).
+//   • Changing the GRAMMAR (the licensed root motions) → change functionprogression
+//     ONLY. The catalog never needs an edit for a grammar change — but the consistency
+//     test re-runs, and a catalog entry that now fails it is flagged.
+//   • The two are NOT derived from each other (the grammar licenses MORE than
+//     convention names; the catalog is enumerative and grows from evidence). The
+//     ONLY coupling is the CONSISTENCY TEST, and it runs ONE WAY (catalog → grammar):
+//     tests/progressionrecognizer_tests.cpp asserts every adjacent chord pair of
+//     every catalog entry passes isLicensedProgression.
+//   • RULED KNOWN GAPS (2026-07-02): the consistency test found 6 catalog entries /
+//     11 motions the §5.0 grammar does NOT license — Plagal (IV→I), Axis (I→V),
+//     Pachelbel (I→V, vi→iii, IV→I), Romanesca (I→V, vi→iii), Andalusian (i→♭VII,
+//     ♭VII→♭VI, ♭VI→V), Circle-of-fifths-full (IV→viio). Each entry is musically
+//     correct, so ruled GRAMMAR GAPS (not mis-encodings — the data is NOT re-encoded
+//     to fit the code). The §5.0 grammar-completion amendment is L5-owned future work
+//     (L5 spec §15-12). Do NOT edit these entries to clear the consistency test.
 
 #include <cstdint>
 #include <string>

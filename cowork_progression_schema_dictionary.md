@@ -18,6 +18,18 @@ Its **consumers** query it:
 It is built **shareable** for both. Because every consumer **queries** it and it acts on nothing itself, it is **not one
 of those tools** — it is the reference they consult.
 
+**The D5 dependency map (one owner per concern — restated here, mirrored in code).** Two places know about chord
+successions: **this component** owns the **named progressions and substitutions** (the catalog); **Layer 5's
+`functionprogression`** owns the **pairwise licensing grammar** (which root motions are licensed at all). *Changing the
+catalog* → change this component only (the grammar never needs an edit; but a new entry must pass the **consistency
+test** — every adjacent chord pair licensed — or it is mis-encoded OR a genuine grammar gap). *Changing the grammar* →
+change `functionprogression` only. The two are **not derived from each other**; the **only coupling is the consistency
+test**, and it runs **one way (catalog → grammar)**. Owner ruling: D5 (`cowork_progression_schema_design.md` §6),
+user-ratified 2026-07-02; the cross-referencing comment blocks live at `functionprogression.h` and `harmonicvocabulary.h`;
+the test is `progressionrecognizer_tests.cpp`. *(Ruled known grammar gaps found at the consumer build, 2026-07-02: 6
+entries / 11 motions — plagal/ascending-fifth, descending-second, the diatonic diminished-fifth — musically correct, so
+grammar gaps for the §5.0 grammar to complete later, L5 spec §15-12; not catalog errors.)*
+
 ## 2. What it does, and does not do
 **It does:** hold the catalog (§5) and answer the four queries of §4 — *browse*, *recognise*, *suggest*, *expand* — each
 returning a **ranked list of candidate entries**.
@@ -104,7 +116,12 @@ chiefly a jazz device. (Its systematic *presentation* follows Ramos's *Mapping T
 *content* is the shared functional system, not a jazz-only set.)
 - **Diatonic functions** `[all styles]` — Tonic family `I, vi, iii`; pre-dominant family `IV, ii (+ vi)`; dominant family
   `V, viio (+ iii)`. The functional flow is T → (T) → SD → D → T; the licensed pairwise root motions are the descending
-  fifth, the descending third, and the ascending second.
+  fifth, the descending third, and the ascending second. **(D5 owner note.)** This descriptive list is NOT a second
+  implementation of the licensing test — the **pairwise licensing GRAMMAR is owned by Layer 5's `functionprogression`
+  (`isLicensedProgression`)**, evaluated on every chord transition; this catalog owns only the **named** progressions
+  (§5.2). The two are coupled one-way by the consistency test (see §1). *(The §5.0 grammar as coded licenses exactly this
+  descending-fifth / descending-third / ascending-second set; the plagal / ascending-fifth, descending-second, and
+  diatonic diminished-fifth motions that some §5.2 entries use are the ruled grammar gaps — §1 / L5 §15-12.)*
 - **Secondary functions, per non-tonic diatonic `x`** `[common-practice + jazz]` — the secondary dominant `V7/x`; the
   secondary leading-tone `viio7/x` (or `viiø7/x`); the related ii `IIm7/x`, giving the applied ii–V `IIm7/x → V7/x → x`.
 - **Substitute dominants, per `x`** `[chiefly jazz; the common-practice cousin is the German sixth]` — the tritone
