@@ -107,6 +107,9 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/scoreharvest/metricweights.h"        // E0 --dump-fullspine (per-slice metric weight)
 #include "composing/analysis/grouping/groupinglayer.h"            // L6 --dump-l6 (dormant grouping assembly)
 #include "composing/analysis/progression/progressionrecognizer.h" // consumer --dump-progressions (dormant recognition)
+#include "composing/analysis/voiceleading/voicelinearview.h"       // axis 2 VL-A --dump-vl (dormant voice-linear view)
+#include "composing/analysis/voiceleading/voiceleadingprofiles.h"  // axis 2 VL-B --dump-vl (dormant motion/interval profiles)
+#include "composing/analysis/voiceleading/textureclassifier.h"     // axis 2 VL-C --dump-vl (dormant texture classification)
 #include "composing/analysis/region/sparsechordrefinement.h"      // diatonicDegreeForRootPc (the inline-RN baseline)
 #include "composing/analysis/notemodel/note_model.h"        // Layer 2 validation: --validate-slices
 #include "composing/analysis/slicing/slicer.h"              // Layer 2 validation: --validate-slices
@@ -1965,6 +1968,13 @@ static void printHelp(const std::string& prog)
         << "            progression-schema-spans (§4.4), harmonic sequences (§4.6), the §4.5\n"
         << "            idiom-mixture weights, and the §4.3 evidence-contribution counts. NO\n"
         << "            production consumer; fullspine output byte-identical without it. Default OFF.\n"
+        << "  --dump-vl\n"
+        << "            (axis 2 / voice leading, read-only DIAGNOSTIC) Build the dormant VL-A\n"
+        << "            voice-linear view, the VL-B motion & interval profiles (+ the per-sample\n"
+        << "            motion-event series), and the VL-C texture classification, and write a\n"
+        << "            per-stem JSON side file (returns before analyzeScore). The reducedLines\n"
+        << "            block is the study-parity input (tools/compare_vl_parity.py). NO\n"
+        << "            production consumer; production output byte-identical. Default OFF.\n"
         << "  --dump-modulation\n"
         << "            (Stage 4d-i, read-only) Append a top-level \"modulation\" key to\n"
         << "            the standard regions JSON: the key-agnostic local-modulation\n"
@@ -2619,6 +2629,128 @@ static std::string runChordDecode(const Score* score, const std::string& stem,
         os << " }";
     }
     os << (decoded.empty() ? "]\n" : "\n  ]\n");
+    os << "}\n";
+    return os.str();
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// AXIS 2 (VOICE LEADING) — the dormant VL-A/B/C dump (--dump-vl)
+//
+// DIAGNOSTIC ONLY (default OFF, additive): builds the L1 note model, the VL-A
+// voice-linear view, the VL-B motion & interval profiles (+ the per-sample motion-
+// event series), and the VL-C texture classification, and writes a per-stem JSON side
+// file; main() returns immediately after, so analyzeScore is never reached (production
+// byte-identical). The `reducedLines` block is the View-A/B input the C++ built (top-
+// note per eligible event) — the study-parity harness (tools/compare_vl_parity.py)
+// feeds it through voiceleading.py `vl_profile` / voiceleading2.py `vl_profile_B` and
+// diffs against the profiles here. DORMANT: the only exerciser besides the tests.
+static std::string runVlDump(const Score* score, const std::string& stem,
+                             const std::set<size_t>& /*excludeStaves*/)
+{
+    namespace vl = mu::composing::analysis::voiceleading;
+
+    const NoteModel model = NoteModel::build(score);
+    const vl::VoiceLinearView view = vl::buildVoiceLinearView(model);
+    std::vector<vl::MotionEvent> motionEvents;
+    const vl::MotionProfile motion = vl::computeMotionProfile(view, &motionEvents);
+    const vl::IntervalProfile interval = vl::computeIntervalProfileAggregate(view);
+    const std::vector<vl::ReducedLine> reduced = vl::reducedOnsetSeries(view);
+    const vl::VoiceLeadingSpan span =
+        vl::classifyTexture(motion, interval, model.loadedStart(), model.loadedEnd());
+
+    auto motionTypeName = [](vl::MotionType t) -> const char* {
+        switch (t) {
+        case vl::MotionType::Parallel: return "parallel";
+        case vl::MotionType::Similar:  return "similar";
+        case vl::MotionType::Contrary: return "contrary";
+        case vl::MotionType::Oblique:  return "oblique";
+        }
+        return "?";
+    };
+    auto classNameOf = [](vl::TextureClass c) -> const char* {
+        switch (c) {
+        case vl::TextureClass::Contrapuntal:        return "Contrapuntal";
+        case vl::TextureClass::HomophonicClassical: return "HomophonicClassical";
+        case vl::TextureClass::HomophonicPianistic: return "HomophonicPianistic";
+        case vl::TextureClass::ModerateMixed:       return "ModerateMixed";
+        }
+        return "?";
+    };
+    auto reasonName = [](vl::AbstentionReason r) -> const char* {
+        switch (r) {
+        case vl::AbstentionReason::None:          return "none";
+        case vl::AbstentionReason::NoPair:        return "no-pair";
+        case vl::AbstentionReason::TooFewSamples: return "too-few-samples";
+        case vl::AbstentionReason::LowMargin:     return "low-margin";
+        case vl::AbstentionReason::LowFit:        return "low-fit";
+        }
+        return "?";
+    };
+
+    std::ostringstream os;
+    os.setf(std::ios::fixed);
+    os << "{\n";
+    os << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    os << "  \"axis\": \"voiceleading\",\n";
+    os << "  \"loadedStart\": " << model.loadedStart() << ",\n";
+    os << "  \"loadedEnd\": " << model.loadedEnd() << ",\n";
+
+    // The reduced per-line (onset, top-pitch) series — the View-A/B parity input.
+    os << "  \"reducedLines\": [";
+    for (size_t i = 0; i < reduced.size(); ++i) {
+        const vl::ReducedLine& rl = reduced[i];
+        os << (i == 0 ? "\n" : ",\n");
+        os << "    { \"staff\": " << rl.staff << ", \"voice\": " << rl.voice << ", \"onsets\": [";
+        for (size_t k = 0; k < rl.onsets.size(); ++k) {
+            os << (k == 0 ? "" : ", ") << "[" << rl.onsets[k].first << ", " << rl.onsets[k].second << "]";
+        }
+        os << "] }";
+    }
+    os << (reduced.empty() ? "],\n" : "\n  ],\n");
+
+    os.precision(12);
+    os << "  \"motionProfile\": { \"parallel\": " << motion.parallel
+       << ", \"similar\": " << motion.similar << ", \"contrary\": " << motion.contrary
+       << ", \"oblique\": " << motion.oblique << ", \"sampleCount\": " << motion.sampleCount
+       << ", \"eligibleVoiceCount\": " << motion.eligibleVoiceCount
+       << ", \"voicePairCount\": " << motion.voicePairCount
+       << ", \"defined\": " << (motion.defined ? "true" : "false") << " },\n";
+
+    os << "  \"intervalProfile\": { \"hist\": [";
+    for (size_t k = 0; k < interval.hist.size(); ++k) {
+        os << (k == 0 ? "" : ", ") << interval.hist[k];
+    }
+    os << "], \"repeat\": " << interval.repeat << ", \"step\": " << interval.step
+       << ", \"leap\": " << interval.leap << ", \"intervalCount\": " << interval.intervalCount
+       << ", \"defined\": " << (interval.defined ? "true" : "false") << " },\n";
+
+    os << "  \"motionEvents\": [";
+    for (size_t i = 0; i < motionEvents.size(); ++i) {
+        const vl::MotionEvent& me = motionEvents[i];
+        os << (i == 0 ? "\n" : ",\n");
+        os << "    { \"staffU\": " << me.staffU << ", \"voiceU\": " << me.voiceU
+           << ", \"staffV\": " << me.staffV << ", \"voiceV\": " << me.voiceV
+           << ", \"sampleTick\": " << me.sampleTick << ", \"type\": \"" << motionTypeName(me.type)
+           << "\", \"before\": " << me.harmonicIntervalBefore
+           << ", \"after\": " << me.harmonicIntervalAfter << " }";
+    }
+    os << (motionEvents.empty() ? "],\n" : "\n  ],\n");
+
+    os << "  \"textureClass\": { \"committed\": \"" << classNameOf(span.committed)
+       << "\", \"confidence\": " << span.confidence
+       << ", \"abstained\": " << (span.abstained ? "true" : "false")
+       << ", \"reason\": \"" << reasonName(span.reason) << "\""
+       << ", \"motionSampleCount\": " << span.motionSampleCount
+       << ", \"clippedBySelectionEdge\": " << (span.clippedBySelectionEdge ? "true" : "false")
+       << ", \"cueDenied\": " << (span.cueDenied ? "true" : "false")
+       << ", \"ranked\": [";
+    for (size_t i = 0; i < span.ranked.size(); ++i) {
+        const vl::ClassFit& cf = span.ranked[i];
+        os << (i == 0 ? "" : ", ") << "{ \"cls\": \"" << classNameOf(cf.cls)
+           << "\", \"distance\": " << cf.distance << ", \"fit\": " << cf.fit
+           << ", \"weight\": " << cf.weight << " }";
+    }
+    os << "] }\n";
     os << "}\n";
     return os.str();
 }
@@ -3394,6 +3526,7 @@ int main(int argc, char* argv[])
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
+    bool dumpVl = false;              // axis 2 (voice leading) VL-A/B/C dump (default OFF, additive)
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
     // analyzeScore), so production analysis stays byte-identical. Default = the
@@ -3462,6 +3595,9 @@ int main(int argc, char* argv[])
             // progression-recognition output (schema-spans + sequences + counts).
             dumpFullSpine = true;
             dumpProgressions = true;
+        } else if (a == "--dump-vl") {
+            // Axis 2 (voice leading): the dormant VL-A/B/C dump (additive, own path).
+            dumpVl = true;
         } else if (a == "--chord-no-membership") {
             // Decode-only: disable the Increment-B membership decision + feedback +
             // two-pass (reproduces the Increment-A behaviour, modulo the adaptive window).
@@ -3793,6 +3929,24 @@ int main(int argc, char* argv[])
         const std::string stem =
             QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
         const std::string report = runReachBackAB(score, stem, chordPrefs, keyPrefs, excludeStaves);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── Axis 2 (voice leading) — the dormant VL-A/B/C dump (--dump-vl) ──
+    // DIAGNOSTIC ONLY, additive: builds the note model + VL-A/B/C and writes a per-stem
+    // JSON side file, then returns — analyzeScore is never reached (production
+    // byte-identical, default OFF). See runVlDump().
+    if (dumpVl) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::string report = runVlDump(score, stem, excludeStaves);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;
