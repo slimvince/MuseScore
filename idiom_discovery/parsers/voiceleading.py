@@ -53,7 +53,15 @@ def load_dcml_notes_vl(notes_dir, label, limit=None):
 if __name__=="__main__":
     from sklearn.cluster import KMeans
     from sklearn.metrics import adjusted_rand_score as ARI
-    C="/sessions/nice-busy-fermat/mnt/MS"
+    # Portability (CC axis-2, 2026-07-03): corpus root is now a CLI arg / env var,
+    # not a hardcoded sandbox path.  Precedence: argv[1] > $VL_CORPUS_ROOT > the repo
+    # root inferred from this file's location (parsers/ -> idiom_discovery/ -> repo).
+    # vl_profile / load_chorales_vl / load_dcml_notes_vl are UNCHANGED, so this
+    # __main__ reproduces the pilot baseline byte-for-byte when pointed at the same
+    # corpus (the corpora/expl/dcml_* dirs still exist here, dedup-verified as clones
+    # of tools/dcml/*).
+    _repo=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    C=sys.argv[1] if len(sys.argv)>1 else os.environ.get("VL_CORPUS_ROOT", _repo)
     data=load_chorales_vl(60)
     for d,lab in [("corpora/expl/dcml_mozart","piano"),("corpora/expl/dcml_beethoven","piano"),("corpora/expl/dcml_scarlatti","piano")]:
         data+=load_dcml_notes_vl(os.path.join(C,d,"notes"),lab)
