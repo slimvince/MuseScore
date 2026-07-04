@@ -308,3 +308,61 @@ git clone https://github.com/ccarh/essen-folksong-collection \
   The schema and texture beds add **labels over Mozart piano sonatas already held**
   (`tools/dcml/mozart_piano_sonatas`); Essen is a self-contained monophonic melody
   bed (no chord symbols, no voice pairs). Alignment details in the wave-2 report.
+
+---
+
+## corpora/gt/ + corpora/plain/ — corpus wave 3 (2026-07-04)
+
+- **Content:** Wave-3 ground-truth / stress beds per the census §8c FULL-NEEDS AUDIT
+  disposition — jazz/pop analysis GT, cadence/form/dual-annotator beds, figured bass,
+  trees/reduction, and plain-score stress. **Research-tier, hash-pin-only, held-out**
+  (never tuned against). `corpora/` is gitignored (`.git/info/exclude`); `corpora/gt/`
+  holds the GT beds, `corpora/plain/` the plain-score stress material.
+- **Source of truth for pins:** `tools/score_census_registry.json → wave3_sources[].pinned_commit`
+  (regenerate with `python tools/build_score_census_registry.py`; shas read live from the
+  clones). Full inventory + paper-claim verification: `cc_corpus_wave3_report.md`.
+- **Licenses (recorded; all hash-pin-only regardless):** CoCoPops CC-BY · OpenEWLD PD ·
+  BCFB CC-BY · algomus-data ODbL-1.0 · protovoice-annotations unclear · schenker41 unclear ·
+  WJD ODbL-1.0 · OpenScore Lieder/StringQuartets CC0 · ASAP CC-BY-NC. None forbids a local
+  gitignored research clone.
+
+```bash
+mkdir -p corpora/gt corpora/plain && cd corpora/gt
+# jazz/pop analysis GT
+git clone https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops \
+  && git -C CoCoPops checkout 6b04f4f99477dd97b6e98abd86a2448a481ddf7b
+git clone https://github.com/00sapo/OpenEWLD \
+  && git -C OpenEWLD checkout ec03cbd809ca5296ee708591b970d0423dcbe31c   # NOTE: Windows checkout partial (one '?' filename is NTFS-illegal); pin+inventory via `git ls-tree`
+# figured bass
+git clone https://github.com/juyaolongpaul/Bach_chorale_FB \
+  && git -C Bach_chorale_FB checkout 431c5c019aeea198c0128a05dd1d2a7364c2d786
+git clone https://github.com/DCMLab/figured-bass \
+  && git -C figured-bass checkout 9d638f605b5e2115f3154d5029cdb93dc5a866f6   # WALKED = a realization script, NOT a GT corpus
+# cadence/form + trees
+git clone https://gitlab.com/algomus.fr/algomus-data \
+  && git -C algomus-data checkout a1801b5b42a4f8d99783e1e52b3dc2e7407cd5ef   # quartets/mozart (32) + fugues/bach-wtc-i (23) + jazz-arbres
+git clone https://github.com/DCMLab/protovoice-annotations \
+  && git -C protovoice-annotations checkout 8ccb995e2e62b60f34380c9ace2e18df8caf2945   # N9 gating inspection
+git clone https://github.com/pkirlin/schenker41 \
+  && git -C schenker41 checkout 3ec7eed3421b45ce2b25fe84d50dc7219ce1ab5a   # README-only at HEAD; data at cs.rhodes.edu/~kirlinp/diss.html
+# Weimar Jazz Database native SQLite (pinnable-source rule: pinned by sha256, not a git repo)
+mkdir -p weimar-jazz-database && curl -sSL -o weimar-jazz-database/wjazzd.db \
+  https://jazzomat.hfm-weimar.de/download/downloads/wjazzd.db
+#   sha256 = af6a0d9debf042c3581565bd75baad591d32e166cd2ec7298519883de614bf12  (v2.1 / DB 2.2, 456 solos, ODbL)
+
+cd ../plain   # plain-score stress (depth-1)
+git clone --depth 1 https://github.com/OpenScore/Lieder \
+  && git -C Lieder checkout 6b2dc542ce2e8aa4b78c8ee62103b210efc07015
+git clone --depth 1 https://github.com/OpenScore/StringQuartets \
+  && git -C StringQuartets checkout d13289cd70797da94646e5cf64f7296a4c4fee40
+git clone --depth 1 https://github.com/fosfrancesco/asap-dataset \
+  && git -C asap-dataset checkout afc815c75c42e83a79c03feb6da8a35e77d4c6b8
+```
+
+  **Inventoried, not re-cloned (already held):** the ChoCo `jazz-corpus` (160 jams) +
+  `weimar` (916 jams) partitions in `corpora/ship/choco`; the WiR interior slices in
+  `tools/dcml/when_in_rome` (TAVERN 27 dual, HaydnSun 32, BPS-FH 86, WTC-I 24/31, Lieder RN
+  179). **Gated / unavailable (access path only):** EWLD (Zenodo 1476555 request-access),
+  HookTheory full (HF `m-a-p/HookTheory` academic gate), Sears Haydn cadences (no public
+  deposit), GTTM (gttm.jp per-piece zips, no single artifact). **Enumeration-only (cloned
+  nothing):** the `humdrum-tools/humdrum-data` manifest = 71 repos / 16 orgs.

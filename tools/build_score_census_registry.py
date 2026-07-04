@@ -446,17 +446,371 @@ def annotation_bed_rows() -> list[dict]:
     ]
 
 
+def _corpora_sha(rel: str) -> str | None:
+    """SHA of a git clone under corpora/ (gitignored, hash-pin-only). None if absent."""
+    p = ROOT / rel
+    return _sha(p) if (p / ".git").exists() else None
+
+
+def _file_sha256(rel: str) -> str | None:
+    """sha256 of a pinned downloaded artifact (non-git, e.g. the WJD SQLite). None if absent."""
+    import hashlib
+    p = ROOT / rel
+    if not p.is_file():
+        return None
+    h = hashlib.sha256()
+    with open(p, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return "sha256:" + h.hexdigest()
+
+
+# Wave-3 sources (corpus wave 3, 2026-07-04; cc_corpus_wave3_report.md). Per the census
+# §8c FULL-NEEDS AUDIT disposition (user, 2026-07-04): jazz/pop GT + cadence/form/dual-annotator
+# beds + figured bass + trees/reduction + plain-score stress. All held-out (never tuned against),
+# all hash-pin-only under gitignored corpora/gt|plain/. Per the census §8c INTAKE RULE each row
+# carries a `needs_coverage` note scored against the FULL vector N1-N20 (not single-purpose tagged).
+# `status`: onboarded (cloned+pinned+inventoried) | walked (inspected, finding recorded) |
+# inventory (already-held material re-inventoried, no new clone) | gated (access-restricted, path
+# recorded) | unavailable (no public deposit found, access path recorded) | enumerated (manifest
+# recorded, nothing cloned). Shas read live from the clones; None when the clone/artifact is absent.
+def wave3_rows() -> list[dict]:
+    r = []
+    r.append({
+        "name": "cocopops", "container": "Computational-Cognitive-Musicology-Lab/CoCoPops",
+        "content": "Coordinated Corpus of Popular Music: melodic+harmonic transcriptions of "
+                   "Billboard (McGill Billboard in Humdrum + 214 new melody transcriptions) + "
+                   "RollingStone (RS200) — README: 414 complete transcriptions of 398 unique tracks",
+        "pieces": 398, "annotated_pieces": 414, "gt_type": "rn", "gt_layers": ["harm", "kern-melody", "harte", "phrase", "form"],
+        "annotation_standard": "Humdrum (**harm RN + **kern melody + **harte + **phrase + **form + metadata spines)",
+        "score_format": "Humdrum .hum (fully symbolic)", "alignment": "score-aligned",
+        "license_class": "CC-BY", "distribution": "hash-pin-only", "tier": "J", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops",
+        "pinned_commit": _corpora_sha("corpora/gt/CoCoPops"),
+        "needs_coverage": "N3 (jazz/pop analysis GT, score-aligned — the top Tier-J acquisition; **harm RN "
+                          "+ **kern melody, fully symbolic); N12-adj (chord symbols aligned with a symbolic "
+                          "melody line, not a full realized score); N16-adj (**form/phrase spines); N17 (rich "
+                          "metadata). Verified 628 .hum (Billboard 428 + RollingStone 200); 414 complete "
+                          "transcriptions per README. DEDUPE: absorbs McGill-Billboard + RS200 (both held as "
+                          "ChoCo partitions + registry rows) — the symbolic superset of those chord-only slices.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). 628 .hum at pin; **harm+**kern+**harte spines verified. Held-out.",
+    })
+    r.append({
+        "name": "openewld", "container": "00sapo/OpenEWLD",
+        "content": "Public-domain subset of EWLD (Enhanced Wikifonia Leadsheet Dataset): MusicXML "
+                   "lead sheets (melody + chord symbols) with metadata",
+        "pieces": 486, "annotated_pieces": 486, "gt_type": "chords", "gt_layers": ["chords", "melody"],
+        "annotation_standard": "MusicXML harmony + melody; per-piece feature CSV", "score_format": "compressed MusicXML (.mxl)",
+        "alignment": "score-aligned", "license_class": "PD", "distribution": "hash-pin-only", "tier": "J",
+        "status": "onboarded", "split": "held-out", "provenance_url": "https://github.com/00sapo/OpenEWLD",
+        "pinned_commit": _corpora_sha("corpora/gt/OpenEWLD"),
+        "needs_coverage": "N12 (chord symbols + melody leadsheet — the symbol+melody half; the symbol+REALIZED-score "
+                          "half stays thin); N3-adj (lead-sheet chords, no functional RN); N17. MEASURED 486 .mxl at pin "
+                          "vs the ~502 census/paper claim (living-repo/PD-filter variance — reported, not silently "
+                          "accepted). Zenodo DOI 10.5281/zenodo.4332855. DEDUPE: PD subset of EWLD (⊃ OpenEWLD; EWLD "
+                          "gated, separate row). WINDOWS caveat: git checkout fails on one '?' filename (NTFS-illegal); "
+                          "pin + inventory taken from git objects (ls-tree) — bed is hash-pin-only, so unaffected.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). 486 .mxl (git ls-tree; Windows working-tree checkout partial). Held-out.",
+    })
+    r.append({
+        "name": "bcfb", "container": "juyaolongpaul/Bach_chorale_FB",
+        "content": "Bach Chorales Figured Bass (BCFB) v2.0: 139 J.S. Bach chorales with figured-bass "
+                   "encodings in MusicXML / **kern / MEI, based on the Neue Bach Ausgabe (Ju et al., ISMIR 2020)",
+        "pieces": 139, "annotated_pieces": 143, "gt_type": "figured-bass", "gt_layers": ["figured-bass"],
+        "annotation_standard": "figured-bass symbols in MusicXML/kern/MEI (143 files: BWV 10.07/161.06/38.06/177.05 have two NBA versions)",
+        "score_format": "MusicXML + Humdrum **kern + MEI", "alignment": "score-aligned",
+        "license_class": "CC-BY", "distribution": "hash-pin-only", "tier": "C", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/juyaolongpaul/Bach_chorale_FB",
+        "pinned_commit": _corpora_sha("corpora/gt/Bach_chorale_FB"),
+        "needs_coverage": "N10 (figured-bass GT — the gate repertoire's OWN composer-stated harmony evidence, "
+                          "L4 evidence channel R-4); N1-adj (Bach chorales, but FB not RN); N17. VERIFIED at data: "
+                          "kern 143 / mei 146 / musicXML_master 248 (in-progress additions); reference_table.csv. "
+                          "The third N10 source beside DCMLab/figured-bass (a realization TOOL, not GT — see that row) "
+                          "and the DLC figbass column (parser-dropped). Also Zenodo 5084914.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). 139 chorales / 143 canonical files (kern count). Held-out.",
+    })
+    r.append({
+        "name": "algomus_data", "container": "algomus.fr/algomus-data (GitLab)",
+        "content": "Algomus datasets monorepo (backs algomus.fr/data): quartets/mozart (32 Mozart string-quartet "
+                   "movements, Dezrann sonata-form + cadence GT), fugues/bach-wtc-i (Bach WTC-I fugue subjects/"
+                   "countersubjects/cadences/pedals), jazz-arbres (jazz harmony treebank)",
+        "pieces": 32, "annotated_pieces": 55, "gt_type": "form", "gt_layers": ["structure", "cadence", "harmony", "fugue-subject", "pedal", "jazz-tree"],
+        "annotation_standard": "Dezrann .dez (labels: type Structure/Cadence/Harmony, onset+duration in seconds, line)",
+        "score_format": "Dezrann .dez labels over external Mozart-quartet / WTC scores (onset-in-seconds keyed)",
+        "alignment": "score-aligned (onset/duration in seconds; external scores)", "license_class": "ODbL-1.0",
+        "distribution": "hash-pin-only", "tier": "C", "status": "onboarded", "split": "held-out",
+        "provenance_url": "https://gitlab.com/algomus.fr/algomus-data",
+        "needs_coverage": "★ MULTI-NEED. N16 (Mozart SQ sonata-form — the RATIFIED best form/section-GT candidate, "
+                          "quartets/mozart = 32 -ref.dez, matches paper); N4 (cadence labels, quartets + fugues); "
+                          "N18 (fugue subjects/countersubjects — the adopted-2026-07-04 contrapuntal/imitative GT); "
+                          "N20 (fugue pedal-point labels — the adopted own-row need); N11-adj + N3-adj (jazz-arbres "
+                          "treebank.json, 1170 entries — jazz harmony trees). GAP REPORTED: fugues/ holds bach-wtc-i "
+                          "(23 -ref.dez of 24) only; the 12 Shostakovich fugues are NOT in the repo (website-only). "
+                          "ALIGNMENT caveat: .dez onsets are in SECONDS keyed to a specific score/recording, not "
+                          "ticks — a mapping step is owed before load-bearing use.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). quartets/mozart 32 ref.dez; fugues/bach-wtc-i 23 ref.dez (no Shostakovich); jazz-arbres treebank 1170. Held-out.",
+        "pinned_commit": _corpora_sha("corpora/gt/algomus-data"),
+    })
+    r.append({
+        "name": "protovoice_annotations", "container": "DCMLab/protovoice-annotations",
+        "content": "Pieces/excerpts annotated with protovoice analyses (Finkensiep dissertation ch. 7): "
+                   "note-to-note reduction derivations (regular + passing edges, reduction slices)",
+        "pieces": 63, "annotated_pieces": 38, "gt_type": "reduction", "gt_layers": ["protovoice-derivation"],
+        "annotation_standard": "protovoice .analysis.json (topSegments -> trans.edges {regular,passing} + rslice.notes; loadable in the protovoice viewer)",
+        "score_format": "MusicXML + .analysis.json (+ .piece.json)", "alignment": "score-aligned (paired MusicXML)",
+        "license_class": "unclear", "distribution": "hash-pin-only", "tier": "C", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/DCMLab/protovoice-annotations",
+        "pinned_commit": _corpora_sha("corpora/gt/protovoice-annotations"),
+        "needs_coverage": "N9 (stream/implied-polyphony GT — this INSPECTION GATES the Cowork-side N9 union search; "
+                          "verdict below); N11 (hierarchical harmony/voice reduction trees, the JHT/Schenker family); "
+                          "N1-adj (score-aligned). INSPECTED: 38 .analysis.json derivations + 63 MusicXML + 5 .piece.json "
+                          "(bach 3 / examples 2 / theory-article 33), WIP. N9 VERDICT = PARTIALLY usable: the regular+"
+                          "passing edges ARE note-level voice-connection GT (the raw material for stream/voice-separation), "
+                          "but encoded as HIERARCHICAL reduction derivations (surface->background), not flat surface-stream "
+                          "labels, and small (38); usable for N9 only via a derivation->surface-stream extraction step. "
+                          "Nearest thing to stream GT in the whole enumeration; does not by itself close N9.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). N9 gating inspection — see needs_coverage. Held-out.",
+    })
+    r.append({
+        "name": "schenker41", "container": "pkirlin/schenker41",
+        "content": "41 common-practice excerpts with machine-readable Schenkerian analyses (Kirlin PhD dissertation, "
+                   "UMass Amherst 2014 / ISMIR 2014) — 18 Mozart, 7 Haydn, 5 Beethoven, 4 Schubert, 3 Bach, 2 Chopin, "
+                   "1 each Handel/Clementi",
+        "pieces": 41, "annotated_pieces": 41, "gt_type": "reduction", "gt_layers": ["schenkerian-prolongation"],
+        "annotation_standard": "MusicXML + text prolongation files (X (Y) Z, notes by measure/pitch/octave/occurrence)",
+        "score_format": "MusicXML + analysis text (per README)", "alignment": "score-aligned",
+        "license_class": "unclear", "distribution": "hash-pin-only", "tier": "C", "status": "recorded",
+        "split": "held-out", "provenance_url": "https://github.com/pkirlin/schenker41",
+        "pinned_commit": _corpora_sha("corpora/gt/schenker41"),
+        "needs_coverage": "N11 (hierarchical trees / reduction — the COMMON-PRACTICE counterpart to the JHT jazz trees; "
+                          "N11's classical half); N1-adj. ACCESS FINDING: the pinned GitHub repo contains ONLY README.md "
+                          "at HEAD (and in its entire history — verified git log --all); the 41 MusicXML + analysis files "
+                          "are NOT committed. The data is referenced to the dissertation page "
+                          "http://www.cs.rhodes.edu/~kirlinp/diss.html — access path recorded, data not obtained this wave. "
+                          "(A newer 2024 dataset exists: arXiv 2408.07184.)",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). Repo pinned = README only; data at the dissertation page. Held-out.",
+    })
+    r.append({
+        "name": "weimar_jazz_database", "container": "jazzomat.hfm-weimar.de (WJazzD, native)",
+        "content": "Weimar Jazz Database: 456 monophonic jazz-solo transcriptions with beats/sections/metadata "
+                   "(the native SQLite, beyond the ChoCo chord slice)",
+        "pieces": 456, "annotated_pieces": 456, "gt_type": "chords", "gt_layers": ["melody", "beats", "sections", "chords", "metadata"],
+        "annotation_standard": "SQLite (solo_info/melody/beats/sections/... ; db_info v2.1 DB 2.2, 2018)",
+        "score_format": "SQLite3 database (wjazzd.db)", "alignment": "score-aligned (onset-timed within each solo)",
+        "license_class": "ODbL-1.0", "distribution": "hash-pin-only", "tier": "J", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://jazzomat.hfm-weimar.de/download/downloads/wjazzd.db",
+        "pinned_commit": _file_sha256("corpora/gt/weimar-jazz-database/wjazzd.db"),
+        "needs_coverage": "N3 (jazz analysis material); N4 (the native phrase/sections layer — WJD `sections` table, "
+                          "beyond the ChoCo chord slice); N16 (form via sections); N17 (per-solo style/genre/tonality "
+                          "metadata). VERIFIED: 456 solos (solo_info + transcription_info), 200,809 melody rows, ODbL "
+                          "license embedded in db_info. Pinned by sha256 (non-git artifact, pinnable-source rule). DEDUPE: "
+                          "the ChoCo `weimar` partition (916 jams, held) is the chord-slice re-encoding of THIS DB; the "
+                          "native DB adds the phrase/form/beat layers ChoCo drops.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). 42.5 MB SQLite pinned by sha256. Held-out.",
+    })
+    r.append({
+        "name": "openscore_lieder", "container": "OpenScore/Lieder",
+        "content": "OpenScore Lieder Corpus: late-romantic art songs, CC0, proofread (MuseScore .mscx + MusicXML)",
+        "pieces": 1352, "annotated_pieces": 0, "gt_type": "none", "gt_layers": [],
+        "annotation_standard": "n/a (plain scores; the RN subset lives in When-in-Rome)", "score_format": "MuseScore .mscx / MusicXML .mxl",
+        "alignment": "none", "license_class": "CC0", "distribution": "hash-pin-only", "tier": "S", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/OpenScore/Lieder",
+        "pinned_commit": _corpora_sha("corpora/plain/Lieder"),
+        "needs_coverage": "Tier S (plain-score chromatic-stress bed — the best chromatic soak material). N1-carrier: "
+                          "the CC0 SCORE half of the When-in-Rome OpenScore-Lieder RN subset (179 analyzed, WiR row); "
+                          "N17 (era). No GT of its own. VERIFIED 1462 .mxl / 1352 .mscx at pin (>1,300 claim). "
+                          "NOT gate/analysis material (dormant-build discipline) — held-out stress/soak only.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). depth-1 clone; 1462 mxl / 1352 mscx. Held-out.",
+    })
+    r.append({
+        "name": "openscore_string_quartets", "container": "OpenScore/StringQuartets",
+        "content": "OpenScore String Quartet Corpus: historic string quartets, CC0 (MuseScore .mscx)",
+        "pieces": 122, "annotated_pieces": 0, "gt_type": "none", "gt_layers": [],
+        "annotation_standard": "n/a (plain scores)", "score_format": "MuseScore .mscx",
+        "alignment": "none", "license_class": "CC0", "distribution": "hash-pin-only", "tier": "S", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/OpenScore/StringQuartets",
+        "pinned_commit": _corpora_sha("corpora/plain/StringQuartets"),
+        "needs_coverage": "Tier S (plain-score; the texture gap between chorales and piano). N7-material (texture — "
+                          "raw scores, no texture GT; the algomus texture bed is the GT); N17. VERIFIED 122 .mscx at pin "
+                          "(>100 claim). NOT gate material — held-out.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). depth-1 clone; 122 mscx. Held-out.",
+    })
+    r.append({
+        "name": "asap", "container": "fosfrancesco/asap-dataset",
+        "content": "ASAP: 222 romantic/classical piano MusicXML scores aligned to performance MIDIs "
+                   "(the MIDIs ride along; our material is the scores)",
+        "pieces": 222, "annotated_pieces": 0, "gt_type": "none", "gt_layers": [],
+        "annotation_standard": "n/a (score + performance-MIDI alignment; no harmonic GT)", "score_format": "MusicXML (.xml) + performance MIDI",
+        "alignment": "none", "license_class": "CC-BY-NC", "distribution": "hash-pin-only", "tier": "S", "status": "onboarded",
+        "split": "held-out", "provenance_url": "https://github.com/fosfrancesco/asap-dataset",
+        "pinned_commit": _corpora_sha("corpora/plain/asap-dataset"),
+        "needs_coverage": "Tier S (real romantic-piano MusicXML scores for stress/soak). Explicitly NOT N15 "
+                          "(performed-intonation) — piano is fixed intonation and the alignment is TIMING, not intonation "
+                          "(N15 ruled audio-domain / out of corpus scope, 2026-07-04). The performance MIDIs (1302) are "
+                          "NOT our material. N17. VERIFIED 235 .xml / 1302 .mid at pin (~222 distinct scores). Held-out.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). depth-1 clone; 235 xml / 1302 midi. Held-out.",
+    })
+    # --- inventory of already-held material (no new clone) ---
+    r.append({
+        "name": "choco_jazz_corpus_slice", "container": "smashub/choco :: partitions/jazz-corpus",
+        "content": "Granroth-Wilding & Steedman Jazz Corpus (harmonic-FUNCTION analyses of jazz standards) — "
+                   "the ChoCo partition (already held under corpora/ship/choco)",
+        "pieces": 76, "annotated_pieces": 160, "gt_type": "chords", "gt_layers": ["chords", "function"],
+        "annotation_standard": "JAMS (ChoCo-normalized)", "score_format": "JAMS (chords-only)", "alignment": "chords-only",
+        "license_class": "CC-BY", "distribution": "hash-pin-only", "tier": "J", "status": "inventory",
+        "split": "held-out", "provenance_url": "https://github.com/smashub/choco",
+        "pinned_commit": _corpora_sha("corpora/ship/choco"),
+        "needs_coverage": "N3 (rare harmonic-FUNCTION GT for jazz — the census's 76-piece function set). INVENTORIED "
+                          "in the pinned ChoCo clone: partitions/jazz-corpus = 160 .jams (choco/jams + jams-converted). "
+                          "Chords-only (no engraved score) — research-tier. DEDUPE: a ChoCo partition, not a new "
+                          "acquisition; the native MCR/Steedman source is the upstream.",
+        "notes": "Wave-3 inventory of already-held ChoCo (cc_corpus_wave3_report.md). 160 jams in the slice. Held-out.",
+    })
+    r.append({
+        "name": "choco_weimar_slice", "container": "smashub/choco :: partitions/weimar",
+        "content": "Weimar Jazz Database chord slice — the ChoCo partition (already held under corpora/ship/choco)",
+        "pieces": 456, "annotated_pieces": 916, "gt_type": "chords", "gt_layers": ["chords"],
+        "annotation_standard": "JAMS (ChoCo-normalized)", "score_format": "JAMS (chords-only)", "alignment": "chords-only",
+        "license_class": "ODbL-1.0", "distribution": "hash-pin-only", "tier": "J", "status": "inventory",
+        "split": "held-out", "provenance_url": "https://github.com/smashub/choco",
+        "pinned_commit": _corpora_sha("corpora/ship/choco"),
+        "needs_coverage": "N3-adj (jazz chord slice). INVENTORIED: partitions/weimar = 916 .jams. DEDUPE: the "
+                          "chord-only re-encoding of the native WJD (weimar_jazz_database row) — the native SQLite adds "
+                          "the phrase/sections/beat layers this slice drops; use the native for N4/N16.",
+        "notes": "Wave-3 inventory of already-held ChoCo (cc_corpus_wave3_report.md). 916 jams in the slice. Held-out.",
+    })
+    r.append({
+        "name": "wir_interior_inventory", "container": "MarkGotham/When-in-Rome (interior, already pinned)",
+        "content": "Per-slice inventory of the pinned When-in-Rome clone (tools/dcml/when_in_rome @ aa7539f1) — "
+                   "exposure, NOT a new acquisition",
+        "pieces": None, "annotated_pieces": None, "gt_type": "rn", "gt_layers": ["rn", "key"],
+        "annotation_standard": "RomanText analysis.txt (+ analysis_B.txt second annotator); Analyst-line provenance",
+        "score_format": "score.mxl + analysis.txt", "alignment": "score-aligned",
+        "license_class": "CC-BY", "distribution": "hash-pin-only", "tier": "G", "status": "inventory",
+        "split": "dev", "provenance_url": "https://github.com/MarkGotham/When-in-Rome",
+        "pinned_commit": _corpora_sha("tools/dcml/when_in_rome"),
+        "needs_coverage": "N1 N2 N4 N5 N16 — EXPOSURE (on-disk), not acquisition. VERIFIED per-slice at the pin "
+                          "(genre-reorganized layout, NOT named TAVERN/KMT/... dirs): TAVERN = Variations_and_Grounds/"
+                          "{Beethoven 17, Mozart 10} = 27 works, ALL with a second-annotator analysis_B.txt (the N2 "
+                          "flagship dual set — 27 A/B pairs); HaydnSun = Quartets/Haydn = 32 analyses; BPS-FH = "
+                          "Piano_Sonatas/Beethoven = 86 analyses; WTC-I = Keyboard_Other/Bach = 24 scores/31 analyses; "
+                          "OpenScore-Lieder RN = 179 analyses; Piano_Sonatas/Mozart = 54. Analyst buckets across 1259 "
+                          "analysis.txt: DCML 988 / Tymoczko 419 / Gotham 161 / TAVERN-Devaney 54 / BPS 32. "
+                          "TYMOCZKO-vs-DCML dual-annotation OVERLAP (by composer/collection/movement key) = 0 (Tymoczko-only "
+                          "420, DCML-only 494, BOTH 0): within WiR the two analyst sets are DISJOINT piece-sets — the only "
+                          "co-located dual annotation is the 27 TAVERN A/B pairs. CORRECTION to the audit: KMT is NOT a "
+                          "confirmed analyzed slice at this pin (Textbooks = 201 scores / 0 analysis.txt: Kostka/Reger/"
+                          "Aldwell present as SCORES only, no RN) — flag for Cowork.",
+        "notes": "Wave-3 read-only inventory (cc_corpus_wave3_report.md). No new clone; no re-pin; no reorganization. dev (WiR is the gate GT container).",
+    })
+    # --- gated / unavailable / walked / enumerated (access paths recorded) ---
+    r.append({
+        "name": "ewld", "container": "Zenodo 10.5281/zenodo.1476555 (Simonetta et al. 2018)",
+        "content": "Enhanced Wikifonia Leadsheet Dataset: ~5,000+ MusicXML lead sheets (melody+chords+metadata) — "
+                   "the full superset of OpenEWLD",
+        "pieces": 5000, "annotated_pieces": 5000, "gt_type": "chords", "gt_layers": ["chords", "melody"],
+        "annotation_standard": "MusicXML harmony+melody + metadata", "score_format": "MusicXML", "alignment": "score-aligned",
+        "license_class": "unclear", "distribution": "hash-pin-only", "tier": "J", "status": "gated",
+        "split": "held-out", "provenance_url": "https://zenodo.org/records/1476555", "pinned_commit": None,
+        "needs_coverage": "N12 / N3-adj (symbol+melody leadsheets, the ~5,000 superset). GATED: Zenodo restricted-access "
+                          "— requires a request-access form (name, institution, role, non-commercial statement, research "
+                          "explanation). Not obtainable in a non-interactive session; access path recorded. The PD subset "
+                          "OpenEWLD (486, onboarded) is the committable slice.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). Gated (Zenodo request-access); OpenEWLD is the PD subset. Held-out.",
+    })
+    r.append({
+        "name": "hooktheory_full", "container": "m-a-p/HookTheory (Hugging Face)",
+        "content": "Full HookTheory/TheoryTab research release: crowd lead sheets (melody+chords+key, RN-convertible) — "
+                   "the full set behind the pinned wayne391/lead-sheet-dataset sample",
+        "pieces": None, "annotated_pieces": None, "gt_type": "chords", "gt_layers": ["chords", "key", "melody"],
+        "annotation_standard": "TheoryTab (key-relative)", "score_format": "symbolic (HF dataset)", "alignment": "score-aligned",
+        "license_class": "CC-BY-NC", "distribution": "hash-pin-only", "tier": "J", "status": "gated",
+        "split": "held-out", "provenance_url": "https://huggingface.co/datasets/m-a-p/HookTheory", "pinned_commit": None,
+        "needs_coverage": "N3 (largest key-relative pop analysis GT); N5-adj (key); N12-adj (symbol+melody). GATED: HF "
+                          "gated dataset — academic-affiliation gate + accept-conditions, CC-BY-NC-4.0, 112 GB; not "
+                          "obtainable in a non-interactive session (matches the standing 'pending HF m-a-p/HookTheory "
+                          "access' note). The sample entry (hooktheory_hlsd, wayne391/lead-sheet-dataset) stays as-is.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). Gated (HF academic access); sample kept in other_sources. Held-out.",
+    })
+    r.append({
+        "name": "sears_haydn_cadences", "container": "Sears et al. 2018 (Haydn string-quartet cadences)",
+        "content": "270 cadence tokens in 50 Haydn string-quartet expositions (1771-1803), TWO annotators, plus "
+                   "key/mode/modulation/pivot annotations",
+        "pieces": 50, "annotated_pieces": 50, "gt_type": "cadence", "gt_layers": ["cadence", "key", "modulation", "pivot"],
+        "annotation_standard": "manual cadence + key/modulation/pivot annotations (two annotators)", "score_format": "symbolic + text (per literature)",
+        "alignment": "score-aligned", "license_class": "unclear", "distribution": "hash-pin-only", "tier": "C",
+        "status": "unavailable", "split": "held-out",
+        "provenance_url": "https://doi.org/10.1177/1029864918763769", "pinned_commit": None,
+        "needs_coverage": "N2 (dual-annotator disagreement) + N4 (cadence) + N5 (key/modulation/PIVOT) — a top multi-need "
+                          "node. UNAVAILABLE: no public GitHub/Zenodo/OSF deposit found across targeted searches; widely "
+                          "cited (Sears et al. 2018) but not openly deposited. Access = contact the authors (David Sears) "
+                          "or check the paper's supplementary. Per-source failure = report line, not a wave STOP.",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). No public deposit located; access path recorded. Held-out.",
+    })
+    r.append({
+        "name": "gttm_database", "container": "gttm.jp (Hamanaka/Hirata/Tojo GTTM Database)",
+        "content": "GTTM Database: ~300 melodies with grouping / metrical / time-span / prolongational trees "
+                   "(MusicXML + XML tree encodings)",
+        "pieces": 300, "annotated_pieces": 300, "gt_type": "tree", "gt_layers": ["grouping", "metrical", "time-span", "prolongational", "harmonic"],
+        "annotation_standard": "MusicXML (MSC) + GTTM XML (GPR/MPR/TS/PR/HM)", "score_format": "MusicXML + XML trees",
+        "alignment": "score-aligned", "license_class": "unclear", "distribution": "hash-pin-only", "tier": "C",
+        "status": "recorded", "split": "held-out", "provenance_url": "https://gttm.jp/gttm/database/", "pinned_commit": None,
+        "needs_coverage": "N6 (melodic-phrase — grouping trees over monophonic melodies) + N4 (metrical/grouping "
+                          "boundaries) + N11-melodic (time-span trees — melodic-side hierarchy GT). LOCATED, NOT PINNED: "
+                          "distributed as ~157+ per-piece ZIP archives at gttm.jp/gttm/wp-content/uploads/2015/12/ (numbered), "
+                          "NO single bulk artifact, NO explicit license shown — per the pinnable-source rule (no stable "
+                          "artifact) the access path is recorded and mass-download deferred (license unclear about mirroring).",
+        "notes": "Wave-3 (cc_corpus_wave3_report.md). No single stable artifact + license unclear -> options recorded, not downloaded. Held-out.",
+    })
+    r.append({
+        "name": "dcmlab_figured_bass", "container": "DCMLab/figured-bass",
+        "content": "WALKED (census §7 residual promotion): a single Python script that GENERATES chords from a "
+                   "figured-bass specification — a realization TOOL, not a figured-bass GT corpus",
+        "pieces": 0, "annotated_pieces": 0, "gt_type": "none", "gt_layers": [],
+        "annotation_standard": "n/a (figured-bass.py realization algorithm; no dataset)", "score_format": "n/a (code)",
+        "alignment": "none", "license_class": "unclear", "distribution": "hash-pin-only", "tier": "X", "status": "walked",
+        "split": "held-out", "provenance_url": "https://github.com/DCMLab/figured-bass",
+        "pinned_commit": _corpora_sha("corpora/gt/figured-bass"),
+        "needs_coverage": "N10 — NEGATIVE (corrects the census §7 assumption). WALKED at data: the repo is ONE file "
+                          "(figured-bass.py) + README — a bass-figure -> chord REALIZATION script (e.g. `-k 80 -n 5 9` -> "
+                          "a realized triad), NOT a figured-bass ground-truth corpus. Does NOT serve N10 as a GT source; "
+                          "the N10 sources are BCFB + the DLC figbass column. Recorded so it is never re-mistaken for GT.",
+        "notes": "Wave-3 WALK (cc_corpus_wave3_report.md). Realization tool, not a corpus — §7->§1 promote with this finding. Held-out (n/a).",
+    })
+    r.append({
+        "name": "humdrum_data_closure", "container": "humdrum-tools/humdrum-data (.lists manifest)",
+        "content": "Enumeration record (CLONE NOTHING): the complete humdrum-data download manifest — the mechanical "
+                   "closure of the census's craigsapp/KernScores partial",
+        "pieces": None, "annotated_pieces": None, "gt_type": "none", "gt_layers": [],
+        "annotation_standard": "n/a (repo manifest: .lists/LIST.txt, **ghname/**ghrepo columns)", "score_format": "n/a (enumeration)",
+        "alignment": "none", "license_class": "mixed", "distribution": "enumeration-only", "tier": "S", "status": "enumerated",
+        "split": "held-out", "provenance_url": "https://github.com/humdrum-tools/humdrum-data", "pinned_commit": None,
+        "needs_coverage": "Tier S/X breadth (Humdrum **kern score collections). ENUMERATED from .lists/LIST.txt (nothing "
+                          "cloned): 71 distinct repos across 16 GitHub orgs (821 file entries) — incl. craigsapp/* "
+                          "(bach-370-chorales, beethoven/haydn/mozart/scarlatti sonatas, chopin-mazurkas), "
+                          "josquin-research-project (22 composer repos), TassoInMusicProject, SEILSdataset, ccarh/essen "
+                          "(already held as the Wave-2 phrase bed), Computational-Cognitive-Musicology-Lab/CoCoPops "
+                          "(onboarded this wave), and DDMAL/Flexible_harmonic_chorale_annotations (a harmonic-chorale "
+                          "annotation set = N1-residual). Closes the census's named craigsapp mechanical partial; "
+                          "acquisition of individual sets is NOT this wave. Full list: cc_corpus_wave3_report.md.",
+        "notes": "Wave-3 enumeration (cc_corpus_wave3_report.md). 71 repos / 16 orgs recorded; nothing cloned. Held-out (n/a).",
+    })
+    return r
+
+
 def main() -> None:
     dlc = dlc_rows()
     other = nondlc_rows()
     beds = annotation_bed_rows()
+    wave3 = wave3_rows()
     doc = {
         "_schema": "score_census_registry v2 (census §3 + CC corpus-wave1 dispatch 2026-07-02)",
         "_generated_by": "tools/build_score_census_registry.py (deterministic; re-run after any clone/pin change)",
         "_fields": ["name", "container", "content", "pieces", "annotated_pieces", "gt_type",
                     "gt_layers", "annotation_standard", "score_format", "alignment",
                     "license_class", "distribution", "tier", "status", "split",
-                    "provenance_url", "pinned_commit", "notes"],
+                    "provenance_url", "pinned_commit", "notes",
+                    "(wave3_sources add: needs_coverage — full-vector N1-N20 intake note per census §8c intake rule)"],
         "_notes": [
             "gt_type enum: rn|chords|key|cadence|phrase|none (+ schema|texture for annotation_beds). "
             "tier: G|J|C|S|X. distribution: committable|hash-pin-only. "
@@ -467,7 +821,11 @@ def main() -> None:
             "regardless of license_class. 28 of 40 DLC repos have NO in-repo LICENSE (license_class=unclear).",
             "DLC 'pieces'=MS3 .mscx movement count; 'annotated_pieces'=harmonies TSV count. "
             "Every DLC harmonies TSV also carries cadence/form/phraseend columns (layer_label_counts) that "
-            "dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4.",
+            "dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4. "
+            "CLARIFYING CLAUSE (audit-verified 2026-07-04, cowork_census_full_needs_audit.md §4): the `form` column "
+            "is DCML chord-MORPHOLOGY (o/+/%/M — the label-grammar quality suffix), NOT form/section GT; N16 (form) is "
+            "NOT covered by the DLC. The same TSVs also carry a `figbass` column (inversion figured-bass, N10) and a "
+            "`pedal` column (pedal-point GT, N20), both parser-dropped — exposure is queued as its own post-wave increment.",
             "Container = distant_listening_corpus has 40 submodules (census '41' was an overcount; verified from "
             ".gitmodules 2026-07-02).",
             "annotation_beds (Wave-2, cc_corpus_wave2_report.md): expert LABEL layers over scores (schema/texture) "
@@ -475,6 +833,15 @@ def main() -> None:
             "extra fields kind/axis2_role/target_corpus/label_count. All held-out (never tuned against), hash-pin-only "
             "under gitignored corpora/annot/. They add labels over already-held scores (schema/texture over Mozart) or "
             "material outside the discovery views (Essen monophonic, no chords) — NOT analysis/gate corpora.",
+            "wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo "
+            "jazz-corpus/weimar slices) + cadence/form/dual-annotator beds (algomus-data quartets+fugues, WiR interior "
+            "inventory) + figured bass (BCFB; DCMLab/figured-bass WALKED = a realization TOOL not GT) + trees/reduction "
+            "(schenker41, protovoice-annotations [the N9 gating inspection], GTTM) + plain-score stress (OpenScore "
+            "Lieder/StringQuartets, ASAP) + gated/unavailable records (EWLD, HookTheory full, Sears Haydn) + the "
+            "humdrum-data enumeration closure (71 repos, cloned nothing). Each row carries a `needs_coverage` note scored "
+            "against the FULL vector N1-N20 (census §8c intake rule). All held-out (never tuned against); cloned beds are "
+            "hash-pin-only under gitignored corpora/gt| corpora/plain/ (WJD pinned by sha256; non-git). status: onboarded|"
+            "walked|inventory|gated|unavailable|recorded|enumerated.",
         ],
         "distant_listening_corpus": {
             "submodule_count": len(dlc),
@@ -483,10 +850,11 @@ def main() -> None:
         },
         "other_sources": other,
         "annotation_beds": beds,
+        "wave3_sources": wave3,
     }
     OUT.write_text(json.dumps(doc, indent=1, ensure_ascii=False), encoding="utf-8")
-    print(f"wrote {OUT}  DLC={len(dlc)} other={len(other)} beds={len(beds)} "
-          f"total={len(dlc)+len(other)+len(beds)}")
+    print(f"wrote {OUT}  DLC={len(dlc)} other={len(other)} beds={len(beds)} wave3={len(wave3)} "
+          f"total={len(dlc)+len(other)+len(beds)+len(wave3)}")
 
 
 if __name__ == "__main__":

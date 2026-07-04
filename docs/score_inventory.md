@@ -270,6 +270,27 @@ in `corpora/ship|expl/` by design (they annotate scores already held, or fall ou
 Pins + verification: `tools/score_census_registry.json → annotation_beds`; reproduction in `tools/REPRODUCIBILITY.md`;
 full inventory in `cc_corpus_wave2_report.md`.
 
+### `corpora/gt/` + `corpora/plain/` — Wave-3 GT & stress beds (corpus wave 3, 2026-07-04)
+
+Two more subtrees under the same gitignored `corpora/` tree, from the census §8c FULL-NEEDS AUDIT disposition.
+**Research-tier, hash-pin-only, held-out (never tuned against), NOT gate/analysis corpora.** `corpora/gt/` = ground-truth
+beds; `corpora/plain/` = plain-score stress material.
+
+- `CoCoPops` (Georgia Tech CCML) — pop/rock **melodic+harmonic transcriptions** (Humdrum `**harm` RN + `**kern`
+  melody), the top Tier-J jazz/pop analysis-GT acquisition (N3/N12).
+- `OpenEWLD` (00sapo) — 486 PD MusicXML **lead sheets** (chords+melody, N12); the committable subset of the gated EWLD.
+- `Bach_chorale_FB` (BCFB) — 139 chorales / 143 files, **figured-bass** GT in MusicXML/kern/MEI (N10).
+- `algomus-data` (algomus GitLab) — Mozart-quartet **sonata-form** (32, N16) + Bach-fugue subjects/CS/cadences/**pedals**
+  (23 WTC-I, N4/N18/N20) + a jazz-arbres treebank (N11/N3).
+- `protovoice-annotations` (DCMLab) — 38 **protovoice reduction derivations** over MusicXML (the N9 gating inspection).
+- `schenker41` (pkirlin) — pinned but **README-only** at HEAD; the 41 Schenkerian excerpts (N11) live at the dissertation page.
+- `weimar-jazz-database/wjazzd.db` — native WJD SQLite (456 solos, ODbL), sha256-pinned (non-git artifact).
+- `plain/Lieder`, `plain/StringQuartets` (OpenScore, CC0), `plain/asap-dataset` (romantic piano MusicXML) — Tier-S
+  chromatic/texture stress (no GT; **not** gate material — dormant-build discipline).
+
+Pins + verification: `tools/score_census_registry.json → wave3_sources`; reproduction in `tools/REPRODUCIBILITY.md`;
+full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`.
+
 ---
 
 ## Hard rules
