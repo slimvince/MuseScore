@@ -141,6 +141,15 @@ Stage-5-neighborhood method levers); the engage decision itself (E3 is its own u
    is measured "per preset/idiom where the idiom changes the scorer's behavior" (contract §6 C4). A
    per-idiom fit exists only where that idiom has licensed ground truth; idioms without it keep the A-7
    mark (the taxonomy's own caveat: jazz/pop idioms are analysis-USE-unvalidated until their GT exists).
+4c. **★ OPTIMIZE FOR IDIOMS ONLY — NEVER FOR THE CURRENT USER SETTINGS (user mandate, 2026-07-04).**
+   The fitting objective is always an idiom's objective (its ground-truth pool); a genre-named preset is
+   NEVER an optimization target — presets enter evaluation exclusively as regression surfaces (the
+   configurations users can select today must not change silently) and as delivery carriers of
+   idiom-labeled fits. There is consequently ONE fit per idiom, not one per carrier (D-4: the Baroque and
+   Default carriers both deliver the single idiom-#2 fit; the Jazz carrier receives no fit until the
+   idiom-#3 target exists). What is END-USER-FACING (which presets exist, what they are named, how they
+   weight idioms) is a SEPARATE, LATER product decision — the taxonomy's deferred preset→idiom-weighting
+   migration — and nothing in this arc pre-empts it.
 5. **Knowledge-based coding / measure-first:** every fitting decision is gated on a measurement that
    precedes it (Phase 0's inventory + cost numbers gate the harness design; Phase 1's sensitivity numbers
    gate the optimizer choice and family staging; a differential report gates each §6-block retirement).
@@ -258,6 +267,10 @@ Phase 0 contains only work that needs no new machinery:
 **Checkpoint P0 (ratification):** the fit surface, the freeze list, and the family homes — decided on the
 inventory. (Sensitivity is NOT available yet; it needs Phase 1's harness. The optimizer and staging
 decisions therefore sit at checkpoint P1, not here.)
+**★ P0 RATIFIED (user, 2026-07-04):** the Phase-0 manifest's boundary adopted — 61 rows tunable / 17
+frozen — **with the FROZEN-ROW VERIFICATION RIDER:** the Phase-1b sensitivity screen also perturbs the 17
+frozen rows (measurement only, nothing adopted), so a freeze that hides real accuracy surfaces as a
+finding with its number rather than staying a trusted rationale.
 
 Phase 0 is read-only: source reads plus timing runs of existing tools against scratch copies; the
 reference corpus is never written; no parameter value changes anywhere.
@@ -323,10 +336,12 @@ rationale).
 
 **1b — the sensitivity screen (first use of the harness; decode-only, nothing adopted).** Perturb each
 inventoried parameter one-at-a-time (a small ± step around its current value) and measure the objective
-delta and the constraint status per preset. Deliverables: the leverage ranking (which parameters move the
+delta and the constraint status per preset. **Per the ratified P0 rider, the 17 frozen rows are included
+in the screen (read-only)** — a frozen row with material leverage is reported as a finding, never
+silently unfrozen. Deliverables: the leverage ranking (which parameters move the
 objective at all), the dead list (candidates to "fit to zero"/retire, roadmap 5.2), the interaction
 warnings (parameters whose perturbation flips §6-block rule firings — these must be fitted jointly with
-the dissolution track, §4.4).
+the dissolution track, §4.4), and the frozen-row verification findings.
 
 **Checkpoint P1 (ratification):** the optimizer choice (§9 D-3, decided on the measured cost and
 sensitivity), the family staging order, the R-13 augmentation decision (§14), and the split definition —
@@ -625,6 +640,15 @@ weightings — the migration would not know what the values mean); fit per idiom
 inference-feature ordering and unneeded while each carrier maps to one idiom). *Consequence for the batch
 stop:* the corpus dirs and the 53/24/53 sets stay keyed by preset carrier (the instruments' existing
 shape); the idiom label lives in the manifest and the fitted-set artifacts, not in the stop's plumbing.
+*The two axes, stated plainly (user question, 2026-07-04):* the **idiom is the FITTING axis** (what
+ground truth shaped a value; what a fitted set means) and the **preset is the EXECUTION-and-REGRESSION
+axis** (the only configurations the pipeline can run today, each a user-selectable surface that must not
+change silently — which is why evaluation and the stops stay preset-keyed even though the Jazz carrier's
+corpus numbers measure its *configuration* on idiom-#2 material, not "jazz"). The two merge at the
+taxonomy's own preset→idiom-weighting migration: a deliberate future re-key of the preset-keyed
+instruments (its own ratified re-baseline event, never drift). Once a second idiom's ground truth lands
+(O-5), the evaluation key generalizes to the pair (carrier × ground-truth idiom) — today that matrix has
+a single idiom-#2 column.
 
 **D-11 A parameter's value lives in a per-parameter style table of MEASURED dimensionality, estimated
 anchor-first.** The general model: a style-varying parameter is a function over the style coordinates

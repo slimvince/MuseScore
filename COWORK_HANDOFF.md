@@ -32,8 +32,42 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ THE STAGE-5 FITTER DESIGN IS SIGNED (user, 2026-07-04, session 22l) — ACTIVE DISPATCH:
-`cc_instruction_stage5_phase0.md`.** `cowork_stage5_fitter_design.md` written this session (full template
+**★ PHASE 1 CC-DELIVERED — awaiting Cowork verification (session 22m tail, 2026-07-05) · CHECKPOINT P1
++ the split ratification are the user's · PHASE 0 + CHECKPOINT P0 RATIFIED.** Phase-0 commits verified at objects
+(`4b510b9ac7` fold exactly 6 files · `0f05e78690` roadmap O-3 rider · `981e942ded` the 78-row
+`tools/param_manifest.json` · `c7d16893d8` report, read in full); manifest claims spot-verified at source
+(kHalfDimFirstInversionBonus 0.55 @ postscoringgates.cpp:287, absent from scoring_model §6 — drift real;
+progression constants at harmonicfunctionlayer.h:109–113, values clean; the §15-13 `tieBreakOrOpen`
+fall-throughs; chordslicedecoder.cpp:453 reuses analyzeChord = the D-9 shared-surface fact; E-13 CLEAN —
+the tuning bridge reads no scoring parameter). **The OWED acquisition-round fold SHA is DISCHARGED:
+`459c92c46d`** (Cowork-verified at object: the docs(cowork) fold after `4997757298`, 8 files +612/−20).
+The Task-0.3 dirty-set STOP was CC-raised, Cowork-ruled PROCEED (the extras = the known
+deliberately-untracked dumps/scratch, STATUS 22e/22g; the check omitting them = a Cowork instruction
+defect, owned). Cost measured: ~45–54 s/single-preset evaluation, ~131 s all-presets (regen ~85 %).
+**★ NEW USER MANDATE (recorded as design constraint 4c): OPTIMIZE FOR IDIOMS ONLY — never for the current
+user presets;** presets = regression surfaces + delivery carriers; ONE fit per idiom; the end-user-facing
+preset question is a separate later product decision. **★ CHECKPOINT P0 RATIFIED (user): 61 tunable / 17
+frozen, WITH the frozen-row verification rider** (the 1b screen perturbs the frozen rows read-only; a
+freeze hiding accuracy surfaces as a finding). Doc-drift (4 defects) queued → discharged in the Phase-1
+scoring-docs commit. **The Phase-1 dispatch:** 1a = the D-6 override mechanism (the sanctioned src/
+touch; byte-identity proofs ×2 incl. the identity-override run; must reach the no-runtime-surface
+constants CC found) + additive a8/characterise flags (proofs) + the fit driver/ledger + the PROPOSED
+fitting/held-out split (ratification-gated, mode-stratified); 1b = the 78-row sensitivity screen
+(Baroque carrier primary per 4c; top-10 movers re-run on Default; Jazz = regression spot-check only;
+frozen rows included per the rider). On the report: verify at objects → ratify the split → **Checkpoint
+P1** (optimizer · staging · R-13) is the user's. **★ PHASE 1 DELIVERED (6 commits — `769df17146` the D-6
+mechanism · `3c3e235dde` G10 addendum · `7fd3f7cf70` a8 flags · `c2914884af` driver + the proposed split ·
+`0093cf44f3` manifest sensitivity · the fold + `cc_stage5_phase1_report.md`):** byte-identity PROVEN ×2
+(flag-absent AND identity-override, 352×3 byte-identical each); 59 production-surface rows reachable — the
+19 dormant rows (G8/G9/G11/G12/G13) unreachable without wiring the dormant chain (engage scope), Δ=0 by
+construction, RECORDED not improvised; the driver's known-vector fixture reproduces 63.32/62.37/63.22
+EXACTLY (batch 53/24/53) + determinism byte-identical; the split = 261 fitting / 65 held-out (mode-stratified
+129/32 · 132/33, RATIFICATION-GATED); the 1b screen — 24-row dead list (incl. ALL FOUR §6-block gate margins
+Δ=0), the continuous family COUPLES to the batch-stop (fit jointly with the dissolution track), 7 frozen-row
+findings (`kOtherToneFactor`/`maxTotalInversionContextBonus` challenge their freeze rationales — report, not
+unfreeze); coordinate search budget-feasible, R-13 NOT mandated; sandwich 53/24/53 set-diff empty ×3,
+composing 1096 / notation 53 / snapshots 11. **NEXT: Cowork verify at objects → ratify the split → Checkpoint
+P1 → Phase 2 (the fits, family by family, per fit target).** `cowork_stage5_fitter_design.md` written this session (full template
 + §0 TERMS), QA'd to the spec bar (independent adversarial audit, 20 findings — 2 HIGH/10 MED/8 LOW — all
 folded, none rejected), then TWICE user-refined before signing: (1) the **IDIOM AXIS** (constraint 4b +
 D-10: fitted values are idiom-labeled, presets are delivery carriers; the Bach fit = an **idiom-#2** fit
