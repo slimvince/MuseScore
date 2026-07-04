@@ -5,11 +5,20 @@ This header is the fresh-session entry point; full narratives live in STATUS.md 
 
 ## ★ START HERE — state, dispatch, queue (2026-07-04)
 
-**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_c1_fold_and_explanation.md`** —
-(1) the owed §2.1 explanation: the C1 report claims the harness reproduces the A-8 key-agree baseline "exactly"
-while showing near-equal numbers (68.18 vs 68.11 / 64.52 vs 64.43 / 67.77 vs 67.50) — mechanism required, STOP
-if it indicates a join/primitive defect rather than a benign coverage nuance; (2) the explicit-list
-`docs(cowork):` narrative fold (the list is IN the instruction; SHAs mandatory in the report).
+**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_dl3a_closeout.md`** — the D-L3a
+close-out (contract §7; §8.4 pre-ratified in principle, C1 evidence decisive): declare the sequence margin THE
+L3 boundary confidence, demote the sigmoid to internal/diagnostic. Consumer inventory first (Task 0, STOP on
+any computation change); byte-identical except a possible dormant-chain re-point (the pre-ratified
+"byte-visible-only-in-dormant" part); the frozen-corpus JSON field NEVER renamed; gate sandwich measured; SHAs
+mandatory; its docs commit may fold the two pending close-out narrative edits (STATUS + this handoff, exactly
+those two). **Runs in PARALLEL with Cowork's Wave-3 scoping** (the census §8c FULL-NEEDS AUDIT — Cowork-side,
+fresh full-budget session, no CC instruction until scoping is done; no shared files with the D-L3a dispatch).
+
+**✅ C1 ARC FULLY CLOSED + USER-RATIFIED (2026-07-04, 22j).** Instrumentation `088ba617b0`/`0051641d27`;
+fold + §2.1a `ea6f41eef4`/`4d18f44c2d` — the baseline delta was a benign denominator-scope nuance
+(`agree/(agree+disagree)` vs `agree/scored_dur`, exactly the 0.09/0.13/0.40 % key-parse-fail reweighting,
+arithmetic Cowork-re-checked; NO STOP; the Task-3 same-commit/cite-SHA contradiction was a Cowork instruction
+defect, owned — CC surfaced and resolved it correctly).
 
 **✅ C1 RATIFIED (2026-07-04, session 22j — full record in STATUS).** `088ba617b0` (harness + two additive
 default-off dump fields, verified at the diff: flag-gated, early-return before the standard writer) +
@@ -61,12 +70,9 @@ class-(a) is ~4% on the robust unit, not ≈53%).
   measurement → contradiction = immediate tripwire / enrichment = postpone-by-default; user decides both forks).
 - **`cowork_polyphony_phrase_harmony_research.md` §6b** — the axis-2 sweep record (+ Wave-2 at-pin corrections).
 
-**Uncommitted Cowork narrative awaiting the fold** (CC excludes these from its commits; the C1 docs commit did
-NOT carry them — the fold list was never given, a Cowork relay omission, owned; now dispatched explicitly):
-STATUS (22g close-out edit + 22h + 22i + the new 22j), this handoff (incl. this header update), the census
-§8b/§8c additions, both registers (`cowork_candidate_lever_register.md` / `cowork_product_tool_register.md` —
-new files), the research-doc §6b at-pin corrections, the roadmap A-8-ratification + wave-plan edits, and the
-VL-spec §15-4/§5.4 at-pin notes. The exact list is in `cc_instruction_c1_fold_and_explanation.md`.
+**Uncommitted Cowork narrative awaiting the next fold** (the big backlog is CLEARED — `ea6f41eef4` carried the
+whole accumulated list): only the post-fold close-out edits remain — STATUS (the 22j ★ CLOSED note) + this
+handoff header. Small; rides the next natural `docs(cowork):` commit — give CC the two-file list explicitly.
 
 **Chain state:** everything local/unpushed on `master`, fork-only (`origin=slimvince/MuseScore`; `upstream` push
 disabled — NEVER push there). User pushes at will.
