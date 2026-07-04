@@ -328,6 +328,12 @@ def main():
                              "(WIRES the scoped-joint key decision into production: "
                              "overrides each region's key + re-emits the chord under it). "
                              "INTENTIONAL behavior change; not byte-identical. Default off.")
+    parser.add_argument("--param-override", metavar="FILE",
+                        help="Stage-5 fitter (design D-6): pass --param-override FILE to "
+                             "batch_analyze so the regen uses fitted scoring-constant values. "
+                             "Pass a Windows-form path (e.g. C:/tmp/x.txt); MSYS path "
+                             "conversion is off. Byte-identical to the un-passed run when the "
+                             "file sets every constant to its current value. Default off.")
     parser.add_argument("--diag-out", metavar="FILE",
                         help="Append batch_analyze stderr to this file (for diagnostics)")
     args = parser.parse_args()
@@ -401,6 +407,8 @@ def main():
         extra_flags.append("--dump-joint-key")
     if args.joint_key_wiring:
         extra_flags.append("--joint-key-wiring")
+    if args.param_override:
+        extra_flags.append(f"--param-override {args.param_override}")
     extra_args = " ".join(extra_flags)
     work_items = [
         (idx, exe, xml_path,
