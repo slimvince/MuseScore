@@ -5,11 +5,31 @@ This header is the fresh-session entry point; full narratives live in STATUS.md 
 
 ## ★ START HERE — state, dispatch, queue (2026-07-04)
 
-**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_corpus_wave3.md`** — Corpus Wave 3
-(clone + hash-pin + inventory + bookkeeping ONLY; no `src/`, no inference work; gate sandwich measured;
-its docs rider folds the named uncommitted Cowork files). Scope set by the user-disposed FULL-NEEDS AUDIT
-(below); the re-discovery trigger check is EXPECTED TO FIRE this wave (new chord-symbol mass) — record only,
-never run re-discovery inside the wave.
+**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_wave3_addendum.md`** — the Wave-3
+addendum: (a) two DDMAL direct pickups (the KMT `key_modulation_dataset` upstream — the real home of the
+key/modulation GT the audit wrongly placed inside WiR; the `Flexible_harmonic_chorale_annotations` walk —
+RECORD-ONLY, it overlaps the gate repertoire) + (b) the queued `pedal`/`figbass` parser-column exposure
+(additive fields in `tools/dcml_parser.py`, byte-identity of all existing outputs proven, per-corpus
+non-empty counts reported) + the fold of the named Cowork files.
+
+**✅ ADDENDUM CC-DELIVERED (2026-07-04, awaiting Cowork verification at objects).** Report
+`cc_wave3_addendum_report.md`. `c28f4064ee` (Task A: +2 `wave3_sources` rows, regen 78→80 — KMT
+`key_modulation_dataset` @ `6602ae6a`, 201 annotated Humdrum `.krn`/5 textbooks = the N5 upstream now on
+disk; `Flexible_harmonic_chorale_annotations` @ `87efd245`, 571 chorales permutational multi-reading =
+**N2 candidate, RECORD-ONLY** re the gate — analysis GT is an R-package binary, kernData `**kern`-only) ·
+`3713636dd9` (Task B: additive `DcmlRegion.figbass`/`pedal` + a 5-test pin; **byte-identity PROVEN** —
+gate 53/24/53 set-diff empty ×3, full `characterise` + A-8 outputs byte-identical pre/post, `tools/tests`
+112 pass) · the fold (this commit). Exposure size: 123,881 `figbass` + 23,476 `pedal` cells / 40 DLC
+corpora. Three mismatches reported (KMT README ~135 < 201; Flexible 572 `.krn` vs 571; R-binary GT).
+
+**✅ CORPUS WAVE 3 LANDED + RATIFIED (2026-07-04).** `63de0df27a`/`8aae19f586`/`be70738720`, all verified at
+objects. 10 beds pinned (headline: CoCoPops, BCFB, algomus-data with the 1,170-entry jazz tree bank ~8× JHT,
+WJD native, Lieder/SQ/ASAP), 6 gated/walked with access paths (DCMLab/figured-bass = N10-NEGATIVE script),
+humdrum-data closure 71 repos. Gate 53/24/53 byte-stable ×3. **Two audit claims falsified by measurement +
+Cowork-corroborated at the live clone:** the on-disk N2 dual set = the 27 TAVERN A/B pairs (Tymoczko∩DCML
+co-located = 0); KMT NOT analyzed at the WiR pin (201 scores / 0 analyses). Census N2/N5 + audit §7 carry
+the corrections. Protovoice verdict: PARTIAL for N9 (reduction-encoded voice connections; doesn't close the
+gap — the search targets flat stream labels). Re-discovery trigger FIRED, recorded only.
 
 **✅ D-L3a CLOSED + RATIFIED (2026-07-04).** `f6f5137008` (7 comment-only src edits + contract §3/§7 +
 L3-design doc-sync; src diff Cowork-verified comment-only at the object) + `a228e2bef6` (report + the
@@ -45,15 +65,23 @@ non-monotone (ECE 0.25); cadence tonicVote anti-monotone, 3 distinct values; L1.
 bin 0 (spike-dominated max-norm). All recorded for the Stage-5 fitter, nothing fixed.
 
 **The queue (plan lines, no instructions until dispatch):**
-1. **Wave 3 = the ACTIVE dispatch above** (scoping done via the audit; scope = the instruction's task list).
-2. **Post-wave small increment:** expose the parser-dropped DLC label columns (`pedal`, `figbass`) additively
-   in `tools/dcml_parser.py` — kept OUT of Wave 3 deliberately (one change class per dispatch; the wave is
-   code-free). Serves N10/N20 exposure; byte-identity of existing outputs proven at its own dispatch.
-3. **Union search round** (Cowork-side, no CC): N9 (after the protovoice inspection verdict), N13, N14,
-   N12-realized-half, N19. Findings enter via the census + full-vector intake scoring.
-4. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
+1. **✅ The Wave-3 addendum CC-DELIVERED (2026-07-04)** — DDMAL pickups + `pedal`/`figbass` exposure + fold
+   landed (`c28f4064ee`/`3713636dd9`/this fold); byte-identity proven; awaiting Cowork verification. No open
+   CC dispatch — NEXT is the union search disposition (item 2, user) → the Stage-5 fitter arc (item 3).
+2. **✅ Union search round RUN (2026-07-04, parallel with the addendum) — awaiting user disposition:**
+   `cowork_union_search_record.md` (§6 = the disposition surface). Headlines: N9's notated-polyphony half
+   has real candidates (piano_svsep — per-note voice GT over DCML scores we hold — + MCMA CC-BY); the
+   implied-polyphony half is a CONFIRMED-final negative; N13 negative confirmed (R-1 ships rule-based as
+   predicted; Batik-plays-Mozart = multi-need intake candidate); N14 found CIPI/Mikrokosmos/PSyllabus
+   (all research-only at origin — T-32 commercial caveat); N12-realized = the PDMX `<harmony>` counting
+   pass over the HELD copy (cheap local measurement) + GuitarSet; N19 confirmed build-not-download
+   (Dahn/F&C real-music seeds + the synthetic route, owned by VL-H's design gate). Census §8c state
+   columns updated. The record doc rides the fold AFTER disposition.
+3. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
    discharges here**; R10 completes the A-8 re-baseline; C2 θ re-expression; Class-P maps; C3 joint-step design.
    (OWED refactor #1, the `chordanalyzer.cpp` file split, stays parked BY ratified R9 — after E4, "split once".)
+4. Parked pending user calls: the idiom re-discovery re-run (trigger FIRED at Wave 3, recorded); the
+   algomus Mozart-SQ seconds→ticks alignment step (owed before N16 load-bearing use).
 
 **Current state, one paragraph.** The harmonic spine L1–L6 + Vocabulary + recognition consumer: built (L1–L3
 live, rest dormant-validated), gate 53/24/53 case-identity intact throughout. **Axis 2 (voice leading) is BUILT

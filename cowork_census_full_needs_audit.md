@@ -236,3 +236,52 @@ the check rides the Wave-3 CC instruction as at Wave 2.
 
 *After disposition: Cowork applies the ratified census/registry-adjacent doc edits (Cowork-owned files)
 and writes the Wave-3 CC instruction just-in-time, per the one-dispatch rule (D-L3a must report first).*
+
+## 7. POST-WAVE CORRECTIONS (Wave 3 measured, 2026-07-04 — two audit claims falsified, owned)
+
+Both corrections come from CC's Wave-3 measurement and were **independently corroborated by Cowork at the
+live WiR clone** (glob counts). Both were audit claims sourced [reg] from the registry's one-line WiR
+content field — provisional readings this audit treated as stronger than they were:
+
+1. **N2 — "Tymoczko-vs-DCML dual pairs" do NOT exist co-located inside WiR.** Measured by Analyst-line
+   bucketing: piece-key overlap Tymoczko∩DCML = **0** (Tymoczko-only 420 / DCML-only 494). The genuine
+   on-disk dual set is the **27 TAVERN A/B pairs** (verified: exactly 27 `analysis_B.txt`, Beethoven 17 +
+   Mozart 10). Cross-CONTAINER pairs (WiR-Tymoczko × `tools/dcml/` DCML corpora) remain possible but
+   require identity work — recorded as such, no longer assumed.
+2. **N5 — KMT is not an analyzed slice at the WiR pin** `aa7539f1`: `Corpus/Textbooks` = 201 scores /
+   **0** `analysis.txt` (verified by glob: zero matches). KMT as key/modulation GT requires its own
+   acquisition — the DDMAL `key_modulation_dataset` upstream is the direct candidate (queued for the next
+   corpus increment, no search needed).
+
+Lesson recorded: a registry `content` summary is enumeration provenance, not presence-of-layers evidence —
+per-slice presence must be measured (which is exactly what the wave's Task 5 was for). The census §8c
+N2/N5 state columns carry the corrections.
+
+### 7.1 WAVE-3 ADDENDUM — the two DDMAL direct pickups (2026-07-04, `cc_wave3_addendum_report.md`)
+
+The two repos the §7 corrections above pointed at are now **acquired** — cloned + hash-pinned + walked under
+gitignored `corpora/gt/`, registry rows added (`wave3_sources`), all held-out. Two rows, each entered at the
+Wave-3 addendum, provenance = `cc_wave3_addendum_report.md`:
+
+1. **N5 — `DDMAL/key_modulation_dataset` (KMT) ACQUIRED** @ `6602ae6a`. The direct-acquisition upstream the §7-N5
+   correction named (KMT was NOT present as analyses at the WiR pin). Verified at data: **201 annotated Humdrum
+   `.krn`** across 5 textbooks (aldwell 7 / kostka-payne 15 / reger 117 / rimsky-korsakov 37 / tchaikovsky 25),
+   every file bearing a `**text` annotation spine; key/modulation encoded as Humdrum key-designation tokens
+   (`*C:`, `*G:`) + inline `NEWKEY=>:RN` modulation markers, with the `**text` spines also carrying textbook-relative
+   Roman numerals (N1-adj). CC-BY-SA scores / MIT code. **Mismatch reported-not-accepted:** the README "Dataset"
+   checkbox list enumerates ~135 examples; the pinned repo holds 201 (living-repo growth; KP 15 = ex18-3 split
+   a/b per NOTES.md). N5 primary, N1-adj, N17. This closes the N5 acquisition the correction queued.
+2. **N2 — `DDMAL/Flexible_harmonic_chorale_annotations` cloned + WALKED** @ `87efd245`. Surfaced by the Wave-3
+   humdrum-data closure (§7 of the Wave-3 report). **571 chorales** (371 J.S. Bach + 200 Praetorius; 572 `.krn` =
+   371 + 201 Praetorius files, 130a/130b split; README says 571 — reported) with **permutational ("flexible")
+   multi-reading** harmonic analyses → a candidate SECOND annotation layer over gate-class Bach chorales (N2) +
+   N1-residual. **WALK finding:** the analysis GT ships as an **R-package binary** (`FlexibleChoraleHarmonicAnalysis`
+   0.8.0, 6.8 MB data.table); the `kernData/` `.krn` are **`**kern`-only scores (verified 572/572)** — no analysis
+   spine. GPLv3. **⚠ RECORD-ONLY this dispatch:** its 371 Bach chorales overlap the gate repertoire (Breitkopf/Dörffel
+   371 Four-Part Chorales, KernScores lineage = the music21 gate corpus's works); it must NOT be wired to /
+   compared against / bulk-diffed with the gate corpus — any use over gate pieces is a future **user** ruling
+   (census §4 dedupe / the M3 contamination lesson). The 200 Praetorius chorales are new and outside the gate.
+
+*(Bookkeeping-location note: the addendum instruction said "Census §1: two rows"; the two rows land here in this
+§7.1 addendum — the fold-list-designated §7 corrections home — plus the census §8c N2/N5 state-column updates and
+the two `wave3_sources` registry rows. Relocate if a different home is preferred.)*
