@@ -25,7 +25,7 @@ implied polyphony**:
 | find | what it is | size | fit |
 |---|---|---|---|
 | **piano_svsep (CPJKU, ISMIR 2024)** | per-note **voice + staff + chord** GT graphs over DCML-corpus piano scores (cross-staff voices included) — the SOTA voice-separation task set; labels over scores WE ALREADY HOLD (the Wave-2 pattern again) | 393 pieces (77 test) | **best fit** [verified] github.com/CPJKU/piano_svsep (code MIT; underlying DCML licenses per-repo; the companion "jpop" 811-score set is explicitly NOT public) |
-| **MCMA** | Baroque contrapuntal works hand-"exploded" one-voice-per-track (incl. keyboard fugues) | ~475 files | flat per-note voice GT, **CC BY 4.0** — cleanest license [verified] mcma.readthedocs.io |
+| **MCMA** | Baroque contrapuntal works hand-"exploded" one-voice-per-track (incl. keyboard fugues) | ~475 files | flat per-note voice GT; license **CC-BY-NC-SA-4.0 — corrected at the repo LICENSE at acquisition** (the search agent's "CC BY 4.0 [verified]" came from the docs site, superseded; NC matters for T-32) — mcma.readthedocs.io |
 | **vocsep_ijcai2023 (IJCAI 2023)** | chorales/WTC/Inventions/Haydn-quartet note graphs with per-note voice links | 1,054 graphs | notation-derived (weaker as inference GT except WTC) [verified] github.com/manoskary/vocsep_ijcai2023 |
 | de Valk lute data / JosquIntab | per-note voice labels on 16th-c. lute TABLATURE (notation carries no voices → true annotation) | 64+? pieces | niche texture, genuine labels [verified/reported] |
 
@@ -143,7 +143,7 @@ above), not a census acquisition. Record in the VL-H design gate when it opens.
 ## 6. Disposition surface (user disposes; nothing commissioned)
 
 1. **N9 acquisitions** (next corpus addendum): piano_svsep (+ its GT graphs over our held DCML scores) +
-   MCMA (CC-BY) [+ vocsep_ijcai2023 as research-tier]; implied-polyphony stays a recorded gap (VL-D
+   MCMA (license corrected at acquisition: CC-BY-NC-SA) [+ vocsep_ijcai2023 as research-tier]; implied-polyphony stays a recorded gap (VL-D
    design decides whether notated-voice GT suffices for v1).
 2. **N13 ruling:** accept the confirmed negative — R-1 ships rule-based/unvalidated as predicted; park
    the Batik heuristic extraction as an optional future measurement (also intake Batik-plays-Mozart

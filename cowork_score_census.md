@@ -236,6 +236,22 @@ the audit's updates, marked *(audit)*.
 **Relation to the other triggers:** §8b (purpose sweep at each new purpose) keeps the vector current; the yearly
 re-sweep catches new releases; the full-needs audit catches the CROSS-purpose and re-scoring misses both leave.
 
+**★ STAGE-5 FITTING-POOL LICENSE CONSTRAINT (user-ratified 2026-07-04 — binding on the fitter design):**
+the Stage-5 fitter's design doc must **declare its data pool explicitly, per license class**, before fitting:
+- **Weights intended to SHIP (any future commercial distribution): fit only on the PD / CC0 / CC-BY(-SA)
+  pool** (gate chorales PD · WiR analyses CC-BY-SA · CoCoPops · BCFB · GuitarSet · OpenEWLD · OpenScore…).
+- **NC-class sources (all 40 DCML corpora, MCMA, Essen, Chordonomicon, NC ChoCo partitions) and
+  no-license sources (Mikrokosmos, Batik, iRb…): held-out validation / QA / statistics ONLY** — they must
+  not shape shipped parameters without a license arrangement. (Fitting on NC data for a shipped commercial
+  product is the "trained on NC" gray zone; internal research use is unaffected — the current fork is
+  private research, so nothing is violated today; this constraint exists so commercialization never
+  silently inherits an NC-derived parameter set.)
+- The A-8 metric may keep DCML as its measurement GT (measurement ≠ shipped parameters), but the fitter's
+  OBJECTIVE-vs-VALIDATION split must state which sources feed which. T-32 (difficulty) already carries its
+  own harder version of this caveat (no commercially usable label source exists at all).
+- Ride: the constraint enters `docs/implementation_roadmap.md`'s Stage-5 block at the next CC docs commit,
+  and the fitter design doc restates it in its §2/§6 (data declaration) — not optional.
+
 **The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against
 the FULL needs-vector at intake**, never single-purpose-tagged. Three consequences, each binding:
 1. **Already-satisfied needs stay open to supersession** — a new find may serve a "passed" need better or

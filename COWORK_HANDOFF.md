@@ -1,13 +1,19 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-03/04, end of the session-22 arc (22c…22i + the register/census work).
+*Written 2026-05-14. Last updated 2026-07-04, session 22l (the STAGE-5 FITTER DESIGN signed + Phase-0
+dispatched; previously 22k: D-L3a · the full-needs audit · corpus Waves 3/3-addendum/acquisition-round ·
+the union search · the fitting-pool license constraint — all ratified).
 This header is the fresh-session entry point; full narratives live in STATUS.md (top entries) and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-04)
 
-**✅ ACQUISITION ROUND CC-DELIVERED (2026-07-04, awaiting Cowork verification).** `cc_instruction_acquisition_round.md`
-executed; report `cc_acquisition_round_report.md`; commit `4997757298` (registry+provenance, +8 additive
-`wave3_sources` rows, deterministic regen 80→88, purely additive) + the fold (this commit). **6 sources
+**✅ ACQUISITION ROUND COWORK-VERIFIED + RATIFIED (2026-07-04).** `cc_instruction_acquisition_round.md`
+executed; report `cc_acquisition_round_report.md` (read in full); commit `4997757298` **verified at object**
+(exactly 4 files: registry+provenance, +8 additive `wave3_sources` rows, deterministic regen 80→88) + the fold
+(**★ OWED: the fold commit's SHA was never stated — chat nor report; its content is corroborated at the live
+files, but object verification is blocked; the NEXT CC direction must demand the SHA, 22g precedent**). The
+MCMA license correction **Cowork-corroborated at the live clone's LICENSE (CC-BY-NC-SA-4.0)**; the union-search
+record's two stale in-place "CC BY" spots fixed by Cowork (ride the next fold). **6 sources
 cloned/pinned+verified, 2 recorded, 1 counting pass STOPPED:** N9 — piano_svsep @ `1462e7c2` (MIT **code**; GT
 graphs FETCHED AT RUNTIME from `fosfrancesco/piano_corpora_dcml` — pin=code+fetch-path; `jpop` non-public), MCMA @
 `2bdb12e2` (475 .mxl, split **153/239/83 re-counted**; ★ **license CORRECTED CC-BY→CC-BY-NC-SA-4.0**), vocsep @
@@ -26,8 +32,28 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**NO ACTIVE DISPATCH after this ratifies (one-CC-dispatch rule).** **NEXT: the Stage-5 fitter arc (gate dissolution =
-OWED refactor #2)**, per the ratified order — Cowork prepares the dispatch just-in-time.
+**★ THE STAGE-5 FITTER DESIGN IS SIGNED (user, 2026-07-04, session 22l) — ACTIVE DISPATCH:
+`cc_instruction_stage5_phase0.md`.** `cowork_stage5_fitter_design.md` written this session (full template
++ §0 TERMS), QA'd to the spec bar (independent adversarial audit, 20 findings — 2 HIGH/10 MED/8 LOW — all
+folded, none rejected), then TWICE user-refined before signing: (1) the **IDIOM AXIS** (constraint 4b +
+D-10: fitted values are idiom-labeled, presets are delivery carriers; the Bach fit = an **idiom-#2** fit
+via the Baroque/Default carriers; manifest style-scope column; mixture semantics + auto-detection stay
+deferred); (2) the **PER-PARAMETER STYLE-TABLE model** (D-11 + §4.4a: parameter value = function over the
+style coordinates — idiom simplex + mode/chromaticism + the axis-2 texture class as per-parameter
+candidates; dimensionality MEASURED by clustering per-stratum fitted optima under stability guards;
+anchor-based estimation, linear mixing = default hypothesis for the additive-weight family, thresholds
+don't mix; hierarchical shrinkage named as the estimation refinement; external precedents verified —
+key/genre-dependent chord-transcription HMMs, rock-vs-common-practice corpus statistics, mode-conditioned
+key profiles). **Whole §15 surface ratified; A-3 RULED: Jazz-carrier fit DEFERRED to the jazz-GT
+conversion — this arc fits idiom #2 (Baroque/Default).** Both binding constraints carried (license pool →
+§2/§3a; A-8 dual-track → §4.2). **The dispatch = Phase 0:** read-only parameter inventory
+(`tools/param_manifest.json`, every row source-anchored, style-scope + consuming-path columns) +
+objective-evaluation cost timing (scratch only) + the E-13 tuning-bridge check + **Task 0 demands the
+OWED acquisition-round fold SHA** + Task 1 = the fold (exact list: STATUS.md · this header ·
+census §8c · union-record fixes · the signed design · the instruction) + Task 2 = the O-3 roadmap
+license-constraint rider. On CC's report: verify at objects, ratify, then checkpoint P0 (fit surface +
+freeze list) is the user's. **Open user options (no deadline):** the CIPI Zenodo access form · the PDMX
+mxl-tarball fetch (if the N12 symbol count is wanted) · push at will.
 
 **✅ WAVE-3 ADDENDUM LANDED + RATIFIED (2026-07-04).** `c28f4064ee`/`3713636dd9`/`9441e94551`, all
 verified at objects (parser diff insertions-only; KMT 201 kern Cowork-corroborated at the live clone).
@@ -36,7 +62,7 @@ KMT (the N5 upstream) is ON DISK; the Flexible 571-chorale multi-reading set is 
 123,881 / 23,476 non-empty cells across the 40 DLC corpora, byte-identity proven (gate + characterise +
 A-8 outputs all identical pre/post).
 
-**✅ ADDENDUM CC-DELIVERED (2026-07-04, awaiting Cowork verification at objects).** Report
+**✅ ADDENDUM detail (superseded by the RATIFIED block above; kept for the numbers).** Report
 `cc_wave3_addendum_report.md`. `c28f4064ee` (Task A: +2 `wave3_sources` rows, regen 78→80 — KMT
 `key_modulation_dataset` @ `6602ae6a`, 201 annotated Humdrum `.krn`/5 textbooks = the N5 upstream now on
 disk; `Flexible_harmonic_chorale_annotations` @ `87efd245`, 571 chorales permutational multi-reading =
@@ -89,22 +115,21 @@ non-monotone (ECE 0.25); cadence tonicVote anti-monotone, 3 distinct values; L1.
 bin 0 (spike-dominated max-norm). All recorded for the Stage-5 fitter, nothing fixed.
 
 **The queue (plan lines, no instructions until dispatch):**
-1. **✅ The Wave-3 addendum CC-DELIVERED (2026-07-04)** — DDMAL pickups + `pedal`/`figbass` exposure + fold
-   landed (`c28f4064ee`/`3713636dd9`/this fold); byte-identity proven; awaiting Cowork verification. No open
-   CC dispatch — NEXT is the union search disposition (item 2, user) → the Stage-5 fitter arc (item 3).
-2. **✅ Union search round RUN + DISPOSED (2026-07-04, §6 items 1–5 ALL user-approved):**
-   `cowork_union_search_record.md` (status banner = the rulings). Consequences applied: census §8c
-   N9/N12/N13/N14/N19 state columns; T-32 commercial-license caveat in the product-tool register; VL
-   design §15-4 update + new §15-10 (VL-H build-not-download). **QUEUED NEXT CC DISPATCH (written
-   just-in-time after the addendum ratifies): the acquisition round** — piano_svsep + MCMA +
-   vocsep_ijcai2023 (N9) · Mikrokosmos (N14) · GuitarSet (N12) · Batik-plays-Mozart (multi-need
-   N1/N4/N13-partial) · the PDMX `<harmony>` read-only counting pass (N12 measurement) · CIPI enters
-   when the user's Zenodo access request (USER ACTION, form at zenodo.org/records/8037327) is granted.
-   Uncommitted Cowork files awaiting that dispatch's fold: `cowork_union_search_record.md`,
-   `cowork_product_tool_register.md`, `cowork_voiceleading_axis_design.md`, census/handoff/STATUS deltas.
+1. **✅ CLOSED CHAIN (2026-07-04, all ratified — full narratives in STATUS 22k):** the Wave-3 addendum
+   (`c28f4064ee`/`3713636dd9`/`9441e94551`) · the union search round + §6 disposition (all five items) ·
+   the acquisition round (`4997757298` + fold, **fold SHA OWED** — see the top block). The corpus program
+   is CAUGHT UP; open user options: CIPI form (zenodo.org/records/8037327) · PDMX mxl fetch · push.
+2. **✅ DONE (2026-07-04, 22l): the fitter DESIGN DOC written + audited + user-refined + SIGNED**
+   (`cowork_stage5_fitter_design.md`; A-3 ruled = Jazz deferred); **Phase-0 CC dispatch ACTIVE**
+   (`cc_instruction_stage5_phase0.md`) — see the top block.
 3. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
    discharges here**; R10 completes the A-8 re-baseline; C2 θ re-expression; Class-P maps; C3 joint-step design.
    (OWED refactor #1, the `chordanalyzer.cpp` file split, stays parked BY ratified R9 — after E4, "split once".)
+   **★ BINDING on the fitter design (user-ratified 2026-07-04): the FITTING-POOL LICENSE CONSTRAINT** —
+   census §8c block: ship-intended weights fit only on the PD/CC0/CC-BY pool; NC-class (all DCML, MCMA,
+   Essen…) + no-license sources = validation/QA only; the design doc declares the objective-vs-validation
+   source split explicitly; the constraint also enters the roadmap Stage-5 block at the next CC docs commit.
+   **The next CC direction must also demand the acquisition-round FOLD COMMIT SHA (owed — never stated).**
 4. Parked pending user calls: the idiom re-discovery re-run (trigger FIRED at Wave 3, recorded); the
    algomus Mozart-SQ seconds→ticks alignment step (owed before N16 load-bearing use).
 
@@ -122,7 +147,8 @@ root-agree 63.32/62.37/63.22% at 326/352 — full record: roadmap A-8 block + ST
 remember: the batch gate masks 15–56×; the music21 filter discards ~82% of human-adjudicated error time;
 class-(a) is ~4% on the robust unit, not ≈53%).
 
-**New standing records/mechanisms (2026-07-03/04 — all Cowork-owned docs, ride the next fold commit):**
+**New standing records/mechanisms (2026-07-03/04 — all Cowork-owned docs; ALL COMMITTED as of the
+2026-07-04 folds; the census governance vector is now N1–N20 + the fitting-pool constraint):**
 - **`cowork_candidate_lever_register.md`** — R-1…R-13 compatible inference levers (figured-bass/BCFB, Parncutt
   root salience, harmonic grammar + JHT trees, tonal-space priors, IDyOM, conformal prediction…), none
   commissioned; claimable by the proper layer's design doc.
@@ -139,15 +165,18 @@ class-(a) is ~4% on the robust unit, not ≈53%).
   measurement → contradiction = immediate tripwire / enrichment = postpone-by-default; user decides both forks).
 - **`cowork_polyphony_phrase_harmony_research.md` §6b** — the axis-2 sweep record (+ Wave-2 at-pin corrections).
 
-**Uncommitted Cowork narrative awaiting the next fold** (the big backlog is CLEARED — `ea6f41eef4` carried the
-whole accumulated list): only the post-fold close-out edits remain — STATUS (the 22j ★ CLOSED note) + this
-handoff header. Small; rides the next natural `docs(cowork):` commit — give CC the two-file list explicitly.
+**Uncommitted Cowork narrative awaiting the next fold:** the explicit four-file list in the top block
+(STATUS 22k tail · this header · census §8c fitting-pool block · the union-record license fixes) — give CC
+that list verbatim with the Stage-5 design dispatch (which also demands the owed acquisition-round fold SHA).
 
 **Chain state:** everything local/unpushed on `master`, fork-only (`origin=slimvince/MuseScore`; `upstream` push
 disabled — NEVER push there). User pushes at will.
 
-**Fresh-session mandatory reads, in order:** CLAUDE.md → STATUS.md top entries (22f–22i) → this header → the
-standing-rule blocks below (unchanged, still binding) → then whatever the active work names.*
+**Fresh-session mandatory reads, in order:** CLAUDE.md → STATUS.md top entries (22j–22k) → this header → the
+standing-rule blocks below (unchanged, still binding) → then, for the Stage-5 fitter design: the roadmap
+Stage-5 + AMENDMENTS blocks · `cowork_confidence_contract.md` §6 · `cc_c1_reliability_report.md` ·
+`cc_a8_rebaseline_measure_report.md` · the census §8c fitting-pool constraint · `docs/scoring_model.md`
+(the gates A–L that dissolve) · `cowork_design_doc_template.md` (both writing-standard sections).*
 
 ## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
 
