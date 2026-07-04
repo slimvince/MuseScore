@@ -21,8 +21,10 @@ answered. That finds exemplars, never closure. This census instead **enumerates 
 | When-in-Rome meta-corpus — full component list | **Fully enumerated** |
 | ChoCo — all 18 partner datasets | **Fully enumerated** |
 | SOTA-paper dataset tables (AugmentedNet / RNBert / AnalysisGNN / ChordGNN — the field's de-facto RN-GT census; AnalysisGNN's list = 1,719 pieces) | **Fully harvested** (AugmentedNet exact manifest partial) |
-| OpenScore family, Mutopia, KernScores highlights, MuseData, early-music projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers (Essen, MTC, Nottingham) | **Fully enumerated** [Wave-2 ONBOARDED the Essen `ccarh/essen-folksong-collection` **phrase-boundary bed** (Humdrum kern) — see `cc_corpus_wave2_report.md`] |
-| **algomus / Dezrann** (algomus.fr GitLab org + dezrann.net) — symbolic-music analysis annotation datasets (texture, cadence, form) | **Enumerated** [Wave-2 ONBOARDED `symbolic-texture-dataset` (Couturier et al. ISMIR 2022) as an **annotation bed**; moved here from §7 residual risk — see `cc_corpus_wave2_report.md`] |
+| OpenScore family, Mutopia, KernScores highlights, MuseData, early-music projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers (Essen, MTC, Nottingham) | **Fully enumerated** [Wave-2 ONBOARDED the Essen `ccarh/essen-folksong-collection` **phrase-boundary bed** (Humdrum kern) — see `cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `OpenScore/Lieder` (1462 mxl, CC0) + `OpenScore/StringQuartets` (122 mscx, CC0) plain-score stress + `fosfrancesco/asap-dataset` (235 MusicXML); the KernScores/craigsapp mechanical partial CLOSED by enumerating `humdrum-tools/humdrum-data` = 71 repos/16 orgs (cloned nothing) — see `cc_corpus_wave3_report.md`] |
+| **algomus / Dezrann** (algomus.fr GitLab org + dezrann.net) — symbolic-music analysis annotation datasets (texture, cadence, form) | **Enumerated** [Wave-2 ONBOARDED `symbolic-texture-dataset` (Couturier et al. ISMIR 2022) as an **annotation bed**; moved here from §7 residual risk — see `cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `algomus.fr/algomus-data` monorepo: `quartets/mozart` (32 sonata-form ref.dez — the N16 candidate), `fugues/bach-wtc-i` (23 subject/CS/cadence/pedal ref.dez — N4/N18/N20; the 12 Shostakovich fugues are website-only, NOT in-repo), `jazz-arbres` treebank (1170; N11/N3) — see `cc_corpus_wave3_report.md`] |
+| **Tier-J jazz/pop analysis GT** (CoCoPops, EWLD/OpenEWLD, HookTheory, Weimar Jazz Database, ChoCo jazz/weimar slices) | **Enumerated** [Wave-3: ONBOARDED `CoCoPops` (628 .hum, **harm+**kern), `00sapo/OpenEWLD` (486 PD .mxl), the native WJD SQLite (456 solos, ODbL, sha256-pinned), + INVENTORIED the ChoCo jazz-corpus (160 jams) / weimar (916 jams) slices; **GATED, access path recorded:** EWLD (Zenodo request-access), HookTheory full (HF academic gate) — see `cc_corpus_wave3_report.md`] |
+| **Figured-bass / trees-reduction GT** (BCFB, DCMLab/figured-bass, Kirlin Schenker41, GTTM, protovoice-annotations) | **Enumerated** [Wave-3: ONBOARDED `juyaolongpaul/Bach_chorale_FB` (BCFB, 139/143, N10) + `DCMLab/protovoice-annotations` (38 derivations — the N9 gating inspection); `pkirlin/schenker41` pinned but README-only (data at the dissertation page); GTTM located (no single artifact); **`DCMLab/figured-bass` WALKED = a realization SCRIPT, not a GT corpus** (§7→§1) — see `cc_corpus_wave3_report.md`] |
 | Partial: per-repo DLC piece counts; MuseScore.com beyond PDMX (ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool exists: `humdrum-tools/humdrum-data`); abcnotation.com long tail | **Named, bounded** |
 
 **The standing process rule this census institutes:** from now on, *"a new corpus was discovered" is a census
@@ -100,9 +102,14 @@ generalized).
 ## 7. Residual risk (named, so it is bounded)
 
 Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material — the algomus/Dezrann
-container is now an **enumerated §1 row**, with `symbolic-texture-dataset` onboarded at Wave 2; the remaining algomus
-cadence/form sets stay in this residual bucket), figured-bass
-corpora (DCMLab/figured-bass uninspected), scattered Humdrum `**harm` spines on kern.ccarh.org, national-library MEI
+container is now an **enumerated §1 row**, with `symbolic-texture-dataset` onboarded at Wave 2 **and the
+`algomus-data` monorepo (Mozart-quartet sonata-form + Bach-fugue) onboarded at Wave 3**; the Shostakovich fugues +
+any remaining cadence/form sets stay in this residual bucket), figured-bass
+corpora (**`DCMLab/figured-bass` WALKED at Wave 3 = a figured-bass REALIZATION SCRIPT, not a GT corpus — §7→§1
+promoted with that finding; the actual figured-bass GT is BCFB, onboarded Wave 3, plus the parser-dropped DLC
+`figbass` column**), scattered Humdrum `**harm` spines on kern.ccarh.org (**now enumerated: the
+`humdrum-tools/humdrum-data` manifest = 71 repos/16 orgs, incl. `DDMAL/Flexible_harmonic_chorale_annotations` — Wave-3
+closure, cloned nothing**), national-library MEI
 editions, the ABC long tail, non-Western symbolic sets (SymbTr, jingju), and 2025–26 releases (POP909-CL surfaced
 mid-census). Each is a container-class now on the §1 list — the yearly re-sweep walks them; none is expected to hide
 gate-grade common-practice RN GT (that class is closed by the SOTA-paper harvest).
@@ -169,6 +176,14 @@ the **JHT hierarchical tree annotations** as a distinct GT layer (the JHT source
 material; its trees are a separate annotation layer for lever R-7); `DCMLab/figured-bass` (already a §7
 residual — promote to a walked row at Wave 3). *(The Wave-2 beds are already onboarded/enumerated.)*
 
+**★ ALL THREE EXECUTED AT WAVE 3 (2026-07-04, `cc_corpus_wave3_report.md`):** BCFB onboarded (`juyaolongpaul/Bach_chorale_FB`,
+139 chorales / 143 files, MusicXML+kern+MEI — registry `wave3_sources.bcfb`, N10); the **JHT `syntax-tree` GT layer** was
+already registry-recorded (`other_sources.jazz_harmony_treebank.gt_layers = ["chords","syntax-tree"]`, N11) — this note
+records that fact (the census §1 prose never carried it; bookkeeping only); `DCMLab/figured-bass` **WALKED and §7→§1
+promoted** — the walk found it is a figured-bass REALIZATION SCRIPT, **not a GT corpus** (registry `wave3_sources.dcmlab_figured_bass`,
+status=walked, N10-NEGATIVE). Each Wave-3 row is marked "entered at Wave 3, provenance `cc_corpus_wave3_report.md`" in the
+registry `wave3_sources` array.
+
 ## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)
 
 **The question that created this section:** is a corpus search useful that is NOT driven by one architectural
@@ -177,34 +192,46 @@ needs must first exist as an artifact, and once it does, re-scoring the EXISTING
 cheaper and likely higher-yield than new searching (the Wave-2 lesson: the finds were already inside enumerated
 containers — the dismissals were purpose-relative, made with harmonic-axis eyes only).
 
+**★ FIRST RUN EXECUTED + DISPOSED (2026-07-04):** the audit ran at Wave-3 scoping per this section — full
+record + per-row scoring: `cowork_census_full_needs_audit.md`. User rulings at disposition: **N18/N19/N20
+ADOPTED** (N20 rationale, user: improves inference precision AND no information loss), **N15 scope ruling
+RATIFIED**. The union search round (step 3) is scoped to **N9 (after the protovoice inspection), N13, N14,
+N12-realized-half, N19**; N16 needs no search (candidate already enumerated). State columns below carry
+the audit's updates, marked *(audit)*.
+
 **The mechanism (run at natural checkpoints; first run = at Wave-3 scoping, BEFORE its disposition):**
 1. **The needs-vector (maintained here; §8b's trigger adds a row per new purpose):**
 
-| # | need (GT/material class) | consumer | state (2026-07-03) |
+| # | need (GT/material class) | consumer | state (2026-07-03; *(audit)* = updated 2026-07-04) |
 |---|---|---|---|
 | N1 | common-practice RN/harmony GT, score-aligned, human | gate, Stage-5 fitter | well-covered (DLC/WiR) |
-| N2 | dual/multi-annotator disagreement data | Class-P calibration (C1/C2) | TAVERN queued (Wave 3) |
-| N3 | jazz/pop analysis GT, score-aligned | A-7 mark retirement, idioms 3–5 | Tier J queued (Wave 3) |
-| N4 | cadence + punctuation/phrase GT | L5 §5.2, L1.5, L6 | rich (corpus-wide since 21k) |
-| N5 | key/modulation GT | L3, S1/S2 | KMT queued (Tier G) |
-| N6 | melodic-phrase GT (monophonic ok) | VL-E | Essen onboarded (Wave 2) |
+| N2 | dual/multi-annotator disagreement data | Class-P calibration (C1/C2) | *(audit)* on disk inside the pinned WiR clone (TAVERN dual analyses) + Tymoczko-vs-DCML pairs + Sears (dual, cadence) + CASD (4×, audio) + RS200 (2×) — Wave 3 = EXPOSURE + per-slice verification, not acquisition |
+| N3 | jazz/pop analysis GT, score-aligned | A-7 mark retirement, idioms 3–5 | Tier J queued (Wave 3); *(audit)* walk-list adds: Jazz Corpus (function GT, 76), WJD native (phrase/form), Real Book (license-check) |
+| N4 | cadence + punctuation/phrase GT | L5 §5.2, L1.5, L6 | rich (corpus-wide since 21k); *(audit)* jazz side = WJD native |
+| N5 | key/modulation GT | L3, S1/S2 | *(audit)* KMT on disk (WiR) + Sears pivot/modulation annotations + SWD score-aligned local keys |
+| N6 | melodic-phrase GT (monophonic ok) | VL-E | Essen onboarded (Wave 2); *(audit)* depth reserves MTC/GTTM |
 | N7 | texture GT (per-bar / per-piece) | VL-C validation, §15-1 | algomus bed onboarded (Wave 2) |
 | N8 | voice-leading schema GT | VL-F | schema bed onboarded (Wave 2) |
-| N9 | stream/implied-polyphony GT | VL-D target task | **GAP — no candidate found** |
-| N10 | figured-bass GT | L4 evidence channel (R-4) | BCFB pending (§8b) |
-| N11 | hierarchical harmony trees | grammar lever (R-7) | JHT held; tree layer pending row |
-| N12 | notated chord symbols aligned with realized scores | E-8 symbols-as-input, T-17 QA | unassessed — audit column |
-| N13 | ornament-realization pairs | R-1 ornament expansion | unknown — audit column |
-| N14 | difficulty/grading labels (syllabus, exam grades) | T-32 | unassessed — audit column |
-| N15 | performed-intonation reference material | T-21/T-24 | audio-domain — likely a scope RULING |
-| N16 | form/section GT (sonata form etc.) | L6 §9-D3 deferred, T-9 | partially known (Mozart-quartet form annotations cited in the texture paper's refs) — audit column |
+| N9 | stream/implied-polyphony GT | VL-D target task | **GAP** — *(audit)* one inspection candidate found in the enumeration: DCMLab `protovoice-annotations` (small, uninspected); inspect BEFORE the union search; bach_solo = material-only |
+| N10 | figured-bass GT | L4 evidence channel (R-4) | *(audit)* three-source: BCFB pending (§8b) + DCMLab/figured-bass (§7→§1 promote) + VERIFIED `figbass` column on every held DLC corpus (parser-dropped) |
+| N11 | hierarchical harmony trees | grammar lever (R-7) | *(audit)* JHT trees held (registry `syntax-tree` layer already recorded; census-table note owed) + Kirlin Schenker41 (the common-practice counterpart) + GTTM (melodic time-span trees) |
+| N12 | notated chord symbols aligned with realized scores | E-8 symbols-as-input, T-17 QA | *(audit)* HALF-covered: symbol+melody (leadsheet) class rich (EWLD/OpenEWLD/HookTheory/Wikifonia/Nottingham); symbol+REALIZED-score class thin (POP909 semi-auto; McKenzie/DadaGP grey) — union search targets the realized half |
+| N13 | ornament-realization pairs | R-1 ornament expansion | *(audit)* nothing in the entire enumeration — union search (expect scarce; R-1 predicted rule-based shipping) |
+| N14 | difficulty/grading labels (syllabus, exam grades) | T-32 | *(audit)* nothing (PDMX ratings = quality, not difficulty) — union search (ABRSM/RCM/Henle grade-mapping class) |
+| N15 | performed-intonation reference material | T-21/T-24 | **★ SCOPE RULING RATIFIED (user, 2026-07-04):** audio-domain, out of corpus scope; T-21/T-24 validate by theory/listening |
+| N16 | form/section GT (sonata form etc.) | L6 §9-D3 deferred, T-9 | *(audit)* covered-by-candidate: **algomus Mozart SQ sonata-form set** (already enumerated, GT draft §5); pop-side sections WJD/POP909/choro/Chordonomicon; DCML TSV `form` column VERIFIED chord-morphology, NOT form GT — no search needed |
 | N17 | style/era metadata | idiom lenses, calibration C4 | held (registry fields) |
+| N18 | contrapuntal/imitative-structure GT (fugue subjects/answers/countersubjects, imitation points) | T-12, VL-F/VL-D neighborhood | **ADOPTED (user, 2026-07-04, audit §1):** candidates already enumerated — algomus Bach fugues, CRIM observations |
+| N19 | part-writing error/exercise GT (marked errors in species/part-writing exercises) | VL-H, T-12 | **ADOPTED (user, 2026-07-04, audit §1):** no candidate anywhere in the enumeration — union-search column |
+| N20 | pedal-point GT | pedal-point-span validation (its owning layer's design) | **ADOPTED (user, 2026-07-04):** covered — VERIFIED DLC `pedal` TSV column on every held corpus (parser-dropped) + algomus fugue pedals; exposure pending. Completes the §2.15 span-kind↔needs mapping |
 
 2. **The audit:** re-score every enumerated census row (both appendices + registry) against the needs columns —
    offline, no searching; each row gains a needs-coverage note; multi-need rows get flagged (a container serving
    several needs outranks single-need alternatives that any one purpose-sweep would have preferred).
-3. **The union search round:** targeted searches ONLY for columns still uncovered/unassessed after the audit
-   (today: N9, N12, N13, N14, N16 + whatever the audit demotes). Findings enter via the census as always.
+3. **The union search round:** targeted searches ONLY for columns still uncovered/unassessed after the audit.
+   *(As scoped by the first-run audit + disposition, 2026-07-04: N9 — after the protovoice inspection —,
+   N13, N14, N12-realized-half, N19. The pre-audit guess "N9, N12, N13, N14, N16" is superseded: N16 came
+   back covered-by-candidate.)* Findings enter via the census as always.
 
 **Relation to the other triggers:** §8b (purpose sweep at each new purpose) keeps the vector current; the yearly
 re-sweep catches new releases; the full-needs audit catches the CROSS-purpose and re-scoring misses both leave.

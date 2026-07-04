@@ -5,14 +5,28 @@ This header is the fresh-session entry point; full narratives live in STATUS.md 
 
 ## ★ START HERE — state, dispatch, queue (2026-07-04)
 
-**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_dl3a_closeout.md`** — the D-L3a
-close-out (contract §7; §8.4 pre-ratified in principle, C1 evidence decisive): declare the sequence margin THE
-L3 boundary confidence, demote the sigmoid to internal/diagnostic. Consumer inventory first (Task 0, STOP on
-any computation change); byte-identical except a possible dormant-chain re-point (the pre-ratified
-"byte-visible-only-in-dormant" part); the frozen-corpus JSON field NEVER renamed; gate sandwich measured; SHAs
-mandatory; its docs commit may fold the two pending close-out narrative edits (STATUS + this handoff, exactly
-those two). **Runs in PARALLEL with Cowork's Wave-3 scoping** (the census §8c FULL-NEEDS AUDIT — Cowork-side,
-fresh full-budget session, no CC instruction until scoping is done; no shared files with the D-L3a dispatch).
+**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_corpus_wave3.md`** — Corpus Wave 3
+(clone + hash-pin + inventory + bookkeeping ONLY; no `src/`, no inference work; gate sandwich measured;
+its docs rider folds the named uncommitted Cowork files). Scope set by the user-disposed FULL-NEEDS AUDIT
+(below); the re-discovery trigger check is EXPECTED TO FIRE this wave (new chord-symbol mass) — record only,
+never run re-discovery inside the wave.
+
+**✅ D-L3a CLOSED + RATIFIED (2026-07-04).** `f6f5137008` (7 comment-only src edits + contract §3/§7 +
+L3-design doc-sync; src diff Cowork-verified comment-only at the object) + `a228e2bef6` (report + the
+STATUS/handoff fold + the §7 SHA-stamp). The pre-authorized dormant re-point was correctly NOT done — both
+dormant sigmoid-stand-in sites have no sequence-margin substrate (verified at live disk); recorded as a
+joint-key/Stage-5 gap. Gate 53/24/53 set-diff empty ×3; `.ours.json` 0/352 differing ×3.
+
+**✅ FULL-NEEDS AUDIT RUN + DISPOSED (2026-07-04, this session).** First run of census §8c executed —
+`cowork_census_full_needs_audit.md` (all ~155 enumeration rows + registry re-scored against the needs-vector,
+offline). User rulings: **N18 (fugue/imitation GT), N19 (part-writing-error GT), N20 (pedal-point GT — own
+row: precision + no information loss) ADOPTED; N15 scope ruling RATIFIED** (performed intonation =
+audio-domain, out of corpus scope). Census §8c vector + state columns updated same session. Key verified
+facts: DLC TSV `form` column = chord-morphology, NOT form GT; DLC `pedal`+`figbass` columns exist on every
+held corpus (parser-dropped — exposure queued as its own post-wave increment); TAVERN/KMT/BPS-FH/HaydnSun
+live INSIDE the pinned WiR clone (Wave-3 = inventory, not acquisition, for those); protovoice-annotations =
+the only N9 (stream GT) candidate — inspection gates the N9 search. Union search round (Cowork-side, after
+Wave 3 lands): N9, N13, N14, N12-realized-half, N19.
 
 **✅ C1 ARC FULLY CLOSED + USER-RATIFIED (2026-07-04, 22j).** Instrumentation `088ba617b0`/`0051641d27`;
 fold + §2.1a `ea6f41eef4`/`4d18f44c2d` — the baseline delta was a benign denominator-scope nuance
@@ -30,12 +44,14 @@ carry: L4 composite best-calibrated (ECE 0.11, monotone above ~0.5); L5 combined
 non-monotone (ECE 0.25); cadence tonicVote anti-monotone, 3 distinct values; L1.5 strength 97.7 % mass in
 bin 0 (spike-dominated max-norm). All recorded for the Stage-5 fitter, nothing fixed.
 
-**The queue after the fold (plan lines, no instructions until dispatch):**
-1. **Wave 3** (corpus): Tier J jazz/pop GT + Tier G/S remainder + Tier-C remainder — **but its scoping starts
-   with the census §8c FULL-NEEDS AUDIT** (first run pinned there: re-score the enumeration against the
-   needs-vector N1–N17 before disposition; pending adds: BCFB, the JHT tree layer, DCMLab/figured-bass).
-   Wave 3 likely fires the idiom re-discovery trigger (new chord-symbol mass — unlike Wave 2).
-2. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
+**The queue (plan lines, no instructions until dispatch):**
+1. **Wave 3 = the ACTIVE dispatch above** (scoping done via the audit; scope = the instruction's task list).
+2. **Post-wave small increment:** expose the parser-dropped DLC label columns (`pedal`, `figbass`) additively
+   in `tools/dcml_parser.py` — kept OUT of Wave 3 deliberately (one change class per dispatch; the wave is
+   code-free). Serves N10/N20 exposure; byte-identity of existing outputs proven at its own dispatch.
+3. **Union search round** (Cowork-side, no CC): N9 (after the protovoice inspection verdict), N13, N14,
+   N12-realized-half, N19. Findings enter via the census + full-vector intake scoring.
+4. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
    discharges here**; R10 completes the A-8 re-baseline; C2 θ re-expression; Class-P maps; C3 joint-step design.
    (OWED refactor #1, the `chordanalyzer.cpp` file split, stays parked BY ratified R9 — after E4, "split once".)
 
