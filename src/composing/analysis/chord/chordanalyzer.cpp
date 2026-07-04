@@ -23,6 +23,7 @@
 #include "chordanalyzer.h"
 #include "analysisutils.h"
 #include "composing/analysis/function/harmonicfunctionlayer.h"
+#include "../param/paramoverride.h"   // Stage-5 fitter: optional constant override (D-6)
 
 #include <algorithm>
 #include <array>
@@ -54,7 +55,7 @@ enum class ExtraNoteCategory { Extension, Contradiction, Foreign };
 // major third over a diminished template) is penalised more severely than a merely
 // foreign note.  Theory-grounded ordering: contradiction penalty > foreign penalty.
 // Absolute magnitude is empirically tuned against the regression corpus.
-static constexpr double kContradictionPenalty = 0.75;
+static double kContradictionPenalty = 0.75;
 
 // ── Template tone scoring ────────────────────────────────────────────────────
 //
@@ -64,11 +65,11 @@ static constexpr double kContradictionPenalty = 0.75;
 // (root > second > other) is theory-grounded; the exact ratios are empirically tuned.
 //
 // Caps prevent any single heavily-doubled note from dominating the score.
-static constexpr double kRootToneFactor          = 1.8;   // [theory-grounded ordering, empirical value]
-static constexpr double kSecondToneFactor        = 1.2;   // [theory-grounded ordering, empirical value]
-static constexpr double kOtherToneFactor         = 1.0;   // baseline
-static constexpr double kTemplateToneWeightCap   = 3.0;   // [empirical]
-static constexpr double kExtraNoteWeightCap      = 2.0;   // [empirical]
+static double kRootToneFactor          = 1.8;   // [theory-grounded ordering, empirical value]
+static double kSecondToneFactor        = 1.2;   // [theory-grounded ordering, empirical value]
+static double kOtherToneFactor         = 1.0;   // baseline
+static double kTemplateToneWeightCap   = 3.0;   // [empirical]
+static double kExtraNoteWeightCap      = 2.0;   // [empirical]
 
 // ── Extension and foreign-note scoring ──────────────────────────────────────
 //
@@ -80,10 +81,10 @@ static constexpr double kExtraNoteWeightCap      = 2.0;   // [empirical]
 //
 // kForeignPenalty < kContradictionPenalty: a note that merely doesn't fit the template
 // is less damaging than one that actively excludes it.  [theory-grounded ordering]
-static constexpr double kExtensionFactor7th      = 0.45;  // m7/M7: common colour tone [empirical]
-static constexpr double kExtensionFactorFlat13   = 0.20;  // b13/#5: inversion-ambiguous [empirical]
-static constexpr double kExtensionFactorDefault  = 0.35;  // 9th, 11th, etc.  [empirical]
-static constexpr double kForeignPenalty          = 0.45;  // neither extension nor contradiction [empirical]
+static double kExtensionFactor7th      = 0.45;  // m7/M7: common colour tone [empirical]
+static double kExtensionFactorFlat13   = 0.20;  // b13/#5: inversion-ambiguous [empirical]
+static double kExtensionFactorDefault  = 0.35;  // 9th, 11th, etc.  [empirical]
+static double kForeignPenalty          = 0.45;  // neither extension nor contradiction [empirical]
 
 // ── TPC-based Sus4 vs minor disambiguation ───────────────────────────────────
 //
@@ -92,44 +93,94 @@ static constexpr double kForeignPenalty          = 0.45;  // neither extension n
 // Sus4 reading; a sharp spelling (D#) signals #9 intent and is compatible with Sus4.
 // The asymmetry (0.10 vs 0.45) reflects that Eb-over-Sus4 is a strong contradiction
 // signal while D#-over-Sus4 is a mild confirmation.  Both values are empirical.
-static constexpr double kSus4FlatThirdFactor     = 0.10;  // Eb spelling → minor intent  [empirical]
-static constexpr double kSus4SharpThirdFactor    = 0.45;  // D# spelling → #9 intent     [empirical]
+static double kSus4FlatThirdFactor     = 0.10;  // Eb spelling → minor intent  [empirical]
+static double kSus4SharpThirdFactor    = 0.45;  // D# spelling → #9 intent     [empirical]
 
 // ── Template-specific structural penalties and bonuses ───────────────────────
 //
 // Each constant keeps a template family self-consistent.  The ordering of related
 // values (e.g. Sus4Variant > Sus4Maj7 because a missing 7th is a bigger ambiguity
 // than a missing 5th) is theory-grounded; absolute values are empirically tuned.
-static constexpr double kDim7CharacteristicBonus = 0.75;  // fully-diminished fingerprint confirmed [empirical]
-static constexpr double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: prefer bass-root reading [empirical]
-static constexpr double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
-static constexpr double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
-static constexpr double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
+static double kDim7CharacteristicBonus = 0.75;  // fully-diminished fingerprint confirmed [empirical]
+static double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: prefer bass-root reading [empirical]
+static double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
+static double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
+static double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
 /// Minimum pcWeight for the defining P4 to be treated as a structural suspension
 /// tone.  Below this, the Sus4 template is penalised even when the P4 is
 /// technically present — passing or ornamental fourths routinely clear 0.20
 /// (extensionThreshold) but rarely reach 0.50.
-static constexpr double kSus4StructuralFourthThreshold = 0.50;
-static constexpr double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
-static constexpr double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
-static constexpr double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
-static constexpr double kBassSupportPresenceThreshold = 0.05;  // matches distinct-PC presence threshold
+static double kSus4StructuralFourthThreshold = 0.50;
+static double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
+static double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
+static double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
+static double kBassSupportPresenceThreshold = 0.05;  // matches distinct-PC presence threshold
 
 /// Minimum pcWeight for a seventh interval (min7 = +10, maj7 = +11) to register
 /// as a chord seventh extension.  Seventh notes in lightly-voiced jazz chords
 /// consistently appear in the 0.12–0.19 range (below the 0.20 general threshold)
 /// so a separate, lower guard is needed.
 /// Must be strictly above the max(0.1, weight) floor (0.1) applied in analyzeChord.
-static constexpr double kSeventhThreshold        = 0.12;
+static double kSeventhThreshold        = 0.12;
 
 /// Minimum pcWeight for all other chord extensions (9th, 11th, 13th, alterations).
 /// Conservative at 0.20 so that brief ornamental notes in non-jazz contexts
 /// (passing tones, neighbor notes) do not trigger false extension labels.
-static constexpr double kExtensionThreshold      = 0.20;
+static double kExtensionThreshold      = 0.20;
 
 // kScoreThresholdRatio moved to harmonicfunctionlayer.h (fn::kScoreThresholdRatio):
 // the result-admission threshold is a function of post-signal scores, so it is a
 // property of the competition pipeline, not the vertical scorer.
+
+// ── Stage-5 fitter: former analyzeChord-local scoring shaping constants ──────────
+// Relocated to file scope (from lambda/loop bodies) with unchanged values so the
+// Stage-5 parameter-override mechanism can register their addresses at static-init
+// (a function-local static is not initialized until its function first runs — too
+// late for the startup-time override loader). Byte-identical: same literals, read
+// exactly as before. See cowork_stage5_fitter_design.md D-6 + the Phase-0 manifest.
+static double kWComplete = 0.50;                    ///< Iter-92 root-position complete-triad bonus (was chordanalyzer.cpp local)
+static double kWCompletePresenceThreshold = 0.05;   ///< wComplete triad-tone presence bar (was the lambda-local kPresenceThreshold)
+static double kComplexityEvidenceFloor = 0.5;       ///< Iter-74 FixA: template-complexity discount threshold AND additive floor (one shaping constant)
+static double kAugThinEvidenceFactor = 0.5;         ///< Iter-78/79: augmented thin-evidence / bare-root halving factor (both *= sites)
+
+// ── Stage-5 fitter: register the file-level scoring constants for the optional ───
+// parameter-override mechanism. The registry stores each address; the override
+// loader (params::loadAndApply) is the ONLY writer, and it runs only when a
+// --param-override file is passed. No override loaded ⇒ every read below sees its
+// literal initializer above ⇒ byte-identical. Registration runs at static-init
+// because analyzeChord() (this TU) is odr-used by every analysis caller.
+static const bool s_registerChordScoringParams = [] {
+    namespace P = mu::composing::params;
+    P::registerDouble("kContradictionPenalty",          &kContradictionPenalty);
+    P::registerDouble("kRootToneFactor",                &kRootToneFactor);
+    P::registerDouble("kSecondToneFactor",              &kSecondToneFactor);
+    P::registerDouble("kOtherToneFactor",               &kOtherToneFactor);
+    P::registerDouble("kTemplateToneWeightCap",         &kTemplateToneWeightCap);
+    P::registerDouble("kExtraNoteWeightCap",            &kExtraNoteWeightCap);
+    P::registerDouble("kExtensionFactor7th",            &kExtensionFactor7th);
+    P::registerDouble("kExtensionFactorFlat13",         &kExtensionFactorFlat13);
+    P::registerDouble("kExtensionFactorDefault",        &kExtensionFactorDefault);
+    P::registerDouble("kForeignPenalty",                &kForeignPenalty);
+    P::registerDouble("kSus4FlatThirdFactor",           &kSus4FlatThirdFactor);
+    P::registerDouble("kSus4SharpThirdFactor",          &kSus4SharpThirdFactor);
+    P::registerDouble("kDim7CharacteristicBonus",       &kDim7CharacteristicBonus);
+    P::registerDouble("kNonBassPenalty",                &kNonBassPenalty);
+    P::registerDouble("kSus4VariantMissing7th",         &kSus4VariantMissing7th);
+    P::registerDouble("kSus4Maj7MissingP5",             &kSus4Maj7MissingP5);
+    P::registerDouble("kSus4MissingFourth",             &kSus4MissingFourth);
+    P::registerDouble("kSus4StructuralFourthThreshold", &kSus4StructuralFourthThreshold);
+    P::registerDouble("kDom7FlatFiveTpcPenalty",        &kDom7FlatFiveTpcPenalty);
+    P::registerDouble("kDom7FlatFiveMissing7th",        &kDom7FlatFiveMissing7th);
+    P::registerDouble("kPowerChord3PcPenalty",          &kPowerChord3PcPenalty);
+    P::registerDouble("kBassSupportPresenceThreshold",  &kBassSupportPresenceThreshold);
+    P::registerDouble("kSeventhThreshold",              &kSeventhThreshold);
+    P::registerDouble("kExtensionThreshold",            &kExtensionThreshold);
+    P::registerDouble("kWComplete",                     &kWComplete);
+    P::registerDouble("kWCompletePresenceThreshold",    &kWCompletePresenceThreshold);
+    P::registerDouble("kComplexityEvidenceFloor",       &kComplexityEvidenceFloor);
+    P::registerDouble("kAugThinEvidenceFactor",         &kAugThinEvidenceFactor);
+    return true;
+}();
 
 /// Classify a non-template interval relative to a chord quality.
 ///
@@ -1361,7 +1412,8 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 ? 1.0
                 : static_cast<double>(distinctPcs) / templateDefinedTones;
             complexityFactorMatrix[rootPc][tplIdx]
-                = (evidenceRatio >= 0.5) ? 1.0 : (0.5 + evidenceRatio);
+                = (evidenceRatio >= kComplexityEvidenceFloor)
+                ? 1.0 : (kComplexityEvidenceFloor + evidenceRatio);
 
             // Iter 78 Fix C + Iter 79 — augmented bare-root / thin-evidence
             // penalties (both bass-independent).
@@ -1369,7 +1421,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             if (tpl.quality == ChordQuality::Augmented
                 && distinctPcs <= 2
                 && pcWeight[static_cast<size_t>(rootPc)] <= prefs.extensionThreshold) {
-                augFactor *= 0.5;
+                augFactor *= kAugThinEvidenceFactor;
             }
             if (tpl.quality == ChordQuality::Augmented) {
                 const double thirdW = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
@@ -1380,7 +1432,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     && fifthW <= prefs.extensionThreshold
                     && min7W <= prefs.extensionThreshold
                     && maj7W <= prefs.extensionThreshold) {
-                    augFactor *= 0.5;
+                    augFactor *= kAugThinEvidenceFactor;
                 }
             }
             augFactorMatrix[rootPc][tplIdx] = augFactor;
@@ -1396,7 +1448,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // promoting slash-chord candidates that are missing a triad tone (the
     // Iter 90 regression mode).  Gated on jointScoringEnabled so single-tick
     // (status-bar / unit test) inputs preserve their pre-Iter-92 scores.
-    static constexpr double kWComplete = 0.50;
+    // (kWComplete relocated to file scope for the Stage-5 override mechanism.)
     auto wCompleteBonus = [&](const TemplateDef& tpl, int rootPc, int candBassPc) -> double {
         if (!jointScoringEnabled || candBassPc != rootPc || distinctPcs != 3) {
             return 0.0;
@@ -1422,10 +1474,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         // is still excluded — an absent tone gives pcWeight = 0.  `thr` is
         // accepted into the API for a future tightening pass.
         (void)thr;
-        constexpr double kPresenceThreshold = 0.05;
-        const bool allTriadPresent = (rootW > kPresenceThreshold)
-                                  && (thirdW > kPresenceThreshold)
-                                  && (fifthW > kPresenceThreshold);
+        // (kPresenceThreshold relocated to file scope as kWCompletePresenceThreshold
+        //  for the Stage-5 override mechanism — same 0.05 value.)
+        const bool allTriadPresent = (rootW > kWCompletePresenceThreshold)
+                                  && (thirdW > kWCompletePresenceThreshold)
+                                  && (fifthW > kWCompletePresenceThreshold);
         return allTriadPresent ? kWComplete : 0.0;
     };
 

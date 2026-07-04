@@ -21,6 +21,7 @@
  */
 
 #include "chordanalyzer.h"
+#include "../param/paramoverride.h"   // Stage-5 fitter: optional constant override (D-6)
 
 #include <algorithm>
 #include <cstdint>
@@ -28,6 +29,30 @@
 #include <vector>
 
 namespace mu::composing::analysis {
+
+// ── Stage-5 fitter: §6-block gate margins (G7) relocated to file scope ───────────
+// Moved here (from applyPostScoringGates locals / a nested block) with unchanged
+// values so the parameter-override mechanism can register their addresses at
+// static-init (a function-local static is not initialized until its function first
+// runs — too late for the startup-time override loader). Byte-identical when no
+// override is loaded: same literals, read exactly as before; the loader is the only
+// writer. applyPostScoringGates is production-only and odr-used, so registration runs.
+// See cowork_stage5_fitter_design.md D-6 (§6-block dissolution is Phase-2 family 2).
+namespace {
+double kGateIMargin = 0.45;              ///< Gate I: first-inversion Min→Maj
+double kGateKMargin = 0.20;              ///< Gate K: first-inversion Aug
+double kGateLMargin = 0.35;              ///< Gate L: same-root Aug→Maj
+double kHalfDimFirstInversionBonus = 0.55; ///< Iter-61 Option B: HalfDim first-inversion bonus (under preferMinorOverMajorAdd6)
+
+const bool s_registerGateMarginParams = [] {
+    namespace P = mu::composing::params;
+    P::registerDouble("kGateIMargin",              &kGateIMargin);
+    P::registerDouble("kGateKMargin",              &kGateKMargin);
+    P::registerDouble("kGateLMargin",              &kGateLMargin);
+    P::registerDouble("kHalfDimFirstInversionBonus", &kHalfDimFirstInversionBonus);
+    return true;
+}();
+} // namespace
 
 void applyPostScoringGates(
     std::vector<ChordAnalysisResult>& results,
@@ -49,9 +74,8 @@ void applyPostScoringGates(
 
     // Gate margin guards (corpus-tuned).  All reachable corpus targets have
     // margins well within these bounds.
-    static constexpr double kGateIMargin = 0.45;   // Gate I: first-inversion Min→Maj
-    static constexpr double kGateKMargin = 0.20;   // Gate K: first-inversion Aug
-    static constexpr double kGateLMargin = 0.35;   // Gate L: same-root Aug→Maj
+    // (kGateIMargin/kGateKMargin/kGateLMargin relocated to file scope for the Stage-5
+    //  parameter-override mechanism — same values.)
 
     // ── Inversion / bass-root bias correction ────────────────────────────────
     //
@@ -284,7 +308,8 @@ void applyPostScoringGates(
                         // genuine Cm6/Cm69 chord vocabulary is idiomatic and
                         // must outrank the enharmonic Aø7/C inversion reading.
                         if (bestAltIsHalfDimInversion && prefs.preferMinorOverMajorAdd6) {
-                            constexpr double kHalfDimFirstInversionBonus = 0.55;
+                            // (kHalfDimFirstInversionBonus relocated to file scope for
+                            //  the Stage-5 override mechanism — same 0.55 value.)
                             results[bestAltIdx].identity.score += kHalfDimFirstInversionBonus;
                         }
                         std::stable_sort(results.begin(), results.end(),

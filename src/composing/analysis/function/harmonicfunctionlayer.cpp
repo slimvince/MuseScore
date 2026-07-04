@@ -23,6 +23,7 @@
 // harmonicfunctionlayer.cpp
 
 #include "harmonicfunctionlayer.h"
+#include "../param/paramoverride.h"   // Stage-5 fitter: optional constant override (D-6)
 
 #include <algorithm>
 #include <array>
@@ -32,6 +33,21 @@
 namespace mu::composing::function {
 
 using analysis::ChordQuality;
+
+// ── Stage-5 fitter: register the progression-signal constants (G6) ───────────
+// Byte-identical when no override file is loaded (the loader is the only writer).
+// This TU is odr-used (it defines the bonus functions), so the registration runs
+// at static-init. kStepBudget is registered too so the rider can pin it; the loader
+// recomputes it from kWStepIn/kWStepOut when those move and kStepBudget is not pinned.
+static const bool s_registerProgressionParams = [] {
+    namespace P = mu::composing::params;
+    P::registerDouble("kWSeq",       &kWSeq);
+    P::registerDouble("kWDim",       &kWDim);
+    P::registerDouble("kWStepIn",    &kWStepIn);
+    P::registerDouble("kWStepOut",   &kWStepOut);
+    P::registerDouble("kStepBudget", &kStepBudget);
+    return true;
+}();
 
 // ── Progression-signal bonus functions ──────────────────────────────────────
 

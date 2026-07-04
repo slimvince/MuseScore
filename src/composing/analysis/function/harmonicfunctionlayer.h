@@ -106,11 +106,20 @@ struct HarmonicFunctionContext {
 // competition pipeline, not of the vertical pitch scorer.
 // -----------------------------------------------------------------------
 
-inline constexpr double kWSeq = 0.20;  ///< Sequential root-progression bonus (Iter 95)
-inline constexpr double kWDim = 0.15;  ///< Dim/HalfDim leading-tone bonus (Iter 96)
-inline constexpr double kWStepIn   = 0.10;  ///< Stepwise-bass step-in bonus (Pass B)
-inline constexpr double kWStepOut  = 0.10;  ///< Stepwise-bass step-out bonus (Pass B)
-inline constexpr double kStepBudget = kWStepIn + kWStepOut + 0.01;  ///< m7-family guard tolerance
+// Stage-5 fitter: these five progression-signal constants are mutable globals (was
+// `inline constexpr`) so the optional parameter-override mechanism can register their
+// addresses (paramoverride.h; registered in harmonicfunctionlayer.cpp). Byte-identical
+// when no override is loaded — same literal initializers, read exactly as before; the
+// override loader is the only writer. kWStepIn/kWStepOut/kWSeq/kWDim have static
+// (constant) initializers, so they are initialized before kStepBudget's dynamic
+// initializer reads them — no cross-TU init-order hazard. kStepBudget keeps the exact
+// expression (not the literal 0.21) to preserve its last-bit IEEE value. See
+// cowork_stage5_fitter_design.md D-6.
+inline double kWSeq = 0.20;  ///< Sequential root-progression bonus (Iter 95)
+inline double kWDim = 0.15;  ///< Dim/HalfDim leading-tone bonus (Iter 96)
+inline double kWStepIn   = 0.10;  ///< Stepwise-bass step-in bonus (Pass B)
+inline double kWStepOut  = 0.10;  ///< Stepwise-bass step-out bonus (Pass B)
+inline double kStepBudget = kWStepIn + kWStepOut + 0.01;  ///< m7-family guard tolerance (DERIVED; loader recomputes)
 
 /// Score-threshold ratio. results[] admits every candidate whose signal-inclusive
 /// score is >= (winnerScore - winnerBassBonus) * kScoreThresholdRatio.

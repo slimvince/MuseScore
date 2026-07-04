@@ -27,6 +27,15 @@ target_sources(composing_analysis PRIVATE
     # back-edges. Pure relocation, byte-identical. See cowork_types_header_design.md.
     ${CMAKE_CURRENT_LIST_DIR}/types/analysistypes.h
 
+    # param/ — Stage-5 fitter: the OPTIONAL flag-gated parameter-override mechanism
+    # (design D-6 / A-6). A by-name registry of the scoring pipeline's mutable global
+    # constants + a strict line-based override loader, read once at analysis-binary
+    # startup (batch_analyze --param-override). Byte-identical when no override is
+    # loaded (the loader is the only writer). Depends only on the types leaf + STL.
+    # See cowork_stage5_fitter_design.md + cc_stage5_phase1_report.md.
+    ${CMAKE_CURRENT_LIST_DIR}/param/paramoverride.h
+    ${CMAKE_CURRENT_LIST_DIR}/param/paramoverride.cpp
+
     # chord/ — chord analysis, formatting, voicing
     ${CMAKE_CURRENT_LIST_DIR}/chord/analysisutils.h
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp

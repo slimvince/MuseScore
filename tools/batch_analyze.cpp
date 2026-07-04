@@ -87,6 +87,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 
 // ── Analysis ───────────────────────────────────────────────────────────────
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/param/paramoverride.h"   // Stage-5 fitter: --param-override
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/key/modepriorpresets.h"
@@ -1903,6 +1904,12 @@ static void printHelp(const std::string& prog)
         << "            'Default' is not a tuning preset: it reproduces the live\n"
         << "            product's out-of-box config (app mode-prior settings defaults\n"
         << "            + untouched chord prefs) for measurement (Stage 2.4 V4).\n"
+        << "  --param-override <file>\n"
+        << "            Stage-5 fitter (design D-6): override scoring-constant values by\n"
+        << "            name from a line-based file ('name value' per line, '#' comments).\n"
+        << "            Reaches the file-level scoring constants (G1/G6/G7) and the\n"
+        << "            ChordAnalyzerPreferences fields (G2-G5). Byte-identical when\n"
+        << "            absent; strict (an unknown name or malformed line aborts).\n"
         << "  --dump-regions <mode>\n"
         << "            Select which analysis path to serialize. 'batch' writes the\n"
         << "            tool's current batch path, 'notation' writes the live notation\n"
@@ -3626,6 +3633,11 @@ int main(int argc, char* argv[])
     // scale-membership contrast recovers A∩stable WITHOUT the windowBeats modulation
     // penalty — the crux of the wiring-increment spec.
     std::optional<double> ovInNeither, ovInKeySigOnly, ovInCandidateOnly, ovInBoth, ovLeadingTone;
+    // Stage-5 fitter: optional flag-gated parameter-override file (design D-6 / A-6).
+    // When absent, production analysis is byte-identical. When present, it overrides
+    // scoring-constant values by name BEFORE analysis runs. Applied after chordPrefs is
+    // built (below), so a prefs-field override lands on the preset-configured value.
+    std::optional<std::string> paramOverridePath;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -3634,6 +3646,13 @@ int main(int argc, char* argv[])
                 presetName = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --preset requires a name argument\n";
+                return 1;
+            }
+        } else if (a == "--param-override") {
+            if (i + 1 < args.size()) {
+                paramOverridePath = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --param-override requires a file argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -3895,6 +3914,22 @@ int main(int argc, char* argv[])
         // Standard, Modal, Contemporary: defaults + prefer Minor over Major add6
         chordPrefs.preferMinorOverMajorAdd6              = true;
         // maxTotalInversionContextBonus stays at default (2.0)
+    }
+
+    // ── Stage-5 fitter: apply the optional parameter override (design D-6) ──────
+    // Reaches the file-level scoring constants (registered globals: G1/G6/G7) AND the
+    // preset-configured ChordAnalyzerPreferences fields (G2–G5). Byte-identical when
+    // the flag is absent. Strict: an unknown name or malformed line aborts the run.
+    if (paramOverridePath) {
+        try {
+            const auto st = mu::composing::params::loadAndApply(*paramOverridePath, chordPrefs);
+            std::cerr << "param-override: applied " << st.applied << " overrides ("
+                      << st.globals << " global constants, " << st.prefsFields
+                      << " prefs fields) from " << *paramOverridePath << "\n";
+        } catch (const std::exception& e) {
+            std::cerr << "ERROR: --param-override: " << e.what() << "\n";
+            return 1;
+        }
     }
 
     // ── Initialize MuseScore headless ──────────────────────────────────────

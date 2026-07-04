@@ -65,6 +65,26 @@ The pipeline is:
 The analyzer is purely bottom-up — it does not know about secondary dominants,
 modulation, or progression context beyond a single chord's neighbours.
 
+### Scoring constants are readable from an optional override file (Stage-5 fitter)
+
+Every hand-chosen numeric scoring constant documented in this file — the §4
+bonus/penalty terms and joint-term weights (`kContradictionPenalty`,
+`kExtensionFactor*`, `kNonBassPenalty`, the `kWSeq`/`kWDim`/`kWStepIn`/`kWStepOut`
+progression signals, `kWComplete`, …), the §6 gate margins (`kGateIMargin`,
+`kGateKMargin`, `kGateLMargin`, `kHalfDimFirstInversionBonus`), and the
+`ChordAnalyzerPreferences` fields — is a **mutable global** (formerly `constexpr`),
+registered by name in `analysis/param/paramoverride.h`. The Stage-5 fitter (design
+`cowork_stage5_fitter_design.md` D-6) can override these values by name from an
+OPTIONAL external file, read once at analysis-binary startup
+(`batch_analyze --param-override <file>`). **When no override file is passed the
+behavior and output are byte-identical** to the pre-mechanism scorer — the globals
+keep their literal initializers, are read exactly as before, and the override loader
+is the only writer (proven per-preset over the full corpus). The override loader is
+strict (an unknown name or malformed line aborts the run). The dormant-chain
+struct-member defaults (Layer-5 confidence/resolver, phrase-boundary weights, the
+voice-leading axis) are NOT reachable through this mechanism — they are consumed only
+by the default-off dormant chain and are Phase-2/3 fit targets, not Phase-1 ones.
+
 ---
 
 ## 2. Templates
@@ -212,7 +232,8 @@ is trusted byte-identical. (A regression test pinning these near-tie cases is St
 
 ### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`
 
-**Definition (chordanalyzer.cpp:1117).** Applied per `(rootPc, tplIdx)` for
+**Definition (`chordanalyzer.cpp`, the `kDim7CharacteristicBonus` file-scope constant,
+applied in the `dim7CharacteristicBonus()` helper).** Applied per `(rootPc, tplIdx)` for
 Diminished templates when:
 
 1. The `dim7 PC` (rootPc + 9) is sounding above `extensionThreshold`.
@@ -371,13 +392,14 @@ clean 1.90 vs 1.52 raw lead.
 
 ### `w_complete` — `kWComplete = 0.50`
 
-Lambda at chordanalyzer.cpp:~L2084. Fires when:
+`kWComplete` file-scope constant in `chordanalyzer.cpp`, applied in the
+`wCompleteBonus` lambda inside `analyzeChord`. Fires when:
 
 - `jointScoringEnabled` (region came from `collectRegionTones`),
 - `candBassPc == rootPc` (root position),
 - `distinctPcs == 3` (exactly three PCs in the region),
 - all three triad tones (root, third, fifth per quality) present above the
-  `kPresenceThreshold` (0.05).
+  `kWCompletePresenceThreshold` (0.05).
 
 Reward: root-position complete triads outrank slash-chord readings of the
 same PC set (closes Bug 2 — bwv310 m8 b3 Em/C vs C major). Iter 90's
@@ -386,9 +408,12 @@ absent tone has `pcWeight == 0` which fails the presence check.
 
 ### `w_stepIn` / `w_stepOut` — `kWStepIn = kWStepOut = 0.10`
 
-Lambdas at chordanalyzer.cpp:~L2157 and ~L2165. Reward root-position
-candidates whose root participates in semitone / whole-tone bass motion from
-the previous region (`stepIn`) and/or to the next region (`stepOut`).
+`kWStepIn` / `kWStepOut` constants in `harmonicfunctionlayer.h`; applied by
+`fn::wStepInBonus` / `fn::wStepOutBonus` through `applyStepBonusGuard`
+(`harmonicfunctionlayer.cpp`), Pass B of the competition pipeline (Stage-3.3 migration
+— they no longer live in `chordanalyzer.cpp`). Reward root-position candidates whose
+root participates in semitone / whole-tone bass motion from the previous region
+(`stepIn`) and/or to the next region (`stepOut`).
 
 **Four gates (each load-bearing):**
 
@@ -422,7 +447,9 @@ simplify without understanding the specific failure each one prevents.
 
 ### `w_seq` — `kWSeq = 0.20`
 
-Lambda at chordanalyzer.cpp:~L2190 (Iter 95). Fires when:
+`kWSeq` constant in `harmonicfunctionlayer.h`; applied by `fn::wSeqBonus`
+(`harmonicfunctionlayer.cpp`, Iter 95; Stage-3.3 migration out of `chordanalyzer.cpp`).
+Fires when:
 
 - `jointScoringEnabled`, `context` available,
 - the call site is in `ScoringPhase::Final` (the stateless `wSeqBonus` is simply not
@@ -439,7 +466,9 @@ signal: any inversion of the candidate qualifies (the bonus does NOT require
 
 ### `w_dim` — `kWDim = 0.15`
 
-Lambda at chordanalyzer.cpp:~L2209 (Iter 96). Fires when:
+`kWDim` constant in `harmonicfunctionlayer.h`; applied by `fn::wDimBonus`
+(`harmonicfunctionlayer.cpp`, Iter 96; Stage-3.3 migration out of `chordanalyzer.cpp`).
+Fires when:
 
 - `jointScoringEnabled`, `context` available,
 - the call site is in `ScoringPhase::Final` (the stateless `wDimBonus` is simply not
@@ -616,8 +645,12 @@ it publishes the inputs the gates need (`pcWeight`, `tpcForPc`, `scale`,
 out-parameter. Production call sites in `regionanalyzer.cpp` (Pass 1, Pass 2,
 Pass 2b), `harmonicsegmenter.cpp`, the notation bridges, and `inferNextRootPc()`
 call `applyPostScoringGates()` *after* `applyHarmonicFunction()`. Tests use the
-`analyzeWithGates()` helper in `test_helpers.h`. The line numbers in the table
-below reference the corresponding code inside `applyPostScoringGates()`.
+`analyzeWithGates()` helper in `test_helpers.h`. The table below identifies each gate
+by name; all are implemented inside `applyPostScoringGates()` (`postscoringgates.cpp`).
+The gate margins are the file-scope constants `kGateIMargin` / `kGateKMargin` /
+`kGateLMargin` (relocated to file scope for the Stage-5 override mechanism — see the
+§1 note); the "Location" column names the gate's code region rather than a line number
+(the former `~Lxxxx` anchors predated refactor #1's move out of `chordanalyzer.cpp`).
 
 **Outer guard — covers ALL of A–L, including the bias correction.** Everything in
 `applyPostScoringGates` runs inside one block gated on
@@ -634,16 +667,26 @@ executes LAST, after K and L. The table below follows execution order.
 
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
-| **Bias correction** | ~L2639 | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
-| **A (Minor-add6 ↔ HalfDim7 enharmonic flip)** | ~L2733 | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **Gates B/C/D removed (Stage 3.4b):** they were provably unreachable dead code — Gate A has exactly these conditions with no temporal requirement, and B/C/D repeated them *plus* temporal evidence behind `!didEnharmonicFlip`, so A always fired first (Stage-1b F1). Removal was byte-identical (0/353 × 3 configs, snapshots zero-diff) — the deliberate gate-retirement audit, not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
-| **E (first-inversion Minor → Major)** | ~L2820 | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
-| **F (second-inversion → root-position Major)** | ~L2842 | Alt Major at `(rootPc+5)%12`, stepwise bass. | Swap. | Bass = P5 of actual root; B winning when E/B is correct. |
-| **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | ~L2907 | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-B/C/D on temporal context. | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
-| **H (augmented rotation)** | ~L2992 | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |
-| **I (first-inversion Major over root-position Minor)** | ~L3044 | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |
-| **K (first-inversion Augmented)** | ~L3080 | Winner Augmented bass-root, alt at I4 interval, alt root diatonic, margin ≤ 0.20. | Swap. | bwv40.6 m=6: A+ → F♯5/A. |
-| **L (Major over Augmented same-root)** | ~L3117 | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
-| **J (vii° → V7 completion) — runs LAST** | ~L3151 | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
+| **Bias correction** | bias correction | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
+| **A (Minor-add6 ↔ HalfDim7 enharmonic flip)** | Gate A region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **Gates B/C/D removed (Stage 3.4b):** they were provably unreachable dead code — Gate A has exactly these conditions with no temporal requirement, and B/C/D repeated them *plus* temporal evidence behind `!didEnharmonicFlip`, so A always fired first (Stage-1b F1). Removal was byte-identical (0/353 × 3 configs, snapshots zero-diff) — the deliberate gate-retirement audit, not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
+| **E (first-inversion Minor → Major)** | Gate E | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
+| **F (second-inversion → root-position Major)** | Gate F | Alt Major at `(rootPc+5)%12`, stepwise bass. | Swap. | Bass = P5 of actual root; B winning when E/B is correct. |
+| **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-B/C/D on temporal context. | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
+| **H (augmented rotation)** | Gate H | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |
+| **I (first-inversion Major over root-position Minor)** | `kGateIMargin` | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |
+| **K (first-inversion Augmented)** | `kGateKMargin` | Winner Augmented bass-root, alt at I4 interval, alt root diatonic, margin ≤ 0.20. | Swap. | bwv40.6 m=6: A+ → F♯5/A. |
+| **L (Major over Augmented same-root)** | `kGateLMargin` | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
+| **J (vii° → V7 completion) — runs LAST** | Gate J (last) | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
+
+**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip
+block.** When the `preferMinorOverMajorAdd6` path (Gate-A / G-family region) identifies
+a HalfDiminished **first-inversion** alternative as the best Minor-preferring reading,
+its score is raised by `kHalfDimFirstInversionBonus` before the re-sort, so a genuine
+Cm6 reading outranks the enharmonic Aø7/C first-inversion (Iter-61 "Option B", which
+moved BIR=true 7→6). Located in `postscoringgates.cpp` (relocated to a file-scope
+constant for the Stage-5 override mechanism — see the §1 note); fires only under the
+`preferMinorOverMajorAdd6` flag (Baroque/Standard true, Jazz/Default false). It is a
+§6-block dissolution target (Stage-5 family 2).
 
 **Known asymmetries (pinned as-is in `postscoringgates_tests.cpp`, Stage-1b F4–F8):**
 
