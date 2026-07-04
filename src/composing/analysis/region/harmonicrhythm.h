@@ -87,6 +87,14 @@ struct HarmonicRegion {
 
     // ── Layer-5 override-readiness forward-carry (IN-MEMORY ONLY, no consumer yet) ──
     // The ranked alternative KEYS the Layer-5 modulation recompute selects among, plus
+    // ★ D-L3a (CLOSED — confidence contract §3 / §7): `keyConfidence` below is THE
+    // Layer-3 boundary confidence — the chosen key's Class-M sequence margin. The
+    // emission sigmoid (keyModeResult.normalizedConfidence) is NOT the boundary
+    // confidence: it is demoted to an internal gate input (the 0.8 KeyArea / cadence
+    // annotate gate) plus diagnostic export. The C1 reliability curves decided this —
+    // the margin is 2.8–3.1× better calibrated than the sigmoid on every preset
+    // (cc_c1_reliability_report.md §3). Declaration only; no wiring/threshold change.
+    //
     // the chosen key's sequence-margin confidence (the override-bar input). Filled at
     // the slice→region key reduction (regionanalyzer.cpp localKeyForRegion) so the
     // Layer-5 confidence-weighted forward override can SELECT among the keys the key
@@ -108,7 +116,7 @@ struct HarmonicRegion {
     // adding them is byte-identical. Empty / 0.0 until the Layer-3 decode runs (the live
     // analyzeRegions key path); has NO consumer — it exists for Layer 5.
     std::vector<KeyModeAnalysisResult> keyAlternatives; ///< region-level ranked candidate keys (excl. the chosen)
-    double keyConfidence = 0.0;                          ///< chosen key's sequence-margin confidence (≠ keyModeResult.normalizedConfidence)
+    double keyConfidence = 0.0;                          ///< THE Layer-3 boundary confidence: chosen key's Class-M sequence margin (D-L3a; ≠ keyModeResult.normalizedConfidence, the internal/diagnostic emission sigmoid)
 };
 
 } // namespace mu::composing::analysis

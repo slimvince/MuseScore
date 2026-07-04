@@ -99,7 +99,7 @@ struct KeyModeAnalysisResult {
     KeySigMode mode = KeySigMode::Ionian;      ///< Detected mode
     int tonicPc = 0;                     ///< Pitch class of the mode's tonic (0=C, 2=D, etc.)
     double score = 0.0;                  ///< Raw confidence score; higher is better
-    double normalizedConfidence = 0.0;   ///< 0.0–1.0 confidence (see §5.7)
+    double normalizedConfidence = 0.0;   ///< [0,1] EMISSION SIGMOID (see §5.7). Role (confidence contract §3 / D-L3a): an INTERNAL gate input (the 0.8 KeyArea/cadence annotate gate) + diagnostic export — NOT the Layer-3 boundary confidence, which is the sequence margin (SliceKeyMode.confidence → HarmonicRegion.keyConfidence).
 
     /// Convenience: true when mode has a major third (Ionian, Lydian, Mixolydian).
     bool isMajor() const { return keyModeIsMajor(mode); }

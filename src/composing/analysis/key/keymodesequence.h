@@ -198,9 +198,11 @@ public:
     /// SIDE-EFFECT (since the Layer-3 wiring): each returned SliceKeyMode's
     /// `chosen.normalizedConfidence` is the EMISSION-scale confidence for the
     /// chosen state at that slice — the analyzeKeyMode winner sigmoid
-    /// (keymodeanalyzer.cpp) computed over keyPrefs, so it is on the scale the 0.8
-    /// downstream key-confidence gates are calibrated for (C1). The sequence-margin
-    /// confidence remains on `SliceKeyMode.confidence`.
+    /// (keymodeanalyzer.cpp) computed over keyPrefs, so it is the input the 0.8
+    /// downstream key-confidence annotate gate consumes (C1) — an INTERNAL gate
+    /// input, NOT the Layer-3 boundary confidence (D-L3a). The sequence-margin
+    /// confidence — THE Layer-3 boundary confidence — remains on
+    /// `SliceKeyMode.confidence`.
     static std::vector<SliceKeyMode> decode(
         const std::vector<slicing::Slice>& slices,
         const notemodel::NoteModel& noteModel,

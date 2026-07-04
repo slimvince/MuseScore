@@ -728,6 +728,9 @@ analyzeSection(const mu::engraving::Score* sc,
     // A new KeyArea opens at the first region, then only when:
     //   (a) the region's (keyFifths, mode) differs from the enclosing area, AND
     //   (b) the region's normalizedConfidence >= kAnnotateKeyConfidenceThreshold (0.8).
+    // (b) reads the emission sigmoid as an INTERNAL gate input — the sigmoid's declared
+    // role (confidence contract §3 / D-L3a); it is NOT the Layer-3 boundary confidence
+    // (the sequence margin). Gate input + constant unchanged by the close-out.
     //
     // Regions that disagree with the enclosing area but fall below the threshold
     // are silently grouped into the enclosing area (keyAreaId unchanged).

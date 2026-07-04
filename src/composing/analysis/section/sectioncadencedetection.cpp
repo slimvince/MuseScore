@@ -49,6 +49,10 @@ namespace mu::composing::analysis {
 bool hasAssertiveKeyConfidence(
     const mu::composing::analysis::KeyModeAnalysisResult& kmr)
 {
+    // Gates on the emission sigmoid (normalizedConfidence) as an INTERNAL 0.8 threshold
+    // — the sigmoid's declared production role (confidence contract §3 / D-L3a: it is a
+    // gate input, not the Layer-3 boundary confidence, which is the sequence margin).
+    // Input + constant left UNCHANGED by the D-L3a close-out (declaration only).
     return kmr.normalizedConfidence >= kAnnotateKeyConfidenceThreshold;
 }
 

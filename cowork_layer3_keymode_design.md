@@ -13,8 +13,10 @@
 > delivery plan's labels; the plan that defines them is `cowork_layer3_keymode_impl_design.md`.)*
 > **Deferred follow-ups (tracked):** the Step-2 scaleMembership reweight (KEY-metric-gated, chord/BIR-flat); the P4
 > tick-local path (still on the resolver → P4-redecode); re-split (c) for within-region modulation; S1 full
-> seed-retire; and the sequence-margin confidence redesign. The resolver + `collectPitchContext` remain only as the
-> diagnostic/grading baseline. The
+> seed-retire. (The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3
+> confidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the
+> emission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.) The
+> resolver + `collectPitchContext` remain only as the diagnostic/grading baseline. The
 > formalized architecture document for the key/mode layer; follows the standard section structure in
 > `cowork_design_doc_template.md`. The order the code will be built in (coding increments) is delivery sequencing and
 > lives in the delivery plan (`cowork_layer3_keymode_impl_design.md`), not in this architecture document. *(Two template sections do not apply:
@@ -34,7 +36,7 @@ prose definitions of this layer's own coinages are in the §12 glossary; this ta
 | **Local-fit score** | Per slice, per candidate key/mode: how well the candidate fits the notes in and around the slice (§5 step 1). |
 | **Sequence** | The chosen key/mode per slice, read left-to-right in time, decided as one whole (§4). |
 | **Change cost** | The penalty for changing key/mode between consecutive slices (§5 step 2); same units as the local-fit score. |
-| **Confidence (sequence margin)** | How much better the winning sequence is than the best sequence forced to a different key/mode at that slice (§5 step 4). Declared **Class M** (a margin, not a calibrated probability) under the cross-layer confidence contract (`cowork_confidence_contract.md`); its published boundary form is governed there (close-out D-L3a). |
+| **Confidence (sequence margin)** | How much better the winning sequence is than the best sequence forced to a different key/mode at that slice (§5 step 4). Declared **Class M** (a margin, not a calibrated probability) under the cross-layer confidence contract (`cowork_confidence_contract.md`). **As-built (D-L3a CLOSED, 2026-07-04): this sequence margin (`HarmonicRegion.keyConfidence`) IS the layer's published boundary confidence**; the per-slice emission sigmoid (`normalizedConfidence`) is an internal gate input (the downstream 0.8 KeyArea/cadence annotate gate) + diagnostic, NOT the boundary confidence. |
 | **"Uncertain" mark** | Set on a slice whose sequence-margin confidence is below the tunable uncertainty level (§5 step 4). |
 | **Carried alternatives** | The ranked runner-up key/modes each slice keeps so a later layer can *select* among them without re-deriving (§1). |
 | **Reach-back** | This layer's bounded-context extension request: asking Architectural Layer 1 to widen the analysed span earlier in time (`cowork_bounded_context_design.md`; §2). |
@@ -427,7 +429,7 @@ so the two combine on one scale. **Best-sequence algorithm** — the standard on
 single highest-scoring sequence given per-slice scores and change costs; this is the literature's **Viterbi**
 dynamic-programming decode (Section 14), named plainly in the body. **Carried (alternatives)** — the ranked
 runner-up key/modes each slice keeps and hands forward so a later layer can select among them without re-deriving. **Confidence (sequence margin)** — how much
-better the winning sequence is than the best sequence forced to pick a different key/mode at that slice. **"Uncertain"
+better the winning sequence is than the best sequence forced to pick a different key/mode at that slice; **as built (D-L3a) this is the layer's published boundary confidence**, distinct from the internal emission sigmoid (`normalizedConfidence`, which only feeds the 0.8 annotate gate + diagnostics). **"Uncertain"
 mark** — set on a slice whose confidence is low (a near-tie). **Reach-back** — asking Architectural Layer 1 to widen
 the analysed span earlier in time to gain context.
 

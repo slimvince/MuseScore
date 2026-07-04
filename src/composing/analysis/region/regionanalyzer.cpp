@@ -389,7 +389,9 @@ void applyJointKeyWiring(const mu::engraving::Score* score,
     // local candidates (a modulation-span state the Viterbi committed).  Conservative
     // and SUB-threshold (< kAnnotateKeyConfidenceThreshold 0.8) so such a region does
     // NOT spuriously open a KeyArea / fire a cadence; the matched-candidate path
-    // (the common case) carries the real calibrated normalizedConfidence.  [empirical]
+    // (the common case) carries the local candidate's emission sigmoid
+    // (normalizedConfidence) — the 0.8 gate's input, NOT the Layer-3 boundary
+    // confidence (the sequence margin; confidence contract §3 / D-L3a).  [empirical]
     constexpr double kJointModulationFallbackConfidence = 0.5;
 
     // (a) notation-derived inputs — IDENTICAL to the diagnostic (batch_analyze main()).
@@ -511,6 +513,12 @@ void applyJointKeyWiring(const mu::engraving::Score* score,
         // override-bar scale). Byte-identical on production: this path is gated OFF by
         // default (jointKeyWiringEnabled()) AND the carry has no production consumer
         // (cowork_phase5c_step4_report.md §6 byte-identity proof).
+        //
+        // ★ D-L3a note: this is a DOCUMENTED margin-less stand-in, NOT the re-pointable
+        // D-L5a analogue — the joint re-key path computes no sequence margin, so there is
+        // no margin to publish here (the sigmoid is the only available [0,1] key
+        // confidence). A proper per-region margin on the re-key path is a joint-key /
+        // Layer-5-wiring job (recorded, not this close-out).
         std::vector<KeyModeAnalysisResult> rekeyedAlts;
         rekeyedAlts.reserve(perRegionRanked[i].size());
         for (const KeyModeAnalysisResult& lc : perRegionRanked[i]) {
