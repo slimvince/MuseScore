@@ -29,7 +29,8 @@
   "Container = distant_listening_corpus has 40 submodules (census '41' was an overcount; verified from .gitmodules 2026-07-02).",
   "annotation_beds (Wave-2, cc_corpus_wave2_report.md): expert LABEL layers over scores (schema/texture) or a standalone phrase-marked melody bed, for validating axis-2 (voice leading). kind='annotation-bed'; extra fields kind/axis2_role/target_corpus/label_count. All held-out (never tuned against), hash-pin-only under gitignored corpora/annot/. They add labels over already-held scores (schema/texture over Mozart) or material outside the discovery views (Essen monophonic, no chords) — NOT analysis/gate corpora.",
   "wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo jazz-corpus/weimar slices) + cadence/form/dual-annotator beds (algomus-data quartets+fugues, WiR interior inventory) + figured bass (BCFB; DCMLab/figured-bass WALKED = a realization TOOL not GT) + trees/reduction (schenker41, protovoice-annotations [the N9 gating inspection], GTTM) + plain-score stress (OpenScore Lieder/StringQuartets, ASAP) + gated/unavailable records (EWLD, HookTheory full, Sears Haydn) + the humdrum-data enumeration closure (71 repos, cloned nothing). Each row carries a `needs_coverage` note scored against the FULL vector N1-N20 (census §8c intake rule). All held-out (never tuned against); cloned beds are hash-pin-only under gitignored corpora/gt| corpora/plain/ (WJD pinned by sha256; non-git). status: onboarded|walked|inventory|gated|unavailable|recorded|enumerated.",
-  "wave3 ADDENDUM (cc_wave3_addendum_report.md, 2026-07-04): two DDMAL direct pickups added to wave3_sources — key_modulation_dataset (KMT, the N5 upstream the Wave-3 correction named; 201 annotated Humdrum .krn across 5 textbooks; CC-BY-SA scores/MIT code) and flexible_harmonic_chorale_annotations (571 chorales, permutational multi-reading harmony in an R-package binary; GPLv3; RECORD-ONLY re the gate — 371 Bach chorales overlap the gate repertoire). Same addendum exposes the parser-dropped figbass/pedal columns (see the clarifying clause)."
+  "wave3 ADDENDUM (cc_wave3_addendum_report.md, 2026-07-04): two DDMAL direct pickups added to wave3_sources — key_modulation_dataset (KMT, the N5 upstream the Wave-3 correction named; 201 annotated Humdrum .krn across 5 textbooks; CC-BY-SA scores/MIT code) and flexible_harmonic_chorale_annotations (571 chorales, permutational multi-reading harmony in an R-package binary; GPLv3; RECORD-ONLY re the gate — 371 Bach chorales overlap the gate repertoire). Same addendum exposes the parser-dropped figbass/pedal columns (see the clarifying clause).",
+  "ACQUISITION ROUND (cc_acquisition_round_report.md, 2026-07-04): the union-search-approved pickups (cowork_union_search_record.md §6, user-disposed) added to wave3_sources — N9 voice-separation beds piano_svsep (MIT code; GT graphs fetched at runtime from fosfrancesco/piano_corpora_dcml), mcma (475 .mxl, one-voice-per-track; CC-BY-NC-SA-4.0), vocsep_ijcai2023 (MIT; ~1,054 graphs built at runtime from bach-370-chorales + Haydn/Mozart SQ + MCMA); N14 mikrokosmos_difficulty (147 MusicXML, henle labels, no license); N12 guitarset (annotation.zip sha256-pinned, 360 .jams, CC-BY-4.0; audio not downloaded); multi-need batik_plays_mozart (36 Mozart-sonata movements — harmony/cadence/phrase CSVs N1/N4 + .match trill-mark structure N13-partial; no license); CIPI (gated, Zenodo request-access, user form pending) + PSyllabus (recorded, 7,901 recordings, no symbolic scores). TWO record license mismatches CORRECTED at the data (MCMA = CC-BY-NC-SA-4.0 not CC-BY; vocsep = MIT not unstated). The PDMX N12 <harmony> counting pass was ATTEMPTED + STOPPED (held form = metadata-only CSV; see the pdmx row's needs_coverage). New gt_type values this round: 'voice' (N9 voice-separation) and 'difficulty' (N14). All held-out; hash-pin-only."
  ],
  "distant_listening_corpus": {
   "submodule_count": 40,
@@ -1492,7 +1493,8 @@
    "split": "held-out",
    "provenance_url": "https://zenodo.org/records/15571083",
    "pinned_commit": null,
-   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md)."
+   "notes": "Jazz/plain-score validation only, no GT (score_inventory.md).",
+   "needs_coverage": "N12 (realized-texture chord-symbol subset) — COUNTING PASS ATTEMPTED + STOPPED (cc_acquisition_round_report.md §Task-3). The HELD form is METADATA-ONLY: tools/pdmx/PDMX.csv (a 250k-row, 225 MB index) + derived jazz_candidates.csv + 5 spot-check .mxl. It carries NO chord-symbol field — `n_annotations`/`has_annotations` conflate ALL annotation types (chord symbols + dynamics + tempo + text; per analyze_pdmx.py's own note), `tracks` = instrument-program codes ('0-0'), and there is no n_chords/n_harmony column. The raw MXL (the `mxl` column paths, in mxl.tar.gz) and the per-score MusicRender JSON (the `metadata` column paths) live ONLY in the Zenodo archive (record 15571083), NOT on disk. Counting <harmony>/ChordSymbol would require fetching mxl.tar.gz + parsing per file, or the MusicRender JSON form — a re-download/acquisition (a FUTURE user decision), which the read-only, do-not-re-download dispatch forbids. No proxy was invented (has_annotations would over-count). The symbol-bearing multi-voice subset stays UNMEASURED."
   }
  ],
  "annotation_beds": [
@@ -1861,6 +1863,200 @@
    "pinned_commit": "87efd245d5ede4054af07bc8ab5b98929dd2500b",
    "needs_coverage": "N2 candidate (a SECOND, MULTI-READING annotation layer over gate-class Bach chorales — the 'flexible'/permutational method admits MULTIPLE valid harmonic readings per slice with filtering functions, unlike a single canonical RN) + N1-residual (harmony GT over Bach chorales). ⚠ OVERLAPS THE GATE REPERTOIRE: the 371 Bach chorales are the Breitkopf/Doerffel 371 Four-Part Chorales (KernScores lineage — the same works as the music21 gate corpus). RECORD-ONLY this dispatch: NOT wired to / compared against / bulk-diffed with the gate corpus; any use over gate pieces is a FUTURE USER ruling (census §4 dedupe / M3 contamination lesson). WALK finding: the annotation GT is bundled in the R-package BINARY (6.8 MB data.table), NOT a directly-readable text/Humdrum spine — the kernData/ .krn are **kern-ONLY scores (verified: 572/572 files carry only **kern). Coverage: 572 .krn = 371 Bach + 201 Praetorius files (200 logical; 130a/130b split); README says 571 — reported-not-accepted. The 200 Praetorius chorales are NEW (not available elsewhere per README) and lie OUTSIDE the gate repertoire.",
    "notes": "Wave-3 addendum (cc_wave3_addendum_report.md). 572 .krn (371 Bach / 201 Praetorius files); analysis in R-package binary. GPLv3. RECORD-ONLY re gate. Held-out."
+  },
+  {
+   "name": "piano_svsep",
+   "container": "CPJKU/piano_svsep",
+   "content": "Piano Staff and Voice Separation (Foscarin/Karystinaios/Nakamura/Widmer, ISMIR 2024): a GNN that clusters notes into chords and links them into voices+staves. The repo ships CODE + pretrained models; the GT graph dataset (the `dcml` set — per-note voice+staff+chord-cluster labels over DCML-corpus piano scores, cross-staff voices included) is FETCHED AT RUNTIME, not committed",
+   "pieces": 393,
+   "annotated_pieces": 393,
+   "gt_type": "voice",
+   "gt_layers": [
+    "voice",
+    "staff",
+    "chord-cluster"
+   ],
+   "annotation_standard": "graph GT (DGL heterograph): per-note voice-link + staff + chord-cluster edges, built by the loader from engraved MusicXML voice/staff assignments",
+   "score_format": "code (Python) + fetched MusicXML (DCML piano corpora)",
+   "alignment": "score-derived (engraving voices)",
+   "license_class": "MIT (code)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/CPJKU/piano_svsep",
+   "pinned_commit": "1462e7c28d7adaae033150883a7cb00238ee364a",
+   "needs_coverage": "★ N9 PRIMARY (stream/voice-separation GT, notated-polyphony half — per-note voice+staff+chord-cluster labels incl. homophonic (chord) voices and CROSS-STAFF voices; the SOTA piano voice/staff task set). N1-adj. VERIFIED at data: the repo ships CODE (piano_svsep/ package + pretrained_models + one test_score artifact) — NOT the GT graphs. `DCMLPianoCorporaDataset` FETCHES the raw data at runtime from github.com/fosfrancesco/piano_corpora_dcml.git (scores/<collection>/*.musicxml; per-note voice/staff GT derived from the engraving). PIN = the code repo; the ACTUAL GT lives at the fetch path (a follow-on pin candidate, NOT fetched this round). The companion `jpop` set is CONFIRMED non-public (README + MusescoreJPopDataset docstring 'not publicly available … only for reference') — access-path line, not chased. OVERLAP by work: the 393 are DCML piano corpora = the same family as our held DLC piano members (mozart/beethoven/chopin/scarlatti/kozeluh/…); the exact 393↔DLC map needs the piano_corpora_dcml manifest (not fetched). CAVEAT (record §1): labels originate from engraved notation — for piano, engraving-voice ≈ the inference target (the SOTA field accepts this); stated at intake.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). Code repo pinned; GT fetched at runtime from fosfrancesco/piano_corpora_dcml. MIT (code). Held-out."
+  },
+  {
+   "name": "mcma",
+   "container": "skalo/mcma (GitLab)",
+   "content": "Multitrack Contrapuntal Music Archive (Aljanaki/Kalonaris/Micchi/Nichols 2021): symbolic Baroque/contrapuntal works hand-edited so every polyphonic work has one INDEPENDENT PART PER TRACK (incl. keyboard fugues, inventions, WTC I/II) — flat per-note voice GT by construction",
+   "pieces": 475,
+   "annotated_pieces": 475,
+   "gt_type": "voice",
+   "gt_layers": [
+    "voice"
+   ],
+   "annotation_standard": "one-voice-per-track MusicXML (voice = the track assignment; per-piece metadata.csv carries 'Number of Tracks', instruments, provenance)",
+   "score_format": "compressed MusicXML (.mxl)",
+   "alignment": "score-aligned",
+   "license_class": "CC-BY-NC-SA-4.0",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://gitlab.com/skalo/mcma",
+   "pinned_commit": "2bdb12e233420163d4d1b52c5ecba3d2bd84231e",
+   "needs_coverage": "★ N9 (stream/voice-separation GT — flat per-note voice = the one-voice-per-track assignment, the cleanest-form voice GT; hand-exploded Baroque counterpoint). N18-adj (fugues/canons). VERIFIED at data: 475 .mxl (matches the record's ~475) + 12 metadata.csv + 11 json. Track-count split RE-COUNTED at the data from metadata.csv 'Number of Tracks' = 153 two-track / 239 three-track / 83 four-plus (73×4 + 8×5 + 2×6) = 475 — EXACTLY the record's 239/153/83. Composers: albinoni, bach_js (goldberg, inventions, kunst_der_fuge, sinfonias, WTC I, WTC II), becker, buxtehude, lully, … ★ LICENSE MISMATCH reported-not-accepted: the LICENSE file is CC-BY-NC-SA-4.0, NOT the record's 'CC BY 4.0' — the NC clause matters for any commercial use (T-32); research mirroring unaffected. OVERLAP by work: MCMA's bach_js WTC I/II + inventions overlap the WiR WTC-I interior slice (24) + the algomus bach-wtc-i fugue labels; recorded, NOT wired.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). 475 .mxl; split 153/239/83 verified. CC-BY-NC-SA-4.0 (record said CC-BY — corrected). Held-out."
+  },
+  {
+   "name": "vocsep_ijcai2023",
+   "container": "manoskary/vocsep_ijcai2023",
+   "content": "Voice Separation as Link Prediction (Karystinaios et al., IJCAI 2023): a heterogeneous-GNN voice-separation model. The repo ships CODE; its ~1,054-graph note-collection is BUILT AT RUNTIME from external score sources (Bach 370 Chorales, Haydn + Mozart string quartets, MCMA)",
+   "pieces": 1054,
+   "annotated_pieces": 1054,
+   "gt_type": "voice",
+   "gt_layers": [
+    "voice"
+   ],
+   "annotation_standard": "note-graph GT: one node per note, voice-link edges (consecutive-in-same-voice); built by the loaders from engraved-notation voices",
+   "score_format": "code (Python); graphs built from fetched .krn/MusicXML",
+   "alignment": "score-derived (engraving voices)",
+   "license_class": "MIT",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/manoskary/vocsep_ijcai2023",
+   "pinned_commit": "82152a9591ba2759a556a6f9f52fd8eab771ca4a",
+   "needs_coverage": "N9 (stream/voice-separation GT — the largest of the three N9 beds by graph count). VERIFIED at data: the repo ships CODE (vocsep/ package), NOT committed graphs — vocsep/data/datasets/ has the loaders bach_chorales.py (url=github.com/craigsapp/bach-370-chorales), haydn_string_quartets.py, mozart_string_quartets.py, mcma.py; the ~1,054-graph collection is BUILT AT RUNTIME from those. PIN = the code repo; the source scores are fetched/held separately. ★ LICENSE MISMATCH reported-not-accepted: the LICENSE file is MIT (Copyright 2023 Emmanouil Karystinaios), NOT the record's 'unstated' — vocsep IS MIT-licensed. CAVEAT (record §1): labels are notation-derived (engraving voices) — weaker as an inference GT than de-novo stream annotation, except the WTC fugues (which arrive via the MCMA dependency). CONTENT NOTE: the committed loaders are chorales/Haydn-SQ/Mozart-SQ/MCMA — the record's 'Inventions/WTC' arrive through MCMA (the README results table reports Inventions/WTC I/WTC II). DEDUPE: shares source material with our MCMA clone + the held Bach chorales.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). Code repo pinned; 1054 graphs built at runtime from bach-370-chorales + Haydn/Mozart SQ + MCMA. MIT (record said unstated — corrected). Held-out."
+  },
+  {
+   "name": "mikrokosmos_difficulty",
+   "container": "PRamoneda/Mikrokosmos-difficulty",
+   "content": "Bartok Mikrokosmos with expert difficulty labels (Ramoneda et al.): the 147 Mikrokosmos pieces in MusicXML, each carrying a Henle-derived difficulty label (the difficulty-classification benchmark)",
+   "pieces": 147,
+   "annotated_pieces": 147,
+   "gt_type": "difficulty",
+   "gt_layers": [
+    "difficulty"
+   ],
+   "annotation_standard": "per-piece difficulty label (henle_difficulty in metadata; 3-class classification target) + cross-validation splits.json; metadata JSONs (bartok/books/henle) + mikrokosmos_metadata.csv",
+   "score_format": "MusicXML (.xml)",
+   "alignment": "n/a (whole-piece label)",
+   "license_class": "unclear (no LICENSE file)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/PRamoneda/Mikrokosmos-difficulty",
+   "pinned_commit": "f77aebc1d4f2b06d5161c95575972540a8dc5b80",
+   "needs_coverage": "★ N14 PRIMARY (difficulty/grade labels — the OPEN, symbolic-score half; consumer T-32). VERIFIED at data: 147 .xml MusicXML (matches the record's 147); metadata/mikrokosmos_metadata.csv carries henle_difficulty (e.g. 'Piano 1 easy') as the label source; splits.json = CV folds; metadata JSONs bartok/books/henle. NO LICENSE FILE (matches record §3) → hash-pin-only. T-32 CAVEAT (rides the product-tool register): a research-validation label source, research-only at origin like every real N14 source; a COMMERCIAL grading feature needs a license path. DEDUPE: disjoint from all held repertoire GT (Bartok Mikrokosmos, not in the DLC/WiR/chorale sets).",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). 147 MusicXML; henle-difficulty 3-class labels. No license file. Held-out."
+  },
+  {
+   "name": "guitarset",
+   "container": "Zenodo 10.5281/zenodo.3371780 (GuitarSet annotation artifact)",
+   "content": "GuitarSet (Xi et al., ISMIR 2018): 360 guitar excerpts with rich JAMS annotations — instructed-chart chord symbols vs performed comping, per-string MIDI notes, beats, keys. The ANNOTATION artifact only (the audio artifacts are NOT our material)",
+   "pieces": 360,
+   "annotated_pieces": 360,
+   "gt_type": "chords",
+   "gt_layers": [
+    "chords-instructed",
+    "chords-performed",
+    "notes",
+    "beats",
+    "key"
+   ],
+   "annotation_standard": "JAMS (per excerpt: chord (instructed) + chord (performed), note_midi per string, beat_position, key_mode)",
+   "score_format": "JAMS (.jams; symbolic annotation over audio)",
+   "alignment": "onset-timed (over the audio recordings)",
+   "license_class": "CC-BY-4.0",
+   "distribution": "hash-pin-only",
+   "tier": "J",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://zenodo.org/records/3371780",
+   "pinned_commit": "sha256:8daa02e6417ccca1685feb44b135e95928ad7037e5032ecb326b5791856fda99",
+   "needs_coverage": "N12 (realized-texture chord symbols — the small CLEAN pair set: instructed CHART chord vs performed polyphonic COMPING, the exact symbol-vs-realization contrast). N5-adj (key_mode). VERIFIED at data: annotation.zip = 39,132,574 bytes (matches Zenodo), sha256-pinned (pinnable-source rule; non-git artifact); 360 .jams (matches the record's 360). Excerpt names encode style/tempo/key + comp|solo (e.g. 03_SS1-100-C#_comp.jams, 04_Jazz2-110-Bb_solo.jams). ANNOTATION-ONLY: the 4 audio zips (mono-mic 657 MB, mono-pickup-mix 683 MB, hex-pickup original 3.21 GB / debleeded 3.61 GB) are NOT our material — their URLs are recorded, none downloaded. CAVEAT: audio-domain (JAMS over recordings), so the chord/comping contrast is the value, not an engraved-score bed.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). annotation.zip sha256-pinned; 360 jams. CC-BY-4.0. Audio not downloaded. Held-out."
+  },
+  {
+   "name": "batik_plays_mozart",
+   "container": "huispaty/batik_plays_mozart",
+   "content": "Batik-plays-Mozart (Hu & Widmer 2023): 12 complete Mozart piano sonatas (36 movements) performed on a computer-monitored Bösendorfer, note-aligned to the New Mozart Edition scores, with the DCML 'Annotated Mozart Sonatas' harmony/cadence/phrase annotations aligned to the score parts",
+   "pieces": 36,
+   "annotated_pieces": 36,
+   "gt_type": "rn",
+   "gt_layers": [
+    "harmony",
+    "cadence",
+    "phrase",
+    "match",
+    "trill-mark"
+   ],
+   "annotation_standard": "per-movement score-part CSVs (_spart_harmony.csv globalkey/localkey/numeral/chord_type, _spart_cadence.csv, _spart_phrases.csv) + partitura .match performance-score alignment (snote↔note, trill-mark attribute on score notes, insertion lines for performed notes)",
+   "score_format": "MusicXML scores + MIDI performances + .match alignments + annotation CSVs",
+   "alignment": "score-aligned + performance-aligned",
+   "license_class": "unclear (no LICENSE file)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/huispaty/batik_plays_mozart",
+   "pinned_commit": "30256ca48f4a1a77425b2ed47f0ce2cd2a672758",
+   "needs_coverage": "★ MULTI-NEED (the record §2 star). N1 (harmony RN — _spart_harmony.csv carries full DCML columns globalkey/localkey/chord/numeral/chord_type/chord_label) + N4 (cadence — _spart_cadence.csv) over 12 Mozart sonatas / 36 movements. N13-partial (ornament realization): the .match files anchor score notes bearing the `trill-mark` attribute (VERIFIED: kv279_1.match has 49 trill-mark snotes + 163 insertion lines) to performed insertion notes → trill realizations are RECOVERABLE by a grouping heuristic, NOT shipped as labeled pairs (structure VERIFIED on one file; NO extraction built, per the dispatch). N15-adj (performance timing, out of corpus scope). VERIFIED at data: 36 scores (12 sonatas × 3 mvts), score_parts_annotated/ CSVs present; the annotations/ dir is an UNPOPULATED git SUBMODULE (the upstream DCML Annotated Mozart Sonatas — not fetched by a plain clone; the materialized annotations live in score_parts_annotated/). NO LICENSE FILE (matches record §2) → hash-pin-only. ⚠ OVERLAP: the harmony/cadence GT = the DCML Annotated Mozart Sonatas = our held mozart_piano_sonatas (DLC) + the WiR Mozart RN — recorded, NOT wired/diffed against the gate.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). 36 movements; harmony/cadence/phrase CSVs + .match; trill-mark structure verified (kv279_1). annotations/ = empty submodule. No license file. Held-out."
+  },
+  {
+   "name": "cipi",
+   "container": "Zenodo 10.5281/zenodo.8037327 (Ramoneda et al., CIPI)",
+   "content": "'Can I Play It?' (CIPI): 652 classical-piano pieces with expert-verified Henle 1–9 difficulty levels; MusicXML included — the largest expert-verified symbolic difficulty set",
+   "pieces": 652,
+   "annotated_pieces": 652,
+   "gt_type": "difficulty",
+   "gt_layers": [
+    "difficulty"
+   ],
+   "annotation_standard": "per-piece Henle 1–9 difficulty level (expert-verified); MusicXML scores",
+   "score_format": "MusicXML",
+   "alignment": "n/a (whole-piece label)",
+   "license_class": "unclear (research-only, gated)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "gated",
+   "split": "held-out",
+   "provenance_url": "https://zenodo.org/records/8037327",
+   "pinned_commit": null,
+   "needs_coverage": "★ N14 PRIMARY (difficulty/grade GT — the LARGEST expert-verified symbolic set, Henle 1–9, MusicXML included; consumer T-32). GATED: Zenodo restricted-access, research-only — requires a request-access form (USER ACTION pending, per the disposition). Not obtainable in a non-interactive session; access path recorded. Mikrokosmos (onboarded) is the open committable N14 slice; CIPI lands on access grant. T-32 CAVEAT (product-tool register): research-only at origin — commercial grading needs a license path.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). Gated (Zenodo request-access; user form pending). Held-out."
+  },
+  {
+   "name": "psyllabus",
+   "container": "Zenodo 10.5281/zenodo.14794592 (PSyllabus)",
+   "content": "PSyllabus: 7,901 piano recordings labeled on a unified 11-level difficulty scale distilled from real exam-board syllabi (ABRSM/RCM/Trinity…). NO symbolic scores (audio + MIDI only)",
+   "pieces": 7901,
+   "annotated_pieces": 7901,
+   "gt_type": "difficulty",
+   "gt_layers": [
+    "difficulty"
+   ],
+   "annotation_standard": "per-recording 11-level difficulty label (exam-board-syllabus-derived)",
+   "score_format": "audio + MIDI (NO symbolic score)",
+   "alignment": "n/a (whole-recording label)",
+   "license_class": "unclear (CC-BY badge but 'research use only' text)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "recorded",
+   "split": "held-out",
+   "provenance_url": "https://zenodo.org/records/14794592",
+   "pinned_commit": null,
+   "needs_coverage": "N14-adj (difficulty labels at the largest scale + the richest exam-board provenance, but NO SYMBOLIC SCORES — audio/MIDI only, so not directly usable as a score-difficulty GT; consumer T-32). RECORDED (no clone): the label taxonomy + provenance are the value; the missing scores make it adjacent, not primary. T-32 CAVEAT: research-only text at origin. Full needs row so intake scoring exists if a score-bearing derivative appears.",
+   "notes": "Acquisition round (cc_acquisition_round_report.md). Recorded (7,901 recordings, no symbolic scores). Held-out."
   },
   {
    "name": "choco_jazz_corpus_slice",

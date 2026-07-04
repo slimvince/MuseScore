@@ -379,6 +379,49 @@ git clone https://github.com/DDMAL/Flexible_harmonic_chorale_annotations \
   && git -C Flexible_harmonic_chorale_annotations checkout 87efd245d5ede4054af07bc8ab5b98929dd2500b
 ```
 
+### corpora/gt/ — the ACQUISITION ROUND (2026-07-04)
+
+The union-search-approved pickups (`cowork_union_search_record.md` §6, user-disposed; full inventory +
+paper-claim verification in `cc_acquisition_round_report.md`): N9 voice-separation beds + N14 Mikrokosmos +
+N12 GuitarSet (annotation artifact) + multi-need Batik-plays-Mozart. All hash-pin-only, held-out, gitignored
+under `corpora/gt/`. **Two record license mismatches CORRECTED at the data:** MCMA = **CC-BY-NC-SA-4.0**
+(record said CC-BY-4.0); vocsep = **MIT** (record said unstated). piano_svsep + vocsep ship CODE — their GT
+graphs are FETCHED/BUILT at runtime (the pin captures the loader + fetch path; the raw GT is a follow-on).
+GuitarSet = a downloaded artifact pinned by **sha256** (pinnable-source rule; audio NOT downloaded).
+
+```bash
+cd corpora/gt
+# N9 voice-separation GT (notated-polyphony half)
+#   piano_svsep = CODE (MIT); GT graphs fetched at runtime from github.com/fosfrancesco/piano_corpora_dcml
+git clone https://github.com/CPJKU/piano_svsep \
+  && git -C piano_svsep checkout 1462e7c28d7adaae033150883a7cb00238ee364a
+#   MCMA = 475 .mxl, one-voice-per-track (split 153/239/83 verified); CC-BY-NC-SA-4.0
+git clone https://gitlab.com/skalo/mcma \
+  && git -C mcma checkout 2bdb12e233420163d4d1b52c5ecba3d2bd84231e
+#   vocsep = CODE (MIT); ~1,054 graphs built at runtime from bach-370-chorales + Haydn/Mozart SQ + MCMA
+git clone https://github.com/manoskary/vocsep_ijcai2023 \
+  && git -C vocsep_ijcai2023 checkout 82152a9591ba2759a556a6f9f52fd8eab771ca4a
+# N14 difficulty labels (open half) — 147 MusicXML, henle 3-class labels; NO license file -> hash-pin-only
+git clone https://github.com/PRamoneda/Mikrokosmos-difficulty \
+  && git -C Mikrokosmos-difficulty checkout f77aebc1d4f2b06d5161c95575972540a8dc5b80
+# multi-need: 12 Mozart sonatas (36 mvts) harmony/cadence/phrase CSVs (N1/N4) + .match trill-mark structure (N13-partial); NO license file
+git clone https://github.com/huispaty/batik_plays_mozart \
+  && git -C batik_plays_mozart checkout 30256ca48f4a1a77425b2ed47f0ce2cd2a672758
+
+# N12 — GuitarSet ANNOTATION artifact only (JAMS): 360 excerpts, instructed vs performed chords + notes/beats/key.
+#   pinnable-source rule: pinned by sha256, NOT a git repo. The 4 audio zips (657 MB-3.61 GB) are NOT downloaded.
+mkdir -p guitarset && curl -sSL -o guitarset/annotation.zip \
+  https://zenodo.org/api/records/3371780/files/annotation.zip/content
+#   sha256 = 8daa02e6417ccca1685feb44b135e95928ad7037e5032ecb326b5791856fda99  (39.1 MB, 360 .jams, CC-BY-4.0)
+```
+
+  **Recorded (no clone):** CIPI (Zenodo `10.5281/zenodo.8037327` — 652 pieces, Henle 1-9, MusicXML;
+  **gated**, request-access, USER form pending) and PSyllabus (Zenodo `10.5281/zenodo.14794592` — 7,901
+  recordings, no symbolic scores; recorded). **PDMX N12 `<harmony>` counting pass: ATTEMPTED + STOPPED** —
+  the held form (`tools/pdmx/PDMX.csv` metadata index + 5 spot-check .mxl) has no chord-symbol column and
+  the raw MXL lives only in the Zenodo archive; counting would require a re-download the read-only dispatch
+  forbids (see `cc_acquisition_round_report.md` §Task-3 and the `pdmx` registry row).
+
   **Inventoried, not re-cloned (already held):** the ChoCo `jazz-corpus` (160 jams) +
   `weimar` (916 jams) partitions in `corpora/ship/choco`; the WiR interior slices in
   `tools/dcml/when_in_rome` (TAVERN 27 dual, HaydnSun 32, BPS-FH 86, WTC-I 24/31, Lieder RN

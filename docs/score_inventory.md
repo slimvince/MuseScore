@@ -295,9 +295,27 @@ beds; `corpora/plain/` = plain-score stress material.
   multi-reading** harmony GT in an R-package binary (N2 candidate); GPLv3. **⚠ RECORD-ONLY** — its 371 Bach
   chorales overlap the gate repertoire; never wired to / compared against the gate corpus (future user ruling).
 
+**Acquisition round (2026-07-04, `cc_acquisition_round_report.md`) — the union-search-approved pickups under `corpora/gt/`:**
+- `piano_svsep` (CPJKU, ISMIR 2024) — **N9 voice/staff separation**; ships CODE (MIT), GT graphs fetched at runtime from
+  `fosfrancesco/piano_corpora_dcml` (393 DCML piano pieces; `jpop` companion confirmed non-public).
+- `mcma` (skalo, GitLab) — **N9**; 475 `.mxl` one-voice-per-track Baroque counterpoint (split 153/239/83 verified);
+  **CC-BY-NC-SA-4.0** (record said CC-BY — corrected).
+- `vocsep_ijcai2023` (manoskary, IJCAI 2023) — **N9**; ships CODE (**MIT** — record said unstated), ~1,054 graphs built at
+  runtime from bach-370-chorales + Haydn/Mozart SQ + MCMA.
+- `Mikrokosmos-difficulty` (PRamoneda) — **N14 difficulty**; 147 MusicXML, henle 3-class labels; **no LICENSE** → hash-pin-only.
+- `guitarset/annotation.zip` (Zenodo 3371780) — **N12**; sha256-pinned JAMS artifact, 360 excerpts (instructed vs performed
+  chords + notes/beats/key); CC-BY-4.0; audio NOT downloaded.
+- `batik_plays_mozart` (huispaty) — **multi-need**; 12 Mozart sonatas (36 mvts) harmony/cadence/phrase CSVs (N1/N4) + `.match`
+  trill-mark structure (N13-partial, verified — no extraction built); **no LICENSE** → hash-pin-only. ⚠ its harmony/cadence GT =
+  the DCML Annotated Mozart Sonatas we already hold (recorded, never wired to the gate).
+- **Recorded (no clone):** CIPI (Zenodo 8037327, gated, USER access form pending) + PSyllabus (Zenodo 14794592, no scores).
+- **PDMX N12 counting pass: STOPPED** — the held form is metadata-only (no chord-symbol column; raw MXL only on Zenodo); a
+  count would need a re-download the read-only dispatch forbids (see the report §Task-3 + the `pdmx` registry row).
+
 Pins + verification: `tools/score_census_registry.json → wave3_sources`; reproduction in `tools/REPRODUCIBILITY.md`;
 full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`
-(+ the two addendum pickups + the `figbass`/`pedal` parser exposure in `cc_wave3_addendum_report.md`).
+(+ the two addendum pickups + the `figbass`/`pedal` parser exposure in `cc_wave3_addendum_report.md`; + the acquisition
+round in `cc_acquisition_round_report.md`).
 
 ---
 
