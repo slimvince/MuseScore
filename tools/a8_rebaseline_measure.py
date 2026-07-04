@@ -240,8 +240,13 @@ def batch_gate_cases(ours_regions, m21_regions, wir_regions):
     return cases
 
 
-def measure_preset(preset, out_dir):
-    corpus_dir = _ROOT / "tools" / "corpus" / preset
+def measure_preset(preset, out_dir, corpus_root=None):
+    # corpus_root: the dir holding the per-preset corpus subdirs (<root>/<preset>).
+    # Default = tools/corpus (the frozen corpus). The Stage-5 fitter passes a scratch
+    # root so a fitted regen is measured WITHOUT touching the frozen corpus. Default
+    # (None) is byte-identical to the historical hardcoded path.
+    corpus_root = Path(corpus_root) if corpus_root else (_ROOT / "tools" / "corpus")
+    corpus_dir = corpus_root / preset
     cbf.validate_corpus_dir(corpus_dir)   # manifest / no-contamination gate (raises on fail)
 
     ours_files = sorted(corpus_dir.glob("*.ours.json"))
@@ -477,13 +482,23 @@ def build_mapping(batch_cases, grid_by_stem):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", required=True)
+    # Stage-5 fitter additive flags (byte-identical to the historical run when unused).
+    ap.add_argument("--corpus-root", default=None,
+                    help="Root dir holding the per-preset corpus subdirs (<root>/<preset>). "
+                         "Default: tools/corpus. Pass a manifest-stamped scratch root to "
+                         "measure a fitted regen without touching the frozen corpus.")
+    ap.add_argument("--preset", default=None, choices=PRESETS,
+                    help="Measure only this preset (default: all three). The single-preset "
+                         "run is byte-identical to the full run for the preset it covers.")
     args = ap.parse_args()
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    presets = [args.preset] if args.preset else PRESETS
     summary = {}
-    for preset in PRESETS:
-        res, a_runs, b_runs, batch_cases = measure_preset(preset, out_dir)
+    for preset in presets:
+        res, a_runs, b_runs, batch_cases = measure_preset(preset, out_dir,
+                                                          corpus_root=args.corpus_root)
         summary[preset] = res
         print(f"[{preset}] validated grid==oracle OK; "
               f"batch_gate={res['batch_gate_count']} "
