@@ -447,6 +447,19 @@ are independent.*
 | 5.1 | Calibrate emission/transition constants against aligned DCML corpora (structured perceptron or coordinate search), Baroque/Jazz presets as separate fits; existing hard stops as constraints | Part 1 rec. 3 | held-out corpus split; per-preset before/after table |
 | 5.2 | Re-baseline BIR/rn_agree; retire constants that fit to zero. **MANDATORY (was optional): granularity-robust metric definition** — the batch-granularity gate undercounts user-visible per-beat errors ~7× (2.2-i dossier §3); the fitting objective must not inherit that bias. **Equally mandatory: a human-only (DCML-only) gate variant** — the current "genuine" filter requires music21∩DCML agreement, i.e. an ALGORITHM adjudicates which DCML disagreements count (music21 is NOT ground truth — user mandate 2026-06-10; see corpus audit C2). The fitting objective must not be filtered by another analyzer's opinion. **Coverage fact (hygiene pass): only 326/353 gate chorales have WiR human annotations at all — 27 scores can never produce a "genuine" error.** The gate's true shape: human-adjudicated coverage of 326, music21-filtered, batch granularity — all three qualifiers must be addressed here. Also re-measure the cross-corpus rn numbers (27.6%/53.8% are pre-F1-metric, stale). **Stage-3.1b added measured evidence:** the P3 window-vs-whole-score A/B (`docs/p3_granularity_ab_3_1b.md`) shows the granularity choice changes per-tick DCML accuracy by **double digits** (window-vs-whole-score combined 59/41 root-correct, Mozart 35/65) — the finer per-tick view is more DCML-accurate, the coarser section view is self-consistent with the chord track; the granularity-robust metric and the P3↔P1 product question are both decided here, not by cache architecture | Part 1; dossier §3/§6; corpus audit; p3_granularity_ab_3_1b | STATUS.md baselines |
 
+**★ FITTING-POOL LICENSE CONSTRAINT (user-ratified 2026-07-04; census §8c; binding on the Stage-5 fit).**
+Weights intended to SHIP are fitted **only** on the PD / CC0 / CC-BY(-SA) pool — the reference Bach
+chorales (PD scores) with their WiR human annotations (CC-BY-SA), plus CoCoPops / BCFB / GuitarSet /
+OpenEWLD / OpenScore when their ground truth is conversion-ready. The **NC-class** sources (all 40 DLC
+corpora, MCMA, Essen, Chordonomicon, NC ChoCo partitions) and all **no-license** sources (Mikrokosmos,
+Batik, iRb …) are **held-out validation / QA / statistics ONLY — they must never shape a shipped
+parameter**. Measurement ground truth is not a shipped parameter (the A-8 metric may keep DCML/WiR as its
+adjudication source). The fitter's **objective-vs-validation source split is declared in
+`cowork_stage5_fitter_design.md` §3a**; full statement: `cowork_score_census.md` §8c.
+
+**Stage-5 design SIGNED 2026-07-04:** `cowork_stage5_fitter_design.md`; A-3 ruled = Jazz fit deferred to the
+jazz-GT conversion (the idiom-#2 Baroque/Default target is fitted now).
+
 ---
 
 ## Stage 6 — Functional layer *(functional chord correctness — E4)*
