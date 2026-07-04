@@ -143,6 +143,10 @@ proof-of-absence. The closest full system remains Contrapunctus (standalone, non
   ("name this cadence" drawn from pieces they play). Stands on: E-10 + the analysis outputs.
 - **T-32 Difficulty/complexity grading.** Harmonic/contrapuntal complexity estimation per piece/passage
   (idiom + chromaticism + texture axes) — repertoire selection for educators. Stands on: both axes + calibration.
+  **★ License caveat (union search, ratified 2026-07-04):** every real piece→grade label source found
+  (CIPI/Henle, PSyllabus/exam boards, pianosyllabus.com) is research-only or proprietary at origin — a
+  COMMERCIAL grading feature needs a negotiated license path or own-built labels; CIPI+Mikrokosmos cover
+  research validation only. Record: `cowork_union_search_record.md` §3.
 
 ## 2. Inferrer-side requirements to note NOW (the product pull on contracts)
 

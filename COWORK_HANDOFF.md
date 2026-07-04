@@ -5,12 +5,36 @@ This header is the fresh-session entry point; full narratives live in STATUS.md 
 
 ## ★ START HERE — state, dispatch, queue (2026-07-04)
 
-**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_wave3_addendum.md`** — the Wave-3
-addendum: (a) two DDMAL direct pickups (the KMT `key_modulation_dataset` upstream — the real home of the
-key/modulation GT the audit wrongly placed inside WiR; the `Flexible_harmonic_chorale_annotations` walk —
-RECORD-ONLY, it overlaps the gate repertoire) + (b) the queued `pedal`/`figbass` parser-column exposure
-(additive fields in `tools/dcml_parser.py`, byte-identity of all existing outputs proven, per-corpus
-non-empty counts reported) + the fold of the named Cowork files.
+**✅ ACQUISITION ROUND CC-DELIVERED (2026-07-04, awaiting Cowork verification).** `cc_instruction_acquisition_round.md`
+executed; report `cc_acquisition_round_report.md`; commit `4997757298` (registry+provenance, +8 additive
+`wave3_sources` rows, deterministic regen 80→88, purely additive) + the fold (this commit). **6 sources
+cloned/pinned+verified, 2 recorded, 1 counting pass STOPPED:** N9 — piano_svsep @ `1462e7c2` (MIT **code**; GT
+graphs FETCHED AT RUNTIME from `fosfrancesco/piano_corpora_dcml` — pin=code+fetch-path; `jpop` non-public), MCMA @
+`2bdb12e2` (475 .mxl, split **153/239/83 re-counted**; ★ **license CORRECTED CC-BY→CC-BY-NC-SA-4.0**), vocsep @
+`82152a95` (★ **MIT, not "unstated"**; ~1,054 graphs BUILT AT RUNTIME from bach-370-chorales+Haydn/Mozart-SQ+MCMA);
+N14 — Mikrokosmos @ `f77aebc1` (147 MusicXML, henle 3-class, no license); N12 — GuitarSet annotation.zip
+**sha256-pinned** (360 .jams, CC-BY-4.0; the 4 audio zips 657 MB–3.61 GB recorded, NOT downloaded); multi-need —
+Batik @ `30256ca4` (36 Mozart-sonata mvts; harmony/cadence CSVs **N1/N4** + the **trill-mark N13-partial structure
+VERIFIED** on kv279_1.match [49 trill-marks + 163 insertions; no extraction built]; no license; `annotations/`=empty
+submodule = the held DCML Annotated Mozart Sonatas, recorded not wired); CIPI recorded **gated** (USER form pending)
++ PSyllabus recorded (no scores). **★ Task 3 (PDMX `<harmony>` count) ATTEMPTED + STOPPED, correctly (NOT a wave
+stop):** the HELD form is METADATA-ONLY (`tools/pdmx/PDMX.csv` index + 5 spot-check .mxl) — no chord-symbol column
+(`has_annotations` conflates all annotation types), and the raw MXL + MusicRender JSON live only in the Zenodo archive
+→ counting needs a re-download the read-only dispatch forbids; **no proxy invented, the subset stays UNMEASURED**
+(recorded in the `pdmx` row `needs_coverage`). **Two record license mismatches reported-not-accepted** (MCMA
+CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions ×3 + before==after byte-identical ×3;
+registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
+program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
+
+**NO ACTIVE DISPATCH after this ratifies (one-CC-dispatch rule).** **NEXT: the Stage-5 fitter arc (gate dissolution =
+OWED refactor #2)**, per the ratified order — Cowork prepares the dispatch just-in-time.
+
+**✅ WAVE-3 ADDENDUM LANDED + RATIFIED (2026-07-04).** `c28f4064ee`/`3713636dd9`/`9441e94551`, all
+verified at objects (parser diff insertions-only; KMT 201 kern Cowork-corroborated at the live clone).
+KMT (the N5 upstream) is ON DISK; the Flexible 571-chorale multi-reading set is pinned RECORD-ONLY
+(gate-repertoire overlap; analysis GT = an R binary); `DcmlRegion.figbass/pedal` exposed additively —
+123,881 / 23,476 non-empty cells across the 40 DLC corpora, byte-identity proven (gate + characterise +
+A-8 outputs all identical pre/post).
 
 **✅ ADDENDUM CC-DELIVERED (2026-07-04, awaiting Cowork verification at objects).** Report
 `cc_wave3_addendum_report.md`. `c28f4064ee` (Task A: +2 `wave3_sources` rows, regen 78→80 — KMT
@@ -68,15 +92,16 @@ bin 0 (spike-dominated max-norm). All recorded for the Stage-5 fitter, nothing f
 1. **✅ The Wave-3 addendum CC-DELIVERED (2026-07-04)** — DDMAL pickups + `pedal`/`figbass` exposure + fold
    landed (`c28f4064ee`/`3713636dd9`/this fold); byte-identity proven; awaiting Cowork verification. No open
    CC dispatch — NEXT is the union search disposition (item 2, user) → the Stage-5 fitter arc (item 3).
-2. **✅ Union search round RUN (2026-07-04, parallel with the addendum) — awaiting user disposition:**
-   `cowork_union_search_record.md` (§6 = the disposition surface). Headlines: N9's notated-polyphony half
-   has real candidates (piano_svsep — per-note voice GT over DCML scores we hold — + MCMA CC-BY); the
-   implied-polyphony half is a CONFIRMED-final negative; N13 negative confirmed (R-1 ships rule-based as
-   predicted; Batik-plays-Mozart = multi-need intake candidate); N14 found CIPI/Mikrokosmos/PSyllabus
-   (all research-only at origin — T-32 commercial caveat); N12-realized = the PDMX `<harmony>` counting
-   pass over the HELD copy (cheap local measurement) + GuitarSet; N19 confirmed build-not-download
-   (Dahn/F&C real-music seeds + the synthetic route, owned by VL-H's design gate). Census §8c state
-   columns updated. The record doc rides the fold AFTER disposition.
+2. **✅ Union search round RUN + DISPOSED (2026-07-04, §6 items 1–5 ALL user-approved):**
+   `cowork_union_search_record.md` (status banner = the rulings). Consequences applied: census §8c
+   N9/N12/N13/N14/N19 state columns; T-32 commercial-license caveat in the product-tool register; VL
+   design §15-4 update + new §15-10 (VL-H build-not-download). **QUEUED NEXT CC DISPATCH (written
+   just-in-time after the addendum ratifies): the acquisition round** — piano_svsep + MCMA +
+   vocsep_ijcai2023 (N9) · Mikrokosmos (N14) · GuitarSet (N12) · Batik-plays-Mozart (multi-need
+   N1/N4/N13-partial) · the PDMX `<harmony>` read-only counting pass (N12 measurement) · CIPI enters
+   when the user's Zenodo access request (USER ACTION, form at zenodo.org/records/8037327) is granted.
+   Uncommitted Cowork files awaiting that dispatch's fold: `cowork_union_search_record.md`,
+   `cowork_product_tool_register.md`, `cowork_voiceleading_axis_design.md`, census/handoff/STATUS deltas.
 3. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
    discharges here**; R10 completes the A-8 re-baseline; C2 θ re-expression; Class-P maps; C3 joint-step design.
    (OWED refactor #1, the `chordanalyzer.cpp` file split, stays parked BY ratified R9 — after E4, "split once".)

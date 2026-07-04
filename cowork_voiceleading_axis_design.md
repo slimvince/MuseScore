@@ -642,7 +642,19 @@ where the harmonic study needed lead-sheet-less sources).
    `3dce4ab8`: 1,164 bar labels keyed (K-id, mn) directly to our DCML Mozart clone; also the §15-1 reference);
    the schemata bed (VL-F — DCML `schema_annotation_data`, pin `76f810a1`: 273 instances at pin / 244 at the
    paper snapshot; self-contained score bundle, same works as the DCML sonatas, distinct encoding). **Still
-   open:** an implied-polyphony stream-labeled bed (VL-D's target task — no candidate found; the gap stands).
+   open:** an implied-polyphony stream-labeled bed (VL-D's target task). **★ Union-search update (ratified
+   2026-07-04, `cowork_union_search_record.md` §1):** the NOTATED-polyphony half now has ratified acquisition
+   candidates — piano_svsep (393 pieces, per-note voice+staff GT over DCML piano scores we hold), MCMA (~475,
+   CC-BY, hand-exploded Baroque voices), vocsep_ijcai2023 (1,054, notation-derived) — acquisition rides the
+   next corpus dispatch; the IMPLIED-polyphony half is a **confirmed-final negative** (VoiSe/Gray-Bunescu
+   never released). VL-D's design decides whether notated-voice GT suffices for its v1 target (add to §15-8's
+   decision list). Also held: protovoice-annotations (38, reduction-encoded, partial).
+   **★ ACQUIRED (2026-07-04, `cc_acquisition_round_report.md`):** all three N9 beds cloned + pinned + verified —
+   piano_svsep @ `1462e7c2` (MIT code; GT graphs fetched at runtime from `fosfrancesco/piano_corpora_dcml`),
+   MCMA @ `2bdb12e2` (475 `.mxl`, split 153/239/83 verified; **license CORRECTED to CC-BY-NC-SA-4.0** — the
+   above "CC-BY" was the record's error, the NC clause matters for VL-H's downstream commercial posture),
+   vocsep_ijcai2023 @ `82152a95` (MIT — not "unstated"; ~1,054 graphs built at runtime from bach-370-chorales +
+   Haydn/Mozart SQ + MCMA). All held-out; VL-D's §15-8 notated-voice-suffices decision now has the beds on disk.
 5. **VL-D/E/F/G/H design docs** — each written just-in-time when it is the next dispatch, per §5.4's gates.
 6. **The static-harmony/motion-type feature** recorded by the study as the natural home of the harmonic study's
    deferred "wobbly sixth" (modal/static jazz) — a *harmonic-axis* taxonomy refinement informed by axis-2
@@ -656,6 +668,14 @@ where the harmonic study needed lead-sheet-less sources).
    phrase-spans of the same voice (phrase elision — the cadence tone beginning the next phrase)? And do rests
    between phrases sit inside a phrase-span or between phrase-spans? Both are VL-E design-doc decisions, parallel
    to §15-8.
+10. **VL-H validation GT = BUILD, NOT DOWNLOAD (user-ratified ruling, 2026-07-04,
+    `cowork_union_search_record.md` §5).** No public part-writing-error/exercise dataset exists (the commercial
+    platforms Harmonia/Artusi hold exactly this data, closed — also demand evidence). VL-H's design doc owns the
+    construction, two named routes: (i) transcribe the REAL-music positive seeds — Luke Dahn's manuscript-checked
+    46 consecutive-5th/8ve instances in the Bach chorales (categorized fermata/NCT/chordal) + Fitsioris-Conklin's
+    18 parallel-5th passages — with the remaining chorales as near-negatives; (ii) a synthetic-violation corpus
+    (mutate correct solutions, auto-label the injected violation — every checker precedent's internal strategy).
+    Tooling precedents recorded: music21 theoryAnalyzer, FuxCP, Palestrina Pal, the Check-Fux plugin.
 
 ## 16. Ratification asks
 
