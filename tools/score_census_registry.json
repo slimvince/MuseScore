@@ -25,10 +25,11 @@
  "_notes": [
   "gt_type enum: rn|chords|key|cadence|phrase|none (+ schema|texture for annotation_beds). tier: G|J|C|S|X. distribution: committable|hash-pin-only. license_class: PD|CC0|CC-BY|CC-BY-NC|unclear (annotation_beds may carry a precise license token, e.g. ODbL/GPLv3 or CCARH-MuseData-NC). split: dev|held-out (held-out never tuned against; demotion to dev only by explicit recorded decision).",
   "All DLC members are distribution=hash-pin-only (gitignored under tools/dcml/; C1-audit mechanism) regardless of license_class. 28 of 40 DLC repos have NO in-repo LICENSE (license_class=unclear).",
-  "DLC 'pieces'=MS3 .mscx movement count; 'annotated_pieces'=harmonies TSV count. Every DLC harmonies TSV also carries cadence/form/phraseend columns (layer_label_counts) that dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4. CLARIFYING CLAUSE (audit-verified 2026-07-04, cowork_census_full_needs_audit.md §4): the `form` column is DCML chord-MORPHOLOGY (o/+/%/M — the label-grammar quality suffix), NOT form/section GT; N16 (form) is NOT covered by the DLC. The same TSVs also carry a `figbass` column (inversion figured-bass, N10) and a `pedal` column (pedal-point GT, N20), both parser-dropped — exposure is queued as its own post-wave increment.",
+  "DLC 'pieces'=MS3 .mscx movement count; 'annotated_pieces'=harmonies TSV count. Every DLC harmonies TSV also carries cadence/form/phraseend columns (layer_label_counts) that dcml_parser.py currently DROPS (reads only numeral/chord/keys) — see cc_corpus_wave1_report.md §4. CLARIFYING CLAUSE (audit-verified 2026-07-04, cowork_census_full_needs_audit.md §4): the `form` column is DCML chord-MORPHOLOGY (o/+/%/M — the label-grammar quality suffix), NOT form/section GT; N16 (form) is NOT covered by the DLC. The same TSVs also carry a `figbass` column (inversion figured-bass, N10) and a `pedal` column (pedal-point GT, N20); both were historically parser-dropped and are now EXPOSED as additive dcml_parser.DcmlRegion.figbass/pedal fields at the Wave-3 addendum (cc_wave3_addendum_report.md) — no consumer reads them yet (byte-identity proven), so the closure is exposure-only.",
   "Container = distant_listening_corpus has 40 submodules (census '41' was an overcount; verified from .gitmodules 2026-07-02).",
   "annotation_beds (Wave-2, cc_corpus_wave2_report.md): expert LABEL layers over scores (schema/texture) or a standalone phrase-marked melody bed, for validating axis-2 (voice leading). kind='annotation-bed'; extra fields kind/axis2_role/target_corpus/label_count. All held-out (never tuned against), hash-pin-only under gitignored corpora/annot/. They add labels over already-held scores (schema/texture over Mozart) or material outside the discovery views (Essen monophonic, no chords) — NOT analysis/gate corpora.",
-  "wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo jazz-corpus/weimar slices) + cadence/form/dual-annotator beds (algomus-data quartets+fugues, WiR interior inventory) + figured bass (BCFB; DCMLab/figured-bass WALKED = a realization TOOL not GT) + trees/reduction (schenker41, protovoice-annotations [the N9 gating inspection], GTTM) + plain-score stress (OpenScore Lieder/StringQuartets, ASAP) + gated/unavailable records (EWLD, HookTheory full, Sears Haydn) + the humdrum-data enumeration closure (71 repos, cloned nothing). Each row carries a `needs_coverage` note scored against the FULL vector N1-N20 (census §8c intake rule). All held-out (never tuned against); cloned beds are hash-pin-only under gitignored corpora/gt| corpora/plain/ (WJD pinned by sha256; non-git). status: onboarded|walked|inventory|gated|unavailable|recorded|enumerated."
+  "wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo jazz-corpus/weimar slices) + cadence/form/dual-annotator beds (algomus-data quartets+fugues, WiR interior inventory) + figured bass (BCFB; DCMLab/figured-bass WALKED = a realization TOOL not GT) + trees/reduction (schenker41, protovoice-annotations [the N9 gating inspection], GTTM) + plain-score stress (OpenScore Lieder/StringQuartets, ASAP) + gated/unavailable records (EWLD, HookTheory full, Sears Haydn) + the humdrum-data enumeration closure (71 repos, cloned nothing). Each row carries a `needs_coverage` note scored against the FULL vector N1-N20 (census §8c intake rule). All held-out (never tuned against); cloned beds are hash-pin-only under gitignored corpora/gt| corpora/plain/ (WJD pinned by sha256; non-git). status: onboarded|walked|inventory|gated|unavailable|recorded|enumerated.",
+  "wave3 ADDENDUM (cc_wave3_addendum_report.md, 2026-07-04): two DDMAL direct pickups added to wave3_sources — key_modulation_dataset (KMT, the N5 upstream the Wave-3 correction named; 201 annotated Humdrum .krn across 5 textbooks; CC-BY-SA scores/MIT code) and flexible_harmonic_chorale_annotations (571 chorales, permutational multi-reading harmony in an R-package binary; GPLv3; RECORD-ONLY re the gate — 371 Bach chorales overlap the gate repertoire). Same addendum exposes the parser-dropped figbass/pedal columns (see the clarifying clause)."
  ],
  "distant_listening_corpus": {
   "submodule_count": 40,
@@ -1812,6 +1813,54 @@
    "pinned_commit": "afc815c75c42e83a79c03feb6da8a35e77d4c6b8",
    "needs_coverage": "Tier S (real romantic-piano MusicXML scores for stress/soak). Explicitly NOT N15 (performed-intonation) — piano is fixed intonation and the alignment is TIMING, not intonation (N15 ruled audio-domain / out of corpus scope, 2026-07-04). The performance MIDIs (1302) are NOT our material. N17. VERIFIED 235 .xml / 1302 .mid at pin (~222 distinct scores). Held-out.",
    "notes": "Wave-3 (cc_corpus_wave3_report.md). depth-1 clone; 235 xml / 1302 midi. Held-out."
+  },
+  {
+   "name": "key_modulation_dataset",
+   "container": "DDMAL/key_modulation_dataset",
+   "content": "Key/modulation annotations over music-theory-textbook examples (Aldwell-Schachter-Cadwallader, Kostka-Payne, Reger, Rimsky-Korsakov, Tchaikovsky) in Humdrum — the upstream KMT the Wave-3 audit wrongly located inside When-in-Rome (DLfM-2020 lineage)",
+   "pieces": 201,
+   "annotated_pieces": 201,
+   "gt_type": "key",
+   "gt_layers": [
+    "key",
+    "modulation",
+    "rn"
+   ],
+   "annotation_standard": "Humdrum **kern (4 voices) + **text annotation spines; key/modulation as Humdrum key-designation tokens (*C:, *G:) + inline NEWKEY=>:RN modulation markers in the **text spine (e.g. 'c=>:viio6'); spine-association scripts embed each annotation to its note",
+   "score_format": "Humdrum **kern + **text (.krn)",
+   "alignment": "score-aligned",
+   "license_class": "CC-BY-SA (scores) + MIT (code)",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/DDMAL/key_modulation_dataset",
+   "pinned_commit": "6602ae6a607edcbdf6384ee1899d2c414bf981b9",
+   "needs_coverage": "★ N5 PRIMARY (key/modulation/tonicization GT — the S1/S2 residual's exact shape; the direct-acquisition candidate the Wave-3 N5 correction named after KMT was found ABSENT as analyses at the WiR pin). N1-adj (the **text spines ALSO carry Roman-numeral harmonic analysis, textbook-relative not corpus-canonical); N17 (textbook provenance). VERIFIED at data: 201 .krn at pin, ALL bearing **text annotation spines — aldwell 7 / kostka-payne 15 / reger 117 / rimsky-korsakov 37 / tchaikovsky 25. MISMATCH reported-not-accepted: the README 'Dataset' checkbox list enumerates ~135 annotated examples (aldwell 7 / KP 14 / reger 'Examples 1-100' / RK 7 / tchaik 7); the pinned repo has grown past it (KP 15 = ex18-3 split a/b per NOTES.md; reger 117 / RK 37 / tchaik 25). Encoders: Feisthauer + Napoles Lopez (ENC record). DEDUPE: the actual KMT upstream, DISJOINT from the held DLC/WiR common-practice RN GT (textbook examples, not repertoire); closes the N5 acquisition the Wave-3 correction queued.",
+   "notes": "Wave-3 addendum (cc_wave3_addendum_report.md). 201 annotated .krn across 5 textbooks. CC-BY-SA scores / MIT code. Held-out."
+  },
+  {
+   "name": "flexible_harmonic_chorale_annotations",
+   "container": "DDMAL/Flexible_harmonic_chorale_annotations",
+   "content": "Permutational ('flexible') harmonic analyses of 571 chorales (371 J.S. Bach + 200 Praetorius), companion to the ISMIR 2018 paper; the analysis GT ships as an R package (data.table binary), the kernData/ folder holds the raw Humdrum **kern scores",
+   "pieces": 572,
+   "annotated_pieces": 571,
+   "gt_type": "rn",
+   "gt_layers": [
+    "permutational-harmony"
+   ],
+   "annotation_standard": "R package FlexibleChoraleHarmonicAnalysis 0.8.0 (permutational analysis data.tables + filtering functions; README-stated coverage, binary not extracted); scores in Humdrum **kern with NO analysis spine in the .krn",
+   "score_format": "Humdrum **kern (.krn) scores; analysis in an R-package .tar.gz binary (6.8 MB)",
+   "alignment": "score-aligned",
+   "license_class": "GPL-3.0",
+   "distribution": "hash-pin-only",
+   "tier": "C",
+   "status": "onboarded",
+   "split": "held-out",
+   "provenance_url": "https://github.com/DDMAL/Flexible_harmonic_chorale_annotations",
+   "pinned_commit": "87efd245d5ede4054af07bc8ab5b98929dd2500b",
+   "needs_coverage": "N2 candidate (a SECOND, MULTI-READING annotation layer over gate-class Bach chorales — the 'flexible'/permutational method admits MULTIPLE valid harmonic readings per slice with filtering functions, unlike a single canonical RN) + N1-residual (harmony GT over Bach chorales). ⚠ OVERLAPS THE GATE REPERTOIRE: the 371 Bach chorales are the Breitkopf/Doerffel 371 Four-Part Chorales (KernScores lineage — the same works as the music21 gate corpus). RECORD-ONLY this dispatch: NOT wired to / compared against / bulk-diffed with the gate corpus; any use over gate pieces is a FUTURE USER ruling (census §4 dedupe / M3 contamination lesson). WALK finding: the annotation GT is bundled in the R-package BINARY (6.8 MB data.table), NOT a directly-readable text/Humdrum spine — the kernData/ .krn are **kern-ONLY scores (verified: 572/572 files carry only **kern). Coverage: 572 .krn = 371 Bach + 201 Praetorius files (200 logical; 130a/130b split); README says 571 — reported-not-accepted. The 200 Praetorius chorales are NEW (not available elsewhere per README) and lie OUTSIDE the gate repertoire.",
+   "notes": "Wave-3 addendum (cc_wave3_addendum_report.md). 572 .krn (371 Bach / 201 Praetorius files); analysis in R-package binary. GPLv3. RECORD-ONLY re gate. Held-out."
   },
   {
    "name": "choco_jazz_corpus_slice",

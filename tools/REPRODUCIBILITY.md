@@ -359,6 +359,26 @@ git clone --depth 1 https://github.com/fosfrancesco/asap-dataset \
   && git -C asap-dataset checkout afc815c75c42e83a79c03feb6da8a35e77d4c6b8
 ```
 
+### corpora/gt/ — corpus wave 3 ADDENDUM (2026-07-04)
+
+Two DDMAL direct pickups added at the Wave-3 addendum (`cc_wave3_addendum_report.md`): KMT (the N5
+key/modulation upstream) + the Flexible chorale annotations (N2 candidate, RECORD-ONLY re the gate —
+its 371 Bach chorales overlap the gate repertoire). Both hash-pin-only, held-out, gitignored under
+`corpora/gt/`. **Licenses:** KMT = CC-BY-SA-4.0 (scores) + MIT (code); Flexible = GPL-3.0. Neither
+forbids a local gitignored research clone.
+
+```bash
+cd corpora/gt
+# N5 key/modulation textbook GT (201 annotated Humdrum .krn across 5 textbooks)
+git clone https://github.com/DDMAL/key_modulation_dataset \
+  && git -C key_modulation_dataset checkout 6602ae6a607edcbdf6384ee1899d2c414bf981b9
+# N2 candidate — permutational ('flexible') multi-reading harmony over 571 chorales (371 Bach + 200 Praetorius).
+# RECORD-ONLY re the gate (Bach-chorale overlap). Analysis GT is inside the R-package .tar.gz binary; the
+# kernData/ .krn are **kern-only scores.
+git clone https://github.com/DDMAL/Flexible_harmonic_chorale_annotations \
+  && git -C Flexible_harmonic_chorale_annotations checkout 87efd245d5ede4054af07bc8ab5b98929dd2500b
+```
+
   **Inventoried, not re-cloned (already held):** the ChoCo `jazz-corpus` (160 jams) +
   `weimar` (916 jams) partitions in `corpora/ship/choco`; the WiR interior slices in
   `tools/dcml/when_in_rome` (TAVERN 27 dual, HaydnSun 32, BPS-FH 86, WTC-I 24/31, Lieder RN

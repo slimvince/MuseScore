@@ -288,8 +288,16 @@ beds; `corpora/plain/` = plain-score stress material.
 - `plain/Lieder`, `plain/StringQuartets` (OpenScore, CC0), `plain/asap-dataset` (romantic piano MusicXML) — Tier-S
   chromatic/texture stress (no GT; **not** gate material — dormant-build discipline).
 
+**Wave-3 addendum (2026-07-04, `cc_wave3_addendum_report.md`) — two DDMAL direct pickups under `corpora/gt/`:**
+- `key_modulation_dataset` (DDMAL, KMT) — 201 annotated Humdrum `.krn` (5 textbooks: aldwell/kostka-payne/reger/
+  rimsky-korsakov/tchaikovsky), **key/modulation** GT (N5) + textbook RN; CC-BY-SA scores / MIT code.
+- `Flexible_harmonic_chorale_annotations` (DDMAL) — 571 chorales (371 Bach + 200 Praetorius), **permutational
+  multi-reading** harmony GT in an R-package binary (N2 candidate); GPLv3. **⚠ RECORD-ONLY** — its 371 Bach
+  chorales overlap the gate repertoire; never wired to / compared against the gate corpus (future user ruling).
+
 Pins + verification: `tools/score_census_registry.json → wave3_sources`; reproduction in `tools/REPRODUCIBILITY.md`;
-full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`.
+full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`
+(+ the two addendum pickups + the `figbass`/`pedal` parser exposure in `cc_wave3_addendum_report.md`).
 
 ---
 
