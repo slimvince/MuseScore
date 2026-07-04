@@ -83,7 +83,12 @@ analyzeSection(const mu::engraving::Score* sc,
 
 /// Minimum normalized key confidence required for cadence or pivot detection.
 /// Matches kAssertiveKeyExposureThreshold used by populateChordTrack.
-inline constexpr double kAnnotateKeyConfidenceThreshold = 0.8;
+/// Stage-5 fitter: a mutable global (was `inline constexpr`) so the parameter-override
+/// mechanism can register its address (registered in sectionanalyzer.cpp). Byte-identical
+/// when no override is loaded — same 0.8 literal, read as before; the loader is the only
+/// writer. This is the G10 production-path abstention bar (Stage-5 family 3). See
+/// cowork_stage5_fitter_design.md D-6.
+inline double kAnnotateKeyConfidenceThreshold = 0.8;
 
 /// Maximum number of lookahead regions (past the selection boundary) examined
 /// when trying to confirm that a candidate pivot chord's new key is stable.

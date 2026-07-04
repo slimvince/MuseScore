@@ -28,6 +28,7 @@
 // as `rawRegions` — see sectionanalyzer.h.
 
 #include "composing/analysis/section/sectionanalyzer.h"
+#include "composing/analysis/param/paramoverride.h"   // Stage-5 fitter: G10 override (D-6)
 
 #include <algorithm>
 #include <array>
@@ -61,6 +62,15 @@ namespace cra = mu::composing::analysis::region;
 namespace mu::composing::analysis {
 
 namespace {
+
+// Stage-5 fitter: register the G10 section-layer abstention bar (kAnnotateKeyConfidenceThreshold).
+// Byte-identical when no override is loaded; this TU is odr-used (analyzeSection) so the
+// registration runs at static-init.
+const bool s_registerSectionParams = [] {
+    mu::composing::params::registerDouble("kAnnotateKeyConfidenceThreshold",
+                                          &kAnnotateKeyConfidenceThreshold);
+    return true;
+}();
 
 int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones)
 {

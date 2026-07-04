@@ -99,11 +99,13 @@ TEST_F(ParamOverride, RegistryContainsProductionSurfaceGlobals)
     EXPECT_TRUE(P::isRegisteredGlobal("kGateKMargin"));
     EXPECT_TRUE(P::isRegisteredGlobal("kGateLMargin"));
     EXPECT_TRUE(P::isRegisteredGlobal("kHalfDimFirstInversionBonus"));
+    // G10 (sectionanalyzer.h section-layer abstention bar)
+    EXPECT_TRUE(P::isRegisteredGlobal("kAnnotateKeyConfidenceThreshold"));
 
     EXPECT_FALSE(P::isRegisteredGlobal("kThisNameDoesNotExist"));
     // 24 G1 file constants + kWComplete/kWCompletePresenceThreshold/kComplexityEvidenceFloor/
-    // kAugThinEvidenceFactor (4) + 5 G6 + 4 G7 = 37 registered globals.
-    EXPECT_EQ(P::registeredGlobalCount(), 37u);
+    // kAugThinEvidenceFactor (4) + 5 G6 + 4 G7 + 1 G10 = 38 registered globals.
+    EXPECT_EQ(P::registeredGlobalCount(), 38u);
 }
 
 TEST_F(ParamOverride, CurrentValuesMatchDocumentedLiterals)
