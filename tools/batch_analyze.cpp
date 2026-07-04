@@ -513,6 +513,13 @@ struct AnalyzedRegion {
     bool hasAnalyzedChord = true;
     std::vector<ChordAnalysisResult> alternatives;  // up to 2 additional candidates
     KeyModeAnalysisResult key;                      // winning key/mode (== keyRanked[0])
+    // C1 reliability (--dump-region-keymargin, read-only diagnostic): the region's
+    // Layer-3 SEQUENCE-MARGIN confidence (HarmonicRegion.keyConfidence = rep.confidence,
+    // the override-bar input; regionanalyzer.cpp §15-3). This is the contract §3 L3
+    // boundary confidence — distinct from key.normalizedConfidence (the C1 EMISSION
+    // sigmoid the standard .ours.json emits as "keyConfidence"). Populated on the batch
+    // path only; the standard writeJson NEVER reads it (byte-identical corpus).
+    double keySeqMargin = 0.0;
     std::vector<KeyModeAnalysisResult> keyRanked;   // top 3 key/mode candidates from analyzeKeyMode()
     std::vector<ChordAnalysisTone> tones;
     uint16_t pcMask = 0;   // 12-bit pitch-class bitmask of sounding notes
@@ -690,6 +697,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ar.hasAnalyzedChord = hr.hasAnalyzedChord;
         ar.tones            = hr.tones;
         ar.key              = hr.keyModeResult;
+        ar.keySeqMargin     = hr.keyConfidence;   // C1 L3 sequence-margin confidence (diagnostic-only)
         ar.keyRanked        = keyRanked;
         ar.pcMask           = pitchClassMask(ar.tones);
         ar.bassPc           = hr.chordResult.identity.bassPc;
@@ -1337,6 +1345,46 @@ static void writeL5Json(const std::vector<AnalyzedRegion>& regions,
     out << (out5.units.empty() ? "" : "\n    ") << "]";
 }
 
+// ── C1 reliability (--dump-region-keymargin) — the L3 sequence-margin export ───
+//
+// DIAGNOSTIC ONLY (mirrors --dump-fullspine / --decode-keymode). Emits, per BATCH
+// region, the two Layer-3 boundary confidences the C1 contract §3 L3 row needs:
+//   * keySeqMargin  = AnalyzedRegion.keySeqMargin (= HarmonicRegion.keyConfidence
+//                     = rep.confidence) — the SEQUENCE MARGIN, the contract's THE
+//                     boundary confidence (D-L3a), dropped by the standard writeJson.
+//   * keySigmoid    = key.normalizedConfidence — the C1 EMISSION sigmoid, identical
+//                     to the standard .ours.json region "keyConfidence" field.
+// The region key/root are emitted too so the C1 harness can self-validate the
+// startTick join against the frozen gate corpus (same analyzeScore ⇒ same regions).
+// Called from a flag path that returns BEFORE the standard writeJson, so the
+// standard corpus is byte-identical by construction (the whole point).
+static void writeRegionKeyMarginJson(
+    const std::vector<AnalyzedRegion>& regions,
+    const std::string& stem,
+    const std::string& presetName,
+    std::ostream& out)
+{
+    out << "{\n";
+    out << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    out << "  \"preset\": \"" << jsonEscape(presetName) << "\",\n";
+    out << "  \"analysisPath\": \"region-keymargin\",\n";
+    out << "  \"regions\": [";
+    for (size_t i = 0; i < regions.size(); ++i) {
+        const AnalyzedRegion& r = regions[i];
+        const int rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        out << (i ? ",\n    " : "\n    ");
+        out << "{ \"startTick\": " << r.startTick
+            << ", \"endTick\": " << r.endTick
+            << ", \"key\": \"" << jsonEscape(keyName(r.key.keySignatureFifths, r.key.mode)) << "\""
+            << ", \"rootPitchClass\": " << rootPc
+            << ", \"keySeqMargin\": " << fmtDouble(r.keySeqMargin, 6)
+            << ", \"keySigmoid\": " << fmtDouble(r.key.normalizedConfidence, 6)
+            << ", \"uncertain\": " << (r.keySeqMargin < 1.0 ? "true" : "false")
+            << " }";
+    }
+    out << (regions.empty() ? "]" : "\n  ]") << "\n}\n";
+}
+
 static void writeJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::string& sourceName,
@@ -1955,6 +2003,15 @@ static void printHelp(const std::string& prog)
         << "            confidence + per-region cadences/modulations + wall-time. Base RNs are\n"
         << "            TRIAD-LEVEL (the L4→L5 carry drops the seventh/extensions — faithful,\n"
         << "            not synthesized). NO production consumer; byte-identical. Default OFF.\n"
+        << "            (Additive C1 fields: phraseTextureTicks/phraseTextureStrength — the\n"
+        << "            L1.5 graded texture profile at every candidate tick, for reliability.)\n"
+        << "  --dump-region-keymargin\n"
+        << "            (C1 reliability, read-only DIAGNOSTIC — returns before the standard\n"
+        << "            writeJson) Run the BATCH region path and emit, per region, the two\n"
+        << "            Layer-3 boundary confidences: keySeqMargin (the sequence margin, the\n"
+        << "            contract §3 L3 boundary confidence) + keySigmoid (the emission sigmoid,\n"
+        << "            == the standard .ours.json region keyConfidence). Standard corpus\n"
+        << "            byte-identical by construction (returns early). Default OFF.\n"
         << "  --dump-l6\n"
         << "            (L6, read-only DIAGNOSTIC) Run --dump-fullspine AND append an additive\n"
         << "            \"l6\" object: the dormant Layer-6 grouping structure assembled from the\n"
@@ -2968,6 +3025,13 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     const double homeConf  = homeKey.normalizedConfidence;
 
     const std::set<int> phraseTicks = eb::phraseBoundaryTicks(score);
+    // C1 reliability (L1.5 boundary-at-tick row): the FULL graded texture profile —
+    // the strength published at EVERY candidate (texture) tick, not just the picked
+    // subset the "phraseBoundaryTicks" field carries. Exported raw (marker spikes may
+    // exceed 1.0); the C1 harness max-normalizes per profile → [0,1] (contract §3).
+    // A pure export of PhraseBoundaryProfile.textureTicks/textureStrength, already
+    // computed by the primitive; pickedTicks == phraseBoundaryTicks(score) by the API.
+    const eb::PhraseBoundaryProfile phraseProfile = eb::computePhraseBoundaryProfile(score);
 
     // L4: the dormant per-slice decoder over the LIVE home key.
     const std::vector<cs::SliceChord> decoded = cs::ChordSliceDecoder::decode(
@@ -3260,6 +3324,21 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     { bool f = true; for (int t : phraseTicks) { os << (f ? "" : ", ") << t; f = false; } }
     os << "],\n";
 
+    // C1 L1.5 reliability: the graded texture profile (candidate tick + raw strength),
+    // parallel arrays. Additive to the (default-off) fullspine dump — production
+    // byte-identical by construction. Un-normalized; the harness max-normalizes per
+    // profile (contract §3 "max-normalised per profile → [0,1]").
+    os << "  \"phraseTextureTicks\": [";
+    for (size_t i = 0; i < phraseProfile.textureTicks.size(); ++i) {
+        os << (i ? ", " : "") << phraseProfile.textureTicks[i];
+    }
+    os << "],\n";
+    os << "  \"phraseTextureStrength\": [";
+    for (size_t i = 0; i < phraseProfile.textureStrength.size(); ++i) {
+        os << (i ? ", " : "") << fmtDouble(phraseProfile.textureStrength[i], 6);
+    }
+    os << "],\n";
+
     os << "  \"cadences\": [";
     for (size_t i = 0; i < cadences.size(); ++i) {
         const analysis::FunctionalCadence& c = cadences[i];
@@ -3524,6 +3603,7 @@ int main(int argc, char* argv[])
     bool decodeChords = false;        // Layer-4 per-slice chord decoder (default OFF = no analysis touched)
     bool reachBackAB = false;         // Layer-3 reach-back flag-ON/OFF range-query A/B (default OFF; HELD)
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
+    bool dumpRegionKeyMargin = false; // C1 L3 sequence-margin export (default OFF = standard corpus byte-identical)
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
     bool dumpVl = false;              // axis 2 (voice leading) VL-A/B/C dump (default OFF, additive)
@@ -3586,6 +3666,11 @@ int main(int argc, char* argv[])
             reachBackAB = true;
         } else if (a == "--dump-fullspine") {
             dumpFullSpine = true;
+        } else if (a == "--dump-region-keymargin") {
+            // C1 reliability: run the BATCH region path and emit per-region L3
+            // sequence-margin + emission-sigmoid confidences (diagnostic; returns
+            // before the standard writeJson, so the corpus is byte-identical).
+            dumpRegionKeyMargin = true;
         } else if (a == "--dump-l6") {
             // L6 grouping: run the full spine and APPEND the dormant grouping structure.
             dumpFullSpine = true;
@@ -3974,6 +4059,28 @@ int main(int argc, char* argv[])
             ofs << report;
         } else {
             std::cout << report;
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── C1 reliability — the L3 sequence-margin export (--dump-region-keymargin) ──
+    // DIAGNOSTIC ONLY: runs the BATCH region path (identical to how the frozen gate
+    // corpus was produced — sectionLevel=false) and emits per-region the L3 sequence
+    // margin (keySeqMargin) + emission sigmoid (keySigmoid), then returns before the
+    // standard writeJson ⇒ the standard .ours.json corpus is byte-identical.
+    if (dumpRegionKeyMargin) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::vector<AnalyzedRegion> kmRegions =
+            analyzeScore(score, excludeStaves, keyPrefs, chordPrefs, /*sectionLevel=*/false);
+        std::ostringstream km;
+        writeRegionKeyMarginJson(kmRegions, stem, presetName, km);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << km.str();
+        } else {
+            std::cout << km.str();
         }
         delete score;
         return 0;
