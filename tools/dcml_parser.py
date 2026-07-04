@@ -58,6 +58,19 @@ class DcmlRegion:
     # of a region that also bears a scoreable numeral.
     cadence: Optional[str] = None
     phraseend: Optional[str] = None
+    # ── L4 / pedal evidence columns (additive; TSV path only) ────────────────
+    # The DLC `figbass` and `pedal` GT columns, carried verbatim when the row
+    # bears one (else None).  `figbass` = the inversion figured-bass digits
+    # (e.g. "6", "64", "7", "65", "43", "2") — the notated-inversion / N10
+    # evidence channel.  `pedal` = the pedal-point column (the sustained scale
+    # degree beneath the harmony) — the N20 pedal-point-span GT.  Like
+    # cadence/phraseend these do NOT participate in the RN / root / key read
+    # surface — purely additive, so the BIR gate is byte-identical.  Present on
+    # the TSV path (parse_abc_harmonies_file); None on the rntxt path (When in
+    # Rome has no figured-bass / pedal columns).  Exposed at the Wave-3 addendum
+    # (cc_wave3_addendum_report.md); no consumer reads them yet.
+    figbass: Optional[str] = None
+    pedal: Optional[str] = None
 
 
 def parse_dcml_file(path: str) -> List[DcmlRegion]:
@@ -265,6 +278,11 @@ def parse_abc_harmonies_file(
                 # L6 oracle columns (additive) — carried verbatim, None when empty.
                 cadence = (row.get('cadence') or '').strip() or None
                 phraseend = (row.get('phraseend') or '').strip() or None
+                # figbass (N10 inversion figured-bass) + pedal (N20 pedal-point) —
+                # additive, carried verbatim, None when empty.  No consumer reads
+                # them yet (Wave-3 addendum exposure); the RN read surface is unchanged.
+                figbass = (row.get('figbass') or '').strip() or None
+                pedal = (row.get('pedal') or '').strip() or None
 
                 effective_key = _resolve_effective_dcml_key(localkey, globalkey, relativeroot)
                 regions.append(DcmlRegion(
@@ -278,6 +296,8 @@ def parse_abc_harmonies_file(
                     abs_tick=abs_tick,
                     cadence=cadence,
                     phraseend=phraseend,
+                    figbass=figbass,
+                    pedal=pedal,
                 ))
             except (ValueError, KeyError, ZeroDivisionError) as exc:
                 # A genuinely malformed harmony row.  Record it — do NOT let it
