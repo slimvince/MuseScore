@@ -139,3 +139,101 @@ cover them; review F-15) — closed by ruling, not enumeration.
    from its repo).
 6. **Scope rulings recorded** — each class excluded by decision (non-Western; performance-MIDI; image-only) carries
    its reason in the appendix tables, so exclusion is auditable and reversible, never a silent omission.
+
+## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)
+
+**The observation (user):** several times we believed the corpus search was complete, and each time later work
+surfaced more — the pattern has repeated enough to be a process fact, not bad luck.
+
+**Why it happens (diagnosed, two mechanisms — neither is a §8 failure, but §8 alone does not prevent them):**
+1. **Containers are walked lazily by design.** Closure is over container CLASSES; the contents surface only when
+   a wave walks the container (the Wave-2 beds all lived inside §1/§7 rows: `schema_annotation_data` inside the
+   already-enumerated DCMLab org; the algomus texture set inside the §7 algomus/Dezrann residual; Essen inside
+   the folk-containers row). These are census WALKS, not census misses — but they *feel* like discoveries.
+2. **Topic-blind enumeration cannot see purpose-specific GT.** The census enumerated with the HARMONIC axis's
+   questions in mind. When a NEW purpose appeared (axis 2: texture / phrase / schema / stream GT; the lever
+   sweep: figured bass, hierarchical trees), targeted per-duty searches immediately surfaced material the
+   enumeration had no reason to rank (BCFB; the JHT's *tree* annotations as a distinct GT layer over an
+   already-held source). A census is only as complete as the list of questions it was asked with.
+
+**The standing trigger instituted (complements the yearly re-sweep + the wave triggers):** whenever a **new
+analysis purpose** enters the project — a new axis, a new component with a GT need, a new lever class — a
+**targeted, purpose-specific census sweep runs for that purpose** before its design doc is signed (the axis-2
+§6b sweep is the founding precedent: three census-grade finds in one pass, two on corpora already held). The
+sweep's finds enter via the census as always; "we already enumerated the container" does not discharge the duty
+to ASK THE NEW QUESTION against it.
+
+**Pending container/GT-layer additions from the 2026-07-03 sweeps (for the next census/registry edit — Wave-3
+natural home):** BCFB (Bach Chorales Figured Bass, ISMIR 2020 — figured-bass GT on the gate repertoire);
+the **JHT hierarchical tree annotations** as a distinct GT layer (the JHT source is already held as research
+material; its trees are a separate annotation layer for lever R-7); `DCMLab/figured-bass` (already a §7
+residual — promote to a walked row at Wave 3). *(The Wave-2 beds are already onboarded/enumerated.)*
+
+## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)
+
+**The question that created this section:** is a corpus search useful that is NOT driven by one architectural
+need — the "need" being the sum of all needs? **Answer: yes, but the search is step 3 of 3.** The sum of all
+needs must first exist as an artifact, and once it does, re-scoring the EXISTING enumeration against it is
+cheaper and likely higher-yield than new searching (the Wave-2 lesson: the finds were already inside enumerated
+containers — the dismissals were purpose-relative, made with harmonic-axis eyes only).
+
+**The mechanism (run at natural checkpoints; first run = at Wave-3 scoping, BEFORE its disposition):**
+1. **The needs-vector (maintained here; §8b's trigger adds a row per new purpose):**
+
+| # | need (GT/material class) | consumer | state (2026-07-03) |
+|---|---|---|---|
+| N1 | common-practice RN/harmony GT, score-aligned, human | gate, Stage-5 fitter | well-covered (DLC/WiR) |
+| N2 | dual/multi-annotator disagreement data | Class-P calibration (C1/C2) | TAVERN queued (Wave 3) |
+| N3 | jazz/pop analysis GT, score-aligned | A-7 mark retirement, idioms 3–5 | Tier J queued (Wave 3) |
+| N4 | cadence + punctuation/phrase GT | L5 §5.2, L1.5, L6 | rich (corpus-wide since 21k) |
+| N5 | key/modulation GT | L3, S1/S2 | KMT queued (Tier G) |
+| N6 | melodic-phrase GT (monophonic ok) | VL-E | Essen onboarded (Wave 2) |
+| N7 | texture GT (per-bar / per-piece) | VL-C validation, §15-1 | algomus bed onboarded (Wave 2) |
+| N8 | voice-leading schema GT | VL-F | schema bed onboarded (Wave 2) |
+| N9 | stream/implied-polyphony GT | VL-D target task | **GAP — no candidate found** |
+| N10 | figured-bass GT | L4 evidence channel (R-4) | BCFB pending (§8b) |
+| N11 | hierarchical harmony trees | grammar lever (R-7) | JHT held; tree layer pending row |
+| N12 | notated chord symbols aligned with realized scores | E-8 symbols-as-input, T-17 QA | unassessed — audit column |
+| N13 | ornament-realization pairs | R-1 ornament expansion | unknown — audit column |
+| N14 | difficulty/grading labels (syllabus, exam grades) | T-32 | unassessed — audit column |
+| N15 | performed-intonation reference material | T-21/T-24 | audio-domain — likely a scope RULING |
+| N16 | form/section GT (sonata form etc.) | L6 §9-D3 deferred, T-9 | partially known (Mozart-quartet form annotations cited in the texture paper's refs) — audit column |
+| N17 | style/era metadata | idiom lenses, calibration C4 | held (registry fields) |
+
+2. **The audit:** re-score every enumerated census row (both appendices + registry) against the needs columns —
+   offline, no searching; each row gains a needs-coverage note; multi-need rows get flagged (a container serving
+   several needs outranks single-need alternatives that any one purpose-sweep would have preferred).
+3. **The union search round:** targeted searches ONLY for columns still uncovered/unassessed after the audit
+   (today: N9, N12, N13, N14, N16 + whatever the audit demotes). Findings enter via the census as always.
+
+**Relation to the other triggers:** §8b (purpose sweep at each new purpose) keeps the vector current; the yearly
+re-sweep catches new releases; the full-needs audit catches the CROSS-purpose and re-scoring misses both leave.
+
+**The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against
+the FULL needs-vector at intake**, never single-purpose-tagged. Three consequences, each binding:
+1. **Already-satisfied needs stay open to supersession** — a new find may serve a "passed" need better or
+   cheaper than its current bed; the intake scoring records that even when no action follows.
+2. **Future/inactive needs get pre-coverage** — a find's coverage of a not-yet-active column is recorded at
+   intake, so when that purpose's §8b sweep eventually runs it starts non-empty.
+3. **Every GT LAYER of a container is inventoried at intake, not just the layer that motivated the find** — the
+   founding counter-example: the JHT entered for the harmonic idiom study and its hierarchical TREE annotations
+   (a distinct GT layer, lever R-7's footing) went unrecorded until a different question was asked at it a week
+   later. The registry's per-row needs-coverage note (audit step 2) is where the intake scoring lands.
+
+**The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed
+need):** a "go back and rework now" vs "postpone" question is NEVER decided by enthusiasm or by default silence.
+The protocol, reusing the project's standing shapes:
+1. **Record first:** the finding lands as an open item in the affected component's §15 (open items) + a STATUS
+   plan line — it cannot get lost regardless of the decision.
+2. **Cheap impact measurement before any decision** (investigate-by-default): a read-only re-validation of the
+   component's signed conclusions against the new material. The question it answers: does the new bed
+   **contradict** a conclusion the design rests on, or merely **enrich/extend** the validation?
+3. **The fork, by measured outcome:**
+   - **Contradiction (a premise-invalidation):** surfaced IMMEDIATELY as a tripwire event (the D5-test pattern) —
+     the user decides rework-now vs accept-with-recorded-caveat; downstream work that builds on the invalidated
+     conclusion is named in the surfacing (the compounding cost of waiting is part of the decision material).
+   - **Enrichment only:** DEFAULT = postpone to the component's next natural touch (the §15 item carries it);
+     pulling the rework forward is a user priority call, informed by the measurement.
+4. **The decision is the user's in both branches** — the protocol fixes what is measured and what is recorded,
+   never the outcome. (This is the corpus-side analogue of the gate re-baseline discipline: evidence first,
+   deliberate ratification second, nothing reopened by silence.)

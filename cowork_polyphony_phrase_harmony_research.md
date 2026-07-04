@@ -132,11 +132,15 @@ CONTAINERS go to the census; nothing is onboarded here):**
 
 1. **★ An expert schema-annotation dataset EXISTS, on a corpus we already hold — direct VL-F footing.**
    Finkensiep, Déguernel, Neuwirth & Rohrmeier, *Voice-Leading Schema Recognition Using Rhythm and Pitch
-   Features* (ISMIR 2020) — **[verified: full paper fetched]**. 244 expert-annotated true schema instances
-   across **all 18 Mozart piano sonatas** (the DCML `mozart_piano_sonatas` scores — already in our clones), 10
-   schema types / 20 subtypes with counts: Prinner 32, Fonte 49(+2+8 variants), **Quiescenza 46(+6)**, Do-Re-Mi
-   5, plus Fenaroli, Indugio, Lamento, Lully, Morte, Sol-Fa-Mi. Dataset public:
-   github.com/DCMLab/schema_annotation_data (with annotation guidelines). Method footing for VL-F: generalized
+   Features* (ISMIR 2020) — **[verified: full paper fetched]**. 244 expert-annotated true schema instances (the
+   PAPER-snapshot figure) across **all 18 Mozart piano sonatas**, 10 schema types / 20 subtypes with paper
+   counts: Prinner 32, Fonte 49(+2+8 variants), **Quiescenza 46(+6)**, Do-Re-Mi 5, plus Fenaroli, Indugio,
+   Lamento, Lully, Morte, Sol-Fa-Mi. Dataset public: github.com/DCMLab/schema_annotation_data (with annotation
+   guidelines). *(★ Wave-2 onboarding corrections, CC-measured at pin `76f810a1`, Cowork-ratified 2026-07-03:
+   the living repo has grown to **273** instances — a superset, structure intact (54 mvts / 10 types / 20
+   non-empty subtypes exact; Prinner 33, Fonte 51, Quiescenza 47); AND the annotations ship a **self-contained
+   score bundle** (repo-local note IDs over its own MusicXML) — the same 54 movements as the DCML sonatas we
+   hold, but a distinct encoding; alignment options documented in `cc_corpus_wave2_report.md` §1.)* Method footing for VL-F: generalized
    **skipgram candidate enumeration** (Finkensiep et al. 2018) + a binary classifier on rhythm/pitch/metric
    features (regularity, complexity, salience, harmonic profile); F-score 0.894 balanced, BUT the operative
    lessons are (a) extreme class imbalance is the real problem (191k auto-generated candidates vs 244 true), (b)

@@ -189,12 +189,22 @@ step stays measure-first + ratification-gated):
   early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified
   taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a
   migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave.
-  **★ Wave-1 instruction WRITTEN + QUEUED (2026-07-02): `cc_instruction_corpus_wave1_dlc_onboarding.md`** — complete
-  the DLC container (onboard the ~30 missing sub-corpora, hash-pinned, research-tier, per-style baselines, Tristan
-  presence check), registry v2 schema, and the Mozart-TSV cadence-label inventory (Task C). **Single-CC sequencing
-  (user, 2026-07-02): one CC does both tracks — dispatch Wave 1 AFTER the E0 report lands** (same worktree, no
-  parallel instructions). Gate untouched by construction (no `src/`, frozen gate corpus byte-untouched,
-  end-of-run 53/24/53 reproduction as the no-contamination proof).
+  **★ Wave 1 ✅ EXECUTED + RATIFIED (2026-07-02, `cc_corpus_wave1_report.md`):** the DLC container CLOSED (40/40
+  onboarded, hash-pinned, registry v2), Tristan on disk, per-style baselines, the corpus-wide cadence/phraseend GT
+  finding (parser exposure landed at the 21k TSV-oracle increment). Gate untouched (53/24/53 reproduced).
+  **★ Wave 2 ✅ EXECUTED + RATIFIED (2026-07-03, `cc_corpus_wave2_report.md` — user-scoped to the core set):** the
+  three axis-2 annotation beds pinned under gitignored `corpora/annot/` (DCML `schema_annotation_data` `76f810a1`,
+  273 instances at pin / VL-F · algomus `symbolic-texture-dataset` `3dce4ab8`, 1,164 bar labels keyed to our DCML
+  Mozart clone / VL-C validation · CCARH Essen `2d0ca75e`, 100% phrase-marked monophonic / VL-E); registry
+  `annotation_beds` section; re-discovery trigger checked NOT fired (labels over already-included scores; Essen
+  outside both discovery views); gate reproduced 53/24/53 set-identical.
+  **★ Wave 3 — QUEUED (the user's Wave-2 scope disposition, 2026-07-03; instruction just-in-time when it is the
+  next dispatch):** **Tier J** — the jazz/pop GT path (HookTheory RN-convertible + CoCoPops + OpenEWLD score-aligned
+  core; A-7 unvalidated-mark bookkeeping; license/conversion work) · **Tier G/S remainder** — KMT, BPS-FH, TAVERN,
+  OpenScore Lieder + String Quartets, KernScores classical sets · **Tier-C remainder** — the algomus cadence beds
+  (×2) + the Sears cadence set (the census §5 rows not covered by the 21k parser exposure or Wave 2) · plus the
+  open census gap: an implied-polyphony stream-labeled bed (VL-D's target task — no public candidate found,
+  2026-07-03 sweep). The census §5 tiers remain the permanent enumeration; this line is the wave-plan pointer.
 - **Corpus expansion (user-ratified 2026-07-02 — jazz + Wagner-class + more non-Bach/non-Baroque in general):**
   onboard **DCML `wagner_overtures`** (v2.1, Distant Listening Corpus — exists [verified]; Tristan-Prelude presence to
   confirm at the repo) as **research-tier** stress material via the existing sub-repo pipeline (clone + pin +
@@ -206,6 +216,19 @@ step stays measure-first + ratification-gated):
 - **Metric:** **A-8** — move the gate to the **granularity-robust union-of-boundaries unit** (already built, L0–L1
   primitives), keeping the case-identity + two-tier class-(a)/(b) policy. Sequenced with Stage 5 (it is that stage's
   mandated metric), may be pulled earlier as a deliberate re-baseline event.
+  **★ MEASURED + RATIFIED DUAL-TRACK (user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`, instrument
+  `tools/a8_rebaseline_measure.py`):** (1) **Timing = dual-track until Stage 5** — the robust unit, **variant (b)
+  DCML-only**, is NOW the primary reported metric and the Stage-5 fitting-objective basis; the batch 53/24/53
+  case-identity gate remains the hard regression stop until the Stage-5 fitter lands (R10 unchanged). (2) **Semantics
+  when it governs = duration + explained diff** — hard stop is the **class-(b) root-disagree DURATION non-increase per
+  preset**; the per-run set-diff is the mandatory explained DIAGNOSTIC, not a zero-new-case rule (measured: class-(b)
+  dominates ~95%+ at this unit; zero-new-case cannot scale to ~7,000 cells). (3) **Respects = root governs; RN + key
+  always tracked beside it.** Ratified baselines (variant b, 326/352 coverage): root-agree **63.32 / 62.37 / 63.22 %**
+  (Baroque/Jazz/Default), RN-agree 44.56 / 42.40 / 44.40 %, key-agree 68.11 / 64.43 / 67.50 %. Measured context: the
+  batch gate masks 15–56× failing material under its own filter; the music21 filter discards ~82 % of human-adjudicated
+  root-disagreement time (variant (a) is a root-only continuity diagnostic, not an RN/key adjudicator). *(Doc rider for
+  the next CC docs commit: the CLAUDE.md gate section gains this dual-track note; also fix the stale "353/353" —
+  the frozen corpus is 352 scores at current HEAD, as ratified records E0″/Wave-2 already reflect.)*
 - **Capability track (Tristan-derived; design-first, measure-first; after or interleaved with L6 + the recognition
   consumer):** **A-3** dominant-implication key evidence in the L3 emission (L3 §15); **A-4** cadence-less
   key-confirmation channels + enharmonic key-span identity in L5 §5.3 (L5 §15); **A-5** the phrase-gate fallback for

@@ -1,24 +1,78 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-03 (session 22f). **Session 22c:** the merged doc pass + the §15-12 arc
-both CLOSED ✅ (grammar completion `2e9a22557e` code / `ce509b0961` docs, verified at objects, ratified; gate
-53/24/53 set-identical; the CLAUDE.md Default-set caveat resolved by measurement; the preference-among-licensed
-lever parked at L5 §15-13, Stage-5). **Session 22e:** the axis-2 VL study DELIVERED + VERIFIED + RATIFIED
-(findings folded as v2.0; roadmap step 4's discovery half ✅); **the commit direction LANDED + VERIFIED AT
-OBJECTS** — `95374ef16a` feat(idiom-discovery) (the 4 pipeline files + the force-added report) + `0dd64660f4`
-docs(cowork) (findings v2.0, STATUS 22d/22e, this handoff, roadmap, the findings_a/b banners — that loose end
-CLEARED — + the CLAUDE.md Default-caveat discharge). Tree clean; chain local/unpushed — user pushes at will.
-**Session 22f: the voice-leading axis spec is SIGNED — `cowork_voiceleading_axis_design.md` (A1–A8 ratified in
-full, user 2026-07-03; VL-A/B/C foundation build surface specced, VL-D/E/F/G/H named + design-gated; QA = self-QA
-+ independent fresh-eyes audit, 24 findings folded; the targeted web sweep's census-grade finds recorded at
-research doc §6b; the zero-information-loss carried-alternatives clarification folded at ratification).**
-**Session 22g: the VL-A/B/C foundation LANDED + VERIFIED + RATIFIED (axis 2 BUILT, dormant)** — suites
-1083/53/11, gate 53/24/53 set-identical measured, dormancy grep-proven, parity 15/15, ABz feature space declared
-by measurement, spec AS-BUILT; the eligibility-filter reconciliation accepted (a Cowork instruction imprecision,
-owned; the 3-flag `plays && visible && staffEligible` filter is canonical). **ACTIVE DISPATCH: `cc_instruction_vl_docs_fold.md`** — the small `docs(cowork):` fold commit (STATUS 22f+22g,
-this handoff, research-doc §6b + the instruction/report records) AND the four build-commit SHAs stated in CC's
-confirmation (the report omitted them; object verification owed). **NEXT after the fold lands: corpus
-Wave 2 / Stage-5 calibration prerequisites per the ratified order.***
+*Written 2026-05-14. Last updated 2026-07-03/04, end of the session-22 arc (22c…22i + the register/census work).
+This header is the fresh-session entry point; full narratives live in STATUS.md (top entries) and the named docs.*
+
+## ★ START HERE — state, dispatch, queue (2026-07-04)
+
+**ACTIVE DISPATCH (exactly one, per the standing rule): `cc_instruction_c1_fold_and_explanation.md`** —
+(1) the owed §2.1 explanation: the C1 report claims the harness reproduces the A-8 key-agree baseline "exactly"
+while showing near-equal numbers (68.18 vs 68.11 / 64.52 vs 64.43 / 67.77 vs 67.50) — mechanism required, STOP
+if it indicates a join/primitive defect rather than a benign coverage nuance; (2) the explicit-list
+`docs(cowork):` narrative fold (the list is IN the instruction; SHAs mandatory in the report).
+
+**✅ C1 RATIFIED (2026-07-04, session 22j — full record in STATUS).** `088ba617b0` (harness + two additive
+default-off dump fields, verified at the diff: flag-gated, early-return before the standard writer) +
+`0051641d27` (report + both CLAUDE.md riders verbatim; the 353-hardcode STOP checked, not tripped). Sandwich
+closed, gate 53/24/53 before/after. **D-L3a evidence DECISIVE:** the L3 sequence margin is 2.8–3.1× better
+calibrated (ECE 0.125–0.142) than the emission sigmoid (0.38–0.44) on every preset — the close-out is now
+evidence-ready as a separate small ratification-gated increment (user call on when). Other curve facts to
+carry: L4 composite best-calibrated (ECE 0.11, monotone above ~0.5); L5 combinedBoundary over-confident +
+non-monotone (ECE 0.25); cadence tonicVote anti-monotone, 3 distinct values; L1.5 strength 97.7 % mass in
+bin 0 (spike-dominated max-norm). All recorded for the Stage-5 fitter, nothing fixed.
+
+**The queue after the fold (plan lines, no instructions until dispatch):**
+1. **Wave 3** (corpus): Tier J jazz/pop GT + Tier G/S remainder + Tier-C remainder — **but its scoping starts
+   with the census §8c FULL-NEEDS AUDIT** (first run pinned there: re-score the enumeration against the
+   needs-vector N1–N17 before disposition; pending adds: BCFB, the JHT tree layer, DCMLab/figured-bass).
+   Wave 3 likely fires the idiom re-discovery trigger (new chord-symbol mass — unlike Wave 2).
+2. **The Stage-5 fitter arc**: weight fitting on the ratified objective; **gate dissolution = OWED refactor #2
+   discharges here**; R10 completes the A-8 re-baseline; C2 θ re-expression; Class-P maps; C3 joint-step design.
+   (OWED refactor #1, the `chordanalyzer.cpp` file split, stays parked BY ratified R9 — after E4, "split once".)
+
+**Current state, one paragraph.** The harmonic spine L1–L6 + Vocabulary + recognition consumer: built (L1–L3
+live, rest dormant-validated), gate 53/24/53 case-identity intact throughout. **Axis 2 (voice leading) is BUILT
+at its foundation** (session 22f/g: spec `cowork_voiceleading_axis_design.md` SIGNED→AS-BUILT; VL-A/B/C dormant,
+suites 1083/53/11, parity 15/15, ABz feature space measured; VL-D/E/F/G/H design-gated; commits
+`f06f4da987`/`39227ad232`/`2a3c767dae`/`cf365b6706`/fold `4c6952de18`, all verified at objects). **Wave 2
+landed** (22h: three axis-2 annotation beds pinned — schema `76f810a1` / texture `3dce4ab8` / Essen `2d0ca75e`;
+the 273-vs-244 schema drift ruled accepted as living-repo growth). **The A-8 metric arc closed** (22i: measured
+`fd8ea88c0f`/`d1d4d3d7f0`; USER-RATIFIED three-part DUAL-TRACK — robust unit + variant-(b) DCML-only = primary
+metric + fitting-objective basis NOW, batch 53/24/53 remains the hard stop until the fitter; semantics-when-
+governing = class-(b) duration non-increase + explained per-run diff; root governs, RN+key tracked; baselines
+root-agree 63.32/62.37/63.22% at 326/352 — full record: roadmap A-8 block + STATUS 22i. Measured inversions to
+remember: the batch gate masks 15–56×; the music21 filter discards ~82% of human-adjudicated error time;
+class-(a) is ~4% on the robust unit, not ≈53%).
+
+**New standing records/mechanisms (2026-07-03/04 — all Cowork-owned docs, ride the next fold commit):**
+- **`cowork_candidate_lever_register.md`** — R-1…R-13 compatible inference levers (figured-bass/BCFB, Parncutt
+  root salience, harmonic grammar + JHT trees, tonal-space priors, IDyOM, conformal prediction…), none
+  commissioned; claimable by the proper layer's design doc.
+- **`cowork_product_tool_register.md`** — T-1…T-32 product tools + E-1…E-14 inferrer-side contract requirements.
+  Binding items: **E-13** (engage catch: the tuning bridge is an unnamed consumer-migration site — add to the
+  R-map at its next edit) and **E-14** (user-stated principle: ZERO INFORMATION LOSS TO THE END USER — every
+  inferred object displayable; progressive disclosure yes, structural hiding no; ARCH pointer rides ARCH's next
+  edit). Market probe recorded: no comparable engine anywhere in the MuseScore GitHub space; plugins hand-annotate
+  what our layers infer.
+- **Census governance (`cowork_score_census.md` §8b/§8c, all user-instituted):** purpose-driven sweep before
+  every new component's design signs · the FULL-NEEDS AUDIT (needs-vector N1–N17; re-score before searching;
+  first run at Wave-3 scoping) · the intake rule (every find scored against the FULL vector; every GT layer
+  inventoried — the JHT-discovered-twice lesson) · the supersession decision protocol (record → cheap impact
+  measurement → contradiction = immediate tripwire / enrichment = postpone-by-default; user decides both forks).
+- **`cowork_polyphony_phrase_harmony_research.md` §6b** — the axis-2 sweep record (+ Wave-2 at-pin corrections).
+
+**Uncommitted Cowork narrative awaiting the fold** (CC excludes these from its commits; the C1 docs commit did
+NOT carry them — the fold list was never given, a Cowork relay omission, owned; now dispatched explicitly):
+STATUS (22g close-out edit + 22h + 22i + the new 22j), this handoff (incl. this header update), the census
+§8b/§8c additions, both registers (`cowork_candidate_lever_register.md` / `cowork_product_tool_register.md` —
+new files), the research-doc §6b at-pin corrections, the roadmap A-8-ratification + wave-plan edits, and the
+VL-spec §15-4/§5.4 at-pin notes. The exact list is in `cc_instruction_c1_fold_and_explanation.md`.
+
+**Chain state:** everything local/unpushed on `master`, fork-only (`origin=slimvince/MuseScore`; `upstream` push
+disabled — NEVER push there). User pushes at will.
+
+**Fresh-session mandatory reads, in order:** CLAUDE.md → STATUS.md top entries (22f–22i) → this header → the
+standing-rule blocks below (unchanged, still binding) → then whatever the active work names.*
 
 ## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
 
@@ -167,8 +221,9 @@ them), risk being skipped, and risk out-of-order execution. The rules:
 4. **Any instruction file that exists but is not the active dispatch carries a `⏸ PARKED` banner** and MUST be
    revalidated by Cowork against the then-current STATUS/HEAD immediately before dispatch, receiving a dated
    DISPATCH note. CC must not execute a parked instruction without that note.
-   *(Parked as of 2026-07-02: `cc_instruction_gap_analysis_spec_vs_impl.md`,
-   `cc_instruction_corpus_wave1_dlc_onboarding.md`. Active: the E0 instruction + its carry-cap addendum.)*
+   *(As of 2026-07-04: NO parked instruction files — the formerly-parked gap-analysis and Wave-1 instructions
+   both executed and were ratified (sessions 21e/21i/21f). Active: `cc_instruction_c1_reliability_instrumentation.md`
+   — see the START HERE header.)*
 
 ---
 

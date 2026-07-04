@@ -92,8 +92,10 @@ composite, L5 combinedBoundary, L1.5 max-normalized strength) are binned directl
 
 ### §2.1 L3 key-of-slice — SEQUENCE MARGIN vs EMISSION SIGMOID (correctness = A-8 key respect)
 
-Overall key respect reproduces the ratified A-8 variant-(b) key-agree baseline **exactly** (Baroque 68.18 vs
-68.11 %, Jazz 64.52 vs 64.43 %, Default 67.77 vs 67.50 %) — the harness is measuring the same key respect.
+Overall key respect reproduces the ratified A-8 variant-(b) key-agree baseline **to within 0.06–0.27 pp — the
+key-parse-fail reweighting** (Baroque 68.18 vs 68.11 %, Jazz 64.52 vs 64.43 %, Default 67.77 vs 67.50 %): the
+harness is measuring the same key respect on the same cells, differing only in the denominator's treatment of
+the ~0.1–0.4 % parse-fail slice. Mechanism verified at both aggregation paths in **§2.1a** below.
 
 | preset | confidence | overall | ECE | signed_gap | mono. viol. | shape |
 |---|---|---|---|---|---|---|
@@ -111,6 +113,36 @@ sparse low-mass bins). The **emission sigmoid** is badly miscalibrated: it is ne
 its value collapses to ≈0.05 for a third-to-nearly-half of the (correct) mass — a systematic **under**confidence
 (signed +0.36 to +0.44) that the A-8 relative-minor cases exemplify (e.g. `bwv10.7` region 0: G-minor chosen
 correctly, sigmoid 0.010, margin 1.371). ECE is **2.8–3.1× worse for the sigmoid** on every preset.
+
+#### §2.1a — baseline-delta mechanism (Task-1 close-out, 2026-07-04)
+
+§2.1 originally called the reproduction "exactly." That was imprecise — the numbers are near-equal, not equal:
+**68.18 vs 68.11 (Baroque) / 64.52 vs 64.43 (Jazz) / 67.77 vs 67.50 (Default)**, same-direction deltas of
+**0.06 / 0.08 / 0.27 pp**. The mechanism, read at both aggregation paths (`c1_reliability.py measure_l3` vs
+`a8_rebaseline_measure.py measure_preset`) and confirmed by a read-only scratch recomputation over the identical
+`build_piece_grid` cells [probe]:
+
+**Denominator scope — the two paths condition the key respect differently, on the SAME numerator (`agree`
+duration), SAME cells, and SAME duration weighting:**
+- **A-8 baseline** reports `agree / scored_dur` — every scored cell is in the denominator, and the small
+  **key-parse-fail** slice (cells where OUR key string does not parse) is reported *separately* (§2.2:
+  0.09 / 0.13 / 0.40 %) while still counted in `scored_dur`.
+- **C1 (§2.1)** reports `agree / (agree + disagree)` — `measure_l3` **excludes** the key-parse-fail cells from
+  the denominator (tracked as `keyfail_w`, reported apart), conditioning the reliability on the cells where OUR
+  key parses — the cells a confidence-vs-correctness curve can actually score.
+
+The per-preset delta **equals exactly the key-parse-fail reweighting** of the shared numerator. Recomputed on
+the identical cells [probe]: `agree/scored` reproduces **68.11 / 64.43 / 67.50** and `agree/(agree+disagree)`
+reproduces **68.18 / 64.52 / 67.77**, the gap being `keyfail% / (1 − keyfail%)` (Default: 67.50 ×
+0.399 %/(1 − 0.399 %) = 0.27 pp). The keymargin-join drops **zero** cells on every preset
+(`join_drop_ticks = 0` — `--dump-region-keymargin` reproduces the frozen-corpus regions exactly, so the L3
+confidence attaches to every cell), and `dcml_keyfail = 0` (all WiR keys parse).
+
+**This is a benign definition/coverage nuance, not a defect** — no mis-join, no wrong parser, no wrong
+weighting; only the denominator's treatment of the ~0.1–0.4 % parse-fail slice differs. The §2 reliability
+curves are unaffected: they bin the scored (parseable) cells, and each curve's overall-correct figure IS the
+C1 `agree/(agree+disagree)` conditioning. **§2.1's "exactly" is corrected to "to within 0.06–0.27 pp, the
+key-parse-fail reweighting."**
 
 ### §2.2 L4 chord-of-slice — COMPOSITE (correctness = A-8 root respect)
 
@@ -270,4 +302,4 @@ fitter (R10); this run left it byte-identical (§0).
   c1_reliability.py new); the docs commit `docs(cowork): C1 reliability report + the A-8 dual-track / 353→352
   CLAUDE.md riders` carries this report (force-added, `/cc_*.md` is gitignored) + the two CLAUDE.md riders.
 
-*Report line count: 273 lines.*
+*Report line count: 305 lines (incl. the §2.1a Task-1 addendum, 2026-07-04).*

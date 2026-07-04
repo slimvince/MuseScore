@@ -411,8 +411,9 @@ Rules and direction (numeric calibration precision-phase):
   progression-schema-spans in L6, or axis-locally) is a decision FOR its design doc, not made here. **This is the
   component that discharges the mapping's "the future layer claims them" flag** — until it exists, the entries'
   harmonic-idiom tags remain the declared placeholders they are today. **Footing found (2026-07-03 sweep,
-  research doc §6b):** an expert schema-annotation dataset exists on the DCML Mozart sonatas we already hold
-  (ISMIR 2020, 244 true instances, 10 types incl. Prinner/Fonte/Quiescenza/Do-Re-Mi — a census candidate), plus
+  research doc §6b):** an expert schema-annotation dataset exists for the Mozart sonatas (ISMIR 2020; 244 at
+  the paper snapshot, **273 at the Wave-2 pin — ONBOARDED 2026-07-03**, `cc_corpus_wave2_report.md` §1; the bed
+  ships its own self-contained score bundle — same 54 movements as the DCML sonatas, distinct encoding), plus
   a published method line (skipgram candidate enumeration + feature classifier) whose measured lessons — extreme
   candidate imbalance; structural-note status is relational, not local; rejection usually means "a better
   explanation of the context exists" — are design input for VL-F's doc.
@@ -634,16 +635,14 @@ where the harmonic study needed lead-sheet-less sources).
    interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested).
 3. **Alternative declared reductions** for chordal voices (bass-note, per-stream post-VL-D) — comparison deferred
    until a consumer needs one; top-note is the single v1 rule.
-4. **Census items — now with NAMED public candidates** (targeted sweep 2026-07-03,
-   `cowork_polyphony_phrase_harmony_research.md` §6b; each is a census event — containers to the census, nothing
-   onboarded here): a phrase-boundary-annotated melodic corpus (VL-E footing — **candidate: the Essen Folksong
-   Collection**, 6,236 songs with expert phrase marks, the standard benchmark; monophonic-folk coverage caveat);
-   a texture-labeled bed (VL-C validation — **candidate: the ISMIR-2022 per-bar texture annotations on the DCML
-   Mozart sonatas we already hold**, 1,164 bars; per-bar granularity also serves the §15-1 measurement); a
-   schemata-annotated corpus (VL-F footing — **candidate: the ISMIR-2020 DCML `schema_annotation_data`**, 244
-   expert instances across all 18 Mozart sonatas incl. Prinner/Fonte/Quiescenza/Do-Re-Mi); an implied-polyphony
-   stream-labeled bed (VL-D's target task — the merged-voices proxy does not cover it; **no candidate found**,
-   the gap stands). Each enters via the census, never ad hoc.
+4. **Census items — ★ THREE OF FOUR ONBOARDED at corpus Wave 2 (2026-07-03, `cc_corpus_wave2_report.md`;
+   research-tier, hash-pin-only, held-out, under `corpora/annot/`):** the phrase-boundary bed (VL-E — the
+   **Essen** CCARH kern edition, pin `2d0ca75e`: 8,473 tunes, europa 6,213, 100% phrase-marked; monophonic-folk
+   coverage caveat); the texture-labeled bed (VL-C validation — the ISMIR-2022 per-bar annotations, pin
+   `3dce4ab8`: 1,164 bar labels keyed (K-id, mn) directly to our DCML Mozart clone; also the §15-1 reference);
+   the schemata bed (VL-F — DCML `schema_annotation_data`, pin `76f810a1`: 273 instances at pin / 244 at the
+   paper snapshot; self-contained score bundle, same works as the DCML sonatas, distinct encoding). **Still
+   open:** an implied-polyphony stream-labeled bed (VL-D's target task — no candidate found; the gap stands).
 5. **VL-D/E/F/G/H design docs** — each written just-in-time when it is the next dispatch, per §5.4's gates.
 6. **The static-harmony/motion-type feature** recorded by the study as the natural home of the harmonic study's
    deferred "wobbly sixth" (modal/static jazz) — a *harmonic-axis* taxonomy refinement informed by axis-2
