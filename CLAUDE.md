@@ -93,7 +93,8 @@ cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/j
 
 Since Stage 2.2a (M3 fix) each preset writes to its **own** dir under `tools/corpus/`
 and stamps a `corpus_manifest.json`. `run_bach_preset.py` clean-slates the dir at the
-start of a regen and **exits nonzero** if the corpus is not 353/353 complete;
+start of a regen and **exits nonzero** unless the corpus is complete (**352/352** at current HEAD — the
+expected count is derived from the source `.xml` files, not hard-coded);
 `characterise_bir_false.py` **refuses** to measure a dir whose manifest is missing,
 incomplete, or whose `.ours.json` fingerprints do not match (preset contamination —
 the old shared-`tools/corpus` failure mode). The gate is the **case-identity** set,
@@ -132,6 +133,17 @@ symmetric-rotation churn.** A *new* BIR=false case is one of two classes:
   score, zero new class-(b), and the L3 reduction-rule lever measured byte-identically inert (a≡b on all presets) —
   so the +1 is irreducible at Layer 3. **Retires when Layer 4 (function/cadence) pins the rotation/center** —
   rotation-pinning is a named early Layer-4 job. Investigation: `cc_layer3_jazz_churn_investigation.md`.
+
+**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
+**primary reported metric AND the Stage-5 fitting-objective basis** is now the **granularity-robust
+union-of-boundaries unit, variant (b) DCML-only** (music21 is not GT): **root governs, with RN + key always
+tracked beside it**. Ratified baselines (variant b, root-agree at 326/352 coverage): **Baroque 63.32 % /
+Jazz 62.37 % / Default 63.22 %** (RN-agree 44.56/42.40/44.40 %, key-agree 68.11/64.43/67.50 %). When it
+governs, the **hard stop is the class-(b) (pitch-class-decidable-root) root-disagree DURATION non-increase per
+preset** + a **mandatory explained per-run set-diff** (zero-new-case cannot scale to ~7,000 cells; class-(b)
+dominates ~95 %+ at this unit). **UNTIL the Stage-5 fitter lands, the batch 53/24/53 case-identity gate above
+REMAINS THE hard regression stop (R10 unchanged)** — the robust unit is the reported/fit-objective metric, the
+batch gate is the tripwire. C1 reliability curves on this unit: `cc_c1_reliability_report.md`.
 
 **Re-baselined 2026-06-13 (corrected GT parser).** The prior **13/7/14** gate was an
 **undercount**: GT-parser bugs (applied-chord `/X` rooting + minor-key
