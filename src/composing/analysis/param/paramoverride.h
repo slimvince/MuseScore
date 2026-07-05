@@ -72,6 +72,7 @@ void registerBool(const char* name, bool* slot);
 enum class PostScoringRule : int {
     BiasCorrection = 0,  ///< bass-root bias deduction + re-sort (incl. kHalfDimFirstInversionBonus)
     FM2,                 ///< Minor-partner pull from rawCandidates in the enharmonic fast path
+    GateA,               ///< Major-add6 ↔ Minor7 enharmonic flip
     GateE,               ///< first-inversion Minor → Major (+8)
     GateGE,              ///< Minor-add6 ↔ HalfDim7 key-function flip (viiø7/iiø7/iiiø7)
     GateGD,              ///< Minor-add6 ↔ HalfDim7 consecutive-stepwise temporal fallback

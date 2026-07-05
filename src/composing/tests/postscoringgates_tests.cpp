@@ -278,16 +278,55 @@ TEST(Composing_PostScoringGateTests, BiasCorrection_SeventhExemption)
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// FM2 — Minor-partner pull from rawCandidates (§6). Under preferMinorOverMajorAdd6,
-// a Major+AddedSixth winner whose relative-Minor partner at (root+9)%12 was blocked
-// out of results[] by a higher-scoring different-root alt is pulled from
-// rawCandidates and promoted.
-//
-// NOTE (Stage 5, 2026-07-05, D-7): Gate A — the DIRECT Major-add6 → Minor swap that
-// used to precede FM2 — was RETIRED (0 corpus firing sites on all three carriers,
-// cc_stage5_phase2_2b_report.md §1.2). FM2 is the surviving enharmonic mechanism; the
-// GateA_FM2_* fixtures below exercise it. (Gates B/C/D were removed earlier at Stage 3.4b.)
+// Gate A — Major-add6 ↔ Minor7 enharmonic fast path (§6 "A–D"). Fires
+// unconditionally (no margin, no temporal evidence) when preferMinorOverMajorAdd6,
+// winner is Major+AddedSixth, and the best clean alt is Minor at (root+9)%12.
+// NOTE: gates B/C/D in this family are unreachable — their preconditions are a
+// superset of Gate A's, which always fires first (report §Findings).
 // ═════════════════════════════════════════════════════════════════════════════
+
+TEST(Composing_PostScoringGateTests, GateA_FastPath_FiresWithoutTemporalOrMargin)
+{
+    // Bb6 vs Gm7/Bb in F major. Margin 1.0 (> 0.70) and context == nullptr:
+    // only the unconditional fast path can flip.
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(7, 10, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+
+    EXPECT_EQ(results.front().identity.rootPc, 7);
+    EXPECT_EQ(results.front().identity.quality, ChordQuality::Minor);
+    // Swap only — scores are not modified.
+    EXPECT_NEAR(results.front().identity.score, 1.5, 1e-9);
+}
+
+// Preset branch: preferMinorOverMajorAdd6 = false (Jazz) keeps the idiomatic
+// added-sixth reading.
+TEST(Composing_PostScoringGateTests, GateA_PresetOff_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(7, 10, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5);
+    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+}
+
+// Added-sixth guard: a plain Major winner (no AddedSixth) does not flip to the
+// relative minor just because it is a candidate.
+TEST(Composing_PostScoringGateTests, GateA_PlainMajorWinner_NoFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(0, 0, ChordQuality::Major, 2.5),
+        makeResult(9, 0, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+    };
+    auto ctx = makeGateCtx({ { 0, 0.6 }, { 4, 0.5 }, { 7, 0.5 } }, 3, 0);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 0);
+}
 
 // FM2 fallback (§6): the expected Minor partner is missing from results[]
 // (blocked by a higher-scoring different-root alt) but lives in rawCandidates
@@ -976,6 +1015,20 @@ TEST(Composing_PostScoringGateTests, BiasHalfDimInversion_MissingSeventh_NotAcce
     EXPECT_EQ(results.front().identity.rootPc, 0);
 }
 
+// Gate A direct fast path: when the winner is Major-add6 but the best clean alt is itself
+// MAJOR (not the relative minor), the enharmonic minor flip does not fire.
+TEST(Composing_PostScoringGateTests, GateA_BestAltMajor_NoEnharmonicFlip)
+{
+    std::vector<ChordAnalysisResult> results = {
+        makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+        makeResult(2, 2, ChordQuality::Major, 1.5),   // clean alt, but MAJOR
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 } }, 4, 10, 5);
+    applyPostScoringGates(results, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(results.front().identity.rootPc, 10);
+    EXPECT_TRUE(hasExtension(results.front().identity.extensions, Extension::AddedSixth));
+}
+
 // Gate A FM2 raw scan that runs to completion without a match (above-threshold raw
 // candidates exist, but none is the expected minor at (root+9)).
 TEST(Composing_PostScoringGateTests, GateA_FM2_NoMatchingRawCandidate_NoFlip)
@@ -1511,6 +1564,26 @@ TEST_F(PostScoringRuleDisable, BiasCorrection_DisabledDoesNotFire)
     applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
     EXPECT_EQ(off.front().identity.rootPc, 0);   // disabled: C stays, no deduction
     EXPECT_NEAR(off.front().identity.score, 2.0, 1e-9);
+}
+
+TEST_F(PostScoringRuleDisable, GateA_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+            makeResult(7, 10, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5);
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 7);
+
+    P::setRuleDisabled(P::PostScoringRule::GateA, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 10);   // no rawCandidates → FM2 cannot cover
 }
 
 TEST_F(PostScoringRuleDisable, FM2_DisabledDoesNotFire)

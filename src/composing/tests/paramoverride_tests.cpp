@@ -258,16 +258,16 @@ TEST_F(ParamOverride, MissingFileThrows)
 
 TEST_F(ParamOverride, PostScoringRuleNamesSpanTheFullSixBlock)
 {
-    // The 9 §6 members after the Stage-5 RETIRE-5 (A + F + G-B + G-C + K; 2026-07-05, D-7):
-    // bias correction · FM2 · E · G-E · G-D · H · I · L · J.
+    // The 10 §6 members after the Stage-5 RETIRE-4 (F + G-B + G-C + K retired; GateA RESTORED
+    // 2026-07-05 — winner-byte-identical but alternatives-differing, held for Cowork; D-7):
+    // bias correction · FM2 · A · E · G-E · G-D · H · I · L · J.
     const auto names = P::postScoringRuleNames();
-    EXPECT_EQ(names.size(), 9u);
-    for (const char* n : { "BiasCorrection", "FM2", "GateE",
+    EXPECT_EQ(names.size(), 10u);
+    for (const char* n : { "BiasCorrection", "FM2", "GateA", "GateE",
                            "GateGE", "GateGD",
                            "GateH", "GateI", "GateL", "GateJ" }) {
         EXPECT_TRUE(P::isKnownRuleName(n)) << n;
     }
-    EXPECT_FALSE(P::isKnownRuleName("GateA"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateF"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateGB"));      // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateGC"));      // retired Stage 5 (2026-07-05) — not a rule
@@ -297,7 +297,7 @@ TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
 {
     const std::string path = writeTempOverride("disable_mixed",
         "kForeignPenalty 0.5\n"
-        "disable_rule GateI\n"
+        "disable_rule GateA\n"
         "disable_rule GateL\n"
         "bassNoteRootBonus 0.55\n");
     ChordAnalyzerPreferences prefs;
@@ -306,7 +306,7 @@ TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
     EXPECT_EQ(st.prefsFields, 1);
     EXPECT_EQ(st.rulesDisabled, 2);
     EXPECT_EQ(st.applied, 4);
-    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateI));
+    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateA));
     EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateL));
     EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateH));
     std::filesystem::remove(path);
