@@ -34,7 +34,36 @@ element-verified vs CLAUDE.md; corpus git-clean, byte-untouched, `0dd64660f4`); 
 no golden refresh; src git-clean (measurement-only). **Commits:** `ee59231141` feat(tools) drivers+ledgers ·
 `5204551583` report · this fold. Local/unpushed; no corpus write; no push. **Cowork verifies → the
 adoption + tie-break are the user's ratification event.** STATUS 22s + design §15 O-11 ii (DELIVERED note)
-= the full record. **The 2.2c-verified block below stands as history:**
+= the full record.
+
+**★ 2.2d COWORK-VERIFIED (3 commits at objects; report read in full) · ★ THE ARC'S FIRST ADOPTION
+USER-RATIFIED (2026-07-05): (srib 0.40 unchanged, kWStepIn 0.10→0.125), Baroque/Default carriers,
+Jazz pinned — the single-lever tie-break per the CC+Cowork joint recommendation (identical class-(b)
+win; the alternative's edge = class-(a) churn + fragile coupling + struct-default leakage into
+unmeasured carriers). ACTIVE DISPATCH: `cc_instruction_stage5_phase2_2e.md` — THE ADOPTION EVENT:
+the one revertible value commit (provenance-stamped — the first §7 license fill) + goldens refresh +
+★ the FIRST deliberate frozen-corpus re-baseline (expected 52/24/52, removal-only {bwv244.32@5760}
+×Bar/Def, Jazz byte-identical — ANY other set change = FULL revert STOP) + CLAUDE.md set re-stamp +
+A-8 baseline re-measure + unmeasured presets enumerated-and-pinned (mandate 4c) + the O-10 liveness
+first application. The batch stop REMAINS the hard stop (a set re-stamp within the dual-track, NOT
+R10). On the report: Cowork verifies → then staging steps 3/4 · family-4 gate · Phase 3.**
+
+**★★ 2.2e CC-DELIVERED (session 22t, 2026-07-05) — THE ADOPTION LANDED; AWAITING COWORK VERIFICATION.**
+Report `cc_stage5_phase2_2e_report.md` (read in full). Commits: `c50002fee1` `feat(analysis):` (kWStepIn
+0.10→0.125 + doc-sync + unit tests + 11 refreshed goldens) + the `chore(corpus):` re-baseline (this fold's
+sibling). **Verified outcome = EXACTLY the promised diff:** corpus **52/24/52**, set-diff removal-only
+`{bwv244.32@5760}` on Baroque+Default, Jazz identical + **byte-identical proven** (R1 reconstruction, 0 diff).
+**★ CC delivery finding (LOAD-BEARING):** `kStepBudget` is derived and a single-key `applyGlobalOverride`
+does NOT recompute it, so the new 0.235 initializer would have leaked into the pinned-0.10 carriers and broken
+Jazz byte-identity (a forced-0.235 Jazz regen differs on **7** files) — `batch_analyze` now re-derives it per
+carrier. **★ Process note for Cowork:** `tools/corpus/` is **gitignored**, so the "old frozen Jazz" byte
+reference was overwritten by the regen before a copy was taken; byte-identity was proven by explicit-override
+reconstruction (rigorous, given the unchanged composing library), but a future re-baseline should snapshot the
+frozen corpus first (or track it). A-8 baselines re-measured (63.36/62.37/63.25); CLAUDE.md re-stamped 52/24/52;
+O-10 liveness recorded (all four retained rules LIVE, counts near-prior). Suites 1101/53/11 green. **On Cowork
+verification → staging steps 3/4 · family-4 gate · Phase 3.**
+
+**The 2.2c-verified block below stands as history:**
 
 **✅ ACQUISITION ROUND COWORK-VERIFIED + RATIFIED (2026-07-04).** `cc_instruction_acquisition_round.md`
 executed; report `cc_acquisition_round_report.md` (read in full); commit `4997757298` **verified at object**

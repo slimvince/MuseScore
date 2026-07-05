@@ -68,6 +68,26 @@
   rare, spacing/doubling conventions differ by idiom — weak evidence for chord-identity/inversion, natural
   axis-2-informed features (VL-A/B facts feed them, D6-safe). **[theory]** Entry: with the L4 NCT-filter design
   (same evidence neighborhood).
+- **R-14 Explicit non-chord-tone classification by melodic role (the L4 NCT-filter's evidence base;
+  researched 2026-07-05, user question at the bwv392 case).** The literature splits into two families:
+  (a) **magnitude/penalty scorers** (Pardo & Birmingham's HarmAn template matching; OUR production scorer)
+  treat NCTs as attenuated evidence mass — the indirect route, weakest on accented NCTs (metric position
+  RAISES our tone weight, so accented NCTs get the biggest wrong vote); (b) **melodic-role systems** read
+  the step context directly: species counterpoint DEFINES each NCT type by approach/departure motion (Fux
+  1725); Temperley's Melisma harmony program carries an explicit ornamental-dissonance preference rule (a
+  non-chord pitch should be closely followed by stepwise motion — melodic context as first-class evidence);
+  and the explicit-classifier line (Ju, Condit-Schultz, Arthur & Fujinaga 2017, DLfM; the ISMIR-2018
+  follow-up) identifies NCTs FIRST and analyzes harmony on the residue — "by identifying non-chord tones,
+  the task of harmonic analysis is much simplified"; on 140 **Bach chorales** (our exact domain) F1 rose
+  57 %→72 % when METRIC + a CONTEXTUAL WINDOW joined pitch-class-only features — the step-context and
+  metric-role features carry the signal. Modern neural RN systems learn the same implicitly. **In-house
+  substrate already built:** the dormant VL-A voice-linear view (axis 2) supplies exactly the per-voice
+  approached-by/left-by-step facts a melodic-role classifier needs (D6-safe: axis-2 FACTS feeding an L4
+  lever); the dormant L4 membership rule's stepwise tiers are the claim site. Entry: the roadmap's L4
+  NCT-filter lever (step 4) claims this at its design; the chorale F1 numbers set the calibration
+  expectation. **[researched — not commissioned; founding case bwv392 m9 b4 (GT = Dm/F, vi6 in F, bass G
+  passing — Tymoczko, the user, and species theory agree; the magnitude-only scorer is bass-bonus-fragile
+  exactly there)]**
 
 ## L5 (function) and above — syntax levers
 

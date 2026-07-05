@@ -969,6 +969,34 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   it cannot remove it; the §11 "ceiling is upstream of weights" caveat, now measured at a single case).
   Open follow-up: a cheap (srib, kw) sub-sweep below the blocking bump (investigate-by-default) may
   find a smaller feasible gain; the Layer-4/NCT fix (R-14) stays deferred to its proper turn.
+  **★ RESOLVED (2.2d, 2026-07-05): the sub-sweep found a feasible slice — and the ARC'S FIRST ADOPTION
+  IS USER-RATIFIED (2026-07-05): candidate (sameRootInversionBonus 0.40 [unchanged], kWStepIn
+  0.10→0.125), Baroque/Default carriers, Jazz pinned byte-identical.** Surface: fitting +0.0365,
+  held-out +0.0280 (generalizes), full-corpus +0.0347 both carriers, fixes the canonical class-(b)
+  `bwv244.32@5760`, ZERO new class-(b) anywhere, DLC net-positive. The tie-break vs (0.425, 0.125)
+  ruled for the single-lever point (identical class-(b) win; the alternative's batch edge is class-(a)
+  churn + a fragile coupling + struct-default leakage into unmeasured carriers). The adoption event =
+  its own dispatch (`cc_instruction_stage5_phase2_2e.md`): the value + provenance stamp (the FIRST §7
+  license-provenance fill) + goldens refresh + **the first deliberate frozen-corpus re-baseline**
+  (expected 52/24/52, removal-only diff {bwv244.32@5760} ×Baroque/Default; CLAUDE.md sets re-stamped;
+  A-8 baselines re-measured) + unmeasured carriers explicitly pinned (mandate 4c) + the O-10
+  retained-rule liveness re-measurement. **The batch stop REMAINS the hard stop (dual-track unchanged —
+  this is a set re-stamp within the policy, NOT the R10 dissolution).**
+  **★ EXECUTED (2.2e, 2026-07-05, `cc_stage5_phase2_2e_report.md`; commit `c50002fee1` `feat(analysis):` +
+  the corpus chore).** Landed exactly as specified: kWStepIn 0.10→0.125 (Baroque/Default; production via the
+  Default global initializer; Jazz + Standard/Modal/Contemporary pinned 0.10), sameRootInversionBonus 0.40
+  unchanged. **Corpus re-baselined 52/24/52**, set-diff = **removal-only `{bwv244.32@5760}`** on Baroque+Default,
+  Jazz identical. **★ Jazz byte-identity — a delivery finding (CC, LOAD-BEARING).** `kStepBudget` is DERIVED
+  (= kWStepIn+kWStepOut+0.01) and a single-key `applyGlobalOverride` does NOT recompute it — only the FILE loader
+  does. So the new 0.235 *initializer* would have LEAKED into the carriers that pin kWStepIn back to 0.10
+  (Jazz + Standard/Modal/Contemporary) and broken Jazz byte-identity. `batch_analyze` now RE-DERIVES kStepBudget
+  per carrier after the single-key kWStepIn write (Jazz→0.21). Proven load-bearing: a forced-0.235 Jazz regen
+  differs on **7** `.ours.json`; the fix restores 0 diff. (The frozen corpus is gitignored, so byte-identity was
+  proven by an explicit-override reconstruction of the pre-adoption Jazz, not `git diff` — a process note: snapshot
+  the frozen corpus before a future re-baseline regen.) A-8 baselines re-measured (root 63.36/62.37/63.25, RN
+  44.58/42.40/44.41, key 68.19/64.52/67.77); CLAUDE.md re-stamped 52/24/52; goldens refreshed 11/11; O-10
+  liveness recorded (all four retained rules LIVE, counts near-prior; ledger `stage5_2_2e_liveness.jsonl`).
+  Suites 1101/53/11 green.
   **★ DELIVERED (2.2d, `cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the
   answer is YES.** The 18-point 2-D grid (srib∈{0.40…0.4625}×kw∈{0.10,0.1125,0.125}, bnrb fixed 0.70,
   Jazz byte-identical by O-9 construction) yields **three full-feasible points**, all at high kw, with
