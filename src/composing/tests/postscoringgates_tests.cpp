@@ -436,25 +436,6 @@ TEST(Composing_PostScoringGateTests, GateG_PulledCandidatePoppedWhenNoSubGateFir
     EXPECT_EQ(results.size(), 2u);   // phantom removed
 }
 
-// G-B: forward evidence — next region's root equals the HalfDim root and the
-// bass moves stepwise toward it.
-TEST(Composing_PostScoringGateTests, GateGB_ForwardEvidenceFlips)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-    };
-    // C major: root 9 is non-functional (vi), so G-E stays silent and the
-    // temporal fallbacks carry the decision.
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.nextRootPc          = 9;
-    temporal.bassIsStepwiseToNext = true;
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-
-    EXPECT_EQ(results.front().identity.rootPc, 9);
-}
-
 // G-C: alt root recently active + stepwise bass from previous region.
 TEST(Composing_PostScoringGateTests, GateGC_RecentRootAndStepwiseFlips)
 {
@@ -1249,22 +1230,6 @@ TEST(Composing_PostScoringGateTests, GateG_HalfDimWrongRootInResults_NoFlip)
     EXPECT_EQ(results.front().identity.rootPc, 0);
 }
 
-// Gate G-B with a matching forward root but NO stepwise-to-next motion does not flip.
-TEST(Composing_PostScoringGateTests, GateGB_MatchingForwardNoStepwise_NoFlip)
-{
-    // Cm6 vs Aø7/C in C major (root 9 = vi, non-functional).
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0, /*tonic C*/ 0);
-    ChordTemporalContext temporal;
-    temporal.nextRootPc           = 9;       // matches gExpected
-    temporal.bassIsStepwiseToNext = false;   // but no stepwise motion → no forward fire
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(results.front().identity.rootPc, 0);
-}
-
 // Gate H with a stepwise-from-previous bass but the alt root NOT in the recent-roots
 // window (all three slots mismatch) and no forward root: no rotation.
 TEST(Composing_PostScoringGateTests, GateH_RecentRootsAllMismatch_NoRotation)
@@ -1715,29 +1680,6 @@ TEST_F(PostScoringRuleDisable, GateGE_DisabledDoesNotFire)
     auto off = build();
     applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
     EXPECT_EQ(off.front().identity.rootPc, 2);   // no context → temporal fallbacks silent
-}
-
-TEST_F(PostScoringRuleDisable, GateGB_DisabledDoesNotFire)
-{
-    auto build = [] {
-        return std::vector<ChordAnalysisResult>{
-            makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-            makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-        };
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.nextRootPc           = 9;
-    temporal.bassIsStepwiseToNext = true;
-
-    auto on = build();
-    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(on.front().identity.rootPc, 9);
-
-    P::setRuleDisabled(P::PostScoringRule::GateGB, true);
-    auto off = build();
-    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(off.front().identity.rootPc, 0);
 }
 
 TEST_F(PostScoringRuleDisable, GateGC_DisabledDoesNotFire)

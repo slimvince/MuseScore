@@ -369,17 +369,9 @@ void applyPostScoringGates(
                     std::swap(results[0], results[halfDimAltIdx]);
                     didGFlip = true;
                 }
-                // Gate G-B: next region's inferred root matches the HalfDim root.
-                // Strong forward evidence the harmony continues on that root.
-                if (!ruleOff(P::PostScoringRule::GateGB)
-                    && !didGFlip
-                    && context != nullptr
-                    && context->nextRootPc != -1
-                    && context->nextRootPc == gExpectedAltRoot
-                    && context->bassIsStepwiseToNext) {
-                    std::swap(results[0], results[halfDimAltIdx]);
-                    didGFlip = true;
-                }
+                // Gate G-B (Minor-add6 ↔ HalfDim7 forward-evidence temporal fallback) was
+                // RETIRED in Stage 5 (2026-07-05, design D-7): 0 corpus firing sites on all
+                // three carriers (cc_stage5_phase2_2b_report.md §1.2) — byte-identical removal.
                 // Gate G-C: HalfDim root appears in the 3-region window AND bass
                 // is moving stepwise from the previous region.
                 if (!ruleOff(P::PostScoringRule::GateGC)

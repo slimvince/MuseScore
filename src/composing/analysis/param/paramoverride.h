@@ -74,7 +74,6 @@ enum class PostScoringRule : int {
     FM2,                 ///< Minor-partner pull from rawCandidates in the enharmonic fast path
     GateE,               ///< first-inversion Minor → Major (+8)
     GateGE,              ///< Minor-add6 ↔ HalfDim7 key-function flip (viiø7/iiø7/iiiø7)
-    GateGB,              ///< Minor-add6 ↔ HalfDim7 forward-evidence temporal fallback
     GateGC,              ///< Minor-add6 ↔ HalfDim7 recent-root + stepwise temporal fallback
     GateGD,              ///< Minor-add6 ↔ HalfDim7 consecutive-stepwise temporal fallback
     GateH,               ///< augmented rotation resolution

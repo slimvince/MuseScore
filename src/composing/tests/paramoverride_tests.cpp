@@ -258,17 +258,18 @@ TEST_F(ParamOverride, MissingFileThrows)
 
 TEST_F(ParamOverride, PostScoringRuleNamesSpanTheFullSixBlock)
 {
-    // The 12 §6 members after retiring Gates A + F (Stage-5 RETIRE-5, 2026-07-05, design D-7):
-    // bias correction · FM2 · E · G-E · G-B · G-C · G-D · H · I · K · L · J.
+    // The 11 §6 members after retiring Gates A + F + G-B (Stage-5 RETIRE-5, 2026-07-05, D-7):
+    // bias correction · FM2 · E · G-E · G-C · G-D · H · I · K · L · J.
     const auto names = P::postScoringRuleNames();
-    EXPECT_EQ(names.size(), 12u);
+    EXPECT_EQ(names.size(), 11u);
     for (const char* n : { "BiasCorrection", "FM2", "GateE",
-                           "GateGE", "GateGB", "GateGC", "GateGD",
+                           "GateGE", "GateGC", "GateGD",
                            "GateH", "GateI", "GateK", "GateL", "GateJ" }) {
         EXPECT_TRUE(P::isKnownRuleName(n)) << n;
     }
     EXPECT_FALSE(P::isKnownRuleName("GateA"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateF"));       // retired Stage 5 (2026-07-05) — not a rule
+    EXPECT_FALSE(P::isKnownRuleName("GateGB"));      // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateB"));       // removed at Stage 3.4b — not a rule
     EXPECT_FALSE(P::isKnownRuleName("NotARule"));
 }
