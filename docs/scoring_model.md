@@ -665,6 +665,14 @@ corrections at all (Stage-1b findings F2/F3, pinned in the `OuterGuard_*` tests 
 bias-deduction+sort] → G → H → I → K → L → **J**. Despite its letter, Gate J
 executes LAST, after K and L. The table below follows execution order.
 
+**Stage-5 dissolution audit — per-rule disable (measurement-only).** Each §6 rule (the
+bias correction, FM2, and Gates A/E/F/G-E/G-B/G-C/G-D/H/I/K/L/J) is individually
+disable-able via a `disable_rule <Name>` line in the `--param-override` file (names in
+`paramoverride.h` `PostScoringRule`). A disable is a clean skip of only that rule's block;
+default (no such line) leaves every rule enabled, byte-identical to before the hook
+existed. This is measurement-only for the Phase-2.2 dissolution audit (design D-7) — it
+retires no rule and changes no committed value.
+
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | bias correction | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |

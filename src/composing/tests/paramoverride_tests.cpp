@@ -72,6 +72,8 @@ protected:
         for (const auto& [name, value] : m_snapshot) {
             P::applyGlobalOverride(name, value);
         }
+        // The §6 rule-disable state is a whole-process global too — never leak a disable.
+        P::resetPostScoringRules();
     }
     std::map<std::string, double> m_snapshot;
 };
@@ -250,6 +252,92 @@ TEST_F(ParamOverride, MissingFileThrows)
 {
     ChordAnalyzerPreferences prefs;
     EXPECT_THROW(P::loadAndApply("/no/such/paramoverride/file.txt", prefs), std::runtime_error);
+}
+
+// ── §6-block dissolution audit: the `disable_rule` grammar ──────────────────────────
+
+TEST_F(ParamOverride, PostScoringRuleNamesSpanTheFullSixBlock)
+{
+    // The 14 §6 members (design D-7): bias correction · FM2 · A · E · F ·
+    // G-E · G-B · G-C · G-D · H · I · K · L · J.
+    const auto names = P::postScoringRuleNames();
+    EXPECT_EQ(names.size(), 14u);
+    for (const char* n : { "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
+                           "GateGE", "GateGB", "GateGC", "GateGD",
+                           "GateH", "GateI", "GateK", "GateL", "GateJ" }) {
+        EXPECT_TRUE(P::isKnownRuleName(n)) << n;
+    }
+    EXPECT_FALSE(P::isKnownRuleName("GateB"));       // removed at Stage 3.4b — not a rule
+    EXPECT_FALSE(P::isKnownRuleName("NotARule"));
+}
+
+TEST_F(ParamOverride, DisableRuleLineSetsTheFlagAndCounts)
+{
+    const std::string path = writeTempOverride("disable_one", "disable_rule GateJ\n");
+    ChordAnalyzerPreferences prefs;
+    const auto st = P::loadAndApply(path, prefs);
+    EXPECT_EQ(st.rulesDisabled, 1);
+    EXPECT_EQ(st.applied, 1);
+    EXPECT_EQ(st.globals, 0);
+    EXPECT_EQ(st.prefsFields, 0);
+    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateJ));
+    // Every other rule stays enabled.
+    EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateI));
+    EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::BiasCorrection));
+    std::filesystem::remove(path);
+    // TearDown re-enables all rules.
+}
+
+TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
+{
+    const std::string path = writeTempOverride("disable_mixed",
+        "kForeignPenalty 0.5\n"
+        "disable_rule GateA\n"
+        "disable_rule GateL\n"
+        "bassNoteRootBonus 0.55\n");
+    ChordAnalyzerPreferences prefs;
+    const auto st = P::loadAndApply(path, prefs);
+    EXPECT_EQ(st.globals, 1);
+    EXPECT_EQ(st.prefsFields, 1);
+    EXPECT_EQ(st.rulesDisabled, 2);
+    EXPECT_EQ(st.applied, 4);
+    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateA));
+    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateL));
+    EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateK));
+    std::filesystem::remove(path);
+}
+
+TEST_F(ParamOverride, UnknownRuleNameThrows)
+{
+    const std::string path = writeTempOverride("disable_unknown", "disable_rule GateZ\n");
+    ChordAnalyzerPreferences prefs;
+    EXPECT_THROW(P::loadAndApply(path, prefs), std::runtime_error);
+    std::filesystem::remove(path);
+}
+
+TEST_F(ParamOverride, DisableRuleWithoutNameThrows)
+{
+    // 'disable_rule' alone is a malformed (name-only) line — the loader wants two tokens.
+    const std::string path = writeTempOverride("disable_bare", "disable_rule\n");
+    ChordAnalyzerPreferences prefs;
+    EXPECT_THROW(P::loadAndApply(path, prefs), std::runtime_error);
+    std::filesystem::remove(path);
+}
+
+TEST_F(ParamOverride, IdentityFileWithNoDisableLeavesAllRulesEnabled)
+{
+    // The Phase-1 discipline for the audit hook: an override file that disables nothing
+    // leaves every rule enabled (byte-identical behavior).
+    const std::string path = writeTempOverride("no_disable", "kForeignPenalty 0.5\n");
+    ChordAnalyzerPreferences prefs;
+    const auto st = P::loadAndApply(path, prefs);
+    EXPECT_EQ(st.rulesDisabled, 0);
+    for (const auto& name : P::postScoringRuleNames()) {
+        P::PostScoringRule r{};
+        ASSERT_TRUE(P::postScoringRuleId(name, r));
+        EXPECT_FALSE(P::isRuleDisabled(r)) << name;
+    }
+    std::filesystem::remove(path);
 }
 
 } // namespace

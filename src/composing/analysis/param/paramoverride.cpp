@@ -24,12 +24,14 @@
 
 #include "../types/analysistypes.h"
 
+#include <array>
 #include <cmath>
 #include <fstream>
 #include <map>
 #include <sstream>
 #include <stdexcept>
 #include <set>
+#include <utility>
 
 namespace mu::composing::params {
 
@@ -87,7 +89,85 @@ double parseValueToken(const std::string& tok, const std::string& lineForError)
     }
 }
 
+// ── §6-block rule-disable state (measurement-only) ─────────────────────────────────
+// Process-global, value-initialized to all-false = every §6 rule ENABLED. Written only
+// by disableRuleByName()/setRuleDisabled(); disableRuleByName() runs only from a
+// `disable_rule` line in a loaded file. So with no override file the array is all-false
+// and applyPostScoringGates() runs byte-identically. isRuleDisabled() is the only reader
+// on the hot path.
+std::array<bool, static_cast<std::size_t>(PostScoringRule::Count)>& ruleDisabledState()
+{
+    static std::array<bool, static_cast<std::size_t>(PostScoringRule::Count)> s{};
+    return s;
+}
+
+// Canonical §6 rule names, indexed by PostScoringRule (execution order). The
+// `disable_rule <Name>` file tokens and the introspection list are both this table.
+const std::array<const char*, static_cast<std::size_t>(PostScoringRule::Count)>&
+ruleNameTable()
+{
+    static const std::array<const char*, static_cast<std::size_t>(PostScoringRule::Count)>
+        kNames = {
+            "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
+            "GateGE", "GateGB", "GateGC", "GateGD",
+            "GateH", "GateI", "GateK", "GateL", "GateJ",
+        };
+    return kNames;
+}
+
 } // namespace
+
+std::vector<std::string> postScoringRuleNames()
+{
+    std::vector<std::string> out;
+    for (const char* n : ruleNameTable()) {
+        out.emplace_back(n);
+    }
+    return out;
+}
+
+bool postScoringRuleId(const std::string& name, PostScoringRule& out)
+{
+    const auto& names = ruleNameTable();
+    for (std::size_t i = 0; i < names.size(); ++i) {
+        if (name == names[i]) {
+            out = static_cast<PostScoringRule>(i);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool isKnownRuleName(const std::string& name)
+{
+    PostScoringRule r{};
+    return postScoringRuleId(name, r);
+}
+
+void setRuleDisabled(PostScoringRule rule, bool disabled)
+{
+    ruleDisabledState()[static_cast<std::size_t>(rule)] = disabled;
+}
+
+bool disableRuleByName(const std::string& name)
+{
+    PostScoringRule r{};
+    if (!postScoringRuleId(name, r)) {
+        return false;
+    }
+    setRuleDisabled(r, true);
+    return true;
+}
+
+void resetPostScoringRules()
+{
+    ruleDisabledState().fill(false);
+}
+
+bool isRuleDisabled(PostScoringRule rule)
+{
+    return ruleDisabledState()[static_cast<std::size_t>(rule)];
+}
 
 void registerDouble(const char* name, double* slot)
 {
@@ -244,6 +324,21 @@ LoadStats loadAndApply(const std::string& path,
             throw std::runtime_error("param-override: extra token '" + extra + "' on line "
                                      + std::to_string(lineNo) + ": " + line);
         }
+
+        // ── `disable_rule <Name>`: §6-block dissolution audit (measurement-only) ──
+        // A reserved keyword line, distinct from the numeric `name value` grammar; its
+        // second token is a §6 rule name, not a number, so it is intercepted before
+        // parseValueToken(). Does not participate in the kStepBudget derivation (seen).
+        if (name == "disable_rule") {
+            if (!disableRuleByName(valueTok)) {
+                throw std::runtime_error("param-override: unknown §6 rule name '" + valueTok
+                                         + "' on line " + std::to_string(lineNo));
+            }
+            ++stats.rulesDisabled;
+            ++stats.applied;
+            continue;
+        }
+
         const double value = parseValueToken(valueTok, line);
 
         bool applied = false;

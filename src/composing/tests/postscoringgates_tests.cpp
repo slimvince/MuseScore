@@ -55,8 +55,10 @@
 #include "test_helpers.h"
 
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/param/paramoverride.h"
 
 using namespace mu::composing::analysis;
+namespace P = mu::composing::params;
 
 namespace {
 
@@ -1707,4 +1709,320 @@ TEST(Composing_PostScoringGateTests, Iter91_NoBassRootedRawCandidate_NoPromotion
     temporal.nextRootPc = 0;
     applyIter8691Pedal(results, ctx, &temporal, kDefaultChordAnalyzerPreferences);
     EXPECT_EQ(results.front().identity.rootPc, 4);   // no bass-rooted candidate to promote to
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// §6-block dissolution audit (Phase 2.2, design D-7): per-rule disable.
+//
+// For every §6 rule, reconstruct the SAME firing fixture pinned above, run it with
+// ONLY that rule disabled (all others enabled), and assert it no longer fires —
+// proving the `disable_rule` hook cleanly skips exactly that rule's rank mutation.
+// The enabled arm re-asserts the pinned outcome so the pair is a live before/after.
+// The fixture resets the process-global disable state around every test.
+// ═════════════════════════════════════════════════════════════════════════════
+
+class PostScoringRuleDisable : public ::testing::Test {
+protected:
+    void SetUp() override { P::resetPostScoringRules(); }
+    void TearDown() override { P::resetPostScoringRules(); }
+};
+
+TEST_F(PostScoringRuleDisable, BiasCorrection_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(0, 0, ChordQuality::Major, 2.0),
+            makeResult(4, 4, ChordQuality::Minor, 1.5),
+        };
+    };
+    auto ctx = makeGateCtx({ { 0, 0.6 }, { 4, 0.5 }, { 7, 0.5 }, { 11, 0.3 } }, 4, 0);
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 4);   // enabled: Em promoted
+
+    P::setRuleDisabled(P::PostScoringRule::BiasCorrection, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 0);   // disabled: C stays, no deduction
+    EXPECT_NEAR(off.front().identity.score, 2.0, 1e-9);
+}
+
+TEST_F(PostScoringRuleDisable, GateA_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+            makeResult(7, 10, ChordQuality::Minor, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5);
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 7);
+
+    P::setRuleDisabled(P::PostScoringRule::GateA, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 10);   // no rawCandidates → FM2 cannot cover
+}
+
+TEST_F(PostScoringRuleDisable, FM2_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(10, 10, ChordQuality::Major, 2.5, { Extension::AddedSixth }),
+            makeResult(2, 2, ChordQuality::Minor, 1.4),   // clean alt at the WRONG root
+        };
+    };
+    auto mkctx = [] {
+        auto c = makeGateCtx({ { 10, 0.6 }, { 2, 0.5 }, { 5, 0.5 }, { 7, 0.4 } }, 4, 10, 5, 1.0);
+        c.rawCandidates = { rawCand(1.6, 7, ChordQuality::Minor, 5) };
+        return c;
+    };
+
+    auto on = build(); auto ctxOn = mkctx();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctxOn);
+    EXPECT_EQ(on.front().identity.rootPc, 7);   // enabled: partner pulled from raw
+
+    P::setRuleDisabled(P::PostScoringRule::FM2, true);
+    auto off = build(); auto ctxOff = mkctx();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctxOff);
+    EXPECT_EQ(off.front().identity.rootPc, 10);   // Gate A can't fire (partner off-root)
+}
+
+TEST_F(PostScoringRuleDisable, GateE_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(6, 6, ChordQuality::Minor, 2.5),
+            makeResult(2, 6, ChordQuality::Major, 1.5),
+        };
+    };
+    auto ctx = makeGateCtx({ { 6, 0.6 }, { 9, 0.5 }, { 2, 0.5 } }, 3, 6, 2);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 2);
+
+    P::setRuleDisabled(P::PostScoringRule::GateE, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 6);
+}
+
+TEST_F(PostScoringRuleDisable, GateF_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(11, 11, ChordQuality::Major, 2.5),
+            makeResult(4, 11, ChordQuality::Major, 1.5),
+        };
+    };
+    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, 4);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseToNext = true;
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 4);
+
+    P::setRuleDisabled(P::PostScoringRule::GateF, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 11);
+}
+
+TEST_F(PostScoringRuleDisable, GateGE_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(2, 2, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+            makeResult(11, 2, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 2, 0.6 }, { 5, 0.5 }, { 9, 0.5 }, { 11, 0.4 } }, 4, 2);
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 11);
+
+    P::setRuleDisabled(P::PostScoringRule::GateGE, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 2);   // no context → temporal fallbacks silent
+}
+
+TEST_F(PostScoringRuleDisable, GateGB_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+            makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc           = 9;
+    temporal.bassIsStepwiseToNext = true;
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 9);
+
+    P::setRuleDisabled(P::PostScoringRule::GateGB, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 0);
+}
+
+TEST_F(PostScoringRuleDisable, GateGC_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+            makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.bassIsStepwiseFromPrevious = true;
+    temporal.recentRootPcs              = { -1, 9, -1 };
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 9);
+
+    P::setRuleDisabled(P::PostScoringRule::GateGC, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 0);
+}
+
+TEST_F(PostScoringRuleDisable, GateGD_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
+            makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
+    ChordTemporalContext temporal;
+    temporal.consecutiveBassStepwiseCount = 2;
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 9);
+
+    P::setRuleDisabled(P::PostScoringRule::GateGD, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 0);
+}
+
+TEST_F(PostScoringRuleDisable, GateH_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(0, 0, ChordQuality::Augmented, 2.0),
+            makeResult(4, 4, ChordQuality::Augmented, 1.8),
+        };
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 0);
+    ChordTemporalContext temporal;
+    temporal.nextRootPc           = 4;
+    temporal.bassIsStepwiseToNext = true;
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 4);
+
+    P::setRuleDisabled(P::PostScoringRule::GateH, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 0);
+}
+
+TEST_F(PostScoringRuleDisable, GateI_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(4, 4, ChordQuality::Minor, 2.0, { Extension::MinorSeventh }),
+            makeResult(0, 4, ChordQuality::Major, 1.57),   // C/E, margin 0.43 <= 0.45
+        };
+    };
+    auto ctx = makeGateCtx({ { 0, 0.5 }, { 4, 0.6 }, { 7, 0.5 }, { 2, 0.3 } }, 4, 4);
+
+    auto on = build();
+    applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 0);
+
+    P::setRuleDisabled(P::PostScoringRule::GateI, true);
+    auto off = build();
+    applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 4);   // bias correction seventh-exempt → no swap
+}
+
+TEST_F(PostScoringRuleDisable, GateK_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(9, 9, ChordQuality::Augmented, 2.0),
+            makeResult(5, 9, ChordQuality::Augmented, 1.82),   // margin 0.18 <= 0.20
+        };
+    };
+    auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
+
+    auto on = build();
+    applyPostScoringGates(on, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 5);
+
+    P::setRuleDisabled(P::PostScoringRule::GateK, true);
+    auto off = build();
+    applyPostScoringGates(off, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 9);
+}
+
+TEST_F(PostScoringRuleDisable, GateL_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(11, 11, ChordQuality::Augmented, 2.0),
+            makeResult(11, 11, ChordQuality::Major, 1.67),   // margin 0.33 <= 0.35
+        };
+    };
+    auto ctx = makeGateCtx({ { 11, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 3, 11);
+
+    auto on = build();
+    applyPostScoringGates(on, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(on.front().identity.quality, ChordQuality::Major);
+
+    P::setRuleDisabled(P::PostScoringRule::GateL, true);
+    auto off = build();
+    applyPostScoringGates(off, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(off.front().identity.quality, ChordQuality::Augmented);
+}
+
+TEST_F(PostScoringRuleDisable, GateJ_DisabledDoesNotFire)
+{
+    auto build = [] {
+        return std::vector<ChordAnalysisResult>{
+            makeResult(10, 10, ChordQuality::Diminished, 2.5),
+            makeResult(6, 10, ChordQuality::Major, 1.2, { Extension::MinorSeventh }),
+        };
+    };
+    auto ctx = makeGateCtx({ { 10, 0.5 }, { 1, 0.5 }, { 4, 0.5 }, { 6, 0.4 } }, 4, 10);
+
+    auto on = build();
+    applyPostScoringGates(on, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(on.front().identity.rootPc, 6);
+
+    P::setRuleDisabled(P::PostScoringRule::GateJ, true);
+    auto off = build();
+    applyPostScoringGates(off, kDefaultChordAnalyzerPreferences, nullptr, ctx);
+    EXPECT_EQ(off.front().identity.rootPc, 10);
 }

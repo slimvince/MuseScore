@@ -72,6 +72,13 @@ void applyPostScoringGates(
             prefs);
     };
 
+    // ── §6-block dissolution audit (Phase 2.2): per-rule disable hook ────────────
+    // ruleOff(X) is true only when a `disable_rule X` override line was loaded; with no
+    // override every call returns false, so each guard `!ruleOff(X) && <cond>` collapses
+    // to `<cond>` — byte-identical to the pre-audit code. Measurement-only (design D-7).
+    namespace P = ::mu::composing::params;
+    const auto ruleOff = [](P::PostScoringRule r) { return P::isRuleDisabled(r); };
+
     // Gate margin guards (corpus-tuned).  All reachable corpus targets have
     // margins well within these bounds.
     // (kGateIMargin/kGateKMargin/kGateLMargin relocated to file scope for the Stage-5
@@ -205,7 +212,8 @@ void applyPostScoringGates(
                     const bool altIsMinor =
                         (results[bestAltIdx].identity.quality == ChordQuality::Minor);
                     const int expectedAltRoot = (winner.identity.rootPc + 9) % 12;
-                    if (winnerIsMajor && winnerHasAddedSixth && altIsMinor
+                    if (!ruleOff(P::PostScoringRule::GateA)
+                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
                         && results[bestAltIdx].identity.rootPc == expectedAltRoot) {
                         std::swap(results[0], results[bestAltIdx]);
                         didEnharmonicFlip = true;
@@ -213,7 +221,8 @@ void applyPostScoringGates(
                     // FM2 fallback: a higher-scoring different-root alt (e.g. Em/C) may have
                     // blocked the enharmonic partner from entering results[] via the append path.
                     // Scan rawCandidates above threshold for the Minor alt at expectedAltRoot.
-                    if (!didEnharmonicFlip && winnerIsMajor && winnerHasAddedSixth) {
+                    if (!ruleOff(P::PostScoringRule::FM2)
+                        && !didEnharmonicFlip && winnerIsMajor && winnerHasAddedSixth) {
                         for (const RawCandidate& rc : gateCtx.rawCandidates) {
                             if (rc.score < gateCtx.threshold) { break; }
                             if (rc.rootPc == expectedAltRoot
@@ -244,7 +253,8 @@ void applyPostScoringGates(
                 // Relationship: altRootPc == (winnerRootPc + 8) % 12
                 // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
                 // bass signal (temporal context required).
-                if (!didEnharmonicFlip
+                if (!ruleOff(P::PostScoringRule::GateE)
+                    && !didEnharmonicFlip
                     && prefs.preferMinorOverMajorAdd6
                     && context != nullptr
                     && winner.identity.quality == ChordQuality::Minor
@@ -266,7 +276,8 @@ void applyPostScoringGates(
                 // Relationship: altRootPc == (winnerRootPc + 5) % 12
                 // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
                 // bass signal (temporal context required).
-                if (!didEnharmonicFlip
+                if (!ruleOff(P::PostScoringRule::GateF)
+                    && !didEnharmonicFlip
                     && prefs.preferMinorOverMajorAdd6
                     && context != nullptr
                     && results[bestAltIdx].identity.quality == ChordQuality::Major
@@ -291,7 +302,8 @@ void applyPostScoringGates(
                         || hasExtension(results[bestAltIdx].identity.extensions, Extension::MajorSeventh);
                     const bool seventhExempt = winnerHasSeventh && !altHasSeventh;
 
-                    if (!seventhExempt && margin < prefs.inversionSuspicionMargin) {
+                    if (!ruleOff(P::PostScoringRule::BiasCorrection)
+                        && !seventhExempt && margin < prefs.inversionSuspicionMargin) {
                         // Deduct the bass-bonus contribution from the winner and re-sort.
                         const double deduction = prefs.bassNoteRootBonus
                                                 * (1.0 - prefs.inversionBonusReduction);
@@ -368,7 +380,8 @@ void applyPostScoringGates(
                 const int gLeadingTonePc  = (gateCtx.keyTonicPc + 11) % 12;  // viiø7
                 const int gSupertonicPc   = (gateCtx.keyTonicPc + 2) % 12;   // iiø7
                 const int gMediantPc      = (gateCtx.keyTonicPc + 4) % 12;   // iiiø7 / mediant
-                if (!didGFlip
+                if (!ruleOff(P::PostScoringRule::GateGE)
+                    && !didGFlip
                     && (results[halfDimAltIdx].identity.rootPc == gLeadingTonePc
                         || results[halfDimAltIdx].identity.rootPc == gSupertonicPc
                         || results[halfDimAltIdx].identity.rootPc == gMediantPc)) {
@@ -377,7 +390,8 @@ void applyPostScoringGates(
                 }
                 // Gate G-B: next region's inferred root matches the HalfDim root.
                 // Strong forward evidence the harmony continues on that root.
-                if (!didGFlip
+                if (!ruleOff(P::PostScoringRule::GateGB)
+                    && !didGFlip
                     && context != nullptr
                     && context->nextRootPc != -1
                     && context->nextRootPc == gExpectedAltRoot
@@ -387,7 +401,8 @@ void applyPostScoringGates(
                 }
                 // Gate G-C: HalfDim root appears in the 3-region window AND bass
                 // is moving stepwise from the previous region.
-                if (!didGFlip
+                if (!ruleOff(P::PostScoringRule::GateGC)
+                    && !didGFlip
                     && context != nullptr
                     && context->bassIsStepwiseFromPrevious) {
                     const auto& rpc = context->recentRootPcs;
@@ -399,7 +414,8 @@ void applyPostScoringGates(
                     }
                 }
                 // Gate G-D: two or more consecutive stepwise bass moves ending here.
-                if (!didGFlip
+                if (!ruleOff(P::PostScoringRule::GateGD)
+                    && !didGFlip
                     && context != nullptr
                     && context->consecutiveBassStepwiseCount >= 2) {
                     std::swap(results[0], results[halfDimAltIdx]);
@@ -424,7 +440,8 @@ void applyPostScoringGates(
         // Unlike the main correction block, this gate handles Augmented winners
         // (excluded from winnerQualityTargeted = Major/Minor).  It fires only with
         // temporal context and is gated by preferMinorOverMajorAdd6 (classical presets).
-        if (winnerBassIsRoot
+        if (!ruleOff(P::PostScoringRule::GateH)
+            && winnerBassIsRoot
             && winner.identity.quality == ChordQuality::Augmented
             && prefs.preferMinorOverMajorAdd6
             && context != nullptr) {
@@ -476,7 +493,8 @@ void applyPostScoringGates(
         //
         // Score margin guard (≤ 0.45) ensures the gate only fires when the two readings
         // are genuinely competitive — not when the Minor winner is strongly confirmed.
-        if (winnerBassIsRoot
+        if (!ruleOff(P::PostScoringRule::GateI)
+            && winnerBassIsRoot
             && originalWinnerQuality == ChordQuality::Minor
             && results.size() >= 2
             && gateCtx.keyTonicPc >= 0) {
@@ -512,7 +530,8 @@ void applyPostScoringGates(
         // Augmented quality directly, or Major with SharpFifth extension.
         //
         // Margin guard (≤ 0.20) keeps the gate narrow; all reachable targets have margin ≤ 0.12.
-        if (winnerBassIsRoot
+        if (!ruleOff(P::PostScoringRule::GateK)
+            && winnerBassIsRoot
             && originalWinnerQuality == ChordQuality::Augmented
             && results.size() >= 2
             && gateCtx.keyTonicPc >= 0) {
@@ -549,7 +568,8 @@ void applyPostScoringGates(
         // augmented and must not be demoted to plain Major.
         // Margin guard (≤ 0.35) keeps the gate narrow; all corpus targets have margin ≤ 0.30.
         // Diatonic check prevents spurious fires on chromatic passing augmented chords.
-        if (originalWinnerQuality == ChordQuality::Augmented
+        if (!ruleOff(P::PostScoringRule::GateL)
+            && originalWinnerQuality == ChordQuality::Augmented
             && winnerBassIsRoot
             && results.size() >= 2
             && gateCtx.keyTonicPc >= 0
@@ -583,7 +603,8 @@ void applyPostScoringGates(
         // A genuine standalone vii° / vii°7 never voices the dominant root, so the
         // present-root guard means this cannot misfire on real leading-tone chords.
         // No diatonic guard — a secondary dominant (V7/x) is just as validly completed.
-        if (originalWinnerQuality == ChordQuality::Diminished
+        if (!ruleOff(P::PostScoringRule::GateJ)
+            && originalWinnerQuality == ChordQuality::Diminished
             && results.size() >= 2) {
             const ChordAnalysisResult& dimWinner = results[0];
             if (dimWinner.identity.quality == ChordQuality::Diminished

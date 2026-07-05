@@ -1908,8 +1908,10 @@ static void printHelp(const std::string& prog)
         << "            Stage-5 fitter (design D-6): override scoring-constant values by\n"
         << "            name from a line-based file ('name value' per line, '#' comments).\n"
         << "            Reaches the file-level scoring constants (G1/G6/G7) and the\n"
-        << "            ChordAnalyzerPreferences fields (G2-G5). Byte-identical when\n"
-        << "            absent; strict (an unknown name or malformed line aborts).\n"
+        << "            ChordAnalyzerPreferences fields (G2-G5). A line\n"
+        << "            'disable_rule <Name>' disables one docs/scoring_model.md §6\n"
+        << "            post-scoring rule (measurement-only, Phase 2.2). Byte-identical\n"
+        << "            when absent; strict (an unknown name or malformed line aborts).\n"
         << "  --dump-regions <mode>\n"
         << "            Select which analysis path to serialize. 'batch' writes the\n"
         << "            tool's current batch path, 'notation' writes the live notation\n"
@@ -3925,7 +3927,8 @@ int main(int argc, char* argv[])
             const auto st = mu::composing::params::loadAndApply(*paramOverridePath, chordPrefs);
             std::cerr << "param-override: applied " << st.applied << " overrides ("
                       << st.globals << " global constants, " << st.prefsFields
-                      << " prefs fields) from " << *paramOverridePath << "\n";
+                      << " prefs fields, " << st.rulesDisabled << " §6 rules disabled) from "
+                      << *paramOverridePath << "\n";
         } catch (const std::exception& e) {
             std::cerr << "ERROR: --param-override: " << e.what() << "\n";
             return 1;
