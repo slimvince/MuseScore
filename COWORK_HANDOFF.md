@@ -32,7 +32,30 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ PHASE 2.2b CC-DELIVERED (session 22p tail, 2026-07-05) — awaiting Cowork verification.** Report
+**★ PHASE 2.2c DELIVERED (session 22q, 2026-07-05) — report `cc_stage5_phase2_2c_report.md` (read in
+full); NOTHING adopted, one retirement HELD, no `tools/corpus` write, no push.** AS-BUILT: (1) **RETIRE-5
+executed → byte-identity STOP → user Option 1 → RETIRE-4.** The five retirements were committed; the
+byte-identity proof tripped on **Baroque 36 differing `.ours.json`**, and the diagnosis (3-way vs a built
+`3f52f088ad` baseline + a winner-vs-alternatives isolation) found **GateA is WINNER-byte-identical on all
+352 scores but changes `alternatives[]` on 36 Baroque** (GateA `std::swap` reuses the existing object; the
+retained **FM2** promotes the same winner via `push_back(buildResult)`). So the 2.2b firing-site ledger —
+which measured the **winner** — was CORRECT; the dispatch's proof is over the full `.ours.json`. **A
+carry-contract surprise, not "evidence wrong"** — surfaced as a STOP. **GateF/GB/GC/K are fully
+byte-identical (0 diff).** User chose **Option 1**: un-retire GateA (`c9909be4f8`), keep the four →
+**RETIRE-4**; GateA retirement HELD pending the alternatives-in-contract decision. (2) **O-9 per-carrier
+scoping delivered** (`6a468f82ac` — bassNoteRootBonus + kWStepIn per-carrier via the preset builders /
+`applyGlobalOverride`; values unchanged → byte-identical ×3; **production-path question REPORTED**:
+production has no preset-selection moment, delivers only the Default carrier). (3) **bwv392@17520
+score-verified class-(b)** — the candidate's `Dm/F` (iii6) over-grabs the WiR `Gm` (vi) region; a
+pitch-class-decidable root error, a hard R10 blocker. (4) **Candidate re-selection sweep: NO swept value
+passes.** bnrb {0.70…0.775} × (srib 0.475, kw 0.125): low bnrb fitting-infeasible (`bwv379@11520`), every
+fitting-feasible bnrb (0.7375–0.775) full-infeasible — **`bwv392@17520` on BOTH Baroque AND Default**
+(driven by the srib/kw pair, not bnrb; the 0.775 point reproduces the 2.2b Config I candidate exactly,
+fit +0.5142 / held-out +0.5874). **The coupled family is NOT adoptable at any swept value** (dispatch's
+"report the curve, user decides"); no candidate, no artifact. Sandwich **53/24/53**; suites **1101/53/11**.
+Commits: retire F/GB/GC/K (`7ea8201d43`,`15831825ea`,`d2becff50c`,`a4da727d71`) · un-retire GateA
+(`c9909be4f8`) · dispositions+manifest (`9823ce75fc`) · per-carrier scoping (`6a468f82ac`) · tools
+(`37603ab217`) · report (`1074b1c474`) · this fold. **The 2.2b delivery summary below stands as history:** Report
 `cc_stage5_phase2_2b_report.md`. Commits `e5a1bb7a0e` (`feat(tools):` — 6 `stage5_2_2b_*` drivers +
 committed ledgers; measurement-only, corpus untouched) · `0500e4dc55` (`docs(cowork):` report, force-add) ·
 this fold. **Headlines:** the 14×3 cross-carrier table exposed what the 2.2a Baroque-fitting view hid —
@@ -394,6 +417,23 @@ sync**.
 
 ---
 
+## ⛔ STANDING RULE: THE FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION (user mandate 2026-07-05)
+
+**Never present the user with options before the ENTIRE situation has been explained in a message the
+user has actually seen.** Mechanism note (the failure that made the rule): Cowork prose written between
+tool calls is summarized, not shown verbatim — so an explanation "just before" a question widget may
+never reach the user, and the question arrives blind. The rules:
+1. The decision surface (what is being decided, the background, each option's meaning, risks both ways,
+   the recommendation and why) is delivered as user-visible text FIRST — via the verbatim message
+   channel or as the turn's final response.
+2. For consequential decisions (ratifications, adoptions, retirements, checkpoint rulings), the choice
+   question goes in a SEPARATE, LATER turn — the user reads first, then is asked.
+3. A decision answered blind is voidable: re-present the surface and re-confirm.
+(First application: the 2026-07-05 verdict-14 + 2.2c ratifications were re-presented and re-confirmed
+after this rule was made.)
+
+---
+
 ## ⛔ STANDING RULE: INSTRUCTIONS ARE WRITTEN JUST-IN-TIME — ONE DISPATCHED AT A TIME (user mandate 2026-07-02)
 
 **Do NOT write CC instructions ahead of need.** Pre-written instructions go stale (their premises change under
@@ -407,6 +447,11 @@ them), risk being skipped, and risk out-of-order execution. The rules:
 4. **Any instruction file that exists but is not the active dispatch carries a `⏸ PARKED` banner** and MUST be
    revalidated by Cowork against the then-current STATUS/HEAD immediately before dispatch, receiving a dated
    DISPATCH note. CC must not execute a parked instruction without that note.
+5. **NO MID-FLIGHT STEERING (user, 2026-07-05): a running CC is never interrupted or relayed to** —
+   interruptions have several times proven disastrous. Every instruction must therefore be
+   SELF-SUFFICIENT: all foreseeable forks carried as in-instruction STOP/branch rules; anything not
+   covered waits for the report and is ruled at verification. The only mid-run channel is the one CC
+   itself opens (its own STOP question), answered when CC asks.
    *(As of 2026-07-04: NO parked instruction files — the formerly-parked gap-analysis and Wave-1 instructions
    both executed and were ratified (sessions 21e/21i/21f). Active: `cc_instruction_c1_reliability_instrumentation.md`
    — see the START HERE header.)*

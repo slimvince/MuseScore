@@ -845,6 +845,11 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   data and high-capacity models, style conditioning matters less. Our regime is the opposite — a small
   licensed pool and an interpretable additive scorer — which is exactly where the conditioned-table
   approach is the established fit.
+- **Negative transfer under hard parameter sharing** (multi-task-learning literature; verified
+  2026-07-05): optimizing a shared parameter for one task/domain harming another is the canonical
+  negative-transfer failure of hard sharing, and per-task/branched parameterization is the standard
+  remedy — the external precedent for O-9's per-carrier reclassification of the shared bass/root levers
+  (the Phase-2.2b Jazz cost under the Baroque-fitted `bassNoteRootBonus`).
 - **Considered and rejected:** fitting on music21-adjudicated cells (variant (a)) — an algorithm as
   ground truth; neural proposal models (Stage 7, out of scope); global re-architecture of scoring
   (the review found no structural fault — this arc fits the existing architecture's constants).
@@ -913,6 +918,45 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
     correction to instead. The parked lever is inert at the joint optimum — no adoption; `bassNoteRootBonus`
     is the true lever (whose aggressive 0.775 value is itself the source of the candidate's held-out
     class-(b) + Jazz shared-scope cost — the joint fit's central decision-surface finding).
+- **O-9 (the Phase-2.2b shared-scope finding — the design's own prediction landing, 2026-07-05):** the
+  joint fit's best candidate is blocked by its shared `bassNoteRootBonus 0.775` (+ the `kWStepIn` bump):
+  a held-out class-(b) case (`bwv392@17520`, R10 trip on Baroque/Default) and a Jazz duration cost
+  (−0.6070, clsB +23120 — no Jazz batch trip). **This is NOT a new design question — it is the §4.4a
+  style-response measurement firing through the carrier strata:** the manifest declared
+  `bassNoteRootBonus` idiom-varying at Phase 0 (rationale: the rock-vs-common-practice root-position
+  statistics, §14), and the Jazz carrier just acted as the first cross-style stratum whose optimum
+  diverges — the D-11 verdict is "idiom-varying, CONFIRMED by measurement." **Resolution shape (2.2c):**
+  reclassify the diverging shared levers (`bassNoteRootBonus`, `kWStepIn`; others per the same test) to
+  per-carrier delivery (the D-10 anchor model: Baroque/Default carriers deliver the idiom-#2 fitted
+  value; the Jazz carrier keeps its current effective value — Jazz receives no fit, A-3/4c), then
+  re-select the candidate under the full-corpus hard stop (the S-3 rejection loop: gentler
+  `bassNoteRootBonus` points from the committed ledger, full surface re-measured; the `bwv392@17520`
+  class score-verified per guardrail (2) before it is treated as final). External precedent: negative
+  transfer under hard sharing, §14.
+  **★ DELIVERED (2.2c, `cc_stage5_phase2_2c_report.md`):** the per-carrier scoping mechanism LANDED
+  (`batch_analyze.cpp` `6a468f82ac`: `bassNoteRootBonus` per prefs-field, `kWStepIn` per preset via the
+  registered-global writer written BEFORE the override load; values unchanged → byte-identical ×3). The
+  **production-path plumbing question is REPORTED, not improvised**: production has no preset-selection
+  moment, so it delivers only the Default carrier (via the `bassNoteRootBonus` struct default / the
+  `kWStepIn` global initializer); a non-Default-carrier production delivery has no surface. The candidate
+  re-selection under the full-corpus hard stop returned **NOT ADOPTABLE AT ANY SWEPT VALUE**: bnrb
+  {0.70…0.775} × (srib 0.475, kw 0.125), Jazz pinned byte-identical — low bnrb is fitting-infeasible
+  (`bwv379@11520`, absorbed by 0.7375 — the 2.2b coupling), and every fitting-feasible bnrb (0.7375–0.775)
+  is full-infeasible on the **score-verified class-(b) `bwv392@17520`** (Baroque AND Default; a Layer-2/4
+  segmentation over-grab — `Dm/F` iii6 across the WiR `Gm` vi boundary — driven by the srib/kw pair, not
+  bnrb). So O-9's per-carrier delivery is BUILT and byte-identical, but the specific coupled
+  `bassNoteRootBonus/sameRootInversionBonus/kWStepIn` candidate is not adoptable: the fitting gain
+  (+0.43…+0.51, batch 53→49) is real, but the single new class-(b) is a hard R10 stop. The next-lever
+  decision (a gentler srib/kw that does not create bwv392 · a Layer-4 fix for the over-grab · a smaller
+  uncoupled gain) is the user's — nothing adopted.
+- **O-10 (lesson from the user's methodology challenge, 2026-07-05): RETAINED structural rules carry
+  ongoing LIVENESS evidence.** The Gate-K/Gate-L failure mode — a rule's founding cases silently absorbed
+  upstream, leaving dead code undetected for weeks — existed because nothing measured rule liveness. For
+  the four RETAINED rules (GateI, FM2, GateJ, GateL): their firing-site counts (the 2.2b regen-diff
+  method, or cheap telemetry if one is ever built) are re-measured at every adoption event's sandwich and
+  recorded in the ledger, so a retained rule whose firing evidence collapses to zero surfaces as a
+  finding at the next natural checkpoint instead of by archaeology. (The per-gate a-priori question was
+  empirical by nature — this item is the monitoring gap, which was not.)
 - **O-8 (housekeeping, user-ruled 2026-07-05, both fixed at the next dispatch):** (1) **fit ledgers become
   committed artifacts** — the per-run ledger files move out of the gitignored `tools/reports/` to a
   committed path; §7's "the ledger is committed" holds for the compact per-run ledgers, while large
