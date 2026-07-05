@@ -113,13 +113,20 @@ struct HarmonicFunctionContext {
 // override loader is the only writer. kWStepIn/kWStepOut/kWSeq/kWDim have static
 // (constant) initializers, so they are initialized before kStepBudget's dynamic
 // initializer reads them — no cross-TU init-order hazard. kStepBudget keeps the exact
-// expression (not the literal 0.21) to preserve its last-bit IEEE value. See
+// expression (not the literal 0.235) to preserve its last-bit IEEE value. See
 // cowork_stage5_fitter_design.md D-6.
+//
+// kWStepIn adopted 0.10 -> 0.125 (Stage-5 Phase 2.2e, idiom-#2 fit; user-ratified 2026-07-05).
+// This is the PRODUCTION/Default-carrier value (production has no preset-selection moment, so
+// the global initializer IS the Default carrier — design O-11 iii). The Baroque carrier also
+// ships 0.125 (batch_analyze.cpp). Jazz + Standard/Modal/Contemporary are pinned to 0.10 there;
+// because kStepBudget is DERIVED from kWStepIn, those carriers re-derive it explicitly (a
+// single-key applyGlobalOverride does NOT recompute — only the file loader does).
 inline double kWSeq = 0.20;  ///< Sequential root-progression bonus (Iter 95)
 inline double kWDim = 0.15;  ///< Dim/HalfDim leading-tone bonus (Iter 96)
-inline double kWStepIn   = 0.10;  ///< Stepwise-bass step-in bonus (Pass B)
+inline double kWStepIn   = 0.125;  ///< Stepwise-bass step-in bonus (Pass B; 2.2e-adopted, was 0.10)
 inline double kWStepOut  = 0.10;  ///< Stepwise-bass step-out bonus (Pass B)
-inline double kStepBudget = kWStepIn + kWStepOut + 0.01;  ///< m7-family guard tolerance (DERIVED; loader recomputes)
+inline double kStepBudget = kWStepIn + kWStepOut + 0.01;  ///< m7-family guard tolerance (DERIVED = 0.235; loader recomputes)
 
 /// Score-threshold ratio. results[] admits every candidate whose signal-inclusive
 /// score is >= (winnerScore - winnerBassBonus) * kScoreThresholdRatio.

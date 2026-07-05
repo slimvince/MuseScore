@@ -582,6 +582,46 @@
         },
         {
             "key": "A",
+            "text": "G#m7b5",
+            "tick": 34800
+        },
+        {
+            "key": "A",
+            "text": "viiø7",
+            "tick": 34800
+        },
+        {
+            "key": "A",
+            "text": "G#m7b5",
+            "tick": 34800
+        },
+        {
+            "key": "A",
+            "text": "viiø7",
+            "tick": 34800
+        },
+        {
+            "key": "A",
+            "text": "C#7/F",
+            "tick": 35760
+        },
+        {
+            "key": "A",
+            "text": "III65",
+            "tick": 35760
+        },
+        {
+            "key": "A",
+            "text": "C#7/F",
+            "tick": 35760
+        },
+        {
+            "key": "A",
+            "text": "III65",
+            "tick": 35760
+        },
+        {
+            "key": "A",
             "text": "C#m",
             "tick": 36720
         },
@@ -987,12 +1027,28 @@
             "tick": 32880
         },
         {
-            "durationTicks": 2160,
+            "durationTicks": 240,
             "key": "A",
             "mode": "maj",
             "quality": "minor",
             "root": "B",
             "tick": 34560
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "maj",
+            "quality": "halfDiminished",
+            "root": "G#",
+            "tick": 34800
+        },
+        {
+            "durationTicks": 960,
+            "key": "A",
+            "mode": "maj",
+            "quality": "major",
+            "root": "C#",
+            "tick": 35760
         },
         {
             "durationTicks": 720,
@@ -1527,21 +1583,21 @@
         },
         {
             "durationTicks": 960,
-            "harmonyText": "Bm/C#",
+            "harmonyText": "G#m7b5",
             "pitches": [
-                62,
-                64,
-                66
+                71,
+                74,
+                78
             ],
             "tick": 34800
         },
         {
             "durationTicks": 960,
-            "harmonyText": "Bm/C#",
+            "harmonyText": "C#7/F",
             "pitches": [
-                62,
-                64,
-                66
+                65,
+                68,
+                71
             ],
             "tick": 35760
         },
@@ -2023,7 +2079,7 @@
                 {
                     "quality": "minor",
                     "root": "F#",
-                    "score": 1.892
+                    "score": 1.917
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2465,12 +2521,12 @@
                 {
                     "quality": "minor",
                     "root": "B",
-                    "score": 2.661
+                    "score": 2.686
                 },
                 {
                     "quality": "halfDiminished",
                     "root": "B",
-                    "score": 2.106
+                    "score": 2.131
                 },
                 {
                     "quality": "major",

@@ -116,7 +116,7 @@ TEST_F(ParamOverride, CurrentValuesMatchDocumentedLiterals)
     EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kNonBassPenalty"), 0.35);
     EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kWSeq"), 0.20);
     EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kWDim"), 0.15);
-    EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kStepBudget"), 0.10 + 0.10 + 0.01);
+    EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kStepBudget"), 0.125 + 0.10 + 0.01);  // 2.2e: kWStepIn 0.125
     EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kGateIMargin"), 0.45);
     EXPECT_DOUBLE_EQ(P::getRegisteredGlobal("kHalfDimFirstInversionBonus"), 0.55);
 }

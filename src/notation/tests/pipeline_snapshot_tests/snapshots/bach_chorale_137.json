@@ -2018,7 +2018,7 @@
                 {
                     "quality": "minor",
                     "root": "G",
-                    "score": 1.888
+                    "score": 1.912
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -2037,12 +2037,12 @@
                 {
                     "quality": "minor",
                     "root": "G",
-                    "score": 2.613
+                    "score": 2.638
                 },
                 {
                     "quality": "halfDiminished",
                     "root": "G",
-                    "score": 1.898
+                    "score": 1.923
                 },
                 {
                     "quality": "sus4",
@@ -2259,7 +2259,7 @@
                 {
                     "quality": "minor",
                     "root": "D",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "major",

@@ -1421,12 +1421,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "minor",
@@ -1450,12 +1450,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "minor",
@@ -1856,7 +1856,7 @@
                 {
                     "quality": "minor",
                     "root": "E",
-                    "score": 3.52
+                    "score": 3.545
                 },
                 {
                     "quality": "major",
@@ -1899,7 +1899,7 @@
                 {
                     "quality": "halfDiminished",
                     "root": "B",
-                    "score": 2.29
+                    "score": 2.315
                 },
                 {
                     "quality": "major",
@@ -1923,7 +1923,7 @@
                 {
                     "quality": "halfDiminished",
                     "root": "B",
-                    "score": 2.29
+                    "score": 2.315
                 },
                 {
                     "quality": "major",

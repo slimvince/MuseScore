@@ -3896,17 +3896,18 @@ int main(int argc, char* argv[])
     // harmonicfunctionlayer.h GLOBAL) were shared. The 2.2b joint fit found their optima
     // diverge by carrier (Jazz vs Baroque/Default — the manifest declared both idiom-varying
     // at Phase 0; design §15 O-9), so each preset now DELIVERS them explicitly, per carrier.
-    // VALUES ARE UNCHANGED in this dispatch — every carrier keeps 0.70 / 0.10, so the write
-    // is byte-identical. The writes happen BEFORE the --param-override load below, so a
-    // fitting override (the fit-value delivery path) cleanly overrides them; a Jazz run with
-    // no override for these keeps 0.70 / 0.10 (byte-identical to baseline by construction).
-    // kWStepIn is a registered global (not a prefs field), so it is delivered through the
-    // SAME registered-global writer the override loader uses (params::applyGlobalOverride).
+    // ★ Stage-5 Phase 2.2e ADOPTION (user-ratified 2026-07-05): the idiom-#2 fit ships
+    // kWStepIn 0.10 -> 0.125 on the Baroque + Default carriers; Jazz + Standard/Modal/
+    // Contemporary stay pinned at 0.10 (bassNoteRootBonus unchanged at 0.70 everywhere).
+    // The writes happen BEFORE the --param-override load below, so a fitting override (the
+    // fit-value delivery path) cleanly overrides them. kWStepIn is a registered global (not a
+    // prefs field), so it is delivered through the SAME registered-global writer the override
+    // loader uses (params::applyGlobalOverride).
     // Production/notation path note: production has no preset-selection moment — it uses
     // kDefaultChordAnalyzerPreferences (bassNoteRootBonus struct default 0.70) + the kWStepIn
-    // global initializer (0.10), i.e. it delivers only the Default carrier. See the
-    // cc_stage5_phase2_2c_report.md O-9 production-path note (no production behavior change here).
-    double presetKWStepIn = 0.10;   // Default carrier (== the production/global initializer)
+    // global initializer (NOW 0.125), i.e. it delivers only the Default carrier. See the
+    // cc_stage5_phase2_2e_report.md (adoption) / cc_stage5_phase2_2c_report.md O-9 production note.
+    double presetKWStepIn = 0.125;   // Default carrier (== the production/global initializer)
 
     if (presetName == "Jazz") {
         chordPrefs.extensionThreshold                    = 0.12;
@@ -3917,12 +3918,12 @@ int main(int argc, char* argv[])
         chordPrefs.sameRootInversionBonus                = 0.15;
         chordPrefs.completeTriadInversionBonus           = 0.20;
         chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Jazz carrier (pinned)
-        presetKWStepIn                                   = 0.10;   // O-9 Jazz carrier (pinned)
+        presetKWStepIn                                   = 0.10;   // O-9 Jazz carrier (PINNED 0.10; NOT adopted — 2.2e mandate 4c)
 
     } else if (presetName == "Baroque") {
         chordPrefs.preferMinorOverMajorAdd6              = true;
         chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Baroque carrier (idiom-#2 fit target)
-        presetKWStepIn                                   = 0.10;   // O-9 Baroque carrier
+        presetKWStepIn                                   = 0.125;  // O-9 Baroque carrier (2.2e-ADOPTED idiom-#2 fit)
 
     } else if (presetName == "Default") {
         // Live product out-of-box (Stage 2.4 V4): the app never mutates a single
@@ -3935,21 +3936,35 @@ int main(int argc, char* argv[])
         // to their struct-default / initializer values (0.70 / 0.10) — byte-identical,
         // and the surface a future Default-carrier fit would deliver through.
         chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Default carrier (== struct default)
-        presetKWStepIn                                   = 0.10;   // O-9 Default carrier (== global initializer)
+        presetKWStepIn                                   = 0.125;  // O-9 Default carrier (2.2e-ADOPTED == global initializer)
 
     } else {
         // Standard, Modal, Contemporary: defaults + prefer Minor over Major add6
         chordPrefs.preferMinorOverMajorAdd6              = true;
         // maxTotalInversionContextBonus stays at default (2.0)
         chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Standard/Modal/Contemporary carrier
-        presetKWStepIn                                   = 0.10;   // O-9 Standard/Modal/Contemporary carrier
+        presetKWStepIn                                   = 0.10;   // O-9 Standard/Modal/Contemporary carrier (PINNED 0.10; NOT adopted — 2.2e mandate 4c)
     }
 
     // Stage-5 O-9: deliver the per-carrier kWStepIn to the function-layer global via the
-    // registered-global writer (the override loader's write path). Byte-identical at 0.10.
+    // registered-global writer (the override loader's write path).
     // (If kWStepIn were somehow unregistered — it is registered at static-init in
-    // harmonicfunctionlayer.cpp — this is a no-op and the global keeps its 0.10 initializer.)
+    // harmonicfunctionlayer.cpp — this is a no-op and the global keeps its initializer.)
     mu::composing::params::applyGlobalOverride("kWStepIn", presetKWStepIn);
+
+    // ★ 2.2e: kStepBudget is DERIVED (= kWStepIn + kWStepOut + 0.01). The single-key
+    // applyGlobalOverride above does NOT recompute it — only the FILE loader does
+    // (paramoverride.cpp:365). Since the 2.2e adoption moved the global INITIALIZER to
+    // kWStepIn=0.125 (kStepBudget=0.235), a carrier that pins kWStepIn back DOWN to 0.10
+    // (Jazz + Standard/Modal/Contemporary) would otherwise INHERIT the 0.235 initializer and
+    // silently run the m7-family surgical guard at the wrong tolerance (breaking Jazz
+    // byte-identity). Re-derive kStepBudget here per carrier, mirroring loadAndApply's recompute
+    // (Baroque/Default -> 0.235; Jazz/other -> 0.21). Any later --param-override that moves a
+    // step bonus recomputes again below.
+    mu::composing::params::applyGlobalOverride(
+        "kStepBudget",
+        mu::composing::params::getRegisteredGlobal("kWStepIn")
+            + mu::composing::params::getRegisteredGlobal("kWStepOut") + 0.01);
 
     // ── Stage-5 fitter: apply the optional parameter override (design D-6) ──────
     // Reaches the file-level scoring constants (registered globals: G1/G6/G7) AND the

@@ -110,9 +110,9 @@ TEST(Composing_FunctionLayerTests, Constants_MatchScoringModelSection4)
 {
     EXPECT_DOUBLE_EQ(kWSeq, 0.20);
     EXPECT_DOUBLE_EQ(kWDim, 0.15);
-    EXPECT_DOUBLE_EQ(kWStepIn, 0.10);
+    EXPECT_DOUBLE_EQ(kWStepIn, 0.125);   // Stage-5 Phase 2.2e adoption (was 0.10; idiom-#2 fit)
     EXPECT_DOUBLE_EQ(kWStepOut, 0.10);
-    EXPECT_NEAR(kStepBudget, 0.21, 1e-12);   // kWStepIn + kWStepOut + 0.01
+    EXPECT_NEAR(kStepBudget, 0.235, 1e-12);   // DERIVED = kWStepIn + kWStepOut + 0.01 (0.125+0.10+0.01)
     EXPECT_DOUBLE_EQ(kScoreThresholdRatio, 0.75);
     const ana::ChordAnalyzerPreferences prefs;
     EXPECT_DOUBLE_EQ(prefs.rootContinuityBonus, 0.40);
@@ -240,7 +240,7 @@ TEST(Composing_FunctionLayerTests, StepGuard_RootPositionOnly_SlashGetsNoBonus)
 
     const auto results = runPipeline(snapshot, ctx);
     ASSERT_FALSE(results.empty());
-    EXPECT_NEAR(results.front().identity.score, 1.0, 1e-9);   // no +0.10
+    EXPECT_NEAR(results.front().identity.score, 1.0, 1e-9);   // no step bonus (would be +0.125)
 }
 
 // Control for guard 2 + baseline for the guards below: the root-position twin
@@ -264,7 +264,7 @@ TEST(Composing_FunctionLayerTests, StepGuard_RootPositionCandidateGetsBonus)
 TEST(Composing_FunctionLayerTests, StepGuard_M7FamilyCompetitorInsideBudgetBlocks)
 {
     // cand: F major root-position, unbonused 1.0. Competitor: Dø-shaped HalfDim
-    // (rootPc 2 = (5-3) mod 12) at 0.80 >= 1.0 - kStepBudget (0.79) → blocked.
+    // (rootPc 2 = (5-3) mod 12) at 0.80 >= 1.0 - kStepBudget (0.765; 2.2e budget 0.235) → blocked.
     ScoringSnapshot snapshot = makeSnapshot(
         { makeCell(5, 5, 0, ChordQuality::Major, 3, 1.0),
           makeCell(5, 2, 8, ChordQuality::HalfDiminished, 4, 0.80) },
@@ -281,10 +281,12 @@ TEST(Composing_FunctionLayerTests, StepGuard_M7FamilyCompetitorInsideBudgetBlock
 // ...and a competitor just OUTSIDE the budget does not block (boundary pair).
 TEST(Composing_FunctionLayerTests, StepGuard_M7FamilyCompetitorOutsideBudgetDoesNotBlock)
 {
-    // Competitor at 0.78 < 1.0 - kStepBudget (0.79) → not blocked.
+    // Competitor at 0.76 < 1.0 - kStepBudget (0.765; 2.2e budget 0.235) → not blocked.
+    // (Was 0.78 under the pre-2.2e budget 0.21 whose threshold was 0.79; the wider 0.235
+    // budget lowers the threshold to 0.765, so the "just outside" competitor is now 0.76.)
     ScoringSnapshot snapshot = makeSnapshot(
         { makeCell(5, 5, 0, ChordQuality::Major, 3, 1.0),
-          makeCell(5, 2, 8, ChordQuality::HalfDiminished, 4, 0.78) },
+          makeCell(5, 2, 8, ChordQuality::HalfDiminished, 4, 0.76) },
         3, true);
     HarmonicFunctionContext ctx = makeContext();
     ctx.previousBassPc = 3;
@@ -372,8 +374,8 @@ TEST(Composing_FunctionLayerTests, WDimPostBonusGuard_RejectsContaminatedWithVar
     //               + D° (rootPc 2 = competitor slot, 0.70, wDim-eligible: next root 3).
     // Group bass=7: G major 1.05, no step eligibility.
     //
-    // without-wDim: D° 0.70 < 0.79 → F gets +0.10 → group 5 wins at 1.10.
-    // with-wDim:    D° 0.85 >= 0.79 → F blocked at 1.00 → group 7 wins at 1.05,
+    // without-wDim: D° 0.70 < 0.765 → F gets +0.125 → group 5 wins at 1.125.
+    // with-wDim:    D° 0.85 >= 0.765 → F blocked at 1.00 → group 7 wins at 1.05,
     //               winner quality Major → NOT Dim/HalfDim → fallback to without.
     ScoringSnapshot snapshot = makeSnapshot(
         { makeCell(5, 5, 0, ChordQuality::Major, 3, 1.0),

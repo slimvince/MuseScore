@@ -2789,7 +2789,7 @@
                 {
                     "quality": "sus4",
                     "root": "G",
-                    "score": 2.32
+                    "score": 2.345
                 },
                 {
                     "quality": "sus2",
@@ -2842,7 +2842,7 @@
                 {
                     "quality": "major",
                     "root": "Ab",
-                    "score": 2.22
+                    "score": 2.12
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -2861,12 +2861,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "major",
@@ -2890,12 +2890,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "major",
@@ -3006,7 +3006,7 @@
                 {
                     "quality": "sus4",
                     "root": "D",
-                    "score": 2.32
+                    "score": 2.345
                 },
                 {
                     "quality": "sus2",
@@ -3059,7 +3059,7 @@
                 {
                     "quality": "major",
                     "root": "Eb",
-                    "score": 2.22
+                    "score": 2.12
                 }
             ],
             "bassIsStepwiseFromPrevious": true,
@@ -3226,12 +3226,12 @@
                 {
                     "quality": "minor",
                     "root": "F",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "diminished",
                     "root": "F",
-                    "score": 2.501
+                    "score": 2.526
                 },
                 {
                     "quality": "minor",
@@ -3255,7 +3255,7 @@
                 {
                     "quality": "sus4",
                     "root": "C",
-                    "score": 2.32
+                    "score": 2.345
                 },
                 {
                     "quality": "power",
@@ -3313,7 +3313,7 @@
                 {
                     "quality": "minor",
                     "root": "F",
-                    "score": 3.62
+                    "score": 3.645
                 },
                 {
                     "quality": "major",
@@ -3337,12 +3337,12 @@
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.97
+                    "score": 3.995
                 },
                 {
                     "quality": "major",
                     "root": "G",
-                    "score": 3.97
+                    "score": 3.995
                 },
                 {
                     "quality": "augmented",
@@ -3385,7 +3385,7 @@
                 {
                     "quality": "minor",
                     "root": "F",
-                    "score": 3.62
+                    "score": 3.645
                 },
                 {
                     "quality": "major",

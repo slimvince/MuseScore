@@ -406,7 +406,7 @@ same PC set (closes Bug 2 — bwv310 m8 b3 Em/C vs C major). Iter 90's
 regression mode (slash chord with missing fifth) is excluded because an
 absent tone has `pcWeight == 0` which fails the presence check.
 
-### `w_stepIn` / `w_stepOut` — `kWStepIn = kWStepOut = 0.10`
+### `w_stepIn` / `w_stepOut` — `kWStepIn` per-carrier (Baroque/Default **0.125**, Jazz/others 0.10); `kWStepOut = 0.10`
 
 `kWStepIn` / `kWStepOut` constants in `harmonicfunctionlayer.h`; applied by
 `fn::wStepInBonus` / `fn::wStepOutBonus` through `applyStepBonusGuard`
@@ -414,6 +414,15 @@ absent tone has `pcWeight == 0` which fails the presence check.
 — they no longer live in `chordanalyzer.cpp`). Reward root-position candidates whose
 root participates in semitone / whole-tone bass motion from the previous region
 (`stepIn`) and/or to the next region (`stepOut`).
+
+**Stage-5 Phase 2.2e adoption (user-ratified 2026-07-05).** `kWStepIn` moved `0.10 → 0.125`
+as the arc's first fitted-value adoption (idiom-#2 fit, the Bach-chorale fitting split). It is
+**per-carrier**: the Baroque and Default carriers ship `0.125`; Jazz and Standard/Modal/Contemporary
+stay pinned at `0.10`. Production has no preset-selection moment, so the **global initializer**
+(`0.125`) is the Default-carrier value it delivers. Because `kStepBudget` is *derived* from
+`kWStepIn` (below), the pinned-`0.10` carriers **re-derive** `kStepBudget = 0.21` explicitly in
+`batch_analyze.cpp` after the single-key override (only the file loader recomputes it automatically);
+the Baroque/Default carriers keep the initializer's `0.235`. `kWStepOut` is unchanged at `0.10`.
 
 **Four gates (each load-bearing):**
 
@@ -432,7 +441,8 @@ root participates in semitone / whole-tone bass motion from the previous region
 
 3. **First-inversion m7-family surgical guard (Pass B)** — suppresses the
    bonus when a competitor of quality {HalfDiminished, Diminished, Minor7}
-   sits a minor third below our bass and scores within `kStepBudget` (≈ 0.21)
+   sits a minor third below our bass and scores within `kStepBudget` (0.235 Baroque/Default,
+   0.21 Jazz/others — derived from `kWStepIn`)
    of our unbonused score. Canonical case: Dm6 vs Bø7/D — the step bonus
    would otherwise tip a fragile m6 root-position reading over an equally
    viable first-inversion m7-family reading on identical pitch evidence.

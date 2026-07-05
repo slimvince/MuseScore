@@ -1630,14 +1630,19 @@
         {
             "alternatives": [
                 {
-                    "quality": "halfDiminished",
-                    "root": "C#",
-                    "score": 2.547
+                    "quality": "major",
+                    "root": "D",
+                    "score": 2.26
                 },
                 {
                     "quality": "major",
                     "root": "D",
-                    "score": 2.12
+                    "score": 2.26
+                },
+                {
+                    "quality": "major",
+                    "root": "A",
+                    "score": 2.051
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -1646,8 +1651,8 @@
             "previousBassPc": 4,
             "previousQuality": "major",
             "previousRootPc": 9,
-            "quality": "diminished",
-            "root": "C#",
+            "quality": "major",
+            "root": "D",
             "tick": 6720,
             "wasRegional": true
         },
@@ -1983,12 +1988,12 @@
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.682
+                    "score": 3.707
                 },
                 {
                     "quality": "major",
                     "root": "E",
-                    "score": 3.682
+                    "score": 3.707
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
@@ -2103,12 +2108,12 @@
                 {
                     "quality": "sus4",
                     "root": "D#",
-                    "score": 2.457
+                    "score": 2.482
                 },
                 {
                     "quality": "halfDiminished",
                     "root": "D#",
-                    "score": 2.449
+                    "score": 2.474
                 }
             ],
             "bassIsStepwiseFromPrevious": false,
