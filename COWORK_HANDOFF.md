@@ -32,7 +32,21 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ PHASE 2.2a CC-DELIVERED (session 22o tail, 2026-07-05) — awaiting Cowork verification.** The
+**★ PHASE 2.2b CC-DELIVERED (session 22p tail, 2026-07-05) — awaiting Cowork verification.** Report
+`cc_stage5_phase2_2b_report.md`. Commits `e5a1bb7a0e` (`feat(tools):` — 6 `stage5_2_2b_*` drivers +
+committed ledgers; measurement-only, corpus untouched) · `0500e4dc55` (`docs(cowork):` report, force-add) ·
+this fold. **Headlines:** the 14×3 cross-carrier table exposed what the 2.2a Baroque-fitting view hid —
+**GateI +5 Jazz class-(b) when off**, **GateJ −0.4515 Jazz when off** (catastrophic; retains), BiasCorrection
+class-(b)-harmful; the inert set shrank to the **cross-carrier-5** {GateA,F,GB,GC,K} (GateGD/GateL dropped,
+live elsewhere). The JOINT FIT: **Config I ≡ Config II +0.5142** (bassNoteRootBonus 0.775 / sameRootInvBonus
+0.475 / kWStepIn 0.125; **O-7 power-chord lever inert at the joint optimum, subsumed by bassNoteRootBonus**);
+**Config III maximal dissolution WORSE (+0.3886)**. The candidate **generalizes** (held-out +0.5874, DLC ×3 up)
+**but** the aggressive shared bassNoteRootBonus 0.775 causes a held-out class-(b) `bwv392@17520` (R10) + Jazz
+−0.61 duration — **neither config cleanly adoptable; the clean point (gentler/per-preset bassNoteRootBonus) is
+a surfaced design refinement.** Verdict PROPOSALS: RETIRE-5 / RETAIN-4 {GateI,FM2,GateJ,GateL} / DEFER-5.
+Sandwich 53/24/53 set-diff empty; suites 1116/53/11. **NOTHING adopted or retired — every verdict + the
+adoption are the user's.** STATUS 22p tail has the full record. **The prior ACTIVE-DISPATCH note + 2.2a
+delivery summary below stand as history:** **The 2.2a delivery summary below stands as history:** The
 rule-disable mechanism (`0296e38f63` `feat(composing):` — `PostScoringRule` enum + 14 clean
 `!ruleOff(X) &&` guards + 20 tests + scoring_model §6 doc-sync; **byte-identical absent**: full-corpus
 regen ×3 = 0 diffs vs frozen, snapshots 11/0) + the fit-driver `audit` mode + committed `tools/fit_ledgers/`

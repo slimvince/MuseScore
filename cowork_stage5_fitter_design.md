@@ -904,6 +904,15 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   the 1b "clean at ±0.05" read does not extend to the full range. The theory question the fit raised
   (is the power chord an accepted chord category?) is recorded at its proper layer: **L4 design §15 O4**
   (idiom-dependent by the theory itself; competitiveness stays an idiom-calibrated constant per §2.15).
+  - **O-7 RESOLVED at the family-2 joint fit (Phase 2.2b, CC 2026-07-05, `cc_stage5_phase2_2b_report.md`):**
+    re-entered in the 8-row coupled cluster, `kPowerChord3PcPenalty` **does NOT move at the joint optimum**
+    — at the coupled point (bassNoteRootBonus 0.775 / kWStepIn 0.125 / sameRootInversionBonus 0.475) its
+    whole local ladder [0.20…0.40] is feasible yet every point scores below the current 0.30; its apparent
+    standalone leverage (2.1's up-plateau; a fine-grid down-move to 0.225 the 2.1 coarse step-0.15 ladder
+    skipped) is **subsumed by `bassNoteRootBonus`**, which the joint fit assigns the bass/root-tone
+    correction to instead. The parked lever is inert at the joint optimum — no adoption; `bassNoteRootBonus`
+    is the true lever (whose aggressive 0.775 value is itself the source of the candidate's held-out
+    class-(b) + Jazz shared-scope cost — the joint fit's central decision-surface finding).
 - **O-8 (housekeeping, user-ruled 2026-07-05, both fixed at the next dispatch):** (1) **fit ledgers become
   committed artifacts** — the per-run ledger files move out of the gitignored `tools/reports/` to a
   committed path; §7's "the ledger is committed" holds for the compact per-run ledgers, while large

@@ -83,3 +83,70 @@ genre-named presets as a user-facing convenience over the idiom set.
 - Jazz/pop idioms are **derivation-validated but analysis-USE-unvalidated** (no jazz/pop analysis ground truth — the
   verifiability "empirically-unvalidated" mark stands until a jazz/pop GT exists).
 - Idiom #5 (cross-cutting) is the least genre-pure and the most interesting; worth re-checking as more sources land.
+
+## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)
+
+The §2 "presets = named idiom-weightings" layer gets its derivation-and-naming method (user proposal, raised
+during the Stage-5 fitter arc; deferred by the ratified order — this is product/presentation work after the
+architecture completes, and the §4-4 auto-detection is its own gated inference feature):
+
+1. **Derivation: cluster the analyzed sources in the idiom-mixture space.** Every analyzed composer/corpus has a
+   measurable distribution over the five idioms (the discovery pipeline computes it); clustering those points
+   yields the natural preset set, each cluster = one mixture vector.
+2. **Naming: exemplar anchoring, genre-era labels.** A preset presents as a familiar label + exemplars users
+   know ("60s pop — The Beatles"), never as an idiom name or an obscure exemplar ("Hiromi means nothing to most
+   people" — user). Genre names are LABELS over mixtures, never axes (the study's own result: era/genre is not
+   the structure — Baroque/galant/Classical share idiom #2).
+3. **Coverage beyond the analyzed set — three tiers, no bare guessing:**
+   - **Measured:** the held research corpora already cover much of the user's example list — CoCoPops =
+     Billboard charts (60s pop, disco); HookTheory = modern pop; the WJD carries per-solo style tags
+     (dixieland/swing/bebop/postbop); iRb = the standards/crooner book. Per-genre mixtures are computable
+     from existing tags.
+   - **Declared:** genres with no held data (metal, shoegaze, grunge, hiphop, funk…) get an EDITORIALLY
+     DECLARED mixture with a stated theory rationale (e.g. metal ≈ triadic-modal with high power-chord
+     admissibility — the L4 §15 O4 constant is the metal-facing knob), validated when data arrives.
+   - **Self-correcting:** the §4-4 auto-detection makes any preset a cold-start prior the score itself
+     refines — mis-picked presets degrade gracefully, which is what makes declared mixtures shippable.
+4. **★ LICENSE CONSTRAINT (binding — census §8c):** a preset's idiom-mixture is a SHIPPED parameter vector.
+   Mixtures DERIVED from NC-class corpora (McGill Billboard, WJD, iRb…) must not silently ship: derive from
+   the licensed pool (CoCoPops, OpenEWLD, GuitarSet, OpenScore, PD classical) where possible; DECLARE
+   editorially elsewhere; use NC corpora for VALIDATION only. Recorded now so no Billboard-derived preset
+   ever ships unnoticed.
+5. **Caveats:** composers are not points (late ≠ early Beethoven) — exemplars must strongly evoke ONE mixture
+   region; and a user-facing preset spans BOTH axes (harmonic idiom + the orthogonal texture axis), so the
+   eventual preset object carries an axis-2 component too.
+
+*Cheap internal prototype available when this activates: compute per-source mixtures from the existing
+discovery outputs (research-tier, read-only) and cluster — license-relevant only at shipping.*
+
+### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)
+
+- **Forward — a preset IS its mixture, translated all the way down.** Preset → idiom-weight vector →
+  composed scoring parameters via the Stage-5 anchor model (`cowork_stage5_fitter_design.md` D-10/D-11:
+  per-idiom anchors + the per-family declared mixing rule — linear for the additive-weight family,
+  discrete/nearest-anchor for thresholds). Defining a new preset never requires refitting.
+- **Backward — every mixture is selectable; the discovered cloud is the EVIDENCE MAP, not the boundary.**
+  Named presets = cluster centroids (progressive disclosure); a custom selector admits ANY simplex point
+  (E-14 zero information loss). Each chosen point carries an evidence status: inside a discovered cluster
+  (validated) · between clusters (interpolation) · outside the cloud (extrapolation — selectable, marked
+  empirically-unvalidated; the A-7-mark pattern generalized to mixture space).
+- **License split, resolved cleanly:** the ANCHORS are the shipped license-constrained fitted parameters;
+  MIXTURE WEIGHTS are user configuration (free); only OUR shipped named-preset defaults carry the §6-4
+  derivation constraint (licensed-pool-derived or editorially declared, NC-validated).
+- **The loop-closing product feature:** auto-detection (§4-4) computes a score's mixture → "save this
+  piece's detected mixture as a named preset" mints user presets from real music — the backward map in
+  its most useful form (every combination that occurs in music a user cares about becomes selectable by
+  example, not by enumeration).
+- **The mixture's PRIMARY persistence home = the score itself (user, 2026-07-05).** Store the score's
+  idiom mixture in the score's own metadata — MuseScore already supports user-defined score properties
+  alongside title/composer (the metaTag mechanism, saved inside .mscz/.mscx). Consequences: the mixture
+  TRAVELS with the file (no separate registry needed for per-score behavior); re-analysis seeds from it
+  (the §4-4 cold-start prior becomes a warm start); "save as named preset" then reads FROM the score
+  property (per-score setting vs reusable preset = two homes for the same mixture object, score-first).
+  Requirements recorded now: (1) **provenance on the stored value** — auto-detected (analyzer
+  version + date) vs user-set; a USER-set mixture is never silently overwritten by re-detection (the
+  no-surprise rule), an auto-detected one may be refreshed; (2) **staleness** — a score edited after
+  detection marks the stored mixture refreshable; (3) **interchange caveat** — user-defined properties
+  survive the native format; MusicXML round-trip of custom metadata is partial and needs its own check
+  before the feature relies on it; (4) the property schema (one namespaced JSON-valued tag vs several
+  tags) is an implementation decision at build time, not now.
