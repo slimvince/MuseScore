@@ -373,39 +373,9 @@ TEST(Composing_PostScoringGateTests, GateE_AltRootBelowThreshold_NoFlip)
     EXPECT_EQ(results.front().identity.rootPc, 6);
 }
 
-// ═════════════════════════════════════════════════════════════════════════════
-// Gate F — second-inversion detection (§6): best clean alt is Major at
-// (root+5)%12 (winner root = P5 of alt root), stepwise bass. Unlike Gate E
-// there is no alt-root pcWeight check and no winner-quality restriction beyond
-// the targeted Major/Minor block guard.
-// ═════════════════════════════════════════════════════════════════════════════
-
-TEST(Composing_PostScoringGateTests, GateF_MajorWinnerFlipsToMajorAtPlus5)
-{
-    // B vs E/B (margin 1.0 — margin-free; lookahead stepwise licenses).
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(11, 11, ChordQuality::Major, 2.5),
-        makeResult(4, 11, ChordQuality::Major, 1.5),
-    };
-    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, /*tonic E*/ 4);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseToNext = true;
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-
-    EXPECT_EQ(results.front().identity.rootPc, 4);
-}
-
-TEST(Composing_PostScoringGateTests, GateF_NoStepwiseSignal_NoFlip)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(11, 11, ChordQuality::Major, 2.5),
-        makeResult(4, 11, ChordQuality::Major, 1.5),
-    };
-    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, 4);
-    ChordTemporalContext temporal;
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(results.front().identity.rootPc, 11);
-}
+// (Gate F — second-inversion → root-position Major at (root+5)%12 — was RETIRED in
+//  Stage 5, 2026-07-05, D-7: 0 corpus firing sites on all three carriers. Its synthetic
+//  fixtures + GateF_DisabledDoesNotFire were vacated. cc_stage5_phase2_2b_report.md §1.2.)
 
 // ═════════════════════════════════════════════════════════════════════════════
 // Gates G-E / G-B / G-C / G-D — Minor-add6 ↔ HalfDim7 (§6). Entry condition uses
@@ -1119,20 +1089,6 @@ TEST(Composing_PostScoringGateTests, GateE_StepwiseToNext_Flips)
     EXPECT_EQ(results.front().identity.rootPc, 2);
 }
 
-// Gate F fires on the from-previous stepwise signal (mirror of the existing to-next test).
-TEST(Composing_PostScoringGateTests, GateF_StepwiseFromPrevious_Flips)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(11, 11, ChordQuality::Major, 2.5),
-        makeResult(4, 11, ChordQuality::Major, 1.5),   // E/B : root 4 = (11+5)%12
-    };
-    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, /*tonic E*/ 4);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseFromPrevious = true;
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(results.front().identity.rootPc, 4);
-}
-
 // Gate G-E mediant arm (iiiø7): the half-diminished seventh rooted on the mediant
 // (tonic+4) is a functional reading and flips with no temporal context.
 TEST(Composing_PostScoringGateTests, GateGE_MediantFunctionFlip)
@@ -1739,28 +1695,6 @@ TEST_F(PostScoringRuleDisable, GateE_DisabledDoesNotFire)
     auto off = build();
     applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
     EXPECT_EQ(off.front().identity.rootPc, 6);
-}
-
-TEST_F(PostScoringRuleDisable, GateF_DisabledDoesNotFire)
-{
-    auto build = [] {
-        return std::vector<ChordAnalysisResult>{
-            makeResult(11, 11, ChordQuality::Major, 2.5),
-            makeResult(4, 11, ChordQuality::Major, 1.5),
-        };
-    };
-    auto ctx = makeGateCtx({ { 11, 0.6 }, { 4, 0.5 }, { 8, 0.5 } }, 3, 11, 4);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseToNext = true;
-
-    auto on = build();
-    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(on.front().identity.rootPc, 4);
-
-    P::setRuleDisabled(P::PostScoringRule::GateF, true);
-    auto off = build();
-    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(off.front().identity.rootPc, 11);
 }
 
 TEST_F(PostScoringRuleDisable, GateGE_DisabledDoesNotFire)

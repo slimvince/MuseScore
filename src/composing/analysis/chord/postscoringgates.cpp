@@ -263,26 +263,10 @@ void applyPostScoringGates(
                     didEnharmonicFlip = true;
                 }
 
-                // ── Gate F: second-inversion detection ────────────────────────────────────
-                //
-                // When the best Major alternative has its root a perfect-4th above the winner
-                // root (= winner root is the 5th of the alt), the scorer has likely identified
-                // the bass note (= 5th of the actual chord) as the root.
-                // E.g., B or BAug wins when E/B is correct.
-                //
-                // Relationship: altRootPc == (winnerRootPc + 5) % 12
-                // Gated by preferMinorOverMajorAdd6 (classical presets only) and a stepwise
-                // bass signal (temporal context required).
-                if (!ruleOff(P::PostScoringRule::GateF)
-                    && !didEnharmonicFlip
-                    && prefs.preferMinorOverMajorAdd6
-                    && context != nullptr
-                    && results[bestAltIdx].identity.quality == ChordQuality::Major
-                    && results[bestAltIdx].identity.rootPc == (winner.identity.rootPc + 5) % 12
-                    && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
-                    std::swap(results[0], results[bestAltIdx]);
-                    didEnharmonicFlip = true;
-                }
+                // Gate F (second-inversion → root-position Major, alt at (rootPc+5)%12) was
+                // RETIRED in Stage 5 (2026-07-05, design D-7): 0 corpus firing sites on all
+                // three carriers (cc_stage5_phase2_2b_report.md §1.2) — removal is
+                // corpus-byte-identical. didEnharmonicFlip flows unchanged into the bias block.
 
                 if (!didEnharmonicFlip) {
                     const double margin = winner.identity.score - results[bestAltIdx].identity.score;
