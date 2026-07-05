@@ -5,7 +5,36 @@ dispatched; previously 22k: D-L3a · the full-needs audit · corpus Waves 3/3-ad
 the union search · the fitting-pool license constraint — all ratified).
 This header is the fresh-session entry point; full narratives live in STATUS.md (top entries) and the named docs.*
 
-## ★ START HERE — state, dispatch, queue (2026-07-04)
+## ★ START HERE — state, dispatch, queue (2026-07-05)
+
+**★ PHASE 2.2d CC-DELIVERED (session 22s, 2026-07-05) — THE (srib,kw) SUB-SWEEP FOUND A FEASIBLE SLICE;
+a small ADOPTABLE candidate exists (a TIE); NOTHING adopted. AWAITING COWORK VERIFICATION.** This
+fulfills the ACTIVE DISPATCH `cc_instruction_stage5_phase2_2d.md` (recorded in the 2.2c block below).
+Report `cc_stage5_phase2_2d_report.md` (read in full for verification). **★ THE O-11 ii CHEAP QUESTION
+ANSWERED — YES:** the 2.2c "family 2 closed NOT-adoptable" was the pessimistic reading of the *coupled*
+point (bnrb 0.775); with **bnrb held at 0.70** and the bump gentle, an adoptable slice DOES exist —
+Family 2 re-opens as **ADOPTABLE-PENDING-RATIFICATION**. The 18-point 2-D sweep (srib∈{0.40…0.4625} ×
+kw∈{0.10,0.1125,0.125}, bnrb fixed 0.70; committed ledger `tools/fit_ledgers/stage5_2_2d_sweep.jsonl`)
+→ **three full-feasible points**, all at high kw; the **top fitting gain +0.0365 is a 2-point TIE**:
+**(srib 0.40, kw 0.125)** kw-only and **(srib 0.425, kw 0.125)** both-levers. Full decision surface for
+both (committed ledger `stage5_2_2d_surface.jsonl`; held-out ONCE each): held-out **+0.0280** (generalizes,
+no overfit), Baroque root +0.0347 (identical), **newB=0 on ALL three carriers, D-4 Default ELIGIBLE,
+Jazz BYTE-IDENTICAL** (spot-verified — the O-9 per-carrier delivery removes the 2.2b shared-scope Jazz
+cost entirely), DLC flat-positive (mozart +0.7), snapshot 11/11 would refresh. **★ THE DECISIVE FINDING:
+the tie's *meaningful* (class-(b)) improvement is IDENTICAL** — both remove exactly the same single
+class-(b) case `bwv244.32@5760`; the 53→52 vs 53→50 batch gap is **entirely class-(a) churn**
+(`bwv258@10560`+`bwv334@6720`, symmetric-rotation coin-flips). **CC recommendation (evidence-based; the
+tie-break + adoption are the user's): (0.40, 0.125)** — minimal/robust, single lever, never enters the
+srib→bwv392 over-grab region; (0.425,0.125) is the alternative iff its better tracked-beside RN/key
+(+0.049/+0.032 vs +0.015/+0.012) is judged worth the bigger perturbation + class-(a) churn + reliance on
+the fragile kw=0.125 absorption of bwv392. **Prepared-NOT-applied adoption artifact** with the kStepBudget
+note (kw 0.10→0.125 ⟹ kStepBudget 0.21→0.235; loader recomputes at fit time, a baked adoption must ensure
+the same) + the O-11 iii production-path caveat. Sandwich **53/24/53** set-diff empty (Baroque set
+element-verified vs CLAUDE.md; corpus git-clean, byte-untouched, `0dd64660f4`); suites **1101/53/11**,
+no golden refresh; src git-clean (measurement-only). **Commits:** `ee59231141` feat(tools) drivers+ledgers ·
+`5204551583` report · this fold. Local/unpushed; no corpus write; no push. **Cowork verifies → the
+adoption + tie-break are the user's ratification event.** STATUS 22s + design §15 O-11 ii (DELIVERED note)
+= the full record. **The 2.2c-verified block below stands as history:**
 
 **✅ ACQUISITION ROUND COWORK-VERIFIED + RATIFIED (2026-07-04).** `cc_instruction_acquisition_round.md`
 executed; report `cc_acquisition_round_report.md` (read in full); commit `4997757298` **verified at object**
@@ -32,8 +61,20 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ PHASE 2.2c DELIVERED (session 22q, 2026-07-05) — report `cc_stage5_phase2_2c_report.md` (read in
-full); NOTHING adopted, one retirement HELD, no `tools/corpus` write, no push.** AS-BUILT: (1) **RETIRE-5
+**★ PHASE 2.2c COWORK-VERIFIED + RATIFIED (session 22r, 2026-07-05): all 11 commits verified at
+objects; the ★ ALTERNATIVES[] RULING recorded (design §15 O-11: the carried-alternatives surface IS
+inside the byte-identity contract — GateA verdict RETIRE→HELD/DEFER, retires when the promotion
+machinery unifies, a named total-unification item); FAMILY 2 CLOSED NOT-ADOPTABLE (bwv392 driven by
+the srib+kw PAIR, not bnrb — a Layer-2/4 over-grab the fit relocates but cannot remove; the candidate
+reads the GT's OWN Dm/F at the wrong span — Cowork's earlier F-root inference corrected by Task 3);
+the production-delivers-only-Default fact recorded (O-11 iii). **ACTIVE DISPATCH:
+`cc_instruction_stage5_phase2_2d.md`** — the 18-point (srib × kw) sub-sweep at bnrb 0.70 under the
+full-corpus zero-new-class-(b) selection rule (bwv379/bwv392 appearance-mapped per point; Jazz pinned
+by construction; candidate surface + prepared-NOT-applied artifact if one exists, else the honest full
+family-2 closure). Then: staging steps 3/4 → family-4 gate → Phase 3.
+STATUS 22r = the full record. The delivery summary below stands as history:**
+PHASE 2.2c DELIVERED (session 22q, 2026-07-05) — report `cc_stage5_phase2_2c_report.md` (read in
+full); NOTHING adopted, one retirement HELD, no `tools/corpus` write, no push. AS-BUILT: (1) **RETIRE-5
 executed → byte-identity STOP → user Option 1 → RETIRE-4.** The five retirements were committed; the
 byte-identity proof tripped on **Baroque 36 differing `.ours.json`**, and the diagnosis (3-way vs a built
 `3f52f088ad` baseline + a winner-vs-alternatives isolation) found **GateA is WINNER-byte-identical on all

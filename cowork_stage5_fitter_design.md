@@ -949,6 +949,49 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   (+0.43…+0.51, batch 53→49) is real, but the single new class-(b) is a hard R10 stop. The next-lever
   decision (a gentler srib/kw that does not create bwv392 · a Layer-4 fix for the over-grab · a smaller
   uncoupled gain) is the user's — nothing adopted.
+- **O-11 (the GateA byte-identity ruling + family-2 closure, 2026-07-05, Phase 2.2c).** (i) **RULED:
+  `alternatives[]` IS inside the byte-identity acceptance contract** — the carried alternatives are a
+  load-bearing output surface (the L4 §15 O1b carry contract: L5 overrides select among carried
+  readings; E-14 makes them user-visible), so "same winner, different alternatives" is a behavior
+  change. Consequence: **GateA's retirement is HELD** (verdict amended RETIRE → DEFER): it is
+  winner-inert everywhere but alternatives-active on 36 Baroque scores — its `std::swap` promotion and
+  FM2's `push_back(buildResult)` promotion produce the same winner with different carry side-effects.
+  **It retires when the promotion machinery unifies** (one promotion path producing one carry — a named
+  total-unification item, claimable by the L4 carry work or a §6-block consolidation increment).
+  Evidence-method lesson recorded: firing-site/inertness evidence must measure the FULL output surface
+  (winner + alternatives), not the winner alone. (ii) **Family 2 (the coupled continuous cluster)
+  CLOSED NOT-ADOPTABLE at every swept value** (`cc_stage5_phase2_2c_report.md` Task 4): low
+  `bassNoteRootBonus` is fitting-blocked (`bwv379@11520`), every fitting-feasible value is
+  full-corpus-blocked by the Task-3-verified class-(b) `bwv392@17520` — which is driven by the
+  `sameRootInversionBonus 0.475 + kWStepIn 0.125` PAIR (present even at bnrb 0.70), a **Layer-2/4
+  segmentation over-grab** (the candidate reads the RIGHT chord, Dm/F, but starts an eighth late and
+  extends across the barline into the GT's Gm region — the weight fit relocates the boundary failure,
+  it cannot remove it; the §11 "ceiling is upstream of weights" caveat, now measured at a single case).
+  Open follow-up: a cheap (srib, kw) sub-sweep below the blocking bump (investigate-by-default) may
+  find a smaller feasible gain; the Layer-4/NCT fix (R-14) stays deferred to its proper turn.
+  **★ DELIVERED (2.2d, `cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the
+  answer is YES.** The 18-point 2-D grid (srib∈{0.40…0.4625}×kw∈{0.10,0.1125,0.125}, bnrb fixed 0.70,
+  Jazz byte-identical by O-9 construction) yields **three full-feasible points**, all at high kw, with
+  a **top-gain 2-point tie at fitting +0.0365**: **(srib 0.40, kw 0.125)** kw-only and **(srib 0.425,
+  kw 0.125)** both-levers. Both: held-out +0.0280 (generalizes), Baroque root +0.0347 (identical),
+  **newB=0 on all three carriers, D-4 Default eligible, Jazz byte-identical** (the O-9 per-carrier
+  delivery removes the 2.2b shared-scope Jazz cost entirely), DLC flat-positive (mozart +0.7), snapshot
+  11/11. **★ The tie's *meaningful* improvement is IDENTICAL** — both remove exactly the same single
+  class-(b) case `bwv244.32@5760`; the 53→52 vs 53→50 batch gap is entirely **class-(a) churn**
+  (`bwv258@10560`+`bwv334@6720`, symmetric-rotation coin-flips). So the family-2 gain was never "no
+  feasible slice" — it was a **~14× smaller feasible slice reachable only with bnrb at 0.70 and the bump
+  gentle** (bwv392 is absent from the whole srib=0.40 column; the srib bump is what creates it, and at
+  (0.425,0.125) it is re-absorbed by the higher kw). CC recommends **(0.40, 0.125)** (minimal/robust,
+  single lever, no bwv392 exposure); (0.425,0.125) trades a bigger perturbation + class-(a) churn for
+  better tracked-beside RN/key (+0.049/+0.032). **Prepared-not-applied adoption artifact** with the
+  kStepBudget note (kw 0.10→0.125 ⟹ kStepBudget 0.21→0.235; override loader recomputes at fit time, a
+  baked adoption must ensure the same). **NOTHING adopted; the candidate + the tie-break are the user's
+  ratification event** (Family 2 re-opens as ADOPTABLE-PENDING-RATIFICATION, superseding the 2.2c
+  not-adoptable closure). (iii)
+  **Production-path delivery fact (Task 2):** the production/notation path has NO preset-selection
+  moment — it delivers ONLY the Default carrier (struct default + global initializer are its delivery
+  surface); a future Default-carrier adoption ships to production through those; non-Default carriers
+  are batch/fitting-path-only until a production preset moment exists (D-10 note).
 - **O-10 (lesson from the user's methodology challenge, 2026-07-05): RETAINED structural rules carry
   ongoing LIVENESS evidence.** The Gate-K/Gate-L failure mode — a rule's founding cases silently absorbed
   upstream, leaving dead code undetected for weeks — existed because nothing measured rule liveness. For
