@@ -3891,6 +3891,23 @@ int main(int argc, char* argv[])
     //          correct reading for the Bb6/Gm7 enharmonic pair).
     analysis::ChordAnalyzerPreferences chordPrefs;
 
+    // ── Stage-5 O-9: per-carrier delivery of the two diverging shared levers ──────────
+    // bassNoteRootBonus (a ChordAnalyzerPreferences field) and kWStepIn (a
+    // harmonicfunctionlayer.h GLOBAL) were shared. The 2.2b joint fit found their optima
+    // diverge by carrier (Jazz vs Baroque/Default — the manifest declared both idiom-varying
+    // at Phase 0; design §15 O-9), so each preset now DELIVERS them explicitly, per carrier.
+    // VALUES ARE UNCHANGED in this dispatch — every carrier keeps 0.70 / 0.10, so the write
+    // is byte-identical. The writes happen BEFORE the --param-override load below, so a
+    // fitting override (the fit-value delivery path) cleanly overrides them; a Jazz run with
+    // no override for these keeps 0.70 / 0.10 (byte-identical to baseline by construction).
+    // kWStepIn is a registered global (not a prefs field), so it is delivered through the
+    // SAME registered-global writer the override loader uses (params::applyGlobalOverride).
+    // Production/notation path note: production has no preset-selection moment — it uses
+    // kDefaultChordAnalyzerPreferences (bassNoteRootBonus struct default 0.70) + the kWStepIn
+    // global initializer (0.10), i.e. it delivers only the Default carrier. See the
+    // cc_stage5_phase2_2c_report.md O-9 production-path note (no production behavior change here).
+    double presetKWStepIn = 0.10;   // Default carrier (== the production/global initializer)
+
     if (presetName == "Jazz") {
         chordPrefs.extensionThreshold                    = 0.12;
         chordPrefs.preferMinorOverMajorAdd6              = false;
@@ -3899,9 +3916,13 @@ int main(int argc, char* argv[])
         chordPrefs.stepwiseBassLookaheadBonus            = 0.20;
         chordPrefs.sameRootInversionBonus                = 0.15;
         chordPrefs.completeTriadInversionBonus           = 0.20;
+        chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Jazz carrier (pinned)
+        presetKWStepIn                                   = 0.10;   // O-9 Jazz carrier (pinned)
 
     } else if (presetName == "Baroque") {
         chordPrefs.preferMinorOverMajorAdd6              = true;
+        chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Baroque carrier (idiom-#2 fit target)
+        presetKWStepIn                                   = 0.10;   // O-9 Baroque carrier
 
     } else if (presetName == "Default") {
         // Live product out-of-box (Stage 2.4 V4): the app never mutates a single
@@ -3910,13 +3931,25 @@ int main(int argc, char* argv[])
         // leave chordPrefs at struct defaults. In particular preferMinorOverMajorAdd6
         // stays FALSE here — unlike Standard/Modal/Contemporary, which set it true —
         // so this measures the configuration users actually run, not even batch
-        // "Standard".
+        // "Standard". The O-9 per-carrier writes below set bassNoteRootBonus / kWStepIn
+        // to their struct-default / initializer values (0.70 / 0.10) — byte-identical,
+        // and the surface a future Default-carrier fit would deliver through.
+        chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Default carrier (== struct default)
+        presetKWStepIn                                   = 0.10;   // O-9 Default carrier (== global initializer)
 
     } else {
         // Standard, Modal, Contemporary: defaults + prefer Minor over Major add6
         chordPrefs.preferMinorOverMajorAdd6              = true;
         // maxTotalInversionContextBonus stays at default (2.0)
+        chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Standard/Modal/Contemporary carrier
+        presetKWStepIn                                   = 0.10;   // O-9 Standard/Modal/Contemporary carrier
     }
+
+    // Stage-5 O-9: deliver the per-carrier kWStepIn to the function-layer global via the
+    // registered-global writer (the override loader's write path). Byte-identical at 0.10.
+    // (If kWStepIn were somehow unregistered — it is registered at static-init in
+    // harmonicfunctionlayer.cpp — this is a no-op and the global keeps its 0.10 initializer.)
+    mu::composing::params::applyGlobalOverride("kWStepIn", presetKWStepIn);
 
     // ── Stage-5 fitter: apply the optional parameter override (design D-6) ──────
     // Reaches the file-level scoring constants (registered globals: G1/G6/G7) AND the

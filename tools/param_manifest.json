@@ -198,8 +198,8 @@
       "status": "frozen", "status_rationale": "structural presence threshold; freeze candidate.", "license_provenance": null, "sensitivity": 0.0 },
 
     { "group": "G2 — chord-scoring PREFS members (analysistypes.h defaults; both paths via analyzeChord)",
-      "name": "bassNoteRootBonus", "site": "analysistypes.h:177 (bounds :428)", "family": "continuous", "value": 0.70, "per_preset": null, "preset_scope": "shared",
-      "style_scope": "idiom-varying", "style_scope_rationale": "root=bass bonus; inversion/root-position prevalence is style-varying (de Clercq-Temperley: rock ~94% root-position vs common-practice ~60% — design §14). Also the bias-correction subtracts exactly this at close margins.",
+      "name": "bassNoteRootBonus", "site": "analysistypes.h:177 (bounds :428)", "family": "continuous", "value": 0.70, "per_preset": "0.70 | 0.70 | 0.70 (O-9 per-carrier; values unchanged this dispatch)", "preset_scope": "per-preset",
+      "style_scope": "idiom-varying", "style_scope_rationale": "root=bass bonus; inversion/root-position prevalence is style-varying (de Clercq-Temperley: rock ~94% root-position vs common-practice ~60% — design §14). Also the bias-correction subtracts exactly this at close margins. O-9 (2026-07-05): reclassified shared -> per-preset — the 2.2b joint fit found Baroque/Default vs Jazz optima diverge; each preset builder now delivers it explicitly (batch_analyze.cpp). cc_stage5_phase2_2c_report.md.",
       "consuming_path": "both", "consuming_path_evidence": "analyzeChord bassNoteRoot scoring; both paths (chordslicedecoder.cpp:453).",
       "status": "fit", "status_rationale": "an optimizer bound already exists (:428).", "license_provenance": null, "sensitivity": 0.2112 },
 
@@ -317,8 +317,8 @@
       "consuming_path": "both", "consuming_path_evidence": "wDimBonus in applyHarmonicFunction (production) + dormant (attenuated).",
       "status": "fit", "status_rationale": "hardcoded numeric bonus; not in bounds().", "license_provenance": null, "sensitivity": 0.0289 },
 
-    { "group": "G6", "name": "kWStepIn", "site": "harmonicfunctionlayer.h:111", "family": "continuous", "value": 0.10, "per_preset": null, "preset_scope": "shared",
-      "style_scope": "idiom-varying", "style_scope_rationale": "stepwise-bass step-in bonus (Pass B); textural/progression bass-line signal. DOC-DRIFT: doc says chordanalyzer.cpp:~L2157; actually harmonicfunctionlayer.cpp:73/82.",
+    { "group": "G6", "name": "kWStepIn", "site": "harmonicfunctionlayer.h:111", "family": "continuous", "value": 0.10, "per_preset": "0.10 | 0.10 | 0.10 (O-9 per-carrier; values unchanged this dispatch)", "preset_scope": "per-preset",
+      "style_scope": "idiom-varying", "style_scope_rationale": "stepwise-bass step-in bonus (Pass B); textural/progression bass-line signal. DOC-DRIFT: doc says chordanalyzer.cpp:~L2157; actually harmonicfunctionlayer.cpp:73/82. O-9 (2026-07-05): reclassified shared -> per-preset — a file-level global with no per-preset surface until now; batch_analyze.cpp writes it per preset via params::applyGlobalOverride (the override loader's write path) before the --param-override load. Production has no preset-selection moment: it delivers only the Default carrier via the global initializer. cc_stage5_phase2_2c_report.md.",
       "consuming_path": "both", "consuming_path_evidence": "wStepInBonus via applyStepBonusGuard (production) + dormant (attenuated).",
       "status": "fit", "status_rationale": "hardcoded numeric bonus; not in bounds().", "license_provenance": null, "sensitivity": 0.1389 },
 
