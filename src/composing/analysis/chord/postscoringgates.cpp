@@ -209,15 +209,12 @@ void applyPostScoringGates(
                     // producing a flood of Am7/C regressions on root-position chords.
                     const bool winnerHasAddedSixth =
                         hasExtension(winner.identity.extensions, Extension::AddedSixth);
-                    const bool altIsMinor =
-                        (results[bestAltIdx].identity.quality == ChordQuality::Minor);
                     const int expectedAltRoot = (winner.identity.rootPc + 9) % 12;
-                    if (!ruleOff(P::PostScoringRule::GateA)
-                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && results[bestAltIdx].identity.rootPc == expectedAltRoot) {
-                        std::swap(results[0], results[bestAltIdx]);
-                        didEnharmonicFlip = true;
-                    }
+                    // Gate A (the direct Major-add6 → relative-Minor enharmonic swap) was
+                    // RETIRED in Stage 5 (2026-07-05, design D-7): it fired on ZERO corpus
+                    // cells across all three carriers (cc_stage5_phase2_2b_report.md §1.2),
+                    // so its removal is corpus-byte-identical. The FM2 fallback below stays
+                    // as the enharmonic-partner mechanism (pull the Minor alt from rawCandidates).
                     // FM2 fallback: a higher-scoring different-root alt (e.g. Em/C) may have
                     // blocked the enharmonic partner from entering results[] via the append path.
                     // Scan rawCandidates above threshold for the Minor alt at expectedAltRoot.

@@ -108,7 +108,7 @@ ruleNameTable()
 {
     static const std::array<const char*, static_cast<std::size_t>(PostScoringRule::Count)>
         kNames = {
-            "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
+            "BiasCorrection", "FM2", "GateE", "GateF",
             "GateGE", "GateGB", "GateGC", "GateGD",
             "GateH", "GateI", "GateK", "GateL", "GateJ",
         };

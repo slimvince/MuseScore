@@ -676,7 +676,7 @@ retires no rule and changes no committed value.
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | bias correction | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
-| **A (Minor-add6 ↔ HalfDim7 enharmonic flip)** | Gate A region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **Gates B/C/D removed (Stage 3.4b):** they were provably unreachable dead code — Gate A has exactly these conditions with no temporal requirement, and B/C/D repeated them *plus* temporal evidence behind `!didEnharmonicFlip`, so A always fired first (Stage-1b F1). Removal was byte-identical (0/353 × 3 configs, snapshots zero-diff) — the deliberate gate-retirement audit, not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
+| **FM2 (Minor-partner pull)** | FM2 region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, the relative-Minor partner at `(rootPc+9)%12` is absent from `results[]` but present in `rawCandidates` above `threshold`. (**Gate A** — the direct Major-add6 → Minor swap that used to precede FM2 — was **RETIRED Stage 5**, 2026-07-05; see the retired-gates note below. Gates B/C/D were removed earlier at Stage 3.4b.) | Pull the Minor alt from `rawCandidates` and promote it (the FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
 | **E (first-inversion Minor → Major)** | Gate E | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
 | **F (second-inversion → root-position Major)** | Gate F | Alt Major at `(rootPc+5)%12`, stepwise bass. | Swap. | Bass = P5 of actual root; B winning when E/B is correct. |
 | **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-B/C/D on temporal context. | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
@@ -685,6 +685,15 @@ retires no rule and changes no committed value.
 | **K (first-inversion Augmented)** | `kGateKMargin` | Winner Augmented bass-root, alt at I4 interval, alt root diatonic, margin ≤ 0.20. | Swap. | bwv40.6 m=6: A+ → F♯5/A. |
 | **L (Major over Augmented same-root)** | `kGateLMargin` | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
 | **J (vii° → V7 completion) — runs LAST** | Gate J (last) | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
+
+**Retired gates (Stage 5, 2026-07-05 — §6-block dissolution audit, design D-7).** Each rule
+below fired on **ZERO corpus cells across all three carriers** (Baroque/Jazz/Default; the 2.2b
+firing-site ledger, `cc_stage5_phase2_2b_report.md` §1.2), so its removal is corpus-byte-identical
+(full-corpus regen ×3, 0 diffs) and the joint fit reached the identical optimum with them disabled
+(Config II ≡ Config I, 2.2b §2). Each was retired in its own user-ratified commit (2026-07-05):
+
+- **A (Major-add6 → relative-Minor enharmonic swap)** — the direct swap. **FM2** (the `rawCandidates`
+  pull, row above) is RETAINED as the surviving enharmonic-partner mechanism.
 
 **`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip
 block.** When the `preferMinorOverMajorAdd6` path (Gate-A / G-family region) identifies
@@ -789,13 +798,16 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   The historical silent stack-buffer overrun from a missed matrix size is closed.
   (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)
 
-- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical).** Gate A's
-  entry conditions were a strict subset of B/C/D's, so B/C/D were unreachable dead
-  code (Stage-1b F1). They were removed in the Stage-3 per-gate retirement audit
-  (roadmap 3.4b) as a byte-identical change (0/353 × 3 configs, snapshots zero-diff).
-  Constraint going forward: do not add temporal conditions to Gate A — there is no
-  longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the
-  Major-add6 ↔ Minor flip must be reintroduced explicitly and tested.
+- **Gate A itself RETIRED (Stage 5, 2026-07-05); Gates B/C/D removed earlier (Stage 3.4b).**
+  Gate A's entry conditions were a strict subset of B/C/D's, so B/C/D were unreachable dead
+  code (Stage-1b F1), removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a
+  byte-identical change (0/353 × 3 configs, snapshots zero-diff). Gate A — the direct
+  Major-add6 → Minor swap — was then found to fire on **0 corpus cells on all three carriers**
+  (2.2b §1.2) and was retired under the §6-block dissolution audit (D-7), byte-identical
+  (regen ×3, 0 diffs). **FM2** (the `rawCandidates` pull) survives as the enharmonic-partner
+  mechanism. Constraint going forward: any forward/window/consecutive-stepwise variant of the
+  Major-add6 ↔ Minor flip must be reintroduced explicitly and tested — there is no Gate-A/B/C/D
+  safety net.
 
 - **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was
   tried and reverted (Schumann D-major, Corelli G-major snapshot flips).

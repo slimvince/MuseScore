@@ -258,15 +258,16 @@ TEST_F(ParamOverride, MissingFileThrows)
 
 TEST_F(ParamOverride, PostScoringRuleNamesSpanTheFullSixBlock)
 {
-    // The 14 §6 members (design D-7): bias correction · FM2 · A · E · F ·
-    // G-E · G-B · G-C · G-D · H · I · K · L · J.
+    // The 13 §6 members after retiring Gate A (Stage-5 RETIRE-5, 2026-07-05, design D-7):
+    // bias correction · FM2 · E · F · G-E · G-B · G-C · G-D · H · I · K · L · J.
     const auto names = P::postScoringRuleNames();
-    EXPECT_EQ(names.size(), 14u);
-    for (const char* n : { "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
+    EXPECT_EQ(names.size(), 13u);
+    for (const char* n : { "BiasCorrection", "FM2", "GateE", "GateF",
                            "GateGE", "GateGB", "GateGC", "GateGD",
                            "GateH", "GateI", "GateK", "GateL", "GateJ" }) {
         EXPECT_TRUE(P::isKnownRuleName(n)) << n;
     }
+    EXPECT_FALSE(P::isKnownRuleName("GateA"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateB"));       // removed at Stage 3.4b — not a rule
     EXPECT_FALSE(P::isKnownRuleName("NotARule"));
 }
@@ -292,7 +293,7 @@ TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
 {
     const std::string path = writeTempOverride("disable_mixed",
         "kForeignPenalty 0.5\n"
-        "disable_rule GateA\n"
+        "disable_rule GateI\n"
         "disable_rule GateL\n"
         "bassNoteRootBonus 0.55\n");
     ChordAnalyzerPreferences prefs;
@@ -301,7 +302,7 @@ TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
     EXPECT_EQ(st.prefsFields, 1);
     EXPECT_EQ(st.rulesDisabled, 2);
     EXPECT_EQ(st.applied, 4);
-    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateA));
+    EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateI));
     EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateL));
     EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateK));
     std::filesystem::remove(path);
