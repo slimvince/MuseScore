@@ -24,7 +24,10 @@ Modes:
   fixture      Known-vector fixture: current constants -> reproduce the ratified baselines.
   determinism  Run one evaluation twice; assert byte-identical ledger rows.
   screen       The Phase-1b one-at-a-time sensitivity screen.
-  evaluate     A single ad-hoc evaluation of a name=value override.
+  evaluate     A single ad-hoc evaluation of a name=value override (+ optional --disable-rule).
+  fit          The Checkpoint-P1 1-D coordinate/pattern-search optimizer (one row, one carrier).
+  audit        The §6-block per-rule dissolution audit: one eval per rule with that rule
+               ALONE disabled, at current weights, on the fitting split (design D-7 / Phase 2.2a).
 """
 from __future__ import annotations
 
@@ -41,6 +44,14 @@ import dcml_parser as dcml  # noqa: E402
 
 WIR_DIR = _ROOT / "tools" / "dcml" / "when_in_rome"
 BATCH_ANALYZE = _ROOT / "ninja_build_rel" / "batch_analyze.exe"
+
+# ── Ledger location (design §7 as amended by O-8, 2026-07-05) ──────────────────────────
+# The COMPACT PER-RUN ledgers (the fit ladder, the §6 dissolution audit) are committed
+# artifacts under a NON-gitignored path. The shared full-row append-log + a8 per-cell
+# enumerations stay regenerable scratch under the gitignored tools/reports/ (the A-8
+# precedent for large enumerations).
+FIT_LEDGER_DIR = _ROOT / "tools" / "fit_ledgers"      # committed compact per-run ledgers
+SCRATCH_LEDGER_DIR = _ROOT / "tools" / "reports"      # gitignored append-log scratch
 
 # ── The parameter registry: the REACHABLE override names (production fit surface) ──────
 # Each row: family, frozen?, kind, and the baseline value (shared) OR per-preset values.
@@ -126,6 +137,17 @@ PARAMS = {
                                            per_preset={"Baroque": 0.20, "Jazz": 0.12, "Default": 0.20}),
     "pedalConfidenceThreshold":       dict(g="G5", fam="abstention",  frozen=False, val=0.65),
 }
+
+
+# ── The §6-block post-scoring rules (design D-7; the dissolution-audit subject) ────────
+# Canonical names must match paramoverride.h PostScoringRule / postScoringRuleNames().
+# Execution order (docs/scoring_model.md §6): bias correction, FM2, then the lettered
+# gates. Each disables via a `disable_rule <Name>` override line (measurement-only).
+POST_SCORING_RULES = [
+    "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
+    "GateGE", "GateGB", "GateGC", "GateGD",
+    "GateH", "GateI", "GateK", "GateL", "GateJ",
+]
 
 
 def baseline_value(name, preset):
@@ -216,12 +238,14 @@ def run(cmd, **kw):
     return subprocess.run(cmd, capture_output=True, text=True, **kw)
 
 
-def write_override(perturb, preset, path):
-    """Write a MINIMAL override file: only the perturbed params (all others stay at their
-    byte-identical defaults/preset values)."""
+def write_override(perturb, preset, path, disable_rules=None):
+    """Write a MINIMAL override file: only the perturbed params + any §6 rule-disables
+    (all others stay at their byte-identical defaults/preset values, all rules enabled)."""
     lines = ["# stage5 fit driver override"]
     for name, v in perturb.items():
         lines.append(f"{name} {fmt_val(name, v)}")
+    for rule in (disable_rules or []):
+        lines.append(f"disable_rule {rule}")
     Path(path).write_text("\n".join(lines) + "\n")
 
 
@@ -265,21 +289,24 @@ def measure(preset, scratch_root, a8_out, scores_file=None):
 
 
 def evaluate(perturb, preset, scratch_root, a8_out, baseline=None,
-             perturb_frozen=False, scores_file=None):
+             perturb_frozen=False, scores_file=None, disable_rules=None):
+    disable_rules = disable_rules or []
     # P0 enforcement: refuse a vector touching a frozen row unless the frozen rider is on.
     frozen_hit = [n for n in perturb if PARAMS[n]["frozen"]]
     if frozen_hit and not perturb_frozen:
         raise ValueError(f"refusing frozen row(s) {frozen_hit} (use --perturb-frozen for the "
                          f"Phase-1b read-only rider)")
     ov = scratch_root / f"override_{preset.lower()}.txt"
-    write_override(perturb, preset, ov)
+    write_override(perturb, preset, ov, disable_rules)
     ov_win = str(ov).replace("\\", "/")
-    regen(preset, ov_win if perturb else None, scratch_root)
+    has_override = bool(perturb) or bool(disable_rules)
+    regen(preset, ov_win if has_override else None, scratch_root)
     m = measure(preset, scratch_root, a8_out, scores_file)
 
     row = {
         "preset": preset,
         "vector": {n: v for n, v in perturb.items()},
+        "disabled_rules": sorted(disable_rules),
         "families": sorted({PARAMS[n]["fam"] for n in perturb}) if perturb else [],
         "objective_root_pct": round(m["root_pct"], 4),
         "tracked": {"rn_pct": round(m["rn_pct"], 4), "key_pct": round(m["key_pct"], 4)},
@@ -355,6 +382,8 @@ def main():
     ev.add_argument("--set", action="append", default=[], help="name=value (repeatable)")
     ev.add_argument("--scratch", default="C:/tmp/s5_scratch/driver")
     ev.add_argument("--perturb-frozen", action="store_true")
+    ev.add_argument("--disable-rule", action="append", default=[],
+                    help="§6 rule to disable for this eval (repeatable; measurement-only)")
     ev.add_argument("--split", default="full", choices=["full", "fitting", "held_out"],
                     help="objective/constraint denominator (default full = byte-compat)")
     # fit — the ratified coordinate/pattern-search optimizer (design §5 Optimizer block,
@@ -368,10 +397,20 @@ def main():
     ft.add_argument("--refine-rounds", type=int, default=2)
     ft.add_argument("--split", default="fitting", choices=["fitting", "held_out", "full"])
     ft.add_argument("--scratch", default="C:/tmp/s5_scratch/fit")
-    ft.add_argument("--out", default=str(_ROOT / "tools" / "reports" / "stage5_fit_<param>.jsonl"))
+    ft.add_argument("--out", default=str(FIT_LEDGER_DIR / "stage5_fit_<param>.jsonl"))
+    # audit — the §6-block per-rule dissolution audit (design D-7 / Phase 2.2a Task 3).
+    # One evaluation per rule with that rule ALONE disabled, at current weights, on the
+    # fitting split; objective delta + batch subset-diff + class split, ledgered.
+    au = sub.add_parser("audit")
+    au.add_argument("--carrier", default="Baroque")
+    au.add_argument("--split", default="fitting", choices=["fitting", "held_out", "full"])
+    au.add_argument("--scratch", default="C:/tmp/s5_scratch/audit")
+    au.add_argument("--only", default=None, help="comma-separated subset of rule names")
+    au.add_argument("--resume", action="store_true")
+    au.add_argument("--out", default=str(FIT_LEDGER_DIR / "stage5_rule_dissolution_audit.jsonl"))
     args = ap.parse_args()
 
-    ledger = _ROOT / "tools" / "reports" / "stage5_fit_ledger.jsonl"
+    ledger = SCRATCH_LEDGER_DIR / "stage5_fit_ledger.jsonl"   # shared full-row append-log (scratch)
     ledger.parent.mkdir(parents=True, exist_ok=True)
     instruments = {"head": git_head(),
                    "objective": "a8_rebaseline_measure.py variant-(b) root-agree"}
@@ -401,7 +440,8 @@ def main():
             perturb[k] = (v == "true") if PARAMS[k].get("kind") == "bool" else float(v)
         _, base_m = evaluate({}, args.preset, scratch, a8_out, scores_file=scores_file)
         row, _ = evaluate(perturb, args.preset, scratch, a8_out, baseline=base_m,
-                          perturb_frozen=args.perturb_frozen, scores_file=scores_file)
+                          perturb_frozen=args.perturb_frozen, scores_file=scores_file,
+                          disable_rules=args.disable_rule)
         row["split"] = args.split
         row["baseline_root_pct"] = round(base_m["root_pct"], 4)
         ledger_append(ledger, row, f"adhoc_{args.split}", STAMP, instruments)
@@ -489,6 +529,65 @@ def main():
         else:
             result = "FEASIBLE-IMPROVEMENT (unconstrained-max is itself feasible)"
         print(f"  RESULT: {result}")
+        return
+
+    if args.mode == "audit":
+        scratch = Path(args.scratch); scratch.mkdir(parents=True, exist_ok=True)
+        a8_out = scratch / "a8"
+        carrier = args.carrier
+        scores_file = split_scores_file(args.split, scratch)
+        outp = Path(args.out); outp.parent.mkdir(parents=True, exist_ok=True)
+        rules = POST_SCORING_RULES if not args.only else args.only.split(",")
+        done = set()
+        if args.resume and outp.exists():
+            for ln in outp.read_text().splitlines():
+                try:
+                    d = json.loads(ln)
+                    if d.get("record") == "rule":
+                        done.add(d["rule"])
+                except Exception:
+                    pass
+        elif outp.exists():
+            outp.unlink()   # fresh compact per-run ledger (truncate) unless resuming
+
+        _, base_m = evaluate({}, carrier, scratch, a8_out, scores_file=scores_file)
+        base_root = round(base_m["root_pct"], 4)
+        print(f"AUDIT carrier={carrier} split={args.split} baseline_root={base_root:.4f} "
+              f"batch={base_m['batch_gate']} rules={len(rules)} (resume: {len(done)} done)")
+        if ("__baseline__" not in done) and not (args.resume and outp.exists()):
+            with open(outp, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"record": "baseline", "carrier": carrier,
+                                    "split": args.split, "root_pct": base_root,
+                                    "batch_gate": base_m["batch_gate"],
+                                    "cls_b_dur": base_m["cls_b_dur"],
+                                    "cls_a_dur": base_m["cls_a_dur"]}, sort_keys=True) + "\n")
+        for rule in rules:
+            if rule in done:
+                continue
+            row, m = evaluate({}, carrier, scratch, a8_out, baseline=base_m,
+                              scores_file=scores_file, disable_rules=[rule])
+            added = sorted(c for c in m["cases"] if c not in base_m["cases"])
+            removed = sorted(c for c in base_m["cases"] if c not in m["cases"])
+            changed = sorted(c for c in m["cases"]
+                             if c in base_m["cases"] and m["cases"][c] != base_m["cases"][c])
+            rec = {"record": "rule", "rule": rule, "carrier": carrier, "split": args.split,
+                   "root_pct": row["objective_root_pct"],
+                   "objective_delta": row["objective_delta"],
+                   "rn_pct": row["tracked"]["rn_pct"], "key_pct": row["tracked"]["key_pct"],
+                   "batch_gate": row["batch_gate"],
+                   "batch_added": added, "batch_removed": removed,
+                   "batch_class_changed": changed,
+                   "class_b_dur_delta": m["cls_b_dur"] - base_m["cls_b_dur"],
+                   "class_a_dur_delta": m["cls_a_dur"] - base_m["cls_a_dur"],
+                   "new_class_b_batch_cases": row["constraints"]["new_class_b_batch_cases"]}
+            ledger_append(ledger, row, f"audit_{rule}", STAMP, instruments)
+            with open(outp, "a", encoding="utf-8") as f:
+                f.write(json.dumps(rec, sort_keys=True) + "\n")
+            print(f"  {rule:<16} root={rec['root_pct']:.4f} d={rec['objective_delta']:+.4f} "
+                  f"batch={rec['batch_gate']} +{len(added)}/-{len(removed)}/~{len(changed)} "
+                  f"newB={len(rec['new_class_b_batch_cases'])} "
+                  f"clsBdur_d={rec['class_b_dur_delta']:+g} clsAdur_d={rec['class_a_dur_delta']:+g}")
+        print(f"AUDIT done -> {outp}")
         return
 
     if args.mode == "fixture":

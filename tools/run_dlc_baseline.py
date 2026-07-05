@@ -89,16 +89,25 @@ def _to_unix(p: Path) -> str:
     return s.replace("\\", "/")
 
 
-def _run_one(exe: Path, mscx: Path, out: Path, bash: Path | None, timeout: int) -> bool:
+def _run_one(exe: Path, mscx: Path, out: Path, bash: Path | None, timeout: int,
+             param_override: str | None = None) -> bool:
+    # --param-override (Stage-5 S-5 candidate scoring, O-8): additive and OPTIONAL. When
+    # absent the batch_analyze invocation is byte-identical to before; when a file is
+    # passed it flows to batch_analyze --param-override (byte-identical for an identity
+    # file, live for a perturbed one).
     try:
         if platform.system() == "Windows" and bash:
             cmd = f'{_to_unix(exe)} "{_to_unix(mscx)}" "{_to_unix(out)}"'
+            if param_override:
+                cmd += f' --param-override "{_to_unix(Path(param_override))}"'
             r = subprocess.run([str(bash), "-c", cmd], stdout=subprocess.DEVNULL,
                                stderr=subprocess.DEVNULL, timeout=timeout)
         else:
-            r = subprocess.run([str(exe), str(mscx), str(out)],
-                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                               timeout=timeout)
+            base = [str(exe), str(mscx), str(out)]
+            if param_override:
+                base += ["--param-override", str(param_override)]
+            r = subprocess.run(base, stdout=subprocess.DEVNULL,
+                               stderr=subprocess.DEVNULL, timeout=timeout)
         return r.returncode == 0 and out.exists()
     except Exception:
         return False
@@ -116,6 +125,10 @@ def main() -> None:
     ap.add_argument("--timeout", type=int, default=90, help="per-movement batch_analyze timeout (s)")
     ap.add_argument("--limit", type=int, default=0, help="cap movements per corpus (0 = all)")
     ap.add_argument("--skip-cpp", action="store_true", help="reuse existing .ours.json")
+    ap.add_argument("--param-override", default=None, metavar="FILE",
+                    help="Stage-5 S-5 (O-8): pass a scoring-parameter override FILE to "
+                         "batch_analyze so a candidate vector can be scored per style. "
+                         "Additive; absent = byte-identical to the committed baseline.")
     args = ap.parse_args()
 
     if args.corpora:
@@ -155,7 +168,7 @@ def main() -> None:
             if args.skip_cpp and out.exists():
                 n_ok += 1
                 continue
-            if _run_one(exe, mscx, out, bash, args.timeout):
+            if _run_one(exe, mscx, out, bash, args.timeout, args.param_override):
                 n_ok += 1
             else:
                 n_fail += 1
