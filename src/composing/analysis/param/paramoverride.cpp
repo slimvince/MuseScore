@@ -110,7 +110,7 @@ ruleNameTable()
         kNames = {
             "BiasCorrection", "FM2", "GateE",
             "GateGE", "GateGD",
-            "GateH", "GateI", "GateK", "GateL", "GateJ",
+            "GateH", "GateI", "GateL", "GateJ",
         };
     return kNames;
 }

@@ -77,7 +77,6 @@ enum class PostScoringRule : int {
     GateGD,              ///< Minor-add6 ↔ HalfDim7 consecutive-stepwise temporal fallback
     GateH,               ///< augmented rotation resolution
     GateI,               ///< first-inversion Major over root-position Minor
-    GateK,               ///< first-inversion Augmented over root-position Augmented
     GateL,               ///< same-root Major over root-position Augmented (TYPE-A)
     GateJ,               ///< vii° → V7 completion (runs last)
     Count

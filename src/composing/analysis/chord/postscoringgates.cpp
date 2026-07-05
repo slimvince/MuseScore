@@ -40,14 +40,13 @@ namespace mu::composing::analysis {
 // See cowork_stage5_fitter_design.md D-6 (§6-block dissolution is Phase-2 family 2).
 namespace {
 double kGateIMargin = 0.45;              ///< Gate I: first-inversion Min→Maj
-double kGateKMargin = 0.20;              ///< Gate K: first-inversion Aug
 double kGateLMargin = 0.35;              ///< Gate L: same-root Aug→Maj
 double kHalfDimFirstInversionBonus = 0.55; ///< Iter-61 Option B: HalfDim first-inversion bonus (under preferMinorOverMajorAdd6)
+// (kGateKMargin retired with Gate K — Stage 5, 2026-07-05, D-7.)
 
 const bool s_registerGateMarginParams = [] {
     namespace P = mu::composing::params;
     P::registerDouble("kGateIMargin",              &kGateIMargin);
-    P::registerDouble("kGateKMargin",              &kGateKMargin);
     P::registerDouble("kGateLMargin",              &kGateLMargin);
     P::registerDouble("kHalfDimFirstInversionBonus", &kHalfDimFirstInversionBonus);
     return true;
@@ -81,8 +80,8 @@ void applyPostScoringGates(
 
     // Gate margin guards (corpus-tuned).  All reachable corpus targets have
     // margins well within these bounds.
-    // (kGateIMargin/kGateKMargin/kGateLMargin relocated to file scope for the Stage-5
-    //  parameter-override mechanism — same values.)
+    // (kGateIMargin/kGateLMargin relocated to file scope for the Stage-5
+    //  parameter-override mechanism — same values. kGateKMargin retired with Gate K.)
 
     // ── Inversion / bass-root bias correction ────────────────────────────────
     //
@@ -482,42 +481,12 @@ void applyPostScoringGates(
             }
         }
 
-        // ── Gate K: prefer first-inversion augmented over root-position augmented ──────────
-        //
-        // When the winner is an Augmented chord with bassIsRoot=true and a runner-up shares
-        // the same bass note but is NOT root-position, with its root a major third below
-        // the bass (I4 interval), prefer the first-inversion reading.  E.g., D+ → Bb#5/D.
-        //
-        // Quality condition covers both encoding variants of an augmented-collection chord:
-        // Augmented quality directly, or Major with SharpFifth extension.
-        //
-        // Margin guard (≤ 0.20) keeps the gate narrow; all reachable targets have margin ≤ 0.12.
-        if (!ruleOff(P::PostScoringRule::GateK)
-            && winnerBassIsRoot
-            && originalWinnerQuality == ChordQuality::Augmented
-            && results.size() >= 2
-            && gateCtx.keyTonicPc >= 0) {
-            for (size_t iIdx = 1; iIdx < results.size(); ++iIdx) {
-                const ChordAnalysisResult& inv = results[iIdx];
-                if (inv.identity.bassPc != winner.identity.bassPc)                   continue;  // different bass
-                if (inv.identity.bassPc == inv.identity.rootPc)                      continue;  // root position
-                if ((winner.identity.bassPc - inv.identity.rootPc + 12) % 12 != 4)  continue;  // not I4 interval
-                const bool isAugmentedCollection =
-                    inv.identity.quality == ChordQuality::Augmented
-                    || (inv.identity.quality == ChordQuality::Major
-                        && hasExtension(inv.identity.extensions, Extension::SharpFifth));
-                if (!isAugmentedCollection)                                          continue;  // not augmented quality
-                const int invInterval = (inv.identity.rootPc - gateCtx.keyTonicPc + 12) % 12;
-                bool invRootIsDiatonic = false;
-                for (int d = 0; d < 7; ++d) {
-                    if (gateCtx.scale[d] == invInterval) { invRootIsDiatonic = true; break; }
-                }
-                if (!invRootIsDiatonic)                                              continue;  // not diatonic
-                if (winner.identity.score - inv.identity.score > kGateKMargin)             continue;  // margin too wide
-                std::swap(results[0], results[iIdx]);
-                break;
-            }
-        }
+        // ── Gate K RETIRED (Stage 5, 2026-07-05, design D-7) ──────────────────────────────
+        // The first-inversion-Augmented-over-root-position-Augmented swap (D+ → Bb#5/D,
+        // margin ≤ kGateKMargin) fired on ZERO corpus cells across all three carriers
+        // (cc_stage5_phase2_2b_report.md §1.2); its founding case bwv40.6 is no longer
+        // touched (superseded upstream, §1.3). Removal is corpus-byte-identical. The margin
+        // constant kGateKMargin was retired with it (file-scope block above).
 
         // ── Gate L: prefer same-root Major over root-position Augmented (TYPE-A quality fix) ──
         //

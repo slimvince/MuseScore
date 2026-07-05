@@ -52,10 +52,10 @@ The pipeline is:
 5. **Guaranteed inversion alternative.** When the winner is bass-rooted and no
    different-`rootPc` candidate made the top-3, append the next best one so
    the post-ranking correction has something to work with.
-6. **Post-scoring gates (A through L).** Inversion correction, enharmonic
+6. **Post-scoring gates.** Inversion correction, enharmonic
    flips (Minor-add6 ↔ HalfDim7), augmented-rotation correction, Gate I
    (first-inversion major over root-position minor), Gate J (vii° → V7),
-   Gate K (first-inversion augmented), Gate L (Major over augmented).
+   Gate L (Major over augmented). (Gates A/F/G-B/G-C/K retired Stage 5, 2026-07-05.)
 7. **Late promotions.** Iter 86 bass-b7 promotion, Iter 91 bass-as-root
    promotion.
 8. **Pedal point check.** Two-pass: if the bass is not a chord tone of the
@@ -71,7 +71,7 @@ Every hand-chosen numeric scoring constant documented in this file — the §4
 bonus/penalty terms and joint-term weights (`kContradictionPenalty`,
 `kExtensionFactor*`, `kNonBassPenalty`, the `kWSeq`/`kWDim`/`kWStepIn`/`kWStepOut`
 progression signals, `kWComplete`, …), the §6 gate margins (`kGateIMargin`,
-`kGateKMargin`, `kGateLMargin`, `kHalfDimFirstInversionBonus`), and the
+`kGateLMargin`, `kHalfDimFirstInversionBonus`; `kGateKMargin` retired with Gate K, Stage 5), and the
 `ChordAnalyzerPreferences` fields — is a **mutable global** (formerly `constexpr`),
 registered by name in `analysis/param/paramoverride.h`. The Stage-5 fitter (design
 `cowork_stage5_fitter_design.md` D-6) can override these values by name from an
@@ -647,8 +647,8 @@ Pass 2b), `harmonicsegmenter.cpp`, the notation bridges, and `inferNextRootPc()`
 call `applyPostScoringGates()` *after* `applyHarmonicFunction()`. Tests use the
 `analyzeWithGates()` helper in `test_helpers.h`. The table below identifies each gate
 by name; all are implemented inside `applyPostScoringGates()` (`postscoringgates.cpp`).
-The gate margins are the file-scope constants `kGateIMargin` / `kGateKMargin` /
-`kGateLMargin` (relocated to file scope for the Stage-5 override mechanism — see the
+The gate margins are the file-scope constants `kGateIMargin` /
+`kGateLMargin` (`kGateKMargin` retired with Gate K, Stage 5; relocated to file scope for the Stage-5 override mechanism — see the
 §1 note); the "Location" column names the gate's code region rather than a line number
 (the former `~Lxxxx` anchors predated refactor #1's move out of `chordanalyzer.cpp`).
 
@@ -681,7 +681,6 @@ retires no rule and changes no committed value.
 | **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-D on consecutive-stepwise temporal context. **(G-B and G-C RETIRED Stage 5, 2026-07-05 — see retired-gates note; G-E and G-D retained.)** | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
 | **H (augmented rotation)** | Gate H | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |
 | **I (first-inversion Major over root-position Minor)** | `kGateIMargin` | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |
-| **K (first-inversion Augmented)** | `kGateKMargin` | Winner Augmented bass-root, alt at I4 interval, alt root diatonic, margin ≤ 0.20. | Swap. | bwv40.6 m=6: A+ → F♯5/A. |
 | **L (Major over Augmented same-root)** | `kGateLMargin` | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
 | **J (vii° → V7 completion) — runs LAST** | Gate J (last) | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |
 
@@ -698,6 +697,9 @@ firing-site ledger, `cc_stage5_phase2_2b_report.md` §1.2), so its removal is co
   G-family; G-E (key-function) and G-D (consecutive-stepwise) retained.
 - **G-C (Minor-add6 ↔ HalfDim7 recent-root + stepwise-from-previous fallback)** — a second
   G-family sub-gate; G-E and G-D retained.
+- **K (first-inversion Augmented over root-position Augmented, `kGateKMargin` ≤ 0.20)** — the
+  whole gate + its margin constant `kGateKMargin`. Its founding case bwv40.6 (A+ → F♯5/A) is
+  no longer touched by the rule (superseded upstream, 2.2b §1.3).
 
 **`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip
 block.** When the `preferMinorOverMajorAdd6` path (Gate-A / G-family region) identifies

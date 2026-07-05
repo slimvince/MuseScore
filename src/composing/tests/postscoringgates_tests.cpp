@@ -576,42 +576,11 @@ TEST(Composing_PostScoringGateTests, GateI_AltRootBelowThreshold_NoFlip)
     EXPECT_EQ(results.front().identity.rootPc, 4);
 }
 
-// ═════════════════════════════════════════════════════════════════════════════
-// Gate K — first-inversion Augmented over root-position Augmented (§6):
-// same bass, I4 interval, alt is an augmented collection (Augmented quality OR
-// Major+SharpFifth), alt root diatonic, margin <= 0.20. Not preset-gated.
-// ═════════════════════════════════════════════════════════════════════════════
-
-TEST(Composing_PostScoringGateTests, GateK_MarginBracket)
-{
-    // bwv40.6 shape: A+ → F#5/A (alt root 5 = bass 9 minus M3; F diatonic in C).
-    auto run = [](double altScore) {
-        std::vector<ChordAnalysisResult> results = {
-            makeResult(9, 9, ChordQuality::Augmented, 2.0),
-            makeResult(5, 9, ChordQuality::Augmented, altScore),
-        };
-        auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
-        applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-        return results.front().identity.rootPc;
-    };
-
-    EXPECT_EQ(run(1.82), 5);   // margin 0.18 <= 0.20 → first-inversion reading
-    EXPECT_EQ(run(1.78), 9);   // margin 0.22 > 0.20 → A+ stays
-}
-
-// Second encoding variant of an augmented collection: Major + SharpFifth.
-TEST(Composing_PostScoringGateTests, GateK_MajorSharpFifthEncodingAccepted)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(9, 9, ChordQuality::Augmented, 2.0),
-        makeResult(5, 9, ChordQuality::Major, 1.9, { Extension::SharpFifth }),
-    };
-    auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
-    applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-
-    EXPECT_EQ(results.front().identity.rootPc, 5);
-    EXPECT_EQ(results.front().identity.quality, ChordQuality::Major);
-}
+// (Gate K — first-inversion Augmented over root-position Augmented (I4, margin ≤ 0.20) —
+//  was RETIRED in Stage 5, 2026-07-05, D-7: 0 corpus firing sites on all three carriers;
+//  founding case bwv40.6 no longer touched (superseded upstream). Its synthetic fixtures +
+//  GateK_DisabledDoesNotFire were vacated; kGateKMargin retired with it.
+//  cc_stage5_phase2_2b_report.md §1.2/§1.3.)
 
 // ═════════════════════════════════════════════════════════════════════════════
 // Gate L — same-root Major over root-position Augmented (§6, TYPE-A quality
@@ -1215,8 +1184,9 @@ TEST(Composing_PostScoringGateTests, GateI_NoKeyResolved_NoFlip)
     EXPECT_EQ(results.front().identity.rootPc, 4);
 }
 
-// No resolved key disables the augmented inversion (Gate K) and same-root demotion
-// (Gate L) gates too: the Augmented winner is preserved.
+// No resolved key (keyTonicPc = -1) disables the same-root Augmented→Major demotion
+// (Gate L): the Augmented winner is preserved. (Gate K, which shared this no-key guard,
+// was RETIRED Stage 5 — 2026-07-05, D-7.)
 TEST(Composing_PostScoringGateTests, GateKL_NoKeyResolved_NoChange)
 {
     std::vector<ChordAnalysisResult> results = {
@@ -1288,33 +1258,6 @@ TEST(Composing_PostScoringGateTests, GateHD_ConsecutiveStepwise_RotatesPlus8)
     temporal.consecutiveBassStepwiseCount = 2;
     applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
     EXPECT_EQ(results.front().identity.rootPc, 8);
-}
-
-// Gate K accepts only an augmented COLLECTION at the I4 inversion root: a same-bass alt
-// that is plain Major (no #5) or Minor is rejected, so the augmented winner stands.
-TEST(Composing_PostScoringGateTests, GateK_NonAugmentedCollectionAlt_NoFlip)
-{
-    // Plain Major alt (no SharpFifth) at the I4 root.
-    {
-        std::vector<ChordAnalysisResult> results = {
-            makeResult(9, 9, ChordQuality::Augmented, 2.0),
-            makeResult(5, 9, ChordQuality::Major, 1.9),   // F/A, no #5
-        };
-        auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
-        applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-        EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
-        EXPECT_EQ(results.front().identity.rootPc, 9);
-    }
-    // Minor alt at the I4 root.
-    {
-        std::vector<ChordAnalysisResult> results = {
-            makeResult(9, 9, ChordQuality::Augmented, 2.0),
-            makeResult(5, 9, ChordQuality::Minor, 1.9),
-        };
-        auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
-        applyPostScoringGates(results, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-        EXPECT_EQ(results.front().identity.quality, ChordQuality::Augmented);
-    }
 }
 
 // Gate L requires the SAME bass (root position): a same-root Major alt with a different
@@ -1699,26 +1642,6 @@ TEST_F(PostScoringRuleDisable, GateI_DisabledDoesNotFire)
     auto off = build();
     applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
     EXPECT_EQ(off.front().identity.rootPc, 4);   // bias correction seventh-exempt → no swap
-}
-
-TEST_F(PostScoringRuleDisable, GateK_DisabledDoesNotFire)
-{
-    auto build = [] {
-        return std::vector<ChordAnalysisResult>{
-            makeResult(9, 9, ChordQuality::Augmented, 2.0),
-            makeResult(5, 9, ChordQuality::Augmented, 1.82),   // margin 0.18 <= 0.20
-        };
-    };
-    auto ctx = makeGateCtx({ { 9, 0.5 }, { 1, 0.5 }, { 5, 0.5 } }, 3, 9);
-
-    auto on = build();
-    applyPostScoringGates(on, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-    EXPECT_EQ(on.front().identity.rootPc, 5);
-
-    P::setRuleDisabled(P::PostScoringRule::GateK, true);
-    auto off = build();
-    applyPostScoringGates(off, kDefaultChordAnalyzerPreferences, nullptr, ctx);
-    EXPECT_EQ(off.front().identity.rootPc, 9);
 }
 
 TEST_F(PostScoringRuleDisable, GateL_DisabledDoesNotFire)

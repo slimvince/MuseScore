@@ -98,16 +98,16 @@ TEST_F(ParamOverride, RegistryContainsProductionSurfaceGlobals)
     EXPECT_TRUE(P::isRegisteredGlobal("kStepBudget"));
     // G7 (postscoringgates.cpp gate margins)
     EXPECT_TRUE(P::isRegisteredGlobal("kGateIMargin"));
-    EXPECT_TRUE(P::isRegisteredGlobal("kGateKMargin"));
     EXPECT_TRUE(P::isRegisteredGlobal("kGateLMargin"));
     EXPECT_TRUE(P::isRegisteredGlobal("kHalfDimFirstInversionBonus"));
+    EXPECT_FALSE(P::isRegisteredGlobal("kGateKMargin"));   // retired with Gate K (Stage 5, 2026-07-05)
     // G10 (sectionanalyzer.h section-layer abstention bar)
     EXPECT_TRUE(P::isRegisteredGlobal("kAnnotateKeyConfidenceThreshold"));
 
     EXPECT_FALSE(P::isRegisteredGlobal("kThisNameDoesNotExist"));
     // 24 G1 file constants + kWComplete/kWCompletePresenceThreshold/kComplexityEvidenceFloor/
-    // kAugThinEvidenceFactor (4) + 5 G6 + 4 G7 + 1 G10 = 38 registered globals.
-    EXPECT_EQ(P::registeredGlobalCount(), 38u);
+    // kAugThinEvidenceFactor (4) + 5 G6 + 3 G7 (kGateKMargin retired Stage 5) + 1 G10 = 37 registered globals.
+    EXPECT_EQ(P::registeredGlobalCount(), 37u);
 }
 
 TEST_F(ParamOverride, CurrentValuesMatchDocumentedLiterals)
@@ -258,19 +258,20 @@ TEST_F(ParamOverride, MissingFileThrows)
 
 TEST_F(ParamOverride, PostScoringRuleNamesSpanTheFullSixBlock)
 {
-    // The 10 §6 members after retiring Gates A + F + G-B + G-C (Stage-5 RETIRE-5, 2026-07-05, D-7):
-    // bias correction · FM2 · E · G-E · G-D · H · I · K · L · J.
+    // The 9 §6 members after the Stage-5 RETIRE-5 (A + F + G-B + G-C + K; 2026-07-05, D-7):
+    // bias correction · FM2 · E · G-E · G-D · H · I · L · J.
     const auto names = P::postScoringRuleNames();
-    EXPECT_EQ(names.size(), 10u);
+    EXPECT_EQ(names.size(), 9u);
     for (const char* n : { "BiasCorrection", "FM2", "GateE",
                            "GateGE", "GateGD",
-                           "GateH", "GateI", "GateK", "GateL", "GateJ" }) {
+                           "GateH", "GateI", "GateL", "GateJ" }) {
         EXPECT_TRUE(P::isKnownRuleName(n)) << n;
     }
     EXPECT_FALSE(P::isKnownRuleName("GateA"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateF"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateGB"));      // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateGC"));      // retired Stage 5 (2026-07-05) — not a rule
+    EXPECT_FALSE(P::isKnownRuleName("GateK"));       // retired Stage 5 (2026-07-05) — not a rule
     EXPECT_FALSE(P::isKnownRuleName("GateB"));       // removed at Stage 3.4b — not a rule
     EXPECT_FALSE(P::isKnownRuleName("NotARule"));
 }
@@ -307,7 +308,7 @@ TEST_F(ParamOverride, DisableRuleMixesWithValueOverrides)
     EXPECT_EQ(st.applied, 4);
     EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateI));
     EXPECT_TRUE(P::isRuleDisabled(P::PostScoringRule::GateL));
-    EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateK));
+    EXPECT_FALSE(P::isRuleDisabled(P::PostScoringRule::GateH));
     std::filesystem::remove(path);
 }
 
