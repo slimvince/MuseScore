@@ -80,7 +80,7 @@
     { "group": "G1", "name": "kOtherToneFactor", "site": "chordanalyzer.cpp:69", "family": "continuous", "value": 1.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "style-invariant", "style_scope_rationale": "baseline per-position tone weight (reference 1.0).",
       "consuming_path": "both", "consuming_path_evidence": "analyzeChord scoreTemplateTones; both paths.",
-      "status": "frozen", "status_rationale": "baseline reference (=1.0) against which the other tone factors are scaled; fitting it is redundant with scaling the pair — freeze candidate (P0 decides).", "license_provenance": null, "sensitivity": 0.1606 },
+      "status": "frozen", "status_rationale": "frozen: the tone-weight family's declared SCALE ANCHOR — a relative-weight system fixes one unit; measured leverage (0.161, Phase-1b rider) shows the anchor is load-bearing, not that it should float (P1 ruling 2026-07-04).", "license_provenance": null, "sensitivity": 0.1606 },
 
     { "group": "G1", "name": "kTemplateToneWeightCap", "site": "chordanalyzer.cpp:70", "family": "continuous", "value": 3.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "style-invariant", "style_scope_rationale": "cap on summed template-tone weight; structural saturation bound.",
@@ -257,7 +257,7 @@
     { "group": "G3", "name": "maxTotalInversionContextBonus", "site": "analysistypes.h:268 (bounds :439)", "family": "continuous", "value": 2.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "style-invariant", "style_scope_rationale": "cap on the summed four inversion bonuses; a runaway-stacking safety net.",
       "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus std::min clamp; both paths.",
-      "status": "frozen", "status_rationale": "CURRENTLY INERT/NON-BINDING (verified 2026-06-10: never overridden; the four bonuses sum ≤ 1.85 Baroque / 0.75 Jazz < 2.0, so std::min never clamps — scoring_model.md §4). Freeze candidate: fitting an inert cap moves nothing until the bonuses it caps exceed it.", "license_provenance": null, "sensitivity": 0.1013 },
+      "status": "frozen", "status_rationale": "frozen: DELIBERATELY NON-BINDING at its current value (2.0 > the 1.85 bonus sum); the individual inversion bonuses are the tunable surface; a floating cap coupled to the bonuses it caps is a redundant degree of freedom. Not 'inert' as a fittable — binds if reduced (Phase-1b rider, Δ 0.101); kept non-binding by ruling (P1, 2026-07-04).", "license_provenance": null, "sensitivity": 0.1013 },
 
     { "group": "G4 — gate/correction PREFS thresholds (also §6-block outer-guard inputs)",
       "name": "inversionSuspicionMargin", "site": "analysistypes.h:293 (bounds :440); read postscoringgates.cpp:65,270", "family": "§6-block threshold", "value": 0.70, "per_preset": null, "preset_scope": "shared",
