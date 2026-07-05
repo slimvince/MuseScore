@@ -710,6 +710,19 @@ built object — so the winner is identical but the alternatives content differs
 `alternatives[]` list is inside the byte-identity acceptance contract is a Cowork/user decision;
 until then Gate A stands. Evidence: `cc_stage5_phase2_2c_report.md`.
 
+**RETAINED / DEFERRED dispositions (Stage-5 §6-block audit, user-ratified 2026-07-05; D-7).** Of the
+rules NOT retired, the 2.2b cross-carrier evidence (`cc_stage5_phase2_2b_report.md` §1/§3.2) adjudicated:
+
+- **RETAIN-as-structural (4):** **GateI** (disabling adds +5 class-(b) Jazz batch cases, §1.1), **FM2**
+  (disabling adds the class-(b) case bwv227.7@18000, §1.1), **GateJ** (disabling is catastrophic on Jazz —
+  −0.4515 root; ON is WiR-correct at its V-family firing sites 33 vs 20, §1.4), **GateL** (inert on
+  Baroque but 18 load-bearing Jazz firing sites, §1.2). Retirement is global, so a rule live on ANY
+  carrier is retained.
+- **DEFER — per-case verification / the spelling-aware gate (Stage 5/6) (5):** **BiasCorrection**
+  (net-WiR-good but causes 3 class-(b) batch errors), **GateE** (Baroque-only, 2 sites), **GateH**
+  (augmented-rotation class-(a) coin-flip), **GateGD** (1 held-out site), **GateGE** (class-b→class-a
+  reshuffle). None retired this arc.
+
 **`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip
 block.** When the `preferMinorOverMajorAdd6` path (Gate-A / G-family region) identifies
 a HalfDiminished **first-inversion** alternative as the best Minor-preferring reading,

@@ -338,10 +338,10 @@
       "consuming_path": "production", "consuming_path_evidence": "applyPostScoringGates Gate I; production-only (no gate call in chordslicedecoder.cpp).",
       "status": "fit", "status_rationale": "§6-block dissolution audit (family 2): does a fitted continuous weight reproduce Gate I's swap without the rank mutation? retire/retain/defer per rule.", "license_provenance": null, "sensitivity": 0.0 },
 
-    { "group": "G7", "name": "kGateKMargin (Gate K: first-inv Augmented)", "site": "postscoringgates.cpp:53 (used :510)", "family": "§6-block threshold", "value": 0.20, "per_preset": null, "preset_scope": "shared",
+    { "group": "G7", "name": "kGateKMargin (Gate K: first-inv Augmented)", "site": "RETIRED (postscoringgates.cpp; removed with Gate K)", "family": "§6-block threshold", "value": 0.20, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "Baroque-calibrated per CLAUDE.md.",
-      "consuming_path": "production", "consuming_path_evidence": "applyPostScoringGates Gate K; production-only.",
-      "status": "fit", "status_rationale": "§6-block dissolution target (family 2).", "license_provenance": null, "sensitivity": 0.0 },
+      "consuming_path": "none", "consuming_path_evidence": "Gate K + kGateKMargin removed (registration gone).",
+      "status": "retired", "status_rationale": "Gate K RETIRED Stage 5, 2026-07-05 (D-7): 0 corpus firing sites on all three carriers (cc_stage5_phase2_2b_report.md §1.2); the margin constant + its registerDouble were removed with the gate. Row kept for provenance; value untouched.", "license_provenance": null, "sensitivity": 0.0 },
 
     { "group": "G7", "name": "kGateLMargin (Gate L: Major over Augmented same-root)", "site": "postscoringgates.cpp:54 (used :544)", "family": "§6-block threshold", "value": 0.35, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "Baroque-calibrated per CLAUDE.md.",
