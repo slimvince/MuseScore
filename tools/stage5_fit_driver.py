@@ -197,6 +197,20 @@ def compute_split(held_frac=0.2):
     return registry, strata
 
 
+def split_scores_file(which, scratch):
+    """Write the stem list for a named split to `scratch` and return its path.
+    which='full' -> None (no restriction). 'fitting'/'held_out' read the ratified
+    tools/stage5_split_registry.json. Used by fit (objective on the fitting split) and by
+    evaluate --split (the decision-surface held-out/full scoring)."""
+    if which == "full":
+        return None
+    split = json.loads((_ROOT / "tools" / "stage5_split_registry.json").read_text())
+    stems = sorted(s for s, r in split["scores"].items() if r["split"] == which)
+    p = Path(scratch) / f"{which}_split.txt"
+    p.write_text("\n".join(stems) + "\n")
+    return p
+
+
 # ── Evaluation ────────────────────────────────────────────────────────────────────────
 def run(cmd, **kw):
     return subprocess.run(cmd, capture_output=True, text=True, **kw)
@@ -341,6 +355,20 @@ def main():
     ev.add_argument("--set", action="append", default=[], help="name=value (repeatable)")
     ev.add_argument("--scratch", default="C:/tmp/s5_scratch/driver")
     ev.add_argument("--perturb-frozen", action="store_true")
+    ev.add_argument("--split", default="full", choices=["full", "fitting", "held_out"],
+                    help="objective/constraint denominator (default full = byte-compat)")
+    # fit — the ratified coordinate/pattern-search optimizer (design §5 Optimizer block,
+    # Checkpoint P1). 1-D over one row on one carrier; objective on the fitting split.
+    ft = sub.add_parser("fit")
+    ft.add_argument("--param", required=True)
+    ft.add_argument("--carrier", default="Baroque")
+    ft.add_argument("--lo", type=float, default=0.0)
+    ft.add_argument("--hi", type=float, default=1.2)
+    ft.add_argument("--coarse-steps", type=int, default=9)
+    ft.add_argument("--refine-rounds", type=int, default=2)
+    ft.add_argument("--split", default="fitting", choices=["fitting", "held_out", "full"])
+    ft.add_argument("--scratch", default="C:/tmp/s5_scratch/fit")
+    ft.add_argument("--out", default=str(_ROOT / "tools" / "reports" / "stage5_fit_<param>.jsonl"))
     args = ap.parse_args()
 
     ledger = _ROOT / "tools" / "reports" / "stage5_fit_ledger.jsonl"
@@ -366,15 +394,101 @@ def main():
     if args.mode == "evaluate":
         scratch = Path(args.scratch); scratch.mkdir(parents=True, exist_ok=True)
         a8_out = scratch / "a8"
+        scores_file = split_scores_file(args.split, scratch)
         perturb = {}
         for kv in args.set:
             k, v = kv.split("=", 1)
             perturb[k] = (v == "true") if PARAMS[k].get("kind") == "bool" else float(v)
-        _, base_m = evaluate({}, args.preset, scratch, a8_out)
+        _, base_m = evaluate({}, args.preset, scratch, a8_out, scores_file=scores_file)
         row, _ = evaluate(perturb, args.preset, scratch, a8_out, baseline=base_m,
-                          perturb_frozen=args.perturb_frozen)
-        ledger_append(ledger, row, "adhoc", STAMP, instruments)
+                          perturb_frozen=args.perturb_frozen, scores_file=scores_file)
+        row["split"] = args.split
+        row["baseline_root_pct"] = round(base_m["root_pct"], 4)
+        ledger_append(ledger, row, f"adhoc_{args.split}", STAMP, instruments)
         print(json.dumps(row, indent=1))
+        return
+
+    if args.mode == "fit":
+        scratch = Path(args.scratch); scratch.mkdir(parents=True, exist_ok=True)
+        a8_out = scratch / "a8"
+        carrier, name = args.carrier, args.param
+        p = PARAMS[name]
+        scores_file = split_scores_file(args.split, scratch)
+        outp = Path(args.out.replace("<param>", name)); outp.parent.mkdir(parents=True, exist_ok=True)
+        cur = baseline_value(name, carrier)
+        _, base_m = evaluate({}, carrier, scratch, a8_out, scores_file=scores_file)
+        base_root = round(base_m["root_pct"], 4)
+        results = {}
+
+        def eval_at(raw):
+            v = round(raw, 6)
+            if v in results:
+                return results[v]
+            row, _m = evaluate({name: v}, carrier, scratch, a8_out, baseline=base_m,
+                               perturb_frozen=p["frozen"], scores_file=scores_file)
+            c = row["constraints"]
+            feasible = c["no_new_class_b_ok"] and c["class_b_nonincrease_ok"]
+            rec = {"param": name, "carrier": carrier, "split": args.split, "value": v,
+                   "root_pct": row["objective_root_pct"], "objective_delta": row["objective_delta"],
+                   "rn_pct": row["tracked"]["rn_pct"], "key_pct": row["tracked"]["key_pct"],
+                   "batch_gate": row["batch_gate"],
+                   "no_new_class_b_ok": c["no_new_class_b_ok"],
+                   "class_b_nonincrease_ok": c["class_b_nonincrease_ok"],
+                   "new_class_b_batch_cases": c["new_class_b_batch_cases"],
+                   "class_b_dur_delta": c["class_b_dur_delta"], "feasible": feasible}
+            results[v] = rec
+            ledger_append(ledger, row, f"fit_{name}_{v}", STAMP, instruments)
+            with open(outp, "a", encoding="utf-8") as f:
+                f.write(json.dumps(rec, sort_keys=True) + "\n")
+            print(f"  {name}={v:<9g} root={rec['root_pct']:.4f} d={rec['objective_delta']:+.4f} "
+                  f"batch={rec['batch_gate']} newB={len(rec['new_class_b_batch_cases'])} "
+                  f"clsBdur_d={rec['class_b_dur_delta']:+g} feas={feasible}")
+            return rec
+
+        lo, hi, n = args.lo, args.hi, args.coarse_steps
+        coarse = [round(lo + i * (hi - lo) / (n - 1), 6) for i in range(n)]
+        print(f"FIT {name} carrier={carrier} split={args.split} "
+              f"baseline_root={base_root:.4f} (current value {cur})")
+        print(f"  ladder(coarse) lo={lo} hi={hi} steps={n} -> {coarse}")
+        for v in coarse:
+            eval_at(v)
+
+        def best_feasible():
+            feas = [r for r in results.values() if r["feasible"]]
+            if not feas:
+                return None
+            # maximize root; tie-break toward the current value (minimal conservative change)
+            return max(feas, key=lambda r: (r["root_pct"], -abs(r["value"] - cur)))
+
+        step = (hi - lo) / (n - 1)
+        best = best_feasible()
+        for _rnd in range(args.refine_rounds):
+            step /= 2
+            if best is None:
+                break
+            for cand in (round(best["value"] - step, 6), round(best["value"] + step, 6)):
+                if lo <= cand <= hi:
+                    eval_at(cand)
+            best = best_feasible()
+
+        best_obj = max(results.values(), key=lambda r: (r["root_pct"], -abs(r["value"] - cur)))
+        print(f"\nFIT SUMMARY {name}  baseline_root={base_root:.4f} @ value={cur}")
+        if best:
+            print(f"  CANDIDATE (best feasible): value={best['value']} root={best['root_pct']:.4f} "
+                  f"delta={best['objective_delta']:+.4f} batch={best['batch_gate']}")
+        print(f"  unconstrained-max: value={best_obj['value']} root={best_obj['root_pct']:.4f} "
+              f"feasible={best_obj['feasible']}")
+        if best is None:
+            result = "UNFITTABLE-UNDER-CONSTRAINT (no feasible point; objective-max infeasible)"
+        elif best["objective_delta"] <= 1e-9:
+            result = ("ALREADY-OPTIMAL-AT-THIS-RESOLUTION (best feasible = baseline; "
+                      f"candidate value {best['value']})")
+        elif not best_obj["feasible"]:
+            result = ("FEASIBLE-IMPROVEMENT (constraint-bounded: the unconstrained-max value "
+                      f"{best_obj['value']} is INFEASIBLE; candidate is the best feasible)")
+        else:
+            result = "FEASIBLE-IMPROVEMENT (unconstrained-max is itself feasible)"
+        print(f"  RESULT: {result}")
         return
 
     if args.mode == "fixture":
