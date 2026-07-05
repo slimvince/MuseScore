@@ -32,8 +32,22 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ PHASE 1 CC-DELIVERED — awaiting Cowork verification (session 22m tail, 2026-07-05) · CHECKPOINT P1
-+ the split ratification are the user's · PHASE 0 + CHECKPOINT P0 RATIFIED.** Phase-0 commits verified at objects
+**★ PHASE 1 COWORK-VERIFIED + RATIFIED · CHECKPOINT P1 RATIFIED (split 261/65 · coordinate search ·
+the four-step staging · R-13 skipped · both rider-flagged rows stay frozen with corrected rationales:
+kOtherToneFactor = the tone-weight SCALE ANCHOR, the inversion cap = deliberately non-binding) ·
+★ PHASE 2.1 (THE FIRST FIT) CC-DELIVERED — awaiting Cowork verification (session 22n, 2026-07-05):**
+report `cc_stage5_phase2_1_report.md`; commits `5c5d0aabdc` (the two P1 rationale corrections, values
+byte-untouched) · `f14e57d6e0` (fit-driver coordinate-search optimizer + `evaluate --split`, additive) ·
+`545a2b40ee` (report). **CANDIDATE `kPowerChord3PcPenalty` = 0.6375** (best FEASIBLE on the fitting split):
+fitting gain **+0.073**; the unconstrained max (0.15, +0.376) is INFEASIBLE (adds class-(b) batch cases) →
+**constraint-bounded**. **Held-out REGRESSES −0.098 (overfit signal, surfaced).** Full-corpus
++0.0376/+0.0854/+0.055 (Bar/Jazz/Def), **batch sets UNCHANGED ×3** (explained diff EMPTY; base==CLAUDE.md),
+class-(b) duration DOWN ×3. **D-4 Default adopt-with-Baroque eligible**; Jazz no regression; **S-5 gap recorded**
+(no validation runner threads `--param-override` — not built); snapshot preview **~6/11 goldens would refresh**.
+**Adoption artifact PREPARED, NOT applied** (A-4/S-4); **NO committed constant value change.** Sandwich
+53/24/53 set-diff empty ×3; suites 1096/53/11. **The adoption decision is the user's. (P1 record below.)** All 7 Phase-1 commits verified at objects; byte-identity
+×2 held; the 57-vs-59 reconciled (pre-G10 proof + recomputed kStepBudget); the 19 dormant-only rows
+dispositioned (Phase-3/family-4/engage material, recorded). PHASE 0 + CHECKPOINT P0 RATIFIED (below). Phase-0 commits verified at objects
 (`4b510b9ac7` fold exactly 6 files · `0f05e78690` roadmap O-3 rider · `981e942ded` the 78-row
 `tools/param_manifest.json` · `c7d16893d8` report, read in full); manifest claims spot-verified at source
 (kHalfDimFirstInversionBonus 0.55 @ postscoringgates.cpp:287, absent from scoring_model §6 — drift real;

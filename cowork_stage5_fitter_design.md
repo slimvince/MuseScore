@@ -346,6 +346,31 @@ the dissolution track, §4.4), and the frozen-row verification findings.
 **Checkpoint P1 (ratification):** the optimizer choice (§9 D-3, decided on the measured cost and
 sensitivity), the family staging order, the R-13 augmentation decision (§14), and the split definition —
 all on 1b's numbers.
+**★ P1 RATIFIED (user, 2026-07-04, on the Phase-1 measured surface — `cc_stage5_phase1_report.md`):**
+(1) **the 261/65 mode-stratified fitting/held-out split RATIFIED** (`tools/stage5_split_registry.json`);
+(2) **optimizer = coordinate/pattern search** (D-3's default, confirmed budget-feasible at ~45 s/eval,
+~35 live rows post-dead-pruning); (3) **staging adopted:** the clean lever (`kPowerChord3PcPenalty`,
+the one high-leverage row with zero batch-stop interaction) → the coupled continuous cluster (G1
+tone factors + G2/G3 bass/root/inversion + G6) fitted JOINTLY with the §6-block dissolution track →
+the G7 gate margins by pinned-fixture replay (Δ=0 at the objective's resolution) → abstention bars
+last; (4) **R-13 augmentation SKIPPED** (the measured ceiling is coupling-limited, not data-limited);
+(5) **the two rider-flagged frozen rows STAY FROZEN with corrected rationales** — `kOtherToneFactor`
+= the tone-weight family's declared SCALE ANCHOR (a relative-weight system fixes one unit; its
+leverage shows the anchor is load-bearing, not that it should float), `maxTotalInversionContextBonus`
+= DELIBERATELY NON-BINDING at its current value (the individual bonuses are the tunable surface; a
+floating cap coupled to the bonuses it caps is a redundant degree of freedom). The rationale
+corrections ride the next manifest edit.
+**★ PHASE 2.1 — THE FIRST FIT DELIVERED as a CANDIDATE (CC, 2026-07-05, `cc_stage5_phase2_1_report.md`;
+awaiting Cowork verification):** the family-1 clean lever `kPowerChord3PcPenalty` fitted 1-D on the
+fitting split (261, Baroque carrier) → **candidate 0.6375** (best feasible; fitting root +0.073). The row
+is **constraint-bounded**: the unconstrained optimum (0.15, +0.376) is infeasible (adds class-(b) batch
+cases), so the feasible fit is a modest raise. Decision surface: **held-out regresses −0.098 (overfit
+signal)**; full-corpus +0.0376/+0.0854/+0.055 with **batch sets unchanged ×3** and class-(b) duration
+down ×3; **D-4 Default adopt-with-Baroque eligible**; Jazz no regression; **S-5 candidate-scoring
+instrument gap recorded** (no validation runner threads `--param-override`); snapshot preview ≈6/11
+goldens would refresh at adoption. **The candidate + adoption artifact are PREPARED, not applied — the
+adoption event (A-4/S-4) is the user's, separate from this fit.** The P1 rationale corrections landed in
+that dispatch's manifest edit (`5c5d0aabdc`), values byte-untouched.
 
 ### §4.4 Phase 2 — the fits, family by family, per fit target
 
