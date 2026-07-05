@@ -109,7 +109,7 @@ ruleNameTable()
     static const std::array<const char*, static_cast<std::size_t>(PostScoringRule::Count)>
         kNames = {
             "BiasCorrection", "FM2", "GateE",
-            "GateGE", "GateGC", "GateGD",
+            "GateGE", "GateGD",
             "GateH", "GateI", "GateK", "GateL", "GateJ",
         };
     return kNames;

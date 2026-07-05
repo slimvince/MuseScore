@@ -436,22 +436,6 @@ TEST(Composing_PostScoringGateTests, GateG_PulledCandidatePoppedWhenNoSubGateFir
     EXPECT_EQ(results.size(), 2u);   // phantom removed
 }
 
-// G-C: alt root recently active + stepwise bass from previous region.
-TEST(Composing_PostScoringGateTests, GateGC_RecentRootAndStepwiseFlips)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseFromPrevious = true;
-    temporal.recentRootPcs              = { -1, 9, -1 };
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-
-    EXPECT_EQ(results.front().identity.rootPc, 9);
-}
-
 // G-D: >= 2 consecutive stepwise bass moves; 1 is not enough (boundary pair).
 TEST(Composing_PostScoringGateTests, GateGD_ConsecutiveStepwiseBoundary)
 {
@@ -1125,36 +1109,6 @@ TEST(Composing_PostScoringGateTests, GateG_HalfDimPresentNoTemporalSignal_NoFlip
     EXPECT_EQ(results.front().identity.rootPc, 0);
 }
 
-// Gate G-C fires when the HalfDim root appears in the OLDEST recent-roots slot (slot 0).
-TEST(Composing_PostScoringGateTests, GateGC_RecentRootSlot0_Flips)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseFromPrevious = true;
-    temporal.recentRootPcs              = { 9, -1, -1 };   // slot 0
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(results.front().identity.rootPc, 9);
-}
-
-// Gate G-C fires when the HalfDim root appears in the NEWEST recent-roots slot (slot 2).
-TEST(Composing_PostScoringGateTests, GateGC_RecentRootSlot2_Flips)
-{
-    std::vector<ChordAnalysisResult> results = {
-        makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-        makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseFromPrevious = true;
-    temporal.recentRootPcs              = { -1, -1, 9 };   // slot 2
-    applyPostScoringGates(results, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(results.front().identity.rootPc, 9);
-}
-
 // Gate H-B no-fire arms: the augmented alt exists, but the forward root does not match it
 // (and no other signal fires), so the winner does not rotate.
 TEST(Composing_PostScoringGateTests, GateHB_ForwardRootMismatch_NoRotation)
@@ -1680,29 +1634,6 @@ TEST_F(PostScoringRuleDisable, GateGE_DisabledDoesNotFire)
     auto off = build();
     applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
     EXPECT_EQ(off.front().identity.rootPc, 2);   // no context → temporal fallbacks silent
-}
-
-TEST_F(PostScoringRuleDisable, GateGC_DisabledDoesNotFire)
-{
-    auto build = [] {
-        return std::vector<ChordAnalysisResult>{
-            makeResult(0, 0, ChordQuality::Minor, 2.5, { Extension::AddedSixth }),
-            makeResult(9, 0, ChordQuality::HalfDiminished, 1.5, { Extension::MinorSeventh }),
-        };
-    };
-    auto ctx = makeGateCtx({ { 9, 0.4 }, { 0, 0.6 }, { 3, 0.5 }, { 7, 0.5 } }, 4, 0);
-    ChordTemporalContext temporal;
-    temporal.bassIsStepwiseFromPrevious = true;
-    temporal.recentRootPcs              = { -1, 9, -1 };
-
-    auto on = build();
-    applyPostScoringGates(on, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(on.front().identity.rootPc, 9);
-
-    P::setRuleDisabled(P::PostScoringRule::GateGC, true);
-    auto off = build();
-    applyPostScoringGates(off, baroquePrefs(), &temporal, ctx);
-    EXPECT_EQ(off.front().identity.rootPc, 0);
 }
 
 TEST_F(PostScoringRuleDisable, GateGD_DisabledDoesNotFire)
