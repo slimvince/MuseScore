@@ -137,11 +137,15 @@ symmetric-rotation churn.** A *new* BIR=false case is one of two classes:
 **★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is now the **granularity-robust
 union-of-boundaries unit, variant (b) DCML-only** (music21 is not GT): **root governs, with RN + key always
-tracked beside it**. Ratified baselines (variant b, root-agree at 326/352 coverage): **Baroque 63.32 % /
-Jazz 62.37 % / Default 63.22 %** (RN-agree 44.56/42.40/44.40 %, key-agree 68.11/64.43/67.50 %). When it
+tracked beside it**. Ratified baselines (variant b, root-agree at 326/352 coverage; **★ re-baselined at the
+2.2e kWStepIn adoption, 2026-07-05**): **Baroque 63.36 % / Jazz 62.37 % / Default 63.25 %** (RN-agree
+44.58/42.40/44.41 %, key-agree 68.19/64.52/67.77 %). *(Jazz is byte-identical to the pre-adoption corpus —
+proven by an explicit-override reconstruction — so its root/RN reproduce the prior 62.37/42.40 exactly; its
+key figure reflects the a8 re-measure, not a 2.2e change. Prior baselines: 63.32/62.37/63.22, RN
+44.56/42.40/44.40, key 68.11/64.43/67.50.)* When it
 governs, the **hard stop is the class-(b) (pitch-class-decidable-root) root-disagree DURATION non-increase per
 preset** + a **mandatory explained per-run set-diff** (zero-new-case cannot scale to ~7,000 cells; class-(b)
-dominates ~95 %+ at this unit). **UNTIL the Stage-5 fitter lands, the batch 53/24/53 case-identity gate above
+dominates ~95 %+ at this unit). **UNTIL the Stage-5 fitter lands, the batch 52/24/52 case-identity gate above
 REMAINS THE hard regression stop (R10 unchanged)** — the robust unit is the reported/fit-objective metric, the
 batch gate is the tripwire. C1 reliability curves on this unit: `cc_c1_reliability_report.md`.
 
@@ -160,7 +164,13 @@ structurally unresolvable by pitch class and are the seed of a future **two-tier
 spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
 `cc_metric_rebaseline_report.md` + `cc_gate_rebaseline_verify_report.md`.
 
-**★ Corrected to the ratified post-L3-wiring state `53 / 24 / 53` (Stage-0 measurement, commit `b57dbfa7a8`,
+**★ CURRENT STATE `52 / 24 / 52` (re-baselined at the ratified 2.2e kWStepIn adoption, 2026-07-05, commit
+`c50002fee1` + the corpus chore below).** The 2.2e delta vs the prior `53 / 24 / 53`: **removal-only
+`{bwv244.32@5760}`** on Baroque + Default (the class-(b) case the kWStepIn 0.10→0.125 adoption fixed); Jazz
+unchanged (byte-identical). The identity sets below are the 52/24/52 form; the history that produced the
+prior 53/24/53 is preserved in the following paragraph.
+
+**★ (History) Corrected to the ratified post-L3-wiring state `53 / 24 / 53` (Stage-0 measurement, commit `b57dbfa7a8`,
 2026-06-25).** The `57/23/57` sets previously listed here predated the **already-ratified L3-wiring delta**
 (`−4 / +1 / −4`) — the two-tier-gate prose above describes that delta, but these integer tables were never updated.
 They are now. The delta, verified by diffing the measured sets against the prior `57/23/57` sets: **Baroque**
@@ -170,23 +180,25 @@ They are now. The delta, verified by diffing the measured sets against the prior
 Default measured at `53`.) The **case-identity set, not the integer, is the gate** — re-measure with
 `characterise_bir_false.py` after any change.
 
-- **Baroque = 53** with identities (stem@tick):
+- **Baroque = 52** with identities (stem@tick):
   `{bwv10.7@36000, bwv14.5@8160, bwv144.6@15360, bwv144.6@16320, bwv151.5@13440, bwv153.1@18240, bwv16.6@16800,
-  bwv169.7@24960, bwv17.7@46080, bwv174.5@6240, bwv20.11@13440, bwv244.32@5760, bwv244.46@960, bwv245.15@13920,
+  bwv169.7@24960, bwv17.7@46080, bwv174.5@6240, bwv20.11@13440, bwv244.46@960, bwv245.15@13920,
   bwv245.17@4800, bwv245.37@13920, bwv245.3@12480, bwv245.40@51360, bwv258@10560, bwv261@33840, bwv269@20640,
   bwv272@4320, bwv272@4800, bwv272@8160, bwv282@9120, bwv289@20160, bwv289@21600, bwv300@13440, bwv309@8640,
   bwv320@31680, bwv334@5280, bwv334@6720, bwv342@25440, bwv352@1440, bwv358@6000, bwv364@2880, bwv392@14400,
   bwv40.3@2400, bwv402@22080, bwv416@10080, bwv421@2880, bwv422@23040, bwv423@28320, bwv429@24240, bwv432@5520,
   bwv45.7@20160, bwv48.3@2880, bwv57.8@15360, bwv60.5@30960, bwv64.8@5280, bwv77.6@22080, bwv94.8@24960,
-  bwv96.6@13440}` (= prior Baroque-57 − six fixed + two class-(a); `characterise_bir_false.py --corpus-dir tools/corpus/baroque`).
+  bwv96.6@13440}` (= prior Baroque-53 − `{bwv244.32@5760}`, the class-(b) case the 2.2e kWStepIn adoption fixed;
+  `characterise_bir_false.py --corpus-dir tools/corpus/baroque`, re-baselined at the ratified 2.2e adoption, removal-only).
 - **Jazz = 24** with identities (stem@tick):
   `{bwv144.6@15360, bwv144.6@16320, bwv245.15@13920, bwv245.17@4800, bwv245.37@13920, bwv245.40@51360, bwv272@4320,
   bwv272@8160, bwv280@17280, bwv282@9120, bwv291@17760, bwv301@1440, bwv313@14880, bwv334@5280, bwv342@25440,
   bwv392@14400, bwv422@23040, bwv429@24240, bwv432@5520, bwv45.7@20160, bwv48.3@2880, bwv64.8@5280, bwv74.8@13440,
   bwv74.8@13920}` (= prior Jazz-23 − {bwv244.15@10080} + {bwv272@4320, bwv291@17760}).
-- **Default (the user-run config) = 53.** Per the Stage-0 `characterise_bir_false.py --corpus-dir tools/corpus/default`
-  measurement, Default = Baroque-53 with `{bwv352@1440, bwv60.5@30960}` replaced by `{bwv227.7@18000, bwv387@10560}`
-  (the rest identical to Baroque-53). *(✅ RE-CONFIRMED by measurement at the 2026-07-03 grammar-completion regen
+- **Default (the user-run config) = 52.** Per the `characterise_bir_false.py --corpus-dir tools/corpus/default`
+  measurement, Default = Baroque-52 with `{bwv352@1440, bwv60.5@30960}` replaced by `{bwv227.7@18000, bwv387@10560}`
+  (the rest identical to Baroque-52). Re-baselined at the ratified 2.2e adoption: removal-only `{bwv244.32@5760}`
+  vs the prior Default-53 (the same class-(b) case the kWStepIn adoption fixed on Baroque). *(✅ RE-CONFIRMED by measurement at the 2026-07-03 grammar-completion regen
   (`cc_grammar_completion_report.md`, commit `ce509b0961`): all three presets' case-identity sets matched this
   document exactly, set-diff empty both directions — the earlier Stage-0 prose-inconsistency caveat is discharged and
   the Default identities above may be relied on.)*

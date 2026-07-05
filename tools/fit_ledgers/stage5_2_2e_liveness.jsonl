@@ -1,0 +1,8 @@
+{"carrier": "Baroque", "collapsed_to_zero": false, "delta_vs_2_2b": 0, "live": true, "phase": "2.2e", "prior_2_2b_sites": 16, "record": "liveness", "rule": "FM2", "sites": 16, "wir_covered_sites": 16}
+{"carrier": "Baroque", "collapsed_to_zero": false, "delta_vs_2_2b": 1, "live": true, "phase": "2.2e", "prior_2_2b_sites": 28, "record": "liveness", "rule": "GateI", "sites": 29, "wir_covered_sites": 29}
+{"carrier": "Jazz", "collapsed_to_zero": false, "delta_vs_2_2b": 0, "live": true, "phase": "2.2e", "prior_2_2b_sites": 186, "record": "liveness", "rule": "GateI", "sites": 186, "wir_covered_sites": 173}
+{"carrier": "Default", "collapsed_to_zero": false, "delta_vs_2_2b": 1, "live": true, "phase": "2.2e", "prior_2_2b_sites": 30, "record": "liveness", "rule": "GateI", "sites": 31, "wir_covered_sites": 31}
+{"carrier": "Baroque", "collapsed_to_zero": false, "delta_vs_2_2b": -1, "live": true, "phase": "2.2e", "prior_2_2b_sites": 133, "record": "liveness", "rule": "GateJ", "sites": 132, "wir_covered_sites": 123}
+{"carrier": "Jazz", "collapsed_to_zero": false, "delta_vs_2_2b": 0, "live": true, "phase": "2.2e", "prior_2_2b_sites": 248, "record": "liveness", "rule": "GateJ", "sites": 248, "wir_covered_sites": 227}
+{"carrier": "Default", "collapsed_to_zero": false, "delta_vs_2_2b": -1, "live": true, "phase": "2.2e", "prior_2_2b_sites": 139, "record": "liveness", "rule": "GateJ", "sites": 138, "wir_covered_sites": 129}
+{"carrier": "Jazz", "collapsed_to_zero": false, "delta_vs_2_2b": 0, "live": true, "phase": "2.2e", "prior_2_2b_sites": 18, "record": "liveness", "rule": "GateL", "sites": 18, "wir_covered_sites": 18}

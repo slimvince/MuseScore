@@ -95,12 +95,20 @@ PARAMS = {
     # G6 — harmonicfunctionlayer.h progression constants (shared)
     "kWSeq":                          dict(g="G6", fam="continuous", frozen=False, val=0.20),
     "kWDim":                          dict(g="G6", fam="continuous", frozen=False, val=0.15),
-    "kWStepIn":                       dict(g="G6", fam="continuous", frozen=False, val=0.10),
+    # 2.2e adoption: kWStepIn per-carrier (Baroque/Default 0.125, Jazz 0.10). kStepBudget is
+    # DERIVED and delivered per-carrier by batch_analyze after the single-key kWStepIn override,
+    # so the identity fixture must write each carrier's value (else Jazz would inherit 0.235).
+    "kWStepIn":                       dict(g="G6", fam="continuous", frozen=False,
+                                           per_preset={"Baroque": 0.125, "Jazz": 0.10, "Default": 0.125}),
     "kWStepOut":                      dict(g="G6", fam="continuous", frozen=False, val=0.10),
-    "kStepBudget":                    dict(g="G6", fam="threshold",   frozen=True,  val=0.21),
+    "kStepBudget":                    dict(g="G6", fam="threshold",   frozen=True,
+                                           per_preset={"Baroque": 0.235, "Jazz": 0.21, "Default": 0.235}),
     # G7 — postscoringgates.cpp gate margins (shared; §6-block dissolution targets)
     "kGateIMargin":                   dict(g="G7", fam="threshold",   frozen=False, val=0.45),
-    "kGateKMargin":                   dict(g="G7", fam="threshold",   frozen=False, val=0.20),
+    # kGateKMargin removed: Gate K was RETIRED (Stage 5, 2026-07-05, D-7) — the margin
+    # constant + its registerDouble were deleted, so it is no longer a reachable override
+    # name (paramoverride_tests: isRegisteredGlobal("kGateKMargin") == false). Keeping it in
+    # PARAMS made the identity fixture write an unknown-name override that the loader rejects.
     "kGateLMargin":                   dict(g="G7", fam="threshold",   frozen=False, val=0.35),
     "kHalfDimFirstInversionBonus":    dict(g="G7", fam="threshold",   frozen=False, val=0.55),
     # G10 — sectionanalyzer.h section-layer abstention bar (production)
@@ -146,7 +154,9 @@ PARAMS = {
 POST_SCORING_RULES = [
     "BiasCorrection", "FM2", "GateA", "GateE", "GateF",
     "GateGE", "GateGB", "GateGC", "GateGD",
-    "GateH", "GateI", "GateK", "GateL", "GateJ",
+    "GateH", "GateI", "GateL", "GateJ",
+    # GateK removed: retired Stage 5 (2026-07-05); isKnownRuleName("GateK") == false, so a
+    # `disable_rule GateK` line is rejected by the loader (must match postScoringRuleNames()).
 ]
 
 
@@ -593,7 +603,9 @@ def main():
     if args.mode == "fixture":
         scratch = Path(args.scratch); scratch.mkdir(parents=True, exist_ok=True)
         a8_out = scratch / "a8"
-        RATIFIED = {"Baroque": 63.32, "Jazz": 62.37, "Default": 63.22}
+        # 2.2e-adopted full-corpus variant-(b) root baselines (a8 re-measure on the adopted
+        # tools/corpus; Jazz unchanged = byte-identical). Prior: 63.32 / 62.37 / 63.22.
+        RATIFIED = {"Baroque": 63.36, "Jazz": 62.37, "Default": 63.25}
         split = json.loads((_ROOT / "tools" / "stage5_split_registry.json").read_text())
         fit_stems = sorted(s for s, r in split["scores"].items() if r["split"] == "fitting")
         scores_file = scratch / "fitting_split.txt"
