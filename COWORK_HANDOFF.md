@@ -32,10 +32,30 @@ CC-BY-NC-SA-4.0; vocsep MIT). Gate **53/24/53** set-diff empty both directions �
 registry regen deterministic; nothing under `src/`; frozen gate corpus + held PDMX copy byte-untouched. **Corpus
 program CAUGHT UP** — only the access-gated CIPI + the future PDMX-MXL-tarball fetch remain as recorded paths.
 
-**★ PHASE 1 COWORK-VERIFIED + RATIFIED · CHECKPOINT P1 RATIFIED (split 261/65 · coordinate search ·
-the four-step staging · R-13 skipped · both rider-flagged rows stay frozen with corrected rationales:
-kOtherToneFactor = the tone-weight SCALE ANCHOR, the inversion cap = deliberately non-binding) ·
-★ PHASE 2.1 (THE FIRST FIT) CC-DELIVERED — awaiting Cowork verification (session 22n, 2026-07-05):**
+**★ PHASE 2.2a CC-DELIVERED (session 22o tail, 2026-07-05) — awaiting Cowork verification.** The
+rule-disable mechanism (`0296e38f63` `feat(composing):` — `PostScoringRule` enum + 14 clean
+`!ruleOff(X) &&` guards + 20 tests + scoring_model §6 doc-sync; **byte-identical absent**: full-corpus
+regen ×3 = 0 diffs vs frozen, snapshots 11/0) + the fit-driver `audit` mode + committed `tools/fit_ledgers/`
++ `run_dlc_baseline --param-override` (`7367c7ae96` `feat(tools):`, additive) + the report
+(`c1b2de0dd3`). **The audit (Baroque, fitting split 261, current weights):** 7 disable-inert
+(GateA/F/GB/GC/GD/K/L) · 2 load-bearing (FM2 −0.0584 +1 class-(b) batch; GateI −0.0292) · 4
+active-but-disable-beneficial on the root-only objective (BiasCorrection/GateE/GateH and **★ GateJ
++0.0547**) · 0 coupled/STOP. **★ INFERENCE-ADJACENT DECLARED (not acted):** disabling GateJ (vii°→V7)
+IMPROVES root-only agreement but WORSENS RN — the root-only objective penalizes a structural re-rooting;
+per-case verification is 2.2b's. NOTHING adopted/retired; sandwich 53/24/53 set-diff EMPTY ×3; suites
+1116/53/11. Report `cc_stage5_phase2_2a_report.md`; STATUS 22o tail has the full record.
+
+**★ PHASE 2.1 COWORK-VERIFIED · THE FIRST CANDIDATE PARKED (user, 2026-07-05) · THE POWER-CHORD
+QUESTION RECORDED AT L4 §15 O4 · HOUSEKEEPING RULED (O-8) · ACTIVE DISPATCH:
+`cc_instruction_stage5_phase2_2a.md` (session 22o)** — housekeeping (committed fit ledgers under
+`tools/fit_ledgers/`; one validation runner gains `--param-override` for pre-adoption S-5 checks) +
+the RULE-DISABLE mechanism (A-6 safety class, byte-identical absent) + the per-rule §6-block
+dissolution AUDIT at current weights (14 members individually: fitting-split objective + explained
+batch diff + pinned-fixture replay → the provisional (a)/(b)/(c) table = 2.2b's evidence base; NO
+verdicts/retirements/adoption). **The family-1 ruling (O-7): candidate 0.6375 PARKED** — held-out
+−0.098 (the overfit tell fired); constraint-bounded (the 0.15/+0.376 direction adds class-(b) cases —
+quality-silent root credit); the lever re-enters at the 2.2b joint fit. STATUS 22o has the full record;
+the earlier 22n-era summary below stands as history. **Phase 2.1 delivery summary (verified):**
 report `cc_stage5_phase2_1_report.md`; commits `5c5d0aabdc` (the two P1 rationale corrections, values
 byte-untouched) · `f14e57d6e0` (fit-driver coordinate-search optimizer + `evaluate --split`, additive) ·
 `545a2b40ee` (report). **CANDIDATE `kPowerChord3PcPenalty` = 0.6375** (best FEASIBLE on the fitting split):

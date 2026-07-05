@@ -891,7 +891,26 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
 - **O-5** Broadening the fitting pool (CoCoPops / OpenEWLD / BCFB / GuitarSet / OpenScore conversions):
   each a separate ratified increment; D-5's Jazz decision is the first instance.
 - **O-6** E-13 (product-tool register): Phase 0's inventory verifies whether the fit surface touches the
-  tuning bridge; if so, it enters the retirement map at that edit (§4.1).
+  tuning bridge; if so, it enters the retirement map at that edit (§4.1). *(Resolved at Phase 0: CLEAN —
+  the tuning bridge reads no scoring parameter.)*
+- **O-7 (Phase 2.1 closure, user-ruled 2026-07-05): the family-1 candidate is PARKED, not adopted.** The
+  fitted `kPowerChord3PcPenalty = 0.6375` candidate (full surface in `cc_stage5_phase2_1_report.md`) was
+  feasible and improved the full corpus (+0.038/+0.085/+0.055) with class-(b) duration down ×3 and the
+  batch sets untouched — but **regressed the held-out split (−0.098)**: the design's own overfit tell.
+  Ruling: no value change; the family closes "feasible, constraint-bounded, non-generalizing at held-out";
+  the lever re-enters at the family-2 joint fit (its constraint boundary is that fit's subject). The two
+  structural findings are banked: the fit is constraint-bounded (the unconstrained optimum lowers the
+  penalty, +0.376, blocked by new class-(b) cases — the root-only objective is quality-silent there), and
+  the 1b "clean at ±0.05" read does not extend to the full range. The theory question the fit raised
+  (is the power chord an accepted chord category?) is recorded at its proper layer: **L4 design §15 O4**
+  (idiom-dependent by the theory itself; competitiveness stays an idiom-calibrated constant per §2.15).
+- **O-8 (housekeeping, user-ruled 2026-07-05, both fixed at the next dispatch):** (1) **fit ledgers become
+  committed artifacts** — the per-run ledger files move out of the gitignored `tools/reports/` to a
+  committed path; §7's "the ledger is committed" holds for the compact per-run ledgers, while large
+  per-cell enumerations stay regenerable scratch pinned by the driver (the A-8 precedent — §7 is amended
+  by this sentence); (2) **one validation runner gains `--param-override`** (additive, default
+  byte-identical) so the S-5 per-style generalization check CAN run on a candidate before any adoption —
+  closing the recorded S-5 instrument gap.
 
 ---
 

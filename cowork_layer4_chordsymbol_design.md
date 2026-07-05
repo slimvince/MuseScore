@@ -605,3 +605,25 @@ Architectural Layer 5 knows what to resolve.
   *non-chord-tone*. The three-tier **structure is fixed** (universality); only the tier-3 weighting is
   **idiom-calibrated** (the style-only-in-calibration contract, ARCHITECTURE.md §2.15) — record the threshold as a
   preset/idiom constant at the precision phase (§0), never a structural branch. Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10).
+- **O4 — is the "power chord" an admissible chord category, and per which idiom? (user question, 2026-07-05,
+  raised at the Stage-5 Phase-2.1 fit).** The music-theory answer is itself style-split: in **common-practice
+  theory a bare fifth `{0,7}` is NOT a chord** — a chord requires three distinct pitches (triadic construction);
+  a root+fifth dyad is an *interval* or an *incomplete triad* whose missing third the context determines. In
+  **popular-music practice the "power chord" (C5) IS an accepted, standard sonority label** (guitar practice,
+  lead sheets; MusicXML carries `kind="power"`). So the template's legitimacy is **idiom-dependent by the theory
+  itself**: idiom #4 (Triadic-modal, pop/rock) accepts the C5 reading as a final answer; idiom #2
+  (Chromatic-functional) reads `{0,7}` as an incomplete triad to be completed by context. **Resolution shape
+  (per the §2.15 style-only-in-calibration contract):** the template STAYS in the array structurally (it is the
+  honest quality-abstention reading for genuinely third-less textures — E-14 zero information loss), and its
+  **competitiveness is an idiom-calibrated constant** (`kPowerChord3PcPenalty` — the Stage-5 manifest already
+  declares it idiom-varying), never a structural per-idiom branch: a large idiom-#2 value effectively yields the
+  dyad to context-completed triads, a small idiom-#4 value lets C5 stand. **Measured support (Stage-5 Phase 2.1,
+  `cc_stage5_phase2_1_report.md`):** the fit's feasible direction on idiom-#2 data RAISES the penalty (fewer
+  bare-fifth readings in Bach — aligned with the theory answer), while the objective's blocked unconstrained
+  direction (lowering it, +0.376 root) gains root agreement only because the root-only objective is
+  quality-silent — it adds class-(b) functional errors, exactly the impoverished-reading trap the theory
+  predicts. Also recorded there: the constant is more load-bearing across common-practice textures than its
+  name implies (6/11 pipeline snapshots shift). **Open ends:** (a) the idiom-#4 value is fittable only when a
+  pop/rock ground-truth pool exists (fitter O-5); (b) whether the C5 LABEL is ever *displayed* in
+  common-practice output is an L6/product presentation question (progressive disclosure), separate from the
+  scorer's competitiveness constant.
