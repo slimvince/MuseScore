@@ -123,10 +123,11 @@ The design's stated gate is a **size** test: *"if the population is too small fo
 
 ## Commit SHAs (this dispatch)
 
-| # | type | contents |
-|---|---|---|
-| 1 | `feat(composing):` | the additive §15-13 instrumentation — `bothLicensed` field + `l5BothLicensed` dump + 4 test assertions + `stage5_15_13_population.py` (production byte-identical, proven 0/352 ×3) |
-| 2 | `docs(cowork):` | this report (force-add) + the three Task-A ladder ledgers |
-| 3 | `docs(cowork):` | the fold — STATUS (22v) · COWORK_HANDOFF · design (O-13 + staging-step-3 closure) · the instruction (force-add) |
+| # | SHA | type | contents |
+|---|---|---|---|
+| 1 | `9fbad63b94` | `feat(composing):` | the additive §15-13 instrumentation — `bothLicensed` field + `l5BothLicensed` dump + 4 test assertions + `stage5_15_13_population.py` (production byte-identical, proven 0/352 ×3) |
+| 2 | `e38c17389d` | `docs(cowork):` | this report (force-add) + the three Task-A ladder ledgers |
+| 3 | `05fcb43538` | `docs(cowork):` | the fold — STATUS (22v) · COWORK_HANDOFF · design (O-13 + staging-step-3 closure) · the instruction (force-add) |
+| 4 | *(this commit)* | `docs(cowork):` | fill the actual SHAs into this table (the self/forward-reference completion; commits 2–3 could not cite their own hashes at write time) |
 
 Local/unpushed, fork-only. **No push.**
