@@ -1,7 +1,16 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 22y (**Phase 3 COWORK-VERIFIED + CLOSED; the §1.4
-contract row-changes APPLIED by Cowork; ★ R10-a DISPATCHED + HANDED TO CC** — `cc_instruction_stage5_r10_assembly.md`,
+*Written 2026-05-14. Last updated 2026-07-06, session 23 (**★ STAGE-5 ARC CLOSED — R10-b MADE: the
+batch→robust regression-stop handover is normative. CLAUDE.md gate section = the robust-unit stop (block A;
+baselines root 63.36/62.37/63.25 · RN 44.58/42.40/44.41 · key 68.13/64.43/67.50); the two-tier policy LIVE
+(block B); batch 52/24/52 relocated to history + frozen at `tools/robust_stop/batch_stop_frozen_history.json`
+(block C); caveats (block D, granularity ✅ RESOLVED). 2.2e key-column error corrected
+`68.19/64.52/67.77`→`68.13/64.43/67.50`. Roadmap R10 FIRED; §4.7 EXECUTED (O-16); `characterise` KEPT-AS-DIAGNOSTIC.
+Both stops green at close. Report `cc_stage5_r10b_ratification_report.md`; commits `docs:` + `docs(cowork):`,
+fork-only unpushed. THE ENGAGE ARC INHERITS: F-B redesign [1043/53/809] · §15-13 [5544, parked] · θ/map wiring ·
+L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**) Prior header, kept: session 22y (**Phase 3
+COWORK-VERIFIED + CLOSED; the §1.4 contract row-changes APPLIED by Cowork; ★ R10-a DISPATCHED + HANDED TO CC**
+— `cc_instruction_stage5_r10_assembly.md`,
 the arc's closing assembly. **THE FRESH SESSION'S JOB: when CC's R10-a report arrives → verify at objects +
 read in full → present the R10-b ratification surface to the user [decision-surface-FIRST rule] → on
 ratification, write the R10-b handover instruction [CLAUDE.md gate rewrite · batch sets frozen as history ·
@@ -23,23 +32,32 @@ and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
 
-**★ PHASE 3 COWORK-VERIFIED + CLOSED (session 22y, 2026-07-06):** all 3 commits at objects (incl. the
-SHA-completion `443e79dabd`); report read in full; **the §1.4 contract changes APPLIED by Cowork**
-(five §3 row-status appends + the §7 D-FS closure — `cowork_confidence_contract.md` now carries the
-fitted-map statuses, the deferral re-verifications, the declared scales, and the F-B indictment).
-**★ The headline finding, Cowork-concurred: the F-B fine-grain override is measured NET-HARMFUL
-(1043/53/809 — ~78 % of fires move an L4-correct root wrong); a REDESIGN item for the engage arc, never
-a θ retune.** **ACTIVE DISPATCH: `cc_instruction_stage5_r10_assembly.md` (session 22y, 2026-07-06) — R10-a, the
-arc's closing assembly:** the committed robust-unit REFERENCE artifacts (per-preset run enumerations
-`stem@runStartTick` + summaries reproducing 63.36/62.37/63.25 + manifest) · the old→new mapping (every
-52/24/52 case located on the run set) · the successor sandwich runnable + timed (class-(b) duration
-non-increase + explained run-diff) · the characterise kept-as-diagnostic proposal · the DRAFT CLAUDE.md
-gate-replacement text (report-only — NO normative change in this dispatch). **On the report: Cowork
-verifies → the R10-b RATIFICATION (the user's event: the handover commit rewrites CLAUDE.md, freezes
-the batch sets as history, fires roadmap R10) → THE STAGE-5 ARC CLOSES**, handing the engage arc its
-dossier: F-B redesign · §15-13 (5544) · θ/map wiring · L1.5 surface map · GateA unification · the L5
-inversion · tonicVote. Open user calls: corpus track-vs-archive (O-12) · push at will (75 ahead).
-STATUS 22x/22y = the full record.
+**★ STAGE-5 ARC CLOSED (session 23, 2026-07-06) — R10-b MADE: the batch→robust regression-stop handover is
+normative.** CC executed `cc_instruction_stage5_r10b_ratification.md` (docs + one-JSON-snapshot only —
+NO `src/`, NO scoring value, NO corpus write, NO build, NO push). The CLAUDE.md gate section is now the
+**robust-unit stop**: block (A) the hard stop = class-(b) root-disagree DURATION non-increase per preset +
+mandatory explained run-diff (reference `tools/robust_stop/`; baselines root 63.36/62.37/63.25 · RN
+44.58/42.40/44.41 · key 68.13/64.43/67.50; runnable `a8_rebaseline_measure.py`→`robust_stop_diff.py` ≈6 s) ·
+block (B) the two-tier per-cell class policy preserved LIVE · block (C) the batch **52/24/52** sets relocated
+to a retrospective + frozen machine-readable at `tools/robust_stop/batch_stop_frozen_history.json` (set-equal
+verified) · block (D) caveats (cross-layer-budget LIVE, granularity ✅ RESOLVED). The **2.2e KEY-column error
+corrected** `68.19/64.52/67.77`→`68.13/64.43/67.50` (Jazz byte-identity proof) with the repo-wide occurrences
+dispositioned. `characterise_bir_false.py` → KEPT-AS-DIAGNOSTIC. **Roadmap R10 FIRED; design §4.7 EXECUTED
+(O-16).** Both stops green at close: batch 52/24/52 set-diff empty ×3 **and** the robust sandwich identity-PASS
+(+0/−0, class-(b) Δ=0 all presets). Report `cc_stage5_r10b_ratification_report.md`; commits `docs:` +
+`docs(cowork):` (fork-only, unpushed).
+**★ The engage-arc headline material, Cowork-concurred: the F-B fine-grain override is measured NET-HARMFUL
+(1043/53/809 — ~78 % of fires move an L4-correct root wrong); a REDESIGN item, never a θ retune.**
+**THE FRESH SESSION'S JOB: verify CC's R10-b report at objects → the batch→robust handover is normative →
+OPEN THE ENGAGE ARC on the inherited dossier: F-B redesign [1043/53/809] · §15-13 [5544, parked —
+dormant-resolver objective] · θ/map wiring · L1.5 surface map · GateA unification · the L5 combinedBoundary
+inversion · tonicVote detection quality.** Open user calls: corpus track-vs-archive (O-12) · push at will
+(~77 ahead).
+**(history) R10-a (session 22z, `cc_stage5_r10_assembly_report.md`):** the assembly surface — committed
+reference `tools/robust_stop/` + the old→new mapping (every 52/24/52 case maps, 0 disappear) + the
+runnable+timed successor sandwich + the DRAFT gate text; declared the 2.2e key-column finding for R10-b
+(now corrected). **(history) Phase 3 (session 22y):** all 3 commits at objects; the §1.4 contract changes
+APPLIED by Cowork (five §3 row-status appends + the §7 D-FS closure). STATUS 22x/22y/22z + 23 = the full record.
 **(history) The 22x delivery summary:** Report `cc_stage5_phase3_report.md`; commits feat `7111f589e2`
 + docs `6b5bdcd64b` (fork-only, unpushed). What landed:
 - **C1 curves re-measured** on the adopted corpus `c50002fee1` (they predated 2.2e): every ECE Δ≤0.001 —

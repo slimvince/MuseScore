@@ -124,8 +124,8 @@ founding evidence, and cross-layer caveat are all live in the rewritten section.
 
 | # | SHA | Type | Contents |
 |---|---|---|---|
-| 1 — normative | `__SHA1__` | `docs:` | CLAUDE.md gate rewrite (blocks A–D + key correction) · `tools/robust_stop/batch_stop_frozen_history.json` · this report (force-add) |
-| 2 — the fold | `__SHA2__` | `docs(cowork):` | STATUS (session 23) · COWORK_HANDOFF (new START-HERE) · `cowork_stage5_fitter_design.md` (§4.7 R10-b FIRED + O-16 + the 2.2e-log annotation) · `cc_instruction_stage5_r10b_ratification.md` (force-add) + the SHA back-fill above |
+| 1 — normative | `928a9b69a6` | `docs:` | CLAUDE.md gate rewrite (blocks A–D + key correction) · `tools/robust_stop/batch_stop_frozen_history.json` · this report (force-add) |
+| 2 — the fold | *(this fold commit)* | `docs(cowork):` | STATUS (session 23) · COWORK_HANDOFF (new START-HERE) · `cowork_stage5_fitter_design.md` (§4.7 R10-b FIRED + O-16 + the 2.2e-log annotation) · `cc_instruction_stage5_r10b_ratification.md` (force-add) + this SHA back-fill |
 
 Provenance SHAs: HEAD-at-start `8aea6e33e7`; corpus `c50002fee1`; a8 instrument `c2914884af`; key parsers
 `5f7cb7376e`.

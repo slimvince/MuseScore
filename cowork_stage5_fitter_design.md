@@ -494,6 +494,21 @@ R10-b: the 2.2e KEY column is unreproducible (root/RN reproduce exactly; key = t
 Jazz byte-identity proving 64.43) — its CLAUDE.md correction is an R10-b action. **R10-b (the user's
 ratification + the handover commit) remains the arc-closing event.**
 
+**★ R10-b FIRED — the arc-closing ratification (session 23, 2026-07-06; `cc_stage5_r10b_ratification_report.md`).**
+The batch→robust handover is MADE. The CLAUDE.md gate section is now: block (A) the robust-unit stop (class-(b)
+root-disagree DURATION non-increase per preset + mandatory explained run-diff; reference `tools/robust_stop/`;
+baselines root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50) · block (B) the two-tier per-cell
+class policy preserved LIVE · block (C) the batch 52/24/52 sets relocated to history · block (D) caveats
+(cross-layer-budget LIVE, granularity ✅ RESOLVED). The batch sets are frozen in BOTH CLAUDE.md history AND
+`tools/robust_stop/batch_stop_frozen_history.json` (set-equal to `characterise_bir_false.py` verified). The 2.2e
+KEY-column error is corrected (`68.19/64.52/67.77` → `68.13/64.43/67.50`) with the repo-wide occurrence list
+dispositioned (one historical design-log line annotated, not rewritten). `characterise_bir_false.py` →
+KEPT-AS-DIAGNOSTIC (R3 pattern; its `validate_corpus_dir` is imported by the a8 instrument, so it cannot
+bit-rot). Both stops green at close: batch `52/24/52` set-diff empty ×3, robust sandwich identity-PASS (+0/−0,
+class-(b) Δ=0 all presets). **Roadmap retirement item R10 is FIRED; the Stage-5 arc is CLOSED.** The engage arc
+opens on the inherited dossier: **F-B redesign [1043/53/809, net-harmful override] · §15-13 [5544, parked —
+dormant-resolver objective] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**
+
 ---
 
 ## 5. Building-block view
@@ -1017,7 +1032,10 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   differs on **7** `.ours.json`; the fix restores 0 diff. (The frozen corpus is gitignored, so byte-identity was
   proven by an explicit-override reconstruction of the pre-adoption Jazz, not `git diff` — a process note: snapshot
   the frozen corpus before a future re-baseline regen.) A-8 baselines re-measured (root 63.36/62.37/63.25, RN
-  44.58/42.40/44.41, key 68.19/64.52/67.77); CLAUDE.md re-stamped 52/24/52; goldens refreshed 11/11; O-10
+  44.58/42.40/44.41, key 68.19/64.52/67.77 **[R10-b correction, 2026-07-06: this key column is the
+  non-reproducible 2.2e measurement-entry error; the reproducible key column is 68.13/64.43/67.50 — Jazz
+  byte-identity proves 64.43; see O-15 and the block-(A) A-8 note in CLAUDE.md. Historical log line left
+  as-recorded per the annotate-don't-rewrite rule.]**); CLAUDE.md re-stamped 52/24/52; goldens refreshed 11/11; O-10
   liveness recorded (all four retained rules LIVE, counts near-prior; ledger `stage5_2_2e_liveness.jsonl`).
   Suites 1101/53/11 green.
   **★ DELIVERED (2.2d, `cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the
@@ -1112,6 +1130,31 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-16 (R10-b — the batch→robust stop handover MADE; STAGE-5 ARC CLOSED, 2026-07-06, session 23;
+  `cc_stage5_r10b_ratification_report.md`).** The user's arc-closing ratification event on the R10-a surface.
+  Docs + one-JSON-snapshot only — NO `src/`, NO scoring value, NO corpus write, NO build, NO push (outside the
+  inference-fixing moratorium: this is regression-STOP infrastructure, not an analyzer change). **(i)** CLAUDE.md
+  gate section rewritten to four blocks: (A) the robust-unit regression stop is now THE hard stop (granularity-robust
+  union-of-boundaries, variant (b) DCML-only, duration-weighted; root governs, RN+key tracked; reference
+  `tools/robust_stop/`; hard stop = class-(b) root-disagree DURATION non-increase per preset + mandatory explained
+  run-diff; runnable `a8_rebaseline_measure.py`→`robust_stop_diff.py` ≈6 s; re-baseline discipline generalized from
+  2.2e); (B) the two-tier per-cell class policy preserved LIVE (all five guardrails + founding evidence
+  `bwv272@4320`/`bwv289@20160`/`bwv291@17760`/`bwv387@10560` intact), now governing the robust unit's per-cell
+  classification; (C) the batch 52/24/52 `stem@tick` sets + full L3-wiring/2.2e/corrected-parser history RELOCATED
+  to a retrospective, marked superseded (under-counted true per-onset error ~15–56×); (D) caveats — cross-layer-budget
+  (O1) kept LIVE, granularity caveat marked ✅ RESOLVED (R10-b delivers the mandated granularity-robust metric).
+  **(ii)** The 2.2e KEY-column error corrected `68.19/64.52/67.77`→`68.13/64.43/67.50` in CLAUDE.md (block A) + the
+  contradictory "reflects the a8 re-measure" sentence replaced with the byte-identity truth (Jazz key = the prior
+  64.43 exactly; identical inputs cannot move it). Repo-wide grep dispositioned: 1 live-normative corrected (CLAUDE.md),
+  1 historical design-log line annotated (this doc §2.2e-executed), the rest (O-15/STATUS logs, `tools/robust_stop/`
+  README+manifest reproduce-status records, fit-ledger audit `key_pct` data, font-glyph false positives) left as
+  history/data. **(iii)** Batch sets frozen in BOTH forms: CLAUDE.md block (C) + machine-readable
+  `tools/robust_stop/batch_stop_frozen_history.json` (set-equal to `characterise_bir_false.py` output AND to the
+  CLAUDE.md sets, verified before write). **(iv)** `characterise_bir_false.py` → KEPT-AS-DIAGNOSTIC (R3). **(v)** Both
+  stops green at close (batch 52/24/52 set-diff empty ×3; robust sandwich identity-PASS +0/−0, class-(b) Δ=0 all
+  presets). Corpus fingerprint-validated untouched (`c50002fee1`). No src/corpus/build/push. **Roadmap R10 FIRED;
+  §4.7 executed; the Stage-5 arc is CLOSED. The engage arc inherits: F-B redesign [1043/53/809] · §15-13 [5544,
+  parked] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**
 - **O-15 (R10-a — the batch→robust stop handover surface ASSEMBLED, 2026-07-06, session 22z;
   `cc_stage5_r10_assembly_report.md`).** Measurement + draft only; NO normative doc change, NO committed
   value, NO corpus write, NO push — the §4.7 R10 decision surface is now assembled for the user's R10-b
