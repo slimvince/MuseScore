@@ -420,7 +420,11 @@ unmeasurable, never extrapolated).
    the both-licensed fall-through population on the reference corpus (decode-only); if the population is
    too small for a fit to be evidence-based (the count and its class split are the checkpoint material),
    the item returns to the user with the number and stays a recorded §15-13 open item — not silently
-   dropped, not fitted on noise.
+   dropped, not fitted on noise. **MEASURED (Phase 2.3, 2026-07-06 — O-13 ii): the population is LARGE
+   (Baroque 5544 / Jazz 5581 / Default 5544; ~16.5 % of scored duration; 351/352 scores) → size-viable, NOT
+   noise-limited. But it lives on the DORMANT resolver, whose output is not in today's a8 objective → the fit
+   is not runnable until L5 engages (or a resolver-output objective is defined). Returned to the user with the
+   number; the §15-13 item stays open.**
 
 Each family lands as its own adoption event (or is rejected on its numbers).
 
@@ -1020,6 +1024,45 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   moment — it delivers ONLY the Default carrier (struct default + global initializer are its delivery
   surface); a future Default-carrier adoption ships to production through those; non-Default carriers
   are batch/fitting-path-only until a production preset moment exists (D-10 note).
+- **O-12 (process lesson from the 2.2e re-baseline, 2026-07-05): the frozen corpus is GITIGNORED —
+  "git status clean" was always a VACUOUS byte-untouched check.** `tools/corpus/` is not
+  version-controlled (`.gitignore`), so every prior report line citing "git status tools/corpus/ =
+  clean" proved nothing; the protection that actually held (and genuinely did — verified) is the
+  manifest's per-score sha256 fingerprints + `characterise_bir_false.py`'s refuse-on-mismatch
+  validation + the 2.2c frozen-vs-baseline regen comparison. Standing corrections: (1) byte-untouched
+  claims cite MANIFEST-FINGERPRINT VALIDATION (or an explicit regen-compare), never git status;
+  (2) **every future corpus re-baseline SNAPSHOTS the outgoing frozen corpus before regenerating**
+  (2.2e overwrote the old Jazz in place before copying; byte-identity was then proven by an
+  explicit-override reconstruction — rigorous, but the snapshot makes it trivial); (3) whether the
+  frozen corpus should become git-tracked (or snapshot-archived per re-baseline) is a user call,
+  recorded as open.
+- **O-13 (staging step 3 closure + the family-4 §15-13 population, 2026-07-06, Phase 2.3;
+  `cc_stage5_phase2_3_report.md`).** Two cheap measurements; nothing adopted, no value change, no corpus write.
+  **(i) Staging step 3 — the three surviving §6-block margins hold NO fittable gain at full range → each RETAINED,
+  constant stays hand-set (skip-with-record).** Full-range 1-D ladders (Baroque carrier, fitting split, refine-0)
+  on `kGateIMargin` [0,1.0], `kGateLMargin` [0,1.0], `kHalfDimFirstInversionBonus` [0,1.2]: **no feasible Δ>0 on
+  any margin at any point** (best feasible = baseline, `ALREADY-OPTIMAL`). The full range REFINES the ±step-dead 1b
+  reading exactly as the 2.1 lesson warns: `kGateLMargin` is globally objective-inert on the Baroque root
+  objective (Δ=0 across [0,1.0], even at 0 where Gate L never fires — consistent with its 2.2b Jazz-only liveness);
+  `kGateIMargin` and `kHalfDimFirstInversionBonus` are locally flat around their current values but the objective
+  DROPS at the extremes (Gate I at both ends — 0.0 stops it firing, 0.8/1.0 fires it on wider gaps, both class-(b)-
+  infeasible; the FM2 bonus only when shrunk toward disabling its promotion). Every non-zero Δ is a LOSS in an
+  INFEASIBLE direction; the current hand-set values sit at/inside the objective-optimal feasible plateau. So the
+  rules are load-bearing (their RETAIN verdicts are re-confirmed by leverage) but hold no fit — a legitimate
+  staging-step-3 closure. Ledgers `tools/fit_ledgers/stage5_fit_<margin>.jsonl`.
+  **(ii) Family 4's §15-13 population is LARGE — size-viable per the gate, but its lever is on the dormant chain
+  whose output is not in today's objective (a DECLARED finding, not a decision).** The both-licensed fall-through
+  population (`bothLicensed` telemetry added to the resolver, read via `--dump-fullspine`; byte-identical on
+  production, 0/352 ×3): **Baroque 5544 / Jazz 5581 / Default 5544** (Transition ≈3550, ShareTone ≈2000; outcome
+  ≈52 % structural tie-break, ≈48 % honest open mark; **~16.5 % of scored duration**, present in 351/352 scores,
+  max 87/score, median 15). By the design's stated SIZE gate this is **not too small — the fit is not
+  noise-limited.** But the §15-13 weight acts on the DORMANT L5 resolver's output, which does NOT enter the
+  current A-8 production/L4-root fitting objective (proven: the field is byte-identical on that path) — so the fit
+  is size-viable yet **not runnable against today's objective** (it would move the fullspine L5 roots on those
+  ~5544 slices while the a8 objective stays Δ=0 by construction). Running it needs L5 engagement (the resolver
+  output becomes what the objective grades) OR a dedicated resolver-output objective + GT — a design/sequencing
+  question returned to the user. **No fit run either way (per the dispatch); the number + this substrate
+  observation are the checkpoint material.** The §15-13 item stays open, now with its measured population.
 - **O-10 (lesson from the user's methodology challenge, 2026-07-05): RETAINED structural rules carry
   ongoing LIVENESS evidence.** The Gate-K/Gate-L failure mode — a rule's founding cases silently absorbed
   upstream, leaving dead code undetected for weeks — existed because nothing measured rule liveness. For

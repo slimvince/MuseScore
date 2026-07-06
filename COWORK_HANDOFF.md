@@ -1,11 +1,36 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-04, session 22l (the STAGE-5 FITTER DESIGN signed + Phase-0
-dispatched; previously 22k: D-L3a · the full-needs audit · corpus Waves 3/3-addendum/acquisition-round ·
-the union search · the fitting-pool license constraint — all ratified).
+*Written 2026-05-14. Last updated 2026-07-06, session 22v (Stage-5 Phase 2.3 delivered: staging step 3 CLOSED —
+three retained-rule margins hold no fittable gain, skip-with-record; family-4 §15-13 population MEASURED LARGE
+[size-viable] with the dormant-substrate finding declared; nothing adopted). Prior: 22u (2.2e adoption verified +
+ratified — the arc's first fitted value shipped, corpus re-baselined 52/24/52); 22l (fitter design signed).
 This header is the fresh-session entry point; full narratives live in STATUS.md (top entries) and the named docs.*
 
-## ★ START HERE — state, dispatch, queue (2026-07-05)
+## ★ START HERE — state, dispatch, queue (2026-07-06)
+
+**★ PHASE 2.3 CC-DELIVERED (session 22v, 2026-07-06) — STAGING STEP 3 CLOSED + THE §15-13 POPULATION MEASURED;
+NOTHING adopted, no value change, no corpus write. AWAITING COWORK VERIFICATION.** Fulfills the ACTIVE DISPATCH
+`cc_instruction_stage5_phase2_3.md`. Report `cc_stage5_phase2_3_report.md`.
+- **(A) Staging step 3 — the three surviving §6-block margins (`kGateIMargin` 0.45, `kGateLMargin` 0.35,
+  `kHalfDimFirstInversionBonus` 0.55) hold NO fittable gain at FULL range → each RETAINED, constant stays hand-set
+  (skip-with-record).** Full-range 1-D ladders (Baroque, fitting split, refine-0; baseline 63.5391 exact): no
+  feasible Δ>0 anywhere. Refines the ±step-dead 1b reading — kGateLMargin globally inert; kGateI/kHalfDim flat at
+  the current value but the objective drops (infeasibly) at the extremes. Ledgers committed.
+- **(B) Family-4 §15-13 both-licensed population — LARGE, size-viable per the gate.** One additive, behaviour-neutral
+  `bothLicensed` field on the dormant resolver (byte-identical on production, 0/352 ×3; 4 pinned test assertions;
+  suites 1101/53/11 no golden refresh), counted from `--dump-fullspine`: **Baroque 5544 / Jazz 5581 / Default 5544**
+  (~16.5 % of scored duration, 351/352 scores; ≈52 % structural tie-break / ≈48 % open mark). **★ DECLARED FINDING
+  (not decided): the §15-13 lever is on the DORMANT L5 resolver's output, which is not in today's a8 production/L4
+  objective → the fit is size-viable but NOT runnable until L5 engages OR a resolver-output objective is defined.
+  Returned to the user with the number; the §15-13 item stays open.**
+- Sandwich **52/24/52** set-diff empty ×3 (before + after; manifest-fingerprint-validated untouched, O-12). Reuse-only
+  drivers; retires nothing. Commits: `feat(composing):` instrumentation · `docs(cowork):` report+ledgers · `docs(cowork):`
+  fold. Local/unpushed, fork-only; **no push.** NEXT: the user's read on the substrate finding · staging step 4
+  (abstention bars) · Phase 3 calibration.
+
+---
+
+## (history) START HERE — state, dispatch, queue (2026-07-05)
 
 **★ PHASE 2.2d CC-DELIVERED (session 22s, 2026-07-05) — THE (srib,kw) SUB-SWEEP FOUND A FEASIBLE SLICE;
 a small ADOPTABLE candidate exists (a TIE); NOTHING adopted. AWAITING COWORK VERIFICATION.** This
@@ -36,11 +61,32 @@ no golden refresh; src git-clean (measurement-only). **Commits:** `ee59231141` f
 adoption + tie-break are the user's ratification event.** STATUS 22s + design §15 O-11 ii (DELIVERED note)
 = the full record.
 
-**★ 2.2d COWORK-VERIFIED (3 commits at objects; report read in full) · ★ THE ARC'S FIRST ADOPTION
-USER-RATIFIED (2026-07-05): (srib 0.40 unchanged, kWStepIn 0.10→0.125), Baroque/Default carriers,
-Jazz pinned — the single-lever tie-break per the CC+Cowork joint recommendation (identical class-(b)
-win; the alternative's edge = class-(a) churn + fragile coupling + struct-default leakage into
-unmeasured carriers). ACTIVE DISPATCH: `cc_instruction_stage5_phase2_2e.md` — THE ADOPTION EVENT:
+**★★ 2.2e THE ADOPTION EVENT — LANDED + COWORK-VERIFIED + CLOSED (session 22u, 2026-07-06): THE
+ARC'S FIRST FITTED VALUE IS SHIPPED.** kWStepIn 0.125 (Baroque/Default; production via the Default
+initializer; Jazz + Standard/Modal/Contemporary enumerated + pinned 0.10; kStepBudget derived
+0.235/0.21 per carrier); the FIRST §7 provenance stamp; 11 goldens refreshed after intended-effect
+confirmation; **corpus re-baselined 52/24/52 with EXACTLY the promised removal-only diff
+{bwv244.32@5760} ×Bar/Def, Jazz byte-identical (proven by explicit-override reconstruction)**;
+A-8 re-ratified 63.36/62.37/63.25; fixture 3/3 MATCH; O-10 first application = all four retained
+rules live. **★ CC's load-bearing catch: the kStepBudget single-key-override leak** (would have broken
+Jazz byte-identity on 7 files; per-carrier re-derivation fix, proven). **★ Process lesson (design
+O-12): tools/corpus/ is GITIGNORED — "git status clean" was always vacuous; real protection =
+manifest fingerprints + characterise validation; snapshot-before-re-baseline now mandatory;
+track-vs-archive = an open user call.** Commits `c50002fee1` / `3cf4665f3f` / `83f41cdd31`, all
+verified at objects; STATUS 22t/22u = the full record. **ACTIVE DISPATCH:
+`cc_instruction_stage5_phase2_3.md` (session 22u tail, 2026-07-06)** — Task A: staging step 3, the
+three surviving §6-block margins (kGateIMargin · kGateLMargin · kHalfDimFirstInversionBonus) at FULL
+range (the 2.1 ±step lesson; expected skip-with-record, a mover = a Cowork finding, no chase) ·
+Task B: family-4's §15-13 gate — the both-licensed fall-through population on the DORMANT chain
+(fullspine, decode-only; additive default-off telemetry only if the dump lacks it, byte-identity
+proven; the count decides whether the commissioned preference weight is evidence-fittable — no fit
+either way) · sandwich now anchors on **52/24/52**. Then: family 3/Phase-3 calibration (the C1→fitted
+maps design). **Open user calls: corpus track-vs-archive (O-12) · push at will (65+ ahead).**
+
+**(history) 2.2d verified · the first-adoption ratification (2026-07-05): (srib 0.40 unchanged,
+kWStepIn 0.10→0.125), the single-lever tie-break per the CC+Cowork joint recommendation (identical
+class-(b) win; the alternative's edge = class-(a) churn + fragile coupling + struct-default leakage
+into unmeasured carriers). Its dispatch was `cc_instruction_stage5_phase2_2e.md` — THE ADOPTION EVENT:
 the one revertible value commit (provenance-stamped — the first §7 license fill) + goldens refresh +
 ★ the FIRST deliberate frozen-corpus re-baseline (expected 52/24/52, removal-only {bwv244.32@5760}
 ×Bar/Def, Jazz byte-identical — ANY other set change = FULL revert STOP) + CLAUDE.md set re-stamp +
