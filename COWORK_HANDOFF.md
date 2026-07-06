@@ -1,6 +1,15 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 22x (Stage-5 Phase 3 CALIBRATION delivered: C1 curves
+*Written 2026-05-14. Last updated 2026-07-06, session 22y (**Phase 3 COWORK-VERIFIED + CLOSED; the §1.4
+contract row-changes APPLIED by Cowork; ★ R10-a DISPATCHED + HANDED TO CC** — `cc_instruction_stage5_r10_assembly.md`,
+the arc's closing assembly. **THE FRESH SESSION'S JOB: when CC's R10-a report arrives → verify at objects +
+read in full → present the R10-b ratification surface to the user [decision-surface-FIRST rule] → on
+ratification, write the R10-b handover instruction [CLAUDE.md gate rewrite · batch sets frozen as history ·
+roadmap R10 fired · design §4.7 EXECUTED] → the Stage-5 arc CLOSES and the engage arc inherits the dossier:
+F-B redesign [1043/53/809] · §15-13 [5544, parked] · θ/map wiring · L1.5 surface map · GateA unification ·
+the L5 inversion · tonicVote.** The r10-a fold list carries the currently-uncommitted Cowork edits: STATUS
+22w/22y · this header · the contract's six Phase-3 row-edits · the design. Open user calls: corpus
+track-vs-archive [O-12] · push at will [~75 ahead].) Prior header, kept: session 22x (Stage-5 Phase 3 CALIBRATION delivered: C1 curves
 re-measured on the adopted corpus [ECE Δ≤0.001]; the L3-margin + L4-composite Class-P maps FITTED [isotonic,
 Baroque/Default carriers, Jazz A-7-unmapped], validated held-out [ECE 0.017–0.041], 4 artifacts committed;
 deferrals re-verified [L5 non-monotone shape unchanged → stands]; Task-B L1.5 spike-vs-surface split measured
@@ -14,8 +23,24 @@ and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
 
-**★ PHASE 3 CALIBRATION DELIVERED (session 22x, 2026-07-06) — awaiting Cowork verification + ratification;
-NOTHING wired, NO behavior change, NO push.** Report `cc_stage5_phase3_report.md`; commits feat `7111f589e2`
+**★ PHASE 3 COWORK-VERIFIED + CLOSED (session 22y, 2026-07-06):** all 3 commits at objects (incl. the
+SHA-completion `443e79dabd`); report read in full; **the §1.4 contract changes APPLIED by Cowork**
+(five §3 row-status appends + the §7 D-FS closure — `cowork_confidence_contract.md` now carries the
+fitted-map statuses, the deferral re-verifications, the declared scales, and the F-B indictment).
+**★ The headline finding, Cowork-concurred: the F-B fine-grain override is measured NET-HARMFUL
+(1043/53/809 — ~78 % of fires move an L4-correct root wrong); a REDESIGN item for the engage arc, never
+a θ retune.** **ACTIVE DISPATCH: `cc_instruction_stage5_r10_assembly.md` (session 22y, 2026-07-06) — R10-a, the
+arc's closing assembly:** the committed robust-unit REFERENCE artifacts (per-preset run enumerations
+`stem@runStartTick` + summaries reproducing 63.36/62.37/63.25 + manifest) · the old→new mapping (every
+52/24/52 case located on the run set) · the successor sandwich runnable + timed (class-(b) duration
+non-increase + explained run-diff) · the characterise kept-as-diagnostic proposal · the DRAFT CLAUDE.md
+gate-replacement text (report-only — NO normative change in this dispatch). **On the report: Cowork
+verifies → the R10-b RATIFICATION (the user's event: the handover commit rewrites CLAUDE.md, freezes
+the batch sets as history, fires roadmap R10) → THE STAGE-5 ARC CLOSES**, handing the engage arc its
+dossier: F-B redesign · §15-13 (5544) · θ/map wiring · L1.5 surface map · GateA unification · the L5
+inversion · tonicVote. Open user calls: corpus track-vs-archive (O-12) · push at will (75 ahead).
+STATUS 22x/22y = the full record.
+**(history) The 22x delivery summary:** Report `cc_stage5_phase3_report.md`; commits feat `7111f589e2`
 + docs `6b5bdcd64b` (fork-only, unpushed). What landed:
 - **C1 curves re-measured** on the adopted corpus `c50002fee1` (they predated 2.2e): every ECE Δ≤0.001 —
   the adoption did not move the calibration.
@@ -431,11 +456,20 @@ that list verbatim with the Stage-5 design dispatch (which also demands the owed
 **Chain state:** everything local/unpushed on `master`, fork-only (`origin=slimvince/MuseScore`; `upstream` push
 disabled — NEVER push there). User pushes at will.
 
-**Fresh-session mandatory reads, in order:** CLAUDE.md → STATUS.md top entries (22j–22k) → this header → the
-standing-rule blocks below (unchanged, still binding) → then, for the Stage-5 fitter design: the roadmap
-Stage-5 + AMENDMENTS blocks · `cowork_confidence_contract.md` §6 · `cc_c1_reliability_report.md` ·
-`cc_a8_rebaseline_measure_report.md` · the census §8c fitting-pool constraint · `docs/scoring_model.md`
-(the gates A–L that dissolve) · `cowork_design_doc_template.md` (both writing-standard sections).*
+**Fresh-session mandatory reads, in order (updated 2026-07-06, session 22y):** CLAUDE.md (NOTE: the gate
+is **52/24/52** since the 2.2e re-baseline; the corpus is GITIGNORED — byte-untouched claims cite manifest
+fingerprints, never git status) → STATUS.md top entries (**22t–22y** — the adoption event · Phase 2.3 ·
+Phase 3 calibration · the R10-a dispatch) → this header's START HERE block → the standing-rule blocks
+below (still binding; note the TWO newest: **THE FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION**
+[2026-07-05] and **NO MID-FLIGHT STEERING** [2026-07-05, rule 5 of the just-in-time block]) → then, for
+the pending R10-b work: `cowork_stage5_fitter_design.md` §4.7 + §15 (O-7…O-13 — the arc's rulings live
+there) · `cc_instruction_stage5_r10_assembly.md` (the ACTIVE dispatch) + its report when CC delivers ·
+`cc_a8_rebaseline_measure_report.md` §1 (the pinned unit/variant/identity definitions) ·
+`cc_stage5_phase3_report.md` (the calibration state + the F-B finding). **The working method, unchanged:
+CC reports → Cowork verifies at objects + reads the report IN FULL + spot-checks at source (file tools
+only, never bash for local files; bash ONLY for `git show <sha>` object queries) → presents the decision
+surface to the user as rendered text FIRST → the user ratifies → the next instruction is written
+just-in-time.*
 
 ## ✅ EXECUTED 2026-07-03 (session 22) — THE MERGED DOC PASS (work list below retained as the record)
 

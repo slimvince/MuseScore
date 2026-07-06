@@ -292,8 +292,8 @@ objective and the stop) are the reasons to switch. **The user ratifies this trad
 
 | # | SHA | Type | Contents |
 |---|---|---|---|
-| 1 — artifacts | `<artifacts-commit>` | `feat(tools):` | `tools/robust_stop/` reference artifacts + `tools/robust_stop_diff.py` + this report (force-add) |
-| 2 — the fold | `<fold-commit>` | `docs(cowork):` | STATUS (22z) · COWORK_HANDOFF · design (R10-a record) · confidence contract (Phase-3 Cowork rows) · `cc_instruction_stage5_r10_assembly.md` (force-add) + SHA back-fill |
+| 1 — artifacts | `acba0f0404` | `feat(tools):` | `tools/robust_stop/` reference artifacts + `tools/robust_stop_diff.py` + this report (force-add) |
+| 2 — the fold | *(this fold commit)* | `docs(cowork):` | STATUS (22z) · COWORK_HANDOFF · design (O-15 R10-a record + §4.7 marker) · confidence contract (Phase-3 Cowork rows) · `cc_instruction_stage5_r10_assembly.md` (force-add) + the SHA back-fill above |
 
 Provenance SHAs: HEAD `443e79dabd`; corpus `c50002fee1`; a8 instrument `c2914884af`; key parsers
 `5f7cb7376e`.
