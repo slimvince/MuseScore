@@ -3348,6 +3348,14 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     }
     os << "],\n";
 
+    // C1 L1.5 spike-vs-surface split (Stage-5 Phase 3 Task B): the eligible-voice
+    // count. The harness classifies a candidate tick as a marker spike iff its raw
+    // strength exceeds the max possible surface strength (= numVoices * sumWeights),
+    // since a spike adds spikeCeilingFactor * numVoices * sumWeights > numVoices * sumWeights
+    // (phraseboundaryview.h §4.2). Additive to the (default-off) fullspine dump —
+    // production byte-identical.
+    os << "  \"phraseNumVoices\": " << phraseProfile.perVoice.size() << ",\n";
+
     os << "  \"cadences\": [";
     for (size_t i = 0; i < cadences.size(); ++i) {
         const analysis::FunctionalCadence& c = cadences[i];
