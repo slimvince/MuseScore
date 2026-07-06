@@ -1,5 +1,43 @@
 # Claude Code — Standing Instructions for This Repository
 
+## Guiding principles
+
+The standing decision guides for all work in this repository. Every design, build, and
+measurement choice is checked against them; they are the guide for making decisions and
+override convenience.
+
+1. **Fact- and theory-based coding only.** Build only on established fact and theory —
+   published research, public algorithms, public software. Fact-finding (investigative)
+   coding is allowed.
+2. **Specific research over general.** Most research so far has been general or on
+   already-handled topics; target the specific open question.
+3. **An unexpected finding means we have failed #1** (and possibly #2, #4, #6). Surprise
+   signals that the fact/theory basis was incomplete — treat it as a failure to diagnose,
+   not a curiosity.
+4. **Long-term goal: maximum-precision inference.**
+5. **Investigate when facts may be scarce.** If we are unsure whether facts are scarce,
+   gather more facts.
+6. **Total unification — no duplication of any code.** One path per concern.
+7. **Adhere to layers.** Enhance a layer only with algorithms/methods that belong to it,
+   nothing else. Worst case, this forces a layer redesign rather than a cross-layer patch.
+8. **No inference-problem-driven coding until all methods and algorithms are implemented
+   in their correct layer.**
+9. **Test and measure only on corpora known to be non-stale and accurate.**
+10. **Documentation always in sync with code.**
+11. **Regression test cases always in sync with code; regression-test between iterations.**
+12. **No information loss.**
+13. **Surface a surprise as a STOP before building around it** (the operational form of #3).
+14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**
+15. **Verify at objects/data on the full output surface, never at assertion** (winner *and*
+    carry, not the winner alone).
+16. **Reproducibility.** Every measurement is stamped to corpus-hash + instrument-commit;
+    snapshot the outgoing reference before any re-baseline.
+
+*Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
+#13–16 were ratified by the user on 2026-07-06. Companion standing rules elsewhere: the
+⛔ TOTAL UNIFICATION rule (`COWORK_HANDOFF.md`), and the doc-sync, layer, and gate policies
+below.*
+
 ## Project context
 
 This is MuseScore Studio. The active development area is the `composing` module

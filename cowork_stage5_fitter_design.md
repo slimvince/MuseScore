@@ -1130,6 +1130,36 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-18 (ENGAGE ARC #2 — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE, 2026-07-06,
+  session 25; `cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).** The
+  specific-research move (#5/#2) the O-17 surprise called for (#3): does F-B's override isolate a net-positive
+  correction subpopulation on the C3 coupled minority? Read-only (no `src/`, no build, no telemetry, no corpus
+  write, no θ retune). **VERDICT 3 — the C3 trigger is NOT computed anywhere**; it is un-computable read-only
+  AND un-surfaceable by additive default-off telemetry. Binding blocker = C3 component **(b)** ("a different
+  carried KEY alternative flips the chord reading"): the per-key chord **re-decode** it needs is **the gated
+  joint key-and-chord step the contract §6-C3 flags as "still owed at Stage 5"** (`keymodesequence.h:70-72`);
+  even the closest mechanism — the J-key-iii joint re-key pass — **explicitly leaves the chord unchanged**
+  ("the chord-axis side-effect … is DEFERRED to a faithful mechanism", `regionanalyzer.cpp:369-375`).
+  Component (a) is likewise absent from the F-B fullspine chain (`inferLocalKey(...)[0]` + a score-global
+  `homeConf` sigmoid, not the per-slice L3 sequence margin — D-L3a's "no sequence-margin substrate on that
+  path"; the bar itself is well-defined at source: sequence-margin `uncertainThreshold` 1.0 /
+  annotate-gate 0.8, but the bar is not the blocker — (b) is). There is **no already-computed signal to
+  surface**; producing (b) would mean **building** the joint step (forbidden #6/#7/#8) — so verdict 3 is a
+  **report, not a build** (the dispatch's explicit branch). **Load-bearing consequence:** §3.D-2 (C3-restrict)
+  is **removed from the near-term option set** — it is joint-step-gated (a Stage-5+ successor), so the F-B
+  frame collapses to **§3.D-1 (annotate-via-open-mark) EVERYWHERE**, floored by disable; recovering the 53
+  corrections is a **declared inference-quality question (#8)**. **#3 discharged:** the O-17 surprise
+  (contradiction uncorrelated with correctness) is *explained* — F-B fires on any committed-slice-with-a-
+  tidier-progression, a population **never filtered for key↔chord coupling**, so it is mis-scoped off the C3
+  minority by construction; no residual surprise. Population footing reproduced (1043 = 53 corr + 809 harm +
+  181 neutral); complement = the whole population, fourth/fifth harm majority confirmed (472/809 = 58 %).
+  **Reproducibility finding surfaced (#16):** the `C:/tmp/c1/fs_*` corpus_manifest is STALE (git_hash
+  `d1d4d3d7f0` + sha fingerprints are a Jul-4 leftover; the actual dumps are a Jul-6 `≥c50002fee1` regen the
+  fs-driver never re-manifested; `theta_fit` globs directly so the measurement is on the real content) — the
+  E0 fs dirs should be re-manifested or the taxonomy scripts should validate. Both stops green **by
+  construction** (zero `src/` touched ⟹ byte-identical to HEAD `712830210a` = batch 52/24/52 + robust sandwich
+  identity-PASS). On CC's report: Cowork verifies at objects → presents the **annotate(±C3)** build-event
+  decision surface to the user (annotate-everywhere now; C3-restrict deferred to the joint step).
 - **O-17 (ENGAGE ARC #1 — the F-B fine-grain override REDESIGN design/scoping pass, 2026-07-06, session 24;
   `cc_engage_fb_redesign_design_report.md` + `cowork_fb_redesign_design.md`).** The engage arc's opener,
   read-only (no `src/`, no scoring value, no corpus write, no build, no θ retune — architectural design,

@@ -248,12 +248,33 @@ joint-step trigger holds (L3 key confidence below bar AND the chord flips under 
 a small, well-targeted population, not "any committed slice with a tidier progression."
 - **Theory basis:** the contract already *defines* this trigger as the home of coupled key/chord correction
   (C3); F-B's §10 class-(b) "functional/key regression" job belongs there.
-- **Projected split:** **UNKNOWN `[flag]`** — the C3 population is not in the current dump (§2.5). Needs an
-  additive engage-arc measurement before it can be scoped; must not be adopted on assumption.
-- **Blast radius:** medium — couples F-B to the (still-owed) joint-step design; likely a much smaller fire
-  count, so likely far less harm, but unquantified.
-- **Surprise/risk:** medium — theoretically the *right* long-run home, but its payoff is unmeasured; a
-  build-time measurement gate is mandatory.
+- **Projected split:** ~~UNKNOWN~~ → **UN-COMPUTABLE (engage arc #2 measured, 2026-07-06;
+  `cc_engage_c3_measurement_report.md`).** The C3 trigger is **not computed anywhere** — VERDICT 3 (not
+  read-only measurable, not surfaceable by additive default-off telemetry). The binding blocker is component
+  **(b)** ("a different carried KEY alternative flips the chord reading"): the per-key chord re-decode it
+  requires **is the gated joint key-and-chord step the contract §6-C3 says is "still owed at Stage 5"**
+  ([keymodesequence.h:70-72](src/composing/analysis/key/keymodesequence.h#L70)), and even the closest
+  mechanism — the J-key-iii joint re-key pass — **explicitly leaves the chord unchanged** ("the chord-axis
+  side-effect … is DEFERRED to a faithful mechanism", [regionanalyzer.cpp:369-375](src/composing/analysis/region/regionanalyzer.cpp#L369)).
+  Component (a) is likewise absent from the F-B fullspine chain (which uses `inferLocalKey(...)[0]` + a
+  score-global `homeConf` sigmoid, not the per-slice L3 sequence margin; D-L3a's "no sequence-margin
+  substrate on that path"). Surfacing (b) would mean **building** the joint step (forbidden by #6/#7/#8) —
+  there is no already-computed signal to dump. `[code]` `[flag]`
+- **Blast radius:** ~~medium~~ → **large / deferred** — C3-restrict is **gated on the still-owed joint-step
+  design + build**; it cannot be scoped as a near-term F-B home. It remains the correct *long-run* home for
+  the class-(b) coupled-correction job, but only **after** the joint step exists (a Stage-5+ successor, not
+  an engage-arc option).
+- **Surprise/risk:** the payoff is **unmeasurable until the joint step is built** — not merely unmeasured. A
+  build-time measurement gate is mandatory *and presupposes* the joint machinery.
+
+**Consequence for §4.** With §3.D-2 removed from the near-term option set (un-computable, joint-step-gated),
+the recommendation collapses to **§3.D-1 (annotate-via-open-mark) EVERYWHERE**, floored by §3.A (disable) —
+no C3 carve-out is available to keep the corrective fires selectively. Recovering the 53 corrections is an
+**inference-quality question declared to Cowork (#8), not a redesign this arc can deliver.** The engage
+surprise (progression contradiction uncorrelated with correctness) is *explained*: F-B fires on any
+committed-slice-with-a-tidier-progression, a population **never filtered for key↔chord coupling** — so it is
+mis-scoped off the C3 minority by construction, which is exactly why correctness is uncorrelated with the
+contradiction.
 
 ---
 

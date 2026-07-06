@@ -1,6 +1,10 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 23 (**★ STAGE-5 ARC CLOSED — R10-b MADE: the
+*Written 2026-05-14. Last updated 2026-07-06, session 25 (engage arc #2 — the C3 coupled key↔chord
+population = **UN-COMPUTABLE / VERDICT 3**: the per-key chord re-decode is the still-owed joint step, so
+C3-restrict is removed from the near-term F-B option set and the frame collapses to annotate-everywhere; see
+the START HERE block + O-18 + `cc_engage_c3_measurement_report.md`. No `src/`, no build, no push-blocking
+change — pushed fork-only). Prior header, kept: session 23 (**★ STAGE-5 ARC CLOSED — R10-b MADE: the
 batch→robust regression-stop handover is normative. CLAUDE.md gate section = the robust-unit stop (block A;
 baselines root 63.36/62.37/63.25 · RN 44.58/42.40/44.41 · key 68.13/64.43/67.50); the two-tier policy LIVE
 (block B); batch 52/24/52 relocated to history + frozen at `tools/robust_stop/batch_stop_frozen_history.json`
@@ -31,6 +35,34 @@ design signed). This header is the fresh-session entry point; full narratives li
 and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
+
+**★ ENGAGE ARC #2 DELIVERED — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE
+(VERDICT 3) (session 25, 2026-07-06).** The specific-research move (#5/#2) the O-17 surprise called for (#3),
+read-only (no `src/`, no build, no telemetry, no corpus write, no θ retune). **Task-1 verdict: the C3
+trigger is NOT computed anywhere** — not read-only measurable, not surfaceable by additive default-off
+telemetry. Binding blocker = C3 component **(b)** ("a different carried KEY alternative flips the chord
+reading"): the per-key chord **re-decode** it requires **IS the gated joint key-and-chord step the contract
+§6-C3 flags as "still owed at Stage 5"** (`keymodesequence.h:70-72`), and even the closest mechanism — the
+J-key-iii joint re-key pass — **explicitly leaves the chord unchanged** ("the chord-axis side-effect … is
+DEFERRED to a faithful mechanism", `regionanalyzer.cpp:369-375`). Component (a) is likewise absent from the
+F-B fullspine chain (`inferLocalKey(...)[0]` + a **score-global** `homeConf` sigmoid, not the per-slice L3
+sequence margin; the bar is source-verified — `uncertainThreshold` 1.0 / annotate-gate 0.8 — but the bar is
+not the blocker). **No already-computed signal to surface ⟹ producing (b) means BUILDING the joint step
+(forbidden #6/#7/#8) ⟹ verdict 3 = report, not build.** **Load-bearing: §3.D-2 (C3-restrict) is removed from
+the near-term option set** (joint-step-gated, a Stage-5+ successor); the F-B frame **collapses to §3.D-1
+annotate-via-open-mark EVERYWHERE**, floored by disable; **recovering the 53 corrections = a declared
+inference-quality question (#8).** **#3 discharged:** the O-17 surprise is *explained* — F-B fires on a
+population never filtered for key↔chord coupling, so it is mis-scoped off the C3 minority by construction; no
+residual surprise. Footing reproduced (1043 = 53/809/181; 4th/5th harm majority 58 %). **Reproducibility
+finding surfaced (#16):** the `C:/tmp/c1/fs_*` manifest is STALE (git_hash `d1d4d3d7f0` + sha fingerprints a
+Jul-4 leftover; the real dumps are a Jul-6 `≥c50002fee1` regen the fs-driver never re-manifested; `theta_fit`
+globs directly) — re-manifest the E0 dirs or have the taxonomy scripts validate. Both stops green **by
+construction** (zero `src/`; byte-identical to HEAD `712830210a`). Design `cowork_fb_redesign_design.md`
+§3.D-2 updated; report `cc_engage_c3_measurement_report.md`; fitter O-18. **FRESH SESSION'S JOB: verify at
+objects → present the annotate(±C3) build-event DECISION SURFACE to the user (annotate-everywhere now;
+C3-restrict deferred to the still-owed joint step; the 53-recovery is an inference-quality question, not a
+redesign).** The rest of the engage-arc dossier remains queued: §15-13 [5544, parked] · θ/map wiring · L1.5
+surface map · GateA unification · the L5 combinedBoundary inversion · tonicVote.
 
 **★ ENGAGE ARC #1 OPENED — the F-B fine-grain override REDESIGN design/scoping pass DELIVERED (session 24,
 2026-07-06).** The engage arc's opener, read-only (no `src/`, no scoring value, no corpus write, no build, no
