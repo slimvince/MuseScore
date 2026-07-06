@@ -1,6 +1,24 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 26 (engage arc #3 — **the GateA promotion-unification
+*Written 2026-05-14. Last updated 2026-07-06, session 27 (engage arc #4 — **the INFORMATION-LOSS audit**, a
+read-only grounded/classified catalogue [principle #12 made proactive]. READ-ONLY: no `src/`, no corpus write, no
+build, no fix. Four parallel read-only tracing passes over the load-bearing surfaces [bass · spelling · distinct
+alternatives · preserved uncertainty], every candidate CC-verified at code, classified on the central axis
+[OK-provisioned / DEFECT-lost / DEFECT-should-already / UNCLEAR; ambiguous ⟹ UNCLEAR, never guessed]. **11 sites: 2
+DEFECT-LOST · 0 SHOULD-ALREADY · 7 OK-provisioned · 3 UNCLEAR.** Hinge: production = LEGACY `analyzeChord`+gates;
+Layer 4/5 Built+Dormant ⟹ most not-yet-consumed signals are the dormant path's correct forward-provisioning [OK: K2
+`FunctionLayerOutput` "no production consumer"; K3 `HarmonicRegion.keyAlternatives/keyConfidence` "in-memory only …
+exists for Layer 5"; K1 `SliceChord` incl. per-note spelling done right]; the LOST sites are on the legacy
+user-visible carry surface. Fix-queue: **L1** [HIGH, #4, = O-19] Gate A `std::swap` keeps the distinct enharmonic
+partner, FM2 `push_back(buildResult)` loses it [`postscoringgates.cpp:214-234`; PRESENT consumer
+`notationcomposingbridge.cpp:298-300` + future L5]; **L2** [MED, #4, NEW] the legacy `tpcForPc`/merge spelling
+collapse [`analysisutils.h:175-180` + `chordanalyzer.cpp:1229-1240`] destroys same-pc distinct spellings by
+iteration-order → the "second tpc reader" unification residual [adopt L4's per-note `lineOfFifths` reader live].
+UNCLEAR for adjudication: U1 [top-3 cap — which carry surface L5 binds], U2 [J-key-iii chord=R0 stale alt-ranking =
+the key-then-chord truncation the still-owed joint step fixes, `regionanalyzer.cpp:369-375`], U3 [coalesce bass
+re-derive]. Catalogue `cowork_information_loss_audit.md` + report `cc_engage_information_loss_audit_report.md`; O-20;
+pushed fork-only. On CC's report: Cowork verifies the catalogue at objects → brings the user the DEFECT fix-queue +
+the UNCLEAR rows. Prior header, kept: session 26 (engage arc #3 — **the GateA promotion-unification
 DESIGN/SCOPING pass**, the order-of-operations first step [restructuring before Layer 5]. READ-ONLY: no `src/`,
 no build, no corpus write, no push of a behavior change. Assembles the ratification surface for the
 held-since-O-11 GateA retirement. Blast radius re-measured at HEAD on the FULL surface [HEAD-binary
@@ -47,6 +65,34 @@ design signed). This header is the fresh-session entry point; full narratives li
 and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
+
+**★ ENGAGE ARC #4 DELIVERED — the INFORMATION-LOSS audit: a read-only grounded/classified catalogue (session 27,
+2026-07-06).** Principle #12 made **proactive** (sweep the Gate A defect class systematically, not incidentally).
+Read-only (no `src/`, no corpus write, no build, no fix — every fix is its own later ratified event). Four parallel
+tracing passes over the load-bearing surfaces (`cowork_functional_analysis_research_grounding.md`: bass · spelling ·
+distinct alternatives · preserved uncertainty), every candidate CC-verified at code, classified on the user's
+**central axis**. **11 sites: 2 DEFECT-LOST · 0 SHOULD-ALREADY · 7 OK-provisioned · 3 UNCLEAR.** **The hinge**
+(ARCHITECTURE.md §L4/L5): production runs the **LEGACY** `analyzeChord`+gates path while Layer 4/5 are
+**Built+Dormant** — so most not-yet-consumed signals are the dormant path's **correct forward-provisioning** (OK: K1
+`SliceChord`, K2 `FunctionLayerOutput`, K3 `HarmonicRegion.keyAlternatives/keyConfidence`), and the genuine LOST
+sites sit on the legacy path's **user-visible** carry surface. **DEFECT fix-queue:** **L1** (HIGH, #4-relevant,
+already scoped O-19) Gate A `std::swap` preserves the distinct enharmonic partner vs FM2 `push_back(buildResult)`
+loses it (`postscoringgates.cpp:214-234`; consumer PRESENT `notationcomposingbridge.cpp:298-300` + future L5);
+**L2** (MEDIUM, #4-relevant, NEW) the legacy `mergeChordAnalysisTones`/`tpcForPc` spelling collapse
+(`analysisutils.h:175-180` + `chordanalyzer.cpp:1229-1240`) destroys same-pc distinct spellings by iteration-order →
+the named "second tpc reader" unification residual (adopt L4's per-note `lineOfFifths` reader live; closes a #4 loss
++ a #6 duplication). **SHOULD-ALREADY = 0** (substrate cleanly provisioned; the margin-vs-sigmoid gate is a ratified
+D-L3a deferral). **UNCLEAR for user adjudication:** U1 (the `results.size()>=3` cap — which carry surface L5 binds
+to), U2 (J-key-iii leaves the chord = R0 with a stale-under-new-key alt ranking — **the canonical key-then-chord
+truncation the still-owed joint step fixes**, `regionanalyzer.cpp:369-375`, O-18's owed joint step is the future
+consumer), U3 (coalesce bass re-derive — needs a score check). **New taxonomy forms:** (+1) honest-unknown-carry
+(`extensionsKnown`/`openMark`/Abstain), (+2) recomputable-collapse (a value derived from a carried source is
+lossless — guards against over-flagging). Both stops green by construction; suites unchanged. Catalogue
+`cowork_information_loss_audit.md`; report `cc_engage_information_loss_audit_report.md`; fitter O-20; pushed
+fork-only. **FRESH SESSION'S JOB: verify the catalogue at objects → present the DEFECT fix-queue (L1/L2) + the
+UNCLEAR rows (U1/U2/U3) to the user; each fix is its own later Gate-A-style ratified event.** The rest of the
+engage-arc dossier remains queued: F-B annotate build-event · §15-13 [5544, parked] · θ/map wiring · L1.5 surface
+map · GateA unification (L1) · the L5 combinedBoundary inversion · tonicVote.
 
 **★ ENGAGE ARC #2 DELIVERED — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE
 (VERDICT 3) (session 25, 2026-07-06).** The specific-research move (#5/#2) the O-17 surprise called for (#3),

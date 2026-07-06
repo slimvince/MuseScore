@@ -1130,6 +1130,37 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-20 (ENGAGE ARC #4 — the INFORMATION-LOSS audit, read-only grounded catalogue, 2026-07-06;
+  `cowork_information_loss_audit.md` + `cc_engage_information_loss_audit_report.md`).** Principle #12 made
+  systematic: a static sweep of the load-bearing surfaces (bass · spelling · distinct alternatives · preserved
+  uncertainty, `cowork_functional_analysis_research_grounding.md`) for the a–i(+) loss forms, every hit grounded at
+  code and classified on the user's central axis (OK-provisioned / DEFECT-lost / DEFECT-should-already / UNCLEAR;
+  ambiguous consumer-status ⟹ UNCLEAR, never guessed, #1). Four parallel read-only tracing passes, every candidate
+  CC-verified at code. **11 catalogued sites: 2 DEFECT-LOST, 0 SHOULD-ALREADY, 7 OK-provisioned, 3 UNCLEAR** (+2
+  LIVE-path overwrite-on-recompute sites considered and ruled OK; +2 new taxonomy forms recorded). **The
+  classification hinge:** production runs the LEGACY `analyzeChord`+gates path while Layer 4 (`ChordSliceDecoder`) /
+  Layer 5 (`functionoutput`) are Built+Dormant — so most not-yet-consumed signals are the dormant path's correct
+  **forward-provisioning** (OK: K1 `SliceChord`, K2 `FunctionLayerOutput` "NO production consumer", K3
+  `HarmonicRegion.keyAlternatives/keyConfidence` "IN-MEMORY ONLY, no consumer yet … exists for Layer 5"), and the
+  genuine LOST sites are on the legacy path's user-visible carry surface. **The two DEFECT-LOST (the fix-queue, each
+  a later ratified event):** (**L1**, HIGH, #4-relevant — already scoped as O-19) Gate A `std::swap` (preserves the
+  distinct enharmonic partner) vs FM2 `push_back(buildResult)` (appends a winner near-duplicate, loses it),
+  `postscoringgates.cpp:214-234`; consumer PRESENT (`notationcomposingbridge.cpp:298-300`, user-visible) + future L5.
+  (**L2**, MEDIUM, #4-relevant, NEW) the legacy `mergeChordAnalysisTones`/`tpcForPc` spelling collapse
+  (`analysisutils.h:175-180` + `chordanalyzer.cpp:1229-1240`) — same-pc different-TPC tones collapse to one spelling
+  by **iteration order**, destroying a distinct enharmonic spelling; the rebuild L4 already reads per-note spelling
+  correctly (shared `lineOfFifths`), so the fix is the named "**second tpc reader**" unification residual (adopt L4's
+  reader on the live path — closes a #4 loss + a #6 duplication). **SHOULD-ALREADY empty** is itself informative
+  (substrate cleanly provisioned, not mis-wired; the margin-vs-sigmoid gate is a ratified D-L3a deferral, not a gap).
+  **The 3 UNCLEAR for user adjudication:** U1 (the `results.size()>=3` cap — which carry surface L5 binds to, legacy
+  `results[]` or rebuild L4 full-cube), U2 (J-key-iii leaves the chord = R0, stale-under-new-key alt ranking — the
+  canonical "key-then-chord truncation the owed joint step is meant to fix", `regionanalyzer.cpp:369-375`; O-18's
+  still-owed joint step is the future consumer), U3 (coalesce bass re-derive — correction or loss, needs a score
+  check). **New taxonomy forms:** (+1) honest-unknown-carry (the positive counter-form — `extensionsKnown`/`openMark`/
+  `SliceDecision::Abstain`), (+2) recomputable-collapse (a hard value derived from a carried/regenerable source is
+  lossless — guards against over-flagging; e.g. `SliceKeyMode.uncertain ≡ confidence<threshold`). READ-ONLY: no
+  `src/`/corpus/build/fix; both stops green by construction; suites unchanged. **The fix-queue (L1/L2) + the UNCLEAR
+  rows are the user-adjudication surface; each fix is its own later Gate-A-style ratified event.**
 - **O-19 (ENGAGE ARC #3 — the GateA promotion-unification design/scoping pass, 2026-07-06;
   `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_design_report.md`).** Read-only
   restructuring design (the order-of-operations first step) that assembles the ratification surface for the
