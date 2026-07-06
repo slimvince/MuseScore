@@ -32,6 +32,29 @@ and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
 
+**★ ENGAGE ARC #1 OPENED — the F-B fine-grain override REDESIGN design/scoping pass DELIVERED (session 24,
+2026-07-06).** The engage arc's opener, read-only (no `src/`, no scoring value, no corpus write, no build, no
+θ retune — architectural design, moratorium-clear). **The ratified backlog is PUSHED:** `git push origin
+master` = `ce509b0961..923f149561`, ahead-count **76→0**, new `origin/master` =
+`923f14956157d3117988c12e0b51d9c858b9813c` (fork-only; `upstream` push disabled; `cfc7eb5e39` stays
+fork-local). **The F-B mechanism is characterized at the source** (`attemptFineGrainOverride`,
+`functionresolver.cpp:381`; incumbent = the L4 vertical-fit `composite` — code-truth; contradiction = the
+coarse {0,1,2,3} progression-plausibility count; dormant — only `batch_analyze.cpp:3186`'s E0 harness runs
+it). **The 1043/53/809 net-harm is decomposed at the measured data** (read-only over the existing
+`C:/tmp/c1/fs_*` dumps): ★ **the harm rate is ~uniform 71–86 % across every stratum — there is NO
+discriminator, and no θ can carve corrections from harms** (highest harm at highest L4 confidence); ★ **even a
+vertically-fair comparison (`g≤0`) is 70.8 % harm — the incumbent-repair premise is REFUTED at data.**
+**CC recommends re-frame-to-annotation (§8 case-3 honest carry), floored by disable; rejects the structural
+gate and the incumbent-repair as measured net-negative; the 53 lost corrections need a
+correctness-correlated contradiction signal = an inference-quality question declared to Cowork, out of
+scope.** Design doc `cowork_fb_redesign_design.md`; report `cc_engage_fb_redesign_design_report.md`; O-17.
+**FRESH SESSION'S JOB: verify at objects → present the F-B redesign-option DECISION SURFACE to the user
+(annotate vs disable vs C3-restrict — the decision-surface-first rule); the implementation is the user's next
+ratified build event (touches `functionresolver.cpp` + `ResolvedReading` + contract §4 F-B + L5
+§5.5/§10/§15-2 + `docs/scoring_model.md` + roadmap/fitter; acceptance = the robust-unit stop moving
+favorably at engage).** The rest of the engage-arc dossier remains queued: §15-13 [5544, parked] · θ/map
+wiring · L1.5 surface map · GateA unification · the L5 combinedBoundary inversion · tonicVote.
+
 **★ STAGE-5 ARC CLOSED (session 23, 2026-07-06) — R10-b MADE: the batch→robust regression-stop handover is
 normative.** CC executed `cc_instruction_stage5_r10b_ratification.md` (docs + one-JSON-snapshot only —
 NO `src/`, NO scoring value, NO corpus write, NO build, NO push). The CLAUDE.md gate section is now the

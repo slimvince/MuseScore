@@ -1130,6 +1130,34 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-17 (ENGAGE ARC #1 — the F-B fine-grain override REDESIGN design/scoping pass, 2026-07-06, session 24;
+  `cc_engage_fb_redesign_design_report.md` + `cowork_fb_redesign_design.md`).** The engage arc's opener,
+  read-only (no `src/`, no scoring value, no corpus write, no build, no θ retune — architectural design,
+  moratorium-clear; NOT the D-FS θ closure, which Phase 3 already proved a dead end). **The ratified backlog
+  pushed fork-only** (`ce509b0961..923f149561`, 76→0; `upstream` untouched). **F-B characterized at the
+  source** (`attemptFineGrainOverride`, `functionresolver.cpp:381`; incumbent = the L4 vertical-fit
+  `SliceConfidence.composite` — code-truth via `chordslicedecoder.h:404`; contradiction = the coarse
+  {0,1,2,3} progression-plausibility count; dormant — only `batch_analyze.cpp:3186`'s E0 harness runs it; NO
+  implementation drift, ONE premise-invalidation: §15-2's \"θ accounts for the missing progression term\" is
+  refuted). **The 1043/53/809 decomposed at the measured data** (read-only over the existing `C:/tmp/c1/fs_*`
+  dumps, `theta_fit`-join reproduced to the unit): the harm rate is **~uniform 71–86 % across every measured
+  stratum** (highest harm at the highest L4 confidence ⟹ no θ can separate corrections from harms — the
+  code-grounded proof of \"best θ disables it\"); fourth/fifth \"progression tidying\" moves = 55 % of fires /
+  58 % of harm; **the discriminator = NONE**; and — the key new result beyond Phase 3 — **the incumbent-repair
+  premise is REFUTED at data: even where the selected alternative is vertically ≥ the commit (`g≤0`), harm is
+  still 70.8 % (corr−harm −163)**, so making the comparison vertically-fair does not reach net-positive.
+  **Options** (each with layer/theory/projected-split/blast-radius/risk): disable-baseline (corr−harm 0,
+  +756 recovery — the floor) · gate (degenerates to disable) · incumbent-repair (refuted, large surface) ·
+  **re-frame-annotate (§8 case-3 honest carry — 0 harm/0 corr + preserves the 1043 contradiction signals as
+  uncertainty; CC's recommendation)** · re-frame-C3 (the correct long-run home = the §6-C3 joint-step
+  minority; split UNKNOWN, needs a new measurement — flagged, not assumed). **The 53 lost corrections need a
+  correctness-correlated contradiction signal = an inference-quality question, declared to Cowork, out of
+  this pass's scope.** Acceptance for the (separately-ratified) build event = the robust-unit stop: class-(b)
+  root-disagree DURATION non-increase per preset — dormant ⟹ identity today, must MOVE favorably at engage
+  (the 809 harms are ~non-symmetric pitch-class-decidable roots = class-(b), so removing them reduces the
+  class-(b) duration). Both stops green (batch 52/24/52; robust sandwich identity-PASS; nothing here touches
+  them). On CC's report: Cowork verifies at objects → presents the redesign-option decision surface to the
+  user (annotate vs disable vs C3-restrict).
 - **O-16 (R10-b — the batch→robust stop handover MADE; STAGE-5 ARC CLOSED, 2026-07-06, session 23;
   `cc_stage5_r10b_ratification_report.md`).** The user's arc-closing ratification event on the R10-a surface.
   Docs + one-JSON-snapshot only — NO `src/`, NO scoring value, NO corpus write, NO build, NO push (outside the
