@@ -27,6 +27,15 @@ Not-yet-consumed information is **NOT automatically a defect.** Every site is cl
 **#4-relevant** = the loss touches a research-confirmed load-bearing correctness signal (bass / spelling / distinct
 alternatives / preserved uncertainty — `cowork_functional_analysis_research_grounding.md` §1/§4).
 
+**The exclusion-information refinement (#12 elaboration, user 2026-07-06).** Information is not only the winning
+reading and its plausible rivals — a possibility held with *very low* confidence, or one that is *(near-)excluded*,
+is itself information ("finding by exclusion": knowing what the answer is NOT, and how strongly, narrows what it
+is). So the right representation is a **graded distribution** — carry an unlikely reading at low confidence rather
+than dropping it — and pruning/capping the low-confidence tail is information loss **unless** that tail is
+recomputable from what is kept (the +2 guard). This sharpens forms (f) cap and (g) uncertainty-collapse, is the
+standing rationale for the U1 uncap, and is a standing Layer-5 design principle (Layer 5 reasons over the full
+graded distribution incl. exclusions, not a hard shortlist).
+
 **The two-track architecture the classification hinges on (ARCHITECTURE.md §Layers 4/5).** Production runs the
 **LEGACY** `analyzeChord` + post-scoring-gates path (where the `results[]` alternatives carry, Gate A/FM2, and
 `tpcForPc` live). Layer 4 (`ChordSliceDecoder`) and Layer 5 (`functionoutput`) are **Built+Dormant**, engaging
@@ -116,6 +125,7 @@ Recorded so the axis application is auditable (a genuine-loss must not be waved 
 | (i) overwrite-on-recompute | ✓ | **L1** (FM2 rebuild), **U3** (coalesce), pedal/sparse (OK) |
 | **(+1) honest-unknown-carry** *(new — the positive counter-form)* | ✓ | **K1** `extensionsKnown` / `openMark` / `SliceDecision::Abstain` — carrying "we don't know" explicitly rather than guessing. The correct pattern L2's `Unknown→diatonic` and any future guess must respect. |
 | **(+2) recomputable-collapse** *(new — a collapse that is NOT a loss)* | ✓ | **K5** (sigmoid), **K6** (`uncertain` flag) — a hard value derived from a **carried** source (or deterministically regenerable) is lossless; not every collapse is a defect. Guards against over-flagging. |
+| **(+3) exclusion/negative-evidence loss** *(new — user refinement, 2026-07-06)* | ✓ | **U1** (the top-3 cap drops ranks 4+ **and their low confidences** off the carried surface). Dropping a possibility rather than carrying it at very-low confidence loses "finding by exclusion" — that a reading is (near-)excluded IS information. A defect **unless** the excluded tail is recomputable from what is kept (cf. +2). Rationale for the U1 uncap; a standing Layer-5 principle. |
 
 ---
 
@@ -130,10 +140,23 @@ Recorded so the axis application is auditable (a genuine-loss must not be waved 
    **"second tpc reader" unification residual**, ARCHITECTURE.md L4). Closes a #4-load-bearing (spelling→root) loss
    and a total-unification (#6) duplication in one move. Sequence: after or with the L1/L4-L5 engage work, since the
    correct reader already exists on the dormant path.
+3. **U1 — uncap the carried readings (Cowork-ratified 2026-07-06, #4/#12-relevant).** Remove the `results.size() >= 3`
+   cap in `applyHarmonicFunction`; carry the **full** ranked set, not the top-3. Rationale = the exclusion-information
+   refinement above (the capped-out low-confidence candidates carry finding-by-exclusion information; dropping them off
+   the carried surface loses it). A #12 fix-event; the winner is unchanged and the carried alternatives grow — verify
+   **winner-byte-identical + the enlarged carry** on the full surface, then ratify. Supersedes the U1 "which surface"
+   ambiguity: carry it all and see what is really there.
 
-**Adjudication asks (Table 4):** U1 (which carry surface L5 binds to — settles whether the top-3 cap is L1-adjacent
-or a low product choice); U2 (is the owed joint step's stale-alt-ranking acceptable-until-engage, or a faithful
-re-rank owed now); U3 (is the coalesce bass re-derivation a correction or a loss — needs a score check).
+**Adjudications (Cowork-ratified 2026-07-06) — Table 4 resolved:**
+- **U1 → UNCAP** (fix-queue item 3 above). *"Keep it unlimited and we will see what we have in reality."*
+- **U2 → KEEP, deferred to the owed joint step (O-18), ON CONDITION it stays characterized EXACTLY.** *"Keep as long as
+  we know exactly what it is."* The exact, standing characterization: on a J-key-iii joint re-key,
+  `region.keyModeResult` is updated but the chord + its `alternatives` are left as Pass-1 artifacts, **not re-ranked
+  under the new key** — a stale-under-new-key chord ranking. This is the architecture-intended future consumer's job
+  (the still-owed joint step); it stays as-is until then. **Not** a should-already gap. (If the joint step's design or
+  this behavior ever changes such that the loss is no longer *exactly* this, re-adjudicate.)
+- **U3 → CHECK (queued).** *"Should be done sooner or later."* A small read-only score/runtime check adjudicates
+  whether the coalesce whole-region bass re-derivation is a correction (richer) or a loss; low priority.
 
 ## Research cross-references (#4-relevant losses)
 

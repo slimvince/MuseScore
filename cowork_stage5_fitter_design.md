@@ -1130,6 +1130,20 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-21 (ENGAGE ARC #3b — the GateA promotion-unification BUILD event DELIVERED, 2026-07-06;
+  `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_build_report.md`; feat `200681a855`).**
+  The ratified arc-#3 design, built (Layer 4 only). One `promoteToWinner` primitive + one builder wrapper
+  `buildResultFromGateCtx` now own all post-scoring promotion; the enharmonic Major-add6→Minor7 flip is one
+  primitive call whose present branch (`presentHint = bestAltIdx`) reproduces Gate A's `std::swap` byte-for-byte
+  and whose append branch reproduces FM2, so the separate `GateA` rule removes byte-identically. **Full-surface
+  byte-identity PROVEN at objects** (winner AND `alternatives[]`, whole `.ours.json`): **0 diffs / 1056 files
+  across all 352×3, including the 36** — `C_unified == C_HEAD` by construction, so the O-11 held-since-Stage-5
+  GateA retirement is now MADE and the **O-19 / L1 information-loss fix-queue item is DISCHARGED** (the correct
+  carry — the distinct enharmonic partner kept, no winner near-duplicate — is what the unified primitive
+  produces). Both stops green (batch 52/24/52 set-diff empty; robust sandwich identity-PASS, +0/-0, class-(b)&(a)
+  dur Δ+0); suites 1101/53+4skip/11 (no golden refresh); committed corpus + robust-stop reference untouched
+  (scratch). §6 rules 10→9; FM2 the surviving flip rule. The Stage-5 §6-block dissolution continues from the
+  unified surface. Next: the remaining fix-queue (L2 spelling collapse) + the UNCLEAR rows (U1/U2/U3) per O-20.
 - **O-20 (ENGAGE ARC #4 — the INFORMATION-LOSS audit, read-only grounded catalogue, 2026-07-06;
   `cowork_information_loss_audit.md` + `cc_engage_information_loss_audit_report.md`).** Principle #12 made
   systematic: a static sweep of the load-bearing surfaces (bass · spelling · distinct alternatives · preserved

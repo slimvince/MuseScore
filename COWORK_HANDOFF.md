@@ -1,6 +1,26 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 27 (engage arc #4 — **the INFORMATION-LOSS audit**, a
+*Written 2026-05-14. Last updated 2026-07-06, session 28 (engage arc #3b — **the GateA promotion-unification
+BUILD event** [user-ratified]. Layer-4 `src/` change + build + full-surface verification, implementing the
+ratified arc-#3 design. **One `promoteToWinner` primitive** [present-first swap = former **Gate A**; append-built
+pull = former **FM2**] + **one builder wrapper** `buildResultFromGateCtx`; the three duplicated `buildResult`
+lambdas collapse [postscoringgates + chordpostpasses route through the primitive; harmonicfunctionlayer's initial
+build calls `buildChordResult` directly]. The enharmonic Major-add6→Minor7 flip = ONE primitive call
+[`presentHint = bestAltIdx` reproduces Gate A's `std::swap` byte-for-byte; append reproduces FM2]; Gate E, the
+G-family [G-E/G-D] and the Iter-91 bass-pull also route through it. **The separate `GateA` §6 rule REMOVED**
+[enum member / `ruleOff` guard / name-map; §6 rules 10→9]; **FM2** = surviving flip rule [O-11 retirement
+condition met — the primitive reproduces Gate A's carry]. doc-sync `docs/scoring_model.md` [new §6a]; stale
+`chordpostpasses.cpp:128` comment removed. **Full-surface byte-identity PROVEN at objects** [winner AND
+`alternatives[]` = whole `.ours.json`]: **0 diffs / 1056 files across all 352×3, including the 36** —
+`C_unified == C_HEAD` by construction. **Both stops GREEN [measured]:** batch 52/24/52 set-diff empty; robust
+sandwich identity-PASS [runs 6868/7036/6883 +0/-0; class-(b)&(a) dur Δ+0]. Suites 1101/53+4skip/11 [NO golden
+refresh]; committed `tools/corpus/` + `tools/robust_stop/` untouched [scratch]. Net user-visible delta = ZERO
+[#12]; total-unification [#6] closing the L1 info-loss path [O-11/O-19]. feat `200681a855` [src + tests +
+`docs/scoring_model.md`] + this `docs(cowork):` fold [report `cc_engage_gateA_unification_build_report.md` +
+STATUS + HANDOFF + fitter observation + instruction (force-add) + the pending `cowork_information_loss_audit.md`
+edits]; pushed fork-only [`cfc7eb5e39` upstream HARD STOP honored]. On CC's report: Cowork verifies the
+byte-identity proof at objects; the O-11 / L1 fix-queue item is DISCHARGED. Prior header, kept: session 27
+(engage arc #4 — **the INFORMATION-LOSS audit**, a
 read-only grounded/classified catalogue [principle #12 made proactive]. READ-ONLY: no `src/`, no corpus write, no
 build, no fix. Four parallel read-only tracing passes over the load-bearing surfaces [bass · spelling · distinct
 alternatives · preserved uncertainty], every candidate CC-verified at code, classified on the central axis
@@ -65,6 +85,24 @@ design signed). This header is the fresh-session entry point; full narratives li
 and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
+
+**★ ENGAGE ARC #3b DELIVERED — the GateA promotion-unification BUILD event (session 28, 2026-07-06).** The
+ratified arc-#3 design, built (Layer 4 only, #7). **One `promoteToWinner` primitive** (`chordanalyzer.h` /
+`postscoringgates.cpp`) owns both promotion idioms — present-first swap (former **Gate A**) and append-built pull
+(former **FM2**) — behind one contract, plus **one builder wrapper** `buildResultFromGateCtx`; the three duplicated
+`buildResult` lambdas collapse. The enharmonic flip is ONE call (`presentHint = bestAltIdx` reproduces Gate A's
+swap byte-for-byte; append reproduces FM2); Gate E, G-family (G-E/G-D) and Iter-91 route through it too. **The
+separate `GateA` §6 rule is REMOVED** (enum/guard/name-map; §6 rules 10→9) — **FM2** is the surviving flip rule
+(O-11 retirement condition met). doc-sync `docs/scoring_model.md` (new §6a); stale `chordpostpasses.cpp:128`
+comment removed. **Full-surface byte-identity PROVEN at objects** (winner AND `alternatives[]`): **0 diffs / 1056
+files across all 352×3, including the 36** — `C_unified == C_HEAD` by construction (present branch keyed to
+`bestAltIdx`; append = FM2). **Both stops GREEN (measured):** batch 52/24/52 set-diff empty; robust sandwich
+identity-PASS (runs +0/-0, class-(b)&(a) dur Δ+0). Suites 1101/53+4skip/11 (no golden refresh). Committed corpus +
+robust-stop reference untouched (all on scratch). Net user-visible delta = **ZERO** (#12); total-unification (#6)
+that closes the **L1 / O-11 / O-19** information-loss path — that fix-queue item is **DISCHARGED**. feat
+`200681a855` + `docs(cowork):` fold (report `cc_engage_gateA_unification_build_report.md` + STATUS + HANDOFF +
+fitter observation + instruction + info-loss-audit edits); pushed fork-only (`cfc7eb5e39` upstream HARD STOP
+honored). On CC's report: Cowork verifies the byte-identity proof at objects.
 
 **★ ENGAGE ARC #4 DELIVERED — the INFORMATION-LOSS audit: a read-only grounded/classified catalogue (session 27,
 2026-07-06).** Principle #12 made **proactive** (sweep the Gate A defect class systematically, not incidentally).
