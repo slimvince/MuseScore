@@ -1,6 +1,18 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 25 (engage arc #2 — the C3 coupled key↔chord
+*Written 2026-05-14. Last updated 2026-07-06, session 26 (engage arc #3 — **the GateA promotion-unification
+DESIGN/SCOPING pass**, the order-of-operations first step [restructuring before Layer 5]. READ-ONLY: no `src/`,
+no build, no corpus write, no push of a behavior change. Assembles the ratification surface for the
+held-since-O-11 GateA retirement. Blast radius re-measured at HEAD on the FULL surface [HEAD-binary
+`disable_rule GateA` decode, scratch, frozen corpus read-not-written]: **36 Baroque, 0 winner-diffs / 352,
+alternatives-only** — the 2.2c count reproduced + **enumerated by name**; carry delta = the enharmonic
+Major-add6 partner alternative overwritten by a freshly-built winner near-duplicate under FM2's append vs kept
+under Gate A's swap [§12 loss]. Design: one `promoteToWinner` primitive with a **present-first dedup guard** +
+one collapsed builder wrapper ⟹ GateA + FM2 = two branches of one promotion ⟹ `GateA` removes byte-identically,
+reproducing **C_HEAD** [correct carry grounded at the O1b contract]; all Layer 4. The 36-score alternatives
+delta = the user-ratification surface for the separate build event; both stops green by construction. Design
+`cowork_gateA_unification_design.md` + report `cc_engage_gateA_unification_design_report.md`; O-19; pushed
+fork-only). Prior header, kept: session 25 (engage arc #2 — the C3 coupled key↔chord
 population = **UN-COMPUTABLE / VERDICT 3**: the per-key chord re-decode is the still-owed joint step, so
 C3-restrict is removed from the near-term F-B option set and the frame collapses to annotate-everywhere; see
 the START HERE block + O-18 + `cc_engage_c3_measurement_report.md`. No `src/`, no build, no push-blocking

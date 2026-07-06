@@ -1130,6 +1130,30 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-19 (ENGAGE ARC #3 — the GateA promotion-unification design/scoping pass, 2026-07-06;
+  `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_design_report.md`).** Read-only
+  restructuring design (the order-of-operations first step) that assembles the ratification surface for the
+  held-since-O-11 GateA retirement. **Blast radius re-measured at HEAD on the FULL surface** (HEAD-binary
+  `disable_rule GateA` decode, scratch, frozen corpus read-not-written): **36 Baroque scores, 0 winner-diffs /
+  352, alternatives-only** — the 2.2c count reproduced and now **enumerated by name** (the 36 `bwv###` stems).
+  **Carry-delta content characterized:** on each slice a Minor7-slash winner's **enharmonic Major-add6 partner**
+  is retained as an alternative under Gate A's swap (Idiom A) but **overwritten by a freshly-built near-duplicate
+  of the winner** under FM2's append (Idiom B) — a §12 information-loss form (e.g. `bwv17.7@19680`
+  `[A6,A6,A6]`→`[A6,A6,F#m7/A]`). Snapshot reach = none (no overlap with the 11-stem snapshot corpus).
+  **Source characterization:** one real builder `buildChordResult` + **three** thin `buildResult` wrappers (two
+  byte-identical gateCtx copies at `postscoringgates.cpp:65` / `chordpostpasses.cpp:129`, one WorkCand variant at
+  `harmonicfunctionlayer.cpp:516`; the `chordpostpasses.cpp:128` "…/analyzeChord" comment is stale —
+  analyzeChord delegates to `fn::applyHarmonicFunction`), and **two promotion idioms** (swap-existing vs
+  append-built) with no shared primitive. **Design:** one `promoteToWinner` primitive with a **present-first
+  dedup guard** + one collapsed builder wrapper ⟹ Gate A + FM2 become the two internal branches of one
+  promotion ⟹ the separate `GateA` rule removes **byte-identically** (winner AND carry), reproducing C_HEAD.
+  **Correct carry = C_HEAD grounded at the O1b carry contract** (retain the distinct partner reading; the
+  FM2-append form loses it — the same anti-pollution principle the Gate G-E phantom-pop already applies,
+  `postscoringgates.cpp:388-392`), **not** chosen because Gate A sits at HEAD. All Layer 4, in-layer; nothing
+  cross-layer. **The 36-score alternatives delta is the user-ratification surface** for the separate build
+  event (winner+alternatives byte-diff ×3 expected identical everywhere; both stops green by construction;
+  suites/snapshots unchanged). No `src`/corpus/build/push-of-behavior-change. **O-11 retirement condition now
+  has its ratification surface.**
 - **O-18 (ENGAGE ARC #2 — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE, 2026-07-06,
   session 25; `cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).** The
   specific-research move (#5/#2) the O-17 surprise called for (#3): does F-B's override isolate a net-positive
