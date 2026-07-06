@@ -1,0 +1,193 @@
+{
+ "schema": 1,
+ "artifact": "R10-a robust-unit reference (batch->robust regression-stop handover diff base)",
+ "date": "2026-07-06",
+ "dispatch": "cc_instruction_stage5_r10_assembly.md (Stage-5 R10-a)",
+ "unit": "A-8 union-of-boundaries cell, duration-weighted; variant (b) DCML-only (music21 is NOT GT); root governs, RN+key tracked beside",
+ "identity": "stem@runStartTick (maximal contiguous same-(stem,our_root,dcml_root) failing run; re-slice-stable)",
+ "generated_by": {
+  "instrument": "tools/a8_rebaseline_measure.py",
+  "instrument_commit": "c2914884af",
+  "key_parsers": "tools/compare_rn.py (_our_key_tonic / _dcml_key_tonic)",
+  "key_parsers_commit": "5f7cb7376e",
+  "invocation": "python tools/a8_rebaseline_measure.py --out-dir tools/robust_stop",
+  "self_validation": "variant-(b) 5-bucket duration decomposition asserted byte-identical to compare_rn.grid_score_regions() on every covered piece (326x3) at generation"
+ },
+ "provenance": {
+  "head": "443e79dabde520a7c3dcabb01d83cb2221203262",
+  "head_short": "443e79dabd",
+  "corpus_git_hash": "c50002fee1",
+  "corpus_complete": true,
+  "corpus_scores": 352,
+  "wir_coverage": 326,
+  "wir_excluded_no_annotation": 26,
+  "batch_stop": "52/24/52 (Baroque/Jazz/Default), set-diff empty vs CLAUDE.md ratified sets at generation"
+ },
+ "reproduce_status": {
+  "root": {
+   "baroque": {
+    "measured": 63.3581,
+    "ratified_2_2e": 63.36,
+    "match": true
+   },
+   "jazz": {
+    "measured": 62.3664,
+    "ratified_2_2e": 62.37,
+    "match": true
+   },
+   "default": {
+    "measured": 63.2539,
+    "ratified_2_2e": 63.25,
+    "match": true
+   }
+  },
+  "rn": {
+   "baroque": {
+    "measured": 44.5785,
+    "ratified_2_2e": 44.58,
+    "match": true
+   },
+   "jazz": {
+    "measured": 42.399,
+    "ratified_2_2e": 42.4,
+    "match": true
+   },
+   "default": {
+    "measured": 44.4107,
+    "ratified_2_2e": 44.41,
+    "match": true
+   }
+  },
+  "key": {
+   "baroque": {
+    "measured": 68.1251,
+    "recorded_2_2e": 68.19,
+    "prior_baseline": 68.11,
+    "match_2_2e": false
+   },
+   "jazz": {
+    "measured": 64.4321,
+    "recorded_2_2e": 64.52,
+    "prior_baseline": 64.43,
+    "match_2_2e": false
+   },
+   "default": {
+    "measured": 67.4972,
+    "recorded_2_2e": 67.77,
+    "prior_baseline": 67.5,
+    "match_2_2e": false
+   }
+  },
+  "note": "ROOT (governing metric, dispatch STOP anchor) and RN reproduce the 2.2e-ratified baselines EXACTLY. KEY reproduces the PRIOR baseline (68.11/64.43/67.50), NOT the 2.2e-recorded column (68.19/64.52/67.77). Jazz .ours.json is byte-identical (2.2e-proven) + WiR + key-path code git-unchanged since c50002fee1, so Jazz key MUST equal the prior 64.43 (measured 64.4321); the 2.2e-recorded 64.52 is unreproducible and self-contradictory. The reproducible key values here are the frozen reference; the 2.2e key-column error is a DECLARED finding for Cowork to correct at the R10-b ratification event (see cc_stage5_r10_assembly_report.md)."
+ },
+ "presets": {
+  "baroque": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 63.3581,
+   "rn_agree_pct": 44.5785,
+   "key_agree_pct": 68.1251,
+   "key_parse_fail_pct": 0.0926,
+   "root_disagree_dur": 3038960,
+   "root_disagree_cells": 7882,
+   "class_b_root_disagree_dur": 2932400,
+   "class_b_root_disagree_cells": 7603,
+   "class_a_root_disagree_dur": 106560,
+   "class_a_root_disagree_cells": 279,
+   "variant_b_root_fail_runs": 6868,
+   "variant_b_root_fail_cells": 7882,
+   "variant_a_root_fail_runs": 1507,
+   "variant_a_root_fail_cells": 1637,
+   "variant_a_root_disagree_dur": 557640,
+   "variant_a_class_b_dur": 529680,
+   "variant_a_class_a_dur": 27960,
+   "batch_stop_count": 52,
+   "mapping_summary": {
+    "batch_cases": 52,
+    "still_failing_variant_b": 52,
+    "still_failing_variant_a": 50,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26
+   },
+   "run_enumeration_file": "baroque_variant_b_root_fail_runs.txt"
+  },
+  "jazz": {
+   "scored_dur": 8291520,
+   "unscored_dur": 194880,
+   "root_agree_pct": 62.3664,
+   "rn_agree_pct": 42.399,
+   "key_agree_pct": 64.4321,
+   "key_parse_fail_pct": 0.1303,
+   "root_disagree_dur": 3120400,
+   "root_disagree_cells": 8099,
+   "class_b_root_disagree_dur": 2997520,
+   "class_b_root_disagree_cells": 7779,
+   "class_a_root_disagree_dur": 122880,
+   "class_a_root_disagree_cells": 320,
+   "variant_b_root_fail_runs": 7036,
+   "variant_b_root_fail_cells": 8099,
+   "variant_a_root_fail_runs": 1252,
+   "variant_a_root_fail_cells": 1357,
+   "variant_a_root_disagree_dur": 465840,
+   "variant_a_class_b_dur": 441960,
+   "variant_a_class_a_dur": 23880,
+   "batch_stop_count": 24,
+   "mapping_summary": {
+    "batch_cases": 24,
+    "still_failing_variant_b": 24,
+    "still_failing_variant_a": 23,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 1
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26
+   },
+   "run_enumeration_file": "jazz_variant_b_root_fail_runs.txt"
+  },
+  "default": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 63.2539,
+   "rn_agree_pct": 44.4107,
+   "key_agree_pct": 67.4972,
+   "key_parse_fail_pct": 0.3993,
+   "root_disagree_dur": 3047600,
+   "root_disagree_cells": 7904,
+   "class_b_root_disagree_dur": 2936000,
+   "class_b_root_disagree_cells": 7609,
+   "class_a_root_disagree_dur": 111600,
+   "class_a_root_disagree_cells": 295,
+   "variant_b_root_fail_runs": 6883,
+   "variant_b_root_fail_cells": 7904,
+   "variant_a_root_fail_runs": 1491,
+   "variant_a_root_fail_cells": 1619,
+   "variant_a_root_disagree_dur": 551760,
+   "variant_a_class_b_dur": 523800,
+   "variant_a_class_a_dur": 27960,
+   "batch_stop_count": 52,
+   "mapping_summary": {
+    "batch_cases": 52,
+    "still_failing_variant_b": 52,
+    "still_failing_variant_a": 50,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26
+   },
+   "run_enumeration_file": "default_variant_b_root_fail_runs.txt"
+  }
+ }
+}

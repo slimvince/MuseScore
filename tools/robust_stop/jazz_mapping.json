@@ -1,0 +1,275 @@
+{
+ "rows": [
+  {
+   "stem": "bwv144.6",
+   "tick": 15360,
+   "our_root": 1,
+   "dcml_root": 10,
+   "our_sym": "C#dim7/G",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv144.6",
+   "tick": 16320,
+   "our_root": 1,
+   "dcml_root": 10,
+   "our_sym": "C#dim7/E",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv245.15",
+   "tick": 13920,
+   "our_root": 2,
+   "dcml_root": 8,
+   "our_sym": "Dm/G#",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv245.17",
+   "tick": 4800,
+   "our_root": 5,
+   "dcml_root": 2,
+   "our_sym": "F/D",
+   "cls": "b",
+   "n_overlap_cells": 2,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv245.37",
+   "tick": 13920,
+   "our_root": 3,
+   "dcml_root": 9,
+   "our_sym": "Ebm/A",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv245.40",
+   "tick": 51360,
+   "our_root": 5,
+   "dcml_root": 3,
+   "our_sym": "F7sus/Bb",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv272",
+   "tick": 4320,
+   "our_root": 11,
+   "dcml_root": 8,
+   "our_sym": "Bdim7/D",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv272",
+   "tick": 8160,
+   "our_root": 11,
+   "dcml_root": 8,
+   "our_sym": "Bm13/A",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv280",
+   "tick": 17280,
+   "our_root": 4,
+   "dcml_root": 1,
+   "our_sym": "Em7/D",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv282",
+   "tick": 9120,
+   "our_root": 2,
+   "dcml_root": 8,
+   "our_sym": "Ddim/G#",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv291",
+   "tick": 17760,
+   "our_root": 7,
+   "dcml_root": 4,
+   "our_sym": "Gm6/Db",
+   "cls": "b",
+   "n_overlap_cells": 6,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv301",
+   "tick": 1440,
+   "our_root": 11,
+   "dcml_root": 8,
+   "our_sym": "Bm7/A",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv313",
+   "tick": 14880,
+   "our_root": 9,
+   "dcml_root": 6,
+   "our_sym": "Am7/G",
+   "cls": "b",
+   "n_overlap_cells": 3,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv334",
+   "tick": 5280,
+   "our_root": 2,
+   "dcml_root": 11,
+   "our_sym": "Dm6/F",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv342",
+   "tick": 25440,
+   "our_root": 11,
+   "dcml_root": 8,
+   "our_sym": "Bdim7/D",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv392",
+   "tick": 14400,
+   "our_root": 9,
+   "dcml_root": 6,
+   "our_sym": "Adim7/C",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv422",
+   "tick": 23040,
+   "our_root": 9,
+   "dcml_root": 7,
+   "our_sym": "A7sus/D",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv429",
+   "tick": 24240,
+   "our_root": 4,
+   "dcml_root": 9,
+   "our_sym": "E/G#",
+   "cls": "b",
+   "n_overlap_cells": 3,
+   "b_root_fail": true,
+   "a_root_fail": false
+  },
+  {
+   "stem": "bwv432",
+   "tick": 5520,
+   "our_root": 9,
+   "dcml_root": 4,
+   "our_sym": "Am/E",
+   "cls": "b",
+   "n_overlap_cells": 3,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv45.7",
+   "tick": 20160,
+   "our_root": 6,
+   "dcml_root": 10,
+   "our_sym": "F#7/E",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv48.3",
+   "tick": 2880,
+   "our_root": 9,
+   "dcml_root": 6,
+   "our_sym": "Adim7/C",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv64.8",
+   "tick": 5280,
+   "our_root": 6,
+   "dcml_root": 3,
+   "our_sym": "F#dim7/A",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv74.8",
+   "tick": 13440,
+   "our_root": 4,
+   "dcml_root": 0,
+   "our_sym": "Em7/D",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
+   "stem": "bwv74.8",
+   "tick": 13920,
+   "our_root": 4,
+   "dcml_root": 8,
+   "our_sym": "E7/B",
+   "cls": "b",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  }
+ ],
+ "summary": {
+  "batch_cases": 24,
+  "still_failing_variant_b": 24,
+  "still_failing_variant_a": 23,
+  "disappeared_variant_b": 0,
+  "disappeared_variant_a": 1
+ }
+}
