@@ -585,12 +585,54 @@ struct BuildChordResultContext {
 /// Construct a fully-normalised ChordAnalysisResult from a raw scored cell.
 /// Applies augmented-root correction, Sus→Major(omitsThird), extension
 /// detection, degree labelling and diatonic check.
-/// Called from analyzeChord() (main result-building loop) and from
-/// applyPostScoringGates() (A-FM2 and G-E fallback cell promotion).
+/// The single builder for the whole module: called from applyHarmonicFunction()'s
+/// score-ordered build loop, and — via buildResultFromGateCtx() — from the unified
+/// promoteToWinner() primitive for every post-scoring cell promotion.
 ChordAnalysisResult buildChordResult(
     const RawCandidate&             rc,
     const BuildChordResultContext&  ctx,
     const ChordAnalyzerPreferences& prefs);
+
+// ── Unified post-scoring promotion primitive (Layer 4) ────────────────────────────
+//
+// A single "promote a reading to the winner" primitive shared by every post-scoring
+// promotion site — the enharmonic Major-add6 ↔ Minor7 flip (formerly the split Gate A +
+// FM2), Gate E, the Minor-add6 ↔ HalfDim7 G-block (Gate G-E / G-D), and the Iter-91
+// bass-root pull — replacing the ad-hoc swap-vs-append idioms and the three duplicated
+// builder lambdas. One path per concern (⛔ total unification). See docs/scoring_model.md §6
+// and cowork_gateA_unification_design.md.
+//
+//   Idiom A (present-first): a target reading already carried in results[] is swapped to the
+//   front (reuse-in-place — no growth, no duplicate).
+//   Idiom B (append-built):  otherwise the target is built ONCE (the single builder path)
+//   from gateCtx.rawCandidates, appended, and swapped to the front.
+
+/// The (rootPc, quality) reading a promotion wants as the winner. quality == Unknown matches
+/// any quality (the Iter-91 bass-root pull, which does not constrain quality).
+struct PromotionTarget {
+    int          rootPc  = -1;
+    ChordQuality quality = ChordQuality::Unknown;
+};
+
+/// promoteToWinner()'s @p presentHint sentinels. Any other value is a concrete results[]
+/// index the caller already computed (the primitive swaps it iff it still matches @p target —
+/// this is how the enharmonic flip / Gate E reproduce their exact bestAltIdx swap):
+inline constexpr std::size_t kPromotePresentScan = static_cast<std::size_t>(-1); ///< scan results[1..] for the first match
+inline constexpr std::size_t kPromoteAppendOnly  = static_cast<std::size_t>(-2); ///< skip the present branch (bass-root pull; no dedup)
+
+/// Promote @p target to results[0], unifying the swap-existing and append-built idioms.
+/// @p presentHint selects the present branch: a concrete index (swap iff it matches), or
+/// kPromotePresentScan (first-match scan of results[1..]), or kPromoteAppendOnly (skip the
+/// present branch). When the present branch does not fire and @p target is found in
+/// gateCtx.rawCandidates, it is built once via the single builder path and appended+swapped.
+/// @p stopBelowThreshold stops the raw scan at the first candidate below gateCtx.threshold
+/// (the FM2 inclusion policy). Returns true iff a promotion occurred.
+bool promoteToWinner(std::vector<ChordAnalysisResult>& results,
+                     const PostScoringGateContext&      gateCtx,
+                     const ChordAnalyzerPreferences&    prefs,
+                     const PromotionTarget&             target,
+                     std::size_t                        presentHint,
+                     bool                               stopBelowThreshold);
 
 /// The vertical extension/alteration identity of a chord (the ChordIdentity fields
 /// that describe its colour, not its root/quality/bass).

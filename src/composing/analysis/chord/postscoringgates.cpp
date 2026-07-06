@@ -51,7 +51,74 @@ const bool s_registerGateMarginParams = [] {
     P::registerDouble("kHalfDimFirstInversionBonus", &kHalfDimFirstInversionBonus);
     return true;
 }();
+
+// The single builder wrapper: adapt a scored RawCandidate through the one normalizing builder
+// (buildChordResult) using the captured post-scoring gate context. This collapses the two
+// byte-identical gateCtx builder lambdas that applyPostScoringGates() and applyIter8691Pedal()
+// previously duplicated; promoteToWinner() is its only caller.
+ChordAnalysisResult buildResultFromGateCtx(const RawCandidate&              rc,
+                                           const PostScoringGateContext&   gateCtx,
+                                           const ChordAnalyzerPreferences& prefs)
+{
+    return buildChordResult(rc,
+        BuildChordResultContext{ gateCtx.pcWeight, gateCtx.tpcForPc,
+                                 gateCtx.bassPc, gateCtx.bassTpc,
+                                 gateCtx.keyTonicPc, gateCtx.keyMode,
+                                 gateCtx.scale },
+        prefs);
+}
 } // namespace
+
+// ── Unified post-scoring promotion primitive (Layer 4) ────────────────────────────────
+// See chordanalyzer.h for the contract. The two promotion idioms — swap an already-carried
+// reading (Idiom A) and build-then-append a reading pulled from rawCandidates (Idiom B) — are
+// the two branches of this one primitive; every post-scoring promotion site routes through it.
+bool promoteToWinner(std::vector<ChordAnalysisResult>& results,
+                     const PostScoringGateContext&      gateCtx,
+                     const ChordAnalyzerPreferences&    prefs,
+                     const PromotionTarget&             target,
+                     std::size_t                        presentHint,
+                     bool                               stopBelowThreshold)
+{
+    const auto matches = [&](int rootPc, ChordQuality quality) {
+        return rootPc == target.rootPc
+            && (target.quality == ChordQuality::Unknown || quality == target.quality);
+    };
+
+    // ── Idiom A — present-first: swap an already-carried match to the front ────────────
+    if (presentHint != kPromoteAppendOnly) {
+        std::size_t j = results.size();
+        if (presentHint == kPromotePresentScan) {
+            for (std::size_t i = 1; i < results.size(); ++i) {
+                if (matches(results[i].identity.rootPc, results[i].identity.quality)) {
+                    j = i;
+                    break;
+                }
+            }
+        } else if (presentHint < results.size()
+                   && matches(results[presentHint].identity.rootPc,
+                              results[presentHint].identity.quality)) {
+            j = presentHint;
+        }
+        if (j < results.size()) {
+            std::swap(results[0], results[j]);
+            return true;
+        }
+    }
+
+    // ── Idiom B — append-built: build the target once from rawCandidates ───────────────
+    for (const RawCandidate& rc : gateCtx.rawCandidates) {
+        if (stopBelowThreshold && rc.score < gateCtx.threshold) {
+            break;
+        }
+        if (matches(rc.rootPc, rc.quality)) {
+            results.push_back(buildResultFromGateCtx(rc, gateCtx, prefs));
+            std::swap(results[0], results.back());
+            return true;
+        }
+    }
+    return false;
+}
 
 void applyPostScoringGates(
     std::vector<ChordAnalysisResult>& results,
@@ -59,18 +126,6 @@ void applyPostScoringGates(
     const ChordTemporalContext*       context,
     const PostScoringGateContext&     gateCtx)
 {
-    // Local convenience: build a ChordAnalysisResult from a RawCandidate using
-    // the captured gate context. Mirrors the buildResult lambda the gate block
-    // used to call when it lived inside analyzeChord().
-    const auto buildResult = [&](const RawCandidate& rc) -> ChordAnalysisResult {
-        return buildChordResult(rc,
-            BuildChordResultContext{ gateCtx.pcWeight, gateCtx.tpcForPc,
-                                     gateCtx.bassPc, gateCtx.bassTpc,
-                                     gateCtx.keyTonicPc, gateCtx.keyMode,
-                                     gateCtx.scale },
-            prefs);
-    };
-
     // ── §6-block dissolution audit (Phase 2.2): per-rule disable hook ────────────
     // ruleOff(X) is true only when a `disable_rule X` override line was loaded; with no
     // override every call returns false, so each guard `!ruleOff(X) && <cond>` collapses
@@ -197,49 +252,30 @@ void applyPostScoringGates(
                 // distinguish the two.  When preferMinorOverMajorAdd6 is set
                 // (Standard/Baroque), prefer the Minor alternative directly.
                 bool didEnharmonicFlip = false;
-                if (prefs.preferMinorOverMajorAdd6) {
-                    const bool winnerIsMajor =
-                        (winner.identity.quality == ChordQuality::Major);
-                    // The added-sixth guard restricts the fast path to sonorities
-                    // where the sixth (e.g. G in Bb-D-F-G) is present with enough
-                    // structural weight that the analyzer already labeled it as an
-                    // added-sixth chord.  Without this guard the fast path fires on
-                    // plain C major triads (C-E-G) just because Am is a candidate,
-                    // producing a flood of Am7/C regressions on root-position chords.
-                    const bool winnerHasAddedSixth =
-                        hasExtension(winner.identity.extensions, Extension::AddedSixth);
-                    const bool altIsMinor =
-                        (results[bestAltIdx].identity.quality == ChordQuality::Minor);
+                // The former Gate A (swap the enharmonic Minor7 partner already carried at
+                // bestAltIdx) and FM2 (build+append the partner from rawCandidates when a
+                // higher-scoring different-root alt blocked it from results[]) are the two halves
+                // of ONE flip — the present and absent branches of the single promoteToWinner()
+                // primitive. Passing presentHint = bestAltIdx reproduces Gate A's exact swap
+                // (the primitive swaps that index iff it is the Minor at (root+9)%12), and the
+                // append branch (stopBelowThreshold = true) reproduces FM2's above-threshold
+                // rawCandidate pull — byte-identical to HEAD, winner AND alternatives.
+                //
+                // The added-sixth guard restricts the flip to sonorities already labelled
+                // added-sixth (so it does not fire on plain triads just because a relative minor
+                // is a candidate). The surviving rule name for the whole flip is FM2 (Gate A was
+                // retired at the promotion unification — cowork_gateA_unification_design.md; the
+                // provably-unreachable Gates B/C/D were removed earlier in Stage 3.4b).
+                if (prefs.preferMinorOverMajorAdd6
+                    && !ruleOff(P::PostScoringRule::FM2)
+                    && winner.identity.quality == ChordQuality::Major
+                    && hasExtension(winner.identity.extensions, Extension::AddedSixth)) {
                     const int expectedAltRoot = (winner.identity.rootPc + 9) % 12;
-                    if (!ruleOff(P::PostScoringRule::GateA)
-                        && winnerIsMajor && winnerHasAddedSixth && altIsMinor
-                        && results[bestAltIdx].identity.rootPc == expectedAltRoot) {
-                        std::swap(results[0], results[bestAltIdx]);
-                        didEnharmonicFlip = true;
-                    }
-                    // FM2 fallback: a higher-scoring different-root alt (e.g. Em/C) may have
-                    // blocked the enharmonic partner from entering results[] via the append path.
-                    // Scan rawCandidates above threshold for the Minor alt at expectedAltRoot.
-                    if (!ruleOff(P::PostScoringRule::FM2)
-                        && !didEnharmonicFlip && winnerIsMajor && winnerHasAddedSixth) {
-                        for (const RawCandidate& rc : gateCtx.rawCandidates) {
-                            if (rc.score < gateCtx.threshold) { break; }
-                            if (rc.rootPc == expectedAltRoot
-                                && rc.quality == ChordQuality::Minor) {
-                                results.push_back(buildResult(rc));
-                                std::swap(results[0], results.back());
-                                didEnharmonicFlip = true;
-                                break;
-                            }
-                        }
-                    }
-                    // Gates B/C/D (forward / 3-region-window / consecutive-stepwise temporal
-                    // confirmations of the Major-add6 ↔ Minor flip) were removed in Stage 3.4b
-                    // as provably unreachable (Stage-1b finding F1): each repeated Gate A's exact
-                    // entry conditions plus extra temporal evidence behind `!didEnharmonicFlip`,
-                    // but Gate A — which has those same conditions with no temporal requirement —
-                    // always fires first and sets the flag. Removal is byte-identical (0/353 × 3
-                    // configs, snapshots zero-diff). See docs/scoring_model.md §6/§8.
+                    didEnharmonicFlip = promoteToWinner(
+                        results, gateCtx, prefs,
+                        PromotionTarget{ expectedAltRoot, ChordQuality::Minor },
+                        /*presentHint=*/ bestAltIdx,
+                        /*stopBelowThreshold=*/ true);
                 }
 
                 // ── Gate E: first-inversion detection ─────────────────────────────────────
@@ -261,7 +297,13 @@ void applyPostScoringGates(
                     && results[bestAltIdx].identity.rootPc == (winner.identity.rootPc + 8) % 12
                     && gateCtx.pcWeight[static_cast<size_t>(results[bestAltIdx].identity.rootPc)] > prefs.extensionThreshold
                     && (context->bassIsStepwiseFromPrevious || context->bassIsStepwiseToNext)) {
-                    std::swap(results[0], results[bestAltIdx]);
+                    // Pure Idiom-A swap: the target (Major at winnerRoot+8) is results[bestAltIdx]
+                    // by the guard above, so promoteToWinner swaps that exact index — its append
+                    // branch is unreachable here (the reading is always present).
+                    promoteToWinner(results, gateCtx, prefs,
+                                    PromotionTarget{ (winner.identity.rootPc + 8) % 12, ChordQuality::Major },
+                                    /*presentHint=*/ bestAltIdx,
+                                    /*stopBelowThreshold=*/ true);
                     didEnharmonicFlip = true;
                 }
 
@@ -315,81 +357,42 @@ void applyPostScoringGates(
                     }
                 }
             }
-        // ── Gates G-E / G-B / G-C / G-D: Minor-add6 ↔ HalfDim7 ─────────────────────
+        // ── Gates G-E / G-D: Minor-add6 ↔ HalfDim7 ─────────────────────────────────
         //
-        // MinorAdd6 and HalfDim7 share identical pitch classes.
-        // kCleanQualities excludes HalfDiminished, so this block runs independently
-        // of the bestAlt path above.
+        // MinorAdd6 and HalfDim7 share identical pitch classes; the HalfDim7 reading is rooted
+        // a minor third above the Minor-add6 winner (gExpectedAltRoot). Promote that HalfDim7
+        // reading when the key context confirms it — Gate G-E: its root is the leading-tone
+        // seventh (viiø7, tonic+11), supertonic seventh (iiø7, tonic+2), or mediant (iiiø7,
+        // tonic+4), no temporal signal required — or Gate G-D: two or more consecutive stepwise
+        // bass moves end here (only when G-E does not fire, the former !didGFlip ordering).
         //
-        // Gate G-E (key-context): fires when the HalfDim7 alt is a functional chord
-        // of the current key — either the leading-tone seventh (viiø7, alt root at
-        // tonicPc+11) or the supertonic seventh (iiø7, alt root at tonicPc+2).
-        // No temporal signals required.
-        //
-        // Gates G-B/C/D: temporal fallbacks for the remaining cases.
+        // Because the HalfDim7 reading is at gExpectedAltRoot, the Gate G-E key-context test
+        // needs only that root, not the carried object. The former "scan results[]; else pull
+        // from rawCandidates; else pop the phantom if no sub-gate fires" dance is exactly
+        // promoteToWinner()'s present-first-else-append with the no-promotion (return-false)
+        // path — so it is invoked only when a flip should occur, and the transient pull+pop is
+        // gone. Byte-identical to HEAD (winner AND alternatives). Gates G-B/G-C were retired in
+        // Stage 5 (D-7) as 0-firing.
         if (prefs.preferMinorOverMajorAdd6
             && originalWinnerQuality == ChordQuality::Minor
             && originalWinnerHasAddedSixth) {
             const int gExpectedAltRoot = (originalWinnerRootPc + 9) % 12;
-            // Find the HalfDim7 alt in results[].
-            size_t halfDimAltIdx = results.size();
-            for (size_t i = 1; i < results.size(); ++i) {
-                if (results[i].identity.quality == ChordQuality::HalfDiminished
-                    && results[i].identity.rootPc == gExpectedAltRoot) {
-                    halfDimAltIdx = i;
-                    break;
-                }
-            }
-            // Gate G-E: if HalfDim not in results[], look in rawCandidates (temporal
-            // context may have suppressed it via rootContinuityBonus)
-            bool halfDimPulledFromRaw = false;
-            if (halfDimAltIdx >= results.size()) {
-                for (const auto& rc : gateCtx.rawCandidates) {
-                    if (rc.quality == ChordQuality::HalfDiminished
-                        && rc.rootPc == gExpectedAltRoot) {
-                        results.push_back(buildResult(rc));
-                        halfDimAltIdx = results.size() - 1;
-                        halfDimPulledFromRaw = true;
-                        break;
-                    }
-                }
-            }
-            if (halfDimAltIdx != results.size()) {
-                bool didGFlip = false;
-                // Gate G-E: leading-tone key-context gate.
-                // The half-diminished seventh is the standard functional reading when
-                // it is rooted on the leading tone (viiø7) or supertonic (iiø7) of
-                // the current key.  No temporal signals required.
-                const int gLeadingTonePc  = (gateCtx.keyTonicPc + 11) % 12;  // viiø7
-                const int gSupertonicPc   = (gateCtx.keyTonicPc + 2) % 12;   // iiø7
-                const int gMediantPc      = (gateCtx.keyTonicPc + 4) % 12;   // iiiø7 / mediant
-                if (!ruleOff(P::PostScoringRule::GateGE)
-                    && !didGFlip
-                    && (results[halfDimAltIdx].identity.rootPc == gLeadingTonePc
-                        || results[halfDimAltIdx].identity.rootPc == gSupertonicPc
-                        || results[halfDimAltIdx].identity.rootPc == gMediantPc)) {
-                    std::swap(results[0], results[halfDimAltIdx]);
-                    didGFlip = true;
-                }
-                // Gate G-B (Minor-add6 ↔ HalfDim7 forward-evidence temporal fallback) was
-                // RETIRED in Stage 5 (2026-07-05, design D-7): 0 corpus firing sites on all
-                // three carriers (cc_stage5_phase2_2b_report.md §1.2) — byte-identical removal.
-                // Gate G-C (Minor-add6 ↔ HalfDim7 recent-root + stepwise-from-previous
-                // fallback) was RETIRED in Stage 5 (2026-07-05, design D-7): 0 corpus firing
-                // sites on all three carriers (cc_stage5_phase2_2b_report.md §1.2) — byte-identical.
-                // Gate G-D: two or more consecutive stepwise bass moves ending here.
-                if (!ruleOff(P::PostScoringRule::GateGD)
-                    && !didGFlip
-                    && context != nullptr
-                    && context->consecutiveBassStepwiseCount >= 2) {
-                    std::swap(results[0], results[halfDimAltIdx]);
-                    didGFlip = true;
-                }
-                if (halfDimPulledFromRaw && !didGFlip) {
-                    // No sub-gate fired — remove the phantom alternative that was
-                    // pulled from rawCandidates so it does not pollute results[].
-                    results.pop_back();
-                }
+            const int gLeadingTonePc   = (gateCtx.keyTonicPc + 11) % 12;  // viiø7
+            const int gSupertonicPc    = (gateCtx.keyTonicPc + 2) % 12;   // iiø7
+            const int gMediantPc       = (gateCtx.keyTonicPc + 4) % 12;   // iiiø7 / mediant
+            const bool geKeyContext = (gExpectedAltRoot == gLeadingTonePc
+                                       || gExpectedAltRoot == gSupertonicPc
+                                       || gExpectedAltRoot == gMediantPc);
+            const bool geFires = !ruleOff(P::PostScoringRule::GateGE) && geKeyContext;
+            const bool gdFires = !ruleOff(P::PostScoringRule::GateGD)
+                                 && !geFires
+                                 && context != nullptr
+                                 && context->consecutiveBassStepwiseCount >= 2;
+            if (geFires || gdFires) {
+                promoteToWinner(results, gateCtx, prefs,
+                                PromotionTarget{ gExpectedAltRoot, ChordQuality::HalfDiminished },
+                                /*presentHint=*/ kPromotePresentScan,
+                                /*stopBelowThreshold=*/ false);
             }
         }
         }

@@ -510,12 +510,12 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
     const double threshold = (bestRawScore - winnerBassBonus) * kScoreThresholdRatio;
 
     // ── Build results[] ──────────────────────────────────────────────────────
+    // The initial score-ordered build calls the single normalizing builder directly (the
+    // former buildResult lambda collapsed into buildChordResult at the promotion unification —
+    // one builder path across the module; cowork_gateA_unification_design.md).
     const analysis::BuildChordResultContext buildCtx{
         snapshot.pcWeight, snapshot.tpcForPc, winBassPc, winBassTpc,
         snapshot.keyTonicPc, snapshot.keyMode, snapshot.scale };
-    const auto buildResult = [&](const WorkCand& rc) -> analysis::ChordAnalysisResult {
-        return analysis::buildChordResult(toRaw(rc), buildCtx, prefs);
-    };
 
     for (const WorkCand& rc : chosenPerBass) {
         if (results.size() >= 3) {
@@ -524,7 +524,7 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
         if (rc.score < threshold) {
             break;
         }
-        results.push_back(buildResult(rc));
+        results.push_back(analysis::buildChordResult(toRaw(rc), buildCtx, prefs));
     }
 
     // ── Guaranteed inversion alternative (diff-root append) ───────────────────
@@ -542,7 +542,7 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
             for (const WorkCand& rc : chosenPerBass) {
                 if (rc.score < threshold)      { break; }
                 if (rc.rootPc == winnerRootPc) { continue; }
-                results.push_back(buildResult(rc));
+                results.push_back(analysis::buildChordResult(toRaw(rc), buildCtx, prefs));
                 break;
             }
         }

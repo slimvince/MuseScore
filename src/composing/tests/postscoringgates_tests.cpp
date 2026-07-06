@@ -278,11 +278,14 @@ TEST(Composing_PostScoringGateTests, BiasCorrection_SeventhExemption)
 }
 
 // ═════════════════════════════════════════════════════════════════════════════
-// Gate A — Major-add6 ↔ Minor7 enharmonic fast path (§6 "A–D"). Fires
-// unconditionally (no margin, no temporal evidence) when preferMinorOverMajorAdd6,
-// winner is Major+AddedSixth, and the best clean alt is Minor at (root+9)%12.
-// NOTE: gates B/C/D in this family are unreachable — their preconditions are a
-// superset of Gate A's, which always fires first (report §Findings).
+// Enharmonic Major-add6 ↔ Minor7 flip (§6). Fires unconditionally (no margin, no
+// temporal evidence) when preferMinorOverMajorAdd6, winner is Major+AddedSixth, and the
+// Minor partner at (root+9)%12 is either already carried (the former Gate A swap — the
+// present branch of promoteToWinner) or pullable from rawCandidates above threshold (FM2 —
+// the append branch). Since the 2026-07-06 promotion unification these are the two branches
+// of ONE promoteToWinner() call under the surviving FM2 rule; the behaviour these fixtures
+// pin is byte-identical to the former separate Gate A + FM2 (cowork_gateA_unification_design.md).
+// NOTE: gates B/C/D in this family were removed (Stage 3.4b) as unreachable.
 // ═════════════════════════════════════════════════════════════════════════════
 
 TEST(Composing_PostScoringGateTests, GateA_FastPath_FiresWithoutTemporalOrMargin)
@@ -1566,7 +1569,12 @@ TEST_F(PostScoringRuleDisable, BiasCorrection_DisabledDoesNotFire)
     EXPECT_NEAR(off.front().identity.score, 2.0, 1e-9);
 }
 
-TEST_F(PostScoringRuleDisable, GateA_DisabledDoesNotFire)
+// The former Gate A swap (the enharmonic Minor7 partner already carried in results[]) is now
+// the PRESENT branch of the unified promoteToWinner() flip, governed by the surviving FM2
+// rule. Disabling FM2 suppresses it: the present partner is NOT swapped in (winner stays
+// Major-add6). Complements FM2_DisabledDoesNotFire, which pins the APPEND (partner pulled from
+// rawCandidates) branch. (Was GateA_DisabledDoesNotFire before the promotion unification.)
+TEST_F(PostScoringRuleDisable, FM2_DisabledDisablesPresentEnharmonicSwap)
 {
     auto build = [] {
         return std::vector<ChordAnalysisResult>{
@@ -1578,12 +1586,12 @@ TEST_F(PostScoringRuleDisable, GateA_DisabledDoesNotFire)
 
     auto on = build();
     applyPostScoringGates(on, baroquePrefs(), nullptr, ctx);
-    EXPECT_EQ(on.front().identity.rootPc, 7);
+    EXPECT_EQ(on.front().identity.rootPc, 7);   // enabled: present partner swapped to winner
 
-    P::setRuleDisabled(P::PostScoringRule::GateA, true);
+    P::setRuleDisabled(P::PostScoringRule::FM2, true);
     auto off = build();
     applyPostScoringGates(off, baroquePrefs(), nullptr, ctx);
-    EXPECT_EQ(off.front().identity.rootPc, 10);   // no rawCandidates → FM2 cannot cover
+    EXPECT_EQ(off.front().identity.rootPc, 10);  // disabled: present-swap (former Gate A) suppressed
 }
 
 TEST_F(PostScoringRuleDisable, FM2_DisabledDoesNotFire)

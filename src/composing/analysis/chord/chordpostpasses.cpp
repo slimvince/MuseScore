@@ -124,17 +124,6 @@ void applyIter8691Pedal(
 {
     const int bassPc = gateCtx.bassPc;
 
-    // Build a ChordAnalysisResult from a RawCandidate using the captured context
-    // (mirrors the buildResult lambda in applyPostScoringGates / analyzeChord).
-    const auto buildResult = [&](const RawCandidate& rc) -> ChordAnalysisResult {
-        return buildChordResult(rc,
-            BuildChordResultContext{ gateCtx.pcWeight, gateCtx.tpcForPc,
-                                     gateCtx.bassPc, gateCtx.bassTpc,
-                                     gateCtx.keyTonicPc, gateCtx.keyMode,
-                                     gateCtx.scale },
-            prefs);
-    };
-
     // ── Iter 86 — bass-b7 promotion ──────────────────────────────────────────
     // If the winner is a Major or Minor triad whose bass is the b7 of the
     // root (interval 10) and that b7 is genuinely present in the score, stamp
@@ -185,18 +174,16 @@ void applyIter8691Pedal(
         const bool isPlainTriad = !hasExtension(winner.identity.extensions, Extension::MinorSeventh)
                                   && !hasExtension(winner.identity.extensions, Extension::MajorSeventh);
         if ((patternA || patternB) && (bassPc != rPc) && isPlainTriad) {
-            // Find the bass-rooted candidate in rawCandidates (the top-3 results[]
-            // cap is routinely exhausted by same-rootPc variants of the iii/III
-            // reading; the bass-rooted target often lives only in rawCandidates).
-            for (const RawCandidate& rc : gateCtx.rawCandidates) {
-                if (rc.rootPc != bassPc) continue;
-                // Append a built result for the bass-rooted candidate and swap
-                // it into the winner slot (same swap pattern as the FM2 fallback
-                // at the start of the inversion-correction block, line ~2189).
-                results.push_back(buildResult(rc));
-                std::swap(results[0], results.back());
-                break;
-            }
+            // Promote the bass-rooted reading (rootPc == bassPc, any quality) via the unified
+            // primitive's append-built idiom: the top-3 results[] cap is routinely exhausted by
+            // same-rootPc variants of the iii/III reading, so the bass-rooted target usually
+            // lives only in rawCandidates. presentHint = kPromoteAppendOnly reproduces the
+            // former direct rawCandidate pull (first rootPc == bassPc match, no present-scan
+            // dedup, no threshold gate).
+            promoteToWinner(results, gateCtx, prefs,
+                            PromotionTarget{ bassPc, ChordQuality::Unknown },
+                            /*presentHint=*/ kPromoteAppendOnly,
+                            /*stopBelowThreshold=*/ false);
         }
     }
 

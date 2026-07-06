@@ -55,7 +55,9 @@ The pipeline is:
 6. **Post-scoring gates.** Inversion correction, enharmonic
    flips (Minor-add6 ↔ HalfDim7), augmented-rotation correction, Gate I
    (first-inversion major over root-position minor), Gate J (vii° → V7),
-   Gate L (Major over augmented). (Gates F/G-B/G-C/K retired Stage 5, 2026-07-05; Gate A retirement held — 2.2c.)
+   Gate L (Major over augmented). All promotions route through the one
+   `promoteToWinner()` primitive (§6a). (Gates F/G-B/G-C/K retired Stage 5, 2026-07-05;
+   Gate A unified into `promoteToWinner`/FM2 — 2026-07-06.)
 7. **Late promotions.** Iter 86 bass-b7 promotion, Iter 91 bass-as-root
    promotion.
 8. **Pedal point check.** Two-pass: if the bass is not a chord tone of the
@@ -667,28 +669,58 @@ The gate margins are the file-scope constants `kGateIMargin` /
 `prefs.inversionSuspicionMargin > 0`, `prefs.inversionBonusReduction < 1`,
 `results.size() >= 2`, and `gateCtx.distinctPcs >= 3`. Consequences: setting
 `inversionSuspicionMargin = 0` to "disable the inversion correction" disables every
-gate — including the identity gates A and J — and sparse 2-PC regions get no gate
+gate — including the enharmonic flip (FM2) and Gate J — and sparse 2-PC regions get no gate
 corrections at all (Stage-1b findings F2/F3, pinned in the `OuterGuard_*` tests in
 `postscoringgates_tests.cpp`).
 
-**Execution order:** bias-capture → [A → FM2 → B → C → D → E → F →
-bias-deduction+sort] → G → H → I → K → L → **J**. Despite its letter, Gate J
-executes LAST, after K and L. The table below follows execution order.
+**Execution order:** bias-capture → [enharmonic flip (present-swap else FM2 append) → E →
+bias-deduction+sort] → G → H → I → L → **J**. Despite its letter, Gate J executes LAST, after
+L. (Gates B/C/D/F/K retired; the former separate Gate A + FM2 are now the two branches of the
+one enharmonic-flip promotion.) The table below follows execution order.
+
+### §6a. The unified promotion primitive `promoteToWinner()`
+
+Every post-scoring promotion re-ranks `results[]` so a chosen reading becomes the winner
+(`results[0]`). All of them route through **one** primitive, `promoteToWinner()`
+(`chordanalyzer.h` / `postscoringgates.cpp`), which owns both promotion idioms behind one
+contract (⛔ total unification — one path per concern):
+
+- **Idiom A — present-first (swap):** if the target reading is already carried in `results[]`
+  it is swapped to the front (reuse-in-place — no growth, no duplicate).
+- **Idiom B — append-built (pull):** otherwise the target is built **once**, via the single
+  builder wrapper `buildResultFromGateCtx()` over `buildChordResult()`, appended, and swapped
+  to the front.
+
+`presentHint` selects the present branch: a concrete index the caller already computed (swap
+iff it still matches — how the enharmonic flip and Gate E reproduce their exact `bestAltIdx`
+swap), `kPromotePresentScan` (first-match scan of `results[1..]` — the G-family), or
+`kPromoteAppendOnly` (skip the present branch — the Iter-91 bass-root pull, which has no
+dedup). `stopBelowThreshold` stops the raw scan at the first sub-`threshold` candidate (the
+FM2 inclusion policy). `target.quality == Unknown` matches any quality (Iter-91).
+
+This replaced the three duplicated builder lambdas (`postscoringgates.cpp`,
+`chordpostpasses.cpp`, `harmonicfunctionlayer.cpp`) and the ad-hoc swap-vs-append idioms; the
+initial score-ordered build in `applyHarmonicFunction()` now calls `buildChordResult()`
+directly. The unification is byte-identical to the former separate gates on the full output
+surface (winner AND `alternatives[]`) across all 352 scores × 3 presets — see
+`cowork_gateA_unification_design.md`.
 
 **Stage-5 dissolution audit — per-rule disable (measurement-only).** Each §6 rule (the
-bias correction, FM2, and Gates A/E/F/G-E/G-B/G-C/G-D/H/I/K/L/J) is individually
-disable-able via a `disable_rule <Name>` line in the `--param-override` file (names in
-`paramoverride.h` `PostScoringRule`). A disable is a clean skip of only that rule's block;
-default (no such line) leaves every rule enabled, byte-identical to before the hook
-existed. This is measurement-only for the Phase-2.2 dissolution audit (design D-7) — it
-retires no rule and changes no committed value.
+bias correction, FM2, and Gates E/G-E/G-D/H/I/L/J) is individually disable-able via a
+`disable_rule <Name>` line in the `--param-override` file (names in `paramoverride.h`
+`PostScoringRule`). A disable is a clean skip of only that rule's block; default (no such
+line) leaves every rule enabled, byte-identical to before the hook existed. This is
+measurement-only for the Phase-2.2 dissolution audit (design D-7) — it retires no rule and
+changes no committed value. (Since 2026-07-06 the enharmonic flip is one rule, **FM2**, whose
+disable suppresses both its present-swap and append branches — Gate A is no longer separately
+addressable.)
 
 | Gate | Location | Trigger | Effect | Why it exists |
 |------|----------|---------|--------|---------------|
 | **Bias correction** | bias correction | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |
-| **A (Minor-add6 ↔ HalfDim7 enharmonic flip)** | Gate A region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, alt is Minor at `(rootPc+9)%12`. **Gates B/C/D removed (Stage 3.4b):** they were provably unreachable dead code — Gate A has exactly these conditions with no temporal requirement, and B/C/D repeated them *plus* temporal evidence behind `!didEnharmonicFlip`, so A always fired first (Stage-1b F1). Removal was byte-identical (0/353 × 3 configs, snapshots zero-diff) — the deliberate gate-retirement audit, not a hygiene fix. | Swap to the Minor alt; or pull the Minor alt from `rawCandidates` (FM2 fallback). | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. |
+| **Enharmonic flip: Major-add6 → Minor7 (rule name FM2)** | flip region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, target is Minor at `(rootPc+9)%12`. One `promoteToWinner()` call (`presentHint = bestAltIdx`, `stopBelowThreshold = true`): the present branch swaps the partner already carried at `bestAltIdx` (the former **Gate A**) and the append branch pulls it from `rawCandidates` above threshold (the former **FM2**). **Gates B/C/D removed (Stage 3.4b); Gate A unified into this one promotion (2026-07-06)** — the separate `GateA` rule retired, FM2 is the surviving rule name for the whole flip. | Swap the carried Minor partner, else build+append it from `rawCandidates`. | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. Present-first keeps the distinct partner as an alternative (no winner near-duplicate — §12 no information loss). |
 | **E (first-inversion Minor → Major)** | Gate E | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |
-| **G-E / G-B / G-C / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7); G-D on consecutive-stepwise temporal context. **(G-B and G-C RETIRED Stage 5, 2026-07-05 — see retired-gates note; G-E and G-D retained.)** | Pull HalfDim from `rawCandidates` if missing; swap to HalfDim. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
+| **G-E / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7 — tested on the root, not the object); G-D on consecutive-stepwise temporal context (only when G-E does not fire). **(G-B and G-C RETIRED Stage 5, 2026-07-05.)** One `promoteToWinner()` call (`presentHint = kPromotePresentScan`, `stopBelowThreshold = false`) when G-E or G-D fires: present-scan swaps the carried HalfDim, else pulls it from `rawCandidates` (no threshold). The former "pull then pop if no sub-gate fires" is exactly the primitive's no-promotion path. | Swap the carried HalfDim, else build+append it from `rawCandidates`. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |
 | **H (augmented rotation)** | Gate H | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |
 | **I (first-inversion Major over root-position Minor)** | `kGateIMargin` | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |
 | **L (Major over Augmented same-root)** | `kGateLMargin` | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |
@@ -710,21 +742,27 @@ user-ratified commits (2026-07-05):
   whole gate + its margin constant `kGateKMargin`. Its founding case bwv40.6 (A+ → F♯5/A) is
   no longer touched by the rule (superseded upstream, 2.2b §1.3).
 
-**Gate A — retirement HELD (Stage-5 Phase 2.2c, 2026-07-05).** Gate A (the row above) was retired
-in the RETIRE-5 batch and then **restored**. Its removal is **winner-byte-identical on all 352
-scores** (the 2.2b ledger measured the winner and was correct — 0 winner-changing sites), but it
-changes the `alternatives[]` list on **36 Baroque scores**: Gate A re-ranks via
-`std::swap(results[0], results[bestAltIdx])`, reusing the existing result object, whereas the
-retained **FM2** promotes the *same winner* via `results.push_back(buildResult(...))` — a freshly
-built object — so the winner is identical but the alternatives content differs. Whether the
-`alternatives[]` list is inside the byte-identity acceptance contract is a Cowork/user decision;
-until then Gate A stands. Evidence: `cc_stage5_phase2_2c_report.md`.
+**Gate A — UNIFIED into `promoteToWinner`/FM2 (2026-07-06).** Gate A (Stage-5 Phase 2.2c) was
+retired then restored because its naive removal, though **winner-byte-identical on all 352
+scores**, changed the `alternatives[]` list on **36 Baroque scores**: Gate A re-ranked via
+`std::swap(results[0], results[bestAltIdx])` (reusing the carried Major-add6 partner object),
+whereas the retained FM2 append (`results.push_back(...)`) injected a freshly-built
+near-duplicate of the *winner* and displaced that distinct partner — a §12 information-loss
+regression on the L5-consumed carry. The resolution (this arc) unifies Gate A and FM2 into the
+two branches of the **one** `promoteToWinner()` primitive: the present branch (`bestAltIdx`)
+reproduces Gate A's swap byte-for-byte, the append branch reproduces FM2, so the whole flip is
+**byte-identical to HEAD on the full output surface — winner AND `alternatives[]` — across all
+352 scores × 3 presets** (0 net move, including the 36). The separate `GateA` rule (its enum
+member, guard, name-map entry) is therefore removed; **FM2** is the surviving rule name for the
+flip. Evidence: `cowork_gateA_unification_design.md`, `cc_stage5_phase2_2c_report.md`.
 
 **RETAINED / DEFERRED dispositions (Stage-5 §6-block audit, user-ratified 2026-07-05; D-7).** Of the
 rules NOT retired, the 2.2b cross-carrier evidence (`cc_stage5_phase2_2b_report.md` §1/§3.2) adjudicated:
 
 - **RETAIN-as-structural (4):** **GateI** (disabling adds +5 class-(b) Jazz batch cases, §1.1), **FM2**
-  (disabling adds the class-(b) case bwv227.7@18000, §1.1), **GateJ** (disabling is catastrophic on Jazz —
+  (disabling adds the class-(b) case bwv227.7@18000, §1.1; since 2026-07-06 FM2 is the whole unified
+  enharmonic flip, so its disable now also suppresses the former Gate A present-swap — a fortiori load-bearing),
+  **GateJ** (disabling is catastrophic on Jazz —
   −0.4515 root; ON is WiR-correct at its V-family firing sites 33 vs 20, §1.4), **GateL** (inert on
   Baroque but 18 load-bearing Jazz firing sites, §1.2). Retirement is global, so a rule live on ANY
   carrier is retained.
@@ -754,9 +792,9 @@ constant for the Stage-5 override mechanism — see the §1 note); fires only un
 - **Gate F has no winner-quality and no pcWeight guard** (unlike Gate E): a Minor
   winner flips on a stepwise signal alone, and the promoted root does not need to
   be sounding.
-- **G-E's `rawCandidates` pull has no threshold check** (FM2's loop breaks at
-  `gateCtx.threshold`; G-E scans everything), and it can push a duplicate of a
-  candidate already promoted to `results[0]` (its scan starts at i = 1).
+- **G-E's `rawCandidates` pull has no threshold check** (`promoteToWinner(..., stopBelowThreshold
+  = false)` for the G-family; the FM2 flip passes `stopBelowThreshold = true` so its loop breaks at
+  `gateCtx.threshold`). Both preserved verbatim under the unified primitive.
 - **Gate swaps can leave `results[]` unsorted** — after a G-E pull the alternatives
   list shown to users is not score-ordered. The winner is correct; the tail order
   is an artifact.
@@ -836,12 +874,14 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   The historical silent stack-buffer overrun from a missed matrix size is closed.
   (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)
 
-- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical).** Gate A's
-  entry conditions were a strict subset of B/C/D's, so B/C/D were unreachable dead
-  code (Stage-1b F1). They were removed in the Stage-3 per-gate retirement audit
-  (roadmap 3.4b) as a byte-identical change (0/353 × 3 configs, snapshots zero-diff).
-  Constraint going forward: do not add temporal conditions to Gate A — there is no
-  longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the
+- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical); Gate A itself
+  unified into `promoteToWinner`/FM2 (2026-07-06, §6a).** Gate A's entry conditions were a
+  strict subset of B/C/D's, so B/C/D were unreachable dead code (Stage-1b F1). They were
+  removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a byte-identical change
+  (0/353 × 3 configs, snapshots zero-diff). Gate A's swap later became the present branch of
+  the unified `promoteToWinner()` primitive under the FM2 rule (byte-identical, full surface).
+  Constraint going forward: do not add temporal conditions to the enharmonic flip — there is
+  no longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the
   Major-add6 ↔ Minor flip must be reintroduced explicitly and tested.
 
 - **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was

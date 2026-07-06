@@ -71,8 +71,8 @@ void registerBool(const char* name, bool* slot);
 // The audit is measurement-only; the fit that decides any retirement is Phase 2.2b (D-7).
 enum class PostScoringRule : int {
     BiasCorrection = 0,  ///< bass-root bias deduction + re-sort (incl. kHalfDimFirstInversionBonus)
-    FM2,                 ///< Minor-partner pull from rawCandidates in the enharmonic fast path
-    GateA,               ///< Major-add6 ↔ Minor7 enharmonic flip
+    FM2,                 ///< Major-add6 ↔ Minor7 enharmonic flip (present-swap + rawCandidate pull —
+                         ///< the whole unified promotion; the former separate GateA rule retired here)
     GateE,               ///< first-inversion Minor → Major (+8)
     GateGE,              ///< Minor-add6 ↔ HalfDim7 key-function flip (viiø7/iiø7/iiiø7)
     GateGD,              ///< Minor-add6 ↔ HalfDim7 consecutive-stepwise temporal fallback
