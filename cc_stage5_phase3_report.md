@@ -328,7 +328,7 @@ never regenerated.
 - **`7111f589e2`** `feat(tools): Stage-5 Phase 3 — Class-P reliability maps (L3/L4) + calibration/θ/conformal
   harness + additive phraseNumVoices dump field` (the 6 new tools, 4 map artifacts, the θ ledger, the
   additive `batch_analyze.cpp` field).
-- **`<DOCS_SHA>`** `docs(cowork): Stage-5 Phase 3 report + fold (STATUS/HANDOFF/design markers/instruction)`
+- **`6b5bdcd64b`** `docs(cowork): Stage-5 Phase 3 report + fold (STATUS/HANDOFF/design markers/instruction)`
   (this report force-added; the fold).
 
 *Report generated 2026-07-06 on HEAD `02ec8b0d60` (pre-commit); corpus `c50002fee1`.*

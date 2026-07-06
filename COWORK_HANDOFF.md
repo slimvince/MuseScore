@@ -16,7 +16,7 @@ and the named docs.*
 
 **★ PHASE 3 CALIBRATION DELIVERED (session 22x, 2026-07-06) — awaiting Cowork verification + ratification;
 NOTHING wired, NO behavior change, NO push.** Report `cc_stage5_phase3_report.md`; commits feat `7111f589e2`
-+ docs `<DOCS_SHA>` (fork-only, unpushed). What landed:
++ docs `6b5bdcd64b` (fork-only, unpushed). What landed:
 - **C1 curves re-measured** on the adopted corpus `c50002fee1` (they predated 2.2e): every ECE Δ≤0.001 —
   the adoption did not move the calibration.
 - **Class-P maps FITTED + COMMITTED** (`tools/calibration_maps/stage5_classP_{l3_key_margin,l4_chord_composite}_{baroque,default}.json`):
