@@ -1,16 +1,54 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 22v (Stage-5 Phase 2.3 delivered: staging step 3 CLOSED —
-three retained-rule margins hold no fittable gain, skip-with-record; family-4 §15-13 population MEASURED LARGE
-[size-viable] with the dormant-substrate finding declared; nothing adopted). Prior: 22u (2.2e adoption verified +
-ratified — the arc's first fitted value shipped, corpus re-baselined 52/24/52); 22l (fitter design signed).
-This header is the fresh-session entry point; full narratives live in STATUS.md (top entries) and the named docs.*
+*Written 2026-05-14. Last updated 2026-07-06, session 22x (Stage-5 Phase 3 CALIBRATION delivered: C1 curves
+re-measured on the adopted corpus [ECE Δ≤0.001]; the L3-margin + L4-composite Class-P maps FITTED [isotonic,
+Baroque/Default carriers, Jazz A-7-unmapped], validated held-out [ECE 0.017–0.041], 4 artifacts committed;
+deferrals re-verified [L5 non-monotone shape unchanged → stands]; Task-B L1.5 spike-vs-surface split measured
+[surface has usable spread, spike flat, no map]; F-A/F-B scales declared + θ candidates recorded/unwired
+[F-B override net-harm CONFIRMED 1043/53/809 → disable-candidate, inference finding declared]; R-11 conformal =
+complement-not-replacement; contract-§3 changes listed for Cowork; sandwich 52/24/52 byte-clean, suites
+1101/53+4skip/11. NOTHING wired, NO behavior change, NO push). Prior: 22v/22w (Phase 2.3 — staging step 3
+CLOSED; family-4 §15-13 parked to engage); 22u (2.2e adoption, corpus re-baselined 52/24/52); 22l (fitter
+design signed). This header is the fresh-session entry point; full narratives live in STATUS.md (top entries)
+and the named docs.*
 
 ## ★ START HERE — state, dispatch, queue (2026-07-06)
 
-**★ PHASE 2.3 CC-DELIVERED (session 22v, 2026-07-06) — STAGING STEP 3 CLOSED + THE §15-13 POPULATION MEASURED;
-NOTHING adopted, no value change, no corpus write. AWAITING COWORK VERIFICATION.** Fulfills the ACTIVE DISPATCH
-`cc_instruction_stage5_phase2_3.md`. Report `cc_stage5_phase2_3_report.md`.
+**★ PHASE 3 CALIBRATION DELIVERED (session 22x, 2026-07-06) — awaiting Cowork verification + ratification;
+NOTHING wired, NO behavior change, NO push.** Report `cc_stage5_phase3_report.md`; commits feat `7111f589e2`
++ docs `<DOCS_SHA>` (fork-only, unpushed). What landed:
+- **C1 curves re-measured** on the adopted corpus `c50002fee1` (they predated 2.2e): every ECE Δ≤0.001 —
+  the adoption did not move the calibration.
+- **Class-P maps FITTED + COMMITTED** (`tools/calibration_maps/stage5_classP_{l3_key_margin,l4_chord_composite}_{baroque,default}.json`):
+  **isotonic** on both rows (Platt rejected — not near-logistic, maxdiff 0.20–0.26); fit on the 261 fitting
+  split, VALIDATED on held-out → **held-out post-map ECE 0.017–0.041** (3–6× below pre-map); the L4 flat low
+  band pools to a constant **0.289** (flat-band assertion held — no invented resolution); monotone by
+  construction. **Jazz UNMAPPED (A-7 empirically-unvalidated).**
+- **Deferrals re-verified:** L5 combinedBoundary still non-monotone (0.6–0.8 band < 0.5–0.6, all presets) —
+  **shape UNCHANGED post-adoption → deferral STANDS** (the STOP "shape changed" did not trigger); cadence
+  tonicVote anti-monotone; L1.5 → Task B.
+- **Task B (L1.5 spike-vs-surface)** via the additive default-off `phraseNumVoices` dump field (spike-floor
+  invariant confirmed exactly = 1.5·numVoices): the SURFACE population (98.4%), un-compressed, has usable
+  monotone spread (0.13→0.46) → a per-population map is fittable IN PRINCIPLE later; the SPIKE population is
+  a flat ~0.40 cluster; **no map fitted** (weak absolute signal).
+- **Task C (θ):** F-A/F-B scales DECLARED (`x/(x+3.5)`, `x/(x+2.0)`; R5, precision-phase); θ candidates
+  fitted RECORDED/UNWIRED — **F-B fine-grain override net-harm CONFIRMED (1043 fires / 53 corrections / 809
+  harms) → the best measurable θ effectively DISABLES it: an inference-quality finding declared to Cowork
+  (redesign, not a θ retune)**; F-A reduced candidate τ≈5.0 (corr−harm +6→+15; full form deferred — the L3
+  incumbent is not in the `modulations[]` dump).
+- **Task D (R-11 conformal):** split-conformal vs map-implied abstention — verdict **complement, not
+  replacement**.
+- **Contract §3 row changes listed for Cowork to apply** (report §1.4 — the contract is Cowork-owned; CC
+  did not edit it).
+- **Sandwich:** gate **52/24/52** set-diff empty BEFORE+AFTER, corpus fingerprint-validated untouched;
+  standard `.ours.json` byte-identical (15/15); composing **1101/1101** · notation **53+4skip** · snapshot
+  **11/11 no refresh**.
+
+**NEXT (Cowork):** verify the maps/θ/verdicts; apply the contract-§3 row changes; then the arc-close
+checkpoint **§4.7/R10** (the batch→robust-unit stop handover). Open user calls: corpus track-vs-archive
+(O-12) · push at will.**
+
+**(history) PHASE 2.3 CC-DELIVERED (session 22v, 2026-07-06)** — report `cc_stage5_phase2_3_report.md`.
 - **(A) Staging step 3 — the three surviving §6-block margins (`kGateIMargin` 0.45, `kGateLMargin` 0.35,
   `kHalfDimFirstInversionBonus` 0.55) hold NO fittable gain at FULL range → each RETAINED, constant stays hand-set
   (skip-with-record).** Full-range 1-D ladders (Baroque, fitting split, refine-0; baseline 63.5391 exact): no

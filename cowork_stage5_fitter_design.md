@@ -430,6 +430,16 @@ Each family lands as its own adoption event (or is rejected on its numbers).
 
 ### §4.5 Phase 3 — calibration (completing C1's maps; C2)
 
+> **★ DELIVERED (session 22x, 2026-07-06; `cc_stage5_phase3_report.md`; see O-14). Measurement + committed
+> artifacts only, NOTHING wired, NO behavior change, NO push.** Curves re-measured on the adopted corpus
+> (ECE Δ≤0.001). Maps 1 (L3 margin) + 2 (L4 composite) FITTED (isotonic, Baroque/Default carriers, Jazz
+> A-7-unmapped), validated held-out (post-map ECE 0.017–0.041); L4 flat-band asserted+held (0.289). The
+> three deferred rows re-verified (L5 non-monotone shape UNCHANGED → stands; tonicVote anti-monotone; L1.5
+> → Task B, which found the SURFACE population has usable monotone spread but a weak absolute signal, no map
+> fitted). C2 §2: F-A/F-B scales declared + θ candidates recorded/unwired (F-B override net-harm CONFIRMED
+> → best measurable θ disables it, an inference finding). R-11 conformal = complement-not-replacement. C3
+> remains design-only, unblocked-not-started.
+
 1. **Reliability maps (C1's remaining deliverable).** Per (layer × decision × fit target) — contract C4:
    calibration is measured per preset/idiom where the idiom changes the scorer's behavior, so the map's
    style identity is the idiom, like every other fitted value — fit a **monotone**
@@ -1063,6 +1073,36 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   output becomes what the objective grades) OR a dedicated resolver-output objective + GT — a design/sequencing
   question returned to the user. **No fit run either way (per the dispatch); the number + this substrate
   observation are the checkpoint material.** The §15-13 item stays open, now with its measured population.
+- **O-14 (Phase 3 CALIBRATION delivered, 2026-07-06, session 22x; `cc_stage5_phase3_report.md`).** Measurement
+  + committed artifacts; NOTHING wired, NO behavior change, NO corpus write, NO push. **(i) Curves re-measured**
+  on the adopted corpus `c50002fee1` (predated 2.2e): every harmonic-row ECE Δ≤0.001 — the adoption did not move
+  the calibration. **(ii) Class-P maps FITTED + COMMITTED** (`tools/calibration_maps/stage5_classP_{l3_key_margin,
+  l4_chord_composite}_{baroque,default}.json`): isotonic on both rows (Platt rejected — iso-vs-Platt maxdiff
+  0.20–0.26, not near-logistic, and Platt held-out ECE worse); fit on the 261 fitting split, VALIDATED on the
+  65 held-out (post-map held-out ECE 0.017–0.041, 3–6× below pre-map); the L4 flat low band pools to a constant
+  **0.289** (flat-band assertion held — no invented resolution); monotone by construction. Jazz UNMAPPED (A-7).
+  **(iii) Deferrals re-verified:** L5 combinedBoundary non-monotonicity shape UNCHANGED post-adoption (the STOP
+  "shape changed" did NOT trigger — deferral STANDS); cadence tonicVote anti-monotone; L1.5 → Task B. **(iv) Task B**
+  (via the additive default-off `phraseNumVoices` dump field; spike-floor invariant confirmed exactly = 1.5·numVoices):
+  the SURFACE population (98.4% of ticks), un-compressed from the spike-dominated per-profile max, has usable
+  MONOTONE spread (0.13→0.46, mono-viol 2) → a per-population map is fittable IN PRINCIPLE at a later increment;
+  the SPIKE population is a flat ~0.40 cluster (no usable spread); NO map fitted (weak absolute signal, tops at
+  0.46) — the C1 "insufficient spread" reading is REFINED (spread exists once un-compressed; the limit is the
+  weak detection signal, upstream of calibration). **(v) Task C (θ):** F-A/F-B contradiction scales DECLARED
+  (`x/(x+3.5)` cadentialWeight, `x/(x+2.0)` plaus-diff; R5, precision-phase; ranges re-confirmed [3.35,9.35] /
+  [2.0,3.0]); θ candidates fitted RECORDED/UNWIRED (dormant chain, adoption rides engage) — **F-B fine-grain
+  override net-harm CONFIRMED (1043 fires / 53 corrections / 809 harms → 78% of fires move an L4-correct root
+  wrong); the corr−harm-maximizing measurable θ effectively DISABLES the override → declared to Cowork as an
+  inference-quality finding (redesign, not a θ retune)**; F-A reduced candidate τ≈5.0 on cadentialWeight
+  (corr−harm +6→+15 fit / +3→+5 hel) — full form deferred (the L3 incumbent key confidence is not in the
+  `modulations[]` dump; the override θ is not `--param-override`-exposed, so candidates are one-sided/stricter-only,
+  recorded). **(vi) Task D (R-11 conformal):** split-conformal vs map-implied abstention at targets {0.70,0.75,0.80}
+  — conformal retains more at achievable targets (better efficiency, finite-sample-valid) but slips where the
+  correctness ceiling nears the target → **complement, not replacement** (recorded for the Cowork disposition).
+  **(vii) Contract-§3 row changes listed for Cowork to apply** (report §1.4 — contract is Cowork-owned). Sandwich:
+  gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
+  (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
+  later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
 - **O-10 (lesson from the user's methodology challenge, 2026-07-05): RETAINED structural rules carry
   ongoing LIVENESS evidence.** The Gate-K/Gate-L failure mode — a rule's founding cases silently absorbed
   upstream, leaving dead code undetected for weeks — existed because nothing measured rule liveness. For
