@@ -154,6 +154,7 @@ TEST(FunctionResolver, ShareTone_ResolvedByLicensedProgressionIntoNext)
     EXPECT_FALSE(rr.openMark);
     EXPECT_EQ(rr.reading.rootPc, Fs);                            // the uniquely-licensed reading selected
     EXPECT_EQ(rr.basis, ResolutionBasis::Progression);
+    EXPECT_FALSE(rr.bothLicensed);                              // §15-13 telemetry: uniquely (not both) licensed
 }
 
 TEST(FunctionResolver, ShareTone_BothLicensedCarriesOpenMark)
@@ -178,6 +179,7 @@ TEST(FunctionResolver, ShareTone_BothLicensedCarriesOpenMark)
     EXPECT_FALSE(rr.resolved);
     EXPECT_TRUE(rr.openMark);
     EXPECT_EQ(rr.basis, ResolutionBasis::None);
+    EXPECT_TRUE(rr.bothLicensed);   // §15-13 telemetry: BOTH licensed → open-mark outcome (the population)
 }
 
 TEST(FunctionResolver, Transition_ResolvedAsArrivingFunction)
@@ -201,6 +203,7 @@ TEST(FunctionResolver, Transition_ResolvedAsArrivingFunction)
     EXPECT_TRUE(rr.resolved);
     EXPECT_EQ(rr.reading.rootPc, D);
     EXPECT_EQ(rr.basis, ResolutionBasis::Progression);
+    EXPECT_FALSE(rr.bothLicensed);                              // §15-13 telemetry: uniquely (not both) licensed
 }
 
 TEST(FunctionResolver, Transition_BothLicensedResolvesAsNeighbourWithinPrevailing)
@@ -227,6 +230,7 @@ TEST(FunctionResolver, Transition_BothLicensedResolvesAsNeighbourWithinPrevailin
     EXPECT_EQ(rr.reading.rootPc, C);
     EXPECT_EQ(rr.basis, ResolutionBasis::NeighbourHarmony);
     EXPECT_DOUBLE_EQ(rr.functionConfidence, 0.5);
+    EXPECT_TRUE(rr.bothLicensed);   // §15-13 telemetry: BOTH licensed → tie-break (NeighbourHarmony) outcome
 }
 
 TEST(FunctionResolver, Transition_ResolvedAsNeighbourWithinPrevailing)

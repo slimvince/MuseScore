@@ -3426,6 +3426,12 @@ static std::string runFullSpine(Score* score, const std::string& stem,
            << ", \"l5Resolved\": " << (rr.resolved ? "true" : "false")
            << ", \"l5OverrodeCommit\": " << (rr.overrodeCommit ? "true" : "false")
            << ", \"l5OpenMark\": " << (rr.openMark ? "true" : "false")
+           // Stage-5 §15-13 population diagnostic (fitter §4.4 family 4): the §5.5
+           // licensing arms (Transition/ShareTone) found BOTH readings licensed into the
+           // established next function — the both-licensed fall-through the §15-13
+           // preference-among-licensed weight would act on. Additive; default-off dump
+           // only (production .ours.json byte-identical — this path is --dump-fullspine).
+           << ", \"l5BothLicensed\": " << (rr.bothLicensed ? "true" : "false")
            << ", \"l5Basis\": \"" << fsResolutionBasisName(rr.basis) << "\""
            << ", \"l5Role\": \"" << ((i < out5.units.size()) ? relationalRoleName(out5.units[i].relationalRole) : "None") << "\""
            << ", \"l5CadenceVoteWeight\": " << fmtDouble(fc.cadenceVoteWeight, 4)

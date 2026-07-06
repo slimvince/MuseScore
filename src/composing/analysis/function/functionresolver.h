@@ -181,6 +181,20 @@ struct ResolvedReading {
     // never touches them (they stay false — the base resolver is byte-identical).
     bool clippedBySelectionEdge = false;   ///< the decision-context span was cut by the selection edge
     bool cueDenied = false;                ///< a forward-extension request was REFUSED (proceeds on truncated evidence)
+
+    // ── Stage-5 §15-13 population diagnostic (fitter design §4.4 family 4) ─────────
+    // Set true by resolveAbstained() ONLY at the §5.5 licensing arms (Transition /
+    // ShareTone) when BOTH carried readings form a licensed progression into the
+    // established next function (aIn && bIn) — the "both-licensed" case the binary
+    // licensing test deliberately does NOT separate (§5.5 / §15-13), which falls to
+    // the structural tie-breaks (NeighbourHarmony / §5.7 BassDegreePrior) or the honest
+    // open mark. Additive, behaviour-NEUTRAL telemetry: it records what the resolver
+    // already computes and is READ ONLY by the default-off --dump-fullspine measurement
+    // (batch_analyze). The base resolver's control flow, every other consumer, and all
+    // production output are byte-identical. The OUTCOME (tie-break vs open) is the
+    // existing basis/openMark; this field only labels WHICH fall-throughs were
+    // both-licensed (the population the §15-13 preference-among-licensed weight fits).
+    bool bothLicensed = false;
 };
 
 // ── The resolver result (the readings + the §8 closure, for transparency/tests) ─

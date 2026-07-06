@@ -220,6 +220,7 @@ ResolvedReading resolveAbstained(int i, const Progression& prog,
         // Belong to the arriving function: a licensed progression INTO the next.
         const bool aIn = hasNext && isLicensedProgression(toPC(readA), nextChord);
         const bool bIn = hasNext && isLicensedProgression(toPC(readB), nextChord);
+        r.bothLicensed = (aIn && bIn);   // §15-13 telemetry (fitter §4.4 family 4) — behaviour-neutral
         if (aIn != bIn) {
             return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);
         }
@@ -240,6 +241,7 @@ ResolvedReading resolveAbstained(int i, const Progression& prog,
         // Select the reading that participates in a licensed progression into the next.
         const bool aIn = hasNext && isLicensedProgression(toPC(readA), nextChord);
         const bool bIn = hasNext && isLicensedProgression(toPC(readB), nextChord);
+        r.bothLicensed = (aIn && bIn);   // §15-13 telemetry (fitter §4.4 family 4) — behaviour-neutral
         if (aIn != bIn) {
             return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);
         }
