@@ -69,16 +69,10 @@ weightedPcView(const notemodel::NoteModel& noteModel,
     const Fraction startTick = Fraction::fromTicks(startTickInt);
     const int regionDuration = endTickInt - startTickInt;
 
-    auto beatWeight = [](BeatType bt) -> double {
-        switch (bt) {
-        case BeatType::DOWNBEAT:            return 1.0;
-        case BeatType::SIMPLE_STRESSED:
-        case BeatType::COMPOUND_STRESSED:   return 0.85;
-        case BeatType::SIMPLE_UNSTRESSED:
-        case BeatType::COMPOUND_UNSTRESSED: return 0.75;
-        default:                            return 0.5;  // SUBBEAT / COMPOUND_SUBBEAT
-        }
-    };
+    // Beat-type → normalised metric weight is single-owned by
+    // scoreharvest::regionMetricWeightForBeatType (metricweights.h, already
+    // included). Formerly this TU inlined the identical {1.0,0.85,0.75,0.5} map;
+    // FQ-5/S5 unifies to the one source.
 
     // The view filter — reproduces the legacy analysis drop set exactly: a note
     // contributes only if its staff is eligible and not excluded, and the note
@@ -161,7 +155,7 @@ weightedPcView(const notemodel::NoteModel& noteModel,
         if (!m0) { return 0.75; }
         const Segment* s0 = sc->tick2segment(startTick, true, SegmentType::ChordRest);
         if (!s0) { return 0.75; }
-        return beatWeight(shv::safeBeatType(m0, s0));
+        return shv::regionMetricWeightForBeatType(shv::safeBeatType(m0, s0));
     }();
 
     // Beat weight at a note's onset segment (the legacy per-note metric weight).
@@ -171,7 +165,7 @@ weightedPcView(const notemodel::NoteModel& noteModel,
         if (!m) { return bwAtRegionStart; }
         const Segment* s = sc->tick2segment(t, true, SegmentType::ChordRest);
         if (!s) { return bwAtRegionStart; }
-        return beatWeight(shv::safeBeatType(m, s));
+        return shv::regionMetricWeightForBeatType(shv::safeBeatType(m, s));
     };
 
     // Dense-start look-ahead exclusion: when ≥3 distinct pitch classes already
@@ -232,7 +226,7 @@ weightedPcView(const notemodel::NoteModel& noteModel,
                 continue;  // legacy forward walk skips measure-less segments
             }
             const Segment* fs = sc->tick2segment(t, true, SegmentType::ChordRest);
-            const double bw = fs ? beatWeight(shv::safeBeatType(m, fs)) : bwAtRegionStart;
+            const double bw = fs ? shv::regionMetricWeightForBeatType(shv::safeBeatType(m, fs)) : bwAtRegionStart;
 
             const int clippedEnd  = std::min(ne->release, endTickInt);
             const int durInRegion = clippedEnd - ne->onset;

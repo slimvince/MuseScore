@@ -30,29 +30,13 @@ std::vector<ModePriorPreset> modePriorPresets()
     // negative = less likely.  Defaults reflect empirical tuning on the
     // 371-chorale validation corpus.
 
+    // "Standard" == the ModePriorPreset struct default member initializers
+    // (modepriorpresets.h), which in turn match the KeyModeAnalyzerPreferences
+    // compile-time defaults. FQ-5/S7 removed the explicit `standard.*=` restatement
+    // (a third literal copy the sync test had to guard); a default-constructed
+    // ModePriorPreset already carries exactly these magnitudes.
     ModePriorPreset standard;
     standard.name             = "Standard";
-    standard.ionian           =  1.20;
-    standard.dorian           = -0.50;
-    standard.phrygian         = -1.50;
-    standard.lydian           = -1.50;
-    standard.mixolydian       = -0.50;
-    standard.aeolian          =  1.00;
-    standard.locrian          = -3.00;
-    standard.melodicMinor     = -0.50;
-    standard.dorianB2         = -1.50;
-    standard.lydianAugmented  = -2.00;
-    standard.lydianDominant   = -1.00;
-    standard.mixolydianB6     = -1.50;
-    standard.aeolianB5        = -2.50;
-    standard.altered          = -3.50;
-    standard.harmonicMinor    = -0.30;
-    standard.locrianSharp6    = -2.50;
-    standard.ionianSharp5     = -2.00;
-    standard.dorianSharp4     = -2.00;
-    standard.phrygianDominant = -0.80;
-    standard.lydianSharp2     = -2.50;
-    standard.alteredDomBB7    = -3.50;
 
     ModePriorPreset jazz;
     jazz.name             = "Jazz";

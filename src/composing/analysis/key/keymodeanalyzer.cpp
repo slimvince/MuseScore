@@ -763,16 +763,16 @@ std::vector<KeyModeAnalysisResult> KeyModeAnalyzer::analyzeKeyMode(
         const double winnerScore = results.front().score;
         const double runnerUpScore = (results.size() >= 2) ? results[1].score : 0.0;
         const double gap = winnerScore - runnerUpScore;
-        const double confidence = 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
-                                                          * (gap - prefs.confidenceSigmoidMidpoint)));
+        const double confidence = normalizedConfidenceSigmoid(
+            gap, prefs.confidenceSigmoidSteepness, prefs.confidenceSigmoidMidpoint);
         for (size_t i = 0; i < results.size(); ++i) {
             // Winner gets the computed confidence; runners-up get proportionally less
             if (i == 0) {
                 results[i].normalizedConfidence = confidence;
             } else {
                 const double iGap = results[i].score - ((i + 1 < results.size()) ? results[i + 1].score : 0.0);
-                results[i].normalizedConfidence = 1.0 / (1.0 + std::exp(-prefs.confidenceSigmoidSteepness
-                                                                         * (iGap - prefs.confidenceSigmoidMidpoint)));
+                results[i].normalizedConfidence = normalizedConfidenceSigmoid(
+                    iGap, prefs.confidenceSigmoidSteepness, prefs.confidenceSigmoidMidpoint);
             }
         }
     }

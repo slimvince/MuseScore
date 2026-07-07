@@ -21,12 +21,21 @@
  */
 #pragma once
 
+#include <cmath>
 #include <optional>
 #include <vector>
 
 #include "../types/analysistypes.h"
 
 namespace mu::composing::analysis {
+
+/// Normalized-confidence sigmoid: map a score gap through
+/// 1/(1+exp(-steepness*(gap-midpoint))) to [0,1]. Single-owned (FQ-5/S10) so the
+/// per-region winner confidence (keymodeanalyzer.cpp) and the Layer-3 emission
+/// confidence (keymodesequence.cpp) share one expression rather than two copies.
+inline double normalizedConfidenceSigmoid(double gap, double steepness, double midpoint) {
+    return 1.0 / (1.0 + std::exp(-steepness * (gap - midpoint)));
+}
 
 // KeySigMode now lives in the leaf types header analysis/types/analysistypes.h
 // (included above) — a pure relocation, name and namespace unchanged. Including the

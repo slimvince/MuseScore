@@ -65,6 +65,25 @@ namespace {
 constexpr int kPass2MinRegionTicks    = 4 * mu::engraving::Constants::DIVISION;
 constexpr int kMaxBassMovementPasses  = 8;
 
+/// Build a cache-ready ChordPathNode from a committed winner, its alternatives
+/// snapshot, and the gate context. Single-owned (FQ-5/S11): the winnerScore /
+/// winnerMargin derivation from gateCtx.rawCandidates was copy-pasted at all three
+/// decoder.recordNode() commit sites (Pass-1 main loop + the two Pass-2/2b subloops).
+decode::ChordPathNode makeChordPathNode(const ChordAnalysisResult& committed,
+                                        const std::vector<ChordAnalysisResult>& alternatives,
+                                        const PostScoringGateContext& gateCtx)
+{
+    decode::ChordPathNode node;
+    node.committed    = committed;
+    node.alternatives = alternatives;
+    node.winnerScore  = gateCtx.rawCandidates.empty()
+                        ? 0.0 : gateCtx.rawCandidates[0].score;
+    node.winnerMargin = (gateCtx.rawCandidates.size() >= 2)
+                        ? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+                        : -1.0;
+    return node;
+}
+
 /// One reach-back increment in ticks: the duration of the measure ending at `tick`
 /// (the measure just before the loaded-span edge), read from the score's time
 /// signature — Architectural Layer 3's natural unit (design §2). Falls back to a 4/4
@@ -999,17 +1018,7 @@ analyzeRegions(const mu::engraving::Score* score,
             // Cache-ready path accumulation (Stage 3.1; inert — nothing reads
             // decoder.path() yet). winnerScore / margin mirror the predecessor-
             // confidence fields advanceTemporalContext() captures from gateCtx.
-            {
-                decode::ChordPathNode node;
-                node.committed    = chosenResult;
-                node.alternatives = alternativesSnapshot;
-                node.winnerScore  = gateCtx.rawCandidates.empty()
-                                    ? 0.0 : gateCtx.rawCandidates[0].score;
-                node.winnerMargin = (gateCtx.rawCandidates.size() >= 2)
-                                    ? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
-                                    : -1.0;
-                decoder.recordNode(std::move(node));
-            }
+            decoder.recordNode(makeChordPathNode(chosenResult, alternativesSnapshot, gateCtx));
 
             if (opts.hooks && opts.hooks->preMergeRegions) {
                 HarmonicRegion preMergeRegion;
@@ -1219,15 +1228,7 @@ analyzeRegions(const mu::engraving::Score* score,
 
                 subDecoder.commit(chosenSub.identity, subGateCtx);
                 {
-                    decode::ChordPathNode node;
-                    node.committed    = chosenSub;
-                    node.alternatives = subAltsSnap;
-                    node.winnerScore  = subGateCtx.rawCandidates.empty()
-                                        ? 0.0 : subGateCtx.rawCandidates[0].score;
-                    node.winnerMargin = (subGateCtx.rawCandidates.size() >= 2)
-                                        ? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
-                                        : -1.0;
-                    subDecoder.recordNode(std::move(node));
+                    subDecoder.recordNode(makeChordPathNode(chosenSub, subAltsSnap, subGateCtx));
                 }
 
                 // Collapse same-chord consecutive regions only when truly adjacent.

@@ -221,9 +221,8 @@ void populateEmissionConfidence(std::vector<SliceKeyMode>& out, const Lattice& l
         }
         const double runnerUp = (bestOther == NEG_INF) ? 0.0 : bestOther;   // single-state → vs 0
         const double gap = chosenScore - runnerUp;
-        sk.chosen.normalizedConfidence =
-            1.0 / (1.0 + std::exp(-keyPrefs.confidenceSigmoidSteepness
-                                  * (gap - keyPrefs.confidenceSigmoidMidpoint)));
+        sk.chosen.normalizedConfidence = normalizedConfidenceSigmoid(
+            gap, keyPrefs.confidenceSigmoidSteepness, keyPrefs.confidenceSigmoidMidpoint);
     }
 }
 
