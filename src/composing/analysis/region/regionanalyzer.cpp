@@ -1051,6 +1051,7 @@ analyzeRegions(const mu::engraving::Score* score,
                 region.keyConfidence = localKeyRed.confidence;
                 region.tones         = std::move(tones);
                 region.temporalExtensions = extensionsSnapshot;
+                region.fanout        = analysis::computeRawFanoutSummary(gateCtx);
                 regions.push_back(std::move(region));
             }
         }
@@ -1246,6 +1247,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     inheritRegionKeyContext(subRegion, parentRegion);
                     subRegion.tones            = std::move(subTones);
                     subRegion.temporalExtensions = subExtSnap;
+                    subRegion.fanout           = analysis::computeRawFanoutSummary(subGateCtx);
                     pass2Regions.push_back(std::move(subRegion));
                 }
             }
@@ -1437,6 +1439,7 @@ analyzeRegions(const mu::engraving::Score* score,
                     inheritRegionKeyContext(subRegion, parentRegion);
                     subRegion.tones            = std::move(subTones);
                     subRegion.temporalExtensions = subExtSnap;
+                    subRegion.fanout           = analysis::computeRawFanoutSummary(subGateCtx);
                     pass2bRegions.push_back(std::move(subRegion));
                 }
             }

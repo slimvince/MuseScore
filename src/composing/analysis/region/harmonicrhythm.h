@@ -117,6 +117,17 @@ struct HarmonicRegion {
     // analyzeRegions key path); has NO consumer — it exists for Layer 5.
     std::vector<KeyModeAnalysisResult> keyAlternatives; ///< region-level ranked candidate keys (excl. the chosen)
     double keyConfidence = 0.0;                          ///< THE Layer-3 boundary confidence: chosen key's Class-M sequence margin (D-L3a; ≠ keyModeResult.normalizedConfidence, the internal/diagnostic emission sigmoid)
+
+    // ── Read-only Layer-5 fan-out summary (Engage arc #8; IN-MEMORY ONLY) ──────
+    // The TRUE untruncated above-threshold ranked-set size Layer 5 will select over,
+    // captured from this region's gateCtx BEFORE applyHarmonicFunction()'s cap-of-3.
+    // Filled at the competition commit sites (regionanalyzer.cpp) via
+    // computeRawFanoutSummary(gateCtx); default (all-0) at inherited/gap/fallback
+    // regions that ran no fresh competition. Like keyAlternatives above, this is
+    // DELIBERATELY NOT SERIALIZED into any production output — every region serializer
+    // reads only named sub-fields and none touches this, so adding it is byte-identical.
+    // Emitted solely by the read-only --dump-fanout diagnostic.
+    RawFanoutSummary fanout {};                           ///< uncapped competition fan-out summary (read-only measurement)
 };
 
 } // namespace mu::composing::analysis

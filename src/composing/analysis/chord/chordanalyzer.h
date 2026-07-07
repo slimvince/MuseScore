@@ -571,6 +571,48 @@ inline void advanceTemporalContext(
         : -1.0;
 }
 
+/// ── Read-only Layer-5 fan-out summary (Engage arc #8 measurement) ───────────
+/// The TRUE untruncated above-threshold ranked-set size Layer 5 will select over,
+/// BEFORE applyHarmonicFunction()'s cap-of-3 (harmonicfunctionlayer.cpp:521) and its
+/// diff-root append. A pure read-only VIEW of the pipeline's own gateCtx: `total` is
+/// the full winning-bass fan-out (gateCtx.rawCandidates.size(), uncapped);
+/// `aboveThreshold` counts the leading candidates whose score clears gateCtx.threshold
+/// (the results[] admission test, harmonicfunctionlayer.cpp:524) — the real ranked set
+/// the cap truncates. distinctRoots* count genuinely-different-ROOT readings (the
+/// decoder already dedups voicings, so each rawCandidate is one reading; the reading
+/// count IS the distinct-voicing count). Computed by computeRawFanoutSummary(); carried
+/// in-memory only and NEVER serialized into any production output (.ours.json, snapshot
+/// goldens, notation annotations) — it exists solely for the read-only fan-out dump.
+struct RawFanoutSummary {
+    int total              = 0;  ///< all rawCandidates (uncapped winning-bass fan-out)
+    int aboveThreshold     = 0;  ///< rawCandidates with score >= gateCtx.threshold (pre-cap ranked set)
+    int distinctRootsTotal = 0;  ///< distinct rootPc across all rawCandidates
+    int distinctRootsAbove = 0;  ///< distinct rootPc across the above-threshold set
+};
+
+/// Read-only view: derive the fan-out summary from the pipeline's own gateCtx (its
+/// rawCandidates + threshold). rawCandidates is score-sorted descending, so the
+/// above-threshold set is a prefix; counting every entry is equivalent and order-free.
+/// No scoring, no re-decision — a faithful count of the reading set applyHarmonicFunction
+/// already produced.
+inline RawFanoutSummary computeRawFanoutSummary(const PostScoringGateContext& gateCtx) noexcept
+{
+    RawFanoutSummary s;
+    s.total = static_cast<int>(gateCtx.rawCandidates.size());
+    std::array<bool, 12> rootSeenAll{};
+    std::array<bool, 12> rootSeenAbove{};
+    for (const RawCandidate& rc : gateCtx.rawCandidates) {
+        const bool above = rc.score >= gateCtx.threshold;
+        if (above) { ++s.aboveThreshold; }
+        if (rc.rootPc >= 0 && rc.rootPc < 12) {
+            const auto r = static_cast<size_t>(rc.rootPc);
+            if (!rootSeenAll[r])          { rootSeenAll[r]   = true; ++s.distinctRootsTotal; }
+            if (above && !rootSeenAbove[r]) { rootSeenAbove[r] = true; ++s.distinctRootsAbove; }
+        }
+    }
+    return s;
+}
+
 /// Locally-computed inputs that buildChordResult() needs from analyzeChord().
 struct BuildChordResultContext {
     const std::array<double, 12>& pcWeight;

@@ -525,6 +525,11 @@ struct AnalyzedRegion {
     std::vector<ChordAnalysisTone> tones;
     uint16_t pcMask = 0;   // 12-bit pitch-class bitmask of sounding notes
     int bassPc = -1;       // pitch class of the lowest-sounding note
+    // Engage arc #8 (--dump-fanout, read-only diagnostic): the TRUE untruncated
+    // above-threshold competition fan-out this region's committed slice produced,
+    // copied from HarmonicRegion.fanout. Populated on the batch path only; the
+    // standard writeJson NEVER reads it (byte-identical corpus).
+    analysis::RawFanoutSummary fanout {};
 };
 
 enum class RegionDumpMode {
@@ -699,6 +704,7 @@ static std::vector<AnalyzedRegion> analyzeScore(
         ar.tones            = hr.tones;
         ar.key              = hr.keyModeResult;
         ar.keySeqMargin     = hr.keyConfidence;   // C1 L3 sequence-margin confidence (diagnostic-only)
+        ar.fanout           = hr.fanout;           // Engage arc #8 fan-out summary (diagnostic-only)
         ar.keyRanked        = keyRanked;
         ar.pcMask           = pitchClassMask(ar.tones);
         ar.bassPc           = hr.chordResult.identity.bassPc;
@@ -1385,6 +1391,48 @@ static void writeRegionKeyMarginJson(
     out << (regions.empty() ? "]" : "\n  ]") << "\n}\n";
 }
 
+// ── Engage arc #8 (--dump-fanout) — the TRUE untruncated Layer-5 fan-out export ─
+//
+// DIAGNOSTIC ONLY (mirrors --dump-region-keymargin). Emits, per BATCH region, the
+// uncapped above-threshold competition fan-out the region's committed slice produced
+// — the real ranked-set size Layer 5 will select over, BEFORE applyHarmonicFunction()'s
+// cap-of-3. Fields (all from AnalyzedRegion.fanout = HarmonicRegion.fanout, captured
+// from the production gateCtx):
+//   * fanoutTotal          = gateCtx.rawCandidates.size() (uncapped winning-bass fan-out)
+//   * fanoutAboveThreshold = candidates with score >= gateCtx.threshold (the pre-cap set)
+//   * distinctRootsTotal   = distinct rootPc across all rawCandidates
+//   * distinctRootsAbove   = distinct rootPc across the above-threshold set
+// A region with fanoutTotal == 0 ran no fresh competition (inherited/gap/fallback slice)
+// and is excluded from the fan-out distribution by the read-only analysis script.
+// Called from a flag path that returns BEFORE the standard writeJson, so the standard
+// corpus is byte-identical by construction (the whole point).
+static void writeFanoutJson(
+    const std::vector<AnalyzedRegion>& regions,
+    const std::string& stem,
+    const std::string& presetName,
+    std::ostream& out)
+{
+    out << "{\n";
+    out << "  \"stem\": \"" << jsonEscape(stem) << "\",\n";
+    out << "  \"preset\": \"" << jsonEscape(presetName) << "\",\n";
+    out << "  \"analysisPath\": \"fanout\",\n";
+    out << "  \"regions\": [";
+    for (size_t i = 0; i < regions.size(); ++i) {
+        const AnalyzedRegion& r = regions[i];
+        const int rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+        out << (i ? ",\n    " : "\n    ");
+        out << "{ \"startTick\": " << r.startTick
+            << ", \"endTick\": " << r.endTick
+            << ", \"rootPitchClass\": " << rootPc
+            << ", \"fanoutTotal\": " << r.fanout.total
+            << ", \"fanoutAboveThreshold\": " << r.fanout.aboveThreshold
+            << ", \"distinctRootsTotal\": " << r.fanout.distinctRootsTotal
+            << ", \"distinctRootsAbove\": " << r.fanout.distinctRootsAbove
+            << " }";
+    }
+    out << (regions.empty() ? "]" : "\n  ]") << "\n}\n";
+}
+
 static void writeJson(
     const std::vector<AnalyzedRegion>& regions,
     const std::string& sourceName,
@@ -2020,6 +2068,13 @@ static void printHelp(const std::string& prog)
         << "            contract §3 L3 boundary confidence) + keySigmoid (the emission sigmoid,\n"
         << "            == the standard .ours.json region keyConfidence). Standard corpus\n"
         << "            byte-identical by construction (returns early). Default OFF.\n"
+        << "  --dump-fanout\n"
+        << "            (Engage arc #8, read-only DIAGNOSTIC — returns before the standard\n"
+        << "            writeJson) Run the BATCH region path and emit, per region, the TRUE\n"
+        << "            untruncated above-threshold competition fan-out (fanoutTotal,\n"
+        << "            fanoutAboveThreshold, distinctRootsTotal, distinctRootsAbove) captured\n"
+        << "            from the production gateCtx BEFORE applyHarmonicFunction's cap-of-3.\n"
+        << "            Standard corpus byte-identical by construction (returns early). Default OFF.\n"
         << "  --dump-l6\n"
         << "            (L6, read-only DIAGNOSTIC) Run --dump-fullspine AND append an additive\n"
         << "            \"l6\" object: the dormant Layer-6 grouping structure assembled from the\n"
@@ -3626,6 +3681,7 @@ int main(int argc, char* argv[])
     bool reachBackAB = false;         // Layer-3 reach-back flag-ON/OFF range-query A/B (default OFF; HELD)
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     bool dumpRegionKeyMargin = false; // C1 L3 sequence-margin export (default OFF = standard corpus byte-identical)
+    bool dumpFanout = false;          // Engage arc #8 uncapped fan-out export (default OFF = standard corpus byte-identical)
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
     bool dumpVl = false;              // axis 2 (voice leading) VL-A/B/C dump (default OFF, additive)
@@ -3705,6 +3761,11 @@ int main(int argc, char* argv[])
             // sequence-margin + emission-sigmoid confidences (diagnostic; returns
             // before the standard writeJson, so the corpus is byte-identical).
             dumpRegionKeyMargin = true;
+        } else if (a == "--dump-fanout") {
+            // Engage arc #8: run the BATCH region path and emit per-region the TRUE
+            // untruncated above-threshold competition fan-out (diagnostic; returns
+            // before the standard writeJson, so the corpus is byte-identical).
+            dumpFanout = true;
         } else if (a == "--dump-l6") {
             // L6 grouping: run the full spine and APPEND the dormant grouping structure.
             dumpFullSpine = true;
@@ -4180,6 +4241,28 @@ int main(int argc, char* argv[])
             ofs << km.str();
         } else {
             std::cout << km.str();
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── Engage arc #8 — the uncapped fan-out export (--dump-fanout) ──
+    // DIAGNOSTIC ONLY: runs the BATCH region path (identical to how the frozen gate
+    // corpus was produced — sectionLevel=false) and emits per-region the TRUE
+    // untruncated above-threshold competition fan-out, then returns before the standard
+    // writeJson ⇒ the standard .ours.json corpus is byte-identical.
+    if (dumpFanout) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::vector<AnalyzedRegion> foRegions =
+            analyzeScore(score, excludeStaves, keyPrefs, chordPrefs, /*sectionLevel=*/false);
+        std::ostringstream fo;
+        writeFanoutJson(foRegions, stem, presetName, fo);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << fo.str();
+        } else {
+            std::cout << fo.str();
         }
         delete score;
         return 0;
