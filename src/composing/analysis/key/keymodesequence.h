@@ -98,6 +98,7 @@
 
 #include "keymodeanalyzer.h"
 #include "composing/analysis/notemodel/note_model.h"
+#include "composing/analysis/scoreharvest/metricweights.h"   // FQ-7/S8: DECAY_RATE, LOOKAHEAD_WEIGHT (shared symbols)
 #include "composing/analysis/slicing/slicer.h"
 
 namespace mu::composing::analysis::keymodeseq {
@@ -115,14 +116,19 @@ struct KeyModeSequencePreferences {
     int topK = 8;
 
     // ── Change cost (emission-score units; design §5.2 / audit §2.3) ──────────
+    // FQ-7/S8: sourced from the resolver's shared symbols (kDefaultKeyModeAnalyzerPreferences)
+    // rather than copied literals, so a Stage-5 fit of the resolver's hysteresis/
+    // key-distance margins moves these decoder defaults from one place. Byte-identical
+    // (same 2.0 / 0.60 / 2.0 magnitudes); constexpr member access on the inline-constexpr
+    // default keeps the whole struct a literal type.
     /// Base "change penalty" for any key/mode switch (= resolver hysteresisMargin).
-    double changeBaseCost = 2.0;
+    double changeBaseCost = kDefaultKeyModeAnalyzerPreferences.hysteresisMargin;
     /// Per circle-of-fifths step between the two key signatures
     /// (= resolver keySignatureDistancePenalty).
-    double changePerFifthStep = 0.60;
+    double changePerFifthStep = kDefaultKeyModeAnalyzerPreferences.keySignatureDistancePenalty;
     /// Extra penalty for a relative-major/minor (same-signature, different-mode)
     /// switch (= resolver relativeKeyHysteresisMargin). The "hardest pair".
-    double relativePairExtraCost = 2.0;
+    double relativePairExtraCost = kDefaultKeyModeAnalyzerPreferences.relativeKeyHysteresisMargin;
 
     // ── Emission window (per slice; design §5.1 / audit §2.4) ─────────────────
     /// Symmetric look-around added to each side of the slice span, in quarter-note
@@ -130,9 +136,9 @@ struct KeyModeSequencePreferences {
     /// long-range coherence the old 16-beat look-back faked, so the window is small.
     double windowBeats = 4.0;
     /// Time decay per measure for notes away from the slice (= DECAY_RATE).
-    double decayRate = 0.7;
+    double decayRate = scoreharvest::DECAY_RATE;
     /// Weight multiplier for notes that onset AFTER the slice end (= LOOKAHEAD_WEIGHT).
-    double lookaheadWeight = 0.5;
+    double lookaheadWeight = scoreharvest::LOOKAHEAD_WEIGHT;
     /// Length-scale of the time decay, in beats per decay unit (one 4/4 measure).
     double beatsPerDecayUnit = 4.0;
 
