@@ -1,5 +1,34 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out, MEASURED read-only (session 31, 2026-07-07).** CC
+executed `cc_instruction_engage_fanout_measure.md` — the Stage-2 prerequisite: how large is the graded
+candidate distribution Layer 5 will select over? **Route:** no faithful no-`src` path exists —
+`--diagnose-measures` replays `diagnoseChord` with a **NULL temporal context** (`batch_analyze.cpp:1689`) and
+emits no threshold; `--dump-fullspine` runs a **different decoder** (`ChordSliceDecoder::decode`, not the
+`applyHarmonicFunction` competition). So a **single minimal additive default-OFF field**: `RawFanoutSummary`
+(`chordanalyzer.h`) computed by `computeRawFanoutSummary(gateCtx)` from the production `gateCtx.rawCandidates` +
+`gateCtx.threshold` at the region commit sites (`regionanalyzer.cpp` :1054/:1250/:1442), carried **in-memory
+only** on `HarmonicRegion`/`AnalyzedRegion` (the `keyAlternatives`/`keyConfidence` not-serialized idiom),
+emitted solely by **`--dump-fanout`** (mirrors `--dump-region-keymargin`; returns before `writeJson`).
+**Byte-identity PROVEN — 1056/1056 `.ours.json` 0-diff vs frozen `c50002fee1`** (default flags); both stops
+trivially green (class-(b) +0/−0; characterise **52/24/52**); suites **1101 / 53 / 11**, no golden refresh.
+Instrument is a separate revertible `feat` (#14); docs a `docs(cowork):` fold. **THE NUMBERS (corpus
+`c50002fee1`, HEAD `b5857ed2f3`, ×3 presets, per committed competition slice):** the §1.5 audit measured only
+the capped floor (≤3 + conditional append, ~36 %/21.5 %); the **TRUE above-threshold ranked set is ~2×** —
+median **5/4/5** readings (Baroque/Jazz/Default), mean **6.35/6.15/6.32**, p90 **11/12/11**, p99 **27/23/27**,
+max **49/46/49**. **Cap-of-3 discards ≥1 above-threshold reading on 79.5/75.4/79.3 %** of slices (>5 on
+37.4/33.6/37.2 %, >10 on 10.8/13.2/10.5 %). **BUT the readings collapse to ~2 roots** — distinct roots above
+threshold median **2/1/2**, mean **2.13/1.73/2.12**, >1-root on **68.8/46.7/68.6 %**. **★ The load-bearing
+exclusion tail (#12): a ≥3rd distinct root clears threshold on 25.1/16.1/24.9 %** of slices — roots the cap-of-3
++ single diff-root append (winner + ≤1 alternate root) **cannot represent**. `fanoutTotal`=**204** constant (12
+roots × 17 `kTemplateCount` templates — the full scored grid; so "total" is structural, the meaningful fan-out
+IS the above-threshold subset ≈3.1 % of the grid). Jazz's narrower root set tracks its suppressed inversion
+bonuses. Report `cc_engage_fanout_measure_report.md` + machine-readable `cc_engage_fanout_measure_data.json`;
+instrument `tools/measure_fanout.py`. Observation only (moratorium — no inference coding, no design decision).
+Corpus frozen `c50002fee1`; fork-only, `upstream` untouched. **FRESH SESSION:** Cowork verifies the
+distribution at objects → **Stage 2 (the Layer-5 engagement design) opens** on the real fan-out. Prior header,
+kept:
+
 **★ ENGAGE ARC #7 — STAGE 1 DELIVERED — the PRE-Layer-5 refactor batch (session 30, 2026-07-07).** CC
 executed `cc_instruction_engage_pre_l5_refactor_batch.md` (ratified plan `cowork_engage_arc_plan.md` Stage 1).
 Diff base HEAD `0d7fcc6c48`. **Three byte-identical revertible commits**, each proven **0-diff `.ours.json`

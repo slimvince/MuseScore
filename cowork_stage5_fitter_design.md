@@ -1130,6 +1130,25 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-24 (ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out MEASURED read-only, 2026-07-07;
+  `cc_engage_fanout_measure_report.md` + data `cc_engage_fanout_measure_data.json`; instrument
+  `tools/measure_fanout.py`).** The O-22 audit measured only the **capped floor** (append fires ~36 %
+  Baroque/Default, 21.5 % Jazz); this measures the **uncapped above-threshold ranked set** the cap-of-3
+  truncates — `gateCtx.rawCandidates` filtered by `gateCtx.threshold`, captured with the **real production
+  context** (the no-`src` paths are unfaithful: `--diagnose-measures` runs NULL context + no threshold;
+  `--dump-fullspine` runs a different decoder). A minimal default-OFF `--dump-fanout` field, **1056/1056
+  `.ours.json` byte-identical** vs frozen `c50002fee1`, both stops green. **Fitter-relevant facts for the
+  Stage-2 design (corpus `c50002fee1`, ×3 presets):** (a) the true above-threshold set is **~2× the capped
+  floor** — median **5/4/5** readings, mean **6.35/6.15/6.32**, p99 **27/23/27**, max **49/46/49**; the
+  cap-of-3 discards ≥1 above-threshold reading on **79.5/75.4/79.3 %** of slices. (b) **BUT it collapses to a
+  small root set** — distinct roots above threshold median **2/1/2**, mean **2.13/1.73/2.12**; the reading
+  count is mostly template/voicing variants of ~2 roots (`fanoutTotal`=204 constant = 12 roots × 17 templates,
+  the full scored grid — so the meaningful fan-out is strictly the above-threshold subset, ≈3.1 % of the grid).
+  (c) **The load-bearing exclusion tail (#12):** a **≥3rd distinct root** clears threshold on **25.1/16.1/24.9
+  %** of slices — roots the cap-of-3 + single diff-root append (winner + ≤1 alternate root) **cannot carry**;
+  that is where the uncapped carry (E4's governed carry replacing the substrate) is load-bearing for the
+  Layer-5 selection the fitter's objective scores over. Observation only (moratorium — no inference coding, no
+  design decision); the numbers are for Cowork to open Stage 2 on the real distribution.
 - **O-23 (ENGAGE ARC #7 — STAGE 1 PRE-Layer-5 refactor batch DELIVERED, 2026-07-07;
   `cc_engage_pre_l5_refactor_report.md`).** The portable pre-L5 unification wins landed as three
   byte-identical revertible commits (FQ-5 `65764881d0`, FQ-7/S8 `56b06462db`, FQ-6 `5420e6e543`; each

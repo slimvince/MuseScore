@@ -1,0 +1,204 @@
+{
+  "git_hash": "b5857ed2f3",
+  "corpus_git_hash": "c50002fee1",
+  "n_scores": 352,
+  "presets": {
+    "Baroque": {
+      "n_competition_slices": 11205,
+      "above_threshold": {
+        "min": 1,
+        "median": 5,
+        "mean": 6.3501,
+        "p90": 11,
+        "p99": 27,
+        "max": 49,
+        "histogram": {
+          "4": 2543,
+          "3": 2075,
+          "5": 2178,
+          "6": 1041,
+          "8": 341,
+          "9": 617,
+          "7": 525,
+          "10": 462,
+          ">12": 924,
+          "11": 183,
+          "12": 99,
+          "2": 215,
+          "1": 2
+        }
+      },
+      "total_fanout": {
+        "min": 204,
+        "median": 204,
+        "mean": 204,
+        "p90": 204,
+        "p99": 204,
+        "max": 204,
+        "histogram": {
+          ">12": 11205
+        }
+      },
+      "truncation_impact_above_threshold": {
+        "frac_gt_2": 0.9806,
+        "frac_gt_3": 0.7954,
+        "frac_gt_5": 0.3741,
+        "frac_gt_10": 0.1076,
+        "count_gt_2": 10988,
+        "count_gt_3": 8913,
+        "count_gt_5": 4192,
+        "count_gt_10": 1206
+      },
+      "distinct_roots_above": {
+        "min": 1,
+        "median": 2,
+        "mean": 2.1272,
+        "p90": 4,
+        "max": 11,
+        "histogram": {
+          "1": 3494,
+          "2": 4898,
+          "3": 1422,
+          "4": 966,
+          "5": 293,
+          ">6": 76,
+          "6": 56
+        },
+        "frac_multiroot": 0.6882
+      },
+      "distinct_roots_total_mean": 12,
+      "scores_failed": []
+    },
+    "Jazz": {
+      "n_competition_slices": 10849,
+      "above_threshold": {
+        "min": 2,
+        "median": 4,
+        "mean": 6.1469,
+        "p90": 12,
+        "p99": 23,
+        "max": 46,
+        "histogram": {
+          "3": 2511,
+          ">12": 1071,
+          "7": 546,
+          "9": 173,
+          "4": 2824,
+          "5": 1701,
+          "6": 766,
+          "8": 616,
+          "2": 163,
+          "11": 227,
+          "10": 122,
+          "12": 129
+        }
+      },
+      "total_fanout": {
+        "min": 204,
+        "median": 204,
+        "mean": 204,
+        "p90": 204,
+        "p99": 204,
+        "max": 204,
+        "histogram": {
+          ">12": 10849
+        }
+      },
+      "truncation_impact_above_threshold": {
+        "frac_gt_2": 0.985,
+        "frac_gt_3": 0.7535,
+        "frac_gt_5": 0.3364,
+        "frac_gt_10": 0.1315,
+        "count_gt_2": 10686,
+        "count_gt_3": 8175,
+        "count_gt_5": 3650,
+        "count_gt_10": 1427
+      },
+      "distinct_roots_above": {
+        "min": 1,
+        "median": 1,
+        "mean": 1.7284,
+        "p90": 3,
+        "max": 9,
+        "histogram": {
+          "1": 5783,
+          "4": 612,
+          "2": 3321,
+          ">6": 33,
+          "3": 951,
+          "5": 107,
+          "6": 42
+        },
+        "frac_multiroot": 0.467
+      },
+      "distinct_roots_total_mean": 12,
+      "scores_failed": []
+    },
+    "Default": {
+      "n_competition_slices": 11194,
+      "above_threshold": {
+        "min": 1,
+        "median": 5.0,
+        "mean": 6.316,
+        "p90": 11,
+        "p99": 27,
+        "max": 49,
+        "histogram": {
+          "6": 1035,
+          ">12": 889,
+          "11": 184,
+          "4": 2547,
+          "9": 625,
+          "3": 2087,
+          "5": 2174,
+          "8": 337,
+          "10": 468,
+          "7": 524,
+          "2": 224,
+          "12": 98,
+          "1": 2
+        }
+      },
+      "total_fanout": {
+        "min": 204,
+        "median": 204.0,
+        "mean": 204,
+        "p90": 204,
+        "p99": 204,
+        "max": 204,
+        "histogram": {
+          ">12": 11194
+        }
+      },
+      "truncation_impact_above_threshold": {
+        "frac_gt_2": 0.9798,
+        "frac_gt_3": 0.7934,
+        "frac_gt_5": 0.3716,
+        "frac_gt_10": 0.1046,
+        "count_gt_2": 10968,
+        "count_gt_3": 8881,
+        "count_gt_5": 4160,
+        "count_gt_10": 1171
+      },
+      "distinct_roots_above": {
+        "min": 1,
+        "median": 2.0,
+        "mean": 2.1216,
+        "p90": 4,
+        "max": 11,
+        "histogram": {
+          "2": 4892,
+          "5": 285,
+          "1": 3512,
+          "4": 939,
+          "3": 1430,
+          ">6": 78,
+          "6": 58
+        },
+        "frac_multiroot": 0.6863
+      },
+      "distinct_roots_total_mean": 12,
+      "scores_failed": []
+    }
+  }
+}
