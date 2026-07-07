@@ -1,5 +1,31 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #7 — STAGE 1 DELIVERED — the PRE-Layer-5 refactor batch (session 30, 2026-07-07).** CC
+executed `cc_instruction_engage_pre_l5_refactor_batch.md` (ratified plan `cowork_engage_arc_plan.md` Stage 1).
+Diff base HEAD `0d7fcc6c48`. **Three byte-identical revertible commits**, each proven **0-diff `.ours.json`
+across 352×3** (Baroque/Jazz/Default) vs the pre-commit HEAD + **robust-stop PASS** (class-(b) non-increase,
++0/-0) + **characterise 52/24/52** + **suites 1101 / 53(+4 skip) / 11** no golden refresh:
+**FQ-5 `65764881d0`** [S5 beat-weight→`regionMetricWeightForBeatType`; S10 shared `normalizedConfidenceSigmoid`;
+S11 `makeChordPathNode`; S7 partial — redundant copy-3 deleted, full A↔B single-sourcing DEFERRED (couples the
+minimal `modepriorpresets.h`→`analysistypes.h`, a dependency-profile decision)] · **FQ-7/S8 `56b06462db`**
+[key-decoder cost/window constants sourced from `kDefaultKeyModeAnalyzerPreferences.*` +
+`scoreharvest::DECAY_RATE`/`LOOKAHEAD_WEIGHT`; **S9 adjudicated KEPT — load-bearing NOT dead**:
+`resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851` + `findTemporalContext@900` = the grid] ·
+**FQ-6 `5420e6e543`** [`appendCappedAlternatives` shared projection in `analyzed_section.h`; batch cap=3,
+bridge uncapped, values verbatim; cap-#2 value lift stays Stage-3-deferred].
+**TWO items STOP-and-reported, NOT forced (for Cowork adjudication):** **FQ-1** — at code the four
+"best different-root" scans are NOT one decision (divergent predicate: rootPc-only #1/#2/#3 vs
+`sameChordSymbol`=root+quality #4 `chordslicedecoder.cpp:81`; divergent element type + result-use;
+`promoteToWinner` promotes a *specific* target to front, not the vehicle) → no byte-identical single primitive;
+the "one decision, four sites" audit premise over-counts at code granularity. **FQ-3** — byte-identically
+relocatable + decoder-independent BUT E4-entangled (decoder already `findTemporalContext`-seeded at
+`regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`; D-P4/D-BRIDGE/1068: cold walk
+E4-superseded) + most-invasive → UNCLEAR-7 resolves to **fold into E4**. Report
+`cc_engage_pre_l5_refactor_report.md`; audit §3.1 stamps RESOLVED/deferred rows with SHAs. Both stops green
+throughout; corpus frozen `c50002fee1`; fork-only, `upstream` untouched. **FRESH SESSION:** Cowork verifies
+each byte-identity at objects → the Layer-5 engagement DESIGN (Stage 2) opens; FQ-1 + FQ-3 await adjudication.
+Prior header, kept:
+
 *Written 2026-05-14. Last updated 2026-07-07, session 29 (engage arc #6 — **the STRUCTURAL-INTEGRITY audit**
 [read-only grounded catalogue, ALL built layers; total-unification #6 + layer-adherence #7 + build-on-clean-theory
 #1 made proactive — the structural analogue of the arc-#4 info-loss audit]. READ-ONLY: no `src/`, no corpus write,

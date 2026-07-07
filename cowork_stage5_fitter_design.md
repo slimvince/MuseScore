@@ -1130,6 +1130,20 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-23 (ENGAGE ARC #7 — STAGE 1 PRE-Layer-5 refactor batch DELIVERED, 2026-07-07;
+  `cc_engage_pre_l5_refactor_report.md`).** The portable pre-L5 unification wins landed as three
+  byte-identical revertible commits (FQ-5 `65764881d0`, FQ-7/S8 `56b06462db`, FQ-6 `5420e6e543`; each
+  0-diff `.ours.json` 352×3 + robust PASS + characterise 52/24/52 + suites 1101/53/11 no-refresh). **Two
+  fitter-relevant observations for the Stage-2 design:** (a) **FQ-7/S8 done** — the key-decoder's
+  cost/window constants (`changeBaseCost`/`changePerFifthStep`/`relativePairExtraCost`/`decayRate`/
+  `lookaheadWeight`) now source from the resolver/scoreharvest shared symbols, so a Stage-5 fit of those
+  magnitudes moves ONE source (the drift surface the fitter would otherwise have to track is closed);
+  **S9 confirmed load-bearing** (the `resolveKeyAndModeRanked@585` grid seed is NOT droppable). (b)
+  **FQ-1 + FQ-3 STOP-and-deferred** — FQ-1 ("best different-root" scan) is not one code-level decision
+  (divergent predicate/type/use) so it is not a byte-identical Stage-1 unification; FQ-3
+  (`findTemporalContext` relocation) folds into the E4 temporal-context ownership move (decoder is the
+  E4-decided owner). Both await Cowork adjudication before Stage-2. The §6-block / cap→append tangles
+  (FQ-2, FQ-4) remain owned by Stage-2/E4 as planned — unchanged by this batch.
 - **O-22 (ENGAGE ARC #6 — the STRUCTURAL-INTEGRITY audit, read-only grounded catalogue, ALL built layers,
   2026-07-07; `cowork_structural_integrity_audit.md` + `cc_engage_structural_integrity_audit_report.md`).**
   Total-unification (#6) + layer-adherence (#7) + build-on-clean-theory (#1) made proactive — the structural

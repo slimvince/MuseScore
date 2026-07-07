@@ -25,7 +25,9 @@ override convenience.
 9. **Test and measure only on corpora known to be non-stale and accurate.**
 10. **Documentation always in sync with code.**
 11. **Regression test cases always in sync with code; regression-test between iterations.**
-12. **No information loss.**
+12. **No information loss.** Negative/exclusion evidence is information ("finding by exclusion") —
+    carry a ruled-out possibility at low confidence rather than dropping it, unless the exclusion is
+    recomputable from what is kept.
 13. **Surface a surprise as a STOP before building around it** (the operational form of #3).
 14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**
 15. **Verify at objects/data on the full output surface, never at assertion** (winner *and*

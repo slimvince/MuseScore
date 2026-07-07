@@ -248,6 +248,32 @@ E4 engagement.
 | **FQ-7** | **Seed the key decoder's cost/window constants from shared symbols** (S8) so a Stage-5 fit moves one source; drop the S9 full-resolve-as-seed if the grid needs only corrected fifths+declared mode. | S8, S9 | (c)/(d)/MED | **A**/Stage-5 |
 | **FQ-8** | **The already-owed migrations** (cross-reference, unchanged): the two-segmenters retirement (absorbs S3/S4), the two-pitch-context collapse (absorbs S2), the tpc-reader fold (S6), the F-1 confidence contract (S19). | S2/S3/S4/S6/S19 | — | **B** (E4 / Stage-5) |
 
+### 3.1 Stage-1 build status (Engage arc #7, 2026-07-07 — `cc_engage_pre_l5_refactor_report.md`)
+
+The pre-L5 Stage-1 items were executed as byte-identical revertible commits (0-diff `.ours.json`
+352×3 vs HEAD `0d7fcc6c48`; robust PASS; characterise 52/24/52; suites 1101/53/11 no-refresh):
+
+- **FQ-5 — ✅ RESOLVED `65764881d0`.** S5 (beat-weight → `regionMetricWeightForBeatType`), S10 (shared
+  `normalizedConfidenceSigmoid`), S11 (`makeChordPathNode` builder) fully unified. **S7 partial:** the
+  redundant `standard.*=` copy-3 deleted; full A↔B single-sourcing deferred (couples the minimal
+  `modepriorpresets.h` to `analysistypes.h` — a dependency-profile design decision, flagged).
+- **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated
+  KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`
+  + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change.
+- **FQ-6 — ✅ RESOLVED `5420e6e543`.** `appendCappedAlternatives` shared projection in `analyzed_section.h`;
+  batch cap=3, bridge uncapped, values verbatim (cap-#2 value lift stays deferred to Stage 3).
+- **FQ-1 — ⛔ STOP-and-reported (not forced).** At code the four scans are NOT one decision: divergent
+  "differs" predicate (rootPc-only #1/#2/#3 vs `sameChordSymbol` = root+quality #4), element type, and
+  result-use; no byte-identical single primitive exists and `promoteToWinner` (promote-to-front of a
+  *specific* target) is not the vehicle. The "one decision, four sites" premise over-counts at code
+  granularity — declared for Cowork adjudication (report §5).
+- **FQ-3 — ⛔ STOP-and-deferred to E4 (UNCLEAR-7 resolved → fold into E4).** Byte-identically relocatable
+  and decoder-independent, BUT E4-entangled: the decoder (already seeded by `findTemporalContext` at
+  `regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`) is the E4-decided owner of
+  regional temporal context (ARCHITECTURE.md D-P4/D-BRIDGE/1068: the cold walk is superseded). Relocating
+  to an interim L4 home now is the "redone at E4" case; most-invasive item (new region unit + notation
+  wrapper + test relocation). Deferred, not forced (report §6).
+
 ---
 
 ## 4. ★ The sequencing call (the load-bearing output)
