@@ -657,9 +657,9 @@ static std::vector<AnalyzedRegion> analyzeScore(
                     ar.bassPc = bassTone->pitch % 12;
                 }
             }
-            for (size_t altIdx = 0; altIdx < sr.alternatives.size() && altIdx < 3; ++altIdx) {
-                ar.alternatives.push_back(sr.alternatives[altIdx]);
-            }
+            // Batch serialization view: cap the ranked alternatives carry at 3
+            // (FQ-6 explicit per-consumer projection; value unchanged).
+            analysis::appendCappedAlternatives(ar.alternatives, sr.alternatives, 3);
             sectionResult.push_back(std::move(ar));
         }
         return sectionResult;
@@ -708,10 +708,9 @@ static std::vector<AnalyzedRegion> analyzeScore(
             }
         }
 
-        // Up to 3 alternatives (indices 1..3 from analyzeChord).
-        for (size_t altIdx = 0; altIdx < hr.alternatives.size() && altIdx < 3; ++altIdx) {
-            ar.alternatives.push_back(hr.alternatives[altIdx]);
-        }
+        // Batch serialization view: cap the ranked alternatives carry at 3
+        // (FQ-6 explicit per-consumer projection; value unchanged).
+        analysis::appendCappedAlternatives(ar.alternatives, hr.alternatives, 3);
 
         result.push_back(std::move(ar));
     }

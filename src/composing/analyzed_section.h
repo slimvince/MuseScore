@@ -44,6 +44,7 @@
 //     input.  See the "ChordTemporalContext audit (Phase 2)" section of
 //     docs/unified_analysis_pipeline.md for the audit lineage.
 
+#include <cstddef>
 #include <vector>
 
 #include "analysis/chord/chordanalyzer.h"
@@ -51,6 +52,21 @@
 #include "analysis/region/harmonicrhythm.h"  // ChordTemporalExtensions
 
 namespace mu::composing::analysis {
+
+/// Project the ranked `alternatives` carry onto a per-consumer view: append the
+/// first `cap` alternatives (score-descending order) of `carry` onto `out`.
+/// FQ-6 makes the two consumers' caps EXPLICIT projections over the ONE carry
+/// rather than two independent truncations: batch serialization passes cap=3,
+/// the bridge/display view passes cap=carry.size() (uncapped). Current values are
+/// preserved verbatim; the cap-#2 value lift stays deferred to Stage 3 (L5 engage).
+inline void appendCappedAlternatives(std::vector<ChordAnalysisResult>& out,
+                                     const std::vector<ChordAnalysisResult>& carry,
+                                     std::size_t cap)
+{
+    for (std::size_t i = 0; i < carry.size() && i < cap; ++i) {
+        out.push_back(carry[i]);
+    }
+}
 
 /// One harmonic region in the analysed score — the Phase 2 type that will
 /// replace `HarmonicRegion` as the shared analysis-result payload across all

@@ -296,9 +296,10 @@ bool buildRegionalContextFromSection(
 
     outContext.chordResults.reserve(1 + it->alternatives.size());
     outContext.chordResults.push_back(it->chordResult);
-    for (const auto& alt : it->alternatives) {
-        outContext.chordResults.push_back(alt);
-    }
+    // Bridge/display view: carry ALL alternatives uncapped (FQ-6 explicit
+    // per-consumer projection over the one carry; cap = carry size).
+    mu::composing::analysis::appendCappedAlternatives(
+        outContext.chordResults, it->alternatives, it->alternatives.size());
     for (auto& result : outContext.chordResults) {
         applyRegionalKeyContext(result);
     }
