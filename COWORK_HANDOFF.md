@@ -1,6 +1,35 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
-*Written 2026-05-14. Last updated 2026-07-06, session 28 (engage arc #3b — **the GateA promotion-unification
+*Written 2026-05-14. Last updated 2026-07-07, session 29 (engage arc #6 — **the STRUCTURAL-INTEGRITY audit**
+[read-only grounded catalogue, ALL built layers; total-unification #6 + layer-adherence #7 + build-on-clean-theory
+#1 made proactive — the structural analogue of the arc-#4 info-loss audit]. READ-ONLY: no `src/`, no corpus write,
+no build, no fix; both stops untouched/green. **Anchor** [`results` carry, Layer-4 legacy]: a 10-consumer/concern
+structure — winner `front()`; carry→`alternatives`; cap-of-3 `harmonicfunctionlayer.cpp:521`; the diff-root
+"guaranteed inversion alternative" append `:530-549`; Iter 86/91 `chordpostpasses.cpp:135-188`; pedal detection
+`:209-281` [`results=pass2` CLOBBER + re-implemented diff-root scan + DEFENSIVELY DISABLES the append]; the gate
+flip via the uncapped `gateCtx->rawCandidates`; the batch caps `batch_analyze.cpp:660/712`; the uncapped bridge
+`notationcomposingbridge.cpp:297`. **cap→append dissolution PROVEN at code** [append pulls only above-threshold ⟹
+uncapped threshold-only build is a strict superset ⟹ append dies; winner unchanged, carry grows ⟹ ratified
+re-baseline]; **honest discrimination:** Iter 91's `kPromoteAppendOnly`/`stopBelowThreshold=false` below-threshold
+pull is a legitimate targeted promotion, does NOT dissolve. **Clean-target ALREADY BUILT in the dormant decoder**
+[`chordslicedecoder.cpp:746-789` governed `topK`-distinct-voicings ∪ principled incumbent-carry; diff-root read
+FROM the carry `:927-930`; NO pedal detection yet — a gap]. **Fan-out** [read-only, capped floor]: append fires on
+**36.2% Baroque / 21.5% Jazz / 36.1% Default** of all regions [serialized `alts=3` ⟺ append fired]; true untruncated
+size needs the `rawCandidates` instrument [flagged]. **Sweep** [4 parallel read-only agents]: 1 anchor + 20 sites =
+**6 VIOLATION · 8 UNCLEAR · 6 OK/RESOLVED**; **2 HIGH** [anchor; `findTemporalContext` = an L1.5 view driving the
+full L4+L5 pipeline ×2, `regiontoneprimitives.cpp:451-592`] · 9 MED · 9 LOW. Cross-cutting +: **quality-from-key
+second-guessing has NO single owner** [≥4 sites/3 layers]. Progress confirmed [extends priors]: section-in-notation
+RESOLVED; `promoteToWinner`/`kMasks`/single-owned-metric-scripts/`forwardoverride` clean. **★ Sequencing call
+[load-bearing]:** the anchor FOLDS INTO E4 [decoder already realizes its clean-target — a standalone legacy refactor
+is throwaway]; three portable slices are PRE-L5 wins [different-root primitive FQ-1; `findTemporalContext` relocation
+FQ-3; fact-layer dup + cap-views FQ-5/6]; one coherent order → §6-block dissolution [OWED #2, Stage-5/E4] owns FQ-2
+[quality-from-key single owner] → E4 legacy-path retirement owns the anchor FQ-4 → R9 splits `chordanalyzer.cpp`
+[OWED #1] last. Catalogue `cowork_structural_integrity_audit.md` + report
+`cc_engage_structural_integrity_audit_report.md`; O-22 folded into the fitter design §15; 7 UNCLEAR rows for
+adjudication. `docs(cowork):` fold [catalogue + report + STATUS + HANDOFF + fitter §15 + instruction force-add];
+pending CLAUDE.md #12 edit left untouched; pushed fork-only [`cfc7eb5e39` upstream HARD STOP honored]. On CC's
+report: Cowork verifies the catalogue at objects → brings the user the fix-queue, the sequencing call, and the
+UNCLEAR rows. Prior header, kept: session 28 (engage arc #3b — **the GateA promotion-unification
 BUILD event** [user-ratified]. Layer-4 `src/` change + build + full-surface verification, implementing the
 ratified arc-#3 design. **One `promoteToWinner` primitive** [present-first swap = former **Gate A**; append-built
 pull = former **FM2**] + **one builder wrapper** `buildResultFromGateCtx`; the three duplicated `buildResult`

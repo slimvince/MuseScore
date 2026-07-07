@@ -1130,6 +1130,32 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-22 (ENGAGE ARC #6 — the STRUCTURAL-INTEGRITY audit, read-only grounded catalogue, ALL built layers,
+  2026-07-07; `cowork_structural_integrity_audit.md` + `cc_engage_structural_integrity_audit_report.md`).**
+  Total-unification (#6) + layer-adherence (#7) + build-on-clean-theory (#1) made proactive — the structural
+  analogue of the O-20 information-loss audit, swept systematically. READ-ONLY: no `src`/corpus/build/fix;
+  both stops untouched/green. The anchor (`results` carry substrate, Layer-4 legacy) is a genuine
+  cap→workaround/concern-coupling tangle (cap-of-3 `harmonicfunctionlayer.cpp:521` + the diff-root append
+  `:530-549`; **dissolution PROVEN at code** — an uncapped threshold-only build is a strict superset ⟹ the
+  append dies; only Iter 91's below-threshold `kPromoteAppendOnly` pull is a legitimate targeted promotion
+  that does NOT dissolve); pedal detection clobbers the shared vector + re-scans + defensively disables the
+  append. **Its clean-target is ALREADY BUILT in the dormant decoder** (`chordslicedecoder.cpp:746-789/927-930`),
+  so the load-bearing sequencing verdict is: **the anchor FOLDS INTO the E4 legacy-path retirement, NOT a
+  standalone pre-L5 refactor** — while three portable slices ARE pre-L5 wins (a shared different-root
+  primitive; `findTemporalContext` relocation; the fact-layer dup + cap-view cleanups). **Direct bearing on
+  THIS arc:** (i) the §6-block dissolution (family 2 / R1) is where **FQ-2 gives quality-from-key its single
+  owner** — the audit found it scattered across ≥4 sites/3 layers (sparse refinement, section stabilize,
+  Gates L/G-E quality-from-key MUTATION, notation display fallback), and Gates L/G-E's quality mutation is a
+  NEW facet of the "gates are functional reasoning in the oracle" debt the dissolution retires; (ii) the
+  **F-1 confidence-scale incommensurability is pinned to code** (`functionresolver.cpp:460-468`,
+  `functionoutput.h:90-98` — bounded `earlierConfidence` vs unbounded `contradictionStrength`/`combined`) as
+  the Phase-3/C2 calibration item it already is, inherited at L5 engage; (iii) the S8 key-decoder
+  cost/window constants copied-by-value from the resolver/harvest are a fit-surface drift risk (a fit of one
+  drifts the other) the Phase-0 inventory should reconcile. Sweep totals: 1 anchor + 20 sites (6 VIOLATION /
+  8 UNCLEAR / 6 OK-RESOLVED; 2 HIGH / 9 MED / 9 LOW); fan-out measured read-only (append fires on ~36%
+  Baroque/Default regions). 7 UNCLEAR rows for user adjudication. Next per the sequencing call: the pre-L5
+  portable unifications (FQ-1/3/5/6), then §6-block dissolution owns FQ-2, then E4 owns the anchor (FQ-4),
+  then R9 splits `chordanalyzer.cpp`.
 - **O-21 (ENGAGE ARC #3b — the GateA promotion-unification BUILD event DELIVERED, 2026-07-06;
   `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_build_report.md`; feat `200681a855`).**
   The ratified arc-#3 design, built (Layer 4 only). One `promoteToWinner` primitive + one builder wrapper
