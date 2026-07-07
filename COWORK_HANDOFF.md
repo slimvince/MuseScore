@@ -1,5 +1,46 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the CARRY + SELECTION architecture (session 32,
+2026-07-07).** CC executed `cc_instruction_engage_l5_carry_selection_design.md` — Stage 2 of the ratified plan,
+opened on the O-24 real fan-out. **READ-ONLY / STRUCTURE-ONLY:** no `src/`, no build, no corpus write, **no
+constant fitted or tuned** (R5; #8). Deliverable **`cowork_layer5_engagement_design.md`** — a **NEW doc**, not an
+edit of the signed `cowork_layer5_function_design.md` (engagement wiring is a distinct concern from the signed
+dormant-build spec; #6, one home per concern; the new doc references the signed §5.5/§7/§8/§15 rather than
+restating). **Task 1 (inventory built vs owed):** `resolveCarriedReadings` (per-`AmbiguityKind` selection Phase 1
++ the F-B override Phase 2), `assembleFunctionOutput` (§7 pure additive assembly), the `FunctionSlice` input
+contract, and the F-A/F-B frames (D-L5a closed / D-FS open) are **built + dormant** (`functionresolver.cpp`,
+`functionoutput.h` `[code]`); engagement WIRES this pipeline — owed = populate the carry from the live decoder
+(today hand-injected in tests), generalize selection to the full distinct-root carry, re-frame F-B, add pedal
+detection. **Task 2 (the carry contract):** Layer 5 reads a **distribution over distinct ROOTS** (the meaningful
+axis — median ~2, a ≥3rd root on 25.1/16.1/24.9 %), each root carrying its best voicing + variant set + graded
+confidence; **the exclusion tail (ruled-out/low-confidence roots) is CARRIED, not dropped (#12).** ★ **Decoder gap
+NAMED:** `sc.alternatives` caps on **voicings** (`sameChordVoicing`, `topK` default **6**, `chordslicedecoder.cpp:746-789`),
+NOT roots ⟹ the ≥3rd distinct root is **not structurally guaranteed** to survive; the ∪-incumbent-carry guarantees
+the prevailing root and `nameOpenQuestion` names ONE alternate root on abstains (`:929-931`), but neither
+guarantees a third, and a **Commit** slice names none — so a **distinct-root-preserving carry is OWED at Layer
+4/E4** (cap on distinct roots + bounded variant depth; the depths are precision-phase). **Task 3 (selection-by-
+joint-consistency, structure only):** select across **key/root/inversion/bass** over the graded distribution incl.
+the exclusion tail; evidence channels ranked **load-bearing-first** — bass/inversion (Vuvan), spelling
+(Micchi/McLeod), key-consistency (ChordGNN/AnalysisGNN), cadence — with **licensed progression DEMOTED to a
+tie-break among already-consistent readings, NEVER an override lever** (the F-B measured net-harm −756 +
+Korzeniowski/Widmer/Vuvan corroboration). This **re-orders the as-built `resolveAbstained`** (which leads with the
+weak progression channel) and **reconciles with the settled F-B annotate-not-override finding** (§3.D-1: carry the
+L4 commit unchanged, surface contradiction as an honest open mark). Confidence L5 emits: the built
+`combinedBoundary` (D-L5a) + a **NEW declared Class-M joint-consistency selection margin** (squash shape declared,
+constant precision-phase, contract U1/R5). **Task 4 (boundaries/gaps/agenda):** L4 = the carry (under the L3 key);
+L5 = selection **within a fixed region key** → the functional analysis; ★ **the joint key↔chord step (O-18/C3) is a
+DISTINCT downstream step, NOT L5 selection** (it re-ranks the key under chord evidence — the research's (key,chord)
+beam); acyclicity kept (the §8 forward-only bounded recompute). Engagement gaps: carry wiring · the distinct-root
+guarantee · **pedal detection (the decoder has NONE — audit gap; a reader-over-carry, not a `results`-mutating
+post-pass)** · F-B annotate mechanics · D-FS commensurability. The downstream pieces are **ENUMERATED with each
+hinge named, NOT resolved** (FQ-2 quality-from-key owner; pedal detection's home; O-18/C3 joint step; F-B annotate
+mechanics). Report `cc_engage_l5_carry_selection_design_report.md`; fitter O-25. `docs(cowork):` fold (design doc +
+report + STATUS + HANDOFF + fitter O-25 + instruction force-add). **No `src`/build/corpus/fit; both regression
+stops green by construction (no code path touched); suites unchanged; corpus frozen `c50002fee1`; fork-only,
+`upstream` untouched (`cfc7eb5e39` HARD STOP honored).** **FRESH SESSION:** Cowork verifies the design at objects →
+presents the carry + selection architecture + the follow-on agenda (concern-owners, joint step, F-B) to the user
+for the next Part. Prior header, kept:
+
 **★ ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out, MEASURED read-only (session 31, 2026-07-07).** CC
 executed `cc_instruction_engage_fanout_measure.md` — the Stage-2 prerequisite: how large is the graded
 candidate distribution Layer 5 will select over? **Route:** no faithful no-`src` path exists —

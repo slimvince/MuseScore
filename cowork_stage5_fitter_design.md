@@ -1130,6 +1130,23 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-25 (ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the carry + selection architecture, read-only /
+  structure-only, 2026-07-07; `cowork_layer5_engagement_design.md` + report
+  `cc_engage_l5_carry_selection_design_report.md`).** Stage 2 opened on the O-24 real fan-out. **Fitter-relevant
+  facts:** (a) the **carry contract** is designed on the **distinct-root axis** (not a top-N reading list) with
+  the **exclusion tail carried (#12)** — the fitter's objective scores over this graded distinct-root
+  distribution, incl. the ≥3rd-root minority (25/16/25 %). (b) **The decoder's distinct-root guarantee is OWED**:
+  `topK` caps on **voicings** (`sameChordVoicing`, default 6), NOT roots, so the ≥3rd root is not structurally
+  guaranteed to survive — a distinct-root-preserving carry is an owed Layer-4/E4 change (fitting the cap depths is
+  precision-phase). (c) **Selection is re-ordered load-bearing-first** — bass/inversion + spelling +
+  key-consistency + cadence decide; **licensed progression is demoted to a tie-break, NEVER an override lever**
+  (the F-B net-harm finding + research §1 grounding), which **re-orders the as-built `resolveAbstained`** (it
+  leads with the weak progression channel). (d) **F-B reconciled = annotate-not-override** (settled §3.D-1). (e)
+  **New confidence to calibrate:** a declared Class-M **joint-consistency selection margin** (squash shape
+  declared, constant precision-phase) beside the built `combinedBoundary` (D-L5a). All constants precision-phase
+  (R5); no fit. Downstream enumerated for follow-on Parts (FQ-2 quality-from-key owner, pedal detection's home,
+  O-18/C3 joint step, F-B annotate mechanics) — not resolved. No `src`/build/corpus; both stops green by
+  construction (no code path touched); fork-only.
 - **O-24 (ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out MEASURED read-only, 2026-07-07;
   `cc_engage_fanout_measure_report.md` + data `cc_engage_fanout_measure_data.json`; instrument
   `tools/measure_fanout.py`).** The O-22 audit measured only the **capped floor** (append fires ~36 %
