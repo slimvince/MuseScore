@@ -1,5 +1,58 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #10 — the JOINT key-and-chord step: ARCHITECTURE DESIGN (session 33, 2026-07-07).** CC executed
+`cc_instruction_engage_joint_key_chord_design.md` — the next Stage-2 design piece (the biggest precision lever #4,
+on the foundation Part 1 established). **READ-ONLY / STRUCTURE-ONLY:** no `src/`, no build, no corpus write, **no
+constant fitted or tuned** (R5; #8). Deliverable **`cowork_joint_key_chord_design.md`** — a NEW doc (the O-4 "C3
+joint-step design document"; the L5 engagement doc scopes selection-within-a-fixed-key and enumerates the joint
+step as a *distinct* downstream piece §4.1/§4.3, so #6 wants a separate home). **★ THE FINDING THE DESIGN TURNS
+ON:** the joint step is **NOT greenfield** — its **key-axis half is already built + measured** as `decideJointKey`
+(J-key-i/ii/iii, `section/jointkeydecision.{h,cpp}` `[code]`): a key-state lattice, a **Viterbi with a
+key-transition prior** (`JointKeyWeights.transitionPenalty`), a measured **coupled minority ~13.5%** (`coupled =
+!chordPinned && keyAmbiguous`, `jointkeydecision.cpp:289-297`), and a **config-B chord→key coupling**
+(`couplingScore`, `:275-287`) — while its **chord axis is EXPLICITLY DEFERRED "to a faithful mechanism"**
+(`regionanalyzer.cpp:388-395`). That deferred chord re-decode **IS** the per-key re-decode C3 found computed
+nowhere (`cc_engage_c3_measurement_report.md` §2.3). So the design = a **total-unification completion (#6) of
+config-B**: add the deferred chord re-decode axis → a bidirectional (key,chord) beam, gated on the C3 minority,
+publishing forward to Part-1 L5. **Task 1 — placement (#7 acyclicity):** a **BOUNDED coupling step** at the
+L3/L4→L5 seam, **NOT a unified `(key,chord)` hidden state** — grounded on #7+#6 (a unified state discards+rebuilds
+both built decoders; the research single-state is a *modeling* choice, the recipe = beam+transition-prior+re-decode
+is factoring-independent) + magnitude realism (the win is qualitative on the coupled minority, so a step that
+FIRES ONLY there and is a pass-through on the majority is proportionate) + the forward-only/acyclicity contract (it
+consumes L3's *already-carried* key alternatives, *drives* L4's pure re-decode, re-ranks the key **inside its own
+bounded closure**, and publishes one settled (key,chord) forward — no L3←L4 back-edge; the cycle-introducing
+placement, L4 writing back into L3's committed key, is named + avoided). **Task 2 — mechanism (structure only,
+R5):** a **beam of (key,chord) hypotheses**; the chord **re-decoded under each carried key** via the existing
+`ChordSliceDecoder` (a pure fn of (slices,key) — the "faithful mechanism" J-key-iii named, no multi-pass
+artifact); the **key-transition prior REUSED** (`transitionPenalty`/`changeCost`, #6); an **additive/monotone/
+no-veto composition** over the RE-DECODED chord (config-B completed); **one forward beam pass** recommended over a
+capped bounded fixpoint; a **declared Class-M joint-decision confidence** (margin of the winning joint hyp over the
+best different-key-or-root hyp, squashed; R5). **Task 3 — trigger (C3) + interface:** a **two-stage gate** — cheap
+pre-filter `(a)` key-uncertain (`HarmonicRegion.keyConfidence` < seq-margin bar 1.0, the D-L3a boundary confidence)
+`∧ (a′)` chord-structurally-ambiguous (L4 `openQuestion`/`Abstain`/low `composite`, or `chordPinned=false`), then
+the **exact `(b)`** (the winner root flips under a carried key) computed **BY the step's own per-key re-decode** —
+which is precisely why C3 was un-computable read-only ((b) IS the owed build). Only `(a)∧(b)` commits a coupled
+decision; the rest is a byte-identical pass-through. **Interface:** reads L3's carried `keyAlternatives`/
+`keyConfidence` (the step is the long-awaited consumer of that in-memory carry, #12) + L4's per-key carry; emits
+the settled `(k*,c*)` + confidence **FORWARD** to L5, which **selects within the settled key** (Part-1 §4.1 kept;
+L5 never re-ranks the key — that is the joint step's job upstream of it). **Task 4 — owed build by layer
+(enumerated, NOT built):** **B1** per-key re-decode driver (Layer 4 — N forward calls of the built decoder, no new
+decoder; prerequisite = the distinct-root-preserving carry owed at E4 so a flip is *visible*) · **B2** beam/
+coupling driver + joint confidence (the joint step = **generalize `decideJointKey` config-B**; NEW = the chord axis
++ the joint margin; NOT a parallel module) · **B3** the two-stage trigger gate · **B4** production wiring (complete
+J-key-iii's deferred chord axis, behind its existing held `setJointKeyWiringEnabled` flag) — all forward-only,
+bounded, **E4-adjacent** (builds on the engaged decoder). **Task 5 — owed measurements (#5, none assumed):**
+[owed-1] the true C3 fire-rate (the ~13.5% `coupled` is a structural PROXY, not `(a)∧(b)`; un-measurable until B1)
+· [owed-2] the coupling benefit magnitude (the robust-stop sandwich on the coupled set, post-B2 — the eventual
+acceptance gate) · [owed-3] the per-key winner flip-rate · [owed-4] beam width / fixpoint depth · [owed-5] the
+chord→key coupling term under re-decode · [owed-6] all precision-phase constants (Stage-5 fits). Report
+`cc_engage_joint_key_chord_design_report.md`; fitter O-26 + O-4 closed. `docs(cowork):` fold (design doc + report +
+STATUS + HANDOFF + fitter O-26/O-4 + instruction force-add). **No `src`/build/corpus/fit; both regression stops
+green by construction (no code path touched, byte-identical to HEAD `32709a9e7a`); suites unchanged (no build);
+corpus frozen `c50002fee1`; fork-only, `upstream` untouched (`cfc7eb5e39` HARD STOP honored).** **FRESH SESSION:**
+Cowork verifies the design at objects → presents the (key,chord) coupling architecture + the owed build (B1–B4) +
+the owed measurements to the user for the build event. Prior header, kept:
+
 **★ ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the CARRY + SELECTION architecture (session 32,
 2026-07-07).** CC executed `cc_instruction_engage_l5_carry_selection_design.md` — Stage 2 of the ratified plan,
 opened on the O-24 real fan-out. **READ-ONLY / STRUCTURE-ONLY:** no `src/`, no build, no corpus write, **no

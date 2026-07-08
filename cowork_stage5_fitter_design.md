@@ -930,7 +930,9 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   direction, the weighting question returns to the user with the measurement.
 - **O-3** The roadmap Stage-5 block gains the fitting-pool license constraint at this arc's first CC docs
   commit (census §8c ride; also restated by this document's §2).
-- **O-4** The C3 joint-step design document: unblocked at Phase 3; its own Cowork task thereafter.
+- **O-4** The C3 joint-step design document: unblocked at Phase 3; its own Cowork task thereafter. **✅ DELIVERED
+  (2026-07-07, engage arc #10, `cowork_joint_key_chord_design.md`; observation O-26 below).** Architecture design
+  only (read-only / structure-only); the build (B1–B4) is a later, separately-ratified E4-adjacent event.
 - **O-5** Broadening the fitting pool (CoCoPops / OpenEWLD / BCFB / GuitarSet / OpenScore conversions):
   each a separate ratified increment; D-5's Jazz decision is the first instance.
 - **O-6** E-13 (product-tool register): Phase 0's inventory verifies whether the fit surface touches the
@@ -1130,6 +1132,27 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-26 (ENGAGE ARC #10 — the JOINT key-and-chord step ARCHITECTURE DESIGN, read-only / structure-only,
+  2026-07-07; `cowork_joint_key_chord_design.md` + report `cc_engage_joint_key_chord_design_report.md`).** The O-4
+  deliverable. **Fitter-relevant facts:** (a) The joint step is designed as a **total-unification completion (#6)
+  of the built `decideJointKey`** (J-key-i/ii/iii) — its key-axis half (lattice + Viterbi + **key-transition
+  prior** `transitionPenalty` + measured **coupled minority ~13.5%** + config-B chord→key `couplingScore`) is
+  built; the design **adds the deferred chord re-decode axis** (`regionanalyzer.cpp:388-395` deferred it "to a
+  faithful mechanism" = the engaged `ChordSliceDecoder`, a pure fn of (slices,key)) → a bidirectional (key,chord)
+  beam. (b) **Placement = a BOUNDED coupling step** at the L3/L4→L5 seam, forward-only (no L3←L4 back-edge), **not
+  a unified hidden state** (#7/#6 + magnitude realism). (c) **New confidence to calibrate:** a declared **Class-M
+  joint-decision margin** (winning joint hyp vs best different-key-or-root hyp, squashed; shape declared, constant
+  precision-phase R5) beside L3 `keyConfidence` and the L5 selection margin. (d) **New composition to fit:** the
+  joint score `keyEmissionFit + chordFit|k + couplingTerm + −keyTransitionCost` — all terms precision-phase
+  (`transitionPenalty`, `couplingBonus`, beam width, trigger bar 1.0). (e) **The C3 trigger** is a two-stage gate:
+  pre-filter `(a)` `keyConfidence` < seq-margin bar `∧ (a′)` chord-ambiguous, then exact `(b)` from the re-decode
+  (why C3 is un-computable read-only — (b) IS the owed build). (f) **Owed measurements flagged, not assumed
+  (#5):** [owed-1] true C3 fire-rate (the ~13.5% `coupled` is a proxy) · [owed-2] coupling benefit on the
+  robust-stop coupled set (the acceptance gate) · [owed-3] per-key flip-rate · [owed-4] beam width · [owed-5] the
+  coupling term under re-decode · [owed-6] the precision-phase constants. **Owed build B1–B4** (per-key re-decode
+  driver / beam driver / trigger gate / production wiring) enumerated by layer, E4-adjacent, held until ratified
+  (like J-key-iii's flag). All constants precision-phase (R5); no fit. No `src`/build/corpus; both stops green by
+  construction (no code path touched); fork-only. Closes O-4.
 - **O-25 (ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the carry + selection architecture, read-only /
   structure-only, 2026-07-07; `cowork_layer5_engagement_design.md` + report
   `cc_engage_l5_carry_selection_design_report.md`).** Stage 2 opened on the O-24 real fan-out. **Fitter-relevant
