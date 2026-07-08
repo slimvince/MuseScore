@@ -1132,6 +1132,28 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical
   (15/15), suites 1101 / 53+4skip / 11 no refresh. The maps' + θ's WIRING into live boundaries is a separate,
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
+- **O-27 (ENGAGE ARC #11 — PEDAL detection's home + the F-B ANNOTATE mechanics, read-only / structure-only —
+  ★ CLOSES STAGE 2, 2026-07-07; `cowork_layer5_engagement_design.md` Part 2 §6–§10 + report
+  `cc_engage_l5_pedal_annotate_design_report.md`).** The last two Layer-5 engagement design pieces (Part 1's §4.3
+  hinges). **Fitter-relevant facts:** (a) **Pedal detection** placed as a **reader over the decoder's governed
+  carry** (grep-confirmed the decoder has 0 pedal detection today), emitting a distinct pedal-annotated result — its
+  confirmation margin **read from the carry's distinct-root ranking / the FQ-1 primitive**, NOT a re-computed scan
+  (retires `chordpostpasses.cpp:209-281`'s clobber/re-scan/defensive-disable with the anchor at E4). No new
+  precision-phase constant of its own (it consumes the carry's confidences); the pedal-confidence bar remains a
+  precision-phase constant. (b) **F-B demoted to an ANNOTATION on the UNIFIED open-mark** — the load-bearing #6
+  decision: reuse the existing open-mark carry (enriched with a reason/kind `Undecided` vs
+  `FunctionContextContradiction`), NOT a parallel `functionContextContradiction` field (semantically wrong to
+  overload the plain boolean; a parallel bool duplicates the channel). **New quantity to calibrate:** the F-B
+  contradiction carried as **Class-M calibrated uncertainty** — the frame's `(C = L4 composite, S = plausibility
+  diff ∈ {2,3})` become the open-mark payload, squashed (shape declared, constant precision-phase R5). The reading
+  stays the L4 commit (`overrodeCommit` false) — **no override, no `forwardRecompute`**, so **F-B's override θ/scale
+  (D-FS) leaves the critical path**; only the F-A modulation frame still consumes the contradiction-scale θ (a
+  narrowed Stage-5 calibration dependency). (c) **Owed measurements flagged, not assumed (#5):** [owed-P1] the
+  pedal reader's agreement with the current in-place detection · [owed-P2] the carried-margin vs the `pass2` sigmoid
+  · [owed-FB1] F-B byte-identical today, must move class-(b) DURATION favorably at engage. **★ STAGE 2 (the Layer-5
+  engagement design phase) is COMPLETE** — carry+selection (O-25), the joint step (O-26), pedal home + F-B annotate
+  (this) all designed, structure-only; Stage 3 (E4 / algorithmic completion) is the user's to open. No `src`/build/
+  corpus/fit; both stops green by construction (no code path touched); fork-only.
 - **O-26 (ENGAGE ARC #10 — the JOINT key-and-chord step ARCHITECTURE DESIGN, read-only / structure-only,
   2026-07-07; `cowork_joint_key_chord_design.md` + report `cc_engage_joint_key_chord_design_report.md`).** The O-4
   deliverable. **Fitter-relevant facts:** (a) The joint step is designed as a **total-unification completion (#6)

@@ -1,5 +1,54 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #11 — PEDAL detection's home + the F-B ANNOTATE mechanics: DESIGN — CLOSES STAGE 2 (session 34,
+2026-07-07).** CC executed `cc_instruction_engage_l5_pedal_annotate_design.md` — the **last two Layer-5 engagement
+design pieces** Part 1 enumerated (§4.2 gap 3 pedal, §4.3 F-B mechanics). **READ-ONLY / STRUCTURE-ONLY:** no
+`src/`, no build, no corpus write, **no constant fitted or tuned** (R5; #8). Deliverable **`cowork_layer5_engagement_design.md`
+Part 2 (§6–§10)** — appended, NOT a new doc (#6: Part 1 enumerated these two as its own follow-ons, same concern,
+one home; Part 1 = §1–§5, Part 2 = §6–§10). **Task 1 — pedal's home = a READER OVER THE CARRY, not a winner-mutator.**
+Grounded at `chordpostpasses.cpp:209-281` `[code]` + the audit's pedal finding (`cowork_structural_integrity_audit.md`
+§1.1 #7 / §1.3 / §1.4) + the **confirmed decoder gap** (grep `chordslicedecoder.cpp` pedal → **0 matches**). Placed
+as a reader over the decoder's governed Layer-4 carry that emits a distinct pedal-annotated result, never a
+`results.front()` mutation; the audit's **three coupled symptoms all dissolve**: the clobber (`results = pass2`, `:274`)
+→ annotate a carried candidate, the full-voice reading survives (#12); the re-implemented diff-root scan (`:262-269`,
+the 4th copy) → **read** the confirmation margin from the carry's distinct-root ranking / the FQ-1 primitive over the
+carry (tied to `chordslicedecoder.cpp:927-930`) — **no 4th scan**; the defensive append-disable (`:240-245`) → the
+cap→append it defended against is a legacy-`results` property, the governed carry has none to contaminate. The
+material pedal needs (upper-voice harmony + confidence gap) is *usually* already a carried distinct-root alternative
+excluding the bass — **subject to owed measurement [owed-P1]** (carried-alt vs bass-stripped re-decode agreement).
+**Task 2 — F-B annotate vehicle = the UNIFIED OPEN-MARK (reuse, NOT a parallel channel; the load-bearing #6 call,
+decided at the code).** Reconciled `cowork_fb_redesign_design.md` §4.2's proposed new `functionContextContradiction`
+field against the existing open-mark (`ResolvedReading.openMark` `functionresolver.h:170` → `FunctionUnitAssembly`/
+`FunctionAnalysisUnit.openMark` `functionoutput.h:165/124`; §8 case-3 honest-carry `cowork_layer5_function_design.md:582`;
+§15-13 both-licensed): **overloading the plain boolean is semantically WRONG** (openMark = "genuinely undecidable /
+no answer", but F-B's L4 committed confidently and the reading is carried unchanged — setting it loses info #12 +
+collides with the case-3 abstain meaning); **a parallel bool is a duplicate channel (#6 violation)**; **DECIDED:
+unify into ONE structured open-mark carrying a reason/kind** — `Undecided` (case-3/§15-13, today's semantics kept)
+vs `FunctionContextContradiction` (F-B; reading stays the L4 commit, `overrodeCommit` stays false). The contradiction
+is carried as **calibrated uncertainty** (#12: the L4 reading survives = the +756 recovery, AND the frame's `(C,S)`
+quantities become the open-mark payload, Class-M, squash-constant precision-phase R5 — the 1043 signals preserved for
+a future C3 joint step); the trigger is an **annotation lever, never an override** (no `overrodeCommit`, no
+`prog[i].chord` mutation, no `forwardRecompute`; Frame F-B re-declared in contract §4 as an annotation channel).
+**Task 3 — boundaries/owed build/owed measurements:** pedal = carry-side reader (Layer-4 output), forward-only, no
+reach-in; F-B annotation = Layer 5, additive, **acyclicity strengthened** (the one former cross-layer recompute
+removed). Owed build (enumerated): the pedal reader-over-carry; the F-B wiring (open-mark enrich + `attemptFineGrainOverride`
+demotion + `ResolutionBasis::FineGrainOverride`→`FineGrainContradiction` + contract §4 re-declaration + L5/`docs/scoring_model.md`
+sync). Owed measurements (#5): [owed-P1] pedal reader vs in-place detection agreement; [owed-P2] carried-margin vs
+`pass2` sigmoid; [owed-FB1] F-B byte-identical today, must move class-(b) DURATION favorably at engage. **Task 4 —
+★ STAGE-2 COMPLETE:** carry+selection (arc #9), the joint step (arc #10), pedal home + F-B annotate (arc #11) — all
+designed, structure-only, moratorium held. **No Layer-5 engagement concern remains undesigned; Stage 3 (E4 /
+algorithmic completion) is the user's to open with nothing left undesigned.** The Stage-3 build inventory it inherits
+is enumerated at `cowork_layer5_engagement_design.md` §9.2 (the anchor/FQ-4; the distinct-root-preserving carry;
+the pedal reader; the F-B annotation; quality-from-key's owner FQ-2 + §6-block; the joint step B1–B4 + owed
+measurements; the owed migrations FQ-8/FQ-1/FQ-3; the F-1/S19/D-FS confidence-scale fix). Report
+`cc_engage_l5_pedal_annotate_design_report.md`; fitter engage-observation updated. `docs(cowork):` fold (Part-2
+design + report + STATUS + HANDOFF + fitter + arc plan Stage-2-complete + instruction force-add). **No `src`/build/
+corpus/fit; both regression stops green by construction (no code path touched, byte-identical to HEAD `2c550ec327`);
+suites unchanged (no build); corpus frozen `c50002fee1`; fork-only, `upstream` untouched (`cfc7eb5e39` HARD STOP
+honored).** **FRESH SESSION:** Cowork verifies the design at objects → the Layer-5 engagement design phase (Stage 2)
+is complete; presents pedal-reader + F-B-annotate + the Stage-3 build inventory to the user to open Stage 3. Prior
+header, kept:
+
 **★ ENGAGE ARC #10 — the JOINT key-and-chord step: ARCHITECTURE DESIGN (session 33, 2026-07-07).** CC executed
 `cc_instruction_engage_joint_key_chord_design.md` — the next Stage-2 design piece (the biggest precision lever #4,
 on the foundation Part 1 established). **READ-ONLY / STRUCTURE-ONLY:** no `src/`, no build, no corpus write, **no

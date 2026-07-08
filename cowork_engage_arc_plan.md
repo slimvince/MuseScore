@@ -32,11 +32,27 @@ commit (#14), verified on the full output surface — winner AND alternatives (#
 (#9), docs + regression tests in step (#10/#11); byte-identical is the expectation, any output move gets the
 explained re-baseline (#16), never a silent edit.
 
-**Stage 2 — the Layer-5 engagement DESIGN (#8's architectural-design phase; read-only).** Built on
-established fact — the decoder's already-clean carry is the factual basis (#1) — carrying the full graded
-distribution incl. ruled-out readings (#12, finding-by-exclusion). Decides the owners the audit surfaced:
-quality-from-key (FQ-2), pedal detection's home, the confidence-scale fix (F-1/S19). Grounded also by
-`cowork_functional_analysis_research_grounding.md`.
+**Stage 2 — the Layer-5 engagement DESIGN (#8's architectural-design phase; read-only). ★ COMPLETE 2026-07-07
+(arcs #9/#10/#11).** Built on established fact — the decoder's already-clean carry is the factual basis (#1) —
+carrying the full graded distribution incl. ruled-out readings (#12, finding-by-exclusion). Decides the owners
+the audit surfaced: quality-from-key (FQ-2), pedal detection's home, the confidence-scale fix (F-1/S19).
+Grounded also by `cowork_functional_analysis_research_grounding.md`. **Delivered, structure-only, moratorium
+held (no `src/`, no build, no corpus write, no constant fitted/tuned):**
+- **arc #9 — the carry + selection architecture** (`cowork_layer5_engagement_design.md` Part 1 §1–§5): the
+  distinct-root carry contract with the exclusion tail preserved (#12); selection-by-joint-consistency
+  (bass/spelling/key-consistency load-bearing, progression demoted to a non-override tie-break).
+- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision
+  as a generalization of `decideJointKey`, B1–B4 owed build enumerated, owed measurements flagged.
+- **arc #11 — pedal detection's home + the F-B annotate mechanics** (`cowork_layer5_engagement_design.md` Part 2
+  §6–§10; `cc_engage_l5_pedal_annotate_design_report.md`): pedal placed as a **reader over the carry** (the
+  audit's clobber/re-scan/defensive-disable symptoms dissolved); F-B demoted to an **annotation on the unified
+  open-mark** (reuse, not a parallel channel — the plain boolean shown semantically wrong for a confident-commit
+  contradiction), the contradiction carried as calibrated uncertainty (#12), the trigger an annotation lever
+  never an override.
+
+**No Layer-5 engagement concern remains undesigned — Stage 3 (algorithmic completion / E4) is the user's to
+open with nothing left undesigned.** The Stage-3 build inventory it inherits is enumerated at
+`cowork_layer5_engagement_design.md` §9.2.
 
 **Stage 3 — algorithmic completion: E4 (decoder engages) + the §6-block dissolution (OWED #2).** The
 `results` tangle dies by construction as the decoder's governed carry replaces the substrate (FQ-4); the owed
