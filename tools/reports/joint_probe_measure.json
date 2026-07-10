@@ -1,0 +1,161 @@
+{
+  "git_hash": "fa0a881aa4",
+  "corpus_git_hash": "c50002fee1",
+  "key_uncertain_bar": 1.0,
+  "n_scores": 352,
+  "presets": {
+    "Baroque": {
+      "n_regions": 10255,
+      "n_committed": 6409,
+      "n_regions_with_carried_alts": 10255,
+      "beam_width_carried_keys": {
+        "5": 10030,
+        ">6": 47,
+        "6": 178
+      },
+      "fire_rate": {
+        "n_flip_regions": 99,
+        "frac_of_committed": 0.0154,
+        "n_coupled_regions": 1183,
+        "n_flip_coupled": 16,
+        "frac_of_coupled": 0.0135
+      },
+      "benefit_top_alt_flip": {
+        "corr": 37,
+        "neutral": 32,
+        "harm": 28,
+        "net_corr_minus_harm": 9,
+        "n": 97
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 4,
+        "neutral": 8,
+        "harm": 4,
+        "net_corr_minus_harm": 0,
+        "n": 16
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 56,
+        "neutral": 65,
+        "harm": 52,
+        "net_corr_minus_harm": 4,
+        "n": 173
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6249,
+        "corrections_available": 37,
+        "harms_exposed": 28,
+        "net_available": 9
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 5,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.2
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    },
+    "Jazz": {
+      "n_regions": 9919,
+      "n_committed": 6311,
+      "n_regions_with_carried_alts": 9919,
+      "beam_width_carried_keys": {
+        "5": 9667,
+        "6": 203,
+        ">6": 49
+      },
+      "fire_rate": {
+        "n_flip_regions": 95,
+        "frac_of_committed": 0.0151,
+        "n_coupled_regions": 1500,
+        "n_flip_coupled": 15,
+        "frac_of_coupled": 0.01
+      },
+      "benefit_top_alt_flip": {
+        "corr": 36,
+        "neutral": 25,
+        "harm": 33,
+        "net_corr_minus_harm": 3,
+        "n": 94
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 8,
+        "neutral": 4,
+        "harm": 3,
+        "net_corr_minus_harm": 5,
+        "n": 15
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 70,
+        "neutral": 48,
+        "harm": 55,
+        "net_corr_minus_harm": 15,
+        "n": 173
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6149,
+        "corrections_available": 36,
+        "harms_exposed": 33,
+        "net_available": 3
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 2,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.5
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    },
+    "Default": {
+      "n_regions": 10247,
+      "n_committed": 6413,
+      "n_regions_with_carried_alts": 10247,
+      "beam_width_carried_keys": {
+        "5": 10001,
+        ">6": 48,
+        "6": 198
+      },
+      "fire_rate": {
+        "n_flip_regions": 89,
+        "frac_of_committed": 0.0139,
+        "n_coupled_regions": 1152,
+        "n_flip_coupled": 11,
+        "frac_of_coupled": 0.0095
+      },
+      "benefit_top_alt_flip": {
+        "corr": 35,
+        "neutral": 29,
+        "harm": 25,
+        "net_corr_minus_harm": 10,
+        "n": 89
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 2,
+        "neutral": 5,
+        "harm": 4,
+        "net_corr_minus_harm": -2,
+        "n": 11
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 64,
+        "neutral": 56,
+        "harm": 49,
+        "net_corr_minus_harm": 15,
+        "n": 169
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6253,
+        "corrections_available": 35,
+        "harms_exposed": 25,
+        "net_available": 10
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 5,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.2
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    }
+  }
+}

@@ -1,5 +1,59 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+**★ ENGAGE ARC #12 — Stage-3 owed MEASUREMENTS: does the joint key↔chord step actually pay? MEASUREMENT-ONLY
+(session 35, 2026-07-07).** CC executed `cc_instruction_engage_stage3_joint_measure.md` — Stage 3 opens
+**measurement-first** (#1/#3/#5): settle the decisive fact the joint-step design (`cowork_joint_key_chord_design.md`)
+left unmeasured — **does re-deciding the chord under alternative CARRIED keys measurably improve root-correctness,
+or not?** — BEFORE building the joint step (the #1/#3/#5 guard against building another plausible-but-unhelpful
+mechanism the way the F-B override was built on an unmeasured assumption). **READ-ONLY:** no production behavior
+change, no build of the joint step, no fit, no constant tuned.
+
+**The instrument (feat `689840d2ef`).** `--dump-joint-probe` — a default-OFF `batch_analyze` diagnostic + its
+corpus harness `measure_joint_probe.py` that exercises the EXISTING `ChordSliceDecoder` as a **PURE re-decode
+function** (`chordslicedecoder.h:524-531`, "this increment takes one key"; per-slice ranking context-free) under
+L3's already-carried per-region key menu — the production `HarmonicRegion`'s **argmax key `keyModeResult` ∪ the
+carried candidate menu `keyAlternatives`** + the **D-L3a sequence-margin `keyConfidence`**. It is **NOT** the
+production joint step (no beam driver, no wiring, no behavior change) — the "faithful mechanism" the design §2.2
+names, run as a measurement probe. The A/B holds the decoder FIXED and varies only the key (decoder-under-argmax
+vs decoder-under-alt). Benefit measured vs the DCML root by the **SHARED a8 substrate** (`_dcml_time_spans` /
+`_active_index_at` / `dcml_parser`), the same way the robust stop is (#1) — no proxy, no new tick matcher.
+Production byte-identical: 12/12 corpus stems reproduce the committed `tools/corpus/baroque/*.ours.json`
+byte-for-byte; both stops identity-PASS by construction; no `src/`, no golden refresh.
+
+**★ THE GO/NO-GO (measured, pinned corpus `c50002fee1`, ×3 presets): the joint step barely pays overall, and on
+the population it is scoped to it does not pay at all.**
+- **Benefit (corr/harm/neutral on the root FLIPS):** net corr−harm = **+9 / +3 / +10** (Baroque/Jazz/Default) over
+  **~6200 DCML-scored regions/preset = +0.05–0.16 pp**; **harm is 75–90 % of correction** everywhere (37c/28h,
+  36c/33h, 35c/25h). The **oracle upper bound** (a perfect key-selector) is only **+35–37 regions = +0.6 pp**, and
+  it EQUALS the top-alt result — the top carried key IS the one that flips-to-correct when any does.
+- **On the coupled minority** (key-uncertain, sequence margin < 1.0 — the C3 population the step is theory-scoped
+  to): net **0 / +5 / −2** on n = **16 / 15 / 11** — **zero-to-noise, one preset negative.**
+- **Fire-rate (owed-1/3):** the chord flips under a carried key in only **1.4–1.5 %** of committed regions
+  (0.9–1.4 % coupled) — **~10× below** the 13.5 % `decideJointKey` `coupled` structural proxy. The chord axis is
+  **almost always key-stable**: the carried alternatives are diatonic-collection siblings (relative/enharmonic
+  keys), so the decoder's diatonic-prior term barely shifts and the winner root does not move (fact-grounded #1,
+  not a surprise). **Beam width (owed-4):** ~5 carried keys, but a **width-2 beam captures every available
+  correction** — extra carried keys add nothing.
+- **owed-1/2/3 settled read-only; owed-4-fixpoint / owed-5 / owed-6 build-gated** (need the built joint scorer).
+
+**Pedal owed-P1 (Task 3, secondary).** Over production `isPedalPoint` regions, does the decoder carry under the
+argmax key already hold the in-place pedal (upper-voice) root? Agreement **0.20 / 0.50 / 0.20** — leans to the
+§6.3 "upper-voice-conditioned Layer-4 carry attribute" form rather than a pure carry-reader (consistent with the
+audit's decoder-has-no-pedal gap), **BUT UNDERPOWERED** (only n = 2–5 pedal regions on the chorale corpus).
+**Declared: measured but not decided;** a decisive read needs a pedal-dense corpus (the DCML `pedal` GT column
+exists for that).
+
+**#3 discharge / #8 boundary.** No new surprise — the design's own owed-2 predicted "small"; the measurement
+**sharpens it downward** (sub-single-digit overall, ~zero coupled) and grounds WHY (key→chord coupling is
+structurally weak precisely on the collection-sibling key ambiguities that are the hard cases). **Verdict handed
+up (#8, the build decision is Cowork's/the user's):** the measured evidence does **not** support building the
+joint key↔chord step as a precision lever. Report `cc_engage_stage3_joint_measure_report.md`; data
+`tools/reports/joint_probe_measure.json`. HEAD `fa0a881aa4`→ (feat `689840d2ef` + this fold); pushed fork-only
+(`cfc7eb5e39` upstream HARD STOP honored). **On CC's report: Cowork verifies at objects → brings the go/no-go +
+sizing to the user; the build decision is theirs, on measured fact.**
+
+---
+
 **★ ENGAGE ARC #11 — PEDAL detection's home + the F-B ANNOTATE mechanics: DESIGN — CLOSES STAGE 2 (session 34,
 2026-07-07).** CC executed `cc_instruction_engage_l5_pedal_annotate_design.md` — the **last two Layer-5 engagement
 design pieces** Part 1 enumerated (§4.2 gap 3 pedal, §4.3 F-B mechanics). **READ-ONLY / STRUCTURE-ONLY:** no

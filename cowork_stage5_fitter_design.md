@@ -1320,6 +1320,33 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   event (winner+alternatives byte-diff ×3 expected identical everywhere; both stops green by construction;
   suites/snapshots unchanged). No `src`/corpus/build/push-of-behavior-change. **O-11 retirement condition now
   has its ratification surface.**
+- **O-19 (ENGAGE ARC #12 — the joint key↔chord step's benefit MEASURED = it barely pays, and not at all on its
+  scoped population, 2026-07-07, session 35; `cc_engage_stage3_joint_measure_report.md` + data
+  `tools/reports/joint_probe_measure.json`).** Stage 3 opens measurement-first (#1/#3/#5): the decisive fact the
+  joint-step design (`cowork_joint_key_chord_design.md`) left as owed-2/3 — does re-deciding the chord under
+  alternative CARRIED keys improve root-correctness? — measured BEFORE any build (the same guard O-17/O-18 applied
+  to F-B). Instrument = default-OFF `--dump-joint-probe` (feat `689840d2ef`) exercising the EXISTING
+  `ChordSliceDecoder` as a PURE re-decode fn (`chordslicedecoder.h:524`, "takes one key") under the production
+  `HarmonicRegion`'s carried key menu (`keyModeResult ∪ keyAlternatives` + D-L3a `keyConfidence`) — NOT the
+  production joint step (no beam/wiring/behavior change; the "faithful mechanism" §2.2 named, run as a probe).
+  This is exactly the per-key chord **re-decode O-18 found un-computable read-only** — now computed by the
+  standalone probe over the pure decoder (O-18's un-computability was for *production telemetry*; a probe over the
+  pure fn is a different, computable thing). Benefit vs the DCML root by the SHARED a8 substrate
+  (`_dcml_time_spans`/`_active_index_at`), same as the robust stop (#1). **★ GO/NO-GO (corpus `c50002fee1`, ×3):**
+  net corr−harm on the root FLIPS = **+9 / +3 / +10** over ~6200 DCML-scored regions/preset (**+0.05–0.16 pp**;
+  oracle ceiling **+0.6 pp**); **harm = 75–90 % of correction** everywhere. On the **coupled minority** (the C3
+  population — key sequence margin < 1.0) net **0 / +5 / −2** on n=16/15/11 — zero-to-noise, one preset negative.
+  **Fire-rate (owed-1/3):** the chord flips under a carried key in **1.4–1.5 %** of committed regions (0.9–1.4 %
+  coupled) — **~10× below** the 13.5 % `decideJointKey` `coupled` proxy; the chord axis is almost always
+  KEY-STABLE (carried alts are diatonic-collection siblings ⇒ the diatonic prior barely shifts; fact-grounded #1).
+  **Beam width (owed-4):** ~5 carried keys but width-2 captures EVERY available correction. owed-1/2/3 settled
+  read-only; owed-4-fixpoint/owed-5/owed-6 build-gated. **Pedal owed-P1:** carry-holds-pedal-root agreement
+  0.20/0.50/0.20 — leans to the §6.3 upper-voice-conditioned form, but UNDERPOWERED (n=2–5); flagged not decided.
+  **#3:** no new surprise — the design's owed-2 predicted "small"; the measurement sharpens it downward and grounds
+  WHY. **Verdict handed up (#8):** the measured evidence does NOT support building the joint step as a precision
+  lever — the build decision is Cowork's/the user's, on measured fact. Both stops green **by construction**
+  (production byte-identical — 12/12 corpus stems reproduce committed `.ours.json`; no `src/`, no build of the
+  joint step, no fit; no golden refresh). Pushed fork-only.
 - **O-18 (ENGAGE ARC #2 — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE, 2026-07-06,
   session 25; `cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).** The
   specific-research move (#5/#2) the O-17 surprise called for (#3): does F-B's override isolate a net-positive
