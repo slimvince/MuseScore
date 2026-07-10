@@ -2075,6 +2075,16 @@ static void printHelp(const std::string& prog)
         << "            fanoutAboveThreshold, distinctRootsTotal, distinctRootsAbove) captured\n"
         << "            from the production gateCtx BEFORE applyHarmonicFunction's cap-of-3.\n"
         << "            Standard corpus byte-identical by construction (returns early). Default OFF.\n"
+        << "  --dump-joint-probe\n"
+        << "            (Engage arc #12, read-only DIAGNOSTIC — returns before the standard\n"
+        << "            writeJson) Run the BATCH region path AND re-decode the chord under each\n"
+        << "            carried key alternative (keyModeResult ∪ keyAlternatives) via the pure\n"
+        << "            ChordSliceDecoder. Emits, per region, the standard .ours.json schema\n"
+        << "            (for DCML tick alignment) PLUS a 'probe' object: the argmax-key + per-\n"
+        << "            alternative-key re-decoded region roots, the D-L3a keySeqMargin, the\n"
+        << "            pedal flags, and the argmax carry roots. Measures whether re-deciding the\n"
+        << "            chord under alternative keys improves root-correctness (the joint-step\n"
+        << "            go/no-go). Standard corpus byte-identical by construction. Default OFF.\n"
         << "  --dump-l6\n"
         << "            (L6, read-only DIAGNOSTIC) Run --dump-fullspine AND append an additive\n"
         << "            \"l6\" object: the dormant Layer-6 grouping structure assembled from the\n"
@@ -3633,6 +3643,191 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     return os.str();
 }
 
+// ── Engage arc #12 (--dump-joint-probe) — the C3 joint key↔chord RE-DECODE probe ─
+//
+// READ-ONLY MEASUREMENT (mirrors --dump-fanout / --dump-fullspine). Exercises the
+// EXISTING ChordSliceDecoder as a PURE re-decode function under L3's already-carried
+// per-region key alternatives — the "faithful mechanism" cowork_joint_key_chord_design.md
+// §2.2 names. It does NOT build the joint step (no beam, no wiring, no behavior change);
+// it measures whether re-deciding the chord under alternative carried keys would improve
+// root-correctness (the go/no-go), plus the true fire-rate and beam width (owed-1/3/4).
+//
+// Per production HarmonicRegion (carrying keyModeResult = the L3 argmax key,
+// keyAlternatives = the carried candidate-key menu, keyConfidence = the D-L3a sequence
+// margin), it re-decodes the chord under the argmax key AND under each carried alternative
+// key via ChordSliceDecoder::decode (a pure fn of (slices, key)), and records the
+// per-region duration-majority committed decoder root under each key. A Python harness
+// (measure_joint_probe.py) matches each region to the DCML root and reports the benefit
+// (corr/harm/neutral on the root FLIPS), the fire-rate, and the beam width.
+//
+// Emits the standard .ours.json region schema (so compare_analyses.load_analysis parses
+// it for the DCML tick alignment) PLUS an additive per-region "probe" object. Called from
+// a flag path that returns BEFORE the standard writeJson ⇒ the standard corpus is
+// byte-identical by construction.
+static std::string runJointProbe(
+    Score* score, const std::string& stem, const std::string& presetName,
+    const analysis::KeyModeAnalyzerPreferences& keyPrefs,
+    const analysis::ChordAnalyzerPreferences& chordPrefs,
+    const analysis::chordslice::ChordSliceDecoderPreferences& decoderPrefs,
+    const std::set<size_t>& excludeStaves)
+{
+    namespace cs = mu::composing::analysis::chordslice;
+    namespace cra = mu::composing::analysis::region;
+    using mu::composing::analysis::notemodel::NoteModel;
+    using mu::composing::analysis::slicing::Slice;
+    using mu::composing::analysis::HarmonicRegion;
+
+    // ── L1 + L2 for the decoder (the pure re-decode substrate; same as fullspine) ──
+    const NoteModel model = NoteModel::build(score);
+    const std::vector<Slice> slices = analysis::slicing::changePointSlices(model);
+
+    // ── The production region stream (opts IDENTICAL to analyzeScore) — each region
+    //    carries the L3 argmax key (keyModeResult), the carried key menu (keyAlternatives),
+    //    and the D-L3a sequence-margin confidence (keyConfidence). ──
+    const Segment* firstSegment = score->tick2segment(Fraction(0, 1), true, SegmentType::ChordRest);
+    const Fraction startTick = firstSegment ? firstSegment->tick() : Fraction(0, 1);
+    const Fraction endTick = score->endTick();
+    cra::AnalyzeRegionsOptions opts;
+    opts.granularity                  = analysis::HarmonicRegionGranularity::Smoothed;
+    opts.onsetBoundaryThreshold       = 0.25;
+    opts.excludeLookAheadOnDenseStart = true;
+    opts.pass1MinDistinctPcsForCandidate = 1;
+    const std::vector<HarmonicRegion> regions = cra::analyzeRegions(
+        score, startTick, endTick, excludeStaves, chordPrefs, keyPrefs, opts);
+
+    // ── The union of distinct carried keys (argmax ∪ alternatives, all regions) ──
+    // key identity = (keySignatureFifths, mode). Decode ALL slices ONCE per distinct key
+    // (the decoder is a pure fn; the per-slice ranking is context-free — decoder header).
+    auto keyKey = [](int f, analysis::KeySigMode m) { return (static_cast<int>(m) * 64) + (f + 16); };
+    std::map<int, KeyModeAnalysisResult> distinctKeys;
+    auto addKey = [&](const KeyModeAnalysisResult& k) {
+        distinctKeys.emplace(keyKey(k.keySignatureFifths, k.mode), k);
+    };
+    for (const HarmonicRegion& r : regions) {
+        addKey(r.keyModeResult);
+        for (const KeyModeAnalysisResult& alt : r.keyAlternatives) { addKey(alt); }
+    }
+    std::map<int, std::vector<cs::SliceChord>> decodedByKey;
+    for (const auto& kv : distinctKeys) {
+        decodedByKey[kv.first] = cs::ChordSliceDecoder::decode(
+            slices, model, kv.second.keySignatureFifths, kv.second.mode,
+            chordPrefs, decoderPrefs, excludeStaves);
+    }
+
+    // Duration-majority committed decoder root over [s,e) under key kk; *repSlice (if
+    // non-null) = the committed slice contributing the majority root (for the carry read).
+    auto majorityRoot = [&](int kk, int s, int e, int* repSlice) -> int {
+        auto it = decodedByKey.find(kk);
+        if (repSlice) { *repSlice = -1; }
+        if (it == decodedByKey.end()) { return -1; }
+        const std::vector<cs::SliceChord>& dec = it->second;
+        std::map<int, long long> rootDur;
+        for (size_t i = 0; i < slices.size() && i < dec.size(); ++i) {
+            const long long ov = std::max(0, std::min(slices[i].end, e) - std::max(slices[i].start, s));
+            if (ov <= 0) { continue; }
+            if (!dec[i].hasChord || dec[i].decision == cs::SliceDecision::Abstain) { continue; }
+            if (dec[i].chosen.rootPc < 0) { continue; }
+            rootDur[dec[i].chosen.rootPc] += ov;
+        }
+        int bestRoot = -1; long long bestDur = -1;
+        for (const auto& rd : rootDur) {
+            if (rd.second > bestDur) { bestDur = rd.second; bestRoot = rd.first; }
+        }
+        if (repSlice && bestRoot >= 0) {
+            long long repOv = -1;
+            for (size_t i = 0; i < slices.size() && i < dec.size(); ++i) {
+                const long long ov = std::max(0, std::min(slices[i].end, e) - std::max(slices[i].start, s));
+                if (ov <= 0) { continue; }
+                if (!dec[i].hasChord || dec[i].decision == cs::SliceDecision::Abstain) { continue; }
+                if (dec[i].chosen.rootPc != bestRoot) { continue; }
+                if (ov > repOv) { repOv = ov; *repSlice = static_cast<int>(i); }
+            }
+        }
+        return bestRoot;
+    };
+
+    std::ostringstream os;
+    os << "{\n";
+    os << "  \"stem\": \""   << jsonEscape(stem)       << "\",\n";
+    os << "  \"preset\": \"" << jsonEscape(presetName) << "\",\n";
+    os << "  \"analysisPath\": \"joint-probe\",\n";
+    os << "  \"regions\": [";
+
+    for (size_t ri = 0; ri < regions.size(); ++ri) {
+        const HarmonicRegion& hr = regions[ri];
+        const Fraction regionStart = Fraction::fromTicks(hr.startTick);
+        const MeasureTickInfo regionMeasure = locateMeasureByTick(score, regionStart);
+        const int measureNumber = regionMeasure.number;
+        const double beat = regionMeasure.measure
+            ? 1.0 + static_cast<double>(hr.startTick - regionMeasure.measure->tick().ticks()) / Constants::DIVISION
+            : 1.0;
+        const double durationQn = static_cast<double>(hr.endTick - hr.startTick) / Constants::DIVISION;
+        const uint16_t pcMask = pitchClassMask(hr.tones);
+        const int prodRoot = hr.hasAnalyzedChord ? hr.chordResult.identity.rootPc : -1;
+        int bassPc = hr.chordResult.identity.bassPc;
+        if (bassPc < 0) {
+            if (const auto* bt = analysis::bassToneFromTones(hr.tones)) { bassPc = bt->pitch % 12; }
+        }
+        const bool bir = (prodRoot >= 0 && bassPc >= 0 && bassPc == prodRoot);
+
+        const int argmaxKK = keyKey(hr.keyModeResult.keySignatureFifths, hr.keyModeResult.mode);
+        int repSlice = -1;
+        const int argmaxRoot = majorityRoot(argmaxKK, hr.startTick, hr.endTick, &repSlice);
+
+        os << (ri ? ",\n    " : "\n    ") << "{\n";
+        os << "      \"measureNumber\": " << measureNumber << ",\n";
+        os << "      \"beat\": "          << fmtDouble(beat, 4) << ",\n";
+        os << "      \"startTick\": "     << hr.startTick << ",\n";
+        os << "      \"endTick\": "       << hr.endTick << ",\n";
+        os << "      \"duration\": "      << fmtDouble(durationQn, 6) << ",\n";
+        os << "      \"rootPitchClass\": "<< prodRoot << ",\n";
+        os << "      \"quality\": \""     << qualityToString(hr.chordResult.identity.quality) << "\",\n";
+        os << "      \"key\": \""         << jsonEscape(keyName(hr.keyModeResult.keySignatureFifths, hr.keyModeResult.mode)) << "\",\n";
+        os << "      \"keyConfidence\": " << fmtDouble(hr.keyModeResult.normalizedConfidence) << ",\n";
+        os << "      \"pitchClassSet\": " << pcMask << ",\n";
+        os << "      \"bassPitchClass\": "<< bassPc << ",\n";
+        os << "      \"bassIsRoot\": "    << (bir ? "true" : "false") << ",\n";
+        // ── the additive probe object ──
+        os << "      \"probe\": {\n";
+        os << "        \"keySeqMargin\": " << fmtDouble(hr.keyConfidence, 6) << ",\n";
+        os << "        \"argmaxKey\": { \"fifths\": " << hr.keyModeResult.keySignatureFifths
+           << ", \"mode\": " << static_cast<int>(hr.keyModeResult.mode)
+           << ", \"tonicPc\": " << hr.keyModeResult.tonicPc << " },\n";
+        os << "        \"argmaxRoot\": " << argmaxRoot << ",\n";
+        os << "        \"prodRoot\": " << prodRoot << ",\n";
+        os << "        \"isPedalPoint\": " << (hr.chordResult.identity.isPedalPoint ? "true" : "false") << ",\n";
+        os << "        \"pedalBassPc\": " << hr.chordResult.identity.pedalBassPc << ",\n";
+        os << "        \"bassPc\": " << bassPc << ",\n";
+        // The decoder carry under the argmax key at the representative committed slice
+        // (chosen ∪ distinct-root alternatives) — the pedal owed-P1 reader-over-carry input.
+        os << "        \"argmaxCarryRoots\": [";
+        if (repSlice >= 0) {
+            const cs::SliceChord& sc = decodedByKey[argmaxKK][static_cast<size_t>(repSlice)];
+            os << sc.chosen.rootPc;
+            for (const cs::ChordSliceCandidate& alt : sc.alternatives) { os << ", " << alt.rootPc; }
+        }
+        os << "],\n";
+        // Per carried alternative key: its re-decoded region root.
+        os << "        \"alternatives\": [";
+        for (size_t ai = 0; ai < hr.keyAlternatives.size(); ++ai) {
+            const KeyModeAnalysisResult& alt = hr.keyAlternatives[ai];
+            const int altKK = keyKey(alt.keySignatureFifths, alt.mode);
+            const int altRoot = majorityRoot(altKK, hr.startTick, hr.endTick, nullptr);
+            os << (ai ? ", " : "")
+               << "{ \"fifths\": " << alt.keySignatureFifths
+               << ", \"mode\": " << static_cast<int>(alt.mode)
+               << ", \"tonicPc\": " << alt.tonicPc
+               << ", \"keyConf\": " << fmtDouble(alt.normalizedConfidence, 6)
+               << ", \"root\": " << altRoot << " }";
+        }
+        os << "]\n";
+        os << "      }\n";
+        os << "    }";
+    }
+    os << (regions.empty() ? "]" : "\n  ]") << "\n}\n";
+    return os.str();
+}
+
 } // namespace
 
 int main(int argc, char* argv[])
@@ -3682,6 +3877,7 @@ int main(int argc, char* argv[])
     bool dumpFullSpine = false;       // E0 full-spine measurement L1→L5 (default OFF = no analysis touched)
     bool dumpRegionKeyMargin = false; // C1 L3 sequence-margin export (default OFF = standard corpus byte-identical)
     bool dumpFanout = false;          // Engage arc #8 uncapped fan-out export (default OFF = standard corpus byte-identical)
+    bool dumpJointProbe = false;      // Engage arc #12 joint key↔chord re-decode probe (default OFF = standard corpus byte-identical)
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
     bool dumpVl = false;              // axis 2 (voice leading) VL-A/B/C dump (default OFF, additive)
@@ -3766,6 +3962,11 @@ int main(int argc, char* argv[])
             // untruncated above-threshold competition fan-out (diagnostic; returns
             // before the standard writeJson, so the corpus is byte-identical).
             dumpFanout = true;
+        } else if (a == "--dump-joint-probe") {
+            // Engage arc #12: run the BATCH region path AND re-decode the chord under
+            // each carried key alternative via the pure ChordSliceDecoder (diagnostic;
+            // returns before the standard writeJson, so the corpus is byte-identical).
+            dumpJointProbe = true;
         } else if (a == "--dump-l6") {
             // L6 grouping: run the full spine and APPEND the dormant grouping structure.
             dumpFullSpine = true;
@@ -4263,6 +4464,26 @@ int main(int argc, char* argv[])
             ofs << fo.str();
         } else {
             std::cout << fo.str();
+        }
+        delete score;
+        return 0;
+    }
+
+    // ── Engage arc #12 — the joint key↔chord re-decode probe (--dump-joint-probe) ──
+    // DIAGNOSTIC ONLY: runs the BATCH region path (identical opts to how the frozen gate
+    // corpus was produced) AND re-decodes the chord under each carried key alternative via
+    // the pure ChordSliceDecoder, then returns before the standard writeJson ⇒ the standard
+    // .ours.json corpus is byte-identical.
+    if (dumpJointProbe) {
+        const std::string stem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::string report = runJointProbe(score, stem, presetName, keyPrefs,
+                                                 chordPrefs, chordDecoderPrefs, excludeStaves);
+        if (!outputPath.empty()) {
+            std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
+            ofs << report;
+        } else {
+            std::cout << report;
         }
         delete score;
         return 0;
