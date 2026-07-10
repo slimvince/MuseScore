@@ -2061,6 +2061,14 @@ static void printHelp(const std::string& prog)
         << "            not synthesized). NO production consumer; byte-identical. Default OFF.\n"
         << "            (Additive C1 fields: phraseTextureTicks/phraseTextureStrength — the\n"
         << "            L1.5 graded texture profile at every candidate tick, for reliability.)\n"
+        << "            Also emits pitchClassSet per region (the a8 class-(a)/(b) split input).\n"
+        << "  --fullspine-no-override\n"
+        << "            (EG-2 G3, read-only DIAGNOSTIC — only with --dump-fullspine) Run the\n"
+        << "            full spine with the §5.5 case-4 fine-grain override DISABLED (the probe\n"
+        << "            arm): raises the override bar impassably (FunctionResolverParams.override.\n"
+        << "            baseBar) so attemptFineGrainOverride never fires — Phase-1 abstain\n"
+        << "            resolution untouched. Default OFF (override live, as-built). No production\n"
+        << "            reach (fullspine returns before analyzeScore).\n"
         << "  --dump-region-keymargin\n"
         << "            (C1 reliability, read-only DIAGNOSTIC — returns before the standard\n"
         << "            writeJson) Run the BATCH region path and emit, per region, the two\n"
@@ -3069,7 +3077,8 @@ static std::string runFullSpine(Score* score, const std::string& stem,
                                 const std::set<size_t>& excludeStaves,
                                 bool sectionLevel,
                                 bool emitL6 = false,
-                                bool emitProgressions = false)
+                                bool emitProgressions = false,
+                                bool noFineGrainOverride = false)
 {
     namespace cs = mu::composing::analysis::chordslice;
     namespace eb = mu::composing::analysis::engravingbridge;
@@ -3246,8 +3255,19 @@ static std::string runFullSpine(Score* score, const std::string& stem,
     }
     analysis::ResolverKey rkey;
     rkey.keyFifths = homeFifths; rkey.keyMode = homeMode; rkey.tonicPc = homeTonicPc;
+    // EG-2 G3 (probe arm): the §5.5 case-4 fine-grain override is measured net-harmful
+    // (−756) and is a Tier-1 armed trap; the probe measures decoder carry + argmax MINUS
+    // the override. We disable it via the EXISTING dormant θ — raising the override bar
+    // (baseBar) impassably high so overrides() is always false and attemptFineGrainOverride
+    // returns before any mutation/forwardRecompute (functionresolver.cpp:468-469). Phase-1
+    // abstain resolution is untouched. Default (noFineGrainOverride=false) = the as-built
+    // override live, byte-identical to the prior E0 dump.
+    analysis::FunctionResolverParams resolverParams;   // = kDefaultFunctionResolverParams
+    if (noFineGrainOverride) {
+        resolverParams.override.baseBar = 1.0e9;       // impassable ⇒ override never fires
+    }
     const analysis::ResolverResult res =
-        analysis::resolveCarriedReadings(funcSlices, cadences, rkey);
+        analysis::resolveCarriedReadings(funcSlices, cadences, rkey, resolverParams);
 
     // The FINAL per-unit chord identity (post-resolver): the resolver's reading is
     // the committed chord for an unchanged commit, the corrected reading on an
@@ -3477,6 +3497,12 @@ static std::string runFullSpine(Score* score, const std::string& stem,
            << ", \"duration\": " << fmtDouble(duration, 4)
            << ", \"rootPitchClass\": " << rootPc
            << ", \"bassPitchClass\": " << bassPc
+           // The slice's sounding pitch-class set (= ctx[i].pcMask, the same semantic as the
+           // standard path's `pitchClassSet` = r.pcMask). Required by the a8 robust-unit grader's
+           // cell_class() symmetric-sonority test (dim7/aug/whole-tone/share-tone → class-(a));
+           // without it every root-fail would misclassify as class-(b). Deterministic (sounding
+           // pcs, no analysis decision). Additive to the default-off fullspine dump.
+           << ", \"pitchClassSet\": " << ctx[i].pcMask
            << ", \"bassIsRoot\": " << (bassIsRoot ? "true" : "false")
            << ", \"quality\": \"" << (hasChord ? qualityToString(fr.quality) : "Unknown") << "\""
            << ", \"chordSymbol\": \"" << jsonEscape(chordSym) << "\""
@@ -3881,6 +3907,11 @@ int main(int argc, char* argv[])
     bool dumpL6 = false;              // L6 grouping structure appended to the fullspine dump (default OFF)
     bool dumpProgressions = false;    // recognition consumer output appended to the fullspine dump (default OFF)
     bool dumpVl = false;              // axis 2 (voice leading) VL-A/B/C dump (default OFF, additive)
+    bool fullSpineNoOverride = false; // EG-2 G3: disable the §5.5 fine-grain override on the
+                                      // --dump-fullspine path (default OFF = override live, as-built).
+                                      // Uses the existing dormant θ (FunctionResolverParams.override.baseBar
+                                      // set impassably high ⇒ overrides() always false ⇒ attemptFineGrainOverride
+                                      // is a complete no-op). Diagnostic-driver-only; production untouched.
     // Decode-only sweep overrides for the decoder-private ChordSliceDecoderPreferences.
     // Read ONLY on the --decode-chords diagnostic path (which returns before
     // analyzeScore), so production analysis stays byte-identical. Default = the
@@ -3952,6 +3983,10 @@ int main(int argc, char* argv[])
             reachBackAB = true;
         } else if (a == "--dump-fullspine") {
             dumpFullSpine = true;
+        } else if (a == "--fullspine-no-override") {
+            // EG-2 G3: run the full spine with the §5.5 case-4 fine-grain override
+            // DISABLED (the probe arm). Only meaningful together with --dump-fullspine.
+            fullSpineNoOverride = true;
         } else if (a == "--dump-region-keymargin") {
             // C1 reliability: run the BATCH region path and emit per-region L3
             // sequence-margin + emission-sigmoid confidences (diagnostic; returns
@@ -4414,7 +4449,7 @@ int main(int argc, char* argv[])
             QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
         const std::string report = runFullSpine(score, stem, presetName, keyPrefs, chordPrefs,
                                                  chordDecoderPrefs, excludeStaves, sectionLevel, dumpL6,
-                                                 dumpProgressions);
+                                                 dumpProgressions, fullSpineNoOverride);
         if (!outputPath.empty()) {
             std::ofstream ofs(outputPath.toQString().toStdString(), std::ios::binary);
             ofs << report;

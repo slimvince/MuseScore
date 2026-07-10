@@ -310,6 +310,10 @@ def main():
                         help="E0: pass --dump-fullspine to batch_analyze (write the "
                              "full-spine L1->L5 per-stem side file; diagnostic, returns "
                              "before analyzeScore, byte-identical). Default off.")
+    parser.add_argument("--fullspine-no-override", action="store_true",
+                        help="EG-2 G3: pass --fullspine-no-override to batch_analyze "
+                             "(only with --dump-fullspine; disables the §5.5 fine-grain "
+                             "override — the probe arm). Default off.")
     parser.add_argument("--dump-l5", action="store_true",
                         help="Phase 5c Step M: pass --dump-l5 to batch_analyze "
                              "(appends the read-only dormant Layer-5 would-be Roman "
@@ -401,6 +405,8 @@ def main():
         extra_flags.append("--dump-l5")
     if args.dump_fullspine:
         extra_flags.append("--dump-fullspine")
+    if args.fullspine_no_override:
+        extra_flags.append("--fullspine-no-override")
     if args.dump_modulation:
         extra_flags.append("--dump-modulation")
     if args.dump_joint_key:
