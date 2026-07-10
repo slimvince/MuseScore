@@ -601,14 +601,27 @@ re-baseline discipline (#16):
    *distinct roots*, not voicings; the exclusion tail #12 carried). **Prerequisite** for the pedal reader, the
    joint step B1, and the selection's full-fan-out reasoning.
 3. **The pedal reader-over-carry** (Part 2 §6, owed build §8.2 #1) + its owed measurements [owed-P1/P2].
+   *(⛔ HARD-GATED 2026-07-10, Stage-3 entry gate EG-3, CLAUDE.md #18/#19: [owed-P1] must be settled on an
+   ESTABLISHED pedal-dense corpus BEFORE this is built — the load-bearing premise "the material pedal need is
+   usually already a carried distinct-root alternative" is currently underpowered AND unfavorable
+   (0.20/0.50/0.20, n=2–5, arc #12). See `cowork_l1_l5_premise_debt_audit.md`.)*
 4. **The F-B annotation** (Part 2 §7, owed build §8.2 #2) + [owed-FB1] — the open-mark unify + the
-   annotate-not-override demotion + the contract §4 re-declaration.
+   annotate-not-override demotion + the contract §4 re-declaration. *(★ PROMOTED 2026-07-10: together with
+   the arc-#9 selection re-ordering this is a Stage-3 entry-gate PREREQUISITE (EG-1) — the as-built
+   `attemptFineGrainOverride` runs unconditionally (`functionresolver.cpp:529-531`) and `resolveAbstained`
+   selects progression-first at confidence 1.0; neither may reach production unfixed. See
+   `cowork_l1_l5_premise_debt_audit.md` Tier 1.)*
 5. **Quality-from-key's single owner** (FQ-2, `[audit]` X/S12/S15/S16/S17) — decided **with** the §6-block
    dissolution (the arc plan's Stage-2/Stage-3 split); the hinge Part 1 §4.3 named for the key-consistency channel.
-6. **The joint step B1–B4** (`[joint §4]`): **B1** the per-key chord re-decode driver over the built decoder (Layer
-   4); **B2** the beam/coupling driver generalizing `decideJointKey` (the joint step); **B3** the trigger gate; **B4**
-   the production wiring completing J-key-iii — plus its owed measurements (`[joint §5]`: the C3 coupled-set size,
-   the beam-width ablation, the root-flip rate — all un-measurable until B1 exists).
+6. **The joint step B1–B4** — *(⛔ SHELVED, user-ratified 2026-07-07 at arc #12; synced here 2026-07-10,
+   doc-sync #10)*: measured NOT to pay (net +0.05–0.16 pp, harm 75–90 % of correction, oracle ceiling
+   +0.6 pp, coupled-minority net ~0, fire-rate 1.4 % — `cc_engage_stage3_joint_measure_report.md`). OFF the
+   Stage-3 build list per `cowork_engage_arc_plan.md`. Original enumeration kept for provenance: **B1** the
+   per-key chord re-decode driver over the built decoder (Layer 4); **B2** the beam/coupling driver
+   generalizing `decideJointKey`; **B3** the trigger gate; **B4** the production wiring completing J-key-iii —
+   plus its owed measurements (`[joint §5]`). *(PONDER-POINT 1 — whether the measurement tested the right
+   framing (key-first-then-chord vs full joint ranking) — remains open; any reopening runs under the #17
+   Premise Gate as an explorational question first.)*
 7. **The owed migrations** (FQ-8, `[audit]`): the two-segmenters retirement (S3/S4), the two-pitch-context collapse
    (S2), the tpc-reader fold (S6), the `function/` dir rename (S18); **FQ-1** the different-root primitive (retires
    *with* the decoder — the pedal reader and Iter 86/91 route through it); **FQ-3** the `findTemporalContext`

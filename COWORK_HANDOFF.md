@@ -1,5 +1,122 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
+---
+## ★★ NEXT-SESSION ENTRY POINT — READ THIS FIRST (Cowork, 2026-07-07)
+
+You (the next session) start **context-less**. This block orients you and carries **two ponder-points the
+user left specifically for you to engage FRESH.** Do not skip them.
+
+**Read before anything:** (1) `CLAUDE.md` → the **`## Guiding principles` (1–16)** — they govern every
+decision; (2) `cowork_engage_arc_plan.md` — the ratified 5-stage plan + the principle behind each step (the
+map); (3) this handoff's arc #9–#12 blocks below. Key design docs: `cowork_layer5_engagement_design.md`
+(the Layer-5 design), `cowork_joint_key_chord_design.md` (the joint step — SHELVED, see ponder-point 1),
+`cowork_structural_integrity_audit.md` (the structural audit + Stage-3 build inventory §9.2),
+`cowork_functional_analysis_research_grounding.md` (published-fact grounding).
+
+**How this works:** Cowork (the desktop session) dispatches **read-only** instructions to **CC** (Claude
+Code), verifies each at objects, and brings decisions to the user. **CC has NO greater context and can
+hallucinate — verify every load-bearing claim at the code yourself.** Fork-only (`origin =
+slimvince/MuseScore`); **NEVER push `upstream` (`musescore/MuseScore`) — the `cfc7eb5e39` HARD STOP.**
+
+**WHERE WE ARE (2026-07-07):** In the **engage arc**. **Stage 2 (the Layer-5 engagement DESIGN) is
+COMPLETE** — the whole architecture is designed, structure-only, moratorium (#8) held (no `src/`, no build,
+no constant fitted). **The joint key↔chord step is SHELVED (user-ratified):** arc #12 measured it **not to
+pay** (net +0.05–0.16 pp, harm ≈ correction, coupled-minority ~0, fire-rate only 1.4 % — carried alt keys are
+diatonic-collection siblings, so the chord is almost always key-stable). It is OFF the Stage-3 build list.
+
+**★ RATIFIED THIS SESSION — MEASURE-BEFORE-BUILD:** any build whose case rests on an *anticipated precision
+gain* is measured read-only **before** it is built (the joint step, and the F-B override before it, are the
+lessons — both were "obvious" wins that measured out). **Distinction:** this gate is for **precision
+claims** ("will building X make analysis more correct?"); **structural refactors** (decoder-replaces-tangle,
+migrations) are justified by cleanliness and verified **byte-identical** — no precision measurement owed.
+
+**★ #12 CORRECTION (recorded — the earlier "recomputable" framing was WRONG):** on the shelved joint step,
+the chord under an alternative key is **NEVER COMPUTED** in this path — so nothing computed is discarded (no
+#12 violation). The key alternatives ARE carried (the key discovery is preserved). Not computing a
+*measured-worthless* possibility (the ~1.4 % where it differs is 50/50 noise) is an **evidence-based
+decision, not information loss** — you cannot lose what you never had. ("Recompute a discarded thing" WOULD
+be a #12 violation; that is not what happens here.)
+
+**THE NEXT MEASUREMENT (the biggest unmeasured precision claim, before E4 is built):** does the **REBUILT
+path** (decoder carry + the intended selection) beat the **LEGACY path** against the DCML ground truth? — the
+go/no-go on the whole engagement. Needs careful scoping (the intended selection re-ordering is designed but
+NOT built — be precise about what the probe exercises vs stands in for). *(Also open: a small read-only
+pedal-dense probe using the DCML `pedal` GT column to settle the pedal-reader form — arc #12 flagged the
+chorale data too thin, n=2–5.)*
+
+---
+### ★ PONDER-POINT 1 (user, verbatim intent) — REOPEN the joint (key, chord) RANKING; did we measure the RIGHT framing?
+
+> *"In the current pipeline the chord under an alternative key is never computed. Why do we not compute all
+> chords for all reasonably-likely modes/keys? THEN we can rank them. Maybe the top chord alternative is
+> inferred based on another key/mode than the highest-ranked key/mode. The probability that the most likely
+> chord is ALWAYS found using the most likely mode/key is ZERO."*
+
+Engage this FRESH. arc #12 shelved the joint step on a **narrow framing** — decode the chord under the argmax
+key, then re-decode under *carried alternative* keys, measure the flips on the coupled minority (1.4 % fire).
+**That framing still decides the KEY first.** The user's point is the **full joint (key, chord) space ranked
+TOGETHER** — compute the chord under *every* reasonably-likely key/mode and rank all (key, chord) pairs
+jointly, so the top-ranked *chord* may come from a non-top-ranked *key*. **Our measurement did NOT test
+that.** Reconsider, grounded (do not assume either way): is the near-zero measured benefit real, or an
+**artifact of testing key-first-then-chord instead of joint ranking**? If joint ranking is the correct
+architecture, the shelving may need revisiting — but only on measured fact, and mind the cost (#4/#6/#12).
+
+### ★★ SESSION 36 ADDENDUM — the L1–L5 RETRO PREMISE AUDIT + the STAGE-3 ENTRY GATE (user-ratified 2026-07-10)
+
+Applying the freshly-ratified #17–#19 retroactively to built code answered the user's follow-up ("have we
+already built anything on assumptions that bites at final inference?") — **YES, three tiers**, full audit
+`cowork_l1_l5_premise_debt_audit.md`: **Tier 1 armed traps** (Cowork-verified at code) — the dormant L5
+`resolveAbstained` still selects **progression-first at confidence 1.0** (the channel F-B measured
+uncorrelated with correctness); **`attemptFineGrainOverride` (−756) runs unconditionally**
+(`functionresolver.cpp:529-531`); **confidence-scale mixing at 3 sites** with the one calibration attempt
+already failed; the decoder's symmetric-rotation root **assumes the key prior correct**. **Tier 2** — the
+Class-B mass: nearly every live scoring magnitude hand-set pre-2026-06-13 against the later-proven-broken
+batch gate (unfalsified ≠ established; only kWStepIn ever robust-unit-fit). **Tier 3** — containment holes:
+manifest excludes L1/L2 + live-L3 constants; **Jazz has NO licensed GT** (unvalidatable); L5 firewall
+placeholders; doc-drift. **Consequence (ratified): the STAGE-3 ENTRY GATE EG-1…EG-6** in
+`cowork_engage_arc_plan.md` — Tier-1 defusal is a PREREQUISITE of L5-to-production; rebuilt-vs-legacy runs
+under full #17+#19; pedal reader hard-gated on owed-P1 over an established pedal-dense corpus; θ/kBoundary
+fitting owes ledger+desk-sim; manifest completion before Stage 5 closes; Jazz status declared. §9.2 synced
+(pedal gated, joint step marked SHELVED — the arc-#12 sync omission fixed). **NEXT SESSION: nothing opens
+without its #17 ledger; the rebuilt-vs-legacy scoping (EG-2) is the natural first item, preceded by
+establishing its instrument (#19).**
+
+### ★ PONDER-POINT 2 — ✅ RESOLVED & RATIFIED (2026-07-10, session 36): the PREMISE GATE
+
+**Engaged fresh and ratified by the user 2026-07-10.** Full analysis + evidence:
+`cowork_premise_gate_reflection.md`. Outcome now standing in **CLAUDE.md #17–#19 + the
+surprise-scope rule**: **#17 the Premise Gate** (premise ledger FACT/THEORY/ASSUMPTION ·
+written quantitative prediction per assumption — no prediction, no build · desk simulation on
+3–5 real failing-set cases · proxy→target links are premises · insulation claims enumerate the
+false-negative path · no hand-transcribed numbers); **#18 unverified causal premises FORBIDDEN
+(Class A)**; **#19 unestablished instruments FORBIDDEN (Class B)**. **Scope:** surprises
+allowed in explorational (ignorance-elimination) runs; NOT allowed when building actual
+inference code — there a surprise is a STOP (#13) and Premise-Gate evidence. Funnel:
+**desk-simulate → read-only probe → build.** Diagnosis in brief: not a capability failure —
+every root cause (F-B's uncorrelated contradiction; the joint step's collection-sibling
+key-stability; the gate-insulation false-negative path) was derivable at design time; the
+process asked the quantitative question only after building. The next owed measurement
+(rebuilt-vs-legacy vs DCML) and PONDER-POINT 1 both run under #17 from here. Original
+ponder-point kept below for provenance.
+
+### ★ PONDER-POINT 2 (user, verbatim intent) — WHY do we STILL get surprises? A way-of-working reflection. *(✅ resolved above)*
+
+> *"Start with reasoning why we STILL get surprises: what we thought would work does not — why? Are we not
+> clever enough? Are we guessing (hallucinating, assuming) instead of basing our decisions on CURRENT facts
+> and established algorithms? Have we even tried to desktop test (dry run, simulate) some ideas through the
+> intended architecture and its algorithms? What needs to change in our way of working to once and for all
+> stop being surprised?"*
+
+Principle #3 says a surprise means we failed #1 (fact/theory-based). We keep being surprised (F-B
+net-harmful; the joint step barely pays). **Settle this BEFORE more building.** Reason about: are we
+*guessing* vs grounding on current facts + established algorithms (#1)?; have we **desktop-tested / dry-run /
+simulated** candidate ideas *through the intended architecture and its algorithms* before building or
+measuring (we have NOT — we design, then build/measure, then get surprised; a simulate-first step may catch
+the surprise earlier and cheaper); **what concretely must change in the way of working to stop the
+surprises.** This is the first thing to resolve next session.
+
+---
+
 **★ ENGAGE ARC #12 — Stage-3 owed MEASUREMENTS: does the joint key↔chord step actually pay? MEASUREMENT-ONLY
 (session 35, 2026-07-07).** CC executed `cc_instruction_engage_stage3_joint_measure.md` — Stage 3 opens
 **measurement-first** (#1/#3/#5): settle the decisive fact the joint-step design (`cowork_joint_key_chord_design.md`)

@@ -34,11 +34,38 @@ override convenience.
     carry, not the winner alone).
 16. **Reproducibility.** Every measurement is stamped to corpus-hash + instrument-commit;
     snapshot the outgoing reference before any re-baseline.
+17. **The Premise Gate.** Before any inference-affecting design is built or probed:
+    (a) a **premise ledger** — every load-bearing causal claim explicitly labeled **FACT**
+    (citation to code/measurement), **THEORY** (citation to published research answering the
+    *specific* question, #2), or **ASSUMPTION**; (b) a **written quantitative prediction per
+    assumption** (fire-rate, magnitude, direction, population) recorded *before* measuring —
+    no prediction, no build; (c) a **desk simulation** — trace the mechanism by hand through
+    the intended architecture on 3–5 real corpus cases drawn from the known failing sets,
+    answering "which term moves, by how much, on this actual case?"; (d) every **proxy→target
+    link is itself a ledger premise** (a structural proxy never stands in for a behavioral
+    quantity unvalidated); (e) every **insulation claim** ("X cannot affect Y") must enumerate
+    the false-negative path explicitly; (f) **no hand-transcribed measurement numbers** —
+    figures enter docs only via generated artifacts (the `manifest.json` pattern).
+18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a
+    causal claim about our own system or data that is checkable but unchecked.
+19. **Unestablished instruments are FORBIDDEN (Class B).** An instrument, corpus, gate, or
+    recorded figure is trusted only after being *positively established* (oracle cross-check,
+    derivation of what the measurement unit actually measures, reproduce-check) — never
+    because it is merely unfalsified.
+
+*Scope of surprise (ratified with #17–19):* surprises are **allowed in explorational runs**
+whose purpose is to eliminate ignorance (#5 fact-finding); they are **NOT allowed when building
+actual inference code** — there, a surprise is a STOP (#13) and evidence the Premise Gate was
+not satisfied. The stage funnel: **desk-simulate (hours) → read-only probe (a session) → build
+(an arc)** — each stage kills bad premises before the next pays for them.
 
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
-#13–16 were ratified by the user on 2026-07-06. Companion standing rules elsewhere: the
-⛔ TOTAL UNIFICATION rule (`COWORK_HANDOFF.md`), and the doc-sync, layer, and gate policies
-below.*
+#13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
+prohibitions) and the surprise-scope rule were ratified by the user on 2026-07-10 — analysis
+and evidence in `cowork_premise_gate_reflection.md`. Companion standing rules elsewhere: the
+⛔ TOTAL UNIFICATION rule (`COWORK_HANDOFF.md`), the MEASURE-BEFORE-BUILD gate
+(`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
+layer, and gate policies below.*
 
 ## Project context
 

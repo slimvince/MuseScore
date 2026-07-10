@@ -61,6 +61,51 @@ quality-from-key gets its one owner (FQ-2); the divergent legacy different-root 
 decoder's root+quality version is the clean one); `findTemporalContext` ownership moves here (FQ-3). Each a ratified behavior change (#14) proven on the full surface
 (#15) under the robust-unit regression stop (#11), with the re-baseline discipline (#16).
 
+**★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**
+Before any E4/L5 engagement wiring can reach production:
+- **(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering
+  (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel
+  F-B measured uncorrelated with correctness) and the F-B override demotion (arc #11 — `attemptFineGrainOverride`
+  runs unconditionally in `resolveCarriedReadings` Phase 2, measured −756) must land, or the wiring must
+  provably bypass both, **before** L5 output reaches production.
+- **(EG-2) The rebuilt-vs-legacy go/no-go measurement runs under full #17** (premise ledger, written
+  quantitative predictions, desk simulation over known failing cases) **and #19** (its instrument positively
+  established first — no establishment record exists for the E0 decode chain).
+- **(EG-3) The pedal reader is HARD-GATED on owed-P1 over an established pedal-dense corpus** (#18/#19): its
+  load-bearing premise is currently underpowered AND unfavorable (agreement 0.20/0.50/0.20, n=2–5). No build
+  before the premise is settled.
+- **(EG-4) The confidence-scale commensurability premise (T1-3) owes a #17 ledger + desk simulation before
+  any θ/kBoundary fitting** — the failed L5 `combinedBoundary` calibration (non-monotone, fitter D-8) is the
+  standing warning that "fit will fix it" is unverified.
+- **(EG-5) The fit surface is completed before Stage 5 is declared done:** extend `tools/param_manifest.json`
+  to the L1/L2 constants (beat-weight table, emission sigmoid, segmenter penalties) and the live L3 hysteresis
+  margins (T3-1).
+- **(EG-6) The Jazz preset's validation status is declared honestly** (T3-2): unestablished pending an
+  established jazz GT corpus (#9/#19) — a corpus-establishment work item or an explicit de-scoping.
+Tier-2 (the Class-B mass of pre-2026-06-13 hand-set constants, tuned against the later-proven-broken batch
+gate) retires through the existing Stage-5 fitter — each robust-unit fit converts a suspect value to
+established; no new mechanism, but the mechanism must run.
+
+**★ MEASURE-BEFORE-BUILD (ratified 2026-07-07, arc #12 lesson) — since 2026-07-10 the MIDDLE stage of the
+#17 Premise-Gate funnel: desk-simulate (hours) → read-only probe (a session) → build (an arc).** Every
+Stage-3+ item additionally owes a #17 premise ledger (FACT/THEORY/ASSUMPTION), a written quantitative
+prediction per assumption, and a desk simulation over known failing cases BEFORE its probe or build is opened
+(see CLAUDE.md #17–#19 + `cowork_premise_gate_reflection.md`). Byte-identical structural refactors are exempt
+from the prediction requirement — byte-identity IS their prediction. A build whose case rests on an *anticipated*
+precision gain is measured read-only **before** it is built, exactly as the joint step was. **The joint key↔chord
+step is SHELVED — measured NOT to pay** (arc #12: net +0.05–0.16 pp over ~6200 regions, harm 75–90 % of
+correction, oracle ceiling +0.6 pp, coupled-minority net ~0, fire-rate only 1.4 % — the carried alternative
+keys are diatonic-collection siblings so the chord is almost always key-stable). It **drops off the Stage-3
+build inventory.** The #12 reconciliation (no loss): the key alternatives ARE carried (the key discovery is not
+discarded); the chord under an alternative key is **never computed** in this path (so nothing computed is
+discarded), and the measurement shows the ~1.4 % where it would differ is 50/50 noise — choosing not to compute
+a *measured-worthless* possibility is an evidence-based decision, not information loss. **Distinction:** this
+gate applies to **precision claims** ("will building X make analysis more correct?" — measure first); the
+**structural refactors** (decoder-replaces-tangle, the migrations) are justified by cleanliness and verified
+**byte-identical**, no precision measurement owed. **The biggest unmeasured precision claim, to measure next:**
+does the rebuilt path (decoder carry + the intended selection) beat the LEGACY path against the DCML ground
+truth? — the go/no-go on the whole engagement, before E4 is built.
+
 **Stage 4 — R9: the `chordanalyzer.cpp` file split (OWED #1), LAST.** "Split once," after the E4 removals.
 
 **Stage 5 — the moratorium lifts (#8): the PRECISION work (#4).** Recover the corrections the fine-grain
@@ -72,5 +117,10 @@ architecture.
 Surface a surprise as a STOP before building around it (#13); investigate rather than assume when facts are
 thin (#5); test/measure only on non-stale corpora (#9); verify at objects on the full surface (#15).
 
-*Cowork, ratified 2026-07-07. Cross-refs: `cowork_structural_integrity_audit.md` §3/§4;
-`cowork_stage5_fitter_design.md` (O-22, the owed refactors); the roadmap ENGAGE block (E0–E5) + R9.*
+*Cowork, ratified 2026-07-07. Amended 2026-07-10 (user-ratified, session 36): the #17 funnel folded into
+MEASURE-BEFORE-BUILD; the STAGE-3 ENTRY GATE (EG-1…EG-6) added on the L1–L5 premise-debt audit
+(`cowork_l1_l5_premise_debt_audit.md`); the shelved joint step marked SHELVED in the §9.2 inventory
+(doc-sync #10). Cross-refs: `cowork_structural_integrity_audit.md` §3/§4;
+`cowork_stage5_fitter_design.md` (O-22, the owed refactors); the roadmap ENGAGE block (E0–E5) + R9;
+CLAUDE.md #17–#19 + `cowork_premise_gate_reflection.md`.*
+
