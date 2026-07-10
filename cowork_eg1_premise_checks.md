@@ -33,9 +33,12 @@ MARGIN. Opening gate 1 would therefore reduce dim7 abstention, not just fix rota
 **E4 design question — enumerated, NOT decided (Layer-4 owner, #7/#8):**
 (a) detect the symmetric collection from the SOUNDING PC SET (`present[12]`) independently of
 the chosen quality, pin the root, then re-rank; or (b) land the C2/G5 four-note dim7 type
-first (already gated at engage Step-0 F-4), making Diminished win the argmax where it should.
-Each option owes its own #17 ledger + desk sim (control flow AND arithmetic) at the E4 design
-step.
+first (already gated at engage Step-0 F-4), making Diminished win the argmax where it should;
+or **(c) — user-raised 2026-07-10 — generalize SPELLING to a first-class evidence primitive**
+(the tpc facts are already L1-carried per note; O1 measured ~60 % of the Baroque residual
+spelling-resolvable; arc-#9 ranks spelling as load-bearing selection channel #2), of which the
+symmetric pin becomes just one consumer — see register row OI-15. Each option owes its own #17
+ledger + desk sim (control flow AND arithmetic) at the E4 design step.
 
 ## PC-2 — the abstention control flow: ESTABLISHED
 

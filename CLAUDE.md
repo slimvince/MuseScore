@@ -67,6 +67,18 @@ and evidence in `cowork_premise_gate_reflection.md`. Companion standing rules el
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*
 
+## The open-items register (user-directed, 2026-07-10)
+
+**`OPEN_ITEMS.md` is the ONE home for every discovered-but-unresolved issue** (#6 applied to
+tracking itself — created after a full-repo sweep found 91 open items scattered across 12
+surfaces with 11 status contradictions). Rules: (a) **read `OPEN_ITEMS.md` at session start**;
+(b) **a stage may not open while a register item gating it is open**; (c) every newly
+discovered issue gets a register row **in the same commit** that records the discovery;
+(d) every resolution flips its row with provenance; (e) tracking an owed/deferred/TODO item in
+prose only, without a register row, is a doc-sync violation (#10). "Deal with everything
+discovered" means: every item has ONE row, an owning layer, and a blocking gate — fixed at its
+#8-correct stage, never silently forgotten.
+
 ## Project context
 
 This is MuseScore Studio. The active development area is the `composing` module
