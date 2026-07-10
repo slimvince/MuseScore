@@ -41,7 +41,9 @@ override convenience.
     assumption** (fire-rate, magnitude, direction, population) recorded *before* measuring —
     no prediction, no build; (c) a **desk simulation** — trace the mechanism by hand through
     the intended architecture on 3–5 real corpus cases drawn from the known failing sets,
-    answering "which term moves, by how much, on this actual case?"; (d) every **proxy→target
+    answering FIRST "does the mechanism FIRE on this case?" (control flow — ratified sharpening
+    2026-07-10, the EG-2 desk-sim lesson), THEN "which term moves, by how much?" (arithmetic);
+    (d) every **proxy→target
     link is itself a ledger premise** (a structural proxy never stands in for a behavioral
     quantity unvalidated); (e) every **insulation claim** ("X cannot affect Y") must enumerate
     the false-negative path explicitly; (f) **no hand-transcribed measurement numbers** —

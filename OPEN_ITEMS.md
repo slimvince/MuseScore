@@ -71,7 +71,7 @@
 
 | ID | item | source | status |
 |---|---|---|---|
-| OI-41 | #17(c) sharpening: "establish the mechanism FIRES (control flow) before tracing arithmetic" | PC doc §"hands" | AWAITING RATIFICATION |
+| OI-41 | #17(c) sharpening: "establish the mechanism FIRES (control flow) before tracing arithmetic" | PC doc §"hands" | ✅ RATIFIED 2026-07-10 — folded into CLAUDE.md #17(c) |
 | OI-42 | Audit §5 UNCLEAR rows 1–7 (S2/S3/S4 cataloguing; S8/S9; S14/S16 acceptability; S18 timing; S19 θ deferral; S20 helper; FQ-3 stage) | audit §5 | OPEN — user |
 | OI-43 | PONDER-POINT 1: reopen joint (key,chord) RANKING framing (arc-#12 measured key-first-then-chord, not joint ranking) — explorational under #17 if reopened | handoff | OPEN — user |
 | OI-44 | Joint step B1–B4 status: design DELIVERED / build SHELVED / framing REOPENED (contradiction B) — needs one declared status | fitter O-4; §9.2 #6; handoff | OPEN — user |
@@ -117,6 +117,24 @@
 | OI-69 | Joint segmentation (past Stage 5) | roadmap | OPEN — deferred |
 | OI-70 | B3 dim7-template dead end + rootContinuity sparse-gate dead end + Gate-A enharmonic constraint (standing cautions §8) | scoring_model §8 | STANDING constraints |
 | OI-71 | Roadmap 0.1 doc pass (stale explorationMode refs; untracked audit doc) | roadmap 0.1 | OPEN |
+
+## I. Siloed analyzed facts (fact-publication sweep 2026-07-10 — `cowork_siloed_facts_audit.md`)
+
+One root cause, one design owner: the shared cross-layer surfaces are voice-blind,
+spelling-blind, membership-blind — resolved by the **E4 carry/surface design** (which facts the
+shared surfaces publish), not per-site patches. OI-15 (spelling) is the headline instance.
+
+| ID | item | source | status |
+|---|---|---|---|
+| OI-72 | `StepwiseSignals` (per-note suspension/step/leap, per voice) TRAPPED in decoder membership — the voice-leading evidence L5 selection + pedal need | siloed audit #1 | OPEN — E4 surface design |
+| OI-73 | Membership verdict (`chordTonePcs`/`nonChordTonePcs`) dies at the L4→L5 boundary — `FunctionSlice` never copies it | siloed audit #2 | OPEN — E4 surface design |
+| OI-74 | Voice/staff identity dropped at `ChordAnalysisTone` — the shared tone surface is VOICE-BLIND (structural root of OI-72/73; pedal "upper-voice" has no channel) | siloed audit #17 | OPEN — E4 surface design |
+| OI-75 | `keyAlternatives`/`keyConfidence`: ZERO production consumers (diagnostics only) — the L5 carry contract's key inputs sit unread | siloed audit #4/#5 | OPEN — consumed at L5 engage |
+| OI-76 | Cadence detections transient (recomputed per emit path, never stored on regions); L5 cadence channel blocked; production detector circular by design | siloed audit #7 | OPEN — E4 |
+| OI-77 | Bass-chord-tone/inversion VERDICT recomputed at ~60 call sites (facts shared, derivation duplicated) — channel #1 has no published form | siloed audit #11 | OPEN — E4 primitive |
+| OI-78 | `declaredMode` siloed to the key path; chord diatonic bonus reads only the inferred key | siloed audit #12 | OPEN — design input |
+| OI-79 | Duplicated constants: pedal sigmoid inlined (2.0/1.5) vs prefs; emission sigmoid written in two files (S10) | siloed audit #16 | OPEN — fold at next touch |
+| OI-80 | Score-annotation input facts (chord symbols/RN/Nashville) recognized as TODO flags, never read | siloed audit #14 | OPEN — long-horizon |
 
 *Sweep provenance: session-36 full-repo sweep (12 surfaces, 91 raw items, 11 contradictions) —
 the raw sweep detail with file:line citations is preserved in the session record; rows above
