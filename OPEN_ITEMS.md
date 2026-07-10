@@ -72,7 +72,7 @@
 | ID | item | source | status |
 |---|---|---|---|
 | OI-41 | #17(c) sharpening: "establish the mechanism FIRES (control flow) before tracing arithmetic" | PC doc §"hands" | ✅ RATIFIED 2026-07-10 — folded into CLAUDE.md #17(c) |
-| OI-42 | Audit §5 UNCLEAR rows 1–7 (S2/S3/S4 cataloguing; S8/S9; S14/S16 acceptability; S18 timing; S19 θ deferral; S20 helper; FQ-3 stage) | audit §5 | OPEN — user |
+| OI-42 | Audit §5 UNCLEAR rows 1–7 — plain-language explanations + PRINCIPLE-DERIVED verdicts for all seven in `cowork_adjudication_dossier.md` Part A (none turned out to need a genuine user choice; the principles decide) | adjudication dossier | ⚖ VERDICTS RECORDED — awaiting ratification |
 | OI-43 | PONDER-POINT 1: reopen joint (key,chord) RANKING framing (arc-#12 measured key-first-then-chord, not joint ranking) — explorational under #17 if reopened | handoff | OPEN — user |
 | OI-44 | Joint step B1–B4 status: design DELIVERED / build SHELVED / framing REOPENED (contradiction B) — needs one declared status | fitter O-4; §9.2 #6; handoff | OPEN — user |
 
@@ -135,6 +135,15 @@ shared surfaces publish), not per-site patches. OI-15 (spelling) is the headline
 | OI-78 | `declaredMode` siloed to the key path; chord diatonic bonus reads only the inferred key | siloed audit #12 | OPEN — design input |
 | OI-79 | Duplicated constants: pedal sigmoid inlined (2.0/1.5) vs prefs; emission sigmoid written in two files (S10) | siloed audit #16 | OPEN — fold at next touch |
 | OI-80 | Score-annotation input facts (chord symbols/RN/Nashville) recognized as TODO flags, never read | siloed audit #14 | OPEN — long-horizon |
+| OI-81 | Key runner-up (closeness of the 2nd-best key) folded into a confidence number and discarded in-analyzer; only the batch tool serializes it — the L5 key-consistency channel wants it | siloed audit #6; dossier B6 | OPEN — E4 fact-publication design |
+| OI-82 | Per-note beat weight / fine metric salience decoder-private (region-level IS published) | siloed audit #10; dossier B10 | OPEN — E4 fact-publication design (with OI-72/73/74) |
+| OI-83 | Dispositions declared OK-BY-DESIGN, kept visible: `bothLicensed` (Stage-5 fitter telemetry) and the fan-out SUMMARY (diagnostic); the LOST uncapped readings behind the summary are the OI-9 distinct-root carry | siloed audit #8/#9; dossier B8/B9 | DECLARED — no action; the loss itself is OI-9 |
+
+**Coverage note (user-challenged 2026-07-10): all 17 siloed-facts findings are now mapped** —
+1→OI-72, 2→OI-73, 3→OI-15, 4/5→OI-75, 6→OI-81, 7→OI-76, 8→OI-83, 9→OI-9(+OI-83), 10→OI-82,
+11→OI-77, 12→OI-78, 13→OI-4, 14→OI-80, 15→OI-11, 16→OI-79, 17→OI-74. Items 1/2/3/10/17 are ONE
+design decision (the E4 fact-publication/surface design — dossier Part B); the proposed
+"publish-once, consumers-read" corollary awaits ratification (dossier, end of Part B).
 
 *Sweep provenance: session-36 full-repo sweep (12 surfaces, 91 raw items, 11 contradictions) —
 the raw sweep detail with file:line citations is preserved in the session record; rows above
