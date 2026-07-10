@@ -106,10 +106,41 @@ direction + magnitude band on class-(b) root-disagree duration, per-class fire-r
 (over-grab, spelling, bass/inversion, share-tone), and the G4 disposition (carry-fix before
 probe: yes/no). Recorded in this doc as §5 BEFORE the probe instruction is written.
 
-## §5 Written predictions — ★ OWED (empty by design)
+## §5 Written predictions — ★ RECORDED at the desk sim (2026-07-10, BEFORE any probe exists)
 
-*To be filled at the end of the desk simulation, before the probe is specified. No prediction,
-no probe (#17(b)).*
+The §4 desk simulation was executed the same day (traces in §7). Predictions, falsifiable, per
+#17(b) — the probe verdict is read against THESE, not retrofitted:
+
+**Per-case (the five §4 runs, E0 chain under the G1 single-home-key handicap, override OFF):**
+
+| case | prediction | confidence | the term that moves |
+|---|---|---|---|
+| `bwv10.7@36000` | rebuilt WINS (root G = GT) | HIGH | segmentation: the clean slice {G,D,F} loses the over-grabbed C/E♭; the B♭ reading has no B♭ sounding and dies with the window |
+| `bwv352@1440` | rebuilt WINS (root F♯ = GT) — **prior OVERTURNED at desk** | MED-HIGH | the over-grab had also corrupted the BASS (legacy's E bass arrives at tick 1680); the clean slice's bass is F♯3, and `bassNoteRootBonus` 0.70 dwarfs the 0.0125 Am6-vs-F♯ø7 gap |
+| `bwv272@4320` | rebuilt WINS (root G♯ = GT) | MEDIUM | the decoder's spelling-pin on the complete, correctly-spelled G♯–B–D–F dim7; the G4 extensions gap shows NO root-flip path on this case (dim7 is a 4-tone template, not root+extension) |
+| `bwv174.5@6240` | NO CHANGE (legacy's E/G♯ persists; still wrong) | MED-HIGH | the same vertical scorer imputes the absent E root under the Dmaj home key; the fix needs the per-slice f♯ local key (post-E4, gap G1) or the selection's key-consistency channel (gap G3) — the designated G1-handicap case |
+| `bwv416@10080` | rebuilt HALF-WINS (≥240 of 480 ticks): slice [10080,10320) → G♯ via spelling-pin (certain-ish); slice [10320,10560) uncertain — the passing E completes a full E7 template {E,G♯,B,D} and may win unless membership salience down-weights the 240-tick E | MEDIUM | spelling-pin on slice 1; `membershipSalienceThreshold`/duration weighting on slice 2 |
+
+**Aggregate (the P1 prediction):** on Baroque and Default, the rebuilt arm's class-(b)
+root-disagree DURATION decreases by **15–40 %** vs the legacy reference (wide band — the desk
+sample is 5 documented, hence understood-biased, cases). Wins concentrate in: segmentation
+over-grab, symmetric-spelling (dim7 rotation), and bass-corrected share-tone classes.
+Unchanged: wrong-local-key cases (G1) and imputed-root cases. **New errors WILL appear**
+(predicted mechanism: a short passing tone completing a stronger template, the bwv416-slice-2
+type) — the prediction is net decrease; if class-(b) duration INCREASES on any preset, the
+answer is no-go as scoped, and diagnosis precedes any conclusion (§6). Jazz: consistency-only,
+no prediction (EG-6).
+
+**G4 disposition (owed by §4):** NO pre-probe carry-fix required for ROOT grading — no
+root-flip path via the zeroed `extensions` field was found on the dim7/V7♭9 family case
+(quality labels remain affected; the probe checks the dim7 rotation distribution to confirm).
+
+**Ledger update from the desk sim (recorded as evidence, not surprise-at-build):** the §4 prior
+for `bwv352@1440` ("share-tone cannot move without the intended selection") was WRONG — the O1
+"function-only residual" classification partially conflates legacy segmentation artifacts:
+over-grab corrupts not only the pc window but the BASS, so part of the presumed-L5 residual is
+L2-resolvable. This sharpens P5 and is exactly the class of discovery the desk-sim stage exists
+to make cheaply (explorational scope).
 
 ## §6 Sequencing (corrected at pre-registration, 2026-07-10)
 
@@ -122,8 +153,65 @@ scope — surprises permitted there; they feed the ledger). The verdict comes ba
 with the P3 asymmetry applied: a rebuilt win under the G1 handicap is decision-grade; a loss is
 diagnosed before any conclusion is drawn.
 
+## §7 Desk-sim traces (the evidence behind §5; executed 2026-07-10)
+
+Materials: notes with spelling extracted from `tools/corpus/<stem>.xml` (divisions 10080,
+tick = div×480/10080, onsets verified against `.ours.json` region boundaries and `tones`);
+legacy output from `tools/corpus/baroque/*.ours.json`; GT from the When-in-Rome rntxt
+(`tools/dcml/when_in_rome/Corpus/.../analysis.txt` via `dcml_parser`); failing-run lines from
+`tools/robust_stop/baroque_variant_b_root_fail_runs.txt`.
+
+**T1 `bwv10.7@36000`** (fail line 8: `our=Bb/C(10) → dcml_root=7 cls=b`). Legacy region
+[36000,36960) grabbed 960 ticks spanning two GT chords; its tone set {C,D,E♭,F,G} contains NO
+B♭ — the committed B♭ root is imputed from neighbor-polluted content (C,E♭ from ticks
+35520/36480). The change-point slice at [36000,36480) contains exactly D3,D4,F4,G4 (G4 tied
+from 34560) = {G,D,F}, an incomplete G7 — music21's own reading. Root G is diatonic in the
+g-minor home key; the B♭ candidate has no sounding root and no M3. Verdict: the failure is
+pure window pollution; per-slice decode lands G = GT.
+
+**T2 `bwv352@1440`** (fail line 4241: `our=Am6/E(9) → dcml_root=6 cls=b`). The slice
+[1440,1680) is a complete, correctly-spelled F♯ø7: F♯3(bass), E4, A4, C5. Legacy's region
+[1440,2640) over-grabbed G♯4 AND E3 — both arriving at tick 1680 — so legacy scored a 5-pc
+window with an E BASS that does not exist at the failing span. Legacy's own margin: Am6/E
+2.7875 vs F♯m7♭5 2.775 = 0.0125. On the clean slice the bass is F♯3; `bassNoteRootBonus`
+(0.70, root-in-bass) accrues to the F♯ø7 reading and cannot accrue to Am6-with-6th-in-bass —
+a swing ~50× the gap. The diatonic prior opposes F♯ in a-minor but is 0.30 at full strength,
+still under the swing. Verdict: F♯ = GT. ★ The §4 prior ("pc-identical share-tone can't move
+without L5") is refuted at the desk: over-grab had corrupted the BASS, not just the pc set.
+
+**T3 `bwv272@4320`** (fail line 2425: `our=Bdim7/D(11) → dcml_root=8 cls=a`). The beat-slice
+is the complete dim7 D3,G♯3,F4,B4 — all four tones sound; spelled G♯–B–D–F = stacked minor
+thirds from G♯, the GT rotation (viio4/3 of a). No E sounds (an E7♭9 reading would be
+rootless). The decoder's symmetric-sonority spelling-pin exists precisely for
+dim-triad-as-dim7 (`chordslicedecoder.h:86`); the notated spelling uniquely selects root G♯.
+G4 check: the dim7 label is a 4-tone template, not root+extension — the zeroed `extensions`
+field has no path to the ROOT here. Verdict: G♯ = GT via the pin (MEDIUM — conditional on the
+pin firing for complete dim7s, which is its declared purpose).
+
+**T4 `bwv174.5@6240`** (fail line 900: `our=E/G#(4) → dcml_root=8 cls=b`). The slice is
+G♯3,B3,F♯4,B4 = {G♯,B,F♯} — no E and no D♯ sound anywhere in the region. Legacy imputes the
+absent E root (E/G♯ II6, 2.16) over the sounding-root G♯ reading (oracle rank-1 G♯ø7 1.89 —
+`cc_absent_root_investigation.md:274`). The decoder reuses the same vertical scorer snapshot;
+under the Dmaj home key (G1) nothing re-ranks: the imputed-root preference is a scorer
+property, not a segmentation artifact, and the GT's f♯ local key (corroborated by the next
+chord C♯–E♯–B = V7/f♯) is exactly what the single-home-key feed cannot supply. Verdict: no
+change; the designated G1-handicap case.
+
+**T5 `bwv416@10080`** (fail line 5700: `our=E7b9/G#(4) → dcml_root=8 cls=b`). Two slices:
+[10080,10320) = D5,F4,B3,G♯3 — complete dim7, correctly spelled from G♯ (GT viio7/V) → the T3
+mechanism applies, root G♯. [10320,10560): the alto passing eighth F4→E4 yields {E,G♯,B,D} — a
+COMPLETE E7, first-inversion-with-3rd-in-bass; the legacy E7♭9 root rests entirely on this
+240-tick passing tone. Whether the decoder's membership/duration weighting
+(`membershipSalienceThreshold` 0.55) suppresses the short E against three 480-tick holdovers is
+genuinely uncertain — recorded as the split prediction and as the predicted mechanism for NEW
+rebuilt-arm errors.
+
+---
+
 *Cowork, 2026-07-10, session 36. Instrument grounding sweep citations:
 `cc_e0_fullspine_report.md`, `cc_engage_c3_measurement_report.md`, `measure_joint_probe.py`,
 `tools/robust_stop/README.md`, `chordslicedecoder.{h,cpp}`, `batch_analyze.cpp`,
 `cc_anchor_redesign_dossier.md`, `cc_absent_root_investigation.md`,
-`cowork_layer5_engagement_design.md`, `cowork_l1_l5_premise_debt_audit.md`.*
+`cowork_layer5_engagement_design.md`, `cowork_l1_l5_premise_debt_audit.md`. Desk-sim materials
+extracted read-only from `tools/corpus/` + the When-in-Rome GT; no repo file modified by the
+extraction.*
