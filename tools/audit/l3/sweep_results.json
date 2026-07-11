@@ -1,0 +1,1309 @@
+{
+ "counts": {
+  "DT-12_stale_anchor": 3,
+  "DT-16_raw_dom_outside_L1": 1,
+  "DT-19_layer_boundary": 18,
+  "DT-2_unestablished_constant": 122,
+  "DT-3_value_copied_constant": 4,
+  "DT-5_local_dead_field": 1,
+  "DT-5_siloed_fact": 7
+ },
+ "layer": "l3",
+ "note": "P8 pass-2 mechanical DEFECT_TYPES sweep over the full l3 inventory",
+ "results": {
+  "DT-12_stale_anchor": [
+   {
+    "cited_symbol": [
+     "expressed"
+    ],
+    "file": "src/composing/analysis/key/keymodesequence.cpp",
+    "kind": "file:line-anchor-stale-content",
+    "line": 189,
+    "ref": "keymodeanalyzer.cpp:762",
+    "resolves": false,
+    "why": "cited symbol not near the cited line \u2014 line number drifted"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "kind": "md-ref",
+    "line": 534,
+    "ref": "cowork_phase5c_step4_report.md",
+    "resolves": false
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "kind": "md-ref",
+    "line": 815,
+    "ref": "cowork_phase5c_step4_report.md",
+    "resolves": false
+   }
+  ],
+  "DT-16_raw_dom_outside_L1": [
+   {
+    "also_uses_note_model": false,
+    "file": "src/composing/analysis/key/keyresolver.cpp",
+    "function": "partialSignatureCorrection",
+    "note": "walks engraving-DOM notes directly (bypasses the L1 note model)",
+    "start_line": 107,
+    "walks_dom_notes": true
+   }
+  ],
+  "DT-19_layer_boundary": [
+   {
+    "file": "src/composing/analysis/key/keymodeanalyzer.cpp",
+    "include": "../chord/analysisutils.h",
+    "including_file_tag": "L3",
+    "line": "24",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/key/keyresolver.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3",
+    "line": "41",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/region/harmonicrhythm.h",
+    "include": "../chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "29",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "39",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "40",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "include": "composing/analysis/decode/chordpathdecoder.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "41",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "include": "composing/analysis/function/harmonicfunctionlayer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "44",
+    "note": "L3-MIXED file includes a L5 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L5"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.h",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "47",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3",
+    "line": "25",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.h",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3",
+    "line": "50",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3",
+    "line": "25",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3",
+    "line": "85",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/localmodulationdetector.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3",
+    "line": "25",
+    "note": "L3 file includes a L4 header (upward dependency)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/sectionanalyzer.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "52",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/sectionanalyzer.cpp",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "53",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/sectionanalyzer.h",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "44",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/sectioncadencedetection.cpp",
+    "include": "composing/analysis/chord/analysisutils.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "38",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   },
+   {
+    "file": "src/composing/analysis/section/sectioncadencedetection.cpp",
+    "include": "composing/analysis/chord/chordanalyzer.h",
+    "including_file_tag": "L3-MIXED",
+    "line": "39",
+    "note": "L3-MIXED file includes a L4 header (upward dependency; MIXED orchestrator \u2014 expected)",
+    "up_to": "L4"
+   }
+  ],
+  "DT-2_unestablished_constant": [
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "116",
+    "name": "topK",
+    "owner": "KeyModeSequencePreferences",
+    "value": "int topK = 8;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "125",
+    "name": "changeBaseCost",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double changeBaseCost = kDefaultKeyModeAnalyzerPreferences.hysteresisMargin;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "128",
+    "name": "changePerFifthStep",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double changePerFifthStep = kDefaultKeyModeAnalyzerPreferences.keySignatureDistancePenalty"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "131",
+    "name": "relativePairExtraCost",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double relativePairExtraCost = kDefaultKeyModeAnalyzerPreferences.relativeKeyHysteresisMar"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "137",
+    "name": "windowBeats",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double windowBeats = 4.0;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "139",
+    "name": "decayRate",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double decayRate = scoreharvest::DECAY_RATE;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "141",
+    "name": "lookaheadWeight",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double lookaheadWeight = scoreharvest::LOOKAHEAD_WEIGHT;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "143",
+    "name": "beatsPerDecayUnit",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double beatsPerDecayUnit = 4.0;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "147",
+    "name": "uncertainThreshold",
+    "owner": "KeyModeSequencePreferences",
+    "value": "double uncertainThreshold = 1.0;"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.h",
+    "in_manifest": false,
+    "line": "151",
+    "name": "maxAlternatives",
+    "owner": "KeyModeSequencePreferences",
+    "value": "int maxAlternatives = 4;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "42",
+    "name": "name",
+    "owner": "ModePriorPreset",
+    "value": "std::string name;               ///< Display name (e.g. \"Standard\", \"Jazz\")"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "45",
+    "name": "ionian",
+    "owner": "ModePriorPreset",
+    "value": "double ionian          =  1.20;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "46",
+    "name": "dorian",
+    "owner": "ModePriorPreset",
+    "value": "double dorian          = -0.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "47",
+    "name": "phrygian",
+    "owner": "ModePriorPreset",
+    "value": "double phrygian        = -1.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "48",
+    "name": "lydian",
+    "owner": "ModePriorPreset",
+    "value": "double lydian          = -1.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "49",
+    "name": "mixolydian",
+    "owner": "ModePriorPreset",
+    "value": "double mixolydian      = -0.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "50",
+    "name": "aeolian",
+    "owner": "ModePriorPreset",
+    "value": "double aeolian         =  1.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "51",
+    "name": "locrian",
+    "owner": "ModePriorPreset",
+    "value": "double locrian         = -3.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "54",
+    "name": "melodicMinor",
+    "owner": "ModePriorPreset",
+    "value": "double melodicMinor    = -0.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "55",
+    "name": "dorianB2",
+    "owner": "ModePriorPreset",
+    "value": "double dorianB2        = -1.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "56",
+    "name": "lydianAugmented",
+    "owner": "ModePriorPreset",
+    "value": "double lydianAugmented = -2.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "57",
+    "name": "lydianDominant",
+    "owner": "ModePriorPreset",
+    "value": "double lydianDominant  = -1.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "58",
+    "name": "mixolydianB6",
+    "owner": "ModePriorPreset",
+    "value": "double mixolydianB6    = -1.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "59",
+    "name": "aeolianB5",
+    "owner": "ModePriorPreset",
+    "value": "double aeolianB5       = -2.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "60",
+    "name": "altered",
+    "owner": "ModePriorPreset",
+    "value": "double altered         = -3.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "63",
+    "name": "harmonicMinor",
+    "owner": "ModePriorPreset",
+    "value": "double harmonicMinor      = -0.30;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "64",
+    "name": "locrianSharp6",
+    "owner": "ModePriorPreset",
+    "value": "double locrianSharp6      = -2.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "65",
+    "name": "ionianSharp5",
+    "owner": "ModePriorPreset",
+    "value": "double ionianSharp5       = -2.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "66",
+    "name": "dorianSharp4",
+    "owner": "ModePriorPreset",
+    "value": "double dorianSharp4       = -2.00;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "67",
+    "name": "phrygianDominant",
+    "owner": "ModePriorPreset",
+    "value": "double phrygianDominant   = -0.80;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "68",
+    "name": "lydianSharp2",
+    "owner": "ModePriorPreset",
+    "value": "double lydianSharp2       = -2.50;"
+   },
+   {
+    "file": "src/composing/analysis/key/modepriorpresets.h",
+    "in_manifest": false,
+    "line": "69",
+    "name": "alteredDomBB7",
+    "owner": "ModePriorPreset",
+    "value": "double alteredDomBB7      = -3.50;"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "142",
+    "name": "scalePrior",
+    "owner": "JointKeyWeights",
+    "value": "double scalePrior        = 1.0;   ///< per-region collection-fit fraction"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "143",
+    "name": "localPrior",
+    "owner": "JointKeyWeights",
+    "value": "double localPrior        = 0.5;   ///< matches an analyzeKeyMode local candidate (\u00d7 its co"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "144",
+    "name": "cadenceAnchor",
+    "owner": "JointKeyWeights",
+    "value": "double cadenceAnchor     = 0.8;   ///< SOFT: matches the key-agnostic global anchor"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "145",
+    "name": "modulation",
+    "owner": "JointKeyWeights",
+    "value": "double modulation        = 1.0;   ///< SOFT: matches a committed modulation span covering "
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "146",
+    "name": "bassIsRootTonic",
+    "owner": "JointKeyWeights",
+    "value": "double bassIsRootTonic   = 0.15;  ///< SOFT: region bass pc == hypothesis tonic"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "147",
+    "name": "declaredHint",
+    "owner": "JointKeyWeights",
+    "value": "double declaredHint      = 1.0;   ///< SOFT: signature-pair mode matches the declared mode"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "148",
+    "name": "transitionPenalty",
+    "owner": "JointKeyWeights",
+    "value": "double transitionPenalty = 1.2;   ///< global key-path: cost of switching key vs the previ"
+   },
+   {
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "in_manifest": false,
+    "line": "149",
+    "name": "couplingBonus",
+    "owner": "JointKeyWeights",
+    "value": "double couplingBonus     = 0.6;   ///< config B only: best chord candidate is diatonic to "
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "367",
+    "name": "scoringPhase",
+    "owner": "ChordAnalyzerPreferences",
+    "value": "function::ScoringPhase scoringPhase = function::ScoringPhase::Final;"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "375",
+    "name": "decodeQualityLevel",
+    "owner": "ChordAnalyzerPreferences",
+    "value": "DecodeQualityLevel decodeQualityLevel = DecodeQualityLevel::FastBeam1;"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "394",
+    "name": "useExistingChordSymbols",
+    "owner": "ChordAnalyzerPreferences",
+    "value": "bool useExistingChordSymbols = false;       // TODO: implement"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "397",
+    "name": "useRomanNumeralAnnotations",
+    "owner": "ChordAnalyzerPreferences",
+    "value": "bool useRomanNumeralAnnotations = false;    // TODO: implement"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "400",
+    "name": "useNashvilleAnnotations",
+    "owner": "ChordAnalyzerPreferences",
+    "value": "bool useNashvilleAnnotations = false;       // TODO: implement"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "587",
+    "name": "noteWeightCap",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double noteWeightCap = 3.0;          // [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "591",
+    "name": "bassMultiplier",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double bassMultiplier = 2.0;         // [theory-grounded ordering, empirical value]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "600",
+    "name": "scaleScoreInBoth",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double scaleScoreInBoth    =  1.00;  ///< Note is in candidate scale AND key-sig scale [th"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "601",
+    "name": "scaleScoreInCandidateOnly",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double scaleScoreInCandidateOnly = 0.25;  ///< In candidate scale but not key-sig scale [e"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "602",
+    "name": "scaleScoreInKeySigOnly",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double scaleScoreInKeySigOnly    = -0.20; ///< In key-sig scale but not candidate (chromat"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "603",
+    "name": "scaleScoreInNeither",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double scaleScoreInNeither       = -0.05; ///< Outside both scales [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "611",
+    "name": "tonicWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonicWeight       = 1.60;  ///< Tonic note present [theory-grounded ordering, empir"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "612",
+    "name": "thirdWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double thirdWeight       = 0.70;  ///< Third (M3 for major, m3 for minor) [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "613",
+    "name": "fifthWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double fifthWeight       = 0.50;  ///< Perfect fifth [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "614",
+    "name": "leadingToneWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double leadingToneWeight = 0.40;  ///< Leading tone (tonicPc + 11, used for both modes) [e"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "616",
+    "name": "completeTriadBonus",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double completeTriadBonus  =  2.50;  ///< All three triad notes present simultaneously [em"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "617",
+    "name": "missingTonicPenalty",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double missingTonicPenalty = -2.50;  ///< Tonic entirely absent [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "619",
+    "name": "extraScaleFactor",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [emp"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "620",
+    "name": "extraScaleCap",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "629",
+    "name": "characteristicPitchBoost",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "630",
+    "name": "characteristicPitchPenalty",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is abse"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "640",
+    "name": "trueLeadingToneBoost",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empi"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "652",
+    "name": "modePriorIonian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorIonian          =  1.20;  ///< [empirical \u2014 was tier1+0.2]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "653",
+    "name": "modePriorDorian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorDorian          = -0.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "654",
+    "name": "modePriorPhrygian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorPhrygian        = -1.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "655",
+    "name": "modePriorLydian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLydian          = -1.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "656",
+    "name": "modePriorMixolydian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorMixolydian      = -0.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "657",
+    "name": "modePriorAeolian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorAeolian         =  1.00;  ///< [empirical \u2014 was tier1]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "658",
+    "name": "modePriorLocrian",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLocrian         = -3.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "661",
+    "name": "modePriorMelodicMinor",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorMelodicMinor    = -0.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "662",
+    "name": "modePriorDorianB2",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorDorianB2        = -1.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "663",
+    "name": "modePriorLydianAugmented",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLydianAugmented  = -2.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "664",
+    "name": "modePriorLydianDominant",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLydianDominant   = -1.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "665",
+    "name": "modePriorMixolydianB6",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorMixolydianB6    = -1.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "666",
+    "name": "modePriorAeolianB5",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorAeolianB5       = -2.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "667",
+    "name": "modePriorAltered",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorAltered         = -3.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "670",
+    "name": "modePriorHarmonicMinor",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorHarmonicMinor   = -0.30;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "671",
+    "name": "modePriorLocrianSharp6",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLocrianSharp6   = -2.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "672",
+    "name": "modePriorIonianSharp5",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorIonianSharp5    = -2.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "673",
+    "name": "modePriorDorianSharp4",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorDorianSharp4    = -2.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "674",
+    "name": "modePriorPhrygianDominant",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorPhrygianDominant = -0.80;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "675",
+    "name": "modePriorLydianSharp2",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorLydianSharp2    = -2.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "676",
+    "name": "modePriorAlteredDomBB7",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "690",
+    "name": "tonalCenterTonicWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterTonicWeight  = 2.20;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "691",
+    "name": "tonalCenterThirdWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterThirdWeight  = 1.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "692",
+    "name": "tonalCenterFifthWeight",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterFifthWeight  = 0.70;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "693",
+    "name": "tonalCenterLeadingTone",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterLeadingTone  = 0.50;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "694",
+    "name": "tonalCenterTriadBonus",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterTriadBonus   = 2.00;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "695",
+    "name": "tonalCenterDeltaThreshold",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double tonalCenterDeltaThreshold = 0.25; ///< Min delta to choose winner outright [empiric"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "704",
+    "name": "keySignatureDistancePenalty",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double keySignatureDistancePenalty = 0.60;  ///< Per circle-of-fifths step of distance [em"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "714",
+    "name": "disambiguationTriadBonus",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empiri"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "715",
+    "name": "disambiguationTriadCost",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "716",
+    "name": "disambiguationTonicBonus",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [emp"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "733",
+    "name": "declaredModePenalty",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "741",
+    "name": "ignoreDeclaredMode",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "bool ignoreDeclaredMode = false;  ///< Force mode-absent resolution (measurement floor)"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "758",
+    "name": "confidenceSigmoidMidpoint",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "759",
+    "name": "confidenceSigmoidSteepness",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "770",
+    "name": "dynamicLookaheadConfidenceThreshold",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence \u2265 t"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "771",
+    "name": "dynamicLookaheadStepBeats",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [e"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "772",
+    "name": "dynamicLookaheadMaxBeats",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "782",
+    "name": "hysteresisMargin",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sig"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "788",
+    "name": "relativeKeyHysteresisMargin",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = "
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "797",
+    "name": "beatWeightDownbeat",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightDownbeat            = 1.0;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "798",
+    "name": "beatWeightCompoundStressed",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightCompoundStressed    = 0.7;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "799",
+    "name": "beatWeightSimpleStressed",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightSimpleStressed      = 0.7;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "800",
+    "name": "beatWeightCompoundUnstressed",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "801",
+    "name": "beatWeightSimpleUnstressed",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "802",
+    "name": "beatWeightCompoundSubbeat",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "in_manifest": false,
+    "line": "803",
+    "name": "beatWeightSubbeat",
+    "owner": "KeyModeAnalyzerPreferences",
+    "value": "double beatWeightSubbeat             = 0.2;  ///< [empirical]"
+   },
+   {
+    "file": "src/composing/analysis/key/keymodesequence.cpp",
+    "in_manifest": false,
+    "line": "50",
+    "name": "kSingleStateConfidence",
+    "owner": "<file-scope>",
+    "value": "constexpr double kSingleStateConfidence = 1.0e3;"
+   },
+   {
+    "file": "src/composing/analysis/key/keyresolver.cpp",
+    "in_manifest": false,
+    "line": "182",
+    "name": "kPervasiveFraction",
+    "owner": "<file-scope>",
+    "value": "constexpr double kPervasiveFraction = 0.03;  // accidental \u2265 3% of sounding weight"
+   },
+   {
+    "file": "src/composing/analysis/key/keyresolver.cpp",
+    "in_manifest": false,
+    "line": "183",
+    "name": "kDominanceRatio",
+    "owner": "<file-scope>",
+    "value": "constexpr double kDominanceRatio    = 2.0;   // accidental \u2265 2\u00d7 its natural form"
+   },
+   {
+    "file": "src/composing/analysis/region/regionanalyzer.cpp",
+    "in_manifest": false,
+    "line": "414",
+    "name": "kJointModulationFallbackConfidence",
+    "owner": "<file-scope>",
+    "value": "constexpr double kJointModulationFallbackConfidence = 0.5;"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "115",
+    "name": "kWeightBase",
+    "owner": "<file-scope>",
+    "value": "constexpr double kWeightBase       = 1.0;   // every detected authentic cadence"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "116",
+    "name": "kWeightStructural",
+    "owner": "<file-scope>",
+    "value": "constexpr double kWeightStructural = 2.0;   // resolution coincides with a phrase boundary"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "117",
+    "name": "kWeightChromatic",
+    "owner": "<file-scope>",
+    "value": "constexpr double kWeightChromatic  = 1.0;   // dominant carries a chromatic (raised) leadi"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "118",
+    "name": "kWeightFinality",
+    "owner": "<file-scope>",
+    "value": "constexpr double kWeightFinality   = 1.0;   // maximal recency bonus (scaled by position)"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "152",
+    "name": "kWeightStructural",
+    "owner": "<file-scope>",
+    "value": "+ (c.endsPhrase ? kWeightStructural : 0.0)"
+   },
+   {
+    "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+    "in_manifest": false,
+    "line": "153",
+    "name": "kWeightChromatic",
+    "owner": "<file-scope>",
+    "value": "+ (c.chromaticLeadingTone ? kWeightChromatic : 0.0)"
+   },
+   {
+    "file": "src/composing/analysis/section/localmodulationdetector.cpp",
+    "in_manifest": false,
+    "line": "47",
+    "name": "kEstablishmentMinChords",
+    "owner": "<file-scope>",
+    "value": "constexpr int kEstablishmentMinChords = 5;"
+   },
+   {
+    "file": "src/composing/analysis/section/localmodulationdetector.cpp",
+    "in_manifest": false,
+    "line": "48",
+    "name": "kPitchTolerance",
+    "owner": "<file-scope>",
+    "value": "constexpr int kPitchTolerance = 2;"
+   },
+   {
+    "file": "src/composing/analysis/section/sectionanalyzer.h",
+    "in_manifest": false,
+    "line": "95",
+    "name": "kMaxPivotLookaheadRegions",
+    "owner": "<file-scope>",
+    "value": "inline constexpr int kMaxPivotLookaheadRegions = 8;"
+   }
+  ],
+  "DT-3_value_copied_constant": [
+   {
+    "couples_to": "downbeat",
+    "file": "src/composing/analysis/region/harmonicrhythm.h",
+    "kind": "comment-soft-value-copy",
+    "line": 50,
+    "text": "double regionMetricWeight = 1.0;               ///< Metric weight [0,1]; 1 = downbeat.",
+    "value": "1.0"
+   },
+   {
+    "couples_to": "hypothesis",
+    "file": "src/composing/analysis/section/jointkeydecision.h",
+    "kind": "comment-soft-value-copy",
+    "line": 146,
+    "text": "double bassIsRootTonic   = 0.15;  ///< SOFT: region bass pc == hypothesis tonic",
+    "value": "0.15"
+   },
+   {
+    "couples_to": "hysteresisMargin",
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "kind": "comment-soft-value-copy",
+    "line": 788,
+    "text": "double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]",
+    "value": "2.0"
+   },
+   {
+    "couples_to": "downbeat",
+    "file": "src/composing/analysis/types/analysistypes.h",
+    "kind": "comment-soft-value-copy",
+    "line": 914,
+    "text": "double beatWeight = 1.0;     ///< Metric position: 1.0=downbeat, ~0.2=offbeat",
+    "value": "1.0"
+   }
+  ],
+  "DT-5_local_dead_field": [
+   {
+    "field": "extraToneScore",
+    "file": "src/composing/analysis/key/keymodeanalyzer.cpp",
+    "note": "assigned but never read in its owning TU \u2014 dead/vestigial local field (DT-5)",
+    "reads": 0,
+    "struct": "CandidateEvaluation",
+    "total_occurrences": 2,
+    "writes": 2
+   }
+  ],
+  "DT-5_siloed_fact": [
+   {
+    "external_production_consumers": [],
+    "n_external": 0,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keymodesequence.cpp",
+     "src/composing/analysis/key/keymodesequence.h"
+    ],
+    "symbol": "decodeLattice"
+   },
+   {
+    "external_production_consumers": [
+     "src/composing/analysis/region/regionanalyzer.cpp"
+    ],
+    "n_external": 1,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keyresolver.cpp",
+     "src/composing/analysis/key/keyresolver.h"
+    ],
+    "symbol": "resolveKeySignatureContext"
+   },
+   {
+    "external_production_consumers": [],
+    "n_external": 0,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/section/jointkeydecision.cpp",
+     "src/composing/analysis/section/jointkeydecision.h"
+    ],
+    "symbol": "setJointKeyWiringEnabled"
+   },
+   {
+    "external_production_consumers": [
+     "src/composing/analysis/key/keymodesequence.cpp"
+    ],
+    "n_external": 1,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keymodeanalyzer.cpp",
+     "src/composing/analysis/key/keymodeanalyzer.h"
+    ],
+    "symbol": "ionianTonicPcForMode"
+   },
+   {
+    "external_production_consumers": [
+     "src/composing/analysis/region/regionanalyzer.cpp"
+    ],
+    "n_external": 1,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keymodeanalyzer.cpp",
+     "src/composing/analysis/key/keymodeanalyzer.h"
+    ],
+    "symbol": "keySignatureFifthsForKey"
+   },
+   {
+    "external_production_consumers": [
+     "src/composing/analysis/key/keymodesequence.cpp"
+    ],
+    "n_external": 1,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keymodeanalyzer.cpp",
+     "src/composing/analysis/key/keymodeanalyzer.h"
+    ],
+    "symbol": "keyModeSignatureFifths"
+   },
+   {
+    "external_production_consumers": [
+     "src/composing/analysis/key/keymodesequence.cpp"
+    ],
+    "n_external": 1,
+    "note": "0-1 production consumers outside its own module (siloed/dormant)",
+    "owner_files": [
+     "src/composing/analysis/key/keymodeanalyzer.cpp",
+     "src/composing/analysis/key/keymodeanalyzer.h"
+    ],
+    "symbol": "normalizedConfidenceSigmoid"
+   }
+  ]
+ },
+ "sweep_meta": {
+  "DT-12_refs_checked": {
+   "file_line_anchors": 1,
+   "md_refs": 36
+  }
+ }
+}

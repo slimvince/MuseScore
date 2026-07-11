@@ -1,0 +1,14 @@
+{
+ "errorrate": {
+  "concordant": 40,
+  "n": 40,
+  "raw_agree": 11,
+  "substantive": 0
+ },
+ "reading": {
+  "concordant": 115,
+  "n": 116,
+  "raw_agree": 40,
+  "substantive": 1
+ }
+}
