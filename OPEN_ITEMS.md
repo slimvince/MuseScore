@@ -39,6 +39,7 @@
 | OI-21 | owed-P2 confirmation-gap reproduction (carry margin vs pass2 sigmoid) | L5-engage §8 | OPEN — post-E4 |
 | OI-22 | owed-FB1: F-B annotate must move class-(b) duration favorably at its build event | L5-engage §8 | OPEN — at F-B build |
 | OI-84 | ★ FULL-COVERAGE AUDIT PLAN (corrected 2026-07-10 — the earlier "audit-at-touch" form was rejected by the user as risky: touching 1 % would audit 1 %, and new work would build on unknown problems, itself a #18 violation at architecture scale). The plan: (a) PARTITION the module by the retirement map R1–R9 — code that RETIRES at E4 gets NO audit, only the #12 interpretation-check at deletion (A1 verdict); (b) the SURVIVING stack is audited EXHAUSTIVELY per layer in DEPENDENCY ORDER — L1 → L2 → L3 → L4 (decoder + surviving scorer core) → L5 + the instruments — each a read-only session whose ledger output feeds the corresponding E4 step's #17 ledger; (c) enforcement = arc-plan EG-7: an E4 step may not open until every layer it DEPENDS ON (not merely touches) is audit-certified. Coverage of the end-state architecture: 100 % before it carries new load. FIRST ITEM: the L1/L2 certification audit (also the least-covered layers to date) | session-36 user challenge ×2 | OPEN — EG-7; L1/L2 audit is the next read-only work item |
+| OI-86 | L1/L2 PASS-1 layering findings (#7/#6): upward cross-layer deps — `metricweights.h:42`→`key/keymodeanalyzer.h` (L1.5→L3), `regiontonecollector.cpp:37` + `regiontoneprimitives.cpp:37/38`→`chord/` (L1.5→L4; the audit-Q2 back-edge is killed in the HEADER only, live in the .cpp); mixed-layer grab-bags (engravingbridge + metricweights host L2-legacy/L3/L4 code); two metric-weight tables (`regionMetricWeightForBeatType` vs `beatTypeToWeight`, #6 dup). Much rides existing retirements R4/R5/R6 + FQ-8/OI-13. Promoted DT-19. | `cc_l1l2_audit_pass1_report.md` §3a/§3b; DT-19 | OPEN — dissolves at E4 retirements; re-verify at each |
 
 ## C. Owned by Stage-5 (precision phase — do NOT fix earlier, #8)
 
@@ -54,6 +55,7 @@
 | OI-30 | Stage 3.3 oracle temporal-signal migration + Gate R basisDep proxy revisit | roadmap | OPEN |
 | OI-31 | Stage 6.3 convention-gap buckets (Maj→Dom7 implied sevenths etc.) | roadmap | OPEN |
 | OI-32 | O-2 class-(a) weighting revisit trigger (conditional) | fitter O-2 | OPEN — trigger |
+| OI-87 | L1/L2 PASS-1 constant manifest-gap list (feeds EG-5/OI-6, DT-2): 16 hand-set inference-affecting constants NOT in `param_manifest.json` — beat-weight table 1.0/0.85/0.75/0.5 (`metricweights.cpp:77-82`), sliding-window LOOKBACK_BEATS 16 / LOOKAHEAD_BEATS 8 / DECAY_RATE 0.7 / LOOKAHEAD_WEIGHT 0.5 (`metricweights.h:57-60`), weightedPcView repetition-boost 0.3 + cross-voice 1.5 (`regiontonecollector.cpp:297/312`), phrase k 1.0 / minSilenceTicks 240 / coincidenceWeight 0.0 (`phraseboundaryview.h`) — [wGap/wInterOnset/wPitch/spikeCeilingFactor ARE in the manifest]. | `cc_l1l2_audit_pass1_report.md` §3c; `tools/audit/l1l2/pass1_dispositions.csv`; OI-6/EG-5; DT-2 | OPEN — Stage-5/EG-5 manifest extension |
 
 ## D. Instrument / measurement layer
 
@@ -67,6 +69,7 @@
 | OI-38 | O-5/Wave-3 corpus onboarding (jazz/pop GT tiers; pedal-dense corpus for OI-4; VL-D census gap) | fitter O-5; roadmap | OPEN |
 | OI-39 | Overfitting risk: single-composer 326-score split; idiom coverage 1/5 (A-7 marks) | fitter §11 | OPEN debt |
 | OI-40 | R-11 conformal / R-12 self-consistency levers (deferred dispositions) | fitter §15 | OPEN — deferred |
+| OI-85 | L1/L2-audit Task-0 git-state incident: plumbing commits `eb624d442d`/`7123c7cb55` left the object DB + ref AHEAD of the working tree + main index (staged reversal of the session-36 doc arc + unmaterialized disk on 4 docs); resolved READ-ONLY via `git reset` (unstage) + `git restore` (materialize) with user authorization — nothing discarded (all files == HEAD). Plus a CONCURRENT-EDIT HAZARD: the working tree is live-edited by Cowork (the OI-43 edit; ref moves) — CC staged only its own files and appended (never rewrote) shared docs. Promoted DT-18. | `cc_l1l2_audit_pass1_report.md` §0; DT-18 | OPEN — convention owed (a plumbing commit ends with a main-index refresh + a disk-vs-HEAD verify) |
 
 ## E. User adjudication / ratification pending
 
@@ -74,7 +77,7 @@
 |---|---|---|---|
 | OI-41 | #17(c) sharpening: "establish the mechanism FIRES (control flow) before tracing arithmetic" | PC doc §"hands" | ✅ RATIFIED 2026-07-10 — folded into CLAUDE.md #17(c) |
 | OI-42 | Audit §5 UNCLEAR rows 1–7 — plain-language explanations + PRINCIPLE-DERIVED verdicts in `cowork_adjudication_dossier.md` Part A | adjudication dossier | ✅ RATIFIED 2026-07-10 — six were pure rule applications; the one genuine acceptance: A3, tolerating the quality-overwrite #12 violation until E4 (kept visible via OI-10) |
-| OI-43 | PONDER-POINT 1: reopen joint (key,chord) RANKING framing (arc-#12 measured key-first-then-chord, not joint ranking) — explorational under #17 if reopened | handoff | OPEN — user |
+| OI-43 | Reopen the joint (key,chord) ranking question (user, handoff — there called "ponder-point 1"). Sharpened 2026-07-11 (Cowork): the arc-#12 probe decided the KEY FIRST (decode under argmax key, re-decode under carried alternatives) and graded only ROOT flips — the framing the research grounding §3 says to escape (Raphael & Stoddard single (tonic,mode,chord) state; Wu & Yoshii: sequential coupling = the pipeline to escape; "carry a beam of (key,chord) hypotheses, not commit to key first"). What the probe legitimately bounds: chord-axis benefit over the carried-key menu (oracle ceiling +0.6 pp; carried alts are collection siblings — that fact survives any framing). What it does NOT test: (1) the KEY AXIS — chord evidence re-ranking the key (key-agree ~68/64/67 % has more headroom than root-agree ~63 %); (2) a key menu wider than the carried `keyAlternatives`. NEXT ACTION when hold lifts: draft a read-only re-measure scoping under #17 — written quantitative prediction recorded first, key axis primary. | handoff; `cowork_functional_analysis_research_grounding.md` §3; Cowork session 2026-07-11 | ON HOLD (user, 2026-07-11) until CC's in-progress audit first half (OI-84) completes — then decision with user |
 | OI-44 | Joint step B1–B4 status: design DELIVERED / build SHELVED / framing REOPENED (contradiction B) — needs one declared status | fitter O-4; §9.2 #6; handoff | OPEN — user |
 
 ## F. Doc-sync debt (#10) — annotate, don't rewrite history

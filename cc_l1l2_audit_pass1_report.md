@@ -287,10 +287,19 @@ must be consciously kept or rejected at deletion. L1/L2-relevant retirements:
   register pointers name some already-known items (OI-13 two-segmenters/tpc-fold, OI-77 bass
   recompute, OI-6/EG-5 manifest extension). Where a Pass-1 finding coincides with one of these I
   say so (§3e, §4, §5) — independently re-derived, not new.
-- **The blinding boundary is the freeze commit that records this report** (§8). Only *after* that
-  commit do I open `DEFECT_TYPES.md` and promote any new problem TYPE (Task 4 step 2). *(This
-  section is completed in the fold commit with the first-open declaration + the promoted DT
-  rows.)*
+- **First-open declaration (on my honor):** I first opened `DEFECT_TYPES.md` **only after** the
+  freeze commit **`68e71665ce`** (the `feat(tools)` commit recording this report + the inventory +
+  the dispositions) — that commit IS the P8 blinding boundary. `cowork_siloed_facts_audit.md` and
+  `cowork_adjudication_dossier.md` remain **UNOPENED** as of this fold (Pass 1 does not need them;
+  they belong to Pass 2 / the broader review). At no point before `68e71665ce` was any of the three
+  blinded files' *content* read — only `git hash-object` was computed on them during Task-0 git
+  diagnosis.
+- **DT promotions (Task 4 step 2, same commit as this fold).** Mapping Pass-1 findings to the
+  catalog: UNFIT-not-in-manifest constants = **DT-2** instances (not new); the two metric-weight
+  tables = **DT-6** (not new); declared-dormant facts = **DT-5/DT-7-shaped but corollary-cleared**
+  (consumer named — not defects). Genuinely NEW types promoted: **DT-18** (plumbing commit without
+  working-tree/index sync — the Task-0 incident) and **DT-19** (layer-boundary violation — upward
+  include back-edge + mixed-layer module; distinct from DT-16's raw-DOM re-reads).
 
 ---
 
@@ -304,5 +313,11 @@ New register rows (next free numbers), each pointing at this report/artifacts:
   much rides existing retirements R4/R5/R6 and FQ-8/OI-13.
 - **OI-87** — the enumerated L1/L2 constant manifest-gap list (§3c) — concrete EG-5/OI-6 input.
 
-Fire-rate table + dispositions live in `tools/audit/l1l2/`. This report is the frozen Pass-1
-artifact; its commit hash is the blinding boundary and is recorded in the fold commit message.
+New defect types promoted (this fold): **DT-18** (plumbing commit / object-DB-ahead-of-disk),
+**DT-19** (layer-boundary violation — upward back-edge + mixed-layer module).
+
+Fire-rate table + dispositions live in `tools/audit/l1l2/`. **The frozen Pass-1 artifact was
+committed as `68e71665ce` (`feat(tools)`) — that commit is the P8 blinding boundary; this §7/§8
+finalization + the register fold land in the following `docs(cc)` commit.** Pass 2 (the DT
+signature sweep over the whole layer + the P5 blinded second pass + the P6 measured error rate)
+is a separate instruction to a fresh session; certification is NOT granted by Pass 1 alone.

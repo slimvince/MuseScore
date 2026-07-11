@@ -29,11 +29,20 @@ quality-overwrite #12 violation knowingly tolerated until E4); (8) the **certifi
 protocol P1–P8** (`cowork_audit_protocol.md`) + the living **defect-type catalog**
 (`DEFECT_TYPES.md`, DT-1…DT-17) — blind enumerative pass first, signature sweep second.
 
-**NEXT ACTION: run `cc_instruction_l1_l2_audit_pass1.md`** (Claude Code on the host) — the
-first EG-7 layer certification, PASS 1 of 2 (pass 2 = signature sweep + P5/P6 sampling, a
-separate instruction to a fresh session afterward). **Also awaiting the user:** OI-43 (the
-proposed menu-width check that would settle ponder-point 1 on measured fact), OI-44 (the
-joint step's single declared status), the fork push.
+**NEXT ACTION: ✅ PASS 1 DONE (CC, 2026-07-11) — `cc_l1l2_audit_pass1_report.md`.** The first
+EG-7 layer certification, pass 1 of 2 (blind enumerative, P1–P4): a machine inventory
+(`tools/audit/gen_inventory.py`, 216 files tagged, 13 deep L1/L2) + a total disposition
+(`gen_dispositions.py`, **688 rows all verdicted, 46 flagged**) + fire-rate (caller-liveness).
+**★ The surviving L1/L2 spine is SOUND — no Class-A premise, no correctness bug.** Findings
+(benign-but-recorded): upward layering deps + mixed-layer grab-bags → **OI-86**; 16 hand-set
+constants off the fit manifest → **OI-87** (feeds EG-5); the Task-0 git-plumbing incident +
+concurrent-edit hazard → **OI-85**; new defect types **DT-18** (object-DB-ahead-of-disk) +
+**DT-19** (layer back-edge / mixed module). Freeze `feat(tools)` **`68e71665ce`** = the P8
+blinding boundary (DEFECT_TYPES.md opened only after). **NEXT: PASS 2** — the DT signature
+sweep over L1/L2 + the P5 blinded second pass + the P6 measured error rate, a SEPARATE
+instruction to a fresh session; **certification is NOT granted by Pass 1.** **Also awaiting the
+user:** OI-43 (Cowork marked it ON HOLD until this audit's first half completes — now done),
+OI-44 (the joint step's single declared status), the fork push.
 
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
