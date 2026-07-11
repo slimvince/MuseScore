@@ -1,0 +1,28 @@
+# EG-7 Layer-4 audit pass-1 (decoder) — behavioral characterization (corpus c50002fee1, Baroque, 352 stems / 29080 slices)
+# Route B: python tools/decode_chord_corpus.py --preset Baroque --out <scratch> ; then pass1_decoder_aggregate_decode.py
+# Route C: batch_analyze <xml> --dump-fullspine --preset Baroque (per-stem) ; then pass1_decoder_aggregate_fullspine.py
+
+=== ROUTE B (--decode-chords, notated key) ===
+stems=352  totalSlices=29080
+named(hasChord=Commit+Inherit) = 10877 (37.4%)
+abstain(!hasChord)             = 18203 (62.6%)
+uncertain flag set             = 18203 (62.6%)
+empty slice (noteCount==0)     = 166
+no-competitor sentinel (conf>=999) = 0 (0.0%)
+slices carrying >=1 alternative= 29080 (100.0%)
+slices with 0 alternatives     = 0 (0.0%)
+slices at topK cap (>=6 alts)  = 29080 (100.0%)
+membership NCT non-empty       = 1676 (5.8%)
+membership CT non-empty        = 10814 (37.2%)
+alt-count histogram: {6: 15516, 7: 13564}
+chosen-quality (named slices): {'Major': 7510, 'Minor': 3278, 'HalfDiminished': 48, 'Suspended4': 34, 'Augmented': 6, 'Suspended2': 1}
+spelling-pin population (chosen Aug or Dim) = 6 (Aug=6 Dim=0)
+abstain noteCount histogram: {0: 107, 1: 6, 2: 599, 3: 11085, 4: 6406}
+
+=== ROUTE C (--dump-fullspine, live home key) ===
+stems=352  totalRegions=29080
+l4Decision: {'Abstain': (18194, '62.6%'), 'Commit': (10004, '34.4%'), 'Inherit': (882, '3.0%')}
+openQuestion: {'Root': (17345, '59.6%'), 'None': (10886, '37.4%'), 'Quality': (849, '2.9%')}
+ambiguityKind: {'None': (10886, '37.4%'), 'TransitionVsContinuation': (8790, '30.2%'), 'CloseReading': (4438, '15.3%'), 'ShareTone': (3343, '11.5%'), 'InsufficientEvidence': (1018, '3.5%'), 'RelativePair': (605, '2.1%')}
+l4Composite < 0.5: 16198 (55.7%)
+chosen ext known/unknown (per region): known=16777 unknown=12303
