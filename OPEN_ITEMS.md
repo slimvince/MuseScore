@@ -83,7 +83,7 @@
 |---|---|---|---|
 | OI-45 | scoring_model §4/§6 stale anchors + kHalfDimFirstInversionBonus missing from §6 | premise-debt T3-4 | OPEN — fix at next scoring_model touch |
 | OI-46 | Audit §3/§4 tables contradict §3.1 build-status on FQ-1/FQ-3 stage (contradiction A) | audit | OPEN — annotate tables |
-| OI-47 | STATUS.md submission-era sections (Current State BIR 25/16, Post-submission priorities, Known Gaps, Future Considerations, COWORK_HANDOFF.md dangling ref) contradict governing docs (contradiction C) | STATUS.md | OPEN — banner + triage (§G) |
+| OI-47 | STATUS.md submission-era sections (Current State BIR 25/16, Post-submission priorities, Known Gaps, Future Considerations, cowork_handoff.md dangling ref) contradict governing docs (contradiction C) | STATUS.md | OPEN — banner + triage (§G) |
 | OI-48 | `backlog_chord_track_flag.md` referenced by two live docs, file DOES NOT EXIST (contradiction J) | STATUS refs | OPEN — recreate or re-point |
 | OI-49 | D-L3a "closed" (fitter) vs "remains" (roadmap G1) (contradiction K) | fitter §4.5; roadmap | OPEN — reconcile |
 | OI-50 | FQ-2 "decided at Stage 2" (arc plan) vs "enumerated-not-resolved" (L5-engage) (contradiction G) | arc plan; L5-engage | OPEN — annotate arc plan |

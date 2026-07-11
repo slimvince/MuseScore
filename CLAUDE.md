@@ -71,7 +71,7 @@ consumers read, never re-derive.** A fact consumed by no one is either **declare
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
 prohibitions) and the surprise-scope rule were ratified by the user on 2026-07-10 — analysis
 and evidence in `cowork_premise_gate_reflection.md`. Companion standing rules elsewhere: the
-⛔ TOTAL UNIFICATION rule (`COWORK_HANDOFF.md`), the MEASURE-BEFORE-BUILD gate
+⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*
 

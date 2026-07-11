@@ -3,11 +3,13 @@
 ---
 ## ★★★ SESSION 36 CLOSE — THE CURRENT ENTRY POINT (Cowork, 2026-07-10)
 
-**MANDATORY FIRST READS (new standing rules):** `CLAUDE.md` — principles now run **#1–#19**
-(the Premise Gate #17, Class-A/#18 + Class-B/#19 prohibitions, the surprise-scope rule, the
-fact-publication corollary, the open-items-register rules) — then **`OPEN_ITEMS.md`** (the ONE
-register; session-start read is mandatory; a stage may not open while a row gating it is
-open), then `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
+**You (the next session) start context-less, and THIS handoff is the ONE document you read
+first — it orients you and directs every other read (the standing convention).** From here,
+in order: `CLAUDE.md` now runs **#1–#19** (the Premise Gate #17, Class-A/#18 + Class-B/#19
+prohibitions, the surprise-scope rule, the fact-publication corollary, the register rules —
+it is auto-loaded, but VERIFY you have the #17–#19 version); then **`OPEN_ITEMS.md`** (the
+ONE register — mandatory at session start; a stage may not open while a row gating it is
+open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
 
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
@@ -1145,7 +1147,7 @@ until refactoring/architecture/algorithm are complete).
 2. **`docs/implementation_roadmap.md`** — the single stage tracker; the **★★★ CURRENT STATE + FORWARD INCREMENT PLAN**
    table + the 6-step forward sequence.
 3. **`STATUS.md`** (top entries) — latest session state + the gate baseline (BIR **53/24/53**).
-4. **This `COWORK_HANDOFF.md`** — the STANDING RULES + THE WORKING METHOD (below).
+4. **This `cowork_handoff.md`** — the STANDING RULES + THE WORKING METHOD (below).
 5. **Per-layer / component design docs:** L1 `cowork_layer1_note_model_design.md` · L2 `cowork_layer2_slicing_design.md` ·
    L3 `cowork_layer3_keymode_design.md` · L4 `cowork_layer4_chordsymbol_design.md` · L5 `cowork_layer5_function_design.md`
    · L6 `cowork_layer6_grouping_design.md` · L1.5 `cowork_phrase_boundary_design.md`. Harmonic Vocabulary:
@@ -1256,7 +1258,7 @@ them), risk being skipped, and risk out-of-order execution. The rules:
 - When the user says "go", "do E2b", "execute", or similar: the response is
   "The instruction is ready at `cc_instruction_X.md` — give it to CC."
 - Cowork MAY: read source files **via the file tools (Read / Grep / Glob) — NOT bash** (see the NEVER-BASH
-  standing rule below), write `.md` instruction files, update `COWORK_HANDOFF.md` / `STATUS.md` summaries after CC reports.
+  standing rule below), write `.md` instruction files, update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
 - Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
   use Edit/Write tools on anything under `src/`; use bash redirects on source files.
 - Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.
@@ -3129,7 +3131,7 @@ before any code direction is imposed.
     comment fixes for 2a/2b/3/6; ChordSymbolFormatter extraction (low priority)
   - **Do NOT split `chordanalyzer.cpp` now** — wait for Phase E to motivate it
 
-  Recent master lineage: `f9ba22157d` (fix: G-E phantom HalfDim + float literals to named constants — E3 Tasks 2+3) ← `a693b6ba82` (docs: COWORK_HANDOFF.md post-E2d housekeeping) ←
+  Recent master lineage: `f9ba22157d` (fix: G-E phantom HalfDim + float literals to named constants — E3 Tasks 2+3) ← `a693b6ba82` (docs: cowork_handoff.md post-E2d housekeeping) ←
   `22b89ae521` (tools: iter 90–97 analysis scripts) ←
   `5b08465924` (docs: iteration logs, key detection, LLM integration) ←
   `0ea52ced98` (chore: gitignore CC/Cowork working-process files) ←
