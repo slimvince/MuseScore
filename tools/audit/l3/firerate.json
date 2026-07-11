@@ -1,0 +1,16 @@
+{
+ "corpus": "tools/corpus/baroque (git_hash c50002fee1)",
+ "diagnostic": "batch_analyze --preset Baroque --decode-keymode (default-OFF, read-only)",
+ "stems_requested": 352,
+ "stems_measured": 352,
+ "stems_failed": [],
+ "slices_total": 29080,
+ "uncertain_slices": 3324,
+ "regions_total": 29080,
+ "region_key_changes": 1146,
+ "region_uncertain": 3324,
+ "pieces_modulating": 275,
+ "rate_uncertain_slices_pct": 11.431,
+ "rate_region_key_change_pct": 3.941,
+ "rate_region_uncertain_pct": 11.431
+}
