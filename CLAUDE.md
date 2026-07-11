@@ -552,3 +552,18 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
 - No confirmation prompts between analyse → implement → build → test steps
 - Commit only when explicitly asked
 - never hallucinate or guess, verified facts only - better ask first if unsure.
+- **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,
+  register rows, commit messages, and conversation alike. Use the name a thing already has
+  in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;
+  recorded 2026-07-11.)
+
+## The self-check after every coding exercise (user-directed, 2026-07-11)
+
+After EVERY coding exercise — code, scripts, instruments, and document edits alike —
+and BEFORE reporting the work done: take a step back, re-read the actual diff of every
+touched file, and check it against the guiding principles, the conventions, the gate and
+threshold policies in this file, and the known problem types in `DEFECT_TYPES.md`. Any
+violation found is surfaced immediately (its own `OPEN_ITEMS.md` row if it cannot be
+corrected on the spot within the session's authorized scope), never silently shipped.
+The check is of the work actually on disk, not of the intention — read the diff, not the
+memory of writing it. This applies to CC sessions and Cowork sessions alike.
