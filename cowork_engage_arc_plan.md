@@ -82,6 +82,14 @@ Before any E4/L5 engagement wiring can reach production:
   margins (T3-1).
 - **(EG-6) The Jazz preset's validation status is declared honestly** (T3-2): unestablished pending an
   established jazz GT corpus (#9/#19) — a corpus-establishment work item or an explicit de-scoping.
+- **(EG-7) DEPENDENCY-ORDERED AUDIT CERTIFICATION (added 2026-07-10, user-directed — OI-84):** an E4 step
+  may not open until every layer it DEPENDS ON — not merely touches — has passed its exhaustive premise+fact
+  audit (#18 at architecture scale: new construction may not carry load on unaudited foundations). The audit
+  plan partitions the module by the retirement map (R1–R9): retiring code gets NO audit, only the #12
+  interpretation-check at deletion (adjudication dossier A1); the SURVIVING stack is audited exhaustively per
+  layer in dependency order (L1 → L2 → L3 → L4 → L5 + instruments), each a read-only session feeding that
+  step's #17 ledger. End-state coverage: 100 % before it carries new load. First item: the L1/L2
+  certification audit.
 Tier-2 (the Class-B mass of pre-2026-06-13 hand-set constants, tuned against the later-proven-broken batch
 gate) retires through the existing Stage-5 fitter — each robust-unit fit converts a suspect value to
 established; no new mechanism, but the mechanism must run.
