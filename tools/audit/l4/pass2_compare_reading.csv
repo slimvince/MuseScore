@@ -1,0 +1,122 @@
+cls,file,line,kind,value,my_verdict,my_flag,pass1_verdict,pass1_src,pass1_flag
+DISAGREE,chordanalyzer.cpp,143,literal,0.5,UNFIT,registered-not-in-manifest,ESTABLISHED,oracle,yes
+CONCORDANT-CLEAN,chordanalyzer.h,621,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,793,literal,5,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,251,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordanalyzer.cpp,830,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT,chordslicedecoder.cpp,130,literal,9,ESTABLISHED,,ESTABLISHED,decoder,Minor-third-down / major-sixth (12-3) — the relative-pair delta. Music-theory constant.
+CONCORDANT,chordslicedecoder.h,283,field,,SURVIVES,,SURVIVES,decoder,Mode switch (default true). OFF-arm is TEST-only on the corpus route.
+CONCORDANT,analysistypes.h,196,literal,0.20,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordanalyzer.cpp,725,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT-CLEAN,chordanalyzer.h,265,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,833,literal,0.5,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT-EXCLUDED,analysistypes.h,852,literal,5.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordslicedecoder.cpp,1246,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in decode. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordanalyzer.cpp,1318,function,,SURVIVES,extraction-over-capture,SURVIVES,oracle,no
+CONCORDANT,chordanalyzer.h,161,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT,chordslicedecoder.cpp,533,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in populateForwardContract. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordanalyzer.cpp,515,literal,10,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,658,literal,3.00,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordanalyzer.cpp,1462,literal,6,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,841,literal,4,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,satellites,
+CONCORDANT,chordslicedecoder.cpp,729,literal,12,ESTABLISHED,,ESTABLISHED,decoder,Pitch-class cardinality (12 semitones/octave) — a structural music-theory constant (pc sieve / modulo). Not tunable.
+CONCORDANT,chordsymbolformatter.cpp,795,literal,6,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT,chordslicedecoder.cpp,223,function,,SURVIVES,,SURVIVES,decoder,Reuses bassIsTemplateChordTone over a chord list (the one chord-tone oracle / kMasks) — no second interval set. Pure. BOUNDARY: bassIsTemplateChordTone owned by the oracle session.
+CONCORDANT,analysisutils.h,105,literal,4,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,638,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,141,literal,8,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,1003,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,315,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT-CLEAN,chordsymbolformatter.cpp,926,literal,7,ESTABLISHED,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,559,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT-EXCLUDED,analysistypes.h,874,literal,3.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,analysisutils.h,105,literal,9,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,395,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,587,field,,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT-EXCLUDED,analysistypes.h,613,field,,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordanalyzer.cpp,234,literal,5,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,842,literal,5,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,259,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,analysistypes.h,115,literal,2,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT-CLEAN,chordanalyzer.cpp,268,function,,SURVIVES,,THEORY,oracle,yes
+CONCORDANT-CLEAN,chordanalyzer.h,261,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,1428,literal,8,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,888,branch,,SURVIVES,l4l5-boundary,SURVIVES,satellites,"FINDING contract-mismatch (#10): aug6 label preset-gating asserted by doc, deferred in code"
+CONCORDANT,chordslicedecoder.cpp,216,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in adaptiveWindow. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordslicedecoder.cpp,43,literal,1.0e3,ESTABLISHED,,ESTABLISHED,decoder,"kNoCompetitorConfidence sentinel (no different competitor) — documented, mirrors the L3 single-state sentinel. NEVER fires on the corpus (0/29080) — defensive; test-covered."
+CONCORDANT-EXCLUDED,analysistypes.h,843,literal,5.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordsymbolformatter.cpp,360,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordanalyzer.h,92,literal,2,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.h,552,function,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT,chordanalyzer.cpp,648,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,325,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordanalyzer.cpp,1559,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,665,field,,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordpathdecoder.h,70,field,,SURVIVES,declared-dormant,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,841,literal,2,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,102,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,567,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordslicedecoder.h,478,literal,1.0,ESTABLISHED,,ESTABLISHED,decoder,Neutral default initializer (membershipCleanliness 'clean by convention' / a FocalNote metric-weight default). Not tunable.
+CONCORDANT,analysistypes.h,438,literal,2.0,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordslicedecoder.cpp,1163,function,,SURVIVES,,SURVIVES,decoder,"The decode/re-decode driver over [outFirst,outLast]: membership-OFF = pass-1-only incumbent chain (Increment-A); membership-ON = two-pass (pass-1 over the wider span [outFirst-2..outLast+1] -> pass-2 with prevC/nextC + the prevailing chain). Edge: T==0 / out-of-range guards. The incremental-contract core (redecodeRange reproducibility). Corpus: membership-ON path (default)."
+CONCORDANT-CLEAN,chordslicedecoder.h,331,field,,SURVIVES,,PUBLISHED,decoder,PUBLISHED (--decode-chords + fullspine): bassPitchClass / bassIsRoot.
+CONCORDANT,chordsymbolformatter.cpp,794,literal,10,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,232,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,269,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordslicedecoder.cpp,1012,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in applyCommitDecision. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordslicedecoder.cpp,588,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in symmetricRotationSet. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordanalyzer.cpp,1040,function,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT-CLEAN,chordsymbolformatter.cpp,931,literal,7,ESTABLISHED,,SURVIVES,satellites,
+CONCORDANT-EXCLUDED,analysistypes.h,851,literal,5.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT-EXCLUDED,analysistypes.h,878,literal,0.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT-EXCLUDED,analysistypes.h,855,literal,5.0,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordsymbolformatter.cpp,566,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,analysistypes.h,440,literal,2.0,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordanalyzer.cpp,548,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,sparsechordrefinement.h,35,crosslayer,,SURVIVES,,SURVIVES,satellites,boundary note (#1): overwrites committed L4 identity.quality from the resolved key
+DISAGREE,chordanalyzer.cpp,144,literal,0.5,UNFIT,registered-not-in-manifest,ESTABLISHED,oracle,yes
+CONCORDANT-CLEAN,chordslicedecoder.h,429,field,,SURVIVES,,PUBLISHED,decoder,PUBLISHED (--decode-chords + fullspine): hasChord (Commit+Inherit=37.4% / abstain 62.6%).
+CONCORDANT,chordsymbolformatter.cpp,501,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT-EXCLUDED,analysistypes.h,866,literal,1.5,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordanalyzer.h,516,literal,3,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,1464,literal,0.0,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,669,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,187,literal,5,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordsymbolformatter.cpp,390,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT-CLEAN,chordanalyzer.h,683,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT,chordslicedecoder.h,146,crosslayer,,SURVIVES,,SURVIVES,decoder,"The scorer CONTRACT surface (ChordQuality, ChordAnalyzerPreferences, RuleBasedChordAnalyzer, ChordAnalysisResult, ChordIdentity, kTemplateCount/kTemplateIntervals, deriveChordExtensions). Correct upward dependency on the one scorer. BOUNDARY: internals owned by the oracle session."
+CONCORDANT-EXCLUDED,analysistypes.h,602,literal,0.20,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT-CLEAN,chordanalyzer.h,202,function,,SURVIVES,,FACT,oracle,no
+CONCORDANT,chordslicedecoder.cpp,804,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in classifyMembership. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordanalyzer.cpp,509,literal,5,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,678,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,568,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordanalyzer.cpp,1338,literal,3,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,463,literal,3,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT,chordanalyzer.cpp,1231,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,1008,branch,,SURVIVES,,SURVIVES,oracle,no
+CONCORDANT,chordanalyzer.cpp,744,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,542,literal,11,ESTABLISHED,,ESTABLISHED,satellites,
+CONCORDANT,chordanalyzer.cpp,1463,literal,4,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,sparsechordrefinement.cpp,52,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordanalyzer.cpp,1047,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.h,363,literal,0.0,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT-CLEAN,chordanalyzer.h,374,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,342,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT,chordsymbolformatter.cpp,464,literal,6,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT,chordslicedecoder.h,165,field,,SURVIVES,,SURVIVES,decoder,Setting: base window half-width (seed=1). Not in param_manifest.
+CONCORDANT,chordanalyzer.cpp,1337,literal,2,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,253,branch,,SURVIVES,,SURVIVES,satellites,
+CONCORDANT-CLEAN,chordanalyzer.h,391,field,,SURVIVES,,PUBLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,276,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordanalyzer.cpp,1043,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,832,literal,0.5,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordanalyzer.h,555,literal,3,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT-EXCLUDED,analysistypes.h,620,field,,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordanalyzer.cpp,1337,literal,3,ESTABLISHED,duplicated-parent-mapping,ESTABLISHED,oracle,no
+CONCORDANT,chordsymbolformatter.cpp,792,literal,2,ESTABLISHED,duplicated-scale-table,ESTABLISHED,satellites,
+CONCORDANT-EXCLUDED,analysistypes.h,803,literal,0.2,OUT-OF-L4-SCOPE,l3-type,,,
+CONCORDANT,chordslicedecoder.cpp,845,branch,,SURVIVES,,SURVIVES,decoder,Guard/branch in classifyMembership. SURVIVES; edge behaviour reviewed (deterministic; no unhandled case found).
+CONCORDANT,chordanalyzer.cpp,703,literal,12,ESTABLISHED,,ESTABLISHED,oracle,no
+CONCORDANT,chordslicedecoder.cpp,186,function,,SURVIVES,,SURVIVES,decoder,"Lazy-extend window: base +/-contextSlices, grow to minHarmonyPcs distinct pcs OR +/-maxContextSlices. Assumes slices tile the domain contiguously (documented). Edge: clamps at the slice-vector edges; reports clampedLo/Hi for decodeSelection (null out-params keep the decode()/diagnostic caller inert). Consumes eligibleNotesInSpan for the distinct-pc probe."
+CONCORDANT,chordanalyzer.h,367,literal,0.0,ESTABLISHED,,ESTABLISHED,oracle,no

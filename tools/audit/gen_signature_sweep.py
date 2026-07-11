@@ -100,6 +100,36 @@ LAYERS = {
         "dt5_struct_owner": {},
         "dt5_local_dead": True,
     },
+    "l4": {
+        "dir": "l4",
+        "prefix": "l4_",
+        "file_tags": ("L4-SCORER", "L4-DECODER", "L4-MIXED"),
+        # For L4 the higher analysis layers are function(L5)/progression(L5)/
+        # grouping(L6). chord/decode = L4 peer; region/types/key(L3)/notemodel/
+        # slicing/engravingbridge/scoreharvest/external = peer-or-lower.
+        "dt19_upward": {"function": "L5", "progression": "L5", "grouping": "L6"},
+        "dt2_named_const": set(),
+        "dt2_inline": [],
+        # L4: the override-registered file-scope scoring constants (registerDouble)
+        # + the *Preferences/*Preset/*Weights config-struct members, each checked
+        # against param_manifest.json. Mechanical: the registered names are read
+        # from the source, not hardcoded (would-be-circular).
+        "dt2_mode": "registered_config",
+        "dt2_config_struct_suffixes": ("Preferences", "Preset", "Weights"),
+        "dt3_soft_copy": True,
+        "dt5_symbols": [
+            "decode", "redecodeRange", "decodeSelection", "classifyMembership",
+            "computeConfidence", "nameOpenQuestion", "deriveChordExtensions",
+            "computeRawFanoutSummary", "formatSymbol", "formatRomanNumeral",
+            "formatNashvilleNumber", "refineSparseChordQualityFromKeyContext",
+            "applyTonicPriorToSparseChord", "forceChordTrackQualityFromKeyContext",
+            "diatonicMaskFromFifths", "collectionMask", "recordNode",
+        ],
+        "dt5_struct_owner": {
+            "ChordPathNode": "src/composing/analysis/decode/chordpathdecoder.h",
+        },
+        "dt5_local_dead": True,
+    },
 }
 
 
@@ -206,6 +236,43 @@ def sweep_dt2(c):
                         hits.append({"name": nm, "owner": "<file-scope>", "file": r["file"],
                                      "line": r["line"], "value": ctx.strip()[:90],
                                      "in_manifest": False})
+        return hits
+
+    if c["dt2_mode"] == "registered_config":
+        # (a) override-registered file-scope scoring constants (registerDouble)
+        #     absent from the manifest — read the registered NAMES from source.
+        regre = re.compile(r'registerDouble\("([^"]+)"')
+        for f in layer_files(c):
+            path = os.path.join(REPO, f)
+            if not os.path.exists(path):
+                raise RuntimeError("DT-2: layer file missing on disk: " + f)
+            for i, ln in enumerate(open(path, encoding="utf-8", errors="replace"), 1):
+                for m in regre.finditer(ln):
+                    nm = m.group(1)
+                    if nm in names or nm.split(" ")[0] in names:
+                        continue
+                    key = (nm, f, str(i))
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    hits.append({"name": nm, "owner": "<registerDouble>", "file": f,
+                                 "line": str(i), "value": ln.strip()[:90],
+                                 "in_manifest": False})
+        # (b) config-struct members (Preferences/Preset/Weights) absent from manifest.
+        suffixes = c["dt2_config_struct_suffixes"]
+        for r in read_csv(c, "fields"):
+            owner = r.get("type_owner", "")
+            if not owner.endswith(suffixes):
+                continue
+            basen = r["name"]
+            key = (basen, r["file"], r["line"])
+            if key in seen:
+                continue
+            seen.add(key)
+            if basen not in names:
+                hits.append({"name": basen, "owner": owner, "file": r["file"],
+                             "line": r["line"], "value": r["context"].strip()[:90],
+                             "in_manifest": False})
         return hits
 
     # l1l2: original blocklist behavior (report every non-structural named const
