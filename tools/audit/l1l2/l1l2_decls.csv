@@ -1,0 +1,29 @@
+file,line,type_owner,name,context
+src/composing/analysis/engravingbridge/phraseboundaryview.h,143,<namespace>,changeRatio,"double changeRatio(double a, double b);"
+src/composing/analysis/engravingbridge/phraseboundaryview.h,151,<namespace>,localChangeProfile,std::vector<double> localChangeProfile(const std::vector<double>& values);
+src/composing/analysis/engravingbridge/phraseboundaryview.h,155,<namespace>,maxNormalizeInPlace,void maxNormalizeInPlace(std::vector<double>& profile);
+src/composing/analysis/engravingbridge/phraseboundaryview.h,162,<namespace>,pickPeaks,"std::vector<int> pickPeaks(const std::vector<double>& strength, double k);"
+src/composing/analysis/engravingbridge/phraseboundaryview.h,175,<namespace>,phraseBoundaryTicks,std::set<int> phraseBoundaryTicks(const mu::engraving::Score* score);
+src/composing/analysis/engravingbridge/regiontonecollector.h,79,<namespace>,staff,const mu::engraving::Part* part = sc->staff(si)->part();
+src/composing/analysis/engravingbridge/regiontonecollector.h,86,<namespace>,instrument,const mu::engraving::Instrument* instrument = part->instrument();
+src/composing/analysis/engravingbridge/regiontonecollector.h,87,<namespace>,trackName,return instrument && instrument->trackName().contains(CHORD_TRACK_MARKER);
+src/composing/analysis/engravingbridge/regiontonecollector.h,95,<namespace>,staff,const mu::engraving::Staff* st = sc->staff(si);
+src/composing/analysis/engravingbridge/regiontonecollector.h,133,<namespace>,buildTones,buildTones(const std::vector<SoundingNote>& sounding);
+src/composing/analysis/engravingbridge/spellingview.h,86,<namespace>,lineOfFifths,int lineOfFifths(int tpc);
+src/composing/analysis/engravingbridge/spellingview.h,91,<namespace>,sharpFlatSense,int sharpFlatSense(int tpc);
+src/composing/analysis/engravingbridge/spellingview.h,108,<namespace>,spanSpelling,SpanSpelling spanSpelling(const std::vector<int>& tpcs);
+src/composing/analysis/notemodel/note_model.h,117,<namespace>,build,void build(const std::vector<NoteEvent>& notes);
+src/composing/analysis/notemodel/note_model.h,120,<namespace>,onsetLowerBound,int onsetLowerBound(int t) const;
+src/composing/analysis/notemodel/note_model.h,124,<namespace>,overlapIndices,"void overlapIndices(int qHi, int t0, std::vector<int>& out) const;"
+src/composing/analysis/notemodel/note_model.h,177,<namespace>,build,static NoteModel build(const mu::engraving::Score* sc);
+src/composing/analysis/notemodel/note_model.h,184,<namespace>,build,"static NoteModel build(const mu::engraving::Score* sc, int loadedStart, int loadedEnd);"
+src/composing/analysis/notemodel/note_model.h,194,<namespace>,extend,"void extend(Direction dir, int amountTicks);"
+src/composing/analysis/notemodel/note_model.h,215,<namespace>,overlapping,"std::vector<const NoteEvent*> overlapping(int t0, int t1) const;"
+src/composing/analysis/notemodel/note_model.h,219,<namespace>,onsetIn,"std::vector<const NoteEvent*> onsetIn(int t0, int t1) const;"
+src/composing/analysis/notemodel/note_model.h,226,<namespace>,rebuildForLoadedSpan,void rebuildForLoadedSpan();
+src/composing/analysis/scoreharvest/metricweights.h,83,<namespace>,regionMetricWeightForBeatType,double regionMetricWeightForBeatType(mu::engraving::BeatType bt);
+src/composing/analysis/scoreharvest/metricweights.h,91,<namespace>,beatTypeForOnsetTick,"mu::engraving::BeatType beatTypeForOnsetTick(const mu::engraving::Score* sc, int onsetTick);"
+src/composing/analysis/scoreharvest/metricweights.h,97,<namespace>,regionMetricWeightForOnsetTick,"double regionMetricWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick);"
+src/composing/analysis/scoreharvest/metricweights.h,104,<namespace>,timeDecay,"double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPerUnit = 4.0);"
+src/composing/analysis/scoreharvest/metricweights.h,107,<namespace>,distinctPitchClasses,int distinctPitchClasses(const std::vector<KeyModeAnalyzer::PitchContext>& ctx);
+src/composing/analysis/slicing/slicer.h,105,<namespace>,changePointSlices,std::vector<Slice> changePointSlices(const notemodel::NoteModel& model);

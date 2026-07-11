@@ -1,0 +1,40 @@
+file,line,type_owner,field_type,name,context
+src/composing/analysis/engravingbridge/phraseboundaryview.h,85,PhraseBoundaryParams,double,wGap,double wGap        = 0.50;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,86,PhraseBoundaryParams,double,wInterOnset,double wInterOnset = 0.30;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,87,PhraseBoundaryParams,double,wPitch,double wPitch      = 0.20;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,91,PhraseBoundaryParams,double,k,double k = 1.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,97,PhraseBoundaryParams,int,tauTicks,int tauTicks = 0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,103,PhraseBoundaryParams,double,coincidenceWeight,double coincidenceWeight = 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,107,PhraseBoundaryParams,int,minSilenceTicks,int minSilenceTicks = 240;   // eighth note at 480 ticks / quarter
+src/composing/analysis/engravingbridge/phraseboundaryview.h,114,PhraseBoundaryParams,double,spikeCeilingFactor,double spikeCeilingFactor = 1.5;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,123,VoiceBoundaryProfile,int,staff,int              staff = 0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,124,VoiceBoundaryProfile,int,voice,int              voice = 0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,125,VoiceBoundaryProfile,std::vector<int>,onsets,"std::vector<int>    onsets;    ///< the voice's event onsets (ascending), one per sampled point"
+src/composing/analysis/engravingbridge/phraseboundaryview.h,126,VoiceBoundaryProfile,std::vector<double>,strength,std::vector<double> strength;  ///< per-onset combined surface strength (parallel to onsets)
+src/composing/analysis/engravingbridge/phraseboundaryview.h,133,PhraseBoundaryProfile,std::vector<VoiceBoundaryProfile>,perVoice,std::vector<VoiceBoundaryProfile> perVoice;   ///< §4.3 per-eligible-voice profiles
+src/composing/analysis/engravingbridge/phraseboundaryview.h,134,PhraseBoundaryProfile,std::vector<int>,textureTicks,"std::vector<int>    textureTicks;             ///< §4.3/§4.4 texture grid ticks (ascending, unique)"
+src/composing/analysis/engravingbridge/phraseboundaryview.h,135,PhraseBoundaryProfile,std::vector<double>,textureStrength,std::vector<double> textureStrength;          ///< texture combined strength incl. marker spikes (parallel)
+src/composing/analysis/engravingbridge/phraseboundaryview.h,136,PhraseBoundaryProfile,std::set<int>,pickedTicks,std::set<int>       pickedTicks;              ///< §4.4 peak-picked phrase-boundary ticks
+src/composing/analysis/engravingbridge/regiontonecollector.h,249,SpanWindowWeights,double,decayRate,double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE
+src/composing/analysis/engravingbridge/regiontonecollector.h,250,SpanWindowWeights,double,lookaheadWeight,double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT
+src/composing/analysis/engravingbridge/regiontonecollector.h,251,SpanWindowWeights,double,beatsPerDecayUnit,double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure)
+src/composing/analysis/engravingbridge/spellingview.h,100,SpanSpelling,int,count,int    count        = 0;    ///< number of valid (tpcIsValid) spellings aggregated
+src/composing/analysis/engravingbridge/spellingview.h,101,SpanSpelling,double,lofCentroid,double lofCentroid  = 0.0;  ///< mean line-of-fifths position over the valid spellings (0.0 if count == 0)
+src/composing/analysis/engravingbridge/spellingview.h,102,SpanSpelling,int,sharpCount,int    sharpCount   = 0;    ///< valid spellings on the sharp side (line-of-fifths > 0)
+src/composing/analysis/engravingbridge/spellingview.h,103,SpanSpelling,int,flatCount,int    flatCount    = 0;    ///< valid spellings on the flat side (line-of-fifths < 0)
+src/composing/analysis/engravingbridge/spellingview.h,104,SpanSpelling,int,naturalCount,int    naturalCount = 0;    ///< valid spellings at C (line-of-fifths == 0)
+src/composing/analysis/notemodel/note_model.h,81,NoteEvent,int,pitch,int  pitch  = 0;     ///< ppitch — MIDI playback pitch (honours ottavas/transpositions).
+src/composing/analysis/notemodel/note_model.h,82,NoteEvent,int,tpc,"int  tpc    = -1;    ///< TPC (0-34, circle-of-fifths spelling). -1 = not provided."
+src/composing/analysis/notemodel/note_model.h,83,NoteEvent,int,staff,"int  staff  = 0;     ///< Owning staff index (the note's actual track staff, not visual placement)."
+src/composing/analysis/notemodel/note_model.h,84,NoteEvent,int,voice,int  voice  = 0;     ///< Voice 0..VOICES-1.
+src/composing/analysis/notemodel/note_model.h,85,NoteEvent,int,onset,int  onset  = 0;     ///< Tie-resolved onset tick (onset of the first tied note).
+src/composing/analysis/notemodel/note_model.h,86,NoteEvent,int,release,int  release = 0;    ///< Tie-resolved release tick (release of the last tied note).
+src/composing/analysis/notemodel/note_model.h,87,NoteEvent,int,duration,int  duration = 0;   ///< release - onset (== Note::playTicksFraction()).
+src/composing/analysis/notemodel/note_model.h,88,NoteEvent,bool,isGrace,bool isGrace = false;       ///< Grace note (kept + flagged; attaches to its parent chord's tick).
+src/composing/analysis/notemodel/note_model.h,89,NoteEvent,bool,plays,bool plays   = true;        ///< Note::play() (false for user-muted AND imported cue notes).
+src/composing/analysis/notemodel/note_model.h,90,NoteEvent,bool,visible,bool visible = true;        ///< Note::visible().
+src/composing/analysis/notemodel/note_model.h,91,NoteEvent,bool,staffEligible,bool staffEligible = true;  ///< staffIsEligible() at this note's onset (hidden/drumset/chord-track => false).
+src/composing/analysis/scoreharvest/metricweights.h,113,PedalWindow,int,startTick,int startTick = 0;
+src/composing/analysis/scoreharvest/metricweights.h,114,PedalWindow,int,endTick,int endTick   = 0;
+src/composing/analysis/slicing/slicer.h,85,Slice,int,start,int start = 0;   ///< inclusive lower bound (a note onset or release tick).
+src/composing/analysis/slicing/slicer.h,86,Slice,int,end,int end   = 0;   ///< exclusive upper bound (the next boundary tick).

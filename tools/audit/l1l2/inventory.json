@@ -1,0 +1,4384 @@
+{
+ "file_table": [
+  {
+   "file": "src/composing/CMakeLists.txt",
+   "tag": "L3+",
+   "reason": "build file \u2014 non-source"
+  },
+  {
+   "file": "src/composing/analysis/CMakeLists.txt",
+   "tag": "L3+",
+   "reason": "build file \u2014 non-source"
+  },
+  {
+   "file": "src/composing/analysis/chord/analysisutils.h",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordanalyzer.cpp",
+   "tag": "RETIRES",
+   "reason": "R1 legacy chord competition + Gates A-L; R9 file-split \u2014 retires at E4 (roadmap R1/R9)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordanalyzer.h",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chorddiagnose.cpp",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordpostpasses.cpp",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordslicedecoder.cpp",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordslicedecoder.h",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordsymbolformatter.cpp",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/chordvoicing.cpp",
+   "tag": "L3+",
+   "reason": "chord/decode layer (L4) \u2014 deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)"
+  },
+  {
+   "file": "src/composing/analysis/chord/postscoringgates.cpp",
+   "tag": "RETIRES",
+   "reason": "R1 legacy post-scoring Gates I/K/L \u2014 retires with the legacy competition at E4"
+  },
+  {
+   "file": "src/composing/analysis/decode/chordpathdecoder.h",
+   "tag": "L3+",
+   "reason": "L3 key-mode decoder scaffolding \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "tag": "L1",
+   "reason": "Phrase-boundary primitive impl \u2014 L1.5 notation-derived view"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "tag": "L1",
+   "reason": "Phrase-boundary primitive \u2014 L1.5 notation-derived view (cowork_phrase_boundary_design.md)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "tag": "L1",
+   "reason": "Derived summary views impl \u2014 L1 \u00a73/\u00a75; check for legacy collectRegionTones residue (R-note)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "tag": "L1",
+   "reason": "Derived summary views over the note model (weightedPcView/soundingAt) \u2014 L1 \u00a73/\u00a75; check for legacy collectRegionTones residue"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "tag": "L1",
+   "reason": "weightedPcView/soundingAt primitive impl \u2014 L1 derived views (layer1 design \u00a73)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "tag": "L1",
+   "reason": "Spelling view impl \u2014 L1.5 notation-derived reader (R4 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "tag": "L1",
+   "reason": "Spelling view \u2014 L1.5 notation-derived reader (instruction L1 def; R4 shared-spelling-view survivor)"
+  },
+  {
+   "file": "src/composing/analysis/function/forwardoverride.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/forwardoverride.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functioncadence.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functioncadence.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionmodulation.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionmodulation.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionoutput.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionoutput.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionprogression.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionprogression.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionrelationallabel.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionrelationallabel.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionresolver.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionresolver.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionromannumeral.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/functionromannumeral.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/harmonicfunctionlayer.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/harmonicfunctionlayer.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/tonicizationlabeler.cpp",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/function/tonicizationlabeler.h",
+   "tag": "L3+",
+   "reason": "function layer (L5) \u2014 deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"
+  },
+  {
+   "file": "src/composing/analysis/grouping/groupinglayer.cpp",
+   "tag": "L3+",
+   "reason": "grouping for display (L6) \u2014 deferred to the L6 audit"
+  },
+  {
+   "file": "src/composing/analysis/grouping/groupinglayer.h",
+   "tag": "L3+",
+   "reason": "grouping for display (L6) \u2014 deferred to the L6 audit"
+  },
+  {
+   "file": "src/composing/analysis/harmony/harmonicsegmenter.cpp",
+   "tag": "RETIRES",
+   "reason": "L2-LEGACY greedy-expand segmenter impl \u2014 retires R6; #12-check kAnchorMinScore/kRound2MinScore + greedy-expand interpretation"
+  },
+  {
+   "file": "src/composing/analysis/harmony/harmonicsegmenter.h",
+   "tag": "RETIRES",
+   "reason": "L2-LEGACY greedy-expand segmenter \u2014 retires R6 (segment-first spine), superseded by the change-point slicer; #12-check the anchor thresholds"
+  },
+  {
+   "file": "src/composing/analysis/key/keymodeanalyzer.cpp",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keymodeanalyzer.h",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keymodeformatting.cpp",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keymodesequence.cpp",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keymodesequence.h",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keyresolver.cpp",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/keyresolver.h",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/modepriorpresets.cpp",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/key/modepriorpresets.h",
+   "tag": "L3+",
+   "reason": "key/mode layer (L3) \u2014 deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "tag": "L1",
+   "reason": "Note-model core impl (build/tie-resolve/eligibility/query index) \u2014 Architectural Layer 1 (layer1 design \u00a74/\u00a76)"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "tag": "L1",
+   "reason": "Note-model core (NoteModel/NoteQueryIndex) \u2014 Architectural Layer 1 fact layer (layer1 design \u00a73/\u00a75)"
+  },
+  {
+   "file": "src/composing/analysis/param/paramoverride.cpp",
+   "tag": "L3+",
+   "reason": "param-override infrastructure \u2014 deferred (cross-cutting, not L1/L2)"
+  },
+  {
+   "file": "src/composing/analysis/param/paramoverride.h",
+   "tag": "L3+",
+   "reason": "param-override infrastructure \u2014 deferred (cross-cutting, not L1/L2)"
+  },
+  {
+   "file": "src/composing/analysis/progression/progressionrecognizer.cpp",
+   "tag": "L3+",
+   "reason": "progression recognizer (L5 input) \u2014 deferred to the L5 audit"
+  },
+  {
+   "file": "src/composing/analysis/progression/progressionrecognizer.h",
+   "tag": "L3+",
+   "reason": "progression recognizer (L5 input) \u2014 deferred to the L5 audit"
+  },
+  {
+   "file": "src/composing/analysis/region/harmonicrhythm.h",
+   "tag": "L3+",
+   "reason": "region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/region/regionanalyzer.cpp",
+   "tag": "L3+",
+   "reason": "region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/region/regionanalyzer.h",
+   "tag": "L3+",
+   "reason": "region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/region/sparsechordrefinement.cpp",
+   "tag": "L3+",
+   "reason": "region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/region/sparsechordrefinement.h",
+   "tag": "L3+",
+   "reason": "region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 \u2014 deferred to the L3 audit"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "tag": "L1",
+   "reason": "Metric-weight primitive impl \u2014 L1.5 notation-derived value (layer2 design \u00a78)"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "tag": "L1",
+   "reason": "Metric-weight primitive (regionMetricWeightForOnsetTick) \u2014 L1.5 (layer2 design \u00a78 metric-weight contract)"
+  },
+  {
+   "file": "src/composing/analysis/section/cadencekeyanchor.cpp",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/cadencekeyanchor.h",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/jointkeydecision.cpp",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/jointkeydecision.h",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/localmodulationdetector.cpp",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/localmodulationdetector.h",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/sectionanalyzer.cpp",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/sectionanalyzer.h",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/section/sectioncadencedetection.cpp",
+   "tag": "L3+",
+   "reason": "section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic \u2014 deferred"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "tag": "L2",
+   "reason": "Change-point slicer impl \u2014 Architectural Layer 2 survivor (layer2 design \u00a74/\u00a75)"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.h",
+   "tag": "L2",
+   "reason": "Change-point slicer (changePointSlices/Slice) \u2014 Architectural Layer 2 survivor (layer2 design \u00a73)"
+  },
+  {
+   "file": "src/composing/analysis/types/analysistypes.h",
+   "tag": "L3+",
+   "reason": "shared analysis types (cross-layer) \u2014 deferred; note: carries metric/spelling/tone type decls consumed by L1"
+  },
+  {
+   "file": "src/composing/analysis/vocabulary/harmonicvocabulary.cpp",
+   "tag": "L3+",
+   "reason": "harmonic vocabulary (L4) \u2014 deferred to the L4 audit"
+  },
+  {
+   "file": "src/composing/analysis/vocabulary/harmonicvocabulary.h",
+   "tag": "L3+",
+   "reason": "harmonic vocabulary (L4) \u2014 deferred to the L4 audit"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/textureclassifier.cpp",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/textureclassifier.h",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/textureclassifierreference.h",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/voiceleadingprofiles.cpp",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/voiceleadingprofiles.h",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/voicelinearview.cpp",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analysis/voiceleading/voicelinearview.h",
+   "tag": "L3+",
+   "reason": "voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection \u2014 deferred (boundary note in report P3)"
+  },
+  {
+   "file": "src/composing/analyzed_section.h",
+   "tag": "L3+",
+   "reason": "public output DTO \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/composingconfiguration.cpp",
+   "tag": "L3+",
+   "reason": "module configuration \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/composingconfiguration.h",
+   "tag": "L3+",
+   "reason": "module configuration \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/composingmodule.cpp",
+   "tag": "L3+",
+   "reason": "module registration/wiring \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/composingmodule.h",
+   "tag": "L3+",
+   "reason": "module registration/wiring \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/icomposinganalysisconfiguration.h",
+   "tag": "L3+",
+   "reason": "config interface \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/icomposingchordstaffconfiguration.h",
+   "tag": "L3+",
+   "reason": "config interface \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/icomposingconfiguration.h",
+   "tag": "L3+",
+   "reason": "config interface \u2014 not L1/L2 analysis"
+  },
+  {
+   "file": "src/composing/intonation/CMakeLists.txt",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/equal_temperament.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/just_intonation.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/kirnberger.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/pythagorean.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/quarter_comma_meantone.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/tuning_keys.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/tuning_registry.cpp",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/tuning_system.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/tuning_utils.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/intonation/werckmeister.h",
+   "tag": "L3+",
+   "reason": "tuning subsystem \u2014 outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+  },
+  {
+   "file": "src/composing/tests/CMakeLists.txt",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/analyzechord_robustness_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/cadencekeyanchor_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chord_branch_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chord_mismatch_report.txt",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chordanalyzer_musicxml_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chordanalyzer_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chordsymbolformatter_branch_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/chordvoicing_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/comparison_utils.h",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/comparison_utils_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/chordanalyzer_catalog_jazz.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/chordanalyzer_catalog_standard.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/chordanalyzer_context.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_compound.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_compound.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_dense.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_dense.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_pedal.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_pedal.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_steps.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/eb_steps.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/francis-poulenc-o-magnum-mysterium.mxl",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/jazz_smoke_test.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/mono_smoke_test.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/mono_smoke_test.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_dense_start.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_dense_start.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_flags.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_flags.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_grace.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_grace.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_long_sustain.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_long_sustain.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_held_melody.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_held_melody.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_ineligible.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_ineligible.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_passing.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_passing.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_release.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_release.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_rest.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_slice_rest.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_solid_theory.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_staff_eligibility.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_staff_eligibility.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_tie_chain.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_tie_chain.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_two_staff.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_two_staff.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_unison.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/nm_unison.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/organ-sonata-n1-in-e-flat-major-bwv-525-i-allegro.mxl",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/pb_chorale.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/reachback_anchor.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/reachback_anchor.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_a_minor_amb.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_c_major.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_c_minor.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_g_dom7.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_g_minor.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_modulation_cg.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_modulation_cg.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_partial_cm.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_seg_absorb.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_seg_changes.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_seg_merge.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/s1c_unison_c.mscx",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/data/solid theory.musicxml",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/decode_chord_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/decode_keymode_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/decode_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/diagnose_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/engravingbridge_branch_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/environment.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/forwardoverride_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functioncadence_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionlayer_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionmodulation_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionoutput_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionprogression_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionrelationallabel_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionresolver_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/functionromannumeral_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/gater_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/grouping_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/harmonicvocabulary_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/jointkeydecision_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/keymode_branch_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/keymodeanalyzer_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/l3_coverage_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/localmodulationdetector_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/modepriorpresets_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/nashville_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/note_model_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/paramoverride_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/phraseboundaryview_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/postscoringgates_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/progressionrecognizer_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/reachback_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/regionanalysis_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/slicer_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/spellingview_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/synthetic_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/test_helpers.h",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/tonicizationlabeler_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/tuning_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/verify_chord_track.py",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  },
+  {
+   "file": "src/composing/tests/voiceleading_tests.cpp",
+   "tag": "L3+",
+   "reason": "test / fixture / test-data \u2014 out of L1/L2 source scope (L1/L2 regression tests noted in report P3)"
+  }
+ ],
+ "functions": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "isEligible",
+   "start_line": 61,
+   "end_line": 64
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "collectVoiceLines",
+   "start_line": 70,
+   "end_line": 86
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "collectMarkerTicks",
+   "start_line": 98,
+   "end_line": 216
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "changeRatio",
+   "start_line": 222,
+   "end_line": 229
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "localChangeProfile",
+   "start_line": 231,
+   "end_line": 241
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "maxNormalizeInPlace",
+   "start_line": 243,
+   "end_line": 255
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "pickPeaks",
+   "start_line": 257,
+   "end_line": 281
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "computePhraseBoundaryProfile",
+   "start_line": 285,
+   "end_line": 459
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "name": "phraseBoundaryTicks",
+   "start_line": 461,
+   "end_line": 464
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "name": "weightedPcView",
+   "start_line": 45,
+   "end_line": 394
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "name": "collectRegionTones",
+   "start_line": 397,
+   "end_line": 409
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "name": "isChordTrackStaff",
+   "start_line": 73,
+   "end_line": 88
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "name": "staffIsEligible",
+   "start_line": 92,
+   "end_line": 106
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "soundingAt",
+   "start_line": 47,
+   "end_line": 89
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "collectSoundingAt",
+   "start_line": 91,
+   "end_line": 99
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "buildTones",
+   "start_line": 102,
+   "end_line": 122
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "collectPitchContext",
+   "start_line": 124,
+   "end_line": 201
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "beatWeightForOnsetTick",
+   "start_line": 210,
+   "end_line": 214
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "pitchContextOverSpan",
+   "start_line": 218,
+   "end_line": 277
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "detectOnsetSubBoundaries",
+   "start_line": 280,
+   "end_line": 368
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "detectBassMovementSubBoundaries",
+   "start_line": 371,
+   "end_line": 449
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "name": "findTemporalContext",
+   "start_line": 452,
+   "end_line": 592
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "name": "lineOfFifths",
+   "start_line": 36,
+   "end_line": 42
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "name": "sharpFlatSense",
+   "start_line": 44,
+   "end_line": 51
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "name": "spanSpelling",
+   "start_line": 53,
+   "end_line": 76
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "makeEvent",
+   "start_line": 47,
+   "end_line": 67
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "scoreSpan",
+   "start_line": 75,
+   "end_line": 86
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "build",
+   "start_line": 89,
+   "end_line": 97
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "build",
+   "start_line": 99,
+   "end_line": 116
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "rebuildForLoadedSpan",
+   "start_line": 118,
+   "end_line": 202
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "extend",
+   "start_line": 204,
+   "end_line": 237
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "build",
+   "start_line": 241,
+   "end_line": 270
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "onsetLowerBound",
+   "start_line": 272,
+   "end_line": 276
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "overlapIndices",
+   "start_line": 278,
+   "end_line": 284
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "collect",
+   "start_line": 286,
+   "end_line": 305
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "overlapping",
+   "start_line": 307,
+   "end_line": 325
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "name": "onsetIn",
+   "start_line": 327,
+   "end_line": 342
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "score",
+   "start_line": 196,
+   "end_line": 196
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "notes",
+   "start_line": 197,
+   "end_line": 197
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "loadedStart",
+   "start_line": 199,
+   "end_line": 199
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "loadedEnd",
+   "start_line": 200,
+   "end_line": 200
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "selectionStart",
+   "start_line": 201,
+   "end_line": 201
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "selectionEnd",
+   "start_line": 202,
+   "end_line": 202
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "scoreStart",
+   "start_line": 207,
+   "end_line": 207
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "scoreEnd",
+   "start_line": 208,
+   "end_line": 208
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "name": "boundaryReached",
+   "start_line": 210,
+   "end_line": 210
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "beatTypeToWeight",
+   "start_line": 39,
+   "end_line": 53
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "safeBeatType",
+   "start_line": 55,
+   "end_line": 71
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "regionMetricWeightForBeatType",
+   "start_line": 73,
+   "end_line": 84
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "beatTypeForOnsetTick",
+   "start_line": 86,
+   "end_line": 103
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "regionMetricWeightForOnsetTick",
+   "start_line": 105,
+   "end_line": 108
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "timeDecay",
+   "start_line": 110,
+   "end_line": 113
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "distinctPitchClasses",
+   "start_line": 115,
+   "end_line": 128
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "name": "buildPedalWindowIndex",
+   "start_line": 131,
+   "end_line": 181
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "name": "changePointSlices",
+   "start_line": 29,
+   "end_line": 107
+  }
+ ],
+ "literals": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 225,
+   "value": "0.0",
+   "func": "changeRatio",
+   "context": "if (denom <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 226,
+   "value": "0.0",
+   "func": "changeRatio",
+   "context": "return 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 234,
+   "value": "0.0",
+   "func": "localChangeProfile",
+   "context": "std::vector<double> out(n, 0.0);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 236,
+   "value": "0.0",
+   "func": "localChangeProfile",
+   "context": "const double left  = (i > 0)     ? changeRatio(values[i - 1], values[i]) : 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 237,
+   "value": "0.0",
+   "func": "localChangeProfile",
+   "context": "const double right = (i + 1 < n) ? changeRatio(values[i], values[i + 1]) : 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 245,
+   "value": "0.0",
+   "func": "maxNormalizeInPlace",
+   "context": "double mx = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 249,
+   "value": "0.0",
+   "func": "maxNormalizeInPlace",
+   "context": "if (mx <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 264,
+   "value": "0.0",
+   "func": "pickPeaks",
+   "context": "double sum = 0.0, sumSq = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 264,
+   "value": "0.0",
+   "func": "pickPeaks",
+   "context": "double sum = 0.0, sumSq = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 270,
+   "value": "0.0",
+   "func": "pickPeaks",
+   "context": "const double var = std::max(0.0, sumSq / static_cast<double>(m) - mean * mean);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 315,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 315,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 315,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 339,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "double mx = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 345,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (mx <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 366,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "vb.strength.resize(v.onsets.size(), 0.0);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 398,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (params.coincidenceWeight > 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 400,
+   "value": "1.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "strength *= (1.0 + params.coincidenceWeight * (countByTick[tick] - 1));"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 430,
+   "value": "0.0",
+   "func": "computePhraseBoundaryProfile",
+   "context": "double strength = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 85,
+   "value": "0.50",
+   "func": "<file-scope>",
+   "context": "double wGap        = 0.50;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 86,
+   "value": "0.30",
+   "func": "<file-scope>",
+   "context": "double wInterOnset = 0.30;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 87,
+   "value": "0.20",
+   "func": "<file-scope>",
+   "context": "double wPitch      = 0.20;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 91,
+   "value": "1.0",
+   "func": "<file-scope>",
+   "context": "double k = 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 103,
+   "value": "0.0",
+   "func": "<file-scope>",
+   "context": "double coincidenceWeight = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 107,
+   "value": "240",
+   "func": "<file-scope>",
+   "context": "int minSilenceTicks = 240;   // eighth note at 480 ticks / quarter"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 114,
+   "value": "1.5",
+   "func": "<file-scope>",
+   "context": "double spikeCeilingFactor = 1.5;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 87,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "double totalWeight      = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 94,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "PcAccum accum[12];"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 96,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "std::map<int, int> voiceCountAtTick[12];"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 104,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "double attackBeatWeight = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 143,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "pitch % 12,"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 151,
+   "value": "4",
+   "func": "weightedPcView",
+   "context": "const int backLimitInt = (startTick - Fraction(4, 1)).ticks();"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 155,
+   "value": "0.75",
+   "func": "weightedPcView",
+   "context": "if (!m0) { return 0.75; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 157,
+   "value": "0.75",
+   "func": "weightedPcView",
+   "context": "if (!s0) { return 0.75; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 181,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "bool backwardPc[12] = { false };"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 187,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "const int pc = ne->pitch % 12;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 202,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "if (!backwardPc[ne->pitch % 12]) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 206,
+   "value": "3",
+   "func": "weightedPcView",
+   "context": "excludeLookAhead = (pcsSoundingAtStart >= 3);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 215,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "const int pc = ne->pitch % 12;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 290,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 292,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 297,
+   "value": "1.0",
+   "func": "weightedPcView",
+   "context": "a.totalWeight *= (1.0 + 0.3 * (distinct - 1));"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 297,
+   "value": "0.3",
+   "func": "weightedPcView",
+   "context": "a.totalWeight *= (1.0 + 0.3 * (distinct - 1));"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 302,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 304,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 312,
+   "value": "1.5",
+   "func": "weightedPcView",
+   "context": "a.totalWeight *= 1.5;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 317,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (prefs.pedalTailWeightMultiplier > 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 344,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "double totalWeight = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 345,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 348,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 354,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 360,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 361,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 367,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "? (bassPitch % 12) : -1;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 370,
+   "value": "12",
+   "func": "weightedPcView",
+   "context": "for (int pc = 0; pc < 12; ++pc) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 372,
+   "value": "0.0",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 194,
+   "value": "0.25",
+   "func": "<file-scope>",
+   "context": "double threshold = 0.25);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 207,
+   "value": "2",
+   "func": "<file-scope>",
+   "context": "int minGapTicks = 2 * mu::engraving::Constants::DIVISION);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 249,
+   "value": "0.7",
+   "func": "<file-scope>",
+   "context": "double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 250,
+   "value": "0.5",
+   "func": "<file-scope>",
+   "context": "double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 251,
+   "value": "4.0",
+   "func": "<file-scope>",
+   "context": "double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 161,
+   "value": "1.0",
+   "func": "collectPitchContext",
+   "context": "const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 259,
+   "value": "0.0",
+   "func": "pitchContextOverSpan",
+   "context": "double distBeats = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 268,
+   "value": "1.0",
+   "func": "pitchContextOverSpan",
+   "context": "const double laMul = lookahead ? weights.lookaheadWeight : 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 330,
+   "value": "12",
+   "func": "detectOnsetSubBoundaries",
+   "context": "bits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 340,
+   "value": "2",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (onsets.size() < 2) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 344,
+   "value": "2",
+   "func": "detectOnsetSubBoundaries",
+   "context": "const int minGapTicks = 2 * Constants::DIVISION;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 356,
+   "value": "1.0",
+   "func": "detectOnsetSubBoundaries",
+   "context": "? (1.0 - static_cast<double>(interCount) / uniCount)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 357,
+   "value": "0.0",
+   "func": "detectOnsetSubBoundaries",
+   "context": ": 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 419,
+   "value": "12",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "lowestPC    = pitch % 12;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 101,
+   "value": "0.0",
+   "func": "<file-scope>",
+   "context": "double lofCentroid  = 0.0;  ///< mean line-of-fifths position over the valid spellings (0.0 if count == 0)"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 263,
+   "value": "2",
+   "func": "build",
+   "context": "m_segMaxRel.assign(static_cast<std::size_t>(2) * m_segSize, INT_MIN);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 268,
+   "value": "2",
+   "func": "build",
+   "context": "m_segMaxRel[v] = std::max(m_segMaxRel[2 * v], m_segMaxRel[2 * v + 1]);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 268,
+   "value": "2",
+   "func": "build",
+   "context": "m_segMaxRel[v] = std::max(m_segMaxRel[2 * v], m_segMaxRel[2 * v + 1]);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 302,
+   "value": "2",
+   "func": "collect",
+   "context": "const int mid = (nodeLo + nodeHi) / 2;"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 303,
+   "value": "2",
+   "func": "collect",
+   "context": "collect(2 * node, nodeLo, mid, qHi, t0, out);          // left first \u21d2 ascending order."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 304,
+   "value": "2",
+   "func": "collect",
+   "context": "collect(2 * node + 1, mid, nodeHi, qHi, t0, out);"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 77,
+   "value": "1.0",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::DOWNBEAT:            return 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 79,
+   "value": "0.85",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::COMPOUND_STRESSED:   return 0.85;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 81,
+   "value": "0.75",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::COMPOUND_UNSTRESSED: return 0.75;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 82,
+   "value": "0.5",
+   "func": "regionMetricWeightForBeatType",
+   "context": "default:                            return 0.5;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 117,
+   "value": "12",
+   "func": "distinctPitchClasses",
+   "context": "bool seen[12] = {};"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 121,
+   "value": "12",
+   "func": "distinctPitchClasses",
+   "context": "const int pc = p.pitch % 12;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 57,
+   "value": "16",
+   "func": "<file-scope>",
+   "context": "inline constexpr int    LOOKBACK_BEATS   = 16;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 58,
+   "value": "8",
+   "func": "<file-scope>",
+   "context": "inline constexpr int    LOOKAHEAD_BEATS  = 8;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 59,
+   "value": "0.5",
+   "func": "<file-scope>",
+   "context": "inline constexpr double LOOKAHEAD_WEIGHT = 0.5;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 60,
+   "value": "0.7",
+   "func": "<file-scope>",
+   "context": "inline constexpr double DECAY_RATE       = 0.7;   // multiplier per measure (4 quarter notes)"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 69,
+   "value": "4",
+   "func": "<file-scope>",
+   "context": "inline constexpr int kPass2bMinRegionTicks = 4 * mu::engraving::Constants::DIVISION;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 104,
+   "value": "4.0",
+   "func": "<file-scope>",
+   "context": "double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPerUnit = 4.0);"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 38,
+   "value": "2",
+   "func": "changePointSlices",
+   "context": "boundaries.reserve(model.notes().size() * 2);"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 59,
+   "value": "2",
+   "func": "changePointSlices",
+   "context": "if (boundaries.size() < 2) {"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 95,
+   "value": "2",
+   "func": "changePointSlices",
+   "context": "if (boundaries.size() < 2) {"
+  }
+ ],
+ "branches": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 74,
+   "kind": "if",
+   "func": "collectVoiceLines",
+   "context": "if (!isEligible(n)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 78,
+   "kind": "if",
+   "func": "collectVoiceLines",
+   "context": "if (!ev.empty() && ev.back().onset == n.onset) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 106,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (!firstMeasure) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 113,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (a && (a->isFermata() || a->isTempoText())) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 123,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (e && e->isBreath()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 134,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (score->nstaves() > 0 && score->staff(0)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 141,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (e && e->isKeySig()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 146,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (!ks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 151,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (prevKey == std::numeric_limits<int>::min()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 153,
+   "kind": "else-if",
+   "func": "collectMarkerTicks",
+   "context": "} else if (key != prevKey && tick > 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 164,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (bt == BarLineType::DOUBLE || bt == BarLineType::END"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 168,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (m->repeatStart()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 178,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (!spanner || !spanner->isGradualTempoChange()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 182,
+   "kind": "switch",
+   "func": "collectMarkerTicks",
+   "context": "switch (gtc->tempoChangeType()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 183,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Ritardando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 184,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Rallentando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 185,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Allargando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 186,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Calando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 187,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Lentando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 188,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Morendo:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 189,
+   "kind": "case",
+   "func": "collectMarkerTicks",
+   "context": "case GradualTempoChangeType::Smorzando:"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 200,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (sl.end - sl.start < params.minSilenceTicks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 205,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (n && isEligible(*n)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 210,
+   "kind": "if",
+   "func": "collectMarkerTicks",
+   "context": "if (!anyEligible) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 225,
+   "kind": "if",
+   "func": "changeRatio",
+   "context": "if (denom <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 236,
+   "kind": "ternary",
+   "func": "localChangeProfile",
+   "context": "const double left  = (i > 0)     ? changeRatio(values[i - 1], values[i]) : 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 237,
+   "kind": "ternary",
+   "func": "localChangeProfile",
+   "context": "const double right = (i + 1 < n) ? changeRatio(values[i], values[i + 1]) : 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 249,
+   "kind": "if",
+   "func": "maxNormalizeInPlace",
+   "context": "if (mx <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 261,
+   "kind": "if",
+   "func": "pickPeaks",
+   "context": "if (m == 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 276,
+   "kind": "if",
+   "func": "pickPeaks",
+   "context": "if (leftOk && rightOk && x > threshold) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 289,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (!score) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 295,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (lines.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 319,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (i + 1 < n) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 345,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (mx <= 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 391,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (rep == std::numeric_limits<int>::min() || s.first - rep > params.tauTicks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 398,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (params.coincidenceWeight > 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 432,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (it != surfaceByTick.end()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 435,
+   "kind": "if",
+   "func": "computePhraseBoundaryProfile",
+   "context": "if (markerTicks.count(t)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 58,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!sc || endTickInt <= startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 65,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (parentStartTickInt < 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 115,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (it == pedalWindowsByStaff.end()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 121,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (window.startTick >= candidate.writtenEndTick) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 124,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (window.endTick <= candidate.writtenEndTick) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 130,
+   "kind": "ternary",
+   "func": "weightedPcView",
+   "context": "return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 135,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (writtenEndTick >= endTickInt || pedalWindowsByStaff.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 138,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (pedalWindowsByStaff.find(staffIdx) == pedalWindowsByStaff.end()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 155,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!m0) { return 0.75; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 157,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!s0) { return 0.75; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 165,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!m) { return bwAtRegionStart; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 167,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!s) { return bwAtRegionStart; }"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 177,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (excludeLookAheadOnDenseStart) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 184,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!passes(*ne) || ne->onset >= startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 188,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!backwardPc[pc]) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 199,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!passes(*ne) || ne->onset != startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 202,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!backwardPc[ne->pitch % 12]) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 212,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!passes(*ne)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 218,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (ne->onset >= startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 220,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (excludeLookAhead && ne->onset > startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 225,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!m) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 229,
+   "kind": "ternary",
+   "func": "weightedPcView",
+   "context": "const double bw = fs ? shv::regionMetricWeightForBeatType(shv::safeBeatType(m, fs)) : bwAtRegionStart;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 233,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (durInRegion <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 242,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (ne->onset == parentStartTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 245,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (ne->pitch < a.lowestPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 254,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (durInRegion <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 263,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (ne->pitch < a.lowestPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 275,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!pedalWindowsByStaff.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 277,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (!passes(*ne)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 280,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (excludeLookAhead && ne->onset > startTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 292,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 296,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (distinct > 1) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 304,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 311,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (maxVoices > 1) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 317,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (prefs.pedalTailWeightMultiplier > 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 320,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (pedalReleaseTick < 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 327,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (tailDuration <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 336,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (candidate.pitch < a.lowestPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 348,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 355,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (accum[pc].totalWeight >= bassMinWeight && accum[pc].lowestPitch < bassPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 359,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (bassPitch == std::numeric_limits<int>::max()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 361,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 367,
+   "kind": "ternary",
+   "func": "weightedPcView",
+   "context": "? (bassPitch % 12) : -1;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 372,
+   "kind": "if",
+   "func": "weightedPcView",
+   "context": "if (a.totalWeight == 0.0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 76,
+   "kind": "if",
+   "func": "isChordTrackStaff",
+   "context": "if (si >= sc->nstaves()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 80,
+   "kind": "if",
+   "func": "isChordTrackStaff",
+   "context": "if (!part) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 83,
+   "kind": "if",
+   "func": "isChordTrackStaff",
+   "context": "if (part->partName().contains(CHORD_TRACK_MARKER)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 96,
+   "kind": "if",
+   "func": "staffIsEligible",
+   "context": "if (!st->show()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 99,
+   "kind": "if",
+   "func": "staffIsEligible",
+   "context": "if (st->part()->instrument(tick)->useDrumset()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 102,
+   "kind": "if",
+   "func": "staffIsEligible",
+   "context": "if (isChordTrackStaff(sc, si)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 64,
+   "kind": "if",
+   "func": "soundingAt",
+   "context": "if (!passes(*ne)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 67,
+   "kind": "if",
+   "func": "soundingAt",
+   "context": "if (ne->onset == tick) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 108,
+   "kind": "if",
+   "func": "buildTones",
+   "context": "if (sn.ppitch < lowestPpitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 136,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (!startMeasure) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 139,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (!startMeasure) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 147,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (segTick < windowStart) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 161,
+   "kind": "ternary",
+   "func": "collectPitchContext",
+   "context": "const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 168,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 174,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (!cr || !cr->isChord() || cr->isGrace()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 180,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (!n->play() || !n->visible()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 185,
+   "kind": "if",
+   "func": "collectPitchContext",
+   "context": "if (pp < lowestPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 240,
+   "kind": "if",
+   "func": "pitchContextOverSpan",
+   "context": "if (!eligible(*ne)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 244,
+   "kind": "if",
+   "func": "pitchContextOverSpan",
+   "context": "if (it == lowestByOnset.end() || ne->pitch < it->second) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 252,
+   "kind": "if",
+   "func": "pitchContextOverSpan",
+   "context": "if (!eligible(*ne)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 261,
+   "kind": "if",
+   "func": "pitchContextOverSpan",
+   "context": "if (ne->onset < anchorStart) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 263,
+   "kind": "else-if",
+   "func": "pitchContextOverSpan",
+   "context": "} else if (ne->onset >= anchorEnd) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 268,
+   "kind": "ternary",
+   "func": "pitchContextOverSpan",
+   "context": "const double laMul = lookahead ? weights.lookaheadWeight : 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 297,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (!firstSeg) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 315,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 320,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (!cr || !cr->isChord() || cr->isGrace()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 323,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (cr->tick().ticks() != segTick) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 327,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (!n->play() || !n->visible()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 335,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (bits != 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 340,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (onsets.size() < 2) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 356,
+   "kind": "ternary",
+   "func": "detectOnsetSubBoundaries",
+   "context": "? (1.0 - static_cast<double>(interCount) / uniCount)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 360,
+   "kind": "if",
+   "func": "detectOnsetSubBoundaries",
+   "context": "if (jaccard >= threshold && gapTicks >= minGapTicks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 382,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (!firstSeg) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 401,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 406,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (!cr || !cr->isChord() || cr->isGrace()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 409,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (cr->tick().ticks() != segTick) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 413,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (!n->play() || !n->visible()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 417,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (pitch < lowestPitch) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 425,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (lowestPC >= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 430,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (onsets.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 441,
+   "kind": "if",
+   "func": "detectBassMovementSubBoundaries",
+   "context": "if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 486,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 492,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (cr && cr->isChord() && !cr->isGrace()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 497,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!hasAttacks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 503,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!prevSounding.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 510,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!prevResults.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 529,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (currentBassPc != -1 && temporalCtx.previousBassPc != -1) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 544,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 550,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (cr && cr->isChord() && !cr->isGrace()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 555,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!hasAttacks) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 561,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!nextSounding.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 568,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (!nextResults.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 586,
+   "kind": "if",
+   "func": "findTemporalContext",
+   "context": "if (currentBassPc != -1 && temporalCtx.nextBassPc != -1) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 38,
+   "kind": "if",
+   "func": "lineOfFifths",
+   "context": "if (!tpcIsValid(tpc)) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 47,
+   "kind": "if",
+   "func": "sharpFlatSense",
+   "context": "if (lof == kNoLineOfFifths) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 59,
+   "kind": "if",
+   "func": "spanSpelling",
+   "context": "if (lof == kNoLineOfFifths) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 64,
+   "kind": "if",
+   "func": "spanSpelling",
+   "context": "if (lof > 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 66,
+   "kind": "else-if",
+   "func": "spanSpelling",
+   "context": "} else if (lof < 0) {"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 72,
+   "kind": "if",
+   "func": "spanSpelling",
+   "context": "if (agg.count > 0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 78,
+   "kind": "if",
+   "func": "scoreSpan",
+   "context": "if (!sc) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 82,
+   "kind": "if",
+   "func": "scoreSpan",
+   "context": "if (!firstMeasure) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 129,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (!sc) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 134,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (!firstMeasure) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 147,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (e.onset < t1 && e.release > t0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 168,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (!cr || !cr->isChord()) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 177,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (!grace) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 181,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (gn->tieBack()) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 190,
+   "kind": "if",
+   "func": "rebuildForLoadedSpan",
+   "context": "if (n->tieBack()) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 206,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (amountTicks <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 210,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (dir == Direction::Earlier) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 212,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (target <= m_scoreStart) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 218,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (target == m_loadedStart) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 224,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (target >= m_scoreEnd) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 230,
+   "kind": "if",
+   "func": "extend",
+   "context": "if (target == m_loadedEnd) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 250,
+   "kind": "if",
+   "func": "build",
+   "context": "if (m_n == 0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 280,
+   "kind": "if",
+   "func": "overlapIndices",
+   "context": "if (qHi <= 0 || m_segSize == 0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 289,
+   "kind": "if",
+   "func": "collect",
+   "context": "if (nodeLo >= qHi) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 292,
+   "kind": "if",
+   "func": "collect",
+   "context": "if (m_segMaxRel[node] <= t0) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 295,
+   "kind": "if",
+   "func": "collect",
+   "context": "if (nodeHi - nodeLo == 1) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 310,
+   "kind": "if",
+   "func": "overlapping",
+   "context": "if (t1 <= t0 || m_notes.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 330,
+   "kind": "if",
+   "func": "onsetIn",
+   "context": "if (t1 <= t0 || m_notes.empty()) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 43,
+   "kind": "switch",
+   "func": "beatTypeToWeight",
+   "context": "switch (bt) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 44,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::DOWNBEAT:              return prefs.beatWeightDownbeat;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 45,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::COMPOUND_STRESSED:     return prefs.beatWeightCompoundStressed;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 46,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::SIMPLE_STRESSED:       return prefs.beatWeightSimpleStressed;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 47,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::COMPOUND_UNSTRESSED:   return prefs.beatWeightCompoundUnstressed;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 48,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::SIMPLE_UNSTRESSED:     return prefs.beatWeightSimpleUnstressed;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 49,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::COMPOUND_SUBBEAT:      return prefs.beatWeightCompoundSubbeat;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 50,
+   "kind": "case",
+   "func": "beatTypeToWeight",
+   "context": "case BeatType::SUBBEAT:               return prefs.beatWeightSubbeat;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 60,
+   "kind": "if",
+   "func": "safeBeatType",
+   "context": "if (!measure || !segment) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 66,
+   "kind": "if",
+   "func": "safeBeatType",
+   "context": "if (numerator <= 0 || denominator <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 76,
+   "kind": "switch",
+   "func": "regionMetricWeightForBeatType",
+   "context": "switch (bt) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 77,
+   "kind": "case",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::DOWNBEAT:            return 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 78,
+   "kind": "case",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::SIMPLE_STRESSED:"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 79,
+   "kind": "case",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::COMPOUND_STRESSED:   return 0.85;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 80,
+   "kind": "case",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::SIMPLE_UNSTRESSED:"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 81,
+   "kind": "case",
+   "func": "regionMetricWeightForBeatType",
+   "context": "case BeatType::COMPOUND_UNSTRESSED: return 0.75;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 89,
+   "kind": "if",
+   "func": "beatTypeForOnsetTick",
+   "context": "if (!sc) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 93,
+   "kind": "if",
+   "func": "beatTypeForOnsetTick",
+   "context": "if (!m) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 98,
+   "kind": "if",
+   "func": "beatTypeForOnsetTick",
+   "context": "if (num <= 0 || den <= 0) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 122,
+   "kind": "if",
+   "func": "distinctPitchClasses",
+   "context": "if (!seen[pc]) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 142,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (!spanner || spanner->type() != ElementType::PEDAL) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 147,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (!pedal) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 152,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (beginText == u\"<sym>keyboardPedalSost</sym>\" || beginText == u\"<sym>keyboardPedalS</sym>\") {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 158,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 163,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !isStaffEligible(staffIdx)) {"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 173,
+   "kind": "if",
+   "func": "buildPedalWindowIndex",
+   "context": "if (lhs.startTick != rhs.startTick) {"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 40,
+   "kind": "if",
+   "func": "changePointSlices",
+   "context": "if (!(e.plays && e.visible && e.staffEligible)) {"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 59,
+   "kind": "if",
+   "func": "changePointSlices",
+   "context": "if (boundaries.size() < 2) {"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 95,
+   "kind": "if",
+   "func": "changePointSlices",
+   "context": "if (boundaries.size() < 2) {"
+  }
+ ],
+ "fields": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 85,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "wGap",
+   "context": "double wGap        = 0.50;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 86,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "wInterOnset",
+   "context": "double wInterOnset = 0.30;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 87,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "wPitch",
+   "context": "double wPitch      = 0.20;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 91,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "k",
+   "context": "double k = 1.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 97,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "int",
+   "name": "tauTicks",
+   "context": "int tauTicks = 0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 103,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "coincidenceWeight",
+   "context": "double coincidenceWeight = 0.0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 107,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "int",
+   "name": "minSilenceTicks",
+   "context": "int minSilenceTicks = 240;   // eighth note at 480 ticks / quarter"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 114,
+   "type_owner": "PhraseBoundaryParams",
+   "field_type": "double",
+   "name": "spikeCeilingFactor",
+   "context": "double spikeCeilingFactor = 1.5;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 123,
+   "type_owner": "VoiceBoundaryProfile",
+   "field_type": "int",
+   "name": "staff",
+   "context": "int              staff = 0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 124,
+   "type_owner": "VoiceBoundaryProfile",
+   "field_type": "int",
+   "name": "voice",
+   "context": "int              voice = 0;"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 125,
+   "type_owner": "VoiceBoundaryProfile",
+   "field_type": "std::vector<int>",
+   "name": "onsets",
+   "context": "std::vector<int>    onsets;    ///< the voice's event onsets (ascending), one per sampled point"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 126,
+   "type_owner": "VoiceBoundaryProfile",
+   "field_type": "std::vector<double>",
+   "name": "strength",
+   "context": "std::vector<double> strength;  ///< per-onset combined surface strength (parallel to onsets)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 133,
+   "type_owner": "PhraseBoundaryProfile",
+   "field_type": "std::vector<VoiceBoundaryProfile>",
+   "name": "perVoice",
+   "context": "std::vector<VoiceBoundaryProfile> perVoice;   ///< \u00a74.3 per-eligible-voice profiles"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 134,
+   "type_owner": "PhraseBoundaryProfile",
+   "field_type": "std::vector<int>",
+   "name": "textureTicks",
+   "context": "std::vector<int>    textureTicks;             ///< \u00a74.3/\u00a74.4 texture grid ticks (ascending, unique)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 135,
+   "type_owner": "PhraseBoundaryProfile",
+   "field_type": "std::vector<double>",
+   "name": "textureStrength",
+   "context": "std::vector<double> textureStrength;          ///< texture combined strength incl. marker spikes (parallel)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 136,
+   "type_owner": "PhraseBoundaryProfile",
+   "field_type": "std::set<int>",
+   "name": "pickedTicks",
+   "context": "std::set<int>       pickedTicks;              ///< \u00a74.4 peak-picked phrase-boundary ticks"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 249,
+   "type_owner": "SpanWindowWeights",
+   "field_type": "double",
+   "name": "decayRate",
+   "context": "double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 250,
+   "type_owner": "SpanWindowWeights",
+   "field_type": "double",
+   "name": "lookaheadWeight",
+   "context": "double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 251,
+   "type_owner": "SpanWindowWeights",
+   "field_type": "double",
+   "name": "beatsPerDecayUnit",
+   "context": "double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 100,
+   "type_owner": "SpanSpelling",
+   "field_type": "int",
+   "name": "count",
+   "context": "int    count        = 0;    ///< number of valid (tpcIsValid) spellings aggregated"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 101,
+   "type_owner": "SpanSpelling",
+   "field_type": "double",
+   "name": "lofCentroid",
+   "context": "double lofCentroid  = 0.0;  ///< mean line-of-fifths position over the valid spellings (0.0 if count == 0)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 102,
+   "type_owner": "SpanSpelling",
+   "field_type": "int",
+   "name": "sharpCount",
+   "context": "int    sharpCount   = 0;    ///< valid spellings on the sharp side (line-of-fifths > 0)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 103,
+   "type_owner": "SpanSpelling",
+   "field_type": "int",
+   "name": "flatCount",
+   "context": "int    flatCount    = 0;    ///< valid spellings on the flat side (line-of-fifths < 0)"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 104,
+   "type_owner": "SpanSpelling",
+   "field_type": "int",
+   "name": "naturalCount",
+   "context": "int    naturalCount = 0;    ///< valid spellings at C (line-of-fifths == 0)"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 81,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "pitch",
+   "context": "int  pitch  = 0;     ///< ppitch \u2014 MIDI playback pitch (honours ottavas/transpositions)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 82,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "tpc",
+   "context": "int  tpc    = -1;    ///< TPC (0-34, circle-of-fifths spelling). -1 = not provided."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 83,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "staff",
+   "context": "int  staff  = 0;     ///< Owning staff index (the note's actual track staff, not visual placement)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 84,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "voice",
+   "context": "int  voice  = 0;     ///< Voice 0..VOICES-1."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 85,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "onset",
+   "context": "int  onset  = 0;     ///< Tie-resolved onset tick (onset of the first tied note)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 86,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "release",
+   "context": "int  release = 0;    ///< Tie-resolved release tick (release of the last tied note)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 87,
+   "type_owner": "NoteEvent",
+   "field_type": "int",
+   "name": "duration",
+   "context": "int  duration = 0;   ///< release - onset (== Note::playTicksFraction())."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 88,
+   "type_owner": "NoteEvent",
+   "field_type": "bool",
+   "name": "isGrace",
+   "context": "bool isGrace = false;       ///< Grace note (kept + flagged; attaches to its parent chord's tick)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 89,
+   "type_owner": "NoteEvent",
+   "field_type": "bool",
+   "name": "plays",
+   "context": "bool plays   = true;        ///< Note::play() (false for user-muted AND imported cue notes)."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 90,
+   "type_owner": "NoteEvent",
+   "field_type": "bool",
+   "name": "visible",
+   "context": "bool visible = true;        ///< Note::visible()."
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 91,
+   "type_owner": "NoteEvent",
+   "field_type": "bool",
+   "name": "staffEligible",
+   "context": "bool staffEligible = true;  ///< staffIsEligible() at this note's onset (hidden/drumset/chord-track => false)."
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 113,
+   "type_owner": "PedalWindow",
+   "field_type": "int",
+   "name": "startTick",
+   "context": "int startTick = 0;"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 114,
+   "type_owner": "PedalWindow",
+   "field_type": "int",
+   "name": "endTick",
+   "context": "int endTick   = 0;"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.h",
+   "line": 85,
+   "type_owner": "Slice",
+   "field_type": "int",
+   "name": "start",
+   "context": "int start = 0;   ///< inclusive lower bound (a note onset or release tick)."
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.h",
+   "line": 86,
+   "type_owner": "Slice",
+   "field_type": "int",
+   "name": "end",
+   "context": "int end   = 0;   ///< exclusive upper bound (the next boundary tick)."
+  }
+ ],
+ "decls": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 143,
+   "type_owner": "<namespace>",
+   "name": "changeRatio",
+   "context": "double changeRatio(double a, double b);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 151,
+   "type_owner": "<namespace>",
+   "name": "localChangeProfile",
+   "context": "std::vector<double> localChangeProfile(const std::vector<double>& values);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 155,
+   "type_owner": "<namespace>",
+   "name": "maxNormalizeInPlace",
+   "context": "void maxNormalizeInPlace(std::vector<double>& profile);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 162,
+   "type_owner": "<namespace>",
+   "name": "pickPeaks",
+   "context": "std::vector<int> pickPeaks(const std::vector<double>& strength, double k);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+   "line": 175,
+   "type_owner": "<namespace>",
+   "name": "phraseBoundaryTicks",
+   "context": "std::set<int> phraseBoundaryTicks(const mu::engraving::Score* score);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 79,
+   "type_owner": "<namespace>",
+   "name": "staff",
+   "context": "const mu::engraving::Part* part = sc->staff(si)->part();"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 86,
+   "type_owner": "<namespace>",
+   "name": "instrument",
+   "context": "const mu::engraving::Instrument* instrument = part->instrument();"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 87,
+   "type_owner": "<namespace>",
+   "name": "trackName",
+   "context": "return instrument && instrument->trackName().contains(CHORD_TRACK_MARKER);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 95,
+   "type_owner": "<namespace>",
+   "name": "staff",
+   "context": "const mu::engraving::Staff* st = sc->staff(si);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 133,
+   "type_owner": "<namespace>",
+   "name": "buildTones",
+   "context": "buildTones(const std::vector<SoundingNote>& sounding);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 86,
+   "type_owner": "<namespace>",
+   "name": "lineOfFifths",
+   "context": "int lineOfFifths(int tpc);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 91,
+   "type_owner": "<namespace>",
+   "name": "sharpFlatSense",
+   "context": "int sharpFlatSense(int tpc);"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 108,
+   "type_owner": "<namespace>",
+   "name": "spanSpelling",
+   "context": "SpanSpelling spanSpelling(const std::vector<int>& tpcs);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 117,
+   "type_owner": "<namespace>",
+   "name": "build",
+   "context": "void build(const std::vector<NoteEvent>& notes);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 120,
+   "type_owner": "<namespace>",
+   "name": "onsetLowerBound",
+   "context": "int onsetLowerBound(int t) const;"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 124,
+   "type_owner": "<namespace>",
+   "name": "overlapIndices",
+   "context": "void overlapIndices(int qHi, int t0, std::vector<int>& out) const;"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 177,
+   "type_owner": "<namespace>",
+   "name": "build",
+   "context": "static NoteModel build(const mu::engraving::Score* sc);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 184,
+   "type_owner": "<namespace>",
+   "name": "build",
+   "context": "static NoteModel build(const mu::engraving::Score* sc, int loadedStart, int loadedEnd);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 194,
+   "type_owner": "<namespace>",
+   "name": "extend",
+   "context": "void extend(Direction dir, int amountTicks);"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 215,
+   "type_owner": "<namespace>",
+   "name": "overlapping",
+   "context": "std::vector<const NoteEvent*> overlapping(int t0, int t1) const;"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 219,
+   "type_owner": "<namespace>",
+   "name": "onsetIn",
+   "context": "std::vector<const NoteEvent*> onsetIn(int t0, int t1) const;"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 226,
+   "type_owner": "<namespace>",
+   "name": "rebuildForLoadedSpan",
+   "context": "void rebuildForLoadedSpan();"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 83,
+   "type_owner": "<namespace>",
+   "name": "regionMetricWeightForBeatType",
+   "context": "double regionMetricWeightForBeatType(mu::engraving::BeatType bt);"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 91,
+   "type_owner": "<namespace>",
+   "name": "beatTypeForOnsetTick",
+   "context": "mu::engraving::BeatType beatTypeForOnsetTick(const mu::engraving::Score* sc, int onsetTick);"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 97,
+   "type_owner": "<namespace>",
+   "name": "regionMetricWeightForOnsetTick",
+   "context": "double regionMetricWeightForOnsetTick(const mu::engraving::Score* sc, int onsetTick);"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 104,
+   "type_owner": "<namespace>",
+   "name": "timeDecay",
+   "context": "double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPerUnit = 4.0);"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 107,
+   "type_owner": "<namespace>",
+   "name": "distinctPitchClasses",
+   "context": "int distinctPitchClasses(const std::vector<KeyModeAnalyzer::PitchContext>& ctx);"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.h",
+   "line": 105,
+   "type_owner": "<namespace>",
+   "name": "changePointSlices",
+   "context": "std::vector<Slice> changePointSlices(const notemodel::NoteModel& model);"
+  }
+ ],
+ "crosslayer": [
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 23,
+   "include": "phraseboundaryview.h",
+   "resolved": "phraseboundaryview.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 32,
+   "include": "composing/analysis/notemodel/note_model.h",
+   "resolved": "composing/analysis/notemodel/note_model.h",
+   "target_area": "notemodel"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 33,
+   "include": "composing/analysis/slicing/slicer.h",
+   "resolved": "composing/analysis/slicing/slicer.h",
+   "target_area": "slicing"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 35,
+   "include": "engraving/dom/breath.h",
+   "resolved": "engraving/dom/breath.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 36,
+   "include": "engraving/dom/engravingitem.h",
+   "resolved": "engraving/dom/engravingitem.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 37,
+   "include": "engraving/dom/gradualtempochange.h",
+   "resolved": "engraving/dom/gradualtempochange.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 38,
+   "include": "engraving/dom/keysig.h",
+   "resolved": "engraving/dom/keysig.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 39,
+   "include": "engraving/dom/measure.h",
+   "resolved": "engraving/dom/measure.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 40,
+   "include": "engraving/dom/score.h",
+   "resolved": "engraving/dom/score.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 41,
+   "include": "engraving/dom/segment.h",
+   "resolved": "engraving/dom/segment.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 42,
+   "include": "engraving/dom/spanner.h",
+   "resolved": "engraving/dom/spanner.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 43,
+   "include": "engraving/dom/staff.h",
+   "resolved": "engraving/dom/staff.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+   "line": 44,
+   "include": "engraving/types/types.h",
+   "resolved": "engraving/types/types.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 23,
+   "include": "regiontonecollector.h",
+   "resolved": "regiontonecollector.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 30,
+   "include": "engraving/dom/chord.h",
+   "resolved": "engraving/dom/chord.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 31,
+   "include": "engraving/dom/chordrest.h",
+   "resolved": "engraving/dom/chordrest.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 32,
+   "include": "engraving/dom/measure.h",
+   "resolved": "engraving/dom/measure.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 33,
+   "include": "engraving/dom/note.h",
+   "resolved": "engraving/dom/note.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 34,
+   "include": "engraving/dom/segment.h",
+   "resolved": "engraving/dom/segment.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 35,
+   "include": "engraving/dom/sig.h",
+   "resolved": "engraving/dom/sig.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 37,
+   "include": "composing/analysis/chord/analysisutils.h",
+   "resolved": "composing/analysis/chord/analysisutils.h",
+   "target_area": "chord"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+   "line": 38,
+   "include": "composing/analysis/scoreharvest/metricweights.h",
+   "resolved": "composing/analysis/scoreharvest/metricweights.h",
+   "target_area": "scoreharvest"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 52,
+   "include": "composing/analysis/types/analysistypes.h",
+   "resolved": "composing/analysis/types/analysistypes.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 53,
+   "include": "composing/analysis/notemodel/note_model.h",
+   "resolved": "composing/analysis/notemodel/note_model.h",
+   "target_area": "notemodel"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 54,
+   "include": "engraving/dom/part.h",
+   "resolved": "engraving/dom/part.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 55,
+   "include": "engraving/dom/score.h",
+   "resolved": "engraving/dom/score.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 56,
+   "include": "engraving/dom/staff.h",
+   "resolved": "engraving/dom/staff.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 57,
+   "include": "engraving/types/constants.h",
+   "resolved": "engraving/types/constants.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontonecollector.h",
+   "line": 58,
+   "include": "engraving/types/fraction.h",
+   "resolved": "engraving/types/fraction.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 23,
+   "include": "regiontonecollector.h",
+   "resolved": "regiontonecollector.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 30,
+   "include": "engraving/dom/chord.h",
+   "resolved": "engraving/dom/chord.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 31,
+   "include": "engraving/dom/chordrest.h",
+   "resolved": "engraving/dom/chordrest.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 32,
+   "include": "engraving/dom/measure.h",
+   "resolved": "engraving/dom/measure.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 33,
+   "include": "engraving/dom/note.h",
+   "resolved": "engraving/dom/note.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 34,
+   "include": "engraving/dom/segment.h",
+   "resolved": "engraving/dom/segment.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 35,
+   "include": "engraving/dom/sig.h",
+   "resolved": "engraving/dom/sig.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 37,
+   "include": "composing/analysis/chord/analysisutils.h",
+   "resolved": "composing/analysis/chord/analysisutils.h",
+   "target_area": "chord"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 38,
+   "include": "composing/analysis/chord/chordanalyzer.h",
+   "resolved": "composing/analysis/chord/chordanalyzer.h",
+   "target_area": "chord"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+   "line": 39,
+   "include": "composing/analysis/scoreharvest/metricweights.h",
+   "resolved": "composing/analysis/scoreharvest/metricweights.h",
+   "target_area": "scoreharvest"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 23,
+   "include": "spellingview.h",
+   "resolved": "spellingview.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.cpp",
+   "line": 25,
+   "include": "engraving/dom/pitchspelling.h",
+   "resolved": "engraving/dom/pitchspelling.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/engravingbridge/spellingview.h",
+   "line": 60,
+   "include": "engraving/dom/pitchspelling.h",
+   "resolved": "engraving/dom/pitchspelling.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 23,
+   "include": "note_model.h",
+   "resolved": "note_model.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 29,
+   "include": "engraving/dom/chord.h",
+   "resolved": "engraving/dom/chord.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 30,
+   "include": "engraving/dom/chordrest.h",
+   "resolved": "engraving/dom/chordrest.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 31,
+   "include": "engraving/dom/measure.h",
+   "resolved": "engraving/dom/measure.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 32,
+   "include": "engraving/dom/note.h",
+   "resolved": "engraving/dom/note.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 33,
+   "include": "engraving/dom/score.h",
+   "resolved": "engraving/dom/score.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 34,
+   "include": "engraving/dom/segment.h",
+   "resolved": "engraving/dom/segment.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 35,
+   "include": "engraving/dom/staff.h",
+   "resolved": "engraving/dom/staff.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.cpp",
+   "line": 39,
+   "include": "composing/analysis/engravingbridge/regiontonecollector.h",
+   "resolved": "composing/analysis/engravingbridge/regiontonecollector.h",
+   "target_area": "engravingbridge"
+  },
+  {
+   "file": "src/composing/analysis/notemodel/note_model.h",
+   "line": 57,
+   "include": "engraving/types/fraction.h",
+   "resolved": "engraving/types/fraction.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 23,
+   "include": "metricweights.h",
+   "resolved": "metricweights.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 28,
+   "include": "engraving/dom/measure.h",
+   "resolved": "engraving/dom/measure.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 29,
+   "include": "engraving/dom/pedal.h",
+   "resolved": "engraving/dom/pedal.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 30,
+   "include": "engraving/dom/score.h",
+   "resolved": "engraving/dom/score.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 31,
+   "include": "engraving/dom/segment.h",
+   "resolved": "engraving/dom/segment.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 32,
+   "include": "engraving/dom/sig.h",
+   "resolved": "engraving/dom/sig.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 33,
+   "include": "engraving/dom/spanner.h",
+   "resolved": "engraving/dom/spanner.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 34,
+   "include": "engraving/types/fraction.h",
+   "resolved": "engraving/types/fraction.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.cpp",
+   "line": 35,
+   "include": "engraving/types/types.h",
+   "resolved": "engraving/types/types.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 39,
+   "include": "engraving/types/constants.h",
+   "resolved": "engraving/types/constants.h",
+   "target_area": "types"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 40,
+   "include": "engraving/dom/sig.h",
+   "resolved": "engraving/dom/sig.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/scoreharvest/metricweights.h",
+   "line": 42,
+   "include": "../key/keymodeanalyzer.h",
+   "resolved": "src/composing/analysis/key/keymodeanalyzer.h",
+   "target_area": "key"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.cpp",
+   "line": 23,
+   "include": "slicer.h",
+   "resolved": "slicer.h",
+   "target_area": "external"
+  },
+  {
+   "file": "src/composing/analysis/slicing/slicer.h",
+   "line": 75,
+   "include": "composing/analysis/notemodel/note_model.h",
+   "resolved": "composing/analysis/notemodel/note_model.h",
+   "target_area": "notemodel"
+  }
+ ]
+}

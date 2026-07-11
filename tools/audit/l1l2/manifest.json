@@ -1,0 +1,41 @@
+{
+ "instrument": "tools/audit/gen_inventory.py",
+ "audit": "EG-7 L1/L2 certification, PASS 1 (blind enumerative)",
+ "head_commit": "7123c7cb5512b011811edb4b4c87bb1d8c94e877",
+ "script_blob_sha": "dd4f4361b1fe8933588c713074f237d413fd91f2",
+ "corpus_hash": "c50002fee1",
+ "scope_dir": "src/composing",
+ "extraction_method": "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring",
+ "totals": {
+  "tracked_files": 216,
+  "file_table_rows": 216,
+  "tag_counts": {
+   "L3+": 199,
+   "RETIRES": 4,
+   "L1": 11,
+   "L2": 2
+  },
+  "deep_audited_files": 13,
+  "functions": 55,
+  "literals": 92,
+  "branches": 192,
+  "fields": 39,
+  "decls": 28,
+  "crosslayer": 66
+ },
+ "deep_audited_file_list": [
+  "src/composing/analysis/engravingbridge/phraseboundaryview.cpp",
+  "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+  "src/composing/analysis/engravingbridge/regiontonecollector.cpp",
+  "src/composing/analysis/engravingbridge/regiontonecollector.h",
+  "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp",
+  "src/composing/analysis/engravingbridge/spellingview.cpp",
+  "src/composing/analysis/engravingbridge/spellingview.h",
+  "src/composing/analysis/notemodel/note_model.cpp",
+  "src/composing/analysis/notemodel/note_model.h",
+  "src/composing/analysis/scoreharvest/metricweights.cpp",
+  "src/composing/analysis/scoreharvest/metricweights.h",
+  "src/composing/analysis/slicing/slicer.cpp",
+  "src/composing/analysis/slicing/slicer.h"
+ ]
+}

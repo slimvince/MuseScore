@@ -1,0 +1,193 @@
+file,line,kind,func,context
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,74,if,collectVoiceLines,if (!isEligible(n)) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,78,if,collectVoiceLines,if (!ev.empty() && ev.back().onset == n.onset) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,106,if,collectMarkerTicks,if (!firstMeasure) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,113,if,collectMarkerTicks,if (a && (a->isFermata() || a->isTempoText())) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,123,if,collectMarkerTicks,if (e && e->isBreath()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,134,if,collectMarkerTicks,if (score->nstaves() > 0 && score->staff(0)) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,141,if,collectMarkerTicks,if (e && e->isKeySig()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,146,if,collectMarkerTicks,if (!ks) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,151,if,collectMarkerTicks,if (prevKey == std::numeric_limits<int>::min()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,153,else-if,collectMarkerTicks,} else if (key != prevKey && tick > 0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,164,if,collectMarkerTicks,if (bt == BarLineType::DOUBLE || bt == BarLineType::END
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,168,if,collectMarkerTicks,if (m->repeatStart()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,178,if,collectMarkerTicks,if (!spanner || !spanner->isGradualTempoChange()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,182,switch,collectMarkerTicks,switch (gtc->tempoChangeType()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,183,case,collectMarkerTicks,case GradualTempoChangeType::Ritardando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,184,case,collectMarkerTicks,case GradualTempoChangeType::Rallentando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,185,case,collectMarkerTicks,case GradualTempoChangeType::Allargando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,186,case,collectMarkerTicks,case GradualTempoChangeType::Calando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,187,case,collectMarkerTicks,case GradualTempoChangeType::Lentando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,188,case,collectMarkerTicks,case GradualTempoChangeType::Morendo:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,189,case,collectMarkerTicks,case GradualTempoChangeType::Smorzando:
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,200,if,collectMarkerTicks,if (sl.end - sl.start < params.minSilenceTicks) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,205,if,collectMarkerTicks,if (n && isEligible(*n)) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,210,if,collectMarkerTicks,if (!anyEligible) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,225,if,changeRatio,if (denom <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,236,ternary,localChangeProfile,"const double left  = (i > 0)     ? changeRatio(values[i - 1], values[i]) : 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,237,ternary,localChangeProfile,"const double right = (i + 1 < n) ? changeRatio(values[i], values[i + 1]) : 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,249,if,maxNormalizeInPlace,if (mx <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,261,if,pickPeaks,if (m == 0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,276,if,pickPeaks,if (leftOk && rightOk && x > threshold) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,289,if,computePhraseBoundaryProfile,if (!score) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,295,if,computePhraseBoundaryProfile,if (lines.empty()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,319,if,computePhraseBoundaryProfile,if (i + 1 < n) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,345,if,computePhraseBoundaryProfile,if (mx <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,391,if,computePhraseBoundaryProfile,if (rep == std::numeric_limits<int>::min() || s.first - rep > params.tauTicks) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,398,if,computePhraseBoundaryProfile,if (params.coincidenceWeight > 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,432,if,computePhraseBoundaryProfile,if (it != surfaceByTick.end()) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,435,if,computePhraseBoundaryProfile,if (markerTicks.count(t)) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,58,if,weightedPcView,if (!sc || endTickInt <= startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,65,if,weightedPcView,if (parentStartTickInt < 0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,115,if,weightedPcView,if (it == pedalWindowsByStaff.end()) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,121,if,weightedPcView,if (window.startTick >= candidate.writtenEndTick) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,124,if,weightedPcView,if (window.endTick <= candidate.writtenEndTick) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,130,ternary,weightedPcView,return pedalReleaseTick == std::numeric_limits<int>::max() ? -1 : pedalReleaseTick;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,135,if,weightedPcView,if (writtenEndTick >= endTickInt || pedalWindowsByStaff.empty()) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,138,if,weightedPcView,if (pedalWindowsByStaff.find(staffIdx) == pedalWindowsByStaff.end()) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,155,if,weightedPcView,if (!m0) { return 0.75; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,157,if,weightedPcView,if (!s0) { return 0.75; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,165,if,weightedPcView,if (!m) { return bwAtRegionStart; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,167,if,weightedPcView,if (!s) { return bwAtRegionStart; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,177,if,weightedPcView,if (excludeLookAheadOnDenseStart) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,184,if,weightedPcView,if (!passes(*ne) || ne->onset >= startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,188,if,weightedPcView,if (!backwardPc[pc]) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,199,if,weightedPcView,if (!passes(*ne) || ne->onset != startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,202,if,weightedPcView,if (!backwardPc[ne->pitch % 12]) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,212,if,weightedPcView,if (!passes(*ne)) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,218,if,weightedPcView,if (ne->onset >= startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,220,if,weightedPcView,if (excludeLookAhead && ne->onset > startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,225,if,weightedPcView,if (!m) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,229,ternary,weightedPcView,"const double bw = fs ? shv::regionMetricWeightForBeatType(shv::safeBeatType(m, fs)) : bwAtRegionStart;"
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,233,if,weightedPcView,if (durInRegion <= 0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,242,if,weightedPcView,if (ne->onset == parentStartTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,245,if,weightedPcView,if (ne->pitch < a.lowestPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,254,if,weightedPcView,if (durInRegion <= 0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,263,if,weightedPcView,if (ne->pitch < a.lowestPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,275,if,weightedPcView,if (!pedalWindowsByStaff.empty()) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,277,if,weightedPcView,if (!passes(*ne)) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,280,if,weightedPcView,if (excludeLookAhead && ne->onset > startTickInt) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,292,if,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,296,if,weightedPcView,if (distinct > 1) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,304,if,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,311,if,weightedPcView,if (maxVoices > 1) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,317,if,weightedPcView,if (prefs.pedalTailWeightMultiplier > 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,320,if,weightedPcView,if (pedalReleaseTick < 0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,327,if,weightedPcView,if (tailDuration <= 0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,336,if,weightedPcView,if (candidate.pitch < a.lowestPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,348,if,weightedPcView,if (totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,355,if,weightedPcView,if (accum[pc].totalWeight >= bassMinWeight && accum[pc].lowestPitch < bassPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,359,if,weightedPcView,if (bassPitch == std::numeric_limits<int>::max()) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,361,if,weightedPcView,if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,367,ternary,weightedPcView,? (bassPitch % 12) : -1;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,372,if,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,76,if,isChordTrackStaff,if (si >= sc->nstaves()) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,80,if,isChordTrackStaff,if (!part) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,83,if,isChordTrackStaff,if (part->partName().contains(CHORD_TRACK_MARKER)) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,96,if,staffIsEligible,if (!st->show()) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,99,if,staffIsEligible,if (st->part()->instrument(tick)->useDrumset()) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,102,if,staffIsEligible,"if (isChordTrackStaff(sc, si)) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,64,if,soundingAt,if (!passes(*ne)) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,67,if,soundingAt,if (ne->onset == tick) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,108,if,buildTones,if (sn.ppitch < lowestPpitch) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,136,if,collectPitchContext,if (!startMeasure) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,139,if,collectPitchContext,if (!startMeasure) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,147,if,collectPitchContext,if (segTick < windowStart) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,161,ternary,collectPitchContext,const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,168,if,collectPitchContext,"if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,174,if,collectPitchContext,if (!cr || !cr->isChord() || cr->isGrace()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,180,if,collectPitchContext,if (!n->play() || !n->visible()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,185,if,collectPitchContext,if (pp < lowestPitch) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,240,if,pitchContextOverSpan,if (!eligible(*ne)) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,244,if,pitchContextOverSpan,if (it == lowestByOnset.end() || ne->pitch < it->second) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,252,if,pitchContextOverSpan,if (!eligible(*ne)) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,261,if,pitchContextOverSpan,if (ne->onset < anchorStart) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,263,else-if,pitchContextOverSpan,} else if (ne->onset >= anchorEnd) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,268,ternary,pitchContextOverSpan,const double laMul = lookahead ? weights.lookaheadWeight : 1.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,297,if,detectOnsetSubBoundaries,if (!firstSeg) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,315,if,detectOnsetSubBoundaries,"if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,320,if,detectOnsetSubBoundaries,if (!cr || !cr->isChord() || cr->isGrace()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,323,if,detectOnsetSubBoundaries,if (cr->tick().ticks() != segTick) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,327,if,detectOnsetSubBoundaries,if (!n->play() || !n->visible()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,335,if,detectOnsetSubBoundaries,if (bits != 0) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,340,if,detectOnsetSubBoundaries,if (onsets.size() < 2) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,356,ternary,detectOnsetSubBoundaries,? (1.0 - static_cast<double>(interCount) / uniCount)
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,360,if,detectOnsetSubBoundaries,if (jaccard >= threshold && gapTicks >= minGapTicks) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,382,if,detectBassMovementSubBoundaries,if (!firstSeg) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,401,if,detectBassMovementSubBoundaries,"if (excludeStaves.count(si) || !staffIsEligible(sc, si, s->tick())) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,406,if,detectBassMovementSubBoundaries,if (!cr || !cr->isChord() || cr->isGrace()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,409,if,detectBassMovementSubBoundaries,if (cr->tick().ticks() != segTick) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,413,if,detectBassMovementSubBoundaries,if (!n->play() || !n->visible()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,417,if,detectBassMovementSubBoundaries,if (pitch < lowestPitch) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,425,if,detectBassMovementSubBoundaries,if (lowestPC >= 0) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,430,if,detectBassMovementSubBoundaries,if (onsets.empty()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,441,if,detectBassMovementSubBoundaries,if (curPC != lastBoundaryBassPC && gapTicks >= minGapTicks) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,486,if,findTemporalContext,"if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,492,if,findTemporalContext,if (cr && cr->isChord() && !cr->isGrace()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,497,if,findTemporalContext,if (!hasAttacks) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,503,if,findTemporalContext,if (!prevSounding.empty()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,510,if,findTemporalContext,if (!prevResults.empty()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,529,if,findTemporalContext,if (currentBassPc != -1 && temporalCtx.previousBassPc != -1) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,544,if,findTemporalContext,"if (excludeStaves.count(si) || !staffIsEligible(sc, si, tick)) {"
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,550,if,findTemporalContext,if (cr && cr->isChord() && !cr->isGrace()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,555,if,findTemporalContext,if (!hasAttacks) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,561,if,findTemporalContext,if (!nextSounding.empty()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,568,if,findTemporalContext,if (!nextResults.empty()) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,586,if,findTemporalContext,if (currentBassPc != -1 && temporalCtx.nextBassPc != -1) {
+src/composing/analysis/engravingbridge/spellingview.cpp,38,if,lineOfFifths,if (!tpcIsValid(tpc)) {
+src/composing/analysis/engravingbridge/spellingview.cpp,47,if,sharpFlatSense,if (lof == kNoLineOfFifths) {
+src/composing/analysis/engravingbridge/spellingview.cpp,59,if,spanSpelling,if (lof == kNoLineOfFifths) {
+src/composing/analysis/engravingbridge/spellingview.cpp,64,if,spanSpelling,if (lof > 0) {
+src/composing/analysis/engravingbridge/spellingview.cpp,66,else-if,spanSpelling,} else if (lof < 0) {
+src/composing/analysis/engravingbridge/spellingview.cpp,72,if,spanSpelling,if (agg.count > 0) {
+src/composing/analysis/notemodel/note_model.cpp,78,if,scoreSpan,if (!sc) {
+src/composing/analysis/notemodel/note_model.cpp,82,if,scoreSpan,if (!firstMeasure) {
+src/composing/analysis/notemodel/note_model.cpp,129,if,rebuildForLoadedSpan,if (!sc) {
+src/composing/analysis/notemodel/note_model.cpp,134,if,rebuildForLoadedSpan,if (!firstMeasure) {
+src/composing/analysis/notemodel/note_model.cpp,147,if,rebuildForLoadedSpan,if (e.onset < t1 && e.release > t0) {
+src/composing/analysis/notemodel/note_model.cpp,168,if,rebuildForLoadedSpan,if (!cr || !cr->isChord()) {
+src/composing/analysis/notemodel/note_model.cpp,177,if,rebuildForLoadedSpan,if (!grace) {
+src/composing/analysis/notemodel/note_model.cpp,181,if,rebuildForLoadedSpan,if (gn->tieBack()) {
+src/composing/analysis/notemodel/note_model.cpp,190,if,rebuildForLoadedSpan,if (n->tieBack()) {
+src/composing/analysis/notemodel/note_model.cpp,206,if,extend,if (amountTicks <= 0) {
+src/composing/analysis/notemodel/note_model.cpp,210,if,extend,if (dir == Direction::Earlier) {
+src/composing/analysis/notemodel/note_model.cpp,212,if,extend,if (target <= m_scoreStart) {
+src/composing/analysis/notemodel/note_model.cpp,218,if,extend,if (target == m_loadedStart) {
+src/composing/analysis/notemodel/note_model.cpp,224,if,extend,if (target >= m_scoreEnd) {
+src/composing/analysis/notemodel/note_model.cpp,230,if,extend,if (target == m_loadedEnd) {
+src/composing/analysis/notemodel/note_model.cpp,250,if,build,if (m_n == 0) {
+src/composing/analysis/notemodel/note_model.cpp,280,if,overlapIndices,if (qHi <= 0 || m_segSize == 0) {
+src/composing/analysis/notemodel/note_model.cpp,289,if,collect,if (nodeLo >= qHi) {
+src/composing/analysis/notemodel/note_model.cpp,292,if,collect,if (m_segMaxRel[node] <= t0) {
+src/composing/analysis/notemodel/note_model.cpp,295,if,collect,if (nodeHi - nodeLo == 1) {
+src/composing/analysis/notemodel/note_model.cpp,310,if,overlapping,if (t1 <= t0 || m_notes.empty()) {
+src/composing/analysis/notemodel/note_model.cpp,330,if,onsetIn,if (t1 <= t0 || m_notes.empty()) {
+src/composing/analysis/scoreharvest/metricweights.cpp,43,switch,beatTypeToWeight,switch (bt) {
+src/composing/analysis/scoreharvest/metricweights.cpp,44,case,beatTypeToWeight,case BeatType::DOWNBEAT:              return prefs.beatWeightDownbeat;
+src/composing/analysis/scoreharvest/metricweights.cpp,45,case,beatTypeToWeight,case BeatType::COMPOUND_STRESSED:     return prefs.beatWeightCompoundStressed;
+src/composing/analysis/scoreharvest/metricweights.cpp,46,case,beatTypeToWeight,case BeatType::SIMPLE_STRESSED:       return prefs.beatWeightSimpleStressed;
+src/composing/analysis/scoreharvest/metricweights.cpp,47,case,beatTypeToWeight,case BeatType::COMPOUND_UNSTRESSED:   return prefs.beatWeightCompoundUnstressed;
+src/composing/analysis/scoreharvest/metricweights.cpp,48,case,beatTypeToWeight,case BeatType::SIMPLE_UNSTRESSED:     return prefs.beatWeightSimpleUnstressed;
+src/composing/analysis/scoreharvest/metricweights.cpp,49,case,beatTypeToWeight,case BeatType::COMPOUND_SUBBEAT:      return prefs.beatWeightCompoundSubbeat;
+src/composing/analysis/scoreharvest/metricweights.cpp,50,case,beatTypeToWeight,case BeatType::SUBBEAT:               return prefs.beatWeightSubbeat;
+src/composing/analysis/scoreharvest/metricweights.cpp,60,if,safeBeatType,if (!measure || !segment) {
+src/composing/analysis/scoreharvest/metricweights.cpp,66,if,safeBeatType,if (numerator <= 0 || denominator <= 0) {
+src/composing/analysis/scoreharvest/metricweights.cpp,76,switch,regionMetricWeightForBeatType,switch (bt) {
+src/composing/analysis/scoreharvest/metricweights.cpp,77,case,regionMetricWeightForBeatType,case BeatType::DOWNBEAT:            return 1.0;
+src/composing/analysis/scoreharvest/metricweights.cpp,78,case,regionMetricWeightForBeatType,case BeatType::SIMPLE_STRESSED:
+src/composing/analysis/scoreharvest/metricweights.cpp,79,case,regionMetricWeightForBeatType,case BeatType::COMPOUND_STRESSED:   return 0.85;
+src/composing/analysis/scoreharvest/metricweights.cpp,80,case,regionMetricWeightForBeatType,case BeatType::SIMPLE_UNSTRESSED:
+src/composing/analysis/scoreharvest/metricweights.cpp,81,case,regionMetricWeightForBeatType,case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+src/composing/analysis/scoreharvest/metricweights.cpp,89,if,beatTypeForOnsetTick,if (!sc) {
+src/composing/analysis/scoreharvest/metricweights.cpp,93,if,beatTypeForOnsetTick,if (!m) {
+src/composing/analysis/scoreharvest/metricweights.cpp,98,if,beatTypeForOnsetTick,if (num <= 0 || den <= 0) {
+src/composing/analysis/scoreharvest/metricweights.cpp,122,if,distinctPitchClasses,if (!seen[pc]) {
+src/composing/analysis/scoreharvest/metricweights.cpp,142,if,buildPedalWindowIndex,if (!spanner || spanner->type() != ElementType::PEDAL) {
+src/composing/analysis/scoreharvest/metricweights.cpp,147,if,buildPedalWindowIndex,if (!pedal) {
+src/composing/analysis/scoreharvest/metricweights.cpp,152,if,buildPedalWindowIndex,"if (beginText == u""<sym>keyboardPedalSost</sym>"" || beginText == u""<sym>keyboardPedalS</sym>"") {"
+src/composing/analysis/scoreharvest/metricweights.cpp,158,if,buildPedalWindowIndex,if (pedalEndTick <= pedalStartTick || pedalEndTick <= startTickInt || pedalStartTick >= endTickInt) {
+src/composing/analysis/scoreharvest/metricweights.cpp,163,if,buildPedalWindowIndex,if (staffIdx >= sc->nstaves() || excludeStaves.count(staffIdx) || !isStaffEligible(staffIdx)) {
+src/composing/analysis/scoreharvest/metricweights.cpp,173,if,buildPedalWindowIndex,if (lhs.startTick != rhs.startTick) {
+src/composing/analysis/slicing/slicer.cpp,40,if,changePointSlices,if (!(e.plays && e.visible && e.staffEligible)) {
+src/composing/analysis/slicing/slicer.cpp,59,if,changePointSlices,if (boundaries.size() < 2) {
+src/composing/analysis/slicing/slicer.cpp,95,if,changePointSlices,if (boundaries.size() < 2) {

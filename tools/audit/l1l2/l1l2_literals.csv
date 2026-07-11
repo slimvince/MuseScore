@@ -1,0 +1,93 @@
+file,line,value,func,context
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,225,0.0,changeRatio,if (denom <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,226,0.0,changeRatio,return 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,234,0.0,localChangeProfile,"std::vector<double> out(n, 0.0);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,236,0.0,localChangeProfile,"const double left  = (i > 0)     ? changeRatio(values[i - 1], values[i]) : 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,237,0.0,localChangeProfile,"const double right = (i + 1 < n) ? changeRatio(values[i], values[i + 1]) : 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,245,0.0,maxNormalizeInPlace,double mx = 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,249,0.0,maxNormalizeInPlace,if (mx <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,264,0.0,pickPeaks,"double sum = 0.0, sumSq = 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,264,0.0,pickPeaks,"double sum = 0.0, sumSq = 0.0;"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,270,0.0,pickPeaks,"const double var = std::max(0.0, sumSq / static_cast<double>(m) - mean * mean);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,315,0.0,computePhraseBoundaryProfile,"std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,315,0.0,computePhraseBoundaryProfile,"std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,315,0.0,computePhraseBoundaryProfile,"std::vector<double> gapVal(n, 0.0), ioiVal(n, 0.0), pitchVal(n, 0.0);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,339,0.0,computePhraseBoundaryProfile,double mx = 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,345,0.0,computePhraseBoundaryProfile,if (mx <= 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,366,0.0,computePhraseBoundaryProfile,"vb.strength.resize(v.onsets.size(), 0.0);"
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,398,0.0,computePhraseBoundaryProfile,if (params.coincidenceWeight > 0.0) {
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,400,1.0,computePhraseBoundaryProfile,strength *= (1.0 + params.coincidenceWeight * (countByTick[tick] - 1));
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,430,0.0,computePhraseBoundaryProfile,double strength = 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,85,0.50,<file-scope>,double wGap        = 0.50;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,86,0.30,<file-scope>,double wInterOnset = 0.30;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,87,0.20,<file-scope>,double wPitch      = 0.20;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,91,1.0,<file-scope>,double k = 1.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,103,0.0,<file-scope>,double coincidenceWeight = 0.0;
+src/composing/analysis/engravingbridge/phraseboundaryview.h,107,240,<file-scope>,int minSilenceTicks = 240;   // eighth note at 480 ticks / quarter
+src/composing/analysis/engravingbridge/phraseboundaryview.h,114,1.5,<file-scope>,double spikeCeilingFactor = 1.5;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,87,0.0,weightedPcView,double totalWeight      = 0.0;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,94,12,weightedPcView,PcAccum accum[12];
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,96,12,weightedPcView,"std::map<int, int> voiceCountAtTick[12];"
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,104,0.0,weightedPcView,double attackBeatWeight = 0.0;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,143,12,weightedPcView,"pitch % 12,"
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,151,4,weightedPcView,"const int backLimitInt = (startTick - Fraction(4, 1)).ticks();"
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,155,0.75,weightedPcView,if (!m0) { return 0.75; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,157,0.75,weightedPcView,if (!s0) { return 0.75; }
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,181,12,weightedPcView,bool backwardPc[12] = { false };
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,187,12,weightedPcView,const int pc = ne->pitch % 12;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,202,12,weightedPcView,if (!backwardPc[ne->pitch % 12]) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,206,3,weightedPcView,excludeLookAhead = (pcsSoundingAtStart >= 3);
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,215,12,weightedPcView,const int pc = ne->pitch % 12;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,290,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,292,0.0,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,297,1.0,weightedPcView,a.totalWeight *= (1.0 + 0.3 * (distinct - 1));
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,297,0.3,weightedPcView,a.totalWeight *= (1.0 + 0.3 * (distinct - 1));
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,302,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,304,0.0,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,312,1.5,weightedPcView,a.totalWeight *= 1.5;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,317,0.0,weightedPcView,if (prefs.pedalTailWeightMultiplier > 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,344,0.0,weightedPcView,double totalWeight = 0.0;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,345,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,348,0.0,weightedPcView,if (totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,354,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,360,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,361,0.0,weightedPcView,if (accum[pc].totalWeight > 0.0 && accum[pc].lowestPitch < bassPitch) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,367,12,weightedPcView,? (bassPitch % 12) : -1;
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,370,12,weightedPcView,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,372,0.0,weightedPcView,if (a.totalWeight == 0.0) {
+src/composing/analysis/engravingbridge/regiontonecollector.h,194,0.25,<file-scope>,double threshold = 0.25);
+src/composing/analysis/engravingbridge/regiontonecollector.h,207,2,<file-scope>,int minGapTicks = 2 * mu::engraving::Constants::DIVISION);
+src/composing/analysis/engravingbridge/regiontonecollector.h,249,0.7,<file-scope>,double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE
+src/composing/analysis/engravingbridge/regiontonecollector.h,250,0.5,<file-scope>,double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT
+src/composing/analysis/engravingbridge/regiontonecollector.h,251,4.0,<file-scope>,double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure)
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,161,1.0,collectPitchContext,const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,259,0.0,pitchContextOverSpan,double distBeats = 0.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,268,1.0,pitchContextOverSpan,const double laMul = lookahead ? weights.lookaheadWeight : 1.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,330,12,detectOnsetSubBoundaries,bits |= static_cast<uint16_t>(1u << (n->ppitch() % 12));
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,340,2,detectOnsetSubBoundaries,if (onsets.size() < 2) {
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,344,2,detectOnsetSubBoundaries,const int minGapTicks = 2 * Constants::DIVISION;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,356,1.0,detectOnsetSubBoundaries,? (1.0 - static_cast<double>(interCount) / uniCount)
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,357,0.0,detectOnsetSubBoundaries,: 0.0;
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,419,12,detectBassMovementSubBoundaries,lowestPC    = pitch % 12;
+src/composing/analysis/engravingbridge/spellingview.h,101,0.0,<file-scope>,double lofCentroid  = 0.0;  ///< mean line-of-fifths position over the valid spellings (0.0 if count == 0)
+src/composing/analysis/notemodel/note_model.cpp,263,2,build,"m_segMaxRel.assign(static_cast<std::size_t>(2) * m_segSize, INT_MIN);"
+src/composing/analysis/notemodel/note_model.cpp,268,2,build,"m_segMaxRel[v] = std::max(m_segMaxRel[2 * v], m_segMaxRel[2 * v + 1]);"
+src/composing/analysis/notemodel/note_model.cpp,268,2,build,"m_segMaxRel[v] = std::max(m_segMaxRel[2 * v], m_segMaxRel[2 * v + 1]);"
+src/composing/analysis/notemodel/note_model.cpp,302,2,collect,const int mid = (nodeLo + nodeHi) / 2;
+src/composing/analysis/notemodel/note_model.cpp,303,2,collect,"collect(2 * node, nodeLo, mid, qHi, t0, out);          // left first ⇒ ascending order."
+src/composing/analysis/notemodel/note_model.cpp,304,2,collect,"collect(2 * node + 1, mid, nodeHi, qHi, t0, out);"
+src/composing/analysis/scoreharvest/metricweights.cpp,77,1.0,regionMetricWeightForBeatType,case BeatType::DOWNBEAT:            return 1.0;
+src/composing/analysis/scoreharvest/metricweights.cpp,79,0.85,regionMetricWeightForBeatType,case BeatType::COMPOUND_STRESSED:   return 0.85;
+src/composing/analysis/scoreharvest/metricweights.cpp,81,0.75,regionMetricWeightForBeatType,case BeatType::COMPOUND_UNSTRESSED: return 0.75;
+src/composing/analysis/scoreharvest/metricweights.cpp,82,0.5,regionMetricWeightForBeatType,default:                            return 0.5;
+src/composing/analysis/scoreharvest/metricweights.cpp,117,12,distinctPitchClasses,bool seen[12] = {};
+src/composing/analysis/scoreharvest/metricweights.cpp,121,12,distinctPitchClasses,const int pc = p.pitch % 12;
+src/composing/analysis/scoreharvest/metricweights.h,57,16,<file-scope>,inline constexpr int    LOOKBACK_BEATS   = 16;
+src/composing/analysis/scoreharvest/metricweights.h,58,8,<file-scope>,inline constexpr int    LOOKAHEAD_BEATS  = 8;
+src/composing/analysis/scoreharvest/metricweights.h,59,0.5,<file-scope>,inline constexpr double LOOKAHEAD_WEIGHT = 0.5;
+src/composing/analysis/scoreharvest/metricweights.h,60,0.7,<file-scope>,inline constexpr double DECAY_RATE       = 0.7;   // multiplier per measure (4 quarter notes)
+src/composing/analysis/scoreharvest/metricweights.h,69,4,<file-scope>,inline constexpr int kPass2bMinRegionTicks = 4 * mu::engraving::Constants::DIVISION;
+src/composing/analysis/scoreharvest/metricweights.h,104,4.0,<file-scope>,"double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPerUnit = 4.0);"
+src/composing/analysis/slicing/slicer.cpp,38,2,changePointSlices,boundaries.reserve(model.notes().size() * 2);
+src/composing/analysis/slicing/slicer.cpp,59,2,changePointSlices,if (boundaries.size() < 2) {
+src/composing/analysis/slicing/slicer.cpp,95,2,changePointSlices,if (boundaries.size() < 2) {
