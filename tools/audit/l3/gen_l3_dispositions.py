@@ -176,7 +176,7 @@ def classify_literal(r):
                     "chord-candidate coupling rank-decay (floor 0.1 / slope 0.3) — hand-set in-code, NOT tagged empirical, NOT in param_manifest, NOT a JointKeyWeights member")
         if val == "3" and "popcount" in ctx:
             return ("constant", "ESTABLISHED", "no", "FACT: >=3 pcs required to determine a triad (chord-pinned structural)")
-        return ("constant", "ESTABLISHED", "no", "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py — see finding L3-F3a)")
+        return ("constant", "ESTABLISHED", "no", "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded — see report section 5)")
     if b in ("sectioncadencedetection.cpp",):
         return ("constant", "ESTABLISHED", "no", "cadence-degree / structural literal (the 0.8 gate + pivot-lookahead are named constants — see fields/decls)")
     if b in ("regionanalyzer.cpp", "regionanalyzer.h", "sectionanalyzer.cpp", "sectionanalyzer.h", "harmonicrhythm.h"):
@@ -221,7 +221,7 @@ def classify_field(r):
     if base(r["file"]) == "harmonicrhythm.h" and owner == "HarmonicRegion":
         if name in ("keyConfidence",):
             return ("L3-MIXED", "derived-fact", "PUBLISHED", "no",
-                    "THE L3 boundary confidence (sequence margin) on the region DTO — PUBLISHED but NO production consumer (declared dormancy -> L5); the 0.8 gate reads keyModeResult.normalizedConfidence instead (finding L3-F5)")
+                    "THE L3 boundary confidence (sequence margin) on the region DTO — PUBLISHED but NO production consumer (declared dormancy -> L5); the 0.8 gate reads keyModeResult.normalizedConfidence instead (the D-L3a stance — report section 5)")
         if name in ("keyAlternatives",):
             return ("L3-MIXED", "derived-fact", "PUBLISHED", "no",
                     "region-level candidate-key menu — PUBLISHED, no production consumer (declared dormancy -> L5 modulation recompute)")
@@ -276,10 +276,10 @@ def classify_cross(r):
         if b in CORE_L3_FILES:
             if tgt == "chord" and "analysisutils" in inc:
                 return ("cross", "BACK-EDGE-NOTE",
-                        "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) — dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling")
+                        "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) — dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling")
             if tgt == "chord" and "chordanalyzer.h" in inc:
                 return ("cross", "BACK-EDGE",
-                        "L3-F4: CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h — an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)")
+                        "CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h — an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)")
             return ("cross", "BACK-EDGE",
                     "CORE L3 file includes a %s (L4/L5) header — potential back-edge; verify it is a type-only / shared-util include, else a Dependency-Rule violation" % tgt)
         return ("cross", "MIXED-DEFERRED",

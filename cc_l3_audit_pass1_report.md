@@ -72,8 +72,8 @@ rubric; "no issue" is a recorded claim with a stated reason. Counts by verdict:
 | DEFERRED | 140 | L4/L5/L2 part of a mixed file — deferred to the owning layer's audit (split recorded) |
 | FORWARD-OK | 76 | cross-layer include respecting the Dependency Rule |
 | MIXED-DEFERRED | 11 | L4/L5 include in a mixed orchestrator (its non-L3 part) |
-| BACK-EDGE-NOTE | 5 | L3 → `chord/analysisutils.h` for pitch primitives (layering smell — L3-F7) |
-| BACK-EDGE | 2 | L3 header → heavy `chord/chordanalyzer.h` for an enum in the leaf (L3-F4) |
+| BACK-EDGE-NOTE | 5 | L3 → `chord/analysisutils.h` for pitch primitives (layering smell — OI-93) |
+| BACK-EDGE | 2 | L3 header → heavy `chord/chordanalyzer.h` for an enum in the leaf (OI-93) |
 
 **Zero DEAD constants and zero SILOED/TRAPPED facts were found among the L3-in-scope rows.** No
 unpublished derived fact was found trapped: the two currently-unconsumed L3 facts (`keyConfidence`
@@ -90,15 +90,15 @@ passing-vs-real modulation handling. Located in the code:
 |---|---|
 | chosen key/mode per region | ✅ `decode()` → `SliceKeyMode.chosen` → `HarmonicRegion.keyModeResult` (duration-majority over the slice run, `localKeyForRegion`) |
 | ranked key alternatives | ✅ `SliceKeyMode.alternatives` → `HarmonicRegion.keyAlternatives` (declared dormancy → L5) |
-| boundary confidence | ✅ `SliceKeyMode.confidence` (sequence margin) → `HarmonicRegion.keyConfidence` (D-L3a) — **but unconsumed in production (L3-F5)** |
+| boundary confidence | ✅ `SliceKeyMode.confidence` (sequence margin) → `HarmonicRegion.keyConfidence` (D-L3a) — **but unconsumed in production (OI-75)** |
 | "uncertain" flag | ✅ `SliceKeyMode.uncertain` (drives the dormant reach-back trigger) |
-| KeyArea spans | ✅ `analyzeSection` → `out.keyAreas` (confidence-gated) — gate reads the emission sigmoid, not the margin (L3-F5) |
+| KeyArea spans | ✅ `analyzeSection` → `out.keyAreas` (confidence-gated) — gate reads the emission sigmoid, not the margin (OI-75) |
 | signature context (fifths + declared mode + partial-sig correction) | ✅ shared `resolveKeySignatureContext` |
 | declared mode as a weak hint | ✅ `declaredModePenalty = 1.0` (demoted from a wall) |
 | passing-vs-real modulation | ✅ via the decoder change cost; the confirmed-modulation-span machinery (`localmodulationdetector`, `jointkeydecision`) is DORMANT by design |
 | enharmonic key handling | ✅ `resolveToFifths` / `keyModeSignatureFifths` pick the spelling nearest the reference |
-| mid-piece notated key-signature CHANGE | ⚠ **documented deferral** — single-signature anchor at startTick; a notated key change is tracked only via the note-driven change cost (L3-F6a) |
-| A-3 dominant-implication key evidence (roadmap A-3 / L3 §15) | ⚠ **named-future, not built** (L3-F6b) |
+| mid-piece notated key-signature CHANGE | ⚠ **documented deferral** — single-signature anchor at startTick; a notated key change is tracked only via the note-driven change cost (OI-94) |
+| A-3 dominant-implication key evidence (roadmap A-3 / L3 §15) | ⚠ **named-future, not built** (OI-94) |
 
 ## 4. Behavioral characterization (protocol P4) — fire rates on the pinned corpus
 
@@ -133,7 +133,7 @@ phase (no inference-problem-driven code engaged).
 Each is a fact recorded for Cowork; nothing is fixed this session (guiding principle 8). Register rows
 opened in the report's commit (§ below, at unblind).
 
-- **L3-F2 (medium) — the L3 key/mode scoring constants are not in the Stage-5 parameter manifest.**
+- **OI-91 (medium) — the L3 key/mode scoring constants are not in the Stage-5 parameter manifest.**
   The ~60 `KeyModeAnalyzerPreferences` weights (in `types/analysistypes.h`), the 21×5 `ModePriorPreset`
   mode priors, the `KeyModeSequencePreferences` change-cost/window settings, and the
   cadence-anchor / local-modulation / joint-key weights are all commented "[empirical — Stage-5 fits]",
@@ -143,43 +143,43 @@ opened in the report's commit (§ below, at unblind).
   un-inventoried block of stated fit-targets. *(Verify at unblind whether this is a deliberate deferral
   in `cowork_stage5_fitter_design.md`; if not, it is a param-manifest coverage gap.)*
 
-- **L3-F4 (low-medium) — two L3 headers reach into the heavy L4 chord header for an enum in the leaf.**
+- **OI-93 (low-medium) — two L3 headers reach into the heavy L4 chord header for an enum in the leaf.**
   `section/cadencekeyanchor.h:50` and `section/jointkeydecision.h:85` `#include "chord/chordanalyzer.h"`
   solely for the `ChordQuality` enum — but `ChordQuality` lives in the dependency-free types leaf
   `types/analysistypes.h:120`. The types-leaf refactor removed exactly this header back-edge for
   `keymodeanalyzer.h` and `regiontonecollector.h` but left it on these two section-detector headers. A
   one-line include swap would restore the forward-only layering (Dependency Rule / #7).
 
-- **L3-F3 (low-medium) — a duplicated chord-template table across C++ and Python, not sync-guarded.**
+- **OI-92 (low-medium) — a duplicated chord-template table across C++ and Python, not sync-guarded.**
   `jointkeydecision.cpp:73-88` `kJkdTemplates` (14-entry tertian vocabulary) is comment-declared
   "IDENTICAL to `tools/cc_joint_residual_probe.py` TEMPLATES", so the chord-pinned test reproduces the
   probe's PINNED class — but nothing enforces it (unlike the mode-prior duplication, which a test
   guards). If either copy drifts the two silently diverge. Diagnostic-only, gated OFF.
 
-- **L3-F1 (low) — a mis-tag in the committed L1/L2 file table.** `decode/chordpathdecoder.h` is tagged
+- **OI-90 (low) — a mis-tag in the committed L1/L2 file table.** `decode/chordpathdecoder.h` is tagged
   "L3 key-mode decoder scaffolding" there, but it is the beam-1 **CHORD-path** decoder (Stage 3.1,
   Layer 4): it includes `chord/chordanalyzer.h` and threads `ChordAnalysisResult`/`ChordIdentity` via
   `advanceTemporalContext`. Corrected to `L4` in this audit's tag map; noted so the L1/L2 file table can
   be corrected.
 
-- **L3-F5 (informational, documented) — the production key-confidence gate reads the weaker of L3's two
+- **OI-75 (informational, documented) — the production key-confidence gate reads the weaker of L3's two
   confidences.** L3 publishes an emission sigmoid (`keyModeResult.normalizedConfidence`) AND a sequence
   margin (`keyConfidence`, THE boundary confidence, code-noted 2.8–3.1× better calibrated). The
   production 0.8 KeyArea/cadence gate reads the sigmoid; the better margin has no production consumer.
   This is the deliberate **D-L3a** decision (gate input held as the sigmoid pending L5 wiring; the margin
   is carried for L5). Not a defect — surfaced by the contract check as published-unconsumed-by-design.
 
-- **L3-F6 (informational, documented) — two acknowledged deferrals in L3's contract:** (a) a mid-piece
+- **OI-94 (informational, documented) — two acknowledged deferrals in L3's contract:** (a) a mid-piece
   notated key-signature change is not re-anchored (single-signature anchor at start; note-driven change
   cost only — `regionanalyzer.cpp:626-628`); (b) the A-3 dominant-implication key-evidence channel is
   named but not built. Both are design-acknowledged; recorded for negative-space completeness.
 
-- **L3-F7 (low) — shared pitch primitives siloed under `chord/`.** Five core-L3 `.cpp` files include
+- **OI-93 (low) — shared pitch primitives siloed under `chord/`.** Five core-L3 `.cpp` files include
   `chord/analysisutils.h` for `normalizePc`/`diatonicMaskFromFifths`. That header is dependency-free
   (cstdint/map/string only), so it is not a heavy coupling, but pc primitives consumed cross-layer sit
   in the L4 directory. A layering note.
 
-- **L3-F8 (housekeeping, out of L3 scope) — the committed L1/L2 inventory artifacts are line-stale.**
+- **OI-95 (housekeeping, out of L3 scope) — the committed L1/L2 inventory artifacts are line-stale.**
   Regenerating `tools/audit/l1l2/{l1l2_functions.csv,l1l2_decls.csv,inventory.json}` shifts
   `note_model.h` rows by +4 lines (source drift since they were committed). Substance identical. An
   L1/L2-artifact reproducibility note.
@@ -227,12 +227,42 @@ opened in the report's commit (§ below, at unblind).
 ## 8. Mis-tag corrections made by this audit (Task 1.1)
 
 - `decode/chordpathdecoder.h`: L1/L2 said "L3 key-mode decoder scaffolding" → **L4** (chord-path decoder;
-  L3-F1).
+  OI-90).
 - `region/sparsechordrefinement.{h,cpp}`: was `L3+` → **L4** (chord-quality refinement that *consumes*
   the L3 key as a prior; deferred to the L4 audit — not L3 key inference).
 
-## 9. Register + type promotion + certification status *(filled at unblind — Task 5)*
+## 9. Register + type promotion + certification status (Task 5 — unblind)
 
-*(Task 5: cross-reference each finding against `OPEN_ITEMS.md`; open a register row per new issue in this
-commit; promote any new problem TYPE into `DEFECT_TYPES.md`; state that certification is WITHHELD pending
-pass 2 + the P6 error-rate.)*
+**Freeze commit (the blinding boundary): `61dabd86d1`.** After it, `OPEN_ITEMS.md`, `DEFECT_TYPES.md`,
+and `STATUS.md` were opened (in that order) — the first opening of every withheld file, per §0.
+
+**Findings → register (each finding mapped; existing rows referenced, not duplicated):**
+
+| Finding | Register | Type |
+|---|---|---|
+| OI-90 mis-tag (`chordpathdecoder.h` = L4; `sparsechordrefinement` = L4) | **OI-90 (new)** | **DT-21 (new)** |
+| OI-91 L3 emission constants absent from `param_manifest.json` | **OI-91 (new)** — the L3 twin of OI-87; feeds OI-6/EG-5 | DT-2 |
+| OI-92 `kJkdTemplates` C++↔Python dup, not sync-guarded | **OI-92 (new)** | DT-3 |
+| L3→`chord/` cross-layer deps (header back-edge for a leaf enum + pc-util silo) | **OI-93 (new)** — sibling of OI-86 | DT-19 |
+| OI-75 `keyConfidence`/`keyAlternatives` unconsumed | **existing OI-75** (re-confirmed + D-L3a detail; relates OI-49) | DT-5 |
+| OI-94 mid-piece key-sig re-anchor + A-3 not built | **OI-94 (new)**; A-3 = existing OI-68 | — (documented deferrals) |
+| OI-95 + the disposition-generator #6 debt | **OI-95 (new)** | DT-12-adjacent / #6 |
+| (modepriorpresets dup, sync-guarded/mitigated) | existing **OI-63** (mode-prior single-sourcing) | DT-3 (mitigated) |
+
+**New problem TYPE promoted (P7/P8):** **DT-21 — Layer mis-attribution in the inventory/tag table** (a
+deferred-layer tag wrong on deep-read; re-verify every deep tag at the code, never inherit). Founding
+instance = OI-90. Same-commit rule honored (promoted in this report's fold commit). No other finding
+implied a new type — OI-91/F3/F4/F7 are instances of the existing DT-2/DT-3/DT-19.
+
+**Not a surprise (guiding principle 3):** every finding is a KNOWN class (DT-2/3/19/5) or a
+design-acknowledged deferral — the L3 emission-constant manifest gap is the exact L1/L2 pattern (OI-87)
+one layer up; the unconsumed key facts were already OI-75. Nothing contradicts the established fact/theory
+basis; the L3 spine reproduces its documented design.
+
+**Certification status: WITHHELD.** Pass 1 (blind enumerative, P1–P4) found **no correctness defect** in
+the L3 key/mode inference — the decoder is live and clean, the emission scorer is music-theory-grounded,
+the dormant confirmed-modulation/joint-key machinery is correctly gated OFF, and the layering is
+forward-only except two documented back-edges. But certification requires BOTH passes plus the P6
+error-rate (protocol P6/P8): pass 2 (the DT signature sweep with the full catalog, a fresh session) and
+the measured residual-error rate are **owed**. Certification is **not self-granted** — it returns to the
+user after pass 2, exactly as L1/L2 did (OI-84/OI-89).

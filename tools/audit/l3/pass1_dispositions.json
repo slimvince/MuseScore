@@ -8195,7 +8195,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8207,7 +8207,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8219,7 +8219,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8231,7 +8231,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8243,7 +8243,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8255,7 +8255,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8267,7 +8267,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8279,7 +8279,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8291,7 +8291,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8303,7 +8303,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8315,7 +8315,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8327,7 +8327,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8339,7 +8339,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8351,7 +8351,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8363,7 +8363,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8375,7 +8375,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8387,7 +8387,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8399,7 +8399,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8411,7 +8411,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8423,7 +8423,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8435,7 +8435,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8447,7 +8447,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8459,7 +8459,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8471,7 +8471,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8483,7 +8483,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8495,7 +8495,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8507,7 +8507,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8519,7 +8519,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8531,7 +8531,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8543,7 +8543,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8555,7 +8555,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8567,7 +8567,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8579,7 +8579,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8591,7 +8591,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8603,7 +8603,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8615,7 +8615,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8627,7 +8627,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8639,7 +8639,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8651,7 +8651,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8663,7 +8663,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8675,7 +8675,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8687,7 +8687,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8699,7 +8699,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8711,7 +8711,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8723,7 +8723,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8735,7 +8735,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8747,7 +8747,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8759,7 +8759,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8771,7 +8771,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8783,7 +8783,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8795,7 +8795,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8807,7 +8807,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8819,7 +8819,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8831,7 +8831,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8843,7 +8843,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8867,7 +8867,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8879,7 +8879,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8891,7 +8891,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8903,7 +8903,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8927,7 +8927,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8951,7 +8951,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -8963,7 +8963,7 @@
    "verdict_class": "constant",
    "verdict": "ESTABLISHED",
    "in_param_manifest": "no",
-   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py \u2014 see finding L3-F3a)"
+   "reason": "chord-template interval / structural literal (kJkdTemplates DUPLICATED vs tools/cc_joint_residual_probe.py, not sync-guarded \u2014 see report section 5)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.h",
@@ -13703,7 +13703,7 @@
    "verdict_class": "derived-fact",
    "verdict": "PUBLISHED",
    "in_param_manifest": "no",
-   "reason": "THE L3 boundary confidence (sequence margin) on the region DTO \u2014 PUBLISHED but NO production consumer (declared dormancy -> L5); the 0.8 gate reads keyModeResult.normalizedConfidence instead (finding L3-F5)"
+   "reason": "THE L3 boundary confidence (sequence margin) on the region DTO \u2014 PUBLISHED but NO production consumer (declared dormancy -> L5); the 0.8 gate reads keyModeResult.normalizedConfidence instead (the D-L3a stance \u2014 report section 5)"
   },
   {
    "file": "src/composing/analysis/region/regionanalyzer.h",
@@ -22247,7 +22247,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE-NOTE",
    "in_param_manifest": "",
-   "reason": "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
+   "reason": "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
   },
   {
    "file": "src/composing/analysis/key/keymodeanalyzer.h",
@@ -22511,7 +22511,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE-NOTE",
    "in_param_manifest": "",
-   "reason": "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
+   "reason": "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
   },
   {
    "file": "src/composing/analysis/key/keyresolver.cpp",
@@ -22931,7 +22931,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE-NOTE",
    "in_param_manifest": "",
-   "reason": "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
+   "reason": "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
   },
   {
    "file": "src/composing/analysis/section/cadencekeyanchor.h",
@@ -22943,7 +22943,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE",
    "in_param_manifest": "",
-   "reason": "L3-F4: CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h \u2014 an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)"
+   "reason": "CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h \u2014 an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.cpp",
@@ -22967,7 +22967,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE-NOTE",
    "in_param_manifest": "",
-   "reason": "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
+   "reason": "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
   },
   {
    "file": "src/composing/analysis/section/jointkeydecision.h",
@@ -22991,7 +22991,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE",
    "in_param_manifest": "",
-   "reason": "L3-F4: CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h \u2014 an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)"
+   "reason": "CORE L3 key-evidence header includes the HEAVY L4 chord/chordanalyzer.h only for the ChordQuality enum, which lives in the dependency-free types leaf analysistypes.h \u2014 an avoidable header back-edge the types-leaf refactor removed elsewhere (Dependency Rule / #7)"
   },
   {
    "file": "src/composing/analysis/section/localmodulationdetector.cpp",
@@ -23015,7 +23015,7 @@
    "verdict_class": "cross",
    "verdict": "BACK-EDGE-NOTE",
    "in_param_manifest": "",
-   "reason": "L3-F7: CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
+   "reason": "CORE L3 file includes chord/analysisutils.h for shared pitch-class primitives (normalizePc / diatonicMaskFromFifths) \u2014 dependency-free util siloed under chord/ (L4 dir); layering smell, not a heavy coupling"
   },
   {
    "file": "src/composing/analysis/section/localmodulationdetector.h",

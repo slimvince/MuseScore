@@ -78,6 +78,23 @@ RESOLVED**). Registers: OI-88 RESOLVED, OI-89 re-run-done, OI-86 refined, OI-84 
 `239408faad` + `fbcb59c8d7` + `f76e8b65c8` + this `docs(cc)` fold; pushed fork-only, `upstream`
 untouched. **NEXT: the user's certification decision; then the L3 certification audit.**
 
+**★ UPDATE (CC, 2026-07-11) — L3 (key/mode) CERTIFICATION AUDIT PASS 1 DONE** (`cc_l3_audit_pass1_report.md`;
+the next layer after the user GRANTED L1/L2 certification, OI-84/OI-89). Read-only, no `src/`/constant/golden
+change; `tools/robust_stop`/`tools/corpus` untouched. The ONE inventory instrument was **layer-selected**
+(`gen_inventory.py --layer l3`, #6 — L1/L2 output substance-identical), **22 deep files → 1943 rows all
+dispositioned** (`tools/audit/l3/`); fire-rate over the pinned 352-stem Baroque corpus **352/352** (11.43 %
+uncertain / 3.94 % key-change / 275 modulating), dormant machinery 0 by construction. **★ The L3 spine is
+SOUND — the live decoder + emission scorer are clean and music-theory-grounded, the confirmed-modulation /
+joint-key machinery correctly gated OFF, layering forward-only bar two documented back-edges; NO correctness
+defect.** 8 findings, all KNOWN classes / documented deferrals (no #3 surprise): the L3 emission constants
+absent from `param_manifest.json` (**OI-91**, the L3 twin of OI-87 → OI-6/EG-5); two avoidable header
+back-edges + pc-util silos (**OI-93**, DT-19); an unguarded C++↔Python table dup (**OI-92**, DT-3); a
+file-table mis-tag (**OI-90**, new **DT-21**); contract deferrals (**OI-94**); `keyConfidence`/`keyAlternatives`
+unconsumed re-confirmed (**OI-75**); tooling debt (**OI-95**). Commits `9e294f398d` (Task-0) + `b8e9a54210`
+`feat(tools)` + `61dabd86d1` `docs(cc)` **freeze = the P8 blinding boundary** + this fold; fork-only,
+`upstream` untouched. **Certification NOT self-granted — pass 2 (DT signature sweep, fresh session) + the P6
+error-rate are OWED; decision returns to the user (OI-84/EG-7 OPEN). NEXT: the L3 PASS 2 instruction.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
