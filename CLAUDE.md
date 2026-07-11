@@ -61,6 +61,12 @@ actual inference code** — there, a surprise is a STOP (#13) and evidence the P
 not satisfied. The stage funnel: **desk-simulate (hours) → read-only probe (a session) → build
 (an arc)** — each stage kills bad premises before the next pays for them.
 
+*Fact-publication corollary to #6/#7/#12 (ratified by the user, 2026-07-10):* every derived
+analytical fact is **published exactly once, on the producing layer's output surface;
+consumers read, never re-derive.** A fact consumed by no one is either **declared dormancy**
+(its future consumer named) or **waste** (removed). Evidence for why this needs stating:
+`cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.
+
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
 prohibitions) and the surprise-scope rule were ratified by the user on 2026-07-10 — analysis

@@ -6,7 +6,10 @@
 > siloed-fact findings. **Method: apply the standing principles first; only where they do NOT
 > decide is there a genuine user choice.** Result: the principles decide essentially
 > everything; what remains for the user is ratifying the derivations (#14), not choosing among
-> arbitrary options. Verdicts are marked ⚖ PRINCIPLE-DERIVED (awaiting ratification).
+> arbitrary options. **RATIFIED by the user 2026-07-10:** six of seven were pure rule
+> applications; the one genuine acceptance was A3 (tolerating the quality-overwrite #12
+> violation until E4, visible via OI-10). The Part-B fact-publication corollary was ratified
+> the same day and now stands in CLAUDE.md beside the principles.
 
 ## Part A — the seven audit adjudications, in plain language
 

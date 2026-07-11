@@ -38,6 +38,7 @@
 | OI-20 | Jazz +1 interim class-(a) case — retires when Layer 4 pins rotation/center | CLAUDE.md two-tier block | OPEN — interim |
 | OI-21 | owed-P2 confirmation-gap reproduction (carry margin vs pass2 sigmoid) | L5-engage §8 | OPEN — post-E4 |
 | OI-22 | owed-FB1: F-B annotate must move class-(b) duration favorably at its build event | L5-engage §8 | OPEN — at F-B build |
+| OI-84 | ★ The L1–L5 rule-compliance sweeps to date are TARGETED, NOT completeness proofs (candidate-driven agents + comment greps + the known-incomplete manifest). Owed: exhaustive audit-at-touch — every E4 layer-step opens with a systematic premise+fact review of the code it touches — PLUS a dedicated standalone sweep of L1/L2 (least covered by all sweeps to date) | session-36 user challenge | OPEN — E4 discipline + one standalone L1/L2 sweep |
 
 ## C. Owned by Stage-5 (precision phase — do NOT fix earlier, #8)
 
@@ -72,7 +73,7 @@
 | ID | item | source | status |
 |---|---|---|---|
 | OI-41 | #17(c) sharpening: "establish the mechanism FIRES (control flow) before tracing arithmetic" | PC doc §"hands" | ✅ RATIFIED 2026-07-10 — folded into CLAUDE.md #17(c) |
-| OI-42 | Audit §5 UNCLEAR rows 1–7 — plain-language explanations + PRINCIPLE-DERIVED verdicts for all seven in `cowork_adjudication_dossier.md` Part A (none turned out to need a genuine user choice; the principles decide) | adjudication dossier | ⚖ VERDICTS RECORDED — awaiting ratification |
+| OI-42 | Audit §5 UNCLEAR rows 1–7 — plain-language explanations + PRINCIPLE-DERIVED verdicts in `cowork_adjudication_dossier.md` Part A | adjudication dossier | ✅ RATIFIED 2026-07-10 — six were pure rule applications; the one genuine acceptance: A3, tolerating the quality-overwrite #12 violation until E4 (kept visible via OI-10) |
 | OI-43 | PONDER-POINT 1: reopen joint (key,chord) RANKING framing (arc-#12 measured key-first-then-chord, not joint ranking) — explorational under #17 if reopened | handoff | OPEN — user |
 | OI-44 | Joint step B1–B4 status: design DELIVERED / build SHELVED / framing REOPENED (contradiction B) — needs one declared status | fitter O-4; §9.2 #6; handoff | OPEN — user |
 
