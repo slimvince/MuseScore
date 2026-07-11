@@ -1,0 +1,263 @@
+file,line,type_owner,field_type,name,context
+src/composing/analysis/chord/chordanalyzer.h,261,ChordIdentity,double,score,double score = 0.0;                ///< Template match score (higher = better); ranking only.
+src/composing/analysis/chord/chordanalyzer.h,262,ChordIdentity,int,rootPc,int rootPc = 0;           ///< Root pitch class (0–11)
+src/composing/analysis/chord/chordanalyzer.h,263,ChordIdentity,int,rootTpc,int rootTpc = -1;         ///< Root TPC for enharmonic-correct naming; -1 = unknown
+src/composing/analysis/chord/chordanalyzer.h,264,ChordIdentity,int,bassPc,int bassPc = 0;           ///< Bass pitch class (0–11)
+src/composing/analysis/chord/chordanalyzer.h,265,ChordIdentity,int,bassTpc,int bassTpc = -1;         ///< Bass TPC for enharmonic-correct naming; -1 = unknown
+src/composing/analysis/chord/chordanalyzer.h,269,ChordIdentity,bool,naturalFifthPresent,bool naturalFifthPresent = false;
+src/composing/analysis/chord/chordanalyzer.h,270,ChordIdentity,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.h,271,ChordIdentity,int,tiePriority,int tiePriority = -1;     ///< Template index (E2c: used by applyHarmonicFunction
+src/composing/analysis/chord/chordanalyzer.h,273,ChordIdentity,uint32_t,extensions,uint32_t extensions = 0;  ///< Extension/alteration bitmask (see Extension enum)
+src/composing/analysis/chord/chordanalyzer.h,280,ChordIdentity,bool,isPedalPoint,bool isPedalPoint = false;
+src/composing/analysis/chord/chordanalyzer.h,281,ChordIdentity,int,pedalBassPc,int pedalBassPc = -1;  ///< Pedal bass pitch class; -1 when isPedalPoint is false
+src/composing/analysis/chord/chordanalyzer.h,288,ChordFunction,int,degree,int degree = -1;           ///< 0..6 when diatonic degree is known; -1 otherwise
+src/composing/analysis/chord/chordanalyzer.h,289,ChordFunction,bool,diatonicToKey,bool diatonicToKey = false;
+src/composing/analysis/chord/chordanalyzer.h,293,ChordFunction,int,keyTonicPc,int keyTonicPc = 0;
+src/composing/analysis/chord/chordanalyzer.h,294,ChordFunction,KeySigMode,keyMode,KeySigMode keyMode = KeySigMode::Ionian;
+src/composing/analysis/chord/chordanalyzer.h,300,ChordFunction,int,nextRootPc,int nextRootPc = -1;
+src/composing/analysis/chord/chordanalyzer.h,308,ChordAnalysisResult,ChordIdentity,identity,ChordIdentity identity;
+src/composing/analysis/chord/chordanalyzer.h,309,ChordAnalysisResult,ChordFunction,function,ChordFunction function;
+src/composing/analysis/chord/chordanalyzer.h,317,RawCandidate,double,score,double score;
+src/composing/analysis/chord/chordanalyzer.h,318,RawCandidate,double,appliedBassBonus,double appliedBassBonus;
+src/composing/analysis/chord/chordanalyzer.h,319,RawCandidate,int,rootPc,int rootPc;
+src/composing/analysis/chord/chordanalyzer.h,320,RawCandidate,ChordQuality,quality,ChordQuality quality;
+src/composing/analysis/chord/chordanalyzer.h,321,RawCandidate,int,tiePriority,int tiePriority;  // template index; lower = preferred on equal score
+src/composing/analysis/chord/chordanalyzer.h,322,RawCandidate,double,wDimDelta,double wDimDelta; // Iter 97a-v3 — w_dim bonus applied to score (for post-bonus quality guard)
+src/composing/analysis/chord/chordanalyzer.h,354,DiagnosticOracleCell,int,bassPc,int          bassPc           = -1;
+src/composing/analysis/chord/chordanalyzer.h,355,DiagnosticOracleCell,int,rootPc,int          rootPc           = 0;
+src/composing/analysis/chord/chordanalyzer.h,356,DiagnosticOracleCell,int,templateIdx,int          templateIdx      = 0;   ///< tiePriority (index into the template array)
+src/composing/analysis/chord/chordanalyzer.h,357,DiagnosticOracleCell,ChordQuality,quality,ChordQuality quality          = ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.h,358,DiagnosticOracleCell,double,basisIndep,double       basisIndep       = 0.0; ///< vertical pitch evidence (no progression signal; Stage 3.3)
+src/composing/analysis/chord/chordanalyzer.h,359,DiagnosticOracleCell,double,basisDep,double       basisDep         = 0.0; ///< bass-dependent delta: nonBassAdjustment + appliedBassBonus
+src/composing/analysis/chord/chordanalyzer.h,361,DiagnosticOracleCell,double,complexityFactor,double       complexityFactor = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,362,DiagnosticOracleCell,double,augFactor,double       augFactor        = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,363,DiagnosticOracleCell,double,wCompleteBonus,double       wCompleteBonus   = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,364,DiagnosticOracleCell,double,appliedBassBonus,double       appliedBassBonus = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,367,DiagnosticOracleCell,double,verticalScore,double       verticalScore    = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,374,DiagnosticCompetitionCandidate,int,bassPc,int          bassPc       = -1;
+src/composing/analysis/chord/chordanalyzer.h,375,DiagnosticCompetitionCandidate,int,rootPc,int          rootPc       = 0;
+src/composing/analysis/chord/chordanalyzer.h,376,DiagnosticCompetitionCandidate,int,templateIdx,int          templateIdx  = 0;
+src/composing/analysis/chord/chordanalyzer.h,377,DiagnosticCompetitionCandidate,ChordQuality,quality,ChordQuality quality      = ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.h,379,DiagnosticCompetitionCandidate,double,rootContinuityBonus,double       rootContinuityBonus           = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,381,DiagnosticCompetitionCandidate,double,rootContinuityBonusRaw,double       rootContinuityBonusRaw        = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,382,DiagnosticCompetitionCandidate,bool,rootContinuityWithheldByGateR,bool         rootContinuityWithheldByGateR = false;
+src/composing/analysis/chord/chordanalyzer.h,387,DiagnosticCompetitionCandidate,double,resolutionBonus,double       resolutionBonus      = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,388,DiagnosticCompetitionCandidate,double,inversionContextBonus,double       inversionContextBonus = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,389,DiagnosticCompetitionCandidate,double,wSeqBonus,double       wSeqBonus     = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,390,DiagnosticCompetitionCandidate,double,wDimBonus,double       wDimBonus     = 0.0;   ///< exact value the pipeline applied (RawCandidate::wDimDelta)
+src/composing/analysis/chord/chordanalyzer.h,391,DiagnosticCompetitionCandidate,double,stepInBonus,double       stepInBonus   = 0.0;   ///< potential w_stepIn (the surgical guard may suppress it)
+src/composing/analysis/chord/chordanalyzer.h,392,DiagnosticCompetitionCandidate,double,stepOutBonus,double       stepOutBonus  = 0.0;   ///< potential w_stepOut (the surgical guard may suppress it)
+src/composing/analysis/chord/chordanalyzer.h,394,DiagnosticCompetitionCandidate,double,competitionScore,double       competitionScore = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,400,DiagnosticPostGateTrail,bool,hasCompetitionWinner,bool         hasCompetitionWinner    = false;
+src/composing/analysis/chord/chordanalyzer.h,401,DiagnosticPostGateTrail,int,competitionWinnerRootPc,int          competitionWinnerRootPc  = -1;
+src/composing/analysis/chord/chordanalyzer.h,402,DiagnosticPostGateTrail,int,competitionWinnerBassPc,int          competitionWinnerBassPc  = -1;
+src/composing/analysis/chord/chordanalyzer.h,403,DiagnosticPostGateTrail,ChordQuality,competitionWinnerQuality,ChordQuality competitionWinnerQuality = ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.h,404,DiagnosticPostGateTrail,double,competitionWinnerScore,double       competitionWinnerScore   = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,405,DiagnosticPostGateTrail,bool,iter8691ChangedWinner,bool         iter8691ChangedWinner    = false;  ///< applyIter8691Pedal moved results.front()
+src/composing/analysis/chord/chordanalyzer.h,406,DiagnosticPostGateTrail,bool,gatesChangedWinner,bool         gatesChangedWinner       = false;  ///< applyPostScoringGates moved results.front()
+src/composing/analysis/chord/chordanalyzer.h,412,ChordAnalysisDiagnosticResult,int,bassPc,int                    bassPc      = -1;       ///< winner bass PC (production); -1 if no winner
+src/composing/analysis/chord/chordanalyzer.h,414,ChordAnalysisDiagnosticResult,int,distinctPcs,int                    distinctPcs = 0;        ///< distinct PCs with weight > 0.05
+src/composing/analysis/chord/chordanalyzer.h,415,ChordAnalysisDiagnosticResult,int,keyTonicPc,int                    keyTonicPc  = -1;
+src/composing/analysis/chord/chordanalyzer.h,418,ChordAnalysisDiagnosticResult,std::vector<DiagnosticOracleCell>,oracleCells,"std::vector<DiagnosticOracleCell>           oracleCells;  ///< ORACLE (all cells, score-sorted)"
+src/composing/analysis/chord/chordanalyzer.h,419,ChordAnalysisDiagnosticResult,std::vector<DiagnosticCompetitionCandidate>,competition,std::vector<DiagnosticCompetitionCandidate> competition;  ///< COMPETITION (winning bass group)
+src/composing/analysis/chord/chordanalyzer.h,420,ChordAnalysisDiagnosticResult,DiagnosticPostGateTrail,postGates,DiagnosticPostGateTrail                     postGates;     ///< POST-GATES trail
+src/composing/analysis/chord/chordanalyzer.h,421,ChordAnalysisDiagnosticResult,ChordAnalysisResult,finalWinner,ChordAnalysisResult                         finalWinner;   ///< production winner by construction
+src/composing/analysis/chord/chordanalyzer.h,422,ChordAnalysisDiagnosticResult,bool,hasWinner,bool                                        hasWinner = false;
+src/composing/analysis/chord/chordanalyzer.h,587,RawFanoutSummary,int,total,int total              = 0;  ///< all rawCandidates (uncapped winning-bass fan-out)
+src/composing/analysis/chord/chordanalyzer.h,588,RawFanoutSummary,int,aboveThreshold,int aboveThreshold     = 0;  ///< rawCandidates with score >= gateCtx.threshold (pre-cap ranked set)
+src/composing/analysis/chord/chordanalyzer.h,589,RawFanoutSummary,int,distinctRootsTotal,int distinctRootsTotal = 0;  ///< distinct rootPc across all rawCandidates
+src/composing/analysis/chord/chordanalyzer.h,590,RawFanoutSummary,int,distinctRootsAbove,int distinctRootsAbove = 0;  ///< distinct rootPc across the above-threshold set
+src/composing/analysis/chord/chordanalyzer.h,618,BuildChordResultContext,"const std::array<double, 12>&",pcWeight,"const std::array<double, 12>& pcWeight;"
+src/composing/analysis/chord/chordanalyzer.h,619,BuildChordResultContext,"const std::array<int, 12>&",tpcForPc,"const std::array<int, 12>&    tpcForPc;"
+src/composing/analysis/chord/chordanalyzer.h,620,BuildChordResultContext,int,bassPc,int                           bassPc;
+src/composing/analysis/chord/chordanalyzer.h,621,BuildChordResultContext,int,bassTpc,int                           bassTpc;
+src/composing/analysis/chord/chordanalyzer.h,622,BuildChordResultContext,int,keyTonicPc,int                           keyTonicPc;
+src/composing/analysis/chord/chordanalyzer.h,623,BuildChordResultContext,KeySigMode,keyMode,KeySigMode                    keyMode;
+src/composing/analysis/chord/chordanalyzer.h,624,BuildChordResultContext,"const std::array<int, 7>&",scale,"const std::array<int, 7>&     scale;"
+src/composing/analysis/chord/chordanalyzer.h,655,PromotionTarget,int,rootPc,int          rootPc  = -1;
+src/composing/analysis/chord/chordanalyzer.h,656,PromotionTarget,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.h,682,ChordExtensionInfo,uint32_t,extensions,uint32_t extensions = 0;          ///< Extension/alteration bitmask (see Extension enum)
+src/composing/analysis/chord/chordanalyzer.h,683,ChordExtensionInfo,bool,naturalFifthPresent,bool     naturalFifthPresent = false;  ///< P5 above root sounding (It+6 vs Ger+6 discriminator)
+src/composing/analysis/chord/chordanalyzer.h,816,Options,NoteSpelling,spelling,NoteSpelling spelling = NoteSpelling::Standard;
+src/composing/analysis/chord/chordanalyzer.h,840,ClosePositionVoicing,int,bassPitch,int bassPitch = -1;                  ///< Root MIDI pitch in C2–C3 range (-1 = empty)
+src/composing/analysis/chord/chordanalyzer.h,841,ClosePositionVoicing,std::vector<int>,treblePitches,std::vector<int> treblePitches;      ///< Upper chord tones in C4–C5 close position
+src/composing/analysis/chord/chordslicedecoder.h,165,ChordSliceDecoderPreferences,int,contextSlices,int contextSlices = 1;
+src/composing/analysis/chord/chordslicedecoder.h,169,ChordSliceDecoderPreferences,int,topK,int topK = 6;
+src/composing/analysis/chord/chordslicedecoder.h,174,ChordSliceDecoderPreferences,double,uncertaintyMargin,double uncertaintyMargin = 0.5;
+src/composing/analysis/chord/chordslicedecoder.h,182,ChordSliceDecoderPreferences,int,minDistinctPcs,int minDistinctPcs = 1;
+src/composing/analysis/chord/chordslicedecoder.h,196,ChordSliceDecoderPreferences,int,maxContextSlices,int maxContextSlices = 3;
+src/composing/analysis/chord/chordslicedecoder.h,199,ChordSliceDecoderPreferences,int,minHarmonyPcs,int minHarmonyPcs = 3;
+src/composing/analysis/chord/chordslicedecoder.h,215,ChordSliceDecoderPreferences,bool,enableMembership,bool enableMembership = true;
+src/composing/analysis/chord/chordslicedecoder.h,219,ChordSliceDecoderPreferences,bool,twoPass,bool twoPass = true;
+src/composing/analysis/chord/chordslicedecoder.h,227,ChordSliceDecoderPreferences,double,membershipSalienceThreshold,double membershipSalienceThreshold = 0.55;
+src/composing/analysis/chord/chordslicedecoder.h,230,ChordSliceDecoderPreferences,double,membershipReferenceDurationQn,double membershipReferenceDurationQn = 1.0;
+src/composing/analysis/chord/chordslicedecoder.h,238,ChordSliceDecoderPreferences,double,membershipPenaltyWeight,double membershipPenaltyWeight = 0.6;
+src/composing/analysis/chord/chordslicedecoder.h,242,ChordSliceDecoderPreferences,int,stepwiseGapToleranceTicks,int stepwiseGapToleranceTicks = 0;
+src/composing/analysis/chord/chordslicedecoder.h,256,ChordSliceDecoderPreferences,bool,enableCommitDecision,bool enableCommitDecision = true;
+src/composing/analysis/chord/chordslicedecoder.h,263,ChordSliceDecoderPreferences,int,sufficiencyChordTones,int sufficiencyChordTones = 3;
+src/composing/analysis/chord/chordslicedecoder.h,283,ChordSliceDecoderPreferences,bool,enableSpellingPin,bool enableSpellingPin = true;
+src/composing/analysis/chord/chordslicedecoder.h,303,ChordSliceDecoderPreferences,bool,enableEdgeExtension,bool enableEdgeExtension = false;
+src/composing/analysis/chord/chordslicedecoder.h,308,ChordSliceDecoderPreferences,int,maxEdgeExtendSteps,int maxEdgeExtendSteps = 4;
+src/composing/analysis/chord/chordslicedecoder.h,314,ChordSliceDecoderPreferences,int,edgeExtendIncrementSlices,int edgeExtendIncrementSlices = 1;
+src/composing/analysis/chord/chordslicedecoder.h,329,ChordSliceCandidate,int,rootPc,int rootPc = -1;
+src/composing/analysis/chord/chordslicedecoder.h,330,ChordSliceCandidate,int,rootTpc,int rootTpc = -1;
+src/composing/analysis/chord/chordslicedecoder.h,331,ChordSliceCandidate,int,bassPc,int bassPc = -1;
+src/composing/analysis/chord/chordslicedecoder.h,332,ChordSliceCandidate,int,bassTpc,int bassTpc = -1;
+src/composing/analysis/chord/chordslicedecoder.h,333,ChordSliceCandidate,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/chord/chordslicedecoder.h,334,ChordSliceCandidate,int,tiePriority,int tiePriority = -1;
+src/composing/analysis/chord/chordslicedecoder.h,335,ChordSliceCandidate,double,score,double score = 0.0;
+src/composing/analysis/chord/chordslicedecoder.h,349,ChordSliceCandidate,uint32_t,extensions,uint32_t extensions = 0;          ///< ChordIdentity.extensions bitmask (see chord Extension enum)
+src/composing/analysis/chord/chordslicedecoder.h,350,ChordSliceCandidate,bool,naturalFifthPresent,bool naturalFifthPresent = false; ///< P5 above root sounding (It+6 vs Ger+6)
+src/composing/analysis/chord/chordslicedecoder.h,351,ChordSliceCandidate,bool,extensionsKnown,bool extensionsKnown = false;     ///< true = extensions/naturalFifthPresent are a real extraction
+src/composing/analysis/chord/chordslicedecoder.h,405,SliceConfidence,double,margin,double margin = 0.0;                ///< raw margin to the best DIFFERENT reading (== SliceChord.confidence)
+src/composing/analysis/chord/chordslicedecoder.h,406,SliceConfidence,double,sufficiency,"double sufficiency = 0.0;           ///< present / required template tones of the chosen chord, [0,1]"
+src/composing/analysis/chord/chordslicedecoder.h,407,SliceConfidence,double,membershipCleanliness,"double membershipCleanliness = 1.0; ///< chord-tone fraction of the focal pitch classes, [0,1]"
+src/composing/analysis/chord/chordslicedecoder.h,408,SliceConfidence,double,composite,"double composite = 0.0;             ///< combined certainty [0,1] = min(marginCertainty, sufficiency, cleanliness)"
+src/composing/analysis/chord/chordslicedecoder.h,418,OpenQuestionLabel,OpenQuestion,question,OpenQuestion question = OpenQuestion::None;
+src/composing/analysis/chord/chordslicedecoder.h,419,OpenQuestionLabel,AmbiguityKind,ambiguity,AmbiguityKind ambiguity = AmbiguityKind::None;
+src/composing/analysis/chord/chordslicedecoder.h,420,OpenQuestionLabel,ChordSliceCandidate,readingA,ChordSliceCandidate readingA;     ///< the chosen / top reading (valid when question != None)
+src/composing/analysis/chord/chordslicedecoder.h,421,OpenQuestionLabel,ChordSliceCandidate,readingB,ChordSliceCandidate readingB;     ///< the best DIFFERENT competing reading (valid when hasReadingB)
+src/composing/analysis/chord/chordslicedecoder.h,422,OpenQuestionLabel,bool,hasReadingB,bool hasReadingB = false;         ///< false when no different reading exists (e.g. an empty/insufficient slice)
+src/composing/analysis/chord/chordslicedecoder.h,423,OpenQuestionLabel,int,contestedPc,int contestedPc = -1;             ///< NoteMembership: the contested pc (else -1; reserved this increment)
+src/composing/analysis/chord/chordslicedecoder.h,428,SliceChord,int,sliceIndex,int sliceIndex = 0;                            ///< index into the slice vector
+src/composing/analysis/chord/chordslicedecoder.h,429,SliceChord,bool,hasChord,bool hasChord = false;                         ///< false = no committed chord (empty/sub-gate slice OR an abstain)
+src/composing/analysis/chord/chordslicedecoder.h,430,SliceChord,ChordSliceCandidate,chosen,ChordSliceCandidate chosen;                    ///< the decided chord (root + quality + bass/inversion); on Inherit = the prevailing chord
+src/composing/analysis/chord/chordslicedecoder.h,431,SliceChord,std::vector<ChordSliceCandidate>,alternatives,"std::vector<ChordSliceCandidate> alternatives; ///< other distinct chords, ranked (∪ prevailing)"
+src/composing/analysis/chord/chordslicedecoder.h,432,SliceChord,double,confidence,"double confidence = 0.0;                       ///< margin to the best DIFFERENT (root,quality) chord"
+src/composing/analysis/chord/chordslicedecoder.h,433,SliceChord,bool,uncertain,bool uncertain = false;                        ///< confidence < uncertaintyMargin (the margin cue feeding the decision)
+src/composing/analysis/chord/chordslicedecoder.h,434,SliceChord,SliceDecision,decision,SliceDecision decision = SliceDecision::Commit; ///< G1: commit / inherit / abstain (see applyCommitDecision)
+src/composing/analysis/chord/chordslicedecoder.h,440,SliceChord,SliceConfidence,confidenceModel,SliceConfidence confidenceModel;               ///< G6 composite confidence (margin + sufficiency + cleanliness)
+src/composing/analysis/chord/chordslicedecoder.h,441,SliceChord,OpenQuestionLabel,openQuestion,OpenQuestionLabel openQuestion;                ///< G6 named open question + the two competing readings (on abstain)
+src/composing/analysis/chord/chordslicedecoder.h,452,SliceChord,std::vector<int>,chordTonePcs,std::vector<int> chordTonePcs;                 ///< focal pcs the chosen chord explains
+src/composing/analysis/chord/chordslicedecoder.h,453,SliceChord,std::vector<int>,nonChordTonePcs,std::vector<int> nonChordTonePcs;              ///< focal pcs called non-chord tones
+src/composing/analysis/chord/chordslicedecoder.h,459,SliceChord,bool,clippedBySelectionEdge,bool clippedBySelectionEdge = false;   ///< the focal window truncated at the LOADED (non-score) edge
+src/composing/analysis/chord/chordslicedecoder.h,460,SliceChord,bool,cueDenied,bool cueDenied = false;                ///< a decision-relevant edge-extension request was REFUSED (hard bound)
+src/composing/analysis/chord/chordslicedecoder.h,471,FocalNote,int,pitch,int pitch = 0;             ///< ppitch
+src/composing/analysis/chord/chordslicedecoder.h,472,FocalNote,int,tpc,int tpc = -1;              ///< notated spelling (line-of-fifths tpc; -1 = not provided) — the
+src/composing/analysis/chord/chordslicedecoder.h,475,FocalNote,int,onset,int onset = 0;             ///< tie-resolved onset tick
+src/composing/analysis/chord/chordslicedecoder.h,476,FocalNote,int,release,int release = 0;           ///< tie-resolved release tick
+src/composing/analysis/chord/chordslicedecoder.h,477,FocalNote,int,voice,int voice = 0;             ///< voice (the stepwise test is per-voice / melodic)
+src/composing/analysis/chord/chordslicedecoder.h,478,FocalNote,double,metricWeight,"double metricWeight = 1.0; ///< normalised beat weight at onset [0.5,1.0]"
+src/composing/analysis/chord/chordslicedecoder.h,479,FocalNote,double,durationQn,double durationQn = 0.0;   ///< sounding duration in quarter notes
+src/composing/analysis/chord/chordslicedecoder.h,486,MembershipResult,std::vector<int>,chordTonePcs,std::vector<int> chordTonePcs;
+src/composing/analysis/chord/chordslicedecoder.h,487,MembershipResult,std::vector<int>,nonChordTonePcs,std::vector<int> nonChordTonePcs;
+src/composing/analysis/chord/chordslicedecoder.h,501,MembershipResult,double,implausibilityPenalty,double implausibilityPenalty = 0.0;
+src/composing/analysis/decode/chordpathdecoder.h,70,ChordPathNode,ChordAnalysisResult,committed,ChordAnalysisResult              committed;              ///< gate-corrected committed identity
+src/composing/analysis/decode/chordpathdecoder.h,71,ChordPathNode,std::vector<ChordAnalysisResult>,alternatives,std::vector<ChordAnalysisResult> alternatives;          ///< emitted alternatives (results[1..])
+src/composing/analysis/decode/chordpathdecoder.h,72,ChordPathNode,double,winnerScore,double                           winnerScore  = 0.0;     ///< committed winner's competition score
+src/composing/analysis/decode/chordpathdecoder.h,73,ChordPathNode,double,winnerMargin,double                           winnerMargin = -1.0;    ///< score gap to runner-up; -1 if none
+src/composing/analysis/types/analysistypes.h,89,ParameterBound,double,min,double min;
+src/composing/analysis/types/analysistypes.h,90,ParameterBound,double,max,double max;
+src/composing/analysis/types/analysistypes.h,91,ParameterBound,bool,isManual,bool   isManual = false;
+src/composing/analysis/types/analysistypes.h,135,ChordAnalysisTone,int,pitch,int pitch = 0;      // MIDI playback pitch (ppitch — honours ottavas and transpositions)
+src/composing/analysis/types/analysistypes.h,136,ChordAnalysisTone,int,tpc,"int tpc = -1;       // MuseScore TPC (0–34, circle-of-fifths spelling). -1 = not provided."
+src/composing/analysis/types/analysistypes.h,137,ChordAnalysisTone,double,weight,"double weight = 1;  // Relative evidence weight (duration × metric weight, normalised to [0,1])"
+src/composing/analysis/types/analysistypes.h,138,ChordAnalysisTone,bool,isBass,bool isBass = false;
+src/composing/analysis/types/analysistypes.h,145,ChordAnalysisTone,int,durationInRegion,int durationInRegion = 0;
+src/composing/analysis/types/analysistypes.h,150,ChordAnalysisTone,int,distinctMetricPositions,int distinctMetricPositions = 0;
+src/composing/analysis/types/analysistypes.h,155,ChordAnalysisTone,int,simultaneousVoiceCount,int simultaneousVoiceCount = 0;
+src/composing/analysis/types/analysistypes.h,162,ChordAnalysisTone,bool,onsetAtRegionStart,bool onsetAtRegionStart = false;
+src/composing/analysis/types/analysistypes.h,177,ChordAnalyzerPreferences,double,bassNoteRootBonus,double bassNoteRootBonus = 0.70;
+src/composing/analysis/types/analysistypes.h,183,ChordAnalyzerPreferences,double,bassRootThirdOnlyMultiplier,double bassRootThirdOnlyMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,188,ChordAnalyzerPreferences,double,bassRootAloneMultiplier,double bassRootAloneMultiplier = 0.1;
+src/composing/analysis/types/analysistypes.h,191,ChordAnalyzerPreferences,double,diatonicRootBonus,double diatonicRootBonus = 0.30;
+src/composing/analysis/types/analysistypes.h,196,ChordAnalyzerPreferences,double,tpcConsistencyBonusPerTone,double tpcConsistencyBonusPerTone = 0.20;
+src/composing/analysis/types/analysistypes.h,200,ChordAnalyzerPreferences,double,rootContinuityBonus,double rootContinuityBonus = 0.40;
+src/composing/analysis/types/analysistypes.h,207,ChordAnalyzerPreferences,double,resolutionBonus,double resolutionBonus = 0.35;
+src/composing/analysis/types/analysistypes.h,226,ChordAnalyzerPreferences,double,stepwiseBassInversionBonus,double stepwiseBassInversionBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,235,ChordAnalyzerPreferences,double,stepwiseBassLookaheadBonus,double stepwiseBassLookaheadBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,243,ChordAnalyzerPreferences,double,completeTriadInversionBonus,double completeTriadInversionBonus = 0.45;
+src/composing/analysis/types/analysistypes.h,252,ChordAnalyzerPreferences,double,sameRootInversionBonus,double sameRootInversionBonus = 0.4;
+src/composing/analysis/types/analysistypes.h,268,ChordAnalyzerPreferences,double,maxTotalInversionContextBonus,double maxTotalInversionContextBonus = 2.0;
+src/composing/analysis/types/analysistypes.h,293,ChordAnalyzerPreferences,double,inversionSuspicionMargin,double inversionSuspicionMargin = 0.70;
+src/composing/analysis/types/analysistypes.h,298,ChordAnalyzerPreferences,double,inversionBonusReduction,double inversionBonusReduction = 0.0;
+src/composing/analysis/types/analysistypes.h,308,ChordAnalyzerPreferences,bool,preferMinorOverMajorAdd6,bool preferMinorOverMajorAdd6 = false;
+src/composing/analysis/types/analysistypes.h,319,ChordAnalyzerPreferences,double,harmonicBoundaryJaccardThreshold,double harmonicBoundaryJaccardThreshold = 0.6;
+src/composing/analysis/types/analysistypes.h,325,ChordAnalyzerPreferences,double,pedalTailWeightMultiplier,double pedalTailWeightMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,332,ChordAnalyzerPreferences,double,bassPassingToneMinWeightFraction,double bassPassingToneMinWeightFraction = 0.05;
+src/composing/analysis/types/analysistypes.h,346,ChordAnalyzerPreferences,double,extensionThreshold,double extensionThreshold = 0.20;
+src/composing/analysis/types/analysistypes.h,355,ChordAnalyzerPreferences,int,minDistinctPcsForCandidate,int minDistinctPcsForCandidate = 3;
+src/composing/analysis/types/analysistypes.h,367,ChordAnalyzerPreferences,function::ScoringPhase,scoringPhase,function::ScoringPhase scoringPhase = function::ScoringPhase::Final;
+src/composing/analysis/types/analysistypes.h,375,ChordAnalyzerPreferences,DecodeQualityLevel,decodeQualityLevel,DecodeQualityLevel decodeQualityLevel = DecodeQualityLevel::FastBeam1;
+src/composing/analysis/types/analysistypes.h,386,ChordAnalyzerPreferences,double,pedalConfidenceThreshold,double pedalConfidenceThreshold = 0.65;
+src/composing/analysis/types/analysistypes.h,394,ChordAnalyzerPreferences,bool,useExistingChordSymbols,bool useExistingChordSymbols = false;       // TODO: implement
+src/composing/analysis/types/analysistypes.h,397,ChordAnalyzerPreferences,bool,useRomanNumeralAnnotations,bool useRomanNumeralAnnotations = false;    // TODO: implement
+src/composing/analysis/types/analysistypes.h,400,ChordAnalyzerPreferences,bool,useNashvilleAnnotations,bool useNashvilleAnnotations = false;       // TODO: implement
+src/composing/analysis/types/analysistypes.h,472,ChordTemporalContext,int,previousRootPc,int previousRootPc = -1;
+src/composing/analysis/types/analysistypes.h,475,ChordTemporalContext,ChordQuality,previousQuality,ChordQuality previousQuality = ChordQuality::Unknown;
+src/composing/analysis/types/analysistypes.h,480,ChordTemporalContext,int,previousBassPc,int previousBassPc = -1;
+src/composing/analysis/types/analysistypes.h,487,ChordTemporalContext,bool,bassIsStepwiseFromPrevious,bool bassIsStepwiseFromPrevious = false;
+src/composing/analysis/types/analysistypes.h,491,ChordTemporalContext,bool,bassIsStepwiseToNext,bool bassIsStepwiseToNext = false;
+src/composing/analysis/types/analysistypes.h,497,ChordTemporalContext,int,nextBassPc,int nextBassPc = -1;
+src/composing/analysis/types/analysistypes.h,501,ChordTemporalContext,int,nextRootPc,int nextRootPc = -1;
+src/composing/analysis/types/analysistypes.h,507,ChordTemporalContext,int,consecutiveBassStepwiseCount,int consecutiveBassStepwiseCount = 0;
+src/composing/analysis/types/analysistypes.h,512,ChordTemporalContext,"std::array<int, 3>",recentRootPcs,"std::array<int, 3> recentRootPcs = {-1, -1, -1};"
+src/composing/analysis/types/analysistypes.h,517,ChordTemporalContext,double,regionMetricWeight,double regionMetricWeight = 1.0;
+src/composing/analysis/types/analysistypes.h,587,KeyModeAnalyzerPreferences,double,noteWeightCap,double noteWeightCap = 3.0;          // [empirical]
+src/composing/analysis/types/analysistypes.h,591,KeyModeAnalyzerPreferences,double,bassMultiplier,"double bassMultiplier = 2.0;         // [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,600,KeyModeAnalyzerPreferences,double,scaleScoreInBoth,double scaleScoreInBoth    =  1.00;  ///< Note is in candidate scale AND key-sig scale [theory-grounded ordering]
+src/composing/analysis/types/analysistypes.h,601,KeyModeAnalyzerPreferences,double,scaleScoreInCandidateOnly,double scaleScoreInCandidateOnly = 0.25;  ///< In candidate scale but not key-sig scale [empirical]
+src/composing/analysis/types/analysistypes.h,602,KeyModeAnalyzerPreferences,double,scaleScoreInKeySigOnly,double scaleScoreInKeySigOnly    = -0.20; ///< In key-sig scale but not candidate (chromatic neighbour) [empirical]
+src/composing/analysis/types/analysistypes.h,603,KeyModeAnalyzerPreferences,double,scaleScoreInNeither,double scaleScoreInNeither       = -0.05; ///< Outside both scales [empirical]
+src/composing/analysis/types/analysistypes.h,611,KeyModeAnalyzerPreferences,double,tonicWeight,"double tonicWeight       = 1.60;  ///< Tonic note present [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,612,KeyModeAnalyzerPreferences,double,thirdWeight,"double thirdWeight       = 0.70;  ///< Third (M3 for major, m3 for minor) [empirical]"
+src/composing/analysis/types/analysistypes.h,613,KeyModeAnalyzerPreferences,double,fifthWeight,double fifthWeight       = 0.50;  ///< Perfect fifth [empirical]
+src/composing/analysis/types/analysistypes.h,614,KeyModeAnalyzerPreferences,double,leadingToneWeight,"double leadingToneWeight = 0.40;  ///< Leading tone (tonicPc + 11, used for both modes) [empirical]"
+src/composing/analysis/types/analysistypes.h,616,KeyModeAnalyzerPreferences,double,completeTriadBonus,double completeTriadBonus  =  2.50;  ///< All three triad notes present simultaneously [empirical]
+src/composing/analysis/types/analysistypes.h,617,KeyModeAnalyzerPreferences,double,missingTonicPenalty,double missingTonicPenalty = -2.50;  ///< Tonic entirely absent [empirical]
+src/composing/analysis/types/analysistypes.h,619,KeyModeAnalyzerPreferences,double,extraScaleFactor,double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [empirical]
+src/composing/analysis/types/analysistypes.h,620,KeyModeAnalyzerPreferences,double,extraScaleCap,double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]
+src/composing/analysis/types/analysistypes.h,629,KeyModeAnalyzerPreferences,double,characteristicPitchBoost,double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present [empirical]
+src/composing/analysis/types/analysistypes.h,630,KeyModeAnalyzerPreferences,double,characteristicPitchPenalty,double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is absent [empirical]
+src/composing/analysis/types/analysistypes.h,640,KeyModeAnalyzerPreferences,double,trueLeadingToneBoost,double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
+src/composing/analysis/types/analysistypes.h,652,KeyModeAnalyzerPreferences,double,modePriorIonian,double modePriorIonian          =  1.20;  ///< [empirical — was tier1+0.2]
+src/composing/analysis/types/analysistypes.h,653,KeyModeAnalyzerPreferences,double,modePriorDorian,double modePriorDorian          = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,654,KeyModeAnalyzerPreferences,double,modePriorPhrygian,double modePriorPhrygian        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,655,KeyModeAnalyzerPreferences,double,modePriorLydian,double modePriorLydian          = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,656,KeyModeAnalyzerPreferences,double,modePriorMixolydian,double modePriorMixolydian      = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,657,KeyModeAnalyzerPreferences,double,modePriorAeolian,double modePriorAeolian         =  1.00;  ///< [empirical — was tier1]
+src/composing/analysis/types/analysistypes.h,658,KeyModeAnalyzerPreferences,double,modePriorLocrian,double modePriorLocrian         = -3.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,661,KeyModeAnalyzerPreferences,double,modePriorMelodicMinor,double modePriorMelodicMinor    = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,662,KeyModeAnalyzerPreferences,double,modePriorDorianB2,double modePriorDorianB2        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,663,KeyModeAnalyzerPreferences,double,modePriorLydianAugmented,double modePriorLydianAugmented  = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,664,KeyModeAnalyzerPreferences,double,modePriorLydianDominant,double modePriorLydianDominant   = -1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,665,KeyModeAnalyzerPreferences,double,modePriorMixolydianB6,double modePriorMixolydianB6    = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,666,KeyModeAnalyzerPreferences,double,modePriorAeolianB5,double modePriorAeolianB5       = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,667,KeyModeAnalyzerPreferences,double,modePriorAltered,double modePriorAltered         = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,670,KeyModeAnalyzerPreferences,double,modePriorHarmonicMinor,double modePriorHarmonicMinor   = -0.30;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,671,KeyModeAnalyzerPreferences,double,modePriorLocrianSharp6,double modePriorLocrianSharp6   = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,672,KeyModeAnalyzerPreferences,double,modePriorIonianSharp5,double modePriorIonianSharp5    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,673,KeyModeAnalyzerPreferences,double,modePriorDorianSharp4,double modePriorDorianSharp4    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,674,KeyModeAnalyzerPreferences,double,modePriorPhrygianDominant,double modePriorPhrygianDominant = -0.80;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,675,KeyModeAnalyzerPreferences,double,modePriorLydianSharp2,double modePriorLydianSharp2    = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,676,KeyModeAnalyzerPreferences,double,modePriorAlteredDomBB7,double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,690,KeyModeAnalyzerPreferences,double,tonalCenterTonicWeight,double tonalCenterTonicWeight  = 2.20;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,691,KeyModeAnalyzerPreferences,double,tonalCenterThirdWeight,double tonalCenterThirdWeight  = 1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,692,KeyModeAnalyzerPreferences,double,tonalCenterFifthWeight,double tonalCenterFifthWeight  = 0.70;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,693,KeyModeAnalyzerPreferences,double,tonalCenterLeadingTone,double tonalCenterLeadingTone  = 0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,694,KeyModeAnalyzerPreferences,double,tonalCenterTriadBonus,double tonalCenterTriadBonus   = 2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,695,KeyModeAnalyzerPreferences,double,tonalCenterDeltaThreshold,double tonalCenterDeltaThreshold = 0.25; ///< Min delta to choose winner outright [empirical]
+src/composing/analysis/types/analysistypes.h,704,KeyModeAnalyzerPreferences,double,keySignatureDistancePenalty,double keySignatureDistancePenalty = 0.60;  ///< Per circle-of-fifths step of distance [empirical]
+src/composing/analysis/types/analysistypes.h,714,KeyModeAnalyzerPreferences,double,disambiguationTriadBonus,double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empirical]
+src/composing/analysis/types/analysistypes.h,715,KeyModeAnalyzerPreferences,double,disambiguationTriadCost,double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
+src/composing/analysis/types/analysistypes.h,716,KeyModeAnalyzerPreferences,double,disambiguationTonicBonus,double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
+src/composing/analysis/types/analysistypes.h,733,KeyModeAnalyzerPreferences,double,declaredModePenalty,"double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates [empirical — Stage-5 fits]"
+src/composing/analysis/types/analysistypes.h,741,KeyModeAnalyzerPreferences,bool,ignoreDeclaredMode,bool ignoreDeclaredMode = false;  ///< Force mode-absent resolution (measurement floor)
+src/composing/analysis/types/analysistypes.h,758,KeyModeAnalyzerPreferences,double,confidenceSigmoidMidpoint,double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
+src/composing/analysis/types/analysistypes.h,759,KeyModeAnalyzerPreferences,double,confidenceSigmoidSteepness,double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+src/composing/analysis/types/analysistypes.h,770,KeyModeAnalyzerPreferences,double,dynamicLookaheadConfidenceThreshold,double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence ≥ this [empirical]
+src/composing/analysis/types/analysistypes.h,771,KeyModeAnalyzerPreferences,int,dynamicLookaheadStepBeats,int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [empirical]
+src/composing/analysis/types/analysistypes.h,772,KeyModeAnalyzerPreferences,int,dynamicLookaheadMaxBeats,int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]
+src/composing/analysis/types/analysistypes.h,782,KeyModeAnalyzerPreferences,double,hysteresisMargin,double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sigs differ [empirical]
+src/composing/analysis/types/analysistypes.h,788,KeyModeAnalyzerPreferences,double,relativeKeyHysteresisMargin,"double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]"
+src/composing/analysis/types/analysistypes.h,797,KeyModeAnalyzerPreferences,double,beatWeightDownbeat,double beatWeightDownbeat            = 1.0;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,798,KeyModeAnalyzerPreferences,double,beatWeightCompoundStressed,double beatWeightCompoundStressed    = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,799,KeyModeAnalyzerPreferences,double,beatWeightSimpleStressed,double beatWeightSimpleStressed      = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,800,KeyModeAnalyzerPreferences,double,beatWeightCompoundUnstressed,double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,801,KeyModeAnalyzerPreferences,double,beatWeightSimpleUnstressed,double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,802,KeyModeAnalyzerPreferences,double,beatWeightCompoundSubbeat,double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,803,KeyModeAnalyzerPreferences,double,beatWeightSubbeat,double beatWeightSubbeat             = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,912,PitchContext,int,pitch,int pitch = 0;               ///< MIDI pitch number
+src/composing/analysis/types/analysistypes.h,913,PitchContext,double,durationWeight,double durationWeight = 1.0; ///< Duration in quarter-note units; larger = more influence
+src/composing/analysis/types/analysistypes.h,914,PitchContext,double,beatWeight,"double beatWeight = 1.0;     ///< Metric position: 1.0=downbeat, ~0.2=offbeat"
+src/composing/analysis/types/analysistypes.h,915,PitchContext,bool,isBass,bool isBass = false;         ///< True if lowest sounding pitch at this time instant

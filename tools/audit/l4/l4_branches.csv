@@ -1,0 +1,613 @@
+file,line,kind,func,context
+src/composing/analysis/chord/analysisutils.h,48,switch,ionianTonicPcFromFifths,switch (fifths) {
+src/composing/analysis/chord/analysisutils.h,49,case,ionianTonicPcFromFifths,case -7: return 11; // Cb
+src/composing/analysis/chord/analysisutils.h,50,case,ionianTonicPcFromFifths,case -6: return 6;  // Gb
+src/composing/analysis/chord/analysisutils.h,51,case,ionianTonicPcFromFifths,case -5: return 1;  // Db
+src/composing/analysis/chord/analysisutils.h,52,case,ionianTonicPcFromFifths,case -4: return 8;  // Ab
+src/composing/analysis/chord/analysisutils.h,53,case,ionianTonicPcFromFifths,case -3: return 3;  // Eb
+src/composing/analysis/chord/analysisutils.h,54,case,ionianTonicPcFromFifths,case -2: return 10; // Bb
+src/composing/analysis/chord/analysisutils.h,55,case,ionianTonicPcFromFifths,case -1: return 5;  // F
+src/composing/analysis/chord/analysisutils.h,56,case,ionianTonicPcFromFifths,case 0:  return 0;  // C
+src/composing/analysis/chord/analysisutils.h,57,case,ionianTonicPcFromFifths,case 1:  return 7;  // G
+src/composing/analysis/chord/analysisutils.h,58,case,ionianTonicPcFromFifths,case 2:  return 2;  // D
+src/composing/analysis/chord/analysisutils.h,59,case,ionianTonicPcFromFifths,case 3:  return 9;  // A
+src/composing/analysis/chord/analysisutils.h,60,case,ionianTonicPcFromFifths,case 4:  return 4;  // E
+src/composing/analysis/chord/analysisutils.h,61,case,ionianTonicPcFromFifths,case 5:  return 11; // B
+src/composing/analysis/chord/analysisutils.h,62,case,ionianTonicPcFromFifths,case 6:  return 6;  // F#
+src/composing/analysis/chord/analysisutils.h,63,case,ionianTonicPcFromFifths,case 7:  return 1;  // C#
+src/composing/analysis/chord/analysisutils.h,72,ternary,normalizePc,return pc < 0 ? pc + 12 : pc;
+src/composing/analysis/chord/analysisutils.h,108,if,collectionMask,if (isMajor) {
+src/composing/analysis/chord/chordanalyzer.cpp,202,switch,categorizeExtraNote,switch (quality) {
+src/composing/analysis/chord/chordanalyzer.cpp,203,case,categorizeExtraNote,case ChordQuality::Minor:
+src/composing/analysis/chord/chordanalyzer.cpp,204,if,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not minor
+src/composing/analysis/chord/chordanalyzer.cpp,206,case,categorizeExtraNote,case ChordQuality::Suspended4:
+src/composing/analysis/chord/chordanalyzer.cpp,207,if,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not sus4
+src/composing/analysis/chord/chordanalyzer.cpp,210,case,categorizeExtraNote,case ChordQuality::Suspended2:
+src/composing/analysis/chord/chordanalyzer.cpp,211,if,categorizeExtraNote,if (rel == 3)  return ExtraNoteCategory::Contradiction; // m3  → not sus2
+src/composing/analysis/chord/chordanalyzer.cpp,212,if,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not sus2
+src/composing/analysis/chord/chordanalyzer.cpp,214,case,categorizeExtraNote,case ChordQuality::Diminished:
+src/composing/analysis/chord/chordanalyzer.cpp,215,if,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not diminished
+src/composing/analysis/chord/chordanalyzer.cpp,216,if,categorizeExtraNote,if (rel == 7)  return ExtraNoteCategory::Contradiction; // P5  → not diminished (requires ♭5) // BUG-10
+src/composing/analysis/chord/chordanalyzer.cpp,217,if,categorizeExtraNote,if (rel == 10) return ExtraNoteCategory::Contradiction; // m7  → half-diminished
+src/composing/analysis/chord/chordanalyzer.cpp,218,if,categorizeExtraNote,if (rel == 11) return ExtraNoteCategory::Contradiction; // M7  → not diminished
+src/composing/analysis/chord/chordanalyzer.cpp,220,case,categorizeExtraNote,case ChordQuality::HalfDiminished:
+src/composing/analysis/chord/chordanalyzer.cpp,221,if,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not half-dim
+src/composing/analysis/chord/chordanalyzer.cpp,222,if,categorizeExtraNote,if (rel == 9)  return ExtraNoteCategory::Contradiction; // dim7 → fully diminished
+src/composing/analysis/chord/chordanalyzer.cpp,223,if,categorizeExtraNote,if (rel == 11) return ExtraNoteCategory::Contradiction; // M7  → not half-dim
+src/composing/analysis/chord/chordanalyzer.cpp,230,switch,categorizeExtraNote,switch (rel) {
+src/composing/analysis/chord/chordanalyzer.cpp,231,case,categorizeExtraNote,case 1:  // b9
+src/composing/analysis/chord/chordanalyzer.cpp,232,case,categorizeExtraNote,case 2:  // 9
+src/composing/analysis/chord/chordanalyzer.cpp,233,case,categorizeExtraNote,case 3:  // #9 (dual-use with minor 3rd; context overrides handled in caller)
+src/composing/analysis/chord/chordanalyzer.cpp,234,case,categorizeExtraNote,case 5:  // 11
+src/composing/analysis/chord/chordanalyzer.cpp,235,case,categorizeExtraNote,case 6:  // #11 / b5
+src/composing/analysis/chord/chordanalyzer.cpp,236,case,categorizeExtraNote,case 8:  // b13 / #5
+src/composing/analysis/chord/chordanalyzer.cpp,237,case,categorizeExtraNote,case 9:  // 13 / 6
+src/composing/analysis/chord/chordanalyzer.cpp,238,case,categorizeExtraNote,case 10: // minor 7
+src/composing/analysis/chord/chordanalyzer.cpp,239,case,categorizeExtraNote,case 11: // major 7
+src/composing/analysis/chord/chordanalyzer.cpp,389,if,extensionBits,"if (ext.hasMinorSeventh)      setExtension(e, Extension::MinorSeventh);"
+src/composing/analysis/chord/chordanalyzer.cpp,390,if,extensionBits,"if (ext.hasMajorSeventh)      setExtension(e, Extension::MajorSeventh);"
+src/composing/analysis/chord/chordanalyzer.cpp,391,if,extensionBits,"if (ext.hasDiminishedSeventh) setExtension(e, Extension::DiminishedSeventh);"
+src/composing/analysis/chord/chordanalyzer.cpp,392,if,extensionBits,"if (ext.hasAddedSixth)        setExtension(e, Extension::AddedSixth);"
+src/composing/analysis/chord/chordanalyzer.cpp,393,if,extensionBits,"if (ext.hasNinthNatural)      setExtension(e, Extension::NaturalNinth);"
+src/composing/analysis/chord/chordanalyzer.cpp,394,if,extensionBits,"if (ext.hasNinthFlat)         setExtension(e, Extension::FlatNinth);"
+src/composing/analysis/chord/chordanalyzer.cpp,395,if,extensionBits,"if (ext.hasNinthSharp)        setExtension(e, Extension::SharpNinth);"
+src/composing/analysis/chord/chordanalyzer.cpp,396,if,extensionBits,"if (ext.hasEleventh)          setExtension(e, Extension::NaturalEleventh);"
+src/composing/analysis/chord/chordanalyzer.cpp,397,if,extensionBits,"if (ext.hasEleventhSharp)     setExtension(e, Extension::SharpEleventh);"
+src/composing/analysis/chord/chordanalyzer.cpp,398,if,extensionBits,"if (ext.hasThirteenth)        setExtension(e, Extension::NaturalThirteenth);"
+src/composing/analysis/chord/chordanalyzer.cpp,399,if,extensionBits,"if (ext.hasThirteenthFlat)    setExtension(e, Extension::FlatThirteenth);"
+src/composing/analysis/chord/chordanalyzer.cpp,400,if,extensionBits,"if (ext.hasThirteenthSharp)   setExtension(e, Extension::SharpThirteenth);"
+src/composing/analysis/chord/chordanalyzer.cpp,401,if,extensionBits,"if (ext.hasSharpFifth)        setExtension(e, Extension::SharpFifth);"
+src/composing/analysis/chord/chordanalyzer.cpp,402,if,extensionBits,"if (ext.hasFlatFifth)         setExtension(e, Extension::FlatFifth);"
+src/composing/analysis/chord/chordanalyzer.cpp,403,if,extensionBits,"if (ext.isSixNine)            setExtension(e, Extension::SixNine);"
+src/composing/analysis/chord/chordanalyzer.cpp,404,if,extensionBits,"if (omitsThird)               setExtension(e, Extension::OmitsThird);"
+src/composing/analysis/chord/chordanalyzer.cpp,434,if,templateIntervalsVec,if (interval >= 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,455,ternary,scoreTemplateTones,const double factor = (i == 0) ? kRootToneFactor
+src/composing/analysis/chord/chordanalyzer.cpp,456,ternary,scoreTemplateTones,: (i == 1) ? kSecondToneFactor
+src/composing/analysis/chord/chordanalyzer.cpp,485,if,scoreExtraNotes,if (w < 0.01) {
+src/composing/analysis/chord/chordanalyzer.cpp,491,if,scoreExtraNotes,if (((rootPc + interval) % 12) == pc) { inTemplate = true; break; }
+src/composing/analysis/chord/chordanalyzer.cpp,493,if,scoreExtraNotes,if (inTemplate) {
+src/composing/analysis/chord/chordanalyzer.cpp,501,if,scoreExtraNotes,if (tpl.quality == ChordQuality::Major && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,503,if,scoreExtraNotes,if (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,507,if,scoreExtraNotes,if (tpl.quality == ChordQuality::Suspended4 && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,509,if,scoreExtraNotes,if (pcWeight[static_cast<size_t>(normalizePc(rootPc + 5))] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,514,if,scoreExtraNotes,if (cat == ExtraNoteCategory::Extension) {
+src/composing/analysis/chord/chordanalyzer.cpp,515,ternary,scoreExtraNotes,double extensionFactor = (rel == 10 || rel == 11) ? kExtensionFactor7th
+src/composing/analysis/chord/chordanalyzer.cpp,516,ternary,scoreExtraNotes,: (rel == 8)               ? kExtensionFactorFlat13
+src/composing/analysis/chord/chordanalyzer.cpp,522,if,scoreExtraNotes,if (sus4Standard && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,525,if,scoreExtraNotes,if (rootTpc >= 0 && noteTpc >= 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,526,if,scoreExtraNotes,if (noteTpc == rootTpc - 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,528,else-if,scoreExtraNotes,} else if (noteTpc == rootTpc + 9) {
+src/composing/analysis/chord/chordanalyzer.cpp,535,else-if,scoreExtraNotes,} else if (cat == ExtraNoteCategory::Contradiction) {
+src/composing/analysis/chord/chordanalyzer.cpp,553,if,dim7CharacteristicBonus,if (tpl.quality != ChordQuality::Diminished) {
+src/composing/analysis/chord/chordanalyzer.cpp,557,if,dim7CharacteristicBonus,if (pcWeight[static_cast<size_t>(dim7Pc)] <= extThreshold) {
+src/composing/analysis/chord/chordanalyzer.cpp,569,if,dim7CharacteristicBonus,if (pcWeight[static_cast<size_t>(rootPc)] <= extThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,575,if,dim7CharacteristicBonus,if ((keyTonicPc + interval) % 12 == dim7Pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,596,if,countTpcMatches,if (rootTpc < 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,603,if,countTpcMatches,if (actualTpc >= 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,605,if,countTpcMatches,if (actualTpc == rootTpc + tpl.tpcDeltas[i]) {
+src/composing/analysis/chord/chordanalyzer.cpp,636,if,nonBassAdjustment,if (!(isSus4Any || isMinor4 || isHalfDim) || rootPc == bassPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,648,ternary,nonBassAdjustment,return waiverApplies ? 0.0 : -kNonBassPenalty;
+src/composing/analysis/chord/chordanalyzer.cpp,678,if,structuralPenalties,if (sus4HasPerfectFourth && !isSus4FlatFive) {
+src/composing/analysis/chord/chordanalyzer.cpp,680,if,structuralPenalties,if (pcWeight[static_cast<size_t>(fourthPc)] < kSus4StructuralFourthThreshold) {
+src/composing/analysis/chord/chordanalyzer.cpp,690,if,structuralPenalties,if (isSus4Variant) {
+src/composing/analysis/chord/chordanalyzer.cpp,692,if,structuralPenalties,if (pcWeight[static_cast<size_t>(seventhPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,702,if,structuralPenalties,if (isSus4Maj7) {
+src/composing/analysis/chord/chordanalyzer.cpp,704,if,structuralPenalties,if (pcWeight[static_cast<size_t>(fifthPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,716,if,structuralPenalties,if (isDom7FlatFive) {
+src/composing/analysis/chord/chordanalyzer.cpp,722,if,structuralPenalties,if (!flatFiveConfirmed) {
+src/composing/analysis/chord/chordanalyzer.cpp,726,if,structuralPenalties,if (pcWeight[static_cast<size_t>(minorSeventhPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,733,if,structuralPenalties,if (tpl.quality == ChordQuality::Power && distinctPcs >= 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,779,if,bassRootBonusMultiplier,if (hasTemplateFifth) {
+src/composing/analysis/chord/chordanalyzer.cpp,780,if,bassRootBonusMultiplier,if (hasMatchingTemplateThird) {
+src/composing/analysis/chord/chordanalyzer.cpp,784,if,bassRootBonusMultiplier,if (!templateHasThird) {
+src/composing/analysis/chord/chordanalyzer.cpp,787,ternary,bassRootBonusMultiplier,return isBareSuspensionTriad ? prefs.bassRootThirdOnlyMultiplier : 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,795,if,bassRootBonusMultiplier,if (hasPitchClass(rootPc + 3) || hasPitchClass(rootPc + 4)) {
+src/composing/analysis/chord/chordanalyzer.cpp,830,if,qualifiesForCompleteTriadInversionBonus,if (distinctPcs != 3 || rootPc == bassPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,842,if,qualifiesForCompleteTriadInversionBonus,if (!supportedQuality) {
+src/composing/analysis/chord/chordanalyzer.cpp,873,if,appliedBassRootBonus,if (rootPc != bassPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,902,if,diatonicRootContribution,if ((keyTonicPc + interval) % 12 == rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,941,if,buildChordResult,if (quality == ChordQuality::Augmented && ctx.tpcForPc[static_cast<size_t>(rootPc)] < 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,944,if,buildChordResult,if (ctx.pcWeight[static_cast<size_t>(pc)] > 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,948,if,buildChordResult,if (pcs.size() == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,if,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,956,if,buildChordResult,if (isAug) {
+src/composing/analysis/chord/chordanalyzer.cpp,969,if,buildChordResult,if (quality == ChordQuality::Suspended2 && ext.hasEleventh) {
+src/composing/analysis/chord/chordanalyzer.cpp,983,if,buildChordResult,if (ext.hasMajorSeventh && !hasAnyThird
+src/composing/analysis/chord/chordanalyzer.cpp,993,if,buildChordResult,if ((ctx.keyTonicPc + ctx.scale[i]) % 12 == rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1001,if,buildChordResult,if (diatonic) {
+src/composing/analysis/chord/chordanalyzer.cpp,1003,if,buildChordResult,if (ctx.pcWeight[static_cast<size_t>(pc)] <= 0.2) {
+src/composing/analysis/chord/chordanalyzer.cpp,1008,if,buildChordResult,if ((ctx.keyTonicPc + interval) % 12 == pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1013,if,buildChordResult,if (!inScale) {
+src/composing/analysis/chord/chordanalyzer.cpp,1047,if,deriveChordExtensions,if (rootPc < 0 || rootPc >= 12) {
+src/composing/analysis/chord/chordanalyzer.cpp,1070,if,analyzeChord,if (tones.empty()) {
+src/composing/analysis/chord/chordanalyzer.cpp,1083,if,analyzeChord,if (t.pitch < lowestPitch) {
+src/composing/analysis/chord/chordanalyzer.cpp,1116,if,analyzeChord,if (t.onsetAtRegionStart || t.distinctMetricPositions > 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,1131,if,analyzeChord,if (jointScoringEnabled) {
+src/composing/analysis/chord/chordanalyzer.cpp,1142,ternary,analyzeChord,? lowestPitch + 12
+src/composing/analysis/chord/chordanalyzer.cpp,1151,if,analyzeChord,if (t.pitch > bassRegisterCutoff) { continue; }
+src/composing/analysis/chord/chordanalyzer.cpp,1152,if,analyzeChord,if (t.weight < bassMinWeight)      { continue; }
+src/composing/analysis/chord/chordanalyzer.cpp,1155,if,analyzeChord,if (t.pitch < bestPitchPerPc[pcIdx]) {
+src/composing/analysis/chord/chordanalyzer.cpp,1159,if,analyzeChord,if (t.onsetAtRegionStart) {
+src/composing/analysis/chord/chordanalyzer.cpp,1166,if,analyzeChord,if (bestPitchPerPc[pcIdx] != std::numeric_limits<int>::max()) {
+src/composing/analysis/chord/chordanalyzer.cpp,1176,if,analyzeChord,if (rc.onsetAtRegionStart) { hasOnsetTrue = true; }
+src/composing/analysis/chord/chordanalyzer.cpp,1190,if,analyzeChord,if (w > 0.05) { ++distinctPcCount; }
+src/composing/analysis/chord/chordanalyzer.cpp,1196,if,analyzeChord,if ((hasOnsetTrue && hasOnsetFalse) || sparseUpperRegisterAmbiguous) {
+src/composing/analysis/chord/chordanalyzer.cpp,1198,if,analyzeChord,if (bassCandidates.size() > 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,1205,if,analyzeChord,if (bassCandidates.empty() && lowestPitch != std::numeric_limits<int>::max()) {
+src/composing/analysis/chord/chordanalyzer.cpp,1208,if,analyzeChord,if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
+src/composing/analysis/chord/chordanalyzer.cpp,1213,ternary,analyzeChord,? lowestQualifyingPitch : lowestPitch;
+src/composing/analysis/chord/chordanalyzer.cpp,1217,if,analyzeChord,if (t.pitch == chosenPitch) {
+src/composing/analysis/chord/chordanalyzer.cpp,1218,if,analyzeChord,if (t.tpc >= 0) { chosenTpc = t.tpc; }
+src/composing/analysis/chord/chordanalyzer.cpp,1219,if,analyzeChord,if (t.onsetAtRegionStart) { chosenOnsetAtStart = true; }
+src/composing/analysis/chord/chordanalyzer.cpp,1234,if,analyzeChord,if (t.tpc >= 0) {
+src/composing/analysis/chord/chordanalyzer.cpp,1236,if,analyzeChord,if (tpcForPc[static_cast<size_t>(pc)] == -1) {
+src/composing/analysis/chord/chordanalyzer.cpp,1248,if,analyzeChord,if (w > 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,1252,if,analyzeChord,if (distinctPcs < prefs.minDistinctPcsForCandidate) {
+src/composing/analysis/chord/chordanalyzer.cpp,1383,if,analyzeChord,if (tpl.quality == ChordQuality::Augmented
+src/composing/analysis/chord/chordanalyzer.cpp,1412,ternary,analyzeChord,? 1.0
+src/composing/analysis/chord/chordanalyzer.cpp,1416,ternary,analyzeChord,? 1.0 : (kComplexityEvidenceFloor + evidenceRatio);
+src/composing/analysis/chord/chordanalyzer.cpp,1421,if,analyzeChord,if (tpl.quality == ChordQuality::Augmented
+src/composing/analysis/chord/chordanalyzer.cpp,1426,if,analyzeChord,if (tpl.quality == ChordQuality::Augmented) {
+src/composing/analysis/chord/chordanalyzer.cpp,1431,if,analyzeChord,if (thirdW <= prefs.extensionThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,1453,if,analyzeChord,if (!jointScoringEnabled || candBassPc != rootPc || distinctPcs != 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,1459,switch,analyzeChord,switch (tpl.quality) {
+src/composing/analysis/chord/chordanalyzer.cpp,1460,case,analyzeChord,case ChordQuality::Major:      thirdInterval = 4; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1461,case,analyzeChord,case ChordQuality::Minor:      thirdInterval = 3; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1462,case,analyzeChord,case ChordQuality::Diminished: thirdInterval = 3; fifthInterval = 6; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1463,case,analyzeChord,case ChordQuality::Augmented:  thirdInterval = 4; fifthInterval = 8; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1482,ternary,analyzeChord,return allTriadPresent ? kWComplete : 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1551,ternary,analyzeChord,fnCtx.previousRootPc = context ? context->previousRootPc : -1;
+src/composing/analysis/chord/chordanalyzer.cpp,1552,ternary,analyzeChord,fnCtx.nextRootPc     = context ? context->nextRootPc     : -1;
+src/composing/analysis/chord/chordanalyzer.cpp,1553,ternary,analyzeChord,fnCtx.previousBassPc = context ? context->previousBassPc : -1;
+src/composing/analysis/chord/chordanalyzer.cpp,1554,ternary,analyzeChord,fnCtx.nextBassPc     = context ? context->nextBassPc     : -1;
+src/composing/analysis/chord/chordanalyzer.cpp,1558,ternary,analyzeChord,fnCtx.bassIsStepwiseFromPrevious = context ? context->bassIsStepwiseFromPrevious : false;
+src/composing/analysis/chord/chordanalyzer.cpp,1559,ternary,analyzeChord,fnCtx.bassIsStepwiseToNext       = context ? context->bassIsStepwiseToNext       : false;
+src/composing/analysis/chord/chordanalyzer.cpp,1561,ternary,analyzeChord,fnCtx.previousQuality              = context ? context->previousQuality              : ChordQuality::Unknown;
+src/composing/analysis/chord/chordanalyzer.cpp,1562,ternary,analyzeChord,fnCtx.consecutiveBassStepwiseCount = context ? context->consecutiveBassStepwiseCount : 0;
+src/composing/analysis/chord/chordanalyzer.cpp,1563,ternary,analyzeChord,fnCtx.regionMetricWeight           = context ? context->regionMetricWeight           : 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1564,ternary,analyzeChord,"fnCtx.recentRootPcs                = context ? context->recentRootPcs : std::array<int, 3>{ -1, -1, -1 };"
+src/composing/analysis/chord/chordanalyzer.cpp,1566,ternary,analyzeChord,fnCtx.previousWinnerScore        = context ? context->previousWinnerScore        : 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1567,ternary,analyzeChord,fnCtx.previousWinnerMargin       = context ? context->previousWinnerMargin       : -1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1568,ternary,analyzeChord,fnCtx.previousWinnerRootPcWeight = context ? context->previousWinnerRootPcWeight : 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1569,ternary,analyzeChord,fnCtx.previousDistinctPcs        = context ? context->previousDistinctPcs        : 0;
+src/composing/analysis/chord/chordanalyzer.cpp,1572,if,analyzeChord,if (gateCtxOut) {
+src/composing/analysis/chord/chordanalyzer.cpp,1590,if,analyzeChord,if (snapshotOut) {
+src/composing/analysis/chord/chordanalyzer.cpp,1603,switch,create,switch (type) {
+src/composing/analysis/chord/chordanalyzer.cpp,1604,case,create,case ChordAnalyzerType::RuleBased:
+src/composing/analysis/chord/chordanalyzer.h,107,if,templateIntervalMask,if (interval >= 0) {
+src/composing/analysis/chord/chordanalyzer.h,132,if,normalizeMergedBassTone,if (tones.empty()) {
+src/composing/analysis/chord/chordanalyzer.h,138,if,normalizeMergedBassTone,if (tones[index].pitch < tones[lowestIndex].pitch) {
+src/composing/analysis/chord/chordanalyzer.h,155,if,mergeChordAnalysisTones,if ((existingTone.pitch % 12) == (newTone.pitch % 12)) {
+src/composing/analysis/chord/chordanalyzer.h,161,if,mergeChordAnalysisTones,if (!mergedTone) {
+src/composing/analysis/chord/chordanalyzer.h,169,if,mergeChordAnalysisTones,if (newTone.simultaneousVoiceCount > mergedTone->simultaneousVoiceCount) {
+src/composing/analysis/chord/chordanalyzer.h,172,if,mergeChordAnalysisTones,if (newTone.onsetAtRegionStart) {
+src/composing/analysis/chord/chordanalyzer.h,175,if,mergeChordAnalysisTones,if (newTone.pitch < mergedTone->pitch) {
+src/composing/analysis/chord/chordanalyzer.h,178,else-if,mergeChordAnalysisTones,} else if (mergedTone->tpc == -1 && newTone.tpc != -1) {
+src/composing/analysis/chord/chordanalyzer.h,190,if,bassToneFromTones,if (!tone.isBass) {
+src/composing/analysis/chord/chordanalyzer.h,193,if,bassToneFromTones,if (!bassTone || tone.pitch < bassTone->pitch) {
+src/composing/analysis/chord/chordanalyzer.h,492,if,advanceTemporalContext,if (ctx.bassIsStepwiseFromPrevious) {
+src/composing/analysis/chord/chordanalyzer.h,565,ternary,advanceTemporalContext,? gateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+src/composing/analysis/chord/chordanalyzer.h,568,ternary,advanceTemporalContext,? 0.0 : gateCtx.rawCandidates[0].score;
+src/composing/analysis/chord/chordanalyzer.h,570,ternary,advanceTemporalContext,? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+src/composing/analysis/chord/chordanalyzer.h,606,if,computeRawFanoutSummary,if (above) { ++s.aboveThreshold; }
+src/composing/analysis/chord/chordanalyzer.h,607,if,computeRawFanoutSummary,if (rc.rootPc >= 0 && rc.rootPc < 12) {
+src/composing/analysis/chord/chordanalyzer.h,609,if,computeRawFanoutSummary,if (!rootSeenAll[r])          { rootSeenAll[r]   = true; ++s.distinctRootsTotal; }
+src/composing/analysis/chord/chordanalyzer.h,610,if,computeRawFanoutSummary,if (above && !rootSeenAbove[r]) { rootSeenAbove[r] = true; ++s.distinctRootsAbove; }
+src/composing/analysis/chord/chordanalyzer.h,742,if,inferNextRootPc,if (tones.empty()) return -1;
+src/composing/analysis/chord/chordanalyzer.h,746,if,inferNextRootPc,if (candidates.empty()) return -1;
+src/composing/analysis/chord/chordanalyzer.h,749,ternary,inferNextRootPc,return candidates.empty() ? -1 : candidates[0].identity.rootPc;
+src/composing/analysis/chord/chordslicedecoder.cpp,62,if,candidateBetter,if (a.score != b.score) {
+src/composing/analysis/chord/chordslicedecoder.cpp,65,if,candidateBetter,if (a.tiePriority != b.tiePriority) {
+src/composing/analysis/chord/chordslicedecoder.cpp,68,if,candidateBetter,if (a.rootPc != b.rootPc) {
+src/composing/analysis/chord/chordslicedecoder.cpp,90,if,templateToneCount,if (tiePriority < 0 || tiePriority >= static_cast<int>(kTemplateCount)) {
+src/composing/analysis/chord/chordslicedecoder.cpp,95,if,templateToneCount,if (interval >= 0) { ++n; }
+src/composing/analysis/chord/chordslicedecoder.cpp,113,if,sameCollectionOverFocal,if (!present[pc]) { continue; }
+src/composing/analysis/chord/chordslicedecoder.cpp,116,if,sameCollectionOverFocal,if (!inA && !inB) { return false; }   // a focal pc neither reading explains → not one collection
+src/composing/analysis/chord/chordslicedecoder.cpp,117,if,sameCollectionOverFocal,if (inA) { ++aCov; }
+src/composing/analysis/chord/chordslicedecoder.cpp,118,if,sameCollectionOverFocal,if (inB) { ++bCov; }
+src/composing/analysis/chord/chordslicedecoder.cpp,150,if,eligibleNotesInSpan,if (!(ne->plays && ne->visible && ne->staffEligible && !ne->isGrace
+src/composing/analysis/chord/chordslicedecoder.cpp,174,if,distinctPcCount,if (!seen[pc]) { seen[pc] = true; ++n; }
+src/composing/analysis/chord/chordslicedecoder.cpp,216,if,adaptiveWindow,if (clampedLoOut) { *clampedLoOut = (t - c < 0); }
+src/composing/analysis/chord/chordslicedecoder.cpp,217,if,adaptiveWindow,if (clampedHiOut) { *clampedHiOut = (t + c > n - 1); }
+src/composing/analysis/chord/chordslicedecoder.cpp,226,if,isChordToneOfAny,"if (c && function::bassIsTemplateChordTone(c->rootPc, c->tiePriority, pc)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,282,if,stepwiseSignals,if (w.voice != note.voice || (&w == &note)) {
+src/composing/analysis/chord/chordslicedecoder.cpp,285,if,stepwiseSignals,if (w.onset == note.onset && w.pitch == note.pitch && w.release == note.release) {
+src/composing/analysis/chord/chordslicedecoder.cpp,288,if,stepwiseSignals,if (w.release >= note.onset - tol && w.release <= note.onset + tol) {
+src/composing/analysis/chord/chordslicedecoder.cpp,289,if,stepwiseSignals,if (!pred || w.release > pred->release) { pred = &w; }   // immediate melodic predecessor
+src/composing/analysis/chord/chordslicedecoder.cpp,291,if,stepwiseSignals,if (w.onset >= note.release - tol && w.onset <= note.release + tol) {
+src/composing/analysis/chord/chordslicedecoder.cpp,292,if,stepwiseSignals,if (!succ || w.onset < succ->onset) { succ = &w; }       // immediate melodic successor
+src/composing/analysis/chord/chordslicedecoder.cpp,352,if,classifyTone,if (s.suspension || (s.stepIn && s.stepOut)) {
+src/composing/analysis/chord/chordslicedecoder.cpp,358,if,classifyTone,if (s.stepIn || s.stepOut) {
+src/composing/analysis/chord/chordslicedecoder.cpp,361,ternary,classifyTone,o.chordTone = s.stepOut ? false
+src/composing/analysis/chord/chordslicedecoder.cpp,367,if,classifyTone,if (s.leapIn && s.leapOut) {
+src/composing/analysis/chord/chordslicedecoder.cpp,387,if,allFocalAreTemplateTonesOf,"if (!function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, f.pc())) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,413,if,focalConsistentAsEmbellishmentsOf,"if (function::bassIsTemplateChordTone(prevailing.rootPc, prevailing.tiePriority, f.pc())) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,417,if,focalConsistentAsEmbellishmentsOf,if (o.chordTone) {
+src/composing/analysis/chord/chordslicedecoder.cpp,456,if,candidatesForWindow,if (pcWeightOut) { *pcWeightOut = snapshot.pcWeight; }
+src/composing/analysis/chord/chordslicedecoder.cpp,457,if,candidatesForWindow,if (tpcForPcOut) { *tpcForPcOut = snapshot.tpcForPc; }
+src/composing/analysis/chord/chordslicedecoder.cpp,465,ternary,candidatesForWindow,? snapshot.tpcForPc[static_cast<std::size_t>(cell.rootPc)] : -1;
+src/composing/analysis/chord/chordslicedecoder.cpp,477,if,candidatesForWindow,if (r.identity.rootPc == cell.rootPc
+src/composing/analysis/chord/chordslicedecoder.cpp,504,if,completeChosenExtensions,if (!sc.hasChord || sc.chosen.rootPc < 0 || sc.chosen.extensionsKnown) {
+src/composing/analysis/chord/chordslicedecoder.cpp,530,if,populateForwardContract,if (sc.chosen.rootPc >= 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,533,if,populateForwardContract,if (!focal.empty()) {
+src/composing/analysis/chord/chordslicedecoder.cpp,570,if,symmetricRotationSet,if (chosen.rootPc < 0 || chosen.rootPc >= 12) {
+src/composing/analysis/chord/chordslicedecoder.cpp,580,if,symmetricRotationSet,if (!present[pc]) { return false; }   // a collection tone is not sounding → not this sonority
+src/composing/analysis/chord/chordslicedecoder.cpp,588,if,symmetricRotationSet,if (chosen.quality == ChordQuality::Augmented) {
+src/composing/analysis/chord/chordslicedecoder.cpp,589,if,symmetricRotationSet,"if (rot(chosen.rootPc, 4, 3)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,592,else-if,symmetricRotationSet,} else if (chosen.quality == ChordQuality::Diminished) {
+src/composing/analysis/chord/chordslicedecoder.cpp,593,if,symmetricRotationSet,"if (rot(chosen.rootPc, 3, 4)) {   // a FULL dim7 (root+9 present), not a plain dim triad"
+src/composing/analysis/chord/chordslicedecoder.cpp,609,if,focalLineOfFifths,if (f.pc() != pc) { continue; }
+src/composing/analysis/chord/chordslicedecoder.cpp,611,if,focalLineOfFifths,if (l == engravingbridge::kNoLineOfFifths) { continue; }
+src/composing/analysis/chord/chordslicedecoder.cpp,612,if,focalLineOfFifths,if (lof == engravingbridge::kNoLineOfFifths) {
+src/composing/analysis/chord/chordslicedecoder.cpp,614,else-if,focalLineOfFifths,} else if (lof != l) {
+src/composing/analysis/chord/chordslicedecoder.cpp,629,if,spellingRootOf,if (!sym.valid) { return -1; }
+src/composing/analysis/chord/chordslicedecoder.cpp,633,if,spellingRootOf,if (lof == engravingbridge::kNoLineOfFifths || lof == kContradictedLof) {
+src/composing/analysis/chord/chordslicedecoder.cpp,641,if,spellingRootOf,if (lofPc[i].first - lofPc[i - 1].first != sym.stepFifths) {
+src/composing/analysis/chord/chordslicedecoder.cpp,646,ternary,spellingRootOf,return sym.dimSeventh ? lofPc.back().second : lofPc.front().second;
+src/composing/analysis/chord/chordslicedecoder.cpp,659,if,bestRotationCandidate,if (c.rootPc == root && c.quality == chosen.quality) {
+src/composing/analysis/chord/chordslicedecoder.cpp,660,if,bestRotationCandidate,if (c.bassPc == chosen.bassPc) { exact = &c; break; }
+src/composing/analysis/chord/chordslicedecoder.cpp,661,if,bestRotationCandidate,if (!symbol) { symbol = &c; }
+src/composing/analysis/chord/chordslicedecoder.cpp,664,ternary,bestRotationCandidate,return exact ? exact : symbol;
+src/composing/analysis/chord/chordslicedecoder.cpp,674,if,spellingPinnedRoot,if (!decoderPrefs.enableSpellingPin) {
+src/composing/analysis/chord/chordslicedecoder.cpp,689,if,decideSlice,if (candidates.empty()) {
+src/composing/analysis/chord/chordslicedecoder.cpp,713,ternary,symmetricRotationSet,"? symmetricRotationSet(sc.chosen, focal) : SymRotationSet{};"
+src/composing/analysis/chord/chordslicedecoder.cpp,715,if,decideSlice,if (sym.valid) {
+src/composing/analysis/chord/chordslicedecoder.cpp,717,if,decideSlice,if (spelledRoot >= 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,719,if,decideSlice,if (spelledRoot != sc.chosen.rootPc) {
+src/composing/analysis/chord/chordslicedecoder.cpp,721,if,decideSlice,if (repl) { sc.chosen = *repl; }
+src/composing/analysis/chord/chordslicedecoder.cpp,737,if,decideSlice,"if (sameChordSymbol(c, sc.chosen) || isResolvedSibling(c)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,742,ternary,decideSlice,sc.confidence = (bestOther == NEG_INF) ? kNoCompetitorConfidence
+src/composing/analysis/chord/chordslicedecoder.cpp,752,if,decideSlice,"if (sameChordVoicing(c, sc.chosen) || isResolvedSibling(c)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,757,if,decideSlice,if (dup) {
+src/composing/analysis/chord/chordslicedecoder.cpp,760,if,decideSlice,if (decoderPrefs.topK > 0 && static_cast<int>(sc.alternatives.size()) >= decoderPrefs.topK) {
+src/composing/analysis/chord/chordslicedecoder.cpp,769,if,decideSlice,"if (prevailing.has_value() && !sameChordSymbol(*prevailing, sc.chosen)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,773,if,decideSlice,if (!alreadyCarried) {
+src/composing/analysis/chord/chordslicedecoder.cpp,778,if,decideSlice,"if (sameChordVoicing(c, *prevailing)) { exact = &c; break; }"
+src/composing/analysis/chord/chordslicedecoder.cpp,779,if,decideSlice,"if (!symbol && sameChordSymbol(c, *prevailing)) { symbol = &c; }"
+src/composing/analysis/chord/chordslicedecoder.cpp,781,if,decideSlice,if (exact) {
+src/composing/analysis/chord/chordslicedecoder.cpp,783,else-if,decideSlice,} else if (symbol) {
+src/composing/analysis/chord/chordslicedecoder.cpp,803,ternary,classifyMembership,const ChordSliceCandidate* prevC = prevChord.has_value() ? &*prevChord : nullptr;
+src/composing/analysis/chord/chordslicedecoder.cpp,804,ternary,classifyMembership,const ChordSliceCandidate* nextC = nextChord.has_value() ? &*nextChord : nullptr;
+src/composing/analysis/chord/chordslicedecoder.cpp,819,if,classifyMembership,if (isTemplate) {
+src/composing/analysis/chord/chordslicedecoder.cpp,828,if,classifyMembership,if (o.tier1Embellishing) {
+src/composing/analysis/chord/chordslicedecoder.cpp,831,else-if,classifyMembership,} else if (o.chordTone) {
+src/composing/analysis/chord/chordslicedecoder.cpp,845,if,classifyMembership,if (!present[pc]) {
+src/composing/analysis/chord/chordslicedecoder.cpp,848,if,classifyMembership,if (anyChordTone[pc]) {
+src/composing/analysis/chord/chordslicedecoder.cpp,864,if,templateTonePresenceCount,"if (!counted[pc] && function::bassIsTemplateChordTone(chord.rootPc, chord.tiePriority, pc)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,885,ternary,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(templateTonesPresent)"
+src/composing/analysis/chord/chordslicedecoder.cpp,892,ternary,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(focalChordTonePcs)"
+src/composing/analysis/chord/chordslicedecoder.cpp,914,if,nameOpenQuestion,if (sc.decision != SliceDecision::Abstain) {
+src/composing/analysis/chord/chordslicedecoder.cpp,919,if,nameOpenQuestion,if (sc.chosen.rootPc < 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,931,if,nameOpenQuestion,"if (!sameChordSymbol(a, sc.chosen)) { other = &a; break; }"
+src/composing/analysis/chord/chordslicedecoder.cpp,933,if,nameOpenQuestion,if (other) {
+src/composing/analysis/chord/chordslicedecoder.cpp,938,if,nameOpenQuestion,if (!sufficient) {
+src/composing/analysis/chord/chordslicedecoder.cpp,943,ternary,nameOpenQuestion,q.ambiguity = wasTransition ? AmbiguityKind::TransitionVsContinuation
+src/composing/analysis/chord/chordslicedecoder.cpp,950,if,nameOpenQuestion,if (!other) {
+src/composing/analysis/chord/chordslicedecoder.cpp,956,if,nameOpenQuestion,if (sc.chosen.rootPc == other->rootPc) {
+src/composing/analysis/chord/chordslicedecoder.cpp,960,ternary,nameOpenQuestion,? AmbiguityKind::ShareTone : AmbiguityKind::CloseReading;
+src/composing/analysis/chord/chordslicedecoder.cpp,966,if,nameOpenQuestion,if (sc.chosen.quality == ChordQuality::Augmented && other->quality == ChordQuality::Augmented) {
+src/composing/analysis/chord/chordslicedecoder.cpp,968,else-if,nameOpenQuestion,"} else if (sameCollectionOverFocal(sc.chosen, *other, focal)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,970,else-if,nameOpenQuestion,"} else if (relativePair(sc.chosen, *other)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,987,if,applyCommitDecision,if (!dp.enableCommitDecision) {
+src/composing/analysis/chord/chordslicedecoder.cpp,997,if,applyCommitDecision,if (!sc.hasChord) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1012,if,applyCommitDecision,if (sufficient && marginOk) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1038,if,applyCommitDecision,if (!sufficient && prevailing.has_value()) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1040,if,applyCommitDecision,if (nextChord.has_value()) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1044,ternary,applyCommitDecision,"prevChord.has_value() ? &*prevChord : nullptr, &*nextChord, dp);"
+src/composing/analysis/chord/chordslicedecoder.cpp,1048,if,applyCommitDecision,if (inherit) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1128,if,finalizeSlice,if (dp.membershipPenaltyWeight != 0.0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1147,if,finalizeSlice,if (sc.hasChord) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1171,if,decodeWindowed,if (T == 0 || outFirst < 0 || outLast >= T || outFirst > outLast) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1180,if,decodeWindowed,if (!dp.enableMembership) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1195,if,decodeWindowed,if (sc.hasChord) { prevailing = sc.chosen; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1196,if,decodeWindowed,if (t >= outFirst) { out.push_back(std::move(sc)); }
+src/composing/analysis/chord/chordslicedecoder.cpp,1211,if,decodeWindowed,if (t < p1lo || t > p1hi) { return std::nullopt; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1213,if,decodeWindowed,if (w.built && w.pass1.hasChord) { return w.pass1.chosen; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1223,ternary,decodeWindowed,dp.twoPass ? pass1ChosenAt(t - 1) : std::nullopt;
+src/composing/analysis/chord/chordslicedecoder.cpp,1225,ternary,decodeWindowed,dp.twoPass ? pass1ChosenAt(t + 1) : std::nullopt;
+src/composing/analysis/chord/chordslicedecoder.cpp,1228,if,decodeWindowed,if (sc.hasChord) { prevailing = sc.chosen; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1229,if,decodeWindowed,if (t >= outFirst) { out.push_back(std::move(sc)); }
+src/composing/analysis/chord/chordslicedecoder.cpp,1246,if,decode,if (T == 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1317,if,decodeSelection,if (selectionEnd <= selectionStart) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1327,if,decodeSelection,if (T == 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1336,if,decodeSelection,if (slices[static_cast<std::size_t>(i)].start < selectionEnd
+src/composing/analysis/chord/chordslicedecoder.cpp,1338,if,decodeSelection,if (selFirst < 0) { selFirst = i; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1342,if,decodeSelection,if (selFirst < 0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1354,if,decodeSelection,if (static_cast<int>(full.size()) != T) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1358,if,decodeSelection,if (decoded.empty()) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1383,if,decodeSelection,if ((earlierRelevant || laterRelevant) && attempt < maxSteps) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1385,if,decodeSelection,if (earlierRelevant) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1391,if,decodeSelection,if (laterRelevant) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1397,if,decodeSelection,if (grew) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1407,if,decodeSelection,if (earlierClip) { decoded.front().clippedBySelectionEdge = true; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1408,if,decodeSelection,if (laterClip)   { decoded.back().clippedBySelectionEdge = true; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1410,if,decodeSelection,if (earlierRelevant && hardBoundSpent) { decoded.front().cueDenied = true; }
+src/composing/analysis/chord/chordslicedecoder.cpp,1411,if,decodeSelection,if (laterRelevant && hardBoundSpent)   { decoded.back().cueDenied = true; }
+src/composing/analysis/chord/chordsymbolformatter.cpp,62,if,csfPitchClassName,if (keySignatureFifths < 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,63,ternary,csfPitchClassName,return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+src/composing/analysis/chord/chordsymbolformatter.cpp,65,ternary,csfPitchClassName,return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
+src/composing/analysis/chord/chordsymbolformatter.cpp,102,if,csfPitchClassNameFromTpc,if (tpc >= 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,108,if,csfPitchClassNameFromTpc,"if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,108,ternary,csfPitchClassNameFromTpc,"if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,109,if,csfPitchClassNameFromTpc,"if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,109,ternary,csfPitchClassNameFromTpc,"if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,131,if,csfPitchClassNameFromTpc,if (tpc >= 20) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,133,if,csfPitchClassNameFromTpc,if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
+src/composing/analysis/chord/chordsymbolformatter.cpp,136,ternary,csfPitchClassNameFromTpc,return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+src/composing/analysis/chord/chordsymbolformatter.cpp,140,if,csfPitchClassNameFromTpc,if (keySignatureFifths == 0
+src/composing/analysis/chord/chordsymbolformatter.cpp,176,if,csfPitchClassNameFromTpc,if (preferFlat) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,177,ternary,csfPitchClassNameFromTpc,return isGerman ? FLAT_NAMES_GERMAN[idx] : FLAT_NAMES[idx];
+src/composing/analysis/chord/chordsymbolformatter.cpp,179,ternary,csfPitchClassNameFromTpc,return isGerman ? SHARP_NAMES_GERMAN[idx] : SHARP_NAMES[idx];
+src/composing/analysis/chord/chordsymbolformatter.cpp,187,if,csfPitchClassNameFromTpc,if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+src/composing/analysis/chord/chordsymbolformatter.cpp,188,ternary,csfPitchClassNameFromTpc,"return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,189,if,csfPitchClassNameFromTpc,if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+src/composing/analysis/chord/chordsymbolformatter.cpp,190,ternary,csfPitchClassNameFromTpc,"return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,203,if,csfQualitySuffix,if (isSixNine) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,204,switch,csfQualitySuffix,switch (quality) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,205,case,csfQualitySuffix,"case ChordQuality::Minor:      return ""m69"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,206,case,csfQualitySuffix,"case ChordQuality::Suspended2: return ""sus269"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,207,case,csfQualitySuffix,"case ChordQuality::Suspended4: return ""sus69"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,215,switch,csfQualitySuffix,switch (quality) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,216,case,csfQualitySuffix,case ChordQuality::Major:
+src/composing/analysis/chord/chordsymbolformatter.cpp,217,if,csfQualitySuffix,if (hasMaj7 && hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,219,ternary,csfQualitySuffix,"suffix = hasNinth ? ""Maj13"" : ""Maj7add13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,220,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,221,else-if,csfQualitySuffix,} else if (hasMaj7 && hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,222,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""Maj#11"" : ""Maj11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,223,else-if,csfQualitySuffix,} else if (hasMaj7 && hasNinth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,224,if,csfQualitySuffix,if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,227,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""Maj7b9"" : ""Maj7#9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,229,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,230,else-if,csfQualitySuffix,} else if (hasMin7 && hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,231,ternary,csfQualitySuffix,"suffix = hasThirteenthFlat ? ""b13"" : ""13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,232,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,233,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,234,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,235,else-if,csfQualitySuffix,} else if (hasMin7 && hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,236,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""#11"" : ""11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,237,else-if,csfQualitySuffix,} else if (hasMin7 && hasNinth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,238,if,csfQualitySuffix,if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,239,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""b9"" : hasNinthSharp ? ""#9"" : ""9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,239,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""b9"" : hasNinthSharp ? ""#9"" : ""9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,242,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,243,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,245,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,246,else-if,csfQualitySuffix,} else if (hasMaj7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,248,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,249,else-if,csfQualitySuffix,} else if (hasMin7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,251,if,csfQualitySuffix,"if (hasNinthFlat)   { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,252,if,csfQualitySuffix,"if (hasNinthSharp)  { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,253,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,254,else-if,csfQualitySuffix,} else if (hasAdd6) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,256,else-if,csfQualitySuffix,} else if (hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,257,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""add#11"" : ""add11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,258,else-if,csfQualitySuffix,} else if (hasNinth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,259,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""addb9"" : hasNinthSharp ? ""add#9"" : ""add9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,259,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""addb9"" : hasNinthSharp ? ""add#9"" : ""add9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,260,if,csfQualitySuffix,"if (hasThirteenthSharp) { suffix += ""add#13""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,261,else-if,csfQualitySuffix,} else if (hasThirteenthSharp) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,263,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""add#11#13"" : ""add#13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,269,case,csfQualitySuffix,case ChordQuality::Minor:
+src/composing/analysis/chord/chordsymbolformatter.cpp,270,if,csfQualitySuffix,if (hasMaj7 && hasExtended) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,271,if,csfQualitySuffix,if (hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,272,ternary,csfQualitySuffix,"suffix = hasNinth ? ""mMaj13"" : ""mMaj7add13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,273,else-if,csfQualitySuffix,} else if (hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,274,ternary,csfQualitySuffix,"suffix = hasNinth ? ""mMaj11"" : ""mMaj7add11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,276,ternary,csfQualitySuffix,"suffix = hasNinthNatural ? ""mMaj9"" : ""mMaj7"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,278,else-if,csfQualitySuffix,} else if (hasMin7 && hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,279,ternary,csfQualitySuffix,"suffix = hasThirteenthFlat ? ""mb13"" : ""m13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,280,else-if,csfQualitySuffix,} else if (hasMin7 && hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,282,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""m#11"" : (hasNinth ? ""m11"" : ""m7add11"");"
+src/composing/analysis/chord/chordsymbolformatter.cpp,282,ternary,csfQualitySuffix,"suffix = hasEleventhSharp ? ""m#11"" : (hasNinth ? ""m11"" : ""m7add11"");"
+src/composing/analysis/chord/chordsymbolformatter.cpp,283,else-if,csfQualitySuffix,} else if (hasMin7 && hasNinth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,284,if,csfQualitySuffix,if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,285,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""mb9"" : hasNinthSharp ? ""m#9"" : ""m9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,285,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""mb9"" : hasNinthSharp ? ""m#9"" : ""m9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,288,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,289,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,291,else-if,csfQualitySuffix,} else if (hasMin7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,293,else-if,csfQualitySuffix,} else if (hasMaj7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,295,else-if,csfQualitySuffix,} else if (hasAdd6) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,297,else-if,csfQualitySuffix,} else if (hasNinth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,298,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""maddb9"" : hasNinthSharp ? ""madd#9"" : ""madd9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,298,ternary,csfQualitySuffix,"suffix = hasNinthFlat ? ""maddb9"" : hasNinthSharp ? ""madd#9"" : ""madd9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,304,case,csfQualitySuffix,case ChordQuality::Diminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,305,ternary,csfQualitySuffix,"suffix = hasDim7 ? ""dim7"" : ""dim"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,308,case,csfQualitySuffix,case ChordQuality::HalfDiminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,309,if,csfQualitySuffix,if (hasNinthNatural && hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,311,else-if,csfQualitySuffix,} else if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,313,else-if,csfQualitySuffix,} else if (hasNinthFlat) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,315,else-if,csfQualitySuffix,} else if (hasEleventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,322,case,csfQualitySuffix,case ChordQuality::Augmented:
+src/composing/analysis/chord/chordsymbolformatter.cpp,325,if,csfQualitySuffix,if (hasMaj7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,326,if,csfQualitySuffix,if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,330,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,331,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,333,else-if,csfQualitySuffix,} else if (hasMin7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,334,if,csfQualitySuffix,if (hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,336,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,337,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,338,else-if,csfQualitySuffix,} else if (hasNinth && hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,342,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,343,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,345,if,csfQualitySuffix,"if (hasEleventhSharp) { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,351,case,csfQualitySuffix,case ChordQuality::Suspended2:
+src/composing/analysis/chord/chordsymbolformatter.cpp,352,if,csfQualitySuffix,if (hasMin7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,353,ternary,csfQualitySuffix,"suffix = hasThirteenth ? ""13sus2"" : hasEleventh ? ""11sus2"" : hasNinth ? ""9sus2"" : ""7sus2"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,353,ternary,csfQualitySuffix,"suffix = hasThirteenth ? ""13sus2"" : hasEleventh ? ""11sus2"" : hasNinth ? ""9sus2"" : ""7sus2"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,353,ternary,csfQualitySuffix,"suffix = hasThirteenth ? ""13sus2"" : hasEleventh ? ""11sus2"" : hasNinth ? ""9sus2"" : ""7sus2"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,356,ternary,csfQualitySuffix,"suffix = hasEleventh ? ""sus2(add4)"" : ""sus2"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,360,case,csfQualitySuffix,case ChordQuality::Suspended4:
+src/composing/analysis/chord/chordsymbolformatter.cpp,361,if,csfQualitySuffix,if (hasMaj7 && hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,363,else-if,csfQualitySuffix,} else if (hasMaj7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,365,if,csfQualitySuffix,"if (hasNinthFlat)  { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,366,if,csfQualitySuffix,"if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,367,else-if,csfQualitySuffix,} else if (hasMin7) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,370,if,csfQualitySuffix,if (hasThirteenth) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,372,else-if,csfQualitySuffix,} else if (hasNinthNatural && !hasNinthFlat && !hasNinthSharp) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,378,if,csfQualitySuffix,"if (hasFlatFifth)       { suffix += ""b5""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,379,else-if,csfQualitySuffix,"else if (hasSharpFifth) { suffix += ""#5""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,380,if,csfQualitySuffix,"if (hasNinthFlat)       { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,381,else-if,csfQualitySuffix,"else if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,382,if,csfQualitySuffix,"if (hasEleventhSharp)   { suffix += ""#11""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,383,if,csfQualitySuffix,"if (hasThirteenthFlat)  { suffix += ""b13""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,387,if,csfQualitySuffix,if (hasNinthFlat || hasNinthSharp) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,389,if,csfQualitySuffix,"if (hasNinthFlat)       { suffix += ""b9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,390,else-if,csfQualitySuffix,"else if (hasNinthSharp) { suffix += ""#9""; }"
+src/composing/analysis/chord/chordsymbolformatter.cpp,391,else-if,csfQualitySuffix,} else if (hasEleventhSharp) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,393,else-if,csfQualitySuffix,} else if (hasNinthNatural) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,402,case,csfQualitySuffix,case ChordQuality::Power:
+src/composing/analysis/chord/chordsymbolformatter.cpp,415,if,csfQualitySuffix,"if (hasThirteenthFlat && !hasThirteenth && !endsWith(suffix, ""b13"")"
+src/composing/analysis/chord/chordsymbolformatter.cpp,418,ternary,csfQualitySuffix,"suffix += hasAnySeventh ? ""b13"" : ""addb13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,427,if,csfQualitySuffix,if (hasSharpFifth && quality != ChordQuality::Augmented
+src/composing/analysis/chord/chordsymbolformatter.cpp,433,if,csfQualitySuffix,if (hasFlatFifth && !hasSharpFifth && quality != ChordQuality::Diminished
+src/composing/analysis/chord/chordsymbolformatter.cpp,438,if,csfQualitySuffix,if (suffix.empty() && quality == ChordQuality::Major) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,473,if,csfChromaticRoman,if ((scale[i] - 1 + 12) % 12 == semitone) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,474,ternary,csfChromaticRoman,"return std::string(""b"") + (isMinorQuality ? LOWER[i] : UPPER[i]);"
+src/composing/analysis/chord/chordsymbolformatter.cpp,479,if,csfChromaticRoman,if ((scale[i] + 1) % 12 == semitone) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,480,ternary,csfChromaticRoman,"return std::string(""#"") + (isMinorQuality ? LOWER[i] : UPPER[i]);"
+src/composing/analysis/chord/chordsymbolformatter.cpp,488,if,csfDiatonicRoman,if (r.function.degree < 0 || r.function.degree > 6) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,499,switch,csfDiatonicRoman,switch (quality) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,500,case,csfDiatonicRoman,case ChordQuality::Major:
+src/composing/analysis/chord/chordsymbolformatter.cpp,501,case,csfDiatonicRoman,case ChordQuality::Augmented:
+src/composing/analysis/chord/chordsymbolformatter.cpp,502,case,csfDiatonicRoman,case ChordQuality::Power:
+src/composing/analysis/chord/chordsymbolformatter.cpp,503,case,csfDiatonicRoman,case ChordQuality::Suspended2:
+src/composing/analysis/chord/chordsymbolformatter.cpp,504,case,csfDiatonicRoman,case ChordQuality::Suspended4:
+src/composing/analysis/chord/chordsymbolformatter.cpp,507,case,csfDiatonicRoman,case ChordQuality::Minor:
+src/composing/analysis/chord/chordsymbolformatter.cpp,508,case,csfDiatonicRoman,case ChordQuality::Diminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,509,case,csfDiatonicRoman,case ChordQuality::HalfDiminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,517,if,csfDiatonicRoman,if (quality == ChordQuality::Augmented) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,519,else-if,csfDiatonicRoman,} else if (quality == ChordQuality::Diminished) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,524,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::AddedSixth) && (quality == ChordQuality::Major || quality == ChordQuality::Minor)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,525,ternary,csfDiatonicRoman,"rn += hasExtension(r.identity.extensions, Extension::NaturalNinth) ? ""69"" : ""(add6)"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,540,if,csfDiatonicRoman,if (hasAnySeventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,541,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::NaturalThirteenth))        level = 13;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,542,else-if,csfDiatonicRoman,"else if (hasExtension(r.identity.extensions, Extension::NaturalEleventh))     level = 11;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,543,else-if,csfDiatonicRoman,"else if (hasExtension(r.identity.extensions, Extension::NaturalNinth)) level = 9;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,548,if,csfDiatonicRoman,if (quality == ChordQuality::HalfDiminished) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,551,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatNinth))       rn += ""b9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,552,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpNinth))      rn += ""#9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,553,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpEleventh))   rn += ""#11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,554,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatThirteenth))  rn += ""b13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,559,if,csfDiatonicRoman,"if (quality == ChordQuality::Diminished && hasExtension(r.identity.extensions, Extension::DiminishedSeventh)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,565,if,csfDiatonicRoman,if (quality == ChordQuality::Suspended2 || quality == ChordQuality::Suspended4) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,566,ternary,csfDiatonicRoman,"const char* susTag = (quality == ChordQuality::Suspended2) ? ""sus2"" : ""sus4"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,567,if,csfDiatonicRoman,if (level > 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,568,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::MajorSeventh)) rn += ""M"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,570,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatFifth))       rn += ""b5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,571,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpFifth))      rn += ""#5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,572,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatNinth))       rn += ""b9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,573,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpNinth))      rn += ""#9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,574,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpEleventh))   rn += ""#11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,575,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatThirteenth))  rn += ""b13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,584,if,csfDiatonicRoman,if (level > 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,585,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::MajorSeventh)) rn += ""M"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,591,if,csfDiatonicRoman,if (hasAnySeventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,592,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatFifth) && quality != ChordQuality::Diminished)  rn += ""b5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,593,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpFifth) && quality != ChordQuality::Augmented)  rn += ""#5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,594,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatNinth))       rn += ""b9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,595,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpNinth))      rn += ""#9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,596,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::SharpEleventh))   rn += ""#11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,597,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::FlatThirteenth))  rn += ""b13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,601,if,csfDiatonicRoman,if (!hasAnySeventh && quality != ChordQuality::Diminished) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,602,if,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::NaturalThirteenth)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,604,else-if,csfDiatonicRoman,"} else if (hasExtension(r.identity.extensions, Extension::SharpEleventh)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,606,else-if,csfDiatonicRoman,"} else if (hasExtension(r.identity.extensions, Extension::NaturalEleventh)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,608,else-if,csfDiatonicRoman,"} else if (hasExtension(r.identity.extensions, Extension::FlatNinth)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,610,else-if,csfDiatonicRoman,"} else if (hasExtension(r.identity.extensions, Extension::SharpNinth)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,612,else-if,csfDiatonicRoman,"} else if (hasExtension(r.identity.extensions, Extension::NaturalNinth)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,625,switch,csfCoreIntervals,switch (quality) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,626,case,csfCoreIntervals,case ChordQuality::Major:
+src/composing/analysis/chord/chordsymbolformatter.cpp,629,case,csfCoreIntervals,case ChordQuality::Minor:
+src/composing/analysis/chord/chordsymbolformatter.cpp,632,case,csfCoreIntervals,case ChordQuality::HalfDiminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,635,case,csfCoreIntervals,case ChordQuality::Diminished:
+src/composing/analysis/chord/chordsymbolformatter.cpp,638,case,csfCoreIntervals,case ChordQuality::Augmented:
+src/composing/analysis/chord/chordsymbolformatter.cpp,641,case,csfCoreIntervals,case ChordQuality::Suspended2:
+src/composing/analysis/chord/chordsymbolformatter.cpp,644,case,csfCoreIntervals,case ChordQuality::Suspended4:
+src/composing/analysis/chord/chordsymbolformatter.cpp,647,case,csfCoreIntervals,case ChordQuality::Power:
+src/composing/analysis/chord/chordsymbolformatter.cpp,655,if,csfCoreIntervals,if (hasDiminishedSeventh && quality == ChordQuality::Diminished) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,657,else-if,csfCoreIntervals,} else if (hasMajorSeventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,659,else-if,csfCoreIntervals,} else if (hasMinorSeventh) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,669,if,csfRomanWithInversion,if (roman.empty() || bassPc == rootPc) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,678,if,csfRomanWithInversion,if (intervalIt == intervals.end()) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,683,if,csfRomanWithInversion,if (inversion <= 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,687,if,csfRomanWithInversion,if (intervals.size() <= 3) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,688,if,csfRomanWithInversion,if (inversion == 1) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,691,if,csfRomanWithInversion,if (inversion == 2) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,699,if,csfRomanWithInversion,"if (endsWith(roman, ""M7"")) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,702,if,csfRomanWithInversion,"if (endsWith(roman, ""7"")) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,717,if,csfIsValidBassNoteName,if (!bass || bass[0] == '\0') return false;
+src/composing/analysis/chord/chordsymbolformatter.cpp,718,if,csfIsValidBassNoteName,if (!std::isupper(static_cast<unsigned char>(bass[0]))) return false;
+src/composing/analysis/chord/chordsymbolformatter.cpp,721,if,csfIsValidBassNoteName,if (bass[len] != '#' && bass[len] != 'b') return false;
+src/composing/analysis/chord/chordsymbolformatter.cpp,722,if,csfIsValidBassNoteName,if (len >= 3) return false;   // max 3 chars
+src/composing/analysis/chord/chordsymbolformatter.cpp,733,if,formatSymbol,"if (hasExtension(result.identity.extensions, Extension::OmitsThird) && hasExtension(result.identity.extensions, Extension::MajorSeventh)"
+src/composing/analysis/chord/chordsymbolformatter.cpp,736,ternary,formatSymbol,"symbol += hasExtension(result.identity.extensions, Extension::NaturalNinth) ? ""Maj9sus"" : ""Maj7sus"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,737,if,formatSymbol,if (result.identity.bassPc != result.identity.rootPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,740,if,formatSymbol,if (csfIsValidBassNoteName(bassName)) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,769,if,formatSymbol,"if (hasExtension(result.identity.extensions, Extension::OmitsThird)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,773,if,formatSymbol,if (result.identity.bassPc != result.identity.rootPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,776,if,formatSymbol,if (csfIsValidBassNoteName(bassName)) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,811,if,csfDiatonicDegreeForPc,if (scale[d] == interval) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,831,if,formatRomanNumeral,if (result.function.degree < 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,847,if,formatRomanNumeral,if (chrBase.empty()) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,856,ternary,formatRomanNumeral,"const std::string suffix = diatonized.size() > 1 ? diatonized.substr(1) : """";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,888,if,formatRomanNumeral,if (result.identity.quality == Q::Major
+src/composing/analysis/chord/chordsymbolformatter.cpp,891,if,formatRomanNumeral,"if (hasExtension(result.identity.extensions, Extension::SharpEleventh)) {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,893,else-if,formatRomanNumeral,} else if (result.identity.naturalFifthPresent) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,909,if,formatRomanNumeral,if (result.function.nextRootPc >= 0 && !romanNumeral.empty()) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,929,if,formatRomanNumeral,if (isCandidateV || isCandidateViio) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,936,if,formatRomanNumeral,if (nextDegree > 0) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,941,if,formatRomanNumeral,if (isCandidateV) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,948,ternary,formatRomanNumeral,"tonicLabel += isHalfDim ? ""\xc3\xb8"" : ""o""; // ø or °"
+src/composing/analysis/chord/chordsymbolformatter.cpp,949,if,formatRomanNumeral,if (isHalfDim
+src/composing/analysis/chord/chordsymbolformatter.cpp,958,ternary,formatRomanNumeral,tonicLabel += (upper ? UPPER[nextDegree] : LOWER[nextDegree]);
+src/composing/analysis/chord/chordsymbolformatter.cpp,973,if,nashvilleDegree,if (degree >= 0 && degree < 7)
+src/composing/analysis/chord/chordsymbolformatter.cpp,980,switch,nashvilleQualitySuffix,switch (result.identity.quality) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,981,case,nashvilleQualitySuffix,"case Q::Major:        return """";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,982,case,nashvilleQualitySuffix,"case Q::Minor:        return ""m"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,983,case,nashvilleQualitySuffix,"case Q::Diminished:   return ""°"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,984,case,nashvilleQualitySuffix,"case Q::Augmented:    return ""+"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,985,case,nashvilleQualitySuffix,"case Q::HalfDiminished: return ""ø"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,986,case,nashvilleQualitySuffix,"case Q::Suspended2:   return ""sus2"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,987,case,nashvilleQualitySuffix,"case Q::Suspended4:   return ""sus4"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,988,case,nashvilleQualitySuffix,"case Q::Power:        return ""5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,995,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::MajorSeventh))      ext += ""maj7"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,996,else-if,nashvilleExtensionSuffix,"else if (hasExtension(result.identity.extensions, Extension::MinorSeventh)) ext += ""7"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,997,else-if,nashvilleExtensionSuffix,"else if (hasExtension(result.identity.extensions, Extension::DiminishedSeventh)) ext += ""°7"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,998,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::AddedSixth))        ext += ""6"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,999,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::NaturalNinth))             ext += ""9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1000,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::NaturalEleventh))          ext += ""11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1001,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::NaturalThirteenth))        ext += ""13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1002,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::FlatFifth))         ext += ""♭5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1003,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::SharpFifth))        ext += ""♯5"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1004,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::FlatNinth))         ext += ""♭9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1005,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::SharpNinth))        ext += ""♯9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1006,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::SharpEleventh))     ext += ""#11"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1007,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::FlatThirteenth))    ext += ""♭13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1008,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::SharpThirteenth))   ext += ""♯13"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1009,if,nashvilleExtensionSuffix,"if (hasExtension(result.identity.extensions, Extension::SixNine))            ext += ""6/9"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1014,if,nashvilleBassSuffix,if (result.identity.bassPc != result.identity.rootPc) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,1026,if,formatNashvilleNumber,if (result.function.degree >= 0 && result.function.degree < 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,37,if,diatonicTriadShapeForDegree,if (degree < 0 || degree > 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,46,ternary,diatonicTriadShapeForDegree,+ (thirdDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,49,ternary,diatonicTriadShapeForDegree,+ (fifthDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,52,if,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,55,if,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,58,if,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,61,if,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 8) {
+src/composing/analysis/region/sparsechordrefinement.cpp,76,if,tonesFitTriadShape,if (seenPitchClasses[pitchClass]) {
+src/composing/analysis/region/sparsechordrefinement.cpp,82,if,tonesFitTriadShape,if (interval != 0 && interval != thirdInterval && interval != fifthInterval) {
+src/composing/analysis/region/sparsechordrefinement.cpp,95,if,distinctPitchClassCount,if (seenPitchClasses[pitchClass]) {
+src/composing/analysis/region/sparsechordrefinement.cpp,112,if,diatonicDegreeForRootPc,if ((tonicPc + scale[i]) % 12 == rootPc) {
+src/composing/analysis/region/sparsechordrefinement.cpp,125,if,refineSparseChordQualityFromKeyContext,if (result.identity.quality != ChordQuality::Unknown) {
+src/composing/analysis/region/sparsechordrefinement.cpp,132,if,refineSparseChordQualityFromKeyContext,if (degree < 0 || degree > 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,134,if,refineSparseChordQualityFromKeyContext,if (degree < 0) {
+src/composing/analysis/region/sparsechordrefinement.cpp,145,if,refineSparseChordQualityFromKeyContext,if (!triadShape) {
+src/composing/analysis/region/sparsechordrefinement.cpp,154,if,refineSparseChordQualityFromKeyContext,if (uniquePitchClasses == 1
+src/composing/analysis/region/sparsechordrefinement.cpp,161,if,refineSparseChordQualityFromKeyContext,"if (!tonesFitTriadShape(tones, result.identity.rootPc, thirdInterval, fifthInterval)) {"
+src/composing/analysis/region/sparsechordrefinement.cpp,178,if,applyTonicPriorToSparseChord,if (!isThin) {
+src/composing/analysis/region/sparsechordrefinement.cpp,184,if,applyTonicPriorToSparseChord,if (distinctPitchClassCount(tones) > 2) {
+src/composing/analysis/region/sparsechordrefinement.cpp,190,if,applyTonicPriorToSparseChord,if (degree < 0) {
+src/composing/analysis/region/sparsechordrefinement.cpp,195,if,applyTonicPriorToSparseChord,if (!triadShape) {
+src/composing/analysis/region/sparsechordrefinement.cpp,207,if,forceChordTrackQualityFromKeyContext,if (result.identity.quality != ChordQuality::Unknown) {
+src/composing/analysis/region/sparsechordrefinement.cpp,213,if,forceChordTrackQualityFromKeyContext,if (!triadShape) {

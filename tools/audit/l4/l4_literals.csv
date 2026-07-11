@@ -1,0 +1,1068 @@
+file,line,value,func,context
+src/composing/analysis/chord/analysisutils.h,49,7,ionianTonicPcFromFifths,case -7: return 11; // Cb
+src/composing/analysis/chord/analysisutils.h,49,11,ionianTonicPcFromFifths,case -7: return 11; // Cb
+src/composing/analysis/chord/analysisutils.h,50,6,ionianTonicPcFromFifths,case -6: return 6;  // Gb
+src/composing/analysis/chord/analysisutils.h,50,6,ionianTonicPcFromFifths,case -6: return 6;  // Gb
+src/composing/analysis/chord/analysisutils.h,51,5,ionianTonicPcFromFifths,case -5: return 1;  // Db
+src/composing/analysis/chord/analysisutils.h,52,4,ionianTonicPcFromFifths,case -4: return 8;  // Ab
+src/composing/analysis/chord/analysisutils.h,52,8,ionianTonicPcFromFifths,case -4: return 8;  // Ab
+src/composing/analysis/chord/analysisutils.h,53,3,ionianTonicPcFromFifths,case -3: return 3;  // Eb
+src/composing/analysis/chord/analysisutils.h,53,3,ionianTonicPcFromFifths,case -3: return 3;  // Eb
+src/composing/analysis/chord/analysisutils.h,54,2,ionianTonicPcFromFifths,case -2: return 10; // Bb
+src/composing/analysis/chord/analysisutils.h,54,10,ionianTonicPcFromFifths,case -2: return 10; // Bb
+src/composing/analysis/chord/analysisutils.h,55,5,ionianTonicPcFromFifths,case -1: return 5;  // F
+src/composing/analysis/chord/analysisutils.h,57,7,ionianTonicPcFromFifths,case 1:  return 7;  // G
+src/composing/analysis/chord/analysisutils.h,58,2,ionianTonicPcFromFifths,case 2:  return 2;  // D
+src/composing/analysis/chord/analysisutils.h,58,2,ionianTonicPcFromFifths,case 2:  return 2;  // D
+src/composing/analysis/chord/analysisutils.h,59,3,ionianTonicPcFromFifths,case 3:  return 9;  // A
+src/composing/analysis/chord/analysisutils.h,59,9,ionianTonicPcFromFifths,case 3:  return 9;  // A
+src/composing/analysis/chord/analysisutils.h,60,4,ionianTonicPcFromFifths,case 4:  return 4;  // E
+src/composing/analysis/chord/analysisutils.h,60,4,ionianTonicPcFromFifths,case 4:  return 4;  // E
+src/composing/analysis/chord/analysisutils.h,61,5,ionianTonicPcFromFifths,case 5:  return 11; // B
+src/composing/analysis/chord/analysisutils.h,61,11,ionianTonicPcFromFifths,case 5:  return 11; // B
+src/composing/analysis/chord/analysisutils.h,62,6,ionianTonicPcFromFifths,case 6:  return 6;  // F#
+src/composing/analysis/chord/analysisutils.h,62,6,ionianTonicPcFromFifths,case 6:  return 6;  // F#
+src/composing/analysis/chord/analysisutils.h,63,7,ionianTonicPcFromFifths,case 7:  return 1;  // C#
+src/composing/analysis/chord/analysisutils.h,71,12,normalizePc,int pc = pitch % 12;
+src/composing/analysis/chord/analysisutils.h,72,12,normalizePc,return pc < 0 ? pc + 12 : pc;
+src/composing/analysis/chord/analysisutils.h,90,5,diatonicMaskFromFifths,for (int i = fifths - 1; i <= fifths + 5; ++i) {
+src/composing/analysis/chord/analysisutils.h,91,7,diatonicMaskFromFifths,m |= static_cast<uint16_t>(1u << normalizePc(7 * i));
+src/composing/analysis/chord/analysisutils.h,105,2,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,105,4,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,105,5,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,105,7,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,105,9,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,105,11,collectionMask,"static constexpr int kMajor[]     = { 0, 2, 4, 5, 7, 9, 11 };"
+src/composing/analysis/chord/analysisutils.h,106,2,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,3,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,5,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,7,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,8,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,10,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/analysisutils.h,106,11,collectionMask,"static constexpr int kMinorHarm[] = { 0, 2, 3, 5, 7, 8, 10, 11 }; // natural minor + raised 7"
+src/composing/analysis/chord/chordanalyzer.cpp,58,0.75,<file-scope>,static double kContradictionPenalty = 0.75;
+src/composing/analysis/chord/chordanalyzer.cpp,68,1.8,<file-scope>,"static double kRootToneFactor          = 1.8;   // [theory-grounded ordering, empirical value]"
+src/composing/analysis/chord/chordanalyzer.cpp,69,1.2,<file-scope>,"static double kSecondToneFactor        = 1.2;   // [theory-grounded ordering, empirical value]"
+src/composing/analysis/chord/chordanalyzer.cpp,70,1.0,<file-scope>,static double kOtherToneFactor         = 1.0;   // baseline
+src/composing/analysis/chord/chordanalyzer.cpp,71,3.0,<file-scope>,static double kTemplateToneWeightCap   = 3.0;   // [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,72,2.0,<file-scope>,static double kExtraNoteWeightCap      = 2.0;   // [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,84,0.45,<file-scope>,static double kExtensionFactor7th      = 0.45;  // m7/M7: common colour tone [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,85,0.20,<file-scope>,static double kExtensionFactorFlat13   = 0.20;  // b13/#5: inversion-ambiguous [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,86,0.35,<file-scope>,"static double kExtensionFactorDefault  = 0.35;  // 9th, 11th, etc.  [empirical]"
+src/composing/analysis/chord/chordanalyzer.cpp,87,0.45,<file-scope>,static double kForeignPenalty          = 0.45;  // neither extension nor contradiction [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,96,0.10,<file-scope>,static double kSus4FlatThirdFactor     = 0.10;  // Eb spelling → minor intent  [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,97,0.45,<file-scope>,static double kSus4SharpThirdFactor    = 0.45;  // D# spelling → #9 intent     [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,104,0.75,<file-scope>,static double kDim7CharacteristicBonus = 0.75;  // fully-diminished fingerprint confirmed [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,105,0.35,<file-scope>,static double kNonBassPenalty          = 0.35;  // Min7/Sus4/HalfDim: prefer bass-root reading [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,106,0.70,<file-scope>,static double kSus4VariantMissing7th   = 0.70;  // Sus4b5/Sus4#5 without defining m7 [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,107,0.50,<file-scope>,static double kSus4Maj7MissingP5       = 0.50;  // Sus4+Maj7 without P5 anchor [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,108,0.70,<file-scope>,static double kSus4MissingFourth       = 0.70;  // Sus4 without defining P4 (interval 5) [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,113,0.50,<file-scope>,static double kSus4StructuralFourthThreshold = 0.50;
+src/composing/analysis/chord/chordanalyzer.cpp,114,0.55,<file-scope>,static double kDom7FlatFiveTpcPenalty  = 0.55;  // dom7b5: enharmonic ambiguity without Gb TPC [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,115,0.50,<file-scope>,static double kDom7FlatFiveMissing7th  = 0.50;  // dom7b5 without minor 7th: too ambiguous [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,116,0.30,<file-scope>,static double kPowerChord3PcPenalty    = 0.30;  // power chord with 3+ pcs: triadic reading preferred [empirical]
+src/composing/analysis/chord/chordanalyzer.cpp,117,0.05,<file-scope>,static double kBassSupportPresenceThreshold = 0.05;  // matches distinct-PC presence threshold
+src/composing/analysis/chord/chordanalyzer.cpp,124,0.12,<file-scope>,static double kSeventhThreshold        = 0.12;
+src/composing/analysis/chord/chordanalyzer.cpp,129,0.20,<file-scope>,static double kExtensionThreshold      = 0.20;
+src/composing/analysis/chord/chordanalyzer.cpp,141,0.50,<file-scope>,static double kWComplete = 0.50;                    ///< Iter-92 root-position complete-triad bonus (was chordanalyzer.cpp local)
+src/composing/analysis/chord/chordanalyzer.cpp,142,0.05,<file-scope>,static double kWCompletePresenceThreshold = 0.05;   ///< wComplete triad-tone presence bar (was the lambda-local kPresenceThreshold)
+src/composing/analysis/chord/chordanalyzer.cpp,143,0.5,<file-scope>,static double kComplexityEvidenceFloor = 0.5;       ///< Iter-74 FixA: template-complexity discount threshold AND additive floor (one shaping constant)
+src/composing/analysis/chord/chordanalyzer.cpp,144,0.5,<file-scope>,static double kAugThinEvidenceFactor = 0.5;         ///< Iter-78/79: augmented thin-evidence / bare-root halving factor (both *= sites)
+src/composing/analysis/chord/chordanalyzer.cpp,204,4,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not minor
+src/composing/analysis/chord/chordanalyzer.cpp,207,4,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not sus4
+src/composing/analysis/chord/chordanalyzer.cpp,211,3,categorizeExtraNote,if (rel == 3)  return ExtraNoteCategory::Contradiction; // m3  → not sus2
+src/composing/analysis/chord/chordanalyzer.cpp,212,4,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not sus2
+src/composing/analysis/chord/chordanalyzer.cpp,215,4,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not diminished
+src/composing/analysis/chord/chordanalyzer.cpp,216,7,categorizeExtraNote,if (rel == 7)  return ExtraNoteCategory::Contradiction; // P5  → not diminished (requires ♭5) // BUG-10
+src/composing/analysis/chord/chordanalyzer.cpp,217,10,categorizeExtraNote,if (rel == 10) return ExtraNoteCategory::Contradiction; // m7  → half-diminished
+src/composing/analysis/chord/chordanalyzer.cpp,218,11,categorizeExtraNote,if (rel == 11) return ExtraNoteCategory::Contradiction; // M7  → not diminished
+src/composing/analysis/chord/chordanalyzer.cpp,221,4,categorizeExtraNote,if (rel == 4)  return ExtraNoteCategory::Contradiction; // M3  → not half-dim
+src/composing/analysis/chord/chordanalyzer.cpp,222,9,categorizeExtraNote,if (rel == 9)  return ExtraNoteCategory::Contradiction; // dim7 → fully diminished
+src/composing/analysis/chord/chordanalyzer.cpp,223,11,categorizeExtraNote,if (rel == 11) return ExtraNoteCategory::Contradiction; // M7  → not half-dim
+src/composing/analysis/chord/chordanalyzer.cpp,232,2,categorizeExtraNote,case 2:  // 9
+src/composing/analysis/chord/chordanalyzer.cpp,233,3,categorizeExtraNote,case 3:  // #9 (dual-use with minor 3rd; context overrides handled in caller)
+src/composing/analysis/chord/chordanalyzer.cpp,234,5,categorizeExtraNote,case 5:  // 11
+src/composing/analysis/chord/chordanalyzer.cpp,235,6,categorizeExtraNote,case 6:  // #11 / b5
+src/composing/analysis/chord/chordanalyzer.cpp,236,8,categorizeExtraNote,case 8:  // b13 / #5
+src/composing/analysis/chord/chordanalyzer.cpp,237,9,categorizeExtraNote,case 9:  // 13 / 6
+src/composing/analysis/chord/chordanalyzer.cpp,238,10,categorizeExtraNote,case 10: // minor 7
+src/composing/analysis/chord/chordanalyzer.cpp,239,11,categorizeExtraNote,case 11: // major 7
+src/composing/analysis/chord/chordanalyzer.cpp,268,12,detectExtensions,"ExtensionFlags detectExtensions(const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,271,12,detectExtensions,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordanalyzer.cpp,276,12,detectExtensions,return pcWeight[static_cast<size_t>((rootPc + semitones) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,281,10,detectExtensions,const bool rawMin7  = w(10) > kSeventhThreshold;
+src/composing/analysis/chord/chordanalyzer.cpp,282,11,detectExtensions,const bool rawMaj7  = w(11) > kSeventhThreshold;
+src/composing/analysis/chord/chordanalyzer.cpp,283,9,detectExtensions,const bool rawDim7  = (quality == ChordQuality::Diminished) && (w(9) > extThreshold);
+src/composing/analysis/chord/chordanalyzer.cpp,288,10,detectExtensions,const int pc10 = static_cast<size_t>((rootPc + 10) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,288,12,detectExtensions,const int pc10 = static_cast<size_t>((rootPc + 10) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,291,10,detectExtensions,&& (tpc10 - rootTpc == 10);
+src/composing/analysis/chord/chordanalyzer.cpp,299,9,detectExtensions,f.hasAddedSixth = w(9) > extThreshold && !rawMin7 && !rawMaj7
+src/composing/analysis/chord/chordanalyzer.cpp,302,2,detectExtensions,f.hasNinthNatural = w(2) > extThreshold;
+src/composing/analysis/chord/chordanalyzer.cpp,309,3,detectExtensions,f.hasNinthSharp   = w(3) > extThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,310,4,detectExtensions,&& (quality != ChordQuality::Major || w(4) > extThreshold)
+src/composing/analysis/chord/chordanalyzer.cpp,316,5,detectExtensions,f.hasEleventh = w(5) > extThreshold;  // P4: stays at general threshold
+src/composing/analysis/chord/chordanalyzer.cpp,320,9,detectExtensions,f.hasThirteenth = w(9) > extThreshold && hasSeventh;
+src/composing/analysis/chord/chordanalyzer.cpp,324,10,detectExtensions,const int pc10 = static_cast<size_t>((rootPc + 10) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,324,12,detectExtensions,const int pc10 = static_cast<size_t>((rootPc + 10) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,327,10,detectExtensions,&& (tpc10 - rootTpc == 10);
+src/composing/analysis/chord/chordanalyzer.cpp,328,10,detectExtensions,f.hasThirteenthSharp = w(10) > extThreshold && isSharp13Spelling
+src/composing/analysis/chord/chordanalyzer.cpp,334,7,detectExtensions,const bool naturalFifthPresent = (quality != ChordQuality::Augmented) && (w(7) > extThreshold);
+src/composing/analysis/chord/chordanalyzer.cpp,339,6,detectExtensions,const bool rawFlatFifth = w(6) > extThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,343,6,detectExtensions,const int pc6  = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,343,12,detectExtensions,const int pc6  = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,355,6,detectExtensions,f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth
+src/composing/analysis/chord/chordanalyzer.cpp,355,0.3,detectExtensions,f.hasEleventhSharp = w(6) > 0.3 && !f.hasFlatFifth
+src/composing/analysis/chord/chordanalyzer.cpp,365,8,detectExtensions,const int pc8  = (rootPc + 8) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,365,12,detectExtensions,const int pc8  = (rootPc + 8) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,371,8,detectExtensions,f.hasSharpFifth     = w(8) > extThreshold && !fifthSlotOrMinorFlat6;
+src/composing/analysis/chord/chordanalyzer.cpp,375,8,detectExtensions,f.hasThirteenthFlat = w(8) > 0.3 && fifthSlotOrMinorFlat6
+src/composing/analysis/chord/chordanalyzer.cpp,375,0.3,detectExtensions,f.hasThirteenthFlat = w(8) > 0.3 && fifthSlotOrMinorFlat6
+src/composing/analysis/chord/chordanalyzer.cpp,376,7,detectExtensions,&& (hasSeventh || (quality == ChordQuality::Minor && w(7) > 0.2));
+src/composing/analysis/chord/chordanalyzer.cpp,376,0.2,detectExtensions,&& (hasSeventh || (quality == ChordQuality::Minor && w(7) > 0.2));
+src/composing/analysis/chord/chordanalyzer.cpp,449,12,scoreTemplateTones,"const std::array<double, 12>& pcWeight)"
+src/composing/analysis/chord/chordanalyzer.cpp,451,0.0,scoreTemplateTones,double score = 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,453,12,scoreTemplateTones,const int chordPc = (rootPc + tpl.intervals[i]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,472,12,scoreExtraNotes,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,473,12,scoreExtraNotes,"const std::array<int, 12>& tpcForPc)"
+src/composing/analysis/chord/chordanalyzer.cpp,480,3,scoreExtraNotes,&& (tpl.intervals.size() < 3 || tpl.intervals[2] == 7));
+src/composing/analysis/chord/chordanalyzer.cpp,480,2,scoreExtraNotes,&& (tpl.intervals.size() < 3 || tpl.intervals[2] == 7));
+src/composing/analysis/chord/chordanalyzer.cpp,480,7,scoreExtraNotes,&& (tpl.intervals.size() < 3 || tpl.intervals[2] == 7));
+src/composing/analysis/chord/chordanalyzer.cpp,482,0.0,scoreExtraNotes,double score = 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,483,12,scoreExtraNotes,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,485,0.01,scoreExtraNotes,if (w < 0.01) {
+src/composing/analysis/chord/chordanalyzer.cpp,491,12,scoreExtraNotes,if (((rootPc + interval) % 12) == pc) { inTemplate = true; break; }
+src/composing/analysis/chord/chordanalyzer.cpp,501,3,scoreExtraNotes,if (tpl.quality == ChordQuality::Major && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,503,4,scoreExtraNotes,if (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,503,12,scoreExtraNotes,if (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,503,0.1,scoreExtraNotes,if (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,507,3,scoreExtraNotes,if (tpl.quality == ChordQuality::Suspended4 && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,509,5,scoreExtraNotes,if (pcWeight[static_cast<size_t>(normalizePc(rootPc + 5))] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,509,0.1,scoreExtraNotes,if (pcWeight[static_cast<size_t>(normalizePc(rootPc + 5))] < 0.1) {
+src/composing/analysis/chord/chordanalyzer.cpp,515,10,scoreExtraNotes,double extensionFactor = (rel == 10 || rel == 11) ? kExtensionFactor7th
+src/composing/analysis/chord/chordanalyzer.cpp,515,11,scoreExtraNotes,double extensionFactor = (rel == 10 || rel == 11) ? kExtensionFactor7th
+src/composing/analysis/chord/chordanalyzer.cpp,516,8,scoreExtraNotes,: (rel == 8)               ? kExtensionFactorFlat13
+src/composing/analysis/chord/chordanalyzer.cpp,522,3,scoreExtraNotes,if (sus4Standard && rel == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,526,3,scoreExtraNotes,if (noteTpc == rootTpc - 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,528,9,scoreExtraNotes,} else if (noteTpc == rootTpc + 9) {
+src/composing/analysis/chord/chordanalyzer.cpp,548,12,dim7CharacteristicBonus,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,550,7,dim7CharacteristicBonus,"const std::array<int, 7>& scale,"
+src/composing/analysis/chord/chordanalyzer.cpp,554,0.0,dim7CharacteristicBonus,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,556,9,dim7CharacteristicBonus,const int dim7Pc = (rootPc + 9) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,556,12,dim7CharacteristicBonus,const int dim7Pc = (rootPc + 9) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,558,0.0,dim7CharacteristicBonus,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,567,3,dim7CharacteristicBonus,const int b3Pc = (rootPc + 3) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,567,12,dim7CharacteristicBonus,const int b3Pc = (rootPc + 3) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,568,6,dim7CharacteristicBonus,const int b5Pc = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,568,12,dim7CharacteristicBonus,const int b5Pc = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,572,0.0,dim7CharacteristicBonus,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,575,12,dim7CharacteristicBonus,if ((keyTonicPc + interval) % 12 == dim7Pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,576,0.0,dim7CharacteristicBonus,return 0.0;  // diatonic — no bonus
+src/composing/analysis/chord/chordanalyzer.cpp,593,12,countTpcMatches,"const std::array<int, 12>& tpcForPc)"
+src/composing/analysis/chord/chordanalyzer.cpp,601,12,countTpcMatches,const int chordPc   = (rootPc + tpl.intervals[i]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,628,12,nonBassAdjustment,"const std::array<int, 12>& tpcForPc)"
+src/composing/analysis/chord/chordanalyzer.cpp,631,4,nonBassAdjustment,&& tpl.intervals.size() == 4);
+src/composing/analysis/chord/chordanalyzer.cpp,633,4,nonBassAdjustment,&& tpl.intervals.size() == 4);
+src/composing/analysis/chord/chordanalyzer.cpp,637,0.0,nonBassAdjustment,return 0.0;  // penalty does not apply to this template or this root
+src/composing/analysis/chord/chordanalyzer.cpp,641,4,nonBassAdjustment,&& tpl.intervals.size() == 4
+src/composing/analysis/chord/chordanalyzer.cpp,642,2,nonBassAdjustment,&& tpl.intervals[2] != 7);
+src/composing/analysis/chord/chordanalyzer.cpp,642,7,nonBassAdjustment,&& tpl.intervals[2] != 7);
+src/composing/analysis/chord/chordanalyzer.cpp,648,0.0,nonBassAdjustment,return waiverApplies ? 0.0 : -kNonBassPenalty;
+src/composing/analysis/chord/chordanalyzer.cpp,656,12,structuralPenalties,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,657,12,structuralPenalties,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordanalyzer.cpp,661,0.0,structuralPenalties,double score = 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,674,5,structuralPenalties,[](int i) { return i == 5; });
+src/composing/analysis/chord/chordanalyzer.cpp,676,3,structuralPenalties,&& tpl.intervals.size() >= 3
+src/composing/analysis/chord/chordanalyzer.cpp,677,2,structuralPenalties,&& tpl.intervals[2] == 6;
+src/composing/analysis/chord/chordanalyzer.cpp,677,6,structuralPenalties,&& tpl.intervals[2] == 6;
+src/composing/analysis/chord/chordanalyzer.cpp,679,5,structuralPenalties,const int fourthPc = static_cast<int>((rootPc + 5) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,679,12,structuralPenalties,const int fourthPc = static_cast<int>((rootPc + 5) % 12);
+src/composing/analysis/chord/chordanalyzer.cpp,688,4,structuralPenalties,&& tpl.intervals.size() == 4
+src/composing/analysis/chord/chordanalyzer.cpp,689,2,structuralPenalties,&& tpl.intervals[2] != 7);
+src/composing/analysis/chord/chordanalyzer.cpp,689,7,structuralPenalties,&& tpl.intervals[2] != 7);
+src/composing/analysis/chord/chordanalyzer.cpp,691,3,structuralPenalties,const int seventhPc = (rootPc + tpl.intervals[3]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,691,12,structuralPenalties,const int seventhPc = (rootPc + tpl.intervals[3]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,692,0.05,structuralPenalties,if (pcWeight[static_cast<size_t>(seventhPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,700,4,structuralPenalties,&& tpl.intervals.size() == 4
+src/composing/analysis/chord/chordanalyzer.cpp,701,3,structuralPenalties,&& tpl.intervals[3] == 11);
+src/composing/analysis/chord/chordanalyzer.cpp,701,11,structuralPenalties,&& tpl.intervals[3] == 11);
+src/composing/analysis/chord/chordanalyzer.cpp,703,7,structuralPenalties,const int fifthPc = (rootPc + 7) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,703,12,structuralPenalties,const int fifthPc = (rootPc + 7) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,704,0.05,structuralPenalties,if (pcWeight[static_cast<size_t>(fifthPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,714,4,structuralPenalties,&& tpl.intervals.size() == 4
+src/composing/analysis/chord/chordanalyzer.cpp,715,2,structuralPenalties,&& tpl.intervals[2] == 6);
+src/composing/analysis/chord/chordanalyzer.cpp,715,6,structuralPenalties,&& tpl.intervals[2] == 6);
+src/composing/analysis/chord/chordanalyzer.cpp,717,6,structuralPenalties,const int tritonePc  = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,717,12,structuralPenalties,const int tritonePc  = (rootPc + 6) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,721,6,structuralPenalties,&& tritTpcNow - rootTpcNow == -6);
+src/composing/analysis/chord/chordanalyzer.cpp,725,3,structuralPenalties,const int minorSeventhPc = (rootPc + tpl.intervals[3]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,725,12,structuralPenalties,const int minorSeventhPc = (rootPc + tpl.intervals[3]) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,726,0.05,structuralPenalties,if (pcWeight[static_cast<size_t>(minorSeventhPc)] < 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,733,3,structuralPenalties,if (tpl.quality == ChordQuality::Power && distinctPcs >= 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,744,12,tpcConsistencyBonus,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordanalyzer.cpp,753,12,bassRootBonusMultiplier,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,762,3,bassRootBonusMultiplier,return interval == 3 || interval == 4;
+src/composing/analysis/chord/chordanalyzer.cpp,762,4,bassRootBonusMultiplier,return interval == 3 || interval == 4;
+src/composing/analysis/chord/chordanalyzer.cpp,766,3,bassRootBonusMultiplier,return (interval == 3 || interval == 4)
+src/composing/analysis/chord/chordanalyzer.cpp,766,4,bassRootBonusMultiplier,return (interval == 3 || interval == 4)
+src/composing/analysis/chord/chordanalyzer.cpp,772,6,bassRootBonusMultiplier,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,772,7,bassRootBonusMultiplier,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,772,8,bassRootBonusMultiplier,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,777,3,bassRootBonusMultiplier,&& tpl.intervals.size() == 3);
+src/composing/analysis/chord/chordanalyzer.cpp,781,1.0,bassRootBonusMultiplier,return 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,787,1.0,bassRootBonusMultiplier,return isBareSuspensionTriad ? prefs.bassRootThirdOnlyMultiplier : 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,795,3,bassRootBonusMultiplier,if (hasPitchClass(rootPc + 3) || hasPitchClass(rootPc + 4)) {
+src/composing/analysis/chord/chordanalyzer.cpp,795,4,bassRootBonusMultiplier,if (hasPitchClass(rootPc + 3) || hasPitchClass(rootPc + 4)) {
+src/composing/analysis/chord/chordanalyzer.cpp,804,12,templateHasMatchingThird,"const std::array<double, 12>& pcWeight)"
+src/composing/analysis/chord/chordanalyzer.cpp,808,3,templateHasMatchingThird,return (interval == 3 || interval == 4)
+src/composing/analysis/chord/chordanalyzer.cpp,808,4,templateHasMatchingThird,return (interval == 3 || interval == 4)
+src/composing/analysis/chord/chordanalyzer.cpp,809,0.05,templateHasMatchingThird,&& pcWeight[static_cast<size_t>(normalizePc(rootPc + interval))] > 0.05;
+src/composing/analysis/chord/chordanalyzer.cpp,815,12,templateHasMatchingFifth,"const std::array<double, 12>& pcWeight)"
+src/composing/analysis/chord/chordanalyzer.cpp,819,6,templateHasMatchingFifth,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,819,7,templateHasMatchingFifth,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,819,8,templateHasMatchingFifth,return (interval == 6 || interval == 7 || interval == 8)
+src/composing/analysis/chord/chordanalyzer.cpp,820,0.05,templateHasMatchingFifth,&& pcWeight[static_cast<size_t>(normalizePc(rootPc + interval))] > 0.05;
+src/composing/analysis/chord/chordanalyzer.cpp,827,12,qualifiesForCompleteTriadInversionBonus,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,830,3,qualifiesForCompleteTriadInversionBonus,if (distinctPcs != 3 || rootPc == bassPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,853,12,supportsContextualInversionBonuses,"const std::array<double, 12>& pcWeight)"
+src/composing/analysis/chord/chordanalyzer.cpp,870,12,appliedBassRootBonus,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,874,0.0,appliedBassRootBonus,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,897,7,diatonicRootContribution,"const std::array<int, 7>& scale,"
+src/composing/analysis/chord/chordanalyzer.cpp,902,12,diatonicRootContribution,if ((keyTonicPc + interval) % 12 == rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,906,0.0,diatonicRootContribution,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,943,12,buildChordResult,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,944,0.05,buildChordResult,if (ctx.pcWeight[static_cast<size_t>(pc)] > 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,948,3,buildChordResult,if (pcs.size() == 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,950,3,buildChordResult,for (int i = 0; i < 3 && !isAug; ++i) {
+src/composing/analysis/chord/chordanalyzer.cpp,951,3,buildChordResult,"const int a = pcs[i], b = pcs[(i + 1) % 3], c = pcs[(i + 2) % 3];"
+src/composing/analysis/chord/chordanalyzer.cpp,951,2,buildChordResult,"const int a = pcs[i], b = pcs[(i + 1) % 3], c = pcs[(i + 2) % 3];"
+src/composing/analysis/chord/chordanalyzer.cpp,951,3,buildChordResult,"const int a = pcs[i], b = pcs[(i + 1) % 3], c = pcs[(i + 2) % 3];"
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,4,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,4,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,12,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,952,4,buildChordResult,if ((b - a + 12) % 12 == 4 && (c - b + 12) % 12 == 4 && (a - c + 12) % 12 == 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,978,4,buildChordResult,const bool hasMajThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 4) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,978,12,buildChordResult,const bool hasMajThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 4) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,978,0.2,buildChordResult,const bool hasMajThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 4) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,979,3,buildChordResult,const bool hasMinThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 3) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,979,12,buildChordResult,const bool hasMinThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 3) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,979,0.2,buildChordResult,const bool hasMinThird  = ctx.pcWeight[static_cast<size_t>((rootPc + 3) % 12)] > 0.2;
+src/composing/analysis/chord/chordanalyzer.cpp,993,12,buildChordResult,if ((ctx.keyTonicPc + ctx.scale[i]) % 12 == rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1002,12,buildChordResult,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1003,0.2,buildChordResult,if (ctx.pcWeight[static_cast<size_t>(pc)] <= 0.2) {
+src/composing/analysis/chord/chordanalyzer.cpp,1008,12,buildChordResult,if ((ctx.keyTonicPc + interval) % 12 == pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1027,7,buildChordResult,&& (ctx.pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
+src/composing/analysis/chord/chordanalyzer.cpp,1027,12,buildChordResult,&& (ctx.pcWeight[static_cast<size_t>((rootPc + 7) % 12)]
+src/composing/analysis/chord/chordanalyzer.cpp,1041,12,deriveChordExtensions,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.cpp,1043,12,deriveChordExtensions,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordanalyzer.cpp,1047,12,deriveChordExtensions,if (rootPc < 0 || rootPc >= 12) {
+src/composing/analysis/chord/chordanalyzer.cpp,1056,7,deriveChordExtensions,&& (pcWeight[static_cast<size_t>((rootPc + 7) % 12)] > extThreshold);
+src/composing/analysis/chord/chordanalyzer.cpp,1056,12,deriveChordExtensions,&& (pcWeight[static_cast<size_t>((rootPc + 7) % 12)] > extThreshold);
+src/composing/analysis/chord/chordanalyzer.cpp,1075,12,analyzeChord,"std::array<double, 12> pcWeight {};"
+src/composing/analysis/chord/chordanalyzer.cpp,1078,0.0,analyzeChord,double totalRawWeight = 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1081,0.1,analyzeChord,"pcWeight[static_cast<size_t>(pc)] += std::max(0.1, t.weight);"
+src/composing/analysis/chord/chordanalyzer.cpp,1082,0.0,analyzeChord,"totalRawWeight += std::max(0.0, t.weight);"
+src/composing/analysis/chord/chordanalyzer.cpp,1142,12,analyzeChord,? lowestPitch + 12
+src/composing/analysis/chord/chordanalyzer.cpp,1144,12,analyzeChord,"std::array<int, 12> bestPitchPerPc;"
+src/composing/analysis/chord/chordanalyzer.cpp,1145,12,analyzeChord,"std::array<int, 12> tpcPerPc;"
+src/composing/analysis/chord/chordanalyzer.cpp,1146,12,analyzeChord,"std::array<bool, 12> onsetPerPc;"
+src/composing/analysis/chord/chordanalyzer.cpp,1164,12,analyzeChord,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1190,0.05,analyzeChord,if (w > 0.05) { ++distinctPcCount; }
+src/composing/analysis/chord/chordanalyzer.cpp,1193,2,analyzeChord,distinctPcCount <= 2
+src/composing/analysis/chord/chordanalyzer.cpp,1194,2,analyzeChord,&& regionalCandidates.size() >= 2
+src/composing/analysis/chord/chordanalyzer.cpp,1195,60,analyzeChord,&& lowestPitch > 60;
+src/composing/analysis/chord/chordanalyzer.cpp,1198,4,analyzeChord,if (bassCandidates.size() > 4) {
+src/composing/analysis/chord/chordanalyzer.cpp,1199,4,analyzeChord,bassCandidates.resize(4);
+src/composing/analysis/chord/chordanalyzer.cpp,1231,12,analyzeChord,"std::array<int, 12> tpcForPc;"
+src/composing/analysis/chord/chordanalyzer.cpp,1248,0.05,analyzeChord,if (w > 0.05) {
+src/composing/analysis/chord/chordanalyzer.cpp,1268,60,analyzeChord,const bool hasStructuralBass = (lowestPitch <= 60) || (distinctPcs >= 3);
+src/composing/analysis/chord/chordanalyzer.cpp,1268,3,analyzeChord,const bool hasStructuralBass = (lowestPitch <= 60) || (distinctPcs >= 3);
+src/composing/analysis/chord/chordanalyzer.cpp,1306,4,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(0),  { 0, +4, +1 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1307,4,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(1),  { 0, +4, +1, +5 }   },  // maj7"
+src/composing/analysis/chord/chordanalyzer.cpp,1307,5,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(1),  { 0, +4, +1, +5 }   },  // maj7"
+src/composing/analysis/chord/chordanalyzer.cpp,1308,2,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(2),  { 0, +4, +1, -2 }   },  // dom7"
+src/composing/analysis/chord/chordanalyzer.cpp,1308,4,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(2),  { 0, +4, +1, -2 }   },  // dom7"
+src/composing/analysis/chord/chordanalyzer.cpp,1308,2,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(2),  { 0, +4, +1, -2 }   },  // dom7"
+src/composing/analysis/chord/chordanalyzer.cpp,1309,3,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(3),  { 0, +4, -6, -2 }   },  // dom7b5"
+src/composing/analysis/chord/chordanalyzer.cpp,1309,4,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(3),  { 0, +4, -6, -2 }   },  // dom7b5"
+src/composing/analysis/chord/chordanalyzer.cpp,1309,6,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(3),  { 0, +4, -6, -2 }   },  // dom7b5"
+src/composing/analysis/chord/chordanalyzer.cpp,1309,2,templateIntervalsVec,"{ ChordQuality::Major,          templateIntervalsVec(3),  { 0, +4, -6, -2 }   },  // dom7b5"
+src/composing/analysis/chord/chordanalyzer.cpp,1310,4,templateIntervalsVec,"{ ChordQuality::Minor,          templateIntervalsVec(4),  { 0, -3, +1 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1310,3,templateIntervalsVec,"{ ChordQuality::Minor,          templateIntervalsVec(4),  { 0, -3, +1 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1311,5,templateIntervalsVec,"{ ChordQuality::Minor,          templateIntervalsVec(5),  { 0, -3, +1, -2 }   },  // min7"
+src/composing/analysis/chord/chordanalyzer.cpp,1311,3,templateIntervalsVec,"{ ChordQuality::Minor,          templateIntervalsVec(5),  { 0, -3, +1, -2 }   },  // min7"
+src/composing/analysis/chord/chordanalyzer.cpp,1311,2,templateIntervalsVec,"{ ChordQuality::Minor,          templateIntervalsVec(5),  { 0, -3, +1, -2 }   },  // min7"
+src/composing/analysis/chord/chordanalyzer.cpp,1312,6,templateIntervalsVec,"{ ChordQuality::Diminished,     templateIntervalsVec(6),  { 0, -3, -6 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1312,3,templateIntervalsVec,"{ ChordQuality::Diminished,     templateIntervalsVec(6),  { 0, -3, -6 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1312,6,templateIntervalsVec,"{ ChordQuality::Diminished,     templateIntervalsVec(6),  { 0, -3, -6 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1313,7,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(7),  { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)"
+src/composing/analysis/chord/chordanalyzer.cpp,1313,6,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(7),  { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)"
+src/composing/analysis/chord/chordanalyzer.cpp,1313,2,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(7),  { 0, -1, -6, -2 }   },  // sus4b5  — precedes HalfDim (tie-break)"
+src/composing/analysis/chord/chordanalyzer.cpp,1314,8,templateIntervalsVec,"{ ChordQuality::HalfDiminished, templateIntervalsVec(8),  { 0, -3, -6, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1314,3,templateIntervalsVec,"{ ChordQuality::HalfDiminished, templateIntervalsVec(8),  { 0, -3, -6, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1314,6,templateIntervalsVec,"{ ChordQuality::HalfDiminished, templateIntervalsVec(8),  { 0, -3, -6, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1314,2,templateIntervalsVec,"{ ChordQuality::HalfDiminished, templateIntervalsVec(8),  { 0, -3, -6, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1315,9,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(9),  { 0, +4, +8 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1315,4,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(9),  { 0, +4, +8 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1315,8,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(9),  { 0, +4, +8 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1316,10,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(10), { 0, +4, +8, -2 }   },  // aug7 (C7♯5)"
+src/composing/analysis/chord/chordanalyzer.cpp,1316,4,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(10), { 0, +4, +8, -2 }   },  // aug7 (C7♯5)"
+src/composing/analysis/chord/chordanalyzer.cpp,1316,8,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(10), { 0, +4, +8, -2 }   },  // aug7 (C7♯5)"
+src/composing/analysis/chord/chordanalyzer.cpp,1316,2,templateIntervalsVec,"{ ChordQuality::Augmented,      templateIntervalsVec(10), { 0, +4, +8, -2 }   },  // aug7 (C7♯5)"
+src/composing/analysis/chord/chordanalyzer.cpp,1317,11,templateIntervalsVec,"{ ChordQuality::Suspended2,     templateIntervalsVec(11), { 0, +2, +1 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1317,2,templateIntervalsVec,"{ ChordQuality::Suspended2,     templateIntervalsVec(11), { 0, +2, +1 }       },"
+src/composing/analysis/chord/chordanalyzer.cpp,1318,12,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(12), { 0, -1, +1, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1318,2,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(12), { 0, -1, +1, -2 }   },"
+src/composing/analysis/chord/chordanalyzer.cpp,1319,13,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(13), { 0, -1, +1, +5 }   },  // sus4+maj7"
+src/composing/analysis/chord/chordanalyzer.cpp,1319,5,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(13), { 0, -1, +1, +5 }   },  // sus4+maj7"
+src/composing/analysis/chord/chordanalyzer.cpp,1320,14,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(14), { 0, -1, +8, -2 }   },  // sus4#5"
+src/composing/analysis/chord/chordanalyzer.cpp,1320,8,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(14), { 0, -1, +8, -2 }   },  // sus4#5"
+src/composing/analysis/chord/chordanalyzer.cpp,1320,2,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(14), { 0, -1, +8, -2 }   },  // sus4#5"
+src/composing/analysis/chord/chordanalyzer.cpp,1321,15,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(15), { 0, +6, +1 }       },  // sus#4 (F# not Gb)"
+src/composing/analysis/chord/chordanalyzer.cpp,1321,6,templateIntervalsVec,"{ ChordQuality::Suspended4,     templateIntervalsVec(15), { 0, +6, +1 }       },  // sus#4 (F# not Gb)"
+src/composing/analysis/chord/chordanalyzer.cpp,1322,16,templateIntervalsVec,"{ ChordQuality::Power,          templateIntervalsVec(16), { 0, +1 }           }"
+src/composing/analysis/chord/chordanalyzer.cpp,1330,12,analyzeChord,const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+src/composing/analysis/chord/chordanalyzer.cpp,1336,21,analyzeChord,"static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {"
+src/composing/analysis/chord/chordanalyzer.cpp,1337,2,analyzeChord,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping"
+src/composing/analysis/chord/chordanalyzer.cpp,1337,3,analyzeChord,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping"
+src/composing/analysis/chord/chordanalyzer.cpp,1337,4,analyzeChord,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping"
+src/composing/analysis/chord/chordanalyzer.cpp,1337,5,analyzeChord,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping"
+src/composing/analysis/chord/chordanalyzer.cpp,1337,6,analyzeChord,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping"
+src/composing/analysis/chord/chordanalyzer.cpp,1338,2,analyzeChord,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1338,3,analyzeChord,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1338,4,analyzeChord,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1338,5,analyzeChord,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1338,6,analyzeChord,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1339,5,analyzeChord,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1339,6,analyzeChord,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1339,2,analyzeChord,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1339,3,analyzeChord,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1339,4,analyzeChord,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family: Aeolian…Mixolydian parents"
+src/composing/analysis/chord/chordanalyzer.cpp,1342,7,analyzeChord,"const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));"
+src/composing/analysis/chord/chordanalyzer.cpp,1364,12,analyzeChord,"std::array<std::array<double, kTemplateCount>, 12> basisIndepMatrix{};"
+src/composing/analysis/chord/chordanalyzer.cpp,1365,12,analyzeChord,"std::array<std::array<double, kTemplateCount>, 12> complexityFactorMatrix{};"
+src/composing/analysis/chord/chordanalyzer.cpp,1366,12,analyzeChord,"std::array<std::array<double, kTemplateCount>, 12> augFactorMatrix{};"
+src/composing/analysis/chord/chordanalyzer.cpp,1367,12,analyzeChord,for (int rootPc = 0; rootPc < 12; ++rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1384,4,analyzeChord,&& tpl.intervals.size() == 4
+src/composing/analysis/chord/chordanalyzer.cpp,1385,4,analyzeChord,&& (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] <= prefs.extensionThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,1385,12,analyzeChord,&& (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] <= prefs.extensionThreshold
+src/composing/analysis/chord/chordanalyzer.cpp,1386,8,analyzeChord,|| pcWeight[static_cast<size_t>((rootPc + 8) % 12)] <= prefs.extensionThreshold)) {
+src/composing/analysis/chord/chordanalyzer.cpp,1386,12,analyzeChord,|| pcWeight[static_cast<size_t>((rootPc + 8) % 12)] <= prefs.extensionThreshold)) {
+src/composing/analysis/chord/chordanalyzer.cpp,1412,1.0,analyzeChord,? 1.0
+src/composing/analysis/chord/chordanalyzer.cpp,1416,1.0,analyzeChord,? 1.0 : (kComplexityEvidenceFloor + evidenceRatio);
+src/composing/analysis/chord/chordanalyzer.cpp,1420,1.0,analyzeChord,double augFactor = 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1422,2,analyzeChord,&& distinctPcs <= 2
+src/composing/analysis/chord/chordanalyzer.cpp,1427,4,analyzeChord,const double thirdW = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1427,12,analyzeChord,const double thirdW = pcWeight[static_cast<size_t>((rootPc + 4) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1428,8,analyzeChord,const double fifthW = pcWeight[static_cast<size_t>((rootPc + 8) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1428,12,analyzeChord,const double fifthW = pcWeight[static_cast<size_t>((rootPc + 8) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1429,10,analyzeChord,const double min7W  = pcWeight[static_cast<size_t>((rootPc + 10) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1429,12,analyzeChord,const double min7W  = pcWeight[static_cast<size_t>((rootPc + 10) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1430,11,analyzeChord,const double maj7W  = pcWeight[static_cast<size_t>((rootPc + 11) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1430,12,analyzeChord,const double maj7W  = pcWeight[static_cast<size_t>((rootPc + 11) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1453,3,analyzeChord,if (!jointScoringEnabled || candBassPc != rootPc || distinctPcs != 3) {
+src/composing/analysis/chord/chordanalyzer.cpp,1454,0.0,analyzeChord,return 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1460,4,analyzeChord,case ChordQuality::Major:      thirdInterval = 4; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1460,7,analyzeChord,case ChordQuality::Major:      thirdInterval = 4; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1461,3,analyzeChord,case ChordQuality::Minor:      thirdInterval = 3; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1461,7,analyzeChord,case ChordQuality::Minor:      thirdInterval = 3; fifthInterval = 7; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1462,3,analyzeChord,case ChordQuality::Diminished: thirdInterval = 3; fifthInterval = 6; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1462,6,analyzeChord,case ChordQuality::Diminished: thirdInterval = 3; fifthInterval = 6; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1463,4,analyzeChord,case ChordQuality::Augmented:  thirdInterval = 4; fifthInterval = 8; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1463,8,analyzeChord,case ChordQuality::Augmented:  thirdInterval = 4; fifthInterval = 8; break;
+src/composing/analysis/chord/chordanalyzer.cpp,1464,0.0,analyzeChord,default:                       return 0.0;  // gate only fires for plain triads
+src/composing/analysis/chord/chordanalyzer.cpp,1467,12,analyzeChord,const double thirdW = pcWeight[static_cast<size_t>((rootPc + thirdInterval) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1468,12,analyzeChord,const double fifthW = pcWeight[static_cast<size_t>((rootPc + fifthInterval) % 12)];
+src/composing/analysis/chord/chordanalyzer.cpp,1482,0.0,analyzeChord,return allTriadPresent ? kWComplete : 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1499,12,analyzeChord,snapshot.cells.reserve(bassCandidates.size() * 12 * templates.size());
+src/composing/analysis/chord/chordanalyzer.cpp,1503,12,analyzeChord,for (int rootPc = 0; rootPc < 12; ++rootPc) {
+src/composing/analysis/chord/chordanalyzer.cpp,1563,1.0,analyzeChord,fnCtx.regionMetricWeight           = context ? context->regionMetricWeight           : 1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1564,3,analyzeChord,"fnCtx.recentRootPcs                = context ? context->recentRootPcs : std::array<int, 3>{ -1, -1, -1 };"
+src/composing/analysis/chord/chordanalyzer.cpp,1566,0.0,analyzeChord,fnCtx.previousWinnerScore        = context ? context->previousWinnerScore        : 0.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1567,1.0,analyzeChord,fnCtx.previousWinnerMargin       = context ? context->previousWinnerMargin       : -1.0;
+src/composing/analysis/chord/chordanalyzer.cpp,1568,0.0,analyzeChord,fnCtx.previousWinnerRootPcWeight = context ? context->previousWinnerRootPcWeight : 0.0;
+src/composing/analysis/chord/chordanalyzer.h,63,17,<file-scope>,inline constexpr std::size_t kTemplateCount = 17;
+src/composing/analysis/chord/chordanalyzer.h,67,4,<file-scope>,inline constexpr std::size_t kMaxTemplateTones = 4;
+src/composing/analysis/chord/chordanalyzer.h,81,4,<file-scope>,"{ { 0, 4, 7, -1 } },   // 0  Major triad   {0,4,7}"
+src/composing/analysis/chord/chordanalyzer.h,81,7,<file-scope>,"{ { 0, 4, 7, -1 } },   // 0  Major triad   {0,4,7}"
+src/composing/analysis/chord/chordanalyzer.h,82,4,<file-scope>,"{ { 0, 4, 7, 11 } },   // 1  Maj7          {0,4,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,82,7,<file-scope>,"{ { 0, 4, 7, 11 } },   // 1  Maj7          {0,4,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,82,11,<file-scope>,"{ { 0, 4, 7, 11 } },   // 1  Maj7          {0,4,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,83,4,<file-scope>,"{ { 0, 4, 7, 10 } },   // 2  Dom7          {0,4,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,83,7,<file-scope>,"{ { 0, 4, 7, 10 } },   // 2  Dom7          {0,4,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,83,10,<file-scope>,"{ { 0, 4, 7, 10 } },   // 2  Dom7          {0,4,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,84,4,<file-scope>,"{ { 0, 4, 6, 10 } },   // 3  Dom7b5        {0,4,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,84,6,<file-scope>,"{ { 0, 4, 6, 10 } },   // 3  Dom7b5        {0,4,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,84,10,<file-scope>,"{ { 0, 4, 6, 10 } },   // 3  Dom7b5        {0,4,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,85,3,<file-scope>,"{ { 0, 3, 7, -1 } },   // 4  Minor triad   {0,3,7}"
+src/composing/analysis/chord/chordanalyzer.h,85,7,<file-scope>,"{ { 0, 3, 7, -1 } },   // 4  Minor triad   {0,3,7}"
+src/composing/analysis/chord/chordanalyzer.h,86,3,<file-scope>,"{ { 0, 3, 7, 10 } },   // 5  Minor 7th     {0,3,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,86,7,<file-scope>,"{ { 0, 3, 7, 10 } },   // 5  Minor 7th     {0,3,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,86,10,<file-scope>,"{ { 0, 3, 7, 10 } },   // 5  Minor 7th     {0,3,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,87,3,<file-scope>,"{ { 0, 3, 6, -1 } },   // 6  Diminished    {0,3,6}"
+src/composing/analysis/chord/chordanalyzer.h,87,6,<file-scope>,"{ { 0, 3, 6, -1 } },   // 6  Diminished    {0,3,6}"
+src/composing/analysis/chord/chordanalyzer.h,88,5,<file-scope>,"{ { 0, 5, 6, 10 } },   // 7  Sus4b5        {0,5,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,88,6,<file-scope>,"{ { 0, 5, 6, 10 } },   // 7  Sus4b5        {0,5,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,88,10,<file-scope>,"{ { 0, 5, 6, 10 } },   // 7  Sus4b5        {0,5,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,89,3,<file-scope>,"{ { 0, 3, 6, 10 } },   // 8  HalfDim       {0,3,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,89,6,<file-scope>,"{ { 0, 3, 6, 10 } },   // 8  HalfDim       {0,3,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,89,10,<file-scope>,"{ { 0, 3, 6, 10 } },   // 8  HalfDim       {0,3,6,10}"
+src/composing/analysis/chord/chordanalyzer.h,90,4,<file-scope>,"{ { 0, 4, 8, -1 } },   // 9  Augmented     {0,4,8}"
+src/composing/analysis/chord/chordanalyzer.h,90,8,<file-scope>,"{ { 0, 4, 8, -1 } },   // 9  Augmented     {0,4,8}"
+src/composing/analysis/chord/chordanalyzer.h,91,4,<file-scope>,"{ { 0, 4, 8, 10 } },   // 10 Aug dom7      {0,4,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,91,8,<file-scope>,"{ { 0, 4, 8, 10 } },   // 10 Aug dom7      {0,4,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,91,10,<file-scope>,"{ { 0, 4, 8, 10 } },   // 10 Aug dom7      {0,4,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,92,2,<file-scope>,"{ { 0, 2, 7, -1 } },   // 11 Sus2          {0,2,7}"
+src/composing/analysis/chord/chordanalyzer.h,92,7,<file-scope>,"{ { 0, 2, 7, -1 } },   // 11 Sus2          {0,2,7}"
+src/composing/analysis/chord/chordanalyzer.h,93,5,<file-scope>,"{ { 0, 5, 7, 10 } },   // 12 Sus4+m7       {0,5,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,93,7,<file-scope>,"{ { 0, 5, 7, 10 } },   // 12 Sus4+m7       {0,5,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,93,10,<file-scope>,"{ { 0, 5, 7, 10 } },   // 12 Sus4+m7       {0,5,7,10}"
+src/composing/analysis/chord/chordanalyzer.h,94,5,<file-scope>,"{ { 0, 5, 7, 11 } },   // 13 Sus4+Maj7     {0,5,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,94,7,<file-scope>,"{ { 0, 5, 7, 11 } },   // 13 Sus4+Maj7     {0,5,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,94,11,<file-scope>,"{ { 0, 5, 7, 11 } },   // 13 Sus4+Maj7     {0,5,7,11}"
+src/composing/analysis/chord/chordanalyzer.h,95,5,<file-scope>,"{ { 0, 5, 8, 10 } },   // 14 Sus4#5        {0,5,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,95,8,<file-scope>,"{ { 0, 5, 8, 10 } },   // 14 Sus4#5        {0,5,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,95,10,<file-scope>,"{ { 0, 5, 8, 10 } },   // 14 Sus4#5        {0,5,8,10}"
+src/composing/analysis/chord/chordanalyzer.h,96,6,<file-scope>,"{ { 0, 6, 7, -1 } },   // 15 Sus#4         {0,6,7}"
+src/composing/analysis/chord/chordanalyzer.h,96,7,<file-scope>,"{ { 0, 6, 7, -1 } },   // 15 Sus#4         {0,6,7}"
+src/composing/analysis/chord/chordanalyzer.h,97,7,<file-scope>,"{ { 0, 7, -1, -1 } },  // 16 Power         {0,7}"
+src/composing/analysis/chord/chordanalyzer.h,155,12,mergeChordAnalysisTones,if ((existingTone.pitch % 12) == (newTone.pitch % 12)) {
+src/composing/analysis/chord/chordanalyzer.h,155,12,mergeChordAnalysisTones,if ((existingTone.pitch % 12) == (newTone.pitch % 12)) {
+src/composing/analysis/chord/chordanalyzer.h,205,12,isDiatonicStep,"interval = std::min(interval, 12 - interval);"
+src/composing/analysis/chord/chordanalyzer.h,206,2,isDiatonicStep,return interval == 1 || interval == 2;
+src/composing/analysis/chord/chordanalyzer.h,216,2,<file-scope>,"DiminishedSeventh = 1u << 2,   ///< dim7 (9 semitones) — Diminished quality only"
+src/composing/analysis/chord/chordanalyzer.h,217,3,<file-scope>,"AddedSixth        = 1u << 3,   ///< Added sixth (no seventh)"
+src/composing/analysis/chord/chordanalyzer.h,218,4,<file-scope>,"FlatNinth         = 1u << 4,   ///< b9"
+src/composing/analysis/chord/chordanalyzer.h,219,5,<file-scope>,"NaturalNinth      = 1u << 5,   ///< Natural 9th (add9 / sus, or upper extension)"
+src/composing/analysis/chord/chordanalyzer.h,220,6,<file-scope>,"SharpNinth        = 1u << 6,   ///< #9"
+src/composing/analysis/chord/chordanalyzer.h,221,7,<file-scope>,"NaturalEleventh   = 1u << 7,   ///< 11th (sus4 or upper extension)"
+src/composing/analysis/chord/chordanalyzer.h,222,8,<file-scope>,"SharpEleventh     = 1u << 8,   ///< #11 / Lydian dominant"
+src/composing/analysis/chord/chordanalyzer.h,223,9,<file-scope>,"FlatThirteenth    = 1u << 9,   ///< b13"
+src/composing/analysis/chord/chordanalyzer.h,224,10,<file-scope>,"NaturalThirteenth = 1u << 10,  ///< 13th"
+src/composing/analysis/chord/chordanalyzer.h,225,11,<file-scope>,"SharpThirteenth   = 1u << 11,  ///< #13"
+src/composing/analysis/chord/chordanalyzer.h,226,12,<file-scope>,"FlatFifth         = 1u << 12,  ///< b5 alteration"
+src/composing/analysis/chord/chordanalyzer.h,227,13,<file-scope>,"SharpFifth        = 1u << 13,  ///< #5 alteration"
+src/composing/analysis/chord/chordanalyzer.h,228,14,<file-scope>,"OmitsThird        = 1u << 14,  ///< No third present (power chord / open voicing)"
+src/composing/analysis/chord/chordanalyzer.h,229,15,<file-scope>,"SixNine           = 1u << 15,  ///< 6/9 chord special case"
+src/composing/analysis/chord/chordanalyzer.h,261,0.0,<file-scope>,double score = 0.0;                ///< Template match score (higher = better); ranking only.
+src/composing/analysis/chord/chordanalyzer.h,358,0.0,<file-scope>,double       basisIndep       = 0.0; ///< vertical pitch evidence (no progression signal; Stage 3.3)
+src/composing/analysis/chord/chordanalyzer.h,359,0.0,<file-scope>,double       basisDep         = 0.0; ///< bass-dependent delta: nonBassAdjustment + appliedBassBonus
+src/composing/analysis/chord/chordanalyzer.h,361,0.0,<file-scope>,double       complexityFactor = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,362,0.0,<file-scope>,double       augFactor        = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,363,0.0,<file-scope>,double       wCompleteBonus   = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,364,0.0,<file-scope>,double       appliedBassBonus = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,367,0.0,<file-scope>,double       verticalScore    = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,379,0.0,<file-scope>,double       rootContinuityBonus           = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,381,0.0,<file-scope>,double       rootContinuityBonusRaw        = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,387,0.0,<file-scope>,double       resolutionBonus      = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,388,0.0,<file-scope>,double       inversionContextBonus = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,389,0.0,<file-scope>,double       wSeqBonus     = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,390,0.0,<file-scope>,double       wDimBonus     = 0.0;   ///< exact value the pipeline applied (RawCandidate::wDimDelta)
+src/composing/analysis/chord/chordanalyzer.h,391,0.0,<file-scope>,double       stepInBonus   = 0.0;   ///< potential w_stepIn (the surgical guard may suppress it)
+src/composing/analysis/chord/chordanalyzer.h,392,0.0,<file-scope>,double       stepOutBonus  = 0.0;   ///< potential w_stepOut (the surgical guard may suppress it)
+src/composing/analysis/chord/chordanalyzer.h,394,0.0,<file-scope>,double       competitionScore = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,404,0.0,<file-scope>,double       competitionWinnerScore   = 0.0;
+src/composing/analysis/chord/chordanalyzer.h,413,12,<file-scope>,"std::array<double, 12> pcWeights{};            ///< per-PC accumulated weights (from the snapshot)"
+src/composing/analysis/chord/chordanalyzer.h,486,3,advanceTemporalContext,"std::array<int, 3>& recentRootsBuf,"
+src/composing/analysis/chord/chordanalyzer.h,499,2,advanceTemporalContext,recentRootsBuf[2] = recentRootsBuf[1];
+src/composing/analysis/chord/chordanalyzer.h,516,3,advanceTemporalContext,"std::array<int, 3>& recentRootsBuf,"
+src/composing/analysis/chord/chordanalyzer.h,527,12,<file-scope>,"std::array<double, 12>    pcWeight       {};"
+src/composing/analysis/chord/chordanalyzer.h,528,12,<file-scope>,"std::array<int, 12>       tpcForPc       {};"
+src/composing/analysis/chord/chordanalyzer.h,529,7,<file-scope>,"std::array<int, 7>        scale          {};"
+src/composing/analysis/chord/chordanalyzer.h,535,0.0,<file-scope>,double                    threshold      { 0.0 };
+src/composing/analysis/chord/chordanalyzer.h,555,3,advanceTemporalContext,"std::array<int, 3>&           recentRootsBuf,"
+src/composing/analysis/chord/chordanalyzer.h,565,0.0,advanceTemporalContext,? gateCtx.pcWeight[static_cast<size_t>(winRoot)] : 0.0;
+src/composing/analysis/chord/chordanalyzer.h,568,0.0,advanceTemporalContext,? 0.0 : gateCtx.rawCandidates[0].score;
+src/composing/analysis/chord/chordanalyzer.h,569,2,advanceTemporalContext,ctx.previousWinnerMargin = (gateCtx.rawCandidates.size() >= 2)
+src/composing/analysis/chord/chordanalyzer.h,571,1.0,advanceTemporalContext,: -1.0;
+src/composing/analysis/chord/chordanalyzer.h,602,12,computeRawFanoutSummary,"std::array<bool, 12> rootSeenAll{};"
+src/composing/analysis/chord/chordanalyzer.h,603,12,computeRawFanoutSummary,"std::array<bool, 12> rootSeenAbove{};"
+src/composing/analysis/chord/chordanalyzer.h,607,12,computeRawFanoutSummary,if (rc.rootPc >= 0 && rc.rootPc < 12) {
+src/composing/analysis/chord/chordanalyzer.h,618,12,<file-scope>,"const std::array<double, 12>& pcWeight;"
+src/composing/analysis/chord/chordanalyzer.h,619,12,<file-scope>,"const std::array<int, 12>&    tpcForPc;"
+src/composing/analysis/chord/chordanalyzer.h,624,7,<file-scope>,"const std::array<int, 7>&     scale;"
+src/composing/analysis/chord/chordanalyzer.h,663,2,<file-scope>,inline constexpr std::size_t kPromoteAppendOnly  = static_cast<std::size_t>(-2); ///< skip the present branch (bass-root pull; no dedup)
+src/composing/analysis/chord/chordanalyzer.h,698,12,<file-scope>,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordanalyzer.h,700,12,<file-scope>,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordslicedecoder.cpp,43,1.0e3,<file-scope>,constexpr double kNoCompetitorConfidence = 1.0e3;
+src/composing/analysis/chord/chordslicedecoder.cpp,109,12,sameCollectionOverFocal,bool present[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,112,12,sameCollectionOverFocal,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordslicedecoder.cpp,120,3,sameCollectionOverFocal,return aCov >= 3 && bCov >= 3;
+src/composing/analysis/chord/chordslicedecoder.cpp,120,3,sameCollectionOverFocal,return aCov >= 3 && bCov >= 3;
+src/composing/analysis/chord/chordslicedecoder.cpp,129,12,relativePair,const int d = (((a.rootPc - b.rootPc) % 12) + 12) % 12;
+src/composing/analysis/chord/chordslicedecoder.cpp,129,12,relativePair,const int d = (((a.rootPc - b.rootPc) % 12) + 12) % 12;
+src/composing/analysis/chord/chordslicedecoder.cpp,129,12,relativePair,const int d = (((a.rootPc - b.rootPc) % 12) + 12) % 12;
+src/composing/analysis/chord/chordslicedecoder.cpp,130,3,relativePair,const bool thirdApart = (d == 3 || d == 9);
+src/composing/analysis/chord/chordslicedecoder.cpp,130,9,relativePair,const bool thirdApart = (d == 3 || d == 9);
+src/composing/analysis/chord/chordslicedecoder.cpp,170,12,distinctPcCount,bool seen[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,237,1e-6,noteSalience,"const double ref = std::max(1e-6, dp.membershipReferenceDurationQn);"
+src/composing/analysis/chord/chordslicedecoder.cpp,238,1.0,noteSalience,"const double durFactor = std::min(1.0, f.durationQn / ref);"
+src/composing/analysis/chord/chordslicedecoder.cpp,245,2,isSemitoneStep,return d == 1 || d == 2;   // chromatic step (minor/major 2nd) — melodic passing/neighbour
+src/composing/analysis/chord/chordslicedecoder.cpp,314,2,stepwiseSignals,const bool resolvesDown = succ && (note.pitch - succ->pitch) >= 1 && (note.pitch - succ->pitch) <= 2
+src/composing/analysis/chord/chordslicedecoder.cpp,439,12,candidatesForWindow,"std::array<double, 12>* pcWeightOut = nullptr,"
+src/composing/analysis/chord/chordslicedecoder.cpp,440,12,candidatesForWindow,"std::array<int, 12>* tpcForPcOut = nullptr)"
+src/composing/analysis/chord/chordslicedecoder.cpp,464,12,candidatesForWindow,c.rootTpc     = (cell.rootPc >= 0 && cell.rootPc < 12)
+src/composing/analysis/chord/chordslicedecoder.cpp,500,12,completeChosenExtensions,"const std::array<double, 12>& pcWeight,"
+src/composing/analysis/chord/chordslicedecoder.cpp,501,12,completeChosenExtensions,"const std::array<int, 12>& tpcForPc,"
+src/composing/analysis/chord/chordslicedecoder.cpp,562,12,<file-scope>,bool isRotationPc[12] = {};         ///< the symmetric collection's pitch classes
+src/composing/analysis/chord/chordslicedecoder.cpp,570,12,symmetricRotationSet,if (chosen.rootPc < 0 || chosen.rootPc >= 12) {
+src/composing/analysis/chord/chordslicedecoder.cpp,573,12,symmetricRotationSet,bool present[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,579,12,symmetricRotationSet,const int pc = (base + step * k) % 12;
+src/composing/analysis/chord/chordslicedecoder.cpp,589,4,symmetricRotationSet,"if (rot(chosen.rootPc, 4, 3)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,589,3,symmetricRotationSet,"if (rot(chosen.rootPc, 4, 3)) {"
+src/composing/analysis/chord/chordslicedecoder.cpp,590,4,symmetricRotationSet,s.valid = true; s.dimSeventh = false; s.quality = ChordQuality::Augmented; s.stepFifths = 4;
+src/composing/analysis/chord/chordslicedecoder.cpp,593,3,symmetricRotationSet,"if (rot(chosen.rootPc, 3, 4)) {   // a FULL dim7 (root+9 present), not a plain dim triad"
+src/composing/analysis/chord/chordslicedecoder.cpp,593,4,symmetricRotationSet,"if (rot(chosen.rootPc, 3, 4)) {   // a FULL dim7 (root+9 present), not a plain dim triad"
+src/composing/analysis/chord/chordslicedecoder.cpp,594,3,symmetricRotationSet,s.valid = true; s.dimSeventh = true; s.quality = ChordQuality::Diminished; s.stepFifths = 3;
+src/composing/analysis/chord/chordslicedecoder.cpp,604,1000000,<file-scope>,constexpr int kContradictedLof = -1000000;
+src/composing/analysis/chord/chordslicedecoder.cpp,729,12,decideSlice,&& c.rootPc >= 0 && c.rootPc < 12 && sym.isRotationPc[c.rootPc];
+src/composing/analysis/chord/chordslicedecoder.cpp,809,12,classifyMembership,bool present[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,810,12,classifyMembership,bool anyChordTone[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,844,12,classifyMembership,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/chord/chordslicedecoder.cpp,860,12,templateTonePresenceCount,bool counted[12] = {};
+src/composing/analysis/chord/chordslicedecoder.cpp,885,1.0,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(templateTonesPresent)"
+src/composing/analysis/chord/chordslicedecoder.cpp,885,0.0,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(templateTonesPresent)"
+src/composing/analysis/chord/chordslicedecoder.cpp,887,0.0,computeConfidence,: 0.0;
+src/composing/analysis/chord/chordslicedecoder.cpp,892,1.0,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(focalChordTonePcs)"
+src/composing/analysis/chord/chordslicedecoder.cpp,892,0.0,computeConfidence,"? std::min(1.0, std::max(0.0, static_cast<double>(focalChordTonePcs)"
+src/composing/analysis/chord/chordslicedecoder.cpp,894,1.0,computeConfidence,: 1.0;
+src/composing/analysis/chord/chordslicedecoder.cpp,899,2.0,computeConfidence,"const double ref = 2.0 * std::max(1e-9, dp.uncertaintyMargin);"
+src/composing/analysis/chord/chordslicedecoder.cpp,899,1e-9,computeConfidence,"const double ref = 2.0 * std::max(1e-9, dp.uncertaintyMargin);"
+src/composing/analysis/chord/chordslicedecoder.cpp,900,1.0,computeConfidence,"const double marginCertainty = std::min(1.0, std::max(0.0, margin / ref));"
+src/composing/analysis/chord/chordslicedecoder.cpp,900,0.0,computeConfidence,"const double marginCertainty = std::min(1.0, std::max(0.0, margin / ref));"
+src/composing/analysis/chord/chordslicedecoder.cpp,1085,12,<file-scope>,"std::array<double, 12> pcWeight{};"
+src/composing/analysis/chord/chordslicedecoder.cpp,1086,12,<file-scope>,"std::array<int, 12>    tpcForPc{};"
+src/composing/analysis/chord/chordslicedecoder.cpp,1087,0.0,<file-scope>,double extThreshold = 0.0;
+src/composing/analysis/chord/chordslicedecoder.cpp,1128,0.0,finalizeSlice,if (dp.membershipPenaltyWeight != 0.0) {
+src/composing/analysis/chord/chordslicedecoder.cpp,1203,2,decodeWindowed,"const int p1lo = std::max(0, outFirst - 2);"
+src/composing/analysis/chord/chordslicedecoder.h,169,6,<file-scope>,int topK = 6;
+src/composing/analysis/chord/chordslicedecoder.h,174,0.5,<file-scope>,double uncertaintyMargin = 0.5;
+src/composing/analysis/chord/chordslicedecoder.h,196,3,<file-scope>,int maxContextSlices = 3;
+src/composing/analysis/chord/chordslicedecoder.h,199,3,<file-scope>,int minHarmonyPcs = 3;
+src/composing/analysis/chord/chordslicedecoder.h,227,0.55,<file-scope>,double membershipSalienceThreshold = 0.55;
+src/composing/analysis/chord/chordslicedecoder.h,230,1.0,<file-scope>,double membershipReferenceDurationQn = 1.0;
+src/composing/analysis/chord/chordslicedecoder.h,238,0.6,<file-scope>,double membershipPenaltyWeight = 0.6;
+src/composing/analysis/chord/chordslicedecoder.h,263,3,<file-scope>,int sufficiencyChordTones = 3;
+src/composing/analysis/chord/chordslicedecoder.h,308,4,<file-scope>,int maxEdgeExtendSteps = 4;
+src/composing/analysis/chord/chordslicedecoder.h,335,0.0,<file-scope>,double score = 0.0;
+src/composing/analysis/chord/chordslicedecoder.h,405,0.0,<file-scope>,double margin = 0.0;                ///< raw margin to the best DIFFERENT reading (== SliceChord.confidence)
+src/composing/analysis/chord/chordslicedecoder.h,406,0.0,<file-scope>,"double sufficiency = 0.0;           ///< present / required template tones of the chosen chord, [0,1]"
+src/composing/analysis/chord/chordslicedecoder.h,407,1.0,<file-scope>,"double membershipCleanliness = 1.0; ///< chord-tone fraction of the focal pitch classes, [0,1]"
+src/composing/analysis/chord/chordslicedecoder.h,408,0.0,<file-scope>,"double composite = 0.0;             ///< combined certainty [0,1] = min(marginCertainty, sufficiency, cleanliness)"
+src/composing/analysis/chord/chordslicedecoder.h,432,0.0,<file-scope>,"double confidence = 0.0;                       ///< margin to the best DIFFERENT (root,quality) chord"
+src/composing/analysis/chord/chordslicedecoder.h,478,1.0,<file-scope>,"double metricWeight = 1.0; ///< normalised beat weight at onset [0.5,1.0]"
+src/composing/analysis/chord/chordslicedecoder.h,479,0.0,<file-scope>,double durationQn = 0.0;   ///< sounding duration in quarter notes
+src/composing/analysis/chord/chordslicedecoder.h,481,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/chord/chordslicedecoder.h,481,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/chord/chordslicedecoder.h,481,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/chord/chordslicedecoder.h,501,0.0,<file-scope>,double implausibilityPenalty = 0.0;
+src/composing/analysis/chord/chordsymbolformatter.cpp,46,12,csfPitchClassName,"static constexpr std::array<const char*, 12> SHARP_NAMES = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,49,12,csfPitchClassName,"static constexpr std::array<const char*, 12> FLAT_NAMES = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,53,12,csfPitchClassName,"static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,56,12,csfPitchClassName,"static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,88,12,csfPitchClassNameFromTpc,"static constexpr std::array<const char*, 12> SHARP_NAMES = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,91,12,csfPitchClassNameFromTpc,"static constexpr std::array<const char*, 12> FLAT_NAMES = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,94,12,csfPitchClassNameFromTpc,"static constexpr std::array<const char*, 12> SHARP_NAMES_GERMAN = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,97,12,csfPitchClassNameFromTpc,"static constexpr std::array<const char*, 12> FLAT_NAMES_GERMAN = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,108,11,csfPitchClassNameFromTpc,"if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,108,7,csfPitchClassNameFromTpc,"if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,108,8,csfPitchClassNameFromTpc,"if (pc == 11 && (tpc == 7 || tpc == 8)) return isGerman ? ""Ces"" : ""Cb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,109,4,csfPitchClassNameFromTpc,"if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,109,6,csfPitchClassNameFromTpc,"if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,109,7,csfPitchClassNameFromTpc,"if (pc == 4  && (tpc == 6 || tpc == 7)) return isGerman ? ""Fes"" : ""Fb"";"
+src/composing/analysis/chord/chordsymbolformatter.cpp,131,20,csfPitchClassNameFromTpc,if (tpc >= 20) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,133,3,csfPitchClassNameFromTpc,if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
+src/composing/analysis/chord/chordsymbolformatter.cpp,133,4,csfPitchClassNameFromTpc,if ((pc == 3  && keySignatureFifths < 4)                          // D# → Eb
+src/composing/analysis/chord/chordsymbolformatter.cpp,134,10,csfPitchClassNameFromTpc,|| (pc == 10 && keySignatureFifths < 5))                         // A# → Bb
+src/composing/analysis/chord/chordsymbolformatter.cpp,134,5,csfPitchClassNameFromTpc,|| (pc == 10 && keySignatureFifths < 5))                         // A# → Bb
+src/composing/analysis/chord/chordsymbolformatter.cpp,141,8,csfPitchClassNameFromTpc,|| (keySignatureFifths == 1 && pc == 8)
+src/composing/analysis/chord/chordsymbolformatter.cpp,142,6,csfPitchClassNameFromTpc,|| (keySignatureFifths < 0 && pc == 6)
+src/composing/analysis/chord/chordsymbolformatter.cpp,143,8,csfPitchClassNameFromTpc,|| (keySignatureFifths < 0 && pc == 8)
+src/composing/analysis/chord/chordsymbolformatter.cpp,144,2,csfPitchClassNameFromTpc,|| (keySignatureFifths == 2 && pc == 8)) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,144,8,csfPitchClassNameFromTpc,|| (keySignatureFifths == 2 && pc == 8)) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,174,7,csfPitchClassNameFromTpc,const bool preferFlat = (tpc >= 7 && tpc <= 14);
+src/composing/analysis/chord/chordsymbolformatter.cpp,174,14,csfPitchClassNameFromTpc,const bool preferFlat = (tpc >= 7 && tpc <= 14);
+src/composing/analysis/chord/chordsymbolformatter.cpp,187,5,csfPitchClassNameFromTpc,if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+src/composing/analysis/chord/chordsymbolformatter.cpp,187,11,csfPitchClassNameFromTpc,if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+src/composing/analysis/chord/chordsymbolformatter.cpp,187,19,csfPitchClassNameFromTpc,if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+src/composing/analysis/chord/chordsymbolformatter.cpp,187,20,csfPitchClassNameFromTpc,if (keySignatureFifths <= -5 && pc == 11 && (tpc == 19 || tpc == 20))
+src/composing/analysis/chord/chordsymbolformatter.cpp,189,6,csfPitchClassNameFromTpc,if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+src/composing/analysis/chord/chordsymbolformatter.cpp,189,4,csfPitchClassNameFromTpc,if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+src/composing/analysis/chord/chordsymbolformatter.cpp,189,18,csfPitchClassNameFromTpc,if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+src/composing/analysis/chord/chordsymbolformatter.cpp,189,19,csfPitchClassNameFromTpc,if (keySignatureFifths <= -6 && pc == 4  && (tpc == 18 || tpc == 19))
+src/composing/analysis/chord/chordsymbolformatter.cpp,457,7,csfChromaticRoman,"static constexpr std::array<int, 7> SCALES[7] = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,457,7,csfChromaticRoman,"static constexpr std::array<int, 7> SCALES[7] = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,2,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,4,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,5,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,7,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,9,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,458,11,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,2,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,3,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,5,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,7,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,9,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,459,10,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,460,3,csfChromaticRoman,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,460,5,csfChromaticRoman,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,460,7,csfChromaticRoman,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,460,8,csfChromaticRoman,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,460,10,csfChromaticRoman,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,2,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,4,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,6,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,7,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,9,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,461,11,csfChromaticRoman,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,2,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,4,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,5,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,7,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,9,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,462,10,csfChromaticRoman,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,2,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,3,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,5,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,7,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,8,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,463,10,csfChromaticRoman,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,464,3,csfChromaticRoman,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,464,5,csfChromaticRoman,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,464,6,csfChromaticRoman,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,464,8,csfChromaticRoman,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,464,10,csfChromaticRoman,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,466,7,csfChromaticRoman,"static constexpr const char* UPPER[7] = { ""I"",""II"",""III"",""IV"",""V"",""VI"",""VII"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,467,7,csfChromaticRoman,"static constexpr const char* LOWER[7] = { ""i"",""ii"",""iii"",""iv"",""v"",""vi"",""vii"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,469,7,csfChromaticRoman,"const std::array<int, 7>& scale = SCALES[modeIdx];"
+src/composing/analysis/chord/chordsymbolformatter.cpp,472,7,csfChromaticRoman,for (int i = 0; i < 7; ++i) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,473,12,csfChromaticRoman,if ((scale[i] - 1 + 12) % 12 == semitone) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,473,12,csfChromaticRoman,if ((scale[i] - 1 + 12) % 12 == semitone) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,478,7,csfChromaticRoman,for (int i = 0; i < 7; ++i) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,479,12,csfChromaticRoman,if ((scale[i] + 1) % 12 == semitone) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,488,6,csfDiatonicRoman,if (r.function.degree < 0 || r.function.degree > 6) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,492,7,csfDiatonicRoman,"static constexpr std::array<const char*, 7> UPPER = { ""I"", ""II"", ""III"", ""IV"", ""V"", ""VI"", ""VII"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,493,7,csfDiatonicRoman,"static constexpr std::array<const char*, 7> LOWER = { ""i"", ""ii"", ""iii"", ""iv"", ""v"", ""vi"", ""vii"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,541,13,csfDiatonicRoman,"if (hasExtension(r.identity.extensions, Extension::NaturalThirteenth))        level = 13;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,542,11,csfDiatonicRoman,"else if (hasExtension(r.identity.extensions, Extension::NaturalEleventh))     level = 11;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,543,9,csfDiatonicRoman,"else if (hasExtension(r.identity.extensions, Extension::NaturalNinth)) level = 9;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,544,7,csfDiatonicRoman,else                        level = 7;
+src/composing/analysis/chord/chordsymbolformatter.cpp,627,4,csfCoreIntervals,"intervals = { 0, 4, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,627,7,csfCoreIntervals,"intervals = { 0, 4, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,630,3,csfCoreIntervals,"intervals = { 0, 3, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,630,7,csfCoreIntervals,"intervals = { 0, 3, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,633,3,csfCoreIntervals,"intervals = { 0, 3, 6, 10 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,633,6,csfCoreIntervals,"intervals = { 0, 3, 6, 10 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,633,10,csfCoreIntervals,"intervals = { 0, 3, 6, 10 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,636,3,csfCoreIntervals,"intervals = { 0, 3, 6 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,636,6,csfCoreIntervals,"intervals = { 0, 3, 6 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,639,4,csfCoreIntervals,"intervals = { 0, 4, 8 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,639,8,csfCoreIntervals,"intervals = { 0, 4, 8 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,642,2,csfCoreIntervals,"intervals = { 0, 2, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,642,7,csfCoreIntervals,"intervals = { 0, 2, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,645,5,csfCoreIntervals,"intervals = { 0, 5, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,645,7,csfCoreIntervals,"intervals = { 0, 5, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,648,7,csfCoreIntervals,"intervals = { 0, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,651,4,csfCoreIntervals,"intervals = { 0, 4, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,651,7,csfCoreIntervals,"intervals = { 0, 4, 7 };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,656,9,csfCoreIntervals,intervals.push_back(9);
+src/composing/analysis/chord/chordsymbolformatter.cpp,658,11,csfCoreIntervals,intervals.push_back(11);
+src/composing/analysis/chord/chordsymbolformatter.cpp,660,10,csfCoreIntervals,intervals.push_back(10);
+src/composing/analysis/chord/chordsymbolformatter.cpp,687,3,csfRomanWithInversion,if (intervals.size() <= 3) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,691,2,csfRomanWithInversion,if (inversion == 2) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,697,4,csfRomanWithInversion,"static constexpr std::array<const char*, 4> FIGURED_BASS = { """", ""65"", ""43"", ""42"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,698,3,csfRomanWithInversion,"const char* suffix = FIGURED_BASS[static_cast<size_t>(std::min(inversion, 3))];"
+src/composing/analysis/chord/chordsymbolformatter.cpp,700,2,csfRomanWithInversion,"return roman.substr(0, roman.size() - 2) + suffix;"
+src/composing/analysis/chord/chordsymbolformatter.cpp,722,3,csfIsValidBassNoteName,if (len >= 3) return false;   // max 3 chars
+src/composing/analysis/chord/chordsymbolformatter.cpp,738,12,formatSymbol,&& result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,774,12,formatSymbol,&& result.identity.bassPc >= 0 && result.identity.bassPc < 12) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,788,7,<file-scope>,"static constexpr std::array<int, 7> csfTonicizationScales[7] = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,788,7,<file-scope>,"static constexpr std::array<int, 7> csfTonicizationScales[7] = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,2,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,4,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,5,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,7,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,9,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,789,11,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 11 }, // Ionian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,2,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,3,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,5,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,7,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,9,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,790,10,<file-scope>,"{ 0, 2, 3, 5, 7, 9, 10 }, // Dorian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,791,3,<file-scope>,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,791,5,<file-scope>,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,791,7,<file-scope>,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,791,8,<file-scope>,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,791,10,<file-scope>,"{ 0, 1, 3, 5, 7, 8, 10 }, // Phrygian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,2,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,4,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,6,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,7,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,9,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,792,11,<file-scope>,"{ 0, 2, 4, 6, 7, 9, 11 }, // Lydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,2,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,4,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,5,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,7,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,9,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,793,10,<file-scope>,"{ 0, 2, 4, 5, 7, 9, 10 }, // Mixolydian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,2,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,3,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,5,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,7,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,8,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,794,10,<file-scope>,"{ 0, 2, 3, 5, 7, 8, 10 }, // Aeolian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,795,3,<file-scope>,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,795,5,<file-scope>,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,795,6,<file-scope>,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,795,8,<file-scope>,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,795,10,<file-scope>,"{ 0, 1, 3, 5, 6, 8, 10 }, // Locrian"
+src/composing/analysis/chord/chordsymbolformatter.cpp,799,21,<file-scope>,"static constexpr std::array<size_t, 21> csfTonicizationParent = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,800,2,<file-scope>,"0, 1, 2, 3, 4, 5, 6,   // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,800,3,<file-scope>,"0, 1, 2, 3, 4, 5, 6,   // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,800,4,<file-scope>,"0, 1, 2, 3, 4, 5, 6,   // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,800,5,<file-scope>,"0, 1, 2, 3, 4, 5, 6,   // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,800,6,<file-scope>,"0, 1, 2, 3, 4, 5, 6,   // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,801,2,<file-scope>,"1, 2, 3, 4, 5, 6, 0,   // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,801,3,<file-scope>,"1, 2, 3, 4, 5, 6, 0,   // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,801,4,<file-scope>,"1, 2, 3, 4, 5, 6, 0,   // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,801,5,<file-scope>,"1, 2, 3, 4, 5, 6, 0,   // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,801,6,<file-scope>,"1, 2, 3, 4, 5, 6, 0,   // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,802,5,<file-scope>,"5, 6, 0, 1, 2, 3, 4    // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,802,6,<file-scope>,"5, 6, 0, 1, 2, 3, 4    // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,802,2,<file-scope>,"5, 6, 0, 1, 2, 3, 4    // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,802,3,<file-scope>,"5, 6, 0, 1, 2, 3, 4    // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,802,4,<file-scope>,"5, 6, 0, 1, 2, 3, 4    // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,807,7,csfDiatonicDegreeForPc,"static int csfDiatonicDegreeForPc(int pc, int tonicPc, const std::array<int, 7>& scale)"
+src/composing/analysis/chord/chordsymbolformatter.cpp,809,12,csfDiatonicDegreeForPc,const int interval = (pc - tonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,809,12,csfDiatonicDegreeForPc,const int interval = (pc - tonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,810,7,csfDiatonicDegreeForPc,for (int d = 0; d < 7; ++d) {
+src/composing/analysis/chord/chordsymbolformatter.cpp,820,7,csfIsDegreeMajorThird,"static bool csfIsDegreeMajorThird(int d, const std::array<int, 7>& scale)"
+src/composing/analysis/chord/chordsymbolformatter.cpp,823,2,csfIsDegreeMajorThird,const int thirdInterval = scale[(d + 2) % 7];
+src/composing/analysis/chord/chordsymbolformatter.cpp,823,7,csfIsDegreeMajorThird,const int thirdInterval = scale[(d + 2) % 7];
+src/composing/analysis/chord/chordsymbolformatter.cpp,824,12,csfIsDegreeMajorThird,return (thirdInterval - rootInterval + 12) % 12 == 4;
+src/composing/analysis/chord/chordsymbolformatter.cpp,824,12,csfIsDegreeMajorThird,return (thirdInterval - rootInterval + 12) % 12 == 4;
+src/composing/analysis/chord/chordsymbolformatter.cpp,824,4,csfIsDegreeMajorThird,return (thirdInterval - rootInterval + 12) % 12 == 4;
+src/composing/analysis/chord/chordsymbolformatter.cpp,837,12,formatRomanNumeral,const int semitone = (result.identity.rootPc - result.function.keyTonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,837,12,formatRomanNumeral,const int semitone = (result.identity.rootPc - result.function.keyTonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,840,21,formatRomanNumeral,"static constexpr std::array<int, 21> CHR_DIATONIC_PARENT = {"
+src/composing/analysis/chord/chordsymbolformatter.cpp,841,2,formatRomanNumeral,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,841,3,formatRomanNumeral,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,841,4,formatRomanNumeral,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,841,5,formatRomanNumeral,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,841,6,formatRomanNumeral,"0, 1, 2, 3, 4, 5, 6,  // diatonic: identity"
+src/composing/analysis/chord/chordsymbolformatter.cpp,842,2,formatRomanNumeral,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,842,3,formatRomanNumeral,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,842,4,formatRomanNumeral,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,842,5,formatRomanNumeral,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,842,6,formatRomanNumeral,"1, 2, 3, 4, 5, 6, 0,  // melodic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,843,5,formatRomanNumeral,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,843,6,formatRomanNumeral,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,843,2,formatRomanNumeral,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,843,3,formatRomanNumeral,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,843,4,formatRomanNumeral,"5, 6, 0, 1, 2, 3, 4   // harmonic minor family"
+src/composing/analysis/chord/chordsymbolformatter.cpp,889,8,formatRomanNumeral,&& rootPc == (keyTonicPc + 8) % 12
+src/composing/analysis/chord/chordsymbolformatter.cpp,889,12,formatRomanNumeral,&& rootPc == (keyTonicPc + 8) % 12
+src/composing/analysis/chord/chordsymbolformatter.cpp,923,12,formatRomanNumeral,const int upAFifth    = (rootPc - nextPc + 12) % 12; // 7 = rootPc is P5 above nextPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,923,12,formatRomanNumeral,const int upAFifth    = (rootPc - nextPc + 12) % 12; // 7 = rootPc is P5 above nextPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,924,12,formatRomanNumeral,const int upASemitone = (nextPc - rootPc + 12) % 12; // 1 = nextPc is semitone above rootPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,924,12,formatRomanNumeral,const int upASemitone = (nextPc - rootPc + 12) % 12; // 1 = nextPc is semitone above rootPc
+src/composing/analysis/chord/chordsymbolformatter.cpp,926,7,formatRomanNumeral,const bool isCandidateV    = isDom7 && (upAFifth == 7);
+src/composing/analysis/chord/chordsymbolformatter.cpp,931,7,formatRomanNumeral,"const std::array<int, 7>& scale = csfTonicizationScales[modeScaleIdx];"
+src/composing/analysis/chord/chordsymbolformatter.cpp,937,7,formatRomanNumeral,"static constexpr const char* UPPER[7] = { ""I"",""II"",""III"",""IV"",""V"",""VI"",""VII"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,938,7,formatRomanNumeral,"static constexpr const char* LOWER[7] = { ""i"",""ii"",""iii"",""iv"",""v"",""vi"",""vii"" };"
+src/composing/analysis/chord/chordsymbolformatter.cpp,973,7,nashvilleDegree,if (degree >= 0 && degree < 7)
+src/composing/analysis/chord/chordsymbolformatter.cpp,1015,12,nashvilleBassSuffix,int bassDegree = (result.identity.bassPc - result.function.keyTonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,1015,12,nashvilleBassSuffix,int bassDegree = (result.identity.bassPc - result.function.keyTonicPc + 12) % 12;
+src/composing/analysis/chord/chordsymbolformatter.cpp,1017,7,nashvilleBassSuffix,"return ""/"" + std::to_string((bassDegree % 7) + 1);"
+src/composing/analysis/chord/chordsymbolformatter.cpp,1026,7,formatNashvilleNumber,if (result.function.degree >= 0 && result.function.degree < 7) {
+src/composing/analysis/decode/chordpathdecoder.h,72,0.0,<file-scope>,double                           winnerScore  = 0.0;     ///< committed winner's competition score
+src/composing/analysis/decode/chordpathdecoder.h,73,1.0,<file-scope>,double                           winnerMargin = -1.0;    ///< score gap to runner-up; -1 if none
+src/composing/analysis/decode/chordpathdecoder.h,131,3,<file-scope>,"std::array<int, 3>   m_recentRootsBuf = {-1, -1, -1}; ///< recent-roots window (path state)"
+src/composing/analysis/region/sparsechordrefinement.cpp,37,6,diatonicTriadShapeForDegree,if (degree < 0 || degree > 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,43,2,diatonicTriadShapeForDegree,const int thirdDegree = degree + 2;
+src/composing/analysis/region/sparsechordrefinement.cpp,44,4,diatonicTriadShapeForDegree,const int fifthDegree = degree + 4;
+src/composing/analysis/region/sparsechordrefinement.cpp,45,7,diatonicTriadShapeForDegree,const int thirdInterval = (scale[static_cast<size_t>(thirdDegree % 7)]
+src/composing/analysis/region/sparsechordrefinement.cpp,46,7,diatonicTriadShapeForDegree,+ (thirdDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,46,12,diatonicTriadShapeForDegree,+ (thirdDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,47,12,diatonicTriadShapeForDegree,- rootInterval) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,48,7,diatonicTriadShapeForDegree,const int fifthInterval = (scale[static_cast<size_t>(fifthDegree % 7)]
+src/composing/analysis/region/sparsechordrefinement.cpp,49,7,diatonicTriadShapeForDegree,+ (fifthDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,49,12,diatonicTriadShapeForDegree,+ (fifthDegree >= 7 ? 12 : 0)
+src/composing/analysis/region/sparsechordrefinement.cpp,50,12,diatonicTriadShapeForDegree,- rootInterval) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,52,4,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,52,7,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,55,3,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,55,7,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 7) {
+src/composing/analysis/region/sparsechordrefinement.cpp,58,3,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,58,6,diatonicTriadShapeForDegree,if (thirdInterval == 3 && fifthInterval == 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,61,4,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 8) {
+src/composing/analysis/region/sparsechordrefinement.cpp,61,8,diatonicTriadShapeForDegree,if (thirdInterval == 4 && fifthInterval == 8) {
+src/composing/analysis/region/sparsechordrefinement.cpp,73,12,tonesFitTriadShape,bool seenPitchClasses[12] = {};
+src/composing/analysis/region/sparsechordrefinement.cpp,75,12,tonesFitTriadShape,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,81,12,tonesFitTriadShape,const int interval = (pitchClass - rootPc + 12) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,81,12,tonesFitTriadShape,const int interval = (pitchClass - rootPc + 12) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,91,12,distinctPitchClassCount,bool seenPitchClasses[12] = {};
+src/composing/analysis/region/sparsechordrefinement.cpp,94,12,distinctPitchClassCount,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,109,12,diatonicDegreeForRootPc,+ keyModeTonicOffset(keyMode)) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,112,12,diatonicDegreeForRootPc,if ((tonicPc + scale[i]) % 12 == rootPc) {
+src/composing/analysis/region/sparsechordrefinement.cpp,132,6,refineSparseChordQualityFromKeyContext,if (degree < 0 || degree > 6) {
+src/composing/analysis/region/sparsechordrefinement.cpp,140,12,refineSparseChordQualityFromKeyContext,+ keyModeTonicOffset(keyMode)) % 12;
+src/composing/analysis/region/sparsechordrefinement.cpp,157,4,refineSparseChordQualityFromKeyContext,&& (degree == 0 || degree == 4)) {
+src/composing/analysis/region/sparsechordrefinement.cpp,184,2,applyTonicPriorToSparseChord,if (distinctPitchClassCount(tones) > 2) {
+src/composing/analysis/types/analysistypes.h,115,2,<file-scope>,"Deep      = 2,  ///< reserved (Stage 3.2+) — wide / exact DP; NOT yet active (behaves as FastBeam1)"
+src/composing/analysis/types/analysistypes.h,177,0.70,<file-scope>,double bassNoteRootBonus = 0.70;
+src/composing/analysis/types/analysistypes.h,183,0.3,<file-scope>,double bassRootThirdOnlyMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,188,0.1,<file-scope>,double bassRootAloneMultiplier = 0.1;
+src/composing/analysis/types/analysistypes.h,191,0.30,<file-scope>,double diatonicRootBonus = 0.30;
+src/composing/analysis/types/analysistypes.h,196,0.20,<file-scope>,double tpcConsistencyBonusPerTone = 0.20;
+src/composing/analysis/types/analysistypes.h,200,0.40,<file-scope>,double rootContinuityBonus = 0.40;
+src/composing/analysis/types/analysistypes.h,207,0.35,<file-scope>,double resolutionBonus = 0.35;
+src/composing/analysis/types/analysistypes.h,226,0.5,<file-scope>,double stepwiseBassInversionBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,235,0.5,<file-scope>,double stepwiseBassLookaheadBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,243,0.45,<file-scope>,double completeTriadInversionBonus = 0.45;
+src/composing/analysis/types/analysistypes.h,252,0.4,<file-scope>,double sameRootInversionBonus = 0.4;
+src/composing/analysis/types/analysistypes.h,268,2.0,<file-scope>,double maxTotalInversionContextBonus = 2.0;
+src/composing/analysis/types/analysistypes.h,293,0.70,<file-scope>,double inversionSuspicionMargin = 0.70;
+src/composing/analysis/types/analysistypes.h,298,0.0,<file-scope>,double inversionBonusReduction = 0.0;
+src/composing/analysis/types/analysistypes.h,319,0.6,<file-scope>,double harmonicBoundaryJaccardThreshold = 0.6;
+src/composing/analysis/types/analysistypes.h,325,0.3,<file-scope>,double pedalTailWeightMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,332,0.05,<file-scope>,double bassPassingToneMinWeightFraction = 0.05;
+src/composing/analysis/types/analysistypes.h,346,0.20,<file-scope>,double extensionThreshold = 0.20;
+src/composing/analysis/types/analysistypes.h,355,3,<file-scope>,int minDistinctPcsForCandidate = 3;
+src/composing/analysis/types/analysistypes.h,386,0.65,<file-scope>,double pedalConfidenceThreshold = 0.65;
+src/composing/analysis/types/analysistypes.h,428,0.0,bounds,"{ ""bassNoteRootBonus"",           { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,428,2.0,bounds,"{ ""bassNoteRootBonus"",           { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,429,0.0,bounds,"{ ""bassRootThirdOnlyMultiplier"", { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,429,1.0,bounds,"{ ""bassRootThirdOnlyMultiplier"", { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,430,0.0,bounds,"{ ""bassRootAloneMultiplier"",     { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,430,1.0,bounds,"{ ""bassRootAloneMultiplier"",     { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,431,0.0,bounds,"{ ""diatonicRootBonus"",           { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,431,1.0,bounds,"{ ""diatonicRootBonus"",           { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,432,0.0,bounds,"{ ""tpcConsistencyBonusPerTone"",  { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,432,1.0,bounds,"{ ""tpcConsistencyBonusPerTone"",  { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,433,0.0,bounds,"{ ""rootContinuityBonus"",           { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,433,1.5,bounds,"{ ""rootContinuityBonus"",           { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,434,0.0,bounds,"{ ""resolutionBonus"",               { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,434,1.5,bounds,"{ ""resolutionBonus"",               { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,435,0.0,bounds,"{ ""stepwiseBassInversionBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,435,2.0,bounds,"{ ""stepwiseBassInversionBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,436,0.0,bounds,"{ ""stepwiseBassLookaheadBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,436,2.0,bounds,"{ ""stepwiseBassLookaheadBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,437,0.0,bounds,"{ ""completeTriadInversionBonus"",  { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,437,2.0,bounds,"{ ""completeTriadInversionBonus"",  { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,438,0.0,bounds,"{ ""sameRootInversionBonus"",                    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,438,2.0,bounds,"{ ""sameRootInversionBonus"",                    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,439,0.0,bounds,"{ ""maxTotalInversionContextBonus"",            { 0.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,439,10.0,bounds,"{ ""maxTotalInversionContextBonus"",            { 0.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,440,0.0,bounds,"{ ""inversionSuspicionMargin"",                 { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,440,2.0,bounds,"{ ""inversionSuspicionMargin"",                 { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,441,0.0,bounds,"{ ""inversionBonusReduction"",            { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,441,1.0,bounds,"{ ""inversionBonusReduction"",            { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,442,0.0,bounds,"{ ""harmonicBoundaryJaccardThreshold"",       { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,442,1.0,bounds,"{ ""harmonicBoundaryJaccardThreshold"",       { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,443,0.0,bounds,"{ ""pedalTailWeightMultiplier"",              { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,443,1.0,bounds,"{ ""pedalTailWeightMultiplier"",              { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,444,0.0,bounds,"{ ""bassPassingToneMinWeightFraction"",       { 0.0, 0.5 } },"
+src/composing/analysis/types/analysistypes.h,444,0.5,bounds,"{ ""bassPassingToneMinWeightFraction"",       { 0.0, 0.5 } },"
+src/composing/analysis/types/analysistypes.h,445,0.3,bounds,"{ ""pedalConfidenceThreshold"",               { 0.3, 0.95 } },"
+src/composing/analysis/types/analysistypes.h,445,0.95,bounds,"{ ""pedalConfidenceThreshold"",               { 0.3, 0.95 } },"
+src/composing/analysis/types/analysistypes.h,446,0.10,bounds,"{ ""extensionThreshold"",                     { 0.10, 0.30 } },"
+src/composing/analysis/types/analysistypes.h,446,0.30,bounds,"{ ""extensionThreshold"",                     { 0.10, 0.30 } },"
+src/composing/analysis/types/analysistypes.h,512,3,<file-scope>,"std::array<int, 3> recentRootPcs = {-1, -1, -1};"
+src/composing/analysis/types/analysistypes.h,517,1.0,<file-scope>,double regionMetricWeight = 1.0;
+src/composing/analysis/types/analysistypes.h,524,0.0,<file-scope>,double previousWinnerScore { 0.0 };
+src/composing/analysis/types/analysistypes.h,528,1.0,<file-scope>,double previousWinnerMargin { -1.0 };
+src/composing/analysis/types/analysistypes.h,532,0.0,<file-scope>,double previousWinnerRootPcWeight { 0.0 };
+src/composing/analysis/types/analysistypes.h,587,3.0,<file-scope>,double noteWeightCap = 3.0;          // [empirical]
+src/composing/analysis/types/analysistypes.h,591,2.0,<file-scope>,"double bassMultiplier = 2.0;         // [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,600,1.00,<file-scope>,double scaleScoreInBoth    =  1.00;  ///< Note is in candidate scale AND key-sig scale [theory-grounded ordering]
+src/composing/analysis/types/analysistypes.h,601,0.25,<file-scope>,double scaleScoreInCandidateOnly = 0.25;  ///< In candidate scale but not key-sig scale [empirical]
+src/composing/analysis/types/analysistypes.h,602,0.20,<file-scope>,double scaleScoreInKeySigOnly    = -0.20; ///< In key-sig scale but not candidate (chromatic neighbour) [empirical]
+src/composing/analysis/types/analysistypes.h,603,0.05,<file-scope>,double scaleScoreInNeither       = -0.05; ///< Outside both scales [empirical]
+src/composing/analysis/types/analysistypes.h,611,1.60,<file-scope>,"double tonicWeight       = 1.60;  ///< Tonic note present [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,612,0.70,<file-scope>,"double thirdWeight       = 0.70;  ///< Third (M3 for major, m3 for minor) [empirical]"
+src/composing/analysis/types/analysistypes.h,613,0.50,<file-scope>,double fifthWeight       = 0.50;  ///< Perfect fifth [empirical]
+src/composing/analysis/types/analysistypes.h,614,0.40,<file-scope>,"double leadingToneWeight = 0.40;  ///< Leading tone (tonicPc + 11, used for both modes) [empirical]"
+src/composing/analysis/types/analysistypes.h,616,2.50,<file-scope>,double completeTriadBonus  =  2.50;  ///< All three triad notes present simultaneously [empirical]
+src/composing/analysis/types/analysistypes.h,617,2.50,<file-scope>,double missingTonicPenalty = -2.50;  ///< Tonic entirely absent [empirical]
+src/composing/analysis/types/analysistypes.h,619,0.10,<file-scope>,double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [empirical]
+src/composing/analysis/types/analysistypes.h,620,5.0,<file-scope>,double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]
+src/composing/analysis/types/analysistypes.h,629,1.80,<file-scope>,double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present [empirical]
+src/composing/analysis/types/analysistypes.h,630,0.60,<file-scope>,double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is absent [empirical]
+src/composing/analysis/types/analysistypes.h,640,1.20,<file-scope>,double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
+src/composing/analysis/types/analysistypes.h,652,1.20,<file-scope>,double modePriorIonian          =  1.20;  ///< [empirical — was tier1+0.2]
+src/composing/analysis/types/analysistypes.h,653,0.50,<file-scope>,double modePriorDorian          = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,654,1.50,<file-scope>,double modePriorPhrygian        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,655,1.50,<file-scope>,double modePriorLydian          = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,656,0.50,<file-scope>,double modePriorMixolydian      = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,657,1.00,<file-scope>,double modePriorAeolian         =  1.00;  ///< [empirical — was tier1]
+src/composing/analysis/types/analysistypes.h,658,3.00,<file-scope>,double modePriorLocrian         = -3.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,661,0.50,<file-scope>,double modePriorMelodicMinor    = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,662,1.50,<file-scope>,double modePriorDorianB2        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,663,2.00,<file-scope>,double modePriorLydianAugmented  = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,664,1.00,<file-scope>,double modePriorLydianDominant   = -1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,665,1.50,<file-scope>,double modePriorMixolydianB6    = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,666,2.50,<file-scope>,double modePriorAeolianB5       = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,667,3.50,<file-scope>,double modePriorAltered         = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,670,0.30,<file-scope>,double modePriorHarmonicMinor   = -0.30;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,671,2.50,<file-scope>,double modePriorLocrianSharp6   = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,672,2.00,<file-scope>,double modePriorIonianSharp5    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,673,2.00,<file-scope>,double modePriorDorianSharp4    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,674,0.80,<file-scope>,double modePriorPhrygianDominant = -0.80;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,675,2.50,<file-scope>,double modePriorLydianSharp2    = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,676,3.50,<file-scope>,double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,690,2.20,<file-scope>,double tonalCenterTonicWeight  = 2.20;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,691,1.00,<file-scope>,double tonalCenterThirdWeight  = 1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,692,0.70,<file-scope>,double tonalCenterFifthWeight  = 0.70;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,693,0.50,<file-scope>,double tonalCenterLeadingTone  = 0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,694,2.00,<file-scope>,double tonalCenterTriadBonus   = 2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,695,0.25,<file-scope>,double tonalCenterDeltaThreshold = 0.25; ///< Min delta to choose winner outright [empirical]
+src/composing/analysis/types/analysistypes.h,704,0.60,<file-scope>,double keySignatureDistancePenalty = 0.60;  ///< Per circle-of-fifths step of distance [empirical]
+src/composing/analysis/types/analysistypes.h,714,4.50,<file-scope>,double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empirical]
+src/composing/analysis/types/analysistypes.h,715,1.50,<file-scope>,double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
+src/composing/analysis/types/analysistypes.h,716,1.00,<file-scope>,double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
+src/composing/analysis/types/analysistypes.h,733,1.0,<file-scope>,"double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates [empirical — Stage-5 fits]"
+src/composing/analysis/types/analysistypes.h,758,2.0,<file-scope>,double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
+src/composing/analysis/types/analysistypes.h,759,1.5,<file-scope>,double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+src/composing/analysis/types/analysistypes.h,770,0.60,<file-scope>,double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence ≥ this [empirical]
+src/composing/analysis/types/analysistypes.h,771,2,<file-scope>,int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [empirical]
+src/composing/analysis/types/analysistypes.h,772,24,<file-scope>,int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]
+src/composing/analysis/types/analysistypes.h,782,2.0,<file-scope>,double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sigs differ [empirical]
+src/composing/analysis/types/analysistypes.h,788,2.0,<file-scope>,"double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]"
+src/composing/analysis/types/analysistypes.h,797,1.0,<file-scope>,double beatWeightDownbeat            = 1.0;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,798,0.7,<file-scope>,double beatWeightCompoundStressed    = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,799,0.7,<file-scope>,double beatWeightSimpleStressed      = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,800,0.4,<file-scope>,double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,801,0.4,<file-scope>,double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,802,0.2,<file-scope>,double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,803,0.2,<file-scope>,double beatWeightSubbeat             = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,819,1.0,bounds,"{ ""noteWeightCap"",                     { 1.0,  6.0 } },"
+src/composing/analysis/types/analysistypes.h,819,6.0,bounds,"{ ""noteWeightCap"",                     { 1.0,  6.0 } },"
+src/composing/analysis/types/analysistypes.h,820,1.0,bounds,"{ ""bassMultiplier"",                    { 1.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,820,4.0,bounds,"{ ""bassMultiplier"",                    { 1.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,822,0.5,bounds,"{ ""scaleScoreInBoth"",                  { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,822,2.0,bounds,"{ ""scaleScoreInBoth"",                  { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,823,0.0,bounds,"{ ""scaleScoreInCandidateOnly"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,823,1.0,bounds,"{ ""scaleScoreInCandidateOnly"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,824,1.0,bounds,"{ ""scaleScoreInKeySigOnly"",            {-1.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,824,0.0,bounds,"{ ""scaleScoreInKeySigOnly"",            {-1.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,825,0.5,bounds,"{ ""scaleScoreInNeither"",               {-0.5,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,825,0.0,bounds,"{ ""scaleScoreInNeither"",               {-0.5,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,827,0.5,bounds,"{ ""tonicWeight"",                       { 0.5,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,827,3.0,bounds,"{ ""tonicWeight"",                       { 0.5,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,828,0.0,bounds,"{ ""thirdWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,828,2.0,bounds,"{ ""thirdWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,829,0.0,bounds,"{ ""fifthWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,829,2.0,bounds,"{ ""fifthWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,830,0.0,bounds,"{ ""leadingToneWeight"",                 { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,830,1.5,bounds,"{ ""leadingToneWeight"",                 { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,831,0.5,bounds,"{ ""completeTriadBonus"",                { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,831,5.0,bounds,"{ ""completeTriadBonus"",                { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,832,5.0,bounds,"{ ""missingTonicPenalty"",               {-5.0, -0.5 } },"
+src/composing/analysis/types/analysistypes.h,832,0.5,bounds,"{ ""missingTonicPenalty"",               {-5.0, -0.5 } },"
+src/composing/analysis/types/analysistypes.h,833,0.0,bounds,"{ ""extraScaleFactor"",                  { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,833,0.5,bounds,"{ ""extraScaleFactor"",                  { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,834,1.0,bounds,"{ ""extraScaleCap"",                     { 1.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,834,10.0,bounds,"{ ""extraScaleCap"",                     { 1.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,836,0.5,bounds,"{ ""characteristicPitchBoost"",          { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,836,4.0,bounds,"{ ""characteristicPitchBoost"",          { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,837,2.0,bounds,"{ ""characteristicPitchPenalty"",        {-2.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,837,0.0,bounds,"{ ""characteristicPitchPenalty"",        {-2.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,839,0.0,bounds,"{ ""trueLeadingToneBoost"",              { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,839,3.0,bounds,"{ ""trueLeadingToneBoost"",              { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,841,5.0,bounds,"{ ""modePriorIonian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,841,5.0,bounds,"{ ""modePriorIonian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,842,5.0,bounds,"{ ""modePriorDorian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,842,5.0,bounds,"{ ""modePriorDorian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,843,5.0,bounds,"{ ""modePriorPhrygian"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,843,5.0,bounds,"{ ""modePriorPhrygian"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,844,5.0,bounds,"{ ""modePriorLydian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,844,5.0,bounds,"{ ""modePriorLydian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,845,5.0,bounds,"{ ""modePriorMixolydian"",    { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,845,5.0,bounds,"{ ""modePriorMixolydian"",    { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,846,5.0,bounds,"{ ""modePriorAeolian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,846,5.0,bounds,"{ ""modePriorAeolian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,847,5.0,bounds,"{ ""modePriorLocrian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,847,5.0,bounds,"{ ""modePriorLocrian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,848,5.0,bounds,"{ ""modePriorMelodicMinor"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,848,5.0,bounds,"{ ""modePriorMelodicMinor"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,849,5.0,bounds,"{ ""modePriorDorianB2"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,849,5.0,bounds,"{ ""modePriorDorianB2"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,850,5.0,bounds,"{ ""modePriorLydianAugmented"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,850,5.0,bounds,"{ ""modePriorLydianAugmented"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,851,5.0,bounds,"{ ""modePriorLydianDominant"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,851,5.0,bounds,"{ ""modePriorLydianDominant"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,852,5.0,bounds,"{ ""modePriorMixolydianB6"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,852,5.0,bounds,"{ ""modePriorMixolydianB6"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,853,5.0,bounds,"{ ""modePriorAeolianB5"",     { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,853,5.0,bounds,"{ ""modePriorAeolianB5"",     { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,854,5.0,bounds,"{ ""modePriorAltered"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,854,5.0,bounds,"{ ""modePriorAltered"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,855,5.0,bounds,"{ ""modePriorHarmonicMinor"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,855,5.0,bounds,"{ ""modePriorHarmonicMinor"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,856,5.0,bounds,"{ ""modePriorLocrianSharp6"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,856,5.0,bounds,"{ ""modePriorLocrianSharp6"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,857,5.0,bounds,"{ ""modePriorIonianSharp5"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,857,5.0,bounds,"{ ""modePriorIonianSharp5"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,858,5.0,bounds,"{ ""modePriorDorianSharp4"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,858,5.0,bounds,"{ ""modePriorDorianSharp4"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,859,5.0,bounds,"{ ""modePriorPhrygianDominant"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,859,5.0,bounds,"{ ""modePriorPhrygianDominant"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,860,5.0,bounds,"{ ""modePriorLydianSharp2"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,860,5.0,bounds,"{ ""modePriorLydianSharp2"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,861,5.0,bounds,"{ ""modePriorAlteredDomBB7"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,861,5.0,bounds,"{ ""modePriorAlteredDomBB7"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,863,0.5,bounds,"{ ""tonalCenterTonicWeight"",            { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,863,4.0,bounds,"{ ""tonalCenterTonicWeight"",            { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,864,0.0,bounds,"{ ""tonalCenterThirdWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,864,2.0,bounds,"{ ""tonalCenterThirdWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,865,0.0,bounds,"{ ""tonalCenterFifthWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,865,2.0,bounds,"{ ""tonalCenterFifthWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,866,0.0,bounds,"{ ""tonalCenterLeadingTone"",            { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,866,1.5,bounds,"{ ""tonalCenterLeadingTone"",            { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,867,0.5,bounds,"{ ""tonalCenterTriadBonus"",             { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,867,5.0,bounds,"{ ""tonalCenterTriadBonus"",             { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,868,0.0,bounds,"{ ""tonalCenterDeltaThreshold"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,868,1.0,bounds,"{ ""tonalCenterDeltaThreshold"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,870,0.0,bounds,"{ ""keySignatureDistancePenalty"",       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,870,2.0,bounds,"{ ""keySignatureDistancePenalty"",       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,872,1.0,bounds,"{ ""disambiguationTriadBonus"",          { 1.0,  8.0 } },"
+src/composing/analysis/types/analysistypes.h,872,8.0,bounds,"{ ""disambiguationTriadBonus"",          { 1.0,  8.0 } },"
+src/composing/analysis/types/analysistypes.h,873,0.0,bounds,"{ ""disambiguationTriadCost"",           { 0.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,873,4.0,bounds,"{ ""disambiguationTriadCost"",           { 0.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,874,0.0,bounds,"{ ""disambiguationTonicBonus"",          { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,874,3.0,bounds,"{ ""disambiguationTonicBonus"",          { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,878,0.0,bounds,"{ ""declaredModePenalty"",               { 0.0, 15.0, true } },"
+src/composing/analysis/types/analysistypes.h,878,15.0,bounds,"{ ""declaredModePenalty"",               { 0.0, 15.0, true } },"
+src/composing/analysis/types/analysistypes.h,880,0.5,bounds,"{ ""confidenceSigmoidMidpoint"",         { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,880,5.0,bounds,"{ ""confidenceSigmoidMidpoint"",         { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,881,0.5,bounds,"{ ""confidenceSigmoidSteepness"",        { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,881,5.0,bounds,"{ ""confidenceSigmoidSteepness"",        { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,883,0.3,bounds,"{ ""dynamicLookaheadConfidenceThreshold"",{ 0.3, 0.9 } },"
+src/composing/analysis/types/analysistypes.h,883,0.9,bounds,"{ ""dynamicLookaheadConfidenceThreshold"",{ 0.3, 0.9 } },"
+src/composing/analysis/types/analysistypes.h,885,0.5,bounds,"{ ""hysteresisMargin"",                  { 0.5,  5.0, true } },"
+src/composing/analysis/types/analysistypes.h,885,5.0,bounds,"{ ""hysteresisMargin"",                  { 0.5,  5.0, true } },"
+src/composing/analysis/types/analysistypes.h,886,0.5,bounds,"{ ""relativeKeyHysteresisMargin"",       { 0.5,  8.0, true } },"
+src/composing/analysis/types/analysistypes.h,886,8.0,bounds,"{ ""relativeKeyHysteresisMargin"",       { 0.5,  8.0, true } },"
+src/composing/analysis/types/analysistypes.h,888,0.5,bounds,"{ ""beatWeightDownbeat"",                { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,888,2.0,bounds,"{ ""beatWeightDownbeat"",                { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,889,0.3,bounds,"{ ""beatWeightCompoundStressed"",        { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,889,1.5,bounds,"{ ""beatWeightCompoundStressed"",        { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,890,0.3,bounds,"{ ""beatWeightSimpleStressed"",          { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,890,1.5,bounds,"{ ""beatWeightSimpleStressed"",          { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,891,0.1,bounds,"{ ""beatWeightCompoundUnstressed"",      { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,891,1.0,bounds,"{ ""beatWeightCompoundUnstressed"",      { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,892,0.1,bounds,"{ ""beatWeightSimpleUnstressed"",        { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,892,1.0,bounds,"{ ""beatWeightSimpleUnstressed"",        { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,893,0.0,bounds,"{ ""beatWeightCompoundSubbeat"",         { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,893,0.5,bounds,"{ ""beatWeightCompoundSubbeat"",         { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,894,0.0,bounds,"{ ""beatWeightSubbeat"",                 { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,894,0.5,bounds,"{ ""beatWeightSubbeat"",                 { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,913,1.0,<file-scope>,double durationWeight = 1.0; ///< Duration in quarter-note units; larger = more influence
+src/composing/analysis/types/analysistypes.h,914,1.0,<file-scope>,"double beatWeight = 1.0;     ///< Metric position: 1.0=downbeat, ~0.2=offbeat"

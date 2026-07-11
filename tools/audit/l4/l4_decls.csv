@@ -1,0 +1,23 @@
+file,line,type_owner,name,context
+src/composing/analysis/chord/analysisutils.h,40,<namespace>,length,const size_t suffixLen = std::char_traits<char>::length(suffix);
+src/composing/analysis/chord/analysisutils.h,91,<namespace>,normalizePc,m |= static_cast<uint16_t>(1u << normalizePc(7 * i));
+src/composing/analysis/chord/analysisutils.h,110,<namespace>,normalizePc,m |= static_cast<uint16_t>(1u << normalizePc(tonicPc + d));
+src/composing/analysis/chord/analysisutils.h,114,<namespace>,normalizePc,m |= static_cast<uint16_t>(1u << normalizePc(tonicPc + d));
+src/composing/analysis/chord/chordanalyzer.h,120,<namespace>,templateIntervalMask,masks[t] = templateIntervalMask(t);
+src/composing/analysis/chord/chordanalyzer.h,162,<namespace>,push_back,existingTones.push_back(newTone);
+src/composing/analysis/chord/chordanalyzer.h,183,<namespace>,normalizeMergedBassTone,normalizeMergedBassTone(existingTones);
+src/composing/analysis/chord/chordanalyzer.h,204,<namespace>,abs,int interval = std::abs(pc1 - pc2);
+src/composing/analysis/chord/chordanalyzer.h,205,<namespace>,min,"interval = std::min(interval, 12 - interval);"
+src/composing/analysis/chord/chordanalyzer.h,241,<namespace>,hasExtension,"|| hasExtension(ext, Extension::SharpNinth);"
+src/composing/analysis/chord/chordanalyzer.h,248,<namespace>,hasExtension,"|| hasExtension(ext, Extension::SharpThirteenth);"
+src/composing/analysis/chord/chordanalyzer.h,432,<namespace>,IChordAnalyzer,virtual ~IChordAnalyzer() = default;
+src/composing/analysis/chord/chordanalyzer.h,560,<namespace>,advanceTemporalContext,"advanceTemporalContext(ctx, runningStepwiseCount, recentRootsBuf, chosen);"
+src/composing/analysis/chord/chordanalyzer.h,601,<namespace>,size,s.total = static_cast<int>(gateCtx.rawCandidates.size());
+src/composing/analysis/chord/chordanalyzer.h,747,<namespace>,applyIter8691Pedal,"applyIter8691Pedal(candidates, igCtx, nullptr, prefs);"
+src/composing/analysis/chord/chordanalyzer.h,748,<namespace>,applyPostScoringGates,"applyPostScoringGates(candidates, prefs, nullptr, igCtx);"
+src/composing/analysis/chord/chordanalyzer.h,829,<namespace>,formatRomanNumeral,std::string formatRomanNumeral(const ChordAnalysisResult& result);
+src/composing/analysis/chord/chordanalyzer.h,833,<namespace>,formatNashvilleNumber,"std::string formatNashvilleNumber(const ChordAnalysisResult& result, int keySignatureFifths);"
+src/composing/analysis/chord/chordanalyzer.h,851,<namespace>,closePositionVoicing,ClosePositionVoicing closePositionVoicing(const ChordAnalysisResult& result);
+src/composing/analysis/chord/chordanalyzer.h,862,<namespace>,chordTonePitchClasses,std::vector<int> chordTonePitchClasses(const ChordAnalysisResult& result);
+src/composing/analysis/decode/chordpathdecoder.h,120,<namespace>,recordNode,void recordNode(ChordPathNode node) { m_path.push_back(std::move(node)); }
+src/composing/analysis/region/sparsechordrefinement.h,42,<namespace>,diatonicDegreeForRootPc,"int diatonicDegreeForRootPc(int rootPc, int keyFifths, KeySigMode keyMode);"

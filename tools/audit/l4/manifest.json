@@ -1,0 +1,44 @@
+{
+ "instrument": "tools/audit/gen_inventory.py",
+ "audit": "EG-7 Layer-4 (chord) certification, PASS 1 (blind enumerative)",
+ "audit_layer": "l4",
+ "head_commit": "7f57aad4b5bf77117581acdbeb890e98336b8b68",
+ "script_blob_sha": "41cf350af5113e4e1d30afec216ec24c4a6c73c1",
+ "corpus_hash": "c50002fee1",
+ "scope_dir": "src/composing",
+ "extraction_method": "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring",
+ "totals": {
+  "tracked_files": 216,
+  "file_table_rows": 216,
+  "tag_counts": {
+   "L3+": 178,
+   "L4-SCORER": 7,
+   "DEFERRED": 11,
+   "L4-RETIRES": 2,
+   "L4-DECODER": 2,
+   "L1": 11,
+   "RETIRES": 2,
+   "L2": 2,
+   "L4-MIXED": 1
+  },
+  "deep_audited_files": 10,
+  "functions": 136,
+  "literals": 1067,
+  "branches": 612,
+  "fields": 262,
+  "decls": 22,
+  "crosslayer": 22
+ },
+ "deep_audited_file_list": [
+  "src/composing/analysis/chord/analysisutils.h",
+  "src/composing/analysis/chord/chordanalyzer.cpp",
+  "src/composing/analysis/chord/chordanalyzer.h",
+  "src/composing/analysis/chord/chordslicedecoder.cpp",
+  "src/composing/analysis/chord/chordslicedecoder.h",
+  "src/composing/analysis/chord/chordsymbolformatter.cpp",
+  "src/composing/analysis/decode/chordpathdecoder.h",
+  "src/composing/analysis/region/sparsechordrefinement.cpp",
+  "src/composing/analysis/region/sparsechordrefinement.h",
+  "src/composing/analysis/types/analysistypes.h"
+ ]
+}

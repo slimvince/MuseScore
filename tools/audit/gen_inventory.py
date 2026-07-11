@@ -4,9 +4,10 @@
 """
 gen_inventory.py — the machine-generated audit inventory for the EG-7 layer
 certification audits (OI-84). ONE PASS-1 instrument, layer-selected by --layer
-(l1l2 default — the original L1/L2 audit; l3 — the Layer-3 key/mode audit). One path
-per concern (#6): the same enumeration + extraction serves every layer; --layer picks
-the deep-audited tag set, the output dir, and the per-layer tag refinement.
+(l1l2 default — the original L1/L2 audit; l3 — the Layer-3 key/mode audit; l4 — the
+Layer-4 chord audit). One path per concern (#6): the same enumeration + extraction
+serves every layer; --layer picks the deep-audited tag set, the output dir, and the
+per-layer tag refinement.
 
 WHAT THIS IS (protocol P1, cowork_audit_protocol.md; #17(f) applied to audit SCOPE):
   The audit domain is generated MECHANICALLY from the code, never chosen by hand.
@@ -43,6 +44,7 @@ EXTRACTION METHOD (stated so the instrument is ESTABLISHED, #19 — not a black 
 RUN:
   python tools/audit/gen_inventory.py                    # L1/L2 audit → tools/audit/l1l2/
   python tools/audit/gen_inventory.py --layer l3         # L3 audit    → tools/audit/l3/
+  python tools/audit/gen_inventory.py --layer l4         # L4 audit    → tools/audit/l4/
   python tools/audit/gen_inventory.py --self-check       # + per-file extraction counts
   python tools/audit/gen_inventory.py --out-dir <scratch># override the artifact dir (byte-id check)
   (exit 0 iff every tracked file received a tag; nonzero on any untagged file — P1.)
@@ -68,10 +70,21 @@ CORPUS_HASH = "c50002fee1"   # the pinned corpus for these audits (instruction T
 #     TAG_RULES are used verbatim, DEEP_TAGS = (L1, L2), artifacts under
 #     tools/audit/l1l2/. Byte-identical to the committed L1/L2 run — the L3_REFINE
 #     step is NOT applied, so this file's L1/L2 output is unchanged.
-#   --layer l3: the Layer-3 (key/mode) certification inventory (this instruction).
-#     The L3_REFINE overrides below refine the base L3+ tags on the key/mode files
-#     into L3 / L3-MIXED (and correct the mis-tags this audit found), DEEP_TAGS =
-#     (L3, L3-MIXED), artifacts under tools/audit/l3/. Everything else is unchanged.
+#   --layer l3: the Layer-3 (key/mode) certification inventory. The L3_REFINE
+#     overrides below refine the base L3+ tags on the key/mode files into L3 /
+#     L3-MIXED (and correct the mis-tags that audit found), DEEP_TAGS = (L3, L3-MIXED),
+#     artifacts under tools/audit/l3/. Everything else is unchanged.
+#   --layer l4: the Layer-4 (chord) certification inventory (this instruction). The
+#     L4_REFINE overrides below refine the base L3+/RETIRES tags on the chord/decode
+#     files into the THREE populations the instruction names — L4-SCORER (c, the LIVE
+#     surviving scorer core the dormant decoder reuses), L4-DECODER (b, the DORMANT
+#     ChordSliceDecoder), L4-RETIRES (a, the legacy competition tail + Gates A-L that
+#     retire at engagement) — plus L4-MIXED (in-scope L4 content beside other-layer
+#     types) and DEFERRED (verified NOT L4). DEEP_TAGS = (L4-SCORER, L4-DECODER,
+#     L4-MIXED); L4-RETIRES gets a file-level interpretation-check note only (NO deep
+#     rows); DEFERRED and non-chord files are out of scope. Artifacts under
+#     tools/audit/l4/. Every tag re-verified at the code + call sites (a mis-tag is a
+#     finding, not inherited) — see L4_REFINE.
 def _selected_layer(argv):
     if "--layer" in argv:
         i = argv.index("--layer")
@@ -80,8 +93,8 @@ def _selected_layer(argv):
     return "l1l2"
 
 AUDIT_LAYER = _selected_layer(sys.argv)
-if AUDIT_LAYER not in ("l1l2", "l3"):
-    sys.stderr.write("unknown --layer %r (expected l1l2 | l3)\n" % AUDIT_LAYER)
+if AUDIT_LAYER not in ("l1l2", "l3", "l4"):
+    sys.stderr.write("unknown --layer %r (expected l1l2 | l3 | l4)\n" % AUDIT_LAYER)
     sys.exit(2)
 
 
@@ -194,7 +207,12 @@ TAG_RULES = [
     ("src/composing/intonation/CMakeLists.txt", "L3+", "build file — non-source"),
 ]
 
-DEEP_TAGS = ("L1", "L2") if AUDIT_LAYER == "l1l2" else ("L3", "L3-MIXED")
+if AUDIT_LAYER == "l1l2":
+    DEEP_TAGS = ("L1", "L2")
+elif AUDIT_LAYER == "l3":
+    DEEP_TAGS = ("L3", "L3-MIXED")
+else:  # l4
+    DEEP_TAGS = ("L4-SCORER", "L4-DECODER", "L4-MIXED")
 
 # ── L3 (key/mode) tag refinement (applied over the base TAG_RULES iff --layer l3) ─
 # The base map coarsely tags the key/mode files L3+ ("deferred to the L3 audit").
@@ -270,6 +288,93 @@ def refine_l3(path, tag, reason):
     for matcher, l3tag, l3reason in L3_REFINE:
         if path == matcher:
             return l3tag, l3reason
+    return tag, reason
+
+
+# ── L4 (chord) tag refinement (applied over the base TAG_RULES iff --layer l4) ─
+# The base map coarsely tags the chord/decode files L3+ / RETIRES. THIS audit refines
+# them into the THREE populations the instruction names — each RE-VERIFIED at the code
+# with call sites traced (a mis-tag is a finding, not inherited):
+#   L4-SCORER  — (c) the LIVE surviving scorer core + its live in-scope satellites: the
+#                vertical oracle analyzeChord the dormant decoder REUSES, its stable
+#                contract header, the shared symbol formatter, the shared utility
+#                header, the live beam-1 commit-chain, the live sparse-quality
+#                refinement. Deep-audited. Any open survive/retire OR layer-boundary
+#                question is FLAGGED in the reason (a pass-1 finding).
+#   L4-DECODER — (b) the DORMANT-but-surviving per-slice ChordSliceDecoder (the
+#                engagement's clean target; runs only under --decode-chords). Deep.
+#   L4-MIXED   — a file whose L4-in-scope content sits beside other-layer content; the
+#                split is recorded per row in Task 2. Deep.
+#   L4-RETIRES — (a) code that RETIRES at the decoder engagement (roadmap R1: the legacy
+#                competition tail + Gates A-L). File-level interpretation-check note
+#                only; NO deep rows.
+#   DEFERRED   — verified NOT Layer 4 (belongs to another layer's audit); NOT deep.
+# Ordered; FIRST match wins; exact repo-relative paths (forward slash). Authority:
+# ARCHITECTURE.md §"Layer 4"/§4.1/§7; docs/scoring_model.md §"File layout after refactor
+# #1"/§11; roadmap retirement map R1/R9 (docs/implementation_roadmap.md:138-145); the
+# chordslicedecoder.h header (decoder REUSES analyzeChord: chordslicedecoder.cpp:453).
+L4_REFINE = [
+    # ---- (c) LIVE surviving scorer core + live in-scope satellites (deep) ----
+    ("src/composing/analysis/chord/chordanalyzer.cpp", "L4-SCORER",
+     "MIS-TAG (inherited RETIRES) — the LIVE surviving vertical scoring ORACLE (analyzeChord @regionanalyzer.cpp:987, buildChordResult/detectExtensions, TemplateDef/templates/score matrices, factory) that the DORMANT decoder REUSES (chordslicedecoder.cpp:453); only the competition (function/) + Gates A-L retire (R1); R9 file-SPLITS this file, does not delete it (pass-1 finding)"),
+    ("src/composing/analysis/chord/chordanalyzer.h", "L4-SCORER",
+     "L4 scorer CONTRACT surface (stable integration boundary): kTemplateCount/kTemplateIntervals, ChordIdentity/ChordAnalysisResult/RawCandidate, IChordAnalyzer/RuleBasedChordAnalyzer/factory; also declares PostScoringGateContext/PromotionTarget consumed by the retiring gates (split recorded in Task 2)"),
+    ("src/composing/analysis/chord/chordsymbolformatter.cpp", "L4-SCORER",
+     "LIVE shared chord-symbol formatter (formatSymbol/formatRomanNumeral/formatNashvilleNumber) — production notation render (notationcomposingbridge.cpp:490..); survives the engagement. FLAG: formatRomanNumeral is L5-flavored output on an L4 TU (boundary note)"),
+    ("src/composing/analysis/chord/analysisutils.h", "L4-SCORER",
+     "LIVE cross-cutting chord helper header (normalizePc/diatonicMaskFromFifths/collectionMask/ionianTonicPcFromFifths) reused by the surviving oracle+formatter; survives. FLAG: cross-cutting (also serves L3/L5)"),
+    ("src/composing/analysis/decode/chordpathdecoder.h", "L4-SCORER",
+     "LIVE beam-1 chord-path commit-chain re-expression (Stage 3.1, byte-identical; replaces advanceTemporalContext on the production region path). FLAG: retire-vs-survive at engagement is OPEN (Stage-3.2 wider-beam scaffolding vs legacy plumbing) — pass-1"),
+    ("src/composing/analysis/region/sparsechordrefinement.h", "L4-SCORER",
+     "LIVE L4 diatonic chord-QUALITY refinement surface on the region path (regionanalyzer.cpp:1003/1005; consumes the L3 key as a prior). FLAG: L4/L5 BOUNDARY — overwrites identity.quality (L4) from resolved-key (L5-flavored) post-commit; layer home OPEN, declare to Cowork (pass-1)"),
+    ("src/composing/analysis/region/sparsechordrefinement.cpp", "L4-SCORER",
+     "LIVE L4 diatonic chord-QUALITY refinement impl (refineSparseChordQualityFromKeyContext/applyTonicPriorToSparseChord/forceChordTrackQualityFromKeyContext). FLAG: L4/L5 boundary (see .h) — layer home OPEN"),
+    # ---- (b) DORMANT-but-surviving decoder — the engagement's clean target (deep) ----
+    ("src/composing/analysis/chord/chordslicedecoder.h", "L4-DECODER",
+     "DORMANT per-slice chord-symbol decoder surface (ChordSliceDecoder + preferences/DTOs) — the Layer-4 rebuild target; runs analyzeChord over each L2 slice; NOT wired (batch_analyze --decode-chords diagnostic only)"),
+    ("src/composing/analysis/chord/chordslicedecoder.cpp", "L4-DECODER",
+     "DORMANT per-slice chord-symbol decoder impl (decideSlice/classifyMembership/applyCommitDecision/spellingPinnedRoot/computeConfidence/nameOpenQuestion + decode/redecodeRange/decodeSelection)"),
+    # ---- L4-MIXED — L4-in-scope content beside other-layer types (deep, split recorded) ----
+    ("src/composing/analysis/types/analysistypes.h", "L4-MIXED",
+     "cross-layer types leaf — the L4 chord types are IN SCOPE (ChordAnalyzerPreferences, ChordAnalysisTone, ChordTemporalContext, DecodeQualityLevel, ChordQuality) beside L3/L5 types (KeyModeAnalyzerPreferences/PitchContext/KeySigMode) covered by the L3 audit; only the L4-type rows are dispositioned here — split recorded per row in Task 2"),
+    # ---- (a) RETIRES at engagement — file-level interpretation-check note only (NO deep rows) ----
+    ("src/composing/analysis/chord/postscoringgates.cpp", "L4-RETIRES",
+     "RETIRES — literally roadmap R1 (Gates A-L / applyPostScoringGates; LIVE now @regionanalyzer.cpp:1000). #12 interpretation-check on deletion: Gate J (viio->V7), Gate L (Major-over-aug), Gate I (first-inv-Major-over-Minor), the enharmonic Maj-add6<->m7 flip/FM2, and the bias correction are the ONLY site of several key-function chord RESELECTIONS — L5 must consciously re-home or reject EACH before deletion"),
+    ("src/composing/analysis/chord/chordpostpasses.cpp", "L4-RETIRES",
+     "RETIRES — legacy competition late-promotion tail (applyIter8691Pedal: Iter-86 bass-b7 + Iter-91 bass-as-root promotions + two-pass pedal-point; LIVE now @regionanalyzer.cpp:999 but NOT reused by the dormant decoder). #12 interpretation-check on deletion: the pedal-point detection + bass-root late promotions are legacy-winner corrections the decoder must be confirmed to cover/reject before deletion"),
+    # ---- DEFERRED — verified NOT Layer 4 (belongs to another layer's audit; NOT deep) ----
+    ("src/composing/analysis/chord/chordvoicing.cpp", "DEFERRED",
+     "MIS-IMPLIED-L4 — chord-tone/voicing utility (chordTonePitchClasses/closePositionVoicing) serving notation IMPLODE + display stabilization (arrangement concern, ARCHITECTURE §voicing), NOT chord decoding; no decode/competition caller — deferred to the arrangement/notation concern (pass-1 finding)"),
+    ("src/composing/analysis/chord/chorddiagnose.cpp", "DEFERRED",
+     "DIAGNOSTIC satellite (diagnoseChord replays analyzeChord+applyIter8691Pedal+applyPostScoringGates) reached only via batch_analyze --diagnose-measures; NOT production, NOT the decoder. FLAG: coupled to R1 (rewrites/retires WITH Gates A-L) — deferred to the instruments audit (pass-1)"),
+    ("src/composing/analysis/vocabulary/harmonicvocabulary.h", "DEFERRED",
+     "NOT L4 (inherited '(L4)' imprecise) — ARCHITECTURE §7 Harmonic Vocabulary, a queried reference catalog consumed by the L5 progression/function machinery (progressionrecognizer/functionresolver); DORMANT (no production consumer) — deferred to the L5-consumer/progression-schema audit (pass-1 finding)"),
+    ("src/composing/analysis/vocabulary/harmonicvocabulary.cpp", "DEFERRED",
+     "NOT L4 (see .h) — ARCHITECTURE §7 Harmonic Vocabulary impl; DORMANT L5-consumer catalog — deferred"),
+    ("src/composing/analysis/voiceleading/textureclassifier.h", "DEFERRED",
+     "NOT L4 (inherited '(L4/L5)' imprecise) — voice-leading AXIS 2 (orthogonal to the harmonic spine), VL-C texture classifier; DORMANT (no production consumer) — deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/textureclassifier.cpp", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 VL-C impl; DORMANT — deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/textureclassifierreference.h", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 generated reference set (VL-C centroids); deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/voicelinearview.h", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 VL-A per-voice linear FACT view over the L1 note model; deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/voicelinearview.cpp", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 VL-A impl; deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/voiceleadingprofiles.h", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 VL-B motion/interval profiles; DORMANT — deferred to the voice-leading-axis audit"),
+    ("src/composing/analysis/voiceleading/voiceleadingprofiles.cpp", "DEFERRED",
+     "NOT L4 — voice-leading axis-2 VL-B impl; DORMANT — deferred to the voice-leading-axis audit"),
+]
+
+
+def refine_l4(path, tag, reason):
+    """In --layer l4 mode, override the base tag for the chord/decode files into the
+    three populations (a/b/c) + L4-MIXED + DEFERRED. Returns the (possibly refined)
+    (tag, reason); base tag unchanged for files L4_REFINE omits."""
+    for matcher, l4tag, l4reason in L4_REFINE:
+        if path == matcher:
+            return l4tag, l4reason
     return tag, reason
 
 # control keywords that precede '(' but are NOT function names
@@ -598,6 +703,8 @@ def main():
             untagged.append(p)
         elif AUDIT_LAYER == "l3":
             tag, reason = refine_l3(p, tag, reason)
+        elif AUDIT_LAYER == "l4":
+            tag, reason = refine_l4(p, tag, reason)
         file_rows.append({"file": p, "tag": tag or "UNTAGGED", "reason": reason or ""})
     if untagged:
         sys.stderr.write("P1 TOTALITY FAILURE — untagged files (add a TAG_RULES entry):\n")
@@ -668,9 +775,11 @@ def main():
         tag_counts[r["tag"]] = tag_counts.get(r["tag"], 0) + 1
     manifest = {
         "instrument": "tools/audit/gen_inventory.py",
-        "audit": ("EG-7 L1/L2 certification, PASS 1 (blind enumerative)"
-                  if AUDIT_LAYER == "l1l2"
-                  else "EG-7 Layer-3 (key/mode) certification, PASS 1 (blind enumerative)"),
+        "audit": {
+            "l1l2": "EG-7 L1/L2 certification, PASS 1 (blind enumerative)",
+            "l3": "EG-7 Layer-3 (key/mode) certification, PASS 1 (blind enumerative)",
+            "l4": "EG-7 Layer-4 (chord) certification, PASS 1 (blind enumerative)",
+        }[AUDIT_LAYER],
         "audit_layer": AUDIT_LAYER,
         "head_commit": head,
         "script_blob_sha": script_sha,
