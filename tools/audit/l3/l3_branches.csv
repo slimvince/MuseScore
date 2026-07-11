@@ -1,0 +1,503 @@
+file,line,kind,func,context
+src/composing/analysis/key/keymodeanalyzer.cpp,156,if,ionianTonicPcForMode,if (modeIndex >= IONIAN_OFFSETS.size()) {
+src/composing/analysis/key/keymodeanalyzer.cpp,170,switch,possibleIonianFifthsForPc,switch (ionianPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,171,case,possibleIonianFifthsForPc,"case 0:  return {  0,  0 };  // C"
+src/composing/analysis/key/keymodeanalyzer.cpp,172,case,possibleIonianFifthsForPc,"case 1:  return {  7, -5 };  // C# / Db"
+src/composing/analysis/key/keymodeanalyzer.cpp,173,case,possibleIonianFifthsForPc,"case 2:  return {  2,  2 };  // D"
+src/composing/analysis/key/keymodeanalyzer.cpp,174,case,possibleIonianFifthsForPc,"case 3:  return { -3, -3 };  // Eb"
+src/composing/analysis/key/keymodeanalyzer.cpp,175,case,possibleIonianFifthsForPc,"case 4:  return {  4,  4 };  // E"
+src/composing/analysis/key/keymodeanalyzer.cpp,176,case,possibleIonianFifthsForPc,"case 5:  return { -1, -1 };  // F"
+src/composing/analysis/key/keymodeanalyzer.cpp,177,case,possibleIonianFifthsForPc,"case 6:  return {  6, -6 };  // F# / Gb"
+src/composing/analysis/key/keymodeanalyzer.cpp,178,case,possibleIonianFifthsForPc,"case 7:  return {  1,  1 };  // G"
+src/composing/analysis/key/keymodeanalyzer.cpp,179,case,possibleIonianFifthsForPc,"case 8:  return { -4, -4 };  // Ab"
+src/composing/analysis/key/keymodeanalyzer.cpp,180,case,possibleIonianFifthsForPc,"case 9:  return {  3,  3 };  // A"
+src/composing/analysis/key/keymodeanalyzer.cpp,181,case,possibleIonianFifthsForPc,"case 10: return { -2, -2 };  // Bb"
+src/composing/analysis/key/keymodeanalyzer.cpp,182,case,possibleIonianFifthsForPc,"case 11: return {  5, -7 };  // B / Cb"
+src/composing/analysis/key/keymodeanalyzer.cpp,195,ternary,resolveToFifths,? opts[0] : opts[1];
+src/composing/analysis/key/keymodeanalyzer.cpp,232,ternary,noteWeight,* (p.isBass ? prefs.bassMultiplier : 1.0);
+src/composing/analysis/key/keymodeanalyzer.cpp,255,if,scoreScaleMembership,if      (inC && inKS)   { score += w * prefs.scaleScoreInBoth; }
+src/composing/analysis/key/keymodeanalyzer.cpp,256,else-if,scoreScaleMembership,else if (inC && !inKS)  { score += w * prefs.scaleScoreInCandidateOnly; }
+src/composing/analysis/key/keymodeanalyzer.cpp,257,else-if,scoreScaleMembership,else if (!inC && inKS)  { score += w * prefs.scaleScoreInKeySigOnly; }
+src/composing/analysis/key/keymodeanalyzer.cpp,284,if,scoreTriadEvidence,if      (pc == tonic)       { evidenceOut.tonicWeight       += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,285,else-if,scoreTriadEvidence,else if (pc == third)       { evidenceOut.thirdWeight       += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,286,else-if,scoreTriadEvidence,else if (pc == fifth)       { evidenceOut.fifthWeight       += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,287,else-if,scoreTriadEvidence,else if (pc == leadingTone) { evidenceOut.leadingToneWeight += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,288,else-if,scoreTriadEvidence,else if (inScale[static_cast<size_t>(pc)]) { extraScaleWeight += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,302,if,scoreTriadEvidence,if (evidenceOut.hasCompleteTriad) {
+src/composing/analysis/key/keymodeanalyzer.cpp,304,else-if,scoreTriadEvidence,} else if (!hasTonic) {
+src/composing/analysis/key/keymodeanalyzer.cpp,328,ternary,scoreCharacteristicPitch,const int pc2 = (cond.interval2 >= 0) ? (tonicPc + cond.interval2) % 12 : -1;
+src/composing/analysis/key/keymodeanalyzer.cpp,335,if,scoreCharacteristicPitch,if (pc == pc1) { weight1 += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,336,if,scoreCharacteristicPitch,if (pc2 >= 0 && pc == pc2) { weight2 += w; }
+src/composing/analysis/key/keymodeanalyzer.cpp,342,if,scoreCharacteristicPitch,if (cond.interval2 < 0) {
+src/composing/analysis/key/keymodeanalyzer.cpp,344,ternary,scoreCharacteristicPitch,return has1 ? prefs.characteristicPitchBoost : prefs.characteristicPitchPenalty;
+src/composing/analysis/key/keymodeanalyzer.cpp,347,if,scoreCharacteristicPitch,if (cond.requireBoth) {
+src/composing/analysis/key/keymodeanalyzer.cpp,348,if,scoreCharacteristicPitch,if (has1 && has2) { return prefs.characteristicPitchBoost; }
+src/composing/analysis/key/keymodeanalyzer.cpp,349,if,scoreCharacteristicPitch,if (has1)         { return prefs.characteristicPitchBoost * 0.5; }
+src/composing/analysis/key/keymodeanalyzer.cpp,354,ternary,scoreCharacteristicPitch,return has1 ? prefs.characteristicPitchBoost : prefs.characteristicPitchPenalty;
+src/composing/analysis/key/keymodeanalyzer.cpp,370,if,scoreTrueLeadingTone,if (normalizePc(p.pitch) == ltPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,374,ternary,scoreTrueLeadingTone,return (ltWeight > 0.1) ? prefs.trueLeadingToneBoost : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,380,switch,scoreModePrior,switch (modeIndex) {
+src/composing/analysis/key/keymodeanalyzer.cpp,382,case,scoreModePrior,case  0: return prefs.modePriorIonian;
+src/composing/analysis/key/keymodeanalyzer.cpp,383,case,scoreModePrior,case  1: return prefs.modePriorDorian;
+src/composing/analysis/key/keymodeanalyzer.cpp,384,case,scoreModePrior,case  2: return prefs.modePriorPhrygian;
+src/composing/analysis/key/keymodeanalyzer.cpp,385,case,scoreModePrior,case  3: return prefs.modePriorLydian;
+src/composing/analysis/key/keymodeanalyzer.cpp,386,case,scoreModePrior,case  4: return prefs.modePriorMixolydian;
+src/composing/analysis/key/keymodeanalyzer.cpp,387,case,scoreModePrior,case  5: return prefs.modePriorAeolian;
+src/composing/analysis/key/keymodeanalyzer.cpp,388,case,scoreModePrior,case  6: return prefs.modePriorLocrian;
+src/composing/analysis/key/keymodeanalyzer.cpp,390,case,scoreModePrior,case  7: return prefs.modePriorMelodicMinor;
+src/composing/analysis/key/keymodeanalyzer.cpp,391,case,scoreModePrior,case  8: return prefs.modePriorDorianB2;
+src/composing/analysis/key/keymodeanalyzer.cpp,392,case,scoreModePrior,case  9: return prefs.modePriorLydianAugmented;
+src/composing/analysis/key/keymodeanalyzer.cpp,393,case,scoreModePrior,case 10: return prefs.modePriorLydianDominant;
+src/composing/analysis/key/keymodeanalyzer.cpp,394,case,scoreModePrior,case 11: return prefs.modePriorMixolydianB6;
+src/composing/analysis/key/keymodeanalyzer.cpp,395,case,scoreModePrior,case 12: return prefs.modePriorAeolianB5;
+src/composing/analysis/key/keymodeanalyzer.cpp,396,case,scoreModePrior,case 13: return prefs.modePriorAltered;
+src/composing/analysis/key/keymodeanalyzer.cpp,398,case,scoreModePrior,case 14: return prefs.modePriorHarmonicMinor;
+src/composing/analysis/key/keymodeanalyzer.cpp,399,case,scoreModePrior,case 15: return prefs.modePriorLocrianSharp6;
+src/composing/analysis/key/keymodeanalyzer.cpp,400,case,scoreModePrior,case 16: return prefs.modePriorIonianSharp5;
+src/composing/analysis/key/keymodeanalyzer.cpp,401,case,scoreModePrior,case 17: return prefs.modePriorDorianSharp4;
+src/composing/analysis/key/keymodeanalyzer.cpp,402,case,scoreModePrior,case 18: return prefs.modePriorPhrygianDominant;
+src/composing/analysis/key/keymodeanalyzer.cpp,403,case,scoreModePrior,case 19: return prefs.modePriorLydianSharp2;
+src/composing/analysis/key/keymodeanalyzer.cpp,404,case,scoreModePrior,case 20: return prefs.modePriorAlteredDomBB7;
+src/composing/analysis/key/keymodeanalyzer.cpp,437,if,tonalCenterScore,if (eval.evidence.hasCompleteTriad) {
+src/composing/analysis/key/keymodeanalyzer.cpp,463,if,applyPairwiseDisambiguation,if (evalA.evidence.hasCompleteTriad && aHasTonic && !bHasTonic) {
+src/composing/analysis/key/keymodeanalyzer.cpp,467,if,applyPairwiseDisambiguation,if (evalB.evidence.hasCompleteTriad && bHasTonic && !aHasTonic) {
+src/composing/analysis/key/keymodeanalyzer.cpp,476,if,applyPairwiseDisambiguation,if (evalA.evidence.hasCompleteTriad && aHasTonic && bHasTonic && !evalB.evidence.hasCompleteTriad) {
+src/composing/analysis/key/keymodeanalyzer.cpp,479,if,applyPairwiseDisambiguation,if (evalB.evidence.hasCompleteTriad && bHasTonic && aHasTonic && !evalA.evidence.hasCompleteTriad) {
+src/composing/analysis/key/keymodeanalyzer.cpp,482,if,applyPairwiseDisambiguation,if (aHasTonic && !bHasTonic) {
+src/composing/analysis/key/keymodeanalyzer.cpp,485,if,applyPairwiseDisambiguation,if (bHasTonic && !aHasTonic) {
+src/composing/analysis/key/keymodeanalyzer.cpp,503,if,modeIsCompatibleWithDeclared,if (declared == KeySigMode::Ionian) {
+src/composing/analysis/key/keymodeanalyzer.cpp,507,if,modeIsCompatibleWithDeclared,if (declared == KeySigMode::Aeolian) {
+src/composing/analysis/key/keymodeanalyzer.cpp,526,ternary,keySignatureFifthsForKey,const size_t modeIndex = keyModeIndex(isMajor ? KeySigMode::Ionian : KeySigMode::Aeolian);
+src/composing/analysis/key/keymodeanalyzer.cpp,549,if,analyzeKeyMode,if (dumpOut) {
+src/composing/analysis/key/keymodeanalyzer.cpp,552,if,analyzeKeyMode,if (pitches.empty()) {
+src/composing/analysis/key/keymodeanalyzer.cpp,598,if,analyzeKeyMode,if (declaredMode.has_value()) {
+src/composing/analysis/key/keymodeanalyzer.cpp,600,if,analyzeKeyMode,"if (!modeIsCompatibleWithDeclared(candidate, *declaredMode)) {"
+src/composing/analysis/key/keymodeanalyzer.cpp,613,if,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,645,if,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,669,if,analyzeKeyMode,if (!bestByCenter.has_value()
+src/composing/analysis/key/keymodeanalyzer.cpp,676,if,analyzeKeyMode,if (!bestByRaw.has_value() || eval.score > bestByRaw->rawScore) {
+src/composing/analysis/key/keymodeanalyzer.cpp,690,ternary,analyzeKeyMode,const FamilyWinner& chosen = allowTonalCenterOverride ? *bestByCenter : *bestByRaw;
+src/composing/analysis/key/keymodeanalyzer.cpp,699,if,analyzeKeyMode,if (eval.score > bestScore) {
+src/composing/analysis/key/keymodeanalyzer.cpp,739,if,analyzeKeyMode,if (results.size() >= 3) {
+src/composing/analysis/key/keymodeanalyzer.cpp,745,if,analyzeKeyMode,if (fifths == best.keySignatureFifths && mode == best.mode) {
+src/composing/analysis/key/keymodeanalyzer.cpp,762,if,analyzeKeyMode,if (!results.empty()) {
+src/composing/analysis/key/keymodeanalyzer.cpp,764,ternary,analyzeKeyMode,const double runnerUpScore = (results.size() >= 2) ? results[1].score : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,770,if,analyzeKeyMode,if (i == 0) {
+src/composing/analysis/key/keymodeanalyzer.cpp,773,ternary,analyzeKeyMode,const double iGap = results[i].score - ((i + 1 < results.size()) ? results[i + 1].score : 0.0);
+src/composing/analysis/key/keymodeanalyzer.cpp,788,if,analyzeKeyMode,if (dumpOut) {
+src/composing/analysis/key/keymodeanalyzer.cpp,799,if,analyzeKeyMode,if (declaredMode.has_value()) {
+src/composing/analysis/key/keymodeanalyzer.cpp,803,ternary,analyzeKeyMode,const double declaredPenalty = declaredApplied ? prefs.declaredModePenalty : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,841,ternary,keyModeScaleIntervals,return MODES[modeIdx < MODES.size() ? modeIdx : 0].intervals;
+src/composing/analysis/key/keymodeanalyzer.h,61,switch,keyModeIsMajor,switch (m) {
+src/composing/analysis/key/keymodeanalyzer.h,62,case,keyModeIsMajor,case KeySigMode::Ionian:
+src/composing/analysis/key/keymodeanalyzer.h,63,case,keyModeIsMajor,case KeySigMode::Lydian:
+src/composing/analysis/key/keymodeanalyzer.h,64,case,keyModeIsMajor,case KeySigMode::Mixolydian:
+src/composing/analysis/key/keymodeanalyzer.h,65,case,keyModeIsMajor,case KeySigMode::LydianAugmented:
+src/composing/analysis/key/keymodeanalyzer.h,66,case,keyModeIsMajor,case KeySigMode::LydianDominant:
+src/composing/analysis/key/keymodeanalyzer.h,67,case,keyModeIsMajor,case KeySigMode::MixolydianB6:
+src/composing/analysis/key/keymodeanalyzer.h,68,case,keyModeIsMajor,case KeySigMode::IonianSharp5:
+src/composing/analysis/key/keymodeanalyzer.h,69,case,keyModeIsMajor,case KeySigMode::PhrygianDominant:
+src/composing/analysis/key/keymodeanalyzer.h,70,case,keyModeIsMajor,case KeySigMode::LydianSharp2:
+src/composing/analysis/key/keymodeformatting.cpp,79,switch,keyModeTonicName,switch (mode) {
+src/composing/analysis/key/keymodeformatting.cpp,81,case,keyModeTonicName,case KeySigMode::Ionian:           return IONIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,82,case,keyModeTonicName,case KeySigMode::Dorian:           return DORIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,83,case,keyModeTonicName,case KeySigMode::Phrygian:         return PHRYGIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,84,case,keyModeTonicName,case KeySigMode::Lydian:           return LYDIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,85,case,keyModeTonicName,case KeySigMode::Mixolydian:       return MIXOLYDIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,86,case,keyModeTonicName,case KeySigMode::Aeolian:          return AEOLIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,87,case,keyModeTonicName,case KeySigMode::Locrian:          return LOCRIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,89,case,keyModeTonicName,case KeySigMode::MelodicMinor:     return DORIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,90,case,keyModeTonicName,case KeySigMode::DorianB2:         return PHRYGIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,91,case,keyModeTonicName,case KeySigMode::LydianAugmented:  return LYDIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,92,case,keyModeTonicName,case KeySigMode::LydianDominant:   return MIXOLYDIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,93,case,keyModeTonicName,case KeySigMode::MixolydianB6:     return AEOLIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,94,case,keyModeTonicName,case KeySigMode::AeolianB5:        return LOCRIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,95,case,keyModeTonicName,case KeySigMode::Altered:          return ALTERED_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,97,case,keyModeTonicName,case KeySigMode::HarmonicMinor:    return AEOLIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,98,case,keyModeTonicName,case KeySigMode::LocrianSharp6:    return LOCRIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,99,case,keyModeTonicName,case KeySigMode::IonianSharp5:     return IONIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,100,case,keyModeTonicName,case KeySigMode::DorianSharp4:     return DORIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,101,case,keyModeTonicName,case KeySigMode::PhrygianDominant: return PHRYGIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,102,case,keyModeTonicName,case KeySigMode::LydianSharp2:     return LYDIAN_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,103,case,keyModeTonicName,case KeySigMode::AlteredDomBB7:    return ALTERED_DOM_BB7_NAMES[idx];
+src/composing/analysis/key/keymodeformatting.cpp,110,switch,keyModeSuffix,switch (mode) {
+src/composing/analysis/key/keymodeformatting.cpp,112,case,keyModeSuffix,"case KeySigMode::Ionian:           return ""maj"";"
+src/composing/analysis/key/keymodeformatting.cpp,113,case,keyModeSuffix,"case KeySigMode::Dorian:           return ""Dor"";"
+src/composing/analysis/key/keymodeformatting.cpp,114,case,keyModeSuffix,"case KeySigMode::Phrygian:         return ""Phryg"";"
+src/composing/analysis/key/keymodeformatting.cpp,115,case,keyModeSuffix,"case KeySigMode::Lydian:           return ""Lyd"";"
+src/composing/analysis/key/keymodeformatting.cpp,116,case,keyModeSuffix,"case KeySigMode::Mixolydian:       return ""Mixolyd"";"
+src/composing/analysis/key/keymodeformatting.cpp,117,case,keyModeSuffix,"case KeySigMode::Aeolian:          return ""min"";"
+src/composing/analysis/key/keymodeformatting.cpp,118,case,keyModeSuffix,"case KeySigMode::Locrian:          return ""Loc"";"
+src/composing/analysis/key/keymodeformatting.cpp,120,case,keyModeSuffix,"case KeySigMode::MelodicMinor:     return ""mel"";"
+src/composing/analysis/key/keymodeformatting.cpp,121,case,keyModeSuffix,"case KeySigMode::DorianB2:         return ""Dor\u266d2"";"
+src/composing/analysis/key/keymodeformatting.cpp,122,case,keyModeSuffix,"case KeySigMode::LydianAugmented:  return ""Lyd+"";"
+src/composing/analysis/key/keymodeformatting.cpp,123,case,keyModeSuffix,"case KeySigMode::LydianDominant:   return ""Lyd\u266d7"";"
+src/composing/analysis/key/keymodeformatting.cpp,124,case,keyModeSuffix,"case KeySigMode::MixolydianB6:     return ""Mix\u266d6"";"
+src/composing/analysis/key/keymodeformatting.cpp,125,case,keyModeSuffix,"case KeySigMode::AeolianB5:        return ""Loc#2"";"
+src/composing/analysis/key/keymodeformatting.cpp,126,case,keyModeSuffix,"case KeySigMode::Altered:          return ""alt"";"
+src/composing/analysis/key/keymodeformatting.cpp,128,case,keyModeSuffix,"case KeySigMode::HarmonicMinor:    return ""harm"";"
+src/composing/analysis/key/keymodeformatting.cpp,129,case,keyModeSuffix,"case KeySigMode::LocrianSharp6:    return ""Loc#6"";"
+src/composing/analysis/key/keymodeformatting.cpp,130,case,keyModeSuffix,"case KeySigMode::IonianSharp5:     return ""Ion+"";"
+src/composing/analysis/key/keymodeformatting.cpp,131,case,keyModeSuffix,"case KeySigMode::DorianSharp4:     return ""Dor#4"";"
+src/composing/analysis/key/keymodeformatting.cpp,132,case,keyModeSuffix,"case KeySigMode::PhrygianDominant: return ""PhrygDom"";"
+src/composing/analysis/key/keymodeformatting.cpp,133,case,keyModeSuffix,"case KeySigMode::LydianSharp2:     return ""Lyd#2"";"
+src/composing/analysis/key/keymodeformatting.cpp,134,case,keyModeSuffix,"case KeySigMode::AlteredDomBB7:    return ""altDom"";"
+src/composing/analysis/key/keymodesequence.cpp,146,if,buildLattice,if (!ctx.empty()) {
+src/composing/analysis/key/keymodesequence.cpp,149,if,buildLattice,if (dump.empty()) {
+src/composing/analysis/key/keymodesequence.cpp,180,if,stateIndexForResult,if (states[i].tonicPc == r.tonicPc && states[i].mode == r.mode) {
+src/composing/analysis/key/keymodesequence.cpp,206,if,populateEmissionConfidence,if (t < 0 || t >= static_cast<int>(lat.emissions.size())) {
+src/composing/analysis/key/keymodesequence.cpp,210,if,populateEmissionConfidence,if (ci < 0) {
+src/composing/analysis/key/keymodesequence.cpp,217,if,populateEmissionConfidence,if (static_cast<int>(s) == ci) {
+src/composing/analysis/key/keymodesequence.cpp,222,ternary,populateEmissionConfidence,const double runnerUp = (bestOther == NEG_INF) ? 0.0 : bestOther;   // single-state → vs 0
+src/composing/analysis/key/keymodesequence.cpp,234,if,changeCost,if (a.tonicPc == b.tonicPc && a.mode == b.mode) {
+src/composing/analysis/key/keymodesequence.cpp,238,ternary,changeCost,const double relativeExtra = (a.ionianPc == b.ionianPc) ? seqPrefs.relativePairExtraCost : 0.0;
+src/composing/analysis/key/keymodesequence.cpp,251,if,decodeLattice,if (T == 0 || S == 0) {
+src/composing/analysis/key/keymodesequence.cpp,256,if,decodeLattice,if (t == 0 && pinFirstState >= 0) {
+src/composing/analysis/key/keymodesequence.cpp,259,if,decodeLattice,if (t == T - 1 && pinLastState >= 0) {
+src/composing/analysis/key/keymodesequence.cpp,269,if,decodeLattice,"if (allowed(0, s)) {"
+src/composing/analysis/key/keymodesequence.cpp,275,if,decodeLattice,"if (!allowed(t, s)) {"
+src/composing/analysis/key/keymodesequence.cpp,281,if,decodeLattice,if (alpha[t - 1][sp] == NEG_INF) {
+src/composing/analysis/key/keymodesequence.cpp,285,if,decodeLattice,if (v > best) {
+src/composing/analysis/key/keymodesequence.cpp,290,if,decodeLattice,if (bestPrev >= 0) {
+src/composing/analysis/key/keymodesequence.cpp,301,if,decodeLattice,if (alpha[T - 1][s] > endBest) {
+src/composing/analysis/key/keymodesequence.cpp,307,if,decodeLattice,if (endState >= 0) {
+src/composing/analysis/key/keymodesequence.cpp,311,ternary,decodeLattice,s = (t > 0) ? back[t][s] : -1;
+src/composing/analysis/key/keymodesequence.cpp,312,if,decodeLattice,if (s < 0 && t > 0) {
+src/composing/analysis/key/keymodesequence.cpp,317,if,decodeLattice,if (alpha[t - 1][q] > b) { b = alpha[t - 1][q]; s = q; }
+src/composing/analysis/key/keymodesequence.cpp,326,if,decodeLattice,"if (allowed(T - 1, s)) {"
+src/composing/analysis/key/keymodesequence.cpp,332,if,decodeLattice,"if (!allowed(t, s)) {"
+src/composing/analysis/key/keymodesequence.cpp,337,if,decodeLattice,if (beta[t + 1][s2] == NEG_INF) {
+src/composing/analysis/key/keymodesequence.cpp,342,if,decodeLattice,if (v > best) {
+src/composing/analysis/key/keymodesequence.cpp,356,ternary,decodeLattice,const int w = (chosen[t] >= 0) ? chosen[t] : 0;
+src/composing/analysis/key/keymodesequence.cpp,365,if,decodeLattice,if (alpha[t][s] == NEG_INF || beta[t][s] == NEG_INF) {
+src/composing/analysis/key/keymodesequence.cpp,368,if,decodeLattice,if (s == w) {
+src/composing/analysis/key/keymodesequence.cpp,373,if,decodeLattice,if (total > secondBest) {
+src/composing/analysis/key/keymodesequence.cpp,378,ternary,decodeLattice,? alpha[t][w] + beta[t][w] : NEG_INF;
+src/composing/analysis/key/keymodesequence.cpp,380,ternary,decodeLattice,? kSingleStateConfidence
+src/composing/analysis/key/keymodesequence.cpp,389,ternary,decodeLattice,? static_cast<int>(ranked.size())
+src/composing/analysis/key/keymodesequence.cpp,429,if,redecodeRange,if (first < 0 || last >= T || first > last) {
+src/composing/analysis/key/keyresolver.cpp,117,if,partialSignatureCorrection,if (!isMajor && !isMinor) {
+src/composing/analysis/key/keyresolver.cpp,121,ternary,partialSignatureCorrection,const int neighborFifths = isMajor ? notatedFifths + 1 : notatedFifths - 1;
+src/composing/analysis/key/keyresolver.cpp,122,if,partialSignatureCorrection,if (neighborFifths < -7 || neighborFifths > 7) {
+src/composing/analysis/key/keyresolver.cpp,131,if,partialSignatureCorrection,if (scaleN[static_cast<size_t>(pc)] && !scaleS[static_cast<size_t>(pc)]) { flipsIn = pc; }
+src/composing/analysis/key/keyresolver.cpp,132,if,partialSignatureCorrection,if (scaleS[static_cast<size_t>(pc)] && !scaleN[static_cast<size_t>(pc)]) { flipsOut = pc; }
+src/composing/analysis/key/keyresolver.cpp,134,if,partialSignatureCorrection,if (flipsIn < 0 || flipsOut < 0) {
+src/composing/analysis/key/keyresolver.cpp,143,if,partialSignatureCorrection,if (!firstMeasure) {
+src/composing/analysis/key/keyresolver.cpp,152,if,partialSignatureCorrection,if (static_cast<int>(sc->staff(clampedStaffIdx)->keySigEvent(segTick).concertKey()) != notatedFifths) {
+src/composing/analysis/key/keyresolver.cpp,156,if,partialSignatureCorrection,"if (excludeStaves.count(si) || !ebr::staffIsEligible(sc, si, segTick)) {"
+src/composing/analysis/key/keyresolver.cpp,161,if,partialSignatureCorrection,if (!cr || !cr->isChord() || cr->isGrace()) {
+src/composing/analysis/key/keyresolver.cpp,167,if,partialSignatureCorrection,if (!n->play() || !n->visible()) {
+src/composing/analysis/key/keyresolver.cpp,178,if,partialSignatureCorrection,if (total <= 0.0) {
+src/composing/analysis/key/keyresolver.cpp,186,if,partialSignatureCorrection,if (wIn > kPervasiveFraction * total && wIn >= kDominanceRatio * wOut) {
+src/composing/analysis/key/keyresolver.cpp,198,if,promoteWinnerInPlace,if (it != results.end() && it != results.begin()) {
+src/composing/analysis/key/keyresolver.cpp,225,switch,resolveKeySignatureContext,switch (keySig.mode()) {
+src/composing/analysis/key/keyresolver.cpp,226,case,resolveKeySignatureContext,case EMode::MAJOR:
+src/composing/analysis/key/keyresolver.cpp,227,case,resolveKeySignatureContext,case EMode::IONIAN:      out.declaredMode = KeySigMode::Ionian;     break;
+src/composing/analysis/key/keyresolver.cpp,228,case,resolveKeySignatureContext,case EMode::MINOR:
+src/composing/analysis/key/keyresolver.cpp,229,case,resolveKeySignatureContext,case EMode::AEOLIAN:     out.declaredMode = KeySigMode::Aeolian;    break;
+src/composing/analysis/key/keyresolver.cpp,230,case,resolveKeySignatureContext,case EMode::DORIAN:      out.declaredMode = KeySigMode::Dorian;     break;
+src/composing/analysis/key/keyresolver.cpp,231,case,resolveKeySignatureContext,case EMode::PHRYGIAN:    out.declaredMode = KeySigMode::Phrygian;   break;
+src/composing/analysis/key/keyresolver.cpp,232,case,resolveKeySignatureContext,case EMode::LYDIAN:      out.declaredMode = KeySigMode::Lydian;     break;
+src/composing/analysis/key/keyresolver.cpp,233,case,resolveKeySignatureContext,case EMode::MIXOLYDIAN:  out.declaredMode = KeySigMode::Mixolydian; break;
+src/composing/analysis/key/keyresolver.cpp,234,case,resolveKeySignatureContext,case EMode::LOCRIAN:     out.declaredMode = KeySigMode::Locrian;    break;
+src/composing/analysis/key/keyresolver.cpp,242,if,resolveKeySignatureContext,if (prefs.ignoreDeclaredMode) {
+src/composing/analysis/key/keyresolver.cpp,247,if,resolveKeySignatureContext,if (out.declaredMode.has_value()) {
+src/composing/analysis/key/keyresolver.cpp,276,if,resolveKeyAndModeRanked,if (dumpOut) {
+src/composing/analysis/key/keyresolver.cpp,280,ternary,resolveKeyAndModeRanked,? static_cast<int>(keyModeIndex(*declaredMode)) : -1;
+src/composing/analysis/key/keyresolver.cpp,288,ternary,resolveKeyAndModeRanked,? tick - lookbackDuration
+src/composing/analysis/key/keyresolver.cpp,315,ternary,resolveKeyAndModeRanked,dumpOut ? &dumpOut->candidates : nullptr);
+src/composing/analysis/key/keyresolver.cpp,316,if,resolveKeyAndModeRanked,if (dumpOut) { dumpOut->lookaheadBeatsUsed = lookaheadBeats; }
+src/composing/analysis/key/keyresolver.cpp,322,if,resolveKeyAndModeRanked,if (confident || atMax) {
+src/composing/analysis/key/keyresolver.cpp,329,if,resolveKeyAndModeRanked,if (results.empty() || shv::distinctPitchClasses(ctx) < 3) {
+src/composing/analysis/key/keyresolver.cpp,330,if,resolveKeyAndModeRanked,"if (dumpOut) { dumpOut->pathTaken = ""fallback""; }"
+src/composing/analysis/key/keyresolver.cpp,340,if,resolveKeyAndModeRanked,if (prevResult != nullptr && results.front().mode != prevResult->mode) {
+src/composing/analysis/key/keyresolver.cpp,342,ternary,resolveKeyAndModeRanked,? prefs.relativeKeyHysteresisMargin
+src/composing/analysis/key/keyresolver.cpp,344,if,resolveKeyAndModeRanked,if (results.front().score < prevResult->score + hysteresis) {
+src/composing/analysis/key/keyresolver.cpp,351,if,resolveKeyAndModeRanked,if (dumpOut && (results.front().mode != beforeMode
+src/composing/analysis/region/regionanalyzer.cpp,80,ternary,makeChordPathNode,? 0.0 : gateCtx.rawCandidates[0].score;
+src/composing/analysis/region/regionanalyzer.cpp,82,ternary,makeChordPathNode,? gateCtx.rawCandidates[0].score - gateCtx.rawCandidates[1].score
+src/composing/analysis/region/regionanalyzer.cpp,95,ternary,measureTicksBefore,const Measure* m = score->tick2measure(Fraction::fromTicks(tick > 0 ? tick - 1 : 0));
+src/composing/analysis/region/regionanalyzer.cpp,96,if,measureTicksBefore,if (m) {
+src/composing/analysis/region/regionanalyzer.cpp,98,if,measureTicksBefore,if (t > 0) {
+src/composing/analysis/region/regionanalyzer.cpp,118,if,coalesceShortSameRootRuns,if (regions.size() <= 1) {
+src/composing/analysis/region/regionanalyzer.cpp,127,if,coalesceShortSameRootRuns,if (dur >= kMinRegionTicks) {
+src/composing/analysis/region/regionanalyzer.cpp,138,if,coalesceShortSameRootRuns,if (!coalesced.empty()
+src/composing/analysis/region/regionanalyzer.cpp,148,if,coalesceShortSameRootRuns,if (nextDur >= kMinRegionTicks) { break; }
+src/composing/analysis/region/regionanalyzer.cpp,149,if,coalesceShortSameRootRuns,if (regions[j].chordResult.identity.rootPc != runRoot) { break; }
+src/composing/analysis/region/regionanalyzer.cpp,150,if,coalesceShortSameRootRuns,if (regions[j].startTick != regions[j - 1].endTick) { break; }
+src/composing/analysis/region/regionanalyzer.cpp,169,if,coalesceShortSameRootRuns,if (runLen >= kCoalesceMinRunCount && totalDur >= kCoalesceMinRunTicks) {
+src/composing/analysis/region/regionanalyzer.cpp,174,if,coalesceShortSameRootRuns,if (d > longestDur) { longestIdx = k; longestDur = d; }
+src/composing/analysis/region/regionanalyzer.cpp,180,if,coalesceShortSameRootRuns,if (k == longestIdx) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,183,if,coalesceShortSameRootRuns,if (const auto* bassTone = bassToneFromTones(combined.tones)) {
+src/composing/analysis/region/regionanalyzer.cpp,217,if,tryCollapseSameChordRegion,if (!(isContiguousWithPreviousRegion
+src/composing/analysis/region/regionanalyzer.cpp,224,if,tryCollapseSameChordRegion,if (const auto* bassTone = bassToneFromTones(regions.back().tones)) {
+src/composing/analysis/region/regionanalyzer.cpp,241,if,absorbShortRegions,if (regions.size() <= 1) {
+src/composing/analysis/region/regionanalyzer.cpp,249,if,absorbShortRegions,if (duration < kMinRegionTicks) {
+src/composing/analysis/region/regionanalyzer.cpp,310,if,restampBassMinorSeventhAfterMerge,if (!r.hasAnalyzedChord) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,313,if,restampBassMinorSeventhAfterMerge,if (bPc < 0 || bPc == rPc) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,314,if,restampBassMinorSeventhAfterMerge,if (((bPc - rPc + 12) % 12) != 10) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,316,if,restampBassMinorSeventhAfterMerge,if (q != ChordQuality::Major && q != ChordQuality::Minor) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,317,if,restampBassMinorSeventhAfterMerge,"if (hasExtension(r.chordResult.identity.extensions, Extension::MinorSeventh)) { continue; }"
+src/composing/analysis/region/regionanalyzer.cpp,318,if,restampBassMinorSeventhAfterMerge,"if (hasExtension(r.chordResult.identity.extensions, Extension::MajorSeventh)) { continue; }"
+src/composing/analysis/region/regionanalyzer.cpp,323,if,restampBassMinorSeventhAfterMerge,if (tonePc == bPc) {
+src/composing/analysis/region/regionanalyzer.cpp,327,if,restampBassMinorSeventhAfterMerge,if (bassPcWeight > prefs.extensionThreshold) {
+src/composing/analysis/region/regionanalyzer.cpp,354,if,denseBoundaryTicks,if (sounding.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,361,if,denseBoundaryTicks,if (!havePrevious) {
+src/composing/analysis/region/regionanalyzer.cpp,366,if,denseBoundaryTicks,if (bits == prevBits) {
+src/composing/analysis/region/regionanalyzer.cpp,403,if,applyJointKeyWiring,if (regions.empty() || !score) {
+src/composing/analysis/region/regionanalyzer.cpp,419,if,applyJointKeyWiring,if (refStaff < score->nstaves() && score->staff(refStaff)) {
+src/composing/analysis/region/regionanalyzer.cpp,423,if,applyJointKeyWiring,if (km == KeyMode::MAJOR || km == KeyMode::IONIAN) {
+src/composing/analysis/region/regionanalyzer.cpp,425,else-if,applyJointKeyWiring,} else if (km == KeyMode::MINOR || km == KeyMode::AEOLIAN) {
+src/composing/analysis/region/regionanalyzer.cpp,443,ternary,applyJointKeyWiring,prevKey.has_value() ? &prevKey.value() : nullptr);
+src/composing/analysis/region/regionanalyzer.cpp,444,ternary,applyJointKeyWiring,prevKey = keyRanked.empty() ? prevKey : std::optional<KeyModeAnalysisResult>(keyRanked.front());
+src/composing/analysis/region/regionanalyzer.cpp,449,ternary,applyJointKeyWiring,ji.rootPc    = hr.hasAnalyzedChord ? hr.chordResult.identity.rootPc : -1;
+src/composing/analysis/region/regionanalyzer.cpp,457,if,applyJointKeyWiring,if (!endsPhrase) {
+src/composing/analysis/region/regionanalyzer.cpp,459,if,applyJointKeyWiring,if (it != phraseBoundaryTicks.end() && *it < hr.endTick) {
+src/composing/analysis/region/regionanalyzer.cpp,465,if,applyJointKeyWiring,if (bassPc < 0) {
+src/composing/analysis/region/regionanalyzer.cpp,466,if,applyJointKeyWiring,if (const auto* bt = bassToneFromTones(hr.tones)) {
+src/composing/analysis/region/regionanalyzer.cpp,478,if,applyJointKeyWiring,if (hr.hasAnalyzedChord) {
+src/composing/analysis/region/regionanalyzer.cpp,494,if,applyJointKeyWiring,if (jk.decisions.size() != regions.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,504,if,applyJointKeyWiring,if (jt < 0) {
+src/composing/analysis/region/regionanalyzer.cpp,511,ternary,applyJointKeyWiring,"km.mode               = jm ? KeySigMode::Ionian : KeySigMode::Aeolian;   // binary collapse (measured, §6)"
+src/composing/analysis/region/regionanalyzer.cpp,516,if,applyJointKeyWiring,if ((((lc.tonicPc % 12) + 12) % 12) == jt && lc.isMajor() == jm) {
+src/composing/analysis/region/regionanalyzer.cpp,545,if,applyJointKeyWiring,if (lcTonic == jt && lc.isMajor() == jm) {
+src/composing/analysis/region/regionanalyzer.cpp,569,if,analyzeRegions,if (!score || endTick <= startTick) {
+src/composing/analysis/region/regionanalyzer.cpp,575,if,analyzeRegions,if (!seg) {
+src/composing/analysis/region/regionanalyzer.cpp,590,ternary,analyzeRegions,"? nmdl::NoteModel::build(score, startTick.ticks(), endTick.ticks())"
+src/composing/analysis/region/regionanalyzer.cpp,598,if,analyzeRegions,"if (!excludeStaves.count(si) && ebr::staffIsEligible(score, si, startTick)) {"
+src/composing/analysis/region/regionanalyzer.cpp,658,if,analyzeRegions,if (opts.reachBack.enabled) {
+src/composing/analysis/region/regionanalyzer.cpp,666,if,analyzeRegions,if (slices[i].end > selStartTick) {
+src/composing/analysis/region/regionanalyzer.cpp,681,if,analyzeRegions,if (i < 0) {
+src/composing/analysis/region/regionanalyzer.cpp,691,if,analyzeRegions,if (opening.valid && !opening.settled) {
+src/composing/analysis/region/regionanalyzer.cpp,697,ternary,analyzeRegions,? opts.reachBack.incrementTicks
+src/composing/analysis/region/regionanalyzer.cpp,699,if,analyzeRegions,if (incTicks <= 0) {
+src/composing/analysis/region/regionanalyzer.cpp,712,if,analyzeRegions,if (cur.valid && cur.settled) {
+src/composing/analysis/region/regionanalyzer.cpp,713,if,analyzeRegions,if (lastSettled.valid && cur.sameKey(lastSettled)) {
+src/composing/analysis/region/regionanalyzer.cpp,738,if,analyzeRegions,if (sliceKeys.empty() || re <= rs) {
+src/composing/analysis/region/regionanalyzer.cpp,750,if,analyzeRegions,if (v.first == key) {
+src/composing/analysis/region/regionanalyzer.cpp,752,if,analyzeRegions,if (dur > v.second.repDur) { v.second.repDur = dur; v.second.repSlice = sliceIdx; }
+src/composing/analysis/region/regionanalyzer.cpp,771,if,analyzeRegions,if (m.first == key) {
+src/composing/analysis/region/regionanalyzer.cpp,780,if,analyzeRegions,if (i >= sliceKeys.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,784,if,analyzeRegions,if (ov <= 0) {
+src/composing/analysis/region/regionanalyzer.cpp,795,if,analyzeRegions,if (votes.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,800,if,analyzeRegions,if (!best
+src/composing/analysis/region/regionanalyzer.cpp,822,if,analyzeRegions,if (menu[mi].first == bestMenuKey) {
+src/composing/analysis/region/regionanalyzer.cpp,829,if,analyzeRegions,if (a.weight != b.weight) {
+src/composing/analysis/region/regionanalyzer.cpp,832,if,analyzeRegions,if (a.tonic != b.tonic) {
+src/composing/analysis/region/regionanalyzer.cpp,849,if,analyzeRegions,if (opts.pass1MinDistinctPcsForCandidate >= 0) {
+src/composing/analysis/region/regionanalyzer.cpp,859,if,analyzeRegions,if (opts.granularity == HarmonicRegionGranularity::PreserveAllChanges) {
+src/composing/analysis/region/regionanalyzer.cpp,879,if,analyzeRegions,if (pr.round >= 1) {
+src/composing/analysis/region/regionanalyzer.cpp,885,if,analyzeRegions,if (t >= startTick.ticks() && t < endTick.ticks()) {
+src/composing/analysis/region/regionanalyzer.cpp,889,if,analyzeRegions,if (boundaryTicks.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,923,if,analyzeRegions,if (opts.hooks && opts.hooks->preMergeRegions) {
+src/composing/analysis/region/regionanalyzer.cpp,933,ternary,analyzeRegions,? boundaryTicks[i + 1] : endTick;
+src/composing/analysis/region/regionanalyzer.cpp,938,if,analyzeRegions,if (tones.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,944,if,analyzeRegions,if (t.isBass) { currentBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,962,if,analyzeRegions,if (currentBassPc != -1 && i + 1 < boundaryTicks.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,965,ternary,analyzeRegions,? boundaryTicks[i + 2] : endTick;
+src/composing/analysis/region/regionanalyzer.cpp,970,if,analyzeRegions,if (nextTone.isBass) { nextBassPc = nextTone.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,982,ternary,analyzeRegions,const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
+src/composing/analysis/region/regionanalyzer.cpp,990,if,analyzeRegions,if (results.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1001,ternary,analyzeRegions,chosenResult = results.empty() ? chosenResult : results.front();
+src/composing/analysis/region/regionanalyzer.cpp,1010,if,analyzeRegions,if (results.size() > 1) {
+src/composing/analysis/region/regionanalyzer.cpp,1023,if,analyzeRegions,if (opts.hooks && opts.hooks->preMergeRegions) {
+src/composing/analysis/region/regionanalyzer.cpp,1041,if,analyzeRegions,"if (!tryCollapseSameChordRegion(regions, chosenResult,"
+src/composing/analysis/region/regionanalyzer.cpp,1063,if,analyzeRegions,if (regions.empty() && pass1Prefs.minDistinctPcsForCandidate > 1) {
+src/composing/analysis/region/regionanalyzer.cpp,1069,if,analyzeRegions,if (opts.granularity != HarmonicRegionGranularity::PreserveAllChanges && !regions.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1076,if,analyzeRegions,if (parentDuration < kPass2MinRegionTicks) {
+src/composing/analysis/region/regionanalyzer.cpp,1086,if,analyzeRegions,if (subs.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1102,ternary,analyzeRegions,? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
+src/composing/analysis/region/regionanalyzer.cpp,1104,ternary,analyzeRegions,? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
+src/composing/analysis/region/regionanalyzer.cpp,1116,if,analyzeRegions,if (!pass2Regions.empty()
+src/composing/analysis/region/regionanalyzer.cpp,1136,if,analyzeRegions,if (subTones.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1151,if,analyzeRegions,if (t.isBass) { subBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,1161,ternary,analyzeRegions,"shv::safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));"
+src/composing/analysis/region/regionanalyzer.cpp,1177,if,analyzeRegions,if (si + 2 < subBounds.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1180,else-if,analyzeRegions,} else if (parentIdx + 1 < regions.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1185,if,analyzeRegions,if (nextStartT >= 0 && nextEndT > nextStartT) {
+src/composing/analysis/region/regionanalyzer.cpp,1199,if,analyzeRegions,if (subResults.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1219,ternary,analyzeRegions,chosenSub = subResults.empty() ? chosenSub : subResults.front();
+src/composing/analysis/region/regionanalyzer.cpp,1226,if,analyzeRegions,if (subResults.size() > 1) {
+src/composing/analysis/region/regionanalyzer.cpp,1239,if,analyzeRegions,"if (!tryCollapseSameChordRegion(pass2Regions, chosenSub,"
+src/composing/analysis/region/regionanalyzer.cpp,1260,if,analyzeRegions,if (opts.granularity != HarmonicRegionGranularity::PreserveAllChanges && !regions.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1275,if,analyzeRegions,if (parentDuration < kPass2bMinRegionTicks) {
+src/composing/analysis/region/regionanalyzer.cpp,1285,if,analyzeRegions,if (subs.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1303,ternary,analyzeRegions,? regions[parentIdx - 1].chordResult.identity.bassPc : -1;
+src/composing/analysis/region/regionanalyzer.cpp,1305,ternary,analyzeRegions,? regions[parentIdx + 1].chordResult.identity.bassPc : -1;
+src/composing/analysis/region/regionanalyzer.cpp,1315,if,analyzeRegions,if (!pass2bRegions.empty()
+src/composing/analysis/region/regionanalyzer.cpp,1333,if,analyzeRegions,if (subTones.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1346,if,analyzeRegions,if (t.isBass) { subBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,1356,ternary,analyzeRegions,"shv::safeBeatType(subSeg ? subSeg->measure() : nullptr, subSeg));"
+src/composing/analysis/region/regionanalyzer.cpp,1366,if,analyzeRegions,if (bi + 2 < bounds.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1369,else-if,analyzeRegions,} else if (parentIdx + 1 < regions.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1374,if,analyzeRegions,if (nextStartT >= 0 && nextEndT > nextStartT) {
+src/composing/analysis/region/regionanalyzer.cpp,1388,if,analyzeRegions,if (subResults.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1409,ternary,analyzeRegions,chosenSub = subResults.empty() ? chosenSub : subResults.front();
+src/composing/analysis/region/regionanalyzer.cpp,1416,if,analyzeRegions,if (subResults.size() > 1) {
+src/composing/analysis/region/regionanalyzer.cpp,1426,ternary,analyzeRegions,? 0.0 : subGateCtx.rawCandidates[0].score;
+src/composing/analysis/region/regionanalyzer.cpp,1428,ternary,analyzeRegions,? subGateCtx.rawCandidates[0].score - subGateCtx.rawCandidates[1].score
+src/composing/analysis/region/regionanalyzer.cpp,1451,if,analyzeRegions,if (regions.empty()) {
+src/composing/analysis/region/regionanalyzer.cpp,1456,if,analyzeRegions,if (opts.granularity == HarmonicRegionGranularity::Smoothed) {
+src/composing/analysis/region/regionanalyzer.cpp,1472,if,analyzeRegions,if (analysis::jointKeyWiringEnabled()) {
+src/composing/analysis/region/regionanalyzer.cpp,1483,if,analyzeRegions,if (opts.reachBack.enabled) {
+src/composing/analysis/region/regionanalyzer.cpp,1493,if,analyzeRegions,if (opts.hooks) {
+src/composing/analysis/region/regionanalyzer.cpp,1494,if,analyzeRegions,if (opts.hooks->preMergeRegions) {
+src/composing/analysis/region/regionanalyzer.cpp,1497,if,analyzeRegions,if (opts.hooks->postMergeRegions) {
+src/composing/analysis/section/cadencekeyanchor.cpp,42,if,detectAuthenticCadences,if (regions.size() < 2) {
+src/composing/analysis/section/cadencekeyanchor.cpp,51,if,detectAuthenticCadences,if (a.rootPc < 0 || b.rootPc < 0) {
+src/composing/analysis/section/cadencekeyanchor.cpp,58,if,detectAuthenticCadences,if (a.quality != ChordQuality::Major) {
+src/composing/analysis/section/cadencekeyanchor.cpp,65,if,detectAuthenticCadences,if (b.quality != ChordQuality::Major && b.quality != ChordQuality::Minor) {
+src/composing/analysis/section/cadencekeyanchor.cpp,70,if,detectAuthenticCadences,if (normalizePc(a.rootPc - 7) != b.rootPc) {
+src/composing/analysis/section/cadencekeyanchor.cpp,79,if,detectAuthenticCadences,"if (!pcInMask(a.pitchClassMask, leadingTone)) {"
+src/composing/analysis/section/cadencekeyanchor.cpp,127,if,aggregateGlobalAnchor,if (cadences.empty()) {
+src/composing/analysis/section/cadencekeyanchor.cpp,149,ternary,aggregateGlobalAnchor,const double recency = (n > 1) ? static_cast<double>(k) / static_cast<double>(n - 1)
+src/composing/analysis/section/cadencekeyanchor.cpp,152,ternary,aggregateGlobalAnchor,+ (c.endsPhrase ? kWeightStructural : 0.0)
+src/composing/analysis/section/cadencekeyanchor.cpp,153,ternary,aggregateGlobalAnchor,+ (c.chromaticLeadingTone ? kWeightChromatic : 0.0)
+src/composing/analysis/section/cadencekeyanchor.cpp,156,if,aggregateGlobalAnchor,if (c.minorMode) {
+src/composing/analysis/section/cadencekeyanchor.cpp,164,if,aggregateGlobalAnchor,if (it->second > best->second) {
+src/composing/analysis/section/cadencekeyanchor.cpp,178,if,aggregateGlobalAnchor,if (!winnerMinor) {
+src/composing/analysis/section/cadencekeyanchor.cpp,180,if,aggregateGlobalAnchor,if (mw != minorWeightByPc.end() && mw->second > 0.0) {
+src/composing/analysis/section/cadencekeyanchor.cpp,188,if,aggregateGlobalAnchor,if (wv != votes.end()) {
+src/composing/analysis/section/cadencekeyanchor.cpp,191,if,aggregateGlobalAnchor,if (winnerMinor) {
+src/composing/analysis/section/cadencekeyanchor.cpp,195,if,aggregateGlobalAnchor,if (maj != votes.end() && !best->first.second) {
+src/composing/analysis/section/cadencekeyanchor.cpp,203,ternary,aggregateGlobalAnchor,anchor.confidence = (total > 0.0) ? (winnerWeight / total) : 0.0;
+src/composing/analysis/section/jointkeydecision.cpp,49,if,jkdInCollectionFraction,if ((mask >> p) & 1u) {
+src/composing/analysis/section/jointkeydecision.cpp,51,if,jkdInCollectionFraction,if ((coll >> p) & 1u) {
+src/composing/analysis/section/jointkeydecision.cpp,56,ternary,jkdInCollectionFraction,return total > 0 ? static_cast<double>(inside) / total : 0.0;
+src/composing/analysis/section/jointkeydecision.cpp,62,if,jkdRootDiatonic,if (pc < 0) {
+src/composing/analysis/section/jointkeydecision.cpp,98,if,jkdChordPinned,if ((mask >> p) & 1u) {
+src/composing/analysis/section/jointkeydecision.cpp,102,if,jkdChordPinned,if (popcount < 3) {
+src/composing/analysis/section/jointkeydecision.cpp,112,if,jkdChordPinned,if (tm == mask) {
+src/composing/analysis/section/jointkeydecision.cpp,113,if,jkdChordPinned,if (++matches > 1) {
+src/composing/analysis/section/jointkeydecision.cpp,154,if,decideJointKey,if (n == 0) {
+src/composing/analysis/section/jointkeydecision.cpp,201,if,decideJointKey,"if (std::find(states.begin(), states.end(), n) == states.end()) {"
+src/composing/analysis/section/jointkeydecision.cpp,224,if,decideJointKey,if (s.startTick <= regions[i].startTick && regions[i].startTick < s.endTick) {
+src/composing/analysis/section/jointkeydecision.cpp,242,if,decideJointKey,if (normalizePc(lc.tonicPc) == k.tonicPc && lc.isMajor == k.isMajor) {
+src/composing/analysis/section/jointkeydecision.cpp,248,if,decideJointKey,if (mod.anchor.detected
+src/composing/analysis/section/jointkeydecision.cpp,255,if,decideJointKey,if (sp.startTick <= r.startTick && r.startTick < sp.endTick
+src/composing/analysis/section/jointkeydecision.cpp,262,if,decideJointKey,if (r.bassPc >= 0 && normalizePc(r.bassPc) == k.tonicPc) {
+src/composing/analysis/section/jointkeydecision.cpp,266,if,decideJointKey,if (r.declaredModeKnown
+src/composing/analysis/section/jointkeydecision.cpp,280,if,decideJointKey,"if (jkdRootDiatonic(r.chordAlts[idx].rootPc, k.tonicPc, k.isMajor)) {"
+src/composing/analysis/section/jointkeydecision.cpp,292,ternary,decideJointKey,chordPinnedV[i] = jkdChordPinned(regions[i].pitchClassMask) ? 1 : 0;
+src/composing/analysis/section/jointkeydecision.cpp,296,ternary,decideJointKey,keyAmbiguousV[i] = nearSpan ? 1 : 0;
+src/composing/analysis/section/jointkeydecision.cpp,297,ternary,decideJointKey,coupledV[i] = (!chordPinnedV[i] && keyAmbiguousV[i]) ? 1 : 0;
+src/composing/analysis/section/jointkeydecision.cpp,311,if,decideJointKey,if (withJoint && coupledV[i]) {
+src/composing/analysis/section/jointkeydecision.cpp,324,ternary,decideJointKey,const double cand = dp[i - 1][p] + (p == s ? 0.0 : -w.transitionPenalty);
+src/composing/analysis/section/jointkeydecision.cpp,325,if,decideJointKey,if (cand > best) {           // strict > ⇒ lower-index prev wins ties
+src/composing/analysis/section/jointkeydecision.cpp,338,if,decideJointKey,if (dp[n - 1][s] > bestV) {
+src/composing/analysis/section/jointkeydecision.cpp,345,if,decideJointKey,if (i > 0) {
+src/composing/analysis/section/jointkeydecision.cpp,381,if,decideJointKey,if (sp.startTick <= regions[i].startTick && regions[i].startTick < sp.endTick
+src/composing/analysis/section/jointkeydecision.cpp,388,if,decideJointKey,if (d.coupled) {
+src/composing/analysis/section/jointkeydecision.cpp,391,if,decideJointKey,if (d.keyHardPinned) {
+src/composing/analysis/section/localmodulationdetector.cpp,70,if,lmdOutOfCollectionCount,if ((outside >> p) & 1u) {
+src/composing/analysis/section/localmodulationdetector.cpp,83,if,lmdRegionConsistent,if (r.rootPc < 0) {
+src/composing/analysis/section/localmodulationdetector.cpp,86,if,lmdRegionConsistent,"if (!lmdRootIsDiatonic(r.rootPc, tonicPc, minorMode)) {"
+src/composing/analysis/section/localmodulationdetector.cpp,105,if,detectLocalModulations,if (cadences.empty() || regions.empty()) {
+src/composing/analysis/section/localmodulationdetector.cpp,130,if,detectLocalModulations,"if (!lmdRegionConsistent(regions[i], c.tonicPc, c.minorMode)) {"
+src/composing/analysis/section/localmodulationdetector.cpp,138,if,detectLocalModulations,if (dist < bestDist
+src/composing/analysis/section/localmodulationdetector.cpp,149,if,detectLocalModulations,if (bestTonic >= 0) {
+src/composing/analysis/section/localmodulationdetector.cpp,151,ternary,detectLocalModulations,assignedMinor[i] = bestMinor ? 1 : 0;
+src/composing/analysis/section/localmodulationdetector.cpp,162,if,detectLocalModulations,if (!hasAssignment[i]) {
+src/composing/analysis/section/localmodulationdetector.cpp,181,if,detectLocalModulations,if (c.tonicPc == tonic && c.minorMode == minor
+src/composing/analysis/section/localmodulationdetector.cpp,184,if,detectLocalModulations,if (firstCadenceTick < 0 || c.tonicTick < firstCadenceTick) {
+src/composing/analysis/section/localmodulationdetector.cpp,190,if,detectLocalModulations,if (runChords >= kEstablishmentMinChords && confirming >= 1) {
+src/composing/analysis/section/sectionanalyzer.cpp,81,if,distinctPitchClassCount,if (seenPitchClasses[pitchClass]) {
+src/composing/analysis/section/sectionanalyzer.cpp,94,if,stabilizeHarmonicRegionsForDisplay,if (regions.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,104,if,stabilizeHarmonicRegionsForDisplay,if (!jointKeyWiringEnabled()) {
+src/composing/analysis/section/sectionanalyzer.cpp,111,if,stabilizeHarmonicRegionsForDisplay,if (regionKeyFifths != stableKeyFifths || regionMode != stableMode) {
+src/composing/analysis/section/sectionanalyzer.cpp,113,if,stabilizeHarmonicRegionsForDisplay,if (!persistent) {
+src/composing/analysis/section/sectionanalyzer.cpp,118,if,stabilizeHarmonicRegionsForDisplay,if (persistent) {
+src/composing/analysis/section/sectionanalyzer.cpp,141,if,stabilizeHarmonicRegionsForDisplay,if (diatonic) {
+src/composing/analysis/section/sectionanalyzer.cpp,146,if,stabilizeHarmonicRegionsForDisplay,if ((tonicPc + interval) % 12 == pc) {
+src/composing/analysis/section/sectionanalyzer.cpp,151,if,stabilizeHarmonicRegionsForDisplay,if (!inScale) {
+src/composing/analysis/section/sectionanalyzer.cpp,188,if,analyzeSection,if (!sc || to <= from) {
+src/composing/analysis/section/sectionanalyzer.cpp,200,if,analyzeSection,if (rawRegions.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,232,if,analyzeSection,if (region.chordResult.identity.quality == ChordQuality::Suspended2
+src/composing/analysis/section/sectionanalyzer.cpp,238,if,analyzeSection,if (gapTones.empty() || chordPitchClasses.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,246,if,analyzeSection,if (seenGapPitchClasses[pitchClass]) {
+src/composing/analysis/section/sectionanalyzer.cpp,251,if,analyzeSection,if (pitchClass == region.chordResult.identity.rootPc
+src/composing/analysis/section/sectionanalyzer.cpp,256,if,analyzeSection,"if (std::find(chordPitchClasses.begin(), chordPitchClasses.end(), pitchClass) == chordPitchClasses.end()) {"
+src/composing/analysis/section/sectionanalyzer.cpp,276,if,analyzeSection,if (diatonicToKey) {
+src/composing/analysis/section/sectionanalyzer.cpp,281,if,analyzeSection,if ((tonicPc + interval) % 12 == pitchClass) {
+src/composing/analysis/section/sectionanalyzer.cpp,286,if,analyzeSection,if (!inScale) {
+src/composing/analysis/section/sectionanalyzer.cpp,300,if,analyzeSection,if (!bassTone) {
+src/composing/analysis/section/sectionanalyzer.cpp,303,if,analyzeSection,if (tone.pitch < bassTone->pitch) {
+src/composing/analysis/section/sectionanalyzer.cpp,314,if,analyzeSection,if (!seenPitchClasses[pitchClass]) {
+src/composing/analysis/section/sectionanalyzer.cpp,320,if,analyzeSection,if (pitchClasses.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,327,if,analyzeSection,if (pitchClasses.size() == 1) {
+src/composing/analysis/section/sectionanalyzer.cpp,351,if,analyzeSection,if (tonePc == candidateRootPc) {
+src/composing/analysis/section/sectionanalyzer.cpp,356,if,analyzeSection,if (interval == 3) {
+src/composing/analysis/section/sectionanalyzer.cpp,358,else-if,analyzeSection,} else if (interval == 4) {
+src/composing/analysis/section/sectionanalyzer.cpp,360,else-if,analyzeSection,} else if (interval == 6) {
+src/composing/analysis/section/sectionanalyzer.cpp,362,else-if,analyzeSection,} else if (interval == 7) {
+src/composing/analysis/section/sectionanalyzer.cpp,370,if,analyzeSection,if (!supported) {
+src/composing/analysis/section/sectionanalyzer.cpp,376,if,analyzeSection,if (hasMajorThird) {
+src/composing/analysis/section/sectionanalyzer.cpp,379,else-if,analyzeSection,} else if (hasMinorThird) {
+src/composing/analysis/section/sectionanalyzer.cpp,382,else-if,analyzeSection,} else if (hasDimFifth) {
+src/composing/analysis/section/sectionanalyzer.cpp,385,else-if,analyzeSection,} else if (hasFifth) {
+src/composing/analysis/section/sectionanalyzer.cpp,392,if,analyzeSection,if (!bestCandidate || candidate.priority > bestCandidate->priority) {
+src/composing/analysis/section/sectionanalyzer.cpp,397,if,analyzeSection,if (bestCandidate) {
+src/composing/analysis/section/sectionanalyzer.cpp,426,if,analyzeSection,if (!results.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,438,if,analyzeSection,if (!results.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,440,if,analyzeSection,if (results.size() > 1) {
+src/composing/analysis/section/sectionanalyzer.cpp,447,if,analyzeSection,"if (inferSparseGapChord(gapTones,"
+src/composing/analysis/section/sectionanalyzer.cpp,460,if,analyzeSection,if (gapEndTick <= gapStartTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,468,if,analyzeSection,if (gapTones.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,469,ternary,analyzeSection,const AnalyzedRegion* carriedSource = previousRegion ? previousRegion : nextRegion;
+src/composing/analysis/section/sectionanalyzer.cpp,470,if,analyzeSection,if (!carriedSource) {
+src/composing/analysis/section/sectionanalyzer.cpp,495,if,analyzeSection,if (seenGapPitchClasses[pitchClass]) {
+src/composing/analysis/section/sectionanalyzer.cpp,502,if,analyzeSection,if (uniqueGapPitchClasses < 3) {
+src/composing/analysis/section/sectionanalyzer.cpp,510,if,analyzeSection,"if (!regionSupportsGapTones(gapTones, region)) {"
+src/composing/analysis/section/sectionanalyzer.cpp,513,if,analyzeSection,if (uniqueGapPitchClasses == 1) {
+src/composing/analysis/section/sectionanalyzer.cpp,515,if,analyzeSection,if (gapPc == region.chordResult.identity.rootPc) {
+src/composing/analysis/section/sectionanalyzer.cpp,522,if,analyzeSection,if (nextRegion && supportsCarry(*nextRegion)) {
+src/composing/analysis/section/sectionanalyzer.cpp,526,if,analyzeSection,if (previousRegion && supportsCarry(*previousRegion)) {
+src/composing/analysis/section/sectionanalyzer.cpp,531,if,analyzeSection,if (previousRegion) {
+src/composing/analysis/section/sectionanalyzer.cpp,532,if,analyzeSection,"if (auto analyzedRegion = analyzeGapWithContext(gapTones,"
+src/composing/analysis/section/sectionanalyzer.cpp,540,if,analyzeSection,if (nextRegion) {
+src/composing/analysis/section/sectionanalyzer.cpp,541,if,analyzeSection,"if (auto analyzedRegion = analyzeGapWithContext(gapTones,"
+src/composing/analysis/section/sectionanalyzer.cpp,549,if,analyzeSection,"if (previousRegion && regionSupportsGapTones(gapTones, *previousRegion)) {"
+src/composing/analysis/section/sectionanalyzer.cpp,553,if,analyzeSection,"if (nextRegion && regionSupportsGapTones(gapTones, *nextRegion)) {"
+src/composing/analysis/section/sectionanalyzer.cpp,557,if,analyzeSection,if (!previousRegion && nextRegion) {
+src/composing/analysis/section/sectionanalyzer.cpp,566,if,analyzeSection,if (previousRegion && !nextRegion) {
+src/composing/analysis/section/sectionanalyzer.cpp,579,if,analyzeSection,if (previousRegion) {
+src/composing/analysis/section/sectionanalyzer.cpp,589,ternary,analyzeSection,return nextRegion != regions.end() ? &*nextRegion : nullptr;
+src/composing/analysis/section/sectionanalyzer.cpp,606,if,analyzeSection,if (regions[i].endTick > measureStartTick && regions[i].startTick < measureEndTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,613,if,analyzeSection,if (region.startTick >= region.endTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,616,if,analyzeSection,if (!measureRegions.empty()
+src/composing/analysis/section/sectionanalyzer.cpp,629,ternary,analyzeSection,const AnalyzedRegion* previousRegionPtr = previousRegion != regions.rend() ? &*previousRegion : nullptr;
+src/composing/analysis/section/sectionanalyzer.cpp,632,if,analyzeSection,if (overlappingRegions.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,633,if,analyzeSection,"if (auto gapRegion = inferGapRegion(measureStartTick,"
+src/composing/analysis/section/sectionanalyzer.cpp,647,if,analyzeSection,if (previousRegionPtr) {
+src/composing/analysis/section/sectionanalyzer.cpp,658,if,analyzeSection,if (cursor < sourceStartTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,659,if,analyzeSection,if (measureRegions.empty() && cursor == analysisRangeStartTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,668,else-if,analyzeSection,"} else if (auto gapRegion = inferGapRegion(cursor,"
+src/composing/analysis/section/sectionanalyzer.cpp,670,ternary,analyzeSection,"previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,"
+src/composing/analysis/section/sectionanalyzer.cpp,675,if,analyzeSection,if (!measureRegions.empty()) {
+src/composing/analysis/section/sectionanalyzer.cpp,680,if,analyzeSection,if (sourceStartTick >= sourceEndTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,697,if,analyzeSection,if (cursor < measureEndTick) {
+src/composing/analysis/section/sectionanalyzer.cpp,698,if,analyzeSection,"if (auto gapRegion = inferGapRegion(cursor,"
+src/composing/analysis/section/sectionanalyzer.cpp,700,ternary,analyzeSection,"previousDisplayRegion ? &*previousDisplayRegion : previousRegionPtr,"
+src/composing/analysis/section/sectionanalyzer.cpp,706,if,analyzeSection,if (measureRegions.size() >= 2
+src/composing/analysis/section/sectionanalyzer.cpp,759,if,analyzeSection,if (out.keyAreas.empty()
+src/composing/analysis/section/sectionanalyzer.cpp,771,if,analyzeSection,if (regionConfidence > back.confidence) {
+src/composing/analysis/section/sectioncadencedetection.cpp,68,if,detectCadences,if (total == 0 || selectionCount == 0) {
+src/composing/analysis/section/sectioncadencedetection.cpp,78,if,detectCadences,if (!hasAssertiveKeyConfidence(regions[i].keyModeResult)
+src/composing/analysis/section/sectioncadencedetection.cpp,87,if,detectCadences,if (regions[i].keyModeResult.keySignatureFifths
+src/composing/analysis/section/sectioncadencedetection.cpp,94,if,detectCadences,if (a.identity.rootPc == b.identity.rootPc) {
+src/composing/analysis/section/sectioncadencedetection.cpp,101,if,detectCadences,if (b.function.degree == 0
+src/composing/analysis/section/sectioncadencedetection.cpp,105,else-if,detectCadences,} else if (a.function.degree == 3 && b.function.degree == 0) {
+src/composing/analysis/section/sectioncadencedetection.cpp,107,else-if,detectCadences,} else if (a.function.degree == 4 && b.function.degree == 5
+src/composing/analysis/section/sectioncadencedetection.cpp,113,if,detectCadences,if (!label) {
+src/composing/analysis/section/sectioncadencedetection.cpp,122,ternary,detectCadences,? regions[i + 1].startTick
+src/composing/analysis/section/sectioncadencedetection.cpp,130,if,detectCadences,if (hasAssertiveKeyConfidence(regions[n - 1].keyModeResult)
+src/composing/analysis/section/sectioncadencedetection.cpp,136,if,detectCadences,if (!alreadyLabelled) {
+src/composing/analysis/section/sectioncadencedetection.cpp,152,if,detectPivotChords,if (regions.empty() || selectionCount == 0) {
+src/composing/analysis/section/sectioncadencedetection.cpp,175,if,detectPivotChords,if (!hasAssertiveKeyConfidence(km)) {
+src/composing/analysis/section/sectioncadencedetection.cpp,178,if,detectPivotChords,if (prevFifths == std::numeric_limits<int>::min()) {
+src/composing/analysis/section/sectioncadencedetection.cpp,184,if,detectPivotChords,if (km.keySignatureFifths != prevFifths || km.mode != prevMode) {
+src/composing/analysis/section/sectioncadencedetection.cpp,203,if,detectPivotChords,if (hasAssertiveKeyConfidence(km)
+src/composing/analysis/section/sectioncadencedetection.cpp,210,if,detectPivotChords,if (!confirmed) {
+src/composing/analysis/section/sectioncadencedetection.cpp,227,if,detectPivotChords,if (prev.function.degree < 0) {
+src/composing/analysis/section/sectioncadencedetection.cpp,230,if,detectPivotChords,"if (cra::diatonicDegreeForRootPc(prev.identity.rootPc, tr.newFifths, tr.newMode) < 0) {"
+src/composing/analysis/section/sectioncadencedetection.cpp,246,if,detectPivotChords,if (!oldRoman.empty() && !newRoman.empty()) {

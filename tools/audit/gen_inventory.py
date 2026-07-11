@@ -3,7 +3,10 @@
 # MuseScore-Studio-CLA-applies
 """
 gen_inventory.py — the machine-generated audit inventory for the EG-7 layer
-certification audits (OI-84). PASS 1 instrument for the L1/L2 certification audit.
+certification audits (OI-84). ONE PASS-1 instrument, layer-selected by --layer
+(l1l2 default — the original L1/L2 audit; l3 — the Layer-3 key/mode audit). One path
+per concern (#6): the same enumeration + extraction serves every layer; --layer picks
+the deep-audited tag set, the output dir, and the per-layer tag refinement.
 
 WHAT THIS IS (protocol P1, cowork_audit_protocol.md; #17(f) applied to audit SCOPE):
   The audit domain is generated MECHANICALLY from the code, never chosen by hand.
@@ -38,8 +41,10 @@ EXTRACTION METHOD (stated so the instrument is ESTABLISHED, #19 — not a black 
   the establish-the-instrument cross-check (#19).
 
 RUN:
-  python tools/audit/gen_inventory.py                 # writes artifacts under tools/audit/l1l2/
-  python tools/audit/gen_inventory.py --self-check    # + per-file extraction counts to stdout
+  python tools/audit/gen_inventory.py                    # L1/L2 audit → tools/audit/l1l2/
+  python tools/audit/gen_inventory.py --layer l3         # L3 audit    → tools/audit/l3/
+  python tools/audit/gen_inventory.py --self-check       # + per-file extraction counts
+  python tools/audit/gen_inventory.py --out-dir <scratch># override the artifact dir (byte-id check)
   (exit 0 iff every tracked file received a tag; nonzero on any untagged file — P1.)
 """
 
@@ -52,8 +57,45 @@ import sys
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SCOPE_DIR = "src/composing"
-OUT_DIR = os.path.join(REPO_ROOT, "tools", "audit", "l1l2")
-CORPUS_HASH = "c50002fee1"   # the pinned corpus for this audit (instruction Task 1.3)
+CORPUS_HASH = "c50002fee1"   # the pinned corpus for these audits (instruction Task 1.3)
+
+# ── Which layer's audit this run generates (P1 scope selector) ────────────────
+# The SAME instrument serves every EG-7 layer audit (one path per concern, #6). A
+# --layer flag selects (a) which tag set is "deep-audited", (b) the output dir, and
+# (c) an optional per-layer tag REFINEMENT applied over the base TAG_RULES below.
+#
+#   --layer l1l2 (default): the original L1/L2 certification inventory. The base
+#     TAG_RULES are used verbatim, DEEP_TAGS = (L1, L2), artifacts under
+#     tools/audit/l1l2/. Byte-identical to the committed L1/L2 run — the L3_REFINE
+#     step is NOT applied, so this file's L1/L2 output is unchanged.
+#   --layer l3: the Layer-3 (key/mode) certification inventory (this instruction).
+#     The L3_REFINE overrides below refine the base L3+ tags on the key/mode files
+#     into L3 / L3-MIXED (and correct the mis-tags this audit found), DEEP_TAGS =
+#     (L3, L3-MIXED), artifacts under tools/audit/l3/. Everything else is unchanged.
+def _selected_layer(argv):
+    if "--layer" in argv:
+        i = argv.index("--layer")
+        if i + 1 < len(argv):
+            return argv[i + 1]
+    return "l1l2"
+
+AUDIT_LAYER = _selected_layer(sys.argv)
+if AUDIT_LAYER not in ("l1l2", "l3"):
+    sys.stderr.write("unknown --layer %r (expected l1l2 | l3)\n" % AUDIT_LAYER)
+    sys.exit(2)
+
+
+def _selected_out_dir(argv, default):
+    # --out-dir <dir> overrides the artifact directory (used to re-generate into a
+    # scratch dir for a byte-identity check without touching the committed artifacts).
+    if "--out-dir" in argv:
+        i = argv.index("--out-dir")
+        if i + 1 < len(argv):
+            return os.path.abspath(argv[i + 1])
+    return default
+
+OUT_DIR = _selected_out_dir(sys.argv, os.path.join(REPO_ROOT, "tools", "audit", AUDIT_LAYER))
+PREFIX = AUDIT_LAYER   # row-list CSV filename prefix (l1l2_* / l3_*)
 
 # ── The tag map (P1 file table) ──────────────────────────────────────────────
 # Ordered rules; FIRST match wins. Each rule: (matcher, tag, reason).
@@ -152,7 +194,83 @@ TAG_RULES = [
     ("src/composing/intonation/CMakeLists.txt", "L3+", "build file — non-source"),
 ]
 
-DEEP_TAGS = ("L1", "L2")
+DEEP_TAGS = ("L1", "L2") if AUDIT_LAYER == "l1l2" else ("L3", "L3-MIXED")
+
+# ── L3 (key/mode) tag refinement (applied over the base TAG_RULES iff --layer l3) ─
+# The base map coarsely tags the key/mode files L3+ ("deferred to the L3 audit").
+# THIS audit refines them. Verified at the code (instruction Task 1.1 — a mis-tag is
+# a finding, not inherited): each file was read and its layer(s) confirmed at source.
+# Tags:
+#   L3        — whole file is Layer-3 key/mode inference.
+#   L3-MIXED  — file mixes layers; its Layer-3 parts are in scope, the rest deferred
+#               to the owning layer's audit (the split is recorded per row in Task 2).
+#   L4        — a mis-tag correction: the file is Layer-4 (chord), NOT L3 (finding).
+# Ordered; FIRST match wins; exact repo-relative paths (forward slash).
+L3_REFINE = [
+    # ---- Core L3: key/mode inference proper (whole file) ----
+    ("src/composing/analysis/key/keymodesequence.h", "L3",
+     "L3 key/mode SEQUENCE DECODER public surface (survivor, LIVE production region key path)"),
+    ("src/composing/analysis/key/keymodesequence.cpp", "L3",
+     "L3 key/mode sequence decoder impl (Viterbi + change cost + confidence over the lattice)"),
+    ("src/composing/analysis/key/keymodeanalyzer.h", "L3",
+     "L3 key/mode EMISSION scorer surface (analyzeKeyMode, 21-mode table helpers, KeyCandidateScore)"),
+    ("src/composing/analysis/key/keymodeanalyzer.cpp", "L3",
+     "L3 emission scorer impl (six scoring terms + pairwise disambiguation + family selection)"),
+    ("src/composing/analysis/key/keyresolver.h", "L3",
+     "L3 windowed resolver surface (resolveKeyAndModeRanked + shared resolveKeySignatureContext) — R5 shrink target"),
+    ("src/composing/analysis/key/keyresolver.cpp", "L3",
+     "L3 windowed resolver impl (dynamic lookahead, hysteresis, partial-signature correction) — serves S2 seed + P4 + diagnostic"),
+    ("src/composing/analysis/key/keymodeformatting.cpp", "L3",
+     "L3 key/mode label formatting (tonic-name tables + mode suffix)"),
+    ("src/composing/analysis/key/modepriorpresets.h", "L3",
+     "L3 mode-prior presets surface (5 named presets over 21 modes)"),
+    ("src/composing/analysis/key/modepriorpresets.cpp", "L3",
+     "L3 mode-prior preset table impl (duplicates KeyModeAnalyzerPreferences mode-prior defaults — sync-test-guarded)"),
+    # ---- L3 key-evidence detectors (section/, key-agnostic + the joint key axis) ----
+    ("src/composing/analysis/section/cadencekeyanchor.h", "L3",
+     "L3 key-evidence: key-agnostic authentic-cadence anchor surface (R3 diagnostic; retire post-E5)"),
+    ("src/composing/analysis/section/cadencekeyanchor.cpp", "L3",
+     "L3 key-evidence impl: key-agnostic cadence detection + salience-weighted global tonic anchor"),
+    ("src/composing/analysis/section/localmodulationdetector.h", "L3",
+     "L3 key-evidence: key-agnostic local-modulation detector surface (4d-i diagnostic; not wired)"),
+    ("src/composing/analysis/section/localmodulationdetector.cpp", "L3",
+     "L3 key-evidence impl: establishment + cadence-confirmation local-key span commit"),
+    ("src/composing/analysis/section/jointkeydecision.h", "L3",
+     "L3 key-axis joint decision surface + the J-key-iii production wiring flag (gated OFF)"),
+    ("src/composing/analysis/section/jointkeydecision.cpp", "L3",
+     "L3 key-axis joint decision impl (home-pair backbone + soft re-rank Viterbi + scoped joint)"),
+    # ---- Mixed: L3 parts in scope, the rest deferred (split recorded per row) ----
+    ("src/composing/analysis/region/regionanalyzer.h", "L3-MIXED",
+     "L3 seam surface (analyzeRegions + ReachBackOptions) mixed with L4 chord orchestration options"),
+    ("src/composing/analysis/region/regionanalyzer.cpp", "L3-MIXED",
+     "L3 seam (whole-score decode wiring / reach-back loop / localKeyForRegion / applyJointKeyWiring) + L4 chord orchestration + L2-legacy greedyExpand call — split recorded"),
+    ("src/composing/analysis/region/harmonicrhythm.h", "L3-MIXED",
+     "region DTO — carries L3 published key facts (keyModeResult/keyConfidence/keyAlternatives) alongside L4 chord fields — split recorded"),
+    ("src/composing/analysis/section/sectionanalyzer.h", "L3-MIXED",
+     "L3 key/mode stabilization surface mixed with L5 cadence/pivot labeling surface — split recorded"),
+    ("src/composing/analysis/section/sectionanalyzer.cpp", "L3-MIXED",
+     "L3 key/mode stabilization + gap-region key context + L5 cadence/pivot labeling — split recorded"),
+    ("src/composing/analysis/section/sectioncadencedetection.cpp", "L3-MIXED",
+     "L5 cadence/pivot labeling impl (reads L3 key confidence via the 0.8 gate) — L5-deferred, split recorded"),
+    ("src/composing/analysis/types/analysistypes.h", "L3-MIXED",
+     "cross-layer types leaf — holds L3 KeyModeAnalyzerPreferences/PitchContext/KeySigMode (in scope) + L4 ChordAnalyzerPreferences and other types (deferred to L4) — split recorded"),
+    # ---- Mis-tag corrections found by this audit (Task 1.1) ----
+    ("src/composing/analysis/decode/chordpathdecoder.h", "L4",
+     "MIS-TAG (L1/L2 file table said 'L3 key-mode decoder scaffolding') — it is the beam-1 CHORD-path decoder (Stage 3.1), Layer 4; deferred to the L4 audit (pass-1 finding)"),
+    ("src/composing/analysis/region/sparsechordrefinement.h", "L4",
+     "L4 chord-quality refinement surface (consumes the L3 key as a prior) — deferred to the L4 audit"),
+    ("src/composing/analysis/region/sparsechordrefinement.cpp", "L4",
+     "L4 chord-quality refinement impl (diatonic-triad promotion from key context) — deferred to the L4 audit"),
+]
+
+
+def refine_l3(path, tag, reason):
+    """In --layer l3 mode, override the base tag for the key/mode files. Returns the
+    (possibly refined) (tag, reason); base tag unchanged for files L3_REFINE omits."""
+    for matcher, l3tag, l3reason in L3_REFINE:
+        if path == matcher:
+            return l3tag, l3reason
+    return tag, reason
 
 # control keywords that precede '(' but are NOT function names
 CTRL_KW = {"if", "for", "while", "switch", "catch", "return", "sizeof", "and", "or",
@@ -478,6 +596,8 @@ def main():
         tag, reason = resolve_tag(p)
         if tag is None:
             untagged.append(p)
+        elif AUDIT_LAYER == "l3":
+            tag, reason = refine_l3(p, tag, reason)
         file_rows.append({"file": p, "tag": tag or "UNTAGGED", "reason": reason or ""})
     if untagged:
         sys.stderr.write("P1 TOTALITY FAILURE — untagged files (add a TAG_RULES entry):\n")
@@ -518,17 +638,17 @@ def main():
                        "branches": len(branches), "fields": len(fields),
                        "decls": len(decls), "crosslayer": len(cross)}
 
-    write_csv(os.path.join(OUT_DIR, "l1l2_functions.csv"), all_funcs,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_functions.csv"), all_funcs,
               ["file", "name", "start_line", "end_line"])
-    write_csv(os.path.join(OUT_DIR, "l1l2_literals.csv"), all_lits,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_literals.csv"), all_lits,
               ["file", "line", "value", "func", "context"])
-    write_csv(os.path.join(OUT_DIR, "l1l2_branches.csv"), all_branches,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_branches.csv"), all_branches,
               ["file", "line", "kind", "func", "context"])
-    write_csv(os.path.join(OUT_DIR, "l1l2_fields.csv"), all_fields,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_fields.csv"), all_fields,
               ["file", "line", "type_owner", "field_type", "name", "context"])
-    write_csv(os.path.join(OUT_DIR, "l1l2_decls.csv"), all_decls,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_decls.csv"), all_decls,
               ["file", "line", "type_owner", "name", "context"])
-    write_csv(os.path.join(OUT_DIR, "l1l2_crosslayer.csv"), all_cross,
+    write_csv(os.path.join(OUT_DIR, PREFIX + "_crosslayer.csv"), all_cross,
               ["file", "line", "include", "resolved", "target_area"])
 
     inventory = {
@@ -548,7 +668,10 @@ def main():
         tag_counts[r["tag"]] = tag_counts.get(r["tag"], 0) + 1
     manifest = {
         "instrument": "tools/audit/gen_inventory.py",
-        "audit": "EG-7 L1/L2 certification, PASS 1 (blind enumerative)",
+        "audit": ("EG-7 L1/L2 certification, PASS 1 (blind enumerative)"
+                  if AUDIT_LAYER == "l1l2"
+                  else "EG-7 Layer-3 (key/mode) certification, PASS 1 (blind enumerative)"),
+        "audit_layer": AUDIT_LAYER,
         "head_commit": head,
         "script_blob_sha": script_sha,
         "corpus_hash": CORPUS_HASH,
@@ -571,7 +694,8 @@ def main():
     with open(os.path.join(OUT_DIR, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=1)
 
-    print("gen_inventory OK — %d tracked files, %d deep-audited (L1/L2)" % (len(files), len(deep)))
+    print("gen_inventory OK — %d tracked files, %d deep-audited (%s)" %
+          (len(files), len(deep), "/".join(DEEP_TAGS)))
     print("  tag counts:", tag_counts)
     print("  rows: funcs=%d lits=%d branches=%d fields=%d decls=%d cross=%d" %
           (len(all_funcs), len(all_lits), len(all_branches), len(all_fields),

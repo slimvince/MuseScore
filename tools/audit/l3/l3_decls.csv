@@ -1,0 +1,13 @@
+file,line,type_owner,name,context
+src/composing/analysis/key/keymodeanalyzer.h,37,<namespace>,exp,return 1.0 / (1.0 + std::exp(-steepness * (gap - midpoint)));
+src/composing/analysis/key/keymodeanalyzer.h,114,KeyModeAnalysisResult,isMajor,bool isMajor() const { return keyModeIsMajor(mode); }
+src/composing/analysis/key/keymodeanalyzer.h,189,<namespace>,keyModeScaleIntervals,"const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode);"
+src/composing/analysis/key/keymodeanalyzer.h,195,<namespace>,ionianTonicPcForMode,"int ionianTonicPcForMode(int tonicPc, size_t modeIndex);"
+src/composing/analysis/key/keymodeanalyzer.h,203,<namespace>,keySignatureFifthsForKey,"int keySignatureFifthsForKey(int tonicPc, bool isMajor, int referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.h,210,<namespace>,keyModeSignatureFifths,"int keyModeSignatureFifths(int tonicPc, KeySigMode mode, int referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.h,216,<namespace>,keyModeTonicName,"const char* keyModeTonicName(int fifths, KeySigMode mode);"
+src/composing/analysis/key/keymodeanalyzer.h,220,<namespace>,keyModeSuffix,const char* keyModeSuffix(KeySigMode mode);
+src/composing/analysis/key/modepriorpresets.h,74,<namespace>,modePriorPresets,std::vector<ModePriorPreset> modePriorPresets();
+src/composing/analysis/section/cadencekeyanchor.h,156,<namespace>,aggregateGlobalAnchor,aggregateGlobalAnchor(const std::vector<AuthenticCadence>& cadences);
+src/composing/analysis/section/jointkeydecision.h,214,<namespace>,setJointKeyWiringEnabled,void setJointKeyWiringEnabled(bool enabled);
+src/composing/analysis/section/jointkeydecision.h,215,<namespace>,jointKeyWiringEnabled,bool jointKeyWiringEnabled();

@@ -1,0 +1,302 @@
+file,line,type_owner,field_type,name,context
+src/composing/analysis/key/keymodeanalyzer.h,107,KeyModeAnalysisResult,int,keySignatureFifths,"int keySignatureFifths = 0;          ///< Resolved key signature (-7..+7, Ionian convention)"
+src/composing/analysis/key/keymodeanalyzer.h,108,KeyModeAnalysisResult,KeySigMode,mode,KeySigMode mode = KeySigMode::Ionian;      ///< Detected mode
+src/composing/analysis/key/keymodeanalyzer.h,109,KeyModeAnalysisResult,int,tonicPc,"int tonicPc = 0;                     ///< Pitch class of the mode's tonic (0=C, 2=D, etc.)"
+src/composing/analysis/key/keymodeanalyzer.h,110,KeyModeAnalysisResult,double,score,double score = 0.0;                  ///< Raw confidence score; higher is better
+src/composing/analysis/key/keymodeanalyzer.h,111,KeyModeAnalysisResult,double,normalizedConfidence,"double normalizedConfidence = 0.0;   ///< [0,1] EMISSION SIGMOID (see §5.7). Role (confidence contract §3 / D-L3a): an INTERNAL gate input (the 0.8 KeyArea/cade"
+src/composing/analysis/key/keymodeanalyzer.h,130,KeyCandidateScore,int,tonicPc,int tonicPc = 0;
+src/composing/analysis/key/keymodeanalyzer.h,131,KeyCandidateScore,std::size_t,modeIndex,std::size_t modeIndex = 0;
+src/composing/analysis/key/keymodeanalyzer.h,132,KeyCandidateScore,double,scaleMembership,double scaleMembership       = 0.0;  ///< scoreScaleMembership
+src/composing/analysis/key/keymodeanalyzer.h,133,KeyCandidateScore,double,triadEvidence,double triadEvidence         = 0.0;  ///< scoreTriadEvidence (triad + complete-triad/missing-tonic + extra-scale)
+src/composing/analysis/key/keymodeanalyzer.h,134,KeyCandidateScore,double,characteristicPitch,double characteristicPitch   = 0.0;  ///< scoreCharacteristicPitch
+src/composing/analysis/key/keymodeanalyzer.h,135,KeyCandidateScore,double,trueLeadingTone,double trueLeadingTone       = 0.0;  ///< scoreTrueLeadingTone
+src/composing/analysis/key/keymodeanalyzer.h,136,KeyCandidateScore,double,keySignatureProximity,double keySignatureProximity = 0.0;  ///< scoreKeySignatureProximity
+src/composing/analysis/key/keymodeanalyzer.h,137,KeyCandidateScore,double,modePrior,double modePrior             = 0.0;  ///< scoreModePrior
+src/composing/analysis/key/keymodeanalyzer.h,138,KeyCandidateScore,double,declaredPenalty,"double declaredPenalty       = 0.0;  ///< prefs.declaredModePenalty when mode incompatible with declared, else 0 (SUBTRACTED)"
+src/composing/analysis/key/keymodeanalyzer.h,139,KeyCandidateScore,double,disambiguationDelta,double disambiguationDelta   = 0.0;  ///< post-hoc pairwise mutation applied to this candidate (signed)
+src/composing/analysis/key/keymodeanalyzer.h,140,KeyCandidateScore,double,finalScore,double finalScore            = 0.0;  ///< eval.score after all adjustments (the ranking score)
+src/composing/analysis/key/keymodeanalyzer.h,141,KeyCandidateScore,double,tonalCenterScore,double tonalCenterScore      = 0.0;  ///< family-selection tonal-centre comparison score
+src/composing/analysis/key/keymodeanalyzer.h,142,KeyCandidateScore,double,tonicWeight,double tonicWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,143,KeyCandidateScore,double,thirdWeight,double thirdWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,144,KeyCandidateScore,double,fifthWeight,double fifthWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,145,KeyCandidateScore,double,leadingToneWeight,double leadingToneWeight     = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,146,KeyCandidateScore,bool,hasCompleteTriad,bool   hasCompleteTriad      = false;
+src/composing/analysis/key/keymodesequence.h,116,KeyModeSequencePreferences,int,topK,int topK = 8;
+src/composing/analysis/key/keymodesequence.h,125,KeyModeSequencePreferences,double,changeBaseCost,double changeBaseCost = kDefaultKeyModeAnalyzerPreferences.hysteresisMargin;
+src/composing/analysis/key/keymodesequence.h,128,KeyModeSequencePreferences,double,changePerFifthStep,double changePerFifthStep = kDefaultKeyModeAnalyzerPreferences.keySignatureDistancePenalty;
+src/composing/analysis/key/keymodesequence.h,131,KeyModeSequencePreferences,double,relativePairExtraCost,double relativePairExtraCost = kDefaultKeyModeAnalyzerPreferences.relativeKeyHysteresisMargin;
+src/composing/analysis/key/keymodesequence.h,137,KeyModeSequencePreferences,double,windowBeats,double windowBeats = 4.0;
+src/composing/analysis/key/keymodesequence.h,139,KeyModeSequencePreferences,double,decayRate,double decayRate = scoreharvest::DECAY_RATE;
+src/composing/analysis/key/keymodesequence.h,141,KeyModeSequencePreferences,double,lookaheadWeight,double lookaheadWeight = scoreharvest::LOOKAHEAD_WEIGHT;
+src/composing/analysis/key/keymodesequence.h,143,KeyModeSequencePreferences,double,beatsPerDecayUnit,double beatsPerDecayUnit = 4.0;
+src/composing/analysis/key/keymodesequence.h,147,KeyModeSequencePreferences,double,uncertainThreshold,double uncertainThreshold = 1.0;
+src/composing/analysis/key/keymodesequence.h,151,KeyModeSequencePreferences,int,maxAlternatives,int maxAlternatives = 4;
+src/composing/analysis/key/keymodesequence.h,159,SliceKeyMode,int,sliceIndex,int sliceIndex = 0;                                   ///< index into the slice vector
+src/composing/analysis/key/keymodesequence.h,160,SliceKeyMode,KeyModeAnalysisResult,chosen,KeyModeAnalysisResult chosen;                         ///< the decided key/mode
+src/composing/analysis/key/keymodesequence.h,161,SliceKeyMode,std::vector<KeyModeAnalysisResult>,alternatives,"std::vector<KeyModeAnalysisResult> alternatives;      ///< other surviving candidates, ranked"
+src/composing/analysis/key/keymodesequence.h,162,SliceKeyMode,double,confidence,double confidence = 0.0;                              ///< sequence margin (best vs best-different-key/mode)
+src/composing/analysis/key/keymodesequence.h,163,SliceKeyMode,bool,uncertain,bool uncertain = false;                               ///< confidence < uncertainThreshold
+src/composing/analysis/key/keymodesequence.h,175,State,int,tonicPc,int tonicPc = 0;
+src/composing/analysis/key/keymodesequence.h,176,State,KeySigMode,mode,KeySigMode mode = KeySigMode::Ionian;
+src/composing/analysis/key/keymodesequence.h,177,State,int,keySignatureFifths,int keySignatureFifths = 0;
+src/composing/analysis/key/keymodesequence.h,178,State,int,ionianPc,int ionianPc = 0;
+src/composing/analysis/key/keyresolver.h,71,KeyResolveDump,int,notatedFifths,int notatedFifths   = 0;          ///< key signature fifths read at the tick (pre-correction)
+src/composing/analysis/key/keyresolver.h,72,KeyResolveDump,int,correctedFifths,int correctedFifths = 0;          ///< after partialSignatureCorrection
+src/composing/analysis/key/keyresolver.h,73,KeyResolveDump,int,declaredModeOrdinal,"int declaredModeOrdinal = -1;     ///< KeySigMode ordinal of the declared mode, or -1 if none"
+src/composing/analysis/key/keyresolver.h,74,KeyResolveDump,const char*,pathTaken,"const char* pathTaken = ""normal""; ///< ""fallback"" | ""normal"" (""anchor"" removed in 4b-i)"
+src/composing/analysis/key/keyresolver.h,75,KeyResolveDump,int,lookaheadBeatsUsed,int lookaheadBeatsUsed = 0;       ///< window beats at the final analyzeKeyMode call
+src/composing/analysis/key/keyresolver.h,76,KeyResolveDump,bool,hysteresisPromoted,bool hysteresisPromoted   = false; ///< the hysteresis block reordered the winner
+src/composing/analysis/key/keyresolver.h,77,KeyResolveDump,bool,strongPriorPromoted,bool strongPriorPromoted  = false; ///< always false since 4b-i (strong declared-mode prior removed; field kept for dump-format stability)
+src/composing/analysis/key/keyresolver.h,78,KeyResolveDump,std::vector<mu::composing::analysis::KeyCandidateScore>,candidates,std::vector<mu::composing::analysis::KeyCandidateScore> candidates; ///< emission breakdown (empty on anchor/fallback)
+src/composing/analysis/key/keyresolver.h,96,KeySignatureContext,int,notatedFifths,int notatedFifths   = 0;
+src/composing/analysis/key/keyresolver.h,97,KeySignatureContext,int,correctedFifths,int correctedFifths = 0;
+src/composing/analysis/key/keyresolver.h,98,KeySignatureContext,std::optional<mu::composing::analysis::KeySigMode>,declaredMode,std::optional<mu::composing::analysis::KeySigMode> declaredMode;
+src/composing/analysis/key/modepriorpresets.h,42,ModePriorPreset,std::string,name,"std::string name;               ///< Display name (e.g. ""Standard"", ""Jazz"")"
+src/composing/analysis/key/modepriorpresets.h,45,ModePriorPreset,double,ionian,double ionian          =  1.20;
+src/composing/analysis/key/modepriorpresets.h,46,ModePriorPreset,double,dorian,double dorian          = -0.50;
+src/composing/analysis/key/modepriorpresets.h,47,ModePriorPreset,double,phrygian,double phrygian        = -1.50;
+src/composing/analysis/key/modepriorpresets.h,48,ModePriorPreset,double,lydian,double lydian          = -1.50;
+src/composing/analysis/key/modepriorpresets.h,49,ModePriorPreset,double,mixolydian,double mixolydian      = -0.50;
+src/composing/analysis/key/modepriorpresets.h,50,ModePriorPreset,double,aeolian,double aeolian         =  1.00;
+src/composing/analysis/key/modepriorpresets.h,51,ModePriorPreset,double,locrian,double locrian         = -3.00;
+src/composing/analysis/key/modepriorpresets.h,54,ModePriorPreset,double,melodicMinor,double melodicMinor    = -0.50;
+src/composing/analysis/key/modepriorpresets.h,55,ModePriorPreset,double,dorianB2,double dorianB2        = -1.50;
+src/composing/analysis/key/modepriorpresets.h,56,ModePriorPreset,double,lydianAugmented,double lydianAugmented = -2.00;
+src/composing/analysis/key/modepriorpresets.h,57,ModePriorPreset,double,lydianDominant,double lydianDominant  = -1.00;
+src/composing/analysis/key/modepriorpresets.h,58,ModePriorPreset,double,mixolydianB6,double mixolydianB6    = -1.50;
+src/composing/analysis/key/modepriorpresets.h,59,ModePriorPreset,double,aeolianB5,double aeolianB5       = -2.50;
+src/composing/analysis/key/modepriorpresets.h,60,ModePriorPreset,double,altered,double altered         = -3.50;
+src/composing/analysis/key/modepriorpresets.h,63,ModePriorPreset,double,harmonicMinor,double harmonicMinor      = -0.30;
+src/composing/analysis/key/modepriorpresets.h,64,ModePriorPreset,double,locrianSharp6,double locrianSharp6      = -2.50;
+src/composing/analysis/key/modepriorpresets.h,65,ModePriorPreset,double,ionianSharp5,double ionianSharp5       = -2.00;
+src/composing/analysis/key/modepriorpresets.h,66,ModePriorPreset,double,dorianSharp4,double dorianSharp4       = -2.00;
+src/composing/analysis/key/modepriorpresets.h,67,ModePriorPreset,double,phrygianDominant,double phrygianDominant   = -0.80;
+src/composing/analysis/key/modepriorpresets.h,68,ModePriorPreset,double,lydianSharp2,double lydianSharp2       = -2.50;
+src/composing/analysis/key/modepriorpresets.h,69,ModePriorPreset,double,alteredDomBB7,double alteredDomBB7      = -3.50;
+src/composing/analysis/region/harmonicrhythm.h,42,ChordTemporalExtensions,int,previousRootPc,int previousRootPc = -1;
+src/composing/analysis/region/harmonicrhythm.h,43,ChordTemporalExtensions,int,previousBassPc,int previousBassPc = -1;
+src/composing/analysis/region/harmonicrhythm.h,44,ChordTemporalExtensions,ChordQuality,previousQuality,ChordQuality previousQuality = ChordQuality::Unknown;
+src/composing/analysis/region/harmonicrhythm.h,45,ChordTemporalExtensions,bool,bassIsStepwiseFromPrevious,bool bassIsStepwiseFromPrevious = false;
+src/composing/analysis/region/harmonicrhythm.h,46,ChordTemporalExtensions,bool,bassIsStepwiseToNext,bool bassIsStepwiseToNext = false;
+src/composing/analysis/region/harmonicrhythm.h,47,ChordTemporalExtensions,int,nextRootPc,int nextRootPc = -1;                           ///< Root PC of next region; -1 = unknown.
+src/composing/analysis/region/harmonicrhythm.h,48,ChordTemporalExtensions,int,consecutiveBassStepwiseCount,int consecutiveBassStepwiseCount = 0;          ///< Consecutive stepwise bass moves ending here.
+src/composing/analysis/region/harmonicrhythm.h,49,ChordTemporalExtensions,"std::array<int, 3>",recentRootPcs,"std::array<int, 3> recentRootPcs = {-1,-1,-1}; ///< Root PCs of 3 most recent regions."
+src/composing/analysis/region/harmonicrhythm.h,50,ChordTemporalExtensions,double,regionMetricWeight,"double regionMetricWeight = 1.0;               ///< Metric weight [0,1]; 1 = downbeat."
+src/composing/analysis/region/harmonicrhythm.h,79,HarmonicRegion,int,startTick,int startTick = 0;                              ///< First tick of this region (raw tick integer)
+src/composing/analysis/region/harmonicrhythm.h,80,HarmonicRegion,int,endTick,int endTick = 0;                                ///< First tick of the next region (exclusive)
+src/composing/analysis/region/harmonicrhythm.h,81,HarmonicRegion,ChordAnalysisResult,chordResult,"ChordAnalysisResult chordResult;                ///< Root, quality, extensions, degree"
+src/composing/analysis/region/harmonicrhythm.h,82,HarmonicRegion,std::vector<ChordAnalysisResult>,alternatives,std::vector<ChordAnalysisResult> alternatives;  ///< Candidates [1..N-1] from the per-region analyzeChord (Phase 3c)
+src/composing/analysis/region/harmonicrhythm.h,83,HarmonicRegion,bool,hasAnalyzedChord,bool hasAnalyzedChord = true;                   ///< False when note-based chord analysis produced no candidate for this region
+src/composing/analysis/region/harmonicrhythm.h,84,HarmonicRegion,KeyModeAnalysisResult,keyModeResult,KeyModeAnalysisResult keyModeResult;            ///< Key and mode context for this region
+src/composing/analysis/region/harmonicrhythm.h,85,HarmonicRegion,std::vector<ChordAnalysisTone>,tones,std::vector<ChordAnalysisTone> tones;           ///< The sounding tones that produced the analysis
+src/composing/analysis/region/harmonicrhythm.h,86,HarmonicRegion,ChordTemporalExtensions,temporalExtensions,ChordTemporalExtensions temporalExtensions;     ///< Snapshot of the temporal context used to analyze this region (Phase 3c)
+src/composing/analysis/region/harmonicrhythm.h,118,HarmonicRegion,std::vector<KeyModeAnalysisResult>,keyAlternatives,std::vector<KeyModeAnalysisResult> keyAlternatives; ///< region-level ranked candidate keys (excl. the chosen)
+src/composing/analysis/region/harmonicrhythm.h,119,HarmonicRegion,double,keyConfidence,double keyConfidence = 0.0;                          ///< THE Layer-3 boundary confidence: chosen key's Class-M sequence margin (D-L3a; ≠ keyModeResult.normaliz
+src/composing/analysis/region/regionanalyzer.h,76,RegionAnalysisHooks,std::vector<HarmonicRegion>*,preMergeRegions,std::vector<HarmonicRegion>* preMergeRegions = nullptr;
+src/composing/analysis/region/regionanalyzer.h,77,RegionAnalysisHooks,std::vector<HarmonicRegion>*,postMergeRegions,std::vector<HarmonicRegion>* postMergeRegions = nullptr;
+src/composing/analysis/region/regionanalyzer.h,97,ReachBackOptions,bool,enabled,bool enabled = false;
+src/composing/analysis/region/regionanalyzer.h,101,ReachBackOptions,int,maxReachSteps,int maxReachSteps = 8;
+src/composing/analysis/region/regionanalyzer.h,107,ReachBackOptions,int,incrementTicks,int incrementTicks = 0;
+src/composing/analysis/region/regionanalyzer.h,118,ReachBackOptions,double,minOpeningConfidence,double minOpeningConfidence = 0.0;
+src/composing/analysis/region/regionanalyzer.h,125,AnalyzeRegionsOptions,HarmonicRegionGranularity,granularity,HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed;
+src/composing/analysis/region/regionanalyzer.h,129,AnalyzeRegionsOptions,double,onsetBoundaryThreshold,double onsetBoundaryThreshold = 0.25;
+src/composing/analysis/region/regionanalyzer.h,144,AnalyzeRegionsOptions,bool,excludeLookAheadOnDenseStart,bool excludeLookAheadOnDenseStart = false;
+src/composing/analysis/region/regionanalyzer.h,172,AnalyzeRegionsOptions,int,pass1MinDistinctPcsForCandidate,int pass1MinDistinctPcsForCandidate = -1;
+src/composing/analysis/region/regionanalyzer.h,175,AnalyzeRegionsOptions,RegionAnalysisHooks*,hooks,RegionAnalysisHooks* hooks = nullptr;
+src/composing/analysis/section/cadencekeyanchor.h,61,CadenceRegionInput,int,startTick,int startTick = 0;
+src/composing/analysis/section/cadencekeyanchor.h,62,CadenceRegionInput,int,endTick,int endTick = 0;
+src/composing/analysis/section/cadencekeyanchor.h,66,CadenceRegionInput,int,rootPc,int rootPc = -1;
+src/composing/analysis/section/cadencekeyanchor.h,69,CadenceRegionInput,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/section/cadencekeyanchor.h,74,CadenceRegionInput,uint16_t,pitchClassMask,uint16_t pitchClassMask = 0;
+src/composing/analysis/section/cadencekeyanchor.h,81,CadenceRegionInput,bool,endsPhrase,bool endsPhrase = false;
+src/composing/analysis/section/cadencekeyanchor.h,88,AuthenticCadence,int,dominantTick,int dominantTick = -1;   ///< startTick of the dominant region (a)
+src/composing/analysis/section/cadencekeyanchor.h,89,AuthenticCadence,int,tonicTick,int tonicTick = -1;      ///< startTick of the resolution region (b)
+src/composing/analysis/section/cadencekeyanchor.h,90,AuthenticCadence,int,tonicPc,int tonicPc = -1;        ///< root pc of b — the cadential tonic
+src/composing/analysis/section/cadencekeyanchor.h,91,AuthenticCadence,bool,minorMode,"bool minorMode = false;  ///< b's quality: true = minor triad, false = major triad"
+src/composing/analysis/section/cadencekeyanchor.h,98,AuthenticCadence,bool,endsPhrase,bool endsPhrase = false;
+src/composing/analysis/section/cadencekeyanchor.h,106,AuthenticCadence,bool,chromaticLeadingTone,bool chromaticLeadingTone = false;
+src/composing/analysis/section/cadencekeyanchor.h,111,CadenceKeyAnchor,bool,detected,bool detected = false;   ///< false when no authentic cadence was found in the span
+src/composing/analysis/section/cadencekeyanchor.h,112,CadenceKeyAnchor,int,tonicPc,int tonicPc = -1;        ///< winning cadential tonic pitch class (0–11)
+src/composing/analysis/section/cadencekeyanchor.h,113,CadenceKeyAnchor,bool,minorMode,"bool minorMode = false;  ///< winning mode (true = minor, false = major)"
+src/composing/analysis/section/cadencekeyanchor.h,114,CadenceKeyAnchor,double,confidence,"double confidence = 0.0; ///< finality-weighted vote share of the winning (tonic, mode) ∈ [0,1]"
+src/composing/analysis/section/cadencekeyanchor.h,115,CadenceKeyAnchor,int,cadenceCount,int cadenceCount = 0;    ///< number of authentic cadences detected in the span
+src/composing/analysis/section/jointkeydecision.h,94,JointKeyChordAlt,int,rootPc,int rootPc = -1;
+src/composing/analysis/section/jointkeydecision.h,95,JointKeyChordAlt,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/section/jointkeydecision.h,101,JointKeyLocalCandidate,int,tonicPc,int tonicPc = -1;
+src/composing/analysis/section/jointkeydecision.h,102,JointKeyLocalCandidate,bool,isMajor,bool isMajor = true;
+src/composing/analysis/section/jointkeydecision.h,103,JointKeyLocalCandidate,double,confidence,double confidence = 0.0;   ///< normalizedConfidence of the local candidate (0..1)
+src/composing/analysis/section/jointkeydecision.h,113,JointKeyRegionInput,int,startTick,int startTick = 0;
+src/composing/analysis/section/jointkeydecision.h,114,JointKeyRegionInput,int,endTick,int endTick = 0;
+src/composing/analysis/section/jointkeydecision.h,115,JointKeyRegionInput,int,rootPc,int rootPc = -1;                                ///< -1 ⇒ gap / sparse region
+src/composing/analysis/section/jointkeydecision.h,116,JointKeyRegionInput,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/section/jointkeydecision.h,117,JointKeyRegionInput,uint16_t,pitchClassMask,uint16_t pitchClassMask = 0;
+src/composing/analysis/section/jointkeydecision.h,118,JointKeyRegionInput,bool,endsPhrase,bool endsPhrase = false;
+src/composing/analysis/section/jointkeydecision.h,120,JointKeyRegionInput,int,bassPc,"int bassPc = -1;                                ///< lowest sounding pc, or -1"
+src/composing/analysis/section/jointkeydecision.h,123,JointKeyRegionInput,std::vector<JointKeyLocalCandidate>,localCandidates,std::vector<JointKeyLocalCandidate> localCandidates;
+src/composing/analysis/section/jointkeydecision.h,126,JointKeyRegionInput,std::vector<JointKeyChordAlt>,chordAlts,std::vector<JointKeyChordAlt> chordAlts;
+src/composing/analysis/section/jointkeydecision.h,130,JointKeyRegionInput,int,prodTonicPc,int prodTonicPc = -1;
+src/composing/analysis/section/jointkeydecision.h,131,JointKeyRegionInput,bool,prodIsMajor,bool prodIsMajor = true;
+src/composing/analysis/section/jointkeydecision.h,134,JointKeyRegionInput,bool,declaredModeKnown,bool declaredModeKnown = false;
+src/composing/analysis/section/jointkeydecision.h,135,JointKeyRegionInput,bool,declaredModeMinor,bool declaredModeMinor = false;
+src/composing/analysis/section/jointkeydecision.h,142,JointKeyWeights,double,scalePrior,double scalePrior        = 1.0;   ///< per-region collection-fit fraction
+src/composing/analysis/section/jointkeydecision.h,143,JointKeyWeights,double,localPrior,double localPrior        = 0.5;   ///< matches an analyzeKeyMode local candidate (× its confidence)
+src/composing/analysis/section/jointkeydecision.h,144,JointKeyWeights,double,cadenceAnchor,double cadenceAnchor     = 0.8;   ///< SOFT: matches the key-agnostic global anchor
+src/composing/analysis/section/jointkeydecision.h,145,JointKeyWeights,double,modulation,double modulation        = 1.0;   ///< SOFT: matches a committed modulation span covering the region
+src/composing/analysis/section/jointkeydecision.h,146,JointKeyWeights,double,bassIsRootTonic,double bassIsRootTonic   = 0.15;  ///< SOFT: region bass pc == hypothesis tonic
+src/composing/analysis/section/jointkeydecision.h,147,JointKeyWeights,double,declaredHint,double declaredHint      = 1.0;   ///< SOFT: signature-pair mode matches the declared mode (shipped 1.0)
+src/composing/analysis/section/jointkeydecision.h,148,JointKeyWeights,double,transitionPenalty,double transitionPenalty = 1.2;   ///< global key-path: cost of switching key vs the previous region
+src/composing/analysis/section/jointkeydecision.h,149,JointKeyWeights,double,couplingBonus,double couplingBonus     = 0.6;   ///< config B only: best chord candidate is diatonic to the key
+src/composing/analysis/section/jointkeydecision.h,157,JointKeyLatticeState,int,tonicPc,int  tonicPc = -1;
+src/composing/analysis/section/jointkeydecision.h,158,JointKeyLatticeState,bool,isMajor,bool isMajor = true;
+src/composing/analysis/section/jointkeydecision.h,164,JointKeyDecision,int,startTick,int startTick = 0;
+src/composing/analysis/section/jointkeydecision.h,165,JointKeyDecision,int,endTick,int endTick = 0;
+src/composing/analysis/section/jointkeydecision.h,167,JointKeyDecision,int,softTonicPc,int  softTonicPc  = -1;           ///< config A (soft-only) tonic pc
+src/composing/analysis/section/jointkeydecision.h,168,JointKeyDecision,bool,softIsMajor,bool softIsMajor  = true;         ///< config A mode
+src/composing/analysis/section/jointkeydecision.h,169,JointKeyDecision,int,jointTonicPc,int  jointTonicPc = -1;           ///< config B (soft + scoped-joint) tonic pc
+src/composing/analysis/section/jointkeydecision.h,170,JointKeyDecision,bool,jointIsMajor,bool jointIsMajor = true;         ///< config B mode
+src/composing/analysis/section/jointkeydecision.h,171,JointKeyDecision,int,prodTonicPc,int  prodTonicPc  = -1;           ///< ECHOED production reference
+src/composing/analysis/section/jointkeydecision.h,172,JointKeyDecision,bool,prodIsMajor,bool prodIsMajor  = true;
+src/composing/analysis/section/jointkeydecision.h,174,JointKeyDecision,bool,keyHardPinned,bool keyHardPinned = false;       ///< home-key region (no committed modulation span covers it) —
+src/composing/analysis/section/jointkeydecision.h,177,JointKeyDecision,bool,chordPinned,bool chordPinned   = false;       ///< complete-clear-vertical-chord (residual-probe PINNED class)
+src/composing/analysis/section/jointkeydecision.h,178,JointKeyDecision,bool,keyAmbiguous,bool keyAmbiguous  = false;       ///< covered by / adjacent to a committed modulation span
+src/composing/analysis/section/jointkeydecision.h,179,JointKeyDecision,bool,coupled,bool coupled       = false;       ///< chord-ambiguous AND key-ambiguous ⇒ scoped joint applies here
+src/composing/analysis/section/jointkeydecision.h,180,JointKeyDecision,bool,jointChanged,bool jointChanged  = false;       ///< config B decision differs from config A
+src/composing/analysis/section/jointkeydecision.h,182,JointKeyDecision,bool,anchorContributed,bool anchorContributed     = false;  ///< the config-A winner drew a nonzero cadence-anchor bonus
+src/composing/analysis/section/jointkeydecision.h,183,JointKeyDecision,bool,modulationContributed,bool modulationContributed = false;  ///< the config-A winner drew a nonzero modulation bonus
+src/composing/analysis/section/jointkeydecision.h,185,JointKeyDecision,int,homeMajorTonicPc,int homeMajorTonicPc = -1;        ///< notated-signature relative pair = the HARD home backbone
+src/composing/analysis/section/jointkeydecision.h,186,JointKeyDecision,int,homeMinorTonicPc,int homeMinorTonicPc = -1;        ///< (J-key-i strong-signature-backbone)
+src/composing/analysis/section/jointkeydecision.h,192,JointKeyResult,std::vector<JointKeyDecision>,decisions,std::vector<JointKeyDecision> decisions;
+src/composing/analysis/section/jointkeydecision.h,193,JointKeyResult,CadenceKeyAnchor,anchor,CadenceKeyAnchor anchor;
+src/composing/analysis/section/jointkeydecision.h,194,JointKeyResult,int,modulationSpanCount,int modulationSpanCount = 0;
+src/composing/analysis/section/jointkeydecision.h,195,JointKeyResult,int,coupledCount,int coupledCount = 0;
+src/composing/analysis/section/jointkeydecision.h,196,JointKeyResult,int,hardPinnedCount,int hardPinnedCount = 0;
+src/composing/analysis/section/jointkeydecision.h,202,JointKeyResult,std::vector<JointKeyLatticeState>,latticeStates,std::vector<JointKeyLatticeState> latticeStates;
+src/composing/analysis/section/localmodulationdetector.h,63,LocalKeySpan,int,startTick,int startTick = 0;          ///< startTick of the first region in the span
+src/composing/analysis/section/localmodulationdetector.h,64,LocalKeySpan,int,endTick,int endTick = 0;            ///< endTick of the last region in the span
+src/composing/analysis/section/localmodulationdetector.h,65,LocalKeySpan,int,tonicPc,int tonicPc = -1;           ///< local tonic pitch class (0–11)
+src/composing/analysis/section/localmodulationdetector.h,66,LocalKeySpan,bool,minorMode,"bool minorMode = false;     ///< local mode (true = minor, false = major)"
+src/composing/analysis/section/localmodulationdetector.h,70,LocalKeySpan,int,establishmentChords,int establishmentChords = 0;
+src/composing/analysis/section/localmodulationdetector.h,74,LocalKeySpan,int,confirmingCadenceCount,int confirmingCadenceCount = 0;
+src/composing/analysis/section/localmodulationdetector.h,77,LocalKeySpan,int,firstCadenceTonicTick,int firstCadenceTonicTick = -1;
+src/composing/analysis/section/localmodulationdetector.h,84,LocalKeySpan,bool,agreesWithAnchor,bool agreesWithAnchor = false;
+src/composing/analysis/section/localmodulationdetector.h,90,ModulationDetectionResult,std::vector<LocalKeySpan>,spans,std::vector<LocalKeySpan> spans;   ///< committed candidate local-key spans (ascending startTick)
+src/composing/analysis/section/localmodulationdetector.h,91,ModulationDetectionResult,CadenceKeyAnchor,anchor,CadenceKeyAnchor anchor;           ///< key-agnostic global (home) anchor
+src/composing/analysis/section/sectionanalyzer.h,99,CadenceMarker,int,tick,int tick;
+src/composing/analysis/section/sectionanalyzer.h,100,CadenceMarker,std::string,label,std::string label;
+src/composing/analysis/section/sectionanalyzer.h,105,PivotLabel,int,tick,int tick;
+src/composing/analysis/section/sectionanalyzer.h,106,PivotLabel,std::string,label,std::string label;
+src/composing/analysis/types/analysistypes.h,89,ParameterBound,double,min,double min;
+src/composing/analysis/types/analysistypes.h,90,ParameterBound,double,max,double max;
+src/composing/analysis/types/analysistypes.h,91,ParameterBound,bool,isManual,bool   isManual = false;
+src/composing/analysis/types/analysistypes.h,135,ChordAnalysisTone,int,pitch,int pitch = 0;      // MIDI playback pitch (ppitch — honours ottavas and transpositions)
+src/composing/analysis/types/analysistypes.h,136,ChordAnalysisTone,int,tpc,"int tpc = -1;       // MuseScore TPC (0–34, circle-of-fifths spelling). -1 = not provided."
+src/composing/analysis/types/analysistypes.h,137,ChordAnalysisTone,double,weight,"double weight = 1;  // Relative evidence weight (duration × metric weight, normalised to [0,1])"
+src/composing/analysis/types/analysistypes.h,138,ChordAnalysisTone,bool,isBass,bool isBass = false;
+src/composing/analysis/types/analysistypes.h,145,ChordAnalysisTone,int,durationInRegion,int durationInRegion = 0;
+src/composing/analysis/types/analysistypes.h,150,ChordAnalysisTone,int,distinctMetricPositions,int distinctMetricPositions = 0;
+src/composing/analysis/types/analysistypes.h,155,ChordAnalysisTone,int,simultaneousVoiceCount,int simultaneousVoiceCount = 0;
+src/composing/analysis/types/analysistypes.h,162,ChordAnalysisTone,bool,onsetAtRegionStart,bool onsetAtRegionStart = false;
+src/composing/analysis/types/analysistypes.h,177,ChordAnalyzerPreferences,double,bassNoteRootBonus,double bassNoteRootBonus = 0.70;
+src/composing/analysis/types/analysistypes.h,183,ChordAnalyzerPreferences,double,bassRootThirdOnlyMultiplier,double bassRootThirdOnlyMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,188,ChordAnalyzerPreferences,double,bassRootAloneMultiplier,double bassRootAloneMultiplier = 0.1;
+src/composing/analysis/types/analysistypes.h,191,ChordAnalyzerPreferences,double,diatonicRootBonus,double diatonicRootBonus = 0.30;
+src/composing/analysis/types/analysistypes.h,196,ChordAnalyzerPreferences,double,tpcConsistencyBonusPerTone,double tpcConsistencyBonusPerTone = 0.20;
+src/composing/analysis/types/analysistypes.h,200,ChordAnalyzerPreferences,double,rootContinuityBonus,double rootContinuityBonus = 0.40;
+src/composing/analysis/types/analysistypes.h,207,ChordAnalyzerPreferences,double,resolutionBonus,double resolutionBonus = 0.35;
+src/composing/analysis/types/analysistypes.h,226,ChordAnalyzerPreferences,double,stepwiseBassInversionBonus,double stepwiseBassInversionBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,235,ChordAnalyzerPreferences,double,stepwiseBassLookaheadBonus,double stepwiseBassLookaheadBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,243,ChordAnalyzerPreferences,double,completeTriadInversionBonus,double completeTriadInversionBonus = 0.45;
+src/composing/analysis/types/analysistypes.h,252,ChordAnalyzerPreferences,double,sameRootInversionBonus,double sameRootInversionBonus = 0.4;
+src/composing/analysis/types/analysistypes.h,268,ChordAnalyzerPreferences,double,maxTotalInversionContextBonus,double maxTotalInversionContextBonus = 2.0;
+src/composing/analysis/types/analysistypes.h,293,ChordAnalyzerPreferences,double,inversionSuspicionMargin,double inversionSuspicionMargin = 0.70;
+src/composing/analysis/types/analysistypes.h,298,ChordAnalyzerPreferences,double,inversionBonusReduction,double inversionBonusReduction = 0.0;
+src/composing/analysis/types/analysistypes.h,308,ChordAnalyzerPreferences,bool,preferMinorOverMajorAdd6,bool preferMinorOverMajorAdd6 = false;
+src/composing/analysis/types/analysistypes.h,319,ChordAnalyzerPreferences,double,harmonicBoundaryJaccardThreshold,double harmonicBoundaryJaccardThreshold = 0.6;
+src/composing/analysis/types/analysistypes.h,325,ChordAnalyzerPreferences,double,pedalTailWeightMultiplier,double pedalTailWeightMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,332,ChordAnalyzerPreferences,double,bassPassingToneMinWeightFraction,double bassPassingToneMinWeightFraction = 0.05;
+src/composing/analysis/types/analysistypes.h,346,ChordAnalyzerPreferences,double,extensionThreshold,double extensionThreshold = 0.20;
+src/composing/analysis/types/analysistypes.h,355,ChordAnalyzerPreferences,int,minDistinctPcsForCandidate,int minDistinctPcsForCandidate = 3;
+src/composing/analysis/types/analysistypes.h,367,ChordAnalyzerPreferences,function::ScoringPhase,scoringPhase,function::ScoringPhase scoringPhase = function::ScoringPhase::Final;
+src/composing/analysis/types/analysistypes.h,375,ChordAnalyzerPreferences,DecodeQualityLevel,decodeQualityLevel,DecodeQualityLevel decodeQualityLevel = DecodeQualityLevel::FastBeam1;
+src/composing/analysis/types/analysistypes.h,386,ChordAnalyzerPreferences,double,pedalConfidenceThreshold,double pedalConfidenceThreshold = 0.65;
+src/composing/analysis/types/analysistypes.h,394,ChordAnalyzerPreferences,bool,useExistingChordSymbols,bool useExistingChordSymbols = false;       // TODO: implement
+src/composing/analysis/types/analysistypes.h,397,ChordAnalyzerPreferences,bool,useRomanNumeralAnnotations,bool useRomanNumeralAnnotations = false;    // TODO: implement
+src/composing/analysis/types/analysistypes.h,400,ChordAnalyzerPreferences,bool,useNashvilleAnnotations,bool useNashvilleAnnotations = false;       // TODO: implement
+src/composing/analysis/types/analysistypes.h,472,ChordTemporalContext,int,previousRootPc,int previousRootPc = -1;
+src/composing/analysis/types/analysistypes.h,475,ChordTemporalContext,ChordQuality,previousQuality,ChordQuality previousQuality = ChordQuality::Unknown;
+src/composing/analysis/types/analysistypes.h,480,ChordTemporalContext,int,previousBassPc,int previousBassPc = -1;
+src/composing/analysis/types/analysistypes.h,487,ChordTemporalContext,bool,bassIsStepwiseFromPrevious,bool bassIsStepwiseFromPrevious = false;
+src/composing/analysis/types/analysistypes.h,491,ChordTemporalContext,bool,bassIsStepwiseToNext,bool bassIsStepwiseToNext = false;
+src/composing/analysis/types/analysistypes.h,497,ChordTemporalContext,int,nextBassPc,int nextBassPc = -1;
+src/composing/analysis/types/analysistypes.h,501,ChordTemporalContext,int,nextRootPc,int nextRootPc = -1;
+src/composing/analysis/types/analysistypes.h,507,ChordTemporalContext,int,consecutiveBassStepwiseCount,int consecutiveBassStepwiseCount = 0;
+src/composing/analysis/types/analysistypes.h,512,ChordTemporalContext,"std::array<int, 3>",recentRootPcs,"std::array<int, 3> recentRootPcs = {-1, -1, -1};"
+src/composing/analysis/types/analysistypes.h,517,ChordTemporalContext,double,regionMetricWeight,double regionMetricWeight = 1.0;
+src/composing/analysis/types/analysistypes.h,587,KeyModeAnalyzerPreferences,double,noteWeightCap,double noteWeightCap = 3.0;          // [empirical]
+src/composing/analysis/types/analysistypes.h,591,KeyModeAnalyzerPreferences,double,bassMultiplier,"double bassMultiplier = 2.0;         // [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,600,KeyModeAnalyzerPreferences,double,scaleScoreInBoth,double scaleScoreInBoth    =  1.00;  ///< Note is in candidate scale AND key-sig scale [theory-grounded ordering]
+src/composing/analysis/types/analysistypes.h,601,KeyModeAnalyzerPreferences,double,scaleScoreInCandidateOnly,double scaleScoreInCandidateOnly = 0.25;  ///< In candidate scale but not key-sig scale [empirical]
+src/composing/analysis/types/analysistypes.h,602,KeyModeAnalyzerPreferences,double,scaleScoreInKeySigOnly,double scaleScoreInKeySigOnly    = -0.20; ///< In key-sig scale but not candidate (chromatic neighbour) [empirical]
+src/composing/analysis/types/analysistypes.h,603,KeyModeAnalyzerPreferences,double,scaleScoreInNeither,double scaleScoreInNeither       = -0.05; ///< Outside both scales [empirical]
+src/composing/analysis/types/analysistypes.h,611,KeyModeAnalyzerPreferences,double,tonicWeight,"double tonicWeight       = 1.60;  ///< Tonic note present [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,612,KeyModeAnalyzerPreferences,double,thirdWeight,"double thirdWeight       = 0.70;  ///< Third (M3 for major, m3 for minor) [empirical]"
+src/composing/analysis/types/analysistypes.h,613,KeyModeAnalyzerPreferences,double,fifthWeight,double fifthWeight       = 0.50;  ///< Perfect fifth [empirical]
+src/composing/analysis/types/analysistypes.h,614,KeyModeAnalyzerPreferences,double,leadingToneWeight,"double leadingToneWeight = 0.40;  ///< Leading tone (tonicPc + 11, used for both modes) [empirical]"
+src/composing/analysis/types/analysistypes.h,616,KeyModeAnalyzerPreferences,double,completeTriadBonus,double completeTriadBonus  =  2.50;  ///< All three triad notes present simultaneously [empirical]
+src/composing/analysis/types/analysistypes.h,617,KeyModeAnalyzerPreferences,double,missingTonicPenalty,double missingTonicPenalty = -2.50;  ///< Tonic entirely absent [empirical]
+src/composing/analysis/types/analysistypes.h,619,KeyModeAnalyzerPreferences,double,extraScaleFactor,double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [empirical]
+src/composing/analysis/types/analysistypes.h,620,KeyModeAnalyzerPreferences,double,extraScaleCap,double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]
+src/composing/analysis/types/analysistypes.h,629,KeyModeAnalyzerPreferences,double,characteristicPitchBoost,double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present [empirical]
+src/composing/analysis/types/analysistypes.h,630,KeyModeAnalyzerPreferences,double,characteristicPitchPenalty,double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is absent [empirical]
+src/composing/analysis/types/analysistypes.h,640,KeyModeAnalyzerPreferences,double,trueLeadingToneBoost,double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
+src/composing/analysis/types/analysistypes.h,652,KeyModeAnalyzerPreferences,double,modePriorIonian,double modePriorIonian          =  1.20;  ///< [empirical — was tier1+0.2]
+src/composing/analysis/types/analysistypes.h,653,KeyModeAnalyzerPreferences,double,modePriorDorian,double modePriorDorian          = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,654,KeyModeAnalyzerPreferences,double,modePriorPhrygian,double modePriorPhrygian        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,655,KeyModeAnalyzerPreferences,double,modePriorLydian,double modePriorLydian          = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,656,KeyModeAnalyzerPreferences,double,modePriorMixolydian,double modePriorMixolydian      = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,657,KeyModeAnalyzerPreferences,double,modePriorAeolian,double modePriorAeolian         =  1.00;  ///< [empirical — was tier1]
+src/composing/analysis/types/analysistypes.h,658,KeyModeAnalyzerPreferences,double,modePriorLocrian,double modePriorLocrian         = -3.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,661,KeyModeAnalyzerPreferences,double,modePriorMelodicMinor,double modePriorMelodicMinor    = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,662,KeyModeAnalyzerPreferences,double,modePriorDorianB2,double modePriorDorianB2        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,663,KeyModeAnalyzerPreferences,double,modePriorLydianAugmented,double modePriorLydianAugmented  = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,664,KeyModeAnalyzerPreferences,double,modePriorLydianDominant,double modePriorLydianDominant   = -1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,665,KeyModeAnalyzerPreferences,double,modePriorMixolydianB6,double modePriorMixolydianB6    = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,666,KeyModeAnalyzerPreferences,double,modePriorAeolianB5,double modePriorAeolianB5       = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,667,KeyModeAnalyzerPreferences,double,modePriorAltered,double modePriorAltered         = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,670,KeyModeAnalyzerPreferences,double,modePriorHarmonicMinor,double modePriorHarmonicMinor   = -0.30;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,671,KeyModeAnalyzerPreferences,double,modePriorLocrianSharp6,double modePriorLocrianSharp6   = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,672,KeyModeAnalyzerPreferences,double,modePriorIonianSharp5,double modePriorIonianSharp5    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,673,KeyModeAnalyzerPreferences,double,modePriorDorianSharp4,double modePriorDorianSharp4    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,674,KeyModeAnalyzerPreferences,double,modePriorPhrygianDominant,double modePriorPhrygianDominant = -0.80;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,675,KeyModeAnalyzerPreferences,double,modePriorLydianSharp2,double modePriorLydianSharp2    = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,676,KeyModeAnalyzerPreferences,double,modePriorAlteredDomBB7,double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,690,KeyModeAnalyzerPreferences,double,tonalCenterTonicWeight,double tonalCenterTonicWeight  = 2.20;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,691,KeyModeAnalyzerPreferences,double,tonalCenterThirdWeight,double tonalCenterThirdWeight  = 1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,692,KeyModeAnalyzerPreferences,double,tonalCenterFifthWeight,double tonalCenterFifthWeight  = 0.70;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,693,KeyModeAnalyzerPreferences,double,tonalCenterLeadingTone,double tonalCenterLeadingTone  = 0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,694,KeyModeAnalyzerPreferences,double,tonalCenterTriadBonus,double tonalCenterTriadBonus   = 2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,695,KeyModeAnalyzerPreferences,double,tonalCenterDeltaThreshold,double tonalCenterDeltaThreshold = 0.25; ///< Min delta to choose winner outright [empirical]
+src/composing/analysis/types/analysistypes.h,704,KeyModeAnalyzerPreferences,double,keySignatureDistancePenalty,double keySignatureDistancePenalty = 0.60;  ///< Per circle-of-fifths step of distance [empirical]
+src/composing/analysis/types/analysistypes.h,714,KeyModeAnalyzerPreferences,double,disambiguationTriadBonus,double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empirical]
+src/composing/analysis/types/analysistypes.h,715,KeyModeAnalyzerPreferences,double,disambiguationTriadCost,double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
+src/composing/analysis/types/analysistypes.h,716,KeyModeAnalyzerPreferences,double,disambiguationTonicBonus,double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
+src/composing/analysis/types/analysistypes.h,733,KeyModeAnalyzerPreferences,double,declaredModePenalty,"double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates [empirical — Stage-5 fits]"
+src/composing/analysis/types/analysistypes.h,741,KeyModeAnalyzerPreferences,bool,ignoreDeclaredMode,bool ignoreDeclaredMode = false;  ///< Force mode-absent resolution (measurement floor)
+src/composing/analysis/types/analysistypes.h,758,KeyModeAnalyzerPreferences,double,confidenceSigmoidMidpoint,double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
+src/composing/analysis/types/analysistypes.h,759,KeyModeAnalyzerPreferences,double,confidenceSigmoidSteepness,double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+src/composing/analysis/types/analysistypes.h,770,KeyModeAnalyzerPreferences,double,dynamicLookaheadConfidenceThreshold,double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence ≥ this [empirical]
+src/composing/analysis/types/analysistypes.h,771,KeyModeAnalyzerPreferences,int,dynamicLookaheadStepBeats,int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [empirical]
+src/composing/analysis/types/analysistypes.h,772,KeyModeAnalyzerPreferences,int,dynamicLookaheadMaxBeats,int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]
+src/composing/analysis/types/analysistypes.h,782,KeyModeAnalyzerPreferences,double,hysteresisMargin,double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sigs differ [empirical]
+src/composing/analysis/types/analysistypes.h,788,KeyModeAnalyzerPreferences,double,relativeKeyHysteresisMargin,"double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]"
+src/composing/analysis/types/analysistypes.h,797,KeyModeAnalyzerPreferences,double,beatWeightDownbeat,double beatWeightDownbeat            = 1.0;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,798,KeyModeAnalyzerPreferences,double,beatWeightCompoundStressed,double beatWeightCompoundStressed    = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,799,KeyModeAnalyzerPreferences,double,beatWeightSimpleStressed,double beatWeightSimpleStressed      = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,800,KeyModeAnalyzerPreferences,double,beatWeightCompoundUnstressed,double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,801,KeyModeAnalyzerPreferences,double,beatWeightSimpleUnstressed,double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,802,KeyModeAnalyzerPreferences,double,beatWeightCompoundSubbeat,double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,803,KeyModeAnalyzerPreferences,double,beatWeightSubbeat,double beatWeightSubbeat             = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,912,PitchContext,int,pitch,int pitch = 0;               ///< MIDI pitch number
+src/composing/analysis/types/analysistypes.h,913,PitchContext,double,durationWeight,double durationWeight = 1.0; ///< Duration in quarter-note units; larger = more influence
+src/composing/analysis/types/analysistypes.h,914,PitchContext,double,beatWeight,"double beatWeight = 1.0;     ///< Metric position: 1.0=downbeat, ~0.2=offbeat"
+src/composing/analysis/types/analysistypes.h,915,PitchContext,bool,isBass,bool isBass = false;         ///< True if lowest sounding pitch at this time instant

@@ -1,0 +1,958 @@
+file,line,value,func,context
+src/composing/analysis/key/keymodeanalyzer.cpp,39,7,<file-scope>,"std::array<int, 7> intervals;  ///< Semitones from tonic for each scale degree"
+src/composing/analysis/key/keymodeanalyzer.cpp,43,21,<file-scope>,"constexpr std::array<ModeDef, 21> MODES = {{"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,2,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,4,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,5,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,7,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,9,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,45,11,<file-scope>,"{ ""Ionian"",              { 0, 2, 4, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,2,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,3,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,5,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,7,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,9,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,46,10,<file-scope>,"{ ""Dorian"",              { 0, 2, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,47,3,<file-scope>,"{ ""Phrygian"",            { 0, 1, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,47,5,<file-scope>,"{ ""Phrygian"",            { 0, 1, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,47,7,<file-scope>,"{ ""Phrygian"",            { 0, 1, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,47,8,<file-scope>,"{ ""Phrygian"",            { 0, 1, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,47,10,<file-scope>,"{ ""Phrygian"",            { 0, 1, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,2,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,4,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,6,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,7,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,9,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,48,11,<file-scope>,"{ ""Lydian"",              { 0, 2, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,2,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,4,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,5,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,7,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,9,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,49,10,<file-scope>,"{ ""Mixolydian"",          { 0, 2, 4, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,2,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,3,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,5,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,7,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,8,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,50,10,<file-scope>,"{ ""Aeolian"",             { 0, 2, 3, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,51,3,<file-scope>,"{ ""Locrian"",             { 0, 1, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,51,5,<file-scope>,"{ ""Locrian"",             { 0, 1, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,51,6,<file-scope>,"{ ""Locrian"",             { 0, 1, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,51,8,<file-scope>,"{ ""Locrian"",             { 0, 1, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,51,10,<file-scope>,"{ ""Locrian"",             { 0, 1, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,2,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,3,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,5,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,7,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,9,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,53,11,<file-scope>,"{ ""Melodic Minor"",       { 0, 2, 3, 5, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,54,3,<file-scope>,"{ ""Dorian b2"",           { 0, 1, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,54,5,<file-scope>,"{ ""Dorian b2"",           { 0, 1, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,54,7,<file-scope>,"{ ""Dorian b2"",           { 0, 1, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,54,9,<file-scope>,"{ ""Dorian b2"",           { 0, 1, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,54,10,<file-scope>,"{ ""Dorian b2"",           { 0, 1, 3, 5, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,2,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,4,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,6,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,8,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,9,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,55,11,<file-scope>,"{ ""Lydian Augmented"",    { 0, 2, 4, 6, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,2,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,4,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,6,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,7,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,9,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,56,10,<file-scope>,"{ ""Lydian Dominant"",     { 0, 2, 4, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,2,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,4,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,5,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,7,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,8,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,57,10,<file-scope>,"{ ""Mixolydian b6"",       { 0, 2, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,2,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,3,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,5,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,6,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,8,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,58,10,<file-scope>,"{ ""Aeolian b5"",          { 0, 2, 3, 5, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,59,3,<file-scope>,"{ ""Altered"",             { 0, 1, 3, 4, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,59,4,<file-scope>,"{ ""Altered"",             { 0, 1, 3, 4, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,59,6,<file-scope>,"{ ""Altered"",             { 0, 1, 3, 4, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,59,8,<file-scope>,"{ ""Altered"",             { 0, 1, 3, 4, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,59,10,<file-scope>,"{ ""Altered"",             { 0, 1, 3, 4, 6, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,2,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,3,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,5,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,7,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,8,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,61,11,<file-scope>,"{ ""Harmonic Minor"",      { 0, 2, 3, 5, 7, 8, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,62,3,<file-scope>,"{ ""Locrian #6"",          { 0, 1, 3, 5, 6, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,62,5,<file-scope>,"{ ""Locrian #6"",          { 0, 1, 3, 5, 6, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,62,6,<file-scope>,"{ ""Locrian #6"",          { 0, 1, 3, 5, 6, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,62,9,<file-scope>,"{ ""Locrian #6"",          { 0, 1, 3, 5, 6, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,62,10,<file-scope>,"{ ""Locrian #6"",          { 0, 1, 3, 5, 6, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,2,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,4,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,5,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,8,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,9,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,63,11,<file-scope>,"{ ""Ionian #5"",           { 0, 2, 4, 5, 8, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,2,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,3,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,6,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,7,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,9,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,64,10,<file-scope>,"{ ""Dorian #4"",           { 0, 2, 3, 6, 7, 9, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,65,4,<file-scope>,"{ ""Phrygian Dominant"",   { 0, 1, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,65,5,<file-scope>,"{ ""Phrygian Dominant"",   { 0, 1, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,65,7,<file-scope>,"{ ""Phrygian Dominant"",   { 0, 1, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,65,8,<file-scope>,"{ ""Phrygian Dominant"",   { 0, 1, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,65,10,<file-scope>,"{ ""Phrygian Dominant"",   { 0, 1, 4, 5, 7, 8, 10 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,3,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,4,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,6,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,7,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,9,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,66,11,<file-scope>,"{ ""Lydian #2"",           { 0, 3, 4, 6, 7, 9, 11 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,67,3,<file-scope>,"{ ""Altered Dom bb7"",     { 0, 1, 3, 4, 6, 8,  9 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,67,4,<file-scope>,"{ ""Altered Dom bb7"",     { 0, 1, 3, 4, 6, 8,  9 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,67,6,<file-scope>,"{ ""Altered Dom bb7"",     { 0, 1, 3, 4, 6, 8,  9 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,67,8,<file-scope>,"{ ""Altered Dom bb7"",     { 0, 1, 3, 4, 6, 8,  9 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,67,9,<file-scope>,"{ ""Altered Dom bb7"",     { 0, 1, 3, 4, 6, 8,  9 } },"
+src/composing/analysis/key/keymodeanalyzer.cpp,71,21,<file-scope>,"constexpr std::array<size_t, 21> ACTIVE_MODE_INDICES = {"
+src/composing/analysis/key/keymodeanalyzer.cpp,72,2,<file-scope>,"0, 1, 2, 3, 4, 5, 6,      // diatonic"
+src/composing/analysis/key/keymodeanalyzer.cpp,72,3,<file-scope>,"0, 1, 2, 3, 4, 5, 6,      // diatonic"
+src/composing/analysis/key/keymodeanalyzer.cpp,72,4,<file-scope>,"0, 1, 2, 3, 4, 5, 6,      // diatonic"
+src/composing/analysis/key/keymodeanalyzer.cpp,72,5,<file-scope>,"0, 1, 2, 3, 4, 5, 6,      // diatonic"
+src/composing/analysis/key/keymodeanalyzer.cpp,72,6,<file-scope>,"0, 1, 2, 3, 4, 5, 6,      // diatonic"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,7,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,8,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,9,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,10,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,11,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,12,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,73,13,<file-scope>,"7, 8, 9, 10, 11, 12, 13,  // melodic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,14,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,15,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,16,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,17,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,18,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,19,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,74,20,<file-scope>,"14, 15, 16, 17, 18, 19, 20 // harmonic minor"
+src/composing/analysis/key/keymodeanalyzer.cpp,91,21,<file-scope>,"constexpr std::array<CharacteristicCondition, 21> CHARACTERISTIC = {{"
+src/composing/analysis/key/keymodeanalyzer.cpp,93,11,<file-scope>,"{ 11, -1, false },  // Ionian:      maj7 — distinguishes from Mixolydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,94,9,<file-scope>,"{  9, -1, false },  // Dorian:      maj6 — distinguishes from Aeolian"
+src/composing/analysis/key/keymodeanalyzer.cpp,96,6,<file-scope>,"{  6, -1, false },  // Lydian:      aug4 — distinguishes from Ionian"
+src/composing/analysis/key/keymodeanalyzer.cpp,97,10,<file-scope>,"{ 10, -1, false },  // Mixolydian:  min7 — distinguishes from Ionian"
+src/composing/analysis/key/keymodeanalyzer.cpp,98,8,<file-scope>,"{  8, -1, false },  // Aeolian:     min6 — distinguishes from Dorian"
+src/composing/analysis/key/keymodeanalyzer.cpp,99,6,<file-scope>,"{  6, -1, false },  // Locrian:     dim5 — distinguishes from Phrygian"
+src/composing/analysis/key/keymodeanalyzer.cpp,101,11,<file-scope>,"{ 11,  9, true  },  // MelodicMinor:     maj7 AND maj6 (vs HarmonicMinor which has min6)"
+src/composing/analysis/key/keymodeanalyzer.cpp,101,9,<file-scope>,"{ 11,  9, true  },  // MelodicMinor:     maj7 AND maj6 (vs HarmonicMinor which has min6)"
+src/composing/analysis/key/keymodeanalyzer.cpp,103,8,<file-scope>,"{  8,  6, true  },  // LydianAugmented:  aug5 AND aug4 (vs IonianSharp5 which has P4)"
+src/composing/analysis/key/keymodeanalyzer.cpp,103,6,<file-scope>,"{  8,  6, true  },  // LydianAugmented:  aug5 AND aug4 (vs IonianSharp5 which has P4)"
+src/composing/analysis/key/keymodeanalyzer.cpp,104,6,<file-scope>,"{  6, 10, true  },  // LydianDominant:   aug4 AND min7 — unambiguous combination"
+src/composing/analysis/key/keymodeanalyzer.cpp,104,10,<file-scope>,"{  6, 10, true  },  // LydianDominant:   aug4 AND min7 — unambiguous combination"
+src/composing/analysis/key/keymodeanalyzer.cpp,105,8,<file-scope>,"{  8,  4, true  },  // MixolydianB6:     min6 AND maj3 (distinguishes from Aeolian)"
+src/composing/analysis/key/keymodeanalyzer.cpp,105,4,<file-scope>,"{  8,  4, true  },  // MixolydianB6:     min6 AND maj3 (distinguishes from Aeolian)"
+src/composing/analysis/key/keymodeanalyzer.cpp,106,6,<file-scope>,"{  6,  2, true  },  // AeolianB5:        dim5 AND maj2 (Locrian has min2, not maj2)"
+src/composing/analysis/key/keymodeanalyzer.cpp,106,2,<file-scope>,"{  6,  2, true  },  // AeolianB5:        dim5 AND maj2 (Locrian has min2, not maj2)"
+src/composing/analysis/key/keymodeanalyzer.cpp,107,10,<file-scope>,"{  1, 10, true  },  // Altered:          min2 AND min7 (vs AlteredDomBB7 which has dim7=9)"
+src/composing/analysis/key/keymodeanalyzer.cpp,109,11,<file-scope>,"{ 11,  8, true  },  // HarmonicMinor:    maj7 AND min6 — unique combination"
+src/composing/analysis/key/keymodeanalyzer.cpp,109,8,<file-scope>,"{ 11,  8, true  },  // HarmonicMinor:    maj7 AND min6 — unique combination"
+src/composing/analysis/key/keymodeanalyzer.cpp,110,9,<file-scope>,"{  9, -1, false },  // LocrianSharp6:    maj6 alongside Locrian context"
+src/composing/analysis/key/keymodeanalyzer.cpp,111,8,<file-scope>,"{  8, -1, false },  // IonianSharp5:     aug5 (Lydian Augmented also has aug5+aug4)"
+src/composing/analysis/key/keymodeanalyzer.cpp,112,6,<file-scope>,"{  6,  3, true  },  // DorianSharp4:     aug4 AND min3 (vs LydianDominant which has maj3)"
+src/composing/analysis/key/keymodeanalyzer.cpp,112,3,<file-scope>,"{  6,  3, true  },  // DorianSharp4:     aug4 AND min3 (vs LydianDominant which has maj3)"
+src/composing/analysis/key/keymodeanalyzer.cpp,113,4,<file-scope>,"{  4,  1, true  },  // PhrygianDominant: maj3 AND min2 — no diatonic mode has both"
+src/composing/analysis/key/keymodeanalyzer.cpp,114,3,<file-scope>,"{  3,  6, true  },  // LydianSharp2:     aug2 AND aug4"
+src/composing/analysis/key/keymodeanalyzer.cpp,114,6,<file-scope>,"{  3,  6, true  },  // LydianSharp2:     aug2 AND aug4"
+src/composing/analysis/key/keymodeanalyzer.cpp,115,9,<file-scope>,"{  1,  9, true  },  // AlteredDomBB7:    min2 AND dim7=9 (vs Altered which has min7=10)"
+src/composing/analysis/key/keymodeanalyzer.cpp,130,21,ionianTonicPcForMode,"constexpr std::array<int, 21> IONIAN_OFFSETS = {"
+src/composing/analysis/key/keymodeanalyzer.cpp,133,2,ionianTonicPcForMode,"-2,  // Dorian"
+src/composing/analysis/key/keymodeanalyzer.cpp,134,4,ionianTonicPcForMode,"-4,  // Phrygian"
+src/composing/analysis/key/keymodeanalyzer.cpp,135,5,ionianTonicPcForMode,"-5,  // Lydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,136,7,ionianTonicPcForMode,"-7,  // Mixolydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,137,3,ionianTonicPcForMode,"3,  // Aeolian   (+3 = -9 mod 12)"
+src/composing/analysis/key/keymodeanalyzer.cpp,140,2,ionianTonicPcForMode,"-2,  // MelodicMinor  ~ Dorian"
+src/composing/analysis/key/keymodeanalyzer.cpp,141,4,ionianTonicPcForMode,"-4,  // DorianB2      ~ Phrygian"
+src/composing/analysis/key/keymodeanalyzer.cpp,142,5,ionianTonicPcForMode,"-5,  // LydianAug     ~ Lydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,143,7,ionianTonicPcForMode,"-7,  // LydianDom     ~ Mixolydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,144,3,ionianTonicPcForMode,"3,  // MixolydianB6  ~ Aeolian"
+src/composing/analysis/key/keymodeanalyzer.cpp,148,3,ionianTonicPcForMode,"3,  // HarmonicMinor  ~ Aeolian"
+src/composing/analysis/key/keymodeanalyzer.cpp,151,2,ionianTonicPcForMode,"-2,  // DorianSharp4   ~ Dorian"
+src/composing/analysis/key/keymodeanalyzer.cpp,152,4,ionianTonicPcForMode,"-4,  // PhrygianDom    ~ Phrygian"
+src/composing/analysis/key/keymodeanalyzer.cpp,153,5,ionianTonicPcForMode,"-5,  // LydianSharp2   ~ Lydian"
+src/composing/analysis/key/keymodeanalyzer.cpp,154,8,ionianTonicPcForMode,"-8,  // AlteredDomBB7  (tonic is 8 semitones below parent Ionian = aug5 above)"
+src/composing/analysis/key/keymodeanalyzer.cpp,160,12,ionianTonicPcForMode,return (pc % 12 + 12) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,160,12,ionianTonicPcForMode,return (pc % 12 + 12) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,160,12,ionianTonicPcForMode,return (pc % 12 + 12) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,168,2,possibleIonianFifthsForPc,"std::array<int, 2> possibleIonianFifthsForPc(int ionianPc)"
+src/composing/analysis/key/keymodeanalyzer.cpp,172,7,possibleIonianFifthsForPc,"case 1:  return {  7, -5 };  // C# / Db"
+src/composing/analysis/key/keymodeanalyzer.cpp,172,5,possibleIonianFifthsForPc,"case 1:  return {  7, -5 };  // C# / Db"
+src/composing/analysis/key/keymodeanalyzer.cpp,173,2,possibleIonianFifthsForPc,"case 2:  return {  2,  2 };  // D"
+src/composing/analysis/key/keymodeanalyzer.cpp,173,2,possibleIonianFifthsForPc,"case 2:  return {  2,  2 };  // D"
+src/composing/analysis/key/keymodeanalyzer.cpp,173,2,possibleIonianFifthsForPc,"case 2:  return {  2,  2 };  // D"
+src/composing/analysis/key/keymodeanalyzer.cpp,174,3,possibleIonianFifthsForPc,"case 3:  return { -3, -3 };  // Eb"
+src/composing/analysis/key/keymodeanalyzer.cpp,174,3,possibleIonianFifthsForPc,"case 3:  return { -3, -3 };  // Eb"
+src/composing/analysis/key/keymodeanalyzer.cpp,174,3,possibleIonianFifthsForPc,"case 3:  return { -3, -3 };  // Eb"
+src/composing/analysis/key/keymodeanalyzer.cpp,175,4,possibleIonianFifthsForPc,"case 4:  return {  4,  4 };  // E"
+src/composing/analysis/key/keymodeanalyzer.cpp,175,4,possibleIonianFifthsForPc,"case 4:  return {  4,  4 };  // E"
+src/composing/analysis/key/keymodeanalyzer.cpp,175,4,possibleIonianFifthsForPc,"case 4:  return {  4,  4 };  // E"
+src/composing/analysis/key/keymodeanalyzer.cpp,176,5,possibleIonianFifthsForPc,"case 5:  return { -1, -1 };  // F"
+src/composing/analysis/key/keymodeanalyzer.cpp,177,6,possibleIonianFifthsForPc,"case 6:  return {  6, -6 };  // F# / Gb"
+src/composing/analysis/key/keymodeanalyzer.cpp,177,6,possibleIonianFifthsForPc,"case 6:  return {  6, -6 };  // F# / Gb"
+src/composing/analysis/key/keymodeanalyzer.cpp,177,6,possibleIonianFifthsForPc,"case 6:  return {  6, -6 };  // F# / Gb"
+src/composing/analysis/key/keymodeanalyzer.cpp,178,7,possibleIonianFifthsForPc,"case 7:  return {  1,  1 };  // G"
+src/composing/analysis/key/keymodeanalyzer.cpp,179,8,possibleIonianFifthsForPc,"case 8:  return { -4, -4 };  // Ab"
+src/composing/analysis/key/keymodeanalyzer.cpp,179,4,possibleIonianFifthsForPc,"case 8:  return { -4, -4 };  // Ab"
+src/composing/analysis/key/keymodeanalyzer.cpp,179,4,possibleIonianFifthsForPc,"case 8:  return { -4, -4 };  // Ab"
+src/composing/analysis/key/keymodeanalyzer.cpp,180,9,possibleIonianFifthsForPc,"case 9:  return {  3,  3 };  // A"
+src/composing/analysis/key/keymodeanalyzer.cpp,180,3,possibleIonianFifthsForPc,"case 9:  return {  3,  3 };  // A"
+src/composing/analysis/key/keymodeanalyzer.cpp,180,3,possibleIonianFifthsForPc,"case 9:  return {  3,  3 };  // A"
+src/composing/analysis/key/keymodeanalyzer.cpp,181,10,possibleIonianFifthsForPc,"case 10: return { -2, -2 };  // Bb"
+src/composing/analysis/key/keymodeanalyzer.cpp,181,2,possibleIonianFifthsForPc,"case 10: return { -2, -2 };  // Bb"
+src/composing/analysis/key/keymodeanalyzer.cpp,181,2,possibleIonianFifthsForPc,"case 10: return { -2, -2 };  // Bb"
+src/composing/analysis/key/keymodeanalyzer.cpp,182,11,possibleIonianFifthsForPc,"case 11: return {  5, -7 };  // B / Cb"
+src/composing/analysis/key/keymodeanalyzer.cpp,182,5,possibleIonianFifthsForPc,"case 11: return {  5, -7 };  // B / Cb"
+src/composing/analysis/key/keymodeanalyzer.cpp,182,7,possibleIonianFifthsForPc,"case 11: return {  5, -7 };  // B / Cb"
+src/composing/analysis/key/keymodeanalyzer.cpp,192,2,resolveToFifths,"const std::array<int, 2> opts = possibleIonianFifthsForPc(ionianPc);"
+src/composing/analysis/key/keymodeanalyzer.cpp,202,0.0,<file-scope>,double tonicWeight       = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,203,0.0,<file-scope>,double thirdWeight       = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,204,0.0,<file-scope>,double fifthWeight       = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,205,0.0,<file-scope>,double leadingToneWeight = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,215,0.0,<file-scope>,double scaleScore     = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,216,0.0,<file-scope>,double triadScore     = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,217,0.0,<file-scope>,double extraToneScore = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,218,0.0,<file-scope>,double keySignatureScore = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,232,1.0,noteWeight,* (p.isBass ? prefs.bassMultiplier : 1.0);
+src/composing/analysis/key/keymodeanalyzer.cpp,239,12,scoreScaleMembership,"const std::array<bool, 12>& inKeySignatureScale,"
+src/composing/analysis/key/keymodeanalyzer.cpp,243,12,scoreScaleMembership,"std::array<bool, 12> inScale {};"
+src/composing/analysis/key/keymodeanalyzer.cpp,245,12,scoreScaleMembership,inScale[static_cast<size_t>((tonicPc + interval) % 12)] = true;
+src/composing/analysis/key/keymodeanalyzer.cpp,248,0.0,scoreScaleMembership,double score = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,271,2,scoreTriadEvidence,const int third       = (tonicPc + MODES[modeIndex].intervals[2]) % 12;  // 3rd degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,271,12,scoreTriadEvidence,const int third       = (tonicPc + MODES[modeIndex].intervals[2]) % 12;  // 3rd degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,272,4,scoreTriadEvidence,const int fifth       = (tonicPc + MODES[modeIndex].intervals[4]) % 12;  // 5th degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,272,12,scoreTriadEvidence,const int fifth       = (tonicPc + MODES[modeIndex].intervals[4]) % 12;  // 5th degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,273,6,scoreTriadEvidence,const int leadingTone = (tonicPc + MODES[modeIndex].intervals[6]) % 12;  // 7th degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,273,12,scoreTriadEvidence,const int leadingTone = (tonicPc + MODES[modeIndex].intervals[6]) % 12;  // 7th degree from mode table
+src/composing/analysis/key/keymodeanalyzer.cpp,275,0.0,scoreTriadEvidence,double extraScaleWeight = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,276,12,scoreTriadEvidence,"std::array<bool, 12> inScale {};"
+src/composing/analysis/key/keymodeanalyzer.cpp,278,12,scoreTriadEvidence,inScale[static_cast<size_t>((tonicPc + interval) % 12)] = true;
+src/composing/analysis/key/keymodeanalyzer.cpp,291,0.1,scoreTriadEvidence,const bool hasTonic = evidenceOut.tonicWeight > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,292,0.1,scoreTriadEvidence,const bool hasThird = evidenceOut.thirdWeight > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,293,0.1,scoreTriadEvidence,const bool hasFifth = evidenceOut.fifthWeight > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,296,0.0,scoreTriadEvidence,double score = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,327,12,scoreCharacteristicPitch,const int pc1 = (tonicPc + cond.interval1) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,328,12,scoreCharacteristicPitch,const int pc2 = (cond.interval2 >= 0) ? (tonicPc + cond.interval2) % 12 : -1;
+src/composing/analysis/key/keymodeanalyzer.cpp,330,0.0,scoreCharacteristicPitch,double weight1 = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,331,0.0,scoreCharacteristicPitch,double weight2 = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,339,0.1,scoreCharacteristicPitch,const bool has1 = weight1 > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,340,0.1,scoreCharacteristicPitch,const bool has2 = (pc2 < 0) || (weight2 > 0.1);  // true when no secondary condition
+src/composing/analysis/key/keymodeanalyzer.cpp,349,0.5,scoreCharacteristicPitch,if (has1)         { return prefs.characteristicPitchBoost * 0.5; }
+src/composing/analysis/key/keymodeanalyzer.cpp,367,11,scoreTrueLeadingTone,const int ltPc = (tonicPc + 11) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,367,12,scoreTrueLeadingTone,const int ltPc = (tonicPc + 11) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,368,0.0,scoreTrueLeadingTone,double ltWeight = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,374,0.1,scoreTrueLeadingTone,return (ltWeight > 0.1) ? prefs.trueLeadingToneBoost : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,374,0.0,scoreTrueLeadingTone,return (ltWeight > 0.1) ? prefs.trueLeadingToneBoost : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,384,2,scoreModePrior,case  2: return prefs.modePriorPhrygian;
+src/composing/analysis/key/keymodeanalyzer.cpp,385,3,scoreModePrior,case  3: return prefs.modePriorLydian;
+src/composing/analysis/key/keymodeanalyzer.cpp,386,4,scoreModePrior,case  4: return prefs.modePriorMixolydian;
+src/composing/analysis/key/keymodeanalyzer.cpp,387,5,scoreModePrior,case  5: return prefs.modePriorAeolian;
+src/composing/analysis/key/keymodeanalyzer.cpp,388,6,scoreModePrior,case  6: return prefs.modePriorLocrian;
+src/composing/analysis/key/keymodeanalyzer.cpp,390,7,scoreModePrior,case  7: return prefs.modePriorMelodicMinor;
+src/composing/analysis/key/keymodeanalyzer.cpp,391,8,scoreModePrior,case  8: return prefs.modePriorDorianB2;
+src/composing/analysis/key/keymodeanalyzer.cpp,392,9,scoreModePrior,case  9: return prefs.modePriorLydianAugmented;
+src/composing/analysis/key/keymodeanalyzer.cpp,393,10,scoreModePrior,case 10: return prefs.modePriorLydianDominant;
+src/composing/analysis/key/keymodeanalyzer.cpp,394,11,scoreModePrior,case 11: return prefs.modePriorMixolydianB6;
+src/composing/analysis/key/keymodeanalyzer.cpp,395,12,scoreModePrior,case 12: return prefs.modePriorAeolianB5;
+src/composing/analysis/key/keymodeanalyzer.cpp,396,13,scoreModePrior,case 13: return prefs.modePriorAltered;
+src/composing/analysis/key/keymodeanalyzer.cpp,398,14,scoreModePrior,case 14: return prefs.modePriorHarmonicMinor;
+src/composing/analysis/key/keymodeanalyzer.cpp,399,15,scoreModePrior,case 15: return prefs.modePriorLocrianSharp6;
+src/composing/analysis/key/keymodeanalyzer.cpp,400,16,scoreModePrior,case 16: return prefs.modePriorIonianSharp5;
+src/composing/analysis/key/keymodeanalyzer.cpp,401,17,scoreModePrior,case 17: return prefs.modePriorDorianSharp4;
+src/composing/analysis/key/keymodeanalyzer.cpp,402,18,scoreModePrior,case 18: return prefs.modePriorPhrygianDominant;
+src/composing/analysis/key/keymodeanalyzer.cpp,403,19,scoreModePrior,case 19: return prefs.modePriorLydianSharp2;
+src/composing/analysis/key/keymodeanalyzer.cpp,404,20,scoreModePrior,case 20: return prefs.modePriorAlteredDomBB7;
+src/composing/analysis/key/keymodeanalyzer.cpp,405,0.0,scoreModePrior,default: return 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,416,2,scoreKeySignatureProximity,"const std::array<int, 2> opts = possibleIonianFifthsForPc(ionianPc);"
+src/composing/analysis/key/keymodeanalyzer.cpp,432,0.0,tonalCenterScore,double s = 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,460,0.1,applyPairwiseDisambiguation,const bool aHasTonic = evalA.evidence.tonicWeight > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,461,0.1,applyPairwiseDisambiguation,const bool bHasTonic = evalB.evidence.tonicWeight > 0.1;
+src/composing/analysis/key/keymodeanalyzer.cpp,527,12,keySignatureFifthsForKey,"return resolveToFifths(((tonicPc % 12) + 12) % 12, modeIndex, referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,527,12,keySignatureFifthsForKey,"return resolveToFifths(((tonicPc % 12) + 12) % 12, modeIndex, referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,527,12,keySignatureFifthsForKey,"return resolveToFifths(((tonicPc % 12) + 12) % 12, modeIndex, referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,539,12,keyModeSignatureFifths,"return resolveToFifths(((tonicPc % 12) + 12) % 12, keyModeIndex(mode), referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,539,12,keyModeSignatureFifths,"return resolveToFifths(((tonicPc % 12) + 12) % 12, keyModeIndex(mode), referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,539,12,keyModeSignatureFifths,"return resolveToFifths(((tonicPc % 12) + 12) % 12, keyModeIndex(mode), referenceFifths);"
+src/composing/analysis/key/keymodeanalyzer.cpp,557,12,analyzeKeyMode,"std::array<bool, 12> inKeySignatureScale {};"
+src/composing/analysis/key/keymodeanalyzer.cpp,561,12,analyzeKeyMode,inKeySignatureScale[static_cast<size_t>((keySigTonicPc + interval) % 12)] = true;
+src/composing/analysis/key/keymodeanalyzer.cpp,571,12,analyzeKeyMode,std::vector<CandidateEvaluation> evaluations(12 * numModeSlots);
+src/composing/analysis/key/keymodeanalyzer.cpp,573,12,analyzeKeyMode,for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,588,0.0,analyzeKeyMode,eval.extraToneScore  = 0.0;  // folded into triadScore via scoreTriadEvidence
+src/composing/analysis/key/keymodeanalyzer.cpp,613,7,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,613,7,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,618,21,analyzeKeyMode,"std::array<ModeEntry, 21> entries;"
+src/composing/analysis/key/keymodeanalyzer.cpp,621,12,analyzeKeyMode,const int tpc = (matchingIonianPc + keyModeTonicOffset(keyModeFromIndex(mIdx))) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,645,7,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,645,7,analyzeKeyMode,if (keySignatureFifths >= -7 && keySignatureFifths <= 7) {
+src/composing/analysis/key/keymodeanalyzer.cpp,665,12,analyzeKeyMode,const int tonicPc = (keySigIonianTonicPc + keyModeTonicOffset(keyModeFromIndex(modeIndex))) % 12;
+src/composing/analysis/key/keymodeanalyzer.cpp,683,7,analyzeKeyMode,&& bestByCenter->modeIndex < 7
+src/composing/analysis/key/keymodeanalyzer.cpp,684,7,analyzeKeyMode,&& bestByRaw->modeIndex < 7;
+src/composing/analysis/key/keymodeanalyzer.cpp,696,12,analyzeKeyMode,for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,716,12,analyzeKeyMode,allCandidates.reserve(12 * numModeSlots);
+src/composing/analysis/key/keymodeanalyzer.cpp,717,12,analyzeKeyMode,for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,728,3,analyzeKeyMode,results.reserve(3);
+src/composing/analysis/key/keymodeanalyzer.cpp,739,3,analyzeKeyMode,if (results.size() >= 3) {
+src/composing/analysis/key/keymodeanalyzer.cpp,764,2,analyzeKeyMode,const double runnerUpScore = (results.size() >= 2) ? results[1].score : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,764,0.0,analyzeKeyMode,const double runnerUpScore = (results.size() >= 2) ? results[1].score : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,773,0.0,analyzeKeyMode,const double iGap = results[i].score - ((i + 1 < results.size()) ? results[i + 1].score : 0.0);
+src/composing/analysis/key/keymodeanalyzer.cpp,789,12,analyzeKeyMode,dumpOut->reserve(12 * numModeSlots);
+src/composing/analysis/key/keymodeanalyzer.cpp,790,12,analyzeKeyMode,for (int tonicPc = 0; tonicPc < 12; ++tonicPc) {
+src/composing/analysis/key/keymodeanalyzer.cpp,803,0.0,analyzeKeyMode,const double declaredPenalty = declaredApplied ? prefs.declaredModePenalty : 0.0;
+src/composing/analysis/key/keymodeanalyzer.cpp,838,7,keyModeScaleIntervals,"const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode)"
+src/composing/analysis/key/keymodeanalyzer.h,37,1.0,normalizedConfidenceSigmoid,return 1.0 / (1.0 + std::exp(-steepness * (gap - midpoint)));
+src/composing/analysis/key/keymodeanalyzer.h,37,1.0,normalizedConfidenceSigmoid,return 1.0 / (1.0 + std::exp(-steepness * (gap - midpoint)));
+src/composing/analysis/key/keymodeanalyzer.h,47,21,<file-scope>,inline constexpr size_t KEY_MODE_COUNT = 21;
+src/composing/analysis/key/keymodeanalyzer.h,84,2,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,84,4,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,84,5,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,84,7,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,84,9,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,84,11,keyModeTonicOffset,"0, 2, 4, 5, 7, 9, 11,"
+src/composing/analysis/key/keymodeanalyzer.h,86,2,keyModeTonicOffset,"2,   ///< MelodicMinor   ~ Dorian"
+src/composing/analysis/key/keymodeanalyzer.h,87,4,keyModeTonicOffset,"4,   ///< DorianB2       ~ Phrygian"
+src/composing/analysis/key/keymodeanalyzer.h,88,5,keyModeTonicOffset,"5,   ///< LydianAugmented ~ Lydian"
+src/composing/analysis/key/keymodeanalyzer.h,89,7,keyModeTonicOffset,"7,   ///< LydianDominant  ~ Mixolydian"
+src/composing/analysis/key/keymodeanalyzer.h,90,9,keyModeTonicOffset,"9,   ///< MixolydianB6   ~ Aeolian"
+src/composing/analysis/key/keymodeanalyzer.h,91,11,keyModeTonicOffset,"11,  ///< AeolianB5      ~ Locrian"
+src/composing/analysis/key/keymodeanalyzer.h,94,9,keyModeTonicOffset,"9,   ///< HarmonicMinor  ~ Aeolian"
+src/composing/analysis/key/keymodeanalyzer.h,95,11,keyModeTonicOffset,"11,  ///< LocrianSharp6  ~ Locrian"
+src/composing/analysis/key/keymodeanalyzer.h,97,2,keyModeTonicOffset,"2,   ///< DorianSharp4   ~ Dorian"
+src/composing/analysis/key/keymodeanalyzer.h,98,4,keyModeTonicOffset,"4,   ///< PhrygianDominant ~ Phrygian"
+src/composing/analysis/key/keymodeanalyzer.h,99,5,keyModeTonicOffset,"5,   ///< LydianSharp2   ~ Lydian"
+src/composing/analysis/key/keymodeanalyzer.h,100,8,keyModeTonicOffset,"8,   ///< AlteredDomBB7  ~ aug5 above Ionian (unique — no diatonic equivalent)"
+src/composing/analysis/key/keymodeanalyzer.h,110,0.0,<file-scope>,double score = 0.0;                  ///< Raw confidence score; higher is better
+src/composing/analysis/key/keymodeanalyzer.h,111,0.0,<file-scope>,"double normalizedConfidence = 0.0;   ///< [0,1] EMISSION SIGMOID (see §5.7). Role (confidence contract §3 / D-L3a): an INTERNAL gate input (the 0.8 KeyArea/cade"
+src/composing/analysis/key/keymodeanalyzer.h,132,0.0,<file-scope>,double scaleMembership       = 0.0;  ///< scoreScaleMembership
+src/composing/analysis/key/keymodeanalyzer.h,133,0.0,<file-scope>,double triadEvidence         = 0.0;  ///< scoreTriadEvidence (triad + complete-triad/missing-tonic + extra-scale)
+src/composing/analysis/key/keymodeanalyzer.h,134,0.0,<file-scope>,double characteristicPitch   = 0.0;  ///< scoreCharacteristicPitch
+src/composing/analysis/key/keymodeanalyzer.h,135,0.0,<file-scope>,double trueLeadingTone       = 0.0;  ///< scoreTrueLeadingTone
+src/composing/analysis/key/keymodeanalyzer.h,136,0.0,<file-scope>,double keySignatureProximity = 0.0;  ///< scoreKeySignatureProximity
+src/composing/analysis/key/keymodeanalyzer.h,137,0.0,<file-scope>,double modePrior             = 0.0;  ///< scoreModePrior
+src/composing/analysis/key/keymodeanalyzer.h,138,0.0,<file-scope>,"double declaredPenalty       = 0.0;  ///< prefs.declaredModePenalty when mode incompatible with declared, else 0 (SUBTRACTED)"
+src/composing/analysis/key/keymodeanalyzer.h,139,0.0,<file-scope>,double disambiguationDelta   = 0.0;  ///< post-hoc pairwise mutation applied to this candidate (signed)
+src/composing/analysis/key/keymodeanalyzer.h,140,0.0,<file-scope>,double finalScore            = 0.0;  ///< eval.score after all adjustments (the ranking score)
+src/composing/analysis/key/keymodeanalyzer.h,141,0.0,<file-scope>,double tonalCenterScore      = 0.0;  ///< family-selection tonal-centre comparison score
+src/composing/analysis/key/keymodeanalyzer.h,142,0.0,<file-scope>,double tonicWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,143,0.0,<file-scope>,double thirdWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,144,0.0,<file-scope>,double fifthWeight           = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,145,0.0,<file-scope>,double leadingToneWeight     = 0.0;
+src/composing/analysis/key/keymodeanalyzer.h,189,7,<file-scope>,"const std::array<int, 7>& keyModeScaleIntervals(KeySigMode mode);"
+src/composing/analysis/key/keymodeformatting.cpp,37,15,keyModeTonicName,static constexpr const char* IONIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,41,15,keyModeTonicName,static constexpr const char* AEOLIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,45,15,keyModeTonicName,static constexpr const char* DORIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,49,15,keyModeTonicName,static constexpr const char* PHRYGIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,53,15,keyModeTonicName,static constexpr const char* LYDIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,57,15,keyModeTonicName,static constexpr const char* MIXOLYDIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,61,15,keyModeTonicName,static constexpr const char* LOCRIAN_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,67,15,keyModeTonicName,static constexpr const char* ALTERED_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,73,15,keyModeTonicName,static constexpr const char* ALTERED_DOM_BB7_NAMES[15] = {
+src/composing/analysis/key/keymodeformatting.cpp,78,7,keyModeTonicName,"const int idx = std::clamp(fifths + 7, 0, 14);"
+src/composing/analysis/key/keymodeformatting.cpp,78,14,keyModeTonicName,"const int idx = std::clamp(fifths + 7, 0, 14);"
+src/composing/analysis/key/keymodesequence.cpp,46,12,<file-scope>,constexpr int kCandidateCount = 12 * static_cast<int>(KEY_MODE_COUNT);
+src/composing/analysis/key/keymodesequence.cpp,50,1.0e3,<file-scope>,constexpr double kSingleStateConfidence = 1.0e3;
+src/composing/analysis/key/keymodesequence.cpp,65,12,cofDistance,const int n = ((pc % 12) + 12) % 12;
+src/composing/analysis/key/keymodesequence.cpp,65,12,cofDistance,const int n = ((pc % 12) + 12) % 12;
+src/composing/analysis/key/keymodesequence.cpp,65,12,cofDistance,const int n = ((pc % 12) + 12) % 12;
+src/composing/analysis/key/keymodesequence.cpp,66,7,cofDistance,return (n * 7) % 12;            // 7 == circle-of-fifths step generator (mod 12)
+src/composing/analysis/key/keymodesequence.cpp,66,12,cofDistance,return (n * 7) % 12;            // 7 == circle-of-fifths step generator (mod 12)
+src/composing/analysis/key/keymodesequence.cpp,69,12,cofDistance,"return std::min(d, 12 - d);"
+src/composing/analysis/key/keymodesequence.cpp,101,0.0,stateToResult,r.normalizedConfidence = 0.0;
+src/composing/analysis/key/keymodesequence.cpp,137,0.0,buildLattice,"std::vector<std::vector<double>> byCand(T, std::vector<double>(kCandidateCount, 0.0));"
+src/composing/analysis/key/keymodesequence.cpp,168,0.0,buildLattice,"lat.emissions.assign(T, std::vector<double>(candList.size(), 0.0));"
+src/composing/analysis/key/keymodesequence.cpp,222,0.0,populateEmissionConfidence,const double runnerUp = (bestOther == NEG_INF) ? 0.0 : bestOther;   // single-state → vs 0
+src/composing/analysis/key/keymodesequence.cpp,235,0.0,changeCost,return 0.0;   // stay
+src/composing/analysis/key/keymodesequence.cpp,238,0.0,changeCost,const double relativeExtra = (a.ionianPc == b.ionianPc) ? seqPrefs.relativePairExtraCost : 0.0;
+src/composing/analysis/key/keymodesequence.cpp,327,0.0,decodeLattice,beta[T - 1][s] = 0.0;
+src/composing/analysis/key/keymodesequence.cpp,330,2,decodeLattice,for (int t = T - 2; t >= 0; --t) {
+src/composing/analysis/key/keymodesequence.h,116,8,<file-scope>,int topK = 8;
+src/composing/analysis/key/keymodesequence.h,137,4.0,<file-scope>,double windowBeats = 4.0;
+src/composing/analysis/key/keymodesequence.h,143,4.0,<file-scope>,double beatsPerDecayUnit = 4.0;
+src/composing/analysis/key/keymodesequence.h,147,1.0,<file-scope>,double uncertainThreshold = 1.0;
+src/composing/analysis/key/keymodesequence.h,151,4,<file-scope>,int maxAlternatives = 4;
+src/composing/analysis/key/keymodesequence.h,162,0.0,<file-scope>,double confidence = 0.0;                              ///< sequence margin (best vs best-different-key/mode)
+src/composing/analysis/key/keyresolver.cpp,64,12,fallbackResult,+ keyModeTonicOffset(fallback.mode)) % 12;
+src/composing/analysis/key/keyresolver.cpp,71,12,ionianScaleSet,"std::array<bool, 12> ionianScaleSet(int fifths)"
+src/composing/analysis/key/keyresolver.cpp,73,12,ionianScaleSet,"std::array<bool, 12> s{};"
+src/composing/analysis/key/keyresolver.cpp,75,2,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,75,4,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,75,5,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,75,7,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,75,9,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,75,11,ionianScaleSet,"for (int interval : { 0, 2, 4, 5, 7, 9, 11 }) {"
+src/composing/analysis/key/keyresolver.cpp,76,12,ionianScaleSet,s[static_cast<size_t>((tonic + interval) % 12)] = true;
+src/composing/analysis/key/keyresolver.cpp,122,7,partialSignatureCorrection,if (neighborFifths < -7 || neighborFifths > 7) {
+src/composing/analysis/key/keyresolver.cpp,122,7,partialSignatureCorrection,if (neighborFifths < -7 || neighborFifths > 7) {
+src/composing/analysis/key/keyresolver.cpp,126,12,partialSignatureCorrection,"const std::array<bool, 12> scaleS = ionianScaleSet(notatedFifths);"
+src/composing/analysis/key/keyresolver.cpp,127,12,partialSignatureCorrection,"const std::array<bool, 12> scaleN = ionianScaleSet(neighborFifths);"
+src/composing/analysis/key/keyresolver.cpp,130,12,partialSignatureCorrection,for (int pc = 0; pc < 12; ++pc) {
+src/composing/analysis/key/keyresolver.cpp,147,12,partialSignatureCorrection,"std::array<double, 12> hist{};"
+src/composing/analysis/key/keyresolver.cpp,148,0.0,partialSignatureCorrection,double total = 0.0;
+src/composing/analysis/key/keyresolver.cpp,178,0.0,partialSignatureCorrection,if (total <= 0.0) {
+src/composing/analysis/key/keyresolver.cpp,182,0.03,partialSignatureCorrection,constexpr double kPervasiveFraction = 0.03;  // accidental ≥ 3% of sounding weight
+src/composing/analysis/key/keyresolver.cpp,183,2.0,partialSignatureCorrection,constexpr double kDominanceRatio    = 2.0;   // accidental ≥ 2× its natural form
+src/composing/analysis/key/keyresolver.cpp,286,4,resolveKeyAndModeRanked,"const Fraction lookbackDuration = Fraction(shv::LOOKBACK_BEATS, 4);"
+src/composing/analysis/key/keyresolver.cpp,310,4,resolveKeyAndModeRanked,"const Fraction windowEnd = tick + Fraction(lookaheadBeats, 4);"
+src/composing/analysis/key/keyresolver.cpp,329,3,resolveKeyAndModeRanked,if (results.empty() || shv::distinctPitchClasses(ctx) < 3) {
+src/composing/analysis/key/keyresolver.cpp,331,0.0,resolveKeyAndModeRanked,"return fallbackResult(keyFifths, declaredMode, 0.0, 0.0);"
+src/composing/analysis/key/keyresolver.cpp,331,0.0,resolveKeyAndModeRanked,"return fallbackResult(keyFifths, declaredMode, 0.0, 0.0);"
+src/composing/analysis/key/modepriorpresets.cpp,43,0.50,modePriorPresets,jazz.ionian           =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,44,0.80,modePriorPresets,jazz.dorian           =  0.80;
+src/composing/analysis/key/modepriorpresets.cpp,45,1.00,modePriorPresets,jazz.phrygian         = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,46,0.50,modePriorPresets,jazz.lydian           = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,47,0.80,modePriorPresets,jazz.mixolydian       =  0.80;
+src/composing/analysis/key/modepriorpresets.cpp,48,0.50,modePriorPresets,jazz.aeolian          =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,49,1.50,modePriorPresets,jazz.locrian          = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,50,0.50,modePriorPresets,jazz.melodicMinor     =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,51,0.50,modePriorPresets,jazz.dorianB2         = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,52,0.50,modePriorPresets,jazz.lydianAugmented  = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,53,0.80,modePriorPresets,jazz.lydianDominant   =  0.80;
+src/composing/analysis/key/modepriorpresets.cpp,54,0.50,modePriorPresets,jazz.mixolydianB6     = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,55,1.00,modePriorPresets,jazz.aeolianB5        = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,56,0.50,modePriorPresets,jazz.altered          =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,57,0.30,modePriorPresets,jazz.harmonicMinor    = -0.30;
+src/composing/analysis/key/modepriorpresets.cpp,58,1.50,modePriorPresets,jazz.locrianSharp6    = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,59,1.50,modePriorPresets,jazz.ionianSharp5     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,60,0.50,modePriorPresets,jazz.dorianSharp4     = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,61,0.20,modePriorPresets,jazz.phrygianDominant =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,62,1.50,modePriorPresets,jazz.lydianSharp2     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,63,1.50,modePriorPresets,jazz.alteredDomBB7    = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,67,0.50,modePriorPresets,modal.ionian           =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,68,0.50,modePriorPresets,modal.dorian           =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,69,0.50,modePriorPresets,modal.phrygian         =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,70,0.50,modePriorPresets,modal.lydian           =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,71,0.50,modePriorPresets,modal.mixolydian       =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,72,0.50,modePriorPresets,modal.aeolian          =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,73,1.00,modePriorPresets,modal.locrian          = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,74,1.00,modePriorPresets,modal.melodicMinor     = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,75,1.50,modePriorPresets,modal.dorianB2         = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,76,2.00,modePriorPresets,modal.lydianAugmented  = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,77,1.50,modePriorPresets,modal.lydianDominant   = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,78,1.50,modePriorPresets,modal.mixolydianB6     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,79,2.50,modePriorPresets,modal.aeolianB5        = -2.50;
+src/composing/analysis/key/modepriorpresets.cpp,80,3.50,modePriorPresets,modal.altered          = -3.50;
+src/composing/analysis/key/modepriorpresets.cpp,81,1.00,modePriorPresets,modal.harmonicMinor    = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,82,2.50,modePriorPresets,modal.locrianSharp6    = -2.50;
+src/composing/analysis/key/modepriorpresets.cpp,83,2.00,modePriorPresets,modal.ionianSharp5     = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,84,2.00,modePriorPresets,modal.dorianSharp4     = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,85,1.50,modePriorPresets,modal.phrygianDominant = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,86,2.50,modePriorPresets,modal.lydianSharp2     = -2.50;
+src/composing/analysis/key/modepriorpresets.cpp,87,3.50,modePriorPresets,modal.alteredDomBB7    = -3.50;
+src/composing/analysis/key/modepriorpresets.cpp,91,1.20,modePriorPresets,baroque.ionian           =  1.20;
+src/composing/analysis/key/modepriorpresets.cpp,92,0.70,modePriorPresets,baroque.dorian           = -0.70;
+src/composing/analysis/key/modepriorpresets.cpp,93,1.50,modePriorPresets,baroque.phrygian         = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,94,2.00,modePriorPresets,baroque.lydian           = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,95,0.70,modePriorPresets,baroque.mixolydian       = -0.70;
+src/composing/analysis/key/modepriorpresets.cpp,96,1.00,modePriorPresets,baroque.aeolian          =  1.00;
+src/composing/analysis/key/modepriorpresets.cpp,97,3.00,modePriorPresets,baroque.locrian          = -3.00;
+src/composing/analysis/key/modepriorpresets.cpp,98,1.50,modePriorPresets,baroque.melodicMinor     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,99,2.00,modePriorPresets,baroque.dorianB2         = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,100,2.50,modePriorPresets,baroque.lydianAugmented  = -2.50;
+src/composing/analysis/key/modepriorpresets.cpp,101,2.00,modePriorPresets,baroque.lydianDominant   = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,102,2.00,modePriorPresets,baroque.mixolydianB6     = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,103,3.00,modePriorPresets,baroque.aeolianB5        = -3.00;
+src/composing/analysis/key/modepriorpresets.cpp,104,3.50,modePriorPresets,baroque.altered          = -3.50;
+src/composing/analysis/key/modepriorpresets.cpp,105,0.50,modePriorPresets,baroque.harmonicMinor    =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,106,2.00,modePriorPresets,baroque.locrianSharp6    = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,107,1.50,modePriorPresets,baroque.ionianSharp5     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,108,2.50,modePriorPresets,baroque.dorianSharp4     = -2.50;
+src/composing/analysis/key/modepriorpresets.cpp,109,0.50,modePriorPresets,baroque.phrygianDominant =  0.50;
+src/composing/analysis/key/modepriorpresets.cpp,110,2.00,modePriorPresets,baroque.lydianSharp2     = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,111,3.50,modePriorPresets,baroque.alteredDomBB7    = -3.50;
+src/composing/analysis/key/modepriorpresets.cpp,115,0.80,modePriorPresets,contemporary.ionian           =  0.80;
+src/composing/analysis/key/modepriorpresets.cpp,116,0.20,modePriorPresets,contemporary.dorian           =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,117,0.50,modePriorPresets,contemporary.phrygian         = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,118,0.20,modePriorPresets,contemporary.lydian           = -0.20;
+src/composing/analysis/key/modepriorpresets.cpp,119,0.20,modePriorPresets,contemporary.mixolydian       =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,120,0.80,modePriorPresets,contemporary.aeolian          =  0.80;
+src/composing/analysis/key/modepriorpresets.cpp,121,2.00,modePriorPresets,contemporary.locrian          = -2.00;
+src/composing/analysis/key/modepriorpresets.cpp,122,0.20,modePriorPresets,contemporary.melodicMinor     =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,123,0.80,modePriorPresets,contemporary.dorianB2         = -0.80;
+src/composing/analysis/key/modepriorpresets.cpp,124,1.00,modePriorPresets,contemporary.lydianAugmented  = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,125,0.20,modePriorPresets,contemporary.lydianDominant   =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,126,0.50,modePriorPresets,contemporary.mixolydianB6     = -0.50;
+src/composing/analysis/key/modepriorpresets.cpp,127,1.50,modePriorPresets,contemporary.aeolianB5        = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,128,1.50,modePriorPresets,contemporary.altered          = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,129,0.20,modePriorPresets,contemporary.harmonicMinor    =  0.20;
+src/composing/analysis/key/modepriorpresets.cpp,130,1.50,modePriorPresets,contemporary.locrianSharp6    = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,131,1.00,modePriorPresets,contemporary.ionianSharp5     = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,132,1.00,modePriorPresets,contemporary.dorianSharp4     = -1.00;
+src/composing/analysis/key/modepriorpresets.cpp,133,0.00,modePriorPresets,contemporary.phrygianDominant =  0.00;
+src/composing/analysis/key/modepriorpresets.cpp,134,1.50,modePriorPresets,contemporary.lydianSharp2     = -1.50;
+src/composing/analysis/key/modepriorpresets.cpp,135,2.00,modePriorPresets,contemporary.alteredDomBB7    = -2.00;
+src/composing/analysis/key/modepriorpresets.h,45,1.20,<file-scope>,double ionian          =  1.20;
+src/composing/analysis/key/modepriorpresets.h,46,0.50,<file-scope>,double dorian          = -0.50;
+src/composing/analysis/key/modepriorpresets.h,47,1.50,<file-scope>,double phrygian        = -1.50;
+src/composing/analysis/key/modepriorpresets.h,48,1.50,<file-scope>,double lydian          = -1.50;
+src/composing/analysis/key/modepriorpresets.h,49,0.50,<file-scope>,double mixolydian      = -0.50;
+src/composing/analysis/key/modepriorpresets.h,50,1.00,<file-scope>,double aeolian         =  1.00;
+src/composing/analysis/key/modepriorpresets.h,51,3.00,<file-scope>,double locrian         = -3.00;
+src/composing/analysis/key/modepriorpresets.h,54,0.50,<file-scope>,double melodicMinor    = -0.50;
+src/composing/analysis/key/modepriorpresets.h,55,1.50,<file-scope>,double dorianB2        = -1.50;
+src/composing/analysis/key/modepriorpresets.h,56,2.00,<file-scope>,double lydianAugmented = -2.00;
+src/composing/analysis/key/modepriorpresets.h,57,1.00,<file-scope>,double lydianDominant  = -1.00;
+src/composing/analysis/key/modepriorpresets.h,58,1.50,<file-scope>,double mixolydianB6    = -1.50;
+src/composing/analysis/key/modepriorpresets.h,59,2.50,<file-scope>,double aeolianB5       = -2.50;
+src/composing/analysis/key/modepriorpresets.h,60,3.50,<file-scope>,double altered         = -3.50;
+src/composing/analysis/key/modepriorpresets.h,63,0.30,<file-scope>,double harmonicMinor      = -0.30;
+src/composing/analysis/key/modepriorpresets.h,64,2.50,<file-scope>,double locrianSharp6      = -2.50;
+src/composing/analysis/key/modepriorpresets.h,65,2.00,<file-scope>,double ionianSharp5       = -2.00;
+src/composing/analysis/key/modepriorpresets.h,66,2.00,<file-scope>,double dorianSharp4       = -2.00;
+src/composing/analysis/key/modepriorpresets.h,67,0.80,<file-scope>,double phrygianDominant   = -0.80;
+src/composing/analysis/key/modepriorpresets.h,68,2.50,<file-scope>,double lydianSharp2       = -2.50;
+src/composing/analysis/key/modepriorpresets.h,69,3.50,<file-scope>,double alteredDomBB7      = -3.50;
+src/composing/analysis/region/harmonicrhythm.h,49,3,<file-scope>,"std::array<int, 3> recentRootPcs = {-1,-1,-1}; ///< Root PCs of 3 most recent regions."
+src/composing/analysis/region/harmonicrhythm.h,50,1.0,<file-scope>,"double regionMetricWeight = 1.0;               ///< Metric weight [0,1]; 1 = downbeat."
+src/composing/analysis/region/harmonicrhythm.h,119,0.0,<file-scope>,double keyConfidence = 0.0;                          ///< THE Layer-3 boundary confidence: chosen key's Class-M sequence margin (D-L3a; ≠ keyModeResult.normaliz
+src/composing/analysis/region/regionanalyzer.cpp,65,4,<file-scope>,constexpr int kPass2MinRegionTicks    = 4 * mu::engraving::Constants::DIVISION;
+src/composing/analysis/region/regionanalyzer.cpp,66,8,<file-scope>,constexpr int kMaxBassMovementPasses  = 8;
+src/composing/analysis/region/regionanalyzer.cpp,80,0.0,makeChordPathNode,? 0.0 : gateCtx.rawCandidates[0].score;
+src/composing/analysis/region/regionanalyzer.cpp,81,2,makeChordPathNode,node.winnerMargin = (gateCtx.rawCandidates.size() >= 2)
+src/composing/analysis/region/regionanalyzer.cpp,83,1.0,makeChordPathNode,: -1.0;
+src/composing/analysis/region/regionanalyzer.cpp,102,4,measureTicksBefore,return 4 * Constants::DIVISION;
+src/composing/analysis/region/regionanalyzer.cpp,166,3,coalesceShortSameRootRuns,constexpr int kCoalesceMinRunTicks   = 3 * shv::kMinRegionTicks / 2; // 720
+src/composing/analysis/region/regionanalyzer.cpp,166,2,coalesceShortSameRootRuns,constexpr int kCoalesceMinRunTicks   = 3 * shv::kMinRegionTicks / 2; // 720
+src/composing/analysis/region/regionanalyzer.cpp,167,3,coalesceShortSameRootRuns,constexpr size_t kCoalesceMinRunCount = 3;
+src/composing/analysis/region/regionanalyzer.cpp,184,12,coalesceShortSameRootRuns,combined.chordResult.identity.bassPc  = bassTone->pitch % 12;
+src/composing/analysis/region/regionanalyzer.cpp,225,12,tryCollapseSameChordRegion,regions.back().chordResult.identity.bassPc  = bassTone->pitch % 12;
+src/composing/analysis/region/regionanalyzer.cpp,267,0.0,<file-scope>,double confidence = 0.0;                            ///< the chosen key's sequence-margin confidence
+src/composing/analysis/region/regionanalyzer.cpp,314,12,restampBassMinorSeventhAfterMerge,if (((bPc - rPc + 12) % 12) != 10) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,314,12,restampBassMinorSeventhAfterMerge,if (((bPc - rPc + 12) % 12) != 10) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,314,10,restampBassMinorSeventhAfterMerge,if (((bPc - rPc + 12) % 12) != 10) { continue; }
+src/composing/analysis/region/regionanalyzer.cpp,320,0.0,restampBassMinorSeventhAfterMerge,double bassPcWeight = 0.0;
+src/composing/analysis/region/regionanalyzer.cpp,322,12,restampBassMinorSeventhAfterMerge,const int tonePc = ((t.pitch % 12) + 12) % 12;
+src/composing/analysis/region/regionanalyzer.cpp,322,12,restampBassMinorSeventhAfterMerge,const int tonePc = ((t.pitch % 12) + 12) % 12;
+src/composing/analysis/region/regionanalyzer.cpp,322,12,restampBassMinorSeventhAfterMerge,const int tonePc = ((t.pitch % 12) + 12) % 12;
+src/composing/analysis/region/regionanalyzer.cpp,324,0.1,restampBassMinorSeventhAfterMerge,"bassPcWeight += std::max(0.1, t.weight);"
+src/composing/analysis/region/regionanalyzer.cpp,359,12,denseBoundaryTicks,bits |= static_cast<uint16_t>(1u << (sn.ppitch % 12));
+src/composing/analysis/region/regionanalyzer.cpp,414,0.5,applyJointKeyWiring,constexpr double kJointModulationFallbackConfidence = 0.5;
+src/composing/analysis/region/regionanalyzer.cpp,453,12,applyJointKeyWiring,mask |= static_cast<uint16_t>(1u << (t.pitch % 12));
+src/composing/analysis/region/regionanalyzer.cpp,467,12,applyJointKeyWiring,bassPc = bt->pitch % 12;
+src/composing/analysis/region/regionanalyzer.cpp,514,0.0,applyJointKeyWiring,double raw  = 0.0;
+src/composing/analysis/region/regionanalyzer.cpp,516,12,applyJointKeyWiring,if ((((lc.tonicPc % 12) + 12) % 12) == jt && lc.isMajor() == jm) {
+src/composing/analysis/region/regionanalyzer.cpp,516,12,applyJointKeyWiring,if ((((lc.tonicPc % 12) + 12) % 12) == jt && lc.isMajor() == jm) {
+src/composing/analysis/region/regionanalyzer.cpp,516,12,applyJointKeyWiring,if ((((lc.tonicPc % 12) + 12) % 12) == jt && lc.isMajor() == jm) {
+src/composing/analysis/region/regionanalyzer.cpp,544,12,applyJointKeyWiring,const int lcTonic = (((lc.tonicPc % 12) + 12) % 12);
+src/composing/analysis/region/regionanalyzer.cpp,544,12,applyJointKeyWiring,const int lcTonic = (((lc.tonicPc % 12) + 12) % 12);
+src/composing/analysis/region/regionanalyzer.cpp,544,12,applyJointKeyWiring,const int lcTonic = (((lc.tonicPc % 12) + 12) % 12);
+src/composing/analysis/region/regionanalyzer.cpp,739,0.0,analyzeRegions,"return { seedKey, {}, 0.0 };"
+src/composing/analysis/region/regionanalyzer.cpp,768,12,analyzeRegions,"const std::pair<int, int> key{ (((k.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,768,12,analyzeRegions,"const std::pair<int, int> key{ (((k.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,768,12,analyzeRegions,"const std::pair<int, int> key{ (((k.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,796,0.0,analyzeRegions,"return { seedKey, {}, 0.0 };"
+src/composing/analysis/region/regionanalyzer.cpp,816,12,analyzeRegions,"const std::pair<int, int> bestMenuKey{ (((rep.chosen.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,816,12,analyzeRegions,"const std::pair<int, int> bestMenuKey{ (((rep.chosen.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,816,12,analyzeRegions,"const std::pair<int, int> bestMenuKey{ (((rep.chosen.tonicPc % 12) + 12) % 12),"
+src/composing/analysis/region/regionanalyzer.cpp,944,12,analyzeRegions,if (t.isBass) { currentBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,964,2,analyzeRegions,const Fraction nextRegionEnd = (i + 2 < boundaryTicks.size())
+src/composing/analysis/region/regionanalyzer.cpp,965,2,analyzeRegions,? boundaryTicks[i + 2] : endTick;
+src/composing/analysis/region/regionanalyzer.cpp,970,12,analyzeRegions,if (nextTone.isBass) { nextBassPc = nextTone.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,1071,2,analyzeRegions,pass2Regions.reserve(regions.size() * 2);
+src/composing/analysis/region/regionanalyzer.cpp,1092,2,analyzeRegions,subBounds.reserve(subs.size() + 2);
+src/composing/analysis/region/regionanalyzer.cpp,1151,12,analyzeRegions,if (t.isBass) { subBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,1177,2,analyzeRegions,if (si + 2 < subBounds.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1179,2,analyzeRegions,nextEndT   = subBounds[si + 2].ticks();
+src/composing/analysis/region/regionanalyzer.cpp,1270,2,analyzeRegions,pass2bRegions.reserve(regions.size() * 2);
+src/composing/analysis/region/regionanalyzer.cpp,1346,12,analyzeRegions,if (t.isBass) { subBassPc = t.pitch % 12; break; }
+src/composing/analysis/region/regionanalyzer.cpp,1366,2,analyzeRegions,if (bi + 2 < bounds.size()) {
+src/composing/analysis/region/regionanalyzer.cpp,1368,2,analyzeRegions,nextEndT   = bounds[bi + 2].ticks();
+src/composing/analysis/region/regionanalyzer.cpp,1426,0.0,analyzeRegions,? 0.0 : subGateCtx.rawCandidates[0].score;
+src/composing/analysis/region/regionanalyzer.cpp,1427,2,analyzeRegions,node.winnerMargin = (subGateCtx.rawCandidates.size() >= 2)
+src/composing/analysis/region/regionanalyzer.cpp,1429,1.0,analyzeRegions,: -1.0;
+src/composing/analysis/region/regionanalyzer.h,101,8,<file-scope>,int maxReachSteps = 8;
+src/composing/analysis/region/regionanalyzer.h,118,0.0,<file-scope>,double minOpeningConfidence = 0.0;
+src/composing/analysis/region/regionanalyzer.h,129,0.25,<file-scope>,double onsetBoundaryThreshold = 0.25;
+src/composing/analysis/section/cadencekeyanchor.cpp,42,2,detectAuthenticCadences,if (regions.size() < 2) {
+src/composing/analysis/section/cadencekeyanchor.cpp,70,7,detectAuthenticCadences,if (normalizePc(a.rootPc - 7) != b.rootPc) {
+src/composing/analysis/section/cadencekeyanchor.cpp,78,4,detectAuthenticCadences,const int leadingTone = normalizePc(a.rootPc + 4);
+src/composing/analysis/section/cadencekeyanchor.cpp,115,1.0,<file-scope>,constexpr double kWeightBase       = 1.0;   // every detected authentic cadence
+src/composing/analysis/section/cadencekeyanchor.cpp,116,2.0,<file-scope>,constexpr double kWeightStructural = 2.0;   // resolution coincides with a phrase boundary
+src/composing/analysis/section/cadencekeyanchor.cpp,117,1.0,<file-scope>,constexpr double kWeightChromatic  = 1.0;   // dominant carries a chromatic (raised) leading tone
+src/composing/analysis/section/cadencekeyanchor.cpp,118,1.0,<file-scope>,constexpr double kWeightFinality   = 1.0;   // maximal recency bonus (scaled by position)
+src/composing/analysis/section/cadencekeyanchor.cpp,146,0.0,aggregateGlobalAnchor,double total = 0.0;
+src/composing/analysis/section/cadencekeyanchor.cpp,150,1.0,aggregateGlobalAnchor,: 1.0;
+src/composing/analysis/section/cadencekeyanchor.cpp,152,0.0,aggregateGlobalAnchor,+ (c.endsPhrase ? kWeightStructural : 0.0)
+src/composing/analysis/section/cadencekeyanchor.cpp,153,0.0,aggregateGlobalAnchor,+ (c.chromaticLeadingTone ? kWeightChromatic : 0.0)
+src/composing/analysis/section/cadencekeyanchor.cpp,180,0.0,aggregateGlobalAnchor,if (mw != minorWeightByPc.end() && mw->second > 0.0) {
+src/composing/analysis/section/cadencekeyanchor.cpp,186,0.0,aggregateGlobalAnchor,double winnerWeight = 0.0;
+src/composing/analysis/section/cadencekeyanchor.cpp,203,0.0,aggregateGlobalAnchor,anchor.confidence = (total > 0.0) ? (winnerWeight / total) : 0.0;
+src/composing/analysis/section/cadencekeyanchor.cpp,203,0.0,aggregateGlobalAnchor,anchor.confidence = (total > 0.0) ? (winnerWeight / total) : 0.0;
+src/composing/analysis/section/cadencekeyanchor.h,114,0.0,<file-scope>,"double confidence = 0.0; ///< finality-weighted vote share of the winning (tonic, mode) ∈ [0,1]"
+src/composing/analysis/section/jointkeydecision.cpp,48,12,jkdInCollectionFraction,for (int p = 0; p < 12; ++p) {
+src/composing/analysis/section/jointkeydecision.cpp,56,0.0,jkdInCollectionFraction,return total > 0 ? static_cast<double>(inside) / total : 0.0;
+src/composing/analysis/section/jointkeydecision.cpp,72,4,<file-scope>,"struct JkdTemplate { std::array<int, 4> iv; int n; };"
+src/composing/analysis/section/jointkeydecision.cpp,73,14,<file-scope>,"constexpr std::array<JkdTemplate, 14> kJkdTemplates = { {"
+src/composing/analysis/section/jointkeydecision.cpp,74,4,<file-scope>,"{ { 0, 4, 7, 0 }, 3 },  // Major"
+src/composing/analysis/section/jointkeydecision.cpp,74,7,<file-scope>,"{ { 0, 4, 7, 0 }, 3 },  // Major"
+src/composing/analysis/section/jointkeydecision.cpp,74,3,<file-scope>,"{ { 0, 4, 7, 0 }, 3 },  // Major"
+src/composing/analysis/section/jointkeydecision.cpp,75,3,<file-scope>,"{ { 0, 3, 7, 0 }, 3 },  // Minor"
+src/composing/analysis/section/jointkeydecision.cpp,75,7,<file-scope>,"{ { 0, 3, 7, 0 }, 3 },  // Minor"
+src/composing/analysis/section/jointkeydecision.cpp,75,3,<file-scope>,"{ { 0, 3, 7, 0 }, 3 },  // Minor"
+src/composing/analysis/section/jointkeydecision.cpp,76,3,<file-scope>,"{ { 0, 3, 6, 0 }, 3 },  // Dim"
+src/composing/analysis/section/jointkeydecision.cpp,76,6,<file-scope>,"{ { 0, 3, 6, 0 }, 3 },  // Dim"
+src/composing/analysis/section/jointkeydecision.cpp,76,3,<file-scope>,"{ { 0, 3, 6, 0 }, 3 },  // Dim"
+src/composing/analysis/section/jointkeydecision.cpp,77,4,<file-scope>,"{ { 0, 4, 8, 0 }, 3 },  // Aug (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,77,8,<file-scope>,"{ { 0, 4, 8, 0 }, 3 },  // Aug (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,77,3,<file-scope>,"{ { 0, 4, 8, 0 }, 3 },  // Aug (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,78,2,<file-scope>,"{ { 0, 2, 7, 0 }, 3 },  // Sus2"
+src/composing/analysis/section/jointkeydecision.cpp,78,7,<file-scope>,"{ { 0, 2, 7, 0 }, 3 },  // Sus2"
+src/composing/analysis/section/jointkeydecision.cpp,78,3,<file-scope>,"{ { 0, 2, 7, 0 }, 3 },  // Sus2"
+src/composing/analysis/section/jointkeydecision.cpp,79,5,<file-scope>,"{ { 0, 5, 7, 0 }, 3 },  // Sus4"
+src/composing/analysis/section/jointkeydecision.cpp,79,7,<file-scope>,"{ { 0, 5, 7, 0 }, 3 },  // Sus4"
+src/composing/analysis/section/jointkeydecision.cpp,79,3,<file-scope>,"{ { 0, 5, 7, 0 }, 3 },  // Sus4"
+src/composing/analysis/section/jointkeydecision.cpp,80,4,<file-scope>,"{ { 0, 4, 7, 10 }, 4 }, // Dom7"
+src/composing/analysis/section/jointkeydecision.cpp,80,7,<file-scope>,"{ { 0, 4, 7, 10 }, 4 }, // Dom7"
+src/composing/analysis/section/jointkeydecision.cpp,80,10,<file-scope>,"{ { 0, 4, 7, 10 }, 4 }, // Dom7"
+src/composing/analysis/section/jointkeydecision.cpp,80,4,<file-scope>,"{ { 0, 4, 7, 10 }, 4 }, // Dom7"
+src/composing/analysis/section/jointkeydecision.cpp,81,4,<file-scope>,"{ { 0, 4, 7, 11 }, 4 }, // Maj7"
+src/composing/analysis/section/jointkeydecision.cpp,81,7,<file-scope>,"{ { 0, 4, 7, 11 }, 4 }, // Maj7"
+src/composing/analysis/section/jointkeydecision.cpp,81,11,<file-scope>,"{ { 0, 4, 7, 11 }, 4 }, // Maj7"
+src/composing/analysis/section/jointkeydecision.cpp,81,4,<file-scope>,"{ { 0, 4, 7, 11 }, 4 }, // Maj7"
+src/composing/analysis/section/jointkeydecision.cpp,82,3,<file-scope>,"{ { 0, 3, 7, 10 }, 4 }, // Min7"
+src/composing/analysis/section/jointkeydecision.cpp,82,7,<file-scope>,"{ { 0, 3, 7, 10 }, 4 }, // Min7"
+src/composing/analysis/section/jointkeydecision.cpp,82,10,<file-scope>,"{ { 0, 3, 7, 10 }, 4 }, // Min7"
+src/composing/analysis/section/jointkeydecision.cpp,82,4,<file-scope>,"{ { 0, 3, 7, 10 }, 4 }, // Min7"
+src/composing/analysis/section/jointkeydecision.cpp,83,3,<file-scope>,"{ { 0, 3, 7, 11 }, 4 }, // MinMaj7"
+src/composing/analysis/section/jointkeydecision.cpp,83,7,<file-scope>,"{ { 0, 3, 7, 11 }, 4 }, // MinMaj7"
+src/composing/analysis/section/jointkeydecision.cpp,83,11,<file-scope>,"{ { 0, 3, 7, 11 }, 4 }, // MinMaj7"
+src/composing/analysis/section/jointkeydecision.cpp,83,4,<file-scope>,"{ { 0, 3, 7, 11 }, 4 }, // MinMaj7"
+src/composing/analysis/section/jointkeydecision.cpp,84,3,<file-scope>,"{ { 0, 3, 6, 10 }, 4 }, // HalfDim7"
+src/composing/analysis/section/jointkeydecision.cpp,84,6,<file-scope>,"{ { 0, 3, 6, 10 }, 4 }, // HalfDim7"
+src/composing/analysis/section/jointkeydecision.cpp,84,10,<file-scope>,"{ { 0, 3, 6, 10 }, 4 }, // HalfDim7"
+src/composing/analysis/section/jointkeydecision.cpp,84,4,<file-scope>,"{ { 0, 3, 6, 10 }, 4 }, // HalfDim7"
+src/composing/analysis/section/jointkeydecision.cpp,85,3,<file-scope>,"{ { 0, 3, 6, 9 }, 4 },  // Dim7 (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,85,6,<file-scope>,"{ { 0, 3, 6, 9 }, 4 },  // Dim7 (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,85,9,<file-scope>,"{ { 0, 3, 6, 9 }, 4 },  // Dim7 (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,85,4,<file-scope>,"{ { 0, 3, 6, 9 }, 4 },  // Dim7 (symmetric)"
+src/composing/analysis/section/jointkeydecision.cpp,86,4,<file-scope>,"{ { 0, 4, 7, 9 }, 4 },  // Maj6"
+src/composing/analysis/section/jointkeydecision.cpp,86,7,<file-scope>,"{ { 0, 4, 7, 9 }, 4 },  // Maj6"
+src/composing/analysis/section/jointkeydecision.cpp,86,9,<file-scope>,"{ { 0, 4, 7, 9 }, 4 },  // Maj6"
+src/composing/analysis/section/jointkeydecision.cpp,86,4,<file-scope>,"{ { 0, 4, 7, 9 }, 4 },  // Maj6"
+src/composing/analysis/section/jointkeydecision.cpp,87,3,<file-scope>,"{ { 0, 3, 7, 9 }, 4 },  // Min6"
+src/composing/analysis/section/jointkeydecision.cpp,87,7,<file-scope>,"{ { 0, 3, 7, 9 }, 4 },  // Min6"
+src/composing/analysis/section/jointkeydecision.cpp,87,9,<file-scope>,"{ { 0, 3, 7, 9 }, 4 },  // Min6"
+src/composing/analysis/section/jointkeydecision.cpp,87,4,<file-scope>,"{ { 0, 3, 7, 9 }, 4 },  // Min6"
+src/composing/analysis/section/jointkeydecision.cpp,97,12,jkdChordPinned,for (int p = 0; p < 12; ++p) {
+src/composing/analysis/section/jointkeydecision.cpp,102,3,jkdChordPinned,if (popcount < 3) {
+src/composing/analysis/section/jointkeydecision.cpp,107,12,jkdChordPinned,for (int root = 0; root < 12; ++root) {
+src/composing/analysis/section/jointkeydecision.cpp,189,7,decideJointKey,const int homeMajorTonic = normalizePc(keySignatureFifths * 7);
+src/composing/analysis/section/jointkeydecision.cpp,190,9,decideJointKey,const int homeMinorTonic = normalizePc(homeMajorTonic + 9);
+src/composing/analysis/section/jointkeydecision.cpp,237,0.0,decideJointKey,double s = 0.0;
+src/composing/analysis/section/jointkeydecision.cpp,282,0.1,decideJointKey,"const double decay = std::max(0.1, 1.0 - 0.3 * static_cast<double>(idx));"
+src/composing/analysis/section/jointkeydecision.cpp,282,1.0,decideJointKey,"const double decay = std::max(0.1, 1.0 - 0.3 * static_cast<double>(idx));"
+src/composing/analysis/section/jointkeydecision.cpp,282,0.3,decideJointKey,"const double decay = std::max(0.1, 1.0 - 0.3 * static_cast<double>(idx));"
+src/composing/analysis/section/jointkeydecision.cpp,286,0.0,decideJointKey,return 0.0;
+src/composing/analysis/section/jointkeydecision.cpp,324,0.0,decideJointKey,const double cand = dp[i - 1][p] + (p == s ? 0.0 : -w.transitionPenalty);
+src/composing/analysis/section/jointkeydecision.h,103,0.0,<file-scope>,double confidence = 0.0;   ///< normalizedConfidence of the local candidate (0..1)
+src/composing/analysis/section/jointkeydecision.h,142,1.0,<file-scope>,double scalePrior        = 1.0;   ///< per-region collection-fit fraction
+src/composing/analysis/section/jointkeydecision.h,143,0.5,<file-scope>,double localPrior        = 0.5;   ///< matches an analyzeKeyMode local candidate (× its confidence)
+src/composing/analysis/section/jointkeydecision.h,144,0.8,<file-scope>,double cadenceAnchor     = 0.8;   ///< SOFT: matches the key-agnostic global anchor
+src/composing/analysis/section/jointkeydecision.h,145,1.0,<file-scope>,double modulation        = 1.0;   ///< SOFT: matches a committed modulation span covering the region
+src/composing/analysis/section/jointkeydecision.h,146,0.15,<file-scope>,double bassIsRootTonic   = 0.15;  ///< SOFT: region bass pc == hypothesis tonic
+src/composing/analysis/section/jointkeydecision.h,147,1.0,<file-scope>,double declaredHint      = 1.0;   ///< SOFT: signature-pair mode matches the declared mode (shipped 1.0)
+src/composing/analysis/section/jointkeydecision.h,148,1.2,<file-scope>,double transitionPenalty = 1.2;   ///< global key-path: cost of switching key vs the previous region
+src/composing/analysis/section/jointkeydecision.h,149,0.6,<file-scope>,double couplingBonus     = 0.6;   ///< config B only: best chord candidate is diatonic to the key
+src/composing/analysis/section/localmodulationdetector.cpp,47,5,<file-scope>,constexpr int kEstablishmentMinChords = 5;
+src/composing/analysis/section/localmodulationdetector.cpp,48,2,<file-scope>,constexpr int kPitchTolerance = 2;
+src/composing/analysis/section/localmodulationdetector.cpp,69,12,lmdOutOfCollectionCount,for (int p = 0; p < 12; ++p) {
+src/composing/analysis/section/sectionanalyzer.cpp,77,12,distinctPitchClassCount,bool seenPitchClasses[12] = {};
+src/composing/analysis/section/sectionanalyzer.cpp,80,12,distinctPitchClassCount,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,130,12,stabilizeHarmonicRegionsForDisplay,const int tonicPc = (ionianPc + keyModeTonicOffset(region.keyModeResult.mode)) % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,143,12,stabilizeHarmonicRegionsForDisplay,const int pc = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,146,12,stabilizeHarmonicRegionsForDisplay,if ((tonicPc + interval) % 12 == pc) {
+src/composing/analysis/section/sectionanalyzer.cpp,242,12,analyzeSection,bool seenGapPitchClasses[12] = {};
+src/composing/analysis/section/sectionanalyzer.cpp,245,12,analyzeSection,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,268,12,analyzeSection,const int tonicPc = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,278,12,analyzeSection,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,281,12,analyzeSection,if ((tonicPc + interval) % 12 == pitchClass) {
+src/composing/analysis/section/sectionanalyzer.cpp,309,12,analyzeSection,bool seenPitchClasses[12] = {};
+src/composing/analysis/section/sectionanalyzer.cpp,313,12,analyzeSection,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,325,0.0,analyzeSection,outResult.identity.score = 0.0;
+src/composing/analysis/section/sectionanalyzer.cpp,355,12,analyzeSection,const int interval = (tonePc - candidateRootPc + 12) % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,355,12,analyzeSection,const int interval = (tonePc - candidateRootPc + 12) % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,356,3,analyzeSection,if (interval == 3) {
+src/composing/analysis/section/sectionanalyzer.cpp,358,4,analyzeSection,} else if (interval == 4) {
+src/composing/analysis/section/sectionanalyzer.cpp,360,6,analyzeSection,} else if (interval == 6) {
+src/composing/analysis/section/sectionanalyzer.cpp,362,7,analyzeSection,} else if (interval == 7) {
+src/composing/analysis/section/sectionanalyzer.cpp,378,3,analyzeSection,candidate.priority = 3;
+src/composing/analysis/section/sectionanalyzer.cpp,381,3,analyzeSection,candidate.priority = 3;
+src/composing/analysis/section/sectionanalyzer.cpp,384,2,analyzeSection,candidate.priority = 2;
+src/composing/analysis/section/sectionanalyzer.cpp,492,12,analyzeSection,bool seenGapPitchClasses[12] = {};
+src/composing/analysis/section/sectionanalyzer.cpp,494,12,analyzeSection,const int pitchClass = tone.pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,502,3,analyzeSection,if (uniqueGapPitchClasses < 3) {
+src/composing/analysis/section/sectionanalyzer.cpp,514,12,analyzeSection,const int gapPc = gapTones.front().pitch % 12;
+src/composing/analysis/section/sectionanalyzer.cpp,593,2,analyzeSection,displayRegions.reserve(regions.size() * 2);
+src/composing/analysis/section/sectionanalyzer.cpp,706,2,analyzeSection,if (measureRegions.size() >= 2
+src/composing/analysis/section/sectionanalyzer.cpp,708,3,analyzeSection,&& distinctPitchClassCount(measureRegions.front().tones) < 3
+src/composing/analysis/section/sectionanalyzer.cpp,709,3,analyzeSection,&& distinctPitchClassCount(measureRegions[1].tones) >= 3
+src/composing/analysis/section/sectionanalyzer.h,91,0.8,<file-scope>,inline double kAnnotateKeyConfidenceThreshold = 0.8;
+src/composing/analysis/section/sectionanalyzer.h,95,8,<file-scope>,inline constexpr int kMaxPivotLookaheadRegions = 8;
+src/composing/analysis/section/sectioncadencedetection.cpp,102,4,detectCadences,&& ((a.function.degree == 4 && a.identity.quality != ChordQuality::Minor)
+src/composing/analysis/section/sectioncadencedetection.cpp,103,6,detectCadences,|| (a.function.degree == 6 && a.identity.quality == ChordQuality::Diminished))) {
+src/composing/analysis/section/sectioncadencedetection.cpp,105,3,detectCadences,} else if (a.function.degree == 3 && b.function.degree == 0) {
+src/composing/analysis/section/sectioncadencedetection.cpp,107,4,detectCadences,} else if (a.function.degree == 4 && b.function.degree == 5
+src/composing/analysis/section/sectioncadencedetection.cpp,107,5,detectCadences,} else if (a.function.degree == 4 && b.function.degree == 5
+src/composing/analysis/section/sectioncadencedetection.cpp,131,4,detectCadences,&& regions[n - 1].chordResult.function.degree == 4) {
+src/composing/analysis/section/sectioncadencedetection.cpp,216,12,detectPivotChords,const int newTonicPc  = (newIonianPc + keyModeTonicOffset(tr.newMode)) % 12;
+src/composing/analysis/types/analysistypes.h,115,2,<file-scope>,"Deep      = 2,  ///< reserved (Stage 3.2+) — wide / exact DP; NOT yet active (behaves as FastBeam1)"
+src/composing/analysis/types/analysistypes.h,177,0.70,<file-scope>,double bassNoteRootBonus = 0.70;
+src/composing/analysis/types/analysistypes.h,183,0.3,<file-scope>,double bassRootThirdOnlyMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,188,0.1,<file-scope>,double bassRootAloneMultiplier = 0.1;
+src/composing/analysis/types/analysistypes.h,191,0.30,<file-scope>,double diatonicRootBonus = 0.30;
+src/composing/analysis/types/analysistypes.h,196,0.20,<file-scope>,double tpcConsistencyBonusPerTone = 0.20;
+src/composing/analysis/types/analysistypes.h,200,0.40,<file-scope>,double rootContinuityBonus = 0.40;
+src/composing/analysis/types/analysistypes.h,207,0.35,<file-scope>,double resolutionBonus = 0.35;
+src/composing/analysis/types/analysistypes.h,226,0.5,<file-scope>,double stepwiseBassInversionBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,235,0.5,<file-scope>,double stepwiseBassLookaheadBonus = 0.5;
+src/composing/analysis/types/analysistypes.h,243,0.45,<file-scope>,double completeTriadInversionBonus = 0.45;
+src/composing/analysis/types/analysistypes.h,252,0.4,<file-scope>,double sameRootInversionBonus = 0.4;
+src/composing/analysis/types/analysistypes.h,268,2.0,<file-scope>,double maxTotalInversionContextBonus = 2.0;
+src/composing/analysis/types/analysistypes.h,293,0.70,<file-scope>,double inversionSuspicionMargin = 0.70;
+src/composing/analysis/types/analysistypes.h,298,0.0,<file-scope>,double inversionBonusReduction = 0.0;
+src/composing/analysis/types/analysistypes.h,319,0.6,<file-scope>,double harmonicBoundaryJaccardThreshold = 0.6;
+src/composing/analysis/types/analysistypes.h,325,0.3,<file-scope>,double pedalTailWeightMultiplier = 0.3;
+src/composing/analysis/types/analysistypes.h,332,0.05,<file-scope>,double bassPassingToneMinWeightFraction = 0.05;
+src/composing/analysis/types/analysistypes.h,346,0.20,<file-scope>,double extensionThreshold = 0.20;
+src/composing/analysis/types/analysistypes.h,355,3,<file-scope>,int minDistinctPcsForCandidate = 3;
+src/composing/analysis/types/analysistypes.h,386,0.65,<file-scope>,double pedalConfidenceThreshold = 0.65;
+src/composing/analysis/types/analysistypes.h,428,0.0,bounds,"{ ""bassNoteRootBonus"",           { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,428,2.0,bounds,"{ ""bassNoteRootBonus"",           { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,429,0.0,bounds,"{ ""bassRootThirdOnlyMultiplier"", { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,429,1.0,bounds,"{ ""bassRootThirdOnlyMultiplier"", { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,430,0.0,bounds,"{ ""bassRootAloneMultiplier"",     { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,430,1.0,bounds,"{ ""bassRootAloneMultiplier"",     { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,431,0.0,bounds,"{ ""diatonicRootBonus"",           { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,431,1.0,bounds,"{ ""diatonicRootBonus"",           { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,432,0.0,bounds,"{ ""tpcConsistencyBonusPerTone"",  { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,432,1.0,bounds,"{ ""tpcConsistencyBonusPerTone"",  { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,433,0.0,bounds,"{ ""rootContinuityBonus"",           { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,433,1.5,bounds,"{ ""rootContinuityBonus"",           { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,434,0.0,bounds,"{ ""resolutionBonus"",               { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,434,1.5,bounds,"{ ""resolutionBonus"",               { 0.0, 1.5 } },"
+src/composing/analysis/types/analysistypes.h,435,0.0,bounds,"{ ""stepwiseBassInversionBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,435,2.0,bounds,"{ ""stepwiseBassInversionBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,436,0.0,bounds,"{ ""stepwiseBassLookaheadBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,436,2.0,bounds,"{ ""stepwiseBassLookaheadBonus"",    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,437,0.0,bounds,"{ ""completeTriadInversionBonus"",  { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,437,2.0,bounds,"{ ""completeTriadInversionBonus"",  { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,438,0.0,bounds,"{ ""sameRootInversionBonus"",                    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,438,2.0,bounds,"{ ""sameRootInversionBonus"",                    { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,439,0.0,bounds,"{ ""maxTotalInversionContextBonus"",            { 0.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,439,10.0,bounds,"{ ""maxTotalInversionContextBonus"",            { 0.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,440,0.0,bounds,"{ ""inversionSuspicionMargin"",                 { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,440,2.0,bounds,"{ ""inversionSuspicionMargin"",                 { 0.0, 2.0 } },"
+src/composing/analysis/types/analysistypes.h,441,0.0,bounds,"{ ""inversionBonusReduction"",            { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,441,1.0,bounds,"{ ""inversionBonusReduction"",            { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,442,0.0,bounds,"{ ""harmonicBoundaryJaccardThreshold"",       { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,442,1.0,bounds,"{ ""harmonicBoundaryJaccardThreshold"",       { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,443,0.0,bounds,"{ ""pedalTailWeightMultiplier"",              { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,443,1.0,bounds,"{ ""pedalTailWeightMultiplier"",              { 0.0, 1.0 } },"
+src/composing/analysis/types/analysistypes.h,444,0.0,bounds,"{ ""bassPassingToneMinWeightFraction"",       { 0.0, 0.5 } },"
+src/composing/analysis/types/analysistypes.h,444,0.5,bounds,"{ ""bassPassingToneMinWeightFraction"",       { 0.0, 0.5 } },"
+src/composing/analysis/types/analysistypes.h,445,0.3,bounds,"{ ""pedalConfidenceThreshold"",               { 0.3, 0.95 } },"
+src/composing/analysis/types/analysistypes.h,445,0.95,bounds,"{ ""pedalConfidenceThreshold"",               { 0.3, 0.95 } },"
+src/composing/analysis/types/analysistypes.h,446,0.10,bounds,"{ ""extensionThreshold"",                     { 0.10, 0.30 } },"
+src/composing/analysis/types/analysistypes.h,446,0.30,bounds,"{ ""extensionThreshold"",                     { 0.10, 0.30 } },"
+src/composing/analysis/types/analysistypes.h,512,3,<file-scope>,"std::array<int, 3> recentRootPcs = {-1, -1, -1};"
+src/composing/analysis/types/analysistypes.h,517,1.0,<file-scope>,double regionMetricWeight = 1.0;
+src/composing/analysis/types/analysistypes.h,524,0.0,<file-scope>,double previousWinnerScore { 0.0 };
+src/composing/analysis/types/analysistypes.h,528,1.0,<file-scope>,double previousWinnerMargin { -1.0 };
+src/composing/analysis/types/analysistypes.h,532,0.0,<file-scope>,double previousWinnerRootPcWeight { 0.0 };
+src/composing/analysis/types/analysistypes.h,587,3.0,<file-scope>,double noteWeightCap = 3.0;          // [empirical]
+src/composing/analysis/types/analysistypes.h,591,2.0,<file-scope>,"double bassMultiplier = 2.0;         // [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,600,1.00,<file-scope>,double scaleScoreInBoth    =  1.00;  ///< Note is in candidate scale AND key-sig scale [theory-grounded ordering]
+src/composing/analysis/types/analysistypes.h,601,0.25,<file-scope>,double scaleScoreInCandidateOnly = 0.25;  ///< In candidate scale but not key-sig scale [empirical]
+src/composing/analysis/types/analysistypes.h,602,0.20,<file-scope>,double scaleScoreInKeySigOnly    = -0.20; ///< In key-sig scale but not candidate (chromatic neighbour) [empirical]
+src/composing/analysis/types/analysistypes.h,603,0.05,<file-scope>,double scaleScoreInNeither       = -0.05; ///< Outside both scales [empirical]
+src/composing/analysis/types/analysistypes.h,611,1.60,<file-scope>,"double tonicWeight       = 1.60;  ///< Tonic note present [theory-grounded ordering, empirical value]"
+src/composing/analysis/types/analysistypes.h,612,0.70,<file-scope>,"double thirdWeight       = 0.70;  ///< Third (M3 for major, m3 for minor) [empirical]"
+src/composing/analysis/types/analysistypes.h,613,0.50,<file-scope>,double fifthWeight       = 0.50;  ///< Perfect fifth [empirical]
+src/composing/analysis/types/analysistypes.h,614,0.40,<file-scope>,"double leadingToneWeight = 0.40;  ///< Leading tone (tonicPc + 11, used for both modes) [empirical]"
+src/composing/analysis/types/analysistypes.h,616,2.50,<file-scope>,double completeTriadBonus  =  2.50;  ///< All three triad notes present simultaneously [empirical]
+src/composing/analysis/types/analysistypes.h,617,2.50,<file-scope>,double missingTonicPenalty = -2.50;  ///< Tonic entirely absent [empirical]
+src/composing/analysis/types/analysistypes.h,619,0.10,<file-scope>,double extraScaleFactor    = 0.10;   ///< Per-unit weight of non-triad in-scale notes [empirical]
+src/composing/analysis/types/analysistypes.h,620,5.0,<file-scope>,double extraScaleCap       = 5.0;    ///< Cap on total extra-scale weight [empirical]
+src/composing/analysis/types/analysistypes.h,629,1.80,<file-scope>,double characteristicPitchBoost   = 1.80;  ///< Boost when characteristic pitch is present [empirical]
+src/composing/analysis/types/analysistypes.h,630,0.60,<file-scope>,double characteristicPitchPenalty = -0.60;  ///< Penalty when characteristic pitch is absent [empirical]
+src/composing/analysis/types/analysistypes.h,640,1.20,<file-scope>,double trueLeadingToneBoost = 1.20;  ///< Bonus when semitone-below-tonic is present [empirical]
+src/composing/analysis/types/analysistypes.h,652,1.20,<file-scope>,double modePriorIonian          =  1.20;  ///< [empirical — was tier1+0.2]
+src/composing/analysis/types/analysistypes.h,653,0.50,<file-scope>,double modePriorDorian          = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,654,1.50,<file-scope>,double modePriorPhrygian        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,655,1.50,<file-scope>,double modePriorLydian          = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,656,0.50,<file-scope>,double modePriorMixolydian      = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,657,1.00,<file-scope>,double modePriorAeolian         =  1.00;  ///< [empirical — was tier1]
+src/composing/analysis/types/analysistypes.h,658,3.00,<file-scope>,double modePriorLocrian         = -3.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,661,0.50,<file-scope>,double modePriorMelodicMinor    = -0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,662,1.50,<file-scope>,double modePriorDorianB2        = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,663,2.00,<file-scope>,double modePriorLydianAugmented  = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,664,1.00,<file-scope>,double modePriorLydianDominant   = -1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,665,1.50,<file-scope>,double modePriorMixolydianB6    = -1.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,666,2.50,<file-scope>,double modePriorAeolianB5       = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,667,3.50,<file-scope>,double modePriorAltered         = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,670,0.30,<file-scope>,double modePriorHarmonicMinor   = -0.30;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,671,2.50,<file-scope>,double modePriorLocrianSharp6   = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,672,2.00,<file-scope>,double modePriorIonianSharp5    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,673,2.00,<file-scope>,double modePriorDorianSharp4    = -2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,674,0.80,<file-scope>,double modePriorPhrygianDominant = -0.80;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,675,2.50,<file-scope>,double modePriorLydianSharp2    = -2.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,676,3.50,<file-scope>,double modePriorAlteredDomBB7   = -3.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,690,2.20,<file-scope>,double tonalCenterTonicWeight  = 2.20;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,691,1.00,<file-scope>,double tonalCenterThirdWeight  = 1.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,692,0.70,<file-scope>,double tonalCenterFifthWeight  = 0.70;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,693,0.50,<file-scope>,double tonalCenterLeadingTone  = 0.50;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,694,2.00,<file-scope>,double tonalCenterTriadBonus   = 2.00;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,695,0.25,<file-scope>,double tonalCenterDeltaThreshold = 0.25; ///< Min delta to choose winner outright [empirical]
+src/composing/analysis/types/analysistypes.h,704,0.60,<file-scope>,double keySignatureDistancePenalty = 0.60;  ///< Per circle-of-fifths step of distance [empirical]
+src/composing/analysis/types/analysistypes.h,714,4.50,<file-scope>,double disambiguationTriadBonus  = 4.50;  ///< One side has complete triad + tonic [empirical]
+src/composing/analysis/types/analysistypes.h,715,1.50,<file-scope>,double disambiguationTriadCost   = 1.50;  ///< Applied to the other side [empirical]
+src/composing/analysis/types/analysistypes.h,716,1.00,<file-scope>,double disambiguationTonicBonus  = 1.00;  ///< Only-tonic-present (no complete triad) [empirical]
+src/composing/analysis/types/analysistypes.h,733,1.0,<file-scope>,"double declaredModePenalty = 1.0;  ///< Small declared-mode hint, outside-class candidates [empirical — Stage-5 fits]"
+src/composing/analysis/types/analysistypes.h,758,2.0,<file-scope>,double confidenceSigmoidMidpoint  = 2.0;   ///< Gap at which confidence = 0.5 [empirical]
+src/composing/analysis/types/analysistypes.h,759,1.5,<file-scope>,double confidenceSigmoidSteepness = 1.5;   ///< Rate of confidence rise [empirical]
+src/composing/analysis/types/analysistypes.h,770,0.60,<file-scope>,double dynamicLookaheadConfidenceThreshold = 0.60; ///< Stop expanding when confidence ≥ this [empirical]
+src/composing/analysis/types/analysistypes.h,771,2,<file-scope>,int    dynamicLookaheadStepBeats            = 2;    ///< Beats added per expansion step [empirical]
+src/composing/analysis/types/analysistypes.h,772,24,<file-scope>,int    dynamicLookaheadMaxBeats             = 24;   ///< Hard cap on lookahead [empirical]
+src/composing/analysis/types/analysistypes.h,782,2.0,<file-scope>,double hysteresisMargin = 2.0;  ///< Score advantage required to switch modes when key sigs differ [empirical]
+src/composing/analysis/types/analysistypes.h,788,2.0,<file-scope>,"double relativeKeyHysteresisMargin = 2.0;  ///< Same-key-sig switch barrier [empirical, = hysteresisMargin by default]"
+src/composing/analysis/types/analysistypes.h,797,1.0,<file-scope>,double beatWeightDownbeat            = 1.0;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,798,0.7,<file-scope>,double beatWeightCompoundStressed    = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,799,0.7,<file-scope>,double beatWeightSimpleStressed      = 0.7;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,800,0.4,<file-scope>,double beatWeightCompoundUnstressed  = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,801,0.4,<file-scope>,double beatWeightSimpleUnstressed    = 0.4;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,802,0.2,<file-scope>,double beatWeightCompoundSubbeat     = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,803,0.2,<file-scope>,double beatWeightSubbeat             = 0.2;  ///< [empirical]
+src/composing/analysis/types/analysistypes.h,819,1.0,bounds,"{ ""noteWeightCap"",                     { 1.0,  6.0 } },"
+src/composing/analysis/types/analysistypes.h,819,6.0,bounds,"{ ""noteWeightCap"",                     { 1.0,  6.0 } },"
+src/composing/analysis/types/analysistypes.h,820,1.0,bounds,"{ ""bassMultiplier"",                    { 1.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,820,4.0,bounds,"{ ""bassMultiplier"",                    { 1.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,822,0.5,bounds,"{ ""scaleScoreInBoth"",                  { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,822,2.0,bounds,"{ ""scaleScoreInBoth"",                  { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,823,0.0,bounds,"{ ""scaleScoreInCandidateOnly"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,823,1.0,bounds,"{ ""scaleScoreInCandidateOnly"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,824,1.0,bounds,"{ ""scaleScoreInKeySigOnly"",            {-1.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,824,0.0,bounds,"{ ""scaleScoreInKeySigOnly"",            {-1.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,825,0.5,bounds,"{ ""scaleScoreInNeither"",               {-0.5,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,825,0.0,bounds,"{ ""scaleScoreInNeither"",               {-0.5,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,827,0.5,bounds,"{ ""tonicWeight"",                       { 0.5,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,827,3.0,bounds,"{ ""tonicWeight"",                       { 0.5,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,828,0.0,bounds,"{ ""thirdWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,828,2.0,bounds,"{ ""thirdWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,829,0.0,bounds,"{ ""fifthWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,829,2.0,bounds,"{ ""fifthWeight"",                       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,830,0.0,bounds,"{ ""leadingToneWeight"",                 { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,830,1.5,bounds,"{ ""leadingToneWeight"",                 { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,831,0.5,bounds,"{ ""completeTriadBonus"",                { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,831,5.0,bounds,"{ ""completeTriadBonus"",                { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,832,5.0,bounds,"{ ""missingTonicPenalty"",               {-5.0, -0.5 } },"
+src/composing/analysis/types/analysistypes.h,832,0.5,bounds,"{ ""missingTonicPenalty"",               {-5.0, -0.5 } },"
+src/composing/analysis/types/analysistypes.h,833,0.0,bounds,"{ ""extraScaleFactor"",                  { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,833,0.5,bounds,"{ ""extraScaleFactor"",                  { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,834,1.0,bounds,"{ ""extraScaleCap"",                     { 1.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,834,10.0,bounds,"{ ""extraScaleCap"",                     { 1.0, 10.0 } },"
+src/composing/analysis/types/analysistypes.h,836,0.5,bounds,"{ ""characteristicPitchBoost"",          { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,836,4.0,bounds,"{ ""characteristicPitchBoost"",          { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,837,2.0,bounds,"{ ""characteristicPitchPenalty"",        {-2.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,837,0.0,bounds,"{ ""characteristicPitchPenalty"",        {-2.0,  0.0 } },"
+src/composing/analysis/types/analysistypes.h,839,0.0,bounds,"{ ""trueLeadingToneBoost"",              { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,839,3.0,bounds,"{ ""trueLeadingToneBoost"",              { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,841,5.0,bounds,"{ ""modePriorIonian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,841,5.0,bounds,"{ ""modePriorIonian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,842,5.0,bounds,"{ ""modePriorDorian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,842,5.0,bounds,"{ ""modePriorDorian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,843,5.0,bounds,"{ ""modePriorPhrygian"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,843,5.0,bounds,"{ ""modePriorPhrygian"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,844,5.0,bounds,"{ ""modePriorLydian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,844,5.0,bounds,"{ ""modePriorLydian"",        { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,845,5.0,bounds,"{ ""modePriorMixolydian"",    { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,845,5.0,bounds,"{ ""modePriorMixolydian"",    { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,846,5.0,bounds,"{ ""modePriorAeolian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,846,5.0,bounds,"{ ""modePriorAeolian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,847,5.0,bounds,"{ ""modePriorLocrian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,847,5.0,bounds,"{ ""modePriorLocrian"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,848,5.0,bounds,"{ ""modePriorMelodicMinor"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,848,5.0,bounds,"{ ""modePriorMelodicMinor"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,849,5.0,bounds,"{ ""modePriorDorianB2"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,849,5.0,bounds,"{ ""modePriorDorianB2"",      { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,850,5.0,bounds,"{ ""modePriorLydianAugmented"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,850,5.0,bounds,"{ ""modePriorLydianAugmented"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,851,5.0,bounds,"{ ""modePriorLydianDominant"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,851,5.0,bounds,"{ ""modePriorLydianDominant"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,852,5.0,bounds,"{ ""modePriorMixolydianB6"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,852,5.0,bounds,"{ ""modePriorMixolydianB6"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,853,5.0,bounds,"{ ""modePriorAeolianB5"",     { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,853,5.0,bounds,"{ ""modePriorAeolianB5"",     { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,854,5.0,bounds,"{ ""modePriorAltered"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,854,5.0,bounds,"{ ""modePriorAltered"",       { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,855,5.0,bounds,"{ ""modePriorHarmonicMinor"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,855,5.0,bounds,"{ ""modePriorHarmonicMinor"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,856,5.0,bounds,"{ ""modePriorLocrianSharp6"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,856,5.0,bounds,"{ ""modePriorLocrianSharp6"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,857,5.0,bounds,"{ ""modePriorIonianSharp5"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,857,5.0,bounds,"{ ""modePriorIonianSharp5"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,858,5.0,bounds,"{ ""modePriorDorianSharp4"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,858,5.0,bounds,"{ ""modePriorDorianSharp4"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,859,5.0,bounds,"{ ""modePriorPhrygianDominant"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,859,5.0,bounds,"{ ""modePriorPhrygianDominant"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,860,5.0,bounds,"{ ""modePriorLydianSharp2"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,860,5.0,bounds,"{ ""modePriorLydianSharp2"",  { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,861,5.0,bounds,"{ ""modePriorAlteredDomBB7"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,861,5.0,bounds,"{ ""modePriorAlteredDomBB7"", { -5.0, 5.0, true } },"
+src/composing/analysis/types/analysistypes.h,863,0.5,bounds,"{ ""tonalCenterTonicWeight"",            { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,863,4.0,bounds,"{ ""tonalCenterTonicWeight"",            { 0.5,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,864,0.0,bounds,"{ ""tonalCenterThirdWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,864,2.0,bounds,"{ ""tonalCenterThirdWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,865,0.0,bounds,"{ ""tonalCenterFifthWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,865,2.0,bounds,"{ ""tonalCenterFifthWeight"",            { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,866,0.0,bounds,"{ ""tonalCenterLeadingTone"",            { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,866,1.5,bounds,"{ ""tonalCenterLeadingTone"",            { 0.0,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,867,0.5,bounds,"{ ""tonalCenterTriadBonus"",             { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,867,5.0,bounds,"{ ""tonalCenterTriadBonus"",             { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,868,0.0,bounds,"{ ""tonalCenterDeltaThreshold"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,868,1.0,bounds,"{ ""tonalCenterDeltaThreshold"",         { 0.0,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,870,0.0,bounds,"{ ""keySignatureDistancePenalty"",       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,870,2.0,bounds,"{ ""keySignatureDistancePenalty"",       { 0.0,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,872,1.0,bounds,"{ ""disambiguationTriadBonus"",          { 1.0,  8.0 } },"
+src/composing/analysis/types/analysistypes.h,872,8.0,bounds,"{ ""disambiguationTriadBonus"",          { 1.0,  8.0 } },"
+src/composing/analysis/types/analysistypes.h,873,0.0,bounds,"{ ""disambiguationTriadCost"",           { 0.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,873,4.0,bounds,"{ ""disambiguationTriadCost"",           { 0.0,  4.0 } },"
+src/composing/analysis/types/analysistypes.h,874,0.0,bounds,"{ ""disambiguationTonicBonus"",          { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,874,3.0,bounds,"{ ""disambiguationTonicBonus"",          { 0.0,  3.0 } },"
+src/composing/analysis/types/analysistypes.h,878,0.0,bounds,"{ ""declaredModePenalty"",               { 0.0, 15.0, true } },"
+src/composing/analysis/types/analysistypes.h,878,15.0,bounds,"{ ""declaredModePenalty"",               { 0.0, 15.0, true } },"
+src/composing/analysis/types/analysistypes.h,880,0.5,bounds,"{ ""confidenceSigmoidMidpoint"",         { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,880,5.0,bounds,"{ ""confidenceSigmoidMidpoint"",         { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,881,0.5,bounds,"{ ""confidenceSigmoidSteepness"",        { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,881,5.0,bounds,"{ ""confidenceSigmoidSteepness"",        { 0.5,  5.0 } },"
+src/composing/analysis/types/analysistypes.h,883,0.3,bounds,"{ ""dynamicLookaheadConfidenceThreshold"",{ 0.3, 0.9 } },"
+src/composing/analysis/types/analysistypes.h,883,0.9,bounds,"{ ""dynamicLookaheadConfidenceThreshold"",{ 0.3, 0.9 } },"
+src/composing/analysis/types/analysistypes.h,885,0.5,bounds,"{ ""hysteresisMargin"",                  { 0.5,  5.0, true } },"
+src/composing/analysis/types/analysistypes.h,885,5.0,bounds,"{ ""hysteresisMargin"",                  { 0.5,  5.0, true } },"
+src/composing/analysis/types/analysistypes.h,886,0.5,bounds,"{ ""relativeKeyHysteresisMargin"",       { 0.5,  8.0, true } },"
+src/composing/analysis/types/analysistypes.h,886,8.0,bounds,"{ ""relativeKeyHysteresisMargin"",       { 0.5,  8.0, true } },"
+src/composing/analysis/types/analysistypes.h,888,0.5,bounds,"{ ""beatWeightDownbeat"",                { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,888,2.0,bounds,"{ ""beatWeightDownbeat"",                { 0.5,  2.0 } },"
+src/composing/analysis/types/analysistypes.h,889,0.3,bounds,"{ ""beatWeightCompoundStressed"",        { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,889,1.5,bounds,"{ ""beatWeightCompoundStressed"",        { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,890,0.3,bounds,"{ ""beatWeightSimpleStressed"",          { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,890,1.5,bounds,"{ ""beatWeightSimpleStressed"",          { 0.3,  1.5 } },"
+src/composing/analysis/types/analysistypes.h,891,0.1,bounds,"{ ""beatWeightCompoundUnstressed"",      { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,891,1.0,bounds,"{ ""beatWeightCompoundUnstressed"",      { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,892,0.1,bounds,"{ ""beatWeightSimpleUnstressed"",        { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,892,1.0,bounds,"{ ""beatWeightSimpleUnstressed"",        { 0.1,  1.0 } },"
+src/composing/analysis/types/analysistypes.h,893,0.0,bounds,"{ ""beatWeightCompoundSubbeat"",         { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,893,0.5,bounds,"{ ""beatWeightCompoundSubbeat"",         { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,894,0.0,bounds,"{ ""beatWeightSubbeat"",                 { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,894,0.5,bounds,"{ ""beatWeightSubbeat"",                 { 0.0,  0.5 } },"
+src/composing/analysis/types/analysistypes.h,913,1.0,<file-scope>,double durationWeight = 1.0; ///< Duration in quarter-note units; larger = more influence
+src/composing/analysis/types/analysistypes.h,914,1.0,<file-scope>,"double beatWeight = 1.0;     ///< Metric position: 1.0=downbeat, ~0.2=offbeat"
