@@ -1,0 +1,28 @@
+{
+ "processes_ok": 352,
+ "processes_bad": 0,
+ "aggregate": {
+  "analyzeCalls": 122047,
+  "insufficientData": 742,
+  "jointEnabled": 121695,
+  "bassEnumerated": 34610,
+  "sparseUpperAmbiguous": 272,
+  "legacySingleBass": 87437,
+  "structuralBassFalse": 255,
+  "aug7GuardSkip": 1416104,
+  "dim7BonusFired": 2080,
+  "sus4MissingFourth": 4111191,
+  "sus4VariantMissing7th": 2113882,
+  "sus4Maj7MissingP5": 1056941,
+  "dom7b5TpcPenalty": 1429211,
+  "dom7b5Missing7th": 1056941,
+  "power3pcPenalty": 1421052,
+  "augFactorHalved": 732133,
+  "wCompleteFired": 145884,
+  "nonBassPenaltyApplied": 10292206,
+  "nonBassPenaltyWaived": 970298,
+  "augRootCorrection": 0,
+  "sus2ToSus4": 1428,
+  "susToMajorOmitsThird": 1208
+ }
+}
