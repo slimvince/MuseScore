@@ -159,8 +159,12 @@ private:
 // a fresh build over the enlarged span; a span-scoped walk + an incremental index
 // are Phase 1b (deferred behind this byte-identity gate). The live analysis path
 // (region analyzer, batch_analyze) uses the whole-score build(sc) only; extend()
-// is the L1 capability the layers above are written against (no layer calls it
-// yet — that is Phase 3 reach-back).
+// is the L1 capability the layers above are written against. It is dormant in
+// SUBSTANCE, not unused: callers exist but are gated off on the production path
+// (regionanalyzer.cpp:702 behind ReachBackOptions::enabled=false;
+// chordslicedecoder.cpp:1387/1393 behind the decoder's enableEdgeExtension;
+// textureclassifier.cpp:183/187), so extend() fires 0 times on production — the
+// Phase 3 reach-back that turns them on is deferred.
 class NoteModel
 {
 public:

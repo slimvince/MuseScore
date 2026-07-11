@@ -65,7 +65,7 @@
 //   * DETERMINISTIC + O(n log n). Same input model -> same slices, every run.
 //
 // It IS wired into the live analysis pipeline: layer 3 consumes the slices
-// (regionanalyzer.cpp:579 -> KeyModeSequenceDecoder::decode). The slicer's own
+// (regionanalyzer.cpp -> KeyModeSequenceDecoder::decode, at :634 and :705). The slicer's own
 // output stays byte-identical on the whole-score live path (the clip is inert
 // there) — the analysis movement came from layer 3's CONSUMPTION of the slices,
 // not from the slicer. See cowork_layer2_slicing_design.md + cc_layer2_audit_dossier.md.
