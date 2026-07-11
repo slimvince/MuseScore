@@ -59,6 +59,25 @@ self-granted; OI-84/EG-7 left OPEN.** Pass-2 commits `52d0623226` + `b8dc714f50`
 certification decision; OI-43 (its ON-HOLD condition — the audit — is now complete); OI-44.
 **NEXT (per OI-84 dependency order): the L3 layer certification audit.**
 
+**✅ FULLY-BLIND RE-RUN DONE (CC, 2026-07-11) — `cc_l1l2_audit_blind_rerun_report.md`.** Pass 2's
+second reading was only PARTIALLY blind (it read the `STATUS.md` headline at Task 0); the user
+WITHHELD L1/L2 certification (OI-89 / DT-20) pending a reading that never saw a prior conclusion. This
+re-runs ONLY P5 + P6, **fully** blind: all 111+40 verdicts were frozen at `fbcb59c8d7` **before** any
+withheld file (STATUS / OPEN_ITEMS / DEFECT_TYPES / handoff / both pass reports / pass-1 dispositions)
+was opened — strictly stronger blinding than pass 2. New independent sampler `gen_blind_rerun_sample.py`
+(seeds 20260712 reading / 20260713 error, deterministic), comparison `compare_blind_rerun.py`.
+**Result: reading 94/111 issue-agree, error 35/40 — EVERY disagreement is a verdict-AXIS difference
+(retirement-map RETIRES / DT-2 UNFIT constants / DT-19 upward include), ZERO code-correctness misses
+in either direction.** **Did the leak matter?** — it moved the NUMBERS (reading flag rate 23.6 %→1.8 %,
+error rate 0/40→12.5 %; catalog-possession / shared-frame artifacts) but NOT the substance: an
+un-anchored reader reproduces "spine sound, findings all tracked (OI-86/87/88), no correctness bug" and
+adds one refinement (`regiontonecollector.cpp:37`→`analysisutils.h` is UNUSED, removable → sharpens
+OI-86). **★ The L1/L2 spine certification is PROPOSED and now SUPPORTED by the fully-blind re-run — the
+decision returns to the USER.** Task-4 doc fixes applied (`f76e8b65c8`, comment-only → **OI-88
+RESOLVED**). Registers: OI-88 RESOLVED, OI-89 re-run-done, OI-86 refined, OI-84 note. Commits
+`239408faad` + `fbcb59c8d7` + `f76e8b65c8` + this `docs(cc)` fold; pushed fork-only, `upstream`
+untouched. **NEXT: the user's certification decision; then the L3 certification audit.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
