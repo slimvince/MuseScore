@@ -1,0 +1,129 @@
+{
+ "audit": "EG-7 Layer-4 PASS 1, session 3 (satellites) \u2014 behavioral characterization (P4)",
+ "corpus_hash_expected": "c50002fee1",
+ "formatter_route": "batch outputs (chordSymbol/romanNumeral), Standard spelling",
+ "decoder_characterization": {
+  "commit_fires": "once per committed region + once per Pass-2/2b sub-region (byte-identical to advanceTemporalContext; decode_tests.cpp equivalence)",
+  "path_recordNode_alternatives_margins_consumers": 0,
+  "note": "inert staging at beam 1; DecodeQualityLevel Normal/Deep behave as FastBeam1 (no-op)"
+ },
+ "sparse_refinement_characterization": {
+  "refine_and_tonicPrior_calls": "unconditional on every region (regionanalyzer 1003/1005/1221/1411)",
+  "forceChordTrackQualityFromKeyContext_corpus_fires": 0,
+  "forceChordTrack_note": "chord-track/notation-annotation path only (notationcomposingbridge 1157, notationimplodebridge 1182); NOT on the batch corpus path",
+  "quality_change_bound": "confined to <=2-PC regions; see per-preset stats (regions_leq2PC, triad_on_leq2PC). Final Unknown=0 and thin_on_leq2PC=0 on all presets => every <=2-PC region ends as a triad (key-prior upgrade).",
+  "exact_change_count": "not separately instrumented (proportionality \u2014 a production default-OFF counter + byte-identity re-proof is disproportionate to the marginal gain over this tight corpus bound; recommended as a follow-up if the L4/L5 boundary decision needs the exact refine-vs-tonicPrior split)"
+ },
+ "per_preset": {
+  "baroque": {
+   "corpus_git_hash": "c50002fee1",
+   "files": 352,
+   "stats": {
+    "regions": 11222,
+    "thin_final_total": 174,
+    "regions_leq2PC": 125,
+    "triad_on_leq2PC (proxy: key-prior upgrade)": 125
+   },
+   "quality_distribution": {
+    "Minor": 3245,
+    "Major": 7268,
+    "HalfDiminished": 414,
+    "Suspended4": 79,
+    "Diminished": 107,
+    "Suspended2": 87,
+    "Power": 8,
+    "Augmented": 14
+   },
+   "formatter_branch_fires": {
+    "formatSymbol_calls": 11222,
+    "formatSymbol_nonempty": 11222,
+    "formatRomanNumeral_calls": 11222,
+    "formatRomanNumeral_nonempty": 11222,
+    "symbol_slash_bass": 4124,
+    "rn_inversion_figure": 3144,
+    "rn_tonicization_slash": 440,
+    "rn_add_notation": 327,
+    "rn_extension_level_9_11_13": 129,
+    "rn_chromatic_prefix": 96,
+    "rn_maj7_marker": 85,
+    "symbol_omit_third": 1,
+    "rn_augmented_plus": 6,
+    "rn_aug6_label": 8,
+    "symbol_cb_fb_veryflat_spelling": 1
+   }
+  },
+  "jazz": {
+   "corpus_git_hash": "c50002fee1",
+   "files": 352,
+   "stats": {
+    "regions": 10863,
+    "thin_final_total": 205,
+    "regions_leq2PC": 122,
+    "triad_on_leq2PC (proxy: key-prior upgrade)": 122
+   },
+   "quality_distribution": {
+    "Minor": 3020,
+    "Major": 7141,
+    "Suspended4": 86,
+    "Diminished": 142,
+    "HalfDiminished": 332,
+    "Suspended2": 107,
+    "Power": 12,
+    "Augmented": 23
+   },
+   "formatter_branch_fires": {
+    "formatSymbol_calls": 10863,
+    "formatSymbol_nonempty": 10863,
+    "formatRomanNumeral_calls": 10863,
+    "formatRomanNumeral_nonempty": 10863,
+    "symbol_slash_bass": 3550,
+    "rn_inversion_figure": 2892,
+    "rn_tonicization_slash": 444,
+    "rn_add_notation": 531,
+    "rn_extension_level_9_11_13": 80,
+    "rn_chromatic_prefix": 129,
+    "rn_maj7_marker": 67,
+    "symbol_omit_third": 1,
+    "rn_augmented_plus": 23,
+    "symbol_cb_fb_veryflat_spelling": 1
+   }
+  },
+  "default": {
+   "corpus_git_hash": "c50002fee1",
+   "files": 352,
+   "stats": {
+    "regions": 11211,
+    "thin_final_total": 175,
+    "regions_leq2PC": 124,
+    "triad_on_leq2PC (proxy: key-prior upgrade)": 124
+   },
+   "quality_distribution": {
+    "Minor": 3200,
+    "Major": 7309,
+    "HalfDiminished": 406,
+    "Suspended4": 80,
+    "Diminished": 106,
+    "Suspended2": 87,
+    "Augmented": 15,
+    "Power": 8
+   },
+   "formatter_branch_fires": {
+    "formatSymbol_calls": 11211,
+    "formatSymbol_nonempty": 11211,
+    "formatRomanNumeral_calls": 11211,
+    "formatRomanNumeral_nonempty": 11211,
+    "symbol_slash_bass": 4065,
+    "rn_inversion_figure": 3085,
+    "rn_tonicization_slash": 439,
+    "rn_add_notation": 347,
+    "rn_extension_level_9_11_13": 129,
+    "rn_chromatic_prefix": 94,
+    "rn_maj7_marker": 90,
+    "rn_augmented_plus": 8,
+    "symbol_omit_third": 1,
+    "rn_aug6_label": 7,
+    "symbol_cb_fb_veryflat_spelling": 1
+   }
+  }
+ }
+}
