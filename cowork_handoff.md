@@ -143,6 +143,31 @@ Task-0 `c2264c6253` (OI-100 row + instruction) + freeze `30194061d1` `feat(tools
 boundary**) + this `docs(cc)` fold; fork-only, `upstream` untouched. **NEXT: the user's L3 certification
 decision; then the L4 audit.**
 
+**★ UPDATE (CC, 2026-07-11) — L4 (chord) CERTIFICATION AUDIT PASS 1, Task 1 DONE + the Task-1.4
+FEASIBILITY STOP** (`cc_l4_audit_pass1_report.md`; on the granted L3 cert). Read-only, no
+`src/`/constant/golden change; both stops untouched. **Instrument:** the SAME `gen_inventory.py`,
+**`--layer l4`** (three-population refinement + DEFERRED-not-L4); proven inert for the other layers
+(L3 byte-identical, L1/L2 only `note_model.h` line-drift = OI-95(b)). **10 deep files → 2121 rows
+(~1880 in-scope)**, manifest HEAD `7f57aad4b5` / corpus `c50002fee1`. **The three populations, every
+tag re-verified at the code + call sites (the DT-21 discipline):** surviving scorer-core (c) 7 (the
+`analyzeChord` oracle the dormant decoder reuses + its contract header + `chordsymbolformatter` +
+`analysisutils.h` + beam-1 `chordpathdecoder.h` + `sparsechordrefinement.*`); dormant decoder (b) 2
+(`chordslicedecoder.*`); mixed 1 (`analysistypes.h`, L4 types); retiring (a) 2 file-level notes
+(`postscoringgates.cpp` Gates A–L=R1, `chordpostpasses.cpp` Iter-86/91+pedal — each with its #12
+interpretation-check); DEFERRED 11 verified NOT-L4 (`chordvoicing.cpp` arrangement, `chorddiagnose.cpp`
+diagnostic, `vocabulary/*` L5-consumer catalog, `voiceleading/*` axis-2). **★ FEASIBILITY STOP:** the
+every-row disposition + P3 contract check + P4 fire rates are infeasible in one session → Tasks 2–3
+NOT attempted (no silent sampling); the deep audit is **partitioned into ~3 sequential sessions
+(L4-2a decoder / L4-2b oracle / L4-2c formatter+satellites+L4-types) + the pass-2 sweep — OI-102, for
+Cowork to draft.** **Task-1 findings (no new TYPE):** file-table mis-tags **OI-101** (DT-21 — incl.
+`chordanalyzer.cpp` whole-file RETIRES corrected to the SURVIVING scorer core, a would-be missed file);
+two live in-scope population/boundary questions carried to OI-102 — `sparsechordrefinement` L4/L5
+(DT-4/OI-10/OI-29) and `chordpathdecoder` retire-vs-survive. **L4 certification NOT proposed — the deep
+work is owed.** Commits: Task-0 `7f57aad4b5` + `88befa3055` `feat(tools)` **freeze = the blinding
+boundary** + this `docs(cc)` fold (carries a pre-existing external OI-43/OI-44 register edit found in
+the tree — the known OI-85/DT-18 concurrent-edit pattern, preserved not authored). Fork-only,
+`upstream` untouched. **NEXT: Cowork drafts the L4-2a/2b/2c partitioned pass-1 instructions.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
