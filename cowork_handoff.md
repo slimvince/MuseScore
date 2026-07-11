@@ -168,6 +168,31 @@ boundary** + this `docs(cc)` fold (carries a pre-existing external OI-43/OI-44 r
 the tree — the known OI-85/DT-18 concurrent-edit pattern, preserved not authored). Fork-only,
 `upstream` untouched. **NEXT: Cowork drafts the L4-2a/2b/2c partitioned pass-1 instructions.**
 
+**★ UPDATE (CC, 2026-07-11) — L4 (chord) PASS-1, session L4-2a: the DORMANT SLICE DECODER — DONE**
+(`cc_l4_audit_pass1_decoder_report.md`; the first of the OI-102 partitioned sessions). Read-only;
+no `src/`/constant/golden change; both stops untouched; **no instrumentation** (existing default-OFF
+diagnostics only). Files `chord/chordslicedecoder.{h,cpp}` (dormant-but-surviving, audited as
+surviving code in full). **All 311 inventory rows verdicted** (43 fn / 8 include / 61 field / 72
+literal / 127 branch) → SURVIVES fns+branches+includes; fields 30 PUBLISHED / 28 SURVIVES / 2 TRAPPED
+/ 1 SILOED; literals 63 ESTABLISHED / 9 UNFIT (hand-set seeds; only `sufficiencyChordTones` in
+`param_manifest.json`). **P3 contract-direction:** every ARCHITECTURE §L4 expectation located in code
+(one scorer / cube ranking / commit-inherit-abstain with margin / G1–G6 + spelling-pin / full L4→L5
+carry); the two deliberate boundaries (decoder does NOT run the retiring Gates A–L; the 4-note dim7
+TYPE deferred to G5) confirmed not missing; template-count sync (17=17) holds. **P4 behavioral (3
+routes):** `Composing_DecodeChord` **67/67**; `--decode-chords` (`c50002fee1`, Baroque, **29080
+slices**) named 37.4 % / abstain 62.6 %, membership-NCT 5.8 %, topK cap 100 %, no-competitor sentinel
+**0** (defensive never-fires); `--dump-fullspine` Commit 34.4 % / Inherit 3.0 % / Abstain 62.6 %,
+ambiguity Transition 30.2 % … / **SymmetricRotation 0 % (never-fires)**. **★ NO correctness defect —
+clean dormant code whose output surface carries the engagement's needed facts.** Findings (all
+existing TYPES): **OI-103** decoder seeds off `param_manifest.json` (DT-2, L4 twin of OI-87/OI-91);
+**OI-104** G6 `SymmetricRotation` never-fires + no test (DT-7) + reserved `NoteMembership`/`contestedPc`
+(DT-5); **OI-105** doc/naming (DT-12). **Existing rows confirmed** (blind PUBLISHED was
+diagnostic-scoped; the L5 program-carry silos are tracked): OI-73 / OI-72 / OI-82 / OI-9 / OI-16 /
+OI-28 / OI-18. **No new DEFECT_TYPE.** Commits: freeze `dba57ce570` `feat(tools)` **= the blinding
+boundary** + this `docs(cc)` fold (instruction force-added). Fork-only, `upstream` untouched. **L4-2b
+(oracle) / L4-2c (satellites+types) + the whole-layer pass-2 sweep still owed; L4 certification NOT
+proposed. NEXT: Cowork drafts the L4-2b instruction.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 

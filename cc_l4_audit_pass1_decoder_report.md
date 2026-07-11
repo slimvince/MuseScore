@@ -70,11 +70,12 @@ with a stated reason.
 
 ## 3. Contract-direction check (protocol P3)
 
-From `ARCHITECTURE.md` §"Layer 4 — the per-slice chord-symbol decoder" and the roadmap's
-engagement stage, the decoder must: **decode a chord symbol per Layer-2 slice against the
-one scorer's candidate cube, carry the alternatives, commit / inherit / abstain with a
-stated margin, and hand a governed result forward.** Each expected behavior located in
-the code:
+From `ARCHITECTURE.md` §"Layer 4 — the per-slice chord-symbol decoder" (which I read; it
+states the production switch + legacy retirement are joint with Layer 5) and the decoder's
+own design header (the layer-4 design is embedded as comments in `chordslicedecoder.h`), the
+decoder must: **decode a chord symbol per Layer-2 slice against the one scorer's candidate
+cube, carry the alternatives, commit / inherit / abstain with a stated margin, and hand a
+governed result forward.** Each expected behavior located in the code:
 
 | Contract expectation | Located in code | Status |
 |---|---|---|
@@ -230,7 +231,94 @@ None. Both audited files are population (b) `L4-DECODER` in full; there is no re
 
 ## 7. Unblind reconciliation (Task 4)
 
-_To be completed after the Task-3 freeze lifts the withheld list: read `OPEN_ITEMS.md`,
-`DEFECT_TYPES.md`, `STATUS.md`, `cc_l4_audit_pass1_report.md`; reference existing rows
-where findings coincide; open new register rows for genuinely new findings; promote any
-new problem type into `DEFECT_TYPES.md`._
+**Withheld files first opened after the freeze** (`dba57ce570`, this session's Task-3
+`feat(tools):`), in this order: `OPEN_ITEMS.md`, `DEFECT_TYPES.md`, `STATUS.md`,
+`cc_l4_audit_pass1_report.md` (the parent L4 pass-1 report). During the blind pass the reads
+were, precisely: `CLAUDE.md`, `cowork_audit_protocol.md`, `BUILD_AND_TEST.md`,
+`ARCHITECTURE.md` (§Layer 4 in full + targeted greps elsewhere), `docs/scoring_model.md`
+(the §2 template-count invariant, grep-checked), the `tools/audit/l4/` inventory tables +
+`manifest.json`, `cc_instruction_l4_audit_pass1.md`, the source (whose comments embed the
+layer-4 design), and `tools/batch_analyze.cpp` / the decode test + driver / `param_manifest.json`
+for the behavioral routes. The named design docs
+(`cowork_layer4_chordsymbol_design.md`, `cowork_bounded_context_design.md`,
+`docs/decoder_design.md`) and `docs/implementation_roadmap.md` were confirmed present but
+**not** read — the contract check worked from the source's embedded design + `ARCHITECTURE.md`
+§Layer 4.
+
+This session is the **L4-2a (decoder)** sub-session the parent report (`§7`) and OI-102
+proposed. The parent even named the rows it would touch — OI-16 / OI-18 / OI-28 / OI-72 /
+OI-73 / OI-9 — and every one is reconciled below.
+
+### 7.1 New register rows (this commit)
+
+- **OI-103 (new) — L4 decoder `param_manifest.json` coverage gap** (DT-2; the L4 twin of
+  OI-87 / OI-91). Of the ~13 `ChordSliceDecoderPreferences` tunable settings, only
+  `sufficiencyChordTones` is in `param_manifest.json` (G11). `uncertaintyMargin` is
+  already OI-28; the other ~11 seeds are absent. Anticipated by the parent report's
+  "OI-91-class" note for the decoder session.
+- **OI-104 (new) — L4 decoder G6 open-question partially-dormant / reserved paths**
+  (DT-7 never-fires + a declared-dormant reserved field). `AmbiguityKind::SymmetricRotation`
+  (`chordslicedecoder.cpp:967`) fires 0/29080 and has no dedicated test (awaits the
+  deferred G5 dim7 type — relates OI-14); `OpenQuestion::NoteMembership` +
+  `OpenQuestionLabel::contestedPc` are reserved, never populated this increment.
+- **OI-105 (new, low) — L4 decoder pass-1 doc/naming precision** (finding §4.5 + §4.6):
+  `isSemitoneStep` is name-imprecise (accepts a whole tone), and the `param_manifest.json`
+  G11/D9 consuming-path note understates the `--decode-chords` / `--dump-fullspine`
+  caller. Both comment/data-only, fix at next touch (#8).
+
+### 7.2 Existing rows this audit confirms (referenced, not duplicated)
+
+The blind fact-publication verdicts were scoped to the decoder's **diagnostic** output
+surface (`--decode-chords` / `--dump-fullspine`). The unblind confirms that several of
+those facts are dropped on the **live L4→L5 program carry** — already tracked:
+
+- **OI-73** — the membership verdict (`chordTonePcs` / `nonChordTonePcs`, my rows marked
+  PUBLISHED) is serialized only on `--decode-chords` (`batch_analyze.cpp:2749–2752`); the
+  L5 `FunctionSlice` carry does **not** copy it (grep-confirmed: no `function/` consumer).
+  My PUBLISHED verdict is diagnostic-surface-scoped; the L5-carry silo is OI-73.
+- **OI-72** — the finer per-note `StepwiseSignals` (suspension / step / leap) computed in
+  `stepwiseSignals` are consumed only by `classifyTone`; just the coarse chord-tone/NCT
+  verdict survives to `SliceChord` — the fine voice-leading evidence is trapped, as OI-72
+  states.
+- **OI-82** — `FocalNote::metricWeight` (per-note beat weight) is decoder-private, exactly
+  OI-82 (region-level metric weight is published elsewhere).
+- **OI-9** — `SliceChord::alternatives` (PUBLISHED) is capped at `topK` **voicings**; the
+  cap binds on 100% of corpus slices, and a distinct-root third is not guaranteed — the
+  OI-9 distinct-root-preserving-carry concern, confirmed at fire-rate.
+- **OI-16** — the two chord-equality relations `sameChordVoicing` / `sameChordSymbol`
+  (SURVIVES) and the diatonic key prior + spelling-pin as the sole guard for a symmetric
+  root are exactly the OI-16 "latent inconsistency + key-prior" substance (surfaces at E4).
+- **OI-28** — `uncertaintyMargin = 0.5` governs the 62.6% abstain rate, precisely OI-28
+  ("never-fit seed governs decoder abstention; fit at Stage 5; characterized at PC-2").
+- **OI-18** — the dormant bounded-context edge extension (`decodeSelection` +
+  `clippedBySelectionEdge` / `cueDenied`, my TRAPPED rows) is the L4 temporal-extension
+  cluster of OI-18 (DT-17). Refinement recorded: the requester loop **is** coded (in
+  `decodeSelection`), but that function has no live caller, so the provenance fields are
+  set on no live route (declared dormancy; `cowork_bounded_context_design.md` names the
+  future selection consumer).
+- **OI-14 / OI-15** — the deferred four-note dim7 type (C2/G5) and the spelling-as-evidence
+  design gate finding §4.2 (the SymmetricRotation dormancy).
+
+### 7.3 DEFECT_TYPES.md — no new type promoted
+
+Every finding maps to an existing catalog type: OI-103 → **DT-2**; OI-104 (never-fires) →
+**DT-7** (whose founding instance already includes "the dim7 pin"); OI-104 (reserved field)
+→ the declared-dormancy face of **DT-5**/**DT-7**; OI-105(b) (stale manifest note) →
+**DT-12**. OI-105(a) — the `isSemitoneStep` naming imprecision — has no clean catalog match;
+it is a single, cosmetic naming-precision instance (correct behavior, comment-accurate) and
+is judged **below the type-promotion bar** — recorded under OI-105, not promoted to a new
+type. A future auditor may disagree and promote a "misleading-identifier" type; the decision
+is left auditable here.
+
+### 7.4 Master-plan rows updated (this commit)
+
+- **OI-84** — the L4 line: **L4-2a (decoder) pass-1 dispositions DONE** (this report);
+  L4-2b / L4-2c + the pass-2 sweep still owed. Certification NOT proposed.
+- **OI-102** — the partition: L4-2a is delivered; the row stays OPEN for L4-2b / L4-2c +
+  the layer pass-2 sweep.
+
+No correctness defect was found in the decoder. It is clean, well-documented,
+dormant-but-surviving code whose output surface already carries the facts the engagement
+needs; the findings are hygiene (manifest coverage), declared-dormancy (G6 reserved paths,
+bounded-context), and doc/naming precision — every one a register row, none a patch
+(principle 8).
