@@ -224,6 +224,41 @@ blinding boundary** + this `docs(cc)` fold (instruction force-added). Fork-only,
 the whole-layer pass-2 sweep still owed; L4 certification NOT proposed. NEXT: Cowork drafts the L4-2c
 instruction.**
 
+**★ UPDATE (CC, 2026-07-11) — L4 (chord) PASS-1, session L4-2c: the SATELLITES — DONE**
+(`cc_l4_audit_pass1_satellites_report.md`; the THIRD and last of the OI-102 partitioned sessions —
+the L4 first pass is now complete). Read-only; no production behavior change, no constant tuned, no
+golden refresh; both stops untouched; **no instrumentation added** (least-invasive routes sufficed).
+Files `chord/chordsymbolformatter.cpp` (live shared formatter), `decode/chordpathdecoder.h` (live
+beam-1 commit-chain re-expression), `region/sparsechordrefinement.{cpp,h}` (live post-commit
+diatonic-quality refinement), and the L4-type rows of `types/analysistypes.h`
+(`ChordAnalyzerPreferences`/`ChordAnalysisTone`/`ChordTemporalContext`/`DecodeQualityLevel`/`ChordQuality`;
+L3 types excluded). **All 699 in-scope rows verdicted** (32 fn / 319 literal / 288 branch / 51 field /
+7 crosslayer / 2 decl → **332 SURVIVES / 305 ESTABLISHED / 44 PUBLISHED / 15 ASSUMPTION / 3
+DEAD-reserved**; 19 ChordAnalyzerPreferences defaults in `param_manifest.json` — no new manifest gap).
+**P3 formatter-coverage:** every committed identity renders (100 % non-empty symbol + Roman on all 3
+presets; 0 empty — no region reaches the formatter Unknown, the sparse refinement upgrades it first);
+the ONE gap is Nashville chromatic roots → `"?"`. **P4 (the formatter's outputs ARE the batch
+`chordSymbol`/`romanNumeral`):** every documented branch fires per intent (slash 4124 / inversion-figure
+3144 / tonicization 440 / 9-11-13 levels 129 / chromatic 96 / aug6 8 [**Jazz 0**] / Cb-Fb 1 / `(no 3)` 1,
+per 11,222 Baroque regions); `chordpathdecoder.commit` fires per committed region (byte-identical), its
+`path()`/alternatives/margin members zero-consumer inert; the sparse refinement call is 100 % but the
+quality-CHANGE is confined to ≤2-PC regions (≤125/corpus, all triads out), `forceChordTrackQualityFromKeyContext`
+0 on the batch corpus. **★ NO correctness defect — the satellites reproduce their documented design.**
+Findings (all existing TYPES, no new DEFECT_TYPE): **OI-111** formatter duplicated music-theory tables
+(DT-3); **OI-112** formatter/ARCHITECTURE.md doc drifts (DT-12 — §4.3 stale File/move, "extensions beyond
+7th not emitted" contradicted, §5.11 aug6 preset-gating asserted-but-deferred; scoring_model.md IS in
+sync); **OI-113** `formatNashvilleNumber` chromatic-root `"?"` + crude mod-7 bass coverage gap (DT-17,
+display-only, user-reachable); **OI-114** spelling-normalization premise provenance (DT-11/#17f). **Boundary
+FACTS gathered, not decided:** (i) the sparse refinement overwrites `identity.quality` from the resolved key
+POST-commit — enriches OI-10/OI-29/DT-4/OI-102(i); (ii) `chordpathdecoder` used by `regionanalyzer.cpp` only,
+`commit()` re-expresses the retiring `advanceTemporalContext` while its forward members are inert wider-beam
+staging — enriches OI-102(ii). Referenced not duplicated: OI-107(a), OI-108(b)/§4.1i, OI-80. OI-102 updated
+(L4-2c done). Commits: freeze `10495a6bca` `feat(tools)` (699-row dispositions + fire-rate artifact + 2
+scripts + report draft) **= the blinding boundary** + this `docs(cc)` fold (instruction force-added).
+Fork-only, `upstream` untouched. **★ The L4 FIRST PASS is COMPLETE (L4-2a + L4-2b + L4-2c); the whole-layer
+pass-2 signature sweep is the only owed L4 pass-1→2 item; L4 certification NOT proposed — it awaits pass 2.
+NEXT: Cowork drafts the L4 pass-2 (signature sweep) instruction.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 

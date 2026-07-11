@@ -278,10 +278,47 @@ Task 2):
 
 ## 8. Unblind, reconciliation, and register (appended after the freeze)
 
-*(Filled in the documentation fold, after `OPEN_ITEMS.md` / `DEFECT_TYPES.md` / `STATUS.md` /
-the two earlier session reports are opened. When each withheld file was first opened is logged
-here. Register rows for the §4 findings are assigned here; findings that coincide with an
-existing row reference it instead of duplicating.)*
+**When each withheld file was first opened.** All were opened only **after** the Task-3 freeze
+commit `10495a6bca` (the blinding boundary — no withheld file was opened before it), in this
+order: `OPEN_ITEMS.md` (in full), then `DEFECT_TYPES.md`, then `STATUS.md`, then
+`cc_l4_audit_pass1_report.md`, `cc_l4_audit_pass1_decoder_report.md`,
+`cc_l4_audit_pass1_oracle_report.md`. The mandatory session-start `OPEN_ITEMS.md` read was
+deferred to here by the instruction (Cowork performed the register check for the dispatch).
+
+**No new defect TYPE.** Every §4 finding maps to an existing `DEFECT_TYPES.md` type — DT-3
+(value-copied constant tables), DT-11 (hand-transcribed measurement number), DT-12 (stale
+anchor / doc drift), DT-17 (silently-truncating / incomplete specified capability). This
+matches sessions L4-2a and L4-2b (existing types only). `DEFECT_TYPES.md` is unchanged.
+
+**No correctness defect.** As with L4-2a (decoder) and L4-2b (oracle), the satellites reproduce
+their documented design. The nearest-to-functional finding is the Nashville chromatic-root
+coverage gap (finding 8) — a display-layer, opt-in-path degradation, not an inference/identity
+defect.
+
+**Register reconciliation (new rows and references):**
+- **New — OI-111** (DT-3/#6): the formatter's internal duplicated music-theory tables
+  (findings 1–4). Sibling of OI-92 / OI-97 (L3 duplications).
+- **New — OI-112** (DT-12/#10): the formatter/satellites ARCHITECTURE.md doc drifts (findings
+  5–7). Sibling of OI-107 (the oracle's ARCHITECTURE drifts). Finding 7's *header-location*
+  substance is already OI-108(b) + ARCHITECTURE §4.1i — OI-112 carries only the stale §4.3
+  wording; it references OI-108(b), does not duplicate it.
+- **New — OI-113** (DT-17/P3): the `formatNashvilleNumber` chromatic-root / bass coverage gap
+  (finding 8).
+- **New — OI-114** (DT-11/#17f): the enharmonic-spelling normalization premise provenance
+  (finding 9), display-layer only.
+- **Referenced, not duplicated:** the §5.1 sparse-refinement boundary facts enrich **OI-102(i)**
+  and the **OI-10 / OI-29 / DT-4** quality-from-key-single-owner substance; the §5.2 path-decoder
+  facts enrich **OI-102(ii)**; the `bassNoteRootBonus` 0.65-vs-0.70 ARCHITECTURE drift at
+  `analysistypes.h:177` is already **OI-107(a)** (the oracle session) — not re-flagged; the
+  three `use*Annotations` placeholder toggles are already **OI-80** (annotation-input TODO
+  flags never read) — the DEAD-but-reserved disposition references it.
+- **Manifest-gap check (the L4-2c "OI-91-class" task from the parent report §L4-2c row):** the
+  ChordAnalyzerPreferences scoring defaults in `analysistypes.h` **ARE** in
+  `tools/param_manifest.json` (19 fit-rows; `extensionThreshold` in the notes; the two
+  non-scoring knobs correctly absent) — so unlike the decoder (OI-103) and the oracle
+  file-statics (OI-106), **there is no new manifest-publication gap for this scope**.
+- **OI-102 updated** to record L4-2c done (this report + freeze `10495a6bca`), with the
+  boundary facts folded into (i)/(ii).
 
 ## 9. Status
 
