@@ -38,11 +38,26 @@ EG-7 layer certification, pass 1 of 2 (blind enumerative, P1–P4): a machine in
 constants off the fit manifest → **OI-87** (feeds EG-5); the Task-0 git-plumbing incident +
 concurrent-edit hazard → **OI-85**; new defect types **DT-18** (object-DB-ahead-of-disk) +
 **DT-19** (layer back-edge / mixed module). Freeze `feat(tools)` **`68e71665ce`** = the P8
-blinding boundary (DEFECT_TYPES.md opened only after). **NEXT: PASS 2** — the DT signature
-sweep over L1/L2 + the P5 blinded second pass + the P6 measured error rate, a SEPARATE
-instruction to a fresh session; **certification is NOT granted by Pass 1.** **Also awaiting the
-user:** OI-43 (Cowork marked it ON HOLD until this audit's first half completes — now done),
-OI-44 (the joint step's single declared status), the fork push.
+blinding boundary (DEFECT_TYPES.md opened only after).
+
+**✅ PASS 2 DONE (CC, 2026-07-11) — `cc_l1l2_audit_pass2_report.md`.** The blinded second
+reading (**P5**, 110-row stratified sample, seed 20260711, judged from code before any pass-1
+disposition was opened — **81/110 flag-agree; the 29 diffs all recording-granularity** (pass-1
+propagates module-level SURVIVES-MIXED to every branch + records dormancy in prose), **no
+substantive miss**, only 2 rows where pass 1 was MORE complete (`collectPitchContext` RETIRES)
++ 1 doc nit I added + 1 tie), the **full DT signature sweep** (**P8**, `gen_signature_sweep.py`
+runs DT-2/3/5/12/16/19 mechanically over the WHOLE layer — reproduces OI-86/OI-87 independently),
+and the **measured error rate** (**P6**, `pass2_apply_errorrate.py`: **0 wrong of 40 = 0.0 %**).
+NEW: a DT-12 stale anchor (`slicer.h:68`→`regionanalyzer.cpp:579`, real call `:634/:705`) + the
+`extend()` docstring "no layer calls it yet" contradicted by 3 gated call sites → **OI-88**
+(minor doc fixes, NO code change, #8). Two own-tool bugs caught + fixed before use (the sampler
+shared-dict `process_order` clobber; DT-5/12/16 false-positive/silent-no-op) — re-stamped, never
+hand-edited. **★ CERTIFICATION of the surviving L1/L2 spine (note model L1 + change-point slicer
+L2) is PROPOSED — awaiting the USER's decision (`cc_l1l2_audit_pass2_report.md` §6); NOT
+self-granted; OI-84/EG-7 left OPEN.** Pass-2 commits `52d0623226` + `b8dc714f50` (`feat(tools)`)
++ this `docs(cc)` fold; pushed fork-only (`upstream` untouched). **Also awaiting the user:** the
+certification decision; OI-43 (its ON-HOLD condition — the audit — is now complete); OI-44.
+**NEXT (per OI-84 dependency order): the L3 layer certification audit.**
 
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
