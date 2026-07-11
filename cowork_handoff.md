@@ -259,6 +259,29 @@ Fork-only, `upstream` untouched. **★ The L4 FIRST PASS is COMPLETE (L4-2a + L4
 pass-2 signature sweep is the only owed L4 pass-1→2 item; L4 certification NOT proposed — it awaits pass 2.
 NEXT: Cowork drafts the L4 pass-2 (signature sweep) instruction.**
 
+**★ UPDATE (CC, 2026-07-12) — L4 (chord) PASS 2 — DONE (blind second reading P5 + error rate P6 + full
+21-DT catalog sweep P8).** `cc_l4_audit_pass2_report.md`. Read-only; no `src/` change, no constant tuned,
+no golden refresh; `tools/robust_stop`/`tools/corpus` untouched; NO instrumentation added (existing
+frozen pass-1 fire table + code reading sufficed). **Fully blind** — the sampler + 121-row reading (seed
+20260801) + 40-row error-rate (seed 20260802) were all frozen at `d716ac1ca8` BEFORE any withheld file
+(`OPEN_ITEMS`/`DEFECT_TYPES`/`STATUS`/the 3 `pass1_dispositions_*`) was opened; the mandatory `OPEN_ITEMS`
+read deferred to Task 2. Instruments (one path per concern): `gen_pass2_sample_l4.py` (sibling of the L1/L2
+sampler; new seeds; RAW l4_*.csv only, no pass1_* read) + `pass2_judge_l4.py` (blind verdicts, full P2
+vocabulary — the OI-100 lesson) + `pass2_compare_l4.py` (pass-1↔pass-2 join) + `gen_signature_sweep.py`
+**extended with `--layer l4`** (one instrument, byte-identically inert for l1l2/l3). **★ RESULT: error rate
+0/40 = 0.0 % substantive; reading 119/121 concordant; every disagreement diagnosed verdict-axis (0
+substantive misses, no class re-opened).** The 2 reading diffs = ESTABLISHED-vs-UNFIT on the OI-106(a)
+manifest-gap constants (both readers found the gap). Whole-layer sweep (all 2121 rows): **NO untracked
+correctness defect** — DT-2 reproduces OI-106/OI-103/OI-91, DT-3 OI-97, DT-5 the dormant decoder, DT-19 the
+R1/R7 chord→function coupling, DT-16=0, the one DT-12 hit a verified false positive; **ONE NEW item OI-115**
+— dead `ExtensionFlags::hasNinth` field (DT-5, benign, the L4 twin of OI-96, escaped pass 1's fields
+inventory). OI-110 lifecycle facts + a recommendation gathered (revert at close, or defer to R9 with a clean
+home; decision the user's). **★ L4 SPINE CERTIFICATION PROPOSED (report §6) — proposed, awaiting the USER's
+decision; NOT self-granted, OI-84/OI-102/EG-7 left OPEN.** Commits: freeze `d716ac1ca8` `feat(tools)` (**the
+blinding boundary**) + a `feat(tools)` for the sweep+compare+judge instruments + this `docs(cc)` fold
+(instruction force-added). Pushed fork-only, `upstream` untouched. **NEXT: the user's L4 certification
+decision; then (on a grant) the L5 + instruments audit — the last layer in the OI-84 dependency order.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
