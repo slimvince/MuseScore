@@ -1,0 +1,27 @@
+{
+ "audit": "EG-7 Layer-3 (key/mode) certification, PASS 2 (blind reading + error rate)",
+ "corpus_hash": "c50002fee1",
+ "domain_rows": 1943,
+ "errorrate_sample": {
+  "n": 40,
+  "seed": 20260715,
+  "verdicts_missing": 0
+ },
+ "instrument": "tools/audit/gen_l3_pass2_sample.py",
+ "inventory_head_commit": "9e294f398d2205cf924ac6bc1ec015f91d3ee1d0",
+ "inventory_instrument": "tools/audit/gen_inventory.py",
+ "reading_sample": {
+  "files_covered": 22,
+  "kinds": [
+   "function",
+   "literal",
+   "field",
+   "branch",
+   "crosslayer"
+  ],
+  "n": 116,
+  "seed": 20260714,
+  "target_base": 110,
+  "verdicts_missing": 0
+ }
+}
