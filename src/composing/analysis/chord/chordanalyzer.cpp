@@ -28,13 +28,107 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
 #include <limits>
 #include <utility>
+#if defined(_WIN32)
+#include <process.h>
+#endif
 
 namespace fn = mu::composing::function;
 
 namespace mu::composing::analysis {
 namespace {
+
+// ── Read-only fire-count instrumentation (Layer-4 audit pass-1, EG-7 / OI-102) ──
+// Counts how often each documented oracle branch/term fires, to answer protocol P4
+// ("what does it DO?") for the live vertical scorer. DEFAULT-OFF: the counters are
+// plain integer increments that NO scoring path ever reads, so production output is
+// byte-identical whether or not the dump is requested; results are written out only
+// when the environment variable MU_ORACLE_FIRECOUNT names an output file (one appended
+// JSON line per process, so a parallel corpus run stays count-preserving). Removable
+// in one revert; computes nothing the analyzer consumes.
+struct OracleFireCounters {
+    unsigned long long analyzeCalls          = 0;  // non-empty-input analyzeChord entries
+    unsigned long long insufficientData      = 0;  // returned {} (distinctPcs < min)
+    unsigned long long jointEnabled          = 0;  // jointScoringEnabled == true
+    unsigned long long bassEnumerated        = 0;  // multi-bass enumeration fired
+    unsigned long long sparseUpperAmbiguous  = 0;  // sparse-upper-register fallback true
+    unsigned long long legacySingleBass      = 0;  // legacy single-bass fallback used
+    unsigned long long structuralBassFalse   = 0;  // hasStructuralBass == false
+    unsigned long long aug7GuardSkip         = 0;  // B2 aug7 template skipped (per cell)
+    unsigned long long dim7BonusFired        = 0;  // dim7CharacteristicBonus returned > 0
+    unsigned long long sus4MissingFourth     = 0;  // structural penalty (per cell)
+    unsigned long long sus4VariantMissing7th = 0;
+    unsigned long long sus4Maj7MissingP5     = 0;
+    unsigned long long dom7b5TpcPenalty      = 0;
+    unsigned long long dom7b5Missing7th      = 0;
+    unsigned long long power3pcPenalty       = 0;
+    unsigned long long augFactorHalved       = 0;  // augFactor multiplied by the thin-evidence factor
+    unsigned long long wCompleteFired        = 0;  // wCompleteBonus returned kWComplete
+    unsigned long long nonBassPenaltyApplied = 0;  // nonBassAdjustment returned -kNonBassPenalty
+    unsigned long long nonBassPenaltyWaived  = 0;  // nonBassAdjustment TPC-waiver hit
+    unsigned long long augRootCorrection     = 0;  // buildChordResult augmented-root fallback
+    unsigned long long sus2ToSus4            = 0;  // buildChordResult Sus2->Sus4 upgrade
+    unsigned long long susToMajorOmitsThird  = 0;  // buildChordResult Sus->Major(omitsThird)
+};
+OracleFireCounters g_fireCounters;
+
+// Checked once at static init: the counters (and the atexit dump) do work ONLY when
+// MU_ORACLE_FIRECOUNT is set. When it is unset (every production run) fbump() is a
+// predicted no-op, so the live scorer pays nothing and touches no shared state.
+const bool g_fireCountEnabled = [] {
+    const char* p = std::getenv("MU_ORACLE_FIRECOUNT");
+    return p != nullptr && *p != '\0';
+}();
+
+inline void fbump(unsigned long long& c) noexcept
+{
+    if (g_fireCountEnabled) { ++c; }
+}
+
+bool g_fireDumped = false;
+
+void dumpOracleFireCounters()
+{
+    const char* path = std::getenv("MU_ORACLE_FIRECOUNT");
+    if (!path || !*path) {
+        return;  // default-OFF: no dump requested
+    }
+    if (g_fireDumped) {
+        return;  // idempotent: an explicit flush + the atexit hook must not double-write
+    }
+    g_fireDumped = true;
+    std::FILE* f = std::fopen(path, "a");  // append: one line per process (parallel-safe)
+    if (!f) {
+        return;
+    }
+#if defined(_WIN32)
+    const long pid = static_cast<long>(_getpid());
+#else
+    const long pid = 0;
+#endif
+    const OracleFireCounters& c = g_fireCounters;
+    std::fprintf(f,
+        "{\"pid\":%ld,\"analyzeCalls\":%llu,\"insufficientData\":%llu,\"jointEnabled\":%llu,"
+        "\"bassEnumerated\":%llu,\"sparseUpperAmbiguous\":%llu,\"legacySingleBass\":%llu,"
+        "\"structuralBassFalse\":%llu,\"aug7GuardSkip\":%llu,\"dim7BonusFired\":%llu,"
+        "\"sus4MissingFourth\":%llu,\"sus4VariantMissing7th\":%llu,\"sus4Maj7MissingP5\":%llu,"
+        "\"dom7b5TpcPenalty\":%llu,\"dom7b5Missing7th\":%llu,\"power3pcPenalty\":%llu,"
+        "\"augFactorHalved\":%llu,\"wCompleteFired\":%llu,\"nonBassPenaltyApplied\":%llu,"
+        "\"nonBassPenaltyWaived\":%llu,\"augRootCorrection\":%llu,\"sus2ToSus4\":%llu,"
+        "\"susToMajorOmitsThird\":%llu}\n",
+        pid, c.analyzeCalls, c.insufficientData, c.jointEnabled, c.bassEnumerated,
+        c.sparseUpperAmbiguous, c.legacySingleBass, c.structuralBassFalse, c.aug7GuardSkip,
+        c.dim7BonusFired, c.sus4MissingFourth, c.sus4VariantMissing7th, c.sus4Maj7MissingP5,
+        c.dom7b5TpcPenalty, c.dom7b5Missing7th, c.power3pcPenalty, c.augFactorHalved,
+        c.wCompleteFired, c.nonBassPenaltyApplied, c.nonBassPenaltyWaived, c.augRootCorrection,
+        c.sus2ToSus4, c.susToMajorOmitsThird);
+    std::fclose(f);
+}
+
+const bool s_registerOracleFireDump = [] { std::atexit(dumpOracleFireCounters); return true; }();
 
 
 // Three-way classification for a note that is NOT part of the template being scored.
@@ -576,6 +670,7 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
             return 0.0;  // diatonic — no bonus
         }
     }
+    fbump(g_fireCounters.dim7BonusFired);
     return kDim7CharacteristicBonus;
 }
 
@@ -645,6 +740,8 @@ double nonBassAdjustment(const TemplateDef& tpl, int rootPc, int bassPc,
     const bool waiverApplies = (!isSus4Variant
                                 && tpc.present > 0
                                 && tpc.matched == tpc.present);
+    if (waiverApplies) { fbump(g_fireCounters.nonBassPenaltyWaived); }
+    else               { fbump(g_fireCounters.nonBassPenaltyApplied); }
     return waiverApplies ? 0.0 : -kNonBassPenalty;
 }
 
@@ -679,6 +776,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
         const int fourthPc = static_cast<int>((rootPc + 5) % 12);
         if (pcWeight[static_cast<size_t>(fourthPc)] < kSus4StructuralFourthThreshold) {
             score -= kSus4MissingFourth;
+            fbump(g_fireCounters.sus4MissingFourth);
         }
     }
 
@@ -691,6 +789,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
         const int seventhPc = (rootPc + tpl.intervals[3]) % 12;
         if (pcWeight[static_cast<size_t>(seventhPc)] < 0.05) {
             score -= kSus4VariantMissing7th;
+            fbump(g_fireCounters.sus4VariantMissing7th);
         }
     }
 
@@ -703,6 +802,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
         const int fifthPc = (rootPc + 7) % 12;
         if (pcWeight[static_cast<size_t>(fifthPc)] < 0.05) {
             score -= kSus4Maj7MissingP5;
+            fbump(g_fireCounters.sus4Maj7MissingP5);
         }
     }
 
@@ -721,10 +821,12 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
                                         && tritTpcNow - rootTpcNow == -6);
         if (!flatFiveConfirmed) {
             score -= kDom7FlatFiveTpcPenalty;
+            fbump(g_fireCounters.dom7b5TpcPenalty);
         }
         const int minorSeventhPc = (rootPc + tpl.intervals[3]) % 12;
         if (pcWeight[static_cast<size_t>(minorSeventhPc)] < 0.05) {
             score -= kDom7FlatFiveMissing7th;
+            fbump(g_fireCounters.dom7b5Missing7th);
         }
     }
 
@@ -732,6 +834,7 @@ double structuralPenalties(const TemplateDef& tpl, int rootPc,
     // almost always preferable.
     if (tpl.quality == ChordQuality::Power && distinctPcs >= 3) {
         score -= kPowerChord3PcPenalty;
+        fbump(g_fireCounters.power3pcPenalty);
     }
 
     return score;
@@ -908,6 +1011,17 @@ double diatonicRootContribution(int rootPc, int keyTonicPc,
 
 } // namespace
 
+// Public flush entry point for the default-OFF oracle fire-count instrumentation
+// (Layer-4 audit pass-1). Needed because batch_analyze exits its success path via
+// ::TerminateProcess/std::_Exit (tools/batch_analyze.cpp), which bypasses the atexit
+// hook; the tool calls this once, just before terminating, so the counts survive.
+// A no-op when MU_ORACLE_FIRECOUNT is unset (dumpOracleFireCounters returns early),
+// and idempotent w.r.t. the atexit hook (the g_fireDumped guard). Removable in one revert.
+void flushOracleFireCounters()
+{
+    dumpOracleFireCounters();
+}
+
 ChordAnalysisResult buildChordResult(
     const RawCandidate&             rc,
     const BuildChordResultContext&  ctx,
@@ -958,6 +1072,7 @@ ChordAnalysisResult buildChordResult(
                 // lowest pitch. The two could disagree when the joint pass
                 // picks an octave-up bass-register candidate as the winner.
                 rootPc = ctx.bassPc;
+                fbump(g_fireCounters.augRootCorrection);
             }
         }
     }
@@ -969,6 +1084,7 @@ ChordAnalysisResult buildChordResult(
     if (quality == ChordQuality::Suspended2 && ext.hasEleventh) {
         quality = ChordQuality::Suspended4;
         ext = detectExtensions(ctx.pcWeight, rootPc, quality, ctx.tpcForPc, rootTpc, prefs.extensionThreshold);
+        fbump(g_fireCounters.sus2ToSus4);
     }
 
     // 3. Sus → Major (omitsThird): when Maj7 is present but no 3rd is sounding,
@@ -985,6 +1101,7 @@ ChordAnalysisResult buildChordResult(
         quality    = ChordQuality::Major;
         omitsThird = true;
         ext = detectExtensions(ctx.pcWeight, rootPc, quality, ctx.tpcForPc, rootTpc, prefs.extensionThreshold);
+        fbump(g_fireCounters.susToMajorOmitsThird);
     }
 
     // Degree assignment.
@@ -1070,6 +1187,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     if (tones.empty()) {
         return {};
     }
+    fbump(g_fireCounters.analyzeCalls);
 
     // Build pitch-class weight histogram and find the bass note.
     std::array<double, 12> pcWeight {};
@@ -1118,6 +1236,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             break;
         }
     }
+    if (jointScoringEnabled) { fbump(g_fireCounters.jointEnabled); }
     // jointScoringEnabled is published to the ScoringSnapshot below; the snapshot
     // is now always built internally (no external capture opt-in).
 
@@ -1193,7 +1312,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             distinctPcCount <= 2
             && regionalCandidates.size() >= 2
             && lowestPitch > 60;
+        if (sparseUpperRegisterAmbiguous) { fbump(g_fireCounters.sparseUpperAmbiguous); }
         if ((hasOnsetTrue && hasOnsetFalse) || sparseUpperRegisterAmbiguous) {
+            fbump(g_fireCounters.bassEnumerated);
             bassCandidates = std::move(regionalCandidates);
             if (bassCandidates.size() > 4) {
                 bassCandidates.resize(4);
@@ -1203,6 +1324,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // Legacy single-bass fallback (used when joint enumeration declines to fire
     // or when the weight filter eliminated every candidate).
     if (bassCandidates.empty() && lowestPitch != std::numeric_limits<int>::max()) {
+        fbump(g_fireCounters.legacySingleBass);
         int lowestQualifyingPitch = std::numeric_limits<int>::max();
         for (const ChordAnalysisTone& t : tones) {
             if (t.weight >= bassMinWeight && t.pitch < lowestQualifyingPitch) {
@@ -1250,6 +1372,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         }
     }
     if (distinctPcs < prefs.minDistinctPcsForCandidate) {
+        fbump(g_fireCounters.insufficientData);
         return {};
     }
 
@@ -1266,6 +1389,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     // own structural cues; dense static SATB textures with bass in tenor
     // register remain unchanged.
     const bool hasStructuralBass = (lowestPitch <= 60) || (distinctPcs >= 3);
+    if (!hasStructuralBass) { fbump(g_fireCounters.structuralBassFalse); }
 
     // Chord templates (quality, intervals-from-root, TPC-deltas-from-root).
     //
@@ -1384,6 +1508,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                 && tpl.intervals.size() == 4
                 && (pcWeight[static_cast<size_t>((rootPc + 4) % 12)] <= prefs.extensionThreshold
                     || pcWeight[static_cast<size_t>((rootPc + 8) % 12)] <= prefs.extensionThreshold)) {
+                fbump(g_fireCounters.aug7GuardSkip);
                 continue;
             }
 
@@ -1435,6 +1560,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
                     augFactor *= kAugThinEvidenceFactor;
                 }
             }
+            if (augFactor < 1.0) { fbump(g_fireCounters.augFactorHalved); }
             augFactorMatrix[rootPc][tplIdx] = augFactor;
         }
     }
@@ -1479,6 +1605,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
         const bool allTriadPresent = (rootW > kWCompletePresenceThreshold)
                                   && (thirdW > kWCompletePresenceThreshold)
                                   && (fifthW > kWCompletePresenceThreshold);
+        if (allTriadPresent) { fbump(g_fireCounters.wCompleteFired); }
         return allTriadPresent ? kWComplete : 0.0;
     };
 
