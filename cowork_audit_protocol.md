@@ -63,11 +63,35 @@ audit with an unmeasured error rate is an unestablished instrument and does not 
 layer (EG-7 gate not satisfied). Disagreements found in P5/P6 are #13 STOPs for the audit:
 diagnosed (which protocol step let the miss through?) before certification.
 
+## P7 — The defect-type catalog (the value of known problems, kept)
+
+Removing queries (P1) also removes the diagnostic value of every pathology already paid for —
+a generic rubric can under-recognize an INSTANCE that a targeted signature catches instantly.
+So known problem TYPES live in **`DEFECT_TYPES.md`** — the living catalog, one entry per type
+with its detection signature, **mechanical wherever possible** (value-copied constants,
+dangling anchors, never-fires branches, raw-DOM calls outside L1 are all scriptable). Standing
+rule: every newly discovered problem type gets a catalog entry in the same commit (the
+OPEN_ITEMS rule, applied to types).
+
+## P8 — TWO RUNS, in this order (user-directed, 2026-07-10)
+
+1. **Pass 1 — BLIND enumerative** (P1–P4, no suspects named, catalog withheld): finds new
+   types without anchoring. Types discovered here are PROMOTED into the catalog immediately.
+2. **Pass 2 — SIGNATURE sweep** with the FULL catalog (known types + pass-1 promotions):
+   every catalog row applied across the whole layer — mechanical signatures as scripts over
+   all rows, review signatures row-by-row against the P1 inventory.
+The order matters: blind-first prevents the catalog from anchoring enumeration (which would
+re-import the bias P1 removed); signatures suffer no anchoring, so they run second at full
+strength. Pass-1-vs-pass-2 disagreements feed the P6 error estimate. Certification requires
+BOTH passes complete.
+
 ## The one-line summary
 
 Bias picks queries; so remove queries — machine-generated total inventory (P1), fixed rubric
-(P2), both directions (P3), measured behavior (P4), blinded redundancy (P5), and a measured
-error rate instead of a completeness claim (P6).
+(P2), both directions (P3), measured behavior (P4), blinded redundancy (P5), a measured error
+rate instead of a completeness claim (P6) — and then run the known-problem signatures anyway,
+blind pass first, catalog pass second (P7/P8), so new types and known instances are BOTH
+caught.
 
 *Cowork, session 36. First application: the L1/L2 certification audit (OI-84). The protocol
 is itself subject to #16: each audit stamps the inventory-generation script + corpus hash it
