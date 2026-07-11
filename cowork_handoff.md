@@ -95,6 +95,29 @@ unconsumed re-confirmed (**OI-75**); tooling debt (**OI-95**). Commits `9e294f39
 `upstream` untouched. **Certification NOT self-granted — pass 2 (DT signature sweep, fresh session) + the P6
 error-rate are OWED; decision returns to the user (OI-84/EG-7 OPEN). NEXT: the L3 PASS 2 instruction.**
 
+**★ UPDATE (CC, 2026-07-11) — L3 (key/mode) CERTIFICATION AUDIT PASS 2 DONE** (`cc_l3_audit_pass2_report.md`;
+the fully-blind second reading P5 + full-catalog DT sweep P8 + measured error rate P6). Read-only, no
+`src/`/constant/golden change; `tools/robust_stop`/`tools/corpus` untouched. **Fully blind (the OI-89/DT-20
+lesson):** all 116-reading + 40-error verdicts frozen at `1021e81e44` BEFORE any withheld file
+(`OPEN_ITEMS`/`DEFECT_TYPES`/`STATUS`/pass-1 report + dispositions) opened — the mandatory `OPEN_ITEMS.md`
+read deferred to Task 2. Instruments (reproducible): `gen_l3_pass2_sample.py` (sampler + verdict merge, NEW
+seeds 20260714/20260715), `pass2_compare_l3.py`, and `gen_signature_sweep.py` **extended with `--layer`**
+(OI-95(a) sweep-tool part discharged — ONE instrument; `--layer l1l2` reproduces the L1/L2 counts
+identically). **★ Result: error rate 0/40 substantive — 100 % substantive concordance on the error sample,
+99.1 % on the 116-row reading; every disagreement diagnosed.** The second reading caught ONE substantive
+miss pass 1 made: **`extraToneScore`**, a dead LOCAL field (`keymodeanalyzer.cpp`, `=0.0`, read nowhere) —
+**contradicts pass-1 §2's "zero DEAD"** (a local field escapes the cross-layer fields inventory + the
+literal constant-classifier); all other disagreements are verdict-AXIS (this reader's coarse 4-label set vs
+pass-1's full rubric, same substance). **P8 whole-layer sweep (all 1943 rows): NO untracked correctness
+defect** — DT-2 122 reproduces OI-91, DT-19 18 reproduces OI-93; 4 new hygiene/layering/doc findings:
+**OI-96** (DT-5 dead field), **OI-97** (DT-3 `relativeKeyHysteresisMargin` soft value-copy), **OI-98** (DT-16
+`partialSignatureCorrection` raw-DOM walk outside L1), **OI-99** (DT-12 `cowork_phase5c_step4_report.md`
+dangling ref). The 15 review DTs: no new defect, no new TYPE. **★ The L3 spine certification is PROPOSED
+(`cc_l3_audit_pass2_report.md` §6) — NOT self-granted; the decision returns to the USER (OI-84/EG-7 OPEN).**
+Commits `1021e81e44` `feat(tools)` **freeze = the blinding boundary** + `6dab578498` `feat(tools)` (sweep +
+comparison) + this `docs(cc)` fold; fork-only, `upstream` untouched. **NEXT: the user's L3 certification
+decision; then the L4 audit (chord decoder + surviving scorer core).**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 

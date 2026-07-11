@@ -208,7 +208,7 @@ def sweep_dt2(c):
                                      "in_manifest": False})
         return hits
 
-    # l1l2: original blocklist behaviour (report every non-structural named const
+    # l1l2: original blocklist behavior (report every non-structural named const
     # not in the manifest), preserved byte-for-byte.
     candidates = []
     for r in read_csv(c, "fields"):
