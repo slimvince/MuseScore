@@ -2,7 +2,7 @@
 
 > **EG-7 / OI-84 / OI-102.** Blind enumerative first pass over the three LIVE scoring-oracle
 > translation units, per `cowork_audit_protocol.md` (P1–P4) and the oracle-session instruction
-> (`cc_instruction_l4_audit_pass1_oracle.md`). Freeze commit: `<FREEZE_HASH>`. Read-only
+> (`cc_instruction_l4_audit_pass1_oracle.md`). Freeze commit: `1a11cf7210`. Read-only
 > fact-finding — no production behavior changed, no constant tuned, no golden refreshed, no
 > reference artifact under `tools/robust_stop/` or `tools/corpus/` touched. Findings are
 > register rows, never patches (guiding principle 8).
@@ -255,7 +255,7 @@ stated intent** (the suppression penalties fire heavily → Aug/Power/sus4 stay 
 
 ## 4. Withheld-file open log (the DT-20 blind discipline)
 
-At the time of the Task-3 freeze commit `<FREEZE_HASH>`, **no withheld file had been opened** —
+At the time of the Task-3 freeze commit `1a11cf7210`, **no withheld file had been opened** —
 the entire blind pass (Tasks 0–3) ran on the safe-read set only (`CLAUDE.md`,
 `cowork_audit_protocol.md`, `BUILD_AND_TEST.md`, `ARCHITECTURE.md`, the roadmap,
 `docs/scoring_model.md`, the `tools/audit/l4/` inventory tables + `manifest.json`, the parent
@@ -266,4 +266,47 @@ freeze, during Task 4 — logged in §5.
 
 ## 5. Unblind reconciliation (Task 4)
 
-*(Filled after the freeze commit lifts the withheld list.)*
+**Withheld-file open order (all AFTER the freeze commit `1a11cf7210`):** `OPEN_ITEMS.md`
+(full — the deferred mandatory session-start read), then `DEFECT_TYPES.md`, then `STATUS.md`,
+then `cc_l4_audit_pass1_report.md` (parent) and `cc_l4_audit_pass1_decoder_report.md` (session 1).
+No withheld file was opened during Tasks 0–3.
+
+**Reconciliation with the register and the defect-type catalog:**
+
+- **No finding is a correctness bug** — consistent with the parent and decoder sessions
+  ("the L3/L4 spine reproduces its documented design"). The oracle behaves as
+  `docs/scoring_model.md` describes.
+- **No new DEFECT_TYPE.** Every finding maps to an existing catalog row: the manifest/inline
+  constant gaps are **DT-2** (+ the `0.05` duplication is **DT-3**); the ARCHITECTURE.md drifts
+  and the orphaned `// BUG-10` marker are **DT-12** (with the register-completeness #10 aspect);
+  the augmented-root never-fires is **DT-7**; the display-in-header layering is **DT-19**.
+- **Register rows added (this commit):** **OI-106** (constant/manifest-publication gaps — the
+  DT-2 oracle twin of the decoder's **OI-103**, and of **OI-87/OI-91**; feeds **OI-6/EG-5**,
+  relates the hand-set-constant mass **OI-23**), **OI-107** (ARCHITECTURE.md oracle doc drifts,
+  DT-12), **OI-108** (augmented-root never-fires + display-in-header, DT-7/DT-19; the never-fires
+  is the oracle sibling of the decoder's **OI-104**), **OI-109** (orphaned `// BUG-10` marker +
+  the P5-over-diminished scoring question declared to Cowork, DT-12). **OI-102** updated to record
+  this L4-2b session done (L4-2c + the whole-layer pass-2 sweep still owed).
+- **Neither the ARCHITECTURE.md drifts nor the `// BUG-10` marker were previously tracked**
+  anywhere in `OPEN_ITEMS.md`/`DEFECT_TYPES.md` (grep-verified before the freeze) — genuinely new
+  rows, not duplicates.
+- **Existing rows confirmed, not duplicated:** the oracle-is-vertical / Gate-R-basisDep story
+  (**OI-30**) is confirmed by the P3 contract check (the five progression signals have migrated
+  out of `analyzeChord` into the competition pipeline per §11); the hand-set-constant mass
+  (**OI-23**) is the home for the pre-2026-06-13 tuning history that OI-106(b) points at; the
+  template-count sync invariant (17 = templates array + `static_assert` + `kTemplateIntervals` +
+  `scoring_model.md` §2) holds from the oracle side, matching the decoder session's confirmation
+  from the decoder side.
+- **The P6 audit-error-rate and the whole-layer P8 signature sweep are NOT run here** — they
+  belong to the layer-4 second pass after all three pass-1 sessions (L4-2c still owed).
+
+## 6. Self-check (guiding principles / conventions / gate policy)
+
+Re-read of every touched diff on disk before reporting done: the instrumentation is default-OFF
+and output-neutral (byte-identical corpus ×2, all suites green); no scoring constant was tuned,
+no golden refreshed, no `tools/robust_stop`/`tools/corpus` reference touched; findings are
+register rows, never patches (principle 8); the self-invented "OF-N" finding labels in an earlier
+draft were removed per the no-self-invented-labels convention (findings carry real OI-NNN numbers
+assigned at unblind); the known working-tree carry `cowork_joint_key_chord_design.md` was left
+untouched; commits stage only named files (no `git add -A`); the fork-only push rule was honored
+(`origin` only; `upstream` push disabled and untouched).

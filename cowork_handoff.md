@@ -193,6 +193,37 @@ boundary** + this `docs(cc)` fold (instruction force-added). Fork-only, `upstrea
 (oracle) / L4-2c (satellites+types) + the whole-layer pass-2 sweep still owed; L4 certification NOT
 proposed. NEXT: Cowork drafts the L4-2b instruction.**
 
+**★ UPDATE (CC, 2026-07-11) — L4 (chord) PASS-1, session L4-2b: the LIVE SCORING ORACLE — DONE**
+(`cc_l4_audit_pass1_oracle_report.md`; the second of the OI-102 partitioned sessions). Read-only;
+no production behavior change, no constant tuned, no golden refresh; both stops untouched. Files
+`chord/chordanalyzer.cpp` (the LIVE vertical scoring oracle — analyzeChord/templates/score
+matrices/buildChordResult/deriveChordExtensions/factory), `chord/chordanalyzer.h` (the L4 scorer
+contract surface), `chord/analysisutils.h` (cross-cutting pitch/key helpers). SURVIVES; R9 *splits*
+`chordanalyzer.cpp`, does not delete it. **All 855 inventory rows verdicted** (60 fn / 489 literal /
+82 field / 197 branch / 20 decl / 7 crosslayer → **490 ESTABLISHED / 268 SURVIVES / 83 PUBLISHED / 9
+THEORY + 5 FACT**; 24 flagged; 25/489 constants in `param_manifest.json`). **P3:** template contract
+IN SYNC (kTemplateCount 17 = templates array + static_assert + kTemplateIntervals + scoring_model.md
+§2; Gate R masks DERIVED — drift closed); oracle genuinely vertical (§11 — the 5 progression signals
+migrated to the competition pipeline); one contract absence (the extension-detector's undocumented
+internal thresholds). **P4:** output-observable (11,222 regions — all 8 qualities win, Aug/Power at
+floor, 36.7 % slash, 1.1 % sparse, 99.8 % carry an alternative) + a **default-OFF fire-count
+instrument** (gated on `MU_ORACLE_FIRECOUNT`; batch_analyze flushes before its `::TerminateProcess`)
+over **122,047 analyzeChord invocations** — every documented mechanism fires per intent **except the
+augmented-root correction (0/122,047**, its TPC-absent population empty in a fully-spelled corpus).
+Instrument **byte-identical 352/352 ×2**, suites green (1101 / 53 / 11). **★ NO correctness defect —
+the oracle reproduces its documented design.** Findings (all existing TYPES): **OI-106**
+constant/manifest gaps (DT-2/DT-3, oracle twin of OI-103); **OI-107** ARCHITECTURE.md doc drifts
+(DT-12 — `bassNoteRootBonus` 0.65→0.70, Extension-enum bit order, §4.4/§4.1; scoring_model.md IS in
+sync); **OI-108** aug-root never-fires (DT-7) + display/voicing decls in the analysis header (DT-19,
+ARCHITECTURE §4.1i-noted); **OI-109** orphaned `// BUG-10` marker + the P5-over-diminished
+hard-contradiction scoring question **declared to Cowork** (auditor, not amender). **No new
+DEFECT_TYPE.** OI-102 updated. Commits: `55829ebe15` `feat(tools)` (default-OFF counter + batch_analyze
+flush + fire harness/aggregator, byte-identity re-proven) + freeze `1a11cf7210` `feat(tools)` **= the
+blinding boundary** + this `docs(cc)` fold (instruction force-added). Fork-only, `upstream` untouched.
+**L4-2c (`chordsymbolformatter`+`chordpathdecoder.h`+`sparsechordrefinement.*`+L4 `analysistypes.h`) +
+the whole-layer pass-2 sweep still owed; L4 certification NOT proposed. NEXT: Cowork drafts the L4-2c
+instruction.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
