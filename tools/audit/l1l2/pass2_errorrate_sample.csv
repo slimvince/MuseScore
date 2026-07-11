@@ -1,41 +1,41 @@
 process_order,row_id,kind,file,line,label,pass1_verdict,pass2_check,agree,note
-1,branch|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|123|406,branch,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,123,if in collectMarkerTicks,,,,
-2,branch|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|237|428,branch,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,237,ternary in localChangeProfile,,,,
-3,branch|src/composing/analysis/engravingbridge/regiontonecollector.cpp|157|449,branch,src/composing/analysis/engravingbridge/regiontonecollector.cpp,157,if in weightedPcView,,,,
-4,branch|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|261|504,branch,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,261,if in pitchContextOverSpan,,,,
-5,branch|src/composing/analysis/notemodel/note_model.cpp|82|544,branch,src/composing/analysis/notemodel/note_model.cpp,82,if in scoreSpan,,,,
-6,branch|src/composing/analysis/notemodel/note_model.cpp|168|548,branch,src/composing/analysis/notemodel/note_model.cpp,168,if in rebuildForLoadedSpan,,,,
-7,branch|src/composing/analysis/notemodel/note_model.cpp|292|561,branch,src/composing/analysis/notemodel/note_model.cpp,292,if in collect,,,,
-8,branch|src/composing/analysis/scoreharvest/metricweights.cpp|49|571,branch,src/composing/analysis/scoreharvest/metricweights.cpp,49,case in beatTypeToWeight,,,,
-9,branch|src/composing/analysis/scoreharvest/metricweights.cpp|173|590,branch,src/composing/analysis/scoreharvest/metricweights.cpp,173,if in buildPedalWindowIndex,,,,
-10,crosslayer|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|43|633,crosslayer,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,43,include engraving/dom/staff.h -> external,,,,
-11,crosslayer|src/composing/analysis/engravingbridge/regiontonecollector.cpp|30|636,crosslayer,src/composing/analysis/engravingbridge/regiontonecollector.cpp,30,include engraving/dom/chord.h -> external,,,,
-12,crosslayer|src/composing/analysis/engravingbridge/regiontonecollector.cpp|31|637,crosslayer,src/composing/analysis/engravingbridge/regiontonecollector.cpp,31,include engraving/dom/chordrest.h -> external,,,,
-13,crosslayer|src/composing/analysis/engravingbridge/spellingview.cpp|25|662,crosslayer,src/composing/analysis/engravingbridge/spellingview.cpp,25,include engraving/dom/pitchspelling.h -> external,,,,
-14,crosslayer|src/composing/analysis/notemodel/note_model.cpp|35|671,crosslayer,src/composing/analysis/notemodel/note_model.cpp,35,include engraving/dom/staff.h -> external,,,,
-15,decl|src/composing/analysis/notemodel/note_model.h|194|612,decl,src/composing/analysis/notemodel/note_model.h,194,extend,,,,
-16,field|src/composing/analysis/notemodel/note_model.h|86|392,field,src/composing/analysis/notemodel/note_model.h,86,NoteEvent::release,,,,
-17,file|src/composing/CMakeLists.txt||0,file,src/composing/CMakeLists.txt,,L3+,,,,
-18,file|src/composing/analysis/function/functionmodulation.cpp||24,file,src/composing/analysis/function/functionmodulation.cpp,,L3+,,,,
-19,file|src/composing/analysis/function/functionrelationallabel.cpp||30,file,src/composing/analysis/function/functionrelationallabel.cpp,,L3+,,,,
-20,file|src/composing/analysis/region/sparsechordrefinement.cpp||62,file,src/composing/analysis/region/sparsechordrefinement.cpp,,L3+,,,,
-21,file|src/composing/analysis/scoreharvest/metricweights.h||65,file,src/composing/analysis/scoreharvest/metricweights.h,,L1,,,,
-22,file|src/composing/composingconfiguration.cpp||88,file,src/composing/composingconfiguration.cpp,,L3+,,,,
-23,file|src/composing/intonation/tuning_system.h||103,file,src/composing/intonation/tuning_system.h,,L3+,,,,
-24,file|src/composing/tests/chordanalyzer_musicxml_tests.cpp||111,file,src/composing/tests/chordanalyzer_musicxml_tests.cpp,,L3+,,,,
-25,file|src/composing/tests/chordanalyzer_tests.cpp||112,file,src/composing/tests/chordanalyzer_tests.cpp,,L3+,,,,
-26,file|src/composing/tests/data/mono_smoke_test.mscx||130,file,src/composing/tests/data/mono_smoke_test.mscx,,L3+,,,,
-27,file|src/composing/tests/data/nm_long_sustain.musicxml||139,file,src/composing/tests/data/nm_long_sustain.musicxml,,L3+,,,,
-28,file|src/composing/tests/data/s1c_c_major.mscx||164,file,src/composing/tests/data/s1c_c_major.mscx,,L3+,,,,
-29,file|src/composing/tests/functionmodulation_tests.cpp||185,file,src/composing/tests/functionmodulation_tests.cpp,,L3+,,,,
-30,file|src/composing/tests/gater_tests.cpp||191,file,src/composing/tests/gater_tests.cpp,,L3+,,,,
-31,file|src/composing/tests/regionanalysis_tests.cpp||207,file,src/composing/tests/regionanalysis_tests.cpp,,L3+,,,,
-32,file|src/composing/tests/test_helpers.h||211,file,src/composing/tests/test_helpers.h,,L3+,,,,
-33,function|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|124|232,function,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,124,collectPitchContext(),,,,
-34,function|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|218|234,function,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,218,pitchContextOverSpan(),,,,
-35,function|src/composing/analysis/notemodel/note_model.cpp|47|241,function,src/composing/analysis/notemodel/note_model.cpp,47,makeEvent(),,,,
-36,function|src/composing/analysis/notemodel/note_model.cpp|286|250,function,src/composing/analysis/notemodel/note_model.cpp,286,collect(),,,,
-37,function|src/composing/analysis/scoreharvest/metricweights.cpp|55|263,function,src/composing/analysis/scoreharvest/metricweights.cpp,55,safeBeatType(),,,,
-38,literal|src/composing/analysis/engravingbridge/phraseboundaryview.h|86|291,literal,src/composing/analysis/engravingbridge/phraseboundaryview.h,86,0.30 in <file-scope>,,,,
-39,literal|src/composing/analysis/scoreharvest/metricweights.h|57|354,literal,src/composing/analysis/scoreharvest/metricweights.h,57,16 in <file-scope>,,,,
-40,literal|src/composing/analysis/scoreharvest/metricweights.h|59|356,literal,src/composing/analysis/scoreharvest/metricweights.h,59,0.5 in <file-scope>,,,,
+1,branch|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|123|406,branch,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,123,if in collectMarkerTicks,SURVIVES,CORRECT,Y,breath-mark branch in the dormant phrase primitive; correct control flow
+2,branch|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|237|428,branch,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,237,ternary in localChangeProfile,SURVIVES,CORRECT,Y,localChangeProfile ternary; pure helper; correct
+3,branch|src/composing/analysis/engravingbridge/regiontonecollector.cpp|157|449,branch,src/composing/analysis/engravingbridge/regiontonecollector.cpp,157,if in weightedPcView,SURVIVES,CORRECT,Y,weightedPcView no-segment fallback (return 0.75); live spine; correct branch
+4,branch|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|261|504,branch,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,261,if in pitchContextOverSpan,SURVIVES-MIXED,CORRECT,Y,"pitchContextOverSpan look-back branch; correct code, in the mixed-layer engravingbridge file (module-level MIXED tag)"
+5,branch|src/composing/analysis/notemodel/note_model.cpp|82|544,branch,src/composing/analysis/notemodel/note_model.cpp,82,if in scoreSpan,SURVIVES,CORRECT,Y,scoreSpan no-first-measure guard; correct
+6,branch|src/composing/analysis/notemodel/note_model.cpp|168|548,branch,src/composing/analysis/notemodel/note_model.cpp,168,if in rebuildForLoadedSpan,SURVIVES,CORRECT,Y,rebuildForLoadedSpan rest/empty-slot skip; correct
+7,branch|src/composing/analysis/notemodel/note_model.cpp|292|561,branch,src/composing/analysis/notemodel/note_model.cpp,292,if in collect,SURVIVES,CORRECT,Y,segment-tree prune (maxRel<=t0); correct
+8,branch|src/composing/analysis/scoreharvest/metricweights.cpp|49|571,branch,src/composing/analysis/scoreharvest/metricweights.cpp,49,case in beatTypeToWeight,SURVIVES-MIXED,CORRECT,Y,"beatTypeToWeight COMPOUND_SUBBEAT case; correct, in the grab-bag metricweights file"
+9,branch|src/composing/analysis/scoreharvest/metricweights.cpp|173|590,branch,src/composing/analysis/scoreharvest/metricweights.cpp,173,if in buildPedalWindowIndex,SURVIVES-MIXED,CORRECT,Y,"buildPedalWindowIndex sort tiebreak; correct, in the grab-bag file"
+10,crosslayer|src/composing/analysis/engravingbridge/phraseboundaryview.cpp|43|633,crosslayer,src/composing/analysis/engravingbridge/phraseboundaryview.cpp,43,include engraving/dom/staff.h -> external,FACT,CORRECT,Y,downward include engraving/dom/staff.h; layer-respecting
+11,crosslayer|src/composing/analysis/engravingbridge/regiontonecollector.cpp|30|636,crosslayer,src/composing/analysis/engravingbridge/regiontonecollector.cpp,30,include engraving/dom/chord.h -> external,FACT,CORRECT,Y,downward include engraving/dom/chord.h
+12,crosslayer|src/composing/analysis/engravingbridge/regiontonecollector.cpp|31|637,crosslayer,src/composing/analysis/engravingbridge/regiontonecollector.cpp,31,include engraving/dom/chordrest.h -> external,FACT,CORRECT,Y,downward include engraving/dom/chordrest.h
+13,crosslayer|src/composing/analysis/engravingbridge/spellingview.cpp|25|662,crosslayer,src/composing/analysis/engravingbridge/spellingview.cpp,25,include engraving/dom/pitchspelling.h -> external,FACT,CORRECT,Y,downward include engraving/dom/pitchspelling.h
+14,crosslayer|src/composing/analysis/notemodel/note_model.cpp|35|671,crosslayer,src/composing/analysis/notemodel/note_model.cpp,35,include engraving/dom/staff.h -> external,FACT,CORRECT,Y,downward include engraving/dom/staff.h
+15,decl|src/composing/analysis/notemodel/note_model.h|194|612,decl,src/composing/analysis/notemodel/note_model.h,194,extend,SURVIVES,CORRECT,Y,extend() declaration; mirrors its (dormant-on-production) definition verdict; consistent
+16,field|src/composing/analysis/notemodel/note_model.h|86|392,field,src/composing/analysis/notemodel/note_model.h,86,NoteEvent::release,PUBLISHED,CORRECT,Y,NoteEvent::release published L1 fact; consumed by makeEvent/overlap; correct
+17,file|src/composing/CMakeLists.txt||0,file,src/composing/CMakeLists.txt,,L3+,L3+,CORRECT,Y,"build file, non-source; out of L1/L2 scope"
+18,file|src/composing/analysis/function/functionmodulation.cpp||24,file,src/composing/analysis/function/functionmodulation.cpp,,L3+,L3+,CORRECT,Y,function layer (L5); deferred to the L5 audit; not L1/L2
+19,file|src/composing/analysis/function/functionrelationallabel.cpp||30,file,src/composing/analysis/function/functionrelationallabel.cpp,,L3+,L3+,CORRECT,Y,function layer (L5); not L1/L2
+20,file|src/composing/analysis/region/sparsechordrefinement.cpp||62,file,src/composing/analysis/region/sparsechordrefinement.cpp,,L3+,L3+,CORRECT,Y,region orchestration at the L3 seam; not a fact/segmentation file
+21,file|src/composing/analysis/scoreharvest/metricweights.h||65,file,src/composing/analysis/scoreharvest/metricweights.h,,L1,SURVIVES-MIXED,CORRECT,Y,L1-tagged metric primitive but a grab-bag (hosts L3 window constants + the upward key include); MIXED is correct (OI-86)
+22,file|src/composing/composingconfiguration.cpp||88,file,src/composing/composingconfiguration.cpp,,L3+,L3+,CORRECT,Y,module configuration; not L1/L2 analysis
+23,file|src/composing/intonation/tuning_system.h||103,file,src/composing/intonation/tuning_system.h,,L3+,L3+,CORRECT,Y,tuning subsystem; outside the harmonic-analysis stack
+24,file|src/composing/tests/chordanalyzer_musicxml_tests.cpp||111,file,src/composing/tests/chordanalyzer_musicxml_tests.cpp,,L3+,L3+,CORRECT,Y,test file; out of L1/L2 source scope
+25,file|src/composing/tests/chordanalyzer_tests.cpp||112,file,src/composing/tests/chordanalyzer_tests.cpp,,L3+,L3+,CORRECT,Y,test file; out of scope
+26,file|src/composing/tests/data/mono_smoke_test.mscx||130,file,src/composing/tests/data/mono_smoke_test.mscx,,L3+,L3+,CORRECT,Y,test fixture; out of scope
+27,file|src/composing/tests/data/nm_long_sustain.musicxml||139,file,src/composing/tests/data/nm_long_sustain.musicxml,,L3+,L3+,CORRECT,Y,test fixture; out of scope
+28,file|src/composing/tests/data/s1c_c_major.mscx||164,file,src/composing/tests/data/s1c_c_major.mscx,,L3+,L3+,CORRECT,Y,test fixture; out of scope
+29,file|src/composing/tests/functionmodulation_tests.cpp||185,file,src/composing/tests/functionmodulation_tests.cpp,,L3+,L3+,CORRECT,Y,test file; out of scope
+30,file|src/composing/tests/gater_tests.cpp||191,file,src/composing/tests/gater_tests.cpp,,L3+,L3+,CORRECT,Y,test file; out of scope
+31,file|src/composing/tests/regionanalysis_tests.cpp||207,file,src/composing/tests/regionanalysis_tests.cpp,,L3+,L3+,CORRECT,Y,test file; out of scope
+32,file|src/composing/tests/test_helpers.h||211,file,src/composing/tests/test_helpers.h,,L3+,L3+,CORRECT,Y,test helper; out of scope
+33,function|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|124|232,function,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,124,collectPitchContext(),RETIRES,CORRECT,Y,collectPitchContext IS the legacy DOM-walk key builder superseded by pitchContextOverSpan; RETIRES(R5) is correct (this is exactly where the blind pass under-classified its branches as clean)
+34,function|src/composing/analysis/engravingbridge/regiontoneprimitives.cpp|218|234,function,src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,218,pitchContextOverSpan(),SURVIVES-MIXED,CORRECT,Y,pitchContextOverSpan is the live L3 view but lives in the mixed-layer engravingbridge file; MIXED is the module-level tag; correct
+35,function|src/composing/analysis/notemodel/note_model.cpp|47|241,function,src/composing/analysis/notemodel/note_model.cpp,47,makeEvent(),SURVIVES,CORRECT,Y,makeEvent note-model builder helper (the note model IS the DOM-reading layer); correct
+36,function|src/composing/analysis/notemodel/note_model.cpp|286|250,function,src/composing/analysis/notemodel/note_model.cpp,286,collect(),SURVIVES,CORRECT,Y,collect() segment-tree recursion; correct
+37,function|src/composing/analysis/scoreharvest/metricweights.cpp|55|263,function,src/composing/analysis/scoreharvest/metricweights.cpp,55,safeBeatType(),SURVIVES-MIXED,CORRECT,Y,safeBeatType live helper in the grab-bag metricweights file; MIXED module tag; correct
+38,literal|src/composing/analysis/engravingbridge/phraseboundaryview.h|86|291,literal,src/composing/analysis/engravingbridge/phraseboundaryview.h,86,0.30 in <file-scope>,UNFIT,CORRECT,Y,"wInterOnset 0.30: in the manifest but precision-phase / not-yet-fit, so UNFIT (not-established) is defensible-and-correct. NB pass-1 report prose (§3c) loosely calls it 'ESTABLISHED-as-tracked' while the disposition says UNFIT — a minor internal prose/disposition drift, not a wrong verdict"
+39,literal|src/composing/analysis/scoreharvest/metricweights.h|57|354,literal,src/composing/analysis/scoreharvest/metricweights.h,57,16 in <file-scope>,UNFIT,CORRECT,Y,"LOOKBACK_BEATS 16: hand-set, not in the manifest; UNFIT correct"
+40,literal|src/composing/analysis/scoreharvest/metricweights.h|59|356,literal,src/composing/analysis/scoreharvest/metricweights.h,59,0.5 in <file-scope>,UNFIT,CORRECT,Y,"LOOKAHEAD_WEIGHT 0.5: hand-set, not in the manifest; UNFIT correct"

@@ -1,0 +1,48 @@
+=== DT-2_unestablished_constant : 16 hit(s) ===
+  {"name": "coincidenceWeight", "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h", "line": "103", "value": "double coincidenceWeight = 0.0;", "in_manifest": false}
+  {"name": "minSilenceTicks", "file": "src/composing/analysis/engravingbridge/phraseboundaryview.h", "line": "107", "value": "int minSilenceTicks = 240;   // eighth note at 480 ticks / quarter", "in_manifest": false}
+  {"name": "decayRate", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": "249", "value": "double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE", "in_manifest": false}
+  {"name": "lookaheadWeight", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": "250", "value": "double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT", "in_manifest": false}
+  {"name": "beatsPerDecayUnit", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": "251", "value": "double beatsPerDecayUnit = 4.0;  ///< beats per time-decay unit (one 4/4 measure", "in_manifest": false}
+  {"name": "DECAY_RATE", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": "249", "value": "double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE", "in_manifest": false}
+  {"name": "LOOKAHEAD_WEIGHT", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": "250", "value": "double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT", "in_manifest": false}
+  {"name": "LOOKAHEAD_WEIGHT", "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "line": "161", "value": "const double lookaheadMul = isLookahead ? shv::LOOKAHEAD_WEIGHT : 1.0;", "in_manifest": false}
+  {"name": "LOOKBACK_BEATS", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "57", "value": "inline constexpr int    LOOKBACK_BEATS   = 16;", "in_manifest": false}
+  {"name": "LOOKAHEAD_BEATS", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "58", "value": "inline constexpr int    LOOKAHEAD_BEATS  = 8;", "in_manifest": false}
+  {"name": "LOOKAHEAD_WEIGHT", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "59", "value": "inline constexpr double LOOKAHEAD_WEIGHT = 0.5;", "in_manifest": false}
+  {"name": "DECAY_RATE", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "60", "value": "inline constexpr double DECAY_RATE       = 0.7;   // multiplier per measure (4 q", "in_manifest": false}
+  {"name": "kPass2bMinRegionTicks", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "69", "value": "inline constexpr int kPass2bMinRegionTicks = 4 * mu::engraving::Constants::DIVIS", "in_manifest": false}
+  {"name": "DECAY_RATE", "file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "104", "value": "double timeDecay(double beatsAgo, double decayRate = DECAY_RATE, double beatsPer", "in_manifest": false}
+  {"name": "repetitionBoost 0.3", "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp", "line": "297", "value": "inline weightedPcView weight", "in_manifest": false}
+  {"name": "crossVoiceBoost 1.5", "file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp", "line": "312", "value": "inline weightedPcView weight", "in_manifest": false}
+
+=== DT-3_value_copied_constant : 3 hit(s) ===
+  {"kind": "comment-coupled-value-copy", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": 249, "couples_to": "scoreharvest DECAY_RATE", "value": "0.7", "text": "double decayRate         = 0.7;  ///< == scoreharvest DECAY_RATE"}
+  {"kind": "comment-coupled-value-copy", "file": "src/composing/analysis/engravingbridge/regiontonecollector.h", "line": 250, "couples_to": "scoreharvest LOOKAHEAD_WEIGHT", "value": "0.5", "text": "double lookaheadWeight   = 0.5;  ///< == scoreharvest LOOKAHEAD_WEIGHT"}
+  {"kind": "comment-coupled-value-copy", "file": "src/composing/analysis/notemodel/note_model.h", "line": 87, "couples_to": "Note::playTicksFraction", "value": "0", "text": "int  duration = 0;   ///< release - onset (== Note::playTicksFraction())."}
+
+=== DT-5_siloed_fact : 8 hit(s) ===
+  {"symbol": "sharpFlatSense", "owner_files": ["src/composing/analysis/engravingbridge/spellingview.cpp", "src/composing/analysis/engravingbridge/spellingview.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "spanSpelling", "owner_files": ["src/composing/analysis/engravingbridge/spellingview.cpp", "src/composing/analysis/engravingbridge/spellingview.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "SpanSpelling", "owner_files": ["src/composing/analysis/engravingbridge/spellingview.cpp", "src/composing/analysis/engravingbridge/spellingview.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "computePhraseBoundaryProfile", "owner_files": ["src/composing/analysis/engravingbridge/phraseboundaryview.cpp", "src/composing/analysis/engravingbridge/phraseboundaryview.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "beatTypeToWeight", "owner_files": ["src/composing/analysis/scoreharvest/metricweights.cpp", "src/composing/analysis/scoreharvest/metricweights.h"], "external_production_consumers": ["src/composing/analysis/engravingbridge/regiontoneprimitives.cpp"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "beatTypeForOnsetTick", "owner_files": ["src/composing/analysis/scoreharvest/metricweights.cpp", "src/composing/analysis/scoreharvest/metricweights.h"], "external_production_consumers": ["src/composing/analysis/engravingbridge/regiontoneprimitives.cpp"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "distinctPitchClasses", "owner_files": ["src/composing/analysis/scoreharvest/metricweights.cpp", "src/composing/analysis/scoreharvest/metricweights.h"], "external_production_consumers": ["src/composing/analysis/key/keyresolver.cpp"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "buildPedalWindowIndex", "owner_files": ["src/composing/analysis/scoreharvest/metricweights.cpp", "src/composing/analysis/scoreharvest/metricweights.h"], "external_production_consumers": ["src/composing/analysis/engravingbridge/regiontonecollector.cpp"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+
+=== DT-12_stale_anchor : 1 hit(s) ===
+  {"file": "src/composing/analysis/slicing/slicer.h", "line": 68, "kind": "file:line-anchor-stale-content", "ref": "regionanalyzer.cpp:579", "resolves": false, "cited_symbol": ["KeyModeSequenceDecoder::decode", "slicer"], "why": "cited symbol not near the cited line \u2014 line number drifted"}
+
+=== DT-16_raw_dom_outside_L1 : 4 hit(s) ===
+  {"function": "collectPitchContext", "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "start_line": 124, "walks_dom_notes": true, "also_uses_note_model": false, "note": "walks engraving-DOM notes directly (bypasses the L1 note model)"}
+  {"function": "detectOnsetSubBoundaries", "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "start_line": 280, "walks_dom_notes": true, "also_uses_note_model": false, "note": "walks engraving-DOM notes directly (bypasses the L1 note model)"}
+  {"function": "detectBassMovementSubBoundaries", "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "start_line": 371, "walks_dom_notes": true, "also_uses_note_model": false, "note": "walks engraving-DOM notes directly (bypasses the L1 note model)"}
+  {"function": "findTemporalContext", "file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "start_line": 452, "walks_dom_notes": true, "also_uses_note_model": true, "note": "walks engraving-DOM notes directly (bypasses the L1 note model)"}
+
+=== DT-19_layer_boundary : 4 hit(s) ===
+  {"file": "src/composing/analysis/engravingbridge/regiontonecollector.cpp", "line": "37", "include": "composing/analysis/chord/analysisutils.h", "up_to": "L4", "note": "L1/L2 file includes a L4 header (upward dependency)"}
+  {"file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "line": "37", "include": "composing/analysis/chord/analysisutils.h", "up_to": "L4", "note": "L1/L2 file includes a L4 header (upward dependency)"}
+  {"file": "src/composing/analysis/engravingbridge/regiontoneprimitives.cpp", "line": "38", "include": "composing/analysis/chord/chordanalyzer.h", "up_to": "L4", "note": "L1/L2 file includes a L4 header (upward dependency)"}
+  {"file": "src/composing/analysis/scoreharvest/metricweights.h", "line": "42", "include": "../key/keymodeanalyzer.h", "up_to": "L3", "note": "L1/L2 file includes a L3 header (upward dependency)"}
+
