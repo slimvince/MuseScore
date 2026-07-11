@@ -1,6 +1,42 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ SESSION 36 CLOSE — THE CURRENT ENTRY POINT (Cowork, 2026-07-10)
+
+**MANDATORY FIRST READS (new standing rules):** `CLAUDE.md` — principles now run **#1–#19**
+(the Premise Gate #17, Class-A/#18 + Class-B/#19 prohibitions, the surprise-scope rule, the
+fact-publication corollary, the open-items-register rules) — then **`OPEN_ITEMS.md`** (the ONE
+register; session-start read is mandatory; a stage may not open while a row gating it is
+open), then `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
+
+**What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
+ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
+(2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
+**STAGE-3 ENTRY GATE EG-1…EG-7** in `cowork_engage_arc_plan.md`; (3) **EG-2 executed under the
+full gate** — scoping pre-registered with §5 predictions BEFORE the probe
+(`cowork_eg2_scoping.md`), instrument established, probe run (`cc_eg2_probe_report.md`):
+**P1 NOT supported — the −16 % "win" is an abstention artifact** (per-committed accuracy
+slightly WORSE; abstention a coin-flip on a never-fit 0.5 margin); (4) **EG-1 premise checks**
+(`cowork_eg1_premise_checks.md`): the dim7 spelling-pin never fires (gate-1 chosen-quality
+precondition — root-caused at code), abstention control flow established, Xsus hypothesis
+recorded UNCHECKED; (5) **`OPEN_ITEMS.md` created** — 12-surface sweep, 84+ rows, 11
+contradictions catalogued; (6) the **siloed-facts audit** (17 findings; surfaces are
+voice/spelling/membership-blind) → the ratified **fact-publication corollary**; (7) the
+**adjudication dossier** — all 7 audit UNCLEARs decided from principles, ratified (A3: the
+quality-overwrite #12 violation knowingly tolerated until E4); (8) the **certification-audit
+protocol P1–P8** (`cowork_audit_protocol.md`) + the living **defect-type catalog**
+(`DEFECT_TYPES.md`, DT-1…DT-17) — blind enumerative pass first, signature sweep second.
+
+**NEXT ACTION: run `cc_instruction_l1_l2_audit_pass1.md`** (Claude Code on the host) — the
+first EG-7 layer certification, PASS 1 of 2 (pass 2 = signature sweep + P5/P6 sampling, a
+separate instruction to a fresh session afterward). **Also awaiting the user:** OI-43 (the
+proposed menu-width check that would settle ponder-point 1 on measured fact), OI-44 (the
+joint step's single declared status), the fork push.
+
+*(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
+provenance.)*
+
+---
 ## ★★ NEXT-SESSION ENTRY POINT — READ THIS FIRST (Cowork, 2026-07-07)
 
 You (the next session) start **context-less**. This block orients you and carries **two ponder-points the
