@@ -1,0 +1,117 @@
+process_order,row_id,kind,label,axis,my_fine,pass1_verdict,bucket,manifest_covered,coverage_note,reason_code
+1,field|src/composing/analysis/key/modepriorpresets.h|42|1588,field,ModePriorPreset::name,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+2,literal|src/composing/analysis/key/keymodeanalyzer.cpp|148|257,literal,3 in ionianTonicPcForMode,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+3,literal|src/composing/analysis/section/jointkeydecision.cpp|86|714,literal,7 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+4,literal|src/composing/analysis/key/keymodeanalyzer.h|141|421,literal,0.0 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+5,crosslayer|src/composing/analysis/section/sectionanalyzer.cpp|52|1927,crosslayer,include composing/analysis/chord/analysisutils.h -> chord,code,SURVIVES,MIXED-DEFERRED,CONCORDANT,,,CODE_LIVE
+6,literal|src/composing/analysis/types/analysistypes.h|833|934,literal,0.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+7,branch|src/composing/analysis/section/sectionanalyzer.cpp|589|1496,branch,ternary in analyzeSection,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+8,field|src/composing/analysis/key/keyresolver.h|97|1586,field,KeySignatureContext::correctedFifths,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+9,field|src/composing/analysis/section/jointkeydecision.h|169|1689,field,JointKeyDecision::jointTonicPc,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+10,field|src/composing/analysis/key/keymodesequence.h|161|1570,field,SliceKeyMode::alternatives,derived,PUBLISHED,PUBLISHED,CONCORDANT,,,PUB_CONSUMER
+11,branch|src/composing/analysis/key/keymodeanalyzer.h|66|1128,branch,case in keyModeIsMajor,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+12,literal|src/composing/analysis/section/jointkeydecision.cpp|80|692,literal,4 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+13,branch|src/composing/analysis/key/keymodesequence.cpp|380|1208,branch,ternary in decodeLattice,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+14,function|src/composing/analysis/section/localmodulationdetector.cpp|65|66,function,lmdOutOfCollectionCount(),code,SURVIVES,SURVIVES,CONCORDANT,,,CODE_LIVE
+15,branch|src/composing/analysis/key/keymodeanalyzer.cpp|288|1057,branch,else-if in scoreTriadEvidence,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+16,literal|src/composing/analysis/key/keymodeanalyzer.cpp|588|367,literal,0.0 in analyzeKeyMode,constants,DEAD,ESTABLISHED,GENUINE-DISAGREEMENT,,,DEAD_VESTIGIAL
+17,branch|src/composing/analysis/key/keymodeanalyzer.cpp|181|1046,branch,case in possibleIonianFifthsForPc,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+18,branch|src/composing/analysis/region/regionanalyzer.cpp|249|1267,branch,if in absorbShortRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+19,literal|src/composing/analysis/types/analysistypes.h|429|807,literal,1.0 in bounds,constants,ESTABLISHED,DEFERRED,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+20,literal|src/composing/analysis/region/regionanalyzer.cpp|1270|641,literal,2 in analyzeRegions,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+21,literal|src/composing/analysis/key/keymodeanalyzer.cpp|48|98,literal,6 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+22,function|src/composing/analysis/key/keymodeanalyzer.cpp|321|6,function,scoreCharacteristicPitch(),code,SURVIVES,SURVIVES,CONCORDANT,,,CODE_LIVE
+23,field|src/composing/analysis/section/cadencekeyanchor.h|98|1650,field,AuthenticCadence::endsPhrase,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+24,literal|src/composing/analysis/key/keymodeanalyzer.cpp|56|141,literal,10 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+25,field|src/composing/analysis/types/analysistypes.h|715|1815,field,KeyModeAnalyzerPreferences::disambiguationTriadCost,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+26,branch|src/composing/analysis/section/sectionanalyzer.cpp|286|1454,branch,if in analyzeSection,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+27,literal|src/composing/analysis/types/analysistypes.h|864|989,literal,2.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+28,field|src/composing/analysis/section/sectionanalyzer.h|99|1718,field,CadenceMarker::tick,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+29,branch|src/composing/analysis/key/keymodeanalyzer.cpp|762|1115,branch,if in analyzeKeyMode,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+30,literal|src/composing/analysis/types/analysistypes.h|856|975,literal,5.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+31,function|src/composing/analysis/key/keymodeanalyzer.cpp|429|10,function,tonalCenterScore(),code,SURVIVES,SURVIVES,CONCORDANT,,,CODE_LIVE
+32,crosslayer|src/composing/analysis/region/regionanalyzer.cpp|45|1894,crosslayer,include composing/analysis/harmony/harmonicsegmenter.h -> harmony,code,SURVIVES,FORWARD-OK,CONCORDANT,,,CODE_LIVE
+33,literal|src/composing/analysis/types/analysistypes.h|733|895,literal,1.0 in <file-scope>,constants,UNFIT,UNFIT,CONCORDANT,,,FITTED_PROVISIONAL_UNFIT
+34,literal|src/composing/analysis/types/analysistypes.h|191|787,literal,0.30 in <file-scope>,constants,UNRESOLVABLE-FROM-PROSE,DEFERRED,UNRESOLVABLE,yes,"L4-scope param, deferred to the L4 audit (DT-2 flags *Preferences too)",FITTED_UNRESOLVED
+35,branch|src/composing/analysis/key/keymodeformatting.cpp|84|1137,branch,case in keyModeTonicName,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+36,field|src/composing/analysis/key/keymodeanalyzer.h|133|1544,field,KeyCandidateScore::triadEvidence,derived,PUBLISHED,PUBLISHED,CONCORDANT,,,PUB_CONSUMER
+37,literal|src/composing/analysis/key/keymodeanalyzer.cpp|173|268,literal,2 in possibleIonianFifthsForPc,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+38,literal|src/composing/analysis/region/regionanalyzer.cpp|1092|637,literal,2 in analyzeRegions,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+39,field|src/composing/analysis/key/keymodeanalyzer.h|140|1551,field,KeyCandidateScore::finalScore,derived,PUBLISHED,PUBLISHED,CONCORDANT,,,PUB_CONSUMER
+40,field|src/composing/analysis/types/analysistypes.h|675|1805,field,KeyModeAnalyzerPreferences::modePriorLydianSharp2,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+41,branch|src/composing/analysis/key/keymodesequence.cpp|210|1181,branch,if in populateEmissionConfidence,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+42,literal|src/composing/analysis/types/analysistypes.h|601|850,literal,0.25 in <file-scope>,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+43,literal|src/composing/analysis/types/analysistypes.h|852|967,literal,5.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+44,function|src/composing/analysis/key/keymodesequence.cpp|416|36,function,redecodeRange(),code,SURVIVES,SURVIVES,CONCORDANT,,,CODE_LIVE
+45,branch|src/composing/analysis/region/regionanalyzer.cpp|443|1283,branch,ternary in applyJointKeyWiring,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+46,field|src/composing/analysis/region/regionanalyzer.h|101|1632,field,ReachBackOptions::maxReachSteps,constants,UNRESOLVABLE-FROM-PROSE,NO-ISSUE,UNRESOLVABLE,no,NOT matched by the DT-2 struct-name patterns (dormant/default-OFF config bound); inert on production,FITTED_UNRESOLVED
+47,literal|src/composing/analysis/key/keymodeanalyzer.cpp|527|358,literal,12 in keySignatureFifthsForKey,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+48,field|src/composing/analysis/types/analysistypes.h|672|1802,field,KeyModeAnalyzerPreferences::modePriorIonianSharp5,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+49,literal|src/composing/analysis/key/keymodeanalyzer.cpp|59|156,literal,6 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+50,branch|src/composing/analysis/key/keymodeanalyzer.cpp|394|1083,branch,case in scoreModePrior,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+51,literal|src/composing/analysis/types/analysistypes.h|880|1008,literal,0.5 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+52,branch|src/composing/analysis/section/sectionanalyzer.cpp|680|1509,branch,if in analyzeSection,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+53,branch|src/composing/analysis/section/jointkeydecision.cpp|49|1396,branch,if in jkdInCollectionFraction,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+54,literal|src/composing/analysis/section/jointkeydecision.cpp|81|696,literal,4 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+55,literal|src/composing/analysis/key/modepriorpresets.h|64|584,literal,2.50 in <file-scope>,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+56,literal|src/composing/analysis/types/analysistypes.h|845|952,literal,5.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+57,literal|src/composing/analysis/key/keymodeanalyzer.h|142|422,literal,0.0 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+58,branch|src/composing/analysis/key/keymodeanalyzer.cpp|669|1109,branch,if in analyzeKeyMode,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+59,literal|src/composing/analysis/key/modepriorpresets.cpp|59|501,literal,1.50 in modePriorPresets,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+60,branch|src/composing/analysis/key/keymodeanalyzer.cpp|390|1079,branch,case in scoreModePrior,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+61,literal|src/composing/analysis/key/modepriorpresets.cpp|133|566,literal,0.00 in modePriorPresets,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+62,field|src/composing/analysis/region/harmonicrhythm.h|80|1620,field,HarmonicRegion::endTick,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+63,branch|src/composing/analysis/region/regionanalyzer.cpp|666|1301,branch,if in analyzeRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+64,branch|src/composing/analysis/key/keymodeanalyzer.cpp|173|1038,branch,case in possibleIonianFifthsForPc,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+65,literal|src/composing/analysis/types/analysistypes.h|803|909,literal,0.2 in <file-scope>,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+66,literal|src/composing/analysis/types/analysistypes.h|837|941,literal,0.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+67,literal|src/composing/analysis/key/keymodeanalyzer.cpp|67|196,literal,8 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+68,literal|src/composing/analysis/key/keymodeanalyzer.cpp|416|353,literal,2 in scoreKeySignatureProximity,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+69,literal|src/composing/analysis/key/keymodeanalyzer.cpp|349|327,literal,0.5 in scoreCharacteristicPitch,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_MECH
+70,branch|src/composing/analysis/region/regionanalyzer.cpp|1333|1360,branch,if in analyzeRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+71,branch|src/composing/analysis/region/regionanalyzer.cpp|990|1332,branch,if in analyzeRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+72,field|src/composing/analysis/section/jointkeydecision.h|171|1691,field,JointKeyDecision::prodTonicPc,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+73,literal|src/composing/analysis/key/keymodesequence.cpp|168|448,literal,0.0 in buildLattice,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+74,literal|src/composing/analysis/region/regionanalyzer.cpp|944|632,literal,12 in analyzeRegions,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+75,literal|src/composing/analysis/key/keymodeanalyzer.cpp|105|232,literal,4 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+76,literal|src/composing/analysis/key/keymodeanalyzer.cpp|67|193,literal,3 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+77,branch|src/composing/analysis/key/keymodeformatting.cpp|129|1171,branch,case in keyModeSuffix,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+78,literal|src/composing/analysis/key/keymodeanalyzer.cpp|172|267,literal,5 in possibleIonianFifthsForPc,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+79,literal|src/composing/analysis/types/analysistypes.h|843|948,literal,5.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+80,function|src/composing/analysis/key/keymodeanalyzer.cpp|378|8,function,scoreModePrior(),code,SURVIVES,SURVIVES,CONCORDANT,,,CODE_LIVE
+81,field|src/composing/analysis/region/harmonicrhythm.h|46|1614,field,ChordTemporalExtensions::bassIsStepwiseToNext,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+82,literal|src/composing/analysis/key/keymodeanalyzer.cpp|98|223,literal,8 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+83,crosslayer|src/composing/analysis/key/keymodeanalyzer.cpp|24|1850,crosslayer,include ../chord/analysisutils.h -> chord,code,SURVIVES,BACK-EDGE-NOTE,CONCORDANT,,,CODE_LIVE
+84,field|src/composing/analysis/key/keymodesequence.h|160|1569,field,SliceKeyMode::chosen,derived,PUBLISHED,PUBLISHED,CONCORDANT,,,PUB_CONSUMER
+85,literal|src/composing/analysis/key/keymodeanalyzer.cpp|789|385,literal,12 in analyzeKeyMode,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+86,branch|src/composing/analysis/region/regionanalyzer.cpp|174|1261,branch,if in coalesceShortSameRootRuns,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+87,literal|src/composing/analysis/section/cadencekeyanchor.cpp|203|664,literal,0.0 in aggregateGlobalAnchor,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+88,field|src/composing/analysis/key/modepriorpresets.h|65|1605,field,ModePriorPreset::ionianSharp5,constants,UNRESOLVABLE-FROM-PROSE,NO-ISSUE,UNRESOLVABLE,yes,"DT-2 flags the *Preferences/*Preset/*Weights member (OI-91), though pass-1 filed the row NO-ISSUE",FITTED_UNRESOLVED
+89,literal|src/composing/analysis/key/keymodeanalyzer.cpp|55|130,literal,2 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+90,branch|src/composing/analysis/section/sectioncadencedetection.cpp|178|1529,branch,if in detectPivotChords,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+91,literal|src/composing/analysis/key/keymodeanalyzer.h|37|389,literal,1.0 in normalizedConfidenceSigmoid,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+92,literal|src/composing/analysis/types/analysistypes.h|885|1014,literal,0.5 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+93,crosslayer|src/composing/analysis/key/keyresolver.cpp|41|1872,crosslayer,include composing/analysis/chord/analysisutils.h -> chord,code,SURVIVES,BACK-EDGE-NOTE,CONCORDANT,,,CODE_LIVE
+94,literal|src/composing/analysis/types/analysistypes.h|893|1029,literal,0.5 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+95,literal|src/composing/analysis/key/keymodeanalyzer.cpp|175|276,literal,4 in possibleIonianFifthsForPc,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+96,literal|src/composing/analysis/types/analysistypes.h|845|953,literal,5.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+97,literal|src/composing/analysis/key/keymodeanalyzer.cpp|51|114,literal,3 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+98,field|src/composing/analysis/section/localmodulationdetector.h|91|1717,field,ModulationDetectionResult::anchor,derived,PUBLISHED,NO-ISSUE,CONCORDANT,,,PUB_CONSUMER
+99,branch|src/composing/analysis/section/sectionanalyzer.cpp|670|1507,branch,ternary in analyzeSection,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+100,field|src/composing/analysis/section/jointkeydecision.h|145|1678,field,JointKeyWeights::modulation,constants,UNFIT,UNFIT,CONCORDANT,,,FITTED_PROVISIONAL_UNFIT
+101,literal|src/composing/analysis/key/modepriorpresets.cpp|122|555,literal,0.20 in modePriorPresets,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+102,crosslayer|src/composing/analysis/region/regionanalyzer.cpp|44|1893,crosslayer,include composing/analysis/function/harmonicfunctionlayer.h -> function,code,SURVIVES,MIXED-DEFERRED,CONCORDANT,,,CODE_LIVE
+103,branch|src/composing/analysis/region/regionanalyzer.cpp|771|1311,branch,if in analyzeRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+104,branch|src/composing/analysis/key/keymodesequence.cpp|180|1179,branch,if in stateIndexForResult,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+105,literal|src/composing/analysis/key/keymodeanalyzer.cpp|64|177,literal,3 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+106,literal|src/composing/analysis/section/jointkeydecision.cpp|82|697,literal,3 in <file-scope>,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_THEORY
+107,literal|src/composing/analysis/types/analysistypes.h|829|927,literal,2.0 in bounds,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_BOUND
+108,field|src/composing/analysis/types/analysistypes.h|183|1734,field,ChordAnalyzerPreferences::bassRootThirdOnlyMultiplier,constants,UNRESOLVABLE-FROM-PROSE,DEFERRED,UNRESOLVABLE,yes,"L4-scope param, deferred to the L4 audit (DT-2 flags *Preferences too)",FITTED_UNRESOLVED
+109,literal|src/composing/analysis/key/modepriorpresets.cpp|102|538,literal,2.00 in modePriorPresets,constants,UNRESOLVABLE-FROM-PROSE,UNFIT,UNRESOLVABLE,yes,pass-1 UNFIT (not-in-manifest; DT-2/OI-91),FITTED_UNRESOLVED
+110,branch|src/composing/analysis/region/regionanalyzer.cpp|313|1269,branch,if in restampBassMinorSeventhAfterMerge,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+111,literal|src/composing/analysis/section/cadencekeyanchor.cpp|152|660,literal,0.0 in aggregateGlobalAnchor,constants,ESTABLISHED,UNFIT,GENUINE-DISAGREEMENT,,,STRUCT_MECH
+112,branch|src/composing/analysis/region/regionanalyzer.cpp|241|1266,branch,if in absorbShortRegions,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+113,field|src/composing/analysis/key/keymodesequence.h|163|1572,field,SliceKeyMode::uncertain,derived,PUBLISHED,PUBLISHED,CONCORDANT,,,PUB_CONSUMER
+114,literal|src/composing/analysis/key/keymodesequence.cpp|65|442,literal,12 in cofDistance,constants,ESTABLISHED,ESTABLISHED,CONCORDANT,,,STRUCT_MECH
+115,branch|src/composing/analysis/section/jointkeydecision.cpp|381|1421,branch,if in decideJointKey,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE
+116,branch|src/composing/analysis/key/keyresolver.cpp|316|1241,branch,if in resolveKeyAndModeRanked,code,SURVIVES,NO-ISSUE,CONCORDANT,,,CODE_LIVE

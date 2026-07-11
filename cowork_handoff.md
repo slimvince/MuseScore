@@ -118,6 +118,31 @@ Commits `1021e81e44` `feat(tools)` **freeze = the blinding boundary** + `6dab578
 comparison) + this `docs(cc)` fold; fork-only, `upstream` untouched. **NEXT: the user's L3 certification
 decision; then the L4 audit (chord decoder + surviving scorer core).**
 
+**★ UPDATE (CC, 2026-07-11) — L3 PASS-2 FINE-LABEL RE-DERIVATION from the frozen blind prose DONE**
+(`cc_l3_audit_pass2_relabel_report.md`; OI-100). The pass-2 second reading defended its coarse 4-label
+vocabulary by claiming "the per-row prose carries the finer distinctions"; the user directed that
+checkable-but-unchecked claim be CHECKED (#18). Method: re-derive the protocol-P2 fine verdict for all
+156 frozen blind rows from ROW IDENTITY + COARSE LABEL + PROSE ALONE — **blind to pass 1 until frozen at
+`30194061d1`** — then crosstab. Read-only; no `src/` read for labeling, no constant/golden change; both
+stops untouched. Instruments (parse/join/count/render only, the judgment is the reason-code file):
+`relabel_fine.py` + `pass2_fine_relabel_judgments.json`; `crosstab_fine_vs_pass1.py`. **★ RESULT — the
+prose carries the fine label WITHOUT LOSS on the code axis (56/56 SURVIVES) and the derived-facts axis
+(16/16 PUBLISHED); ALL divergence is on the constants axis.** Crosstab (156): **113 CONCORDANT / 21
+GENUINE-DISAGREEMENT / 22 UNRESOLVABLE.** The pass-2 claim is TRUE on code+derived and **OVERSTATED on
+constants**: the prose recovers UNFIT for only the 2 "provisional"-flagged fitted magnitudes, leaves 22
+fitted magnitudes UNRESOLVABLE-FROM-PROSE (coarse ESTABLISHED collapsed the ESTABLISHED-vs-UNFIT split;
+"empirical/in-bounds" ≠ UNFIT), and over-establishes ~20 `ParameterBoundsMap` range-endpoint / inline /
+inert-zero literals pass 1 more-conservatively flags UNFIT/DEFERRED. The 21 disagreements = **1 real
+defect** (`extraToneScore` dead field, **OI-96**, independently reproduced from the prose) + **20 benign
+constants-classification differences** (no code defect; pass 1's conservative UNFIT/DEFERRED is the one
+to rely on). **21/22 unresolvable constants are covered by the DT-2 manifest sweep (OI-91)**; the 1
+uncovered = `ReachBackOptions::maxReachSteps=8` (dormant/default-OFF, inert; DT-2 struct patterns miss
+it — an OI-95-class tooling note). **★ The L3 certification proposal STILL STANDS, weakened only by
+named+bounded+covered gaps; the decision remains the USER's — OI-84 / OI-100 / EG-7 OPEN.** Commits:
+Task-0 `c2264c6253` (OI-100 row + instruction) + freeze `30194061d1` `feat(tools)` (**the blinding
+boundary**) + this `docs(cc)` fold; fork-only, `upstream` untouched. **NEXT: the user's L3 certification
+decision; then the L4 audit.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
