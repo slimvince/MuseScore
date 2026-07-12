@@ -48,7 +48,9 @@
   via the dual columns.
 - **The June cadence→key dossier** (`cc_cadence_key_investigation_dossier.md`,
   2026-06-14, pre-dating the robust unit — its sizing needs re-validation on the
-  current columns): a cadence→key signal structurally supplies the missing
+  current columns). Plainly: a cadence is the dominant-resolving-to-tonic arrival
+  formula at a phrase end — the single most key-revealing fragment of a chord
+  progression, since it names the tonic. The dossier's finding: a cadence→key signal structurally supplies the missing
   relative-pair evidence and addressed ≈91 % of that era's mode-absent floor; the
   then-existing cadence detector was unusable (circular — it presupposes the key);
   the recommendation was a NEW key-agnostic cadence pre-scan voting tonic+mode from
@@ -116,6 +118,19 @@ modulations, aligning our output with the local-key convention the new column gr
 against; the public modulation/tonicization dataset can calibrate the boundary.
 Expectation: this converts a large share of the remaining label-gap class into
 agreement without touching the hard cases.
+(e) **progression-grammar evidence** (added at the user's question, 2026-07-12):
+progressions are key-relative — the same chord roots that are grammatical I–IV–V–I
+under one key are nonsense under its relative — so HOW WELL the observed sequence
+matches known progressions UNDER EACH CANDIDATE KEY discriminates between keys even
+where the chords themselves cannot. The assets exist dormant and audited (the
+harmonic vocabulary catalog; the licensed-progression grammar). The cadence channel
+(b) is this channel's sharpest special case — a dominant-to-tonic arrival names the
+tonic directly — which is why (b) leads. MEASURED CAUTION attached: the one deployed
+use of the licensed-progression signal (as a CHORD-selection override) measured
+net-harmful and uncorrelated with correctness; that condemns assuming, not this use —
+so (e) enters only through a written prediction and a read-only probe: grammaticality-
+under-candidate-key scored on the measured failing classes, discrimination reported
+before any design commits to it.
 
 **Decision 4 — anchoring.** Re-anchor at notated mid-piece key-signature changes
 (a known, bounded gap); integrate the declared mode as a graded prior rather than a
@@ -165,6 +180,12 @@ row and its written predictions at dispatch time; the numbers above marked
    called-for pre-scan.
 3. **The spelling-profile desk simulation:** hand-trace the Temperley spelling
    variant through the traced failures before any profile work is designed.
+4. **The progression-grammar discrimination probe** (the user's channel, decision
+   2 option (e) of the transition section): score the observed chord sequence's
+   grammaticality under each candidate key on the measured failing classes, read-only
+   from existing outputs and the dormant grammar; report whether it discriminates,
+   with the prediction written at dispatch time. Runs naturally together with the
+   cadence-vote probe (same inputs, same population).
 
 ## 5. Uncertainty flags (honest)
 
