@@ -38,6 +38,23 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > (`batch_analyze.cpp` build group; OI-135's single-source needs a config-unification change, values
 > proven copies today) + OI-127. Full record: `cc_measurement_chain_hardening_report.md` + STATUS.md.
 
+> **★ CC ADDENDUM (2026-07-12, later) — the OI-132 / D2 MODE-GRADING ADJUDICATION PROBE delivered
+> (READ-ONLY).** `tools/mode_grading_adjudication_probe.py` (+ `tools/reports/mode_grading_adjudication_probe.json`)
+> computes the two candidate reductions of our emitted key side by side; no graded-pipeline code
+> touched, `tools/robust_stop`/`tools/corpus` written by nothing. The disagreeing population is the
+> five dominant-family conflict modes (PhrygDom/alt/Lydb7/Lyd+/Mixb6) — **0.509 / 0.706 / 0.480 %** of
+> graded duration (baroque/jazz/default). Establishment PASS (baseline reproduces the committed a8
+> counters exactly; excl-population both rules == baseline exactly). **The evidence supports RULE B
+> (parent collection):** LOCAL-column match to the DCML annotators **67 %** of the disagreeing duration
+> (54–100 % per mode, PhrygDom 72 %); **Rule A 0 %**; Rule B raises key-agreement +0.13…+0.49 pp per
+> column (Rule A ≈ 0) and fixes the Lydb7/Lyd+/Mixb6 KEYFAIL artifact. The current committed
+> `_our_key_tonic` matches NEITHER rule → consolidating (either way) is a re-baseline event, not
+> hygiene; consolidating to Rule B is the evidence-supported choice. Sole Rule-A win: the HOME column
+> of Lydian dominant (~2 880 ticks). **THE RULING IS THE USER'S** (OI-132 OPEN, updated). A Layer-3
+> inference finding surfaced — the engine emits exotic dominant scales on spans the annotator reads as
+> plain diatonic chords (the "neither" residual) — DECLARED to Cowork as **OI-147**, not fixed. Full
+> record: `cc_mode_grading_adjudication_probe_report.md`.
+
 > **★ CC ADDENDUM (2026-07-12) — the OI-84 certification plan reaches its decision point.**
 > All five surviving layers + the measurement chain have now had BOTH passes: L1/L2 (certified
 > 2026-07-11), L3 (certified 2026-07-11), L4 (proposed → certified), and **L5 (function) +
