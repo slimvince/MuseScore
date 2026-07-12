@@ -219,8 +219,11 @@ def extract_quality(rn_norm: str) -> str:
 # is redefined — this is a sub-classification *within* the existing key_disagree
 # bucket (cc_stage1d "orchestration is not a metric definition" basis).
 
-_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}
-_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
+# OI-126: single-sourced from dcml_parser._NOTE_TO_PC (were verbatim copies — one concern, three
+# sites). _KB_NOTE_OURS is the uppercase note→pc map itself; _KB_NOTE_DCML is its lowercase-keyed
+# view. Read-only lookup maps; values byte-identical to the former hand-written copies.
+_KB_NOTE_OURS = dcml._NOTE_TO_PC
+_KB_NOTE_DCML = {k.lower(): v for k, v in dcml._NOTE_TO_PC.items()}
 
 _KB_DCML_KEY_RE = re.compile(r'^([a-gA-G])([#b]*)$')
 # The mode suffix may contain uppercase letters (e.g. 'Dor', 'PhrygDom'), so the

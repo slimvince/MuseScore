@@ -10,8 +10,8 @@ dcml_parser.py — Parses harmonic annotation files in two formats:
    Example line: "m3 IV b2.5 viio6 b3 I"
 
 Usage:
-    from dcml_parser import parse_dcml_file, parse_rntxt_file, find_wir_file
-    regions = parse_dcml_file("path/to/bwv66.6.tsv")       # DCML TSV
+    from dcml_parser import parse_abc_harmonies_file, parse_rntxt_file, find_wir_file
+    regions = parse_abc_harmonies_file("path/to/bwv66.6.harmonies.tsv")  # DCML TSV
     regions = parse_rntxt_file("path/to/analysis.txt")     # When in Rome rntxt
 """
 
@@ -74,43 +74,9 @@ class DcmlRegion:
     pedal: Optional[str] = None
 
 
-def parse_dcml_file(path: str) -> List[DcmlRegion]:
-    """
-    Parse a DCML TSV annotation file.
-    Returns list of DcmlRegion sorted by measure + beat.
-    Skips rows with missing or unparseable numeral fields.
-    """
-    regions = []
-    with open(path, newline='', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
-            try:
-                mc   = int(row.get('mc', 0))
-                beat = float(row.get('beat', 1.0))
-                globalkey = row.get('globalkey', '')
-                localkey  = row.get('localkey', '')
-                relativeroot = row.get('relativeroot', '')
-                chord     = row.get('chord', '')
-                numeral   = row.get('numeral', '')
-
-                if not numeral or numeral in ('.', '~', '@none'):
-                    continue  # rest or unparseable
-
-                effective_key = _resolve_effective_dcml_key(localkey, globalkey, relativeroot)
-                regions.append(DcmlRegion(
-                    measure_number=mc,
-                    beat=beat,
-                    global_key=globalkey,
-                    local_key=localkey,
-                    chord_symbol=chord,
-                    roman_numeral=numeral,
-                    root_pc=_compute_root_pc(numeral, effective_key),
-                ))
-            except (ValueError, KeyError):
-                continue  # skip malformed rows
-
-    regions.sort(key=lambda r: (r.measure_number, r.beat))
-    return regions
+# OI-126: parse_dcml_file (superseded DCML-TSV parser) was DELETED here — it had no live
+# consumer (superseded by parse_abc_harmonies_file) and carried a dormant pre-P0 silent-drop
+# `except (ValueError, KeyError): continue`. The live TSV parser is parse_abc_harmonies_file.
 
 
 # Scale degree semitones from tonic for major and minor
@@ -482,40 +448,8 @@ def _resolve_effective_dcml_key(localkey: str, globalkey: str, relativeroot: str
     return effective_key
 
 
-def find_dcml_file(dcml_dir: str, bwv_stem: str) -> Optional[str]:
-    """
-    Find the DCML TSV file for a given BWV stem (e.g. 'bwv66.6').
-    Tries common DCML filename patterns.
-    Returns full path or None if not found.
-    """
-    bwv_match = re.search(r'bwv(\d+)(?:\.(\d+))?', bwv_stem, re.IGNORECASE)
-    if not bwv_match:
-        return None
-
-    bwv_num = bwv_match.group(1)
-    bwv_sub = bwv_match.group(2)  # may be None for standalone chorales
-
-    # Build candidate suffixes: plain and zero-padded
-    plain   = 'bwv' + bwv_num
-    padded3 = 'bwv' + bwv_num.zfill(3)
-    padded4 = 'bwv' + bwv_num.zfill(4)
-
-    try:
-        entries = os.listdir(dcml_dir)
-    except OSError:
-        return None
-
-    for fname in entries:
-        if not fname.endswith('.tsv'):
-            continue
-        f_lower = fname.lower()
-        if plain in f_lower or f_lower.startswith(padded3) or f_lower.startswith(padded4):
-            # If the stem includes a movement number, require it to appear in the filename too
-            if bwv_sub and bwv_sub not in fname:
-                continue
-            return os.path.join(dcml_dir, fname)
-
-    return None
+# OI-126: find_dcml_file was DELETED here — it had ZERO references anywhere in the repo (TSV
+# lookup is done by compare_rn._find_tsv; WiR by find_wir_file). Dead code (#6/#12).
 
 
 # ══════════════════════════════════════════════════════════════════════════
