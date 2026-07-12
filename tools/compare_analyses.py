@@ -183,6 +183,20 @@ def _rn_base_cased(rn: str) -> str:
 # ══════════════════════════════════════════════════════════════════════════
 # Alignment
 # ══════════════════════════════════════════════════════════════════════════
+# OI-125: measurement-decision tolerances — ONE named home per instrument, with provenance.
+# These are hand-set with a documented rationale but NOT independently derived / oracle-established
+# (#19); re-derivation is later (Stage-5-adjacent) work, flagged per constant. They are NOT fittable
+# scorer constants (→ NOT param_manifest.json rows) — they are grading conventions of the comparator.
+# NOTE: the robust A-8 grid (compare_rn.grid_score_regions) UNIONS boundaries and needs no overlap
+# threshold, so these govern only the batch-stop / secondary-metric / oracle-root alignment.
+ALIGN_OVERLAP_FRACTION = 0.5   # a (ours, DCML/m21) pair aligns iff overlap ≥ this fraction of EITHER
+                               # duration (lenient OR). [hand-set; re-derivation flagged]
+ALIGN_BEAT_DISTANCE_TOL = 0.5  # measure-anchored mode only: max |beat| distance for a match, in beats.
+                               # [hand-set; re-derivation flagged]
+EXTRAPOLATION_BEATS_PER_MEASURE = 4  # beats/measure ASSUMED when extrapolating a DCML tick beyond the
+                               # anchored measures (the rntxt/WiR path lacks abs_tick) — a silent 4/4
+                               # approximation for non-4/4 meters. [hand-set; re-derivation flagged]
+
 
 def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> int:
     return max(0, min(a_end, b_end) - max(a_start, b_start))
@@ -213,8 +227,8 @@ def align_regions(ours: list[Region], theirs: list[Region]) -> list[tuple[Region
                 best_their_dur = their.end_tick - their.start_tick
 
         if best is not None and our_dur > 0 and best_overlap > 0 \
-                and ((best_overlap / our_dur) >= 0.5
-                     or (best_their_dur > 0 and best_overlap / best_their_dur >= 0.5)):
+                and ((best_overlap / our_dur) >= ALIGN_OVERLAP_FRACTION
+                     or (best_their_dur > 0 and best_overlap / best_their_dur >= ALIGN_OVERLAP_FRACTION)):
             aligned.append((our, best))
         else:
             aligned.append((our, None))
@@ -446,11 +460,11 @@ def _dcml_tick_for(measure: int, beat: float,
         return int(round(m_start + (beat - 1) * tpb))
     if prev_m is not None:
         return int(round(measure_starts[prev_m]
-                         + (measure - prev_m) * 4 * tpb
+                         + (measure - prev_m) * EXTRAPOLATION_BEATS_PER_MEASURE * tpb
                          + (beat - 1) * tpb))
     if next_m is not None:
         return int(round(measure_starts[next_m]
-                         - (next_m - measure) * 4 * tpb
+                         - (next_m - measure) * EXTRAPOLATION_BEATS_PER_MEASURE * tpb
                          + (beat - 1) * tpb))
     return None
 
@@ -513,8 +527,8 @@ def _best_dcml_match_by_overlap(our: Region,
             best_their_dur = de - ds
     if best is None or best_ov == 0:
         return None
-    if (best_ov / our_dur) >= 0.5 \
-            or (best_their_dur > 0 and best_ov / best_their_dur >= 0.5):
+    if (best_ov / our_dur) >= ALIGN_OVERLAP_FRACTION \
+            or (best_their_dur > 0 and best_ov / best_their_dur >= ALIGN_OVERLAP_FRACTION):
         return best
     return None
 
@@ -546,7 +560,7 @@ def align_dcml_regions(ours_regions: list[Region],
             if dr.measure_number != our.measure_number:
                 continue
             dist = abs(dr.beat - our.beat)
-            if dist < best_dist and dist <= 0.5:
+            if dist < best_dist and dist <= ALIGN_BEAT_DISTANCE_TOL:
                 best_dist = dist
                 best = dr
         result.append(best)
