@@ -129,6 +129,29 @@ def ref_coverage(manifest_path: Path, preset: str):
     return M["presets"][preset].get("coverage", {}).get("wir_covered")
 
 
+def ref_summary_class_b(ref_dir: Path, preset: str):
+    """The reference's OWN class-(b) duration from the sibling summary.json (a8's direct output),
+    for cross-checking against the manifest baseline (OI-124b). None if no summary.json ships beside
+    the reference manifest."""
+    sp = ref_dir / "summary.json"
+    if not sp.exists():
+        return None
+    S = json.load(open(sp, encoding="utf-8"))
+    return S.get(preset, {}).get("agg", {}).get("b_cls_b_dur")
+
+
+def wir_source_from_summary(summary_path: Path, preset: str):
+    """Candidate WiR source fingerprint (OI-124) from the a8 summary coverage; None if absent."""
+    S = json.load(open(summary_path, encoding="utf-8"))
+    return S[preset].get("coverage", {}).get("wir_source_sha256")
+
+
+def ref_wir_source(manifest_path: Path, preset: str):
+    """Reference WiR source fingerprint (OI-124) from the committed manifest coverage; None if absent."""
+    M = json.load(open(manifest_path, encoding="utf-8"))
+    return M["presets"][preset].get("coverage", {}).get("wir_source_sha256")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--reference", default=str(_ROOT / "tools" / "robust_stop"),
@@ -150,6 +173,12 @@ def main():
         cand_runs = parse_runs(cand_dir / f"{preset}_variant_b_root_fail_runs.txt")
         ref_cb, ref_ca = ref_class_durs(manifest, preset)
         cand_cb, cand_ca = class_durs_from_summary(cand_summary, preset)
+
+        # OI-124b — internal consistency of the REFERENCE: the manifest's class-(b) baseline must
+        # equal the sibling summary.json's b_cls_b_dur (a8's direct output). A partial re-baseline
+        # (one artifact re-stamped, the other stale) would otherwise compare against a wrong figure.
+        ref_summary_cb = ref_summary_class_b(ref_dir, preset)
+        ref_consistent = ref_summary_cb is None or ref_summary_cb == ref_cb
 
         # (a) HARD STOP — class-(b) duration non-increase
         d_cb = cand_cb - ref_cb
@@ -183,6 +212,19 @@ def main():
             print(f"  !! COVERAGE SHRANK by {ref_cov - cand_cov} score(s) — the class-(b) "
                   f"population is smaller than the reference; a non-increase can be an artifact "
                   f"of dropped pieces, not a real improvement. FAIL.")
+        # OI-124b — the reference manifest baseline must agree with its own summary.json.
+        if not ref_consistent:
+            print(f"  !! REFERENCE INCONSISTENT: manifest class-(b)={ref_cb} but sibling "
+                  f"summary.json b_cls_b_dur={ref_summary_cb} — a PARTIAL re-baseline; the diff "
+                  f"base is unreliable. FAIL.")
+        # OI-124 — WiR source drift: the candidate graded against a different WiR clone than the
+        # reference. Surfaced loudly (informational; the class-(b)/coverage gates are the hard stop).
+        cand_ws = wir_source_from_summary(cand_summary, preset)
+        ref_ws = ref_wir_source(manifest, preset)
+        if cand_ws and ref_ws and cand_ws != ref_ws:
+            print(f"  !! WiR SOURCE DRIFT: candidate graded against a different WiR clone than the "
+                  f"reference (cand {cand_ws[:12]}… vs ref {ref_ws[:12]}…) — gradings may not be "
+                  f"comparable; verify the WiR checkout (REPRODUCIBILITY.md).")
         print(f"  (a) HARD STOP class-(b) root-disagree dur: ref={ref_cb} cand={cand_cb} "
               f"delta={d_cb:+d}  -> {'PASS' if cb_pass else 'FAIL'}")
         ca_flag = "  ** INVESTIGATE (large net increase)" if d_ca > CLASS_A_INVESTIGATE_TICKS else ""
@@ -214,7 +256,7 @@ def main():
 
         _dump("ADDED (candidate not in reference)", added)
         _dump("REMOVED (reference not in candidate)", removed)
-        overall_pass = overall_pass and cb_pass and cov_ok
+        overall_pass = overall_pass and cb_pass and cov_ok and ref_consistent
 
     print(f"\nOVERALL: {'PASS' if overall_pass else 'FAIL'} "
           f"(hard stop = class-(b) duration non-increase + WiR coverage non-shrink, all presets)")

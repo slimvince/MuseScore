@@ -33,6 +33,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from collections import Counter, defaultdict
@@ -272,6 +273,10 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
     wir_covered = 0
     wir_no_annotation = 0            # OI-140: stem has no WiR reference (a legitimate exclusion)
     wir_parse_fail_stems = []        # OI-140: WiR file present but load failed / yielded 0 regions
+    # OI-124: identity of the WiR SOURCE graded against (offset-file pattern). Deterministic
+    # (ours_files sorted); the in-memory OI-142 transposition is separately pinned by the
+    # committed offsets file — this hashes the raw analysis.txt content per covered stem.
+    wir_source_hasher = hashlib.sha256()
     m21_and_wir = 0
 
     # aggregates
@@ -340,6 +345,12 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
             wir_parse_fail_stems.append((stem, "present WiR file yielded 0 scoreable regions"))
             continue
         wir_covered += 1
+        # OI-124: fold this covered stem's WiR SOURCE identity into the running fingerprint.
+        try:
+            wir_bytes = Path(wir_path).read_bytes()
+        except OSError:
+            wir_bytes = b""
+        wir_source_hasher.update(stem.encode("utf-8") + b"\0" + hashlib.sha256(wir_bytes).digest())
         if m21_regions:
             m21_and_wir += 1
 
@@ -441,6 +452,9 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
             "wir_no_annotation": wir_no_annotation,
             "wir_parse_fail": len(wir_parse_fail_stems),
             "wir_parse_fail_stems": [s for s, _ in wir_parse_fail_stems],
+            # OI-124: identity of the WiR source content graded against (paired with the
+            # separately-pinned offsets file), so a foreign/drifted WiR clone is detectable.
+            "wir_source_sha256": wir_source_hasher.hexdigest(),
         },
         "agg": {k: (dict(v) if isinstance(v, Counter) else v) for k, v in agg.items()},
         "batch_gate_count": len(batch_cases),

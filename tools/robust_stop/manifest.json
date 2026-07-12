@@ -3,7 +3,7 @@
  "artifact": "robust-unit regression-stop reference (batch->robust diff base), RE-BASELINED at the OI-142/OI-143 key-grading correction (2026-07-12): 12 transposed editions corpus-transposition-corrected at the shared GT substrate + the key column split into HOME (DCML global) and LOCAL (DCML local) agreement.",
  "date": "2026-07-12",
  "dispatch": "cc_instruction_key_grading_rebaseline.md (OI-142 arithmetic correction + OI-143 dual key columns)",
- "coverage_hardening_note": "OI-140 (2026-07-12, cc_measurement_chain_hardening_report.md): metadata-only re-stamp — per-preset coverage.wir_no_annotation + coverage.wir_parse_fail added (0 parse failures on this reference). robust_stop_diff now RECONCILES the candidate wir_covered against this reference and FAILS loudly on a coverage shrink, so a systematic WiR-parse breakage can no longer pass the class-(b) non-increase gate by dropping pieces. No grading figure changed.",
+ "coverage_hardening_note": "OI-140 + OI-124 (2026-07-12, cc_measurement_chain_hardening_report.md): metadata-only re-stamp. OI-140 — per-preset coverage.wir_no_annotation + coverage.wir_parse_fail added (0 parse failures here); robust_stop_diff now RECONCILES the candidate wir_covered against this reference and FAILS loudly on a coverage shrink. OI-124 — per-preset coverage.wir_source_sha256 records the identity of the WiR source graded against (offset-file pattern; paired with generated_by.offsets_file_sha256); robust_stop_diff cross-checks it and cross-checks this manifest's class_b_root_disagree_dur against the sibling summary.json (catches a partial re-baseline). No grading figure changed.",
  "unit": "A-8 union-of-boundaries cell, duration-weighted; variant (b) DCML-only (music21 is NOT GT); root governs, RN+key(home,local) tracked beside",
  "identity": "stem@runStartTick (maximal contiguous same-(stem,our_root,dcml_root) failing run; re-slice-stable)",
  "generated_by": {
@@ -102,7 +102,8 @@
     "m21_and_wir": 326,
     "no_wir": 26,
     "wir_no_annotation": 26,
-    "wir_parse_fail": 0
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
    },
    "run_enumeration_file": "baroque_variant_b_root_fail_runs.txt"
   },
@@ -141,7 +142,8 @@
     "m21_and_wir": 326,
     "no_wir": 26,
     "wir_no_annotation": 26,
-    "wir_parse_fail": 0
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
    },
    "run_enumeration_file": "jazz_variant_b_root_fail_runs.txt"
   },
@@ -180,7 +182,8 @@
     "m21_and_wir": 326,
     "no_wir": 26,
     "wir_no_annotation": 26,
-    "wir_parse_fail": 0
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
    },
    "run_enumeration_file": "default_variant_b_root_fail_runs.txt"
   }

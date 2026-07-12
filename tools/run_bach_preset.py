@@ -91,8 +91,19 @@ def _write_manifest(out_dir: Path, preset: str, score_status: dict,
         if status == "OK":
             ours = out_dir / f"{stem}.ours.json"
             if ours.exists():
-                entry.update(_file_fingerprint(ours))
+                entry.update(_file_fingerprint(ours))   # size + sha256 (the .ours.json identity)
                 ok_count += 1
+                # OI-124: fingerprint the paired .music21.json GROUND TRUTH too. An OK score
+                # went through compare_files, so its .music21.json exists and is parseable; record
+                # its identity so validate_corpus_dir can detect a stale/foreign/version-mismatched
+                # GT export (REPRODUCIBILITY C2's "canonical as-committed" was enforced by nothing).
+                m21 = out_dir / f"{stem}.music21.json"
+                if m21.exists():
+                    fp = _file_fingerprint(m21)
+                    entry["music21_size"] = fp["size"]
+                    entry["music21_sha256"] = fp["sha256"]
+                else:
+                    entry["music21_status"] = "MISSING_M21"
             else:
                 entry["status"] = "MISSING_OURS"
         scores[stem] = entry

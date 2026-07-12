@@ -95,6 +95,21 @@ def validate_corpus_dir(corpus_dir: Path) -> dict:
             raise CorpusValidationError(
                 f"CONTAMINATION: {stem}.ours.json fingerprint differs from the "
                 f"{preset} manifest (foreign-preset / stale file)")
+        # OI-124: the paired .music21.json GROUND TRUTH is fingerprinted too when the manifest
+        # carries it (a manifest predating the OI-124 stamp skips this check, backward-compatible).
+        # A stale/foreign/version-mismatched GT export — read by the a8 variant-(a) genuine filter
+        # and the BIR gate — otherwise passed this guard undetected.
+        m21_expected = scores[stem].get("music21_sha256")
+        if m21_expected is not None:
+            m21_path = corpus_dir / f"{stem}.music21.json"
+            if not m21_path.exists():
+                raise CorpusValidationError(
+                    f"{stem}.music21.json GROUND TRUTH missing though the {preset} manifest "
+                    f"fingerprints it — regenerate the corpus")
+            if hashlib.sha256(m21_path.read_bytes()).hexdigest() != m21_expected:
+                raise CorpusValidationError(
+                    f"CONTAMINATION: {stem}.music21.json GROUND TRUTH fingerprint differs from "
+                    f"the {preset} manifest (stale / foreign / music21-version-mismatched export)")
     return manifest
 
 PC_NAMES = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
