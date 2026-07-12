@@ -1,0 +1,120 @@
+{
+ "audit": "EG-7 L5+instruments PASS-1 partition-2a (regression-stop core, 7 files)",
+ "instruction": "cc_instruction_l5_audit_pass1_instruments.md",
+ "head_commit": "dc2d564f9e",
+ "corpus_hash": "c50002fee1",
+ "scope_files": [
+  "tools/a8_rebaseline_measure.py",
+  "tools/compare_analyses.py",
+  "tools/compare_rn.py",
+  "tools/characterise_bir_false.py",
+  "tools/dcml_parser.py",
+  "tools/robust_stop_diff.py",
+  "tools/run_bach_preset.py"
+ ],
+ "inventory_rows": 954,
+ "synthetic_finding_rows": 7,
+ "total_rows": 961,
+ "verdict_counts": {
+  "SURVIVES": 866,
+  "RETIRES": 11,
+  "FACT": 72,
+  "ESTABLISHED": 3,
+  "UNFIT": 5,
+  "PUBLISHED": 4
+ },
+ "per_file_verdict": {
+  "tools/a8_rebaseline_measure.py": {
+   "SURVIVES": 101,
+   "FACT": 12
+  },
+  "tools/characterise_bir_false.py": {
+   "SURVIVES": 66,
+   "FACT": 5
+  },
+  "tools/compare_analyses.py": {
+   "SURVIVES": 240,
+   "UNFIT": 5,
+   "ESTABLISHED": 1
+  },
+  "tools/compare_rn.py": {
+   "SURVIVES": 210,
+   "FACT": 14
+  },
+  "tools/dcml_parser.py": {
+   "ESTABLISHED": 1,
+   "SURVIVES": 110,
+   "PUBLISHED": 4,
+   "RETIRES": 11,
+   "FACT": 40
+  },
+  "tools/robust_stop_diff.py": {
+   "ESTABLISHED": 1,
+   "SURVIVES": 33,
+   "FACT": 1
+  },
+  "tools/run_bach_preset.py": {
+   "SURVIVES": 106
+  }
+ },
+ "findings": {
+  "F1": [
+   "tools/dcml_parser.py:76"
+  ],
+  "F10": [
+   "tools/compare_rn.py:514",
+   "tools/compare_rn.py:655"
+  ],
+  "F11": [
+   "tools/compare_rn.py:120"
+  ],
+  "F12": [
+   "tools/a8_rebaseline_measure.py:290"
+  ],
+  "F13": [
+   "tools/a8_rebaseline_measure.py:97"
+  ],
+  "F14": [
+   "tools/characterise_bir_false.py:50"
+  ],
+  "F15": [
+   "tools/run_bach_preset.py:77"
+  ],
+  "F16": [
+   "tools/robust_stop_diff.py:90"
+  ],
+  "F17": [
+   "tools/run_bach_preset.py:206"
+  ],
+  "F18": [
+   "tools/run_bach_preset.py:68"
+  ],
+  "F2": [
+   "tools/dcml_parser.py:475"
+  ],
+  "F3": [
+   "tools/dcml_parser.py:189"
+  ],
+  "F4": [
+   "tools/dcml_parser.py:451"
+  ],
+  "F5": [
+   "tools/compare_analyses.py:216",
+   "tools/compare_analyses.py:516",
+   "tools/compare_analyses.py:549"
+  ],
+  "F6": [
+   "tools/compare_analyses.py:449",
+   "tools/compare_analyses.py:453"
+  ],
+  "F7": [
+   "tools/compare_analyses.py:128"
+  ],
+  "F8": [
+   "tools/compare_analyses.py:99"
+  ],
+  "F9": [
+   "tools/compare_rn.py:222"
+  ]
+ }
+}
