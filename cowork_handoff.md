@@ -381,6 +381,35 @@ no blind verdict changed): adopted plain-language finding slugs (the audit conve
 drafts the partition-2b (grading+fitting instruments, 733) + partition-3 (harness `batch_analyze.cpp`, 870)
 pass-1 deep instructions + the whole-scope pass-2 sweep; L5 certification NOT proposed until all complete.**
 
+**★ UPDATE (CC, 2026-07-12) — L5 PASS-1, PARTITION 2b: the GRADING+FITTING instruments DONE**
+(`cc_l5_audit_pass1_grading_fitting_report.md`; the third OI-116 session — the second half of the
+Task-0.3 INSTRUMENT split). **READ-ONLY** — no `src/` change, no constant tuned, no golden refresh;
+`tools/robust_stop`/`tools/corpus` written by NOTHING (every run to a scratch `--out-dir`/`--scratch`;
+working tree verified unchanged after). All **733** rows of the 6 grading/fitting files
+(`analyze_inversion_errors` 122 / `music21_batch` 94 / `oracle_root_metric` 94 / `calibration_fit` 78 /
+`c1_reliability` 100 / `stage5_fit_driver` 245) verdicted via the reproducible generator
+`tools/audit/l5/gen_grading_fitting_dispositions.py` → **SURVIVES 505 / ESTABLISHED 214 / UNFIT 13 / DEAD 1**
+(55 flagged); no audit-tooling rows in scope → every row judged blind, no post-freeze section. **★ P4
+(Task-2) reproduce — all 6 ran READ-ONLY:** `stage5_fit_driver fixture` **PASS** (full-corpus regen ×3 to
+scratch: 63.36/62.37/63.25 MATCH, batch **52/24/52** = live gate, so the driver docstring's "53/24/53" is
+stale); `calibration_fit` maps **BYTE-IDENTICAL** to committed `tools/calibration_maps/`; `c1_reliability`
+clean (observed median tonicVote **3.5** corroborates `SQUASH_K_CADENCE`); the 3 metric tools clean. **NO
+stop-and-report finding** (the fitting harness is green). **P3 contract check:** 3 prose-guarantees enforced
+by nothing (music21 version pin; HEAD-staleness; the `.music21.json` producer). **6 findings + a NEW type
+DT-24** (destructive default output path): **OI-128** (DT-23 silent-failure — grading+fitting sibling of
+OI-123; music21 `chordify` fail writes a 0-region `.music21.json` to the corpus) / **OI-129** (DT-2 —
+`calibration_fit`/`c1_reliability` skip `validate_corpus_dir` ENTIRELY + the km/fs substrate unmanifested;
+worse than OI-124, ties OI-35) / **OI-130** (DT-24 NEW + DT-2 — destructive default outputs + unenforced
+music21 pin; producing-side complement of OI-124) / **OI-131** (DT-5+DT-3 — `param_manifest.json` consumed
+by NO code + `stage5_fit_driver.PARAMS` triple-represents the fit surface) / **OI-132** (DT-6+DT-3+DT-5 —
+two key-parser paths + value-copied 0.70/480 + dead `lt_2`) / **OI-133** (DT-11+DT-12+DT-2 — stale
+`oracle_root_metric` docstring figures [3882/4083/3914→3878/4084/3910, the L3-wiring delta], `stage5`
+docstring names the superseded 53/24/53 stop, dangling anchor `chordanalyzer.cpp ~1916-1923` [file 1610
+lines], + 13 hand-set grading tolerances). **OI-116 partitions 1+2a+2b DONE.** Commits: freeze
+`b426616ba2` `feat(tools)` (blinding boundary) + this `docs(cc)` fold; pushed fork-only, `upstream`
+untouched. **NEXT: Cowork drafts the partition-3 (harness `batch_analyze.cpp`, 870) pass-1 deep instruction
++ the whole-scope pass-2 signature sweep; L5 certification NOT proposed until both complete.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 

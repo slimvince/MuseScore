@@ -200,4 +200,37 @@ green at HEAD.
 
 ## 9. Withheld-file open log
 
-- Before this freeze: **none opened.** (To be updated in the fold with the open order.)
+- **Before the freeze commit `b426616ba2`: NONE opened** — every disposition and the report
+  draft above were written blind, from the instrument source + the safe reads only.
+- **After the freeze (Task 4), opened in this order:** `OPEN_ITEMS.md` (full),
+  `DEFECT_TYPES.md`, `STATUS.md`, `cc_l5_audit_pass1_report.md` (parent L5 inventory),
+  `cc_l5_audit_pass1_instruments_report.md` (partition 2a — the near neighbor). The working-tree
+  carry `cowork_joint_key_chord_design.md` was NOT opened or touched.
+
+## 10. Reconciliation with the register + the defect catalog (post-unblind)
+
+Every blind finding maps to an existing defect TYPE or the one new type promoted this session;
+the register rows OI-128…OI-133 carry the grading+fitting instances. Convergence/divergence
+with partition-2a (the near neighbor) stated explicitly.
+
+| finding (plain slug) | verdict basis | DT | register row | converge / diverge vs 2a |
+|---|---|---|---|---|
+| silent-failure swallows (15) incl. music21 chordify→0-region-to-corpus | SURVIVES (code) + note | DT-23 | OI-128 | CONVERGES OI-123 — same type, grading+fitting sites; music21:199 is a new, more consequential instance (writes empty GT to the corpus) |
+| grading chain skips `validate_corpus_dir`; km/fs substrate unmanifested | note | DT-2 | OI-129 | DIVERGES/worse than OI-124 — 2a's guard exists with a `.music21.json` blind spot; here the guard is absent entirely; ties OI-35 |
+| destructive default outputs + unenforced music21 pin | io-write-committed | **DT-24 (new)** | OI-130 | ENRICHES OI-124/U1 — the producing-side complement to 2a's consuming-side `.music21.json`-unfingerprinted gap |
+| param_manifest.json consumed by nothing + PARAMS triple-representation | ESTABLISHED (mirror) + note | DT-5 + DT-3 | OI-131 | NEW angle vs OI-91/OI-120 (those = params MISSING; this = the manifest's own consumption/integrity) |
+| two key-parser paths; value-copied 0.70/480; dead `lt_2` | SURVIVES + ESTABLISHED + DEAD | DT-6 + DT-3 + DT-5 | OI-132 | CONVERGES OI-126 (dead+dup family), grading+fitting sites |
+| stale docstring figures; superseded-stop docstring; dangling anchor; hand-set tolerances | note + UNFIT (13) | DT-11 + DT-12 + DT-2 | OI-133 | CONVERGES OI-125 (hand-set tolerances) + OI-127 (doc/minor) |
+
+**New defect type promoted:** DT-24 (destructive default output path) — an instrument whose
+default output/destination argument resolves to a committed reference, so a no-arg run silently
+re-baselines committed ground truth. Distinct from DT-4 (in-memory struct overwrite) and DT-23
+(error-path drop); compounds DT-2 when the same artifact is unfingerprinted at consume time.
+
+**No highest-rank stop-and-report finding:** the `stage5_fit_driver fixture` reproduces the
+ratified baselines clean at HEAD (63.36/62.37/63.25, batch 52/24/52), and the committed
+calibration maps reproduce byte-identical — the fitting harness is green.
+
+**Certification NOT decided here** (per the instruction). OI-116 partitions 1 + 2a + 2b are
+DONE; partition 3 (the harness `batch_analyze.cpp`, 870 rows) and the whole-scope pass-2
+signature sweep remain owed before L5 certification.
