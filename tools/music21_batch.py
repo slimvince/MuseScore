@@ -70,6 +70,13 @@ M21_CORPUS_BACH_DIR = M21_CORPUS_ROOT / "bach"
 
 TICKS_PER_QUARTER = 480   # must match MuseScore's Constants::DIVISION
 
+# OI-130: the committed .music21.json GROUND TRUTH was produced by music21 v9.9.1
+# (REPRODUCIBILITY.md C2). Regenerating with a different music21 is a DELIBERATE re-baseline of the
+# BIR denominators, not a refresh — so a GT-producing run checks the version at start and REFUSES
+# unless --allow-version-mismatch is given (an accidental wrong-version regen can no longer silently
+# poison the GT that OI-124 showed is fingerprinted but was version-unenforced at produce time).
+MUSIC21_PIN = "9.9.1"
+
 
 # ── Chorale filter ─────────────────────────────────────────────────────────
 
@@ -526,11 +533,26 @@ def main() -> None:
     )
     parser.add_argument("--composer", default="bach",
                         help="Composer name as in music21 corpus (default: bach)")
-    parser.add_argument("--output", default="tools/corpus",
-                        help="Directory for output files (default: tools/corpus)")
+    # OI-130 (DT-24): default output is SCRATCH, never the committed tools/corpus. Regenerating the
+    # canonical GT is a deliberate re-baseline that must name tools/corpus EXPLICITLY (as
+    # REPRODUCIBILITY.md documents), so a bare run can never overwrite the committed ground truth.
+    parser.add_argument("--output", default="C:/tmp/music21_batch_out",
+                        help="Directory for output files (default: a scratch dir; pass tools/corpus "
+                             "EXPLICITLY to re-baseline the committed ground truth)")
     parser.add_argument("--single", metavar="NAME",
                         help="Process one score and print diagnostic to stdout")
+    parser.add_argument("--allow-version-mismatch", action="store_true",
+                        help="OI-130: proceed even if music21 != the pinned %s (a deliberate GT "
+                             "re-baseline)" % MUSIC21_PIN)
     args = parser.parse_args()
+
+    # OI-130: enforce the music21 pin at run start, where GT is produced.
+    if music21.__version__ != MUSIC21_PIN and not args.allow_version_mismatch:
+        print(f"ERROR: music21 {music21.__version__} != the pinned {MUSIC21_PIN}. Regenerating the "
+              f".music21.json ground truth with a different music21 is a DELIBERATE re-baseline of the "
+              f"BIR denominators (REPRODUCIBILITY.md C2), not a refresh. Re-run with "
+              f"--allow-version-mismatch to proceed intentionally.", file=sys.stderr)
+        sys.exit(2)
 
     if args.single:
         run_single(args.single)

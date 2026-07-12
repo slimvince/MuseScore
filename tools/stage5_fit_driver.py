@@ -378,7 +378,12 @@ def perturbations_for(name, preset):
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="mode", required=True)
-    sub.add_parser("split")
+    sp = sub.add_parser("split")
+    # OI-130 (DT-24): default output is SCRATCH, never the committed registry. Updating the committed
+    # tools/stage5_split_registry.json must name it EXPLICITLY (a bare run cannot overwrite it).
+    sp.add_argument("--out", default="C:/tmp/stage5_split_registry.json",
+                    help="Output path (default: a scratch file; pass tools/stage5_split_registry.json "
+                         "EXPLICITLY to update the committed registry)")
     fx = sub.add_parser("fixture"); fx.add_argument("--scratch", default="C:/tmp/s5_scratch/driver")
     dt = sub.add_parser("determinism"); dt.add_argument("--scratch", default="C:/tmp/s5_scratch/driver")
     sc = sub.add_parser("screen")
@@ -428,7 +433,8 @@ def main():
 
     if args.mode == "split":
         registry, strata = compute_split()
-        outp = _ROOT / "tools" / "stage5_split_registry.json"
+        outp = Path(args.out)   # OI-130: scratch by default; the committed registry only if named
+        outp.parent.mkdir(parents=True, exist_ok=True)
         outp.write_text(json.dumps({"strata": strata, "scores": registry},
                                    indent=1, sort_keys=True), encoding="utf-8")
         print(f"split -> {outp}")

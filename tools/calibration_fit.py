@@ -295,7 +295,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--km-root", default="C:/tmp/c1")
     ap.add_argument("--fs-root", default="C:/tmp/c1")
-    ap.add_argument("--out-dir", default=str(_ROOT / "tools" / "calibration_maps"))
+    # OI-130 (DT-24): default out-dir is SCRATCH, never the committed tools/calibration_maps.
+    # Re-fitting the committed maps must name that dir EXPLICITLY, so a bare run cannot overwrite them.
+    ap.add_argument("--out-dir", default="C:/tmp/calibration_maps_out",
+                    help="Output dir for the fitted maps (default: a scratch dir; pass "
+                         "tools/calibration_maps EXPLICITLY to re-fit the committed maps)")
     args = ap.parse_args()
 
     splits = _load_splits()
