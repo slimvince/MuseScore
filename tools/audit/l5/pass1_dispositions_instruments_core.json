@@ -58,63 +58,117 @@
   }
  },
  "findings": {
-  "F1": [
-   "tools/dcml_parser.py:76"
-  ],
-  "F10": [
-   "tools/compare_rn.py:514",
-   "tools/compare_rn.py:655"
-  ],
-  "F11": [
-   "tools/compare_rn.py:120"
-  ],
-  "F12": [
-   "tools/a8_rebaseline_measure.py:290"
-  ],
-  "F13": [
-   "tools/a8_rebaseline_measure.py:97"
-  ],
-  "F14": [
-   "tools/characterise_bir_false.py:50"
-  ],
-  "F15": [
-   "tools/run_bach_preset.py:77"
-  ],
-  "F16": [
-   "tools/robust_stop_diff.py:90"
-  ],
-  "F17": [
-   "tools/run_bach_preset.py:206"
-  ],
-  "F18": [
-   "tools/run_bach_preset.py:68"
-  ],
-  "F2": [
-   "tools/dcml_parser.py:475"
-  ],
-  "F3": [
-   "tools/dcml_parser.py:189"
-  ],
-  "F4": [
-   "tools/dcml_parser.py:451"
-  ],
-  "F5": [
-   "tools/compare_analyses.py:216",
-   "tools/compare_analyses.py:516",
-   "tools/compare_analyses.py:549"
-  ],
-  "F6": [
-   "tools/compare_analyses.py:449",
-   "tools/compare_analyses.py:453"
-  ],
-  "F7": [
-   "tools/compare_analyses.py:128"
-  ],
-  "F8": [
-   "tools/compare_analyses.py:99"
-  ],
-  "F9": [
-   "tools/compare_rn.py:222"
-  ]
+  "dead-parse-dcml-file-superseded": {
+   "ref": "F1",
+   "sites": [
+    "tools/dcml_parser.py:76"
+   ]
+  },
+  "score-piece-bare-except-silent-whole-piece-drop": {
+   "ref": "F10",
+   "sites": [
+    "tools/compare_rn.py:514",
+    "tools/compare_rn.py:655"
+   ]
+  },
+  "normalise-rn-strips-all-parenthetical-figures": {
+   "ref": "F11",
+   "sites": [
+    "tools/compare_rn.py:120"
+   ]
+  },
+  "corrupt-ours-json-folded-into-no-wir-count": {
+   "ref": "F12",
+   "sites": [
+    "tools/a8_rebaseline_measure.py:290"
+   ]
+  },
+  "cell-class-split-no-independent-cross-check": {
+   "ref": "F13",
+   "sites": [
+    "tools/a8_rebaseline_measure.py:97"
+   ]
+  },
+  "validate-corpus-dir-skips-music21-json-fingerprint": {
+   "ref": "F14",
+   "sites": [
+    "tools/characterise_bir_false.py:50"
+   ]
+  },
+  "manifest-omits-music21-json-fingerprint": {
+   "ref": "F15",
+   "sites": [
+    "tools/run_bach_preset.py:77"
+   ]
+  },
+  "robust-stop-diff-reads-rekeyed-manifest-no-cross-check": {
+   "ref": "F16",
+   "sites": [
+    "tools/robust_stop_diff.py:90"
+   ]
+  },
+  "per-score-subprocess-timeout-hardcoded": {
+   "ref": "F17",
+   "sites": [
+    "tools/run_bach_preset.py:206"
+   ]
+  },
+  "music21-version-detection-truncated-read-window": {
+   "ref": "F18",
+   "sites": [
+    "tools/run_bach_preset.py:68"
+   ]
+  },
+  "dead-find-dcml-file-unreferenced": {
+   "ref": "F2",
+   "sites": [
+    "tools/dcml_parser.py:475"
+   ]
+  },
+  "compute-root-pc-broad-except-silent-none": {
+   "ref": "F3",
+   "sites": [
+    "tools/dcml_parser.py:189"
+   ]
+  },
+  "resolve-dcml-key-broad-except-silent-globalkey-fallback": {
+   "ref": "F4",
+   "sites": [
+    "tools/dcml_parser.py:451"
+   ]
+  },
+  "region-alignment-overlap-tolerance-hand-set": {
+   "ref": "F5",
+   "sites": [
+    "tools/compare_analyses.py:216",
+    "tools/compare_analyses.py:516",
+    "tools/compare_analyses.py:549"
+   ]
+  },
+  "measure-length-four-four-assumption-in-extrapolation": {
+   "ref": "F6",
+   "sites": [
+    "tools/compare_analyses.py:449",
+    "tools/compare_analyses.py:453"
+   ]
+  },
+  "quality-normalise-map-completeness-unproven": {
+   "ref": "F7",
+   "sites": [
+    "tools/compare_analyses.py:128"
+   ]
+  },
+  "root-pc-minus-one-sentinel-false-agreement": {
+   "ref": "F8",
+   "sites": [
+    "tools/compare_analyses.py:99"
+   ]
+  },
+  "note-name-to-pc-mapping-duplicated-three-sites": {
+   "ref": "F9",
+   "sites": [
+    "tools/compare_rn.py:222"
+   ]
+  }
  }
 }

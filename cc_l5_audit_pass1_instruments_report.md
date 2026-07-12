@@ -93,11 +93,35 @@ presence check does not apply — these are measurement tolerances, not scorer c
 (confirmed: `param_manifest.json` covers only chordanalyzer/analysistypes/harmonicfunctionlayer/
 postscoringgates constants, none of the instrument internals).
 
-## 3. Every flagged row (18 findings, F1–F18) — file:line + one sentence
+## 3. Every flagged row (18 findings) — file:line + one sentence
 
-Each finding has an `OPEN_ITEMS.md` row opened in the report commit (Task 4). F1/F2 are the
-only ones that are code to delete; F14/F15/F16 + the two contract gaps in §5 are the
-first-rank establishment findings for this scope.
+Findings are identified by **plain-language slug** (the audit convention — no invented
+numbering scheme, matching `tools/audit/l5/gen_resolver_dispositions.py`). The `Fn` tags are a
+compact within-report cross-reference index only; the slug is the canonical identifier carried
+in the disposition CSV's `finding_slug` column and in the `OPEN_ITEMS.md` rows (opened in the
+report commit, Task 4). F1/F2 are the only ones that are code to delete; F14/F15/F16 + the two
+contract gaps in §5 are the first-rank establishment findings for this scope.
+
+| ref | slug |
+|---|---|
+| F1 | dead-parse-dcml-file-superseded |
+| F2 | dead-find-dcml-file-unreferenced |
+| F3 | compute-root-pc-broad-except-silent-none |
+| F4 | resolve-dcml-key-broad-except-silent-globalkey-fallback |
+| F5 | region-alignment-overlap-tolerance-hand-set |
+| F6 | measure-length-four-four-assumption-in-extrapolation |
+| F7 | quality-normalise-map-completeness-unproven |
+| F8 | root-pc-minus-one-sentinel-false-agreement |
+| F9 | note-name-to-pc-mapping-duplicated-three-sites |
+| F10 | score-piece-bare-except-silent-whole-piece-drop |
+| F11 | normalise-rn-strips-all-parenthetical-figures |
+| F12 | corrupt-ours-json-folded-into-no-wir-count |
+| F13 | cell-class-split-no-independent-cross-check |
+| F14 | validate-corpus-dir-skips-music21-json-fingerprint |
+| F15 | manifest-omits-music21-json-fingerprint |
+| F16 | robust-stop-diff-reads-rekeyed-manifest-no-cross-check |
+| F17 | per-score-subprocess-timeout-hardcoded |
+| F18 | music21-version-detection-truncated-read-window |
 
 - **F1 — `dcml_parser.py:76` `parse_dcml_file` — RETIRES (dead + #6).** The old DCML-TSV
   parser has no live consumer (referenced only in its own docstring example); it is
@@ -225,7 +249,51 @@ At the time of the freeze draft: **no withheld file has been opened.** Task-4 op
 in §9 after the freeze.
 
 ## 8. Post-freeze — audit's own verdict-embodying tooling
-*(appended after the Task-3 freeze commit; see §6 determination)*
+*(appended after the Task-3 freeze `3d7d1cb290`, per the special rule and §6 determination)*
 
-## 9. Task-4 unblind, reconciliation, and push
+**Determination re-confirmed at the code:** the audit's verdict-embodying scripts live under
+`tools/audit/`, NOT the inventoried `tools/` measurement chain, so **no deep row of this
+session's INSTRUMENT scope is an audit-tooling row** — nothing was judged blind that needed the
+post-freeze deferral for row-verdict reasons. The special rule is still honored by giving the
+tooling a file-level **establishment** disposition here, judged only after the freeze (which is
+when their withheld source became readable):
+
+- **`tools/audit/l5/gen_resolver_dispositions.py`** (session-1 L5-dormant disposition generator;
+  first opened **after** the freeze `3d7d1cb290`). ESTABLISHED as an audit instrument: it is
+  deterministic, stamped (`freeze_head_commit_of_inventory c081f79f63`, `corpus_hash c50002fee1`),
+  read-only over corpus/production, and **raises `SystemExit` if any finding fails to resolve to a
+  concrete inventory row** (:265, :320) — no finding silently dropped. Its verdict method is the
+  convergent one this session used: base-rule classification by dimension + explicit per-row
+  findings overrides. Honest establishment limit (shared with THIS session's generator): the
+  non-flagged majority of rows are **rule/regex-classified, not individually adjudicated** — the
+  auditor's judgment is encoded in the rule design + the findings overrides, not a per-row human
+  read of every row. This is inherent to the P1/P2 mechanical-inventory method and is stated, not
+  hidden.
+- **`tools/audit/gen_signature_sweep.py`** (the pass-2 whole-scope signature sweep). Out of scope
+  for pass 1 (Task 4.2: the sweep belongs to the second pass); not run and not established here.
+- **`tools/audit/l5/gen_instruments_core_dispositions.py`** (THIS session's generator, newly
+  committed for reproducibility — see §10). Same establishment profile as the session-1 sibling:
+  deterministic, stamped (`head_commit dc2d564f9e`, `corpus_hash c50002fee1`), read-only, asserts
+  every non-orphan finding matched a real inventory row; the 7 orphan findings are emitted as
+  explicit `finding(auditor)` rows (never dropped). Same rule-vs-per-row establishment limit.
+
+## 9. Withheld-file open log
+- **Before the freeze `3d7d1cb290`:** no withheld file opened (fully blind).
+- **After the freeze:** `tools/audit/l5/gen_resolver_dispositions.py` (§8). Then, in Task 4:
+  `OPEN_ITEMS.md`, `DEFECT_TYPES.md`, `STATUS.md`, `cc_l5_audit_pass1_report.md` — logged in §11.
+
+## 10. Self-check (of the diff on disk, per CLAUDE.md)
+Two convention/reproducibility issues were found by re-reading the artifacts against `CLAUDE.md`
+and the session-1 sibling tooling **after** the freeze, and corrected in the post-freeze commit
+(no blind verdict changed — verdicts byte-identical: SURVIVES 866 / FACT 72 / RETIRES 11 /
+ESTABLISHED 3 / UNFIT 5 / PUBLISHED 4):
+1. The freeze CSV/report used an `F1–F18` **numbering scheme**; the audit convention (and the
+   session-1 sibling's explicit comment) is **plain-language slugs, no invented numbering
+   scheme**. Corrected: the CSV now carries a `finding_slug` column (canonical); `Fn` is retained
+   only as a compact `ref` index. (`OPEN_ITEMS` rows use the slugs.)
+2. The freeze committed the CSV **without its generator** (the session-1 sibling commits its
+   generator so the artifact is regenerable, #16/#17f). Corrected: `gen_instruments_core_dispositions.py`
+   is now committed; the CSV/JSON are regenerated from it.
+
+## 11. Task-4 unblind, reconciliation, and push
 *(completed after the freeze)*
