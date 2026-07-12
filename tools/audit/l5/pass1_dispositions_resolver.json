@@ -1,0 +1,41 @@
+{
+ "audit": "EG-7 Layer-5 (function) certification, PASS 1, partition 1 (L5-DORMANT resolver pipeline)",
+ "instruction": "cc_instruction_l5_audit_pass1_resolver (Cowork, 2026-07-12)",
+ "scope": {
+  "tag": "L5-DORMANT",
+  "files": 20,
+  "deep_rows": 815
+ },
+ "freeze_head_commit_of_inventory": "c081f79f63fa0daff934e32236651141cb2858b6",
+ "corpus_hash": "c50002fee1",
+ "rows_total": 815,
+ "by_dimension": {
+  "branch": 255,
+  "crosslayer": 37,
+  "function": 87,
+  "literal": 183,
+  "decl": 28,
+  "field": 225
+ },
+ "by_verdict": {
+  "SURVIVES": 396,
+  "ESTABLISHED": 149,
+  "PUBLISHED": 225,
+  "UNFIT": 34,
+  "ASSUMPTION": 8,
+  "FACT": 3
+ },
+ "flagged_row_count": 17,
+ "findings": [
+  "applied-resolution-augmented-delta0-excluded",
+  "augmented-sixth-trigger-assumes-flat6-root",
+  "combined-boundary-no-kboundary-positivity-guard",
+  "decision-context-stop-punctuation-boundary-subsumed",
+  "grammar-amendment-landed-design-doc-stale",
+  "half-cadence-no-seventh-downweight",
+  "inline-function-confidence-magnitudes-unregistered",
+  "modal-mixture-role-minor-key-incomplete",
+  "modulation-confirmation-admits-all-cadence-types"
+ ],
+ "note": "READ-ONLY fact-finding; no production behaviour changed. Verdicts are the auditor blind-pass judgment (P1/P2). \"No issue\" rows carry a stated reason. Findings are per-row overrides spelled out in cc_l5_audit_pass1_resolver_report.md."
+}
