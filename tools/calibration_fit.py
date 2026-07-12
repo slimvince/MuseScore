@@ -38,6 +38,7 @@ sys.path.insert(0, str(_ROOT / "tools"))
 
 import c1_reliability as c1        # noqa: E402  (reuse cell-join primitives + squash + PRESETS)
 import compare_analyses as cmp     # noqa: E402
+import characterise_bir_false as cbf  # noqa: E402  (validate_corpus_dir — OI-129 anti-contamination guard)
 
 CARRIERS = ["baroque", "default"]  # idiom-#2 carriers; Jazz excluded (A-7)
 SPLIT_REGISTRY = _ROOT / "tools" / "stage5_split_registry.json"
@@ -309,6 +310,12 @@ def main():
     written = []
     for carrier in CARRIERS:
         print(f"\n########## CARRIER = {carrier} ##########")
+        # OI-129: the committed calibration maps are fit off tools/corpus/{carrier}; route the
+        # read through the anti-contamination guard (manifest present, complete, .ours.json AND
+        # .music21.json fingerprints match — OI-124) so a stale/foreign/preset-crossed corpus
+        # cannot silently poison a map. (The km/fs dump substrate itself is a bare scratch dir with
+        # no manifest — OI-129's second half; tracked, not closed here.)
+        cbf.validate_corpus_dir(_ROOT / "tools" / "corpus" / carrier)
         km_dir = Path(args.km_root) / f"km_{carrier}"
         fs_dir = Path(args.fs_root) / f"fs_{carrier}"
 

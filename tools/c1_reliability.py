@@ -52,6 +52,7 @@ import compare_analyses as cmp           # noqa: E402
 import compare_rn as crn                 # noqa: E402
 import dcml_parser as dcml               # noqa: E402
 import compare_l6_oracle as l6           # noqa: E402
+import characterise_bir_false as cbf     # noqa: E402  (validate_corpus_dir — OI-129 anti-contamination guard)
 
 PRESETS = ["baroque", "jazz", "default"]
 
@@ -359,6 +360,11 @@ def main():
     # ── Harmonic rows (per preset) ──
     for preset in PRESETS:
         emit(f"\n########## PRESET = {preset} ##########")
+        # OI-129: the harmonic reliability curves are measured off tools/corpus/{preset}; route the
+        # read through the anti-contamination guard (manifest present, complete, .ours.json AND
+        # .music21.json fingerprints match — OI-124) before measuring. (The km/fs scratch substrate
+        # has no manifest — OI-129's second half; tracked, not closed here.)
+        cbf.validate_corpus_dir(_ROOT / "tools" / "corpus" / preset)
         pr = {}
         # L3
         l3 = measure_l3(preset, Path(args.km_root) / f"km_{preset}")
