@@ -96,6 +96,32 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > research now grades against honest columns. See `OPEN_ITEMS.md` OI-141/OI-142/OI-143/OI-144 and
 > STATUS.md (top).
 
+> **★ CC ADDENDUM 5 (2026-07-12, later) — the OI-141 KEY-DECODE MECHANISM PINNED AT THE CODE**
+> (`cc_l3_key_decode_mechanism_report.md`; READ-ONLY, no `src`/constant/golden touched; HEAD
+> `cfcb5cceea`, corpus `c50002fee1`). The grounding's FIRST checkable premise — "is our decode
+> full-lattice with only the carry pruned, or does the search itself prune?" — is answered:
+> **the search itself prunes.** Per-slice emission scores all 12×21=252 states (no prune;
+> `keymodeanalyzer.cpp:571-605`), but the whole-sequence Viterbi runs over a lattice = the global
+> union of each slice's emission TOP-8 (`topK=8`; `keymodesequence.cpp:140,156-159`), measured
+> 26–31 states (~12 % of 252). A key never top-8 anywhere is ABSENT from search. The Viterbi within
+> that set is exhaustive+global with the change costs (`:266-321,231-240`); NO beam inside it.
+> **Cowork's predictions: P1 MET, P2 FAILED (there IS a search-level prune), P3 FAILED/refined
+> (no greedy or hysteresis KEY-commit — the greedy step is segmentation not key; the region key is
+> a deterministic duration-majority reduction of the global Viterbi; the only post-decode key
+> override is env-gated OFF; the carry truncation is downstream+secondary).** Re-traced 3 genuine
+> errors at the DECODER's own numbers → 3 distinct mechanisms, **NONE a carried-list "beam drop"**
+> (correcting the diagnosis's phrasing): **(A) `bwv369@10080`** tight-window emission ranks wrong
+> G major #1 over true e minor #7 (a lattice state) — the resolver's WIDER window ranks e minor #1;
+> **(B) `bwv226.2@36960`** true G major is emission-buried (rank #116) and ABSENT from the 27-state
+> lattice — the one true search-level absence, caused by the emission MODEL not the beam;
+> **(C) `bwv110.7@14400`** true B minor IS the local emission #1 (near-tie spread 0.09) but the
+> whole-sequence change cost commits to the cadential dominant F♯ minor ("a fifth off"), no
+> dominant/cadence channel to hold B. **WHERE drift/stickiness mechanically live: the emission
+> scoring model + its ±4-beat window (largest loss, 2/3 traces) and the single unfit change cost
+> (stickiness, 1/3); the top-8 prune + carry cap are downstream/secondary.** Change costs are 3
+> hand-set `[empirical]` constants absent from `param_manifest.json` (OI-91/OI-97). Design decides/
+> builds nothing — the user's to open. See `OPEN_ITEMS.md` OI-141 and STATUS.md (top).
+
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
 (2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
