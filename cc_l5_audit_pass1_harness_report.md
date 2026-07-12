@@ -1,10 +1,11 @@
 # L5 audit — PASS 1 (blind), session 3 of 3: the shared harness (`tools/batch_analyze.cpp`) — EG-7 / OI-84 / OI-116
 
-> **Status: DRAFT at the Task-3 freeze (blind).** Written before any withheld file was
-> opened. The reconciliation, the OI-134 comparison, and the register rows are added in
-> Task 4 (post-freeze, clearly marked). This is the LAST first-pass session of the whole
-> certification plan; the whole-scope second pass decides the certification proposal —
-> certification is NOT decided here.
+> **Status: FINAL.** §0–§7 were frozen at the Task-3 blinding boundary (commit
+> `708d0c3708`) before any withheld file was opened; §8–§10 (reconciliation, the OI-134
+> comparison, the register rows) were added in Task 4 after the freeze. This is the LAST
+> first-pass session of the whole certification plan — **the first pass of the final
+> audit is now COMPLETE across all populations**; the whole-scope SECOND pass decides the
+> certification proposal. **Certification is NOT decided here.**
 
 ## 0. Scope and row-count reconciliation
 
@@ -197,18 +198,104 @@ prior-session Python instruments and by `test_batch_analyze_regressions.py`).
 
 ## 7. Withheld-file open log
 
-At the Task-3 freeze: **NO withheld file has been opened.** The blind pass used only the
-allowed safe reads (`CLAUDE.md`, `cowork_audit_protocol.md`, `BUILD_AND_TEST.md`,
-`tools/param_manifest.json`, the committed corpus manifests, the raw inventory tables +
-`manifest.json` + `pass1_partition.json` under `tools/audit/l5/`, the two parent audit
-instructions, and the source itself). The Task-4 section records the first-open time of
-each withheld file after the freeze.
+Through the Task-3 freeze (`708d0c3708`): **NO withheld file was opened.** The blind pass
+used only the allowed safe reads (`CLAUDE.md`, `cowork_audit_protocol.md`,
+`BUILD_AND_TEST.md`, `tools/param_manifest.json`, the committed corpus manifests, the raw
+inventory tables + `manifest.json` + `pass1_partition.json` under `tools/audit/l5/`, the
+two parent audit instructions `cc_instruction_l5_audit_pass1{,_instruments}.md`, and the
+source itself).
 
-## 8. Task-4 (post-freeze) — pending unblind
+**First opened AFTER the freeze (Task 4, in this order):** `DEFECT_TYPES.md`,
+`OPEN_ITEMS.md` (full — the deferred mandatory read), `STATUS.md` (prepend area); the
+three earlier layer-5 session reports' substance was absorbed via the register rows
+(OI-116, OI-118…OI-133) and the STATUS prepend blocks that summarize
+`cc_l5_audit_pass1_resolver_report.md` / `cc_l5_audit_pass1_instruments_report.md` /
+`cc_l5_audit_pass1_grading_fitting_report.md`; `docs/score_inventory.md` §C3 and
+`tools/corpus_registry.json` were read for the OI-134 comparison. The working-tree carry
+`cowork_joint_key_chord_design.md` was neither read nor touched.
 
-*To be filled after the freeze commit lifts the withheld list: read `OPEN_ITEMS.md` in
-full, `DEFECT_TYPES.md`, `STATUS.md`, and the three earlier layer-5 session reports;
-converge/diverge with existing rows explicitly; the OI-134 debris-directory stem-set
-comparison; any new problem type promoted into `DEFECT_TYPES.md`; the register rows for
-the eight findings; the reproduce-check confirmation; STATUS/handoff update; the pushed
-hash with `upstream` untouched.*
+## 8. Reconciliation with the existing register (post-freeze)
+
+No blind verdict changed on unblinding. The six row-anchored + two doc-adjacent findings
+map onto existing DEFECT-TYPES and sit as new siblings of tracked rows — none is a
+correctness bug, consistent with every prior layer/instrument pass:
+
+- **default-preset-mode-priors-hand-copied** + **onset-boundary-threshold-hardcoded** →
+  **DT-3** (value-copied constants), siblings of OI-63 (mode-prior single-sourcing),
+  OI-92/OI-97/OI-111/OI-126/OI-132. New rows: **OI-135**.
+- **flags-absent-from-help** → **new type DT-25** (undocumented capability on a shared
+  instrument — the reverse of DT-17). New row: **OI-136**. (Adjacent to OI-105(b), a
+  param_manifest doc-drift about batch_analyze, but distinct — that is a stale claim, this
+  is a total help omission.)
+- **standard-output-crlf-vs-diagnostic-lf** + **exit-path-asymmetry** → establishment /
+  reproducibility observations (#16), latent (byte-identity holds, exit codes clean this
+  session). New row: **OI-137**.
+- **param-manifest-line-refs-stale** + **buildtest-lowercase-preset-example** +
+  **inventory-overcapture** → **DT-12** doc-sync + audit-tooling fidelity, siblings of
+  OI-105/OI-107/OI-112 and OI-95/OI-127(e). New row: **OI-138**.
+
+The **reproduce-check byte-identity** completes the establishment picture the
+regression-stop instruments began: partition-2a proved the regression-stop pair
+reproduces byte-identically, partition-2b proved the fitting harness green and the
+calibration maps byte-identical; this session proves the **producer** (the harness that
+writes every `.ours.json` those instruments grade) reproduces the committed corpus
+bit-for-bit. The corpus-generation chain is now established end-to-end at HEAD.
+
+## 9. OI-134 — the `tools/tools/corpus/` debris stem-set comparison (READ-ONLY; nothing deleted)
+
+Per Task 4.2. The untracked debris directory `tools/tools/corpus/` (gitignored via
+`.gitignore:31 /tools/tools/`) holds converted copies of the music21 package's own Bach
+corpus — the mangled filenames literally encode the source path
+(`C__Users_vince_AppData_Local_Python_…_music21_corpus_bach_bwv<stem>[.mxl].xml`),
+physical evidence of the DT-24 / OI-130 destructive-default hazard firing historically (a
+batch run from inside `tools/` with a relative default output path nested a second corpus
+tree).
+
+Mechanical diff (real stems parsed out of the mangled names) vs the project's committed
+`tools/corpus/` (352 stems) and the documented exclusion filter:
+
+| finding | result |
+|---|---|
+| project committed Bach stems | 352 |
+| debris distinct Bach stems | 405 |
+| **all 352 project stems present in the debris?** | **YES** (debris is a strict superset) |
+| Bach stems in debris but ABSENT from the 352 | **53** |
+| non-Bach debris stems | 22 Beethoven string-quartet movements + `bwv846` (WTC prelude, not a chorale) |
+
+**Is each exclusion documented?** YES — at the RULE level, in
+`docs/score_inventory.md` §"Chorale-selection provenance (audit C3)": the corpus is
+"music21's bach corpus filtered by `_is_bach_chorale` (has `bwv`, not a variant suffix,
+not a non-chorale BWV, exactly 4 SATB parts) — the `410 → 353` filter." Spot-checks of the
+53 extras confirm the rule accounts for them: the variant-suffix extras
+(`bwv248.12-2`, `bwv36.4-2`, `bwv248.23-2`, `bwv248.42-4`, `bwv248.59-6`, `bwv248.64-6`,
+`bwv248.9-1`) are excluded by "not a variant suffix"; `bwv846` by "not a non-chorale BWV."
+The 22 Beethoven movements are a different repertoire entirely (not Bach-chorale-corpus
+candidates). No stem is excluded WITHOUT a documenting filter rule; the exclusion is
+documented as the filter, not per-stem. *(A pre-existing documented count wobble — §C3
+says the filter yields 353, `corpus_registry.json` says 352, `tools/corpus/` currently
+holds 352 — is noted in §C3 itself, "the +1 is not separately logged"; not a harness
+finding.)*
+
+**Conclusion for the user's OI-134 question ("debris, or scores we should have been
+using?"): DEBRIS.** (a) Nothing unique is lost by deletion — the canonical source is the
+music21 package itself, encoded in the filenames. (b) The 53 extra chorales are
+DELIBERATELY excluded by the documented `_is_bach_chorale` filter (variant suffix /
+non-chorale / SATB-part-count), not accidentally omitted. (c) Any corpus expansion is a
+Stage-5 decision (§C3 "Corpus-expansion / cross-validation is a Stage-5 decision; do not
+silently treat one as a superset of the other"; relates OI-38/OI-39). **The deletion and
+any onboarding implication remain the user's decision on these facts; nothing was
+deleted.** OI-134 updated with this result.
+
+## 10. Register, status, and push
+
+- **New register rows (this commit): OI-135, OI-136, OI-137, OI-138.** **DT-25** promoted
+  into `DEFECT_TYPES.md`. **OI-116** updated (partition 3 DONE → **the L5 pass-1 is
+  complete across all populations**; pass 2 + certification owed). **OI-134** updated with
+  the §9 comparison. **OI-84** carries the "L5 pass-1 complete" note.
+- **The reproduce-check is the highest-value establishment result** and is clean; there is
+  **no highest-rank stop-and-report finding** on the harness.
+- **Plainly stated:** the FIRST PASS of the final (L5 + instruments) audit is COMPLETE.
+  The whole-scope SECOND pass (the catalog signature sweep + the P6 error rate) decides
+  the certification proposal. Certification is NOT proposed here.
+- Push: fork (`origin`) only; `upstream` push confirmed still disabled; the pushed hash is
+  recorded in STATUS.md's prepend.

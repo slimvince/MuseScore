@@ -410,6 +410,36 @@ lines], + 13 hand-set grading tolerances). **OI-116 partitions 1+2a+2b DONE.** C
 untouched. **NEXT: Cowork drafts the partition-3 (harness `batch_analyze.cpp`, 870) pass-1 deep instruction
 + the whole-scope pass-2 signature sweep; L5 certification NOT proposed until both complete.**
 
+**★ UPDATE (CC, 2026-07-12) — L5 PASS-1, PARTITION 3: the SHARED HARNESS `batch_analyze.cpp` DONE. ★ THIS
+COMPLETES THE L5 FIRST PASS ACROSS ALL POPULATIONS.** Read-only fact-finding; no `src/` change, no
+constant tuned, no golden refresh; `tools/robust_stop`/`tools/corpus` written by NOTHING (reproduce runs to
+a scratch `--output-dir`; working tree verified clean). All **870** `INSTRUMENT-HARNESS` rows (51 fn / 188
+literal / 562 branch / 69 crosslayer) verdicted via `tools/audit/l5/gen_harness_dispositions.py` →
+**SURVIVES 682 / ESTABLISHED 188** (29 flagged / 6 row-anchored findings). The harness got BOTH question
+forms (program + instrument): preset-constant provenance+manifest, flag inventory, abrupt-exit path, disk
+writes. **★ P4 — THE REPRODUCE-CHECK PASSES BYTE-IDENTICAL:** a scratch regen of all 3 presets matched the
+committed `tools/corpus/{baroque,jazz,default}` per-score sha256 **EXACTLY, 352/352 each** (current HEAD
+binary reproduces the corpus bit-for-bit despite a rebuild — the corpus-generation chain is established
+end-to-end at HEAD, completing what partition-2a/2b began on the graders); `test_batch_analyze_regressions.py`
+PASS; probes confirmed strict preset validation, append-flag byte-identity, CRLF/LF + exit-code observations.
+**P3 both directions:** every help/BUILD_AND_TEST flag delivered; six flags parsed but absent from help.
+**NO highest-rank stop-and-report finding. 6 findings + ONE NEW type DT-25** (undocumented capability/mode on
+a shared instrument — reverse of DT-17): **OI-135** (DT-3 value-copies — 21 hand-copied "Default" mode priors
++ hard-coded onsetBoundaryThreshold 0.25) / **OI-136** (DT-25 NEW — `--reachback-ab` + 5 `--key-in-*`
+undocumented modes) / **OI-137** (#16 — standard CRLF vs diagnostic LF + force-exit-vs-normal-return exit
+asymmetry, both latent) / **OI-138** (DT-12/audit-tooling — stale param_manifest line-refs + broken `--preset
+jazz` example + inventory over-capture). **★ OI-134 debris comparison DONE (READ-ONLY, nothing deleted):**
+`tools/tools/corpus/` is a strict SUPERSET of the 352 (all present) + 53 extra Bach + 22 Beethoven + `bwv846`;
+the extras are DOCUMENTED-excluded by `docs/score_inventory.md` §C3's `_is_bach_chorale`/`410→353` filter →
+**DEBRIS, not scores we should have used** (canonical source = the music21 package; nothing unique lost);
+deletion + onboarding remain the user's call. **OI-116 partitions 1+2a+2b+3 ALL DONE — the L5 first pass is
+COMPLETE; the whole-scope pass-2 sweep + P6 error rate decide the certification proposal.** Commits: Task-0
+register `abe726ffa2` + freeze `708d0c3708` `feat(tools)` (blinding boundary — withheld files opened only
+after) + this `docs(cc)` fold (instruction force-added); pushed fork-only, `upstream` untouched. **NEXT:
+Cowork drafts the whole-scope L5+instruments PASS-2 signature sweep + P6 error rate; on its completion the
+OI-84 dependency-ordered certification plan reaches its decision and the held OI-43 discussion opens.** Report
+`cc_l5_audit_pass1_harness_report.md`; artifacts `tools/audit/l5/pass1_dispositions_harness.*`.
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
