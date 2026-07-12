@@ -296,4 +296,34 @@ ESTABLISHED 3 / UNFIT 5 / PUBLISHED 4):
    is now committed; the CSV/JSON are regenerated from it.
 
 ## 11. Task-4 unblind, reconciliation, and push
-*(completed after the freeze)*
+
+**Withheld files opened (all AFTER the freeze `3d7d1cb290`), in order:** `OPEN_ITEMS.md` (full,
+the deferred mandatory read) → `DEFECT_TYPES.md` → `STATUS.md` → the session-1 reports
+`cc_l5_audit_pass1_report.md` + `cc_l5_audit_pass1_resolver_report.md` (skim, for the OI-116/117
+context and the sibling method) → `gen_resolver_dispositions.py` (§8). No withheld file informed
+any blind verdict.
+
+**Reconciliation with the register:**
+- **New rows OI-123…OI-127** opened (same commit as this report); **OI-116** updated (partition-2a
+  done, the 2a/2b split recorded); **DT-23** promoted to `DEFECT_TYPES.md`.
+- **Coincidences referenced (not duplicated):** OI-95(a) — my committed generator is another
+  instance of the disposition-generator-proliferation debt (§10, OI-127); OI-37 — the
+  `CLASS_A_INVESTIGATE_TICKS=9600` advisory (my ESTABLISHED-advisory disposition points at it);
+  OI-35/OI-34 — the stale-manifest / corpus-git-tracking process rows are the family of OI-124's
+  manifest gaps; OI-96/OI-115 — the dead-LOCAL-field siblings for OI-126's dead FUNCTIONS (DT-5
+  extended field→function); OI-92/OI-97/OI-111 — the duplicated-table siblings for OI-126's note→pc
+  duplication (DT-3).
+- **Divergence / bigger news:** OI-124(a) — the `.music21.json` ground-truth is not fingerprinted by
+  the corpus-integrity guard — is a NEW first-rank finding with no prior register row; the
+  contamination guard `validate_corpus_dir` had been treated as sound (it is, for `.ours.json`), but
+  the GT half's establishment is unenforced. This is the P3 negative-space result the instruction
+  called "of the first rank for this scope."
+- **Method convergence with session 1:** my disposition method (base-rule classification + explicit
+  findings overrides, findings anchored to real inventory rows) matches
+  `gen_resolver_dispositions.py`; the one divergence — an `Fn` numbering scheme vs the sibling's
+  plain-language slugs — was caught by the §10 self-check and corrected post-freeze.
+
+**Push (user-authorized 2026-07-12):** `git remote -v` re-confirmed `upstream` push is `disabled`.
+All local commits pushed to `origin` (`slimvince/MuseScore`) only: the freeze `3d7d1cb290`, the
+post-freeze `a039fd87df`, and this `docs(cc)` fold. `upstream` (`musescore/MuseScore`) untouched.
+Pushed HEAD recorded in `STATUS.md`.

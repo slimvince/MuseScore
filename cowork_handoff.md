@@ -350,6 +350,37 @@ Cowork drafts the partition-2 (Python instruments, 1,687) + partition-3 (harness
 870) pass-1 deep instructions + the whole-scope pass-2 sweep; L5 certification NOT proposed until all
 complete.**
 
+**★ UPDATE (CC, 2026-07-12) — L5 PASS-1, PARTITION 2a: the REGRESSION-STOP-CORE instruments DONE**
+(`cc_l5_audit_pass1_instruments_report.md`; the second of the three OI-116 partition sessions).
+**READ-ONLY** — no `src/` change, no constant tuned, no golden refresh; `tools/robust_stop`/`tools/corpus`
+written by NOTHING (every instrument run to a scratch `--out-dir`). Per **Task-0.3** the 1,687-row
+`INSTRUMENT` population was **SPLIT (user-ratified)** into **regression-stop core (7 files / 954 rows —
+DONE)** + **grading+fitting (6 files / 733 rows — partition 2b, OWED)**. All **954** core rows verdicted
+via the reproducible generator `tools/audit/l5/gen_instruments_core_dispositions.py` (+7 synthetic auditor
+rows) → SURVIVES 866 / FACT 72 / RETIRES 11 / ESTABLISHED 3 / UNFIT 5 / PUBLISHED 4. **★ P4 (highest-rank
+Task-2 check) — the regression-stop pair REPRODUCES BYTE-IDENTICALLY + PASSES clean at HEAD `dc2d564f9e`:**
+`a8` self-validation grid==oracle on 326×3; `robust_stop_diff` OVERALL PASS, +0/-0, class-(b) Δ+0 all
+presets; `characterise_bir_false` `validate_corpus_dir` PASS (352/352) + BIR **52/24/52**; `compare_rn`
+grid reproduced. **NO stop-and-report finding.** P3 contract check: most guarantees ENFORCED (the class-(b)
+hard stop, the explained per-run diff, `parse_runs` fail-loud on format drift, `validate_corpus_dir`,
+run_bach clean-slate + fail-loud completeness, a8's self-validation) — **two prose-guarantees enforced by
+NOTHING → OI-124.** **18 findings + a NEW type DT-23** (silent-failure / silent-drop path in an instrument —
+the family the corrected `dcml_parser` P0 fix exists to prevent, founding = the historic 58.9 % GT drop):
+**OI-123** (DT-23 — broad/bare excepts + a `no_wir` wrong-bucket fold), **OI-124** (DT-2, first-rank — the
+`.music21.json` GROUND TRUTH is NOT fingerprinted by `validate_corpus_dir` or the corpus manifest, so
+`REPRODUCIBILITY` C2's "canonical as-committed" is enforced by nothing; and `robust_stop_diff` reads the
+reference baseline from a re-keyed `manifest.json` it never cross-checks against the sibling `summary.json`/
+run-enumeration), **OI-125** (DT-2 — the hand-set `0.5` alignment tolerance + `4/4` extrapolation
+assumption in `compare_analyses`), **OI-126** (DT-5+DT-3 — dead `parse_dcml_file`/`find_dcml_file` + the
+note→pc map duplicated 3×), **OI-127** (documented/minor + the `gen_inventory` `import platform`→`tools/platform.py`
+crosslayer mis-resolution + the OI-95(a) disposition-generator-proliferation note). **Self-check** (post-freeze,
+no blind verdict changed): adopted plain-language finding slugs (the audit convention, not an `Fn` scheme)
++ committed the generator for reproducibility (#16/#17f). **OI-116 partitions 1+2a DONE.** Commits: freeze
+`3d7d1cb290` `feat(tools)` (blinding boundary) + post-freeze `a039fd87df` `feat(tools)` (generator + slugs
++ §8 tooling establishment) + this `docs(cc)` fold; pushed fork-only, `upstream` untouched. **NEXT: Cowork
+drafts the partition-2b (grading+fitting instruments, 733) + partition-3 (harness `batch_analyze.cpp`, 870)
+pass-1 deep instructions + the whole-scope pass-2 sweep; L5 certification NOT proposed until all complete.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
