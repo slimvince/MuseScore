@@ -1,0 +1,565 @@
+{
+ "audit": "EG-7 Layer-5 PASS-1 grading+fitting instruments subsplit (OI-116)",
+ "scope_files": [
+  "tools/analyze_inversion_errors.py",
+  "tools/c1_reliability.py",
+  "tools/calibration_fit.py",
+  "tools/music21_batch.py",
+  "tools/oracle_root_metric.py",
+  "tools/stage5_fit_driver.py"
+ ],
+ "total_rows": 733,
+ "by_verdict": {
+  "SURVIVES": 505,
+  "ESTABLISHED": 214,
+  "DEAD": 1,
+  "UNFIT": 13
+ },
+ "by_row_type": {
+  "function": 68,
+  "branch": 347,
+  "literal": 228,
+  "io": 76,
+  "crosslayer": 14
+ },
+ "by_category": {
+  "instrument-function": 68,
+  "control-flow": 331,
+  "misleading-error-message": 1,
+  "silent-failure-swallow": 15,
+  "value-copied-constant": 2,
+  "presentation": 96,
+  "grading-bucket": 11,
+  "dead-computation": 1,
+  "grading-tolerance": 4,
+  "structural": 16,
+  "squash-constant": 1,
+  "binning-convention": 1,
+  "epsilon": 3,
+  "shape-selection-tolerance": 1,
+  "solver-param": 2,
+  "min-sample-bucket": 2,
+  "grading-boundary": 1,
+  "corpus-membership": 1,
+  "oracle-param": 2,
+  "music-theory-constant": 2,
+  "structural-threshold": 1,
+  "split-convention": 1,
+  "step-policy": 2,
+  "fit-surface-mirror": 69,
+  "optimizer-default": 3,
+  "reproduce-target": 3,
+  "reproduce-tolerance": 1,
+  "test-input": 2,
+  "io-read": 45,
+  "io-write": 21,
+  "io-write-committed": 10,
+  "reuse-verbatim-import": 14
+ },
+ "by_file": {
+  "tools/analyze_inversion_errors.py": 122,
+  "tools/c1_reliability.py": 100,
+  "tools/calibration_fit.py": 78,
+  "tools/music21_batch.py": 94,
+  "tools/oracle_root_metric.py": 94,
+  "tools/stage5_fit_driver.py": 245
+ },
+ "flagged_count": 55,
+ "flagged": [
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "35",
+   "row_type": "function",
+   "item": "_infer_quality",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "tool-local chord-SYMBOL->quality heuristic; unmatched body defaults to 'Major' (line 56) -- a silent misclassification path."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "101",
+   "row_type": "function",
+   "item": "curve_diagnostics",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "the ECE/monotonicity/signed-gap grading; monotonicity is squash-invariant, ECE is not."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "196",
+   "row_type": "function",
+   "item": "fit_row",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "the fitting decision: isotonic-default / Platt-if-near-logistic-and-not-worse; carries the 50/20 sufficiency + 0.05 near-logistic tolerances."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "152",
+   "row_type": "function",
+   "item": "_normalize_quality",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "music21 quality->bucket map; dominant/major-seventh collapse to 'Major', minor-seventh to 'Minor' (seventh->triad grading convention); unmapped->'Unknown'."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "167",
+   "row_type": "function",
+   "item": "analyze_chorale",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "the music21 GT producer; chordify failure yields 0 regions + an 'error' field (silently written)."
+  },
+  {
+   "file": "tools/oracle_root_metric.py",
+   "line": "102",
+   "row_type": "function",
+   "item": "parse_our_key",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "tool-local key parser; a mode suffix absent from _OUR_MINOR/_MAJOR_MODES returns mode=None -> mode-agnostic key match (silently masks a mode error)."
+  },
+  {
+   "file": "tools/oracle_root_metric.py",
+   "line": "128",
+   "row_type": "function",
+   "item": "parse_m21_key",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "music21 key parser; a key string not matching ' major'/' minor' returns None -> AMBIGUOUS/dispute grain."
+  },
+  {
+   "file": "tools/oracle_root_metric.py",
+   "line": "193",
+   "row_type": "function",
+   "item": "classify_charged_event",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "the 5-tier grading classifier; conventions: unparseable key->AMBIGUOUS, >=2 oracle roots->OVER-GRAB, mode compared only when both sides resolve to maj/min."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "276",
+   "row_type": "function",
+   "item": "measure",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "reads the a8 summary/mapping; root/rn/key% + per-run class map = the reproduce surface."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "301",
+   "row_type": "function",
+   "item": "evaluate",
+   "verdict": "SURVIVES",
+   "category": "instrument-function",
+   "note": "the objective+constraint evaluator; constraint = a8 robust-unit class-(b) non-increase + no new class-(b) case (NOT the batch stop the docstring names)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "102",
+   "row_type": "branch",
+   "item": "if",
+   "verdict": "SURVIVES",
+   "category": "misleading-error-message",
+   "note": "empty-input error prints 'No .ours.json files in tools/reports/corpus/' but the code actually reads corpus_dir (default tools/corpus/baroque) -- stale message path."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "149",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "169",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "187",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "237",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "196",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "246",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "292",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "57",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "77",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "122",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "86",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "131",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "199",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/oracle_root_metric.py",
+   "line": "159",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/oracle_root_metric.py",
+   "line": "169",
+   "row_type": "branch",
+   "item": "try",
+   "verdict": "SURVIVES",
+   "category": "silent-failure-swallow",
+   "note": "broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "322",
+   "row_type": "literal",
+   "item": "0.7",
+   "verdict": "ESTABLISHED",
+   "category": "value-copied-constant",
+   "note": "INVERSION_SUSPICION_MARGIN=0.70 hardcodes a copy of the production pref inversionSuspicionMargin (also carried in stage5 PARAMS + param_manifest.json); the blocker analysis silently assumes production margin=0.70 and drifts if the pref moves (value-copied constant)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "214",
+   "row_type": "literal",
+   "item": "2.0",
+   "verdict": "DEAD",
+   "category": "dead-computation",
+   "note": "lt_2 = count(margins<2.0) is computed but never printed or used downstream -- dead variable."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "215",
+   "row_type": "literal",
+   "item": "2.0",
+   "verdict": "UNFIT",
+   "category": "grading-bucket",
+   "note": "margin>=2.0 bucket carries the interpretive claim (line 301) 'fix won't help, likely correct' -- an unvalidated interpretation attached to a hand-set boundary."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "260",
+   "row_type": "literal",
+   "item": "3",
+   "verdict": "UNFIT",
+   "category": "grading-bucket",
+   "note": "noteCount>=3 'genuine chord' bucket boundary -- interpretive threshold, no cited provenance."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "273",
+   "row_type": "literal",
+   "item": "0.26",
+   "verdict": "UNFIT",
+   "category": "grading-tolerance",
+   "note": "beat-classification window +/-0.26 around integer beats -- hand-set, no cited provenance (why 0.26 rather than 0.25/0.5?)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "274",
+   "row_type": "literal",
+   "item": "0.26",
+   "verdict": "UNFIT",
+   "category": "grading-tolerance",
+   "note": "beat-classification window +/-0.26 (hand-set)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "275",
+   "row_type": "literal",
+   "item": "0.26",
+   "verdict": "UNFIT",
+   "category": "grading-tolerance",
+   "note": "beat-classification window +/-0.26 (hand-set)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "276",
+   "row_type": "literal",
+   "item": "0.26",
+   "verdict": "UNFIT",
+   "category": "grading-tolerance",
+   "note": "beat-classification window +/-0.26 (hand-set)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "289",
+   "row_type": "literal",
+   "item": "3",
+   "verdict": "UNFIT",
+   "category": "grading-bucket",
+   "note": "noteCount>=3 targetable-error bucket (interpretive)."
+  },
+  {
+   "file": "tools/analyze_inversion_errors.py",
+   "line": "292",
+   "row_type": "literal",
+   "item": "3",
+   "verdict": "UNFIT",
+   "category": "grading-bucket",
+   "note": "noteCount>=3 targetable-error bucket (interpretive)."
+  },
+  {
+   "file": "tools/c1_reliability.py",
+   "line": "63",
+   "row_type": "literal",
+   "item": "3.5",
+   "verdict": "ESTABLISHED",
+   "category": "squash-constant",
+   "note": "SQUASH_K_CADENCE=3.5 declared; the c1 run observes median tonicVote=3.5 (reproduce-check corroborates). Ranking is squash-invariant so the monotonicity finding is k-independent (docstring); only [0,1] bin placement/ECE depends on k."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "219",
+   "row_type": "literal",
+   "item": "0.05",
+   "verdict": "UNFIT",
+   "category": "shape-selection-tolerance",
+   "note": "near_logistic threshold 0.05 (isotonic-vs-Platt selection): the RULE is design 4.5.1-cited but the 0.05 magnitude is hand-set with no stated provenance."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "199",
+   "row_type": "literal",
+   "item": "50",
+   "verdict": "UNFIT",
+   "category": "min-sample-bucket",
+   "note": "INSUFFICIENT-cells boundary (fit<50) -- hand-set minimum sample size, no cited provenance."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "199",
+   "row_type": "literal",
+   "item": "20",
+   "verdict": "UNFIT",
+   "category": "min-sample-bucket",
+   "note": "INSUFFICIENT-cells boundary (held<20) -- hand-set minimum sample size, no cited provenance."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "71",
+   "row_type": "literal",
+   "item": "480",
+   "verdict": "ESTABLISHED",
+   "category": "value-copied-constant",
+   "note": "TICKS_PER_QUARTER=480 duplicates MuseScore Constants::DIVISION (documented). Value-copied; silently drifts if DIVISION ever changes (DIVISION is fixed, so low risk)."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "108",
+   "row_type": "literal",
+   "item": "4",
+   "verdict": "ESTABLISHED",
+   "category": "corpus-membership",
+   "note": "len(score.parts)!=4 SATB filter (definitional 4-voice chorale); defines corpus membership (the 352-count denominator)."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "193",
+   "row_type": "literal",
+   "item": "4",
+   "verdict": "UNFIT",
+   "category": "oracle-param",
+   "note": "FloatingKey.numFlats=4 -- local-key search bounded to +/-4 flats, hand-set with no cited provenance; shapes keyLocal, which feeds oracle_root_metric's KEY tiers."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "194",
+   "row_type": "literal",
+   "item": "4",
+   "verdict": "UNFIT",
+   "category": "oracle-param",
+   "note": "FloatingKey.numSharps=4 -- local-key search bounded to +/-4 sharps, hand-set (no provenance)."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "608",
+   "row_type": "literal",
+   "item": "63.36",
+   "verdict": "ESTABLISHED",
+   "category": "reproduce-target",
+   "note": "RATIFIED Baroque baseline hand-transcribed; reproduced EXACTLY by the fixture this run (MATCH) and matches CLAUDE.md. Hand-maintained (comment shows a prior 63.32->63.36 hand-update at 2.2e) -- must be re-synced at each corpus re-baseline. Self-checking: the fixture FAILS loudly if it drifts."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "608",
+   "row_type": "literal",
+   "item": "62.37",
+   "verdict": "ESTABLISHED",
+   "category": "reproduce-target",
+   "note": "RATIFIED Jazz baseline; fixture MATCH; hand-maintained."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "608",
+   "row_type": "literal",
+   "item": "63.25",
+   "verdict": "ESTABLISHED",
+   "category": "reproduce-target",
+   "note": "RATIFIED Default baseline; fixture MATCH; hand-maintained."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "323",
+   "row_type": "io",
+   "item": "write_text",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "333",
+   "row_type": "io",
+   "item": "write_text",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "323",
+   "row_type": "io",
+   "item": "dumps",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default)."
+  },
+  {
+   "file": "tools/calibration_fit.py",
+   "line": "333",
+   "row_type": "io",
+   "item": "dumps",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default)."
+  },
+  {
+   "file": "tools/music21_batch.py",
+   "line": "439",
+   "row_type": "io",
+   "item": "open",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "default --output tools/corpus writes .music21.json into the COMMITTED canonical corpus (dangerous default)."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "242",
+   "row_type": "io",
+   "item": "write_text",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default)."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "432",
+   "row_type": "io",
+   "item": "write_text",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default)."
+  },
+  {
+   "file": "tools/stage5_fit_driver.py",
+   "line": "432",
+   "row_type": "io",
+   "item": "dumps",
+   "verdict": "SURVIVES",
+   "category": "io-write-committed",
+   "note": "split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default)."
+  }
+ ]
+}

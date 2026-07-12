@@ -1,0 +1,734 @@
+file,line,row_type,item,func,verdict,category,flag,note
+tools/analyze_inversion_errors.py,35,function,_infer_quality,_infer_quality,SURVIVES,instrument-function,1,tool-local chord-SYMBOL->quality heuristic; unmatched body defaults to 'Major' (line 56) -- a silent misclassification path.
+tools/analyze_inversion_errors.py,64,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/analyze_inversion_errors.py,327,function,_has_clean_alt,_has_clean_alt,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,66,function,squash,squash,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,73,function,bin_curve,bin_curve,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,101,function,curve_diagnostics,curve_diagnostics,SURVIVES,instrument-function,1,"the ECE/monotonicity/signed-gap grading; monotonicity is squash-invariant, ECE is not."
+tools/c1_reliability.py,131,function,fmt_curve,fmt_curve,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,151,function,cells_with_region_conf,cells_with_region_conf,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,165,function,_load_wir,_load_wir,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,177,function,measure_l3,measure_l3,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,223,function,measure_l4_l5,measure_l4_l5,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,280,function,measure_devbeds,measure_devbeds,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,331,function,_range,_range,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,337,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/c1_reliability.py,350,function,emit,emit,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,50,function,_load_splits,_load_splits,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,55,function,_corpus_git_hash,_corpus_git_hash,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,65,function,collect_l3,collect_l3,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,108,function,collect_l4,collect_l4,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,148,function,diag_of,diag_of,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,154,function,split_pairs,split_pairs,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,160,function,fit_isotonic,fit_isotonic,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,169,function,fit_platt,fit_platt,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,180,function,apply_map,apply_map,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,189,function,curve_at,curve_at,SURVIVES,instrument-function,0,live instrument function.
+tools/calibration_fit.py,196,function,fit_row,fit_row,SURVIVES,instrument-function,1,the fitting decision: isotonic-default / Platt-if-near-logistic-and-not-worse; carries the 50/20 sufficiency + 0.05 near-logistic tolerances.
+tools/calibration_fit.py,293,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,84,function,_is_bach_chorale,_is_bach_chorale,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,116,function,_chorale_reject_reason,_chorale_reject_reason,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,152,function,_normalize_quality,_normalize_quality,SURVIVES,instrument-function,1,"music21 quality->bucket map; dominant/major-seventh collapse to 'Major', minor-seventh to 'Minor' (seventh->triad grading convention); unmapped->'Unknown'."
+tools/music21_batch.py,158,function,_key_to_str,_key_to_str,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,167,function,analyze_chorale,analyze_chorale,SURVIVES,instrument-function,1,the music21 GT producer; chordify failure yields 0 regions + an 'error' field (silently written).
+tools/music21_batch.py,276,function,stem_from_corpus_path,stem_from_corpus_path,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,322,function,get_composer_paths,get_composer_paths,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,347,function,get_bach_chorale_paths,get_bach_chorale_paths,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,354,function,run_single,run_single,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,386,function,process_chorale,process_chorale,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,445,function,run_batch,run_batch,SURVIVES,instrument-function,0,live instrument function.
+tools/music21_batch.py,508,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,92,function,pcn,pcn,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,102,function,parse_our_key,parse_our_key,SURVIVES,instrument-function,1,tool-local key parser; a mode suffix absent from _OUR_MINOR/_MAJOR_MODES returns mode=None -> mode-agnostic key match (silently masks a mode error).
+tools/oracle_root_metric.py,119,function,parse_dcml_key,parse_dcml_key,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,128,function,parse_m21_key,parse_m21_key,SURVIVES,instrument-function,1,music21 key parser; a key string not matching ' major'/' minor' returns None -> AMBIGUOUS/dispute grain.
+tools/oracle_root_metric.py,146,function,load_dir,load_dir,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,177,function,region_at,region_at,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,193,function,classify_charged_event,classify_charged_event,SURVIVES,instrument-function,1,"the 5-tier grading classifier; conventions: unparseable key->AMBIGUOUS, >=2 oracle roots->OVER-GRAB, mode compared only when both sides resolve to maj/min."
+tools/oracle_root_metric.py,234,function,run_preset,run_preset,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,348,function,format_report,format_report,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,388,function,emit_json,emit_json,SURVIVES,instrument-function,0,live instrument function.
+tools/oracle_root_metric.py,413,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,163,function,baseline_value,baseline_value,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,170,function,fmt_val,fmt_val,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,176,function,git_head,git_head,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,182,function,wir_covered_stems,wir_covered_stems,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,191,function,score_mode,score_mode,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,206,function,compute_split,compute_split,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,232,function,split_scores_file,split_scores_file,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,247,function,run,run,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,251,function,write_override,write_override,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,262,function,regen,regen,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,276,function,measure,measure,SURVIVES,instrument-function,1,reads the a8 summary/mapping; root/rn/key% + per-run class map = the reproduce surface.
+tools/stage5_fit_driver.py,301,function,evaluate,evaluate,SURVIVES,instrument-function,1,the objective+constraint evaluator; constraint = a8 robust-unit class-(b) non-increase + no new class-(b) case (NOT the batch stop the docstring names).
+tools/stage5_fit_driver.py,340,function,ledger_append,ledger_append,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,350,function,stable_row,stable_row,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,356,function,perturbations_for,perturbations_for,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,378,function,main,main,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,473,function,eval_at,eval_at,SURVIVES,instrument-function,0,live instrument function.
+tools/stage5_fit_driver.py,506,function,best_feasible,best_feasible,SURVIVES,instrument-function,0,live instrument function.
+tools/analyze_inversion_errors.py,368,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/analyze_inversion_errors.py,39,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,42,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,44,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,46,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,48,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,50,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,52,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,54,branch,if,_infer_quality,SURVIVES,control-flow,0,if branch in _infer_quality.
+tools/analyze_inversion_errors.py,74,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,81,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,102,branch,if,main,SURVIVES,misleading-error-message,1,empty-input error prints 'No .ours.json files in tools/reports/corpus/' but the code actually reads corpus_dir (default tools/corpus/baroque) -- stale message path.
+tools/analyze_inversion_errors.py,108,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,124,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,192,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,200,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,232,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,253,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,263,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,306,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,311,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,334,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,361,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,88,branch,try,main,SURVIVES,control-flow,0,try branch in main.
+tools/analyze_inversion_errors.py,127,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,131,branch,try,main,SURVIVES,control-flow,0,try branch in main.
+tools/analyze_inversion_errors.py,138,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,148,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,160,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,197,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,198,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,234,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,238,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/analyze_inversion_errors.py,243,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,328,branch,for,_has_clean_alt,SURVIVES,control-flow,0,for branch in _has_clean_alt.
+tools/analyze_inversion_errors.py,336,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,340,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,346,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,87,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,149,branch,try,main,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/analyze_inversion_errors.py,156,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,162,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,168,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,174,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,241,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,330,branch,if,_has_clean_alt,SURVIVES,control-flow,0,if branch in _has_clean_alt.
+tools/analyze_inversion_errors.py,178,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,176,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,179,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/analyze_inversion_errors.py,177,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/c1_reliability.py,413,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/c1_reliability.py,79,branch,for,bin_curve,SURVIVES,control-flow,0,for branch in bin_curve.
+tools/c1_reliability.py,89,branch,for,bin_curve,SURVIVES,control-flow,0,for branch in bin_curve.
+tools/c1_reliability.py,109,branch,for,curve_diagnostics,SURVIVES,control-flow,0,for branch in curve_diagnostics.
+tools/c1_reliability.py,115,branch,if,curve_diagnostics,SURVIVES,control-flow,0,if branch in curve_diagnostics.
+tools/c1_reliability.py,119,branch,if,curve_diagnostics,SURVIVES,control-flow,0,if branch in curve_diagnostics.
+tools/c1_reliability.py,134,branch,for,fmt_curve,SURVIVES,control-flow,0,for branch in fmt_curve.
+tools/c1_reliability.py,144,branch,if,fmt_curve,SURVIVES,control-flow,0,if branch in fmt_curve.
+tools/c1_reliability.py,159,branch,for,cells_with_region_conf,SURVIVES,control-flow,0,for branch in cells_with_region_conf.
+tools/c1_reliability.py,167,branch,if,_load_wir,SURVIVES,control-flow,0,if branch in _load_wir.
+tools/c1_reliability.py,169,branch,try,_load_wir,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,182,branch,for,measure_l3,SURVIVES,control-flow,0,for branch in measure_l3.
+tools/c1_reliability.py,230,branch,for,measure_l4_l5,SURVIVES,control-flow,0,for branch in measure_l4_l5.
+tools/c1_reliability.py,284,branch,for,measure_devbeds,SURVIVES,control-flow,0,for branch in measure_devbeds.
+tools/c1_reliability.py,332,branch,if,_range,SURVIVES,control-flow,0,if branch in _range.
+tools/c1_reliability.py,360,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/c1_reliability.py,398,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/c1_reliability.py,408,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/c1_reliability.py,68,branch,ternary,squash,SURVIVES,control-flow,0,ternary branch in squash.
+tools/c1_reliability.py,110,branch,if,curve_diagnostics,SURVIVES,control-flow,0,if branch in curve_diagnostics.
+tools/c1_reliability.py,135,branch,if,fmt_curve,SURVIVES,control-flow,0,if branch in fmt_curve.
+tools/c1_reliability.py,185,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,187,branch,try,measure_l3,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,191,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,195,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,201,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,207,branch,for,measure_l3,SURVIVES,control-flow,0,for branch in measure_l3.
+tools/c1_reliability.py,232,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,235,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,237,branch,try,measure_l4_l5,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,241,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,245,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,254,branch,for,measure_l4_l5,SURVIVES,control-flow,0,for branch in measure_l4_l5.
+tools/c1_reliability.py,259,branch,for,measure_l4_l5,SURVIVES,control-flow,0,for branch in measure_l4_l5.
+tools/c1_reliability.py,264,branch,for,measure_l4_l5,SURVIVES,control-flow,0,for branch in measure_l4_l5.
+tools/c1_reliability.py,286,branch,if,measure_devbeds,SURVIVES,control-flow,0,if branch in measure_devbeds.
+tools/c1_reliability.py,288,branch,for,measure_devbeds,SURVIVES,control-flow,0,for branch in measure_devbeds.
+tools/c1_reliability.py,365,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/c1_reliability.py,374,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/c1_reliability.py,90,branch,ternary,bin_curve,SURVIVES,control-flow,0,ternary branch in bin_curve.
+tools/c1_reliability.py,91,branch,ternary,bin_curve,SURVIVES,control-flow,0,ternary branch in bin_curve.
+tools/c1_reliability.py,127,branch,ternary,curve_diagnostics,SURVIVES,control-flow,0,ternary branch in curve_diagnostics.
+tools/c1_reliability.py,196,branch,try,measure_l3,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,208,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,211,branch,if,measure_l3,SURVIVES,control-flow,0,if branch in measure_l3.
+tools/c1_reliability.py,246,branch,try,measure_l4_l5,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,257,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,260,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,265,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,271,branch,if,measure_l4_l5,SURVIVES,control-flow,0,if branch in measure_l4_l5.
+tools/c1_reliability.py,274,branch,ternary,measure_l4_l5,SURVIVES,control-flow,0,ternary branch in measure_l4_l5.
+tools/c1_reliability.py,290,branch,if,measure_devbeds,SURVIVES,control-flow,0,if branch in measure_devbeds.
+tools/c1_reliability.py,292,branch,try,measure_devbeds,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/c1_reliability.py,302,branch,if,measure_devbeds,SURVIVES,control-flow,0,if branch in measure_devbeds.
+tools/c1_reliability.py,317,branch,if,measure_devbeds,SURVIVES,control-flow,0,if branch in measure_devbeds.
+tools/c1_reliability.py,161,branch,ternary,cells_with_region_conf,SURVIVES,control-flow,0,ternary branch in cells_with_region_conf.
+tools/c1_reliability.py,214,branch,ternary,measure_l3,SURVIVES,control-flow,0,ternary branch in measure_l3.
+tools/c1_reliability.py,305,branch,for,measure_devbeds,SURVIVES,control-flow,0,for branch in measure_devbeds.
+tools/c1_reliability.py,319,branch,if,measure_devbeds,SURVIVES,control-flow,0,if branch in measure_devbeds.
+tools/c1_reliability.py,95,branch,ternary,bin_curve,SURVIVES,control-flow,0,ternary branch in bin_curve.
+tools/c1_reliability.py,143,branch,ternary,fmt_curve,SURVIVES,control-flow,0,ternary branch in fmt_curve.
+tools/c1_reliability.py,322,branch,for,measure_devbeds,SURVIVES,control-flow,0,for branch in measure_devbeds.
+tools/c1_reliability.py,268,branch,ternary,measure_l4_l5,SURVIVES,control-flow,0,ternary branch in measure_l4_l5.
+tools/c1_reliability.py,269,branch,ternary,measure_l4_l5,SURVIVES,control-flow,0,ternary branch in measure_l4_l5.
+tools/c1_reliability.py,309,branch,ternary,measure_devbeds,SURVIVES,control-flow,0,ternary branch in measure_devbeds.
+tools/c1_reliability.py,325,branch,ternary,measure_devbeds,SURVIVES,control-flow,0,ternary branch in measure_devbeds.
+tools/calibration_fit.py,341,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/calibration_fit.py,57,branch,try,_corpus_git_hash,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/calibration_fit.py,69,branch,for,collect_l3,SURVIVES,control-flow,0,for branch in collect_l3.
+tools/calibration_fit.py,112,branch,for,collect_l4,SURVIVES,control-flow,0,for branch in collect_l4.
+tools/calibration_fit.py,182,branch,if,apply_map,SURVIVES,control-flow,0,if branch in apply_map.
+tools/calibration_fit.py,191,branch,if,curve_at,SURVIVES,control-flow,0,if branch in curve_at.
+tools/calibration_fit.py,199,branch,if,fit_row,SURVIVES,control-flow,0,if branch in fit_row.
+tools/calibration_fit.py,231,branch,if,fit_row,SURVIVES,control-flow,0,if branch in fit_row.
+tools/calibration_fit.py,310,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/calibration_fit.py,337,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/calibration_fit.py,72,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,75,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,77,branch,try,collect_l3,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/calibration_fit.py,81,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,85,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,91,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,96,branch,for,collect_l3,SURVIVES,control-flow,0,for branch in collect_l3.
+tools/calibration_fit.py,114,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,117,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,120,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,122,branch,try,collect_l4,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/calibration_fit.py,126,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,130,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,138,branch,for,collect_l4,SURVIVES,control-flow,0,for branch in collect_l4.
+tools/calibration_fit.py,222,branch,ternary,fit_row,SURVIVES,control-flow,0,ternary branch in fit_row.
+tools/calibration_fit.py,227,branch,ternary,fit_row,SURVIVES,control-flow,0,ternary branch in fit_row.
+tools/calibration_fit.py,321,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/calibration_fit.py,331,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/calibration_fit.py,86,branch,try,collect_l3,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/calibration_fit.py,97,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,100,branch,if,collect_l3,SURVIVES,control-flow,0,if branch in collect_l3.
+tools/calibration_fit.py,131,branch,try,collect_l4,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/calibration_fit.py,139,branch,if,collect_l4,SURVIVES,control-flow,0,if branch in collect_l4.
+tools/calibration_fit.py,102,branch,ternary,collect_l3,SURVIVES,control-flow,0,ternary branch in collect_l3.
+tools/calibration_fit.py,142,branch,ternary,collect_l4,SURVIVES,control-flow,0,ternary branch in collect_l4.
+tools/music21_batch.py,41,branch,try,<module-scope>,SURVIVES,control-flow,0,try branch in <module-scope>.
+tools/music21_batch.py,48,branch,try,<module-scope>,SURVIVES,control-flow,0,try branch in <module-scope>.
+tools/music21_batch.py,59,branch,try,<module-scope>,SURVIVES,control-flow,0,try branch in <module-scope>.
+tools/music21_batch.py,527,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/music21_batch.py,92,branch,if,_is_bach_chorale,SURVIVES,control-flow,0,if branch in _is_bach_chorale.
+tools/music21_batch.py,97,branch,for,_is_bach_chorale,SURVIVES,control-flow,0,for branch in _is_bach_chorale.
+tools/music21_batch.py,103,branch,if,_is_bach_chorale,SURVIVES,control-flow,0,if branch in _is_bach_chorale.
+tools/music21_batch.py,107,branch,try,_is_bach_chorale,SURVIVES,control-flow,0,try branch in _is_bach_chorale.
+tools/music21_batch.py,119,branch,if,_chorale_reject_reason,SURVIVES,control-flow,0,if branch in _chorale_reject_reason.
+tools/music21_batch.py,122,branch,for,_chorale_reject_reason,SURVIVES,control-flow,0,for branch in _chorale_reject_reason.
+tools/music21_batch.py,126,branch,if,_chorale_reject_reason,SURVIVES,control-flow,0,if branch in _chorale_reject_reason.
+tools/music21_batch.py,128,branch,try,_chorale_reject_reason,SURVIVES,control-flow,0,try branch in _chorale_reject_reason.
+tools/music21_batch.py,160,branch,if,_key_to_str,SURVIVES,control-flow,0,if branch in _key_to_str.
+tools/music21_batch.py,181,branch,try,analyze_chorale,SURVIVES,control-flow,0,try branch in analyze_chorale.
+tools/music21_batch.py,190,branch,if,analyze_chorale,SURVIVES,control-flow,0,if branch in analyze_chorale.
+tools/music21_batch.py,199,branch,try,analyze_chorale,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/music21_batch.py,212,branch,for,analyze_chorale,SURVIVES,control-flow,0,for branch in analyze_chorale.
+tools/music21_batch.py,293,branch,if,stem_from_corpus_path,SURVIVES,control-flow,0,if branch in stem_from_corpus_path.
+tools/music21_batch.py,297,branch,try,stem_from_corpus_path,SURVIVES,control-flow,0,try branch in stem_from_corpus_path.
+tools/music21_batch.py,310,branch,for,stem_from_corpus_path,SURVIVES,control-flow,0,for branch in stem_from_corpus_path.
+tools/music21_batch.py,315,branch,if,stem_from_corpus_path,SURVIVES,control-flow,0,if branch in stem_from_corpus_path.
+tools/music21_batch.py,331,branch,try,get_composer_paths,SURVIVES,control-flow,0,try branch in get_composer_paths.
+tools/music21_batch.py,337,branch,for,get_composer_paths,SURVIVES,control-flow,0,for branch in get_composer_paths.
+tools/music21_batch.py,357,branch,try,run_single,SURVIVES,control-flow,0,try branch in run_single.
+tools/music21_batch.py,374,branch,for,run_single,SURVIVES,control-flow,0,for branch in run_single.
+tools/music21_batch.py,400,branch,if,process_chorale,SURVIVES,control-flow,0,if branch in process_chorale.
+tools/music21_batch.py,411,branch,if,process_chorale,SURVIVES,control-flow,0,if branch in process_chorale.
+tools/music21_batch.py,430,branch,try,process_chorale,SURVIVES,control-flow,0,try branch in process_chorale.
+tools/music21_batch.py,449,branch,if,run_batch,SURVIVES,control-flow,0,if branch in run_batch.
+tools/music21_batch.py,457,branch,if,run_batch,SURVIVES,control-flow,0,if branch in run_batch.
+tools/music21_batch.py,465,branch,for,run_batch,SURVIVES,control-flow,0,for branch in run_batch.
+tools/music21_batch.py,496,branch,if,run_batch,SURVIVES,control-flow,0,if branch in run_batch.
+tools/music21_batch.py,521,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/music21_batch.py,98,branch,if,_is_bach_chorale,SURVIVES,control-flow,0,if branch in _is_bach_chorale.
+tools/music21_batch.py,108,branch,if,_is_bach_chorale,SURVIVES,control-flow,0,if branch in _is_bach_chorale.
+tools/music21_batch.py,123,branch,if,_chorale_reject_reason,SURVIVES,control-flow,0,if branch in _chorale_reject_reason.
+tools/music21_batch.py,191,branch,try,analyze_chorale,SURVIVES,control-flow,0,try branch in analyze_chorale.
+tools/music21_batch.py,214,branch,if,analyze_chorale,SURVIVES,control-flow,0,if branch in analyze_chorale.
+tools/music21_batch.py,224,branch,if,analyze_chorale,SURVIVES,control-flow,0,if branch in analyze_chorale.
+tools/music21_batch.py,232,branch,if,analyze_chorale,SURVIVES,control-flow,0,if branch in analyze_chorale.
+tools/music21_batch.py,241,branch,try,analyze_chorale,SURVIVES,control-flow,0,try branch in analyze_chorale.
+tools/music21_batch.py,300,branch,if,stem_from_corpus_path,SURVIVES,control-flow,0,if branch in stem_from_corpus_path.
+tools/music21_batch.py,311,branch,if,stem_from_corpus_path,SURVIVES,control-flow,0,if branch in stem_from_corpus_path.
+tools/music21_batch.py,339,branch,if,get_composer_paths,SURVIVES,control-flow,0,if branch in get_composer_paths.
+tools/music21_batch.py,341,branch,if,get_composer_paths,SURVIVES,control-flow,0,if branch in get_composer_paths.
+tools/music21_batch.py,401,branch,try,process_chorale,SURVIVES,control-flow,0,try branch in process_chorale.
+tools/music21_batch.py,412,branch,try,process_chorale,SURVIVES,control-flow,0,try branch in process_chorale.
+tools/music21_batch.py,469,branch,try,run_batch,SURVIVES,control-flow,0,try branch in run_batch.
+tools/music21_batch.py,477,branch,if,run_batch,SURVIVES,control-flow,0,if branch in run_batch.
+tools/music21_batch.py,490,branch,if,run_batch,SURVIVES,control-flow,0,if branch in run_batch.
+tools/music21_batch.py,499,branch,for,run_batch,SURVIVES,control-flow,0,for branch in run_batch.
+tools/music21_batch.py,225,branch,try,analyze_chorale,SURVIVES,control-flow,0,try branch in analyze_chorale.
+tools/music21_batch.py,233,branch,try,analyze_chorale,SURVIVES,control-flow,0,try branch in analyze_chorale.
+tools/music21_batch.py,486,branch,ternary,run_batch,SURVIVES,control-flow,0,ternary branch in run_batch.
+tools/music21_batch.py,487,branch,ternary,run_batch,SURVIVES,control-flow,0,ternary branch in run_batch.
+tools/music21_batch.py,488,branch,ternary,run_batch,SURVIVES,control-flow,0,ternary branch in run_batch.
+tools/music21_batch.py,242,branch,ternary,analyze_chorale,SURVIVES,control-flow,0,ternary branch in analyze_chorale.
+tools/music21_batch.py,418,branch,if,process_chorale,SURVIVES,control-flow,0,if branch in process_chorale.
+tools/music21_batch.py,501,branch,ternary,run_batch,SURVIVES,control-flow,0,ternary branch in run_batch.
+tools/oracle_root_metric.py,446,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/oracle_root_metric.py,104,branch,if,parse_our_key,SURVIVES,control-flow,0,if branch in parse_our_key.
+tools/oracle_root_metric.py,108,branch,if,parse_our_key,SURVIVES,control-flow,0,if branch in parse_our_key.
+tools/oracle_root_metric.py,112,branch,if,parse_our_key,SURVIVES,control-flow,0,if branch in parse_our_key.
+tools/oracle_root_metric.py,114,branch,if,parse_our_key,SURVIVES,control-flow,0,if branch in parse_our_key.
+tools/oracle_root_metric.py,121,branch,if,parse_dcml_key,SURVIVES,control-flow,0,if branch in parse_dcml_key.
+tools/oracle_root_metric.py,131,branch,if,parse_m21_key,SURVIVES,control-flow,0,if branch in parse_m21_key.
+tools/oracle_root_metric.py,135,branch,if,parse_m21_key,SURVIVES,control-flow,0,if branch in parse_m21_key.
+tools/oracle_root_metric.py,138,branch,if,parse_m21_key,SURVIVES,control-flow,0,if branch in parse_m21_key.
+tools/oracle_root_metric.py,154,branch,for,load_dir,SURVIVES,control-flow,0,for branch in load_dir.
+tools/oracle_root_metric.py,180,branch,for,region_at,SURVIVES,control-flow,0,for branch in region_at.
+tools/oracle_root_metric.py,183,branch,for,region_at,SURVIVES,control-flow,0,for branch in region_at.
+tools/oracle_root_metric.py,205,branch,if,classify_charged_event,SURVIVES,control-flow,0,if branch in classify_charged_event.
+tools/oracle_root_metric.py,216,branch,if,classify_charged_event,SURVIVES,control-flow,0,if branch in classify_charged_event.
+tools/oracle_root_metric.py,224,branch,if,classify_charged_event,SURVIVES,control-flow,0,if branch in classify_charged_event.
+tools/oracle_root_metric.py,229,branch,if,classify_charged_event,SURVIVES,control-flow,0,if branch in classify_charged_event.
+tools/oracle_root_metric.py,256,branch,for,run_preset,SURVIVES,control-flow,0,for branch in run_preset.
+tools/oracle_root_metric.py,366,branch,for,format_report,SURVIVES,control-flow,0,for branch in format_report.
+tools/oracle_root_metric.py,391,branch,for,emit_json,SURVIVES,control-flow,0,for branch in emit_json.
+tools/oracle_root_metric.py,429,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/oracle_root_metric.py,440,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/oracle_root_metric.py,93,branch,ternary,pcn,SURVIVES,control-flow,0,ternary branch in pcn.
+tools/oracle_root_metric.py,124,branch,ternary,parse_dcml_key,SURVIVES,control-flow,0,ternary branch in parse_dcml_key.
+tools/oracle_root_metric.py,157,branch,if,load_dir,SURVIVES,control-flow,0,if branch in load_dir.
+tools/oracle_root_metric.py,159,branch,try,load_dir,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/oracle_root_metric.py,164,branch,if,load_dir,SURVIVES,control-flow,0,if branch in load_dir.
+tools/oracle_root_metric.py,168,branch,if,load_dir,SURVIVES,control-flow,0,if branch in load_dir.
+tools/oracle_root_metric.py,181,branch,if,region_at,SURVIVES,control-flow,0,if branch in region_at.
+tools/oracle_root_metric.py,184,branch,if,region_at,SURVIVES,control-flow,0,if branch in region_at.
+tools/oracle_root_metric.py,219,branch,if,classify_charged_event,SURVIVES,control-flow,0,if branch in classify_charged_event.
+tools/oracle_root_metric.py,257,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,264,branch,for,run_preset,SURVIVES,control-flow,0,for branch in run_preset.
+tools/oracle_root_metric.py,269,branch,for,run_preset,SURVIVES,control-flow,0,for branch in run_preset.
+tools/oracle_root_metric.py,431,branch,try,main,SURVIVES,control-flow,0,try branch in main.
+tools/oracle_root_metric.py,169,branch,try,load_dir,SURVIVES,silent-failure-swallow,1,broad except/guard drops a score/region/value from the measurement denominator with no stderr signal (silent partial-coverage path).
+tools/oracle_root_metric.py,200,branch,ternary,classify_charged_event,SURVIVES,control-flow,0,ternary branch in classify_charged_event.
+tools/oracle_root_metric.py,202,branch,ternary,classify_charged_event,SURVIVES,control-flow,0,ternary branch in classify_charged_event.
+tools/oracle_root_metric.py,265,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,278,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,285,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,292,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,297,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,301,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,310,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,317,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,369,branch,ternary,format_report,SURVIVES,control-flow,0,ternary branch in format_report.
+tools/oracle_root_metric.py,370,branch,ternary,format_report,SURVIVES,control-flow,0,ternary branch in format_report.
+tools/oracle_root_metric.py,371,branch,ternary,format_report,SURVIVES,control-flow,0,ternary branch in format_report.
+tools/oracle_root_metric.py,221,branch,ternary,classify_charged_event,SURVIVES,control-flow,0,ternary branch in classify_charged_event.
+tools/oracle_root_metric.py,272,branch,ternary,run_preset,SURVIVES,control-flow,0,ternary branch in run_preset.
+tools/oracle_root_metric.py,273,branch,ternary,run_preset,SURVIVES,control-flow,0,ternary branch in run_preset.
+tools/oracle_root_metric.py,287,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,311,branch,for,run_preset,SURVIVES,control-flow,0,for branch in run_preset.
+tools/oracle_root_metric.py,220,branch,ternary,classify_charged_event,SURVIVES,control-flow,0,ternary branch in classify_charged_event.
+tools/oracle_root_metric.py,289,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,312,branch,if,run_preset,SURVIVES,control-flow,0,if branch in run_preset.
+tools/oracle_root_metric.py,376,branch,ternary,format_report,SURVIVES,control-flow,0,ternary branch in format_report.
+tools/oracle_root_metric.py,372,branch,ternary,format_report,SURVIVES,control-flow,0,ternary branch in format_report.
+tools/oracle_root_metric.py,321,branch,ternary,run_preset,SURVIVES,control-flow,0,ternary branch in run_preset.
+tools/oracle_root_metric.py,321,branch,ternary,run_preset,SURVIVES,control-flow,0,ternary branch in run_preset.
+tools/oracle_root_metric.py,322,branch,ternary,run_preset,SURVIVES,control-flow,0,ternary branch in run_preset.
+tools/stage5_fit_driver.py,697,branch,if,<module-scope>,SURVIVES,control-flow,0,if branch in <module-scope>.
+tools/stage5_fit_driver.py,165,branch,if,baseline_value,SURVIVES,control-flow,0,if branch in baseline_value.
+tools/stage5_fit_driver.py,171,branch,if,fmt_val,SURVIVES,control-flow,0,if branch in fmt_val.
+tools/stage5_fit_driver.py,185,branch,for,wir_covered_stems,SURVIVES,control-flow,0,for branch in wir_covered_stems.
+tools/stage5_fit_driver.py,194,branch,try,score_mode,SURVIVES,control-flow,0,try branch in score_mode.
+tools/stage5_fit_driver.py,198,branch,if,score_mode,SURVIVES,control-flow,0,if branch in score_mode.
+tools/stage5_fit_driver.py,200,branch,if,score_mode,SURVIVES,control-flow,0,if branch in score_mode.
+tools/stage5_fit_driver.py,212,branch,for,compute_split,SURVIVES,control-flow,0,for branch in compute_split.
+tools/stage5_fit_driver.py,217,branch,for,compute_split,SURVIVES,control-flow,0,for branch in compute_split.
+tools/stage5_fit_driver.py,237,branch,if,split_scores_file,SURVIVES,control-flow,0,if branch in split_scores_file.
+tools/stage5_fit_driver.py,255,branch,for,write_override,SURVIVES,control-flow,0,for branch in write_override.
+tools/stage5_fit_driver.py,257,branch,for,write_override,SURVIVES,control-flow,0,for branch in write_override.
+tools/stage5_fit_driver.py,268,branch,if,regen,SURVIVES,control-flow,0,if branch in regen.
+tools/stage5_fit_driver.py,271,branch,if,regen,SURVIVES,control-flow,0,if branch in regen.
+tools/stage5_fit_driver.py,280,branch,if,measure,SURVIVES,control-flow,0,if branch in measure.
+tools/stage5_fit_driver.py,283,branch,if,measure,SURVIVES,control-flow,0,if branch in measure.
+tools/stage5_fit_driver.py,306,branch,if,evaluate,SURVIVES,control-flow,0,if branch in evaluate.
+tools/stage5_fit_driver.py,327,branch,if,evaluate,SURVIVES,control-flow,0,if branch in evaluate.
+tools/stage5_fit_driver.py,363,branch,if,perturbations_for,SURVIVES,control-flow,0,if branch in perturbations_for.
+tools/stage5_fit_driver.py,365,branch,if,perturbations_for,SURVIVES,control-flow,0,if branch in perturbations_for.
+tools/stage5_fit_driver.py,370,branch,if,perturbations_for,SURVIVES,control-flow,0,if branch in perturbations_for.
+tools/stage5_fit_driver.py,429,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,443,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,461,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,544,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,603,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,629,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,642,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,179,branch,ternary,git_head,SURVIVES,control-flow,0,ternary branch in git_head.
+tools/stage5_fit_driver.py,186,branch,if,wir_covered_stems,SURVIVES,control-flow,0,if branch in wir_covered_stems.
+tools/stage5_fit_driver.py,220,branch,for,compute_split,SURVIVES,control-flow,0,for branch in compute_split.
+tools/stage5_fit_driver.py,227,branch,if,compute_split,SURVIVES,control-flow,0,if branch in compute_split.
+tools/stage5_fit_driver.py,291,branch,ternary,measure,SURVIVES,control-flow,0,ternary branch in measure.
+tools/stage5_fit_driver.py,367,branch,ternary,perturbations_for,SURVIVES,control-flow,0,ternary branch in perturbations_for.
+tools/stage5_fit_driver.py,435,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,448,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,503,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,515,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,526,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,531,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,552,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,567,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,574,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,615,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,638,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,648,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,658,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,663,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,172,branch,ternary,fmt_val,SURVIVES,control-flow,0,ternary branch in fmt_val.
+tools/stage5_fit_driver.py,223,branch,if,compute_split,SURVIVES,control-flow,0,if branch in compute_split.
+tools/stage5_fit_driver.py,313,branch,ternary,evaluate,SURVIVES,control-flow,0,ternary branch in evaluate.
+tools/stage5_fit_driver.py,320,branch,ternary,evaluate,SURVIVES,control-flow,0,ternary branch in evaluate.
+tools/stage5_fit_driver.py,475,branch,if,eval_at,SURVIVES,control-flow,0,if branch in eval_at.
+tools/stage5_fit_driver.py,508,branch,if,best_feasible,SURVIVES,control-flow,0,if branch in best_feasible.
+tools/stage5_fit_driver.py,517,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,519,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,533,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,550,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/stage5_fit_driver.py,553,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,560,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,575,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,649,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,654,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/stage5_fit_driver.py,665,branch,for,main,SURVIVES,control-flow,0,for branch in main.
+tools/stage5_fit_driver.py,221,branch,ternary,compute_split,SURVIVES,control-flow,0,ternary branch in compute_split.
+tools/stage5_fit_driver.py,450,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/stage5_fit_driver.py,520,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,536,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,554,branch,try,main,SURVIVES,control-flow,0,try branch in main.
+tools/stage5_fit_driver.py,626,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/stage5_fit_driver.py,637,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/stage5_fit_driver.py,650,branch,try,main,SURVIVES,control-flow,0,try branch in main.
+tools/stage5_fit_driver.py,666,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,668,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,556,branch,if,main,SURVIVES,control-flow,0,if branch in main.
+tools/stage5_fit_driver.py,623,branch,ternary,main,SURVIVES,control-flow,0,ternary branch in main.
+tools/analyze_inversion_errors.py,322,literal,0.7,main,ESTABLISHED,value-copied-constant,1,INVERSION_SUSPICION_MARGIN=0.70 hardcodes a copy of the production pref inversionSuspicionMargin (also carried in stage5 PARAMS + param_manifest.json); the blocker analysis silently assumes production margin=0.70 and drifts if the pref moves (value-copied constant).
+tools/analyze_inversion_errors.py,253,literal,8,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,259,literal,2,main,ESTABLISHED,grading-bucket,0,noteCount==2 'ambiguous' bucket label.
+tools/analyze_inversion_errors.py,76,literal,2,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,305,literal,0.25,main,ESTABLISHED,presentation,0,margin histogram bin width 0.25.
+tools/analyze_inversion_errors.py,305,literal,0.25,main,ESTABLISHED,presentation,0,margin histogram bin width 0.25.
+tools/analyze_inversion_errors.py,305,literal,12,main,ESTABLISHED,presentation,0,"12 histogram bins of 0.25 = [0,3)."
+tools/analyze_inversion_errors.py,92,literal,2,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,204,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,206,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,210,literal,0.25,main,ESTABLISHED,grading-bucket,0,margin<0.25 'barely wins' bucket (presentation of the margin distribution).
+tools/analyze_inversion_errors.py,211,literal,0.5,main,ESTABLISHED,grading-bucket,0,margin<0.5 low-confidence bucket.
+tools/analyze_inversion_errors.py,213,literal,1.5,main,ESTABLISHED,grading-bucket,0,margin<1.5 bucket.
+tools/analyze_inversion_errors.py,214,literal,2.0,main,DEAD,dead-computation,1,lt_2 = count(margins<2.0) is computed but never printed or used downstream -- dead variable.
+tools/analyze_inversion_errors.py,215,literal,2.0,main,UNFIT,grading-bucket,1,"margin>=2.0 bucket carries the interpretive claim (line 301) 'fix won't help, likely correct' -- an unvalidated interpretation attached to a hand-set boundary."
+tools/analyze_inversion_errors.py,216,literal,0.5,main,ESTABLISHED,grading-bucket,0,0.5<=margin<2.0 moderate band.
+tools/analyze_inversion_errors.py,216,literal,2.0,main,ESTABLISHED,grading-bucket,0,0.5<=margin<2.0 moderate band.
+tools/analyze_inversion_errors.py,260,literal,3,main,UNFIT,grading-bucket,1,"noteCount>=3 'genuine chord' bucket boundary -- interpretive threshold, no cited provenance."
+tools/analyze_inversion_errors.py,273,literal,0.26,main,UNFIT,grading-tolerance,1,"beat-classification window +/-0.26 around integer beats -- hand-set, no cited provenance (why 0.26 rather than 0.25/0.5?)."
+tools/analyze_inversion_errors.py,274,literal,0.26,main,UNFIT,grading-tolerance,1,beat-classification window +/-0.26 (hand-set).
+tools/analyze_inversion_errors.py,275,literal,0.26,main,UNFIT,grading-tolerance,1,beat-classification window +/-0.26 (hand-set).
+tools/analyze_inversion_errors.py,276,literal,0.26,main,UNFIT,grading-tolerance,1,beat-classification window +/-0.26 (hand-set).
+tools/analyze_inversion_errors.py,294,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,296,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,308,literal,40,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/analyze_inversion_errors.py,310,literal,3.0,main,ESTABLISHED,presentation,0,histogram tail margin>=3.0.
+tools/analyze_inversion_errors.py,352,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,354,literal,70,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,189,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,190,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,219,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,220,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,221,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,222,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,223,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,224,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,249,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,250,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,251,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,266,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,267,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,268,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,280,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,281,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,282,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,283,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,284,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,288,literal,0.5,main,ESTABLISHED,grading-bucket,0,targetable margin<0.5 summary.
+tools/analyze_inversion_errors.py,289,literal,3,main,UNFIT,grading-bucket,1,noteCount>=3 targetable-error bucket (interpretive).
+tools/analyze_inversion_errors.py,292,literal,3,main,UNFIT,grading-bucket,1,noteCount>=3 targetable-error bucket (interpretive).
+tools/analyze_inversion_errors.py,298,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,299,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,300,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,301,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,356,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,358,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,360,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,193,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,194,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,264,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,274,literal,2.0,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/analyze_inversion_errors.py,275,literal,3.0,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/analyze_inversion_errors.py,276,literal,4.0,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/analyze_inversion_errors.py,363,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,365,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/c1_reliability.py,63,literal,3.5,<module-scope>,ESTABLISHED,squash-constant,1,"SQUASH_K_CADENCE=3.5 declared; the c1 run observes median tonicVote=3.5 (reproduce-check corroborates). Ranking is squash-invariant so the monotonicity finding is k-independent (docstring); only [0,1] bin placement/ECE depends on k."
+tools/c1_reliability.py,73,literal,10,bin_curve,ESTABLISHED,binning-convention,0,"10 equal-width reliability bins on [0,1]."
+tools/c1_reliability.py,354,literal,78,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/c1_reliability.py,357,literal,78,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/c1_reliability.py,110,literal,1e-09,curve_diagnostics,ESTABLISHED,epsilon,0,monotonicity-violation numeric epsilon.
+tools/c1_reliability.py,112,literal,3,curve_diagnostics,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/c1_reliability.py,112,literal,3,curve_diagnostics,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/calibration_fit.py,219,literal,0.05,fit_row,UNFIT,shape-selection-tolerance,1,near_logistic threshold 0.05 (isotonic-vs-Platt selection): the RULE is design 4.5.1-cited but the 0.05 magnitude is hand-set with no stated provenance.
+tools/calibration_fit.py,174,literal,1000000.0,fit_platt,ESTABLISHED,solver-param,0,C=1e6 near-unregularized logistic == Platt scaling (documented in code).
+tools/calibration_fit.py,174,literal,10000,fit_platt,ESTABLISHED,solver-param,0,LogisticRegression max_iter.
+tools/calibration_fit.py,199,literal,50,fit_row,UNFIT,min-sample-bucket,1,"INSUFFICIENT-cells boundary (fit<50) -- hand-set minimum sample size, no cited provenance."
+tools/calibration_fit.py,199,literal,20,fit_row,UNFIT,min-sample-bucket,1,"INSUFFICIENT-cells boundary (held<20) -- hand-set minimum sample size, no cited provenance."
+tools/calibration_fit.py,215,literal,100.0,fit_row,ESTABLISHED,presentation,0,near-logistic test grid resolution.
+tools/calibration_fit.py,226,literal,100.0,fit_row,ESTABLISHED,presentation,0,low-band grid resolution.
+tools/calibration_fit.py,304,literal,78,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/calibration_fit.py,307,literal,78,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/calibration_fit.py,163,literal,2,fit_isotonic,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/calibration_fit.py,172,literal,2,fit_platt,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/calibration_fit.py,215,literal,101,fit_row,ESTABLISHED,presentation,0,near-logistic test grid point count.
+tools/calibration_fit.py,221,literal,1e-06,fit_row,ESTABLISHED,epsilon,0,platt_not_worse tie tolerance.
+tools/calibration_fit.py,226,literal,50,fit_row,ESTABLISHED,grading-boundary,0,"flat-band low-band [0,0.5) assertion boundary (design 4.5)."
+tools/music21_batch.py,71,literal,480,<module-scope>,ESTABLISHED,value-copied-constant,1,"TICKS_PER_QUARTER=480 duplicates MuseScore Constants::DIVISION (documented). Value-copied; silently drifts if DIVISION ever changes (DIVISION is fixed, so low risk)."
+tools/music21_batch.py,108,literal,4,_is_bach_chorale,ESTABLISHED,corpus-membership,1,len(score.parts)!=4 SATB filter (definitional 4-voice chorale); defines corpus membership (the 352-count denominator).
+tools/music21_batch.py,193,literal,4,analyze_chorale,UNFIT,oracle-param,1,"FloatingKey.numFlats=4 -- local-key search bounded to +/-4 flats, hand-set with no cited provenance; shapes keyLocal, which feeds oracle_root_metric's KEY tiers."
+tools/music21_batch.py,194,literal,4,analyze_chorale,UNFIT,oracle-param,1,"FloatingKey.numSharps=4 -- local-key search bounded to +/-4 sharps, hand-set (no provenance)."
+tools/music21_batch.py,269,literal,4,analyze_chorale,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,315,literal,2,stem_from_corpus_path,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,251,literal,6,analyze_chorale,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,300,literal,2,stem_from_corpus_path,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,440,literal,2,process_chorale,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,366,literal,60,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,370,literal,60,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,4,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,5,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,12,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,4,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,15,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,12,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,373,literal,8,run_single,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,494,literal,60,run_batch,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/music21_batch.py,503,literal,60,run_batch,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,111,literal,2,parse_our_key,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,140,literal,2,parse_m21_key,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,141,literal,12,parse_m21_key,ESTABLISHED,music-theory-constant,0,pitch-class modulo 12.
+tools/oracle_root_metric.py,229,literal,2,classify_charged_event,ESTABLISHED,structural-threshold,0,>=2 distinct oracle roots inside one covering region ==> OVER-GRAB (definitional segmentation test).
+tools/oracle_root_metric.py,142,literal,3,parse_m21_key,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,353,literal,86,format_report,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/oracle_root_metric.py,356,literal,86,format_report,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/oracle_root_metric.py,93,literal,12,pcn,ESTABLISHED,music-theory-constant,0,pitch-class modulo 12.
+tools/oracle_root_metric.py,317,literal,6,run_preset,ESTABLISHED,presentation,0,keep <=6 worked examples per tier.
+tools/oracle_root_metric.py,363,literal,52,format_report,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/oracle_root_metric.py,374,literal,52,format_report,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/oracle_root_metric.py,369,literal,100,format_report,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,435,literal,2,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,365,literal,100,format_report,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,372,literal,18,format_report,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/oracle_root_metric.py,372,literal,16,format_report,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,206,literal,0.2,compute_split,ESTABLISHED,split-convention,0,held_frac 0.2 = ~80/20 stratified split (design 4.3 1a).
+tools/stage5_fit_driver.py,214,literal,2,compute_split,ESTABLISHED,structural,0,min split step floor = 2.
+tools/stage5_fit_driver.py,367,literal,0.05,perturbations_for,ESTABLISHED,step-policy,0,"perturbation +/-0.05 for values in [0,1] (design 4.3 1b)."
+tools/stage5_fit_driver.py,67,literal,0.75,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,68,literal,1.8,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,69,literal,1.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,71,literal,3.0,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,72,literal,2.0,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,73,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,74,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,75,literal,0.35,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,76,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,77,literal,0.1,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,78,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,79,literal,0.75,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,80,literal,0.35,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,81,literal,0.7,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,82,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,83,literal,0.7,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,84,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,85,literal,0.55,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,86,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,87,literal,0.3,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,88,literal,0.05,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,89,literal,0.12,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,90,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,91,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,92,literal,0.05,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,93,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,94,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,96,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,97,literal,0.15,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,103,literal,0.1,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,107,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,112,literal,0.35,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,113,literal,0.55,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,115,literal,0.8,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,117,literal,0.7,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,118,literal,0.3,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,119,literal,0.1,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,120,literal,0.3,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,121,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,122,literal,0.4,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,123,literal,0.35,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,133,literal,2.0,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,135,literal,0.7,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,139,literal,3,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,141,literal,0.6,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,142,literal,0.3,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,143,literal,0.05,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,146,literal,0.65,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,288,literal,100,measure,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,289,literal,100,measure,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,321,literal,4,evaluate,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,336,literal,4,evaluate,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,367,literal,6,perturbations_for,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,369,literal,6,perturbations_for,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,405,literal,1.2,main,ESTABLISHED,optimizer-default,0,fit upper bound default (design 5).
+tools/stage5_fit_driver.py,406,literal,9,main,ESTABLISHED,optimizer-default,0,coarse-ladder step count.
+tools/stage5_fit_driver.py,407,literal,2,main,ESTABLISHED,optimizer-default,0,refine rounds.
+tools/stage5_fit_driver.py,456,literal,4,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,470,literal,4,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,516,literal,2,main,ESTABLISHED,structural,0,structural constant reviewed at source; not inference-affecting.
+tools/stage5_fit_driver.py,564,literal,4,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,608,literal,63.36,main,ESTABLISHED,reproduce-target,1,RATIFIED Baroque baseline hand-transcribed; reproduced EXACTLY by the fixture this run (MATCH) and matches CLAUDE.md. Hand-maintained (comment shows a prior 63.32->63.36 hand-update at 2.2e) -- must be re-synced at each corpus re-baseline. Self-checking: the fixture FAILS loudly if it drifts.
+tools/stage5_fit_driver.py,608,literal,62.37,main,ESTABLISHED,reproduce-target,1,RATIFIED Jazz baseline; fixture MATCH; hand-maintained.
+tools/stage5_fit_driver.py,608,literal,63.25,main,ESTABLISHED,reproduce-target,1,RATIFIED Default baseline; fixture MATCH; hand-maintained.
+tools/stage5_fit_driver.py,657,literal,4,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,102,literal,0.125,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,102,literal,0.1,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,102,literal,0.125,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,105,literal,0.235,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,105,literal,0.21,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,105,literal,0.235,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,126,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,126,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,126,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,128,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,128,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,128,literal,0.5,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,130,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,130,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,130,literal,0.45,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,132,literal,0.4,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,132,literal,0.15,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,132,literal,0.4,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,145,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,145,literal,0.12,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,145,literal,0.2,<module-scope>,ESTABLISHED,fit-surface-mirror,0,fit-surface parameter value mirrored from the C++ source + param_manifest.json; established by the fixture reproduce-check for sensitive params (see report's PARAMS triple-representation finding for the zero-sensitivity gap). In param_manifest: yes.
+tools/stage5_fit_driver.py,291,literal,100,measure,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,322,literal,4,evaluate,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,322,literal,4,evaluate,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,367,literal,0.1,perturbations_for,ESTABLISHED,step-policy,0,perturbation +/-10% for values >1 (design 4.3 1b).
+tools/stage5_fit_driver.py,374,literal,6,perturbations_for,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,474,literal,6,eval_at,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,499,literal,6,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,533,literal,1e-09,main,ESTABLISHED,epsilon,0,already-optimal delta epsilon.
+tools/stage5_fit_driver.py,620,literal,0.005,main,ESTABLISHED,reproduce-tolerance,0,fixture match tolerance = half the last printed digit.
+tools/stage5_fit_driver.py,633,literal,0.9,main,ESTABLISHED,test-input,0,determinism-check perturbation value (arbitrary).
+tools/stage5_fit_driver.py,634,literal,0.9,main,ESTABLISHED,test-input,0,determinism-check perturbation value (arbitrary).
+tools/stage5_fit_driver.py,519,literal,6,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,519,literal,6,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,440,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,440,literal,100,main,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,272,literal,400,regen,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/stage5_fit_driver.py,284,literal,400,measure,ESTABLISHED,presentation,0,display/format/structural constant; no inference effect.
+tools/analyze_inversion_errors.py,101,io,glob,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,182,io,glob,measure_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,203,io,loads,measure_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,230,io,glob,measure_l4_l5,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,250,io,loads,measure_l4_l5,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,409,io,write_text,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/c1_reliability.py,203,io,read_text,measure_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,250,io,read_text,measure_l4_l5,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,409,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,293,io,loads,measure_devbeds,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/c1_reliability.py,293,io,read_text,measure_devbeds,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,51,io,loads,_load_splits,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,302,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/calibration_fit.py,51,io,read_text,_load_splits,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,69,io,glob,collect_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,93,io,loads,collect_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,112,io,glob,collect_l4,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,135,io,loads,collect_l4,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,93,io,read_text,collect_l3,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,135,io,read_text,collect_l4,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,323,io,write_text,main,SURVIVES,io-write-committed,1,default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default).
+tools/calibration_fit.py,333,io,write_text,main,SURVIVES,io-write-committed,1,default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default).
+tools/calibration_fit.py,58,io,loads,_corpus_git_hash,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/calibration_fit.py,323,io,dumps,main,SURVIVES,io-write-committed,1,default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default).
+tools/calibration_fit.py,333,io,dumps,main,SURVIVES,io-write-committed,1,default --out-dir tools/calibration_maps writes into a COMMITTED location (dangerous default).
+tools/calibration_fit.py,58,io,read_text,_corpus_git_hash,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/music21_batch.py,446,io,mkdir,run_batch,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/music21_batch.py,439,io,open,process_chorale,SURVIVES,io-write-committed,1,default --output tools/corpus writes .music21.json into the COMMITTED canonical corpus (dangerous default).
+tools/music21_batch.py,440,io,dump,process_chorale,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/oracle_root_metric.py,154,io,glob,load_dir,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/oracle_root_metric.py,441,io,write_text,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/oracle_root_metric.py,442,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,239,io,loads,split_scores_file,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,242,io,write_text,split_scores_file,SURVIVES,io-write-committed,1,split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default).
+tools/stage5_fit_driver.py,259,io,write_text,write_override,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,286,io,loads,measure,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,352,io,dumps,stable_row,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,424,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,185,io,glob,wir_covered_stems,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,239,io,read_text,split_scores_file,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,285,io,loads,measure,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,286,io,read_text,measure,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,346,io,open,ledger_append,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,432,io,write_text,main,SURVIVES,io-write-committed,1,split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default).
+tools/stage5_fit_driver.py,444,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,462,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,467,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,545,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,549,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,604,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,609,io,loads,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,612,io,write_text,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,630,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,643,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,646,io,mkdir,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,285,io,read_text,measure,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,432,io,dumps,main,SURVIVES,io-write-committed,1,split-mode writes the COMMITTED tools/stage5_split_registry.json (dangerous default).
+tools/stage5_fit_driver.py,458,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,609,io,read_text,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,347,io,dumps,ledger_append,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,491,io,open,eval_at,SURVIVES,io-write-committed,0,"fit-mode appends to the COMMITTED tools/fit_ledgers -- by design (O-8), not a defect."
+tools/stage5_fit_driver.py,568,io,open,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,594,io,open,main,SURVIVES,io-write-committed,0,"audit-mode appends to the COMMITTED tools/fit_ledgers -- by design (O-8), not a defect."
+tools/stage5_fit_driver.py,659,io,open,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,553,io,read_text,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,555,io,loads,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,649,io,read_text,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,651,io,loads,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,689,io,open,main,SURVIVES,io-write,0,writes a scratch/artifact output.
+tools/stage5_fit_driver.py,492,io,dumps,eval_at,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,569,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,595,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,660,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,195,io,loads,score_mode,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,690,io,dumps,main,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/stage5_fit_driver.py,195,io,read_text,score_mode,SURVIVES,io-read,0,consumes a reference/substrate artifact.
+tools/analyze_inversion_errors.py,59,crosslayer,compare_analyses,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_analyses (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/analyze_inversion_errors.py,60,crosslayer,dcml_parser,<import>,SURVIVES,reuse-verbatim-import,0,"imports dcml_parser (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/analyze_inversion_errors.py,61,crosslayer,characterise_bir_false,<import>,SURVIVES,reuse-verbatim-import,0,"imports characterise_bir_false (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/c1_reliability.py,50,crosslayer,a8_rebaseline_measure,<import>,SURVIVES,reuse-verbatim-import,0,"imports a8_rebaseline_measure (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/c1_reliability.py,51,crosslayer,compare_analyses,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_analyses (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/c1_reliability.py,52,crosslayer,compare_rn,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_rn (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/c1_reliability.py,53,crosslayer,dcml_parser,<import>,SURVIVES,reuse-verbatim-import,0,"imports dcml_parser (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/c1_reliability.py,54,crosslayer,compare_l6_oracle,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_l6_oracle (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/calibration_fit.py,39,crosslayer,c1_reliability,<import>,SURVIVES,reuse-verbatim-import,0,"imports c1_reliability (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/calibration_fit.py,40,crosslayer,compare_analyses,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_analyses (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/oracle_root_metric.py,83,crosslayer,compare_analyses,<import>,SURVIVES,reuse-verbatim-import,0,"imports compare_analyses (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/oracle_root_metric.py,84,crosslayer,dcml_parser,<import>,SURVIVES,reuse-verbatim-import,0,"imports dcml_parser (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/oracle_root_metric.py,85,crosslayer,characterise_bir_false,<import>,SURVIVES,reuse-verbatim-import,0,"imports characterise_bir_false (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
+tools/stage5_fit_driver.py,43,crosslayer,dcml_parser,<import>,SURVIVES,reuse-verbatim-import,0,"imports dcml_parser (shared regression-stop-core primitive); one-path reuse (#6), not a fork."
