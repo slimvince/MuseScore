@@ -125,9 +125,6 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 // ── Namespace aliases ──────────────────────────────────────────────────────
 using namespace mu::engraving;
 namespace analysis = mu::composing::analysis;
-// Layer-4 audit pass-1 (default-OFF): flush entry for the oracle fire-count instrumentation
-// in chordanalyzer.cpp; called just before the hard terminate below, which bypasses atexit.
-namespace mu::composing::analysis { void flushOracleFireCounters(); }
 using analysis::ChordAnalysisTone;
 using analysis::ChordAnalysisResult;
 using analysis::ChordQuality;
@@ -4615,9 +4612,6 @@ int main(int argc, char* argv[])
     }
 
     delete score;
-    // Audit pass-1 (default-OFF): flush the oracle fire counters before the hard terminate
-    // below (which bypasses atexit). A no-op unless MU_ORACLE_FIRECOUNT names an output file.
-    analysis::flushOracleFireCounters();
     // Skip static-module destructor sequence (crashes due to ordering constraints).
     // On Windows, some runs hang in Qt TLS shutdown during ExitProcess after the
     // JSON is already fully written. TerminateProcess bypasses that teardown.
