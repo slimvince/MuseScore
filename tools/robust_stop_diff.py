@@ -113,6 +113,22 @@ def ref_key_pcts(manifest_path: Path, preset: str):
     return p.get("key_agree_pct"), p.get("key_agree_pct_local")
 
 
+def cand_coverage(summary_path: Path, preset: str):
+    """Candidate WiR coverage (OI-140): (wir_covered, wir_parse_fail, wir_parse_fail_stems).
+    parse_fail/stems are None if the candidate summary predates the OI-140 fields."""
+    S = json.load(open(summary_path, encoding="utf-8"))
+    cov = S[preset].get("coverage", {})
+    return (cov.get("wir_covered"), cov.get("wir_parse_fail"),
+            cov.get("wir_parse_fail_stems"))
+
+
+def ref_coverage(manifest_path: Path, preset: str):
+    """Reference WiR coverage (OI-140): wir_covered from the committed manifest, or None if the
+    manifest predates the coverage block (then coverage cannot be reconciled)."""
+    M = json.load(open(manifest_path, encoding="utf-8"))
+    return M["presets"][preset].get("coverage", {}).get("wir_covered")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--reference", default=str(_ROOT / "tools" / "robust_stop"),
@@ -145,9 +161,28 @@ def main():
         added = sorted(set(cand_runs) - set(ref_runs))
         removed = sorted(set(ref_runs) - set(cand_runs))
 
+        # OI-140 — WiR COVERAGE reconcile: a systematic WiR-parse breakage in the candidate
+        # would drop pieces -> LOWER the class-(b) duration -> silently PASS the non-increase
+        # hard stop. Reconcile the candidate's wir_covered against the committed reference; a
+        # SHRINK fails the diff loudly (the automated gate the mandatory explained run-diff alone
+        # did not enforce).
+        cand_cov, cand_pf, cand_pf_stems = cand_coverage(cand_summary, preset)
+        ref_cov = ref_coverage(manifest, preset)
+        cov_ok = True
+        if ref_cov is not None and cand_cov is not None and cand_cov < ref_cov:
+            cov_ok = False
+
         print(f"=== {preset} ===")
         print(f"  runs: reference={len(ref_runs)} candidate={len(cand_runs)}  "
               f"(+{len(added)} / -{len(removed)})")
+        cov_tag = "OK" if cov_ok else "COVERAGE SHRUNK"
+        print(f"  WiR COVERAGE: reference={ref_cov} candidate={cand_cov}  -> {cov_tag}")
+        if cand_pf:
+            print(f"  !! WiR PARSE FAILURE on {cand_pf} candidate stem(s): {cand_pf_stems}")
+        if not cov_ok:
+            print(f"  !! COVERAGE SHRANK by {ref_cov - cand_cov} score(s) — the class-(b) "
+                  f"population is smaller than the reference; a non-increase can be an artifact "
+                  f"of dropped pieces, not a real improvement. FAIL.")
         print(f"  (a) HARD STOP class-(b) root-disagree dur: ref={ref_cb} cand={cand_cb} "
               f"delta={d_cb:+d}  -> {'PASS' if cb_pass else 'FAIL'}")
         ca_flag = "  ** INVESTIGATE (large net increase)" if d_ca > CLASS_A_INVESTIGATE_TICKS else ""
@@ -179,10 +214,10 @@ def main():
 
         _dump("ADDED (candidate not in reference)", added)
         _dump("REMOVED (reference not in candidate)", removed)
-        overall_pass = overall_pass and cb_pass
+        overall_pass = overall_pass and cb_pass and cov_ok
 
     print(f"\nOVERALL: {'PASS' if overall_pass else 'FAIL'} "
-          f"(hard stop = class-(b) duration non-increase, all presets)")
+          f"(hard stop = class-(b) duration non-increase + WiR coverage non-shrink, all presets)")
     sys.exit(0 if overall_pass else 1)
 
 

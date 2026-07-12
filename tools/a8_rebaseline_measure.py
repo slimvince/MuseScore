@@ -270,6 +270,8 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
         ours_files = [p for p in ours_files if p.stem.replace(".ours", "") in scores]
     total_files = len(ours_files)
     wir_covered = 0
+    wir_no_annotation = 0            # OI-140: stem has no WiR reference (a legitimate exclusion)
+    wir_parse_fail_stems = []        # OI-140: WiR file present but load failed / yielded 0 regions
     m21_and_wir = 0
 
     # aggregates
@@ -314,14 +316,29 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
                 _, m21_regions = cmp.load_analysis(m21_path)
             except Exception:
                 m21_regions = []
+        # ── WiR ground truth (OI-140: distinguish a MISSING annotation from a PARSE FAILURE) ──
+        # The governing hard stop is a class-(b) root-disagree DURATION non-increase; a WiR-parse
+        # failure that silently became an empty list would DROP the piece from the class-(b)
+        # population and could PASS the non-increase gate by shrinking coverage. So a present-but-
+        # unparseable WiR file is NAMED (never folded into the no-annotation bucket), and the
+        # wir_covered figure the summary exports lets robust_stop_diff reconcile coverage and fail
+        # loudly on a systematic break.
+        wir_path = dcml.find_wir_file(str(WIR_DIR), stem)
+        if wir_path is None:
+            wir_no_annotation += 1
+            continue    # no human GT for this stem — a legitimate exclusion, not a failure
         wir_regions = []
         try:
             # THE shared WiR loading substrate (applies the OI-142 transposition correction).
             wir_regions = dcml.load_wir_regions(str(WIR_DIR), stem)
-        except Exception:
-            wir_regions = []
+        except Exception as exc:
+            wir_parse_fail_stems.append((stem, f"{type(exc).__name__}: {exc}"))
+            continue
         if not wir_regions:
-            continue    # variant (b) needs WiR; no human GT -> excluded (counted below)
+            # a present WiR file that yields no scoreable region is a parse anomaly, not a
+            # missing annotation — name it so it cannot silently shrink the class-(b) population.
+            wir_parse_fail_stems.append((stem, "present WiR file yielded 0 scoreable regions"))
+            continue
         wir_covered += 1
         if m21_regions:
             m21_and_wir += 1
@@ -419,6 +436,11 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
             "wir_covered": wir_covered,           # variant (b) denominator (scores)
             "m21_and_wir": m21_and_wir,           # variant (a) denominator (scores)
             "no_wir": total_files - wir_covered,
+            # OI-140: the no_wir total split into its WiR causes so a systematic WiR-parse
+            # breakage surfaces as a NAMED failure rather than a silent coverage shrink.
+            "wir_no_annotation": wir_no_annotation,
+            "wir_parse_fail": len(wir_parse_fail_stems),
+            "wir_parse_fail_stems": [s for s, _ in wir_parse_fail_stems],
         },
         "agg": {k: (dict(v) if isinstance(v, Counter) else v) for k, v in agg.items()},
         "batch_gate_count": len(batch_cases),
@@ -444,6 +466,14 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
     (out_dir / f"{preset}_mapping.json").write_text(
         json.dumps(mapping, indent=1), encoding="utf-8")
     result["mapping_summary"] = mapping["summary"]
+
+    # OI-140: a WiR-parse failure must never be silent — it shrinks the class-(b) population.
+    if wir_parse_fail_stems:
+        print(f"[{preset}] !! WiR PARSE FAILURE on {len(wir_parse_fail_stems)} stem(s) — "
+              f"class-(b) coverage is REDUCED (would silently pass the non-increase gate):",
+              file=sys.stderr)
+        for stem, reason in wir_parse_fail_stems:
+            print(f"    {stem}: {reason}", file=sys.stderr)
 
     return result, a_runs, b_runs, batch_cases
 
