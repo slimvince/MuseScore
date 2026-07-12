@@ -1,0 +1,111 @@
+{
+  "audit": "EG-7 Layer-5 + instruments certification, PASS 1 (blind) \u2014 SHARED HARNESS",
+  "population": "INSTRUMENT-HARNESS (tools/batch_analyze.cpp)",
+  "instruction": "cc_instruction_l5_audit_pass1_harness.md",
+  "head_commit": "abe726ffa2850efbfba48da40053defaa45660dc",
+  "corpus_hash": "c50002fee1",
+  "total_rows": 870,
+  "row_counts_by_kind": {
+    "function": 51,
+    "literal": 188,
+    "branch": 562,
+    "crosslayer": 69
+  },
+  "verdict_counts": {
+    "SURVIVES": 682,
+    "ESTABLISHED": 188
+  },
+  "subclass_counts": {
+    "function:plumbing": 26,
+    "function:preset-builder": 1,
+    "function:pipeline-driver": 6,
+    "function:output-surface": 18,
+    "literal:formatting-or-structural": 27,
+    "literal:formatting": 74,
+    "literal:init-or-neutral": 25,
+    "literal:music-theory": 35,
+    "literal:serialization-projection": 2,
+    "literal:diagnostic-threshold": 6,
+    "literal:structural": 4,
+    "literal:inference-affecting-manifested": 15,
+    "branch:serialization-guard": 442,
+    "branch:arg-parse-dispatch": 120,
+    "crosslayer:external-substrate": 34,
+    "crosslayer:layer-consume": 35
+  },
+  "flagged_row_count": 29,
+  "findings": [
+    {
+      "slug": "default-preset-mode-priors-hand-copied",
+      "rows": 21,
+      "note": "One of 21 mode-prior values hand-copied from composingconfiguration.cpp into applyPreset()'s 'Default' branch; sync is enforced ONLY by a code comment (no mechanical check) and the values are NOT recorded in tools/param_manifest.json (which is chord-scoring scoped) \u2014 a value-copied inference-affecting constant (guiding #6 unification / #17f manifest).",
+      "lines": [
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216
+      ]
+    },
+    {
+      "slug": "onset-boundary-threshold-hardcoded",
+      "rows": 3,
+      "note": "onsetBoundaryThreshold is hard-coded to 0.25, duplicating the IComposingAnalysisConfiguration default the user-facing bridge reads; a documented latent divergence (roadmap 0.6) \u2014 the two coincide today but nothing mechanically keeps them equal, so a config-default change would make batch stop measuring the user pipeline.",
+      "lines": [
+        597,
+        2555,
+        3718
+      ]
+    },
+    {
+      "slug": "flags-absent-from-help",
+      "rows": 2,
+      "note": "'--reachback-ab' is parsed here but is absent from printHelp() and BUILD_AND_TEST.md (documented only in an in-code comment) \u2014 an undocumented measurement mode on the shared harness (contract code->doc).",
+      "lines": [
+        3982,
+        4093
+      ]
+    },
+    {
+      "slug": "inventory-overcapture-call-as-function",
+      "rows": 1,
+      "note": "Not a second definition of locateMeasureByTick \u2014 this is a CALL site inside convertNotationRegion; the over-capture-biased C++ inventory scanner (bias disclosed in tools/audit/l5/manifest.json) emitted a spurious function row. The real definition is at 438-470.",
+      "lines": [
+        748
+      ]
+    },
+    {
+      "slug": "exit-path-asymmetry",
+      "rows": 1,
+      "note": "main() ends the standard analysis path by force-exiting (TerminateProcess/std::_Exit, bypassing static destructors to dodge a Qt-TLS shutdown hang), while the ~10 diagnostic early-return paths return normally and DO run that destructor sequence; the two exit disciplines are inconsistent (whether the diagnostic returns are ever exposed to the same 'some runs' hang is unestablished \u2014 not observed on --validate-slices/--decode-chords this session).",
+      "lines": [
+        3859
+      ]
+    },
+    {
+      "slug": "standard-output-crlf-vs-diagnostic-lf",
+      "rows": 1,
+      "note": "The standard analysis output file is opened with QIODevice::Text, so on Windows the committed .ours.json corpus is written with CRLF line endings; every diagnostic path instead writes with std::ofstream(std::ios::binary) (LF only). The two output paths use different line-ending disciplines; corpus byte-identity holds only while regeneration stays on Windows with Text mode (confirmed CRLF vs LF and reproduce-identical this session).",
+      "lines": [
+        4593
+      ]
+    }
+  ],
+  "reproduce_check": "byte-identical vs tools/corpus/{baroque,jazz,default} \u2014 352/352 each preset (this session, scratch regen)"
+}
