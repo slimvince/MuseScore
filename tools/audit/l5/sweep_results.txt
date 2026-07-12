@@ -1,0 +1,116 @@
+=== DT-2_unestablished_constant : 25 hit(s) ===
+  {"name": "wBase", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "195", "value": "double wBase            = 1.0;   ///< every admitted cadence", "in_manifest": false}
+  {"name": "wBassFiveToOne", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "196", "value": "double wBassFiveToOne   = 1.0;   ///< evidence: bass 5\u0302\u21921\u0302", "in_manifest": false}
+  {"name": "wLeadingTone", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "197", "value": "double wLeadingTone     = 1.0;   ///< evidence: leading-tone resolution", "in_manifest": false}
+  {"name": "wSeventh", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "198", "value": "double wSeventh         = 1.0;   ///< evidence: genuine dominant (seventh / resolving trit", "in_manifest": false}
+  {"name": "wMetric", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "199", "value": "double wMetric          = 1.0;   ///< salience: multiplied by the event metric weight [0.5", "in_manifest": false}
+  {"name": "wPhraseBoundary", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "200", "value": "double wPhraseBoundary  = 2.0;   ///< salience: fermata / section end (the structural prim", "in_manifest": false}
+  {"name": "wFinalBar", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "201", "value": "double wFinalBar        = 1.0;   ///< salience: the final bar", "in_manifest": false}
+  {"name": "discountHalf", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "203", "value": "double discountHalf     = 0.5;   ///< half is the weakest reading \u2014 held lower by rule", "in_manifest": false}
+  {"name": "discountPlagal", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "204", "value": "double discountPlagal   = 0.5;   ///< plagal is a possible post-cadential prolongation \u2014 l", "in_manifest": false}
+  {"name": "discountEvaded", "owner": "FunctionCadenceParams", "file": "src/composing/analysis/function/functioncadence.h", "line": "205", "value": "double discountEvaded   = 0.5;   ///< evaded \u2014 lower by rule", "in_manifest": false}
+  {"name": "baseChangeCost", "owner": "ModulationParams", "file": "src/composing/analysis/function/functionmodulation.h", "line": "111", "value": "double baseChangeCost   = 1.0;  ///< the cost to commit a key change at zero persistence e", "in_manifest": false}
+  {"name": "wDuration", "owner": "ModulationParams", "file": "src/composing/analysis/function/functionmodulation.h", "line": "112", "value": "double wDuration        = 1.0;  ///< evidence per whole-note of cadence-confirmed candidat", "in_manifest": false}
+  {"name": "wCadentialWeight", "owner": "ModulationParams", "file": "src/composing/analysis/function/functionmodulation.h", "line": "113", "value": "double wCadentialWeight = 1.0;  ///< evidence per unit of accumulated \u00a75.2 cadential vote ", "in_manifest": false}
+  {"name": "wSpelling", "owner": "ModulationParams", "file": "src/composing/analysis/function/functionmodulation.h", "line": "114", "value": "double wSpelling        = 0.5;  ///< \u00a75.3 notated-spelling support (function-gated), SOFT ", "in_manifest": false}
+  {"name": "override", "owner": "ModulationParams", "file": "src/composing/analysis/function/functionmodulation.h", "line": "117", "value": "ForwardOverrideParams override; ///< the cadence-strength-vs-key-confidence bar (firewall ", "in_manifest": false}
+  {"name": "wCadenceVote", "owner": "FunctionOutputParams", "file": "src/composing/analysis/function/functionoutput.h", "line": "103", "value": "double wCadenceVote    = 1.0;   ///< weight of the \u00a75.2 cadence-vote component", "in_manifest": false}
+  {"name": "wLicensedFit", "owner": "FunctionOutputParams", "file": "src/composing/analysis/function/functionoutput.h", "line": "104", "value": "double wLicensedFit    = 1.0;   ///< weight of the \u00a75.0 licensed-progression-fit component", "in_manifest": false}
+  {"name": "wNextBestMargin", "owner": "FunctionOutputParams", "file": "src/composing/analysis/function/functionoutput.h", "line": "105", "value": "double wNextBestMargin = 1.0;   ///< weight of the \u00a75.5 margin component", "in_manifest": false}
+  {"name": "override", "owner": "FunctionResolverParams", "file": "src/composing/analysis/function/functionresolver.h", "line": "215", "value": "ForwardOverrideParams override;///< \u00a78: the fine-grain override threshold (firewall seeds)", "in_manifest": false}
+  {"name": "enableForwardExtension", "owner": "L5ForwardExtensionParams", "file": "src/composing/analysis/function/functionresolver.h", "line": "271", "value": "bool enableForwardExtension = false;   ///< OFF \u21d2 no request, byte-identical to resolveCar", "in_manifest": false}
+  {"name": "maxForwardExtendBeats", "owner": "L5ForwardExtensionParams", "file": "src/composing/analysis/function/functionresolver.h", "line": "273", "value": "int  maxForwardExtendBeats  = 0;       ///< B \u2014 the bound in beats (0 \u21d2 slice bound only)", "in_manifest": false}
+  {"name": "blendRate", "owner": "RecognitionParams", "file": "src/composing/analysis/progression/progressionrecognizer.h", "line": "115", "value": "double blendRate = 1.0;", "in_manifest": false}
+  {"name": "admissionThreshold", "owner": "RecognitionParams", "file": "src/composing/analysis/progression/progressionrecognizer.h", "line": "120", "value": "double admissionThreshold = 0.0;", "in_manifest": false}
+  {"name": "modeCueFactor", "owner": "RecognitionParams", "file": "src/composing/analysis/progression/progressionrecognizer.h", "line": "126", "value": "double modeCueFactor = 0.5;", "in_manifest": false}
+  {"name": "chordsOnlyFactor", "owner": "RecognitionParams", "file": "src/composing/analysis/progression/progressionrecognizer.h", "line": "132", "value": "double chordsOnlyFactor = 0.5;", "in_manifest": false}
+
+=== DT-3_value_copied_constant : 5 hit(s) ===
+  {"kind": "comment-soft-value-copy", "file": "src/composing/analysis/function/functioncadence.h", "line": 143, "couples_to": "stronger", "value": "1.0", "text": "double metricWeight = 1.0;   ///< \u00a73 metric weight of the event's onset [0.5,1.0]; higher = stronger"}
+  {"kind": "comment-soft-value-copy", "file": "src/composing/analysis/function/functionprogression.h", "line": 141, "couples_to": "metrically", "value": "1.0", "text": "double metricWeight = 1.0;    ///< slice metric weight (\u00a73); higher == metrically stronger"}
+  {"kind": "comment-soft-value-copy", "file": "src/composing/analysis/function/functionresolver.h", "line": 125, "couples_to": "metrically", "value": "1.0", "text": "double metricWeight = 1.0;     ///< slice metric weight (\u00a73); higher == metrically stronger"}
+  {"kind": "comment-soft-value-copy", "file": "tools/batch_analyze.cpp", "line": 4248, "couples_to": "struct", "value": "0.70", "text": "chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Default carrier (== struct default)"}
+  {"kind": "comment-soft-value-copy", "file": "tools/batch_analyze.cpp", "line": 4249, "couples_to": "global", "value": "0.125", "text": "presetKWStepIn                                   = 0.125;  // O-9 Default carrier (2.2e-ADOPTED == global initializer)"}
+
+=== DT-5_siloed_fact : 7 hit(s) ===
+  {"symbol": "resolveCarriedReadings", "owner_files": ["src/composing/analysis/function/functionresolver.cpp", "src/composing/analysis/function/functionresolver.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "degreeFunctionalBias", "owner_files": ["src/composing/analysis/function/functionresolver.cpp", "src/composing/analysis/function/functionresolver.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "recognizeProgressions", "owner_files": ["src/composing/analysis/progression/progressionrecognizer.cpp", "src/composing/analysis/progression/progressionrecognizer.h"], "external_production_consumers": ["src/composing/analysis/CMakeLists.txt"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "deriveBaseRomanNumeral", "owner_files": ["src/composing/analysis/function/functionromannumeral.cpp", "src/composing/analysis/function/functionromannumeral.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "labelTonicizations", "owner_files": ["src/composing/analysis/function/tonicizationlabeler.cpp", "src/composing/analysis/function/tonicizationlabeler.h"], "external_production_consumers": ["src/composing/analysis/function/functionrelationallabel.cpp"], "n_external": 1, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "cadenceTonicVote", "owner_files": ["src/composing/analysis/function/functioncadence.cpp", "src/composing/analysis/function/functioncadence.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+  {"symbol": "detectFunctionalCadences", "owner_files": ["src/composing/analysis/function/functioncadence.cpp", "src/composing/analysis/function/functioncadence.h"], "external_production_consumers": [], "n_external": 0, "note": "0-1 production consumers outside its own module (siloed/dormant)"}
+
+=== DT-12_stale_anchor : 2 hit(s) ===
+  {"file": "tools/batch_analyze.cpp", "line": 592, "kind": "file:line-anchor-stale-content", "ref": "notationharmonicrhythmbridge.cpp:85", "resolves": false, "cited_symbol": ["falling"], "why": "cited symbol not near the cited line \u2014 line number drifted"}
+  {"file": "tools/batch_analyze.cpp", "line": 4267, "kind": "file:line-anchor-stale-content", "ref": "paramoverride.cpp:365", "resolves": false, "cited_symbol": ["adoption", "global", "INITIALIZER"], "why": "cited symbol not near the cited line \u2014 line number drifted"}
+
+=== DT-16_raw_dom_outside_L1 : 0 hit(s) ===
+
+=== DT-19_layer_boundary : 1 hit(s) ===
+  {"file": "tools/batch_analyze.cpp", "line": "109", "include": "composing/analysis/grouping/groupinglayer.h", "up_to": "L6", "including_file_tag": "INSTRUMENT-HARNESS", "note": "INSTRUMENT-HARNESS file includes a L6 header (upward dependency)"}
+
+=== DT-5_local_dead_field : 0 hit(s) ===
+
+=== DT-23_silent_failure : 40 hit(s) ===
+  {"file": "tools/a8_rebaseline_measure.py", "line": 292, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/a8_rebaseline_measure.py", "line": 300, "except": "except Exception:", "handler_first": "m21_regions = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/a8_rebaseline_measure.py", "line": 307, "except": "except Exception:", "handler_first": "wir_regions = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/analyze_inversion_errors.py", "line": 152, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 171, "except": "except Exception:", "handler_first": "return []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 189, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 198, "except": "except Exception:", "handler_first": "m21 = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 239, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 248, "except": "except Exception:", "handler_first": "m21 = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/c1_reliability.py", "line": 294, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/calibration_fit.py", "line": 59, "except": "except Exception:", "handler_first": "return \"?\"", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/calibration_fit.py", "line": 79, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/calibration_fit.py", "line": 88, "except": "except Exception:", "handler_first": "m21 = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/calibration_fit.py", "line": 124, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/calibration_fit.py", "line": 133, "except": "except Exception:", "handler_first": "m21 = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/characterise_bir_false.py", "line": 141, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/characterise_bir_false.py", "line": 152, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/compare_rn.py", "line": 73, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/compare_rn.py", "line": 514, "except": "except Exception:", "handler_first": "return None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/compare_rn.py", "line": 518, "except": "except Exception:", "handler_first": "return None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/compare_rn.py", "line": 655, "except": "except Exception:", "handler_first": "return None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/compare_rn.py", "line": 717, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/dcml_parser.py", "line": 189, "except": "except Exception:", "handler_first": "return None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/dcml_parser.py", "line": 451, "except": "except Exception:", "handler_first": "return globalkey", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/dcml_parser.py", "line": 685, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 110, "except": "except Exception:", "handler_first": "return False", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 131, "except": "except Exception:", "handler_first": "return \"part_count_error\"", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 184, "except": "except Exception:", "handler_first": "global_key = None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 195, "except": "except Exception:", "handler_first": "fk_analyzer = None", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 201, "except": "except Exception as exc:", "handler_first": "return {", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 227, "except": "except Exception:", "handler_first": "local_key = global_key", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/music21_batch.py", "line": 243, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/oracle_root_metric.py", "line": 162, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/oracle_root_metric.py", "line": 171, "except": "except Exception:", "handler_first": "wir = []", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/run_bach_preset.py", "line": 69, "except": "except Exception:", "handler_first": "continue", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/run_bach_preset.py", "line": 236, "except": "except Exception:", "handler_first": "return 'unknown'", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/run_bach_preset.py", "line": 268, "except": "except Exception as exc:", "handler_first": "return (idx, stem, 'ERROR', None, diag_buf.getvalue(), str(exc))", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/stage5_fit_driver.py", "line": 196, "except": "except Exception:", "handler_first": "return \"unknown\"", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/stage5_fit_driver.py", "line": 558, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+  {"file": "tools/stage5_fit_driver.py", "line": 652, "except": "except Exception:", "handler_first": "pass", "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"}
+
+=== DT-24_destructive_default : 2 hit(s) ===
+  {"file": "tools/music21_batch.py", "line": 515, "arg": "--output", "default": "tools/corpus", "note": "argparse default resolves under a committed reference path (DT-24 destructive default)"}
+  {"file": "tools/run_bach_preset.py", "line": 292, "arg": "--corpus-dir", "default": "tools/corpus", "note": "argparse default resolves under a committed reference path (DT-24 destructive default)"}
+
+=== DT-25_undocumented_mode : 7 hit(s) ===
+  {"file": "tools/batch_analyze.cpp", "line": 3875, "flag": "--help", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 4094, "flag": "--key-in-both", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 4094, "flag": "--key-in-candidate-only", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 4093, "flag": "--key-in-keysig-only", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 4093, "flag": "--key-in-neither", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 4095, "flag": "--key-leading-tone", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+  {"file": "tools/batch_analyze.cpp", "line": 3982, "flag": "--reachback-ab", "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"}
+
+=== DT-12_manifest_site_drift : 5 hit(s) ===
+  {"param": "wLicensedOut (resolver plausibility weight)", "site": "functionresolver.h:197", "symbol": "wLicensedOut", "note": "manifest 'site' line does not contain the named param \u2014 line drift (DT-12 manifest anchor)"}
+  {"param": "wLicensedIn (resolver plausibility weight)", "site": "functionresolver.h:198", "symbol": "wLicensedIn", "note": "manifest 'site' line does not contain the named param \u2014 line drift (DT-12 manifest anchor)"}
+  {"param": "wCadentialFit (resolver plausibility weight)", "site": "functionresolver.h:199", "symbol": "wCadentialFit", "note": "manifest 'site' line does not contain the named param \u2014 line drift (DT-12 manifest anchor)"}
+  {"param": "decidingMargin (resolver)", "site": "functionresolver.h:200", "symbol": "decidingMargin", "note": "manifest 'site' line does not contain the named param \u2014 line drift (DT-12 manifest anchor)"}
+  {"param": "maxForwardExtendSlices (L5 forward-extension bound)", "site": "functionresolver.h:258", "symbol": "maxForwardExtendSlices", "note": "manifest 'site' line does not contain the named param \u2014 line drift (DT-12 manifest anchor)"}
+

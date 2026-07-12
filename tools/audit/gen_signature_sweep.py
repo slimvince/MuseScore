@@ -130,6 +130,47 @@ LAYERS = {
         },
         "dt5_local_dead": True,
     },
+    "l5": {
+        "dir": "l5",
+        "prefix": "l5_",
+        # L5 spans the dormant function/progression resolver (C++), the Python
+        # instrument chain, and the shared C++ harness batch_analyze.cpp.
+        "file_tags": ("L5-DORMANT", "INSTRUMENT", "INSTRUMENT-HARNESS"),
+        # L5 is the TOP analysis layer; the only strictly-upward analysis target
+        # is L6 (grouping/display). key/chord/region/etc. are peer-or-lower.
+        "dt19_upward": {"grouping": "L6"},
+        "dt2_named_const": set(),
+        "dt2_inline": [],
+        # The dormant resolver's firewall seeds live in the *Params config structs
+        # (FunctionCadenceParams / ModulationParams / FunctionOutputParams /
+        # FunctionResolverParams / RecognitionParams / ForwardOverrideParams);
+        # each member checked against param_manifest.json (reproduces OI-120).
+        "dt2_mode": "config_structs",
+        "dt2_config_struct_suffixes": ("Params",),
+        "dt3_soft_copy": True,
+        "dt5_symbols": [
+            "resolveCarriedReadings", "forwardRecompute", "classifyRelationalLabel",
+            "degreeFunctionalBias", "recognizeProgressions", "deriveBaseRomanNumeral",
+            "labelTonicizations", "cadenceTonicVote", "isLicensedProgression",
+            "detectFunctionalCadences",
+        ],
+        "dt5_struct_owner": {},
+        "dt5_local_dead": True,
+        # L5-only extensions: the Python-aware instrument rules + the manifest
+        # site-anchor check (gated so l1l2/l3/l4 sweeps stay byte-identical).
+        "py_rules": True,
+        "py_files": None,   # resolved at runtime = the .py layer_files
+        "dt24_committed_prefixes": (
+            "tools/corpus", "tools/robust_stop", "tools/calibration_maps",
+            "tools/stage5_split_registry.json", "tools/param_manifest.json",
+            "tools/corpus_registry.json", "tools/extra_scores_registry.json",
+        ),
+        "dt25_help_fn": "printHelp",
+        "dt25_arg_file": "tools/batch_analyze.cpp",
+        # manifest sites whose file basename matches one of these are L5-scoped
+        "dt12_manifest_scope": ("function/", "progression/", "forwardoverride",
+                                "batch_analyze.cpp"),
+    },
 }
 
 
@@ -555,6 +596,155 @@ def sweep_dt16(c):
     return hits
 
 
+# ── DT-23 — silent-failure / silent-drop path in a Python instrument ──────────
+# A broad `except Exception` (or bare `except:`) whose handler only swallows
+# (pass / continue / return None / return / <v> = [] / <v> = None / <v> = globalkey)
+# with NO surfacing (print / raise / sys.stderr / logging) and NO skip-counter
+# (`+= 1` / `.append(`) in the handler block. Reproduces OI-123 / OI-128.
+def _py_layer_files(c):
+    return [f for f in layer_files(c) if f.endswith(".py")]
+
+
+def sweep_dt23(c):
+    hits = []
+    broad = re.compile(r"^(\s*)except\s*(Exception)?\s*(?:as\s+\w+)?\s*:")
+    surfacing = ("print", "raise", "sys.stderr", "logging", "log.", "warn", "warnings")
+    counter = ("+= 1", "+=1", ".append(", ".add(", "skipped", "errors.append")
+    for f in _py_layer_files(c):
+        lines = open(os.path.join(REPO, f), encoding="utf-8", errors="replace").read().splitlines()
+        for i, ln in enumerate(lines):
+            m = broad.match(ln)
+            if not m:
+                continue
+            indent = len(m.group(1))
+            # collect the handler block (more-indented following lines)
+            body = []
+            for j in range(i + 1, min(i + 12, len(lines))):
+                bl = lines[j]
+                if bl.strip() == "":
+                    continue
+                bind = len(bl) - len(bl.lstrip())
+                if bind <= indent:
+                    break
+                body.append(bl)
+            btext = "\n".join(body)
+            swallow = bool(re.search(r"^\s*(pass|continue|return\b.*|[\w.\[\]]+\s*=\s*(\[\]|None|\{\}|globalkey|global_key))\s*$",
+                                     btext.strip().splitlines()[0] if btext.strip() else "", re.M)) if body else False
+            has_surface = any(s in btext for s in surfacing)
+            has_counter = any(cc in btext for cc in counter)
+            if body and swallow and not has_surface and not has_counter:
+                hits.append({"file": f, "line": i + 1, "except": ln.strip(),
+                             "handler_first": body[0].strip()[:80],
+                             "note": "broad/bare except swallows with no surfacing/skip-counter (DT-23 silent-failure)"})
+    return hits
+
+
+# ── DT-24 — destructive default output path (argparse default under a committed ref)
+def sweep_dt24(c):
+    hits = []
+    prefixes = c["dt24_committed_prefixes"]
+    addarg = re.compile(r"add_argument\(([^)]*)\)", re.S)
+    for f in _py_layer_files(c):
+        text = open(os.path.join(REPO, f), encoding="utf-8", errors="replace").read()
+        for m in addarg.finditer(text):
+            call = m.group(1)
+            if "default" not in call:
+                continue
+            dm = re.search(r"default\s*=\s*[\"']([^\"']+)[\"']", call)
+            if not dm:
+                continue
+            dv = dm.group(1).replace("\\", "/")
+            if any(dv == p or dv.startswith(p.rstrip("/") + "/") or dv == p for p in prefixes) or \
+               any(dv.startswith(p) for p in prefixes):
+                nm = re.search(r"[\"'](--?[\w-]+)[\"']", call)
+                line = text[:m.start()].count("\n") + 1
+                hits.append({"file": f, "line": line, "arg": nm.group(1) if nm else "?",
+                             "default": dv,
+                             "note": "argparse default resolves under a committed reference path (DT-24 destructive default)"})
+    return hits
+
+
+# ── DT-25 — undocumented mode: a flag the C++ arg parser matches but printHelp() omits
+def sweep_dt25(c):
+    argf = c["dt25_arg_file"]
+    path = os.path.join(REPO, argf)
+    if not os.path.exists(path):
+        raise RuntimeError("DT-25: arg file missing: " + argf)
+    text = open(path, encoding="utf-8", errors="replace").read()
+    parsed = set(re.findall(r'==\s*"(--[\w-]+)"', text))
+    parsed |= set(re.findall(r'a\s*==\s*"(--[\w-]+)"', text))
+    # extract printHelp() body
+    fn = c["dt25_help_fn"]
+    hm = re.search(r"\b" + re.escape(fn) + r"\s*\([^)]*\)\s*\{", text)
+    help_text = ""
+    if hm:
+        i = hm.end(); depth = 1; start = i
+        while i < len(text) and depth > 0:
+            if text[i] == "{": depth += 1
+            elif text[i] == "}": depth -= 1
+            i += 1
+        help_text = text[start:i]
+    documented = set(re.findall(r"(--[\w-]+)", help_text))
+    if not parsed:
+        raise RuntimeError("DT-25: no parsed flags found — regex broke, refusing silent 0")
+    hits = []
+    for flag in sorted(parsed - documented):
+        line = text.find('"' + flag + '"')
+        ln = text[:line].count("\n") + 1 if line >= 0 else 0
+        hits.append({"file": argf, "line": ln, "flag": flag,
+                     "note": "flag parsed by the arg parser but absent from printHelp() (DT-25 undocumented mode)"})
+    return hits
+
+
+# ── DT-12 (manifest sites) — param_manifest 'site' file:line anchors that no
+# longer point at the named symbol (line drift). Scoped to the L5 files. This is
+# the manifest→source direction (the source→doc direction is sweep_dt12).
+def sweep_dt12_manifest_sites(c):
+    # L5-scoped by file BASENAME (manifest 'site' values are basenames like
+    # "functionresolver.h:197", not paths) — the set of L5 layer-file basenames.
+    l5_basenames = {os.path.basename(f) for f in layer_files(c)}
+    m = json.load(open(os.path.join(REPO, "tools", "param_manifest.json"), encoding="utf-8"))
+    hits = []
+    checked = 0
+    for p in m["parameters"]:
+        site = p.get("site", "")
+        if ":" not in site:
+            continue
+        base, ln = site.rsplit(":", 1)
+        if not ln.strip().isdigit():
+            continue
+        if os.path.basename(base) not in l5_basenames:
+            continue
+        # locate the source file
+        try:
+            ls = subprocess.run(["git", "-C", REPO, "ls-files", "*" + os.path.basename(base)],
+                                capture_output=True, text=True)
+            cand = [x for x in ls.stdout.splitlines() if x.endswith(os.path.basename(base))]
+        except Exception:
+            cand = []
+        sym = p.get("name", "").split(" ")[0]
+        checked += 1
+        target = int(ln)
+        resolved = False
+        for c2 in cand:
+            fp = os.path.join(REPO, c2)
+            if not os.path.exists(fp):
+                continue
+            tl = open(fp, encoding="utf-8", errors="replace").read().splitlines()
+            if len(tl) < target or not sym:
+                continue
+            lo, hi = max(0, target - 4), min(len(tl), target + 3)
+            window = "\n".join(tl[lo:hi])
+            if sym in window:
+                resolved = True
+            break
+        if cand and not resolved and sym:
+            hits.append({"param": p.get("name", ""), "site": site, "symbol": sym,
+                         "note": "manifest 'site' line does not contain the named param — line drift (DT-12 manifest anchor)"})
+    SWEEP_META["DT-12_manifest_sites_checked"] = checked
+    return hits
+
+
 def main():
     ap = argparse.ArgumentParser(description="P8 pass-2 mechanical DEFECT_TYPES sweep over a layer's inventory")
     ap.add_argument("--layer", choices=sorted(LAYERS.keys()), default="l1l2")
@@ -571,6 +761,11 @@ def main():
     }
     if c["dt5_local_dead"]:
         runners["DT-5_local_dead_field"] = lambda: sweep_dt5_local(c)
+    if c.get("py_rules"):
+        runners["DT-23_silent_failure"] = lambda: sweep_dt23(c)
+        runners["DT-24_destructive_default"] = lambda: sweep_dt24(c)
+        runners["DT-25_undocumented_mode"] = lambda: sweep_dt25(c)
+        runners["DT-12_manifest_site_drift"] = lambda: sweep_dt12_manifest_sites(c)
 
     results = {}
     errors = []
