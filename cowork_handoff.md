@@ -49,6 +49,31 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > chord↔key coupling one — the build/re-scope call (key-layer ranking vs menu-widening vs
 > stay-shelved) is the user's. See `OPEN_ITEMS.md` OI-43/OI-44 and STATUS.md (top).
 
+> **★ CC ADDENDUM 3 (2026-07-12, later) — OI-141 KEY/MODE INFERENCE DIAGNOSIS DELIVERED
+> ("why does our key/mode inference not work?").** The user reframed OI-43's key-axis successor
+> to this diagnosis; Cowork wrote the Premise-Gate opening (`cowork_key_mode_inference_diagnosis.md`,
+> cause classes + 8 written predictions); CC ran it read-only
+> (`cc_key_mode_inference_diagnosis_report.md`; `tools/reports/key_mode_inference_diagnosis.json`;
+> classifier `tools/classify_key_disagreement.py`, reconciled EXACTLY to the ratified key column
+> 68.13/64.43/67.50 on all 3 presets, 100 % probe-join, coverage 326/352). **★ HEADLINE: about
+> HALF the reported vs-global "failure" is NOT a key-inference error.** (a) the
+> **tonicization/modulation label-gap dominates (43.1/37.8/42.1 %)** — our region key == the DCML
+> LOCAL key, disagreeing only vs the global-key grading (correct modulation-following penalized by
+> the metric); (b) **corpus TRANSPOSITION (new OI-142): 12 of 326 WiR-covered scores transposed
+> vs their WiR edition** (constant whole-piece root offset, notated signature matches OUR reading)
+> → 100 % key- AND root-disagree = 12.4/11.1/12.1 % of failing mass; **clean-corpus key-agree
+> 70.9/67.1/70.3 %**, and it contaminates the **root-agree hard-stop column too**. Of the GENUINE
+> errors, **wrong-key-area (dominant/subdominant-of-local + distant) beats relative-key confusion
+> (16.2/11.2/16.4 %)** → anchoring/beam/hysteresis (OI-94/OI-91/OI-97), not relative-sibling
+> disambiguation. **Leading-tone (chord-hints) test: 56.7/53.7/58.6 % present (local) / 32–34 %
+> (global) — below the ≥ 60 % predicted**; helps the (minority) relative subset, not the dominant
+> genuine errors. **6 of 8 predictions FAILED. For the user:** two calls — the **OI-142
+> disposition** (re-transpose / exclude / accept; affects BOTH the key- and root-agree columns, a
+> robust-stop re-baseline would follow, O-12) and the **OI-141 research-target selection**
+> (leading-tone/cadence-aware key finding for the relative subset vs anchoring/beam/hysteresis for
+> the wrong-key-area errors). Read-only; both regression stops untouched; fork-only push. See
+> `OPEN_ITEMS.md` OI-141/OI-142 and STATUS.md (top).
+
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
 (2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
