@@ -306,6 +306,27 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # OI-35: the km/fs dump substrate has NO manifest to validate (OI-129's km/fs residual), so the
+    # generalized "validate-or-re-manifest at the read site" rule is applied as far as possible here —
+    # the substrate's per-carrier stem COVERAGE is checked against the validated corpus and surfaced,
+    # so a stale/partial/missing dump substrate cannot silently shrink the fit pool with no signal.
+    # (A full manifest-based validate waits on the km/fs producer stamping a manifest — OI-129.)
+    for carrier in CARRIERS:
+        corpus_stems = {p.stem.replace(".ours", "")
+                        for p in (_ROOT / "tools" / "corpus" / carrier).glob("*.ours.json")}
+        km_dir = Path(args.km_root) / f"km_{carrier}"
+        fs_dir = Path(args.fs_root) / f"fs_{carrier}"
+        km_have = ({p.stem.replace(".keymargin", "") for p in km_dir.glob("*.keymargin.json")}
+                   if km_dir.is_dir() else set())
+        fs_have = ({p.stem.replace(".ours", "") for p in fs_dir.glob("*.ours.json")}
+                   if fs_dir.is_dir() else set())
+        km_missing, fs_missing = corpus_stems - km_have, corpus_stems - fs_have
+        if km_missing or fs_missing:
+            print(f"[OI-35] {carrier} DUMP-SUBSTRATE PARTIAL: km {len(km_have & corpus_stems)}/"
+                  f"{len(corpus_stems)} (missing {len(km_missing)}), fs "
+                  f"{len(fs_have & corpus_stems)}/{len(corpus_stems)} (missing {len(fs_missing)}) "
+                  f"— fit pool silently reduced; regenerate the km/fs dumps.", file=sys.stderr)
+
     print("=" * 78)
     print("calibration_fit — Stage-5 Phase 3 Task A: Class-P reliability maps (L3 margin, L4 composite)")
     print("Fit=fitting split; validate=held_out split. Jazz UNMAPPED (A-7). No behaviour change.")
