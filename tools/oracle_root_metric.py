@@ -58,8 +58,10 @@ THE 5 CHARGED SUB-TIERS (each charged event lands in exactly one)
 CASE-IDENTITY = ``stem@tick`` (the reconstructed DCML onset tick; preset-stable because the
 reconstruction is done per-preset from our anchors). Two DCML annotations can reconstruct to
 the same tick (co-tick); these are distinct *records* but share one identity string, so the
-deduped identity-set size is slightly below the per-record count (the documented co-tick
-reconciliation: per-record charged 3882/4083/3914 vs deduped 3862/4065/3894 Baroque/Jazz/Default).
+deduped identity-set size is slightly below the per-record count. The exact per-record and deduped
+counts are the tool's OWN printed output (regenerable) — not hand-transcribed here (#17f), because
+they drift with each L3-wiring / grading re-baseline (the former docstring figures 3882/4083/3914 &
+3862/4065/3894 predated the −4/+1/−4 L3-wiring delta and the OI-142/OI-143 re-baseline).
 
 Reuses ``characterise_bir_false.validate_corpus_dir`` (the anti-contamination manifest guard),
 ``compare_analyses`` (load_analysis, three_way_classify, _dcml_time_spans), and

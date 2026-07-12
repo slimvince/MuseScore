@@ -23,7 +23,7 @@
     "dormant_chain_definition": "design §0: dormant chain = rebuilt L1→L2→L3→L4-decoder→L5 (default-off). L4 decoder = chordslicedecoder.cpp (SliceChordDecoder); L5 = functionresolver / forwardoverride / functionoutput; VL/axis-2 = textureclassifier (DORMANT).",
     "D9_shared_constant_finding": "The dormant L4 SliceChordDecoder REUSES the legacy scorer: chordslicedecoder.cpp:453 calls analyzer.analyzeChord(...) with the same ChordAnalyzerPreferences. Therefore every analyzeChord/applyHarmonicFunction scoring constant is on BOTH paths' fit surface (design D-9). Caveat (harness-phase, not Phase-0): the decoder invokes analyzeChord on a reduced/null temporal context (chordslicedecoder.cpp:46 comment 'the null-context path (no rootContinuity...)'), so the FIRING of the progression/temporal signals is attenuated on the dormant path even though the constants are read on both. The post-scoring gates run production-only (no applyPostScoringGates call in chordslicedecoder.cpp; the decoder projects analyzeChord's raw ranked results — chordslicedecoder.cpp:429/448/492).",
     "style_scope_caveat": "The style_scope column is the design's DECLARED HYPOTHESIS at inventory time (§4.1). The §4.4a style-response measurement replaces it with a measured structure (invariant / discrete table / continuous) wherever strata exist; a 'style-invariant' parameter whose per-stratum optima diverge is a flagged finding. Textural-evidence families (inversion/bass/pedal) have axis-2 texture (cross-ARI 0.030), not the harmonic idiom, as their plausible coordinate (design D-11 iv).",
-    "preset_varying_fields_at_source": "Only these ChordAnalyzerPreferences fields are overridden per preset in tools/batch_analyze.cpp (main(), preset builder ~lines 3843-3898): extensionThreshold (Jazz 0.12 @3874), preferMinorOverMajorAdd6 (Baroque/Standard true @3883/3896; Jazz/Default false), stepwiseBassInversionBonus (Jazz 0.20 @3877), stepwiseBassLookaheadBonus (Jazz 0.20 @3878), sameRootInversionBonus (Jazz 0.15 @3879), completeTriadInversionBonus (Jazz 0.20 @3880). Every other field inherits the analysistypes.h struct default on all presets (Default overrides NONE).",
+    "preset_varying_fields_at_source": "Only these ChordAnalyzerPreferences fields are overridden per preset in tools/batch_analyze.cpp (main()'s per-preset ChordAnalyzerPreferences builder; cited symbol-led — OI-138/OI-88, the former '~lines 3843-3898' + per-field @NNNN line anchors were stale-by-drift and are dropped to avoid re-drift; the VALUES below are authoritative): extensionThreshold (Jazz 0.12), preferMinorOverMajorAdd6 (Baroque/Standard true; Jazz/Default false), stepwiseBassInversionBonus (Jazz 0.20), stepwiseBassLookaheadBonus (Jazz 0.20), sameRootInversionBonus (Jazz 0.15), completeTriadInversionBonus (Jazz 0.20). Every other field inherits the analysistypes.h struct default on all presets (Default overrides NONE).",
     "optimizer_bounds_table": "analysistypes.h ChordAnalyzerPreferences::bounds() (:425-448) already declares optimizer ranges for 19 prefs fields — the existing optimizer-target set. The file-level static constexpr constants (kContradictionPenalty ... kWComplete) and the harmonicfunctionlayer.h progression constants are NOT in bounds() and are not currently preset-configurable (hardcoded) — a Phase-0 finding: they are fit candidates but have no runtime override surface today (the D-6 override plumbing is Phase-1 work).",
     "license_and_sensitivity_deferred": "license_provenance is null on every row (design §7: filled at the first fitted value with which pool/split shaped it). sensitivity is null on every row (design §4.3: measured by the Phase-1b screen through the harness, which does not exist yet).",
     "checkpoint": "This manifest is the material for Checkpoint P0 (fit surface + freeze list + family homes). All style_scope and status values are Phase-0 declarations subject to P0 ratification and §4.4a measurement."
@@ -236,21 +236,21 @@
     { "group": "G3 — inversion context bonuses (PRESET-VARYING; textural evidence)",
       "name": "stepwiseBassInversionBonus", "site": "analysistypes.h:226 (bounds :435); harmonicfunctionlayer inversionContextBonus", "family": "continuous", "value": 0.5, "per_preset": {"Baroque": 0.5, "Jazz": 0.20, "Default": 0.5}, "preset_scope": "per-preset",
       "style_scope": "idiom-varying", "style_scope_rationale": "TEXTURAL evidence (stepwise-bass-from-prev inversion) — design D-11 iv: its plausible style coordinate is the AXIS-2 texture class, not the harmonic idiom (cross-ARI 0.030). Already preset-varied (Jazz reduces to suppress add6/inversion labels).",
-      "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus in applyHarmonicFunction (production) + dormant (attenuated). Jazz override batch_analyze.cpp:3877.",
+      "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus in applyHarmonicFunction (production) + dormant (attenuated). Jazz override batch_analyze.cpp (per-preset builder).",
       "status": "fit", "status_rationale": "optimizer bound exists (:435); a primary style-varying fit target (family 1).", "license_provenance": null, "sensitivity": 0.0376 },
 
     { "group": "G3", "name": "stepwiseBassLookaheadBonus", "site": "analysistypes.h:235 (bounds :436)", "family": "continuous", "value": 0.5, "per_preset": {"Baroque": 0.5, "Jazz": 0.20, "Default": 0.5}, "preset_scope": "per-preset",
-      "style_scope": "idiom-varying", "style_scope_rationale": "textural (stepwise-bass-to-next inversion); axis-2 texture coordinate candidate. Jazz override batch_analyze.cpp:3878.",
+      "style_scope": "idiom-varying", "style_scope_rationale": "textural (stepwise-bass-to-next inversion); axis-2 texture coordinate candidate. Jazz override batch_analyze.cpp (per-preset builder).",
       "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus; both paths (attenuated dormant).",
       "status": "fit", "status_rationale": "optimizer bound exists (:436).", "license_provenance": null, "sensitivity": 0.0521 },
 
     { "group": "G3", "name": "completeTriadInversionBonus", "site": "analysistypes.h:243 (bounds :437)", "family": "continuous", "value": 0.45, "per_preset": {"Baroque": 0.45, "Jazz": 0.20, "Default": 0.45}, "preset_scope": "per-preset",
-      "style_scope": "idiom-varying", "style_scope_rationale": "textural (complete inverted triad in a 3-PC texture); axis-2 texture coordinate candidate. Jazz override batch_analyze.cpp:3880.",
+      "style_scope": "idiom-varying", "style_scope_rationale": "textural (complete inverted triad in a 3-PC texture); axis-2 texture coordinate candidate. Jazz override batch_analyze.cpp (per-preset builder).",
       "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus; both paths (attenuated dormant).",
       "status": "fit", "status_rationale": "optimizer bound exists (:437).", "license_provenance": null, "sensitivity": 0.0232 },
 
     { "group": "G3", "name": "sameRootInversionBonus", "site": "analysistypes.h:252 (bounds :438)", "family": "continuous", "value": 0.4, "per_preset": {"Baroque": 0.4, "Jazz": 0.15, "Default": 0.4}, "preset_scope": "per-preset",
-      "style_scope": "idiom-varying", "style_scope_rationale": "textural/progression (inverted candidate whose root = prev root; I→I6→I arpeggiation). GATE R INVARIANT: the min inversion bonus (this, 0.40 Baroque/Default) must exceed kNonBassPenalty 0.35 (scoring_model.md §4). Jazz 0.15 < 0.35 — the Jazz preset does not carry the Gate R equivalence in the same form (a Phase-0 flag). Jazz override batch_analyze.cpp:3879.",
+      "style_scope": "idiom-varying", "style_scope_rationale": "textural/progression (inverted candidate whose root = prev root; I→I6→I arpeggiation). GATE R INVARIANT: the min inversion bonus (this, 0.40 Baroque/Default) must exceed kNonBassPenalty 0.35 (scoring_model.md §4). Jazz 0.15 < 0.35 — the Jazz preset does not carry the Gate R equivalence in the same form (a Phase-0 flag). Jazz override batch_analyze.cpp (per-preset builder).",
       "consuming_path": "both", "consuming_path_evidence": "fn::inversionContextBonus; both paths (attenuated dormant).",
       "status": "fit", "status_rationale": "optimizer bound exists (:438); Gate R joint constraint flagged (Baroque/Default).", "license_provenance": null, "sensitivity": 0.2792 },
 
@@ -270,7 +270,7 @@
       "consuming_path": "production", "consuming_path_evidence": "applyPostScoringGates outer guard + bias deduction; production-only.",
       "status": "fit", "status_rationale": "optimizer bound (:441); §6-block dissolution target. inversionBonusReduction ≥ 1 disables the gates (outer guard).", "license_provenance": null, "sensitivity": 0.0 },
 
-    { "group": "G4", "name": "preferMinorOverMajorAdd6", "site": "analysistypes.h:308; Baroque/Standard set true batch_analyze.cpp:3883/3896", "family": "§6-block threshold", "value": false, "per_preset": {"Baroque": true, "Jazz": false, "Default": false}, "preset_scope": "per-preset",
+    { "group": "G4", "name": "preferMinorOverMajorAdd6", "site": "analysistypes.h:308; Baroque/Standard set true batch_analyze.cpp (per-preset builder)", "family": "§6-block threshold", "value": false, "per_preset": {"Baroque": true, "Jazz": false, "Default": false}, "preset_scope": "per-preset",
       "style_scope": "idiom-varying", "style_scope_rationale": "boolean: prefer Minor over bass-root Major-add6 for the enharmonic pair (Bb6 vs Gm7/Bb). Style-varying by construction (add6 idiomatic in Jazz, rare in Baroque). Gates A/G-family + Gate L key off this flag.",
       "consuming_path": "production", "consuming_path_evidence": "Gates A/E/G-family/H/L in applyPostScoringGates; production-only.",
       "status": "frozen", "status_rationale": "a BOOLEAN structural switch, not a continuous fittable value (design §4.6: §6-block entry CONDITIONS are structural). Its style identity is idiom, but the fitter does not tune a bool — recorded, frozen.", "license_provenance": null, "sensitivity": 0.11 },
@@ -296,7 +296,7 @@
       "consuming_path": "both", "consuming_path_evidence": "bass candidate selection feeding analyzeChord; both paths.",
       "status": "fit", "status_rationale": "optimizer bound (:444).", "license_provenance": null, "sensitivity": 0.0 },
 
-    { "group": "G5", "name": "extensionThreshold (prefs member — the live per-call bar)", "site": "analysistypes.h:346 (bounds :446); Jazz set 0.12 batch_analyze.cpp:3874", "family": "abstention", "value": 0.20, "per_preset": {"Baroque": 0.20, "Jazz": 0.12, "Default": 0.20}, "preset_scope": "per-preset",
+    { "group": "G5", "name": "extensionThreshold (prefs member — the live per-call bar)", "site": "analysistypes.h:346 (bounds :446); Jazz set 0.12 batch_analyze.cpp (per-preset builder)", "family": "abstention", "value": 0.20, "per_preset": {"Baroque": 0.20, "Jazz": 0.12, "Default": 0.20}, "preset_scope": "per-preset",
       "style_scope": "idiom-varying", "style_scope_rationale": "min pcWeight for extensions (9/11/13/alterations). Jazz uses 0.12 to catch lightly-voiced ninths; Baroque/Default 0.20 to suppress passing tones. A textbook style-varying detection bar.",
       "consuming_path": "both", "consuming_path_evidence": "analyzeChord extension detection + B2 aug7 guard + dim7 bonus gate; both paths.",
       "status": "fit", "status_rationale": "optimizer bound (:446); already per-preset. NOTE: an indicator threshold (mixing validity is discrete, not additive — design D-11 vi).", "license_provenance": null, "sensitivity": 0.349 },
@@ -370,27 +370,27 @@
       "status": "fit", "status_rationale": "θ/frame-scale fit (C2, D-FS closure).", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },
 
     { "group": "G8 — L5 resolver params (family-4 neighborhood; DORMANT)",
-      "name": "wLicensedOut (resolver plausibility weight)", "site": "functionresolver.h:197", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
+      "name": "wLicensedOut (resolver plausibility weight)", "site": "functionresolver.h:211", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "§5.5 plausibility weight: a licensed progression OUT of the prevailing harmony. Part of the preference-among-licensed-readings machinery (family 4's neighborhood).",
       "consuming_path": "dormant", "consuming_path_evidence": "functionresolver.h:77-79 DORMANT (no production consumer; unit-tests only).",
       "status": "fit", "status_rationale": "family 4 (preference among licensed readings); population-gated (design §4.4).", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },
 
-    { "group": "G8", "name": "wLicensedIn (resolver plausibility weight)", "site": "functionresolver.h:198", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
+    { "group": "G8", "name": "wLicensedIn (resolver plausibility weight)", "site": "functionresolver.h:212", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "§5.5 plausibility weight: a licensed progression INTO the established next function.",
       "consuming_path": "dormant", "consuming_path_evidence": "functionresolver.h DORMANT.",
       "status": "fit", "status_rationale": "family 4.", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },
 
-    { "group": "G8", "name": "wCadentialFit (resolver plausibility weight)", "site": "functionresolver.h:199", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
+    { "group": "G8", "name": "wCadentialFit (resolver plausibility weight)", "site": "functionresolver.h:213", "family": "§15-13", "value": 1.0, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "§5.5 plausibility weight: the reading's root receives a cadence tonic-vote.",
       "consuming_path": "dormant", "consuming_path_evidence": "functionresolver.h DORMANT.",
       "status": "fit", "status_rationale": "family 4.", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },
 
-    { "group": "G8", "name": "decidingMargin (resolver)", "site": "functionresolver.h:200", "family": "§15-13", "value": 0.5, "per_preset": null, "preset_scope": "shared",
+    { "group": "G8", "name": "decidingMargin (resolver)", "site": "functionresolver.h:214", "family": "§15-13", "value": 0.5, "per_preset": null, "preset_scope": "shared",
       "style_scope": "idiom-varying", "style_scope_rationale": "§5.5 min plausibility margin to decide (below ⇒ tie ⇒ prior/open). The threshold governing when the preference-among-licensed weight decides vs falls through to tieBreakOrOpen().",
       "consuming_path": "dormant", "consuming_path_evidence": "functionresolver.cpp:275 (the |plausA-plausB| > decidingMargin branch); DORMANT.",
       "status": "fit", "status_rationale": "family 4 (the margin the L5 §15-13 weight fits against).", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },
 
-    { "group": "G8", "name": "maxForwardExtendSlices (L5 forward-extension bound)", "site": "functionresolver.h:258", "family": "abstention", "value": 8, "per_preset": null, "preset_scope": "shared",
+    { "group": "G8", "name": "maxForwardExtendSlices (L5 forward-extension bound)", "site": "functionresolver.h:272", "family": "abstention", "value": 8, "per_preset": null, "preset_scope": "shared",
       "style_scope": "style-invariant", "style_scope_rationale": "the decision-context span's hard bound in slices; a structural context-window bound (maxForwardExtendBeats=0 at :259 = slice-bound-only).",
       "consuming_path": "dormant", "consuming_path_evidence": "L5 forward extension; DORMANT.",
       "status": "frozen", "status_rationale": "structural context-window bound (an integer span limit), not a scoring weight; freeze candidate.", "license_provenance": null, "sensitivity": "dormant/unreachable (not on the production carrier; d=0 by construction)" },

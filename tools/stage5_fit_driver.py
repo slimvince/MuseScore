@@ -9,8 +9,10 @@ is performed here: this dispatch builds + validates the harness (determinism, kn
 fixture) and runs the Phase-1b sensitivity SCREEN through it. Nothing is adopted.
 
 Objective (design §4.2): duration-weighted variant-(b) root agreement (root governs;
-RN + key tracked beside). Per-evaluation constraints: no NEW class-(b) batch-stop case
-(vs the CLAUDE.md 53/24/53 identity sets) + class-(b) root-disagree DURATION non-increase.
+RN + key tracked beside). Per-evaluation constraint: the class-(b) root-disagree DURATION
+non-increase on the ratified A-8 robust unit (CLAUDE.md gate block (A), which SUPERSEDED the
+batch stop). The mapping ALSO tracks the batch diagnostic per case for context (the superseded
+batch stop is 54/24/54 at HEAD after the OI-142/OI-143 re-baseline; NOT the live gate).
 
 The driver REFUSES to propose/accept a vector touching a FROZEN row (P0 enforcement),
 except under --perturb-frozen (the Phase-1b read-only frozen-row rider), which is labeled
@@ -609,9 +611,13 @@ def main():
     if args.mode == "fixture":
         scratch = Path(args.scratch); scratch.mkdir(parents=True, exist_ok=True)
         a8_out = scratch / "a8"
-        # 2.2e-adopted full-corpus variant-(b) root baselines (a8 re-measure on the adopted
-        # tools/corpus; Jazz unchanged = byte-identical). Prior: 63.32 / 62.37 / 63.22.
-        RATIFIED = {"Baroque": 63.36, "Jazz": 62.37, "Default": 63.25}
+        # OI-133 / DISCOVERY D1 (OI-145 wave-1): the OI-142/OI-143 key-grading re-baseline
+        # (adoption d9b52ba969, user-ratified) moved the a8/robust_stop reference to these root
+        # figures, but this fixture's RATIFIED constant was NOT updated then, so the fixture
+        # reproduced the (correct) new numbers yet self-reported MISMATCH against the stale
+        # pre-OI-142 63.36/62.37/63.25. Corrected here to the user-ratified reference (the a8
+        # measurement itself never changed; this is a stale-figure sync, no grading digit moved).
+        RATIFIED = {"Baroque": 66.04, "Jazz": 64.98, "Default": 65.93}
         split = json.loads((_ROOT / "tools" / "stage5_split_registry.json").read_text())
         fit_stems = sorted(s for s, r in split["scores"].items() if r["split"] == "fitting")
         scores_file = scratch / "fitting_split.txt"

@@ -100,7 +100,8 @@ def main():
     # ── Find enriched JSON files ──────────────────────────────────────────
     ours_files = sorted(ours_dir.glob("*.ours.json"))
     if not ours_files:
-        print("ERROR: No .ours.json files in tools/reports/corpus/", file=sys.stderr)
+        # OI-133: print the dir actually read (was a hardcoded wrong path "tools/reports/corpus/").
+        print(f"ERROR: No .ours.json files in {ours_dir}", file=sys.stderr)
         sys.exit(1)
 
     # Verify enriched fields present
@@ -318,7 +319,9 @@ def main():
     #   Blocker B: margin >= 0.70 (winner wins on merits even without bass bonus)
     #   Blocker C: margin < 0.70 but no clean alt in results[]
     #   Blocker A: margin < 0.70, clean alt present, but winner has 7th and alt does not
-    #              (seventh-exemption guard at chordanalyzer.cpp ~1916-1923)
+    #              (the seventh-exemption guard in chordanalyzer.cpp's post-ranking inversion
+    #              correction — OI-133: the former "~1916-1923" line anchor was stale, the file
+    #              is 1610 lines; cited symbol-led to avoid re-drift)
     INVERSION_SUSPICION_MARGIN = 0.70
     SEVENTH_QUALITIES = {"Dominant7", "Major7", "Minor7", "HalfDiminished", "Diminished7"}
 

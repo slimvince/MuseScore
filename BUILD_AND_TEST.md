@@ -21,7 +21,7 @@ powershell.exe -Command "Start-Process 'C:\s\MS\setup_and_build.bat' -Wait -NoNe
 
 **Run batch_analyze:**
 ```
-/c/s/MS/ninja_build_rel/batch_analyze.exe "<score>" --preset jazz
+/c/s/MS/ninja_build_rel/batch_analyze.exe "<score>" --preset Jazz
 ```
 
 **Invoke ninja directly (without cmd.exe):**
