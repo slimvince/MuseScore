@@ -97,7 +97,7 @@
 
 | ID | item | source | status |
 |---|---|---|---|
-| OI-33 | ★ Abstain-aware robust-stop convention OWED before any abstaining path is adoption-gated (metric is abstention-reducible; probe grader = prototype; pinned a8 untouched) | PC-2; cc_eg2 §4.5 | OPEN |
+| OI-33 | ★ Abstain-aware robust-stop convention OWED before any abstaining path is adoption-gated (metric is abstention-reducible; probe grader = prototype; pinned a8 untouched) | PC-2; cc_eg2 §4.5 | ✅ RESOLVED 2026-07-12 (OI-145 wave-1, `cc_measurement_chain_hardening_report.md`): convention WRITTEN + mechanically ENFORCED. Convention (a8 docstring + robust_stop `manifest.abstain_convention_note`): the ROOT respect (the governing hard stop) counts an abstained cell — OUR region with no `root_pc` — as a DISAGREEMENT, so root is NOT abstention-reducible; the KEY-agree denominator (agree+disagree) EXCLUDES abstained (`keyfail`) cells, so key-agree IS abstention-reducible. Enforcement: a8 publishes `b_key_fail` (the abstain duration) + manifest `key_parse_fail_pct`, and `robust_stop_diff` now reports the key-ABSTAIN coverage BESIDE key-agree per preset and FLAGS a candidate abstain above the reference (compared at the manifest's 4-dp precision — proven: no flag on the clean run, the flag fires on a simulated abstention rise 0.09→6.03 %). Informational reporting only — the pinned a8 root metric and the diff exit code are untouched; battery byte-identical. |
 | OI-34 | O-12 corpus git-tracking decision (user call) | fitter O-12 | OPEN — user |
 | OI-35 | O-18 stale fs_* manifests process fix (validate or re-manifest E0 dirs; EG-2 used fresh stamped dumps — generalize) | fitter O-18 | OPEN |
 | OI-36 | O-10 retained-rule liveness counts at every adoption sandwich | fitter O-10 | STANDING |

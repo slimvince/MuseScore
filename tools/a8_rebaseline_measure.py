@@ -27,6 +27,19 @@ variant-(b) 5-bucket duration decomposition equals grid_score_regions() byte-for
 every piece — that assertion is the proof the re-run loop is a faithful reuse of the
 pinned primitive, not a re-definition.
 
+THE ABSTAIN-AWARE CONVENTION (OI-33; before any abstaining path is adoption-gated).
+Every reported agreement-% is published WITH its abstain/coverage figure so a metric can
+never be flattered by opting out of the hard slices:
+  - ROOT respect (the governing hard stop): an abstained cell — OUR region carries no root_pc —
+    is counted a DISAGREEMENT (root_agree = our.root_pc == dcml.root_pc is False for None),
+    so the root metric is NOT abstention-reducible. The scored/unscored duration is published.
+  - KEY respect: an abstained cell — OUR key is unparseable/absent — becomes `keyfail` and is
+    EXCLUDED from the key-agree denominator (agree+disagree). So the key-agree-% IS abstention-
+    reducible: raising the key-abstain rate can lift key-agree without better inference. The
+    summary publishes b_key_fail (the abstain duration) and the manifest key_parse_fail_pct;
+    robust_stop_diff reports the key-abstain BESIDE key-agree and FLAGS a candidate abstain
+    above the reference. Mechanical enforcement, not just prose.
+
 Usage:
     python tools/a8_rebaseline_measure.py --out-dir <scratch>
 """

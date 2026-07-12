@@ -152,6 +152,23 @@ def ref_wir_source(manifest_path: Path, preset: str):
     return M["presets"][preset].get("coverage", {}).get("wir_source_sha256")
 
 
+def key_abstain_from_summary(summary_path: Path, preset: str):
+    """Candidate key-ABSTAIN % (OI-33): the fraction of scored duration where OUR key is
+    unparseable/absent (b_key_fail) and is therefore EXCLUDED from the key-agree denominator
+    (which is only agree+disagree). A metric that abstains on hard slices can flatter its
+    key-agree-%; this figure is reported beside key-agree so opting out cannot hide."""
+    S = json.load(open(summary_path, encoding="utf-8"))
+    a = S[preset]["agg"]
+    scored = a.get("scored_dur", 0)
+    return (100.0 * a.get("b_key_fail", 0) / scored) if scored else 0.0
+
+
+def ref_key_abstain(manifest_path: Path, preset: str):
+    """Reference key-abstain % (OI-33) from the committed manifest (key_parse_fail_pct); None if absent."""
+    M = json.load(open(manifest_path, encoding="utf-8"))
+    return M["presets"][preset].get("key_parse_fail_pct")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--reference", default=str(_ROOT / "tools" / "robust_stop"),
@@ -238,6 +255,21 @@ def main():
             return f"{x:.4f}%" if x is not None else "n/a"
         print(f"  (—) KEY-AGREE home:  ref={_kp(ref_kh)} cand={_kp(cand_kh)}    "
               f"local: ref={_kp(ref_kl)} cand={_kp(cand_kl)}")
+        # OI-33 — the ABSTAIN-AWARE convention: the key-agree % denominator EXCLUDES abstained
+        # (key-unparseable) cells, so a key-agree rise can be an artifact of abstaining more, not
+        # better inference. The abstain coverage is reported BESIDE key-agree so opting out cannot
+        # flatter a result; a candidate abstain ABOVE the reference is flagged (informational — key
+        # is not the hard stop; the root respect counts an abstained cell as a DISAGREEMENT).
+        cand_ka = key_abstain_from_summary(cand_summary, preset)
+        ref_ka = ref_key_abstain(manifest, preset)
+        # Compare at the manifest's stored precision (4 dp) so the rounding of a re-stamped
+        # reference does not fire a false flag; only a MEANINGFUL abstain rise trips it.
+        abstain_flag = ("  ** KEY-ABSTAIN ROSE — a key-agree gain may be abstention-flattered (OI-33)"
+                        if (ref_ka is not None and cand_ka is not None
+                            and round(cand_ka, 4) > round(ref_ka, 4))
+                        else "")
+        print(f"  (—) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): "
+              f"ref={_kp(ref_ka)} cand={_kp(cand_ka)}{abstain_flag}")
 
         def _fmt(k):
             dur, cls = (cand_runs.get(k) or ref_runs.get(k))
