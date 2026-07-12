@@ -25,6 +25,18 @@ Reports, per preset:
   * pedal owed-P1   — whether the decoder carry under the argmax key already holds the
                     production in-place pedal (upper-voice) root
 
+KEY-AXIS DESK-SIM extension (OI-43, mode/key + chord inference discussion, 2026-07-12):
+An additive read-only summary answering the desk-simulation's "does the joint chord->key
+coupling FIRE?" over the full corpus. Per key-disagree region (argmax region key != DCML
+GLOBAL key, the ratified key-agreement target):
+  * menu-containment    (PREDICTION 3) — GT global key present in the carried keyAlternatives
+  * chord-flip-under-GT  (PREDICTION 1's mechanism) — re-decoding under the carried GT key
+                         flips the region root vs the argmax key
+  * alt keyConf populated (PREDICTION 2 support) — is a per-alternative key confidence carried?
+This is the mechanism-fire check, NOT the key-agreement ceiling/floor grader — the desk-sim
+HARD GATE (chord must differ under a carried key) decides whether that grader is worth
+building. See cc_mode_key_chord_probe_report.md.
+
 Reuses run_bach_preset's Git-Bash invocation helpers (no duplication, #6).
 """
 from __future__ import annotations
@@ -54,6 +66,37 @@ PRESETS = ["Baroque", "Jazz", "Default"]
 # (keymodesequence.h uncertainThreshold, default 1.0). CLAUDE.md-verified at source;
 # NOT fitted here (R5). Reported both overall and on keySeqMargin < this bar.
 KEY_UNCERTAIN_BAR = 1.0
+
+# ── The KEY-axis desk-simulation measurement (OI-43, read-only) ──────────────
+# Added for the mode/key + chord inference discussion (cowork_mode_key_chord_
+# inference_discussion.md). This is the desk-simulation's "does the mechanism FIRE"
+# check at full-corpus scale — NOT the key-agreement ceiling/floor grader. The
+# desk-sim HARD GATE (the chord must differ under a carried key) decides whether the
+# ceiling/floor grader is worth building. Two read-only rates, per key-disagree region
+# (argmax region key != DCML GLOBAL key, the ratified key-agreement target):
+#   * menu-containment    — the DCML global key present in the carried keyAlternatives
+#                           (the PREDICTION-3 quantity; needs no ranking)
+#   * chord-flip-under-GT  — re-decoding the chord under the carried GT key flips the
+#                           region root vs the argmax key (the joint chord->key coupling
+#                           the user's question turns on; PREDICTION-1's mechanism)
+#
+# KeySigMode enum index -> is_major, derived from keymodeformatting.cpp keyModeSuffix()
+# + compare_rn._mode_is_major (major iff suffix prefix in {maj,ion,lyd,mix}). Verified
+# faithful per row against crn._our_key_tonic(region key string) — the _selfcheck below.
+_MAJOR_MODE_IDX = frozenset({0, 3, 4, 9, 10, 11, 16, 19})
+#   0 Ionian, 3 Lydian, 4 Mixolydian, 9 LydianAugmented, 10 LydianDominant,
+#   11 MixolydianB6, 16 IonianSharp5, 19 LydianSharp2   (all other modes -> minor)
+
+
+def _mode_is_major(mode_idx):
+    return mode_idx in _MAJOR_MODE_IDX
+
+
+def _key_ident(tonic_pc, mode_idx):
+    """(tonic_pc%12, is_major) for a carried/argmax key from its tonicPc + KeySigMode int."""
+    if tonic_pc is None or tonic_pc < 0:
+        return None
+    return (tonic_pc % 12, _mode_is_major(mode_idx))
 
 
 def _dcml_root_by_region(ours_regions, wir_regions):
@@ -101,12 +144,17 @@ def _collect_one(args_tuple):
 
     dcml_roots = _dcml_root_by_region(ours_regions, wir_regions)
     probe_regions = raw.get("regions", [])
+    # The DCML GLOBAL key (constant per piece; the ratified key-agreement target — a8
+    # grades our region key vs dcml_r.global_key). Parsed once with the ratified substrate.
+    gt_key = crn._dcml_key_tonic(wir_regions[0].global_key) if wir_regions else (None, None)
     rows = []
     for reg, dcml_root in zip(probe_regions, dcml_roots):
         p = reg.get("probe", {})
+        ak = p.get("argmaxKey", {})
         rows.append({
             "stem": stem,
             "startTick": reg.get("startTick"),
+            "dur": (reg.get("endTick", 0) - reg.get("startTick", 0)),
             "dcmlRoot": dcml_root,
             "argmaxRoot": p.get("argmaxRoot", -1),
             "keySeqMargin": p.get("keySeqMargin", 0.0),
@@ -115,6 +163,10 @@ def _collect_one(args_tuple):
             "prodRoot": p.get("prodRoot", -1),
             "bassPc": p.get("bassPc", -1),
             "carryRoots": p.get("argmaxCarryRoots", []),
+            # ── KEY-axis desk-sim fields (OI-43) ──
+            "argmaxKeyIdent": _key_ident(ak.get("tonicPc"), ak.get("mode")),
+            "gtGlobalKey": (gt_key if gt_key[0] is not None else None),
+            "ourKeyStr": reg.get("key"),              # for the enum-table self-check
         })
     return (stem, rows, "OK")
 
@@ -154,6 +206,17 @@ def _summarize(all_rows):
     # pedal owed-P1
     n_pedal = 0
     n_pedal_carry_agree = 0
+    # ── KEY-axis desk-sim (OI-43); region-level over committed regions ──
+    ka_keyagree = 0; ka_keyagree_dur = 0        # region key == DCML global key
+    ka_keydis = 0;   ka_keydis_dur = 0          # region key != DCML global key
+    ka_keyfail = 0                              # argmax/GT key unparseable
+    ka_menu = 0;     ka_menu_dur = 0            # key-disagree AND GT key in carried menu
+    ka_flip_gt = 0;  ka_flip_gt_dur = 0         # key-disagree AND chord flips under carried GT key
+    ka_flip_gt_coupled = 0                      #   + key-uncertain (keySeqMargin < bar)
+    ka_flip_any = 0                             # key-disagree AND chord flips under ANY carried key
+    ka_alt_total = 0                            # carried alternatives seen (committed regions)
+    ka_alt_keyconf_nonzero = 0                  # carried alts with a populated (>0) keyConf
+    ka_selfcheck_total = 0; ka_selfcheck_mismatch = 0   # enum-table vs key-string faithfulness
 
     for r in all_rows:
         am = r["argmaxRoot"]
@@ -207,6 +270,56 @@ def _summarize(all_rows):
             if pr is not None and pr >= 0 and pr != bass and pr in carry:
                 n_pedal_carry_agree += 1
 
+        # ── KEY-axis desk-sim (OI-43): region-level menu-containment + chord-flip-under-GT ──
+        # NOTE: region-level counts over COMMITTED regions — NOT the robust-unit
+        # key-agreement (union-of-boundaries cells) that produces the ratified column.
+        ak_ident = r.get("argmaxKeyIdent")
+        gt = r.get("gtGlobalKey")
+        dur = r.get("dur", 0)
+        # enum-table faithfulness self-check: is_major from tonicPc+mode must equal
+        # crn._our_key_tonic(region key string) — proves the alt grading is faithful.
+        if ak_ident is not None and r.get("ourKeyStr"):
+            sc = crn._our_key_tonic(r["ourKeyStr"])
+            if sc[0] is not None:
+                ka_selfcheck_total += 1
+                if (sc[0] % 12, sc[1]) != ak_ident:
+                    ka_selfcheck_mismatch += 1
+        for a in alts:
+            ka_alt_total += 1
+            kc = a.get("keyConf", 0.0)
+            if kc is not None and kc > 0.0:
+                ka_alt_keyconf_nonzero += 1
+        if ak_ident is None or gt is None or gt[0] is None:
+            ka_keyfail += 1
+        elif ak_ident == (gt[0] % 12, gt[1]):
+            ka_keyagree += 1
+            ka_keyagree_dur += dur
+        else:
+            ka_keydis += 1
+            ka_keydis_dur += dur
+            gt_in_menu = False
+            gt_flip = False
+            any_flip = False
+            for a in alts:
+                a_ident = _key_ident(a.get("tonicPc"), a.get("mode"))
+                rt = a.get("root", -1)
+                if rt is not None and rt >= 0 and am >= 0 and rt != am:
+                    any_flip = True
+                if a_ident is not None and a_ident == (gt[0] % 12, gt[1]):
+                    gt_in_menu = True
+                    if rt is not None and rt >= 0 and am >= 0 and rt != am:
+                        gt_flip = True
+            if gt_in_menu:
+                ka_menu += 1
+                ka_menu_dur += dur
+            if gt_flip:
+                ka_flip_gt += 1
+                ka_flip_gt_dur += dur
+                if r["keySeqMargin"] < KEY_UNCERTAIN_BAR:
+                    ka_flip_gt_coupled += 1
+            if any_flip:
+                ka_flip_any += 1
+
     def _net(c):
         return c.get("corr", 0) - c.get("harm", 0)
 
@@ -247,6 +360,42 @@ def _summarize(all_rows):
             "n_production_pedal_regions": n_pedal,
             "n_carry_already_holds_pedal_root": n_pedal_carry_agree,
             "agreement_frac": round(n_pedal_carry_agree / n_pedal, 4) if n_pedal else None,
+        },
+        # ── KEY-axis desk-sim (OI-43): does the joint chord->key coupling FIRE? ──
+        # Region-level over committed regions; NOT the robust-unit key-agreement column.
+        "key_axis_desksim": {
+            "n_key_agree_regions": ka_keyagree,
+            "n_key_disagree_regions": ka_keydis,
+            "n_key_unparseable_regions": ka_keyfail,
+            "key_agree_dur": ka_keyagree_dur,
+            "key_disagree_dur": ka_keydis_dur,
+            # PREDICTION 3 — menu-containment (GT global key present in carried menu)
+            "menu_containment": {
+                "n": ka_menu,
+                "frac_of_keydisagree": round(ka_menu / ka_keydis, 4) if ka_keydis else None,
+                "frac_of_keydisagree_dur": round(ka_menu_dur / ka_keydis_dur, 4) if ka_keydis_dur else None,
+            },
+            # PREDICTION 1 — the coupling mechanism: chord flips under the carried GT key
+            "chord_flip_under_gt": {
+                "n": ka_flip_gt,
+                "frac_of_keydisagree": round(ka_flip_gt / ka_keydis, 4) if ka_keydis else None,
+                "n_coupled": ka_flip_gt_coupled,
+                "dur": ka_flip_gt_dur,
+            },
+            "chord_flip_under_any_carried": {
+                "n": ka_flip_any,
+                "frac_of_keydisagree": round(ka_flip_any / ka_keydis, 4) if ka_keydis else None,
+            },
+            # PREDICTION 2 support — the per-alternative key confidence populated?
+            "alt_keyconf_populated": {
+                "n_alts": ka_alt_total,
+                "n_nonzero": ka_alt_keyconf_nonzero,
+                "frac_nonzero": round(ka_alt_keyconf_nonzero / ka_alt_total, 4) if ka_alt_total else None,
+            },
+            "enum_table_selfcheck": {
+                "n_checked": ka_selfcheck_total,
+                "n_mismatch": ka_selfcheck_mismatch,
+            },
         },
     }
 
@@ -326,6 +475,17 @@ def main():
             print(f"  PEDAL owed-P1: pedal_regions={pp['n_production_pedal_regions']} "
                   f"carry_holds_root={pp['n_carry_already_holds_pedal_root']} "
                   f"agree={pp['agreement_frac']}")
+            ka = summ["key_axis_desksim"]
+            mc = ka["menu_containment"]; cf = ka["chord_flip_under_gt"]
+            sc = ka["enum_table_selfcheck"]; kc = ka["alt_keyconf_populated"]
+            print(f"  ★ KEY-AXIS desk-sim (OI-43): key-disagree regions={ka['n_key_disagree_regions']} "
+                  f"(dur {ka['key_disagree_dur']}); keyfail={ka['n_key_unparseable_regions']}")
+            print(f"     PRED-3 menu-containment (GT key in menu): {mc['n']} "
+                  f"({mc['frac_of_keydisagree']} by count, {mc['frac_of_keydisagree_dur']} by dur)")
+            print(f"     PRED-1 chord-flip-under-GT (coupling fires): {cf['n']} "
+                  f"({cf['frac_of_keydisagree']}); coupled={cf['n_coupled']}; any-carried-flip={ka['chord_flip_under_any_carried']['n']}")
+            print(f"     PRED-2 alt keyConf populated: {kc['n_nonzero']}/{kc['n_alts']} ({kc['frac_nonzero']}); "
+                  f"enum-table selfcheck mismatch={sc['n_mismatch']}/{sc['n_checked']}")
             if failed:
                 print(f"  FAILED {len(failed)}: {failed[:5]}")
 

@@ -1,0 +1,254 @@
+{
+  "git_hash": "243cfd2165",
+  "corpus_git_hash": "c50002fee1",
+  "key_uncertain_bar": 1.0,
+  "n_scores": 352,
+  "presets": {
+    "Baroque": {
+      "n_regions": 10255,
+      "n_committed": 6409,
+      "n_regions_with_carried_alts": 10255,
+      "beam_width_carried_keys": {
+        "5": 10030,
+        "6": 178,
+        ">6": 47
+      },
+      "fire_rate": {
+        "n_flip_regions": 99,
+        "frac_of_committed": 0.0154,
+        "n_coupled_regions": 1183,
+        "n_flip_coupled": 16,
+        "frac_of_coupled": 0.0135
+      },
+      "benefit_top_alt_flip": {
+        "corr": 37,
+        "neutral": 32,
+        "harm": 28,
+        "net_corr_minus_harm": 9,
+        "n": 97
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 4,
+        "neutral": 8,
+        "harm": 4,
+        "net_corr_minus_harm": 0,
+        "n": 16
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 56,
+        "neutral": 65,
+        "harm": 52,
+        "net_corr_minus_harm": 4,
+        "n": 173
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6249,
+        "corrections_available": 37,
+        "harms_exposed": 28,
+        "net_available": 9
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 5,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.2
+      },
+      "key_axis_desksim": {
+        "n_key_agree_regions": 4427,
+        "n_key_disagree_regions": 1982,
+        "n_key_unparseable_regions": 0,
+        "key_agree_dur": 4101600,
+        "key_disagree_dur": 1922160,
+        "menu_containment": {
+          "n": 1322,
+          "frac_of_keydisagree": 0.667,
+          "frac_of_keydisagree_dur": 0.6702
+        },
+        "chord_flip_under_gt": {
+          "n": 7,
+          "frac_of_keydisagree": 0.0035,
+          "n_coupled": 3,
+          "dur": 9600
+        },
+        "chord_flip_under_any_carried": {
+          "n": 20,
+          "frac_of_keydisagree": 0.0101
+        },
+        "alt_keyconf_populated": {
+          "n_alts": 25864,
+          "n_nonzero": 2,
+          "frac_nonzero": 0.0001
+        },
+        "enum_table_selfcheck": {
+          "n_checked": 6404,
+          "n_mismatch": 0
+        }
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    },
+    "Jazz": {
+      "n_regions": 9919,
+      "n_committed": 6311,
+      "n_regions_with_carried_alts": 9919,
+      "beam_width_carried_keys": {
+        "5": 9667,
+        "6": 203,
+        ">6": 49
+      },
+      "fire_rate": {
+        "n_flip_regions": 95,
+        "frac_of_committed": 0.0151,
+        "n_coupled_regions": 1500,
+        "n_flip_coupled": 15,
+        "frac_of_coupled": 0.01
+      },
+      "benefit_top_alt_flip": {
+        "corr": 36,
+        "neutral": 25,
+        "harm": 33,
+        "net_corr_minus_harm": 3,
+        "n": 94
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 8,
+        "neutral": 4,
+        "harm": 3,
+        "net_corr_minus_harm": 5,
+        "n": 15
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 70,
+        "neutral": 48,
+        "harm": 55,
+        "net_corr_minus_harm": 15,
+        "n": 173
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6149,
+        "corrections_available": 36,
+        "harms_exposed": 33,
+        "net_available": 3
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 2,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.5
+      },
+      "key_axis_desksim": {
+        "n_key_agree_regions": 4168,
+        "n_key_disagree_regions": 2143,
+        "n_key_unparseable_regions": 0,
+        "key_agree_dur": 4010640,
+        "key_disagree_dur": 2139840,
+        "menu_containment": {
+          "n": 1320,
+          "frac_of_keydisagree": 0.616,
+          "frac_of_keydisagree_dur": 0.6103
+        },
+        "chord_flip_under_gt": {
+          "n": 8,
+          "frac_of_keydisagree": 0.0037,
+          "n_coupled": 4,
+          "dur": 11760
+        },
+        "chord_flip_under_any_carried": {
+          "n": 30,
+          "frac_of_keydisagree": 0.014
+        },
+        "alt_keyconf_populated": {
+          "n_alts": 25509,
+          "n_nonzero": 5,
+          "frac_nonzero": 0.0002
+        },
+        "enum_table_selfcheck": {
+          "n_checked": 6307,
+          "n_mismatch": 0
+        }
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    },
+    "Default": {
+      "n_regions": 10247,
+      "n_committed": 6413,
+      "n_regions_with_carried_alts": 10247,
+      "beam_width_carried_keys": {
+        "5": 10001,
+        ">6": 48,
+        "6": 198
+      },
+      "fire_rate": {
+        "n_flip_regions": 89,
+        "frac_of_committed": 0.0139,
+        "n_coupled_regions": 1152,
+        "n_flip_coupled": 11,
+        "frac_of_coupled": 0.0095
+      },
+      "benefit_top_alt_flip": {
+        "corr": 35,
+        "neutral": 29,
+        "harm": 25,
+        "net_corr_minus_harm": 10,
+        "n": 89
+      },
+      "benefit_top_alt_flip_coupled": {
+        "corr": 2,
+        "neutral": 5,
+        "harm": 4,
+        "net_corr_minus_harm": -2,
+        "n": 11
+      },
+      "benefit_per_flip_pairs": {
+        "corr": 64,
+        "neutral": 56,
+        "harm": 49,
+        "net_corr_minus_harm": 15,
+        "n": 169
+      },
+      "benefit_any_alt_bound": {
+        "n_scored_regions": 6253,
+        "corrections_available": 35,
+        "harms_exposed": 25,
+        "net_available": 10
+      },
+      "pedal_owed_p1": {
+        "n_production_pedal_regions": 5,
+        "n_carry_already_holds_pedal_root": 1,
+        "agreement_frac": 0.2
+      },
+      "key_axis_desksim": {
+        "n_key_agree_regions": 4394,
+        "n_key_disagree_regions": 2019,
+        "n_key_unparseable_regions": 0,
+        "key_agree_dur": 4074480,
+        "key_disagree_dur": 1955760,
+        "menu_containment": {
+          "n": 1295,
+          "frac_of_keydisagree": 0.6414,
+          "frac_of_keydisagree_dur": 0.6455
+        },
+        "chord_flip_under_gt": {
+          "n": 6,
+          "frac_of_keydisagree": 0.003,
+          "n_coupled": 2,
+          "dur": 8160
+        },
+        "chord_flip_under_any_carried": {
+          "n": 21,
+          "frac_of_keydisagree": 0.0104
+        },
+        "alt_keyconf_populated": {
+          "n_alts": 25902,
+          "n_nonzero": 2,
+          "frac_nonzero": 0.0001
+        },
+        "enum_table_selfcheck": {
+          "n_checked": 6398,
+          "n_mismatch": 0
+        }
+      },
+      "scores_no_wir": 26,
+      "scores_failed": []
+    }
+  }
+}
