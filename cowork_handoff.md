@@ -282,6 +282,39 @@ blinding boundary**) + a `feat(tools)` for the sweep+compare+judge instruments +
 (instruction force-added). Pushed fork-only, `upstream` untouched. **NEXT: the user's L4 certification
 decision; then (on a grant) the L5 + instruments audit — the last layer in the OI-84 dependency order.**
 
+**★ UPDATE (CC, 2026-07-12) — L5 (function) + INSTRUMENTS CERTIFICATION AUDIT PASS 1: Task 1
+(machine inventory) DONE + the Task-1.4 FEASIBILITY STOP** (`cc_l5_audit_pass1_report.md`; the LAST
+layer in the OI-84 dependency order). Read-only **except the ONE authorized Task-0 revert**
+`940632ecd1` (`git revert --no-edit 55829ebe15` → **OI-110 CLOSED** — removed the oracle fire-count
+instrumentation; build green, composing **1101/1101** + notation + snapshot all pass). **⚠ Deviation
+surfaced, not a stop:** the revert touched **4** files, not the instruction's stated "two" — the two
+production files + the two `pass1_oracle_firecount_{run,agg}.py` audit **driver scripts** the same
+commit `55829ebe15` had bundled (they have nothing to drive once the C++ counters are gone, so their
+removal is consistent with "removes the oracle fire-count instrumentation"). No constant tuned, no
+golden refresh; `tools/robust_stop`/`tools/corpus` untouched. **Instrument (one path per concern):**
+the SAME `gen_inventory.py` extended with `--layer l5` — a SECOND scope root (the measurement
+INSTRUMENTS under `tools/`, mechanically enumerated) + a **Python `ast` extractor** beside the C++
+scan (adds file-IO reads/writes; Python parsed not regex-guessed); prior-layer byte-identity re-proven
+(l4 CSVs/inventory byte-identical). **351 files in scope → 34 deep files / 3,372 rows.** Populations
+verified at the code + call sites: dormant-but-surviving resolver `L5-DORMANT` 20 (`function/` minus
+`harmonicfunctionlayer` + `progressionrecognizer` — no non-test caller) / the Python measurement chain
+`INSTRUMENT` 13 (the import closure of the regression stops + corpus gen + GT parse + fitting) / the
+harness `batch_analyze.cpp` `INSTRUMENT-HARNESS` 1 / file-level `L5-RETIRES` 3 + `L5-MIXED` 2 +
+`DEFERRED` 4. **★ THE FEASIBILITY STOP FIRED (expected)** — 3,372 rows > one session's disposition
+budget (L4 took 3 partition-sessions for ~2,121) → Tasks 2–3 NOT attempted (no silent sampling) →
+partitioned into ~3 sessions + the pass-2 sweep (**OI-116:** partition 1 dormant resolver 815 / partition
+2 Python instruments 1,687 [may sub-split] / partition 3 the harness 870). **Task-1 findings (existing
+TYPES):** **OI-117** — `harmonicfunctionlayer.{h,cpp}` is the LEGACY L4 chord-COMPETITION pipeline
+(`harmonicfunctionlayer.h:23-53`; retiring R1/R7), NOT surviving L5, corrected to `L5-RETIRES` (DT-21,
+the sibling of OI-101) + the no-live-surviving-L5 observation (the live cadence detector retires R2; the
+surviving function machinery is 100 % dormant). **No new DEFECT_TYPE.** **L5 certification NOT proposed —
+only Task 1 is done; the deep passes + pass-2 sweep are owed.** Commits: register `bcd9645ac0` + revert
+`940632ecd1` + `feat(tools)` inventory + freeze `0382c3275e` `feat(tools)` (**the blinding boundary —
+withheld files opened only after**) + this `docs(cc)` fold (instruction force-added). Pushed fork-only,
+`upstream` untouched. **NEXT: Cowork drafts the partitioned L5 pass-1 deep instructions (partition
+1/2/3); when L5's two passes complete, the OI-84 dependency-ordered certification plan is DONE and the
+held OI-43 discussion (mode/key + chord inference — where and how) opens.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 
