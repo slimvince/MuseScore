@@ -134,7 +134,7 @@ class PieceGrid:
         root_agree = (our_r.root_pc == dcml_r.root_pc)
         # respect 2 — RN (exact+partial == agree, per design doc rn_agree)
         rn_agree = bucket in ("exact", "partial")
-        # respect 3 — key (global-key identity; keyfail reported separately)
+        # respect 3 — key vs the DCML GLOBAL (home) key (keyfail reported separately)
         otc, omaj = crn._our_key_tonic(getattr(our_r, "key", None))
         gtc, gmaj = crn._dcml_key_tonic(getattr(dcml_r, "global_key", None))
         if otc is None:
@@ -145,6 +145,18 @@ class PieceGrid:
             key_verdict = "agree"
         else:
             key_verdict = "disagree"
+
+        # respect 3b — key vs the DCML LOCAL key (the key IN EFFECT; OI-143). Carried BESIDE
+        # the home-key column; the local column counts correct modulation-following as agreement.
+        ltc, lmaj = crn._dcml_key_tonic(getattr(dcml_r, "local_key", None))
+        if otc is None:
+            key_verdict_local = "keyfail"
+        elif ltc is None:
+            key_verdict_local = "dcml_keyfail"
+        elif (otc, omaj) == (ltc, lmaj):
+            key_verdict_local = "agree"
+        else:
+            key_verdict_local = "disagree"
 
         # variant-(a) legacy music21 genuine filter (root-defined) + BIR=false
         three_way = cmp.three_way_classify(our_r.root_pc, m21_root, dcml_r.root_pc)
@@ -160,6 +172,7 @@ class PieceGrid:
             "root_agree": root_agree,
             "rn_agree": rn_agree,
             "key_verdict": key_verdict,
+            "key_verdict_local": key_verdict_local,
             "three_way": three_way,
             "bir_false": bir_false,
             "m21_genuine": m21_genuine,
@@ -267,6 +280,8 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
         "b_root_agree": 0, "b_root_dis": 0,
         "b_rn_agree": 0, "b_rn_dis": 0,
         "b_key_agree": 0, "b_key_dis": 0, "b_key_fail": 0, "b_dcml_keyfail": 0,
+        # key vs the DCML LOCAL key (OI-143) — the same four buckets, graded vs local_key
+        "b_key_agree_local": 0, "b_key_dis_local": 0, "b_key_fail_local": 0, "b_dcml_keyfail_local": 0,
         # variant a = music21-filtered (root-defined genuine filter)
         "a_root_dis_dur": 0,   # duration of genuine (music21-filtered) root failures
         "a_root_dis_cells": 0,
@@ -299,13 +314,12 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
                 _, m21_regions = cmp.load_analysis(m21_path)
             except Exception:
                 m21_regions = []
-        wir_path = dcml.find_wir_file(str(WIR_DIR), stem)
         wir_regions = []
-        if wir_path:
-            try:
-                wir_regions = dcml.parse_rntxt_file(wir_path)
-            except Exception:
-                wir_regions = []
+        try:
+            # THE shared WiR loading substrate (applies the OI-142 transposition correction).
+            wir_regions = dcml.load_wir_regions(str(WIR_DIR), stem)
+        except Exception:
+            wir_regions = []
         if not wir_regions:
             continue    # variant (b) needs WiR; no human GT -> excluded (counted below)
         wir_covered += 1
@@ -337,7 +351,7 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
                 agg["b_rn_agree"] += w
             else:
                 agg["b_rn_dis"] += w
-            # respect 3 key (variant b)
+            # respect 3 key vs GLOBAL/home (variant b)
             kv = c["key_verdict"]
             if kv == "agree":
                 agg["b_key_agree"] += w
@@ -347,6 +361,16 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
                 agg["b_key_fail"] += w
             else:
                 agg["b_dcml_keyfail"] += w
+            # respect 3 key vs LOCAL (variant b; OI-143)
+            kvl = c["key_verdict_local"]
+            if kvl == "agree":
+                agg["b_key_agree_local"] += w
+            elif kvl == "disagree":
+                agg["b_key_dis_local"] += w
+            elif kvl == "keyfail":
+                agg["b_key_fail_local"] += w
+            else:
+                agg["b_dcml_keyfail_local"] += w
             # variant a (music21-filtered genuine failures)
             if c["m21_genuine"]:
                 agg["a_root_dis_dur"] += w

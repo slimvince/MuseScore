@@ -282,6 +282,15 @@ def _build_cells(stem, ours_regions, wir_regions):
             verdict = "agree"
         else:
             verdict = "disagree"
+        # OI-143 — verdict vs the DCML LOCAL key (the key in effect), beside the home verdict.
+        if our_ident is None:
+            verdict_local = "keyfail"
+        elif l_ident is None:
+            verdict_local = "dcml_keyfail"
+        elif our_ident == l_ident:
+            verdict_local = "agree"
+        else:
+            verdict_local = "disagree"
         cells.append({
             "t0": t0, "t1": t1, "w": t1 - t0,
             "our_ident": our_ident, "g_ident": g_ident, "l_ident": l_ident,
@@ -291,6 +300,7 @@ def _build_cells(stem, ours_regions, wir_regions):
             "pcs": our_r.pitch_class_set or 0,
             "our_start": our_r.start_tick,
             "verdict": verdict,
+            "verdict_local": verdict_local,
         })
     return cells
 
@@ -501,11 +511,9 @@ def _collect_one(args_tuple):
         return (stem, f"OURS_ERR:{exc}", None)
     if not ours_regions:
         return (stem, "EMPTY_OURS", None)
-    wir_path = dcml.find_wir_file(str(WIR_DIR), stem)
-    if not wir_path:
-        return (stem, "NO_WIR", None)
     try:
-        wir_regions = dcml.parse_rntxt_file(wir_path)
+        # THE shared WiR loading substrate (applies the OI-142 transposition correction).
+        wir_regions = dcml.load_wir_regions(str(WIR_DIR), stem)
     except Exception:
         wir_regions = []
     if not wir_regions:
@@ -523,14 +531,17 @@ def _collect_one(args_tuple):
     measure_ticks = _measure_ticks(ours_regions)
     is_transposed, tr_off, tr_frac, tr_n = _piece_transposition(ours_regions, wir_regions)
 
-    # a8 reconciliation aggregate (per-verdict scored duration)
+    # a8 reconciliation aggregate (per-verdict scored duration) + OI-143 local-key verdict
     verd_dur = Counter()
+    verd_dur_local = Counter()
     for c in cells:
         verd_dur[c["verdict"]] += c["w"]
+        verd_dur_local[c["verdict_local"]] += c["w"]
 
     runs = _classify_one(stem, cells, wir_regions, ours_regions, menus, measure_ticks)
     return (stem, "OK", {
         "verd_dur": dict(verd_dur),
+        "verd_dur_local": dict(verd_dur_local),
         "runs": runs,
         "stream_stats": stream_stats,
         "measure_ticks": measure_ticks,
@@ -540,6 +551,7 @@ def _collect_one(args_tuple):
 
 def _summarize(preset, results, a8_ref):
     verd = Counter()
+    verd_local = Counter()          # OI-143 — per-verdict duration vs the DCML LOCAL key
     stream = {"frozen_n": 0, "probe_n": 0, "matched": 0, "probe_failed": 0}
     cause_dur_g = Counter(); cause_n_g = Counter()      # global-anchored (doc-literal)
     cause_dur_l = Counter(); cause_n_l = Counter()      # local-anchored (diagnostic)
@@ -568,6 +580,7 @@ def _summarize(preset, results, a8_ref):
         if status != "OK":
             continue
         verd.update(data["verd_dur"])
+        verd_local.update(data.get("verd_dur_local", {}))
         ss = data["stream_stats"]
         stream["frozen_n"] += ss["frozen_n"]; stream["probe_n"] += ss["probe_n"]
         stream["matched"] += ss["matched"]
@@ -669,6 +682,8 @@ def _summarize(preset, results, a8_ref):
         "failing_mass_dur": failing_mass,
         "failing_share_of_scored_pct": round(100.0 * failing_mass / scored, 4) if scored else 0.0,
         "key_agree_pct_vs_global": round(100.0 * verd.get("agree", 0) / scored, 4) if scored else 0.0,
+        # OI-143 — the LOCAL-key column beside the home column (counts correct modulation-following)
+        "key_agree_pct_vs_local": round(100.0 * verd_local.get("agree", 0) / scored, 4) if scored else 0.0,
         "reconciliation": recon,
         "region_stream_match": {
             "frozen_regions": stream["frozen_n"], "probe_regions": stream["probe_n"],
@@ -790,7 +805,8 @@ def main():
                   f"class==fail global={rc['classified_eq_failing_global']} local={rc['classified_eq_failing_local']}")
             print(f"    my_disagree={rc['my_disagree']} a8_disagree={rc['a8_disagree']}  "
                   f"my_keyfail={rc['my_keyfail']} a8_keyfail={rc['a8_keyfail']}")
-            print(f"  key_agree(vs global)={summ['key_agree_pct_vs_global']}%  "
+            print(f"  key_agree(vs HOME/global)={summ['key_agree_pct_vs_global']}%  "
+                  f"key_agree(vs LOCAL)={summ['key_agree_pct_vs_local']}%  "
                   f"failing_mass={summ['failing_mass_dur']} ({summ['failing_share_of_scored_pct']}% of scored)")
             print(f"  region-stream match: {summ['region_stream_match']['matched_start_end_key']}"
                   f"/{summ['region_stream_match']['frozen_regions']} "

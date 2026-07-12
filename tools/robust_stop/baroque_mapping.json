@@ -386,6 +386,17 @@
    "a_root_fail": true
   },
   {
+   "stem": "bwv39.7",
+   "tick": 21600,
+   "our_root": 0,
+   "dcml_root": 4,
+   "our_sym": "C9/E",
+   "cls": "a",
+   "n_overlap_cells": 3,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
    "stem": "bwv392",
    "tick": 14400,
    "our_root": 9,
@@ -540,6 +551,17 @@
    "a_root_fail": true
   },
   {
+   "stem": "bwv73.5",
+   "tick": 18240,
+   "our_root": 2,
+   "dcml_root": 6,
+   "our_sym": "D7b9/F#",
+   "cls": "a",
+   "n_overlap_cells": 1,
+   "b_root_fail": true,
+   "a_root_fail": true
+  },
+  {
    "stem": "bwv77.6",
    "tick": 22080,
    "our_root": 9,
@@ -574,9 +596,9 @@
   }
  ],
  "summary": {
-  "batch_cases": 52,
-  "still_failing_variant_b": 52,
-  "still_failing_variant_a": 50,
+  "batch_cases": 54,
+  "still_failing_variant_b": 54,
+  "still_failing_variant_a": 52,
   "disappeared_variant_b": 0,
   "disappeared_variant_a": 2
  }

@@ -93,6 +93,26 @@ def ref_class_durs(manifest_path: Path, preset: str):
     return p["class_b_root_disagree_dur"], p["class_a_root_disagree_dur"]
 
 
+def key_pcts_from_summary(summary_path: Path, preset: str):
+    """Candidate key-agreement % vs the home (global) key AND vs the local key (OI-143).
+    Local is None if the summary predates the dual-column instrument."""
+    S = json.load(open(summary_path, encoding="utf-8"))
+    a = S[preset]["agg"]
+    scored = a["scored_dur"]
+    home = (100.0 * a["b_key_agree"] / scored) if scored else 0.0
+    local = ((100.0 * a["b_key_agree_local"] / scored)
+             if (scored and "b_key_agree_local" in a) else None)
+    return home, local
+
+
+def ref_key_pcts(manifest_path: Path, preset: str):
+    """Reference key-agreement % (home, local) from the manifest; either may be None if the
+    committed reference predates the OI-143 dual column."""
+    M = json.load(open(manifest_path, encoding="utf-8"))
+    p = M["presets"][preset]
+    return p.get("key_agree_pct"), p.get("key_agree_pct_local")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--reference", default=str(_ROOT / "tools" / "robust_stop"),
@@ -133,6 +153,14 @@ def main():
         ca_flag = "  ** INVESTIGATE (large net increase)" if d_ca > CLASS_A_INVESTIGATE_TICKS else ""
         print(f"  (c) TRACKED  class-(a) root-disagree dur: ref={ref_ca} cand={cand_ca} "
               f"delta={d_ca:+d}{ca_flag}")
+
+        # key-agreement, dual home/local column (OI-143) — informational, not a stop
+        cand_kh, cand_kl = key_pcts_from_summary(cand_summary, preset)
+        ref_kh, ref_kl = ref_key_pcts(manifest, preset)
+        def _kp(x):
+            return f"{x:.4f}%" if x is not None else "n/a"
+        print(f"  (—) KEY-AGREE home:  ref={_kp(ref_kh)} cand={_kp(cand_kh)}    "
+              f"local: ref={_kp(ref_kl)} cand={_kp(cand_kl)}")
 
         def _fmt(k):
             dur, cls = (cand_runs.get(k) or ref_runs.get(k))

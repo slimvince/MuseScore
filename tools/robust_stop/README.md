@@ -7,9 +7,17 @@ robust-unit analogue of the batch stop's 52/24/52 `stem@tick` case-identity set 
 CLAUDE.md — except the robust set is ~6.9–7.0k failing **runs** per preset, so it lives here as
 artifacts, with CLAUDE.md pointing at them.
 
-**Nothing here is normative until R10-b.** These are the *measured* reference the user ratifies as
-the successor stop at the R10-b event. Until then the batch stop (CLAUDE.md 52/24/52 +
-`characterise_bir_false.py`) remains THE hard regression stop.
+**This IS the hard regression stop** (since R10-b, 2026-07-06; CLAUDE.md gate block (A)).
+
+**★ RE-BASELINED 2026-07-12 (OI-142 + OI-143, user-ratified).** Two measurement corrections landed
+as one re-baseline event: (1) **OI-142** — 12 of 326 WiR-covered editions are transposed vs their
+When-in-Rome reference; each piece's constant root offset is applied to the ground truth at the shared
+substrate `dcml_parser.load_wir_regions`, so those editions grade against what our score actually
+contains (no score/GT file edited; offsets + independent re-verification in
+`corpus_transposition_offsets.json`). (2) **OI-143** — the key-agreement column is now TWO: vs the
+DCML **home/global** key (`key_agree_pct`, as before) and vs the DCML **local** key
+(`key_agree_pct_local`). The outgoing R10-b reference is preserved byte-for-byte in
+`snapshot_2026-07-12_pre_oi142_oi143/` (O-12). Provenance: `cc_key_grading_rebaseline_report.md`.
 
 ## The unit
 
@@ -29,26 +37,28 @@ the successor stop at the R10-b event. Until then the batch stop (CLAUDE.md 52/2
 | `{preset}_variant_b_root_fail_runs.txt` | **THE diff base.** Variant-(b) root-failing runs; per run: `stem@runStartTick [start,end) dur our=sym(root) -> dcml_root cls`. ≈6868/7036/6883 runs (Baroque/Jazz/Default). |
 | `{preset}_variant_a_root_fail_runs.txt` | Variant-(a) music21-filtered root-failing runs (the batch-gate continuity anchor); ≈1507/1252/1491. |
 | `{preset}_mapping.json` | Old→new mapping: each batch-stop case → its grid disposition (`b_root_fail`, `a_root_fail`). |
-| `summary.json` | All A-8 aggregates (scored duration, 5-bucket decomposition, root/RN/key durations, class-(a)/(b) splits, run/cell counts, coverage). Raw instrument output. |
-| `manifest.json` | Corpus git_hash + instrument provenance + the reproduce-status (root/RN exact vs 2.2e; key = reproducible/declared) + per-preset summary block. |
+| `summary.json` | All A-8 aggregates (scored duration, 5-bucket decomposition, root/RN/key-home/key-local durations, class-(a)/(b) splits, run/cell counts, coverage). Raw instrument output. |
+| `manifest.json` | Corpus git_hash + instrument provenance + the offsets-file hash + the reproduce-status (root/RN/key-home/key-local) + per-preset summary block. |
+| `corpus_transposition_offsets.json` | **The OI-142 offsets** — the 12 transposed stems + their constant root offset (our_root − dcml_root mod 12), each with per-preset independent re-verification. Read by `dcml_parser.load_wir_regions`. |
+| `snapshot_2026-07-12_pre_oi142_oi143/` | **O-12 snapshot** — the outgoing R10-b reference byte-for-byte, before the OI-142/OI-143 re-baseline. |
 
 The finer per-**cell** enumerations are **regenerable scratch** (the committed instrument is their
 pin) — regenerate with `python tools/a8_rebaseline_measure.py --out-dir <dir>`.
 
-## Reproduce-status (see `manifest.json` for the exact numbers)
+## Reproduce-status — the OI-142/OI-143 re-baselined figures (Baroque / Jazz / Default)
 
-| respect | vs the CLAUDE.md 2.2e-ratified baseline |
+| respect | value |
 |---|---|
-| **root** (governing) | 63.3581 / 62.3664 / 63.2539 — **reproduces 63.36 / 62.37 / 63.25 EXACTLY** |
-| **RN** | 44.5785 / 42.3990 / 44.4107 — **reproduces 44.58 / 42.40 / 44.41 EXACTLY** |
-| **key** (tracked) | 68.1251 / 64.4321 / 67.4972 — reproduces the **prior** 68.11 / 64.43 / 67.50, **not** the 2.2e-recorded 68.19 / 64.52 / 67.77 |
+| **root** (governing) | **66.0406 / 64.9772 / 65.9307** |
+| **RN** | **46.3293 / 44.1010 / 46.2280** |
+| **key vs HOME** (global) | **71.2909 / 67.4887 / 70.5183** |
+| **key vs LOCAL** (OI-143, new) | **65.7238 / 62.4942 / 65.3852** |
 
-**Declared finding (for R10-b correction).** The 2.2e key column (68.19/64.52/67.77) is
-**unreproducible** and self-contradictory: Jazz `.ours.json` is byte-identical (2.2e-proven), WiR +
-all key-path code are git-unchanged since `c50002fee1`, so Jazz key **must** equal the prior 64.43
-(measured 64.4321) — the recorded 64.52 cannot arise from an "a8 re-measure." The reproducible key
-values frozen here are the reference; correcting the CLAUDE.md 2.2e key column is a normative change
-reserved for the R10-b ratification event. Full evidence: `cc_stage5_r10_assembly_report.md`.
+Superseded R10-b column (preserved in the snapshot dir): root 63.36/62.37/63.25, RN 44.58/42.40/44.41,
+key 68.13/64.43/67.50. The re-baseline delta is **entirely on the 12 corrected stems** — the run-level
+set-diff is confined to them and the other 314 stems are byte-identical (proven per preset in the
+report). The class-(b) root-disagree duration DECREASED on all presets (false transposition fails
+dissolved), so the hard stop passed by construction.
 
 ## Regenerate / verify
 

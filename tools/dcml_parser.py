@@ -16,10 +16,11 @@ Usage:
 """
 
 import csv
+import json
 import os
 import re
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from fractions import Fraction
 from typing import List, Optional
 
@@ -123,6 +124,12 @@ _DEGREE_MAP = {
 _NOTE_TO_PC = {
     'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,
 }
+
+# Canonical pc -> note-name (uppercase = the major spelling). Single-sourced here and
+# reused by _resolve_dcml_key and the OI-142 transposition helper (#6). Grading uses only
+# tonic pc + major/minor case, so any enharmonic spelling of a pc is faithful.
+_PC_TO_NOTE = {0: 'C', 1: 'C#', 2: 'D', 3: 'Eb', 4: 'E', 5: 'F',
+               6: 'F#', 7: 'G', 8: 'Ab', 9: 'A', 10: 'Bb', 11: 'B'}
 
 
 def _key_to_tonic_pc(key: str) -> int:
@@ -443,9 +450,7 @@ def _resolve_dcml_key(localkey: str, globalkey: str) -> str:
         elif prefix == '#':
             local_tonic_pc = (local_tonic_pc + 1) % 12
 
-        # Convert pitch class back to a note name
-        _PC_TO_NOTE = {0:'C', 1:'C#', 2:'D', 3:'Eb', 4:'E', 5:'F',
-                       6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}
+        # Convert pitch class back to a note name (single-sourced module constant, #6)
         note = _PC_TO_NOTE.get(local_tonic_pc, 'C')
         return note.lower() if local_minor else note
     except Exception:
@@ -697,3 +702,92 @@ def find_wir_file(wir_base: str, bwv_stem: str) -> Optional[str]:
     if wir_base not in _WIR_CACHE:
         _WIR_CACHE[wir_base] = _build_wir_index(wir_base)
     return _WIR_CACHE[wir_base].get(bwv_stem)
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# OI-142 corpus-transposition correction — the ONE shared WiR loading substrate
+# ══════════════════════════════════════════════════════════════════════════
+# 12 of 326 WiR-covered Bach-chorale editions are TRANSPOSED relative to their
+# When-in-Rome reference (a constant whole-piece root offset; our reading follows
+# the notated signature, the WiR edition is in another key — NOT a key-inference
+# error). Per the user's 2026-07-12 decision (register OI-142, ARITHMETIC
+# CORRECTION), the grading applies each piece's committed offset to the ground
+# truth HERE — at the single loading substrate every graded consumer imports — so
+# a corrected piece grades identically everywhere with no consumer-side special-
+# casing. The offsets + their independent re-verification live in the committed
+# data file below (no code carries the numbers). See CLAUDE.md gate block (A),
+# cc_key_grading_rebaseline_report.md, cc_key_mode_inference_diagnosis_report.md §5.
+
+_TRANSPOSE_OFFSETS_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "robust_stop",
+    "corpus_transposition_offsets.json")
+_TRANSPOSE_OFFSETS_CACHE: Optional[dict] = None
+
+
+def _load_transposition_offsets() -> dict:
+    """Load the committed OI-142 offsets file once ({stem: int offset}). A missing or
+    malformed file yields {} (no correction) — the 314 untouched pieces are unaffected
+    either way, and the substrate degrades to the plain parse."""
+    global _TRANSPOSE_OFFSETS_CACHE
+    if _TRANSPOSE_OFFSETS_CACHE is None:
+        try:
+            with open(_TRANSPOSE_OFFSETS_PATH, encoding='utf-8') as f:
+                data = json.load(f)
+            _TRANSPOSE_OFFSETS_CACHE = {
+                stem: int(entry["offset"]) % 12
+                for stem, entry in data.get("offsets", {}).items()
+            }
+        except (OSError, ValueError, KeyError, TypeError):
+            _TRANSPOSE_OFFSETS_CACHE = {}
+    return _TRANSPOSE_OFFSETS_CACHE
+
+
+def wir_transposition_offset(stem: str) -> int:
+    """The committed OI-142 transposition offset (semitones) for `stem`; 0 if not transposed."""
+    return _load_transposition_offsets().get(stem, 0)
+
+
+def _transpose_key_string(key: str, offset: int) -> str:
+    """Transpose a DCML key string's tonic up by `offset` semitones, preserving mode (case).
+    Empty/None passes through unchanged."""
+    if not key:
+        return key
+    tonic = _key_to_tonic_pc(key)
+    is_minor = key[0].islower()
+    note = _PC_TO_NOTE[(tonic + offset) % 12]
+    return note.lower() if is_minor else note
+
+
+def _transpose_region(r: DcmlRegion, offset: int) -> DcmlRegion:
+    """Return a copy of DcmlRegion transposed up by `offset` semitones: root_pc + global_key
+    + local_key shift by offset; the Roman-numeral / chord_symbol strings are key-relative and
+    stay verbatim (a transposed edition plays the same functional progression). Internally
+    consistent: 'V' under the shifted local key roots at the shifted root_pc."""
+    if offset % 12 == 0:
+        return r
+    return replace(
+        r,
+        root_pc=(None if r.root_pc is None else (r.root_pc + offset) % 12),
+        global_key=_transpose_key_string(r.global_key, offset),
+        local_key=_transpose_key_string(r.local_key, offset),
+    )
+
+
+def load_wir_regions(wir_base: str, stem: str) -> List[DcmlRegion]:
+    """THE shared When-in-Rome ground-truth loading substrate.
+
+    Resolve the analysis.txt for `stem`, parse it (parse_rntxt_file), and apply the committed
+    OI-142 corpus-transposition correction so the 12 transposed editions grade against what OUR
+    score actually contains — through this one path, no consumer-side special-casing. Every
+    graded consumer (a8_rebaseline_measure, characterise_bir_false, measure_joint_probe,
+    classify_key_disagreement) loads WiR through here so a corrected piece grades identically
+    everywhere. Returns [] when the stem has no WiR reference. For a non-transposed stem the
+    result is byte-identical to parse_rntxt_file(find_wir_file(...))."""
+    path = find_wir_file(wir_base, stem)
+    if not path:
+        return []
+    regions = parse_rntxt_file(path)
+    offset = wir_transposition_offset(stem)
+    if offset:
+        regions = [_transpose_region(r, offset) for r in regions]
+    return regions

@@ -143,14 +143,14 @@ def run(corpus_dir: Path, wir_dir: Path):
         if not ours_regions:
             continue
 
-        wir_path = dcml.find_wir_file(str(wir_dir), stem)
         wir_regions = []
-        if wir_path:
-            try:
-                wir_regions = dcml.parse_rntxt_file(wir_path)
-                wir_coverage += 1
-            except Exception:
-                pass
+        try:
+            # THE shared WiR loading substrate (applies the OI-142 transposition correction).
+            wir_regions = dcml.load_wir_regions(str(wir_dir), stem)
+        except Exception:
+            wir_regions = []
+        if wir_regions:
+            wir_coverage += 1
 
         aligned     = cmp.align_regions(ours_regions, m21_regions)
         wir_aligned = cmp.align_dcml_regions(ours_regions, wir_regions) if wir_regions else [None]*len(ours_regions)

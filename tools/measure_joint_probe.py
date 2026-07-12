@@ -113,6 +113,20 @@ def _dcml_root_by_region(ours_regions, wir_regions):
     return out
 
 
+def _dcml_localkey_by_region(ours_regions, wir_regions):
+    """Return, for each of our regions (index-aligned), the DCML LOCAL key (tonic_pc, is_major)
+    active at the region's start tick — the key IN EFFECT (tracks tonicization/modulation).
+    Same shared tick alignment as _dcml_root_by_region. (OI-143 local-key column.)"""
+    if not wir_regions or not ours_regions:
+        return [(None, None)] * len(ours_regions)
+    dcml_spans = cmp._dcml_time_spans(ours_regions, wir_regions)
+    out = []
+    for r in ours_regions:
+        di = crn._active_index_at(dcml_spans, r.start_tick)
+        out.append(crn._dcml_key_tonic(wir_regions[di].local_key) if di is not None else (None, None))
+    return out
+
+
 def _collect_one(args_tuple):
     exe, xml_path, preset, scratch = args_tuple
     stem = xml_path.stem
@@ -132,23 +146,22 @@ def _collect_one(args_tuple):
         except OSError:
             pass
 
-    wir_path = dcml.find_wir_file(str(WIR_DIR), stem)
-    if not wir_path:
-        return (stem, None, "NO_WIR")
     try:
-        wir_regions = dcml.parse_rntxt_file(wir_path)
+        # THE shared WiR loading substrate (applies the OI-142 transposition correction).
+        wir_regions = dcml.load_wir_regions(str(WIR_DIR), stem)
     except Exception:
         wir_regions = []
     if not wir_regions:
         return (stem, None, "NO_WIR")
 
     dcml_roots = _dcml_root_by_region(ours_regions, wir_regions)
+    dcml_localkeys = _dcml_localkey_by_region(ours_regions, wir_regions)  # OI-143
     probe_regions = raw.get("regions", [])
     # The DCML GLOBAL key (constant per piece; the ratified key-agreement target — a8
     # grades our region key vs dcml_r.global_key). Parsed once with the ratified substrate.
     gt_key = crn._dcml_key_tonic(wir_regions[0].global_key) if wir_regions else (None, None)
     rows = []
-    for reg, dcml_root in zip(probe_regions, dcml_roots):
+    for reg, dcml_root, l_key in zip(probe_regions, dcml_roots, dcml_localkeys):
         p = reg.get("probe", {})
         ak = p.get("argmaxKey", {})
         rows.append({
@@ -166,6 +179,7 @@ def _collect_one(args_tuple):
             # ── KEY-axis desk-sim fields (OI-43) ──
             "argmaxKeyIdent": _key_ident(ak.get("tonicPc"), ak.get("mode")),
             "gtGlobalKey": (gt_key if gt_key[0] is not None else None),
+            "gtLocalKey": (l_key if l_key[0] is not None else None),   # OI-143 local-key column
             "ourKeyStr": reg.get("key"),              # for the enum-table self-check
         })
     return (stem, rows, "OK")
@@ -210,6 +224,10 @@ def _summarize(all_rows):
     ka_keyagree = 0; ka_keyagree_dur = 0        # region key == DCML global key
     ka_keydis = 0;   ka_keydis_dur = 0          # region key != DCML global key
     ka_keyfail = 0                              # argmax/GT key unparseable
+    # OI-143 — the LOCAL-key column beside the home column (region key vs DCML LOCAL key)
+    ka_keyagree_local = 0; ka_keyagree_local_dur = 0
+    ka_keydis_local = 0;   ka_keydis_local_dur = 0
+    ka_keyfail_local = 0
     ka_menu = 0;     ka_menu_dur = 0            # key-disagree AND GT key in carried menu
     ka_flip_gt = 0;  ka_flip_gt_dur = 0         # key-disagree AND chord flips under carried GT key
     ka_flip_gt_coupled = 0                      #   + key-uncertain (keySeqMargin < bar)
@@ -275,7 +293,17 @@ def _summarize(all_rows):
         # key-agreement (union-of-boundaries cells) that produces the ratified column.
         ak_ident = r.get("argmaxKeyIdent")
         gt = r.get("gtGlobalKey")
+        gt_local = r.get("gtLocalKey")            # OI-143
         dur = r.get("dur", 0)
+        # OI-143 — region key vs the DCML LOCAL key (the key in effect), beside the home column
+        if ak_ident is None or gt_local is None or gt_local[0] is None:
+            ka_keyfail_local += 1
+        elif ak_ident == (gt_local[0] % 12, gt_local[1]):
+            ka_keyagree_local += 1
+            ka_keyagree_local_dur += dur
+        else:
+            ka_keydis_local += 1
+            ka_keydis_local_dur += dur
         # enum-table faithfulness self-check: is_major from tonicPc+mode must equal
         # crn._our_key_tonic(region key string) — proves the alt grading is faithful.
         if ak_ident is not None and r.get("ourKeyStr"):
@@ -369,6 +397,14 @@ def _summarize(all_rows):
             "n_key_unparseable_regions": ka_keyfail,
             "key_agree_dur": ka_keyagree_dur,
             "key_disagree_dur": ka_keydis_dur,
+            # OI-143 — the LOCAL-key column beside the home column (region key vs DCML LOCAL key)
+            "vs_local_key": {
+                "n_key_agree_regions": ka_keyagree_local,
+                "n_key_disagree_regions": ka_keydis_local,
+                "n_key_unparseable_regions": ka_keyfail_local,
+                "key_agree_dur": ka_keyagree_local_dur,
+                "key_disagree_dur": ka_keydis_local_dur,
+            },
             # PREDICTION 3 — menu-containment (GT global key present in carried menu)
             "menu_containment": {
                 "n": ka_menu,
@@ -478,8 +514,12 @@ def main():
             ka = summ["key_axis_desksim"]
             mc = ka["menu_containment"]; cf = ka["chord_flip_under_gt"]
             sc = ka["enum_table_selfcheck"]; kc = ka["alt_keyconf_populated"]
-            print(f"  ★ KEY-AXIS desk-sim (OI-43): key-disagree regions={ka['n_key_disagree_regions']} "
+            kl = ka["vs_local_key"]
+            print(f"  ★ KEY-AXIS desk-sim (OI-43): key-disagree regions vs HOME={ka['n_key_disagree_regions']} "
                   f"(dur {ka['key_disagree_dur']}); keyfail={ka['n_key_unparseable_regions']}")
+            print(f"     OI-143 vs LOCAL key: agree={kl['n_key_agree_regions']} "
+                  f"disagree={kl['n_key_disagree_regions']} (dur {kl['key_disagree_dur']}); "
+                  f"keyfail={kl['n_key_unparseable_regions']}")
             print(f"     PRED-3 menu-containment (GT key in menu): {mc['n']} "
                   f"({mc['frac_of_keydisagree']} by count, {mc['frac_of_keydisagree_dur']} by dur)")
             print(f"     PRED-1 chord-flip-under-GT (coupling fires): {cf['n']} "
