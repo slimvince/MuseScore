@@ -211,7 +211,6 @@ def main():
     lt_05  = sum(1 for m in margins if m < 0.5)
     lt_1   = sum(1 for m in margins if m < 1.0)
     lt_15  = sum(1 for m in margins if m < 1.5)
-    lt_2   = sum(1 for m in margins if m < 2.0)
     gt_2   = sum(1 for m in margins if m >= 2.0)
     bt_05_2 = sum(1 for m in margins if 0.5 <= m < 2.0)
 

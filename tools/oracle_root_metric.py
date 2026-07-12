@@ -95,6 +95,21 @@ def pcn(p):
 
 # ── key parsing (tool-local glue; mode-class only, third-of-the-mode for exotic modes) ──
 # Ported verbatim from the ratified decomposition diagnostic; covered by the tool's tests.
+#
+# OI-132 / DISCOVERY D2 (OI-145 wave-1, 2026-07-12): this parse_our_key is a SECOND key-string
+# parser alongside the shared substrate compare_rn._our_key_tonic (the one every GOVERNING graded
+# surface — a8, the robust unit, the classifier, the probe — uses). They are NOT interchangeable:
+# they embed DIFFERENT music-theory decisions for the DOMINANT-family exotic modes.
+#   • parse_our_key (below, exact-set membership): PhrygDom -> MAJOR, alt -> MAJOR, Lydb7 -> None.
+#   • compare_rn._our_key_tonic (prefix rule maj/ion/lyd/mix): PhrygDom -> minor, alt -> minor,
+#     Lydb7 -> major.
+# MEASURED consolidation impact (A/B, OI-145 wave-1): parse_dcml_key IS byte-identical to
+# compare_rn._dcml_key_tonic, but swapping THIS parser for _our_key_tonic MOVES this tool's KEY-tier
+# split (jazz +1 record, default +13 records shuffling KEY-HARD/KEY-TONICIZATION/AMBIGUOUS; the
+# charged/floor ROOT sets are UNCHANGED on all 3 presets). So the DT-6 dedup is NOT a byte-identical
+# hygiene fold — it needs a music-theory adjudication of the dominant-family mode classification
+# (which reading is authoritative), then a coordinated re-baseline. NOT consolidated here; surfaced
+# for the user's decision (cc_measurement_chain_hardening_report.md).
 _OUR_MINOR_MODES = {"min", "harm", "mel", "Dor", "Dor#4", "Dorb2", "Phryg", "Loc#6"}
 _OUR_MAJOR_MODES = {"maj", "Lyd", "Lyd#2", "Lyd+", "Mixolyd", "Mixb6", "PhrygDom", "alt"}
 
