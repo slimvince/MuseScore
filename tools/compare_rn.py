@@ -509,13 +509,20 @@ def score_regions(ours_regions: list, dcml_regions: list) -> PieceStats:
 
 def score_piece(ours_path: Path, tsv_path: Path) -> Optional[PieceStats]:
     """Score one ours.json vs one DCML harmonies.tsv pair."""
+    # OI-123: a corrupt ours.json/tsv drops the WHOLE piece from the aggregate with no counter.
+    # Narrow the catch to the load-failure types and SURFACE the drop (name the piece) so a
+    # systematic corruption cannot silently shrink the corpus.
     try:
         _, ours_regions = cmp.load_analysis(ours_path)
-    except Exception:
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"[compare_rn] score_piece: DROPPED {ours_path.name} — ours load failed "
+              f"({type(exc).__name__}: {exc})", file=sys.stderr)
         return None
     try:
         dcml_regions = dcml.parse_abc_harmonies_file(str(tsv_path))
-    except Exception:
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"[compare_rn] score_piece: DROPPED {ours_path.name} — tsv parse failed "
+              f"({type(exc).__name__}: {exc})", file=sys.stderr)
         return None
     if not ours_regions or not dcml_regions:
         return None
@@ -649,10 +656,13 @@ def grid_score_regions(ours_regions: list, dcml_regions: list) -> GridStats:
 
 def grid_score_piece_tsv(ours_path: Path, tsv_path: Path) -> Optional[GridStats]:
     """Grid-score one ours.json vs one DCML harmonies.tsv pair."""
+    # OI-123: narrow + surface the whole-piece drop (see score_piece).
     try:
         _, ours_regions = cmp.load_analysis(ours_path)
         dcml_regions = dcml.parse_abc_harmonies_file(str(tsv_path))
-    except Exception:
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"[compare_rn] grid_score_piece_tsv: DROPPED {ours_path.name} "
+              f"({type(exc).__name__}: {exc})", file=sys.stderr)
         return None
     if not ours_regions or not dcml_regions:
         return None

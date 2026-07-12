@@ -153,7 +153,9 @@ def run(corpus_dir: Path, wir_dir: Path):
         try:
             _, ours_regions = cmp.load_analysis(ours_path)
             _, m21_regions  = cmp.load_analysis(m21_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(f"[characterise_bir_false] DROPPED {stem} — load failed "
+                  f"({type(exc).__name__}: {exc})", file=sys.stderr)
             continue
         if not ours_regions:
             continue
@@ -162,7 +164,11 @@ def run(corpus_dir: Path, wir_dir: Path):
         try:
             # THE shared WiR loading substrate (applies the OI-142 transposition correction).
             wir_regions = dcml.load_wir_regions(str(wir_dir), stem)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            # OI-140/OI-123 diagnostic-side: name a WiR parse failure (this is the batch diagnostic,
+            # not the governing hard stop — a8_rebaseline_measure carries the hard-stop-side surfacing).
+            print(f"[characterise_bir_false] {stem}: WiR parse failed "
+                  f"({type(exc).__name__}: {exc})", file=sys.stderr)
             wir_regions = []
         if wir_regions:
             wir_coverage += 1

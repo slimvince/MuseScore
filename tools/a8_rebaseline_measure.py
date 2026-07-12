@@ -286,6 +286,9 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
     wir_covered = 0
     wir_no_annotation = 0            # OI-140: stem has no WiR reference (a legitimate exclusion)
     wir_parse_fail_stems = []        # OI-140: WiR file present but load failed / yielded 0 regions
+    ours_load_fail_stems = []        # OI-123: corrupt/unreadable .ours.json (NOT folded into no_wir)
+    m21_load_fail_stems = []         # OI-123: corrupt/unreadable .music21.json (variant-(a) leg only)
+    empty_ours = 0                   # OI-123: .ours.json loaded but yielded 0 regions
     # OI-124: identity of the WiR SOURCE graded against (offset-file pattern). Deterministic
     # (ours_files sorted); the in-memory OI-142 transposition is separately pinned by the
     # committed offsets file — this hashes the raw analysis.txt content per covered stem.
@@ -322,17 +325,23 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
     for ours_path in ours_files:
         stem = ours_path.stem.replace(".ours", "")
         m21_path = corpus_dir / f"{stem}.music21.json"
+        # OI-123: a corrupt .ours.json must NOT silently fold into the no_wir bucket (which conflates
+        # a parse failure with a missing WiR annotation). Narrow the catch to the load-failure types
+        # and count it in its own named bucket, surfaced below.
         try:
             _, ours_regions = cmp.load_analysis(ours_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            ours_load_fail_stems.append((stem, f"{type(exc).__name__}: {exc}"))
             continue
         if not ours_regions:
+            empty_ours += 1
             continue
         m21_regions = []
         if m21_path.exists():
             try:
                 _, m21_regions = cmp.load_analysis(m21_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError) as exc:
+                m21_load_fail_stems.append((stem, f"{type(exc).__name__}: {exc}"))
                 m21_regions = []
         # ── WiR ground truth (OI-140: distinguish a MISSING annotation from a PARSE FAILURE) ──
         # The governing hard stop is a class-(b) root-disagree DURATION non-increase; a WiR-parse
@@ -465,6 +474,11 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
             "wir_no_annotation": wir_no_annotation,
             "wir_parse_fail": len(wir_parse_fail_stems),
             "wir_parse_fail_stems": [s for s, _ in wir_parse_fail_stems],
+            # OI-123: the .ours.json load failures are their OWN bucket, not folded into no_wir.
+            "ours_load_fail": len(ours_load_fail_stems),
+            "ours_load_fail_stems": [s for s, _ in ours_load_fail_stems],
+            "m21_load_fail": len(m21_load_fail_stems),
+            "empty_ours": empty_ours,
             # OI-124: identity of the WiR source content graded against (paired with the
             # separately-pinned offsets file), so a foreign/drifted WiR clone is detectable.
             "wir_source_sha256": wir_source_hasher.hexdigest(),
@@ -501,6 +515,12 @@ def measure_preset(preset, out_dir, corpus_root=None, scores=None):
               file=sys.stderr)
         for stem, reason in wir_parse_fail_stems:
             print(f"    {stem}: {reason}", file=sys.stderr)
+    # OI-123: surface the .ours.json / .music21.json load failures (no longer folded into no_wir).
+    for label, stems in (("OURS LOAD", ours_load_fail_stems), ("MUSIC21 LOAD", m21_load_fail_stems)):
+        if stems:
+            print(f"[{preset}] !! {label} FAILURE on {len(stems)} stem(s):", file=sys.stderr)
+            for stem, reason in stems:
+                print(f"    {stem}: {reason}", file=sys.stderr)
 
     return result, a_runs, b_runs, batch_cases
 

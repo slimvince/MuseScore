@@ -131,7 +131,8 @@ def main():
         try:
             _, ours_regions  = cmp.load_analysis(ours_path)
             _, m21_regions   = cmp.load_analysis(music21_path)
-        except Exception as exc:
+        except (OSError, ValueError, KeyError, TypeError):
+            # OI-123: narrowed from bare Exception; already counted in skipped_no_regions.
             skipped_no_regions += 1
             continue
 
@@ -149,8 +150,8 @@ def main():
             try:
                 wir_regions = dcml.parse_rntxt_file(wir_path)
                 wir_coverage += 1
-            except Exception:
-                pass
+            except (OSError, ValueError, KeyError, TypeError):
+                pass  # OI-123: narrowed from bare Exception (WiR optional here)
 
         # Build our-region index for fast WiR lookup
         wir_aligned = cmp.align_dcml_regions(ours_regions, wir_regions) if wir_regions else [None] * len(ours_regions)

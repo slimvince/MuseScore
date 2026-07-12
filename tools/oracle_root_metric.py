@@ -174,7 +174,10 @@ def load_dir(corpus_dir: Path, wir_dir: Path):
         try:
             _, ours = cmp.load_analysis(ours_path)
             _, m21 = cmp.load_analysis(m21_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            # OI-128: narrow + surface the whole-stem drop (was a silent bare-except continue).
+            print(f"[oracle_root_metric] DROPPED {stem} — load failed "
+                  f"({type(exc).__name__}: {exc})", file=sys.stderr)
             continue
         if not ours:
             continue
@@ -183,7 +186,9 @@ def load_dir(corpus_dir: Path, wir_dir: Path):
         if wir_path:
             try:
                 wir = dcml.parse_rntxt_file(wir_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError) as exc:
+                print(f"[oracle_root_metric] {stem}: WiR parse failed, no GT root "
+                      f"({type(exc).__name__}: {exc})", file=sys.stderr)
                 wir = []
         out[stem] = (ours, m21, wir)
     return out

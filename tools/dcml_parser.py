@@ -193,7 +193,10 @@ def _compute_root_pc(numeral: str, key: str) -> Optional[int]:
             root_pc = (root_pc + 1) % 12
 
         return root_pc
-    except Exception:
+    except (AttributeError, IndexError, KeyError, TypeError, ValueError):
+        # OI-123: narrowed from a bare `except Exception` — the expected failure is a malformed
+        # numeral/key string (returns None = "no GT root"); a genuinely unexpected exception now
+        # PROPAGATES so a systematic parser bug cannot silently reduce GT root coverage.
         return None
 
 
@@ -453,7 +456,9 @@ def _resolve_dcml_key(localkey: str, globalkey: str) -> str:
         # Convert pitch class back to a note name (single-sourced module constant, #6)
         note = _PC_TO_NOTE.get(local_tonic_pc, 'C')
         return note.lower() if local_minor else note
-    except Exception:
+    except (AttributeError, IndexError, KeyError, TypeError, ValueError):
+        # OI-123: narrowed from a bare `except Exception` — the expected failure is a malformed
+        # localkey (falls back to globalkey); an unexpected exception now PROPAGATES.
         return globalkey
 
 

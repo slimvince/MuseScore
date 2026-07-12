@@ -169,7 +169,7 @@ def _load_wir(stem):
         return []
     try:
         return dcml.parse_rntxt_file(p)
-    except Exception:
+    except (OSError, ValueError, KeyError, TypeError):
         return []
 
 
@@ -187,7 +187,7 @@ def measure_l3(preset, km_dir):
             continue
         try:
             _, ours = cmp.load_analysis(ours_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError):
             continue
         if not ours:
             continue
@@ -196,7 +196,7 @@ def measure_l3(preset, km_dir):
         if m21_path.exists():
             try:
                 _, m21 = cmp.load_analysis(m21_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError):
                 m21 = []
         km_path = Path(km_dir) / f"{stem}.keymargin.json"
         if not km_path.exists():
@@ -237,7 +237,7 @@ def measure_l4_l5(preset, fs_dir):
             continue
         try:
             _, ours = cmp.load_analysis(fs_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError):
             continue
         if not ours:
             continue
@@ -246,7 +246,7 @@ def measure_l4_l5(preset, fs_dir):
         if m21_path.exists():
             try:
                 _, m21 = cmp.load_analysis(m21_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError):
                 m21 = []
         raw = json.loads(fs_path.read_text(encoding="utf-8"))
         conf_by_start = {r["startTick"]: (r.get("l4Composite", 0.0), r.get("l5CombinedBoundary", 0.0))
@@ -292,7 +292,7 @@ def measure_devbeds(l6_root):
                 continue
             try:
                 fs = json.loads(fj.read_text(encoding="utf-8"))
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError):
                 continue
             # ROW 4 — cadence: reuse l6.score_cadence's matcher to know which OUR
             # cadences matched a GT cadence (±480), then bin each by tonicVote.

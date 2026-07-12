@@ -436,6 +436,20 @@ def process_chorale(corpus_path: str, output_dir: Path, score=None) -> dict | No
 
     analysis["corpusName"] = corpus_path
 
+    # OI-128: a chordify() failure returns {"regions": [], "error": ...}. Writing THAT to
+    # {stem}.music21.json creates a FAKE ground truth — an empty GT that every downstream grader
+    # reads as a valid 0-region analysis, silently removing the score from the denominator with no
+    # failure signal (the OI-123/OI-128 silent-shrink shape). A failed GT production must write a
+    # FAILURE RECORD, never a fake GT file: write {stem}.music21.FAILED.json and return None (a
+    # failure status), so no .music21.json is produced and consumers skip the stem loudly.
+    if analysis.get("error"):
+        fail_path = output_dir / f"{stem}.music21.FAILED.json"
+        with open(fail_path, "w", encoding="utf-8") as fh:
+            json.dump(analysis, fh, indent=2)
+        print(f"  GT PRODUCTION FAILED for {stem}: {analysis['error']} "
+              f"-> wrote {fail_path.name}, NO .music21.json GT written", file=sys.stderr)
+        return None
+
     with open(json_path, "w", encoding="utf-8") as fh:
         json.dump(analysis, fh, indent=2)
 

@@ -57,7 +57,7 @@ def _corpus_git_hash(preset):
     mani = _ROOT / "tools" / "corpus" / preset / "corpus_manifest.json"
     try:
         return json.loads(mani.read_text(encoding="utf-8")).get("git_hash", "?")
-    except Exception:
+    except (OSError, ValueError, KeyError, TypeError):
         return "?"
 
 
@@ -77,7 +77,7 @@ def collect_l3(preset, km_dir, splits):
             continue
         try:
             _, ours = cmp.load_analysis(ours_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError):
             continue
         if not ours:
             continue
@@ -86,7 +86,7 @@ def collect_l3(preset, km_dir, splits):
         if m21_path.exists():
             try:
                 _, m21 = cmp.load_analysis(m21_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError):
                 m21 = []
         km_path = Path(km_dir) / f"{stem}.keymargin.json"
         if not km_path.exists():
@@ -122,7 +122,7 @@ def collect_l4(preset, fs_dir, splits):
             continue
         try:
             _, ours = cmp.load_analysis(fs_path)
-        except Exception:
+        except (OSError, ValueError, KeyError, TypeError):
             continue
         if not ours:
             continue
@@ -131,7 +131,7 @@ def collect_l4(preset, fs_dir, splits):
         if m21_path.exists():
             try:
                 _, m21 = cmp.load_analysis(m21_path)
-            except Exception:
+            except (OSError, ValueError, KeyError, TypeError):
                 m21 = []
         raw = json.loads(fs_path.read_text(encoding="utf-8"))
         conf_by_start = {r["startTick"]: r.get("l4Composite", 0.0) for r in raw.get("regions", [])}
