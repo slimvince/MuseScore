@@ -74,6 +74,28 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > the wrong-key-area errors). Read-only; both regression stops untouched; fork-only push. See
 > `OPEN_ITEMS.md` OI-141/OI-142 and STATUS.md (top).
 
+> **★ CC ADDENDUM 4 (2026-07-12, later) — the OI-142/OI-143 KEY-GRADING RE-BASELINE LANDED,
+> USER-RATIFIED** (`cc_key_grading_rebaseline_report.md`; adoption `d9b52ba969`). The user's two
+> decisions from the OI-141 diagnosis executed as ONE re-baseline event under the full ritual
+> (O-12 snapshot first `bd9e9c1ab2`; per-run explained diff; manifest re-stamped; **figures
+> ratified by the user before the reference landed**). Measurement-layer only — no `src/`, no
+> constant, no corpus/GT file, no golden; corpus `c50002fee1` unchanged. **OI-142** applies each
+> of 12 transposed editions' constant root offset to the WiR ground truth at ONE shared substrate
+> `dcml_parser.load_wir_regions` (offsets + independent per-preset re-verification committed;
+> modal offset identical across presets); the four graded consumers route through it, non-
+> transposed stems byte-identical. **OI-143** splits the key column into HOME (DCML global) + LOCAL
+> (DCML local), both reported. **★ NEW RATIFIED BASELINES (Baroque/Jazz/Default): root-agree
+> 66.04/64.98/65.93, RN-agree 46.33/44.10/46.23, key-agree HOME 71.29/67.49/70.52, key-agree
+> LOCAL 65.72/62.49/65.39** (CLAUDE.md gate block (A) re-stamped; two-tier class policy unchanged).
+> The run-diff is CONFINED to the 12 corrected stems (the other 314 BYTE-IDENTICAL, proven per
+> preset); class-(b) root-disagree duration DECREASED on all presets → the hard stop PASSES. Batch
+> diagnostic 52/24/52 → 54/24/54 (2 new cases on corrected stems). **FINDING: key-agree LOCAL <
+> HOME** — our analyzer tracks the tonal home more faithfully than DCML's shifting local key
+> (under-follows local modulations), a drift-relevant fact for OI-141. New row **OI-144** (~50
+> secondary WiR scripts still read RAW — scoped, opt-in via `load_wir_regions`). The OI-141 drift
+> research now grades against honest columns. See `OPEN_ITEMS.md` OI-141/OI-142/OI-143/OI-144 and
+> STATUS.md (top).
+
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
 (2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
