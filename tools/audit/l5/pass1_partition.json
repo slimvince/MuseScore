@@ -1,0 +1,82 @@
+{
+ "audit": "EG-7 Layer-5 (function) + instruments certification, PASS 1 (blind enumerative)",
+ "instruction": "cc_instruction_l5_audit_pass1.md",
+ "freeze_head_commit": "c081f79f63fa0daff934e32236651141cb2858b6",
+ "corpus_hash": "c50002fee1",
+ "feasibility_stop": {
+  "fired": true,
+  "reason": "3372 deep rows across 34 deep-audited files exceeds a single session's rigorous-disposition budget (L4 pass-1 required 3 partition-sessions for ~2121 rows; its satellites session alone dispositioned 699). Per instruction Task 1.4 the stop is expected; no silent sampling.",
+  "total_deep_rows": 3372,
+  "total_deep_files": 34
+ },
+ "population_partition": {
+  "L5-DORMANT (b: dormant-but-surviving resolver pipeline)": {
+   "files": 20,
+   "deep_rows": 815
+  },
+  "INSTRUMENT (Python measurement chain)": {
+   "files": 13,
+   "deep_rows": 1687
+  },
+  "INSTRUMENT-HARNESS (batch_analyze.cpp)": {
+   "files": 1,
+   "deep_rows": 870
+  },
+  "L5-RETIRES (a: legacy competition + live circular cadence detector)": {
+   "files": 3,
+   "deep_rows": 0,
+   "note": "file-level interpretation-check notes only"
+  },
+  "L5-MIXED (a: L3-audited sectionanalyzer; L5 cadence/pivot part retires R2)": {
+   "files": 2,
+   "deep_rows": 0,
+   "note": "file-level note; deep rows held in the L3 inventory (no duplication, #6)"
+  },
+  "DEFERRED (already L3-audited substrate, or L6)": {
+   "files": 4,
+   "deep_rows": 0
+  }
+ },
+ "proposed_session_partition": [
+  {
+   "session": "pass-1 partition 1 (dormant resolver pipeline)",
+   "tag": "L5-DORMANT",
+   "files": 20,
+   "rows": 815,
+   "focus": "the engagement's clean target; per instruction, attend to what each module READS FROM THE CARRY (L4 abstentions/alternatives/confidence, L3 key alternatives) and what it EMITS; characterize via the test suites (production fire rate zero by construction)."
+  },
+  {
+   "session": "pass-1 partition 2 (Python instrument chain)",
+   "tag": "INSTRUMENT",
+   "files": 13,
+   "rows": 1687,
+   "focus": "P2 establishment form (principle 19): what each instrument claims to measure, what oracle/derivation validates it, what is stamped (corpus hash/commit) and what is not, what would pass silently; the l5_io.csv reads/writes surface is the seam. NOTE: 1687 rows may itself need a two-way sub-split (regression-stop core vs grading/fitting).",
+   "possible_subsplit": {
+    "regression-stop core": [
+     "compare_analyses.py",
+     "dcml_parser.py",
+     "compare_rn.py",
+     "characterise_bir_false.py",
+     "a8_rebaseline_measure.py",
+     "robust_stop_diff.py",
+     "run_bach_preset.py"
+    ],
+    "grading + fitting": [
+     "analyze_inversion_errors.py",
+     "music21_batch.py",
+     "oracle_root_metric.py",
+     "calibration_fit.py",
+     "c1_reliability.py",
+     "stage5_fit_driver.py"
+    ]
+   }
+  },
+  {
+   "session": "pass-1 partition 3 (the shared harness)",
+   "tag": "INSTRUMENT-HARNESS",
+   "files": 1,
+   "rows": 870,
+   "focus": "batch_analyze.cpp \u2014 the score->analysis driver every corpus run + diagnostic path (--decode-chords/--section-level/--diagnose-measures/--dump-regions) uses; establishment + the reads (score) / writes (.ours.json) surface + the diagnostic flags."
+  }
+ ]
+}
