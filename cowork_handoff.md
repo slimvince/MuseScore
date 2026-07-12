@@ -11,6 +11,19 @@ it is auto-loaded, but VERIFY you have the #17–#19 version); then **`OPEN_ITEM
 ONE register — mandatory at session start; a stage may not open while a row gating it is
 open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
 
+> **★ CC ADDENDUM (2026-07-12) — the OI-84 certification plan reaches its decision point.**
+> All five surviving layers + the measurement chain have now had BOTH passes: L1/L2 (certified
+> 2026-07-11), L3 (certified 2026-07-11), L4 (proposed → certified), and **L5 (function) +
+> the instruments — PASS 2 DONE** (`cc_l5_audit_pass2_report.md`; freeze `20fbc8142d`): blind
+> reading 147 (seed 20260901) + error-rate 40 (seed 20260902), **error rate 0/40 substantive**,
+> whole-scope 25-DT sweep **no untracked correctness defect**; two new non-correctness rows
+> OI-139 (OI-120 correction + manifest site-drift) + OI-140 (WiR-coverage → the governing hard
+> stop can pass silently). **L5 + instruments spine certification PROPOSED — awaiting the
+> user's decision** (OI-84/OI-116/EG-7 left OPEN). IF granted, the OI-84 dependency-ordered
+> plan is COMPLETE and the held **OI-43** discussion opens (mode/key + chord inference — where
+> and how; OI-44 in the same discussion), with the Stage-3 entry-gate items OI-1…OI-7
+> remaining. See `OPEN_ITEMS.md` OI-116/OI-139/OI-140 and STATUS.md (top).
+
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
 (2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
