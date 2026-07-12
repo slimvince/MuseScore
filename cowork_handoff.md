@@ -11,6 +11,20 @@ it is auto-loaded, but VERIFY you have the #17–#19 version); then **`OPEN_ITEM
 ONE register — mandatory at session start; a stage may not open while a row gating it is
 open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
 
+> **★ CC ADDENDUM (2026-07-12) — OI-145 WAVE 1 (measurement-chain hardening) delivered.** 13 rows
+> closed + 3 discoveries surfaced, NO grading digit moved; the establishment battery
+> (`tools/audit/hardening_battery.py`) reproduced byte-identical after every fix + at the end (a8
+> +0/−0, calib 4/4, validate 3/3, BIR 54/24/54, fixture 66.04/64.98/65.93 MATCH). The five blocking
+> rows (OI-140/124/129/132/33) closed or their blocker surfaced; Task-3 OI-123/128/130/126/125/133/
+> 138/139/144/35 done. **Three discoveries for the user: D1** (the stage5 fixture's RATIFIED baseline
+> was left stale by the OI-142/OI-143 re-baseline — corrected, fixture now MATCH); **D2** (the two
+> OURS key parsers embed a genuine PhrygDom/alt/Lydb7 mode divergence — consolidating moves a graded
+> figure either direction; OI-132 OPEN, needs adjudication); **D3** (the committed calibration maps
+> are on pre-OI-142 uncorrected WiR — routing to the corrected substrate moves all 4 maps; OI-144
+> OPEN, needs a ratified re-baseline). **Deferred (clean boundary, battery green): OI-135/136/137**
+> (`batch_analyze.cpp` build group; OI-135's single-source needs a config-unification change, values
+> proven copies today) + OI-127. Full record: `cc_measurement_chain_hardening_report.md` + STATUS.md.
+
 > **★ CC ADDENDUM (2026-07-12) — the OI-84 certification plan reaches its decision point.**
 > All five surviving layers + the measurement chain have now had BOTH passes: L1/L2 (certified
 > 2026-07-11), L3 (certified 2026-07-11), L4 (proposed → certified), and **L5 (function) +
